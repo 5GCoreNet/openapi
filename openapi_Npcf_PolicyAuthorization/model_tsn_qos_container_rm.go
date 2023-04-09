@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &TsnQosContainerRm{}
 
 // TsnQosContainerRm Indicates removable TSC Traffic QoS.
 type TsnQosContainerRm struct {
-	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property.
 	MaxTscBurstSize NullableInt32 `json:"maxTscBurstSize,omitempty"`
-	// This data type is defined in the same way as the 'PacketDelBudget' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketDelBudget' data type, but with the OpenAPI 'nullable: true' property.
 	TscPackDelay NullableInt32 `json:"tscPackDelay,omitempty"`
-	// This data type is defined in the same way as the TscPriorityLevel data type, but with the OpenAPI nullable property set to true. 
+	// This data type is defined in the same way as the TscPriorityLevel data type, but with the OpenAPI nullable property set to true.
 	TscPrioLevel NullableInt32 `json:"tscPrioLevel,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewTsnQosContainerRmWithDefaults() *TsnQosContainerRm {
 
 // GetMaxTscBurstSize returns the MaxTscBurstSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TsnQosContainerRm) GetMaxTscBurstSize() int32 {
-	if o == nil || isNil(o.MaxTscBurstSize.Get()) {
+	if o == nil || IsNil(o.MaxTscBurstSize.Get()) {
 		var ret int32
 		return ret
 	}
@@ -76,6 +76,7 @@ func (o *TsnQosContainerRm) HasMaxTscBurstSize() bool {
 func (o *TsnQosContainerRm) SetMaxTscBurstSize(v int32) {
 	o.MaxTscBurstSize.Set(&v)
 }
+
 // SetMaxTscBurstSizeNil sets the value for MaxTscBurstSize to be an explicit nil
 func (o *TsnQosContainerRm) SetMaxTscBurstSizeNil() {
 	o.MaxTscBurstSize.Set(nil)
@@ -88,7 +89,7 @@ func (o *TsnQosContainerRm) UnsetMaxTscBurstSize() {
 
 // GetTscPackDelay returns the TscPackDelay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TsnQosContainerRm) GetTscPackDelay() int32 {
-	if o == nil || isNil(o.TscPackDelay.Get()) {
+	if o == nil || IsNil(o.TscPackDelay.Get()) {
 		var ret int32
 		return ret
 	}
@@ -118,6 +119,7 @@ func (o *TsnQosContainerRm) HasTscPackDelay() bool {
 func (o *TsnQosContainerRm) SetTscPackDelay(v int32) {
 	o.TscPackDelay.Set(&v)
 }
+
 // SetTscPackDelayNil sets the value for TscPackDelay to be an explicit nil
 func (o *TsnQosContainerRm) SetTscPackDelayNil() {
 	o.TscPackDelay.Set(nil)
@@ -130,7 +132,7 @@ func (o *TsnQosContainerRm) UnsetTscPackDelay() {
 
 // GetTscPrioLevel returns the TscPrioLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TsnQosContainerRm) GetTscPrioLevel() int32 {
-	if o == nil || isNil(o.TscPrioLevel.Get()) {
+	if o == nil || IsNil(o.TscPrioLevel.Get()) {
 		var ret int32
 		return ret
 	}
@@ -160,6 +162,7 @@ func (o *TsnQosContainerRm) HasTscPrioLevel() bool {
 func (o *TsnQosContainerRm) SetTscPrioLevel(v int32) {
 	o.TscPrioLevel.Set(&v)
 }
+
 // SetTscPrioLevelNil sets the value for TscPrioLevel to be an explicit nil
 func (o *TsnQosContainerRm) SetTscPrioLevelNil() {
 	o.TscPrioLevel.Set(nil)
@@ -171,7 +174,7 @@ func (o *TsnQosContainerRm) UnsetTscPrioLevel() {
 }
 
 func (o TsnQosContainerRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -227,5 +230,3 @@ func (v *NullableTsnQosContainerRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

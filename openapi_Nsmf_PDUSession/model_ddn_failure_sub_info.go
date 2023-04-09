@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &DdnFailureSubInfo{}
 
 // DdnFailureSubInfo DDN Failure Subscription Information
 type DdnFailureSubInfo struct {
-	NotifyCorrelationId string `json:"notifyCorrelationId"`
+	NotifyCorrelationId      string                 `json:"notifyCorrelationId"`
 	DddTrafficDescriptorList []DddTrafficDescriptor `json:"dddTrafficDescriptorList,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *DdnFailureSubInfo) SetNotifyCorrelationId(v string) {
 
 // GetDddTrafficDescriptorList returns the DddTrafficDescriptorList field value if set, zero value otherwise.
 func (o *DdnFailureSubInfo) GetDddTrafficDescriptorList() []DddTrafficDescriptor {
-	if o == nil || isNil(o.DddTrafficDescriptorList) {
+	if o == nil || IsNil(o.DddTrafficDescriptorList) {
 		var ret []DddTrafficDescriptor
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *DdnFailureSubInfo) GetDddTrafficDescriptorList() []DddTrafficDescriptor
 // GetDddTrafficDescriptorListOk returns a tuple with the DddTrafficDescriptorList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DdnFailureSubInfo) GetDddTrafficDescriptorListOk() ([]DddTrafficDescriptor, bool) {
-	if o == nil || isNil(o.DddTrafficDescriptorList) {
+	if o == nil || IsNil(o.DddTrafficDescriptorList) {
 		return nil, false
 	}
 	return o.DddTrafficDescriptorList, true
@@ -85,7 +85,7 @@ func (o *DdnFailureSubInfo) GetDddTrafficDescriptorListOk() ([]DddTrafficDescrip
 
 // HasDddTrafficDescriptorList returns a boolean if a field has been set.
 func (o *DdnFailureSubInfo) HasDddTrafficDescriptorList() bool {
-	if o != nil && !isNil(o.DddTrafficDescriptorList) {
+	if o != nil && !IsNil(o.DddTrafficDescriptorList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *DdnFailureSubInfo) SetDddTrafficDescriptorList(v []DddTrafficDescriptor
 }
 
 func (o DdnFailureSubInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o DdnFailureSubInfo) MarshalJSON() ([]byte, error) {
 func (o DdnFailureSubInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
-	if !isNil(o.DddTrafficDescriptorList) {
+	if !IsNil(o.DddTrafficDescriptorList) {
 		toSerialize["dddTrafficDescriptorList"] = o.DddTrafficDescriptorList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableDdnFailureSubInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

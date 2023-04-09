@@ -1,7 +1,7 @@
 /*
 Nnef_Authentication
 
-NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &UAVAuthResponse{}
 
 // UAVAuthResponse UAV auth response data
 type UAVAuthResponse struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi           string  `json:"gpsi"`
 	ServiceLevelId *string `json:"serviceLevelId,omitempty"`
 	// Deprecated
-	AuthMsg *UAVAuthInfoAuthMsg `json:"authMsg,omitempty"`
-	AuthContainer []AuthContainer `json:"authContainer,omitempty"`
+	AuthMsg       *UAVAuthInfoAuthMsg `json:"authMsg,omitempty"`
+	AuthContainer []AuthContainer     `json:"authContainer,omitempty"`
 	// Deprecated
-	AuthResult *UAVAuthResponseAuthResult `json:"authResult,omitempty"`
-	NotifyCorrId *string `json:"notifyCorrId,omitempty"`
+	AuthResult   *UAVAuthResponseAuthResult `json:"authResult,omitempty"`
+	NotifyCorrId *string                    `json:"notifyCorrId,omitempty"`
 }
 
 // NewUAVAuthResponse instantiates a new UAVAuthResponse object
@@ -74,7 +74,7 @@ func (o *UAVAuthResponse) SetGpsi(v string) {
 
 // GetServiceLevelId returns the ServiceLevelId field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetServiceLevelId() string {
-	if o == nil || isNil(o.ServiceLevelId) {
+	if o == nil || IsNil(o.ServiceLevelId) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UAVAuthResponse) GetServiceLevelId() string {
 // GetServiceLevelIdOk returns a tuple with the ServiceLevelId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetServiceLevelIdOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceLevelId) {
+	if o == nil || IsNil(o.ServiceLevelId) {
 		return nil, false
 	}
 	return o.ServiceLevelId, true
@@ -92,7 +92,7 @@ func (o *UAVAuthResponse) GetServiceLevelIdOk() (*string, bool) {
 
 // HasServiceLevelId returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasServiceLevelId() bool {
-	if o != nil && !isNil(o.ServiceLevelId) {
+	if o != nil && !IsNil(o.ServiceLevelId) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *UAVAuthResponse) SetServiceLevelId(v string) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthMsg() UAVAuthInfoAuthMsg {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		var ret UAVAuthInfoAuthMsg
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UAVAuthResponse) GetAuthMsg() UAVAuthInfoAuthMsg {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -126,7 +126,7 @@ func (o *UAVAuthResponse) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthMsg() bool {
-	if o != nil && !isNil(o.AuthMsg) {
+	if o != nil && !IsNil(o.AuthMsg) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *UAVAuthResponse) SetAuthMsg(v UAVAuthInfoAuthMsg) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetAuthContainer() []AuthContainer {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *UAVAuthResponse) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -159,7 +159,7 @@ func (o *UAVAuthResponse) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthContainer() bool {
-	if o != nil && !isNil(o.AuthContainer) {
+	if o != nil && !IsNil(o.AuthContainer) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *UAVAuthResponse) SetAuthContainer(v []AuthContainer) {
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthResult() UAVAuthResponseAuthResult {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		var ret UAVAuthResponseAuthResult
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *UAVAuthResponse) GetAuthResult() UAVAuthResponseAuthResult {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthResultOk() (*UAVAuthResponseAuthResult, bool) {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -193,7 +193,7 @@ func (o *UAVAuthResponse) GetAuthResultOk() (*UAVAuthResponseAuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthResult() bool {
-	if o != nil && !isNil(o.AuthResult) {
+	if o != nil && !IsNil(o.AuthResult) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *UAVAuthResponse) SetAuthResult(v UAVAuthResponseAuthResult) {
 
 // GetNotifyCorrId returns the NotifyCorrId field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetNotifyCorrId() string {
-	if o == nil || isNil(o.NotifyCorrId) {
+	if o == nil || IsNil(o.NotifyCorrId) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *UAVAuthResponse) GetNotifyCorrId() string {
 // GetNotifyCorrIdOk returns a tuple with the NotifyCorrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetNotifyCorrIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrId) {
+	if o == nil || IsNil(o.NotifyCorrId) {
 		return nil, false
 	}
 	return o.NotifyCorrId, true
@@ -226,7 +226,7 @@ func (o *UAVAuthResponse) GetNotifyCorrIdOk() (*string, bool) {
 
 // HasNotifyCorrId returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasNotifyCorrId() bool {
-	if o != nil && !isNil(o.NotifyCorrId) {
+	if o != nil && !IsNil(o.NotifyCorrId) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *UAVAuthResponse) SetNotifyCorrId(v string) {
 }
 
 func (o UAVAuthResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,19 +249,19 @@ func (o UAVAuthResponse) MarshalJSON() ([]byte, error) {
 func (o UAVAuthResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gpsi"] = o.Gpsi
-	if !isNil(o.ServiceLevelId) {
+	if !IsNil(o.ServiceLevelId) {
 		toSerialize["serviceLevelId"] = o.ServiceLevelId
 	}
-	if !isNil(o.AuthMsg) {
+	if !IsNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !isNil(o.AuthContainer) {
+	if !IsNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
-	if !isNil(o.AuthResult) {
+	if !IsNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
-	if !isNil(o.NotifyCorrId) {
+	if !IsNil(o.NotifyCorrId) {
 		toSerialize["notifyCorrId"] = o.NotifyCorrId
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableUAVAuthResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

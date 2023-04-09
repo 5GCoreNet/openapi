@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,32 +20,32 @@ var _ MappedNullable = &TrafficInfluDataPatch{}
 
 // TrafficInfluDataPatch Represents the Traffic Influence Data to be updated in the UDR.
 type TrafficInfluDataPatch struct {
-	// Contains the Notification Correlation Id allocated by the NEF for the UP path change notification. 
+	// Contains the Notification Correlation Id allocated by the NEF for the UP path change notification.
 	UpPathChgNotifCorreId *string `json:"upPathChgNotifCorreId,omitempty"`
-	// Identifies whether an application can be relocated once a location of the application has been selected. 
+	// Identifies whether an application can be relocated once a location of the application has been selected.
 	AppReloInd *bool `json:"appReloInd,omitempty"`
-	// Identifies Ethernet packet filters. Either \"trafficFilters\" or \"ethTrafficFilters\" shall be included if applicable. 
+	// Identifies Ethernet packet filters. Either \"trafficFilters\" or \"ethTrafficFilters\" shall be included if applicable.
 	EthTrafficFilters []EthFlowDescription `json:"ethTrafficFilters,omitempty"`
-	// Identifies IP packet filters. Either \"trafficFilters\" or \"ethTrafficFilters\" shall be included if applicable. 
+	// Identifies IP packet filters. Either \"trafficFilters\" or \"ethTrafficFilters\" shall be included if applicable.
 	TrafficFilters []FlowInfo `json:"trafficFilters,omitempty"`
 	// Identifies the N6 traffic routing requirement.
 	TrafficRoutes []RouteToLocation `json:"trafficRoutes,omitempty"`
-	TraffCorreInd *bool `json:"traffCorreInd,omitempty"`
+	TraffCorreInd *bool             `json:"traffCorreInd,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidStartTime *time.Time `json:"validStartTime,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidEndTime *time.Time `json:"validEndTime,omitempty"`
 	// Identifies the temporal validities for the N6 traffic routing requirement.
 	TempValidities []TemporalValidity `json:"tempValidities,omitempty"`
-	NwAreaInfo *NetworkAreaInfo2 `json:"nwAreaInfo,omitempty"`
+	NwAreaInfo     *NetworkAreaInfo2  `json:"nwAreaInfo,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	UpPathChgNotifUri *string `json:"upPathChgNotifUri,omitempty"`
-	Headers []string `json:"headers,omitempty"`
-	AfAckInd *bool `json:"afAckInd,omitempty"`
-	AddrPreserInd *bool `json:"addrPreserInd,omitempty"`
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property. 
+	UpPathChgNotifUri *string  `json:"upPathChgNotifUri,omitempty"`
+	Headers           []string `json:"headers,omitempty"`
+	AfAckInd          *bool    `json:"afAckInd,omitempty"`
+	AddrPreserInd     *bool    `json:"addrPreserInd,omitempty"`
+	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property.
 	MaxAllowedUpLat NullableInt32 `json:"maxAllowedUpLat,omitempty"`
-	// Indicates whether simultaneous connectivity should be temporarily maintained for the source and target PSA. 
+	// Indicates whether simultaneous connectivity should be temporarily maintained for the source and target PSA.
 	SimConnInd *bool `json:"simConnInd,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	SimConnTerm NullableInt32 `json:"simConnTerm,omitempty"`
@@ -70,7 +70,7 @@ func NewTrafficInfluDataPatchWithDefaults() *TrafficInfluDataPatch {
 
 // GetUpPathChgNotifCorreId returns the UpPathChgNotifCorreId field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetUpPathChgNotifCorreId() string {
-	if o == nil || isNil(o.UpPathChgNotifCorreId) {
+	if o == nil || IsNil(o.UpPathChgNotifCorreId) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *TrafficInfluDataPatch) GetUpPathChgNotifCorreId() string {
 // GetUpPathChgNotifCorreIdOk returns a tuple with the UpPathChgNotifCorreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetUpPathChgNotifCorreIdOk() (*string, bool) {
-	if o == nil || isNil(o.UpPathChgNotifCorreId) {
+	if o == nil || IsNil(o.UpPathChgNotifCorreId) {
 		return nil, false
 	}
 	return o.UpPathChgNotifCorreId, true
@@ -88,7 +88,7 @@ func (o *TrafficInfluDataPatch) GetUpPathChgNotifCorreIdOk() (*string, bool) {
 
 // HasUpPathChgNotifCorreId returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasUpPathChgNotifCorreId() bool {
-	if o != nil && !isNil(o.UpPathChgNotifCorreId) {
+	if o != nil && !IsNil(o.UpPathChgNotifCorreId) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *TrafficInfluDataPatch) SetUpPathChgNotifCorreId(v string) {
 
 // GetAppReloInd returns the AppReloInd field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetAppReloInd() bool {
-	if o == nil || isNil(o.AppReloInd) {
+	if o == nil || IsNil(o.AppReloInd) {
 		var ret bool
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *TrafficInfluDataPatch) GetAppReloInd() bool {
 // GetAppReloIndOk returns a tuple with the AppReloInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetAppReloIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AppReloInd) {
+	if o == nil || IsNil(o.AppReloInd) {
 		return nil, false
 	}
 	return o.AppReloInd, true
@@ -120,7 +120,7 @@ func (o *TrafficInfluDataPatch) GetAppReloIndOk() (*bool, bool) {
 
 // HasAppReloInd returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasAppReloInd() bool {
-	if o != nil && !isNil(o.AppReloInd) {
+	if o != nil && !IsNil(o.AppReloInd) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *TrafficInfluDataPatch) SetAppReloInd(v bool) {
 
 // GetEthTrafficFilters returns the EthTrafficFilters field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetEthTrafficFilters() []EthFlowDescription {
-	if o == nil || isNil(o.EthTrafficFilters) {
+	if o == nil || IsNil(o.EthTrafficFilters) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *TrafficInfluDataPatch) GetEthTrafficFilters() []EthFlowDescription {
 // GetEthTrafficFiltersOk returns a tuple with the EthTrafficFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetEthTrafficFiltersOk() ([]EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthTrafficFilters) {
+	if o == nil || IsNil(o.EthTrafficFilters) {
 		return nil, false
 	}
 	return o.EthTrafficFilters, true
@@ -152,7 +152,7 @@ func (o *TrafficInfluDataPatch) GetEthTrafficFiltersOk() ([]EthFlowDescription, 
 
 // HasEthTrafficFilters returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasEthTrafficFilters() bool {
-	if o != nil && !isNil(o.EthTrafficFilters) {
+	if o != nil && !IsNil(o.EthTrafficFilters) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *TrafficInfluDataPatch) SetEthTrafficFilters(v []EthFlowDescription) {
 
 // GetTrafficFilters returns the TrafficFilters field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetTrafficFilters() []FlowInfo {
-	if o == nil || isNil(o.TrafficFilters) {
+	if o == nil || IsNil(o.TrafficFilters) {
 		var ret []FlowInfo
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *TrafficInfluDataPatch) GetTrafficFilters() []FlowInfo {
 // GetTrafficFiltersOk returns a tuple with the TrafficFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetTrafficFiltersOk() ([]FlowInfo, bool) {
-	if o == nil || isNil(o.TrafficFilters) {
+	if o == nil || IsNil(o.TrafficFilters) {
 		return nil, false
 	}
 	return o.TrafficFilters, true
@@ -184,7 +184,7 @@ func (o *TrafficInfluDataPatch) GetTrafficFiltersOk() ([]FlowInfo, bool) {
 
 // HasTrafficFilters returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasTrafficFilters() bool {
-	if o != nil && !isNil(o.TrafficFilters) {
+	if o != nil && !IsNil(o.TrafficFilters) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *TrafficInfluDataPatch) SetTrafficFilters(v []FlowInfo) {
 
 // GetTrafficRoutes returns the TrafficRoutes field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetTrafficRoutes() []RouteToLocation {
-	if o == nil || isNil(o.TrafficRoutes) {
+	if o == nil || IsNil(o.TrafficRoutes) {
 		var ret []RouteToLocation
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *TrafficInfluDataPatch) GetTrafficRoutes() []RouteToLocation {
 // GetTrafficRoutesOk returns a tuple with the TrafficRoutes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetTrafficRoutesOk() ([]RouteToLocation, bool) {
-	if o == nil || isNil(o.TrafficRoutes) {
+	if o == nil || IsNil(o.TrafficRoutes) {
 		return nil, false
 	}
 	return o.TrafficRoutes, true
@@ -216,7 +216,7 @@ func (o *TrafficInfluDataPatch) GetTrafficRoutesOk() ([]RouteToLocation, bool) {
 
 // HasTrafficRoutes returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasTrafficRoutes() bool {
-	if o != nil && !isNil(o.TrafficRoutes) {
+	if o != nil && !IsNil(o.TrafficRoutes) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *TrafficInfluDataPatch) SetTrafficRoutes(v []RouteToLocation) {
 
 // GetTraffCorreInd returns the TraffCorreInd field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetTraffCorreInd() bool {
-	if o == nil || isNil(o.TraffCorreInd) {
+	if o == nil || IsNil(o.TraffCorreInd) {
 		var ret bool
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *TrafficInfluDataPatch) GetTraffCorreInd() bool {
 // GetTraffCorreIndOk returns a tuple with the TraffCorreInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetTraffCorreIndOk() (*bool, bool) {
-	if o == nil || isNil(o.TraffCorreInd) {
+	if o == nil || IsNil(o.TraffCorreInd) {
 		return nil, false
 	}
 	return o.TraffCorreInd, true
@@ -248,7 +248,7 @@ func (o *TrafficInfluDataPatch) GetTraffCorreIndOk() (*bool, bool) {
 
 // HasTraffCorreInd returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasTraffCorreInd() bool {
-	if o != nil && !isNil(o.TraffCorreInd) {
+	if o != nil && !IsNil(o.TraffCorreInd) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *TrafficInfluDataPatch) SetTraffCorreInd(v bool) {
 
 // GetValidStartTime returns the ValidStartTime field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetValidStartTime() time.Time {
-	if o == nil || isNil(o.ValidStartTime) {
+	if o == nil || IsNil(o.ValidStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *TrafficInfluDataPatch) GetValidStartTime() time.Time {
 // GetValidStartTimeOk returns a tuple with the ValidStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetValidStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidStartTime) {
+	if o == nil || IsNil(o.ValidStartTime) {
 		return nil, false
 	}
 	return o.ValidStartTime, true
@@ -280,7 +280,7 @@ func (o *TrafficInfluDataPatch) GetValidStartTimeOk() (*time.Time, bool) {
 
 // HasValidStartTime returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasValidStartTime() bool {
-	if o != nil && !isNil(o.ValidStartTime) {
+	if o != nil && !IsNil(o.ValidStartTime) {
 		return true
 	}
 
@@ -294,7 +294,7 @@ func (o *TrafficInfluDataPatch) SetValidStartTime(v time.Time) {
 
 // GetValidEndTime returns the ValidEndTime field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetValidEndTime() time.Time {
-	if o == nil || isNil(o.ValidEndTime) {
+	if o == nil || IsNil(o.ValidEndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -304,7 +304,7 @@ func (o *TrafficInfluDataPatch) GetValidEndTime() time.Time {
 // GetValidEndTimeOk returns a tuple with the ValidEndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetValidEndTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidEndTime) {
+	if o == nil || IsNil(o.ValidEndTime) {
 		return nil, false
 	}
 	return o.ValidEndTime, true
@@ -312,7 +312,7 @@ func (o *TrafficInfluDataPatch) GetValidEndTimeOk() (*time.Time, bool) {
 
 // HasValidEndTime returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasValidEndTime() bool {
-	if o != nil && !isNil(o.ValidEndTime) {
+	if o != nil && !IsNil(o.ValidEndTime) {
 		return true
 	}
 
@@ -337,7 +337,7 @@ func (o *TrafficInfluDataPatch) GetTempValidities() []TemporalValidity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrafficInfluDataPatch) GetTempValiditiesOk() ([]TemporalValidity, bool) {
-	if o == nil || isNil(o.TempValidities) {
+	if o == nil || IsNil(o.TempValidities) {
 		return nil, false
 	}
 	return o.TempValidities, true
@@ -345,7 +345,7 @@ func (o *TrafficInfluDataPatch) GetTempValiditiesOk() ([]TemporalValidity, bool)
 
 // HasTempValidities returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasTempValidities() bool {
-	if o != nil && isNil(o.TempValidities) {
+	if o != nil && IsNil(o.TempValidities) {
 		return true
 	}
 
@@ -359,7 +359,7 @@ func (o *TrafficInfluDataPatch) SetTempValidities(v []TemporalValidity) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetNwAreaInfo() NetworkAreaInfo2 {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo2
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *TrafficInfluDataPatch) GetNwAreaInfo() NetworkAreaInfo2 {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetNwAreaInfoOk() (*NetworkAreaInfo2, bool) {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -377,7 +377,7 @@ func (o *TrafficInfluDataPatch) GetNwAreaInfoOk() (*NetworkAreaInfo2, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasNwAreaInfo() bool {
-	if o != nil && !isNil(o.NwAreaInfo) {
+	if o != nil && !IsNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -391,7 +391,7 @@ func (o *TrafficInfluDataPatch) SetNwAreaInfo(v NetworkAreaInfo2) {
 
 // GetUpPathChgNotifUri returns the UpPathChgNotifUri field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetUpPathChgNotifUri() string {
-	if o == nil || isNil(o.UpPathChgNotifUri) {
+	if o == nil || IsNil(o.UpPathChgNotifUri) {
 		var ret string
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o *TrafficInfluDataPatch) GetUpPathChgNotifUri() string {
 // GetUpPathChgNotifUriOk returns a tuple with the UpPathChgNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetUpPathChgNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.UpPathChgNotifUri) {
+	if o == nil || IsNil(o.UpPathChgNotifUri) {
 		return nil, false
 	}
 	return o.UpPathChgNotifUri, true
@@ -409,7 +409,7 @@ func (o *TrafficInfluDataPatch) GetUpPathChgNotifUriOk() (*string, bool) {
 
 // HasUpPathChgNotifUri returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasUpPathChgNotifUri() bool {
-	if o != nil && !isNil(o.UpPathChgNotifUri) {
+	if o != nil && !IsNil(o.UpPathChgNotifUri) {
 		return true
 	}
 
@@ -423,7 +423,7 @@ func (o *TrafficInfluDataPatch) SetUpPathChgNotifUri(v string) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetHeaders() []string {
-	if o == nil || isNil(o.Headers) {
+	if o == nil || IsNil(o.Headers) {
 		var ret []string
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *TrafficInfluDataPatch) GetHeaders() []string {
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetHeadersOk() ([]string, bool) {
-	if o == nil || isNil(o.Headers) {
+	if o == nil || IsNil(o.Headers) {
 		return nil, false
 	}
 	return o.Headers, true
@@ -441,7 +441,7 @@ func (o *TrafficInfluDataPatch) GetHeadersOk() ([]string, bool) {
 
 // HasHeaders returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasHeaders() bool {
-	if o != nil && !isNil(o.Headers) {
+	if o != nil && !IsNil(o.Headers) {
 		return true
 	}
 
@@ -455,7 +455,7 @@ func (o *TrafficInfluDataPatch) SetHeaders(v []string) {
 
 // GetAfAckInd returns the AfAckInd field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetAfAckInd() bool {
-	if o == nil || isNil(o.AfAckInd) {
+	if o == nil || IsNil(o.AfAckInd) {
 		var ret bool
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *TrafficInfluDataPatch) GetAfAckInd() bool {
 // GetAfAckIndOk returns a tuple with the AfAckInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetAfAckIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AfAckInd) {
+	if o == nil || IsNil(o.AfAckInd) {
 		return nil, false
 	}
 	return o.AfAckInd, true
@@ -473,7 +473,7 @@ func (o *TrafficInfluDataPatch) GetAfAckIndOk() (*bool, bool) {
 
 // HasAfAckInd returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasAfAckInd() bool {
-	if o != nil && !isNil(o.AfAckInd) {
+	if o != nil && !IsNil(o.AfAckInd) {
 		return true
 	}
 
@@ -487,7 +487,7 @@ func (o *TrafficInfluDataPatch) SetAfAckInd(v bool) {
 
 // GetAddrPreserInd returns the AddrPreserInd field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetAddrPreserInd() bool {
-	if o == nil || isNil(o.AddrPreserInd) {
+	if o == nil || IsNil(o.AddrPreserInd) {
 		var ret bool
 		return ret
 	}
@@ -497,7 +497,7 @@ func (o *TrafficInfluDataPatch) GetAddrPreserInd() bool {
 // GetAddrPreserIndOk returns a tuple with the AddrPreserInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetAddrPreserIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AddrPreserInd) {
+	if o == nil || IsNil(o.AddrPreserInd) {
 		return nil, false
 	}
 	return o.AddrPreserInd, true
@@ -505,7 +505,7 @@ func (o *TrafficInfluDataPatch) GetAddrPreserIndOk() (*bool, bool) {
 
 // HasAddrPreserInd returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasAddrPreserInd() bool {
-	if o != nil && !isNil(o.AddrPreserInd) {
+	if o != nil && !IsNil(o.AddrPreserInd) {
 		return true
 	}
 
@@ -519,7 +519,7 @@ func (o *TrafficInfluDataPatch) SetAddrPreserInd(v bool) {
 
 // GetMaxAllowedUpLat returns the MaxAllowedUpLat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrafficInfluDataPatch) GetMaxAllowedUpLat() int32 {
-	if o == nil || isNil(o.MaxAllowedUpLat.Get()) {
+	if o == nil || IsNil(o.MaxAllowedUpLat.Get()) {
 		var ret int32
 		return ret
 	}
@@ -549,6 +549,7 @@ func (o *TrafficInfluDataPatch) HasMaxAllowedUpLat() bool {
 func (o *TrafficInfluDataPatch) SetMaxAllowedUpLat(v int32) {
 	o.MaxAllowedUpLat.Set(&v)
 }
+
 // SetMaxAllowedUpLatNil sets the value for MaxAllowedUpLat to be an explicit nil
 func (o *TrafficInfluDataPatch) SetMaxAllowedUpLatNil() {
 	o.MaxAllowedUpLat.Set(nil)
@@ -561,7 +562,7 @@ func (o *TrafficInfluDataPatch) UnsetMaxAllowedUpLat() {
 
 // GetSimConnInd returns the SimConnInd field value if set, zero value otherwise.
 func (o *TrafficInfluDataPatch) GetSimConnInd() bool {
-	if o == nil || isNil(o.SimConnInd) {
+	if o == nil || IsNil(o.SimConnInd) {
 		var ret bool
 		return ret
 	}
@@ -571,7 +572,7 @@ func (o *TrafficInfluDataPatch) GetSimConnInd() bool {
 // GetSimConnIndOk returns a tuple with the SimConnInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataPatch) GetSimConnIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SimConnInd) {
+	if o == nil || IsNil(o.SimConnInd) {
 		return nil, false
 	}
 	return o.SimConnInd, true
@@ -579,7 +580,7 @@ func (o *TrafficInfluDataPatch) GetSimConnIndOk() (*bool, bool) {
 
 // HasSimConnInd returns a boolean if a field has been set.
 func (o *TrafficInfluDataPatch) HasSimConnInd() bool {
-	if o != nil && !isNil(o.SimConnInd) {
+	if o != nil && !IsNil(o.SimConnInd) {
 		return true
 	}
 
@@ -593,7 +594,7 @@ func (o *TrafficInfluDataPatch) SetSimConnInd(v bool) {
 
 // GetSimConnTerm returns the SimConnTerm field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrafficInfluDataPatch) GetSimConnTerm() int32 {
-	if o == nil || isNil(o.SimConnTerm.Get()) {
+	if o == nil || IsNil(o.SimConnTerm.Get()) {
 		var ret int32
 		return ret
 	}
@@ -623,6 +624,7 @@ func (o *TrafficInfluDataPatch) HasSimConnTerm() bool {
 func (o *TrafficInfluDataPatch) SetSimConnTerm(v int32) {
 	o.SimConnTerm.Set(&v)
 }
+
 // SetSimConnTermNil sets the value for SimConnTerm to be an explicit nil
 func (o *TrafficInfluDataPatch) SetSimConnTermNil() {
 	o.SimConnTerm.Set(nil)
@@ -634,7 +636,7 @@ func (o *TrafficInfluDataPatch) UnsetSimConnTerm() {
 }
 
 func (o TrafficInfluDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -643,52 +645,52 @@ func (o TrafficInfluDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o TrafficInfluDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UpPathChgNotifCorreId) {
+	if !IsNil(o.UpPathChgNotifCorreId) {
 		toSerialize["upPathChgNotifCorreId"] = o.UpPathChgNotifCorreId
 	}
-	if !isNil(o.AppReloInd) {
+	if !IsNil(o.AppReloInd) {
 		toSerialize["appReloInd"] = o.AppReloInd
 	}
-	if !isNil(o.EthTrafficFilters) {
+	if !IsNil(o.EthTrafficFilters) {
 		toSerialize["ethTrafficFilters"] = o.EthTrafficFilters
 	}
-	if !isNil(o.TrafficFilters) {
+	if !IsNil(o.TrafficFilters) {
 		toSerialize["trafficFilters"] = o.TrafficFilters
 	}
-	if !isNil(o.TrafficRoutes) {
+	if !IsNil(o.TrafficRoutes) {
 		toSerialize["trafficRoutes"] = o.TrafficRoutes
 	}
-	if !isNil(o.TraffCorreInd) {
+	if !IsNil(o.TraffCorreInd) {
 		toSerialize["traffCorreInd"] = o.TraffCorreInd
 	}
-	if !isNil(o.ValidStartTime) {
+	if !IsNil(o.ValidStartTime) {
 		toSerialize["validStartTime"] = o.ValidStartTime
 	}
-	if !isNil(o.ValidEndTime) {
+	if !IsNil(o.ValidEndTime) {
 		toSerialize["validEndTime"] = o.ValidEndTime
 	}
 	if o.TempValidities != nil {
 		toSerialize["tempValidities"] = o.TempValidities
 	}
-	if !isNil(o.NwAreaInfo) {
+	if !IsNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
-	if !isNil(o.UpPathChgNotifUri) {
+	if !IsNil(o.UpPathChgNotifUri) {
 		toSerialize["upPathChgNotifUri"] = o.UpPathChgNotifUri
 	}
-	if !isNil(o.Headers) {
+	if !IsNil(o.Headers) {
 		toSerialize["headers"] = o.Headers
 	}
-	if !isNil(o.AfAckInd) {
+	if !IsNil(o.AfAckInd) {
 		toSerialize["afAckInd"] = o.AfAckInd
 	}
-	if !isNil(o.AddrPreserInd) {
+	if !IsNil(o.AddrPreserInd) {
 		toSerialize["addrPreserInd"] = o.AddrPreserInd
 	}
 	if o.MaxAllowedUpLat.IsSet() {
 		toSerialize["maxAllowedUpLat"] = o.MaxAllowedUpLat.Get()
 	}
-	if !isNil(o.SimConnInd) {
+	if !IsNil(o.SimConnInd) {
 		toSerialize["simConnInd"] = o.SimConnInd
 	}
 	if o.SimConnTerm.IsSet() {
@@ -732,5 +734,3 @@ func (v *NullableTrafficInfluDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

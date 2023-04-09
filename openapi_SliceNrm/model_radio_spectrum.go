@@ -19,8 +19,8 @@ var _ MappedNullable = &RadioSpectrum{}
 
 // RadioSpectrum struct for RadioSpectrum
 type RadioSpectrum struct {
-	ServAttrCom *ServAttrCom `json:"servAttrCom,omitempty"`
-	NROperatingBands *string `json:"nROperatingBands,omitempty"`
+	ServAttrCom      *ServAttrCom `json:"servAttrCom,omitempty"`
+	NROperatingBands *string      `json:"nROperatingBands,omitempty"`
 }
 
 // NewRadioSpectrum instantiates a new RadioSpectrum object
@@ -42,7 +42,7 @@ func NewRadioSpectrumWithDefaults() *RadioSpectrum {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *RadioSpectrum) GetServAttrCom() ServAttrCom {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RadioSpectrum) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioSpectrum) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *RadioSpectrum) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *RadioSpectrum) HasServAttrCom() bool {
-	if o != nil && !isNil(o.ServAttrCom) {
+	if o != nil && !IsNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RadioSpectrum) SetServAttrCom(v ServAttrCom) {
 
 // GetNROperatingBands returns the NROperatingBands field value if set, zero value otherwise.
 func (o *RadioSpectrum) GetNROperatingBands() string {
-	if o == nil || isNil(o.NROperatingBands) {
+	if o == nil || IsNil(o.NROperatingBands) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RadioSpectrum) GetNROperatingBands() string {
 // GetNROperatingBandsOk returns a tuple with the NROperatingBands field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioSpectrum) GetNROperatingBandsOk() (*string, bool) {
-	if o == nil || isNil(o.NROperatingBands) {
+	if o == nil || IsNil(o.NROperatingBands) {
 		return nil, false
 	}
 	return o.NROperatingBands, true
@@ -92,7 +92,7 @@ func (o *RadioSpectrum) GetNROperatingBandsOk() (*string, bool) {
 
 // HasNROperatingBands returns a boolean if a field has been set.
 func (o *RadioSpectrum) HasNROperatingBands() bool {
-	if o != nil && !isNil(o.NROperatingBands) {
+	if o != nil && !IsNil(o.NROperatingBands) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RadioSpectrum) SetNROperatingBands(v string) {
 }
 
 func (o RadioSpectrum) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RadioSpectrum) MarshalJSON() ([]byte, error) {
 
 func (o RadioSpectrum) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServAttrCom) {
+	if !IsNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !isNil(o.NROperatingBands) {
+	if !IsNil(o.NROperatingBands) {
 		toSerialize["nROperatingBands"] = o.NROperatingBands
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRadioSpectrum) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

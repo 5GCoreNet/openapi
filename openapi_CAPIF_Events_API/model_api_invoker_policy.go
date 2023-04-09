@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -25,7 +25,7 @@ type ApiInvokerPolicy struct {
 	AllowedTotalInvocations *int32 `json:"allowedTotalInvocations,omitempty"`
 	// Invocations per second allowed on the service API by the API invoker.
 	AllowedInvocationsPerSecond *int32 `json:"allowedInvocationsPerSecond,omitempty"`
-	// The time ranges during which the invocations are allowed on the service API by the API invoker. 
+	// The time ranges during which the invocations are allowed on the service API by the API invoker.
 	AllowedInvocationTimeRangeList []TimeRangeList `json:"allowedInvocationTimeRangeList,omitempty"`
 }
 
@@ -73,7 +73,7 @@ func (o *ApiInvokerPolicy) SetApiInvokerId(v string) {
 
 // GetAllowedTotalInvocations returns the AllowedTotalInvocations field value if set, zero value otherwise.
 func (o *ApiInvokerPolicy) GetAllowedTotalInvocations() int32 {
-	if o == nil || isNil(o.AllowedTotalInvocations) {
+	if o == nil || IsNil(o.AllowedTotalInvocations) {
 		var ret int32
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ApiInvokerPolicy) GetAllowedTotalInvocations() int32 {
 // GetAllowedTotalInvocationsOk returns a tuple with the AllowedTotalInvocations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiInvokerPolicy) GetAllowedTotalInvocationsOk() (*int32, bool) {
-	if o == nil || isNil(o.AllowedTotalInvocations) {
+	if o == nil || IsNil(o.AllowedTotalInvocations) {
 		return nil, false
 	}
 	return o.AllowedTotalInvocations, true
@@ -91,7 +91,7 @@ func (o *ApiInvokerPolicy) GetAllowedTotalInvocationsOk() (*int32, bool) {
 
 // HasAllowedTotalInvocations returns a boolean if a field has been set.
 func (o *ApiInvokerPolicy) HasAllowedTotalInvocations() bool {
-	if o != nil && !isNil(o.AllowedTotalInvocations) {
+	if o != nil && !IsNil(o.AllowedTotalInvocations) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ApiInvokerPolicy) SetAllowedTotalInvocations(v int32) {
 
 // GetAllowedInvocationsPerSecond returns the AllowedInvocationsPerSecond field value if set, zero value otherwise.
 func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecond() int32 {
-	if o == nil || isNil(o.AllowedInvocationsPerSecond) {
+	if o == nil || IsNil(o.AllowedInvocationsPerSecond) {
 		var ret int32
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecond() int32 {
 // GetAllowedInvocationsPerSecondOk returns a tuple with the AllowedInvocationsPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecondOk() (*int32, bool) {
-	if o == nil || isNil(o.AllowedInvocationsPerSecond) {
+	if o == nil || IsNil(o.AllowedInvocationsPerSecond) {
 		return nil, false
 	}
 	return o.AllowedInvocationsPerSecond, true
@@ -123,7 +123,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecondOk() (*int32, bool) {
 
 // HasAllowedInvocationsPerSecond returns a boolean if a field has been set.
 func (o *ApiInvokerPolicy) HasAllowedInvocationsPerSecond() bool {
-	if o != nil && !isNil(o.AllowedInvocationsPerSecond) {
+	if o != nil && !IsNil(o.AllowedInvocationsPerSecond) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *ApiInvokerPolicy) SetAllowedInvocationsPerSecond(v int32) {
 
 // GetAllowedInvocationTimeRangeList returns the AllowedInvocationTimeRangeList field value if set, zero value otherwise.
 func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeList() []TimeRangeList {
-	if o == nil || isNil(o.AllowedInvocationTimeRangeList) {
+	if o == nil || IsNil(o.AllowedInvocationTimeRangeList) {
 		var ret []TimeRangeList
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeList() []TimeRangeList {
 // GetAllowedInvocationTimeRangeListOk returns a tuple with the AllowedInvocationTimeRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeListOk() ([]TimeRangeList, bool) {
-	if o == nil || isNil(o.AllowedInvocationTimeRangeList) {
+	if o == nil || IsNil(o.AllowedInvocationTimeRangeList) {
 		return nil, false
 	}
 	return o.AllowedInvocationTimeRangeList, true
@@ -155,7 +155,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeListOk() ([]TimeRangeLis
 
 // HasAllowedInvocationTimeRangeList returns a boolean if a field has been set.
 func (o *ApiInvokerPolicy) HasAllowedInvocationTimeRangeList() bool {
-	if o != nil && !isNil(o.AllowedInvocationTimeRangeList) {
+	if o != nil && !IsNil(o.AllowedInvocationTimeRangeList) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *ApiInvokerPolicy) SetAllowedInvocationTimeRangeList(v []TimeRangeList) 
 }
 
 func (o ApiInvokerPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -178,13 +178,13 @@ func (o ApiInvokerPolicy) MarshalJSON() ([]byte, error) {
 func (o ApiInvokerPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiInvokerId"] = o.ApiInvokerId
-	if !isNil(o.AllowedTotalInvocations) {
+	if !IsNil(o.AllowedTotalInvocations) {
 		toSerialize["allowedTotalInvocations"] = o.AllowedTotalInvocations
 	}
-	if !isNil(o.AllowedInvocationsPerSecond) {
+	if !IsNil(o.AllowedInvocationsPerSecond) {
 		toSerialize["allowedInvocationsPerSecond"] = o.AllowedInvocationsPerSecond
 	}
-	if !isNil(o.AllowedInvocationTimeRangeList) {
+	if !IsNil(o.AllowedInvocationTimeRangeList) {
 		toSerialize["allowedInvocationTimeRangeList"] = o.AllowedInvocationTimeRangeList
 	}
 	return toSerialize, nil
@@ -225,5 +225,3 @@ func (v *NullableApiInvokerPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

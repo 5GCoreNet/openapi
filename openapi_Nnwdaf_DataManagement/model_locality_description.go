@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &LocalityDescription{}
 
 // LocalityDescription Locality description
 type LocalityDescription struct {
-	LocalityType LocalityType `json:"localityType"`
-	LocalityValue string `json:"localityValue"`
+	LocalityType      LocalityType              `json:"localityType"`
+	LocalityValue     string                    `json:"localityValue"`
 	AddlLocDescrItems []LocalityDescriptionItem `json:"addlLocDescrItems,omitempty"`
 }
 
@@ -93,7 +93,7 @@ func (o *LocalityDescription) SetLocalityValue(v string) {
 
 // GetAddlLocDescrItems returns the AddlLocDescrItems field value if set, zero value otherwise.
 func (o *LocalityDescription) GetAddlLocDescrItems() []LocalityDescriptionItem {
-	if o == nil || isNil(o.AddlLocDescrItems) {
+	if o == nil || IsNil(o.AddlLocDescrItems) {
 		var ret []LocalityDescriptionItem
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *LocalityDescription) GetAddlLocDescrItems() []LocalityDescriptionItem {
 // GetAddlLocDescrItemsOk returns a tuple with the AddlLocDescrItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalityDescription) GetAddlLocDescrItemsOk() ([]LocalityDescriptionItem, bool) {
-	if o == nil || isNil(o.AddlLocDescrItems) {
+	if o == nil || IsNil(o.AddlLocDescrItems) {
 		return nil, false
 	}
 	return o.AddlLocDescrItems, true
@@ -111,7 +111,7 @@ func (o *LocalityDescription) GetAddlLocDescrItemsOk() ([]LocalityDescriptionIte
 
 // HasAddlLocDescrItems returns a boolean if a field has been set.
 func (o *LocalityDescription) HasAddlLocDescrItems() bool {
-	if o != nil && !isNil(o.AddlLocDescrItems) {
+	if o != nil && !IsNil(o.AddlLocDescrItems) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *LocalityDescription) SetAddlLocDescrItems(v []LocalityDescriptionItem) 
 }
 
 func (o LocalityDescription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o LocalityDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["localityType"] = o.LocalityType
 	toSerialize["localityValue"] = o.LocalityValue
-	if !isNil(o.AddlLocDescrItems) {
+	if !IsNil(o.AddlLocDescrItems) {
 		toSerialize["addlLocDescrItems"] = o.AddlLocDescrItems
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableLocalityDescription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

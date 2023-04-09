@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &PtpInstance{}
 
 // PtpInstance Contains PTP instance configuration and activation requested by the AF.
 type PtpInstance struct {
-	InstanceType InstanceType `json:"instanceType"`
-	Protocol Protocol `json:"protocol"`
-	PtpProfile string `json:"ptpProfile"`
-	PortConfigs []ConfigForPort `json:"portConfigs,omitempty"`
+	InstanceType InstanceType    `json:"instanceType"`
+	Protocol     Protocol        `json:"protocol"`
+	PtpProfile   string          `json:"ptpProfile"`
+	PortConfigs  []ConfigForPort `json:"portConfigs,omitempty"`
 }
 
 // NewPtpInstance instantiates a new PtpInstance object
@@ -119,7 +119,7 @@ func (o *PtpInstance) SetPtpProfile(v string) {
 
 // GetPortConfigs returns the PortConfigs field value if set, zero value otherwise.
 func (o *PtpInstance) GetPortConfigs() []ConfigForPort {
-	if o == nil || isNil(o.PortConfigs) {
+	if o == nil || IsNil(o.PortConfigs) {
 		var ret []ConfigForPort
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PtpInstance) GetPortConfigs() []ConfigForPort {
 // GetPortConfigsOk returns a tuple with the PortConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PtpInstance) GetPortConfigsOk() ([]ConfigForPort, bool) {
-	if o == nil || isNil(o.PortConfigs) {
+	if o == nil || IsNil(o.PortConfigs) {
 		return nil, false
 	}
 	return o.PortConfigs, true
@@ -137,7 +137,7 @@ func (o *PtpInstance) GetPortConfigsOk() ([]ConfigForPort, bool) {
 
 // HasPortConfigs returns a boolean if a field has been set.
 func (o *PtpInstance) HasPortConfigs() bool {
-	if o != nil && !isNil(o.PortConfigs) {
+	if o != nil && !IsNil(o.PortConfigs) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *PtpInstance) SetPortConfigs(v []ConfigForPort) {
 }
 
 func (o PtpInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,7 +162,7 @@ func (o PtpInstance) ToMap() (map[string]interface{}, error) {
 	toSerialize["instanceType"] = o.InstanceType
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["ptpProfile"] = o.PtpProfile
-	if !isNil(o.PortConfigs) {
+	if !IsNil(o.PortConfigs) {
 		toSerialize["portConfigs"] = o.PortConfigs
 	}
 	return toSerialize, nil
@@ -203,5 +203,3 @@ func (v *NullablePtpInstance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

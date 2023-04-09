@@ -1,7 +1,7 @@
 /*
 Nnef_EventExposure
 
-NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &UeTrajectoryInfo{}
 // UeTrajectoryInfo Contains UE trajectory information.
 type UeTrajectoryInfo struct {
 	// string with format 'date-time' as defined in OpenAPI.
-	Ts time.Time `json:"ts"`
+	Ts       time.Time    `json:"ts"`
 	Location UserLocation `json:"location"`
 }
 
@@ -93,7 +93,7 @@ func (o *UeTrajectoryInfo) SetLocation(v UserLocation) {
 }
 
 func (o UeTrajectoryInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableUeTrajectoryInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

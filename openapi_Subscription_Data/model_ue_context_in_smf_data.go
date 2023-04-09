@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &UeContextInSmfData{}
 // UeContextInSmfData struct for UeContextInSmfData
 type UeContextInSmfData struct {
 	// A map (list of key-value pairs where PduSessionId serves as key) of PduSessions
-	PduSessions *map[string]PduSession `json:"pduSessions,omitempty"`
-	PgwInfo []PgwInfo `json:"pgwInfo,omitempty"`
-	EmergencyInfo *EmergencyInfo `json:"emergencyInfo,omitempty"`
+	PduSessions   *map[string]PduSession `json:"pduSessions,omitempty"`
+	PgwInfo       []PgwInfo              `json:"pgwInfo,omitempty"`
+	EmergencyInfo *EmergencyInfo         `json:"emergencyInfo,omitempty"`
 }
 
 // NewUeContextInSmfData instantiates a new UeContextInSmfData object
@@ -44,7 +44,7 @@ func NewUeContextInSmfDataWithDefaults() *UeContextInSmfData {
 
 // GetPduSessions returns the PduSessions field value if set, zero value otherwise.
 func (o *UeContextInSmfData) GetPduSessions() map[string]PduSession {
-	if o == nil || isNil(o.PduSessions) {
+	if o == nil || IsNil(o.PduSessions) {
 		var ret map[string]PduSession
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UeContextInSmfData) GetPduSessions() map[string]PduSession {
 // GetPduSessionsOk returns a tuple with the PduSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmfData) GetPduSessionsOk() (*map[string]PduSession, bool) {
-	if o == nil || isNil(o.PduSessions) {
+	if o == nil || IsNil(o.PduSessions) {
 		return nil, false
 	}
 	return o.PduSessions, true
@@ -62,7 +62,7 @@ func (o *UeContextInSmfData) GetPduSessionsOk() (*map[string]PduSession, bool) {
 
 // HasPduSessions returns a boolean if a field has been set.
 func (o *UeContextInSmfData) HasPduSessions() bool {
-	if o != nil && !isNil(o.PduSessions) {
+	if o != nil && !IsNil(o.PduSessions) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *UeContextInSmfData) SetPduSessions(v map[string]PduSession) {
 
 // GetPgwInfo returns the PgwInfo field value if set, zero value otherwise.
 func (o *UeContextInSmfData) GetPgwInfo() []PgwInfo {
-	if o == nil || isNil(o.PgwInfo) {
+	if o == nil || IsNil(o.PgwInfo) {
 		var ret []PgwInfo
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UeContextInSmfData) GetPgwInfo() []PgwInfo {
 // GetPgwInfoOk returns a tuple with the PgwInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmfData) GetPgwInfoOk() ([]PgwInfo, bool) {
-	if o == nil || isNil(o.PgwInfo) {
+	if o == nil || IsNil(o.PgwInfo) {
 		return nil, false
 	}
 	return o.PgwInfo, true
@@ -94,7 +94,7 @@ func (o *UeContextInSmfData) GetPgwInfoOk() ([]PgwInfo, bool) {
 
 // HasPgwInfo returns a boolean if a field has been set.
 func (o *UeContextInSmfData) HasPgwInfo() bool {
-	if o != nil && !isNil(o.PgwInfo) {
+	if o != nil && !IsNil(o.PgwInfo) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *UeContextInSmfData) SetPgwInfo(v []PgwInfo) {
 
 // GetEmergencyInfo returns the EmergencyInfo field value if set, zero value otherwise.
 func (o *UeContextInSmfData) GetEmergencyInfo() EmergencyInfo {
-	if o == nil || isNil(o.EmergencyInfo) {
+	if o == nil || IsNil(o.EmergencyInfo) {
 		var ret EmergencyInfo
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UeContextInSmfData) GetEmergencyInfo() EmergencyInfo {
 // GetEmergencyInfoOk returns a tuple with the EmergencyInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmfData) GetEmergencyInfoOk() (*EmergencyInfo, bool) {
-	if o == nil || isNil(o.EmergencyInfo) {
+	if o == nil || IsNil(o.EmergencyInfo) {
 		return nil, false
 	}
 	return o.EmergencyInfo, true
@@ -126,7 +126,7 @@ func (o *UeContextInSmfData) GetEmergencyInfoOk() (*EmergencyInfo, bool) {
 
 // HasEmergencyInfo returns a boolean if a field has been set.
 func (o *UeContextInSmfData) HasEmergencyInfo() bool {
-	if o != nil && !isNil(o.EmergencyInfo) {
+	if o != nil && !IsNil(o.EmergencyInfo) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *UeContextInSmfData) SetEmergencyInfo(v EmergencyInfo) {
 }
 
 func (o UeContextInSmfData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o UeContextInSmfData) MarshalJSON() ([]byte, error) {
 
 func (o UeContextInSmfData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PduSessions) {
+	if !IsNil(o.PduSessions) {
 		toSerialize["pduSessions"] = o.PduSessions
 	}
-	if !isNil(o.PgwInfo) {
+	if !IsNil(o.PgwInfo) {
 		toSerialize["pgwInfo"] = o.PgwInfo
 	}
-	if !isNil(o.EmergencyInfo) {
+	if !IsNil(o.EmergencyInfo) {
 		toSerialize["emergencyInfo"] = o.EmergencyInfo
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableUeContextInSmfData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

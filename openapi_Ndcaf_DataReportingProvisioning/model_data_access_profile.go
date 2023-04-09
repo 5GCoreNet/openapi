@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReportingProvisioning
 
-Data Collection AF: Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &DataAccessProfile{}
 
 // DataAccessProfile A data access profile.
 type DataAccessProfile struct {
-	DataAccessProfileId string `json:"dataAccessProfileId"`
-	TargetEventConsumerTypes []EventConsumerType `json:"targetEventConsumerTypes"`
-	Parameters []string `json:"parameters"`
-	TimeAccessRestrictions *DataAccessProfileTimeAccessRestrictions `json:"timeAccessRestrictions,omitempty"`
-	UserAccessRestrictions *DataAccessProfileUserAccessRestrictions `json:"userAccessRestrictions,omitempty"`
+	DataAccessProfileId        string                                       `json:"dataAccessProfileId"`
+	TargetEventConsumerTypes   []EventConsumerType                          `json:"targetEventConsumerTypes"`
+	Parameters                 []string                                     `json:"parameters"`
+	TimeAccessRestrictions     *DataAccessProfileTimeAccessRestrictions     `json:"timeAccessRestrictions,omitempty"`
+	UserAccessRestrictions     *DataAccessProfileUserAccessRestrictions     `json:"userAccessRestrictions,omitempty"`
 	LocationAccessRestrictions *DataAccessProfileLocationAccessRestrictions `json:"locationAccessRestrictions,omitempty"`
 }
 
@@ -121,7 +121,7 @@ func (o *DataAccessProfile) SetParameters(v []string) {
 
 // GetTimeAccessRestrictions returns the TimeAccessRestrictions field value if set, zero value otherwise.
 func (o *DataAccessProfile) GetTimeAccessRestrictions() DataAccessProfileTimeAccessRestrictions {
-	if o == nil || isNil(o.TimeAccessRestrictions) {
+	if o == nil || IsNil(o.TimeAccessRestrictions) {
 		var ret DataAccessProfileTimeAccessRestrictions
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *DataAccessProfile) GetTimeAccessRestrictions() DataAccessProfileTimeAcc
 // GetTimeAccessRestrictionsOk returns a tuple with the TimeAccessRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataAccessProfile) GetTimeAccessRestrictionsOk() (*DataAccessProfileTimeAccessRestrictions, bool) {
-	if o == nil || isNil(o.TimeAccessRestrictions) {
+	if o == nil || IsNil(o.TimeAccessRestrictions) {
 		return nil, false
 	}
 	return o.TimeAccessRestrictions, true
@@ -139,7 +139,7 @@ func (o *DataAccessProfile) GetTimeAccessRestrictionsOk() (*DataAccessProfileTim
 
 // HasTimeAccessRestrictions returns a boolean if a field has been set.
 func (o *DataAccessProfile) HasTimeAccessRestrictions() bool {
-	if o != nil && !isNil(o.TimeAccessRestrictions) {
+	if o != nil && !IsNil(o.TimeAccessRestrictions) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *DataAccessProfile) SetTimeAccessRestrictions(v DataAccessProfileTimeAcc
 
 // GetUserAccessRestrictions returns the UserAccessRestrictions field value if set, zero value otherwise.
 func (o *DataAccessProfile) GetUserAccessRestrictions() DataAccessProfileUserAccessRestrictions {
-	if o == nil || isNil(o.UserAccessRestrictions) {
+	if o == nil || IsNil(o.UserAccessRestrictions) {
 		var ret DataAccessProfileUserAccessRestrictions
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *DataAccessProfile) GetUserAccessRestrictions() DataAccessProfileUserAcc
 // GetUserAccessRestrictionsOk returns a tuple with the UserAccessRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataAccessProfile) GetUserAccessRestrictionsOk() (*DataAccessProfileUserAccessRestrictions, bool) {
-	if o == nil || isNil(o.UserAccessRestrictions) {
+	if o == nil || IsNil(o.UserAccessRestrictions) {
 		return nil, false
 	}
 	return o.UserAccessRestrictions, true
@@ -171,7 +171,7 @@ func (o *DataAccessProfile) GetUserAccessRestrictionsOk() (*DataAccessProfileUse
 
 // HasUserAccessRestrictions returns a boolean if a field has been set.
 func (o *DataAccessProfile) HasUserAccessRestrictions() bool {
-	if o != nil && !isNil(o.UserAccessRestrictions) {
+	if o != nil && !IsNil(o.UserAccessRestrictions) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *DataAccessProfile) SetUserAccessRestrictions(v DataAccessProfileUserAcc
 
 // GetLocationAccessRestrictions returns the LocationAccessRestrictions field value if set, zero value otherwise.
 func (o *DataAccessProfile) GetLocationAccessRestrictions() DataAccessProfileLocationAccessRestrictions {
-	if o == nil || isNil(o.LocationAccessRestrictions) {
+	if o == nil || IsNil(o.LocationAccessRestrictions) {
 		var ret DataAccessProfileLocationAccessRestrictions
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *DataAccessProfile) GetLocationAccessRestrictions() DataAccessProfileLoc
 // GetLocationAccessRestrictionsOk returns a tuple with the LocationAccessRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataAccessProfile) GetLocationAccessRestrictionsOk() (*DataAccessProfileLocationAccessRestrictions, bool) {
-	if o == nil || isNil(o.LocationAccessRestrictions) {
+	if o == nil || IsNil(o.LocationAccessRestrictions) {
 		return nil, false
 	}
 	return o.LocationAccessRestrictions, true
@@ -203,7 +203,7 @@ func (o *DataAccessProfile) GetLocationAccessRestrictionsOk() (*DataAccessProfil
 
 // HasLocationAccessRestrictions returns a boolean if a field has been set.
 func (o *DataAccessProfile) HasLocationAccessRestrictions() bool {
-	if o != nil && !isNil(o.LocationAccessRestrictions) {
+	if o != nil && !IsNil(o.LocationAccessRestrictions) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *DataAccessProfile) SetLocationAccessRestrictions(v DataAccessProfileLoc
 }
 
 func (o DataAccessProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -228,13 +228,13 @@ func (o DataAccessProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize["dataAccessProfileId"] = o.DataAccessProfileId
 	toSerialize["targetEventConsumerTypes"] = o.TargetEventConsumerTypes
 	toSerialize["parameters"] = o.Parameters
-	if !isNil(o.TimeAccessRestrictions) {
+	if !IsNil(o.TimeAccessRestrictions) {
 		toSerialize["timeAccessRestrictions"] = o.TimeAccessRestrictions
 	}
-	if !isNil(o.UserAccessRestrictions) {
+	if !IsNil(o.UserAccessRestrictions) {
 		toSerialize["userAccessRestrictions"] = o.UserAccessRestrictions
 	}
-	if !isNil(o.LocationAccessRestrictions) {
+	if !IsNil(o.LocationAccessRestrictions) {
 		toSerialize["locationAccessRestrictions"] = o.LocationAccessRestrictions
 	}
 	return toSerialize, nil
@@ -275,5 +275,3 @@ func (v *NullableDataAccessProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

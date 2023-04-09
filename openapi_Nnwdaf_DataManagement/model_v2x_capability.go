@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &V2xCapability{}
 // V2xCapability Indicate the supported V2X Capability by the PCF.
 type V2xCapability struct {
 	LteV2x *bool `json:"lteV2x,omitempty"`
-	NrV2x *bool `json:"nrV2x,omitempty"`
+	NrV2x  *bool `json:"nrV2x,omitempty"`
 }
 
 // NewV2xCapability instantiates a new V2xCapability object
@@ -50,7 +50,7 @@ func NewV2xCapabilityWithDefaults() *V2xCapability {
 
 // GetLteV2x returns the LteV2x field value if set, zero value otherwise.
 func (o *V2xCapability) GetLteV2x() bool {
-	if o == nil || isNil(o.LteV2x) {
+	if o == nil || IsNil(o.LteV2x) {
 		var ret bool
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *V2xCapability) GetLteV2x() bool {
 // GetLteV2xOk returns a tuple with the LteV2x field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xCapability) GetLteV2xOk() (*bool, bool) {
-	if o == nil || isNil(o.LteV2x) {
+	if o == nil || IsNil(o.LteV2x) {
 		return nil, false
 	}
 	return o.LteV2x, true
@@ -68,7 +68,7 @@ func (o *V2xCapability) GetLteV2xOk() (*bool, bool) {
 
 // HasLteV2x returns a boolean if a field has been set.
 func (o *V2xCapability) HasLteV2x() bool {
-	if o != nil && !isNil(o.LteV2x) {
+	if o != nil && !IsNil(o.LteV2x) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *V2xCapability) SetLteV2x(v bool) {
 
 // GetNrV2x returns the NrV2x field value if set, zero value otherwise.
 func (o *V2xCapability) GetNrV2x() bool {
-	if o == nil || isNil(o.NrV2x) {
+	if o == nil || IsNil(o.NrV2x) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *V2xCapability) GetNrV2x() bool {
 // GetNrV2xOk returns a tuple with the NrV2x field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xCapability) GetNrV2xOk() (*bool, bool) {
-	if o == nil || isNil(o.NrV2x) {
+	if o == nil || IsNil(o.NrV2x) {
 		return nil, false
 	}
 	return o.NrV2x, true
@@ -100,7 +100,7 @@ func (o *V2xCapability) GetNrV2xOk() (*bool, bool) {
 
 // HasNrV2x returns a boolean if a field has been set.
 func (o *V2xCapability) HasNrV2x() bool {
-	if o != nil && !isNil(o.NrV2x) {
+	if o != nil && !IsNil(o.NrV2x) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *V2xCapability) SetNrV2x(v bool) {
 }
 
 func (o V2xCapability) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -122,10 +122,10 @@ func (o V2xCapability) MarshalJSON() ([]byte, error) {
 
 func (o V2xCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LteV2x) {
+	if !IsNil(o.LteV2x) {
 		toSerialize["lteV2x"] = o.LteV2x
 	}
-	if !isNil(o.NrV2x) {
+	if !IsNil(o.NrV2x) {
 		toSerialize["nrV2x"] = o.NrV2x
 	}
 	return toSerialize, nil
@@ -166,5 +166,3 @@ func (v *NullableV2xCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

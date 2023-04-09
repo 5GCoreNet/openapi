@@ -1,18 +1,11 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
 api_default.go
 client.go
 configuration.go
-docs/DefaultApi.md
-docs/ECRControl.md
-docs/ECRData.md
-docs/EcRestrictionDataWb.md
-docs/InvalidParam.md
-docs/PlmnEcRestrictionDataWb.md
-docs/PlmnId.md
-docs/ProblemDetails.md
 git_push.sh
 go.mod
 go.sum
@@ -24,5 +17,4 @@ model_plmn_ec_restriction_data_wb.go
 model_plmn_id.go
 model_problem_details.go
 response.go
-test/api_default_test.go
 utils.go

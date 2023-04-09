@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &EcRestrictionDataWb{}
 // EcRestrictionDataWb Enhanced Coverage Restriction Data for WB-N1 mode
 type EcRestrictionDataWb struct {
 	EcModeARestricted *bool `json:"ecModeARestricted,omitempty"`
-	EcModeBRestricted bool `json:"ecModeBRestricted"`
+	EcModeBRestricted bool  `json:"ecModeBRestricted"`
 }
 
 // NewEcRestrictionDataWb instantiates a new EcRestrictionDataWb object
@@ -47,7 +47,7 @@ func NewEcRestrictionDataWbWithDefaults() *EcRestrictionDataWb {
 
 // GetEcModeARestricted returns the EcModeARestricted field value if set, zero value otherwise.
 func (o *EcRestrictionDataWb) GetEcModeARestricted() bool {
-	if o == nil || isNil(o.EcModeARestricted) {
+	if o == nil || IsNil(o.EcModeARestricted) {
 		var ret bool
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *EcRestrictionDataWb) GetEcModeARestricted() bool {
 // GetEcModeARestrictedOk returns a tuple with the EcModeARestricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcRestrictionDataWb) GetEcModeARestrictedOk() (*bool, bool) {
-	if o == nil || isNil(o.EcModeARestricted) {
+	if o == nil || IsNil(o.EcModeARestricted) {
 		return nil, false
 	}
 	return o.EcModeARestricted, true
@@ -65,7 +65,7 @@ func (o *EcRestrictionDataWb) GetEcModeARestrictedOk() (*bool, bool) {
 
 // HasEcModeARestricted returns a boolean if a field has been set.
 func (o *EcRestrictionDataWb) HasEcModeARestricted() bool {
-	if o != nil && !isNil(o.EcModeARestricted) {
+	if o != nil && !IsNil(o.EcModeARestricted) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *EcRestrictionDataWb) SetEcModeBRestricted(v bool) {
 }
 
 func (o EcRestrictionDataWb) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -111,7 +111,7 @@ func (o EcRestrictionDataWb) MarshalJSON() ([]byte, error) {
 
 func (o EcRestrictionDataWb) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EcModeARestricted) {
+	if !IsNil(o.EcModeARestricted) {
 		toSerialize["ecModeARestricted"] = o.EcModeARestricted
 	}
 	toSerialize["ecModeBRestricted"] = o.EcModeBRestricted
@@ -153,5 +153,3 @@ func (v *NullableEcRestrictionDataWb) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

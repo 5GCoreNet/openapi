@@ -19,10 +19,10 @@ var _ MappedNullable = &ResourceOneOf{}
 
 // ResourceOneOf struct for ResourceOneOf
 type ResourceOneOf struct {
-	Id string `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	Attributes map[string]interface{} `json:"attributes,omitempty"`
+	Id             string                 `json:"id"`
+	ObjectClass    *string                `json:"objectClass,omitempty"`
+	ObjectInstance *string                `json:"objectInstance,omitempty"`
+	Attributes     map[string]interface{} `json:"attributes,omitempty"`
 }
 
 // NewResourceOneOf instantiates a new ResourceOneOf object
@@ -69,7 +69,7 @@ func (o *ResourceOneOf) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *ResourceOneOf) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
+	if o == nil || IsNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ResourceOneOf) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceOneOf) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
+	if o == nil || IsNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -87,7 +87,7 @@ func (o *ResourceOneOf) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *ResourceOneOf) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
+	if o != nil && !IsNil(o.ObjectClass) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *ResourceOneOf) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *ResourceOneOf) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ResourceOneOf) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceOneOf) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -119,7 +119,7 @@ func (o *ResourceOneOf) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *ResourceOneOf) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
+	if o != nil && !IsNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ResourceOneOf) SetObjectInstance(v string) {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *ResourceOneOf) GetAttributes() map[string]interface{} {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ResourceOneOf) GetAttributes() map[string]interface{} {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceOneOf) GetAttributesOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return map[string]interface{}{}, false
 	}
 	return o.Attributes, true
@@ -151,7 +151,7 @@ func (o *ResourceOneOf) GetAttributesOk() (map[string]interface{}, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ResourceOneOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *ResourceOneOf) SetAttributes(v map[string]interface{}) {
 }
 
 func (o ResourceOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,13 +174,13 @@ func (o ResourceOneOf) MarshalJSON() ([]byte, error) {
 func (o ResourceOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	if !isNil(o.ObjectClass) {
+	if !IsNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !isNil(o.ObjectInstance) {
+	if !IsNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -221,5 +221,3 @@ func (v *NullableResourceOneOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &SmPolicySnssaiDataPatch{}
 // SmPolicySnssaiDataPatch Contains the SM policy data for a given subscriber and S-NSSAI.
 type SmPolicySnssaiDataPatch struct {
 	Snssai Snssai `json:"snssai"`
-	// Modifiable Session Management Policy data per DNN for all the DNNs of the indicated S-NSSAI. The key of the map is the DNN. 
+	// Modifiable Session Management Policy data per DNN for all the DNNs of the indicated S-NSSAI. The key of the map is the DNN.
 	SmPolicyDnnData *map[string]SmPolicyDnnDataPatch `json:"smPolicyDnnData,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *SmPolicySnssaiDataPatch) SetSnssai(v Snssai) {
 
 // GetSmPolicyDnnData returns the SmPolicyDnnData field value if set, zero value otherwise.
 func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnData() map[string]SmPolicyDnnDataPatch {
-	if o == nil || isNil(o.SmPolicyDnnData) {
+	if o == nil || IsNil(o.SmPolicyDnnData) {
 		var ret map[string]SmPolicyDnnDataPatch
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnData() map[string]SmPolicyDnnDat
 // GetSmPolicyDnnDataOk returns a tuple with the SmPolicyDnnData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDnnDataPatch, bool) {
-	if o == nil || isNil(o.SmPolicyDnnData) {
+	if o == nil || IsNil(o.SmPolicyDnnData) {
 		return nil, false
 	}
 	return o.SmPolicyDnnData, true
@@ -86,7 +86,7 @@ func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDn
 
 // HasSmPolicyDnnData returns a boolean if a field has been set.
 func (o *SmPolicySnssaiDataPatch) HasSmPolicyDnnData() bool {
-	if o != nil && !isNil(o.SmPolicyDnnData) {
+	if o != nil && !IsNil(o.SmPolicyDnnData) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *SmPolicySnssaiDataPatch) SetSmPolicyDnnData(v map[string]SmPolicyDnnDat
 }
 
 func (o SmPolicySnssaiDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o SmPolicySnssaiDataPatch) MarshalJSON() ([]byte, error) {
 func (o SmPolicySnssaiDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.SmPolicyDnnData) {
+	if !IsNil(o.SmPolicyDnnData) {
 		toSerialize["smPolicyDnnData"] = o.SmPolicyDnnData
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableSmPolicySnssaiDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

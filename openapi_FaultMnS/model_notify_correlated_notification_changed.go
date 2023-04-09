@@ -19,21 +19,17 @@ var _ MappedNullable = &NotifyCorrelatedNotificationChanged{}
 
 // NotifyCorrelatedNotificationChanged struct for NotifyCorrelatedNotificationChanged
 type NotifyCorrelatedNotificationChanged struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	AlarmId string `json:"alarmId"`
+	NotificationHeader
+	AlarmId                 string                   `json:"alarmId"`
 	CorrelatedNotifications []CorrelatedNotification `json:"correlatedNotifications"`
-	RootCauseIndicator *bool `json:"rootCauseIndicator,omitempty"`
+	RootCauseIndicator      *bool                    `json:"rootCauseIndicator,omitempty"`
 }
 
 // NewNotifyCorrelatedNotificationChanged instantiates a new NotifyCorrelatedNotificationChanged object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyCorrelatedNotificationChanged(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, alarmId string, correlatedNotifications []CorrelatedNotification) *NotifyCorrelatedNotificationChanged {
+func NewNotifyCorrelatedNotificationChanged(alarmId string, correlatedNotifications []CorrelatedNotification, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyCorrelatedNotificationChanged {
 	this := NotifyCorrelatedNotificationChanged{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -51,126 +47,6 @@ func NewNotifyCorrelatedNotificationChanged(href string, notificationId int32, n
 func NewNotifyCorrelatedNotificationChangedWithDefaults() *NotifyCorrelatedNotificationChanged {
 	this := NotifyCorrelatedNotificationChanged{}
 	return &this
-}
-
-// GetHref returns the Href field value
-func (o *NotifyCorrelatedNotificationChanged) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyCorrelatedNotificationChanged) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyCorrelatedNotificationChanged) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyCorrelatedNotificationChanged) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyCorrelatedNotificationChanged) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyCorrelatedNotificationChanged) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyCorrelatedNotificationChanged) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyCorrelatedNotificationChanged) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyCorrelatedNotificationChanged) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyCorrelatedNotificationChanged) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyCorrelatedNotificationChanged) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyCorrelatedNotificationChanged) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyCorrelatedNotificationChanged) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyCorrelatedNotificationChanged) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyCorrelatedNotificationChanged) SetSystemDN(v string) {
-	o.SystemDN = v
 }
 
 // GetAlarmId returns the AlarmId field value
@@ -223,7 +99,7 @@ func (o *NotifyCorrelatedNotificationChanged) SetCorrelatedNotifications(v []Cor
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *NotifyCorrelatedNotificationChanged) GetRootCauseIndicator() bool {
-	if o == nil || isNil(o.RootCauseIndicator) {
+	if o == nil || IsNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -233,7 +109,7 @@ func (o *NotifyCorrelatedNotificationChanged) GetRootCauseIndicator() bool {
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyCorrelatedNotificationChanged) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.RootCauseIndicator) {
+	if o == nil || IsNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -241,7 +117,7 @@ func (o *NotifyCorrelatedNotificationChanged) GetRootCauseIndicatorOk() (*bool, 
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *NotifyCorrelatedNotificationChanged) HasRootCauseIndicator() bool {
-	if o != nil && !isNil(o.RootCauseIndicator) {
+	if o != nil && !IsNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -254,7 +130,7 @@ func (o *NotifyCorrelatedNotificationChanged) SetRootCauseIndicator(v bool) {
 }
 
 func (o NotifyCorrelatedNotificationChanged) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -263,14 +139,17 @@ func (o NotifyCorrelatedNotificationChanged) MarshalJSON() ([]byte, error) {
 
 func (o NotifyCorrelatedNotificationChanged) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
 	toSerialize["alarmId"] = o.AlarmId
 	toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
-	if !isNil(o.RootCauseIndicator) {
+	if !IsNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
 	return toSerialize, nil
@@ -311,5 +190,3 @@ func (v *NullableNotifyCorrelatedNotificationChanged) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the FailureEventInfoForMLModel type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &FailureEventInfoForMLModel{}
 
-// FailureEventInfoForMLModel Represents the event(s) that the subscription is not successful including the failure  reason(s). 
+// FailureEventInfoForMLModel Represents the event(s) that the subscription is not successful including the failure  reason(s).
 type FailureEventInfoForMLModel struct {
-	Event NwdafEvent `json:"event"`
+	Event       NwdafEvent  `json:"event"`
 	FailureCode FailureCode `json:"failureCode"`
 }
 
@@ -91,7 +91,7 @@ func (o *FailureEventInfoForMLModel) SetFailureCode(v FailureCode) {
 }
 
 func (o FailureEventInfoForMLModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableFailureEventInfoForMLModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

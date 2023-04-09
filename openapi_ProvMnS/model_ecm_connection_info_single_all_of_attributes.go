@@ -19,16 +19,16 @@ var _ MappedNullable = &EcmConnectionInfoSingleAllOfAttributes{}
 
 // EcmConnectionInfoSingleAllOfAttributes struct for EcmConnectionInfoSingleAllOfAttributes
 type EcmConnectionInfoSingleAllOfAttributes struct {
-	EASServiceArea *ServingLocation `json:"eASServiceArea,omitempty"`
-	EESServiceArea *ServingLocation `json:"eESServiceArea,omitempty"`
-	EDNServiceArea *ServingLocation `json:"eDNServiceArea,omitempty"`
-	EASIpAddress *string `json:"eASIpAddress,omitempty"`
-	EESIpAddress *string `json:"eESIpAddress,omitempty"`
-	ECSIpAddress *string `json:"eCSIpAddress,omitempty"`
-	EdnIdentifier *string `json:"ednIdentifier,omitempty"`
-	EcmConnectionType *string `json:"ecmConnectionType,omitempty"`
+	EASServiceArea          *ServingLocation        `json:"eASServiceArea,omitempty"`
+	EESServiceArea          *ServingLocation        `json:"eESServiceArea,omitempty"`
+	EDNServiceArea          *ServingLocation        `json:"eDNServiceArea,omitempty"`
+	EASIpAddress            *string                 `json:"eASIpAddress,omitempty"`
+	EESIpAddress            *string                 `json:"eESIpAddress,omitempty"`
+	ECSIpAddress            *string                 `json:"eCSIpAddress,omitempty"`
+	EdnIdentifier           *string                 `json:"ednIdentifier,omitempty"`
+	EcmConnectionType       *string                 `json:"ecmConnectionType,omitempty"`
 	Var5GCNfConnEcmInfoList []Model5GCNfConnEcmInfo `json:"5GCNfConnEcmInfoList,omitempty"`
-	UPFConnectionInfo *UPFConnectionInfo `json:"uPFConnectionInfo,omitempty"`
+	UPFConnectionInfo       *UPFConnectionInfo      `json:"uPFConnectionInfo,omitempty"`
 }
 
 // NewEcmConnectionInfoSingleAllOfAttributes instantiates a new EcmConnectionInfoSingleAllOfAttributes object
@@ -369,7 +369,7 @@ func (o *EcmConnectionInfoSingleAllOfAttributes) SetUPFConnectionInfo(v UPFConne
 }
 
 func (o EcmConnectionInfoSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -446,5 +446,3 @@ func (v *NullableEcmConnectionInfoSingleAllOfAttributes) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

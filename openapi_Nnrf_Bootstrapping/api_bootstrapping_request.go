@@ -1,7 +1,7 @@
 /*
 NRF Bootstrapping
 
-NRF Bootstrapping.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF Bootstrapping.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -13,18 +13,17 @@ package openapi_Nnrf_Bootstrapping
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // BootstrappingRequestApiService BootstrappingRequestApi service
 type BootstrappingRequestApiService service
 
 type ApiBootstrappingInfoRequestRequest struct {
-	ctx context.Context
-	ApiService *BootstrappingRequestApiService
+	ctx         context.Context
+	ApiService  *BootstrappingRequestApiService
 	ifNoneMatch *string
 }
 
@@ -41,24 +40,25 @@ func (r ApiBootstrappingInfoRequestRequest) Execute() (*BootstrappingInfo, *http
 /*
 BootstrappingInfoRequest Bootstrapping Info Request
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBootstrappingInfoRequestRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBootstrappingInfoRequestRequest
 */
 func (a *BootstrappingRequestApiService) BootstrappingInfoRequest(ctx context.Context) ApiBootstrappingInfoRequestRequest {
 	return ApiBootstrappingInfoRequestRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return BootstrappingInfo
+//
+//	@return BootstrappingInfo
 func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBootstrappingInfoRequestRequest) (*BootstrappingInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BootstrappingInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BootstrappingInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BootstrappingRequestApiService.BootstrappingInfoRequest")
@@ -90,7 +90,7 @@ func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -102,9 +102,9 @@ func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -121,8 +121,8 @@ func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -132,8 +132,8 @@ func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -143,8 +143,8 @@ func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -154,8 +154,8 @@ func (a *BootstrappingRequestApiService) BootstrappingInfoRequestExecute(r ApiBo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

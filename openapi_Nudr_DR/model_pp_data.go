@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &PpData{}
 // PpData struct for PpData
 type PpData struct {
 	CommunicationCharacteristics NullableCommunicationCharacteristics `json:"communicationCharacteristics,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures             *string                     `json:"supportedFeatures,omitempty"`
 	ExpectedUeBehaviourParameters NullableExpectedUeBehaviour `json:"expectedUeBehaviourParameters,omitempty"`
-	EcRestriction NullableEcRestriction `json:"ecRestriction,omitempty"`
-	AcsInfo *AcsInfoRm `json:"acsInfo,omitempty"`
-	// String representing the STN-SR as defined in clause 18.6 of 3GPP TS 23.003 with the OpenAPI 'nullable: true' property.  
-	StnSr NullableString `json:"stnSr,omitempty"`
-	LcsPrivacy NullableLcsPrivacy `json:"lcsPrivacy,omitempty"`
-	SorInfo *SorInfo `json:"sorInfo,omitempty"`
+	EcRestriction                 NullableEcRestriction       `json:"ecRestriction,omitempty"`
+	AcsInfo                       *AcsInfoRm                  `json:"acsInfo,omitempty"`
+	// String representing the STN-SR as defined in clause 18.6 of 3GPP TS 23.003 with the OpenAPI 'nullable: true' property.
+	StnSr                    NullableString                     `json:"stnSr,omitempty"`
+	LcsPrivacy               NullableLcsPrivacy                 `json:"lcsPrivacy,omitempty"`
+	SorInfo                  *SorInfo                           `json:"sorInfo,omitempty"`
 	Var5mbsAuthorizationInfo NullableModel5MbsAuthorizationInfo `json:"5mbsAuthorizationInfo,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func NewPpDataWithDefaults() *PpData {
 
 // GetCommunicationCharacteristics returns the CommunicationCharacteristics field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpData) GetCommunicationCharacteristics() CommunicationCharacteristics {
-	if o == nil || isNil(o.CommunicationCharacteristics.Get()) {
+	if o == nil || IsNil(o.CommunicationCharacteristics.Get()) {
 		var ret CommunicationCharacteristics
 		return ret
 	}
@@ -81,6 +81,7 @@ func (o *PpData) HasCommunicationCharacteristics() bool {
 func (o *PpData) SetCommunicationCharacteristics(v CommunicationCharacteristics) {
 	o.CommunicationCharacteristics.Set(&v)
 }
+
 // SetCommunicationCharacteristicsNil sets the value for CommunicationCharacteristics to be an explicit nil
 func (o *PpData) SetCommunicationCharacteristicsNil() {
 	o.CommunicationCharacteristics.Set(nil)
@@ -93,7 +94,7 @@ func (o *PpData) UnsetCommunicationCharacteristics() {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PpData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -103,7 +104,7 @@ func (o *PpData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -111,7 +112,7 @@ func (o *PpData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PpData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -125,7 +126,7 @@ func (o *PpData) SetSupportedFeatures(v string) {
 
 // GetExpectedUeBehaviourParameters returns the ExpectedUeBehaviourParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpData) GetExpectedUeBehaviourParameters() ExpectedUeBehaviour {
-	if o == nil || isNil(o.ExpectedUeBehaviourParameters.Get()) {
+	if o == nil || IsNil(o.ExpectedUeBehaviourParameters.Get()) {
 		var ret ExpectedUeBehaviour
 		return ret
 	}
@@ -155,6 +156,7 @@ func (o *PpData) HasExpectedUeBehaviourParameters() bool {
 func (o *PpData) SetExpectedUeBehaviourParameters(v ExpectedUeBehaviour) {
 	o.ExpectedUeBehaviourParameters.Set(&v)
 }
+
 // SetExpectedUeBehaviourParametersNil sets the value for ExpectedUeBehaviourParameters to be an explicit nil
 func (o *PpData) SetExpectedUeBehaviourParametersNil() {
 	o.ExpectedUeBehaviourParameters.Set(nil)
@@ -167,7 +169,7 @@ func (o *PpData) UnsetExpectedUeBehaviourParameters() {
 
 // GetEcRestriction returns the EcRestriction field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpData) GetEcRestriction() EcRestriction {
-	if o == nil || isNil(o.EcRestriction.Get()) {
+	if o == nil || IsNil(o.EcRestriction.Get()) {
 		var ret EcRestriction
 		return ret
 	}
@@ -197,6 +199,7 @@ func (o *PpData) HasEcRestriction() bool {
 func (o *PpData) SetEcRestriction(v EcRestriction) {
 	o.EcRestriction.Set(&v)
 }
+
 // SetEcRestrictionNil sets the value for EcRestriction to be an explicit nil
 func (o *PpData) SetEcRestrictionNil() {
 	o.EcRestriction.Set(nil)
@@ -209,7 +212,7 @@ func (o *PpData) UnsetEcRestriction() {
 
 // GetAcsInfo returns the AcsInfo field value if set, zero value otherwise.
 func (o *PpData) GetAcsInfo() AcsInfoRm {
-	if o == nil || isNil(o.AcsInfo) {
+	if o == nil || IsNil(o.AcsInfo) {
 		var ret AcsInfoRm
 		return ret
 	}
@@ -219,7 +222,7 @@ func (o *PpData) GetAcsInfo() AcsInfoRm {
 // GetAcsInfoOk returns a tuple with the AcsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpData) GetAcsInfoOk() (*AcsInfoRm, bool) {
-	if o == nil || isNil(o.AcsInfo) {
+	if o == nil || IsNil(o.AcsInfo) {
 		return nil, false
 	}
 	return o.AcsInfo, true
@@ -227,7 +230,7 @@ func (o *PpData) GetAcsInfoOk() (*AcsInfoRm, bool) {
 
 // HasAcsInfo returns a boolean if a field has been set.
 func (o *PpData) HasAcsInfo() bool {
-	if o != nil && !isNil(o.AcsInfo) {
+	if o != nil && !IsNil(o.AcsInfo) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *PpData) SetAcsInfo(v AcsInfoRm) {
 
 // GetStnSr returns the StnSr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpData) GetStnSr() string {
-	if o == nil || isNil(o.StnSr.Get()) {
+	if o == nil || IsNil(o.StnSr.Get()) {
 		var ret string
 		return ret
 	}
@@ -271,6 +274,7 @@ func (o *PpData) HasStnSr() bool {
 func (o *PpData) SetStnSr(v string) {
 	o.StnSr.Set(&v)
 }
+
 // SetStnSrNil sets the value for StnSr to be an explicit nil
 func (o *PpData) SetStnSrNil() {
 	o.StnSr.Set(nil)
@@ -283,7 +287,7 @@ func (o *PpData) UnsetStnSr() {
 
 // GetLcsPrivacy returns the LcsPrivacy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpData) GetLcsPrivacy() LcsPrivacy {
-	if o == nil || isNil(o.LcsPrivacy.Get()) {
+	if o == nil || IsNil(o.LcsPrivacy.Get()) {
 		var ret LcsPrivacy
 		return ret
 	}
@@ -313,6 +317,7 @@ func (o *PpData) HasLcsPrivacy() bool {
 func (o *PpData) SetLcsPrivacy(v LcsPrivacy) {
 	o.LcsPrivacy.Set(&v)
 }
+
 // SetLcsPrivacyNil sets the value for LcsPrivacy to be an explicit nil
 func (o *PpData) SetLcsPrivacyNil() {
 	o.LcsPrivacy.Set(nil)
@@ -325,7 +330,7 @@ func (o *PpData) UnsetLcsPrivacy() {
 
 // GetSorInfo returns the SorInfo field value if set, zero value otherwise.
 func (o *PpData) GetSorInfo() SorInfo {
-	if o == nil || isNil(o.SorInfo) {
+	if o == nil || IsNil(o.SorInfo) {
 		var ret SorInfo
 		return ret
 	}
@@ -335,7 +340,7 @@ func (o *PpData) GetSorInfo() SorInfo {
 // GetSorInfoOk returns a tuple with the SorInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpData) GetSorInfoOk() (*SorInfo, bool) {
-	if o == nil || isNil(o.SorInfo) {
+	if o == nil || IsNil(o.SorInfo) {
 		return nil, false
 	}
 	return o.SorInfo, true
@@ -343,7 +348,7 @@ func (o *PpData) GetSorInfoOk() (*SorInfo, bool) {
 
 // HasSorInfo returns a boolean if a field has been set.
 func (o *PpData) HasSorInfo() bool {
-	if o != nil && !isNil(o.SorInfo) {
+	if o != nil && !IsNil(o.SorInfo) {
 		return true
 	}
 
@@ -357,7 +362,7 @@ func (o *PpData) SetSorInfo(v SorInfo) {
 
 // GetVar5mbsAuthorizationInfo returns the Var5mbsAuthorizationInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpData) GetVar5mbsAuthorizationInfo() Model5MbsAuthorizationInfo {
-	if o == nil || isNil(o.Var5mbsAuthorizationInfo.Get()) {
+	if o == nil || IsNil(o.Var5mbsAuthorizationInfo.Get()) {
 		var ret Model5MbsAuthorizationInfo
 		return ret
 	}
@@ -387,6 +392,7 @@ func (o *PpData) HasVar5mbsAuthorizationInfo() bool {
 func (o *PpData) SetVar5mbsAuthorizationInfo(v Model5MbsAuthorizationInfo) {
 	o.Var5mbsAuthorizationInfo.Set(&v)
 }
+
 // SetVar5mbsAuthorizationInfoNil sets the value for Var5mbsAuthorizationInfo to be an explicit nil
 func (o *PpData) SetVar5mbsAuthorizationInfoNil() {
 	o.Var5mbsAuthorizationInfo.Set(nil)
@@ -398,7 +404,7 @@ func (o *PpData) UnsetVar5mbsAuthorizationInfo() {
 }
 
 func (o PpData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -410,7 +416,7 @@ func (o PpData) ToMap() (map[string]interface{}, error) {
 	if o.CommunicationCharacteristics.IsSet() {
 		toSerialize["communicationCharacteristics"] = o.CommunicationCharacteristics.Get()
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	if o.ExpectedUeBehaviourParameters.IsSet() {
@@ -419,7 +425,7 @@ func (o PpData) ToMap() (map[string]interface{}, error) {
 	if o.EcRestriction.IsSet() {
 		toSerialize["ecRestriction"] = o.EcRestriction.Get()
 	}
-	if !isNil(o.AcsInfo) {
+	if !IsNil(o.AcsInfo) {
 		toSerialize["acsInfo"] = o.AcsInfo
 	}
 	if o.StnSr.IsSet() {
@@ -428,7 +434,7 @@ func (o PpData) ToMap() (map[string]interface{}, error) {
 	if o.LcsPrivacy.IsSet() {
 		toSerialize["lcsPrivacy"] = o.LcsPrivacy.Get()
 	}
-	if !isNil(o.SorInfo) {
+	if !IsNil(o.SorInfo) {
 		toSerialize["sorInfo"] = o.SorInfo
 	}
 	if o.Var5mbsAuthorizationInfo.IsSet() {
@@ -472,5 +478,3 @@ func (v *NullablePpData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SuciInfo{}
 
 // SuciInfo SUCI information containing Routing Indicator and Home Network Public Key ID
 type SuciInfo struct {
-	RoutingInds []string `json:"routingInds,omitempty"`
-	HNwPubKeyIds []int32 `json:"hNwPubKeyIds,omitempty"`
+	RoutingInds  []string `json:"routingInds,omitempty"`
+	HNwPubKeyIds []int32  `json:"hNwPubKeyIds,omitempty"`
 }
 
 // NewSuciInfo instantiates a new SuciInfo object
@@ -42,7 +42,7 @@ func NewSuciInfoWithDefaults() *SuciInfo {
 
 // GetRoutingInds returns the RoutingInds field value if set, zero value otherwise.
 func (o *SuciInfo) GetRoutingInds() []string {
-	if o == nil || isNil(o.RoutingInds) {
+	if o == nil || IsNil(o.RoutingInds) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SuciInfo) GetRoutingInds() []string {
 // GetRoutingIndsOk returns a tuple with the RoutingInds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SuciInfo) GetRoutingIndsOk() ([]string, bool) {
-	if o == nil || isNil(o.RoutingInds) {
+	if o == nil || IsNil(o.RoutingInds) {
 		return nil, false
 	}
 	return o.RoutingInds, true
@@ -60,7 +60,7 @@ func (o *SuciInfo) GetRoutingIndsOk() ([]string, bool) {
 
 // HasRoutingInds returns a boolean if a field has been set.
 func (o *SuciInfo) HasRoutingInds() bool {
-	if o != nil && !isNil(o.RoutingInds) {
+	if o != nil && !IsNil(o.RoutingInds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SuciInfo) SetRoutingInds(v []string) {
 
 // GetHNwPubKeyIds returns the HNwPubKeyIds field value if set, zero value otherwise.
 func (o *SuciInfo) GetHNwPubKeyIds() []int32 {
-	if o == nil || isNil(o.HNwPubKeyIds) {
+	if o == nil || IsNil(o.HNwPubKeyIds) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SuciInfo) GetHNwPubKeyIds() []int32 {
 // GetHNwPubKeyIdsOk returns a tuple with the HNwPubKeyIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SuciInfo) GetHNwPubKeyIdsOk() ([]int32, bool) {
-	if o == nil || isNil(o.HNwPubKeyIds) {
+	if o == nil || IsNil(o.HNwPubKeyIds) {
 		return nil, false
 	}
 	return o.HNwPubKeyIds, true
@@ -92,7 +92,7 @@ func (o *SuciInfo) GetHNwPubKeyIdsOk() ([]int32, bool) {
 
 // HasHNwPubKeyIds returns a boolean if a field has been set.
 func (o *SuciInfo) HasHNwPubKeyIds() bool {
-	if o != nil && !isNil(o.HNwPubKeyIds) {
+	if o != nil && !IsNil(o.HNwPubKeyIds) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SuciInfo) SetHNwPubKeyIds(v []int32) {
 }
 
 func (o SuciInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SuciInfo) MarshalJSON() ([]byte, error) {
 
 func (o SuciInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RoutingInds) {
+	if !IsNil(o.RoutingInds) {
 		toSerialize["routingInds"] = o.RoutingInds
 	}
-	if !isNil(o.HNwPubKeyIds) {
+	if !IsNil(o.HNwPubKeyIds) {
 		toSerialize["hNwPubKeyIds"] = o.HNwPubKeyIds
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSuciInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

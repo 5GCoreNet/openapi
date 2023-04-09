@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ActivationState Represents the activation state of a PSI or DSAI tag
 type ActivationState struct {
-	ActivationStateAnyOf *ActivationStateAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ActivationState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ActivationStateAnyOf
-	err = json.Unmarshal(data, &dst.ActivationStateAnyOf);
-	if err == nil {
-		jsonActivationStateAnyOf, _ := json.Marshal(dst.ActivationStateAnyOf)
-		if string(jsonActivationStateAnyOf) == "{}" { // empty struct
-			dst.ActivationStateAnyOf = nil
-		} else {
-			return nil // data stored in dst.ActivationStateAnyOf, return on the first match
-		}
-	} else {
-		dst.ActivationStateAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ActivationState) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ActivationState) MarshalJSON() ([]byte, error) {
-	if src.ActivationStateAnyOf != nil {
-		return json.Marshal(&src.ActivationStateAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableActivationState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

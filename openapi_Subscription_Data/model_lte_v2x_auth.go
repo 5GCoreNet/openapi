@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &LteV2xAuth{}
 
 // LteV2xAuth Contains LTE V2X services authorized information.
 type LteV2xAuth struct {
-	VehicleUeAuth *UeAuth `json:"vehicleUeAuth,omitempty"`
+	VehicleUeAuth    *UeAuth `json:"vehicleUeAuth,omitempty"`
 	PedestrianUeAuth *UeAuth `json:"pedestrianUeAuth,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewLteV2xAuthWithDefaults() *LteV2xAuth {
 
 // GetVehicleUeAuth returns the VehicleUeAuth field value if set, zero value otherwise.
 func (o *LteV2xAuth) GetVehicleUeAuth() UeAuth {
-	if o == nil || isNil(o.VehicleUeAuth) {
+	if o == nil || IsNil(o.VehicleUeAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LteV2xAuth) GetVehicleUeAuth() UeAuth {
 // GetVehicleUeAuthOk returns a tuple with the VehicleUeAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LteV2xAuth) GetVehicleUeAuthOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.VehicleUeAuth) {
+	if o == nil || IsNil(o.VehicleUeAuth) {
 		return nil, false
 	}
 	return o.VehicleUeAuth, true
@@ -60,7 +60,7 @@ func (o *LteV2xAuth) GetVehicleUeAuthOk() (*UeAuth, bool) {
 
 // HasVehicleUeAuth returns a boolean if a field has been set.
 func (o *LteV2xAuth) HasVehicleUeAuth() bool {
-	if o != nil && !isNil(o.VehicleUeAuth) {
+	if o != nil && !IsNil(o.VehicleUeAuth) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *LteV2xAuth) SetVehicleUeAuth(v UeAuth) {
 
 // GetPedestrianUeAuth returns the PedestrianUeAuth field value if set, zero value otherwise.
 func (o *LteV2xAuth) GetPedestrianUeAuth() UeAuth {
-	if o == nil || isNil(o.PedestrianUeAuth) {
+	if o == nil || IsNil(o.PedestrianUeAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *LteV2xAuth) GetPedestrianUeAuth() UeAuth {
 // GetPedestrianUeAuthOk returns a tuple with the PedestrianUeAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LteV2xAuth) GetPedestrianUeAuthOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.PedestrianUeAuth) {
+	if o == nil || IsNil(o.PedestrianUeAuth) {
 		return nil, false
 	}
 	return o.PedestrianUeAuth, true
@@ -92,7 +92,7 @@ func (o *LteV2xAuth) GetPedestrianUeAuthOk() (*UeAuth, bool) {
 
 // HasPedestrianUeAuth returns a boolean if a field has been set.
 func (o *LteV2xAuth) HasPedestrianUeAuth() bool {
-	if o != nil && !isNil(o.PedestrianUeAuth) {
+	if o != nil && !IsNil(o.PedestrianUeAuth) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *LteV2xAuth) SetPedestrianUeAuth(v UeAuth) {
 }
 
 func (o LteV2xAuth) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o LteV2xAuth) MarshalJSON() ([]byte, error) {
 
 func (o LteV2xAuth) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.VehicleUeAuth) {
+	if !IsNil(o.VehicleUeAuth) {
 		toSerialize["vehicleUeAuth"] = o.VehicleUeAuth
 	}
-	if !isNil(o.PedestrianUeAuth) {
+	if !IsNil(o.PedestrianUeAuth) {
 		toSerialize["pedestrianUeAuth"] = o.PedestrianUeAuth
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableLteV2xAuth) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

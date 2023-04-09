@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -24,7 +24,7 @@ type AccessAndMobilitySubscriptionDataSubscribedDnnListInner struct {
 func (dst *AccessAndMobilitySubscriptionDataSubscribedDnnListInner) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableAccessAndMobilitySubscriptionDataSubscribedDnnListInner) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

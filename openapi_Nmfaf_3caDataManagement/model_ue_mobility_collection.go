@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,17 +17,17 @@ import (
 // checks if the UeMobilityCollection type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UeMobilityCollection{}
 
-// UeMobilityCollection Contains UE mobility information associated with an application. If the allAppInd attribute  is present and set to true, then the value in the appId shall be ignored, which indicates  the collected UE mobility information is applicable to all the applications for the UE. 
+// UeMobilityCollection Contains UE mobility information associated with an application. If the allAppInd attribute  is present and set to true, then the value in the appId shall be ignored, which indicates  the collected UE mobility information is applicable to all the applications for the UE.
 type UeMobilityCollection struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
 	// String providing an application identifier.
 	AppId string `json:"appId"`
-	// Indicates applicable to all applications if set to true, otherwise set to false.  Default value is false if omitted. 
-	AllAppInd *bool `json:"allAppInd,omitempty"`
-	UeTrajs []UeTrajectoryCollection `json:"ueTrajs"`
+	// Indicates applicable to all applications if set to true, otherwise set to false.  Default value is false if omitted.
+	AllAppInd *bool                    `json:"allAppInd,omitempty"`
+	UeTrajs   []UeTrajectoryCollection `json:"ueTrajs"`
 }
 
 // NewUeMobilityCollection instantiates a new UeMobilityCollection object
@@ -51,7 +51,7 @@ func NewUeMobilityCollectionWithDefaults() *UeMobilityCollection {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *UeMobilityCollection) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *UeMobilityCollection) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityCollection) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -69,7 +69,7 @@ func (o *UeMobilityCollection) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *UeMobilityCollection) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *UeMobilityCollection) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *UeMobilityCollection) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *UeMobilityCollection) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityCollection) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -101,7 +101,7 @@ func (o *UeMobilityCollection) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *UeMobilityCollection) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *UeMobilityCollection) SetAppId(v string) {
 
 // GetAllAppInd returns the AllAppInd field value if set, zero value otherwise.
 func (o *UeMobilityCollection) GetAllAppInd() bool {
-	if o == nil || isNil(o.AllAppInd) {
+	if o == nil || IsNil(o.AllAppInd) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *UeMobilityCollection) GetAllAppInd() bool {
 // GetAllAppIndOk returns a tuple with the AllAppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityCollection) GetAllAppIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AllAppInd) {
+	if o == nil || IsNil(o.AllAppInd) {
 		return nil, false
 	}
 	return o.AllAppInd, true
@@ -157,7 +157,7 @@ func (o *UeMobilityCollection) GetAllAppIndOk() (*bool, bool) {
 
 // HasAllAppInd returns a boolean if a field has been set.
 func (o *UeMobilityCollection) HasAllAppInd() bool {
-	if o != nil && !isNil(o.AllAppInd) {
+	if o != nil && !IsNil(o.AllAppInd) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *UeMobilityCollection) SetUeTrajs(v []UeTrajectoryCollection) {
 }
 
 func (o UeMobilityCollection) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,14 +203,14 @@ func (o UeMobilityCollection) MarshalJSON() ([]byte, error) {
 
 func (o UeMobilityCollection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	toSerialize["appId"] = o.AppId
-	if !isNil(o.AllAppInd) {
+	if !IsNil(o.AllAppInd) {
 		toSerialize["allAppInd"] = o.AllAppInd
 	}
 	toSerialize["ueTrajs"] = o.UeTrajs
@@ -252,5 +252,3 @@ func (v *NullableUeMobilityCollection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

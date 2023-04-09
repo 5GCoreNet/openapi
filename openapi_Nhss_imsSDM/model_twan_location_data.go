@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &TwanLocationData{}
 
 // TwanLocationData Location information of the 3GPP AAA Server for Trusted W-LAN Access
 type TwanLocationData struct {
-	TwanSsid string `json:"twanSsid"`
-	PlmnId PlmnId `json:"plmnId"`
-	TwanBssid *string `json:"twanBssid,omitempty"`
-	CivicAddress *string `json:"civicAddress,omitempty"`
+	TwanSsid         string  `json:"twanSsid"`
+	PlmnId           PlmnId  `json:"plmnId"`
+	TwanBssid        *string `json:"twanBssid,omitempty"`
+	CivicAddress     *string `json:"civicAddress,omitempty"`
 	TwanOperatorName *string `json:"twanOperatorName,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	TimeZone *string `json:"timeZone,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	TimeZone        *string `json:"timeZone,omitempty"`
 	LogicalAccessId *string `json:"logicalAccessId,omitempty"`
 }
 
@@ -98,7 +98,7 @@ func (o *TwanLocationData) SetPlmnId(v PlmnId) {
 
 // GetTwanBssid returns the TwanBssid field value if set, zero value otherwise.
 func (o *TwanLocationData) GetTwanBssid() string {
-	if o == nil || isNil(o.TwanBssid) {
+	if o == nil || IsNil(o.TwanBssid) {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *TwanLocationData) GetTwanBssid() string {
 // GetTwanBssidOk returns a tuple with the TwanBssid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwanLocationData) GetTwanBssidOk() (*string, bool) {
-	if o == nil || isNil(o.TwanBssid) {
+	if o == nil || IsNil(o.TwanBssid) {
 		return nil, false
 	}
 	return o.TwanBssid, true
@@ -116,7 +116,7 @@ func (o *TwanLocationData) GetTwanBssidOk() (*string, bool) {
 
 // HasTwanBssid returns a boolean if a field has been set.
 func (o *TwanLocationData) HasTwanBssid() bool {
-	if o != nil && !isNil(o.TwanBssid) {
+	if o != nil && !IsNil(o.TwanBssid) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *TwanLocationData) SetTwanBssid(v string) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *TwanLocationData) GetCivicAddress() string {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *TwanLocationData) GetCivicAddress() string {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwanLocationData) GetCivicAddressOk() (*string, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -148,7 +148,7 @@ func (o *TwanLocationData) GetCivicAddressOk() (*string, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *TwanLocationData) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *TwanLocationData) SetCivicAddress(v string) {
 
 // GetTwanOperatorName returns the TwanOperatorName field value if set, zero value otherwise.
 func (o *TwanLocationData) GetTwanOperatorName() string {
-	if o == nil || isNil(o.TwanOperatorName) {
+	if o == nil || IsNil(o.TwanOperatorName) {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *TwanLocationData) GetTwanOperatorName() string {
 // GetTwanOperatorNameOk returns a tuple with the TwanOperatorName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwanLocationData) GetTwanOperatorNameOk() (*string, bool) {
-	if o == nil || isNil(o.TwanOperatorName) {
+	if o == nil || IsNil(o.TwanOperatorName) {
 		return nil, false
 	}
 	return o.TwanOperatorName, true
@@ -180,7 +180,7 @@ func (o *TwanLocationData) GetTwanOperatorNameOk() (*string, bool) {
 
 // HasTwanOperatorName returns a boolean if a field has been set.
 func (o *TwanLocationData) HasTwanOperatorName() bool {
-	if o != nil && !isNil(o.TwanOperatorName) {
+	if o != nil && !IsNil(o.TwanOperatorName) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *TwanLocationData) SetTwanOperatorName(v string) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *TwanLocationData) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *TwanLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwanLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -212,7 +212,7 @@ func (o *TwanLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *TwanLocationData) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *TwanLocationData) SetTimeZone(v string) {
 
 // GetLogicalAccessId returns the LogicalAccessId field value if set, zero value otherwise.
 func (o *TwanLocationData) GetLogicalAccessId() string {
-	if o == nil || isNil(o.LogicalAccessId) {
+	if o == nil || IsNil(o.LogicalAccessId) {
 		var ret string
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *TwanLocationData) GetLogicalAccessId() string {
 // GetLogicalAccessIdOk returns a tuple with the LogicalAccessId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwanLocationData) GetLogicalAccessIdOk() (*string, bool) {
-	if o == nil || isNil(o.LogicalAccessId) {
+	if o == nil || IsNil(o.LogicalAccessId) {
 		return nil, false
 	}
 	return o.LogicalAccessId, true
@@ -244,7 +244,7 @@ func (o *TwanLocationData) GetLogicalAccessIdOk() (*string, bool) {
 
 // HasLogicalAccessId returns a boolean if a field has been set.
 func (o *TwanLocationData) HasLogicalAccessId() bool {
-	if o != nil && !isNil(o.LogicalAccessId) {
+	if o != nil && !IsNil(o.LogicalAccessId) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *TwanLocationData) SetLogicalAccessId(v string) {
 }
 
 func (o TwanLocationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,19 +268,19 @@ func (o TwanLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["twanSsid"] = o.TwanSsid
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.TwanBssid) {
+	if !IsNil(o.TwanBssid) {
 		toSerialize["twanBssid"] = o.TwanBssid
 	}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
-	if !isNil(o.TwanOperatorName) {
+	if !IsNil(o.TwanOperatorName) {
 		toSerialize["twanOperatorName"] = o.TwanOperatorName
 	}
-	if !isNil(o.TimeZone) {
+	if !IsNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !isNil(o.LogicalAccessId) {
+	if !IsNil(o.LogicalAccessId) {
 		toSerialize["logicalAccessId"] = o.LogicalAccessId
 	}
 	return toSerialize, nil
@@ -321,5 +321,3 @@ func (v *NullableTwanLocationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

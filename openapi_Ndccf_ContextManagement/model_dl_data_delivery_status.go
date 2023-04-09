@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DlDataDeliveryStatus Possible values are: - BUFFERED: The first downlink data is buffered with extended buffering matching the   source of the downlink traffic. - TRANSMITTED: The first downlink data matching the source of the downlink traffic is   transmitted after previous buffering or discarding of corresponding packet(s) because   the UE of the PDU Session becomes ACTIVE, and buffered data can be delivered to UE. - DISCARDED: The first downlink data matching the source of the downlink traffic is   discarded because the Extended Buffering time, as determined by the SMF, expires or   the amount of downlink data to be buffered is exceeded. 
+// DlDataDeliveryStatus Possible values are: - BUFFERED: The first downlink data is buffered with extended buffering matching the   source of the downlink traffic. - TRANSMITTED: The first downlink data matching the source of the downlink traffic is   transmitted after previous buffering or discarding of corresponding packet(s) because   the UE of the PDU Session becomes ACTIVE, and buffered data can be delivered to UE. - DISCARDED: The first downlink data matching the source of the downlink traffic is   discarded because the Extended Buffering time, as determined by the SMF, expires or   the amount of downlink data to be buffered is exceeded.
 type DlDataDeliveryStatus struct {
-	DlDataDeliveryStatusAnyOf *DlDataDeliveryStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DlDataDeliveryStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DlDataDeliveryStatusAnyOf
-	err = json.Unmarshal(data, &dst.DlDataDeliveryStatusAnyOf);
-	if err == nil {
-		jsonDlDataDeliveryStatusAnyOf, _ := json.Marshal(dst.DlDataDeliveryStatusAnyOf)
-		if string(jsonDlDataDeliveryStatusAnyOf) == "{}" { // empty struct
-			dst.DlDataDeliveryStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.DlDataDeliveryStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.DlDataDeliveryStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DlDataDeliveryStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DlDataDeliveryStatus) MarshalJSON() ([]byte, error) {
-	if src.DlDataDeliveryStatusAnyOf != nil {
-		return json.Marshal(&src.DlDataDeliveryStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDlDataDeliveryStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

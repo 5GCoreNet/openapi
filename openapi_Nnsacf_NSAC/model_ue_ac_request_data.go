@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &UeACRequestData{}
 // UeACRequestData struct for UeACRequestData
 type UeACRequestData struct {
 	UeACRequestInfo []UeACRequestInfo `json:"ueACRequestInfo"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfId string `json:"nfId"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfId   string  `json:"nfId"`
 	NfType *NFType `json:"nfType,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	EacNotificationUri *string `json:"eacNotificationUri,omitempty"`
@@ -96,7 +96,7 @@ func (o *UeACRequestData) SetNfId(v string) {
 
 // GetNfType returns the NfType field value if set, zero value otherwise.
 func (o *UeACRequestData) GetNfType() NFType {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		var ret NFType
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UeACRequestData) GetNfType() NFType {
 // GetNfTypeOk returns a tuple with the NfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACRequestData) GetNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		return nil, false
 	}
 	return o.NfType, true
@@ -114,7 +114,7 @@ func (o *UeACRequestData) GetNfTypeOk() (*NFType, bool) {
 
 // HasNfType returns a boolean if a field has been set.
 func (o *UeACRequestData) HasNfType() bool {
-	if o != nil && !isNil(o.NfType) {
+	if o != nil && !IsNil(o.NfType) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *UeACRequestData) SetNfType(v NFType) {
 
 // GetEacNotificationUri returns the EacNotificationUri field value if set, zero value otherwise.
 func (o *UeACRequestData) GetEacNotificationUri() string {
-	if o == nil || isNil(o.EacNotificationUri) {
+	if o == nil || IsNil(o.EacNotificationUri) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *UeACRequestData) GetEacNotificationUri() string {
 // GetEacNotificationUriOk returns a tuple with the EacNotificationUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACRequestData) GetEacNotificationUriOk() (*string, bool) {
-	if o == nil || isNil(o.EacNotificationUri) {
+	if o == nil || IsNil(o.EacNotificationUri) {
 		return nil, false
 	}
 	return o.EacNotificationUri, true
@@ -146,7 +146,7 @@ func (o *UeACRequestData) GetEacNotificationUriOk() (*string, bool) {
 
 // HasEacNotificationUri returns a boolean if a field has been set.
 func (o *UeACRequestData) HasEacNotificationUri() bool {
-	if o != nil && !isNil(o.EacNotificationUri) {
+	if o != nil && !IsNil(o.EacNotificationUri) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *UeACRequestData) SetEacNotificationUri(v string) {
 }
 
 func (o UeACRequestData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o UeACRequestData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueACRequestInfo"] = o.UeACRequestInfo
 	toSerialize["nfId"] = o.NfId
-	if !isNil(o.NfType) {
+	if !IsNil(o.NfType) {
 		toSerialize["nfType"] = o.NfType
 	}
-	if !isNil(o.EacNotificationUri) {
+	if !IsNil(o.EacNotificationUri) {
 		toSerialize["eacNotificationUri"] = o.EacNotificationUri
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableUeACRequestData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

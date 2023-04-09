@@ -20,7 +20,7 @@ var _ MappedNullable = &AreaConfig{}
 // AreaConfig struct for AreaConfig
 type AreaConfig struct {
 	FreqInfo *FreqInfo `json:"freqInfo,omitempty"`
-	PciList []int32 `json:"pciList,omitempty"`
+	PciList  []int32   `json:"pciList,omitempty"`
 }
 
 // NewAreaConfig instantiates a new AreaConfig object
@@ -42,7 +42,7 @@ func NewAreaConfigWithDefaults() *AreaConfig {
 
 // GetFreqInfo returns the FreqInfo field value if set, zero value otherwise.
 func (o *AreaConfig) GetFreqInfo() FreqInfo {
-	if o == nil || isNil(o.FreqInfo) {
+	if o == nil || IsNil(o.FreqInfo) {
 		var ret FreqInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AreaConfig) GetFreqInfo() FreqInfo {
 // GetFreqInfoOk returns a tuple with the FreqInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaConfig) GetFreqInfoOk() (*FreqInfo, bool) {
-	if o == nil || isNil(o.FreqInfo) {
+	if o == nil || IsNil(o.FreqInfo) {
 		return nil, false
 	}
 	return o.FreqInfo, true
@@ -60,7 +60,7 @@ func (o *AreaConfig) GetFreqInfoOk() (*FreqInfo, bool) {
 
 // HasFreqInfo returns a boolean if a field has been set.
 func (o *AreaConfig) HasFreqInfo() bool {
-	if o != nil && !isNil(o.FreqInfo) {
+	if o != nil && !IsNil(o.FreqInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AreaConfig) SetFreqInfo(v FreqInfo) {
 
 // GetPciList returns the PciList field value if set, zero value otherwise.
 func (o *AreaConfig) GetPciList() []int32 {
-	if o == nil || isNil(o.PciList) {
+	if o == nil || IsNil(o.PciList) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AreaConfig) GetPciList() []int32 {
 // GetPciListOk returns a tuple with the PciList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaConfig) GetPciListOk() ([]int32, bool) {
-	if o == nil || isNil(o.PciList) {
+	if o == nil || IsNil(o.PciList) {
 		return nil, false
 	}
 	return o.PciList, true
@@ -92,7 +92,7 @@ func (o *AreaConfig) GetPciListOk() ([]int32, bool) {
 
 // HasPciList returns a boolean if a field has been set.
 func (o *AreaConfig) HasPciList() bool {
-	if o != nil && !isNil(o.PciList) {
+	if o != nil && !IsNil(o.PciList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *AreaConfig) SetPciList(v []int32) {
 }
 
 func (o AreaConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o AreaConfig) MarshalJSON() ([]byte, error) {
 
 func (o AreaConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FreqInfo) {
+	if !IsNil(o.FreqInfo) {
 		toSerialize["freqInfo"] = o.FreqInfo
 	}
-	if !isNil(o.PciList) {
+	if !IsNil(o.PciList) {
 		toSerialize["pciList"] = o.PciList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableAreaConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

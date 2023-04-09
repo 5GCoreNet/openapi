@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-ud-ingest
 
-API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,22 +13,21 @@ package openapi_MBSUserDataIngestSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService MBSUserDataIngestSessionStatusSubscriptionsCollectionApi service
 type MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService service
 
 type ApiCreateMBSUserDataIngStatSubscRequest struct {
-	ctx context.Context
-	ApiService *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService
+	ctx                     context.Context
+	ApiService              *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService
 	mBSUserDataIngStatSubsc *MBSUserDataIngStatSubsc
 }
 
-// Contains the parameters to request the creation of a new MBS User Data Ingest Session Status Subscription resource. 
+// Contains the parameters to request the creation of a new MBS User Data Ingest Session Status Subscription resource.
 func (r ApiCreateMBSUserDataIngStatSubscRequest) MBSUserDataIngStatSubsc(mBSUserDataIngStatSubsc MBSUserDataIngStatSubsc) ApiCreateMBSUserDataIngStatSubscRequest {
 	r.mBSUserDataIngStatSubsc = &mBSUserDataIngStatSubsc
 	return r
@@ -41,24 +40,25 @@ func (r ApiCreateMBSUserDataIngStatSubscRequest) Execute() (*MBSUserDataIngStatS
 /*
 CreateMBSUserDataIngStatSubsc Creates a new Individual MBS User Data Ingest Session Status Subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateMBSUserDataIngStatSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateMBSUserDataIngStatSubscRequest
 */
 func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) CreateMBSUserDataIngStatSubsc(ctx context.Context) ApiCreateMBSUserDataIngStatSubscRequest {
 	return ApiCreateMBSUserDataIngStatSubscRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return MBSUserDataIngStatSubsc
+//
+//	@return MBSUserDataIngStatSubsc
 func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) CreateMBSUserDataIngStatSubscExecute(r ApiCreateMBSUserDataIngStatSubscRequest) (*MBSUserDataIngStatSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MBSUserDataIngStatSubsc
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MBSUserDataIngStatSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService.CreateMBSUserDataIngStatSubsc")
@@ -104,9 +104,9 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -123,8 +123,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -134,8 +134,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -145,8 +145,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -156,8 +156,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -167,8 +167,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -178,8 +178,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -189,8 +189,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -200,8 +200,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -211,8 +211,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -222,8 +222,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -242,7 +242,7 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Create
 }
 
 type ApiRetrieveMBSUserDataIngStatSubscsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService
 }
 
@@ -253,24 +253,25 @@ func (r ApiRetrieveMBSUserDataIngStatSubscsRequest) Execute() ([]MBSUserDataIngS
 /*
 RetrieveMBSUserDataIngStatSubscs Retrieve all the active MBS User Data Ingest Session Status Subscriptions resources managed by the NEF.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrieveMBSUserDataIngStatSubscsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRetrieveMBSUserDataIngStatSubscsRequest
 */
 func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) RetrieveMBSUserDataIngStatSubscs(ctx context.Context) ApiRetrieveMBSUserDataIngStatSubscsRequest {
 	return ApiRetrieveMBSUserDataIngStatSubscsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []MBSUserDataIngStatSubsc
+//
+//	@return []MBSUserDataIngStatSubsc
 func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) RetrieveMBSUserDataIngStatSubscsExecute(r ApiRetrieveMBSUserDataIngStatSubscsRequest) ([]MBSUserDataIngStatSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []MBSUserDataIngStatSubsc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []MBSUserDataIngStatSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService.RetrieveMBSUserDataIngStatSubscs")
@@ -311,9 +312,9 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -330,8 +331,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -341,8 +342,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -352,8 +353,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -363,8 +364,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -374,8 +375,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -385,8 +386,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -396,8 +397,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -407,8 +408,8 @@ func (a *MBSUserDataIngestSessionStatusSubscriptionsCollectionApiService) Retrie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

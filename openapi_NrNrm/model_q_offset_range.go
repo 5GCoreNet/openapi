@@ -28,29 +28,29 @@ const (
 	_MINUS_14 QOffsetRange = -14
 	_MINUS_12 QOffsetRange = -12
 	_MINUS_10 QOffsetRange = -10
-	_MINUS_8 QOffsetRange = -8
-	_MINUS_6 QOffsetRange = -6
-	_MINUS_5 QOffsetRange = -5
-	_MINUS_4 QOffsetRange = -4
-	_MINUS_3 QOffsetRange = -3
-	_MINUS_2 QOffsetRange = -2
-	_MINUS_1 QOffsetRange = -1
-	_0 QOffsetRange = 0
-	_24 QOffsetRange = 24
-	_22 QOffsetRange = 22
-	_20 QOffsetRange = 20
-	_18 QOffsetRange = 18
-	_16 QOffsetRange = 16
-	_14 QOffsetRange = 14
-	_12 QOffsetRange = 12
-	_10 QOffsetRange = 10
-	_8 QOffsetRange = 8
-	_6 QOffsetRange = 6
-	_5 QOffsetRange = 5
-	_4 QOffsetRange = 4
-	_3 QOffsetRange = 3
-	_2 QOffsetRange = 2
-	_1 QOffsetRange = 1
+	_MINUS_8  QOffsetRange = -8
+	_MINUS_6  QOffsetRange = -6
+	_MINUS_5  QOffsetRange = -5
+	_MINUS_4  QOffsetRange = -4
+	_MINUS_3  QOffsetRange = -3
+	_MINUS_2  QOffsetRange = -2
+	_MINUS_1  QOffsetRange = -1
+	_0        QOffsetRange = 0
+	_24       QOffsetRange = 24
+	_22       QOffsetRange = 22
+	_20       QOffsetRange = 20
+	_18       QOffsetRange = 18
+	_16       QOffsetRange = 16
+	_14       QOffsetRange = 14
+	_12       QOffsetRange = 12
+	_10       QOffsetRange = 10
+	_8        QOffsetRange = 8
+	_6        QOffsetRange = 6
+	_5        QOffsetRange = 5
+	_4        QOffsetRange = 4
+	_3        QOffsetRange = 3
+	_2        QOffsetRange = 2
+	_1        QOffsetRange = 1
 )
 
 // All allowed values of QOffsetRange enum
@@ -166,4 +166,3 @@ func (v *NullableQOffsetRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

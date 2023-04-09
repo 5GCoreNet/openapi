@@ -1,7 +1,7 @@
 /*
 EES EEL Managed ACR Service
 
-EES EEL Managed ACR Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES EEL Managed ACR Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Eees_EELManagedACR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualACTStatusSubscriptionDocumentApiService IndividualACTStatusSubscriptionDocumentApi service
 type IndividualACTStatusSubscriptionDocumentApiService service
 
 type ApiGetACTStatusSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualACTStatusSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualACTStatusSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetACTStatusSubscriptionRequest) Execute() (*ACTStatusSubsc, *http.Re
 /*
 GetACTStatusSubscription Retrieve an ACT status subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Individual ACT Status Subscription identifier.
- @return ApiGetACTStatusSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Individual ACT Status Subscription identifier.
+	@return ApiGetACTStatusSubscriptionRequest
 */
 func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscription(ctx context.Context, subscriptionId string) ApiGetACTStatusSubscriptionRequest {
 	return ApiGetACTStatusSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return ACTStatusSubsc
+//
+//	@return ACTStatusSubsc
 func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscriptionExecute(r ApiGetACTStatusSubscriptionRequest) (*ACTStatusSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ACTStatusSubsc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ACTStatusSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualACTStatusSubscriptionDocumentApiService.GetACTStatusSubscription")
@@ -97,9 +97,9 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -116,8 +116,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +127,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +138,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +149,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -160,8 +160,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -171,8 +171,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -182,8 +182,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -193,8 +193,8 @@ func (a *IndividualACTStatusSubscriptionDocumentApiService) GetACTStatusSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

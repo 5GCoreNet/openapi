@@ -19,9 +19,9 @@ var _ MappedNullable = &MergePatchClearAlarm{}
 
 // MergePatchClearAlarm Patch document for clearing a single alarm
 type MergePatchClearAlarm struct {
-	ClearUserId string `json:"clearUserId"`
-	ClearSystemId *string `json:"clearSystemId,omitempty"`
-	PerceivedSeverity string `json:"perceivedSeverity"`
+	ClearUserId       string  `json:"clearUserId"`
+	ClearSystemId     *string `json:"clearSystemId,omitempty"`
+	PerceivedSeverity string  `json:"perceivedSeverity"`
 }
 
 // NewMergePatchClearAlarm instantiates a new MergePatchClearAlarm object
@@ -69,7 +69,7 @@ func (o *MergePatchClearAlarm) SetClearUserId(v string) {
 
 // GetClearSystemId returns the ClearSystemId field value if set, zero value otherwise.
 func (o *MergePatchClearAlarm) GetClearSystemId() string {
-	if o == nil || isNil(o.ClearSystemId) {
+	if o == nil || IsNil(o.ClearSystemId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MergePatchClearAlarm) GetClearSystemId() string {
 // GetClearSystemIdOk returns a tuple with the ClearSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MergePatchClearAlarm) GetClearSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.ClearSystemId) {
+	if o == nil || IsNil(o.ClearSystemId) {
 		return nil, false
 	}
 	return o.ClearSystemId, true
@@ -87,7 +87,7 @@ func (o *MergePatchClearAlarm) GetClearSystemIdOk() (*string, bool) {
 
 // HasClearSystemId returns a boolean if a field has been set.
 func (o *MergePatchClearAlarm) HasClearSystemId() bool {
-	if o != nil && !isNil(o.ClearSystemId) {
+	if o != nil && !IsNil(o.ClearSystemId) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *MergePatchClearAlarm) SetPerceivedSeverity(v string) {
 }
 
 func (o MergePatchClearAlarm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -134,7 +134,7 @@ func (o MergePatchClearAlarm) MarshalJSON() ([]byte, error) {
 func (o MergePatchClearAlarm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["clearUserId"] = o.ClearUserId
-	if !isNil(o.ClearSystemId) {
+	if !IsNil(o.ClearSystemId) {
 		toSerialize["clearSystemId"] = o.ClearSystemId
 	}
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity
@@ -176,5 +176,3 @@ func (v *NullableMergePatchClearAlarm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

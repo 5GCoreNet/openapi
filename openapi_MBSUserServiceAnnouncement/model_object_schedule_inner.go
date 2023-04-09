@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &ObjectScheduleInner{}
 // ObjectScheduleInner struct for ObjectScheduleInner
 type ObjectScheduleInner struct {
 	// String providing an URI formatted according to RFC 3986.
-	ObjectURI *string `json:"objectURI,omitempty"`
-	SessionId *string `json:"sessionId,omitempty"`
-	ObjectEtag *string `json:"objectEtag,omitempty"`
-	UnicastOnly *bool `json:"unicastOnly,omitempty"`
+	ObjectURI    *string                                `json:"objectURI,omitempty"`
+	SessionId    *string                                `json:"sessionId,omitempty"`
+	ObjectEtag   *string                                `json:"objectEtag,omitempty"`
+	UnicastOnly  *bool                                  `json:"unicastOnly,omitempty"`
 	DeliveryInfo []ObjectScheduleInnerDeliveryInfoInner `json:"deliveryInfo,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewObjectScheduleInnerWithDefaults() *ObjectScheduleInner {
 
 // GetObjectURI returns the ObjectURI field value if set, zero value otherwise.
 func (o *ObjectScheduleInner) GetObjectURI() string {
-	if o == nil || isNil(o.ObjectURI) {
+	if o == nil || IsNil(o.ObjectURI) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ObjectScheduleInner) GetObjectURI() string {
 // GetObjectURIOk returns a tuple with the ObjectURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInner) GetObjectURIOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectURI) {
+	if o == nil || IsNil(o.ObjectURI) {
 		return nil, false
 	}
 	return o.ObjectURI, true
@@ -64,7 +64,7 @@ func (o *ObjectScheduleInner) GetObjectURIOk() (*string, bool) {
 
 // HasObjectURI returns a boolean if a field has been set.
 func (o *ObjectScheduleInner) HasObjectURI() bool {
-	if o != nil && !isNil(o.ObjectURI) {
+	if o != nil && !IsNil(o.ObjectURI) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ObjectScheduleInner) SetObjectURI(v string) {
 
 // GetSessionId returns the SessionId field value if set, zero value otherwise.
 func (o *ObjectScheduleInner) GetSessionId() string {
-	if o == nil || isNil(o.SessionId) {
+	if o == nil || IsNil(o.SessionId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ObjectScheduleInner) GetSessionId() string {
 // GetSessionIdOk returns a tuple with the SessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInner) GetSessionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SessionId) {
+	if o == nil || IsNil(o.SessionId) {
 		return nil, false
 	}
 	return o.SessionId, true
@@ -96,7 +96,7 @@ func (o *ObjectScheduleInner) GetSessionIdOk() (*string, bool) {
 
 // HasSessionId returns a boolean if a field has been set.
 func (o *ObjectScheduleInner) HasSessionId() bool {
-	if o != nil && !isNil(o.SessionId) {
+	if o != nil && !IsNil(o.SessionId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ObjectScheduleInner) SetSessionId(v string) {
 
 // GetObjectEtag returns the ObjectEtag field value if set, zero value otherwise.
 func (o *ObjectScheduleInner) GetObjectEtag() string {
-	if o == nil || isNil(o.ObjectEtag) {
+	if o == nil || IsNil(o.ObjectEtag) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ObjectScheduleInner) GetObjectEtag() string {
 // GetObjectEtagOk returns a tuple with the ObjectEtag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInner) GetObjectEtagOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectEtag) {
+	if o == nil || IsNil(o.ObjectEtag) {
 		return nil, false
 	}
 	return o.ObjectEtag, true
@@ -128,7 +128,7 @@ func (o *ObjectScheduleInner) GetObjectEtagOk() (*string, bool) {
 
 // HasObjectEtag returns a boolean if a field has been set.
 func (o *ObjectScheduleInner) HasObjectEtag() bool {
-	if o != nil && !isNil(o.ObjectEtag) {
+	if o != nil && !IsNil(o.ObjectEtag) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ObjectScheduleInner) SetObjectEtag(v string) {
 
 // GetUnicastOnly returns the UnicastOnly field value if set, zero value otherwise.
 func (o *ObjectScheduleInner) GetUnicastOnly() bool {
-	if o == nil || isNil(o.UnicastOnly) {
+	if o == nil || IsNil(o.UnicastOnly) {
 		var ret bool
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ObjectScheduleInner) GetUnicastOnly() bool {
 // GetUnicastOnlyOk returns a tuple with the UnicastOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInner) GetUnicastOnlyOk() (*bool, bool) {
-	if o == nil || isNil(o.UnicastOnly) {
+	if o == nil || IsNil(o.UnicastOnly) {
 		return nil, false
 	}
 	return o.UnicastOnly, true
@@ -160,7 +160,7 @@ func (o *ObjectScheduleInner) GetUnicastOnlyOk() (*bool, bool) {
 
 // HasUnicastOnly returns a boolean if a field has been set.
 func (o *ObjectScheduleInner) HasUnicastOnly() bool {
-	if o != nil && !isNil(o.UnicastOnly) {
+	if o != nil && !IsNil(o.UnicastOnly) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ObjectScheduleInner) SetUnicastOnly(v bool) {
 
 // GetDeliveryInfo returns the DeliveryInfo field value if set, zero value otherwise.
 func (o *ObjectScheduleInner) GetDeliveryInfo() []ObjectScheduleInnerDeliveryInfoInner {
-	if o == nil || isNil(o.DeliveryInfo) {
+	if o == nil || IsNil(o.DeliveryInfo) {
 		var ret []ObjectScheduleInnerDeliveryInfoInner
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ObjectScheduleInner) GetDeliveryInfo() []ObjectScheduleInnerDeliveryInf
 // GetDeliveryInfoOk returns a tuple with the DeliveryInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInner) GetDeliveryInfoOk() ([]ObjectScheduleInnerDeliveryInfoInner, bool) {
-	if o == nil || isNil(o.DeliveryInfo) {
+	if o == nil || IsNil(o.DeliveryInfo) {
 		return nil, false
 	}
 	return o.DeliveryInfo, true
@@ -192,7 +192,7 @@ func (o *ObjectScheduleInner) GetDeliveryInfoOk() ([]ObjectScheduleInnerDelivery
 
 // HasDeliveryInfo returns a boolean if a field has been set.
 func (o *ObjectScheduleInner) HasDeliveryInfo() bool {
-	if o != nil && !isNil(o.DeliveryInfo) {
+	if o != nil && !IsNil(o.DeliveryInfo) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *ObjectScheduleInner) SetDeliveryInfo(v []ObjectScheduleInnerDeliveryInf
 }
 
 func (o ObjectScheduleInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o ObjectScheduleInner) MarshalJSON() ([]byte, error) {
 
 func (o ObjectScheduleInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ObjectURI) {
+	if !IsNil(o.ObjectURI) {
 		toSerialize["objectURI"] = o.ObjectURI
 	}
-	if !isNil(o.SessionId) {
+	if !IsNil(o.SessionId) {
 		toSerialize["sessionId"] = o.SessionId
 	}
-	if !isNil(o.ObjectEtag) {
+	if !IsNil(o.ObjectEtag) {
 		toSerialize["objectEtag"] = o.ObjectEtag
 	}
-	if !isNil(o.UnicastOnly) {
+	if !IsNil(o.UnicastOnly) {
 		toSerialize["unicastOnly"] = o.UnicastOnly
 	}
-	if !isNil(o.DeliveryInfo) {
+	if !IsNil(o.DeliveryInfo) {
 		toSerialize["deliveryInfo"] = o.DeliveryInfo
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullableObjectScheduleInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

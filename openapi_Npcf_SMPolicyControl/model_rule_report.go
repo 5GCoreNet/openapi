@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,19 +20,19 @@ var _ MappedNullable = &RuleReport{}
 // RuleReport Reports the status of PCC.
 type RuleReport struct {
 	// Contains the identifier of the affected PCC rule(s).
-	PccRuleIds []string `json:"pccRuleIds"`
+	PccRuleIds []string   `json:"pccRuleIds"`
 	RuleStatus RuleStatus `json:"ruleStatus"`
 	// Indicates the version of a PCC rule.
-	ContVers []int32 `json:"contVers,omitempty"`
+	ContVers    []int32      `json:"contVers,omitempty"`
 	FailureCode *FailureCode `json:"failureCode,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	RetryAfter *int32 `json:"retryAfter,omitempty"`
+	RetryAfter *int32           `json:"retryAfter,omitempty"`
 	FinUnitAct *FinalUnitAction `json:"finUnitAct,omitempty"`
 	// indicates the RAN or NAS release cause code information.
 	RanNasRelCauses []RanNasRelCause `json:"ranNasRelCauses,omitempty"`
-	// Indicates the alternative QoS parameter set that the NG-RAN can guarantee. It is included during the report of successfull resource allocation and indicates that NG-RAN used an alternative QoS profile because the requested QoS could not be allocated.. 
+	// Indicates the alternative QoS parameter set that the NG-RAN can guarantee. It is included during the report of successfull resource allocation and indicates that NG-RAN used an alternative QoS profile because the requested QoS could not be allocated..
 	AltQosParamId *string `json:"altQosParamId,omitempty"`
-	// When present and set to true it indicates that the Alternative QoS profiles are not  supported by NG-RAN. 
+	// When present and set to true it indicates that the Alternative QoS profiles are not  supported by NG-RAN.
 	AltQosNotSuppInd *bool `json:"altQosNotSuppInd,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *RuleReport) SetRuleStatus(v RuleStatus) {
 
 // GetContVers returns the ContVers field value if set, zero value otherwise.
 func (o *RuleReport) GetContVers() []int32 {
-	if o == nil || isNil(o.ContVers) {
+	if o == nil || IsNil(o.ContVers) {
 		var ret []int32
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *RuleReport) GetContVers() []int32 {
 // GetContVersOk returns a tuple with the ContVers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetContVersOk() ([]int32, bool) {
-	if o == nil || isNil(o.ContVers) {
+	if o == nil || IsNil(o.ContVers) {
 		return nil, false
 	}
 	return o.ContVers, true
@@ -123,7 +123,7 @@ func (o *RuleReport) GetContVersOk() ([]int32, bool) {
 
 // HasContVers returns a boolean if a field has been set.
 func (o *RuleReport) HasContVers() bool {
-	if o != nil && !isNil(o.ContVers) {
+	if o != nil && !IsNil(o.ContVers) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *RuleReport) SetContVers(v []int32) {
 
 // GetFailureCode returns the FailureCode field value if set, zero value otherwise.
 func (o *RuleReport) GetFailureCode() FailureCode {
-	if o == nil || isNil(o.FailureCode) {
+	if o == nil || IsNil(o.FailureCode) {
 		var ret FailureCode
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *RuleReport) GetFailureCode() FailureCode {
 // GetFailureCodeOk returns a tuple with the FailureCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetFailureCodeOk() (*FailureCode, bool) {
-	if o == nil || isNil(o.FailureCode) {
+	if o == nil || IsNil(o.FailureCode) {
 		return nil, false
 	}
 	return o.FailureCode, true
@@ -155,7 +155,7 @@ func (o *RuleReport) GetFailureCodeOk() (*FailureCode, bool) {
 
 // HasFailureCode returns a boolean if a field has been set.
 func (o *RuleReport) HasFailureCode() bool {
-	if o != nil && !isNil(o.FailureCode) {
+	if o != nil && !IsNil(o.FailureCode) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *RuleReport) SetFailureCode(v FailureCode) {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *RuleReport) GetRetryAfter() int32 {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *RuleReport) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -187,7 +187,7 @@ func (o *RuleReport) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *RuleReport) HasRetryAfter() bool {
-	if o != nil && !isNil(o.RetryAfter) {
+	if o != nil && !IsNil(o.RetryAfter) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *RuleReport) SetRetryAfter(v int32) {
 
 // GetFinUnitAct returns the FinUnitAct field value if set, zero value otherwise.
 func (o *RuleReport) GetFinUnitAct() FinalUnitAction {
-	if o == nil || isNil(o.FinUnitAct) {
+	if o == nil || IsNil(o.FinUnitAct) {
 		var ret FinalUnitAction
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *RuleReport) GetFinUnitAct() FinalUnitAction {
 // GetFinUnitActOk returns a tuple with the FinUnitAct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetFinUnitActOk() (*FinalUnitAction, bool) {
-	if o == nil || isNil(o.FinUnitAct) {
+	if o == nil || IsNil(o.FinUnitAct) {
 		return nil, false
 	}
 	return o.FinUnitAct, true
@@ -219,7 +219,7 @@ func (o *RuleReport) GetFinUnitActOk() (*FinalUnitAction, bool) {
 
 // HasFinUnitAct returns a boolean if a field has been set.
 func (o *RuleReport) HasFinUnitAct() bool {
-	if o != nil && !isNil(o.FinUnitAct) {
+	if o != nil && !IsNil(o.FinUnitAct) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *RuleReport) SetFinUnitAct(v FinalUnitAction) {
 
 // GetRanNasRelCauses returns the RanNasRelCauses field value if set, zero value otherwise.
 func (o *RuleReport) GetRanNasRelCauses() []RanNasRelCause {
-	if o == nil || isNil(o.RanNasRelCauses) {
+	if o == nil || IsNil(o.RanNasRelCauses) {
 		var ret []RanNasRelCause
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *RuleReport) GetRanNasRelCauses() []RanNasRelCause {
 // GetRanNasRelCausesOk returns a tuple with the RanNasRelCauses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetRanNasRelCausesOk() ([]RanNasRelCause, bool) {
-	if o == nil || isNil(o.RanNasRelCauses) {
+	if o == nil || IsNil(o.RanNasRelCauses) {
 		return nil, false
 	}
 	return o.RanNasRelCauses, true
@@ -251,7 +251,7 @@ func (o *RuleReport) GetRanNasRelCausesOk() ([]RanNasRelCause, bool) {
 
 // HasRanNasRelCauses returns a boolean if a field has been set.
 func (o *RuleReport) HasRanNasRelCauses() bool {
-	if o != nil && !isNil(o.RanNasRelCauses) {
+	if o != nil && !IsNil(o.RanNasRelCauses) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *RuleReport) SetRanNasRelCauses(v []RanNasRelCause) {
 
 // GetAltQosParamId returns the AltQosParamId field value if set, zero value otherwise.
 func (o *RuleReport) GetAltQosParamId() string {
-	if o == nil || isNil(o.AltQosParamId) {
+	if o == nil || IsNil(o.AltQosParamId) {
 		var ret string
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *RuleReport) GetAltQosParamId() string {
 // GetAltQosParamIdOk returns a tuple with the AltQosParamId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetAltQosParamIdOk() (*string, bool) {
-	if o == nil || isNil(o.AltQosParamId) {
+	if o == nil || IsNil(o.AltQosParamId) {
 		return nil, false
 	}
 	return o.AltQosParamId, true
@@ -283,7 +283,7 @@ func (o *RuleReport) GetAltQosParamIdOk() (*string, bool) {
 
 // HasAltQosParamId returns a boolean if a field has been set.
 func (o *RuleReport) HasAltQosParamId() bool {
-	if o != nil && !isNil(o.AltQosParamId) {
+	if o != nil && !IsNil(o.AltQosParamId) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *RuleReport) SetAltQosParamId(v string) {
 
 // GetAltQosNotSuppInd returns the AltQosNotSuppInd field value if set, zero value otherwise.
 func (o *RuleReport) GetAltQosNotSuppInd() bool {
-	if o == nil || isNil(o.AltQosNotSuppInd) {
+	if o == nil || IsNil(o.AltQosNotSuppInd) {
 		var ret bool
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *RuleReport) GetAltQosNotSuppInd() bool {
 // GetAltQosNotSuppIndOk returns a tuple with the AltQosNotSuppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RuleReport) GetAltQosNotSuppIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AltQosNotSuppInd) {
+	if o == nil || IsNil(o.AltQosNotSuppInd) {
 		return nil, false
 	}
 	return o.AltQosNotSuppInd, true
@@ -315,7 +315,7 @@ func (o *RuleReport) GetAltQosNotSuppIndOk() (*bool, bool) {
 
 // HasAltQosNotSuppInd returns a boolean if a field has been set.
 func (o *RuleReport) HasAltQosNotSuppInd() bool {
-	if o != nil && !isNil(o.AltQosNotSuppInd) {
+	if o != nil && !IsNil(o.AltQosNotSuppInd) {
 		return true
 	}
 
@@ -328,7 +328,7 @@ func (o *RuleReport) SetAltQosNotSuppInd(v bool) {
 }
 
 func (o RuleReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -339,25 +339,25 @@ func (o RuleReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pccRuleIds"] = o.PccRuleIds
 	toSerialize["ruleStatus"] = o.RuleStatus
-	if !isNil(o.ContVers) {
+	if !IsNil(o.ContVers) {
 		toSerialize["contVers"] = o.ContVers
 	}
-	if !isNil(o.FailureCode) {
+	if !IsNil(o.FailureCode) {
 		toSerialize["failureCode"] = o.FailureCode
 	}
-	if !isNil(o.RetryAfter) {
+	if !IsNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
-	if !isNil(o.FinUnitAct) {
+	if !IsNil(o.FinUnitAct) {
 		toSerialize["finUnitAct"] = o.FinUnitAct
 	}
-	if !isNil(o.RanNasRelCauses) {
+	if !IsNil(o.RanNasRelCauses) {
 		toSerialize["ranNasRelCauses"] = o.RanNasRelCauses
 	}
-	if !isNil(o.AltQosParamId) {
+	if !IsNil(o.AltQosParamId) {
 		toSerialize["altQosParamId"] = o.AltQosParamId
 	}
-	if !isNil(o.AltQosNotSuppInd) {
+	if !IsNil(o.AltQosNotSuppInd) {
 		toSerialize["altQosNotSuppInd"] = o.AltQosNotSuppInd
 	}
 	return toSerialize, nil
@@ -398,5 +398,3 @@ func (v *NullableRuleReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type EventListForEventTriggeredMeasurementType string
 // List of eventListForEventTriggeredMeasurement-Type
 const (
 	OUT_OF_COVERAGE EventListForEventTriggeredMeasurementType = "OUT_OF_COVERAGE"
-	A2_EVENT EventListForEventTriggeredMeasurementType = "A2_EVENT"
+	A2_EVENT        EventListForEventTriggeredMeasurementType = "A2_EVENT"
 )
 
 // All allowed values of EventListForEventTriggeredMeasurementType enum
@@ -108,4 +108,3 @@ func (v *NullableEventListForEventTriggeredMeasurementType) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

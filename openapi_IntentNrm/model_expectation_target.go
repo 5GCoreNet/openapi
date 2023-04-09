@@ -19,10 +19,10 @@ var _ MappedNullable = &ExpectationTarget{}
 
 // ExpectationTarget This data type is the \"ExpectationTarget\" data type without specialisations
 type ExpectationTarget struct {
-	TargetName *string `json:"targetName,omitempty"`
-	TargetCondition *Condition `json:"targetCondition,omitempty"`
-	TargetValueRange *float32 `json:"targetValueRange,omitempty"`
-	TargetContexts []TargetContext `json:"targetContexts,omitempty"`
+	TargetName       *string         `json:"targetName,omitempty"`
+	TargetCondition  *Condition      `json:"targetCondition,omitempty"`
+	TargetValueRange *float32        `json:"targetValueRange,omitempty"`
+	TargetContexts   []TargetContext `json:"targetContexts,omitempty"`
 }
 
 // NewExpectationTarget instantiates a new ExpectationTarget object
@@ -44,7 +44,7 @@ func NewExpectationTargetWithDefaults() *ExpectationTarget {
 
 // GetTargetName returns the TargetName field value if set, zero value otherwise.
 func (o *ExpectationTarget) GetTargetName() string {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ExpectationTarget) GetTargetName() string {
 // GetTargetNameOk returns a tuple with the TargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectationTarget) GetTargetNameOk() (*string, bool) {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		return nil, false
 	}
 	return o.TargetName, true
@@ -62,7 +62,7 @@ func (o *ExpectationTarget) GetTargetNameOk() (*string, bool) {
 
 // HasTargetName returns a boolean if a field has been set.
 func (o *ExpectationTarget) HasTargetName() bool {
-	if o != nil && !isNil(o.TargetName) {
+	if o != nil && !IsNil(o.TargetName) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ExpectationTarget) SetTargetName(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *ExpectationTarget) GetTargetCondition() Condition {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		var ret Condition
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ExpectationTarget) GetTargetCondition() Condition {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectationTarget) GetTargetConditionOk() (*Condition, bool) {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -94,7 +94,7 @@ func (o *ExpectationTarget) GetTargetConditionOk() (*Condition, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *ExpectationTarget) HasTargetCondition() bool {
-	if o != nil && !isNil(o.TargetCondition) {
+	if o != nil && !IsNil(o.TargetCondition) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ExpectationTarget) SetTargetCondition(v Condition) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *ExpectationTarget) GetTargetValueRange() float32 {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		var ret float32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ExpectationTarget) GetTargetValueRange() float32 {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectationTarget) GetTargetValueRangeOk() (*float32, bool) {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -126,7 +126,7 @@ func (o *ExpectationTarget) GetTargetValueRangeOk() (*float32, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *ExpectationTarget) HasTargetValueRange() bool {
-	if o != nil && !isNil(o.TargetValueRange) {
+	if o != nil && !IsNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ExpectationTarget) SetTargetValueRange(v float32) {
 
 // GetTargetContexts returns the TargetContexts field value if set, zero value otherwise.
 func (o *ExpectationTarget) GetTargetContexts() []TargetContext {
-	if o == nil || isNil(o.TargetContexts) {
+	if o == nil || IsNil(o.TargetContexts) {
 		var ret []TargetContext
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ExpectationTarget) GetTargetContexts() []TargetContext {
 // GetTargetContextsOk returns a tuple with the TargetContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectationTarget) GetTargetContextsOk() ([]TargetContext, bool) {
-	if o == nil || isNil(o.TargetContexts) {
+	if o == nil || IsNil(o.TargetContexts) {
 		return nil, false
 	}
 	return o.TargetContexts, true
@@ -158,7 +158,7 @@ func (o *ExpectationTarget) GetTargetContextsOk() ([]TargetContext, bool) {
 
 // HasTargetContexts returns a boolean if a field has been set.
 func (o *ExpectationTarget) HasTargetContexts() bool {
-	if o != nil && !isNil(o.TargetContexts) {
+	if o != nil && !IsNil(o.TargetContexts) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *ExpectationTarget) SetTargetContexts(v []TargetContext) {
 }
 
 func (o ExpectationTarget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o ExpectationTarget) MarshalJSON() ([]byte, error) {
 
 func (o ExpectationTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetName) {
+	if !IsNil(o.TargetName) {
 		toSerialize["targetName"] = o.TargetName
 	}
-	if !isNil(o.TargetCondition) {
+	if !IsNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !isNil(o.TargetValueRange) {
+	if !IsNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
-	if !isNil(o.TargetContexts) {
+	if !IsNil(o.TargetContexts) {
 		toSerialize["targetContexts"] = o.TargetContexts
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableExpectationTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

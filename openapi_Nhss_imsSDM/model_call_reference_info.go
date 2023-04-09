@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the CallReferenceInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CallReferenceInfo{}
 
-// CallReferenceInfo Contains a Call Reference Number and the AS-Number; it allows a later retry of the call setup in the context of MTRR 
+// CallReferenceInfo Contains a Call Reference Number and the AS-Number; it allows a later retry of the call setup in the context of MTRR
 type CallReferenceInfo struct {
-	// The content is according to CallReferenceNumber type described in 3GPP TS 29.002 [30]. Base64 encoded according to IETF RFC 2045 [28] 
+	// The content is according to CallReferenceNumber type described in 3GPP TS 29.002 [30]. Base64 encoded according to IETF RFC 2045 [28]
 	CallRefNumber string `json:"callRefNumber"`
-	// The content is according to ISDN-AddressString type described in 3GPP TS 29.002 [30]. Base64 encoded according to IETF RFC 2045 [28] 
+	// The content is according to ISDN-AddressString type described in 3GPP TS 29.002 [30]. Base64 encoded according to IETF RFC 2045 [28]
 	AsNumber string `json:"asNumber"`
 }
 
@@ -93,7 +93,7 @@ func (o *CallReferenceInfo) SetAsNumber(v string) {
 }
 
 func (o CallReferenceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableCallReferenceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

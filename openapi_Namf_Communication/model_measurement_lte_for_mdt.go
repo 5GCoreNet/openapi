@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MeasurementLteForMdt The enumeration MeasurementLteForMdt defines Measurements used for MDT in LTE in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.5-1. 
+// MeasurementLteForMdt The enumeration MeasurementLteForMdt defines Measurements used for MDT in LTE in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.5-1.
 type MeasurementLteForMdt struct {
-	MeasurementLteForMdtAnyOf *MeasurementLteForMdtAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MeasurementLteForMdt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MeasurementLteForMdtAnyOf
-	err = json.Unmarshal(data, &dst.MeasurementLteForMdtAnyOf);
-	if err == nil {
-		jsonMeasurementLteForMdtAnyOf, _ := json.Marshal(dst.MeasurementLteForMdtAnyOf)
-		if string(jsonMeasurementLteForMdtAnyOf) == "{}" { // empty struct
-			dst.MeasurementLteForMdtAnyOf = nil
-		} else {
-			return nil // data stored in dst.MeasurementLteForMdtAnyOf, return on the first match
-		}
-	} else {
-		dst.MeasurementLteForMdtAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MeasurementLteForMdt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MeasurementLteForMdt) MarshalJSON() ([]byte, error) {
-	if src.MeasurementLteForMdtAnyOf != nil {
-		return json.Marshal(&src.MeasurementLteForMdtAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMeasurementLteForMdt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

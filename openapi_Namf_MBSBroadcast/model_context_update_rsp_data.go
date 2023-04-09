@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ContextUpdateRspData{}
 
 // ContextUpdateRspData Data within ContextUpdate Response
 type ContextUpdateRspData struct {
-	N2MbsSmInfoList []N2MbsSmInfo `json:"n2MbsSmInfoList,omitempty"`
+	N2MbsSmInfoList []N2MbsSmInfo    `json:"n2MbsSmInfoList,omitempty"`
 	OperationStatus *OperationStatus `json:"operationStatus,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewContextUpdateRspDataWithDefaults() *ContextUpdateRspData {
 
 // GetN2MbsSmInfoList returns the N2MbsSmInfoList field value if set, zero value otherwise.
 func (o *ContextUpdateRspData) GetN2MbsSmInfoList() []N2MbsSmInfo {
-	if o == nil || isNil(o.N2MbsSmInfoList) {
+	if o == nil || IsNil(o.N2MbsSmInfoList) {
 		var ret []N2MbsSmInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ContextUpdateRspData) GetN2MbsSmInfoList() []N2MbsSmInfo {
 // GetN2MbsSmInfoListOk returns a tuple with the N2MbsSmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateRspData) GetN2MbsSmInfoListOk() ([]N2MbsSmInfo, bool) {
-	if o == nil || isNil(o.N2MbsSmInfoList) {
+	if o == nil || IsNil(o.N2MbsSmInfoList) {
 		return nil, false
 	}
 	return o.N2MbsSmInfoList, true
@@ -60,7 +60,7 @@ func (o *ContextUpdateRspData) GetN2MbsSmInfoListOk() ([]N2MbsSmInfo, bool) {
 
 // HasN2MbsSmInfoList returns a boolean if a field has been set.
 func (o *ContextUpdateRspData) HasN2MbsSmInfoList() bool {
-	if o != nil && !isNil(o.N2MbsSmInfoList) {
+	if o != nil && !IsNil(o.N2MbsSmInfoList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ContextUpdateRspData) SetN2MbsSmInfoList(v []N2MbsSmInfo) {
 
 // GetOperationStatus returns the OperationStatus field value if set, zero value otherwise.
 func (o *ContextUpdateRspData) GetOperationStatus() OperationStatus {
-	if o == nil || isNil(o.OperationStatus) {
+	if o == nil || IsNil(o.OperationStatus) {
 		var ret OperationStatus
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ContextUpdateRspData) GetOperationStatus() OperationStatus {
 // GetOperationStatusOk returns a tuple with the OperationStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateRspData) GetOperationStatusOk() (*OperationStatus, bool) {
-	if o == nil || isNil(o.OperationStatus) {
+	if o == nil || IsNil(o.OperationStatus) {
 		return nil, false
 	}
 	return o.OperationStatus, true
@@ -92,7 +92,7 @@ func (o *ContextUpdateRspData) GetOperationStatusOk() (*OperationStatus, bool) {
 
 // HasOperationStatus returns a boolean if a field has been set.
 func (o *ContextUpdateRspData) HasOperationStatus() bool {
-	if o != nil && !isNil(o.OperationStatus) {
+	if o != nil && !IsNil(o.OperationStatus) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ContextUpdateRspData) SetOperationStatus(v OperationStatus) {
 }
 
 func (o ContextUpdateRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ContextUpdateRspData) MarshalJSON() ([]byte, error) {
 
 func (o ContextUpdateRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.N2MbsSmInfoList) {
+	if !IsNil(o.N2MbsSmInfoList) {
 		toSerialize["n2MbsSmInfoList"] = o.N2MbsSmInfoList
 	}
-	if !isNil(o.OperationStatus) {
+	if !IsNil(o.OperationStatus) {
 		toSerialize["operationStatus"] = o.OperationStatus
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableContextUpdateRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

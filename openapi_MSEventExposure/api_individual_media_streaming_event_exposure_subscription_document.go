@@ -1,7 +1,7 @@
 /*
 3gpp-ms-event-exposure
 
-API for Media Streaming Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Media Streaming Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,19 +13,18 @@ package openapi_MSEventExposure
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualMediaStreamingEventExposureSubscriptionDocumentApiService IndividualMediaStreamingEventExposureSubscriptionDocumentApi service
 type IndividualMediaStreamingEventExposureSubscriptionDocumentApiService service
 
 type ApiDeleteIndivMSEventExposureSubscRequest struct {
-	ctx context.Context
-	ApiService *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteIndivMSEventExposureSubscRequest) Execute() (*http.Response, er
 /*
 DeleteIndivMSEventExposureSubsc Request the deletion of an existing Individual Media Streaming Event Exposure Subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of the Individual Media Streaming Event Exposure Subscription resource.
- @return ApiDeleteIndivMSEventExposureSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of the Individual Media Streaming Event Exposure Subscription resource.
+	@return ApiDeleteIndivMSEventExposureSubscRequest
 */
 func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) DeleteIndivMSEventExposureSubsc(ctx context.Context, subscriptionId string) ApiDeleteIndivMSEventExposureSubscRequest {
 	return ApiDeleteIndivMSEventExposureSubscRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 // Execute executes the request
 func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) DeleteIndivMSEventExposureSubscExecute(r ApiDeleteIndivMSEventExposureSubscRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMediaStreamingEventExposureSubscriptionDocumentApiService.DeleteIndivMSEventExposureSubsc")
@@ -95,9 +94,9 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -191,8 +190,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) De
 }
 
 type ApiRetrieveIndivMSEventExposureSubscRequest struct {
-	ctx context.Context
-	ApiService *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -203,26 +202,27 @@ func (r ApiRetrieveIndivMSEventExposureSubscRequest) Execute() (*AfEventExposure
 /*
 RetrieveIndivMSEventExposureSubsc Retrieve an existing Individual Media Streaming Event Exposure Subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of the Individual Media Streaming Event Exposure Subscription resource.
- @return ApiRetrieveIndivMSEventExposureSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of the Individual Media Streaming Event Exposure Subscription resource.
+	@return ApiRetrieveIndivMSEventExposureSubscRequest
 */
 func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) RetrieveIndivMSEventExposureSubsc(ctx context.Context, subscriptionId string) ApiRetrieveIndivMSEventExposureSubscRequest {
 	return ApiRetrieveIndivMSEventExposureSubscRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AfEventExposureSubsc
+//
+//	@return AfEventExposureSubsc
 func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) RetrieveIndivMSEventExposureSubscExecute(r ApiRetrieveIndivMSEventExposureSubscRequest) (*AfEventExposureSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AfEventExposureSubsc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AfEventExposureSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMediaStreamingEventExposureSubscriptionDocumentApiService.RetrieveIndivMSEventExposureSubsc")
@@ -264,9 +264,9 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -283,8 +283,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -294,8 +294,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -305,8 +305,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -316,8 +316,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -327,8 +327,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -338,8 +338,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -349,8 +349,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -360,8 +360,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -380,13 +380,13 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Re
 }
 
 type ApiUpdateIndivMSEventExposureSubscRequest struct {
-	ctx context.Context
-	ApiService *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                  context.Context
+	ApiService           *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService
+	subscriptionId       string
 	afEventExposureSubsc *AfEventExposureSubsc
 }
 
-// Contains the updated representation of the Individual Media Streaming Event Exposure  Subscription resource. resource. 
+// Contains the updated representation of the Individual Media Streaming Event Exposure  Subscription resource. resource.
 func (r ApiUpdateIndivMSEventExposureSubscRequest) AfEventExposureSubsc(afEventExposureSubsc AfEventExposureSubsc) ApiUpdateIndivMSEventExposureSubscRequest {
 	r.afEventExposureSubsc = &afEventExposureSubsc
 	return r
@@ -399,26 +399,27 @@ func (r ApiUpdateIndivMSEventExposureSubscRequest) Execute() (*AfEventExposureSu
 /*
 UpdateIndivMSEventExposureSubsc Request the update of an existing Individual Media Streaming Event Exposure Subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of the Individual Media Streaming Event Exposure Subscription resource.
- @return ApiUpdateIndivMSEventExposureSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of the Individual Media Streaming Event Exposure Subscription resource.
+	@return ApiUpdateIndivMSEventExposureSubscRequest
 */
 func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) UpdateIndivMSEventExposureSubsc(ctx context.Context, subscriptionId string) ApiUpdateIndivMSEventExposureSubscRequest {
 	return ApiUpdateIndivMSEventExposureSubscRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AfEventExposureSubsc
+//
+//	@return AfEventExposureSubsc
 func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) UpdateIndivMSEventExposureSubscExecute(r ApiUpdateIndivMSEventExposureSubscRequest) (*AfEventExposureSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AfEventExposureSubsc
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AfEventExposureSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMediaStreamingEventExposureSubscriptionDocumentApiService.UpdateIndivMSEventExposureSubsc")
@@ -465,9 +466,9 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -484,8 +485,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -495,8 +496,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -506,8 +507,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -517,8 +518,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -528,8 +529,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -539,8 +540,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -550,8 +551,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -561,8 +562,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -572,8 +573,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -583,8 +584,8 @@ func (a *IndividualMediaStreamingEventExposureSubscriptionDocumentApiService) Up
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

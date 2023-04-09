@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // LooseRouteIndication Indicates whether the loose routing mechanism is required to serve the user
 type LooseRouteIndication struct {
-	LooseRouteIndicationAnyOf *LooseRouteIndicationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LooseRouteIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LooseRouteIndicationAnyOf
-	err = json.Unmarshal(data, &dst.LooseRouteIndicationAnyOf);
-	if err == nil {
-		jsonLooseRouteIndicationAnyOf, _ := json.Marshal(dst.LooseRouteIndicationAnyOf)
-		if string(jsonLooseRouteIndicationAnyOf) == "{}" { // empty struct
-			dst.LooseRouteIndicationAnyOf = nil
-		} else {
-			return nil // data stored in dst.LooseRouteIndicationAnyOf, return on the first match
-		}
-	} else {
-		dst.LooseRouteIndicationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LooseRouteIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LooseRouteIndication) MarshalJSON() ([]byte, error) {
-	if src.LooseRouteIndicationAnyOf != nil {
-		return json.Marshal(&src.LooseRouteIndicationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLooseRouteIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

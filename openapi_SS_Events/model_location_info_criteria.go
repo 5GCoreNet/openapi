@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// LocationInfoCriteria - Geographic location and reference UE details, where the UEs moving in and out to be monitored. 
+// LocationInfoCriteria - Geographic location and reference UE details, where the UEs moving in and out to be monitored.
 type LocationInfoCriteria struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsLocationInfoCriteria(v *interface{}) LocationInfoCriteria {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LocationInfoCriteria) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src LocationInfoCriteria) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LocationInfoCriteria) GetActualInstance() (interface{}) {
+func (obj *LocationInfoCriteria) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableLocationInfoCriteria) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

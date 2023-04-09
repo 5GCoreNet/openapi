@@ -1,7 +1,7 @@
 /*
 SS_LocationReporting
 
-API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_SS_LocationReporting
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualSEALLocationReportingConfigurationDocumentApiService IndividualSEALLocationReportingConfigurationDocumentApi service
 type IndividualSEALLocationReportingConfigurationDocumentApiService service
 
 type ApiDeleteLocReportingConfigRequest struct {
-	ctx context.Context
-	ApiService *IndividualSEALLocationReportingConfigurationDocumentApiService
+	ctx             context.Context
+	ApiService      *IndividualSEALLocationReportingConfigurationDocumentApiService
 	configurationId string
 }
 
@@ -38,14 +37,14 @@ DeleteLocReportingConfig Method for DeleteLocReportingConfig
 
 Deletes an individual SEAL location reporting configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configurationId String identifying an individual configuration resource.
- @return ApiDeleteLocReportingConfigRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param configurationId String identifying an individual configuration resource.
+	@return ApiDeleteLocReportingConfigRequest
 */
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteLocReportingConfig(ctx context.Context, configurationId string) ApiDeleteLocReportingConfigRequest {
 	return ApiDeleteLocReportingConfigRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		configurationId: configurationId,
 	}
 }
@@ -53,9 +52,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 // Execute executes the request
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteLocReportingConfigExecute(r ApiDeleteLocReportingConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSEALLocationReportingConfigurationDocumentApiService.DeleteLocReportingConfig")
@@ -97,9 +96,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -116,8 +115,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +126,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +137,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +148,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -160,8 +159,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -171,8 +170,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -182,8 +181,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -193,9 +192,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) DeleteL
 }
 
 type ApiModifyLocReportingConfigRequest struct {
-	ctx context.Context
-	ApiService *IndividualSEALLocationReportingConfigurationDocumentApiService
-	configurationId string
+	ctx                              context.Context
+	ApiService                       *IndividualSEALLocationReportingConfigurationDocumentApiService
+	configurationId                  string
 	locationReportConfigurationPatch *LocationReportConfigurationPatch
 }
 
@@ -213,26 +212,27 @@ ModifyLocReportingConfig Method for ModifyLocReportingConfig
 
 Modify an existing SEAL Location Reporting Configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configurationId Identifier of an individual SEAL location reporting configuration.
- @return ApiModifyLocReportingConfigRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param configurationId Identifier of an individual SEAL location reporting configuration.
+	@return ApiModifyLocReportingConfigRequest
 */
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyLocReportingConfig(ctx context.Context, configurationId string) ApiModifyLocReportingConfigRequest {
 	return ApiModifyLocReportingConfigRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return LocationReportConfiguration
+//
+//	@return LocationReportConfiguration
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyLocReportingConfigExecute(r ApiModifyLocReportingConfigRequest) (*LocationReportConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LocationReportConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocationReportConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSEALLocationReportingConfigurationDocumentApiService.ModifyLocReportingConfig")
@@ -279,9 +279,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -298,8 +298,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -309,8 +309,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -320,8 +320,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -331,8 +331,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -342,8 +342,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -353,8 +353,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -364,8 +364,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -375,8 +375,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -386,8 +386,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -397,8 +397,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -417,8 +417,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) ModifyL
 }
 
 type ApiRetrieveLocReportingConfigRequest struct {
-	ctx context.Context
-	ApiService *IndividualSEALLocationReportingConfigurationDocumentApiService
+	ctx             context.Context
+	ApiService      *IndividualSEALLocationReportingConfigurationDocumentApiService
 	configurationId string
 }
 
@@ -431,26 +431,27 @@ RetrieveLocReportingConfig Method for RetrieveLocReportingConfig
 
 Retrieves an individual SEAL location reporting configuration information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configurationId String identifying an individual configuration resource.
- @return ApiRetrieveLocReportingConfigRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param configurationId String identifying an individual configuration resource.
+	@return ApiRetrieveLocReportingConfigRequest
 */
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) RetrieveLocReportingConfig(ctx context.Context, configurationId string) ApiRetrieveLocReportingConfigRequest {
 	return ApiRetrieveLocReportingConfigRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return LocationReportConfiguration
+//
+//	@return LocationReportConfiguration
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) RetrieveLocReportingConfigExecute(r ApiRetrieveLocReportingConfigRequest) (*LocationReportConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LocationReportConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocationReportConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSEALLocationReportingConfigurationDocumentApiService.RetrieveLocReportingConfig")
@@ -492,9 +493,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -511,8 +512,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -522,8 +523,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -533,8 +534,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -544,8 +545,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -555,8 +556,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -566,8 +567,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -577,8 +578,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -588,8 +589,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -608,9 +609,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) Retriev
 }
 
 type ApiUpdateLocReportingConfigRequest struct {
-	ctx context.Context
-	ApiService *IndividualSEALLocationReportingConfigurationDocumentApiService
-	configurationId string
+	ctx                         context.Context
+	ApiService                  *IndividualSEALLocationReportingConfigurationDocumentApiService
+	configurationId             string
 	locationReportConfiguration *LocationReportConfiguration
 }
 
@@ -629,26 +630,27 @@ UpdateLocReportingConfig Method for UpdateLocReportingConfig
 
 Updates an individual SEAL location reporting configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configurationId String identifying an individual configuration resource.
- @return ApiUpdateLocReportingConfigRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param configurationId String identifying an individual configuration resource.
+	@return ApiUpdateLocReportingConfigRequest
 */
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateLocReportingConfig(ctx context.Context, configurationId string) ApiUpdateLocReportingConfigRequest {
 	return ApiUpdateLocReportingConfigRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return LocationReportConfiguration
+//
+//	@return LocationReportConfiguration
 func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateLocReportingConfigExecute(r ApiUpdateLocReportingConfigRequest) (*LocationReportConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LocationReportConfiguration
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocationReportConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSEALLocationReportingConfigurationDocumentApiService.UpdateLocReportingConfig")
@@ -695,9 +697,9 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -714,8 +716,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -725,8 +727,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -736,8 +738,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -747,8 +749,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -758,8 +760,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -769,8 +771,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -780,8 +782,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -791,8 +793,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -802,8 +804,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -813,8 +815,8 @@ func (a *IndividualSEALLocationReportingConfigurationDocumentApiService) UpdateL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

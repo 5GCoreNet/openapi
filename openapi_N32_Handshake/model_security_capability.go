@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,28 +17,14 @@ import (
 
 // SecurityCapability Enumeration of security capabilities
 type SecurityCapability struct {
-	SecurityCapabilityAnyOf *SecurityCapabilityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SecurityCapability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SecurityCapabilityAnyOf
-	err = json.Unmarshal(data, &dst.SecurityCapabilityAnyOf);
-	if err == nil {
-		jsonSecurityCapabilityAnyOf, _ := json.Marshal(dst.SecurityCapabilityAnyOf)
-		if string(jsonSecurityCapabilityAnyOf) == "{}" { // empty struct
-			dst.SecurityCapabilityAnyOf = nil
-		} else {
-			return nil // data stored in dst.SecurityCapabilityAnyOf, return on the first match
-		}
-	} else {
-		dst.SecurityCapabilityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SecurityCapability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SecurityCapability) MarshalJSON() ([]byte, error) {
-	if src.SecurityCapabilityAnyOf != nil {
-		return json.Marshal(&src.SecurityCapabilityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSecurityCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

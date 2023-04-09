@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // TriggerSORInfoUpdateApiService TriggerSORInfoUpdateApi service
 type TriggerSORInfoUpdateApiService service
 
 type ApiUpdateSORInfoRequest struct {
-	ctx context.Context
-	ApiService *TriggerSORInfoUpdateApiService
-	supi string
+	ctx           context.Context
+	ApiService    *TriggerSORInfoUpdateApiService
+	supi          string
 	sorUpdateInfo *SorUpdateInfo
 }
 
@@ -42,26 +41,27 @@ func (r ApiUpdateSORInfoRequest) Execute() (*SorInfo, *http.Response, error) {
 /*
 UpdateSORInfo Nudm_Sdm custom operation to trigger SOR info update
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Identifier of the UE
- @return ApiUpdateSORInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Identifier of the UE
+	@return ApiUpdateSORInfoRequest
 */
 func (a *TriggerSORInfoUpdateApiService) UpdateSORInfo(ctx context.Context, supi string) ApiUpdateSORInfoRequest {
 	return ApiUpdateSORInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
-//  @return SorInfo
+//
+//	@return SorInfo
 func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfoRequest) (*SorInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SorInfo
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SorInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TriggerSORInfoUpdateApiService.UpdateSORInfo")
@@ -105,9 +105,9 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -124,8 +124,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -135,8 +135,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -146,8 +146,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -157,8 +157,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -168,8 +168,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -179,8 +179,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -190,8 +190,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -201,8 +201,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -212,8 +212,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -223,8 +223,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -234,8 +234,8 @@ func (a *TriggerSORInfoUpdateApiService) UpdateSORInfoExecute(r ApiUpdateSORInfo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

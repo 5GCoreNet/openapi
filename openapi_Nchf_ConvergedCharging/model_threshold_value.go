@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &ThresholdValue{}
 
 // ThresholdValue Indicates the threshold value(s) for RTT and/or Packet Loss Rate.
 type ThresholdValue struct {
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property. 
+	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property.
 	RttThres NullableInt32 `json:"rttThres,omitempty"`
-	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property.
 	PlrThres NullableInt32 `json:"plrThres,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewThresholdValueWithDefaults() *ThresholdValue {
 
 // GetRttThres returns the RttThres field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ThresholdValue) GetRttThres() int32 {
-	if o == nil || isNil(o.RttThres.Get()) {
+	if o == nil || IsNil(o.RttThres.Get()) {
 		var ret int32
 		return ret
 	}
@@ -74,6 +74,7 @@ func (o *ThresholdValue) HasRttThres() bool {
 func (o *ThresholdValue) SetRttThres(v int32) {
 	o.RttThres.Set(&v)
 }
+
 // SetRttThresNil sets the value for RttThres to be an explicit nil
 func (o *ThresholdValue) SetRttThresNil() {
 	o.RttThres.Set(nil)
@@ -86,7 +87,7 @@ func (o *ThresholdValue) UnsetRttThres() {
 
 // GetPlrThres returns the PlrThres field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ThresholdValue) GetPlrThres() int32 {
-	if o == nil || isNil(o.PlrThres.Get()) {
+	if o == nil || IsNil(o.PlrThres.Get()) {
 		var ret int32
 		return ret
 	}
@@ -116,6 +117,7 @@ func (o *ThresholdValue) HasPlrThres() bool {
 func (o *ThresholdValue) SetPlrThres(v int32) {
 	o.PlrThres.Set(&v)
 }
+
 // SetPlrThresNil sets the value for PlrThres to be an explicit nil
 func (o *ThresholdValue) SetPlrThresNil() {
 	o.PlrThres.Set(nil)
@@ -127,7 +129,7 @@ func (o *ThresholdValue) UnsetPlrThres() {
 }
 
 func (o ThresholdValue) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,5 +182,3 @@ func (v *NullableThresholdValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

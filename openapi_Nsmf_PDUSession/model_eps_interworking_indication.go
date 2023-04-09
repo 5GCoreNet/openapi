@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// EpsInterworkingIndication EPS Interworking Indication. Possible values are - NONE - WITH_N26 - WITHOUT_N26 - IWK_NON_3GPP 
+// EpsInterworkingIndication EPS Interworking Indication. Possible values are - NONE - WITH_N26 - WITHOUT_N26 - IWK_NON_3GPP
 type EpsInterworkingIndication struct {
-	EpsInterworkingIndicationAnyOf *EpsInterworkingIndicationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EpsInterworkingIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EpsInterworkingIndicationAnyOf
-	err = json.Unmarshal(data, &dst.EpsInterworkingIndicationAnyOf);
-	if err == nil {
-		jsonEpsInterworkingIndicationAnyOf, _ := json.Marshal(dst.EpsInterworkingIndicationAnyOf)
-		if string(jsonEpsInterworkingIndicationAnyOf) == "{}" { // empty struct
-			dst.EpsInterworkingIndicationAnyOf = nil
-		} else {
-			return nil // data stored in dst.EpsInterworkingIndicationAnyOf, return on the first match
-		}
-	} else {
-		dst.EpsInterworkingIndicationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EpsInterworkingIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EpsInterworkingIndication) MarshalJSON() ([]byte, error) {
-	if src.EpsInterworkingIndicationAnyOf != nil {
-		return json.Marshal(&src.EpsInterworkingIndicationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEpsInterworkingIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

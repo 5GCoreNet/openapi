@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NetworkSliceCond{}
 // NetworkSliceCond Subscription to a set of NFs, based on the slices (S-NSSAI and NSI) they support
 type NetworkSliceCond struct {
 	SnssaiList []Snssai `json:"snssaiList"`
-	NsiList []string `json:"nsiList,omitempty"`
+	NsiList    []string `json:"nsiList,omitempty"`
 }
 
 // NewNetworkSliceCond instantiates a new NetworkSliceCond object
@@ -67,7 +67,7 @@ func (o *NetworkSliceCond) SetSnssaiList(v []Snssai) {
 
 // GetNsiList returns the NsiList field value if set, zero value otherwise.
 func (o *NetworkSliceCond) GetNsiList() []string {
-	if o == nil || isNil(o.NsiList) {
+	if o == nil || IsNil(o.NsiList) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NetworkSliceCond) GetNsiList() []string {
 // GetNsiListOk returns a tuple with the NsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceCond) GetNsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.NsiList) {
+	if o == nil || IsNil(o.NsiList) {
 		return nil, false
 	}
 	return o.NsiList, true
@@ -85,7 +85,7 @@ func (o *NetworkSliceCond) GetNsiListOk() ([]string, bool) {
 
 // HasNsiList returns a boolean if a field has been set.
 func (o *NetworkSliceCond) HasNsiList() bool {
-	if o != nil && !isNil(o.NsiList) {
+	if o != nil && !IsNil(o.NsiList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *NetworkSliceCond) SetNsiList(v []string) {
 }
 
 func (o NetworkSliceCond) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o NetworkSliceCond) MarshalJSON() ([]byte, error) {
 func (o NetworkSliceCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssaiList"] = o.SnssaiList
-	if !isNil(o.NsiList) {
+	if !IsNil(o.NsiList) {
 		toSerialize["nsiList"] = o.NsiList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableNetworkSliceCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

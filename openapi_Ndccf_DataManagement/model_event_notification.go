@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -26,26 +26,26 @@ type EventNotification struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeStampGen *time.Time `json:"timeStampGen,omitempty"`
+	TimeStampGen   *time.Time        `json:"timeStampGen,omitempty"`
 	FailNotifyCode *NwdafFailureCode `json:"failNotifyCode,omitempty"`
 	// indicating a time in seconds.
-	RvWaitTime *int32 `json:"rvWaitTime,omitempty"`
-	AnaMetaInfo *AnalyticsMetadataInfo `json:"anaMetaInfo,omitempty"`
-	NfLoadLevelInfos []NfLoadLevelInformation `json:"nfLoadLevelInfos,omitempty"`
-	NsiLoadLevelInfos []NsiLoadLevelInfo `json:"nsiLoadLevelInfos,omitempty"`
-	SliceLoadLevelInfo *SliceLoadLevelInformation `json:"sliceLoadLevelInfo,omitempty"`
-	SvcExps []ServiceExperienceInfo `json:"svcExps,omitempty"`
-	QosSustainInfos []QosSustainabilityInfo `json:"qosSustainInfos,omitempty"`
-	UeComms []UeCommunication `json:"ueComms,omitempty"`
-	UeMobs []UeMobility `json:"ueMobs,omitempty"`
-	UserDataCongInfos []UserDataCongestionInfo `json:"userDataCongInfos,omitempty"`
-	AbnorBehavrs []AbnormalBehaviour `json:"abnorBehavrs,omitempty"`
-	NwPerfs []NetworkPerfInfo `json:"nwPerfs,omitempty"`
-	DnPerfInfos []DnPerfInfo `json:"dnPerfInfos,omitempty"`
-	DisperInfos []DispersionInfo `json:"disperInfos,omitempty"`
-	RedTransInfos []RedundantTransmissionExpInfo `json:"redTransInfos,omitempty"`
-	WlanInfos []WlanPerformanceInfo `json:"wlanInfos,omitempty"`
-	SmccExps []SmcceInfo `json:"smccExps,omitempty"`
+	RvWaitTime         *int32                         `json:"rvWaitTime,omitempty"`
+	AnaMetaInfo        *AnalyticsMetadataInfo         `json:"anaMetaInfo,omitempty"`
+	NfLoadLevelInfos   []NfLoadLevelInformation       `json:"nfLoadLevelInfos,omitempty"`
+	NsiLoadLevelInfos  []NsiLoadLevelInfo             `json:"nsiLoadLevelInfos,omitempty"`
+	SliceLoadLevelInfo *SliceLoadLevelInformation     `json:"sliceLoadLevelInfo,omitempty"`
+	SvcExps            []ServiceExperienceInfo        `json:"svcExps,omitempty"`
+	QosSustainInfos    []QosSustainabilityInfo        `json:"qosSustainInfos,omitempty"`
+	UeComms            []UeCommunication              `json:"ueComms,omitempty"`
+	UeMobs             []UeMobility                   `json:"ueMobs,omitempty"`
+	UserDataCongInfos  []UserDataCongestionInfo       `json:"userDataCongInfos,omitempty"`
+	AbnorBehavrs       []AbnormalBehaviour            `json:"abnorBehavrs,omitempty"`
+	NwPerfs            []NetworkPerfInfo              `json:"nwPerfs,omitempty"`
+	DnPerfInfos        []DnPerfInfo                   `json:"dnPerfInfos,omitempty"`
+	DisperInfos        []DispersionInfo               `json:"disperInfos,omitempty"`
+	RedTransInfos      []RedundantTransmissionExpInfo `json:"redTransInfos,omitempty"`
+	WlanInfos          []WlanPerformanceInfo          `json:"wlanInfos,omitempty"`
+	SmccExps           []SmcceInfo                    `json:"smccExps,omitempty"`
 }
 
 // NewEventNotification instantiates a new EventNotification object
@@ -92,7 +92,7 @@ func (o *EventNotification) SetEvent(v NwdafEvent) {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *EventNotification) GetStart() time.Time {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret time.Time
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *EventNotification) GetStart() time.Time {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetStartOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -110,7 +110,7 @@ func (o *EventNotification) GetStartOk() (*time.Time, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *EventNotification) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *EventNotification) SetStart(v time.Time) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *EventNotification) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *EventNotification) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -142,7 +142,7 @@ func (o *EventNotification) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *EventNotification) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *EventNotification) SetExpiry(v time.Time) {
 
 // GetTimeStampGen returns the TimeStampGen field value if set, zero value otherwise.
 func (o *EventNotification) GetTimeStampGen() time.Time {
-	if o == nil || isNil(o.TimeStampGen) {
+	if o == nil || IsNil(o.TimeStampGen) {
 		var ret time.Time
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *EventNotification) GetTimeStampGen() time.Time {
 // GetTimeStampGenOk returns a tuple with the TimeStampGen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetTimeStampGenOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeStampGen) {
+	if o == nil || IsNil(o.TimeStampGen) {
 		return nil, false
 	}
 	return o.TimeStampGen, true
@@ -174,7 +174,7 @@ func (o *EventNotification) GetTimeStampGenOk() (*time.Time, bool) {
 
 // HasTimeStampGen returns a boolean if a field has been set.
 func (o *EventNotification) HasTimeStampGen() bool {
-	if o != nil && !isNil(o.TimeStampGen) {
+	if o != nil && !IsNil(o.TimeStampGen) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *EventNotification) SetTimeStampGen(v time.Time) {
 
 // GetFailNotifyCode returns the FailNotifyCode field value if set, zero value otherwise.
 func (o *EventNotification) GetFailNotifyCode() NwdafFailureCode {
-	if o == nil || isNil(o.FailNotifyCode) {
+	if o == nil || IsNil(o.FailNotifyCode) {
 		var ret NwdafFailureCode
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *EventNotification) GetFailNotifyCode() NwdafFailureCode {
 // GetFailNotifyCodeOk returns a tuple with the FailNotifyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetFailNotifyCodeOk() (*NwdafFailureCode, bool) {
-	if o == nil || isNil(o.FailNotifyCode) {
+	if o == nil || IsNil(o.FailNotifyCode) {
 		return nil, false
 	}
 	return o.FailNotifyCode, true
@@ -206,7 +206,7 @@ func (o *EventNotification) GetFailNotifyCodeOk() (*NwdafFailureCode, bool) {
 
 // HasFailNotifyCode returns a boolean if a field has been set.
 func (o *EventNotification) HasFailNotifyCode() bool {
-	if o != nil && !isNil(o.FailNotifyCode) {
+	if o != nil && !IsNil(o.FailNotifyCode) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *EventNotification) SetFailNotifyCode(v NwdafFailureCode) {
 
 // GetRvWaitTime returns the RvWaitTime field value if set, zero value otherwise.
 func (o *EventNotification) GetRvWaitTime() int32 {
-	if o == nil || isNil(o.RvWaitTime) {
+	if o == nil || IsNil(o.RvWaitTime) {
 		var ret int32
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *EventNotification) GetRvWaitTime() int32 {
 // GetRvWaitTimeOk returns a tuple with the RvWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetRvWaitTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.RvWaitTime) {
+	if o == nil || IsNil(o.RvWaitTime) {
 		return nil, false
 	}
 	return o.RvWaitTime, true
@@ -238,7 +238,7 @@ func (o *EventNotification) GetRvWaitTimeOk() (*int32, bool) {
 
 // HasRvWaitTime returns a boolean if a field has been set.
 func (o *EventNotification) HasRvWaitTime() bool {
-	if o != nil && !isNil(o.RvWaitTime) {
+	if o != nil && !IsNil(o.RvWaitTime) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *EventNotification) SetRvWaitTime(v int32) {
 
 // GetAnaMetaInfo returns the AnaMetaInfo field value if set, zero value otherwise.
 func (o *EventNotification) GetAnaMetaInfo() AnalyticsMetadataInfo {
-	if o == nil || isNil(o.AnaMetaInfo) {
+	if o == nil || IsNil(o.AnaMetaInfo) {
 		var ret AnalyticsMetadataInfo
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *EventNotification) GetAnaMetaInfo() AnalyticsMetadataInfo {
 // GetAnaMetaInfoOk returns a tuple with the AnaMetaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetAnaMetaInfoOk() (*AnalyticsMetadataInfo, bool) {
-	if o == nil || isNil(o.AnaMetaInfo) {
+	if o == nil || IsNil(o.AnaMetaInfo) {
 		return nil, false
 	}
 	return o.AnaMetaInfo, true
@@ -270,7 +270,7 @@ func (o *EventNotification) GetAnaMetaInfoOk() (*AnalyticsMetadataInfo, bool) {
 
 // HasAnaMetaInfo returns a boolean if a field has been set.
 func (o *EventNotification) HasAnaMetaInfo() bool {
-	if o != nil && !isNil(o.AnaMetaInfo) {
+	if o != nil && !IsNil(o.AnaMetaInfo) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *EventNotification) SetAnaMetaInfo(v AnalyticsMetadataInfo) {
 
 // GetNfLoadLevelInfos returns the NfLoadLevelInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetNfLoadLevelInfos() []NfLoadLevelInformation {
-	if o == nil || isNil(o.NfLoadLevelInfos) {
+	if o == nil || IsNil(o.NfLoadLevelInfos) {
 		var ret []NfLoadLevelInformation
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *EventNotification) GetNfLoadLevelInfos() []NfLoadLevelInformation {
 // GetNfLoadLevelInfosOk returns a tuple with the NfLoadLevelInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetNfLoadLevelInfosOk() ([]NfLoadLevelInformation, bool) {
-	if o == nil || isNil(o.NfLoadLevelInfos) {
+	if o == nil || IsNil(o.NfLoadLevelInfos) {
 		return nil, false
 	}
 	return o.NfLoadLevelInfos, true
@@ -302,7 +302,7 @@ func (o *EventNotification) GetNfLoadLevelInfosOk() ([]NfLoadLevelInformation, b
 
 // HasNfLoadLevelInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasNfLoadLevelInfos() bool {
-	if o != nil && !isNil(o.NfLoadLevelInfos) {
+	if o != nil && !IsNil(o.NfLoadLevelInfos) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *EventNotification) SetNfLoadLevelInfos(v []NfLoadLevelInformation) {
 
 // GetNsiLoadLevelInfos returns the NsiLoadLevelInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetNsiLoadLevelInfos() []NsiLoadLevelInfo {
-	if o == nil || isNil(o.NsiLoadLevelInfos) {
+	if o == nil || IsNil(o.NsiLoadLevelInfos) {
 		var ret []NsiLoadLevelInfo
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *EventNotification) GetNsiLoadLevelInfos() []NsiLoadLevelInfo {
 // GetNsiLoadLevelInfosOk returns a tuple with the NsiLoadLevelInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetNsiLoadLevelInfosOk() ([]NsiLoadLevelInfo, bool) {
-	if o == nil || isNil(o.NsiLoadLevelInfos) {
+	if o == nil || IsNil(o.NsiLoadLevelInfos) {
 		return nil, false
 	}
 	return o.NsiLoadLevelInfos, true
@@ -334,7 +334,7 @@ func (o *EventNotification) GetNsiLoadLevelInfosOk() ([]NsiLoadLevelInfo, bool) 
 
 // HasNsiLoadLevelInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasNsiLoadLevelInfos() bool {
-	if o != nil && !isNil(o.NsiLoadLevelInfos) {
+	if o != nil && !IsNil(o.NsiLoadLevelInfos) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *EventNotification) SetNsiLoadLevelInfos(v []NsiLoadLevelInfo) {
 
 // GetSliceLoadLevelInfo returns the SliceLoadLevelInfo field value if set, zero value otherwise.
 func (o *EventNotification) GetSliceLoadLevelInfo() SliceLoadLevelInformation {
-	if o == nil || isNil(o.SliceLoadLevelInfo) {
+	if o == nil || IsNil(o.SliceLoadLevelInfo) {
 		var ret SliceLoadLevelInformation
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *EventNotification) GetSliceLoadLevelInfo() SliceLoadLevelInformation {
 // GetSliceLoadLevelInfoOk returns a tuple with the SliceLoadLevelInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetSliceLoadLevelInfoOk() (*SliceLoadLevelInformation, bool) {
-	if o == nil || isNil(o.SliceLoadLevelInfo) {
+	if o == nil || IsNil(o.SliceLoadLevelInfo) {
 		return nil, false
 	}
 	return o.SliceLoadLevelInfo, true
@@ -366,7 +366,7 @@ func (o *EventNotification) GetSliceLoadLevelInfoOk() (*SliceLoadLevelInformatio
 
 // HasSliceLoadLevelInfo returns a boolean if a field has been set.
 func (o *EventNotification) HasSliceLoadLevelInfo() bool {
-	if o != nil && !isNil(o.SliceLoadLevelInfo) {
+	if o != nil && !IsNil(o.SliceLoadLevelInfo) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *EventNotification) SetSliceLoadLevelInfo(v SliceLoadLevelInformation) {
 
 // GetSvcExps returns the SvcExps field value if set, zero value otherwise.
 func (o *EventNotification) GetSvcExps() []ServiceExperienceInfo {
-	if o == nil || isNil(o.SvcExps) {
+	if o == nil || IsNil(o.SvcExps) {
 		var ret []ServiceExperienceInfo
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *EventNotification) GetSvcExps() []ServiceExperienceInfo {
 // GetSvcExpsOk returns a tuple with the SvcExps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetSvcExpsOk() ([]ServiceExperienceInfo, bool) {
-	if o == nil || isNil(o.SvcExps) {
+	if o == nil || IsNil(o.SvcExps) {
 		return nil, false
 	}
 	return o.SvcExps, true
@@ -398,7 +398,7 @@ func (o *EventNotification) GetSvcExpsOk() ([]ServiceExperienceInfo, bool) {
 
 // HasSvcExps returns a boolean if a field has been set.
 func (o *EventNotification) HasSvcExps() bool {
-	if o != nil && !isNil(o.SvcExps) {
+	if o != nil && !IsNil(o.SvcExps) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *EventNotification) SetSvcExps(v []ServiceExperienceInfo) {
 
 // GetQosSustainInfos returns the QosSustainInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetQosSustainInfos() []QosSustainabilityInfo {
-	if o == nil || isNil(o.QosSustainInfos) {
+	if o == nil || IsNil(o.QosSustainInfos) {
 		var ret []QosSustainabilityInfo
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *EventNotification) GetQosSustainInfos() []QosSustainabilityInfo {
 // GetQosSustainInfosOk returns a tuple with the QosSustainInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetQosSustainInfosOk() ([]QosSustainabilityInfo, bool) {
-	if o == nil || isNil(o.QosSustainInfos) {
+	if o == nil || IsNil(o.QosSustainInfos) {
 		return nil, false
 	}
 	return o.QosSustainInfos, true
@@ -430,7 +430,7 @@ func (o *EventNotification) GetQosSustainInfosOk() ([]QosSustainabilityInfo, boo
 
 // HasQosSustainInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasQosSustainInfos() bool {
-	if o != nil && !isNil(o.QosSustainInfos) {
+	if o != nil && !IsNil(o.QosSustainInfos) {
 		return true
 	}
 
@@ -444,7 +444,7 @@ func (o *EventNotification) SetQosSustainInfos(v []QosSustainabilityInfo) {
 
 // GetUeComms returns the UeComms field value if set, zero value otherwise.
 func (o *EventNotification) GetUeComms() []UeCommunication {
-	if o == nil || isNil(o.UeComms) {
+	if o == nil || IsNil(o.UeComms) {
 		var ret []UeCommunication
 		return ret
 	}
@@ -454,7 +454,7 @@ func (o *EventNotification) GetUeComms() []UeCommunication {
 // GetUeCommsOk returns a tuple with the UeComms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetUeCommsOk() ([]UeCommunication, bool) {
-	if o == nil || isNil(o.UeComms) {
+	if o == nil || IsNil(o.UeComms) {
 		return nil, false
 	}
 	return o.UeComms, true
@@ -462,7 +462,7 @@ func (o *EventNotification) GetUeCommsOk() ([]UeCommunication, bool) {
 
 // HasUeComms returns a boolean if a field has been set.
 func (o *EventNotification) HasUeComms() bool {
-	if o != nil && !isNil(o.UeComms) {
+	if o != nil && !IsNil(o.UeComms) {
 		return true
 	}
 
@@ -476,7 +476,7 @@ func (o *EventNotification) SetUeComms(v []UeCommunication) {
 
 // GetUeMobs returns the UeMobs field value if set, zero value otherwise.
 func (o *EventNotification) GetUeMobs() []UeMobility {
-	if o == nil || isNil(o.UeMobs) {
+	if o == nil || IsNil(o.UeMobs) {
 		var ret []UeMobility
 		return ret
 	}
@@ -486,7 +486,7 @@ func (o *EventNotification) GetUeMobs() []UeMobility {
 // GetUeMobsOk returns a tuple with the UeMobs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetUeMobsOk() ([]UeMobility, bool) {
-	if o == nil || isNil(o.UeMobs) {
+	if o == nil || IsNil(o.UeMobs) {
 		return nil, false
 	}
 	return o.UeMobs, true
@@ -494,7 +494,7 @@ func (o *EventNotification) GetUeMobsOk() ([]UeMobility, bool) {
 
 // HasUeMobs returns a boolean if a field has been set.
 func (o *EventNotification) HasUeMobs() bool {
-	if o != nil && !isNil(o.UeMobs) {
+	if o != nil && !IsNil(o.UeMobs) {
 		return true
 	}
 
@@ -508,7 +508,7 @@ func (o *EventNotification) SetUeMobs(v []UeMobility) {
 
 // GetUserDataCongInfos returns the UserDataCongInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetUserDataCongInfos() []UserDataCongestionInfo {
-	if o == nil || isNil(o.UserDataCongInfos) {
+	if o == nil || IsNil(o.UserDataCongInfos) {
 		var ret []UserDataCongestionInfo
 		return ret
 	}
@@ -518,7 +518,7 @@ func (o *EventNotification) GetUserDataCongInfos() []UserDataCongestionInfo {
 // GetUserDataCongInfosOk returns a tuple with the UserDataCongInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetUserDataCongInfosOk() ([]UserDataCongestionInfo, bool) {
-	if o == nil || isNil(o.UserDataCongInfos) {
+	if o == nil || IsNil(o.UserDataCongInfos) {
 		return nil, false
 	}
 	return o.UserDataCongInfos, true
@@ -526,7 +526,7 @@ func (o *EventNotification) GetUserDataCongInfosOk() ([]UserDataCongestionInfo, 
 
 // HasUserDataCongInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasUserDataCongInfos() bool {
-	if o != nil && !isNil(o.UserDataCongInfos) {
+	if o != nil && !IsNil(o.UserDataCongInfos) {
 		return true
 	}
 
@@ -540,7 +540,7 @@ func (o *EventNotification) SetUserDataCongInfos(v []UserDataCongestionInfo) {
 
 // GetAbnorBehavrs returns the AbnorBehavrs field value if set, zero value otherwise.
 func (o *EventNotification) GetAbnorBehavrs() []AbnormalBehaviour {
-	if o == nil || isNil(o.AbnorBehavrs) {
+	if o == nil || IsNil(o.AbnorBehavrs) {
 		var ret []AbnormalBehaviour
 		return ret
 	}
@@ -550,7 +550,7 @@ func (o *EventNotification) GetAbnorBehavrs() []AbnormalBehaviour {
 // GetAbnorBehavrsOk returns a tuple with the AbnorBehavrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetAbnorBehavrsOk() ([]AbnormalBehaviour, bool) {
-	if o == nil || isNil(o.AbnorBehavrs) {
+	if o == nil || IsNil(o.AbnorBehavrs) {
 		return nil, false
 	}
 	return o.AbnorBehavrs, true
@@ -558,7 +558,7 @@ func (o *EventNotification) GetAbnorBehavrsOk() ([]AbnormalBehaviour, bool) {
 
 // HasAbnorBehavrs returns a boolean if a field has been set.
 func (o *EventNotification) HasAbnorBehavrs() bool {
-	if o != nil && !isNil(o.AbnorBehavrs) {
+	if o != nil && !IsNil(o.AbnorBehavrs) {
 		return true
 	}
 
@@ -572,7 +572,7 @@ func (o *EventNotification) SetAbnorBehavrs(v []AbnormalBehaviour) {
 
 // GetNwPerfs returns the NwPerfs field value if set, zero value otherwise.
 func (o *EventNotification) GetNwPerfs() []NetworkPerfInfo {
-	if o == nil || isNil(o.NwPerfs) {
+	if o == nil || IsNil(o.NwPerfs) {
 		var ret []NetworkPerfInfo
 		return ret
 	}
@@ -582,7 +582,7 @@ func (o *EventNotification) GetNwPerfs() []NetworkPerfInfo {
 // GetNwPerfsOk returns a tuple with the NwPerfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetNwPerfsOk() ([]NetworkPerfInfo, bool) {
-	if o == nil || isNil(o.NwPerfs) {
+	if o == nil || IsNil(o.NwPerfs) {
 		return nil, false
 	}
 	return o.NwPerfs, true
@@ -590,7 +590,7 @@ func (o *EventNotification) GetNwPerfsOk() ([]NetworkPerfInfo, bool) {
 
 // HasNwPerfs returns a boolean if a field has been set.
 func (o *EventNotification) HasNwPerfs() bool {
-	if o != nil && !isNil(o.NwPerfs) {
+	if o != nil && !IsNil(o.NwPerfs) {
 		return true
 	}
 
@@ -604,7 +604,7 @@ func (o *EventNotification) SetNwPerfs(v []NetworkPerfInfo) {
 
 // GetDnPerfInfos returns the DnPerfInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetDnPerfInfos() []DnPerfInfo {
-	if o == nil || isNil(o.DnPerfInfos) {
+	if o == nil || IsNil(o.DnPerfInfos) {
 		var ret []DnPerfInfo
 		return ret
 	}
@@ -614,7 +614,7 @@ func (o *EventNotification) GetDnPerfInfos() []DnPerfInfo {
 // GetDnPerfInfosOk returns a tuple with the DnPerfInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetDnPerfInfosOk() ([]DnPerfInfo, bool) {
-	if o == nil || isNil(o.DnPerfInfos) {
+	if o == nil || IsNil(o.DnPerfInfos) {
 		return nil, false
 	}
 	return o.DnPerfInfos, true
@@ -622,7 +622,7 @@ func (o *EventNotification) GetDnPerfInfosOk() ([]DnPerfInfo, bool) {
 
 // HasDnPerfInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasDnPerfInfos() bool {
-	if o != nil && !isNil(o.DnPerfInfos) {
+	if o != nil && !IsNil(o.DnPerfInfos) {
 		return true
 	}
 
@@ -636,7 +636,7 @@ func (o *EventNotification) SetDnPerfInfos(v []DnPerfInfo) {
 
 // GetDisperInfos returns the DisperInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetDisperInfos() []DispersionInfo {
-	if o == nil || isNil(o.DisperInfos) {
+	if o == nil || IsNil(o.DisperInfos) {
 		var ret []DispersionInfo
 		return ret
 	}
@@ -646,7 +646,7 @@ func (o *EventNotification) GetDisperInfos() []DispersionInfo {
 // GetDisperInfosOk returns a tuple with the DisperInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetDisperInfosOk() ([]DispersionInfo, bool) {
-	if o == nil || isNil(o.DisperInfos) {
+	if o == nil || IsNil(o.DisperInfos) {
 		return nil, false
 	}
 	return o.DisperInfos, true
@@ -654,7 +654,7 @@ func (o *EventNotification) GetDisperInfosOk() ([]DispersionInfo, bool) {
 
 // HasDisperInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasDisperInfos() bool {
-	if o != nil && !isNil(o.DisperInfos) {
+	if o != nil && !IsNil(o.DisperInfos) {
 		return true
 	}
 
@@ -668,7 +668,7 @@ func (o *EventNotification) SetDisperInfos(v []DispersionInfo) {
 
 // GetRedTransInfos returns the RedTransInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetRedTransInfos() []RedundantTransmissionExpInfo {
-	if o == nil || isNil(o.RedTransInfos) {
+	if o == nil || IsNil(o.RedTransInfos) {
 		var ret []RedundantTransmissionExpInfo
 		return ret
 	}
@@ -678,7 +678,7 @@ func (o *EventNotification) GetRedTransInfos() []RedundantTransmissionExpInfo {
 // GetRedTransInfosOk returns a tuple with the RedTransInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetRedTransInfosOk() ([]RedundantTransmissionExpInfo, bool) {
-	if o == nil || isNil(o.RedTransInfos) {
+	if o == nil || IsNil(o.RedTransInfos) {
 		return nil, false
 	}
 	return o.RedTransInfos, true
@@ -686,7 +686,7 @@ func (o *EventNotification) GetRedTransInfosOk() ([]RedundantTransmissionExpInfo
 
 // HasRedTransInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasRedTransInfos() bool {
-	if o != nil && !isNil(o.RedTransInfos) {
+	if o != nil && !IsNil(o.RedTransInfos) {
 		return true
 	}
 
@@ -700,7 +700,7 @@ func (o *EventNotification) SetRedTransInfos(v []RedundantTransmissionExpInfo) {
 
 // GetWlanInfos returns the WlanInfos field value if set, zero value otherwise.
 func (o *EventNotification) GetWlanInfos() []WlanPerformanceInfo {
-	if o == nil || isNil(o.WlanInfos) {
+	if o == nil || IsNil(o.WlanInfos) {
 		var ret []WlanPerformanceInfo
 		return ret
 	}
@@ -710,7 +710,7 @@ func (o *EventNotification) GetWlanInfos() []WlanPerformanceInfo {
 // GetWlanInfosOk returns a tuple with the WlanInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetWlanInfosOk() ([]WlanPerformanceInfo, bool) {
-	if o == nil || isNil(o.WlanInfos) {
+	if o == nil || IsNil(o.WlanInfos) {
 		return nil, false
 	}
 	return o.WlanInfos, true
@@ -718,7 +718,7 @@ func (o *EventNotification) GetWlanInfosOk() ([]WlanPerformanceInfo, bool) {
 
 // HasWlanInfos returns a boolean if a field has been set.
 func (o *EventNotification) HasWlanInfos() bool {
-	if o != nil && !isNil(o.WlanInfos) {
+	if o != nil && !IsNil(o.WlanInfos) {
 		return true
 	}
 
@@ -732,7 +732,7 @@ func (o *EventNotification) SetWlanInfos(v []WlanPerformanceInfo) {
 
 // GetSmccExps returns the SmccExps field value if set, zero value otherwise.
 func (o *EventNotification) GetSmccExps() []SmcceInfo {
-	if o == nil || isNil(o.SmccExps) {
+	if o == nil || IsNil(o.SmccExps) {
 		var ret []SmcceInfo
 		return ret
 	}
@@ -742,7 +742,7 @@ func (o *EventNotification) GetSmccExps() []SmcceInfo {
 // GetSmccExpsOk returns a tuple with the SmccExps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetSmccExpsOk() ([]SmcceInfo, bool) {
-	if o == nil || isNil(o.SmccExps) {
+	if o == nil || IsNil(o.SmccExps) {
 		return nil, false
 	}
 	return o.SmccExps, true
@@ -750,7 +750,7 @@ func (o *EventNotification) GetSmccExpsOk() ([]SmcceInfo, bool) {
 
 // HasSmccExps returns a boolean if a field has been set.
 func (o *EventNotification) HasSmccExps() bool {
-	if o != nil && !isNil(o.SmccExps) {
+	if o != nil && !IsNil(o.SmccExps) {
 		return true
 	}
 
@@ -763,7 +763,7 @@ func (o *EventNotification) SetSmccExps(v []SmcceInfo) {
 }
 
 func (o EventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -773,67 +773,67 @@ func (o EventNotification) MarshalJSON() ([]byte, error) {
 func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.TimeStampGen) {
+	if !IsNil(o.TimeStampGen) {
 		toSerialize["timeStampGen"] = o.TimeStampGen
 	}
-	if !isNil(o.FailNotifyCode) {
+	if !IsNil(o.FailNotifyCode) {
 		toSerialize["failNotifyCode"] = o.FailNotifyCode
 	}
-	if !isNil(o.RvWaitTime) {
+	if !IsNil(o.RvWaitTime) {
 		toSerialize["rvWaitTime"] = o.RvWaitTime
 	}
-	if !isNil(o.AnaMetaInfo) {
+	if !IsNil(o.AnaMetaInfo) {
 		toSerialize["anaMetaInfo"] = o.AnaMetaInfo
 	}
-	if !isNil(o.NfLoadLevelInfos) {
+	if !IsNil(o.NfLoadLevelInfos) {
 		toSerialize["nfLoadLevelInfos"] = o.NfLoadLevelInfos
 	}
-	if !isNil(o.NsiLoadLevelInfos) {
+	if !IsNil(o.NsiLoadLevelInfos) {
 		toSerialize["nsiLoadLevelInfos"] = o.NsiLoadLevelInfos
 	}
-	if !isNil(o.SliceLoadLevelInfo) {
+	if !IsNil(o.SliceLoadLevelInfo) {
 		toSerialize["sliceLoadLevelInfo"] = o.SliceLoadLevelInfo
 	}
-	if !isNil(o.SvcExps) {
+	if !IsNil(o.SvcExps) {
 		toSerialize["svcExps"] = o.SvcExps
 	}
-	if !isNil(o.QosSustainInfos) {
+	if !IsNil(o.QosSustainInfos) {
 		toSerialize["qosSustainInfos"] = o.QosSustainInfos
 	}
-	if !isNil(o.UeComms) {
+	if !IsNil(o.UeComms) {
 		toSerialize["ueComms"] = o.UeComms
 	}
-	if !isNil(o.UeMobs) {
+	if !IsNil(o.UeMobs) {
 		toSerialize["ueMobs"] = o.UeMobs
 	}
-	if !isNil(o.UserDataCongInfos) {
+	if !IsNil(o.UserDataCongInfos) {
 		toSerialize["userDataCongInfos"] = o.UserDataCongInfos
 	}
-	if !isNil(o.AbnorBehavrs) {
+	if !IsNil(o.AbnorBehavrs) {
 		toSerialize["abnorBehavrs"] = o.AbnorBehavrs
 	}
-	if !isNil(o.NwPerfs) {
+	if !IsNil(o.NwPerfs) {
 		toSerialize["nwPerfs"] = o.NwPerfs
 	}
-	if !isNil(o.DnPerfInfos) {
+	if !IsNil(o.DnPerfInfos) {
 		toSerialize["dnPerfInfos"] = o.DnPerfInfos
 	}
-	if !isNil(o.DisperInfos) {
+	if !IsNil(o.DisperInfos) {
 		toSerialize["disperInfos"] = o.DisperInfos
 	}
-	if !isNil(o.RedTransInfos) {
+	if !IsNil(o.RedTransInfos) {
 		toSerialize["redTransInfos"] = o.RedTransInfos
 	}
-	if !isNil(o.WlanInfos) {
+	if !IsNil(o.WlanInfos) {
 		toSerialize["wlanInfos"] = o.WlanInfos
 	}
-	if !isNil(o.SmccExps) {
+	if !IsNil(o.SmccExps) {
 		toSerialize["smccExps"] = o.SmccExps
 	}
 	return toSerialize, nil
@@ -874,5 +874,3 @@ func (v *NullableEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

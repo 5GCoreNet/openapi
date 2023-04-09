@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &SessionRule{}
 
 // SessionRule Contains session level policy information.
 type SessionRule struct {
-	AuthSessAmbr *Ambr `json:"authSessAmbr,omitempty"`
-	AuthDefQos *AuthorizedDefaultQos `json:"authDefQos,omitempty"`
+	AuthSessAmbr *Ambr                 `json:"authSessAmbr,omitempty"`
+	AuthDefQos   *AuthorizedDefaultQos `json:"authDefQos,omitempty"`
 	// Univocally identifies the session rule within a PDU session.
 	SessRuleId string `json:"sessRuleId"`
-	// A reference to UsageMonitoringData policy decision type. It is the umId described in  clause 5.6.2.12. 
+	// A reference to UsageMonitoringData policy decision type. It is the umId described in  clause 5.6.2.12.
 	RefUmData NullableString `json:"refUmData,omitempty"`
-	// A reference to UsageMonitoringData policy decision type to apply for Non-3GPP access. It  is the umId described in clause 5.6.2.12. 
+	// A reference to UsageMonitoringData policy decision type to apply for Non-3GPP access. It  is the umId described in clause 5.6.2.12.
 	RefUmN3gData NullableString `json:"refUmN3gData,omitempty"`
-	// A reference to the condition data. It is the condId described in clause 5.6.2.9. 
+	// A reference to the condition data. It is the condId described in clause 5.6.2.9.
 	RefCondData NullableString `json:"refCondData,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func NewSessionRuleWithDefaults() *SessionRule {
 
 // GetAuthSessAmbr returns the AuthSessAmbr field value if set, zero value otherwise.
 func (o *SessionRule) GetAuthSessAmbr() Ambr {
-	if o == nil || isNil(o.AuthSessAmbr) {
+	if o == nil || IsNil(o.AuthSessAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *SessionRule) GetAuthSessAmbr() Ambr {
 // GetAuthSessAmbrOk returns a tuple with the AuthSessAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionRule) GetAuthSessAmbrOk() (*Ambr, bool) {
-	if o == nil || isNil(o.AuthSessAmbr) {
+	if o == nil || IsNil(o.AuthSessAmbr) {
 		return nil, false
 	}
 	return o.AuthSessAmbr, true
@@ -69,7 +69,7 @@ func (o *SessionRule) GetAuthSessAmbrOk() (*Ambr, bool) {
 
 // HasAuthSessAmbr returns a boolean if a field has been set.
 func (o *SessionRule) HasAuthSessAmbr() bool {
-	if o != nil && !isNil(o.AuthSessAmbr) {
+	if o != nil && !IsNil(o.AuthSessAmbr) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *SessionRule) SetAuthSessAmbr(v Ambr) {
 
 // GetAuthDefQos returns the AuthDefQos field value if set, zero value otherwise.
 func (o *SessionRule) GetAuthDefQos() AuthorizedDefaultQos {
-	if o == nil || isNil(o.AuthDefQos) {
+	if o == nil || IsNil(o.AuthDefQos) {
 		var ret AuthorizedDefaultQos
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *SessionRule) GetAuthDefQos() AuthorizedDefaultQos {
 // GetAuthDefQosOk returns a tuple with the AuthDefQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionRule) GetAuthDefQosOk() (*AuthorizedDefaultQos, bool) {
-	if o == nil || isNil(o.AuthDefQos) {
+	if o == nil || IsNil(o.AuthDefQos) {
 		return nil, false
 	}
 	return o.AuthDefQos, true
@@ -101,7 +101,7 @@ func (o *SessionRule) GetAuthDefQosOk() (*AuthorizedDefaultQos, bool) {
 
 // HasAuthDefQos returns a boolean if a field has been set.
 func (o *SessionRule) HasAuthDefQos() bool {
-	if o != nil && !isNil(o.AuthDefQos) {
+	if o != nil && !IsNil(o.AuthDefQos) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *SessionRule) SetSessRuleId(v string) {
 
 // GetRefUmData returns the RefUmData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionRule) GetRefUmData() string {
-	if o == nil || isNil(o.RefUmData.Get()) {
+	if o == nil || IsNil(o.RefUmData.Get()) {
 		var ret string
 		return ret
 	}
@@ -169,6 +169,7 @@ func (o *SessionRule) HasRefUmData() bool {
 func (o *SessionRule) SetRefUmData(v string) {
 	o.RefUmData.Set(&v)
 }
+
 // SetRefUmDataNil sets the value for RefUmData to be an explicit nil
 func (o *SessionRule) SetRefUmDataNil() {
 	o.RefUmData.Set(nil)
@@ -181,7 +182,7 @@ func (o *SessionRule) UnsetRefUmData() {
 
 // GetRefUmN3gData returns the RefUmN3gData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionRule) GetRefUmN3gData() string {
-	if o == nil || isNil(o.RefUmN3gData.Get()) {
+	if o == nil || IsNil(o.RefUmN3gData.Get()) {
 		var ret string
 		return ret
 	}
@@ -211,6 +212,7 @@ func (o *SessionRule) HasRefUmN3gData() bool {
 func (o *SessionRule) SetRefUmN3gData(v string) {
 	o.RefUmN3gData.Set(&v)
 }
+
 // SetRefUmN3gDataNil sets the value for RefUmN3gData to be an explicit nil
 func (o *SessionRule) SetRefUmN3gDataNil() {
 	o.RefUmN3gData.Set(nil)
@@ -223,7 +225,7 @@ func (o *SessionRule) UnsetRefUmN3gData() {
 
 // GetRefCondData returns the RefCondData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionRule) GetRefCondData() string {
-	if o == nil || isNil(o.RefCondData.Get()) {
+	if o == nil || IsNil(o.RefCondData.Get()) {
 		var ret string
 		return ret
 	}
@@ -253,6 +255,7 @@ func (o *SessionRule) HasRefCondData() bool {
 func (o *SessionRule) SetRefCondData(v string) {
 	o.RefCondData.Set(&v)
 }
+
 // SetRefCondDataNil sets the value for RefCondData to be an explicit nil
 func (o *SessionRule) SetRefCondDataNil() {
 	o.RefCondData.Set(nil)
@@ -264,7 +267,7 @@ func (o *SessionRule) UnsetRefCondData() {
 }
 
 func (o SessionRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -273,10 +276,10 @@ func (o SessionRule) MarshalJSON() ([]byte, error) {
 
 func (o SessionRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AuthSessAmbr) {
+	if !IsNil(o.AuthSessAmbr) {
 		toSerialize["authSessAmbr"] = o.AuthSessAmbr
 	}
-	if !isNil(o.AuthDefQos) {
+	if !IsNil(o.AuthDefQos) {
 		toSerialize["authDefQos"] = o.AuthDefQos
 	}
 	toSerialize["sessRuleId"] = o.SessRuleId
@@ -327,5 +330,3 @@ func (v *NullableSessionRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

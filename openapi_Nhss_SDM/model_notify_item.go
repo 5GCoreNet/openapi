@@ -1,7 +1,7 @@
 /*
 Nhss_SDM
 
-HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &NotifyItem{}
 // NotifyItem Indicates changes on a resource.
 type NotifyItem struct {
 	// String providing an URI formatted according to RFC 3986.
-	ResourceId string `json:"resourceId"`
-	Changes []ChangeItem `json:"changes"`
+	ResourceId string       `json:"resourceId"`
+	Changes    []ChangeItem `json:"changes"`
 }
 
 // NewNotifyItem instantiates a new NotifyItem object
@@ -92,7 +92,7 @@ func (o *NotifyItem) SetChanges(v []ChangeItem) {
 }
 
 func (o NotifyItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableNotifyItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

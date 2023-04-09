@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,114 +19,114 @@ var _ MappedNullable = &SmContextCreateData{}
 
 // SmContextCreateData Data within Create SM Context Request
 type SmContextCreateData struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi *string `json:"supi,omitempty"`
-	UnauthenticatedSupi *bool `json:"unauthenticatedSupi,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi                *string `json:"supi,omitempty"`
+	UnauthenticatedSupi *bool   `json:"unauthenticatedSupi,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
 	Pei *string `json:"pei,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
 	PduSessionId *int32 `json:"pduSessionId,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn *string `json:"dnn,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	SelectedDnn *string `json:"selectedDnn,omitempty"`
-	SNssai *Snssai `json:"sNssai,omitempty"`
+	SNssai      *Snssai `json:"sNssai,omitempty"`
 	HplmnSnssai *Snssai `json:"hplmnSnssai,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	ServingNfId string `json:"servingNfId"`
-	Guami *Guami `json:"guami,omitempty"`
-	ServiceName *ServiceName `json:"serviceName,omitempty"`
-	ServingNetwork PlmnIdNid `json:"servingNetwork"`
-	RequestType *RequestType `json:"requestType,omitempty"`
-	N1SmMsg *RefToBinaryData `json:"n1SmMsg,omitempty"`
-	AnType AccessType `json:"anType"`
-	AdditionalAnType *AccessType `json:"additionalAnType,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	PresenceInLadn *PresenceState `json:"presenceInLadn,omitempty"`
-	UeLocation *UserLocation `json:"ueLocation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	UeTimeZone *string `json:"ueTimeZone,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	ServingNfId      string           `json:"servingNfId"`
+	Guami            *Guami           `json:"guami,omitempty"`
+	ServiceName      *ServiceName     `json:"serviceName,omitempty"`
+	ServingNetwork   PlmnIdNid        `json:"servingNetwork"`
+	RequestType      *RequestType     `json:"requestType,omitempty"`
+	N1SmMsg          *RefToBinaryData `json:"n1SmMsg,omitempty"`
+	AnType           AccessType       `json:"anType"`
+	AdditionalAnType *AccessType      `json:"additionalAnType,omitempty"`
+	RatType          *RatType         `json:"ratType,omitempty"`
+	PresenceInLadn   *PresenceState   `json:"presenceInLadn,omitempty"`
+	UeLocation       *UserLocation    `json:"ueLocation,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	UeTimeZone    *string       `json:"ueTimeZone,omitempty"`
 	AddUeLocation *UserLocation `json:"addUeLocation,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	SmContextStatusUri string `json:"smContextStatusUri"`
 	// String providing an URI formatted according to RFC 3986.
 	HSmfUri *string `json:"hSmfUri,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	HSmfId *string `json:"hSmfId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	SmfUri *string `json:"smfUri,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	SmfId *string `json:"smfId,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	SmfId             *string  `json:"smfId,omitempty"`
 	AdditionalHsmfUri []string `json:"additionalHsmfUri,omitempty"`
-	AdditionalHsmfId []string `json:"additionalHsmfId,omitempty"`
-	AdditionalSmfUri []string `json:"additionalSmfUri,omitempty"`
-	AdditionalSmfId []string `json:"additionalSmfId,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	OldPduSessionId *int32 `json:"oldPduSessionId,omitempty"`
+	AdditionalHsmfId  []string `json:"additionalHsmfId,omitempty"`
+	AdditionalSmfUri  []string `json:"additionalSmfUri,omitempty"`
+	AdditionalSmfId   []string `json:"additionalSmfId,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	OldPduSessionId         *int32  `json:"oldPduSessionId,omitempty"`
 	PduSessionsActivateList []int32 `json:"pduSessionsActivateList,omitempty"`
 	// UE EPS PDN Connection container from SMF to AMF
-	UeEpsPdnConnection *string `json:"ueEpsPdnConnection,omitempty"`
-	HoState *HoState `json:"hoState,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	UeEpsPdnConnection *string  `json:"ueEpsPdnConnection,omitempty"`
+	HoState            *HoState `json:"hoState,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
 	// Identifier of a group of NFs.
 	PcfGroupId *string `json:"pcfGroupId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	PcfSetId *string `json:"pcfSetId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	NrfUri *string `json:"nrfUri,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	SelMode *DnnSelectionMode `json:"selMode,omitempty"`
-	BackupAmfInfo []BackupAmfInfo `json:"backupAmfInfo,omitempty"`
-	TraceData NullableTraceData `json:"traceData,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string           `json:"supportedFeatures,omitempty"`
+	SelMode           *DnnSelectionMode `json:"selMode,omitempty"`
+	BackupAmfInfo     []BackupAmfInfo   `json:"backupAmfInfo,omitempty"`
+	TraceData         NullableTraceData `json:"traceData,omitempty"`
 	// Identifier of a group of NFs.
-	UdmGroupId *string `json:"udmGroupId,omitempty"`
-	RoutingIndicator *string `json:"routingIndicator,omitempty"`
-	HNwPubKeyId *int32 `json:"hNwPubKeyId,omitempty"`
-	EpsInterworkingInd *EpsInterworkingIndication `json:"epsInterworkingInd,omitempty"`
-	IndirectForwardingFlag *bool `json:"indirectForwardingFlag,omitempty"`
-	DirectForwardingFlag *bool `json:"directForwardingFlag,omitempty"`
-	TargetId *NgRanTargetId `json:"targetId,omitempty"`
+	UdmGroupId             *string                    `json:"udmGroupId,omitempty"`
+	RoutingIndicator       *string                    `json:"routingIndicator,omitempty"`
+	HNwPubKeyId            *int32                     `json:"hNwPubKeyId,omitempty"`
+	EpsInterworkingInd     *EpsInterworkingIndication `json:"epsInterworkingInd,omitempty"`
+	IndirectForwardingFlag *bool                      `json:"indirectForwardingFlag,omitempty"`
+	DirectForwardingFlag   *bool                      `json:"directForwardingFlag,omitempty"`
+	TargetId               *NgRanTargetId             `json:"targetId,omitempty"`
 	// EPS bearer context status
-	EpsBearerCtxStatus *string `json:"epsBearerCtxStatus,omitempty"`
-	CpCiotEnabled *bool `json:"cpCiotEnabled,omitempty"`
-	CpOnlyInd *bool `json:"cpOnlyInd,omitempty"`
-	InvokeNef *bool `json:"invokeNef,omitempty"`
-	MaRequestInd *bool `json:"maRequestInd,omitempty"`
-	MaNwUpgradeInd *bool `json:"maNwUpgradeInd,omitempty"`
-	N2SmInfo *RefToBinaryData `json:"n2SmInfo,omitempty"`
-	N2SmInfoType *N2SmInfoType `json:"n2SmInfoType,omitempty"`
-	N2SmInfoExt1 *RefToBinaryData `json:"n2SmInfoExt1,omitempty"`
-	N2SmInfoTypeExt1 *N2SmInfoType `json:"n2SmInfoTypeExt1,omitempty"`
+	EpsBearerCtxStatus *string          `json:"epsBearerCtxStatus,omitempty"`
+	CpCiotEnabled      *bool            `json:"cpCiotEnabled,omitempty"`
+	CpOnlyInd          *bool            `json:"cpOnlyInd,omitempty"`
+	InvokeNef          *bool            `json:"invokeNef,omitempty"`
+	MaRequestInd       *bool            `json:"maRequestInd,omitempty"`
+	MaNwUpgradeInd     *bool            `json:"maNwUpgradeInd,omitempty"`
+	N2SmInfo           *RefToBinaryData `json:"n2SmInfo,omitempty"`
+	N2SmInfoType       *N2SmInfoType    `json:"n2SmInfoType,omitempty"`
+	N2SmInfoExt1       *RefToBinaryData `json:"n2SmInfoExt1,omitempty"`
+	N2SmInfoTypeExt1   *N2SmInfoType    `json:"n2SmInfoTypeExt1,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	SmContextRef *string `json:"smContextRef,omitempty"`
+	SmContextRef       *string    `json:"smContextRef,omitempty"`
 	SmContextSmfPlmnId *PlmnIdNid `json:"smContextSmfPlmnId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SmContextSmfId *string `json:"smContextSmfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	SmContextSmfSetId *string `json:"smContextSmfSetId,omitempty"`
-	// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NID> encoded as defined in clause 5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit. 
-	SmContextSmfServiceSetId *string `json:"smContextSmfServiceSetId,omitempty"`
-	SmContextSmfBinding *SbiBindingLevel `json:"smContextSmfBinding,omitempty"`
-	UpCnxState *UpCnxState `json:"upCnxState,omitempty"`
-	SmallDataRateStatus *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
-	ApnRateStatus *ApnRateStatus `json:"apnRateStatus,omitempty"`
-	ExtendedNasSmTimerInd *bool `json:"extendedNasSmTimerInd,omitempty"`
-	DlDataWaitingInd *bool `json:"dlDataWaitingInd,omitempty"`
-	DdnFailureSubs *DdnFailureSubs `json:"ddnFailureSubs,omitempty"`
-	SmfTransferInd *bool `json:"smfTransferInd,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NID> encoded as defined in clause 5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit.
+	SmContextSmfServiceSetId *string              `json:"smContextSmfServiceSetId,omitempty"`
+	SmContextSmfBinding      *SbiBindingLevel     `json:"smContextSmfBinding,omitempty"`
+	UpCnxState               *UpCnxState          `json:"upCnxState,omitempty"`
+	SmallDataRateStatus      *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
+	ApnRateStatus            *ApnRateStatus       `json:"apnRateStatus,omitempty"`
+	ExtendedNasSmTimerInd    *bool                `json:"extendedNasSmTimerInd,omitempty"`
+	DlDataWaitingInd         *bool                `json:"dlDataWaitingInd,omitempty"`
+	DdnFailureSubs           *DdnFailureSubs      `json:"ddnFailureSubs,omitempty"`
+	SmfTransferInd           *bool                `json:"smfTransferInd,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	OldSmfId *string `json:"oldSmfId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	OldSmContextRef *string `json:"oldSmContextRef,omitempty"`
-	WAgfInfo *WAgfInfo `json:"wAgfInfo,omitempty"`
-	TngfInfo *TngfInfo `json:"tngfInfo,omitempty"`
-	TwifInfo *TwifInfo `json:"twifInfo,omitempty"`
-	RanUnchangedInd *bool `json:"ranUnchangedInd,omitempty"`
-	SamePcfSelectionInd *bool `json:"samePcfSelectionInd,omitempty"`
+	OldSmContextRef     *string   `json:"oldSmContextRef,omitempty"`
+	WAgfInfo            *WAgfInfo `json:"wAgfInfo,omitempty"`
+	TngfInfo            *TngfInfo `json:"tngfInfo,omitempty"`
+	TwifInfo            *TwifInfo `json:"twifInfo,omitempty"`
+	RanUnchangedInd     *bool     `json:"ranUnchangedInd,omitempty"`
+	SamePcfSelectionInd *bool     `json:"samePcfSelectionInd,omitempty"`
 	// DNAI (Data network access identifier), see clause 5.6.7 of 3GPP TS 23.501.
 	TargetDnai *string `json:"targetDnai,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -136,20 +136,20 @@ type SmContextCreateData struct {
 	// String providing an URI formatted according to RFC 3986.
 	NrfAccessTokenUri *string `json:"nrfAccessTokenUri,omitempty"`
 	// Map indicating whether the NRF requires Oauth2-based authorization for accessing its services. The key of the map shall be the name of an NRF service, e.g. \"nnrf-nfm\" or \"nnrf-disc\"
-	NrfOauth2Required *map[string]bool `json:"nrfOauth2Required,omitempty"`
-	SmfBindingInfo *string `json:"smfBindingInfo,omitempty"`
-	PvsInfo []ServerAddressingInfo `json:"pvsInfo,omitempty"`
-	OnboardingInd *bool `json:"onboardingInd,omitempty"`
+	NrfOauth2Required *map[string]bool       `json:"nrfOauth2Required,omitempty"`
+	SmfBindingInfo    *string                `json:"smfBindingInfo,omitempty"`
+	PvsInfo           []ServerAddressingInfo `json:"pvsInfo,omitempty"`
+	OnboardingInd     *bool                  `json:"onboardingInd,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	OldPduSessionRef *string `json:"oldPduSessionRef,omitempty"`
-	SmPolicyNotifyInd *bool `json:"smPolicyNotifyInd,omitempty"`
-	PcfUeCallbackInfo NullablePcfUeCallbackInfo `json:"pcfUeCallbackInfo,omitempty"`
-	SatelliteBackhaulCat *SatelliteBackhaulCategory `json:"satelliteBackhaulCat,omitempty"`
-	UpipSupported *bool `json:"upipSupported,omitempty"`
-	UavAuthenticated *bool `json:"uavAuthenticated,omitempty"`
-	DisasterRoamingInd *bool `json:"disasterRoamingInd,omitempty"`
-	AnchorSmfOauth2Required *bool `json:"anchorSmfOauth2Required,omitempty"`
-	SmContextSmfOauth2Required *bool `json:"smContextSmfOauth2Required,omitempty"`
+	OldPduSessionRef           *string                    `json:"oldPduSessionRef,omitempty"`
+	SmPolicyNotifyInd          *bool                      `json:"smPolicyNotifyInd,omitempty"`
+	PcfUeCallbackInfo          NullablePcfUeCallbackInfo  `json:"pcfUeCallbackInfo,omitempty"`
+	SatelliteBackhaulCat       *SatelliteBackhaulCategory `json:"satelliteBackhaulCat,omitempty"`
+	UpipSupported              *bool                      `json:"upipSupported,omitempty"`
+	UavAuthenticated           *bool                      `json:"uavAuthenticated,omitempty"`
+	DisasterRoamingInd         *bool                      `json:"disasterRoamingInd,omitempty"`
+	AnchorSmfOauth2Required    *bool                      `json:"anchorSmfOauth2Required,omitempty"`
+	SmContextSmfOauth2Required *bool                      `json:"smContextSmfOauth2Required,omitempty"`
 }
 
 // NewSmContextCreateData instantiates a new SmContextCreateData object
@@ -231,7 +231,7 @@ func NewSmContextCreateDataWithDefaults() *SmContextCreateData {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *SmContextCreateData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -249,7 +249,7 @@ func (o *SmContextCreateData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *SmContextCreateData) SetSupi(v string) {
 
 // GetUnauthenticatedSupi returns the UnauthenticatedSupi field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUnauthenticatedSupi() bool {
-	if o == nil || isNil(o.UnauthenticatedSupi) {
+	if o == nil || IsNil(o.UnauthenticatedSupi) {
 		var ret bool
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *SmContextCreateData) GetUnauthenticatedSupi() bool {
 // GetUnauthenticatedSupiOk returns a tuple with the UnauthenticatedSupi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUnauthenticatedSupiOk() (*bool, bool) {
-	if o == nil || isNil(o.UnauthenticatedSupi) {
+	if o == nil || IsNil(o.UnauthenticatedSupi) {
 		return nil, false
 	}
 	return o.UnauthenticatedSupi, true
@@ -281,7 +281,7 @@ func (o *SmContextCreateData) GetUnauthenticatedSupiOk() (*bool, bool) {
 
 // HasUnauthenticatedSupi returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUnauthenticatedSupi() bool {
-	if o != nil && !isNil(o.UnauthenticatedSupi) {
+	if o != nil && !IsNil(o.UnauthenticatedSupi) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *SmContextCreateData) SetUnauthenticatedSupi(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *SmContextCreateData) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -313,7 +313,7 @@ func (o *SmContextCreateData) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -327,7 +327,7 @@ func (o *SmContextCreateData) SetPei(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *SmContextCreateData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -345,7 +345,7 @@ func (o *SmContextCreateData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -359,7 +359,7 @@ func (o *SmContextCreateData) SetGpsi(v string) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPduSessionId() int32 {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *SmContextCreateData) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -377,7 +377,7 @@ func (o *SmContextCreateData) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPduSessionId() bool {
-	if o != nil && !isNil(o.PduSessionId) {
+	if o != nil && !IsNil(o.PduSessionId) {
 		return true
 	}
 
@@ -391,7 +391,7 @@ func (o *SmContextCreateData) SetPduSessionId(v int32) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o *SmContextCreateData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -409,7 +409,7 @@ func (o *SmContextCreateData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -423,7 +423,7 @@ func (o *SmContextCreateData) SetDnn(v string) {
 
 // GetSelectedDnn returns the SelectedDnn field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSelectedDnn() string {
-	if o == nil || isNil(o.SelectedDnn) {
+	if o == nil || IsNil(o.SelectedDnn) {
 		var ret string
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *SmContextCreateData) GetSelectedDnn() string {
 // GetSelectedDnnOk returns a tuple with the SelectedDnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSelectedDnnOk() (*string, bool) {
-	if o == nil || isNil(o.SelectedDnn) {
+	if o == nil || IsNil(o.SelectedDnn) {
 		return nil, false
 	}
 	return o.SelectedDnn, true
@@ -441,7 +441,7 @@ func (o *SmContextCreateData) GetSelectedDnnOk() (*string, bool) {
 
 // HasSelectedDnn returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSelectedDnn() bool {
-	if o != nil && !isNil(o.SelectedDnn) {
+	if o != nil && !IsNil(o.SelectedDnn) {
 		return true
 	}
 
@@ -455,7 +455,7 @@ func (o *SmContextCreateData) SetSelectedDnn(v string) {
 
 // GetSNssai returns the SNssai field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSNssai() Snssai {
-	if o == nil || isNil(o.SNssai) {
+	if o == nil || IsNil(o.SNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *SmContextCreateData) GetSNssai() Snssai {
 // GetSNssaiOk returns a tuple with the SNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSNssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SNssai) {
+	if o == nil || IsNil(o.SNssai) {
 		return nil, false
 	}
 	return o.SNssai, true
@@ -473,7 +473,7 @@ func (o *SmContextCreateData) GetSNssaiOk() (*Snssai, bool) {
 
 // HasSNssai returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSNssai() bool {
-	if o != nil && !isNil(o.SNssai) {
+	if o != nil && !IsNil(o.SNssai) {
 		return true
 	}
 
@@ -487,7 +487,7 @@ func (o *SmContextCreateData) SetSNssai(v Snssai) {
 
 // GetHplmnSnssai returns the HplmnSnssai field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetHplmnSnssai() Snssai {
-	if o == nil || isNil(o.HplmnSnssai) {
+	if o == nil || IsNil(o.HplmnSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -497,7 +497,7 @@ func (o *SmContextCreateData) GetHplmnSnssai() Snssai {
 // GetHplmnSnssaiOk returns a tuple with the HplmnSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetHplmnSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.HplmnSnssai) {
+	if o == nil || IsNil(o.HplmnSnssai) {
 		return nil, false
 	}
 	return o.HplmnSnssai, true
@@ -505,7 +505,7 @@ func (o *SmContextCreateData) GetHplmnSnssaiOk() (*Snssai, bool) {
 
 // HasHplmnSnssai returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasHplmnSnssai() bool {
-	if o != nil && !isNil(o.HplmnSnssai) {
+	if o != nil && !IsNil(o.HplmnSnssai) {
 		return true
 	}
 
@@ -543,7 +543,7 @@ func (o *SmContextCreateData) SetServingNfId(v string) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -553,7 +553,7 @@ func (o *SmContextCreateData) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -561,7 +561,7 @@ func (o *SmContextCreateData) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -575,7 +575,7 @@ func (o *SmContextCreateData) SetGuami(v Guami) {
 
 // GetServiceName returns the ServiceName field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetServiceName() ServiceName {
-	if o == nil || isNil(o.ServiceName) {
+	if o == nil || IsNil(o.ServiceName) {
 		var ret ServiceName
 		return ret
 	}
@@ -585,7 +585,7 @@ func (o *SmContextCreateData) GetServiceName() ServiceName {
 // GetServiceNameOk returns a tuple with the ServiceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetServiceNameOk() (*ServiceName, bool) {
-	if o == nil || isNil(o.ServiceName) {
+	if o == nil || IsNil(o.ServiceName) {
 		return nil, false
 	}
 	return o.ServiceName, true
@@ -593,7 +593,7 @@ func (o *SmContextCreateData) GetServiceNameOk() (*ServiceName, bool) {
 
 // HasServiceName returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasServiceName() bool {
-	if o != nil && !isNil(o.ServiceName) {
+	if o != nil && !IsNil(o.ServiceName) {
 		return true
 	}
 
@@ -631,7 +631,7 @@ func (o *SmContextCreateData) SetServingNetwork(v PlmnIdNid) {
 
 // GetRequestType returns the RequestType field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetRequestType() RequestType {
-	if o == nil || isNil(o.RequestType) {
+	if o == nil || IsNil(o.RequestType) {
 		var ret RequestType
 		return ret
 	}
@@ -641,7 +641,7 @@ func (o *SmContextCreateData) GetRequestType() RequestType {
 // GetRequestTypeOk returns a tuple with the RequestType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetRequestTypeOk() (*RequestType, bool) {
-	if o == nil || isNil(o.RequestType) {
+	if o == nil || IsNil(o.RequestType) {
 		return nil, false
 	}
 	return o.RequestType, true
@@ -649,7 +649,7 @@ func (o *SmContextCreateData) GetRequestTypeOk() (*RequestType, bool) {
 
 // HasRequestType returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasRequestType() bool {
-	if o != nil && !isNil(o.RequestType) {
+	if o != nil && !IsNil(o.RequestType) {
 		return true
 	}
 
@@ -663,7 +663,7 @@ func (o *SmContextCreateData) SetRequestType(v RequestType) {
 
 // GetN1SmMsg returns the N1SmMsg field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetN1SmMsg() RefToBinaryData {
-	if o == nil || isNil(o.N1SmMsg) {
+	if o == nil || IsNil(o.N1SmMsg) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -673,7 +673,7 @@ func (o *SmContextCreateData) GetN1SmMsg() RefToBinaryData {
 // GetN1SmMsgOk returns a tuple with the N1SmMsg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetN1SmMsgOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N1SmMsg) {
+	if o == nil || IsNil(o.N1SmMsg) {
 		return nil, false
 	}
 	return o.N1SmMsg, true
@@ -681,7 +681,7 @@ func (o *SmContextCreateData) GetN1SmMsgOk() (*RefToBinaryData, bool) {
 
 // HasN1SmMsg returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasN1SmMsg() bool {
-	if o != nil && !isNil(o.N1SmMsg) {
+	if o != nil && !IsNil(o.N1SmMsg) {
 		return true
 	}
 
@@ -719,7 +719,7 @@ func (o *SmContextCreateData) SetAnType(v AccessType) {
 
 // GetAdditionalAnType returns the AdditionalAnType field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAdditionalAnType() AccessType {
-	if o == nil || isNil(o.AdditionalAnType) {
+	if o == nil || IsNil(o.AdditionalAnType) {
 		var ret AccessType
 		return ret
 	}
@@ -729,7 +729,7 @@ func (o *SmContextCreateData) GetAdditionalAnType() AccessType {
 // GetAdditionalAnTypeOk returns a tuple with the AdditionalAnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAdditionalAnTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AdditionalAnType) {
+	if o == nil || IsNil(o.AdditionalAnType) {
 		return nil, false
 	}
 	return o.AdditionalAnType, true
@@ -737,7 +737,7 @@ func (o *SmContextCreateData) GetAdditionalAnTypeOk() (*AccessType, bool) {
 
 // HasAdditionalAnType returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAdditionalAnType() bool {
-	if o != nil && !isNil(o.AdditionalAnType) {
+	if o != nil && !IsNil(o.AdditionalAnType) {
 		return true
 	}
 
@@ -751,7 +751,7 @@ func (o *SmContextCreateData) SetAdditionalAnType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -761,7 +761,7 @@ func (o *SmContextCreateData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -769,7 +769,7 @@ func (o *SmContextCreateData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -783,7 +783,7 @@ func (o *SmContextCreateData) SetRatType(v RatType) {
 
 // GetPresenceInLadn returns the PresenceInLadn field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPresenceInLadn() PresenceState {
-	if o == nil || isNil(o.PresenceInLadn) {
+	if o == nil || IsNil(o.PresenceInLadn) {
 		var ret PresenceState
 		return ret
 	}
@@ -793,7 +793,7 @@ func (o *SmContextCreateData) GetPresenceInLadn() PresenceState {
 // GetPresenceInLadnOk returns a tuple with the PresenceInLadn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPresenceInLadnOk() (*PresenceState, bool) {
-	if o == nil || isNil(o.PresenceInLadn) {
+	if o == nil || IsNil(o.PresenceInLadn) {
 		return nil, false
 	}
 	return o.PresenceInLadn, true
@@ -801,7 +801,7 @@ func (o *SmContextCreateData) GetPresenceInLadnOk() (*PresenceState, bool) {
 
 // HasPresenceInLadn returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPresenceInLadn() bool {
-	if o != nil && !isNil(o.PresenceInLadn) {
+	if o != nil && !IsNil(o.PresenceInLadn) {
 		return true
 	}
 
@@ -815,7 +815,7 @@ func (o *SmContextCreateData) SetPresenceInLadn(v PresenceState) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUeLocation() UserLocation {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -825,7 +825,7 @@ func (o *SmContextCreateData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -833,7 +833,7 @@ func (o *SmContextCreateData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUeLocation() bool {
-	if o != nil && !isNil(o.UeLocation) {
+	if o != nil && !IsNil(o.UeLocation) {
 		return true
 	}
 
@@ -847,7 +847,7 @@ func (o *SmContextCreateData) SetUeLocation(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUeTimeZone() string {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -857,7 +857,7 @@ func (o *SmContextCreateData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -865,7 +865,7 @@ func (o *SmContextCreateData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUeTimeZone() bool {
-	if o != nil && !isNil(o.UeTimeZone) {
+	if o != nil && !IsNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -879,7 +879,7 @@ func (o *SmContextCreateData) SetUeTimeZone(v string) {
 
 // GetAddUeLocation returns the AddUeLocation field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAddUeLocation() UserLocation {
-	if o == nil || isNil(o.AddUeLocation) {
+	if o == nil || IsNil(o.AddUeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -889,7 +889,7 @@ func (o *SmContextCreateData) GetAddUeLocation() UserLocation {
 // GetAddUeLocationOk returns a tuple with the AddUeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAddUeLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.AddUeLocation) {
+	if o == nil || IsNil(o.AddUeLocation) {
 		return nil, false
 	}
 	return o.AddUeLocation, true
@@ -897,7 +897,7 @@ func (o *SmContextCreateData) GetAddUeLocationOk() (*UserLocation, bool) {
 
 // HasAddUeLocation returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAddUeLocation() bool {
-	if o != nil && !isNil(o.AddUeLocation) {
+	if o != nil && !IsNil(o.AddUeLocation) {
 		return true
 	}
 
@@ -935,7 +935,7 @@ func (o *SmContextCreateData) SetSmContextStatusUri(v string) {
 
 // GetHSmfUri returns the HSmfUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetHSmfUri() string {
-	if o == nil || isNil(o.HSmfUri) {
+	if o == nil || IsNil(o.HSmfUri) {
 		var ret string
 		return ret
 	}
@@ -945,7 +945,7 @@ func (o *SmContextCreateData) GetHSmfUri() string {
 // GetHSmfUriOk returns a tuple with the HSmfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetHSmfUriOk() (*string, bool) {
-	if o == nil || isNil(o.HSmfUri) {
+	if o == nil || IsNil(o.HSmfUri) {
 		return nil, false
 	}
 	return o.HSmfUri, true
@@ -953,7 +953,7 @@ func (o *SmContextCreateData) GetHSmfUriOk() (*string, bool) {
 
 // HasHSmfUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasHSmfUri() bool {
-	if o != nil && !isNil(o.HSmfUri) {
+	if o != nil && !IsNil(o.HSmfUri) {
 		return true
 	}
 
@@ -967,7 +967,7 @@ func (o *SmContextCreateData) SetHSmfUri(v string) {
 
 // GetHSmfId returns the HSmfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetHSmfId() string {
-	if o == nil || isNil(o.HSmfId) {
+	if o == nil || IsNil(o.HSmfId) {
 		var ret string
 		return ret
 	}
@@ -977,7 +977,7 @@ func (o *SmContextCreateData) GetHSmfId() string {
 // GetHSmfIdOk returns a tuple with the HSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetHSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.HSmfId) {
+	if o == nil || IsNil(o.HSmfId) {
 		return nil, false
 	}
 	return o.HSmfId, true
@@ -985,7 +985,7 @@ func (o *SmContextCreateData) GetHSmfIdOk() (*string, bool) {
 
 // HasHSmfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasHSmfId() bool {
-	if o != nil && !isNil(o.HSmfId) {
+	if o != nil && !IsNil(o.HSmfId) {
 		return true
 	}
 
@@ -999,7 +999,7 @@ func (o *SmContextCreateData) SetHSmfId(v string) {
 
 // GetSmfUri returns the SmfUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmfUri() string {
-	if o == nil || isNil(o.SmfUri) {
+	if o == nil || IsNil(o.SmfUri) {
 		var ret string
 		return ret
 	}
@@ -1009,7 +1009,7 @@ func (o *SmContextCreateData) GetSmfUri() string {
 // GetSmfUriOk returns a tuple with the SmfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmfUriOk() (*string, bool) {
-	if o == nil || isNil(o.SmfUri) {
+	if o == nil || IsNil(o.SmfUri) {
 		return nil, false
 	}
 	return o.SmfUri, true
@@ -1017,7 +1017,7 @@ func (o *SmContextCreateData) GetSmfUriOk() (*string, bool) {
 
 // HasSmfUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmfUri() bool {
-	if o != nil && !isNil(o.SmfUri) {
+	if o != nil && !IsNil(o.SmfUri) {
 		return true
 	}
 
@@ -1031,7 +1031,7 @@ func (o *SmContextCreateData) SetSmfUri(v string) {
 
 // GetSmfId returns the SmfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmfId() string {
-	if o == nil || isNil(o.SmfId) {
+	if o == nil || IsNil(o.SmfId) {
 		var ret string
 		return ret
 	}
@@ -1041,7 +1041,7 @@ func (o *SmContextCreateData) GetSmfId() string {
 // GetSmfIdOk returns a tuple with the SmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmfId) {
+	if o == nil || IsNil(o.SmfId) {
 		return nil, false
 	}
 	return o.SmfId, true
@@ -1049,7 +1049,7 @@ func (o *SmContextCreateData) GetSmfIdOk() (*string, bool) {
 
 // HasSmfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmfId() bool {
-	if o != nil && !isNil(o.SmfId) {
+	if o != nil && !IsNil(o.SmfId) {
 		return true
 	}
 
@@ -1063,7 +1063,7 @@ func (o *SmContextCreateData) SetSmfId(v string) {
 
 // GetAdditionalHsmfUri returns the AdditionalHsmfUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAdditionalHsmfUri() []string {
-	if o == nil || isNil(o.AdditionalHsmfUri) {
+	if o == nil || IsNil(o.AdditionalHsmfUri) {
 		var ret []string
 		return ret
 	}
@@ -1073,7 +1073,7 @@ func (o *SmContextCreateData) GetAdditionalHsmfUri() []string {
 // GetAdditionalHsmfUriOk returns a tuple with the AdditionalHsmfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAdditionalHsmfUriOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalHsmfUri) {
+	if o == nil || IsNil(o.AdditionalHsmfUri) {
 		return nil, false
 	}
 	return o.AdditionalHsmfUri, true
@@ -1081,7 +1081,7 @@ func (o *SmContextCreateData) GetAdditionalHsmfUriOk() ([]string, bool) {
 
 // HasAdditionalHsmfUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAdditionalHsmfUri() bool {
-	if o != nil && !isNil(o.AdditionalHsmfUri) {
+	if o != nil && !IsNil(o.AdditionalHsmfUri) {
 		return true
 	}
 
@@ -1095,7 +1095,7 @@ func (o *SmContextCreateData) SetAdditionalHsmfUri(v []string) {
 
 // GetAdditionalHsmfId returns the AdditionalHsmfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAdditionalHsmfId() []string {
-	if o == nil || isNil(o.AdditionalHsmfId) {
+	if o == nil || IsNil(o.AdditionalHsmfId) {
 		var ret []string
 		return ret
 	}
@@ -1105,7 +1105,7 @@ func (o *SmContextCreateData) GetAdditionalHsmfId() []string {
 // GetAdditionalHsmfIdOk returns a tuple with the AdditionalHsmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAdditionalHsmfIdOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalHsmfId) {
+	if o == nil || IsNil(o.AdditionalHsmfId) {
 		return nil, false
 	}
 	return o.AdditionalHsmfId, true
@@ -1113,7 +1113,7 @@ func (o *SmContextCreateData) GetAdditionalHsmfIdOk() ([]string, bool) {
 
 // HasAdditionalHsmfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAdditionalHsmfId() bool {
-	if o != nil && !isNil(o.AdditionalHsmfId) {
+	if o != nil && !IsNil(o.AdditionalHsmfId) {
 		return true
 	}
 
@@ -1127,7 +1127,7 @@ func (o *SmContextCreateData) SetAdditionalHsmfId(v []string) {
 
 // GetAdditionalSmfUri returns the AdditionalSmfUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAdditionalSmfUri() []string {
-	if o == nil || isNil(o.AdditionalSmfUri) {
+	if o == nil || IsNil(o.AdditionalSmfUri) {
 		var ret []string
 		return ret
 	}
@@ -1137,7 +1137,7 @@ func (o *SmContextCreateData) GetAdditionalSmfUri() []string {
 // GetAdditionalSmfUriOk returns a tuple with the AdditionalSmfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAdditionalSmfUriOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalSmfUri) {
+	if o == nil || IsNil(o.AdditionalSmfUri) {
 		return nil, false
 	}
 	return o.AdditionalSmfUri, true
@@ -1145,7 +1145,7 @@ func (o *SmContextCreateData) GetAdditionalSmfUriOk() ([]string, bool) {
 
 // HasAdditionalSmfUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAdditionalSmfUri() bool {
-	if o != nil && !isNil(o.AdditionalSmfUri) {
+	if o != nil && !IsNil(o.AdditionalSmfUri) {
 		return true
 	}
 
@@ -1159,7 +1159,7 @@ func (o *SmContextCreateData) SetAdditionalSmfUri(v []string) {
 
 // GetAdditionalSmfId returns the AdditionalSmfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAdditionalSmfId() []string {
-	if o == nil || isNil(o.AdditionalSmfId) {
+	if o == nil || IsNil(o.AdditionalSmfId) {
 		var ret []string
 		return ret
 	}
@@ -1169,7 +1169,7 @@ func (o *SmContextCreateData) GetAdditionalSmfId() []string {
 // GetAdditionalSmfIdOk returns a tuple with the AdditionalSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAdditionalSmfIdOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalSmfId) {
+	if o == nil || IsNil(o.AdditionalSmfId) {
 		return nil, false
 	}
 	return o.AdditionalSmfId, true
@@ -1177,7 +1177,7 @@ func (o *SmContextCreateData) GetAdditionalSmfIdOk() ([]string, bool) {
 
 // HasAdditionalSmfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAdditionalSmfId() bool {
-	if o != nil && !isNil(o.AdditionalSmfId) {
+	if o != nil && !IsNil(o.AdditionalSmfId) {
 		return true
 	}
 
@@ -1191,7 +1191,7 @@ func (o *SmContextCreateData) SetAdditionalSmfId(v []string) {
 
 // GetOldPduSessionId returns the OldPduSessionId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetOldPduSessionId() int32 {
-	if o == nil || isNil(o.OldPduSessionId) {
+	if o == nil || IsNil(o.OldPduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -1201,7 +1201,7 @@ func (o *SmContextCreateData) GetOldPduSessionId() int32 {
 // GetOldPduSessionIdOk returns a tuple with the OldPduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetOldPduSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.OldPduSessionId) {
+	if o == nil || IsNil(o.OldPduSessionId) {
 		return nil, false
 	}
 	return o.OldPduSessionId, true
@@ -1209,7 +1209,7 @@ func (o *SmContextCreateData) GetOldPduSessionIdOk() (*int32, bool) {
 
 // HasOldPduSessionId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasOldPduSessionId() bool {
-	if o != nil && !isNil(o.OldPduSessionId) {
+	if o != nil && !IsNil(o.OldPduSessionId) {
 		return true
 	}
 
@@ -1223,7 +1223,7 @@ func (o *SmContextCreateData) SetOldPduSessionId(v int32) {
 
 // GetPduSessionsActivateList returns the PduSessionsActivateList field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPduSessionsActivateList() []int32 {
-	if o == nil || isNil(o.PduSessionsActivateList) {
+	if o == nil || IsNil(o.PduSessionsActivateList) {
 		var ret []int32
 		return ret
 	}
@@ -1233,7 +1233,7 @@ func (o *SmContextCreateData) GetPduSessionsActivateList() []int32 {
 // GetPduSessionsActivateListOk returns a tuple with the PduSessionsActivateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPduSessionsActivateListOk() ([]int32, bool) {
-	if o == nil || isNil(o.PduSessionsActivateList) {
+	if o == nil || IsNil(o.PduSessionsActivateList) {
 		return nil, false
 	}
 	return o.PduSessionsActivateList, true
@@ -1241,7 +1241,7 @@ func (o *SmContextCreateData) GetPduSessionsActivateListOk() ([]int32, bool) {
 
 // HasPduSessionsActivateList returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPduSessionsActivateList() bool {
-	if o != nil && !isNil(o.PduSessionsActivateList) {
+	if o != nil && !IsNil(o.PduSessionsActivateList) {
 		return true
 	}
 
@@ -1255,7 +1255,7 @@ func (o *SmContextCreateData) SetPduSessionsActivateList(v []int32) {
 
 // GetUeEpsPdnConnection returns the UeEpsPdnConnection field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUeEpsPdnConnection() string {
-	if o == nil || isNil(o.UeEpsPdnConnection) {
+	if o == nil || IsNil(o.UeEpsPdnConnection) {
 		var ret string
 		return ret
 	}
@@ -1265,7 +1265,7 @@ func (o *SmContextCreateData) GetUeEpsPdnConnection() string {
 // GetUeEpsPdnConnectionOk returns a tuple with the UeEpsPdnConnection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUeEpsPdnConnectionOk() (*string, bool) {
-	if o == nil || isNil(o.UeEpsPdnConnection) {
+	if o == nil || IsNil(o.UeEpsPdnConnection) {
 		return nil, false
 	}
 	return o.UeEpsPdnConnection, true
@@ -1273,7 +1273,7 @@ func (o *SmContextCreateData) GetUeEpsPdnConnectionOk() (*string, bool) {
 
 // HasUeEpsPdnConnection returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUeEpsPdnConnection() bool {
-	if o != nil && !isNil(o.UeEpsPdnConnection) {
+	if o != nil && !IsNil(o.UeEpsPdnConnection) {
 		return true
 	}
 
@@ -1287,7 +1287,7 @@ func (o *SmContextCreateData) SetUeEpsPdnConnection(v string) {
 
 // GetHoState returns the HoState field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetHoState() HoState {
-	if o == nil || isNil(o.HoState) {
+	if o == nil || IsNil(o.HoState) {
 		var ret HoState
 		return ret
 	}
@@ -1297,7 +1297,7 @@ func (o *SmContextCreateData) GetHoState() HoState {
 // GetHoStateOk returns a tuple with the HoState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetHoStateOk() (*HoState, bool) {
-	if o == nil || isNil(o.HoState) {
+	if o == nil || IsNil(o.HoState) {
 		return nil, false
 	}
 	return o.HoState, true
@@ -1305,7 +1305,7 @@ func (o *SmContextCreateData) GetHoStateOk() (*HoState, bool) {
 
 // HasHoState returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasHoState() bool {
-	if o != nil && !isNil(o.HoState) {
+	if o != nil && !IsNil(o.HoState) {
 		return true
 	}
 
@@ -1319,7 +1319,7 @@ func (o *SmContextCreateData) SetHoState(v HoState) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -1329,7 +1329,7 @@ func (o *SmContextCreateData) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -1337,7 +1337,7 @@ func (o *SmContextCreateData) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -1351,7 +1351,7 @@ func (o *SmContextCreateData) SetPcfId(v string) {
 
 // GetPcfGroupId returns the PcfGroupId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPcfGroupId() string {
-	if o == nil || isNil(o.PcfGroupId) {
+	if o == nil || IsNil(o.PcfGroupId) {
 		var ret string
 		return ret
 	}
@@ -1361,7 +1361,7 @@ func (o *SmContextCreateData) GetPcfGroupId() string {
 // GetPcfGroupIdOk returns a tuple with the PcfGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPcfGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfGroupId) {
+	if o == nil || IsNil(o.PcfGroupId) {
 		return nil, false
 	}
 	return o.PcfGroupId, true
@@ -1369,7 +1369,7 @@ func (o *SmContextCreateData) GetPcfGroupIdOk() (*string, bool) {
 
 // HasPcfGroupId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPcfGroupId() bool {
-	if o != nil && !isNil(o.PcfGroupId) {
+	if o != nil && !IsNil(o.PcfGroupId) {
 		return true
 	}
 
@@ -1383,7 +1383,7 @@ func (o *SmContextCreateData) SetPcfGroupId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPcfSetId() string {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -1393,7 +1393,7 @@ func (o *SmContextCreateData) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -1401,7 +1401,7 @@ func (o *SmContextCreateData) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPcfSetId() bool {
-	if o != nil && !isNil(o.PcfSetId) {
+	if o != nil && !IsNil(o.PcfSetId) {
 		return true
 	}
 
@@ -1415,7 +1415,7 @@ func (o *SmContextCreateData) SetPcfSetId(v string) {
 
 // GetNrfUri returns the NrfUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetNrfUri() string {
-	if o == nil || isNil(o.NrfUri) {
+	if o == nil || IsNil(o.NrfUri) {
 		var ret string
 		return ret
 	}
@@ -1425,7 +1425,7 @@ func (o *SmContextCreateData) GetNrfUri() string {
 // GetNrfUriOk returns a tuple with the NrfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetNrfUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfUri) {
+	if o == nil || IsNil(o.NrfUri) {
 		return nil, false
 	}
 	return o.NrfUri, true
@@ -1433,7 +1433,7 @@ func (o *SmContextCreateData) GetNrfUriOk() (*string, bool) {
 
 // HasNrfUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasNrfUri() bool {
-	if o != nil && !isNil(o.NrfUri) {
+	if o != nil && !IsNil(o.NrfUri) {
 		return true
 	}
 
@@ -1447,7 +1447,7 @@ func (o *SmContextCreateData) SetNrfUri(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -1457,7 +1457,7 @@ func (o *SmContextCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -1465,7 +1465,7 @@ func (o *SmContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -1479,7 +1479,7 @@ func (o *SmContextCreateData) SetSupportedFeatures(v string) {
 
 // GetSelMode returns the SelMode field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSelMode() DnnSelectionMode {
-	if o == nil || isNil(o.SelMode) {
+	if o == nil || IsNil(o.SelMode) {
 		var ret DnnSelectionMode
 		return ret
 	}
@@ -1489,7 +1489,7 @@ func (o *SmContextCreateData) GetSelMode() DnnSelectionMode {
 // GetSelModeOk returns a tuple with the SelMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSelModeOk() (*DnnSelectionMode, bool) {
-	if o == nil || isNil(o.SelMode) {
+	if o == nil || IsNil(o.SelMode) {
 		return nil, false
 	}
 	return o.SelMode, true
@@ -1497,7 +1497,7 @@ func (o *SmContextCreateData) GetSelModeOk() (*DnnSelectionMode, bool) {
 
 // HasSelMode returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSelMode() bool {
-	if o != nil && !isNil(o.SelMode) {
+	if o != nil && !IsNil(o.SelMode) {
 		return true
 	}
 
@@ -1511,7 +1511,7 @@ func (o *SmContextCreateData) SetSelMode(v DnnSelectionMode) {
 
 // GetBackupAmfInfo returns the BackupAmfInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetBackupAmfInfo() []BackupAmfInfo {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		var ret []BackupAmfInfo
 		return ret
 	}
@@ -1521,7 +1521,7 @@ func (o *SmContextCreateData) GetBackupAmfInfo() []BackupAmfInfo {
 // GetBackupAmfInfoOk returns a tuple with the BackupAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		return nil, false
 	}
 	return o.BackupAmfInfo, true
@@ -1529,7 +1529,7 @@ func (o *SmContextCreateData) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
 
 // HasBackupAmfInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasBackupAmfInfo() bool {
-	if o != nil && !isNil(o.BackupAmfInfo) {
+	if o != nil && !IsNil(o.BackupAmfInfo) {
 		return true
 	}
 
@@ -1543,7 +1543,7 @@ func (o *SmContextCreateData) SetBackupAmfInfo(v []BackupAmfInfo) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmContextCreateData) GetTraceData() TraceData {
-	if o == nil || isNil(o.TraceData.Get()) {
+	if o == nil || IsNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -1573,6 +1573,7 @@ func (o *SmContextCreateData) HasTraceData() bool {
 func (o *SmContextCreateData) SetTraceData(v TraceData) {
 	o.TraceData.Set(&v)
 }
+
 // SetTraceDataNil sets the value for TraceData to be an explicit nil
 func (o *SmContextCreateData) SetTraceDataNil() {
 	o.TraceData.Set(nil)
@@ -1585,7 +1586,7 @@ func (o *SmContextCreateData) UnsetTraceData() {
 
 // GetUdmGroupId returns the UdmGroupId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUdmGroupId() string {
-	if o == nil || isNil(o.UdmGroupId) {
+	if o == nil || IsNil(o.UdmGroupId) {
 		var ret string
 		return ret
 	}
@@ -1595,7 +1596,7 @@ func (o *SmContextCreateData) GetUdmGroupId() string {
 // GetUdmGroupIdOk returns a tuple with the UdmGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUdmGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.UdmGroupId) {
+	if o == nil || IsNil(o.UdmGroupId) {
 		return nil, false
 	}
 	return o.UdmGroupId, true
@@ -1603,7 +1604,7 @@ func (o *SmContextCreateData) GetUdmGroupIdOk() (*string, bool) {
 
 // HasUdmGroupId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUdmGroupId() bool {
-	if o != nil && !isNil(o.UdmGroupId) {
+	if o != nil && !IsNil(o.UdmGroupId) {
 		return true
 	}
 
@@ -1617,7 +1618,7 @@ func (o *SmContextCreateData) SetUdmGroupId(v string) {
 
 // GetRoutingIndicator returns the RoutingIndicator field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetRoutingIndicator() string {
-	if o == nil || isNil(o.RoutingIndicator) {
+	if o == nil || IsNil(o.RoutingIndicator) {
 		var ret string
 		return ret
 	}
@@ -1627,7 +1628,7 @@ func (o *SmContextCreateData) GetRoutingIndicator() string {
 // GetRoutingIndicatorOk returns a tuple with the RoutingIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetRoutingIndicatorOk() (*string, bool) {
-	if o == nil || isNil(o.RoutingIndicator) {
+	if o == nil || IsNil(o.RoutingIndicator) {
 		return nil, false
 	}
 	return o.RoutingIndicator, true
@@ -1635,7 +1636,7 @@ func (o *SmContextCreateData) GetRoutingIndicatorOk() (*string, bool) {
 
 // HasRoutingIndicator returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasRoutingIndicator() bool {
-	if o != nil && !isNil(o.RoutingIndicator) {
+	if o != nil && !IsNil(o.RoutingIndicator) {
 		return true
 	}
 
@@ -1649,7 +1650,7 @@ func (o *SmContextCreateData) SetRoutingIndicator(v string) {
 
 // GetHNwPubKeyId returns the HNwPubKeyId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetHNwPubKeyId() int32 {
-	if o == nil || isNil(o.HNwPubKeyId) {
+	if o == nil || IsNil(o.HNwPubKeyId) {
 		var ret int32
 		return ret
 	}
@@ -1659,7 +1660,7 @@ func (o *SmContextCreateData) GetHNwPubKeyId() int32 {
 // GetHNwPubKeyIdOk returns a tuple with the HNwPubKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetHNwPubKeyIdOk() (*int32, bool) {
-	if o == nil || isNil(o.HNwPubKeyId) {
+	if o == nil || IsNil(o.HNwPubKeyId) {
 		return nil, false
 	}
 	return o.HNwPubKeyId, true
@@ -1667,7 +1668,7 @@ func (o *SmContextCreateData) GetHNwPubKeyIdOk() (*int32, bool) {
 
 // HasHNwPubKeyId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasHNwPubKeyId() bool {
-	if o != nil && !isNil(o.HNwPubKeyId) {
+	if o != nil && !IsNil(o.HNwPubKeyId) {
 		return true
 	}
 
@@ -1681,7 +1682,7 @@ func (o *SmContextCreateData) SetHNwPubKeyId(v int32) {
 
 // GetEpsInterworkingInd returns the EpsInterworkingInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetEpsInterworkingInd() EpsInterworkingIndication {
-	if o == nil || isNil(o.EpsInterworkingInd) {
+	if o == nil || IsNil(o.EpsInterworkingInd) {
 		var ret EpsInterworkingIndication
 		return ret
 	}
@@ -1691,7 +1692,7 @@ func (o *SmContextCreateData) GetEpsInterworkingInd() EpsInterworkingIndication 
 // GetEpsInterworkingIndOk returns a tuple with the EpsInterworkingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetEpsInterworkingIndOk() (*EpsInterworkingIndication, bool) {
-	if o == nil || isNil(o.EpsInterworkingInd) {
+	if o == nil || IsNil(o.EpsInterworkingInd) {
 		return nil, false
 	}
 	return o.EpsInterworkingInd, true
@@ -1699,7 +1700,7 @@ func (o *SmContextCreateData) GetEpsInterworkingIndOk() (*EpsInterworkingIndicat
 
 // HasEpsInterworkingInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasEpsInterworkingInd() bool {
-	if o != nil && !isNil(o.EpsInterworkingInd) {
+	if o != nil && !IsNil(o.EpsInterworkingInd) {
 		return true
 	}
 
@@ -1713,7 +1714,7 @@ func (o *SmContextCreateData) SetEpsInterworkingInd(v EpsInterworkingIndication)
 
 // GetIndirectForwardingFlag returns the IndirectForwardingFlag field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetIndirectForwardingFlag() bool {
-	if o == nil || isNil(o.IndirectForwardingFlag) {
+	if o == nil || IsNil(o.IndirectForwardingFlag) {
 		var ret bool
 		return ret
 	}
@@ -1723,7 +1724,7 @@ func (o *SmContextCreateData) GetIndirectForwardingFlag() bool {
 // GetIndirectForwardingFlagOk returns a tuple with the IndirectForwardingFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetIndirectForwardingFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.IndirectForwardingFlag) {
+	if o == nil || IsNil(o.IndirectForwardingFlag) {
 		return nil, false
 	}
 	return o.IndirectForwardingFlag, true
@@ -1731,7 +1732,7 @@ func (o *SmContextCreateData) GetIndirectForwardingFlagOk() (*bool, bool) {
 
 // HasIndirectForwardingFlag returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasIndirectForwardingFlag() bool {
-	if o != nil && !isNil(o.IndirectForwardingFlag) {
+	if o != nil && !IsNil(o.IndirectForwardingFlag) {
 		return true
 	}
 
@@ -1745,7 +1746,7 @@ func (o *SmContextCreateData) SetIndirectForwardingFlag(v bool) {
 
 // GetDirectForwardingFlag returns the DirectForwardingFlag field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetDirectForwardingFlag() bool {
-	if o == nil || isNil(o.DirectForwardingFlag) {
+	if o == nil || IsNil(o.DirectForwardingFlag) {
 		var ret bool
 		return ret
 	}
@@ -1755,7 +1756,7 @@ func (o *SmContextCreateData) GetDirectForwardingFlag() bool {
 // GetDirectForwardingFlagOk returns a tuple with the DirectForwardingFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetDirectForwardingFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.DirectForwardingFlag) {
+	if o == nil || IsNil(o.DirectForwardingFlag) {
 		return nil, false
 	}
 	return o.DirectForwardingFlag, true
@@ -1763,7 +1764,7 @@ func (o *SmContextCreateData) GetDirectForwardingFlagOk() (*bool, bool) {
 
 // HasDirectForwardingFlag returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasDirectForwardingFlag() bool {
-	if o != nil && !isNil(o.DirectForwardingFlag) {
+	if o != nil && !IsNil(o.DirectForwardingFlag) {
 		return true
 	}
 
@@ -1777,7 +1778,7 @@ func (o *SmContextCreateData) SetDirectForwardingFlag(v bool) {
 
 // GetTargetId returns the TargetId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetTargetId() NgRanTargetId {
-	if o == nil || isNil(o.TargetId) {
+	if o == nil || IsNil(o.TargetId) {
 		var ret NgRanTargetId
 		return ret
 	}
@@ -1787,7 +1788,7 @@ func (o *SmContextCreateData) GetTargetId() NgRanTargetId {
 // GetTargetIdOk returns a tuple with the TargetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetTargetIdOk() (*NgRanTargetId, bool) {
-	if o == nil || isNil(o.TargetId) {
+	if o == nil || IsNil(o.TargetId) {
 		return nil, false
 	}
 	return o.TargetId, true
@@ -1795,7 +1796,7 @@ func (o *SmContextCreateData) GetTargetIdOk() (*NgRanTargetId, bool) {
 
 // HasTargetId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasTargetId() bool {
-	if o != nil && !isNil(o.TargetId) {
+	if o != nil && !IsNil(o.TargetId) {
 		return true
 	}
 
@@ -1809,7 +1810,7 @@ func (o *SmContextCreateData) SetTargetId(v NgRanTargetId) {
 
 // GetEpsBearerCtxStatus returns the EpsBearerCtxStatus field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetEpsBearerCtxStatus() string {
-	if o == nil || isNil(o.EpsBearerCtxStatus) {
+	if o == nil || IsNil(o.EpsBearerCtxStatus) {
 		var ret string
 		return ret
 	}
@@ -1819,7 +1820,7 @@ func (o *SmContextCreateData) GetEpsBearerCtxStatus() string {
 // GetEpsBearerCtxStatusOk returns a tuple with the EpsBearerCtxStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetEpsBearerCtxStatusOk() (*string, bool) {
-	if o == nil || isNil(o.EpsBearerCtxStatus) {
+	if o == nil || IsNil(o.EpsBearerCtxStatus) {
 		return nil, false
 	}
 	return o.EpsBearerCtxStatus, true
@@ -1827,7 +1828,7 @@ func (o *SmContextCreateData) GetEpsBearerCtxStatusOk() (*string, bool) {
 
 // HasEpsBearerCtxStatus returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasEpsBearerCtxStatus() bool {
-	if o != nil && !isNil(o.EpsBearerCtxStatus) {
+	if o != nil && !IsNil(o.EpsBearerCtxStatus) {
 		return true
 	}
 
@@ -1841,7 +1842,7 @@ func (o *SmContextCreateData) SetEpsBearerCtxStatus(v string) {
 
 // GetCpCiotEnabled returns the CpCiotEnabled field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetCpCiotEnabled() bool {
-	if o == nil || isNil(o.CpCiotEnabled) {
+	if o == nil || IsNil(o.CpCiotEnabled) {
 		var ret bool
 		return ret
 	}
@@ -1851,7 +1852,7 @@ func (o *SmContextCreateData) GetCpCiotEnabled() bool {
 // GetCpCiotEnabledOk returns a tuple with the CpCiotEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetCpCiotEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.CpCiotEnabled) {
+	if o == nil || IsNil(o.CpCiotEnabled) {
 		return nil, false
 	}
 	return o.CpCiotEnabled, true
@@ -1859,7 +1860,7 @@ func (o *SmContextCreateData) GetCpCiotEnabledOk() (*bool, bool) {
 
 // HasCpCiotEnabled returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasCpCiotEnabled() bool {
-	if o != nil && !isNil(o.CpCiotEnabled) {
+	if o != nil && !IsNil(o.CpCiotEnabled) {
 		return true
 	}
 
@@ -1873,7 +1874,7 @@ func (o *SmContextCreateData) SetCpCiotEnabled(v bool) {
 
 // GetCpOnlyInd returns the CpOnlyInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetCpOnlyInd() bool {
-	if o == nil || isNil(o.CpOnlyInd) {
+	if o == nil || IsNil(o.CpOnlyInd) {
 		var ret bool
 		return ret
 	}
@@ -1883,7 +1884,7 @@ func (o *SmContextCreateData) GetCpOnlyInd() bool {
 // GetCpOnlyIndOk returns a tuple with the CpOnlyInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetCpOnlyIndOk() (*bool, bool) {
-	if o == nil || isNil(o.CpOnlyInd) {
+	if o == nil || IsNil(o.CpOnlyInd) {
 		return nil, false
 	}
 	return o.CpOnlyInd, true
@@ -1891,7 +1892,7 @@ func (o *SmContextCreateData) GetCpOnlyIndOk() (*bool, bool) {
 
 // HasCpOnlyInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasCpOnlyInd() bool {
-	if o != nil && !isNil(o.CpOnlyInd) {
+	if o != nil && !IsNil(o.CpOnlyInd) {
 		return true
 	}
 
@@ -1905,7 +1906,7 @@ func (o *SmContextCreateData) SetCpOnlyInd(v bool) {
 
 // GetInvokeNef returns the InvokeNef field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetInvokeNef() bool {
-	if o == nil || isNil(o.InvokeNef) {
+	if o == nil || IsNil(o.InvokeNef) {
 		var ret bool
 		return ret
 	}
@@ -1915,7 +1916,7 @@ func (o *SmContextCreateData) GetInvokeNef() bool {
 // GetInvokeNefOk returns a tuple with the InvokeNef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetInvokeNefOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeNef) {
+	if o == nil || IsNil(o.InvokeNef) {
 		return nil, false
 	}
 	return o.InvokeNef, true
@@ -1923,7 +1924,7 @@ func (o *SmContextCreateData) GetInvokeNefOk() (*bool, bool) {
 
 // HasInvokeNef returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasInvokeNef() bool {
-	if o != nil && !isNil(o.InvokeNef) {
+	if o != nil && !IsNil(o.InvokeNef) {
 		return true
 	}
 
@@ -1937,7 +1938,7 @@ func (o *SmContextCreateData) SetInvokeNef(v bool) {
 
 // GetMaRequestInd returns the MaRequestInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetMaRequestInd() bool {
-	if o == nil || isNil(o.MaRequestInd) {
+	if o == nil || IsNil(o.MaRequestInd) {
 		var ret bool
 		return ret
 	}
@@ -1947,7 +1948,7 @@ func (o *SmContextCreateData) GetMaRequestInd() bool {
 // GetMaRequestIndOk returns a tuple with the MaRequestInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetMaRequestIndOk() (*bool, bool) {
-	if o == nil || isNil(o.MaRequestInd) {
+	if o == nil || IsNil(o.MaRequestInd) {
 		return nil, false
 	}
 	return o.MaRequestInd, true
@@ -1955,7 +1956,7 @@ func (o *SmContextCreateData) GetMaRequestIndOk() (*bool, bool) {
 
 // HasMaRequestInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasMaRequestInd() bool {
-	if o != nil && !isNil(o.MaRequestInd) {
+	if o != nil && !IsNil(o.MaRequestInd) {
 		return true
 	}
 
@@ -1969,7 +1970,7 @@ func (o *SmContextCreateData) SetMaRequestInd(v bool) {
 
 // GetMaNwUpgradeInd returns the MaNwUpgradeInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetMaNwUpgradeInd() bool {
-	if o == nil || isNil(o.MaNwUpgradeInd) {
+	if o == nil || IsNil(o.MaNwUpgradeInd) {
 		var ret bool
 		return ret
 	}
@@ -1979,7 +1980,7 @@ func (o *SmContextCreateData) GetMaNwUpgradeInd() bool {
 // GetMaNwUpgradeIndOk returns a tuple with the MaNwUpgradeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetMaNwUpgradeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.MaNwUpgradeInd) {
+	if o == nil || IsNil(o.MaNwUpgradeInd) {
 		return nil, false
 	}
 	return o.MaNwUpgradeInd, true
@@ -1987,7 +1988,7 @@ func (o *SmContextCreateData) GetMaNwUpgradeIndOk() (*bool, bool) {
 
 // HasMaNwUpgradeInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasMaNwUpgradeInd() bool {
-	if o != nil && !isNil(o.MaNwUpgradeInd) {
+	if o != nil && !IsNil(o.MaNwUpgradeInd) {
 		return true
 	}
 
@@ -2001,7 +2002,7 @@ func (o *SmContextCreateData) SetMaNwUpgradeInd(v bool) {
 
 // GetN2SmInfo returns the N2SmInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetN2SmInfo() RefToBinaryData {
-	if o == nil || isNil(o.N2SmInfo) {
+	if o == nil || IsNil(o.N2SmInfo) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -2011,7 +2012,7 @@ func (o *SmContextCreateData) GetN2SmInfo() RefToBinaryData {
 // GetN2SmInfoOk returns a tuple with the N2SmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetN2SmInfoOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N2SmInfo) {
+	if o == nil || IsNil(o.N2SmInfo) {
 		return nil, false
 	}
 	return o.N2SmInfo, true
@@ -2019,7 +2020,7 @@ func (o *SmContextCreateData) GetN2SmInfoOk() (*RefToBinaryData, bool) {
 
 // HasN2SmInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasN2SmInfo() bool {
-	if o != nil && !isNil(o.N2SmInfo) {
+	if o != nil && !IsNil(o.N2SmInfo) {
 		return true
 	}
 
@@ -2033,7 +2034,7 @@ func (o *SmContextCreateData) SetN2SmInfo(v RefToBinaryData) {
 
 // GetN2SmInfoType returns the N2SmInfoType field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetN2SmInfoType() N2SmInfoType {
-	if o == nil || isNil(o.N2SmInfoType) {
+	if o == nil || IsNil(o.N2SmInfoType) {
 		var ret N2SmInfoType
 		return ret
 	}
@@ -2043,7 +2044,7 @@ func (o *SmContextCreateData) GetN2SmInfoType() N2SmInfoType {
 // GetN2SmInfoTypeOk returns a tuple with the N2SmInfoType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
-	if o == nil || isNil(o.N2SmInfoType) {
+	if o == nil || IsNil(o.N2SmInfoType) {
 		return nil, false
 	}
 	return o.N2SmInfoType, true
@@ -2051,7 +2052,7 @@ func (o *SmContextCreateData) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
 
 // HasN2SmInfoType returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasN2SmInfoType() bool {
-	if o != nil && !isNil(o.N2SmInfoType) {
+	if o != nil && !IsNil(o.N2SmInfoType) {
 		return true
 	}
 
@@ -2065,7 +2066,7 @@ func (o *SmContextCreateData) SetN2SmInfoType(v N2SmInfoType) {
 
 // GetN2SmInfoExt1 returns the N2SmInfoExt1 field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetN2SmInfoExt1() RefToBinaryData {
-	if o == nil || isNil(o.N2SmInfoExt1) {
+	if o == nil || IsNil(o.N2SmInfoExt1) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -2075,7 +2076,7 @@ func (o *SmContextCreateData) GetN2SmInfoExt1() RefToBinaryData {
 // GetN2SmInfoExt1Ok returns a tuple with the N2SmInfoExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetN2SmInfoExt1Ok() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N2SmInfoExt1) {
+	if o == nil || IsNil(o.N2SmInfoExt1) {
 		return nil, false
 	}
 	return o.N2SmInfoExt1, true
@@ -2083,7 +2084,7 @@ func (o *SmContextCreateData) GetN2SmInfoExt1Ok() (*RefToBinaryData, bool) {
 
 // HasN2SmInfoExt1 returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasN2SmInfoExt1() bool {
-	if o != nil && !isNil(o.N2SmInfoExt1) {
+	if o != nil && !IsNil(o.N2SmInfoExt1) {
 		return true
 	}
 
@@ -2097,7 +2098,7 @@ func (o *SmContextCreateData) SetN2SmInfoExt1(v RefToBinaryData) {
 
 // GetN2SmInfoTypeExt1 returns the N2SmInfoTypeExt1 field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetN2SmInfoTypeExt1() N2SmInfoType {
-	if o == nil || isNil(o.N2SmInfoTypeExt1) {
+	if o == nil || IsNil(o.N2SmInfoTypeExt1) {
 		var ret N2SmInfoType
 		return ret
 	}
@@ -2107,7 +2108,7 @@ func (o *SmContextCreateData) GetN2SmInfoTypeExt1() N2SmInfoType {
 // GetN2SmInfoTypeExt1Ok returns a tuple with the N2SmInfoTypeExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetN2SmInfoTypeExt1Ok() (*N2SmInfoType, bool) {
-	if o == nil || isNil(o.N2SmInfoTypeExt1) {
+	if o == nil || IsNil(o.N2SmInfoTypeExt1) {
 		return nil, false
 	}
 	return o.N2SmInfoTypeExt1, true
@@ -2115,7 +2116,7 @@ func (o *SmContextCreateData) GetN2SmInfoTypeExt1Ok() (*N2SmInfoType, bool) {
 
 // HasN2SmInfoTypeExt1 returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasN2SmInfoTypeExt1() bool {
-	if o != nil && !isNil(o.N2SmInfoTypeExt1) {
+	if o != nil && !IsNil(o.N2SmInfoTypeExt1) {
 		return true
 	}
 
@@ -2129,7 +2130,7 @@ func (o *SmContextCreateData) SetN2SmInfoTypeExt1(v N2SmInfoType) {
 
 // GetSmContextRef returns the SmContextRef field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextRef() string {
-	if o == nil || isNil(o.SmContextRef) {
+	if o == nil || IsNil(o.SmContextRef) {
 		var ret string
 		return ret
 	}
@@ -2139,7 +2140,7 @@ func (o *SmContextCreateData) GetSmContextRef() string {
 // GetSmContextRefOk returns a tuple with the SmContextRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextRefOk() (*string, bool) {
-	if o == nil || isNil(o.SmContextRef) {
+	if o == nil || IsNil(o.SmContextRef) {
 		return nil, false
 	}
 	return o.SmContextRef, true
@@ -2147,7 +2148,7 @@ func (o *SmContextCreateData) GetSmContextRefOk() (*string, bool) {
 
 // HasSmContextRef returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextRef() bool {
-	if o != nil && !isNil(o.SmContextRef) {
+	if o != nil && !IsNil(o.SmContextRef) {
 		return true
 	}
 
@@ -2161,7 +2162,7 @@ func (o *SmContextCreateData) SetSmContextRef(v string) {
 
 // GetSmContextSmfPlmnId returns the SmContextSmfPlmnId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextSmfPlmnId() PlmnIdNid {
-	if o == nil || isNil(o.SmContextSmfPlmnId) {
+	if o == nil || IsNil(o.SmContextSmfPlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -2171,7 +2172,7 @@ func (o *SmContextCreateData) GetSmContextSmfPlmnId() PlmnIdNid {
 // GetSmContextSmfPlmnIdOk returns a tuple with the SmContextSmfPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextSmfPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.SmContextSmfPlmnId) {
+	if o == nil || IsNil(o.SmContextSmfPlmnId) {
 		return nil, false
 	}
 	return o.SmContextSmfPlmnId, true
@@ -2179,7 +2180,7 @@ func (o *SmContextCreateData) GetSmContextSmfPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasSmContextSmfPlmnId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextSmfPlmnId() bool {
-	if o != nil && !isNil(o.SmContextSmfPlmnId) {
+	if o != nil && !IsNil(o.SmContextSmfPlmnId) {
 		return true
 	}
 
@@ -2193,7 +2194,7 @@ func (o *SmContextCreateData) SetSmContextSmfPlmnId(v PlmnIdNid) {
 
 // GetSmContextSmfId returns the SmContextSmfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextSmfId() string {
-	if o == nil || isNil(o.SmContextSmfId) {
+	if o == nil || IsNil(o.SmContextSmfId) {
 		var ret string
 		return ret
 	}
@@ -2203,7 +2204,7 @@ func (o *SmContextCreateData) GetSmContextSmfId() string {
 // GetSmContextSmfIdOk returns a tuple with the SmContextSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmContextSmfId) {
+	if o == nil || IsNil(o.SmContextSmfId) {
 		return nil, false
 	}
 	return o.SmContextSmfId, true
@@ -2211,7 +2212,7 @@ func (o *SmContextCreateData) GetSmContextSmfIdOk() (*string, bool) {
 
 // HasSmContextSmfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextSmfId() bool {
-	if o != nil && !isNil(o.SmContextSmfId) {
+	if o != nil && !IsNil(o.SmContextSmfId) {
 		return true
 	}
 
@@ -2225,7 +2226,7 @@ func (o *SmContextCreateData) SetSmContextSmfId(v string) {
 
 // GetSmContextSmfSetId returns the SmContextSmfSetId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextSmfSetId() string {
-	if o == nil || isNil(o.SmContextSmfSetId) {
+	if o == nil || IsNil(o.SmContextSmfSetId) {
 		var ret string
 		return ret
 	}
@@ -2235,7 +2236,7 @@ func (o *SmContextCreateData) GetSmContextSmfSetId() string {
 // GetSmContextSmfSetIdOk returns a tuple with the SmContextSmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextSmfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmContextSmfSetId) {
+	if o == nil || IsNil(o.SmContextSmfSetId) {
 		return nil, false
 	}
 	return o.SmContextSmfSetId, true
@@ -2243,7 +2244,7 @@ func (o *SmContextCreateData) GetSmContextSmfSetIdOk() (*string, bool) {
 
 // HasSmContextSmfSetId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextSmfSetId() bool {
-	if o != nil && !isNil(o.SmContextSmfSetId) {
+	if o != nil && !IsNil(o.SmContextSmfSetId) {
 		return true
 	}
 
@@ -2257,7 +2258,7 @@ func (o *SmContextCreateData) SetSmContextSmfSetId(v string) {
 
 // GetSmContextSmfServiceSetId returns the SmContextSmfServiceSetId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextSmfServiceSetId() string {
-	if o == nil || isNil(o.SmContextSmfServiceSetId) {
+	if o == nil || IsNil(o.SmContextSmfServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -2267,7 +2268,7 @@ func (o *SmContextCreateData) GetSmContextSmfServiceSetId() string {
 // GetSmContextSmfServiceSetIdOk returns a tuple with the SmContextSmfServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextSmfServiceSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmContextSmfServiceSetId) {
+	if o == nil || IsNil(o.SmContextSmfServiceSetId) {
 		return nil, false
 	}
 	return o.SmContextSmfServiceSetId, true
@@ -2275,7 +2276,7 @@ func (o *SmContextCreateData) GetSmContextSmfServiceSetIdOk() (*string, bool) {
 
 // HasSmContextSmfServiceSetId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextSmfServiceSetId() bool {
-	if o != nil && !isNil(o.SmContextSmfServiceSetId) {
+	if o != nil && !IsNil(o.SmContextSmfServiceSetId) {
 		return true
 	}
 
@@ -2289,7 +2290,7 @@ func (o *SmContextCreateData) SetSmContextSmfServiceSetId(v string) {
 
 // GetSmContextSmfBinding returns the SmContextSmfBinding field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextSmfBinding() SbiBindingLevel {
-	if o == nil || isNil(o.SmContextSmfBinding) {
+	if o == nil || IsNil(o.SmContextSmfBinding) {
 		var ret SbiBindingLevel
 		return ret
 	}
@@ -2299,7 +2300,7 @@ func (o *SmContextCreateData) GetSmContextSmfBinding() SbiBindingLevel {
 // GetSmContextSmfBindingOk returns a tuple with the SmContextSmfBinding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextSmfBindingOk() (*SbiBindingLevel, bool) {
-	if o == nil || isNil(o.SmContextSmfBinding) {
+	if o == nil || IsNil(o.SmContextSmfBinding) {
 		return nil, false
 	}
 	return o.SmContextSmfBinding, true
@@ -2307,7 +2308,7 @@ func (o *SmContextCreateData) GetSmContextSmfBindingOk() (*SbiBindingLevel, bool
 
 // HasSmContextSmfBinding returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextSmfBinding() bool {
-	if o != nil && !isNil(o.SmContextSmfBinding) {
+	if o != nil && !IsNil(o.SmContextSmfBinding) {
 		return true
 	}
 
@@ -2321,7 +2322,7 @@ func (o *SmContextCreateData) SetSmContextSmfBinding(v SbiBindingLevel) {
 
 // GetUpCnxState returns the UpCnxState field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUpCnxState() UpCnxState {
-	if o == nil || isNil(o.UpCnxState) {
+	if o == nil || IsNil(o.UpCnxState) {
 		var ret UpCnxState
 		return ret
 	}
@@ -2331,7 +2332,7 @@ func (o *SmContextCreateData) GetUpCnxState() UpCnxState {
 // GetUpCnxStateOk returns a tuple with the UpCnxState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUpCnxStateOk() (*UpCnxState, bool) {
-	if o == nil || isNil(o.UpCnxState) {
+	if o == nil || IsNil(o.UpCnxState) {
 		return nil, false
 	}
 	return o.UpCnxState, true
@@ -2339,7 +2340,7 @@ func (o *SmContextCreateData) GetUpCnxStateOk() (*UpCnxState, bool) {
 
 // HasUpCnxState returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUpCnxState() bool {
-	if o != nil && !isNil(o.UpCnxState) {
+	if o != nil && !IsNil(o.UpCnxState) {
 		return true
 	}
 
@@ -2353,7 +2354,7 @@ func (o *SmContextCreateData) SetUpCnxState(v UpCnxState) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -2363,7 +2364,7 @@ func (o *SmContextCreateData) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -2371,7 +2372,7 @@ func (o *SmContextCreateData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, 
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmallDataRateStatus() bool {
-	if o != nil && !isNil(o.SmallDataRateStatus) {
+	if o != nil && !IsNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -2385,7 +2386,7 @@ func (o *SmContextCreateData) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetApnRateStatus() ApnRateStatus {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -2395,7 +2396,7 @@ func (o *SmContextCreateData) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -2403,7 +2404,7 @@ func (o *SmContextCreateData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasApnRateStatus() bool {
-	if o != nil && !isNil(o.ApnRateStatus) {
+	if o != nil && !IsNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -2417,7 +2418,7 @@ func (o *SmContextCreateData) SetApnRateStatus(v ApnRateStatus) {
 
 // GetExtendedNasSmTimerInd returns the ExtendedNasSmTimerInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetExtendedNasSmTimerInd() bool {
-	if o == nil || isNil(o.ExtendedNasSmTimerInd) {
+	if o == nil || IsNil(o.ExtendedNasSmTimerInd) {
 		var ret bool
 		return ret
 	}
@@ -2427,7 +2428,7 @@ func (o *SmContextCreateData) GetExtendedNasSmTimerInd() bool {
 // GetExtendedNasSmTimerIndOk returns a tuple with the ExtendedNasSmTimerInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetExtendedNasSmTimerIndOk() (*bool, bool) {
-	if o == nil || isNil(o.ExtendedNasSmTimerInd) {
+	if o == nil || IsNil(o.ExtendedNasSmTimerInd) {
 		return nil, false
 	}
 	return o.ExtendedNasSmTimerInd, true
@@ -2435,7 +2436,7 @@ func (o *SmContextCreateData) GetExtendedNasSmTimerIndOk() (*bool, bool) {
 
 // HasExtendedNasSmTimerInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasExtendedNasSmTimerInd() bool {
-	if o != nil && !isNil(o.ExtendedNasSmTimerInd) {
+	if o != nil && !IsNil(o.ExtendedNasSmTimerInd) {
 		return true
 	}
 
@@ -2449,7 +2450,7 @@ func (o *SmContextCreateData) SetExtendedNasSmTimerInd(v bool) {
 
 // GetDlDataWaitingInd returns the DlDataWaitingInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetDlDataWaitingInd() bool {
-	if o == nil || isNil(o.DlDataWaitingInd) {
+	if o == nil || IsNil(o.DlDataWaitingInd) {
 		var ret bool
 		return ret
 	}
@@ -2459,7 +2460,7 @@ func (o *SmContextCreateData) GetDlDataWaitingInd() bool {
 // GetDlDataWaitingIndOk returns a tuple with the DlDataWaitingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetDlDataWaitingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DlDataWaitingInd) {
+	if o == nil || IsNil(o.DlDataWaitingInd) {
 		return nil, false
 	}
 	return o.DlDataWaitingInd, true
@@ -2467,7 +2468,7 @@ func (o *SmContextCreateData) GetDlDataWaitingIndOk() (*bool, bool) {
 
 // HasDlDataWaitingInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasDlDataWaitingInd() bool {
-	if o != nil && !isNil(o.DlDataWaitingInd) {
+	if o != nil && !IsNil(o.DlDataWaitingInd) {
 		return true
 	}
 
@@ -2481,7 +2482,7 @@ func (o *SmContextCreateData) SetDlDataWaitingInd(v bool) {
 
 // GetDdnFailureSubs returns the DdnFailureSubs field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetDdnFailureSubs() DdnFailureSubs {
-	if o == nil || isNil(o.DdnFailureSubs) {
+	if o == nil || IsNil(o.DdnFailureSubs) {
 		var ret DdnFailureSubs
 		return ret
 	}
@@ -2491,7 +2492,7 @@ func (o *SmContextCreateData) GetDdnFailureSubs() DdnFailureSubs {
 // GetDdnFailureSubsOk returns a tuple with the DdnFailureSubs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetDdnFailureSubsOk() (*DdnFailureSubs, bool) {
-	if o == nil || isNil(o.DdnFailureSubs) {
+	if o == nil || IsNil(o.DdnFailureSubs) {
 		return nil, false
 	}
 	return o.DdnFailureSubs, true
@@ -2499,7 +2500,7 @@ func (o *SmContextCreateData) GetDdnFailureSubsOk() (*DdnFailureSubs, bool) {
 
 // HasDdnFailureSubs returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasDdnFailureSubs() bool {
-	if o != nil && !isNil(o.DdnFailureSubs) {
+	if o != nil && !IsNil(o.DdnFailureSubs) {
 		return true
 	}
 
@@ -2513,7 +2514,7 @@ func (o *SmContextCreateData) SetDdnFailureSubs(v DdnFailureSubs) {
 
 // GetSmfTransferInd returns the SmfTransferInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmfTransferInd() bool {
-	if o == nil || isNil(o.SmfTransferInd) {
+	if o == nil || IsNil(o.SmfTransferInd) {
 		var ret bool
 		return ret
 	}
@@ -2523,7 +2524,7 @@ func (o *SmContextCreateData) GetSmfTransferInd() bool {
 // GetSmfTransferIndOk returns a tuple with the SmfTransferInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmfTransferIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SmfTransferInd) {
+	if o == nil || IsNil(o.SmfTransferInd) {
 		return nil, false
 	}
 	return o.SmfTransferInd, true
@@ -2531,7 +2532,7 @@ func (o *SmContextCreateData) GetSmfTransferIndOk() (*bool, bool) {
 
 // HasSmfTransferInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmfTransferInd() bool {
-	if o != nil && !isNil(o.SmfTransferInd) {
+	if o != nil && !IsNil(o.SmfTransferInd) {
 		return true
 	}
 
@@ -2545,7 +2546,7 @@ func (o *SmContextCreateData) SetSmfTransferInd(v bool) {
 
 // GetOldSmfId returns the OldSmfId field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetOldSmfId() string {
-	if o == nil || isNil(o.OldSmfId) {
+	if o == nil || IsNil(o.OldSmfId) {
 		var ret string
 		return ret
 	}
@@ -2555,7 +2556,7 @@ func (o *SmContextCreateData) GetOldSmfId() string {
 // GetOldSmfIdOk returns a tuple with the OldSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetOldSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.OldSmfId) {
+	if o == nil || IsNil(o.OldSmfId) {
 		return nil, false
 	}
 	return o.OldSmfId, true
@@ -2563,7 +2564,7 @@ func (o *SmContextCreateData) GetOldSmfIdOk() (*string, bool) {
 
 // HasOldSmfId returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasOldSmfId() bool {
-	if o != nil && !isNil(o.OldSmfId) {
+	if o != nil && !IsNil(o.OldSmfId) {
 		return true
 	}
 
@@ -2577,7 +2578,7 @@ func (o *SmContextCreateData) SetOldSmfId(v string) {
 
 // GetOldSmContextRef returns the OldSmContextRef field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetOldSmContextRef() string {
-	if o == nil || isNil(o.OldSmContextRef) {
+	if o == nil || IsNil(o.OldSmContextRef) {
 		var ret string
 		return ret
 	}
@@ -2587,7 +2588,7 @@ func (o *SmContextCreateData) GetOldSmContextRef() string {
 // GetOldSmContextRefOk returns a tuple with the OldSmContextRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetOldSmContextRefOk() (*string, bool) {
-	if o == nil || isNil(o.OldSmContextRef) {
+	if o == nil || IsNil(o.OldSmContextRef) {
 		return nil, false
 	}
 	return o.OldSmContextRef, true
@@ -2595,7 +2596,7 @@ func (o *SmContextCreateData) GetOldSmContextRefOk() (*string, bool) {
 
 // HasOldSmContextRef returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasOldSmContextRef() bool {
-	if o != nil && !isNil(o.OldSmContextRef) {
+	if o != nil && !IsNil(o.OldSmContextRef) {
 		return true
 	}
 
@@ -2609,7 +2610,7 @@ func (o *SmContextCreateData) SetOldSmContextRef(v string) {
 
 // GetWAgfInfo returns the WAgfInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetWAgfInfo() WAgfInfo {
-	if o == nil || isNil(o.WAgfInfo) {
+	if o == nil || IsNil(o.WAgfInfo) {
 		var ret WAgfInfo
 		return ret
 	}
@@ -2619,7 +2620,7 @@ func (o *SmContextCreateData) GetWAgfInfo() WAgfInfo {
 // GetWAgfInfoOk returns a tuple with the WAgfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetWAgfInfoOk() (*WAgfInfo, bool) {
-	if o == nil || isNil(o.WAgfInfo) {
+	if o == nil || IsNil(o.WAgfInfo) {
 		return nil, false
 	}
 	return o.WAgfInfo, true
@@ -2627,7 +2628,7 @@ func (o *SmContextCreateData) GetWAgfInfoOk() (*WAgfInfo, bool) {
 
 // HasWAgfInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasWAgfInfo() bool {
-	if o != nil && !isNil(o.WAgfInfo) {
+	if o != nil && !IsNil(o.WAgfInfo) {
 		return true
 	}
 
@@ -2641,7 +2642,7 @@ func (o *SmContextCreateData) SetWAgfInfo(v WAgfInfo) {
 
 // GetTngfInfo returns the TngfInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetTngfInfo() TngfInfo {
-	if o == nil || isNil(o.TngfInfo) {
+	if o == nil || IsNil(o.TngfInfo) {
 		var ret TngfInfo
 		return ret
 	}
@@ -2651,7 +2652,7 @@ func (o *SmContextCreateData) GetTngfInfo() TngfInfo {
 // GetTngfInfoOk returns a tuple with the TngfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetTngfInfoOk() (*TngfInfo, bool) {
-	if o == nil || isNil(o.TngfInfo) {
+	if o == nil || IsNil(o.TngfInfo) {
 		return nil, false
 	}
 	return o.TngfInfo, true
@@ -2659,7 +2660,7 @@ func (o *SmContextCreateData) GetTngfInfoOk() (*TngfInfo, bool) {
 
 // HasTngfInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasTngfInfo() bool {
-	if o != nil && !isNil(o.TngfInfo) {
+	if o != nil && !IsNil(o.TngfInfo) {
 		return true
 	}
 
@@ -2673,7 +2674,7 @@ func (o *SmContextCreateData) SetTngfInfo(v TngfInfo) {
 
 // GetTwifInfo returns the TwifInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetTwifInfo() TwifInfo {
-	if o == nil || isNil(o.TwifInfo) {
+	if o == nil || IsNil(o.TwifInfo) {
 		var ret TwifInfo
 		return ret
 	}
@@ -2683,7 +2684,7 @@ func (o *SmContextCreateData) GetTwifInfo() TwifInfo {
 // GetTwifInfoOk returns a tuple with the TwifInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetTwifInfoOk() (*TwifInfo, bool) {
-	if o == nil || isNil(o.TwifInfo) {
+	if o == nil || IsNil(o.TwifInfo) {
 		return nil, false
 	}
 	return o.TwifInfo, true
@@ -2691,7 +2692,7 @@ func (o *SmContextCreateData) GetTwifInfoOk() (*TwifInfo, bool) {
 
 // HasTwifInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasTwifInfo() bool {
-	if o != nil && !isNil(o.TwifInfo) {
+	if o != nil && !IsNil(o.TwifInfo) {
 		return true
 	}
 
@@ -2705,7 +2706,7 @@ func (o *SmContextCreateData) SetTwifInfo(v TwifInfo) {
 
 // GetRanUnchangedInd returns the RanUnchangedInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetRanUnchangedInd() bool {
-	if o == nil || isNil(o.RanUnchangedInd) {
+	if o == nil || IsNil(o.RanUnchangedInd) {
 		var ret bool
 		return ret
 	}
@@ -2715,7 +2716,7 @@ func (o *SmContextCreateData) GetRanUnchangedInd() bool {
 // GetRanUnchangedIndOk returns a tuple with the RanUnchangedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetRanUnchangedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.RanUnchangedInd) {
+	if o == nil || IsNil(o.RanUnchangedInd) {
 		return nil, false
 	}
 	return o.RanUnchangedInd, true
@@ -2723,7 +2724,7 @@ func (o *SmContextCreateData) GetRanUnchangedIndOk() (*bool, bool) {
 
 // HasRanUnchangedInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasRanUnchangedInd() bool {
-	if o != nil && !isNil(o.RanUnchangedInd) {
+	if o != nil && !IsNil(o.RanUnchangedInd) {
 		return true
 	}
 
@@ -2737,7 +2738,7 @@ func (o *SmContextCreateData) SetRanUnchangedInd(v bool) {
 
 // GetSamePcfSelectionInd returns the SamePcfSelectionInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSamePcfSelectionInd() bool {
-	if o == nil || isNil(o.SamePcfSelectionInd) {
+	if o == nil || IsNil(o.SamePcfSelectionInd) {
 		var ret bool
 		return ret
 	}
@@ -2747,7 +2748,7 @@ func (o *SmContextCreateData) GetSamePcfSelectionInd() bool {
 // GetSamePcfSelectionIndOk returns a tuple with the SamePcfSelectionInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSamePcfSelectionIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SamePcfSelectionInd) {
+	if o == nil || IsNil(o.SamePcfSelectionInd) {
 		return nil, false
 	}
 	return o.SamePcfSelectionInd, true
@@ -2755,7 +2756,7 @@ func (o *SmContextCreateData) GetSamePcfSelectionIndOk() (*bool, bool) {
 
 // HasSamePcfSelectionInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSamePcfSelectionInd() bool {
-	if o != nil && !isNil(o.SamePcfSelectionInd) {
+	if o != nil && !IsNil(o.SamePcfSelectionInd) {
 		return true
 	}
 
@@ -2769,7 +2770,7 @@ func (o *SmContextCreateData) SetSamePcfSelectionInd(v bool) {
 
 // GetTargetDnai returns the TargetDnai field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetTargetDnai() string {
-	if o == nil || isNil(o.TargetDnai) {
+	if o == nil || IsNil(o.TargetDnai) {
 		var ret string
 		return ret
 	}
@@ -2779,7 +2780,7 @@ func (o *SmContextCreateData) GetTargetDnai() string {
 // GetTargetDnaiOk returns a tuple with the TargetDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetTargetDnaiOk() (*string, bool) {
-	if o == nil || isNil(o.TargetDnai) {
+	if o == nil || IsNil(o.TargetDnai) {
 		return nil, false
 	}
 	return o.TargetDnai, true
@@ -2787,7 +2788,7 @@ func (o *SmContextCreateData) GetTargetDnaiOk() (*string, bool) {
 
 // HasTargetDnai returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasTargetDnai() bool {
-	if o != nil && !isNil(o.TargetDnai) {
+	if o != nil && !IsNil(o.TargetDnai) {
 		return true
 	}
 
@@ -2801,7 +2802,7 @@ func (o *SmContextCreateData) SetTargetDnai(v string) {
 
 // GetNrfManagementUri returns the NrfManagementUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetNrfManagementUri() string {
-	if o == nil || isNil(o.NrfManagementUri) {
+	if o == nil || IsNil(o.NrfManagementUri) {
 		var ret string
 		return ret
 	}
@@ -2811,7 +2812,7 @@ func (o *SmContextCreateData) GetNrfManagementUri() string {
 // GetNrfManagementUriOk returns a tuple with the NrfManagementUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetNrfManagementUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfManagementUri) {
+	if o == nil || IsNil(o.NrfManagementUri) {
 		return nil, false
 	}
 	return o.NrfManagementUri, true
@@ -2819,7 +2820,7 @@ func (o *SmContextCreateData) GetNrfManagementUriOk() (*string, bool) {
 
 // HasNrfManagementUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasNrfManagementUri() bool {
-	if o != nil && !isNil(o.NrfManagementUri) {
+	if o != nil && !IsNil(o.NrfManagementUri) {
 		return true
 	}
 
@@ -2833,7 +2834,7 @@ func (o *SmContextCreateData) SetNrfManagementUri(v string) {
 
 // GetNrfDiscoveryUri returns the NrfDiscoveryUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetNrfDiscoveryUri() string {
-	if o == nil || isNil(o.NrfDiscoveryUri) {
+	if o == nil || IsNil(o.NrfDiscoveryUri) {
 		var ret string
 		return ret
 	}
@@ -2843,7 +2844,7 @@ func (o *SmContextCreateData) GetNrfDiscoveryUri() string {
 // GetNrfDiscoveryUriOk returns a tuple with the NrfDiscoveryUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetNrfDiscoveryUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfDiscoveryUri) {
+	if o == nil || IsNil(o.NrfDiscoveryUri) {
 		return nil, false
 	}
 	return o.NrfDiscoveryUri, true
@@ -2851,7 +2852,7 @@ func (o *SmContextCreateData) GetNrfDiscoveryUriOk() (*string, bool) {
 
 // HasNrfDiscoveryUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasNrfDiscoveryUri() bool {
-	if o != nil && !isNil(o.NrfDiscoveryUri) {
+	if o != nil && !IsNil(o.NrfDiscoveryUri) {
 		return true
 	}
 
@@ -2865,7 +2866,7 @@ func (o *SmContextCreateData) SetNrfDiscoveryUri(v string) {
 
 // GetNrfAccessTokenUri returns the NrfAccessTokenUri field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetNrfAccessTokenUri() string {
-	if o == nil || isNil(o.NrfAccessTokenUri) {
+	if o == nil || IsNil(o.NrfAccessTokenUri) {
 		var ret string
 		return ret
 	}
@@ -2875,7 +2876,7 @@ func (o *SmContextCreateData) GetNrfAccessTokenUri() string {
 // GetNrfAccessTokenUriOk returns a tuple with the NrfAccessTokenUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetNrfAccessTokenUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfAccessTokenUri) {
+	if o == nil || IsNil(o.NrfAccessTokenUri) {
 		return nil, false
 	}
 	return o.NrfAccessTokenUri, true
@@ -2883,7 +2884,7 @@ func (o *SmContextCreateData) GetNrfAccessTokenUriOk() (*string, bool) {
 
 // HasNrfAccessTokenUri returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasNrfAccessTokenUri() bool {
-	if o != nil && !isNil(o.NrfAccessTokenUri) {
+	if o != nil && !IsNil(o.NrfAccessTokenUri) {
 		return true
 	}
 
@@ -2897,7 +2898,7 @@ func (o *SmContextCreateData) SetNrfAccessTokenUri(v string) {
 
 // GetNrfOauth2Required returns the NrfOauth2Required field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetNrfOauth2Required() map[string]bool {
-	if o == nil || isNil(o.NrfOauth2Required) {
+	if o == nil || IsNil(o.NrfOauth2Required) {
 		var ret map[string]bool
 		return ret
 	}
@@ -2907,7 +2908,7 @@ func (o *SmContextCreateData) GetNrfOauth2Required() map[string]bool {
 // GetNrfOauth2RequiredOk returns a tuple with the NrfOauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetNrfOauth2RequiredOk() (*map[string]bool, bool) {
-	if o == nil || isNil(o.NrfOauth2Required) {
+	if o == nil || IsNil(o.NrfOauth2Required) {
 		return nil, false
 	}
 	return o.NrfOauth2Required, true
@@ -2915,7 +2916,7 @@ func (o *SmContextCreateData) GetNrfOauth2RequiredOk() (*map[string]bool, bool) 
 
 // HasNrfOauth2Required returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasNrfOauth2Required() bool {
-	if o != nil && !isNil(o.NrfOauth2Required) {
+	if o != nil && !IsNil(o.NrfOauth2Required) {
 		return true
 	}
 
@@ -2929,7 +2930,7 @@ func (o *SmContextCreateData) SetNrfOauth2Required(v map[string]bool) {
 
 // GetSmfBindingInfo returns the SmfBindingInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmfBindingInfo() string {
-	if o == nil || isNil(o.SmfBindingInfo) {
+	if o == nil || IsNil(o.SmfBindingInfo) {
 		var ret string
 		return ret
 	}
@@ -2939,7 +2940,7 @@ func (o *SmContextCreateData) GetSmfBindingInfo() string {
 // GetSmfBindingInfoOk returns a tuple with the SmfBindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmfBindingInfoOk() (*string, bool) {
-	if o == nil || isNil(o.SmfBindingInfo) {
+	if o == nil || IsNil(o.SmfBindingInfo) {
 		return nil, false
 	}
 	return o.SmfBindingInfo, true
@@ -2947,7 +2948,7 @@ func (o *SmContextCreateData) GetSmfBindingInfoOk() (*string, bool) {
 
 // HasSmfBindingInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmfBindingInfo() bool {
-	if o != nil && !isNil(o.SmfBindingInfo) {
+	if o != nil && !IsNil(o.SmfBindingInfo) {
 		return true
 	}
 
@@ -2961,7 +2962,7 @@ func (o *SmContextCreateData) SetSmfBindingInfo(v string) {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || isNil(o.PvsInfo) {
+	if o == nil || IsNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -2971,7 +2972,7 @@ func (o *SmContextCreateData) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || isNil(o.PvsInfo) {
+	if o == nil || IsNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -2979,7 +2980,7 @@ func (o *SmContextCreateData) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasPvsInfo() bool {
-	if o != nil && !isNil(o.PvsInfo) {
+	if o != nil && !IsNil(o.PvsInfo) {
 		return true
 	}
 
@@ -2993,7 +2994,7 @@ func (o *SmContextCreateData) SetPvsInfo(v []ServerAddressingInfo) {
 
 // GetOnboardingInd returns the OnboardingInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetOnboardingInd() bool {
-	if o == nil || isNil(o.OnboardingInd) {
+	if o == nil || IsNil(o.OnboardingInd) {
 		var ret bool
 		return ret
 	}
@@ -3003,7 +3004,7 @@ func (o *SmContextCreateData) GetOnboardingInd() bool {
 // GetOnboardingIndOk returns a tuple with the OnboardingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetOnboardingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.OnboardingInd) {
+	if o == nil || IsNil(o.OnboardingInd) {
 		return nil, false
 	}
 	return o.OnboardingInd, true
@@ -3011,7 +3012,7 @@ func (o *SmContextCreateData) GetOnboardingIndOk() (*bool, bool) {
 
 // HasOnboardingInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasOnboardingInd() bool {
-	if o != nil && !isNil(o.OnboardingInd) {
+	if o != nil && !IsNil(o.OnboardingInd) {
 		return true
 	}
 
@@ -3025,7 +3026,7 @@ func (o *SmContextCreateData) SetOnboardingInd(v bool) {
 
 // GetOldPduSessionRef returns the OldPduSessionRef field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetOldPduSessionRef() string {
-	if o == nil || isNil(o.OldPduSessionRef) {
+	if o == nil || IsNil(o.OldPduSessionRef) {
 		var ret string
 		return ret
 	}
@@ -3035,7 +3036,7 @@ func (o *SmContextCreateData) GetOldPduSessionRef() string {
 // GetOldPduSessionRefOk returns a tuple with the OldPduSessionRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetOldPduSessionRefOk() (*string, bool) {
-	if o == nil || isNil(o.OldPduSessionRef) {
+	if o == nil || IsNil(o.OldPduSessionRef) {
 		return nil, false
 	}
 	return o.OldPduSessionRef, true
@@ -3043,7 +3044,7 @@ func (o *SmContextCreateData) GetOldPduSessionRefOk() (*string, bool) {
 
 // HasOldPduSessionRef returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasOldPduSessionRef() bool {
-	if o != nil && !isNil(o.OldPduSessionRef) {
+	if o != nil && !IsNil(o.OldPduSessionRef) {
 		return true
 	}
 
@@ -3057,7 +3058,7 @@ func (o *SmContextCreateData) SetOldPduSessionRef(v string) {
 
 // GetSmPolicyNotifyInd returns the SmPolicyNotifyInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmPolicyNotifyInd() bool {
-	if o == nil || isNil(o.SmPolicyNotifyInd) {
+	if o == nil || IsNil(o.SmPolicyNotifyInd) {
 		var ret bool
 		return ret
 	}
@@ -3067,7 +3068,7 @@ func (o *SmContextCreateData) GetSmPolicyNotifyInd() bool {
 // GetSmPolicyNotifyIndOk returns a tuple with the SmPolicyNotifyInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmPolicyNotifyIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SmPolicyNotifyInd) {
+	if o == nil || IsNil(o.SmPolicyNotifyInd) {
 		return nil, false
 	}
 	return o.SmPolicyNotifyInd, true
@@ -3075,7 +3076,7 @@ func (o *SmContextCreateData) GetSmPolicyNotifyIndOk() (*bool, bool) {
 
 // HasSmPolicyNotifyInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmPolicyNotifyInd() bool {
-	if o != nil && !isNil(o.SmPolicyNotifyInd) {
+	if o != nil && !IsNil(o.SmPolicyNotifyInd) {
 		return true
 	}
 
@@ -3089,7 +3090,7 @@ func (o *SmContextCreateData) SetSmPolicyNotifyInd(v bool) {
 
 // GetPcfUeCallbackInfo returns the PcfUeCallbackInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmContextCreateData) GetPcfUeCallbackInfo() PcfUeCallbackInfo {
-	if o == nil || isNil(o.PcfUeCallbackInfo.Get()) {
+	if o == nil || IsNil(o.PcfUeCallbackInfo.Get()) {
 		var ret PcfUeCallbackInfo
 		return ret
 	}
@@ -3119,6 +3120,7 @@ func (o *SmContextCreateData) HasPcfUeCallbackInfo() bool {
 func (o *SmContextCreateData) SetPcfUeCallbackInfo(v PcfUeCallbackInfo) {
 	o.PcfUeCallbackInfo.Set(&v)
 }
+
 // SetPcfUeCallbackInfoNil sets the value for PcfUeCallbackInfo to be an explicit nil
 func (o *SmContextCreateData) SetPcfUeCallbackInfoNil() {
 	o.PcfUeCallbackInfo.Set(nil)
@@ -3131,7 +3133,7 @@ func (o *SmContextCreateData) UnsetPcfUeCallbackInfo() {
 
 // GetSatelliteBackhaulCat returns the SatelliteBackhaulCat field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSatelliteBackhaulCat() SatelliteBackhaulCategory {
-	if o == nil || isNil(o.SatelliteBackhaulCat) {
+	if o == nil || IsNil(o.SatelliteBackhaulCat) {
 		var ret SatelliteBackhaulCategory
 		return ret
 	}
@@ -3141,7 +3143,7 @@ func (o *SmContextCreateData) GetSatelliteBackhaulCat() SatelliteBackhaulCategor
 // GetSatelliteBackhaulCatOk returns a tuple with the SatelliteBackhaulCat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSatelliteBackhaulCatOk() (*SatelliteBackhaulCategory, bool) {
-	if o == nil || isNil(o.SatelliteBackhaulCat) {
+	if o == nil || IsNil(o.SatelliteBackhaulCat) {
 		return nil, false
 	}
 	return o.SatelliteBackhaulCat, true
@@ -3149,7 +3151,7 @@ func (o *SmContextCreateData) GetSatelliteBackhaulCatOk() (*SatelliteBackhaulCat
 
 // HasSatelliteBackhaulCat returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSatelliteBackhaulCat() bool {
-	if o != nil && !isNil(o.SatelliteBackhaulCat) {
+	if o != nil && !IsNil(o.SatelliteBackhaulCat) {
 		return true
 	}
 
@@ -3163,7 +3165,7 @@ func (o *SmContextCreateData) SetSatelliteBackhaulCat(v SatelliteBackhaulCategor
 
 // GetUpipSupported returns the UpipSupported field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUpipSupported() bool {
-	if o == nil || isNil(o.UpipSupported) {
+	if o == nil || IsNil(o.UpipSupported) {
 		var ret bool
 		return ret
 	}
@@ -3173,7 +3175,7 @@ func (o *SmContextCreateData) GetUpipSupported() bool {
 // GetUpipSupportedOk returns a tuple with the UpipSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUpipSupportedOk() (*bool, bool) {
-	if o == nil || isNil(o.UpipSupported) {
+	if o == nil || IsNil(o.UpipSupported) {
 		return nil, false
 	}
 	return o.UpipSupported, true
@@ -3181,7 +3183,7 @@ func (o *SmContextCreateData) GetUpipSupportedOk() (*bool, bool) {
 
 // HasUpipSupported returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUpipSupported() bool {
-	if o != nil && !isNil(o.UpipSupported) {
+	if o != nil && !IsNil(o.UpipSupported) {
 		return true
 	}
 
@@ -3195,7 +3197,7 @@ func (o *SmContextCreateData) SetUpipSupported(v bool) {
 
 // GetUavAuthenticated returns the UavAuthenticated field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetUavAuthenticated() bool {
-	if o == nil || isNil(o.UavAuthenticated) {
+	if o == nil || IsNil(o.UavAuthenticated) {
 		var ret bool
 		return ret
 	}
@@ -3205,7 +3207,7 @@ func (o *SmContextCreateData) GetUavAuthenticated() bool {
 // GetUavAuthenticatedOk returns a tuple with the UavAuthenticated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetUavAuthenticatedOk() (*bool, bool) {
-	if o == nil || isNil(o.UavAuthenticated) {
+	if o == nil || IsNil(o.UavAuthenticated) {
 		return nil, false
 	}
 	return o.UavAuthenticated, true
@@ -3213,7 +3215,7 @@ func (o *SmContextCreateData) GetUavAuthenticatedOk() (*bool, bool) {
 
 // HasUavAuthenticated returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasUavAuthenticated() bool {
-	if o != nil && !isNil(o.UavAuthenticated) {
+	if o != nil && !IsNil(o.UavAuthenticated) {
 		return true
 	}
 
@@ -3227,7 +3229,7 @@ func (o *SmContextCreateData) SetUavAuthenticated(v bool) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetDisasterRoamingInd() bool {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -3237,7 +3239,7 @@ func (o *SmContextCreateData) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -3245,7 +3247,7 @@ func (o *SmContextCreateData) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasDisasterRoamingInd() bool {
-	if o != nil && !isNil(o.DisasterRoamingInd) {
+	if o != nil && !IsNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -3259,7 +3261,7 @@ func (o *SmContextCreateData) SetDisasterRoamingInd(v bool) {
 
 // GetAnchorSmfOauth2Required returns the AnchorSmfOauth2Required field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetAnchorSmfOauth2Required() bool {
-	if o == nil || isNil(o.AnchorSmfOauth2Required) {
+	if o == nil || IsNil(o.AnchorSmfOauth2Required) {
 		var ret bool
 		return ret
 	}
@@ -3269,7 +3271,7 @@ func (o *SmContextCreateData) GetAnchorSmfOauth2Required() bool {
 // GetAnchorSmfOauth2RequiredOk returns a tuple with the AnchorSmfOauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetAnchorSmfOauth2RequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.AnchorSmfOauth2Required) {
+	if o == nil || IsNil(o.AnchorSmfOauth2Required) {
 		return nil, false
 	}
 	return o.AnchorSmfOauth2Required, true
@@ -3277,7 +3279,7 @@ func (o *SmContextCreateData) GetAnchorSmfOauth2RequiredOk() (*bool, bool) {
 
 // HasAnchorSmfOauth2Required returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasAnchorSmfOauth2Required() bool {
-	if o != nil && !isNil(o.AnchorSmfOauth2Required) {
+	if o != nil && !IsNil(o.AnchorSmfOauth2Required) {
 		return true
 	}
 
@@ -3291,7 +3293,7 @@ func (o *SmContextCreateData) SetAnchorSmfOauth2Required(v bool) {
 
 // GetSmContextSmfOauth2Required returns the SmContextSmfOauth2Required field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextSmfOauth2Required() bool {
-	if o == nil || isNil(o.SmContextSmfOauth2Required) {
+	if o == nil || IsNil(o.SmContextSmfOauth2Required) {
 		var ret bool
 		return ret
 	}
@@ -3301,7 +3303,7 @@ func (o *SmContextCreateData) GetSmContextSmfOauth2Required() bool {
 // GetSmContextSmfOauth2RequiredOk returns a tuple with the SmContextSmfOauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextSmfOauth2RequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.SmContextSmfOauth2Required) {
+	if o == nil || IsNil(o.SmContextSmfOauth2Required) {
 		return nil, false
 	}
 	return o.SmContextSmfOauth2Required, true
@@ -3309,7 +3311,7 @@ func (o *SmContextCreateData) GetSmContextSmfOauth2RequiredOk() (*bool, bool) {
 
 // HasSmContextSmfOauth2Required returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextSmfOauth2Required() bool {
-	if o != nil && !isNil(o.SmContextSmfOauth2Required) {
+	if o != nil && !IsNil(o.SmContextSmfOauth2Required) {
 		return true
 	}
 
@@ -3322,7 +3324,7 @@ func (o *SmContextCreateData) SetSmContextSmfOauth2Required(v bool) {
 }
 
 func (o SmContextCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -3331,287 +3333,287 @@ func (o SmContextCreateData) MarshalJSON() ([]byte, error) {
 
 func (o SmContextCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.UnauthenticatedSupi) {
+	if !IsNil(o.UnauthenticatedSupi) {
 		toSerialize["unauthenticatedSupi"] = o.UnauthenticatedSupi
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.PduSessionId) {
+	if !IsNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.SelectedDnn) {
+	if !IsNil(o.SelectedDnn) {
 		toSerialize["selectedDnn"] = o.SelectedDnn
 	}
-	if !isNil(o.SNssai) {
+	if !IsNil(o.SNssai) {
 		toSerialize["sNssai"] = o.SNssai
 	}
-	if !isNil(o.HplmnSnssai) {
+	if !IsNil(o.HplmnSnssai) {
 		toSerialize["hplmnSnssai"] = o.HplmnSnssai
 	}
 	toSerialize["servingNfId"] = o.ServingNfId
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !isNil(o.ServiceName) {
+	if !IsNil(o.ServiceName) {
 		toSerialize["serviceName"] = o.ServiceName
 	}
 	toSerialize["servingNetwork"] = o.ServingNetwork
-	if !isNil(o.RequestType) {
+	if !IsNil(o.RequestType) {
 		toSerialize["requestType"] = o.RequestType
 	}
-	if !isNil(o.N1SmMsg) {
+	if !IsNil(o.N1SmMsg) {
 		toSerialize["n1SmMsg"] = o.N1SmMsg
 	}
 	toSerialize["anType"] = o.AnType
-	if !isNil(o.AdditionalAnType) {
+	if !IsNil(o.AdditionalAnType) {
 		toSerialize["additionalAnType"] = o.AdditionalAnType
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.PresenceInLadn) {
+	if !IsNil(o.PresenceInLadn) {
 		toSerialize["presenceInLadn"] = o.PresenceInLadn
 	}
-	if !isNil(o.UeLocation) {
+	if !IsNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
-	if !isNil(o.UeTimeZone) {
+	if !IsNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !isNil(o.AddUeLocation) {
+	if !IsNil(o.AddUeLocation) {
 		toSerialize["addUeLocation"] = o.AddUeLocation
 	}
 	toSerialize["smContextStatusUri"] = o.SmContextStatusUri
-	if !isNil(o.HSmfUri) {
+	if !IsNil(o.HSmfUri) {
 		toSerialize["hSmfUri"] = o.HSmfUri
 	}
-	if !isNil(o.HSmfId) {
+	if !IsNil(o.HSmfId) {
 		toSerialize["hSmfId"] = o.HSmfId
 	}
-	if !isNil(o.SmfUri) {
+	if !IsNil(o.SmfUri) {
 		toSerialize["smfUri"] = o.SmfUri
 	}
-	if !isNil(o.SmfId) {
+	if !IsNil(o.SmfId) {
 		toSerialize["smfId"] = o.SmfId
 	}
-	if !isNil(o.AdditionalHsmfUri) {
+	if !IsNil(o.AdditionalHsmfUri) {
 		toSerialize["additionalHsmfUri"] = o.AdditionalHsmfUri
 	}
-	if !isNil(o.AdditionalHsmfId) {
+	if !IsNil(o.AdditionalHsmfId) {
 		toSerialize["additionalHsmfId"] = o.AdditionalHsmfId
 	}
-	if !isNil(o.AdditionalSmfUri) {
+	if !IsNil(o.AdditionalSmfUri) {
 		toSerialize["additionalSmfUri"] = o.AdditionalSmfUri
 	}
-	if !isNil(o.AdditionalSmfId) {
+	if !IsNil(o.AdditionalSmfId) {
 		toSerialize["additionalSmfId"] = o.AdditionalSmfId
 	}
-	if !isNil(o.OldPduSessionId) {
+	if !IsNil(o.OldPduSessionId) {
 		toSerialize["oldPduSessionId"] = o.OldPduSessionId
 	}
-	if !isNil(o.PduSessionsActivateList) {
+	if !IsNil(o.PduSessionsActivateList) {
 		toSerialize["pduSessionsActivateList"] = o.PduSessionsActivateList
 	}
-	if !isNil(o.UeEpsPdnConnection) {
+	if !IsNil(o.UeEpsPdnConnection) {
 		toSerialize["ueEpsPdnConnection"] = o.UeEpsPdnConnection
 	}
-	if !isNil(o.HoState) {
+	if !IsNil(o.HoState) {
 		toSerialize["hoState"] = o.HoState
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.PcfGroupId) {
+	if !IsNil(o.PcfGroupId) {
 		toSerialize["pcfGroupId"] = o.PcfGroupId
 	}
-	if !isNil(o.PcfSetId) {
+	if !IsNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !isNil(o.NrfUri) {
+	if !IsNil(o.NrfUri) {
 		toSerialize["nrfUri"] = o.NrfUri
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.SelMode) {
+	if !IsNil(o.SelMode) {
 		toSerialize["selMode"] = o.SelMode
 	}
-	if !isNil(o.BackupAmfInfo) {
+	if !IsNil(o.BackupAmfInfo) {
 		toSerialize["backupAmfInfo"] = o.BackupAmfInfo
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !isNil(o.UdmGroupId) {
+	if !IsNil(o.UdmGroupId) {
 		toSerialize["udmGroupId"] = o.UdmGroupId
 	}
-	if !isNil(o.RoutingIndicator) {
+	if !IsNil(o.RoutingIndicator) {
 		toSerialize["routingIndicator"] = o.RoutingIndicator
 	}
-	if !isNil(o.HNwPubKeyId) {
+	if !IsNil(o.HNwPubKeyId) {
 		toSerialize["hNwPubKeyId"] = o.HNwPubKeyId
 	}
-	if !isNil(o.EpsInterworkingInd) {
+	if !IsNil(o.EpsInterworkingInd) {
 		toSerialize["epsInterworkingInd"] = o.EpsInterworkingInd
 	}
-	if !isNil(o.IndirectForwardingFlag) {
+	if !IsNil(o.IndirectForwardingFlag) {
 		toSerialize["indirectForwardingFlag"] = o.IndirectForwardingFlag
 	}
-	if !isNil(o.DirectForwardingFlag) {
+	if !IsNil(o.DirectForwardingFlag) {
 		toSerialize["directForwardingFlag"] = o.DirectForwardingFlag
 	}
-	if !isNil(o.TargetId) {
+	if !IsNil(o.TargetId) {
 		toSerialize["targetId"] = o.TargetId
 	}
-	if !isNil(o.EpsBearerCtxStatus) {
+	if !IsNil(o.EpsBearerCtxStatus) {
 		toSerialize["epsBearerCtxStatus"] = o.EpsBearerCtxStatus
 	}
-	if !isNil(o.CpCiotEnabled) {
+	if !IsNil(o.CpCiotEnabled) {
 		toSerialize["cpCiotEnabled"] = o.CpCiotEnabled
 	}
-	if !isNil(o.CpOnlyInd) {
+	if !IsNil(o.CpOnlyInd) {
 		toSerialize["cpOnlyInd"] = o.CpOnlyInd
 	}
-	if !isNil(o.InvokeNef) {
+	if !IsNil(o.InvokeNef) {
 		toSerialize["invokeNef"] = o.InvokeNef
 	}
-	if !isNil(o.MaRequestInd) {
+	if !IsNil(o.MaRequestInd) {
 		toSerialize["maRequestInd"] = o.MaRequestInd
 	}
-	if !isNil(o.MaNwUpgradeInd) {
+	if !IsNil(o.MaNwUpgradeInd) {
 		toSerialize["maNwUpgradeInd"] = o.MaNwUpgradeInd
 	}
-	if !isNil(o.N2SmInfo) {
+	if !IsNil(o.N2SmInfo) {
 		toSerialize["n2SmInfo"] = o.N2SmInfo
 	}
-	if !isNil(o.N2SmInfoType) {
+	if !IsNil(o.N2SmInfoType) {
 		toSerialize["n2SmInfoType"] = o.N2SmInfoType
 	}
-	if !isNil(o.N2SmInfoExt1) {
+	if !IsNil(o.N2SmInfoExt1) {
 		toSerialize["n2SmInfoExt1"] = o.N2SmInfoExt1
 	}
-	if !isNil(o.N2SmInfoTypeExt1) {
+	if !IsNil(o.N2SmInfoTypeExt1) {
 		toSerialize["n2SmInfoTypeExt1"] = o.N2SmInfoTypeExt1
 	}
-	if !isNil(o.SmContextRef) {
+	if !IsNil(o.SmContextRef) {
 		toSerialize["smContextRef"] = o.SmContextRef
 	}
-	if !isNil(o.SmContextSmfPlmnId) {
+	if !IsNil(o.SmContextSmfPlmnId) {
 		toSerialize["smContextSmfPlmnId"] = o.SmContextSmfPlmnId
 	}
-	if !isNil(o.SmContextSmfId) {
+	if !IsNil(o.SmContextSmfId) {
 		toSerialize["smContextSmfId"] = o.SmContextSmfId
 	}
-	if !isNil(o.SmContextSmfSetId) {
+	if !IsNil(o.SmContextSmfSetId) {
 		toSerialize["smContextSmfSetId"] = o.SmContextSmfSetId
 	}
-	if !isNil(o.SmContextSmfServiceSetId) {
+	if !IsNil(o.SmContextSmfServiceSetId) {
 		toSerialize["smContextSmfServiceSetId"] = o.SmContextSmfServiceSetId
 	}
-	if !isNil(o.SmContextSmfBinding) {
+	if !IsNil(o.SmContextSmfBinding) {
 		toSerialize["smContextSmfBinding"] = o.SmContextSmfBinding
 	}
-	if !isNil(o.UpCnxState) {
+	if !IsNil(o.UpCnxState) {
 		toSerialize["upCnxState"] = o.UpCnxState
 	}
-	if !isNil(o.SmallDataRateStatus) {
+	if !IsNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !isNil(o.ApnRateStatus) {
+	if !IsNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
-	if !isNil(o.ExtendedNasSmTimerInd) {
+	if !IsNil(o.ExtendedNasSmTimerInd) {
 		toSerialize["extendedNasSmTimerInd"] = o.ExtendedNasSmTimerInd
 	}
-	if !isNil(o.DlDataWaitingInd) {
+	if !IsNil(o.DlDataWaitingInd) {
 		toSerialize["dlDataWaitingInd"] = o.DlDataWaitingInd
 	}
-	if !isNil(o.DdnFailureSubs) {
+	if !IsNil(o.DdnFailureSubs) {
 		toSerialize["ddnFailureSubs"] = o.DdnFailureSubs
 	}
-	if !isNil(o.SmfTransferInd) {
+	if !IsNil(o.SmfTransferInd) {
 		toSerialize["smfTransferInd"] = o.SmfTransferInd
 	}
-	if !isNil(o.OldSmfId) {
+	if !IsNil(o.OldSmfId) {
 		toSerialize["oldSmfId"] = o.OldSmfId
 	}
-	if !isNil(o.OldSmContextRef) {
+	if !IsNil(o.OldSmContextRef) {
 		toSerialize["oldSmContextRef"] = o.OldSmContextRef
 	}
-	if !isNil(o.WAgfInfo) {
+	if !IsNil(o.WAgfInfo) {
 		toSerialize["wAgfInfo"] = o.WAgfInfo
 	}
-	if !isNil(o.TngfInfo) {
+	if !IsNil(o.TngfInfo) {
 		toSerialize["tngfInfo"] = o.TngfInfo
 	}
-	if !isNil(o.TwifInfo) {
+	if !IsNil(o.TwifInfo) {
 		toSerialize["twifInfo"] = o.TwifInfo
 	}
-	if !isNil(o.RanUnchangedInd) {
+	if !IsNil(o.RanUnchangedInd) {
 		toSerialize["ranUnchangedInd"] = o.RanUnchangedInd
 	}
-	if !isNil(o.SamePcfSelectionInd) {
+	if !IsNil(o.SamePcfSelectionInd) {
 		toSerialize["samePcfSelectionInd"] = o.SamePcfSelectionInd
 	}
-	if !isNil(o.TargetDnai) {
+	if !IsNil(o.TargetDnai) {
 		toSerialize["targetDnai"] = o.TargetDnai
 	}
-	if !isNil(o.NrfManagementUri) {
+	if !IsNil(o.NrfManagementUri) {
 		toSerialize["nrfManagementUri"] = o.NrfManagementUri
 	}
-	if !isNil(o.NrfDiscoveryUri) {
+	if !IsNil(o.NrfDiscoveryUri) {
 		toSerialize["nrfDiscoveryUri"] = o.NrfDiscoveryUri
 	}
-	if !isNil(o.NrfAccessTokenUri) {
+	if !IsNil(o.NrfAccessTokenUri) {
 		toSerialize["nrfAccessTokenUri"] = o.NrfAccessTokenUri
 	}
-	if !isNil(o.NrfOauth2Required) {
+	if !IsNil(o.NrfOauth2Required) {
 		toSerialize["nrfOauth2Required"] = o.NrfOauth2Required
 	}
-	if !isNil(o.SmfBindingInfo) {
+	if !IsNil(o.SmfBindingInfo) {
 		toSerialize["smfBindingInfo"] = o.SmfBindingInfo
 	}
-	if !isNil(o.PvsInfo) {
+	if !IsNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
-	if !isNil(o.OnboardingInd) {
+	if !IsNil(o.OnboardingInd) {
 		toSerialize["onboardingInd"] = o.OnboardingInd
 	}
-	if !isNil(o.OldPduSessionRef) {
+	if !IsNil(o.OldPduSessionRef) {
 		toSerialize["oldPduSessionRef"] = o.OldPduSessionRef
 	}
-	if !isNil(o.SmPolicyNotifyInd) {
+	if !IsNil(o.SmPolicyNotifyInd) {
 		toSerialize["smPolicyNotifyInd"] = o.SmPolicyNotifyInd
 	}
 	if o.PcfUeCallbackInfo.IsSet() {
 		toSerialize["pcfUeCallbackInfo"] = o.PcfUeCallbackInfo.Get()
 	}
-	if !isNil(o.SatelliteBackhaulCat) {
+	if !IsNil(o.SatelliteBackhaulCat) {
 		toSerialize["satelliteBackhaulCat"] = o.SatelliteBackhaulCat
 	}
-	if !isNil(o.UpipSupported) {
+	if !IsNil(o.UpipSupported) {
 		toSerialize["upipSupported"] = o.UpipSupported
 	}
-	if !isNil(o.UavAuthenticated) {
+	if !IsNil(o.UavAuthenticated) {
 		toSerialize["uavAuthenticated"] = o.UavAuthenticated
 	}
-	if !isNil(o.DisasterRoamingInd) {
+	if !IsNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
-	if !isNil(o.AnchorSmfOauth2Required) {
+	if !IsNil(o.AnchorSmfOauth2Required) {
 		toSerialize["anchorSmfOauth2Required"] = o.AnchorSmfOauth2Required
 	}
-	if !isNil(o.SmContextSmfOauth2Required) {
+	if !IsNil(o.SmContextSmfOauth2Required) {
 		toSerialize["smContextSmfOauth2Required"] = o.SmContextSmfOauth2Required
 	}
 	return toSerialize, nil
@@ -3652,5 +3654,3 @@ func (v *NullableSmContextCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

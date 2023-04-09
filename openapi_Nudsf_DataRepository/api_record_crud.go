@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // RecordCRUDApiService RecordCRUDApi service
 type RecordCRUDApiService service
 
 type ApiBulkDeleteRecordsRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	filter *SearchExpression
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	filter            *SearchExpression
 	supportedFeatures *string
 }
 
@@ -52,28 +51,29 @@ BulkDeleteRecords Bulk Deletion of Records
 
 Delete multiple Records based on filter
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @return ApiBulkDeleteRecordsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@return ApiBulkDeleteRecordsRequest
 */
 func (a *RecordCRUDApiService) BulkDeleteRecords(ctx context.Context, realmId string, storageId string) ApiBulkDeleteRecordsRequest {
 	return ApiBulkDeleteRecordsRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
 	}
 }
 
 // Execute executes the request
-//  @return RecordIdList
+//
+//	@return RecordIdList
 func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRequest) (*RecordIdList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RecordIdList
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RecordIdList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.BulkDeleteRecords")
@@ -92,9 +92,9 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 		return localVarReturnValue, nil, reportError("filter is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -142,8 +142,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -153,8 +153,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -164,8 +164,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -175,8 +175,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -186,8 +186,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -197,8 +197,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -208,8 +208,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -219,8 +219,8 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -239,15 +239,15 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 }
 
 type ApiCreateOrModifyRecordRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	record *Record
-	ifNoneMatch *string
-	ifMatch *string
-	getPrevious *bool
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	record            *Record
+	ifNoneMatch       *string
+	ifMatch           *string
+	getPrevious       *bool
 	supportedFeatures *string
 }
 
@@ -290,30 +290,31 @@ CreateOrModifyRecord Create/Modify Record
 
 Create or Modify a Record with a user provided RecordId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier(name) of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @return ApiCreateOrModifyRecordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier(name) of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@return ApiCreateOrModifyRecordRequest
 */
 func (a *RecordCRUDApiService) CreateOrModifyRecord(ctx context.Context, realmId string, storageId string, recordId string) ApiCreateOrModifyRecordRequest {
 	return ApiCreateOrModifyRecordRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
 	}
 }
 
 // Execute executes the request
-//  @return Record
+//
+//	@return Record
 func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRecordRequest) (*Record, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Record
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Record
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.CreateOrModifyRecord")
@@ -334,10 +335,10 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 	}
 
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/mixed"}
@@ -357,10 +358,10 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.record
@@ -374,9 +375,9 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -393,8 +394,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -404,8 +405,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -415,8 +416,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -426,8 +427,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -437,8 +438,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -448,8 +449,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -459,8 +460,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -470,8 +471,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -481,8 +482,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -492,8 +493,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -503,8 +504,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -514,8 +515,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -525,8 +526,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -536,8 +537,8 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -556,13 +557,13 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 }
 
 type ApiDeleteRecordRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	ifMatch *string
-	getPrevious *bool
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	ifMatch           *string
+	getPrevious       *bool
 	supportedFeatures *string
 }
 
@@ -591,30 +592,31 @@ func (r ApiDeleteRecordRequest) Execute() (*Record, *http.Response, error) {
 /*
 DeleteRecord Delete a Record with an user provided RecordId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier(name) of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @return ApiDeleteRecordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier(name) of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@return ApiDeleteRecordRequest
 */
 func (a *RecordCRUDApiService) DeleteRecord(ctx context.Context, realmId string, storageId string, recordId string) ApiDeleteRecordRequest {
 	return ApiDeleteRecordRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
 	}
 }
 
 // Execute executes the request
-//  @return Record
+//
+//	@return Record
 func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*Record, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Record
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Record
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.DeleteRecord")
@@ -632,10 +634,10 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 	localVarFormParams := url.Values{}
 
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -655,7 +657,7 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -667,9 +669,9 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -686,8 +688,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -697,8 +699,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -708,8 +710,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -719,8 +721,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -730,8 +732,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -741,8 +743,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -752,8 +754,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -763,8 +765,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -774,8 +776,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -785,8 +787,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -796,8 +798,8 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -816,13 +818,13 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 }
 
 type ApiGetMetaRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 	supportedFeatures *string
 }
 
@@ -853,30 +855,31 @@ GetMeta Record's meta access
 
 retrieve meta of a specific Record
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @return ApiGetMetaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@return ApiGetMetaRequest
 */
 func (a *RecordCRUDApiService) GetMeta(ctx context.Context, realmId string, storageId string, recordId string) ApiGetMetaRequest {
 	return ApiGetMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
 	}
 }
 
 // Execute executes the request
-//  @return RecordMeta
+//
+//	@return RecordMeta
 func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RecordMeta
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RecordMeta
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.GetMeta")
@@ -894,7 +897,7 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -914,10 +917,10 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -929,9 +932,9 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -948,8 +951,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -959,8 +962,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -970,8 +973,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -981,8 +984,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -992,8 +995,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1003,8 +1006,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1014,8 +1017,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1025,8 +1028,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1036,8 +1039,8 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1056,13 +1059,13 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 }
 
 type ApiGetRecordRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 	supportedFeatures *string
 }
 
@@ -1093,30 +1096,31 @@ GetRecord Record access
 
 retrieve one specific Record
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @return ApiGetRecordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@return ApiGetRecordRequest
 */
 func (a *RecordCRUDApiService) GetRecord(ctx context.Context, realmId string, storageId string, recordId string) ApiGetRecordRequest {
 	return ApiGetRecordRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
 	}
 }
 
 // Execute executes the request
-//  @return Record
+//
+//	@return Record
 func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Record
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Record
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.GetRecord")
@@ -1134,7 +1138,7 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1154,10 +1158,10 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1169,9 +1173,9 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1188,8 +1192,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -1199,8 +1203,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1210,8 +1214,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1221,8 +1225,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1232,8 +1236,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1243,8 +1247,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1254,8 +1258,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1265,8 +1269,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1276,8 +1280,8 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1296,16 +1300,16 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 }
 
 type ApiSearchRecordRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	limitRange *int32
-	filter *SearchExpression
-	countIndicator *bool
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	limitRange        *int32
+	filter            *SearchExpression
+	countIndicator    *bool
 	supportedFeatures *string
-	retrieveRecords *RetrieveRecords
-	maxPayloadSize *int32
+	retrieveRecords   *RetrieveRecords
+	maxPayloadSize    *int32
 }
 
 // The most number of record references to fetch
@@ -1353,28 +1357,29 @@ SearchRecord Records search with get
 
 Retrieve one or multiple Records based on filter
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @return ApiSearchRecordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@return ApiSearchRecordRequest
 */
 func (a *RecordCRUDApiService) SearchRecord(ctx context.Context, realmId string, storageId string) ApiSearchRecordRequest {
 	return ApiSearchRecordRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
 	}
 }
 
 // Execute executes the request
-//  @return RecordSearchResult
+//
+//	@return RecordSearchResult
 func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*RecordSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RecordSearchResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RecordSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.SearchRecord")
@@ -1391,22 +1396,22 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 	localVarFormParams := url.Values{}
 
 	if r.limitRange != nil {
-		parameterAddToQuery(localVarQueryParams, "limit-range", r.limitRange, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit-range", r.limitRange, "")
 	}
 	if r.filter != nil {
-		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	if r.countIndicator != nil {
-		parameterAddToQuery(localVarQueryParams, "count-indicator", r.countIndicator, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "count-indicator", r.countIndicator, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.retrieveRecords != nil {
-		parameterAddToQuery(localVarQueryParams, "retrieve-records", r.retrieveRecords, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "retrieve-records", r.retrieveRecords, "")
 	}
 	if r.maxPayloadSize != nil {
-		parameterAddToQuery(localVarQueryParams, "max-payload-size", r.maxPayloadSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-payload-size", r.maxPayloadSize, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1435,9 +1440,9 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1454,8 +1459,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1465,8 +1470,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1476,8 +1481,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1487,8 +1492,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1498,8 +1503,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1509,8 +1514,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1520,8 +1525,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1531,8 +1536,8 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1551,13 +1556,13 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 }
 
 type ApiUpdateMetaRequest struct {
-	ctx context.Context
-	ApiService *RecordCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	patchItem *[]PatchItem
-	ifMatch *string
+	ctx               context.Context
+	ApiService        *RecordCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	patchItem         *[]PatchItem
+	ifMatch           *string
 	supportedFeatures *string
 }
 
@@ -1588,30 +1593,31 @@ UpdateMeta Record's meta update
 
 update meta of a specific Record
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @return ApiUpdateMetaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@return ApiUpdateMetaRequest
 */
 func (a *RecordCRUDApiService) UpdateMeta(ctx context.Context, realmId string, storageId string, recordId string) ApiUpdateMetaRequest {
 	return ApiUpdateMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecordCRUDApiService.UpdateMeta")
@@ -1635,7 +1641,7 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -1655,7 +1661,7 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -1669,9 +1675,9 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1688,8 +1694,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -1699,8 +1705,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1710,8 +1716,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1721,8 +1727,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1732,8 +1738,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -1743,8 +1749,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1754,8 +1760,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1765,8 +1771,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1776,8 +1782,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1787,8 +1793,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1798,8 +1804,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1809,8 +1815,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1820,8 +1826,8 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

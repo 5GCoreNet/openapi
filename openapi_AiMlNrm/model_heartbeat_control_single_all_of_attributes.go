@@ -19,8 +19,8 @@ var _ MappedNullable = &HeartbeatControlSingleAllOfAttributes{}
 
 // HeartbeatControlSingleAllOfAttributes struct for HeartbeatControlSingleAllOfAttributes
 type HeartbeatControlSingleAllOfAttributes struct {
-	HeartbeatNtfPeriod *int32 `json:"heartbeatNtfPeriod,omitempty"`
-	TriggerHeartbeatNtf *bool `json:"triggerHeartbeatNtf,omitempty"`
+	HeartbeatNtfPeriod  *int32 `json:"heartbeatNtfPeriod,omitempty"`
+	TriggerHeartbeatNtf *bool  `json:"triggerHeartbeatNtf,omitempty"`
 }
 
 // NewHeartbeatControlSingleAllOfAttributes instantiates a new HeartbeatControlSingleAllOfAttributes object
@@ -42,7 +42,7 @@ func NewHeartbeatControlSingleAllOfAttributesWithDefaults() *HeartbeatControlSin
 
 // GetHeartbeatNtfPeriod returns the HeartbeatNtfPeriod field value if set, zero value otherwise.
 func (o *HeartbeatControlSingleAllOfAttributes) GetHeartbeatNtfPeriod() int32 {
-	if o == nil || isNil(o.HeartbeatNtfPeriod) {
+	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *HeartbeatControlSingleAllOfAttributes) GetHeartbeatNtfPeriod() int32 {
 // GetHeartbeatNtfPeriodOk returns a tuple with the HeartbeatNtfPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HeartbeatControlSingleAllOfAttributes) GetHeartbeatNtfPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.HeartbeatNtfPeriod) {
+	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
 		return nil, false
 	}
 	return o.HeartbeatNtfPeriod, true
@@ -60,7 +60,7 @@ func (o *HeartbeatControlSingleAllOfAttributes) GetHeartbeatNtfPeriodOk() (*int3
 
 // HasHeartbeatNtfPeriod returns a boolean if a field has been set.
 func (o *HeartbeatControlSingleAllOfAttributes) HasHeartbeatNtfPeriod() bool {
-	if o != nil && !isNil(o.HeartbeatNtfPeriod) {
+	if o != nil && !IsNil(o.HeartbeatNtfPeriod) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *HeartbeatControlSingleAllOfAttributes) SetHeartbeatNtfPeriod(v int32) {
 
 // GetTriggerHeartbeatNtf returns the TriggerHeartbeatNtf field value if set, zero value otherwise.
 func (o *HeartbeatControlSingleAllOfAttributes) GetTriggerHeartbeatNtf() bool {
-	if o == nil || isNil(o.TriggerHeartbeatNtf) {
+	if o == nil || IsNil(o.TriggerHeartbeatNtf) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *HeartbeatControlSingleAllOfAttributes) GetTriggerHeartbeatNtf() bool {
 // GetTriggerHeartbeatNtfOk returns a tuple with the TriggerHeartbeatNtf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HeartbeatControlSingleAllOfAttributes) GetTriggerHeartbeatNtfOk() (*bool, bool) {
-	if o == nil || isNil(o.TriggerHeartbeatNtf) {
+	if o == nil || IsNil(o.TriggerHeartbeatNtf) {
 		return nil, false
 	}
 	return o.TriggerHeartbeatNtf, true
@@ -92,7 +92,7 @@ func (o *HeartbeatControlSingleAllOfAttributes) GetTriggerHeartbeatNtfOk() (*boo
 
 // HasTriggerHeartbeatNtf returns a boolean if a field has been set.
 func (o *HeartbeatControlSingleAllOfAttributes) HasTriggerHeartbeatNtf() bool {
-	if o != nil && !isNil(o.TriggerHeartbeatNtf) {
+	if o != nil && !IsNil(o.TriggerHeartbeatNtf) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *HeartbeatControlSingleAllOfAttributes) SetTriggerHeartbeatNtf(v bool) {
 }
 
 func (o HeartbeatControlSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o HeartbeatControlSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o HeartbeatControlSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.HeartbeatNtfPeriod) {
+	if !IsNil(o.HeartbeatNtfPeriod) {
 		toSerialize["heartbeatNtfPeriod"] = o.HeartbeatNtfPeriod
 	}
-	if !isNil(o.TriggerHeartbeatNtf) {
+	if !IsNil(o.TriggerHeartbeatNtf) {
 		toSerialize["triggerHeartbeatNtf"] = o.TriggerHeartbeatNtf
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableHeartbeatControlSingleAllOfAttributes) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

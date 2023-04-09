@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &AvailabilityInformationBinding{}
 type AvailabilityInformationBinding struct {
 	MbsServiceArea []MbsServiceArea `json:"mbsServiceArea,omitempty"`
 	// MBS Frequency Selection Area Identifier
-	MbsFSAId *string `json:"mbsFSAId,omitempty"`
+	MbsFSAId       *string `json:"mbsFSAId,omitempty"`
 	RadioFrequency []int32 `json:"radioFrequency,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewAvailabilityInformationBindingWithDefaults() *AvailabilityInformationBin
 
 // GetMbsServiceArea returns the MbsServiceArea field value if set, zero value otherwise.
 func (o *AvailabilityInformationBinding) GetMbsServiceArea() []MbsServiceArea {
-	if o == nil || isNil(o.MbsServiceArea) {
+	if o == nil || IsNil(o.MbsServiceArea) {
 		var ret []MbsServiceArea
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AvailabilityInformationBinding) GetMbsServiceArea() []MbsServiceArea {
 // GetMbsServiceAreaOk returns a tuple with the MbsServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityInformationBinding) GetMbsServiceAreaOk() ([]MbsServiceArea, bool) {
-	if o == nil || isNil(o.MbsServiceArea) {
+	if o == nil || IsNil(o.MbsServiceArea) {
 		return nil, false
 	}
 	return o.MbsServiceArea, true
@@ -62,7 +62,7 @@ func (o *AvailabilityInformationBinding) GetMbsServiceAreaOk() ([]MbsServiceArea
 
 // HasMbsServiceArea returns a boolean if a field has been set.
 func (o *AvailabilityInformationBinding) HasMbsServiceArea() bool {
-	if o != nil && !isNil(o.MbsServiceArea) {
+	if o != nil && !IsNil(o.MbsServiceArea) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AvailabilityInformationBinding) SetMbsServiceArea(v []MbsServiceArea) {
 
 // GetMbsFSAId returns the MbsFSAId field value if set, zero value otherwise.
 func (o *AvailabilityInformationBinding) GetMbsFSAId() string {
-	if o == nil || isNil(o.MbsFSAId) {
+	if o == nil || IsNil(o.MbsFSAId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AvailabilityInformationBinding) GetMbsFSAId() string {
 // GetMbsFSAIdOk returns a tuple with the MbsFSAId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityInformationBinding) GetMbsFSAIdOk() (*string, bool) {
-	if o == nil || isNil(o.MbsFSAId) {
+	if o == nil || IsNil(o.MbsFSAId) {
 		return nil, false
 	}
 	return o.MbsFSAId, true
@@ -94,7 +94,7 @@ func (o *AvailabilityInformationBinding) GetMbsFSAIdOk() (*string, bool) {
 
 // HasMbsFSAId returns a boolean if a field has been set.
 func (o *AvailabilityInformationBinding) HasMbsFSAId() bool {
-	if o != nil && !isNil(o.MbsFSAId) {
+	if o != nil && !IsNil(o.MbsFSAId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AvailabilityInformationBinding) SetMbsFSAId(v string) {
 
 // GetRadioFrequency returns the RadioFrequency field value if set, zero value otherwise.
 func (o *AvailabilityInformationBinding) GetRadioFrequency() []int32 {
-	if o == nil || isNil(o.RadioFrequency) {
+	if o == nil || IsNil(o.RadioFrequency) {
 		var ret []int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AvailabilityInformationBinding) GetRadioFrequency() []int32 {
 // GetRadioFrequencyOk returns a tuple with the RadioFrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityInformationBinding) GetRadioFrequencyOk() ([]int32, bool) {
-	if o == nil || isNil(o.RadioFrequency) {
+	if o == nil || IsNil(o.RadioFrequency) {
 		return nil, false
 	}
 	return o.RadioFrequency, true
@@ -126,7 +126,7 @@ func (o *AvailabilityInformationBinding) GetRadioFrequencyOk() ([]int32, bool) {
 
 // HasRadioFrequency returns a boolean if a field has been set.
 func (o *AvailabilityInformationBinding) HasRadioFrequency() bool {
-	if o != nil && !isNil(o.RadioFrequency) {
+	if o != nil && !IsNil(o.RadioFrequency) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *AvailabilityInformationBinding) SetRadioFrequency(v []int32) {
 }
 
 func (o AvailabilityInformationBinding) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o AvailabilityInformationBinding) MarshalJSON() ([]byte, error) {
 
 func (o AvailabilityInformationBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsServiceArea) {
+	if !IsNil(o.MbsServiceArea) {
 		toSerialize["mbsServiceArea"] = o.MbsServiceArea
 	}
-	if !isNil(o.MbsFSAId) {
+	if !IsNil(o.MbsFSAId) {
 		toSerialize["mbsFSAId"] = o.MbsFSAId
 	}
-	if !isNil(o.RadioFrequency) {
+	if !IsNil(o.RadioFrequency) {
 		toSerialize["radioFrequency"] = o.RadioFrequency
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableAvailabilityInformationBinding) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

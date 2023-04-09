@@ -1,7 +1,7 @@
 /*
 Nnef_PFDmanagement Service API
 
-Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &PfdChangeReport{}
 
 // PfdChangeReport Represents an error report on PFD change.
 type PfdChangeReport struct {
-	PfdError ProblemDetails `json:"pfdError"`
-	ApplicationId []string `json:"applicationId"`
+	PfdError      ProblemDetails `json:"pfdError"`
+	ApplicationId []string       `json:"applicationId"`
 }
 
 // NewPfdChangeReport instantiates a new PfdChangeReport object
@@ -91,7 +91,7 @@ func (o *PfdChangeReport) SetApplicationId(v []string) {
 }
 
 func (o PfdChangeReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullablePfdChangeReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

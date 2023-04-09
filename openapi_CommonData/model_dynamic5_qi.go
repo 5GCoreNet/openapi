@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,26 +17,26 @@ import (
 // checks if the Dynamic5Qi type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Dynamic5Qi{}
 
-// Dynamic5Qi It indicates the QoS Characteristics for a Non-standardised or not pre-configured 5QI for downlink and uplink. 
+// Dynamic5Qi It indicates the QoS Characteristics for a Non-standardised or not pre-configured 5QI for downlink and uplink.
 type Dynamic5Qi struct {
 	ResourceType QosResourceType `json:"resourceType"`
-	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.  
+	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.
 	PriorityLevel int32 `json:"priorityLevel"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	PacketDelayBudget int32 `json:"packetDelayBudget"`
-	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit. 
+	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit.
 	PacketErrRate string `json:"packetErrRate"`
 	// Unsigned integer indicating Averaging Window (see clause 5.7.3.6 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AverWindow *int32 `json:"averWindow,omitempty"`
-	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.  
+	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.
 	MaxDataBurstVol *int32 `json:"maxDataBurstVol,omitempty"`
-	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.  
+	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.
 	ExtMaxDataBurstVol *int32 `json:"extMaxDataBurstVol,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501 [8])), expressed in 0.01 milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501 [8])), expressed in 0.01 milliseconds.
 	ExtPacketDelBudget *int32 `json:"extPacketDelBudget,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501 [8])), expressed in 0.01 milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501 [8])), expressed in 0.01 milliseconds.
 	CnPacketDelayBudgetDl *int32 `json:"cnPacketDelayBudgetDl,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501 [8])), expressed in 0.01 milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501 [8])), expressed in 0.01 milliseconds.
 	CnPacketDelayBudgetUl *int32 `json:"cnPacketDelayBudgetUl,omitempty"`
 }
 
@@ -163,7 +163,7 @@ func (o *Dynamic5Qi) SetPacketErrRate(v string) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *Dynamic5Qi) GetAverWindow() int32 {
-	if o == nil || isNil(o.AverWindow) {
+	if o == nil || IsNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *Dynamic5Qi) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Dynamic5Qi) GetAverWindowOk() (*int32, bool) {
-	if o == nil || isNil(o.AverWindow) {
+	if o == nil || IsNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -181,7 +181,7 @@ func (o *Dynamic5Qi) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *Dynamic5Qi) HasAverWindow() bool {
-	if o != nil && !isNil(o.AverWindow) {
+	if o != nil && !IsNil(o.AverWindow) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *Dynamic5Qi) SetAverWindow(v int32) {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise.
 func (o *Dynamic5Qi) GetMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.MaxDataBurstVol) {
+	if o == nil || IsNil(o.MaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *Dynamic5Qi) GetMaxDataBurstVol() int32 {
 // GetMaxDataBurstVolOk returns a tuple with the MaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Dynamic5Qi) GetMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxDataBurstVol) {
+	if o == nil || IsNil(o.MaxDataBurstVol) {
 		return nil, false
 	}
 	return o.MaxDataBurstVol, true
@@ -213,7 +213,7 @@ func (o *Dynamic5Qi) GetMaxDataBurstVolOk() (*int32, bool) {
 
 // HasMaxDataBurstVol returns a boolean if a field has been set.
 func (o *Dynamic5Qi) HasMaxDataBurstVol() bool {
-	if o != nil && !isNil(o.MaxDataBurstVol) {
+	if o != nil && !IsNil(o.MaxDataBurstVol) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *Dynamic5Qi) SetMaxDataBurstVol(v int32) {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise.
 func (o *Dynamic5Qi) GetExtMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.ExtMaxDataBurstVol) {
+	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *Dynamic5Qi) GetExtMaxDataBurstVol() int32 {
 // GetExtMaxDataBurstVolOk returns a tuple with the ExtMaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Dynamic5Qi) GetExtMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || isNil(o.ExtMaxDataBurstVol) {
+	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
 		return nil, false
 	}
 	return o.ExtMaxDataBurstVol, true
@@ -245,7 +245,7 @@ func (o *Dynamic5Qi) GetExtMaxDataBurstVolOk() (*int32, bool) {
 
 // HasExtMaxDataBurstVol returns a boolean if a field has been set.
 func (o *Dynamic5Qi) HasExtMaxDataBurstVol() bool {
-	if o != nil && !isNil(o.ExtMaxDataBurstVol) {
+	if o != nil && !IsNil(o.ExtMaxDataBurstVol) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *Dynamic5Qi) SetExtMaxDataBurstVol(v int32) {
 
 // GetExtPacketDelBudget returns the ExtPacketDelBudget field value if set, zero value otherwise.
 func (o *Dynamic5Qi) GetExtPacketDelBudget() int32 {
-	if o == nil || isNil(o.ExtPacketDelBudget) {
+	if o == nil || IsNil(o.ExtPacketDelBudget) {
 		var ret int32
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *Dynamic5Qi) GetExtPacketDelBudget() int32 {
 // GetExtPacketDelBudgetOk returns a tuple with the ExtPacketDelBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Dynamic5Qi) GetExtPacketDelBudgetOk() (*int32, bool) {
-	if o == nil || isNil(o.ExtPacketDelBudget) {
+	if o == nil || IsNil(o.ExtPacketDelBudget) {
 		return nil, false
 	}
 	return o.ExtPacketDelBudget, true
@@ -277,7 +277,7 @@ func (o *Dynamic5Qi) GetExtPacketDelBudgetOk() (*int32, bool) {
 
 // HasExtPacketDelBudget returns a boolean if a field has been set.
 func (o *Dynamic5Qi) HasExtPacketDelBudget() bool {
-	if o != nil && !isNil(o.ExtPacketDelBudget) {
+	if o != nil && !IsNil(o.ExtPacketDelBudget) {
 		return true
 	}
 
@@ -291,7 +291,7 @@ func (o *Dynamic5Qi) SetExtPacketDelBudget(v int32) {
 
 // GetCnPacketDelayBudgetDl returns the CnPacketDelayBudgetDl field value if set, zero value otherwise.
 func (o *Dynamic5Qi) GetCnPacketDelayBudgetDl() int32 {
-	if o == nil || isNil(o.CnPacketDelayBudgetDl) {
+	if o == nil || IsNil(o.CnPacketDelayBudgetDl) {
 		var ret int32
 		return ret
 	}
@@ -301,7 +301,7 @@ func (o *Dynamic5Qi) GetCnPacketDelayBudgetDl() int32 {
 // GetCnPacketDelayBudgetDlOk returns a tuple with the CnPacketDelayBudgetDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Dynamic5Qi) GetCnPacketDelayBudgetDlOk() (*int32, bool) {
-	if o == nil || isNil(o.CnPacketDelayBudgetDl) {
+	if o == nil || IsNil(o.CnPacketDelayBudgetDl) {
 		return nil, false
 	}
 	return o.CnPacketDelayBudgetDl, true
@@ -309,7 +309,7 @@ func (o *Dynamic5Qi) GetCnPacketDelayBudgetDlOk() (*int32, bool) {
 
 // HasCnPacketDelayBudgetDl returns a boolean if a field has been set.
 func (o *Dynamic5Qi) HasCnPacketDelayBudgetDl() bool {
-	if o != nil && !isNil(o.CnPacketDelayBudgetDl) {
+	if o != nil && !IsNil(o.CnPacketDelayBudgetDl) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *Dynamic5Qi) SetCnPacketDelayBudgetDl(v int32) {
 
 // GetCnPacketDelayBudgetUl returns the CnPacketDelayBudgetUl field value if set, zero value otherwise.
 func (o *Dynamic5Qi) GetCnPacketDelayBudgetUl() int32 {
-	if o == nil || isNil(o.CnPacketDelayBudgetUl) {
+	if o == nil || IsNil(o.CnPacketDelayBudgetUl) {
 		var ret int32
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *Dynamic5Qi) GetCnPacketDelayBudgetUl() int32 {
 // GetCnPacketDelayBudgetUlOk returns a tuple with the CnPacketDelayBudgetUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Dynamic5Qi) GetCnPacketDelayBudgetUlOk() (*int32, bool) {
-	if o == nil || isNil(o.CnPacketDelayBudgetUl) {
+	if o == nil || IsNil(o.CnPacketDelayBudgetUl) {
 		return nil, false
 	}
 	return o.CnPacketDelayBudgetUl, true
@@ -341,7 +341,7 @@ func (o *Dynamic5Qi) GetCnPacketDelayBudgetUlOk() (*int32, bool) {
 
 // HasCnPacketDelayBudgetUl returns a boolean if a field has been set.
 func (o *Dynamic5Qi) HasCnPacketDelayBudgetUl() bool {
-	if o != nil && !isNil(o.CnPacketDelayBudgetUl) {
+	if o != nil && !IsNil(o.CnPacketDelayBudgetUl) {
 		return true
 	}
 
@@ -354,7 +354,7 @@ func (o *Dynamic5Qi) SetCnPacketDelayBudgetUl(v int32) {
 }
 
 func (o Dynamic5Qi) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -367,22 +367,22 @@ func (o Dynamic5Qi) ToMap() (map[string]interface{}, error) {
 	toSerialize["priorityLevel"] = o.PriorityLevel
 	toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	toSerialize["packetErrRate"] = o.PacketErrRate
-	if !isNil(o.AverWindow) {
+	if !IsNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
-	if !isNil(o.MaxDataBurstVol) {
+	if !IsNil(o.MaxDataBurstVol) {
 		toSerialize["maxDataBurstVol"] = o.MaxDataBurstVol
 	}
-	if !isNil(o.ExtMaxDataBurstVol) {
+	if !IsNil(o.ExtMaxDataBurstVol) {
 		toSerialize["extMaxDataBurstVol"] = o.ExtMaxDataBurstVol
 	}
-	if !isNil(o.ExtPacketDelBudget) {
+	if !IsNil(o.ExtPacketDelBudget) {
 		toSerialize["extPacketDelBudget"] = o.ExtPacketDelBudget
 	}
-	if !isNil(o.CnPacketDelayBudgetDl) {
+	if !IsNil(o.CnPacketDelayBudgetDl) {
 		toSerialize["cnPacketDelayBudgetDl"] = o.CnPacketDelayBudgetDl
 	}
-	if !isNil(o.CnPacketDelayBudgetUl) {
+	if !IsNil(o.CnPacketDelayBudgetUl) {
 		toSerialize["cnPacketDelayBudgetUl"] = o.CnPacketDelayBudgetUl
 	}
 	return toSerialize, nil
@@ -423,5 +423,3 @@ func (v *NullableDynamic5Qi) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

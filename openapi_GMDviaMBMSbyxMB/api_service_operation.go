@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyxMB
 
-API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,20 +13,19 @@ package openapi_GMDviaMBMSbyxMB
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ServiceOperationApiService ServiceOperationApi service
 type ServiceOperationApiService service
 
 type ApiCreatexMBServiceRequest struct {
-	ctx context.Context
-	ApiService *ServiceOperationApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *ServiceOperationApiService
+	scsAsId         string
 	serviceCreation *ServiceCreation
 }
 
@@ -43,26 +42,27 @@ func (r ApiCreatexMBServiceRequest) Execute() (*ServiceCreation, *http.Response,
 /*
 CreatexMBService Creates a new service creation resource for a given SCS/AS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @return ApiCreatexMBServiceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@return ApiCreatexMBServiceRequest
 */
 func (a *ServiceOperationApiService) CreatexMBService(ctx context.Context, scsAsId string) ApiCreatexMBServiceRequest {
 	return ApiCreatexMBServiceRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceCreation
+//
+//	@return ServiceCreation
 func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServiceRequest) (*ServiceCreation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceCreation
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceCreation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceOperationApiService.CreatexMBService")
@@ -109,9 +109,9 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -128,8 +128,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -139,8 +139,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -150,8 +150,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -161,8 +161,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -172,8 +172,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -183,8 +183,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -194,8 +194,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -205,8 +205,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -216,8 +216,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -227,8 +227,8 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -247,9 +247,9 @@ func (a *ServiceOperationApiService) CreatexMBServiceExecute(r ApiCreatexMBServi
 }
 
 type ApiFetchAllxMBServicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ServiceOperationApiService
-	scsAsId string
+	scsAsId    string
 }
 
 func (r ApiFetchAllxMBServicesRequest) Execute() ([]ServiceCreation, *http.Response, error) {
@@ -259,26 +259,27 @@ func (r ApiFetchAllxMBServicesRequest) Execute() ([]ServiceCreation, *http.Respo
 /*
 FetchAllxMBServices Read all service resources for a given SCS/AS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @return ApiFetchAllxMBServicesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@return ApiFetchAllxMBServicesRequest
 */
 func (a *ServiceOperationApiService) FetchAllxMBServices(ctx context.Context, scsAsId string) ApiFetchAllxMBServicesRequest {
 	return ApiFetchAllxMBServicesRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return []ServiceCreation
+//
+//	@return []ServiceCreation
 func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMBServicesRequest) ([]ServiceCreation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ServiceCreation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ServiceCreation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceOperationApiService.FetchAllxMBServices")
@@ -320,9 +321,9 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -339,8 +340,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -350,8 +351,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -361,8 +362,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -372,8 +373,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -383,8 +384,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -394,8 +395,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -405,8 +406,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -416,8 +417,8 @@ func (a *ServiceOperationApiService) FetchAllxMBServicesExecute(r ApiFetchAllxMB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -19,19 +19,19 @@ var _ MappedNullable = &MeasJobInfoResourceType{}
 
 // MeasJobInfoResourceType struct for MeasJobInfoResourceType
 type MeasJobInfoResourceType struct {
-	Href *string `json:"href,omitempty"`
-	IOCName *string `json:"iOCName,omitempty"`
-	IOCInstanceList []string `json:"iOCInstanceList,omitempty"`
-	MeasurementCategoryList []string `json:"measurementCategoryList,omitempty"`
-	ReportingMethod *ReportingMethodType `json:"reportingMethod,omitempty"`
-	GranularityPeriod *int32 `json:"granularityPeriod,omitempty"`
-	ReportingPeriod *int32 `json:"reportingPeriod,omitempty"`
-	StartTime *string `json:"startTime,omitempty"`
-	StopTime *string `json:"stopTime,omitempty"`
-	Schedule *ScheduleType `json:"schedule,omitempty"`
-	StreamTarget *string `json:"streamTarget,omitempty"`
-	Priority *PriorityType `json:"priority,omitempty"`
-	Reliability *string `json:"reliability,omitempty"`
+	Href                    *string              `json:"href,omitempty"`
+	IOCName                 *string              `json:"iOCName,omitempty"`
+	IOCInstanceList         []string             `json:"iOCInstanceList,omitempty"`
+	MeasurementCategoryList []string             `json:"measurementCategoryList,omitempty"`
+	ReportingMethod         *ReportingMethodType `json:"reportingMethod,omitempty"`
+	GranularityPeriod       *int32               `json:"granularityPeriod,omitempty"`
+	ReportingPeriod         *int32               `json:"reportingPeriod,omitempty"`
+	StartTime               *string              `json:"startTime,omitempty"`
+	StopTime                *string              `json:"stopTime,omitempty"`
+	Schedule                *ScheduleType        `json:"schedule,omitempty"`
+	StreamTarget            *string              `json:"streamTarget,omitempty"`
+	Priority                *PriorityType        `json:"priority,omitempty"`
+	Reliability             *string              `json:"reliability,omitempty"`
 }
 
 // NewMeasJobInfoResourceType instantiates a new MeasJobInfoResourceType object
@@ -53,7 +53,7 @@ func NewMeasJobInfoResourceTypeWithDefaults() *MeasJobInfoResourceType {
 
 // GetHref returns the Href field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetHref() string {
-	if o == nil || isNil(o.Href) {
+	if o == nil || IsNil(o.Href) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *MeasJobInfoResourceType) GetHref() string {
 // GetHrefOk returns a tuple with the Href field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetHrefOk() (*string, bool) {
-	if o == nil || isNil(o.Href) {
+	if o == nil || IsNil(o.Href) {
 		return nil, false
 	}
 	return o.Href, true
@@ -71,7 +71,7 @@ func (o *MeasJobInfoResourceType) GetHrefOk() (*string, bool) {
 
 // HasHref returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasHref() bool {
-	if o != nil && !isNil(o.Href) {
+	if o != nil && !IsNil(o.Href) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *MeasJobInfoResourceType) SetHref(v string) {
 
 // GetIOCName returns the IOCName field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetIOCName() string {
-	if o == nil || isNil(o.IOCName) {
+	if o == nil || IsNil(o.IOCName) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *MeasJobInfoResourceType) GetIOCName() string {
 // GetIOCNameOk returns a tuple with the IOCName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetIOCNameOk() (*string, bool) {
-	if o == nil || isNil(o.IOCName) {
+	if o == nil || IsNil(o.IOCName) {
 		return nil, false
 	}
 	return o.IOCName, true
@@ -103,7 +103,7 @@ func (o *MeasJobInfoResourceType) GetIOCNameOk() (*string, bool) {
 
 // HasIOCName returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasIOCName() bool {
-	if o != nil && !isNil(o.IOCName) {
+	if o != nil && !IsNil(o.IOCName) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *MeasJobInfoResourceType) SetIOCName(v string) {
 
 // GetIOCInstanceList returns the IOCInstanceList field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetIOCInstanceList() []string {
-	if o == nil || isNil(o.IOCInstanceList) {
+	if o == nil || IsNil(o.IOCInstanceList) {
 		var ret []string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *MeasJobInfoResourceType) GetIOCInstanceList() []string {
 // GetIOCInstanceListOk returns a tuple with the IOCInstanceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetIOCInstanceListOk() ([]string, bool) {
-	if o == nil || isNil(o.IOCInstanceList) {
+	if o == nil || IsNil(o.IOCInstanceList) {
 		return nil, false
 	}
 	return o.IOCInstanceList, true
@@ -135,7 +135,7 @@ func (o *MeasJobInfoResourceType) GetIOCInstanceListOk() ([]string, bool) {
 
 // HasIOCInstanceList returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasIOCInstanceList() bool {
-	if o != nil && !isNil(o.IOCInstanceList) {
+	if o != nil && !IsNil(o.IOCInstanceList) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *MeasJobInfoResourceType) SetIOCInstanceList(v []string) {
 
 // GetMeasurementCategoryList returns the MeasurementCategoryList field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetMeasurementCategoryList() []string {
-	if o == nil || isNil(o.MeasurementCategoryList) {
+	if o == nil || IsNil(o.MeasurementCategoryList) {
 		var ret []string
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *MeasJobInfoResourceType) GetMeasurementCategoryList() []string {
 // GetMeasurementCategoryListOk returns a tuple with the MeasurementCategoryList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetMeasurementCategoryListOk() ([]string, bool) {
-	if o == nil || isNil(o.MeasurementCategoryList) {
+	if o == nil || IsNil(o.MeasurementCategoryList) {
 		return nil, false
 	}
 	return o.MeasurementCategoryList, true
@@ -167,7 +167,7 @@ func (o *MeasJobInfoResourceType) GetMeasurementCategoryListOk() ([]string, bool
 
 // HasMeasurementCategoryList returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasMeasurementCategoryList() bool {
-	if o != nil && !isNil(o.MeasurementCategoryList) {
+	if o != nil && !IsNil(o.MeasurementCategoryList) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *MeasJobInfoResourceType) SetMeasurementCategoryList(v []string) {
 
 // GetReportingMethod returns the ReportingMethod field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetReportingMethod() ReportingMethodType {
-	if o == nil || isNil(o.ReportingMethod) {
+	if o == nil || IsNil(o.ReportingMethod) {
 		var ret ReportingMethodType
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *MeasJobInfoResourceType) GetReportingMethod() ReportingMethodType {
 // GetReportingMethodOk returns a tuple with the ReportingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetReportingMethodOk() (*ReportingMethodType, bool) {
-	if o == nil || isNil(o.ReportingMethod) {
+	if o == nil || IsNil(o.ReportingMethod) {
 		return nil, false
 	}
 	return o.ReportingMethod, true
@@ -199,7 +199,7 @@ func (o *MeasJobInfoResourceType) GetReportingMethodOk() (*ReportingMethodType, 
 
 // HasReportingMethod returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasReportingMethod() bool {
-	if o != nil && !isNil(o.ReportingMethod) {
+	if o != nil && !IsNil(o.ReportingMethod) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *MeasJobInfoResourceType) SetReportingMethod(v ReportingMethodType) {
 
 // GetGranularityPeriod returns the GranularityPeriod field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetGranularityPeriod() int32 {
-	if o == nil || isNil(o.GranularityPeriod) {
+	if o == nil || IsNil(o.GranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *MeasJobInfoResourceType) GetGranularityPeriod() int32 {
 // GetGranularityPeriodOk returns a tuple with the GranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetGranularityPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.GranularityPeriod) {
+	if o == nil || IsNil(o.GranularityPeriod) {
 		return nil, false
 	}
 	return o.GranularityPeriod, true
@@ -231,7 +231,7 @@ func (o *MeasJobInfoResourceType) GetGranularityPeriodOk() (*int32, bool) {
 
 // HasGranularityPeriod returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasGranularityPeriod() bool {
-	if o != nil && !isNil(o.GranularityPeriod) {
+	if o != nil && !IsNil(o.GranularityPeriod) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *MeasJobInfoResourceType) SetGranularityPeriod(v int32) {
 
 // GetReportingPeriod returns the ReportingPeriod field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetReportingPeriod() int32 {
-	if o == nil || isNil(o.ReportingPeriod) {
+	if o == nil || IsNil(o.ReportingPeriod) {
 		var ret int32
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *MeasJobInfoResourceType) GetReportingPeriod() int32 {
 // GetReportingPeriodOk returns a tuple with the ReportingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetReportingPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportingPeriod) {
+	if o == nil || IsNil(o.ReportingPeriod) {
 		return nil, false
 	}
 	return o.ReportingPeriod, true
@@ -263,7 +263,7 @@ func (o *MeasJobInfoResourceType) GetReportingPeriodOk() (*int32, bool) {
 
 // HasReportingPeriod returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasReportingPeriod() bool {
-	if o != nil && !isNil(o.ReportingPeriod) {
+	if o != nil && !IsNil(o.ReportingPeriod) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *MeasJobInfoResourceType) SetReportingPeriod(v int32) {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetStartTime() string {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret string
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *MeasJobInfoResourceType) GetStartTime() string {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetStartTimeOk() (*string, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -295,7 +295,7 @@ func (o *MeasJobInfoResourceType) GetStartTimeOk() (*string, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *MeasJobInfoResourceType) SetStartTime(v string) {
 
 // GetStopTime returns the StopTime field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetStopTime() string {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		var ret string
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *MeasJobInfoResourceType) GetStopTime() string {
 // GetStopTimeOk returns a tuple with the StopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetStopTimeOk() (*string, bool) {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		return nil, false
 	}
 	return o.StopTime, true
@@ -327,7 +327,7 @@ func (o *MeasJobInfoResourceType) GetStopTimeOk() (*string, bool) {
 
 // HasStopTime returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasStopTime() bool {
-	if o != nil && !isNil(o.StopTime) {
+	if o != nil && !IsNil(o.StopTime) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *MeasJobInfoResourceType) SetStopTime(v string) {
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetSchedule() ScheduleType {
-	if o == nil || isNil(o.Schedule) {
+	if o == nil || IsNil(o.Schedule) {
 		var ret ScheduleType
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *MeasJobInfoResourceType) GetSchedule() ScheduleType {
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetScheduleOk() (*ScheduleType, bool) {
-	if o == nil || isNil(o.Schedule) {
+	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
 	return o.Schedule, true
@@ -359,7 +359,7 @@ func (o *MeasJobInfoResourceType) GetScheduleOk() (*ScheduleType, bool) {
 
 // HasSchedule returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasSchedule() bool {
-	if o != nil && !isNil(o.Schedule) {
+	if o != nil && !IsNil(o.Schedule) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o *MeasJobInfoResourceType) SetSchedule(v ScheduleType) {
 
 // GetStreamTarget returns the StreamTarget field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetStreamTarget() string {
-	if o == nil || isNil(o.StreamTarget) {
+	if o == nil || IsNil(o.StreamTarget) {
 		var ret string
 		return ret
 	}
@@ -383,7 +383,7 @@ func (o *MeasJobInfoResourceType) GetStreamTarget() string {
 // GetStreamTargetOk returns a tuple with the StreamTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetStreamTargetOk() (*string, bool) {
-	if o == nil || isNil(o.StreamTarget) {
+	if o == nil || IsNil(o.StreamTarget) {
 		return nil, false
 	}
 	return o.StreamTarget, true
@@ -391,7 +391,7 @@ func (o *MeasJobInfoResourceType) GetStreamTargetOk() (*string, bool) {
 
 // HasStreamTarget returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasStreamTarget() bool {
-	if o != nil && !isNil(o.StreamTarget) {
+	if o != nil && !IsNil(o.StreamTarget) {
 		return true
 	}
 
@@ -405,7 +405,7 @@ func (o *MeasJobInfoResourceType) SetStreamTarget(v string) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetPriority() PriorityType {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret PriorityType
 		return ret
 	}
@@ -415,7 +415,7 @@ func (o *MeasJobInfoResourceType) GetPriority() PriorityType {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetPriorityOk() (*PriorityType, bool) {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -423,7 +423,7 @@ func (o *MeasJobInfoResourceType) GetPriorityOk() (*PriorityType, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -437,7 +437,7 @@ func (o *MeasJobInfoResourceType) SetPriority(v PriorityType) {
 
 // GetReliability returns the Reliability field value if set, zero value otherwise.
 func (o *MeasJobInfoResourceType) GetReliability() string {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		var ret string
 		return ret
 	}
@@ -447,7 +447,7 @@ func (o *MeasJobInfoResourceType) GetReliability() string {
 // GetReliabilityOk returns a tuple with the Reliability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobInfoResourceType) GetReliabilityOk() (*string, bool) {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		return nil, false
 	}
 	return o.Reliability, true
@@ -455,7 +455,7 @@ func (o *MeasJobInfoResourceType) GetReliabilityOk() (*string, bool) {
 
 // HasReliability returns a boolean if a field has been set.
 func (o *MeasJobInfoResourceType) HasReliability() bool {
-	if o != nil && !isNil(o.Reliability) {
+	if o != nil && !IsNil(o.Reliability) {
 		return true
 	}
 
@@ -468,7 +468,7 @@ func (o *MeasJobInfoResourceType) SetReliability(v string) {
 }
 
 func (o MeasJobInfoResourceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -477,43 +477,43 @@ func (o MeasJobInfoResourceType) MarshalJSON() ([]byte, error) {
 
 func (o MeasJobInfoResourceType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Href) {
+	if !IsNil(o.Href) {
 		toSerialize["href"] = o.Href
 	}
-	if !isNil(o.IOCName) {
+	if !IsNil(o.IOCName) {
 		toSerialize["iOCName"] = o.IOCName
 	}
-	if !isNil(o.IOCInstanceList) {
+	if !IsNil(o.IOCInstanceList) {
 		toSerialize["iOCInstanceList"] = o.IOCInstanceList
 	}
-	if !isNil(o.MeasurementCategoryList) {
+	if !IsNil(o.MeasurementCategoryList) {
 		toSerialize["measurementCategoryList"] = o.MeasurementCategoryList
 	}
-	if !isNil(o.ReportingMethod) {
+	if !IsNil(o.ReportingMethod) {
 		toSerialize["reportingMethod"] = o.ReportingMethod
 	}
-	if !isNil(o.GranularityPeriod) {
+	if !IsNil(o.GranularityPeriod) {
 		toSerialize["granularityPeriod"] = o.GranularityPeriod
 	}
-	if !isNil(o.ReportingPeriod) {
+	if !IsNil(o.ReportingPeriod) {
 		toSerialize["reportingPeriod"] = o.ReportingPeriod
 	}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.StopTime) {
+	if !IsNil(o.StopTime) {
 		toSerialize["stopTime"] = o.StopTime
 	}
-	if !isNil(o.Schedule) {
+	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
 	}
-	if !isNil(o.StreamTarget) {
+	if !IsNil(o.StreamTarget) {
 		toSerialize["streamTarget"] = o.StreamTarget
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.Reliability) {
+	if !IsNil(o.Reliability) {
 		toSerialize["reliability"] = o.Reliability
 	}
 	return toSerialize, nil
@@ -554,5 +554,3 @@ func (v *NullableMeasJobInfoResourceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

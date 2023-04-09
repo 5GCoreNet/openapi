@@ -19,10 +19,10 @@ var _ MappedNullable = &CommModel{}
 
 // CommModel struct for CommModel
 type CommModel struct {
-	GroupId *int32 `json:"groupId,omitempty"`
-	CommModelType *CommModelType `json:"commModelType,omitempty"`
-	TargetNFServiceList []string `json:"targetNFServiceList,omitempty"`
-	CommModelConfiguration *string `json:"commModelConfiguration,omitempty"`
+	GroupId                *int32         `json:"groupId,omitempty"`
+	CommModelType          *CommModelType `json:"commModelType,omitempty"`
+	TargetNFServiceList    []string       `json:"targetNFServiceList,omitempty"`
+	CommModelConfiguration *string        `json:"commModelConfiguration,omitempty"`
 }
 
 // NewCommModel instantiates a new CommModel object
@@ -44,7 +44,7 @@ func NewCommModelWithDefaults() *CommModel {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *CommModel) GetGroupId() int32 {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CommModel) GetGroupId() int32 {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommModel) GetGroupIdOk() (*int32, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -62,7 +62,7 @@ func (o *CommModel) GetGroupIdOk() (*int32, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *CommModel) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *CommModel) SetGroupId(v int32) {
 
 // GetCommModelType returns the CommModelType field value if set, zero value otherwise.
 func (o *CommModel) GetCommModelType() CommModelType {
-	if o == nil || isNil(o.CommModelType) {
+	if o == nil || IsNil(o.CommModelType) {
 		var ret CommModelType
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *CommModel) GetCommModelType() CommModelType {
 // GetCommModelTypeOk returns a tuple with the CommModelType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommModel) GetCommModelTypeOk() (*CommModelType, bool) {
-	if o == nil || isNil(o.CommModelType) {
+	if o == nil || IsNil(o.CommModelType) {
 		return nil, false
 	}
 	return o.CommModelType, true
@@ -94,7 +94,7 @@ func (o *CommModel) GetCommModelTypeOk() (*CommModelType, bool) {
 
 // HasCommModelType returns a boolean if a field has been set.
 func (o *CommModel) HasCommModelType() bool {
-	if o != nil && !isNil(o.CommModelType) {
+	if o != nil && !IsNil(o.CommModelType) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *CommModel) SetCommModelType(v CommModelType) {
 
 // GetTargetNFServiceList returns the TargetNFServiceList field value if set, zero value otherwise.
 func (o *CommModel) GetTargetNFServiceList() []string {
-	if o == nil || isNil(o.TargetNFServiceList) {
+	if o == nil || IsNil(o.TargetNFServiceList) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *CommModel) GetTargetNFServiceList() []string {
 // GetTargetNFServiceListOk returns a tuple with the TargetNFServiceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommModel) GetTargetNFServiceListOk() ([]string, bool) {
-	if o == nil || isNil(o.TargetNFServiceList) {
+	if o == nil || IsNil(o.TargetNFServiceList) {
 		return nil, false
 	}
 	return o.TargetNFServiceList, true
@@ -126,7 +126,7 @@ func (o *CommModel) GetTargetNFServiceListOk() ([]string, bool) {
 
 // HasTargetNFServiceList returns a boolean if a field has been set.
 func (o *CommModel) HasTargetNFServiceList() bool {
-	if o != nil && !isNil(o.TargetNFServiceList) {
+	if o != nil && !IsNil(o.TargetNFServiceList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *CommModel) SetTargetNFServiceList(v []string) {
 
 // GetCommModelConfiguration returns the CommModelConfiguration field value if set, zero value otherwise.
 func (o *CommModel) GetCommModelConfiguration() string {
-	if o == nil || isNil(o.CommModelConfiguration) {
+	if o == nil || IsNil(o.CommModelConfiguration) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *CommModel) GetCommModelConfiguration() string {
 // GetCommModelConfigurationOk returns a tuple with the CommModelConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommModel) GetCommModelConfigurationOk() (*string, bool) {
-	if o == nil || isNil(o.CommModelConfiguration) {
+	if o == nil || IsNil(o.CommModelConfiguration) {
 		return nil, false
 	}
 	return o.CommModelConfiguration, true
@@ -158,7 +158,7 @@ func (o *CommModel) GetCommModelConfigurationOk() (*string, bool) {
 
 // HasCommModelConfiguration returns a boolean if a field has been set.
 func (o *CommModel) HasCommModelConfiguration() bool {
-	if o != nil && !isNil(o.CommModelConfiguration) {
+	if o != nil && !IsNil(o.CommModelConfiguration) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *CommModel) SetCommModelConfiguration(v string) {
 }
 
 func (o CommModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o CommModel) MarshalJSON() ([]byte, error) {
 
 func (o CommModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.CommModelType) {
+	if !IsNil(o.CommModelType) {
 		toSerialize["commModelType"] = o.CommModelType
 	}
-	if !isNil(o.TargetNFServiceList) {
+	if !IsNil(o.TargetNFServiceList) {
 		toSerialize["targetNFServiceList"] = o.TargetNFServiceList
 	}
-	if !isNil(o.CommModelConfiguration) {
+	if !IsNil(o.CommModelConfiguration) {
 		toSerialize["commModelConfiguration"] = o.CommModelConfiguration
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableCommModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

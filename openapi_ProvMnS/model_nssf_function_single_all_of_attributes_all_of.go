@@ -20,8 +20,8 @@ var _ MappedNullable = &NssfFunctionSingleAllOfAttributesAllOf{}
 // NssfFunctionSingleAllOfAttributesAllOf struct for NssfFunctionSingleAllOfAttributesAllOf
 type NssfFunctionSingleAllOfAttributesAllOf struct {
 	PLMNInfoList []PlmnInfo `json:"pLMNInfoList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	CNSIIdList []string `json:"cNSIIdList,omitempty"`
+	SBIFqdn      *string    `json:"sBIFqdn,omitempty"`
+	CNSIIdList   []string   `json:"cNSIIdList,omitempty"`
 	// List of NF profile
 	NFProfileList []NFProfile `json:"nFProfileList,omitempty"`
 	CommModelList []CommModel `json:"commModelList,omitempty"`
@@ -205,7 +205,7 @@ func (o *NssfFunctionSingleAllOfAttributesAllOf) SetCommModelList(v []CommModel)
 }
 
 func (o NssfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableNssfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

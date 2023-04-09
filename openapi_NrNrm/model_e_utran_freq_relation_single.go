@@ -19,10 +19,7 @@ var _ MappedNullable = &EUtranFreqRelationSingle{}
 
 // EUtranFreqRelationSingle struct for EUtranFreqRelationSingle
 type EUtranFreqRelationSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
+	Top
 	Attributes *EUtranFreqRelationSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
@@ -44,131 +41,9 @@ func NewEUtranFreqRelationSingleWithDefaults() *EUtranFreqRelationSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EUtranFreqRelationSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EUtranFreqRelationSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *EUtranFreqRelationSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *EUtranFreqRelationSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EUtranFreqRelationSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *EUtranFreqRelationSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *EUtranFreqRelationSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *EUtranFreqRelationSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EUtranFreqRelationSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *EUtranFreqRelationSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *EUtranFreqRelationSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *EUtranFreqRelationSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EUtranFreqRelationSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *EUtranFreqRelationSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *EUtranFreqRelationSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingle) GetAttributes() EUtranFreqRelationSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret EUtranFreqRelationSingleAllOfAttributes
 		return ret
 	}
@@ -178,7 +53,7 @@ func (o *EUtranFreqRelationSingle) GetAttributes() EUtranFreqRelationSingleAllOf
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingle) GetAttributesOk() (*EUtranFreqRelationSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,7 +61,7 @@ func (o *EUtranFreqRelationSingle) GetAttributesOk() (*EUtranFreqRelationSingleA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -199,7 +74,7 @@ func (o *EUtranFreqRelationSingle) SetAttributes(v EUtranFreqRelationSingleAllOf
 }
 
 func (o EUtranFreqRelationSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,17 +83,15 @@ func (o EUtranFreqRelationSingle) MarshalJSON() ([]byte, error) {
 
 func (o EUtranFreqRelationSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -259,5 +132,3 @@ func (v *NullableEUtranFreqRelationSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

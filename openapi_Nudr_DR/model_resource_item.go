@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the ResourceItem type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ResourceItem{}
 
-// ResourceItem Identifies a subscription to policy data change notification when the change occurs in a fragment (subset of resource data) of a given resource. 
+// ResourceItem Identifies a subscription to policy data change notification when the change occurs in a fragment (subset of resource data) of a given resource.
 type ResourceItem struct {
 	// String providing an URI formatted according to RFC 3986.
-	MonResourceUri string `json:"monResourceUri"`
-	Items []string `json:"items"`
+	MonResourceUri string   `json:"monResourceUri"`
+	Items          []string `json:"items"`
 }
 
 // NewResourceItem instantiates a new ResourceItem object
@@ -92,7 +92,7 @@ func (o *ResourceItem) SetItems(v []string) {
 }
 
 func (o ResourceItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableResourceItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the IpSmGwGuidance type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IpSmGwGuidance{}
 
-// IpSmGwGuidance Contains guidance information (e.g. minimum and recommended delivery times) of the IP-SM-GW 
+// IpSmGwGuidance Contains guidance information (e.g. minimum and recommended delivery times) of the IP-SM-GW
 type IpSmGwGuidance struct {
-	MinDeliveryTime int32 `json:"minDeliveryTime"`
+	MinDeliveryTime    int32 `json:"minDeliveryTime"`
 	RecommDeliveryTime int32 `json:"recommDeliveryTime"`
 }
 
@@ -91,7 +91,7 @@ func (o *IpSmGwGuidance) SetRecommDeliveryTime(v int32) {
 }
 
 func (o IpSmGwGuidance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableIpSmGwGuidance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

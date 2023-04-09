@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ProtectionPolicy{}
 
 // ProtectionPolicy The protection policy to be negotiated between the SEPPs
 type ProtectionPolicy struct {
-	ApiIeMappingList []ApiIeMapping `json:"apiIeMappingList"`
-	DataTypeEncPolicy []IeType `json:"dataTypeEncPolicy,omitempty"`
+	ApiIeMappingList  []ApiIeMapping `json:"apiIeMappingList"`
+	DataTypeEncPolicy []IeType       `json:"dataTypeEncPolicy,omitempty"`
 }
 
 // NewProtectionPolicy instantiates a new ProtectionPolicy object
@@ -67,7 +67,7 @@ func (o *ProtectionPolicy) SetApiIeMappingList(v []ApiIeMapping) {
 
 // GetDataTypeEncPolicy returns the DataTypeEncPolicy field value if set, zero value otherwise.
 func (o *ProtectionPolicy) GetDataTypeEncPolicy() []IeType {
-	if o == nil || isNil(o.DataTypeEncPolicy) {
+	if o == nil || IsNil(o.DataTypeEncPolicy) {
 		var ret []IeType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ProtectionPolicy) GetDataTypeEncPolicy() []IeType {
 // GetDataTypeEncPolicyOk returns a tuple with the DataTypeEncPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProtectionPolicy) GetDataTypeEncPolicyOk() ([]IeType, bool) {
-	if o == nil || isNil(o.DataTypeEncPolicy) {
+	if o == nil || IsNil(o.DataTypeEncPolicy) {
 		return nil, false
 	}
 	return o.DataTypeEncPolicy, true
@@ -85,7 +85,7 @@ func (o *ProtectionPolicy) GetDataTypeEncPolicyOk() ([]IeType, bool) {
 
 // HasDataTypeEncPolicy returns a boolean if a field has been set.
 func (o *ProtectionPolicy) HasDataTypeEncPolicy() bool {
-	if o != nil && !isNil(o.DataTypeEncPolicy) {
+	if o != nil && !IsNil(o.DataTypeEncPolicy) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ProtectionPolicy) SetDataTypeEncPolicy(v []IeType) {
 }
 
 func (o ProtectionPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ProtectionPolicy) MarshalJSON() ([]byte, error) {
 func (o ProtectionPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiIeMappingList"] = o.ApiIeMappingList
-	if !isNil(o.DataTypeEncPolicy) {
+	if !IsNil(o.DataTypeEncPolicy) {
 		toSerialize["dataTypeEncPolicy"] = o.DataTypeEncPolicy
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableProtectionPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // QueryODBDataBySUPIOrGPSIDocumentApiService QueryODBDataBySUPIOrGPSIDocumentApi service
 type QueryODBDataBySUPIOrGPSIDocumentApiService service
 
 type ApiGetOdbDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *QueryODBDataBySUPIOrGPSIDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiGetOdbDataRequest) Execute() (*OdbData, *http.Response, error) {
@@ -36,26 +35,27 @@ func (r ApiGetOdbDataRequest) Execute() (*OdbData, *http.Response, error) {
 /*
 GetOdbData Retrieve ODB Data data by SUPI or GPSI
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE ID
- @return ApiGetOdbDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE ID
+	@return ApiGetOdbDataRequest
 */
 func (a *QueryODBDataBySUPIOrGPSIDocumentApiService) GetOdbData(ctx context.Context, ueId string) ApiGetOdbDataRequest {
 	return ApiGetOdbDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return OdbData
+//
+//	@return OdbData
 func (a *QueryODBDataBySUPIOrGPSIDocumentApiService) GetOdbDataExecute(r ApiGetOdbDataRequest) (*OdbData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OdbData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *OdbData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueryODBDataBySUPIOrGPSIDocumentApiService.GetOdbData")
@@ -97,9 +97,9 @@ func (a *QueryODBDataBySUPIOrGPSIDocumentApiService) GetOdbDataExecute(r ApiGetO
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &MsisdnList{}
 // MsisdnList List of MSISDNs associated to the IMS public Identity
 type MsisdnList struct {
 	// String containing an additional or basic MSISDN
-	BasicMsisdn string `json:"basicMsisdn"`
+	BasicMsisdn       string   `json:"basicMsisdn"`
 	AdditionalMsisdns []string `json:"additionalMsisdns,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *MsisdnList) SetBasicMsisdn(v string) {
 
 // GetAdditionalMsisdns returns the AdditionalMsisdns field value if set, zero value otherwise.
 func (o *MsisdnList) GetAdditionalMsisdns() []string {
-	if o == nil || isNil(o.AdditionalMsisdns) {
+	if o == nil || IsNil(o.AdditionalMsisdns) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MsisdnList) GetAdditionalMsisdns() []string {
 // GetAdditionalMsisdnsOk returns a tuple with the AdditionalMsisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MsisdnList) GetAdditionalMsisdnsOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalMsisdns) {
+	if o == nil || IsNil(o.AdditionalMsisdns) {
 		return nil, false
 	}
 	return o.AdditionalMsisdns, true
@@ -86,7 +86,7 @@ func (o *MsisdnList) GetAdditionalMsisdnsOk() ([]string, bool) {
 
 // HasAdditionalMsisdns returns a boolean if a field has been set.
 func (o *MsisdnList) HasAdditionalMsisdns() bool {
-	if o != nil && !isNil(o.AdditionalMsisdns) {
+	if o != nil && !IsNil(o.AdditionalMsisdns) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *MsisdnList) SetAdditionalMsisdns(v []string) {
 }
 
 func (o MsisdnList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o MsisdnList) MarshalJSON() ([]byte, error) {
 func (o MsisdnList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["basicMsisdn"] = o.BasicMsisdn
-	if !isNil(o.AdditionalMsisdns) {
+	if !IsNil(o.AdditionalMsisdns) {
 		toSerialize["additionalMsisdns"] = o.AdditionalMsisdns
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableMsisdnList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

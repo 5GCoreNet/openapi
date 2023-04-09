@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -48,7 +48,7 @@ func NewUsageThresholdRmWithDefaults() *UsageThresholdRm {
 
 // GetDuration returns the Duration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetDuration() int32 {
-	if o == nil || isNil(o.Duration.Get()) {
+	if o == nil || IsNil(o.Duration.Get()) {
 		var ret int32
 		return ret
 	}
@@ -78,6 +78,7 @@ func (o *UsageThresholdRm) HasDuration() bool {
 func (o *UsageThresholdRm) SetDuration(v int32) {
 	o.Duration.Set(&v)
 }
+
 // SetDurationNil sets the value for Duration to be an explicit nil
 func (o *UsageThresholdRm) SetDurationNil() {
 	o.Duration.Set(nil)
@@ -90,7 +91,7 @@ func (o *UsageThresholdRm) UnsetDuration() {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetTotalVolume() int64 {
-	if o == nil || isNil(o.TotalVolume.Get()) {
+	if o == nil || IsNil(o.TotalVolume.Get()) {
 		var ret int64
 		return ret
 	}
@@ -120,6 +121,7 @@ func (o *UsageThresholdRm) HasTotalVolume() bool {
 func (o *UsageThresholdRm) SetTotalVolume(v int64) {
 	o.TotalVolume.Set(&v)
 }
+
 // SetTotalVolumeNil sets the value for TotalVolume to be an explicit nil
 func (o *UsageThresholdRm) SetTotalVolumeNil() {
 	o.TotalVolume.Set(nil)
@@ -132,7 +134,7 @@ func (o *UsageThresholdRm) UnsetTotalVolume() {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetDownlinkVolume() int64 {
-	if o == nil || isNil(o.DownlinkVolume.Get()) {
+	if o == nil || IsNil(o.DownlinkVolume.Get()) {
 		var ret int64
 		return ret
 	}
@@ -162,6 +164,7 @@ func (o *UsageThresholdRm) HasDownlinkVolume() bool {
 func (o *UsageThresholdRm) SetDownlinkVolume(v int64) {
 	o.DownlinkVolume.Set(&v)
 }
+
 // SetDownlinkVolumeNil sets the value for DownlinkVolume to be an explicit nil
 func (o *UsageThresholdRm) SetDownlinkVolumeNil() {
 	o.DownlinkVolume.Set(nil)
@@ -174,7 +177,7 @@ func (o *UsageThresholdRm) UnsetDownlinkVolume() {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetUplinkVolume() int64 {
-	if o == nil || isNil(o.UplinkVolume.Get()) {
+	if o == nil || IsNil(o.UplinkVolume.Get()) {
 		var ret int64
 		return ret
 	}
@@ -204,6 +207,7 @@ func (o *UsageThresholdRm) HasUplinkVolume() bool {
 func (o *UsageThresholdRm) SetUplinkVolume(v int64) {
 	o.UplinkVolume.Set(&v)
 }
+
 // SetUplinkVolumeNil sets the value for UplinkVolume to be an explicit nil
 func (o *UsageThresholdRm) SetUplinkVolumeNil() {
 	o.UplinkVolume.Set(nil)
@@ -215,7 +219,7 @@ func (o *UsageThresholdRm) UnsetUplinkVolume() {
 }
 
 func (o UsageThresholdRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -274,5 +278,3 @@ func (v *NullableUsageThresholdRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

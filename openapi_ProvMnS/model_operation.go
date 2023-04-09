@@ -20,8 +20,8 @@ type Operation string
 
 // List of Operation
 const (
-	ADD Operation = "add"
-	REMOVE Operation = "remove"
+	ADD     Operation = "add"
+	REMOVE  Operation = "remove"
 	REPLACE Operation = "replace"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

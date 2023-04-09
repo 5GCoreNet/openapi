@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -13,19 +13,18 @@ package openapi_SS_NetworkResourceAdaptation
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"reflect"
 )
 
-
 // TSCStreamRetrievalApiService TSCStreamRetrievalApi service
 type TSCStreamRetrievalApiService service
 
 type ApiGetTscStreamRequest struct {
-	ctx context.Context
-	ApiService *TSCStreamRetrievalApiService
+	ctx          context.Context
+	ApiService   *TSCStreamRetrievalApiService
 	valStreamIds *[]string
 }
 
@@ -42,24 +41,25 @@ func (r ApiGetTscStreamRequest) Execute() ([]TscStreamData, *http.Response, erro
 /*
 GetTscStream Retrieval of TSC stream data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTscStreamRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTscStreamRequest
 */
 func (a *TSCStreamRetrievalApiService) GetTscStream(ctx context.Context) ApiGetTscStreamRequest {
 	return ApiGetTscStreamRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TscStreamData
+//
+//	@return []TscStreamData
 func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequest) ([]TscStreamData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TscStreamData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TscStreamData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TSCStreamRetrievalApiService.GetTscStream")
@@ -78,10 +78,10 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "val-stream-ids", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "val-stream-ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "val-stream-ids", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "val-stream-ids", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -111,9 +111,9 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -130,8 +130,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -141,8 +141,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -152,8 +152,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -163,8 +163,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -174,8 +174,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -185,8 +185,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -196,8 +196,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -207,8 +207,8 @@ func (a *TSCStreamRetrievalApiService) GetTscStreamExecute(r ApiGetTscStreamRequ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

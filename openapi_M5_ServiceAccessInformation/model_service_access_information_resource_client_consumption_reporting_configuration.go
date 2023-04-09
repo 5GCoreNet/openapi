@@ -1,7 +1,7 @@
 /*
 M5_ServiceAccessInformation
 
-5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -22,10 +22,10 @@ type ServiceAccessInformationResourceClientConsumptionReportingConfiguration str
 	// indicating a time in seconds.
 	ReportingInterval *int32 `json:"reportingInterval,omitempty"`
 	// A set of application endpoint addresses.
-	ServerAddresses []string `json:"serverAddresses"`
-	LocationReporting bool `json:"locationReporting"`
-	AccessReporting *bool `json:"accessReporting,omitempty"`
-	SamplePercentage float32 `json:"samplePercentage"`
+	ServerAddresses   []string `json:"serverAddresses"`
+	LocationReporting bool     `json:"locationReporting"`
+	AccessReporting   *bool    `json:"accessReporting,omitempty"`
+	SamplePercentage  float32  `json:"samplePercentage"`
 }
 
 // NewServiceAccessInformationResourceClientConsumptionReportingConfiguration instantiates a new ServiceAccessInformationResourceClientConsumptionReportingConfiguration object
@@ -50,7 +50,7 @@ func NewServiceAccessInformationResourceClientConsumptionReportingConfigurationW
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetReportingInterval() int32 {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -68,7 +68,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) HasReportingInterval() bool {
-	if o != nil && !isNil(o.ReportingInterval) {
+	if o != nil && !IsNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 
 // GetAccessReporting returns the AccessReporting field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetAccessReporting() bool {
-	if o == nil || isNil(o.AccessReporting) {
+	if o == nil || IsNil(o.AccessReporting) {
 		var ret bool
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 // GetAccessReportingOk returns a tuple with the AccessReporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetAccessReportingOk() (*bool, bool) {
-	if o == nil || isNil(o.AccessReporting) {
+	if o == nil || IsNil(o.AccessReporting) {
 		return nil, false
 	}
 	return o.AccessReporting, true
@@ -148,7 +148,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 
 // HasAccessReporting returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) HasAccessReporting() bool {
-	if o != nil && !isNil(o.AccessReporting) {
+	if o != nil && !IsNil(o.AccessReporting) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 }
 
 func (o ServiceAccessInformationResourceClientConsumptionReportingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,12 +194,12 @@ func (o ServiceAccessInformationResourceClientConsumptionReportingConfiguration)
 
 func (o ServiceAccessInformationResourceClientConsumptionReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ReportingInterval) {
+	if !IsNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
 	toSerialize["serverAddresses"] = o.ServerAddresses
 	toSerialize["locationReporting"] = o.LocationReporting
-	if !isNil(o.AccessReporting) {
+	if !IsNil(o.AccessReporting) {
 		toSerialize["accessReporting"] = o.AccessReporting
 	}
 	toSerialize["samplePercentage"] = o.SamplePercentage
@@ -241,5 +241,3 @@ func (v *NullableServiceAccessInformationResourceClientConsumptionReportingConfi
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

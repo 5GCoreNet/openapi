@@ -19,13 +19,13 @@ var _ MappedNullable = &SubNetworkAttr{}
 
 // SubNetworkAttr struct for SubNetworkAttr
 type SubNetworkAttr struct {
-	DnPrefix *string `json:"dnPrefix,omitempty"`
-	UserLabel *string `json:"userLabel,omitempty"`
-	UserDefinedNetworkType *string `json:"userDefinedNetworkType,omitempty"`
-	SetOfMcc []string `json:"setOfMcc,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
+	DnPrefix                  *string                    `json:"dnPrefix,omitempty"`
+	UserLabel                 *string                    `json:"userLabel,omitempty"`
+	UserDefinedNetworkType    *string                    `json:"userDefinedNetworkType,omitempty"`
+	SetOfMcc                  []string                   `json:"setOfMcc,omitempty"`
+	PriorityLabel             *int32                     `json:"priorityLabel,omitempty"`
 	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	SupportedTraceMetrics []string `json:"supportedTraceMetrics,omitempty"`
+	SupportedTraceMetrics     []string                   `json:"supportedTraceMetrics,omitempty"`
 }
 
 // NewSubNetworkAttr instantiates a new SubNetworkAttr object
@@ -47,7 +47,7 @@ func NewSubNetworkAttrWithDefaults() *SubNetworkAttr {
 
 // GetDnPrefix returns the DnPrefix field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetDnPrefix() string {
-	if o == nil || isNil(o.DnPrefix) {
+	if o == nil || IsNil(o.DnPrefix) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SubNetworkAttr) GetDnPrefix() string {
 // GetDnPrefixOk returns a tuple with the DnPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetDnPrefixOk() (*string, bool) {
-	if o == nil || isNil(o.DnPrefix) {
+	if o == nil || IsNil(o.DnPrefix) {
 		return nil, false
 	}
 	return o.DnPrefix, true
@@ -65,7 +65,7 @@ func (o *SubNetworkAttr) GetDnPrefixOk() (*string, bool) {
 
 // HasDnPrefix returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasDnPrefix() bool {
-	if o != nil && !isNil(o.DnPrefix) {
+	if o != nil && !IsNil(o.DnPrefix) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *SubNetworkAttr) SetDnPrefix(v string) {
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetUserLabel() string {
-	if o == nil || isNil(o.UserLabel) {
+	if o == nil || IsNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SubNetworkAttr) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetUserLabelOk() (*string, bool) {
-	if o == nil || isNil(o.UserLabel) {
+	if o == nil || IsNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -97,7 +97,7 @@ func (o *SubNetworkAttr) GetUserLabelOk() (*string, bool) {
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasUserLabel() bool {
-	if o != nil && !isNil(o.UserLabel) {
+	if o != nil && !IsNil(o.UserLabel) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *SubNetworkAttr) SetUserLabel(v string) {
 
 // GetUserDefinedNetworkType returns the UserDefinedNetworkType field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetUserDefinedNetworkType() string {
-	if o == nil || isNil(o.UserDefinedNetworkType) {
+	if o == nil || IsNil(o.UserDefinedNetworkType) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *SubNetworkAttr) GetUserDefinedNetworkType() string {
 // GetUserDefinedNetworkTypeOk returns a tuple with the UserDefinedNetworkType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetUserDefinedNetworkTypeOk() (*string, bool) {
-	if o == nil || isNil(o.UserDefinedNetworkType) {
+	if o == nil || IsNil(o.UserDefinedNetworkType) {
 		return nil, false
 	}
 	return o.UserDefinedNetworkType, true
@@ -129,7 +129,7 @@ func (o *SubNetworkAttr) GetUserDefinedNetworkTypeOk() (*string, bool) {
 
 // HasUserDefinedNetworkType returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasUserDefinedNetworkType() bool {
-	if o != nil && !isNil(o.UserDefinedNetworkType) {
+	if o != nil && !IsNil(o.UserDefinedNetworkType) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *SubNetworkAttr) SetUserDefinedNetworkType(v string) {
 
 // GetSetOfMcc returns the SetOfMcc field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetSetOfMcc() []string {
-	if o == nil || isNil(o.SetOfMcc) {
+	if o == nil || IsNil(o.SetOfMcc) {
 		var ret []string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *SubNetworkAttr) GetSetOfMcc() []string {
 // GetSetOfMccOk returns a tuple with the SetOfMcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetSetOfMccOk() ([]string, bool) {
-	if o == nil || isNil(o.SetOfMcc) {
+	if o == nil || IsNil(o.SetOfMcc) {
 		return nil, false
 	}
 	return o.SetOfMcc, true
@@ -161,7 +161,7 @@ func (o *SubNetworkAttr) GetSetOfMccOk() ([]string, bool) {
 
 // HasSetOfMcc returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasSetOfMcc() bool {
-	if o != nil && !isNil(o.SetOfMcc) {
+	if o != nil && !IsNil(o.SetOfMcc) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *SubNetworkAttr) SetSetOfMcc(v []string) {
 
 // GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetPriorityLabel() int32 {
-	if o == nil || isNil(o.PriorityLabel) {
+	if o == nil || IsNil(o.PriorityLabel) {
 		var ret int32
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *SubNetworkAttr) GetPriorityLabel() int32 {
 // GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || isNil(o.PriorityLabel) {
+	if o == nil || IsNil(o.PriorityLabel) {
 		return nil, false
 	}
 	return o.PriorityLabel, true
@@ -193,7 +193,7 @@ func (o *SubNetworkAttr) GetPriorityLabelOk() (*int32, bool) {
 
 // HasPriorityLabel returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasPriorityLabel() bool {
-	if o != nil && !isNil(o.PriorityLabel) {
+	if o != nil && !IsNil(o.PriorityLabel) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *SubNetworkAttr) SetPriorityLabel(v int32) {
 
 // GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || isNil(o.SupportedPerfMetricGroups) {
+	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
 		var ret []SupportedPerfMetricGroup
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *SubNetworkAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetricGro
 // GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || isNil(o.SupportedPerfMetricGroups) {
+	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
 		return nil, false
 	}
 	return o.SupportedPerfMetricGroups, true
@@ -225,7 +225,7 @@ func (o *SubNetworkAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetric
 
 // HasSupportedPerfMetricGroups returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !isNil(o.SupportedPerfMetricGroups) {
+	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *SubNetworkAttr) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGro
 
 // GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
 func (o *SubNetworkAttr) GetSupportedTraceMetrics() []string {
-	if o == nil || isNil(o.SupportedTraceMetrics) {
+	if o == nil || IsNil(o.SupportedTraceMetrics) {
 		var ret []string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *SubNetworkAttr) GetSupportedTraceMetrics() []string {
 // GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkAttr) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || isNil(o.SupportedTraceMetrics) {
+	if o == nil || IsNil(o.SupportedTraceMetrics) {
 		return nil, false
 	}
 	return o.SupportedTraceMetrics, true
@@ -257,7 +257,7 @@ func (o *SubNetworkAttr) GetSupportedTraceMetricsOk() ([]string, bool) {
 
 // HasSupportedTraceMetrics returns a boolean if a field has been set.
 func (o *SubNetworkAttr) HasSupportedTraceMetrics() bool {
-	if o != nil && !isNil(o.SupportedTraceMetrics) {
+	if o != nil && !IsNil(o.SupportedTraceMetrics) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *SubNetworkAttr) SetSupportedTraceMetrics(v []string) {
 }
 
 func (o SubNetworkAttr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,25 +279,25 @@ func (o SubNetworkAttr) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnPrefix) {
+	if !IsNil(o.DnPrefix) {
 		toSerialize["dnPrefix"] = o.DnPrefix
 	}
-	if !isNil(o.UserLabel) {
+	if !IsNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !isNil(o.UserDefinedNetworkType) {
+	if !IsNil(o.UserDefinedNetworkType) {
 		toSerialize["userDefinedNetworkType"] = o.UserDefinedNetworkType
 	}
-	if !isNil(o.SetOfMcc) {
+	if !IsNil(o.SetOfMcc) {
 		toSerialize["setOfMcc"] = o.SetOfMcc
 	}
-	if !isNil(o.PriorityLabel) {
+	if !IsNil(o.PriorityLabel) {
 		toSerialize["priorityLabel"] = o.PriorityLabel
 	}
-	if !isNil(o.SupportedPerfMetricGroups) {
+	if !IsNil(o.SupportedPerfMetricGroups) {
 		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
 	}
-	if !isNil(o.SupportedTraceMetrics) {
+	if !IsNil(o.SupportedTraceMetrics) {
 		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
 	}
 	return toSerialize, nil
@@ -338,5 +338,3 @@ func (v *NullableSubNetworkAttr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

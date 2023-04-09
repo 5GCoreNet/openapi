@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the DeregistrationReason type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DeregistrationReason{}
 
-// DeregistrationReason Contains the reason for the network initiated de-registration (including a reason code, and a human-readable reason text) 
+// DeregistrationReason Contains the reason for the network initiated de-registration (including a reason code, and a human-readable reason text)
 type DeregistrationReason struct {
 	ReasonCode DeregistrationReasonCode `json:"reasonCode"`
-	ReasonText string `json:"reasonText"`
+	ReasonText string                   `json:"reasonText"`
 }
 
 // NewDeregistrationReason instantiates a new DeregistrationReason object
@@ -91,7 +91,7 @@ func (o *DeregistrationReason) SetReasonText(v string) {
 }
 
 func (o DeregistrationReason) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableDeregistrationReason) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

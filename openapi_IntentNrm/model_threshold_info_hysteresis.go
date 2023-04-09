@@ -18,7 +18,7 @@ import (
 // ThresholdInfoHysteresis - struct for ThresholdInfoHysteresis
 type ThresholdInfoHysteresis struct {
 	Float32 *float32
-	Int32 *int32
+	Int32   *int32
 }
 
 // float32AsThresholdInfoHysteresis is a convenience function that returns float32 wrapped in ThresholdInfoHysteresis
@@ -34,7 +34,6 @@ func Int32AsThresholdInfoHysteresis(v *int32) ThresholdInfoHysteresis {
 		Int32: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ThresholdInfoHysteresis) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ThresholdInfoHysteresis) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ThresholdInfoHysteresis) GetActualInstance() (interface{}) {
+func (obj *ThresholdInfoHysteresis) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableThresholdInfoHysteresis) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

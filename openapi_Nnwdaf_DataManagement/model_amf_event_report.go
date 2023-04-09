@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,45 +20,45 @@ var _ MappedNullable = &AmfEventReport{}
 
 // AmfEventReport Represents a report triggered by a subscribed event type
 type AmfEventReport struct {
-	Type AmfEventType `json:"type"`
+	Type  AmfEventType  `json:"type"`
 	State AmfEventState `json:"state"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeStamp time.Time `json:"timeStamp"`
 	// String providing an URI formatted according to RFC 3986.
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
-	AnyUe *bool `json:"anyUe,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi *string `json:"supi,omitempty"`
+	AnyUe          *bool   `json:"anyUe,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi     *string        `json:"supi,omitempty"`
 	AreaList []AmfEventArea `json:"areaList,omitempty"`
-	RefId *int32 `json:"refId,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	RefId    *int32         `json:"refId,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
-	Location *UserLocation `json:"location,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei                *string       `json:"pei,omitempty"`
+	Location           *UserLocation `json:"location,omitempty"`
 	AdditionalLocation *UserLocation `json:"additionalLocation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	Timezone *string `json:"timezone,omitempty"`
-	AccessTypeList []AccessType `json:"accessTypeList,omitempty"`
-	RmInfoList []RmInfo `json:"rmInfoList,omitempty"`
-	CmInfoList []CmInfo `json:"cmInfoList,omitempty"`
-	Reachability *UeReachability `json:"reachability,omitempty"`
-	CommFailure *CommunicationFailure `json:"commFailure,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	Timezone            *string                   `json:"timezone,omitempty"`
+	AccessTypeList      []AccessType              `json:"accessTypeList,omitempty"`
+	RmInfoList          []RmInfo                  `json:"rmInfoList,omitempty"`
+	CmInfoList          []CmInfo                  `json:"cmInfoList,omitempty"`
+	Reachability        *UeReachability           `json:"reachability,omitempty"`
+	CommFailure         *CommunicationFailure     `json:"commFailure,omitempty"`
 	LossOfConnectReason *LossOfConnectivityReason `json:"lossOfConnectReason,omitempty"`
-	NumberOfUes *int32 `json:"numberOfUes,omitempty"`
-	Var5gsUserStateList []Model5GsUserStateInfo `json:"5gsUserStateList,omitempty"`
-	TypeCode *string `json:"typeCode,omitempty"`
-	RegistrationNumber *int32 `json:"registrationNumber,omitempty"`
+	NumberOfUes         *int32                    `json:"numberOfUes,omitempty"`
+	Var5gsUserStateList []Model5GsUserStateInfo   `json:"5gsUserStateList,omitempty"`
+	TypeCode            *string                   `json:"typeCode,omitempty"`
+	RegistrationNumber  *int32                    `json:"registrationNumber,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	MaxAvailabilityTime *time.Time `json:"maxAvailabilityTime,omitempty"`
-	UeIdExt []UEIdExt `json:"ueIdExt,omitempty"`
-	SnssaiTaiList []SnssaiTaiMapping `json:"snssaiTaiList,omitempty"`
-	IdleStatusIndication *IdleStatusIndication `json:"idleStatusIndication,omitempty"`
-	UeAccessBehaviorTrends []UeAccessBehaviorReportItem `json:"ueAccessBehaviorTrends,omitempty"`
-	UeLocationTrends []UeLocationTrendsReportItem `json:"ueLocationTrends,omitempty"`
+	MaxAvailabilityTime       *time.Time                        `json:"maxAvailabilityTime,omitempty"`
+	UeIdExt                   []UEIdExt                         `json:"ueIdExt,omitempty"`
+	SnssaiTaiList             []SnssaiTaiMapping                `json:"snssaiTaiList,omitempty"`
+	IdleStatusIndication      *IdleStatusIndication             `json:"idleStatusIndication,omitempty"`
+	UeAccessBehaviorTrends    []UeAccessBehaviorReportItem      `json:"ueAccessBehaviorTrends,omitempty"`
+	UeLocationTrends          []UeLocationTrendsReportItem      `json:"ueLocationTrends,omitempty"`
 	MmTransLocationReportList []MmTransactionLocationReportItem `json:"mmTransLocationReportList,omitempty"`
-	MmTransSliceReportList []MmTransactionSliceReportItem `json:"mmTransSliceReportList,omitempty"`
-	TermReason *SubTerminationReason `json:"termReason,omitempty"`
+	MmTransSliceReportList    []MmTransactionSliceReportItem    `json:"mmTransSliceReportList,omitempty"`
+	TermReason                *SubTerminationReason             `json:"termReason,omitempty"`
 }
 
 // NewAmfEventReport instantiates a new AmfEventReport object
@@ -155,7 +155,7 @@ func (o *AmfEventReport) SetTimeStamp(v time.Time) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *AmfEventReport) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *AmfEventReport) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -173,7 +173,7 @@ func (o *AmfEventReport) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *AmfEventReport) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *AmfEventReport) SetSubscriptionId(v string) {
 
 // GetAnyUe returns the AnyUe field value if set, zero value otherwise.
 func (o *AmfEventReport) GetAnyUe() bool {
-	if o == nil || isNil(o.AnyUe) {
+	if o == nil || IsNil(o.AnyUe) {
 		var ret bool
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *AmfEventReport) GetAnyUe() bool {
 // GetAnyUeOk returns a tuple with the AnyUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetAnyUeOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUe) {
+	if o == nil || IsNil(o.AnyUe) {
 		return nil, false
 	}
 	return o.AnyUe, true
@@ -205,7 +205,7 @@ func (o *AmfEventReport) GetAnyUeOk() (*bool, bool) {
 
 // HasAnyUe returns a boolean if a field has been set.
 func (o *AmfEventReport) HasAnyUe() bool {
-	if o != nil && !isNil(o.AnyUe) {
+	if o != nil && !IsNil(o.AnyUe) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *AmfEventReport) SetAnyUe(v bool) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AmfEventReport) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *AmfEventReport) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -237,7 +237,7 @@ func (o *AmfEventReport) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AmfEventReport) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *AmfEventReport) SetSupi(v string) {
 
 // GetAreaList returns the AreaList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetAreaList() []AmfEventArea {
-	if o == nil || isNil(o.AreaList) {
+	if o == nil || IsNil(o.AreaList) {
 		var ret []AmfEventArea
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *AmfEventReport) GetAreaList() []AmfEventArea {
 // GetAreaListOk returns a tuple with the AreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetAreaListOk() ([]AmfEventArea, bool) {
-	if o == nil || isNil(o.AreaList) {
+	if o == nil || IsNil(o.AreaList) {
 		return nil, false
 	}
 	return o.AreaList, true
@@ -269,7 +269,7 @@ func (o *AmfEventReport) GetAreaListOk() ([]AmfEventArea, bool) {
 
 // HasAreaList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasAreaList() bool {
-	if o != nil && !isNil(o.AreaList) {
+	if o != nil && !IsNil(o.AreaList) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *AmfEventReport) SetAreaList(v []AmfEventArea) {
 
 // GetRefId returns the RefId field value if set, zero value otherwise.
 func (o *AmfEventReport) GetRefId() int32 {
-	if o == nil || isNil(o.RefId) {
+	if o == nil || IsNil(o.RefId) {
 		var ret int32
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *AmfEventReport) GetRefId() int32 {
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetRefIdOk() (*int32, bool) {
-	if o == nil || isNil(o.RefId) {
+	if o == nil || IsNil(o.RefId) {
 		return nil, false
 	}
 	return o.RefId, true
@@ -301,7 +301,7 @@ func (o *AmfEventReport) GetRefIdOk() (*int32, bool) {
 
 // HasRefId returns a boolean if a field has been set.
 func (o *AmfEventReport) HasRefId() bool {
-	if o != nil && !isNil(o.RefId) {
+	if o != nil && !IsNil(o.RefId) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *AmfEventReport) SetRefId(v int32) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *AmfEventReport) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *AmfEventReport) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -333,7 +333,7 @@ func (o *AmfEventReport) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *AmfEventReport) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -347,7 +347,7 @@ func (o *AmfEventReport) SetGpsi(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *AmfEventReport) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *AmfEventReport) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -365,7 +365,7 @@ func (o *AmfEventReport) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *AmfEventReport) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *AmfEventReport) SetPei(v string) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *AmfEventReport) GetLocation() UserLocation {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret UserLocation
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *AmfEventReport) GetLocation() UserLocation {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -397,7 +397,7 @@ func (o *AmfEventReport) GetLocationOk() (*UserLocation, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *AmfEventReport) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *AmfEventReport) SetLocation(v UserLocation) {
 
 // GetAdditionalLocation returns the AdditionalLocation field value if set, zero value otherwise.
 func (o *AmfEventReport) GetAdditionalLocation() UserLocation {
-	if o == nil || isNil(o.AdditionalLocation) {
+	if o == nil || IsNil(o.AdditionalLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *AmfEventReport) GetAdditionalLocation() UserLocation {
 // GetAdditionalLocationOk returns a tuple with the AdditionalLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetAdditionalLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.AdditionalLocation) {
+	if o == nil || IsNil(o.AdditionalLocation) {
 		return nil, false
 	}
 	return o.AdditionalLocation, true
@@ -429,7 +429,7 @@ func (o *AmfEventReport) GetAdditionalLocationOk() (*UserLocation, bool) {
 
 // HasAdditionalLocation returns a boolean if a field has been set.
 func (o *AmfEventReport) HasAdditionalLocation() bool {
-	if o != nil && !isNil(o.AdditionalLocation) {
+	if o != nil && !IsNil(o.AdditionalLocation) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *AmfEventReport) SetAdditionalLocation(v UserLocation) {
 
 // GetTimezone returns the Timezone field value if set, zero value otherwise.
 func (o *AmfEventReport) GetTimezone() string {
-	if o == nil || isNil(o.Timezone) {
+	if o == nil || IsNil(o.Timezone) {
 		var ret string
 		return ret
 	}
@@ -453,7 +453,7 @@ func (o *AmfEventReport) GetTimezone() string {
 // GetTimezoneOk returns a tuple with the Timezone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetTimezoneOk() (*string, bool) {
-	if o == nil || isNil(o.Timezone) {
+	if o == nil || IsNil(o.Timezone) {
 		return nil, false
 	}
 	return o.Timezone, true
@@ -461,7 +461,7 @@ func (o *AmfEventReport) GetTimezoneOk() (*string, bool) {
 
 // HasTimezone returns a boolean if a field has been set.
 func (o *AmfEventReport) HasTimezone() bool {
-	if o != nil && !isNil(o.Timezone) {
+	if o != nil && !IsNil(o.Timezone) {
 		return true
 	}
 
@@ -475,7 +475,7 @@ func (o *AmfEventReport) SetTimezone(v string) {
 
 // GetAccessTypeList returns the AccessTypeList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetAccessTypeList() []AccessType {
-	if o == nil || isNil(o.AccessTypeList) {
+	if o == nil || IsNil(o.AccessTypeList) {
 		var ret []AccessType
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *AmfEventReport) GetAccessTypeList() []AccessType {
 // GetAccessTypeListOk returns a tuple with the AccessTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetAccessTypeListOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessTypeList) {
+	if o == nil || IsNil(o.AccessTypeList) {
 		return nil, false
 	}
 	return o.AccessTypeList, true
@@ -493,7 +493,7 @@ func (o *AmfEventReport) GetAccessTypeListOk() ([]AccessType, bool) {
 
 // HasAccessTypeList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasAccessTypeList() bool {
-	if o != nil && !isNil(o.AccessTypeList) {
+	if o != nil && !IsNil(o.AccessTypeList) {
 		return true
 	}
 
@@ -507,7 +507,7 @@ func (o *AmfEventReport) SetAccessTypeList(v []AccessType) {
 
 // GetRmInfoList returns the RmInfoList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetRmInfoList() []RmInfo {
-	if o == nil || isNil(o.RmInfoList) {
+	if o == nil || IsNil(o.RmInfoList) {
 		var ret []RmInfo
 		return ret
 	}
@@ -517,7 +517,7 @@ func (o *AmfEventReport) GetRmInfoList() []RmInfo {
 // GetRmInfoListOk returns a tuple with the RmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetRmInfoListOk() ([]RmInfo, bool) {
-	if o == nil || isNil(o.RmInfoList) {
+	if o == nil || IsNil(o.RmInfoList) {
 		return nil, false
 	}
 	return o.RmInfoList, true
@@ -525,7 +525,7 @@ func (o *AmfEventReport) GetRmInfoListOk() ([]RmInfo, bool) {
 
 // HasRmInfoList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasRmInfoList() bool {
-	if o != nil && !isNil(o.RmInfoList) {
+	if o != nil && !IsNil(o.RmInfoList) {
 		return true
 	}
 
@@ -539,7 +539,7 @@ func (o *AmfEventReport) SetRmInfoList(v []RmInfo) {
 
 // GetCmInfoList returns the CmInfoList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetCmInfoList() []CmInfo {
-	if o == nil || isNil(o.CmInfoList) {
+	if o == nil || IsNil(o.CmInfoList) {
 		var ret []CmInfo
 		return ret
 	}
@@ -549,7 +549,7 @@ func (o *AmfEventReport) GetCmInfoList() []CmInfo {
 // GetCmInfoListOk returns a tuple with the CmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetCmInfoListOk() ([]CmInfo, bool) {
-	if o == nil || isNil(o.CmInfoList) {
+	if o == nil || IsNil(o.CmInfoList) {
 		return nil, false
 	}
 	return o.CmInfoList, true
@@ -557,7 +557,7 @@ func (o *AmfEventReport) GetCmInfoListOk() ([]CmInfo, bool) {
 
 // HasCmInfoList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasCmInfoList() bool {
-	if o != nil && !isNil(o.CmInfoList) {
+	if o != nil && !IsNil(o.CmInfoList) {
 		return true
 	}
 
@@ -571,7 +571,7 @@ func (o *AmfEventReport) SetCmInfoList(v []CmInfo) {
 
 // GetReachability returns the Reachability field value if set, zero value otherwise.
 func (o *AmfEventReport) GetReachability() UeReachability {
-	if o == nil || isNil(o.Reachability) {
+	if o == nil || IsNil(o.Reachability) {
 		var ret UeReachability
 		return ret
 	}
@@ -581,7 +581,7 @@ func (o *AmfEventReport) GetReachability() UeReachability {
 // GetReachabilityOk returns a tuple with the Reachability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetReachabilityOk() (*UeReachability, bool) {
-	if o == nil || isNil(o.Reachability) {
+	if o == nil || IsNil(o.Reachability) {
 		return nil, false
 	}
 	return o.Reachability, true
@@ -589,7 +589,7 @@ func (o *AmfEventReport) GetReachabilityOk() (*UeReachability, bool) {
 
 // HasReachability returns a boolean if a field has been set.
 func (o *AmfEventReport) HasReachability() bool {
-	if o != nil && !isNil(o.Reachability) {
+	if o != nil && !IsNil(o.Reachability) {
 		return true
 	}
 
@@ -603,7 +603,7 @@ func (o *AmfEventReport) SetReachability(v UeReachability) {
 
 // GetCommFailure returns the CommFailure field value if set, zero value otherwise.
 func (o *AmfEventReport) GetCommFailure() CommunicationFailure {
-	if o == nil || isNil(o.CommFailure) {
+	if o == nil || IsNil(o.CommFailure) {
 		var ret CommunicationFailure
 		return ret
 	}
@@ -613,7 +613,7 @@ func (o *AmfEventReport) GetCommFailure() CommunicationFailure {
 // GetCommFailureOk returns a tuple with the CommFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetCommFailureOk() (*CommunicationFailure, bool) {
-	if o == nil || isNil(o.CommFailure) {
+	if o == nil || IsNil(o.CommFailure) {
 		return nil, false
 	}
 	return o.CommFailure, true
@@ -621,7 +621,7 @@ func (o *AmfEventReport) GetCommFailureOk() (*CommunicationFailure, bool) {
 
 // HasCommFailure returns a boolean if a field has been set.
 func (o *AmfEventReport) HasCommFailure() bool {
-	if o != nil && !isNil(o.CommFailure) {
+	if o != nil && !IsNil(o.CommFailure) {
 		return true
 	}
 
@@ -635,7 +635,7 @@ func (o *AmfEventReport) SetCommFailure(v CommunicationFailure) {
 
 // GetLossOfConnectReason returns the LossOfConnectReason field value if set, zero value otherwise.
 func (o *AmfEventReport) GetLossOfConnectReason() LossOfConnectivityReason {
-	if o == nil || isNil(o.LossOfConnectReason) {
+	if o == nil || IsNil(o.LossOfConnectReason) {
 		var ret LossOfConnectivityReason
 		return ret
 	}
@@ -645,7 +645,7 @@ func (o *AmfEventReport) GetLossOfConnectReason() LossOfConnectivityReason {
 // GetLossOfConnectReasonOk returns a tuple with the LossOfConnectReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetLossOfConnectReasonOk() (*LossOfConnectivityReason, bool) {
-	if o == nil || isNil(o.LossOfConnectReason) {
+	if o == nil || IsNil(o.LossOfConnectReason) {
 		return nil, false
 	}
 	return o.LossOfConnectReason, true
@@ -653,7 +653,7 @@ func (o *AmfEventReport) GetLossOfConnectReasonOk() (*LossOfConnectivityReason, 
 
 // HasLossOfConnectReason returns a boolean if a field has been set.
 func (o *AmfEventReport) HasLossOfConnectReason() bool {
-	if o != nil && !isNil(o.LossOfConnectReason) {
+	if o != nil && !IsNil(o.LossOfConnectReason) {
 		return true
 	}
 
@@ -667,7 +667,7 @@ func (o *AmfEventReport) SetLossOfConnectReason(v LossOfConnectivityReason) {
 
 // GetNumberOfUes returns the NumberOfUes field value if set, zero value otherwise.
 func (o *AmfEventReport) GetNumberOfUes() int32 {
-	if o == nil || isNil(o.NumberOfUes) {
+	if o == nil || IsNil(o.NumberOfUes) {
 		var ret int32
 		return ret
 	}
@@ -677,7 +677,7 @@ func (o *AmfEventReport) GetNumberOfUes() int32 {
 // GetNumberOfUesOk returns a tuple with the NumberOfUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetNumberOfUesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfUes) {
+	if o == nil || IsNil(o.NumberOfUes) {
 		return nil, false
 	}
 	return o.NumberOfUes, true
@@ -685,7 +685,7 @@ func (o *AmfEventReport) GetNumberOfUesOk() (*int32, bool) {
 
 // HasNumberOfUes returns a boolean if a field has been set.
 func (o *AmfEventReport) HasNumberOfUes() bool {
-	if o != nil && !isNil(o.NumberOfUes) {
+	if o != nil && !IsNil(o.NumberOfUes) {
 		return true
 	}
 
@@ -699,7 +699,7 @@ func (o *AmfEventReport) SetNumberOfUes(v int32) {
 
 // GetVar5gsUserStateList returns the Var5gsUserStateList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetVar5gsUserStateList() []Model5GsUserStateInfo {
-	if o == nil || isNil(o.Var5gsUserStateList) {
+	if o == nil || IsNil(o.Var5gsUserStateList) {
 		var ret []Model5GsUserStateInfo
 		return ret
 	}
@@ -709,7 +709,7 @@ func (o *AmfEventReport) GetVar5gsUserStateList() []Model5GsUserStateInfo {
 // GetVar5gsUserStateListOk returns a tuple with the Var5gsUserStateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetVar5gsUserStateListOk() ([]Model5GsUserStateInfo, bool) {
-	if o == nil || isNil(o.Var5gsUserStateList) {
+	if o == nil || IsNil(o.Var5gsUserStateList) {
 		return nil, false
 	}
 	return o.Var5gsUserStateList, true
@@ -717,7 +717,7 @@ func (o *AmfEventReport) GetVar5gsUserStateListOk() ([]Model5GsUserStateInfo, bo
 
 // HasVar5gsUserStateList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasVar5gsUserStateList() bool {
-	if o != nil && !isNil(o.Var5gsUserStateList) {
+	if o != nil && !IsNil(o.Var5gsUserStateList) {
 		return true
 	}
 
@@ -731,7 +731,7 @@ func (o *AmfEventReport) SetVar5gsUserStateList(v []Model5GsUserStateInfo) {
 
 // GetTypeCode returns the TypeCode field value if set, zero value otherwise.
 func (o *AmfEventReport) GetTypeCode() string {
-	if o == nil || isNil(o.TypeCode) {
+	if o == nil || IsNil(o.TypeCode) {
 		var ret string
 		return ret
 	}
@@ -741,7 +741,7 @@ func (o *AmfEventReport) GetTypeCode() string {
 // GetTypeCodeOk returns a tuple with the TypeCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetTypeCodeOk() (*string, bool) {
-	if o == nil || isNil(o.TypeCode) {
+	if o == nil || IsNil(o.TypeCode) {
 		return nil, false
 	}
 	return o.TypeCode, true
@@ -749,7 +749,7 @@ func (o *AmfEventReport) GetTypeCodeOk() (*string, bool) {
 
 // HasTypeCode returns a boolean if a field has been set.
 func (o *AmfEventReport) HasTypeCode() bool {
-	if o != nil && !isNil(o.TypeCode) {
+	if o != nil && !IsNil(o.TypeCode) {
 		return true
 	}
 
@@ -763,7 +763,7 @@ func (o *AmfEventReport) SetTypeCode(v string) {
 
 // GetRegistrationNumber returns the RegistrationNumber field value if set, zero value otherwise.
 func (o *AmfEventReport) GetRegistrationNumber() int32 {
-	if o == nil || isNil(o.RegistrationNumber) {
+	if o == nil || IsNil(o.RegistrationNumber) {
 		var ret int32
 		return ret
 	}
@@ -773,7 +773,7 @@ func (o *AmfEventReport) GetRegistrationNumber() int32 {
 // GetRegistrationNumberOk returns a tuple with the RegistrationNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetRegistrationNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.RegistrationNumber) {
+	if o == nil || IsNil(o.RegistrationNumber) {
 		return nil, false
 	}
 	return o.RegistrationNumber, true
@@ -781,7 +781,7 @@ func (o *AmfEventReport) GetRegistrationNumberOk() (*int32, bool) {
 
 // HasRegistrationNumber returns a boolean if a field has been set.
 func (o *AmfEventReport) HasRegistrationNumber() bool {
-	if o != nil && !isNil(o.RegistrationNumber) {
+	if o != nil && !IsNil(o.RegistrationNumber) {
 		return true
 	}
 
@@ -795,7 +795,7 @@ func (o *AmfEventReport) SetRegistrationNumber(v int32) {
 
 // GetMaxAvailabilityTime returns the MaxAvailabilityTime field value if set, zero value otherwise.
 func (o *AmfEventReport) GetMaxAvailabilityTime() time.Time {
-	if o == nil || isNil(o.MaxAvailabilityTime) {
+	if o == nil || IsNil(o.MaxAvailabilityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -805,7 +805,7 @@ func (o *AmfEventReport) GetMaxAvailabilityTime() time.Time {
 // GetMaxAvailabilityTimeOk returns a tuple with the MaxAvailabilityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MaxAvailabilityTime) {
+	if o == nil || IsNil(o.MaxAvailabilityTime) {
 		return nil, false
 	}
 	return o.MaxAvailabilityTime, true
@@ -813,7 +813,7 @@ func (o *AmfEventReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
 
 // HasMaxAvailabilityTime returns a boolean if a field has been set.
 func (o *AmfEventReport) HasMaxAvailabilityTime() bool {
-	if o != nil && !isNil(o.MaxAvailabilityTime) {
+	if o != nil && !IsNil(o.MaxAvailabilityTime) {
 		return true
 	}
 
@@ -827,7 +827,7 @@ func (o *AmfEventReport) SetMaxAvailabilityTime(v time.Time) {
 
 // GetUeIdExt returns the UeIdExt field value if set, zero value otherwise.
 func (o *AmfEventReport) GetUeIdExt() []UEIdExt {
-	if o == nil || isNil(o.UeIdExt) {
+	if o == nil || IsNil(o.UeIdExt) {
 		var ret []UEIdExt
 		return ret
 	}
@@ -837,7 +837,7 @@ func (o *AmfEventReport) GetUeIdExt() []UEIdExt {
 // GetUeIdExtOk returns a tuple with the UeIdExt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetUeIdExtOk() ([]UEIdExt, bool) {
-	if o == nil || isNil(o.UeIdExt) {
+	if o == nil || IsNil(o.UeIdExt) {
 		return nil, false
 	}
 	return o.UeIdExt, true
@@ -845,7 +845,7 @@ func (o *AmfEventReport) GetUeIdExtOk() ([]UEIdExt, bool) {
 
 // HasUeIdExt returns a boolean if a field has been set.
 func (o *AmfEventReport) HasUeIdExt() bool {
-	if o != nil && !isNil(o.UeIdExt) {
+	if o != nil && !IsNil(o.UeIdExt) {
 		return true
 	}
 
@@ -859,7 +859,7 @@ func (o *AmfEventReport) SetUeIdExt(v []UEIdExt) {
 
 // GetSnssaiTaiList returns the SnssaiTaiList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetSnssaiTaiList() []SnssaiTaiMapping {
-	if o == nil || isNil(o.SnssaiTaiList) {
+	if o == nil || IsNil(o.SnssaiTaiList) {
 		var ret []SnssaiTaiMapping
 		return ret
 	}
@@ -869,7 +869,7 @@ func (o *AmfEventReport) GetSnssaiTaiList() []SnssaiTaiMapping {
 // GetSnssaiTaiListOk returns a tuple with the SnssaiTaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetSnssaiTaiListOk() ([]SnssaiTaiMapping, bool) {
-	if o == nil || isNil(o.SnssaiTaiList) {
+	if o == nil || IsNil(o.SnssaiTaiList) {
 		return nil, false
 	}
 	return o.SnssaiTaiList, true
@@ -877,7 +877,7 @@ func (o *AmfEventReport) GetSnssaiTaiListOk() ([]SnssaiTaiMapping, bool) {
 
 // HasSnssaiTaiList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasSnssaiTaiList() bool {
-	if o != nil && !isNil(o.SnssaiTaiList) {
+	if o != nil && !IsNil(o.SnssaiTaiList) {
 		return true
 	}
 
@@ -891,7 +891,7 @@ func (o *AmfEventReport) SetSnssaiTaiList(v []SnssaiTaiMapping) {
 
 // GetIdleStatusIndication returns the IdleStatusIndication field value if set, zero value otherwise.
 func (o *AmfEventReport) GetIdleStatusIndication() IdleStatusIndication {
-	if o == nil || isNil(o.IdleStatusIndication) {
+	if o == nil || IsNil(o.IdleStatusIndication) {
 		var ret IdleStatusIndication
 		return ret
 	}
@@ -901,7 +901,7 @@ func (o *AmfEventReport) GetIdleStatusIndication() IdleStatusIndication {
 // GetIdleStatusIndicationOk returns a tuple with the IdleStatusIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetIdleStatusIndicationOk() (*IdleStatusIndication, bool) {
-	if o == nil || isNil(o.IdleStatusIndication) {
+	if o == nil || IsNil(o.IdleStatusIndication) {
 		return nil, false
 	}
 	return o.IdleStatusIndication, true
@@ -909,7 +909,7 @@ func (o *AmfEventReport) GetIdleStatusIndicationOk() (*IdleStatusIndication, boo
 
 // HasIdleStatusIndication returns a boolean if a field has been set.
 func (o *AmfEventReport) HasIdleStatusIndication() bool {
-	if o != nil && !isNil(o.IdleStatusIndication) {
+	if o != nil && !IsNil(o.IdleStatusIndication) {
 		return true
 	}
 
@@ -923,7 +923,7 @@ func (o *AmfEventReport) SetIdleStatusIndication(v IdleStatusIndication) {
 
 // GetUeAccessBehaviorTrends returns the UeAccessBehaviorTrends field value if set, zero value otherwise.
 func (o *AmfEventReport) GetUeAccessBehaviorTrends() []UeAccessBehaviorReportItem {
-	if o == nil || isNil(o.UeAccessBehaviorTrends) {
+	if o == nil || IsNil(o.UeAccessBehaviorTrends) {
 		var ret []UeAccessBehaviorReportItem
 		return ret
 	}
@@ -933,7 +933,7 @@ func (o *AmfEventReport) GetUeAccessBehaviorTrends() []UeAccessBehaviorReportIte
 // GetUeAccessBehaviorTrendsOk returns a tuple with the UeAccessBehaviorTrends field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetUeAccessBehaviorTrendsOk() ([]UeAccessBehaviorReportItem, bool) {
-	if o == nil || isNil(o.UeAccessBehaviorTrends) {
+	if o == nil || IsNil(o.UeAccessBehaviorTrends) {
 		return nil, false
 	}
 	return o.UeAccessBehaviorTrends, true
@@ -941,7 +941,7 @@ func (o *AmfEventReport) GetUeAccessBehaviorTrendsOk() ([]UeAccessBehaviorReport
 
 // HasUeAccessBehaviorTrends returns a boolean if a field has been set.
 func (o *AmfEventReport) HasUeAccessBehaviorTrends() bool {
-	if o != nil && !isNil(o.UeAccessBehaviorTrends) {
+	if o != nil && !IsNil(o.UeAccessBehaviorTrends) {
 		return true
 	}
 
@@ -955,7 +955,7 @@ func (o *AmfEventReport) SetUeAccessBehaviorTrends(v []UeAccessBehaviorReportIte
 
 // GetUeLocationTrends returns the UeLocationTrends field value if set, zero value otherwise.
 func (o *AmfEventReport) GetUeLocationTrends() []UeLocationTrendsReportItem {
-	if o == nil || isNil(o.UeLocationTrends) {
+	if o == nil || IsNil(o.UeLocationTrends) {
 		var ret []UeLocationTrendsReportItem
 		return ret
 	}
@@ -965,7 +965,7 @@ func (o *AmfEventReport) GetUeLocationTrends() []UeLocationTrendsReportItem {
 // GetUeLocationTrendsOk returns a tuple with the UeLocationTrends field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetUeLocationTrendsOk() ([]UeLocationTrendsReportItem, bool) {
-	if o == nil || isNil(o.UeLocationTrends) {
+	if o == nil || IsNil(o.UeLocationTrends) {
 		return nil, false
 	}
 	return o.UeLocationTrends, true
@@ -973,7 +973,7 @@ func (o *AmfEventReport) GetUeLocationTrendsOk() ([]UeLocationTrendsReportItem, 
 
 // HasUeLocationTrends returns a boolean if a field has been set.
 func (o *AmfEventReport) HasUeLocationTrends() bool {
-	if o != nil && !isNil(o.UeLocationTrends) {
+	if o != nil && !IsNil(o.UeLocationTrends) {
 		return true
 	}
 
@@ -987,7 +987,7 @@ func (o *AmfEventReport) SetUeLocationTrends(v []UeLocationTrendsReportItem) {
 
 // GetMmTransLocationReportList returns the MmTransLocationReportList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetMmTransLocationReportList() []MmTransactionLocationReportItem {
-	if o == nil || isNil(o.MmTransLocationReportList) {
+	if o == nil || IsNil(o.MmTransLocationReportList) {
 		var ret []MmTransactionLocationReportItem
 		return ret
 	}
@@ -997,7 +997,7 @@ func (o *AmfEventReport) GetMmTransLocationReportList() []MmTransactionLocationR
 // GetMmTransLocationReportListOk returns a tuple with the MmTransLocationReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetMmTransLocationReportListOk() ([]MmTransactionLocationReportItem, bool) {
-	if o == nil || isNil(o.MmTransLocationReportList) {
+	if o == nil || IsNil(o.MmTransLocationReportList) {
 		return nil, false
 	}
 	return o.MmTransLocationReportList, true
@@ -1005,7 +1005,7 @@ func (o *AmfEventReport) GetMmTransLocationReportListOk() ([]MmTransactionLocati
 
 // HasMmTransLocationReportList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasMmTransLocationReportList() bool {
-	if o != nil && !isNil(o.MmTransLocationReportList) {
+	if o != nil && !IsNil(o.MmTransLocationReportList) {
 		return true
 	}
 
@@ -1019,7 +1019,7 @@ func (o *AmfEventReport) SetMmTransLocationReportList(v []MmTransactionLocationR
 
 // GetMmTransSliceReportList returns the MmTransSliceReportList field value if set, zero value otherwise.
 func (o *AmfEventReport) GetMmTransSliceReportList() []MmTransactionSliceReportItem {
-	if o == nil || isNil(o.MmTransSliceReportList) {
+	if o == nil || IsNil(o.MmTransSliceReportList) {
 		var ret []MmTransactionSliceReportItem
 		return ret
 	}
@@ -1029,7 +1029,7 @@ func (o *AmfEventReport) GetMmTransSliceReportList() []MmTransactionSliceReportI
 // GetMmTransSliceReportListOk returns a tuple with the MmTransSliceReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetMmTransSliceReportListOk() ([]MmTransactionSliceReportItem, bool) {
-	if o == nil || isNil(o.MmTransSliceReportList) {
+	if o == nil || IsNil(o.MmTransSliceReportList) {
 		return nil, false
 	}
 	return o.MmTransSliceReportList, true
@@ -1037,7 +1037,7 @@ func (o *AmfEventReport) GetMmTransSliceReportListOk() ([]MmTransactionSliceRepo
 
 // HasMmTransSliceReportList returns a boolean if a field has been set.
 func (o *AmfEventReport) HasMmTransSliceReportList() bool {
-	if o != nil && !isNil(o.MmTransSliceReportList) {
+	if o != nil && !IsNil(o.MmTransSliceReportList) {
 		return true
 	}
 
@@ -1051,7 +1051,7 @@ func (o *AmfEventReport) SetMmTransSliceReportList(v []MmTransactionSliceReportI
 
 // GetTermReason returns the TermReason field value if set, zero value otherwise.
 func (o *AmfEventReport) GetTermReason() SubTerminationReason {
-	if o == nil || isNil(o.TermReason) {
+	if o == nil || IsNil(o.TermReason) {
 		var ret SubTerminationReason
 		return ret
 	}
@@ -1061,7 +1061,7 @@ func (o *AmfEventReport) GetTermReason() SubTerminationReason {
 // GetTermReasonOk returns a tuple with the TermReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventReport) GetTermReasonOk() (*SubTerminationReason, bool) {
-	if o == nil || isNil(o.TermReason) {
+	if o == nil || IsNil(o.TermReason) {
 		return nil, false
 	}
 	return o.TermReason, true
@@ -1069,7 +1069,7 @@ func (o *AmfEventReport) GetTermReasonOk() (*SubTerminationReason, bool) {
 
 // HasTermReason returns a boolean if a field has been set.
 func (o *AmfEventReport) HasTermReason() bool {
-	if o != nil && !isNil(o.TermReason) {
+	if o != nil && !IsNil(o.TermReason) {
 		return true
 	}
 
@@ -1082,7 +1082,7 @@ func (o *AmfEventReport) SetTermReason(v SubTerminationReason) {
 }
 
 func (o AmfEventReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1094,91 +1094,91 @@ func (o AmfEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize["type"] = o.Type
 	toSerialize["state"] = o.State
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !isNil(o.AnyUe) {
+	if !IsNil(o.AnyUe) {
 		toSerialize["anyUe"] = o.AnyUe
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.AreaList) {
+	if !IsNil(o.AreaList) {
 		toSerialize["areaList"] = o.AreaList
 	}
-	if !isNil(o.RefId) {
+	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.Location) {
+	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
-	if !isNil(o.AdditionalLocation) {
+	if !IsNil(o.AdditionalLocation) {
 		toSerialize["additionalLocation"] = o.AdditionalLocation
 	}
-	if !isNil(o.Timezone) {
+	if !IsNil(o.Timezone) {
 		toSerialize["timezone"] = o.Timezone
 	}
-	if !isNil(o.AccessTypeList) {
+	if !IsNil(o.AccessTypeList) {
 		toSerialize["accessTypeList"] = o.AccessTypeList
 	}
-	if !isNil(o.RmInfoList) {
+	if !IsNil(o.RmInfoList) {
 		toSerialize["rmInfoList"] = o.RmInfoList
 	}
-	if !isNil(o.CmInfoList) {
+	if !IsNil(o.CmInfoList) {
 		toSerialize["cmInfoList"] = o.CmInfoList
 	}
-	if !isNil(o.Reachability) {
+	if !IsNil(o.Reachability) {
 		toSerialize["reachability"] = o.Reachability
 	}
-	if !isNil(o.CommFailure) {
+	if !IsNil(o.CommFailure) {
 		toSerialize["commFailure"] = o.CommFailure
 	}
-	if !isNil(o.LossOfConnectReason) {
+	if !IsNil(o.LossOfConnectReason) {
 		toSerialize["lossOfConnectReason"] = o.LossOfConnectReason
 	}
-	if !isNil(o.NumberOfUes) {
+	if !IsNil(o.NumberOfUes) {
 		toSerialize["numberOfUes"] = o.NumberOfUes
 	}
-	if !isNil(o.Var5gsUserStateList) {
+	if !IsNil(o.Var5gsUserStateList) {
 		toSerialize["5gsUserStateList"] = o.Var5gsUserStateList
 	}
-	if !isNil(o.TypeCode) {
+	if !IsNil(o.TypeCode) {
 		toSerialize["typeCode"] = o.TypeCode
 	}
-	if !isNil(o.RegistrationNumber) {
+	if !IsNil(o.RegistrationNumber) {
 		toSerialize["registrationNumber"] = o.RegistrationNumber
 	}
-	if !isNil(o.MaxAvailabilityTime) {
+	if !IsNil(o.MaxAvailabilityTime) {
 		toSerialize["maxAvailabilityTime"] = o.MaxAvailabilityTime
 	}
-	if !isNil(o.UeIdExt) {
+	if !IsNil(o.UeIdExt) {
 		toSerialize["ueIdExt"] = o.UeIdExt
 	}
-	if !isNil(o.SnssaiTaiList) {
+	if !IsNil(o.SnssaiTaiList) {
 		toSerialize["snssaiTaiList"] = o.SnssaiTaiList
 	}
-	if !isNil(o.IdleStatusIndication) {
+	if !IsNil(o.IdleStatusIndication) {
 		toSerialize["idleStatusIndication"] = o.IdleStatusIndication
 	}
-	if !isNil(o.UeAccessBehaviorTrends) {
+	if !IsNil(o.UeAccessBehaviorTrends) {
 		toSerialize["ueAccessBehaviorTrends"] = o.UeAccessBehaviorTrends
 	}
-	if !isNil(o.UeLocationTrends) {
+	if !IsNil(o.UeLocationTrends) {
 		toSerialize["ueLocationTrends"] = o.UeLocationTrends
 	}
-	if !isNil(o.MmTransLocationReportList) {
+	if !IsNil(o.MmTransLocationReportList) {
 		toSerialize["mmTransLocationReportList"] = o.MmTransLocationReportList
 	}
-	if !isNil(o.MmTransSliceReportList) {
+	if !IsNil(o.MmTransSliceReportList) {
 		toSerialize["mmTransSliceReportList"] = o.MmTransSliceReportList
 	}
-	if !isNil(o.TermReason) {
+	if !IsNil(o.TermReason) {
 		toSerialize["termReason"] = o.TermReason
 	}
 	return toSerialize, nil
@@ -1219,5 +1219,3 @@ func (v *NullableAmfEventReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Npcf_UEPolicyControl
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualUEPolicyAssociationDocumentApiService IndividualUEPolicyAssociationDocumentApi service
 type IndividualUEPolicyAssociationDocumentApiService service
 
 type ApiDeleteIndividualUEPolicyAssociationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualUEPolicyAssociationDocumentApiService
-	polAssoId string
+	polAssoId  string
 }
 
 func (r ApiDeleteIndividualUEPolicyAssociationRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteIndividualUEPolicyAssociationRequest) Execute() (*http.Response
 /*
 DeleteIndividualUEPolicyAssociation Delete individual UE policy association.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param polAssoId Identifier of a policy association
- @return ApiDeleteIndividualUEPolicyAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param polAssoId Identifier of a policy association
+	@return ApiDeleteIndividualUEPolicyAssociationRequest
 */
 func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPolicyAssociation(ctx context.Context, polAssoId string) ApiDeleteIndividualUEPolicyAssociationRequest {
 	return ApiDeleteIndividualUEPolicyAssociationRequest{
 		ApiService: a,
-		ctx: ctx,
-		polAssoId: polAssoId,
+		ctx:        ctx,
+		polAssoId:  polAssoId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPolicyAssociationExecute(r ApiDeleteIndividualUEPolicyAssociationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUEPolicyAssociationDocumentApiService.DeleteIndividualUEPolicyAssociation")
@@ -95,9 +94,9 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,9 +223,9 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) DeleteIndividualUEPoli
 }
 
 type ApiReadIndividualUEPolicyAssociationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualUEPolicyAssociationDocumentApiService
-	polAssoId string
+	polAssoId  string
 }
 
 func (r ApiReadIndividualUEPolicyAssociationRequest) Execute() (*PolicyAssociation, *http.Response, error) {
@@ -236,26 +235,27 @@ func (r ApiReadIndividualUEPolicyAssociationRequest) Execute() (*PolicyAssociati
 /*
 ReadIndividualUEPolicyAssociation Read individual UE policy association.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param polAssoId Identifier of a policy association
- @return ApiReadIndividualUEPolicyAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param polAssoId Identifier of a policy association
+	@return ApiReadIndividualUEPolicyAssociationRequest
 */
 func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicyAssociation(ctx context.Context, polAssoId string) ApiReadIndividualUEPolicyAssociationRequest {
 	return ApiReadIndividualUEPolicyAssociationRequest{
 		ApiService: a,
-		ctx: ctx,
-		polAssoId: polAssoId,
+		ctx:        ctx,
+		polAssoId:  polAssoId,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyAssociation
+//
+//	@return PolicyAssociation
 func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicyAssociationExecute(r ApiReadIndividualUEPolicyAssociationRequest) (*PolicyAssociation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyAssociation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyAssociation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUEPolicyAssociationDocumentApiService.ReadIndividualUEPolicyAssociation")
@@ -297,9 +297,9 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -316,8 +316,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -327,8 +327,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -338,8 +338,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -349,8 +349,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -360,8 +360,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -371,8 +371,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -382,8 +382,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -393,8 +393,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -404,8 +404,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -415,8 +415,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -435,9 +435,9 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReadIndividualUEPolicy
 }
 
 type ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest struct {
-	ctx context.Context
-	ApiService *IndividualUEPolicyAssociationDocumentApiService
-	polAssoId string
+	ctx                            context.Context
+	ApiService                     *IndividualUEPolicyAssociationDocumentApiService
+	polAssoId                      string
 	policyAssociationUpdateRequest *PolicyAssociationUpdateRequest
 }
 
@@ -451,28 +451,29 @@ func (r ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest) E
 }
 
 /*
-ReportObservedEventTriggersForIndividualUEPolicyAssociation Report observed event triggers and possibly obtain updated policies for an individual UE policy association. 
+ReportObservedEventTriggersForIndividualUEPolicyAssociation Report observed event triggers and possibly obtain updated policies for an individual UE policy association.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param polAssoId Identifier of a policy association
- @return ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param polAssoId Identifier of a policy association
+	@return ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest
 */
 func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTriggersForIndividualUEPolicyAssociation(ctx context.Context, polAssoId string) ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest {
 	return ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest{
 		ApiService: a,
-		ctx: ctx,
-		polAssoId: polAssoId,
+		ctx:        ctx,
+		polAssoId:  polAssoId,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyUpdate
+//
+//	@return PolicyUpdate
 func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTriggersForIndividualUEPolicyAssociationExecute(r ApiReportObservedEventTriggersForIndividualUEPolicyAssociationRequest) (*PolicyUpdate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyUpdate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyUpdate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUEPolicyAssociationDocumentApiService.ReportObservedEventTriggersForIndividualUEPolicyAssociation")
@@ -519,9 +520,9 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -538,8 +539,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -549,8 +550,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -560,8 +561,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -571,8 +572,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -582,8 +583,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -593,8 +594,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -604,8 +605,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -615,8 +616,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -626,8 +627,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -637,8 +638,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -648,8 +649,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -659,8 +660,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -670,8 +671,8 @@ func (a *IndividualUEPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

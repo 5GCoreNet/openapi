@@ -21,21 +21,21 @@ type SupportedDataSet string
 // List of SupportedDataSet
 const (
 	SUBSCRIPTION SupportedDataSet = "SUBSCRIPTION"
-	POLICY SupportedDataSet = "POLICY"
-	EXPOSURE SupportedDataSet = "EXPOSURE"
-	APPLICATION SupportedDataSet = "APPLICATION"
-	A_PFD SupportedDataSet = "A_PFD"
-	A_AFTI SupportedDataSet = "A_AFTI"
-	A_IPTV SupportedDataSet = "A_IPTV"
-	A_BDT SupportedDataSet = "A_BDT"
-	A_SPD SupportedDataSet = "A_SPD"
-	A_EASD SupportedDataSet = "A_EASD"
-	A_AMI SupportedDataSet = "A_AMI"
-	P_UE SupportedDataSet = "P_UE"
-	P_SCD SupportedDataSet = "P_SCD"
-	P_BDT SupportedDataSet = "P_BDT"
-	P_PLMNUE SupportedDataSet = "P_PLMNUE"
-	P_NSSCD SupportedDataSet = "P_NSSCD"
+	POLICY       SupportedDataSet = "POLICY"
+	EXPOSURE     SupportedDataSet = "EXPOSURE"
+	APPLICATION  SupportedDataSet = "APPLICATION"
+	A_PFD        SupportedDataSet = "A_PFD"
+	A_AFTI       SupportedDataSet = "A_AFTI"
+	A_IPTV       SupportedDataSet = "A_IPTV"
+	A_BDT        SupportedDataSet = "A_BDT"
+	A_SPD        SupportedDataSet = "A_SPD"
+	A_EASD       SupportedDataSet = "A_EASD"
+	A_AMI        SupportedDataSet = "A_AMI"
+	P_UE         SupportedDataSet = "P_UE"
+	P_SCD        SupportedDataSet = "P_SCD"
+	P_BDT        SupportedDataSet = "P_BDT"
+	P_PLMNUE     SupportedDataSet = "P_PLMNUE"
+	P_NSSCD      SupportedDataSet = "P_NSSCD"
 )
 
 // All allowed values of SupportedDataSet enum
@@ -136,4 +136,3 @@ func (v *NullableSupportedDataSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

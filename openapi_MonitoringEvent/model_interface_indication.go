@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// InterfaceIndication Possible values are - EXPOSURE_FUNCTION: SCEF is used for the PDN connection towards the SCS/AS. - PDN_GATEWAY: PDN gateway is used for the PDN connection towards the SCS/AS. 
+// InterfaceIndication Possible values are - EXPOSURE_FUNCTION: SCEF is used for the PDN connection towards the SCS/AS. - PDN_GATEWAY: PDN gateway is used for the PDN connection towards the SCS/AS.
 type InterfaceIndication struct {
-	InterfaceIndicationAnyOf *InterfaceIndicationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *InterfaceIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InterfaceIndicationAnyOf
-	err = json.Unmarshal(data, &dst.InterfaceIndicationAnyOf);
-	if err == nil {
-		jsonInterfaceIndicationAnyOf, _ := json.Marshal(dst.InterfaceIndicationAnyOf)
-		if string(jsonInterfaceIndicationAnyOf) == "{}" { // empty struct
-			dst.InterfaceIndicationAnyOf = nil
-		} else {
-			return nil // data stored in dst.InterfaceIndicationAnyOf, return on the first match
-		}
-	} else {
-		dst.InterfaceIndicationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *InterfaceIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *InterfaceIndication) MarshalJSON() ([]byte, error) {
-	if src.InterfaceIndicationAnyOf != nil {
-		return json.Marshal(&src.InterfaceIndicationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableInterfaceIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

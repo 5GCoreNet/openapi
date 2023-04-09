@@ -1,7 +1,7 @@
 /*
 3gpp-bdt
 
-API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -26,8 +26,8 @@ type TransferPolicy struct {
 	// integer indicating a bandwidth in bits per second.
 	MaxDownlinkBandwidth *int32 `json:"maxDownlinkBandwidth,omitempty"`
 	// Indicates the rating group during the time window.
-	RatingGroup int32 `json:"ratingGroup"`
-	TimeWindow TimeWindow `json:"timeWindow"`
+	RatingGroup int32      `json:"ratingGroup"`
+	TimeWindow  TimeWindow `json:"timeWindow"`
 }
 
 // NewTransferPolicy instantiates a new TransferPolicy object
@@ -76,7 +76,7 @@ func (o *TransferPolicy) SetBdtPolicyId(v int32) {
 
 // GetMaxUplinkBandwidth returns the MaxUplinkBandwidth field value if set, zero value otherwise.
 func (o *TransferPolicy) GetMaxUplinkBandwidth() int32 {
-	if o == nil || isNil(o.MaxUplinkBandwidth) {
+	if o == nil || IsNil(o.MaxUplinkBandwidth) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *TransferPolicy) GetMaxUplinkBandwidth() int32 {
 // GetMaxUplinkBandwidthOk returns a tuple with the MaxUplinkBandwidth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferPolicy) GetMaxUplinkBandwidthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxUplinkBandwidth) {
+	if o == nil || IsNil(o.MaxUplinkBandwidth) {
 		return nil, false
 	}
 	return o.MaxUplinkBandwidth, true
@@ -94,7 +94,7 @@ func (o *TransferPolicy) GetMaxUplinkBandwidthOk() (*int32, bool) {
 
 // HasMaxUplinkBandwidth returns a boolean if a field has been set.
 func (o *TransferPolicy) HasMaxUplinkBandwidth() bool {
-	if o != nil && !isNil(o.MaxUplinkBandwidth) {
+	if o != nil && !IsNil(o.MaxUplinkBandwidth) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *TransferPolicy) SetMaxUplinkBandwidth(v int32) {
 
 // GetMaxDownlinkBandwidth returns the MaxDownlinkBandwidth field value if set, zero value otherwise.
 func (o *TransferPolicy) GetMaxDownlinkBandwidth() int32 {
-	if o == nil || isNil(o.MaxDownlinkBandwidth) {
+	if o == nil || IsNil(o.MaxDownlinkBandwidth) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *TransferPolicy) GetMaxDownlinkBandwidth() int32 {
 // GetMaxDownlinkBandwidthOk returns a tuple with the MaxDownlinkBandwidth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferPolicy) GetMaxDownlinkBandwidthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxDownlinkBandwidth) {
+	if o == nil || IsNil(o.MaxDownlinkBandwidth) {
 		return nil, false
 	}
 	return o.MaxDownlinkBandwidth, true
@@ -126,7 +126,7 @@ func (o *TransferPolicy) GetMaxDownlinkBandwidthOk() (*int32, bool) {
 
 // HasMaxDownlinkBandwidth returns a boolean if a field has been set.
 func (o *TransferPolicy) HasMaxDownlinkBandwidth() bool {
-	if o != nil && !isNil(o.MaxDownlinkBandwidth) {
+	if o != nil && !IsNil(o.MaxDownlinkBandwidth) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *TransferPolicy) SetTimeWindow(v TimeWindow) {
 }
 
 func (o TransferPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -197,10 +197,10 @@ func (o TransferPolicy) MarshalJSON() ([]byte, error) {
 func (o TransferPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bdtPolicyId"] = o.BdtPolicyId
-	if !isNil(o.MaxUplinkBandwidth) {
+	if !IsNil(o.MaxUplinkBandwidth) {
 		toSerialize["maxUplinkBandwidth"] = o.MaxUplinkBandwidth
 	}
-	if !isNil(o.MaxDownlinkBandwidth) {
+	if !IsNil(o.MaxDownlinkBandwidth) {
 		toSerialize["maxDownlinkBandwidth"] = o.MaxDownlinkBandwidth
 	}
 	toSerialize["ratingGroup"] = o.RatingGroup
@@ -243,5 +243,3 @@ func (v *NullableTransferPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

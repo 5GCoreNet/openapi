@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,20 +13,19 @@ package openapi_MonitoringEvent
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualMonitoringEventSubscriptionApiService IndividualMonitoringEventSubscriptionApi service
 type IndividualMonitoringEventSubscriptionApiService service
 
 type ApiDeleteIndMonitoringEventSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMonitoringEventSubscriptionApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualMonitoringEventSubscriptionApiService
+	scsAsId        string
 	subscriptionId string
 }
 
@@ -37,28 +36,29 @@ func (r ApiDeleteIndMonitoringEventSubscriptionRequest) Execute() ([]MonitoringE
 /*
 DeleteIndMonitoringEventSubscription Deletes an already existing monitoring event subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param subscriptionId Identifier of the subscription resource
- @return ApiDeleteIndMonitoringEventSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param subscriptionId Identifier of the subscription resource
+	@return ApiDeleteIndMonitoringEventSubscriptionRequest
 */
 func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEventSubscription(ctx context.Context, scsAsId string, subscriptionId string) ApiDeleteIndMonitoringEventSubscriptionRequest {
 	return ApiDeleteIndMonitoringEventSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return []MonitoringEventReport
+//
+//	@return []MonitoringEventReport
 func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEventSubscriptionExecute(r ApiDeleteIndMonitoringEventSubscriptionRequest) ([]MonitoringEventReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []MonitoringEventReport
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []MonitoringEventReport
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMonitoringEventSubscriptionApiService.DeleteIndMonitoringEventSubscription")
@@ -101,9 +101,9 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -120,8 +120,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -131,8 +131,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -142,8 +142,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -153,8 +153,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -164,8 +164,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -175,8 +175,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -186,8 +186,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -206,9 +206,9 @@ func (a *IndividualMonitoringEventSubscriptionApiService) DeleteIndMonitoringEve
 }
 
 type ApiFetchIndMonitoringEventSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMonitoringEventSubscriptionApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualMonitoringEventSubscriptionApiService
+	scsAsId        string
 	subscriptionId string
 }
 
@@ -219,28 +219,29 @@ func (r ApiFetchIndMonitoringEventSubscriptionRequest) Execute() (*MonitoringEve
 /*
 FetchIndMonitoringEventSubscription Read an active subscriptions for the SCS/AS and the subscription Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param subscriptionId Identifier of the subscription resource
- @return ApiFetchIndMonitoringEventSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param subscriptionId Identifier of the subscription resource
+	@return ApiFetchIndMonitoringEventSubscriptionRequest
 */
 func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEventSubscription(ctx context.Context, scsAsId string, subscriptionId string) ApiFetchIndMonitoringEventSubscriptionRequest {
 	return ApiFetchIndMonitoringEventSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return MonitoringEventSubscription
+//
+//	@return MonitoringEventSubscription
 func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEventSubscriptionExecute(r ApiFetchIndMonitoringEventSubscriptionRequest) (*MonitoringEventSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MonitoringEventSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MonitoringEventSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMonitoringEventSubscriptionApiService.FetchIndMonitoringEventSubscription")
@@ -283,9 +284,9 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -302,8 +303,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -313,8 +314,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -324,8 +325,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -335,8 +336,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -346,8 +347,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -357,8 +358,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -368,8 +369,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -379,8 +380,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -399,11 +400,11 @@ func (a *IndividualMonitoringEventSubscriptionApiService) FetchIndMonitoringEven
 }
 
 type ApiModifyIndMonitoringEventSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMonitoringEventSubscriptionApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualMonitoringEventSubscriptionApiService
+	scsAsId        string
 	subscriptionId string
-	patchItem *[]PatchItem
+	patchItem      *[]PatchItem
 }
 
 // This is used for PATCH request for partial cancellation and/or partial addition of certain UE(s) within an active group.
@@ -419,16 +420,16 @@ func (r ApiModifyIndMonitoringEventSubscriptionRequest) Execute() (*http.Respons
 /*
 ModifyIndMonitoringEventSubscription Modifies an existing subscription of monitoring event.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS.
- @param subscriptionId Identifier of the subscription resource.
- @return ApiModifyIndMonitoringEventSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS.
+	@param subscriptionId Identifier of the subscription resource.
+	@return ApiModifyIndMonitoringEventSubscriptionRequest
 */
 func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEventSubscription(ctx context.Context, scsAsId string, subscriptionId string) ApiModifyIndMonitoringEventSubscriptionRequest {
 	return ApiModifyIndMonitoringEventSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -436,9 +437,9 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 // Execute executes the request
 func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEventSubscriptionExecute(r ApiModifyIndMonitoringEventSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMonitoringEventSubscriptionApiService.ModifyIndMonitoringEventSubscription")
@@ -489,9 +490,9 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -508,8 +509,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -519,8 +520,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -530,8 +531,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -541,8 +542,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -552,8 +553,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -563,8 +564,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -574,8 +575,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -585,8 +586,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -596,8 +597,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -607,8 +608,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -618,10 +619,10 @@ func (a *IndividualMonitoringEventSubscriptionApiService) ModifyIndMonitoringEve
 }
 
 type ApiUpdateIndMonitoringEventSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMonitoringEventSubscriptionApiService
-	scsAsId string
-	subscriptionId string
+	ctx                         context.Context
+	ApiService                  *IndividualMonitoringEventSubscriptionApiService
+	scsAsId                     string
+	subscriptionId              string
 	monitoringEventSubscription *MonitoringEventSubscription
 }
 
@@ -638,28 +639,29 @@ func (r ApiUpdateIndMonitoringEventSubscriptionRequest) Execute() (*MonitoringEv
 /*
 UpdateIndMonitoringEventSubscription Updates/replaces an existing subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param subscriptionId Identifier of the subscription resource
- @return ApiUpdateIndMonitoringEventSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param subscriptionId Identifier of the subscription resource
+	@return ApiUpdateIndMonitoringEventSubscriptionRequest
 */
 func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEventSubscription(ctx context.Context, scsAsId string, subscriptionId string) ApiUpdateIndMonitoringEventSubscriptionRequest {
 	return ApiUpdateIndMonitoringEventSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return MonitoringEventSubscription
+//
+//	@return MonitoringEventSubscription
 func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEventSubscriptionExecute(r ApiUpdateIndMonitoringEventSubscriptionRequest) (*MonitoringEventSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MonitoringEventSubscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MonitoringEventSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMonitoringEventSubscriptionApiService.UpdateIndMonitoringEventSubscription")
@@ -707,9 +709,9 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -726,8 +728,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -737,8 +739,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -748,8 +750,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -759,8 +761,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -770,8 +772,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -781,8 +783,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -792,8 +794,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -803,8 +805,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -814,8 +816,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -825,8 +827,8 @@ func (a *IndividualMonitoringEventSubscriptionApiService) UpdateIndMonitoringEve
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 3gpp-device-triggering
 
-API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,20 +13,19 @@ package openapi_DeviceTriggering
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualDeviceTriggeringTransactionApiService IndividualDeviceTriggeringTransactionApi service
 type IndividualDeviceTriggeringTransactionApiService service
 
 type ApiDeleteIndDeviceTriggeringTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualDeviceTriggeringTransactionApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualDeviceTriggeringTransactionApiService
+	scsAsId       string
 	transactionId string
 }
 
@@ -37,28 +36,29 @@ func (r ApiDeleteIndDeviceTriggeringTransactionRequest) Execute() (*DeviceTrigge
 /*
 DeleteIndDeviceTriggeringTransaction Deletes an already existing device triggering transaction.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param transactionId Identifier of the transaction resource
- @return ApiDeleteIndDeviceTriggeringTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param transactionId Identifier of the transaction resource
+	@return ApiDeleteIndDeviceTriggeringTransactionRequest
 */
 func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTriggeringTransaction(ctx context.Context, scsAsId string, transactionId string) ApiDeleteIndDeviceTriggeringTransactionRequest {
 	return ApiDeleteIndDeviceTriggeringTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceTriggering
+//
+//	@return DeviceTriggering
 func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTriggeringTransactionExecute(r ApiDeleteIndDeviceTriggeringTransactionRequest) (*DeviceTriggering, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceTriggering
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceTriggering
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualDeviceTriggeringTransactionApiService.DeleteIndDeviceTriggeringTransaction")
@@ -101,9 +101,9 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -120,8 +120,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -131,8 +131,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -142,8 +142,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -153,8 +153,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -164,8 +164,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -175,8 +175,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -186,8 +186,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -206,9 +206,9 @@ func (a *IndividualDeviceTriggeringTransactionApiService) DeleteIndDeviceTrigger
 }
 
 type ApiFetchIndDeviceTriggeringTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualDeviceTriggeringTransactionApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualDeviceTriggeringTransactionApiService
+	scsAsId       string
 	transactionId string
 }
 
@@ -219,28 +219,29 @@ func (r ApiFetchIndDeviceTriggeringTransactionRequest) Execute() (*DeviceTrigger
 /*
 FetchIndDeviceTriggeringTransaction Read a device triggering transaction resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param transactionId Identifier of the transaction resource
- @return ApiFetchIndDeviceTriggeringTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param transactionId Identifier of the transaction resource
+	@return ApiFetchIndDeviceTriggeringTransactionRequest
 */
 func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeringTransaction(ctx context.Context, scsAsId string, transactionId string) ApiFetchIndDeviceTriggeringTransactionRequest {
 	return ApiFetchIndDeviceTriggeringTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceTriggering
+//
+//	@return DeviceTriggering
 func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeringTransactionExecute(r ApiFetchIndDeviceTriggeringTransactionRequest) (*DeviceTriggering, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceTriggering
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceTriggering
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualDeviceTriggeringTransactionApiService.FetchIndDeviceTriggeringTransaction")
@@ -283,9 +284,9 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -302,8 +303,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -313,8 +314,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -324,8 +325,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -335,8 +336,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -346,8 +347,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -357,8 +358,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -368,8 +369,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -379,8 +380,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -399,10 +400,10 @@ func (a *IndividualDeviceTriggeringTransactionApiService) FetchIndDeviceTriggeri
 }
 
 type ApiModifyIndDeviceTriggeringTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualDeviceTriggeringTransactionApiService
-	scsAsId string
-	transactionId string
+	ctx                   context.Context
+	ApiService            *IndividualDeviceTriggeringTransactionApiService
+	scsAsId               string
+	transactionId         string
 	deviceTriggeringPatch *DeviceTriggeringPatch
 }
 
@@ -419,28 +420,29 @@ func (r ApiModifyIndDeviceTriggeringTransactionRequest) Execute() (*DeviceTrigge
 /*
 ModifyIndDeviceTriggeringTransaction Modify an existing Individual Device Triggering Transaction resource and the corresponding device triggering request.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param transactionId Identifier of the transaction resource
- @return ApiModifyIndDeviceTriggeringTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param transactionId Identifier of the transaction resource
+	@return ApiModifyIndDeviceTriggeringTransactionRequest
 */
 func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTriggeringTransaction(ctx context.Context, scsAsId string, transactionId string) ApiModifyIndDeviceTriggeringTransactionRequest {
 	return ApiModifyIndDeviceTriggeringTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceTriggering
+//
+//	@return DeviceTriggering
 func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTriggeringTransactionExecute(r ApiModifyIndDeviceTriggeringTransactionRequest) (*DeviceTriggering, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceTriggering
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceTriggering
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualDeviceTriggeringTransactionApiService.ModifyIndDeviceTriggeringTransaction")
@@ -488,9 +490,9 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -507,8 +509,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -518,8 +520,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -529,8 +531,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -540,8 +542,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -551,8 +553,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -562,8 +564,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -573,8 +575,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -584,8 +586,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -595,8 +597,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -606,8 +608,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -626,10 +628,10 @@ func (a *IndividualDeviceTriggeringTransactionApiService) ModifyIndDeviceTrigger
 }
 
 type ApiUpdateIndDeviceTriggeringTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualDeviceTriggeringTransactionApiService
-	scsAsId string
-	transactionId string
+	ctx              context.Context
+	ApiService       *IndividualDeviceTriggeringTransactionApiService
+	scsAsId          string
+	transactionId    string
 	deviceTriggering *DeviceTriggering
 }
 
@@ -646,28 +648,29 @@ func (r ApiUpdateIndDeviceTriggeringTransactionRequest) Execute() (*DeviceTrigge
 /*
 UpdateIndDeviceTriggeringTransaction Replace an existing device triggering transaction resource and the corresponding device trigger request.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @param transactionId Identifier of the transaction resource
- @return ApiUpdateIndDeviceTriggeringTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@param transactionId Identifier of the transaction resource
+	@return ApiUpdateIndDeviceTriggeringTransactionRequest
 */
 func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTriggeringTransaction(ctx context.Context, scsAsId string, transactionId string) ApiUpdateIndDeviceTriggeringTransactionRequest {
 	return ApiUpdateIndDeviceTriggeringTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceTriggering
+//
+//	@return DeviceTriggering
 func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTriggeringTransactionExecute(r ApiUpdateIndDeviceTriggeringTransactionRequest) (*DeviceTriggering, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceTriggering
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceTriggering
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualDeviceTriggeringTransactionApiService.UpdateIndDeviceTriggeringTransaction")
@@ -715,9 +718,9 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -734,8 +737,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -745,8 +748,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -756,8 +759,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -767,8 +770,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -778,8 +781,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -789,8 +792,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -800,8 +803,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -811,8 +814,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -822,8 +825,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -833,8 +836,8 @@ func (a *IndividualDeviceTriggeringTransactionApiService) UpdateIndDeviceTrigger
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

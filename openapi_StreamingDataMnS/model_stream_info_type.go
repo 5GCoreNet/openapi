@@ -19,10 +19,10 @@ var _ MappedNullable = &StreamInfoType{}
 
 // StreamInfoType Reporting stream meta-data.
 type StreamInfoType struct {
-	StreamType StreamTypeType `json:"streamType"`
-	SerializationFormat SerializationFormatType `json:"serializationFormat"`
-	StreamId StreamInfoTypeStreamId `json:"streamId"`
-	AdditionalInfo *StreamInfoTypeAdditionalInfo `json:"additionalInfo,omitempty"`
+	StreamType          StreamTypeType                `json:"streamType"`
+	SerializationFormat SerializationFormatType       `json:"serializationFormat"`
+	StreamId            StreamInfoTypeStreamId        `json:"streamId"`
+	AdditionalInfo      *StreamInfoTypeAdditionalInfo `json:"additionalInfo,omitempty"`
 }
 
 // NewStreamInfoType instantiates a new StreamInfoType object
@@ -119,7 +119,7 @@ func (o *StreamInfoType) SetStreamId(v StreamInfoTypeStreamId) {
 
 // GetAdditionalInfo returns the AdditionalInfo field value if set, zero value otherwise.
 func (o *StreamInfoType) GetAdditionalInfo() StreamInfoTypeAdditionalInfo {
-	if o == nil || isNil(o.AdditionalInfo) {
+	if o == nil || IsNil(o.AdditionalInfo) {
 		var ret StreamInfoTypeAdditionalInfo
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *StreamInfoType) GetAdditionalInfo() StreamInfoTypeAdditionalInfo {
 // GetAdditionalInfoOk returns a tuple with the AdditionalInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StreamInfoType) GetAdditionalInfoOk() (*StreamInfoTypeAdditionalInfo, bool) {
-	if o == nil || isNil(o.AdditionalInfo) {
+	if o == nil || IsNil(o.AdditionalInfo) {
 		return nil, false
 	}
 	return o.AdditionalInfo, true
@@ -137,7 +137,7 @@ func (o *StreamInfoType) GetAdditionalInfoOk() (*StreamInfoTypeAdditionalInfo, b
 
 // HasAdditionalInfo returns a boolean if a field has been set.
 func (o *StreamInfoType) HasAdditionalInfo() bool {
-	if o != nil && !isNil(o.AdditionalInfo) {
+	if o != nil && !IsNil(o.AdditionalInfo) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *StreamInfoType) SetAdditionalInfo(v StreamInfoTypeAdditionalInfo) {
 }
 
 func (o StreamInfoType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,7 +162,7 @@ func (o StreamInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize["streamType"] = o.StreamType
 	toSerialize["serializationFormat"] = o.SerializationFormat
 	toSerialize["streamId"] = o.StreamId
-	if !isNil(o.AdditionalInfo) {
+	if !IsNil(o.AdditionalInfo) {
 		toSerialize["additionalInfo"] = o.AdditionalInfo
 	}
 	return toSerialize, nil
@@ -203,5 +203,3 @@ func (v *NullableStreamInfoType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

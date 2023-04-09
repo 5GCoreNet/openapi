@@ -1,7 +1,7 @@
 /*
 3gpp-eas-deployment
 
-API for AF provisioned EAS Deployment.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF provisioned EAS Deployment.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -13,20 +13,19 @@ package openapi_EASDeployment
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualEASDeploymentInformationApiService IndividualEASDeploymentInformationApi service
 type IndividualEASDeploymentInformationApiService service
 
 type ApiDeleteAnDeploymentRequest struct {
-	ctx context.Context
-	ApiService *IndividualEASDeploymentInformationApiService
-	afId string
+	ctx             context.Context
+	ApiService      *IndividualEASDeploymentInformationApiService
+	afId            string
 	easDeployInfoId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteAnDeploymentRequest) Execute() (*http.Response, error) {
 /*
 DeleteAnDeployment Deletes an already existing EAS Deployment information resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param easDeployInfoId Identifier of the EAS Deployment information resource
- @return ApiDeleteAnDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param easDeployInfoId Identifier of the EAS Deployment information resource
+	@return ApiDeleteAnDeploymentRequest
 */
 func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeployment(ctx context.Context, afId string, easDeployInfoId string) ApiDeleteAnDeploymentRequest {
 	return ApiDeleteAnDeploymentRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		easDeployInfoId: easDeployInfoId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeployment(ctx co
 // Execute executes the request
 func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute(r ApiDeleteAnDeploymentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualEASDeploymentInformationApiService.DeleteAnDeployment")
@@ -99,9 +98,9 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,11 +194,11 @@ func (a *IndividualEASDeploymentInformationApiService) DeleteAnDeploymentExecute
 }
 
 type ApiFullyUpdateAnDeploymentRequest struct {
-	ctx context.Context
-	ApiService *IndividualEASDeploymentInformationApiService
-	afId string
+	ctx             context.Context
+	ApiService      *IndividualEASDeploymentInformationApiService
+	afId            string
 	easDeployInfoId string
-	easDeployInfo *EasDeployInfo
+	easDeployInfo   *EasDeployInfo
 }
 
 // Parameters to update/replace the existing resource
@@ -215,28 +214,29 @@ func (r ApiFullyUpdateAnDeploymentRequest) Execute() (*EasDeployInfo, *http.Resp
 /*
 FullyUpdateAnDeployment Fully updates/replaces an existing resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param easDeployInfoId Identifier of the EAS Deployment information resource
- @return ApiFullyUpdateAnDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param easDeployInfoId Identifier of the EAS Deployment information resource
+	@return ApiFullyUpdateAnDeploymentRequest
 */
 func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeployment(ctx context.Context, afId string, easDeployInfoId string) ApiFullyUpdateAnDeploymentRequest {
 	return ApiFullyUpdateAnDeploymentRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		easDeployInfoId: easDeployInfoId,
 	}
 }
 
 // Execute executes the request
-//  @return EasDeployInfo
+//
+//	@return EasDeployInfo
 func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentExecute(r ApiFullyUpdateAnDeploymentRequest) (*EasDeployInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EasDeployInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EasDeployInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualEASDeploymentInformationApiService.FullyUpdateAnDeployment")
@@ -284,9 +284,9 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -303,8 +303,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -314,8 +314,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -325,8 +325,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -336,8 +336,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -347,8 +347,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -358,8 +358,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -369,8 +369,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -422,9 +422,9 @@ func (a *IndividualEASDeploymentInformationApiService) FullyUpdateAnDeploymentEx
 }
 
 type ApiReadAnDeploymentRequest struct {
-	ctx context.Context
-	ApiService *IndividualEASDeploymentInformationApiService
-	afId string
+	ctx             context.Context
+	ApiService      *IndividualEASDeploymentInformationApiService
+	afId            string
 	easDeployInfoId string
 }
 
@@ -435,28 +435,29 @@ func (r ApiReadAnDeploymentRequest) Execute() (*EasDeployInfo, *http.Response, e
 /*
 ReadAnDeployment Read an active Individual EAS Deployment Information resource for the AF
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param easDeployInfoId Identifier of an EAS Deployment Information.
- @return ApiReadAnDeploymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param easDeployInfoId Identifier of an EAS Deployment Information.
+	@return ApiReadAnDeploymentRequest
 */
 func (a *IndividualEASDeploymentInformationApiService) ReadAnDeployment(ctx context.Context, afId string, easDeployInfoId string) ApiReadAnDeploymentRequest {
 	return ApiReadAnDeploymentRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		easDeployInfoId: easDeployInfoId,
 	}
 }
 
 // Execute executes the request
-//  @return EasDeployInfo
+//
+//	@return EasDeployInfo
 func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r ApiReadAnDeploymentRequest) (*EasDeployInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EasDeployInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EasDeployInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualEASDeploymentInformationApiService.ReadAnDeployment")
@@ -499,9 +500,9 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,8 +519,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -529,8 +530,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -540,8 +541,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -551,8 +552,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -562,8 +563,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -573,8 +574,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -584,8 +585,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -595,8 +596,8 @@ func (a *IndividualEASDeploymentInformationApiService) ReadAnDeploymentExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &EcsOption{}
 
 // EcsOption ECS Option Information
 type EcsOption struct {
-	SourcePrefixLength int32 `json:"sourcePrefixLength"`
-	ScopePrefixLength *int32 `json:"scopePrefixLength,omitempty"`
-	IpAddr IpAddr `json:"ipAddr"`
+	SourcePrefixLength int32  `json:"sourcePrefixLength"`
+	ScopePrefixLength  *int32 `json:"scopePrefixLength,omitempty"`
+	IpAddr             IpAddr `json:"ipAddr"`
 }
 
 // NewEcsOption instantiates a new EcsOption object
@@ -69,7 +69,7 @@ func (o *EcsOption) SetSourcePrefixLength(v int32) {
 
 // GetScopePrefixLength returns the ScopePrefixLength field value if set, zero value otherwise.
 func (o *EcsOption) GetScopePrefixLength() int32 {
-	if o == nil || isNil(o.ScopePrefixLength) {
+	if o == nil || IsNil(o.ScopePrefixLength) {
 		var ret int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EcsOption) GetScopePrefixLength() int32 {
 // GetScopePrefixLengthOk returns a tuple with the ScopePrefixLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsOption) GetScopePrefixLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.ScopePrefixLength) {
+	if o == nil || IsNil(o.ScopePrefixLength) {
 		return nil, false
 	}
 	return o.ScopePrefixLength, true
@@ -87,7 +87,7 @@ func (o *EcsOption) GetScopePrefixLengthOk() (*int32, bool) {
 
 // HasScopePrefixLength returns a boolean if a field has been set.
 func (o *EcsOption) HasScopePrefixLength() bool {
-	if o != nil && !isNil(o.ScopePrefixLength) {
+	if o != nil && !IsNil(o.ScopePrefixLength) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *EcsOption) SetIpAddr(v IpAddr) {
 }
 
 func (o EcsOption) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -134,7 +134,7 @@ func (o EcsOption) MarshalJSON() ([]byte, error) {
 func (o EcsOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sourcePrefixLength"] = o.SourcePrefixLength
-	if !isNil(o.ScopePrefixLength) {
+	if !IsNil(o.ScopePrefixLength) {
 		toSerialize["scopePrefixLength"] = o.ScopePrefixLength
 	}
 	toSerialize["ipAddr"] = o.IpAddr
@@ -176,5 +176,3 @@ func (v *NullableEcsOption) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

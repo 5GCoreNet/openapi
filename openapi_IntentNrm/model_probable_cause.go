@@ -17,14 +17,14 @@ import (
 
 // ProbableCause - The value of the probable cause may be a specific standardized string, or any vendor provided string. Probable cause strings are not standardized in the present document. They may be added in a future version. Up to then the mapping of the generic probable cause strings \"PROBABLE_CAUSE_001\" to \"PROBABLE_CAUSE_005\" is vendor specific. The value of the probable cause may also be an integer. The mapping of integer values to probable causes is vendor specific.
 type ProbableCause struct {
-	AnyOfstringstring *AnyOfstringstring
-	Int32 *int32
+	ProbableCauseOneOf *ProbableCauseOneOf
+	Int32              *int32
 }
 
-// AnyOfstringstringAsProbableCause is a convenience function that returns AnyOfstringstring wrapped in ProbableCause
-func AnyOfstringstringAsProbableCause(v *AnyOfstringstring) ProbableCause {
+// ProbableCauseOneOfAsProbableCause is a convenience function that returns ProbableCauseOneOf wrapped in ProbableCause
+func ProbableCauseOneOfAsProbableCause(v *ProbableCauseOneOf) ProbableCause {
 	return ProbableCause{
-		AnyOfstringstring: v,
+		ProbableCauseOneOf: v,
 	}
 }
 
@@ -35,22 +35,21 @@ func Int32AsProbableCause(v *int32) ProbableCause {
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ProbableCause) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AnyOfstringstring
-	err = newStrictDecoder(data).Decode(&dst.AnyOfstringstring)
+	// try to unmarshal data into ProbableCauseOneOf
+	err = newStrictDecoder(data).Decode(&dst.ProbableCauseOneOf)
 	if err == nil {
-		jsonAnyOfstringstring, _ := json.Marshal(dst.AnyOfstringstring)
-		if string(jsonAnyOfstringstring) == "{}" { // empty struct
-			dst.AnyOfstringstring = nil
+		jsonProbableCauseOneOf, _ := json.Marshal(dst.ProbableCauseOneOf)
+		if string(jsonProbableCauseOneOf) == "{}" { // empty struct
+			dst.ProbableCauseOneOf = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.AnyOfstringstring = nil
+		dst.ProbableCauseOneOf = nil
 	}
 
 	// try to unmarshal data into Int32
@@ -68,7 +67,7 @@ func (dst *ProbableCause) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AnyOfstringstring = nil
+		dst.ProbableCauseOneOf = nil
 		dst.Int32 = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(ProbableCause)")
@@ -81,8 +80,8 @@ func (dst *ProbableCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src ProbableCause) MarshalJSON() ([]byte, error) {
-	if src.AnyOfstringstring != nil {
-		return json.Marshal(&src.AnyOfstringstring)
+	if src.ProbableCauseOneOf != nil {
+		return json.Marshal(&src.ProbableCauseOneOf)
 	}
 
 	if src.Int32 != nil {
@@ -93,12 +92,12 @@ func (src ProbableCause) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ProbableCause) GetActualInstance() (interface{}) {
+func (obj *ProbableCause) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	if obj.AnyOfstringstring != nil {
-		return obj.AnyOfstringstring
+	if obj.ProbableCauseOneOf != nil {
+		return obj.ProbableCauseOneOf
 	}
 
 	if obj.Int32 != nil {
@@ -144,5 +143,3 @@ func (v *NullableProbableCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

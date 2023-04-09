@@ -20,9 +20,9 @@ var _ MappedNullable = &VnfParameter{}
 // VnfParameter struct for VnfParameter
 type VnfParameter struct {
 	VnfInstanceId *string `json:"vnfInstanceId,omitempty"`
-	VnfdId *string `json:"vnfdId,omitempty"`
-	FlavourId *string `json:"flavourId,omitempty"`
-	AutoScalable *bool `json:"autoScalable,omitempty"`
+	VnfdId        *string `json:"vnfdId,omitempty"`
+	FlavourId     *string `json:"flavourId,omitempty"`
+	AutoScalable  *bool   `json:"autoScalable,omitempty"`
 }
 
 // NewVnfParameter instantiates a new VnfParameter object
@@ -44,7 +44,7 @@ func NewVnfParameterWithDefaults() *VnfParameter {
 
 // GetVnfInstanceId returns the VnfInstanceId field value if set, zero value otherwise.
 func (o *VnfParameter) GetVnfInstanceId() string {
-	if o == nil || isNil(o.VnfInstanceId) {
+	if o == nil || IsNil(o.VnfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *VnfParameter) GetVnfInstanceId() string {
 // GetVnfInstanceIdOk returns a tuple with the VnfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnfParameter) GetVnfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.VnfInstanceId) {
+	if o == nil || IsNil(o.VnfInstanceId) {
 		return nil, false
 	}
 	return o.VnfInstanceId, true
@@ -62,7 +62,7 @@ func (o *VnfParameter) GetVnfInstanceIdOk() (*string, bool) {
 
 // HasVnfInstanceId returns a boolean if a field has been set.
 func (o *VnfParameter) HasVnfInstanceId() bool {
-	if o != nil && !isNil(o.VnfInstanceId) {
+	if o != nil && !IsNil(o.VnfInstanceId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *VnfParameter) SetVnfInstanceId(v string) {
 
 // GetVnfdId returns the VnfdId field value if set, zero value otherwise.
 func (o *VnfParameter) GetVnfdId() string {
-	if o == nil || isNil(o.VnfdId) {
+	if o == nil || IsNil(o.VnfdId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *VnfParameter) GetVnfdId() string {
 // GetVnfdIdOk returns a tuple with the VnfdId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnfParameter) GetVnfdIdOk() (*string, bool) {
-	if o == nil || isNil(o.VnfdId) {
+	if o == nil || IsNil(o.VnfdId) {
 		return nil, false
 	}
 	return o.VnfdId, true
@@ -94,7 +94,7 @@ func (o *VnfParameter) GetVnfdIdOk() (*string, bool) {
 
 // HasVnfdId returns a boolean if a field has been set.
 func (o *VnfParameter) HasVnfdId() bool {
-	if o != nil && !isNil(o.VnfdId) {
+	if o != nil && !IsNil(o.VnfdId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *VnfParameter) SetVnfdId(v string) {
 
 // GetFlavourId returns the FlavourId field value if set, zero value otherwise.
 func (o *VnfParameter) GetFlavourId() string {
-	if o == nil || isNil(o.FlavourId) {
+	if o == nil || IsNil(o.FlavourId) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *VnfParameter) GetFlavourId() string {
 // GetFlavourIdOk returns a tuple with the FlavourId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnfParameter) GetFlavourIdOk() (*string, bool) {
-	if o == nil || isNil(o.FlavourId) {
+	if o == nil || IsNil(o.FlavourId) {
 		return nil, false
 	}
 	return o.FlavourId, true
@@ -126,7 +126,7 @@ func (o *VnfParameter) GetFlavourIdOk() (*string, bool) {
 
 // HasFlavourId returns a boolean if a field has been set.
 func (o *VnfParameter) HasFlavourId() bool {
-	if o != nil && !isNil(o.FlavourId) {
+	if o != nil && !IsNil(o.FlavourId) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *VnfParameter) SetFlavourId(v string) {
 
 // GetAutoScalable returns the AutoScalable field value if set, zero value otherwise.
 func (o *VnfParameter) GetAutoScalable() bool {
-	if o == nil || isNil(o.AutoScalable) {
+	if o == nil || IsNil(o.AutoScalable) {
 		var ret bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *VnfParameter) GetAutoScalable() bool {
 // GetAutoScalableOk returns a tuple with the AutoScalable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnfParameter) GetAutoScalableOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoScalable) {
+	if o == nil || IsNil(o.AutoScalable) {
 		return nil, false
 	}
 	return o.AutoScalable, true
@@ -158,7 +158,7 @@ func (o *VnfParameter) GetAutoScalableOk() (*bool, bool) {
 
 // HasAutoScalable returns a boolean if a field has been set.
 func (o *VnfParameter) HasAutoScalable() bool {
-	if o != nil && !isNil(o.AutoScalable) {
+	if o != nil && !IsNil(o.AutoScalable) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *VnfParameter) SetAutoScalable(v bool) {
 }
 
 func (o VnfParameter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o VnfParameter) MarshalJSON() ([]byte, error) {
 
 func (o VnfParameter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.VnfInstanceId) {
+	if !IsNil(o.VnfInstanceId) {
 		toSerialize["vnfInstanceId"] = o.VnfInstanceId
 	}
-	if !isNil(o.VnfdId) {
+	if !IsNil(o.VnfdId) {
 		toSerialize["vnfdId"] = o.VnfdId
 	}
-	if !isNil(o.FlavourId) {
+	if !IsNil(o.FlavourId) {
 		toSerialize["flavourId"] = o.FlavourId
 	}
-	if !isNil(o.AutoScalable) {
+	if !IsNil(o.AutoScalable) {
 		toSerialize["autoScalable"] = o.AutoScalable
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableVnfParameter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

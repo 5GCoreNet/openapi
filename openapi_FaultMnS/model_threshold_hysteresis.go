@@ -20,7 +20,7 @@ var _ MappedNullable = &ThresholdHysteresis{}
 // ThresholdHysteresis struct for ThresholdHysteresis
 type ThresholdHysteresis struct {
 	High ThresholdHysteresisHigh `json:"high"`
-	Low *float32 `json:"low,omitempty"`
+	Low  *float32                `json:"low,omitempty"`
 }
 
 // NewThresholdHysteresis instantiates a new ThresholdHysteresis object
@@ -67,7 +67,7 @@ func (o *ThresholdHysteresis) SetHigh(v ThresholdHysteresisHigh) {
 
 // GetLow returns the Low field value if set, zero value otherwise.
 func (o *ThresholdHysteresis) GetLow() float32 {
-	if o == nil || isNil(o.Low) {
+	if o == nil || IsNil(o.Low) {
 		var ret float32
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ThresholdHysteresis) GetLow() float32 {
 // GetLowOk returns a tuple with the Low field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdHysteresis) GetLowOk() (*float32, bool) {
-	if o == nil || isNil(o.Low) {
+	if o == nil || IsNil(o.Low) {
 		return nil, false
 	}
 	return o.Low, true
@@ -85,7 +85,7 @@ func (o *ThresholdHysteresis) GetLowOk() (*float32, bool) {
 
 // HasLow returns a boolean if a field has been set.
 func (o *ThresholdHysteresis) HasLow() bool {
-	if o != nil && !isNil(o.Low) {
+	if o != nil && !IsNil(o.Low) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ThresholdHysteresis) SetLow(v float32) {
 }
 
 func (o ThresholdHysteresis) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ThresholdHysteresis) MarshalJSON() ([]byte, error) {
 func (o ThresholdHysteresis) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["high"] = o.High
-	if !isNil(o.Low) {
+	if !IsNil(o.Low) {
 		toSerialize["low"] = o.Low
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableThresholdHysteresis) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

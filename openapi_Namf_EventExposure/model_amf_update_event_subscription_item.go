@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &AmfUpdateEventSubscriptionItem{}
 
 // AmfUpdateEventSubscriptionItem Document describing the modification(s) to an AMF Event Subscription
 type AmfUpdateEventSubscriptionItem struct {
-	Op string `json:"op"`
-	Path string `json:"path"`
-	Value *AmfEvent `json:"value,omitempty"`
-	PresenceInfo *PresenceInfo `json:"presenceInfo,omitempty"`
-	ExcludeSupiList []string `json:"excludeSupiList,omitempty"`
-	ExcludeGpsiList []string `json:"excludeGpsiList,omitempty"`
-	IncludeSupiList []string `json:"includeSupiList,omitempty"`
-	IncludeGpsiList []string `json:"includeGpsiList,omitempty"`
+	Op              string        `json:"op"`
+	Path            string        `json:"path"`
+	Value           *AmfEvent     `json:"value,omitempty"`
+	PresenceInfo    *PresenceInfo `json:"presenceInfo,omitempty"`
+	ExcludeSupiList []string      `json:"excludeSupiList,omitempty"`
+	ExcludeGpsiList []string      `json:"excludeGpsiList,omitempty"`
+	IncludeSupiList []string      `json:"includeSupiList,omitempty"`
+	IncludeGpsiList []string      `json:"includeGpsiList,omitempty"`
 }
 
 // NewAmfUpdateEventSubscriptionItem instantiates a new AmfUpdateEventSubscriptionItem object
@@ -98,7 +98,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetPath(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *AmfUpdateEventSubscriptionItem) GetValue() AmfEvent {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret AmfEvent
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetValue() AmfEvent {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventSubscriptionItem) GetValueOk() (*AmfEvent, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return o.Value, true
@@ -116,7 +116,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetValueOk() (*AmfEvent, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *AmfUpdateEventSubscriptionItem) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetValue(v AmfEvent) {
 
 // GetPresenceInfo returns the PresenceInfo field value if set, zero value otherwise.
 func (o *AmfUpdateEventSubscriptionItem) GetPresenceInfo() PresenceInfo {
-	if o == nil || isNil(o.PresenceInfo) {
+	if o == nil || IsNil(o.PresenceInfo) {
 		var ret PresenceInfo
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetPresenceInfo() PresenceInfo {
 // GetPresenceInfoOk returns a tuple with the PresenceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventSubscriptionItem) GetPresenceInfoOk() (*PresenceInfo, bool) {
-	if o == nil || isNil(o.PresenceInfo) {
+	if o == nil || IsNil(o.PresenceInfo) {
 		return nil, false
 	}
 	return o.PresenceInfo, true
@@ -148,7 +148,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetPresenceInfoOk() (*PresenceInfo, boo
 
 // HasPresenceInfo returns a boolean if a field has been set.
 func (o *AmfUpdateEventSubscriptionItem) HasPresenceInfo() bool {
-	if o != nil && !isNil(o.PresenceInfo) {
+	if o != nil && !IsNil(o.PresenceInfo) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetPresenceInfo(v PresenceInfo) {
 
 // GetExcludeSupiList returns the ExcludeSupiList field value if set, zero value otherwise.
 func (o *AmfUpdateEventSubscriptionItem) GetExcludeSupiList() []string {
-	if o == nil || isNil(o.ExcludeSupiList) {
+	if o == nil || IsNil(o.ExcludeSupiList) {
 		var ret []string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetExcludeSupiList() []string {
 // GetExcludeSupiListOk returns a tuple with the ExcludeSupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventSubscriptionItem) GetExcludeSupiListOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeSupiList) {
+	if o == nil || IsNil(o.ExcludeSupiList) {
 		return nil, false
 	}
 	return o.ExcludeSupiList, true
@@ -180,7 +180,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetExcludeSupiListOk() ([]string, bool)
 
 // HasExcludeSupiList returns a boolean if a field has been set.
 func (o *AmfUpdateEventSubscriptionItem) HasExcludeSupiList() bool {
-	if o != nil && !isNil(o.ExcludeSupiList) {
+	if o != nil && !IsNil(o.ExcludeSupiList) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetExcludeSupiList(v []string) {
 
 // GetExcludeGpsiList returns the ExcludeGpsiList field value if set, zero value otherwise.
 func (o *AmfUpdateEventSubscriptionItem) GetExcludeGpsiList() []string {
-	if o == nil || isNil(o.ExcludeGpsiList) {
+	if o == nil || IsNil(o.ExcludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetExcludeGpsiList() []string {
 // GetExcludeGpsiListOk returns a tuple with the ExcludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventSubscriptionItem) GetExcludeGpsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeGpsiList) {
+	if o == nil || IsNil(o.ExcludeGpsiList) {
 		return nil, false
 	}
 	return o.ExcludeGpsiList, true
@@ -212,7 +212,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetExcludeGpsiListOk() ([]string, bool)
 
 // HasExcludeGpsiList returns a boolean if a field has been set.
 func (o *AmfUpdateEventSubscriptionItem) HasExcludeGpsiList() bool {
-	if o != nil && !isNil(o.ExcludeGpsiList) {
+	if o != nil && !IsNil(o.ExcludeGpsiList) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetExcludeGpsiList(v []string) {
 
 // GetIncludeSupiList returns the IncludeSupiList field value if set, zero value otherwise.
 func (o *AmfUpdateEventSubscriptionItem) GetIncludeSupiList() []string {
-	if o == nil || isNil(o.IncludeSupiList) {
+	if o == nil || IsNil(o.IncludeSupiList) {
 		var ret []string
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetIncludeSupiList() []string {
 // GetIncludeSupiListOk returns a tuple with the IncludeSupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventSubscriptionItem) GetIncludeSupiListOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeSupiList) {
+	if o == nil || IsNil(o.IncludeSupiList) {
 		return nil, false
 	}
 	return o.IncludeSupiList, true
@@ -244,7 +244,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetIncludeSupiListOk() ([]string, bool)
 
 // HasIncludeSupiList returns a boolean if a field has been set.
 func (o *AmfUpdateEventSubscriptionItem) HasIncludeSupiList() bool {
-	if o != nil && !isNil(o.IncludeSupiList) {
+	if o != nil && !IsNil(o.IncludeSupiList) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetIncludeSupiList(v []string) {
 
 // GetIncludeGpsiList returns the IncludeGpsiList field value if set, zero value otherwise.
 func (o *AmfUpdateEventSubscriptionItem) GetIncludeGpsiList() []string {
-	if o == nil || isNil(o.IncludeGpsiList) {
+	if o == nil || IsNil(o.IncludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetIncludeGpsiList() []string {
 // GetIncludeGpsiListOk returns a tuple with the IncludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventSubscriptionItem) GetIncludeGpsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeGpsiList) {
+	if o == nil || IsNil(o.IncludeGpsiList) {
 		return nil, false
 	}
 	return o.IncludeGpsiList, true
@@ -276,7 +276,7 @@ func (o *AmfUpdateEventSubscriptionItem) GetIncludeGpsiListOk() ([]string, bool)
 
 // HasIncludeGpsiList returns a boolean if a field has been set.
 func (o *AmfUpdateEventSubscriptionItem) HasIncludeGpsiList() bool {
-	if o != nil && !isNil(o.IncludeGpsiList) {
+	if o != nil && !IsNil(o.IncludeGpsiList) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *AmfUpdateEventSubscriptionItem) SetIncludeGpsiList(v []string) {
 }
 
 func (o AmfUpdateEventSubscriptionItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -300,22 +300,22 @@ func (o AmfUpdateEventSubscriptionItem) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
-	if !isNil(o.Value) {
+	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
-	if !isNil(o.PresenceInfo) {
+	if !IsNil(o.PresenceInfo) {
 		toSerialize["presenceInfo"] = o.PresenceInfo
 	}
-	if !isNil(o.ExcludeSupiList) {
+	if !IsNil(o.ExcludeSupiList) {
 		toSerialize["excludeSupiList"] = o.ExcludeSupiList
 	}
-	if !isNil(o.ExcludeGpsiList) {
+	if !IsNil(o.ExcludeGpsiList) {
 		toSerialize["excludeGpsiList"] = o.ExcludeGpsiList
 	}
-	if !isNil(o.IncludeSupiList) {
+	if !IsNil(o.IncludeSupiList) {
 		toSerialize["includeSupiList"] = o.IncludeSupiList
 	}
-	if !isNil(o.IncludeGpsiList) {
+	if !IsNil(o.IncludeGpsiList) {
 		toSerialize["includeGpsiList"] = o.IncludeGpsiList
 	}
 	return toSerialize, nil
@@ -356,5 +356,3 @@ func (v *NullableAmfUpdateEventSubscriptionItem) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

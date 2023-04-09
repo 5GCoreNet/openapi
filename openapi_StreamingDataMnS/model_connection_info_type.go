@@ -20,9 +20,9 @@ var _ MappedNullable = &ConnectionInfoType{}
 // ConnectionInfoType struct for ConnectionInfoType
 type ConnectionInfoType struct {
 	// Resource URI
-	Connection *string `json:"connection,omitempty"`
-	Producer *ProducerIdType `json:"producer,omitempty"`
-	Streams []string `json:"streams,omitempty"`
+	Connection *string         `json:"connection,omitempty"`
+	Producer   *ProducerIdType `json:"producer,omitempty"`
+	Streams    []string        `json:"streams,omitempty"`
 }
 
 // NewConnectionInfoType instantiates a new ConnectionInfoType object
@@ -44,7 +44,7 @@ func NewConnectionInfoTypeWithDefaults() *ConnectionInfoType {
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
 func (o *ConnectionInfoType) GetConnection() string {
-	if o == nil || isNil(o.Connection) {
+	if o == nil || IsNil(o.Connection) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ConnectionInfoType) GetConnection() string {
 // GetConnectionOk returns a tuple with the Connection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionInfoType) GetConnectionOk() (*string, bool) {
-	if o == nil || isNil(o.Connection) {
+	if o == nil || IsNil(o.Connection) {
 		return nil, false
 	}
 	return o.Connection, true
@@ -62,7 +62,7 @@ func (o *ConnectionInfoType) GetConnectionOk() (*string, bool) {
 
 // HasConnection returns a boolean if a field has been set.
 func (o *ConnectionInfoType) HasConnection() bool {
-	if o != nil && !isNil(o.Connection) {
+	if o != nil && !IsNil(o.Connection) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ConnectionInfoType) SetConnection(v string) {
 
 // GetProducer returns the Producer field value if set, zero value otherwise.
 func (o *ConnectionInfoType) GetProducer() ProducerIdType {
-	if o == nil || isNil(o.Producer) {
+	if o == nil || IsNil(o.Producer) {
 		var ret ProducerIdType
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ConnectionInfoType) GetProducer() ProducerIdType {
 // GetProducerOk returns a tuple with the Producer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionInfoType) GetProducerOk() (*ProducerIdType, bool) {
-	if o == nil || isNil(o.Producer) {
+	if o == nil || IsNil(o.Producer) {
 		return nil, false
 	}
 	return o.Producer, true
@@ -94,7 +94,7 @@ func (o *ConnectionInfoType) GetProducerOk() (*ProducerIdType, bool) {
 
 // HasProducer returns a boolean if a field has been set.
 func (o *ConnectionInfoType) HasProducer() bool {
-	if o != nil && !isNil(o.Producer) {
+	if o != nil && !IsNil(o.Producer) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ConnectionInfoType) SetProducer(v ProducerIdType) {
 
 // GetStreams returns the Streams field value if set, zero value otherwise.
 func (o *ConnectionInfoType) GetStreams() []string {
-	if o == nil || isNil(o.Streams) {
+	if o == nil || IsNil(o.Streams) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ConnectionInfoType) GetStreams() []string {
 // GetStreamsOk returns a tuple with the Streams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionInfoType) GetStreamsOk() ([]string, bool) {
-	if o == nil || isNil(o.Streams) {
+	if o == nil || IsNil(o.Streams) {
 		return nil, false
 	}
 	return o.Streams, true
@@ -126,7 +126,7 @@ func (o *ConnectionInfoType) GetStreamsOk() ([]string, bool) {
 
 // HasStreams returns a boolean if a field has been set.
 func (o *ConnectionInfoType) HasStreams() bool {
-	if o != nil && !isNil(o.Streams) {
+	if o != nil && !IsNil(o.Streams) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *ConnectionInfoType) SetStreams(v []string) {
 }
 
 func (o ConnectionInfoType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o ConnectionInfoType) MarshalJSON() ([]byte, error) {
 
 func (o ConnectionInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Connection) {
+	if !IsNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	if !isNil(o.Producer) {
+	if !IsNil(o.Producer) {
 		toSerialize["producer"] = o.Producer
 	}
-	if !isNil(o.Streams) {
+	if !IsNil(o.Streams) {
 		toSerialize["streams"] = o.Streams
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableConnectionInfoType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

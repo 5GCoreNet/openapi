@@ -19,8 +19,8 @@ var _ MappedNullable = &AssuranceClosedControlLoopSingleAllOf{}
 
 // AssuranceClosedControlLoopSingleAllOf struct for AssuranceClosedControlLoopSingleAllOf
 type AssuranceClosedControlLoopSingleAllOf struct {
-	Attributes *AssuranceClosedControlLoopSingleAllOfAttributes `json:"attributes,omitempty"`
-	AssuranceGoal []AssuranceGoalSingle `json:"AssuranceGoal,omitempty"`
+	Attributes    *AssuranceClosedControlLoopSingleAllOfAttributes `json:"attributes,omitempty"`
+	AssuranceGoal []AssuranceGoalSingle                            `json:"AssuranceGoal,omitempty"`
 }
 
 // NewAssuranceClosedControlLoopSingleAllOf instantiates a new AssuranceClosedControlLoopSingleAllOf object
@@ -42,7 +42,7 @@ func NewAssuranceClosedControlLoopSingleAllOfWithDefaults() *AssuranceClosedCont
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributes() AssuranceClosedControlLoopSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret AssuranceClosedControlLoopSingleAllOfAttributes
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributes() AssuranceClosedC
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributesOk() (*AssuranceClosedControlLoopSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributesOk() (*AssuranceClo
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) SetAttributes(v AssuranceClosedC
 
 // GetAssuranceGoal returns the AssuranceGoal field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoal() []AssuranceGoalSingle {
-	if o == nil || isNil(o.AssuranceGoal) {
+	if o == nil || IsNil(o.AssuranceGoal) {
 		var ret []AssuranceGoalSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoal() []AssuranceGo
 // GetAssuranceGoalOk returns a tuple with the AssuranceGoal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoalOk() ([]AssuranceGoalSingle, bool) {
-	if o == nil || isNil(o.AssuranceGoal) {
+	if o == nil || IsNil(o.AssuranceGoal) {
 		return nil, false
 	}
 	return o.AssuranceGoal, true
@@ -92,7 +92,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoalOk() ([]Assuranc
 
 // HasAssuranceGoal returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) HasAssuranceGoal() bool {
-	if o != nil && !isNil(o.AssuranceGoal) {
+	if o != nil && !IsNil(o.AssuranceGoal) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) SetAssuranceGoal(v []AssuranceGo
 }
 
 func (o AssuranceClosedControlLoopSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o AssuranceClosedControlLoopSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceClosedControlLoopSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.AssuranceGoal) {
+	if !IsNil(o.AssuranceGoal) {
 		toSerialize["AssuranceGoal"] = o.AssuranceGoal
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableAssuranceClosedControlLoopSingleAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

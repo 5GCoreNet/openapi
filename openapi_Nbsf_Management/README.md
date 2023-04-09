@@ -103,10 +103,8 @@ Class | Method | HTTP request | Description
  - [AccessTokenErr](docs/AccessTokenErr.md)
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [BindingLevel](docs/BindingLevel.md)
- - [BindingLevelAnyOf](docs/BindingLevelAnyOf.md)
  - [BindingResp](docs/BindingResp.md)
  - [BsfEvent](docs/BsfEvent.md)
- - [BsfEventAnyOf](docs/BsfEventAnyOf.md)
  - [BsfEventNotification](docs/BsfEventNotification.md)
  - [BsfNotification](docs/BsfNotification.md)
  - [BsfSubscription](docs/BsfSubscription.md)
@@ -122,7 +120,6 @@ Class | Method | HTTP request | Description
  - [MbsExtProblemDetails](docs/MbsExtProblemDetails.md)
  - [MbsSessionId](docs/MbsSessionId.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [ParameterCombination](docs/ParameterCombination.md)
  - [PcfBinding](docs/PcfBinding.md)
  - [PcfBindingPatch](docs/PcfBindingPatch.md)
@@ -141,7 +138,6 @@ Class | Method | HTTP request | Description
  - [Ssm](docs/Ssm.md)
  - [Tmgi](docs/Tmgi.md)
  - [TransportProtocol](docs/TransportProtocol.md)
- - [TransportProtocolAnyOf](docs/TransportProtocolAnyOf.md)
 
 
 ## Documentation For Authorization

@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AuthorizationType Represents the type of authorization requested by the UE
 type AuthorizationType struct {
-	AuthorizationTypeAnyOf *AuthorizationTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AuthorizationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AuthorizationTypeAnyOf
-	err = json.Unmarshal(data, &dst.AuthorizationTypeAnyOf);
-	if err == nil {
-		jsonAuthorizationTypeAnyOf, _ := json.Marshal(dst.AuthorizationTypeAnyOf)
-		if string(jsonAuthorizationTypeAnyOf) == "{}" { // empty struct
-			dst.AuthorizationTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AuthorizationTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AuthorizationTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AuthorizationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AuthorizationType) MarshalJSON() ([]byte, error) {
-	if src.AuthorizationTypeAnyOf != nil {
-		return json.Marshal(&src.AuthorizationTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAuthorizationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &UnicastSubscription{}
 
 // UnicastSubscription Represents a unicast subscription.
 type UnicastSubscription struct {
-	ValTgtUe ValTargetUe `json:"valTgtUe"`
-	UniQosReq *string `json:"uniQosReq,omitempty"`
+	ValTgtUe  ValTargetUe `json:"valTgtUe"`
+	UniQosReq *string     `json:"uniQosReq,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Duration *time.Time `json:"duration,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
-	ReqTestNotif *bool `json:"reqTestNotif,omitempty"`
-	WsNotifCfg *WebsockNotifConfig `json:"wsNotifCfg,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	NotifUri     string              `json:"notifUri"`
+	ReqTestNotif *bool               `json:"reqTestNotif,omitempty"`
+	WsNotifCfg   *WebsockNotifConfig `json:"wsNotifCfg,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -77,7 +77,7 @@ func (o *UnicastSubscription) SetValTgtUe(v ValTargetUe) {
 
 // GetUniQosReq returns the UniQosReq field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetUniQosReq() string {
-	if o == nil || isNil(o.UniQosReq) {
+	if o == nil || IsNil(o.UniQosReq) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UnicastSubscription) GetUniQosReq() string {
 // GetUniQosReqOk returns a tuple with the UniQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetUniQosReqOk() (*string, bool) {
-	if o == nil || isNil(o.UniQosReq) {
+	if o == nil || IsNil(o.UniQosReq) {
 		return nil, false
 	}
 	return o.UniQosReq, true
@@ -95,7 +95,7 @@ func (o *UnicastSubscription) GetUniQosReqOk() (*string, bool) {
 
 // HasUniQosReq returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasUniQosReq() bool {
-	if o != nil && !isNil(o.UniQosReq) {
+	if o != nil && !IsNil(o.UniQosReq) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UnicastSubscription) SetUniQosReq(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetDuration() time.Time {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UnicastSubscription) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetDurationOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -127,7 +127,7 @@ func (o *UnicastSubscription) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *UnicastSubscription) SetNotifUri(v string) {
 
 // GetReqTestNotif returns the ReqTestNotif field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetReqTestNotif() bool {
-	if o == nil || isNil(o.ReqTestNotif) {
+	if o == nil || IsNil(o.ReqTestNotif) {
 		var ret bool
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *UnicastSubscription) GetReqTestNotif() bool {
 // GetReqTestNotifOk returns a tuple with the ReqTestNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetReqTestNotifOk() (*bool, bool) {
-	if o == nil || isNil(o.ReqTestNotif) {
+	if o == nil || IsNil(o.ReqTestNotif) {
 		return nil, false
 	}
 	return o.ReqTestNotif, true
@@ -183,7 +183,7 @@ func (o *UnicastSubscription) GetReqTestNotifOk() (*bool, bool) {
 
 // HasReqTestNotif returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasReqTestNotif() bool {
-	if o != nil && !isNil(o.ReqTestNotif) {
+	if o != nil && !IsNil(o.ReqTestNotif) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *UnicastSubscription) SetReqTestNotif(v bool) {
 
 // GetWsNotifCfg returns the WsNotifCfg field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetWsNotifCfg() WebsockNotifConfig {
-	if o == nil || isNil(o.WsNotifCfg) {
+	if o == nil || IsNil(o.WsNotifCfg) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *UnicastSubscription) GetWsNotifCfg() WebsockNotifConfig {
 // GetWsNotifCfgOk returns a tuple with the WsNotifCfg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetWsNotifCfgOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WsNotifCfg) {
+	if o == nil || IsNil(o.WsNotifCfg) {
 		return nil, false
 	}
 	return o.WsNotifCfg, true
@@ -215,7 +215,7 @@ func (o *UnicastSubscription) GetWsNotifCfgOk() (*WebsockNotifConfig, bool) {
 
 // HasWsNotifCfg returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasWsNotifCfg() bool {
-	if o != nil && !isNil(o.WsNotifCfg) {
+	if o != nil && !IsNil(o.WsNotifCfg) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *UnicastSubscription) SetWsNotifCfg(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *UnicastSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -247,7 +247,7 @@ func (o *UnicastSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *UnicastSubscription) SetSuppFeat(v string) {
 }
 
 func (o UnicastSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,20 +270,20 @@ func (o UnicastSubscription) MarshalJSON() ([]byte, error) {
 func (o UnicastSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valTgtUe"] = o.ValTgtUe
-	if !isNil(o.UniQosReq) {
+	if !IsNil(o.UniQosReq) {
 		toSerialize["uniQosReq"] = o.UniQosReq
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.ReqTestNotif) {
+	if !IsNil(o.ReqTestNotif) {
 		toSerialize["reqTestNotif"] = o.ReqTestNotif
 	}
-	if !isNil(o.WsNotifCfg) {
+	if !IsNil(o.WsNotifCfg) {
 		toSerialize["wsNotifCfg"] = o.WsNotifCfg
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -324,5 +324,3 @@ func (v *NullableUnicastSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

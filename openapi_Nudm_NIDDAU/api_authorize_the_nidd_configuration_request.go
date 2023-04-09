@@ -1,7 +1,7 @@
 /*
 Nudm_NIDDAU
 
-Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudm_NIDDAU
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AuthorizeTheNIDDConfigurationRequestApiService AuthorizeTheNIDDConfigurationRequestApi service
 type AuthorizeTheNIDDConfigurationRequestApiService service
 
 type ApiAuthorizeNiddDataRequest struct {
-	ctx context.Context
-	ApiService *AuthorizeTheNIDDConfigurationRequestApiService
-	ueIdentity string
+	ctx               context.Context
+	ApiService        *AuthorizeTheNIDDConfigurationRequestApiService
+	ueIdentity        string
 	authorizationInfo *AuthorizationInfo
 }
 
@@ -42,26 +41,27 @@ func (r ApiAuthorizeNiddDataRequest) Execute() (*AuthorizationData, *http.Respon
 /*
 AuthorizeNiddData Authorize the NIDD configuration request.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueIdentity Represents the scope of the UE for which the NIDD configuration are authorized. Contains the GPSI of the user or the external group ID.
- @return ApiAuthorizeNiddDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueIdentity Represents the scope of the UE for which the NIDD configuration are authorized. Contains the GPSI of the user or the external group ID.
+	@return ApiAuthorizeNiddDataRequest
 */
 func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddData(ctx context.Context, ueIdentity string) ApiAuthorizeNiddDataRequest {
 	return ApiAuthorizeNiddDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		ueIdentity: ueIdentity,
 	}
 }
 
 // Execute executes the request
-//  @return AuthorizationData
+//
+//	@return AuthorizationData
 func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecute(r ApiAuthorizeNiddDataRequest) (*AuthorizationData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthorizationData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthorizationData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizeTheNIDDConfigurationRequestApiService.AuthorizeNiddData")
@@ -108,9 +108,9 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -127,8 +127,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -138,8 +138,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -149,8 +149,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -160,8 +160,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -171,8 +171,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -182,8 +182,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -193,8 +193,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -204,8 +204,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -215,8 +215,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -226,8 +226,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -237,8 +237,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -248,8 +248,8 @@ func (a *AuthorizeTheNIDDConfigurationRequestApiService) AuthorizeNiddDataExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

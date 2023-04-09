@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AccessNetworkId struct for AccessNetworkId
 type AccessNetworkId struct {
-	AccessNetworkIdAnyOf *AccessNetworkIdAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessNetworkId) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AccessNetworkIdAnyOf
-	err = json.Unmarshal(data, &dst.AccessNetworkIdAnyOf);
-	if err == nil {
-		jsonAccessNetworkIdAnyOf, _ := json.Marshal(dst.AccessNetworkIdAnyOf)
-		if string(jsonAccessNetworkIdAnyOf) == "{}" { // empty struct
-			dst.AccessNetworkIdAnyOf = nil
-		} else {
-			return nil // data stored in dst.AccessNetworkIdAnyOf, return on the first match
-		}
-	} else {
-		dst.AccessNetworkIdAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AccessNetworkId) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessNetworkId) MarshalJSON() ([]byte, error) {
-	if src.AccessNetworkIdAnyOf != nil {
-		return json.Marshal(&src.AccessNetworkIdAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAccessNetworkId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

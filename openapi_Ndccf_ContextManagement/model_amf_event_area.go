@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AmfEventArea{}
 // AmfEventArea Represents an area to be monitored by an AMF event
 type AmfEventArea struct {
 	PresenceInfo *PresenceInfo `json:"presenceInfo,omitempty"`
-	LadnInfo *LadnInfo `json:"ladnInfo,omitempty"`
-	SNssai *Snssai `json:"sNssai,omitempty"`
+	LadnInfo     *LadnInfo     `json:"ladnInfo,omitempty"`
+	SNssai       *Snssai       `json:"sNssai,omitempty"`
 	// Contains the Identifier of the selected Network Slice instance
 	NsiId *string `json:"nsiId,omitempty"`
 }
@@ -45,7 +45,7 @@ func NewAmfEventAreaWithDefaults() *AmfEventArea {
 
 // GetPresenceInfo returns the PresenceInfo field value if set, zero value otherwise.
 func (o *AmfEventArea) GetPresenceInfo() PresenceInfo {
-	if o == nil || isNil(o.PresenceInfo) {
+	if o == nil || IsNil(o.PresenceInfo) {
 		var ret PresenceInfo
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AmfEventArea) GetPresenceInfo() PresenceInfo {
 // GetPresenceInfoOk returns a tuple with the PresenceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventArea) GetPresenceInfoOk() (*PresenceInfo, bool) {
-	if o == nil || isNil(o.PresenceInfo) {
+	if o == nil || IsNil(o.PresenceInfo) {
 		return nil, false
 	}
 	return o.PresenceInfo, true
@@ -63,7 +63,7 @@ func (o *AmfEventArea) GetPresenceInfoOk() (*PresenceInfo, bool) {
 
 // HasPresenceInfo returns a boolean if a field has been set.
 func (o *AmfEventArea) HasPresenceInfo() bool {
-	if o != nil && !isNil(o.PresenceInfo) {
+	if o != nil && !IsNil(o.PresenceInfo) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AmfEventArea) SetPresenceInfo(v PresenceInfo) {
 
 // GetLadnInfo returns the LadnInfo field value if set, zero value otherwise.
 func (o *AmfEventArea) GetLadnInfo() LadnInfo {
-	if o == nil || isNil(o.LadnInfo) {
+	if o == nil || IsNil(o.LadnInfo) {
 		var ret LadnInfo
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AmfEventArea) GetLadnInfo() LadnInfo {
 // GetLadnInfoOk returns a tuple with the LadnInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventArea) GetLadnInfoOk() (*LadnInfo, bool) {
-	if o == nil || isNil(o.LadnInfo) {
+	if o == nil || IsNil(o.LadnInfo) {
 		return nil, false
 	}
 	return o.LadnInfo, true
@@ -95,7 +95,7 @@ func (o *AmfEventArea) GetLadnInfoOk() (*LadnInfo, bool) {
 
 // HasLadnInfo returns a boolean if a field has been set.
 func (o *AmfEventArea) HasLadnInfo() bool {
-	if o != nil && !isNil(o.LadnInfo) {
+	if o != nil && !IsNil(o.LadnInfo) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AmfEventArea) SetLadnInfo(v LadnInfo) {
 
 // GetSNssai returns the SNssai field value if set, zero value otherwise.
 func (o *AmfEventArea) GetSNssai() Snssai {
-	if o == nil || isNil(o.SNssai) {
+	if o == nil || IsNil(o.SNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AmfEventArea) GetSNssai() Snssai {
 // GetSNssaiOk returns a tuple with the SNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventArea) GetSNssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SNssai) {
+	if o == nil || IsNil(o.SNssai) {
 		return nil, false
 	}
 	return o.SNssai, true
@@ -127,7 +127,7 @@ func (o *AmfEventArea) GetSNssaiOk() (*Snssai, bool) {
 
 // HasSNssai returns a boolean if a field has been set.
 func (o *AmfEventArea) HasSNssai() bool {
-	if o != nil && !isNil(o.SNssai) {
+	if o != nil && !IsNil(o.SNssai) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AmfEventArea) SetSNssai(v Snssai) {
 
 // GetNsiId returns the NsiId field value if set, zero value otherwise.
 func (o *AmfEventArea) GetNsiId() string {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *AmfEventArea) GetNsiId() string {
 // GetNsiIdOk returns a tuple with the NsiId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventArea) GetNsiIdOk() (*string, bool) {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		return nil, false
 	}
 	return o.NsiId, true
@@ -159,7 +159,7 @@ func (o *AmfEventArea) GetNsiIdOk() (*string, bool) {
 
 // HasNsiId returns a boolean if a field has been set.
 func (o *AmfEventArea) HasNsiId() bool {
-	if o != nil && !isNil(o.NsiId) {
+	if o != nil && !IsNil(o.NsiId) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *AmfEventArea) SetNsiId(v string) {
 }
 
 func (o AmfEventArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o AmfEventArea) MarshalJSON() ([]byte, error) {
 
 func (o AmfEventArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PresenceInfo) {
+	if !IsNil(o.PresenceInfo) {
 		toSerialize["presenceInfo"] = o.PresenceInfo
 	}
-	if !isNil(o.LadnInfo) {
+	if !IsNil(o.LadnInfo) {
 		toSerialize["ladnInfo"] = o.LadnInfo
 	}
-	if !isNil(o.SNssai) {
+	if !IsNil(o.SNssai) {
 		toSerialize["sNssai"] = o.SNssai
 	}
-	if !isNil(o.NsiId) {
+	if !IsNil(o.NsiId) {
 		toSerialize["nsiId"] = o.NsiId
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableAmfEventArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

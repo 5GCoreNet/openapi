@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// UeAuth Possible values are: - AUTHORIZED: Indicates that the UE is authorized. - NOT_AUTHORIZED: Indicates that the UE is not authorized. 
+// UeAuth Possible values are: - AUTHORIZED: Indicates that the UE is authorized. - NOT_AUTHORIZED: Indicates that the UE is not authorized.
 type UeAuth struct {
-	UeAuthAnyOf *UeAuthAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UeAuth) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UeAuthAnyOf
-	err = json.Unmarshal(data, &dst.UeAuthAnyOf);
-	if err == nil {
-		jsonUeAuthAnyOf, _ := json.Marshal(dst.UeAuthAnyOf)
-		if string(jsonUeAuthAnyOf) == "{}" { // empty struct
-			dst.UeAuthAnyOf = nil
-		} else {
-			return nil // data stored in dst.UeAuthAnyOf, return on the first match
-		}
-	} else {
-		dst.UeAuthAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UeAuth) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UeAuth) MarshalJSON() ([]byte, error) {
-	if src.UeAuthAnyOf != nil {
-		return json.Marshal(&src.UeAuthAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUeAuth) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &DnPerformanceReq{}
 // DnPerformanceReq Represents other DN performance analytics requirements.
 type DnPerformanceReq struct {
 	DnPerfOrderCriter *DnPerfOrderingCriterion `json:"dnPerfOrderCriter,omitempty"`
-	Order *MatchingDirection `json:"order,omitempty"`
-	ReportThresholds []ThresholdLevel `json:"reportThresholds,omitempty"`
+	Order             *MatchingDirection       `json:"order,omitempty"`
+	ReportThresholds  []ThresholdLevel         `json:"reportThresholds,omitempty"`
 }
 
 // NewDnPerformanceReq instantiates a new DnPerformanceReq object
@@ -43,7 +43,7 @@ func NewDnPerformanceReqWithDefaults() *DnPerformanceReq {
 
 // GetDnPerfOrderCriter returns the DnPerfOrderCriter field value if set, zero value otherwise.
 func (o *DnPerformanceReq) GetDnPerfOrderCriter() DnPerfOrderingCriterion {
-	if o == nil || isNil(o.DnPerfOrderCriter) {
+	if o == nil || IsNil(o.DnPerfOrderCriter) {
 		var ret DnPerfOrderingCriterion
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DnPerformanceReq) GetDnPerfOrderCriter() DnPerfOrderingCriterion {
 // GetDnPerfOrderCriterOk returns a tuple with the DnPerfOrderCriter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerformanceReq) GetDnPerfOrderCriterOk() (*DnPerfOrderingCriterion, bool) {
-	if o == nil || isNil(o.DnPerfOrderCriter) {
+	if o == nil || IsNil(o.DnPerfOrderCriter) {
 		return nil, false
 	}
 	return o.DnPerfOrderCriter, true
@@ -61,7 +61,7 @@ func (o *DnPerformanceReq) GetDnPerfOrderCriterOk() (*DnPerfOrderingCriterion, b
 
 // HasDnPerfOrderCriter returns a boolean if a field has been set.
 func (o *DnPerformanceReq) HasDnPerfOrderCriter() bool {
-	if o != nil && !isNil(o.DnPerfOrderCriter) {
+	if o != nil && !IsNil(o.DnPerfOrderCriter) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DnPerformanceReq) SetDnPerfOrderCriter(v DnPerfOrderingCriterion) {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *DnPerformanceReq) GetOrder() MatchingDirection {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DnPerformanceReq) GetOrder() MatchingDirection {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerformanceReq) GetOrderOk() (*MatchingDirection, bool) {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -93,7 +93,7 @@ func (o *DnPerformanceReq) GetOrderOk() (*MatchingDirection, bool) {
 
 // HasOrder returns a boolean if a field has been set.
 func (o *DnPerformanceReq) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DnPerformanceReq) SetOrder(v MatchingDirection) {
 
 // GetReportThresholds returns the ReportThresholds field value if set, zero value otherwise.
 func (o *DnPerformanceReq) GetReportThresholds() []ThresholdLevel {
-	if o == nil || isNil(o.ReportThresholds) {
+	if o == nil || IsNil(o.ReportThresholds) {
 		var ret []ThresholdLevel
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DnPerformanceReq) GetReportThresholds() []ThresholdLevel {
 // GetReportThresholdsOk returns a tuple with the ReportThresholds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerformanceReq) GetReportThresholdsOk() ([]ThresholdLevel, bool) {
-	if o == nil || isNil(o.ReportThresholds) {
+	if o == nil || IsNil(o.ReportThresholds) {
 		return nil, false
 	}
 	return o.ReportThresholds, true
@@ -125,7 +125,7 @@ func (o *DnPerformanceReq) GetReportThresholdsOk() ([]ThresholdLevel, bool) {
 
 // HasReportThresholds returns a boolean if a field has been set.
 func (o *DnPerformanceReq) HasReportThresholds() bool {
-	if o != nil && !isNil(o.ReportThresholds) {
+	if o != nil && !IsNil(o.ReportThresholds) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *DnPerformanceReq) SetReportThresholds(v []ThresholdLevel) {
 }
 
 func (o DnPerformanceReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o DnPerformanceReq) MarshalJSON() ([]byte, error) {
 
 func (o DnPerformanceReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnPerfOrderCriter) {
+	if !IsNil(o.DnPerfOrderCriter) {
 		toSerialize["dnPerfOrderCriter"] = o.DnPerfOrderCriter
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
-	if !isNil(o.ReportThresholds) {
+	if !IsNil(o.ReportThresholds) {
 		toSerialize["reportThresholds"] = o.ReportThresholds
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableDnPerformanceReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

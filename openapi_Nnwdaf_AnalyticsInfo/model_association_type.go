@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AssociationType struct for AssociationType
 type AssociationType struct {
-	AssociationTypeAnyOf *AssociationTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AssociationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AssociationTypeAnyOf
-	err = json.Unmarshal(data, &dst.AssociationTypeAnyOf);
-	if err == nil {
-		jsonAssociationTypeAnyOf, _ := json.Marshal(dst.AssociationTypeAnyOf)
-		if string(jsonAssociationTypeAnyOf) == "{}" { // empty struct
-			dst.AssociationTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AssociationTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AssociationTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AssociationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AssociationType) MarshalJSON() ([]byte, error) {
-	if src.AssociationTypeAnyOf != nil {
-		return json.Marshal(&src.AssociationTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAssociationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

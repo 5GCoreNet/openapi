@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // ImmediateReport - struct for ImmediateReport
 type ImmediateReport struct {
 	SubscriptionDataSets *SubscriptionDataSets
-	ArrayOfSharedData *[]SharedData
+	ArrayOfSharedData    *[]SharedData
 }
 
 // SubscriptionDataSetsAsImmediateReport is a convenience function that returns SubscriptionDataSets wrapped in ImmediateReport
@@ -34,7 +34,6 @@ func ArrayOfSharedDataAsImmediateReport(v *[]SharedData) ImmediateReport {
 		ArrayOfSharedData: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ImmediateReport) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ImmediateReport) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ImmediateReport) GetActualInstance() (interface{}) {
+func (obj *ImmediateReport) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableImmediateReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

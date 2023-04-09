@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AfEvent Represents Application Events.
 type AfEvent struct {
-	NefEventAnyOf *NefEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AfEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NefEventAnyOf
-	err = json.Unmarshal(data, &dst.NefEventAnyOf);
-	if err == nil {
-		jsonNefEventAnyOf, _ := json.Marshal(dst.NefEventAnyOf)
-		if string(jsonNefEventAnyOf) == "{}" { // empty struct
-			dst.NefEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.NefEventAnyOf, return on the first match
-		}
-	} else {
-		dst.NefEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AfEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AfEvent) MarshalJSON() ([]byte, error) {
-	if src.NefEventAnyOf != nil {
-		return json.Marshal(&src.NefEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAfEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

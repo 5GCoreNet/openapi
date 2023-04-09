@@ -1,7 +1,7 @@
 /*
 3gpp-racs-parameter-provisioning
 
-API for provisioning UE radio capability parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning UE radio capability parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -13,20 +13,19 @@ package openapi_RacsParameterProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualRACSParameterProvisioningApiService IndividualRACSParameterProvisioningApi service
 type IndividualRACSParameterProvisioningApiService service
 
 type ApiDeleteIndRACSParameterProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualRACSParameterProvisioningApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualRACSParameterProvisioningApiService
+	scsAsId        string
 	provisioningId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteIndRACSParameterProvisioningRequest) Execute() (*http.Response,
 /*
 DeleteIndRACSParameterProvisioning Delete a RACS parameter provisioning.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param provisioningId Provisioning ID
- @return ApiDeleteIndRACSParameterProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param provisioningId Provisioning ID
+	@return ApiDeleteIndRACSParameterProvisioningRequest
 */
 func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterProvisioning(ctx context.Context, scsAsId string, provisioningId string) ApiDeleteIndRACSParameterProvisioningRequest {
 	return ApiDeleteIndRACSParameterProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		provisioningId: provisioningId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 // Execute executes the request
 func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterProvisioningExecute(r ApiDeleteIndRACSParameterProvisioningRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRACSParameterProvisioningApiService.DeleteIndRACSParameterProvisioning")
@@ -99,9 +98,9 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,9 +194,9 @@ func (a *IndividualRACSParameterProvisioningApiService) DeleteIndRACSParameterPr
 }
 
 type ApiFetchIndRACSParameterProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualRACSParameterProvisioningApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualRACSParameterProvisioningApiService
+	scsAsId        string
 	provisioningId string
 }
 
@@ -208,28 +207,29 @@ func (r ApiFetchIndRACSParameterProvisioningRequest) Execute() (*RacsProvisionin
 /*
 FetchIndRACSParameterProvisioning Read an existing RACS parameter provisioning.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param provisioningId Provisioning ID
- @return ApiFetchIndRACSParameterProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param provisioningId Provisioning ID
+	@return ApiFetchIndRACSParameterProvisioningRequest
 */
 func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterProvisioning(ctx context.Context, scsAsId string, provisioningId string) ApiFetchIndRACSParameterProvisioningRequest {
 	return ApiFetchIndRACSParameterProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		provisioningId: provisioningId,
 	}
 }
 
 // Execute executes the request
-//  @return RacsProvisioningData
+//
+//	@return RacsProvisioningData
 func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterProvisioningExecute(r ApiFetchIndRACSParameterProvisioningRequest) (*RacsProvisioningData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RacsProvisioningData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RacsProvisioningData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRACSParameterProvisioningApiService.FetchIndRACSParameterProvisioning")
@@ -272,9 +272,9 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -291,8 +291,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -302,8 +302,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -313,8 +313,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -324,8 +324,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -335,8 +335,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -346,8 +346,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -357,8 +357,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -368,8 +368,8 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -388,10 +388,10 @@ func (a *IndividualRACSParameterProvisioningApiService) FetchIndRACSParameterPro
 }
 
 type ApiModifyIndRACSParameterProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualRACSParameterProvisioningApiService
-	scsAsId string
-	provisioningId string
+	ctx                       context.Context
+	ApiService                *IndividualRACSParameterProvisioningApiService
+	scsAsId                   string
+	provisioningId            string
 	racsProvisioningDataPatch *RacsProvisioningDataPatch
 }
 
@@ -408,28 +408,29 @@ func (r ApiModifyIndRACSParameterProvisioningRequest) Execute() (*RacsProvisioni
 /*
 ModifyIndRACSParameterProvisioning Modify some properties in an existing RACS parameter provisioning.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param provisioningId Provisioning ID
- @return ApiModifyIndRACSParameterProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param provisioningId Provisioning ID
+	@return ApiModifyIndRACSParameterProvisioningRequest
 */
 func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterProvisioning(ctx context.Context, scsAsId string, provisioningId string) ApiModifyIndRACSParameterProvisioningRequest {
 	return ApiModifyIndRACSParameterProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		provisioningId: provisioningId,
 	}
 }
 
 // Execute executes the request
-//  @return RacsProvisioningData
+//
+//	@return RacsProvisioningData
 func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterProvisioningExecute(r ApiModifyIndRACSParameterProvisioningRequest) (*RacsProvisioningData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RacsProvisioningData
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RacsProvisioningData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRACSParameterProvisioningApiService.ModifyIndRACSParameterProvisioning")
@@ -477,9 +478,9 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -496,8 +497,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -507,8 +508,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -518,8 +519,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -529,8 +530,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -540,8 +541,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -551,8 +552,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -562,8 +563,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -573,8 +574,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -584,8 +585,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -595,8 +596,8 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -615,10 +616,10 @@ func (a *IndividualRACSParameterProvisioningApiService) ModifyIndRACSParameterPr
 }
 
 type ApiUpdateIndRACSParameterProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualRACSParameterProvisioningApiService
-	scsAsId string
-	provisioningId string
+	ctx                  context.Context
+	ApiService           *IndividualRACSParameterProvisioningApiService
+	scsAsId              string
+	provisioningId       string
 	racsProvisioningData *RacsProvisioningData
 }
 
@@ -635,28 +636,29 @@ func (r ApiUpdateIndRACSParameterProvisioningRequest) Execute() (*RacsProvisioni
 /*
 UpdateIndRACSParameterProvisioning Modify all properties in an existing RACS parameter provisioning.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param provisioningId Provisioning ID
- @return ApiUpdateIndRACSParameterProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param provisioningId Provisioning ID
+	@return ApiUpdateIndRACSParameterProvisioningRequest
 */
 func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterProvisioning(ctx context.Context, scsAsId string, provisioningId string) ApiUpdateIndRACSParameterProvisioningRequest {
 	return ApiUpdateIndRACSParameterProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		provisioningId: provisioningId,
 	}
 }
 
 // Execute executes the request
-//  @return RacsProvisioningData
+//
+//	@return RacsProvisioningData
 func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterProvisioningExecute(r ApiUpdateIndRACSParameterProvisioningRequest) (*RacsProvisioningData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RacsProvisioningData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RacsProvisioningData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRACSParameterProvisioningApiService.UpdateIndRACSParameterProvisioning")
@@ -704,9 +706,9 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -723,8 +725,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -734,8 +736,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -745,8 +747,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -756,8 +758,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -767,8 +769,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -778,8 +780,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -789,8 +791,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -800,8 +802,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -811,8 +813,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -822,8 +824,8 @@ func (a *IndividualRACSParameterProvisioningApiService) UpdateIndRACSParameterPr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

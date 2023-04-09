@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // RequestedNode Represents the type of serving node for which certain data is requested
 type RequestedNode struct {
-	RequestedNodeAnyOf *RequestedNodeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RequestedNode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RequestedNodeAnyOf
-	err = json.Unmarshal(data, &dst.RequestedNodeAnyOf);
-	if err == nil {
-		jsonRequestedNodeAnyOf, _ := json.Marshal(dst.RequestedNodeAnyOf)
-		if string(jsonRequestedNodeAnyOf) == "{}" { // empty struct
-			dst.RequestedNodeAnyOf = nil
-		} else {
-			return nil // data stored in dst.RequestedNodeAnyOf, return on the first match
-		}
-	} else {
-		dst.RequestedNodeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RequestedNode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RequestedNode) MarshalJSON() ([]byte, error) {
-	if src.RequestedNodeAnyOf != nil {
-		return json.Marshal(&src.RequestedNodeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRequestedNode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

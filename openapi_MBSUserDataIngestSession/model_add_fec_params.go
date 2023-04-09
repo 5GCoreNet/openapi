@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-ud-ingest
 
-API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &AddFecParams{}
 
 // AddFecParams Represents additional scheme-specific parameters for AL-FEC configuration.
 type AddFecParams struct {
-	ParamName string `json:"paramName"`
+	ParamName  string `json:"paramName"`
 	ParamValue string `json:"paramValue"`
 }
 
@@ -91,7 +91,7 @@ func (o *AddFecParams) SetParamValue(v string) {
 }
 
 func (o AddFecParams) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableAddFecParams) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

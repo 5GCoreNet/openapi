@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -22,21 +22,21 @@ var _ MappedNullable = &ACREventsSubscription{}
 type ACREventsSubscription struct {
 	// Represents a unique identifier of the EEC.
 	EecId string `json:"eecId"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	UeId *string `json:"ueId,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
 	ExpTime *time.Time `json:"expTime,omitempty"`
 	// The list of application identifiers of the EASs.
 	EasIds []string `json:"easIds"`
 	// List of AC identities
-	AcIds []string `json:"acIds,omitempty"`
+	AcIds    []string    `json:"acIds,omitempty"`
 	EventIds ACREventIDs `json:"eventIds"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination string `json:"notificationDestination"`
-	// Set to true by Subscriber to request the ECS to send a test notification. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by Subscriber to request the ECS to send a test notification. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -87,7 +87,7 @@ func (o *ACREventsSubscription) SetEecId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ACREventsSubscription) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *ACREventsSubscription) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscription) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -105,7 +105,7 @@ func (o *ACREventsSubscription) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ACREventsSubscription) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *ACREventsSubscription) SetUeId(v string) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ACREventsSubscription) GetExpTime() time.Time {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *ACREventsSubscription) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscription) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -137,7 +137,7 @@ func (o *ACREventsSubscription) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ACREventsSubscription) HasExpTime() bool {
-	if o != nil && !isNil(o.ExpTime) {
+	if o != nil && !IsNil(o.ExpTime) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *ACREventsSubscription) SetEasIds(v []string) {
 
 // GetAcIds returns the AcIds field value if set, zero value otherwise.
 func (o *ACREventsSubscription) GetAcIds() []string {
-	if o == nil || isNil(o.AcIds) {
+	if o == nil || IsNil(o.AcIds) {
 		var ret []string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *ACREventsSubscription) GetAcIds() []string {
 // GetAcIdsOk returns a tuple with the AcIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscription) GetAcIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AcIds) {
+	if o == nil || IsNil(o.AcIds) {
 		return nil, false
 	}
 	return o.AcIds, true
@@ -193,7 +193,7 @@ func (o *ACREventsSubscription) GetAcIdsOk() ([]string, bool) {
 
 // HasAcIds returns a boolean if a field has been set.
 func (o *ACREventsSubscription) HasAcIds() bool {
-	if o != nil && !isNil(o.AcIds) {
+	if o != nil && !IsNil(o.AcIds) {
 		return true
 	}
 
@@ -255,7 +255,7 @@ func (o *ACREventsSubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ACREventsSubscription) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -265,7 +265,7 @@ func (o *ACREventsSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -273,7 +273,7 @@ func (o *ACREventsSubscription) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ACREventsSubscription) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -287,7 +287,7 @@ func (o *ACREventsSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ACREventsSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -297,7 +297,7 @@ func (o *ACREventsSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -305,7 +305,7 @@ func (o *ACREventsSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, 
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ACREventsSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -319,7 +319,7 @@ func (o *ACREventsSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ACREventsSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -329,7 +329,7 @@ func (o *ACREventsSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -337,7 +337,7 @@ func (o *ACREventsSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ACREventsSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *ACREventsSubscription) SetSuppFeat(v string) {
 }
 
 func (o ACREventsSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -360,25 +360,25 @@ func (o ACREventsSubscription) MarshalJSON() ([]byte, error) {
 func (o ACREventsSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.ExpTime) {
+	if !IsNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
 	toSerialize["easIds"] = o.EasIds
-	if !isNil(o.AcIds) {
+	if !IsNil(o.AcIds) {
 		toSerialize["acIds"] = o.AcIds
 	}
 	toSerialize["eventIds"] = o.EventIds
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -419,5 +419,3 @@ func (v *NullableACREventsSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &PduSessionStatusCfg{}
 
 // PduSessionStatusCfg struct for PduSessionStatusCfg
 type PduSessionStatusCfg struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn *string `json:"dnn,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewPduSessionStatusCfgWithDefaults() *PduSessionStatusCfg {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PduSessionStatusCfg) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduSessionStatusCfg) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionStatusCfg) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -60,7 +60,7 @@ func (o *PduSessionStatusCfg) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PduSessionStatusCfg) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *PduSessionStatusCfg) SetDnn(v string) {
 }
 
 func (o PduSessionStatusCfg) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o PduSessionStatusCfg) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionStatusCfg) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullablePduSessionStatusCfg) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nausf_SoRProtection Service
 
-AUSF SoR Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF SoR Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -96,7 +96,7 @@ func (o *SorSecurityInfo) SetCounterSor(v string) {
 
 // GetSorXmacIue returns the SorXmacIue field value if set, zero value otherwise.
 func (o *SorSecurityInfo) GetSorXmacIue() string {
-	if o == nil || isNil(o.SorXmacIue) {
+	if o == nil || IsNil(o.SorXmacIue) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SorSecurityInfo) GetSorXmacIue() string {
 // GetSorXmacIueOk returns a tuple with the SorXmacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorSecurityInfo) GetSorXmacIueOk() (*string, bool) {
-	if o == nil || isNil(o.SorXmacIue) {
+	if o == nil || IsNil(o.SorXmacIue) {
 		return nil, false
 	}
 	return o.SorXmacIue, true
@@ -114,7 +114,7 @@ func (o *SorSecurityInfo) GetSorXmacIueOk() (*string, bool) {
 
 // HasSorXmacIue returns a boolean if a field has been set.
 func (o *SorSecurityInfo) HasSorXmacIue() bool {
-	if o != nil && !isNil(o.SorXmacIue) {
+	if o != nil && !IsNil(o.SorXmacIue) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *SorSecurityInfo) SetSorXmacIue(v string) {
 }
 
 func (o SorSecurityInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o SorSecurityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sorMacIausf"] = o.SorMacIausf
 	toSerialize["counterSor"] = o.CounterSor
-	if !isNil(o.SorXmacIue) {
+	if !IsNil(o.SorXmacIue) {
 		toSerialize["sorXmacIue"] = o.SorXmacIue
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableSorSecurityInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

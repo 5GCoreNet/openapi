@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &AnalyticsMetadataInfo{}
 // AnalyticsMetadataInfo Contains analytics metadata information required for analytics aggregation.
 type AnalyticsMetadataInfo struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	NumSamples *int32 `json:"numSamples,omitempty"`
-	DataWindow *TimeWindow `json:"dataWindow,omitempty"`
+	NumSamples    *int32                       `json:"numSamples,omitempty"`
+	DataWindow    *TimeWindow                  `json:"dataWindow,omitempty"`
 	DataStatProps []DatasetStatisticalProperty `json:"dataStatProps,omitempty"`
-	Strategy *OutputStrategy `json:"strategy,omitempty"`
-	Accuracy *Accuracy `json:"accuracy,omitempty"`
+	Strategy      *OutputStrategy              `json:"strategy,omitempty"`
+	Accuracy      *Accuracy                    `json:"accuracy,omitempty"`
 }
 
 // NewAnalyticsMetadataInfo instantiates a new AnalyticsMetadataInfo object
@@ -46,7 +46,7 @@ func NewAnalyticsMetadataInfoWithDefaults() *AnalyticsMetadataInfo {
 
 // GetNumSamples returns the NumSamples field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetNumSamples() int32 {
-	if o == nil || isNil(o.NumSamples) {
+	if o == nil || IsNil(o.NumSamples) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AnalyticsMetadataInfo) GetNumSamples() int32 {
 // GetNumSamplesOk returns a tuple with the NumSamples field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetNumSamplesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumSamples) {
+	if o == nil || IsNil(o.NumSamples) {
 		return nil, false
 	}
 	return o.NumSamples, true
@@ -64,7 +64,7 @@ func (o *AnalyticsMetadataInfo) GetNumSamplesOk() (*int32, bool) {
 
 // HasNumSamples returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasNumSamples() bool {
-	if o != nil && !isNil(o.NumSamples) {
+	if o != nil && !IsNil(o.NumSamples) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AnalyticsMetadataInfo) SetNumSamples(v int32) {
 
 // GetDataWindow returns the DataWindow field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetDataWindow() TimeWindow {
-	if o == nil || isNil(o.DataWindow) {
+	if o == nil || IsNil(o.DataWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AnalyticsMetadataInfo) GetDataWindow() TimeWindow {
 // GetDataWindowOk returns a tuple with the DataWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetDataWindowOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.DataWindow) {
+	if o == nil || IsNil(o.DataWindow) {
 		return nil, false
 	}
 	return o.DataWindow, true
@@ -96,7 +96,7 @@ func (o *AnalyticsMetadataInfo) GetDataWindowOk() (*TimeWindow, bool) {
 
 // HasDataWindow returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasDataWindow() bool {
-	if o != nil && !isNil(o.DataWindow) {
+	if o != nil && !IsNil(o.DataWindow) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AnalyticsMetadataInfo) SetDataWindow(v TimeWindow) {
 
 // GetDataStatProps returns the DataStatProps field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetDataStatProps() []DatasetStatisticalProperty {
-	if o == nil || isNil(o.DataStatProps) {
+	if o == nil || IsNil(o.DataStatProps) {
 		var ret []DatasetStatisticalProperty
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AnalyticsMetadataInfo) GetDataStatProps() []DatasetStatisticalProperty 
 // GetDataStatPropsOk returns a tuple with the DataStatProps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetDataStatPropsOk() ([]DatasetStatisticalProperty, bool) {
-	if o == nil || isNil(o.DataStatProps) {
+	if o == nil || IsNil(o.DataStatProps) {
 		return nil, false
 	}
 	return o.DataStatProps, true
@@ -128,7 +128,7 @@ func (o *AnalyticsMetadataInfo) GetDataStatPropsOk() ([]DatasetStatisticalProper
 
 // HasDataStatProps returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasDataStatProps() bool {
-	if o != nil && !isNil(o.DataStatProps) {
+	if o != nil && !IsNil(o.DataStatProps) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AnalyticsMetadataInfo) SetDataStatProps(v []DatasetStatisticalProperty)
 
 // GetStrategy returns the Strategy field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetStrategy() OutputStrategy {
-	if o == nil || isNil(o.Strategy) {
+	if o == nil || IsNil(o.Strategy) {
 		var ret OutputStrategy
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AnalyticsMetadataInfo) GetStrategy() OutputStrategy {
 // GetStrategyOk returns a tuple with the Strategy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetStrategyOk() (*OutputStrategy, bool) {
-	if o == nil || isNil(o.Strategy) {
+	if o == nil || IsNil(o.Strategy) {
 		return nil, false
 	}
 	return o.Strategy, true
@@ -160,7 +160,7 @@ func (o *AnalyticsMetadataInfo) GetStrategyOk() (*OutputStrategy, bool) {
 
 // HasStrategy returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasStrategy() bool {
-	if o != nil && !isNil(o.Strategy) {
+	if o != nil && !IsNil(o.Strategy) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *AnalyticsMetadataInfo) SetStrategy(v OutputStrategy) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetAccuracy() Accuracy {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret Accuracy
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *AnalyticsMetadataInfo) GetAccuracy() Accuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetAccuracyOk() (*Accuracy, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -192,7 +192,7 @@ func (o *AnalyticsMetadataInfo) GetAccuracyOk() (*Accuracy, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *AnalyticsMetadataInfo) SetAccuracy(v Accuracy) {
 }
 
 func (o AnalyticsMetadataInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o AnalyticsMetadataInfo) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsMetadataInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NumSamples) {
+	if !IsNil(o.NumSamples) {
 		toSerialize["numSamples"] = o.NumSamples
 	}
-	if !isNil(o.DataWindow) {
+	if !IsNil(o.DataWindow) {
 		toSerialize["dataWindow"] = o.DataWindow
 	}
-	if !isNil(o.DataStatProps) {
+	if !IsNil(o.DataStatProps) {
 		toSerialize["dataStatProps"] = o.DataStatProps
 	}
-	if !isNil(o.Strategy) {
+	if !IsNil(o.Strategy) {
 		toSerialize["strategy"] = o.Strategy
 	}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullableAnalyticsMetadataInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

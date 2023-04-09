@@ -1,7 +1,7 @@
 /*
 VAE_FileDistribution
 
-API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_VAE_FileDistribution
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualFileDistributionDocumentApiService IndividualFileDistributionDocumentApi service
 type IndividualFileDistributionDocumentApiService service
 
 type ApiDeleteFileDistributionRequest struct {
-	ctx context.Context
-	ApiService *IndividualFileDistributionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualFileDistributionDocumentApiService
 	distributionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteFileDistributionRequest) Execute() (*http.Response, error) {
 /*
 DeleteFileDistribution VAE File Distribution resource delete service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param distributionId Unique ID of the file distribution to be deleted
- @return ApiDeleteFileDistributionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param distributionId Unique ID of the file distribution to be deleted
+	@return ApiDeleteFileDistributionRequest
 */
 func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistribution(ctx context.Context, distributionId string) ApiDeleteFileDistributionRequest {
 	return ApiDeleteFileDistributionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		distributionId: distributionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistribution(ct
 // Execute executes the request
 func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExecute(r ApiDeleteFileDistributionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualFileDistributionDocumentApiService.DeleteFileDistribution")
@@ -95,9 +94,9 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -191,8 +190,8 @@ func (a *IndividualFileDistributionDocumentApiService) DeleteFileDistributionExe
 }
 
 type ApiReadIndividualFileDistributionRequest struct {
-	ctx context.Context
-	ApiService *IndividualFileDistributionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualFileDistributionDocumentApiService
 	distributionId string
 }
 
@@ -203,26 +202,27 @@ func (r ApiReadIndividualFileDistributionRequest) Execute() (*FileDistributionDa
 /*
 ReadIndividualFileDistribution Get an existing individual file distribution resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param distributionId Identifier of a file distribution resource
- @return ApiReadIndividualFileDistributionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param distributionId Identifier of a file distribution resource
+	@return ApiReadIndividualFileDistributionRequest
 */
 func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistribution(ctx context.Context, distributionId string) ApiReadIndividualFileDistributionRequest {
 	return ApiReadIndividualFileDistributionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		distributionId: distributionId,
 	}
 }
 
 // Execute executes the request
-//  @return FileDistributionData
+//
+//	@return FileDistributionData
 func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistributionExecute(r ApiReadIndividualFileDistributionRequest) (*FileDistributionData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FileDistributionData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FileDistributionData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualFileDistributionDocumentApiService.ReadIndividualFileDistribution")
@@ -264,9 +264,9 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -283,8 +283,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -294,8 +294,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -305,8 +305,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -316,8 +316,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -327,8 +327,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -338,8 +338,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -349,8 +349,8 @@ func (a *IndividualFileDistributionDocumentApiService) ReadIndividualFileDistrib
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -19,9 +19,9 @@ var _ MappedNullable = &NrCellCuSingleAllOfAttributesAllOf{}
 
 // NrCellCuSingleAllOfAttributesAllOf struct for NrCellCuSingleAllOfAttributesAllOf
 type NrCellCuSingleAllOfAttributesAllOf struct {
-	CellLocalId *int32 `json:"cellLocalId,omitempty"`
-	PlmnInfoList []PlmnInfo `json:"plmnInfoList,omitempty"`
-	NRFrequencyRef *string `json:"nRFrequencyRef,omitempty"`
+	CellLocalId    *int32     `json:"cellLocalId,omitempty"`
+	PlmnInfoList   []PlmnInfo `json:"plmnInfoList,omitempty"`
+	NRFrequencyRef *string    `json:"nRFrequencyRef,omitempty"`
 }
 
 // NewNrCellCuSingleAllOfAttributesAllOf instantiates a new NrCellCuSingleAllOfAttributesAllOf object
@@ -138,7 +138,7 @@ func (o *NrCellCuSingleAllOfAttributesAllOf) SetNRFrequencyRef(v string) {
 }
 
 func (o NrCellCuSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableNrCellCuSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

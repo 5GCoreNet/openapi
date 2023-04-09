@@ -1,7 +1,7 @@
 /*
 VAE_PC5ProvisioningRequirement
 
-API for VAE_PC5ProvisioningRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE_PC5ProvisioningRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // Result Contains the result of downlink message delivery.
 type Result struct {
-	ResultAnyOf *ResultAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Result) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ResultAnyOf
-	err = json.Unmarshal(data, &dst.ResultAnyOf);
-	if err == nil {
-		jsonResultAnyOf, _ := json.Marshal(dst.ResultAnyOf)
-		if string(jsonResultAnyOf) == "{}" { // empty struct
-			dst.ResultAnyOf = nil
-		} else {
-			return nil // data stored in dst.ResultAnyOf, return on the first match
-		}
-	} else {
-		dst.ResultAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Result) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Result) MarshalJSON() ([]byte, error) {
-	if src.ResultAnyOf != nil {
-		return json.Marshal(&src.ResultAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

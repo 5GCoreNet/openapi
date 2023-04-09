@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // HSSEventGroupSubscriptionInfoDocumentApiService HSSEventGroupSubscriptionInfoDocumentApi service
 type HSSEventGroupSubscriptionInfoDocumentApiService service
 
 type ApiCreateHssGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *HSSEventGroupSubscriptionInfoDocumentApiService
-	externalGroupId string
-	subsId string
+	ctx                 context.Context
+	ApiService          *HSSEventGroupSubscriptionInfoDocumentApiService
+	externalGroupId     string
+	subsId              string
 	hssSubscriptionInfo *HssSubscriptionInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateHssGroupSubscriptionsRequest) Execute() (*HssSubscriptionInfo, 
 /*
 CreateHssGroupSubscriptions Create HSS Subscription Info for a group of UEs
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @param subsId
- @return ApiCreateHssGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@param subsId
+	@return ApiCreateHssGroupSubscriptionsRequest
 */
 func (a *HSSEventGroupSubscriptionInfoDocumentApiService) CreateHssGroupSubscriptions(ctx context.Context, externalGroupId string, subsId string) ApiCreateHssGroupSubscriptionsRequest {
 	return ApiCreateHssGroupSubscriptionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
-		subsId: subsId,
+		subsId:          subsId,
 	}
 }
 
 // Execute executes the request
-//  @return HssSubscriptionInfo
+//
+//	@return HssSubscriptionInfo
 func (a *HSSEventGroupSubscriptionInfoDocumentApiService) CreateHssGroupSubscriptionsExecute(r ApiCreateHssGroupSubscriptionsRequest) (*HssSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HssSubscriptionInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HssSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventGroupSubscriptionInfoDocumentApiService.CreateHssGroupSubscriptions")
@@ -112,9 +112,9 @@ func (a *HSSEventGroupSubscriptionInfoDocumentApiService) CreateHssGroupSubscrip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

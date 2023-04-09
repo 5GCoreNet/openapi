@@ -1,16 +1,14 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
 api_default.go
 client.go
 configuration.go
-docs/ConsumptionReportingConfiguration.md
-docs/DefaultApi.md
 git_push.sh
 go.mod
 go.sum
 model_consumption_reporting_configuration.go
 response.go
-test/api_default_test.go
 utils.go

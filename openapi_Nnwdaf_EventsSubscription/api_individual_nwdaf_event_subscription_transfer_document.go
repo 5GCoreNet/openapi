@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,18 +13,17 @@ package openapi_Nnwdaf_EventsSubscription
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualNWDAFEventSubscriptionTransferDocumentApiService IndividualNWDAFEventSubscriptionTransferDocumentApi service
 type IndividualNWDAFEventSubscriptionTransferDocumentApiService service
 
 type ApiDeleteNWDAFEventSubscriptionTransferRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualNWDAFEventSubscriptionTransferDocumentApiService
 	transferId string
 }
@@ -36,14 +35,14 @@ func (r ApiDeleteNWDAFEventSubscriptionTransferRequest) Execute() (*http.Respons
 /*
 DeleteNWDAFEventSubscriptionTransfer Delete an existing Individual NWDAF Event Subscription Transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transferId String identifying a request for an analytics subscription transfer to the  Nnwdaf_EventsSubscription Service 
- @return ApiDeleteNWDAFEventSubscriptionTransferRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transferId String identifying a request for an analytics subscription transfer to the  Nnwdaf_EventsSubscription Service
+	@return ApiDeleteNWDAFEventSubscriptionTransferRequest
 */
 func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAFEventSubscriptionTransfer(ctx context.Context, transferId string) ApiDeleteNWDAFEventSubscriptionTransferRequest {
 	return ApiDeleteNWDAFEventSubscriptionTransferRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		transferId: transferId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 // Execute executes the request
 func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAFEventSubscriptionTransferExecute(r ApiDeleteNWDAFEventSubscriptionTransferRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNWDAFEventSubscriptionTransferDocumentApiService.DeleteNWDAFEventSubscriptionTransfer")
@@ -95,9 +94,9 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -202,8 +201,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -213,8 +212,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -224,8 +223,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -235,9 +234,9 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) DeleteNWDAF
 }
 
 type ApiUpdateNWDAFEventSubscriptionTransferRequest struct {
-	ctx context.Context
-	ApiService *IndividualNWDAFEventSubscriptionTransferDocumentApiService
-	transferId string
+	ctx                            context.Context
+	ApiService                     *IndividualNWDAFEventSubscriptionTransferDocumentApiService
+	transferId                     string
 	analyticsSubscriptionsTransfer *AnalyticsSubscriptionsTransfer
 }
 
@@ -253,14 +252,14 @@ func (r ApiUpdateNWDAFEventSubscriptionTransferRequest) Execute() (*http.Respons
 /*
 UpdateNWDAFEventSubscriptionTransfer Update an existing Individual NWDAF Event Subscription Transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transferId String identifying a request for an analytics subscription transfer to the  Nnwdaf_EventsSubscription Service 
- @return ApiUpdateNWDAFEventSubscriptionTransferRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transferId String identifying a request for an analytics subscription transfer to the  Nnwdaf_EventsSubscription Service
+	@return ApiUpdateNWDAFEventSubscriptionTransferRequest
 */
 func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAFEventSubscriptionTransfer(ctx context.Context, transferId string) ApiUpdateNWDAFEventSubscriptionTransferRequest {
 	return ApiUpdateNWDAFEventSubscriptionTransferRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		transferId: transferId,
 	}
 }
@@ -268,9 +267,9 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 // Execute executes the request
 func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAFEventSubscriptionTransferExecute(r ApiUpdateNWDAFEventSubscriptionTransferRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNWDAFEventSubscriptionTransferDocumentApiService.UpdateNWDAFEventSubscriptionTransfer")
@@ -317,9 +316,9 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -336,8 +335,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -347,8 +346,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -358,8 +357,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -369,8 +368,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -380,8 +379,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -391,8 +390,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -402,8 +401,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -413,8 +412,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -424,8 +423,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -435,8 +434,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -446,8 +445,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -457,8 +456,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -468,8 +467,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -479,8 +478,8 @@ func (a *IndividualNWDAFEventSubscriptionTransferDocumentApiService) UpdateNWDAF
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

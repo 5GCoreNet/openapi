@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,10 +17,10 @@ import (
 // checks if the SelectedC2CommModeNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SelectedC2CommModeNotif{}
 
-// SelectedC2CommModeNotif Represents information on the C2 Communication Mode selected by a UAS (i.e. pair of UAV and UAV-C). 
+// SelectedC2CommModeNotif Represents information on the C2 Communication Mode selected by a UAS (i.e. pair of UAV and UAV-C).
 type SelectedC2CommModeNotif struct {
-	UasId UasId `json:"uasId"`
-	SelPrimaryC2CommMode C2CommMode `json:"selPrimaryC2CommMode"`
+	UasId                  UasId       `json:"uasId"`
+	SelPrimaryC2CommMode   C2CommMode  `json:"selPrimaryC2CommMode"`
 	SelSecondaryC2CommMode *C2CommMode `json:"selSecondaryC2CommMode,omitempty"`
 }
 
@@ -93,7 +93,7 @@ func (o *SelectedC2CommModeNotif) SetSelPrimaryC2CommMode(v C2CommMode) {
 
 // GetSelSecondaryC2CommMode returns the SelSecondaryC2CommMode field value if set, zero value otherwise.
 func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommMode() C2CommMode {
-	if o == nil || isNil(o.SelSecondaryC2CommMode) {
+	if o == nil || IsNil(o.SelSecondaryC2CommMode) {
 		var ret C2CommMode
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommMode() C2CommMode {
 // GetSelSecondaryC2CommModeOk returns a tuple with the SelSecondaryC2CommMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommModeOk() (*C2CommMode, bool) {
-	if o == nil || isNil(o.SelSecondaryC2CommMode) {
+	if o == nil || IsNil(o.SelSecondaryC2CommMode) {
 		return nil, false
 	}
 	return o.SelSecondaryC2CommMode, true
@@ -111,7 +111,7 @@ func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommModeOk() (*C2CommMode, bo
 
 // HasSelSecondaryC2CommMode returns a boolean if a field has been set.
 func (o *SelectedC2CommModeNotif) HasSelSecondaryC2CommMode() bool {
-	if o != nil && !isNil(o.SelSecondaryC2CommMode) {
+	if o != nil && !IsNil(o.SelSecondaryC2CommMode) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *SelectedC2CommModeNotif) SetSelSecondaryC2CommMode(v C2CommMode) {
 }
 
 func (o SelectedC2CommModeNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o SelectedC2CommModeNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["uasId"] = o.UasId
 	toSerialize["selPrimaryC2CommMode"] = o.SelPrimaryC2CommMode
-	if !isNil(o.SelSecondaryC2CommMode) {
+	if !IsNil(o.SelSecondaryC2CommMode) {
 		toSerialize["selSecondaryC2CommMode"] = o.SelSecondaryC2CommMode
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableSelectedC2CommModeNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

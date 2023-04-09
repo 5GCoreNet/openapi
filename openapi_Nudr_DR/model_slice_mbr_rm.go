@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -18,14 +18,14 @@ import (
 // SliceMbrRm SliceMbr with nullable: true
 type SliceMbrRm struct {
 	NullValue *NullValue
-	SliceMbr *SliceMbr
+	SliceMbr  *SliceMbr
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SliceMbrRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *SliceMbrRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into SliceMbr
-	err = json.Unmarshal(data, &dst.SliceMbr);
+	err = json.Unmarshal(data, &dst.SliceMbr)
 	if err == nil {
 		jsonSliceMbr, _ := json.Marshal(dst.SliceMbr)
 		if string(jsonSliceMbr) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableSliceMbrRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

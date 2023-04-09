@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &SACEventReportItem{}
 
 // SACEventReportItem Represents a report triggered by a subscribed event type
 type SACEventReportItem struct {
-	EventType SACEventType `json:"eventType"`
+	EventType  SACEventType  `json:"eventType"`
 	EventState SACEventState `json:"eventState"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeStamp time.Time `json:"timeStamp"`
-	EventFilter Snssai `json:"eventFilter"`
+	TimeStamp       time.Time       `json:"timeStamp"`
+	EventFilter     Snssai          `json:"eventFilter"`
 	SliceStautsInfo *SACEventStatus `json:"sliceStautsInfo,omitempty"`
 }
 
@@ -147,7 +147,7 @@ func (o *SACEventReportItem) SetEventFilter(v Snssai) {
 
 // GetSliceStautsInfo returns the SliceStautsInfo field value if set, zero value otherwise.
 func (o *SACEventReportItem) GetSliceStautsInfo() SACEventStatus {
-	if o == nil || isNil(o.SliceStautsInfo) {
+	if o == nil || IsNil(o.SliceStautsInfo) {
 		var ret SACEventStatus
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *SACEventReportItem) GetSliceStautsInfo() SACEventStatus {
 // GetSliceStautsInfoOk returns a tuple with the SliceStautsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventReportItem) GetSliceStautsInfoOk() (*SACEventStatus, bool) {
-	if o == nil || isNil(o.SliceStautsInfo) {
+	if o == nil || IsNil(o.SliceStautsInfo) {
 		return nil, false
 	}
 	return o.SliceStautsInfo, true
@@ -165,7 +165,7 @@ func (o *SACEventReportItem) GetSliceStautsInfoOk() (*SACEventStatus, bool) {
 
 // HasSliceStautsInfo returns a boolean if a field has been set.
 func (o *SACEventReportItem) HasSliceStautsInfo() bool {
-	if o != nil && !isNil(o.SliceStautsInfo) {
+	if o != nil && !IsNil(o.SliceStautsInfo) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SACEventReportItem) SetSliceStautsInfo(v SACEventStatus) {
 }
 
 func (o SACEventReportItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -191,7 +191,7 @@ func (o SACEventReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventState"] = o.EventState
 	toSerialize["timeStamp"] = o.TimeStamp
 	toSerialize["eventFilter"] = o.EventFilter
-	if !isNil(o.SliceStautsInfo) {
+	if !IsNil(o.SliceStautsInfo) {
 		toSerialize["sliceStautsInfo"] = o.SliceStautsInfo
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableSACEventReportItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

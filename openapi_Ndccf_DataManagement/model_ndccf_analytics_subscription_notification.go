@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -12,7 +12,6 @@ package openapi_Ndccf_DataManagement
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -27,7 +26,6 @@ func InterfaceAsNdccfAnalyticsSubscriptionNotification(v *interface{}) NdccfAnal
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NdccfAnalyticsSubscriptionNotification) UnmarshalJSON(data []byte) error {
@@ -68,7 +66,7 @@ func (src NdccfAnalyticsSubscriptionNotification) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *NdccfAnalyticsSubscriptionNotification) GetActualInstance() (interface{}) {
+func (obj *NdccfAnalyticsSubscriptionNotification) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -115,5 +113,3 @@ func (v *NullableNdccfAnalyticsSubscriptionNotification) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

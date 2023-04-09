@@ -1,7 +1,7 @@
 /*
 VAE_MessageDelivery
 
-API for VAE Message Delivery Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Message Delivery Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_VAE_MessageDelivery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualMessageDeliveryDocumentApiService IndividualMessageDeliveryDocumentApi service
 type IndividualMessageDeliveryDocumentApiService service
 
 type ApiDeleteMessageDeliveryRequest struct {
-	ctx context.Context
-	ApiService *IndividualMessageDeliveryDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualMessageDeliveryDocumentApiService
 	subscriptionId string
-	dlDeliveryId string
+	dlDeliveryId   string
 }
 
 func (r ApiDeleteMessageDeliveryRequest) Execute() (*http.Response, error) {
@@ -37,26 +36,26 @@ func (r ApiDeleteMessageDeliveryRequest) Execute() (*http.Response, error) {
 /*
 DeleteMessageDelivery VAE Message delivery resource delete service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId String identifying a subscription to the Individual Message Delivery Subscription 
- @param dlDeliveryId Unique ID of the message delivery to be deleted
- @return ApiDeleteMessageDeliveryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId String identifying a subscription to the Individual Message Delivery Subscription
+	@param dlDeliveryId Unique ID of the message delivery to be deleted
+	@return ApiDeleteMessageDeliveryRequest
 */
 func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDelivery(ctx context.Context, subscriptionId string, dlDeliveryId string) ApiDeleteMessageDeliveryRequest {
 	return ApiDeleteMessageDeliveryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
-		dlDeliveryId: dlDeliveryId,
+		dlDeliveryId:   dlDeliveryId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecute(r ApiDeleteMessageDeliveryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMessageDeliveryDocumentApiService.DeleteMessageDelivery")
@@ -99,9 +98,9 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualMessageDeliveryDocumentApiService) DeleteMessageDeliveryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

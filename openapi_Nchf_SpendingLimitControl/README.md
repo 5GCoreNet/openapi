@@ -92,7 +92,6 @@ Class | Method | HTTP request | Description
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PendingPolicyCounterStatus](docs/PendingPolicyCounterStatus.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
@@ -104,7 +103,6 @@ Class | Method | HTTP request | Description
  - [SpendingLimitStatus](docs/SpendingLimitStatus.md)
  - [SubscriptionTerminationInfo](docs/SubscriptionTerminationInfo.md)
  - [TerminationCause](docs/TerminationCause.md)
- - [TerminationCauseAnyOf](docs/TerminationCauseAnyOf.md)
 
 
 ## Documentation For Authorization

@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -24,8 +24,8 @@ type UELocationInfo struct {
 	// Indicates value of the age of the location estimate.
 	AgeOfLocationEstimate *int32 `json:"ageOfLocationEstimate,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimestampOfLocationEstimate *time.Time `json:"timestampOfLocationEstimate,omitempty"`
-	VelocityEstimate *VelocityEstimate `json:"velocityEstimate,omitempty"`
+	TimestampOfLocationEstimate *time.Time        `json:"timestampOfLocationEstimate,omitempty"`
+	VelocityEstimate            *VelocityEstimate `json:"velocityEstimate,omitempty"`
 	// Indicates value of the age of the location estimate.
 	AgeOfVelocityEstimate *int32 `json:"ageOfVelocityEstimate,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
@@ -51,7 +51,7 @@ func NewUELocationInfoWithDefaults() *UELocationInfo {
 
 // GetLocationEstimate returns the LocationEstimate field value if set, zero value otherwise.
 func (o *UELocationInfo) GetLocationEstimate() GeographicArea {
-	if o == nil || isNil(o.LocationEstimate) {
+	if o == nil || IsNil(o.LocationEstimate) {
 		var ret GeographicArea
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *UELocationInfo) GetLocationEstimate() GeographicArea {
 // GetLocationEstimateOk returns a tuple with the LocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UELocationInfo) GetLocationEstimateOk() (*GeographicArea, bool) {
-	if o == nil || isNil(o.LocationEstimate) {
+	if o == nil || IsNil(o.LocationEstimate) {
 		return nil, false
 	}
 	return o.LocationEstimate, true
@@ -69,7 +69,7 @@ func (o *UELocationInfo) GetLocationEstimateOk() (*GeographicArea, bool) {
 
 // HasLocationEstimate returns a boolean if a field has been set.
 func (o *UELocationInfo) HasLocationEstimate() bool {
-	if o != nil && !isNil(o.LocationEstimate) {
+	if o != nil && !IsNil(o.LocationEstimate) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *UELocationInfo) SetLocationEstimate(v GeographicArea) {
 
 // GetAgeOfLocationEstimate returns the AgeOfLocationEstimate field value if set, zero value otherwise.
 func (o *UELocationInfo) GetAgeOfLocationEstimate() int32 {
-	if o == nil || isNil(o.AgeOfLocationEstimate) {
+	if o == nil || IsNil(o.AgeOfLocationEstimate) {
 		var ret int32
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *UELocationInfo) GetAgeOfLocationEstimate() int32 {
 // GetAgeOfLocationEstimateOk returns a tuple with the AgeOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UELocationInfo) GetAgeOfLocationEstimateOk() (*int32, bool) {
-	if o == nil || isNil(o.AgeOfLocationEstimate) {
+	if o == nil || IsNil(o.AgeOfLocationEstimate) {
 		return nil, false
 	}
 	return o.AgeOfLocationEstimate, true
@@ -101,7 +101,7 @@ func (o *UELocationInfo) GetAgeOfLocationEstimateOk() (*int32, bool) {
 
 // HasAgeOfLocationEstimate returns a boolean if a field has been set.
 func (o *UELocationInfo) HasAgeOfLocationEstimate() bool {
-	if o != nil && !isNil(o.AgeOfLocationEstimate) {
+	if o != nil && !IsNil(o.AgeOfLocationEstimate) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *UELocationInfo) SetAgeOfLocationEstimate(v int32) {
 
 // GetTimestampOfLocationEstimate returns the TimestampOfLocationEstimate field value if set, zero value otherwise.
 func (o *UELocationInfo) GetTimestampOfLocationEstimate() time.Time {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		var ret time.Time
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *UELocationInfo) GetTimestampOfLocationEstimate() time.Time {
 // GetTimestampOfLocationEstimateOk returns a tuple with the TimestampOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UELocationInfo) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		return nil, false
 	}
 	return o.TimestampOfLocationEstimate, true
@@ -133,7 +133,7 @@ func (o *UELocationInfo) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
 
 // HasTimestampOfLocationEstimate returns a boolean if a field has been set.
 func (o *UELocationInfo) HasTimestampOfLocationEstimate() bool {
-	if o != nil && !isNil(o.TimestampOfLocationEstimate) {
+	if o != nil && !IsNil(o.TimestampOfLocationEstimate) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *UELocationInfo) SetTimestampOfLocationEstimate(v time.Time) {
 
 // GetVelocityEstimate returns the VelocityEstimate field value if set, zero value otherwise.
 func (o *UELocationInfo) GetVelocityEstimate() VelocityEstimate {
-	if o == nil || isNil(o.VelocityEstimate) {
+	if o == nil || IsNil(o.VelocityEstimate) {
 		var ret VelocityEstimate
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *UELocationInfo) GetVelocityEstimate() VelocityEstimate {
 // GetVelocityEstimateOk returns a tuple with the VelocityEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UELocationInfo) GetVelocityEstimateOk() (*VelocityEstimate, bool) {
-	if o == nil || isNil(o.VelocityEstimate) {
+	if o == nil || IsNil(o.VelocityEstimate) {
 		return nil, false
 	}
 	return o.VelocityEstimate, true
@@ -165,7 +165,7 @@ func (o *UELocationInfo) GetVelocityEstimateOk() (*VelocityEstimate, bool) {
 
 // HasVelocityEstimate returns a boolean if a field has been set.
 func (o *UELocationInfo) HasVelocityEstimate() bool {
-	if o != nil && !isNil(o.VelocityEstimate) {
+	if o != nil && !IsNil(o.VelocityEstimate) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *UELocationInfo) SetVelocityEstimate(v VelocityEstimate) {
 
 // GetAgeOfVelocityEstimate returns the AgeOfVelocityEstimate field value if set, zero value otherwise.
 func (o *UELocationInfo) GetAgeOfVelocityEstimate() int32 {
-	if o == nil || isNil(o.AgeOfVelocityEstimate) {
+	if o == nil || IsNil(o.AgeOfVelocityEstimate) {
 		var ret int32
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *UELocationInfo) GetAgeOfVelocityEstimate() int32 {
 // GetAgeOfVelocityEstimateOk returns a tuple with the AgeOfVelocityEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UELocationInfo) GetAgeOfVelocityEstimateOk() (*int32, bool) {
-	if o == nil || isNil(o.AgeOfVelocityEstimate) {
+	if o == nil || IsNil(o.AgeOfVelocityEstimate) {
 		return nil, false
 	}
 	return o.AgeOfVelocityEstimate, true
@@ -197,7 +197,7 @@ func (o *UELocationInfo) GetAgeOfVelocityEstimateOk() (*int32, bool) {
 
 // HasAgeOfVelocityEstimate returns a boolean if a field has been set.
 func (o *UELocationInfo) HasAgeOfVelocityEstimate() bool {
-	if o != nil && !isNil(o.AgeOfVelocityEstimate) {
+	if o != nil && !IsNil(o.AgeOfVelocityEstimate) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *UELocationInfo) SetAgeOfVelocityEstimate(v int32) {
 
 // GetTimestampOfVelocityEstimate returns the TimestampOfVelocityEstimate field value if set, zero value otherwise.
 func (o *UELocationInfo) GetTimestampOfVelocityEstimate() time.Time {
-	if o == nil || isNil(o.TimestampOfVelocityEstimate) {
+	if o == nil || IsNil(o.TimestampOfVelocityEstimate) {
 		var ret time.Time
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *UELocationInfo) GetTimestampOfVelocityEstimate() time.Time {
 // GetTimestampOfVelocityEstimateOk returns a tuple with the TimestampOfVelocityEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UELocationInfo) GetTimestampOfVelocityEstimateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimestampOfVelocityEstimate) {
+	if o == nil || IsNil(o.TimestampOfVelocityEstimate) {
 		return nil, false
 	}
 	return o.TimestampOfVelocityEstimate, true
@@ -229,7 +229,7 @@ func (o *UELocationInfo) GetTimestampOfVelocityEstimateOk() (*time.Time, bool) {
 
 // HasTimestampOfVelocityEstimate returns a boolean if a field has been set.
 func (o *UELocationInfo) HasTimestampOfVelocityEstimate() bool {
-	if o != nil && !isNil(o.TimestampOfVelocityEstimate) {
+	if o != nil && !IsNil(o.TimestampOfVelocityEstimate) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *UELocationInfo) SetTimestampOfVelocityEstimate(v time.Time) {
 }
 
 func (o UELocationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -251,22 +251,22 @@ func (o UELocationInfo) MarshalJSON() ([]byte, error) {
 
 func (o UELocationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LocationEstimate) {
+	if !IsNil(o.LocationEstimate) {
 		toSerialize["locationEstimate"] = o.LocationEstimate
 	}
-	if !isNil(o.AgeOfLocationEstimate) {
+	if !IsNil(o.AgeOfLocationEstimate) {
 		toSerialize["ageOfLocationEstimate"] = o.AgeOfLocationEstimate
 	}
-	if !isNil(o.TimestampOfLocationEstimate) {
+	if !IsNil(o.TimestampOfLocationEstimate) {
 		toSerialize["timestampOfLocationEstimate"] = o.TimestampOfLocationEstimate
 	}
-	if !isNil(o.VelocityEstimate) {
+	if !IsNil(o.VelocityEstimate) {
 		toSerialize["velocityEstimate"] = o.VelocityEstimate
 	}
-	if !isNil(o.AgeOfVelocityEstimate) {
+	if !IsNil(o.AgeOfVelocityEstimate) {
 		toSerialize["ageOfVelocityEstimate"] = o.AgeOfVelocityEstimate
 	}
-	if !isNil(o.TimestampOfVelocityEstimate) {
+	if !IsNil(o.TimestampOfVelocityEstimate) {
 		toSerialize["timestampOfVelocityEstimate"] = o.TimestampOfVelocityEstimate
 	}
 	return toSerialize, nil
@@ -307,5 +307,3 @@ func (v *NullableUELocationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

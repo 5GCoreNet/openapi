@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AcrMgntEventFilter Possible values are: - INTRA_EDN_MOBILITY: Indicates that the ACR Management Event filter is intra-EDN mobility. - INTER_EDN_MOBILITY: Indicates that the ACR Management Event filter is inter-EDN mobility. 
+// AcrMgntEventFilter Possible values are: - INTRA_EDN_MOBILITY: Indicates that the ACR Management Event filter is intra-EDN mobility. - INTER_EDN_MOBILITY: Indicates that the ACR Management Event filter is inter-EDN mobility.
 type AcrMgntEventFilter struct {
-	AcrMgntEventFilterAnyOf *AcrMgntEventFilterAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AcrMgntEventFilter) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AcrMgntEventFilterAnyOf
-	err = json.Unmarshal(data, &dst.AcrMgntEventFilterAnyOf);
-	if err == nil {
-		jsonAcrMgntEventFilterAnyOf, _ := json.Marshal(dst.AcrMgntEventFilterAnyOf)
-		if string(jsonAcrMgntEventFilterAnyOf) == "{}" { // empty struct
-			dst.AcrMgntEventFilterAnyOf = nil
-		} else {
-			return nil // data stored in dst.AcrMgntEventFilterAnyOf, return on the first match
-		}
-	} else {
-		dst.AcrMgntEventFilterAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AcrMgntEventFilter) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AcrMgntEventFilter) MarshalJSON() ([]byte, error) {
-	if src.AcrMgntEventFilterAnyOf != nil {
-		return json.Marshal(&src.AcrMgntEventFilterAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAcrMgntEventFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

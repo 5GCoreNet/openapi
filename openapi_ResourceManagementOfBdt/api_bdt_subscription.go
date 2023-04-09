@@ -1,7 +1,7 @@
 /*
 3gpp-bdt
 
-API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,21 +13,20 @@ package openapi_ResourceManagementOfBdt
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // BDTSubscriptionApiService BDTSubscriptionApi service
 type BDTSubscriptionApiService service
 
 type ApiCreateBDTSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BDTSubscriptionApiService
-	scsAsId string
-	bdt *Bdt
+	scsAsId    string
+	bdt        *Bdt
 }
 
 // Contains the data to create a BDT subscription.
@@ -43,26 +42,27 @@ func (r ApiCreateBDTSubscriptionRequest) Execute() (*Bdt, *http.Response, error)
 /*
 CreateBDTSubscription Creates a new background data transfer subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @return ApiCreateBDTSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@return ApiCreateBDTSubscriptionRequest
 */
 func (a *BDTSubscriptionApiService) CreateBDTSubscription(ctx context.Context, scsAsId string) ApiCreateBDTSubscriptionRequest {
 	return ApiCreateBDTSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return Bdt
+//
+//	@return Bdt
 func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTSubscriptionRequest) (*Bdt, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Bdt
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Bdt
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BDTSubscriptionApiService.CreateBDTSubscription")
@@ -109,9 +109,9 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -128,8 +128,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -139,8 +139,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -150,8 +150,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -161,8 +161,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -172,8 +172,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -183,8 +183,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -194,8 +194,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -205,8 +205,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -216,8 +216,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -227,8 +227,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -238,8 +238,8 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -258,9 +258,9 @@ func (a *BDTSubscriptionApiService) CreateBDTSubscriptionExecute(r ApiCreateBDTS
 }
 
 type ApiFetchAllActiveBDTSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BDTSubscriptionApiService
-	scsAsId string
+	scsAsId    string
 }
 
 func (r ApiFetchAllActiveBDTSubscriptionsRequest) Execute() ([]Bdt, *http.Response, error) {
@@ -270,26 +270,27 @@ func (r ApiFetchAllActiveBDTSubscriptionsRequest) Execute() ([]Bdt, *http.Respon
 /*
 FetchAllActiveBDTSubscriptions Fetch all active background data transfer subscription resources for a given SCS/AS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @return ApiFetchAllActiveBDTSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@return ApiFetchAllActiveBDTSubscriptionsRequest
 */
 func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptions(ctx context.Context, scsAsId string) ApiFetchAllActiveBDTSubscriptionsRequest {
 	return ApiFetchAllActiveBDTSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return []Bdt
+//
+//	@return []Bdt
 func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiFetchAllActiveBDTSubscriptionsRequest) ([]Bdt, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Bdt
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Bdt
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BDTSubscriptionApiService.FetchAllActiveBDTSubscriptions")
@@ -331,9 +332,9 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -350,8 +351,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -361,8 +362,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -372,8 +373,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -383,8 +384,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -394,8 +395,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -405,8 +406,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -416,8 +417,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -427,8 +428,8 @@ func (a *BDTSubscriptionApiService) FetchAllActiveBDTSubscriptionsExecute(r ApiF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ContextCreateRspData{}
 
 // ContextCreateRspData Data within ContextCreate Response
 type ContextCreateRspData struct {
-	MbsSessionId MbsSessionId `json:"mbsSessionId"`
-	N2MbsSmInfoList []N2MbsSmInfo `json:"n2MbsSmInfoList,omitempty"`
+	MbsSessionId    MbsSessionId     `json:"mbsSessionId"`
+	N2MbsSmInfoList []N2MbsSmInfo    `json:"n2MbsSmInfoList,omitempty"`
 	OperationStatus *OperationStatus `json:"operationStatus,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *ContextCreateRspData) SetMbsSessionId(v MbsSessionId) {
 
 // GetN2MbsSmInfoList returns the N2MbsSmInfoList field value if set, zero value otherwise.
 func (o *ContextCreateRspData) GetN2MbsSmInfoList() []N2MbsSmInfo {
-	if o == nil || isNil(o.N2MbsSmInfoList) {
+	if o == nil || IsNil(o.N2MbsSmInfoList) {
 		var ret []N2MbsSmInfo
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ContextCreateRspData) GetN2MbsSmInfoList() []N2MbsSmInfo {
 // GetN2MbsSmInfoListOk returns a tuple with the N2MbsSmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextCreateRspData) GetN2MbsSmInfoListOk() ([]N2MbsSmInfo, bool) {
-	if o == nil || isNil(o.N2MbsSmInfoList) {
+	if o == nil || IsNil(o.N2MbsSmInfoList) {
 		return nil, false
 	}
 	return o.N2MbsSmInfoList, true
@@ -86,7 +86,7 @@ func (o *ContextCreateRspData) GetN2MbsSmInfoListOk() ([]N2MbsSmInfo, bool) {
 
 // HasN2MbsSmInfoList returns a boolean if a field has been set.
 func (o *ContextCreateRspData) HasN2MbsSmInfoList() bool {
-	if o != nil && !isNil(o.N2MbsSmInfoList) {
+	if o != nil && !IsNil(o.N2MbsSmInfoList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ContextCreateRspData) SetN2MbsSmInfoList(v []N2MbsSmInfo) {
 
 // GetOperationStatus returns the OperationStatus field value if set, zero value otherwise.
 func (o *ContextCreateRspData) GetOperationStatus() OperationStatus {
-	if o == nil || isNil(o.OperationStatus) {
+	if o == nil || IsNil(o.OperationStatus) {
 		var ret OperationStatus
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ContextCreateRspData) GetOperationStatus() OperationStatus {
 // GetOperationStatusOk returns a tuple with the OperationStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextCreateRspData) GetOperationStatusOk() (*OperationStatus, bool) {
-	if o == nil || isNil(o.OperationStatus) {
+	if o == nil || IsNil(o.OperationStatus) {
 		return nil, false
 	}
 	return o.OperationStatus, true
@@ -118,7 +118,7 @@ func (o *ContextCreateRspData) GetOperationStatusOk() (*OperationStatus, bool) {
 
 // HasOperationStatus returns a boolean if a field has been set.
 func (o *ContextCreateRspData) HasOperationStatus() bool {
-	if o != nil && !isNil(o.OperationStatus) {
+	if o != nil && !IsNil(o.OperationStatus) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *ContextCreateRspData) SetOperationStatus(v OperationStatus) {
 }
 
 func (o ContextCreateRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o ContextCreateRspData) MarshalJSON() ([]byte, error) {
 func (o ContextCreateRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !isNil(o.N2MbsSmInfoList) {
+	if !IsNil(o.N2MbsSmInfoList) {
 		toSerialize["n2MbsSmInfoList"] = o.N2MbsSmInfoList
 	}
-	if !isNil(o.OperationStatus) {
+	if !IsNil(o.OperationStatus) {
 		toSerialize["operationStatus"] = o.OperationStatus
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableContextCreateRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

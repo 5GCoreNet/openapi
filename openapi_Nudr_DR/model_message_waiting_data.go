@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewMessageWaitingDataWithDefaults() *MessageWaitingData {
 
 // GetMwdList returns the MwdList field value if set, zero value otherwise.
 func (o *MessageWaitingData) GetMwdList() []SmscData {
-	if o == nil || isNil(o.MwdList) {
+	if o == nil || IsNil(o.MwdList) {
 		var ret []SmscData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MessageWaitingData) GetMwdList() []SmscData {
 // GetMwdListOk returns a tuple with the MwdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageWaitingData) GetMwdListOk() ([]SmscData, bool) {
-	if o == nil || isNil(o.MwdList) {
+	if o == nil || IsNil(o.MwdList) {
 		return nil, false
 	}
 	return o.MwdList, true
@@ -59,7 +59,7 @@ func (o *MessageWaitingData) GetMwdListOk() ([]SmscData, bool) {
 
 // HasMwdList returns a boolean if a field has been set.
 func (o *MessageWaitingData) HasMwdList() bool {
-	if o != nil && !isNil(o.MwdList) {
+	if o != nil && !IsNil(o.MwdList) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MessageWaitingData) SetMwdList(v []SmscData) {
 }
 
 func (o MessageWaitingData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MessageWaitingData) MarshalJSON() ([]byte, error) {
 
 func (o MessageWaitingData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MwdList) {
+	if !IsNil(o.MwdList) {
 		toSerialize["mwdList"] = o.MwdList
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMessageWaitingData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

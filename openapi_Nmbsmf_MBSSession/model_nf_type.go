@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,28 +17,14 @@ import (
 
 // NFType NF types known to NRF
 type NFType struct {
-	NFTypeAnyOf *NFTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NFType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NFTypeAnyOf
-	err = json.Unmarshal(data, &dst.NFTypeAnyOf);
-	if err == nil {
-		jsonNFTypeAnyOf, _ := json.Marshal(dst.NFTypeAnyOf)
-		if string(jsonNFTypeAnyOf) == "{}" { // empty struct
-			dst.NFTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.NFTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.NFTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NFType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NFType) MarshalJSON() ([]byte, error) {
-	if src.NFTypeAnyOf != nil {
-		return json.Marshal(&src.NFTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNFType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,15 +17,15 @@ import (
 // checks if the AfRoutingRequirementRm type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AfRoutingRequirementRm{}
 
-// AfRoutingRequirementRm This data type is defined in the same way as the AfRoutingRequirement data type, but with the OpenAPI nullable property set to true and the spVal and tempVals attributes defined as removable. 
+// AfRoutingRequirementRm This data type is defined in the same way as the AfRoutingRequirement data type, but with the OpenAPI nullable property set to true and the spVal and tempVals attributes defined as removable.
 type AfRoutingRequirementRm struct {
-	AppReloc *bool `json:"appReloc,omitempty"`
-	RouteToLocs []RouteToLocation `json:"routeToLocs,omitempty"`
-	SpVal NullableSpatialValidityRm `json:"spVal,omitempty"`
-	TempVals []TemporalValidity `json:"tempVals,omitempty"`
-	UpPathChgSub NullableUpPathChgEvent `json:"upPathChgSub,omitempty"`
-	AddrPreserInd NullableBool `json:"addrPreserInd,omitempty"`
-	// Indicates whether simultaneous connectivity should be temporarily maintained for the source and target PSA. 
+	AppReloc      *bool                     `json:"appReloc,omitempty"`
+	RouteToLocs   []RouteToLocation         `json:"routeToLocs,omitempty"`
+	SpVal         NullableSpatialValidityRm `json:"spVal,omitempty"`
+	TempVals      []TemporalValidity        `json:"tempVals,omitempty"`
+	UpPathChgSub  NullableUpPathChgEvent    `json:"upPathChgSub,omitempty"`
+	AddrPreserInd NullableBool              `json:"addrPreserInd,omitempty"`
+	// Indicates whether simultaneous connectivity should be temporarily maintained for the source and target PSA.
 	SimConnInd NullableBool `json:"simConnInd,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	SimConnTerm NullableInt32 `json:"simConnTerm,omitempty"`
@@ -33,7 +33,7 @@ type AfRoutingRequirementRm struct {
 	EasIpReplaceInfos []EasIpReplacementInfo `json:"easIpReplaceInfos,omitempty"`
 	// Indicates the EAS rediscovery is required.
 	EasRedisInd *bool `json:"easRedisInd,omitempty"`
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property. 
+	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property.
 	MaxAllowedUpLat NullableInt32 `json:"maxAllowedUpLat,omitempty"`
 }
 
@@ -56,7 +56,7 @@ func NewAfRoutingRequirementRmWithDefaults() *AfRoutingRequirementRm {
 
 // GetAppReloc returns the AppReloc field value if set, zero value otherwise.
 func (o *AfRoutingRequirementRm) GetAppReloc() bool {
-	if o == nil || isNil(o.AppReloc) {
+	if o == nil || IsNil(o.AppReloc) {
 		var ret bool
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *AfRoutingRequirementRm) GetAppReloc() bool {
 // GetAppRelocOk returns a tuple with the AppReloc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirementRm) GetAppRelocOk() (*bool, bool) {
-	if o == nil || isNil(o.AppReloc) {
+	if o == nil || IsNil(o.AppReloc) {
 		return nil, false
 	}
 	return o.AppReloc, true
@@ -74,7 +74,7 @@ func (o *AfRoutingRequirementRm) GetAppRelocOk() (*bool, bool) {
 
 // HasAppReloc returns a boolean if a field has been set.
 func (o *AfRoutingRequirementRm) HasAppReloc() bool {
-	if o != nil && !isNil(o.AppReloc) {
+	if o != nil && !IsNil(o.AppReloc) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *AfRoutingRequirementRm) GetRouteToLocs() []RouteToLocation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AfRoutingRequirementRm) GetRouteToLocsOk() ([]RouteToLocation, bool) {
-	if o == nil || isNil(o.RouteToLocs) {
+	if o == nil || IsNil(o.RouteToLocs) {
 		return nil, false
 	}
 	return o.RouteToLocs, true
@@ -107,7 +107,7 @@ func (o *AfRoutingRequirementRm) GetRouteToLocsOk() ([]RouteToLocation, bool) {
 
 // HasRouteToLocs returns a boolean if a field has been set.
 func (o *AfRoutingRequirementRm) HasRouteToLocs() bool {
-	if o != nil && isNil(o.RouteToLocs) {
+	if o != nil && IsNil(o.RouteToLocs) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *AfRoutingRequirementRm) SetRouteToLocs(v []RouteToLocation) {
 
 // GetSpVal returns the SpVal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirementRm) GetSpVal() SpatialValidityRm {
-	if o == nil || isNil(o.SpVal.Get()) {
+	if o == nil || IsNil(o.SpVal.Get()) {
 		var ret SpatialValidityRm
 		return ret
 	}
@@ -151,6 +151,7 @@ func (o *AfRoutingRequirementRm) HasSpVal() bool {
 func (o *AfRoutingRequirementRm) SetSpVal(v SpatialValidityRm) {
 	o.SpVal.Set(&v)
 }
+
 // SetSpValNil sets the value for SpVal to be an explicit nil
 func (o *AfRoutingRequirementRm) SetSpValNil() {
 	o.SpVal.Set(nil)
@@ -174,7 +175,7 @@ func (o *AfRoutingRequirementRm) GetTempVals() []TemporalValidity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AfRoutingRequirementRm) GetTempValsOk() ([]TemporalValidity, bool) {
-	if o == nil || isNil(o.TempVals) {
+	if o == nil || IsNil(o.TempVals) {
 		return nil, false
 	}
 	return o.TempVals, true
@@ -182,7 +183,7 @@ func (o *AfRoutingRequirementRm) GetTempValsOk() ([]TemporalValidity, bool) {
 
 // HasTempVals returns a boolean if a field has been set.
 func (o *AfRoutingRequirementRm) HasTempVals() bool {
-	if o != nil && isNil(o.TempVals) {
+	if o != nil && IsNil(o.TempVals) {
 		return true
 	}
 
@@ -196,7 +197,7 @@ func (o *AfRoutingRequirementRm) SetTempVals(v []TemporalValidity) {
 
 // GetUpPathChgSub returns the UpPathChgSub field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirementRm) GetUpPathChgSub() UpPathChgEvent {
-	if o == nil || isNil(o.UpPathChgSub.Get()) {
+	if o == nil || IsNil(o.UpPathChgSub.Get()) {
 		var ret UpPathChgEvent
 		return ret
 	}
@@ -226,6 +227,7 @@ func (o *AfRoutingRequirementRm) HasUpPathChgSub() bool {
 func (o *AfRoutingRequirementRm) SetUpPathChgSub(v UpPathChgEvent) {
 	o.UpPathChgSub.Set(&v)
 }
+
 // SetUpPathChgSubNil sets the value for UpPathChgSub to be an explicit nil
 func (o *AfRoutingRequirementRm) SetUpPathChgSubNil() {
 	o.UpPathChgSub.Set(nil)
@@ -238,7 +240,7 @@ func (o *AfRoutingRequirementRm) UnsetUpPathChgSub() {
 
 // GetAddrPreserInd returns the AddrPreserInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirementRm) GetAddrPreserInd() bool {
-	if o == nil || isNil(o.AddrPreserInd.Get()) {
+	if o == nil || IsNil(o.AddrPreserInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -268,6 +270,7 @@ func (o *AfRoutingRequirementRm) HasAddrPreserInd() bool {
 func (o *AfRoutingRequirementRm) SetAddrPreserInd(v bool) {
 	o.AddrPreserInd.Set(&v)
 }
+
 // SetAddrPreserIndNil sets the value for AddrPreserInd to be an explicit nil
 func (o *AfRoutingRequirementRm) SetAddrPreserIndNil() {
 	o.AddrPreserInd.Set(nil)
@@ -280,7 +283,7 @@ func (o *AfRoutingRequirementRm) UnsetAddrPreserInd() {
 
 // GetSimConnInd returns the SimConnInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirementRm) GetSimConnInd() bool {
-	if o == nil || isNil(o.SimConnInd.Get()) {
+	if o == nil || IsNil(o.SimConnInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -310,6 +313,7 @@ func (o *AfRoutingRequirementRm) HasSimConnInd() bool {
 func (o *AfRoutingRequirementRm) SetSimConnInd(v bool) {
 	o.SimConnInd.Set(&v)
 }
+
 // SetSimConnIndNil sets the value for SimConnInd to be an explicit nil
 func (o *AfRoutingRequirementRm) SetSimConnIndNil() {
 	o.SimConnInd.Set(nil)
@@ -322,7 +326,7 @@ func (o *AfRoutingRequirementRm) UnsetSimConnInd() {
 
 // GetSimConnTerm returns the SimConnTerm field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirementRm) GetSimConnTerm() int32 {
-	if o == nil || isNil(o.SimConnTerm.Get()) {
+	if o == nil || IsNil(o.SimConnTerm.Get()) {
 		var ret int32
 		return ret
 	}
@@ -352,6 +356,7 @@ func (o *AfRoutingRequirementRm) HasSimConnTerm() bool {
 func (o *AfRoutingRequirementRm) SetSimConnTerm(v int32) {
 	o.SimConnTerm.Set(&v)
 }
+
 // SetSimConnTermNil sets the value for SimConnTerm to be an explicit nil
 func (o *AfRoutingRequirementRm) SetSimConnTermNil() {
 	o.SimConnTerm.Set(nil)
@@ -375,7 +380,7 @@ func (o *AfRoutingRequirementRm) GetEasIpReplaceInfos() []EasIpReplacementInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AfRoutingRequirementRm) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo, bool) {
-	if o == nil || isNil(o.EasIpReplaceInfos) {
+	if o == nil || IsNil(o.EasIpReplaceInfos) {
 		return nil, false
 	}
 	return o.EasIpReplaceInfos, true
@@ -383,7 +388,7 @@ func (o *AfRoutingRequirementRm) GetEasIpReplaceInfosOk() ([]EasIpReplacementInf
 
 // HasEasIpReplaceInfos returns a boolean if a field has been set.
 func (o *AfRoutingRequirementRm) HasEasIpReplaceInfos() bool {
-	if o != nil && isNil(o.EasIpReplaceInfos) {
+	if o != nil && IsNil(o.EasIpReplaceInfos) {
 		return true
 	}
 
@@ -397,7 +402,7 @@ func (o *AfRoutingRequirementRm) SetEasIpReplaceInfos(v []EasIpReplacementInfo) 
 
 // GetEasRedisInd returns the EasRedisInd field value if set, zero value otherwise.
 func (o *AfRoutingRequirementRm) GetEasRedisInd() bool {
-	if o == nil || isNil(o.EasRedisInd) {
+	if o == nil || IsNil(o.EasRedisInd) {
 		var ret bool
 		return ret
 	}
@@ -407,7 +412,7 @@ func (o *AfRoutingRequirementRm) GetEasRedisInd() bool {
 // GetEasRedisIndOk returns a tuple with the EasRedisInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirementRm) GetEasRedisIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EasRedisInd) {
+	if o == nil || IsNil(o.EasRedisInd) {
 		return nil, false
 	}
 	return o.EasRedisInd, true
@@ -415,7 +420,7 @@ func (o *AfRoutingRequirementRm) GetEasRedisIndOk() (*bool, bool) {
 
 // HasEasRedisInd returns a boolean if a field has been set.
 func (o *AfRoutingRequirementRm) HasEasRedisInd() bool {
-	if o != nil && !isNil(o.EasRedisInd) {
+	if o != nil && !IsNil(o.EasRedisInd) {
 		return true
 	}
 
@@ -429,7 +434,7 @@ func (o *AfRoutingRequirementRm) SetEasRedisInd(v bool) {
 
 // GetMaxAllowedUpLat returns the MaxAllowedUpLat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirementRm) GetMaxAllowedUpLat() int32 {
-	if o == nil || isNil(o.MaxAllowedUpLat.Get()) {
+	if o == nil || IsNil(o.MaxAllowedUpLat.Get()) {
 		var ret int32
 		return ret
 	}
@@ -459,6 +464,7 @@ func (o *AfRoutingRequirementRm) HasMaxAllowedUpLat() bool {
 func (o *AfRoutingRequirementRm) SetMaxAllowedUpLat(v int32) {
 	o.MaxAllowedUpLat.Set(&v)
 }
+
 // SetMaxAllowedUpLatNil sets the value for MaxAllowedUpLat to be an explicit nil
 func (o *AfRoutingRequirementRm) SetMaxAllowedUpLatNil() {
 	o.MaxAllowedUpLat.Set(nil)
@@ -470,7 +476,7 @@ func (o *AfRoutingRequirementRm) UnsetMaxAllowedUpLat() {
 }
 
 func (o AfRoutingRequirementRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -479,7 +485,7 @@ func (o AfRoutingRequirementRm) MarshalJSON() ([]byte, error) {
 
 func (o AfRoutingRequirementRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppReloc) {
+	if !IsNil(o.AppReloc) {
 		toSerialize["appReloc"] = o.AppReloc
 	}
 	if o.RouteToLocs != nil {
@@ -506,7 +512,7 @@ func (o AfRoutingRequirementRm) ToMap() (map[string]interface{}, error) {
 	if o.EasIpReplaceInfos != nil {
 		toSerialize["easIpReplaceInfos"] = o.EasIpReplaceInfos
 	}
-	if !isNil(o.EasRedisInd) {
+	if !IsNil(o.EasRedisInd) {
 		toSerialize["easRedisInd"] = o.EasRedisInd
 	}
 	if o.MaxAllowedUpLat.IsSet() {
@@ -550,5 +556,3 @@ func (v *NullableAfRoutingRequirementRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

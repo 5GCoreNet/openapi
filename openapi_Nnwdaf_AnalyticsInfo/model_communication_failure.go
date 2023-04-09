@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &CommunicationFailure{}
 
 // CommunicationFailure Describes a communication failure detected by AMF
 type CommunicationFailure struct {
-	NasReleaseCode *string `json:"nasReleaseCode,omitempty"`
+	NasReleaseCode *string    `json:"nasReleaseCode,omitempty"`
 	RanReleaseCode *NgApCause `json:"ranReleaseCode,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewCommunicationFailureWithDefaults() *CommunicationFailure {
 
 // GetNasReleaseCode returns the NasReleaseCode field value if set, zero value otherwise.
 func (o *CommunicationFailure) GetNasReleaseCode() string {
-	if o == nil || isNil(o.NasReleaseCode) {
+	if o == nil || IsNil(o.NasReleaseCode) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *CommunicationFailure) GetNasReleaseCode() string {
 // GetNasReleaseCodeOk returns a tuple with the NasReleaseCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationFailure) GetNasReleaseCodeOk() (*string, bool) {
-	if o == nil || isNil(o.NasReleaseCode) {
+	if o == nil || IsNil(o.NasReleaseCode) {
 		return nil, false
 	}
 	return o.NasReleaseCode, true
@@ -60,7 +60,7 @@ func (o *CommunicationFailure) GetNasReleaseCodeOk() (*string, bool) {
 
 // HasNasReleaseCode returns a boolean if a field has been set.
 func (o *CommunicationFailure) HasNasReleaseCode() bool {
-	if o != nil && !isNil(o.NasReleaseCode) {
+	if o != nil && !IsNil(o.NasReleaseCode) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *CommunicationFailure) SetNasReleaseCode(v string) {
 
 // GetRanReleaseCode returns the RanReleaseCode field value if set, zero value otherwise.
 func (o *CommunicationFailure) GetRanReleaseCode() NgApCause {
-	if o == nil || isNil(o.RanReleaseCode) {
+	if o == nil || IsNil(o.RanReleaseCode) {
 		var ret NgApCause
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *CommunicationFailure) GetRanReleaseCode() NgApCause {
 // GetRanReleaseCodeOk returns a tuple with the RanReleaseCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationFailure) GetRanReleaseCodeOk() (*NgApCause, bool) {
-	if o == nil || isNil(o.RanReleaseCode) {
+	if o == nil || IsNil(o.RanReleaseCode) {
 		return nil, false
 	}
 	return o.RanReleaseCode, true
@@ -92,7 +92,7 @@ func (o *CommunicationFailure) GetRanReleaseCodeOk() (*NgApCause, bool) {
 
 // HasRanReleaseCode returns a boolean if a field has been set.
 func (o *CommunicationFailure) HasRanReleaseCode() bool {
-	if o != nil && !isNil(o.RanReleaseCode) {
+	if o != nil && !IsNil(o.RanReleaseCode) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *CommunicationFailure) SetRanReleaseCode(v NgApCause) {
 }
 
 func (o CommunicationFailure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o CommunicationFailure) MarshalJSON() ([]byte, error) {
 
 func (o CommunicationFailure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NasReleaseCode) {
+	if !IsNil(o.NasReleaseCode) {
 		toSerialize["nasReleaseCode"] = o.NasReleaseCode
 	}
-	if !isNil(o.RanReleaseCode) {
+	if !IsNil(o.RanReleaseCode) {
 		toSerialize["ranReleaseCode"] = o.RanReleaseCode
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableCommunicationFailure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

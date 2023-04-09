@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// PdnType Possible values are - IPV4: PDN connection of IPv4 type. - IPV6: PDN connection of IPv6 type. - IPV4V6: PDN connection of IPv4v6 type. - NON_IP: PDN connection of non-IP type. - ETHERNET: PDN connection of Ethernet type. 
+// PdnType Possible values are - IPV4: PDN connection of IPv4 type. - IPV6: PDN connection of IPv6 type. - IPV4V6: PDN connection of IPv4v6 type. - NON_IP: PDN connection of non-IP type. - ETHERNET: PDN connection of Ethernet type.
 type PdnType struct {
-	PdnTypeAnyOf *PdnTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PdnType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PdnTypeAnyOf
-	err = json.Unmarshal(data, &dst.PdnTypeAnyOf);
-	if err == nil {
-		jsonPdnTypeAnyOf, _ := json.Marshal(dst.PdnTypeAnyOf)
-		if string(jsonPdnTypeAnyOf) == "{}" { // empty struct
-			dst.PdnTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.PdnTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.PdnTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PdnType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PdnType) MarshalJSON() ([]byte, error) {
-	if src.PdnTypeAnyOf != nil {
-		return json.Marshal(&src.PdnTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePdnType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

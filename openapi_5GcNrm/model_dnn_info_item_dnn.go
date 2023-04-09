@@ -24,7 +24,7 @@ type DnnInfoItemDnn struct {
 func (dst *DnnInfoItemDnn) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableDnnInfoItemDnn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

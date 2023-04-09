@@ -1,7 +1,7 @@
 /*
 Nnef_EASDeployment
 
-NEF EAS Deployment service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF EAS Deployment service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,14 +22,14 @@ type EasDeploySubData struct {
 	AppId *string `json:"appId,omitempty"`
 	// Each of the element identifies a (DNN, S-NSSAI) combination.
 	DnnSnssaiInfos []DnnSnssaiInformation `json:"dnnSnssaiInfos,omitempty"`
-	EventId EasEvent `json:"eventId"`
-	// Represents the EAS Deployment Information changes event(s) to be reported. Shall only be present if the \"immRep\" attribute is included and sets to true, and the current status of EAS Deployment Information is available. 
+	EventId        EasEvent               `json:"eventId"`
+	// Represents the EAS Deployment Information changes event(s) to be reported. Shall only be present if the \"immRep\" attribute is included and sets to true, and the current status of EAS Deployment Information is available.
 	EventsNotifs []EasDeployInfoData `json:"eventsNotifs,omitempty"`
-	// Indication of immediate reporting. Set to true: requires the immediate reporting of the  current status of EAS Deployment Information, if available. Set to false (default): EAS  Deployment Information event report occurs when the event is met. 
+	// Indication of immediate reporting. Set to true: requires the immediate reporting of the  current status of EAS Deployment Information, if available. Set to false (default): EAS  Deployment Information event report occurs when the event is met.
 	ImmRep *bool `json:"immRep,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InterGroupId *string `json:"interGroupId,omitempty"`
-	NotifId string `json:"notifId"`
+	NotifId      string  `json:"notifId"`
 	// String providing an URI formatted according to RFC 3986.
 	NotifUri string `json:"notifUri"`
 }
@@ -56,7 +56,7 @@ func NewEasDeploySubDataWithDefaults() *EasDeploySubData {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *EasDeploySubData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -74,7 +74,7 @@ func (o *EasDeploySubData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *EasDeploySubData) SetAppId(v string) {
 
 // GetDnnSnssaiInfos returns the DnnSnssaiInfos field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetDnnSnssaiInfos() []DnnSnssaiInformation {
-	if o == nil || isNil(o.DnnSnssaiInfos) {
+	if o == nil || IsNil(o.DnnSnssaiInfos) {
 		var ret []DnnSnssaiInformation
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *EasDeploySubData) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // GetDnnSnssaiInfosOk returns a tuple with the DnnSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || isNil(o.DnnSnssaiInfos) {
+	if o == nil || IsNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -106,7 +106,7 @@ func (o *EasDeploySubData) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) 
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasDnnSnssaiInfos() bool {
-	if o != nil && !isNil(o.DnnSnssaiInfos) {
+	if o != nil && !IsNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *EasDeploySubData) SetEventId(v EasEvent) {
 
 // GetEventsNotifs returns the EventsNotifs field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetEventsNotifs() []EasDeployInfoData {
-	if o == nil || isNil(o.EventsNotifs) {
+	if o == nil || IsNil(o.EventsNotifs) {
 		var ret []EasDeployInfoData
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *EasDeploySubData) GetEventsNotifs() []EasDeployInfoData {
 // GetEventsNotifsOk returns a tuple with the EventsNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetEventsNotifsOk() ([]EasDeployInfoData, bool) {
-	if o == nil || isNil(o.EventsNotifs) {
+	if o == nil || IsNil(o.EventsNotifs) {
 		return nil, false
 	}
 	return o.EventsNotifs, true
@@ -162,7 +162,7 @@ func (o *EasDeploySubData) GetEventsNotifsOk() ([]EasDeployInfoData, bool) {
 
 // HasEventsNotifs returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasEventsNotifs() bool {
-	if o != nil && !isNil(o.EventsNotifs) {
+	if o != nil && !IsNil(o.EventsNotifs) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *EasDeploySubData) SetEventsNotifs(v []EasDeployInfoData) {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetImmRep() bool {
-	if o == nil || isNil(o.ImmRep) {
+	if o == nil || IsNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *EasDeploySubData) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetImmRepOk() (*bool, bool) {
-	if o == nil || isNil(o.ImmRep) {
+	if o == nil || IsNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -194,7 +194,7 @@ func (o *EasDeploySubData) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasImmRep() bool {
-	if o != nil && !isNil(o.ImmRep) {
+	if o != nil && !IsNil(o.ImmRep) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *EasDeploySubData) SetImmRep(v bool) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetInterGroupId() string {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *EasDeploySubData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -226,7 +226,7 @@ func (o *EasDeploySubData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasInterGroupId() bool {
-	if o != nil && !isNil(o.InterGroupId) {
+	if o != nil && !IsNil(o.InterGroupId) {
 		return true
 	}
 
@@ -287,7 +287,7 @@ func (o *EasDeploySubData) SetNotifUri(v string) {
 }
 
 func (o EasDeploySubData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -296,20 +296,20 @@ func (o EasDeploySubData) MarshalJSON() ([]byte, error) {
 
 func (o EasDeploySubData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.DnnSnssaiInfos) {
+	if !IsNil(o.DnnSnssaiInfos) {
 		toSerialize["dnnSnssaiInfos"] = o.DnnSnssaiInfos
 	}
 	toSerialize["eventId"] = o.EventId
-	if !isNil(o.EventsNotifs) {
+	if !IsNil(o.EventsNotifs) {
 		toSerialize["eventsNotifs"] = o.EventsNotifs
 	}
-	if !isNil(o.ImmRep) {
+	if !IsNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !isNil(o.InterGroupId) {
+	if !IsNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
 	toSerialize["notifId"] = o.NotifId
@@ -352,5 +352,3 @@ func (v *NullableEasDeploySubData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

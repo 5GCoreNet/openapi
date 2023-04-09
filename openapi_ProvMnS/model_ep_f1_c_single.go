@@ -19,11 +19,8 @@ var _ MappedNullable = &EPF1CSingle{}
 
 // EPF1CSingle struct for EPF1CSingle
 type EPF1CSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *EPRPAttr `json:"attributes,omitempty"`
+	Top
+	Attributes *EPF1CSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewEPF1CSingle instantiates a new EPF1CSingle object
@@ -44,132 +41,10 @@ func NewEPF1CSingleWithDefaults() *EPF1CSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EPF1CSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EPF1CSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *EPF1CSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *EPF1CSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPF1CSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *EPF1CSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *EPF1CSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *EPF1CSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPF1CSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *EPF1CSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *EPF1CSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *EPF1CSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPF1CSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *EPF1CSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *EPF1CSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *EPF1CSingle) GetAttributes() EPRPAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret EPRPAttr
+func (o *EPF1CSingle) GetAttributes() EPF1CSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret EPF1CSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -177,8 +52,8 @@ func (o *EPF1CSingle) GetAttributes() EPRPAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EPF1CSingle) GetAttributesOk() (*EPRPAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *EPF1CSingle) GetAttributesOk() (*EPF1CSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,20 +61,20 @@ func (o *EPF1CSingle) GetAttributesOk() (*EPRPAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EPF1CSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given EPRPAttr and assigns it to the Attributes field.
-func (o *EPF1CSingle) SetAttributes(v EPRPAttr) {
+// SetAttributes gets a reference to the given EPF1CSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *EPF1CSingle) SetAttributes(v EPF1CSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o EPF1CSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,17 +83,15 @@ func (o EPF1CSingle) MarshalJSON() ([]byte, error) {
 
 func (o EPF1CSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -259,5 +132,3 @@ func (v *NullableEPF1CSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

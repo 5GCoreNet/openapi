@@ -1,7 +1,7 @@
 /*
 CAPIF_Publish_Service_API
 
-API for publishing service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for publishing service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_CAPIF_Publish_Service_API
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiApfIdServiceApisGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	apfId string
+	apfId      string
 }
 
 func (r ApiApfIdServiceApisGetRequest) Execute() ([]ServiceAPIDescription, *http.Response, error) {
@@ -38,26 +37,27 @@ ApfIdServiceApisGet Method for ApfIdServiceApisGet
 
 Retrieve all published APIs.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apfId
- @return ApiApfIdServiceApisGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apfId
+	@return ApiApfIdServiceApisGetRequest
 */
 func (a *DefaultApiService) ApfIdServiceApisGet(ctx context.Context, apfId string) ApiApfIdServiceApisGetRequest {
 	return ApiApfIdServiceApisGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		apfId: apfId,
+		ctx:        ctx,
+		apfId:      apfId,
 	}
 }
 
 // Execute executes the request
-//  @return []ServiceAPIDescription
+//
+//	@return []ServiceAPIDescription
 func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetRequest) ([]ServiceAPIDescription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ServiceAPIDescription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ServiceAPIDescription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApfIdServiceApisGet")
@@ -99,9 +99,9 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -118,8 +118,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +129,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +140,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +151,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -162,8 +162,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -173,8 +173,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -184,8 +184,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -195,8 +195,8 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -215,9 +215,9 @@ func (a *DefaultApiService) ApfIdServiceApisGetExecute(r ApiApfIdServiceApisGetR
 }
 
 type ApiApfIdServiceApisPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	apfId string
+	ctx                   context.Context
+	ApiService            *DefaultApiService
+	apfId                 string
 	serviceAPIDescription *ServiceAPIDescription
 }
 
@@ -235,26 +235,27 @@ ApfIdServiceApisPost Method for ApfIdServiceApisPost
 
 Publish a new API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apfId
- @return ApiApfIdServiceApisPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apfId
+	@return ApiApfIdServiceApisPostRequest
 */
 func (a *DefaultApiService) ApfIdServiceApisPost(ctx context.Context, apfId string) ApiApfIdServiceApisPostRequest {
 	return ApiApfIdServiceApisPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		apfId: apfId,
+		ctx:        ctx,
+		apfId:      apfId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceAPIDescription
+//
+//	@return ServiceAPIDescription
 func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPostRequest) (*ServiceAPIDescription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAPIDescription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceAPIDescription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApfIdServiceApisPost")
@@ -301,9 +302,9 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,8 +321,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -331,8 +332,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -342,8 +343,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -353,8 +354,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -364,8 +365,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -375,8 +376,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -386,8 +387,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -397,8 +398,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -408,8 +409,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -419,8 +420,8 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -439,10 +440,10 @@ func (a *DefaultApiService) ApfIdServiceApisPostExecute(r ApiApfIdServiceApisPos
 }
 
 type ApiApfIdServiceApisServiceApiIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	serviceApiId string
-	apfId string
+	apfId        string
 }
 
 func (r ApiApfIdServiceApisServiceApiIdDeleteRequest) Execute() (*http.Response, error) {
@@ -454,26 +455,26 @@ ApfIdServiceApisServiceApiIdDelete Method for ApfIdServiceApisServiceApiIdDelete
 
 Unpublish a published service API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceApiId
- @param apfId
- @return ApiApfIdServiceApisServiceApiIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serviceApiId
+	@param apfId
+	@return ApiApfIdServiceApisServiceApiIdDeleteRequest
 */
 func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDelete(ctx context.Context, serviceApiId string, apfId string) ApiApfIdServiceApisServiceApiIdDeleteRequest {
 	return ApiApfIdServiceApisServiceApiIdDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		serviceApiId: serviceApiId,
-		apfId: apfId,
+		apfId:        apfId,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfIdServiceApisServiceApiIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApfIdServiceApisServiceApiIdDelete")
@@ -516,9 +517,9 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -535,8 +536,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -546,8 +547,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -557,8 +558,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -568,8 +569,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -579,8 +580,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -590,8 +591,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -601,8 +602,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -612,10 +613,10 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdDeleteExecute(r ApiApfId
 }
 
 type ApiApfIdServiceApisServiceApiIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	serviceApiId string
-	apfId string
+	apfId        string
 }
 
 func (r ApiApfIdServiceApisServiceApiIdGetRequest) Execute() (*ServiceAPIDescription, *http.Response, error) {
@@ -627,28 +628,29 @@ ApfIdServiceApisServiceApiIdGet Method for ApfIdServiceApisServiceApiIdGet
 
 Retrieve a published service API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceApiId
- @param apfId
- @return ApiApfIdServiceApisServiceApiIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serviceApiId
+	@param apfId
+	@return ApiApfIdServiceApisServiceApiIdGetRequest
 */
 func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGet(ctx context.Context, serviceApiId string, apfId string) ApiApfIdServiceApisServiceApiIdGetRequest {
 	return ApiApfIdServiceApisServiceApiIdGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		serviceApiId: serviceApiId,
-		apfId: apfId,
+		apfId:        apfId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceAPIDescription
+//
+//	@return ServiceAPIDescription
 func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdServiceApisServiceApiIdGetRequest) (*ServiceAPIDescription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAPIDescription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceAPIDescription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApfIdServiceApisServiceApiIdGet")
@@ -691,9 +693,9 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -710,8 +712,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -721,8 +723,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -732,8 +734,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -743,8 +745,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -754,8 +756,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -765,8 +767,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -776,8 +778,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -787,8 +789,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -807,10 +809,10 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdGetExecute(r ApiApfIdSer
 }
 
 type ApiApfIdServiceApisServiceApiIdPutRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	serviceApiId string
-	apfId string
+	ctx                   context.Context
+	ApiService            *DefaultApiService
+	serviceApiId          string
+	apfId                 string
 	serviceAPIDescription *ServiceAPIDescription
 }
 
@@ -828,28 +830,29 @@ ApfIdServiceApisServiceApiIdPut Method for ApfIdServiceApisServiceApiIdPut
 
 Update a published service API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceApiId
- @param apfId
- @return ApiApfIdServiceApisServiceApiIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serviceApiId
+	@param apfId
+	@return ApiApfIdServiceApisServiceApiIdPutRequest
 */
 func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPut(ctx context.Context, serviceApiId string, apfId string) ApiApfIdServiceApisServiceApiIdPutRequest {
 	return ApiApfIdServiceApisServiceApiIdPutRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		serviceApiId: serviceApiId,
-		apfId: apfId,
+		apfId:        apfId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceAPIDescription
+//
+//	@return ServiceAPIDescription
 func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdServiceApisServiceApiIdPutRequest) (*ServiceAPIDescription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAPIDescription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceAPIDescription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApfIdServiceApisServiceApiIdPut")
@@ -897,9 +900,9 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -916,8 +919,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -927,8 +930,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -938,8 +941,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -949,8 +952,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -960,8 +963,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -971,8 +974,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -982,8 +985,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -993,8 +996,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1004,8 +1007,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1015,8 +1018,8 @@ func (a *DefaultApiService) ApfIdServiceApisServiceApiIdPutExecute(r ApiApfIdSer
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

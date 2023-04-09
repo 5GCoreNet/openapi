@@ -171,7 +171,10 @@ components:
       type: object
     Status:
       anyOf:
-      - $ref: '#/components/schemas/Status_anyOf'
+      - enum:
+        - OPERATIVE
+        - NON_OPERATIVE
+        type: string
       - type: string
       description: Overal status of the NRF
     RedirectResponse:
@@ -427,7 +430,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -525,69 +585,3 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    Status_anyOf:
-      enum:
-      - OPERATIVE
-      - NON_OPERATIVE
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null

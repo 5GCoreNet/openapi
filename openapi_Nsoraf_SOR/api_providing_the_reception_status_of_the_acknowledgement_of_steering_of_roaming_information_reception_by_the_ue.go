@@ -1,7 +1,7 @@
 /*
 Nsoraf_SOR
 
-Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nsoraf_SOR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApiService ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApi service
 type ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApiService service
 
 type ApiSorAckInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApiService
-	supi string
+	supi       string
 	sorAckInfo *SorAckInfo
 }
 
@@ -42,24 +41,24 @@ func (r ApiSorAckInfoRequest) Execute() (*http.Response, error) {
 /*
 SorAckInfo SoR Acknowledgment Reception Notification
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Identifier of the UE
- @return ApiSorAckInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Identifier of the UE
+	@return ApiSorAckInfoRequest
 */
 func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApiService) SorAckInfo(ctx context.Context, supi string) ApiSorAckInfoRequest {
 	return ApiSorAckInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
 func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApiService) SorAckInfoExecute(r ApiSorAckInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInformationReceptionByTheUEApiService.SorAckInfo")
@@ -106,9 +105,9 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -125,8 +124,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -136,8 +135,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -147,8 +146,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -158,8 +157,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -169,8 +168,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -180,8 +179,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -191,8 +190,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -202,8 +201,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -213,8 +212,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -224,8 +223,8 @@ func (a *ProvidingTheReceptionStatusOfTheAcknowledgementOfSteeringOfRoamingInfor
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

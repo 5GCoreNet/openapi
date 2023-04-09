@@ -20,7 +20,7 @@ type AckState string
 
 // List of AckState
 const (
-	ACKNOWLEDGED AckState = "ACKNOWLEDGED"
+	ACKNOWLEDGED   AckState = "ACKNOWLEDGED"
 	UNACKNOWLEDGED AckState = "UNACKNOWLEDGED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableAckState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &DataAccessProfileLocationAccessRestrictions{}
 
 // DataAccessProfileLocationAccessRestrictions struct for DataAccessProfileLocationAccessRestrictions
 type DataAccessProfileLocationAccessRestrictions struct {
-	LocationAreas []LocationArea5G `json:"locationAreas"`
+	LocationAreas        []LocationArea5G              `json:"locationAreas"`
 	AggregationFunctions []DataAggregationFunctionType `json:"aggregationFunctions"`
 }
 
@@ -91,7 +91,7 @@ func (o *DataAccessProfileLocationAccessRestrictions) SetAggregationFunctions(v 
 }
 
 func (o DataAccessProfileLocationAccessRestrictions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableDataAccessProfileLocationAccessRestrictions) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

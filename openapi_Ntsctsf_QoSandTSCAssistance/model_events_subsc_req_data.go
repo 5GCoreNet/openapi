@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,10 +21,10 @@ var _ MappedNullable = &EventsSubscReqData{}
 type EventsSubscReqData struct {
 	Events []TscEvent `json:"events"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
-	QosMon *QosMonitoringInformation `json:"qosMon,omitempty"`
-	UsgThres *UsageThreshold `json:"usgThres,omitempty"`
-	NotifCorreId string `json:"notifCorreId"`
+	NotifUri     string                    `json:"notifUri"`
+	QosMon       *QosMonitoringInformation `json:"qosMon,omitempty"`
+	UsgThres     *UsageThreshold           `json:"usgThres,omitempty"`
+	NotifCorreId string                    `json:"notifCorreId"`
 }
 
 // NewEventsSubscReqData instantiates a new EventsSubscReqData object
@@ -97,7 +97,7 @@ func (o *EventsSubscReqData) SetNotifUri(v string) {
 
 // GetQosMon returns the QosMon field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetQosMon() QosMonitoringInformation {
-	if o == nil || isNil(o.QosMon) {
+	if o == nil || IsNil(o.QosMon) {
 		var ret QosMonitoringInformation
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *EventsSubscReqData) GetQosMon() QosMonitoringInformation {
 // GetQosMonOk returns a tuple with the QosMon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetQosMonOk() (*QosMonitoringInformation, bool) {
-	if o == nil || isNil(o.QosMon) {
+	if o == nil || IsNil(o.QosMon) {
 		return nil, false
 	}
 	return o.QosMon, true
@@ -115,7 +115,7 @@ func (o *EventsSubscReqData) GetQosMonOk() (*QosMonitoringInformation, bool) {
 
 // HasQosMon returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasQosMon() bool {
-	if o != nil && !isNil(o.QosMon) {
+	if o != nil && !IsNil(o.QosMon) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *EventsSubscReqData) SetQosMon(v QosMonitoringInformation) {
 
 // GetUsgThres returns the UsgThres field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetUsgThres() UsageThreshold {
-	if o == nil || isNil(o.UsgThres) {
+	if o == nil || IsNil(o.UsgThres) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *EventsSubscReqData) GetUsgThres() UsageThreshold {
 // GetUsgThresOk returns a tuple with the UsgThres field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetUsgThresOk() (*UsageThreshold, bool) {
-	if o == nil || isNil(o.UsgThres) {
+	if o == nil || IsNil(o.UsgThres) {
 		return nil, false
 	}
 	return o.UsgThres, true
@@ -147,7 +147,7 @@ func (o *EventsSubscReqData) GetUsgThresOk() (*UsageThreshold, bool) {
 
 // HasUsgThres returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasUsgThres() bool {
-	if o != nil && !isNil(o.UsgThres) {
+	if o != nil && !IsNil(o.UsgThres) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *EventsSubscReqData) SetNotifCorreId(v string) {
 }
 
 func (o EventsSubscReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,10 +195,10 @@ func (o EventsSubscReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["events"] = o.Events
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.QosMon) {
+	if !IsNil(o.QosMon) {
 		toSerialize["qosMon"] = o.QosMon
 	}
-	if !isNil(o.UsgThres) {
+	if !IsNil(o.UsgThres) {
 		toSerialize["usgThres"] = o.UsgThres
 	}
 	toSerialize["notifCorreId"] = o.NotifCorreId
@@ -240,5 +240,3 @@ func (v *NullableEventsSubscReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// ComplexQuery - The ComplexQuery data type is either a conjunctive normal form or a disjunctive normal form.  The attribute names \"cnfUnits\" and \"dnfUnits\" (see clause 5.2.4.11 and clause 5.2.4.12)  serve as discriminator. 
+// ComplexQuery - The ComplexQuery data type is either a conjunctive normal form or a disjunctive normal form.  The attribute names \"cnfUnits\" and \"dnfUnits\" (see clause 5.2.4.11 and clause 5.2.4.12)  serve as discriminator.
 type ComplexQuery struct {
 	Cnf *Cnf
 	Dnf *Dnf
@@ -34,7 +34,6 @@ func DnfAsComplexQuery(v *Dnf) ComplexQuery {
 		Dnf: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComplexQuery) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ComplexQuery) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComplexQuery) GetActualInstance() (interface{}) {
+func (obj *ComplexQuery) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableComplexQuery) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &AppDescriptor{}
 // AppDescriptor struct for AppDescriptor
 type AppDescriptor struct {
 	// Represents the Operating System of the served UE.
-	OsId *string `json:"osId,omitempty"`
+	OsId  *string `json:"osId,omitempty"`
 	AppId *string `json:"appId,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewAppDescriptorWithDefaults() *AppDescriptor {
 
 // GetOsId returns the OsId field value if set, zero value otherwise.
 func (o *AppDescriptor) GetOsId() string {
-	if o == nil || isNil(o.OsId) {
+	if o == nil || IsNil(o.OsId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AppDescriptor) GetOsId() string {
 // GetOsIdOk returns a tuple with the OsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDescriptor) GetOsIdOk() (*string, bool) {
-	if o == nil || isNil(o.OsId) {
+	if o == nil || IsNil(o.OsId) {
 		return nil, false
 	}
 	return o.OsId, true
@@ -61,7 +61,7 @@ func (o *AppDescriptor) GetOsIdOk() (*string, bool) {
 
 // HasOsId returns a boolean if a field has been set.
 func (o *AppDescriptor) HasOsId() bool {
-	if o != nil && !isNil(o.OsId) {
+	if o != nil && !IsNil(o.OsId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AppDescriptor) SetOsId(v string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *AppDescriptor) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AppDescriptor) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDescriptor) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -93,7 +93,7 @@ func (o *AppDescriptor) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *AppDescriptor) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AppDescriptor) SetAppId(v string) {
 }
 
 func (o AppDescriptor) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o AppDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o AppDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.OsId) {
+	if !IsNil(o.OsId) {
 		toSerialize["osId"] = o.OsId
 	}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableAppDescriptor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

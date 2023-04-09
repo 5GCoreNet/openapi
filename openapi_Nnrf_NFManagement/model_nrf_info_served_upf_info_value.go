@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,7 +17,7 @@ import (
 
 // NrfInfoServedUpfInfoValue struct for NrfInfoServedUpfInfoValue
 type NrfInfoServedUpfInfoValue struct {
-	UpfInfo *UpfInfo
+	UpfInfo        *UpfInfo
 	MapOfInterface *map[string]interface{}
 }
 
@@ -25,7 +25,7 @@ type NrfInfoServedUpfInfoValue struct {
 func (dst *NrfInfoServedUpfInfoValue) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into UpfInfo
-	err = json.Unmarshal(data, &dst.UpfInfo);
+	err = json.Unmarshal(data, &dst.UpfInfo)
 	if err == nil {
 		jsonUpfInfo, _ := json.Marshal(dst.UpfInfo)
 		if string(jsonUpfInfo) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *NrfInfoServedUpfInfoValue) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.MapOfInterface);
+	err = json.Unmarshal(data, &dst.MapOfInterface)
 	if err == nil {
 		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
 		if string(jsonMapOfInterface) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableNrfInfoServedUpfInfoValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

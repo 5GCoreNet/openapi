@@ -20,25 +20,25 @@ var _ MappedNullable = &ManagedNFProfile{}
 
 // ManagedNFProfile struct for ManagedNFProfile
 type ManagedNFProfile struct {
-	NfInstanceID *string `json:"nfInstanceID,omitempty"`
-	NfType *NFType `json:"nfType,omitempty"`
-	HeartbeatTimer *int32 `json:"heartbeatTimer,omitempty"`
-	AuthzInfo *string `json:"authzInfo,omitempty"`
-	HostAddr *HostAddr `json:"hostAddr,omitempty"`
-	AllowedPLMNs []PlmnId `json:"allowedPLMNs,omitempty"`
-	AllowedSNPNs []SnpnInfo `json:"allowedSNPNs,omitempty"`
-	AllowedNfTypes []NFType `json:"allowedNfTypes,omitempty"`
-	AllowedNfDomains []string `json:"allowedNfDomains,omitempty"`
-	AllowedNSSAIs []Snssai `json:"allowedNSSAIs,omitempty"`
-	Locality *string `json:"locality,omitempty"`
-	Capacity *int32 `json:"capacity,omitempty"`
-	NfSetIdList []string `json:"nfSetIdList,omitempty"`
-	ServingScope []string `json:"servingScope,omitempty"`
-	LcHSupportInd *bool `json:"lcHSupportInd,omitempty"`
-	OlcHSupportInd *bool `json:"olcHSupportInd,omitempty"`
+	NfInstanceID          *string     `json:"nfInstanceID,omitempty"`
+	NfType                *NFType     `json:"nfType,omitempty"`
+	HeartbeatTimer        *int32      `json:"heartbeatTimer,omitempty"`
+	AuthzInfo             *string     `json:"authzInfo,omitempty"`
+	HostAddr              *HostAddr   `json:"hostAddr,omitempty"`
+	AllowedPLMNs          []PlmnId    `json:"allowedPLMNs,omitempty"`
+	AllowedSNPNs          []SnpnInfo  `json:"allowedSNPNs,omitempty"`
+	AllowedNfTypes        []NFType    `json:"allowedNfTypes,omitempty"`
+	AllowedNfDomains      []string    `json:"allowedNfDomains,omitempty"`
+	AllowedNSSAIs         []Snssai    `json:"allowedNSSAIs,omitempty"`
+	Locality              *string     `json:"locality,omitempty"`
+	Capacity              *int32      `json:"capacity,omitempty"`
+	NfSetIdList           []string    `json:"nfSetIdList,omitempty"`
+	ServingScope          []string    `json:"servingScope,omitempty"`
+	LcHSupportInd         *bool       `json:"lcHSupportInd,omitempty"`
+	OlcHSupportInd        *bool       `json:"olcHSupportInd,omitempty"`
 	NfSetRecoveryTimeList []time.Time `json:"nfSetRecoveryTimeList,omitempty"`
-	ScpDomains []string `json:"scpDomains,omitempty"`
-	VendorId *string `json:"vendorId,omitempty"`
+	ScpDomains            []string    `json:"scpDomains,omitempty"`
+	VendorId              *string     `json:"vendorId,omitempty"`
 }
 
 // NewManagedNFProfile instantiates a new ManagedNFProfile object
@@ -60,7 +60,7 @@ func NewManagedNFProfileWithDefaults() *ManagedNFProfile {
 
 // GetNfInstanceID returns the NfInstanceID field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetNfInstanceID() string {
-	if o == nil || isNil(o.NfInstanceID) {
+	if o == nil || IsNil(o.NfInstanceID) {
 		var ret string
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *ManagedNFProfile) GetNfInstanceID() string {
 // GetNfInstanceIDOk returns a tuple with the NfInstanceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetNfInstanceIDOk() (*string, bool) {
-	if o == nil || isNil(o.NfInstanceID) {
+	if o == nil || IsNil(o.NfInstanceID) {
 		return nil, false
 	}
 	return o.NfInstanceID, true
@@ -78,7 +78,7 @@ func (o *ManagedNFProfile) GetNfInstanceIDOk() (*string, bool) {
 
 // HasNfInstanceID returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasNfInstanceID() bool {
-	if o != nil && !isNil(o.NfInstanceID) {
+	if o != nil && !IsNil(o.NfInstanceID) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *ManagedNFProfile) SetNfInstanceID(v string) {
 
 // GetNfType returns the NfType field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetNfType() NFType {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		var ret NFType
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *ManagedNFProfile) GetNfType() NFType {
 // GetNfTypeOk returns a tuple with the NfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		return nil, false
 	}
 	return o.NfType, true
@@ -110,7 +110,7 @@ func (o *ManagedNFProfile) GetNfTypeOk() (*NFType, bool) {
 
 // HasNfType returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasNfType() bool {
-	if o != nil && !isNil(o.NfType) {
+	if o != nil && !IsNil(o.NfType) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *ManagedNFProfile) SetNfType(v NFType) {
 
 // GetHeartbeatTimer returns the HeartbeatTimer field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetHeartbeatTimer() int32 {
-	if o == nil || isNil(o.HeartbeatTimer) {
+	if o == nil || IsNil(o.HeartbeatTimer) {
 		var ret int32
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *ManagedNFProfile) GetHeartbeatTimer() int32 {
 // GetHeartbeatTimerOk returns a tuple with the HeartbeatTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetHeartbeatTimerOk() (*int32, bool) {
-	if o == nil || isNil(o.HeartbeatTimer) {
+	if o == nil || IsNil(o.HeartbeatTimer) {
 		return nil, false
 	}
 	return o.HeartbeatTimer, true
@@ -142,7 +142,7 @@ func (o *ManagedNFProfile) GetHeartbeatTimerOk() (*int32, bool) {
 
 // HasHeartbeatTimer returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasHeartbeatTimer() bool {
-	if o != nil && !isNil(o.HeartbeatTimer) {
+	if o != nil && !IsNil(o.HeartbeatTimer) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *ManagedNFProfile) SetHeartbeatTimer(v int32) {
 
 // GetAuthzInfo returns the AuthzInfo field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetAuthzInfo() string {
-	if o == nil || isNil(o.AuthzInfo) {
+	if o == nil || IsNil(o.AuthzInfo) {
 		var ret string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *ManagedNFProfile) GetAuthzInfo() string {
 // GetAuthzInfoOk returns a tuple with the AuthzInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetAuthzInfoOk() (*string, bool) {
-	if o == nil || isNil(o.AuthzInfo) {
+	if o == nil || IsNil(o.AuthzInfo) {
 		return nil, false
 	}
 	return o.AuthzInfo, true
@@ -174,7 +174,7 @@ func (o *ManagedNFProfile) GetAuthzInfoOk() (*string, bool) {
 
 // HasAuthzInfo returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasAuthzInfo() bool {
-	if o != nil && !isNil(o.AuthzInfo) {
+	if o != nil && !IsNil(o.AuthzInfo) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *ManagedNFProfile) SetAuthzInfo(v string) {
 
 // GetHostAddr returns the HostAddr field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetHostAddr() HostAddr {
-	if o == nil || isNil(o.HostAddr) {
+	if o == nil || IsNil(o.HostAddr) {
 		var ret HostAddr
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *ManagedNFProfile) GetHostAddr() HostAddr {
 // GetHostAddrOk returns a tuple with the HostAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetHostAddrOk() (*HostAddr, bool) {
-	if o == nil || isNil(o.HostAddr) {
+	if o == nil || IsNil(o.HostAddr) {
 		return nil, false
 	}
 	return o.HostAddr, true
@@ -206,7 +206,7 @@ func (o *ManagedNFProfile) GetHostAddrOk() (*HostAddr, bool) {
 
 // HasHostAddr returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasHostAddr() bool {
-	if o != nil && !isNil(o.HostAddr) {
+	if o != nil && !IsNil(o.HostAddr) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *ManagedNFProfile) SetHostAddr(v HostAddr) {
 
 // GetAllowedPLMNs returns the AllowedPLMNs field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetAllowedPLMNs() []PlmnId {
-	if o == nil || isNil(o.AllowedPLMNs) {
+	if o == nil || IsNil(o.AllowedPLMNs) {
 		var ret []PlmnId
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *ManagedNFProfile) GetAllowedPLMNs() []PlmnId {
 // GetAllowedPLMNsOk returns a tuple with the AllowedPLMNs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetAllowedPLMNsOk() ([]PlmnId, bool) {
-	if o == nil || isNil(o.AllowedPLMNs) {
+	if o == nil || IsNil(o.AllowedPLMNs) {
 		return nil, false
 	}
 	return o.AllowedPLMNs, true
@@ -238,7 +238,7 @@ func (o *ManagedNFProfile) GetAllowedPLMNsOk() ([]PlmnId, bool) {
 
 // HasAllowedPLMNs returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasAllowedPLMNs() bool {
-	if o != nil && !isNil(o.AllowedPLMNs) {
+	if o != nil && !IsNil(o.AllowedPLMNs) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *ManagedNFProfile) SetAllowedPLMNs(v []PlmnId) {
 
 // GetAllowedSNPNs returns the AllowedSNPNs field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetAllowedSNPNs() []SnpnInfo {
-	if o == nil || isNil(o.AllowedSNPNs) {
+	if o == nil || IsNil(o.AllowedSNPNs) {
 		var ret []SnpnInfo
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *ManagedNFProfile) GetAllowedSNPNs() []SnpnInfo {
 // GetAllowedSNPNsOk returns a tuple with the AllowedSNPNs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetAllowedSNPNsOk() ([]SnpnInfo, bool) {
-	if o == nil || isNil(o.AllowedSNPNs) {
+	if o == nil || IsNil(o.AllowedSNPNs) {
 		return nil, false
 	}
 	return o.AllowedSNPNs, true
@@ -270,7 +270,7 @@ func (o *ManagedNFProfile) GetAllowedSNPNsOk() ([]SnpnInfo, bool) {
 
 // HasAllowedSNPNs returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasAllowedSNPNs() bool {
-	if o != nil && !isNil(o.AllowedSNPNs) {
+	if o != nil && !IsNil(o.AllowedSNPNs) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *ManagedNFProfile) SetAllowedSNPNs(v []SnpnInfo) {
 
 // GetAllowedNfTypes returns the AllowedNfTypes field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetAllowedNfTypes() []NFType {
-	if o == nil || isNil(o.AllowedNfTypes) {
+	if o == nil || IsNil(o.AllowedNfTypes) {
 		var ret []NFType
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *ManagedNFProfile) GetAllowedNfTypes() []NFType {
 // GetAllowedNfTypesOk returns a tuple with the AllowedNfTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetAllowedNfTypesOk() ([]NFType, bool) {
-	if o == nil || isNil(o.AllowedNfTypes) {
+	if o == nil || IsNil(o.AllowedNfTypes) {
 		return nil, false
 	}
 	return o.AllowedNfTypes, true
@@ -302,7 +302,7 @@ func (o *ManagedNFProfile) GetAllowedNfTypesOk() ([]NFType, bool) {
 
 // HasAllowedNfTypes returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasAllowedNfTypes() bool {
-	if o != nil && !isNil(o.AllowedNfTypes) {
+	if o != nil && !IsNil(o.AllowedNfTypes) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *ManagedNFProfile) SetAllowedNfTypes(v []NFType) {
 
 // GetAllowedNfDomains returns the AllowedNfDomains field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetAllowedNfDomains() []string {
-	if o == nil || isNil(o.AllowedNfDomains) {
+	if o == nil || IsNil(o.AllowedNfDomains) {
 		var ret []string
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *ManagedNFProfile) GetAllowedNfDomains() []string {
 // GetAllowedNfDomainsOk returns a tuple with the AllowedNfDomains field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetAllowedNfDomainsOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedNfDomains) {
+	if o == nil || IsNil(o.AllowedNfDomains) {
 		return nil, false
 	}
 	return o.AllowedNfDomains, true
@@ -334,7 +334,7 @@ func (o *ManagedNFProfile) GetAllowedNfDomainsOk() ([]string, bool) {
 
 // HasAllowedNfDomains returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasAllowedNfDomains() bool {
-	if o != nil && !isNil(o.AllowedNfDomains) {
+	if o != nil && !IsNil(o.AllowedNfDomains) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *ManagedNFProfile) SetAllowedNfDomains(v []string) {
 
 // GetAllowedNSSAIs returns the AllowedNSSAIs field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetAllowedNSSAIs() []Snssai {
-	if o == nil || isNil(o.AllowedNSSAIs) {
+	if o == nil || IsNil(o.AllowedNSSAIs) {
 		var ret []Snssai
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *ManagedNFProfile) GetAllowedNSSAIs() []Snssai {
 // GetAllowedNSSAIsOk returns a tuple with the AllowedNSSAIs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetAllowedNSSAIsOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.AllowedNSSAIs) {
+	if o == nil || IsNil(o.AllowedNSSAIs) {
 		return nil, false
 	}
 	return o.AllowedNSSAIs, true
@@ -366,7 +366,7 @@ func (o *ManagedNFProfile) GetAllowedNSSAIsOk() ([]Snssai, bool) {
 
 // HasAllowedNSSAIs returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasAllowedNSSAIs() bool {
-	if o != nil && !isNil(o.AllowedNSSAIs) {
+	if o != nil && !IsNil(o.AllowedNSSAIs) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *ManagedNFProfile) SetAllowedNSSAIs(v []Snssai) {
 
 // GetLocality returns the Locality field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetLocality() string {
-	if o == nil || isNil(o.Locality) {
+	if o == nil || IsNil(o.Locality) {
 		var ret string
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *ManagedNFProfile) GetLocality() string {
 // GetLocalityOk returns a tuple with the Locality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetLocalityOk() (*string, bool) {
-	if o == nil || isNil(o.Locality) {
+	if o == nil || IsNil(o.Locality) {
 		return nil, false
 	}
 	return o.Locality, true
@@ -398,7 +398,7 @@ func (o *ManagedNFProfile) GetLocalityOk() (*string, bool) {
 
 // HasLocality returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasLocality() bool {
-	if o != nil && !isNil(o.Locality) {
+	if o != nil && !IsNil(o.Locality) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *ManagedNFProfile) SetLocality(v string) {
 
 // GetCapacity returns the Capacity field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetCapacity() int32 {
-	if o == nil || isNil(o.Capacity) {
+	if o == nil || IsNil(o.Capacity) {
 		var ret int32
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *ManagedNFProfile) GetCapacity() int32 {
 // GetCapacityOk returns a tuple with the Capacity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetCapacityOk() (*int32, bool) {
-	if o == nil || isNil(o.Capacity) {
+	if o == nil || IsNil(o.Capacity) {
 		return nil, false
 	}
 	return o.Capacity, true
@@ -430,7 +430,7 @@ func (o *ManagedNFProfile) GetCapacityOk() (*int32, bool) {
 
 // HasCapacity returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasCapacity() bool {
-	if o != nil && !isNil(o.Capacity) {
+	if o != nil && !IsNil(o.Capacity) {
 		return true
 	}
 
@@ -444,7 +444,7 @@ func (o *ManagedNFProfile) SetCapacity(v int32) {
 
 // GetNfSetIdList returns the NfSetIdList field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetNfSetIdList() []string {
-	if o == nil || isNil(o.NfSetIdList) {
+	if o == nil || IsNil(o.NfSetIdList) {
 		var ret []string
 		return ret
 	}
@@ -454,7 +454,7 @@ func (o *ManagedNFProfile) GetNfSetIdList() []string {
 // GetNfSetIdListOk returns a tuple with the NfSetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetNfSetIdListOk() ([]string, bool) {
-	if o == nil || isNil(o.NfSetIdList) {
+	if o == nil || IsNil(o.NfSetIdList) {
 		return nil, false
 	}
 	return o.NfSetIdList, true
@@ -462,7 +462,7 @@ func (o *ManagedNFProfile) GetNfSetIdListOk() ([]string, bool) {
 
 // HasNfSetIdList returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasNfSetIdList() bool {
-	if o != nil && !isNil(o.NfSetIdList) {
+	if o != nil && !IsNil(o.NfSetIdList) {
 		return true
 	}
 
@@ -476,7 +476,7 @@ func (o *ManagedNFProfile) SetNfSetIdList(v []string) {
 
 // GetServingScope returns the ServingScope field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetServingScope() []string {
-	if o == nil || isNil(o.ServingScope) {
+	if o == nil || IsNil(o.ServingScope) {
 		var ret []string
 		return ret
 	}
@@ -486,7 +486,7 @@ func (o *ManagedNFProfile) GetServingScope() []string {
 // GetServingScopeOk returns a tuple with the ServingScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetServingScopeOk() ([]string, bool) {
-	if o == nil || isNil(o.ServingScope) {
+	if o == nil || IsNil(o.ServingScope) {
 		return nil, false
 	}
 	return o.ServingScope, true
@@ -494,7 +494,7 @@ func (o *ManagedNFProfile) GetServingScopeOk() ([]string, bool) {
 
 // HasServingScope returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasServingScope() bool {
-	if o != nil && !isNil(o.ServingScope) {
+	if o != nil && !IsNil(o.ServingScope) {
 		return true
 	}
 
@@ -508,7 +508,7 @@ func (o *ManagedNFProfile) SetServingScope(v []string) {
 
 // GetLcHSupportInd returns the LcHSupportInd field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetLcHSupportInd() bool {
-	if o == nil || isNil(o.LcHSupportInd) {
+	if o == nil || IsNil(o.LcHSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -518,7 +518,7 @@ func (o *ManagedNFProfile) GetLcHSupportInd() bool {
 // GetLcHSupportIndOk returns a tuple with the LcHSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetLcHSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LcHSupportInd) {
+	if o == nil || IsNil(o.LcHSupportInd) {
 		return nil, false
 	}
 	return o.LcHSupportInd, true
@@ -526,7 +526,7 @@ func (o *ManagedNFProfile) GetLcHSupportIndOk() (*bool, bool) {
 
 // HasLcHSupportInd returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasLcHSupportInd() bool {
-	if o != nil && !isNil(o.LcHSupportInd) {
+	if o != nil && !IsNil(o.LcHSupportInd) {
 		return true
 	}
 
@@ -540,7 +540,7 @@ func (o *ManagedNFProfile) SetLcHSupportInd(v bool) {
 
 // GetOlcHSupportInd returns the OlcHSupportInd field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetOlcHSupportInd() bool {
-	if o == nil || isNil(o.OlcHSupportInd) {
+	if o == nil || IsNil(o.OlcHSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -550,7 +550,7 @@ func (o *ManagedNFProfile) GetOlcHSupportInd() bool {
 // GetOlcHSupportIndOk returns a tuple with the OlcHSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetOlcHSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.OlcHSupportInd) {
+	if o == nil || IsNil(o.OlcHSupportInd) {
 		return nil, false
 	}
 	return o.OlcHSupportInd, true
@@ -558,7 +558,7 @@ func (o *ManagedNFProfile) GetOlcHSupportIndOk() (*bool, bool) {
 
 // HasOlcHSupportInd returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasOlcHSupportInd() bool {
-	if o != nil && !isNil(o.OlcHSupportInd) {
+	if o != nil && !IsNil(o.OlcHSupportInd) {
 		return true
 	}
 
@@ -572,7 +572,7 @@ func (o *ManagedNFProfile) SetOlcHSupportInd(v bool) {
 
 // GetNfSetRecoveryTimeList returns the NfSetRecoveryTimeList field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetNfSetRecoveryTimeList() []time.Time {
-	if o == nil || isNil(o.NfSetRecoveryTimeList) {
+	if o == nil || IsNil(o.NfSetRecoveryTimeList) {
 		var ret []time.Time
 		return ret
 	}
@@ -582,7 +582,7 @@ func (o *ManagedNFProfile) GetNfSetRecoveryTimeList() []time.Time {
 // GetNfSetRecoveryTimeListOk returns a tuple with the NfSetRecoveryTimeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetNfSetRecoveryTimeListOk() ([]time.Time, bool) {
-	if o == nil || isNil(o.NfSetRecoveryTimeList) {
+	if o == nil || IsNil(o.NfSetRecoveryTimeList) {
 		return nil, false
 	}
 	return o.NfSetRecoveryTimeList, true
@@ -590,7 +590,7 @@ func (o *ManagedNFProfile) GetNfSetRecoveryTimeListOk() ([]time.Time, bool) {
 
 // HasNfSetRecoveryTimeList returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasNfSetRecoveryTimeList() bool {
-	if o != nil && !isNil(o.NfSetRecoveryTimeList) {
+	if o != nil && !IsNil(o.NfSetRecoveryTimeList) {
 		return true
 	}
 
@@ -604,7 +604,7 @@ func (o *ManagedNFProfile) SetNfSetRecoveryTimeList(v []time.Time) {
 
 // GetScpDomains returns the ScpDomains field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetScpDomains() []string {
-	if o == nil || isNil(o.ScpDomains) {
+	if o == nil || IsNil(o.ScpDomains) {
 		var ret []string
 		return ret
 	}
@@ -614,7 +614,7 @@ func (o *ManagedNFProfile) GetScpDomains() []string {
 // GetScpDomainsOk returns a tuple with the ScpDomains field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetScpDomainsOk() ([]string, bool) {
-	if o == nil || isNil(o.ScpDomains) {
+	if o == nil || IsNil(o.ScpDomains) {
 		return nil, false
 	}
 	return o.ScpDomains, true
@@ -622,7 +622,7 @@ func (o *ManagedNFProfile) GetScpDomainsOk() ([]string, bool) {
 
 // HasScpDomains returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasScpDomains() bool {
-	if o != nil && !isNil(o.ScpDomains) {
+	if o != nil && !IsNil(o.ScpDomains) {
 		return true
 	}
 
@@ -636,7 +636,7 @@ func (o *ManagedNFProfile) SetScpDomains(v []string) {
 
 // GetVendorId returns the VendorId field value if set, zero value otherwise.
 func (o *ManagedNFProfile) GetVendorId() string {
-	if o == nil || isNil(o.VendorId) {
+	if o == nil || IsNil(o.VendorId) {
 		var ret string
 		return ret
 	}
@@ -646,7 +646,7 @@ func (o *ManagedNFProfile) GetVendorId() string {
 // GetVendorIdOk returns a tuple with the VendorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFProfile) GetVendorIdOk() (*string, bool) {
-	if o == nil || isNil(o.VendorId) {
+	if o == nil || IsNil(o.VendorId) {
 		return nil, false
 	}
 	return o.VendorId, true
@@ -654,7 +654,7 @@ func (o *ManagedNFProfile) GetVendorIdOk() (*string, bool) {
 
 // HasVendorId returns a boolean if a field has been set.
 func (o *ManagedNFProfile) HasVendorId() bool {
-	if o != nil && !isNil(o.VendorId) {
+	if o != nil && !IsNil(o.VendorId) {
 		return true
 	}
 
@@ -667,7 +667,7 @@ func (o *ManagedNFProfile) SetVendorId(v string) {
 }
 
 func (o ManagedNFProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -676,61 +676,61 @@ func (o ManagedNFProfile) MarshalJSON() ([]byte, error) {
 
 func (o ManagedNFProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NfInstanceID) {
+	if !IsNil(o.NfInstanceID) {
 		toSerialize["nfInstanceID"] = o.NfInstanceID
 	}
-	if !isNil(o.NfType) {
+	if !IsNil(o.NfType) {
 		toSerialize["nfType"] = o.NfType
 	}
-	if !isNil(o.HeartbeatTimer) {
+	if !IsNil(o.HeartbeatTimer) {
 		toSerialize["heartbeatTimer"] = o.HeartbeatTimer
 	}
-	if !isNil(o.AuthzInfo) {
+	if !IsNil(o.AuthzInfo) {
 		toSerialize["authzInfo"] = o.AuthzInfo
 	}
-	if !isNil(o.HostAddr) {
+	if !IsNil(o.HostAddr) {
 		toSerialize["hostAddr"] = o.HostAddr
 	}
-	if !isNil(o.AllowedPLMNs) {
+	if !IsNil(o.AllowedPLMNs) {
 		toSerialize["allowedPLMNs"] = o.AllowedPLMNs
 	}
-	if !isNil(o.AllowedSNPNs) {
+	if !IsNil(o.AllowedSNPNs) {
 		toSerialize["allowedSNPNs"] = o.AllowedSNPNs
 	}
-	if !isNil(o.AllowedNfTypes) {
+	if !IsNil(o.AllowedNfTypes) {
 		toSerialize["allowedNfTypes"] = o.AllowedNfTypes
 	}
-	if !isNil(o.AllowedNfDomains) {
+	if !IsNil(o.AllowedNfDomains) {
 		toSerialize["allowedNfDomains"] = o.AllowedNfDomains
 	}
-	if !isNil(o.AllowedNSSAIs) {
+	if !IsNil(o.AllowedNSSAIs) {
 		toSerialize["allowedNSSAIs"] = o.AllowedNSSAIs
 	}
-	if !isNil(o.Locality) {
+	if !IsNil(o.Locality) {
 		toSerialize["locality"] = o.Locality
 	}
-	if !isNil(o.Capacity) {
+	if !IsNil(o.Capacity) {
 		toSerialize["capacity"] = o.Capacity
 	}
-	if !isNil(o.NfSetIdList) {
+	if !IsNil(o.NfSetIdList) {
 		toSerialize["nfSetIdList"] = o.NfSetIdList
 	}
-	if !isNil(o.ServingScope) {
+	if !IsNil(o.ServingScope) {
 		toSerialize["servingScope"] = o.ServingScope
 	}
-	if !isNil(o.LcHSupportInd) {
+	if !IsNil(o.LcHSupportInd) {
 		toSerialize["lcHSupportInd"] = o.LcHSupportInd
 	}
-	if !isNil(o.OlcHSupportInd) {
+	if !IsNil(o.OlcHSupportInd) {
 		toSerialize["olcHSupportInd"] = o.OlcHSupportInd
 	}
-	if !isNil(o.NfSetRecoveryTimeList) {
+	if !IsNil(o.NfSetRecoveryTimeList) {
 		toSerialize["nfSetRecoveryTimeList"] = o.NfSetRecoveryTimeList
 	}
-	if !isNil(o.ScpDomains) {
+	if !IsNil(o.ScpDomains) {
 		toSerialize["scpDomains"] = o.ScpDomains
 	}
-	if !isNil(o.VendorId) {
+	if !IsNil(o.VendorId) {
 		toSerialize["vendorId"] = o.VendorId
 	}
 	return toSerialize, nil
@@ -771,5 +771,3 @@ func (v *NullableManagedNFProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

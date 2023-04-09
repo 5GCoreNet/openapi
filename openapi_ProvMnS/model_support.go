@@ -21,7 +21,7 @@ type Support string
 // List of Support
 const (
 	NOT_SUPPORTED Support = "NOT SUPPORTED"
-	SUPPORTED Support = "SUPPORTED"
+	SUPPORTED     Support = "SUPPORTED"
 )
 
 // All allowed values of Support enum
@@ -108,4 +108,3 @@ func (v *NullableSupport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

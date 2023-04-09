@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // RequestedQosMonitoringParameter Indicates the requested QoS monitoring parameters to be measured.
 type RequestedQosMonitoringParameter struct {
-	RequestedQosMonitoringParameterAnyOf *RequestedQosMonitoringParameterAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RequestedQosMonitoringParameter) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RequestedQosMonitoringParameterAnyOf
-	err = json.Unmarshal(data, &dst.RequestedQosMonitoringParameterAnyOf);
-	if err == nil {
-		jsonRequestedQosMonitoringParameterAnyOf, _ := json.Marshal(dst.RequestedQosMonitoringParameterAnyOf)
-		if string(jsonRequestedQosMonitoringParameterAnyOf) == "{}" { // empty struct
-			dst.RequestedQosMonitoringParameterAnyOf = nil
-		} else {
-			return nil // data stored in dst.RequestedQosMonitoringParameterAnyOf, return on the first match
-		}
-	} else {
-		dst.RequestedQosMonitoringParameterAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RequestedQosMonitoringParameter) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RequestedQosMonitoringParameter) MarshalJSON() ([]byte, error) {
-	if src.RequestedQosMonitoringParameterAnyOf != nil {
-		return json.Marshal(&src.RequestedQosMonitoringParameterAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRequestedQosMonitoringParameter) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -94,17 +94,14 @@ Class | Method | HTTP request | Description
  - [CipheringKeyResponse](docs/CipheringKeyResponse.md)
  - [CipheringSetReport](docs/CipheringSetReport.md)
  - [DataAvailability](docs/DataAvailability.md)
- - [DataAvailabilityAnyOf](docs/DataAvailabilityAnyOf.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RedirectResponse](docs/RedirectResponse.md)
  - [Snssai](docs/Snssai.md)
  - [StorageOutcome](docs/StorageOutcome.md)
- - [StorageOutcomeAnyOf](docs/StorageOutcomeAnyOf.md)
 
 
 ## Documentation For Authorization

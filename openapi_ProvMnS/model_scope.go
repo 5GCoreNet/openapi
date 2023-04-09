@@ -19,8 +19,8 @@ var _ MappedNullable = &Scope{}
 
 // Scope struct for Scope
 type Scope struct {
-	ScopeType *ScopeType `json:"scopeType,omitempty"`
-	ScopeLevel *int32 `json:"scopeLevel,omitempty"`
+	ScopeType  *ScopeType `json:"scopeType,omitempty"`
+	ScopeLevel *int32     `json:"scopeLevel,omitempty"`
 }
 
 // NewScope instantiates a new Scope object
@@ -42,7 +42,7 @@ func NewScopeWithDefaults() *Scope {
 
 // GetScopeType returns the ScopeType field value if set, zero value otherwise.
 func (o *Scope) GetScopeType() ScopeType {
-	if o == nil || isNil(o.ScopeType) {
+	if o == nil || IsNil(o.ScopeType) {
 		var ret ScopeType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Scope) GetScopeType() ScopeType {
 // GetScopeTypeOk returns a tuple with the ScopeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scope) GetScopeTypeOk() (*ScopeType, bool) {
-	if o == nil || isNil(o.ScopeType) {
+	if o == nil || IsNil(o.ScopeType) {
 		return nil, false
 	}
 	return o.ScopeType, true
@@ -60,7 +60,7 @@ func (o *Scope) GetScopeTypeOk() (*ScopeType, bool) {
 
 // HasScopeType returns a boolean if a field has been set.
 func (o *Scope) HasScopeType() bool {
-	if o != nil && !isNil(o.ScopeType) {
+	if o != nil && !IsNil(o.ScopeType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Scope) SetScopeType(v ScopeType) {
 
 // GetScopeLevel returns the ScopeLevel field value if set, zero value otherwise.
 func (o *Scope) GetScopeLevel() int32 {
-	if o == nil || isNil(o.ScopeLevel) {
+	if o == nil || IsNil(o.ScopeLevel) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Scope) GetScopeLevel() int32 {
 // GetScopeLevelOk returns a tuple with the ScopeLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scope) GetScopeLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.ScopeLevel) {
+	if o == nil || IsNil(o.ScopeLevel) {
 		return nil, false
 	}
 	return o.ScopeLevel, true
@@ -92,7 +92,7 @@ func (o *Scope) GetScopeLevelOk() (*int32, bool) {
 
 // HasScopeLevel returns a boolean if a field has been set.
 func (o *Scope) HasScopeLevel() bool {
-	if o != nil && !isNil(o.ScopeLevel) {
+	if o != nil && !IsNil(o.ScopeLevel) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Scope) SetScopeLevel(v int32) {
 }
 
 func (o Scope) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o Scope) MarshalJSON() ([]byte, error) {
 
 func (o Scope) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ScopeType) {
+	if !IsNil(o.ScopeType) {
 		toSerialize["scopeType"] = o.ScopeType
 	}
-	if !isNil(o.ScopeLevel) {
+	if !IsNil(o.ScopeLevel) {
 		toSerialize["scopeLevel"] = o.ScopeLevel
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableScope) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

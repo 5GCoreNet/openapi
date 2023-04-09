@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the IpEndPoint type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IpEndPoint{}
 
-// IpEndPoint IP addressing information of a given NFService; it consists on, e.g. IP address, TCP port, transport protocol... 
+// IpEndPoint IP addressing information of a given NFService; it consists on, e.g. IP address, TCP port, transport protocol...
 type IpEndPoint struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4Address *string `json:"ipv4Address,omitempty"`
-	Ipv6Address *Ipv6Addr `json:"ipv6Address,omitempty"`
-	Transport *TransportProtocol1 `json:"transport,omitempty"`
-	Port *int32 `json:"port,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4Address *string             `json:"ipv4Address,omitempty"`
+	Ipv6Address *Ipv6Addr           `json:"ipv6Address,omitempty"`
+	Transport   *TransportProtocol1 `json:"transport,omitempty"`
+	Port        *int32              `json:"port,omitempty"`
 }
 
 // NewIpEndPoint instantiates a new IpEndPoint object
@@ -45,7 +45,7 @@ func NewIpEndPointWithDefaults() *IpEndPoint {
 
 // GetIpv4Address returns the Ipv4Address field value if set, zero value otherwise.
 func (o *IpEndPoint) GetIpv4Address() string {
-	if o == nil || isNil(o.Ipv4Address) {
+	if o == nil || IsNil(o.Ipv4Address) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *IpEndPoint) GetIpv4Address() string {
 // GetIpv4AddressOk returns a tuple with the Ipv4Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpEndPoint) GetIpv4AddressOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Address) {
+	if o == nil || IsNil(o.Ipv4Address) {
 		return nil, false
 	}
 	return o.Ipv4Address, true
@@ -63,7 +63,7 @@ func (o *IpEndPoint) GetIpv4AddressOk() (*string, bool) {
 
 // HasIpv4Address returns a boolean if a field has been set.
 func (o *IpEndPoint) HasIpv4Address() bool {
-	if o != nil && !isNil(o.Ipv4Address) {
+	if o != nil && !IsNil(o.Ipv4Address) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *IpEndPoint) SetIpv4Address(v string) {
 
 // GetIpv6Address returns the Ipv6Address field value if set, zero value otherwise.
 func (o *IpEndPoint) GetIpv6Address() Ipv6Addr {
-	if o == nil || isNil(o.Ipv6Address) {
+	if o == nil || IsNil(o.Ipv6Address) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IpEndPoint) GetIpv6Address() Ipv6Addr {
 // GetIpv6AddressOk returns a tuple with the Ipv6Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpEndPoint) GetIpv6AddressOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.Ipv6Address) {
+	if o == nil || IsNil(o.Ipv6Address) {
 		return nil, false
 	}
 	return o.Ipv6Address, true
@@ -95,7 +95,7 @@ func (o *IpEndPoint) GetIpv6AddressOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Address returns a boolean if a field has been set.
 func (o *IpEndPoint) HasIpv6Address() bool {
-	if o != nil && !isNil(o.Ipv6Address) {
+	if o != nil && !IsNil(o.Ipv6Address) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *IpEndPoint) SetIpv6Address(v Ipv6Addr) {
 
 // GetTransport returns the Transport field value if set, zero value otherwise.
 func (o *IpEndPoint) GetTransport() TransportProtocol1 {
-	if o == nil || isNil(o.Transport) {
+	if o == nil || IsNil(o.Transport) {
 		var ret TransportProtocol1
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *IpEndPoint) GetTransport() TransportProtocol1 {
 // GetTransportOk returns a tuple with the Transport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpEndPoint) GetTransportOk() (*TransportProtocol1, bool) {
-	if o == nil || isNil(o.Transport) {
+	if o == nil || IsNil(o.Transport) {
 		return nil, false
 	}
 	return o.Transport, true
@@ -127,7 +127,7 @@ func (o *IpEndPoint) GetTransportOk() (*TransportProtocol1, bool) {
 
 // HasTransport returns a boolean if a field has been set.
 func (o *IpEndPoint) HasTransport() bool {
-	if o != nil && !isNil(o.Transport) {
+	if o != nil && !IsNil(o.Transport) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *IpEndPoint) SetTransport(v TransportProtocol1) {
 
 // GetPort returns the Port field value if set, zero value otherwise.
 func (o *IpEndPoint) GetPort() int32 {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *IpEndPoint) GetPort() int32 {
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpEndPoint) GetPortOk() (*int32, bool) {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
 	return o.Port, true
@@ -159,7 +159,7 @@ func (o *IpEndPoint) GetPortOk() (*int32, bool) {
 
 // HasPort returns a boolean if a field has been set.
 func (o *IpEndPoint) HasPort() bool {
-	if o != nil && !isNil(o.Port) {
+	if o != nil && !IsNil(o.Port) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *IpEndPoint) SetPort(v int32) {
 }
 
 func (o IpEndPoint) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o IpEndPoint) MarshalJSON() ([]byte, error) {
 
 func (o IpEndPoint) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ipv4Address) {
+	if !IsNil(o.Ipv4Address) {
 		toSerialize["ipv4Address"] = o.Ipv4Address
 	}
-	if !isNil(o.Ipv6Address) {
+	if !IsNil(o.Ipv6Address) {
 		toSerialize["ipv6Address"] = o.Ipv6Address
 	}
-	if !isNil(o.Transport) {
+	if !IsNil(o.Transport) {
 		toSerialize["transport"] = o.Transport
 	}
-	if !isNil(o.Port) {
+	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableIpEndPoint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

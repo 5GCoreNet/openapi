@@ -19,45 +19,40 @@ var _ MappedNullable = &NrCellDuSingleAllOfAttributes{}
 
 // NrCellDuSingleAllOfAttributes struct for NrCellDuSingleAllOfAttributes
 type NrCellDuSingleAllOfAttributes struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	VnfParametersList []VnfParameter `json:"vnfParametersList,omitempty"`
-	PeeParametersList []PeeParameter `json:"peeParametersList,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
-	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	SupportedTraceMetrics []string `json:"supportedTraceMetrics,omitempty"`
-	AdministrativeState *AdministrativeState `json:"administrativeState,omitempty"`
-	OperationalState *OperationalState `json:"operationalState,omitempty"`
-	CellLocalId *int32 `json:"cellLocalId,omitempty"`
-	CellState *CellState `json:"cellState,omitempty"`
-	PlmnInfoList []PlmnInfo `json:"plmnInfoList,omitempty"`
-	NpnIdentityList []NpnIdentity `json:"npnIdentityList,omitempty"`
-	NrPci *int32 `json:"nrPci,omitempty"`
-	NrTac *int32 `json:"nrTac,omitempty"`
-	ArfcnDL *int32 `json:"arfcnDL,omitempty"`
-	ArfcnUL *int32 `json:"arfcnUL,omitempty"`
-	ArfcnSUL *int32 `json:"arfcnSUL,omitempty"`
-	BSChannelBwDL *int32 `json:"bSChannelBwDL,omitempty"`
-	BSChannelBwUL *int32 `json:"bSChannelBwUL,omitempty"`
-	BSChannelBwSUL *int32 `json:"bSChannelBwSUL,omitempty"`
-	SsbFrequency *int32 `json:"ssbFrequency,omitempty"`
-	SsbPeriodicity *SsbPeriodicity `json:"ssbPeriodicity,omitempty"`
+	ManagedFunctionAttr
+	AdministrativeState  *AdministrativeState  `json:"administrativeState,omitempty"`
+	OperationalState     *OperationalState     `json:"operationalState,omitempty"`
+	CellLocalId          *int32                `json:"cellLocalId,omitempty"`
+	CellState            *CellState            `json:"cellState,omitempty"`
+	PlmnInfoList         []PlmnInfo            `json:"plmnInfoList,omitempty"`
+	NpnIdentityList      []NpnIdentity         `json:"npnIdentityList,omitempty"`
+	NrPci                *int32                `json:"nrPci,omitempty"`
+	NrTac                *int32                `json:"nrTac,omitempty"`
+	ArfcnDL              *int32                `json:"arfcnDL,omitempty"`
+	ArfcnUL              *int32                `json:"arfcnUL,omitempty"`
+	ArfcnSUL             *int32                `json:"arfcnSUL,omitempty"`
+	BSChannelBwDL        *int32                `json:"bSChannelBwDL,omitempty"`
+	BSChannelBwUL        *int32                `json:"bSChannelBwUL,omitempty"`
+	BSChannelBwSUL       *int32                `json:"bSChannelBwSUL,omitempty"`
+	SsbFrequency         *int32                `json:"ssbFrequency,omitempty"`
+	SsbPeriodicity       *SsbPeriodicity       `json:"ssbPeriodicity,omitempty"`
 	SsbSubCarrierSpacing *SsbSubCarrierSpacing `json:"ssbSubCarrierSpacing,omitempty"`
-	SsbOffset *int32 `json:"ssbOffset,omitempty"`
-	SsbDuration *SsbDuration `json:"ssbDuration,omitempty"`
-	NrSectorCarrierRef []string `json:"nrSectorCarrierRef,omitempty"`
+	SsbOffset            *int32                `json:"ssbOffset,omitempty"`
+	SsbDuration          *SsbDuration          `json:"ssbDuration,omitempty"`
+	NrSectorCarrierRef   []string              `json:"nrSectorCarrierRef,omitempty"`
 	// Condition is BWP sets are not supported
-	BwpRef []string `json:"bwpRef,omitempty"`
-	BwpSetRef []string `json:"bwpSetRef,omitempty"`
-	RimRSMonitoringStartTime *string `json:"rimRSMonitoringStartTime,omitempty"`
-	RimRSMonitoringStopTime *string `json:"rimRSMonitoringStopTime,omitempty"`
-	RimRSMonitoringWindowDuration *int32 `json:"rimRSMonitoringWindowDuration,omitempty"`
-	RimRSMonitoringWindowStartingOffset *int32 `json:"rimRSMonitoringWindowStartingOffset,omitempty"`
-	RimRSMonitoringWindowPeriodicity *int32 `json:"rimRSMonitoringWindowPeriodicity,omitempty"`
-	RimRSMonitoringOccasionInterval *int32 `json:"rimRSMonitoringOccasionInterval,omitempty"`
-	RimRSMonitoringOccasionStartingOffset *int32 `json:"rimRSMonitoringOccasionStartingOffset,omitempty"`
-	NRFrequencyRef *string `json:"nRFrequencyRef,omitempty"`
-	VictimSetRef *string `json:"victimSetRef,omitempty"`
-	AggressorSetRef *string `json:"aggressorSetRef,omitempty"`
+	BwpRef                                []string `json:"bwpRef,omitempty"`
+	BwpSetRef                             []string `json:"bwpSetRef,omitempty"`
+	RimRSMonitoringStartTime              *string  `json:"rimRSMonitoringStartTime,omitempty"`
+	RimRSMonitoringStopTime               *string  `json:"rimRSMonitoringStopTime,omitempty"`
+	RimRSMonitoringWindowDuration         *int32   `json:"rimRSMonitoringWindowDuration,omitempty"`
+	RimRSMonitoringWindowStartingOffset   *int32   `json:"rimRSMonitoringWindowStartingOffset,omitempty"`
+	RimRSMonitoringWindowPeriodicity      *int32   `json:"rimRSMonitoringWindowPeriodicity,omitempty"`
+	RimRSMonitoringOccasionInterval       *int32   `json:"rimRSMonitoringOccasionInterval,omitempty"`
+	RimRSMonitoringOccasionStartingOffset *int32   `json:"rimRSMonitoringOccasionStartingOffset,omitempty"`
+	NRFrequencyRef                        *string  `json:"nRFrequencyRef,omitempty"`
+	VictimSetRef                          *string  `json:"victimSetRef,omitempty"`
+	AggressorSetRef                       *string  `json:"aggressorSetRef,omitempty"`
 }
 
 // NewNrCellDuSingleAllOfAttributes instantiates a new NrCellDuSingleAllOfAttributes object
@@ -75,198 +70,6 @@ func NewNrCellDuSingleAllOfAttributes() *NrCellDuSingleAllOfAttributes {
 func NewNrCellDuSingleAllOfAttributesWithDefaults() *NrCellDuSingleAllOfAttributes {
 	this := NrCellDuSingleAllOfAttributes{}
 	return &this
-}
-
-// GetUserLabel returns the UserLabel field value if set, zero value otherwise.
-func (o *NrCellDuSingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
-		var ret string
-		return ret
-	}
-	return *o.UserLabel
-}
-
-// GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrCellDuSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
-		return nil, false
-	}
-	return o.UserLabel, true
-}
-
-// HasUserLabel returns a boolean if a field has been set.
-func (o *NrCellDuSingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserLabel gets a reference to the given string and assigns it to the UserLabel field.
-func (o *NrCellDuSingleAllOfAttributes) SetUserLabel(v string) {
-	o.UserLabel = &v
-}
-
-// GetVnfParametersList returns the VnfParametersList field value if set, zero value otherwise.
-func (o *NrCellDuSingleAllOfAttributes) GetVnfParametersList() []VnfParameter {
-	if o == nil || IsNil(o.VnfParametersList) {
-		var ret []VnfParameter
-		return ret
-	}
-	return o.VnfParametersList
-}
-
-// GetVnfParametersListOk returns a tuple with the VnfParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrCellDuSingleAllOfAttributes) GetVnfParametersListOk() ([]VnfParameter, bool) {
-	if o == nil || IsNil(o.VnfParametersList) {
-		return nil, false
-	}
-	return o.VnfParametersList, true
-}
-
-// HasVnfParametersList returns a boolean if a field has been set.
-func (o *NrCellDuSingleAllOfAttributes) HasVnfParametersList() bool {
-	if o != nil && !IsNil(o.VnfParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetVnfParametersList gets a reference to the given []VnfParameter and assigns it to the VnfParametersList field.
-func (o *NrCellDuSingleAllOfAttributes) SetVnfParametersList(v []VnfParameter) {
-	o.VnfParametersList = v
-}
-
-// GetPeeParametersList returns the PeeParametersList field value if set, zero value otherwise.
-func (o *NrCellDuSingleAllOfAttributes) GetPeeParametersList() []PeeParameter {
-	if o == nil || IsNil(o.PeeParametersList) {
-		var ret []PeeParameter
-		return ret
-	}
-	return o.PeeParametersList
-}
-
-// GetPeeParametersListOk returns a tuple with the PeeParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrCellDuSingleAllOfAttributes) GetPeeParametersListOk() ([]PeeParameter, bool) {
-	if o == nil || IsNil(o.PeeParametersList) {
-		return nil, false
-	}
-	return o.PeeParametersList, true
-}
-
-// HasPeeParametersList returns a boolean if a field has been set.
-func (o *NrCellDuSingleAllOfAttributes) HasPeeParametersList() bool {
-	if o != nil && !IsNil(o.PeeParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetPeeParametersList gets a reference to the given []PeeParameter and assigns it to the PeeParametersList field.
-func (o *NrCellDuSingleAllOfAttributes) SetPeeParametersList(v []PeeParameter) {
-	o.PeeParametersList = v
-}
-
-// GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
-func (o *NrCellDuSingleAllOfAttributes) GetPriorityLabel() int32 {
-	if o == nil || IsNil(o.PriorityLabel) {
-		var ret int32
-		return ret
-	}
-	return *o.PriorityLabel
-}
-
-// GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrCellDuSingleAllOfAttributes) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLabel) {
-		return nil, false
-	}
-	return o.PriorityLabel, true
-}
-
-// HasPriorityLabel returns a boolean if a field has been set.
-func (o *NrCellDuSingleAllOfAttributes) HasPriorityLabel() bool {
-	if o != nil && !IsNil(o.PriorityLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetPriorityLabel gets a reference to the given int32 and assigns it to the PriorityLabel field.
-func (o *NrCellDuSingleAllOfAttributes) SetPriorityLabel(v int32) {
-	o.PriorityLabel = &v
-}
-
-// GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
-func (o *NrCellDuSingleAllOfAttributes) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		var ret []SupportedPerfMetricGroup
-		return ret
-	}
-	return o.SupportedPerfMetricGroups
-}
-
-// GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrCellDuSingleAllOfAttributes) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		return nil, false
-	}
-	return o.SupportedPerfMetricGroups, true
-}
-
-// HasSupportedPerfMetricGroups returns a boolean if a field has been set.
-func (o *NrCellDuSingleAllOfAttributes) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedPerfMetricGroups gets a reference to the given []SupportedPerfMetricGroup and assigns it to the SupportedPerfMetricGroups field.
-func (o *NrCellDuSingleAllOfAttributes) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGroup) {
-	o.SupportedPerfMetricGroups = v
-}
-
-// GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
-func (o *NrCellDuSingleAllOfAttributes) GetSupportedTraceMetrics() []string {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		var ret []string
-		return ret
-	}
-	return o.SupportedTraceMetrics
-}
-
-// GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrCellDuSingleAllOfAttributes) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		return nil, false
-	}
-	return o.SupportedTraceMetrics, true
-}
-
-// HasSupportedTraceMetrics returns a boolean if a field has been set.
-func (o *NrCellDuSingleAllOfAttributes) HasSupportedTraceMetrics() bool {
-	if o != nil && !IsNil(o.SupportedTraceMetrics) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedTraceMetrics gets a reference to the given []string and assigns it to the SupportedTraceMetrics field.
-func (o *NrCellDuSingleAllOfAttributes) SetSupportedTraceMetrics(v []string) {
-	o.SupportedTraceMetrics = v
 }
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
@@ -1294,7 +1097,7 @@ func (o *NrCellDuSingleAllOfAttributes) SetAggressorSetRef(v string) {
 }
 
 func (o NrCellDuSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1303,23 +1106,13 @@ func (o NrCellDuSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o NrCellDuSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
-		toSerialize["userLabel"] = o.UserLabel
+	serializedManagedFunctionAttr, errManagedFunctionAttr := json.Marshal(o.ManagedFunctionAttr)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
-	if !IsNil(o.VnfParametersList) {
-		toSerialize["vnfParametersList"] = o.VnfParametersList
-	}
-	if !IsNil(o.PeeParametersList) {
-		toSerialize["peeParametersList"] = o.PeeParametersList
-	}
-	if !IsNil(o.PriorityLabel) {
-		toSerialize["priorityLabel"] = o.PriorityLabel
-	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
-		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
-	}
-	if !IsNil(o.SupportedTraceMetrics) {
-		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
+	errManagedFunctionAttr = json.Unmarshal([]byte(serializedManagedFunctionAttr), &toSerialize)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
 	if !IsNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
@@ -1455,5 +1248,3 @@ func (v *NullableNrCellDuSingleAllOfAttributes) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

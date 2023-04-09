@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// N4MessageType N4 Message Type. Possible values are   - PFCP_SES_EST_REQ   - PFCP_SES_EST_RSP   - PFCP_SES_MOD_REQ   - PFCP_SES_MOD_RSP   - PFCP_SES_DEL_REQ   - PFCP_SES_DEL_RSP   - PFCP_SES_REP_REQ   - PFCP_SES_REP_RSP 
+// N4MessageType N4 Message Type. Possible values are   - PFCP_SES_EST_REQ   - PFCP_SES_EST_RSP   - PFCP_SES_MOD_REQ   - PFCP_SES_MOD_RSP   - PFCP_SES_DEL_REQ   - PFCP_SES_DEL_RSP   - PFCP_SES_REP_REQ   - PFCP_SES_REP_RSP
 type N4MessageType struct {
-	N4MessageTypeAnyOf *N4MessageTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N4MessageType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into N4MessageTypeAnyOf
-	err = json.Unmarshal(data, &dst.N4MessageTypeAnyOf);
-	if err == nil {
-		jsonN4MessageTypeAnyOf, _ := json.Marshal(dst.N4MessageTypeAnyOf)
-		if string(jsonN4MessageTypeAnyOf) == "{}" { // empty struct
-			dst.N4MessageTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.N4MessageTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.N4MessageTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *N4MessageType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N4MessageType) MarshalJSON() ([]byte, error) {
-	if src.N4MessageTypeAnyOf != nil {
-		return json.Marshal(&src.N4MessageTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableN4MessageType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

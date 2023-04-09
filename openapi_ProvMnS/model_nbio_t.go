@@ -20,7 +20,7 @@ var _ MappedNullable = &NBIoT{}
 // NBIoT struct for NBIoT
 type NBIoT struct {
 	ServAttrCom *ServAttrCom `json:"servAttrCom,omitempty"`
-	Support *Support `json:"support,omitempty"`
+	Support     *Support     `json:"support,omitempty"`
 }
 
 // NewNBIoT instantiates a new NBIoT object
@@ -42,7 +42,7 @@ func NewNBIoTWithDefaults() *NBIoT {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *NBIoT) GetServAttrCom() ServAttrCom {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NBIoT) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NBIoT) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *NBIoT) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *NBIoT) HasServAttrCom() bool {
-	if o != nil && !isNil(o.ServAttrCom) {
+	if o != nil && !IsNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NBIoT) SetServAttrCom(v ServAttrCom) {
 
 // GetSupport returns the Support field value if set, zero value otherwise.
 func (o *NBIoT) GetSupport() Support {
-	if o == nil || isNil(o.Support) {
+	if o == nil || IsNil(o.Support) {
 		var ret Support
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NBIoT) GetSupport() Support {
 // GetSupportOk returns a tuple with the Support field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NBIoT) GetSupportOk() (*Support, bool) {
-	if o == nil || isNil(o.Support) {
+	if o == nil || IsNil(o.Support) {
 		return nil, false
 	}
 	return o.Support, true
@@ -92,7 +92,7 @@ func (o *NBIoT) GetSupportOk() (*Support, bool) {
 
 // HasSupport returns a boolean if a field has been set.
 func (o *NBIoT) HasSupport() bool {
-	if o != nil && !isNil(o.Support) {
+	if o != nil && !IsNil(o.Support) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NBIoT) SetSupport(v Support) {
 }
 
 func (o NBIoT) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o NBIoT) MarshalJSON() ([]byte, error) {
 
 func (o NBIoT) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServAttrCom) {
+	if !IsNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !isNil(o.Support) {
+	if !IsNil(o.Support) {
 		toSerialize["support"] = o.Support
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableNBIoT) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

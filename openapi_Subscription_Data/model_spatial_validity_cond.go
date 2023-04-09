@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SpatialValidityCond{}
 
 // SpatialValidityCond Contains the Spatial Validity Condition.
 type SpatialValidityCond struct {
-	TrackingAreaList []Tai `json:"trackingAreaList,omitempty"`
-	Countries []string `json:"countries,omitempty"`
+	TrackingAreaList        []Tai           `json:"trackingAreaList,omitempty"`
+	Countries               []string        `json:"countries,omitempty"`
 	GeographicalServiceArea *GeoServiceArea `json:"geographicalServiceArea,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewSpatialValidityCondWithDefaults() *SpatialValidityCond {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *SpatialValidityCond) GetTrackingAreaList() []Tai {
-	if o == nil || isNil(o.TrackingAreaList) {
+	if o == nil || IsNil(o.TrackingAreaList) {
 		var ret []Tai
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SpatialValidityCond) GetTrackingAreaList() []Tai {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond) GetTrackingAreaListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TrackingAreaList) {
+	if o == nil || IsNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -61,7 +61,7 @@ func (o *SpatialValidityCond) GetTrackingAreaListOk() ([]Tai, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *SpatialValidityCond) HasTrackingAreaList() bool {
-	if o != nil && !isNil(o.TrackingAreaList) {
+	if o != nil && !IsNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SpatialValidityCond) SetTrackingAreaList(v []Tai) {
 
 // GetCountries returns the Countries field value if set, zero value otherwise.
 func (o *SpatialValidityCond) GetCountries() []string {
-	if o == nil || isNil(o.Countries) {
+	if o == nil || IsNil(o.Countries) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SpatialValidityCond) GetCountries() []string {
 // GetCountriesOk returns a tuple with the Countries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond) GetCountriesOk() ([]string, bool) {
-	if o == nil || isNil(o.Countries) {
+	if o == nil || IsNil(o.Countries) {
 		return nil, false
 	}
 	return o.Countries, true
@@ -93,7 +93,7 @@ func (o *SpatialValidityCond) GetCountriesOk() ([]string, bool) {
 
 // HasCountries returns a boolean if a field has been set.
 func (o *SpatialValidityCond) HasCountries() bool {
-	if o != nil && !isNil(o.Countries) {
+	if o != nil && !IsNil(o.Countries) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SpatialValidityCond) SetCountries(v []string) {
 
 // GetGeographicalServiceArea returns the GeographicalServiceArea field value if set, zero value otherwise.
 func (o *SpatialValidityCond) GetGeographicalServiceArea() GeoServiceArea {
-	if o == nil || isNil(o.GeographicalServiceArea) {
+	if o == nil || IsNil(o.GeographicalServiceArea) {
 		var ret GeoServiceArea
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SpatialValidityCond) GetGeographicalServiceArea() GeoServiceArea {
 // GetGeographicalServiceAreaOk returns a tuple with the GeographicalServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond) GetGeographicalServiceAreaOk() (*GeoServiceArea, bool) {
-	if o == nil || isNil(o.GeographicalServiceArea) {
+	if o == nil || IsNil(o.GeographicalServiceArea) {
 		return nil, false
 	}
 	return o.GeographicalServiceArea, true
@@ -125,7 +125,7 @@ func (o *SpatialValidityCond) GetGeographicalServiceAreaOk() (*GeoServiceArea, b
 
 // HasGeographicalServiceArea returns a boolean if a field has been set.
 func (o *SpatialValidityCond) HasGeographicalServiceArea() bool {
-	if o != nil && !isNil(o.GeographicalServiceArea) {
+	if o != nil && !IsNil(o.GeographicalServiceArea) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SpatialValidityCond) SetGeographicalServiceArea(v GeoServiceArea) {
 }
 
 func (o SpatialValidityCond) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o SpatialValidityCond) MarshalJSON() ([]byte, error) {
 
 func (o SpatialValidityCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TrackingAreaList) {
+	if !IsNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
-	if !isNil(o.Countries) {
+	if !IsNil(o.Countries) {
 		toSerialize["countries"] = o.Countries
 	}
-	if !isNil(o.GeographicalServiceArea) {
+	if !IsNil(o.GeographicalServiceArea) {
 		toSerialize["geographicalServiceArea"] = o.GeographicalServiceArea
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableSpatialValidityCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

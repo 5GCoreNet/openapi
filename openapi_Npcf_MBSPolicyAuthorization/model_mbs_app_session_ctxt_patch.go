@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyAuthorization API
 
-MBS Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the MbsAppSessionCtxtPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsAppSessionCtxtPatch{}
 
-// MbsAppSessionCtxtPatch Represents the modifications to an existing MBS Application Session Context resource. 
+// MbsAppSessionCtxtPatch Represents the modifications to an existing MBS Application Session Context resource.
 type MbsAppSessionCtxtPatch struct {
 	MbsServInfo *MbsServiceInfo `json:"mbsServInfo,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewMbsAppSessionCtxtPatchWithDefaults() *MbsAppSessionCtxtPatch {
 
 // GetMbsServInfo returns the MbsServInfo field value if set, zero value otherwise.
 func (o *MbsAppSessionCtxtPatch) GetMbsServInfo() MbsServiceInfo {
-	if o == nil || isNil(o.MbsServInfo) {
+	if o == nil || IsNil(o.MbsServInfo) {
 		var ret MbsServiceInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MbsAppSessionCtxtPatch) GetMbsServInfo() MbsServiceInfo {
 // GetMbsServInfoOk returns a tuple with the MbsServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsAppSessionCtxtPatch) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
-	if o == nil || isNil(o.MbsServInfo) {
+	if o == nil || IsNil(o.MbsServInfo) {
 		return nil, false
 	}
 	return o.MbsServInfo, true
@@ -59,7 +59,7 @@ func (o *MbsAppSessionCtxtPatch) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
 
 // HasMbsServInfo returns a boolean if a field has been set.
 func (o *MbsAppSessionCtxtPatch) HasMbsServInfo() bool {
-	if o != nil && !isNil(o.MbsServInfo) {
+	if o != nil && !IsNil(o.MbsServInfo) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MbsAppSessionCtxtPatch) SetMbsServInfo(v MbsServiceInfo) {
 }
 
 func (o MbsAppSessionCtxtPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MbsAppSessionCtxtPatch) MarshalJSON() ([]byte, error) {
 
 func (o MbsAppSessionCtxtPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsServInfo) {
+	if !IsNil(o.MbsServInfo) {
 		toSerialize["mbsServInfo"] = o.MbsServInfo
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMbsAppSessionCtxtPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

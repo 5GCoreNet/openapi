@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the UePolicyTransferFailureNotification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UePolicyTransferFailureNotification{}
 
-// UePolicyTransferFailureNotification Represents information on the failure of a UE policy transfer to the UE because the UE is not reachable. 
+// UePolicyTransferFailureNotification Represents information on the failure of a UE policy transfer to the UE because the UE is not reachable.
 type UePolicyTransferFailureNotification struct {
 	Cause N1N2MessageTransferCause `json:"cause"`
-	Ptis []int32 `json:"ptis"`
+	Ptis  []int32                  `json:"ptis"`
 }
 
 // NewUePolicyTransferFailureNotification instantiates a new UePolicyTransferFailureNotification object
@@ -91,7 +91,7 @@ func (o *UePolicyTransferFailureNotification) SetPtis(v []int32) {
 }
 
 func (o UePolicyTransferFailureNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableUePolicyTransferFailureNotification) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

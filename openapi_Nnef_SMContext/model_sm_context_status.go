@@ -1,7 +1,7 @@
 /*
 Nnef_SMContext
 
-Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SmContextStatus Possible values are - RELEASED: Indicates that the Individual SM Context for NIDD is released. 
+// SmContextStatus Possible values are - RELEASED: Indicates that the Individual SM Context for NIDD is released.
 type SmContextStatus struct {
-	SmContextStatusAnyOf *SmContextStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmContextStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SmContextStatusAnyOf
-	err = json.Unmarshal(data, &dst.SmContextStatusAnyOf);
-	if err == nil {
-		jsonSmContextStatusAnyOf, _ := json.Marshal(dst.SmContextStatusAnyOf)
-		if string(jsonSmContextStatusAnyOf) == "{}" { // empty struct
-			dst.SmContextStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.SmContextStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.SmContextStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SmContextStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmContextStatus) MarshalJSON() ([]byte, error) {
-	if src.SmContextStatusAnyOf != nil {
-		return json.Marshal(&src.SmContextStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSmContextStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

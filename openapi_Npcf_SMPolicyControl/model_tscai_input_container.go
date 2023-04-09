@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -49,7 +49,7 @@ func NewTscaiInputContainerWithDefaults() *TscaiInputContainer {
 
 // GetPeriodicity returns the Periodicity field value if set, zero value otherwise.
 func (o *TscaiInputContainer) GetPeriodicity() int32 {
-	if o == nil || isNil(o.Periodicity) {
+	if o == nil || IsNil(o.Periodicity) {
 		var ret int32
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *TscaiInputContainer) GetPeriodicity() int32 {
 // GetPeriodicityOk returns a tuple with the Periodicity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscaiInputContainer) GetPeriodicityOk() (*int32, bool) {
-	if o == nil || isNil(o.Periodicity) {
+	if o == nil || IsNil(o.Periodicity) {
 		return nil, false
 	}
 	return o.Periodicity, true
@@ -67,7 +67,7 @@ func (o *TscaiInputContainer) GetPeriodicityOk() (*int32, bool) {
 
 // HasPeriodicity returns a boolean if a field has been set.
 func (o *TscaiInputContainer) HasPeriodicity() bool {
-	if o != nil && !isNil(o.Periodicity) {
+	if o != nil && !IsNil(o.Periodicity) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *TscaiInputContainer) SetPeriodicity(v int32) {
 
 // GetBurstArrivalTime returns the BurstArrivalTime field value if set, zero value otherwise.
 func (o *TscaiInputContainer) GetBurstArrivalTime() time.Time {
-	if o == nil || isNil(o.BurstArrivalTime) {
+	if o == nil || IsNil(o.BurstArrivalTime) {
 		var ret time.Time
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *TscaiInputContainer) GetBurstArrivalTime() time.Time {
 // GetBurstArrivalTimeOk returns a tuple with the BurstArrivalTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscaiInputContainer) GetBurstArrivalTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.BurstArrivalTime) {
+	if o == nil || IsNil(o.BurstArrivalTime) {
 		return nil, false
 	}
 	return o.BurstArrivalTime, true
@@ -99,7 +99,7 @@ func (o *TscaiInputContainer) GetBurstArrivalTimeOk() (*time.Time, bool) {
 
 // HasBurstArrivalTime returns a boolean if a field has been set.
 func (o *TscaiInputContainer) HasBurstArrivalTime() bool {
-	if o != nil && !isNil(o.BurstArrivalTime) {
+	if o != nil && !IsNil(o.BurstArrivalTime) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *TscaiInputContainer) SetBurstArrivalTime(v time.Time) {
 
 // GetSurTimeInNumMsg returns the SurTimeInNumMsg field value if set, zero value otherwise.
 func (o *TscaiInputContainer) GetSurTimeInNumMsg() int32 {
-	if o == nil || isNil(o.SurTimeInNumMsg) {
+	if o == nil || IsNil(o.SurTimeInNumMsg) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *TscaiInputContainer) GetSurTimeInNumMsg() int32 {
 // GetSurTimeInNumMsgOk returns a tuple with the SurTimeInNumMsg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscaiInputContainer) GetSurTimeInNumMsgOk() (*int32, bool) {
-	if o == nil || isNil(o.SurTimeInNumMsg) {
+	if o == nil || IsNil(o.SurTimeInNumMsg) {
 		return nil, false
 	}
 	return o.SurTimeInNumMsg, true
@@ -131,7 +131,7 @@ func (o *TscaiInputContainer) GetSurTimeInNumMsgOk() (*int32, bool) {
 
 // HasSurTimeInNumMsg returns a boolean if a field has been set.
 func (o *TscaiInputContainer) HasSurTimeInNumMsg() bool {
-	if o != nil && !isNil(o.SurTimeInNumMsg) {
+	if o != nil && !IsNil(o.SurTimeInNumMsg) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *TscaiInputContainer) SetSurTimeInNumMsg(v int32) {
 
 // GetSurTimeInTime returns the SurTimeInTime field value if set, zero value otherwise.
 func (o *TscaiInputContainer) GetSurTimeInTime() int32 {
-	if o == nil || isNil(o.SurTimeInTime) {
+	if o == nil || IsNil(o.SurTimeInTime) {
 		var ret int32
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *TscaiInputContainer) GetSurTimeInTime() int32 {
 // GetSurTimeInTimeOk returns a tuple with the SurTimeInTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscaiInputContainer) GetSurTimeInTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.SurTimeInTime) {
+	if o == nil || IsNil(o.SurTimeInTime) {
 		return nil, false
 	}
 	return o.SurTimeInTime, true
@@ -163,7 +163,7 @@ func (o *TscaiInputContainer) GetSurTimeInTimeOk() (*int32, bool) {
 
 // HasSurTimeInTime returns a boolean if a field has been set.
 func (o *TscaiInputContainer) HasSurTimeInTime() bool {
-	if o != nil && !isNil(o.SurTimeInTime) {
+	if o != nil && !IsNil(o.SurTimeInTime) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *TscaiInputContainer) SetSurTimeInTime(v int32) {
 }
 
 func (o TscaiInputContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -185,16 +185,16 @@ func (o TscaiInputContainer) MarshalJSON() ([]byte, error) {
 
 func (o TscaiInputContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Periodicity) {
+	if !IsNil(o.Periodicity) {
 		toSerialize["periodicity"] = o.Periodicity
 	}
-	if !isNil(o.BurstArrivalTime) {
+	if !IsNil(o.BurstArrivalTime) {
 		toSerialize["burstArrivalTime"] = o.BurstArrivalTime
 	}
-	if !isNil(o.SurTimeInNumMsg) {
+	if !IsNil(o.SurTimeInNumMsg) {
 		toSerialize["surTimeInNumMsg"] = o.SurTimeInNumMsg
 	}
-	if !isNil(o.SurTimeInTime) {
+	if !IsNil(o.SurTimeInTime) {
 		toSerialize["surTimeInTime"] = o.SurTimeInTime
 	}
 	return toSerialize, nil
@@ -235,5 +235,3 @@ func (v *NullableTscaiInputContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

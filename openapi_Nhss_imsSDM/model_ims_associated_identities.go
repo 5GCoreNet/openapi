@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the ImsAssociatedIdentities type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ImsAssociatedIdentities{}
 
-// ImsAssociatedIdentities A list of identities belonging to the same Implicit Registration Set (IRS), along with the registration state of the IRS 
+// ImsAssociatedIdentities A list of identities belonging to the same Implicit Registration Set (IRS), along with the registration state of the IRS
 type ImsAssociatedIdentities struct {
-	IrsState ImsRegistrationState `json:"irsState"`
-	PublicIdentities PublicIdentities `json:"publicIdentities"`
+	IrsState         ImsRegistrationState `json:"irsState"`
+	PublicIdentities PublicIdentities     `json:"publicIdentities"`
 }
 
 // NewImsAssociatedIdentities instantiates a new ImsAssociatedIdentities object
@@ -91,7 +91,7 @@ func (o *ImsAssociatedIdentities) SetPublicIdentities(v PublicIdentities) {
 }
 
 func (o ImsAssociatedIdentities) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableImsAssociatedIdentities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

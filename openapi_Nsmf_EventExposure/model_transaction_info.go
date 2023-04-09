@@ -1,7 +1,7 @@
 /*
 Nsmf_EventExposure
 
-Session Management Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &TransactionInfo{}
 // TransactionInfo Represents SMF Transaction Information.
 type TransactionInfo struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	Transaction int32 `json:"transaction"`
-	Snssai *Snssai `json:"snssai,omitempty"`
-	AppIds []string `json:"appIds,omitempty"`
+	Transaction    int32               `json:"transaction"`
+	Snssai         *Snssai             `json:"snssai,omitempty"`
+	AppIds         []string            `json:"appIds,omitempty"`
 	TransacMetrics []TransactionMetric `json:"transacMetrics,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *TransactionInfo) SetTransaction(v int32) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *TransactionInfo) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *TransactionInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -88,7 +88,7 @@ func (o *TransactionInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *TransactionInfo) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *TransactionInfo) SetSnssai(v Snssai) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *TransactionInfo) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *TransactionInfo) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionInfo) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -120,7 +120,7 @@ func (o *TransactionInfo) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *TransactionInfo) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *TransactionInfo) SetAppIds(v []string) {
 
 // GetTransacMetrics returns the TransacMetrics field value if set, zero value otherwise.
 func (o *TransactionInfo) GetTransacMetrics() []TransactionMetric {
-	if o == nil || isNil(o.TransacMetrics) {
+	if o == nil || IsNil(o.TransacMetrics) {
 		var ret []TransactionMetric
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *TransactionInfo) GetTransacMetrics() []TransactionMetric {
 // GetTransacMetricsOk returns a tuple with the TransacMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionInfo) GetTransacMetricsOk() ([]TransactionMetric, bool) {
-	if o == nil || isNil(o.TransacMetrics) {
+	if o == nil || IsNil(o.TransacMetrics) {
 		return nil, false
 	}
 	return o.TransacMetrics, true
@@ -152,7 +152,7 @@ func (o *TransactionInfo) GetTransacMetricsOk() ([]TransactionMetric, bool) {
 
 // HasTransacMetrics returns a boolean if a field has been set.
 func (o *TransactionInfo) HasTransacMetrics() bool {
-	if o != nil && !isNil(o.TransacMetrics) {
+	if o != nil && !IsNil(o.TransacMetrics) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *TransactionInfo) SetTransacMetrics(v []TransactionMetric) {
 }
 
 func (o TransactionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,13 +175,13 @@ func (o TransactionInfo) MarshalJSON() ([]byte, error) {
 func (o TransactionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["transaction"] = o.Transaction
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !isNil(o.TransacMetrics) {
+	if !IsNil(o.TransacMetrics) {
 		toSerialize["transacMetrics"] = o.TransacMetrics
 	}
 	return toSerialize, nil
@@ -222,5 +222,3 @@ func (v *NullableTransactionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

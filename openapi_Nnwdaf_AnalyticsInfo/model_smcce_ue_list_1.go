@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// SmcceUeList1 Represents the List of UEs classified based on experience level of Session Management  congestion control. 
+// SmcceUeList1 Represents the List of UEs classified based on experience level of Session Management  congestion control.
 type SmcceUeList1 struct {
 	Interface *interface{}
 }
@@ -24,7 +24,7 @@ type SmcceUeList1 struct {
 func (dst *SmcceUeList1) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableSmcceUeList1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

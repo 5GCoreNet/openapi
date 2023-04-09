@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &UeACRequestInfo{}
 
 // UeACRequestInfo struct for UeACRequestInfo
 type UeACRequestInfo struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi string `json:"supi"`
-	AnType AccessType `json:"anType"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi             string             `json:"supi"`
+	AnType           AccessType         `json:"anType"`
 	AcuOperationList []AcuOperationItem `json:"acuOperationList"`
-	AdditionalAnType *AccessType `json:"additionalAnType,omitempty"`
+	AdditionalAnType *AccessType        `json:"additionalAnType,omitempty"`
 }
 
 // NewUeACRequestInfo instantiates a new UeACRequestInfo object
@@ -120,7 +120,7 @@ func (o *UeACRequestInfo) SetAcuOperationList(v []AcuOperationItem) {
 
 // GetAdditionalAnType returns the AdditionalAnType field value if set, zero value otherwise.
 func (o *UeACRequestInfo) GetAdditionalAnType() AccessType {
-	if o == nil || isNil(o.AdditionalAnType) {
+	if o == nil || IsNil(o.AdditionalAnType) {
 		var ret AccessType
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *UeACRequestInfo) GetAdditionalAnType() AccessType {
 // GetAdditionalAnTypeOk returns a tuple with the AdditionalAnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACRequestInfo) GetAdditionalAnTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AdditionalAnType) {
+	if o == nil || IsNil(o.AdditionalAnType) {
 		return nil, false
 	}
 	return o.AdditionalAnType, true
@@ -138,7 +138,7 @@ func (o *UeACRequestInfo) GetAdditionalAnTypeOk() (*AccessType, bool) {
 
 // HasAdditionalAnType returns a boolean if a field has been set.
 func (o *UeACRequestInfo) HasAdditionalAnType() bool {
-	if o != nil && !isNil(o.AdditionalAnType) {
+	if o != nil && !IsNil(o.AdditionalAnType) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *UeACRequestInfo) SetAdditionalAnType(v AccessType) {
 }
 
 func (o UeACRequestInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o UeACRequestInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["supi"] = o.Supi
 	toSerialize["anType"] = o.AnType
 	toSerialize["acuOperationList"] = o.AcuOperationList
-	if !isNil(o.AdditionalAnType) {
+	if !IsNil(o.AdditionalAnType) {
 		toSerialize["additionalAnType"] = o.AdditionalAnType
 	}
 	return toSerialize, nil
@@ -204,5 +204,3 @@ func (v *NullableUeACRequestInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

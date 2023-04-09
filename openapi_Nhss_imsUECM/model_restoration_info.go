@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,16 +17,16 @@ import (
 // checks if the RestorationInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RestorationInfo{}
 
-// RestorationInfo The information relevant to a specific registration required for an S-CSCF to handle the requests for a user 
+// RestorationInfo The information relevant to a specific registration required for an S-CSCF to handle the requests for a user
 type RestorationInfo struct {
-	Path string `json:"path"`
+	Path    string `json:"path"`
 	Contact string `json:"contact"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	InitialCSeqSequenceNumber *int32 `json:"initialCSeqSequenceNumber,omitempty"`
-	CallIdSipHeader *string `json:"callIdSipHeader,omitempty"`
-	UesubscriptionInfo *UeSubscriptionInfo `json:"uesubscriptionInfo,omitempty"`
-	PcscfSubscriptionInfo *PcscfSubscriptionInfo `json:"pcscfSubscriptionInfo,omitempty"`
-	// A map (list of key-value pairs where subscriptionId serves as key) of ImsSdmSubscription 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	InitialCSeqSequenceNumber *int32                 `json:"initialCSeqSequenceNumber,omitempty"`
+	CallIdSipHeader           *string                `json:"callIdSipHeader,omitempty"`
+	UesubscriptionInfo        *UeSubscriptionInfo    `json:"uesubscriptionInfo,omitempty"`
+	PcscfSubscriptionInfo     *PcscfSubscriptionInfo `json:"pcscfSubscriptionInfo,omitempty"`
+	// A map (list of key-value pairs where subscriptionId serves as key) of ImsSdmSubscription
 	ImsSdmSubscriptions *map[string]ImsSdmSubscription `json:"imsSdmSubscriptions,omitempty"`
 }
 
@@ -99,7 +99,7 @@ func (o *RestorationInfo) SetContact(v string) {
 
 // GetInitialCSeqSequenceNumber returns the InitialCSeqSequenceNumber field value if set, zero value otherwise.
 func (o *RestorationInfo) GetInitialCSeqSequenceNumber() int32 {
-	if o == nil || isNil(o.InitialCSeqSequenceNumber) {
+	if o == nil || IsNil(o.InitialCSeqSequenceNumber) {
 		var ret int32
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *RestorationInfo) GetInitialCSeqSequenceNumber() int32 {
 // GetInitialCSeqSequenceNumberOk returns a tuple with the InitialCSeqSequenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetInitialCSeqSequenceNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.InitialCSeqSequenceNumber) {
+	if o == nil || IsNil(o.InitialCSeqSequenceNumber) {
 		return nil, false
 	}
 	return o.InitialCSeqSequenceNumber, true
@@ -117,7 +117,7 @@ func (o *RestorationInfo) GetInitialCSeqSequenceNumberOk() (*int32, bool) {
 
 // HasInitialCSeqSequenceNumber returns a boolean if a field has been set.
 func (o *RestorationInfo) HasInitialCSeqSequenceNumber() bool {
-	if o != nil && !isNil(o.InitialCSeqSequenceNumber) {
+	if o != nil && !IsNil(o.InitialCSeqSequenceNumber) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *RestorationInfo) SetInitialCSeqSequenceNumber(v int32) {
 
 // GetCallIdSipHeader returns the CallIdSipHeader field value if set, zero value otherwise.
 func (o *RestorationInfo) GetCallIdSipHeader() string {
-	if o == nil || isNil(o.CallIdSipHeader) {
+	if o == nil || IsNil(o.CallIdSipHeader) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *RestorationInfo) GetCallIdSipHeader() string {
 // GetCallIdSipHeaderOk returns a tuple with the CallIdSipHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetCallIdSipHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CallIdSipHeader) {
+	if o == nil || IsNil(o.CallIdSipHeader) {
 		return nil, false
 	}
 	return o.CallIdSipHeader, true
@@ -149,7 +149,7 @@ func (o *RestorationInfo) GetCallIdSipHeaderOk() (*string, bool) {
 
 // HasCallIdSipHeader returns a boolean if a field has been set.
 func (o *RestorationInfo) HasCallIdSipHeader() bool {
-	if o != nil && !isNil(o.CallIdSipHeader) {
+	if o != nil && !IsNil(o.CallIdSipHeader) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *RestorationInfo) SetCallIdSipHeader(v string) {
 
 // GetUesubscriptionInfo returns the UesubscriptionInfo field value if set, zero value otherwise.
 func (o *RestorationInfo) GetUesubscriptionInfo() UeSubscriptionInfo {
-	if o == nil || isNil(o.UesubscriptionInfo) {
+	if o == nil || IsNil(o.UesubscriptionInfo) {
 		var ret UeSubscriptionInfo
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *RestorationInfo) GetUesubscriptionInfo() UeSubscriptionInfo {
 // GetUesubscriptionInfoOk returns a tuple with the UesubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetUesubscriptionInfoOk() (*UeSubscriptionInfo, bool) {
-	if o == nil || isNil(o.UesubscriptionInfo) {
+	if o == nil || IsNil(o.UesubscriptionInfo) {
 		return nil, false
 	}
 	return o.UesubscriptionInfo, true
@@ -181,7 +181,7 @@ func (o *RestorationInfo) GetUesubscriptionInfoOk() (*UeSubscriptionInfo, bool) 
 
 // HasUesubscriptionInfo returns a boolean if a field has been set.
 func (o *RestorationInfo) HasUesubscriptionInfo() bool {
-	if o != nil && !isNil(o.UesubscriptionInfo) {
+	if o != nil && !IsNil(o.UesubscriptionInfo) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *RestorationInfo) SetUesubscriptionInfo(v UeSubscriptionInfo) {
 
 // GetPcscfSubscriptionInfo returns the PcscfSubscriptionInfo field value if set, zero value otherwise.
 func (o *RestorationInfo) GetPcscfSubscriptionInfo() PcscfSubscriptionInfo {
-	if o == nil || isNil(o.PcscfSubscriptionInfo) {
+	if o == nil || IsNil(o.PcscfSubscriptionInfo) {
 		var ret PcscfSubscriptionInfo
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *RestorationInfo) GetPcscfSubscriptionInfo() PcscfSubscriptionInfo {
 // GetPcscfSubscriptionInfoOk returns a tuple with the PcscfSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetPcscfSubscriptionInfoOk() (*PcscfSubscriptionInfo, bool) {
-	if o == nil || isNil(o.PcscfSubscriptionInfo) {
+	if o == nil || IsNil(o.PcscfSubscriptionInfo) {
 		return nil, false
 	}
 	return o.PcscfSubscriptionInfo, true
@@ -213,7 +213,7 @@ func (o *RestorationInfo) GetPcscfSubscriptionInfoOk() (*PcscfSubscriptionInfo, 
 
 // HasPcscfSubscriptionInfo returns a boolean if a field has been set.
 func (o *RestorationInfo) HasPcscfSubscriptionInfo() bool {
-	if o != nil && !isNil(o.PcscfSubscriptionInfo) {
+	if o != nil && !IsNil(o.PcscfSubscriptionInfo) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *RestorationInfo) SetPcscfSubscriptionInfo(v PcscfSubscriptionInfo) {
 
 // GetImsSdmSubscriptions returns the ImsSdmSubscriptions field value if set, zero value otherwise.
 func (o *RestorationInfo) GetImsSdmSubscriptions() map[string]ImsSdmSubscription {
-	if o == nil || isNil(o.ImsSdmSubscriptions) {
+	if o == nil || IsNil(o.ImsSdmSubscriptions) {
 		var ret map[string]ImsSdmSubscription
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *RestorationInfo) GetImsSdmSubscriptions() map[string]ImsSdmSubscription
 // GetImsSdmSubscriptionsOk returns a tuple with the ImsSdmSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetImsSdmSubscriptionsOk() (*map[string]ImsSdmSubscription, bool) {
-	if o == nil || isNil(o.ImsSdmSubscriptions) {
+	if o == nil || IsNil(o.ImsSdmSubscriptions) {
 		return nil, false
 	}
 	return o.ImsSdmSubscriptions, true
@@ -245,7 +245,7 @@ func (o *RestorationInfo) GetImsSdmSubscriptionsOk() (*map[string]ImsSdmSubscrip
 
 // HasImsSdmSubscriptions returns a boolean if a field has been set.
 func (o *RestorationInfo) HasImsSdmSubscriptions() bool {
-	if o != nil && !isNil(o.ImsSdmSubscriptions) {
+	if o != nil && !IsNil(o.ImsSdmSubscriptions) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *RestorationInfo) SetImsSdmSubscriptions(v map[string]ImsSdmSubscription
 }
 
 func (o RestorationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -269,19 +269,19 @@ func (o RestorationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["path"] = o.Path
 	toSerialize["contact"] = o.Contact
-	if !isNil(o.InitialCSeqSequenceNumber) {
+	if !IsNil(o.InitialCSeqSequenceNumber) {
 		toSerialize["initialCSeqSequenceNumber"] = o.InitialCSeqSequenceNumber
 	}
-	if !isNil(o.CallIdSipHeader) {
+	if !IsNil(o.CallIdSipHeader) {
 		toSerialize["callIdSipHeader"] = o.CallIdSipHeader
 	}
-	if !isNil(o.UesubscriptionInfo) {
+	if !IsNil(o.UesubscriptionInfo) {
 		toSerialize["uesubscriptionInfo"] = o.UesubscriptionInfo
 	}
-	if !isNil(o.PcscfSubscriptionInfo) {
+	if !IsNil(o.PcscfSubscriptionInfo) {
 		toSerialize["pcscfSubscriptionInfo"] = o.PcscfSubscriptionInfo
 	}
-	if !isNil(o.ImsSdmSubscriptions) {
+	if !IsNil(o.ImsSdmSubscriptions) {
 		toSerialize["imsSdmSubscriptions"] = o.ImsSdmSubscriptions
 	}
 	return toSerialize, nil
@@ -322,5 +322,3 @@ func (v *NullableRestorationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

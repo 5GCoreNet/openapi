@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,16 +19,16 @@ var _ MappedNullable = &AuthenticationInfoRequest{}
 
 // AuthenticationInfoRequest struct for AuthenticationInfoRequest
 type AuthenticationInfoRequest struct {
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	ServingNetworkName string `json:"servingNetworkName"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures     *string                `json:"supportedFeatures,omitempty"`
+	ServingNetworkName    string                 `json:"servingNetworkName"`
 	ResynchronizationInfo *ResynchronizationInfo `json:"resynchronizationInfo,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AusfInstanceId string `json:"ausfInstanceId"`
-	CellCagInfo []string `json:"cellCagInfo,omitempty"`
-	N5gcInd *bool `json:"n5gcInd,omitempty"`
-	NswoInd *bool `json:"nswoInd,omitempty"`
-	DisasterRoamingInd *bool `json:"disasterRoamingInd,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AusfInstanceId     string   `json:"ausfInstanceId"`
+	CellCagInfo        []string `json:"cellCagInfo,omitempty"`
+	N5gcInd            *bool    `json:"n5gcInd,omitempty"`
+	NswoInd            *bool    `json:"nswoInd,omitempty"`
+	DisasterRoamingInd *bool    `json:"disasterRoamingInd,omitempty"`
 }
 
 // NewAuthenticationInfoRequest instantiates a new AuthenticationInfoRequest object
@@ -64,7 +64,7 @@ func NewAuthenticationInfoRequestWithDefaults() *AuthenticationInfoRequest {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -74,7 +74,7 @@ func (o *AuthenticationInfoRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -82,7 +82,7 @@ func (o *AuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *AuthenticationInfoRequest) SetServingNetworkName(v string) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || isNil(o.ResynchronizationInfo) {
+	if o == nil || IsNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *AuthenticationInfoRequest) GetResynchronizationInfo() Resynchronization
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || isNil(o.ResynchronizationInfo) {
+	if o == nil || IsNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -138,7 +138,7 @@ func (o *AuthenticationInfoRequest) GetResynchronizationInfoOk() (*Resynchroniza
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasResynchronizationInfo() bool {
-	if o != nil && !isNil(o.ResynchronizationInfo) {
+	if o != nil && !IsNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *AuthenticationInfoRequest) SetAusfInstanceId(v string) {
 
 // GetCellCagInfo returns the CellCagInfo field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetCellCagInfo() []string {
-	if o == nil || isNil(o.CellCagInfo) {
+	if o == nil || IsNil(o.CellCagInfo) {
 		var ret []string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *AuthenticationInfoRequest) GetCellCagInfo() []string {
 // GetCellCagInfoOk returns a tuple with the CellCagInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetCellCagInfoOk() ([]string, bool) {
-	if o == nil || isNil(o.CellCagInfo) {
+	if o == nil || IsNil(o.CellCagInfo) {
 		return nil, false
 	}
 	return o.CellCagInfo, true
@@ -194,7 +194,7 @@ func (o *AuthenticationInfoRequest) GetCellCagInfoOk() ([]string, bool) {
 
 // HasCellCagInfo returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasCellCagInfo() bool {
-	if o != nil && !isNil(o.CellCagInfo) {
+	if o != nil && !IsNil(o.CellCagInfo) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *AuthenticationInfoRequest) SetCellCagInfo(v []string) {
 
 // GetN5gcInd returns the N5gcInd field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetN5gcInd() bool {
-	if o == nil || isNil(o.N5gcInd) {
+	if o == nil || IsNil(o.N5gcInd) {
 		var ret bool
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *AuthenticationInfoRequest) GetN5gcInd() bool {
 // GetN5gcIndOk returns a tuple with the N5gcInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetN5gcIndOk() (*bool, bool) {
-	if o == nil || isNil(o.N5gcInd) {
+	if o == nil || IsNil(o.N5gcInd) {
 		return nil, false
 	}
 	return o.N5gcInd, true
@@ -226,7 +226,7 @@ func (o *AuthenticationInfoRequest) GetN5gcIndOk() (*bool, bool) {
 
 // HasN5gcInd returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasN5gcInd() bool {
-	if o != nil && !isNil(o.N5gcInd) {
+	if o != nil && !IsNil(o.N5gcInd) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *AuthenticationInfoRequest) SetN5gcInd(v bool) {
 
 // GetNswoInd returns the NswoInd field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetNswoInd() bool {
-	if o == nil || isNil(o.NswoInd) {
+	if o == nil || IsNil(o.NswoInd) {
 		var ret bool
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *AuthenticationInfoRequest) GetNswoInd() bool {
 // GetNswoIndOk returns a tuple with the NswoInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetNswoIndOk() (*bool, bool) {
-	if o == nil || isNil(o.NswoInd) {
+	if o == nil || IsNil(o.NswoInd) {
 		return nil, false
 	}
 	return o.NswoInd, true
@@ -258,7 +258,7 @@ func (o *AuthenticationInfoRequest) GetNswoIndOk() (*bool, bool) {
 
 // HasNswoInd returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasNswoInd() bool {
-	if o != nil && !isNil(o.NswoInd) {
+	if o != nil && !IsNil(o.NswoInd) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *AuthenticationInfoRequest) SetNswoInd(v bool) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetDisasterRoamingInd() bool {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *AuthenticationInfoRequest) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -290,7 +290,7 @@ func (o *AuthenticationInfoRequest) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasDisasterRoamingInd() bool {
-	if o != nil && !isNil(o.DisasterRoamingInd) {
+	if o != nil && !IsNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *AuthenticationInfoRequest) SetDisasterRoamingInd(v bool) {
 }
 
 func (o AuthenticationInfoRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,24 +312,24 @@ func (o AuthenticationInfoRequest) MarshalJSON() ([]byte, error) {
 
 func (o AuthenticationInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["servingNetworkName"] = o.ServingNetworkName
-	if !isNil(o.ResynchronizationInfo) {
+	if !IsNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
 	toSerialize["ausfInstanceId"] = o.AusfInstanceId
-	if !isNil(o.CellCagInfo) {
+	if !IsNil(o.CellCagInfo) {
 		toSerialize["cellCagInfo"] = o.CellCagInfo
 	}
-	if !isNil(o.N5gcInd) {
+	if !IsNil(o.N5gcInd) {
 		toSerialize["n5gcInd"] = o.N5gcInd
 	}
-	if !isNil(o.NswoInd) {
+	if !IsNil(o.NswoInd) {
 		toSerialize["nswoInd"] = o.NswoInd
 	}
-	if !isNil(o.DisasterRoamingInd) {
+	if !IsNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
 	return toSerialize, nil
@@ -370,5 +370,3 @@ func (v *NullableAuthenticationInfoRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

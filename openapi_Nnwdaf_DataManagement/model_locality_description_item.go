@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &LocalityDescriptionItem{}
 
 // LocalityDescriptionItem Locality description item
 type LocalityDescriptionItem struct {
-	LocalityType LocalityType `json:"localityType"`
-	LocalityValue string `json:"localityValue"`
+	LocalityType  LocalityType `json:"localityType"`
+	LocalityValue string       `json:"localityValue"`
 }
 
 // NewLocalityDescriptionItem instantiates a new LocalityDescriptionItem object
@@ -91,7 +91,7 @@ func (o *LocalityDescriptionItem) SetLocalityValue(v string) {
 }
 
 func (o LocalityDescriptionItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableLocalityDescriptionItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the PublicIdentities type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PublicIdentities{}
 
-// PublicIdentities IMS Public Identities which belong to the same Implicit Registration Set (if any) as the requested IMS Public Identity 
+// PublicIdentities IMS Public Identities which belong to the same Implicit Registration Set (if any) as the requested IMS Public Identity
 type PublicIdentities struct {
 	PublicIdentities []PublicIdentity `json:"publicIdentities"`
 }
@@ -65,7 +65,7 @@ func (o *PublicIdentities) SetPublicIdentities(v []PublicIdentity) {
 }
 
 func (o PublicIdentities) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullablePublicIdentities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

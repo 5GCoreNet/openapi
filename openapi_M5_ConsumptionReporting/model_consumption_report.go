@@ -1,7 +1,7 @@
 /*
 M5_ConsumptionReporting
 
-5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ConsumptionReport{}
 
 // ConsumptionReport A representation of a Consumption Report.
 type ConsumptionReport struct {
-	MediaPlayerEntry string `json:"mediaPlayerEntry"`
-	ReportingClientId string `json:"reportingClientId"`
+	MediaPlayerEntry          string                     `json:"mediaPlayerEntry"`
+	ReportingClientId         string                     `json:"reportingClientId"`
 	ConsumptionReportingUnits []ConsumptionReportingUnit `json:"consumptionReportingUnits"`
 }
 
@@ -117,7 +117,7 @@ func (o *ConsumptionReport) SetConsumptionReportingUnits(v []ConsumptionReportin
 }
 
 func (o ConsumptionReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableConsumptionReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

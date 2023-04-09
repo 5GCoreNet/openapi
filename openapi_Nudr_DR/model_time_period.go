@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -68,7 +68,7 @@ func (o *TimePeriod) SetPeriod(v Periodicity) {
 
 // GetMaxNumPeriod returns the MaxNumPeriod field value if set, zero value otherwise.
 func (o *TimePeriod) GetMaxNumPeriod() int32 {
-	if o == nil || isNil(o.MaxNumPeriod) {
+	if o == nil || IsNil(o.MaxNumPeriod) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *TimePeriod) GetMaxNumPeriod() int32 {
 // GetMaxNumPeriodOk returns a tuple with the MaxNumPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimePeriod) GetMaxNumPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumPeriod) {
+	if o == nil || IsNil(o.MaxNumPeriod) {
 		return nil, false
 	}
 	return o.MaxNumPeriod, true
@@ -86,7 +86,7 @@ func (o *TimePeriod) GetMaxNumPeriodOk() (*int32, bool) {
 
 // HasMaxNumPeriod returns a boolean if a field has been set.
 func (o *TimePeriod) HasMaxNumPeriod() bool {
-	if o != nil && !isNil(o.MaxNumPeriod) {
+	if o != nil && !IsNil(o.MaxNumPeriod) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *TimePeriod) SetMaxNumPeriod(v int32) {
 }
 
 func (o TimePeriod) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o TimePeriod) MarshalJSON() ([]byte, error) {
 func (o TimePeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["period"] = o.Period
-	if !isNil(o.MaxNumPeriod) {
+	if !IsNil(o.MaxNumPeriod) {
 		toSerialize["maxNumPeriod"] = o.MaxNumPeriod
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableTimePeriod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

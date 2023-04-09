@@ -17,11 +17,11 @@ import (
 // checks if the DLLatencyTarget type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DLLatencyTarget{}
 
-// DLLatencyTarget This data type is the \"ExpectationTarget\" data type with specialisations for DLLatencyTarget       
+// DLLatencyTarget This data type is the \"ExpectationTarget\" data type with specialisations for DLLatencyTarget
 type DLLatencyTarget struct {
-	TargetName *string `json:"targetName,omitempty"`
-	TargetCondition *string `json:"targetCondition,omitempty"`
-	TargetValueRange *int32 `json:"targetValueRange,omitempty"`
+	TargetName       *string `json:"targetName,omitempty"`
+	TargetCondition  *string `json:"targetCondition,omitempty"`
+	TargetValueRange *int32  `json:"targetValueRange,omitempty"`
 }
 
 // NewDLLatencyTarget instantiates a new DLLatencyTarget object
@@ -43,7 +43,7 @@ func NewDLLatencyTargetWithDefaults() *DLLatencyTarget {
 
 // GetTargetName returns the TargetName field value if set, zero value otherwise.
 func (o *DLLatencyTarget) GetTargetName() string {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DLLatencyTarget) GetTargetName() string {
 // GetTargetNameOk returns a tuple with the TargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLLatencyTarget) GetTargetNameOk() (*string, bool) {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		return nil, false
 	}
 	return o.TargetName, true
@@ -61,7 +61,7 @@ func (o *DLLatencyTarget) GetTargetNameOk() (*string, bool) {
 
 // HasTargetName returns a boolean if a field has been set.
 func (o *DLLatencyTarget) HasTargetName() bool {
-	if o != nil && !isNil(o.TargetName) {
+	if o != nil && !IsNil(o.TargetName) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DLLatencyTarget) SetTargetName(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *DLLatencyTarget) GetTargetCondition() string {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DLLatencyTarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLLatencyTarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -93,7 +93,7 @@ func (o *DLLatencyTarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *DLLatencyTarget) HasTargetCondition() bool {
-	if o != nil && !isNil(o.TargetCondition) {
+	if o != nil && !IsNil(o.TargetCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DLLatencyTarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *DLLatencyTarget) GetTargetValueRange() int32 {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DLLatencyTarget) GetTargetValueRange() int32 {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLLatencyTarget) GetTargetValueRangeOk() (*int32, bool) {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -125,7 +125,7 @@ func (o *DLLatencyTarget) GetTargetValueRangeOk() (*int32, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *DLLatencyTarget) HasTargetValueRange() bool {
-	if o != nil && !isNil(o.TargetValueRange) {
+	if o != nil && !IsNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *DLLatencyTarget) SetTargetValueRange(v int32) {
 }
 
 func (o DLLatencyTarget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o DLLatencyTarget) MarshalJSON() ([]byte, error) {
 
 func (o DLLatencyTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetName) {
+	if !IsNil(o.TargetName) {
 		toSerialize["targetName"] = o.TargetName
 	}
-	if !isNil(o.TargetCondition) {
+	if !IsNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !isNil(o.TargetValueRange) {
+	if !IsNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableDLLatencyTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

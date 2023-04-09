@@ -19,12 +19,12 @@ var _ MappedNullable = &GnbCuUpFunctionSingleAllOfAttributesAllOf{}
 
 // GnbCuUpFunctionSingleAllOfAttributesAllOf struct for GnbCuUpFunctionSingleAllOfAttributesAllOf
 type GnbCuUpFunctionSingleAllOfAttributesAllOf struct {
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
-	GnbCuUpId *float32 `json:"gnbCuUpId,omitempty"`
-	PlmnInfoList []PlmnInfo `json:"plmnInfoList,omitempty"`
-	Configurable5QISetRef *string `json:"configurable5QISetRef,omitempty"`
-	Dynamic5QISetRef *string `json:"dynamic5QISetRef,omitempty"`
+	GnbId                 *string    `json:"gnbId,omitempty"`
+	GnbIdLength           *int32     `json:"gnbIdLength,omitempty"`
+	GnbCuUpId             *float32   `json:"gnbCuUpId,omitempty"`
+	PlmnInfoList          []PlmnInfo `json:"plmnInfoList,omitempty"`
+	Configurable5QISetRef *string    `json:"configurable5QISetRef,omitempty"`
+	Dynamic5QISetRef      *string    `json:"dynamic5QISetRef,omitempty"`
 }
 
 // NewGnbCuUpFunctionSingleAllOfAttributesAllOf instantiates a new GnbCuUpFunctionSingleAllOfAttributesAllOf object
@@ -237,7 +237,7 @@ func (o *GnbCuUpFunctionSingleAllOfAttributesAllOf) SetDynamic5QISetRef(v string
 }
 
 func (o GnbCuUpFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableGnbCuUpFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

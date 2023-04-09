@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &GbaAuthenticationInfoResult{}
 // GbaAuthenticationInfoResult struct for GbaAuthenticationInfoResult
 type GbaAuthenticationInfoResult struct {
 	Var3gAkaAv *Model3GAkaAv `json:"3gAkaAv,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewGbaAuthenticationInfoResultWithDefaults() *GbaAuthenticationInfoResult {
 
 // GetVar3gAkaAv returns the Var3gAkaAv field value if set, zero value otherwise.
 func (o *GbaAuthenticationInfoResult) GetVar3gAkaAv() Model3GAkaAv {
-	if o == nil || isNil(o.Var3gAkaAv) {
+	if o == nil || IsNil(o.Var3gAkaAv) {
 		var ret Model3GAkaAv
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *GbaAuthenticationInfoResult) GetVar3gAkaAv() Model3GAkaAv {
 // GetVar3gAkaAvOk returns a tuple with the Var3gAkaAv field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaAuthenticationInfoResult) GetVar3gAkaAvOk() (*Model3GAkaAv, bool) {
-	if o == nil || isNil(o.Var3gAkaAv) {
+	if o == nil || IsNil(o.Var3gAkaAv) {
 		return nil, false
 	}
 	return o.Var3gAkaAv, true
@@ -61,7 +61,7 @@ func (o *GbaAuthenticationInfoResult) GetVar3gAkaAvOk() (*Model3GAkaAv, bool) {
 
 // HasVar3gAkaAv returns a boolean if a field has been set.
 func (o *GbaAuthenticationInfoResult) HasVar3gAkaAv() bool {
-	if o != nil && !isNil(o.Var3gAkaAv) {
+	if o != nil && !IsNil(o.Var3gAkaAv) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *GbaAuthenticationInfoResult) SetVar3gAkaAv(v Model3GAkaAv) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *GbaAuthenticationInfoResult) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *GbaAuthenticationInfoResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -93,7 +93,7 @@ func (o *GbaAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *GbaAuthenticationInfoResult) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *GbaAuthenticationInfoResult) SetSupportedFeatures(v string) {
 }
 
 func (o GbaAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o GbaAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 
 func (o GbaAuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Var3gAkaAv) {
+	if !IsNil(o.Var3gAkaAv) {
 		toSerialize["3gAkaAv"] = o.Var3gAkaAv
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableGbaAuthenticationInfoResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

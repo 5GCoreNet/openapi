@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DeliveryStatus Possible values are - SUCCESS: Success but details not provided - SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment. - SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without acknowledgment - SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE - SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE - TRIGGERED: The SCEF triggered the device and is buffering the data. - BUFFERING: The SCEF is buffering the data due to no PDN connection established. - BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily not reachable but is buffering the data - SENDING: The SCEF has forwarded the data, but they may be stored elsewhere - FAILURE: Delivery failure but details not provided - FAILURE_RDS_DISABLED: RDS was disabled - FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop. - FAILURE_TIMEOUT: Unsuccessful delivery due to timeout.  - FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily not reachable without buffering the data. 
+// DeliveryStatus Possible values are - SUCCESS: Success but details not provided - SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment. - SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without acknowledgment - SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE - SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE - TRIGGERED: The SCEF triggered the device and is buffering the data. - BUFFERING: The SCEF is buffering the data due to no PDN connection established. - BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily not reachable but is buffering the data - SENDING: The SCEF has forwarded the data, but they may be stored elsewhere - FAILURE: Delivery failure but details not provided - FAILURE_RDS_DISABLED: RDS was disabled - FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop. - FAILURE_TIMEOUT: Unsuccessful delivery due to timeout.  - FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily not reachable without buffering the data.
 type DeliveryStatus struct {
-	DeliveryStatusAnyOf *DeliveryStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DeliveryStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DeliveryStatusAnyOf
-	err = json.Unmarshal(data, &dst.DeliveryStatusAnyOf);
-	if err == nil {
-		jsonDeliveryStatusAnyOf, _ := json.Marshal(dst.DeliveryStatusAnyOf)
-		if string(jsonDeliveryStatusAnyOf) == "{}" { // empty struct
-			dst.DeliveryStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.DeliveryStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.DeliveryStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DeliveryStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DeliveryStatus) MarshalJSON() ([]byte, error) {
-	if src.DeliveryStatusAnyOf != nil {
-		return json.Marshal(&src.DeliveryStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDeliveryStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

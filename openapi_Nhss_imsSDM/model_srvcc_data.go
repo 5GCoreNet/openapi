@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &SrvccData{}
 // SrvccData UE SRVCC capability (if available) and STN-SR (if subscribed)
 type SrvccData struct {
 	// String representing the STN-SR as defined in clause 18.6 of 3GPP TS 23.003.
-	StnSr string `json:"stnSr"`
+	StnSr               string            `json:"stnSr"`
 	UeSrvccCapabilities []SrvccCapability `json:"ueSrvccCapabilities,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *SrvccData) SetStnSr(v string) {
 
 // GetUeSrvccCapabilities returns the UeSrvccCapabilities field value if set, zero value otherwise.
 func (o *SrvccData) GetUeSrvccCapabilities() []SrvccCapability {
-	if o == nil || isNil(o.UeSrvccCapabilities) {
+	if o == nil || IsNil(o.UeSrvccCapabilities) {
 		var ret []SrvccCapability
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SrvccData) GetUeSrvccCapabilities() []SrvccCapability {
 // GetUeSrvccCapabilitiesOk returns a tuple with the UeSrvccCapabilities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SrvccData) GetUeSrvccCapabilitiesOk() ([]SrvccCapability, bool) {
-	if o == nil || isNil(o.UeSrvccCapabilities) {
+	if o == nil || IsNil(o.UeSrvccCapabilities) {
 		return nil, false
 	}
 	return o.UeSrvccCapabilities, true
@@ -86,7 +86,7 @@ func (o *SrvccData) GetUeSrvccCapabilitiesOk() ([]SrvccCapability, bool) {
 
 // HasUeSrvccCapabilities returns a boolean if a field has been set.
 func (o *SrvccData) HasUeSrvccCapabilities() bool {
-	if o != nil && !isNil(o.UeSrvccCapabilities) {
+	if o != nil && !IsNil(o.UeSrvccCapabilities) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *SrvccData) SetUeSrvccCapabilities(v []SrvccCapability) {
 }
 
 func (o SrvccData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o SrvccData) MarshalJSON() ([]byte, error) {
 func (o SrvccData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["stnSr"] = o.StnSr
-	if !isNil(o.UeSrvccCapabilities) {
+	if !IsNil(o.UeSrvccCapabilities) {
 		toSerialize["ueSrvccCapabilities"] = o.UeSrvccCapabilities
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableSrvccData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

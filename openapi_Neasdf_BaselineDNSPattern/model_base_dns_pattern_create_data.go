@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -24,7 +24,7 @@ type BaseDnsPatternCreateData struct {
 	BaseDnsMdtList *map[string]BaselineDnsMdt `json:"baseDnsMdtList,omitempty"`
 	// map of Baseline DNS action information Template where a valid JSON string serves as key
 	BaseDnsAitList *map[string]BaselineDnsAit `json:"baseDnsAitList,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -47,7 +47,7 @@ func NewBaseDnsPatternCreateDataWithDefaults() *BaseDnsPatternCreateData {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetLabel() string {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *BaseDnsPatternCreateData) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetLabelOk() (*string, bool) {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -65,7 +65,7 @@ func (o *BaseDnsPatternCreateData) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasLabel() bool {
-	if o != nil && !isNil(o.Label) {
+	if o != nil && !IsNil(o.Label) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *BaseDnsPatternCreateData) SetLabel(v string) {
 
 // GetBaseDnsMdtList returns the BaseDnsMdtList field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetBaseDnsMdtList() map[string]BaselineDnsMdt {
-	if o == nil || isNil(o.BaseDnsMdtList) {
+	if o == nil || IsNil(o.BaseDnsMdtList) {
 		var ret map[string]BaselineDnsMdt
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsMdtList() map[string]BaselineDnsMdt
 // GetBaseDnsMdtListOk returns a tuple with the BaseDnsMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetBaseDnsMdtListOk() (*map[string]BaselineDnsMdt, bool) {
-	if o == nil || isNil(o.BaseDnsMdtList) {
+	if o == nil || IsNil(o.BaseDnsMdtList) {
 		return nil, false
 	}
 	return o.BaseDnsMdtList, true
@@ -97,7 +97,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsMdtListOk() (*map[string]BaselineDn
 
 // HasBaseDnsMdtList returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasBaseDnsMdtList() bool {
-	if o != nil && !isNil(o.BaseDnsMdtList) {
+	if o != nil && !IsNil(o.BaseDnsMdtList) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *BaseDnsPatternCreateData) SetBaseDnsMdtList(v map[string]BaselineDnsMdt
 
 // GetBaseDnsAitList returns the BaseDnsAitList field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetBaseDnsAitList() map[string]BaselineDnsAit {
-	if o == nil || isNil(o.BaseDnsAitList) {
+	if o == nil || IsNil(o.BaseDnsAitList) {
 		var ret map[string]BaselineDnsAit
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsAitList() map[string]BaselineDnsAit
 // GetBaseDnsAitListOk returns a tuple with the BaseDnsAitList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetBaseDnsAitListOk() (*map[string]BaselineDnsAit, bool) {
-	if o == nil || isNil(o.BaseDnsAitList) {
+	if o == nil || IsNil(o.BaseDnsAitList) {
 		return nil, false
 	}
 	return o.BaseDnsAitList, true
@@ -129,7 +129,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsAitListOk() (*map[string]BaselineDn
 
 // HasBaseDnsAitList returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasBaseDnsAitList() bool {
-	if o != nil && !isNil(o.BaseDnsAitList) {
+	if o != nil && !IsNil(o.BaseDnsAitList) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *BaseDnsPatternCreateData) SetBaseDnsAitList(v map[string]BaselineDnsAit
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *BaseDnsPatternCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -161,7 +161,7 @@ func (o *BaseDnsPatternCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *BaseDnsPatternCreateData) SetSupportedFeatures(v string) {
 }
 
 func (o BaseDnsPatternCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,16 +183,16 @@ func (o BaseDnsPatternCreateData) MarshalJSON() ([]byte, error) {
 
 func (o BaseDnsPatternCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Label) {
+	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !isNil(o.BaseDnsMdtList) {
+	if !IsNil(o.BaseDnsMdtList) {
 		toSerialize["baseDnsMdtList"] = o.BaseDnsMdtList
 	}
-	if !isNil(o.BaseDnsAitList) {
+	if !IsNil(o.BaseDnsAitList) {
 		toSerialize["baseDnsAitList"] = o.BaseDnsAitList
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -233,5 +233,3 @@ func (v *NullableBaseDnsPatternCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

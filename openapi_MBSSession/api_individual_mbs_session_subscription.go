@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-session
 
-API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -13,19 +13,18 @@ package openapi_MBSSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualMBSSessionSubscriptionApiService IndividualMBSSessionSubscriptionApi service
 type IndividualMBSSessionSubscriptionApiService service
 
 type ApiDeleteIndMBSSessionsSubscRequest struct {
-	ctx context.Context
-	ApiService *IndividualMBSSessionSubscriptionApiService
+	ctx            context.Context
+	ApiService     *IndividualMBSSessionSubscriptionApiService
 	subscriptionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteIndMBSSessionsSubscRequest) Execute() (*http.Response, error) {
 /*
 DeleteIndMBSSessionsSubsc Request the deletion of an existing Individual MBS Session subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of the Individual MBS Session Subscription resource.
- @return ApiDeleteIndMBSSessionsSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of the Individual MBS Session Subscription resource.
+	@return ApiDeleteIndMBSSessionsSubscRequest
 */
 func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubsc(ctx context.Context, subscriptionId string) ApiDeleteIndMBSSessionsSubscRequest {
 	return ApiDeleteIndMBSSessionsSubscRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubsc(c
 // Execute executes the request
 func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscExecute(r ApiDeleteIndMBSSessionsSubscRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSSessionSubscriptionApiService.DeleteIndMBSSessionsSubsc")
@@ -95,9 +94,9 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -191,8 +190,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) DeleteIndMBSSessionsSubscEx
 }
 
 type ApiReadIndMBSSessionsSubscRequest struct {
-	ctx context.Context
-	ApiService *IndividualMBSSessionSubscriptionApiService
+	ctx            context.Context
+	ApiService     *IndividualMBSSessionSubscriptionApiService
 	subscriptionId string
 }
 
@@ -203,26 +202,27 @@ func (r ApiReadIndMBSSessionsSubscRequest) Execute() (*MbsSessionSubsc, *http.Re
 /*
 ReadIndMBSSessionsSubsc Retrieve an existing Individual MBS Session Subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of the Individual MBS Session Subscription resource.
- @return ApiReadIndMBSSessionsSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of the Individual MBS Session Subscription resource.
+	@return ApiReadIndMBSSessionsSubscRequest
 */
 func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubsc(ctx context.Context, subscriptionId string) ApiReadIndMBSSessionsSubscRequest {
 	return ApiReadIndMBSSessionsSubscRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return MbsSessionSubsc
+//
+//	@return MbsSessionSubsc
 func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExecute(r ApiReadIndMBSSessionsSubscRequest) (*MbsSessionSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MbsSessionSubsc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MbsSessionSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSSessionSubscriptionApiService.ReadIndMBSSessionsSubsc")
@@ -264,9 +264,9 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -283,8 +283,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -294,8 +294,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -305,8 +305,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -316,8 +316,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -327,8 +327,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -338,8 +338,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -349,8 +349,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -360,8 +360,8 @@ func (a *IndividualMBSSessionSubscriptionApiService) ReadIndMBSSessionsSubscExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -19,10 +19,10 @@ var _ MappedNullable = &DDNMFFunctionSingleAllOfAttributesAllOf{}
 
 // DDNMFFunctionSingleAllOfAttributesAllOf struct for DDNMFFunctionSingleAllOfAttributesAllOf
 type DDNMFFunctionSingleAllOfAttributesAllOf struct {
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
+	PlmnId           *PlmnId           `json:"plmnId,omitempty"`
+	SBIFqdn          *string           `json:"sBIFqdn,omitempty"`
 	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
+	CommModelList    []CommModel       `json:"commModelList,omitempty"`
 }
 
 // NewDDNMFFunctionSingleAllOfAttributesAllOf instantiates a new DDNMFFunctionSingleAllOfAttributesAllOf object
@@ -171,7 +171,7 @@ func (o *DDNMFFunctionSingleAllOfAttributesAllOf) SetCommModelList(v []CommModel
 }
 
 func (o DDNMFFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableDDNMFFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

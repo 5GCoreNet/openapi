@@ -1877,7 +1877,10 @@ components:
       type: object
     Event:
       anyOf:
-      - $ref: '#/components/schemas/Event_anyOf'
+      - enum:
+        - SUCCESS_UE_POL_DEL_SP
+        - UNSUCCESS_UE_POL_DEL_SP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2032,7 +2035,9 @@ components:
       type: object
     AuthorizationResult:
       anyOf:
-      - $ref: '#/components/schemas/AuthorizationResult_anyOf'
+      - enum:
+        - AUTH_REVOKED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2060,13 +2065,23 @@ components:
         - UE_TEMP_UNREACHABLE: Indicates the PCF received the notification from the AMF that the UE
           is not reachable but the PCF will retry again.
       oneOf:
-      - $ref: '#/components/schemas/Failure_oneOf'
+      - enum:
+        - UNSPECIFIED
+        - UE_NOT_REACHABLE
+        - UNKNOWN
+        - UE_TEMP_UNREACHABLE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
     ConnectionCapabilities:
       anyOf:
-      - $ref: '#/components/schemas/ConnectionCapabilities_anyOf'
+      - enum:
+        - IMS
+        - MMS
+        - SUPL
+        - INTERNET
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2600,9 +2615,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2789,7 +2815,12 @@ components:
       type: string
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2807,33 +2838,6 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
-    Event_anyOf:
-      enum:
-      - SUCCESS_UE_POL_DEL_SP
-      - UNSUCCESS_UE_POL_DEL_SP
-      type: string
-      example: null
-    AuthorizationResult_anyOf:
-      enum:
-      - AUTH_REVOKED
-      type: string
-      example: null
-    Failure_oneOf:
-      enum:
-      - UNSPECIFIED
-      - UE_NOT_REACHABLE
-      - UNKNOWN
-      - UE_TEMP_UNREACHABLE
-      type: string
-      example: null
-    ConnectionCapabilities_anyOf:
-      enum:
-      - IMS
-      - MMS
-      - SUPL
-      - INTERNET
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -2841,19 +2845,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -3022,14 +3013,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

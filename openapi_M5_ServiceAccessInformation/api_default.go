@@ -1,7 +1,7 @@
 /*
 M5_ServiceAccessInformation
 
-5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -13,19 +13,18 @@ package openapi_M5_ServiceAccessInformation
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiRetrieveServiceAccessInformationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -36,26 +35,27 @@ func (r ApiRetrieveServiceAccessInformationRequest) Execute() (*ServiceAccessInf
 /*
 RetrieveServiceAccessInformation Retrieve the Service Access Information resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiRetrieveServiceAccessInformationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiRetrieveServiceAccessInformationRequest
 */
 func (a *DefaultApiService) RetrieveServiceAccessInformation(ctx context.Context, provisioningSessionId string) ApiRetrieveServiceAccessInformationRequest {
 	return ApiRetrieveServiceAccessInformationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceAccessInformationResource
+//
+//	@return ServiceAccessInformationResource
 func (a *DefaultApiService) RetrieveServiceAccessInformationExecute(r ApiRetrieveServiceAccessInformationRequest) (*ServiceAccessInformationResource, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAccessInformationResource
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceAccessInformationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveServiceAccessInformation")
@@ -97,9 +97,9 @@ func (a *DefaultApiService) RetrieveServiceAccessInformationExecute(r ApiRetriev
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 Nnef_PFDmanagement Service API
 
-Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,12 +17,12 @@ import (
 // checks if the NotificationPush type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NotificationPush{}
 
-// NotificationPush Represents the information to be used by the NF service consumer to retrieve the PFDs and/or remove the PFDs of the applicable application identifier(s). 
+// NotificationPush Represents the information to be used by the NF service consumer to retrieve the PFDs and/or remove the PFDs of the applicable application identifier(s).
 type NotificationPush struct {
 	AppIds []string `json:"appIds"`
 	// indicating a time in seconds.
-	AllowedDelay *int32 `json:"allowedDelay,omitempty"`
-	PfdOp *PfdOperation `json:"pfdOp,omitempty"`
+	AllowedDelay *int32        `json:"allowedDelay,omitempty"`
+	PfdOp        *PfdOperation `json:"pfdOp,omitempty"`
 }
 
 // NewNotificationPush instantiates a new NotificationPush object
@@ -69,7 +69,7 @@ func (o *NotificationPush) SetAppIds(v []string) {
 
 // GetAllowedDelay returns the AllowedDelay field value if set, zero value otherwise.
 func (o *NotificationPush) GetAllowedDelay() int32 {
-	if o == nil || isNil(o.AllowedDelay) {
+	if o == nil || IsNil(o.AllowedDelay) {
 		var ret int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NotificationPush) GetAllowedDelay() int32 {
 // GetAllowedDelayOk returns a tuple with the AllowedDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationPush) GetAllowedDelayOk() (*int32, bool) {
-	if o == nil || isNil(o.AllowedDelay) {
+	if o == nil || IsNil(o.AllowedDelay) {
 		return nil, false
 	}
 	return o.AllowedDelay, true
@@ -87,7 +87,7 @@ func (o *NotificationPush) GetAllowedDelayOk() (*int32, bool) {
 
 // HasAllowedDelay returns a boolean if a field has been set.
 func (o *NotificationPush) HasAllowedDelay() bool {
-	if o != nil && !isNil(o.AllowedDelay) {
+	if o != nil && !IsNil(o.AllowedDelay) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *NotificationPush) SetAllowedDelay(v int32) {
 
 // GetPfdOp returns the PfdOp field value if set, zero value otherwise.
 func (o *NotificationPush) GetPfdOp() PfdOperation {
-	if o == nil || isNil(o.PfdOp) {
+	if o == nil || IsNil(o.PfdOp) {
 		var ret PfdOperation
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NotificationPush) GetPfdOp() PfdOperation {
 // GetPfdOpOk returns a tuple with the PfdOp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationPush) GetPfdOpOk() (*PfdOperation, bool) {
-	if o == nil || isNil(o.PfdOp) {
+	if o == nil || IsNil(o.PfdOp) {
 		return nil, false
 	}
 	return o.PfdOp, true
@@ -119,7 +119,7 @@ func (o *NotificationPush) GetPfdOpOk() (*PfdOperation, bool) {
 
 // HasPfdOp returns a boolean if a field has been set.
 func (o *NotificationPush) HasPfdOp() bool {
-	if o != nil && !isNil(o.PfdOp) {
+	if o != nil && !IsNil(o.PfdOp) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *NotificationPush) SetPfdOp(v PfdOperation) {
 }
 
 func (o NotificationPush) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o NotificationPush) MarshalJSON() ([]byte, error) {
 func (o NotificationPush) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appIds"] = o.AppIds
-	if !isNil(o.AllowedDelay) {
+	if !IsNil(o.AllowedDelay) {
 		toSerialize["allowedDelay"] = o.AllowedDelay
 	}
-	if !isNil(o.PfdOp) {
+	if !IsNil(o.PfdOp) {
 		toSerialize["pfdOp"] = o.PfdOp
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableNotificationPush) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

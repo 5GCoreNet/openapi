@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &SmPolicyNotification{}
 // SmPolicyNotification Represents a notification on the update of the SM policies.
 type SmPolicyNotification struct {
 	// String providing an URI formatted according to RFC 3986.
-	ResourceUri *string `json:"resourceUri,omitempty"`
+	ResourceUri      *string           `json:"resourceUri,omitempty"`
 	SmPolicyDecision *SmPolicyDecision `json:"smPolicyDecision,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewSmPolicyNotificationWithDefaults() *SmPolicyNotification {
 
 // GetResourceUri returns the ResourceUri field value if set, zero value otherwise.
 func (o *SmPolicyNotification) GetResourceUri() string {
-	if o == nil || isNil(o.ResourceUri) {
+	if o == nil || IsNil(o.ResourceUri) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SmPolicyNotification) GetResourceUri() string {
 // GetResourceUriOk returns a tuple with the ResourceUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyNotification) GetResourceUriOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceUri) {
+	if o == nil || IsNil(o.ResourceUri) {
 		return nil, false
 	}
 	return o.ResourceUri, true
@@ -61,7 +61,7 @@ func (o *SmPolicyNotification) GetResourceUriOk() (*string, bool) {
 
 // HasResourceUri returns a boolean if a field has been set.
 func (o *SmPolicyNotification) HasResourceUri() bool {
-	if o != nil && !isNil(o.ResourceUri) {
+	if o != nil && !IsNil(o.ResourceUri) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SmPolicyNotification) SetResourceUri(v string) {
 
 // GetSmPolicyDecision returns the SmPolicyDecision field value if set, zero value otherwise.
 func (o *SmPolicyNotification) GetSmPolicyDecision() SmPolicyDecision {
-	if o == nil || isNil(o.SmPolicyDecision) {
+	if o == nil || IsNil(o.SmPolicyDecision) {
 		var ret SmPolicyDecision
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SmPolicyNotification) GetSmPolicyDecision() SmPolicyDecision {
 // GetSmPolicyDecisionOk returns a tuple with the SmPolicyDecision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyNotification) GetSmPolicyDecisionOk() (*SmPolicyDecision, bool) {
-	if o == nil || isNil(o.SmPolicyDecision) {
+	if o == nil || IsNil(o.SmPolicyDecision) {
 		return nil, false
 	}
 	return o.SmPolicyDecision, true
@@ -93,7 +93,7 @@ func (o *SmPolicyNotification) GetSmPolicyDecisionOk() (*SmPolicyDecision, bool)
 
 // HasSmPolicyDecision returns a boolean if a field has been set.
 func (o *SmPolicyNotification) HasSmPolicyDecision() bool {
-	if o != nil && !isNil(o.SmPolicyDecision) {
+	if o != nil && !IsNil(o.SmPolicyDecision) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *SmPolicyNotification) SetSmPolicyDecision(v SmPolicyDecision) {
 }
 
 func (o SmPolicyNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o SmPolicyNotification) MarshalJSON() ([]byte, error) {
 
 func (o SmPolicyNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ResourceUri) {
+	if !IsNil(o.ResourceUri) {
 		toSerialize["resourceUri"] = o.ResourceUri
 	}
-	if !isNil(o.SmPolicyDecision) {
+	if !IsNil(o.SmPolicyDecision) {
 		toSerialize["smPolicyDecision"] = o.SmPolicyDecision
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableSmPolicyNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

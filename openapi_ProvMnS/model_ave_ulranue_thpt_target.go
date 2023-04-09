@@ -19,9 +19,9 @@ var _ MappedNullable = &AveULRANUEThptTarget{}
 
 // AveULRANUEThptTarget This data type is the \"ExpectationTarget\" data type with specialisations for AveULRANUEThptTarget
 type AveULRANUEThptTarget struct {
-	TargetName *string `json:"targetName,omitempty"`
-	TargetCondition *string `json:"targetCondition,omitempty"`
-	TargetValueRange *int32 `json:"targetValueRange,omitempty"`
+	TargetName           *string         `json:"targetName,omitempty"`
+	TargetCondition      *string         `json:"targetCondition,omitempty"`
+	TargetValueRange     *int32          `json:"targetValueRange,omitempty"`
 	TargetFulfilmentInfo *FulfilmentInfo `json:"targetFulfilmentInfo,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewAveULRANUEThptTargetWithDefaults() *AveULRANUEThptTarget {
 
 // GetTargetName returns the TargetName field value if set, zero value otherwise.
 func (o *AveULRANUEThptTarget) GetTargetName() string {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AveULRANUEThptTarget) GetTargetName() string {
 // GetTargetNameOk returns a tuple with the TargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AveULRANUEThptTarget) GetTargetNameOk() (*string, bool) {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		return nil, false
 	}
 	return o.TargetName, true
@@ -62,7 +62,7 @@ func (o *AveULRANUEThptTarget) GetTargetNameOk() (*string, bool) {
 
 // HasTargetName returns a boolean if a field has been set.
 func (o *AveULRANUEThptTarget) HasTargetName() bool {
-	if o != nil && !isNil(o.TargetName) {
+	if o != nil && !IsNil(o.TargetName) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AveULRANUEThptTarget) SetTargetName(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *AveULRANUEThptTarget) GetTargetCondition() string {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AveULRANUEThptTarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AveULRANUEThptTarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -94,7 +94,7 @@ func (o *AveULRANUEThptTarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *AveULRANUEThptTarget) HasTargetCondition() bool {
-	if o != nil && !isNil(o.TargetCondition) {
+	if o != nil && !IsNil(o.TargetCondition) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AveULRANUEThptTarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *AveULRANUEThptTarget) GetTargetValueRange() int32 {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AveULRANUEThptTarget) GetTargetValueRange() int32 {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AveULRANUEThptTarget) GetTargetValueRangeOk() (*int32, bool) {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -126,7 +126,7 @@ func (o *AveULRANUEThptTarget) GetTargetValueRangeOk() (*int32, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *AveULRANUEThptTarget) HasTargetValueRange() bool {
-	if o != nil && !isNil(o.TargetValueRange) {
+	if o != nil && !IsNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AveULRANUEThptTarget) SetTargetValueRange(v int32) {
 
 // GetTargetFulfilmentInfo returns the TargetFulfilmentInfo field value if set, zero value otherwise.
 func (o *AveULRANUEThptTarget) GetTargetFulfilmentInfo() FulfilmentInfo {
-	if o == nil || isNil(o.TargetFulfilmentInfo) {
+	if o == nil || IsNil(o.TargetFulfilmentInfo) {
 		var ret FulfilmentInfo
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AveULRANUEThptTarget) GetTargetFulfilmentInfo() FulfilmentInfo {
 // GetTargetFulfilmentInfoOk returns a tuple with the TargetFulfilmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AveULRANUEThptTarget) GetTargetFulfilmentInfoOk() (*FulfilmentInfo, bool) {
-	if o == nil || isNil(o.TargetFulfilmentInfo) {
+	if o == nil || IsNil(o.TargetFulfilmentInfo) {
 		return nil, false
 	}
 	return o.TargetFulfilmentInfo, true
@@ -158,7 +158,7 @@ func (o *AveULRANUEThptTarget) GetTargetFulfilmentInfoOk() (*FulfilmentInfo, boo
 
 // HasTargetFulfilmentInfo returns a boolean if a field has been set.
 func (o *AveULRANUEThptTarget) HasTargetFulfilmentInfo() bool {
-	if o != nil && !isNil(o.TargetFulfilmentInfo) {
+	if o != nil && !IsNil(o.TargetFulfilmentInfo) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *AveULRANUEThptTarget) SetTargetFulfilmentInfo(v FulfilmentInfo) {
 }
 
 func (o AveULRANUEThptTarget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o AveULRANUEThptTarget) MarshalJSON() ([]byte, error) {
 
 func (o AveULRANUEThptTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetName) {
+	if !IsNil(o.TargetName) {
 		toSerialize["targetName"] = o.TargetName
 	}
-	if !isNil(o.TargetCondition) {
+	if !IsNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !isNil(o.TargetValueRange) {
+	if !IsNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
-	if !isNil(o.TargetFulfilmentInfo) {
+	if !IsNil(o.TargetFulfilmentInfo) {
 		toSerialize["targetFulfilmentInfo"] = o.TargetFulfilmentInfo
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableAveULRANUEThptTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

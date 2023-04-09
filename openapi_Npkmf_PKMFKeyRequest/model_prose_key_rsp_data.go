@@ -1,7 +1,7 @@
 /*
 Npkmf_PKMFKeyRequest
 
-PKMF KeyRequest Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PKMF KeyRequest Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -96,7 +96,7 @@ func (o *ProseKeyRspData) SetKnrpFreshness2(v string) {
 
 // GetGpi returns the Gpi field value if set, zero value otherwise.
 func (o *ProseKeyRspData) GetGpi() string {
-	if o == nil || isNil(o.Gpi) {
+	if o == nil || IsNil(o.Gpi) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *ProseKeyRspData) GetGpi() string {
 // GetGpiOk returns a tuple with the Gpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseKeyRspData) GetGpiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpi) {
+	if o == nil || IsNil(o.Gpi) {
 		return nil, false
 	}
 	return o.Gpi, true
@@ -114,7 +114,7 @@ func (o *ProseKeyRspData) GetGpiOk() (*string, bool) {
 
 // HasGpi returns a boolean if a field has been set.
 func (o *ProseKeyRspData) HasGpi() bool {
-	if o != nil && !isNil(o.Gpi) {
+	if o != nil && !IsNil(o.Gpi) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *ProseKeyRspData) SetGpi(v string) {
 }
 
 func (o ProseKeyRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o ProseKeyRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["knrp"] = o.Knrp
 	toSerialize["knrpFreshness2"] = o.KnrpFreshness2
-	if !isNil(o.Gpi) {
+	if !IsNil(o.Gpi) {
 		toSerialize["gpi"] = o.Gpi
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableProseKeyRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

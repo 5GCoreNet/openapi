@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &TnapId{}
 
 // TnapId Contain the TNAP Identifier see clause5.6.2 of 3GPP TS 23.501.
 type TnapId struct {
-	// This IE shall be present if the UE is accessing the 5GC via a trusted WLAN access network.When present, it shall contain the SSID of the access point to which the UE is attached, that is received over NGAP,  see IEEE Std 802.11-2012.  
+	// This IE shall be present if the UE is accessing the 5GC via a trusted WLAN access network.When present, it shall contain the SSID of the access point to which the UE is attached, that is received over NGAP,  see IEEE Std 802.11-2012.
 	SsId *string `json:"ssId,omitempty"`
-	// When present, it shall contain the BSSID of the access point to which the UE is attached, that is received over NGAP, see IEEE Std 802.11-2012.  
+	// When present, it shall contain the BSSID of the access point to which the UE is attached, that is received over NGAP, see IEEE Std 802.11-2012.
 	BssId *string `json:"bssId,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
 	CivicAddress *string `json:"civicAddress,omitempty"`
@@ -46,7 +46,7 @@ func NewTnapIdWithDefaults() *TnapId {
 
 // GetSsId returns the SsId field value if set, zero value otherwise.
 func (o *TnapId) GetSsId() string {
-	if o == nil || isNil(o.SsId) {
+	if o == nil || IsNil(o.SsId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *TnapId) GetSsId() string {
 // GetSsIdOk returns a tuple with the SsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TnapId) GetSsIdOk() (*string, bool) {
-	if o == nil || isNil(o.SsId) {
+	if o == nil || IsNil(o.SsId) {
 		return nil, false
 	}
 	return o.SsId, true
@@ -64,7 +64,7 @@ func (o *TnapId) GetSsIdOk() (*string, bool) {
 
 // HasSsId returns a boolean if a field has been set.
 func (o *TnapId) HasSsId() bool {
-	if o != nil && !isNil(o.SsId) {
+	if o != nil && !IsNil(o.SsId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *TnapId) SetSsId(v string) {
 
 // GetBssId returns the BssId field value if set, zero value otherwise.
 func (o *TnapId) GetBssId() string {
-	if o == nil || isNil(o.BssId) {
+	if o == nil || IsNil(o.BssId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *TnapId) GetBssId() string {
 // GetBssIdOk returns a tuple with the BssId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TnapId) GetBssIdOk() (*string, bool) {
-	if o == nil || isNil(o.BssId) {
+	if o == nil || IsNil(o.BssId) {
 		return nil, false
 	}
 	return o.BssId, true
@@ -96,7 +96,7 @@ func (o *TnapId) GetBssIdOk() (*string, bool) {
 
 // HasBssId returns a boolean if a field has been set.
 func (o *TnapId) HasBssId() bool {
-	if o != nil && !isNil(o.BssId) {
+	if o != nil && !IsNil(o.BssId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *TnapId) SetBssId(v string) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *TnapId) GetCivicAddress() string {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *TnapId) GetCivicAddress() string {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TnapId) GetCivicAddressOk() (*string, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -128,7 +128,7 @@ func (o *TnapId) GetCivicAddressOk() (*string, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *TnapId) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *TnapId) SetCivicAddress(v string) {
 }
 
 func (o TnapId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o TnapId) MarshalJSON() ([]byte, error) {
 
 func (o TnapId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SsId) {
+	if !IsNil(o.SsId) {
 		toSerialize["ssId"] = o.SsId
 	}
-	if !isNil(o.BssId) {
+	if !IsNil(o.BssId) {
 		toSerialize["bssId"] = o.BssId
 	}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableTnapId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

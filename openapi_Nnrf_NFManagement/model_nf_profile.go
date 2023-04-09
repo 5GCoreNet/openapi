@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -12,7 +12,6 @@ package openapi_Nnrf_NFManagement
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -25,7 +24,7 @@ type NFProfile struct {
 func (dst *NFProfile) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -84,5 +83,3 @@ func (v *NullableNFProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

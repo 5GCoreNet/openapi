@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // checks if the SmNasFromUe type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SmNasFromUe{}
 
-// SmNasFromUe Represents information on the SM NAS messages that SMF receives from UE for PDU Session. 
+// SmNasFromUe Represents information on the SM NAS messages that SMF receives from UE for PDU Session.
 type SmNasFromUe struct {
 	SmNasType string `json:"smNasType"`
 	// string with format 'date-time' as defined in OpenAPI.
@@ -93,7 +93,7 @@ func (o *SmNasFromUe) SetTimeStamp(v time.Time) {
 }
 
 func (o SmNasFromUe) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableSmNasFromUe) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Naf_Authentication
 
-AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &AdditionInfoAuthenticateAuthorize{}
 
 // AdditionInfoAuthenticateAuthorize Indicates additional information during authentication failure
 type AdditionInfoAuthenticateAuthorize struct {
-	// Indicates to release the UAV resources during authentication failure, when set to \"true\". Default is set to \"false\". 
+	// Indicates to release the UAV resources during authentication failure, when set to \"true\". Default is set to \"false\".
 	UasResRelInd *bool `json:"uasResRelInd,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewAdditionInfoAuthenticateAuthorizeWithDefaults() *AdditionInfoAuthenticat
 
 // GetUasResRelInd returns the UasResRelInd field value if set, zero value otherwise.
 func (o *AdditionInfoAuthenticateAuthorize) GetUasResRelInd() bool {
-	if o == nil || isNil(o.UasResRelInd) {
+	if o == nil || IsNil(o.UasResRelInd) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AdditionInfoAuthenticateAuthorize) GetUasResRelInd() bool {
 // GetUasResRelIndOk returns a tuple with the UasResRelInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionInfoAuthenticateAuthorize) GetUasResRelIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UasResRelInd) {
+	if o == nil || IsNil(o.UasResRelInd) {
 		return nil, false
 	}
 	return o.UasResRelInd, true
@@ -60,7 +60,7 @@ func (o *AdditionInfoAuthenticateAuthorize) GetUasResRelIndOk() (*bool, bool) {
 
 // HasUasResRelInd returns a boolean if a field has been set.
 func (o *AdditionInfoAuthenticateAuthorize) HasUasResRelInd() bool {
-	if o != nil && !isNil(o.UasResRelInd) {
+	if o != nil && !IsNil(o.UasResRelInd) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *AdditionInfoAuthenticateAuthorize) SetUasResRelInd(v bool) {
 }
 
 func (o AdditionInfoAuthenticateAuthorize) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o AdditionInfoAuthenticateAuthorize) MarshalJSON() ([]byte, error) {
 
 func (o AdditionInfoAuthenticateAuthorize) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UasResRelInd) {
+	if !IsNil(o.UasResRelInd) {
 		toSerialize["uasResRelInd"] = o.UasResRelInd
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableAdditionInfoAuthenticateAuthorize) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

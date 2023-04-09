@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the NefEventExposureNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NefEventExposureNotif{}
 
-// NefEventExposureNotif Represents notifications on network exposure event(s) that occurred for an Individual Network Exposure Event Subscription resource. 
+// NefEventExposureNotif Represents notifications on network exposure event(s) that occurred for an Individual Network Exposure Event Subscription resource.
 type NefEventExposureNotif struct {
-	NotifId string `json:"notifId"`
+	NotifId     string                 `json:"notifId"`
 	EventNotifs []NefEventNotification `json:"eventNotifs"`
 }
 
@@ -91,7 +91,7 @@ func (o *NefEventExposureNotif) SetEventNotifs(v []NefEventNotification) {
 }
 
 func (o NefEventExposureNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableNefEventExposureNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

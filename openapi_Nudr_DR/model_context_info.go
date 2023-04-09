@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ContextInfo{}
 
 // ContextInfo struct for ContextInfo
 type ContextInfo struct {
-	OrigHeaders []string `json:"origHeaders,omitempty"`
+	OrigHeaders    []string `json:"origHeaders,omitempty"`
 	RequestHeaders []string `json:"requestHeaders,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewContextInfoWithDefaults() *ContextInfo {
 
 // GetOrigHeaders returns the OrigHeaders field value if set, zero value otherwise.
 func (o *ContextInfo) GetOrigHeaders() []string {
-	if o == nil || isNil(o.OrigHeaders) {
+	if o == nil || IsNil(o.OrigHeaders) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ContextInfo) GetOrigHeaders() []string {
 // GetOrigHeadersOk returns a tuple with the OrigHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextInfo) GetOrigHeadersOk() ([]string, bool) {
-	if o == nil || isNil(o.OrigHeaders) {
+	if o == nil || IsNil(o.OrigHeaders) {
 		return nil, false
 	}
 	return o.OrigHeaders, true
@@ -60,7 +60,7 @@ func (o *ContextInfo) GetOrigHeadersOk() ([]string, bool) {
 
 // HasOrigHeaders returns a boolean if a field has been set.
 func (o *ContextInfo) HasOrigHeaders() bool {
-	if o != nil && !isNil(o.OrigHeaders) {
+	if o != nil && !IsNil(o.OrigHeaders) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ContextInfo) SetOrigHeaders(v []string) {
 
 // GetRequestHeaders returns the RequestHeaders field value if set, zero value otherwise.
 func (o *ContextInfo) GetRequestHeaders() []string {
-	if o == nil || isNil(o.RequestHeaders) {
+	if o == nil || IsNil(o.RequestHeaders) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ContextInfo) GetRequestHeaders() []string {
 // GetRequestHeadersOk returns a tuple with the RequestHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextInfo) GetRequestHeadersOk() ([]string, bool) {
-	if o == nil || isNil(o.RequestHeaders) {
+	if o == nil || IsNil(o.RequestHeaders) {
 		return nil, false
 	}
 	return o.RequestHeaders, true
@@ -92,7 +92,7 @@ func (o *ContextInfo) GetRequestHeadersOk() ([]string, bool) {
 
 // HasRequestHeaders returns a boolean if a field has been set.
 func (o *ContextInfo) HasRequestHeaders() bool {
-	if o != nil && !isNil(o.RequestHeaders) {
+	if o != nil && !IsNil(o.RequestHeaders) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ContextInfo) SetRequestHeaders(v []string) {
 }
 
 func (o ContextInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ContextInfo) MarshalJSON() ([]byte, error) {
 
 func (o ContextInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.OrigHeaders) {
+	if !IsNil(o.OrigHeaders) {
 		toSerialize["origHeaders"] = o.OrigHeaders
 	}
-	if !isNil(o.RequestHeaders) {
+	if !IsNil(o.RequestHeaders) {
 		toSerialize["requestHeaders"] = o.RequestHeaders
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableContextInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

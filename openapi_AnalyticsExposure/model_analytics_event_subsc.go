@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AnalyticsEventSubsc{}
 
 // AnalyticsEventSubsc Represents a subscribed analytics event.
 type AnalyticsEventSubsc struct {
-	AnalyEvent AnalyticsEvent `json:"analyEvent"`
+	AnalyEvent       AnalyticsEvent             `json:"analyEvent"`
 	AnalyEventFilter *AnalyticsEventFilterSubsc `json:"analyEventFilter,omitempty"`
-	TgtUe *TargetUeId `json:"tgtUe,omitempty"`
+	TgtUe            *TargetUeId                `json:"tgtUe,omitempty"`
 }
 
 // NewAnalyticsEventSubsc instantiates a new AnalyticsEventSubsc object
@@ -68,7 +68,7 @@ func (o *AnalyticsEventSubsc) SetAnalyEvent(v AnalyticsEvent) {
 
 // GetAnalyEventFilter returns the AnalyEventFilter field value if set, zero value otherwise.
 func (o *AnalyticsEventSubsc) GetAnalyEventFilter() AnalyticsEventFilterSubsc {
-	if o == nil || isNil(o.AnalyEventFilter) {
+	if o == nil || IsNil(o.AnalyEventFilter) {
 		var ret AnalyticsEventFilterSubsc
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AnalyticsEventSubsc) GetAnalyEventFilter() AnalyticsEventFilterSubsc {
 // GetAnalyEventFilterOk returns a tuple with the AnalyEventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventSubsc) GetAnalyEventFilterOk() (*AnalyticsEventFilterSubsc, bool) {
-	if o == nil || isNil(o.AnalyEventFilter) {
+	if o == nil || IsNil(o.AnalyEventFilter) {
 		return nil, false
 	}
 	return o.AnalyEventFilter, true
@@ -86,7 +86,7 @@ func (o *AnalyticsEventSubsc) GetAnalyEventFilterOk() (*AnalyticsEventFilterSubs
 
 // HasAnalyEventFilter returns a boolean if a field has been set.
 func (o *AnalyticsEventSubsc) HasAnalyEventFilter() bool {
-	if o != nil && !isNil(o.AnalyEventFilter) {
+	if o != nil && !IsNil(o.AnalyEventFilter) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AnalyticsEventSubsc) SetAnalyEventFilter(v AnalyticsEventFilterSubsc) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *AnalyticsEventSubsc) GetTgtUe() TargetUeId {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		var ret TargetUeId
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AnalyticsEventSubsc) GetTgtUe() TargetUeId {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventSubsc) GetTgtUeOk() (*TargetUeId, bool) {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -118,7 +118,7 @@ func (o *AnalyticsEventSubsc) GetTgtUeOk() (*TargetUeId, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *AnalyticsEventSubsc) HasTgtUe() bool {
-	if o != nil && !isNil(o.TgtUe) {
+	if o != nil && !IsNil(o.TgtUe) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AnalyticsEventSubsc) SetTgtUe(v TargetUeId) {
 }
 
 func (o AnalyticsEventSubsc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o AnalyticsEventSubsc) MarshalJSON() ([]byte, error) {
 func (o AnalyticsEventSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEvent"] = o.AnalyEvent
-	if !isNil(o.AnalyEventFilter) {
+	if !IsNil(o.AnalyEventFilter) {
 		toSerialize["analyEventFilter"] = o.AnalyEventFilter
 	}
-	if !isNil(o.TgtUe) {
+	if !IsNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableAnalyticsEventSubsc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

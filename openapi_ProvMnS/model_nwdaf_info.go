@@ -19,7 +19,7 @@ var _ MappedNullable = &NwdafInfo{}
 
 // NwdafInfo Information of a NWDAF NF Instance
 type NwdafInfo struct {
-	EventIds []EventId `json:"eventIds,omitempty"`
+	EventIds    []EventId    `json:"eventIds,omitempty"`
 	NwdafEvents []NwdafEvent `json:"nwdafEvents,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewNwdafInfoWithDefaults() *NwdafInfo {
 
 // GetEventIds returns the EventIds field value if set, zero value otherwise.
 func (o *NwdafInfo) GetEventIds() []EventId {
-	if o == nil || isNil(o.EventIds) {
+	if o == nil || IsNil(o.EventIds) {
 		var ret []EventId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NwdafInfo) GetEventIds() []EventId {
 // GetEventIdsOk returns a tuple with the EventIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetEventIdsOk() ([]EventId, bool) {
-	if o == nil || isNil(o.EventIds) {
+	if o == nil || IsNil(o.EventIds) {
 		return nil, false
 	}
 	return o.EventIds, true
@@ -60,7 +60,7 @@ func (o *NwdafInfo) GetEventIdsOk() ([]EventId, bool) {
 
 // HasEventIds returns a boolean if a field has been set.
 func (o *NwdafInfo) HasEventIds() bool {
-	if o != nil && !isNil(o.EventIds) {
+	if o != nil && !IsNil(o.EventIds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NwdafInfo) SetEventIds(v []EventId) {
 
 // GetNwdafEvents returns the NwdafEvents field value if set, zero value otherwise.
 func (o *NwdafInfo) GetNwdafEvents() []NwdafEvent {
-	if o == nil || isNil(o.NwdafEvents) {
+	if o == nil || IsNil(o.NwdafEvents) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NwdafInfo) GetNwdafEvents() []NwdafEvent {
 // GetNwdafEventsOk returns a tuple with the NwdafEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetNwdafEventsOk() ([]NwdafEvent, bool) {
-	if o == nil || isNil(o.NwdafEvents) {
+	if o == nil || IsNil(o.NwdafEvents) {
 		return nil, false
 	}
 	return o.NwdafEvents, true
@@ -92,7 +92,7 @@ func (o *NwdafInfo) GetNwdafEventsOk() ([]NwdafEvent, bool) {
 
 // HasNwdafEvents returns a boolean if a field has been set.
 func (o *NwdafInfo) HasNwdafEvents() bool {
-	if o != nil && !isNil(o.NwdafEvents) {
+	if o != nil && !IsNil(o.NwdafEvents) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NwdafInfo) SetNwdafEvents(v []NwdafEvent) {
 }
 
 func (o NwdafInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o NwdafInfo) MarshalJSON() ([]byte, error) {
 
 func (o NwdafInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EventIds) {
+	if !IsNil(o.EventIds) {
 		toSerialize["eventIds"] = o.EventIds
 	}
-	if !isNil(o.NwdafEvents) {
+	if !IsNil(o.NwdafEvents) {
 		toSerialize["nwdafEvents"] = o.NwdafEvents
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableNwdafInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

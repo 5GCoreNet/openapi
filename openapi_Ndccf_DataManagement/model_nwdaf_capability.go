@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NwdafCapability{}
 
 // NwdafCapability Indicates the capability supported by the NWDAF
 type NwdafCapability struct {
-	AnalyticsAggregation *bool `json:"analyticsAggregation,omitempty"`
+	AnalyticsAggregation          *bool `json:"analyticsAggregation,omitempty"`
 	AnalyticsMetadataProvisioning *bool `json:"analyticsMetadataProvisioning,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func NewNwdafCapabilityWithDefaults() *NwdafCapability {
 
 // GetAnalyticsAggregation returns the AnalyticsAggregation field value if set, zero value otherwise.
 func (o *NwdafCapability) GetAnalyticsAggregation() bool {
-	if o == nil || isNil(o.AnalyticsAggregation) {
+	if o == nil || IsNil(o.AnalyticsAggregation) {
 		var ret bool
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NwdafCapability) GetAnalyticsAggregation() bool {
 // GetAnalyticsAggregationOk returns a tuple with the AnalyticsAggregation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCapability) GetAnalyticsAggregationOk() (*bool, bool) {
-	if o == nil || isNil(o.AnalyticsAggregation) {
+	if o == nil || IsNil(o.AnalyticsAggregation) {
 		return nil, false
 	}
 	return o.AnalyticsAggregation, true
@@ -68,7 +68,7 @@ func (o *NwdafCapability) GetAnalyticsAggregationOk() (*bool, bool) {
 
 // HasAnalyticsAggregation returns a boolean if a field has been set.
 func (o *NwdafCapability) HasAnalyticsAggregation() bool {
-	if o != nil && !isNil(o.AnalyticsAggregation) {
+	if o != nil && !IsNil(o.AnalyticsAggregation) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *NwdafCapability) SetAnalyticsAggregation(v bool) {
 
 // GetAnalyticsMetadataProvisioning returns the AnalyticsMetadataProvisioning field value if set, zero value otherwise.
 func (o *NwdafCapability) GetAnalyticsMetadataProvisioning() bool {
-	if o == nil || isNil(o.AnalyticsMetadataProvisioning) {
+	if o == nil || IsNil(o.AnalyticsMetadataProvisioning) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NwdafCapability) GetAnalyticsMetadataProvisioning() bool {
 // GetAnalyticsMetadataProvisioningOk returns a tuple with the AnalyticsMetadataProvisioning field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCapability) GetAnalyticsMetadataProvisioningOk() (*bool, bool) {
-	if o == nil || isNil(o.AnalyticsMetadataProvisioning) {
+	if o == nil || IsNil(o.AnalyticsMetadataProvisioning) {
 		return nil, false
 	}
 	return o.AnalyticsMetadataProvisioning, true
@@ -100,7 +100,7 @@ func (o *NwdafCapability) GetAnalyticsMetadataProvisioningOk() (*bool, bool) {
 
 // HasAnalyticsMetadataProvisioning returns a boolean if a field has been set.
 func (o *NwdafCapability) HasAnalyticsMetadataProvisioning() bool {
-	if o != nil && !isNil(o.AnalyticsMetadataProvisioning) {
+	if o != nil && !IsNil(o.AnalyticsMetadataProvisioning) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *NwdafCapability) SetAnalyticsMetadataProvisioning(v bool) {
 }
 
 func (o NwdafCapability) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -122,10 +122,10 @@ func (o NwdafCapability) MarshalJSON() ([]byte, error) {
 
 func (o NwdafCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnalyticsAggregation) {
+	if !IsNil(o.AnalyticsAggregation) {
 		toSerialize["analyticsAggregation"] = o.AnalyticsAggregation
 	}
-	if !isNil(o.AnalyticsMetadataProvisioning) {
+	if !IsNil(o.AnalyticsMetadataProvisioning) {
 		toSerialize["analyticsMetadataProvisioning"] = o.AnalyticsMetadataProvisioning
 	}
 	return toSerialize, nil
@@ -166,5 +166,3 @@ func (v *NullableNwdafCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

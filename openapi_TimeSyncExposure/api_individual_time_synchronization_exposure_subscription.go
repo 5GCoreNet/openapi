@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_TimeSyncExposure
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualTimeSynchronizationExposureSubscriptionApiService IndividualTimeSynchronizationExposureSubscriptionApi service
 type IndividualTimeSynchronizationExposureSubscriptionApiService service
 
 type ApiDeleteAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualTimeSynchronizationExposureSubscriptionApiService
-	afId string
+	ctx            context.Context
+	ApiService     *IndividualTimeSynchronizationExposureSubscriptionApiService
+	afId           string
 	subscriptionId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteAnSubscriptionRequest) Execute() (*http.Response, error) {
 /*
 DeleteAnSubscription Deletes an already existing subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId Identifier of the subscription resource
- @return ApiDeleteAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId Identifier of the subscription resource
+	@return ApiDeleteAnSubscriptionRequest
 */
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSubscription(ctx context.Context, afId string, subscriptionId string) ApiDeleteAnSubscriptionRequest {
 	return ApiDeleteAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 // Execute executes the request
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSubscriptionExecute(r ApiDeleteAnSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTimeSynchronizationExposureSubscriptionApiService.DeleteAnSubscription")
@@ -99,9 +98,9 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,10 +194,10 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) DeleteAnSu
 }
 
 type ApiFullyUpdateAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualTimeSynchronizationExposureSubscriptionApiService
-	afId string
-	subscriptionId string
+	ctx                   context.Context
+	ApiService            *IndividualTimeSynchronizationExposureSubscriptionApiService
+	afId                  string
+	subscriptionId        string
 	timeSyncExposureSubsc *TimeSyncExposureSubsc
 }
 
@@ -215,28 +214,29 @@ func (r ApiFullyUpdateAnSubscriptionRequest) Execute() (*TimeSyncExposureSubsc, 
 /*
 FullyUpdateAnSubscription Fully updates/replaces an existing subscription resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId Identifier of the subscription resource
- @return ApiFullyUpdateAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId Identifier of the subscription resource
+	@return ApiFullyUpdateAnSubscriptionRequest
 */
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdateAnSubscription(ctx context.Context, afId string, subscriptionId string) ApiFullyUpdateAnSubscriptionRequest {
 	return ApiFullyUpdateAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return TimeSyncExposureSubsc
+//
+//	@return TimeSyncExposureSubsc
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdateAnSubscriptionExecute(r ApiFullyUpdateAnSubscriptionRequest) (*TimeSyncExposureSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimeSyncExposureSubsc
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimeSyncExposureSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTimeSynchronizationExposureSubscriptionApiService.FullyUpdateAnSubscription")
@@ -284,9 +284,9 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -303,8 +303,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -314,8 +314,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -325,8 +325,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -336,8 +336,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -347,8 +347,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -358,8 +358,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -369,8 +369,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -422,9 +422,9 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) FullyUpdat
 }
 
 type ApiReadAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualTimeSynchronizationExposureSubscriptionApiService
-	afId string
+	ctx            context.Context
+	ApiService     *IndividualTimeSynchronizationExposureSubscriptionApiService
+	afId           string
 	subscriptionId string
 }
 
@@ -435,28 +435,29 @@ func (r ApiReadAnSubscriptionRequest) Execute() (*TimeSyncExposureSubsc, *http.R
 /*
 ReadAnSubscription read an active subscription for the AF and the subscription Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId Identifier of the subscription resource
- @return ApiReadAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId Identifier of the subscription resource
+	@return ApiReadAnSubscriptionRequest
 */
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubscription(ctx context.Context, afId string, subscriptionId string) ApiReadAnSubscriptionRequest {
 	return ApiReadAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return TimeSyncExposureSubsc
+//
+//	@return TimeSyncExposureSubsc
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubscriptionExecute(r ApiReadAnSubscriptionRequest) (*TimeSyncExposureSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimeSyncExposureSubsc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimeSyncExposureSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTimeSynchronizationExposureSubscriptionApiService.ReadAnSubscription")
@@ -499,9 +500,9 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,8 +519,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -529,8 +530,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -540,8 +541,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -551,8 +552,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -562,8 +563,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -573,8 +574,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -584,8 +585,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -595,8 +596,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -615,10 +616,10 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadAnSubs
 }
 
 type ApiReadTimeSynSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualTimeSynchronizationExposureSubscriptionApiService
-	afId string
-	subscriptionId string
+	ctx               context.Context
+	ApiService        *IndividualTimeSynchronizationExposureSubscriptionApiService
+	afId              string
+	subscriptionId    string
 	instanceReference string
 }
 
@@ -629,30 +630,31 @@ func (r ApiReadTimeSynSubscriptionRequest) Execute() (*TimeSyncExposureConfig, *
 /*
 ReadTimeSynSubscription read an active subscription for the AF and the subscription Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId Identifier of the subscription resource
- @param instanceReference Identifier of the configuration resource
- @return ApiReadTimeSynSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId Identifier of the subscription resource
+	@param instanceReference Identifier of the configuration resource
+	@return ApiReadTimeSynSubscriptionRequest
 */
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSynSubscription(ctx context.Context, afId string, subscriptionId string, instanceReference string) ApiReadTimeSynSubscriptionRequest {
 	return ApiReadTimeSynSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
-		subscriptionId: subscriptionId,
+		ApiService:        a,
+		ctx:               ctx,
+		afId:              afId,
+		subscriptionId:    subscriptionId,
 		instanceReference: instanceReference,
 	}
 }
 
 // Execute executes the request
-//  @return TimeSyncExposureConfig
+//
+//	@return TimeSyncExposureConfig
 func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSynSubscriptionExecute(r ApiReadTimeSynSubscriptionRequest) (*TimeSyncExposureConfig, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimeSyncExposureConfig
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimeSyncExposureConfig
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTimeSynchronizationExposureSubscriptionApiService.ReadTimeSynSubscription")
@@ -696,9 +698,9 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -715,8 +717,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -726,8 +728,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -737,8 +739,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -748,8 +750,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -759,8 +761,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -770,8 +772,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -781,8 +783,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -792,8 +794,8 @@ func (a *IndividualTimeSynchronizationExposureSubscriptionApiService) ReadTimeSy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

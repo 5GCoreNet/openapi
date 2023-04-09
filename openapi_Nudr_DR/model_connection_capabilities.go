@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ConnectionCapabilities Possible values are   - IMS: Indicates the connection capability to support IMS service.   - MMS: Indicates the connection capability to support MMS service.   - SUPL: Indicates the connection capability to support SUPL service.   - INTERNET: Indicates the connection capability to support Internet service. 
+// ConnectionCapabilities Possible values are   - IMS: Indicates the connection capability to support IMS service.   - MMS: Indicates the connection capability to support MMS service.   - SUPL: Indicates the connection capability to support SUPL service.   - INTERNET: Indicates the connection capability to support Internet service.
 type ConnectionCapabilities struct {
-	ConnectionCapabilitiesAnyOf *ConnectionCapabilitiesAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ConnectionCapabilities) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ConnectionCapabilitiesAnyOf
-	err = json.Unmarshal(data, &dst.ConnectionCapabilitiesAnyOf);
-	if err == nil {
-		jsonConnectionCapabilitiesAnyOf, _ := json.Marshal(dst.ConnectionCapabilitiesAnyOf)
-		if string(jsonConnectionCapabilitiesAnyOf) == "{}" { // empty struct
-			dst.ConnectionCapabilitiesAnyOf = nil
-		} else {
-			return nil // data stored in dst.ConnectionCapabilitiesAnyOf, return on the first match
-		}
-	} else {
-		dst.ConnectionCapabilitiesAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ConnectionCapabilities) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ConnectionCapabilities) MarshalJSON() ([]byte, error) {
-	if src.ConnectionCapabilitiesAnyOf != nil {
-		return json.Marshal(&src.ConnectionCapabilitiesAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableConnectionCapabilities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

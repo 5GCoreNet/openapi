@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // HSSEventSubscriptionInfoDocumentApiService HSSEventSubscriptionInfoDocumentApi service
 type HSSEventSubscriptionInfoDocumentApiService service
 
 type ApiCreateHSSSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *HSSEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ctx                 context.Context
+	ApiService          *HSSEventSubscriptionInfoDocumentApiService
+	ueId                string
+	subsId              string
 	hssSubscriptionInfo *HssSubscriptionInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateHSSSubscriptionsRequest) Execute() (*HssSubscriptionInfo, *http
 /*
 CreateHSSSubscriptions Create HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiCreateHSSSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiCreateHSSSubscriptionsRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) CreateHSSSubscriptions(ctx context.Context, ueId string, subsId string) ApiCreateHSSSubscriptionsRequest {
 	return ApiCreateHSSSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return HssSubscriptionInfo
+//
+//	@return HssSubscriptionInfo
 func (a *HSSEventSubscriptionInfoDocumentApiService) CreateHSSSubscriptionsExecute(r ApiCreateHSSSubscriptionsRequest) (*HssSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HssSubscriptionInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HssSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.CreateHSSSubscriptions")
@@ -112,9 +112,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) CreateHSSSubscriptionsExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -140,10 +140,10 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) CreateHSSSubscriptionsExecu
 }
 
 type ApiGetHssGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *HSSEventSubscriptionInfoDocumentApiService
+	ctx             context.Context
+	ApiService      *HSSEventSubscriptionInfoDocumentApiService
 	externalGroupId string
-	subsId string
+	subsId          string
 }
 
 func (r ApiGetHssGroupSubscriptionsRequest) Execute() (*HssSubscriptionInfo, *http.Response, error) {
@@ -153,28 +153,29 @@ func (r ApiGetHssGroupSubscriptionsRequest) Execute() (*HssSubscriptionInfo, *ht
 /*
 GetHssGroupSubscriptions Retrieve HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @param subsId
- @return ApiGetHssGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@param subsId
+	@return ApiGetHssGroupSubscriptionsRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssGroupSubscriptions(ctx context.Context, externalGroupId string, subsId string) ApiGetHssGroupSubscriptionsRequest {
 	return ApiGetHssGroupSubscriptionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
-		subsId: subsId,
+		subsId:          subsId,
 	}
 }
 
 // Execute executes the request
-//  @return HssSubscriptionInfo
+//
+//	@return HssSubscriptionInfo
 func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssGroupSubscriptionsExecute(r ApiGetHssGroupSubscriptionsRequest) (*HssSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HssSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HssSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.GetHssGroupSubscriptions")
@@ -217,9 +218,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssGroupSubscriptionsExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -245,10 +246,10 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssGroupSubscriptionsExe
 }
 
 type ApiGetHssSubscriptionInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HSSEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiGetHssSubscriptionInfoRequest) Execute() (*SmfSubscriptionInfo, *http.Response, error) {
@@ -258,28 +259,29 @@ func (r ApiGetHssSubscriptionInfoRequest) Execute() (*SmfSubscriptionInfo, *http
 /*
 GetHssSubscriptionInfo Retrieve HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiGetHssSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiGetHssSubscriptionInfoRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiGetHssSubscriptionInfoRequest {
 	return ApiGetHssSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfSubscriptionInfo
+//
+//	@return SmfSubscriptionInfo
 func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssSubscriptionInfoExecute(r ApiGetHssSubscriptionInfoRequest) (*SmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.GetHssSubscriptionInfo")
@@ -322,9 +324,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssSubscriptionInfoExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -350,11 +352,11 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) GetHssSubscriptionInfoExecu
 }
 
 type ApiModifyHssGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *HSSEventSubscriptionInfoDocumentApiService
-	externalGroupId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *HSSEventSubscriptionInfoDocumentApiService
+	externalGroupId   string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -376,28 +378,29 @@ func (r ApiModifyHssGroupSubscriptionsRequest) Execute() (*PatchResult, *http.Re
 /*
 ModifyHssGroupSubscriptions Modify HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @param subsId
- @return ApiModifyHssGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@param subsId
+	@return ApiModifyHssGroupSubscriptionsRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssGroupSubscriptions(ctx context.Context, externalGroupId string, subsId string) ApiModifyHssGroupSubscriptionsRequest {
 	return ApiModifyHssGroupSubscriptionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
-		subsId: subsId,
+		subsId:          subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssGroupSubscriptionsExecute(r ApiModifyHssGroupSubscriptionsRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.ModifyHssGroupSubscriptions")
@@ -417,7 +420,7 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssGroupSubscriptions
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -448,9 +451,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssGroupSubscriptions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -467,8 +470,8 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssGroupSubscriptions
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -487,11 +490,11 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssGroupSubscriptions
 }
 
 type ApiModifyHssSubscriptionInfoRequest struct {
-	ctx context.Context
-	ApiService *HSSEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *HSSEventSubscriptionInfoDocumentApiService
+	ueId              string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -513,28 +516,29 @@ func (r ApiModifyHssSubscriptionInfoRequest) Execute() (*PatchResult, *http.Resp
 /*
 ModifyHssSubscriptionInfo Modify HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiModifyHssSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiModifyHssSubscriptionInfoRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiModifyHssSubscriptionInfoRequest {
 	return ApiModifyHssSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssSubscriptionInfoExecute(r ApiModifyHssSubscriptionInfoRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.ModifyHssSubscriptionInfo")
@@ -554,7 +558,7 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssSubscriptionInfoEx
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -585,9 +589,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssSubscriptionInfoEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -604,8 +608,8 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssSubscriptionInfoEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -624,10 +628,10 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) ModifyHssSubscriptionInfoEx
 }
 
 type ApiRemoveHssGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *HSSEventSubscriptionInfoDocumentApiService
+	ctx             context.Context
+	ApiService      *HSSEventSubscriptionInfoDocumentApiService
 	externalGroupId string
-	subsId string
+	subsId          string
 }
 
 func (r ApiRemoveHssGroupSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -637,26 +641,26 @@ func (r ApiRemoveHssGroupSubscriptionsRequest) Execute() (*http.Response, error)
 /*
 RemoveHssGroupSubscriptions Delete HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @param subsId
- @return ApiRemoveHssGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@param subsId
+	@return ApiRemoveHssGroupSubscriptionsRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssGroupSubscriptions(ctx context.Context, externalGroupId string, subsId string) ApiRemoveHssGroupSubscriptionsRequest {
 	return ApiRemoveHssGroupSubscriptionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
-		subsId: subsId,
+		subsId:          subsId,
 	}
 }
 
 // Execute executes the request
 func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssGroupSubscriptionsExecute(r ApiRemoveHssGroupSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.RemoveHssGroupSubscriptions")
@@ -699,9 +703,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssGroupSubscriptions
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -718,10 +722,10 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssGroupSubscriptions
 }
 
 type ApiRemoveHssSubscriptionsInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HSSEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiRemoveHssSubscriptionsInfoRequest) Execute() (*http.Response, error) {
@@ -731,26 +735,26 @@ func (r ApiRemoveHssSubscriptionsInfoRequest) Execute() (*http.Response, error) 
 /*
 RemoveHssSubscriptionsInfo Delete HSS Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiRemoveHssSubscriptionsInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiRemoveHssSubscriptionsInfoRequest
 */
 func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssSubscriptionsInfo(ctx context.Context, ueId string, subsId string) ApiRemoveHssSubscriptionsInfoRequest {
 	return ApiRemoveHssSubscriptionsInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssSubscriptionsInfoExecute(r ApiRemoveHssSubscriptionsInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSEventSubscriptionInfoDocumentApiService.RemoveHssSubscriptionsInfo")
@@ -793,9 +797,9 @@ func (a *HSSEventSubscriptionInfoDocumentApiService) RemoveHssSubscriptionsInfoE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

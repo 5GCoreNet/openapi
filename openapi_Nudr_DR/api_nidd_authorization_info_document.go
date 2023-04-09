@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NIDDAuthorizationInfoDocumentApiService NIDDAuthorizationInfoDocumentApi service
 type NIDDAuthorizationInfoDocumentApiService service
 
 type ApiCreateNIDDAuthorizationInfoRequest struct {
-	ctx context.Context
-	ApiService *NIDDAuthorizationInfoDocumentApiService
-	ueId string
+	ctx                   context.Context
+	ApiService            *NIDDAuthorizationInfoDocumentApiService
+	ueId                  string
 	niddAuthorizationInfo *NiddAuthorizationInfo
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateNIDDAuthorizationInfoRequest) Execute() (*NiddAuthorizationInfo
 /*
 CreateNIDDAuthorizationInfo Create NIDD Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiCreateNIDDAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiCreateNIDDAuthorizationInfoRequest
 */
 func (a *NIDDAuthorizationInfoDocumentApiService) CreateNIDDAuthorizationInfo(ctx context.Context, ueId string) ApiCreateNIDDAuthorizationInfoRequest {
 	return ApiCreateNIDDAuthorizationInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return NiddAuthorizationInfo
+//
+//	@return NiddAuthorizationInfo
 func (a *NIDDAuthorizationInfoDocumentApiService) CreateNIDDAuthorizationInfoExecute(r ApiCreateNIDDAuthorizationInfoRequest) (*NiddAuthorizationInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NiddAuthorizationInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NiddAuthorizationInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NIDDAuthorizationInfoDocumentApiService.CreateNIDDAuthorizationInfo")
@@ -108,9 +108,9 @@ func (a *NIDDAuthorizationInfoDocumentApiService) CreateNIDDAuthorizationInfoExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,9 +136,9 @@ func (a *NIDDAuthorizationInfoDocumentApiService) CreateNIDDAuthorizationInfoExe
 }
 
 type ApiGetNiddAuthorizationInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NIDDAuthorizationInfoDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiGetNiddAuthorizationInfoRequest) Execute() (*NiddAuthorizationInfo, *http.Response, error) {
@@ -148,26 +148,27 @@ func (r ApiGetNiddAuthorizationInfoRequest) Execute() (*NiddAuthorizationInfo, *
 /*
 GetNiddAuthorizationInfo Retrieve NIDD Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiGetNiddAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiGetNiddAuthorizationInfoRequest
 */
 func (a *NIDDAuthorizationInfoDocumentApiService) GetNiddAuthorizationInfo(ctx context.Context, ueId string) ApiGetNiddAuthorizationInfoRequest {
 	return ApiGetNiddAuthorizationInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return NiddAuthorizationInfo
+//
+//	@return NiddAuthorizationInfo
 func (a *NIDDAuthorizationInfoDocumentApiService) GetNiddAuthorizationInfoExecute(r ApiGetNiddAuthorizationInfoRequest) (*NiddAuthorizationInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NiddAuthorizationInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NiddAuthorizationInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NIDDAuthorizationInfoDocumentApiService.GetNiddAuthorizationInfo")
@@ -209,9 +210,9 @@ func (a *NIDDAuthorizationInfoDocumentApiService) GetNiddAuthorizationInfoExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -237,10 +238,10 @@ func (a *NIDDAuthorizationInfoDocumentApiService) GetNiddAuthorizationInfoExecut
 }
 
 type ApiModifyNiddAuthorizationInfoRequest struct {
-	ctx context.Context
-	ApiService *NIDDAuthorizationInfoDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *NIDDAuthorizationInfoDocumentApiService
+	ueId              string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -262,26 +263,27 @@ func (r ApiModifyNiddAuthorizationInfoRequest) Execute() (*PatchResult, *http.Re
 /*
 ModifyNiddAuthorizationInfo Modify NIDD Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiModifyNiddAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiModifyNiddAuthorizationInfoRequest
 */
 func (a *NIDDAuthorizationInfoDocumentApiService) ModifyNiddAuthorizationInfo(ctx context.Context, ueId string) ApiModifyNiddAuthorizationInfoRequest {
 	return ApiModifyNiddAuthorizationInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *NIDDAuthorizationInfoDocumentApiService) ModifyNiddAuthorizationInfoExecute(r ApiModifyNiddAuthorizationInfoRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NIDDAuthorizationInfoDocumentApiService.ModifyNiddAuthorizationInfo")
@@ -300,7 +302,7 @@ func (a *NIDDAuthorizationInfoDocumentApiService) ModifyNiddAuthorizationInfoExe
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -331,9 +333,9 @@ func (a *NIDDAuthorizationInfoDocumentApiService) ModifyNiddAuthorizationInfoExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -350,8 +352,8 @@ func (a *NIDDAuthorizationInfoDocumentApiService) ModifyNiddAuthorizationInfoExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -370,9 +372,9 @@ func (a *NIDDAuthorizationInfoDocumentApiService) ModifyNiddAuthorizationInfoExe
 }
 
 type ApiRemoveNiddAuthorizationInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NIDDAuthorizationInfoDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiRemoveNiddAuthorizationInfoRequest) Execute() (*http.Response, error) {
@@ -382,24 +384,24 @@ func (r ApiRemoveNiddAuthorizationInfoRequest) Execute() (*http.Response, error)
 /*
 RemoveNiddAuthorizationInfo Delete NIDD Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiRemoveNiddAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiRemoveNiddAuthorizationInfoRequest
 */
 func (a *NIDDAuthorizationInfoDocumentApiService) RemoveNiddAuthorizationInfo(ctx context.Context, ueId string) ApiRemoveNiddAuthorizationInfoRequest {
 	return ApiRemoveNiddAuthorizationInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *NIDDAuthorizationInfoDocumentApiService) RemoveNiddAuthorizationInfoExecute(r ApiRemoveNiddAuthorizationInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NIDDAuthorizationInfoDocumentApiService.RemoveNiddAuthorizationInfo")
@@ -441,9 +443,9 @@ func (a *NIDDAuthorizationInfoDocumentApiService) RemoveNiddAuthorizationInfoExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

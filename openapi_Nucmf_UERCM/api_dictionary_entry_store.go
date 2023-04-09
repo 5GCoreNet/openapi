@@ -1,7 +1,7 @@
 /*
 Nucmf_UECapabilityManagement
 
-Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nucmf_UERCM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // DictionaryEntryStoreApiService DictionaryEntryStoreApi service
 type DictionaryEntryStoreApiService service
 
 type ApiRetrieveDictionaryEntryRequest struct {
-	ctx context.Context
-	ApiService *DictionaryEntryStoreApiService
-	ueRadioCapaId *UeRadioCapaId
-	racFormat *RacFormat
+	ctx               context.Context
+	ApiService        *DictionaryEntryStoreApiService
+	ueRadioCapaId     *UeRadioCapaId
+	racFormat         *RacFormat
 	supportedFeatures *string
 }
 
@@ -55,24 +54,25 @@ func (r ApiRetrieveDictionaryEntryRequest) Execute() (*RetrieveDictionaryEntry20
 /*
 RetrieveDictionaryEntry retrieve a dictionary entry matching query parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrieveDictionaryEntryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRetrieveDictionaryEntryRequest
 */
 func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntry(ctx context.Context) ApiRetrieveDictionaryEntryRequest {
 	return ApiRetrieveDictionaryEntryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RetrieveDictionaryEntry200Response
+//
+//	@return RetrieveDictionaryEntry200Response
 func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRetrieveDictionaryEntryRequest) (*RetrieveDictionaryEntry200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RetrieveDictionaryEntry200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RetrieveDictionaryEntry200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryEntryStoreApiService.RetrieveDictionaryEntry")
@@ -89,12 +89,12 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 		return localVarReturnValue, nil, reportError("ueRadioCapaId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "ue-radio-capa-id", r.ueRadioCapaId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ue-radio-capa-id", r.ueRadioCapaId, "")
 	if r.racFormat != nil {
-		parameterAddToQuery(localVarQueryParams, "rac-format", r.racFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rac-format", r.racFormat, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -142,8 +142,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -153,8 +153,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -164,8 +164,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -175,8 +175,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -186,8 +186,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -197,8 +197,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -208,8 +208,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -219,8 +219,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -230,8 +230,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -241,8 +241,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -252,8 +252,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -263,8 +263,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -274,8 +274,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -285,8 +285,8 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

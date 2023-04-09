@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -70,7 +70,7 @@ func (o *CagData1) SetCagInfos(v map[string]CagInfo1) {
 
 // GetProvisioningTime returns the ProvisioningTime field value if set, zero value otherwise.
 func (o *CagData1) GetProvisioningTime() time.Time {
-	if o == nil || isNil(o.ProvisioningTime) {
+	if o == nil || IsNil(o.ProvisioningTime) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *CagData1) GetProvisioningTime() time.Time {
 // GetProvisioningTimeOk returns a tuple with the ProvisioningTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CagData1) GetProvisioningTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ProvisioningTime) {
+	if o == nil || IsNil(o.ProvisioningTime) {
 		return nil, false
 	}
 	return o.ProvisioningTime, true
@@ -88,7 +88,7 @@ func (o *CagData1) GetProvisioningTimeOk() (*time.Time, bool) {
 
 // HasProvisioningTime returns a boolean if a field has been set.
 func (o *CagData1) HasProvisioningTime() bool {
-	if o != nil && !isNil(o.ProvisioningTime) {
+	if o != nil && !IsNil(o.ProvisioningTime) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *CagData1) SetProvisioningTime(v time.Time) {
 }
 
 func (o CagData1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -111,7 +111,7 @@ func (o CagData1) MarshalJSON() ([]byte, error) {
 func (o CagData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cagInfos"] = o.CagInfos
-	if !isNil(o.ProvisioningTime) {
+	if !IsNil(o.ProvisioningTime) {
 		toSerialize["provisioningTime"] = o.ProvisioningTime
 	}
 	return toSerialize, nil
@@ -152,5 +152,3 @@ func (v *NullableCagData1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

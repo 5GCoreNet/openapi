@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -43,7 +43,7 @@ func NewUeContextInAmfDataWithDefaults() *UeContextInAmfData {
 
 // GetEpsInterworkingInfo returns the EpsInterworkingInfo field value if set, zero value otherwise.
 func (o *UeContextInAmfData) GetEpsInterworkingInfo() EpsInterworkingInfo {
-	if o == nil || isNil(o.EpsInterworkingInfo) {
+	if o == nil || IsNil(o.EpsInterworkingInfo) {
 		var ret EpsInterworkingInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UeContextInAmfData) GetEpsInterworkingInfo() EpsInterworkingInfo {
 // GetEpsInterworkingInfoOk returns a tuple with the EpsInterworkingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInAmfData) GetEpsInterworkingInfoOk() (*EpsInterworkingInfo, bool) {
-	if o == nil || isNil(o.EpsInterworkingInfo) {
+	if o == nil || IsNil(o.EpsInterworkingInfo) {
 		return nil, false
 	}
 	return o.EpsInterworkingInfo, true
@@ -61,7 +61,7 @@ func (o *UeContextInAmfData) GetEpsInterworkingInfoOk() (*EpsInterworkingInfo, b
 
 // HasEpsInterworkingInfo returns a boolean if a field has been set.
 func (o *UeContextInAmfData) HasEpsInterworkingInfo() bool {
-	if o != nil && !isNil(o.EpsInterworkingInfo) {
+	if o != nil && !IsNil(o.EpsInterworkingInfo) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UeContextInAmfData) SetEpsInterworkingInfo(v EpsInterworkingInfo) {
 
 // GetAmfInfo returns the AmfInfo field value if set, zero value otherwise.
 func (o *UeContextInAmfData) GetAmfInfo() []AmfInfo {
-	if o == nil || isNil(o.AmfInfo) {
+	if o == nil || IsNil(o.AmfInfo) {
 		var ret []AmfInfo
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UeContextInAmfData) GetAmfInfo() []AmfInfo {
 // GetAmfInfoOk returns a tuple with the AmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInAmfData) GetAmfInfoOk() ([]AmfInfo, bool) {
-	if o == nil || isNil(o.AmfInfo) {
+	if o == nil || IsNil(o.AmfInfo) {
 		return nil, false
 	}
 	return o.AmfInfo, true
@@ -93,7 +93,7 @@ func (o *UeContextInAmfData) GetAmfInfoOk() ([]AmfInfo, bool) {
 
 // HasAmfInfo returns a boolean if a field has been set.
 func (o *UeContextInAmfData) HasAmfInfo() bool {
-	if o != nil && !isNil(o.AmfInfo) {
+	if o != nil && !IsNil(o.AmfInfo) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *UeContextInAmfData) SetAmfInfo(v []AmfInfo) {
 }
 
 func (o UeContextInAmfData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o UeContextInAmfData) MarshalJSON() ([]byte, error) {
 
 func (o UeContextInAmfData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EpsInterworkingInfo) {
+	if !IsNil(o.EpsInterworkingInfo) {
 		toSerialize["epsInterworkingInfo"] = o.EpsInterworkingInfo
 	}
-	if !isNil(o.AmfInfo) {
+	if !IsNil(o.AmfInfo) {
 		toSerialize["amfInfo"] = o.AmfInfo
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableUeContextInAmfData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &LocationReportingConfiguration1{}
 
 // LocationReportingConfiguration1 struct for LocationReportingConfiguration1
 type LocationReportingConfiguration1 struct {
-	CurrentLocation bool `json:"currentLocation"`
-	OneTime *bool `json:"oneTime,omitempty"`
-	Accuracy *LocationAccuracy `json:"accuracy,omitempty"`
-	N3gppAccuracy *LocationAccuracy `json:"n3gppAccuracy,omitempty"`
+	CurrentLocation bool              `json:"currentLocation"`
+	OneTime         *bool             `json:"oneTime,omitempty"`
+	Accuracy        *LocationAccuracy `json:"accuracy,omitempty"`
+	N3gppAccuracy   *LocationAccuracy `json:"n3gppAccuracy,omitempty"`
 }
 
 // NewLocationReportingConfiguration1 instantiates a new LocationReportingConfiguration1 object
@@ -69,7 +69,7 @@ func (o *LocationReportingConfiguration1) SetCurrentLocation(v bool) {
 
 // GetOneTime returns the OneTime field value if set, zero value otherwise.
 func (o *LocationReportingConfiguration1) GetOneTime() bool {
-	if o == nil || isNil(o.OneTime) {
+	if o == nil || IsNil(o.OneTime) {
 		var ret bool
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *LocationReportingConfiguration1) GetOneTime() bool {
 // GetOneTimeOk returns a tuple with the OneTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingConfiguration1) GetOneTimeOk() (*bool, bool) {
-	if o == nil || isNil(o.OneTime) {
+	if o == nil || IsNil(o.OneTime) {
 		return nil, false
 	}
 	return o.OneTime, true
@@ -87,7 +87,7 @@ func (o *LocationReportingConfiguration1) GetOneTimeOk() (*bool, bool) {
 
 // HasOneTime returns a boolean if a field has been set.
 func (o *LocationReportingConfiguration1) HasOneTime() bool {
-	if o != nil && !isNil(o.OneTime) {
+	if o != nil && !IsNil(o.OneTime) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *LocationReportingConfiguration1) SetOneTime(v bool) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *LocationReportingConfiguration1) GetAccuracy() LocationAccuracy {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret LocationAccuracy
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *LocationReportingConfiguration1) GetAccuracy() LocationAccuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingConfiguration1) GetAccuracyOk() (*LocationAccuracy, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -119,7 +119,7 @@ func (o *LocationReportingConfiguration1) GetAccuracyOk() (*LocationAccuracy, bo
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *LocationReportingConfiguration1) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *LocationReportingConfiguration1) SetAccuracy(v LocationAccuracy) {
 
 // GetN3gppAccuracy returns the N3gppAccuracy field value if set, zero value otherwise.
 func (o *LocationReportingConfiguration1) GetN3gppAccuracy() LocationAccuracy {
-	if o == nil || isNil(o.N3gppAccuracy) {
+	if o == nil || IsNil(o.N3gppAccuracy) {
 		var ret LocationAccuracy
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *LocationReportingConfiguration1) GetN3gppAccuracy() LocationAccuracy {
 // GetN3gppAccuracyOk returns a tuple with the N3gppAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingConfiguration1) GetN3gppAccuracyOk() (*LocationAccuracy, bool) {
-	if o == nil || isNil(o.N3gppAccuracy) {
+	if o == nil || IsNil(o.N3gppAccuracy) {
 		return nil, false
 	}
 	return o.N3gppAccuracy, true
@@ -151,7 +151,7 @@ func (o *LocationReportingConfiguration1) GetN3gppAccuracyOk() (*LocationAccurac
 
 // HasN3gppAccuracy returns a boolean if a field has been set.
 func (o *LocationReportingConfiguration1) HasN3gppAccuracy() bool {
-	if o != nil && !isNil(o.N3gppAccuracy) {
+	if o != nil && !IsNil(o.N3gppAccuracy) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *LocationReportingConfiguration1) SetN3gppAccuracy(v LocationAccuracy) {
 }
 
 func (o LocationReportingConfiguration1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,13 +174,13 @@ func (o LocationReportingConfiguration1) MarshalJSON() ([]byte, error) {
 func (o LocationReportingConfiguration1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["currentLocation"] = o.CurrentLocation
-	if !isNil(o.OneTime) {
+	if !IsNil(o.OneTime) {
 		toSerialize["oneTime"] = o.OneTime
 	}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
-	if !isNil(o.N3gppAccuracy) {
+	if !IsNil(o.N3gppAccuracy) {
 		toSerialize["n3gppAccuracy"] = o.N3gppAccuracy
 	}
 	return toSerialize, nil
@@ -221,5 +221,3 @@ func (v *NullableLocationReportingConfiguration1) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// TimeUnit Possible values are: - MINUTE: Time unit is per minute. - HOUR: Time unit is per hour. - DAY: Time unit is per day. 
+// TimeUnit Possible values are: - MINUTE: Time unit is per minute. - HOUR: Time unit is per hour. - DAY: Time unit is per day.
 type TimeUnit struct {
-	TimeUnitAnyOf *TimeUnitAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TimeUnit) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into TimeUnitAnyOf
-	err = json.Unmarshal(data, &dst.TimeUnitAnyOf);
-	if err == nil {
-		jsonTimeUnitAnyOf, _ := json.Marshal(dst.TimeUnitAnyOf)
-		if string(jsonTimeUnitAnyOf) == "{}" { // empty struct
-			dst.TimeUnitAnyOf = nil
-		} else {
-			return nil // data stored in dst.TimeUnitAnyOf, return on the first match
-		}
-	} else {
-		dst.TimeUnitAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *TimeUnit) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TimeUnit) MarshalJSON() ([]byte, error) {
-	if src.TimeUnitAnyOf != nil {
-		return json.Marshal(&src.TimeUnitAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableTimeUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

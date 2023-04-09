@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &UeRegStatusUpdateReqData{}
 
 // UeRegStatusUpdateReqData Data within a UE registration status update request to indicate a completion of transferring at a target AMF
 type UeRegStatusUpdateReqData struct {
-	TransferStatus UeContextTransferStatus `json:"transferStatus"`
-	ToReleaseSessionList []int32 `json:"toReleaseSessionList,omitempty"`
-	PcfReselectedInd *bool `json:"pcfReselectedInd,omitempty"`
-	SmfChangeInfoList []SmfChangeInfo `json:"smfChangeInfoList,omitempty"`
-	AnalyticsNotUsedList []string `json:"analyticsNotUsedList,omitempty"`
-	ToReleaseSessionInfo []ReleaseSessionInfo `json:"toReleaseSessionInfo,omitempty"`
+	TransferStatus       UeContextTransferStatus `json:"transferStatus"`
+	ToReleaseSessionList []int32                 `json:"toReleaseSessionList,omitempty"`
+	PcfReselectedInd     *bool                   `json:"pcfReselectedInd,omitempty"`
+	SmfChangeInfoList    []SmfChangeInfo         `json:"smfChangeInfoList,omitempty"`
+	AnalyticsNotUsedList []string                `json:"analyticsNotUsedList,omitempty"`
+	ToReleaseSessionInfo []ReleaseSessionInfo    `json:"toReleaseSessionInfo,omitempty"`
 }
 
 // NewUeRegStatusUpdateReqData instantiates a new UeRegStatusUpdateReqData object
@@ -71,7 +71,7 @@ func (o *UeRegStatusUpdateReqData) SetTransferStatus(v UeContextTransferStatus) 
 
 // GetToReleaseSessionList returns the ToReleaseSessionList field value if set, zero value otherwise.
 func (o *UeRegStatusUpdateReqData) GetToReleaseSessionList() []int32 {
-	if o == nil || isNil(o.ToReleaseSessionList) {
+	if o == nil || IsNil(o.ToReleaseSessionList) {
 		var ret []int32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *UeRegStatusUpdateReqData) GetToReleaseSessionList() []int32 {
 // GetToReleaseSessionListOk returns a tuple with the ToReleaseSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRegStatusUpdateReqData) GetToReleaseSessionListOk() ([]int32, bool) {
-	if o == nil || isNil(o.ToReleaseSessionList) {
+	if o == nil || IsNil(o.ToReleaseSessionList) {
 		return nil, false
 	}
 	return o.ToReleaseSessionList, true
@@ -89,7 +89,7 @@ func (o *UeRegStatusUpdateReqData) GetToReleaseSessionListOk() ([]int32, bool) {
 
 // HasToReleaseSessionList returns a boolean if a field has been set.
 func (o *UeRegStatusUpdateReqData) HasToReleaseSessionList() bool {
-	if o != nil && !isNil(o.ToReleaseSessionList) {
+	if o != nil && !IsNil(o.ToReleaseSessionList) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *UeRegStatusUpdateReqData) SetToReleaseSessionList(v []int32) {
 
 // GetPcfReselectedInd returns the PcfReselectedInd field value if set, zero value otherwise.
 func (o *UeRegStatusUpdateReqData) GetPcfReselectedInd() bool {
-	if o == nil || isNil(o.PcfReselectedInd) {
+	if o == nil || IsNil(o.PcfReselectedInd) {
 		var ret bool
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *UeRegStatusUpdateReqData) GetPcfReselectedInd() bool {
 // GetPcfReselectedIndOk returns a tuple with the PcfReselectedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRegStatusUpdateReqData) GetPcfReselectedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PcfReselectedInd) {
+	if o == nil || IsNil(o.PcfReselectedInd) {
 		return nil, false
 	}
 	return o.PcfReselectedInd, true
@@ -121,7 +121,7 @@ func (o *UeRegStatusUpdateReqData) GetPcfReselectedIndOk() (*bool, bool) {
 
 // HasPcfReselectedInd returns a boolean if a field has been set.
 func (o *UeRegStatusUpdateReqData) HasPcfReselectedInd() bool {
-	if o != nil && !isNil(o.PcfReselectedInd) {
+	if o != nil && !IsNil(o.PcfReselectedInd) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *UeRegStatusUpdateReqData) SetPcfReselectedInd(v bool) {
 
 // GetSmfChangeInfoList returns the SmfChangeInfoList field value if set, zero value otherwise.
 func (o *UeRegStatusUpdateReqData) GetSmfChangeInfoList() []SmfChangeInfo {
-	if o == nil || isNil(o.SmfChangeInfoList) {
+	if o == nil || IsNil(o.SmfChangeInfoList) {
 		var ret []SmfChangeInfo
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *UeRegStatusUpdateReqData) GetSmfChangeInfoList() []SmfChangeInfo {
 // GetSmfChangeInfoListOk returns a tuple with the SmfChangeInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRegStatusUpdateReqData) GetSmfChangeInfoListOk() ([]SmfChangeInfo, bool) {
-	if o == nil || isNil(o.SmfChangeInfoList) {
+	if o == nil || IsNil(o.SmfChangeInfoList) {
 		return nil, false
 	}
 	return o.SmfChangeInfoList, true
@@ -153,7 +153,7 @@ func (o *UeRegStatusUpdateReqData) GetSmfChangeInfoListOk() ([]SmfChangeInfo, bo
 
 // HasSmfChangeInfoList returns a boolean if a field has been set.
 func (o *UeRegStatusUpdateReqData) HasSmfChangeInfoList() bool {
-	if o != nil && !isNil(o.SmfChangeInfoList) {
+	if o != nil && !IsNil(o.SmfChangeInfoList) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *UeRegStatusUpdateReqData) SetSmfChangeInfoList(v []SmfChangeInfo) {
 
 // GetAnalyticsNotUsedList returns the AnalyticsNotUsedList field value if set, zero value otherwise.
 func (o *UeRegStatusUpdateReqData) GetAnalyticsNotUsedList() []string {
-	if o == nil || isNil(o.AnalyticsNotUsedList) {
+	if o == nil || IsNil(o.AnalyticsNotUsedList) {
 		var ret []string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *UeRegStatusUpdateReqData) GetAnalyticsNotUsedList() []string {
 // GetAnalyticsNotUsedListOk returns a tuple with the AnalyticsNotUsedList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRegStatusUpdateReqData) GetAnalyticsNotUsedListOk() ([]string, bool) {
-	if o == nil || isNil(o.AnalyticsNotUsedList) {
+	if o == nil || IsNil(o.AnalyticsNotUsedList) {
 		return nil, false
 	}
 	return o.AnalyticsNotUsedList, true
@@ -185,7 +185,7 @@ func (o *UeRegStatusUpdateReqData) GetAnalyticsNotUsedListOk() ([]string, bool) 
 
 // HasAnalyticsNotUsedList returns a boolean if a field has been set.
 func (o *UeRegStatusUpdateReqData) HasAnalyticsNotUsedList() bool {
-	if o != nil && !isNil(o.AnalyticsNotUsedList) {
+	if o != nil && !IsNil(o.AnalyticsNotUsedList) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *UeRegStatusUpdateReqData) SetAnalyticsNotUsedList(v []string) {
 
 // GetToReleaseSessionInfo returns the ToReleaseSessionInfo field value if set, zero value otherwise.
 func (o *UeRegStatusUpdateReqData) GetToReleaseSessionInfo() []ReleaseSessionInfo {
-	if o == nil || isNil(o.ToReleaseSessionInfo) {
+	if o == nil || IsNil(o.ToReleaseSessionInfo) {
 		var ret []ReleaseSessionInfo
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *UeRegStatusUpdateReqData) GetToReleaseSessionInfo() []ReleaseSessionInf
 // GetToReleaseSessionInfoOk returns a tuple with the ToReleaseSessionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRegStatusUpdateReqData) GetToReleaseSessionInfoOk() ([]ReleaseSessionInfo, bool) {
-	if o == nil || isNil(o.ToReleaseSessionInfo) {
+	if o == nil || IsNil(o.ToReleaseSessionInfo) {
 		return nil, false
 	}
 	return o.ToReleaseSessionInfo, true
@@ -217,7 +217,7 @@ func (o *UeRegStatusUpdateReqData) GetToReleaseSessionInfoOk() ([]ReleaseSession
 
 // HasToReleaseSessionInfo returns a boolean if a field has been set.
 func (o *UeRegStatusUpdateReqData) HasToReleaseSessionInfo() bool {
-	if o != nil && !isNil(o.ToReleaseSessionInfo) {
+	if o != nil && !IsNil(o.ToReleaseSessionInfo) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *UeRegStatusUpdateReqData) SetToReleaseSessionInfo(v []ReleaseSessionInf
 }
 
 func (o UeRegStatusUpdateReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,19 +240,19 @@ func (o UeRegStatusUpdateReqData) MarshalJSON() ([]byte, error) {
 func (o UeRegStatusUpdateReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["transferStatus"] = o.TransferStatus
-	if !isNil(o.ToReleaseSessionList) {
+	if !IsNil(o.ToReleaseSessionList) {
 		toSerialize["toReleaseSessionList"] = o.ToReleaseSessionList
 	}
-	if !isNil(o.PcfReselectedInd) {
+	if !IsNil(o.PcfReselectedInd) {
 		toSerialize["pcfReselectedInd"] = o.PcfReselectedInd
 	}
-	if !isNil(o.SmfChangeInfoList) {
+	if !IsNil(o.SmfChangeInfoList) {
 		toSerialize["smfChangeInfoList"] = o.SmfChangeInfoList
 	}
-	if !isNil(o.AnalyticsNotUsedList) {
+	if !IsNil(o.AnalyticsNotUsedList) {
 		toSerialize["analyticsNotUsedList"] = o.AnalyticsNotUsedList
 	}
-	if !isNil(o.ToReleaseSessionInfo) {
+	if !IsNil(o.ToReleaseSessionInfo) {
 		toSerialize["toReleaseSessionInfo"] = o.ToReleaseSessionInfo
 	}
 	return toSerialize, nil
@@ -293,5 +293,3 @@ func (v *NullableUeRegStatusUpdateReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,35 +20,35 @@ var _ MappedNullable = &EventNotifyData{}
 
 // EventNotifyData Contains the input parameters for the target UE in EventNotify Notification service operation
 type EventNotifyData struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
 	// LDR Reference.
-	LdrReference string `json:"ldrReference"`
-	EventNotifyDataType EventNotifyDataType `json:"eventNotifyDataType"`
-	LocationEstimate *GeographicArea `json:"locationEstimate,omitempty"`
-	CivicAddress *CivicAddress `json:"civicAddress,omitempty"`
-	LocalLocationEstimate *LocalArea `json:"localLocationEstimate,omitempty"`
+	LdrReference          string              `json:"ldrReference"`
+	EventNotifyDataType   EventNotifyDataType `json:"eventNotifyDataType"`
+	LocationEstimate      *GeographicArea     `json:"locationEstimate,omitempty"`
+	CivicAddress          *CivicAddress       `json:"civicAddress,omitempty"`
+	LocalLocationEstimate *LocalArea          `json:"localLocationEstimate,omitempty"`
 	// Indicates value of the age of the location estimate.
 	AgeOfLocationEstimate *int32 `json:"ageOfLocationEstimate,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimestampOfLocationEstimate *time.Time `json:"timestampOfLocationEstimate,omitempty"`
-	PositioningDataList []PositioningMethodAndUsage `json:"positioningDataList,omitempty"`
-	GnssPositioningDataList []GnssPositioningMethodAndUsage `json:"gnssPositioningDataList,omitempty"`
+	TimestampOfLocationEstimate *time.Time                      `json:"timestampOfLocationEstimate,omitempty"`
+	PositioningDataList         []PositioningMethodAndUsage     `json:"positioningDataList,omitempty"`
+	GnssPositioningDataList     []GnssPositioningMethodAndUsage `json:"gnssPositioningDataList,omitempty"`
 	// LMF identification.
 	LmfIdentification *string `json:"lmfIdentification,omitempty"`
-	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).  
-	AmfId *string `json:"amfId,omitempty"`
+	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).
+	AmfId            *string           `json:"amfId,omitempty"`
 	TerminationCause *TerminationCause `json:"terminationCause,omitempty"`
 	VelocityEstimate *VelocityEstimate `json:"velocityEstimate,omitempty"`
 	// Indicates value of altitude.
 	Altitude *float64 `json:"altitude,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	TargetNode *string `json:"targetNode,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	TargetNode                  *string                      `json:"targetNode,omitempty"`
 	AccuracyFulfilmentIndicator *AccuracyFulfilmentIndicator `json:"accuracyFulfilmentIndicator,omitempty"`
-	FailureCause *FailureCause `json:"failureCause,omitempty"`
-	AchievedQos *MinorLocationQoS `json:"achievedQos,omitempty"`
+	FailureCause                *FailureCause                `json:"failureCause,omitempty"`
+	AchievedQos                 *MinorLocationQoS            `json:"achievedQos,omitempty"`
 }
 
 // NewEventNotifyData instantiates a new EventNotifyData object
@@ -72,7 +72,7 @@ func NewEventNotifyDataWithDefaults() *EventNotifyData {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *EventNotifyData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *EventNotifyData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -90,7 +90,7 @@ func (o *EventNotifyData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *EventNotifyData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *EventNotifyData) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *EventNotifyData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *EventNotifyData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -122,7 +122,7 @@ func (o *EventNotifyData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *EventNotifyData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *EventNotifyData) SetEventNotifyDataType(v EventNotifyDataType) {
 
 // GetLocationEstimate returns the LocationEstimate field value if set, zero value otherwise.
 func (o *EventNotifyData) GetLocationEstimate() GeographicArea {
-	if o == nil || isNil(o.LocationEstimate) {
+	if o == nil || IsNil(o.LocationEstimate) {
 		var ret GeographicArea
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *EventNotifyData) GetLocationEstimate() GeographicArea {
 // GetLocationEstimateOk returns a tuple with the LocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetLocationEstimateOk() (*GeographicArea, bool) {
-	if o == nil || isNil(o.LocationEstimate) {
+	if o == nil || IsNil(o.LocationEstimate) {
 		return nil, false
 	}
 	return o.LocationEstimate, true
@@ -202,7 +202,7 @@ func (o *EventNotifyData) GetLocationEstimateOk() (*GeographicArea, bool) {
 
 // HasLocationEstimate returns a boolean if a field has been set.
 func (o *EventNotifyData) HasLocationEstimate() bool {
-	if o != nil && !isNil(o.LocationEstimate) {
+	if o != nil && !IsNil(o.LocationEstimate) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *EventNotifyData) SetLocationEstimate(v GeographicArea) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *EventNotifyData) GetCivicAddress() CivicAddress {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *EventNotifyData) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -234,7 +234,7 @@ func (o *EventNotifyData) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *EventNotifyData) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *EventNotifyData) SetCivicAddress(v CivicAddress) {
 
 // GetLocalLocationEstimate returns the LocalLocationEstimate field value if set, zero value otherwise.
 func (o *EventNotifyData) GetLocalLocationEstimate() LocalArea {
-	if o == nil || isNil(o.LocalLocationEstimate) {
+	if o == nil || IsNil(o.LocalLocationEstimate) {
 		var ret LocalArea
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *EventNotifyData) GetLocalLocationEstimate() LocalArea {
 // GetLocalLocationEstimateOk returns a tuple with the LocalLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetLocalLocationEstimateOk() (*LocalArea, bool) {
-	if o == nil || isNil(o.LocalLocationEstimate) {
+	if o == nil || IsNil(o.LocalLocationEstimate) {
 		return nil, false
 	}
 	return o.LocalLocationEstimate, true
@@ -266,7 +266,7 @@ func (o *EventNotifyData) GetLocalLocationEstimateOk() (*LocalArea, bool) {
 
 // HasLocalLocationEstimate returns a boolean if a field has been set.
 func (o *EventNotifyData) HasLocalLocationEstimate() bool {
-	if o != nil && !isNil(o.LocalLocationEstimate) {
+	if o != nil && !IsNil(o.LocalLocationEstimate) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *EventNotifyData) SetLocalLocationEstimate(v LocalArea) {
 
 // GetAgeOfLocationEstimate returns the AgeOfLocationEstimate field value if set, zero value otherwise.
 func (o *EventNotifyData) GetAgeOfLocationEstimate() int32 {
-	if o == nil || isNil(o.AgeOfLocationEstimate) {
+	if o == nil || IsNil(o.AgeOfLocationEstimate) {
 		var ret int32
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *EventNotifyData) GetAgeOfLocationEstimate() int32 {
 // GetAgeOfLocationEstimateOk returns a tuple with the AgeOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetAgeOfLocationEstimateOk() (*int32, bool) {
-	if o == nil || isNil(o.AgeOfLocationEstimate) {
+	if o == nil || IsNil(o.AgeOfLocationEstimate) {
 		return nil, false
 	}
 	return o.AgeOfLocationEstimate, true
@@ -298,7 +298,7 @@ func (o *EventNotifyData) GetAgeOfLocationEstimateOk() (*int32, bool) {
 
 // HasAgeOfLocationEstimate returns a boolean if a field has been set.
 func (o *EventNotifyData) HasAgeOfLocationEstimate() bool {
-	if o != nil && !isNil(o.AgeOfLocationEstimate) {
+	if o != nil && !IsNil(o.AgeOfLocationEstimate) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *EventNotifyData) SetAgeOfLocationEstimate(v int32) {
 
 // GetTimestampOfLocationEstimate returns the TimestampOfLocationEstimate field value if set, zero value otherwise.
 func (o *EventNotifyData) GetTimestampOfLocationEstimate() time.Time {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		var ret time.Time
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *EventNotifyData) GetTimestampOfLocationEstimate() time.Time {
 // GetTimestampOfLocationEstimateOk returns a tuple with the TimestampOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		return nil, false
 	}
 	return o.TimestampOfLocationEstimate, true
@@ -330,7 +330,7 @@ func (o *EventNotifyData) GetTimestampOfLocationEstimateOk() (*time.Time, bool) 
 
 // HasTimestampOfLocationEstimate returns a boolean if a field has been set.
 func (o *EventNotifyData) HasTimestampOfLocationEstimate() bool {
-	if o != nil && !isNil(o.TimestampOfLocationEstimate) {
+	if o != nil && !IsNil(o.TimestampOfLocationEstimate) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *EventNotifyData) SetTimestampOfLocationEstimate(v time.Time) {
 
 // GetPositioningDataList returns the PositioningDataList field value if set, zero value otherwise.
 func (o *EventNotifyData) GetPositioningDataList() []PositioningMethodAndUsage {
-	if o == nil || isNil(o.PositioningDataList) {
+	if o == nil || IsNil(o.PositioningDataList) {
 		var ret []PositioningMethodAndUsage
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *EventNotifyData) GetPositioningDataList() []PositioningMethodAndUsage {
 // GetPositioningDataListOk returns a tuple with the PositioningDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetPositioningDataListOk() ([]PositioningMethodAndUsage, bool) {
-	if o == nil || isNil(o.PositioningDataList) {
+	if o == nil || IsNil(o.PositioningDataList) {
 		return nil, false
 	}
 	return o.PositioningDataList, true
@@ -362,7 +362,7 @@ func (o *EventNotifyData) GetPositioningDataListOk() ([]PositioningMethodAndUsag
 
 // HasPositioningDataList returns a boolean if a field has been set.
 func (o *EventNotifyData) HasPositioningDataList() bool {
-	if o != nil && !isNil(o.PositioningDataList) {
+	if o != nil && !IsNil(o.PositioningDataList) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *EventNotifyData) SetPositioningDataList(v []PositioningMethodAndUsage) 
 
 // GetGnssPositioningDataList returns the GnssPositioningDataList field value if set, zero value otherwise.
 func (o *EventNotifyData) GetGnssPositioningDataList() []GnssPositioningMethodAndUsage {
-	if o == nil || isNil(o.GnssPositioningDataList) {
+	if o == nil || IsNil(o.GnssPositioningDataList) {
 		var ret []GnssPositioningMethodAndUsage
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *EventNotifyData) GetGnssPositioningDataList() []GnssPositioningMethodAn
 // GetGnssPositioningDataListOk returns a tuple with the GnssPositioningDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetGnssPositioningDataListOk() ([]GnssPositioningMethodAndUsage, bool) {
-	if o == nil || isNil(o.GnssPositioningDataList) {
+	if o == nil || IsNil(o.GnssPositioningDataList) {
 		return nil, false
 	}
 	return o.GnssPositioningDataList, true
@@ -394,7 +394,7 @@ func (o *EventNotifyData) GetGnssPositioningDataListOk() ([]GnssPositioningMetho
 
 // HasGnssPositioningDataList returns a boolean if a field has been set.
 func (o *EventNotifyData) HasGnssPositioningDataList() bool {
-	if o != nil && !isNil(o.GnssPositioningDataList) {
+	if o != nil && !IsNil(o.GnssPositioningDataList) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *EventNotifyData) SetGnssPositioningDataList(v []GnssPositioningMethodAn
 
 // GetLmfIdentification returns the LmfIdentification field value if set, zero value otherwise.
 func (o *EventNotifyData) GetLmfIdentification() string {
-	if o == nil || isNil(o.LmfIdentification) {
+	if o == nil || IsNil(o.LmfIdentification) {
 		var ret string
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *EventNotifyData) GetLmfIdentification() string {
 // GetLmfIdentificationOk returns a tuple with the LmfIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetLmfIdentificationOk() (*string, bool) {
-	if o == nil || isNil(o.LmfIdentification) {
+	if o == nil || IsNil(o.LmfIdentification) {
 		return nil, false
 	}
 	return o.LmfIdentification, true
@@ -426,7 +426,7 @@ func (o *EventNotifyData) GetLmfIdentificationOk() (*string, bool) {
 
 // HasLmfIdentification returns a boolean if a field has been set.
 func (o *EventNotifyData) HasLmfIdentification() bool {
-	if o != nil && !isNil(o.LmfIdentification) {
+	if o != nil && !IsNil(o.LmfIdentification) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *EventNotifyData) SetLmfIdentification(v string) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *EventNotifyData) GetAmfId() string {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *EventNotifyData) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetAmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -458,7 +458,7 @@ func (o *EventNotifyData) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *EventNotifyData) HasAmfId() bool {
-	if o != nil && !isNil(o.AmfId) {
+	if o != nil && !IsNil(o.AmfId) {
 		return true
 	}
 
@@ -472,7 +472,7 @@ func (o *EventNotifyData) SetAmfId(v string) {
 
 // GetTerminationCause returns the TerminationCause field value if set, zero value otherwise.
 func (o *EventNotifyData) GetTerminationCause() TerminationCause {
-	if o == nil || isNil(o.TerminationCause) {
+	if o == nil || IsNil(o.TerminationCause) {
 		var ret TerminationCause
 		return ret
 	}
@@ -482,7 +482,7 @@ func (o *EventNotifyData) GetTerminationCause() TerminationCause {
 // GetTerminationCauseOk returns a tuple with the TerminationCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetTerminationCauseOk() (*TerminationCause, bool) {
-	if o == nil || isNil(o.TerminationCause) {
+	if o == nil || IsNil(o.TerminationCause) {
 		return nil, false
 	}
 	return o.TerminationCause, true
@@ -490,7 +490,7 @@ func (o *EventNotifyData) GetTerminationCauseOk() (*TerminationCause, bool) {
 
 // HasTerminationCause returns a boolean if a field has been set.
 func (o *EventNotifyData) HasTerminationCause() bool {
-	if o != nil && !isNil(o.TerminationCause) {
+	if o != nil && !IsNil(o.TerminationCause) {
 		return true
 	}
 
@@ -504,7 +504,7 @@ func (o *EventNotifyData) SetTerminationCause(v TerminationCause) {
 
 // GetVelocityEstimate returns the VelocityEstimate field value if set, zero value otherwise.
 func (o *EventNotifyData) GetVelocityEstimate() VelocityEstimate {
-	if o == nil || isNil(o.VelocityEstimate) {
+	if o == nil || IsNil(o.VelocityEstimate) {
 		var ret VelocityEstimate
 		return ret
 	}
@@ -514,7 +514,7 @@ func (o *EventNotifyData) GetVelocityEstimate() VelocityEstimate {
 // GetVelocityEstimateOk returns a tuple with the VelocityEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetVelocityEstimateOk() (*VelocityEstimate, bool) {
-	if o == nil || isNil(o.VelocityEstimate) {
+	if o == nil || IsNil(o.VelocityEstimate) {
 		return nil, false
 	}
 	return o.VelocityEstimate, true
@@ -522,7 +522,7 @@ func (o *EventNotifyData) GetVelocityEstimateOk() (*VelocityEstimate, bool) {
 
 // HasVelocityEstimate returns a boolean if a field has been set.
 func (o *EventNotifyData) HasVelocityEstimate() bool {
-	if o != nil && !isNil(o.VelocityEstimate) {
+	if o != nil && !IsNil(o.VelocityEstimate) {
 		return true
 	}
 
@@ -536,7 +536,7 @@ func (o *EventNotifyData) SetVelocityEstimate(v VelocityEstimate) {
 
 // GetAltitude returns the Altitude field value if set, zero value otherwise.
 func (o *EventNotifyData) GetAltitude() float64 {
-	if o == nil || isNil(o.Altitude) {
+	if o == nil || IsNil(o.Altitude) {
 		var ret float64
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *EventNotifyData) GetAltitude() float64 {
 // GetAltitudeOk returns a tuple with the Altitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetAltitudeOk() (*float64, bool) {
-	if o == nil || isNil(o.Altitude) {
+	if o == nil || IsNil(o.Altitude) {
 		return nil, false
 	}
 	return o.Altitude, true
@@ -554,7 +554,7 @@ func (o *EventNotifyData) GetAltitudeOk() (*float64, bool) {
 
 // HasAltitude returns a boolean if a field has been set.
 func (o *EventNotifyData) HasAltitude() bool {
-	if o != nil && !isNil(o.Altitude) {
+	if o != nil && !IsNil(o.Altitude) {
 		return true
 	}
 
@@ -568,7 +568,7 @@ func (o *EventNotifyData) SetAltitude(v float64) {
 
 // GetTargetNode returns the TargetNode field value if set, zero value otherwise.
 func (o *EventNotifyData) GetTargetNode() string {
-	if o == nil || isNil(o.TargetNode) {
+	if o == nil || IsNil(o.TargetNode) {
 		var ret string
 		return ret
 	}
@@ -578,7 +578,7 @@ func (o *EventNotifyData) GetTargetNode() string {
 // GetTargetNodeOk returns a tuple with the TargetNode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetTargetNodeOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNode) {
+	if o == nil || IsNil(o.TargetNode) {
 		return nil, false
 	}
 	return o.TargetNode, true
@@ -586,7 +586,7 @@ func (o *EventNotifyData) GetTargetNodeOk() (*string, bool) {
 
 // HasTargetNode returns a boolean if a field has been set.
 func (o *EventNotifyData) HasTargetNode() bool {
-	if o != nil && !isNil(o.TargetNode) {
+	if o != nil && !IsNil(o.TargetNode) {
 		return true
 	}
 
@@ -600,7 +600,7 @@ func (o *EventNotifyData) SetTargetNode(v string) {
 
 // GetAccuracyFulfilmentIndicator returns the AccuracyFulfilmentIndicator field value if set, zero value otherwise.
 func (o *EventNotifyData) GetAccuracyFulfilmentIndicator() AccuracyFulfilmentIndicator {
-	if o == nil || isNil(o.AccuracyFulfilmentIndicator) {
+	if o == nil || IsNil(o.AccuracyFulfilmentIndicator) {
 		var ret AccuracyFulfilmentIndicator
 		return ret
 	}
@@ -610,7 +610,7 @@ func (o *EventNotifyData) GetAccuracyFulfilmentIndicator() AccuracyFulfilmentInd
 // GetAccuracyFulfilmentIndicatorOk returns a tuple with the AccuracyFulfilmentIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetAccuracyFulfilmentIndicatorOk() (*AccuracyFulfilmentIndicator, bool) {
-	if o == nil || isNil(o.AccuracyFulfilmentIndicator) {
+	if o == nil || IsNil(o.AccuracyFulfilmentIndicator) {
 		return nil, false
 	}
 	return o.AccuracyFulfilmentIndicator, true
@@ -618,7 +618,7 @@ func (o *EventNotifyData) GetAccuracyFulfilmentIndicatorOk() (*AccuracyFulfilmen
 
 // HasAccuracyFulfilmentIndicator returns a boolean if a field has been set.
 func (o *EventNotifyData) HasAccuracyFulfilmentIndicator() bool {
-	if o != nil && !isNil(o.AccuracyFulfilmentIndicator) {
+	if o != nil && !IsNil(o.AccuracyFulfilmentIndicator) {
 		return true
 	}
 
@@ -632,7 +632,7 @@ func (o *EventNotifyData) SetAccuracyFulfilmentIndicator(v AccuracyFulfilmentInd
 
 // GetFailureCause returns the FailureCause field value if set, zero value otherwise.
 func (o *EventNotifyData) GetFailureCause() FailureCause {
-	if o == nil || isNil(o.FailureCause) {
+	if o == nil || IsNil(o.FailureCause) {
 		var ret FailureCause
 		return ret
 	}
@@ -642,7 +642,7 @@ func (o *EventNotifyData) GetFailureCause() FailureCause {
 // GetFailureCauseOk returns a tuple with the FailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetFailureCauseOk() (*FailureCause, bool) {
-	if o == nil || isNil(o.FailureCause) {
+	if o == nil || IsNil(o.FailureCause) {
 		return nil, false
 	}
 	return o.FailureCause, true
@@ -650,7 +650,7 @@ func (o *EventNotifyData) GetFailureCauseOk() (*FailureCause, bool) {
 
 // HasFailureCause returns a boolean if a field has been set.
 func (o *EventNotifyData) HasFailureCause() bool {
-	if o != nil && !isNil(o.FailureCause) {
+	if o != nil && !IsNil(o.FailureCause) {
 		return true
 	}
 
@@ -664,7 +664,7 @@ func (o *EventNotifyData) SetFailureCause(v FailureCause) {
 
 // GetAchievedQos returns the AchievedQos field value if set, zero value otherwise.
 func (o *EventNotifyData) GetAchievedQos() MinorLocationQoS {
-	if o == nil || isNil(o.AchievedQos) {
+	if o == nil || IsNil(o.AchievedQos) {
 		var ret MinorLocationQoS
 		return ret
 	}
@@ -674,7 +674,7 @@ func (o *EventNotifyData) GetAchievedQos() MinorLocationQoS {
 // GetAchievedQosOk returns a tuple with the AchievedQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyData) GetAchievedQosOk() (*MinorLocationQoS, bool) {
-	if o == nil || isNil(o.AchievedQos) {
+	if o == nil || IsNil(o.AchievedQos) {
 		return nil, false
 	}
 	return o.AchievedQos, true
@@ -682,7 +682,7 @@ func (o *EventNotifyData) GetAchievedQosOk() (*MinorLocationQoS, bool) {
 
 // HasAchievedQos returns a boolean if a field has been set.
 func (o *EventNotifyData) HasAchievedQos() bool {
-	if o != nil && !isNil(o.AchievedQos) {
+	if o != nil && !IsNil(o.AchievedQos) {
 		return true
 	}
 
@@ -695,7 +695,7 @@ func (o *EventNotifyData) SetAchievedQos(v MinorLocationQoS) {
 }
 
 func (o EventNotifyData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -704,60 +704,60 @@ func (o EventNotifyData) MarshalJSON() ([]byte, error) {
 
 func (o EventNotifyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	toSerialize["ldrReference"] = o.LdrReference
 	toSerialize["eventNotifyDataType"] = o.EventNotifyDataType
-	if !isNil(o.LocationEstimate) {
+	if !IsNil(o.LocationEstimate) {
 		toSerialize["locationEstimate"] = o.LocationEstimate
 	}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
-	if !isNil(o.LocalLocationEstimate) {
+	if !IsNil(o.LocalLocationEstimate) {
 		toSerialize["localLocationEstimate"] = o.LocalLocationEstimate
 	}
-	if !isNil(o.AgeOfLocationEstimate) {
+	if !IsNil(o.AgeOfLocationEstimate) {
 		toSerialize["ageOfLocationEstimate"] = o.AgeOfLocationEstimate
 	}
-	if !isNil(o.TimestampOfLocationEstimate) {
+	if !IsNil(o.TimestampOfLocationEstimate) {
 		toSerialize["timestampOfLocationEstimate"] = o.TimestampOfLocationEstimate
 	}
-	if !isNil(o.PositioningDataList) {
+	if !IsNil(o.PositioningDataList) {
 		toSerialize["positioningDataList"] = o.PositioningDataList
 	}
-	if !isNil(o.GnssPositioningDataList) {
+	if !IsNil(o.GnssPositioningDataList) {
 		toSerialize["gnssPositioningDataList"] = o.GnssPositioningDataList
 	}
-	if !isNil(o.LmfIdentification) {
+	if !IsNil(o.LmfIdentification) {
 		toSerialize["lmfIdentification"] = o.LmfIdentification
 	}
-	if !isNil(o.AmfId) {
+	if !IsNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
-	if !isNil(o.TerminationCause) {
+	if !IsNil(o.TerminationCause) {
 		toSerialize["terminationCause"] = o.TerminationCause
 	}
-	if !isNil(o.VelocityEstimate) {
+	if !IsNil(o.VelocityEstimate) {
 		toSerialize["velocityEstimate"] = o.VelocityEstimate
 	}
-	if !isNil(o.Altitude) {
+	if !IsNil(o.Altitude) {
 		toSerialize["altitude"] = o.Altitude
 	}
-	if !isNil(o.TargetNode) {
+	if !IsNil(o.TargetNode) {
 		toSerialize["targetNode"] = o.TargetNode
 	}
-	if !isNil(o.AccuracyFulfilmentIndicator) {
+	if !IsNil(o.AccuracyFulfilmentIndicator) {
 		toSerialize["accuracyFulfilmentIndicator"] = o.AccuracyFulfilmentIndicator
 	}
-	if !isNil(o.FailureCause) {
+	if !IsNil(o.FailureCause) {
 		toSerialize["failureCause"] = o.FailureCause
 	}
-	if !isNil(o.AchievedQos) {
+	if !IsNil(o.AchievedQos) {
 		toSerialize["achievedQos"] = o.AchievedQos
 	}
 	return toSerialize, nil
@@ -798,5 +798,3 @@ func (v *NullableEventNotifyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

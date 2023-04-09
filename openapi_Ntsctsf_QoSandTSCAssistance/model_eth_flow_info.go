@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &EthFlowInfo{}
 type EthFlowInfo struct {
 	// Indicates the Ethernet flow identifier.
 	FlowId int32 `json:"flowId"`
-	// Indicates the packet filters of the Ethernet flow. It shall contain UL and/or DL Ethernet flow description. 
+	// Indicates the packet filters of the Ethernet flow. It shall contain UL and/or DL Ethernet flow description.
 	EthFlowDescriptions []EthFlowDescription `json:"ethFlowDescriptions,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *EthFlowInfo) SetFlowId(v int32) {
 
 // GetEthFlowDescriptions returns the EthFlowDescriptions field value if set, zero value otherwise.
 func (o *EthFlowInfo) GetEthFlowDescriptions() []EthFlowDescription {
-	if o == nil || isNil(o.EthFlowDescriptions) {
+	if o == nil || IsNil(o.EthFlowDescriptions) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EthFlowInfo) GetEthFlowDescriptions() []EthFlowDescription {
 // GetEthFlowDescriptionsOk returns a tuple with the EthFlowDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowInfo) GetEthFlowDescriptionsOk() ([]EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthFlowDescriptions) {
+	if o == nil || IsNil(o.EthFlowDescriptions) {
 		return nil, false
 	}
 	return o.EthFlowDescriptions, true
@@ -87,7 +87,7 @@ func (o *EthFlowInfo) GetEthFlowDescriptionsOk() ([]EthFlowDescription, bool) {
 
 // HasEthFlowDescriptions returns a boolean if a field has been set.
 func (o *EthFlowInfo) HasEthFlowDescriptions() bool {
-	if o != nil && !isNil(o.EthFlowDescriptions) {
+	if o != nil && !IsNil(o.EthFlowDescriptions) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *EthFlowInfo) SetEthFlowDescriptions(v []EthFlowDescription) {
 }
 
 func (o EthFlowInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o EthFlowInfo) MarshalJSON() ([]byte, error) {
 func (o EthFlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["flowId"] = o.FlowId
-	if !isNil(o.EthFlowDescriptions) {
+	if !IsNil(o.EthFlowDescriptions) {
 		toSerialize["ethFlowDescriptions"] = o.EthFlowDescriptions
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableEthFlowInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

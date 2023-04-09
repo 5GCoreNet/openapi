@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// EASCategory Possible values are: - UAS: Category of EAS is for Uncrewed Aerial Services. - V2X: Category of EAS is for V2X Services. - OTHER: Any other type of EAS category. 
+// EASCategory Possible values are: - UAS: Category of EAS is for Uncrewed Aerial Services. - V2X: Category of EAS is for V2X Services. - OTHER: Any other type of EAS category.
 type EASCategory struct {
-	EASCategoryAnyOf *EASCategoryAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EASCategory) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EASCategoryAnyOf
-	err = json.Unmarshal(data, &dst.EASCategoryAnyOf);
-	if err == nil {
-		jsonEASCategoryAnyOf, _ := json.Marshal(dst.EASCategoryAnyOf)
-		if string(jsonEASCategoryAnyOf) == "{}" { // empty struct
-			dst.EASCategoryAnyOf = nil
-		} else {
-			return nil // data stored in dst.EASCategoryAnyOf, return on the first match
-		}
-	} else {
-		dst.EASCategoryAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EASCategory) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EASCategory) MarshalJSON() ([]byte, error) {
-	if src.EASCategoryAnyOf != nil {
-		return json.Marshal(&src.EASCategoryAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEASCategory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

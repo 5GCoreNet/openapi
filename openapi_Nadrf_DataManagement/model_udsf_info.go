@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &UdsfInfo{}
 // UdsfInfo Information related to UDSF
 type UdsfInfo struct {
 	// Identifier of a group of NFs.
-	GroupId *string `json:"groupId,omitempty"`
+	GroupId    *string     `json:"groupId,omitempty"`
 	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
-	// A map (list of key-value pairs) where realmId serves as key and each value in the map is an array of IdentityRanges. Each IdentityRange is a range of storageIds. 
+	// A map (list of key-value pairs) where realmId serves as key and each value in the map is an array of IdentityRanges. Each IdentityRange is a range of storageIds.
 	StorageIdRanges *map[string][]IdentityRange `json:"storageIdRanges,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewUdsfInfoWithDefaults() *UdsfInfo {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *UdsfInfo) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UdsfInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdsfInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -63,7 +63,7 @@ func (o *UdsfInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *UdsfInfo) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UdsfInfo) SetGroupId(v string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *UdsfInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UdsfInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdsfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -95,7 +95,7 @@ func (o *UdsfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *UdsfInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UdsfInfo) SetSupiRanges(v []SupiRange) {
 
 // GetStorageIdRanges returns the StorageIdRanges field value if set, zero value otherwise.
 func (o *UdsfInfo) GetStorageIdRanges() map[string][]IdentityRange {
-	if o == nil || isNil(o.StorageIdRanges) {
+	if o == nil || IsNil(o.StorageIdRanges) {
 		var ret map[string][]IdentityRange
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UdsfInfo) GetStorageIdRanges() map[string][]IdentityRange {
 // GetStorageIdRangesOk returns a tuple with the StorageIdRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdsfInfo) GetStorageIdRangesOk() (*map[string][]IdentityRange, bool) {
-	if o == nil || isNil(o.StorageIdRanges) {
+	if o == nil || IsNil(o.StorageIdRanges) {
 		return nil, false
 	}
 	return o.StorageIdRanges, true
@@ -127,7 +127,7 @@ func (o *UdsfInfo) GetStorageIdRangesOk() (*map[string][]IdentityRange, bool) {
 
 // HasStorageIdRanges returns a boolean if a field has been set.
 func (o *UdsfInfo) HasStorageIdRanges() bool {
-	if o != nil && !isNil(o.StorageIdRanges) {
+	if o != nil && !IsNil(o.StorageIdRanges) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UdsfInfo) SetStorageIdRanges(v map[string][]IdentityRange) {
 }
 
 func (o UdsfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o UdsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o UdsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.StorageIdRanges) {
+	if !IsNil(o.StorageIdRanges) {
 		toSerialize["storageIdRanges"] = o.StorageIdRanges
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableUdsfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &ServerCapabilities{}
 
 // ServerCapabilities struct for ServerCapabilities
 type ServerCapabilities struct {
-	MandatoryCapability []int32 `json:"mandatoryCapability,omitempty"`
-	OptionalCapability []int32 `json:"optionalCapability ,omitempty"`
-	ServerName []string `json:"serverName,omitempty"`
+	MandatoryCapability []int32  `json:"mandatoryCapability,omitempty"`
+	OptionalCapability  []int32  `json:"optionalCapability ,omitempty"`
+	ServerName          []string `json:"serverName,omitempty"`
 }
 
 // NewServerCapabilities instantiates a new ServerCapabilities object
@@ -43,7 +43,7 @@ func NewServerCapabilitiesWithDefaults() *ServerCapabilities {
 
 // GetMandatoryCapability returns the MandatoryCapability field value if set, zero value otherwise.
 func (o *ServerCapabilities) GetMandatoryCapability() []int32 {
-	if o == nil || isNil(o.MandatoryCapability) {
+	if o == nil || IsNil(o.MandatoryCapability) {
 		var ret []int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ServerCapabilities) GetMandatoryCapability() []int32 {
 // GetMandatoryCapabilityOk returns a tuple with the MandatoryCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServerCapabilities) GetMandatoryCapabilityOk() ([]int32, bool) {
-	if o == nil || isNil(o.MandatoryCapability) {
+	if o == nil || IsNil(o.MandatoryCapability) {
 		return nil, false
 	}
 	return o.MandatoryCapability, true
@@ -61,7 +61,7 @@ func (o *ServerCapabilities) GetMandatoryCapabilityOk() ([]int32, bool) {
 
 // HasMandatoryCapability returns a boolean if a field has been set.
 func (o *ServerCapabilities) HasMandatoryCapability() bool {
-	if o != nil && !isNil(o.MandatoryCapability) {
+	if o != nil && !IsNil(o.MandatoryCapability) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ServerCapabilities) SetMandatoryCapability(v []int32) {
 
 // GetOptionalCapability returns the OptionalCapability field value if set, zero value otherwise.
 func (o *ServerCapabilities) GetOptionalCapability() []int32 {
-	if o == nil || isNil(o.OptionalCapability) {
+	if o == nil || IsNil(o.OptionalCapability) {
 		var ret []int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ServerCapabilities) GetOptionalCapability() []int32 {
 // GetOptionalCapabilityOk returns a tuple with the OptionalCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServerCapabilities) GetOptionalCapabilityOk() ([]int32, bool) {
-	if o == nil || isNil(o.OptionalCapability) {
+	if o == nil || IsNil(o.OptionalCapability) {
 		return nil, false
 	}
 	return o.OptionalCapability, true
@@ -93,7 +93,7 @@ func (o *ServerCapabilities) GetOptionalCapabilityOk() ([]int32, bool) {
 
 // HasOptionalCapability returns a boolean if a field has been set.
 func (o *ServerCapabilities) HasOptionalCapability() bool {
-	if o != nil && !isNil(o.OptionalCapability) {
+	if o != nil && !IsNil(o.OptionalCapability) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ServerCapabilities) SetOptionalCapability(v []int32) {
 
 // GetServerName returns the ServerName field value if set, zero value otherwise.
 func (o *ServerCapabilities) GetServerName() []string {
-	if o == nil || isNil(o.ServerName) {
+	if o == nil || IsNil(o.ServerName) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ServerCapabilities) GetServerName() []string {
 // GetServerNameOk returns a tuple with the ServerName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServerCapabilities) GetServerNameOk() ([]string, bool) {
-	if o == nil || isNil(o.ServerName) {
+	if o == nil || IsNil(o.ServerName) {
 		return nil, false
 	}
 	return o.ServerName, true
@@ -125,7 +125,7 @@ func (o *ServerCapabilities) GetServerNameOk() ([]string, bool) {
 
 // HasServerName returns a boolean if a field has been set.
 func (o *ServerCapabilities) HasServerName() bool {
-	if o != nil && !isNil(o.ServerName) {
+	if o != nil && !IsNil(o.ServerName) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ServerCapabilities) SetServerName(v []string) {
 }
 
 func (o ServerCapabilities) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ServerCapabilities) MarshalJSON() ([]byte, error) {
 
 func (o ServerCapabilities) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MandatoryCapability) {
+	if !IsNil(o.MandatoryCapability) {
 		toSerialize["mandatoryCapability"] = o.MandatoryCapability
 	}
-	if !isNil(o.OptionalCapability) {
+	if !IsNil(o.OptionalCapability) {
 		toSerialize["optionalCapability "] = o.OptionalCapability
 	}
-	if !isNil(o.ServerName) {
+	if !IsNil(o.ServerName) {
 		toSerialize["serverName"] = o.ServerName
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableServerCapabilities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-chargeable-party
 
-API for Chargeable Party management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Chargeable Party management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &EventReport{}
 
 // EventReport Represents an event report.
 type EventReport struct {
-	Event Event `json:"event"`
+	Event            Event             `json:"event"`
 	AccumulatedUsage *AccumulatedUsage `json:"accumulatedUsage,omitempty"`
 	// Identifies the IP flows that were sent during event subscription
 	FlowIds []int32 `json:"flowIds,omitempty"`
@@ -69,7 +69,7 @@ func (o *EventReport) SetEvent(v Event) {
 
 // GetAccumulatedUsage returns the AccumulatedUsage field value if set, zero value otherwise.
 func (o *EventReport) GetAccumulatedUsage() AccumulatedUsage {
-	if o == nil || isNil(o.AccumulatedUsage) {
+	if o == nil || IsNil(o.AccumulatedUsage) {
 		var ret AccumulatedUsage
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EventReport) GetAccumulatedUsage() AccumulatedUsage {
 // GetAccumulatedUsageOk returns a tuple with the AccumulatedUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReport) GetAccumulatedUsageOk() (*AccumulatedUsage, bool) {
-	if o == nil || isNil(o.AccumulatedUsage) {
+	if o == nil || IsNil(o.AccumulatedUsage) {
 		return nil, false
 	}
 	return o.AccumulatedUsage, true
@@ -87,7 +87,7 @@ func (o *EventReport) GetAccumulatedUsageOk() (*AccumulatedUsage, bool) {
 
 // HasAccumulatedUsage returns a boolean if a field has been set.
 func (o *EventReport) HasAccumulatedUsage() bool {
-	if o != nil && !isNil(o.AccumulatedUsage) {
+	if o != nil && !IsNil(o.AccumulatedUsage) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *EventReport) SetAccumulatedUsage(v AccumulatedUsage) {
 
 // GetFlowIds returns the FlowIds field value if set, zero value otherwise.
 func (o *EventReport) GetFlowIds() []int32 {
-	if o == nil || isNil(o.FlowIds) {
+	if o == nil || IsNil(o.FlowIds) {
 		var ret []int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *EventReport) GetFlowIds() []int32 {
 // GetFlowIdsOk returns a tuple with the FlowIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReport) GetFlowIdsOk() ([]int32, bool) {
-	if o == nil || isNil(o.FlowIds) {
+	if o == nil || IsNil(o.FlowIds) {
 		return nil, false
 	}
 	return o.FlowIds, true
@@ -119,7 +119,7 @@ func (o *EventReport) GetFlowIdsOk() ([]int32, bool) {
 
 // HasFlowIds returns a boolean if a field has been set.
 func (o *EventReport) HasFlowIds() bool {
-	if o != nil && !isNil(o.FlowIds) {
+	if o != nil && !IsNil(o.FlowIds) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *EventReport) SetFlowIds(v []int32) {
 }
 
 func (o EventReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o EventReport) MarshalJSON() ([]byte, error) {
 func (o EventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.AccumulatedUsage) {
+	if !IsNil(o.AccumulatedUsage) {
 		toSerialize["accumulatedUsage"] = o.AccumulatedUsage
 	}
-	if !isNil(o.FlowIds) {
+	if !IsNil(o.FlowIds) {
 		toSerialize["flowIds"] = o.FlowIds
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableEventReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

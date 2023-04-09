@@ -1,7 +1,7 @@
 /*
 CAPIF_Auditing_API
 
-API for auditing.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for auditing.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,15 +22,15 @@ var _ MappedNullable = &Log{}
 type Log struct {
 	// String identifying the API invoked.
 	ApiId string `json:"apiId"`
-	// Name of the API which was invoked, it is set as {apiName} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122. 
+	// Name of the API which was invoked, it is set as {apiName} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122.
 	ApiName string `json:"apiName"`
 	// Version of the API which was invoked
 	ApiVersion string `json:"apiVersion"`
 	// Name of the specific resource invoked
 	ResourceName string `json:"resourceName"`
 	// string providing an URI formatted according to IETF RFC 3986.
-	Uri *string `json:"uri,omitempty"`
-	Protocol Protocol `json:"protocol"`
+	Uri       *string    `json:"uri,omitempty"`
+	Protocol  Protocol   `json:"protocol"`
 	Operation *Operation `json:"operation,omitempty"`
 	// For HTTP protocol, it contains HTTP status code of the invocation
 	Result string `json:"result"`
@@ -38,13 +38,13 @@ type Log struct {
 	InvocationTime *time.Time `json:"invocationTime,omitempty"`
 	// Represents a period of time in units of milliseconds.
 	InvocationLatency *int32 `json:"invocationLatency,omitempty"`
-	// List of input parameters. Can be any value - string, number, boolean, array or object. 
+	// List of input parameters. Can be any value - string, number, boolean, array or object.
 	InputParameters interface{} `json:"inputParameters,omitempty"`
-	// List of output parameters. Can be any value - string, number, boolean, array or object. 
-	OutputParameters interface{} `json:"outputParameters,omitempty"`
-	SrcInterface *InterfaceDescription `json:"srcInterface,omitempty"`
-	DestInterface *InterfaceDescription `json:"destInterface,omitempty"`
-	// It includes the node identifier (as defined in IETF RFC 7239 of all forwarding entities between the API invoker and the AEF, concatenated with comma and space, e.g. 192.0.2.43:80, unknown:_OBFport, 203.0.113.60 
+	// List of output parameters. Can be any value - string, number, boolean, array or object.
+	OutputParameters interface{}           `json:"outputParameters,omitempty"`
+	SrcInterface     *InterfaceDescription `json:"srcInterface,omitempty"`
+	DestInterface    *InterfaceDescription `json:"destInterface,omitempty"`
+	// It includes the node identifier (as defined in IETF RFC 7239 of all forwarding entities between the API invoker and the AEF, concatenated with comma and space, e.g. 192.0.2.43:80, unknown:_OBFport, 203.0.113.60
 	FwdInterface *string `json:"fwdInterface,omitempty"`
 }
 
@@ -169,7 +169,7 @@ func (o *Log) SetResourceName(v string) {
 
 // GetUri returns the Uri field value if set, zero value otherwise.
 func (o *Log) GetUri() string {
-	if o == nil || isNil(o.Uri) {
+	if o == nil || IsNil(o.Uri) {
 		var ret string
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *Log) GetUri() string {
 // GetUriOk returns a tuple with the Uri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetUriOk() (*string, bool) {
-	if o == nil || isNil(o.Uri) {
+	if o == nil || IsNil(o.Uri) {
 		return nil, false
 	}
 	return o.Uri, true
@@ -187,7 +187,7 @@ func (o *Log) GetUriOk() (*string, bool) {
 
 // HasUri returns a boolean if a field has been set.
 func (o *Log) HasUri() bool {
-	if o != nil && !isNil(o.Uri) {
+	if o != nil && !IsNil(o.Uri) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *Log) SetProtocol(v Protocol) {
 
 // GetOperation returns the Operation field value if set, zero value otherwise.
 func (o *Log) GetOperation() Operation {
-	if o == nil || isNil(o.Operation) {
+	if o == nil || IsNil(o.Operation) {
 		var ret Operation
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *Log) GetOperation() Operation {
 // GetOperationOk returns a tuple with the Operation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetOperationOk() (*Operation, bool) {
-	if o == nil || isNil(o.Operation) {
+	if o == nil || IsNil(o.Operation) {
 		return nil, false
 	}
 	return o.Operation, true
@@ -243,7 +243,7 @@ func (o *Log) GetOperationOk() (*Operation, bool) {
 
 // HasOperation returns a boolean if a field has been set.
 func (o *Log) HasOperation() bool {
-	if o != nil && !isNil(o.Operation) {
+	if o != nil && !IsNil(o.Operation) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *Log) SetResult(v string) {
 
 // GetInvocationTime returns the InvocationTime field value if set, zero value otherwise.
 func (o *Log) GetInvocationTime() time.Time {
-	if o == nil || isNil(o.InvocationTime) {
+	if o == nil || IsNil(o.InvocationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *Log) GetInvocationTime() time.Time {
 // GetInvocationTimeOk returns a tuple with the InvocationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetInvocationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.InvocationTime) {
+	if o == nil || IsNil(o.InvocationTime) {
 		return nil, false
 	}
 	return o.InvocationTime, true
@@ -299,7 +299,7 @@ func (o *Log) GetInvocationTimeOk() (*time.Time, bool) {
 
 // HasInvocationTime returns a boolean if a field has been set.
 func (o *Log) HasInvocationTime() bool {
-	if o != nil && !isNil(o.InvocationTime) {
+	if o != nil && !IsNil(o.InvocationTime) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *Log) SetInvocationTime(v time.Time) {
 
 // GetInvocationLatency returns the InvocationLatency field value if set, zero value otherwise.
 func (o *Log) GetInvocationLatency() int32 {
-	if o == nil || isNil(o.InvocationLatency) {
+	if o == nil || IsNil(o.InvocationLatency) {
 		var ret int32
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *Log) GetInvocationLatency() int32 {
 // GetInvocationLatencyOk returns a tuple with the InvocationLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetInvocationLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.InvocationLatency) {
+	if o == nil || IsNil(o.InvocationLatency) {
 		return nil, false
 	}
 	return o.InvocationLatency, true
@@ -331,7 +331,7 @@ func (o *Log) GetInvocationLatencyOk() (*int32, bool) {
 
 // HasInvocationLatency returns a boolean if a field has been set.
 func (o *Log) HasInvocationLatency() bool {
-	if o != nil && !isNil(o.InvocationLatency) {
+	if o != nil && !IsNil(o.InvocationLatency) {
 		return true
 	}
 
@@ -356,7 +356,7 @@ func (o *Log) GetInputParameters() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Log) GetInputParametersOk() (*interface{}, bool) {
-	if o == nil || isNil(o.InputParameters) {
+	if o == nil || IsNil(o.InputParameters) {
 		return nil, false
 	}
 	return &o.InputParameters, true
@@ -364,7 +364,7 @@ func (o *Log) GetInputParametersOk() (*interface{}, bool) {
 
 // HasInputParameters returns a boolean if a field has been set.
 func (o *Log) HasInputParameters() bool {
-	if o != nil && isNil(o.InputParameters) {
+	if o != nil && IsNil(o.InputParameters) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *Log) GetOutputParameters() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Log) GetOutputParametersOk() (*interface{}, bool) {
-	if o == nil || isNil(o.OutputParameters) {
+	if o == nil || IsNil(o.OutputParameters) {
 		return nil, false
 	}
 	return &o.OutputParameters, true
@@ -397,7 +397,7 @@ func (o *Log) GetOutputParametersOk() (*interface{}, bool) {
 
 // HasOutputParameters returns a boolean if a field has been set.
 func (o *Log) HasOutputParameters() bool {
-	if o != nil && isNil(o.OutputParameters) {
+	if o != nil && IsNil(o.OutputParameters) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *Log) SetOutputParameters(v interface{}) {
 
 // GetSrcInterface returns the SrcInterface field value if set, zero value otherwise.
 func (o *Log) GetSrcInterface() InterfaceDescription {
-	if o == nil || isNil(o.SrcInterface) {
+	if o == nil || IsNil(o.SrcInterface) {
 		var ret InterfaceDescription
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *Log) GetSrcInterface() InterfaceDescription {
 // GetSrcInterfaceOk returns a tuple with the SrcInterface field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetSrcInterfaceOk() (*InterfaceDescription, bool) {
-	if o == nil || isNil(o.SrcInterface) {
+	if o == nil || IsNil(o.SrcInterface) {
 		return nil, false
 	}
 	return o.SrcInterface, true
@@ -429,7 +429,7 @@ func (o *Log) GetSrcInterfaceOk() (*InterfaceDescription, bool) {
 
 // HasSrcInterface returns a boolean if a field has been set.
 func (o *Log) HasSrcInterface() bool {
-	if o != nil && !isNil(o.SrcInterface) {
+	if o != nil && !IsNil(o.SrcInterface) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *Log) SetSrcInterface(v InterfaceDescription) {
 
 // GetDestInterface returns the DestInterface field value if set, zero value otherwise.
 func (o *Log) GetDestInterface() InterfaceDescription {
-	if o == nil || isNil(o.DestInterface) {
+	if o == nil || IsNil(o.DestInterface) {
 		var ret InterfaceDescription
 		return ret
 	}
@@ -453,7 +453,7 @@ func (o *Log) GetDestInterface() InterfaceDescription {
 // GetDestInterfaceOk returns a tuple with the DestInterface field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetDestInterfaceOk() (*InterfaceDescription, bool) {
-	if o == nil || isNil(o.DestInterface) {
+	if o == nil || IsNil(o.DestInterface) {
 		return nil, false
 	}
 	return o.DestInterface, true
@@ -461,7 +461,7 @@ func (o *Log) GetDestInterfaceOk() (*InterfaceDescription, bool) {
 
 // HasDestInterface returns a boolean if a field has been set.
 func (o *Log) HasDestInterface() bool {
-	if o != nil && !isNil(o.DestInterface) {
+	if o != nil && !IsNil(o.DestInterface) {
 		return true
 	}
 
@@ -475,7 +475,7 @@ func (o *Log) SetDestInterface(v InterfaceDescription) {
 
 // GetFwdInterface returns the FwdInterface field value if set, zero value otherwise.
 func (o *Log) GetFwdInterface() string {
-	if o == nil || isNil(o.FwdInterface) {
+	if o == nil || IsNil(o.FwdInterface) {
 		var ret string
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *Log) GetFwdInterface() string {
 // GetFwdInterfaceOk returns a tuple with the FwdInterface field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Log) GetFwdInterfaceOk() (*string, bool) {
-	if o == nil || isNil(o.FwdInterface) {
+	if o == nil || IsNil(o.FwdInterface) {
 		return nil, false
 	}
 	return o.FwdInterface, true
@@ -493,7 +493,7 @@ func (o *Log) GetFwdInterfaceOk() (*string, bool) {
 
 // HasFwdInterface returns a boolean if a field has been set.
 func (o *Log) HasFwdInterface() bool {
-	if o != nil && !isNil(o.FwdInterface) {
+	if o != nil && !IsNil(o.FwdInterface) {
 		return true
 	}
 
@@ -506,7 +506,7 @@ func (o *Log) SetFwdInterface(v string) {
 }
 
 func (o Log) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -519,18 +519,18 @@ func (o Log) ToMap() (map[string]interface{}, error) {
 	toSerialize["apiName"] = o.ApiName
 	toSerialize["apiVersion"] = o.ApiVersion
 	toSerialize["resourceName"] = o.ResourceName
-	if !isNil(o.Uri) {
+	if !IsNil(o.Uri) {
 		toSerialize["uri"] = o.Uri
 	}
 	toSerialize["protocol"] = o.Protocol
-	if !isNil(o.Operation) {
+	if !IsNil(o.Operation) {
 		toSerialize["operation"] = o.Operation
 	}
 	toSerialize["result"] = o.Result
-	if !isNil(o.InvocationTime) {
+	if !IsNil(o.InvocationTime) {
 		toSerialize["invocationTime"] = o.InvocationTime
 	}
-	if !isNil(o.InvocationLatency) {
+	if !IsNil(o.InvocationLatency) {
 		toSerialize["invocationLatency"] = o.InvocationLatency
 	}
 	if o.InputParameters != nil {
@@ -539,13 +539,13 @@ func (o Log) ToMap() (map[string]interface{}, error) {
 	if o.OutputParameters != nil {
 		toSerialize["outputParameters"] = o.OutputParameters
 	}
-	if !isNil(o.SrcInterface) {
+	if !IsNil(o.SrcInterface) {
 		toSerialize["srcInterface"] = o.SrcInterface
 	}
-	if !isNil(o.DestInterface) {
+	if !IsNil(o.DestInterface) {
 		toSerialize["destInterface"] = o.DestInterface
 	}
-	if !isNil(o.FwdInterface) {
+	if !IsNil(o.FwdInterface) {
 		toSerialize["fwdInterface"] = o.FwdInterface
 	}
 	return toSerialize, nil
@@ -586,5 +586,3 @@ func (v *NullableLog) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

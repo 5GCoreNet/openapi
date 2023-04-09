@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewGetBlockList200ResponseWithDefaults() *GetBlockList200Response {
 
 // GetBlocks returns the Blocks field value if set, zero value otherwise.
 func (o *GetBlockList200Response) GetBlocks() []interface{} {
-	if o == nil || isNil(o.Blocks) {
+	if o == nil || IsNil(o.Blocks) {
 		var ret []interface{}
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GetBlockList200Response) GetBlocks() []interface{} {
 // GetBlocksOk returns a tuple with the Blocks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GetBlockList200Response) GetBlocksOk() ([]interface{}, bool) {
-	if o == nil || isNil(o.Blocks) {
+	if o == nil || IsNil(o.Blocks) {
 		return nil, false
 	}
 	return o.Blocks, true
@@ -60,7 +60,7 @@ func (o *GetBlockList200Response) GetBlocksOk() ([]interface{}, bool) {
 
 // HasBlocks returns a boolean if a field has been set.
 func (o *GetBlockList200Response) HasBlocks() bool {
-	if o != nil && !isNil(o.Blocks) {
+	if o != nil && !IsNil(o.Blocks) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *GetBlockList200Response) SetBlocks(v []interface{}) {
 }
 
 func (o GetBlockList200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o GetBlockList200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetBlockList200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Blocks) {
+	if !IsNil(o.Blocks) {
 		toSerialize["blocks"] = o.Blocks
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableGetBlockList200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

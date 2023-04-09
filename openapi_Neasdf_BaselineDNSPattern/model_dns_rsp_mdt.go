@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &DnsRspMdt{}
 
 // DnsRspMdt DNS Response message detection template
 type DnsRspMdt struct {
-	MdtId string `json:"mdtId"`
-	Label *string `json:"label,omitempty"`
-	FqdnPatternList []FqdnPatternMatchingRule `json:"fqdnPatternList,omitempty"`
-	EasIpv4AddrRanges []Ipv4AddressRange `json:"easIpv4AddrRanges,omitempty"`
-	EasIpv6PrefixRanges []Ipv6PrefixRange `json:"easIpv6PrefixRanges,omitempty"`
+	MdtId               string                    `json:"mdtId"`
+	Label               *string                   `json:"label,omitempty"`
+	FqdnPatternList     []FqdnPatternMatchingRule `json:"fqdnPatternList,omitempty"`
+	EasIpv4AddrRanges   []Ipv4AddressRange        `json:"easIpv4AddrRanges,omitempty"`
+	EasIpv6PrefixRanges []Ipv6PrefixRange         `json:"easIpv6PrefixRanges,omitempty"`
 }
 
 // NewDnsRspMdt instantiates a new DnsRspMdt object
@@ -70,7 +70,7 @@ func (o *DnsRspMdt) SetMdtId(v string) {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *DnsRspMdt) GetLabel() string {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *DnsRspMdt) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspMdt) GetLabelOk() (*string, bool) {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -88,7 +88,7 @@ func (o *DnsRspMdt) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *DnsRspMdt) HasLabel() bool {
-	if o != nil && !isNil(o.Label) {
+	if o != nil && !IsNil(o.Label) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *DnsRspMdt) SetLabel(v string) {
 
 // GetFqdnPatternList returns the FqdnPatternList field value if set, zero value otherwise.
 func (o *DnsRspMdt) GetFqdnPatternList() []FqdnPatternMatchingRule {
-	if o == nil || isNil(o.FqdnPatternList) {
+	if o == nil || IsNil(o.FqdnPatternList) {
 		var ret []FqdnPatternMatchingRule
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *DnsRspMdt) GetFqdnPatternList() []FqdnPatternMatchingRule {
 // GetFqdnPatternListOk returns a tuple with the FqdnPatternList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspMdt) GetFqdnPatternListOk() ([]FqdnPatternMatchingRule, bool) {
-	if o == nil || isNil(o.FqdnPatternList) {
+	if o == nil || IsNil(o.FqdnPatternList) {
 		return nil, false
 	}
 	return o.FqdnPatternList, true
@@ -120,7 +120,7 @@ func (o *DnsRspMdt) GetFqdnPatternListOk() ([]FqdnPatternMatchingRule, bool) {
 
 // HasFqdnPatternList returns a boolean if a field has been set.
 func (o *DnsRspMdt) HasFqdnPatternList() bool {
-	if o != nil && !isNil(o.FqdnPatternList) {
+	if o != nil && !IsNil(o.FqdnPatternList) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *DnsRspMdt) SetFqdnPatternList(v []FqdnPatternMatchingRule) {
 
 // GetEasIpv4AddrRanges returns the EasIpv4AddrRanges field value if set, zero value otherwise.
 func (o *DnsRspMdt) GetEasIpv4AddrRanges() []Ipv4AddressRange {
-	if o == nil || isNil(o.EasIpv4AddrRanges) {
+	if o == nil || IsNil(o.EasIpv4AddrRanges) {
 		var ret []Ipv4AddressRange
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *DnsRspMdt) GetEasIpv4AddrRanges() []Ipv4AddressRange {
 // GetEasIpv4AddrRangesOk returns a tuple with the EasIpv4AddrRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspMdt) GetEasIpv4AddrRangesOk() ([]Ipv4AddressRange, bool) {
-	if o == nil || isNil(o.EasIpv4AddrRanges) {
+	if o == nil || IsNil(o.EasIpv4AddrRanges) {
 		return nil, false
 	}
 	return o.EasIpv4AddrRanges, true
@@ -152,7 +152,7 @@ func (o *DnsRspMdt) GetEasIpv4AddrRangesOk() ([]Ipv4AddressRange, bool) {
 
 // HasEasIpv4AddrRanges returns a boolean if a field has been set.
 func (o *DnsRspMdt) HasEasIpv4AddrRanges() bool {
-	if o != nil && !isNil(o.EasIpv4AddrRanges) {
+	if o != nil && !IsNil(o.EasIpv4AddrRanges) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *DnsRspMdt) SetEasIpv4AddrRanges(v []Ipv4AddressRange) {
 
 // GetEasIpv6PrefixRanges returns the EasIpv6PrefixRanges field value if set, zero value otherwise.
 func (o *DnsRspMdt) GetEasIpv6PrefixRanges() []Ipv6PrefixRange {
-	if o == nil || isNil(o.EasIpv6PrefixRanges) {
+	if o == nil || IsNil(o.EasIpv6PrefixRanges) {
 		var ret []Ipv6PrefixRange
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *DnsRspMdt) GetEasIpv6PrefixRanges() []Ipv6PrefixRange {
 // GetEasIpv6PrefixRangesOk returns a tuple with the EasIpv6PrefixRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspMdt) GetEasIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
-	if o == nil || isNil(o.EasIpv6PrefixRanges) {
+	if o == nil || IsNil(o.EasIpv6PrefixRanges) {
 		return nil, false
 	}
 	return o.EasIpv6PrefixRanges, true
@@ -184,7 +184,7 @@ func (o *DnsRspMdt) GetEasIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
 
 // HasEasIpv6PrefixRanges returns a boolean if a field has been set.
 func (o *DnsRspMdt) HasEasIpv6PrefixRanges() bool {
-	if o != nil && !isNil(o.EasIpv6PrefixRanges) {
+	if o != nil && !IsNil(o.EasIpv6PrefixRanges) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *DnsRspMdt) SetEasIpv6PrefixRanges(v []Ipv6PrefixRange) {
 }
 
 func (o DnsRspMdt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,16 +207,16 @@ func (o DnsRspMdt) MarshalJSON() ([]byte, error) {
 func (o DnsRspMdt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mdtId"] = o.MdtId
-	if !isNil(o.Label) {
+	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !isNil(o.FqdnPatternList) {
+	if !IsNil(o.FqdnPatternList) {
 		toSerialize["fqdnPatternList"] = o.FqdnPatternList
 	}
-	if !isNil(o.EasIpv4AddrRanges) {
+	if !IsNil(o.EasIpv4AddrRanges) {
 		toSerialize["easIpv4AddrRanges"] = o.EasIpv4AddrRanges
 	}
-	if !isNil(o.EasIpv6PrefixRanges) {
+	if !IsNil(o.EasIpv6PrefixRanges) {
 		toSerialize["easIpv6PrefixRanges"] = o.EasIpv6PrefixRanges
 	}
 	return toSerialize, nil
@@ -257,5 +257,3 @@ func (v *NullableDnsRspMdt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

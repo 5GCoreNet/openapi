@@ -20,7 +20,7 @@ var _ MappedNullable = &NsInfo{}
 // NsInfo struct for NsInfo
 type NsInfo struct {
 	NsInstanceId *string `json:"nsInstanceId,omitempty"`
-	NsName *string `json:"nsName,omitempty"`
+	NsName       *string `json:"nsName,omitempty"`
 }
 
 // NewNsInfo instantiates a new NsInfo object
@@ -42,7 +42,7 @@ func NewNsInfoWithDefaults() *NsInfo {
 
 // GetNsInstanceId returns the NsInstanceId field value if set, zero value otherwise.
 func (o *NsInfo) GetNsInstanceId() string {
-	if o == nil || isNil(o.NsInstanceId) {
+	if o == nil || IsNil(o.NsInstanceId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NsInfo) GetNsInstanceId() string {
 // GetNsInstanceIdOk returns a tuple with the NsInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsInfo) GetNsInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.NsInstanceId) {
+	if o == nil || IsNil(o.NsInstanceId) {
 		return nil, false
 	}
 	return o.NsInstanceId, true
@@ -60,7 +60,7 @@ func (o *NsInfo) GetNsInstanceIdOk() (*string, bool) {
 
 // HasNsInstanceId returns a boolean if a field has been set.
 func (o *NsInfo) HasNsInstanceId() bool {
-	if o != nil && !isNil(o.NsInstanceId) {
+	if o != nil && !IsNil(o.NsInstanceId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NsInfo) SetNsInstanceId(v string) {
 
 // GetNsName returns the NsName field value if set, zero value otherwise.
 func (o *NsInfo) GetNsName() string {
-	if o == nil || isNil(o.NsName) {
+	if o == nil || IsNil(o.NsName) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NsInfo) GetNsName() string {
 // GetNsNameOk returns a tuple with the NsName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsInfo) GetNsNameOk() (*string, bool) {
-	if o == nil || isNil(o.NsName) {
+	if o == nil || IsNil(o.NsName) {
 		return nil, false
 	}
 	return o.NsName, true
@@ -92,7 +92,7 @@ func (o *NsInfo) GetNsNameOk() (*string, bool) {
 
 // HasNsName returns a boolean if a field has been set.
 func (o *NsInfo) HasNsName() bool {
-	if o != nil && !isNil(o.NsName) {
+	if o != nil && !IsNil(o.NsName) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NsInfo) SetNsName(v string) {
 }
 
 func (o NsInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o NsInfo) MarshalJSON() ([]byte, error) {
 
 func (o NsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NsInstanceId) {
+	if !IsNil(o.NsInstanceId) {
 		toSerialize["nsInstanceId"] = o.NsInstanceId
 	}
-	if !isNil(o.NsName) {
+	if !IsNil(o.NsName) {
 		toSerialize["nsName"] = o.NsName
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableNsInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

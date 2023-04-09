@@ -13,21 +13,20 @@ package openapi_FaultMnS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiAlarmsAlarmCountGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx           context.Context
+	ApiService    *DefaultApiService
 	alarmAckState *AlarmAckState
-	filter *string
+	filter        *string
 }
 
 func (r ApiAlarmsAlarmCountGetRequest) AlarmAckState(alarmAckState AlarmAckState) ApiAlarmsAlarmCountGetRequest {
@@ -47,24 +46,25 @@ func (r ApiAlarmsAlarmCountGetRequest) Execute() (*AlarmCount, *http.Response, e
 /*
 AlarmsAlarmCountGet Get the alarm count per perceived severity
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAlarmsAlarmCountGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAlarmsAlarmCountGetRequest
 */
 func (a *DefaultApiService) AlarmsAlarmCountGet(ctx context.Context) ApiAlarmsAlarmCountGetRequest {
 	return ApiAlarmsAlarmCountGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AlarmCount
+//
+//	@return AlarmCount
 func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetRequest) (*AlarmCount, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AlarmCount
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AlarmCount
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.AlarmsAlarmCountGet")
@@ -79,10 +79,10 @@ func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetR
 	localVarFormParams := url.Values{}
 
 	if r.alarmAckState != nil {
-		parameterAddToQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
 	}
 	if r.filter != nil {
-		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -111,9 +111,9 @@ func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -123,14 +123,14 @@ func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -147,10 +147,10 @@ func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetR
 }
 
 type ApiAlarmsAlarmIdCommentsPostRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	alarmId string
-	comment *Comment
+	alarmId    string
+	comment    *Comment
 }
 
 func (r ApiAlarmsAlarmIdCommentsPostRequest) Comment(comment Comment) ApiAlarmsAlarmIdCommentsPostRequest {
@@ -167,26 +167,27 @@ AlarmsAlarmIdCommentsPost Add a comment to a single alarm
 
 Adds a comment to an alarm identified by alarmId. The id of the new comment is allocated by the producer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param alarmId Identifies the alarm to which the comment shall be added.
- @return ApiAlarmsAlarmIdCommentsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param alarmId Identifies the alarm to which the comment shall be added.
+	@return ApiAlarmsAlarmIdCommentsPostRequest
 */
 func (a *DefaultApiService) AlarmsAlarmIdCommentsPost(ctx context.Context, alarmId string) ApiAlarmsAlarmIdCommentsPostRequest {
 	return ApiAlarmsAlarmIdCommentsPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		alarmId: alarmId,
+		ctx:        ctx,
+		alarmId:    alarmId,
 	}
 }
 
 // Execute executes the request
-//  @return Comment
+//
+//	@return Comment
 func (a *DefaultApiService) AlarmsAlarmIdCommentsPostExecute(r ApiAlarmsAlarmIdCommentsPostRequest) (*Comment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Comment
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Comment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.AlarmsAlarmIdCommentsPost")
@@ -233,9 +234,9 @@ func (a *DefaultApiService) AlarmsAlarmIdCommentsPostExecute(r ApiAlarmsAlarmIdC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -245,14 +246,14 @@ func (a *DefaultApiService) AlarmsAlarmIdCommentsPostExecute(r ApiAlarmsAlarmIdC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -269,9 +270,9 @@ func (a *DefaultApiService) AlarmsAlarmIdCommentsPostExecute(r ApiAlarmsAlarmIdC
 }
 
 type ApiAlarmsAlarmIdPatchRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	alarmId string
+	ctx                       context.Context
+	ApiService                *DefaultApiService
+	alarmId                   string
 	alarmsAlarmIdPatchRequest *AlarmsAlarmIdPatchRequest
 }
 
@@ -289,24 +290,24 @@ AlarmsAlarmIdPatch Clear, acknowledge or unacknowledge a single alarm
 
 Clears, acknowledges or uncknowldeges a single alarm by patching the alarm information. A conditional acknowledge request based on the perceived severity is not supported.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param alarmId Identifies the alarm to be patched.
- @return ApiAlarmsAlarmIdPatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param alarmId Identifies the alarm to be patched.
+	@return ApiAlarmsAlarmIdPatchRequest
 */
 func (a *DefaultApiService) AlarmsAlarmIdPatch(ctx context.Context, alarmId string) ApiAlarmsAlarmIdPatchRequest {
 	return ApiAlarmsAlarmIdPatchRequest{
 		ApiService: a,
-		ctx: ctx,
-		alarmId: alarmId,
+		ctx:        ctx,
+		alarmId:    alarmId,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) AlarmsAlarmIdPatchExecute(r ApiAlarmsAlarmIdPatchRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.AlarmsAlarmIdPatch")
@@ -353,9 +354,9 @@ func (a *DefaultApiService) AlarmsAlarmIdPatchExecute(r ApiAlarmsAlarmIdPatchReq
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -365,14 +366,14 @@ func (a *DefaultApiService) AlarmsAlarmIdPatchExecute(r ApiAlarmsAlarmIdPatchReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -380,11 +381,11 @@ func (a *DefaultApiService) AlarmsAlarmIdPatchExecute(r ApiAlarmsAlarmIdPatchReq
 }
 
 type ApiAlarmsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	alarmAckState *AlarmAckState
+	ctx                context.Context
+	ApiService         *DefaultApiService
+	alarmAckState      *AlarmAckState
 	baseObjectInstance *string
-	filter *string
+	filter             *string
 }
 
 func (r ApiAlarmsGetRequest) AlarmAckState(alarmAckState AlarmAckState) ApiAlarmsGetRequest {
@@ -411,24 +412,25 @@ AlarmsGet Retrieve multiple alarms
 
 Retrieves the alarms identified by alarmAckState, baseObjectInstance and filter.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAlarmsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAlarmsGetRequest
 */
 func (a *DefaultApiService) AlarmsGet(ctx context.Context) ApiAlarmsGetRequest {
 	return ApiAlarmsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]AlarmsGet200ResponseValue
+//
+//	@return map[string]AlarmsGet200ResponseValue
 func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string]AlarmsGet200ResponseValue, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *map[string]AlarmsGet200ResponseValue
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *map[string]AlarmsGet200ResponseValue
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.AlarmsGet")
@@ -443,13 +445,13 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 	localVarFormParams := url.Values{}
 
 	if r.alarmAckState != nil {
-		parameterAddToQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
 	}
 	if r.baseObjectInstance != nil {
-		parameterAddToQuery(localVarQueryParams, "baseObjectInstance", r.baseObjectInstance, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "baseObjectInstance", r.baseObjectInstance, "")
 	}
 	if r.filter != nil {
-		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -478,9 +480,9 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -490,14 +492,14 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -514,14 +516,14 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 }
 
 type ApiAlarmsPatchRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	alarmsGetRequest *AlarmsGetRequest
+	ctx                context.Context
+	ApiService         *DefaultApiService
+	alarmsPatchRequest *AlarmsPatchRequest
 }
 
 // Patch documents for acknowledging and unacknowledging, or clearing multiple alarms. The keys in the map are the alarmIds to be patched.
-func (r ApiAlarmsPatchRequest) AlarmsGetRequest(alarmsGetRequest AlarmsGetRequest) ApiAlarmsPatchRequest {
-	r.alarmsGetRequest = &alarmsGetRequest
+func (r ApiAlarmsPatchRequest) AlarmsPatchRequest(alarmsPatchRequest AlarmsPatchRequest) ApiAlarmsPatchRequest {
+	r.alarmsPatchRequest = &alarmsPatchRequest
 	return r
 }
 
@@ -534,22 +536,22 @@ AlarmsPatch Clear, acknowledge or unacknowledge multiple alarms
 
 Clears, acknowledges or unacknowledges multiple alarms using patch. Depending on which action is to be performed, different merge patch documents need to be used.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAlarmsPatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAlarmsPatchRequest
 */
 func (a *DefaultApiService) AlarmsPatch(ctx context.Context) ApiAlarmsPatchRequest {
 	return ApiAlarmsPatchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.AlarmsPatch")
@@ -581,7 +583,7 @@ func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.alarmsGetRequest
+	localVarPostBody = r.alarmsPatchRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -592,9 +594,9 @@ func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.R
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -604,14 +606,14 @@ func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.R
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []FailedAlarm
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v []FailedAlarm
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -619,8 +621,8 @@ func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.R
 }
 
 type ApiSubscriptionsPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	subscription *Subscription
 }
 
@@ -638,24 +640,25 @@ SubscriptionsPost Create a subscription
 
 To create a subscription the representation of the subscription is POSTed on the /subscriptions collection resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSubscriptionsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSubscriptionsPostRequest
 */
 func (a *DefaultApiService) SubscriptionsPost(ctx context.Context) ApiSubscriptionsPostRequest {
 	return ApiSubscriptionsPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Subscription
+//
+//	@return Subscription
 func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostRequest) (*Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Subscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SubscriptionsPost")
@@ -701,9 +704,9 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -713,14 +716,14 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -737,8 +740,8 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 }
 
 type ApiSubscriptionsSubscriptionIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx            context.Context
+	ApiService     *DefaultApiService
 	subscriptionId string
 }
 
@@ -751,14 +754,14 @@ SubscriptionsSubscriptionIdDelete Delete a subscription
 
 The subscription is deleted by deleting the corresponding subscription resource. The resource to be deleted is identified with the path component of the URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifies the subscription to be deleted.
- @return ApiSubscriptionsSubscriptionIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifies the subscription to be deleted.
+	@return ApiSubscriptionsSubscriptionIdDeleteRequest
 */
 func (a *DefaultApiService) SubscriptionsSubscriptionIdDelete(ctx context.Context, subscriptionId string) ApiSubscriptionsSubscriptionIdDeleteRequest {
 	return ApiSubscriptionsSubscriptionIdDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -766,9 +769,9 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDelete(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscriptionsSubscriptionIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SubscriptionsSubscriptionIdDelete")
@@ -810,9 +813,9 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -822,14 +825,14 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 

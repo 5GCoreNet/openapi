@@ -19,7 +19,7 @@ var _ MappedNullable = &BeamSingleAllOf{}
 
 // BeamSingleAllOf struct for BeamSingleAllOf
 type BeamSingleAllOf struct {
-	Attributes *interface{} `json:"attributes,omitempty"`
+	Attributes *BeamSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewBeamSingleAllOf instantiates a new BeamSingleAllOf object
@@ -40,9 +40,9 @@ func NewBeamSingleAllOfWithDefaults() *BeamSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *BeamSingleAllOf) GetAttributes() interface{} {
-	if o == nil || isNil(o.Attributes) {
-		var ret interface{}
+func (o *BeamSingleAllOf) GetAttributes() BeamSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret BeamSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *BeamSingleAllOf) GetAttributes() interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BeamSingleAllOf) GetAttributesOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *BeamSingleAllOf) GetAttributesOk() (*BeamSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *BeamSingleAllOf) GetAttributesOk() (*interface{}, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *BeamSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
-func (o *BeamSingleAllOf) SetAttributes(v interface{}) {
+// SetAttributes gets a reference to the given BeamSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *BeamSingleAllOf) SetAttributes(v BeamSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o BeamSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o BeamSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o BeamSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableBeamSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

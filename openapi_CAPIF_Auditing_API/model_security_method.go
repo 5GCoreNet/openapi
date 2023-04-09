@@ -1,7 +1,7 @@
 /*
 CAPIF_Auditing_API
 
-API for auditing.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for auditing.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SecurityMethod Possible values are: - PSK: Security method 1 (Using TLS-PSK) as described in 3GPP TS 33.122 - PKI: Security method 2 (Using PKI) as described in 3GPP TS 33.122 - OAUTH: Security method 3 (TLS with OAuth token) as described in 3GPP TS 33.122 
+// SecurityMethod Possible values are: - PSK: Security method 1 (Using TLS-PSK) as described in 3GPP TS 33.122 - PKI: Security method 2 (Using PKI) as described in 3GPP TS 33.122 - OAUTH: Security method 3 (TLS with OAuth token) as described in 3GPP TS 33.122
 type SecurityMethod struct {
-	SecurityMethodAnyOf *SecurityMethodAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SecurityMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SecurityMethodAnyOf
-	err = json.Unmarshal(data, &dst.SecurityMethodAnyOf);
-	if err == nil {
-		jsonSecurityMethodAnyOf, _ := json.Marshal(dst.SecurityMethodAnyOf)
-		if string(jsonSecurityMethodAnyOf) == "{}" { // empty struct
-			dst.SecurityMethodAnyOf = nil
-		} else {
-			return nil // data stored in dst.SecurityMethodAnyOf, return on the first match
-		}
-	} else {
-		dst.SecurityMethodAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SecurityMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SecurityMethod) MarshalJSON() ([]byte, error) {
-	if src.SecurityMethodAnyOf != nil {
-		return json.Marshal(&src.SecurityMethodAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSecurityMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,17 +15,17 @@ import (
 	"fmt"
 )
 
-// AccessTypeRm Indicates wether the access is via 3GPP or via non-3GPP but with the OpenAPI  'nullable: true' property.\" 
+// AccessTypeRm Indicates wether the access is via 3GPP or via non-3GPP but with the OpenAPI  'nullable: true' property.\"
 type AccessTypeRm struct {
 	AccessType *AccessType
-	NullValue *NullValue
+	NullValue  *NullValue
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessTypeRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AccessType
-	err = json.Unmarshal(data, &dst.AccessType);
+	err = json.Unmarshal(data, &dst.AccessType)
 	if err == nil {
 		jsonAccessType, _ := json.Marshal(dst.AccessType)
 		if string(jsonAccessType) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *AccessTypeRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableAccessTypeRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewProSeInformationWithDefaults() *ProSeInformation {
 
 // GetN2Pc5ProSePol returns the N2Pc5ProSePol field value if set, zero value otherwise.
 func (o *ProSeInformation) GetN2Pc5ProSePol() N2InfoContent {
-	if o == nil || isNil(o.N2Pc5ProSePol) {
+	if o == nil || IsNil(o.N2Pc5ProSePol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProSeInformation) GetN2Pc5ProSePol() N2InfoContent {
 // GetN2Pc5ProSePolOk returns a tuple with the N2Pc5ProSePol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeInformation) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.N2Pc5ProSePol) {
+	if o == nil || IsNil(o.N2Pc5ProSePol) {
 		return nil, false
 	}
 	return o.N2Pc5ProSePol, true
@@ -59,7 +59,7 @@ func (o *ProSeInformation) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5ProSePol returns a boolean if a field has been set.
 func (o *ProSeInformation) HasN2Pc5ProSePol() bool {
-	if o != nil && !isNil(o.N2Pc5ProSePol) {
+	if o != nil && !IsNil(o.N2Pc5ProSePol) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ProSeInformation) SetN2Pc5ProSePol(v N2InfoContent) {
 }
 
 func (o ProSeInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ProSeInformation) MarshalJSON() ([]byte, error) {
 
 func (o ProSeInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.N2Pc5ProSePol) {
+	if !IsNil(o.N2Pc5ProSePol) {
 		toSerialize["n2Pc5ProSePol"] = o.N2Pc5ProSePol
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableProSeInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

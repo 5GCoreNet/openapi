@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NetworkPerfRequirement{}
 // NetworkPerfRequirement Represents a network performance requirement.
 type NetworkPerfRequirement struct {
 	NwPerfType NetworkPerfType `json:"nwPerfType"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
 	RelativeRatio *int32 `json:"relativeRatio,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	AbsoluteNum *int32 `json:"absoluteNum,omitempty"`
@@ -70,7 +70,7 @@ func (o *NetworkPerfRequirement) SetNwPerfType(v NetworkPerfType) {
 
 // GetRelativeRatio returns the RelativeRatio field value if set, zero value otherwise.
 func (o *NetworkPerfRequirement) GetRelativeRatio() int32 {
-	if o == nil || isNil(o.RelativeRatio) {
+	if o == nil || IsNil(o.RelativeRatio) {
 		var ret int32
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *NetworkPerfRequirement) GetRelativeRatio() int32 {
 // GetRelativeRatioOk returns a tuple with the RelativeRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfRequirement) GetRelativeRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.RelativeRatio) {
+	if o == nil || IsNil(o.RelativeRatio) {
 		return nil, false
 	}
 	return o.RelativeRatio, true
@@ -88,7 +88,7 @@ func (o *NetworkPerfRequirement) GetRelativeRatioOk() (*int32, bool) {
 
 // HasRelativeRatio returns a boolean if a field has been set.
 func (o *NetworkPerfRequirement) HasRelativeRatio() bool {
-	if o != nil && !isNil(o.RelativeRatio) {
+	if o != nil && !IsNil(o.RelativeRatio) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *NetworkPerfRequirement) SetRelativeRatio(v int32) {
 
 // GetAbsoluteNum returns the AbsoluteNum field value if set, zero value otherwise.
 func (o *NetworkPerfRequirement) GetAbsoluteNum() int32 {
-	if o == nil || isNil(o.AbsoluteNum) {
+	if o == nil || IsNil(o.AbsoluteNum) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NetworkPerfRequirement) GetAbsoluteNum() int32 {
 // GetAbsoluteNumOk returns a tuple with the AbsoluteNum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfRequirement) GetAbsoluteNumOk() (*int32, bool) {
-	if o == nil || isNil(o.AbsoluteNum) {
+	if o == nil || IsNil(o.AbsoluteNum) {
 		return nil, false
 	}
 	return o.AbsoluteNum, true
@@ -120,7 +120,7 @@ func (o *NetworkPerfRequirement) GetAbsoluteNumOk() (*int32, bool) {
 
 // HasAbsoluteNum returns a boolean if a field has been set.
 func (o *NetworkPerfRequirement) HasAbsoluteNum() bool {
-	if o != nil && !isNil(o.AbsoluteNum) {
+	if o != nil && !IsNil(o.AbsoluteNum) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *NetworkPerfRequirement) SetAbsoluteNum(v int32) {
 }
 
 func (o NetworkPerfRequirement) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o NetworkPerfRequirement) MarshalJSON() ([]byte, error) {
 func (o NetworkPerfRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwPerfType"] = o.NwPerfType
-	if !isNil(o.RelativeRatio) {
+	if !IsNil(o.RelativeRatio) {
 		toSerialize["relativeRatio"] = o.RelativeRatio
 	}
-	if !isNil(o.AbsoluteNum) {
+	if !IsNil(o.AbsoluteNum) {
 		toSerialize["absoluteNum"] = o.AbsoluteNum
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableNetworkPerfRequirement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

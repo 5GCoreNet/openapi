@@ -1,7 +1,7 @@
 /*
 Namf_MBSCommunication
 
-AMF Communication Service for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // MbsNgapIeType NGAP Information Element Type
 type MbsNgapIeType struct {
-	MbsNgapIeTypeAnyOf *MbsNgapIeTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsNgapIeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MbsNgapIeTypeAnyOf
-	err = json.Unmarshal(data, &dst.MbsNgapIeTypeAnyOf);
-	if err == nil {
-		jsonMbsNgapIeTypeAnyOf, _ := json.Marshal(dst.MbsNgapIeTypeAnyOf)
-		if string(jsonMbsNgapIeTypeAnyOf) == "{}" { // empty struct
-			dst.MbsNgapIeTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.MbsNgapIeTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.MbsNgapIeTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MbsNgapIeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsNgapIeType) MarshalJSON() ([]byte, error) {
-	if src.MbsNgapIeTypeAnyOf != nil {
-		return json.Marshal(&src.MbsNgapIeTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMbsNgapIeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

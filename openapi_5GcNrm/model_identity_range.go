@@ -19,8 +19,8 @@ var _ MappedNullable = &IdentityRange{}
 
 // IdentityRange struct for IdentityRange
 type IdentityRange struct {
-	Start *string `json:"start,omitempty"`
-	End *string `json:"end,omitempty"`
+	Start   *string `json:"start,omitempty"`
+	End     *string `json:"end,omitempty"`
 	Pattern *string `json:"pattern,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewIdentityRangeWithDefaults() *IdentityRange {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *IdentityRange) GetStart() string {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IdentityRange) GetStart() string {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityRange) GetStartOk() (*string, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -61,7 +61,7 @@ func (o *IdentityRange) GetStartOk() (*string, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *IdentityRange) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IdentityRange) SetStart(v string) {
 
 // GetEnd returns the End field value if set, zero value otherwise.
 func (o *IdentityRange) GetEnd() string {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *IdentityRange) GetEnd() string {
 // GetEndOk returns a tuple with the End field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityRange) GetEndOk() (*string, bool) {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		return nil, false
 	}
 	return o.End, true
@@ -93,7 +93,7 @@ func (o *IdentityRange) GetEndOk() (*string, bool) {
 
 // HasEnd returns a boolean if a field has been set.
 func (o *IdentityRange) HasEnd() bool {
-	if o != nil && !isNil(o.End) {
+	if o != nil && !IsNil(o.End) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *IdentityRange) SetEnd(v string) {
 
 // GetPattern returns the Pattern field value if set, zero value otherwise.
 func (o *IdentityRange) GetPattern() string {
-	if o == nil || isNil(o.Pattern) {
+	if o == nil || IsNil(o.Pattern) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *IdentityRange) GetPattern() string {
 // GetPatternOk returns a tuple with the Pattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityRange) GetPatternOk() (*string, bool) {
-	if o == nil || isNil(o.Pattern) {
+	if o == nil || IsNil(o.Pattern) {
 		return nil, false
 	}
 	return o.Pattern, true
@@ -125,7 +125,7 @@ func (o *IdentityRange) GetPatternOk() (*string, bool) {
 
 // HasPattern returns a boolean if a field has been set.
 func (o *IdentityRange) HasPattern() bool {
-	if o != nil && !isNil(o.Pattern) {
+	if o != nil && !IsNil(o.Pattern) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *IdentityRange) SetPattern(v string) {
 }
 
 func (o IdentityRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o IdentityRange) MarshalJSON() ([]byte, error) {
 
 func (o IdentityRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.End) {
+	if !IsNil(o.End) {
 		toSerialize["end"] = o.End
 	}
-	if !isNil(o.Pattern) {
+	if !IsNil(o.Pattern) {
 		toSerialize["pattern"] = o.Pattern
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableIdentityRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

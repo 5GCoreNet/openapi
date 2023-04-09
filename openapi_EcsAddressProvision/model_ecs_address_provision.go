@@ -1,7 +1,7 @@
 /*
 3gpp-ecs-address-provision
 
-API for ECS Address Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for ECS Address Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &EcsAddressProvision{}
 // EcsAddressProvision Represents ECS address provision configuration.
 type EcsAddressProvision struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
-	Self *string `json:"self,omitempty"`
-	EcsServerAddr EcsServerAddr `json:"ecsServerAddr"`
+	Self                *string              `json:"self,omitempty"`
+	EcsServerAddr       EcsServerAddr        `json:"ecsServerAddr"`
 	SpatialValidityCond *SpatialValidityCond `json:"spatialValidityCond,omitempty"`
-	TgtUe *TargetUeId `json:"tgtUe,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	TgtUe               *TargetUeId          `json:"tgtUe,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat string `json:"suppFeat"`
 }
 
@@ -49,7 +49,7 @@ func NewEcsAddressProvisionWithDefaults() *EcsAddressProvision {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *EcsAddressProvision) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *EcsAddressProvision) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddressProvision) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -67,7 +67,7 @@ func (o *EcsAddressProvision) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *EcsAddressProvision) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EcsAddressProvision) SetEcsServerAddr(v EcsServerAddr) {
 
 // GetSpatialValidityCond returns the SpatialValidityCond field value if set, zero value otherwise.
 func (o *EcsAddressProvision) GetSpatialValidityCond() SpatialValidityCond {
-	if o == nil || isNil(o.SpatialValidityCond) {
+	if o == nil || IsNil(o.SpatialValidityCond) {
 		var ret SpatialValidityCond
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *EcsAddressProvision) GetSpatialValidityCond() SpatialValidityCond {
 // GetSpatialValidityCondOk returns a tuple with the SpatialValidityCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddressProvision) GetSpatialValidityCondOk() (*SpatialValidityCond, bool) {
-	if o == nil || isNil(o.SpatialValidityCond) {
+	if o == nil || IsNil(o.SpatialValidityCond) {
 		return nil, false
 	}
 	return o.SpatialValidityCond, true
@@ -123,7 +123,7 @@ func (o *EcsAddressProvision) GetSpatialValidityCondOk() (*SpatialValidityCond, 
 
 // HasSpatialValidityCond returns a boolean if a field has been set.
 func (o *EcsAddressProvision) HasSpatialValidityCond() bool {
-	if o != nil && !isNil(o.SpatialValidityCond) {
+	if o != nil && !IsNil(o.SpatialValidityCond) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *EcsAddressProvision) SetSpatialValidityCond(v SpatialValidityCond) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *EcsAddressProvision) GetTgtUe() TargetUeId {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		var ret TargetUeId
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *EcsAddressProvision) GetTgtUe() TargetUeId {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddressProvision) GetTgtUeOk() (*TargetUeId, bool) {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -155,7 +155,7 @@ func (o *EcsAddressProvision) GetTgtUeOk() (*TargetUeId, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *EcsAddressProvision) HasTgtUe() bool {
-	if o != nil && !isNil(o.TgtUe) {
+	if o != nil && !IsNil(o.TgtUe) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *EcsAddressProvision) SetSuppFeat(v string) {
 }
 
 func (o EcsAddressProvision) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -201,14 +201,14 @@ func (o EcsAddressProvision) MarshalJSON() ([]byte, error) {
 
 func (o EcsAddressProvision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["ecsServerAddr"] = o.EcsServerAddr
-	if !isNil(o.SpatialValidityCond) {
+	if !IsNil(o.SpatialValidityCond) {
 		toSerialize["spatialValidityCond"] = o.SpatialValidityCond
 	}
-	if !isNil(o.TgtUe) {
+	if !IsNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
 	toSerialize["suppFeat"] = o.SuppFeat
@@ -250,5 +250,3 @@ func (v *NullableEcsAddressProvision) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

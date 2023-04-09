@@ -1,7 +1,7 @@
 /*
 GBA BSF Nbsp_GBA Service
 
-GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NafId{}
 // NafId NAF ID, containing the NAF FQDN and the Ua Security Protocol Identifier
 type NafId struct {
 	// Fully Qualified Domain Name
-	NafFqdn string `json:"nafFqdn"`
+	NafFqdn     string `json:"nafFqdn"`
 	UaSecProtId string `json:"uaSecProtId"`
 }
 
@@ -92,7 +92,7 @@ func (o *NafId) SetUaSecProtId(v string) {
 }
 
 func (o NafId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableNafId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

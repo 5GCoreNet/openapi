@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SMAddressDomain{}
 
 // SMAddressDomain struct for SMAddressDomain
 type SMAddressDomain struct {
-	DomainName *string `json:"domainName,omitempty"`
+	DomainName        *string `json:"domainName,omitempty"`
 	Var3GPPIMSIMCCMNC *string `json:"3GPPIMSIMCCMNC,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewSMAddressDomainWithDefaults() *SMAddressDomain {
 
 // GetDomainName returns the DomainName field value if set, zero value otherwise.
 func (o *SMAddressDomain) GetDomainName() string {
-	if o == nil || isNil(o.DomainName) {
+	if o == nil || IsNil(o.DomainName) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SMAddressDomain) GetDomainName() string {
 // GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMAddressDomain) GetDomainNameOk() (*string, bool) {
-	if o == nil || isNil(o.DomainName) {
+	if o == nil || IsNil(o.DomainName) {
 		return nil, false
 	}
 	return o.DomainName, true
@@ -60,7 +60,7 @@ func (o *SMAddressDomain) GetDomainNameOk() (*string, bool) {
 
 // HasDomainName returns a boolean if a field has been set.
 func (o *SMAddressDomain) HasDomainName() bool {
-	if o != nil && !isNil(o.DomainName) {
+	if o != nil && !IsNil(o.DomainName) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SMAddressDomain) SetDomainName(v string) {
 
 // GetVar3GPPIMSIMCCMNC returns the Var3GPPIMSIMCCMNC field value if set, zero value otherwise.
 func (o *SMAddressDomain) GetVar3GPPIMSIMCCMNC() string {
-	if o == nil || isNil(o.Var3GPPIMSIMCCMNC) {
+	if o == nil || IsNil(o.Var3GPPIMSIMCCMNC) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SMAddressDomain) GetVar3GPPIMSIMCCMNC() string {
 // GetVar3GPPIMSIMCCMNCOk returns a tuple with the Var3GPPIMSIMCCMNC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMAddressDomain) GetVar3GPPIMSIMCCMNCOk() (*string, bool) {
-	if o == nil || isNil(o.Var3GPPIMSIMCCMNC) {
+	if o == nil || IsNil(o.Var3GPPIMSIMCCMNC) {
 		return nil, false
 	}
 	return o.Var3GPPIMSIMCCMNC, true
@@ -92,7 +92,7 @@ func (o *SMAddressDomain) GetVar3GPPIMSIMCCMNCOk() (*string, bool) {
 
 // HasVar3GPPIMSIMCCMNC returns a boolean if a field has been set.
 func (o *SMAddressDomain) HasVar3GPPIMSIMCCMNC() bool {
-	if o != nil && !isNil(o.Var3GPPIMSIMCCMNC) {
+	if o != nil && !IsNil(o.Var3GPPIMSIMCCMNC) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SMAddressDomain) SetVar3GPPIMSIMCCMNC(v string) {
 }
 
 func (o SMAddressDomain) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SMAddressDomain) MarshalJSON() ([]byte, error) {
 
 func (o SMAddressDomain) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DomainName) {
+	if !IsNil(o.DomainName) {
 		toSerialize["domainName"] = o.DomainName
 	}
-	if !isNil(o.Var3GPPIMSIMCCMNC) {
+	if !IsNil(o.Var3GPPIMSIMCCMNC) {
 		toSerialize["3GPPIMSIMCCMNC"] = o.Var3GPPIMSIMCCMNC
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSMAddressDomain) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

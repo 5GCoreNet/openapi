@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-ud-ingest
 
-API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -18,17 +18,17 @@ import (
 // checks if the MBSUserServAnmt type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MBSUserServAnmt{}
 
-// MBSUserServAnmt Represents the MBS User Service Announcement currently associated with the MBS User Data  Ingest Session. 
+// MBSUserServAnmt Represents the MBS User Service Announcement currently associated with the MBS User Data  Ingest Session.
 type MBSUserServAnmt struct {
 	ExtServiceId []string `json:"extServiceId"`
-	ServClass string `json:"servClass"`
+	ServClass    string   `json:"servClass"`
 	// string with format \"date-time\" as defined in OpenAPI.
 	StartTime *time.Time `json:"startTime,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
-	EndTime *time.Time `json:"endTime,omitempty"`
+	EndTime       *time.Time               `json:"endTime,omitempty"`
 	ServNameDescs []ServiceNameDescription `json:"servNameDescs"`
-	MainServLang *string `json:"mainServLang,omitempty"`
-	// Represents the set of MBS Distribution Session Announcements currently associated with  this MBS User Service Announcement. 
+	MainServLang  *string                  `json:"mainServLang,omitempty"`
+	// Represents the set of MBS Distribution Session Announcements currently associated with  this MBS User Service Announcement.
 	MbsDistSessAnmt *map[string]MBSDistSessionAnmt `json:"mbsDistSessAnmt,omitempty"`
 }
 
@@ -102,7 +102,7 @@ func (o *MBSUserServAnmt) SetServClass(v string) {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *MBSUserServAnmt) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *MBSUserServAnmt) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServAnmt) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -120,7 +120,7 @@ func (o *MBSUserServAnmt) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *MBSUserServAnmt) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *MBSUserServAnmt) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *MBSUserServAnmt) GetEndTime() time.Time {
-	if o == nil || isNil(o.EndTime) {
+	if o == nil || IsNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *MBSUserServAnmt) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServAnmt) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EndTime) {
+	if o == nil || IsNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -152,7 +152,7 @@ func (o *MBSUserServAnmt) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *MBSUserServAnmt) HasEndTime() bool {
-	if o != nil && !isNil(o.EndTime) {
+	if o != nil && !IsNil(o.EndTime) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *MBSUserServAnmt) SetServNameDescs(v []ServiceNameDescription) {
 
 // GetMainServLang returns the MainServLang field value if set, zero value otherwise.
 func (o *MBSUserServAnmt) GetMainServLang() string {
-	if o == nil || isNil(o.MainServLang) {
+	if o == nil || IsNil(o.MainServLang) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *MBSUserServAnmt) GetMainServLang() string {
 // GetMainServLangOk returns a tuple with the MainServLang field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServAnmt) GetMainServLangOk() (*string, bool) {
-	if o == nil || isNil(o.MainServLang) {
+	if o == nil || IsNil(o.MainServLang) {
 		return nil, false
 	}
 	return o.MainServLang, true
@@ -208,7 +208,7 @@ func (o *MBSUserServAnmt) GetMainServLangOk() (*string, bool) {
 
 // HasMainServLang returns a boolean if a field has been set.
 func (o *MBSUserServAnmt) HasMainServLang() bool {
-	if o != nil && !isNil(o.MainServLang) {
+	if o != nil && !IsNil(o.MainServLang) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *MBSUserServAnmt) SetMainServLang(v string) {
 
 // GetMbsDistSessAnmt returns the MbsDistSessAnmt field value if set, zero value otherwise.
 func (o *MBSUserServAnmt) GetMbsDistSessAnmt() map[string]MBSDistSessionAnmt {
-	if o == nil || isNil(o.MbsDistSessAnmt) {
+	if o == nil || IsNil(o.MbsDistSessAnmt) {
 		var ret map[string]MBSDistSessionAnmt
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *MBSUserServAnmt) GetMbsDistSessAnmt() map[string]MBSDistSessionAnmt {
 // GetMbsDistSessAnmtOk returns a tuple with the MbsDistSessAnmt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServAnmt) GetMbsDistSessAnmtOk() (*map[string]MBSDistSessionAnmt, bool) {
-	if o == nil || isNil(o.MbsDistSessAnmt) {
+	if o == nil || IsNil(o.MbsDistSessAnmt) {
 		return nil, false
 	}
 	return o.MbsDistSessAnmt, true
@@ -240,7 +240,7 @@ func (o *MBSUserServAnmt) GetMbsDistSessAnmtOk() (*map[string]MBSDistSessionAnmt
 
 // HasMbsDistSessAnmt returns a boolean if a field has been set.
 func (o *MBSUserServAnmt) HasMbsDistSessAnmt() bool {
-	if o != nil && !isNil(o.MbsDistSessAnmt) {
+	if o != nil && !IsNil(o.MbsDistSessAnmt) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *MBSUserServAnmt) SetMbsDistSessAnmt(v map[string]MBSDistSessionAnmt) {
 }
 
 func (o MBSUserServAnmt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -264,17 +264,17 @@ func (o MBSUserServAnmt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["extServiceId"] = o.ExtServiceId
 	toSerialize["servClass"] = o.ServClass
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.EndTime) {
+	if !IsNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
 	toSerialize["servNameDescs"] = o.ServNameDescs
-	if !isNil(o.MainServLang) {
+	if !IsNil(o.MainServLang) {
 		toSerialize["mainServLang"] = o.MainServLang
 	}
-	if !isNil(o.MbsDistSessAnmt) {
+	if !IsNil(o.MbsDistSessAnmt) {
 		toSerialize["mbsDistSessAnmt"] = o.MbsDistSessAnmt
 	}
 	return toSerialize, nil
@@ -315,5 +315,3 @@ func (v *NullableMBSUserServAnmt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

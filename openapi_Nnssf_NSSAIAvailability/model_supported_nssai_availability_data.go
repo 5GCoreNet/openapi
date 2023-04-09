@@ -1,7 +1,7 @@
 /*
 NSSF NSSAI Availability
 
-NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &SupportedNssaiAvailabilityData{}
 
 // SupportedNssaiAvailabilityData This contains the Nssai availability data information per TA supported by the AMF
 type SupportedNssaiAvailabilityData struct {
-	Tai Tai `json:"tai"`
+	Tai                 Tai         `json:"tai"`
 	SupportedSnssaiList []ExtSnssai `json:"supportedSnssaiList"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	NsagInfos []NsagInfo `json:"nsagInfos,omitempty"`
+	TaiList             []Tai       `json:"taiList,omitempty"`
+	TaiRangeList        []TaiRange  `json:"taiRangeList,omitempty"`
+	NsagInfos           []NsagInfo  `json:"nsagInfos,omitempty"`
 }
 
 // NewSupportedNssaiAvailabilityData instantiates a new SupportedNssaiAvailabilityData object
@@ -95,7 +95,7 @@ func (o *SupportedNssaiAvailabilityData) SetSupportedSnssaiList(v []ExtSnssai) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *SupportedNssaiAvailabilityData) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SupportedNssaiAvailabilityData) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedNssaiAvailabilityData) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -113,7 +113,7 @@ func (o *SupportedNssaiAvailabilityData) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *SupportedNssaiAvailabilityData) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *SupportedNssaiAvailabilityData) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *SupportedNssaiAvailabilityData) GetTaiRangeList() []TaiRange {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *SupportedNssaiAvailabilityData) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedNssaiAvailabilityData) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -145,7 +145,7 @@ func (o *SupportedNssaiAvailabilityData) GetTaiRangeListOk() ([]TaiRange, bool) 
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *SupportedNssaiAvailabilityData) HasTaiRangeList() bool {
-	if o != nil && !isNil(o.TaiRangeList) {
+	if o != nil && !IsNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *SupportedNssaiAvailabilityData) SetTaiRangeList(v []TaiRange) {
 
 // GetNsagInfos returns the NsagInfos field value if set, zero value otherwise.
 func (o *SupportedNssaiAvailabilityData) GetNsagInfos() []NsagInfo {
-	if o == nil || isNil(o.NsagInfos) {
+	if o == nil || IsNil(o.NsagInfos) {
 		var ret []NsagInfo
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *SupportedNssaiAvailabilityData) GetNsagInfos() []NsagInfo {
 // GetNsagInfosOk returns a tuple with the NsagInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedNssaiAvailabilityData) GetNsagInfosOk() ([]NsagInfo, bool) {
-	if o == nil || isNil(o.NsagInfos) {
+	if o == nil || IsNil(o.NsagInfos) {
 		return nil, false
 	}
 	return o.NsagInfos, true
@@ -177,7 +177,7 @@ func (o *SupportedNssaiAvailabilityData) GetNsagInfosOk() ([]NsagInfo, bool) {
 
 // HasNsagInfos returns a boolean if a field has been set.
 func (o *SupportedNssaiAvailabilityData) HasNsagInfos() bool {
-	if o != nil && !isNil(o.NsagInfos) {
+	if o != nil && !IsNil(o.NsagInfos) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *SupportedNssaiAvailabilityData) SetNsagInfos(v []NsagInfo) {
 }
 
 func (o SupportedNssaiAvailabilityData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -201,13 +201,13 @@ func (o SupportedNssaiAvailabilityData) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["tai"] = o.Tai
 	toSerialize["supportedSnssaiList"] = o.SupportedSnssaiList
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.TaiRangeList) {
+	if !IsNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !isNil(o.NsagInfos) {
+	if !IsNil(o.NsagInfos) {
 		toSerialize["nsagInfos"] = o.NsagInfos
 	}
 	return toSerialize, nil
@@ -248,5 +248,3 @@ func (v *NullableSupportedNssaiAvailabilityData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

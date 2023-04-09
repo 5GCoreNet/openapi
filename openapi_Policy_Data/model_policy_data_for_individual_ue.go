@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &PolicyDataForIndividualUe{}
 
 // PolicyDataForIndividualUe Contains policy data for a given subscriber.
 type PolicyDataForIndividualUe struct {
-	UePolicyDataSet *UePolicySet `json:"uePolicyDataSet,omitempty"`
+	UePolicyDataSet *UePolicySet  `json:"uePolicyDataSet,omitempty"`
 	SmPolicyDataSet *SmPolicyData `json:"smPolicyDataSet,omitempty"`
 	AmPolicyDataSet *AmPolicyData `json:"amPolicyDataSet,omitempty"`
-	// Contains UM policies. The value of the limit identifier is used as the key of the map. 
+	// Contains UM policies. The value of the limit identifier is used as the key of the map.
 	UmData *map[string]UsageMonData `json:"umData,omitempty"`
-	// Contains Operator Specific Data resource data. The key of the map is operator specific data element name and the value is the operator specific data of the UE. 
+	// Contains Operator Specific Data resource data. The key of the map is operator specific data element name and the value is the operator specific data of the UE.
 	OperatorSpecificDataSet *map[string]OperatorSpecificDataContainer `json:"operatorSpecificDataSet,omitempty"`
 }
 
@@ -47,7 +47,7 @@ func NewPolicyDataForIndividualUeWithDefaults() *PolicyDataForIndividualUe {
 
 // GetUePolicyDataSet returns the UePolicyDataSet field value if set, zero value otherwise.
 func (o *PolicyDataForIndividualUe) GetUePolicyDataSet() UePolicySet {
-	if o == nil || isNil(o.UePolicyDataSet) {
+	if o == nil || IsNil(o.UePolicyDataSet) {
 		var ret UePolicySet
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PolicyDataForIndividualUe) GetUePolicyDataSet() UePolicySet {
 // GetUePolicyDataSetOk returns a tuple with the UePolicyDataSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataForIndividualUe) GetUePolicyDataSetOk() (*UePolicySet, bool) {
-	if o == nil || isNil(o.UePolicyDataSet) {
+	if o == nil || IsNil(o.UePolicyDataSet) {
 		return nil, false
 	}
 	return o.UePolicyDataSet, true
@@ -65,7 +65,7 @@ func (o *PolicyDataForIndividualUe) GetUePolicyDataSetOk() (*UePolicySet, bool) 
 
 // HasUePolicyDataSet returns a boolean if a field has been set.
 func (o *PolicyDataForIndividualUe) HasUePolicyDataSet() bool {
-	if o != nil && !isNil(o.UePolicyDataSet) {
+	if o != nil && !IsNil(o.UePolicyDataSet) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *PolicyDataForIndividualUe) SetUePolicyDataSet(v UePolicySet) {
 
 // GetSmPolicyDataSet returns the SmPolicyDataSet field value if set, zero value otherwise.
 func (o *PolicyDataForIndividualUe) GetSmPolicyDataSet() SmPolicyData {
-	if o == nil || isNil(o.SmPolicyDataSet) {
+	if o == nil || IsNil(o.SmPolicyDataSet) {
 		var ret SmPolicyData
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PolicyDataForIndividualUe) GetSmPolicyDataSet() SmPolicyData {
 // GetSmPolicyDataSetOk returns a tuple with the SmPolicyDataSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataForIndividualUe) GetSmPolicyDataSetOk() (*SmPolicyData, bool) {
-	if o == nil || isNil(o.SmPolicyDataSet) {
+	if o == nil || IsNil(o.SmPolicyDataSet) {
 		return nil, false
 	}
 	return o.SmPolicyDataSet, true
@@ -97,7 +97,7 @@ func (o *PolicyDataForIndividualUe) GetSmPolicyDataSetOk() (*SmPolicyData, bool)
 
 // HasSmPolicyDataSet returns a boolean if a field has been set.
 func (o *PolicyDataForIndividualUe) HasSmPolicyDataSet() bool {
-	if o != nil && !isNil(o.SmPolicyDataSet) {
+	if o != nil && !IsNil(o.SmPolicyDataSet) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *PolicyDataForIndividualUe) SetSmPolicyDataSet(v SmPolicyData) {
 
 // GetAmPolicyDataSet returns the AmPolicyDataSet field value if set, zero value otherwise.
 func (o *PolicyDataForIndividualUe) GetAmPolicyDataSet() AmPolicyData {
-	if o == nil || isNil(o.AmPolicyDataSet) {
+	if o == nil || IsNil(o.AmPolicyDataSet) {
 		var ret AmPolicyData
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PolicyDataForIndividualUe) GetAmPolicyDataSet() AmPolicyData {
 // GetAmPolicyDataSetOk returns a tuple with the AmPolicyDataSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataForIndividualUe) GetAmPolicyDataSetOk() (*AmPolicyData, bool) {
-	if o == nil || isNil(o.AmPolicyDataSet) {
+	if o == nil || IsNil(o.AmPolicyDataSet) {
 		return nil, false
 	}
 	return o.AmPolicyDataSet, true
@@ -129,7 +129,7 @@ func (o *PolicyDataForIndividualUe) GetAmPolicyDataSetOk() (*AmPolicyData, bool)
 
 // HasAmPolicyDataSet returns a boolean if a field has been set.
 func (o *PolicyDataForIndividualUe) HasAmPolicyDataSet() bool {
-	if o != nil && !isNil(o.AmPolicyDataSet) {
+	if o != nil && !IsNil(o.AmPolicyDataSet) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PolicyDataForIndividualUe) SetAmPolicyDataSet(v AmPolicyData) {
 
 // GetUmData returns the UmData field value if set, zero value otherwise.
 func (o *PolicyDataForIndividualUe) GetUmData() map[string]UsageMonData {
-	if o == nil || isNil(o.UmData) {
+	if o == nil || IsNil(o.UmData) {
 		var ret map[string]UsageMonData
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PolicyDataForIndividualUe) GetUmData() map[string]UsageMonData {
 // GetUmDataOk returns a tuple with the UmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataForIndividualUe) GetUmDataOk() (*map[string]UsageMonData, bool) {
-	if o == nil || isNil(o.UmData) {
+	if o == nil || IsNil(o.UmData) {
 		return nil, false
 	}
 	return o.UmData, true
@@ -161,7 +161,7 @@ func (o *PolicyDataForIndividualUe) GetUmDataOk() (*map[string]UsageMonData, boo
 
 // HasUmData returns a boolean if a field has been set.
 func (o *PolicyDataForIndividualUe) HasUmData() bool {
-	if o != nil && !isNil(o.UmData) {
+	if o != nil && !IsNil(o.UmData) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *PolicyDataForIndividualUe) SetUmData(v map[string]UsageMonData) {
 
 // GetOperatorSpecificDataSet returns the OperatorSpecificDataSet field value if set, zero value otherwise.
 func (o *PolicyDataForIndividualUe) GetOperatorSpecificDataSet() map[string]OperatorSpecificDataContainer {
-	if o == nil || isNil(o.OperatorSpecificDataSet) {
+	if o == nil || IsNil(o.OperatorSpecificDataSet) {
 		var ret map[string]OperatorSpecificDataContainer
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *PolicyDataForIndividualUe) GetOperatorSpecificDataSet() map[string]Oper
 // GetOperatorSpecificDataSetOk returns a tuple with the OperatorSpecificDataSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataForIndividualUe) GetOperatorSpecificDataSetOk() (*map[string]OperatorSpecificDataContainer, bool) {
-	if o == nil || isNil(o.OperatorSpecificDataSet) {
+	if o == nil || IsNil(o.OperatorSpecificDataSet) {
 		return nil, false
 	}
 	return o.OperatorSpecificDataSet, true
@@ -193,7 +193,7 @@ func (o *PolicyDataForIndividualUe) GetOperatorSpecificDataSetOk() (*map[string]
 
 // HasOperatorSpecificDataSet returns a boolean if a field has been set.
 func (o *PolicyDataForIndividualUe) HasOperatorSpecificDataSet() bool {
-	if o != nil && !isNil(o.OperatorSpecificDataSet) {
+	if o != nil && !IsNil(o.OperatorSpecificDataSet) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *PolicyDataForIndividualUe) SetOperatorSpecificDataSet(v map[string]Oper
 }
 
 func (o PolicyDataForIndividualUe) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -215,19 +215,19 @@ func (o PolicyDataForIndividualUe) MarshalJSON() ([]byte, error) {
 
 func (o PolicyDataForIndividualUe) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UePolicyDataSet) {
+	if !IsNil(o.UePolicyDataSet) {
 		toSerialize["uePolicyDataSet"] = o.UePolicyDataSet
 	}
-	if !isNil(o.SmPolicyDataSet) {
+	if !IsNil(o.SmPolicyDataSet) {
 		toSerialize["smPolicyDataSet"] = o.SmPolicyDataSet
 	}
-	if !isNil(o.AmPolicyDataSet) {
+	if !IsNil(o.AmPolicyDataSet) {
 		toSerialize["amPolicyDataSet"] = o.AmPolicyDataSet
 	}
-	if !isNil(o.UmData) {
+	if !IsNil(o.UmData) {
 		toSerialize["umData"] = o.UmData
 	}
-	if !isNil(o.OperatorSpecificDataSet) {
+	if !IsNil(o.OperatorSpecificDataSet) {
 		toSerialize["operatorSpecificDataSet"] = o.OperatorSpecificDataSet
 	}
 	return toSerialize, nil
@@ -268,5 +268,3 @@ func (v *NullablePolicyDataForIndividualUe) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

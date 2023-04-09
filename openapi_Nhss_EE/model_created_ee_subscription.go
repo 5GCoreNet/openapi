@@ -1,7 +1,7 @@
 /*
 Nhss_EE
 
-HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &CreatedEeSubscription{}
 
 // CreatedEeSubscription It represents the response body of the subscription request, containing data of the created subscription in the HSS
 type CreatedEeSubscription struct {
-	EeSubscription EeSubscription `json:"eeSubscription"`
-	EventReports []MonitoringReport `json:"eventReports,omitempty"`
+	EeSubscription EeSubscription     `json:"eeSubscription"`
+	EventReports   []MonitoringReport `json:"eventReports,omitempty"`
 	// A map (list of key-value pairs where referenceId converted from integer to string serves as key; see clause 6.4.6.3.2) of FailedMonitoringConfiguration
 	FailedMonitoringConfigs *map[string]FailedMonitoringConfiguration `json:"failedMonitoringConfigs,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *CreatedEeSubscription) SetEeSubscription(v EeSubscription) {
 
 // GetEventReports returns the EventReports field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetEventReports() []MonitoringReport {
-	if o == nil || isNil(o.EventReports) {
+	if o == nil || IsNil(o.EventReports) {
 		var ret []MonitoringReport
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *CreatedEeSubscription) GetEventReports() []MonitoringReport {
 // GetEventReportsOk returns a tuple with the EventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetEventReportsOk() ([]MonitoringReport, bool) {
-	if o == nil || isNil(o.EventReports) {
+	if o == nil || IsNil(o.EventReports) {
 		return nil, false
 	}
 	return o.EventReports, true
@@ -89,7 +89,7 @@ func (o *CreatedEeSubscription) GetEventReportsOk() ([]MonitoringReport, bool) {
 
 // HasEventReports returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasEventReports() bool {
-	if o != nil && !isNil(o.EventReports) {
+	if o != nil && !IsNil(o.EventReports) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *CreatedEeSubscription) SetEventReports(v []MonitoringReport) {
 
 // GetFailedMonitoringConfigs returns the FailedMonitoringConfigs field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetFailedMonitoringConfigs() map[string]FailedMonitoringConfiguration {
-	if o == nil || isNil(o.FailedMonitoringConfigs) {
+	if o == nil || IsNil(o.FailedMonitoringConfigs) {
 		var ret map[string]FailedMonitoringConfiguration
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *CreatedEeSubscription) GetFailedMonitoringConfigs() map[string]FailedMo
 // GetFailedMonitoringConfigsOk returns a tuple with the FailedMonitoringConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetFailedMonitoringConfigsOk() (*map[string]FailedMonitoringConfiguration, bool) {
-	if o == nil || isNil(o.FailedMonitoringConfigs) {
+	if o == nil || IsNil(o.FailedMonitoringConfigs) {
 		return nil, false
 	}
 	return o.FailedMonitoringConfigs, true
@@ -121,7 +121,7 @@ func (o *CreatedEeSubscription) GetFailedMonitoringConfigsOk() (*map[string]Fail
 
 // HasFailedMonitoringConfigs returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasFailedMonitoringConfigs() bool {
-	if o != nil && !isNil(o.FailedMonitoringConfigs) {
+	if o != nil && !IsNil(o.FailedMonitoringConfigs) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *CreatedEeSubscription) SetFailedMonitoringConfigs(v map[string]FailedMo
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *CreatedEeSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -153,7 +153,7 @@ func (o *CreatedEeSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *CreatedEeSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o CreatedEeSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o CreatedEeSubscription) MarshalJSON() ([]byte, error) {
 func (o CreatedEeSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eeSubscription"] = o.EeSubscription
-	if !isNil(o.EventReports) {
+	if !IsNil(o.EventReports) {
 		toSerialize["eventReports"] = o.EventReports
 	}
-	if !isNil(o.FailedMonitoringConfigs) {
+	if !IsNil(o.FailedMonitoringConfigs) {
 		toSerialize["failedMonitoringConfigs"] = o.FailedMonitoringConfigs
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableCreatedEeSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

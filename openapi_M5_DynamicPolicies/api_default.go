@@ -1,7 +1,7 @@
 /*
 M5_DynamicPolicies
 
-5GMS AF M5 Dynamic Policy API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Dynamic Policy API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,19 +13,18 @@ package openapi_M5_DynamicPolicies
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateDynamicPolicyRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx           context.Context
+	ApiService    *DefaultApiService
 	dynamicPolicy *DynamicPolicy
 }
 
@@ -42,24 +41,25 @@ func (r ApiCreateDynamicPolicyRequest) Execute() (*DynamicPolicy, *http.Response
 /*
 CreateDynamicPolicy Create (and optionally upload) a new Dynamic Policy resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateDynamicPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateDynamicPolicyRequest
 */
 func (a *DefaultApiService) CreateDynamicPolicy(ctx context.Context) ApiCreateDynamicPolicyRequest {
 	return ApiCreateDynamicPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DynamicPolicy
+//
+//	@return DynamicPolicy
 func (a *DefaultApiService) CreateDynamicPolicyExecute(r ApiCreateDynamicPolicyRequest) (*DynamicPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DynamicPolicy
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DynamicPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateDynamicPolicy")
@@ -102,9 +102,9 @@ func (a *DefaultApiService) CreateDynamicPolicyExecute(r ApiCreateDynamicPolicyR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -130,8 +130,8 @@ func (a *DefaultApiService) CreateDynamicPolicyExecute(r ApiCreateDynamicPolicyR
 }
 
 type ApiDestroyDynamicPolicyRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx             context.Context
+	ApiService      *DefaultApiService
 	dynamicPolicyId string
 }
 
@@ -142,14 +142,14 @@ func (r ApiDestroyDynamicPolicyRequest) Execute() (*http.Response, error) {
 /*
 DestroyDynamicPolicy Destroy an existing Dynamic Policy resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicPolicyId The resource identifier of a Dynamic Policy resource
- @return ApiDestroyDynamicPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dynamicPolicyId The resource identifier of a Dynamic Policy resource
+	@return ApiDestroyDynamicPolicyRequest
 */
 func (a *DefaultApiService) DestroyDynamicPolicy(ctx context.Context, dynamicPolicyId string) ApiDestroyDynamicPolicyRequest {
 	return ApiDestroyDynamicPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		dynamicPolicyId: dynamicPolicyId,
 	}
 }
@@ -157,9 +157,9 @@ func (a *DefaultApiService) DestroyDynamicPolicy(ctx context.Context, dynamicPol
 // Execute executes the request
 func (a *DefaultApiService) DestroyDynamicPolicyExecute(r ApiDestroyDynamicPolicyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyDynamicPolicy")
@@ -201,9 +201,9 @@ func (a *DefaultApiService) DestroyDynamicPolicyExecute(r ApiDestroyDynamicPolic
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -220,10 +220,10 @@ func (a *DefaultApiService) DestroyDynamicPolicyExecute(r ApiDestroyDynamicPolic
 }
 
 type ApiPatchDynamicPolicyRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx             context.Context
+	ApiService      *DefaultApiService
 	dynamicPolicyId string
-	dynamicPolicy *DynamicPolicy
+	dynamicPolicy   *DynamicPolicy
 }
 
 // A JSON patch to a Dynamic Policy resource
@@ -239,26 +239,27 @@ func (r ApiPatchDynamicPolicyRequest) Execute() (*DynamicPolicy, *http.Response,
 /*
 PatchDynamicPolicy Patch an existing Dynamic Policy resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicPolicyId The resource identifier of a Dynamic Policy resource
- @return ApiPatchDynamicPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dynamicPolicyId The resource identifier of a Dynamic Policy resource
+	@return ApiPatchDynamicPolicyRequest
 */
 func (a *DefaultApiService) PatchDynamicPolicy(ctx context.Context, dynamicPolicyId string) ApiPatchDynamicPolicyRequest {
 	return ApiPatchDynamicPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		dynamicPolicyId: dynamicPolicyId,
 	}
 }
 
 // Execute executes the request
-//  @return DynamicPolicy
+//
+//	@return DynamicPolicy
 func (a *DefaultApiService) PatchDynamicPolicyExecute(r ApiPatchDynamicPolicyRequest) (*DynamicPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DynamicPolicy
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DynamicPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchDynamicPolicy")
@@ -305,9 +306,9 @@ func (a *DefaultApiService) PatchDynamicPolicyExecute(r ApiPatchDynamicPolicyReq
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -333,8 +334,8 @@ func (a *DefaultApiService) PatchDynamicPolicyExecute(r ApiPatchDynamicPolicyReq
 }
 
 type ApiRetrieveDynamicPolicyRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx             context.Context
+	ApiService      *DefaultApiService
 	dynamicPolicyId string
 }
 
@@ -345,26 +346,27 @@ func (r ApiRetrieveDynamicPolicyRequest) Execute() (*DynamicPolicy, *http.Respon
 /*
 RetrieveDynamicPolicy Retrieve an existing Dynamic Policy resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicPolicyId The resource identifier of a Dynamic Policy resource
- @return ApiRetrieveDynamicPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dynamicPolicyId The resource identifier of a Dynamic Policy resource
+	@return ApiRetrieveDynamicPolicyRequest
 */
 func (a *DefaultApiService) RetrieveDynamicPolicy(ctx context.Context, dynamicPolicyId string) ApiRetrieveDynamicPolicyRequest {
 	return ApiRetrieveDynamicPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		dynamicPolicyId: dynamicPolicyId,
 	}
 }
 
 // Execute executes the request
-//  @return DynamicPolicy
+//
+//	@return DynamicPolicy
 func (a *DefaultApiService) RetrieveDynamicPolicyExecute(r ApiRetrieveDynamicPolicyRequest) (*DynamicPolicy, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DynamicPolicy
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DynamicPolicy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveDynamicPolicy")
@@ -406,9 +408,9 @@ func (a *DefaultApiService) RetrieveDynamicPolicyExecute(r ApiRetrieveDynamicPol
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -434,10 +436,10 @@ func (a *DefaultApiService) RetrieveDynamicPolicyExecute(r ApiRetrieveDynamicPol
 }
 
 type ApiUpdateDynamicPolicyRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx             context.Context
+	ApiService      *DefaultApiService
 	dynamicPolicyId string
-	dynamicPolicy *DynamicPolicy
+	dynamicPolicy   *DynamicPolicy
 }
 
 // A replacement JSON representation of a Dynamic Policy resource
@@ -453,14 +455,14 @@ func (r ApiUpdateDynamicPolicyRequest) Execute() (*http.Response, error) {
 /*
 UpdateDynamicPolicy Update an existing Dynamic Policy resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicPolicyId The resource identifier of a Dynamic Policy resource
- @return ApiUpdateDynamicPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dynamicPolicyId The resource identifier of a Dynamic Policy resource
+	@return ApiUpdateDynamicPolicyRequest
 */
 func (a *DefaultApiService) UpdateDynamicPolicy(ctx context.Context, dynamicPolicyId string) ApiUpdateDynamicPolicyRequest {
 	return ApiUpdateDynamicPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		dynamicPolicyId: dynamicPolicyId,
 	}
 }
@@ -468,9 +470,9 @@ func (a *DefaultApiService) UpdateDynamicPolicy(ctx context.Context, dynamicPoli
 // Execute executes the request
 func (a *DefaultApiService) UpdateDynamicPolicyExecute(r ApiUpdateDynamicPolicyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateDynamicPolicy")
@@ -517,9 +519,9 @@ func (a *DefaultApiService) UpdateDynamicPolicyExecute(r ApiUpdateDynamicPolicyR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

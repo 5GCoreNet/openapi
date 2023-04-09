@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewV2xInformationWithDefaults() *V2xInformation {
 
 // GetN2Pc5Pol returns the N2Pc5Pol field value if set, zero value otherwise.
 func (o *V2xInformation) GetN2Pc5Pol() N2InfoContent {
-	if o == nil || isNil(o.N2Pc5Pol) {
+	if o == nil || IsNil(o.N2Pc5Pol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *V2xInformation) GetN2Pc5Pol() N2InfoContent {
 // GetN2Pc5PolOk returns a tuple with the N2Pc5Pol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xInformation) GetN2Pc5PolOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.N2Pc5Pol) {
+	if o == nil || IsNil(o.N2Pc5Pol) {
 		return nil, false
 	}
 	return o.N2Pc5Pol, true
@@ -59,7 +59,7 @@ func (o *V2xInformation) GetN2Pc5PolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5Pol returns a boolean if a field has been set.
 func (o *V2xInformation) HasN2Pc5Pol() bool {
-	if o != nil && !isNil(o.N2Pc5Pol) {
+	if o != nil && !IsNil(o.N2Pc5Pol) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *V2xInformation) SetN2Pc5Pol(v N2InfoContent) {
 }
 
 func (o V2xInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o V2xInformation) MarshalJSON() ([]byte, error) {
 
 func (o V2xInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.N2Pc5Pol) {
+	if !IsNil(o.N2Pc5Pol) {
 		toSerialize["n2Pc5Pol"] = o.N2Pc5Pol
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableV2xInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

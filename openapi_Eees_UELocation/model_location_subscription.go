@@ -1,7 +1,7 @@
 /*
 EES UE Location Information_API
 
-API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -12,7 +12,6 @@ package openapi_Eees_UELocation
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -27,7 +26,6 @@ func InterfaceAsLocationSubscription(v *interface{}) LocationSubscription {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LocationSubscription) UnmarshalJSON(data []byte) error {
@@ -68,7 +66,7 @@ func (src LocationSubscription) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LocationSubscription) GetActualInstance() (interface{}) {
+func (obj *LocationSubscription) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -115,5 +113,3 @@ func (v *NullableLocationSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

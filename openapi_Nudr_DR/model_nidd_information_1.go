@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &NiddInformation1{}
 // NiddInformation1 struct for NiddInformation1
 type NiddInformation1 struct {
 	AfId string `json:"afId"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.  
+	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.
 	ExtGroupId *string `json:"extGroupId,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *NiddInformation1) SetAfId(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *NiddInformation1) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *NiddInformation1) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddInformation1) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -88,7 +88,7 @@ func (o *NiddInformation1) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *NiddInformation1) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *NiddInformation1) SetGpsi(v string) {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *NiddInformation1) GetExtGroupId() string {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NiddInformation1) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddInformation1) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -120,7 +120,7 @@ func (o *NiddInformation1) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *NiddInformation1) HasExtGroupId() bool {
-	if o != nil && !isNil(o.ExtGroupId) {
+	if o != nil && !IsNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *NiddInformation1) SetExtGroupId(v string) {
 }
 
 func (o NiddInformation1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o NiddInformation1) MarshalJSON() ([]byte, error) {
 func (o NiddInformation1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afId"] = o.AfId
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.ExtGroupId) {
+	if !IsNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableNiddInformation1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

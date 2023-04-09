@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,41 +20,41 @@ var _ MappedNullable = &AmfNon3GppAccessRegistration{}
 
 // AmfNon3GppAccessRegistration struct for AmfNon3GppAccessRegistration
 type AmfNon3GppAccessRegistration struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AmfInstanceId string `json:"amfInstanceId"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	PurgeFlag *bool `json:"purgeFlag,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
+	PurgeFlag         *bool   `json:"purgeFlag,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei     *string `json:"pei,omitempty"`
 	ImsVoPs ImsVoPs `json:"imsVoPs"`
 	// String providing an URI formatted according to RFC 3986.
-	DeregCallbackUri string `json:"deregCallbackUri"`
+	DeregCallbackUri    string       `json:"deregCallbackUri"`
 	AmfServiceNameDereg *ServiceName `json:"amfServiceNameDereg,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	PcscfRestorationCallbackUri *string `json:"pcscfRestorationCallbackUri,omitempty"`
-	AmfServiceNamePcscfRest *ServiceName `json:"amfServiceNamePcscfRest,omitempty"`
-	Guami Guami `json:"guami"`
-	BackupAmfInfo []BackupAmfInfo `json:"backupAmfInfo,omitempty"`
-	RatType RatType `json:"ratType"`
-	UrrpIndicator *bool `json:"urrpIndicator,omitempty"`
+	PcscfRestorationCallbackUri *string         `json:"pcscfRestorationCallbackUri,omitempty"`
+	AmfServiceNamePcscfRest     *ServiceName    `json:"amfServiceNamePcscfRest,omitempty"`
+	Guami                       Guami           `json:"guami"`
+	BackupAmfInfo               []BackupAmfInfo `json:"backupAmfInfo,omitempty"`
+	RatType                     RatType         `json:"ratType"`
+	UrrpIndicator               *bool           `json:"urrpIndicator,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	AmfEeSubscriptionId *string `json:"amfEeSubscriptionId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	RegistrationTime *time.Time `json:"registrationTime,omitempty"`
-	VgmlcAddress *VgmlcAddress `json:"vgmlcAddress,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
-	NoEeSubscriptionInd *bool `json:"noEeSubscriptionInd,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi *string `json:"supi,omitempty"`
-	ReRegistrationRequired *bool `json:"reRegistrationRequired,omitempty"`
-	AdminDeregSubWithdrawn *bool `json:"adminDeregSubWithdrawn,omitempty"`
+	RegistrationTime    *time.Time    `json:"registrationTime,omitempty"`
+	VgmlcAddress        *VgmlcAddress `json:"vgmlcAddress,omitempty"`
+	ContextInfo         *ContextInfo  `json:"contextInfo,omitempty"`
+	NoEeSubscriptionInd *bool         `json:"noEeSubscriptionInd,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi                   *string `json:"supi,omitempty"`
+	ReRegistrationRequired *bool   `json:"reRegistrationRequired,omitempty"`
+	AdminDeregSubWithdrawn *bool   `json:"adminDeregSubWithdrawn,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	DataRestorationCallbackUri *string `json:"dataRestorationCallbackUri,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
-	DisasterRoamingInd *bool `json:"disasterRoamingInd,omitempty"`
-	SorSnpnSiSupported *bool `json:"sorSnpnSiSupported,omitempty"`
-	UdrRestartInd *bool `json:"udrRestartInd,omitempty"`
+	DataRestorationCallbackUri *string  `json:"dataRestorationCallbackUri,omitempty"`
+	ResetIds                   []string `json:"resetIds,omitempty"`
+	DisasterRoamingInd         *bool    `json:"disasterRoamingInd,omitempty"`
+	SorSnpnSiSupported         *bool    `json:"sorSnpnSiSupported,omitempty"`
+	UdrRestartInd              *bool    `json:"udrRestartInd,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	LastSynchronizationTime *time.Time `json:"lastSynchronizationTime,omitempty"`
 }
@@ -119,7 +119,7 @@ func (o *AmfNon3GppAccessRegistration) SetAmfInstanceId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -137,7 +137,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *AmfNon3GppAccessRegistration) SetSupportedFeatures(v string) {
 
 // GetPurgeFlag returns the PurgeFlag field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetPurgeFlag() bool {
-	if o == nil || isNil(o.PurgeFlag) {
+	if o == nil || IsNil(o.PurgeFlag) {
 		var ret bool
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *AmfNon3GppAccessRegistration) GetPurgeFlag() bool {
 // GetPurgeFlagOk returns a tuple with the PurgeFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetPurgeFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.PurgeFlag) {
+	if o == nil || IsNil(o.PurgeFlag) {
 		return nil, false
 	}
 	return o.PurgeFlag, true
@@ -169,7 +169,7 @@ func (o *AmfNon3GppAccessRegistration) GetPurgeFlagOk() (*bool, bool) {
 
 // HasPurgeFlag returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasPurgeFlag() bool {
-	if o != nil && !isNil(o.PurgeFlag) {
+	if o != nil && !IsNil(o.PurgeFlag) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *AmfNon3GppAccessRegistration) SetPurgeFlag(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *AmfNon3GppAccessRegistration) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -201,7 +201,7 @@ func (o *AmfNon3GppAccessRegistration) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *AmfNon3GppAccessRegistration) SetDeregCallbackUri(v string) {
 
 // GetAmfServiceNameDereg returns the AmfServiceNameDereg field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDereg() ServiceName {
-	if o == nil || isNil(o.AmfServiceNameDereg) {
+	if o == nil || IsNil(o.AmfServiceNameDereg) {
 		var ret ServiceName
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDereg() ServiceName {
 // GetAmfServiceNameDeregOk returns a tuple with the AmfServiceNameDereg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDeregOk() (*ServiceName, bool) {
-	if o == nil || isNil(o.AmfServiceNameDereg) {
+	if o == nil || IsNil(o.AmfServiceNameDereg) {
 		return nil, false
 	}
 	return o.AmfServiceNameDereg, true
@@ -281,7 +281,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDeregOk() (*ServiceName,
 
 // HasAmfServiceNameDereg returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAmfServiceNameDereg() bool {
-	if o != nil && !isNil(o.AmfServiceNameDereg) {
+	if o != nil && !IsNil(o.AmfServiceNameDereg) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *AmfNon3GppAccessRegistration) SetAmfServiceNameDereg(v ServiceName) {
 
 // GetPcscfRestorationCallbackUri returns the PcscfRestorationCallbackUri field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUri() string {
-	if o == nil || isNil(o.PcscfRestorationCallbackUri) {
+	if o == nil || IsNil(o.PcscfRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUri() string {
 // GetPcscfRestorationCallbackUriOk returns a tuple with the PcscfRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.PcscfRestorationCallbackUri) {
+	if o == nil || IsNil(o.PcscfRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.PcscfRestorationCallbackUri, true
@@ -313,7 +313,7 @@ func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUriOk() (*stri
 
 // HasPcscfRestorationCallbackUri returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasPcscfRestorationCallbackUri() bool {
-	if o != nil && !isNil(o.PcscfRestorationCallbackUri) {
+	if o != nil && !IsNil(o.PcscfRestorationCallbackUri) {
 		return true
 	}
 
@@ -327,7 +327,7 @@ func (o *AmfNon3GppAccessRegistration) SetPcscfRestorationCallbackUri(v string) 
 
 // GetAmfServiceNamePcscfRest returns the AmfServiceNamePcscfRest field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRest() ServiceName {
-	if o == nil || isNil(o.AmfServiceNamePcscfRest) {
+	if o == nil || IsNil(o.AmfServiceNamePcscfRest) {
 		var ret ServiceName
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRest() ServiceName 
 // GetAmfServiceNamePcscfRestOk returns a tuple with the AmfServiceNamePcscfRest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRestOk() (*ServiceName, bool) {
-	if o == nil || isNil(o.AmfServiceNamePcscfRest) {
+	if o == nil || IsNil(o.AmfServiceNamePcscfRest) {
 		return nil, false
 	}
 	return o.AmfServiceNamePcscfRest, true
@@ -345,7 +345,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRestOk() (*ServiceN
 
 // HasAmfServiceNamePcscfRest returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAmfServiceNamePcscfRest() bool {
-	if o != nil && !isNil(o.AmfServiceNamePcscfRest) {
+	if o != nil && !IsNil(o.AmfServiceNamePcscfRest) {
 		return true
 	}
 
@@ -383,7 +383,7 @@ func (o *AmfNon3GppAccessRegistration) SetGuami(v Guami) {
 
 // GetBackupAmfInfo returns the BackupAmfInfo field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfo() []BackupAmfInfo {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		var ret []BackupAmfInfo
 		return ret
 	}
@@ -393,7 +393,7 @@ func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfo() []BackupAmfInfo {
 // GetBackupAmfInfoOk returns a tuple with the BackupAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		return nil, false
 	}
 	return o.BackupAmfInfo, true
@@ -401,7 +401,7 @@ func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfoOk() ([]BackupAmfInfo, bo
 
 // HasBackupAmfInfo returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasBackupAmfInfo() bool {
-	if o != nil && !isNil(o.BackupAmfInfo) {
+	if o != nil && !IsNil(o.BackupAmfInfo) {
 		return true
 	}
 
@@ -439,7 +439,7 @@ func (o *AmfNon3GppAccessRegistration) SetRatType(v RatType) {
 
 // GetUrrpIndicator returns the UrrpIndicator field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetUrrpIndicator() bool {
-	if o == nil || isNil(o.UrrpIndicator) {
+	if o == nil || IsNil(o.UrrpIndicator) {
 		var ret bool
 		return ret
 	}
@@ -449,7 +449,7 @@ func (o *AmfNon3GppAccessRegistration) GetUrrpIndicator() bool {
 // GetUrrpIndicatorOk returns a tuple with the UrrpIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetUrrpIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.UrrpIndicator) {
+	if o == nil || IsNil(o.UrrpIndicator) {
 		return nil, false
 	}
 	return o.UrrpIndicator, true
@@ -457,7 +457,7 @@ func (o *AmfNon3GppAccessRegistration) GetUrrpIndicatorOk() (*bool, bool) {
 
 // HasUrrpIndicator returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasUrrpIndicator() bool {
-	if o != nil && !isNil(o.UrrpIndicator) {
+	if o != nil && !IsNil(o.UrrpIndicator) {
 		return true
 	}
 
@@ -471,7 +471,7 @@ func (o *AmfNon3GppAccessRegistration) SetUrrpIndicator(v bool) {
 
 // GetAmfEeSubscriptionId returns the AmfEeSubscriptionId field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionId() string {
-	if o == nil || isNil(o.AmfEeSubscriptionId) {
+	if o == nil || IsNil(o.AmfEeSubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -481,7 +481,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionId() string {
 // GetAmfEeSubscriptionIdOk returns a tuple with the AmfEeSubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfEeSubscriptionId) {
+	if o == nil || IsNil(o.AmfEeSubscriptionId) {
 		return nil, false
 	}
 	return o.AmfEeSubscriptionId, true
@@ -489,7 +489,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionIdOk() (*string, bool
 
 // HasAmfEeSubscriptionId returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAmfEeSubscriptionId() bool {
-	if o != nil && !isNil(o.AmfEeSubscriptionId) {
+	if o != nil && !IsNil(o.AmfEeSubscriptionId) {
 		return true
 	}
 
@@ -503,7 +503,7 @@ func (o *AmfNon3GppAccessRegistration) SetAmfEeSubscriptionId(v string) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetRegistrationTime() time.Time {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *AmfNon3GppAccessRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -521,7 +521,7 @@ func (o *AmfNon3GppAccessRegistration) GetRegistrationTimeOk() (*time.Time, bool
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasRegistrationTime() bool {
-	if o != nil && !isNil(o.RegistrationTime) {
+	if o != nil && !IsNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -535,7 +535,7 @@ func (o *AmfNon3GppAccessRegistration) SetRegistrationTime(v time.Time) {
 
 // GetVgmlcAddress returns the VgmlcAddress field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetVgmlcAddress() VgmlcAddress {
-	if o == nil || isNil(o.VgmlcAddress) {
+	if o == nil || IsNil(o.VgmlcAddress) {
 		var ret VgmlcAddress
 		return ret
 	}
@@ -545,7 +545,7 @@ func (o *AmfNon3GppAccessRegistration) GetVgmlcAddress() VgmlcAddress {
 // GetVgmlcAddressOk returns a tuple with the VgmlcAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetVgmlcAddressOk() (*VgmlcAddress, bool) {
-	if o == nil || isNil(o.VgmlcAddress) {
+	if o == nil || IsNil(o.VgmlcAddress) {
 		return nil, false
 	}
 	return o.VgmlcAddress, true
@@ -553,7 +553,7 @@ func (o *AmfNon3GppAccessRegistration) GetVgmlcAddressOk() (*VgmlcAddress, bool)
 
 // HasVgmlcAddress returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasVgmlcAddress() bool {
-	if o != nil && !isNil(o.VgmlcAddress) {
+	if o != nil && !IsNil(o.VgmlcAddress) {
 		return true
 	}
 
@@ -567,7 +567,7 @@ func (o *AmfNon3GppAccessRegistration) SetVgmlcAddress(v VgmlcAddress) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -577,7 +577,7 @@ func (o *AmfNon3GppAccessRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -585,7 +585,7 @@ func (o *AmfNon3GppAccessRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -599,7 +599,7 @@ func (o *AmfNon3GppAccessRegistration) SetContextInfo(v ContextInfo) {
 
 // GetNoEeSubscriptionInd returns the NoEeSubscriptionInd field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionInd() bool {
-	if o == nil || isNil(o.NoEeSubscriptionInd) {
+	if o == nil || IsNil(o.NoEeSubscriptionInd) {
 		var ret bool
 		return ret
 	}
@@ -609,7 +609,7 @@ func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionInd() bool {
 // GetNoEeSubscriptionIndOk returns a tuple with the NoEeSubscriptionInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionIndOk() (*bool, bool) {
-	if o == nil || isNil(o.NoEeSubscriptionInd) {
+	if o == nil || IsNil(o.NoEeSubscriptionInd) {
 		return nil, false
 	}
 	return o.NoEeSubscriptionInd, true
@@ -617,7 +617,7 @@ func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionIndOk() (*bool, bool) 
 
 // HasNoEeSubscriptionInd returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasNoEeSubscriptionInd() bool {
-	if o != nil && !isNil(o.NoEeSubscriptionInd) {
+	if o != nil && !IsNil(o.NoEeSubscriptionInd) {
 		return true
 	}
 
@@ -631,7 +631,7 @@ func (o *AmfNon3GppAccessRegistration) SetNoEeSubscriptionInd(v bool) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -641,7 +641,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -649,7 +649,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -663,7 +663,7 @@ func (o *AmfNon3GppAccessRegistration) SetSupi(v string) {
 
 // GetReRegistrationRequired returns the ReRegistrationRequired field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequired() bool {
-	if o == nil || isNil(o.ReRegistrationRequired) {
+	if o == nil || IsNil(o.ReRegistrationRequired) {
 		var ret bool
 		return ret
 	}
@@ -673,7 +673,7 @@ func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequired() bool {
 // GetReRegistrationRequiredOk returns a tuple with the ReRegistrationRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.ReRegistrationRequired) {
+	if o == nil || IsNil(o.ReRegistrationRequired) {
 		return nil, false
 	}
 	return o.ReRegistrationRequired, true
@@ -681,7 +681,7 @@ func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequiredOk() (*bool, boo
 
 // HasReRegistrationRequired returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasReRegistrationRequired() bool {
-	if o != nil && !isNil(o.ReRegistrationRequired) {
+	if o != nil && !IsNil(o.ReRegistrationRequired) {
 		return true
 	}
 
@@ -695,7 +695,7 @@ func (o *AmfNon3GppAccessRegistration) SetReRegistrationRequired(v bool) {
 
 // GetAdminDeregSubWithdrawn returns the AdminDeregSubWithdrawn field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawn() bool {
-	if o == nil || isNil(o.AdminDeregSubWithdrawn) {
+	if o == nil || IsNil(o.AdminDeregSubWithdrawn) {
 		var ret bool
 		return ret
 	}
@@ -705,7 +705,7 @@ func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawn() bool {
 // GetAdminDeregSubWithdrawnOk returns a tuple with the AdminDeregSubWithdrawn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawnOk() (*bool, bool) {
-	if o == nil || isNil(o.AdminDeregSubWithdrawn) {
+	if o == nil || IsNil(o.AdminDeregSubWithdrawn) {
 		return nil, false
 	}
 	return o.AdminDeregSubWithdrawn, true
@@ -713,7 +713,7 @@ func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawnOk() (*bool, boo
 
 // HasAdminDeregSubWithdrawn returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAdminDeregSubWithdrawn() bool {
-	if o != nil && !isNil(o.AdminDeregSubWithdrawn) {
+	if o != nil && !IsNil(o.AdminDeregSubWithdrawn) {
 		return true
 	}
 
@@ -727,7 +727,7 @@ func (o *AmfNon3GppAccessRegistration) SetAdminDeregSubWithdrawn(v bool) {
 
 // GetDataRestorationCallbackUri returns the DataRestorationCallbackUri field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUri() string {
-	if o == nil || isNil(o.DataRestorationCallbackUri) {
+	if o == nil || IsNil(o.DataRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -737,7 +737,7 @@ func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUri() string {
 // GetDataRestorationCallbackUriOk returns a tuple with the DataRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.DataRestorationCallbackUri) {
+	if o == nil || IsNil(o.DataRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.DataRestorationCallbackUri, true
@@ -745,7 +745,7 @@ func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUriOk() (*strin
 
 // HasDataRestorationCallbackUri returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasDataRestorationCallbackUri() bool {
-	if o != nil && !isNil(o.DataRestorationCallbackUri) {
+	if o != nil && !IsNil(o.DataRestorationCallbackUri) {
 		return true
 	}
 
@@ -759,7 +759,7 @@ func (o *AmfNon3GppAccessRegistration) SetDataRestorationCallbackUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -769,7 +769,7 @@ func (o *AmfNon3GppAccessRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -777,7 +777,7 @@ func (o *AmfNon3GppAccessRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -791,7 +791,7 @@ func (o *AmfNon3GppAccessRegistration) SetResetIds(v []string) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingInd() bool {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -801,7 +801,7 @@ func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -809,7 +809,7 @@ func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasDisasterRoamingInd() bool {
-	if o != nil && !isNil(o.DisasterRoamingInd) {
+	if o != nil && !IsNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -823,7 +823,7 @@ func (o *AmfNon3GppAccessRegistration) SetDisasterRoamingInd(v bool) {
 
 // GetSorSnpnSiSupported returns the SorSnpnSiSupported field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupported() bool {
-	if o == nil || isNil(o.SorSnpnSiSupported) {
+	if o == nil || IsNil(o.SorSnpnSiSupported) {
 		var ret bool
 		return ret
 	}
@@ -833,7 +833,7 @@ func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupported() bool {
 // GetSorSnpnSiSupportedOk returns a tuple with the SorSnpnSiSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupportedOk() (*bool, bool) {
-	if o == nil || isNil(o.SorSnpnSiSupported) {
+	if o == nil || IsNil(o.SorSnpnSiSupported) {
 		return nil, false
 	}
 	return o.SorSnpnSiSupported, true
@@ -841,7 +841,7 @@ func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupportedOk() (*bool, bool) {
 
 // HasSorSnpnSiSupported returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasSorSnpnSiSupported() bool {
-	if o != nil && !isNil(o.SorSnpnSiSupported) {
+	if o != nil && !IsNil(o.SorSnpnSiSupported) {
 		return true
 	}
 
@@ -855,7 +855,7 @@ func (o *AmfNon3GppAccessRegistration) SetSorSnpnSiSupported(v bool) {
 
 // GetUdrRestartInd returns the UdrRestartInd field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetUdrRestartInd() bool {
-	if o == nil || isNil(o.UdrRestartInd) {
+	if o == nil || IsNil(o.UdrRestartInd) {
 		var ret bool
 		return ret
 	}
@@ -865,7 +865,7 @@ func (o *AmfNon3GppAccessRegistration) GetUdrRestartInd() bool {
 // GetUdrRestartIndOk returns a tuple with the UdrRestartInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetUdrRestartIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UdrRestartInd) {
+	if o == nil || IsNil(o.UdrRestartInd) {
 		return nil, false
 	}
 	return o.UdrRestartInd, true
@@ -873,7 +873,7 @@ func (o *AmfNon3GppAccessRegistration) GetUdrRestartIndOk() (*bool, bool) {
 
 // HasUdrRestartInd returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasUdrRestartInd() bool {
-	if o != nil && !isNil(o.UdrRestartInd) {
+	if o != nil && !IsNil(o.UdrRestartInd) {
 		return true
 	}
 
@@ -887,7 +887,7 @@ func (o *AmfNon3GppAccessRegistration) SetUdrRestartInd(v bool) {
 
 // GetLastSynchronizationTime returns the LastSynchronizationTime field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTime() time.Time {
-	if o == nil || isNil(o.LastSynchronizationTime) {
+	if o == nil || IsNil(o.LastSynchronizationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -897,7 +897,7 @@ func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTime() time.Time {
 // GetLastSynchronizationTimeOk returns a tuple with the LastSynchronizationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastSynchronizationTime) {
+	if o == nil || IsNil(o.LastSynchronizationTime) {
 		return nil, false
 	}
 	return o.LastSynchronizationTime, true
@@ -905,7 +905,7 @@ func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTimeOk() (*time.Tim
 
 // HasLastSynchronizationTime returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasLastSynchronizationTime() bool {
-	if o != nil && !isNil(o.LastSynchronizationTime) {
+	if o != nil && !IsNil(o.LastSynchronizationTime) {
 		return true
 	}
 
@@ -918,7 +918,7 @@ func (o *AmfNon3GppAccessRegistration) SetLastSynchronizationTime(v time.Time) {
 }
 
 func (o AmfNon3GppAccessRegistration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -928,74 +928,74 @@ func (o AmfNon3GppAccessRegistration) MarshalJSON() ([]byte, error) {
 func (o AmfNon3GppAccessRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfInstanceId"] = o.AmfInstanceId
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.PurgeFlag) {
+	if !IsNil(o.PurgeFlag) {
 		toSerialize["purgeFlag"] = o.PurgeFlag
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
 	toSerialize["imsVoPs"] = o.ImsVoPs
 	toSerialize["deregCallbackUri"] = o.DeregCallbackUri
-	if !isNil(o.AmfServiceNameDereg) {
+	if !IsNil(o.AmfServiceNameDereg) {
 		toSerialize["amfServiceNameDereg"] = o.AmfServiceNameDereg
 	}
-	if !isNil(o.PcscfRestorationCallbackUri) {
+	if !IsNil(o.PcscfRestorationCallbackUri) {
 		toSerialize["pcscfRestorationCallbackUri"] = o.PcscfRestorationCallbackUri
 	}
-	if !isNil(o.AmfServiceNamePcscfRest) {
+	if !IsNil(o.AmfServiceNamePcscfRest) {
 		toSerialize["amfServiceNamePcscfRest"] = o.AmfServiceNamePcscfRest
 	}
 	toSerialize["guami"] = o.Guami
-	if !isNil(o.BackupAmfInfo) {
+	if !IsNil(o.BackupAmfInfo) {
 		toSerialize["backupAmfInfo"] = o.BackupAmfInfo
 	}
 	toSerialize["ratType"] = o.RatType
-	if !isNil(o.UrrpIndicator) {
+	if !IsNil(o.UrrpIndicator) {
 		toSerialize["urrpIndicator"] = o.UrrpIndicator
 	}
-	if !isNil(o.AmfEeSubscriptionId) {
+	if !IsNil(o.AmfEeSubscriptionId) {
 		toSerialize["amfEeSubscriptionId"] = o.AmfEeSubscriptionId
 	}
-	if !isNil(o.RegistrationTime) {
+	if !IsNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !isNil(o.VgmlcAddress) {
+	if !IsNil(o.VgmlcAddress) {
 		toSerialize["vgmlcAddress"] = o.VgmlcAddress
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !isNil(o.NoEeSubscriptionInd) {
+	if !IsNil(o.NoEeSubscriptionInd) {
 		toSerialize["noEeSubscriptionInd"] = o.NoEeSubscriptionInd
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.ReRegistrationRequired) {
+	if !IsNil(o.ReRegistrationRequired) {
 		toSerialize["reRegistrationRequired"] = o.ReRegistrationRequired
 	}
-	if !isNil(o.AdminDeregSubWithdrawn) {
+	if !IsNil(o.AdminDeregSubWithdrawn) {
 		toSerialize["adminDeregSubWithdrawn"] = o.AdminDeregSubWithdrawn
 	}
-	if !isNil(o.DataRestorationCallbackUri) {
+	if !IsNil(o.DataRestorationCallbackUri) {
 		toSerialize["dataRestorationCallbackUri"] = o.DataRestorationCallbackUri
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !isNil(o.DisasterRoamingInd) {
+	if !IsNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
-	if !isNil(o.SorSnpnSiSupported) {
+	if !IsNil(o.SorSnpnSiSupported) {
 		toSerialize["sorSnpnSiSupported"] = o.SorSnpnSiSupported
 	}
-	if !isNil(o.UdrRestartInd) {
+	if !IsNil(o.UdrRestartInd) {
 		toSerialize["udrRestartInd"] = o.UdrRestartInd
 	}
-	if !isNil(o.LastSynchronizationTime) {
+	if !IsNil(o.LastSynchronizationTime) {
 		toSerialize["lastSynchronizationTime"] = o.LastSynchronizationTime
 	}
 	return toSerialize, nil
@@ -1036,5 +1036,3 @@ func (v *NullableAmfNon3GppAccessRegistration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

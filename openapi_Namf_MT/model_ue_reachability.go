@@ -1,7 +1,7 @@
 /*
 Namf_MT
 
-AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // UeReachability Describes the reachability of the UE
 type UeReachability struct {
-	UeReachabilityAnyOf *UeReachabilityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UeReachability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UeReachabilityAnyOf
-	err = json.Unmarshal(data, &dst.UeReachabilityAnyOf);
-	if err == nil {
-		jsonUeReachabilityAnyOf, _ := json.Marshal(dst.UeReachabilityAnyOf)
-		if string(jsonUeReachabilityAnyOf) == "{}" { // empty struct
-			dst.UeReachabilityAnyOf = nil
-		} else {
-			return nil // data stored in dst.UeReachabilityAnyOf, return on the first match
-		}
-	} else {
-		dst.UeReachabilityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UeReachability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UeReachability) MarshalJSON() ([]byte, error) {
-	if src.UeReachabilityAnyOf != nil {
-		return json.Marshal(&src.UeReachabilityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUeReachability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

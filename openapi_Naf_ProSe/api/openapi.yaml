@@ -699,7 +699,18 @@ components:
       type: string
     AuthRequestType:
       anyOf:
-      - $ref: '#/components/schemas/AuthRequestType_anyOf'
+      - enum:
+        - OPEN_DISCOVERY_EXTENSION_ANNOUNCE
+        - RESTRICTED_DISCOVERY_ANNOUNCE
+        - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE
+        - OPEN_DISCOVERY_EXTENSION_MONITOR
+        - RESTRICTED_DISCOVERY_MONITOR
+        - RESTRICTED_DISCOVERY_EXTENSION_MONITOR
+        - RESTRICTED_DISCOVERY_PERMISSION
+        - RESTRICTED_DISCOVERY_RESPONSE
+        - RESTRICTED_DISCOVERY_QUERY
+        - RESTRICTED_DISCOVERY_MATCH
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -727,7 +738,18 @@ components:
         discovery/match.
     AuthResponseType:
       anyOf:
-      - $ref: '#/components/schemas/AuthResponseType_anyOf'
+      - enum:
+        - OPEN_DISCOVERY_EXTENSION_ANNOUNCE_ACK
+        - RESTRICTED_DISCOVERY_ANNOUNCE_ACK
+        - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE_ACK
+        - OPEN_DISCOVERY_EXTENSION_MONITOR_ACK
+        - RESTRICTED_DISCOVERY_MONITOR_ACK
+        - RESTRICTED_DISCOVERY_EXTENSION_MONITOR_ACK
+        - RESTRICTED_DISCOVERY_PERMISSION_ACK
+        - RESTRICTED_DISCOVERY_RESPONSE_ACK
+        - RESTRICTED_DISCOVERY_QUERY_ACK
+        - RESTRICTED_DISCOVERY_MATCH_ACK
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -755,7 +777,11 @@ components:
         restricted discovery/match ack.
     MetadataIndic:
       anyOf:
-      - $ref: '#/components/schemas/MetadataIndic_anyOf'
+      - enum:
+        - NO_METADATA
+        - METADATA_UPDATE_DISALLOWED
+        - METADATA_UPDATE_ALLOWED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -769,7 +795,10 @@ components:
         associated with the target RPAUID, and the metadata is allowed to be updated.
     RevocationResult:
       anyOf:
-      - $ref: '#/components/schemas/RevocationResult_anyOf'
+      - enum:
+        - REVOCATION_SUCCESSFUL
+        - REVOCATION_NOT_SUCCESSFUL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1104,7 +1133,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -1216,107 +1302,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    AuthRequestType_anyOf:
-      enum:
-      - OPEN_DISCOVERY_EXTENSION_ANNOUNCE
-      - RESTRICTED_DISCOVERY_ANNOUNCE
-      - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE
-      - OPEN_DISCOVERY_EXTENSION_MONITOR
-      - RESTRICTED_DISCOVERY_MONITOR
-      - RESTRICTED_DISCOVERY_EXTENSION_MONITOR
-      - RESTRICTED_DISCOVERY_PERMISSION
-      - RESTRICTED_DISCOVERY_RESPONSE
-      - RESTRICTED_DISCOVERY_QUERY
-      - RESTRICTED_DISCOVERY_MATCH
-      type: string
-      example: null
-    AuthResponseType_anyOf:
-      enum:
-      - OPEN_DISCOVERY_EXTENSION_ANNOUNCE_ACK
-      - RESTRICTED_DISCOVERY_ANNOUNCE_ACK
-      - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE_ACK
-      - OPEN_DISCOVERY_EXTENSION_MONITOR_ACK
-      - RESTRICTED_DISCOVERY_MONITOR_ACK
-      - RESTRICTED_DISCOVERY_EXTENSION_MONITOR_ACK
-      - RESTRICTED_DISCOVERY_PERMISSION_ACK
-      - RESTRICTED_DISCOVERY_RESPONSE_ACK
-      - RESTRICTED_DISCOVERY_QUERY_ACK
-      - RESTRICTED_DISCOVERY_MATCH_ACK
-      type: string
-      example: null
-    MetadataIndic_anyOf:
-      enum:
-      - NO_METADATA
-      - METADATA_UPDATE_DISALLOWED
-      - METADATA_UPDATE_ALLOWED
-      type: string
-      example: null
-    RevocationResult_anyOf:
-      enum:
-      - REVOCATION_SUCCESSFUL
-      - REVOCATION_NOT_SUCCESSFUL
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

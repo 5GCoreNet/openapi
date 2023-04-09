@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewUeACResponseDataWithDefaults() *UeACResponseData {
 
 // GetAcuFailureList returns the AcuFailureList field value if set, zero value otherwise.
 func (o *UeACResponseData) GetAcuFailureList() map[string][]AcuFailureItem {
-	if o == nil || isNil(o.AcuFailureList) {
+	if o == nil || IsNil(o.AcuFailureList) {
 		var ret map[string][]AcuFailureItem
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UeACResponseData) GetAcuFailureList() map[string][]AcuFailureItem {
 // GetAcuFailureListOk returns a tuple with the AcuFailureList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACResponseData) GetAcuFailureListOk() (*map[string][]AcuFailureItem, bool) {
-	if o == nil || isNil(o.AcuFailureList) {
+	if o == nil || IsNil(o.AcuFailureList) {
 		return nil, false
 	}
 	return o.AcuFailureList, true
@@ -60,7 +60,7 @@ func (o *UeACResponseData) GetAcuFailureListOk() (*map[string][]AcuFailureItem, 
 
 // HasAcuFailureList returns a boolean if a field has been set.
 func (o *UeACResponseData) HasAcuFailureList() bool {
-	if o != nil && !isNil(o.AcuFailureList) {
+	if o != nil && !IsNil(o.AcuFailureList) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *UeACResponseData) SetAcuFailureList(v map[string][]AcuFailureItem) {
 }
 
 func (o UeACResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o UeACResponseData) MarshalJSON() ([]byte, error) {
 
 func (o UeACResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AcuFailureList) {
+	if !IsNil(o.AcuFailureList) {
 		toSerialize["acuFailureList"] = o.AcuFailureList
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableUeACResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

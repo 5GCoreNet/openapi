@@ -20,7 +20,7 @@ type PositioningMethodType string
 
 // List of positioningMethod-Type
 const (
-	GNSS PositioningMethodType = "GNSS"
+	GNSS      PositioningMethodType = "GNSS"
 	E_CELL_ID PositioningMethodType = "E-CELL_ID"
 )
 
@@ -108,4 +108,3 @@ func (v *NullablePositioningMethodType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

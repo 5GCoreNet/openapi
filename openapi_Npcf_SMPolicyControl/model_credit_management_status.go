@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // CreditManagementStatus Indicates the reason of the credit management session failure.
 type CreditManagementStatus struct {
-	CreditManagementStatusAnyOf *CreditManagementStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CreditManagementStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CreditManagementStatusAnyOf
-	err = json.Unmarshal(data, &dst.CreditManagementStatusAnyOf);
-	if err == nil {
-		jsonCreditManagementStatusAnyOf, _ := json.Marshal(dst.CreditManagementStatusAnyOf)
-		if string(jsonCreditManagementStatusAnyOf) == "{}" { // empty struct
-			dst.CreditManagementStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.CreditManagementStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.CreditManagementStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *CreditManagementStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CreditManagementStatus) MarshalJSON() ([]byte, error) {
-	if src.CreditManagementStatusAnyOf != nil {
-		return json.Marshal(&src.CreditManagementStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCreditManagementStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

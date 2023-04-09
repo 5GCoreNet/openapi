@@ -1,7 +1,7 @@
 /*
 UAE Server Real-time UAV Status Service
 
-UAE Server Real-time UAV Status Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server Real-time UAV Status Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -13,19 +13,18 @@ package openapi_UAE_RealtimeUAVStatus
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualRealTimeUAVStatusSubscriptionDocumentApiService IndividualRealTimeUAVStatusSubscriptionDocumentApi service
 type IndividualRealTimeUAVStatusSubscriptionDocumentApiService service
 
 type ApiDeleteRTUavStatusSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualRealTimeUAVStatusSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualRealTimeUAVStatusSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteRTUavStatusSubscriptionRequest) Execute() (*http.Response, erro
 /*
 DeleteRTUavStatusSubscription Request the deletion of an existing real-time UAV status subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Individual Real-time UAV Status Subscription identifier.
- @return ApiDeleteRTUavStatusSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Individual Real-time UAV Status Subscription identifier.
+	@return ApiDeleteRTUavStatusSubscriptionRequest
 */
 func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavStatusSubscription(ctx context.Context, subscriptionId string) ApiDeleteRTUavStatusSubscriptionRequest {
 	return ApiDeleteRTUavStatusSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 // Execute executes the request
 func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavStatusSubscriptionExecute(r ApiDeleteRTUavStatusSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRealTimeUAVStatusSubscriptionDocumentApiService.DeleteRTUavStatusSubscription")
@@ -95,9 +94,9 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -158,8 +157,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -169,8 +168,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -180,8 +179,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -191,8 +190,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -202,8 +201,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) DeleteRTUavS
 }
 
 type ApiGetRTUavStatusSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualRealTimeUAVStatusSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualRealTimeUAVStatusSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -214,26 +213,27 @@ func (r ApiGetRTUavStatusSubscriptionRequest) Execute() (*RTUavStatusSubsc, *htt
 /*
 GetRTUavStatusSubscription Retrieve a real-time UAV status subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Individual Real-time UAV Status Subscription identifier.
- @return ApiGetRTUavStatusSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Individual Real-time UAV Status Subscription identifier.
+	@return ApiGetRTUavStatusSubscriptionRequest
 */
 func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStatusSubscription(ctx context.Context, subscriptionId string) ApiGetRTUavStatusSubscriptionRequest {
 	return ApiGetRTUavStatusSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return RTUavStatusSubsc
+//
+//	@return RTUavStatusSubsc
 func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStatusSubscriptionExecute(r ApiGetRTUavStatusSubscriptionRequest) (*RTUavStatusSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RTUavStatusSubsc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RTUavStatusSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRealTimeUAVStatusSubscriptionDocumentApiService.GetRTUavStatusSubscription")
@@ -275,9 +275,9 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -294,8 +294,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -305,8 +305,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -316,8 +316,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -327,8 +327,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -338,8 +338,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -349,8 +349,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -360,8 +360,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -371,8 +371,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -391,9 +391,9 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) GetRTUavStat
 }
 
 type ApiUpdateRTUavStatusSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualRealTimeUAVStatusSubscriptionDocumentApiService
-	subscriptionId string
+	ctx              context.Context
+	ApiService       *IndividualRealTimeUAVStatusSubscriptionDocumentApiService
+	subscriptionId   string
 	rTUavStatusSubsc *RTUavStatusSubsc
 }
 
@@ -409,26 +409,27 @@ func (r ApiUpdateRTUavStatusSubscriptionRequest) Execute() (*RTUavStatusSubsc, *
 /*
 UpdateRTUavStatusSubscription Request the update of an existing real-time UAV status subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Individual Real-time UAV Status Subscription identifier.
- @return ApiUpdateRTUavStatusSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Individual Real-time UAV Status Subscription identifier.
+	@return ApiUpdateRTUavStatusSubscriptionRequest
 */
 func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavStatusSubscription(ctx context.Context, subscriptionId string) ApiUpdateRTUavStatusSubscriptionRequest {
 	return ApiUpdateRTUavStatusSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return RTUavStatusSubsc
+//
+//	@return RTUavStatusSubsc
 func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavStatusSubscriptionExecute(r ApiUpdateRTUavStatusSubscriptionRequest) (*RTUavStatusSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RTUavStatusSubsc
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RTUavStatusSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualRealTimeUAVStatusSubscriptionDocumentApiService.UpdateRTUavStatusSubscription")
@@ -475,9 +476,9 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -494,8 +495,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -505,8 +506,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -516,8 +517,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -527,8 +528,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -538,8 +539,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -549,8 +550,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -560,8 +561,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -571,8 +572,8 @@ func (a *IndividualRealTimeUAVStatusSubscriptionDocumentApiService) UpdateRTUavS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

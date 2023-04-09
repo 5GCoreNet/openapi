@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the HalTemplate type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &HalTemplate{}
 
-// HalTemplate Hypertext Application Language (HAL) template contains the extended 3GPP hypermedia format. 
+// HalTemplate Hypertext Application Language (HAL) template contains the extended 3GPP hypermedia format.
 type HalTemplate struct {
 	// A human-readable string that can be used to identify this template
-	Title *string `json:"title,omitempty"`
+	Title  *string    `json:"title,omitempty"`
 	Method HttpMethod `json:"method"`
-	// The media type that should be used for the corresponding request. If the attribute is missing, or contains an unrecognized value, the client should act as if the  contentType is set to \"application/json\". 
+	// The media type that should be used for the corresponding request. If the attribute is missing, or contains an unrecognized value, the client should act as if the  contentType is set to \"application/json\".
 	ContentType *string `json:"contentType,omitempty"`
-	// The properties that should be included in the body of the corresponding request.  If the contentType attribute is set to \"application/json\", then this attribute  describes the attributes of the JSON object of the body. 
+	// The properties that should be included in the body of the corresponding request.  If the contentType attribute is set to \"application/json\", then this attribute  describes the attributes of the JSON object of the body.
 	Properties []Property `json:"properties,omitempty"`
 }
 
@@ -48,7 +48,7 @@ func NewHalTemplateWithDefaults() *HalTemplate {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *HalTemplate) GetTitle() string {
-	if o == nil || isNil(o.Title) {
+	if o == nil || IsNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *HalTemplate) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HalTemplate) GetTitleOk() (*string, bool) {
-	if o == nil || isNil(o.Title) {
+	if o == nil || IsNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -66,7 +66,7 @@ func (o *HalTemplate) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *HalTemplate) HasTitle() bool {
-	if o != nil && !isNil(o.Title) {
+	if o != nil && !IsNil(o.Title) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *HalTemplate) SetMethod(v HttpMethod) {
 
 // GetContentType returns the ContentType field value if set, zero value otherwise.
 func (o *HalTemplate) GetContentType() string {
-	if o == nil || isNil(o.ContentType) {
+	if o == nil || IsNil(o.ContentType) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *HalTemplate) GetContentType() string {
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HalTemplate) GetContentTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ContentType) {
+	if o == nil || IsNil(o.ContentType) {
 		return nil, false
 	}
 	return o.ContentType, true
@@ -122,7 +122,7 @@ func (o *HalTemplate) GetContentTypeOk() (*string, bool) {
 
 // HasContentType returns a boolean if a field has been set.
 func (o *HalTemplate) HasContentType() bool {
-	if o != nil && !isNil(o.ContentType) {
+	if o != nil && !IsNil(o.ContentType) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *HalTemplate) SetContentType(v string) {
 
 // GetProperties returns the Properties field value if set, zero value otherwise.
 func (o *HalTemplate) GetProperties() []Property {
-	if o == nil || isNil(o.Properties) {
+	if o == nil || IsNil(o.Properties) {
 		var ret []Property
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *HalTemplate) GetProperties() []Property {
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HalTemplate) GetPropertiesOk() ([]Property, bool) {
-	if o == nil || isNil(o.Properties) {
+	if o == nil || IsNil(o.Properties) {
 		return nil, false
 	}
 	return o.Properties, true
@@ -154,7 +154,7 @@ func (o *HalTemplate) GetPropertiesOk() ([]Property, bool) {
 
 // HasProperties returns a boolean if a field has been set.
 func (o *HalTemplate) HasProperties() bool {
-	if o != nil && !isNil(o.Properties) {
+	if o != nil && !IsNil(o.Properties) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *HalTemplate) SetProperties(v []Property) {
 }
 
 func (o HalTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,14 +176,14 @@ func (o HalTemplate) MarshalJSON() ([]byte, error) {
 
 func (o HalTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Title) {
+	if !IsNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
 	toSerialize["method"] = o.Method
-	if !isNil(o.ContentType) {
+	if !IsNil(o.ContentType) {
 		toSerialize["contentType"] = o.ContentType
 	}
-	if !isNil(o.Properties) {
+	if !IsNil(o.Properties) {
 		toSerialize["properties"] = o.Properties
 	}
 	return toSerialize, nil
@@ -224,5 +224,3 @@ func (v *NullableHalTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the SpecificAnalyticsSubscription type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SpecificAnalyticsSubscription{}
 
-// SpecificAnalyticsSubscription Represents an existing subscription for a specific type of analytics to a specific NWDAF. 
+// SpecificAnalyticsSubscription Represents an existing subscription for a specific type of analytics to a specific NWDAF.
 type SpecificAnalyticsSubscription struct {
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	ProducerId *string `json:"producerId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	ProducerSetId *string `json:"producerSetId,omitempty"`
-	NwdafEvSub *NnwdafEventsSubscription `json:"nwdafEvSub,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	ProducerSetId *string                   `json:"producerSetId,omitempty"`
+	NwdafEvSub    *NnwdafEventsSubscription `json:"nwdafEvSub,omitempty"`
 }
 
 // NewSpecificAnalyticsSubscription instantiates a new SpecificAnalyticsSubscription object
@@ -46,7 +46,7 @@ func NewSpecificAnalyticsSubscriptionWithDefaults() *SpecificAnalyticsSubscripti
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *SpecificAnalyticsSubscription) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SpecificAnalyticsSubscription) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificAnalyticsSubscription) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -64,7 +64,7 @@ func (o *SpecificAnalyticsSubscription) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *SpecificAnalyticsSubscription) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SpecificAnalyticsSubscription) SetSubscriptionId(v string) {
 
 // GetProducerId returns the ProducerId field value if set, zero value otherwise.
 func (o *SpecificAnalyticsSubscription) GetProducerId() string {
-	if o == nil || isNil(o.ProducerId) {
+	if o == nil || IsNil(o.ProducerId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SpecificAnalyticsSubscription) GetProducerId() string {
 // GetProducerIdOk returns a tuple with the ProducerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificAnalyticsSubscription) GetProducerIdOk() (*string, bool) {
-	if o == nil || isNil(o.ProducerId) {
+	if o == nil || IsNil(o.ProducerId) {
 		return nil, false
 	}
 	return o.ProducerId, true
@@ -96,7 +96,7 @@ func (o *SpecificAnalyticsSubscription) GetProducerIdOk() (*string, bool) {
 
 // HasProducerId returns a boolean if a field has been set.
 func (o *SpecificAnalyticsSubscription) HasProducerId() bool {
-	if o != nil && !isNil(o.ProducerId) {
+	if o != nil && !IsNil(o.ProducerId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SpecificAnalyticsSubscription) SetProducerId(v string) {
 
 // GetProducerSetId returns the ProducerSetId field value if set, zero value otherwise.
 func (o *SpecificAnalyticsSubscription) GetProducerSetId() string {
-	if o == nil || isNil(o.ProducerSetId) {
+	if o == nil || IsNil(o.ProducerSetId) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SpecificAnalyticsSubscription) GetProducerSetId() string {
 // GetProducerSetIdOk returns a tuple with the ProducerSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificAnalyticsSubscription) GetProducerSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.ProducerSetId) {
+	if o == nil || IsNil(o.ProducerSetId) {
 		return nil, false
 	}
 	return o.ProducerSetId, true
@@ -128,7 +128,7 @@ func (o *SpecificAnalyticsSubscription) GetProducerSetIdOk() (*string, bool) {
 
 // HasProducerSetId returns a boolean if a field has been set.
 func (o *SpecificAnalyticsSubscription) HasProducerSetId() bool {
-	if o != nil && !isNil(o.ProducerSetId) {
+	if o != nil && !IsNil(o.ProducerSetId) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SpecificAnalyticsSubscription) SetProducerSetId(v string) {
 
 // GetNwdafEvSub returns the NwdafEvSub field value if set, zero value otherwise.
 func (o *SpecificAnalyticsSubscription) GetNwdafEvSub() NnwdafEventsSubscription {
-	if o == nil || isNil(o.NwdafEvSub) {
+	if o == nil || IsNil(o.NwdafEvSub) {
 		var ret NnwdafEventsSubscription
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SpecificAnalyticsSubscription) GetNwdafEvSub() NnwdafEventsSubscription
 // GetNwdafEvSubOk returns a tuple with the NwdafEvSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificAnalyticsSubscription) GetNwdafEvSubOk() (*NnwdafEventsSubscription, bool) {
-	if o == nil || isNil(o.NwdafEvSub) {
+	if o == nil || IsNil(o.NwdafEvSub) {
 		return nil, false
 	}
 	return o.NwdafEvSub, true
@@ -160,7 +160,7 @@ func (o *SpecificAnalyticsSubscription) GetNwdafEvSubOk() (*NnwdafEventsSubscrip
 
 // HasNwdafEvSub returns a boolean if a field has been set.
 func (o *SpecificAnalyticsSubscription) HasNwdafEvSub() bool {
-	if o != nil && !isNil(o.NwdafEvSub) {
+	if o != nil && !IsNil(o.NwdafEvSub) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *SpecificAnalyticsSubscription) SetNwdafEvSub(v NnwdafEventsSubscription
 }
 
 func (o SpecificAnalyticsSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o SpecificAnalyticsSubscription) MarshalJSON() ([]byte, error) {
 
 func (o SpecificAnalyticsSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !isNil(o.ProducerId) {
+	if !IsNil(o.ProducerId) {
 		toSerialize["producerId"] = o.ProducerId
 	}
-	if !isNil(o.ProducerSetId) {
+	if !IsNil(o.ProducerSetId) {
 		toSerialize["producerSetId"] = o.ProducerSetId
 	}
-	if !isNil(o.NwdafEvSub) {
+	if !IsNil(o.NwdafEvSub) {
 		toSerialize["nwdafEvSub"] = o.NwdafEvSub
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableSpecificAnalyticsSubscription) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

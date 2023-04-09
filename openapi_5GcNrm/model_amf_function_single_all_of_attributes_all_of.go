@@ -19,20 +19,20 @@ var _ MappedNullable = &AmfFunctionSingleAllOfAttributesAllOf{}
 
 // AmfFunctionSingleAllOfAttributesAllOf struct for AmfFunctionSingleAllOfAttributesAllOf
 type AmfFunctionSingleAllOfAttributesAllOf struct {
-	PLMNInfoList []PlmnInfo `json:"pLMNInfoList,omitempty"`
-	AmfIdentifier *AmfIdentifier `json:"amfIdentifier,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	InterPlmnFQDN *string `json:"interPlmnFQDN,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	WeightFactor *int32 `json:"weightFactor,omitempty"`
-	CNSIIdList []string `json:"cNSIIdList,omitempty"`
-	GUAMIdList []GUAMInfo `json:"gUAMIdList,omitempty"`
-	BackupInfoAmfFailure []GUAMInfo `json:"backupInfoAmfFailure,omitempty"`
-	BackupInfoAmfRemoval []GUAMInfo `json:"backupInfoAmfRemoval,omitempty"`
-	AmfSetRef *string `json:"amfSetRef,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
+	PLMNInfoList         []PlmnInfo        `json:"pLMNInfoList,omitempty"`
+	AmfIdentifier        *AmfIdentifier    `json:"amfIdentifier,omitempty"`
+	SBIFqdn              *string           `json:"sBIFqdn,omitempty"`
+	InterPlmnFQDN        *string           `json:"interPlmnFQDN,omitempty"`
+	TaiList              []Tai             `json:"taiList,omitempty"`
+	TaiRangeList         []TaiRange        `json:"taiRangeList,omitempty"`
+	WeightFactor         *int32            `json:"weightFactor,omitempty"`
+	CNSIIdList           []string          `json:"cNSIIdList,omitempty"`
+	GUAMIdList           []GUAMInfo        `json:"gUAMIdList,omitempty"`
+	BackupInfoAmfFailure []GUAMInfo        `json:"backupInfoAmfFailure,omitempty"`
+	BackupInfoAmfRemoval []GUAMInfo        `json:"backupInfoAmfRemoval,omitempty"`
+	AmfSetRef            *string           `json:"amfSetRef,omitempty"`
+	ManagedNFProfile     *ManagedNFProfile `json:"managedNFProfile,omitempty"`
+	CommModelList        []CommModel       `json:"commModelList,omitempty"`
 }
 
 // NewAmfFunctionSingleAllOfAttributesAllOf instantiates a new AmfFunctionSingleAllOfAttributesAllOf object
@@ -501,7 +501,7 @@ func (o *AmfFunctionSingleAllOfAttributesAllOf) SetCommModelList(v []CommModel) 
 }
 
 func (o AmfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -590,5 +590,3 @@ func (v *NullableAmfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

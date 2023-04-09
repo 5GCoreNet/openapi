@@ -1,7 +1,7 @@
 /*
 Nnef_PFDmanagement Service API
 
-Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nnef_PFDmanagement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"reflect"
 )
 
-
 // PFDOfApplicationsApiService PFDOfApplicationsApi service
 type PFDOfApplicationsApiService service
 
 type ApiNnefPFDmanagementAllFetchRequest struct {
-	ctx context.Context
-	ApiService *PFDOfApplicationsApiService
-	applicationIds *[]string
+	ctx               context.Context
+	ApiService        *PFDOfApplicationsApiService
+	applicationIds    *[]string
 	supportedFeatures *string
 }
 
@@ -49,24 +48,25 @@ func (r ApiNnefPFDmanagementAllFetchRequest) Execute() ([]PfdDataForApp, *http.R
 /*
 NnefPFDmanagementAllFetch Retrieve PFDs for all applications or for one or multiple applications with query parameter.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiNnefPFDmanagementAllFetchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiNnefPFDmanagementAllFetchRequest
 */
 func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetch(ctx context.Context) ApiNnefPFDmanagementAllFetchRequest {
 	return ApiNnefPFDmanagementAllFetchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PfdDataForApp
+//
+//	@return []PfdDataForApp
 func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnefPFDmanagementAllFetchRequest) ([]PfdDataForApp, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PfdDataForApp
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PfdDataForApp
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PFDOfApplicationsApiService.NnefPFDmanagementAllFetch")
@@ -91,14 +91,14 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "application-ids", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "application-ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "application-ids", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "application-ids", t, "multi")
 		}
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -127,9 +127,9 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -146,8 +146,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -157,8 +157,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -168,8 +168,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -179,8 +179,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -190,8 +190,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -201,8 +201,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -212,8 +212,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -223,8 +223,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -234,8 +234,8 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementAllFetchExecute(r ApiNnef
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Invoker_Management_API
 
-API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,18 +19,18 @@ var _ MappedNullable = &APIInvokerEnrolmentDetails{}
 
 // APIInvokerEnrolmentDetails Represents information about the API Invoker that requested to onboard.
 type APIInvokerEnrolmentDetails struct {
-	// API invoker ID assigned by the CAPIF core function to the API invoker while on-boarding the API invoker. Shall not be present in the HTTP POST request from the API invoker to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses. 
-	ApiInvokerId *string `json:"apiInvokerId,omitempty"`
+	// API invoker ID assigned by the CAPIF core function to the API invoker while on-boarding the API invoker. Shall not be present in the HTTP POST request from the API invoker to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses.
+	ApiInvokerId          *string               `json:"apiInvokerId,omitempty"`
 	OnboardingInformation OnboardingInformation `json:"onboardingInformation"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination string `json:"notificationDestination"`
-	// Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	ApiList *APIList `json:"apiList,omitempty"`
-	// Generic information related to the API invoker such as details of the device or the application. 
+	// Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	ApiList                 *APIList            `json:"apiList,omitempty"`
+	// Generic information related to the API invoker such as details of the device or the application.
 	ApiInvokerInformation *string `json:"apiInvokerInformation,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -55,7 +55,7 @@ func NewAPIInvokerEnrolmentDetailsWithDefaults() *APIInvokerEnrolmentDetails {
 
 // GetApiInvokerId returns the ApiInvokerId field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerId() string {
-	if o == nil || isNil(o.ApiInvokerId) {
+	if o == nil || IsNil(o.ApiInvokerId) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerId() string {
 // GetApiInvokerIdOk returns a tuple with the ApiInvokerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerIdOk() (*string, bool) {
-	if o == nil || isNil(o.ApiInvokerId) {
+	if o == nil || IsNil(o.ApiInvokerId) {
 		return nil, false
 	}
 	return o.ApiInvokerId, true
@@ -73,7 +73,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerIdOk() (*string, bool) {
 
 // HasApiInvokerId returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasApiInvokerId() bool {
-	if o != nil && !isNil(o.ApiInvokerId) {
+	if o != nil && !IsNil(o.ApiInvokerId) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *APIInvokerEnrolmentDetails) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *APIInvokerEnrolmentDetails) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -153,7 +153,7 @@ func (o *APIInvokerEnrolmentDetails) GetRequestTestNotificationOk() (*bool, bool
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *APIInvokerEnrolmentDetails) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfig() WebsockNotifConfig 
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -185,7 +185,7 @@ func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfigOk() (*WebsockNotifCon
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *APIInvokerEnrolmentDetails) SetWebsockNotifConfig(v WebsockNotifConfig)
 
 // GetApiList returns the ApiList field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetApiList() APIList {
-	if o == nil || isNil(o.ApiList) {
+	if o == nil || IsNil(o.ApiList) {
 		var ret APIList
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiList() APIList {
 // GetApiListOk returns a tuple with the ApiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetApiListOk() (*APIList, bool) {
-	if o == nil || isNil(o.ApiList) {
+	if o == nil || IsNil(o.ApiList) {
 		return nil, false
 	}
 	return o.ApiList, true
@@ -217,7 +217,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiListOk() (*APIList, bool) {
 
 // HasApiList returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasApiList() bool {
-	if o != nil && !isNil(o.ApiList) {
+	if o != nil && !IsNil(o.ApiList) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *APIInvokerEnrolmentDetails) SetApiList(v APIList) {
 
 // GetApiInvokerInformation returns the ApiInvokerInformation field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformation() string {
-	if o == nil || isNil(o.ApiInvokerInformation) {
+	if o == nil || IsNil(o.ApiInvokerInformation) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformation() string {
 // GetApiInvokerInformationOk returns a tuple with the ApiInvokerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformationOk() (*string, bool) {
-	if o == nil || isNil(o.ApiInvokerInformation) {
+	if o == nil || IsNil(o.ApiInvokerInformation) {
 		return nil, false
 	}
 	return o.ApiInvokerInformation, true
@@ -249,7 +249,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformationOk() (*string, bool
 
 // HasApiInvokerInformation returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasApiInvokerInformation() bool {
-	if o != nil && !isNil(o.ApiInvokerInformation) {
+	if o != nil && !IsNil(o.ApiInvokerInformation) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *APIInvokerEnrolmentDetails) SetApiInvokerInformation(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *APIInvokerEnrolmentDetails) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -281,7 +281,7 @@ func (o *APIInvokerEnrolmentDetails) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -294,7 +294,7 @@ func (o *APIInvokerEnrolmentDetails) SetSupportedFeatures(v string) {
 }
 
 func (o APIInvokerEnrolmentDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -303,24 +303,22 @@ func (o APIInvokerEnrolmentDetails) MarshalJSON() ([]byte, error) {
 
 func (o APIInvokerEnrolmentDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiInvokerId) {
-		toSerialize["apiInvokerId"] = o.ApiInvokerId
-	}
+	// skip: apiInvokerId is readOnly
 	toSerialize["onboardingInformation"] = o.OnboardingInformation
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.ApiList) {
+	if !IsNil(o.ApiList) {
 		toSerialize["apiList"] = o.ApiList
 	}
-	if !isNil(o.ApiInvokerInformation) {
+	if !IsNil(o.ApiInvokerInformation) {
 		toSerialize["apiInvokerInformation"] = o.ApiInvokerInformation
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -361,5 +359,3 @@ func (v *NullableAPIInvokerEnrolmentDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

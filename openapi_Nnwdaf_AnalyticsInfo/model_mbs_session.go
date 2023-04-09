@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -68,7 +68,7 @@ func (o *MbsSession) SetMbsSessionId(v MbsSessionId) {
 
 // GetMbsAreaSessions returns the MbsAreaSessions field value if set, zero value otherwise.
 func (o *MbsSession) GetMbsAreaSessions() map[string]MbsServiceAreaInfo {
-	if o == nil || isNil(o.MbsAreaSessions) {
+	if o == nil || IsNil(o.MbsAreaSessions) {
 		var ret map[string]MbsServiceAreaInfo
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MbsSession) GetMbsAreaSessions() map[string]MbsServiceAreaInfo {
 // GetMbsAreaSessionsOk returns a tuple with the MbsAreaSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSession) GetMbsAreaSessionsOk() (*map[string]MbsServiceAreaInfo, bool) {
-	if o == nil || isNil(o.MbsAreaSessions) {
+	if o == nil || IsNil(o.MbsAreaSessions) {
 		return nil, false
 	}
 	return o.MbsAreaSessions, true
@@ -86,7 +86,7 @@ func (o *MbsSession) GetMbsAreaSessionsOk() (*map[string]MbsServiceAreaInfo, boo
 
 // HasMbsAreaSessions returns a boolean if a field has been set.
 func (o *MbsSession) HasMbsAreaSessions() bool {
-	if o != nil && !isNil(o.MbsAreaSessions) {
+	if o != nil && !IsNil(o.MbsAreaSessions) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *MbsSession) SetMbsAreaSessions(v map[string]MbsServiceAreaInfo) {
 }
 
 func (o MbsSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o MbsSession) MarshalJSON() ([]byte, error) {
 func (o MbsSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !isNil(o.MbsAreaSessions) {
+	if !IsNil(o.MbsAreaSessions) {
 		toSerialize["mbsAreaSessions"] = o.MbsAreaSessions
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableMbsSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-5glan-pp
 
-API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the AppDescriptorRm type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AppDescriptorRm{}
 
-// AppDescriptorRm Represents the same as the AppDescriptor data type but with the nullable:true property. 
+// AppDescriptorRm Represents the same as the AppDescriptor data type but with the nullable:true property.
 type AppDescriptorRm struct {
-	// Identifies applications that are running on the UE's operating system. Any string value can be used as a key of the map. 
+	// Identifies applications that are running on the UE's operating system. Any string value can be used as a key of the map.
 	AppIds *map[string]string `json:"appIds,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewAppDescriptorRmWithDefaults() *AppDescriptorRm {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *AppDescriptorRm) GetAppIds() map[string]string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret map[string]string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AppDescriptorRm) GetAppIds() map[string]string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDescriptorRm) GetAppIdsOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -60,7 +60,7 @@ func (o *AppDescriptorRm) GetAppIdsOk() (*map[string]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AppDescriptorRm) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *AppDescriptorRm) SetAppIds(v map[string]string) {
 }
 
 func (o AppDescriptorRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o AppDescriptorRm) MarshalJSON() ([]byte, error) {
 
 func (o AppDescriptorRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableAppDescriptorRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

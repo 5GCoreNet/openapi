@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &Ifc{}
 
 // Ifc Data associated to an individual IFC (Initial Filter Criteria)
 type Ifc struct {
-	Priority int32 `json:"priority"`
-	Trigger *TriggerPoint `json:"trigger,omitempty"`
+	Priority  int32             `json:"priority"`
+	Trigger   *TriggerPoint     `json:"trigger,omitempty"`
 	AppServer ApplicationServer `json:"appServer"`
 }
 
@@ -69,7 +69,7 @@ func (o *Ifc) SetPriority(v int32) {
 
 // GetTrigger returns the Trigger field value if set, zero value otherwise.
 func (o *Ifc) GetTrigger() TriggerPoint {
-	if o == nil || isNil(o.Trigger) {
+	if o == nil || IsNil(o.Trigger) {
 		var ret TriggerPoint
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *Ifc) GetTrigger() TriggerPoint {
 // GetTriggerOk returns a tuple with the Trigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ifc) GetTriggerOk() (*TriggerPoint, bool) {
-	if o == nil || isNil(o.Trigger) {
+	if o == nil || IsNil(o.Trigger) {
 		return nil, false
 	}
 	return o.Trigger, true
@@ -87,7 +87,7 @@ func (o *Ifc) GetTriggerOk() (*TriggerPoint, bool) {
 
 // HasTrigger returns a boolean if a field has been set.
 func (o *Ifc) HasTrigger() bool {
-	if o != nil && !isNil(o.Trigger) {
+	if o != nil && !IsNil(o.Trigger) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *Ifc) SetAppServer(v ApplicationServer) {
 }
 
 func (o Ifc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -134,7 +134,7 @@ func (o Ifc) MarshalJSON() ([]byte, error) {
 func (o Ifc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["priority"] = o.Priority
-	if !isNil(o.Trigger) {
+	if !IsNil(o.Trigger) {
 		toSerialize["trigger"] = o.Trigger
 	}
 	toSerialize["appServer"] = o.AppServer
@@ -176,5 +176,3 @@ func (v *NullableIfc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

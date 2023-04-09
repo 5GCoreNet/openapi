@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &StateOfDstt{}
 
 // StateOfDstt Contains the PTP port state of a DS-TT.
 type StateOfDstt struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi string `json:"gpsi"`
-	// When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for DS-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of  configuration for DS port is inactive. Default value is false. 
+	// When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for DS-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of  configuration for DS port is inactive. Default value is false.
 	State bool `json:"state"`
 }
 
@@ -93,7 +93,7 @@ func (o *StateOfDstt) SetState(v bool) {
 }
 
 func (o StateOfDstt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableStateOfDstt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

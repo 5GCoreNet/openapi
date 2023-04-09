@@ -1,7 +1,7 @@
 /*
 3gpp-device-triggering
 
-API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,20 +13,19 @@ package openapi_DeviceTriggering
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DeviceTriggeringTransactionsApiService DeviceTriggeringTransactionsApi service
 type DeviceTriggeringTransactionsApiService service
 
 type ApiFetchAllDeviceTriggeringTransactionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DeviceTriggeringTransactionsApiService
-	scsAsId string
+	scsAsId    string
 }
 
 func (r ApiFetchAllDeviceTriggeringTransactionsRequest) Execute() ([]DeviceTriggering, *http.Response, error) {
@@ -36,26 +35,27 @@ func (r ApiFetchAllDeviceTriggeringTransactionsRequest) Execute() ([]DeviceTrigg
 /*
 FetchAllDeviceTriggeringTransactions read all active device triggering transactions for a given SCS/AS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @return ApiFetchAllDeviceTriggeringTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@return ApiFetchAllDeviceTriggeringTransactionsRequest
 */
 func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransactions(ctx context.Context, scsAsId string) ApiFetchAllDeviceTriggeringTransactionsRequest {
 	return ApiFetchAllDeviceTriggeringTransactionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceTriggering
+//
+//	@return []DeviceTriggering
 func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransactionsExecute(r ApiFetchAllDeviceTriggeringTransactionsRequest) ([]DeviceTriggering, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceTriggering
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceTriggering
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceTriggeringTransactionsApiService.FetchAllDeviceTriggeringTransactions")
@@ -97,9 +97,9 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -116,8 +116,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +127,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +138,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +149,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -160,8 +160,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -171,8 +171,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -182,8 +182,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -193,8 +193,8 @@ func (a *DeviceTriggeringTransactionsApiService) FetchAllDeviceTriggeringTransac
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

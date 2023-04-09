@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -45,7 +45,7 @@ func NewValidTimePeriodWithDefaults() *ValidTimePeriod {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *ValidTimePeriod) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ValidTimePeriod) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidTimePeriod) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -63,7 +63,7 @@ func (o *ValidTimePeriod) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *ValidTimePeriod) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ValidTimePeriod) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *ValidTimePeriod) GetEndTime() time.Time {
-	if o == nil || isNil(o.EndTime) {
+	if o == nil || IsNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ValidTimePeriod) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidTimePeriod) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EndTime) {
+	if o == nil || IsNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -95,7 +95,7 @@ func (o *ValidTimePeriod) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *ValidTimePeriod) HasEndTime() bool {
-	if o != nil && !isNil(o.EndTime) {
+	if o != nil && !IsNil(o.EndTime) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ValidTimePeriod) SetEndTime(v time.Time) {
 }
 
 func (o ValidTimePeriod) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,10 +117,10 @@ func (o ValidTimePeriod) MarshalJSON() ([]byte, error) {
 
 func (o ValidTimePeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.EndTime) {
+	if !IsNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
 	return toSerialize, nil
@@ -161,5 +161,3 @@ func (v *NullableValidTimePeriod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

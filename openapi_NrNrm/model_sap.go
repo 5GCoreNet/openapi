@@ -20,7 +20,7 @@ var _ MappedNullable = &SAP{}
 // SAP struct for SAP
 type SAP struct {
 	Host *HostAddr `json:"host,omitempty"`
-	Port *int32 `json:"port,omitempty"`
+	Port *int32    `json:"port,omitempty"`
 }
 
 // NewSAP instantiates a new SAP object
@@ -42,7 +42,7 @@ func NewSAPWithDefaults() *SAP {
 
 // GetHost returns the Host field value if set, zero value otherwise.
 func (o *SAP) GetHost() HostAddr {
-	if o == nil || isNil(o.Host) {
+	if o == nil || IsNil(o.Host) {
 		var ret HostAddr
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SAP) GetHost() HostAddr {
 // GetHostOk returns a tuple with the Host field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SAP) GetHostOk() (*HostAddr, bool) {
-	if o == nil || isNil(o.Host) {
+	if o == nil || IsNil(o.Host) {
 		return nil, false
 	}
 	return o.Host, true
@@ -60,7 +60,7 @@ func (o *SAP) GetHostOk() (*HostAddr, bool) {
 
 // HasHost returns a boolean if a field has been set.
 func (o *SAP) HasHost() bool {
-	if o != nil && !isNil(o.Host) {
+	if o != nil && !IsNil(o.Host) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SAP) SetHost(v HostAddr) {
 
 // GetPort returns the Port field value if set, zero value otherwise.
 func (o *SAP) GetPort() int32 {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SAP) GetPort() int32 {
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SAP) GetPortOk() (*int32, bool) {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
 	return o.Port, true
@@ -92,7 +92,7 @@ func (o *SAP) GetPortOk() (*int32, bool) {
 
 // HasPort returns a boolean if a field has been set.
 func (o *SAP) HasPort() bool {
-	if o != nil && !isNil(o.Port) {
+	if o != nil && !IsNil(o.Port) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SAP) SetPort(v int32) {
 }
 
 func (o SAP) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SAP) MarshalJSON() ([]byte, error) {
 
 func (o SAP) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Host) {
+	if !IsNil(o.Host) {
 		toSerialize["host"] = o.Host
 	}
-	if !isNil(o.Port) {
+	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSAP) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

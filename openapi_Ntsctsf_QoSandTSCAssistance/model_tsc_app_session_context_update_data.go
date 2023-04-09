@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,29 +17,29 @@ import (
 // checks if the TscAppSessionContextUpdateData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TscAppSessionContextUpdateData{}
 
-// TscAppSessionContextUpdateData Describes the authorization data of an Individual TSC Application Session Context created by the PCF. 
+// TscAppSessionContextUpdateData Describes the authorization data of an Individual TSC Application Session Context created by the PCF.
 type TscAppSessionContextUpdateData struct {
 	// String providing an URI formatted according to RFC 3986.
 	NotifUri *string `json:"notifUri,omitempty"`
 	// Identifies the Application Identifier.
-	AppId *string `json:"appId,omitempty"`
+	AppId       *string              `json:"appId,omitempty"`
 	EthFlowInfo []EthFlowDescription `json:"ethFlowInfo,omitempty"`
-	// Identifies the Ethernet flows which require QoS. Each Ethernet flow consists of a flow identifer and the corresponding UL and/or DL flows. 
-	EnEthFlowInfo []EthFlowInfo `json:"enEthFlowInfo,omitempty"`
-	FlowInfo []FlowInfo `json:"flowInfo,omitempty"`
-	TscQosReq *TscQosRequirementRm `json:"tscQosReq,omitempty"`
+	// Identifies the Ethernet flows which require QoS. Each Ethernet flow consists of a flow identifer and the corresponding UL and/or DL flows.
+	EnEthFlowInfo []EthFlowInfo        `json:"enEthFlowInfo,omitempty"`
+	FlowInfo      []FlowInfo           `json:"flowInfo,omitempty"`
+	TscQosReq     *TscQosRequirementRm `json:"tscQosReq,omitempty"`
 	// Identifies a pre-defined QoS information.
 	QosReference *string `json:"qosReference,omitempty"`
 	// Identifies an ordered list of pre-defined QoS information.
 	AltQosReferences []string `json:"altQosReferences,omitempty"`
-	// Identifies an ordered list of alternative service requirements that include individual QoS parameter sets. The lower the index of the array for a given entry, the higher the priority. 
+	// Identifies an ordered list of alternative service requirements that include individual QoS parameter sets. The lower the index of the array for a given entry, the higher the priority.
 	AltQosReqs []AlternativeServiceRequirementsData `json:"altQosReqs,omitempty"`
 	// Contains an identity of an application service provider.
 	AspId *string `json:"aspId,omitempty"`
 	// Contains an identity of a sponsor.
-	SponId *string `json:"sponId,omitempty"`
-	SponStatus *SponsoringStatus `json:"sponStatus,omitempty"`
-	EvSubsc NullableEventsSubscReqDataRm `json:"evSubsc,omitempty"`
+	SponId     *string                      `json:"sponId,omitempty"`
+	SponStatus *SponsoringStatus            `json:"sponStatus,omitempty"`
+	EvSubsc    NullableEventsSubscReqDataRm `json:"evSubsc,omitempty"`
 }
 
 // NewTscAppSessionContextUpdateData instantiates a new TscAppSessionContextUpdateData object
@@ -61,7 +61,7 @@ func NewTscAppSessionContextUpdateDataWithDefaults() *TscAppSessionContextUpdate
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetNotifUri() string {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -71,7 +71,7 @@ func (o *TscAppSessionContextUpdateData) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -79,7 +79,7 @@ func (o *TscAppSessionContextUpdateData) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasNotifUri() bool {
-	if o != nil && !isNil(o.NotifUri) {
+	if o != nil && !IsNil(o.NotifUri) {
 		return true
 	}
 
@@ -93,7 +93,7 @@ func (o *TscAppSessionContextUpdateData) SetNotifUri(v string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *TscAppSessionContextUpdateData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -111,7 +111,7 @@ func (o *TscAppSessionContextUpdateData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *TscAppSessionContextUpdateData) SetAppId(v string) {
 
 // GetEthFlowInfo returns the EthFlowInfo field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetEthFlowInfo() []EthFlowDescription {
-	if o == nil || isNil(o.EthFlowInfo) {
+	if o == nil || IsNil(o.EthFlowInfo) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *TscAppSessionContextUpdateData) GetEthFlowInfo() []EthFlowDescription {
 // GetEthFlowInfoOk returns a tuple with the EthFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetEthFlowInfoOk() ([]EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthFlowInfo) {
+	if o == nil || IsNil(o.EthFlowInfo) {
 		return nil, false
 	}
 	return o.EthFlowInfo, true
@@ -143,7 +143,7 @@ func (o *TscAppSessionContextUpdateData) GetEthFlowInfoOk() ([]EthFlowDescriptio
 
 // HasEthFlowInfo returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasEthFlowInfo() bool {
-	if o != nil && !isNil(o.EthFlowInfo) {
+	if o != nil && !IsNil(o.EthFlowInfo) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *TscAppSessionContextUpdateData) SetEthFlowInfo(v []EthFlowDescription) 
 
 // GetEnEthFlowInfo returns the EnEthFlowInfo field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetEnEthFlowInfo() []EthFlowInfo {
-	if o == nil || isNil(o.EnEthFlowInfo) {
+	if o == nil || IsNil(o.EnEthFlowInfo) {
 		var ret []EthFlowInfo
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *TscAppSessionContextUpdateData) GetEnEthFlowInfo() []EthFlowInfo {
 // GetEnEthFlowInfoOk returns a tuple with the EnEthFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetEnEthFlowInfoOk() ([]EthFlowInfo, bool) {
-	if o == nil || isNil(o.EnEthFlowInfo) {
+	if o == nil || IsNil(o.EnEthFlowInfo) {
 		return nil, false
 	}
 	return o.EnEthFlowInfo, true
@@ -175,7 +175,7 @@ func (o *TscAppSessionContextUpdateData) GetEnEthFlowInfoOk() ([]EthFlowInfo, bo
 
 // HasEnEthFlowInfo returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasEnEthFlowInfo() bool {
-	if o != nil && !isNil(o.EnEthFlowInfo) {
+	if o != nil && !IsNil(o.EnEthFlowInfo) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *TscAppSessionContextUpdateData) SetEnEthFlowInfo(v []EthFlowInfo) {
 
 // GetFlowInfo returns the FlowInfo field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetFlowInfo() []FlowInfo {
-	if o == nil || isNil(o.FlowInfo) {
+	if o == nil || IsNil(o.FlowInfo) {
 		var ret []FlowInfo
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *TscAppSessionContextUpdateData) GetFlowInfo() []FlowInfo {
 // GetFlowInfoOk returns a tuple with the FlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetFlowInfoOk() ([]FlowInfo, bool) {
-	if o == nil || isNil(o.FlowInfo) {
+	if o == nil || IsNil(o.FlowInfo) {
 		return nil, false
 	}
 	return o.FlowInfo, true
@@ -207,7 +207,7 @@ func (o *TscAppSessionContextUpdateData) GetFlowInfoOk() ([]FlowInfo, bool) {
 
 // HasFlowInfo returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasFlowInfo() bool {
-	if o != nil && !isNil(o.FlowInfo) {
+	if o != nil && !IsNil(o.FlowInfo) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *TscAppSessionContextUpdateData) SetFlowInfo(v []FlowInfo) {
 
 // GetTscQosReq returns the TscQosReq field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetTscQosReq() TscQosRequirementRm {
-	if o == nil || isNil(o.TscQosReq) {
+	if o == nil || IsNil(o.TscQosReq) {
 		var ret TscQosRequirementRm
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *TscAppSessionContextUpdateData) GetTscQosReq() TscQosRequirementRm {
 // GetTscQosReqOk returns a tuple with the TscQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetTscQosReqOk() (*TscQosRequirementRm, bool) {
-	if o == nil || isNil(o.TscQosReq) {
+	if o == nil || IsNil(o.TscQosReq) {
 		return nil, false
 	}
 	return o.TscQosReq, true
@@ -239,7 +239,7 @@ func (o *TscAppSessionContextUpdateData) GetTscQosReqOk() (*TscQosRequirementRm,
 
 // HasTscQosReq returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasTscQosReq() bool {
-	if o != nil && !isNil(o.TscQosReq) {
+	if o != nil && !IsNil(o.TscQosReq) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *TscAppSessionContextUpdateData) SetTscQosReq(v TscQosRequirementRm) {
 
 // GetQosReference returns the QosReference field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetQosReference() string {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		var ret string
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *TscAppSessionContextUpdateData) GetQosReference() string {
 // GetQosReferenceOk returns a tuple with the QosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetQosReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		return nil, false
 	}
 	return o.QosReference, true
@@ -271,7 +271,7 @@ func (o *TscAppSessionContextUpdateData) GetQosReferenceOk() (*string, bool) {
 
 // HasQosReference returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasQosReference() bool {
-	if o != nil && !isNil(o.QosReference) {
+	if o != nil && !IsNil(o.QosReference) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *TscAppSessionContextUpdateData) SetQosReference(v string) {
 
 // GetAltQosReferences returns the AltQosReferences field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetAltQosReferences() []string {
-	if o == nil || isNil(o.AltQosReferences) {
+	if o == nil || IsNil(o.AltQosReferences) {
 		var ret []string
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *TscAppSessionContextUpdateData) GetAltQosReferences() []string {
 // GetAltQosReferencesOk returns a tuple with the AltQosReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetAltQosReferencesOk() ([]string, bool) {
-	if o == nil || isNil(o.AltQosReferences) {
+	if o == nil || IsNil(o.AltQosReferences) {
 		return nil, false
 	}
 	return o.AltQosReferences, true
@@ -303,7 +303,7 @@ func (o *TscAppSessionContextUpdateData) GetAltQosReferencesOk() ([]string, bool
 
 // HasAltQosReferences returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasAltQosReferences() bool {
-	if o != nil && !isNil(o.AltQosReferences) {
+	if o != nil && !IsNil(o.AltQosReferences) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *TscAppSessionContextUpdateData) SetAltQosReferences(v []string) {
 
 // GetAltQosReqs returns the AltQosReqs field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetAltQosReqs() []AlternativeServiceRequirementsData {
-	if o == nil || isNil(o.AltQosReqs) {
+	if o == nil || IsNil(o.AltQosReqs) {
 		var ret []AlternativeServiceRequirementsData
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *TscAppSessionContextUpdateData) GetAltQosReqs() []AlternativeServiceReq
 // GetAltQosReqsOk returns a tuple with the AltQosReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetAltQosReqsOk() ([]AlternativeServiceRequirementsData, bool) {
-	if o == nil || isNil(o.AltQosReqs) {
+	if o == nil || IsNil(o.AltQosReqs) {
 		return nil, false
 	}
 	return o.AltQosReqs, true
@@ -335,7 +335,7 @@ func (o *TscAppSessionContextUpdateData) GetAltQosReqsOk() ([]AlternativeService
 
 // HasAltQosReqs returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasAltQosReqs() bool {
-	if o != nil && !isNil(o.AltQosReqs) {
+	if o != nil && !IsNil(o.AltQosReqs) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *TscAppSessionContextUpdateData) SetAltQosReqs(v []AlternativeServiceReq
 
 // GetAspId returns the AspId field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetAspId() string {
-	if o == nil || isNil(o.AspId) {
+	if o == nil || IsNil(o.AspId) {
 		var ret string
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *TscAppSessionContextUpdateData) GetAspId() string {
 // GetAspIdOk returns a tuple with the AspId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetAspIdOk() (*string, bool) {
-	if o == nil || isNil(o.AspId) {
+	if o == nil || IsNil(o.AspId) {
 		return nil, false
 	}
 	return o.AspId, true
@@ -367,7 +367,7 @@ func (o *TscAppSessionContextUpdateData) GetAspIdOk() (*string, bool) {
 
 // HasAspId returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasAspId() bool {
-	if o != nil && !isNil(o.AspId) {
+	if o != nil && !IsNil(o.AspId) {
 		return true
 	}
 
@@ -381,7 +381,7 @@ func (o *TscAppSessionContextUpdateData) SetAspId(v string) {
 
 // GetSponId returns the SponId field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetSponId() string {
-	if o == nil || isNil(o.SponId) {
+	if o == nil || IsNil(o.SponId) {
 		var ret string
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *TscAppSessionContextUpdateData) GetSponId() string {
 // GetSponIdOk returns a tuple with the SponId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetSponIdOk() (*string, bool) {
-	if o == nil || isNil(o.SponId) {
+	if o == nil || IsNil(o.SponId) {
 		return nil, false
 	}
 	return o.SponId, true
@@ -399,7 +399,7 @@ func (o *TscAppSessionContextUpdateData) GetSponIdOk() (*string, bool) {
 
 // HasSponId returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasSponId() bool {
-	if o != nil && !isNil(o.SponId) {
+	if o != nil && !IsNil(o.SponId) {
 		return true
 	}
 
@@ -413,7 +413,7 @@ func (o *TscAppSessionContextUpdateData) SetSponId(v string) {
 
 // GetSponStatus returns the SponStatus field value if set, zero value otherwise.
 func (o *TscAppSessionContextUpdateData) GetSponStatus() SponsoringStatus {
-	if o == nil || isNil(o.SponStatus) {
+	if o == nil || IsNil(o.SponStatus) {
 		var ret SponsoringStatus
 		return ret
 	}
@@ -423,7 +423,7 @@ func (o *TscAppSessionContextUpdateData) GetSponStatus() SponsoringStatus {
 // GetSponStatusOk returns a tuple with the SponStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscAppSessionContextUpdateData) GetSponStatusOk() (*SponsoringStatus, bool) {
-	if o == nil || isNil(o.SponStatus) {
+	if o == nil || IsNil(o.SponStatus) {
 		return nil, false
 	}
 	return o.SponStatus, true
@@ -431,7 +431,7 @@ func (o *TscAppSessionContextUpdateData) GetSponStatusOk() (*SponsoringStatus, b
 
 // HasSponStatus returns a boolean if a field has been set.
 func (o *TscAppSessionContextUpdateData) HasSponStatus() bool {
-	if o != nil && !isNil(o.SponStatus) {
+	if o != nil && !IsNil(o.SponStatus) {
 		return true
 	}
 
@@ -445,7 +445,7 @@ func (o *TscAppSessionContextUpdateData) SetSponStatus(v SponsoringStatus) {
 
 // GetEvSubsc returns the EvSubsc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscAppSessionContextUpdateData) GetEvSubsc() EventsSubscReqDataRm {
-	if o == nil || isNil(o.EvSubsc.Get()) {
+	if o == nil || IsNil(o.EvSubsc.Get()) {
 		var ret EventsSubscReqDataRm
 		return ret
 	}
@@ -475,6 +475,7 @@ func (o *TscAppSessionContextUpdateData) HasEvSubsc() bool {
 func (o *TscAppSessionContextUpdateData) SetEvSubsc(v EventsSubscReqDataRm) {
 	o.EvSubsc.Set(&v)
 }
+
 // SetEvSubscNil sets the value for EvSubsc to be an explicit nil
 func (o *TscAppSessionContextUpdateData) SetEvSubscNil() {
 	o.EvSubsc.Set(nil)
@@ -486,7 +487,7 @@ func (o *TscAppSessionContextUpdateData) UnsetEvSubsc() {
 }
 
 func (o TscAppSessionContextUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -495,40 +496,40 @@ func (o TscAppSessionContextUpdateData) MarshalJSON() ([]byte, error) {
 
 func (o TscAppSessionContextUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NotifUri) {
+	if !IsNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.EthFlowInfo) {
+	if !IsNil(o.EthFlowInfo) {
 		toSerialize["ethFlowInfo"] = o.EthFlowInfo
 	}
-	if !isNil(o.EnEthFlowInfo) {
+	if !IsNil(o.EnEthFlowInfo) {
 		toSerialize["enEthFlowInfo"] = o.EnEthFlowInfo
 	}
-	if !isNil(o.FlowInfo) {
+	if !IsNil(o.FlowInfo) {
 		toSerialize["flowInfo"] = o.FlowInfo
 	}
-	if !isNil(o.TscQosReq) {
+	if !IsNil(o.TscQosReq) {
 		toSerialize["tscQosReq"] = o.TscQosReq
 	}
-	if !isNil(o.QosReference) {
+	if !IsNil(o.QosReference) {
 		toSerialize["qosReference"] = o.QosReference
 	}
-	if !isNil(o.AltQosReferences) {
+	if !IsNil(o.AltQosReferences) {
 		toSerialize["altQosReferences"] = o.AltQosReferences
 	}
-	if !isNil(o.AltQosReqs) {
+	if !IsNil(o.AltQosReqs) {
 		toSerialize["altQosReqs"] = o.AltQosReqs
 	}
-	if !isNil(o.AspId) {
+	if !IsNil(o.AspId) {
 		toSerialize["aspId"] = o.AspId
 	}
-	if !isNil(o.SponId) {
+	if !IsNil(o.SponId) {
 		toSerialize["sponId"] = o.SponId
 	}
-	if !isNil(o.SponStatus) {
+	if !IsNil(o.SponStatus) {
 		toSerialize["sponStatus"] = o.SponStatus
 	}
 	if o.EvSubsc.IsSet() {
@@ -572,5 +573,3 @@ func (v *NullableTscAppSessionContextUpdateData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

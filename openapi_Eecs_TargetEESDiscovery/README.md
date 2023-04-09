@@ -87,7 +87,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ACRScenario](docs/ACRScenario.md)
- - [ACRScenarioAnyOf](docs/ACRScenarioAnyOf.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [ECSServProvResp](docs/ECSServProvResp.md)
  - [EDNConInfo](docs/EDNConInfo.md)
@@ -128,7 +127,6 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [Snssai](docs/Snssai.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
- - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)

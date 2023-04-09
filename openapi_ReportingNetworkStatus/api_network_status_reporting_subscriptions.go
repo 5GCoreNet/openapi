@@ -1,7 +1,7 @@
 /*
 3gpp-network-status-reporting
 
-API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,20 +13,19 @@ package openapi_ReportingNetworkStatus
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NetworkStatusReportingSubscriptionsApiService NetworkStatusReportingSubscriptionsApi service
 type NetworkStatusReportingSubscriptionsApiService service
 
 type ApiCreateNwStatusReportSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *NetworkStatusReportingSubscriptionsApiService
-	scsAsId string
+	ctx                                context.Context
+	ApiService                         *NetworkStatusReportingSubscriptionsApiService
+	scsAsId                            string
 	networkStatusReportingSubscription *NetworkStatusReportingSubscription
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateNwStatusReportSubscriptionRequest) Execute() (*NetworkStatusRep
 /*
 CreateNwStatusReportSubscription Create a new network status reporting subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @return ApiCreateNwStatusReportSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@return ApiCreateNwStatusReportSubscriptionRequest
 */
 func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubscription(ctx context.Context, scsAsId string) ApiCreateNwStatusReportSubscriptionRequest {
 	return ApiCreateNwStatusReportSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return NetworkStatusReportingSubscription
+//
+//	@return NetworkStatusReportingSubscription
 func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubscriptionExecute(r ApiCreateNwStatusReportSubscriptionRequest) (*NetworkStatusReportingSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NetworkStatusReportingSubscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NetworkStatusReportingSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkStatusReportingSubscriptionsApiService.CreateNwStatusReportSubscription")
@@ -108,9 +108,9 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -127,8 +127,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -138,8 +138,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -149,8 +149,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -160,8 +160,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -171,8 +171,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -182,8 +182,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -193,8 +193,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -204,8 +204,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -215,8 +215,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -226,8 +226,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -246,9 +246,9 @@ func (a *NetworkStatusReportingSubscriptionsApiService) CreateNwStatusReportSubs
 }
 
 type ApiFetchAllNwStatusReportSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NetworkStatusReportingSubscriptionsApiService
-	scsAsId string
+	scsAsId    string
 }
 
 func (r ApiFetchAllNwStatusReportSubscriptionsRequest) Execute() ([]NetworkStatusReportingSubscription, *http.Response, error) {
@@ -258,26 +258,27 @@ func (r ApiFetchAllNwStatusReportSubscriptionsRequest) Execute() ([]NetworkStatu
 /*
 FetchAllNwStatusReportSubscriptions Read all network status reporting subscription resources for a given SCS/AS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @return ApiFetchAllNwStatusReportSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@return ApiFetchAllNwStatusReportSubscriptionsRequest
 */
 func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSubscriptions(ctx context.Context, scsAsId string) ApiFetchAllNwStatusReportSubscriptionsRequest {
 	return ApiFetchAllNwStatusReportSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return []NetworkStatusReportingSubscription
+//
+//	@return []NetworkStatusReportingSubscription
 func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSubscriptionsExecute(r ApiFetchAllNwStatusReportSubscriptionsRequest) ([]NetworkStatusReportingSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NetworkStatusReportingSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NetworkStatusReportingSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkStatusReportingSubscriptionsApiService.FetchAllNwStatusReportSubscriptions")
@@ -319,9 +320,9 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -338,8 +339,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -349,8 +350,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -360,8 +361,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -371,8 +372,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -382,8 +383,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -393,8 +394,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -404,8 +405,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -415,8 +416,8 @@ func (a *NetworkStatusReportingSubscriptionsApiService) FetchAllNwStatusReportSu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

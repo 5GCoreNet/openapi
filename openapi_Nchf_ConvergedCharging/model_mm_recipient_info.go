@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &MMRecipientInfo{}
 
 // MMRecipientInfo struct for MMRecipientInfo
 type MMRecipientInfo struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	RecipientSUPI *string `json:"recipientSUPI,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	RecipientGPSI *string `json:"recipientGPSI,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	RecipientGPSI         *string         `json:"recipientGPSI,omitempty"`
 	RecipientOtherAddress []SMAddressInfo `json:"recipientOtherAddress,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewMMRecipientInfoWithDefaults() *MMRecipientInfo {
 
 // GetRecipientSUPI returns the RecipientSUPI field value if set, zero value otherwise.
 func (o *MMRecipientInfo) GetRecipientSUPI() string {
-	if o == nil || isNil(o.RecipientSUPI) {
+	if o == nil || IsNil(o.RecipientSUPI) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *MMRecipientInfo) GetRecipientSUPI() string {
 // GetRecipientSUPIOk returns a tuple with the RecipientSUPI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMRecipientInfo) GetRecipientSUPIOk() (*string, bool) {
-	if o == nil || isNil(o.RecipientSUPI) {
+	if o == nil || IsNil(o.RecipientSUPI) {
 		return nil, false
 	}
 	return o.RecipientSUPI, true
@@ -63,7 +63,7 @@ func (o *MMRecipientInfo) GetRecipientSUPIOk() (*string, bool) {
 
 // HasRecipientSUPI returns a boolean if a field has been set.
 func (o *MMRecipientInfo) HasRecipientSUPI() bool {
-	if o != nil && !isNil(o.RecipientSUPI) {
+	if o != nil && !IsNil(o.RecipientSUPI) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *MMRecipientInfo) SetRecipientSUPI(v string) {
 
 // GetRecipientGPSI returns the RecipientGPSI field value if set, zero value otherwise.
 func (o *MMRecipientInfo) GetRecipientGPSI() string {
-	if o == nil || isNil(o.RecipientGPSI) {
+	if o == nil || IsNil(o.RecipientGPSI) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *MMRecipientInfo) GetRecipientGPSI() string {
 // GetRecipientGPSIOk returns a tuple with the RecipientGPSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMRecipientInfo) GetRecipientGPSIOk() (*string, bool) {
-	if o == nil || isNil(o.RecipientGPSI) {
+	if o == nil || IsNil(o.RecipientGPSI) {
 		return nil, false
 	}
 	return o.RecipientGPSI, true
@@ -95,7 +95,7 @@ func (o *MMRecipientInfo) GetRecipientGPSIOk() (*string, bool) {
 
 // HasRecipientGPSI returns a boolean if a field has been set.
 func (o *MMRecipientInfo) HasRecipientGPSI() bool {
-	if o != nil && !isNil(o.RecipientGPSI) {
+	if o != nil && !IsNil(o.RecipientGPSI) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MMRecipientInfo) SetRecipientGPSI(v string) {
 
 // GetRecipientOtherAddress returns the RecipientOtherAddress field value if set, zero value otherwise.
 func (o *MMRecipientInfo) GetRecipientOtherAddress() []SMAddressInfo {
-	if o == nil || isNil(o.RecipientOtherAddress) {
+	if o == nil || IsNil(o.RecipientOtherAddress) {
 		var ret []SMAddressInfo
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *MMRecipientInfo) GetRecipientOtherAddress() []SMAddressInfo {
 // GetRecipientOtherAddressOk returns a tuple with the RecipientOtherAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMRecipientInfo) GetRecipientOtherAddressOk() ([]SMAddressInfo, bool) {
-	if o == nil || isNil(o.RecipientOtherAddress) {
+	if o == nil || IsNil(o.RecipientOtherAddress) {
 		return nil, false
 	}
 	return o.RecipientOtherAddress, true
@@ -127,7 +127,7 @@ func (o *MMRecipientInfo) GetRecipientOtherAddressOk() ([]SMAddressInfo, bool) {
 
 // HasRecipientOtherAddress returns a boolean if a field has been set.
 func (o *MMRecipientInfo) HasRecipientOtherAddress() bool {
-	if o != nil && !isNil(o.RecipientOtherAddress) {
+	if o != nil && !IsNil(o.RecipientOtherAddress) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *MMRecipientInfo) SetRecipientOtherAddress(v []SMAddressInfo) {
 }
 
 func (o MMRecipientInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o MMRecipientInfo) MarshalJSON() ([]byte, error) {
 
 func (o MMRecipientInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RecipientSUPI) {
+	if !IsNil(o.RecipientSUPI) {
 		toSerialize["recipientSUPI"] = o.RecipientSUPI
 	}
-	if !isNil(o.RecipientGPSI) {
+	if !IsNil(o.RecipientGPSI) {
 		toSerialize["recipientGPSI"] = o.RecipientGPSI
 	}
-	if !isNil(o.RecipientOtherAddress) {
+	if !IsNil(o.RecipientOtherAddress) {
 		toSerialize["recipientOtherAddress"] = o.RecipientOtherAddress
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableMMRecipientInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

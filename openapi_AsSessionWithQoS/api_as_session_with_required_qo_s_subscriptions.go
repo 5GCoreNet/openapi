@@ -1,7 +1,7 @@
 /*
 3gpp-as-session-with-qos
 
-API for setting us an AS session with required QoS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for setting us an AS session with required QoS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.2
 */
@@ -13,21 +13,20 @@ package openapi_AsSessionWithQoS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // ASSessionWithRequiredQoSSubscriptionsApiService ASSessionWithRequiredQoSSubscriptionsApi service
 type ASSessionWithRequiredQoSSubscriptionsApiService service
 
 type ApiCreateASSessionWithQoSSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *ASSessionWithRequiredQoSSubscriptionsApiService
-	scsAsId string
+	ctx                          context.Context
+	ApiService                   *ASSessionWithRequiredQoSSubscriptionsApiService
+	scsAsId                      string
 	asSessionWithQoSSubscription *AsSessionWithQoSSubscription
 }
 
@@ -44,26 +43,27 @@ func (r ApiCreateASSessionWithQoSSubscriptionRequest) Execute() (*AsSessionWithQ
 /*
 CreateASSessionWithQoSSubscription Creates a new subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @return ApiCreateASSessionWithQoSSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@return ApiCreateASSessionWithQoSSubscriptionRequest
 */
 func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoSSubscription(ctx context.Context, scsAsId string) ApiCreateASSessionWithQoSSubscriptionRequest {
 	return ApiCreateASSessionWithQoSSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return AsSessionWithQoSSubscription
+//
+//	@return AsSessionWithQoSSubscription
 func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoSSubscriptionExecute(r ApiCreateASSessionWithQoSSubscriptionRequest) (*AsSessionWithQoSSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AsSessionWithQoSSubscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AsSessionWithQoSSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ASSessionWithRequiredQoSSubscriptionsApiService.CreateASSessionWithQoSSubscription")
@@ -110,9 +110,9 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -129,8 +129,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -140,8 +140,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -151,8 +151,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -162,8 +162,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -173,8 +173,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -184,8 +184,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -195,8 +195,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -206,8 +206,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -217,8 +217,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -228,8 +228,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -248,12 +248,12 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 }
 
 type ApiFetchAllASSessionWithQoSSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ASSessionWithRequiredQoSSubscriptionsApiService
-	scsAsId string
-	ipAddrs *[]IpAddr
-	ipDomain *string
-	macAddrs *[]string
+	scsAsId    string
+	ipAddrs    *[]IpAddr
+	ipDomain   *string
+	macAddrs   *[]string
 }
 
 // The IP address(es) of the requested UE(s).
@@ -281,26 +281,27 @@ func (r ApiFetchAllASSessionWithQoSSubscriptionsRequest) Execute() ([]AsSessionW
 /*
 FetchAllASSessionWithQoSSubscriptions Read all or queried active subscriptions for the SCS/AS.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS
- @return ApiFetchAllASSessionWithQoSSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS
+	@return ApiFetchAllASSessionWithQoSSubscriptionsRequest
 */
 func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQoSSubscriptions(ctx context.Context, scsAsId string) ApiFetchAllASSessionWithQoSSubscriptionsRequest {
 	return ApiFetchAllASSessionWithQoSSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
 	}
 }
 
 // Execute executes the request
-//  @return []AsSessionWithQoSSubscription
+//
+//	@return []AsSessionWithQoSSubscription
 func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQoSSubscriptionsExecute(r ApiFetchAllASSessionWithQoSSubscriptionsRequest) ([]AsSessionWithQoSSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AsSessionWithQoSSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AsSessionWithQoSSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ASSessionWithRequiredQoSSubscriptionsApiService.FetchAllASSessionWithQoSSubscriptions")
@@ -316,20 +317,20 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 	localVarFormParams := url.Values{}
 
 	if r.ipAddrs != nil {
-		parameterAddToQuery(localVarQueryParams, "ip-addrs", r.ipAddrs, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-addrs", r.ipAddrs, "csv")
 	}
 	if r.ipDomain != nil {
-		parameterAddToQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
 	}
 	if r.macAddrs != nil {
 		t := *r.macAddrs
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "mac-addrs", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -359,9 +360,9 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -378,8 +379,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -389,8 +390,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -400,8 +401,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -411,8 +412,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -422,8 +423,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -433,8 +434,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -444,8 +445,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -455,8 +456,8 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

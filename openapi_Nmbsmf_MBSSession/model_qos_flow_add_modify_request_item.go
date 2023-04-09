@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &QosFlowAddModifyRequestItem{}
 // QosFlowAddModifyRequestItem Individual MBS QoS flow requested to be created or modified
 type QosFlowAddModifyRequestItem struct {
 	// Unsigned integer identifying a QoS flow, within the range 0 to 63.
-	Qfi int32 `json:"qfi"`
+	Qfi            int32           `json:"qfi"`
 	QosFlowProfile *QosFlowProfile `json:"qosFlowProfile,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *QosFlowAddModifyRequestItem) SetQfi(v int32) {
 
 // GetQosFlowProfile returns the QosFlowProfile field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowProfile() QosFlowProfile {
-	if o == nil || isNil(o.QosFlowProfile) {
+	if o == nil || IsNil(o.QosFlowProfile) {
 		var ret QosFlowProfile
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowProfile() QosFlowProfile {
 // GetQosFlowProfileOk returns a tuple with the QosFlowProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowProfileOk() (*QosFlowProfile, bool) {
-	if o == nil || isNil(o.QosFlowProfile) {
+	if o == nil || IsNil(o.QosFlowProfile) {
 		return nil, false
 	}
 	return o.QosFlowProfile, true
@@ -86,7 +86,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowProfileOk() (*QosFlowProfile, bo
 
 // HasQosFlowProfile returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasQosFlowProfile() bool {
-	if o != nil && !isNil(o.QosFlowProfile) {
+	if o != nil && !IsNil(o.QosFlowProfile) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *QosFlowAddModifyRequestItem) SetQosFlowProfile(v QosFlowProfile) {
 }
 
 func (o QosFlowAddModifyRequestItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o QosFlowAddModifyRequestItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowAddModifyRequestItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !isNil(o.QosFlowProfile) {
+	if !IsNil(o.QosFlowProfile) {
 		toSerialize["qosFlowProfile"] = o.QosFlowProfile
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableQosFlowAddModifyRequestItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 VAE_ApplicationRequirement
 
-API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewApplicationRequirementWithDefaults() *ApplicationRequirement {
 
 // GetServiceLevel returns the ServiceLevel field value if set, zero value otherwise.
 func (o *ApplicationRequirement) GetServiceLevel() ServiceLevel {
-	if o == nil || isNil(o.ServiceLevel) {
+	if o == nil || IsNil(o.ServiceLevel) {
 		var ret ServiceLevel
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ApplicationRequirement) GetServiceLevel() ServiceLevel {
 // GetServiceLevelOk returns a tuple with the ServiceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirement) GetServiceLevelOk() (*ServiceLevel, bool) {
-	if o == nil || isNil(o.ServiceLevel) {
+	if o == nil || IsNil(o.ServiceLevel) {
 		return nil, false
 	}
 	return o.ServiceLevel, true
@@ -59,7 +59,7 @@ func (o *ApplicationRequirement) GetServiceLevelOk() (*ServiceLevel, bool) {
 
 // HasServiceLevel returns a boolean if a field has been set.
 func (o *ApplicationRequirement) HasServiceLevel() bool {
-	if o != nil && !isNil(o.ServiceLevel) {
+	if o != nil && !IsNil(o.ServiceLevel) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ApplicationRequirement) SetServiceLevel(v ServiceLevel) {
 }
 
 func (o ApplicationRequirement) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ApplicationRequirement) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceLevel) {
+	if !IsNil(o.ServiceLevel) {
 		toSerialize["serviceLevel"] = o.ServiceLevel
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableApplicationRequirement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

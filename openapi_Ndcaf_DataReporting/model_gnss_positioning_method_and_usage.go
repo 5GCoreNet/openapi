@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &GnssPositioningMethodAndUsage{}
 
 // GnssPositioningMethodAndUsage Indicates the usage of a Global Navigation Satellite System (GNSS) positioning method.
 type GnssPositioningMethodAndUsage struct {
-	Mode PositioningMode `json:"mode"`
-	Gnss GnssId `json:"gnss"`
-	Usage Usage `json:"usage"`
+	Mode  PositioningMode `json:"mode"`
+	Gnss  GnssId          `json:"gnss"`
+	Usage Usage           `json:"usage"`
 }
 
 // NewGnssPositioningMethodAndUsage instantiates a new GnssPositioningMethodAndUsage object
@@ -117,7 +117,7 @@ func (o *GnssPositioningMethodAndUsage) SetUsage(v Usage) {
 }
 
 func (o GnssPositioningMethodAndUsage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableGnssPositioningMethodAndUsage) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

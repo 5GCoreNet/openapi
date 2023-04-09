@@ -19,27 +19,27 @@ var _ MappedNullable = &UpfFunctionSingleAllOfAttributesAllOf{}
 
 // UpfFunctionSingleAllOfAttributesAllOf struct for UpfFunctionSingleAllOfAttributesAllOf
 type UpfFunctionSingleAllOfAttributesAllOf struct {
-	PLMNInfoList []PlmnInfo `json:"pLMNInfoList,omitempty"`
-	NRTACList []int32 `json:"nRTACList,omitempty"`
-	CNSIIdList []string `json:"cNSIIdList,omitempty"`
-	SmfServingArea *string `json:"smfServingArea,omitempty"`
-	InterfaceUpfInfoList []InterfaceUpfInfoItem `json:"interfaceUpfInfoList,omitempty"`
-	IwkEpsInd *bool `json:"iwkEpsInd,omitempty"`
-	PduSessionTypes *string `json:"pduSessionTypes,omitempty"`
-	AtsssCapability *AtsssCapability `json:"atsssCapability,omitempty"`
-	UeIpAddrInd *bool `json:"ueIpAddrInd,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	WAgfInfo *IpInterface `json:"wAgfInfo,omitempty"`
-	TngfInfo *IpInterface `json:"tngfInfo,omitempty"`
-	TwifInfo *IpInterface `json:"twifInfo,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	RedundantGtpu *bool `json:"redundantGtpu,omitempty"`
-	Ipups *bool `json:"ipups,omitempty"`
-	DataForwarding *bool `json:"dataForwarding,omitempty"`
-	SupportedPfcpFeatures *string `json:"supportedPfcpFeatures,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	SupportedBMOList []string `json:"supportedBMOList,omitempty"`
+	PLMNInfoList          []PlmnInfo             `json:"pLMNInfoList,omitempty"`
+	NRTACList             []int32                `json:"nRTACList,omitempty"`
+	CNSIIdList            []string               `json:"cNSIIdList,omitempty"`
+	SmfServingArea        *string                `json:"smfServingArea,omitempty"`
+	InterfaceUpfInfoList  []InterfaceUpfInfoItem `json:"interfaceUpfInfoList,omitempty"`
+	IwkEpsInd             *bool                  `json:"iwkEpsInd,omitempty"`
+	PduSessionTypes       *string                `json:"pduSessionTypes,omitempty"`
+	AtsssCapability       *AtsssCapability       `json:"atsssCapability,omitempty"`
+	UeIpAddrInd           *bool                  `json:"ueIpAddrInd,omitempty"`
+	TaiList               []Tai                  `json:"taiList,omitempty"`
+	TaiRangeList          []TaiRange             `json:"taiRangeList,omitempty"`
+	WAgfInfo              *IpInterface           `json:"wAgfInfo,omitempty"`
+	TngfInfo              *IpInterface           `json:"tngfInfo,omitempty"`
+	TwifInfo              *IpInterface           `json:"twifInfo,omitempty"`
+	Priority              *int32                 `json:"priority,omitempty"`
+	RedundantGtpu         *bool                  `json:"redundantGtpu,omitempty"`
+	Ipups                 *bool                  `json:"ipups,omitempty"`
+	DataForwarding        *bool                  `json:"dataForwarding,omitempty"`
+	SupportedPfcpFeatures *string                `json:"supportedPfcpFeatures,omitempty"`
+	ManagedNFProfile      *ManagedNFProfile      `json:"managedNFProfile,omitempty"`
+	SupportedBMOList      []string               `json:"supportedBMOList,omitempty"`
 }
 
 // NewUpfFunctionSingleAllOfAttributesAllOf instantiates a new UpfFunctionSingleAllOfAttributesAllOf object
@@ -732,7 +732,7 @@ func (o *UpfFunctionSingleAllOfAttributesAllOf) SetSupportedBMOList(v []string) 
 }
 
 func (o UpfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -842,5 +842,3 @@ func (v *NullableUpfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

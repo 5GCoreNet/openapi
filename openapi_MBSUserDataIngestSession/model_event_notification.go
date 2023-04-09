@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-ud-ingest
 
-API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &EventNotification{}
 
 // EventNotification Represents Event Notification.
 type EventNotification struct {
-	StatusEvent Event `json:"statusEvent"`
+	StatusEvent     Event   `json:"statusEvent"`
 	MbsDisSessionId *string `json:"mbsDisSessionId,omitempty"`
-	StatusAddInfo *string `json:"statusAddInfo,omitempty"`
+	StatusAddInfo   *string `json:"statusAddInfo,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
 	TimeStamp time.Time `json:"timeStamp"`
 }
@@ -72,7 +72,7 @@ func (o *EventNotification) SetStatusEvent(v Event) {
 
 // GetMbsDisSessionId returns the MbsDisSessionId field value if set, zero value otherwise.
 func (o *EventNotification) GetMbsDisSessionId() string {
-	if o == nil || isNil(o.MbsDisSessionId) {
+	if o == nil || IsNil(o.MbsDisSessionId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *EventNotification) GetMbsDisSessionId() string {
 // GetMbsDisSessionIdOk returns a tuple with the MbsDisSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetMbsDisSessionIdOk() (*string, bool) {
-	if o == nil || isNil(o.MbsDisSessionId) {
+	if o == nil || IsNil(o.MbsDisSessionId) {
 		return nil, false
 	}
 	return o.MbsDisSessionId, true
@@ -90,7 +90,7 @@ func (o *EventNotification) GetMbsDisSessionIdOk() (*string, bool) {
 
 // HasMbsDisSessionId returns a boolean if a field has been set.
 func (o *EventNotification) HasMbsDisSessionId() bool {
-	if o != nil && !isNil(o.MbsDisSessionId) {
+	if o != nil && !IsNil(o.MbsDisSessionId) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *EventNotification) SetMbsDisSessionId(v string) {
 
 // GetStatusAddInfo returns the StatusAddInfo field value if set, zero value otherwise.
 func (o *EventNotification) GetStatusAddInfo() string {
-	if o == nil || isNil(o.StatusAddInfo) {
+	if o == nil || IsNil(o.StatusAddInfo) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *EventNotification) GetStatusAddInfo() string {
 // GetStatusAddInfoOk returns a tuple with the StatusAddInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetStatusAddInfoOk() (*string, bool) {
-	if o == nil || isNil(o.StatusAddInfo) {
+	if o == nil || IsNil(o.StatusAddInfo) {
 		return nil, false
 	}
 	return o.StatusAddInfo, true
@@ -122,7 +122,7 @@ func (o *EventNotification) GetStatusAddInfoOk() (*string, bool) {
 
 // HasStatusAddInfo returns a boolean if a field has been set.
 func (o *EventNotification) HasStatusAddInfo() bool {
-	if o != nil && !isNil(o.StatusAddInfo) {
+	if o != nil && !IsNil(o.StatusAddInfo) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *EventNotification) SetTimeStamp(v time.Time) {
 }
 
 func (o EventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o EventNotification) MarshalJSON() ([]byte, error) {
 func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusEvent"] = o.StatusEvent
-	if !isNil(o.MbsDisSessionId) {
+	if !IsNil(o.MbsDisSessionId) {
 		toSerialize["mbsDisSessionId"] = o.MbsDisSessionId
 	}
-	if !isNil(o.StatusAddInfo) {
+	if !IsNil(o.StatusAddInfo) {
 		toSerialize["statusAddInfo"] = o.StatusAddInfo
 	}
 	toSerialize["timeStamp"] = o.TimeStamp
@@ -214,5 +214,3 @@ func (v *NullableEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

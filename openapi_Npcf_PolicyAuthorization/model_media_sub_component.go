@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &MediaSubComponent{}
 
 // MediaSubComponent Identifies a media subcomponent.
 type MediaSubComponent struct {
-	AfSigProtocol *AfSigProtocol `json:"afSigProtocol,omitempty"`
-	EthfDescs []EthFlowDescription `json:"ethfDescs,omitempty"`
-	FNum int32 `json:"fNum"`
-	FDescs []string `json:"fDescs,omitempty"`
-	FStatus *FlowStatus `json:"fStatus,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	AfSigProtocol *AfSigProtocol       `json:"afSigProtocol,omitempty"`
+	EthfDescs     []EthFlowDescription `json:"ethfDescs,omitempty"`
+	FNum          int32                `json:"fNum"`
+	FDescs        []string             `json:"fDescs,omitempty"`
+	FStatus       *FlowStatus          `json:"fStatus,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MarBwDl *string `json:"marBwDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MarBwUl *string `json:"marBwUl,omitempty"`
-	// 2-octet string, where each octet is encoded in hexadecimal representation. The first octet contains the IPv4 Type-of-Service or the IPv6 Traffic-Class field and the second octet contains the ToS/Traffic Class mask field. 
-	TosTrCl *string `json:"tosTrCl,omitempty"`
+	// 2-octet string, where each octet is encoded in hexadecimal representation. The first octet contains the IPv4 Type-of-Service or the IPv6 Traffic-Class field and the second octet contains the ToS/Traffic Class mask field.
+	TosTrCl   *string    `json:"tosTrCl,omitempty"`
 	FlowUsage *FlowUsage `json:"flowUsage,omitempty"`
 }
 
@@ -53,7 +53,7 @@ func NewMediaSubComponentWithDefaults() *MediaSubComponent {
 
 // GetAfSigProtocol returns the AfSigProtocol field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetAfSigProtocol() AfSigProtocol {
-	if o == nil || isNil(o.AfSigProtocol) {
+	if o == nil || IsNil(o.AfSigProtocol) {
 		var ret AfSigProtocol
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *MediaSubComponent) GetAfSigProtocol() AfSigProtocol {
 // GetAfSigProtocolOk returns a tuple with the AfSigProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
-	if o == nil || isNil(o.AfSigProtocol) {
+	if o == nil || IsNil(o.AfSigProtocol) {
 		return nil, false
 	}
 	return o.AfSigProtocol, true
@@ -71,7 +71,7 @@ func (o *MediaSubComponent) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
 
 // HasAfSigProtocol returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasAfSigProtocol() bool {
-	if o != nil && !isNil(o.AfSigProtocol) {
+	if o != nil && !IsNil(o.AfSigProtocol) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *MediaSubComponent) SetAfSigProtocol(v AfSigProtocol) {
 
 // GetEthfDescs returns the EthfDescs field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetEthfDescs() []EthFlowDescription {
-	if o == nil || isNil(o.EthfDescs) {
+	if o == nil || IsNil(o.EthfDescs) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *MediaSubComponent) GetEthfDescs() []EthFlowDescription {
 // GetEthfDescsOk returns a tuple with the EthfDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetEthfDescsOk() ([]EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthfDescs) {
+	if o == nil || IsNil(o.EthfDescs) {
 		return nil, false
 	}
 	return o.EthfDescs, true
@@ -103,7 +103,7 @@ func (o *MediaSubComponent) GetEthfDescsOk() ([]EthFlowDescription, bool) {
 
 // HasEthfDescs returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasEthfDescs() bool {
-	if o != nil && !isNil(o.EthfDescs) {
+	if o != nil && !IsNil(o.EthfDescs) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *MediaSubComponent) SetFNum(v int32) {
 
 // GetFDescs returns the FDescs field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetFDescs() []string {
-	if o == nil || isNil(o.FDescs) {
+	if o == nil || IsNil(o.FDescs) {
 		var ret []string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *MediaSubComponent) GetFDescs() []string {
 // GetFDescsOk returns a tuple with the FDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetFDescsOk() ([]string, bool) {
-	if o == nil || isNil(o.FDescs) {
+	if o == nil || IsNil(o.FDescs) {
 		return nil, false
 	}
 	return o.FDescs, true
@@ -159,7 +159,7 @@ func (o *MediaSubComponent) GetFDescsOk() ([]string, bool) {
 
 // HasFDescs returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasFDescs() bool {
-	if o != nil && !isNil(o.FDescs) {
+	if o != nil && !IsNil(o.FDescs) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *MediaSubComponent) SetFDescs(v []string) {
 
 // GetFStatus returns the FStatus field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetFStatus() FlowStatus {
-	if o == nil || isNil(o.FStatus) {
+	if o == nil || IsNil(o.FStatus) {
 		var ret FlowStatus
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *MediaSubComponent) GetFStatus() FlowStatus {
 // GetFStatusOk returns a tuple with the FStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetFStatusOk() (*FlowStatus, bool) {
-	if o == nil || isNil(o.FStatus) {
+	if o == nil || IsNil(o.FStatus) {
 		return nil, false
 	}
 	return o.FStatus, true
@@ -191,7 +191,7 @@ func (o *MediaSubComponent) GetFStatusOk() (*FlowStatus, bool) {
 
 // HasFStatus returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasFStatus() bool {
-	if o != nil && !isNil(o.FStatus) {
+	if o != nil && !IsNil(o.FStatus) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *MediaSubComponent) SetFStatus(v FlowStatus) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetMarBwDl() string {
-	if o == nil || isNil(o.MarBwDl) {
+	if o == nil || IsNil(o.MarBwDl) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *MediaSubComponent) GetMarBwDl() string {
 // GetMarBwDlOk returns a tuple with the MarBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetMarBwDlOk() (*string, bool) {
-	if o == nil || isNil(o.MarBwDl) {
+	if o == nil || IsNil(o.MarBwDl) {
 		return nil, false
 	}
 	return o.MarBwDl, true
@@ -223,7 +223,7 @@ func (o *MediaSubComponent) GetMarBwDlOk() (*string, bool) {
 
 // HasMarBwDl returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasMarBwDl() bool {
-	if o != nil && !isNil(o.MarBwDl) {
+	if o != nil && !IsNil(o.MarBwDl) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *MediaSubComponent) SetMarBwDl(v string) {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetMarBwUl() string {
-	if o == nil || isNil(o.MarBwUl) {
+	if o == nil || IsNil(o.MarBwUl) {
 		var ret string
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *MediaSubComponent) GetMarBwUl() string {
 // GetMarBwUlOk returns a tuple with the MarBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetMarBwUlOk() (*string, bool) {
-	if o == nil || isNil(o.MarBwUl) {
+	if o == nil || IsNil(o.MarBwUl) {
 		return nil, false
 	}
 	return o.MarBwUl, true
@@ -255,7 +255,7 @@ func (o *MediaSubComponent) GetMarBwUlOk() (*string, bool) {
 
 // HasMarBwUl returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasMarBwUl() bool {
-	if o != nil && !isNil(o.MarBwUl) {
+	if o != nil && !IsNil(o.MarBwUl) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *MediaSubComponent) SetMarBwUl(v string) {
 
 // GetTosTrCl returns the TosTrCl field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetTosTrCl() string {
-	if o == nil || isNil(o.TosTrCl) {
+	if o == nil || IsNil(o.TosTrCl) {
 		var ret string
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *MediaSubComponent) GetTosTrCl() string {
 // GetTosTrClOk returns a tuple with the TosTrCl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetTosTrClOk() (*string, bool) {
-	if o == nil || isNil(o.TosTrCl) {
+	if o == nil || IsNil(o.TosTrCl) {
 		return nil, false
 	}
 	return o.TosTrCl, true
@@ -287,7 +287,7 @@ func (o *MediaSubComponent) GetTosTrClOk() (*string, bool) {
 
 // HasTosTrCl returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasTosTrCl() bool {
-	if o != nil && !isNil(o.TosTrCl) {
+	if o != nil && !IsNil(o.TosTrCl) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *MediaSubComponent) SetTosTrCl(v string) {
 
 // GetFlowUsage returns the FlowUsage field value if set, zero value otherwise.
 func (o *MediaSubComponent) GetFlowUsage() FlowUsage {
-	if o == nil || isNil(o.FlowUsage) {
+	if o == nil || IsNil(o.FlowUsage) {
 		var ret FlowUsage
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *MediaSubComponent) GetFlowUsage() FlowUsage {
 // GetFlowUsageOk returns a tuple with the FlowUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponent) GetFlowUsageOk() (*FlowUsage, bool) {
-	if o == nil || isNil(o.FlowUsage) {
+	if o == nil || IsNil(o.FlowUsage) {
 		return nil, false
 	}
 	return o.FlowUsage, true
@@ -319,7 +319,7 @@ func (o *MediaSubComponent) GetFlowUsageOk() (*FlowUsage, bool) {
 
 // HasFlowUsage returns a boolean if a field has been set.
 func (o *MediaSubComponent) HasFlowUsage() bool {
-	if o != nil && !isNil(o.FlowUsage) {
+	if o != nil && !IsNil(o.FlowUsage) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *MediaSubComponent) SetFlowUsage(v FlowUsage) {
 }
 
 func (o MediaSubComponent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,29 +341,29 @@ func (o MediaSubComponent) MarshalJSON() ([]byte, error) {
 
 func (o MediaSubComponent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AfSigProtocol) {
+	if !IsNil(o.AfSigProtocol) {
 		toSerialize["afSigProtocol"] = o.AfSigProtocol
 	}
-	if !isNil(o.EthfDescs) {
+	if !IsNil(o.EthfDescs) {
 		toSerialize["ethfDescs"] = o.EthfDescs
 	}
 	toSerialize["fNum"] = o.FNum
-	if !isNil(o.FDescs) {
+	if !IsNil(o.FDescs) {
 		toSerialize["fDescs"] = o.FDescs
 	}
-	if !isNil(o.FStatus) {
+	if !IsNil(o.FStatus) {
 		toSerialize["fStatus"] = o.FStatus
 	}
-	if !isNil(o.MarBwDl) {
+	if !IsNil(o.MarBwDl) {
 		toSerialize["marBwDl"] = o.MarBwDl
 	}
-	if !isNil(o.MarBwUl) {
+	if !IsNil(o.MarBwUl) {
 		toSerialize["marBwUl"] = o.MarBwUl
 	}
-	if !isNil(o.TosTrCl) {
+	if !IsNil(o.TosTrCl) {
 		toSerialize["tosTrCl"] = o.TosTrCl
 	}
-	if !isNil(o.FlowUsage) {
+	if !IsNil(o.FlowUsage) {
 		toSerialize["flowUsage"] = o.FlowUsage
 	}
 	return toSerialize, nil
@@ -404,5 +404,3 @@ func (v *NullableMediaSubComponent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

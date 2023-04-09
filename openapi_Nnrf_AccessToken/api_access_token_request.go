@@ -1,7 +1,7 @@
 /*
 NRF OAuth2
 
-NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,40 +13,39 @@ package openapi_Nnrf_AccessToken
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"reflect"
 )
 
-
 // AccessTokenRequestApiService AccessTokenRequestApi service
 type AccessTokenRequestApiService service
 
 type ApiAccessTokenRequestRequest struct {
-	ctx context.Context
-	ApiService *AccessTokenRequestApiService
-	grantType *string
-	nfInstanceId *string
-	scope *string
-	contentEncoding *string
-	acceptEncoding *string
-	nfType *NFType
-	targetNfType *NFType
-	targetNfInstanceId *string
-	requesterPlmn *PlmnId
-	requesterPlmnList *[]PlmnId
-	requesterSnssaiList *[]Snssai
-	requesterFqdn *string
-	requesterSnpnList *[]PlmnIdNid
-	targetPlmn *PlmnId
-	targetSnpn *PlmnIdNid
-	targetSnssaiList *[]Snssai
-	targetNsiList *[]string
-	targetNfSetId *string
+	ctx                  context.Context
+	ApiService           *AccessTokenRequestApiService
+	grantType            *string
+	nfInstanceId         *string
+	scope                *string
+	contentEncoding      *string
+	acceptEncoding       *string
+	nfType               *NFType
+	targetNfType         *NFType
+	targetNfInstanceId   *string
+	requesterPlmn        *PlmnId
+	requesterPlmnList    *[]PlmnId
+	requesterSnssaiList  *[]Snssai
+	requesterFqdn        *string
+	requesterSnpnList    *[]PlmnIdNid
+	targetPlmn           *PlmnId
+	targetSnpn           *PlmnIdNid
+	targetSnssaiList     *[]Snssai
+	targetNsiList        *[]string
+	targetNfSetId        *string
 	targetNfServiceSetId *string
-	hnrfAccessTokenUri *string
-	sourceNfInstanceId *string
+	hnrfAccessTokenUri   *string
+	sourceNfInstanceId   *string
 }
 
 func (r ApiAccessTokenRequestRequest) GrantType(grantType string) ApiAccessTokenRequestRequest {
@@ -54,7 +53,7 @@ func (r ApiAccessTokenRequestRequest) GrantType(grantType string) ApiAccessToken
 	return r
 }
 
-// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 func (r ApiAccessTokenRequestRequest) NfInstanceId(nfInstanceId string) ApiAccessTokenRequestRequest {
 	r.nfInstanceId = &nfInstanceId
 	return r
@@ -87,7 +86,7 @@ func (r ApiAccessTokenRequestRequest) TargetNfType(targetNfType NFType) ApiAcces
 	return r
 }
 
-// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 func (r ApiAccessTokenRequestRequest) TargetNfInstanceId(targetNfInstanceId string) ApiAccessTokenRequestRequest {
 	r.targetNfInstanceId = &targetNfInstanceId
 	return r
@@ -139,13 +138,13 @@ func (r ApiAccessTokenRequestRequest) TargetNsiList(targetNsiList []string) ApiA
 	return r
 }
 
-// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \\\&quot;set&lt;Set ID&gt;.&lt;nftype&gt;set.5gc.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot;, or  \\\&quot;set&lt;SetID&gt;.&lt;NFType&gt;set.5gc.nid&lt;NID&gt;.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot; with  &lt;MCC&gt; encoded as defined in clause 5.4.2 (\\\&quot;Mcc\\\&quot; data type definition)  &lt;MNC&gt; encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \\\&quot;0\\\&quot; digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: &#39;^[0-9]{3}$&#39; &lt;NFType&gt; encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters &lt;Set ID&gt; encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \\\&quot;set&lt;Set ID&gt;.&lt;nftype&gt;set.5gc.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot;, or  \\\&quot;set&lt;SetID&gt;.&lt;NFType&gt;set.5gc.nid&lt;NID&gt;.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot; with  &lt;MCC&gt; encoded as defined in clause 5.4.2 (\\\&quot;Mcc\\\&quot; data type definition)  &lt;MNC&gt; encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \\\&quot;0\\\&quot; digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: &#39;^[0-9]{3}$&#39; &lt;NFType&gt; encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters &lt;Set ID&gt; encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 func (r ApiAccessTokenRequestRequest) TargetNfSetId(targetNfSetId string) ApiAccessTokenRequestRequest {
 	r.targetNfSetId = &targetNfSetId
 	return r
 }
 
-// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \\\&quot;set&lt;Set ID&gt;.sn&lt;Service Name&gt;.nfi&lt;NF Instance ID&gt;.5gc.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot;, or  \\\&quot;set&lt;SetID&gt;.sn&lt;ServiceName&gt;.nfi&lt;NFInstanceID&gt;.5gc.nid&lt;NID&gt;.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot; with  &lt;MCC&gt; encoded as defined in clause 5.4.2 (\\\&quot;Mcc\\\&quot; data type definition)   &lt;MNC&gt; encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \\\&quot;0\\\&quot; digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: &#39;^[0-9]{3}$&#39; &lt;NID&gt; encoded as defined in clause 5.4.2 (\\\&quot;Nid\\\&quot; data type definition)  &lt;NFInstanceId&gt; encoded as defined in clause 5.3.2  &lt;ServiceName&gt; encoded as defined in 3GPP TS 29.510  &lt;Set ID&gt; encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit. 
+// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \\\&quot;set&lt;Set ID&gt;.sn&lt;Service Name&gt;.nfi&lt;NF Instance ID&gt;.5gc.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot;, or  \\\&quot;set&lt;SetID&gt;.sn&lt;ServiceName&gt;.nfi&lt;NFInstanceID&gt;.5gc.nid&lt;NID&gt;.mnc&lt;MNC&gt;.mcc&lt;MCC&gt;\\\&quot; with  &lt;MCC&gt; encoded as defined in clause 5.4.2 (\\\&quot;Mcc\\\&quot; data type definition)   &lt;MNC&gt; encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \\\&quot;0\\\&quot; digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: &#39;^[0-9]{3}$&#39; &lt;NID&gt; encoded as defined in clause 5.4.2 (\\\&quot;Nid\\\&quot; data type definition)  &lt;NFInstanceId&gt; encoded as defined in clause 5.3.2  &lt;ServiceName&gt; encoded as defined in 3GPP TS 29.510  &lt;Set ID&gt; encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit.
 func (r ApiAccessTokenRequestRequest) TargetNfServiceSetId(targetNfServiceSetId string) ApiAccessTokenRequestRequest {
 	r.targetNfServiceSetId = &targetNfServiceSetId
 	return r
@@ -157,7 +156,7 @@ func (r ApiAccessTokenRequestRequest) HnrfAccessTokenUri(hnrfAccessTokenUri stri
 	return r
 }
 
-// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 func (r ApiAccessTokenRequestRequest) SourceNfInstanceId(sourceNfInstanceId string) ApiAccessTokenRequestRequest {
 	r.sourceNfInstanceId = &sourceNfInstanceId
 	return r
@@ -170,24 +169,25 @@ func (r ApiAccessTokenRequestRequest) Execute() (*AccessTokenRsp, *http.Response
 /*
 AccessTokenRequest Access Token Request
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAccessTokenRequestRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAccessTokenRequestRequest
 */
 func (a *AccessTokenRequestApiService) AccessTokenRequest(ctx context.Context) ApiAccessTokenRequestRequest {
 	return ApiAccessTokenRequestRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AccessTokenRsp
+//
+//	@return AccessTokenRsp
 func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessTokenRequestRequest) (*AccessTokenRsp, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AccessTokenRsp
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AccessTokenRsp
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenRequestApiService.AccessTokenRequest")
@@ -228,13 +228,13 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
-	parameterAddToQuery(localVarFormParams, "grant_type", r.grantType, "")
-	parameterAddToQuery(localVarFormParams, "nfInstanceId", r.nfInstanceId, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "grant_type", r.grantType, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "nfInstanceId", r.nfInstanceId, "")
 	if r.nfType != nil {
 		paramJson, err := parameterToJson(*r.nfType)
 		if err != nil {
@@ -249,9 +249,9 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		}
 		localVarFormParams.Add("targetNfType", paramJson)
 	}
-	parameterAddToQuery(localVarFormParams, "scope", r.scope, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "scope", r.scope, "")
 	if r.targetNfInstanceId != nil {
-		parameterAddToQuery(localVarFormParams, "targetNfInstanceId", r.targetNfInstanceId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "targetNfInstanceId", r.targetNfInstanceId, "")
 	}
 	if r.requesterPlmn != nil {
 		paramJson, err := parameterToJson(*r.requesterPlmn)
@@ -261,16 +261,16 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		localVarFormParams.Add("requesterPlmn", paramJson)
 	}
 	if r.requesterPlmnList != nil {
-		parameterAddToQuery(localVarFormParams, "requesterPlmnList", r.requesterPlmnList, "multi")
+		parameterAddToHeaderOrQuery(localVarFormParams, "requesterPlmnList", r.requesterPlmnList, "multi")
 	}
 	if r.requesterSnssaiList != nil {
-		parameterAddToQuery(localVarFormParams, "requesterSnssaiList", r.requesterSnssaiList, "multi")
+		parameterAddToHeaderOrQuery(localVarFormParams, "requesterSnssaiList", r.requesterSnssaiList, "multi")
 	}
 	if r.requesterFqdn != nil {
-		parameterAddToQuery(localVarFormParams, "requesterFqdn", r.requesterFqdn, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "requesterFqdn", r.requesterFqdn, "")
 	}
 	if r.requesterSnpnList != nil {
-		parameterAddToQuery(localVarFormParams, "requesterSnpnList", r.requesterSnpnList, "multi")
+		parameterAddToHeaderOrQuery(localVarFormParams, "requesterSnpnList", r.requesterSnpnList, "multi")
 	}
 	if r.targetPlmn != nil {
 		paramJson, err := parameterToJson(*r.targetPlmn)
@@ -287,22 +287,22 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		localVarFormParams.Add("targetSnpn", paramJson)
 	}
 	if r.targetSnssaiList != nil {
-		parameterAddToQuery(localVarFormParams, "targetSnssaiList", r.targetSnssaiList, "multi")
+		parameterAddToHeaderOrQuery(localVarFormParams, "targetSnssaiList", r.targetSnssaiList, "multi")
 	}
 	if r.targetNsiList != nil {
-		parameterAddToQuery(localVarFormParams, "targetNsiList", r.targetNsiList, "multi")
+		parameterAddToHeaderOrQuery(localVarFormParams, "targetNsiList", r.targetNsiList, "multi")
 	}
 	if r.targetNfSetId != nil {
-		parameterAddToQuery(localVarFormParams, "targetNfSetId", r.targetNfSetId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "targetNfSetId", r.targetNfSetId, "")
 	}
 	if r.targetNfServiceSetId != nil {
-		parameterAddToQuery(localVarFormParams, "targetNfServiceSetId", r.targetNfServiceSetId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "targetNfServiceSetId", r.targetNfServiceSetId, "")
 	}
 	if r.hnrfAccessTokenUri != nil {
-		parameterAddToQuery(localVarFormParams, "hnrfAccessTokenUri", r.hnrfAccessTokenUri, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "hnrfAccessTokenUri", r.hnrfAccessTokenUri, "")
 	}
 	if r.sourceNfInstanceId != nil {
-		parameterAddToQuery(localVarFormParams, "sourceNfInstanceId", r.sourceNfInstanceId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "sourceNfInstanceId", r.sourceNfInstanceId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -314,9 +314,9 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -333,8 +333,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -344,8 +344,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -355,8 +355,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -366,8 +366,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -377,8 +377,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -388,8 +388,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -399,8 +399,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -410,8 +410,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -421,8 +421,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -432,8 +432,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -443,8 +443,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -454,8 +454,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -465,8 +465,8 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

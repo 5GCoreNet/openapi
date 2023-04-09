@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the BsfInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BsfInfo{}
 
-// BsfInfo Information about the BSF; it includes an indication of whether GBA or GBA_U is to be used, the key lifetime and a user-specific list of security features 
+// BsfInfo Information about the BSF; it includes an indication of whether GBA or GBA_U is to be used, the key lifetime and a user-specific list of security features
 type BsfInfo struct {
 	UiccType *UiccType `json:"uiccType,omitempty"`
 	// indicating a time in seconds.
-	LifeTime *int32 `json:"lifeTime,omitempty"`
+	LifeTime         *int32       `json:"lifeTime,omitempty"`
 	SecurityFeatures []SecFeature `json:"securityFeatures,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewBsfInfoWithDefaults() *BsfInfo {
 
 // GetUiccType returns the UiccType field value if set, zero value otherwise.
 func (o *BsfInfo) GetUiccType() UiccType {
-	if o == nil || isNil(o.UiccType) {
+	if o == nil || IsNil(o.UiccType) {
 		var ret UiccType
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *BsfInfo) GetUiccType() UiccType {
 // GetUiccTypeOk returns a tuple with the UiccType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetUiccTypeOk() (*UiccType, bool) {
-	if o == nil || isNil(o.UiccType) {
+	if o == nil || IsNil(o.UiccType) {
 		return nil, false
 	}
 	return o.UiccType, true
@@ -62,7 +62,7 @@ func (o *BsfInfo) GetUiccTypeOk() (*UiccType, bool) {
 
 // HasUiccType returns a boolean if a field has been set.
 func (o *BsfInfo) HasUiccType() bool {
-	if o != nil && !isNil(o.UiccType) {
+	if o != nil && !IsNil(o.UiccType) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *BsfInfo) SetUiccType(v UiccType) {
 
 // GetLifeTime returns the LifeTime field value if set, zero value otherwise.
 func (o *BsfInfo) GetLifeTime() int32 {
-	if o == nil || isNil(o.LifeTime) {
+	if o == nil || IsNil(o.LifeTime) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *BsfInfo) GetLifeTime() int32 {
 // GetLifeTimeOk returns a tuple with the LifeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetLifeTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.LifeTime) {
+	if o == nil || IsNil(o.LifeTime) {
 		return nil, false
 	}
 	return o.LifeTime, true
@@ -94,7 +94,7 @@ func (o *BsfInfo) GetLifeTimeOk() (*int32, bool) {
 
 // HasLifeTime returns a boolean if a field has been set.
 func (o *BsfInfo) HasLifeTime() bool {
-	if o != nil && !isNil(o.LifeTime) {
+	if o != nil && !IsNil(o.LifeTime) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *BsfInfo) SetLifeTime(v int32) {
 
 // GetSecurityFeatures returns the SecurityFeatures field value if set, zero value otherwise.
 func (o *BsfInfo) GetSecurityFeatures() []SecFeature {
-	if o == nil || isNil(o.SecurityFeatures) {
+	if o == nil || IsNil(o.SecurityFeatures) {
 		var ret []SecFeature
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *BsfInfo) GetSecurityFeatures() []SecFeature {
 // GetSecurityFeaturesOk returns a tuple with the SecurityFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetSecurityFeaturesOk() ([]SecFeature, bool) {
-	if o == nil || isNil(o.SecurityFeatures) {
+	if o == nil || IsNil(o.SecurityFeatures) {
 		return nil, false
 	}
 	return o.SecurityFeatures, true
@@ -126,7 +126,7 @@ func (o *BsfInfo) GetSecurityFeaturesOk() ([]SecFeature, bool) {
 
 // HasSecurityFeatures returns a boolean if a field has been set.
 func (o *BsfInfo) HasSecurityFeatures() bool {
-	if o != nil && !isNil(o.SecurityFeatures) {
+	if o != nil && !IsNil(o.SecurityFeatures) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *BsfInfo) SetSecurityFeatures(v []SecFeature) {
 }
 
 func (o BsfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o BsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o BsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UiccType) {
+	if !IsNil(o.UiccType) {
 		toSerialize["uiccType"] = o.UiccType
 	}
-	if !isNil(o.LifeTime) {
+	if !IsNil(o.LifeTime) {
 		toSerialize["lifeTime"] = o.LifeTime
 	}
-	if !isNil(o.SecurityFeatures) {
+	if !IsNil(o.SecurityFeatures) {
 		toSerialize["securityFeatures"] = o.SecurityFeatures
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableBsfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

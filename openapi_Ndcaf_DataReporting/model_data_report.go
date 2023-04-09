@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &DataReport{}
 // DataReport A data report sent by a data collection client to the Data Collection AF.
 type DataReport struct {
 	// String providing an application identifier.
-	ExternalApplicationId string `json:"externalApplicationId"`
-	ServiceExperienceRecords []ServiceExperienceRecord `json:"serviceExperienceRecords,omitempty"`
-	LocationRecords []LocationRecord `json:"locationRecords,omitempty"`
-	CommunicationRecords []CommunicationRecord `json:"communicationRecords,omitempty"`
-	PerformanceDataRecords []PerformanceDataRecord `json:"performanceDataRecords,omitempty"`
-	ApplicationSpecificRecords []ApplicationSpecificRecord `json:"applicationSpecificRecords,omitempty"`
-	TripPlanRecords []TripPlanRecord `json:"tripPlanRecords,omitempty"`
+	ExternalApplicationId       string                       `json:"externalApplicationId"`
+	ServiceExperienceRecords    []ServiceExperienceRecord    `json:"serviceExperienceRecords,omitempty"`
+	LocationRecords             []LocationRecord             `json:"locationRecords,omitempty"`
+	CommunicationRecords        []CommunicationRecord        `json:"communicationRecords,omitempty"`
+	PerformanceDataRecords      []PerformanceDataRecord      `json:"performanceDataRecords,omitempty"`
+	ApplicationSpecificRecords  []ApplicationSpecificRecord  `json:"applicationSpecificRecords,omitempty"`
+	TripPlanRecords             []TripPlanRecord             `json:"tripPlanRecords,omitempty"`
 	MediaStreamingAccessRecords []MediaStreamingAccessRecord `json:"mediaStreamingAccessRecords,omitempty"`
 }
 
@@ -74,7 +74,7 @@ func (o *DataReport) SetExternalApplicationId(v string) {
 
 // GetServiceExperienceRecords returns the ServiceExperienceRecords field value if set, zero value otherwise.
 func (o *DataReport) GetServiceExperienceRecords() []ServiceExperienceRecord {
-	if o == nil || isNil(o.ServiceExperienceRecords) {
+	if o == nil || IsNil(o.ServiceExperienceRecords) {
 		var ret []ServiceExperienceRecord
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DataReport) GetServiceExperienceRecords() []ServiceExperienceRecord {
 // GetServiceExperienceRecordsOk returns a tuple with the ServiceExperienceRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetServiceExperienceRecordsOk() ([]ServiceExperienceRecord, bool) {
-	if o == nil || isNil(o.ServiceExperienceRecords) {
+	if o == nil || IsNil(o.ServiceExperienceRecords) {
 		return nil, false
 	}
 	return o.ServiceExperienceRecords, true
@@ -92,7 +92,7 @@ func (o *DataReport) GetServiceExperienceRecordsOk() ([]ServiceExperienceRecord,
 
 // HasServiceExperienceRecords returns a boolean if a field has been set.
 func (o *DataReport) HasServiceExperienceRecords() bool {
-	if o != nil && !isNil(o.ServiceExperienceRecords) {
+	if o != nil && !IsNil(o.ServiceExperienceRecords) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *DataReport) SetServiceExperienceRecords(v []ServiceExperienceRecord) {
 
 // GetLocationRecords returns the LocationRecords field value if set, zero value otherwise.
 func (o *DataReport) GetLocationRecords() []LocationRecord {
-	if o == nil || isNil(o.LocationRecords) {
+	if o == nil || IsNil(o.LocationRecords) {
 		var ret []LocationRecord
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *DataReport) GetLocationRecords() []LocationRecord {
 // GetLocationRecordsOk returns a tuple with the LocationRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetLocationRecordsOk() ([]LocationRecord, bool) {
-	if o == nil || isNil(o.LocationRecords) {
+	if o == nil || IsNil(o.LocationRecords) {
 		return nil, false
 	}
 	return o.LocationRecords, true
@@ -124,7 +124,7 @@ func (o *DataReport) GetLocationRecordsOk() ([]LocationRecord, bool) {
 
 // HasLocationRecords returns a boolean if a field has been set.
 func (o *DataReport) HasLocationRecords() bool {
-	if o != nil && !isNil(o.LocationRecords) {
+	if o != nil && !IsNil(o.LocationRecords) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *DataReport) SetLocationRecords(v []LocationRecord) {
 
 // GetCommunicationRecords returns the CommunicationRecords field value if set, zero value otherwise.
 func (o *DataReport) GetCommunicationRecords() []CommunicationRecord {
-	if o == nil || isNil(o.CommunicationRecords) {
+	if o == nil || IsNil(o.CommunicationRecords) {
 		var ret []CommunicationRecord
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *DataReport) GetCommunicationRecords() []CommunicationRecord {
 // GetCommunicationRecordsOk returns a tuple with the CommunicationRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetCommunicationRecordsOk() ([]CommunicationRecord, bool) {
-	if o == nil || isNil(o.CommunicationRecords) {
+	if o == nil || IsNil(o.CommunicationRecords) {
 		return nil, false
 	}
 	return o.CommunicationRecords, true
@@ -156,7 +156,7 @@ func (o *DataReport) GetCommunicationRecordsOk() ([]CommunicationRecord, bool) {
 
 // HasCommunicationRecords returns a boolean if a field has been set.
 func (o *DataReport) HasCommunicationRecords() bool {
-	if o != nil && !isNil(o.CommunicationRecords) {
+	if o != nil && !IsNil(o.CommunicationRecords) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *DataReport) SetCommunicationRecords(v []CommunicationRecord) {
 
 // GetPerformanceDataRecords returns the PerformanceDataRecords field value if set, zero value otherwise.
 func (o *DataReport) GetPerformanceDataRecords() []PerformanceDataRecord {
-	if o == nil || isNil(o.PerformanceDataRecords) {
+	if o == nil || IsNil(o.PerformanceDataRecords) {
 		var ret []PerformanceDataRecord
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *DataReport) GetPerformanceDataRecords() []PerformanceDataRecord {
 // GetPerformanceDataRecordsOk returns a tuple with the PerformanceDataRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetPerformanceDataRecordsOk() ([]PerformanceDataRecord, bool) {
-	if o == nil || isNil(o.PerformanceDataRecords) {
+	if o == nil || IsNil(o.PerformanceDataRecords) {
 		return nil, false
 	}
 	return o.PerformanceDataRecords, true
@@ -188,7 +188,7 @@ func (o *DataReport) GetPerformanceDataRecordsOk() ([]PerformanceDataRecord, boo
 
 // HasPerformanceDataRecords returns a boolean if a field has been set.
 func (o *DataReport) HasPerformanceDataRecords() bool {
-	if o != nil && !isNil(o.PerformanceDataRecords) {
+	if o != nil && !IsNil(o.PerformanceDataRecords) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *DataReport) SetPerformanceDataRecords(v []PerformanceDataRecord) {
 
 // GetApplicationSpecificRecords returns the ApplicationSpecificRecords field value if set, zero value otherwise.
 func (o *DataReport) GetApplicationSpecificRecords() []ApplicationSpecificRecord {
-	if o == nil || isNil(o.ApplicationSpecificRecords) {
+	if o == nil || IsNil(o.ApplicationSpecificRecords) {
 		var ret []ApplicationSpecificRecord
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *DataReport) GetApplicationSpecificRecords() []ApplicationSpecificRecord
 // GetApplicationSpecificRecordsOk returns a tuple with the ApplicationSpecificRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetApplicationSpecificRecordsOk() ([]ApplicationSpecificRecord, bool) {
-	if o == nil || isNil(o.ApplicationSpecificRecords) {
+	if o == nil || IsNil(o.ApplicationSpecificRecords) {
 		return nil, false
 	}
 	return o.ApplicationSpecificRecords, true
@@ -220,7 +220,7 @@ func (o *DataReport) GetApplicationSpecificRecordsOk() ([]ApplicationSpecificRec
 
 // HasApplicationSpecificRecords returns a boolean if a field has been set.
 func (o *DataReport) HasApplicationSpecificRecords() bool {
-	if o != nil && !isNil(o.ApplicationSpecificRecords) {
+	if o != nil && !IsNil(o.ApplicationSpecificRecords) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *DataReport) SetApplicationSpecificRecords(v []ApplicationSpecificRecord
 
 // GetTripPlanRecords returns the TripPlanRecords field value if set, zero value otherwise.
 func (o *DataReport) GetTripPlanRecords() []TripPlanRecord {
-	if o == nil || isNil(o.TripPlanRecords) {
+	if o == nil || IsNil(o.TripPlanRecords) {
 		var ret []TripPlanRecord
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *DataReport) GetTripPlanRecords() []TripPlanRecord {
 // GetTripPlanRecordsOk returns a tuple with the TripPlanRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetTripPlanRecordsOk() ([]TripPlanRecord, bool) {
-	if o == nil || isNil(o.TripPlanRecords) {
+	if o == nil || IsNil(o.TripPlanRecords) {
 		return nil, false
 	}
 	return o.TripPlanRecords, true
@@ -252,7 +252,7 @@ func (o *DataReport) GetTripPlanRecordsOk() ([]TripPlanRecord, bool) {
 
 // HasTripPlanRecords returns a boolean if a field has been set.
 func (o *DataReport) HasTripPlanRecords() bool {
-	if o != nil && !isNil(o.TripPlanRecords) {
+	if o != nil && !IsNil(o.TripPlanRecords) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *DataReport) SetTripPlanRecords(v []TripPlanRecord) {
 
 // GetMediaStreamingAccessRecords returns the MediaStreamingAccessRecords field value if set, zero value otherwise.
 func (o *DataReport) GetMediaStreamingAccessRecords() []MediaStreamingAccessRecord {
-	if o == nil || isNil(o.MediaStreamingAccessRecords) {
+	if o == nil || IsNil(o.MediaStreamingAccessRecords) {
 		var ret []MediaStreamingAccessRecord
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *DataReport) GetMediaStreamingAccessRecords() []MediaStreamingAccessReco
 // GetMediaStreamingAccessRecordsOk returns a tuple with the MediaStreamingAccessRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReport) GetMediaStreamingAccessRecordsOk() ([]MediaStreamingAccessRecord, bool) {
-	if o == nil || isNil(o.MediaStreamingAccessRecords) {
+	if o == nil || IsNil(o.MediaStreamingAccessRecords) {
 		return nil, false
 	}
 	return o.MediaStreamingAccessRecords, true
@@ -284,7 +284,7 @@ func (o *DataReport) GetMediaStreamingAccessRecordsOk() ([]MediaStreamingAccessR
 
 // HasMediaStreamingAccessRecords returns a boolean if a field has been set.
 func (o *DataReport) HasMediaStreamingAccessRecords() bool {
-	if o != nil && !isNil(o.MediaStreamingAccessRecords) {
+	if o != nil && !IsNil(o.MediaStreamingAccessRecords) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *DataReport) SetMediaStreamingAccessRecords(v []MediaStreamingAccessReco
 }
 
 func (o DataReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,25 +307,25 @@ func (o DataReport) MarshalJSON() ([]byte, error) {
 func (o DataReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["externalApplicationId"] = o.ExternalApplicationId
-	if !isNil(o.ServiceExperienceRecords) {
+	if !IsNil(o.ServiceExperienceRecords) {
 		toSerialize["serviceExperienceRecords"] = o.ServiceExperienceRecords
 	}
-	if !isNil(o.LocationRecords) {
+	if !IsNil(o.LocationRecords) {
 		toSerialize["locationRecords"] = o.LocationRecords
 	}
-	if !isNil(o.CommunicationRecords) {
+	if !IsNil(o.CommunicationRecords) {
 		toSerialize["communicationRecords"] = o.CommunicationRecords
 	}
-	if !isNil(o.PerformanceDataRecords) {
+	if !IsNil(o.PerformanceDataRecords) {
 		toSerialize["performanceDataRecords"] = o.PerformanceDataRecords
 	}
-	if !isNil(o.ApplicationSpecificRecords) {
+	if !IsNil(o.ApplicationSpecificRecords) {
 		toSerialize["applicationSpecificRecords"] = o.ApplicationSpecificRecords
 	}
-	if !isNil(o.TripPlanRecords) {
+	if !IsNil(o.TripPlanRecords) {
 		toSerialize["tripPlanRecords"] = o.TripPlanRecords
 	}
-	if !isNil(o.MediaStreamingAccessRecords) {
+	if !IsNil(o.MediaStreamingAccessRecords) {
 		toSerialize["mediaStreamingAccessRecords"] = o.MediaStreamingAccessRecords
 	}
 	return toSerialize, nil
@@ -366,5 +366,3 @@ func (v *NullableDataReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

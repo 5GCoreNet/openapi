@@ -1,7 +1,7 @@
 /*
 3gpp-iptvconfiguration
 
-API for IPTV configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for IPTV configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -21,19 +21,19 @@ var _ MappedNullable = &IptvConfigData{}
 type IptvConfigData struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Self *string `json:"self,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
 	ExterGroupId *string `json:"exterGroupId,omitempty"`
-	AfAppId string `json:"afAppId"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	AfAppId      string  `json:"afAppId"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
-	// Identifies a list of multicast address access control information. Any string value can be used as a key of the map. 
+	// Identifies a list of multicast address access control information. Any string value can be used as a key of the map.
 	MultiAccCtrls map[string]MulticastAccessControl `json:"multiAccCtrls"`
 	// String uniquely identifying MTC provider information.
 	MtcProviderId *string `json:"mtcProviderId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat string `json:"suppFeat"`
 }
 
@@ -59,7 +59,7 @@ func NewIptvConfigDataWithDefaults() *IptvConfigData {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *IptvConfigData) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *IptvConfigData) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -77,7 +77,7 @@ func (o *IptvConfigData) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *IptvConfigData) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -91,7 +91,7 @@ func (o *IptvConfigData) SetSelf(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *IptvConfigData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *IptvConfigData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -109,7 +109,7 @@ func (o *IptvConfigData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *IptvConfigData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *IptvConfigData) SetGpsi(v string) {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *IptvConfigData) GetExterGroupId() string {
-	if o == nil || isNil(o.ExterGroupId) {
+	if o == nil || IsNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *IptvConfigData) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExterGroupId) {
+	if o == nil || IsNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -141,7 +141,7 @@ func (o *IptvConfigData) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *IptvConfigData) HasExterGroupId() bool {
-	if o != nil && !isNil(o.ExterGroupId) {
+	if o != nil && !IsNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *IptvConfigData) SetAfAppId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *IptvConfigData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *IptvConfigData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -197,7 +197,7 @@ func (o *IptvConfigData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *IptvConfigData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *IptvConfigData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *IptvConfigData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *IptvConfigData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -229,7 +229,7 @@ func (o *IptvConfigData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *IptvConfigData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *IptvConfigData) SetMultiAccCtrls(v map[string]MulticastAccessControl) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *IptvConfigData) GetMtcProviderId() string {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *IptvConfigData) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -285,7 +285,7 @@ func (o *IptvConfigData) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *IptvConfigData) HasMtcProviderId() bool {
-	if o != nil && !isNil(o.MtcProviderId) {
+	if o != nil && !IsNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -322,7 +322,7 @@ func (o *IptvConfigData) SetSuppFeat(v string) {
 }
 
 func (o IptvConfigData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -331,24 +331,24 @@ func (o IptvConfigData) MarshalJSON() ([]byte, error) {
 
 func (o IptvConfigData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.ExterGroupId) {
+	if !IsNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
 	toSerialize["afAppId"] = o.AfAppId
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["multiAccCtrls"] = o.MultiAccCtrls
-	if !isNil(o.MtcProviderId) {
+	if !IsNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	toSerialize["suppFeat"] = o.SuppFeat
@@ -390,5 +390,3 @@ func (v *NullableIptvConfigData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,19 +17,19 @@ import (
 // checks if the PduSessionTsnBridge type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PduSessionTsnBridge{}
 
-// PduSessionTsnBridge Contains the new TSC user plane node information and may contain the DS-TT port and/or NW-TT port management information. 
+// PduSessionTsnBridge Contains the new TSC user plane node information and may contain the DS-TT port and/or NW-TT port management information.
 type PduSessionTsnBridge struct {
-	TsnBridgeInfo TsnBridgeInfo `json:"tsnBridgeInfo"`
-	TsnBridgeManCont *BridgeManagementContainer `json:"tsnBridgeManCont,omitempty"`
-	TsnPortManContDstt *PortManagementContainer `json:"tsnPortManContDstt,omitempty"`
-	TsnPortManContNwtts []PortManagementContainer `json:"tsnPortManContNwtts,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
+	TsnBridgeInfo       TsnBridgeInfo              `json:"tsnBridgeInfo"`
+	TsnBridgeManCont    *BridgeManagementContainer `json:"tsnBridgeManCont,omitempty"`
+	TsnPortManContDstt  *PortManagementContainer   `json:"tsnPortManContDstt,omitempty"`
+	TsnPortManContNwtts []PortManagementContainer  `json:"tsnPortManContNwtts,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
 	UeIpv4Addr *string `json:"ueIpv4Addr,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
 	// IPv4 address domain identifier.
-	IpDomain *string `json:"ipDomain,omitempty"`
+	IpDomain         *string     `json:"ipDomain,omitempty"`
 	UeIpv6AddrPrefix *Ipv6Prefix `json:"ueIpv6AddrPrefix,omitempty"`
 }
 
@@ -77,7 +77,7 @@ func (o *PduSessionTsnBridge) SetTsnBridgeInfo(v TsnBridgeInfo) {
 
 // GetTsnBridgeManCont returns the TsnBridgeManCont field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetTsnBridgeManCont() BridgeManagementContainer {
-	if o == nil || isNil(o.TsnBridgeManCont) {
+	if o == nil || IsNil(o.TsnBridgeManCont) {
 		var ret BridgeManagementContainer
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PduSessionTsnBridge) GetTsnBridgeManCont() BridgeManagementContainer {
 // GetTsnBridgeManContOk returns a tuple with the TsnBridgeManCont field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetTsnBridgeManContOk() (*BridgeManagementContainer, bool) {
-	if o == nil || isNil(o.TsnBridgeManCont) {
+	if o == nil || IsNil(o.TsnBridgeManCont) {
 		return nil, false
 	}
 	return o.TsnBridgeManCont, true
@@ -95,7 +95,7 @@ func (o *PduSessionTsnBridge) GetTsnBridgeManContOk() (*BridgeManagementContaine
 
 // HasTsnBridgeManCont returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasTsnBridgeManCont() bool {
-	if o != nil && !isNil(o.TsnBridgeManCont) {
+	if o != nil && !IsNil(o.TsnBridgeManCont) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *PduSessionTsnBridge) SetTsnBridgeManCont(v BridgeManagementContainer) {
 
 // GetTsnPortManContDstt returns the TsnPortManContDstt field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetTsnPortManContDstt() PortManagementContainer {
-	if o == nil || isNil(o.TsnPortManContDstt) {
+	if o == nil || IsNil(o.TsnPortManContDstt) {
 		var ret PortManagementContainer
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PduSessionTsnBridge) GetTsnPortManContDstt() PortManagementContainer {
 // GetTsnPortManContDsttOk returns a tuple with the TsnPortManContDstt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetTsnPortManContDsttOk() (*PortManagementContainer, bool) {
-	if o == nil || isNil(o.TsnPortManContDstt) {
+	if o == nil || IsNil(o.TsnPortManContDstt) {
 		return nil, false
 	}
 	return o.TsnPortManContDstt, true
@@ -127,7 +127,7 @@ func (o *PduSessionTsnBridge) GetTsnPortManContDsttOk() (*PortManagementContaine
 
 // HasTsnPortManContDstt returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasTsnPortManContDstt() bool {
-	if o != nil && !isNil(o.TsnPortManContDstt) {
+	if o != nil && !IsNil(o.TsnPortManContDstt) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PduSessionTsnBridge) SetTsnPortManContDstt(v PortManagementContainer) {
 
 // GetTsnPortManContNwtts returns the TsnPortManContNwtts field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetTsnPortManContNwtts() []PortManagementContainer {
-	if o == nil || isNil(o.TsnPortManContNwtts) {
+	if o == nil || IsNil(o.TsnPortManContNwtts) {
 		var ret []PortManagementContainer
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PduSessionTsnBridge) GetTsnPortManContNwtts() []PortManagementContainer
 // GetTsnPortManContNwttsOk returns a tuple with the TsnPortManContNwtts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetTsnPortManContNwttsOk() ([]PortManagementContainer, bool) {
-	if o == nil || isNil(o.TsnPortManContNwtts) {
+	if o == nil || IsNil(o.TsnPortManContNwtts) {
 		return nil, false
 	}
 	return o.TsnPortManContNwtts, true
@@ -159,7 +159,7 @@ func (o *PduSessionTsnBridge) GetTsnPortManContNwttsOk() ([]PortManagementContai
 
 // HasTsnPortManContNwtts returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasTsnPortManContNwtts() bool {
-	if o != nil && !isNil(o.TsnPortManContNwtts) {
+	if o != nil && !IsNil(o.TsnPortManContNwtts) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *PduSessionTsnBridge) SetTsnPortManContNwtts(v []PortManagementContainer
 
 // GetUeIpv4Addr returns the UeIpv4Addr field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetUeIpv4Addr() string {
-	if o == nil || isNil(o.UeIpv4Addr) {
+	if o == nil || IsNil(o.UeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *PduSessionTsnBridge) GetUeIpv4Addr() string {
 // GetUeIpv4AddrOk returns a tuple with the UeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetUeIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.UeIpv4Addr) {
+	if o == nil || IsNil(o.UeIpv4Addr) {
 		return nil, false
 	}
 	return o.UeIpv4Addr, true
@@ -191,7 +191,7 @@ func (o *PduSessionTsnBridge) GetUeIpv4AddrOk() (*string, bool) {
 
 // HasUeIpv4Addr returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasUeIpv4Addr() bool {
-	if o != nil && !isNil(o.UeIpv4Addr) {
+	if o != nil && !IsNil(o.UeIpv4Addr) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *PduSessionTsnBridge) SetUeIpv4Addr(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *PduSessionTsnBridge) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -223,7 +223,7 @@ func (o *PduSessionTsnBridge) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *PduSessionTsnBridge) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *PduSessionTsnBridge) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -255,7 +255,7 @@ func (o *PduSessionTsnBridge) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *PduSessionTsnBridge) SetSnssai(v Snssai) {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetIpDomain() string {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *PduSessionTsnBridge) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetIpDomainOk() (*string, bool) {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -287,7 +287,7 @@ func (o *PduSessionTsnBridge) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasIpDomain() bool {
-	if o != nil && !isNil(o.IpDomain) {
+	if o != nil && !IsNil(o.IpDomain) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *PduSessionTsnBridge) SetIpDomain(v string) {
 
 // GetUeIpv6AddrPrefix returns the UeIpv6AddrPrefix field value if set, zero value otherwise.
 func (o *PduSessionTsnBridge) GetUeIpv6AddrPrefix() Ipv6Prefix {
-	if o == nil || isNil(o.UeIpv6AddrPrefix) {
+	if o == nil || IsNil(o.UeIpv6AddrPrefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *PduSessionTsnBridge) GetUeIpv6AddrPrefix() Ipv6Prefix {
 // GetUeIpv6AddrPrefixOk returns a tuple with the UeIpv6AddrPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTsnBridge) GetUeIpv6AddrPrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.UeIpv6AddrPrefix) {
+	if o == nil || IsNil(o.UeIpv6AddrPrefix) {
 		return nil, false
 	}
 	return o.UeIpv6AddrPrefix, true
@@ -319,7 +319,7 @@ func (o *PduSessionTsnBridge) GetUeIpv6AddrPrefixOk() (*Ipv6Prefix, bool) {
 
 // HasUeIpv6AddrPrefix returns a boolean if a field has been set.
 func (o *PduSessionTsnBridge) HasUeIpv6AddrPrefix() bool {
-	if o != nil && !isNil(o.UeIpv6AddrPrefix) {
+	if o != nil && !IsNil(o.UeIpv6AddrPrefix) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *PduSessionTsnBridge) SetUeIpv6AddrPrefix(v Ipv6Prefix) {
 }
 
 func (o PduSessionTsnBridge) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,28 +342,28 @@ func (o PduSessionTsnBridge) MarshalJSON() ([]byte, error) {
 func (o PduSessionTsnBridge) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tsnBridgeInfo"] = o.TsnBridgeInfo
-	if !isNil(o.TsnBridgeManCont) {
+	if !IsNil(o.TsnBridgeManCont) {
 		toSerialize["tsnBridgeManCont"] = o.TsnBridgeManCont
 	}
-	if !isNil(o.TsnPortManContDstt) {
+	if !IsNil(o.TsnPortManContDstt) {
 		toSerialize["tsnPortManContDstt"] = o.TsnPortManContDstt
 	}
-	if !isNil(o.TsnPortManContNwtts) {
+	if !IsNil(o.TsnPortManContNwtts) {
 		toSerialize["tsnPortManContNwtts"] = o.TsnPortManContNwtts
 	}
-	if !isNil(o.UeIpv4Addr) {
+	if !IsNil(o.UeIpv4Addr) {
 		toSerialize["ueIpv4Addr"] = o.UeIpv4Addr
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.IpDomain) {
+	if !IsNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !isNil(o.UeIpv6AddrPrefix) {
+	if !IsNil(o.UeIpv6AddrPrefix) {
 		toSerialize["ueIpv6AddrPrefix"] = o.UeIpv6AddrPrefix
 	}
 	return toSerialize, nil
@@ -404,5 +404,3 @@ func (v *NullablePduSessionTsnBridge) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

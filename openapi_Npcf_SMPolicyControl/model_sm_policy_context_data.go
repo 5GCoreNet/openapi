@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,72 +20,72 @@ var _ MappedNullable = &SmPolicyContextData{}
 
 // SmPolicyContextData Contains the parameters used to create an Individual SM policy resource.
 type SmPolicyContextData struct {
-	AccNetChId *AccNetChId `json:"accNetChId,omitempty"`
+	AccNetChId      *AccNetChId            `json:"accNetChId,omitempty"`
 	ChargEntityAddr *AccNetChargingAddress `json:"chargEntityAddr,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi string `json:"supi"`
-	// When this attribute is included and set to true, it indicates that the supi attribute contains an invalid value.This attribute shall be present if the SUPI is not available in the SMF or the SUPI is unauthenticated. When present it shall be set to true for an invalid SUPI and false (default) for a valid SUPI. 
-	InvalidSupi *bool `json:"invalidSupi,omitempty"`
+	// When this attribute is included and set to true, it indicates that the supi attribute contains an invalid value.This attribute shall be present if the SUPI is not available in the SMF or the SUPI is unauthenticated. When present it shall be set to true for an invalid SUPI and false (default) for a valid SUPI.
+	InvalidSupi *bool    `json:"invalidSupi,omitempty"`
 	InterGrpIds []string `json:"interGrpIds,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionId int32 `json:"pduSessionId"`
-	PduSessionType PduSessionType `json:"pduSessionType"`
-	Chargingcharacteristics *string `json:"chargingcharacteristics,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn string `json:"dnn"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionId            int32          `json:"pduSessionId"`
+	PduSessionType          PduSessionType `json:"pduSessionType"`
+	Chargingcharacteristics *string        `json:"chargingcharacteristics,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn        string            `json:"dnn"`
 	DnnSelMode *DnnSelectionMode `json:"dnnSelMode,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotificationUri string `json:"notificationUri"`
-	AccessType *AccessType `json:"accessType,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	AddAccessInfo *AdditionalAccessInfo `json:"addAccessInfo,omitempty"`
-	ServingNetwork *PlmnIdNid `json:"servingNetwork,omitempty"`
-	UserLocationInfo *UserLocation `json:"userLocationInfo,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
+	NotificationUri  string                `json:"notificationUri"`
+	AccessType       *AccessType           `json:"accessType,omitempty"`
+	RatType          *RatType              `json:"ratType,omitempty"`
+	AddAccessInfo    *AdditionalAccessInfo `json:"addAccessInfo,omitempty"`
+	ServingNetwork   *PlmnIdNid            `json:"servingNetwork,omitempty"`
+	UserLocationInfo *UserLocation         `json:"userLocationInfo,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
 	UeTimeZone *string `json:"ueTimeZone,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
 	Pei *string `json:"pei,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4Address *string `json:"ipv4Address,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4Address       *string     `json:"ipv4Address,omitempty"`
 	Ipv6AddressPrefix *Ipv6Prefix `json:"ipv6AddressPrefix,omitempty"`
 	// Indicates the IPv4 address domain
-	IpDomain *string `json:"ipDomain,omitempty"`
-	SubsSessAmbr *Ambr `json:"subsSessAmbr,omitempty"`
+	IpDomain     *string `json:"ipDomain,omitempty"`
+	SubsSessAmbr *Ambr   `json:"subsSessAmbr,omitempty"`
 	// Indicates the DN-AAA authorization profile index
-	AuthProfIndex *string `json:"authProfIndex,omitempty"`
-	SubsDefQos *SubscribedDefaultQos `json:"subsDefQos,omitempty"`
-	VplmnQos *VplmnQos `json:"vplmnQos,omitempty"`
+	AuthProfIndex *string               `json:"authProfIndex,omitempty"`
+	SubsDefQos    *SubscribedDefaultQos `json:"subsDefQos,omitempty"`
+	VplmnQos      *VplmnQos             `json:"vplmnQos,omitempty"`
 	// Contains the number of supported packet filter for signalled QoS rules.
 	NumOfPackFilter *int32 `json:"numOfPackFilter,omitempty"`
-	// If it is included and set to true, the online charging is applied to the PDU session. 
+	// If it is included and set to true, the online charging is applied to the PDU session.
 	Online *bool `json:"online,omitempty"`
-	// If it is included and set to true, the offline charging is applied to the PDU session. 
+	// If it is included and set to true, the offline charging is applied to the PDU session.
 	Offline *bool `json:"offline,omitempty"`
-	// If it is included and set to true, the 3GPP PS Data Off is activated by the UE. 
+	// If it is included and set to true, the 3GPP PS Data Off is activated by the UE.
 	Var3gppPsDataOffStatus *bool `json:"3gppPsDataOffStatus,omitempty"`
 	// If it is included and set to true, the reflective QoS is supported by the UE.
-	RefQosIndication *bool `json:"refQosIndication,omitempty"`
-	TraceReq NullableTraceData `json:"traceReq,omitempty"`
-	SliceInfo Snssai `json:"sliceInfo"`
-	QosFlowUsage *QosFlowUsage `json:"qosFlowUsage,omitempty"`
-	ServNfId *ServingNfIdentity `json:"servNfId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	RefQosIndication *bool              `json:"refQosIndication,omitempty"`
+	TraceReq         NullableTraceData  `json:"traceReq,omitempty"`
+	SliceInfo        Snssai             `json:"sliceInfo"`
+	QosFlowUsage     *QosFlowUsage      `json:"qosFlowUsage,omitempty"`
+	ServNfId         *ServingNfIdentity `json:"servNfId,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SmfId *string `json:"smfId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	RecoveryTime *time.Time `json:"recoveryTime,omitempty"`
-	MaPduInd *MaPduIndication `json:"maPduInd,omitempty"`
-	AtsssCapab *AtsssCapability `json:"atsssCapab,omitempty"`
-	Ipv4FrameRouteList []string `json:"ipv4FrameRouteList,omitempty"`
-	Ipv6FrameRouteList []Ipv6Prefix `json:"ipv6FrameRouteList,omitempty"`
+	RecoveryTime        *time.Time                 `json:"recoveryTime,omitempty"`
+	MaPduInd            *MaPduIndication           `json:"maPduInd,omitempty"`
+	AtsssCapab          *AtsssCapability           `json:"atsssCapab,omitempty"`
+	Ipv4FrameRouteList  []string                   `json:"ipv4FrameRouteList,omitempty"`
+	Ipv6FrameRouteList  []Ipv6Prefix               `json:"ipv6FrameRouteList,omitempty"`
 	SatBackhaulCategory *SatelliteBackhaulCategory `json:"satBackhaulCategory,omitempty"`
-	PcfUeInfo NullablePcfUeCallbackInfo `json:"pcfUeInfo,omitempty"`
-	PvsInfo []ServerAddressingInfo `json:"pvsInfo,omitempty"`
-	// If it is included and set to true, it indicates that the PDU session is used for  UE Onboarding. 
-	OnboardInd *bool `json:"onboardInd,omitempty"`
+	PcfUeInfo           NullablePcfUeCallbackInfo  `json:"pcfUeInfo,omitempty"`
+	PvsInfo             []ServerAddressingInfo     `json:"pvsInfo,omitempty"`
+	// If it is included and set to true, it indicates that the PDU session is used for  UE Onboarding.
+	OnboardInd *bool       `json:"onboardInd,omitempty"`
 	NwdafDatas []NwdafData `json:"nwdafDatas,omitempty"`
 }
 
@@ -114,7 +114,7 @@ func NewSmPolicyContextDataWithDefaults() *SmPolicyContextData {
 
 // GetAccNetChId returns the AccNetChId field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetAccNetChId() AccNetChId {
-	if o == nil || isNil(o.AccNetChId) {
+	if o == nil || IsNil(o.AccNetChId) {
 		var ret AccNetChId
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SmPolicyContextData) GetAccNetChId() AccNetChId {
 // GetAccNetChIdOk returns a tuple with the AccNetChId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetAccNetChIdOk() (*AccNetChId, bool) {
-	if o == nil || isNil(o.AccNetChId) {
+	if o == nil || IsNil(o.AccNetChId) {
 		return nil, false
 	}
 	return o.AccNetChId, true
@@ -132,7 +132,7 @@ func (o *SmPolicyContextData) GetAccNetChIdOk() (*AccNetChId, bool) {
 
 // HasAccNetChId returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasAccNetChId() bool {
-	if o != nil && !isNil(o.AccNetChId) {
+	if o != nil && !IsNil(o.AccNetChId) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SmPolicyContextData) SetAccNetChId(v AccNetChId) {
 
 // GetChargEntityAddr returns the ChargEntityAddr field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetChargEntityAddr() AccNetChargingAddress {
-	if o == nil || isNil(o.ChargEntityAddr) {
+	if o == nil || IsNil(o.ChargEntityAddr) {
 		var ret AccNetChargingAddress
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SmPolicyContextData) GetChargEntityAddr() AccNetChargingAddress {
 // GetChargEntityAddrOk returns a tuple with the ChargEntityAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetChargEntityAddrOk() (*AccNetChargingAddress, bool) {
-	if o == nil || isNil(o.ChargEntityAddr) {
+	if o == nil || IsNil(o.ChargEntityAddr) {
 		return nil, false
 	}
 	return o.ChargEntityAddr, true
@@ -164,7 +164,7 @@ func (o *SmPolicyContextData) GetChargEntityAddrOk() (*AccNetChargingAddress, bo
 
 // HasChargEntityAddr returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasChargEntityAddr() bool {
-	if o != nil && !isNil(o.ChargEntityAddr) {
+	if o != nil && !IsNil(o.ChargEntityAddr) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SmPolicyContextData) SetChargEntityAddr(v AccNetChargingAddress) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *SmPolicyContextData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -196,7 +196,7 @@ func (o *SmPolicyContextData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *SmPolicyContextData) SetSupi(v string) {
 
 // GetInvalidSupi returns the InvalidSupi field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetInvalidSupi() bool {
-	if o == nil || isNil(o.InvalidSupi) {
+	if o == nil || IsNil(o.InvalidSupi) {
 		var ret bool
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *SmPolicyContextData) GetInvalidSupi() bool {
 // GetInvalidSupiOk returns a tuple with the InvalidSupi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetInvalidSupiOk() (*bool, bool) {
-	if o == nil || isNil(o.InvalidSupi) {
+	if o == nil || IsNil(o.InvalidSupi) {
 		return nil, false
 	}
 	return o.InvalidSupi, true
@@ -252,7 +252,7 @@ func (o *SmPolicyContextData) GetInvalidSupiOk() (*bool, bool) {
 
 // HasInvalidSupi returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasInvalidSupi() bool {
-	if o != nil && !isNil(o.InvalidSupi) {
+	if o != nil && !IsNil(o.InvalidSupi) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *SmPolicyContextData) SetInvalidSupi(v bool) {
 
 // GetInterGrpIds returns the InterGrpIds field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetInterGrpIds() []string {
-	if o == nil || isNil(o.InterGrpIds) {
+	if o == nil || IsNil(o.InterGrpIds) {
 		var ret []string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *SmPolicyContextData) GetInterGrpIds() []string {
 // GetInterGrpIdsOk returns a tuple with the InterGrpIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetInterGrpIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.InterGrpIds) {
+	if o == nil || IsNil(o.InterGrpIds) {
 		return nil, false
 	}
 	return o.InterGrpIds, true
@@ -284,7 +284,7 @@ func (o *SmPolicyContextData) GetInterGrpIdsOk() ([]string, bool) {
 
 // HasInterGrpIds returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasInterGrpIds() bool {
-	if o != nil && !isNil(o.InterGrpIds) {
+	if o != nil && !IsNil(o.InterGrpIds) {
 		return true
 	}
 
@@ -346,7 +346,7 @@ func (o *SmPolicyContextData) SetPduSessionType(v PduSessionType) {
 
 // GetChargingcharacteristics returns the Chargingcharacteristics field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetChargingcharacteristics() string {
-	if o == nil || isNil(o.Chargingcharacteristics) {
+	if o == nil || IsNil(o.Chargingcharacteristics) {
 		var ret string
 		return ret
 	}
@@ -356,7 +356,7 @@ func (o *SmPolicyContextData) GetChargingcharacteristics() string {
 // GetChargingcharacteristicsOk returns a tuple with the Chargingcharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetChargingcharacteristicsOk() (*string, bool) {
-	if o == nil || isNil(o.Chargingcharacteristics) {
+	if o == nil || IsNil(o.Chargingcharacteristics) {
 		return nil, false
 	}
 	return o.Chargingcharacteristics, true
@@ -364,7 +364,7 @@ func (o *SmPolicyContextData) GetChargingcharacteristicsOk() (*string, bool) {
 
 // HasChargingcharacteristics returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasChargingcharacteristics() bool {
-	if o != nil && !isNil(o.Chargingcharacteristics) {
+	if o != nil && !IsNil(o.Chargingcharacteristics) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *SmPolicyContextData) SetDnn(v string) {
 
 // GetDnnSelMode returns the DnnSelMode field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetDnnSelMode() DnnSelectionMode {
-	if o == nil || isNil(o.DnnSelMode) {
+	if o == nil || IsNil(o.DnnSelMode) {
 		var ret DnnSelectionMode
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *SmPolicyContextData) GetDnnSelMode() DnnSelectionMode {
 // GetDnnSelModeOk returns a tuple with the DnnSelMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetDnnSelModeOk() (*DnnSelectionMode, bool) {
-	if o == nil || isNil(o.DnnSelMode) {
+	if o == nil || IsNil(o.DnnSelMode) {
 		return nil, false
 	}
 	return o.DnnSelMode, true
@@ -420,7 +420,7 @@ func (o *SmPolicyContextData) GetDnnSelModeOk() (*DnnSelectionMode, bool) {
 
 // HasDnnSelMode returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasDnnSelMode() bool {
-	if o != nil && !isNil(o.DnnSelMode) {
+	if o != nil && !IsNil(o.DnnSelMode) {
 		return true
 	}
 
@@ -458,7 +458,7 @@ func (o *SmPolicyContextData) SetNotificationUri(v string) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -468,7 +468,7 @@ func (o *SmPolicyContextData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -476,7 +476,7 @@ func (o *SmPolicyContextData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -490,7 +490,7 @@ func (o *SmPolicyContextData) SetAccessType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -500,7 +500,7 @@ func (o *SmPolicyContextData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -508,7 +508,7 @@ func (o *SmPolicyContextData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -522,7 +522,7 @@ func (o *SmPolicyContextData) SetRatType(v RatType) {
 
 // GetAddAccessInfo returns the AddAccessInfo field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetAddAccessInfo() AdditionalAccessInfo {
-	if o == nil || isNil(o.AddAccessInfo) {
+	if o == nil || IsNil(o.AddAccessInfo) {
 		var ret AdditionalAccessInfo
 		return ret
 	}
@@ -532,7 +532,7 @@ func (o *SmPolicyContextData) GetAddAccessInfo() AdditionalAccessInfo {
 // GetAddAccessInfoOk returns a tuple with the AddAccessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetAddAccessInfoOk() (*AdditionalAccessInfo, bool) {
-	if o == nil || isNil(o.AddAccessInfo) {
+	if o == nil || IsNil(o.AddAccessInfo) {
 		return nil, false
 	}
 	return o.AddAccessInfo, true
@@ -540,7 +540,7 @@ func (o *SmPolicyContextData) GetAddAccessInfoOk() (*AdditionalAccessInfo, bool)
 
 // HasAddAccessInfo returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasAddAccessInfo() bool {
-	if o != nil && !isNil(o.AddAccessInfo) {
+	if o != nil && !IsNil(o.AddAccessInfo) {
 		return true
 	}
 
@@ -554,7 +554,7 @@ func (o *SmPolicyContextData) SetAddAccessInfo(v AdditionalAccessInfo) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetServingNetwork() PlmnIdNid {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -564,7 +564,7 @@ func (o *SmPolicyContextData) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -572,7 +572,7 @@ func (o *SmPolicyContextData) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasServingNetwork() bool {
-	if o != nil && !isNil(o.ServingNetwork) {
+	if o != nil && !IsNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -586,7 +586,7 @@ func (o *SmPolicyContextData) SetServingNetwork(v PlmnIdNid) {
 
 // GetUserLocationInfo returns the UserLocationInfo field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetUserLocationInfo() UserLocation {
-	if o == nil || isNil(o.UserLocationInfo) {
+	if o == nil || IsNil(o.UserLocationInfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -596,7 +596,7 @@ func (o *SmPolicyContextData) GetUserLocationInfo() UserLocation {
 // GetUserLocationInfoOk returns a tuple with the UserLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetUserLocationInfoOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLocationInfo) {
+	if o == nil || IsNil(o.UserLocationInfo) {
 		return nil, false
 	}
 	return o.UserLocationInfo, true
@@ -604,7 +604,7 @@ func (o *SmPolicyContextData) GetUserLocationInfoOk() (*UserLocation, bool) {
 
 // HasUserLocationInfo returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasUserLocationInfo() bool {
-	if o != nil && !isNil(o.UserLocationInfo) {
+	if o != nil && !IsNil(o.UserLocationInfo) {
 		return true
 	}
 
@@ -618,7 +618,7 @@ func (o *SmPolicyContextData) SetUserLocationInfo(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetUeTimeZone() string {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -628,7 +628,7 @@ func (o *SmPolicyContextData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -636,7 +636,7 @@ func (o *SmPolicyContextData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasUeTimeZone() bool {
-	if o != nil && !isNil(o.UeTimeZone) {
+	if o != nil && !IsNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -650,7 +650,7 @@ func (o *SmPolicyContextData) SetUeTimeZone(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -660,7 +660,7 @@ func (o *SmPolicyContextData) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -668,7 +668,7 @@ func (o *SmPolicyContextData) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -682,7 +682,7 @@ func (o *SmPolicyContextData) SetPei(v string) {
 
 // GetIpv4Address returns the Ipv4Address field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetIpv4Address() string {
-	if o == nil || isNil(o.Ipv4Address) {
+	if o == nil || IsNil(o.Ipv4Address) {
 		var ret string
 		return ret
 	}
@@ -692,7 +692,7 @@ func (o *SmPolicyContextData) GetIpv4Address() string {
 // GetIpv4AddressOk returns a tuple with the Ipv4Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetIpv4AddressOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Address) {
+	if o == nil || IsNil(o.Ipv4Address) {
 		return nil, false
 	}
 	return o.Ipv4Address, true
@@ -700,7 +700,7 @@ func (o *SmPolicyContextData) GetIpv4AddressOk() (*string, bool) {
 
 // HasIpv4Address returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasIpv4Address() bool {
-	if o != nil && !isNil(o.Ipv4Address) {
+	if o != nil && !IsNil(o.Ipv4Address) {
 		return true
 	}
 
@@ -714,7 +714,7 @@ func (o *SmPolicyContextData) SetIpv4Address(v string) {
 
 // GetIpv6AddressPrefix returns the Ipv6AddressPrefix field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetIpv6AddressPrefix() Ipv6Prefix {
-	if o == nil || isNil(o.Ipv6AddressPrefix) {
+	if o == nil || IsNil(o.Ipv6AddressPrefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -724,7 +724,7 @@ func (o *SmPolicyContextData) GetIpv6AddressPrefix() Ipv6Prefix {
 // GetIpv6AddressPrefixOk returns a tuple with the Ipv6AddressPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetIpv6AddressPrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.Ipv6AddressPrefix) {
+	if o == nil || IsNil(o.Ipv6AddressPrefix) {
 		return nil, false
 	}
 	return o.Ipv6AddressPrefix, true
@@ -732,7 +732,7 @@ func (o *SmPolicyContextData) GetIpv6AddressPrefixOk() (*Ipv6Prefix, bool) {
 
 // HasIpv6AddressPrefix returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasIpv6AddressPrefix() bool {
-	if o != nil && !isNil(o.Ipv6AddressPrefix) {
+	if o != nil && !IsNil(o.Ipv6AddressPrefix) {
 		return true
 	}
 
@@ -746,7 +746,7 @@ func (o *SmPolicyContextData) SetIpv6AddressPrefix(v Ipv6Prefix) {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetIpDomain() string {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -756,7 +756,7 @@ func (o *SmPolicyContextData) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetIpDomainOk() (*string, bool) {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -764,7 +764,7 @@ func (o *SmPolicyContextData) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasIpDomain() bool {
-	if o != nil && !isNil(o.IpDomain) {
+	if o != nil && !IsNil(o.IpDomain) {
 		return true
 	}
 
@@ -778,7 +778,7 @@ func (o *SmPolicyContextData) SetIpDomain(v string) {
 
 // GetSubsSessAmbr returns the SubsSessAmbr field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetSubsSessAmbr() Ambr {
-	if o == nil || isNil(o.SubsSessAmbr) {
+	if o == nil || IsNil(o.SubsSessAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -788,7 +788,7 @@ func (o *SmPolicyContextData) GetSubsSessAmbr() Ambr {
 // GetSubsSessAmbrOk returns a tuple with the SubsSessAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetSubsSessAmbrOk() (*Ambr, bool) {
-	if o == nil || isNil(o.SubsSessAmbr) {
+	if o == nil || IsNil(o.SubsSessAmbr) {
 		return nil, false
 	}
 	return o.SubsSessAmbr, true
@@ -796,7 +796,7 @@ func (o *SmPolicyContextData) GetSubsSessAmbrOk() (*Ambr, bool) {
 
 // HasSubsSessAmbr returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasSubsSessAmbr() bool {
-	if o != nil && !isNil(o.SubsSessAmbr) {
+	if o != nil && !IsNil(o.SubsSessAmbr) {
 		return true
 	}
 
@@ -810,7 +810,7 @@ func (o *SmPolicyContextData) SetSubsSessAmbr(v Ambr) {
 
 // GetAuthProfIndex returns the AuthProfIndex field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetAuthProfIndex() string {
-	if o == nil || isNil(o.AuthProfIndex) {
+	if o == nil || IsNil(o.AuthProfIndex) {
 		var ret string
 		return ret
 	}
@@ -820,7 +820,7 @@ func (o *SmPolicyContextData) GetAuthProfIndex() string {
 // GetAuthProfIndexOk returns a tuple with the AuthProfIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetAuthProfIndexOk() (*string, bool) {
-	if o == nil || isNil(o.AuthProfIndex) {
+	if o == nil || IsNil(o.AuthProfIndex) {
 		return nil, false
 	}
 	return o.AuthProfIndex, true
@@ -828,7 +828,7 @@ func (o *SmPolicyContextData) GetAuthProfIndexOk() (*string, bool) {
 
 // HasAuthProfIndex returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasAuthProfIndex() bool {
-	if o != nil && !isNil(o.AuthProfIndex) {
+	if o != nil && !IsNil(o.AuthProfIndex) {
 		return true
 	}
 
@@ -842,7 +842,7 @@ func (o *SmPolicyContextData) SetAuthProfIndex(v string) {
 
 // GetSubsDefQos returns the SubsDefQos field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetSubsDefQos() SubscribedDefaultQos {
-	if o == nil || isNil(o.SubsDefQos) {
+	if o == nil || IsNil(o.SubsDefQos) {
 		var ret SubscribedDefaultQos
 		return ret
 	}
@@ -852,7 +852,7 @@ func (o *SmPolicyContextData) GetSubsDefQos() SubscribedDefaultQos {
 // GetSubsDefQosOk returns a tuple with the SubsDefQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetSubsDefQosOk() (*SubscribedDefaultQos, bool) {
-	if o == nil || isNil(o.SubsDefQos) {
+	if o == nil || IsNil(o.SubsDefQos) {
 		return nil, false
 	}
 	return o.SubsDefQos, true
@@ -860,7 +860,7 @@ func (o *SmPolicyContextData) GetSubsDefQosOk() (*SubscribedDefaultQos, bool) {
 
 // HasSubsDefQos returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasSubsDefQos() bool {
-	if o != nil && !isNil(o.SubsDefQos) {
+	if o != nil && !IsNil(o.SubsDefQos) {
 		return true
 	}
 
@@ -874,7 +874,7 @@ func (o *SmPolicyContextData) SetSubsDefQos(v SubscribedDefaultQos) {
 
 // GetVplmnQos returns the VplmnQos field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetVplmnQos() VplmnQos {
-	if o == nil || isNil(o.VplmnQos) {
+	if o == nil || IsNil(o.VplmnQos) {
 		var ret VplmnQos
 		return ret
 	}
@@ -884,7 +884,7 @@ func (o *SmPolicyContextData) GetVplmnQos() VplmnQos {
 // GetVplmnQosOk returns a tuple with the VplmnQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetVplmnQosOk() (*VplmnQos, bool) {
-	if o == nil || isNil(o.VplmnQos) {
+	if o == nil || IsNil(o.VplmnQos) {
 		return nil, false
 	}
 	return o.VplmnQos, true
@@ -892,7 +892,7 @@ func (o *SmPolicyContextData) GetVplmnQosOk() (*VplmnQos, bool) {
 
 // HasVplmnQos returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasVplmnQos() bool {
-	if o != nil && !isNil(o.VplmnQos) {
+	if o != nil && !IsNil(o.VplmnQos) {
 		return true
 	}
 
@@ -906,7 +906,7 @@ func (o *SmPolicyContextData) SetVplmnQos(v VplmnQos) {
 
 // GetNumOfPackFilter returns the NumOfPackFilter field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetNumOfPackFilter() int32 {
-	if o == nil || isNil(o.NumOfPackFilter) {
+	if o == nil || IsNil(o.NumOfPackFilter) {
 		var ret int32
 		return ret
 	}
@@ -916,7 +916,7 @@ func (o *SmPolicyContextData) GetNumOfPackFilter() int32 {
 // GetNumOfPackFilterOk returns a tuple with the NumOfPackFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetNumOfPackFilterOk() (*int32, bool) {
-	if o == nil || isNil(o.NumOfPackFilter) {
+	if o == nil || IsNil(o.NumOfPackFilter) {
 		return nil, false
 	}
 	return o.NumOfPackFilter, true
@@ -924,7 +924,7 @@ func (o *SmPolicyContextData) GetNumOfPackFilterOk() (*int32, bool) {
 
 // HasNumOfPackFilter returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasNumOfPackFilter() bool {
-	if o != nil && !isNil(o.NumOfPackFilter) {
+	if o != nil && !IsNil(o.NumOfPackFilter) {
 		return true
 	}
 
@@ -938,7 +938,7 @@ func (o *SmPolicyContextData) SetNumOfPackFilter(v int32) {
 
 // GetOnline returns the Online field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetOnline() bool {
-	if o == nil || isNil(o.Online) {
+	if o == nil || IsNil(o.Online) {
 		var ret bool
 		return ret
 	}
@@ -948,7 +948,7 @@ func (o *SmPolicyContextData) GetOnline() bool {
 // GetOnlineOk returns a tuple with the Online field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetOnlineOk() (*bool, bool) {
-	if o == nil || isNil(o.Online) {
+	if o == nil || IsNil(o.Online) {
 		return nil, false
 	}
 	return o.Online, true
@@ -956,7 +956,7 @@ func (o *SmPolicyContextData) GetOnlineOk() (*bool, bool) {
 
 // HasOnline returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasOnline() bool {
-	if o != nil && !isNil(o.Online) {
+	if o != nil && !IsNil(o.Online) {
 		return true
 	}
 
@@ -970,7 +970,7 @@ func (o *SmPolicyContextData) SetOnline(v bool) {
 
 // GetOffline returns the Offline field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetOffline() bool {
-	if o == nil || isNil(o.Offline) {
+	if o == nil || IsNil(o.Offline) {
 		var ret bool
 		return ret
 	}
@@ -980,7 +980,7 @@ func (o *SmPolicyContextData) GetOffline() bool {
 // GetOfflineOk returns a tuple with the Offline field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetOfflineOk() (*bool, bool) {
-	if o == nil || isNil(o.Offline) {
+	if o == nil || IsNil(o.Offline) {
 		return nil, false
 	}
 	return o.Offline, true
@@ -988,7 +988,7 @@ func (o *SmPolicyContextData) GetOfflineOk() (*bool, bool) {
 
 // HasOffline returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasOffline() bool {
-	if o != nil && !isNil(o.Offline) {
+	if o != nil && !IsNil(o.Offline) {
 		return true
 	}
 
@@ -1002,7 +1002,7 @@ func (o *SmPolicyContextData) SetOffline(v bool) {
 
 // GetVar3gppPsDataOffStatus returns the Var3gppPsDataOffStatus field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetVar3gppPsDataOffStatus() bool {
-	if o == nil || isNil(o.Var3gppPsDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPsDataOffStatus) {
 		var ret bool
 		return ret
 	}
@@ -1012,7 +1012,7 @@ func (o *SmPolicyContextData) GetVar3gppPsDataOffStatus() bool {
 // GetVar3gppPsDataOffStatusOk returns a tuple with the Var3gppPsDataOffStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetVar3gppPsDataOffStatusOk() (*bool, bool) {
-	if o == nil || isNil(o.Var3gppPsDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPsDataOffStatus) {
 		return nil, false
 	}
 	return o.Var3gppPsDataOffStatus, true
@@ -1020,7 +1020,7 @@ func (o *SmPolicyContextData) GetVar3gppPsDataOffStatusOk() (*bool, bool) {
 
 // HasVar3gppPsDataOffStatus returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasVar3gppPsDataOffStatus() bool {
-	if o != nil && !isNil(o.Var3gppPsDataOffStatus) {
+	if o != nil && !IsNil(o.Var3gppPsDataOffStatus) {
 		return true
 	}
 
@@ -1034,7 +1034,7 @@ func (o *SmPolicyContextData) SetVar3gppPsDataOffStatus(v bool) {
 
 // GetRefQosIndication returns the RefQosIndication field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetRefQosIndication() bool {
-	if o == nil || isNil(o.RefQosIndication) {
+	if o == nil || IsNil(o.RefQosIndication) {
 		var ret bool
 		return ret
 	}
@@ -1044,7 +1044,7 @@ func (o *SmPolicyContextData) GetRefQosIndication() bool {
 // GetRefQosIndicationOk returns a tuple with the RefQosIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetRefQosIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.RefQosIndication) {
+	if o == nil || IsNil(o.RefQosIndication) {
 		return nil, false
 	}
 	return o.RefQosIndication, true
@@ -1052,7 +1052,7 @@ func (o *SmPolicyContextData) GetRefQosIndicationOk() (*bool, bool) {
 
 // HasRefQosIndication returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasRefQosIndication() bool {
-	if o != nil && !isNil(o.RefQosIndication) {
+	if o != nil && !IsNil(o.RefQosIndication) {
 		return true
 	}
 
@@ -1066,7 +1066,7 @@ func (o *SmPolicyContextData) SetRefQosIndication(v bool) {
 
 // GetTraceReq returns the TraceReq field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmPolicyContextData) GetTraceReq() TraceData {
-	if o == nil || isNil(o.TraceReq.Get()) {
+	if o == nil || IsNil(o.TraceReq.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -1096,6 +1096,7 @@ func (o *SmPolicyContextData) HasTraceReq() bool {
 func (o *SmPolicyContextData) SetTraceReq(v TraceData) {
 	o.TraceReq.Set(&v)
 }
+
 // SetTraceReqNil sets the value for TraceReq to be an explicit nil
 func (o *SmPolicyContextData) SetTraceReqNil() {
 	o.TraceReq.Set(nil)
@@ -1132,7 +1133,7 @@ func (o *SmPolicyContextData) SetSliceInfo(v Snssai) {
 
 // GetQosFlowUsage returns the QosFlowUsage field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetQosFlowUsage() QosFlowUsage {
-	if o == nil || isNil(o.QosFlowUsage) {
+	if o == nil || IsNil(o.QosFlowUsage) {
 		var ret QosFlowUsage
 		return ret
 	}
@@ -1142,7 +1143,7 @@ func (o *SmPolicyContextData) GetQosFlowUsage() QosFlowUsage {
 // GetQosFlowUsageOk returns a tuple with the QosFlowUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetQosFlowUsageOk() (*QosFlowUsage, bool) {
-	if o == nil || isNil(o.QosFlowUsage) {
+	if o == nil || IsNil(o.QosFlowUsage) {
 		return nil, false
 	}
 	return o.QosFlowUsage, true
@@ -1150,7 +1151,7 @@ func (o *SmPolicyContextData) GetQosFlowUsageOk() (*QosFlowUsage, bool) {
 
 // HasQosFlowUsage returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasQosFlowUsage() bool {
-	if o != nil && !isNil(o.QosFlowUsage) {
+	if o != nil && !IsNil(o.QosFlowUsage) {
 		return true
 	}
 
@@ -1164,7 +1165,7 @@ func (o *SmPolicyContextData) SetQosFlowUsage(v QosFlowUsage) {
 
 // GetServNfId returns the ServNfId field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetServNfId() ServingNfIdentity {
-	if o == nil || isNil(o.ServNfId) {
+	if o == nil || IsNil(o.ServNfId) {
 		var ret ServingNfIdentity
 		return ret
 	}
@@ -1174,7 +1175,7 @@ func (o *SmPolicyContextData) GetServNfId() ServingNfIdentity {
 // GetServNfIdOk returns a tuple with the ServNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetServNfIdOk() (*ServingNfIdentity, bool) {
-	if o == nil || isNil(o.ServNfId) {
+	if o == nil || IsNil(o.ServNfId) {
 		return nil, false
 	}
 	return o.ServNfId, true
@@ -1182,7 +1183,7 @@ func (o *SmPolicyContextData) GetServNfIdOk() (*ServingNfIdentity, bool) {
 
 // HasServNfId returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasServNfId() bool {
-	if o != nil && !isNil(o.ServNfId) {
+	if o != nil && !IsNil(o.ServNfId) {
 		return true
 	}
 
@@ -1196,7 +1197,7 @@ func (o *SmPolicyContextData) SetServNfId(v ServingNfIdentity) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -1206,7 +1207,7 @@ func (o *SmPolicyContextData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -1214,7 +1215,7 @@ func (o *SmPolicyContextData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -1228,7 +1229,7 @@ func (o *SmPolicyContextData) SetSuppFeat(v string) {
 
 // GetSmfId returns the SmfId field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetSmfId() string {
-	if o == nil || isNil(o.SmfId) {
+	if o == nil || IsNil(o.SmfId) {
 		var ret string
 		return ret
 	}
@@ -1238,7 +1239,7 @@ func (o *SmPolicyContextData) GetSmfId() string {
 // GetSmfIdOk returns a tuple with the SmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmfId) {
+	if o == nil || IsNil(o.SmfId) {
 		return nil, false
 	}
 	return o.SmfId, true
@@ -1246,7 +1247,7 @@ func (o *SmPolicyContextData) GetSmfIdOk() (*string, bool) {
 
 // HasSmfId returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasSmfId() bool {
-	if o != nil && !isNil(o.SmfId) {
+	if o != nil && !IsNil(o.SmfId) {
 		return true
 	}
 
@@ -1260,7 +1261,7 @@ func (o *SmPolicyContextData) SetSmfId(v string) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetRecoveryTime() time.Time {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -1270,7 +1271,7 @@ func (o *SmPolicyContextData) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -1278,7 +1279,7 @@ func (o *SmPolicyContextData) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasRecoveryTime() bool {
-	if o != nil && !isNil(o.RecoveryTime) {
+	if o != nil && !IsNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -1292,7 +1293,7 @@ func (o *SmPolicyContextData) SetRecoveryTime(v time.Time) {
 
 // GetMaPduInd returns the MaPduInd field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetMaPduInd() MaPduIndication {
-	if o == nil || isNil(o.MaPduInd) {
+	if o == nil || IsNil(o.MaPduInd) {
 		var ret MaPduIndication
 		return ret
 	}
@@ -1302,7 +1303,7 @@ func (o *SmPolicyContextData) GetMaPduInd() MaPduIndication {
 // GetMaPduIndOk returns a tuple with the MaPduInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetMaPduIndOk() (*MaPduIndication, bool) {
-	if o == nil || isNil(o.MaPduInd) {
+	if o == nil || IsNil(o.MaPduInd) {
 		return nil, false
 	}
 	return o.MaPduInd, true
@@ -1310,7 +1311,7 @@ func (o *SmPolicyContextData) GetMaPduIndOk() (*MaPduIndication, bool) {
 
 // HasMaPduInd returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasMaPduInd() bool {
-	if o != nil && !isNil(o.MaPduInd) {
+	if o != nil && !IsNil(o.MaPduInd) {
 		return true
 	}
 
@@ -1324,7 +1325,7 @@ func (o *SmPolicyContextData) SetMaPduInd(v MaPduIndication) {
 
 // GetAtsssCapab returns the AtsssCapab field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetAtsssCapab() AtsssCapability {
-	if o == nil || isNil(o.AtsssCapab) {
+	if o == nil || IsNil(o.AtsssCapab) {
 		var ret AtsssCapability
 		return ret
 	}
@@ -1334,7 +1335,7 @@ func (o *SmPolicyContextData) GetAtsssCapab() AtsssCapability {
 // GetAtsssCapabOk returns a tuple with the AtsssCapab field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetAtsssCapabOk() (*AtsssCapability, bool) {
-	if o == nil || isNil(o.AtsssCapab) {
+	if o == nil || IsNil(o.AtsssCapab) {
 		return nil, false
 	}
 	return o.AtsssCapab, true
@@ -1342,7 +1343,7 @@ func (o *SmPolicyContextData) GetAtsssCapabOk() (*AtsssCapability, bool) {
 
 // HasAtsssCapab returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasAtsssCapab() bool {
-	if o != nil && !isNil(o.AtsssCapab) {
+	if o != nil && !IsNil(o.AtsssCapab) {
 		return true
 	}
 
@@ -1356,7 +1357,7 @@ func (o *SmPolicyContextData) SetAtsssCapab(v AtsssCapability) {
 
 // GetIpv4FrameRouteList returns the Ipv4FrameRouteList field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetIpv4FrameRouteList() []string {
-	if o == nil || isNil(o.Ipv4FrameRouteList) {
+	if o == nil || IsNil(o.Ipv4FrameRouteList) {
 		var ret []string
 		return ret
 	}
@@ -1366,7 +1367,7 @@ func (o *SmPolicyContextData) GetIpv4FrameRouteList() []string {
 // GetIpv4FrameRouteListOk returns a tuple with the Ipv4FrameRouteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetIpv4FrameRouteListOk() ([]string, bool) {
-	if o == nil || isNil(o.Ipv4FrameRouteList) {
+	if o == nil || IsNil(o.Ipv4FrameRouteList) {
 		return nil, false
 	}
 	return o.Ipv4FrameRouteList, true
@@ -1374,7 +1375,7 @@ func (o *SmPolicyContextData) GetIpv4FrameRouteListOk() ([]string, bool) {
 
 // HasIpv4FrameRouteList returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasIpv4FrameRouteList() bool {
-	if o != nil && !isNil(o.Ipv4FrameRouteList) {
+	if o != nil && !IsNil(o.Ipv4FrameRouteList) {
 		return true
 	}
 
@@ -1388,7 +1389,7 @@ func (o *SmPolicyContextData) SetIpv4FrameRouteList(v []string) {
 
 // GetIpv6FrameRouteList returns the Ipv6FrameRouteList field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetIpv6FrameRouteList() []Ipv6Prefix {
-	if o == nil || isNil(o.Ipv6FrameRouteList) {
+	if o == nil || IsNil(o.Ipv6FrameRouteList) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -1398,7 +1399,7 @@ func (o *SmPolicyContextData) GetIpv6FrameRouteList() []Ipv6Prefix {
 // GetIpv6FrameRouteListOk returns a tuple with the Ipv6FrameRouteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetIpv6FrameRouteListOk() ([]Ipv6Prefix, bool) {
-	if o == nil || isNil(o.Ipv6FrameRouteList) {
+	if o == nil || IsNil(o.Ipv6FrameRouteList) {
 		return nil, false
 	}
 	return o.Ipv6FrameRouteList, true
@@ -1406,7 +1407,7 @@ func (o *SmPolicyContextData) GetIpv6FrameRouteListOk() ([]Ipv6Prefix, bool) {
 
 // HasIpv6FrameRouteList returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasIpv6FrameRouteList() bool {
-	if o != nil && !isNil(o.Ipv6FrameRouteList) {
+	if o != nil && !IsNil(o.Ipv6FrameRouteList) {
 		return true
 	}
 
@@ -1420,7 +1421,7 @@ func (o *SmPolicyContextData) SetIpv6FrameRouteList(v []Ipv6Prefix) {
 
 // GetSatBackhaulCategory returns the SatBackhaulCategory field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetSatBackhaulCategory() SatelliteBackhaulCategory {
-	if o == nil || isNil(o.SatBackhaulCategory) {
+	if o == nil || IsNil(o.SatBackhaulCategory) {
 		var ret SatelliteBackhaulCategory
 		return ret
 	}
@@ -1430,7 +1431,7 @@ func (o *SmPolicyContextData) GetSatBackhaulCategory() SatelliteBackhaulCategory
 // GetSatBackhaulCategoryOk returns a tuple with the SatBackhaulCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCategory, bool) {
-	if o == nil || isNil(o.SatBackhaulCategory) {
+	if o == nil || IsNil(o.SatBackhaulCategory) {
 		return nil, false
 	}
 	return o.SatBackhaulCategory, true
@@ -1438,7 +1439,7 @@ func (o *SmPolicyContextData) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCate
 
 // HasSatBackhaulCategory returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasSatBackhaulCategory() bool {
-	if o != nil && !isNil(o.SatBackhaulCategory) {
+	if o != nil && !IsNil(o.SatBackhaulCategory) {
 		return true
 	}
 
@@ -1452,7 +1453,7 @@ func (o *SmPolicyContextData) SetSatBackhaulCategory(v SatelliteBackhaulCategory
 
 // GetPcfUeInfo returns the PcfUeInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmPolicyContextData) GetPcfUeInfo() PcfUeCallbackInfo {
-	if o == nil || isNil(o.PcfUeInfo.Get()) {
+	if o == nil || IsNil(o.PcfUeInfo.Get()) {
 		var ret PcfUeCallbackInfo
 		return ret
 	}
@@ -1482,6 +1483,7 @@ func (o *SmPolicyContextData) HasPcfUeInfo() bool {
 func (o *SmPolicyContextData) SetPcfUeInfo(v PcfUeCallbackInfo) {
 	o.PcfUeInfo.Set(&v)
 }
+
 // SetPcfUeInfoNil sets the value for PcfUeInfo to be an explicit nil
 func (o *SmPolicyContextData) SetPcfUeInfoNil() {
 	o.PcfUeInfo.Set(nil)
@@ -1494,7 +1496,7 @@ func (o *SmPolicyContextData) UnsetPcfUeInfo() {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || isNil(o.PvsInfo) {
+	if o == nil || IsNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -1504,7 +1506,7 @@ func (o *SmPolicyContextData) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || isNil(o.PvsInfo) {
+	if o == nil || IsNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -1512,7 +1514,7 @@ func (o *SmPolicyContextData) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasPvsInfo() bool {
-	if o != nil && !isNil(o.PvsInfo) {
+	if o != nil && !IsNil(o.PvsInfo) {
 		return true
 	}
 
@@ -1526,7 +1528,7 @@ func (o *SmPolicyContextData) SetPvsInfo(v []ServerAddressingInfo) {
 
 // GetOnboardInd returns the OnboardInd field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetOnboardInd() bool {
-	if o == nil || isNil(o.OnboardInd) {
+	if o == nil || IsNil(o.OnboardInd) {
 		var ret bool
 		return ret
 	}
@@ -1536,7 +1538,7 @@ func (o *SmPolicyContextData) GetOnboardInd() bool {
 // GetOnboardIndOk returns a tuple with the OnboardInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetOnboardIndOk() (*bool, bool) {
-	if o == nil || isNil(o.OnboardInd) {
+	if o == nil || IsNil(o.OnboardInd) {
 		return nil, false
 	}
 	return o.OnboardInd, true
@@ -1544,7 +1546,7 @@ func (o *SmPolicyContextData) GetOnboardIndOk() (*bool, bool) {
 
 // HasOnboardInd returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasOnboardInd() bool {
-	if o != nil && !isNil(o.OnboardInd) {
+	if o != nil && !IsNil(o.OnboardInd) {
 		return true
 	}
 
@@ -1558,7 +1560,7 @@ func (o *SmPolicyContextData) SetOnboardInd(v bool) {
 
 // GetNwdafDatas returns the NwdafDatas field value if set, zero value otherwise.
 func (o *SmPolicyContextData) GetNwdafDatas() []NwdafData {
-	if o == nil || isNil(o.NwdafDatas) {
+	if o == nil || IsNil(o.NwdafDatas) {
 		var ret []NwdafData
 		return ret
 	}
@@ -1568,7 +1570,7 @@ func (o *SmPolicyContextData) GetNwdafDatas() []NwdafData {
 // GetNwdafDatasOk returns a tuple with the NwdafDatas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyContextData) GetNwdafDatasOk() ([]NwdafData, bool) {
-	if o == nil || isNil(o.NwdafDatas) {
+	if o == nil || IsNil(o.NwdafDatas) {
 		return nil, false
 	}
 	return o.NwdafDatas, true
@@ -1576,7 +1578,7 @@ func (o *SmPolicyContextData) GetNwdafDatasOk() ([]NwdafData, bool) {
 
 // HasNwdafDatas returns a boolean if a field has been set.
 func (o *SmPolicyContextData) HasNwdafDatas() bool {
-	if o != nil && !isNil(o.NwdafDatas) {
+	if o != nil && !IsNil(o.NwdafDatas) {
 		return true
 	}
 
@@ -1589,7 +1591,7 @@ func (o *SmPolicyContextData) SetNwdafDatas(v []NwdafData) {
 }
 
 func (o SmPolicyContextData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1598,133 +1600,133 @@ func (o SmPolicyContextData) MarshalJSON() ([]byte, error) {
 
 func (o SmPolicyContextData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccNetChId) {
+	if !IsNil(o.AccNetChId) {
 		toSerialize["accNetChId"] = o.AccNetChId
 	}
-	if !isNil(o.ChargEntityAddr) {
+	if !IsNil(o.ChargEntityAddr) {
 		toSerialize["chargEntityAddr"] = o.ChargEntityAddr
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["supi"] = o.Supi
-	if !isNil(o.InvalidSupi) {
+	if !IsNil(o.InvalidSupi) {
 		toSerialize["invalidSupi"] = o.InvalidSupi
 	}
-	if !isNil(o.InterGrpIds) {
+	if !IsNil(o.InterGrpIds) {
 		toSerialize["interGrpIds"] = o.InterGrpIds
 	}
 	toSerialize["pduSessionId"] = o.PduSessionId
 	toSerialize["pduSessionType"] = o.PduSessionType
-	if !isNil(o.Chargingcharacteristics) {
+	if !IsNil(o.Chargingcharacteristics) {
 		toSerialize["chargingcharacteristics"] = o.Chargingcharacteristics
 	}
 	toSerialize["dnn"] = o.Dnn
-	if !isNil(o.DnnSelMode) {
+	if !IsNil(o.DnnSelMode) {
 		toSerialize["dnnSelMode"] = o.DnnSelMode
 	}
 	toSerialize["notificationUri"] = o.NotificationUri
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.AddAccessInfo) {
+	if !IsNil(o.AddAccessInfo) {
 		toSerialize["addAccessInfo"] = o.AddAccessInfo
 	}
-	if !isNil(o.ServingNetwork) {
+	if !IsNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
-	if !isNil(o.UserLocationInfo) {
+	if !IsNil(o.UserLocationInfo) {
 		toSerialize["userLocationInfo"] = o.UserLocationInfo
 	}
-	if !isNil(o.UeTimeZone) {
+	if !IsNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.Ipv4Address) {
+	if !IsNil(o.Ipv4Address) {
 		toSerialize["ipv4Address"] = o.Ipv4Address
 	}
-	if !isNil(o.Ipv6AddressPrefix) {
+	if !IsNil(o.Ipv6AddressPrefix) {
 		toSerialize["ipv6AddressPrefix"] = o.Ipv6AddressPrefix
 	}
-	if !isNil(o.IpDomain) {
+	if !IsNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !isNil(o.SubsSessAmbr) {
+	if !IsNil(o.SubsSessAmbr) {
 		toSerialize["subsSessAmbr"] = o.SubsSessAmbr
 	}
-	if !isNil(o.AuthProfIndex) {
+	if !IsNil(o.AuthProfIndex) {
 		toSerialize["authProfIndex"] = o.AuthProfIndex
 	}
-	if !isNil(o.SubsDefQos) {
+	if !IsNil(o.SubsDefQos) {
 		toSerialize["subsDefQos"] = o.SubsDefQos
 	}
-	if !isNil(o.VplmnQos) {
+	if !IsNil(o.VplmnQos) {
 		toSerialize["vplmnQos"] = o.VplmnQos
 	}
-	if !isNil(o.NumOfPackFilter) {
+	if !IsNil(o.NumOfPackFilter) {
 		toSerialize["numOfPackFilter"] = o.NumOfPackFilter
 	}
-	if !isNil(o.Online) {
+	if !IsNil(o.Online) {
 		toSerialize["online"] = o.Online
 	}
-	if !isNil(o.Offline) {
+	if !IsNil(o.Offline) {
 		toSerialize["offline"] = o.Offline
 	}
-	if !isNil(o.Var3gppPsDataOffStatus) {
+	if !IsNil(o.Var3gppPsDataOffStatus) {
 		toSerialize["3gppPsDataOffStatus"] = o.Var3gppPsDataOffStatus
 	}
-	if !isNil(o.RefQosIndication) {
+	if !IsNil(o.RefQosIndication) {
 		toSerialize["refQosIndication"] = o.RefQosIndication
 	}
 	if o.TraceReq.IsSet() {
 		toSerialize["traceReq"] = o.TraceReq.Get()
 	}
 	toSerialize["sliceInfo"] = o.SliceInfo
-	if !isNil(o.QosFlowUsage) {
+	if !IsNil(o.QosFlowUsage) {
 		toSerialize["qosFlowUsage"] = o.QosFlowUsage
 	}
-	if !isNil(o.ServNfId) {
+	if !IsNil(o.ServNfId) {
 		toSerialize["servNfId"] = o.ServNfId
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.SmfId) {
+	if !IsNil(o.SmfId) {
 		toSerialize["smfId"] = o.SmfId
 	}
-	if !isNil(o.RecoveryTime) {
+	if !IsNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
-	if !isNil(o.MaPduInd) {
+	if !IsNil(o.MaPduInd) {
 		toSerialize["maPduInd"] = o.MaPduInd
 	}
-	if !isNil(o.AtsssCapab) {
+	if !IsNil(o.AtsssCapab) {
 		toSerialize["atsssCapab"] = o.AtsssCapab
 	}
-	if !isNil(o.Ipv4FrameRouteList) {
+	if !IsNil(o.Ipv4FrameRouteList) {
 		toSerialize["ipv4FrameRouteList"] = o.Ipv4FrameRouteList
 	}
-	if !isNil(o.Ipv6FrameRouteList) {
+	if !IsNil(o.Ipv6FrameRouteList) {
 		toSerialize["ipv6FrameRouteList"] = o.Ipv6FrameRouteList
 	}
-	if !isNil(o.SatBackhaulCategory) {
+	if !IsNil(o.SatBackhaulCategory) {
 		toSerialize["satBackhaulCategory"] = o.SatBackhaulCategory
 	}
 	if o.PcfUeInfo.IsSet() {
 		toSerialize["pcfUeInfo"] = o.PcfUeInfo.Get()
 	}
-	if !isNil(o.PvsInfo) {
+	if !IsNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
-	if !isNil(o.OnboardInd) {
+	if !IsNil(o.OnboardInd) {
 		toSerialize["onboardInd"] = o.OnboardInd
 	}
-	if !isNil(o.NwdafDatas) {
+	if !IsNil(o.NwdafDatas) {
 		toSerialize["nwdafDatas"] = o.NwdafDatas
 	}
 	return toSerialize, nil
@@ -1765,5 +1767,3 @@ func (v *NullableSmPolicyContextData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

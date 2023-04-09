@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &VirtualResource{}
 
 // VirtualResource struct for VirtualResource
 type VirtualResource struct {
-	VirtualMemory *int32 `json:"virtualMemory,omitempty"`
-	VirtualDisk *int32 `json:"virtualDisk,omitempty"`
-	VirtualCPU *string `json:"virtualCPU,omitempty"`
+	VirtualMemory *int32  `json:"virtualMemory,omitempty"`
+	VirtualDisk   *int32  `json:"virtualDisk,omitempty"`
+	VirtualCPU    *string `json:"virtualCPU,omitempty"`
 }
 
 // NewVirtualResource instantiates a new VirtualResource object
@@ -43,7 +43,7 @@ func NewVirtualResourceWithDefaults() *VirtualResource {
 
 // GetVirtualMemory returns the VirtualMemory field value if set, zero value otherwise.
 func (o *VirtualResource) GetVirtualMemory() int32 {
-	if o == nil || isNil(o.VirtualMemory) {
+	if o == nil || IsNil(o.VirtualMemory) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *VirtualResource) GetVirtualMemory() int32 {
 // GetVirtualMemoryOk returns a tuple with the VirtualMemory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualResource) GetVirtualMemoryOk() (*int32, bool) {
-	if o == nil || isNil(o.VirtualMemory) {
+	if o == nil || IsNil(o.VirtualMemory) {
 		return nil, false
 	}
 	return o.VirtualMemory, true
@@ -61,7 +61,7 @@ func (o *VirtualResource) GetVirtualMemoryOk() (*int32, bool) {
 
 // HasVirtualMemory returns a boolean if a field has been set.
 func (o *VirtualResource) HasVirtualMemory() bool {
-	if o != nil && !isNil(o.VirtualMemory) {
+	if o != nil && !IsNil(o.VirtualMemory) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *VirtualResource) SetVirtualMemory(v int32) {
 
 // GetVirtualDisk returns the VirtualDisk field value if set, zero value otherwise.
 func (o *VirtualResource) GetVirtualDisk() int32 {
-	if o == nil || isNil(o.VirtualDisk) {
+	if o == nil || IsNil(o.VirtualDisk) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *VirtualResource) GetVirtualDisk() int32 {
 // GetVirtualDiskOk returns a tuple with the VirtualDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualResource) GetVirtualDiskOk() (*int32, bool) {
-	if o == nil || isNil(o.VirtualDisk) {
+	if o == nil || IsNil(o.VirtualDisk) {
 		return nil, false
 	}
 	return o.VirtualDisk, true
@@ -93,7 +93,7 @@ func (o *VirtualResource) GetVirtualDiskOk() (*int32, bool) {
 
 // HasVirtualDisk returns a boolean if a field has been set.
 func (o *VirtualResource) HasVirtualDisk() bool {
-	if o != nil && !isNil(o.VirtualDisk) {
+	if o != nil && !IsNil(o.VirtualDisk) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *VirtualResource) SetVirtualDisk(v int32) {
 
 // GetVirtualCPU returns the VirtualCPU field value if set, zero value otherwise.
 func (o *VirtualResource) GetVirtualCPU() string {
-	if o == nil || isNil(o.VirtualCPU) {
+	if o == nil || IsNil(o.VirtualCPU) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *VirtualResource) GetVirtualCPU() string {
 // GetVirtualCPUOk returns a tuple with the VirtualCPU field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualResource) GetVirtualCPUOk() (*string, bool) {
-	if o == nil || isNil(o.VirtualCPU) {
+	if o == nil || IsNil(o.VirtualCPU) {
 		return nil, false
 	}
 	return o.VirtualCPU, true
@@ -125,7 +125,7 @@ func (o *VirtualResource) GetVirtualCPUOk() (*string, bool) {
 
 // HasVirtualCPU returns a boolean if a field has been set.
 func (o *VirtualResource) HasVirtualCPU() bool {
-	if o != nil && !isNil(o.VirtualCPU) {
+	if o != nil && !IsNil(o.VirtualCPU) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *VirtualResource) SetVirtualCPU(v string) {
 }
 
 func (o VirtualResource) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o VirtualResource) MarshalJSON() ([]byte, error) {
 
 func (o VirtualResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.VirtualMemory) {
+	if !IsNil(o.VirtualMemory) {
 		toSerialize["virtualMemory"] = o.VirtualMemory
 	}
-	if !isNil(o.VirtualDisk) {
+	if !IsNil(o.VirtualDisk) {
 		toSerialize["virtualDisk"] = o.VirtualDisk
 	}
-	if !isNil(o.VirtualCPU) {
+	if !IsNil(o.VirtualCPU) {
 		toSerialize["virtualCPU"] = o.VirtualCPU
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableVirtualResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

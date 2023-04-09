@@ -20,7 +20,7 @@ var _ MappedNullable = &LocalAddress{}
 // LocalAddress struct for LocalAddress
 type LocalAddress struct {
 	AddressWithVlan *AddressWithVlan `json:"addressWithVlan,omitempty"`
-	Port *int32 `json:"port,omitempty"`
+	Port            *int32           `json:"port,omitempty"`
 }
 
 // NewLocalAddress instantiates a new LocalAddress object
@@ -42,7 +42,7 @@ func NewLocalAddressWithDefaults() *LocalAddress {
 
 // GetAddressWithVlan returns the AddressWithVlan field value if set, zero value otherwise.
 func (o *LocalAddress) GetAddressWithVlan() AddressWithVlan {
-	if o == nil || isNil(o.AddressWithVlan) {
+	if o == nil || IsNil(o.AddressWithVlan) {
 		var ret AddressWithVlan
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LocalAddress) GetAddressWithVlan() AddressWithVlan {
 // GetAddressWithVlanOk returns a tuple with the AddressWithVlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalAddress) GetAddressWithVlanOk() (*AddressWithVlan, bool) {
-	if o == nil || isNil(o.AddressWithVlan) {
+	if o == nil || IsNil(o.AddressWithVlan) {
 		return nil, false
 	}
 	return o.AddressWithVlan, true
@@ -60,7 +60,7 @@ func (o *LocalAddress) GetAddressWithVlanOk() (*AddressWithVlan, bool) {
 
 // HasAddressWithVlan returns a boolean if a field has been set.
 func (o *LocalAddress) HasAddressWithVlan() bool {
-	if o != nil && !isNil(o.AddressWithVlan) {
+	if o != nil && !IsNil(o.AddressWithVlan) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *LocalAddress) SetAddressWithVlan(v AddressWithVlan) {
 
 // GetPort returns the Port field value if set, zero value otherwise.
 func (o *LocalAddress) GetPort() int32 {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *LocalAddress) GetPort() int32 {
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalAddress) GetPortOk() (*int32, bool) {
-	if o == nil || isNil(o.Port) {
+	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
 	return o.Port, true
@@ -92,7 +92,7 @@ func (o *LocalAddress) GetPortOk() (*int32, bool) {
 
 // HasPort returns a boolean if a field has been set.
 func (o *LocalAddress) HasPort() bool {
-	if o != nil && !isNil(o.Port) {
+	if o != nil && !IsNil(o.Port) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *LocalAddress) SetPort(v int32) {
 }
 
 func (o LocalAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o LocalAddress) MarshalJSON() ([]byte, error) {
 
 func (o LocalAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AddressWithVlan) {
+	if !IsNil(o.AddressWithVlan) {
 		toSerialize["addressWithVlan"] = o.AddressWithVlan
 	}
-	if !isNil(o.Port) {
+	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableLocalAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

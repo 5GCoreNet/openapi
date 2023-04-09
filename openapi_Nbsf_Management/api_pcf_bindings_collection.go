@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -13,17 +13,16 @@ package openapi_Nbsf_Management
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // PCFBindingsCollectionApiService PCFBindingsCollectionApi service
 type PCFBindingsCollectionApiService service
 
 type ApiCreatePCFBindingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PCFBindingsCollectionApiService
 	pcfBinding *PcfBinding
 }
@@ -40,24 +39,25 @@ func (r ApiCreatePCFBindingRequest) Execute() (*PcfBinding, *http.Response, erro
 /*
 CreatePCFBinding Create a new Individual PCF for a PDU Session binding information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePCFBindingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreatePCFBindingRequest
 */
 func (a *PCFBindingsCollectionApiService) CreatePCFBinding(ctx context.Context) ApiCreatePCFBindingRequest {
 	return ApiCreatePCFBindingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PcfBinding
+//
+//	@return PcfBinding
 func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCFBindingRequest) (*PcfBinding, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PcfBinding
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PcfBinding
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PCFBindingsCollectionApiService.CreatePCFBinding")
@@ -103,9 +103,9 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -122,8 +122,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -133,8 +133,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -144,8 +144,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +155,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -166,8 +166,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -177,8 +177,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -188,8 +188,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -199,8 +199,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -210,8 +210,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -221,8 +221,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -232,8 +232,8 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -252,17 +252,17 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 }
 
 type ApiGetPCFBindingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PCFBindingsCollectionApiService
-	ipv4Addr *string
+	ipv4Addr   *string
 	ipv6Prefix *Ipv6Prefix
-	macAddr48 *string
-	dnn *string
-	supi *string
-	gpsi *string
-	snssai *Snssai
-	ipDomain *string
-	suppFeat *string
+	macAddr48  *string
+	dnn        *string
+	supi       *string
+	gpsi       *string
+	snssai     *Snssai
+	ipDomain   *string
+	suppFeat   *string
 }
 
 // The IPv4 Address of the served UE.
@@ -271,7 +271,7 @@ func (r ApiGetPCFBindingsRequest) Ipv4Addr(ipv4Addr string) ApiGetPCFBindingsReq
 	return r
 }
 
-// The IPv6 Address of the served UE. The NF service consumer shall append &#39;/128&#39; to the  IPv6 address in the attribute value. E.g. &#39;2001:db8:85a3::8a2e:370:7334/128&#39;. 
+// The IPv6 Address of the served UE. The NF service consumer shall append &#39;/128&#39; to the  IPv6 address in the attribute value. E.g. &#39;2001:db8:85a3::8a2e:370:7334/128&#39;.
 func (r ApiGetPCFBindingsRequest) Ipv6Prefix(ipv6Prefix Ipv6Prefix) ApiGetPCFBindingsRequest {
 	r.ipv6Prefix = &ipv6Prefix
 	return r
@@ -326,24 +326,25 @@ func (r ApiGetPCFBindingsRequest) Execute() (*PcfBinding, *http.Response, error)
 /*
 GetPCFBindings Read PCF for a PDU Session Bindings information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPCFBindingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPCFBindingsRequest
 */
 func (a *PCFBindingsCollectionApiService) GetPCFBindings(ctx context.Context) ApiGetPCFBindingsRequest {
 	return ApiGetPCFBindingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PcfBinding
+//
+//	@return PcfBinding
 func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindingsRequest) (*PcfBinding, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PcfBinding
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PcfBinding
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PCFBindingsCollectionApiService.GetPCFBindings")
@@ -358,31 +359,31 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 	localVarFormParams := url.Values{}
 
 	if r.ipv4Addr != nil {
-		parameterAddToQuery(localVarQueryParams, "ipv4Addr", r.ipv4Addr, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv4Addr", r.ipv4Addr, "")
 	}
 	if r.ipv6Prefix != nil {
-		parameterAddToQuery(localVarQueryParams, "ipv6Prefix", r.ipv6Prefix, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv6Prefix", r.ipv6Prefix, "")
 	}
 	if r.macAddr48 != nil {
-		parameterAddToQuery(localVarQueryParams, "macAddr48", r.macAddr48, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "macAddr48", r.macAddr48, "")
 	}
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.supi != nil {
-		parameterAddToQuery(localVarQueryParams, "supi", r.supi, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supi", r.supi, "")
 	}
 	if r.gpsi != nil {
-		parameterAddToQuery(localVarQueryParams, "gpsi", r.gpsi, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "gpsi", r.gpsi, "")
 	}
 	if r.snssai != nil {
-		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.ipDomain != nil {
-		parameterAddToQuery(localVarQueryParams, "ipDomain", r.ipDomain, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ipDomain", r.ipDomain, "")
 	}
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -411,9 +412,9 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -430,8 +431,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -441,8 +442,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -452,8 +453,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -463,8 +464,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -474,8 +475,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -485,8 +486,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -496,8 +497,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -507,8 +508,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -518,8 +519,8 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -13,23 +13,22 @@ package openapi_SS_NetworkResourceAdaptation
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"reflect"
 )
 
-
 // TSCStreamAvailabilityDiscoveryApiService TSCStreamAvailabilityDiscoveryApi service
 type TSCStreamAvailabilityDiscoveryApiService service
 
 type ApiGetTscStreamAvailabilityRequest struct {
-	ctx context.Context
-	ApiService *TSCStreamAvailabilityDiscoveryApiService
+	ctx         context.Context
+	ApiService  *TSCStreamAvailabilityDiscoveryApiService
 	streamSpecs *[]StreamSpecification
 }
 
-// The MAC address(es) of the source DS-TT port(s) and the destination DS-TT port(s). 
+// The MAC address(es) of the source DS-TT port(s) and the destination DS-TT port(s).
 func (r ApiGetTscStreamAvailabilityRequest) StreamSpecs(streamSpecs []StreamSpecification) ApiGetTscStreamAvailabilityRequest {
 	r.streamSpecs = &streamSpecs
 	return r
@@ -42,24 +41,25 @@ func (r ApiGetTscStreamAvailabilityRequest) Execute() ([]TscStreamAvailability, 
 /*
 GetTscStreamAvailability Discover the TSC stream availability information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTscStreamAvailabilityRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTscStreamAvailabilityRequest
 */
 func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailability(ctx context.Context) ApiGetTscStreamAvailabilityRequest {
 	return ApiGetTscStreamAvailabilityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TscStreamAvailability
+//
+//	@return []TscStreamAvailability
 func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecute(r ApiGetTscStreamAvailabilityRequest) ([]TscStreamAvailability, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TscStreamAvailability
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TscStreamAvailability
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TSCStreamAvailabilityDiscoveryApiService.GetTscStreamAvailability")
@@ -84,10 +84,10 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "stream-specs", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "stream-specs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "stream-specs", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "stream-specs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -117,9 +117,9 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,8 +136,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +147,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +158,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +169,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -180,8 +180,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -191,8 +191,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -202,8 +202,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +213,8 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

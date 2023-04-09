@@ -1,7 +1,7 @@
 /*
 Nucmf_Provisioning
 
-UCMF_Provisioning Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UCMF_Provisioning Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &RacsFailureReport{}
 // RacsFailureReport Represents a radio capability data provisioning failure report.
 type RacsFailureReport struct {
 	// Identifies the RACS ID(s) for which the RACS data are not provisioned successfully.
-	RacsIds []string `json:"racsIds"`
+	RacsIds     []string        `json:"racsIds"`
 	FailureCode RacsFailureCode `json:"failureCode"`
 }
 
@@ -92,7 +92,7 @@ func (o *RacsFailureReport) SetFailureCode(v RacsFailureCode) {
 }
 
 func (o RacsFailureReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableRacsFailureReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

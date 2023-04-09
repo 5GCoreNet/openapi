@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &AcceptableServiceInfo{}
 
 // AcceptableServiceInfo Indicates the maximum bandwidth that shall be authorized by the PCF.
 type AcceptableServiceInfo struct {
-	// Indicates the maximum bandwidth that shall be authorized by the PCF for each media component of the map. The key of the map is the media component number. 
+	// Indicates the maximum bandwidth that shall be authorized by the PCF for each media component of the map. The key of the map is the media component number.
 	AccBwMedComps *map[string]MediaComponent `json:"accBwMedComps,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MarBwUl *string `json:"marBwUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MarBwDl *string `json:"marBwDl,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewAcceptableServiceInfoWithDefaults() *AcceptableServiceInfo {
 
 // GetAccBwMedComps returns the AccBwMedComps field value if set, zero value otherwise.
 func (o *AcceptableServiceInfo) GetAccBwMedComps() map[string]MediaComponent {
-	if o == nil || isNil(o.AccBwMedComps) {
+	if o == nil || IsNil(o.AccBwMedComps) {
 		var ret map[string]MediaComponent
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AcceptableServiceInfo) GetAccBwMedComps() map[string]MediaComponent {
 // GetAccBwMedCompsOk returns a tuple with the AccBwMedComps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcceptableServiceInfo) GetAccBwMedCompsOk() (*map[string]MediaComponent, bool) {
-	if o == nil || isNil(o.AccBwMedComps) {
+	if o == nil || IsNil(o.AccBwMedComps) {
 		return nil, false
 	}
 	return o.AccBwMedComps, true
@@ -64,7 +64,7 @@ func (o *AcceptableServiceInfo) GetAccBwMedCompsOk() (*map[string]MediaComponent
 
 // HasAccBwMedComps returns a boolean if a field has been set.
 func (o *AcceptableServiceInfo) HasAccBwMedComps() bool {
-	if o != nil && !isNil(o.AccBwMedComps) {
+	if o != nil && !IsNil(o.AccBwMedComps) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AcceptableServiceInfo) SetAccBwMedComps(v map[string]MediaComponent) {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise.
 func (o *AcceptableServiceInfo) GetMarBwUl() string {
-	if o == nil || isNil(o.MarBwUl) {
+	if o == nil || IsNil(o.MarBwUl) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AcceptableServiceInfo) GetMarBwUl() string {
 // GetMarBwUlOk returns a tuple with the MarBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcceptableServiceInfo) GetMarBwUlOk() (*string, bool) {
-	if o == nil || isNil(o.MarBwUl) {
+	if o == nil || IsNil(o.MarBwUl) {
 		return nil, false
 	}
 	return o.MarBwUl, true
@@ -96,7 +96,7 @@ func (o *AcceptableServiceInfo) GetMarBwUlOk() (*string, bool) {
 
 // HasMarBwUl returns a boolean if a field has been set.
 func (o *AcceptableServiceInfo) HasMarBwUl() bool {
-	if o != nil && !isNil(o.MarBwUl) {
+	if o != nil && !IsNil(o.MarBwUl) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AcceptableServiceInfo) SetMarBwUl(v string) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise.
 func (o *AcceptableServiceInfo) GetMarBwDl() string {
-	if o == nil || isNil(o.MarBwDl) {
+	if o == nil || IsNil(o.MarBwDl) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AcceptableServiceInfo) GetMarBwDl() string {
 // GetMarBwDlOk returns a tuple with the MarBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcceptableServiceInfo) GetMarBwDlOk() (*string, bool) {
-	if o == nil || isNil(o.MarBwDl) {
+	if o == nil || IsNil(o.MarBwDl) {
 		return nil, false
 	}
 	return o.MarBwDl, true
@@ -128,7 +128,7 @@ func (o *AcceptableServiceInfo) GetMarBwDlOk() (*string, bool) {
 
 // HasMarBwDl returns a boolean if a field has been set.
 func (o *AcceptableServiceInfo) HasMarBwDl() bool {
-	if o != nil && !isNil(o.MarBwDl) {
+	if o != nil && !IsNil(o.MarBwDl) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AcceptableServiceInfo) SetMarBwDl(v string) {
 }
 
 func (o AcceptableServiceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o AcceptableServiceInfo) MarshalJSON() ([]byte, error) {
 
 func (o AcceptableServiceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccBwMedComps) {
+	if !IsNil(o.AccBwMedComps) {
 		toSerialize["accBwMedComps"] = o.AccBwMedComps
 	}
-	if !isNil(o.MarBwUl) {
+	if !IsNil(o.MarBwUl) {
 		toSerialize["marBwUl"] = o.MarBwUl
 	}
-	if !isNil(o.MarBwDl) {
+	if !IsNil(o.MarBwDl) {
 		toSerialize["marBwDl"] = o.MarBwDl
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableAcceptableServiceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

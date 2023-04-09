@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &DataRestorationNotification{}
 
 // DataRestorationNotification Contains identities representing those UEs potentially affected by a data-loss event at the UDR
 type DataRestorationNotification struct {
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
+	SupiRanges []SupiRange     `json:"supiRanges,omitempty"`
 	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
-	SNssaiList []Snssai `json:"sNssaiList,omitempty"`
-	DnnList []string `json:"dnnList,omitempty"`
+	ResetIds   []string        `json:"resetIds,omitempty"`
+	SNssaiList []Snssai        `json:"sNssaiList,omitempty"`
+	DnnList    []string        `json:"dnnList,omitempty"`
 	// Identifier of a group of NFs.
 	UdrGroupId *string `json:"udrGroupId,omitempty"`
 }
@@ -47,7 +47,7 @@ func NewDataRestorationNotificationWithDefaults() *DataRestorationNotification {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *DataRestorationNotification) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *DataRestorationNotification) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataRestorationNotification) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -65,7 +65,7 @@ func (o *DataRestorationNotification) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *DataRestorationNotification) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *DataRestorationNotification) SetSupiRanges(v []SupiRange) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *DataRestorationNotification) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *DataRestorationNotification) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataRestorationNotification) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -97,7 +97,7 @@ func (o *DataRestorationNotification) GetGpsiRangesOk() ([]IdentityRange, bool) 
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *DataRestorationNotification) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *DataRestorationNotification) SetGpsiRanges(v []IdentityRange) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *DataRestorationNotification) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *DataRestorationNotification) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataRestorationNotification) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -129,7 +129,7 @@ func (o *DataRestorationNotification) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *DataRestorationNotification) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *DataRestorationNotification) SetResetIds(v []string) {
 
 // GetSNssaiList returns the SNssaiList field value if set, zero value otherwise.
 func (o *DataRestorationNotification) GetSNssaiList() []Snssai {
-	if o == nil || isNil(o.SNssaiList) {
+	if o == nil || IsNil(o.SNssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *DataRestorationNotification) GetSNssaiList() []Snssai {
 // GetSNssaiListOk returns a tuple with the SNssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataRestorationNotification) GetSNssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SNssaiList) {
+	if o == nil || IsNil(o.SNssaiList) {
 		return nil, false
 	}
 	return o.SNssaiList, true
@@ -161,7 +161,7 @@ func (o *DataRestorationNotification) GetSNssaiListOk() ([]Snssai, bool) {
 
 // HasSNssaiList returns a boolean if a field has been set.
 func (o *DataRestorationNotification) HasSNssaiList() bool {
-	if o != nil && !isNil(o.SNssaiList) {
+	if o != nil && !IsNil(o.SNssaiList) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *DataRestorationNotification) SetSNssaiList(v []Snssai) {
 
 // GetDnnList returns the DnnList field value if set, zero value otherwise.
 func (o *DataRestorationNotification) GetDnnList() []string {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		var ret []string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *DataRestorationNotification) GetDnnList() []string {
 // GetDnnListOk returns a tuple with the DnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataRestorationNotification) GetDnnListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		return nil, false
 	}
 	return o.DnnList, true
@@ -193,7 +193,7 @@ func (o *DataRestorationNotification) GetDnnListOk() ([]string, bool) {
 
 // HasDnnList returns a boolean if a field has been set.
 func (o *DataRestorationNotification) HasDnnList() bool {
-	if o != nil && !isNil(o.DnnList) {
+	if o != nil && !IsNil(o.DnnList) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *DataRestorationNotification) SetDnnList(v []string) {
 
 // GetUdrGroupId returns the UdrGroupId field value if set, zero value otherwise.
 func (o *DataRestorationNotification) GetUdrGroupId() string {
-	if o == nil || isNil(o.UdrGroupId) {
+	if o == nil || IsNil(o.UdrGroupId) {
 		var ret string
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *DataRestorationNotification) GetUdrGroupId() string {
 // GetUdrGroupIdOk returns a tuple with the UdrGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataRestorationNotification) GetUdrGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.UdrGroupId) {
+	if o == nil || IsNil(o.UdrGroupId) {
 		return nil, false
 	}
 	return o.UdrGroupId, true
@@ -225,7 +225,7 @@ func (o *DataRestorationNotification) GetUdrGroupIdOk() (*string, bool) {
 
 // HasUdrGroupId returns a boolean if a field has been set.
 func (o *DataRestorationNotification) HasUdrGroupId() bool {
-	if o != nil && !isNil(o.UdrGroupId) {
+	if o != nil && !IsNil(o.UdrGroupId) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *DataRestorationNotification) SetUdrGroupId(v string) {
 }
 
 func (o DataRestorationNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -247,22 +247,22 @@ func (o DataRestorationNotification) MarshalJSON() ([]byte, error) {
 
 func (o DataRestorationNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !isNil(o.SNssaiList) {
+	if !IsNil(o.SNssaiList) {
 		toSerialize["sNssaiList"] = o.SNssaiList
 	}
-	if !isNil(o.DnnList) {
+	if !IsNil(o.DnnList) {
 		toSerialize["dnnList"] = o.DnnList
 	}
-	if !isNil(o.UdrGroupId) {
+	if !IsNil(o.UdrGroupId) {
 		toSerialize["udrGroupId"] = o.UdrGroupId
 	}
 	return toSerialize, nil
@@ -303,5 +303,3 @@ func (v *NullableDataRestorationNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

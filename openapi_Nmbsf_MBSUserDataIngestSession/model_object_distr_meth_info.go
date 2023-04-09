@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the ObjectDistrMethInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ObjectDistrMethInfo{}
 
-// ObjectDistrMethInfo Represents additional MBS Distribution Session parameters for the case of an Object  Distribution Method. 
+// ObjectDistrMethInfo Represents additional MBS Distribution Session parameters for the case of an Object  Distribution Method.
 type ObjectDistrMethInfo struct {
 	OperatingMode ObjDistributionOperatingMode `json:"operatingMode"`
-	ObjAcqMethod ObjAcquisitionMethod `json:"objAcqMethod"`
-	ObjAcqIds []string `json:"objAcqIds"`
+	ObjAcqMethod  ObjAcquisitionMethod         `json:"objAcqMethod"`
+	ObjAcqIds     []string                     `json:"objAcqIds"`
 	// String providing an URI formatted according to RFC 3986.
 	ObjIngUri *string `json:"objIngUri,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -124,7 +124,7 @@ func (o *ObjectDistrMethInfo) SetObjAcqIds(v []string) {
 
 // GetObjIngUri returns the ObjIngUri field value if set, zero value otherwise.
 func (o *ObjectDistrMethInfo) GetObjIngUri() string {
-	if o == nil || isNil(o.ObjIngUri) {
+	if o == nil || IsNil(o.ObjIngUri) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *ObjectDistrMethInfo) GetObjIngUri() string {
 // GetObjIngUriOk returns a tuple with the ObjIngUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectDistrMethInfo) GetObjIngUriOk() (*string, bool) {
-	if o == nil || isNil(o.ObjIngUri) {
+	if o == nil || IsNil(o.ObjIngUri) {
 		return nil, false
 	}
 	return o.ObjIngUri, true
@@ -142,7 +142,7 @@ func (o *ObjectDistrMethInfo) GetObjIngUriOk() (*string, bool) {
 
 // HasObjIngUri returns a boolean if a field has been set.
 func (o *ObjectDistrMethInfo) HasObjIngUri() bool {
-	if o != nil && !isNil(o.ObjIngUri) {
+	if o != nil && !IsNil(o.ObjIngUri) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *ObjectDistrMethInfo) SetObjIngUri(v string) {
 
 // GetObjDistrUri returns the ObjDistrUri field value if set, zero value otherwise.
 func (o *ObjectDistrMethInfo) GetObjDistrUri() string {
-	if o == nil || isNil(o.ObjDistrUri) {
+	if o == nil || IsNil(o.ObjDistrUri) {
 		var ret string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *ObjectDistrMethInfo) GetObjDistrUri() string {
 // GetObjDistrUriOk returns a tuple with the ObjDistrUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectDistrMethInfo) GetObjDistrUriOk() (*string, bool) {
-	if o == nil || isNil(o.ObjDistrUri) {
+	if o == nil || IsNil(o.ObjDistrUri) {
 		return nil, false
 	}
 	return o.ObjDistrUri, true
@@ -174,7 +174,7 @@ func (o *ObjectDistrMethInfo) GetObjDistrUriOk() (*string, bool) {
 
 // HasObjDistrUri returns a boolean if a field has been set.
 func (o *ObjectDistrMethInfo) HasObjDistrUri() bool {
-	if o != nil && !isNil(o.ObjDistrUri) {
+	if o != nil && !IsNil(o.ObjDistrUri) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *ObjectDistrMethInfo) SetObjDistrUri(v string) {
 
 // GetObjRepairUri returns the ObjRepairUri field value if set, zero value otherwise.
 func (o *ObjectDistrMethInfo) GetObjRepairUri() string {
-	if o == nil || isNil(o.ObjRepairUri) {
+	if o == nil || IsNil(o.ObjRepairUri) {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *ObjectDistrMethInfo) GetObjRepairUri() string {
 // GetObjRepairUriOk returns a tuple with the ObjRepairUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectDistrMethInfo) GetObjRepairUriOk() (*string, bool) {
-	if o == nil || isNil(o.ObjRepairUri) {
+	if o == nil || IsNil(o.ObjRepairUri) {
 		return nil, false
 	}
 	return o.ObjRepairUri, true
@@ -206,7 +206,7 @@ func (o *ObjectDistrMethInfo) GetObjRepairUriOk() (*string, bool) {
 
 // HasObjRepairUri returns a boolean if a field has been set.
 func (o *ObjectDistrMethInfo) HasObjRepairUri() bool {
-	if o != nil && !isNil(o.ObjRepairUri) {
+	if o != nil && !IsNil(o.ObjRepairUri) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *ObjectDistrMethInfo) SetObjRepairUri(v string) {
 }
 
 func (o ObjectDistrMethInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -231,13 +231,13 @@ func (o ObjectDistrMethInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["operatingMode"] = o.OperatingMode
 	toSerialize["objAcqMethod"] = o.ObjAcqMethod
 	toSerialize["objAcqIds"] = o.ObjAcqIds
-	if !isNil(o.ObjIngUri) {
+	if !IsNil(o.ObjIngUri) {
 		toSerialize["objIngUri"] = o.ObjIngUri
 	}
-	if !isNil(o.ObjDistrUri) {
+	if !IsNil(o.ObjDistrUri) {
 		toSerialize["objDistrUri"] = o.ObjDistrUri
 	}
-	if !isNil(o.ObjRepairUri) {
+	if !IsNil(o.ObjRepairUri) {
 		toSerialize["objRepairUri"] = o.ObjRepairUri
 	}
 	return toSerialize, nil
@@ -278,5 +278,3 @@ func (v *NullableObjectDistrMethInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

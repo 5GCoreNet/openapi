@@ -19,8 +19,8 @@ var _ MappedNullable = &CPCIConfigurationFunctionSingleAllOfAttributes{}
 
 // CPCIConfigurationFunctionSingleAllOfAttributes struct for CPCIConfigurationFunctionSingleAllOfAttributes
 type CPCIConfigurationFunctionSingleAllOfAttributes struct {
-	CPciConfigurationControl *bool `json:"cPciConfigurationControl,omitempty"`
-	CSonPciList *CSonPciList `json:"cSonPciList,omitempty"`
+	CPciConfigurationControl *bool        `json:"cPciConfigurationControl,omitempty"`
+	CSonPciList              *CSonPciList `json:"cSonPciList,omitempty"`
 }
 
 // NewCPCIConfigurationFunctionSingleAllOfAttributes instantiates a new CPCIConfigurationFunctionSingleAllOfAttributes object
@@ -42,7 +42,7 @@ func NewCPCIConfigurationFunctionSingleAllOfAttributesWithDefaults() *CPCIConfig
 
 // GetCPciConfigurationControl returns the CPciConfigurationControl field value if set, zero value otherwise.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationControl() bool {
-	if o == nil || isNil(o.CPciConfigurationControl) {
+	if o == nil || IsNil(o.CPciConfigurationControl) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationCon
 // GetCPciConfigurationControlOk returns a tuple with the CPciConfigurationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationControlOk() (*bool, bool) {
-	if o == nil || isNil(o.CPciConfigurationControl) {
+	if o == nil || IsNil(o.CPciConfigurationControl) {
 		return nil, false
 	}
 	return o.CPciConfigurationControl, true
@@ -60,7 +60,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationCon
 
 // HasCPciConfigurationControl returns a boolean if a field has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) HasCPciConfigurationControl() bool {
-	if o != nil && !isNil(o.CPciConfigurationControl) {
+	if o != nil && !IsNil(o.CPciConfigurationControl) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) SetCPciConfigurationCon
 
 // GetCSonPciList returns the CSonPciList field value if set, zero value otherwise.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciList() CSonPciList {
-	if o == nil || isNil(o.CSonPciList) {
+	if o == nil || IsNil(o.CSonPciList) {
 		var ret CSonPciList
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciList() CSonPc
 // GetCSonPciListOk returns a tuple with the CSonPciList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciListOk() (*CSonPciList, bool) {
-	if o == nil || isNil(o.CSonPciList) {
+	if o == nil || IsNil(o.CSonPciList) {
 		return nil, false
 	}
 	return o.CSonPciList, true
@@ -92,7 +92,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciListOk() (*CS
 
 // HasCSonPciList returns a boolean if a field has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) HasCSonPciList() bool {
-	if o != nil && !isNil(o.CSonPciList) {
+	if o != nil && !IsNil(o.CSonPciList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) SetCSonPciList(v CSonPc
 }
 
 func (o CPCIConfigurationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o CPCIConfigurationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, e
 
 func (o CPCIConfigurationFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CPciConfigurationControl) {
+	if !IsNil(o.CPciConfigurationControl) {
 		toSerialize["cPciConfigurationControl"] = o.CPciConfigurationControl
 	}
-	if !isNil(o.CSonPciList) {
+	if !IsNil(o.CSonPciList) {
 		toSerialize["cSonPciList"] = o.CSonPciList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableCPCIConfigurationFunctionSingleAllOfAttributes) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

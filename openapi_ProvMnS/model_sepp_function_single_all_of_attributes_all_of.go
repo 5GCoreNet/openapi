@@ -19,10 +19,10 @@ var _ MappedNullable = &SeppFunctionSingleAllOfAttributesAllOf{}
 
 // SeppFunctionSingleAllOfAttributesAllOf struct for SeppFunctionSingleAllOfAttributesAllOf
 type SeppFunctionSingleAllOfAttributesAllOf struct {
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
+	PlmnId   *PlmnId   `json:"plmnId,omitempty"`
 	SEPPType *SEPPType `json:"sEPPType,omitempty"`
-	SEPPId *int32 `json:"sEPPId,omitempty"`
-	Fqdn *string `json:"fqdn,omitempty"`
+	SEPPId   *int32    `json:"sEPPId,omitempty"`
+	Fqdn     *string   `json:"fqdn,omitempty"`
 	SeppInfo *SeppInfo `json:"seppInfo,omitempty"`
 }
 
@@ -204,7 +204,7 @@ func (o *SeppFunctionSingleAllOfAttributesAllOf) SetSeppInfo(v SeppInfo) {
 }
 
 func (o SeppFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,5 +266,3 @@ func (v *NullableSeppFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

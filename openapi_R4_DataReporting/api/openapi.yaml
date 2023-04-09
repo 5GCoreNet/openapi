@@ -30,6 +30,7 @@ components:
       required:
       - timestamp
       type: object
+      x-parent: true
     EndpointAddress:
       properties:
         ipv4Addr:
@@ -60,7 +61,11 @@ components:
       type: integer
     CacheStatus:
       anyOf:
-      - $ref: '#/components/schemas/CacheStatus_anyOf'
+      - enum:
+        - HIT
+        - MISS
+        - EXPIRED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -207,11 +212,4 @@ components:
       - requestMessage
       - responseMessage
       type: object
-      example: null
-    CacheStatus_anyOf:
-      enum:
-      - HIT
-      - MISS
-      - EXPIRED
-      type: string
       example: null

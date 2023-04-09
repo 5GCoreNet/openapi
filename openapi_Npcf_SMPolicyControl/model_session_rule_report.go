@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &SessionRuleReport{}
 // SessionRuleReport Represents reporting of the status of a session rule.
 type SessionRuleReport struct {
 	// Contains the identifier of the affected session rule(s).
-	RuleIds []string `json:"ruleIds"`
-	RuleStatus RuleStatus `json:"ruleStatus"`
+	RuleIds             []string                `json:"ruleIds"`
+	RuleStatus          RuleStatus              `json:"ruleStatus"`
 	SessRuleFailureCode *SessionRuleFailureCode `json:"sessRuleFailureCode,omitempty"`
 	// Contains the type(s) of failed policy decision and/or condition data.
 	PolicyDecFailureReports []PolicyDecisionFailureCode `json:"policyDecFailureReports,omitempty"`
@@ -96,7 +96,7 @@ func (o *SessionRuleReport) SetRuleStatus(v RuleStatus) {
 
 // GetSessRuleFailureCode returns the SessRuleFailureCode field value if set, zero value otherwise.
 func (o *SessionRuleReport) GetSessRuleFailureCode() SessionRuleFailureCode {
-	if o == nil || isNil(o.SessRuleFailureCode) {
+	if o == nil || IsNil(o.SessRuleFailureCode) {
 		var ret SessionRuleFailureCode
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SessionRuleReport) GetSessRuleFailureCode() SessionRuleFailureCode {
 // GetSessRuleFailureCodeOk returns a tuple with the SessRuleFailureCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionRuleReport) GetSessRuleFailureCodeOk() (*SessionRuleFailureCode, bool) {
-	if o == nil || isNil(o.SessRuleFailureCode) {
+	if o == nil || IsNil(o.SessRuleFailureCode) {
 		return nil, false
 	}
 	return o.SessRuleFailureCode, true
@@ -114,7 +114,7 @@ func (o *SessionRuleReport) GetSessRuleFailureCodeOk() (*SessionRuleFailureCode,
 
 // HasSessRuleFailureCode returns a boolean if a field has been set.
 func (o *SessionRuleReport) HasSessRuleFailureCode() bool {
-	if o != nil && !isNil(o.SessRuleFailureCode) {
+	if o != nil && !IsNil(o.SessRuleFailureCode) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *SessionRuleReport) SetSessRuleFailureCode(v SessionRuleFailureCode) {
 
 // GetPolicyDecFailureReports returns the PolicyDecFailureReports field value if set, zero value otherwise.
 func (o *SessionRuleReport) GetPolicyDecFailureReports() []PolicyDecisionFailureCode {
-	if o == nil || isNil(o.PolicyDecFailureReports) {
+	if o == nil || IsNil(o.PolicyDecFailureReports) {
 		var ret []PolicyDecisionFailureCode
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *SessionRuleReport) GetPolicyDecFailureReports() []PolicyDecisionFailure
 // GetPolicyDecFailureReportsOk returns a tuple with the PolicyDecFailureReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionRuleReport) GetPolicyDecFailureReportsOk() ([]PolicyDecisionFailureCode, bool) {
-	if o == nil || isNil(o.PolicyDecFailureReports) {
+	if o == nil || IsNil(o.PolicyDecFailureReports) {
 		return nil, false
 	}
 	return o.PolicyDecFailureReports, true
@@ -146,7 +146,7 @@ func (o *SessionRuleReport) GetPolicyDecFailureReportsOk() ([]PolicyDecisionFail
 
 // HasPolicyDecFailureReports returns a boolean if a field has been set.
 func (o *SessionRuleReport) HasPolicyDecFailureReports() bool {
-	if o != nil && !isNil(o.PolicyDecFailureReports) {
+	if o != nil && !IsNil(o.PolicyDecFailureReports) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *SessionRuleReport) SetPolicyDecFailureReports(v []PolicyDecisionFailure
 }
 
 func (o SessionRuleReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o SessionRuleReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ruleIds"] = o.RuleIds
 	toSerialize["ruleStatus"] = o.RuleStatus
-	if !isNil(o.SessRuleFailureCode) {
+	if !IsNil(o.SessRuleFailureCode) {
 		toSerialize["sessRuleFailureCode"] = o.SessRuleFailureCode
 	}
-	if !isNil(o.PolicyDecFailureReports) {
+	if !IsNil(o.PolicyDecFailureReports) {
 		toSerialize["policyDecFailureReports"] = o.PolicyDecFailureReports
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableSessionRuleReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

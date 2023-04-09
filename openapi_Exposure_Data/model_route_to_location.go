@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for structured data for exposure
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// RouteToLocation At least one of the \"routeInfo\" attribute and the \"routeProfId\" attribute shall be included in the \"RouteToLocation\" data type. 
+// RouteToLocation At least one of the \"routeInfo\" attribute and the \"routeProfId\" attribute shall be included in the \"RouteToLocation\" data type.
 type RouteToLocation struct {
 	Interface *interface{}
 }
@@ -29,7 +29,7 @@ func (dst *RouteToLocation) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -88,5 +88,3 @@ func (v *NullableRouteToLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

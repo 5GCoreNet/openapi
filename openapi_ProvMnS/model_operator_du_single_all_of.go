@@ -19,8 +19,8 @@ var _ MappedNullable = &OperatorDuSingleAllOf{}
 
 // OperatorDuSingleAllOf struct for OperatorDuSingleAllOf
 type OperatorDuSingleAllOf struct {
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
+	GnbId       *string `json:"gnbId,omitempty"`
+	GnbIdLength *int32  `json:"gnbIdLength,omitempty"`
 }
 
 // NewOperatorDuSingleAllOf instantiates a new OperatorDuSingleAllOf object
@@ -42,7 +42,7 @@ func NewOperatorDuSingleAllOfWithDefaults() *OperatorDuSingleAllOf {
 
 // GetGnbId returns the GnbId field value if set, zero value otherwise.
 func (o *OperatorDuSingleAllOf) GetGnbId() string {
-	if o == nil || isNil(o.GnbId) {
+	if o == nil || IsNil(o.GnbId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *OperatorDuSingleAllOf) GetGnbId() string {
 // GetGnbIdOk returns a tuple with the GnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingleAllOf) GetGnbIdOk() (*string, bool) {
-	if o == nil || isNil(o.GnbId) {
+	if o == nil || IsNil(o.GnbId) {
 		return nil, false
 	}
 	return o.GnbId, true
@@ -60,7 +60,7 @@ func (o *OperatorDuSingleAllOf) GetGnbIdOk() (*string, bool) {
 
 // HasGnbId returns a boolean if a field has been set.
 func (o *OperatorDuSingleAllOf) HasGnbId() bool {
-	if o != nil && !isNil(o.GnbId) {
+	if o != nil && !IsNil(o.GnbId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *OperatorDuSingleAllOf) SetGnbId(v string) {
 
 // GetGnbIdLength returns the GnbIdLength field value if set, zero value otherwise.
 func (o *OperatorDuSingleAllOf) GetGnbIdLength() int32 {
-	if o == nil || isNil(o.GnbIdLength) {
+	if o == nil || IsNil(o.GnbIdLength) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *OperatorDuSingleAllOf) GetGnbIdLength() int32 {
 // GetGnbIdLengthOk returns a tuple with the GnbIdLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingleAllOf) GetGnbIdLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.GnbIdLength) {
+	if o == nil || IsNil(o.GnbIdLength) {
 		return nil, false
 	}
 	return o.GnbIdLength, true
@@ -92,7 +92,7 @@ func (o *OperatorDuSingleAllOf) GetGnbIdLengthOk() (*int32, bool) {
 
 // HasGnbIdLength returns a boolean if a field has been set.
 func (o *OperatorDuSingleAllOf) HasGnbIdLength() bool {
-	if o != nil && !isNil(o.GnbIdLength) {
+	if o != nil && !IsNil(o.GnbIdLength) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *OperatorDuSingleAllOf) SetGnbIdLength(v int32) {
 }
 
 func (o OperatorDuSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o OperatorDuSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o OperatorDuSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GnbId) {
+	if !IsNil(o.GnbId) {
 		toSerialize["gnbId"] = o.GnbId
 	}
-	if !isNil(o.GnbIdLength) {
+	if !IsNil(o.GnbIdLength) {
 		toSerialize["gnbIdLength"] = o.GnbIdLength
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableOperatorDuSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

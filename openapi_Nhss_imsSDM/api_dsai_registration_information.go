@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DSAIRegistrationInformationApiService DSAIRegistrationInformationApi service
 type DSAIRegistrationInformationApiService service
 
 type ApiGetDsaiInfoRequest struct {
-	ctx context.Context
-	ApiService *DSAIRegistrationInformationApiService
-	imsUeId string
+	ctx                   context.Context
+	ApiService            *DSAIRegistrationInformationApiService
+	imsUeId               string
 	applicationServerName *string
-	dsaiTag *string
-	supportedFeatures *string
+	dsaiTag               *string
+	supportedFeatures     *string
 }
 
 // SIP URI of the Application Server Name
@@ -57,26 +56,27 @@ func (r ApiGetDsaiInfoRequest) Execute() (*DsaiTagInformation, *http.Response, e
 /*
 GetDsaiInfo Retrieve the DSAI information associated to an Application Server
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imsUeId IMS Identity
- @return ApiGetDsaiInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imsUeId IMS Identity
+	@return ApiGetDsaiInfoRequest
 */
 func (a *DSAIRegistrationInformationApiService) GetDsaiInfo(ctx context.Context, imsUeId string) ApiGetDsaiInfoRequest {
 	return ApiGetDsaiInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		imsUeId: imsUeId,
+		ctx:        ctx,
+		imsUeId:    imsUeId,
 	}
 }
 
 // Execute executes the request
-//  @return DsaiTagInformation
+//
+//	@return DsaiTagInformation
 func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiInfoRequest) (*DsaiTagInformation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DsaiTagInformation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DsaiTagInformation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DSAIRegistrationInformationApiService.GetDsaiInfo")
@@ -94,12 +94,12 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 		return localVarReturnValue, nil, reportError("applicationServerName is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "application-server-name", r.applicationServerName, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "application-server-name", r.applicationServerName, "")
 	if r.dsaiTag != nil {
-		parameterAddToQuery(localVarQueryParams, "dsai-tag", r.dsaiTag, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dsai-tag", r.dsaiTag, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -128,9 +128,9 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -147,8 +147,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -158,8 +158,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -169,8 +169,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -180,8 +180,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -191,8 +191,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -202,8 +202,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -213,8 +213,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -224,8 +224,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -235,8 +235,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -246,8 +246,8 @@ func (a *DSAIRegistrationInformationApiService) GetDsaiInfoExecute(r ApiGetDsaiI
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

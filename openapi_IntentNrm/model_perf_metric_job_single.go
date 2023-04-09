@@ -19,12 +19,9 @@ var _ MappedNullable = &PerfMetricJobSingle{}
 
 // PerfMetricJobSingle struct for PerfMetricJobSingle
 type PerfMetricJobSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
+	Top
 	Attributes *PerfMetricJobSingleAllOfAttributes `json:"attributes,omitempty"`
-	Files []FilesSingle `json:"Files,omitempty"`
+	Files      []FilesSingle                       `json:"Files,omitempty"`
 }
 
 // NewPerfMetricJobSingle instantiates a new PerfMetricJobSingle object
@@ -45,131 +42,9 @@ func NewPerfMetricJobSingleWithDefaults() *PerfMetricJobSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *PerfMetricJobSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PerfMetricJobSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *PerfMetricJobSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *PerfMetricJobSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PerfMetricJobSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *PerfMetricJobSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *PerfMetricJobSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *PerfMetricJobSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PerfMetricJobSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *PerfMetricJobSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *PerfMetricJobSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *PerfMetricJobSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PerfMetricJobSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *PerfMetricJobSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *PerfMetricJobSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *PerfMetricJobSingle) GetAttributes() PerfMetricJobSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret PerfMetricJobSingleAllOfAttributes
 		return ret
 	}
@@ -179,7 +54,7 @@ func (o *PerfMetricJobSingle) GetAttributes() PerfMetricJobSingleAllOfAttributes
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingle) GetAttributesOk() (*PerfMetricJobSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -187,7 +62,7 @@ func (o *PerfMetricJobSingle) GetAttributesOk() (*PerfMetricJobSingleAllOfAttrib
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PerfMetricJobSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -201,7 +76,7 @@ func (o *PerfMetricJobSingle) SetAttributes(v PerfMetricJobSingleAllOfAttributes
 
 // GetFiles returns the Files field value if set, zero value otherwise.
 func (o *PerfMetricJobSingle) GetFiles() []FilesSingle {
-	if o == nil || isNil(o.Files) {
+	if o == nil || IsNil(o.Files) {
 		var ret []FilesSingle
 		return ret
 	}
@@ -211,7 +86,7 @@ func (o *PerfMetricJobSingle) GetFiles() []FilesSingle {
 // GetFilesOk returns a tuple with the Files field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingle) GetFilesOk() ([]FilesSingle, bool) {
-	if o == nil || isNil(o.Files) {
+	if o == nil || IsNil(o.Files) {
 		return nil, false
 	}
 	return o.Files, true
@@ -219,7 +94,7 @@ func (o *PerfMetricJobSingle) GetFilesOk() ([]FilesSingle, bool) {
 
 // HasFiles returns a boolean if a field has been set.
 func (o *PerfMetricJobSingle) HasFiles() bool {
-	if o != nil && !isNil(o.Files) {
+	if o != nil && !IsNil(o.Files) {
 		return true
 	}
 
@@ -232,7 +107,7 @@ func (o *PerfMetricJobSingle) SetFiles(v []FilesSingle) {
 }
 
 func (o PerfMetricJobSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,20 +116,18 @@ func (o PerfMetricJobSingle) MarshalJSON() ([]byte, error) {
 
 func (o PerfMetricJobSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.Files) {
+	if !IsNil(o.Files) {
 		toSerialize["Files"] = o.Files
 	}
 	return toSerialize, nil
@@ -295,5 +168,3 @@ func (v *NullablePerfMetricJobSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

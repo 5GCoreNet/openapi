@@ -200,6 +200,7 @@ components:
       required:
       - id
       type: object
+      x-parent: true
     VsDataContainer-Multiple:
       items:
         $ref: '#/components/schemas/VsDataContainer-Single'
@@ -238,6 +239,7 @@ components:
             type: string
           type: array
       type: object
+      x-parent: true
     SupportedPerfMetricGroup:
       properties:
         performanceMetrics:
@@ -310,6 +312,7 @@ components:
         MnsRegistry:
           $ref: '#/components/schemas/MnsRegistry-Single'
       type: object
+      x-parent: true
     ManagementNode-Multiple:
       items:
         $ref: '#/components/schemas/ManagementNode-Single'
@@ -1844,6 +1847,7 @@ components:
             type: string
           type: array
       type: object
+      x-parent: true
     VnfParameter:
       properties:
         vnfInstanceId:
@@ -1902,6 +1906,7 @@ components:
             $ref: '#/components/schemas/TraceJob-Single'
           type: array
       type: object
+      x-parent: true
     ManagedNFService-Multiple:
       items:
         $ref: '#/components/schemas/ManagedNFService-Single'
@@ -2234,15 +2239,7 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - anyOf:
-        - enum:
-          - PROBABLE_CAUSE_001
-          - PROBABLE_CAUSE_002
-          - PROBABLE_CAUSE_003
-          - PROBABLE_CAUSE_004
-          - PROBABLE_CAUSE_005
-          type: string
-        - type: string
+      - $ref: '#/components/schemas/ProbableCause_oneOf'
       - type: integer
     SpecificProblem:
       oneOf:
@@ -2388,12 +2385,13 @@ components:
             $ref: '#/components/schemas/SubNetwork-Single'
           type: array
       type: object
-      example: null
+    SubNetwork_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/SubNetwork-Attr'
     SubNetwork_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/SubNetwork-Attr'
+          $ref: '#/components/schemas/SubNetwork_Single_allOf_attributes'
       type: object
       example: null
     SubNetwork_Single_allOf_1:
@@ -2432,79 +2430,100 @@ components:
           type: array
       type: object
       example: null
+    EASFunction_Single_allOf_attributes_allOf:
+      properties:
+        eASIdentifier:
+          type: string
+        eESAddress:
+          items:
+            type: string
+          type: array
+        eASRequirementsRef:
+          type: string
+        eASAddress:
+          items:
+            type: string
+          type: array
+        registrationInfo:
+          $ref: '#/components/schemas/RegistrationInfo'
+      type: object
+    EASFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/EASFunction_Single_allOf_attributes_allOf'
     EASFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              eASIdentifier:
-                type: string
-              eESAddress:
-                items:
-                  type: string
-                type: array
-              eASRequirementsRef:
-                $ref: '#/components/schemas/Dn'
-              eASAddress:
-                items:
-                  type: string
-                type: array
-              registrationInfo:
-                $ref: '#/components/schemas/RegistrationInfo'
-            type: object
+          $ref: '#/components/schemas/EASFunction_Single_allOf_attributes'
       type: object
       example: null
+    EESFunction_Single_allOf_attributes_allOf:
+      properties:
+        eESIdentifier:
+          type: string
+        eESServingLocation:
+          items:
+            $ref: '#/components/schemas/ServingLocation'
+          type: array
+        eESAddress:
+          items:
+            type: string
+          type: array
+        softwareImageInfo:
+          $ref: '#/components/schemas/SoftwareImageInfo'
+        serviceContinuitySupport:
+          type: boolean
+        eASFunctonRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        registrationInfo:
+          $ref: '#/components/schemas/RegistrationInfo'
+      type: object
+    EESFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/EESFunction_Single_allOf_attributes_allOf'
     EESFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              eESIdentifier:
-                type: string
-              eESServingLocation:
-                items:
-                  $ref: '#/components/schemas/ServingLocation'
-                type: array
-              eESAddress:
-                items:
-                  type: string
-                type: array
-              softwareImageInfo:
-                $ref: '#/components/schemas/SoftwareImageInfo'
-              serviceContinuitySupport:
-                type: boolean
-              eASFunctonRef:
-                $ref: '#/components/schemas/DnList'
-              registrationInfo:
-                $ref: '#/components/schemas/RegistrationInfo'
-            type: object
+          $ref: '#/components/schemas/EESFunction_Single_allOf_attributes'
       type: object
       example: null
+    ECSFunction_Single_allOf_attributes_allOf:
+      properties:
+        eCSAddress:
+          type: string
+        providerIdentifier:
+          type: string
+        edgeDataNetworkRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        eESFuncitonRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        softwareImageInfo:
+          $ref: '#/components/schemas/SoftwareImageInfo'
+        trackingAreaIdList:
+          items:
+            $ref: '#/components/schemas/Tai'
+          type: array
+        geographicalLocation:
+          $ref: '#/components/schemas/GeoLoc'
+        mcc:
+          pattern: "^[0-9]{3}$"
+          type: string
+      type: object
+    ECSFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ECSFunction_Single_allOf_attributes_allOf'
     ECSFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              eCSAddress:
-                type: string
-              providerIdentifier:
-                type: string
-              edgeDataNetworkRef:
-                $ref: '#/components/schemas/DnList'
-              eESFuncitonRef:
-                $ref: '#/components/schemas/DnList'
-              softwareImageInfo:
-                $ref: '#/components/schemas/SoftwareImageInfo'
-              trackingAreaIdList:
-                $ref: '#/components/schemas/TaiList'
-              geographicalLocation:
-                $ref: '#/components/schemas/GeoLoc'
-              mcc:
-                $ref: '#/components/schemas/Mcc'
-            type: object
+          $ref: '#/components/schemas/ECSFunction_Single_allOf_attributes'
       type: object
       example: null
     EASRequirements_allOf:
@@ -2624,7 +2643,6 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
-      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -2632,13 +2650,11 @@ components:
         fileLocation:
           type: string
       type: object
-      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
-      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -2942,15 +2958,23 @@ components:
           $ref: '#/components/schemas/ManagedNFService_Single_allOf_attributes'
       type: object
       example: null
+    ProbableCause_oneOf:
+      anyOf:
+      - enum:
+        - PROBABLE_CAUSE_001
+        - PROBABLE_CAUSE_002
+        - PROBABLE_CAUSE_003
+        - PROBABLE_CAUSE_004
+        - PROBABLE_CAUSE_005
+        type: string
+      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null

@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,19 +13,18 @@ package openapi_Nnrf_NFDiscovery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService IndividualSCPDomainRoutingInformationSubscriptionDocumentApi service
 type IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService service
 
 type ApiScpDomainRoutingInfoUnsubscribeRequest struct {
-	ctx context.Context
-	ApiService *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService
 	subscriptionID string
 }
 
@@ -36,14 +35,14 @@ func (r ApiScpDomainRoutingInfoUnsubscribeRequest) Execute() (*http.Response, er
 /*
 ScpDomainRoutingInfoUnsubscribe Deletes a subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionID Unique ID of the subscription to remove
- @return ApiScpDomainRoutingInfoUnsubscribeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionID Unique ID of the subscription to remove
+	@return ApiScpDomainRoutingInfoUnsubscribeRequest
 */
 func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) ScpDomainRoutingInfoUnsubscribe(ctx context.Context, subscriptionID string) ApiScpDomainRoutingInfoUnsubscribeRequest {
 	return ApiScpDomainRoutingInfoUnsubscribeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionID: subscriptionID,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 // Execute executes the request
 func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) ScpDomainRoutingInfoUnsubscribeExecute(r ApiScpDomainRoutingInfoUnsubscribeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService.ScpDomainRoutingInfoUnsubscribe")
@@ -95,9 +94,9 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -158,8 +157,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -169,8 +168,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -180,8 +179,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -191,8 +190,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -202,8 +201,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -213,8 +212,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -224,8 +223,8 @@ func (a *IndividualSCPDomainRoutingInformationSubscriptionDocumentApiService) Sc
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

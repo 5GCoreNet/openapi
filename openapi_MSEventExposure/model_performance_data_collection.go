@@ -1,7 +1,7 @@
 /*
 3gpp-ms-event-exposure
 
-API for Media Streaming Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Media Streaming Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -21,13 +21,13 @@ var _ MappedNullable = &PerformanceDataCollection{}
 // PerformanceDataCollection Contains Performance Data Analytics related information collection.
 type PerformanceDataCollection struct {
 	// String providing an application identifier.
-	AppId *string `json:"appId,omitempty"`
-	UeIpAddr *IpAddr `json:"ueIpAddr,omitempty"`
-	IpTrafficFilter *FlowInfo `json:"ipTrafficFilter,omitempty"`
-	UeLoc *LocationArea5G `json:"ueLoc,omitempty"`
-	AppLocs []string `json:"appLocs,omitempty"`
-	AsAddr *AddrFqdn `json:"asAddr,omitempty"`
-	PerfData PerformanceData `json:"perfData"`
+	AppId           *string         `json:"appId,omitempty"`
+	UeIpAddr        *IpAddr         `json:"ueIpAddr,omitempty"`
+	IpTrafficFilter *FlowInfo       `json:"ipTrafficFilter,omitempty"`
+	UeLoc           *LocationArea5G `json:"ueLoc,omitempty"`
+	AppLocs         []string        `json:"appLocs,omitempty"`
+	AsAddr          *AddrFqdn       `json:"asAddr,omitempty"`
+	PerfData        PerformanceData `json:"perfData"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeStamp time.Time `json:"timeStamp"`
 }
@@ -53,7 +53,7 @@ func NewPerformanceDataCollectionWithDefaults() *PerformanceDataCollection {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *PerformanceDataCollection) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *PerformanceDataCollection) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataCollection) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -71,7 +71,7 @@ func (o *PerformanceDataCollection) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *PerformanceDataCollection) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *PerformanceDataCollection) SetAppId(v string) {
 
 // GetUeIpAddr returns the UeIpAddr field value if set, zero value otherwise.
 func (o *PerformanceDataCollection) GetUeIpAddr() IpAddr {
-	if o == nil || isNil(o.UeIpAddr) {
+	if o == nil || IsNil(o.UeIpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *PerformanceDataCollection) GetUeIpAddr() IpAddr {
 // GetUeIpAddrOk returns a tuple with the UeIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataCollection) GetUeIpAddrOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.UeIpAddr) {
+	if o == nil || IsNil(o.UeIpAddr) {
 		return nil, false
 	}
 	return o.UeIpAddr, true
@@ -103,7 +103,7 @@ func (o *PerformanceDataCollection) GetUeIpAddrOk() (*IpAddr, bool) {
 
 // HasUeIpAddr returns a boolean if a field has been set.
 func (o *PerformanceDataCollection) HasUeIpAddr() bool {
-	if o != nil && !isNil(o.UeIpAddr) {
+	if o != nil && !IsNil(o.UeIpAddr) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *PerformanceDataCollection) SetUeIpAddr(v IpAddr) {
 
 // GetIpTrafficFilter returns the IpTrafficFilter field value if set, zero value otherwise.
 func (o *PerformanceDataCollection) GetIpTrafficFilter() FlowInfo {
-	if o == nil || isNil(o.IpTrafficFilter) {
+	if o == nil || IsNil(o.IpTrafficFilter) {
 		var ret FlowInfo
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *PerformanceDataCollection) GetIpTrafficFilter() FlowInfo {
 // GetIpTrafficFilterOk returns a tuple with the IpTrafficFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataCollection) GetIpTrafficFilterOk() (*FlowInfo, bool) {
-	if o == nil || isNil(o.IpTrafficFilter) {
+	if o == nil || IsNil(o.IpTrafficFilter) {
 		return nil, false
 	}
 	return o.IpTrafficFilter, true
@@ -135,7 +135,7 @@ func (o *PerformanceDataCollection) GetIpTrafficFilterOk() (*FlowInfo, bool) {
 
 // HasIpTrafficFilter returns a boolean if a field has been set.
 func (o *PerformanceDataCollection) HasIpTrafficFilter() bool {
-	if o != nil && !isNil(o.IpTrafficFilter) {
+	if o != nil && !IsNil(o.IpTrafficFilter) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *PerformanceDataCollection) SetIpTrafficFilter(v FlowInfo) {
 
 // GetUeLoc returns the UeLoc field value if set, zero value otherwise.
 func (o *PerformanceDataCollection) GetUeLoc() LocationArea5G {
-	if o == nil || isNil(o.UeLoc) {
+	if o == nil || IsNil(o.UeLoc) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *PerformanceDataCollection) GetUeLoc() LocationArea5G {
 // GetUeLocOk returns a tuple with the UeLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataCollection) GetUeLocOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.UeLoc) {
+	if o == nil || IsNil(o.UeLoc) {
 		return nil, false
 	}
 	return o.UeLoc, true
@@ -167,7 +167,7 @@ func (o *PerformanceDataCollection) GetUeLocOk() (*LocationArea5G, bool) {
 
 // HasUeLoc returns a boolean if a field has been set.
 func (o *PerformanceDataCollection) HasUeLoc() bool {
-	if o != nil && !isNil(o.UeLoc) {
+	if o != nil && !IsNil(o.UeLoc) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *PerformanceDataCollection) SetUeLoc(v LocationArea5G) {
 
 // GetAppLocs returns the AppLocs field value if set, zero value otherwise.
 func (o *PerformanceDataCollection) GetAppLocs() []string {
-	if o == nil || isNil(o.AppLocs) {
+	if o == nil || IsNil(o.AppLocs) {
 		var ret []string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *PerformanceDataCollection) GetAppLocs() []string {
 // GetAppLocsOk returns a tuple with the AppLocs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataCollection) GetAppLocsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppLocs) {
+	if o == nil || IsNil(o.AppLocs) {
 		return nil, false
 	}
 	return o.AppLocs, true
@@ -199,7 +199,7 @@ func (o *PerformanceDataCollection) GetAppLocsOk() ([]string, bool) {
 
 // HasAppLocs returns a boolean if a field has been set.
 func (o *PerformanceDataCollection) HasAppLocs() bool {
-	if o != nil && !isNil(o.AppLocs) {
+	if o != nil && !IsNil(o.AppLocs) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *PerformanceDataCollection) SetAppLocs(v []string) {
 
 // GetAsAddr returns the AsAddr field value if set, zero value otherwise.
 func (o *PerformanceDataCollection) GetAsAddr() AddrFqdn {
-	if o == nil || isNil(o.AsAddr) {
+	if o == nil || IsNil(o.AsAddr) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *PerformanceDataCollection) GetAsAddr() AddrFqdn {
 // GetAsAddrOk returns a tuple with the AsAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataCollection) GetAsAddrOk() (*AddrFqdn, bool) {
-	if o == nil || isNil(o.AsAddr) {
+	if o == nil || IsNil(o.AsAddr) {
 		return nil, false
 	}
 	return o.AsAddr, true
@@ -231,7 +231,7 @@ func (o *PerformanceDataCollection) GetAsAddrOk() (*AddrFqdn, bool) {
 
 // HasAsAddr returns a boolean if a field has been set.
 func (o *PerformanceDataCollection) HasAsAddr() bool {
-	if o != nil && !isNil(o.AsAddr) {
+	if o != nil && !IsNil(o.AsAddr) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *PerformanceDataCollection) SetTimeStamp(v time.Time) {
 }
 
 func (o PerformanceDataCollection) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -301,22 +301,22 @@ func (o PerformanceDataCollection) MarshalJSON() ([]byte, error) {
 
 func (o PerformanceDataCollection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.UeIpAddr) {
+	if !IsNil(o.UeIpAddr) {
 		toSerialize["ueIpAddr"] = o.UeIpAddr
 	}
-	if !isNil(o.IpTrafficFilter) {
+	if !IsNil(o.IpTrafficFilter) {
 		toSerialize["ipTrafficFilter"] = o.IpTrafficFilter
 	}
-	if !isNil(o.UeLoc) {
+	if !IsNil(o.UeLoc) {
 		toSerialize["ueLoc"] = o.UeLoc
 	}
-	if !isNil(o.AppLocs) {
+	if !IsNil(o.AppLocs) {
 		toSerialize["appLocs"] = o.AppLocs
 	}
-	if !isNil(o.AsAddr) {
+	if !IsNil(o.AsAddr) {
 		toSerialize["asAddr"] = o.AsAddr
 	}
 	toSerialize["perfData"] = o.PerfData
@@ -359,5 +359,3 @@ func (v *NullablePerformanceDataCollection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

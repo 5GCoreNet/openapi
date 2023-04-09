@@ -19,15 +19,15 @@ var _ MappedNullable = &GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf{}
 
 // GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf struct for GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf
 type GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf struct {
-	GtpUPathQoSMonitoringState *string `json:"gtpUPathQoSMonitoringState,omitempty"`
-	GtpUPathMonitoredSNSSAIs []Snssai `json:"gtpUPathMonitoredSNSSAIs,omitempty"`
-	MonitoredDSCPs []int32 `json:"monitoredDSCPs,omitempty"`
-	IsEventTriggeredGtpUPathMonitoringSupported *bool `json:"isEventTriggeredGtpUPathMonitoringSupported,omitempty"`
-	IsPeriodicGtpUMonitoringSupported *bool `json:"isPeriodicGtpUMonitoringSupported,omitempty"`
-	IsImmediateGtpUMonitoringSupported *bool `json:"isImmediateGtpUMonitoringSupported,omitempty"`
-	GtpUPathDelayThresholds *GtpUPathDelayThresholdsType `json:"gtpUPathDelayThresholds,omitempty"`
-	GtpUPathMinimumWaitTime *int32 `json:"gtpUPathMinimumWaitTime,omitempty"`
-	GtpUPathMeasurementPeriod *int32 `json:"gtpUPathMeasurementPeriod,omitempty"`
+	GtpUPathQoSMonitoringState                  *string                      `json:"gtpUPathQoSMonitoringState,omitempty"`
+	GtpUPathMonitoredSNSSAIs                    []Snssai                     `json:"gtpUPathMonitoredSNSSAIs,omitempty"`
+	MonitoredDSCPs                              []int32                      `json:"monitoredDSCPs,omitempty"`
+	IsEventTriggeredGtpUPathMonitoringSupported *bool                        `json:"isEventTriggeredGtpUPathMonitoringSupported,omitempty"`
+	IsPeriodicGtpUMonitoringSupported           *bool                        `json:"isPeriodicGtpUMonitoringSupported,omitempty"`
+	IsImmediateGtpUMonitoringSupported          *bool                        `json:"isImmediateGtpUMonitoringSupported,omitempty"`
+	GtpUPathDelayThresholds                     *GtpUPathDelayThresholdsType `json:"gtpUPathDelayThresholds,omitempty"`
+	GtpUPathMinimumWaitTime                     *int32                       `json:"gtpUPathMinimumWaitTime,omitempty"`
+	GtpUPathMeasurementPeriod                   *int32                       `json:"gtpUPathMeasurementPeriod,omitempty"`
 }
 
 // NewGtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf instantiates a new GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf object
@@ -336,7 +336,7 @@ func (o *GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf) SetGtpUPathMeas
 }
 
 func (o GtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -410,5 +410,3 @@ func (v *NullableGtpUPathQoSMonitoringControlSingleAllOfAttributesAllOf) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

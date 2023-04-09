@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &RecipientAddress{}
 
 // RecipientAddress struct for RecipientAddress
 type RecipientAddress struct {
-	RecipientAddressInfo *SMAddressInfo `json:"recipientAddressInfo,omitempty"`
-	SMaddresseeType *SMAddresseeType `json:"sMaddresseeType,omitempty"`
+	RecipientAddressInfo *SMAddressInfo   `json:"recipientAddressInfo,omitempty"`
+	SMaddresseeType      *SMAddresseeType `json:"sMaddresseeType,omitempty"`
 }
 
 // NewRecipientAddress instantiates a new RecipientAddress object
@@ -42,7 +42,7 @@ func NewRecipientAddressWithDefaults() *RecipientAddress {
 
 // GetRecipientAddressInfo returns the RecipientAddressInfo field value if set, zero value otherwise.
 func (o *RecipientAddress) GetRecipientAddressInfo() SMAddressInfo {
-	if o == nil || isNil(o.RecipientAddressInfo) {
+	if o == nil || IsNil(o.RecipientAddressInfo) {
 		var ret SMAddressInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RecipientAddress) GetRecipientAddressInfo() SMAddressInfo {
 // GetRecipientAddressInfoOk returns a tuple with the RecipientAddressInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipientAddress) GetRecipientAddressInfoOk() (*SMAddressInfo, bool) {
-	if o == nil || isNil(o.RecipientAddressInfo) {
+	if o == nil || IsNil(o.RecipientAddressInfo) {
 		return nil, false
 	}
 	return o.RecipientAddressInfo, true
@@ -60,7 +60,7 @@ func (o *RecipientAddress) GetRecipientAddressInfoOk() (*SMAddressInfo, bool) {
 
 // HasRecipientAddressInfo returns a boolean if a field has been set.
 func (o *RecipientAddress) HasRecipientAddressInfo() bool {
-	if o != nil && !isNil(o.RecipientAddressInfo) {
+	if o != nil && !IsNil(o.RecipientAddressInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RecipientAddress) SetRecipientAddressInfo(v SMAddressInfo) {
 
 // GetSMaddresseeType returns the SMaddresseeType field value if set, zero value otherwise.
 func (o *RecipientAddress) GetSMaddresseeType() SMAddresseeType {
-	if o == nil || isNil(o.SMaddresseeType) {
+	if o == nil || IsNil(o.SMaddresseeType) {
 		var ret SMAddresseeType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RecipientAddress) GetSMaddresseeType() SMAddresseeType {
 // GetSMaddresseeTypeOk returns a tuple with the SMaddresseeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipientAddress) GetSMaddresseeTypeOk() (*SMAddresseeType, bool) {
-	if o == nil || isNil(o.SMaddresseeType) {
+	if o == nil || IsNil(o.SMaddresseeType) {
 		return nil, false
 	}
 	return o.SMaddresseeType, true
@@ -92,7 +92,7 @@ func (o *RecipientAddress) GetSMaddresseeTypeOk() (*SMAddresseeType, bool) {
 
 // HasSMaddresseeType returns a boolean if a field has been set.
 func (o *RecipientAddress) HasSMaddresseeType() bool {
-	if o != nil && !isNil(o.SMaddresseeType) {
+	if o != nil && !IsNil(o.SMaddresseeType) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RecipientAddress) SetSMaddresseeType(v SMAddresseeType) {
 }
 
 func (o RecipientAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RecipientAddress) MarshalJSON() ([]byte, error) {
 
 func (o RecipientAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RecipientAddressInfo) {
+	if !IsNil(o.RecipientAddressInfo) {
 		toSerialize["recipientAddressInfo"] = o.RecipientAddressInfo
 	}
-	if !isNil(o.SMaddresseeType) {
+	if !IsNil(o.SMaddresseeType) {
 		toSerialize["sMaddresseeType"] = o.SMaddresseeType
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRecipientAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

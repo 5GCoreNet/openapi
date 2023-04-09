@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // EventExposureSubscriptionDocumentApiService EventExposureSubscriptionDocumentApi service
 type EventExposureSubscriptionDocumentApiService service
 
 type ApiModifyEesubscriptionRequest struct {
-	ctx context.Context
-	ApiService *EventExposureSubscriptionDocumentApiService
-	ueId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *EventExposureSubscriptionDocumentApiService
+	ueId              string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -50,28 +49,29 @@ func (r ApiModifyEesubscriptionRequest) Execute() (*PatchResult, *http.Response,
 /*
 ModifyEesubscription Modify an individual ee subscription of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param subsId
- @return ApiModifyEesubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param subsId
+	@return ApiModifyEesubscriptionRequest
 */
 func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscription(ctx context.Context, ueId string, subsId string) ApiModifyEesubscriptionRequest {
 	return ApiModifyEesubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscriptionExecute(r ApiModifyEesubscriptionRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureSubscriptionDocumentApiService.ModifyEesubscription")
@@ -94,7 +94,7 @@ func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscriptionExecut
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -125,9 +125,9 @@ func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscriptionExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -144,8 +144,8 @@ func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscriptionExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +155,8 @@ func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscriptionExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -175,10 +175,10 @@ func (a *EventExposureSubscriptionDocumentApiService) ModifyEesubscriptionExecut
 }
 
 type ApiQueryeeSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventExposureSubscriptionDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiQueryeeSubscriptionRequest) Execute() ([]EeSubscription, *http.Response, error) {
@@ -188,28 +188,29 @@ func (r ApiQueryeeSubscriptionRequest) Execute() ([]EeSubscription, *http.Respon
 /*
 QueryeeSubscription Retrieve a eeSubscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId Unique ID of the subscription to remove
- @return ApiQueryeeSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId Unique ID of the subscription to remove
+	@return ApiQueryeeSubscriptionRequest
 */
 func (a *EventExposureSubscriptionDocumentApiService) QueryeeSubscription(ctx context.Context, ueId string, subsId string) ApiQueryeeSubscriptionRequest {
 	return ApiQueryeeSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return []EeSubscription
+//
+//	@return []EeSubscription
 func (a *EventExposureSubscriptionDocumentApiService) QueryeeSubscriptionExecute(r ApiQueryeeSubscriptionRequest) ([]EeSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []EeSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EeSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureSubscriptionDocumentApiService.QueryeeSubscription")
@@ -252,9 +253,9 @@ func (a *EventExposureSubscriptionDocumentApiService) QueryeeSubscriptionExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -280,10 +281,10 @@ func (a *EventExposureSubscriptionDocumentApiService) QueryeeSubscriptionExecute
 }
 
 type ApiRemoveeeSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventExposureSubscriptionDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiRemoveeeSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -293,26 +294,26 @@ func (r ApiRemoveeeSubscriptionsRequest) Execute() (*http.Response, error) {
 /*
 RemoveeeSubscriptions Deletes a eeSubscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId Unique ID of the subscription to remove
- @return ApiRemoveeeSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId Unique ID of the subscription to remove
+	@return ApiRemoveeeSubscriptionsRequest
 */
 func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptions(ctx context.Context, ueId string, subsId string) ApiRemoveeeSubscriptionsRequest {
 	return ApiRemoveeeSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptionsExecute(r ApiRemoveeeSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureSubscriptionDocumentApiService.RemoveeeSubscriptions")
@@ -355,9 +356,9 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptionsExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -374,10 +375,10 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptionsExecu
 }
 
 type ApiUpdateEesubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *EventExposureSubscriptionDocumentApiService
-	ueId string
-	subsId string
+	ctx            context.Context
+	ApiService     *EventExposureSubscriptionDocumentApiService
+	ueId           string
+	subsId         string
 	eeSubscription *EeSubscription
 }
 
@@ -393,26 +394,26 @@ func (r ApiUpdateEesubscriptionsRequest) Execute() (*http.Response, error) {
 /*
 UpdateEesubscriptions Update an individual ee subscriptions of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiUpdateEesubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiUpdateEesubscriptionsRequest
 */
 func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptions(ctx context.Context, ueId string, subsId string) ApiUpdateEesubscriptionsRequest {
 	return ApiUpdateEesubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptionsExecute(r ApiUpdateEesubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureSubscriptionDocumentApiService.UpdateEesubscriptions")
@@ -460,9 +461,9 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptionsExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -479,8 +480,8 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptionsExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

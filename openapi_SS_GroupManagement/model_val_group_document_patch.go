@@ -1,7 +1,7 @@
 /*
 SS_GroupManagement
 
-API for SEAL Group management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Group management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -26,11 +26,11 @@ type VALGroupDocumentPatch struct {
 	// Configuration data for the VAL group.
 	ValGrpConf *string `json:"valGrpConf,omitempty"`
 	// The list of VAL services enabled on the group.
-	ValServiceIds []string `json:"valServiceIds,omitempty"`
-	LocInfo *LocationInfo `json:"locInfo,omitempty"`
-	AddLocInfo *LocationArea5G `json:"addLocInfo,omitempty"`
+	ValServiceIds []string        `json:"valServiceIds,omitempty"`
+	LocInfo       *LocationInfo   `json:"locInfo,omitempty"`
+	AddLocInfo    *LocationArea5G `json:"addLocInfo,omitempty"`
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
-	ExtGrpId *string `json:"extGrpId,omitempty"`
+	ExtGrpId     *string         `json:"extGrpId,omitempty"`
 	Com5GLanType *PduSessionType `json:"com5GLanType,omitempty"`
 }
 
@@ -53,7 +53,7 @@ func NewVALGroupDocumentPatchWithDefaults() *VALGroupDocumentPatch {
 
 // GetGrpDesc returns the GrpDesc field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetGrpDesc() string {
-	if o == nil || isNil(o.GrpDesc) {
+	if o == nil || IsNil(o.GrpDesc) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *VALGroupDocumentPatch) GetGrpDesc() string {
 // GetGrpDescOk returns a tuple with the GrpDesc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetGrpDescOk() (*string, bool) {
-	if o == nil || isNil(o.GrpDesc) {
+	if o == nil || IsNil(o.GrpDesc) {
 		return nil, false
 	}
 	return o.GrpDesc, true
@@ -71,7 +71,7 @@ func (o *VALGroupDocumentPatch) GetGrpDescOk() (*string, bool) {
 
 // HasGrpDesc returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasGrpDesc() bool {
-	if o != nil && !isNil(o.GrpDesc) {
+	if o != nil && !IsNil(o.GrpDesc) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *VALGroupDocumentPatch) SetGrpDesc(v string) {
 
 // GetMembers returns the Members field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetMembers() []ValTargetUe {
-	if o == nil || isNil(o.Members) {
+	if o == nil || IsNil(o.Members) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *VALGroupDocumentPatch) GetMembers() []ValTargetUe {
 // GetMembersOk returns a tuple with the Members field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetMembersOk() ([]ValTargetUe, bool) {
-	if o == nil || isNil(o.Members) {
+	if o == nil || IsNil(o.Members) {
 		return nil, false
 	}
 	return o.Members, true
@@ -103,7 +103,7 @@ func (o *VALGroupDocumentPatch) GetMembersOk() ([]ValTargetUe, bool) {
 
 // HasMembers returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasMembers() bool {
-	if o != nil && !isNil(o.Members) {
+	if o != nil && !IsNil(o.Members) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *VALGroupDocumentPatch) SetMembers(v []ValTargetUe) {
 
 // GetValGrpConf returns the ValGrpConf field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetValGrpConf() string {
-	if o == nil || isNil(o.ValGrpConf) {
+	if o == nil || IsNil(o.ValGrpConf) {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *VALGroupDocumentPatch) GetValGrpConf() string {
 // GetValGrpConfOk returns a tuple with the ValGrpConf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetValGrpConfOk() (*string, bool) {
-	if o == nil || isNil(o.ValGrpConf) {
+	if o == nil || IsNil(o.ValGrpConf) {
 		return nil, false
 	}
 	return o.ValGrpConf, true
@@ -135,7 +135,7 @@ func (o *VALGroupDocumentPatch) GetValGrpConfOk() (*string, bool) {
 
 // HasValGrpConf returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasValGrpConf() bool {
-	if o != nil && !isNil(o.ValGrpConf) {
+	if o != nil && !IsNil(o.ValGrpConf) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *VALGroupDocumentPatch) SetValGrpConf(v string) {
 
 // GetValServiceIds returns the ValServiceIds field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetValServiceIds() []string {
-	if o == nil || isNil(o.ValServiceIds) {
+	if o == nil || IsNil(o.ValServiceIds) {
 		var ret []string
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *VALGroupDocumentPatch) GetValServiceIds() []string {
 // GetValServiceIdsOk returns a tuple with the ValServiceIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetValServiceIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ValServiceIds) {
+	if o == nil || IsNil(o.ValServiceIds) {
 		return nil, false
 	}
 	return o.ValServiceIds, true
@@ -167,7 +167,7 @@ func (o *VALGroupDocumentPatch) GetValServiceIdsOk() ([]string, bool) {
 
 // HasValServiceIds returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasValServiceIds() bool {
-	if o != nil && !isNil(o.ValServiceIds) {
+	if o != nil && !IsNil(o.ValServiceIds) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *VALGroupDocumentPatch) SetValServiceIds(v []string) {
 
 // GetLocInfo returns the LocInfo field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetLocInfo() LocationInfo {
-	if o == nil || isNil(o.LocInfo) {
+	if o == nil || IsNil(o.LocInfo) {
 		var ret LocationInfo
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *VALGroupDocumentPatch) GetLocInfo() LocationInfo {
 // GetLocInfoOk returns a tuple with the LocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetLocInfoOk() (*LocationInfo, bool) {
-	if o == nil || isNil(o.LocInfo) {
+	if o == nil || IsNil(o.LocInfo) {
 		return nil, false
 	}
 	return o.LocInfo, true
@@ -199,7 +199,7 @@ func (o *VALGroupDocumentPatch) GetLocInfoOk() (*LocationInfo, bool) {
 
 // HasLocInfo returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasLocInfo() bool {
-	if o != nil && !isNil(o.LocInfo) {
+	if o != nil && !IsNil(o.LocInfo) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *VALGroupDocumentPatch) SetLocInfo(v LocationInfo) {
 
 // GetAddLocInfo returns the AddLocInfo field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetAddLocInfo() LocationArea5G {
-	if o == nil || isNil(o.AddLocInfo) {
+	if o == nil || IsNil(o.AddLocInfo) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *VALGroupDocumentPatch) GetAddLocInfo() LocationArea5G {
 // GetAddLocInfoOk returns a tuple with the AddLocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetAddLocInfoOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.AddLocInfo) {
+	if o == nil || IsNil(o.AddLocInfo) {
 		return nil, false
 	}
 	return o.AddLocInfo, true
@@ -231,7 +231,7 @@ func (o *VALGroupDocumentPatch) GetAddLocInfoOk() (*LocationArea5G, bool) {
 
 // HasAddLocInfo returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasAddLocInfo() bool {
-	if o != nil && !isNil(o.AddLocInfo) {
+	if o != nil && !IsNil(o.AddLocInfo) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *VALGroupDocumentPatch) SetAddLocInfo(v LocationArea5G) {
 
 // GetExtGrpId returns the ExtGrpId field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetExtGrpId() string {
-	if o == nil || isNil(o.ExtGrpId) {
+	if o == nil || IsNil(o.ExtGrpId) {
 		var ret string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *VALGroupDocumentPatch) GetExtGrpId() string {
 // GetExtGrpIdOk returns a tuple with the ExtGrpId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetExtGrpIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGrpId) {
+	if o == nil || IsNil(o.ExtGrpId) {
 		return nil, false
 	}
 	return o.ExtGrpId, true
@@ -263,7 +263,7 @@ func (o *VALGroupDocumentPatch) GetExtGrpIdOk() (*string, bool) {
 
 // HasExtGrpId returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasExtGrpId() bool {
-	if o != nil && !isNil(o.ExtGrpId) {
+	if o != nil && !IsNil(o.ExtGrpId) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *VALGroupDocumentPatch) SetExtGrpId(v string) {
 
 // GetCom5GLanType returns the Com5GLanType field value if set, zero value otherwise.
 func (o *VALGroupDocumentPatch) GetCom5GLanType() PduSessionType {
-	if o == nil || isNil(o.Com5GLanType) {
+	if o == nil || IsNil(o.Com5GLanType) {
 		var ret PduSessionType
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *VALGroupDocumentPatch) GetCom5GLanType() PduSessionType {
 // GetCom5GLanTypeOk returns a tuple with the Com5GLanType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupDocumentPatch) GetCom5GLanTypeOk() (*PduSessionType, bool) {
-	if o == nil || isNil(o.Com5GLanType) {
+	if o == nil || IsNil(o.Com5GLanType) {
 		return nil, false
 	}
 	return o.Com5GLanType, true
@@ -295,7 +295,7 @@ func (o *VALGroupDocumentPatch) GetCom5GLanTypeOk() (*PduSessionType, bool) {
 
 // HasCom5GLanType returns a boolean if a field has been set.
 func (o *VALGroupDocumentPatch) HasCom5GLanType() bool {
-	if o != nil && !isNil(o.Com5GLanType) {
+	if o != nil && !IsNil(o.Com5GLanType) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *VALGroupDocumentPatch) SetCom5GLanType(v PduSessionType) {
 }
 
 func (o VALGroupDocumentPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -317,28 +317,28 @@ func (o VALGroupDocumentPatch) MarshalJSON() ([]byte, error) {
 
 func (o VALGroupDocumentPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GrpDesc) {
+	if !IsNil(o.GrpDesc) {
 		toSerialize["grpDesc"] = o.GrpDesc
 	}
-	if !isNil(o.Members) {
+	if !IsNil(o.Members) {
 		toSerialize["members"] = o.Members
 	}
-	if !isNil(o.ValGrpConf) {
+	if !IsNil(o.ValGrpConf) {
 		toSerialize["valGrpConf"] = o.ValGrpConf
 	}
-	if !isNil(o.ValServiceIds) {
+	if !IsNil(o.ValServiceIds) {
 		toSerialize["valServiceIds"] = o.ValServiceIds
 	}
-	if !isNil(o.LocInfo) {
+	if !IsNil(o.LocInfo) {
 		toSerialize["locInfo"] = o.LocInfo
 	}
-	if !isNil(o.AddLocInfo) {
+	if !IsNil(o.AddLocInfo) {
 		toSerialize["addLocInfo"] = o.AddLocInfo
 	}
-	if !isNil(o.ExtGrpId) {
+	if !IsNil(o.ExtGrpId) {
 		toSerialize["extGrpId"] = o.ExtGrpId
 	}
-	if !isNil(o.Com5GLanType) {
+	if !IsNil(o.Com5GLanType) {
 		toSerialize["com5GLanType"] = o.Com5GLanType
 	}
 	return toSerialize, nil
@@ -379,5 +379,3 @@ func (v *NullableVALGroupDocumentPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

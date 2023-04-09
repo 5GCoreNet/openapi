@@ -19,7 +19,7 @@ var _ MappedNullable = &LmfFunctionSingleAllOf{}
 
 // LmfFunctionSingleAllOf struct for LmfFunctionSingleAllOf
 type LmfFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *LmfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewLmfFunctionSingleAllOf instantiates a new LmfFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewLmfFunctionSingleAllOfWithDefaults() *LmfFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *LmfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *LmfFunctionSingleAllOf) GetAttributes() LmfFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret LmfFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *LmfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LmfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *LmfFunctionSingleAllOf) GetAttributesOk() (*LmfFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *LmfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) 
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *LmfFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *LmfFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given LmfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *LmfFunctionSingleAllOf) SetAttributes(v LmfFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o LmfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o LmfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o LmfFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableLmfFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

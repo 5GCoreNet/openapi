@@ -1,7 +1,7 @@
 /*
 Nnef_SMContext
 
-Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -21,10 +21,10 @@ var _ MappedNullable = &SmContextStatusNotification{}
 type SmContextStatusNotification struct {
 	Status SmContextStatus `json:"status"`
 	// String providing an URI formatted according to RFC 3986.
-	SmContextId string `json:"smContextId"`
-	Cause *ReleaseCause `json:"cause,omitempty"`
+	SmContextId         string               `json:"smContextId"`
+	Cause               *ReleaseCause        `json:"cause,omitempty"`
 	SmallDataRateStatus *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
-	ApnRateStatus *ApnRateStatus `json:"apnRateStatus,omitempty"`
+	ApnRateStatus       *ApnRateStatus       `json:"apnRateStatus,omitempty"`
 }
 
 // NewSmContextStatusNotification instantiates a new SmContextStatusNotification object
@@ -96,7 +96,7 @@ func (o *SmContextStatusNotification) SetSmContextId(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetCause() ReleaseCause {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret ReleaseCause
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SmContextStatusNotification) GetCause() ReleaseCause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetCauseOk() (*ReleaseCause, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -114,7 +114,7 @@ func (o *SmContextStatusNotification) GetCauseOk() (*ReleaseCause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *SmContextStatusNotification) SetCause(v ReleaseCause) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStat
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -146,7 +146,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRate
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasSmallDataRateStatus() bool {
-	if o != nil && !isNil(o.SmallDataRateStatus) {
+	if o != nil && !IsNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *SmContextStatusNotification) SetSmallDataRateStatus(v SmallDataRateStat
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -178,7 +178,7 @@ func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasApnRateStatus() bool {
-	if o != nil && !isNil(o.ApnRateStatus) {
+	if o != nil && !IsNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *SmContextStatusNotification) SetApnRateStatus(v ApnRateStatus) {
 }
 
 func (o SmContextStatusNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -202,13 +202,13 @@ func (o SmContextStatusNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["status"] = o.Status
 	toSerialize["smContextId"] = o.SmContextId
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !isNil(o.SmallDataRateStatus) {
+	if !IsNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !isNil(o.ApnRateStatus) {
+	if !IsNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
 	return toSerialize, nil
@@ -249,5 +249,3 @@ func (v *NullableSmContextStatusNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

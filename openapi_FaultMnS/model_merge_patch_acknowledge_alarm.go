@@ -19,9 +19,9 @@ var _ MappedNullable = &MergePatchAcknowledgeAlarm{}
 
 // MergePatchAcknowledgeAlarm Patch document acknowledging or unacknowledging a single alarm. For acknowleding an alarm the value of ackState is ACKNOWLEDGED, for unacknowleding an alarm the value of ackState is UNACKNOWLEDGED.
 type MergePatchAcknowledgeAlarm struct {
-	AckUserId string `json:"ackUserId"`
-	AckSystemId *string `json:"ackSystemId,omitempty"`
-	AckState AckState `json:"ackState"`
+	AckUserId   string   `json:"ackUserId"`
+	AckSystemId *string  `json:"ackSystemId,omitempty"`
+	AckState    AckState `json:"ackState"`
 }
 
 // NewMergePatchAcknowledgeAlarm instantiates a new MergePatchAcknowledgeAlarm object
@@ -69,7 +69,7 @@ func (o *MergePatchAcknowledgeAlarm) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *MergePatchAcknowledgeAlarm) GetAckSystemId() string {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MergePatchAcknowledgeAlarm) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MergePatchAcknowledgeAlarm) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -87,7 +87,7 @@ func (o *MergePatchAcknowledgeAlarm) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *MergePatchAcknowledgeAlarm) HasAckSystemId() bool {
-	if o != nil && !isNil(o.AckSystemId) {
+	if o != nil && !IsNil(o.AckSystemId) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *MergePatchAcknowledgeAlarm) SetAckState(v AckState) {
 }
 
 func (o MergePatchAcknowledgeAlarm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -134,7 +134,7 @@ func (o MergePatchAcknowledgeAlarm) MarshalJSON() ([]byte, error) {
 func (o MergePatchAcknowledgeAlarm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ackUserId"] = o.AckUserId
-	if !isNil(o.AckSystemId) {
+	if !IsNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
 	toSerialize["ackState"] = o.AckState
@@ -176,5 +176,3 @@ func (v *NullableMergePatchAcknowledgeAlarm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ServiceSpecificAuthorizationInfoDocumentApiService ServiceSpecificAuthorizationInfoDocumentApi service
 type ServiceSpecificAuthorizationInfoDocumentApiService service
 
 type ApiCreateServiceSpecificAuthorizationInfoRequest struct {
-	ctx context.Context
-	ApiService *ServiceSpecificAuthorizationInfoDocumentApiService
-	ueId string
-	serviceType ServiceType
+	ctx                              context.Context
+	ApiService                       *ServiceSpecificAuthorizationInfoDocumentApiService
+	ueId                             string
+	serviceType                      ServiceType
 	serviceSpecificAuthorizationInfo *ServiceSpecificAuthorizationInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateServiceSpecificAuthorizationInfoRequest) Execute() (*ServiceSpe
 /*
 CreateServiceSpecificAuthorizationInfo Create Service Specific Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param serviceType Service Type
- @return ApiCreateServiceSpecificAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param serviceType Service Type
+	@return ApiCreateServiceSpecificAuthorizationInfoRequest
 */
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) CreateServiceSpecificAuthorizationInfo(ctx context.Context, ueId string, serviceType ServiceType) ApiCreateServiceSpecificAuthorizationInfoRequest {
 	return ApiCreateServiceSpecificAuthorizationInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:  a,
+		ctx:         ctx,
+		ueId:        ueId,
 		serviceType: serviceType,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceSpecificAuthorizationInfo
+//
+//	@return ServiceSpecificAuthorizationInfo
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) CreateServiceSpecificAuthorizationInfoExecute(r ApiCreateServiceSpecificAuthorizationInfoRequest) (*ServiceSpecificAuthorizationInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceSpecificAuthorizationInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceSpecificAuthorizationInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSpecificAuthorizationInfoDocumentApiService.CreateServiceSpecificAuthorizationInfo")
@@ -112,9 +112,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) CreateServiceSpecif
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -140,9 +140,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) CreateServiceSpecif
 }
 
 type ApiGetServiceSpecificAuthorizationInfoRequest struct {
-	ctx context.Context
-	ApiService *ServiceSpecificAuthorizationInfoDocumentApiService
-	ueId string
+	ctx         context.Context
+	ApiService  *ServiceSpecificAuthorizationInfoDocumentApiService
+	ueId        string
 	serviceType ServiceType
 }
 
@@ -153,28 +153,29 @@ func (r ApiGetServiceSpecificAuthorizationInfoRequest) Execute() (*ServiceSpecif
 /*
 GetServiceSpecificAuthorizationInfo Retrieve Service Specific Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param serviceType Service Type
- @return ApiGetServiceSpecificAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param serviceType Service Type
+	@return ApiGetServiceSpecificAuthorizationInfoRequest
 */
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) GetServiceSpecificAuthorizationInfo(ctx context.Context, ueId string, serviceType ServiceType) ApiGetServiceSpecificAuthorizationInfoRequest {
 	return ApiGetServiceSpecificAuthorizationInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:  a,
+		ctx:         ctx,
+		ueId:        ueId,
 		serviceType: serviceType,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceSpecificAuthorizationInfo
+//
+//	@return ServiceSpecificAuthorizationInfo
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) GetServiceSpecificAuthorizationInfoExecute(r ApiGetServiceSpecificAuthorizationInfoRequest) (*ServiceSpecificAuthorizationInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceSpecificAuthorizationInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceSpecificAuthorizationInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSpecificAuthorizationInfoDocumentApiService.GetServiceSpecificAuthorizationInfo")
@@ -217,9 +218,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) GetServiceSpecificA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -245,11 +246,11 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) GetServiceSpecificA
 }
 
 type ApiModifyServiceSpecificAuthorizationInfoRequest struct {
-	ctx context.Context
-	ApiService *ServiceSpecificAuthorizationInfoDocumentApiService
-	ueId string
-	serviceType ServiceType
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *ServiceSpecificAuthorizationInfoDocumentApiService
+	ueId              string
+	serviceType       ServiceType
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -271,28 +272,29 @@ func (r ApiModifyServiceSpecificAuthorizationInfoRequest) Execute() (*PatchResul
 /*
 ModifyServiceSpecificAuthorizationInfo Modify Service Specific Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param serviceType Service Type
- @return ApiModifyServiceSpecificAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param serviceType Service Type
+	@return ApiModifyServiceSpecificAuthorizationInfoRequest
 */
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) ModifyServiceSpecificAuthorizationInfo(ctx context.Context, ueId string, serviceType ServiceType) ApiModifyServiceSpecificAuthorizationInfoRequest {
 	return ApiModifyServiceSpecificAuthorizationInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:  a,
+		ctx:         ctx,
+		ueId:        ueId,
 		serviceType: serviceType,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) ModifyServiceSpecificAuthorizationInfoExecute(r ApiModifyServiceSpecificAuthorizationInfoRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSpecificAuthorizationInfoDocumentApiService.ModifyServiceSpecificAuthorizationInfo")
@@ -312,7 +314,7 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) ModifyServiceSpecif
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -343,9 +345,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) ModifyServiceSpecif
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -362,8 +364,8 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) ModifyServiceSpecif
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -382,9 +384,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) ModifyServiceSpecif
 }
 
 type ApiRemoveServiceSpecificAuthorizationInfoRequest struct {
-	ctx context.Context
-	ApiService *ServiceSpecificAuthorizationInfoDocumentApiService
-	ueId string
+	ctx         context.Context
+	ApiService  *ServiceSpecificAuthorizationInfoDocumentApiService
+	ueId        string
 	serviceType ServiceType
 }
 
@@ -395,16 +397,16 @@ func (r ApiRemoveServiceSpecificAuthorizationInfoRequest) Execute() (*http.Respo
 /*
 RemoveServiceSpecificAuthorizationInfo Delete Service Specific Authorization Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param serviceType Service Type
- @return ApiRemoveServiceSpecificAuthorizationInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param serviceType Service Type
+	@return ApiRemoveServiceSpecificAuthorizationInfoRequest
 */
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) RemoveServiceSpecificAuthorizationInfo(ctx context.Context, ueId string, serviceType ServiceType) ApiRemoveServiceSpecificAuthorizationInfoRequest {
 	return ApiRemoveServiceSpecificAuthorizationInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:  a,
+		ctx:         ctx,
+		ueId:        ueId,
 		serviceType: serviceType,
 	}
 }
@@ -412,9 +414,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) RemoveServiceSpecif
 // Execute executes the request
 func (a *ServiceSpecificAuthorizationInfoDocumentApiService) RemoveServiceSpecificAuthorizationInfoExecute(r ApiRemoveServiceSpecificAuthorizationInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSpecificAuthorizationInfoDocumentApiService.RemoveServiceSpecificAuthorizationInfo")
@@ -457,9 +459,9 @@ func (a *ServiceSpecificAuthorizationInfoDocumentApiService) RemoveServiceSpecif
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

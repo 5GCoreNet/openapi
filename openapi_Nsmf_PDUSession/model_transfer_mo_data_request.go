@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &TransferMoDataRequest{}
 
 // TransferMoDataRequest struct for TransferMoDataRequest
 type TransferMoDataRequest struct {
-	JsonData *TransferMoDataReqData `json:"jsonData,omitempty"`
-	BinaryMoData *os.File `json:"binaryMoData,omitempty"`
+	JsonData     *TransferMoDataReqData `json:"jsonData,omitempty"`
+	BinaryMoData **os.File              `json:"binaryMoData,omitempty"`
 }
 
 // NewTransferMoDataRequest instantiates a new TransferMoDataRequest object
@@ -43,7 +43,7 @@ func NewTransferMoDataRequestWithDefaults() *TransferMoDataRequest {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *TransferMoDataRequest) GetJsonData() TransferMoDataReqData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret TransferMoDataReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TransferMoDataRequest) GetJsonData() TransferMoDataReqData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferMoDataRequest) GetJsonDataOk() (*TransferMoDataReqData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *TransferMoDataRequest) GetJsonDataOk() (*TransferMoDataReqData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *TransferMoDataRequest) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *TransferMoDataRequest) SetJsonData(v TransferMoDataReqData) {
 }
 
 // GetBinaryMoData returns the BinaryMoData field value if set, zero value otherwise.
-func (o *TransferMoDataRequest) GetBinaryMoData() os.File {
-	if o == nil || isNil(o.BinaryMoData) {
-		var ret os.File
+func (o *TransferMoDataRequest) GetBinaryMoData() *os.File {
+	if o == nil || IsNil(o.BinaryMoData) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryMoData
@@ -84,8 +84,8 @@ func (o *TransferMoDataRequest) GetBinaryMoData() os.File {
 
 // GetBinaryMoDataOk returns a tuple with the BinaryMoData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransferMoDataRequest) GetBinaryMoDataOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryMoData) {
+func (o *TransferMoDataRequest) GetBinaryMoDataOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryMoData) {
 		return nil, false
 	}
 	return o.BinaryMoData, true
@@ -93,20 +93,20 @@ func (o *TransferMoDataRequest) GetBinaryMoDataOk() (*os.File, bool) {
 
 // HasBinaryMoData returns a boolean if a field has been set.
 func (o *TransferMoDataRequest) HasBinaryMoData() bool {
-	if o != nil && !isNil(o.BinaryMoData) {
+	if o != nil && !IsNil(o.BinaryMoData) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryMoData gets a reference to the given os.File and assigns it to the BinaryMoData field.
-func (o *TransferMoDataRequest) SetBinaryMoData(v os.File) {
+// SetBinaryMoData gets a reference to the given *os.File and assigns it to the BinaryMoData field.
+func (o *TransferMoDataRequest) SetBinaryMoData(v *os.File) {
 	o.BinaryMoData = &v
 }
 
 func (o TransferMoDataRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o TransferMoDataRequest) MarshalJSON() ([]byte, error) {
 
 func (o TransferMoDataRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryMoData) {
+	if !IsNil(o.BinaryMoData) {
 		toSerialize["binaryMoData"] = o.BinaryMoData
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableTransferMoDataRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

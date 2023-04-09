@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -41,7 +41,7 @@ func NewProblemDetailsExtensionWithDefaults() *ProblemDetailsExtension {
 
 // GetAccMbsServiceInfo returns the AccMbsServiceInfo field value if set, zero value otherwise.
 func (o *ProblemDetailsExtension) GetAccMbsServiceInfo() AcceptableMbsServInfo {
-	if o == nil || isNil(o.AccMbsServiceInfo) {
+	if o == nil || IsNil(o.AccMbsServiceInfo) {
 		var ret AcceptableMbsServInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProblemDetailsExtension) GetAccMbsServiceInfo() AcceptableMbsServInfo {
 // GetAccMbsServiceInfoOk returns a tuple with the AccMbsServiceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsExtension) GetAccMbsServiceInfoOk() (*AcceptableMbsServInfo, bool) {
-	if o == nil || isNil(o.AccMbsServiceInfo) {
+	if o == nil || IsNil(o.AccMbsServiceInfo) {
 		return nil, false
 	}
 	return o.AccMbsServiceInfo, true
@@ -59,7 +59,7 @@ func (o *ProblemDetailsExtension) GetAccMbsServiceInfoOk() (*AcceptableMbsServIn
 
 // HasAccMbsServiceInfo returns a boolean if a field has been set.
 func (o *ProblemDetailsExtension) HasAccMbsServiceInfo() bool {
-	if o != nil && !isNil(o.AccMbsServiceInfo) {
+	if o != nil && !IsNil(o.AccMbsServiceInfo) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ProblemDetailsExtension) SetAccMbsServiceInfo(v AcceptableMbsServInfo) 
 }
 
 func (o ProblemDetailsExtension) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ProblemDetailsExtension) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetailsExtension) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccMbsServiceInfo) {
+	if !IsNil(o.AccMbsServiceInfo) {
 		toSerialize["accMbsServiceInfo"] = o.AccMbsServiceInfo
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableProblemDetailsExtension) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// QosResourceType The enumeration QosResourceType indicates whether a QoS Flow is non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4 and 5.7.3.5 of 3GPP TS 23.501). It shall comply with the provisions defined in table 5.5.3.6-1.  
+// QosResourceType The enumeration QosResourceType indicates whether a QoS Flow is non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4 and 5.7.3.5 of 3GPP TS 23.501). It shall comply with the provisions defined in table 5.5.3.6-1.
 type QosResourceType struct {
-	QosResourceTypeAnyOf *QosResourceTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *QosResourceType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into QosResourceTypeAnyOf
-	err = json.Unmarshal(data, &dst.QosResourceTypeAnyOf);
-	if err == nil {
-		jsonQosResourceTypeAnyOf, _ := json.Marshal(dst.QosResourceTypeAnyOf)
-		if string(jsonQosResourceTypeAnyOf) == "{}" { // empty struct
-			dst.QosResourceTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.QosResourceTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.QosResourceTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *QosResourceType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *QosResourceType) MarshalJSON() ([]byte, error) {
-	if src.QosResourceTypeAnyOf != nil {
-		return json.Marshal(&src.QosResourceTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableQosResourceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

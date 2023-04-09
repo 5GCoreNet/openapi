@@ -17,7 +17,7 @@ import (
 
 // MnS - struct for MnS
 type MnS struct {
-	MnSOneOf *MnSOneOf
+	MnSOneOf  *MnSOneOf
 	MnSOneOf1 *MnSOneOf1
 }
 
@@ -34,7 +34,6 @@ func MnSOneOf1AsMnS(v *MnSOneOf1) MnS {
 		MnSOneOf1: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MnS) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src MnS) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MnS) GetActualInstance() (interface{}) {
+func (obj *MnS) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableMnS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

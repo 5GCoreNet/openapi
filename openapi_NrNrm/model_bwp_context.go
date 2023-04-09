@@ -20,8 +20,8 @@ type BwpContext string
 
 // List of BwpContext
 const (
-	DL BwpContext = "DL"
-	UL BwpContext = "UL"
+	DL  BwpContext = "DL"
+	UL  BwpContext = "UL"
 	SUL BwpContext = "SUL"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableBwpContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -6,22 +7,10 @@ api_individual_iptv_configuration.go
 api_iptv_configurations.go
 client.go
 configuration.go
-docs/AccessRightStatus.md
-docs/AccessRightStatusAnyOf.md
-docs/IPTVConfigurationsApi.md
-docs/IndividualIPTVConfigurationApi.md
-docs/InvalidParam.md
-docs/IptvConfigData.md
-docs/IptvConfigDataPatch.md
-docs/Ipv6Addr.md
-docs/MulticastAccessControl.md
-docs/ProblemDetails.md
-docs/Snssai.md
 git_push.sh
 go.mod
 go.sum
 model_access_right_status.go
-model_access_right_status_any_of.go
 model_invalid_param.go
 model_iptv_config_data.go
 model_iptv_config_data_patch.go
@@ -30,6 +19,4 @@ model_multicast_access_control.go
 model_problem_details.go
 model_snssai.go
 response.go
-test/api_individual_iptv_configuration_test.go
-test/api_iptv_configurations_test.go
 utils.go

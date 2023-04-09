@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &CachingConfigurationCachingDirectives{}
 // CachingConfigurationCachingDirectives struct for CachingConfigurationCachingDirectives
 type CachingConfigurationCachingDirectives struct {
 	StatusCodeFilters []int32 `json:"statusCodeFilters,omitempty"`
-	NoCache bool `json:"noCache"`
-	MaxAge *int32 `json:"maxAge,omitempty"`
+	NoCache           bool    `json:"noCache"`
+	MaxAge            *int32  `json:"maxAge,omitempty"`
 }
 
 // NewCachingConfigurationCachingDirectives instantiates a new CachingConfigurationCachingDirectives object
@@ -44,7 +44,7 @@ func NewCachingConfigurationCachingDirectivesWithDefaults() *CachingConfiguratio
 
 // GetStatusCodeFilters returns the StatusCodeFilters field value if set, zero value otherwise.
 func (o *CachingConfigurationCachingDirectives) GetStatusCodeFilters() []int32 {
-	if o == nil || isNil(o.StatusCodeFilters) {
+	if o == nil || IsNil(o.StatusCodeFilters) {
 		var ret []int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CachingConfigurationCachingDirectives) GetStatusCodeFilters() []int32 {
 // GetStatusCodeFiltersOk returns a tuple with the StatusCodeFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CachingConfigurationCachingDirectives) GetStatusCodeFiltersOk() ([]int32, bool) {
-	if o == nil || isNil(o.StatusCodeFilters) {
+	if o == nil || IsNil(o.StatusCodeFilters) {
 		return nil, false
 	}
 	return o.StatusCodeFilters, true
@@ -62,7 +62,7 @@ func (o *CachingConfigurationCachingDirectives) GetStatusCodeFiltersOk() ([]int3
 
 // HasStatusCodeFilters returns a boolean if a field has been set.
 func (o *CachingConfigurationCachingDirectives) HasStatusCodeFilters() bool {
-	if o != nil && !isNil(o.StatusCodeFilters) {
+	if o != nil && !IsNil(o.StatusCodeFilters) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *CachingConfigurationCachingDirectives) SetNoCache(v bool) {
 
 // GetMaxAge returns the MaxAge field value if set, zero value otherwise.
 func (o *CachingConfigurationCachingDirectives) GetMaxAge() int32 {
-	if o == nil || isNil(o.MaxAge) {
+	if o == nil || IsNil(o.MaxAge) {
 		var ret int32
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *CachingConfigurationCachingDirectives) GetMaxAge() int32 {
 // GetMaxAgeOk returns a tuple with the MaxAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CachingConfigurationCachingDirectives) GetMaxAgeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxAge) {
+	if o == nil || IsNil(o.MaxAge) {
 		return nil, false
 	}
 	return o.MaxAge, true
@@ -118,7 +118,7 @@ func (o *CachingConfigurationCachingDirectives) GetMaxAgeOk() (*int32, bool) {
 
 // HasMaxAge returns a boolean if a field has been set.
 func (o *CachingConfigurationCachingDirectives) HasMaxAge() bool {
-	if o != nil && !isNil(o.MaxAge) {
+	if o != nil && !IsNil(o.MaxAge) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *CachingConfigurationCachingDirectives) SetMaxAge(v int32) {
 }
 
 func (o CachingConfigurationCachingDirectives) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,11 +140,11 @@ func (o CachingConfigurationCachingDirectives) MarshalJSON() ([]byte, error) {
 
 func (o CachingConfigurationCachingDirectives) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StatusCodeFilters) {
+	if !IsNil(o.StatusCodeFilters) {
 		toSerialize["statusCodeFilters"] = o.StatusCodeFilters
 	}
 	toSerialize["noCache"] = o.NoCache
-	if !isNil(o.MaxAge) {
+	if !IsNil(o.MaxAge) {
 		toSerialize["maxAge"] = o.MaxAge
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableCachingConfigurationCachingDirectives) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

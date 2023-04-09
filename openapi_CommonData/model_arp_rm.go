@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// ArpRm This data type is defined in the same way as the 'Arp' data type, but with the OpenAPI 'nullable: true' property. 
+// ArpRm This data type is defined in the same way as the 'Arp' data type, but with the OpenAPI 'nullable: true' property.
 type ArpRm struct {
-	Arp *Arp
+	Arp       *Arp
 	NullValue *NullValue
 }
 
@@ -25,7 +25,7 @@ type ArpRm struct {
 func (dst *ArpRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into Arp
-	err = json.Unmarshal(data, &dst.Arp);
+	err = json.Unmarshal(data, &dst.Arp)
 	if err == nil {
 		jsonArp, _ := json.Marshal(dst.Arp)
 		if string(jsonArp) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *ArpRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableArpRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnssaaf_NSSAA
 
-Network Slice-Specific Authentication and Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Network Slice-Specific Authentication and Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &SliceAuthConfirmationResponse{}
 
 // SliceAuthConfirmationResponse struct for SliceAuthConfirmationResponse
 type SliceAuthConfirmationResponse struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi   string `json:"gpsi"`
 	Snssai Snssai `json:"snssai"`
 	// contains an EAP packet
 	EapMessage NullableString `json:"eapMessage"`
-	AuthResult *AuthStatus `json:"authResult,omitempty"`
+	AuthResult *AuthStatus    `json:"authResult,omitempty"`
 }
 
 // NewSliceAuthConfirmationResponse instantiates a new SliceAuthConfirmationResponse object
@@ -123,7 +123,7 @@ func (o *SliceAuthConfirmationResponse) SetEapMessage(v string) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *SliceAuthConfirmationResponse) GetAuthResult() AuthStatus {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		var ret AuthStatus
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *SliceAuthConfirmationResponse) GetAuthResult() AuthStatus {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceAuthConfirmationResponse) GetAuthResultOk() (*AuthStatus, bool) {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -141,7 +141,7 @@ func (o *SliceAuthConfirmationResponse) GetAuthResultOk() (*AuthStatus, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *SliceAuthConfirmationResponse) HasAuthResult() bool {
-	if o != nil && !isNil(o.AuthResult) {
+	if o != nil && !IsNil(o.AuthResult) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *SliceAuthConfirmationResponse) SetAuthResult(v AuthStatus) {
 }
 
 func (o SliceAuthConfirmationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -166,7 +166,7 @@ func (o SliceAuthConfirmationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["eapMessage"] = o.EapMessage.Get()
-	if !isNil(o.AuthResult) {
+	if !IsNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
 	return toSerialize, nil
@@ -207,5 +207,3 @@ func (v *NullableSliceAuthConfirmationResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

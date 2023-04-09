@@ -93,13 +93,11 @@ Class | Method | HTTP request | Description
 
  - [Acknowledgement](docs/Acknowledgement.md)
  - [DeliveryResult](docs/DeliveryResult.md)
- - [DeliveryResultAnyOf](docs/DeliveryResultAnyOf.md)
  - [DeviceTriggering](docs/DeviceTriggering.md)
  - [DeviceTriggeringDeliveryReportNotification](docs/DeviceTriggeringDeliveryReportNotification.md)
  - [DeviceTriggeringPatch](docs/DeviceTriggeringPatch.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [Priority](docs/Priority.md)
- - [PriorityAnyOf](docs/PriorityAnyOf.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)
 

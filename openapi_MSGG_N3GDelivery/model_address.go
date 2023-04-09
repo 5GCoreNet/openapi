@@ -1,7 +1,7 @@
 /*
 MSGG_N3GDelivery
 
-API for MSGG N3G Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGG N3G Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Address{}
 // Address Contains the Message type data
 type Address struct {
 	AddrType AddressType `json:"addrType"`
-	Addr string `json:"addr"`
+	Addr     string      `json:"addr"`
 }
 
 // NewAddress instantiates a new Address object
@@ -91,7 +91,7 @@ func (o *Address) SetAddr(v string) {
 }
 
 func (o Address) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M5_ConsumptionReporting
 
-5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,20 +13,19 @@ package openapi_M5_ConsumptionReporting
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiSubmitConsumptionReportRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	aspId string
+	ctx               context.Context
+	ApiService        *DefaultApiService
+	aspId             string
 	consumptionReport *ConsumptionReport
 }
 
@@ -43,24 +42,24 @@ func (r ApiSubmitConsumptionReportRequest) Execute() (*http.Response, error) {
 /*
 SubmitConsumptionReport Submit a Consumption Report
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aspId See 3GPP TS 26.512 clause 11.3.2.
- @return ApiSubmitConsumptionReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param aspId See 3GPP TS 26.512 clause 11.3.2.
+	@return ApiSubmitConsumptionReportRequest
 */
 func (a *DefaultApiService) SubmitConsumptionReport(ctx context.Context, aspId string) ApiSubmitConsumptionReportRequest {
 	return ApiSubmitConsumptionReportRequest{
 		ApiService: a,
-		ctx: ctx,
-		aspId: aspId,
+		ctx:        ctx,
+		aspId:      aspId,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) SubmitConsumptionReportExecute(r ApiSubmitConsumptionReportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SubmitConsumptionReport")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) SubmitConsumptionReportExecute(r ApiSubmitConsumptio
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

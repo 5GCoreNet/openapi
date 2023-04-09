@@ -1,7 +1,7 @@
 /*
 NSSF NS Selection
 
-NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SubscribedSnssai{}
 
 // SubscribedSnssai Contains the subscribed S-NSSAI
 type SubscribedSnssai struct {
-	SubscribedSnssai Snssai `json:"subscribedSnssai"`
-	DefaultIndication *bool `json:"defaultIndication,omitempty"`
+	SubscribedSnssai    Snssai   `json:"subscribedSnssai"`
+	DefaultIndication   *bool    `json:"defaultIndication,omitempty"`
 	SubscribedNsSrgList []string `json:"subscribedNsSrgList,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *SubscribedSnssai) SetSubscribedSnssai(v Snssai) {
 
 // GetDefaultIndication returns the DefaultIndication field value if set, zero value otherwise.
 func (o *SubscribedSnssai) GetDefaultIndication() bool {
-	if o == nil || isNil(o.DefaultIndication) {
+	if o == nil || IsNil(o.DefaultIndication) {
 		var ret bool
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SubscribedSnssai) GetDefaultIndication() bool {
 // GetDefaultIndicationOk returns a tuple with the DefaultIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedSnssai) GetDefaultIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.DefaultIndication) {
+	if o == nil || IsNil(o.DefaultIndication) {
 		return nil, false
 	}
 	return o.DefaultIndication, true
@@ -86,7 +86,7 @@ func (o *SubscribedSnssai) GetDefaultIndicationOk() (*bool, bool) {
 
 // HasDefaultIndication returns a boolean if a field has been set.
 func (o *SubscribedSnssai) HasDefaultIndication() bool {
-	if o != nil && !isNil(o.DefaultIndication) {
+	if o != nil && !IsNil(o.DefaultIndication) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SubscribedSnssai) SetDefaultIndication(v bool) {
 
 // GetSubscribedNsSrgList returns the SubscribedNsSrgList field value if set, zero value otherwise.
 func (o *SubscribedSnssai) GetSubscribedNsSrgList() []string {
-	if o == nil || isNil(o.SubscribedNsSrgList) {
+	if o == nil || IsNil(o.SubscribedNsSrgList) {
 		var ret []string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SubscribedSnssai) GetSubscribedNsSrgList() []string {
 // GetSubscribedNsSrgListOk returns a tuple with the SubscribedNsSrgList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedSnssai) GetSubscribedNsSrgListOk() ([]string, bool) {
-	if o == nil || isNil(o.SubscribedNsSrgList) {
+	if o == nil || IsNil(o.SubscribedNsSrgList) {
 		return nil, false
 	}
 	return o.SubscribedNsSrgList, true
@@ -118,7 +118,7 @@ func (o *SubscribedSnssai) GetSubscribedNsSrgListOk() ([]string, bool) {
 
 // HasSubscribedNsSrgList returns a boolean if a field has been set.
 func (o *SubscribedSnssai) HasSubscribedNsSrgList() bool {
-	if o != nil && !isNil(o.SubscribedNsSrgList) {
+	if o != nil && !IsNil(o.SubscribedNsSrgList) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *SubscribedSnssai) SetSubscribedNsSrgList(v []string) {
 }
 
 func (o SubscribedSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o SubscribedSnssai) MarshalJSON() ([]byte, error) {
 func (o SubscribedSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscribedSnssai"] = o.SubscribedSnssai
-	if !isNil(o.DefaultIndication) {
+	if !IsNil(o.DefaultIndication) {
 		toSerialize["defaultIndication"] = o.DefaultIndication
 	}
-	if !isNil(o.SubscribedNsSrgList) {
+	if !IsNil(o.SubscribedNsSrgList) {
 		toSerialize["subscribedNsSrgList"] = o.SubscribedNsSrgList
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableSubscribedSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

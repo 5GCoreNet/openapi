@@ -1,7 +1,7 @@
 /*
 EES ACR Status Update Service
 
-EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ACTFailureCause Possible values are: - ACR_CANCELLATION: Indicates that the ACT failed due to the cancellation of the ACR. - OTHER: Indicates that the ACT failed for other reasons. 
+// ACTFailureCause Possible values are: - ACR_CANCELLATION: Indicates that the ACT failed due to the cancellation of the ACR. - OTHER: Indicates that the ACT failed for other reasons.
 type ACTFailureCause struct {
-	ACTFailureCauseAnyOf *ACTFailureCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ACTFailureCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ACTFailureCauseAnyOf
-	err = json.Unmarshal(data, &dst.ACTFailureCauseAnyOf);
-	if err == nil {
-		jsonACTFailureCauseAnyOf, _ := json.Marshal(dst.ACTFailureCauseAnyOf)
-		if string(jsonACTFailureCauseAnyOf) == "{}" { // empty struct
-			dst.ACTFailureCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.ACTFailureCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.ACTFailureCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ACTFailureCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ACTFailureCause) MarshalJSON() ([]byte, error) {
-	if src.ACTFailureCauseAnyOf != nil {
-		return json.Marshal(&src.ACTFailureCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableACTFailureCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

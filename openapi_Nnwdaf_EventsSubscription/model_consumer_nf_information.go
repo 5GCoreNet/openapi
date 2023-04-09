@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // ConsumerNfInformation - Represents the analytics consumer NF Information.
 type ConsumerNfInformation struct {
 	OneOfAnyTypeAnyType *OneOfAnyTypeAnyType
-	Interface *interface{}
+	Interface           *interface{}
 }
 
 // OneOfAnyTypeAnyTypeAsConsumerNfInformation is a convenience function that returns OneOfAnyTypeAnyType wrapped in ConsumerNfInformation
@@ -34,7 +34,6 @@ func InterfaceAsConsumerNfInformation(v *interface{}) ConsumerNfInformation {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ConsumerNfInformation) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ConsumerNfInformation) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ConsumerNfInformation) GetActualInstance() (interface{}) {
+func (obj *ConsumerNfInformation) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableConsumerNfInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

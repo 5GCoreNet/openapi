@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,39 +19,39 @@ var _ MappedNullable = &EventFilter{}
 
 // EventFilter Represents the event filters used to identify the requested analytics.
 type EventFilter struct {
-	// FALSE represents not applicable for all slices. TRUE represents applicable for all slices. 
+	// FALSE represents not applicable for all slices. TRUE represents applicable for all slices.
 	AnySlice *bool `json:"anySlice,omitempty"`
 	// Identification(s) of network slice.
 	Snssais []Snssai `json:"snssais,omitempty"`
-	AppIds []string `json:"appIds,omitempty"`
-	Dnns []string `json:"dnns,omitempty"`
-	Dnais []string `json:"dnais,omitempty"`
+	AppIds  []string `json:"appIds,omitempty"`
+	Dnns    []string `json:"dnns,omitempty"`
+	Dnais   []string `json:"dnais,omitempty"`
 	// Identification(s) of LADN DNN to indicate the LADN service area as the AOI.
-	LadnDnns []string `json:"ladnDnns,omitempty"`
-	NetworkArea *NetworkAreaInfo `json:"networkArea,omitempty"`
+	LadnDnns     []string          `json:"ladnDnns,omitempty"`
+	NetworkArea  *NetworkAreaInfo  `json:"networkArea,omitempty"`
 	VisitedAreas []NetworkAreaInfo `json:"visitedAreas,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	MaxTopAppUlNbr *int32 `json:"maxTopAppUlNbr,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	MaxTopAppDlNbr *int32 `json:"maxTopAppDlNbr,omitempty"`
-	NfInstanceIds []string `json:"nfInstanceIds,omitempty"`
-	NfSetIds []string `json:"nfSetIds,omitempty"`
-	NfTypes []NFType `json:"nfTypes,omitempty"`
-	NsiIdInfos []NsiIdInfo `json:"nsiIdInfos,omitempty"`
-	QosRequ *QosRequirement `json:"qosRequ,omitempty"`
-	NwPerfTypes []NetworkPerfType `json:"nwPerfTypes,omitempty"`
-	BwRequs []BwRequirement `json:"bwRequs,omitempty"`
-	ExcepIds []ExceptionId `json:"excepIds,omitempty"`
-	ExptAnaType *ExpectedAnalyticsType `json:"exptAnaType,omitempty"`
-	ExptUeBehav *ExpectedUeBehaviourData `json:"exptUeBehav,omitempty"`
-	RatFreqs []RatFreqInformation `json:"ratFreqs,omitempty"`
-	DisperReqs []DispersionRequirement `json:"disperReqs,omitempty"`
-	RedTransReqs []RedundantTransmissionExpReq `json:"redTransReqs,omitempty"`
-	WlanReqs []WlanPerformanceReq `json:"wlanReqs,omitempty"`
-	ListOfAnaSubsets []AnalyticsSubset `json:"listOfAnaSubsets,omitempty"`
-	UpfInfo *UpfInformation `json:"upfInfo,omitempty"`
-	AppServerAddrs []AddrFqdn `json:"appServerAddrs,omitempty"`
-	DnPerfReqs []DnPerformanceReq `json:"dnPerfReqs,omitempty"`
+	MaxTopAppDlNbr   *int32                        `json:"maxTopAppDlNbr,omitempty"`
+	NfInstanceIds    []string                      `json:"nfInstanceIds,omitempty"`
+	NfSetIds         []string                      `json:"nfSetIds,omitempty"`
+	NfTypes          []NFType                      `json:"nfTypes,omitempty"`
+	NsiIdInfos       []NsiIdInfo                   `json:"nsiIdInfos,omitempty"`
+	QosRequ          *QosRequirement               `json:"qosRequ,omitempty"`
+	NwPerfTypes      []NetworkPerfType             `json:"nwPerfTypes,omitempty"`
+	BwRequs          []BwRequirement               `json:"bwRequs,omitempty"`
+	ExcepIds         []ExceptionId                 `json:"excepIds,omitempty"`
+	ExptAnaType      *ExpectedAnalyticsType        `json:"exptAnaType,omitempty"`
+	ExptUeBehav      *ExpectedUeBehaviourData      `json:"exptUeBehav,omitempty"`
+	RatFreqs         []RatFreqInformation          `json:"ratFreqs,omitempty"`
+	DisperReqs       []DispersionRequirement       `json:"disperReqs,omitempty"`
+	RedTransReqs     []RedundantTransmissionExpReq `json:"redTransReqs,omitempty"`
+	WlanReqs         []WlanPerformanceReq          `json:"wlanReqs,omitempty"`
+	ListOfAnaSubsets []AnalyticsSubset             `json:"listOfAnaSubsets,omitempty"`
+	UpfInfo          *UpfInformation               `json:"upfInfo,omitempty"`
+	AppServerAddrs   []AddrFqdn                    `json:"appServerAddrs,omitempty"`
+	DnPerfReqs       []DnPerformanceReq            `json:"dnPerfReqs,omitempty"`
 }
 
 // NewEventFilter instantiates a new EventFilter object
@@ -73,7 +73,7 @@ func NewEventFilterWithDefaults() *EventFilter {
 
 // GetAnySlice returns the AnySlice field value if set, zero value otherwise.
 func (o *EventFilter) GetAnySlice() bool {
-	if o == nil || isNil(o.AnySlice) {
+	if o == nil || IsNil(o.AnySlice) {
 		var ret bool
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *EventFilter) GetAnySlice() bool {
 // GetAnySliceOk returns a tuple with the AnySlice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetAnySliceOk() (*bool, bool) {
-	if o == nil || isNil(o.AnySlice) {
+	if o == nil || IsNil(o.AnySlice) {
 		return nil, false
 	}
 	return o.AnySlice, true
@@ -91,7 +91,7 @@ func (o *EventFilter) GetAnySliceOk() (*bool, bool) {
 
 // HasAnySlice returns a boolean if a field has been set.
 func (o *EventFilter) HasAnySlice() bool {
-	if o != nil && !isNil(o.AnySlice) {
+	if o != nil && !IsNil(o.AnySlice) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EventFilter) SetAnySlice(v bool) {
 
 // GetSnssais returns the Snssais field value if set, zero value otherwise.
 func (o *EventFilter) GetSnssais() []Snssai {
-	if o == nil || isNil(o.Snssais) {
+	if o == nil || IsNil(o.Snssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *EventFilter) GetSnssais() []Snssai {
 // GetSnssaisOk returns a tuple with the Snssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetSnssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.Snssais) {
+	if o == nil || IsNil(o.Snssais) {
 		return nil, false
 	}
 	return o.Snssais, true
@@ -123,7 +123,7 @@ func (o *EventFilter) GetSnssaisOk() ([]Snssai, bool) {
 
 // HasSnssais returns a boolean if a field has been set.
 func (o *EventFilter) HasSnssais() bool {
-	if o != nil && !isNil(o.Snssais) {
+	if o != nil && !IsNil(o.Snssais) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *EventFilter) SetSnssais(v []Snssai) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *EventFilter) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *EventFilter) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -155,7 +155,7 @@ func (o *EventFilter) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *EventFilter) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *EventFilter) SetAppIds(v []string) {
 
 // GetDnns returns the Dnns field value if set, zero value otherwise.
 func (o *EventFilter) GetDnns() []string {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		var ret []string
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *EventFilter) GetDnns() []string {
 // GetDnnsOk returns a tuple with the Dnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetDnnsOk() ([]string, bool) {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		return nil, false
 	}
 	return o.Dnns, true
@@ -187,7 +187,7 @@ func (o *EventFilter) GetDnnsOk() ([]string, bool) {
 
 // HasDnns returns a boolean if a field has been set.
 func (o *EventFilter) HasDnns() bool {
-	if o != nil && !isNil(o.Dnns) {
+	if o != nil && !IsNil(o.Dnns) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *EventFilter) SetDnns(v []string) {
 
 // GetDnais returns the Dnais field value if set, zero value otherwise.
 func (o *EventFilter) GetDnais() []string {
-	if o == nil || isNil(o.Dnais) {
+	if o == nil || IsNil(o.Dnais) {
 		var ret []string
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *EventFilter) GetDnais() []string {
 // GetDnaisOk returns a tuple with the Dnais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetDnaisOk() ([]string, bool) {
-	if o == nil || isNil(o.Dnais) {
+	if o == nil || IsNil(o.Dnais) {
 		return nil, false
 	}
 	return o.Dnais, true
@@ -219,7 +219,7 @@ func (o *EventFilter) GetDnaisOk() ([]string, bool) {
 
 // HasDnais returns a boolean if a field has been set.
 func (o *EventFilter) HasDnais() bool {
-	if o != nil && !isNil(o.Dnais) {
+	if o != nil && !IsNil(o.Dnais) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *EventFilter) SetDnais(v []string) {
 
 // GetLadnDnns returns the LadnDnns field value if set, zero value otherwise.
 func (o *EventFilter) GetLadnDnns() []string {
-	if o == nil || isNil(o.LadnDnns) {
+	if o == nil || IsNil(o.LadnDnns) {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *EventFilter) GetLadnDnns() []string {
 // GetLadnDnnsOk returns a tuple with the LadnDnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetLadnDnnsOk() ([]string, bool) {
-	if o == nil || isNil(o.LadnDnns) {
+	if o == nil || IsNil(o.LadnDnns) {
 		return nil, false
 	}
 	return o.LadnDnns, true
@@ -251,7 +251,7 @@ func (o *EventFilter) GetLadnDnnsOk() ([]string, bool) {
 
 // HasLadnDnns returns a boolean if a field has been set.
 func (o *EventFilter) HasLadnDnns() bool {
-	if o != nil && !isNil(o.LadnDnns) {
+	if o != nil && !IsNil(o.LadnDnns) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *EventFilter) SetLadnDnns(v []string) {
 
 // GetNetworkArea returns the NetworkArea field value if set, zero value otherwise.
 func (o *EventFilter) GetNetworkArea() NetworkAreaInfo {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *EventFilter) GetNetworkArea() NetworkAreaInfo {
 // GetNetworkAreaOk returns a tuple with the NetworkArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		return nil, false
 	}
 	return o.NetworkArea, true
@@ -283,7 +283,7 @@ func (o *EventFilter) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasNetworkArea returns a boolean if a field has been set.
 func (o *EventFilter) HasNetworkArea() bool {
-	if o != nil && !isNil(o.NetworkArea) {
+	if o != nil && !IsNil(o.NetworkArea) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *EventFilter) SetNetworkArea(v NetworkAreaInfo) {
 
 // GetVisitedAreas returns the VisitedAreas field value if set, zero value otherwise.
 func (o *EventFilter) GetVisitedAreas() []NetworkAreaInfo {
-	if o == nil || isNil(o.VisitedAreas) {
+	if o == nil || IsNil(o.VisitedAreas) {
 		var ret []NetworkAreaInfo
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *EventFilter) GetVisitedAreas() []NetworkAreaInfo {
 // GetVisitedAreasOk returns a tuple with the VisitedAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetVisitedAreasOk() ([]NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.VisitedAreas) {
+	if o == nil || IsNil(o.VisitedAreas) {
 		return nil, false
 	}
 	return o.VisitedAreas, true
@@ -315,7 +315,7 @@ func (o *EventFilter) GetVisitedAreasOk() ([]NetworkAreaInfo, bool) {
 
 // HasVisitedAreas returns a boolean if a field has been set.
 func (o *EventFilter) HasVisitedAreas() bool {
-	if o != nil && !isNil(o.VisitedAreas) {
+	if o != nil && !IsNil(o.VisitedAreas) {
 		return true
 	}
 
@@ -329,7 +329,7 @@ func (o *EventFilter) SetVisitedAreas(v []NetworkAreaInfo) {
 
 // GetMaxTopAppUlNbr returns the MaxTopAppUlNbr field value if set, zero value otherwise.
 func (o *EventFilter) GetMaxTopAppUlNbr() int32 {
-	if o == nil || isNil(o.MaxTopAppUlNbr) {
+	if o == nil || IsNil(o.MaxTopAppUlNbr) {
 		var ret int32
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *EventFilter) GetMaxTopAppUlNbr() int32 {
 // GetMaxTopAppUlNbrOk returns a tuple with the MaxTopAppUlNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetMaxTopAppUlNbrOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxTopAppUlNbr) {
+	if o == nil || IsNil(o.MaxTopAppUlNbr) {
 		return nil, false
 	}
 	return o.MaxTopAppUlNbr, true
@@ -347,7 +347,7 @@ func (o *EventFilter) GetMaxTopAppUlNbrOk() (*int32, bool) {
 
 // HasMaxTopAppUlNbr returns a boolean if a field has been set.
 func (o *EventFilter) HasMaxTopAppUlNbr() bool {
-	if o != nil && !isNil(o.MaxTopAppUlNbr) {
+	if o != nil && !IsNil(o.MaxTopAppUlNbr) {
 		return true
 	}
 
@@ -361,7 +361,7 @@ func (o *EventFilter) SetMaxTopAppUlNbr(v int32) {
 
 // GetMaxTopAppDlNbr returns the MaxTopAppDlNbr field value if set, zero value otherwise.
 func (o *EventFilter) GetMaxTopAppDlNbr() int32 {
-	if o == nil || isNil(o.MaxTopAppDlNbr) {
+	if o == nil || IsNil(o.MaxTopAppDlNbr) {
 		var ret int32
 		return ret
 	}
@@ -371,7 +371,7 @@ func (o *EventFilter) GetMaxTopAppDlNbr() int32 {
 // GetMaxTopAppDlNbrOk returns a tuple with the MaxTopAppDlNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetMaxTopAppDlNbrOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxTopAppDlNbr) {
+	if o == nil || IsNil(o.MaxTopAppDlNbr) {
 		return nil, false
 	}
 	return o.MaxTopAppDlNbr, true
@@ -379,7 +379,7 @@ func (o *EventFilter) GetMaxTopAppDlNbrOk() (*int32, bool) {
 
 // HasMaxTopAppDlNbr returns a boolean if a field has been set.
 func (o *EventFilter) HasMaxTopAppDlNbr() bool {
-	if o != nil && !isNil(o.MaxTopAppDlNbr) {
+	if o != nil && !IsNil(o.MaxTopAppDlNbr) {
 		return true
 	}
 
@@ -393,7 +393,7 @@ func (o *EventFilter) SetMaxTopAppDlNbr(v int32) {
 
 // GetNfInstanceIds returns the NfInstanceIds field value if set, zero value otherwise.
 func (o *EventFilter) GetNfInstanceIds() []string {
-	if o == nil || isNil(o.NfInstanceIds) {
+	if o == nil || IsNil(o.NfInstanceIds) {
 		var ret []string
 		return ret
 	}
@@ -403,7 +403,7 @@ func (o *EventFilter) GetNfInstanceIds() []string {
 // GetNfInstanceIdsOk returns a tuple with the NfInstanceIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetNfInstanceIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.NfInstanceIds) {
+	if o == nil || IsNil(o.NfInstanceIds) {
 		return nil, false
 	}
 	return o.NfInstanceIds, true
@@ -411,7 +411,7 @@ func (o *EventFilter) GetNfInstanceIdsOk() ([]string, bool) {
 
 // HasNfInstanceIds returns a boolean if a field has been set.
 func (o *EventFilter) HasNfInstanceIds() bool {
-	if o != nil && !isNil(o.NfInstanceIds) {
+	if o != nil && !IsNil(o.NfInstanceIds) {
 		return true
 	}
 
@@ -425,7 +425,7 @@ func (o *EventFilter) SetNfInstanceIds(v []string) {
 
 // GetNfSetIds returns the NfSetIds field value if set, zero value otherwise.
 func (o *EventFilter) GetNfSetIds() []string {
-	if o == nil || isNil(o.NfSetIds) {
+	if o == nil || IsNil(o.NfSetIds) {
 		var ret []string
 		return ret
 	}
@@ -435,7 +435,7 @@ func (o *EventFilter) GetNfSetIds() []string {
 // GetNfSetIdsOk returns a tuple with the NfSetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetNfSetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.NfSetIds) {
+	if o == nil || IsNil(o.NfSetIds) {
 		return nil, false
 	}
 	return o.NfSetIds, true
@@ -443,7 +443,7 @@ func (o *EventFilter) GetNfSetIdsOk() ([]string, bool) {
 
 // HasNfSetIds returns a boolean if a field has been set.
 func (o *EventFilter) HasNfSetIds() bool {
-	if o != nil && !isNil(o.NfSetIds) {
+	if o != nil && !IsNil(o.NfSetIds) {
 		return true
 	}
 
@@ -457,7 +457,7 @@ func (o *EventFilter) SetNfSetIds(v []string) {
 
 // GetNfTypes returns the NfTypes field value if set, zero value otherwise.
 func (o *EventFilter) GetNfTypes() []NFType {
-	if o == nil || isNil(o.NfTypes) {
+	if o == nil || IsNil(o.NfTypes) {
 		var ret []NFType
 		return ret
 	}
@@ -467,7 +467,7 @@ func (o *EventFilter) GetNfTypes() []NFType {
 // GetNfTypesOk returns a tuple with the NfTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetNfTypesOk() ([]NFType, bool) {
-	if o == nil || isNil(o.NfTypes) {
+	if o == nil || IsNil(o.NfTypes) {
 		return nil, false
 	}
 	return o.NfTypes, true
@@ -475,7 +475,7 @@ func (o *EventFilter) GetNfTypesOk() ([]NFType, bool) {
 
 // HasNfTypes returns a boolean if a field has been set.
 func (o *EventFilter) HasNfTypes() bool {
-	if o != nil && !isNil(o.NfTypes) {
+	if o != nil && !IsNil(o.NfTypes) {
 		return true
 	}
 
@@ -489,7 +489,7 @@ func (o *EventFilter) SetNfTypes(v []NFType) {
 
 // GetNsiIdInfos returns the NsiIdInfos field value if set, zero value otherwise.
 func (o *EventFilter) GetNsiIdInfos() []NsiIdInfo {
-	if o == nil || isNil(o.NsiIdInfos) {
+	if o == nil || IsNil(o.NsiIdInfos) {
 		var ret []NsiIdInfo
 		return ret
 	}
@@ -499,7 +499,7 @@ func (o *EventFilter) GetNsiIdInfos() []NsiIdInfo {
 // GetNsiIdInfosOk returns a tuple with the NsiIdInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetNsiIdInfosOk() ([]NsiIdInfo, bool) {
-	if o == nil || isNil(o.NsiIdInfos) {
+	if o == nil || IsNil(o.NsiIdInfos) {
 		return nil, false
 	}
 	return o.NsiIdInfos, true
@@ -507,7 +507,7 @@ func (o *EventFilter) GetNsiIdInfosOk() ([]NsiIdInfo, bool) {
 
 // HasNsiIdInfos returns a boolean if a field has been set.
 func (o *EventFilter) HasNsiIdInfos() bool {
-	if o != nil && !isNil(o.NsiIdInfos) {
+	if o != nil && !IsNil(o.NsiIdInfos) {
 		return true
 	}
 
@@ -521,7 +521,7 @@ func (o *EventFilter) SetNsiIdInfos(v []NsiIdInfo) {
 
 // GetQosRequ returns the QosRequ field value if set, zero value otherwise.
 func (o *EventFilter) GetQosRequ() QosRequirement {
-	if o == nil || isNil(o.QosRequ) {
+	if o == nil || IsNil(o.QosRequ) {
 		var ret QosRequirement
 		return ret
 	}
@@ -531,7 +531,7 @@ func (o *EventFilter) GetQosRequ() QosRequirement {
 // GetQosRequOk returns a tuple with the QosRequ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetQosRequOk() (*QosRequirement, bool) {
-	if o == nil || isNil(o.QosRequ) {
+	if o == nil || IsNil(o.QosRequ) {
 		return nil, false
 	}
 	return o.QosRequ, true
@@ -539,7 +539,7 @@ func (o *EventFilter) GetQosRequOk() (*QosRequirement, bool) {
 
 // HasQosRequ returns a boolean if a field has been set.
 func (o *EventFilter) HasQosRequ() bool {
-	if o != nil && !isNil(o.QosRequ) {
+	if o != nil && !IsNil(o.QosRequ) {
 		return true
 	}
 
@@ -553,7 +553,7 @@ func (o *EventFilter) SetQosRequ(v QosRequirement) {
 
 // GetNwPerfTypes returns the NwPerfTypes field value if set, zero value otherwise.
 func (o *EventFilter) GetNwPerfTypes() []NetworkPerfType {
-	if o == nil || isNil(o.NwPerfTypes) {
+	if o == nil || IsNil(o.NwPerfTypes) {
 		var ret []NetworkPerfType
 		return ret
 	}
@@ -563,7 +563,7 @@ func (o *EventFilter) GetNwPerfTypes() []NetworkPerfType {
 // GetNwPerfTypesOk returns a tuple with the NwPerfTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetNwPerfTypesOk() ([]NetworkPerfType, bool) {
-	if o == nil || isNil(o.NwPerfTypes) {
+	if o == nil || IsNil(o.NwPerfTypes) {
 		return nil, false
 	}
 	return o.NwPerfTypes, true
@@ -571,7 +571,7 @@ func (o *EventFilter) GetNwPerfTypesOk() ([]NetworkPerfType, bool) {
 
 // HasNwPerfTypes returns a boolean if a field has been set.
 func (o *EventFilter) HasNwPerfTypes() bool {
-	if o != nil && !isNil(o.NwPerfTypes) {
+	if o != nil && !IsNil(o.NwPerfTypes) {
 		return true
 	}
 
@@ -585,7 +585,7 @@ func (o *EventFilter) SetNwPerfTypes(v []NetworkPerfType) {
 
 // GetBwRequs returns the BwRequs field value if set, zero value otherwise.
 func (o *EventFilter) GetBwRequs() []BwRequirement {
-	if o == nil || isNil(o.BwRequs) {
+	if o == nil || IsNil(o.BwRequs) {
 		var ret []BwRequirement
 		return ret
 	}
@@ -595,7 +595,7 @@ func (o *EventFilter) GetBwRequs() []BwRequirement {
 // GetBwRequsOk returns a tuple with the BwRequs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetBwRequsOk() ([]BwRequirement, bool) {
-	if o == nil || isNil(o.BwRequs) {
+	if o == nil || IsNil(o.BwRequs) {
 		return nil, false
 	}
 	return o.BwRequs, true
@@ -603,7 +603,7 @@ func (o *EventFilter) GetBwRequsOk() ([]BwRequirement, bool) {
 
 // HasBwRequs returns a boolean if a field has been set.
 func (o *EventFilter) HasBwRequs() bool {
-	if o != nil && !isNil(o.BwRequs) {
+	if o != nil && !IsNil(o.BwRequs) {
 		return true
 	}
 
@@ -617,7 +617,7 @@ func (o *EventFilter) SetBwRequs(v []BwRequirement) {
 
 // GetExcepIds returns the ExcepIds field value if set, zero value otherwise.
 func (o *EventFilter) GetExcepIds() []ExceptionId {
-	if o == nil || isNil(o.ExcepIds) {
+	if o == nil || IsNil(o.ExcepIds) {
 		var ret []ExceptionId
 		return ret
 	}
@@ -627,7 +627,7 @@ func (o *EventFilter) GetExcepIds() []ExceptionId {
 // GetExcepIdsOk returns a tuple with the ExcepIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetExcepIdsOk() ([]ExceptionId, bool) {
-	if o == nil || isNil(o.ExcepIds) {
+	if o == nil || IsNil(o.ExcepIds) {
 		return nil, false
 	}
 	return o.ExcepIds, true
@@ -635,7 +635,7 @@ func (o *EventFilter) GetExcepIdsOk() ([]ExceptionId, bool) {
 
 // HasExcepIds returns a boolean if a field has been set.
 func (o *EventFilter) HasExcepIds() bool {
-	if o != nil && !isNil(o.ExcepIds) {
+	if o != nil && !IsNil(o.ExcepIds) {
 		return true
 	}
 
@@ -649,7 +649,7 @@ func (o *EventFilter) SetExcepIds(v []ExceptionId) {
 
 // GetExptAnaType returns the ExptAnaType field value if set, zero value otherwise.
 func (o *EventFilter) GetExptAnaType() ExpectedAnalyticsType {
-	if o == nil || isNil(o.ExptAnaType) {
+	if o == nil || IsNil(o.ExptAnaType) {
 		var ret ExpectedAnalyticsType
 		return ret
 	}
@@ -659,7 +659,7 @@ func (o *EventFilter) GetExptAnaType() ExpectedAnalyticsType {
 // GetExptAnaTypeOk returns a tuple with the ExptAnaType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetExptAnaTypeOk() (*ExpectedAnalyticsType, bool) {
-	if o == nil || isNil(o.ExptAnaType) {
+	if o == nil || IsNil(o.ExptAnaType) {
 		return nil, false
 	}
 	return o.ExptAnaType, true
@@ -667,7 +667,7 @@ func (o *EventFilter) GetExptAnaTypeOk() (*ExpectedAnalyticsType, bool) {
 
 // HasExptAnaType returns a boolean if a field has been set.
 func (o *EventFilter) HasExptAnaType() bool {
-	if o != nil && !isNil(o.ExptAnaType) {
+	if o != nil && !IsNil(o.ExptAnaType) {
 		return true
 	}
 
@@ -681,7 +681,7 @@ func (o *EventFilter) SetExptAnaType(v ExpectedAnalyticsType) {
 
 // GetExptUeBehav returns the ExptUeBehav field value if set, zero value otherwise.
 func (o *EventFilter) GetExptUeBehav() ExpectedUeBehaviourData {
-	if o == nil || isNil(o.ExptUeBehav) {
+	if o == nil || IsNil(o.ExptUeBehav) {
 		var ret ExpectedUeBehaviourData
 		return ret
 	}
@@ -691,7 +691,7 @@ func (o *EventFilter) GetExptUeBehav() ExpectedUeBehaviourData {
 // GetExptUeBehavOk returns a tuple with the ExptUeBehav field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetExptUeBehavOk() (*ExpectedUeBehaviourData, bool) {
-	if o == nil || isNil(o.ExptUeBehav) {
+	if o == nil || IsNil(o.ExptUeBehav) {
 		return nil, false
 	}
 	return o.ExptUeBehav, true
@@ -699,7 +699,7 @@ func (o *EventFilter) GetExptUeBehavOk() (*ExpectedUeBehaviourData, bool) {
 
 // HasExptUeBehav returns a boolean if a field has been set.
 func (o *EventFilter) HasExptUeBehav() bool {
-	if o != nil && !isNil(o.ExptUeBehav) {
+	if o != nil && !IsNil(o.ExptUeBehav) {
 		return true
 	}
 
@@ -713,7 +713,7 @@ func (o *EventFilter) SetExptUeBehav(v ExpectedUeBehaviourData) {
 
 // GetRatFreqs returns the RatFreqs field value if set, zero value otherwise.
 func (o *EventFilter) GetRatFreqs() []RatFreqInformation {
-	if o == nil || isNil(o.RatFreqs) {
+	if o == nil || IsNil(o.RatFreqs) {
 		var ret []RatFreqInformation
 		return ret
 	}
@@ -723,7 +723,7 @@ func (o *EventFilter) GetRatFreqs() []RatFreqInformation {
 // GetRatFreqsOk returns a tuple with the RatFreqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetRatFreqsOk() ([]RatFreqInformation, bool) {
-	if o == nil || isNil(o.RatFreqs) {
+	if o == nil || IsNil(o.RatFreqs) {
 		return nil, false
 	}
 	return o.RatFreqs, true
@@ -731,7 +731,7 @@ func (o *EventFilter) GetRatFreqsOk() ([]RatFreqInformation, bool) {
 
 // HasRatFreqs returns a boolean if a field has been set.
 func (o *EventFilter) HasRatFreqs() bool {
-	if o != nil && !isNil(o.RatFreqs) {
+	if o != nil && !IsNil(o.RatFreqs) {
 		return true
 	}
 
@@ -745,7 +745,7 @@ func (o *EventFilter) SetRatFreqs(v []RatFreqInformation) {
 
 // GetDisperReqs returns the DisperReqs field value if set, zero value otherwise.
 func (o *EventFilter) GetDisperReqs() []DispersionRequirement {
-	if o == nil || isNil(o.DisperReqs) {
+	if o == nil || IsNil(o.DisperReqs) {
 		var ret []DispersionRequirement
 		return ret
 	}
@@ -755,7 +755,7 @@ func (o *EventFilter) GetDisperReqs() []DispersionRequirement {
 // GetDisperReqsOk returns a tuple with the DisperReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetDisperReqsOk() ([]DispersionRequirement, bool) {
-	if o == nil || isNil(o.DisperReqs) {
+	if o == nil || IsNil(o.DisperReqs) {
 		return nil, false
 	}
 	return o.DisperReqs, true
@@ -763,7 +763,7 @@ func (o *EventFilter) GetDisperReqsOk() ([]DispersionRequirement, bool) {
 
 // HasDisperReqs returns a boolean if a field has been set.
 func (o *EventFilter) HasDisperReqs() bool {
-	if o != nil && !isNil(o.DisperReqs) {
+	if o != nil && !IsNil(o.DisperReqs) {
 		return true
 	}
 
@@ -777,7 +777,7 @@ func (o *EventFilter) SetDisperReqs(v []DispersionRequirement) {
 
 // GetRedTransReqs returns the RedTransReqs field value if set, zero value otherwise.
 func (o *EventFilter) GetRedTransReqs() []RedundantTransmissionExpReq {
-	if o == nil || isNil(o.RedTransReqs) {
+	if o == nil || IsNil(o.RedTransReqs) {
 		var ret []RedundantTransmissionExpReq
 		return ret
 	}
@@ -787,7 +787,7 @@ func (o *EventFilter) GetRedTransReqs() []RedundantTransmissionExpReq {
 // GetRedTransReqsOk returns a tuple with the RedTransReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetRedTransReqsOk() ([]RedundantTransmissionExpReq, bool) {
-	if o == nil || isNil(o.RedTransReqs) {
+	if o == nil || IsNil(o.RedTransReqs) {
 		return nil, false
 	}
 	return o.RedTransReqs, true
@@ -795,7 +795,7 @@ func (o *EventFilter) GetRedTransReqsOk() ([]RedundantTransmissionExpReq, bool) 
 
 // HasRedTransReqs returns a boolean if a field has been set.
 func (o *EventFilter) HasRedTransReqs() bool {
-	if o != nil && !isNil(o.RedTransReqs) {
+	if o != nil && !IsNil(o.RedTransReqs) {
 		return true
 	}
 
@@ -809,7 +809,7 @@ func (o *EventFilter) SetRedTransReqs(v []RedundantTransmissionExpReq) {
 
 // GetWlanReqs returns the WlanReqs field value if set, zero value otherwise.
 func (o *EventFilter) GetWlanReqs() []WlanPerformanceReq {
-	if o == nil || isNil(o.WlanReqs) {
+	if o == nil || IsNil(o.WlanReqs) {
 		var ret []WlanPerformanceReq
 		return ret
 	}
@@ -819,7 +819,7 @@ func (o *EventFilter) GetWlanReqs() []WlanPerformanceReq {
 // GetWlanReqsOk returns a tuple with the WlanReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetWlanReqsOk() ([]WlanPerformanceReq, bool) {
-	if o == nil || isNil(o.WlanReqs) {
+	if o == nil || IsNil(o.WlanReqs) {
 		return nil, false
 	}
 	return o.WlanReqs, true
@@ -827,7 +827,7 @@ func (o *EventFilter) GetWlanReqsOk() ([]WlanPerformanceReq, bool) {
 
 // HasWlanReqs returns a boolean if a field has been set.
 func (o *EventFilter) HasWlanReqs() bool {
-	if o != nil && !isNil(o.WlanReqs) {
+	if o != nil && !IsNil(o.WlanReqs) {
 		return true
 	}
 
@@ -841,7 +841,7 @@ func (o *EventFilter) SetWlanReqs(v []WlanPerformanceReq) {
 
 // GetListOfAnaSubsets returns the ListOfAnaSubsets field value if set, zero value otherwise.
 func (o *EventFilter) GetListOfAnaSubsets() []AnalyticsSubset {
-	if o == nil || isNil(o.ListOfAnaSubsets) {
+	if o == nil || IsNil(o.ListOfAnaSubsets) {
 		var ret []AnalyticsSubset
 		return ret
 	}
@@ -851,7 +851,7 @@ func (o *EventFilter) GetListOfAnaSubsets() []AnalyticsSubset {
 // GetListOfAnaSubsetsOk returns a tuple with the ListOfAnaSubsets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetListOfAnaSubsetsOk() ([]AnalyticsSubset, bool) {
-	if o == nil || isNil(o.ListOfAnaSubsets) {
+	if o == nil || IsNil(o.ListOfAnaSubsets) {
 		return nil, false
 	}
 	return o.ListOfAnaSubsets, true
@@ -859,7 +859,7 @@ func (o *EventFilter) GetListOfAnaSubsetsOk() ([]AnalyticsSubset, bool) {
 
 // HasListOfAnaSubsets returns a boolean if a field has been set.
 func (o *EventFilter) HasListOfAnaSubsets() bool {
-	if o != nil && !isNil(o.ListOfAnaSubsets) {
+	if o != nil && !IsNil(o.ListOfAnaSubsets) {
 		return true
 	}
 
@@ -873,7 +873,7 @@ func (o *EventFilter) SetListOfAnaSubsets(v []AnalyticsSubset) {
 
 // GetUpfInfo returns the UpfInfo field value if set, zero value otherwise.
 func (o *EventFilter) GetUpfInfo() UpfInformation {
-	if o == nil || isNil(o.UpfInfo) {
+	if o == nil || IsNil(o.UpfInfo) {
 		var ret UpfInformation
 		return ret
 	}
@@ -883,7 +883,7 @@ func (o *EventFilter) GetUpfInfo() UpfInformation {
 // GetUpfInfoOk returns a tuple with the UpfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetUpfInfoOk() (*UpfInformation, bool) {
-	if o == nil || isNil(o.UpfInfo) {
+	if o == nil || IsNil(o.UpfInfo) {
 		return nil, false
 	}
 	return o.UpfInfo, true
@@ -891,7 +891,7 @@ func (o *EventFilter) GetUpfInfoOk() (*UpfInformation, bool) {
 
 // HasUpfInfo returns a boolean if a field has been set.
 func (o *EventFilter) HasUpfInfo() bool {
-	if o != nil && !isNil(o.UpfInfo) {
+	if o != nil && !IsNil(o.UpfInfo) {
 		return true
 	}
 
@@ -905,7 +905,7 @@ func (o *EventFilter) SetUpfInfo(v UpfInformation) {
 
 // GetAppServerAddrs returns the AppServerAddrs field value if set, zero value otherwise.
 func (o *EventFilter) GetAppServerAddrs() []AddrFqdn {
-	if o == nil || isNil(o.AppServerAddrs) {
+	if o == nil || IsNil(o.AppServerAddrs) {
 		var ret []AddrFqdn
 		return ret
 	}
@@ -915,7 +915,7 @@ func (o *EventFilter) GetAppServerAddrs() []AddrFqdn {
 // GetAppServerAddrsOk returns a tuple with the AppServerAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetAppServerAddrsOk() ([]AddrFqdn, bool) {
-	if o == nil || isNil(o.AppServerAddrs) {
+	if o == nil || IsNil(o.AppServerAddrs) {
 		return nil, false
 	}
 	return o.AppServerAddrs, true
@@ -923,7 +923,7 @@ func (o *EventFilter) GetAppServerAddrsOk() ([]AddrFqdn, bool) {
 
 // HasAppServerAddrs returns a boolean if a field has been set.
 func (o *EventFilter) HasAppServerAddrs() bool {
-	if o != nil && !isNil(o.AppServerAddrs) {
+	if o != nil && !IsNil(o.AppServerAddrs) {
 		return true
 	}
 
@@ -937,7 +937,7 @@ func (o *EventFilter) SetAppServerAddrs(v []AddrFqdn) {
 
 // GetDnPerfReqs returns the DnPerfReqs field value if set, zero value otherwise.
 func (o *EventFilter) GetDnPerfReqs() []DnPerformanceReq {
-	if o == nil || isNil(o.DnPerfReqs) {
+	if o == nil || IsNil(o.DnPerfReqs) {
 		var ret []DnPerformanceReq
 		return ret
 	}
@@ -947,7 +947,7 @@ func (o *EventFilter) GetDnPerfReqs() []DnPerformanceReq {
 // GetDnPerfReqsOk returns a tuple with the DnPerfReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetDnPerfReqsOk() ([]DnPerformanceReq, bool) {
-	if o == nil || isNil(o.DnPerfReqs) {
+	if o == nil || IsNil(o.DnPerfReqs) {
 		return nil, false
 	}
 	return o.DnPerfReqs, true
@@ -955,7 +955,7 @@ func (o *EventFilter) GetDnPerfReqsOk() ([]DnPerformanceReq, bool) {
 
 // HasDnPerfReqs returns a boolean if a field has been set.
 func (o *EventFilter) HasDnPerfReqs() bool {
-	if o != nil && !isNil(o.DnPerfReqs) {
+	if o != nil && !IsNil(o.DnPerfReqs) {
 		return true
 	}
 
@@ -968,7 +968,7 @@ func (o *EventFilter) SetDnPerfReqs(v []DnPerformanceReq) {
 }
 
 func (o EventFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -977,88 +977,88 @@ func (o EventFilter) MarshalJSON() ([]byte, error) {
 
 func (o EventFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnySlice) {
+	if !IsNil(o.AnySlice) {
 		toSerialize["anySlice"] = o.AnySlice
 	}
-	if !isNil(o.Snssais) {
+	if !IsNil(o.Snssais) {
 		toSerialize["snssais"] = o.Snssais
 	}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !isNil(o.Dnns) {
+	if !IsNil(o.Dnns) {
 		toSerialize["dnns"] = o.Dnns
 	}
-	if !isNil(o.Dnais) {
+	if !IsNil(o.Dnais) {
 		toSerialize["dnais"] = o.Dnais
 	}
-	if !isNil(o.LadnDnns) {
+	if !IsNil(o.LadnDnns) {
 		toSerialize["ladnDnns"] = o.LadnDnns
 	}
-	if !isNil(o.NetworkArea) {
+	if !IsNil(o.NetworkArea) {
 		toSerialize["networkArea"] = o.NetworkArea
 	}
-	if !isNil(o.VisitedAreas) {
+	if !IsNil(o.VisitedAreas) {
 		toSerialize["visitedAreas"] = o.VisitedAreas
 	}
-	if !isNil(o.MaxTopAppUlNbr) {
+	if !IsNil(o.MaxTopAppUlNbr) {
 		toSerialize["maxTopAppUlNbr"] = o.MaxTopAppUlNbr
 	}
-	if !isNil(o.MaxTopAppDlNbr) {
+	if !IsNil(o.MaxTopAppDlNbr) {
 		toSerialize["maxTopAppDlNbr"] = o.MaxTopAppDlNbr
 	}
-	if !isNil(o.NfInstanceIds) {
+	if !IsNil(o.NfInstanceIds) {
 		toSerialize["nfInstanceIds"] = o.NfInstanceIds
 	}
-	if !isNil(o.NfSetIds) {
+	if !IsNil(o.NfSetIds) {
 		toSerialize["nfSetIds"] = o.NfSetIds
 	}
-	if !isNil(o.NfTypes) {
+	if !IsNil(o.NfTypes) {
 		toSerialize["nfTypes"] = o.NfTypes
 	}
-	if !isNil(o.NsiIdInfos) {
+	if !IsNil(o.NsiIdInfos) {
 		toSerialize["nsiIdInfos"] = o.NsiIdInfos
 	}
-	if !isNil(o.QosRequ) {
+	if !IsNil(o.QosRequ) {
 		toSerialize["qosRequ"] = o.QosRequ
 	}
-	if !isNil(o.NwPerfTypes) {
+	if !IsNil(o.NwPerfTypes) {
 		toSerialize["nwPerfTypes"] = o.NwPerfTypes
 	}
-	if !isNil(o.BwRequs) {
+	if !IsNil(o.BwRequs) {
 		toSerialize["bwRequs"] = o.BwRequs
 	}
-	if !isNil(o.ExcepIds) {
+	if !IsNil(o.ExcepIds) {
 		toSerialize["excepIds"] = o.ExcepIds
 	}
-	if !isNil(o.ExptAnaType) {
+	if !IsNil(o.ExptAnaType) {
 		toSerialize["exptAnaType"] = o.ExptAnaType
 	}
-	if !isNil(o.ExptUeBehav) {
+	if !IsNil(o.ExptUeBehav) {
 		toSerialize["exptUeBehav"] = o.ExptUeBehav
 	}
-	if !isNil(o.RatFreqs) {
+	if !IsNil(o.RatFreqs) {
 		toSerialize["ratFreqs"] = o.RatFreqs
 	}
-	if !isNil(o.DisperReqs) {
+	if !IsNil(o.DisperReqs) {
 		toSerialize["disperReqs"] = o.DisperReqs
 	}
-	if !isNil(o.RedTransReqs) {
+	if !IsNil(o.RedTransReqs) {
 		toSerialize["redTransReqs"] = o.RedTransReqs
 	}
-	if !isNil(o.WlanReqs) {
+	if !IsNil(o.WlanReqs) {
 		toSerialize["wlanReqs"] = o.WlanReqs
 	}
-	if !isNil(o.ListOfAnaSubsets) {
+	if !IsNil(o.ListOfAnaSubsets) {
 		toSerialize["listOfAnaSubsets"] = o.ListOfAnaSubsets
 	}
-	if !isNil(o.UpfInfo) {
+	if !IsNil(o.UpfInfo) {
 		toSerialize["upfInfo"] = o.UpfInfo
 	}
-	if !isNil(o.AppServerAddrs) {
+	if !IsNil(o.AppServerAddrs) {
 		toSerialize["appServerAddrs"] = o.AppServerAddrs
 	}
-	if !isNil(o.DnPerfReqs) {
+	if !IsNil(o.DnPerfReqs) {
 		toSerialize["dnPerfReqs"] = o.DnPerfReqs
 	}
 	return toSerialize, nil
@@ -1099,5 +1099,3 @@ func (v *NullableEventFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

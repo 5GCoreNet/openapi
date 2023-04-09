@@ -20,7 +20,7 @@ var _ MappedNullable = &InterRatEsActivationCandidateCellParameters{}
 // InterRatEsActivationCandidateCellParameters struct for InterRatEsActivationCandidateCellParameters
 type InterRatEsActivationCandidateCellParameters struct {
 	LoadThreshold *int32 `json:"loadThreshold,omitempty"`
-	TimeDuration *int32 `json:"timeDuration,omitempty"`
+	TimeDuration  *int32 `json:"timeDuration,omitempty"`
 }
 
 // NewInterRatEsActivationCandidateCellParameters instantiates a new InterRatEsActivationCandidateCellParameters object
@@ -42,7 +42,7 @@ func NewInterRatEsActivationCandidateCellParametersWithDefaults() *InterRatEsAct
 
 // GetLoadThreshold returns the LoadThreshold field value if set, zero value otherwise.
 func (o *InterRatEsActivationCandidateCellParameters) GetLoadThreshold() int32 {
-	if o == nil || isNil(o.LoadThreshold) {
+	if o == nil || IsNil(o.LoadThreshold) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *InterRatEsActivationCandidateCellParameters) GetLoadThreshold() int32 {
 // GetLoadThresholdOk returns a tuple with the LoadThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterRatEsActivationCandidateCellParameters) GetLoadThresholdOk() (*int32, bool) {
-	if o == nil || isNil(o.LoadThreshold) {
+	if o == nil || IsNil(o.LoadThreshold) {
 		return nil, false
 	}
 	return o.LoadThreshold, true
@@ -60,7 +60,7 @@ func (o *InterRatEsActivationCandidateCellParameters) GetLoadThresholdOk() (*int
 
 // HasLoadThreshold returns a boolean if a field has been set.
 func (o *InterRatEsActivationCandidateCellParameters) HasLoadThreshold() bool {
-	if o != nil && !isNil(o.LoadThreshold) {
+	if o != nil && !IsNil(o.LoadThreshold) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *InterRatEsActivationCandidateCellParameters) SetLoadThreshold(v int32) 
 
 // GetTimeDuration returns the TimeDuration field value if set, zero value otherwise.
 func (o *InterRatEsActivationCandidateCellParameters) GetTimeDuration() int32 {
-	if o == nil || isNil(o.TimeDuration) {
+	if o == nil || IsNil(o.TimeDuration) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *InterRatEsActivationCandidateCellParameters) GetTimeDuration() int32 {
 // GetTimeDurationOk returns a tuple with the TimeDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterRatEsActivationCandidateCellParameters) GetTimeDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.TimeDuration) {
+	if o == nil || IsNil(o.TimeDuration) {
 		return nil, false
 	}
 	return o.TimeDuration, true
@@ -92,7 +92,7 @@ func (o *InterRatEsActivationCandidateCellParameters) GetTimeDurationOk() (*int3
 
 // HasTimeDuration returns a boolean if a field has been set.
 func (o *InterRatEsActivationCandidateCellParameters) HasTimeDuration() bool {
-	if o != nil && !isNil(o.TimeDuration) {
+	if o != nil && !IsNil(o.TimeDuration) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *InterRatEsActivationCandidateCellParameters) SetTimeDuration(v int32) {
 }
 
 func (o InterRatEsActivationCandidateCellParameters) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o InterRatEsActivationCandidateCellParameters) MarshalJSON() ([]byte, erro
 
 func (o InterRatEsActivationCandidateCellParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LoadThreshold) {
+	if !IsNil(o.LoadThreshold) {
 		toSerialize["loadThreshold"] = o.LoadThreshold
 	}
-	if !isNil(o.TimeDuration) {
+	if !IsNil(o.TimeDuration) {
 		toSerialize["timeDuration"] = o.TimeDuration
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableInterRatEsActivationCandidateCellParameters) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,18 +19,18 @@ var _ MappedNullable = &ProvideLocInfo{}
 
 // ProvideLocInfo Data within Provide Location Information Response
 type ProvideLocInfo struct {
-	CurrentLoc *bool `json:"currentLoc,omitempty"`
-	Location *UserLocation `json:"location,omitempty"`
-	AdditionalLocation *UserLocation `json:"additionalLocation,omitempty"`
-	GeoInfo *GeographicArea `json:"geoInfo,omitempty"`
+	CurrentLoc         *bool           `json:"currentLoc,omitempty"`
+	Location           *UserLocation   `json:"location,omitempty"`
+	AdditionalLocation *UserLocation   `json:"additionalLocation,omitempty"`
+	GeoInfo            *GeographicArea `json:"geoInfo,omitempty"`
 	// Indicates value of the age of the location estimate.
-	LocationAge *int32 `json:"locationAge,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
+	LocationAge *int32   `json:"locationAge,omitempty"`
+	RatType     *RatType `json:"ratType,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
 	Timezone *string `json:"timezone,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	OldGuami *Guami `json:"oldGuami,omitempty"`
+	OldGuami          *Guami  `json:"oldGuami,omitempty"`
 }
 
 // NewProvideLocInfo instantiates a new ProvideLocInfo object
@@ -52,7 +52,7 @@ func NewProvideLocInfoWithDefaults() *ProvideLocInfo {
 
 // GetCurrentLoc returns the CurrentLoc field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetCurrentLoc() bool {
-	if o == nil || isNil(o.CurrentLoc) {
+	if o == nil || IsNil(o.CurrentLoc) {
 		var ret bool
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ProvideLocInfo) GetCurrentLoc() bool {
 // GetCurrentLocOk returns a tuple with the CurrentLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetCurrentLocOk() (*bool, bool) {
-	if o == nil || isNil(o.CurrentLoc) {
+	if o == nil || IsNil(o.CurrentLoc) {
 		return nil, false
 	}
 	return o.CurrentLoc, true
@@ -70,7 +70,7 @@ func (o *ProvideLocInfo) GetCurrentLocOk() (*bool, bool) {
 
 // HasCurrentLoc returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasCurrentLoc() bool {
-	if o != nil && !isNil(o.CurrentLoc) {
+	if o != nil && !IsNil(o.CurrentLoc) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *ProvideLocInfo) SetCurrentLoc(v bool) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetLocation() UserLocation {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret UserLocation
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ProvideLocInfo) GetLocation() UserLocation {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -102,7 +102,7 @@ func (o *ProvideLocInfo) GetLocationOk() (*UserLocation, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *ProvideLocInfo) SetLocation(v UserLocation) {
 
 // GetAdditionalLocation returns the AdditionalLocation field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetAdditionalLocation() UserLocation {
-	if o == nil || isNil(o.AdditionalLocation) {
+	if o == nil || IsNil(o.AdditionalLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ProvideLocInfo) GetAdditionalLocation() UserLocation {
 // GetAdditionalLocationOk returns a tuple with the AdditionalLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetAdditionalLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.AdditionalLocation) {
+	if o == nil || IsNil(o.AdditionalLocation) {
 		return nil, false
 	}
 	return o.AdditionalLocation, true
@@ -134,7 +134,7 @@ func (o *ProvideLocInfo) GetAdditionalLocationOk() (*UserLocation, bool) {
 
 // HasAdditionalLocation returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasAdditionalLocation() bool {
-	if o != nil && !isNil(o.AdditionalLocation) {
+	if o != nil && !IsNil(o.AdditionalLocation) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *ProvideLocInfo) SetAdditionalLocation(v UserLocation) {
 
 // GetGeoInfo returns the GeoInfo field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetGeoInfo() GeographicArea {
-	if o == nil || isNil(o.GeoInfo) {
+	if o == nil || IsNil(o.GeoInfo) {
 		var ret GeographicArea
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ProvideLocInfo) GetGeoInfo() GeographicArea {
 // GetGeoInfoOk returns a tuple with the GeoInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetGeoInfoOk() (*GeographicArea, bool) {
-	if o == nil || isNil(o.GeoInfo) {
+	if o == nil || IsNil(o.GeoInfo) {
 		return nil, false
 	}
 	return o.GeoInfo, true
@@ -166,7 +166,7 @@ func (o *ProvideLocInfo) GetGeoInfoOk() (*GeographicArea, bool) {
 
 // HasGeoInfo returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasGeoInfo() bool {
-	if o != nil && !isNil(o.GeoInfo) {
+	if o != nil && !IsNil(o.GeoInfo) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *ProvideLocInfo) SetGeoInfo(v GeographicArea) {
 
 // GetLocationAge returns the LocationAge field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetLocationAge() int32 {
-	if o == nil || isNil(o.LocationAge) {
+	if o == nil || IsNil(o.LocationAge) {
 		var ret int32
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *ProvideLocInfo) GetLocationAge() int32 {
 // GetLocationAgeOk returns a tuple with the LocationAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetLocationAgeOk() (*int32, bool) {
-	if o == nil || isNil(o.LocationAge) {
+	if o == nil || IsNil(o.LocationAge) {
 		return nil, false
 	}
 	return o.LocationAge, true
@@ -198,7 +198,7 @@ func (o *ProvideLocInfo) GetLocationAgeOk() (*int32, bool) {
 
 // HasLocationAge returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasLocationAge() bool {
-	if o != nil && !isNil(o.LocationAge) {
+	if o != nil && !IsNil(o.LocationAge) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *ProvideLocInfo) SetLocationAge(v int32) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *ProvideLocInfo) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -230,7 +230,7 @@ func (o *ProvideLocInfo) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *ProvideLocInfo) SetRatType(v RatType) {
 
 // GetTimezone returns the Timezone field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetTimezone() string {
-	if o == nil || isNil(o.Timezone) {
+	if o == nil || IsNil(o.Timezone) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *ProvideLocInfo) GetTimezone() string {
 // GetTimezoneOk returns a tuple with the Timezone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetTimezoneOk() (*string, bool) {
-	if o == nil || isNil(o.Timezone) {
+	if o == nil || IsNil(o.Timezone) {
 		return nil, false
 	}
 	return o.Timezone, true
@@ -262,7 +262,7 @@ func (o *ProvideLocInfo) GetTimezoneOk() (*string, bool) {
 
 // HasTimezone returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasTimezone() bool {
-	if o != nil && !isNil(o.Timezone) {
+	if o != nil && !IsNil(o.Timezone) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *ProvideLocInfo) SetTimezone(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *ProvideLocInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -294,7 +294,7 @@ func (o *ProvideLocInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *ProvideLocInfo) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetOldGuami() Guami {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *ProvideLocInfo) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -326,7 +326,7 @@ func (o *ProvideLocInfo) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasOldGuami() bool {
-	if o != nil && !isNil(o.OldGuami) {
+	if o != nil && !IsNil(o.OldGuami) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *ProvideLocInfo) SetOldGuami(v Guami) {
 }
 
 func (o ProvideLocInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,31 +348,31 @@ func (o ProvideLocInfo) MarshalJSON() ([]byte, error) {
 
 func (o ProvideLocInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CurrentLoc) {
+	if !IsNil(o.CurrentLoc) {
 		toSerialize["currentLoc"] = o.CurrentLoc
 	}
-	if !isNil(o.Location) {
+	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
-	if !isNil(o.AdditionalLocation) {
+	if !IsNil(o.AdditionalLocation) {
 		toSerialize["additionalLocation"] = o.AdditionalLocation
 	}
-	if !isNil(o.GeoInfo) {
+	if !IsNil(o.GeoInfo) {
 		toSerialize["geoInfo"] = o.GeoInfo
 	}
-	if !isNil(o.LocationAge) {
+	if !IsNil(o.LocationAge) {
 		toSerialize["locationAge"] = o.LocationAge
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.Timezone) {
+	if !IsNil(o.Timezone) {
 		toSerialize["timezone"] = o.Timezone
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.OldGuami) {
+	if !IsNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
 	return toSerialize, nil
@@ -413,5 +413,3 @@ func (v *NullableProvideLocInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &OutOfCreditInformation{}
 // OutOfCreditInformation Indicates the SDFs without available credit and the corresponding termination action.
 type OutOfCreditInformation struct {
 	FinUnitAct FinalUnitAction `json:"finUnitAct"`
-	Flows []Flows `json:"flows,omitempty"`
+	Flows      []Flows         `json:"flows,omitempty"`
 }
 
 // NewOutOfCreditInformation instantiates a new OutOfCreditInformation object
@@ -67,7 +67,7 @@ func (o *OutOfCreditInformation) SetFinUnitAct(v FinalUnitAction) {
 
 // GetFlows returns the Flows field value if set, zero value otherwise.
 func (o *OutOfCreditInformation) GetFlows() []Flows {
-	if o == nil || isNil(o.Flows) {
+	if o == nil || IsNil(o.Flows) {
 		var ret []Flows
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *OutOfCreditInformation) GetFlows() []Flows {
 // GetFlowsOk returns a tuple with the Flows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OutOfCreditInformation) GetFlowsOk() ([]Flows, bool) {
-	if o == nil || isNil(o.Flows) {
+	if o == nil || IsNil(o.Flows) {
 		return nil, false
 	}
 	return o.Flows, true
@@ -85,7 +85,7 @@ func (o *OutOfCreditInformation) GetFlowsOk() ([]Flows, bool) {
 
 // HasFlows returns a boolean if a field has been set.
 func (o *OutOfCreditInformation) HasFlows() bool {
-	if o != nil && !isNil(o.Flows) {
+	if o != nil && !IsNil(o.Flows) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *OutOfCreditInformation) SetFlows(v []Flows) {
 }
 
 func (o OutOfCreditInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o OutOfCreditInformation) MarshalJSON() ([]byte, error) {
 func (o OutOfCreditInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["finUnitAct"] = o.FinUnitAct
-	if !isNil(o.Flows) {
+	if !IsNil(o.Flows) {
 		toSerialize["flows"] = o.Flows
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableOutOfCreditInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

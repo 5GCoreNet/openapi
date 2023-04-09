@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// UpIntegrityRm indicates whether UP integrity protection is required, preferred or not needed for all the traffic on the PDU Session. It shall comply with the provisions defined in table 5.4.3.4-1.  
+// UpIntegrityRm indicates whether UP integrity protection is required, preferred or not needed for all the traffic on the PDU Session. It shall comply with the provisions defined in table 5.4.3.4-1.
 type UpIntegrityRm struct {
-	NullValue *NullValue
+	NullValue   *NullValue
 	UpIntegrity *UpIntegrity
 }
 
@@ -25,7 +25,7 @@ type UpIntegrityRm struct {
 func (dst *UpIntegrityRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *UpIntegrityRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into UpIntegrity
-	err = json.Unmarshal(data, &dst.UpIntegrity);
+	err = json.Unmarshal(data, &dst.UpIntegrity)
 	if err == nil {
 		jsonUpIntegrity, _ := json.Marshal(dst.UpIntegrity)
 		if string(jsonUpIntegrity) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableUpIntegrityRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

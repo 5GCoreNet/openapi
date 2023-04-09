@@ -17,23 +17,23 @@ import (
 
 // ResourcesGenericNrm - struct for ResourcesGenericNrm
 type ResourcesGenericNrm struct {
-	AlarmListSingle *AlarmListSingle
-	FileDownloadJobSingle *FileDownloadJobSingle
-	FileSingle *FileSingle
-	FilesSingle *FilesSingle
-	HeartbeatControlSingle *HeartbeatControlSingle
-	ManagedNFServiceSingle *ManagedNFServiceSingle
+	AlarmListSingle                *AlarmListSingle
+	FileDownloadJobSingle          *FileDownloadJobSingle
+	FileSingle                     *FileSingle
+	FilesSingle                    *FilesSingle
+	HeartbeatControlSingle         *HeartbeatControlSingle
+	ManagedNFServiceSingle         *ManagedNFServiceSingle
 	ManagementDataCollectionSingle *ManagementDataCollectionSingle
-	ManagementNodeSingle *ManagementNodeSingle
-	MeContextSingle *MeContextSingle
-	MnsAgentSingle *MnsAgentSingle
-	MnsInfoSingle *MnsInfoSingle
-	MnsRegistrySingle *MnsRegistrySingle
-	NtfSubscriptionControlSingle *NtfSubscriptionControlSingle
-	PerfMetricJobSingle *PerfMetricJobSingle
-	ThresholdMonitorSingle *ThresholdMonitorSingle
-	TraceJobSingle *TraceJobSingle
-	VsDataContainerSingle *VsDataContainerSingle
+	ManagementNodeSingle           *ManagementNodeSingle
+	MeContextSingle                *MeContextSingle
+	MnsAgentSingle                 *MnsAgentSingle
+	MnsInfoSingle                  *MnsInfoSingle
+	MnsRegistrySingle              *MnsRegistrySingle
+	NtfSubscriptionControlSingle   *NtfSubscriptionControlSingle
+	PerfMetricJobSingle            *PerfMetricJobSingle
+	ThresholdMonitorSingle         *ThresholdMonitorSingle
+	TraceJobSingle                 *TraceJobSingle
+	VsDataContainerSingle          *VsDataContainerSingle
 }
 
 // AlarmListSingleAsResourcesGenericNrm is a convenience function that returns AlarmListSingle wrapped in ResourcesGenericNrm
@@ -154,7 +154,6 @@ func VsDataContainerSingleAsResourcesGenericNrm(v *VsDataContainerSingle) Resour
 		VsDataContainerSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesGenericNrm) UnmarshalJSON(data []byte) error {
@@ -483,7 +482,7 @@ func (src ResourcesGenericNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesGenericNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesGenericNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -594,5 +593,3 @@ func (v *NullableResourcesGenericNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

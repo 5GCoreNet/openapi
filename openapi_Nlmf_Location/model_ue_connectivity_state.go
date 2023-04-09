@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &UeConnectivityState{}
 
 // UeConnectivityState Indicates the connectivity state of a UE.
 type UeConnectivityState struct {
-	AccessType AccessType `json:"accessType"`
-	Connectivitystate *CmState `json:"connectivitystate,omitempty"`
+	AccessType        AccessType `json:"accessType"`
+	Connectivitystate *CmState   `json:"connectivitystate,omitempty"`
 }
 
 // NewUeConnectivityState instantiates a new UeConnectivityState object
@@ -67,7 +67,7 @@ func (o *UeConnectivityState) SetAccessType(v AccessType) {
 
 // GetConnectivitystate returns the Connectivitystate field value if set, zero value otherwise.
 func (o *UeConnectivityState) GetConnectivitystate() CmState {
-	if o == nil || isNil(o.Connectivitystate) {
+	if o == nil || IsNil(o.Connectivitystate) {
 		var ret CmState
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *UeConnectivityState) GetConnectivitystate() CmState {
 // GetConnectivitystateOk returns a tuple with the Connectivitystate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeConnectivityState) GetConnectivitystateOk() (*CmState, bool) {
-	if o == nil || isNil(o.Connectivitystate) {
+	if o == nil || IsNil(o.Connectivitystate) {
 		return nil, false
 	}
 	return o.Connectivitystate, true
@@ -85,7 +85,7 @@ func (o *UeConnectivityState) GetConnectivitystateOk() (*CmState, bool) {
 
 // HasConnectivitystate returns a boolean if a field has been set.
 func (o *UeConnectivityState) HasConnectivitystate() bool {
-	if o != nil && !isNil(o.Connectivitystate) {
+	if o != nil && !IsNil(o.Connectivitystate) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *UeConnectivityState) SetConnectivitystate(v CmState) {
 }
 
 func (o UeConnectivityState) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o UeConnectivityState) MarshalJSON() ([]byte, error) {
 func (o UeConnectivityState) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["accessType"] = o.AccessType
-	if !isNil(o.Connectivitystate) {
+	if !IsNil(o.Connectivitystate) {
 		toSerialize["connectivitystate"] = o.Connectivitystate
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableUeConnectivityState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

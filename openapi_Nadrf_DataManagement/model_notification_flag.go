@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// NotificationFlag Possible values are: - ACTIVATE: The event notification is activated. - DEACTIVATE: The event notification is deactivated and shall be muted. The available    event(s) shall be stored. - RETRIEVAL: The event notification shall be sent to the NF service consumer(s),   after that, is muted again.  
+// NotificationFlag Possible values are: - ACTIVATE: The event notification is activated. - DEACTIVATE: The event notification is deactivated and shall be muted. The available    event(s) shall be stored. - RETRIEVAL: The event notification shall be sent to the NF service consumer(s),   after that, is muted again.
 type NotificationFlag struct {
-	NotificationFlagAnyOf *NotificationFlagAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotificationFlag) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NotificationFlagAnyOf
-	err = json.Unmarshal(data, &dst.NotificationFlagAnyOf);
-	if err == nil {
-		jsonNotificationFlagAnyOf, _ := json.Marshal(dst.NotificationFlagAnyOf)
-		if string(jsonNotificationFlagAnyOf) == "{}" { // empty struct
-			dst.NotificationFlagAnyOf = nil
-		} else {
-			return nil // data stored in dst.NotificationFlagAnyOf, return on the first match
-		}
-	} else {
-		dst.NotificationFlagAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NotificationFlag) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotificationFlag) MarshalJSON() ([]byte, error) {
-	if src.NotificationFlagAnyOf != nil {
-		return json.Marshal(&src.NotificationFlagAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNotificationFlag) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

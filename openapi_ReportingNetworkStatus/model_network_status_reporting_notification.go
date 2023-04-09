@@ -1,7 +1,7 @@
 /*
 3gpp-network-status-reporting
 
-API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -22,8 +22,8 @@ type NetworkStatusReportingNotification struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Subscription string `json:"subscription"`
 	// Unsigned integer with valid values between 0 and 31. The value 0 indicates that there is no congestion. The value 1 is the lowest congestion level and value 31 is the highest congestion level.
-	NsiValue *int32 `json:"nsiValue,omitempty"`
-	NsiType *CongestionType `json:"nsiType,omitempty"`
+	NsiValue *int32          `json:"nsiValue,omitempty"`
+	NsiType  *CongestionType `json:"nsiType,omitempty"`
 }
 
 // NewNetworkStatusReportingNotification instantiates a new NetworkStatusReportingNotification object
@@ -70,7 +70,7 @@ func (o *NetworkStatusReportingNotification) SetSubscription(v string) {
 
 // GetNsiValue returns the NsiValue field value if set, zero value otherwise.
 func (o *NetworkStatusReportingNotification) GetNsiValue() int32 {
-	if o == nil || isNil(o.NsiValue) {
+	if o == nil || IsNil(o.NsiValue) {
 		var ret int32
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *NetworkStatusReportingNotification) GetNsiValue() int32 {
 // GetNsiValueOk returns a tuple with the NsiValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingNotification) GetNsiValueOk() (*int32, bool) {
-	if o == nil || isNil(o.NsiValue) {
+	if o == nil || IsNil(o.NsiValue) {
 		return nil, false
 	}
 	return o.NsiValue, true
@@ -88,7 +88,7 @@ func (o *NetworkStatusReportingNotification) GetNsiValueOk() (*int32, bool) {
 
 // HasNsiValue returns a boolean if a field has been set.
 func (o *NetworkStatusReportingNotification) HasNsiValue() bool {
-	if o != nil && !isNil(o.NsiValue) {
+	if o != nil && !IsNil(o.NsiValue) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *NetworkStatusReportingNotification) SetNsiValue(v int32) {
 
 // GetNsiType returns the NsiType field value if set, zero value otherwise.
 func (o *NetworkStatusReportingNotification) GetNsiType() CongestionType {
-	if o == nil || isNil(o.NsiType) {
+	if o == nil || IsNil(o.NsiType) {
 		var ret CongestionType
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NetworkStatusReportingNotification) GetNsiType() CongestionType {
 // GetNsiTypeOk returns a tuple with the NsiType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingNotification) GetNsiTypeOk() (*CongestionType, bool) {
-	if o == nil || isNil(o.NsiType) {
+	if o == nil || IsNil(o.NsiType) {
 		return nil, false
 	}
 	return o.NsiType, true
@@ -120,7 +120,7 @@ func (o *NetworkStatusReportingNotification) GetNsiTypeOk() (*CongestionType, bo
 
 // HasNsiType returns a boolean if a field has been set.
 func (o *NetworkStatusReportingNotification) HasNsiType() bool {
-	if o != nil && !isNil(o.NsiType) {
+	if o != nil && !IsNil(o.NsiType) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *NetworkStatusReportingNotification) SetNsiType(v CongestionType) {
 }
 
 func (o NetworkStatusReportingNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o NetworkStatusReportingNotification) MarshalJSON() ([]byte, error) {
 func (o NetworkStatusReportingNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !isNil(o.NsiValue) {
+	if !IsNil(o.NsiValue) {
 		toSerialize["nsiValue"] = o.NsiValue
 	}
-	if !isNil(o.NsiType) {
+	if !IsNil(o.NsiType) {
 		toSerialize["nsiType"] = o.NsiType
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableNetworkStatusReportingNotification) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

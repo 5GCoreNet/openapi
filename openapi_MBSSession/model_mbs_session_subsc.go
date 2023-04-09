@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-session
 
-API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &MbsSessionSubsc{}
 
 // MbsSessionSubsc Represents an MBS Session Subscription.
 type MbsSessionSubsc struct {
-	AfId string `json:"afId"`
-	Subscription MbsSessionSubscription `json:"subscription"`
-	SubscriptionId *string `json:"subscriptionId,omitempty"`
+	AfId           string                 `json:"afId"`
+	Subscription   MbsSessionSubscription `json:"subscription"`
+	SubscriptionId *string                `json:"subscriptionId,omitempty"`
 }
 
 // NewMbsSessionSubsc instantiates a new MbsSessionSubsc object
@@ -93,7 +93,7 @@ func (o *MbsSessionSubsc) SetSubscription(v MbsSessionSubscription) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *MbsSessionSubsc) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *MbsSessionSubsc) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubsc) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -111,7 +111,7 @@ func (o *MbsSessionSubsc) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *MbsSessionSubsc) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *MbsSessionSubsc) SetSubscriptionId(v string) {
 }
 
 func (o MbsSessionSubsc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o MbsSessionSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afId"] = o.AfId
 	toSerialize["subscription"] = o.Subscription
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableMbsSessionSubsc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

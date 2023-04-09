@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -23,9 +23,9 @@ type SessionScheduleOverrideInner struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Start *time.Time `json:"start,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Stop *time.Time `json:"stop,omitempty"`
-	Index *int32 `json:"index,omitempty"`
-	Cancelled *bool `json:"cancelled,omitempty"`
+	Stop      *time.Time `json:"stop,omitempty"`
+	Index     *int32     `json:"index,omitempty"`
+	Cancelled *bool      `json:"cancelled,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	SessionDescriptionURI *string `json:"sessionDescriptionURI,omitempty"`
 }
@@ -49,7 +49,7 @@ func NewSessionScheduleOverrideInnerWithDefaults() *SessionScheduleOverrideInner
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *SessionScheduleOverrideInner) GetStart() time.Time {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret time.Time
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *SessionScheduleOverrideInner) GetStart() time.Time {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleOverrideInner) GetStartOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -67,7 +67,7 @@ func (o *SessionScheduleOverrideInner) GetStartOk() (*time.Time, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *SessionScheduleOverrideInner) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *SessionScheduleOverrideInner) SetStart(v time.Time) {
 
 // GetStop returns the Stop field value if set, zero value otherwise.
 func (o *SessionScheduleOverrideInner) GetStop() time.Time {
-	if o == nil || isNil(o.Stop) {
+	if o == nil || IsNil(o.Stop) {
 		var ret time.Time
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *SessionScheduleOverrideInner) GetStop() time.Time {
 // GetStopOk returns a tuple with the Stop field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleOverrideInner) GetStopOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Stop) {
+	if o == nil || IsNil(o.Stop) {
 		return nil, false
 	}
 	return o.Stop, true
@@ -99,7 +99,7 @@ func (o *SessionScheduleOverrideInner) GetStopOk() (*time.Time, bool) {
 
 // HasStop returns a boolean if a field has been set.
 func (o *SessionScheduleOverrideInner) HasStop() bool {
-	if o != nil && !isNil(o.Stop) {
+	if o != nil && !IsNil(o.Stop) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *SessionScheduleOverrideInner) SetStop(v time.Time) {
 
 // GetIndex returns the Index field value if set, zero value otherwise.
 func (o *SessionScheduleOverrideInner) GetIndex() int32 {
-	if o == nil || isNil(o.Index) {
+	if o == nil || IsNil(o.Index) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *SessionScheduleOverrideInner) GetIndex() int32 {
 // GetIndexOk returns a tuple with the Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleOverrideInner) GetIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.Index) {
+	if o == nil || IsNil(o.Index) {
 		return nil, false
 	}
 	return o.Index, true
@@ -131,7 +131,7 @@ func (o *SessionScheduleOverrideInner) GetIndexOk() (*int32, bool) {
 
 // HasIndex returns a boolean if a field has been set.
 func (o *SessionScheduleOverrideInner) HasIndex() bool {
-	if o != nil && !isNil(o.Index) {
+	if o != nil && !IsNil(o.Index) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *SessionScheduleOverrideInner) SetIndex(v int32) {
 
 // GetCancelled returns the Cancelled field value if set, zero value otherwise.
 func (o *SessionScheduleOverrideInner) GetCancelled() bool {
-	if o == nil || isNil(o.Cancelled) {
+	if o == nil || IsNil(o.Cancelled) {
 		var ret bool
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *SessionScheduleOverrideInner) GetCancelled() bool {
 // GetCancelledOk returns a tuple with the Cancelled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleOverrideInner) GetCancelledOk() (*bool, bool) {
-	if o == nil || isNil(o.Cancelled) {
+	if o == nil || IsNil(o.Cancelled) {
 		return nil, false
 	}
 	return o.Cancelled, true
@@ -163,7 +163,7 @@ func (o *SessionScheduleOverrideInner) GetCancelledOk() (*bool, bool) {
 
 // HasCancelled returns a boolean if a field has been set.
 func (o *SessionScheduleOverrideInner) HasCancelled() bool {
-	if o != nil && !isNil(o.Cancelled) {
+	if o != nil && !IsNil(o.Cancelled) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *SessionScheduleOverrideInner) SetCancelled(v bool) {
 
 // GetSessionDescriptionURI returns the SessionDescriptionURI field value if set, zero value otherwise.
 func (o *SessionScheduleOverrideInner) GetSessionDescriptionURI() string {
-	if o == nil || isNil(o.SessionDescriptionURI) {
+	if o == nil || IsNil(o.SessionDescriptionURI) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *SessionScheduleOverrideInner) GetSessionDescriptionURI() string {
 // GetSessionDescriptionURIOk returns a tuple with the SessionDescriptionURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleOverrideInner) GetSessionDescriptionURIOk() (*string, bool) {
-	if o == nil || isNil(o.SessionDescriptionURI) {
+	if o == nil || IsNil(o.SessionDescriptionURI) {
 		return nil, false
 	}
 	return o.SessionDescriptionURI, true
@@ -195,7 +195,7 @@ func (o *SessionScheduleOverrideInner) GetSessionDescriptionURIOk() (*string, bo
 
 // HasSessionDescriptionURI returns a boolean if a field has been set.
 func (o *SessionScheduleOverrideInner) HasSessionDescriptionURI() bool {
-	if o != nil && !isNil(o.SessionDescriptionURI) {
+	if o != nil && !IsNil(o.SessionDescriptionURI) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *SessionScheduleOverrideInner) SetSessionDescriptionURI(v string) {
 }
 
 func (o SessionScheduleOverrideInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,19 +217,19 @@ func (o SessionScheduleOverrideInner) MarshalJSON() ([]byte, error) {
 
 func (o SessionScheduleOverrideInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.Stop) {
+	if !IsNil(o.Stop) {
 		toSerialize["stop"] = o.Stop
 	}
-	if !isNil(o.Index) {
+	if !IsNil(o.Index) {
 		toSerialize["index"] = o.Index
 	}
-	if !isNil(o.Cancelled) {
+	if !IsNil(o.Cancelled) {
 		toSerialize["cancelled"] = o.Cancelled
 	}
-	if !isNil(o.SessionDescriptionURI) {
+	if !IsNil(o.SessionDescriptionURI) {
 		toSerialize["sessionDescriptionURI"] = o.SessionDescriptionURI
 	}
 	return toSerialize, nil
@@ -270,5 +270,3 @@ func (v *NullableSessionScheduleOverrideInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

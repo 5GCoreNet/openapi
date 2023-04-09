@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// C2OpModeStatus Possible values are: - SUCCESSFUL: Indicates that the C2 operation mode configuration was successful. - NOT_SUCCESSFUL: Indicates that the C2 operation mode configuration was not successful. 
+// C2OpModeStatus Possible values are: - SUCCESSFUL: Indicates that the C2 operation mode configuration was successful. - NOT_SUCCESSFUL: Indicates that the C2 operation mode configuration was not successful.
 type C2OpModeStatus struct {
-	C2OpModeStatusAnyOf *C2OpModeStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *C2OpModeStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into C2OpModeStatusAnyOf
-	err = json.Unmarshal(data, &dst.C2OpModeStatusAnyOf);
-	if err == nil {
-		jsonC2OpModeStatusAnyOf, _ := json.Marshal(dst.C2OpModeStatusAnyOf)
-		if string(jsonC2OpModeStatusAnyOf) == "{}" { // empty struct
-			dst.C2OpModeStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.C2OpModeStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.C2OpModeStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *C2OpModeStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *C2OpModeStatus) MarshalJSON() ([]byte, error) {
-	if src.C2OpModeStatusAnyOf != nil {
-		return json.Marshal(&src.C2OpModeStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableC2OpModeStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

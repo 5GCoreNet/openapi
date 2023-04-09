@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PrivateIdentity{}
 // PrivateIdentity IMS Private Identity and its identity type (IMPI or IMSI)
 type PrivateIdentity struct {
 	// String containing a Private User Identity or a Private Service Identity
-	PrivateIdentity string `json:"privateIdentity"`
+	PrivateIdentity     string              `json:"privateIdentity"`
 	PrivateIdentityType PrivateIdentityType `json:"privateIdentityType"`
 }
 
@@ -92,7 +92,7 @@ func (o *PrivateIdentity) SetPrivateIdentityType(v PrivateIdentityType) {
 }
 
 func (o PrivateIdentity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullablePrivateIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

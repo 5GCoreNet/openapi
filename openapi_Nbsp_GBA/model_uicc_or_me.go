@@ -1,7 +1,7 @@
 /*
 GBA BSF Nbsp_GBA Service
 
-GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,28 +17,14 @@ import (
 
 // UiccOrMe Indicates whether GBA_ME or GBA_U is to be used for GBA push
 type UiccOrMe struct {
-	UiccOrMeAnyOf *UiccOrMeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UiccOrMe) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UiccOrMeAnyOf
-	err = json.Unmarshal(data, &dst.UiccOrMeAnyOf);
-	if err == nil {
-		jsonUiccOrMeAnyOf, _ := json.Marshal(dst.UiccOrMeAnyOf)
-		if string(jsonUiccOrMeAnyOf) == "{}" { // empty struct
-			dst.UiccOrMeAnyOf = nil
-		} else {
-			return nil // data stored in dst.UiccOrMeAnyOf, return on the first match
-		}
-	} else {
-		dst.UiccOrMeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UiccOrMe) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UiccOrMe) MarshalJSON() ([]byte, error) {
-	if src.UiccOrMeAnyOf != nil {
-		return json.Marshal(&src.UiccOrMeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUiccOrMe) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

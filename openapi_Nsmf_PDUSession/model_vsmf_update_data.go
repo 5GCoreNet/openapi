@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,42 +19,42 @@ var _ MappedNullable = &VsmfUpdateData{}
 
 // VsmfUpdateData Data within Update Request towards V-SMF, or from SMF to I-SMF
 type VsmfUpdateData struct {
-	RequestIndication RequestIndication `json:"requestIndication"`
-	SessionAmbr *Ambr `json:"sessionAmbr,omitempty"`
+	RequestIndication         RequestIndication             `json:"requestIndication"`
+	SessionAmbr               *Ambr                         `json:"sessionAmbr,omitempty"`
 	QosFlowsAddModRequestList []QosFlowAddModifyRequestItem `json:"qosFlowsAddModRequestList,omitempty"`
-	QosFlowsRelRequestList []QosFlowReleaseRequestItem `json:"qosFlowsRelRequestList,omitempty"`
-	EpsBearerInfo []EpsBearerInfo `json:"epsBearerInfo,omitempty"`
-	AssignEbiList []Arp `json:"assignEbiList,omitempty"`
-	RevokeEbiList []int32 `json:"revokeEbiList,omitempty"`
-	ModifiedEbiList []EbiArpMapping `json:"modifiedEbiList,omitempty"`
+	QosFlowsRelRequestList    []QosFlowReleaseRequestItem   `json:"qosFlowsRelRequestList,omitempty"`
+	EpsBearerInfo             []EpsBearerInfo               `json:"epsBearerInfo,omitempty"`
+	AssignEbiList             []Arp                         `json:"assignEbiList,omitempty"`
+	RevokeEbiList             []int32                       `json:"revokeEbiList,omitempty"`
+	ModifiedEbiList           []EbiArpMapping               `json:"modifiedEbiList,omitempty"`
 	// Procedure Transaction Identifier
-	Pti *int32 `json:"pti,omitempty"`
-	N1SmInfoToUe *RefToBinaryData `json:"n1SmInfoToUe,omitempty"`
-	AlwaysOnGranted *bool `json:"alwaysOnGranted,omitempty"`
+	Pti             *int32           `json:"pti,omitempty"`
+	N1SmInfoToUe    *RefToBinaryData `json:"n1SmInfoToUe,omitempty"`
+	AlwaysOnGranted *bool            `json:"alwaysOnGranted,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	HsmfPduSessionUri *string `json:"hsmfPduSessionUri,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NewSmfId *string `json:"newSmfId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	NewSmfPduSessionUri *string `json:"newSmfPduSessionUri,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	Cause *Cause `json:"cause,omitempty"`
-	N1smCause *string `json:"n1smCause,omitempty"`
+	Cause             *Cause  `json:"cause,omitempty"`
+	N1smCause         *string `json:"n1smCause,omitempty"`
 	// indicating a time in seconds.
-	BackOffTimer *int32 `json:"backOffTimer,omitempty"`
-	MaReleaseInd *MaReleaseIndication `json:"maReleaseInd,omitempty"`
-	MaAcceptedInd *bool `json:"maAcceptedInd,omitempty"`
-	AdditionalCnTunnelInfo *TunnelInfo `json:"additionalCnTunnelInfo,omitempty"`
-	DnaiList []string `json:"dnaiList,omitempty"`
-	N4Info *N4Information `json:"n4Info,omitempty"`
-	N4InfoExt1 *N4Information `json:"n4InfoExt1,omitempty"`
-	N4InfoExt2 *N4Information `json:"n4InfoExt2,omitempty"`
-	N4InfoExt3 *N4Information `json:"n4InfoExt3,omitempty"`
-	SmallDataRateControlEnabled *bool `json:"smallDataRateControlEnabled,omitempty"`
-	QosMonitoringInfo *QosMonitoringInfo `json:"qosMonitoringInfo,omitempty"`
-	EpsPdnCnxInfo *EpsPdnCnxInfo `json:"epsPdnCnxInfo,omitempty"`
-	N9DataForwardingInd *bool `json:"n9DataForwardingInd,omitempty"`
+	BackOffTimer                *int32               `json:"backOffTimer,omitempty"`
+	MaReleaseInd                *MaReleaseIndication `json:"maReleaseInd,omitempty"`
+	MaAcceptedInd               *bool                `json:"maAcceptedInd,omitempty"`
+	AdditionalCnTunnelInfo      *TunnelInfo          `json:"additionalCnTunnelInfo,omitempty"`
+	DnaiList                    []string             `json:"dnaiList,omitempty"`
+	N4Info                      *N4Information       `json:"n4Info,omitempty"`
+	N4InfoExt1                  *N4Information       `json:"n4InfoExt1,omitempty"`
+	N4InfoExt2                  *N4Information       `json:"n4InfoExt2,omitempty"`
+	N4InfoExt3                  *N4Information       `json:"n4InfoExt3,omitempty"`
+	SmallDataRateControlEnabled *bool                `json:"smallDataRateControlEnabled,omitempty"`
+	QosMonitoringInfo           *QosMonitoringInfo   `json:"qosMonitoringInfo,omitempty"`
+	EpsPdnCnxInfo               *EpsPdnCnxInfo       `json:"epsPdnCnxInfo,omitempty"`
+	N9DataForwardingInd         *bool                `json:"n9DataForwardingInd,omitempty"`
 	// indicating a time in seconds.
 	N9InactivityTimer *int32 `json:"n9InactivityTimer,omitempty"`
 }
@@ -115,7 +115,7 @@ func (o *VsmfUpdateData) SetRequestIndication(v RequestIndication) {
 
 // GetSessionAmbr returns the SessionAmbr field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetSessionAmbr() Ambr {
-	if o == nil || isNil(o.SessionAmbr) {
+	if o == nil || IsNil(o.SessionAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *VsmfUpdateData) GetSessionAmbr() Ambr {
 // GetSessionAmbrOk returns a tuple with the SessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetSessionAmbrOk() (*Ambr, bool) {
-	if o == nil || isNil(o.SessionAmbr) {
+	if o == nil || IsNil(o.SessionAmbr) {
 		return nil, false
 	}
 	return o.SessionAmbr, true
@@ -133,7 +133,7 @@ func (o *VsmfUpdateData) GetSessionAmbrOk() (*Ambr, bool) {
 
 // HasSessionAmbr returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasSessionAmbr() bool {
-	if o != nil && !isNil(o.SessionAmbr) {
+	if o != nil && !IsNil(o.SessionAmbr) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *VsmfUpdateData) SetSessionAmbr(v Ambr) {
 
 // GetQosFlowsAddModRequestList returns the QosFlowsAddModRequestList field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetQosFlowsAddModRequestList() []QosFlowAddModifyRequestItem {
-	if o == nil || isNil(o.QosFlowsAddModRequestList) {
+	if o == nil || IsNil(o.QosFlowsAddModRequestList) {
 		var ret []QosFlowAddModifyRequestItem
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *VsmfUpdateData) GetQosFlowsAddModRequestList() []QosFlowAddModifyReques
 // GetQosFlowsAddModRequestListOk returns a tuple with the QosFlowsAddModRequestList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetQosFlowsAddModRequestListOk() ([]QosFlowAddModifyRequestItem, bool) {
-	if o == nil || isNil(o.QosFlowsAddModRequestList) {
+	if o == nil || IsNil(o.QosFlowsAddModRequestList) {
 		return nil, false
 	}
 	return o.QosFlowsAddModRequestList, true
@@ -165,7 +165,7 @@ func (o *VsmfUpdateData) GetQosFlowsAddModRequestListOk() ([]QosFlowAddModifyReq
 
 // HasQosFlowsAddModRequestList returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasQosFlowsAddModRequestList() bool {
-	if o != nil && !isNil(o.QosFlowsAddModRequestList) {
+	if o != nil && !IsNil(o.QosFlowsAddModRequestList) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *VsmfUpdateData) SetQosFlowsAddModRequestList(v []QosFlowAddModifyReques
 
 // GetQosFlowsRelRequestList returns the QosFlowsRelRequestList field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetQosFlowsRelRequestList() []QosFlowReleaseRequestItem {
-	if o == nil || isNil(o.QosFlowsRelRequestList) {
+	if o == nil || IsNil(o.QosFlowsRelRequestList) {
 		var ret []QosFlowReleaseRequestItem
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *VsmfUpdateData) GetQosFlowsRelRequestList() []QosFlowReleaseRequestItem
 // GetQosFlowsRelRequestListOk returns a tuple with the QosFlowsRelRequestList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetQosFlowsRelRequestListOk() ([]QosFlowReleaseRequestItem, bool) {
-	if o == nil || isNil(o.QosFlowsRelRequestList) {
+	if o == nil || IsNil(o.QosFlowsRelRequestList) {
 		return nil, false
 	}
 	return o.QosFlowsRelRequestList, true
@@ -197,7 +197,7 @@ func (o *VsmfUpdateData) GetQosFlowsRelRequestListOk() ([]QosFlowReleaseRequestI
 
 // HasQosFlowsRelRequestList returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasQosFlowsRelRequestList() bool {
-	if o != nil && !isNil(o.QosFlowsRelRequestList) {
+	if o != nil && !IsNil(o.QosFlowsRelRequestList) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *VsmfUpdateData) SetQosFlowsRelRequestList(v []QosFlowReleaseRequestItem
 
 // GetEpsBearerInfo returns the EpsBearerInfo field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetEpsBearerInfo() []EpsBearerInfo {
-	if o == nil || isNil(o.EpsBearerInfo) {
+	if o == nil || IsNil(o.EpsBearerInfo) {
 		var ret []EpsBearerInfo
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *VsmfUpdateData) GetEpsBearerInfo() []EpsBearerInfo {
 // GetEpsBearerInfoOk returns a tuple with the EpsBearerInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetEpsBearerInfoOk() ([]EpsBearerInfo, bool) {
-	if o == nil || isNil(o.EpsBearerInfo) {
+	if o == nil || IsNil(o.EpsBearerInfo) {
 		return nil, false
 	}
 	return o.EpsBearerInfo, true
@@ -229,7 +229,7 @@ func (o *VsmfUpdateData) GetEpsBearerInfoOk() ([]EpsBearerInfo, bool) {
 
 // HasEpsBearerInfo returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasEpsBearerInfo() bool {
-	if o != nil && !isNil(o.EpsBearerInfo) {
+	if o != nil && !IsNil(o.EpsBearerInfo) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *VsmfUpdateData) SetEpsBearerInfo(v []EpsBearerInfo) {
 
 // GetAssignEbiList returns the AssignEbiList field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetAssignEbiList() []Arp {
-	if o == nil || isNil(o.AssignEbiList) {
+	if o == nil || IsNil(o.AssignEbiList) {
 		var ret []Arp
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *VsmfUpdateData) GetAssignEbiList() []Arp {
 // GetAssignEbiListOk returns a tuple with the AssignEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetAssignEbiListOk() ([]Arp, bool) {
-	if o == nil || isNil(o.AssignEbiList) {
+	if o == nil || IsNil(o.AssignEbiList) {
 		return nil, false
 	}
 	return o.AssignEbiList, true
@@ -261,7 +261,7 @@ func (o *VsmfUpdateData) GetAssignEbiListOk() ([]Arp, bool) {
 
 // HasAssignEbiList returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasAssignEbiList() bool {
-	if o != nil && !isNil(o.AssignEbiList) {
+	if o != nil && !IsNil(o.AssignEbiList) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *VsmfUpdateData) SetAssignEbiList(v []Arp) {
 
 // GetRevokeEbiList returns the RevokeEbiList field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetRevokeEbiList() []int32 {
-	if o == nil || isNil(o.RevokeEbiList) {
+	if o == nil || IsNil(o.RevokeEbiList) {
 		var ret []int32
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *VsmfUpdateData) GetRevokeEbiList() []int32 {
 // GetRevokeEbiListOk returns a tuple with the RevokeEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetRevokeEbiListOk() ([]int32, bool) {
-	if o == nil || isNil(o.RevokeEbiList) {
+	if o == nil || IsNil(o.RevokeEbiList) {
 		return nil, false
 	}
 	return o.RevokeEbiList, true
@@ -293,7 +293,7 @@ func (o *VsmfUpdateData) GetRevokeEbiListOk() ([]int32, bool) {
 
 // HasRevokeEbiList returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasRevokeEbiList() bool {
-	if o != nil && !isNil(o.RevokeEbiList) {
+	if o != nil && !IsNil(o.RevokeEbiList) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *VsmfUpdateData) SetRevokeEbiList(v []int32) {
 
 // GetModifiedEbiList returns the ModifiedEbiList field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetModifiedEbiList() []EbiArpMapping {
-	if o == nil || isNil(o.ModifiedEbiList) {
+	if o == nil || IsNil(o.ModifiedEbiList) {
 		var ret []EbiArpMapping
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *VsmfUpdateData) GetModifiedEbiList() []EbiArpMapping {
 // GetModifiedEbiListOk returns a tuple with the ModifiedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetModifiedEbiListOk() ([]EbiArpMapping, bool) {
-	if o == nil || isNil(o.ModifiedEbiList) {
+	if o == nil || IsNil(o.ModifiedEbiList) {
 		return nil, false
 	}
 	return o.ModifiedEbiList, true
@@ -325,7 +325,7 @@ func (o *VsmfUpdateData) GetModifiedEbiListOk() ([]EbiArpMapping, bool) {
 
 // HasModifiedEbiList returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasModifiedEbiList() bool {
-	if o != nil && !isNil(o.ModifiedEbiList) {
+	if o != nil && !IsNil(o.ModifiedEbiList) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *VsmfUpdateData) SetModifiedEbiList(v []EbiArpMapping) {
 
 // GetPti returns the Pti field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetPti() int32 {
-	if o == nil || isNil(o.Pti) {
+	if o == nil || IsNil(o.Pti) {
 		var ret int32
 		return ret
 	}
@@ -349,7 +349,7 @@ func (o *VsmfUpdateData) GetPti() int32 {
 // GetPtiOk returns a tuple with the Pti field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetPtiOk() (*int32, bool) {
-	if o == nil || isNil(o.Pti) {
+	if o == nil || IsNil(o.Pti) {
 		return nil, false
 	}
 	return o.Pti, true
@@ -357,7 +357,7 @@ func (o *VsmfUpdateData) GetPtiOk() (*int32, bool) {
 
 // HasPti returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasPti() bool {
-	if o != nil && !isNil(o.Pti) {
+	if o != nil && !IsNil(o.Pti) {
 		return true
 	}
 
@@ -371,7 +371,7 @@ func (o *VsmfUpdateData) SetPti(v int32) {
 
 // GetN1SmInfoToUe returns the N1SmInfoToUe field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN1SmInfoToUe() RefToBinaryData {
-	if o == nil || isNil(o.N1SmInfoToUe) {
+	if o == nil || IsNil(o.N1SmInfoToUe) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -381,7 +381,7 @@ func (o *VsmfUpdateData) GetN1SmInfoToUe() RefToBinaryData {
 // GetN1SmInfoToUeOk returns a tuple with the N1SmInfoToUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N1SmInfoToUe) {
+	if o == nil || IsNil(o.N1SmInfoToUe) {
 		return nil, false
 	}
 	return o.N1SmInfoToUe, true
@@ -389,7 +389,7 @@ func (o *VsmfUpdateData) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
 
 // HasN1SmInfoToUe returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN1SmInfoToUe() bool {
-	if o != nil && !isNil(o.N1SmInfoToUe) {
+	if o != nil && !IsNil(o.N1SmInfoToUe) {
 		return true
 	}
 
@@ -403,7 +403,7 @@ func (o *VsmfUpdateData) SetN1SmInfoToUe(v RefToBinaryData) {
 
 // GetAlwaysOnGranted returns the AlwaysOnGranted field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetAlwaysOnGranted() bool {
-	if o == nil || isNil(o.AlwaysOnGranted) {
+	if o == nil || IsNil(o.AlwaysOnGranted) {
 		var ret bool
 		return ret
 	}
@@ -413,7 +413,7 @@ func (o *VsmfUpdateData) GetAlwaysOnGranted() bool {
 // GetAlwaysOnGrantedOk returns a tuple with the AlwaysOnGranted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetAlwaysOnGrantedOk() (*bool, bool) {
-	if o == nil || isNil(o.AlwaysOnGranted) {
+	if o == nil || IsNil(o.AlwaysOnGranted) {
 		return nil, false
 	}
 	return o.AlwaysOnGranted, true
@@ -421,7 +421,7 @@ func (o *VsmfUpdateData) GetAlwaysOnGrantedOk() (*bool, bool) {
 
 // HasAlwaysOnGranted returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasAlwaysOnGranted() bool {
-	if o != nil && !isNil(o.AlwaysOnGranted) {
+	if o != nil && !IsNil(o.AlwaysOnGranted) {
 		return true
 	}
 
@@ -435,7 +435,7 @@ func (o *VsmfUpdateData) SetAlwaysOnGranted(v bool) {
 
 // GetHsmfPduSessionUri returns the HsmfPduSessionUri field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetHsmfPduSessionUri() string {
-	if o == nil || isNil(o.HsmfPduSessionUri) {
+	if o == nil || IsNil(o.HsmfPduSessionUri) {
 		var ret string
 		return ret
 	}
@@ -445,7 +445,7 @@ func (o *VsmfUpdateData) GetHsmfPduSessionUri() string {
 // GetHsmfPduSessionUriOk returns a tuple with the HsmfPduSessionUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetHsmfPduSessionUriOk() (*string, bool) {
-	if o == nil || isNil(o.HsmfPduSessionUri) {
+	if o == nil || IsNil(o.HsmfPduSessionUri) {
 		return nil, false
 	}
 	return o.HsmfPduSessionUri, true
@@ -453,7 +453,7 @@ func (o *VsmfUpdateData) GetHsmfPduSessionUriOk() (*string, bool) {
 
 // HasHsmfPduSessionUri returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasHsmfPduSessionUri() bool {
-	if o != nil && !isNil(o.HsmfPduSessionUri) {
+	if o != nil && !IsNil(o.HsmfPduSessionUri) {
 		return true
 	}
 
@@ -467,7 +467,7 @@ func (o *VsmfUpdateData) SetHsmfPduSessionUri(v string) {
 
 // GetNewSmfId returns the NewSmfId field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetNewSmfId() string {
-	if o == nil || isNil(o.NewSmfId) {
+	if o == nil || IsNil(o.NewSmfId) {
 		var ret string
 		return ret
 	}
@@ -477,7 +477,7 @@ func (o *VsmfUpdateData) GetNewSmfId() string {
 // GetNewSmfIdOk returns a tuple with the NewSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetNewSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NewSmfId) {
+	if o == nil || IsNil(o.NewSmfId) {
 		return nil, false
 	}
 	return o.NewSmfId, true
@@ -485,7 +485,7 @@ func (o *VsmfUpdateData) GetNewSmfIdOk() (*string, bool) {
 
 // HasNewSmfId returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasNewSmfId() bool {
-	if o != nil && !isNil(o.NewSmfId) {
+	if o != nil && !IsNil(o.NewSmfId) {
 		return true
 	}
 
@@ -499,7 +499,7 @@ func (o *VsmfUpdateData) SetNewSmfId(v string) {
 
 // GetNewSmfPduSessionUri returns the NewSmfPduSessionUri field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetNewSmfPduSessionUri() string {
-	if o == nil || isNil(o.NewSmfPduSessionUri) {
+	if o == nil || IsNil(o.NewSmfPduSessionUri) {
 		var ret string
 		return ret
 	}
@@ -509,7 +509,7 @@ func (o *VsmfUpdateData) GetNewSmfPduSessionUri() string {
 // GetNewSmfPduSessionUriOk returns a tuple with the NewSmfPduSessionUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetNewSmfPduSessionUriOk() (*string, bool) {
-	if o == nil || isNil(o.NewSmfPduSessionUri) {
+	if o == nil || IsNil(o.NewSmfPduSessionUri) {
 		return nil, false
 	}
 	return o.NewSmfPduSessionUri, true
@@ -517,7 +517,7 @@ func (o *VsmfUpdateData) GetNewSmfPduSessionUriOk() (*string, bool) {
 
 // HasNewSmfPduSessionUri returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasNewSmfPduSessionUri() bool {
-	if o != nil && !isNil(o.NewSmfPduSessionUri) {
+	if o != nil && !IsNil(o.NewSmfPduSessionUri) {
 		return true
 	}
 
@@ -531,7 +531,7 @@ func (o *VsmfUpdateData) SetNewSmfPduSessionUri(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -541,7 +541,7 @@ func (o *VsmfUpdateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -549,7 +549,7 @@ func (o *VsmfUpdateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -563,7 +563,7 @@ func (o *VsmfUpdateData) SetSupportedFeatures(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetCause() Cause {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -573,7 +573,7 @@ func (o *VsmfUpdateData) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetCauseOk() (*Cause, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -581,7 +581,7 @@ func (o *VsmfUpdateData) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -595,7 +595,7 @@ func (o *VsmfUpdateData) SetCause(v Cause) {
 
 // GetN1smCause returns the N1smCause field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN1smCause() string {
-	if o == nil || isNil(o.N1smCause) {
+	if o == nil || IsNil(o.N1smCause) {
 		var ret string
 		return ret
 	}
@@ -605,7 +605,7 @@ func (o *VsmfUpdateData) GetN1smCause() string {
 // GetN1smCauseOk returns a tuple with the N1smCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN1smCauseOk() (*string, bool) {
-	if o == nil || isNil(o.N1smCause) {
+	if o == nil || IsNil(o.N1smCause) {
 		return nil, false
 	}
 	return o.N1smCause, true
@@ -613,7 +613,7 @@ func (o *VsmfUpdateData) GetN1smCauseOk() (*string, bool) {
 
 // HasN1smCause returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN1smCause() bool {
-	if o != nil && !isNil(o.N1smCause) {
+	if o != nil && !IsNil(o.N1smCause) {
 		return true
 	}
 
@@ -627,7 +627,7 @@ func (o *VsmfUpdateData) SetN1smCause(v string) {
 
 // GetBackOffTimer returns the BackOffTimer field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetBackOffTimer() int32 {
-	if o == nil || isNil(o.BackOffTimer) {
+	if o == nil || IsNil(o.BackOffTimer) {
 		var ret int32
 		return ret
 	}
@@ -637,7 +637,7 @@ func (o *VsmfUpdateData) GetBackOffTimer() int32 {
 // GetBackOffTimerOk returns a tuple with the BackOffTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetBackOffTimerOk() (*int32, bool) {
-	if o == nil || isNil(o.BackOffTimer) {
+	if o == nil || IsNil(o.BackOffTimer) {
 		return nil, false
 	}
 	return o.BackOffTimer, true
@@ -645,7 +645,7 @@ func (o *VsmfUpdateData) GetBackOffTimerOk() (*int32, bool) {
 
 // HasBackOffTimer returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasBackOffTimer() bool {
-	if o != nil && !isNil(o.BackOffTimer) {
+	if o != nil && !IsNil(o.BackOffTimer) {
 		return true
 	}
 
@@ -659,7 +659,7 @@ func (o *VsmfUpdateData) SetBackOffTimer(v int32) {
 
 // GetMaReleaseInd returns the MaReleaseInd field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetMaReleaseInd() MaReleaseIndication {
-	if o == nil || isNil(o.MaReleaseInd) {
+	if o == nil || IsNil(o.MaReleaseInd) {
 		var ret MaReleaseIndication
 		return ret
 	}
@@ -669,7 +669,7 @@ func (o *VsmfUpdateData) GetMaReleaseInd() MaReleaseIndication {
 // GetMaReleaseIndOk returns a tuple with the MaReleaseInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetMaReleaseIndOk() (*MaReleaseIndication, bool) {
-	if o == nil || isNil(o.MaReleaseInd) {
+	if o == nil || IsNil(o.MaReleaseInd) {
 		return nil, false
 	}
 	return o.MaReleaseInd, true
@@ -677,7 +677,7 @@ func (o *VsmfUpdateData) GetMaReleaseIndOk() (*MaReleaseIndication, bool) {
 
 // HasMaReleaseInd returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasMaReleaseInd() bool {
-	if o != nil && !isNil(o.MaReleaseInd) {
+	if o != nil && !IsNil(o.MaReleaseInd) {
 		return true
 	}
 
@@ -691,7 +691,7 @@ func (o *VsmfUpdateData) SetMaReleaseInd(v MaReleaseIndication) {
 
 // GetMaAcceptedInd returns the MaAcceptedInd field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetMaAcceptedInd() bool {
-	if o == nil || isNil(o.MaAcceptedInd) {
+	if o == nil || IsNil(o.MaAcceptedInd) {
 		var ret bool
 		return ret
 	}
@@ -701,7 +701,7 @@ func (o *VsmfUpdateData) GetMaAcceptedInd() bool {
 // GetMaAcceptedIndOk returns a tuple with the MaAcceptedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetMaAcceptedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.MaAcceptedInd) {
+	if o == nil || IsNil(o.MaAcceptedInd) {
 		return nil, false
 	}
 	return o.MaAcceptedInd, true
@@ -709,7 +709,7 @@ func (o *VsmfUpdateData) GetMaAcceptedIndOk() (*bool, bool) {
 
 // HasMaAcceptedInd returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasMaAcceptedInd() bool {
-	if o != nil && !isNil(o.MaAcceptedInd) {
+	if o != nil && !IsNil(o.MaAcceptedInd) {
 		return true
 	}
 
@@ -723,7 +723,7 @@ func (o *VsmfUpdateData) SetMaAcceptedInd(v bool) {
 
 // GetAdditionalCnTunnelInfo returns the AdditionalCnTunnelInfo field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetAdditionalCnTunnelInfo() TunnelInfo {
-	if o == nil || isNil(o.AdditionalCnTunnelInfo) {
+	if o == nil || IsNil(o.AdditionalCnTunnelInfo) {
 		var ret TunnelInfo
 		return ret
 	}
@@ -733,7 +733,7 @@ func (o *VsmfUpdateData) GetAdditionalCnTunnelInfo() TunnelInfo {
 // GetAdditionalCnTunnelInfoOk returns a tuple with the AdditionalCnTunnelInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetAdditionalCnTunnelInfoOk() (*TunnelInfo, bool) {
-	if o == nil || isNil(o.AdditionalCnTunnelInfo) {
+	if o == nil || IsNil(o.AdditionalCnTunnelInfo) {
 		return nil, false
 	}
 	return o.AdditionalCnTunnelInfo, true
@@ -741,7 +741,7 @@ func (o *VsmfUpdateData) GetAdditionalCnTunnelInfoOk() (*TunnelInfo, bool) {
 
 // HasAdditionalCnTunnelInfo returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasAdditionalCnTunnelInfo() bool {
-	if o != nil && !isNil(o.AdditionalCnTunnelInfo) {
+	if o != nil && !IsNil(o.AdditionalCnTunnelInfo) {
 		return true
 	}
 
@@ -755,7 +755,7 @@ func (o *VsmfUpdateData) SetAdditionalCnTunnelInfo(v TunnelInfo) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetDnaiList() []string {
-	if o == nil || isNil(o.DnaiList) {
+	if o == nil || IsNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -765,7 +765,7 @@ func (o *VsmfUpdateData) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetDnaiListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnaiList) {
+	if o == nil || IsNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -773,7 +773,7 @@ func (o *VsmfUpdateData) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasDnaiList() bool {
-	if o != nil && !isNil(o.DnaiList) {
+	if o != nil && !IsNil(o.DnaiList) {
 		return true
 	}
 
@@ -787,7 +787,7 @@ func (o *VsmfUpdateData) SetDnaiList(v []string) {
 
 // GetN4Info returns the N4Info field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN4Info() N4Information {
-	if o == nil || isNil(o.N4Info) {
+	if o == nil || IsNil(o.N4Info) {
 		var ret N4Information
 		return ret
 	}
@@ -797,7 +797,7 @@ func (o *VsmfUpdateData) GetN4Info() N4Information {
 // GetN4InfoOk returns a tuple with the N4Info field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN4InfoOk() (*N4Information, bool) {
-	if o == nil || isNil(o.N4Info) {
+	if o == nil || IsNil(o.N4Info) {
 		return nil, false
 	}
 	return o.N4Info, true
@@ -805,7 +805,7 @@ func (o *VsmfUpdateData) GetN4InfoOk() (*N4Information, bool) {
 
 // HasN4Info returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN4Info() bool {
-	if o != nil && !isNil(o.N4Info) {
+	if o != nil && !IsNil(o.N4Info) {
 		return true
 	}
 
@@ -819,7 +819,7 @@ func (o *VsmfUpdateData) SetN4Info(v N4Information) {
 
 // GetN4InfoExt1 returns the N4InfoExt1 field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN4InfoExt1() N4Information {
-	if o == nil || isNil(o.N4InfoExt1) {
+	if o == nil || IsNil(o.N4InfoExt1) {
 		var ret N4Information
 		return ret
 	}
@@ -829,7 +829,7 @@ func (o *VsmfUpdateData) GetN4InfoExt1() N4Information {
 // GetN4InfoExt1Ok returns a tuple with the N4InfoExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN4InfoExt1Ok() (*N4Information, bool) {
-	if o == nil || isNil(o.N4InfoExt1) {
+	if o == nil || IsNil(o.N4InfoExt1) {
 		return nil, false
 	}
 	return o.N4InfoExt1, true
@@ -837,7 +837,7 @@ func (o *VsmfUpdateData) GetN4InfoExt1Ok() (*N4Information, bool) {
 
 // HasN4InfoExt1 returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN4InfoExt1() bool {
-	if o != nil && !isNil(o.N4InfoExt1) {
+	if o != nil && !IsNil(o.N4InfoExt1) {
 		return true
 	}
 
@@ -851,7 +851,7 @@ func (o *VsmfUpdateData) SetN4InfoExt1(v N4Information) {
 
 // GetN4InfoExt2 returns the N4InfoExt2 field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN4InfoExt2() N4Information {
-	if o == nil || isNil(o.N4InfoExt2) {
+	if o == nil || IsNil(o.N4InfoExt2) {
 		var ret N4Information
 		return ret
 	}
@@ -861,7 +861,7 @@ func (o *VsmfUpdateData) GetN4InfoExt2() N4Information {
 // GetN4InfoExt2Ok returns a tuple with the N4InfoExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN4InfoExt2Ok() (*N4Information, bool) {
-	if o == nil || isNil(o.N4InfoExt2) {
+	if o == nil || IsNil(o.N4InfoExt2) {
 		return nil, false
 	}
 	return o.N4InfoExt2, true
@@ -869,7 +869,7 @@ func (o *VsmfUpdateData) GetN4InfoExt2Ok() (*N4Information, bool) {
 
 // HasN4InfoExt2 returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN4InfoExt2() bool {
-	if o != nil && !isNil(o.N4InfoExt2) {
+	if o != nil && !IsNil(o.N4InfoExt2) {
 		return true
 	}
 
@@ -883,7 +883,7 @@ func (o *VsmfUpdateData) SetN4InfoExt2(v N4Information) {
 
 // GetN4InfoExt3 returns the N4InfoExt3 field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN4InfoExt3() N4Information {
-	if o == nil || isNil(o.N4InfoExt3) {
+	if o == nil || IsNil(o.N4InfoExt3) {
 		var ret N4Information
 		return ret
 	}
@@ -893,7 +893,7 @@ func (o *VsmfUpdateData) GetN4InfoExt3() N4Information {
 // GetN4InfoExt3Ok returns a tuple with the N4InfoExt3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN4InfoExt3Ok() (*N4Information, bool) {
-	if o == nil || isNil(o.N4InfoExt3) {
+	if o == nil || IsNil(o.N4InfoExt3) {
 		return nil, false
 	}
 	return o.N4InfoExt3, true
@@ -901,7 +901,7 @@ func (o *VsmfUpdateData) GetN4InfoExt3Ok() (*N4Information, bool) {
 
 // HasN4InfoExt3 returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN4InfoExt3() bool {
-	if o != nil && !isNil(o.N4InfoExt3) {
+	if o != nil && !IsNil(o.N4InfoExt3) {
 		return true
 	}
 
@@ -915,7 +915,7 @@ func (o *VsmfUpdateData) SetN4InfoExt3(v N4Information) {
 
 // GetSmallDataRateControlEnabled returns the SmallDataRateControlEnabled field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetSmallDataRateControlEnabled() bool {
-	if o == nil || isNil(o.SmallDataRateControlEnabled) {
+	if o == nil || IsNil(o.SmallDataRateControlEnabled) {
 		var ret bool
 		return ret
 	}
@@ -925,7 +925,7 @@ func (o *VsmfUpdateData) GetSmallDataRateControlEnabled() bool {
 // GetSmallDataRateControlEnabledOk returns a tuple with the SmallDataRateControlEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetSmallDataRateControlEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SmallDataRateControlEnabled) {
+	if o == nil || IsNil(o.SmallDataRateControlEnabled) {
 		return nil, false
 	}
 	return o.SmallDataRateControlEnabled, true
@@ -933,7 +933,7 @@ func (o *VsmfUpdateData) GetSmallDataRateControlEnabledOk() (*bool, bool) {
 
 // HasSmallDataRateControlEnabled returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasSmallDataRateControlEnabled() bool {
-	if o != nil && !isNil(o.SmallDataRateControlEnabled) {
+	if o != nil && !IsNil(o.SmallDataRateControlEnabled) {
 		return true
 	}
 
@@ -947,7 +947,7 @@ func (o *VsmfUpdateData) SetSmallDataRateControlEnabled(v bool) {
 
 // GetQosMonitoringInfo returns the QosMonitoringInfo field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetQosMonitoringInfo() QosMonitoringInfo {
-	if o == nil || isNil(o.QosMonitoringInfo) {
+	if o == nil || IsNil(o.QosMonitoringInfo) {
 		var ret QosMonitoringInfo
 		return ret
 	}
@@ -957,7 +957,7 @@ func (o *VsmfUpdateData) GetQosMonitoringInfo() QosMonitoringInfo {
 // GetQosMonitoringInfoOk returns a tuple with the QosMonitoringInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetQosMonitoringInfoOk() (*QosMonitoringInfo, bool) {
-	if o == nil || isNil(o.QosMonitoringInfo) {
+	if o == nil || IsNil(o.QosMonitoringInfo) {
 		return nil, false
 	}
 	return o.QosMonitoringInfo, true
@@ -965,7 +965,7 @@ func (o *VsmfUpdateData) GetQosMonitoringInfoOk() (*QosMonitoringInfo, bool) {
 
 // HasQosMonitoringInfo returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasQosMonitoringInfo() bool {
-	if o != nil && !isNil(o.QosMonitoringInfo) {
+	if o != nil && !IsNil(o.QosMonitoringInfo) {
 		return true
 	}
 
@@ -979,7 +979,7 @@ func (o *VsmfUpdateData) SetQosMonitoringInfo(v QosMonitoringInfo) {
 
 // GetEpsPdnCnxInfo returns the EpsPdnCnxInfo field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetEpsPdnCnxInfo() EpsPdnCnxInfo {
-	if o == nil || isNil(o.EpsPdnCnxInfo) {
+	if o == nil || IsNil(o.EpsPdnCnxInfo) {
 		var ret EpsPdnCnxInfo
 		return ret
 	}
@@ -989,7 +989,7 @@ func (o *VsmfUpdateData) GetEpsPdnCnxInfo() EpsPdnCnxInfo {
 // GetEpsPdnCnxInfoOk returns a tuple with the EpsPdnCnxInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetEpsPdnCnxInfoOk() (*EpsPdnCnxInfo, bool) {
-	if o == nil || isNil(o.EpsPdnCnxInfo) {
+	if o == nil || IsNil(o.EpsPdnCnxInfo) {
 		return nil, false
 	}
 	return o.EpsPdnCnxInfo, true
@@ -997,7 +997,7 @@ func (o *VsmfUpdateData) GetEpsPdnCnxInfoOk() (*EpsPdnCnxInfo, bool) {
 
 // HasEpsPdnCnxInfo returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasEpsPdnCnxInfo() bool {
-	if o != nil && !isNil(o.EpsPdnCnxInfo) {
+	if o != nil && !IsNil(o.EpsPdnCnxInfo) {
 		return true
 	}
 
@@ -1011,7 +1011,7 @@ func (o *VsmfUpdateData) SetEpsPdnCnxInfo(v EpsPdnCnxInfo) {
 
 // GetN9DataForwardingInd returns the N9DataForwardingInd field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN9DataForwardingInd() bool {
-	if o == nil || isNil(o.N9DataForwardingInd) {
+	if o == nil || IsNil(o.N9DataForwardingInd) {
 		var ret bool
 		return ret
 	}
@@ -1021,7 +1021,7 @@ func (o *VsmfUpdateData) GetN9DataForwardingInd() bool {
 // GetN9DataForwardingIndOk returns a tuple with the N9DataForwardingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN9DataForwardingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.N9DataForwardingInd) {
+	if o == nil || IsNil(o.N9DataForwardingInd) {
 		return nil, false
 	}
 	return o.N9DataForwardingInd, true
@@ -1029,7 +1029,7 @@ func (o *VsmfUpdateData) GetN9DataForwardingIndOk() (*bool, bool) {
 
 // HasN9DataForwardingInd returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN9DataForwardingInd() bool {
-	if o != nil && !isNil(o.N9DataForwardingInd) {
+	if o != nil && !IsNil(o.N9DataForwardingInd) {
 		return true
 	}
 
@@ -1043,7 +1043,7 @@ func (o *VsmfUpdateData) SetN9DataForwardingInd(v bool) {
 
 // GetN9InactivityTimer returns the N9InactivityTimer field value if set, zero value otherwise.
 func (o *VsmfUpdateData) GetN9InactivityTimer() int32 {
-	if o == nil || isNil(o.N9InactivityTimer) {
+	if o == nil || IsNil(o.N9InactivityTimer) {
 		var ret int32
 		return ret
 	}
@@ -1053,7 +1053,7 @@ func (o *VsmfUpdateData) GetN9InactivityTimer() int32 {
 // GetN9InactivityTimerOk returns a tuple with the N9InactivityTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateData) GetN9InactivityTimerOk() (*int32, bool) {
-	if o == nil || isNil(o.N9InactivityTimer) {
+	if o == nil || IsNil(o.N9InactivityTimer) {
 		return nil, false
 	}
 	return o.N9InactivityTimer, true
@@ -1061,7 +1061,7 @@ func (o *VsmfUpdateData) GetN9InactivityTimerOk() (*int32, bool) {
 
 // HasN9InactivityTimer returns a boolean if a field has been set.
 func (o *VsmfUpdateData) HasN9InactivityTimer() bool {
-	if o != nil && !isNil(o.N9InactivityTimer) {
+	if o != nil && !IsNil(o.N9InactivityTimer) {
 		return true
 	}
 
@@ -1074,7 +1074,7 @@ func (o *VsmfUpdateData) SetN9InactivityTimer(v int32) {
 }
 
 func (o VsmfUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1084,94 +1084,94 @@ func (o VsmfUpdateData) MarshalJSON() ([]byte, error) {
 func (o VsmfUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["requestIndication"] = o.RequestIndication
-	if !isNil(o.SessionAmbr) {
+	if !IsNil(o.SessionAmbr) {
 		toSerialize["sessionAmbr"] = o.SessionAmbr
 	}
-	if !isNil(o.QosFlowsAddModRequestList) {
+	if !IsNil(o.QosFlowsAddModRequestList) {
 		toSerialize["qosFlowsAddModRequestList"] = o.QosFlowsAddModRequestList
 	}
-	if !isNil(o.QosFlowsRelRequestList) {
+	if !IsNil(o.QosFlowsRelRequestList) {
 		toSerialize["qosFlowsRelRequestList"] = o.QosFlowsRelRequestList
 	}
-	if !isNil(o.EpsBearerInfo) {
+	if !IsNil(o.EpsBearerInfo) {
 		toSerialize["epsBearerInfo"] = o.EpsBearerInfo
 	}
-	if !isNil(o.AssignEbiList) {
+	if !IsNil(o.AssignEbiList) {
 		toSerialize["assignEbiList"] = o.AssignEbiList
 	}
-	if !isNil(o.RevokeEbiList) {
+	if !IsNil(o.RevokeEbiList) {
 		toSerialize["revokeEbiList"] = o.RevokeEbiList
 	}
-	if !isNil(o.ModifiedEbiList) {
+	if !IsNil(o.ModifiedEbiList) {
 		toSerialize["modifiedEbiList"] = o.ModifiedEbiList
 	}
-	if !isNil(o.Pti) {
+	if !IsNil(o.Pti) {
 		toSerialize["pti"] = o.Pti
 	}
-	if !isNil(o.N1SmInfoToUe) {
+	if !IsNil(o.N1SmInfoToUe) {
 		toSerialize["n1SmInfoToUe"] = o.N1SmInfoToUe
 	}
-	if !isNil(o.AlwaysOnGranted) {
+	if !IsNil(o.AlwaysOnGranted) {
 		toSerialize["alwaysOnGranted"] = o.AlwaysOnGranted
 	}
-	if !isNil(o.HsmfPduSessionUri) {
+	if !IsNil(o.HsmfPduSessionUri) {
 		toSerialize["hsmfPduSessionUri"] = o.HsmfPduSessionUri
 	}
-	if !isNil(o.NewSmfId) {
+	if !IsNil(o.NewSmfId) {
 		toSerialize["newSmfId"] = o.NewSmfId
 	}
-	if !isNil(o.NewSmfPduSessionUri) {
+	if !IsNil(o.NewSmfPduSessionUri) {
 		toSerialize["newSmfPduSessionUri"] = o.NewSmfPduSessionUri
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !isNil(o.N1smCause) {
+	if !IsNil(o.N1smCause) {
 		toSerialize["n1smCause"] = o.N1smCause
 	}
-	if !isNil(o.BackOffTimer) {
+	if !IsNil(o.BackOffTimer) {
 		toSerialize["backOffTimer"] = o.BackOffTimer
 	}
-	if !isNil(o.MaReleaseInd) {
+	if !IsNil(o.MaReleaseInd) {
 		toSerialize["maReleaseInd"] = o.MaReleaseInd
 	}
-	if !isNil(o.MaAcceptedInd) {
+	if !IsNil(o.MaAcceptedInd) {
 		toSerialize["maAcceptedInd"] = o.MaAcceptedInd
 	}
-	if !isNil(o.AdditionalCnTunnelInfo) {
+	if !IsNil(o.AdditionalCnTunnelInfo) {
 		toSerialize["additionalCnTunnelInfo"] = o.AdditionalCnTunnelInfo
 	}
-	if !isNil(o.DnaiList) {
+	if !IsNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
-	if !isNil(o.N4Info) {
+	if !IsNil(o.N4Info) {
 		toSerialize["n4Info"] = o.N4Info
 	}
-	if !isNil(o.N4InfoExt1) {
+	if !IsNil(o.N4InfoExt1) {
 		toSerialize["n4InfoExt1"] = o.N4InfoExt1
 	}
-	if !isNil(o.N4InfoExt2) {
+	if !IsNil(o.N4InfoExt2) {
 		toSerialize["n4InfoExt2"] = o.N4InfoExt2
 	}
-	if !isNil(o.N4InfoExt3) {
+	if !IsNil(o.N4InfoExt3) {
 		toSerialize["n4InfoExt3"] = o.N4InfoExt3
 	}
-	if !isNil(o.SmallDataRateControlEnabled) {
+	if !IsNil(o.SmallDataRateControlEnabled) {
 		toSerialize["smallDataRateControlEnabled"] = o.SmallDataRateControlEnabled
 	}
-	if !isNil(o.QosMonitoringInfo) {
+	if !IsNil(o.QosMonitoringInfo) {
 		toSerialize["qosMonitoringInfo"] = o.QosMonitoringInfo
 	}
-	if !isNil(o.EpsPdnCnxInfo) {
+	if !IsNil(o.EpsPdnCnxInfo) {
 		toSerialize["epsPdnCnxInfo"] = o.EpsPdnCnxInfo
 	}
-	if !isNil(o.N9DataForwardingInd) {
+	if !IsNil(o.N9DataForwardingInd) {
 		toSerialize["n9DataForwardingInd"] = o.N9DataForwardingInd
 	}
-	if !isNil(o.N9InactivityTimer) {
+	if !IsNil(o.N9InactivityTimer) {
 		toSerialize["n9InactivityTimer"] = o.N9InactivityTimer
 	}
 	return toSerialize, nil
@@ -1212,5 +1212,3 @@ func (v *NullableVsmfUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

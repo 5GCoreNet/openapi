@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &DataFilter{}
 
 // DataFilter Identifies a data filter.
 type DataFilter struct {
-	DataInd DataInd `json:"dataInd"`
-	Dnns []string `json:"dnns,omitempty"`
-	Snssais []Snssai `json:"snssais,omitempty"`
-	InternalGroupIds []string `json:"internalGroupIds,omitempty"`
-	Supis []string `json:"supis,omitempty"`
-	AppIds []string `json:"appIds,omitempty"`
-	UeIpv4s []string `json:"ueIpv4s,omitempty"`
-	UeIpv6s []Ipv6Addr `json:"ueIpv6s,omitempty"`
-	UeMacs []string `json:"ueMacs,omitempty"`
+	DataInd          DataInd    `json:"dataInd"`
+	Dnns             []string   `json:"dnns,omitempty"`
+	Snssais          []Snssai   `json:"snssais,omitempty"`
+	InternalGroupIds []string   `json:"internalGroupIds,omitempty"`
+	Supis            []string   `json:"supis,omitempty"`
+	AppIds           []string   `json:"appIds,omitempty"`
+	UeIpv4s          []string   `json:"ueIpv4s,omitempty"`
+	UeIpv6s          []Ipv6Addr `json:"ueIpv6s,omitempty"`
+	UeMacs           []string   `json:"ueMacs,omitempty"`
 	// Indicates the request is for any UE.
 	AnyUeInd *bool `json:"anyUeInd,omitempty"`
 	// Indicates the request is for any DNN and S-NSSAI combination present in the array.
@@ -78,7 +78,7 @@ func (o *DataFilter) SetDataInd(v DataInd) {
 
 // GetDnns returns the Dnns field value if set, zero value otherwise.
 func (o *DataFilter) GetDnns() []string {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *DataFilter) GetDnns() []string {
 // GetDnnsOk returns a tuple with the Dnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetDnnsOk() ([]string, bool) {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		return nil, false
 	}
 	return o.Dnns, true
@@ -96,7 +96,7 @@ func (o *DataFilter) GetDnnsOk() ([]string, bool) {
 
 // HasDnns returns a boolean if a field has been set.
 func (o *DataFilter) HasDnns() bool {
-	if o != nil && !isNil(o.Dnns) {
+	if o != nil && !IsNil(o.Dnns) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *DataFilter) SetDnns(v []string) {
 
 // GetSnssais returns the Snssais field value if set, zero value otherwise.
 func (o *DataFilter) GetSnssais() []Snssai {
-	if o == nil || isNil(o.Snssais) {
+	if o == nil || IsNil(o.Snssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *DataFilter) GetSnssais() []Snssai {
 // GetSnssaisOk returns a tuple with the Snssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetSnssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.Snssais) {
+	if o == nil || IsNil(o.Snssais) {
 		return nil, false
 	}
 	return o.Snssais, true
@@ -128,7 +128,7 @@ func (o *DataFilter) GetSnssaisOk() ([]Snssai, bool) {
 
 // HasSnssais returns a boolean if a field has been set.
 func (o *DataFilter) HasSnssais() bool {
-	if o != nil && !isNil(o.Snssais) {
+	if o != nil && !IsNil(o.Snssais) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *DataFilter) SetSnssais(v []Snssai) {
 
 // GetInternalGroupIds returns the InternalGroupIds field value if set, zero value otherwise.
 func (o *DataFilter) GetInternalGroupIds() []string {
-	if o == nil || isNil(o.InternalGroupIds) {
+	if o == nil || IsNil(o.InternalGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *DataFilter) GetInternalGroupIds() []string {
 // GetInternalGroupIdsOk returns a tuple with the InternalGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetInternalGroupIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.InternalGroupIds) {
+	if o == nil || IsNil(o.InternalGroupIds) {
 		return nil, false
 	}
 	return o.InternalGroupIds, true
@@ -160,7 +160,7 @@ func (o *DataFilter) GetInternalGroupIdsOk() ([]string, bool) {
 
 // HasInternalGroupIds returns a boolean if a field has been set.
 func (o *DataFilter) HasInternalGroupIds() bool {
-	if o != nil && !isNil(o.InternalGroupIds) {
+	if o != nil && !IsNil(o.InternalGroupIds) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *DataFilter) SetInternalGroupIds(v []string) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *DataFilter) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *DataFilter) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -192,7 +192,7 @@ func (o *DataFilter) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *DataFilter) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *DataFilter) SetSupis(v []string) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *DataFilter) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *DataFilter) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -224,7 +224,7 @@ func (o *DataFilter) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *DataFilter) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *DataFilter) SetAppIds(v []string) {
 
 // GetUeIpv4s returns the UeIpv4s field value if set, zero value otherwise.
 func (o *DataFilter) GetUeIpv4s() []string {
-	if o == nil || isNil(o.UeIpv4s) {
+	if o == nil || IsNil(o.UeIpv4s) {
 		var ret []string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *DataFilter) GetUeIpv4s() []string {
 // GetUeIpv4sOk returns a tuple with the UeIpv4s field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetUeIpv4sOk() ([]string, bool) {
-	if o == nil || isNil(o.UeIpv4s) {
+	if o == nil || IsNil(o.UeIpv4s) {
 		return nil, false
 	}
 	return o.UeIpv4s, true
@@ -256,7 +256,7 @@ func (o *DataFilter) GetUeIpv4sOk() ([]string, bool) {
 
 // HasUeIpv4s returns a boolean if a field has been set.
 func (o *DataFilter) HasUeIpv4s() bool {
-	if o != nil && !isNil(o.UeIpv4s) {
+	if o != nil && !IsNil(o.UeIpv4s) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *DataFilter) SetUeIpv4s(v []string) {
 
 // GetUeIpv6s returns the UeIpv6s field value if set, zero value otherwise.
 func (o *DataFilter) GetUeIpv6s() []Ipv6Addr {
-	if o == nil || isNil(o.UeIpv6s) {
+	if o == nil || IsNil(o.UeIpv6s) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *DataFilter) GetUeIpv6s() []Ipv6Addr {
 // GetUeIpv6sOk returns a tuple with the UeIpv6s field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetUeIpv6sOk() ([]Ipv6Addr, bool) {
-	if o == nil || isNil(o.UeIpv6s) {
+	if o == nil || IsNil(o.UeIpv6s) {
 		return nil, false
 	}
 	return o.UeIpv6s, true
@@ -288,7 +288,7 @@ func (o *DataFilter) GetUeIpv6sOk() ([]Ipv6Addr, bool) {
 
 // HasUeIpv6s returns a boolean if a field has been set.
 func (o *DataFilter) HasUeIpv6s() bool {
-	if o != nil && !isNil(o.UeIpv6s) {
+	if o != nil && !IsNil(o.UeIpv6s) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *DataFilter) SetUeIpv6s(v []Ipv6Addr) {
 
 // GetUeMacs returns the UeMacs field value if set, zero value otherwise.
 func (o *DataFilter) GetUeMacs() []string {
-	if o == nil || isNil(o.UeMacs) {
+	if o == nil || IsNil(o.UeMacs) {
 		var ret []string
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *DataFilter) GetUeMacs() []string {
 // GetUeMacsOk returns a tuple with the UeMacs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetUeMacsOk() ([]string, bool) {
-	if o == nil || isNil(o.UeMacs) {
+	if o == nil || IsNil(o.UeMacs) {
 		return nil, false
 	}
 	return o.UeMacs, true
@@ -320,7 +320,7 @@ func (o *DataFilter) GetUeMacsOk() ([]string, bool) {
 
 // HasUeMacs returns a boolean if a field has been set.
 func (o *DataFilter) HasUeMacs() bool {
-	if o != nil && !isNil(o.UeMacs) {
+	if o != nil && !IsNil(o.UeMacs) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *DataFilter) SetUeMacs(v []string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *DataFilter) GetAnyUeInd() bool {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *DataFilter) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -352,7 +352,7 @@ func (o *DataFilter) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *DataFilter) HasAnyUeInd() bool {
-	if o != nil && !isNil(o.AnyUeInd) {
+	if o != nil && !IsNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -366,7 +366,7 @@ func (o *DataFilter) SetAnyUeInd(v bool) {
 
 // GetDnnSnssaiInfos returns the DnnSnssaiInfos field value if set, zero value otherwise.
 func (o *DataFilter) GetDnnSnssaiInfos() []DnnSnssaiInformation {
-	if o == nil || isNil(o.DnnSnssaiInfos) {
+	if o == nil || IsNil(o.DnnSnssaiInfos) {
 		var ret []DnnSnssaiInformation
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *DataFilter) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // GetDnnSnssaiInfosOk returns a tuple with the DnnSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataFilter) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || isNil(o.DnnSnssaiInfos) {
+	if o == nil || IsNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -384,7 +384,7 @@ func (o *DataFilter) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *DataFilter) HasDnnSnssaiInfos() bool {
-	if o != nil && !isNil(o.DnnSnssaiInfos) {
+	if o != nil && !IsNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -397,7 +397,7 @@ func (o *DataFilter) SetDnnSnssaiInfos(v []DnnSnssaiInformation) {
 }
 
 func (o DataFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -407,34 +407,34 @@ func (o DataFilter) MarshalJSON() ([]byte, error) {
 func (o DataFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dataInd"] = o.DataInd
-	if !isNil(o.Dnns) {
+	if !IsNil(o.Dnns) {
 		toSerialize["dnns"] = o.Dnns
 	}
-	if !isNil(o.Snssais) {
+	if !IsNil(o.Snssais) {
 		toSerialize["snssais"] = o.Snssais
 	}
-	if !isNil(o.InternalGroupIds) {
+	if !IsNil(o.InternalGroupIds) {
 		toSerialize["internalGroupIds"] = o.InternalGroupIds
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !isNil(o.UeIpv4s) {
+	if !IsNil(o.UeIpv4s) {
 		toSerialize["ueIpv4s"] = o.UeIpv4s
 	}
-	if !isNil(o.UeIpv6s) {
+	if !IsNil(o.UeIpv6s) {
 		toSerialize["ueIpv6s"] = o.UeIpv6s
 	}
-	if !isNil(o.UeMacs) {
+	if !IsNil(o.UeMacs) {
 		toSerialize["ueMacs"] = o.UeMacs
 	}
-	if !isNil(o.AnyUeInd) {
+	if !IsNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !isNil(o.DnnSnssaiInfos) {
+	if !IsNil(o.DnnSnssaiInfos) {
 		toSerialize["dnnSnssaiInfos"] = o.DnnSnssaiInfos
 	}
 	return toSerialize, nil
@@ -475,5 +475,3 @@ func (v *NullableDataFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

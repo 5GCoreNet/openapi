@@ -17,13 +17,13 @@ import (
 
 // ResourcesEdgeNrm - struct for ResourcesEdgeNrm
 type ResourcesEdgeNrm struct {
-	EASFunctionSingle *EASFunctionSingle
-	EASRequirements *EASRequirements
-	ECSFunctionSingle *ECSFunctionSingle
-	EESFunctionSingle *EESFunctionSingle
+	EASFunctionSingle     *EASFunctionSingle
+	EASRequirements       *EASRequirements
+	ECSFunctionSingle     *ECSFunctionSingle
+	EESFunctionSingle     *EESFunctionSingle
 	EdgeDataNetworkSingle *EdgeDataNetworkSingle
-	MnS *MnS
-	SubNetworkSingle *SubNetworkSingle
+	MnS                   *MnS
+	SubNetworkSingle      *SubNetworkSingle
 }
 
 // EASFunctionSingleAsResourcesEdgeNrm is a convenience function that returns EASFunctionSingle wrapped in ResourcesEdgeNrm
@@ -74,7 +74,6 @@ func SubNetworkSingleAsResourcesEdgeNrm(v *SubNetworkSingle) ResourcesEdgeNrm {
 		SubNetworkSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesEdgeNrm) UnmarshalJSON(data []byte) error {
@@ -223,7 +222,7 @@ func (src ResourcesEdgeNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesEdgeNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesEdgeNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -294,5 +293,3 @@ func (v *NullableResourcesEdgeNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

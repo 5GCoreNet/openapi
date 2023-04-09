@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewN2InfoNotificationRspDataWithDefaults() *N2InfoNotificationRspData {
 
 // GetSecRatDataUsageList returns the SecRatDataUsageList field value if set, zero value otherwise.
 func (o *N2InfoNotificationRspData) GetSecRatDataUsageList() []N2SmInformation {
-	if o == nil || isNil(o.SecRatDataUsageList) {
+	if o == nil || IsNil(o.SecRatDataUsageList) {
 		var ret []N2SmInformation
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *N2InfoNotificationRspData) GetSecRatDataUsageList() []N2SmInformation {
 // GetSecRatDataUsageListOk returns a tuple with the SecRatDataUsageList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoNotificationRspData) GetSecRatDataUsageListOk() ([]N2SmInformation, bool) {
-	if o == nil || isNil(o.SecRatDataUsageList) {
+	if o == nil || IsNil(o.SecRatDataUsageList) {
 		return nil, false
 	}
 	return o.SecRatDataUsageList, true
@@ -59,7 +59,7 @@ func (o *N2InfoNotificationRspData) GetSecRatDataUsageListOk() ([]N2SmInformatio
 
 // HasSecRatDataUsageList returns a boolean if a field has been set.
 func (o *N2InfoNotificationRspData) HasSecRatDataUsageList() bool {
-	if o != nil && !isNil(o.SecRatDataUsageList) {
+	if o != nil && !IsNil(o.SecRatDataUsageList) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *N2InfoNotificationRspData) SetSecRatDataUsageList(v []N2SmInformation) 
 }
 
 func (o N2InfoNotificationRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o N2InfoNotificationRspData) MarshalJSON() ([]byte, error) {
 
 func (o N2InfoNotificationRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SecRatDataUsageList) {
+	if !IsNil(o.SecRatDataUsageList) {
 		toSerialize["secRatDataUsageList"] = o.SecRatDataUsageList
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableN2InfoNotificationRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

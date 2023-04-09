@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // CmState Describes the connection management state of a UE
 type CmState struct {
-	CmStateAnyOf *CmStateAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CmState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CmStateAnyOf
-	err = json.Unmarshal(data, &dst.CmStateAnyOf);
-	if err == nil {
-		jsonCmStateAnyOf, _ := json.Marshal(dst.CmStateAnyOf)
-		if string(jsonCmStateAnyOf) == "{}" { // empty struct
-			dst.CmStateAnyOf = nil
-		} else {
-			return nil // data stored in dst.CmStateAnyOf, return on the first match
-		}
-	} else {
-		dst.CmStateAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *CmState) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CmState) MarshalJSON() ([]byte, error) {
-	if src.CmStateAnyOf != nil {
-		return json.Marshal(&src.CmStateAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCmState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

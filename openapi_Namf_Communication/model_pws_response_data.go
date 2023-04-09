@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,9 +22,9 @@ type PWSResponseData struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	NgapMessageType int32 `json:"ngapMessageType"`
 	// Integer where the allowed values correspond to the value range of an unsigned 16-bit integer.
-	SerialNumber int32 `json:"serialNumber"`
+	SerialNumber      int32 `json:"serialNumber"`
 	MessageIdentifier int32 `json:"messageIdentifier"`
-	UnknownTaiList []Tai `json:"unknownTaiList,omitempty"`
+	UnknownTaiList    []Tai `json:"unknownTaiList,omitempty"`
 }
 
 // NewPWSResponseData instantiates a new PWSResponseData object
@@ -121,7 +121,7 @@ func (o *PWSResponseData) SetMessageIdentifier(v int32) {
 
 // GetUnknownTaiList returns the UnknownTaiList field value if set, zero value otherwise.
 func (o *PWSResponseData) GetUnknownTaiList() []Tai {
-	if o == nil || isNil(o.UnknownTaiList) {
+	if o == nil || IsNil(o.UnknownTaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *PWSResponseData) GetUnknownTaiList() []Tai {
 // GetUnknownTaiListOk returns a tuple with the UnknownTaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PWSResponseData) GetUnknownTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.UnknownTaiList) {
+	if o == nil || IsNil(o.UnknownTaiList) {
 		return nil, false
 	}
 	return o.UnknownTaiList, true
@@ -139,7 +139,7 @@ func (o *PWSResponseData) GetUnknownTaiListOk() ([]Tai, bool) {
 
 // HasUnknownTaiList returns a boolean if a field has been set.
 func (o *PWSResponseData) HasUnknownTaiList() bool {
-	if o != nil && !isNil(o.UnknownTaiList) {
+	if o != nil && !IsNil(o.UnknownTaiList) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *PWSResponseData) SetUnknownTaiList(v []Tai) {
 }
 
 func (o PWSResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,7 +164,7 @@ func (o PWSResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize["ngapMessageType"] = o.NgapMessageType
 	toSerialize["serialNumber"] = o.SerialNumber
 	toSerialize["messageIdentifier"] = o.MessageIdentifier
-	if !isNil(o.UnknownTaiList) {
+	if !IsNil(o.UnknownTaiList) {
 		toSerialize["unknownTaiList"] = o.UnknownTaiList
 	}
 	return toSerialize, nil
@@ -205,5 +205,3 @@ func (v *NullablePWSResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -41,7 +41,7 @@ func NewAnalyticsScheduleOneOfWithDefaults() *AnalyticsScheduleOneOf {
 
 // GetTimeDurations returns the TimeDurations field value if set, zero value otherwise.
 func (o *AnalyticsScheduleOneOf) GetTimeDurations() []TimeWindow {
-	if o == nil || isNil(o.TimeDurations) {
+	if o == nil || IsNil(o.TimeDurations) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnalyticsScheduleOneOf) GetTimeDurations() []TimeWindow {
 // GetTimeDurationsOk returns a tuple with the TimeDurations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsScheduleOneOf) GetTimeDurationsOk() ([]TimeWindow, bool) {
-	if o == nil || isNil(o.TimeDurations) {
+	if o == nil || IsNil(o.TimeDurations) {
 		return nil, false
 	}
 	return o.TimeDurations, true
@@ -59,7 +59,7 @@ func (o *AnalyticsScheduleOneOf) GetTimeDurationsOk() ([]TimeWindow, bool) {
 
 // HasTimeDurations returns a boolean if a field has been set.
 func (o *AnalyticsScheduleOneOf) HasTimeDurations() bool {
-	if o != nil && !isNil(o.TimeDurations) {
+	if o != nil && !IsNil(o.TimeDurations) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AnalyticsScheduleOneOf) SetTimeDurations(v []TimeWindow) {
 }
 
 func (o AnalyticsScheduleOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AnalyticsScheduleOneOf) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsScheduleOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TimeDurations) {
+	if !IsNil(o.TimeDurations) {
 		toSerialize["timeDurations"] = o.TimeDurations
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAnalyticsScheduleOneOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

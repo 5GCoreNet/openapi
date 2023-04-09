@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -30,7 +30,7 @@ type UsageMonitoringData struct {
 	VolumeThresholdDownlink NullableInt64 `json:"volumeThresholdDownlink,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	TimeThreshold NullableInt32 `json:"timeThreshold,omitempty"`
-	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.  
+	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.
 	MonitoringTime NullableTime `json:"monitoringTime,omitempty"`
 	// Unsigned integer identifying a volume in units of bytes with \"nullable=true\" property.
 	NextVolThreshold NullableInt64 `json:"nextVolThreshold,omitempty"`
@@ -42,7 +42,7 @@ type UsageMonitoringData struct {
 	NextTimeThreshold NullableInt32 `json:"nextTimeThreshold,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	InactivityTime NullableInt32 `json:"inactivityTime,omitempty"`
-	// Contains the PCC rule identifier(s) which corresponding service data flow(s) shall be excluded from PDU Session usage monitoring. It is only included in the UsageMonitoringData instance for session level usage monitoring. 
+	// Contains the PCC rule identifier(s) which corresponding service data flow(s) shall be excluded from PDU Session usage monitoring. It is only included in the UsageMonitoringData instance for session level usage monitoring.
 	ExUsagePccRuleIds []string `json:"exUsagePccRuleIds,omitempty"`
 }
 
@@ -90,7 +90,7 @@ func (o *UsageMonitoringData) SetUmId(v string) {
 
 // GetVolumeThreshold returns the VolumeThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetVolumeThreshold() int64 {
-	if o == nil || isNil(o.VolumeThreshold.Get()) {
+	if o == nil || IsNil(o.VolumeThreshold.Get()) {
 		var ret int64
 		return ret
 	}
@@ -120,6 +120,7 @@ func (o *UsageMonitoringData) HasVolumeThreshold() bool {
 func (o *UsageMonitoringData) SetVolumeThreshold(v int64) {
 	o.VolumeThreshold.Set(&v)
 }
+
 // SetVolumeThresholdNil sets the value for VolumeThreshold to be an explicit nil
 func (o *UsageMonitoringData) SetVolumeThresholdNil() {
 	o.VolumeThreshold.Set(nil)
@@ -132,7 +133,7 @@ func (o *UsageMonitoringData) UnsetVolumeThreshold() {
 
 // GetVolumeThresholdUplink returns the VolumeThresholdUplink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetVolumeThresholdUplink() int64 {
-	if o == nil || isNil(o.VolumeThresholdUplink.Get()) {
+	if o == nil || IsNil(o.VolumeThresholdUplink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -162,6 +163,7 @@ func (o *UsageMonitoringData) HasVolumeThresholdUplink() bool {
 func (o *UsageMonitoringData) SetVolumeThresholdUplink(v int64) {
 	o.VolumeThresholdUplink.Set(&v)
 }
+
 // SetVolumeThresholdUplinkNil sets the value for VolumeThresholdUplink to be an explicit nil
 func (o *UsageMonitoringData) SetVolumeThresholdUplinkNil() {
 	o.VolumeThresholdUplink.Set(nil)
@@ -174,7 +176,7 @@ func (o *UsageMonitoringData) UnsetVolumeThresholdUplink() {
 
 // GetVolumeThresholdDownlink returns the VolumeThresholdDownlink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetVolumeThresholdDownlink() int64 {
-	if o == nil || isNil(o.VolumeThresholdDownlink.Get()) {
+	if o == nil || IsNil(o.VolumeThresholdDownlink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -204,6 +206,7 @@ func (o *UsageMonitoringData) HasVolumeThresholdDownlink() bool {
 func (o *UsageMonitoringData) SetVolumeThresholdDownlink(v int64) {
 	o.VolumeThresholdDownlink.Set(&v)
 }
+
 // SetVolumeThresholdDownlinkNil sets the value for VolumeThresholdDownlink to be an explicit nil
 func (o *UsageMonitoringData) SetVolumeThresholdDownlinkNil() {
 	o.VolumeThresholdDownlink.Set(nil)
@@ -216,7 +219,7 @@ func (o *UsageMonitoringData) UnsetVolumeThresholdDownlink() {
 
 // GetTimeThreshold returns the TimeThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetTimeThreshold() int32 {
-	if o == nil || isNil(o.TimeThreshold.Get()) {
+	if o == nil || IsNil(o.TimeThreshold.Get()) {
 		var ret int32
 		return ret
 	}
@@ -246,6 +249,7 @@ func (o *UsageMonitoringData) HasTimeThreshold() bool {
 func (o *UsageMonitoringData) SetTimeThreshold(v int32) {
 	o.TimeThreshold.Set(&v)
 }
+
 // SetTimeThresholdNil sets the value for TimeThreshold to be an explicit nil
 func (o *UsageMonitoringData) SetTimeThresholdNil() {
 	o.TimeThreshold.Set(nil)
@@ -258,7 +262,7 @@ func (o *UsageMonitoringData) UnsetTimeThreshold() {
 
 // GetMonitoringTime returns the MonitoringTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetMonitoringTime() time.Time {
-	if o == nil || isNil(o.MonitoringTime.Get()) {
+	if o == nil || IsNil(o.MonitoringTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -288,6 +292,7 @@ func (o *UsageMonitoringData) HasMonitoringTime() bool {
 func (o *UsageMonitoringData) SetMonitoringTime(v time.Time) {
 	o.MonitoringTime.Set(&v)
 }
+
 // SetMonitoringTimeNil sets the value for MonitoringTime to be an explicit nil
 func (o *UsageMonitoringData) SetMonitoringTimeNil() {
 	o.MonitoringTime.Set(nil)
@@ -300,7 +305,7 @@ func (o *UsageMonitoringData) UnsetMonitoringTime() {
 
 // GetNextVolThreshold returns the NextVolThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextVolThreshold() int64 {
-	if o == nil || isNil(o.NextVolThreshold.Get()) {
+	if o == nil || IsNil(o.NextVolThreshold.Get()) {
 		var ret int64
 		return ret
 	}
@@ -330,6 +335,7 @@ func (o *UsageMonitoringData) HasNextVolThreshold() bool {
 func (o *UsageMonitoringData) SetNextVolThreshold(v int64) {
 	o.NextVolThreshold.Set(&v)
 }
+
 // SetNextVolThresholdNil sets the value for NextVolThreshold to be an explicit nil
 func (o *UsageMonitoringData) SetNextVolThresholdNil() {
 	o.NextVolThreshold.Set(nil)
@@ -342,7 +348,7 @@ func (o *UsageMonitoringData) UnsetNextVolThreshold() {
 
 // GetNextVolThresholdUplink returns the NextVolThresholdUplink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextVolThresholdUplink() int64 {
-	if o == nil || isNil(o.NextVolThresholdUplink.Get()) {
+	if o == nil || IsNil(o.NextVolThresholdUplink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -372,6 +378,7 @@ func (o *UsageMonitoringData) HasNextVolThresholdUplink() bool {
 func (o *UsageMonitoringData) SetNextVolThresholdUplink(v int64) {
 	o.NextVolThresholdUplink.Set(&v)
 }
+
 // SetNextVolThresholdUplinkNil sets the value for NextVolThresholdUplink to be an explicit nil
 func (o *UsageMonitoringData) SetNextVolThresholdUplinkNil() {
 	o.NextVolThresholdUplink.Set(nil)
@@ -384,7 +391,7 @@ func (o *UsageMonitoringData) UnsetNextVolThresholdUplink() {
 
 // GetNextVolThresholdDownlink returns the NextVolThresholdDownlink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextVolThresholdDownlink() int64 {
-	if o == nil || isNil(o.NextVolThresholdDownlink.Get()) {
+	if o == nil || IsNil(o.NextVolThresholdDownlink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -414,6 +421,7 @@ func (o *UsageMonitoringData) HasNextVolThresholdDownlink() bool {
 func (o *UsageMonitoringData) SetNextVolThresholdDownlink(v int64) {
 	o.NextVolThresholdDownlink.Set(&v)
 }
+
 // SetNextVolThresholdDownlinkNil sets the value for NextVolThresholdDownlink to be an explicit nil
 func (o *UsageMonitoringData) SetNextVolThresholdDownlinkNil() {
 	o.NextVolThresholdDownlink.Set(nil)
@@ -426,7 +434,7 @@ func (o *UsageMonitoringData) UnsetNextVolThresholdDownlink() {
 
 // GetNextTimeThreshold returns the NextTimeThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextTimeThreshold() int32 {
-	if o == nil || isNil(o.NextTimeThreshold.Get()) {
+	if o == nil || IsNil(o.NextTimeThreshold.Get()) {
 		var ret int32
 		return ret
 	}
@@ -456,6 +464,7 @@ func (o *UsageMonitoringData) HasNextTimeThreshold() bool {
 func (o *UsageMonitoringData) SetNextTimeThreshold(v int32) {
 	o.NextTimeThreshold.Set(&v)
 }
+
 // SetNextTimeThresholdNil sets the value for NextTimeThreshold to be an explicit nil
 func (o *UsageMonitoringData) SetNextTimeThresholdNil() {
 	o.NextTimeThreshold.Set(nil)
@@ -468,7 +477,7 @@ func (o *UsageMonitoringData) UnsetNextTimeThreshold() {
 
 // GetInactivityTime returns the InactivityTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetInactivityTime() int32 {
-	if o == nil || isNil(o.InactivityTime.Get()) {
+	if o == nil || IsNil(o.InactivityTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -498,6 +507,7 @@ func (o *UsageMonitoringData) HasInactivityTime() bool {
 func (o *UsageMonitoringData) SetInactivityTime(v int32) {
 	o.InactivityTime.Set(&v)
 }
+
 // SetInactivityTimeNil sets the value for InactivityTime to be an explicit nil
 func (o *UsageMonitoringData) SetInactivityTimeNil() {
 	o.InactivityTime.Set(nil)
@@ -521,7 +531,7 @@ func (o *UsageMonitoringData) GetExUsagePccRuleIds() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UsageMonitoringData) GetExUsagePccRuleIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ExUsagePccRuleIds) {
+	if o == nil || IsNil(o.ExUsagePccRuleIds) {
 		return nil, false
 	}
 	return o.ExUsagePccRuleIds, true
@@ -529,7 +539,7 @@ func (o *UsageMonitoringData) GetExUsagePccRuleIdsOk() ([]string, bool) {
 
 // HasExUsagePccRuleIds returns a boolean if a field has been set.
 func (o *UsageMonitoringData) HasExUsagePccRuleIds() bool {
-	if o != nil && isNil(o.ExUsagePccRuleIds) {
+	if o != nil && IsNil(o.ExUsagePccRuleIds) {
 		return true
 	}
 
@@ -542,7 +552,7 @@ func (o *UsageMonitoringData) SetExUsagePccRuleIds(v []string) {
 }
 
 func (o UsageMonitoringData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -623,5 +633,3 @@ func (v *NullableUsageMonitoringData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

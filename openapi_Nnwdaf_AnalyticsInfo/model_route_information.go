@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the RouteInformation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RouteInformation{}
 
-// RouteInformation At least one of the \"ipv4Addr\" attribute and the \"ipv6Addr\" attribute shall be included in the \"RouteInformation\" data type.  
+// RouteInformation At least one of the \"ipv4Addr\" attribute and the \"ipv6Addr\" attribute shall be included in the \"RouteInformation\" data type.
 type RouteInformation struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4Addr *string `json:"ipv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4Addr *string   `json:"ipv4Addr,omitempty"`
 	Ipv6Addr *Ipv6Addr `json:"ipv6Addr,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	PortNumber int32 `json:"portNumber"`
@@ -46,7 +46,7 @@ func NewRouteInformationWithDefaults() *RouteInformation {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *RouteInformation) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *RouteInformation) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteInformation) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -64,7 +64,7 @@ func (o *RouteInformation) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *RouteInformation) HasIpv4Addr() bool {
-	if o != nil && !isNil(o.Ipv4Addr) {
+	if o != nil && !IsNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *RouteInformation) SetIpv4Addr(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *RouteInformation) GetIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.Ipv6Addr) {
+	if o == nil || IsNil(o.Ipv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *RouteInformation) GetIpv6Addr() Ipv6Addr {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteInformation) GetIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.Ipv6Addr) {
+	if o == nil || IsNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -96,7 +96,7 @@ func (o *RouteInformation) GetIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *RouteInformation) HasIpv6Addr() bool {
-	if o != nil && !isNil(o.Ipv6Addr) {
+	if o != nil && !IsNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *RouteInformation) SetPortNumber(v int32) {
 }
 
 func (o RouteInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o RouteInformation) MarshalJSON() ([]byte, error) {
 
 func (o RouteInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ipv4Addr) {
+	if !IsNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !isNil(o.Ipv6Addr) {
+	if !IsNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
 	toSerialize["portNumber"] = o.PortNumber
@@ -187,5 +187,3 @@ func (v *NullableRouteInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

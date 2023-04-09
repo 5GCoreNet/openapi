@@ -1,7 +1,7 @@
 /*
 NhssUEAU
 
-HSS UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AvGenerationRequest{}
 
 // AvGenerationRequest It represents the request body in the Authentication Vector (AV) request sent by UDM to HSS, containing the IMSI of the UE, authentication type, serving network, etc.
 type AvGenerationRequest struct {
-	Imsi string `json:"imsi"`
-	AuthType AuthType `json:"authType"`
-	ServingNetworkName string `json:"servingNetworkName"`
+	Imsi                  string                 `json:"imsi"`
+	AuthType              AuthType               `json:"authType"`
+	ServingNetworkName    string                 `json:"servingNetworkName"`
 	ResynchronizationInfo *ResynchronizationInfo `json:"resynchronizationInfo,omitempty"`
 }
 
@@ -119,7 +119,7 @@ func (o *AvGenerationRequest) SetServingNetworkName(v string) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *AvGenerationRequest) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || isNil(o.ResynchronizationInfo) {
+	if o == nil || IsNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *AvGenerationRequest) GetResynchronizationInfo() ResynchronizationInfo {
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvGenerationRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || isNil(o.ResynchronizationInfo) {
+	if o == nil || IsNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -137,7 +137,7 @@ func (o *AvGenerationRequest) GetResynchronizationInfoOk() (*ResynchronizationIn
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *AvGenerationRequest) HasResynchronizationInfo() bool {
-	if o != nil && !isNil(o.ResynchronizationInfo) {
+	if o != nil && !IsNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *AvGenerationRequest) SetResynchronizationInfo(v ResynchronizationInfo) 
 }
 
 func (o AvGenerationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,7 +162,7 @@ func (o AvGenerationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["imsi"] = o.Imsi
 	toSerialize["authType"] = o.AuthType
 	toSerialize["servingNetworkName"] = o.ServingNetworkName
-	if !isNil(o.ResynchronizationInfo) {
+	if !IsNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
 	return toSerialize, nil
@@ -203,5 +203,3 @@ func (v *NullableAvGenerationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

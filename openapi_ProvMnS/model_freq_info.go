@@ -19,7 +19,7 @@ var _ MappedNullable = &FreqInfo{}
 
 // FreqInfo specifies the carrier frequency and bands used in a cell.
 type FreqInfo struct {
-	Arfcn *int32 `json:"arfcn,omitempty"`
+	Arfcn     *int32  `json:"arfcn,omitempty"`
 	FreqBands []int32 `json:"freqBands,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewFreqInfoWithDefaults() *FreqInfo {
 
 // GetArfcn returns the Arfcn field value if set, zero value otherwise.
 func (o *FreqInfo) GetArfcn() int32 {
-	if o == nil || isNil(o.Arfcn) {
+	if o == nil || IsNil(o.Arfcn) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *FreqInfo) GetArfcn() int32 {
 // GetArfcnOk returns a tuple with the Arfcn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FreqInfo) GetArfcnOk() (*int32, bool) {
-	if o == nil || isNil(o.Arfcn) {
+	if o == nil || IsNil(o.Arfcn) {
 		return nil, false
 	}
 	return o.Arfcn, true
@@ -60,7 +60,7 @@ func (o *FreqInfo) GetArfcnOk() (*int32, bool) {
 
 // HasArfcn returns a boolean if a field has been set.
 func (o *FreqInfo) HasArfcn() bool {
-	if o != nil && !isNil(o.Arfcn) {
+	if o != nil && !IsNil(o.Arfcn) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *FreqInfo) SetArfcn(v int32) {
 
 // GetFreqBands returns the FreqBands field value if set, zero value otherwise.
 func (o *FreqInfo) GetFreqBands() []int32 {
-	if o == nil || isNil(o.FreqBands) {
+	if o == nil || IsNil(o.FreqBands) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *FreqInfo) GetFreqBands() []int32 {
 // GetFreqBandsOk returns a tuple with the FreqBands field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FreqInfo) GetFreqBandsOk() ([]int32, bool) {
-	if o == nil || isNil(o.FreqBands) {
+	if o == nil || IsNil(o.FreqBands) {
 		return nil, false
 	}
 	return o.FreqBands, true
@@ -92,7 +92,7 @@ func (o *FreqInfo) GetFreqBandsOk() ([]int32, bool) {
 
 // HasFreqBands returns a boolean if a field has been set.
 func (o *FreqInfo) HasFreqBands() bool {
-	if o != nil && !isNil(o.FreqBands) {
+	if o != nil && !IsNil(o.FreqBands) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *FreqInfo) SetFreqBands(v []int32) {
 }
 
 func (o FreqInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o FreqInfo) MarshalJSON() ([]byte, error) {
 
 func (o FreqInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Arfcn) {
+	if !IsNil(o.Arfcn) {
 		toSerialize["arfcn"] = o.Arfcn
 	}
-	if !isNil(o.FreqBands) {
+	if !IsNil(o.FreqBands) {
 		toSerialize["freqBands"] = o.FreqBands
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableFreqInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

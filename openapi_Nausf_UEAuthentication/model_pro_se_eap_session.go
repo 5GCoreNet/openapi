@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -24,13 +24,13 @@ type ProSeEapSession struct {
 	// Contains the KNR_ProSe.
 	KnrProSe *string `json:"knrProSe,omitempty"`
 	// A map(list of key-value pairs) where member serves as key
-	Links *map[string]LinksValueSchema `json:"_links,omitempty"`
-	AuthResult *AuthResult `json:"authResult,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	Links      *map[string]LinksValueSchema `json:"_links,omitempty"`
+	AuthResult *AuthResult                  `json:"authResult,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 	// contains an Nonce2
 	Nonce2 NullableString `json:"nonce2,omitempty"`
-	// A string carrying the CP-PRUK ID of the remote UE. The CP-PRUK ID is a string in NAI format as specified in clause 28.7.11 of 3GPP TS 23.003. 
+	// A string carrying the CP-PRUK ID of the remote UE. The CP-PRUK ID is a string in NAI format as specified in clause 28.7.11 of 3GPP TS 23.003.
 	Var5gPrukId *string `json:"5gPrukId,omitempty"`
 }
 
@@ -80,7 +80,7 @@ func (o *ProSeEapSession) SetEapPayload(v string) {
 
 // GetKnrProSe returns the KnrProSe field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetKnrProSe() string {
-	if o == nil || isNil(o.KnrProSe) {
+	if o == nil || IsNil(o.KnrProSe) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ProSeEapSession) GetKnrProSe() string {
 // GetKnrProSeOk returns a tuple with the KnrProSe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetKnrProSeOk() (*string, bool) {
-	if o == nil || isNil(o.KnrProSe) {
+	if o == nil || IsNil(o.KnrProSe) {
 		return nil, false
 	}
 	return o.KnrProSe, true
@@ -98,7 +98,7 @@ func (o *ProSeEapSession) GetKnrProSeOk() (*string, bool) {
 
 // HasKnrProSe returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasKnrProSe() bool {
-	if o != nil && !isNil(o.KnrProSe) {
+	if o != nil && !IsNil(o.KnrProSe) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ProSeEapSession) SetKnrProSe(v string) {
 
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetLinks() map[string]LinksValueSchema {
-	if o == nil || isNil(o.Links) {
+	if o == nil || IsNil(o.Links) {
 		var ret map[string]LinksValueSchema
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ProSeEapSession) GetLinks() map[string]LinksValueSchema {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetLinksOk() (*map[string]LinksValueSchema, bool) {
-	if o == nil || isNil(o.Links) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -130,7 +130,7 @@ func (o *ProSeEapSession) GetLinksOk() (*map[string]LinksValueSchema, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasLinks() bool {
-	if o != nil && !isNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ProSeEapSession) SetLinks(v map[string]LinksValueSchema) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetAuthResult() AuthResult {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		var ret AuthResult
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ProSeEapSession) GetAuthResult() AuthResult {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetAuthResultOk() (*AuthResult, bool) {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -162,7 +162,7 @@ func (o *ProSeEapSession) GetAuthResultOk() (*AuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasAuthResult() bool {
-	if o != nil && !isNil(o.AuthResult) {
+	if o != nil && !IsNil(o.AuthResult) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ProSeEapSession) SetAuthResult(v AuthResult) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ProSeEapSession) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -194,7 +194,7 @@ func (o *ProSeEapSession) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ProSeEapSession) SetSupportedFeatures(v string) {
 
 // GetNonce2 returns the Nonce2 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProSeEapSession) GetNonce2() string {
-	if o == nil || isNil(o.Nonce2.Get()) {
+	if o == nil || IsNil(o.Nonce2.Get()) {
 		var ret string
 		return ret
 	}
@@ -238,6 +238,7 @@ func (o *ProSeEapSession) HasNonce2() bool {
 func (o *ProSeEapSession) SetNonce2(v string) {
 	o.Nonce2.Set(&v)
 }
+
 // SetNonce2Nil sets the value for Nonce2 to be an explicit nil
 func (o *ProSeEapSession) SetNonce2Nil() {
 	o.Nonce2.Set(nil)
@@ -250,7 +251,7 @@ func (o *ProSeEapSession) UnsetNonce2() {
 
 // GetVar5gPrukId returns the Var5gPrukId field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetVar5gPrukId() string {
-	if o == nil || isNil(o.Var5gPrukId) {
+	if o == nil || IsNil(o.Var5gPrukId) {
 		var ret string
 		return ret
 	}
@@ -260,7 +261,7 @@ func (o *ProSeEapSession) GetVar5gPrukId() string {
 // GetVar5gPrukIdOk returns a tuple with the Var5gPrukId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetVar5gPrukIdOk() (*string, bool) {
-	if o == nil || isNil(o.Var5gPrukId) {
+	if o == nil || IsNil(o.Var5gPrukId) {
 		return nil, false
 	}
 	return o.Var5gPrukId, true
@@ -268,7 +269,7 @@ func (o *ProSeEapSession) GetVar5gPrukIdOk() (*string, bool) {
 
 // HasVar5gPrukId returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasVar5gPrukId() bool {
-	if o != nil && !isNil(o.Var5gPrukId) {
+	if o != nil && !IsNil(o.Var5gPrukId) {
 		return true
 	}
 
@@ -281,7 +282,7 @@ func (o *ProSeEapSession) SetVar5gPrukId(v string) {
 }
 
 func (o ProSeEapSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -291,22 +292,22 @@ func (o ProSeEapSession) MarshalJSON() ([]byte, error) {
 func (o ProSeEapSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eapPayload"] = o.EapPayload.Get()
-	if !isNil(o.KnrProSe) {
+	if !IsNil(o.KnrProSe) {
 		toSerialize["knrProSe"] = o.KnrProSe
 	}
-	if !isNil(o.Links) {
+	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
-	if !isNil(o.AuthResult) {
+	if !IsNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	if o.Nonce2.IsSet() {
 		toSerialize["nonce2"] = o.Nonce2.Get()
 	}
-	if !isNil(o.Var5gPrukId) {
+	if !IsNil(o.Var5gPrukId) {
 		toSerialize["5gPrukId"] = o.Var5gPrukId
 	}
 	return toSerialize, nil
@@ -347,5 +348,3 @@ func (v *NullableProSeEapSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

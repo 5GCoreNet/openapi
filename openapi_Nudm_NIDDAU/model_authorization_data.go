@@ -1,7 +1,7 @@
 /*
 Nudm_NIDDAU
 
-Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -69,7 +69,7 @@ func (o *AuthorizationData) SetAuthorizationData(v []UserIdentifier) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *AuthorizationData) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AuthorizationData) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationData) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -87,7 +87,7 @@ func (o *AuthorizationData) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *AuthorizationData) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AuthorizationData) SetValidityTime(v time.Time) {
 }
 
 func (o AuthorizationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o AuthorizationData) MarshalJSON() ([]byte, error) {
 func (o AuthorizationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authorizationData"] = o.AuthorizationData
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableAuthorizationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

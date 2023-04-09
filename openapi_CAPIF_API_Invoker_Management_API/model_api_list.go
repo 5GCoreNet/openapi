@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Invoker_Management_API
 
-API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewAPIListWithDefaults() *APIList {
 
 // GetServiceAPIDescriptions returns the ServiceAPIDescriptions field value if set, zero value otherwise.
 func (o *APIList) GetServiceAPIDescriptions() []ServiceAPIDescription {
-	if o == nil || isNil(o.ServiceAPIDescriptions) {
+	if o == nil || IsNil(o.ServiceAPIDescriptions) {
 		var ret []ServiceAPIDescription
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *APIList) GetServiceAPIDescriptions() []ServiceAPIDescription {
 // GetServiceAPIDescriptionsOk returns a tuple with the ServiceAPIDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIList) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription, bool) {
-	if o == nil || isNil(o.ServiceAPIDescriptions) {
+	if o == nil || IsNil(o.ServiceAPIDescriptions) {
 		return nil, false
 	}
 	return o.ServiceAPIDescriptions, true
@@ -60,7 +60,7 @@ func (o *APIList) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription, bool) 
 
 // HasServiceAPIDescriptions returns a boolean if a field has been set.
 func (o *APIList) HasServiceAPIDescriptions() bool {
-	if o != nil && !isNil(o.ServiceAPIDescriptions) {
+	if o != nil && !IsNil(o.ServiceAPIDescriptions) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *APIList) SetServiceAPIDescriptions(v []ServiceAPIDescription) {
 }
 
 func (o APIList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o APIList) MarshalJSON() ([]byte, error) {
 
 func (o APIList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceAPIDescriptions) {
+	if !IsNil(o.ServiceAPIDescriptions) {
 		toSerialize["serviceAPIDescriptions"] = o.ServiceAPIDescriptions
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableAPIList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

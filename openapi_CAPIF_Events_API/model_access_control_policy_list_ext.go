@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,7 @@ var _ MappedNullable = &AccessControlPolicyListExt{}
 
 // AccessControlPolicyListExt Represents the extension for access control policies.
 type AccessControlPolicyListExt struct {
-	// Policy of each API invoker.
-	ApiInvokerPolicies []ApiInvokerPolicy `json:"apiInvokerPolicies,omitempty"`
+	AccessControlPolicyList
 	ApiId string `json:"apiId"`
 }
 
@@ -40,38 +39,6 @@ func NewAccessControlPolicyListExt(apiId string) *AccessControlPolicyListExt {
 func NewAccessControlPolicyListExtWithDefaults() *AccessControlPolicyListExt {
 	this := AccessControlPolicyListExt{}
 	return &this
-}
-
-// GetApiInvokerPolicies returns the ApiInvokerPolicies field value if set, zero value otherwise.
-func (o *AccessControlPolicyListExt) GetApiInvokerPolicies() []ApiInvokerPolicy {
-	if o == nil || isNil(o.ApiInvokerPolicies) {
-		var ret []ApiInvokerPolicy
-		return ret
-	}
-	return o.ApiInvokerPolicies
-}
-
-// GetApiInvokerPoliciesOk returns a tuple with the ApiInvokerPolicies field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AccessControlPolicyListExt) GetApiInvokerPoliciesOk() ([]ApiInvokerPolicy, bool) {
-	if o == nil || isNil(o.ApiInvokerPolicies) {
-		return nil, false
-	}
-	return o.ApiInvokerPolicies, true
-}
-
-// HasApiInvokerPolicies returns a boolean if a field has been set.
-func (o *AccessControlPolicyListExt) HasApiInvokerPolicies() bool {
-	if o != nil && !isNil(o.ApiInvokerPolicies) {
-		return true
-	}
-
-	return false
-}
-
-// SetApiInvokerPolicies gets a reference to the given []ApiInvokerPolicy and assigns it to the ApiInvokerPolicies field.
-func (o *AccessControlPolicyListExt) SetApiInvokerPolicies(v []ApiInvokerPolicy) {
-	o.ApiInvokerPolicies = v
 }
 
 // GetApiId returns the ApiId field value
@@ -99,7 +66,7 @@ func (o *AccessControlPolicyListExt) SetApiId(v string) {
 }
 
 func (o AccessControlPolicyListExt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,8 +75,13 @@ func (o AccessControlPolicyListExt) MarshalJSON() ([]byte, error) {
 
 func (o AccessControlPolicyListExt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiInvokerPolicies) {
-		toSerialize["apiInvokerPolicies"] = o.ApiInvokerPolicies
+	serializedAccessControlPolicyList, errAccessControlPolicyList := json.Marshal(o.AccessControlPolicyList)
+	if errAccessControlPolicyList != nil {
+		return map[string]interface{}{}, errAccessControlPolicyList
+	}
+	errAccessControlPolicyList = json.Unmarshal([]byte(serializedAccessControlPolicyList), &toSerialize)
+	if errAccessControlPolicyList != nil {
+		return map[string]interface{}{}, errAccessControlPolicyList
 	}
 	toSerialize["apiId"] = o.ApiId
 	return toSerialize, nil
@@ -150,5 +122,3 @@ func (v *NullableAccessControlPolicyListExt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

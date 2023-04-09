@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &BaselineDnsAitId{}
 // BaselineDnsAitId Baseline DNS Action Information Template Identifier
 type BaselineDnsAitId struct {
 	BaseDnsPatternUri []string `json:"baseDnsPatternUri"`
-	AitId string `json:"aitId"`
+	AitId             string   `json:"aitId"`
 }
 
 // NewBaselineDnsAitId instantiates a new BaselineDnsAitId object
@@ -91,7 +91,7 @@ func (o *BaselineDnsAitId) SetAitId(v string) {
 }
 
 func (o BaselineDnsAitId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableBaselineDnsAitId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

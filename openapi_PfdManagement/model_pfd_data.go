@@ -1,7 +1,7 @@
 /*
 3gpp-pfd-management
 
-API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -76,7 +76,7 @@ func (o *PfdData) SetExternalAppId(v string) {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *PfdData) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *PfdData) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdData) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -94,7 +94,7 @@ func (o *PfdData) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *PfdData) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *PfdData) SetPfds(v map[string]Pfd) {
 
 // GetAllowedDelay returns the AllowedDelay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PfdData) GetAllowedDelay() int32 {
-	if o == nil || isNil(o.AllowedDelay.Get()) {
+	if o == nil || IsNil(o.AllowedDelay.Get()) {
 		var ret int32
 		return ret
 	}
@@ -162,6 +162,7 @@ func (o *PfdData) HasAllowedDelay() bool {
 func (o *PfdData) SetAllowedDelay(v int32) {
 	o.AllowedDelay.Set(&v)
 }
+
 // SetAllowedDelayNil sets the value for AllowedDelay to be an explicit nil
 func (o *PfdData) SetAllowedDelayNil() {
 	o.AllowedDelay.Set(nil)
@@ -174,7 +175,7 @@ func (o *PfdData) UnsetAllowedDelay() {
 
 // GetCachingTime returns the CachingTime field value if set, zero value otherwise.
 func (o *PfdData) GetCachingTime() int32 {
-	if o == nil || isNil(o.CachingTime) {
+	if o == nil || IsNil(o.CachingTime) {
 		var ret int32
 		return ret
 	}
@@ -184,7 +185,7 @@ func (o *PfdData) GetCachingTime() int32 {
 // GetCachingTimeOk returns a tuple with the CachingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdData) GetCachingTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.CachingTime) {
+	if o == nil || IsNil(o.CachingTime) {
 		return nil, false
 	}
 	return o.CachingTime, true
@@ -192,7 +193,7 @@ func (o *PfdData) GetCachingTimeOk() (*int32, bool) {
 
 // HasCachingTime returns a boolean if a field has been set.
 func (o *PfdData) HasCachingTime() bool {
-	if o != nil && !isNil(o.CachingTime) {
+	if o != nil && !IsNil(o.CachingTime) {
 		return true
 	}
 
@@ -205,7 +206,7 @@ func (o *PfdData) SetCachingTime(v int32) {
 }
 
 func (o PfdData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -215,16 +216,14 @@ func (o PfdData) MarshalJSON() ([]byte, error) {
 func (o PfdData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["externalAppId"] = o.ExternalAppId
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["pfds"] = o.Pfds
 	if o.AllowedDelay.IsSet() {
 		toSerialize["allowedDelay"] = o.AllowedDelay.Get()
 	}
-	if !isNil(o.CachingTime) {
-		toSerialize["cachingTime"] = o.CachingTime
-	}
+	// skip: cachingTime is readOnly
 	return toSerialize, nil
 }
 
@@ -263,5 +262,3 @@ func (v *NullablePfdData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

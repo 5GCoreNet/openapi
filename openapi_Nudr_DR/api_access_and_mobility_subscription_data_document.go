@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,25 +13,24 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AccessAndMobilitySubscriptionDataDocumentApiService AccessAndMobilitySubscriptionDataDocumentApi service
 type AccessAndMobilitySubscriptionDataDocumentApiService service
 
 type ApiQueryAmDataRequest struct {
-	ctx context.Context
-	ApiService *AccessAndMobilitySubscriptionDataDocumentApiService
-	ueId string
-	servingPlmnId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *AccessAndMobilitySubscriptionDataDocumentApiService
+	ueId              string
+	servingPlmnId     string
+	fields            *[]string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // attributes to be retrieved
@@ -65,28 +64,29 @@ func (r ApiQueryAmDataRequest) Execute() (*AccessAndMobilitySubscriptionData, *h
 /*
 QueryAmData Retrieves the access and mobility subscription data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingPlmnId PLMN ID
- @return ApiQueryAmDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingPlmnId PLMN ID
+	@return ApiQueryAmDataRequest
 */
 func (a *AccessAndMobilitySubscriptionDataDocumentApiService) QueryAmData(ctx context.Context, ueId string, servingPlmnId string) ApiQueryAmDataRequest {
 	return ApiQueryAmDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:    a,
+		ctx:           ctx,
+		ueId:          ueId,
 		servingPlmnId: servingPlmnId,
 	}
 }
 
 // Execute executes the request
-//  @return AccessAndMobilitySubscriptionData
+//
+//	@return AccessAndMobilitySubscriptionData
 func (a *AccessAndMobilitySubscriptionDataDocumentApiService) QueryAmDataExecute(r ApiQueryAmDataRequest) (*AccessAndMobilitySubscriptionData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AccessAndMobilitySubscriptionData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AccessAndMobilitySubscriptionData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessAndMobilitySubscriptionDataDocumentApiService.QueryAmData")
@@ -103,10 +103,10 @@ func (a *AccessAndMobilitySubscriptionDataDocumentApiService) QueryAmDataExecute
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -126,10 +126,10 @@ func (a *AccessAndMobilitySubscriptionDataDocumentApiService) QueryAmDataExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -141,9 +141,9 @@ func (a *AccessAndMobilitySubscriptionDataDocumentApiService) QueryAmDataExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

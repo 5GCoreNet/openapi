@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -12,6 +12,7 @@ package openapi_Ndcaf_DataReporting
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // checks if the TripPlanRecord type satisfies the MappedNullable interface at compile time
@@ -19,11 +20,10 @@ var _ MappedNullable = &TripPlanRecord{}
 
 // TripPlanRecord struct for TripPlanRecord
 type TripPlanRecord struct {
-	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
-	StartingPoint LocationData `json:"startingPoint"`
-	Waypoints []LocationData `json:"waypoints,omitempty"`
-	Destination LocationData `json:"destination"`
+	BaseRecord
+	StartingPoint LocationData   `json:"startingPoint"`
+	Waypoints     []LocationData `json:"waypoints,omitempty"`
+	Destination   LocationData   `json:"destination"`
 	// Indicates value of horizontal speed.
 	EstimatedAverageSpeed *float32 `json:"estimatedAverageSpeed,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
@@ -34,7 +34,7 @@ type TripPlanRecord struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTripPlanRecord(timestamp time.Time, startingPoint LocationData, destination LocationData) *TripPlanRecord {
+func NewTripPlanRecord(startingPoint LocationData, destination LocationData, timestamp time.Time) *TripPlanRecord {
 	this := TripPlanRecord{}
 	this.Timestamp = timestamp
 	this.StartingPoint = startingPoint
@@ -48,30 +48,6 @@ func NewTripPlanRecord(timestamp time.Time, startingPoint LocationData, destinat
 func NewTripPlanRecordWithDefaults() *TripPlanRecord {
 	this := TripPlanRecord{}
 	return &this
-}
-
-// GetTimestamp returns the Timestamp field value
-func (o *TripPlanRecord) GetTimestamp() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.Timestamp
-}
-
-// GetTimestampOk returns a tuple with the Timestamp field value
-// and a boolean to check if the value has been set.
-func (o *TripPlanRecord) GetTimestampOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Timestamp, true
-}
-
-// SetTimestamp sets field value
-func (o *TripPlanRecord) SetTimestamp(v time.Time) {
-	o.Timestamp = v
 }
 
 // GetStartingPoint returns the StartingPoint field value
@@ -100,7 +76,7 @@ func (o *TripPlanRecord) SetStartingPoint(v LocationData) {
 
 // GetWaypoints returns the Waypoints field value if set, zero value otherwise.
 func (o *TripPlanRecord) GetWaypoints() []LocationData {
-	if o == nil || isNil(o.Waypoints) {
+	if o == nil || IsNil(o.Waypoints) {
 		var ret []LocationData
 		return ret
 	}
@@ -110,7 +86,7 @@ func (o *TripPlanRecord) GetWaypoints() []LocationData {
 // GetWaypointsOk returns a tuple with the Waypoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TripPlanRecord) GetWaypointsOk() ([]LocationData, bool) {
-	if o == nil || isNil(o.Waypoints) {
+	if o == nil || IsNil(o.Waypoints) {
 		return nil, false
 	}
 	return o.Waypoints, true
@@ -118,7 +94,7 @@ func (o *TripPlanRecord) GetWaypointsOk() ([]LocationData, bool) {
 
 // HasWaypoints returns a boolean if a field has been set.
 func (o *TripPlanRecord) HasWaypoints() bool {
-	if o != nil && !isNil(o.Waypoints) {
+	if o != nil && !IsNil(o.Waypoints) {
 		return true
 	}
 
@@ -156,7 +132,7 @@ func (o *TripPlanRecord) SetDestination(v LocationData) {
 
 // GetEstimatedAverageSpeed returns the EstimatedAverageSpeed field value if set, zero value otherwise.
 func (o *TripPlanRecord) GetEstimatedAverageSpeed() float32 {
-	if o == nil || isNil(o.EstimatedAverageSpeed) {
+	if o == nil || IsNil(o.EstimatedAverageSpeed) {
 		var ret float32
 		return ret
 	}
@@ -166,7 +142,7 @@ func (o *TripPlanRecord) GetEstimatedAverageSpeed() float32 {
 // GetEstimatedAverageSpeedOk returns a tuple with the EstimatedAverageSpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TripPlanRecord) GetEstimatedAverageSpeedOk() (*float32, bool) {
-	if o == nil || isNil(o.EstimatedAverageSpeed) {
+	if o == nil || IsNil(o.EstimatedAverageSpeed) {
 		return nil, false
 	}
 	return o.EstimatedAverageSpeed, true
@@ -174,7 +150,7 @@ func (o *TripPlanRecord) GetEstimatedAverageSpeedOk() (*float32, bool) {
 
 // HasEstimatedAverageSpeed returns a boolean if a field has been set.
 func (o *TripPlanRecord) HasEstimatedAverageSpeed() bool {
-	if o != nil && !isNil(o.EstimatedAverageSpeed) {
+	if o != nil && !IsNil(o.EstimatedAverageSpeed) {
 		return true
 	}
 
@@ -188,7 +164,7 @@ func (o *TripPlanRecord) SetEstimatedAverageSpeed(v float32) {
 
 // GetEstimatedArrivalTime returns the EstimatedArrivalTime field value if set, zero value otherwise.
 func (o *TripPlanRecord) GetEstimatedArrivalTime() time.Time {
-	if o == nil || isNil(o.EstimatedArrivalTime) {
+	if o == nil || IsNil(o.EstimatedArrivalTime) {
 		var ret time.Time
 		return ret
 	}
@@ -198,7 +174,7 @@ func (o *TripPlanRecord) GetEstimatedArrivalTime() time.Time {
 // GetEstimatedArrivalTimeOk returns a tuple with the EstimatedArrivalTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TripPlanRecord) GetEstimatedArrivalTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EstimatedArrivalTime) {
+	if o == nil || IsNil(o.EstimatedArrivalTime) {
 		return nil, false
 	}
 	return o.EstimatedArrivalTime, true
@@ -206,7 +182,7 @@ func (o *TripPlanRecord) GetEstimatedArrivalTimeOk() (*time.Time, bool) {
 
 // HasEstimatedArrivalTime returns a boolean if a field has been set.
 func (o *TripPlanRecord) HasEstimatedArrivalTime() bool {
-	if o != nil && !isNil(o.EstimatedArrivalTime) {
+	if o != nil && !IsNil(o.EstimatedArrivalTime) {
 		return true
 	}
 
@@ -219,7 +195,7 @@ func (o *TripPlanRecord) SetEstimatedArrivalTime(v time.Time) {
 }
 
 func (o TripPlanRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -228,16 +204,23 @@ func (o TripPlanRecord) MarshalJSON() ([]byte, error) {
 
 func (o TripPlanRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["timestamp"] = o.Timestamp
+	serializedBaseRecord, errBaseRecord := json.Marshal(o.BaseRecord)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
+	errBaseRecord = json.Unmarshal([]byte(serializedBaseRecord), &toSerialize)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
 	toSerialize["startingPoint"] = o.StartingPoint
-	if !isNil(o.Waypoints) {
+	if !IsNil(o.Waypoints) {
 		toSerialize["waypoints"] = o.Waypoints
 	}
 	toSerialize["destination"] = o.Destination
-	if !isNil(o.EstimatedAverageSpeed) {
+	if !IsNil(o.EstimatedAverageSpeed) {
 		toSerialize["estimatedAverageSpeed"] = o.EstimatedAverageSpeed
 	}
-	if !isNil(o.EstimatedArrivalTime) {
+	if !IsNil(o.EstimatedArrivalTime) {
 		toSerialize["estimatedArrivalTime"] = o.EstimatedArrivalTime
 	}
 	return toSerialize, nil
@@ -278,5 +261,3 @@ func (v *NullableTripPlanRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,9 +19,9 @@ var _ MappedNullable = &EPN3SingleAllOfAttributesAllOf{}
 
 // EPN3SingleAllOfAttributesAllOf struct for EPN3SingleAllOfAttributesAllOf
 type EPN3SingleAllOfAttributesAllOf struct {
-	LocalAddress *LocalAddress `json:"localAddress,omitempty"`
-	RemoteAddress *RemoteAddress `json:"remoteAddress,omitempty"`
-	EpTransportRefs []string `json:"epTransportRefs,omitempty"`
+	LocalAddress    *LocalAddress  `json:"localAddress,omitempty"`
+	RemoteAddress   *RemoteAddress `json:"remoteAddress,omitempty"`
+	EpTransportRefs []string       `json:"epTransportRefs,omitempty"`
 }
 
 // NewEPN3SingleAllOfAttributesAllOf instantiates a new EPN3SingleAllOfAttributesAllOf object
@@ -138,7 +138,7 @@ func (o *EPN3SingleAllOfAttributesAllOf) SetEpTransportRefs(v []string) {
 }
 
 func (o EPN3SingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableEPN3SingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

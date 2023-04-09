@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewThroughputWithDefaults() *Throughput {
 
 // GetGuaranteedThpt returns the GuaranteedThpt field value if set, zero value otherwise.
 func (o *Throughput) GetGuaranteedThpt() float32 {
-	if o == nil || isNil(o.GuaranteedThpt) {
+	if o == nil || IsNil(o.GuaranteedThpt) {
 		var ret float32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Throughput) GetGuaranteedThpt() float32 {
 // GetGuaranteedThptOk returns a tuple with the GuaranteedThpt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Throughput) GetGuaranteedThptOk() (*float32, bool) {
-	if o == nil || isNil(o.GuaranteedThpt) {
+	if o == nil || IsNil(o.GuaranteedThpt) {
 		return nil, false
 	}
 	return o.GuaranteedThpt, true
@@ -62,7 +62,7 @@ func (o *Throughput) GetGuaranteedThptOk() (*float32, bool) {
 
 // HasGuaranteedThpt returns a boolean if a field has been set.
 func (o *Throughput) HasGuaranteedThpt() bool {
-	if o != nil && !isNil(o.GuaranteedThpt) {
+	if o != nil && !IsNil(o.GuaranteedThpt) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Throughput) SetGuaranteedThpt(v float32) {
 
 // GetMaximumThpt returns the MaximumThpt field value if set, zero value otherwise.
 func (o *Throughput) GetMaximumThpt() float32 {
-	if o == nil || isNil(o.MaximumThpt) {
+	if o == nil || IsNil(o.MaximumThpt) {
 		var ret float32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Throughput) GetMaximumThpt() float32 {
 // GetMaximumThptOk returns a tuple with the MaximumThpt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Throughput) GetMaximumThptOk() (*float32, bool) {
-	if o == nil || isNil(o.MaximumThpt) {
+	if o == nil || IsNil(o.MaximumThpt) {
 		return nil, false
 	}
 	return o.MaximumThpt, true
@@ -94,7 +94,7 @@ func (o *Throughput) GetMaximumThptOk() (*float32, bool) {
 
 // HasMaximumThpt returns a boolean if a field has been set.
 func (o *Throughput) HasMaximumThpt() bool {
-	if o != nil && !isNil(o.MaximumThpt) {
+	if o != nil && !IsNil(o.MaximumThpt) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Throughput) SetMaximumThpt(v float32) {
 }
 
 func (o Throughput) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o Throughput) MarshalJSON() ([]byte, error) {
 
 func (o Throughput) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GuaranteedThpt) {
+	if !IsNil(o.GuaranteedThpt) {
 		toSerialize["guaranteedThpt"] = o.GuaranteedThpt
 	}
-	if !isNil(o.MaximumThpt) {
+	if !IsNil(o.MaximumThpt) {
 		toSerialize["maximumThpt"] = o.MaximumThpt
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableThroughput) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

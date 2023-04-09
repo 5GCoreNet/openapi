@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Pc5Capability Possible values are: - LTE_PC5: This value is used to indicate that UE supports PC5 LTE RAT for V2X communications   over the PC5 reference point. - NR_PC5: This value is used to indicate that UE supports PC5 NR RAT for V2X communications   over the PC5 reference point. - LTE_NR_PC5: This value is used to indicate that UE supports both PC5 LTE and NR RAT for   V2X communications over the PC5 reference point.  
+// Pc5Capability Possible values are: - LTE_PC5: This value is used to indicate that UE supports PC5 LTE RAT for V2X communications   over the PC5 reference point. - NR_PC5: This value is used to indicate that UE supports PC5 NR RAT for V2X communications   over the PC5 reference point. - LTE_NR_PC5: This value is used to indicate that UE supports both PC5 LTE and NR RAT for   V2X communications over the PC5 reference point.
 type Pc5Capability struct {
-	Pc5CapabilityAnyOf *Pc5CapabilityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Pc5Capability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into Pc5CapabilityAnyOf
-	err = json.Unmarshal(data, &dst.Pc5CapabilityAnyOf);
-	if err == nil {
-		jsonPc5CapabilityAnyOf, _ := json.Marshal(dst.Pc5CapabilityAnyOf)
-		if string(jsonPc5CapabilityAnyOf) == "{}" { // empty struct
-			dst.Pc5CapabilityAnyOf = nil
-		} else {
-			return nil // data stored in dst.Pc5CapabilityAnyOf, return on the first match
-		}
-	} else {
-		dst.Pc5CapabilityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Pc5Capability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Pc5Capability) MarshalJSON() ([]byte, error) {
-	if src.Pc5CapabilityAnyOf != nil {
-		return json.Marshal(&src.Pc5CapabilityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePc5Capability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

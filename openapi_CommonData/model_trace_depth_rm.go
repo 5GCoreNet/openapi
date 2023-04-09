@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// TraceDepthRm This enumeration is defined in the same way as the 'TraceDepth' enumeration, but with the OpenAPI 'nullable: true' property. 
+// TraceDepthRm This enumeration is defined in the same way as the 'TraceDepth' enumeration, but with the OpenAPI 'nullable: true' property.
 type TraceDepthRm struct {
-	NullValue *NullValue
+	NullValue  *NullValue
 	TraceDepth *TraceDepth
 }
 
@@ -25,7 +25,7 @@ type TraceDepthRm struct {
 func (dst *TraceDepthRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *TraceDepthRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into TraceDepth
-	err = json.Unmarshal(data, &dst.TraceDepth);
+	err = json.Unmarshal(data, &dst.TraceDepth)
 	if err == nil {
 		jsonTraceDepth, _ := json.Marshal(dst.TraceDepth)
 		if string(jsonTraceDepth) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableTraceDepthRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

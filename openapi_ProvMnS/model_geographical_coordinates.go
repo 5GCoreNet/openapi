@@ -19,7 +19,7 @@ var _ MappedNullable = &GeographicalCoordinates{}
 
 // GeographicalCoordinates struct for GeographicalCoordinates
 type GeographicalCoordinates struct {
-	Latitude *int32 `json:"latitude,omitempty"`
+	Latitude  *int32 `json:"latitude,omitempty"`
 	Longitude *int32 `json:"longitude,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewGeographicalCoordinatesWithDefaults() *GeographicalCoordinates {
 
 // GetLatitude returns the Latitude field value if set, zero value otherwise.
 func (o *GeographicalCoordinates) GetLatitude() int32 {
-	if o == nil || isNil(o.Latitude) {
+	if o == nil || IsNil(o.Latitude) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeographicalCoordinates) GetLatitude() int32 {
 // GetLatitudeOk returns a tuple with the Latitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalCoordinates) GetLatitudeOk() (*int32, bool) {
-	if o == nil || isNil(o.Latitude) {
+	if o == nil || IsNil(o.Latitude) {
 		return nil, false
 	}
 	return o.Latitude, true
@@ -60,7 +60,7 @@ func (o *GeographicalCoordinates) GetLatitudeOk() (*int32, bool) {
 
 // HasLatitude returns a boolean if a field has been set.
 func (o *GeographicalCoordinates) HasLatitude() bool {
-	if o != nil && !isNil(o.Latitude) {
+	if o != nil && !IsNil(o.Latitude) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeographicalCoordinates) SetLatitude(v int32) {
 
 // GetLongitude returns the Longitude field value if set, zero value otherwise.
 func (o *GeographicalCoordinates) GetLongitude() int32 {
-	if o == nil || isNil(o.Longitude) {
+	if o == nil || IsNil(o.Longitude) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeographicalCoordinates) GetLongitude() int32 {
 // GetLongitudeOk returns a tuple with the Longitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalCoordinates) GetLongitudeOk() (*int32, bool) {
-	if o == nil || isNil(o.Longitude) {
+	if o == nil || IsNil(o.Longitude) {
 		return nil, false
 	}
 	return o.Longitude, true
@@ -92,7 +92,7 @@ func (o *GeographicalCoordinates) GetLongitudeOk() (*int32, bool) {
 
 // HasLongitude returns a boolean if a field has been set.
 func (o *GeographicalCoordinates) HasLongitude() bool {
-	if o != nil && !isNil(o.Longitude) {
+	if o != nil && !IsNil(o.Longitude) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *GeographicalCoordinates) SetLongitude(v int32) {
 }
 
 func (o GeographicalCoordinates) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o GeographicalCoordinates) MarshalJSON() ([]byte, error) {
 
 func (o GeographicalCoordinates) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Latitude) {
+	if !IsNil(o.Latitude) {
 		toSerialize["latitude"] = o.Latitude
 	}
-	if !isNil(o.Longitude) {
+	if !IsNil(o.Longitude) {
 		toSerialize["longitude"] = o.Longitude
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableGeographicalCoordinates) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the WirelineServiceAreaRestriction type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WirelineServiceAreaRestriction{}
 
-// WirelineServiceAreaRestriction The \"restrictionType\" attribute and the \"areas\" attribute shall be either both present or absent.  The empty array of areas is used when service is allowed/restricted nowhere. 
+// WirelineServiceAreaRestriction The \"restrictionType\" attribute and the \"areas\" attribute shall be either both present or absent.  The empty array of areas is used when service is allowed/restricted nowhere.
 type WirelineServiceAreaRestriction struct {
 	RestrictionType *RestrictionType `json:"restrictionType,omitempty"`
-	Areas []WirelineArea `json:"areas,omitempty"`
+	Areas           []WirelineArea   `json:"areas,omitempty"`
 }
 
 // NewWirelineServiceAreaRestriction instantiates a new WirelineServiceAreaRestriction object
@@ -42,7 +42,7 @@ func NewWirelineServiceAreaRestrictionWithDefaults() *WirelineServiceAreaRestric
 
 // GetRestrictionType returns the RestrictionType field value if set, zero value otherwise.
 func (o *WirelineServiceAreaRestriction) GetRestrictionType() RestrictionType {
-	if o == nil || isNil(o.RestrictionType) {
+	if o == nil || IsNil(o.RestrictionType) {
 		var ret RestrictionType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *WirelineServiceAreaRestriction) GetRestrictionType() RestrictionType {
 // GetRestrictionTypeOk returns a tuple with the RestrictionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineServiceAreaRestriction) GetRestrictionTypeOk() (*RestrictionType, bool) {
-	if o == nil || isNil(o.RestrictionType) {
+	if o == nil || IsNil(o.RestrictionType) {
 		return nil, false
 	}
 	return o.RestrictionType, true
@@ -60,7 +60,7 @@ func (o *WirelineServiceAreaRestriction) GetRestrictionTypeOk() (*RestrictionTyp
 
 // HasRestrictionType returns a boolean if a field has been set.
 func (o *WirelineServiceAreaRestriction) HasRestrictionType() bool {
-	if o != nil && !isNil(o.RestrictionType) {
+	if o != nil && !IsNil(o.RestrictionType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *WirelineServiceAreaRestriction) SetRestrictionType(v RestrictionType) {
 
 // GetAreas returns the Areas field value if set, zero value otherwise.
 func (o *WirelineServiceAreaRestriction) GetAreas() []WirelineArea {
-	if o == nil || isNil(o.Areas) {
+	if o == nil || IsNil(o.Areas) {
 		var ret []WirelineArea
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *WirelineServiceAreaRestriction) GetAreas() []WirelineArea {
 // GetAreasOk returns a tuple with the Areas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineServiceAreaRestriction) GetAreasOk() ([]WirelineArea, bool) {
-	if o == nil || isNil(o.Areas) {
+	if o == nil || IsNil(o.Areas) {
 		return nil, false
 	}
 	return o.Areas, true
@@ -92,7 +92,7 @@ func (o *WirelineServiceAreaRestriction) GetAreasOk() ([]WirelineArea, bool) {
 
 // HasAreas returns a boolean if a field has been set.
 func (o *WirelineServiceAreaRestriction) HasAreas() bool {
-	if o != nil && !isNil(o.Areas) {
+	if o != nil && !IsNil(o.Areas) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *WirelineServiceAreaRestriction) SetAreas(v []WirelineArea) {
 }
 
 func (o WirelineServiceAreaRestriction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o WirelineServiceAreaRestriction) MarshalJSON() ([]byte, error) {
 
 func (o WirelineServiceAreaRestriction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RestrictionType) {
+	if !IsNil(o.RestrictionType) {
 		toSerialize["restrictionType"] = o.RestrictionType
 	}
-	if !isNil(o.Areas) {
+	if !IsNil(o.Areas) {
 		toSerialize["areas"] = o.Areas
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableWirelineServiceAreaRestriction) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

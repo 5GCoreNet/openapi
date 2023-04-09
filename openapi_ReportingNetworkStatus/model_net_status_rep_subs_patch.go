@@ -1,7 +1,7 @@
 /*
 3gpp-network-status-reporting
 
-API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -21,12 +21,12 @@ var _ MappedNullable = &NetStatusRepSubsPatch{}
 // NetStatusRepSubsPatch Represents the parameters to request the modification of network status reporting subscription.
 type NetStatusRepSubsPatch struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
-	NotificationDestination *string `json:"notificationDestination,omitempty"`
-	LocationArea *LocationArea `json:"locationArea,omitempty"`
+	NotificationDestination *string       `json:"notificationDestination,omitempty"`
+	LocationArea            *LocationArea `json:"locationArea,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI with \"nullable=true\" property.
-	TimeDuration NullableTime `json:"timeDuration,omitempty"`
-	ThresholdValues []int32 `json:"thresholdValues,omitempty"`
-	ThresholdTypes []CongestionType `json:"thresholdTypes,omitempty"`
+	TimeDuration    NullableTime     `json:"timeDuration,omitempty"`
+	ThresholdValues []int32          `json:"thresholdValues,omitempty"`
+	ThresholdTypes  []CongestionType `json:"thresholdTypes,omitempty"`
 }
 
 // NewNetStatusRepSubsPatch instantiates a new NetStatusRepSubsPatch object
@@ -48,7 +48,7 @@ func NewNetStatusRepSubsPatchWithDefaults() *NetStatusRepSubsPatch {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *NetStatusRepSubsPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -66,7 +66,7 @@ func (o *NetStatusRepSubsPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *NetStatusRepSubsPatch) SetNotificationDestination(v string) {
 
 // GetLocationArea returns the LocationArea field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetLocationArea() LocationArea {
-	if o == nil || isNil(o.LocationArea) {
+	if o == nil || IsNil(o.LocationArea) {
 		var ret LocationArea
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *NetStatusRepSubsPatch) GetLocationArea() LocationArea {
 // GetLocationAreaOk returns a tuple with the LocationArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetLocationAreaOk() (*LocationArea, bool) {
-	if o == nil || isNil(o.LocationArea) {
+	if o == nil || IsNil(o.LocationArea) {
 		return nil, false
 	}
 	return o.LocationArea, true
@@ -98,7 +98,7 @@ func (o *NetStatusRepSubsPatch) GetLocationAreaOk() (*LocationArea, bool) {
 
 // HasLocationArea returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasLocationArea() bool {
-	if o != nil && !isNil(o.LocationArea) {
+	if o != nil && !IsNil(o.LocationArea) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *NetStatusRepSubsPatch) SetLocationArea(v LocationArea) {
 
 // GetTimeDuration returns the TimeDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetStatusRepSubsPatch) GetTimeDuration() time.Time {
-	if o == nil || isNil(o.TimeDuration.Get()) {
+	if o == nil || IsNil(o.TimeDuration.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -142,6 +142,7 @@ func (o *NetStatusRepSubsPatch) HasTimeDuration() bool {
 func (o *NetStatusRepSubsPatch) SetTimeDuration(v time.Time) {
 	o.TimeDuration.Set(&v)
 }
+
 // SetTimeDurationNil sets the value for TimeDuration to be an explicit nil
 func (o *NetStatusRepSubsPatch) SetTimeDurationNil() {
 	o.TimeDuration.Set(nil)
@@ -154,7 +155,7 @@ func (o *NetStatusRepSubsPatch) UnsetTimeDuration() {
 
 // GetThresholdValues returns the ThresholdValues field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetThresholdValues() []int32 {
-	if o == nil || isNil(o.ThresholdValues) {
+	if o == nil || IsNil(o.ThresholdValues) {
 		var ret []int32
 		return ret
 	}
@@ -164,7 +165,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdValues() []int32 {
 // GetThresholdValuesOk returns a tuple with the ThresholdValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetThresholdValuesOk() ([]int32, bool) {
-	if o == nil || isNil(o.ThresholdValues) {
+	if o == nil || IsNil(o.ThresholdValues) {
 		return nil, false
 	}
 	return o.ThresholdValues, true
@@ -172,7 +173,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdValuesOk() ([]int32, bool) {
 
 // HasThresholdValues returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasThresholdValues() bool {
-	if o != nil && !isNil(o.ThresholdValues) {
+	if o != nil && !IsNil(o.ThresholdValues) {
 		return true
 	}
 
@@ -186,7 +187,7 @@ func (o *NetStatusRepSubsPatch) SetThresholdValues(v []int32) {
 
 // GetThresholdTypes returns the ThresholdTypes field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetThresholdTypes() []CongestionType {
-	if o == nil || isNil(o.ThresholdTypes) {
+	if o == nil || IsNil(o.ThresholdTypes) {
 		var ret []CongestionType
 		return ret
 	}
@@ -196,7 +197,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdTypes() []CongestionType {
 // GetThresholdTypesOk returns a tuple with the ThresholdTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetThresholdTypesOk() ([]CongestionType, bool) {
-	if o == nil || isNil(o.ThresholdTypes) {
+	if o == nil || IsNil(o.ThresholdTypes) {
 		return nil, false
 	}
 	return o.ThresholdTypes, true
@@ -204,7 +205,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdTypesOk() ([]CongestionType, bool) {
 
 // HasThresholdTypes returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasThresholdTypes() bool {
-	if o != nil && !isNil(o.ThresholdTypes) {
+	if o != nil && !IsNil(o.ThresholdTypes) {
 		return true
 	}
 
@@ -217,7 +218,7 @@ func (o *NetStatusRepSubsPatch) SetThresholdTypes(v []CongestionType) {
 }
 
 func (o NetStatusRepSubsPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -226,19 +227,19 @@ func (o NetStatusRepSubsPatch) MarshalJSON() ([]byte, error) {
 
 func (o NetStatusRepSubsPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !isNil(o.LocationArea) {
+	if !IsNil(o.LocationArea) {
 		toSerialize["locationArea"] = o.LocationArea
 	}
 	if o.TimeDuration.IsSet() {
 		toSerialize["timeDuration"] = o.TimeDuration.Get()
 	}
-	if !isNil(o.ThresholdValues) {
+	if !IsNil(o.ThresholdValues) {
 		toSerialize["thresholdValues"] = o.ThresholdValues
 	}
-	if !isNil(o.ThresholdTypes) {
+	if !IsNil(o.ThresholdTypes) {
 		toSerialize["thresholdTypes"] = o.ThresholdTypes
 	}
 	return toSerialize, nil
@@ -279,5 +280,3 @@ func (v *NullableNetStatusRepSubsPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

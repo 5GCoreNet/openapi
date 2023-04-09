@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // RoleOfIMSNode struct for RoleOfIMSNode
 type RoleOfIMSNode struct {
-	RoleOfIMSNodeAnyOf *RoleOfIMSNodeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RoleOfIMSNode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RoleOfIMSNodeAnyOf
-	err = json.Unmarshal(data, &dst.RoleOfIMSNodeAnyOf);
-	if err == nil {
-		jsonRoleOfIMSNodeAnyOf, _ := json.Marshal(dst.RoleOfIMSNodeAnyOf)
-		if string(jsonRoleOfIMSNodeAnyOf) == "{}" { // empty struct
-			dst.RoleOfIMSNodeAnyOf = nil
-		} else {
-			return nil // data stored in dst.RoleOfIMSNodeAnyOf, return on the first match
-		}
-	} else {
-		dst.RoleOfIMSNodeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RoleOfIMSNode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RoleOfIMSNode) MarshalJSON() ([]byte, error) {
-	if src.RoleOfIMSNodeAnyOf != nil {
-		return json.Marshal(&src.RoleOfIMSNodeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRoleOfIMSNode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

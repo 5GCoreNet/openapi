@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Ssm1{}
 // Ssm1 Source specific IP multicast address
 type Ssm1 struct {
 	SourceIpAddr IpAddr1 `json:"sourceIpAddr"`
-	DestIpAddr IpAddr1 `json:"destIpAddr"`
+	DestIpAddr   IpAddr1 `json:"destIpAddr"`
 }
 
 // NewSsm1 instantiates a new Ssm1 object
@@ -91,7 +91,7 @@ func (o *Ssm1) SetDestIpAddr(v IpAddr1) {
 }
 
 func (o Ssm1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSsm1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

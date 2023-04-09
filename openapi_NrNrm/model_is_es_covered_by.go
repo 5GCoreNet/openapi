@@ -20,9 +20,9 @@ type IsESCoveredBy string
 
 // List of IsESCoveredBy
 const (
-	FALSE IsESCoveredBy = "false"
+	FALSE   IsESCoveredBy = "false"
 	PARTIAL IsESCoveredBy = "PARTIAL"
-	FULL IsESCoveredBy = "FULL"
+	FULL    IsESCoveredBy = "FULL"
 )
 
 // All allowed values of IsESCoveredBy enum
@@ -110,4 +110,3 @@ func (v *NullableIsESCoveredBy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &RedundantTransmissionExpReq{}
 // RedundantTransmissionExpReq Represents other redundant transmission experience analytics requirements.
 type RedundantTransmissionExpReq struct {
 	RedTOrderCriter *RedTransExpOrderingCriterion `json:"redTOrderCriter,omitempty"`
-	Order *MatchingDirection `json:"order,omitempty"`
+	Order           *MatchingDirection            `json:"order,omitempty"`
 }
 
 // NewRedundantTransmissionExpReq instantiates a new RedundantTransmissionExpReq object
@@ -42,7 +42,7 @@ func NewRedundantTransmissionExpReqWithDefaults() *RedundantTransmissionExpReq {
 
 // GetRedTOrderCriter returns the RedTOrderCriter field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpReq) GetRedTOrderCriter() RedTransExpOrderingCriterion {
-	if o == nil || isNil(o.RedTOrderCriter) {
+	if o == nil || IsNil(o.RedTOrderCriter) {
 		var ret RedTransExpOrderingCriterion
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RedundantTransmissionExpReq) GetRedTOrderCriter() RedTransExpOrderingCr
 // GetRedTOrderCriterOk returns a tuple with the RedTOrderCriter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpReq) GetRedTOrderCriterOk() (*RedTransExpOrderingCriterion, bool) {
-	if o == nil || isNil(o.RedTOrderCriter) {
+	if o == nil || IsNil(o.RedTOrderCriter) {
 		return nil, false
 	}
 	return o.RedTOrderCriter, true
@@ -60,7 +60,7 @@ func (o *RedundantTransmissionExpReq) GetRedTOrderCriterOk() (*RedTransExpOrderi
 
 // HasRedTOrderCriter returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpReq) HasRedTOrderCriter() bool {
-	if o != nil && !isNil(o.RedTOrderCriter) {
+	if o != nil && !IsNil(o.RedTOrderCriter) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RedundantTransmissionExpReq) SetRedTOrderCriter(v RedTransExpOrderingCr
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpReq) GetOrder() MatchingDirection {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RedundantTransmissionExpReq) GetOrder() MatchingDirection {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpReq) GetOrderOk() (*MatchingDirection, bool) {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -92,7 +92,7 @@ func (o *RedundantTransmissionExpReq) GetOrderOk() (*MatchingDirection, bool) {
 
 // HasOrder returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpReq) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RedundantTransmissionExpReq) SetOrder(v MatchingDirection) {
 }
 
 func (o RedundantTransmissionExpReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RedundantTransmissionExpReq) MarshalJSON() ([]byte, error) {
 
 func (o RedundantTransmissionExpReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RedTOrderCriter) {
+	if !IsNil(o.RedTOrderCriter) {
 		toSerialize["redTOrderCriter"] = o.RedTOrderCriter
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRedundantTransmissionExpReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

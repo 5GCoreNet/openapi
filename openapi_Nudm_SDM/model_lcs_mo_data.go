@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &LcsMoData{}
 
 // LcsMoData struct for LcsMoData
 type LcsMoData struct {
-	AllowedServiceClasses []LcsMoServiceClass `json:"allowedServiceClasses"`
+	AllowedServiceClasses []LcsMoServiceClass              `json:"allowedServiceClasses"`
 	MoAssistanceDataTypes *LcsBroadcastAssistanceTypesData `json:"moAssistanceDataTypes,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *LcsMoData) SetAllowedServiceClasses(v []LcsMoServiceClass) {
 
 // GetMoAssistanceDataTypes returns the MoAssistanceDataTypes field value if set, zero value otherwise.
 func (o *LcsMoData) GetMoAssistanceDataTypes() LcsBroadcastAssistanceTypesData {
-	if o == nil || isNil(o.MoAssistanceDataTypes) {
+	if o == nil || IsNil(o.MoAssistanceDataTypes) {
 		var ret LcsBroadcastAssistanceTypesData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LcsMoData) GetMoAssistanceDataTypes() LcsBroadcastAssistanceTypesData {
 // GetMoAssistanceDataTypesOk returns a tuple with the MoAssistanceDataTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsMoData) GetMoAssistanceDataTypesOk() (*LcsBroadcastAssistanceTypesData, bool) {
-	if o == nil || isNil(o.MoAssistanceDataTypes) {
+	if o == nil || IsNil(o.MoAssistanceDataTypes) {
 		return nil, false
 	}
 	return o.MoAssistanceDataTypes, true
@@ -85,7 +85,7 @@ func (o *LcsMoData) GetMoAssistanceDataTypesOk() (*LcsBroadcastAssistanceTypesDa
 
 // HasMoAssistanceDataTypes returns a boolean if a field has been set.
 func (o *LcsMoData) HasMoAssistanceDataTypes() bool {
-	if o != nil && !isNil(o.MoAssistanceDataTypes) {
+	if o != nil && !IsNil(o.MoAssistanceDataTypes) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *LcsMoData) SetMoAssistanceDataTypes(v LcsBroadcastAssistanceTypesData) 
 }
 
 func (o LcsMoData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o LcsMoData) MarshalJSON() ([]byte, error) {
 func (o LcsMoData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allowedServiceClasses"] = o.AllowedServiceClasses
-	if !isNil(o.MoAssistanceDataTypes) {
+	if !IsNil(o.MoAssistanceDataTypes) {
 		toSerialize["moAssistanceDataTypes"] = o.MoAssistanceDataTypes
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableLcsMoData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

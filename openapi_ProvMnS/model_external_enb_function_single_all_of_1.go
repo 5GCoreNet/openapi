@@ -41,7 +41,7 @@ func NewExternalENBFunctionSingleAllOf1WithDefaults() *ExternalENBFunctionSingle
 
 // GetExternalEUTranCell returns the ExternalEUTranCell field value if set, zero value otherwise.
 func (o *ExternalENBFunctionSingleAllOf1) GetExternalEUTranCell() []ExternalEUTranCellSingle {
-	if o == nil || isNil(o.ExternalEUTranCell) {
+	if o == nil || IsNil(o.ExternalEUTranCell) {
 		var ret []ExternalEUTranCellSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ExternalENBFunctionSingleAllOf1) GetExternalEUTranCell() []ExternalEUTr
 // GetExternalEUTranCellOk returns a tuple with the ExternalEUTranCell field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalENBFunctionSingleAllOf1) GetExternalEUTranCellOk() ([]ExternalEUTranCellSingle, bool) {
-	if o == nil || isNil(o.ExternalEUTranCell) {
+	if o == nil || IsNil(o.ExternalEUTranCell) {
 		return nil, false
 	}
 	return o.ExternalEUTranCell, true
@@ -59,7 +59,7 @@ func (o *ExternalENBFunctionSingleAllOf1) GetExternalEUTranCellOk() ([]ExternalE
 
 // HasExternalEUTranCell returns a boolean if a field has been set.
 func (o *ExternalENBFunctionSingleAllOf1) HasExternalEUTranCell() bool {
-	if o != nil && !isNil(o.ExternalEUTranCell) {
+	if o != nil && !IsNil(o.ExternalEUTranCell) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ExternalENBFunctionSingleAllOf1) SetExternalEUTranCell(v []ExternalEUTr
 }
 
 func (o ExternalENBFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ExternalENBFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ExternalENBFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExternalEUTranCell) {
+	if !IsNil(o.ExternalEUTranCell) {
 		toSerialize["ExternalEUTranCell"] = o.ExternalEUTranCell
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableExternalENBFunctionSingleAllOf1) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 EES UE Location Information_API
 
-API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Eees_UELocation
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualLocationInformationSubscriptionDocumentApiService IndividualLocationInformationSubscriptionDocumentApi service
 type IndividualLocationInformationSubscriptionDocumentApiService service
 
 type ApiDeleteIndLocationInfoSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualLocationInformationSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualLocationInformationSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -38,14 +37,14 @@ DeleteIndLocationInfoSubscription Delete an Individual Location Information Subs
 
 Delete an existing Individual location information Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiDeleteIndLocationInfoSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiDeleteIndLocationInfoSubscriptionRequest
 */
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndLocationInfoSubscription(ctx context.Context, subscriptionId string) ApiDeleteIndLocationInfoSubscriptionRequest {
 	return ApiDeleteIndLocationInfoSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -53,9 +52,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 // Execute executes the request
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndLocationInfoSubscriptionExecute(r ApiDeleteIndLocationInfoSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLocationInformationSubscriptionDocumentApiService.DeleteIndLocationInfoSubscription")
@@ -97,9 +96,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -116,8 +115,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +126,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +137,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +148,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -160,8 +159,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -171,8 +170,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -182,8 +181,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -193,9 +192,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) DeleteIndL
 }
 
 type ApiModifyIndLocationInfoSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualLocationInformationSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                       context.Context
+	ApiService                *IndividualLocationInformationSubscriptionDocumentApiService
+	subscriptionId            string
 	locationSubscriptionPatch *LocationSubscriptionPatch
 }
 
@@ -214,26 +213,27 @@ ModifyIndLocationInfoSubscription Modify an Individual Location Information Subs
 
 Partially update an existing Individual location information Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiModifyIndLocationInfoSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiModifyIndLocationInfoSubscriptionRequest
 */
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndLocationInfoSubscription(ctx context.Context, subscriptionId string) ApiModifyIndLocationInfoSubscriptionRequest {
 	return ApiModifyIndLocationInfoSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return LocationSubscription
+//
+//	@return LocationSubscription
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndLocationInfoSubscriptionExecute(r ApiModifyIndLocationInfoSubscriptionRequest) (*LocationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LocationSubscription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLocationInformationSubscriptionDocumentApiService.ModifyIndLocationInfoSubscription")
@@ -280,9 +280,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -299,8 +299,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -310,8 +310,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -321,8 +321,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -332,8 +332,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -343,8 +343,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -354,8 +354,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -365,8 +365,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -376,8 +376,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -387,8 +387,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -398,8 +398,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -418,8 +418,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ModifyIndL
 }
 
 type ApiReadIndLocationInfoSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualLocationInformationSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualLocationInformationSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -432,26 +432,27 @@ ReadIndLocationInfoSubscription Read an Individual Location Information Subscrip
 
 Retrieve an Individual location information subscription information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiReadIndLocationInfoSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiReadIndLocationInfoSubscriptionRequest
 */
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLocationInfoSubscription(ctx context.Context, subscriptionId string) ApiReadIndLocationInfoSubscriptionRequest {
 	return ApiReadIndLocationInfoSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return LocationSubscription
+//
+//	@return LocationSubscription
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLocationInfoSubscriptionExecute(r ApiReadIndLocationInfoSubscriptionRequest) (*LocationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LocationSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLocationInformationSubscriptionDocumentApiService.ReadIndLocationInfoSubscription")
@@ -493,9 +494,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -512,8 +513,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -523,8 +524,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -534,8 +535,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -545,8 +546,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -556,8 +557,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -567,8 +568,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -578,8 +579,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -589,8 +590,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -609,9 +610,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) ReadIndLoc
 }
 
 type ApiUpdateIndLocationInfoSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualLocationInformationSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                  context.Context
+	ApiService           *IndividualLocationInformationSubscriptionDocumentApiService
+	subscriptionId       string
 	locationSubscription *LocationSubscription
 }
 
@@ -629,26 +630,27 @@ UpdateIndLocationInfoSubscription Update an Individual Location Information Subs
 
 Fully replace an existing Individual location information Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiUpdateIndLocationInfoSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiUpdateIndLocationInfoSubscriptionRequest
 */
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndLocationInfoSubscription(ctx context.Context, subscriptionId string) ApiUpdateIndLocationInfoSubscriptionRequest {
 	return ApiUpdateIndLocationInfoSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return LocationSubscription
+//
+//	@return LocationSubscription
 func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndLocationInfoSubscriptionExecute(r ApiUpdateIndLocationInfoSubscriptionRequest) (*LocationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LocationSubscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLocationInformationSubscriptionDocumentApiService.UpdateIndLocationInfoSubscription")
@@ -695,9 +697,9 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -714,8 +716,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -725,8 +727,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -736,8 +738,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -747,8 +749,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -758,8 +760,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -769,8 +771,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -780,8 +782,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -791,8 +793,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -802,8 +804,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -813,8 +815,8 @@ func (a *IndividualLocationInformationSubscriptionDocumentApiService) UpdateIndL
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

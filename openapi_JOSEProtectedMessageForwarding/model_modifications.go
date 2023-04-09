@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &Modifications{}
 // Modifications Information on inserting of the modifications entry
 type Modifications struct {
 	// Fully Qualified Domain Name
-	Identity string `json:"identity"`
+	Identity   string      `json:"identity"`
 	Operations []PatchItem `json:"operations,omitempty"`
-	Tag *string `json:"tag,omitempty"`
+	Tag        *string     `json:"tag,omitempty"`
 }
 
 // NewModifications instantiates a new Modifications object
@@ -69,7 +69,7 @@ func (o *Modifications) SetIdentity(v string) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *Modifications) GetOperations() []PatchItem {
-	if o == nil || isNil(o.Operations) {
+	if o == nil || IsNil(o.Operations) {
 		var ret []PatchItem
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *Modifications) GetOperations() []PatchItem {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Modifications) GetOperationsOk() ([]PatchItem, bool) {
-	if o == nil || isNil(o.Operations) {
+	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -87,7 +87,7 @@ func (o *Modifications) GetOperationsOk() ([]PatchItem, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *Modifications) HasOperations() bool {
-	if o != nil && !isNil(o.Operations) {
+	if o != nil && !IsNil(o.Operations) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *Modifications) SetOperations(v []PatchItem) {
 
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *Modifications) GetTag() string {
-	if o == nil || isNil(o.Tag) {
+	if o == nil || IsNil(o.Tag) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *Modifications) GetTag() string {
 // GetTagOk returns a tuple with the Tag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Modifications) GetTagOk() (*string, bool) {
-	if o == nil || isNil(o.Tag) {
+	if o == nil || IsNil(o.Tag) {
 		return nil, false
 	}
 	return o.Tag, true
@@ -119,7 +119,7 @@ func (o *Modifications) GetTagOk() (*string, bool) {
 
 // HasTag returns a boolean if a field has been set.
 func (o *Modifications) HasTag() bool {
-	if o != nil && !isNil(o.Tag) {
+	if o != nil && !IsNil(o.Tag) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *Modifications) SetTag(v string) {
 }
 
 func (o Modifications) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o Modifications) MarshalJSON() ([]byte, error) {
 func (o Modifications) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["identity"] = o.Identity
-	if !isNil(o.Operations) {
+	if !IsNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
-	if !isNil(o.Tag) {
+	if !IsNil(o.Tag) {
 		toSerialize["tag"] = o.Tag
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableModifications) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -24,9 +24,9 @@ type ScpDomainRoutingInfoSubscription struct {
 	CallbackUri string `json:"callbackUri"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidityTime *time.Time `json:"validityTime,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	ReqInstanceId *string `json:"reqInstanceId,omitempty"`
-	LocalInd *bool `json:"localInd,omitempty"`
+	LocalInd      *bool   `json:"localInd,omitempty"`
 }
 
 // NewScpDomainRoutingInfoSubscription instantiates a new ScpDomainRoutingInfoSubscription object
@@ -77,7 +77,7 @@ func (o *ScpDomainRoutingInfoSubscription) SetCallbackUri(v string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *ScpDomainRoutingInfoSubscription) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ScpDomainRoutingInfoSubscription) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainRoutingInfoSubscription) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -95,7 +95,7 @@ func (o *ScpDomainRoutingInfoSubscription) GetValidityTimeOk() (*time.Time, bool
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *ScpDomainRoutingInfoSubscription) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ScpDomainRoutingInfoSubscription) SetValidityTime(v time.Time) {
 
 // GetReqInstanceId returns the ReqInstanceId field value if set, zero value otherwise.
 func (o *ScpDomainRoutingInfoSubscription) GetReqInstanceId() string {
-	if o == nil || isNil(o.ReqInstanceId) {
+	if o == nil || IsNil(o.ReqInstanceId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ScpDomainRoutingInfoSubscription) GetReqInstanceId() string {
 // GetReqInstanceIdOk returns a tuple with the ReqInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainRoutingInfoSubscription) GetReqInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.ReqInstanceId) {
+	if o == nil || IsNil(o.ReqInstanceId) {
 		return nil, false
 	}
 	return o.ReqInstanceId, true
@@ -127,7 +127,7 @@ func (o *ScpDomainRoutingInfoSubscription) GetReqInstanceIdOk() (*string, bool) 
 
 // HasReqInstanceId returns a boolean if a field has been set.
 func (o *ScpDomainRoutingInfoSubscription) HasReqInstanceId() bool {
-	if o != nil && !isNil(o.ReqInstanceId) {
+	if o != nil && !IsNil(o.ReqInstanceId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ScpDomainRoutingInfoSubscription) SetReqInstanceId(v string) {
 
 // GetLocalInd returns the LocalInd field value if set, zero value otherwise.
 func (o *ScpDomainRoutingInfoSubscription) GetLocalInd() bool {
-	if o == nil || isNil(o.LocalInd) {
+	if o == nil || IsNil(o.LocalInd) {
 		var ret bool
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ScpDomainRoutingInfoSubscription) GetLocalInd() bool {
 // GetLocalIndOk returns a tuple with the LocalInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainRoutingInfoSubscription) GetLocalIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LocalInd) {
+	if o == nil || IsNil(o.LocalInd) {
 		return nil, false
 	}
 	return o.LocalInd, true
@@ -159,7 +159,7 @@ func (o *ScpDomainRoutingInfoSubscription) GetLocalIndOk() (*bool, bool) {
 
 // HasLocalInd returns a boolean if a field has been set.
 func (o *ScpDomainRoutingInfoSubscription) HasLocalInd() bool {
-	if o != nil && !isNil(o.LocalInd) {
+	if o != nil && !IsNil(o.LocalInd) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ScpDomainRoutingInfoSubscription) SetLocalInd(v bool) {
 }
 
 func (o ScpDomainRoutingInfoSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,13 +182,13 @@ func (o ScpDomainRoutingInfoSubscription) MarshalJSON() ([]byte, error) {
 func (o ScpDomainRoutingInfoSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["callbackUri"] = o.CallbackUri
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !isNil(o.ReqInstanceId) {
+	if !IsNil(o.ReqInstanceId) {
 		toSerialize["reqInstanceId"] = o.ReqInstanceId
 	}
-	if !isNil(o.LocalInd) {
+	if !IsNil(o.LocalInd) {
 		toSerialize["localInd"] = o.LocalInd
 	}
 	return toSerialize, nil
@@ -229,5 +229,3 @@ func (v *NullableScpDomainRoutingInfoSubscription) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,7 +19,7 @@ var _ MappedNullable = &GnbDuFunctionSingleAllOf{}
 
 // GnbDuFunctionSingleAllOf struct for GnbDuFunctionSingleAllOf
 type GnbDuFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *GnbDuFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewGnbDuFunctionSingleAllOf instantiates a new GnbDuFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewGnbDuFunctionSingleAllOfWithDefaults() *GnbDuFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *GnbDuFunctionSingleAllOf) GetAttributes() GnbDuFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret GnbDuFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *GnbDuFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *GnbDuFunctionSingleAllOf) GetAttributesOk() (*GnbDuFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *GnbDuFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *GnbDuFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given GnbDuFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *GnbDuFunctionSingleAllOf) SetAttributes(v GnbDuFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o GnbDuFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o GnbDuFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o GnbDuFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableGnbDuFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

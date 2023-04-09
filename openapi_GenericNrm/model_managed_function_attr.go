@@ -19,12 +19,12 @@ var _ MappedNullable = &ManagedFunctionAttr{}
 
 // ManagedFunctionAttr struct for ManagedFunctionAttr
 type ManagedFunctionAttr struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	VnfParametersList []VnfParameter `json:"vnfParametersList,omitempty"`
-	PeeParametersList []PeeParameter `json:"peeParametersList,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
+	UserLabel                 *string                    `json:"userLabel,omitempty"`
+	VnfParametersList         []VnfParameter             `json:"vnfParametersList,omitempty"`
+	PeeParametersList         []PeeParameter             `json:"peeParametersList,omitempty"`
+	PriorityLabel             *int32                     `json:"priorityLabel,omitempty"`
 	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	SupportedTraceMetrics []string `json:"supportedTraceMetrics,omitempty"`
+	SupportedTraceMetrics     []string                   `json:"supportedTraceMetrics,omitempty"`
 }
 
 // NewManagedFunctionAttr instantiates a new ManagedFunctionAttr object
@@ -46,7 +46,7 @@ func NewManagedFunctionAttrWithDefaults() *ManagedFunctionAttr {
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *ManagedFunctionAttr) GetUserLabel() string {
-	if o == nil || isNil(o.UserLabel) {
+	if o == nil || IsNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ManagedFunctionAttr) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedFunctionAttr) GetUserLabelOk() (*string, bool) {
-	if o == nil || isNil(o.UserLabel) {
+	if o == nil || IsNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -64,7 +64,7 @@ func (o *ManagedFunctionAttr) GetUserLabelOk() (*string, bool) {
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *ManagedFunctionAttr) HasUserLabel() bool {
-	if o != nil && !isNil(o.UserLabel) {
+	if o != nil && !IsNil(o.UserLabel) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ManagedFunctionAttr) SetUserLabel(v string) {
 
 // GetVnfParametersList returns the VnfParametersList field value if set, zero value otherwise.
 func (o *ManagedFunctionAttr) GetVnfParametersList() []VnfParameter {
-	if o == nil || isNil(o.VnfParametersList) {
+	if o == nil || IsNil(o.VnfParametersList) {
 		var ret []VnfParameter
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ManagedFunctionAttr) GetVnfParametersList() []VnfParameter {
 // GetVnfParametersListOk returns a tuple with the VnfParametersList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedFunctionAttr) GetVnfParametersListOk() ([]VnfParameter, bool) {
-	if o == nil || isNil(o.VnfParametersList) {
+	if o == nil || IsNil(o.VnfParametersList) {
 		return nil, false
 	}
 	return o.VnfParametersList, true
@@ -96,7 +96,7 @@ func (o *ManagedFunctionAttr) GetVnfParametersListOk() ([]VnfParameter, bool) {
 
 // HasVnfParametersList returns a boolean if a field has been set.
 func (o *ManagedFunctionAttr) HasVnfParametersList() bool {
-	if o != nil && !isNil(o.VnfParametersList) {
+	if o != nil && !IsNil(o.VnfParametersList) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ManagedFunctionAttr) SetVnfParametersList(v []VnfParameter) {
 
 // GetPeeParametersList returns the PeeParametersList field value if set, zero value otherwise.
 func (o *ManagedFunctionAttr) GetPeeParametersList() []PeeParameter {
-	if o == nil || isNil(o.PeeParametersList) {
+	if o == nil || IsNil(o.PeeParametersList) {
 		var ret []PeeParameter
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ManagedFunctionAttr) GetPeeParametersList() []PeeParameter {
 // GetPeeParametersListOk returns a tuple with the PeeParametersList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedFunctionAttr) GetPeeParametersListOk() ([]PeeParameter, bool) {
-	if o == nil || isNil(o.PeeParametersList) {
+	if o == nil || IsNil(o.PeeParametersList) {
 		return nil, false
 	}
 	return o.PeeParametersList, true
@@ -128,7 +128,7 @@ func (o *ManagedFunctionAttr) GetPeeParametersListOk() ([]PeeParameter, bool) {
 
 // HasPeeParametersList returns a boolean if a field has been set.
 func (o *ManagedFunctionAttr) HasPeeParametersList() bool {
-	if o != nil && !isNil(o.PeeParametersList) {
+	if o != nil && !IsNil(o.PeeParametersList) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ManagedFunctionAttr) SetPeeParametersList(v []PeeParameter) {
 
 // GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
 func (o *ManagedFunctionAttr) GetPriorityLabel() int32 {
-	if o == nil || isNil(o.PriorityLabel) {
+	if o == nil || IsNil(o.PriorityLabel) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ManagedFunctionAttr) GetPriorityLabel() int32 {
 // GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedFunctionAttr) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || isNil(o.PriorityLabel) {
+	if o == nil || IsNil(o.PriorityLabel) {
 		return nil, false
 	}
 	return o.PriorityLabel, true
@@ -160,7 +160,7 @@ func (o *ManagedFunctionAttr) GetPriorityLabelOk() (*int32, bool) {
 
 // HasPriorityLabel returns a boolean if a field has been set.
 func (o *ManagedFunctionAttr) HasPriorityLabel() bool {
-	if o != nil && !isNil(o.PriorityLabel) {
+	if o != nil && !IsNil(o.PriorityLabel) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ManagedFunctionAttr) SetPriorityLabel(v int32) {
 
 // GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
 func (o *ManagedFunctionAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || isNil(o.SupportedPerfMetricGroups) {
+	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
 		var ret []SupportedPerfMetricGroup
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ManagedFunctionAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetr
 // GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedFunctionAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || isNil(o.SupportedPerfMetricGroups) {
+	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
 		return nil, false
 	}
 	return o.SupportedPerfMetricGroups, true
@@ -192,7 +192,7 @@ func (o *ManagedFunctionAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfM
 
 // HasSupportedPerfMetricGroups returns a boolean if a field has been set.
 func (o *ManagedFunctionAttr) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !isNil(o.SupportedPerfMetricGroups) {
+	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *ManagedFunctionAttr) SetSupportedPerfMetricGroups(v []SupportedPerfMetr
 
 // GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
 func (o *ManagedFunctionAttr) GetSupportedTraceMetrics() []string {
-	if o == nil || isNil(o.SupportedTraceMetrics) {
+	if o == nil || IsNil(o.SupportedTraceMetrics) {
 		var ret []string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *ManagedFunctionAttr) GetSupportedTraceMetrics() []string {
 // GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedFunctionAttr) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || isNil(o.SupportedTraceMetrics) {
+	if o == nil || IsNil(o.SupportedTraceMetrics) {
 		return nil, false
 	}
 	return o.SupportedTraceMetrics, true
@@ -224,7 +224,7 @@ func (o *ManagedFunctionAttr) GetSupportedTraceMetricsOk() ([]string, bool) {
 
 // HasSupportedTraceMetrics returns a boolean if a field has been set.
 func (o *ManagedFunctionAttr) HasSupportedTraceMetrics() bool {
-	if o != nil && !isNil(o.SupportedTraceMetrics) {
+	if o != nil && !IsNil(o.SupportedTraceMetrics) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *ManagedFunctionAttr) SetSupportedTraceMetrics(v []string) {
 }
 
 func (o ManagedFunctionAttr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,22 +246,22 @@ func (o ManagedFunctionAttr) MarshalJSON() ([]byte, error) {
 
 func (o ManagedFunctionAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UserLabel) {
+	if !IsNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !isNil(o.VnfParametersList) {
+	if !IsNil(o.VnfParametersList) {
 		toSerialize["vnfParametersList"] = o.VnfParametersList
 	}
-	if !isNil(o.PeeParametersList) {
+	if !IsNil(o.PeeParametersList) {
 		toSerialize["peeParametersList"] = o.PeeParametersList
 	}
-	if !isNil(o.PriorityLabel) {
+	if !IsNil(o.PriorityLabel) {
 		toSerialize["priorityLabel"] = o.PriorityLabel
 	}
-	if !isNil(o.SupportedPerfMetricGroups) {
+	if !IsNil(o.SupportedPerfMetricGroups) {
 		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
 	}
-	if !isNil(o.SupportedTraceMetrics) {
+	if !IsNil(o.SupportedTraceMetrics) {
 		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableManagedFunctionAttr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

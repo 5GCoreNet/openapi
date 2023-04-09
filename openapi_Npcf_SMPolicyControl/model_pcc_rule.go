@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -30,38 +30,38 @@ type PccRule struct {
 	// Univocally identifies the PCC rule within a PDU session.
 	PccRuleId string `json:"pccRuleId"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	Precedence *int32 `json:"precedence,omitempty"`
+	Precedence    *int32         `json:"precedence,omitempty"`
 	AfSigProtocol *AfSigProtocol `json:"afSigProtocol,omitempty"`
 	// Indication of application relocation possibility.
 	AppReloc *bool `json:"appReloc,omitempty"`
 	// Indicates the EAS rediscovery is required.
 	EasRedisInd *bool `json:"easRedisInd,omitempty"`
-	// A reference to the QosData policy decision type. It is the qosId described in  clause 5.6.2.8. 
+	// A reference to the QosData policy decision type. It is the qosId described in  clause 5.6.2.8.
 	RefQosData []string `json:"refQosData,omitempty"`
-	// A Reference to the QosData policy decision type for the Alternative QoS parameter sets  of the service data flow. 
+	// A Reference to the QosData policy decision type for the Alternative QoS parameter sets  of the service data flow.
 	RefAltQosParams []string `json:"refAltQosParams,omitempty"`
-	// A reference to the TrafficControlData policy decision type. It is the tcId described in  clause 5.6.2.10. 
+	// A reference to the TrafficControlData policy decision type. It is the tcId described in  clause 5.6.2.10.
 	RefTcData []string `json:"refTcData,omitempty"`
-	// A reference to the ChargingData policy decision type. It is the chgId described in  clause 5.6.2.11. 
+	// A reference to the ChargingData policy decision type. It is the chgId described in  clause 5.6.2.11.
 	RefChgData []string `json:"refChgData,omitempty"`
-	// A reference to the ChargingData policy decision type only applicable to Non-3GPP access if \"ATSSS\" feature is supported. It is the chgId described in clause 5.6.2.11. 
+	// A reference to the ChargingData policy decision type only applicable to Non-3GPP access if \"ATSSS\" feature is supported. It is the chgId described in clause 5.6.2.11.
 	RefChgN3gData []string `json:"refChgN3gData,omitempty"`
-	// A reference to UsageMonitoringData policy decision type. It is the umId described in  clause 5.6.2.12. 
+	// A reference to UsageMonitoringData policy decision type. It is the umId described in  clause 5.6.2.12.
 	RefUmData []string `json:"refUmData,omitempty"`
-	// A reference to UsageMonitoringData policy decision type only applicable to Non-3GPP access if \"ATSSS\" feature is supported. It is the umId described in clause 5.6.2.12.  
+	// A reference to UsageMonitoringData policy decision type only applicable to Non-3GPP access if \"ATSSS\" feature is supported. It is the umId described in clause 5.6.2.12.
 	RefUmN3gData []string `json:"refUmN3gData,omitempty"`
-	// A reference to the condition data. It is the condId described in clause 5.6.2.9. 
+	// A reference to the condition data. It is the condId described in clause 5.6.2.9.
 	RefCondData NullableString `json:"refCondData,omitempty"`
-	// A reference to the QosMonitoringData policy decision type. It is the qmId described in  clause 5.6.2.40.  
-	RefQosMon []string `json:"refQosMon,omitempty"`
-	AddrPreserInd NullableBool `json:"addrPreserInd,omitempty"`
-	TscaiInputDl NullableTscaiInputContainer `json:"tscaiInputDl,omitempty"`
-	TscaiInputUl NullableTscaiInputContainer `json:"tscaiInputUl,omitempty"`
+	// A reference to the QosMonitoringData policy decision type. It is the qmId described in  clause 5.6.2.40.
+	RefQosMon     []string                    `json:"refQosMon,omitempty"`
+	AddrPreserInd NullableBool                `json:"addrPreserInd,omitempty"`
+	TscaiInputDl  NullableTscaiInputContainer `json:"tscaiInputDl,omitempty"`
+	TscaiInputUl  NullableTscaiInputContainer `json:"tscaiInputUl,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	TscaiTimeDom *int32 `json:"tscaiTimeDom,omitempty"`
-	DdNotifCtrl *DownlinkDataNotificationControl `json:"ddNotifCtrl,omitempty"`
+	TscaiTimeDom *int32                                    `json:"tscaiTimeDom,omitempty"`
+	DdNotifCtrl  *DownlinkDataNotificationControl          `json:"ddNotifCtrl,omitempty"`
 	DdNotifCtrl2 NullableDownlinkDataNotificationControlRm `json:"ddNotifCtrl2,omitempty"`
-	DisUeNotif NullableBool `json:"disUeNotif,omitempty"`
+	DisUeNotif   NullableBool                              `json:"disUeNotif,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	PackFiltAllPrec *int32 `json:"packFiltAllPrec,omitempty"`
 }
@@ -86,7 +86,7 @@ func NewPccRuleWithDefaults() *PccRule {
 
 // GetFlowInfos returns the FlowInfos field value if set, zero value otherwise.
 func (o *PccRule) GetFlowInfos() []FlowInformation {
-	if o == nil || isNil(o.FlowInfos) {
+	if o == nil || IsNil(o.FlowInfos) {
 		var ret []FlowInformation
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *PccRule) GetFlowInfos() []FlowInformation {
 // GetFlowInfosOk returns a tuple with the FlowInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetFlowInfosOk() ([]FlowInformation, bool) {
-	if o == nil || isNil(o.FlowInfos) {
+	if o == nil || IsNil(o.FlowInfos) {
 		return nil, false
 	}
 	return o.FlowInfos, true
@@ -104,7 +104,7 @@ func (o *PccRule) GetFlowInfosOk() ([]FlowInformation, bool) {
 
 // HasFlowInfos returns a boolean if a field has been set.
 func (o *PccRule) HasFlowInfos() bool {
-	if o != nil && !isNil(o.FlowInfos) {
+	if o != nil && !IsNil(o.FlowInfos) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *PccRule) SetFlowInfos(v []FlowInformation) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *PccRule) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *PccRule) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -136,7 +136,7 @@ func (o *PccRule) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *PccRule) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *PccRule) SetAppId(v string) {
 
 // GetAppDescriptor returns the AppDescriptor field value if set, zero value otherwise.
 func (o *PccRule) GetAppDescriptor() string {
-	if o == nil || isNil(o.AppDescriptor) {
+	if o == nil || IsNil(o.AppDescriptor) {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *PccRule) GetAppDescriptor() string {
 // GetAppDescriptorOk returns a tuple with the AppDescriptor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAppDescriptorOk() (*string, bool) {
-	if o == nil || isNil(o.AppDescriptor) {
+	if o == nil || IsNil(o.AppDescriptor) {
 		return nil, false
 	}
 	return o.AppDescriptor, true
@@ -168,7 +168,7 @@ func (o *PccRule) GetAppDescriptorOk() (*string, bool) {
 
 // HasAppDescriptor returns a boolean if a field has been set.
 func (o *PccRule) HasAppDescriptor() bool {
-	if o != nil && !isNil(o.AppDescriptor) {
+	if o != nil && !IsNil(o.AppDescriptor) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *PccRule) SetAppDescriptor(v string) {
 
 // GetContVer returns the ContVer field value if set, zero value otherwise.
 func (o *PccRule) GetContVer() int32 {
-	if o == nil || isNil(o.ContVer) {
+	if o == nil || IsNil(o.ContVer) {
 		var ret int32
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *PccRule) GetContVer() int32 {
 // GetContVerOk returns a tuple with the ContVer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetContVerOk() (*int32, bool) {
-	if o == nil || isNil(o.ContVer) {
+	if o == nil || IsNil(o.ContVer) {
 		return nil, false
 	}
 	return o.ContVer, true
@@ -200,7 +200,7 @@ func (o *PccRule) GetContVerOk() (*int32, bool) {
 
 // HasContVer returns a boolean if a field has been set.
 func (o *PccRule) HasContVer() bool {
-	if o != nil && !isNil(o.ContVer) {
+	if o != nil && !IsNil(o.ContVer) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *PccRule) SetPccRuleId(v string) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *PccRule) GetPrecedence() int32 {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *PccRule) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -256,7 +256,7 @@ func (o *PccRule) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *PccRule) HasPrecedence() bool {
-	if o != nil && !isNil(o.Precedence) {
+	if o != nil && !IsNil(o.Precedence) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *PccRule) SetPrecedence(v int32) {
 
 // GetAfSigProtocol returns the AfSigProtocol field value if set, zero value otherwise.
 func (o *PccRule) GetAfSigProtocol() AfSigProtocol {
-	if o == nil || isNil(o.AfSigProtocol) {
+	if o == nil || IsNil(o.AfSigProtocol) {
 		var ret AfSigProtocol
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *PccRule) GetAfSigProtocol() AfSigProtocol {
 // GetAfSigProtocolOk returns a tuple with the AfSigProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
-	if o == nil || isNil(o.AfSigProtocol) {
+	if o == nil || IsNil(o.AfSigProtocol) {
 		return nil, false
 	}
 	return o.AfSigProtocol, true
@@ -288,7 +288,7 @@ func (o *PccRule) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
 
 // HasAfSigProtocol returns a boolean if a field has been set.
 func (o *PccRule) HasAfSigProtocol() bool {
-	if o != nil && !isNil(o.AfSigProtocol) {
+	if o != nil && !IsNil(o.AfSigProtocol) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *PccRule) SetAfSigProtocol(v AfSigProtocol) {
 
 // GetAppReloc returns the AppReloc field value if set, zero value otherwise.
 func (o *PccRule) GetAppReloc() bool {
-	if o == nil || isNil(o.AppReloc) {
+	if o == nil || IsNil(o.AppReloc) {
 		var ret bool
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *PccRule) GetAppReloc() bool {
 // GetAppRelocOk returns a tuple with the AppReloc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAppRelocOk() (*bool, bool) {
-	if o == nil || isNil(o.AppReloc) {
+	if o == nil || IsNil(o.AppReloc) {
 		return nil, false
 	}
 	return o.AppReloc, true
@@ -320,7 +320,7 @@ func (o *PccRule) GetAppRelocOk() (*bool, bool) {
 
 // HasAppReloc returns a boolean if a field has been set.
 func (o *PccRule) HasAppReloc() bool {
-	if o != nil && !isNil(o.AppReloc) {
+	if o != nil && !IsNil(o.AppReloc) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *PccRule) SetAppReloc(v bool) {
 
 // GetEasRedisInd returns the EasRedisInd field value if set, zero value otherwise.
 func (o *PccRule) GetEasRedisInd() bool {
-	if o == nil || isNil(o.EasRedisInd) {
+	if o == nil || IsNil(o.EasRedisInd) {
 		var ret bool
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *PccRule) GetEasRedisInd() bool {
 // GetEasRedisIndOk returns a tuple with the EasRedisInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetEasRedisIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EasRedisInd) {
+	if o == nil || IsNil(o.EasRedisInd) {
 		return nil, false
 	}
 	return o.EasRedisInd, true
@@ -352,7 +352,7 @@ func (o *PccRule) GetEasRedisIndOk() (*bool, bool) {
 
 // HasEasRedisInd returns a boolean if a field has been set.
 func (o *PccRule) HasEasRedisInd() bool {
-	if o != nil && !isNil(o.EasRedisInd) {
+	if o != nil && !IsNil(o.EasRedisInd) {
 		return true
 	}
 
@@ -366,7 +366,7 @@ func (o *PccRule) SetEasRedisInd(v bool) {
 
 // GetRefQosData returns the RefQosData field value if set, zero value otherwise.
 func (o *PccRule) GetRefQosData() []string {
-	if o == nil || isNil(o.RefQosData) {
+	if o == nil || IsNil(o.RefQosData) {
 		var ret []string
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *PccRule) GetRefQosData() []string {
 // GetRefQosDataOk returns a tuple with the RefQosData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetRefQosDataOk() ([]string, bool) {
-	if o == nil || isNil(o.RefQosData) {
+	if o == nil || IsNil(o.RefQosData) {
 		return nil, false
 	}
 	return o.RefQosData, true
@@ -384,7 +384,7 @@ func (o *PccRule) GetRefQosDataOk() ([]string, bool) {
 
 // HasRefQosData returns a boolean if a field has been set.
 func (o *PccRule) HasRefQosData() bool {
-	if o != nil && !isNil(o.RefQosData) {
+	if o != nil && !IsNil(o.RefQosData) {
 		return true
 	}
 
@@ -398,7 +398,7 @@ func (o *PccRule) SetRefQosData(v []string) {
 
 // GetRefAltQosParams returns the RefAltQosParams field value if set, zero value otherwise.
 func (o *PccRule) GetRefAltQosParams() []string {
-	if o == nil || isNil(o.RefAltQosParams) {
+	if o == nil || IsNil(o.RefAltQosParams) {
 		var ret []string
 		return ret
 	}
@@ -408,7 +408,7 @@ func (o *PccRule) GetRefAltQosParams() []string {
 // GetRefAltQosParamsOk returns a tuple with the RefAltQosParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetRefAltQosParamsOk() ([]string, bool) {
-	if o == nil || isNil(o.RefAltQosParams) {
+	if o == nil || IsNil(o.RefAltQosParams) {
 		return nil, false
 	}
 	return o.RefAltQosParams, true
@@ -416,7 +416,7 @@ func (o *PccRule) GetRefAltQosParamsOk() ([]string, bool) {
 
 // HasRefAltQosParams returns a boolean if a field has been set.
 func (o *PccRule) HasRefAltQosParams() bool {
-	if o != nil && !isNil(o.RefAltQosParams) {
+	if o != nil && !IsNil(o.RefAltQosParams) {
 		return true
 	}
 
@@ -430,7 +430,7 @@ func (o *PccRule) SetRefAltQosParams(v []string) {
 
 // GetRefTcData returns the RefTcData field value if set, zero value otherwise.
 func (o *PccRule) GetRefTcData() []string {
-	if o == nil || isNil(o.RefTcData) {
+	if o == nil || IsNil(o.RefTcData) {
 		var ret []string
 		return ret
 	}
@@ -440,7 +440,7 @@ func (o *PccRule) GetRefTcData() []string {
 // GetRefTcDataOk returns a tuple with the RefTcData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetRefTcDataOk() ([]string, bool) {
-	if o == nil || isNil(o.RefTcData) {
+	if o == nil || IsNil(o.RefTcData) {
 		return nil, false
 	}
 	return o.RefTcData, true
@@ -448,7 +448,7 @@ func (o *PccRule) GetRefTcDataOk() ([]string, bool) {
 
 // HasRefTcData returns a boolean if a field has been set.
 func (o *PccRule) HasRefTcData() bool {
-	if o != nil && !isNil(o.RefTcData) {
+	if o != nil && !IsNil(o.RefTcData) {
 		return true
 	}
 
@@ -473,7 +473,7 @@ func (o *PccRule) GetRefChgData() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PccRule) GetRefChgDataOk() ([]string, bool) {
-	if o == nil || isNil(o.RefChgData) {
+	if o == nil || IsNil(o.RefChgData) {
 		return nil, false
 	}
 	return o.RefChgData, true
@@ -481,7 +481,7 @@ func (o *PccRule) GetRefChgDataOk() ([]string, bool) {
 
 // HasRefChgData returns a boolean if a field has been set.
 func (o *PccRule) HasRefChgData() bool {
-	if o != nil && isNil(o.RefChgData) {
+	if o != nil && IsNil(o.RefChgData) {
 		return true
 	}
 
@@ -506,7 +506,7 @@ func (o *PccRule) GetRefChgN3gData() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PccRule) GetRefChgN3gDataOk() ([]string, bool) {
-	if o == nil || isNil(o.RefChgN3gData) {
+	if o == nil || IsNil(o.RefChgN3gData) {
 		return nil, false
 	}
 	return o.RefChgN3gData, true
@@ -514,7 +514,7 @@ func (o *PccRule) GetRefChgN3gDataOk() ([]string, bool) {
 
 // HasRefChgN3gData returns a boolean if a field has been set.
 func (o *PccRule) HasRefChgN3gData() bool {
-	if o != nil && isNil(o.RefChgN3gData) {
+	if o != nil && IsNil(o.RefChgN3gData) {
 		return true
 	}
 
@@ -539,7 +539,7 @@ func (o *PccRule) GetRefUmData() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PccRule) GetRefUmDataOk() ([]string, bool) {
-	if o == nil || isNil(o.RefUmData) {
+	if o == nil || IsNil(o.RefUmData) {
 		return nil, false
 	}
 	return o.RefUmData, true
@@ -547,7 +547,7 @@ func (o *PccRule) GetRefUmDataOk() ([]string, bool) {
 
 // HasRefUmData returns a boolean if a field has been set.
 func (o *PccRule) HasRefUmData() bool {
-	if o != nil && isNil(o.RefUmData) {
+	if o != nil && IsNil(o.RefUmData) {
 		return true
 	}
 
@@ -572,7 +572,7 @@ func (o *PccRule) GetRefUmN3gData() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PccRule) GetRefUmN3gDataOk() ([]string, bool) {
-	if o == nil || isNil(o.RefUmN3gData) {
+	if o == nil || IsNil(o.RefUmN3gData) {
 		return nil, false
 	}
 	return o.RefUmN3gData, true
@@ -580,7 +580,7 @@ func (o *PccRule) GetRefUmN3gDataOk() ([]string, bool) {
 
 // HasRefUmN3gData returns a boolean if a field has been set.
 func (o *PccRule) HasRefUmN3gData() bool {
-	if o != nil && isNil(o.RefUmN3gData) {
+	if o != nil && IsNil(o.RefUmN3gData) {
 		return true
 	}
 
@@ -594,7 +594,7 @@ func (o *PccRule) SetRefUmN3gData(v []string) {
 
 // GetRefCondData returns the RefCondData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetRefCondData() string {
-	if o == nil || isNil(o.RefCondData.Get()) {
+	if o == nil || IsNil(o.RefCondData.Get()) {
 		var ret string
 		return ret
 	}
@@ -624,6 +624,7 @@ func (o *PccRule) HasRefCondData() bool {
 func (o *PccRule) SetRefCondData(v string) {
 	o.RefCondData.Set(&v)
 }
+
 // SetRefCondDataNil sets the value for RefCondData to be an explicit nil
 func (o *PccRule) SetRefCondDataNil() {
 	o.RefCondData.Set(nil)
@@ -647,7 +648,7 @@ func (o *PccRule) GetRefQosMon() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PccRule) GetRefQosMonOk() ([]string, bool) {
-	if o == nil || isNil(o.RefQosMon) {
+	if o == nil || IsNil(o.RefQosMon) {
 		return nil, false
 	}
 	return o.RefQosMon, true
@@ -655,7 +656,7 @@ func (o *PccRule) GetRefQosMonOk() ([]string, bool) {
 
 // HasRefQosMon returns a boolean if a field has been set.
 func (o *PccRule) HasRefQosMon() bool {
-	if o != nil && isNil(o.RefQosMon) {
+	if o != nil && IsNil(o.RefQosMon) {
 		return true
 	}
 
@@ -669,7 +670,7 @@ func (o *PccRule) SetRefQosMon(v []string) {
 
 // GetAddrPreserInd returns the AddrPreserInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetAddrPreserInd() bool {
-	if o == nil || isNil(o.AddrPreserInd.Get()) {
+	if o == nil || IsNil(o.AddrPreserInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -699,6 +700,7 @@ func (o *PccRule) HasAddrPreserInd() bool {
 func (o *PccRule) SetAddrPreserInd(v bool) {
 	o.AddrPreserInd.Set(&v)
 }
+
 // SetAddrPreserIndNil sets the value for AddrPreserInd to be an explicit nil
 func (o *PccRule) SetAddrPreserIndNil() {
 	o.AddrPreserInd.Set(nil)
@@ -711,7 +713,7 @@ func (o *PccRule) UnsetAddrPreserInd() {
 
 // GetTscaiInputDl returns the TscaiInputDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetTscaiInputDl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputDl.Get()) {
+	if o == nil || IsNil(o.TscaiInputDl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -741,6 +743,7 @@ func (o *PccRule) HasTscaiInputDl() bool {
 func (o *PccRule) SetTscaiInputDl(v TscaiInputContainer) {
 	o.TscaiInputDl.Set(&v)
 }
+
 // SetTscaiInputDlNil sets the value for TscaiInputDl to be an explicit nil
 func (o *PccRule) SetTscaiInputDlNil() {
 	o.TscaiInputDl.Set(nil)
@@ -753,7 +756,7 @@ func (o *PccRule) UnsetTscaiInputDl() {
 
 // GetTscaiInputUl returns the TscaiInputUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetTscaiInputUl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputUl.Get()) {
+	if o == nil || IsNil(o.TscaiInputUl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -783,6 +786,7 @@ func (o *PccRule) HasTscaiInputUl() bool {
 func (o *PccRule) SetTscaiInputUl(v TscaiInputContainer) {
 	o.TscaiInputUl.Set(&v)
 }
+
 // SetTscaiInputUlNil sets the value for TscaiInputUl to be an explicit nil
 func (o *PccRule) SetTscaiInputUlNil() {
 	o.TscaiInputUl.Set(nil)
@@ -795,7 +799,7 @@ func (o *PccRule) UnsetTscaiInputUl() {
 
 // GetTscaiTimeDom returns the TscaiTimeDom field value if set, zero value otherwise.
 func (o *PccRule) GetTscaiTimeDom() int32 {
-	if o == nil || isNil(o.TscaiTimeDom) {
+	if o == nil || IsNil(o.TscaiTimeDom) {
 		var ret int32
 		return ret
 	}
@@ -805,7 +809,7 @@ func (o *PccRule) GetTscaiTimeDom() int32 {
 // GetTscaiTimeDomOk returns a tuple with the TscaiTimeDom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetTscaiTimeDomOk() (*int32, bool) {
-	if o == nil || isNil(o.TscaiTimeDom) {
+	if o == nil || IsNil(o.TscaiTimeDom) {
 		return nil, false
 	}
 	return o.TscaiTimeDom, true
@@ -813,7 +817,7 @@ func (o *PccRule) GetTscaiTimeDomOk() (*int32, bool) {
 
 // HasTscaiTimeDom returns a boolean if a field has been set.
 func (o *PccRule) HasTscaiTimeDom() bool {
-	if o != nil && !isNil(o.TscaiTimeDom) {
+	if o != nil && !IsNil(o.TscaiTimeDom) {
 		return true
 	}
 
@@ -827,7 +831,7 @@ func (o *PccRule) SetTscaiTimeDom(v int32) {
 
 // GetDdNotifCtrl returns the DdNotifCtrl field value if set, zero value otherwise.
 func (o *PccRule) GetDdNotifCtrl() DownlinkDataNotificationControl {
-	if o == nil || isNil(o.DdNotifCtrl) {
+	if o == nil || IsNil(o.DdNotifCtrl) {
 		var ret DownlinkDataNotificationControl
 		return ret
 	}
@@ -837,7 +841,7 @@ func (o *PccRule) GetDdNotifCtrl() DownlinkDataNotificationControl {
 // GetDdNotifCtrlOk returns a tuple with the DdNotifCtrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetDdNotifCtrlOk() (*DownlinkDataNotificationControl, bool) {
-	if o == nil || isNil(o.DdNotifCtrl) {
+	if o == nil || IsNil(o.DdNotifCtrl) {
 		return nil, false
 	}
 	return o.DdNotifCtrl, true
@@ -845,7 +849,7 @@ func (o *PccRule) GetDdNotifCtrlOk() (*DownlinkDataNotificationControl, bool) {
 
 // HasDdNotifCtrl returns a boolean if a field has been set.
 func (o *PccRule) HasDdNotifCtrl() bool {
-	if o != nil && !isNil(o.DdNotifCtrl) {
+	if o != nil && !IsNil(o.DdNotifCtrl) {
 		return true
 	}
 
@@ -859,7 +863,7 @@ func (o *PccRule) SetDdNotifCtrl(v DownlinkDataNotificationControl) {
 
 // GetDdNotifCtrl2 returns the DdNotifCtrl2 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetDdNotifCtrl2() DownlinkDataNotificationControlRm {
-	if o == nil || isNil(o.DdNotifCtrl2.Get()) {
+	if o == nil || IsNil(o.DdNotifCtrl2.Get()) {
 		var ret DownlinkDataNotificationControlRm
 		return ret
 	}
@@ -889,6 +893,7 @@ func (o *PccRule) HasDdNotifCtrl2() bool {
 func (o *PccRule) SetDdNotifCtrl2(v DownlinkDataNotificationControlRm) {
 	o.DdNotifCtrl2.Set(&v)
 }
+
 // SetDdNotifCtrl2Nil sets the value for DdNotifCtrl2 to be an explicit nil
 func (o *PccRule) SetDdNotifCtrl2Nil() {
 	o.DdNotifCtrl2.Set(nil)
@@ -901,7 +906,7 @@ func (o *PccRule) UnsetDdNotifCtrl2() {
 
 // GetDisUeNotif returns the DisUeNotif field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetDisUeNotif() bool {
-	if o == nil || isNil(o.DisUeNotif.Get()) {
+	if o == nil || IsNil(o.DisUeNotif.Get()) {
 		var ret bool
 		return ret
 	}
@@ -931,6 +936,7 @@ func (o *PccRule) HasDisUeNotif() bool {
 func (o *PccRule) SetDisUeNotif(v bool) {
 	o.DisUeNotif.Set(&v)
 }
+
 // SetDisUeNotifNil sets the value for DisUeNotif to be an explicit nil
 func (o *PccRule) SetDisUeNotifNil() {
 	o.DisUeNotif.Set(nil)
@@ -943,7 +949,7 @@ func (o *PccRule) UnsetDisUeNotif() {
 
 // GetPackFiltAllPrec returns the PackFiltAllPrec field value if set, zero value otherwise.
 func (o *PccRule) GetPackFiltAllPrec() int32 {
-	if o == nil || isNil(o.PackFiltAllPrec) {
+	if o == nil || IsNil(o.PackFiltAllPrec) {
 		var ret int32
 		return ret
 	}
@@ -953,7 +959,7 @@ func (o *PccRule) GetPackFiltAllPrec() int32 {
 // GetPackFiltAllPrecOk returns a tuple with the PackFiltAllPrec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetPackFiltAllPrecOk() (*int32, bool) {
-	if o == nil || isNil(o.PackFiltAllPrec) {
+	if o == nil || IsNil(o.PackFiltAllPrec) {
 		return nil, false
 	}
 	return o.PackFiltAllPrec, true
@@ -961,7 +967,7 @@ func (o *PccRule) GetPackFiltAllPrecOk() (*int32, bool) {
 
 // HasPackFiltAllPrec returns a boolean if a field has been set.
 func (o *PccRule) HasPackFiltAllPrec() bool {
-	if o != nil && !isNil(o.PackFiltAllPrec) {
+	if o != nil && !IsNil(o.PackFiltAllPrec) {
 		return true
 	}
 
@@ -974,7 +980,7 @@ func (o *PccRule) SetPackFiltAllPrec(v int32) {
 }
 
 func (o PccRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -983,38 +989,38 @@ func (o PccRule) MarshalJSON() ([]byte, error) {
 
 func (o PccRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FlowInfos) {
+	if !IsNil(o.FlowInfos) {
 		toSerialize["flowInfos"] = o.FlowInfos
 	}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.AppDescriptor) {
+	if !IsNil(o.AppDescriptor) {
 		toSerialize["appDescriptor"] = o.AppDescriptor
 	}
-	if !isNil(o.ContVer) {
+	if !IsNil(o.ContVer) {
 		toSerialize["contVer"] = o.ContVer
 	}
 	toSerialize["pccRuleId"] = o.PccRuleId
-	if !isNil(o.Precedence) {
+	if !IsNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
-	if !isNil(o.AfSigProtocol) {
+	if !IsNil(o.AfSigProtocol) {
 		toSerialize["afSigProtocol"] = o.AfSigProtocol
 	}
-	if !isNil(o.AppReloc) {
+	if !IsNil(o.AppReloc) {
 		toSerialize["appReloc"] = o.AppReloc
 	}
-	if !isNil(o.EasRedisInd) {
+	if !IsNil(o.EasRedisInd) {
 		toSerialize["easRedisInd"] = o.EasRedisInd
 	}
-	if !isNil(o.RefQosData) {
+	if !IsNil(o.RefQosData) {
 		toSerialize["refQosData"] = o.RefQosData
 	}
-	if !isNil(o.RefAltQosParams) {
+	if !IsNil(o.RefAltQosParams) {
 		toSerialize["refAltQosParams"] = o.RefAltQosParams
 	}
-	if !isNil(o.RefTcData) {
+	if !IsNil(o.RefTcData) {
 		toSerialize["refTcData"] = o.RefTcData
 	}
 	if o.RefChgData != nil {
@@ -1044,10 +1050,10 @@ func (o PccRule) ToMap() (map[string]interface{}, error) {
 	if o.TscaiInputUl.IsSet() {
 		toSerialize["tscaiInputUl"] = o.TscaiInputUl.Get()
 	}
-	if !isNil(o.TscaiTimeDom) {
+	if !IsNil(o.TscaiTimeDom) {
 		toSerialize["tscaiTimeDom"] = o.TscaiTimeDom
 	}
-	if !isNil(o.DdNotifCtrl) {
+	if !IsNil(o.DdNotifCtrl) {
 		toSerialize["ddNotifCtrl"] = o.DdNotifCtrl
 	}
 	if o.DdNotifCtrl2.IsSet() {
@@ -1056,7 +1062,7 @@ func (o PccRule) ToMap() (map[string]interface{}, error) {
 	if o.DisUeNotif.IsSet() {
 		toSerialize["disUeNotif"] = o.DisUeNotif.Get()
 	}
-	if !isNil(o.PackFiltAllPrec) {
+	if !IsNil(o.PackFiltAllPrec) {
 		toSerialize["packFiltAllPrec"] = o.PackFiltAllPrec
 	}
 	return toSerialize, nil
@@ -1097,5 +1103,3 @@ func (v *NullablePccRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

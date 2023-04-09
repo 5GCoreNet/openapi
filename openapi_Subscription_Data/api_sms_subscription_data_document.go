@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,24 +13,23 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMSSubscriptionDataDocumentApiService SMSSubscriptionDataDocumentApi service
 type SMSSubscriptionDataDocumentApiService service
 
 type ApiQuerySmsDataRequest struct {
-	ctx context.Context
-	ApiService *SMSSubscriptionDataDocumentApiService
-	ueId string
-	servingPlmnId string
+	ctx               context.Context
+	ApiService        *SMSSubscriptionDataDocumentApiService
+	ueId              string
+	servingPlmnId     string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // Supported Features
@@ -58,28 +57,29 @@ func (r ApiQuerySmsDataRequest) Execute() (*SmsSubscriptionData, *http.Response,
 /*
 QuerySmsData Retrieves the SMS subscription data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingPlmnId PLMN ID
- @return ApiQuerySmsDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingPlmnId PLMN ID
+	@return ApiQuerySmsDataRequest
 */
 func (a *SMSSubscriptionDataDocumentApiService) QuerySmsData(ctx context.Context, ueId string, servingPlmnId string) ApiQuerySmsDataRequest {
 	return ApiQuerySmsDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:    a,
+		ctx:           ctx,
+		ueId:          ueId,
 		servingPlmnId: servingPlmnId,
 	}
 }
 
 // Execute executes the request
-//  @return SmsSubscriptionData
+//
+//	@return SmsSubscriptionData
 func (a *SMSSubscriptionDataDocumentApiService) QuerySmsDataExecute(r ApiQuerySmsDataRequest) (*SmsSubscriptionData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmsSubscriptionData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmsSubscriptionData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMSSubscriptionDataDocumentApiService.QuerySmsData")
@@ -96,7 +96,7 @@ func (a *SMSSubscriptionDataDocumentApiService) QuerySmsDataExecute(r ApiQuerySm
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -116,10 +116,10 @@ func (a *SMSSubscriptionDataDocumentApiService) QuerySmsDataExecute(r ApiQuerySm
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -131,9 +131,9 @@ func (a *SMSSubscriptionDataDocumentApiService) QuerySmsDataExecute(r ApiQuerySm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

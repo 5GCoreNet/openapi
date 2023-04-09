@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// PreemptionCapabilityRm This enumeration is defined in the same way as the 'PreemptionCapability' enumeration, but with the OpenAPI 'nullable: true' property. 
+// PreemptionCapabilityRm This enumeration is defined in the same way as the 'PreemptionCapability' enumeration, but with the OpenAPI 'nullable: true' property.
 type PreemptionCapabilityRm struct {
-	NullValue *NullValue
+	NullValue            *NullValue
 	PreemptionCapability *PreemptionCapability
 }
 
@@ -25,7 +25,7 @@ type PreemptionCapabilityRm struct {
 func (dst *PreemptionCapabilityRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *PreemptionCapabilityRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into PreemptionCapability
-	err = json.Unmarshal(data, &dst.PreemptionCapability);
+	err = json.Unmarshal(data, &dst.PreemptionCapability)
 	if err == nil {
 		jsonPreemptionCapability, _ := json.Marshal(dst.PreemptionCapability)
 		if string(jsonPreemptionCapability) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullablePreemptionCapabilityRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

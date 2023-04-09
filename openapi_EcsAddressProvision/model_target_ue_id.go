@@ -1,7 +1,7 @@
 /*
 3gpp-ecs-address-provision
 
-API for ECS Address Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for ECS Address Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TargetUeId{}
 // TargetUeId Represents the target UE(s) information.
 type TargetUeId struct {
 	AnyUeInd *bool `json:"anyUeInd,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
 	ExterGroupId *string `json:"exterGroupId,omitempty"`
@@ -45,7 +45,7 @@ func NewTargetUeIdWithDefaults() *TargetUeId {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *TargetUeId) GetAnyUeInd() bool {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *TargetUeId) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeId) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -63,7 +63,7 @@ func (o *TargetUeId) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *TargetUeId) HasAnyUeInd() bool {
-	if o != nil && !isNil(o.AnyUeInd) {
+	if o != nil && !IsNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *TargetUeId) SetAnyUeInd(v bool) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *TargetUeId) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *TargetUeId) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeId) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -95,7 +95,7 @@ func (o *TargetUeId) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *TargetUeId) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *TargetUeId) SetGpsi(v string) {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *TargetUeId) GetExterGroupId() string {
-	if o == nil || isNil(o.ExterGroupId) {
+	if o == nil || IsNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *TargetUeId) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeId) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExterGroupId) {
+	if o == nil || IsNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -127,7 +127,7 @@ func (o *TargetUeId) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *TargetUeId) HasExterGroupId() bool {
-	if o != nil && !isNil(o.ExterGroupId) {
+	if o != nil && !IsNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *TargetUeId) SetExterGroupId(v string) {
 }
 
 func (o TargetUeId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o TargetUeId) MarshalJSON() ([]byte, error) {
 
 func (o TargetUeId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnyUeInd) {
+	if !IsNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.ExterGroupId) {
+	if !IsNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableTargetUeId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

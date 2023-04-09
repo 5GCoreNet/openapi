@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Nnwdaf_MLModelProvision
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService IndividualNWDAFMLModelProvisionSubscriptionDocumentApi service
 type IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService service
 
 type ApiDeleteNWDAFMLModelProvisionSubcriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteNWDAFMLModelProvisionSubcriptionRequest) Execute() (*http.Respo
 /*
 DeleteNWDAFMLModelProvisionSubcription Delete an existing Individual NWDAF ML Model Provision Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId String identifying a subscription to the Nnwdaf_MLModelProvision Service.
- @return ApiDeleteNWDAFMLModelProvisionSubcriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId String identifying a subscription to the Nnwdaf_MLModelProvision Service.
+	@return ApiDeleteNWDAFMLModelProvisionSubcriptionRequest
 */
 func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNWDAFMLModelProvisionSubcription(ctx context.Context, subscriptionId string) ApiDeleteNWDAFMLModelProvisionSubcriptionRequest {
 	return ApiDeleteNWDAFMLModelProvisionSubcriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 // Execute executes the request
 func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNWDAFMLModelProvisionSubcriptionExecute(r ApiDeleteNWDAFMLModelProvisionSubcriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService.DeleteNWDAFMLModelProvisionSubcription")
@@ -95,9 +94,9 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,9 +223,9 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) DeleteNW
 }
 
 type ApiUpdateNWDAFMLModelProvisionSubcriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                   context.Context
+	ApiService            *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService
+	subscriptionId        string
 	nwdafMLModelProvSubsc *NwdafMLModelProvSubsc
 }
 
@@ -242,26 +241,27 @@ func (r ApiUpdateNWDAFMLModelProvisionSubcriptionRequest) Execute() (*NwdafMLMod
 /*
 UpdateNWDAFMLModelProvisionSubcription update an existing Individual NWDAF ML Model Provision Subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId String identifying a subscription to the Nnwdaf_MLModelProvision Service.
- @return ApiUpdateNWDAFMLModelProvisionSubcriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId String identifying a subscription to the Nnwdaf_MLModelProvision Service.
+	@return ApiUpdateNWDAFMLModelProvisionSubcriptionRequest
 */
 func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNWDAFMLModelProvisionSubcription(ctx context.Context, subscriptionId string) ApiUpdateNWDAFMLModelProvisionSubcriptionRequest {
 	return ApiUpdateNWDAFMLModelProvisionSubcriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return NwdafMLModelProvSubsc
+//
+//	@return NwdafMLModelProvSubsc
 func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNWDAFMLModelProvisionSubcriptionExecute(r ApiUpdateNWDAFMLModelProvisionSubcriptionRequest) (*NwdafMLModelProvSubsc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NwdafMLModelProvSubsc
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NwdafMLModelProvSubsc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService.UpdateNWDAFMLModelProvisionSubcription")
@@ -308,9 +308,9 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -327,8 +327,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -338,8 +338,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -349,8 +349,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -360,8 +360,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -371,8 +371,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -382,8 +382,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -393,8 +393,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -404,8 +404,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -415,8 +415,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -426,8 +426,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -437,8 +437,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -448,8 +448,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -459,8 +459,8 @@ func (a *IndividualNWDAFMLModelProvisionSubscriptionDocumentApiService) UpdateNW
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

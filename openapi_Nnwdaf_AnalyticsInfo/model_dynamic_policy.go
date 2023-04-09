@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,13 +22,13 @@ type DynamicPolicy struct {
 	// String chosen by the 5GMS AF to serve as an identifier in a resource URI.
 	DynamicPolicyId string `json:"dynamicPolicyId"`
 	// String chosen by the 5GMS AF to serve as an identifier in a resource URI.
-	PolicyTemplateId string `json:"policyTemplateId"`
+	PolicyTemplateId            string                       `json:"policyTemplateId"`
 	ServiceDataFlowDescriptions []ServiceDataFlowDescription `json:"serviceDataFlowDescriptions"`
 	// String chosen by the 5GMS AF to serve as an identifier in a resource URI.
-	ProvisioningSessionId string `json:"provisioningSessionId"`
-	QosSpecification *M5QoSSpecification `json:"qosSpecification,omitempty"`
-	EnforcementMethod *string `json:"enforcementMethod,omitempty"`
-	EnforcementBitRate *int32 `json:"enforcementBitRate,omitempty"`
+	ProvisioningSessionId string              `json:"provisioningSessionId"`
+	QosSpecification      *M5QoSSpecification `json:"qosSpecification,omitempty"`
+	EnforcementMethod     *string             `json:"enforcementMethod,omitempty"`
+	EnforcementBitRate    *int32              `json:"enforcementBitRate,omitempty"`
 }
 
 // NewDynamicPolicy instantiates a new DynamicPolicy object
@@ -150,7 +150,7 @@ func (o *DynamicPolicy) SetProvisioningSessionId(v string) {
 
 // GetQosSpecification returns the QosSpecification field value if set, zero value otherwise.
 func (o *DynamicPolicy) GetQosSpecification() M5QoSSpecification {
-	if o == nil || isNil(o.QosSpecification) {
+	if o == nil || IsNil(o.QosSpecification) {
 		var ret M5QoSSpecification
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *DynamicPolicy) GetQosSpecification() M5QoSSpecification {
 // GetQosSpecificationOk returns a tuple with the QosSpecification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicPolicy) GetQosSpecificationOk() (*M5QoSSpecification, bool) {
-	if o == nil || isNil(o.QosSpecification) {
+	if o == nil || IsNil(o.QosSpecification) {
 		return nil, false
 	}
 	return o.QosSpecification, true
@@ -168,7 +168,7 @@ func (o *DynamicPolicy) GetQosSpecificationOk() (*M5QoSSpecification, bool) {
 
 // HasQosSpecification returns a boolean if a field has been set.
 func (o *DynamicPolicy) HasQosSpecification() bool {
-	if o != nil && !isNil(o.QosSpecification) {
+	if o != nil && !IsNil(o.QosSpecification) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *DynamicPolicy) SetQosSpecification(v M5QoSSpecification) {
 
 // GetEnforcementMethod returns the EnforcementMethod field value if set, zero value otherwise.
 func (o *DynamicPolicy) GetEnforcementMethod() string {
-	if o == nil || isNil(o.EnforcementMethod) {
+	if o == nil || IsNil(o.EnforcementMethod) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *DynamicPolicy) GetEnforcementMethod() string {
 // GetEnforcementMethodOk returns a tuple with the EnforcementMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicPolicy) GetEnforcementMethodOk() (*string, bool) {
-	if o == nil || isNil(o.EnforcementMethod) {
+	if o == nil || IsNil(o.EnforcementMethod) {
 		return nil, false
 	}
 	return o.EnforcementMethod, true
@@ -200,7 +200,7 @@ func (o *DynamicPolicy) GetEnforcementMethodOk() (*string, bool) {
 
 // HasEnforcementMethod returns a boolean if a field has been set.
 func (o *DynamicPolicy) HasEnforcementMethod() bool {
-	if o != nil && !isNil(o.EnforcementMethod) {
+	if o != nil && !IsNil(o.EnforcementMethod) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *DynamicPolicy) SetEnforcementMethod(v string) {
 
 // GetEnforcementBitRate returns the EnforcementBitRate field value if set, zero value otherwise.
 func (o *DynamicPolicy) GetEnforcementBitRate() int32 {
-	if o == nil || isNil(o.EnforcementBitRate) {
+	if o == nil || IsNil(o.EnforcementBitRate) {
 		var ret int32
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *DynamicPolicy) GetEnforcementBitRate() int32 {
 // GetEnforcementBitRateOk returns a tuple with the EnforcementBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicPolicy) GetEnforcementBitRateOk() (*int32, bool) {
-	if o == nil || isNil(o.EnforcementBitRate) {
+	if o == nil || IsNil(o.EnforcementBitRate) {
 		return nil, false
 	}
 	return o.EnforcementBitRate, true
@@ -232,7 +232,7 @@ func (o *DynamicPolicy) GetEnforcementBitRateOk() (*int32, bool) {
 
 // HasEnforcementBitRate returns a boolean if a field has been set.
 func (o *DynamicPolicy) HasEnforcementBitRate() bool {
-	if o != nil && !isNil(o.EnforcementBitRate) {
+	if o != nil && !IsNil(o.EnforcementBitRate) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *DynamicPolicy) SetEnforcementBitRate(v int32) {
 }
 
 func (o DynamicPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -258,13 +258,13 @@ func (o DynamicPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize["policyTemplateId"] = o.PolicyTemplateId
 	toSerialize["serviceDataFlowDescriptions"] = o.ServiceDataFlowDescriptions
 	toSerialize["provisioningSessionId"] = o.ProvisioningSessionId
-	if !isNil(o.QosSpecification) {
+	if !IsNil(o.QosSpecification) {
 		toSerialize["qosSpecification"] = o.QosSpecification
 	}
-	if !isNil(o.EnforcementMethod) {
+	if !IsNil(o.EnforcementMethod) {
 		toSerialize["enforcementMethod"] = o.EnforcementMethod
 	}
-	if !isNil(o.EnforcementBitRate) {
+	if !IsNil(o.EnforcementBitRate) {
 		toSerialize["enforcementBitRate"] = o.EnforcementBitRate
 	}
 	return toSerialize, nil
@@ -305,5 +305,3 @@ func (v *NullableDynamicPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

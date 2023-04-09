@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// NetLocAccessSupport Possible values are - ANR_NOT_SUPPORTED: Indicates that the access network does not support the report of access  network information. - TZR_NOT_SUPPORTED: Indicates that the access network does not support the report of UE  time zone. - LOC_NOT_SUPPORTED: Indicates that the access network does not support the report of UE  Location (or PLMN Id). 
+// NetLocAccessSupport Possible values are - ANR_NOT_SUPPORTED: Indicates that the access network does not support the report of access  network information. - TZR_NOT_SUPPORTED: Indicates that the access network does not support the report of UE  time zone. - LOC_NOT_SUPPORTED: Indicates that the access network does not support the report of UE  Location (or PLMN Id).
 type NetLocAccessSupport struct {
-	NetLocAccessSupportAnyOf *NetLocAccessSupportAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NetLocAccessSupport) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NetLocAccessSupportAnyOf
-	err = json.Unmarshal(data, &dst.NetLocAccessSupportAnyOf);
-	if err == nil {
-		jsonNetLocAccessSupportAnyOf, _ := json.Marshal(dst.NetLocAccessSupportAnyOf)
-		if string(jsonNetLocAccessSupportAnyOf) == "{}" { // empty struct
-			dst.NetLocAccessSupportAnyOf = nil
-		} else {
-			return nil // data stored in dst.NetLocAccessSupportAnyOf, return on the first match
-		}
-	} else {
-		dst.NetLocAccessSupportAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NetLocAccessSupport) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NetLocAccessSupport) MarshalJSON() ([]byte, error) {
-	if src.NetLocAccessSupportAnyOf != nil {
-		return json.Marshal(&src.NetLocAccessSupportAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNetLocAccessSupport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

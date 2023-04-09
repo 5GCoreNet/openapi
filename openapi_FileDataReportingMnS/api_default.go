@@ -13,23 +13,22 @@ package openapi_FileDataReportingMnS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiFilesGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	fileDataType *FileDataType
-	beginTime *time.Time
-	endTime *time.Time
+	beginTime    *time.Time
+	endTime      *time.Time
 }
 
 // This parameter selects files based on the file data type.
@@ -59,24 +58,25 @@ FilesGet Read information about available files
 
 Information about available files is read with HTTP GET. The files for which information shall be returned are identified with the path component (base resource) and the query component (fileDataType, beginTime, endTime) of the URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFilesGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiFilesGetRequest
 */
 func (a *DefaultApiService) FilesGet(ctx context.Context) ApiFilesGetRequest {
 	return ApiFilesGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FileInfo
+//
+//	@return []FileInfo
 func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FileInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FileInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.FilesGet")
@@ -93,12 +93,12 @@ func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *
 		return localVarReturnValue, nil, reportError("fileDataType is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "fileDataType", r.fileDataType, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "fileDataType", r.fileDataType, "")
 	if r.beginTime != nil {
-		parameterAddToQuery(localVarQueryParams, "beginTime", r.beginTime, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "beginTime", r.beginTime, "")
 	}
 	if r.endTime != nil {
-		parameterAddToQuery(localVarQueryParams, "endTime", r.endTime, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endTime", r.endTime, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -127,9 +127,9 @@ func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -139,14 +139,14 @@ func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -163,8 +163,8 @@ func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *
 }
 
 type ApiSubscriptionsPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	subscription *Subscription
 }
 
@@ -182,24 +182,25 @@ SubscriptionsPost Create a subscription
 
 To create a subscription the representation of the subscription is POSTed on the /subscriptions collection resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSubscriptionsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSubscriptionsPostRequest
 */
 func (a *DefaultApiService) SubscriptionsPost(ctx context.Context) ApiSubscriptionsPostRequest {
 	return ApiSubscriptionsPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Subscription
+//
+//	@return Subscription
 func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostRequest) (*Subscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Subscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Subscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SubscriptionsPost")
@@ -245,9 +246,9 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -257,14 +258,14 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -281,8 +282,8 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 }
 
 type ApiSubscriptionsSubscriptionIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx            context.Context
+	ApiService     *DefaultApiService
 	subscriptionId string
 }
 
@@ -295,14 +296,14 @@ SubscriptionsSubscriptionIdDelete Delete a subscription
 
 The subscription is deleted by deleting the corresponding subscription resource. The resource to be deleted is identified with the path component of the URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifies the subscription to be deleted.
- @return ApiSubscriptionsSubscriptionIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifies the subscription to be deleted.
+	@return ApiSubscriptionsSubscriptionIdDeleteRequest
 */
 func (a *DefaultApiService) SubscriptionsSubscriptionIdDelete(ctx context.Context, subscriptionId string) ApiSubscriptionsSubscriptionIdDeleteRequest {
 	return ApiSubscriptionsSubscriptionIdDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -310,9 +311,9 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDelete(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscriptionsSubscriptionIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SubscriptionsSubscriptionIdDelete")
@@ -354,9 +355,9 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -366,14 +367,14 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 

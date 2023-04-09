@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &MLEventNotif{}
 
 // MLEventNotif Represents a notification related to a single event that occurred.
 type MLEventNotif struct {
-	Event NwdafEvent `json:"event"`
-	NotifCorreId *string `json:"notifCorreId,omitempty"`
-	MLFileAddr MLModelAddr `json:"mLFileAddr"`
-	ValidityPeriod *TimeWindow `json:"validityPeriod,omitempty"`
+	Event           NwdafEvent       `json:"event"`
+	NotifCorreId    *string          `json:"notifCorreId,omitempty"`
+	MLFileAddr      MLModelAddr      `json:"mLFileAddr"`
+	ValidityPeriod  *TimeWindow      `json:"validityPeriod,omitempty"`
 	SpatialValidity *NetworkAreaInfo `json:"spatialValidity,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *MLEventNotif) SetEvent(v NwdafEvent) {
 
 // GetNotifCorreId returns the NotifCorreId field value if set, zero value otherwise.
 func (o *MLEventNotif) GetNotifCorreId() string {
-	if o == nil || isNil(o.NotifCorreId) {
+	if o == nil || IsNil(o.NotifCorreId) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *MLEventNotif) GetNotifCorreId() string {
 // GetNotifCorreIdOk returns a tuple with the NotifCorreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEventNotif) GetNotifCorreIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifCorreId) {
+	if o == nil || IsNil(o.NotifCorreId) {
 		return nil, false
 	}
 	return o.NotifCorreId, true
@@ -89,7 +89,7 @@ func (o *MLEventNotif) GetNotifCorreIdOk() (*string, bool) {
 
 // HasNotifCorreId returns a boolean if a field has been set.
 func (o *MLEventNotif) HasNotifCorreId() bool {
-	if o != nil && !isNil(o.NotifCorreId) {
+	if o != nil && !IsNil(o.NotifCorreId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *MLEventNotif) SetMLFileAddr(v MLModelAddr) {
 
 // GetValidityPeriod returns the ValidityPeriod field value if set, zero value otherwise.
 func (o *MLEventNotif) GetValidityPeriod() TimeWindow {
-	if o == nil || isNil(o.ValidityPeriod) {
+	if o == nil || IsNil(o.ValidityPeriod) {
 		var ret TimeWindow
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *MLEventNotif) GetValidityPeriod() TimeWindow {
 // GetValidityPeriodOk returns a tuple with the ValidityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEventNotif) GetValidityPeriodOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.ValidityPeriod) {
+	if o == nil || IsNil(o.ValidityPeriod) {
 		return nil, false
 	}
 	return o.ValidityPeriod, true
@@ -145,7 +145,7 @@ func (o *MLEventNotif) GetValidityPeriodOk() (*TimeWindow, bool) {
 
 // HasValidityPeriod returns a boolean if a field has been set.
 func (o *MLEventNotif) HasValidityPeriod() bool {
-	if o != nil && !isNil(o.ValidityPeriod) {
+	if o != nil && !IsNil(o.ValidityPeriod) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *MLEventNotif) SetValidityPeriod(v TimeWindow) {
 
 // GetSpatialValidity returns the SpatialValidity field value if set, zero value otherwise.
 func (o *MLEventNotif) GetSpatialValidity() NetworkAreaInfo {
-	if o == nil || isNil(o.SpatialValidity) {
+	if o == nil || IsNil(o.SpatialValidity) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *MLEventNotif) GetSpatialValidity() NetworkAreaInfo {
 // GetSpatialValidityOk returns a tuple with the SpatialValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEventNotif) GetSpatialValidityOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.SpatialValidity) {
+	if o == nil || IsNil(o.SpatialValidity) {
 		return nil, false
 	}
 	return o.SpatialValidity, true
@@ -177,7 +177,7 @@ func (o *MLEventNotif) GetSpatialValidityOk() (*NetworkAreaInfo, bool) {
 
 // HasSpatialValidity returns a boolean if a field has been set.
 func (o *MLEventNotif) HasSpatialValidity() bool {
-	if o != nil && !isNil(o.SpatialValidity) {
+	if o != nil && !IsNil(o.SpatialValidity) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *MLEventNotif) SetSpatialValidity(v NetworkAreaInfo) {
 }
 
 func (o MLEventNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -200,14 +200,14 @@ func (o MLEventNotif) MarshalJSON() ([]byte, error) {
 func (o MLEventNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.NotifCorreId) {
+	if !IsNil(o.NotifCorreId) {
 		toSerialize["notifCorreId"] = o.NotifCorreId
 	}
 	toSerialize["mLFileAddr"] = o.MLFileAddr
-	if !isNil(o.ValidityPeriod) {
+	if !IsNil(o.ValidityPeriod) {
 		toSerialize["validityPeriod"] = o.ValidityPeriod
 	}
-	if !isNil(o.SpatialValidity) {
+	if !IsNil(o.SpatialValidity) {
 		toSerialize["spatialValidity"] = o.SpatialValidity
 	}
 	return toSerialize, nil
@@ -248,5 +248,3 @@ func (v *NullableMLEventNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

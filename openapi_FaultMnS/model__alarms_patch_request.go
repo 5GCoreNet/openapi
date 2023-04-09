@@ -17,59 +17,58 @@ import (
 
 // AlarmsPatchRequest - struct for AlarmsPatchRequest
 type AlarmsPatchRequest struct {
-	MapmapOfStringMergePatchAcknowledgeAlarm *map[string]MergePatchAcknowledgeAlarm
-	MapmapOfStringMergePatchClearAlarm *map[string]MergePatchClearAlarm
+	MapOfMergePatchAcknowledgeAlarm *map[string]MergePatchAcknowledgeAlarm
+	MapOfMergePatchClearAlarm       *map[string]MergePatchClearAlarm
 }
 
 // map[string]MergePatchAcknowledgeAlarmAsAlarmsPatchRequest is a convenience function that returns map[string]MergePatchAcknowledgeAlarm wrapped in AlarmsPatchRequest
-func MapmapOfStringMergePatchAcknowledgeAlarmAsAlarmsPatchRequest(v *map[string]MergePatchAcknowledgeAlarm) AlarmsPatchRequest {
+func MapOfMergePatchAcknowledgeAlarmAsAlarmsPatchRequest(v *map[string]MergePatchAcknowledgeAlarm) AlarmsPatchRequest {
 	return AlarmsPatchRequest{
-		MapmapOfStringMergePatchAcknowledgeAlarm: v,
+		MapOfMergePatchAcknowledgeAlarm: v,
 	}
 }
 
 // map[string]MergePatchClearAlarmAsAlarmsPatchRequest is a convenience function that returns map[string]MergePatchClearAlarm wrapped in AlarmsPatchRequest
-func MapmapOfStringMergePatchClearAlarmAsAlarmsPatchRequest(v *map[string]MergePatchClearAlarm) AlarmsPatchRequest {
+func MapOfMergePatchClearAlarmAsAlarmsPatchRequest(v *map[string]MergePatchClearAlarm) AlarmsPatchRequest {
 	return AlarmsPatchRequest{
-		MapmapOfStringMergePatchClearAlarm: v,
+		MapOfMergePatchClearAlarm: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AlarmsPatchRequest) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into MapmapOfStringMergePatchAcknowledgeAlarm
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringMergePatchAcknowledgeAlarm)
+	// try to unmarshal data into MapOfMergePatchAcknowledgeAlarm
+	err = newStrictDecoder(data).Decode(&dst.MapOfMergePatchAcknowledgeAlarm)
 	if err == nil {
-		jsonMapmapOfStringMergePatchAcknowledgeAlarm, _ := json.Marshal(dst.MapmapOfStringMergePatchAcknowledgeAlarm)
-		if string(jsonMapmapOfStringMergePatchAcknowledgeAlarm) == "{}" { // empty struct
-			dst.MapmapOfStringMergePatchAcknowledgeAlarm = nil
+		jsonMapOfMergePatchAcknowledgeAlarm, _ := json.Marshal(dst.MapOfMergePatchAcknowledgeAlarm)
+		if string(jsonMapOfMergePatchAcknowledgeAlarm) == "{}" { // empty struct
+			dst.MapOfMergePatchAcknowledgeAlarm = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.MapmapOfStringMergePatchAcknowledgeAlarm = nil
+		dst.MapOfMergePatchAcknowledgeAlarm = nil
 	}
 
-	// try to unmarshal data into MapmapOfStringMergePatchClearAlarm
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringMergePatchClearAlarm)
+	// try to unmarshal data into MapOfMergePatchClearAlarm
+	err = newStrictDecoder(data).Decode(&dst.MapOfMergePatchClearAlarm)
 	if err == nil {
-		jsonMapmapOfStringMergePatchClearAlarm, _ := json.Marshal(dst.MapmapOfStringMergePatchClearAlarm)
-		if string(jsonMapmapOfStringMergePatchClearAlarm) == "{}" { // empty struct
-			dst.MapmapOfStringMergePatchClearAlarm = nil
+		jsonMapOfMergePatchClearAlarm, _ := json.Marshal(dst.MapOfMergePatchClearAlarm)
+		if string(jsonMapOfMergePatchClearAlarm) == "{}" { // empty struct
+			dst.MapOfMergePatchClearAlarm = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.MapmapOfStringMergePatchClearAlarm = nil
+		dst.MapOfMergePatchClearAlarm = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.MapmapOfStringMergePatchAcknowledgeAlarm = nil
-		dst.MapmapOfStringMergePatchClearAlarm = nil
+		dst.MapOfMergePatchAcknowledgeAlarm = nil
+		dst.MapOfMergePatchClearAlarm = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AlarmsPatchRequest)")
 	} else if match == 1 {
@@ -81,28 +80,28 @@ func (dst *AlarmsPatchRequest) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AlarmsPatchRequest) MarshalJSON() ([]byte, error) {
-	if src.MapmapOfStringMergePatchAcknowledgeAlarm != nil {
-		return json.Marshal(&src.MapmapOfStringMergePatchAcknowledgeAlarm)
+	if src.MapOfMergePatchAcknowledgeAlarm != nil {
+		return json.Marshal(&src.MapOfMergePatchAcknowledgeAlarm)
 	}
 
-	if src.MapmapOfStringMergePatchClearAlarm != nil {
-		return json.Marshal(&src.MapmapOfStringMergePatchClearAlarm)
+	if src.MapOfMergePatchClearAlarm != nil {
+		return json.Marshal(&src.MapOfMergePatchClearAlarm)
 	}
 
 	return nil, nil // no data in oneOf schemas
 }
 
 // Get the actual instance
-func (obj *AlarmsPatchRequest) GetActualInstance() (interface{}) {
+func (obj *AlarmsPatchRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	if obj.MapmapOfStringMergePatchAcknowledgeAlarm != nil {
-		return obj.MapmapOfStringMergePatchAcknowledgeAlarm
+	if obj.MapOfMergePatchAcknowledgeAlarm != nil {
+		return obj.MapOfMergePatchAcknowledgeAlarm
 	}
 
-	if obj.MapmapOfStringMergePatchClearAlarm != nil {
-		return obj.MapmapOfStringMergePatchClearAlarm
+	if obj.MapOfMergePatchClearAlarm != nil {
+		return obj.MapOfMergePatchClearAlarm
 	}
 
 	// all schemas are nil
@@ -144,5 +143,3 @@ func (v *NullableAlarmsPatchRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

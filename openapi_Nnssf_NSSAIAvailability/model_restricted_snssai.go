@@ -1,7 +1,7 @@
 /*
 NSSF NSSAI Availability
 
-NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &RestrictedSnssai{}
 
 // RestrictedSnssai This contains the restricted SNssai information per PLMN
 type RestrictedSnssai struct {
-	HomePlmnId PlmnId `json:"homePlmnId"`
-	SNssaiList []ExtSnssai `json:"sNssaiList"`
-	HomePlmnIdList []PlmnId `json:"homePlmnIdList,omitempty"`
-	RoamingRestriction *bool `json:"roamingRestriction,omitempty"`
+	HomePlmnId         PlmnId      `json:"homePlmnId"`
+	SNssaiList         []ExtSnssai `json:"sNssaiList"`
+	HomePlmnIdList     []PlmnId    `json:"homePlmnIdList,omitempty"`
+	RoamingRestriction *bool       `json:"roamingRestriction,omitempty"`
 }
 
 // NewRestrictedSnssai instantiates a new RestrictedSnssai object
@@ -98,7 +98,7 @@ func (o *RestrictedSnssai) SetSNssaiList(v []ExtSnssai) {
 
 // GetHomePlmnIdList returns the HomePlmnIdList field value if set, zero value otherwise.
 func (o *RestrictedSnssai) GetHomePlmnIdList() []PlmnId {
-	if o == nil || isNil(o.HomePlmnIdList) {
+	if o == nil || IsNil(o.HomePlmnIdList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *RestrictedSnssai) GetHomePlmnIdList() []PlmnId {
 // GetHomePlmnIdListOk returns a tuple with the HomePlmnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestrictedSnssai) GetHomePlmnIdListOk() ([]PlmnId, bool) {
-	if o == nil || isNil(o.HomePlmnIdList) {
+	if o == nil || IsNil(o.HomePlmnIdList) {
 		return nil, false
 	}
 	return o.HomePlmnIdList, true
@@ -116,7 +116,7 @@ func (o *RestrictedSnssai) GetHomePlmnIdListOk() ([]PlmnId, bool) {
 
 // HasHomePlmnIdList returns a boolean if a field has been set.
 func (o *RestrictedSnssai) HasHomePlmnIdList() bool {
-	if o != nil && !isNil(o.HomePlmnIdList) {
+	if o != nil && !IsNil(o.HomePlmnIdList) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *RestrictedSnssai) SetHomePlmnIdList(v []PlmnId) {
 
 // GetRoamingRestriction returns the RoamingRestriction field value if set, zero value otherwise.
 func (o *RestrictedSnssai) GetRoamingRestriction() bool {
-	if o == nil || isNil(o.RoamingRestriction) {
+	if o == nil || IsNil(o.RoamingRestriction) {
 		var ret bool
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *RestrictedSnssai) GetRoamingRestriction() bool {
 // GetRoamingRestrictionOk returns a tuple with the RoamingRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestrictedSnssai) GetRoamingRestrictionOk() (*bool, bool) {
-	if o == nil || isNil(o.RoamingRestriction) {
+	if o == nil || IsNil(o.RoamingRestriction) {
 		return nil, false
 	}
 	return o.RoamingRestriction, true
@@ -148,7 +148,7 @@ func (o *RestrictedSnssai) GetRoamingRestrictionOk() (*bool, bool) {
 
 // HasRoamingRestriction returns a boolean if a field has been set.
 func (o *RestrictedSnssai) HasRoamingRestriction() bool {
-	if o != nil && !isNil(o.RoamingRestriction) {
+	if o != nil && !IsNil(o.RoamingRestriction) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *RestrictedSnssai) SetRoamingRestriction(v bool) {
 }
 
 func (o RestrictedSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,10 +172,10 @@ func (o RestrictedSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["homePlmnId"] = o.HomePlmnId
 	toSerialize["sNssaiList"] = o.SNssaiList
-	if !isNil(o.HomePlmnIdList) {
+	if !IsNil(o.HomePlmnIdList) {
 		toSerialize["homePlmnIdList"] = o.HomePlmnIdList
 	}
-	if !isNil(o.RoamingRestriction) {
+	if !IsNil(o.RoamingRestriction) {
 		toSerialize["roamingRestriction"] = o.RoamingRestriction
 	}
 	return toSerialize, nil
@@ -216,5 +216,3 @@ func (v *NullableRestrictedSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

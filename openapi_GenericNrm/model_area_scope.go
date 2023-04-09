@@ -17,7 +17,7 @@ import (
 
 // AreaScope - struct for AreaScope
 type AreaScope struct {
-	ArrayOfTai *[]Tai
+	ArrayOfTai    *[]Tai
 	ArrayOfString *[]string
 }
 
@@ -34,7 +34,6 @@ func ArrayOfStringAsAreaScope(v *[]string) AreaScope {
 		ArrayOfString: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AreaScope) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AreaScope) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AreaScope) GetActualInstance() (interface{}) {
+func (obj *AreaScope) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAreaScope) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

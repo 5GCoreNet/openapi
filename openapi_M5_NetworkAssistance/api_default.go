@@ -1,7 +1,7 @@
 /*
 M5_NetworkAssistance
 
-5GMS AF M5 Network Assistance API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Network Assistance API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,18 +13,17 @@ package openapi_M5_NetworkAssistance
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateNetworkAssistanceSessionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
 }
 
@@ -35,24 +34,25 @@ func (r ApiCreateNetworkAssistanceSessionRequest) Execute() (*NetworkAssistanceS
 /*
 CreateNetworkAssistanceSession Create a new Network Assistance Session.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNetworkAssistanceSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateNetworkAssistanceSessionRequest
 */
 func (a *DefaultApiService) CreateNetworkAssistanceSession(ctx context.Context) ApiCreateNetworkAssistanceSessionRequest {
 	return ApiCreateNetworkAssistanceSessionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return NetworkAssistanceSession
+//
+//	@return NetworkAssistanceSession
 func (a *DefaultApiService) CreateNetworkAssistanceSessionExecute(r ApiCreateNetworkAssistanceSessionRequest) (*NetworkAssistanceSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NetworkAssistanceSession
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NetworkAssistanceSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateNetworkAssistanceSession")
@@ -93,9 +93,9 @@ func (a *DefaultApiService) CreateNetworkAssistanceSessionExecute(r ApiCreateNet
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -121,8 +121,8 @@ func (a *DefaultApiService) CreateNetworkAssistanceSessionExecute(r ApiCreateNet
 }
 
 type ApiDestroyNetworkAssistanceSessionRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx         context.Context
+	ApiService  *DefaultApiService
 	naSessionId string
 }
 
@@ -133,14 +133,14 @@ func (r ApiDestroyNetworkAssistanceSessionRequest) Execute() (*http.Response, er
 /*
 DestroyNetworkAssistanceSession Destroy an existing Network Assistance Session resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param naSessionId The resource identifier of an existing Network Assistance Session resource
- @return ApiDestroyNetworkAssistanceSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param naSessionId The resource identifier of an existing Network Assistance Session resource
+	@return ApiDestroyNetworkAssistanceSessionRequest
 */
 func (a *DefaultApiService) DestroyNetworkAssistanceSession(ctx context.Context, naSessionId string) ApiDestroyNetworkAssistanceSessionRequest {
 	return ApiDestroyNetworkAssistanceSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		naSessionId: naSessionId,
 	}
 }
@@ -148,9 +148,9 @@ func (a *DefaultApiService) DestroyNetworkAssistanceSession(ctx context.Context,
 // Execute executes the request
 func (a *DefaultApiService) DestroyNetworkAssistanceSessionExecute(r ApiDestroyNetworkAssistanceSessionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyNetworkAssistanceSession")
@@ -192,9 +192,9 @@ func (a *DefaultApiService) DestroyNetworkAssistanceSessionExecute(r ApiDestroyN
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -211,9 +211,9 @@ func (a *DefaultApiService) DestroyNetworkAssistanceSessionExecute(r ApiDestroyN
 }
 
 type ApiPatchNetworkAssistanceSessionRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	naSessionId string
+	ctx                      context.Context
+	ApiService               *DefaultApiService
+	naSessionId              string
 	networkAssistanceSession *NetworkAssistanceSession
 }
 
@@ -230,26 +230,27 @@ func (r ApiPatchNetworkAssistanceSessionRequest) Execute() (*NetworkAssistanceSe
 /*
 PatchNetworkAssistanceSession Patch an existing Network Assistance Session resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param naSessionId The resource identifier of an existing Network Assistance Session resource
- @return ApiPatchNetworkAssistanceSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param naSessionId The resource identifier of an existing Network Assistance Session resource
+	@return ApiPatchNetworkAssistanceSessionRequest
 */
 func (a *DefaultApiService) PatchNetworkAssistanceSession(ctx context.Context, naSessionId string) ApiPatchNetworkAssistanceSessionRequest {
 	return ApiPatchNetworkAssistanceSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		naSessionId: naSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return NetworkAssistanceSession
+//
+//	@return NetworkAssistanceSession
 func (a *DefaultApiService) PatchNetworkAssistanceSessionExecute(r ApiPatchNetworkAssistanceSessionRequest) (*NetworkAssistanceSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NetworkAssistanceSession
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NetworkAssistanceSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchNetworkAssistanceSession")
@@ -296,9 +297,9 @@ func (a *DefaultApiService) PatchNetworkAssistanceSessionExecute(r ApiPatchNetwo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -324,8 +325,8 @@ func (a *DefaultApiService) PatchNetworkAssistanceSessionExecute(r ApiPatchNetwo
 }
 
 type ApiRequestBitRateRecommendationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx         context.Context
+	ApiService  *DefaultApiService
 	naSessionId string
 }
 
@@ -336,26 +337,27 @@ func (r ApiRequestBitRateRecommendationRequest) Execute() (*M5QoSSpecification, 
 /*
 RequestBitRateRecommendation Obtain a bit rate recommendation for the next recommendation window
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param naSessionId The resource identifier of an existing Network Assistance Session resource
- @return ApiRequestBitRateRecommendationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param naSessionId The resource identifier of an existing Network Assistance Session resource
+	@return ApiRequestBitRateRecommendationRequest
 */
 func (a *DefaultApiService) RequestBitRateRecommendation(ctx context.Context, naSessionId string) ApiRequestBitRateRecommendationRequest {
 	return ApiRequestBitRateRecommendationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		naSessionId: naSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return M5QoSSpecification
+//
+//	@return M5QoSSpecification
 func (a *DefaultApiService) RequestBitRateRecommendationExecute(r ApiRequestBitRateRecommendationRequest) (*M5QoSSpecification, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *M5QoSSpecification
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *M5QoSSpecification
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RequestBitRateRecommendation")
@@ -397,9 +399,9 @@ func (a *DefaultApiService) RequestBitRateRecommendationExecute(r ApiRequestBitR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -425,8 +427,8 @@ func (a *DefaultApiService) RequestBitRateRecommendationExecute(r ApiRequestBitR
 }
 
 type ApiRequestDeliveryBoostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx         context.Context
+	ApiService  *DefaultApiService
 	naSessionId string
 }
 
@@ -437,26 +439,27 @@ func (r ApiRequestDeliveryBoostRequest) Execute() (*OperationSuccessResponse, *h
 /*
 RequestDeliveryBoost Request a delivery boost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param naSessionId The resource identifier of an existing Network Assistance Session resource
- @return ApiRequestDeliveryBoostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param naSessionId The resource identifier of an existing Network Assistance Session resource
+	@return ApiRequestDeliveryBoostRequest
 */
 func (a *DefaultApiService) RequestDeliveryBoost(ctx context.Context, naSessionId string) ApiRequestDeliveryBoostRequest {
 	return ApiRequestDeliveryBoostRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		naSessionId: naSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return OperationSuccessResponse
+//
+//	@return OperationSuccessResponse
 func (a *DefaultApiService) RequestDeliveryBoostExecute(r ApiRequestDeliveryBoostRequest) (*OperationSuccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationSuccessResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *OperationSuccessResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RequestDeliveryBoost")
@@ -498,9 +501,9 @@ func (a *DefaultApiService) RequestDeliveryBoostExecute(r ApiRequestDeliveryBoos
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -526,8 +529,8 @@ func (a *DefaultApiService) RequestDeliveryBoostExecute(r ApiRequestDeliveryBoos
 }
 
 type ApiRetrieveNetworkAssistanceSessionRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx         context.Context
+	ApiService  *DefaultApiService
 	naSessionId string
 }
 
@@ -538,26 +541,27 @@ func (r ApiRetrieveNetworkAssistanceSessionRequest) Execute() (*NetworkAssistanc
 /*
 RetrieveNetworkAssistanceSession Retrieve an existing Network Assistance Session resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param naSessionId The resource identifier of an existing Network Assistance Session resource
- @return ApiRetrieveNetworkAssistanceSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param naSessionId The resource identifier of an existing Network Assistance Session resource
+	@return ApiRetrieveNetworkAssistanceSessionRequest
 */
 func (a *DefaultApiService) RetrieveNetworkAssistanceSession(ctx context.Context, naSessionId string) ApiRetrieveNetworkAssistanceSessionRequest {
 	return ApiRetrieveNetworkAssistanceSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		naSessionId: naSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return NetworkAssistanceSession
+//
+//	@return NetworkAssistanceSession
 func (a *DefaultApiService) RetrieveNetworkAssistanceSessionExecute(r ApiRetrieveNetworkAssistanceSessionRequest) (*NetworkAssistanceSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NetworkAssistanceSession
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NetworkAssistanceSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveNetworkAssistanceSession")
@@ -599,9 +603,9 @@ func (a *DefaultApiService) RetrieveNetworkAssistanceSessionExecute(r ApiRetriev
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -627,9 +631,9 @@ func (a *DefaultApiService) RetrieveNetworkAssistanceSessionExecute(r ApiRetriev
 }
 
 type ApiUpdateNetworkAssistanceSessionRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	naSessionId string
+	ctx                      context.Context
+	ApiService               *DefaultApiService
+	naSessionId              string
 	networkAssistanceSession *NetworkAssistanceSession
 }
 
@@ -646,14 +650,14 @@ func (r ApiUpdateNetworkAssistanceSessionRequest) Execute() (*http.Response, err
 /*
 UpdateNetworkAssistanceSession Update an existing Network Assistance Session resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param naSessionId The resource identifier of an existing Network Assistance Session resource
- @return ApiUpdateNetworkAssistanceSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param naSessionId The resource identifier of an existing Network Assistance Session resource
+	@return ApiUpdateNetworkAssistanceSessionRequest
 */
 func (a *DefaultApiService) UpdateNetworkAssistanceSession(ctx context.Context, naSessionId string) ApiUpdateNetworkAssistanceSessionRequest {
 	return ApiUpdateNetworkAssistanceSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		naSessionId: naSessionId,
 	}
 }
@@ -661,9 +665,9 @@ func (a *DefaultApiService) UpdateNetworkAssistanceSession(ctx context.Context, 
 // Execute executes the request
 func (a *DefaultApiService) UpdateNetworkAssistanceSessionExecute(r ApiUpdateNetworkAssistanceSessionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateNetworkAssistanceSession")
@@ -710,9 +714,9 @@ func (a *DefaultApiService) UpdateNetworkAssistanceSessionExecute(r ApiUpdateNet
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

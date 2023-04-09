@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TimeSyncExposureSubsNotif{}
 // TimeSyncExposureSubsNotif Contains the notification of time synchronization capability.
 type TimeSyncExposureSubsNotif struct {
 	// Notification Correlation ID assigned by the NF service consumer.
-	SubsNotifId string `json:"subsNotifId"`
+	SubsNotifId string                  `json:"subsNotifId"`
 	EventNotifs []SubsEventNotification `json:"eventNotifs"`
 }
 
@@ -92,7 +92,7 @@ func (o *TimeSyncExposureSubsNotif) SetEventNotifs(v []SubsEventNotification) {
 }
 
 func (o TimeSyncExposureSubsNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableTimeSyncExposureSubsNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

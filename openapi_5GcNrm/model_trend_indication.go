@@ -21,7 +21,7 @@ type TrendIndication string
 // List of TrendIndication
 const (
 	MORE_SEVERE TrendIndication = "MORE_SEVERE"
-	NO_CHANGE TrendIndication = "NO_CHANGE"
+	NO_CHANGE   TrendIndication = "NO_CHANGE"
 	LESS_SEVERE TrendIndication = "LESS_SEVERE"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableTrendIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

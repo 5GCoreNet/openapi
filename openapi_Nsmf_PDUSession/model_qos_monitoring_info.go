@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -45,7 +45,7 @@ func NewQosMonitoringInfoWithDefaults() *QosMonitoringInfo {
 
 // GetQosMonitoringInd returns the QosMonitoringInd field value if set, zero value otherwise.
 func (o *QosMonitoringInfo) GetQosMonitoringInd() bool {
-	if o == nil || isNil(o.QosMonitoringInd) {
+	if o == nil || IsNil(o.QosMonitoringInd) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *QosMonitoringInfo) GetQosMonitoringInd() bool {
 // GetQosMonitoringIndOk returns a tuple with the QosMonitoringInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInfo) GetQosMonitoringIndOk() (*bool, bool) {
-	if o == nil || isNil(o.QosMonitoringInd) {
+	if o == nil || IsNil(o.QosMonitoringInd) {
 		return nil, false
 	}
 	return o.QosMonitoringInd, true
@@ -63,7 +63,7 @@ func (o *QosMonitoringInfo) GetQosMonitoringIndOk() (*bool, bool) {
 
 // HasQosMonitoringInd returns a boolean if a field has been set.
 func (o *QosMonitoringInfo) HasQosMonitoringInd() bool {
-	if o != nil && !isNil(o.QosMonitoringInd) {
+	if o != nil && !IsNil(o.QosMonitoringInd) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *QosMonitoringInfo) SetQosMonitoringInd(v bool) {
 }
 
 func (o QosMonitoringInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -85,7 +85,7 @@ func (o QosMonitoringInfo) MarshalJSON() ([]byte, error) {
 
 func (o QosMonitoringInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.QosMonitoringInd) {
+	if !IsNil(o.QosMonitoringInd) {
 		toSerialize["qosMonitoringInd"] = o.QosMonitoringInd
 	}
 	return toSerialize, nil
@@ -126,5 +126,3 @@ func (v *NullableQosMonitoringInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

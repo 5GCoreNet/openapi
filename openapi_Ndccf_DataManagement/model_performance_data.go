@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &PerformanceData{}
 
 // PerformanceData Contains Performance Data.
 type PerformanceData struct {
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	Pdb *int32 `json:"pdb,omitempty"`
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
 	Plr *int32 `json:"plr,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ThrputUl *string `json:"thrputUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ThrputDl *string `json:"thrputDl,omitempty"`
 }
 
@@ -48,7 +48,7 @@ func NewPerformanceDataWithDefaults() *PerformanceData {
 
 // GetPdb returns the Pdb field value if set, zero value otherwise.
 func (o *PerformanceData) GetPdb() int32 {
-	if o == nil || isNil(o.Pdb) {
+	if o == nil || IsNil(o.Pdb) {
 		var ret int32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PerformanceData) GetPdb() int32 {
 // GetPdbOk returns a tuple with the Pdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetPdbOk() (*int32, bool) {
-	if o == nil || isNil(o.Pdb) {
+	if o == nil || IsNil(o.Pdb) {
 		return nil, false
 	}
 	return o.Pdb, true
@@ -66,7 +66,7 @@ func (o *PerformanceData) GetPdbOk() (*int32, bool) {
 
 // HasPdb returns a boolean if a field has been set.
 func (o *PerformanceData) HasPdb() bool {
-	if o != nil && !isNil(o.Pdb) {
+	if o != nil && !IsNil(o.Pdb) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *PerformanceData) SetPdb(v int32) {
 
 // GetPlr returns the Plr field value if set, zero value otherwise.
 func (o *PerformanceData) GetPlr() int32 {
-	if o == nil || isNil(o.Plr) {
+	if o == nil || IsNil(o.Plr) {
 		var ret int32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *PerformanceData) GetPlr() int32 {
 // GetPlrOk returns a tuple with the Plr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetPlrOk() (*int32, bool) {
-	if o == nil || isNil(o.Plr) {
+	if o == nil || IsNil(o.Plr) {
 		return nil, false
 	}
 	return o.Plr, true
@@ -98,7 +98,7 @@ func (o *PerformanceData) GetPlrOk() (*int32, bool) {
 
 // HasPlr returns a boolean if a field has been set.
 func (o *PerformanceData) HasPlr() bool {
-	if o != nil && !isNil(o.Plr) {
+	if o != nil && !IsNil(o.Plr) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *PerformanceData) SetPlr(v int32) {
 
 // GetThrputUl returns the ThrputUl field value if set, zero value otherwise.
 func (o *PerformanceData) GetThrputUl() string {
-	if o == nil || isNil(o.ThrputUl) {
+	if o == nil || IsNil(o.ThrputUl) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PerformanceData) GetThrputUl() string {
 // GetThrputUlOk returns a tuple with the ThrputUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetThrputUlOk() (*string, bool) {
-	if o == nil || isNil(o.ThrputUl) {
+	if o == nil || IsNil(o.ThrputUl) {
 		return nil, false
 	}
 	return o.ThrputUl, true
@@ -130,7 +130,7 @@ func (o *PerformanceData) GetThrputUlOk() (*string, bool) {
 
 // HasThrputUl returns a boolean if a field has been set.
 func (o *PerformanceData) HasThrputUl() bool {
-	if o != nil && !isNil(o.ThrputUl) {
+	if o != nil && !IsNil(o.ThrputUl) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *PerformanceData) SetThrputUl(v string) {
 
 // GetThrputDl returns the ThrputDl field value if set, zero value otherwise.
 func (o *PerformanceData) GetThrputDl() string {
-	if o == nil || isNil(o.ThrputDl) {
+	if o == nil || IsNil(o.ThrputDl) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *PerformanceData) GetThrputDl() string {
 // GetThrputDlOk returns a tuple with the ThrputDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetThrputDlOk() (*string, bool) {
-	if o == nil || isNil(o.ThrputDl) {
+	if o == nil || IsNil(o.ThrputDl) {
 		return nil, false
 	}
 	return o.ThrputDl, true
@@ -162,7 +162,7 @@ func (o *PerformanceData) GetThrputDlOk() (*string, bool) {
 
 // HasThrputDl returns a boolean if a field has been set.
 func (o *PerformanceData) HasThrputDl() bool {
-	if o != nil && !isNil(o.ThrputDl) {
+	if o != nil && !IsNil(o.ThrputDl) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *PerformanceData) SetThrputDl(v string) {
 }
 
 func (o PerformanceData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,16 +184,16 @@ func (o PerformanceData) MarshalJSON() ([]byte, error) {
 
 func (o PerformanceData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Pdb) {
+	if !IsNil(o.Pdb) {
 		toSerialize["pdb"] = o.Pdb
 	}
-	if !isNil(o.Plr) {
+	if !IsNil(o.Plr) {
 		toSerialize["plr"] = o.Plr
 	}
-	if !isNil(o.ThrputUl) {
+	if !IsNil(o.ThrputUl) {
 		toSerialize["thrputUl"] = o.ThrputUl
 	}
-	if !isNil(o.ThrputDl) {
+	if !IsNil(o.ThrputDl) {
 		toSerialize["thrputDl"] = o.ThrputDl
 	}
 	return toSerialize, nil
@@ -234,5 +234,3 @@ func (v *NullablePerformanceData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

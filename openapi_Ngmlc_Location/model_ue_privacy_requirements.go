@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UePrivacyRequirements{}
 // UePrivacyRequirements UE privacy requirements from (H)GMLC to the serving AMF or VGMLC(in the roaming case) for the target UE
 type UePrivacyRequirements struct {
 	LcsServiceAuthInfo *LcsServiceAuth `json:"lcsServiceAuthInfo,omitempty"`
-	CodeWordCheck *bool `json:"codeWordCheck,omitempty"`
+	CodeWordCheck      *bool           `json:"codeWordCheck,omitempty"`
 }
 
 // NewUePrivacyRequirements instantiates a new UePrivacyRequirements object
@@ -42,7 +42,7 @@ func NewUePrivacyRequirementsWithDefaults() *UePrivacyRequirements {
 
 // GetLcsServiceAuthInfo returns the LcsServiceAuthInfo field value if set, zero value otherwise.
 func (o *UePrivacyRequirements) GetLcsServiceAuthInfo() LcsServiceAuth {
-	if o == nil || isNil(o.LcsServiceAuthInfo) {
+	if o == nil || IsNil(o.LcsServiceAuthInfo) {
 		var ret LcsServiceAuth
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UePrivacyRequirements) GetLcsServiceAuthInfo() LcsServiceAuth {
 // GetLcsServiceAuthInfoOk returns a tuple with the LcsServiceAuthInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePrivacyRequirements) GetLcsServiceAuthInfoOk() (*LcsServiceAuth, bool) {
-	if o == nil || isNil(o.LcsServiceAuthInfo) {
+	if o == nil || IsNil(o.LcsServiceAuthInfo) {
 		return nil, false
 	}
 	return o.LcsServiceAuthInfo, true
@@ -60,7 +60,7 @@ func (o *UePrivacyRequirements) GetLcsServiceAuthInfoOk() (*LcsServiceAuth, bool
 
 // HasLcsServiceAuthInfo returns a boolean if a field has been set.
 func (o *UePrivacyRequirements) HasLcsServiceAuthInfo() bool {
-	if o != nil && !isNil(o.LcsServiceAuthInfo) {
+	if o != nil && !IsNil(o.LcsServiceAuthInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UePrivacyRequirements) SetLcsServiceAuthInfo(v LcsServiceAuth) {
 
 // GetCodeWordCheck returns the CodeWordCheck field value if set, zero value otherwise.
 func (o *UePrivacyRequirements) GetCodeWordCheck() bool {
-	if o == nil || isNil(o.CodeWordCheck) {
+	if o == nil || IsNil(o.CodeWordCheck) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UePrivacyRequirements) GetCodeWordCheck() bool {
 // GetCodeWordCheckOk returns a tuple with the CodeWordCheck field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePrivacyRequirements) GetCodeWordCheckOk() (*bool, bool) {
-	if o == nil || isNil(o.CodeWordCheck) {
+	if o == nil || IsNil(o.CodeWordCheck) {
 		return nil, false
 	}
 	return o.CodeWordCheck, true
@@ -92,7 +92,7 @@ func (o *UePrivacyRequirements) GetCodeWordCheckOk() (*bool, bool) {
 
 // HasCodeWordCheck returns a boolean if a field has been set.
 func (o *UePrivacyRequirements) HasCodeWordCheck() bool {
-	if o != nil && !isNil(o.CodeWordCheck) {
+	if o != nil && !IsNil(o.CodeWordCheck) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UePrivacyRequirements) SetCodeWordCheck(v bool) {
 }
 
 func (o UePrivacyRequirements) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o UePrivacyRequirements) MarshalJSON() ([]byte, error) {
 
 func (o UePrivacyRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LcsServiceAuthInfo) {
+	if !IsNil(o.LcsServiceAuthInfo) {
 		toSerialize["lcsServiceAuthInfo"] = o.LcsServiceAuthInfo
 	}
-	if !isNil(o.CodeWordCheck) {
+	if !IsNil(o.CodeWordCheck) {
 		toSerialize["codeWordCheck"] = o.CodeWordCheck
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableUePrivacyRequirements) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // NrfInfoServedAmfInfoValue struct for NrfInfoServedAmfInfoValue
 type NrfInfoServedAmfInfoValue struct {
-	AmfInfo *AmfInfo
+	AmfInfo        *AmfInfo
 	MapOfInterface *map[string]interface{}
 }
 
@@ -25,7 +25,7 @@ type NrfInfoServedAmfInfoValue struct {
 func (dst *NrfInfoServedAmfInfoValue) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AmfInfo
-	err = json.Unmarshal(data, &dst.AmfInfo);
+	err = json.Unmarshal(data, &dst.AmfInfo)
 	if err == nil {
 		jsonAmfInfo, _ := json.Marshal(dst.AmfInfo)
 		if string(jsonAmfInfo) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *NrfInfoServedAmfInfoValue) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.MapOfInterface);
+	err = json.Unmarshal(data, &dst.MapOfInterface)
 	if err == nil {
 		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
 		if string(jsonMapOfInterface) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableNrfInfoServedAmfInfoValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

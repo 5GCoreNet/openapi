@@ -841,7 +841,11 @@ components:
       type: object
     C2CommMode:
       anyOf:
-      - $ref: '#/components/schemas/C2CommMode_anyOf'
+      - enum:
+        - DIRECT_C2_COMMUNICATION
+        - NETWORK_ASSISTED_C2_COMMUNICATION
+        - UTM_NAVIGATED_C2_COMMUNICATION
+        type: string
       - description: |
           This string represents the C2 Communication Mode.
         type: string
@@ -852,7 +856,12 @@ components:
         - UTM_NAVIGATED_C2_COMMUNICATION: Indicates UTM-Navigated C2 communication mode.
     C2CommModeSwitching:
       anyOf:
-      - $ref: '#/components/schemas/C2CommModeSwitching_anyOf'
+      - enum:
+        - DIRECT_TO_NETWORK_ASSISTED_C2
+        - NETWORK_ASSISTED_TO_DIRECT_C2
+        - DIRECT_TO_UTM_NAVIGATED_C2
+        - NETWORK_ASSISTED_TO_UTM_NAVIGATED_C2
+        type: string
       - description: |
           This string represents the C2 Communication Mode Switching type.
         type: string
@@ -864,7 +873,15 @@ components:
         - NETWORK_ASSISTED_TO_UTM_NAVIGATED_C2: Indicates the C2 Communication Mode switching from Network-Assisted C2 Communication mode to UTM-Navigated C2 communication mode.
     C2SwitchingCause:
       anyOf:
-      - $ref: '#/components/schemas/C2SwitchingCause_anyOf'
+      - enum:
+        - DIRECT_LINK_QUALITY_DEGRADATION
+        - DIRECT_LINK_AVAILABLE
+        - MOVING_BVLOS
+        - LOCATION_CHANGE
+        - TRAFFIC_CONTROL_NEEDED
+        - SECURITY_REASONS
+        - OTHER_REASONS
+        type: string
       - description: |
           This string represents the C2 Communication Mode Switching cause.
         type: string
@@ -879,7 +896,10 @@ components:
         - OTHER_REASONS: Indicates that the C2 Communication Mode switching was triggered due to other reasons (e.g. unpredictable event, unknown reason, weather conditions, topography, etc.).
     C2OpModeStatus:
       anyOf:
-      - $ref: '#/components/schemas/C2OpModeStatus_anyOf'
+      - enum:
+        - SUCCESSFUL
+        - NOT_SUCCESSFUL
+        type: string
       - description: |
           This string represents the C2 Operation Mode Management Completion status.
         type: string
@@ -1116,9 +1136,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1306,38 +1337,6 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
-    C2CommMode_anyOf:
-      enum:
-      - DIRECT_C2_COMMUNICATION
-      - NETWORK_ASSISTED_C2_COMMUNICATION
-      - UTM_NAVIGATED_C2_COMMUNICATION
-      type: string
-      example: null
-    C2CommModeSwitching_anyOf:
-      enum:
-      - DIRECT_TO_NETWORK_ASSISTED_C2
-      - NETWORK_ASSISTED_TO_DIRECT_C2
-      - DIRECT_TO_UTM_NAVIGATED_C2
-      - NETWORK_ASSISTED_TO_UTM_NAVIGATED_C2
-      type: string
-      example: null
-    C2SwitchingCause_anyOf:
-      enum:
-      - DIRECT_LINK_QUALITY_DEGRADATION
-      - DIRECT_LINK_AVAILABLE
-      - MOVING_BVLOS
-      - LOCATION_CHANGE
-      - TRAFFIC_CONTROL_NEEDED
-      - SECURITY_REASONS
-      - OTHER_REASONS
-      type: string
-      example: null
-    C2OpModeStatus_anyOf:
-      enum:
-      - SUCCESSFUL
-      - NOT_SUCCESSFUL
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -1345,19 +1344,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

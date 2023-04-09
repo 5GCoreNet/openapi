@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,20 +17,20 @@ import (
 // checks if the ConfigureData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ConfigureData{}
 
-// ConfigureData Represents the parameters to request to provision C2 Operation Mode configuration information for a UAS (i.e. pair of UAV and UAV-C). 
+// ConfigureData Represents the parameters to request to provision C2 Operation Mode configuration information for a UAS (i.e. pair of UAV and UAV-C).
 type ConfigureData struct {
 	// string providing an URI formatted according to IETF RFC 3986.
-	UassId string `json:"uassId"`
-	UasId UasId `json:"uasId"`
-	AllowedC2CommModes []C2CommMode `json:"allowedC2CommModes"`
+	UassId                string                `json:"uassId"`
+	UasId                 UasId                 `json:"uasId"`
+	AllowedC2CommModes    []C2CommMode          `json:"allowedC2CommModes"`
 	C2CommModeSwitchTypes []C2CommModeSwitching `json:"c2CommModeSwitchTypes"`
 	// string providing an URI formatted according to IETF RFC 3986.
-	NotificationUri string `json:"notificationUri"`
-	PrimaryC2CommMode C2CommMode `json:"primaryC2CommMode"`
-	SecondaryC2CommMode *C2CommMode `json:"secondaryC2CommMode,omitempty"`
-	C2SwitchPolicies C2SwitchPolicies `json:"c2SwitchPolicies"`
-	C2ServiceArea *C2ServiceArea `json:"c2ServiceArea,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	NotificationUri     string           `json:"notificationUri"`
+	PrimaryC2CommMode   C2CommMode       `json:"primaryC2CommMode"`
+	SecondaryC2CommMode *C2CommMode      `json:"secondaryC2CommMode,omitempty"`
+	C2SwitchPolicies    C2SwitchPolicies `json:"c2SwitchPolicies"`
+	C2ServiceArea       *C2ServiceArea   `json:"c2ServiceArea,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -204,7 +204,7 @@ func (o *ConfigureData) SetPrimaryC2CommMode(v C2CommMode) {
 
 // GetSecondaryC2CommMode returns the SecondaryC2CommMode field value if set, zero value otherwise.
 func (o *ConfigureData) GetSecondaryC2CommMode() C2CommMode {
-	if o == nil || isNil(o.SecondaryC2CommMode) {
+	if o == nil || IsNil(o.SecondaryC2CommMode) {
 		var ret C2CommMode
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *ConfigureData) GetSecondaryC2CommMode() C2CommMode {
 // GetSecondaryC2CommModeOk returns a tuple with the SecondaryC2CommMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigureData) GetSecondaryC2CommModeOk() (*C2CommMode, bool) {
-	if o == nil || isNil(o.SecondaryC2CommMode) {
+	if o == nil || IsNil(o.SecondaryC2CommMode) {
 		return nil, false
 	}
 	return o.SecondaryC2CommMode, true
@@ -222,7 +222,7 @@ func (o *ConfigureData) GetSecondaryC2CommModeOk() (*C2CommMode, bool) {
 
 // HasSecondaryC2CommMode returns a boolean if a field has been set.
 func (o *ConfigureData) HasSecondaryC2CommMode() bool {
-	if o != nil && !isNil(o.SecondaryC2CommMode) {
+	if o != nil && !IsNil(o.SecondaryC2CommMode) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *ConfigureData) SetC2SwitchPolicies(v C2SwitchPolicies) {
 
 // GetC2ServiceArea returns the C2ServiceArea field value if set, zero value otherwise.
 func (o *ConfigureData) GetC2ServiceArea() C2ServiceArea {
-	if o == nil || isNil(o.C2ServiceArea) {
+	if o == nil || IsNil(o.C2ServiceArea) {
 		var ret C2ServiceArea
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *ConfigureData) GetC2ServiceArea() C2ServiceArea {
 // GetC2ServiceAreaOk returns a tuple with the C2ServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigureData) GetC2ServiceAreaOk() (*C2ServiceArea, bool) {
-	if o == nil || isNil(o.C2ServiceArea) {
+	if o == nil || IsNil(o.C2ServiceArea) {
 		return nil, false
 	}
 	return o.C2ServiceArea, true
@@ -278,7 +278,7 @@ func (o *ConfigureData) GetC2ServiceAreaOk() (*C2ServiceArea, bool) {
 
 // HasC2ServiceArea returns a boolean if a field has been set.
 func (o *ConfigureData) HasC2ServiceArea() bool {
-	if o != nil && !isNil(o.C2ServiceArea) {
+	if o != nil && !IsNil(o.C2ServiceArea) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *ConfigureData) SetC2ServiceArea(v C2ServiceArea) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ConfigureData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *ConfigureData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigureData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -310,7 +310,7 @@ func (o *ConfigureData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ConfigureData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *ConfigureData) SetSuppFeat(v string) {
 }
 
 func (o ConfigureData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -338,14 +338,14 @@ func (o ConfigureData) ToMap() (map[string]interface{}, error) {
 	toSerialize["c2CommModeSwitchTypes"] = o.C2CommModeSwitchTypes
 	toSerialize["notificationUri"] = o.NotificationUri
 	toSerialize["primaryC2CommMode"] = o.PrimaryC2CommMode
-	if !isNil(o.SecondaryC2CommMode) {
+	if !IsNil(o.SecondaryC2CommMode) {
 		toSerialize["secondaryC2CommMode"] = o.SecondaryC2CommMode
 	}
 	toSerialize["c2SwitchPolicies"] = o.C2SwitchPolicies
-	if !isNil(o.C2ServiceArea) {
+	if !IsNil(o.C2ServiceArea) {
 		toSerialize["c2ServiceArea"] = o.C2ServiceArea
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -386,5 +386,3 @@ func (v *NullableConfigureData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

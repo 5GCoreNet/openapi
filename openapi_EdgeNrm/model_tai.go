@@ -20,7 +20,7 @@ var _ MappedNullable = &Tai{}
 // Tai struct for Tai
 type Tai struct {
 	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	NrTac *int32 `json:"nrTac,omitempty"`
+	NrTac  *int32  `json:"nrTac,omitempty"`
 }
 
 // NewTai instantiates a new Tai object
@@ -42,7 +42,7 @@ func NewTaiWithDefaults() *Tai {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *Tai) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Tai) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -60,7 +60,7 @@ func (o *Tai) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *Tai) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Tai) SetPlmnId(v PlmnId) {
 
 // GetNrTac returns the NrTac field value if set, zero value otherwise.
 func (o *Tai) GetNrTac() int32 {
-	if o == nil || isNil(o.NrTac) {
+	if o == nil || IsNil(o.NrTac) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Tai) GetNrTac() int32 {
 // GetNrTacOk returns a tuple with the NrTac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai) GetNrTacOk() (*int32, bool) {
-	if o == nil || isNil(o.NrTac) {
+	if o == nil || IsNil(o.NrTac) {
 		return nil, false
 	}
 	return o.NrTac, true
@@ -92,7 +92,7 @@ func (o *Tai) GetNrTacOk() (*int32, bool) {
 
 // HasNrTac returns a boolean if a field has been set.
 func (o *Tai) HasNrTac() bool {
-	if o != nil && !isNil(o.NrTac) {
+	if o != nil && !IsNil(o.NrTac) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Tai) SetNrTac(v int32) {
 }
 
 func (o Tai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o Tai) MarshalJSON() ([]byte, error) {
 
 func (o Tai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.NrTac) {
+	if !IsNil(o.NrTac) {
 		toSerialize["nrTac"] = o.NrTac
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableTai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

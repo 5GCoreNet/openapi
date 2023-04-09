@@ -20,7 +20,7 @@ var _ MappedNullable = &MbsfnArea{}
 // MbsfnArea struct for MbsfnArea
 type MbsfnArea struct {
 	MbsfnAreaId *int32 `json:"mbsfnAreaId,omitempty"`
-	Earfcn *int32 `json:"earfcn,omitempty"`
+	Earfcn      *int32 `json:"earfcn,omitempty"`
 }
 
 // NewMbsfnArea instantiates a new MbsfnArea object
@@ -42,7 +42,7 @@ func NewMbsfnAreaWithDefaults() *MbsfnArea {
 
 // GetMbsfnAreaId returns the MbsfnAreaId field value if set, zero value otherwise.
 func (o *MbsfnArea) GetMbsfnAreaId() int32 {
-	if o == nil || isNil(o.MbsfnAreaId) {
+	if o == nil || IsNil(o.MbsfnAreaId) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MbsfnArea) GetMbsfnAreaId() int32 {
 // GetMbsfnAreaIdOk returns a tuple with the MbsfnAreaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsfnArea) GetMbsfnAreaIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MbsfnAreaId) {
+	if o == nil || IsNil(o.MbsfnAreaId) {
 		return nil, false
 	}
 	return o.MbsfnAreaId, true
@@ -60,7 +60,7 @@ func (o *MbsfnArea) GetMbsfnAreaIdOk() (*int32, bool) {
 
 // HasMbsfnAreaId returns a boolean if a field has been set.
 func (o *MbsfnArea) HasMbsfnAreaId() bool {
-	if o != nil && !isNil(o.MbsfnAreaId) {
+	if o != nil && !IsNil(o.MbsfnAreaId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MbsfnArea) SetMbsfnAreaId(v int32) {
 
 // GetEarfcn returns the Earfcn field value if set, zero value otherwise.
 func (o *MbsfnArea) GetEarfcn() int32 {
-	if o == nil || isNil(o.Earfcn) {
+	if o == nil || IsNil(o.Earfcn) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MbsfnArea) GetEarfcn() int32 {
 // GetEarfcnOk returns a tuple with the Earfcn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsfnArea) GetEarfcnOk() (*int32, bool) {
-	if o == nil || isNil(o.Earfcn) {
+	if o == nil || IsNil(o.Earfcn) {
 		return nil, false
 	}
 	return o.Earfcn, true
@@ -92,7 +92,7 @@ func (o *MbsfnArea) GetEarfcnOk() (*int32, bool) {
 
 // HasEarfcn returns a boolean if a field has been set.
 func (o *MbsfnArea) HasEarfcn() bool {
-	if o != nil && !isNil(o.Earfcn) {
+	if o != nil && !IsNil(o.Earfcn) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *MbsfnArea) SetEarfcn(v int32) {
 }
 
 func (o MbsfnArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o MbsfnArea) MarshalJSON() ([]byte, error) {
 
 func (o MbsfnArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsfnAreaId) {
+	if !IsNil(o.MbsfnAreaId) {
 		toSerialize["mbsfnAreaId"] = o.MbsfnAreaId
 	}
-	if !isNil(o.Earfcn) {
+	if !IsNil(o.Earfcn) {
 		toSerialize["earfcn"] = o.Earfcn
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableMbsfnArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

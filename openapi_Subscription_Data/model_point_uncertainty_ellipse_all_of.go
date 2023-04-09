@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &PointUncertaintyEllipseAllOf{}
 
 // PointUncertaintyEllipseAllOf struct for PointUncertaintyEllipseAllOf
 type PointUncertaintyEllipseAllOf struct {
-	Point GeographicalCoordinates `json:"point"`
-	UncertaintyEllipse UncertaintyEllipse `json:"uncertaintyEllipse"`
+	Point              GeographicalCoordinates `json:"point"`
+	UncertaintyEllipse UncertaintyEllipse      `json:"uncertaintyEllipse"`
 	// Indicates value of confidence.
 	Confidence int32 `json:"confidence"`
 }
@@ -118,7 +118,7 @@ func (o *PointUncertaintyEllipseAllOf) SetConfidence(v int32) {
 }
 
 func (o PointUncertaintyEllipseAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +168,3 @@ func (v *NullablePointUncertaintyEllipseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

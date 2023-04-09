@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the Guss type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Guss{}
 
-// Guss GBA User Security Settings of the UE; it includes information about the BSF, and a list of User Security Settings 
+// Guss GBA User Security Settings of the UE; it includes information about the BSF, and a list of User Security Settings
 type Guss struct {
-	BsfInfo *BsfInfo `json:"bsfInfo,omitempty"`
+	BsfInfo *BsfInfo      `json:"bsfInfo,omitempty"`
 	UssList []UssListItem `json:"ussList,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewGussWithDefaults() *Guss {
 
 // GetBsfInfo returns the BsfInfo field value if set, zero value otherwise.
 func (o *Guss) GetBsfInfo() BsfInfo {
-	if o == nil || isNil(o.BsfInfo) {
+	if o == nil || IsNil(o.BsfInfo) {
 		var ret BsfInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Guss) GetBsfInfo() BsfInfo {
 // GetBsfInfoOk returns a tuple with the BsfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Guss) GetBsfInfoOk() (*BsfInfo, bool) {
-	if o == nil || isNil(o.BsfInfo) {
+	if o == nil || IsNil(o.BsfInfo) {
 		return nil, false
 	}
 	return o.BsfInfo, true
@@ -60,7 +60,7 @@ func (o *Guss) GetBsfInfoOk() (*BsfInfo, bool) {
 
 // HasBsfInfo returns a boolean if a field has been set.
 func (o *Guss) HasBsfInfo() bool {
-	if o != nil && !isNil(o.BsfInfo) {
+	if o != nil && !IsNil(o.BsfInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Guss) SetBsfInfo(v BsfInfo) {
 
 // GetUssList returns the UssList field value if set, zero value otherwise.
 func (o *Guss) GetUssList() []UssListItem {
-	if o == nil || isNil(o.UssList) {
+	if o == nil || IsNil(o.UssList) {
 		var ret []UssListItem
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Guss) GetUssList() []UssListItem {
 // GetUssListOk returns a tuple with the UssList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Guss) GetUssListOk() ([]UssListItem, bool) {
-	if o == nil || isNil(o.UssList) {
+	if o == nil || IsNil(o.UssList) {
 		return nil, false
 	}
 	return o.UssList, true
@@ -92,7 +92,7 @@ func (o *Guss) GetUssListOk() ([]UssListItem, bool) {
 
 // HasUssList returns a boolean if a field has been set.
 func (o *Guss) HasUssList() bool {
-	if o != nil && !isNil(o.UssList) {
+	if o != nil && !IsNil(o.UssList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Guss) SetUssList(v []UssListItem) {
 }
 
 func (o Guss) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o Guss) MarshalJSON() ([]byte, error) {
 
 func (o Guss) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.BsfInfo) {
+	if !IsNil(o.BsfInfo) {
 		toSerialize["bsfInfo"] = o.BsfInfo
 	}
-	if !isNil(o.UssList) {
+	if !IsNil(o.UssList) {
 		toSerialize["ussList"] = o.UssList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableGuss) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

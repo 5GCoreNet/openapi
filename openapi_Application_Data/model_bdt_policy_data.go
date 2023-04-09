@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &BdtPolicyData{}
 
 // BdtPolicyData Represents applied BDT policy data.
 type BdtPolicyData struct {
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InterGroupId *string `json:"interGroupId,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
 	BdtRefId string `json:"bdtRefId"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	ResUri *string `json:"resUri,omitempty"`
+	ResUri   *string  `json:"resUri,omitempty"`
 	ResetIds []string `json:"resetIds,omitempty"`
 }
 
@@ -53,7 +53,7 @@ func NewBdtPolicyDataWithDefaults() *BdtPolicyData {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetInterGroupId() string {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *BdtPolicyData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -71,7 +71,7 @@ func (o *BdtPolicyData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasInterGroupId() bool {
-	if o != nil && !isNil(o.InterGroupId) {
+	if o != nil && !IsNil(o.InterGroupId) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *BdtPolicyData) SetInterGroupId(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *BdtPolicyData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -103,7 +103,7 @@ func (o *BdtPolicyData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *BdtPolicyData) SetBdtRefId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *BdtPolicyData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -159,7 +159,7 @@ func (o *BdtPolicyData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *BdtPolicyData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *BdtPolicyData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -191,7 +191,7 @@ func (o *BdtPolicyData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *BdtPolicyData) SetSnssai(v Snssai) {
 
 // GetResUri returns the ResUri field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetResUri() string {
-	if o == nil || isNil(o.ResUri) {
+	if o == nil || IsNil(o.ResUri) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *BdtPolicyData) GetResUri() string {
 // GetResUriOk returns a tuple with the ResUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetResUriOk() (*string, bool) {
-	if o == nil || isNil(o.ResUri) {
+	if o == nil || IsNil(o.ResUri) {
 		return nil, false
 	}
 	return o.ResUri, true
@@ -223,7 +223,7 @@ func (o *BdtPolicyData) GetResUriOk() (*string, bool) {
 
 // HasResUri returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasResUri() bool {
-	if o != nil && !isNil(o.ResUri) {
+	if o != nil && !IsNil(o.ResUri) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *BdtPolicyData) SetResUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *BdtPolicyData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -255,7 +255,7 @@ func (o *BdtPolicyData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *BdtPolicyData) SetResetIds(v []string) {
 }
 
 func (o BdtPolicyData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -277,23 +277,23 @@ func (o BdtPolicyData) MarshalJSON() ([]byte, error) {
 
 func (o BdtPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.InterGroupId) {
+	if !IsNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	toSerialize["bdtRefId"] = o.BdtRefId
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.ResUri) {
+	if !IsNil(o.ResUri) {
 		toSerialize["resUri"] = o.ResUri
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -334,5 +334,3 @@ func (v *NullableBdtPolicyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

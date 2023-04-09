@@ -19,11 +19,7 @@ var _ MappedNullable = &NotifyPotentialFaultyAlarmList{}
 
 // NotifyPotentialFaultyAlarmList struct for NotifyPotentialFaultyAlarmList
 type NotifyPotentialFaultyAlarmList struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
+	NotificationHeader
 	Reason string `json:"reason"`
 }
 
@@ -31,7 +27,7 @@ type NotifyPotentialFaultyAlarmList struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyPotentialFaultyAlarmList(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, reason string) *NotifyPotentialFaultyAlarmList {
+func NewNotifyPotentialFaultyAlarmList(reason string, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyPotentialFaultyAlarmList {
 	this := NotifyPotentialFaultyAlarmList{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -48,126 +44,6 @@ func NewNotifyPotentialFaultyAlarmList(href string, notificationId int32, notifi
 func NewNotifyPotentialFaultyAlarmListWithDefaults() *NotifyPotentialFaultyAlarmList {
 	this := NotifyPotentialFaultyAlarmList{}
 	return &this
-}
-
-// GetHref returns the Href field value
-func (o *NotifyPotentialFaultyAlarmList) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyPotentialFaultyAlarmList) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyPotentialFaultyAlarmList) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyPotentialFaultyAlarmList) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyPotentialFaultyAlarmList) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyPotentialFaultyAlarmList) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyPotentialFaultyAlarmList) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyPotentialFaultyAlarmList) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyPotentialFaultyAlarmList) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyPotentialFaultyAlarmList) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyPotentialFaultyAlarmList) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyPotentialFaultyAlarmList) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyPotentialFaultyAlarmList) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyPotentialFaultyAlarmList) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyPotentialFaultyAlarmList) SetSystemDN(v string) {
-	o.SystemDN = v
 }
 
 // GetReason returns the Reason field value
@@ -195,7 +71,7 @@ func (o *NotifyPotentialFaultyAlarmList) SetReason(v string) {
 }
 
 func (o NotifyPotentialFaultyAlarmList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,11 +80,14 @@ func (o NotifyPotentialFaultyAlarmList) MarshalJSON() ([]byte, error) {
 
 func (o NotifyPotentialFaultyAlarmList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
 	toSerialize["reason"] = o.Reason
 	return toSerialize, nil
 }
@@ -248,5 +127,3 @@ func (v *NullableNotifyPotentialFaultyAlarmList) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

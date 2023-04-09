@@ -1,7 +1,7 @@
 /*
 Npkmf_PKMFKeyRequest
 
-PKMF KeyRequest Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PKMF KeyRequest Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the RedirectResponse type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RedirectResponse{}
 
-// RedirectResponse The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP. 
+// RedirectResponse The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP.
 type RedirectResponse struct {
 	Cause *string `json:"cause,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -45,7 +45,7 @@ func NewRedirectResponseWithDefaults() *RedirectResponse {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *RedirectResponse) GetCause() string {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *RedirectResponse) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedirectResponse) GetCauseOk() (*string, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -63,7 +63,7 @@ func (o *RedirectResponse) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *RedirectResponse) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *RedirectResponse) SetCause(v string) {
 
 // GetTargetScp returns the TargetScp field value if set, zero value otherwise.
 func (o *RedirectResponse) GetTargetScp() string {
-	if o == nil || isNil(o.TargetScp) {
+	if o == nil || IsNil(o.TargetScp) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *RedirectResponse) GetTargetScp() string {
 // GetTargetScpOk returns a tuple with the TargetScp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedirectResponse) GetTargetScpOk() (*string, bool) {
-	if o == nil || isNil(o.TargetScp) {
+	if o == nil || IsNil(o.TargetScp) {
 		return nil, false
 	}
 	return o.TargetScp, true
@@ -95,7 +95,7 @@ func (o *RedirectResponse) GetTargetScpOk() (*string, bool) {
 
 // HasTargetScp returns a boolean if a field has been set.
 func (o *RedirectResponse) HasTargetScp() bool {
-	if o != nil && !isNil(o.TargetScp) {
+	if o != nil && !IsNil(o.TargetScp) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *RedirectResponse) SetTargetScp(v string) {
 
 // GetTargetSepp returns the TargetSepp field value if set, zero value otherwise.
 func (o *RedirectResponse) GetTargetSepp() string {
-	if o == nil || isNil(o.TargetSepp) {
+	if o == nil || IsNil(o.TargetSepp) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *RedirectResponse) GetTargetSepp() string {
 // GetTargetSeppOk returns a tuple with the TargetSepp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedirectResponse) GetTargetSeppOk() (*string, bool) {
-	if o == nil || isNil(o.TargetSepp) {
+	if o == nil || IsNil(o.TargetSepp) {
 		return nil, false
 	}
 	return o.TargetSepp, true
@@ -127,7 +127,7 @@ func (o *RedirectResponse) GetTargetSeppOk() (*string, bool) {
 
 // HasTargetSepp returns a boolean if a field has been set.
 func (o *RedirectResponse) HasTargetSepp() bool {
-	if o != nil && !isNil(o.TargetSepp) {
+	if o != nil && !IsNil(o.TargetSepp) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *RedirectResponse) SetTargetSepp(v string) {
 }
 
 func (o RedirectResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o RedirectResponse) MarshalJSON() ([]byte, error) {
 
 func (o RedirectResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !isNil(o.TargetScp) {
+	if !IsNil(o.TargetScp) {
 		toSerialize["targetScp"] = o.TargetScp
 	}
-	if !isNil(o.TargetSepp) {
+	if !IsNil(o.TargetSepp) {
 		toSerialize["targetSepp"] = o.TargetSepp
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableRedirectResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

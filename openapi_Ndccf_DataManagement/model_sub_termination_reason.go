@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SubTerminationReason Subscription Termination Reason.
 type SubTerminationReason struct {
-	SubTerminationReasonAnyOf *SubTerminationReasonAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SubTerminationReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SubTerminationReasonAnyOf
-	err = json.Unmarshal(data, &dst.SubTerminationReasonAnyOf);
-	if err == nil {
-		jsonSubTerminationReasonAnyOf, _ := json.Marshal(dst.SubTerminationReasonAnyOf)
-		if string(jsonSubTerminationReasonAnyOf) == "{}" { // empty struct
-			dst.SubTerminationReasonAnyOf = nil
-		} else {
-			return nil // data stored in dst.SubTerminationReasonAnyOf, return on the first match
-		}
-	} else {
-		dst.SubTerminationReasonAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SubTerminationReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SubTerminationReason) MarshalJSON() ([]byte, error) {
-	if src.SubTerminationReasonAnyOf != nil {
-		return json.Marshal(&src.SubTerminationReasonAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSubTerminationReason) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

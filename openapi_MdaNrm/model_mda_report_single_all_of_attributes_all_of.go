@@ -19,8 +19,8 @@ var _ MappedNullable = &MDAReportSingleAllOfAttributesAllOf{}
 
 // MDAReportSingleAllOfAttributesAllOf struct for MDAReportSingleAllOfAttributesAllOf
 type MDAReportSingleAllOfAttributesAllOf struct {
-	MDAReportID *string `json:"mDAReportID,omitempty"`
-	MDAOutputs *MDAOutputs1 `json:"mDAOutputs,omitempty"`
+	MDAReportID *string      `json:"mDAReportID,omitempty"`
+	MDAOutputs  *MDAOutputs1 `json:"mDAOutputs,omitempty"`
 }
 
 // NewMDAReportSingleAllOfAttributesAllOf instantiates a new MDAReportSingleAllOfAttributesAllOf object
@@ -105,7 +105,7 @@ func (o *MDAReportSingleAllOfAttributesAllOf) SetMDAOutputs(v MDAOutputs1) {
 }
 
 func (o MDAReportSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,5 +158,3 @@ func (v *NullableMDAReportSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

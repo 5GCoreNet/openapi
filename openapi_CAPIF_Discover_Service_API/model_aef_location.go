@@ -1,7 +1,7 @@
 /*
 CAPIF_Discover_Service_API
 
-API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the AefLocation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AefLocation{}
 
-// AefLocation Represents the location information (e.g. civic address, GPS coordinates, data center ID) where the AEF providing the service API is located. 
+// AefLocation Represents the location information (e.g. civic address, GPS coordinates, data center ID) where the AEF providing the service API is located.
 type AefLocation struct {
-	CivicAddr *CivicAddress `json:"civicAddr,omitempty"`
-	GeoArea *GeographicArea `json:"geoArea,omitempty"`
-	// Identifies the data center where the AEF providing the service API is located. 
+	CivicAddr *CivicAddress   `json:"civicAddr,omitempty"`
+	GeoArea   *GeographicArea `json:"geoArea,omitempty"`
+	// Identifies the data center where the AEF providing the service API is located.
 	DcId *string `json:"dcId,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewAefLocationWithDefaults() *AefLocation {
 
 // GetCivicAddr returns the CivicAddr field value if set, zero value otherwise.
 func (o *AefLocation) GetCivicAddr() CivicAddress {
-	if o == nil || isNil(o.CivicAddr) {
+	if o == nil || IsNil(o.CivicAddr) {
 		var ret CivicAddress
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AefLocation) GetCivicAddr() CivicAddress {
 // GetCivicAddrOk returns a tuple with the CivicAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AefLocation) GetCivicAddrOk() (*CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddr) {
+	if o == nil || IsNil(o.CivicAddr) {
 		return nil, false
 	}
 	return o.CivicAddr, true
@@ -62,7 +62,7 @@ func (o *AefLocation) GetCivicAddrOk() (*CivicAddress, bool) {
 
 // HasCivicAddr returns a boolean if a field has been set.
 func (o *AefLocation) HasCivicAddr() bool {
-	if o != nil && !isNil(o.CivicAddr) {
+	if o != nil && !IsNil(o.CivicAddr) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AefLocation) SetCivicAddr(v CivicAddress) {
 
 // GetGeoArea returns the GeoArea field value if set, zero value otherwise.
 func (o *AefLocation) GetGeoArea() GeographicArea {
-	if o == nil || isNil(o.GeoArea) {
+	if o == nil || IsNil(o.GeoArea) {
 		var ret GeographicArea
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AefLocation) GetGeoArea() GeographicArea {
 // GetGeoAreaOk returns a tuple with the GeoArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AefLocation) GetGeoAreaOk() (*GeographicArea, bool) {
-	if o == nil || isNil(o.GeoArea) {
+	if o == nil || IsNil(o.GeoArea) {
 		return nil, false
 	}
 	return o.GeoArea, true
@@ -94,7 +94,7 @@ func (o *AefLocation) GetGeoAreaOk() (*GeographicArea, bool) {
 
 // HasGeoArea returns a boolean if a field has been set.
 func (o *AefLocation) HasGeoArea() bool {
-	if o != nil && !isNil(o.GeoArea) {
+	if o != nil && !IsNil(o.GeoArea) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AefLocation) SetGeoArea(v GeographicArea) {
 
 // GetDcId returns the DcId field value if set, zero value otherwise.
 func (o *AefLocation) GetDcId() string {
-	if o == nil || isNil(o.DcId) {
+	if o == nil || IsNil(o.DcId) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AefLocation) GetDcId() string {
 // GetDcIdOk returns a tuple with the DcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AefLocation) GetDcIdOk() (*string, bool) {
-	if o == nil || isNil(o.DcId) {
+	if o == nil || IsNil(o.DcId) {
 		return nil, false
 	}
 	return o.DcId, true
@@ -126,7 +126,7 @@ func (o *AefLocation) GetDcIdOk() (*string, bool) {
 
 // HasDcId returns a boolean if a field has been set.
 func (o *AefLocation) HasDcId() bool {
-	if o != nil && !isNil(o.DcId) {
+	if o != nil && !IsNil(o.DcId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *AefLocation) SetDcId(v string) {
 }
 
 func (o AefLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o AefLocation) MarshalJSON() ([]byte, error) {
 
 func (o AefLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CivicAddr) {
+	if !IsNil(o.CivicAddr) {
 		toSerialize["civicAddr"] = o.CivicAddr
 	}
-	if !isNil(o.GeoArea) {
+	if !IsNil(o.GeoArea) {
 		toSerialize["geoArea"] = o.GeoArea
 	}
-	if !isNil(o.DcId) {
+	if !IsNil(o.DcId) {
 		toSerialize["dcId"] = o.DcId
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableAefLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

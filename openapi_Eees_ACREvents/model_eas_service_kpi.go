@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -33,7 +33,7 @@ type EASServiceKPI struct {
 	AvlMem *int32 `json:"avlMem,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	AvlStrg *int32 `json:"avlStrg,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ConnBand *string `json:"connBand,omitempty"`
 }
 
@@ -56,7 +56,7 @@ func NewEASServiceKPIWithDefaults() *EASServiceKPI {
 
 // GetMaxReqRate returns the MaxReqRate field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetMaxReqRate() int32 {
-	if o == nil || isNil(o.MaxReqRate) {
+	if o == nil || IsNil(o.MaxReqRate) {
 		var ret int32
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *EASServiceKPI) GetMaxReqRate() int32 {
 // GetMaxReqRateOk returns a tuple with the MaxReqRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetMaxReqRateOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxReqRate) {
+	if o == nil || IsNil(o.MaxReqRate) {
 		return nil, false
 	}
 	return o.MaxReqRate, true
@@ -74,7 +74,7 @@ func (o *EASServiceKPI) GetMaxReqRateOk() (*int32, bool) {
 
 // HasMaxReqRate returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasMaxReqRate() bool {
-	if o != nil && !isNil(o.MaxReqRate) {
+	if o != nil && !IsNil(o.MaxReqRate) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *EASServiceKPI) SetMaxReqRate(v int32) {
 
 // GetMaxRespTime returns the MaxRespTime field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetMaxRespTime() int32 {
-	if o == nil || isNil(o.MaxRespTime) {
+	if o == nil || IsNil(o.MaxRespTime) {
 		var ret int32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *EASServiceKPI) GetMaxRespTime() int32 {
 // GetMaxRespTimeOk returns a tuple with the MaxRespTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetMaxRespTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxRespTime) {
+	if o == nil || IsNil(o.MaxRespTime) {
 		return nil, false
 	}
 	return o.MaxRespTime, true
@@ -106,7 +106,7 @@ func (o *EASServiceKPI) GetMaxRespTimeOk() (*int32, bool) {
 
 // HasMaxRespTime returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasMaxRespTime() bool {
-	if o != nil && !isNil(o.MaxRespTime) {
+	if o != nil && !IsNil(o.MaxRespTime) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *EASServiceKPI) SetMaxRespTime(v int32) {
 
 // GetAvail returns the Avail field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetAvail() int32 {
-	if o == nil || isNil(o.Avail) {
+	if o == nil || IsNil(o.Avail) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *EASServiceKPI) GetAvail() int32 {
 // GetAvailOk returns a tuple with the Avail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetAvailOk() (*int32, bool) {
-	if o == nil || isNil(o.Avail) {
+	if o == nil || IsNil(o.Avail) {
 		return nil, false
 	}
 	return o.Avail, true
@@ -138,7 +138,7 @@ func (o *EASServiceKPI) GetAvailOk() (*int32, bool) {
 
 // HasAvail returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasAvail() bool {
-	if o != nil && !isNil(o.Avail) {
+	if o != nil && !IsNil(o.Avail) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *EASServiceKPI) SetAvail(v int32) {
 
 // GetAvlComp returns the AvlComp field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetAvlComp() int32 {
-	if o == nil || isNil(o.AvlComp) {
+	if o == nil || IsNil(o.AvlComp) {
 		var ret int32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *EASServiceKPI) GetAvlComp() int32 {
 // GetAvlCompOk returns a tuple with the AvlComp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetAvlCompOk() (*int32, bool) {
-	if o == nil || isNil(o.AvlComp) {
+	if o == nil || IsNil(o.AvlComp) {
 		return nil, false
 	}
 	return o.AvlComp, true
@@ -170,7 +170,7 @@ func (o *EASServiceKPI) GetAvlCompOk() (*int32, bool) {
 
 // HasAvlComp returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasAvlComp() bool {
-	if o != nil && !isNil(o.AvlComp) {
+	if o != nil && !IsNil(o.AvlComp) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *EASServiceKPI) SetAvlComp(v int32) {
 
 // GetAvlGraComp returns the AvlGraComp field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetAvlGraComp() int32 {
-	if o == nil || isNil(o.AvlGraComp) {
+	if o == nil || IsNil(o.AvlGraComp) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *EASServiceKPI) GetAvlGraComp() int32 {
 // GetAvlGraCompOk returns a tuple with the AvlGraComp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetAvlGraCompOk() (*int32, bool) {
-	if o == nil || isNil(o.AvlGraComp) {
+	if o == nil || IsNil(o.AvlGraComp) {
 		return nil, false
 	}
 	return o.AvlGraComp, true
@@ -202,7 +202,7 @@ func (o *EASServiceKPI) GetAvlGraCompOk() (*int32, bool) {
 
 // HasAvlGraComp returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasAvlGraComp() bool {
-	if o != nil && !isNil(o.AvlGraComp) {
+	if o != nil && !IsNil(o.AvlGraComp) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *EASServiceKPI) SetAvlGraComp(v int32) {
 
 // GetAvlMem returns the AvlMem field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetAvlMem() int32 {
-	if o == nil || isNil(o.AvlMem) {
+	if o == nil || IsNil(o.AvlMem) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *EASServiceKPI) GetAvlMem() int32 {
 // GetAvlMemOk returns a tuple with the AvlMem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetAvlMemOk() (*int32, bool) {
-	if o == nil || isNil(o.AvlMem) {
+	if o == nil || IsNil(o.AvlMem) {
 		return nil, false
 	}
 	return o.AvlMem, true
@@ -234,7 +234,7 @@ func (o *EASServiceKPI) GetAvlMemOk() (*int32, bool) {
 
 // HasAvlMem returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasAvlMem() bool {
-	if o != nil && !isNil(o.AvlMem) {
+	if o != nil && !IsNil(o.AvlMem) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *EASServiceKPI) SetAvlMem(v int32) {
 
 // GetAvlStrg returns the AvlStrg field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetAvlStrg() int32 {
-	if o == nil || isNil(o.AvlStrg) {
+	if o == nil || IsNil(o.AvlStrg) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *EASServiceKPI) GetAvlStrg() int32 {
 // GetAvlStrgOk returns a tuple with the AvlStrg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetAvlStrgOk() (*int32, bool) {
-	if o == nil || isNil(o.AvlStrg) {
+	if o == nil || IsNil(o.AvlStrg) {
 		return nil, false
 	}
 	return o.AvlStrg, true
@@ -266,7 +266,7 @@ func (o *EASServiceKPI) GetAvlStrgOk() (*int32, bool) {
 
 // HasAvlStrg returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasAvlStrg() bool {
-	if o != nil && !isNil(o.AvlStrg) {
+	if o != nil && !IsNil(o.AvlStrg) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *EASServiceKPI) SetAvlStrg(v int32) {
 
 // GetConnBand returns the ConnBand field value if set, zero value otherwise.
 func (o *EASServiceKPI) GetConnBand() string {
-	if o == nil || isNil(o.ConnBand) {
+	if o == nil || IsNil(o.ConnBand) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *EASServiceKPI) GetConnBand() string {
 // GetConnBandOk returns a tuple with the ConnBand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASServiceKPI) GetConnBandOk() (*string, bool) {
-	if o == nil || isNil(o.ConnBand) {
+	if o == nil || IsNil(o.ConnBand) {
 		return nil, false
 	}
 	return o.ConnBand, true
@@ -298,7 +298,7 @@ func (o *EASServiceKPI) GetConnBandOk() (*string, bool) {
 
 // HasConnBand returns a boolean if a field has been set.
 func (o *EASServiceKPI) HasConnBand() bool {
-	if o != nil && !isNil(o.ConnBand) {
+	if o != nil && !IsNil(o.ConnBand) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *EASServiceKPI) SetConnBand(v string) {
 }
 
 func (o EASServiceKPI) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,28 +320,28 @@ func (o EASServiceKPI) MarshalJSON() ([]byte, error) {
 
 func (o EASServiceKPI) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MaxReqRate) {
+	if !IsNil(o.MaxReqRate) {
 		toSerialize["maxReqRate"] = o.MaxReqRate
 	}
-	if !isNil(o.MaxRespTime) {
+	if !IsNil(o.MaxRespTime) {
 		toSerialize["maxRespTime"] = o.MaxRespTime
 	}
-	if !isNil(o.Avail) {
+	if !IsNil(o.Avail) {
 		toSerialize["avail"] = o.Avail
 	}
-	if !isNil(o.AvlComp) {
+	if !IsNil(o.AvlComp) {
 		toSerialize["avlComp"] = o.AvlComp
 	}
-	if !isNil(o.AvlGraComp) {
+	if !IsNil(o.AvlGraComp) {
 		toSerialize["avlGraComp"] = o.AvlGraComp
 	}
-	if !isNil(o.AvlMem) {
+	if !IsNil(o.AvlMem) {
 		toSerialize["avlMem"] = o.AvlMem
 	}
-	if !isNil(o.AvlStrg) {
+	if !IsNil(o.AvlStrg) {
 		toSerialize["avlStrg"] = o.AvlStrg
 	}
-	if !isNil(o.ConnBand) {
+	if !IsNil(o.ConnBand) {
 		toSerialize["connBand"] = o.ConnBand
 	}
 	return toSerialize, nil
@@ -382,5 +382,3 @@ func (v *NullableEASServiceKPI) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

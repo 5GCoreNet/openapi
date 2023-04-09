@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &DnnEasdfInfoItem{}
 
 // DnnEasdfInfoItem Set of parameters supported by EASDF for a given DNN
 type DnnEasdfInfoItem struct {
-	Dnn DnnSmfInfoItemDnn `json:"dnn"`
-	DnaiList []string `json:"dnaiList,omitempty"`
+	Dnn      DnnSmfInfoItemDnn `json:"dnn"`
+	DnaiList []string          `json:"dnaiList,omitempty"`
 }
 
 // NewDnnEasdfInfoItem instantiates a new DnnEasdfInfoItem object
@@ -67,7 +67,7 @@ func (o *DnnEasdfInfoItem) SetDnn(v DnnSmfInfoItemDnn) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *DnnEasdfInfoItem) GetDnaiList() []string {
-	if o == nil || isNil(o.DnaiList) {
+	if o == nil || IsNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *DnnEasdfInfoItem) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnEasdfInfoItem) GetDnaiListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnaiList) {
+	if o == nil || IsNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -85,7 +85,7 @@ func (o *DnnEasdfInfoItem) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *DnnEasdfInfoItem) HasDnaiList() bool {
-	if o != nil && !isNil(o.DnaiList) {
+	if o != nil && !IsNil(o.DnaiList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *DnnEasdfInfoItem) SetDnaiList(v []string) {
 }
 
 func (o DnnEasdfInfoItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o DnnEasdfInfoItem) MarshalJSON() ([]byte, error) {
 func (o DnnEasdfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !isNil(o.DnaiList) {
+	if !IsNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableDnnEasdfInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1982,14 +1982,25 @@ components:
       type: object
     EventConsumerType:
       anyOf:
-      - $ref: '#/components/schemas/EventConsumerType_anyOf'
+      - enum:
+        - NWDAF
+        - EVENT_CONSUMER_AF
+        - NEF
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
       description: The type of event consumer.
     DataAggregationFunctionType:
       anyOf:
-      - $ref: '#/components/schemas/DataAggregationFunctionType_anyOf'
+      - enum:
+        - "NULL"
+        - COUNT
+        - MEAN
+        - MAXIMUM
+        - MINIMUM
+        - SUM
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2101,14 +2112,32 @@ components:
       type: string
     AfEvent:
       anyOf:
-      - $ref: '#/components/schemas/AfEvent_anyOf'
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
       description: Represents Application Events.
     DataCollectionClientType:
       anyOf:
-      - $ref: '#/components/schemas/DataCollectionClientType_anyOf'
+      - enum:
+        - DIRECT
+        - INDIRECT
+        - APPLICATION_SERVER
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2457,9 +2486,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2840,7 +2880,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -3592,47 +3689,6 @@ components:
       - aggregationFunctions
       - locationAreas
       type: object
-    EventConsumerType_anyOf:
-      enum:
-      - NWDAF
-      - EVENT_CONSUMER_AF
-      - NEF
-      type: string
-      example: null
-    DataAggregationFunctionType_anyOf:
-      enum:
-      - "NULL"
-      - COUNT
-      - MEAN
-      - MAXIMUM
-      - MINIMUM
-      - SUM
-      type: string
-      example: null
-    AfEvent_anyOf:
-      enum:
-      - SVC_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMM
-      - EXCEPTIONS
-      - USER_DATA_CONGESTION
-      - PERF_DATA
-      - DISPERSION
-      - COLLECTIVE_BEHAVIOUR
-      - MS_QOE_METRICS
-      - MS_CONSUMPTION
-      - MS_NET_ASSIST_INVOCATION
-      - MS_DYN_POLICY_INVOCATION
-      - MS_ACCESS_ACTIVITY
-      type: string
-      example: null
-    DataCollectionClientType_anyOf:
-      enum:
-      - DIRECT
-      - INDIRECT
-      - APPLICATION_SERVER
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -3640,19 +3696,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -3821,66 +3864,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

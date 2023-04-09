@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -31,15 +31,15 @@ type UeCommunication struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Ts *time.Time `json:"ts,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
-	TsVariance *float32 `json:"tsVariance,omitempty"`
+	TsVariance    *float32                    `json:"tsVariance,omitempty"`
 	RecurringTime *ScheduledCommunicationTime `json:"recurringTime,omitempty"`
-	TrafChar *TrafficCharacterization `json:"trafChar,omitempty"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
-	Ratio *int32 `json:"ratio,omitempty"`
-	PerioCommInd *bool `json:"perioCommInd,omitempty"`
+	TrafChar      *TrafficCharacterization    `json:"trafChar,omitempty"`
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
+	Ratio        *int32 `json:"ratio,omitempty"`
+	PerioCommInd *bool  `json:"perioCommInd,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	Confidence *int32 `json:"confidence,omitempty"`
-	AnaOfAppList *AppListForUeComm `json:"anaOfAppList,omitempty"`
+	Confidence     *int32                   `json:"confidence,omitempty"`
+	AnaOfAppList   *AppListForUeComm        `json:"anaOfAppList,omitempty"`
 	SessInactTimer *SessInactTimerForUeComm `json:"sessInactTimer,omitempty"`
 }
 
@@ -62,7 +62,7 @@ func NewUeCommunicationWithDefaults() *UeCommunication {
 
 // GetCommDur returns the CommDur field value if set, zero value otherwise.
 func (o *UeCommunication) GetCommDur() int32 {
-	if o == nil || isNil(o.CommDur) {
+	if o == nil || IsNil(o.CommDur) {
 		var ret int32
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *UeCommunication) GetCommDur() int32 {
 // GetCommDurOk returns a tuple with the CommDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetCommDurOk() (*int32, bool) {
-	if o == nil || isNil(o.CommDur) {
+	if o == nil || IsNil(o.CommDur) {
 		return nil, false
 	}
 	return o.CommDur, true
@@ -80,7 +80,7 @@ func (o *UeCommunication) GetCommDurOk() (*int32, bool) {
 
 // HasCommDur returns a boolean if a field has been set.
 func (o *UeCommunication) HasCommDur() bool {
-	if o != nil && !isNil(o.CommDur) {
+	if o != nil && !IsNil(o.CommDur) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *UeCommunication) SetCommDur(v int32) {
 
 // GetCommDurVariance returns the CommDurVariance field value if set, zero value otherwise.
 func (o *UeCommunication) GetCommDurVariance() float32 {
-	if o == nil || isNil(o.CommDurVariance) {
+	if o == nil || IsNil(o.CommDurVariance) {
 		var ret float32
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *UeCommunication) GetCommDurVariance() float32 {
 // GetCommDurVarianceOk returns a tuple with the CommDurVariance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetCommDurVarianceOk() (*float32, bool) {
-	if o == nil || isNil(o.CommDurVariance) {
+	if o == nil || IsNil(o.CommDurVariance) {
 		return nil, false
 	}
 	return o.CommDurVariance, true
@@ -112,7 +112,7 @@ func (o *UeCommunication) GetCommDurVarianceOk() (*float32, bool) {
 
 // HasCommDurVariance returns a boolean if a field has been set.
 func (o *UeCommunication) HasCommDurVariance() bool {
-	if o != nil && !isNil(o.CommDurVariance) {
+	if o != nil && !IsNil(o.CommDurVariance) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *UeCommunication) SetCommDurVariance(v float32) {
 
 // GetPerioTime returns the PerioTime field value if set, zero value otherwise.
 func (o *UeCommunication) GetPerioTime() int32 {
-	if o == nil || isNil(o.PerioTime) {
+	if o == nil || IsNil(o.PerioTime) {
 		var ret int32
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *UeCommunication) GetPerioTime() int32 {
 // GetPerioTimeOk returns a tuple with the PerioTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetPerioTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.PerioTime) {
+	if o == nil || IsNil(o.PerioTime) {
 		return nil, false
 	}
 	return o.PerioTime, true
@@ -144,7 +144,7 @@ func (o *UeCommunication) GetPerioTimeOk() (*int32, bool) {
 
 // HasPerioTime returns a boolean if a field has been set.
 func (o *UeCommunication) HasPerioTime() bool {
-	if o != nil && !isNil(o.PerioTime) {
+	if o != nil && !IsNil(o.PerioTime) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *UeCommunication) SetPerioTime(v int32) {
 
 // GetPerioTimeVariance returns the PerioTimeVariance field value if set, zero value otherwise.
 func (o *UeCommunication) GetPerioTimeVariance() float32 {
-	if o == nil || isNil(o.PerioTimeVariance) {
+	if o == nil || IsNil(o.PerioTimeVariance) {
 		var ret float32
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *UeCommunication) GetPerioTimeVariance() float32 {
 // GetPerioTimeVarianceOk returns a tuple with the PerioTimeVariance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetPerioTimeVarianceOk() (*float32, bool) {
-	if o == nil || isNil(o.PerioTimeVariance) {
+	if o == nil || IsNil(o.PerioTimeVariance) {
 		return nil, false
 	}
 	return o.PerioTimeVariance, true
@@ -176,7 +176,7 @@ func (o *UeCommunication) GetPerioTimeVarianceOk() (*float32, bool) {
 
 // HasPerioTimeVariance returns a boolean if a field has been set.
 func (o *UeCommunication) HasPerioTimeVariance() bool {
-	if o != nil && !isNil(o.PerioTimeVariance) {
+	if o != nil && !IsNil(o.PerioTimeVariance) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *UeCommunication) SetPerioTimeVariance(v float32) {
 
 // GetTs returns the Ts field value if set, zero value otherwise.
 func (o *UeCommunication) GetTs() time.Time {
-	if o == nil || isNil(o.Ts) {
+	if o == nil || IsNil(o.Ts) {
 		var ret time.Time
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *UeCommunication) GetTs() time.Time {
 // GetTsOk returns a tuple with the Ts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetTsOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Ts) {
+	if o == nil || IsNil(o.Ts) {
 		return nil, false
 	}
 	return o.Ts, true
@@ -208,7 +208,7 @@ func (o *UeCommunication) GetTsOk() (*time.Time, bool) {
 
 // HasTs returns a boolean if a field has been set.
 func (o *UeCommunication) HasTs() bool {
-	if o != nil && !isNil(o.Ts) {
+	if o != nil && !IsNil(o.Ts) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *UeCommunication) SetTs(v time.Time) {
 
 // GetTsVariance returns the TsVariance field value if set, zero value otherwise.
 func (o *UeCommunication) GetTsVariance() float32 {
-	if o == nil || isNil(o.TsVariance) {
+	if o == nil || IsNil(o.TsVariance) {
 		var ret float32
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *UeCommunication) GetTsVariance() float32 {
 // GetTsVarianceOk returns a tuple with the TsVariance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetTsVarianceOk() (*float32, bool) {
-	if o == nil || isNil(o.TsVariance) {
+	if o == nil || IsNil(o.TsVariance) {
 		return nil, false
 	}
 	return o.TsVariance, true
@@ -240,7 +240,7 @@ func (o *UeCommunication) GetTsVarianceOk() (*float32, bool) {
 
 // HasTsVariance returns a boolean if a field has been set.
 func (o *UeCommunication) HasTsVariance() bool {
-	if o != nil && !isNil(o.TsVariance) {
+	if o != nil && !IsNil(o.TsVariance) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *UeCommunication) SetTsVariance(v float32) {
 
 // GetRecurringTime returns the RecurringTime field value if set, zero value otherwise.
 func (o *UeCommunication) GetRecurringTime() ScheduledCommunicationTime {
-	if o == nil || isNil(o.RecurringTime) {
+	if o == nil || IsNil(o.RecurringTime) {
 		var ret ScheduledCommunicationTime
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *UeCommunication) GetRecurringTime() ScheduledCommunicationTime {
 // GetRecurringTimeOk returns a tuple with the RecurringTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetRecurringTimeOk() (*ScheduledCommunicationTime, bool) {
-	if o == nil || isNil(o.RecurringTime) {
+	if o == nil || IsNil(o.RecurringTime) {
 		return nil, false
 	}
 	return o.RecurringTime, true
@@ -272,7 +272,7 @@ func (o *UeCommunication) GetRecurringTimeOk() (*ScheduledCommunicationTime, boo
 
 // HasRecurringTime returns a boolean if a field has been set.
 func (o *UeCommunication) HasRecurringTime() bool {
-	if o != nil && !isNil(o.RecurringTime) {
+	if o != nil && !IsNil(o.RecurringTime) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *UeCommunication) SetRecurringTime(v ScheduledCommunicationTime) {
 
 // GetTrafChar returns the TrafChar field value if set, zero value otherwise.
 func (o *UeCommunication) GetTrafChar() TrafficCharacterization {
-	if o == nil || isNil(o.TrafChar) {
+	if o == nil || IsNil(o.TrafChar) {
 		var ret TrafficCharacterization
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *UeCommunication) GetTrafChar() TrafficCharacterization {
 // GetTrafCharOk returns a tuple with the TrafChar field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetTrafCharOk() (*TrafficCharacterization, bool) {
-	if o == nil || isNil(o.TrafChar) {
+	if o == nil || IsNil(o.TrafChar) {
 		return nil, false
 	}
 	return o.TrafChar, true
@@ -304,7 +304,7 @@ func (o *UeCommunication) GetTrafCharOk() (*TrafficCharacterization, bool) {
 
 // HasTrafChar returns a boolean if a field has been set.
 func (o *UeCommunication) HasTrafChar() bool {
-	if o != nil && !isNil(o.TrafChar) {
+	if o != nil && !IsNil(o.TrafChar) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *UeCommunication) SetTrafChar(v TrafficCharacterization) {
 
 // GetRatio returns the Ratio field value if set, zero value otherwise.
 func (o *UeCommunication) GetRatio() int32 {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		var ret int32
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *UeCommunication) GetRatio() int32 {
 // GetRatioOk returns a tuple with the Ratio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		return nil, false
 	}
 	return o.Ratio, true
@@ -336,7 +336,7 @@ func (o *UeCommunication) GetRatioOk() (*int32, bool) {
 
 // HasRatio returns a boolean if a field has been set.
 func (o *UeCommunication) HasRatio() bool {
-	if o != nil && !isNil(o.Ratio) {
+	if o != nil && !IsNil(o.Ratio) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *UeCommunication) SetRatio(v int32) {
 
 // GetPerioCommInd returns the PerioCommInd field value if set, zero value otherwise.
 func (o *UeCommunication) GetPerioCommInd() bool {
-	if o == nil || isNil(o.PerioCommInd) {
+	if o == nil || IsNil(o.PerioCommInd) {
 		var ret bool
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *UeCommunication) GetPerioCommInd() bool {
 // GetPerioCommIndOk returns a tuple with the PerioCommInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetPerioCommIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PerioCommInd) {
+	if o == nil || IsNil(o.PerioCommInd) {
 		return nil, false
 	}
 	return o.PerioCommInd, true
@@ -368,7 +368,7 @@ func (o *UeCommunication) GetPerioCommIndOk() (*bool, bool) {
 
 // HasPerioCommInd returns a boolean if a field has been set.
 func (o *UeCommunication) HasPerioCommInd() bool {
-	if o != nil && !isNil(o.PerioCommInd) {
+	if o != nil && !IsNil(o.PerioCommInd) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *UeCommunication) SetPerioCommInd(v bool) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *UeCommunication) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *UeCommunication) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -400,7 +400,7 @@ func (o *UeCommunication) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *UeCommunication) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *UeCommunication) SetConfidence(v int32) {
 
 // GetAnaOfAppList returns the AnaOfAppList field value if set, zero value otherwise.
 func (o *UeCommunication) GetAnaOfAppList() AppListForUeComm {
-	if o == nil || isNil(o.AnaOfAppList) {
+	if o == nil || IsNil(o.AnaOfAppList) {
 		var ret AppListForUeComm
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *UeCommunication) GetAnaOfAppList() AppListForUeComm {
 // GetAnaOfAppListOk returns a tuple with the AnaOfAppList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetAnaOfAppListOk() (*AppListForUeComm, bool) {
-	if o == nil || isNil(o.AnaOfAppList) {
+	if o == nil || IsNil(o.AnaOfAppList) {
 		return nil, false
 	}
 	return o.AnaOfAppList, true
@@ -432,7 +432,7 @@ func (o *UeCommunication) GetAnaOfAppListOk() (*AppListForUeComm, bool) {
 
 // HasAnaOfAppList returns a boolean if a field has been set.
 func (o *UeCommunication) HasAnaOfAppList() bool {
-	if o != nil && !isNil(o.AnaOfAppList) {
+	if o != nil && !IsNil(o.AnaOfAppList) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *UeCommunication) SetAnaOfAppList(v AppListForUeComm) {
 
 // GetSessInactTimer returns the SessInactTimer field value if set, zero value otherwise.
 func (o *UeCommunication) GetSessInactTimer() SessInactTimerForUeComm {
-	if o == nil || isNil(o.SessInactTimer) {
+	if o == nil || IsNil(o.SessInactTimer) {
 		var ret SessInactTimerForUeComm
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *UeCommunication) GetSessInactTimer() SessInactTimerForUeComm {
 // GetSessInactTimerOk returns a tuple with the SessInactTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunication) GetSessInactTimerOk() (*SessInactTimerForUeComm, bool) {
-	if o == nil || isNil(o.SessInactTimer) {
+	if o == nil || IsNil(o.SessInactTimer) {
 		return nil, false
 	}
 	return o.SessInactTimer, true
@@ -464,7 +464,7 @@ func (o *UeCommunication) GetSessInactTimerOk() (*SessInactTimerForUeComm, bool)
 
 // HasSessInactTimer returns a boolean if a field has been set.
 func (o *UeCommunication) HasSessInactTimer() bool {
-	if o != nil && !isNil(o.SessInactTimer) {
+	if o != nil && !IsNil(o.SessInactTimer) {
 		return true
 	}
 
@@ -477,7 +477,7 @@ func (o *UeCommunication) SetSessInactTimer(v SessInactTimerForUeComm) {
 }
 
 func (o UeCommunication) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -486,43 +486,43 @@ func (o UeCommunication) MarshalJSON() ([]byte, error) {
 
 func (o UeCommunication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CommDur) {
+	if !IsNil(o.CommDur) {
 		toSerialize["commDur"] = o.CommDur
 	}
-	if !isNil(o.CommDurVariance) {
+	if !IsNil(o.CommDurVariance) {
 		toSerialize["commDurVariance"] = o.CommDurVariance
 	}
-	if !isNil(o.PerioTime) {
+	if !IsNil(o.PerioTime) {
 		toSerialize["perioTime"] = o.PerioTime
 	}
-	if !isNil(o.PerioTimeVariance) {
+	if !IsNil(o.PerioTimeVariance) {
 		toSerialize["perioTimeVariance"] = o.PerioTimeVariance
 	}
-	if !isNil(o.Ts) {
+	if !IsNil(o.Ts) {
 		toSerialize["ts"] = o.Ts
 	}
-	if !isNil(o.TsVariance) {
+	if !IsNil(o.TsVariance) {
 		toSerialize["tsVariance"] = o.TsVariance
 	}
-	if !isNil(o.RecurringTime) {
+	if !IsNil(o.RecurringTime) {
 		toSerialize["recurringTime"] = o.RecurringTime
 	}
-	if !isNil(o.TrafChar) {
+	if !IsNil(o.TrafChar) {
 		toSerialize["trafChar"] = o.TrafChar
 	}
-	if !isNil(o.Ratio) {
+	if !IsNil(o.Ratio) {
 		toSerialize["ratio"] = o.Ratio
 	}
-	if !isNil(o.PerioCommInd) {
+	if !IsNil(o.PerioCommInd) {
 		toSerialize["perioCommInd"] = o.PerioCommInd
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
-	if !isNil(o.AnaOfAppList) {
+	if !IsNil(o.AnaOfAppList) {
 		toSerialize["anaOfAppList"] = o.AnaOfAppList
 	}
-	if !isNil(o.SessInactTimer) {
+	if !IsNil(o.SessInactTimer) {
 		toSerialize["sessInactTimer"] = o.SessInactTimer
 	}
 	return toSerialize, nil
@@ -563,5 +563,3 @@ func (v *NullableUeCommunication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

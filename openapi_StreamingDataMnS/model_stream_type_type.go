@@ -20,9 +20,9 @@ type StreamTypeType string
 
 // List of streamType-Type
 const (
-	TRACE StreamTypeType = "TRACE"
+	TRACE       StreamTypeType = "TRACE"
 	PERFORMANCE StreamTypeType = "PERFORMANCE"
-	ANALYTICS StreamTypeType = "ANALYTICS"
+	ANALYTICS   StreamTypeType = "ANALYTICS"
 	PROPRIETARY StreamTypeType = "PROPRIETARY"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableStreamTypeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

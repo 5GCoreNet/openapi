@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for structured data for exposure
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Exposure_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // PduSessionManagementDataApiService PduSessionManagementDataApi service
 type PduSessionManagementDataApiService service
 
 type ApiCreateOrReplaceSessionManagementDataRequest struct {
-	ctx context.Context
-	ApiService *PduSessionManagementDataApiService
-	ueId string
-	pduSessionId int32
+	ctx                      context.Context
+	ApiService               *PduSessionManagementDataApiService
+	ueId                     string
+	pduSessionId             int32
 	pduSessionManagementData *PduSessionManagementData
 }
 
@@ -44,28 +43,29 @@ func (r ApiCreateOrReplaceSessionManagementDataRequest) Execute() (*PduSessionMa
 /*
 CreateOrReplaceSessionManagementData Creates and updates the session management data for a UE and for an individual PDU session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiCreateOrReplaceSessionManagementDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiCreateOrReplaceSessionManagementDataRequest
 */
 func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementData(ctx context.Context, ueId string, pduSessionId int32) ApiCreateOrReplaceSessionManagementDataRequest {
 	return ApiCreateOrReplaceSessionManagementDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return PduSessionManagementData
+//
+//	@return PduSessionManagementData
 func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDataExecute(r ApiCreateOrReplaceSessionManagementDataRequest) (*PduSessionManagementData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PduSessionManagementData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PduSessionManagementData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PduSessionManagementDataApiService.CreateOrReplaceSessionManagementData")
@@ -119,9 +119,9 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -138,8 +138,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -149,8 +149,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -160,8 +160,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -171,8 +171,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -182,8 +182,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -193,8 +193,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -204,8 +204,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -215,8 +215,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -226,8 +226,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -237,8 +237,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -248,8 +248,8 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -268,9 +268,9 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 }
 
 type ApiDeleteSessionManagementDataRequest struct {
-	ctx context.Context
-	ApiService *PduSessionManagementDataApiService
-	ueId string
+	ctx          context.Context
+	ApiService   *PduSessionManagementDataApiService
+	ueId         string
 	pduSessionId int32
 }
 
@@ -281,16 +281,16 @@ func (r ApiDeleteSessionManagementDataRequest) Execute() (*http.Response, error)
 /*
 DeleteSessionManagementData Deletes the session management data for a UE and for an individual PDU session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiDeleteSessionManagementDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiDeleteSessionManagementDataRequest
 */
 func (a *PduSessionManagementDataApiService) DeleteSessionManagementData(ctx context.Context, ueId string, pduSessionId int32) ApiDeleteSessionManagementDataRequest {
 	return ApiDeleteSessionManagementDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
@@ -298,9 +298,9 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementData(ctx con
 // Execute executes the request
 func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(r ApiDeleteSessionManagementDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PduSessionManagementDataApiService.DeleteSessionManagementData")
@@ -349,9 +349,9 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -368,8 +368,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -379,8 +379,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -390,8 +390,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -401,8 +401,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -412,8 +412,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -423,8 +423,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -434,8 +434,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -445,8 +445,8 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -456,15 +456,15 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 }
 
 type ApiQuerySessionManagementDataRequest struct {
-	ctx context.Context
-	ApiService *PduSessionManagementDataApiService
-	ueId string
+	ctx          context.Context
+	ApiService   *PduSessionManagementDataApiService
+	ueId         string
 	pduSessionId int32
-	ipv4Addr *string
-	ipv6Prefix *Ipv6Prefix
-	dnn *string
-	fields *[]string
-	suppFeat *string
+	ipv4Addr     *string
+	ipv6Prefix   *Ipv6Prefix
+	dnn          *string
+	fields       *[]string
+	suppFeat     *string
 }
 
 // IPv4 Address of the UE
@@ -504,28 +504,29 @@ func (r ApiQuerySessionManagementDataRequest) Execute() (*PduSessionManagementDa
 /*
 QuerySessionManagementData Retrieves the session management data for a UE and for an individual PDU session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiQuerySessionManagementDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiQuerySessionManagementDataRequest
 */
 func (a *PduSessionManagementDataApiService) QuerySessionManagementData(ctx context.Context, ueId string, pduSessionId int32) ApiQuerySessionManagementDataRequest {
 	return ApiQuerySessionManagementDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return PduSessionManagementData
+//
+//	@return PduSessionManagementData
 func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r ApiQuerySessionManagementDataRequest) (*PduSessionManagementData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PduSessionManagementData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PduSessionManagementData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PduSessionManagementDataApiService.QuerySessionManagementData")
@@ -548,27 +549,27 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 	}
 
 	if r.ipv4Addr != nil {
-		parameterAddToQuery(localVarQueryParams, "ipv4-addr", r.ipv4Addr, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv4-addr", r.ipv4Addr, "")
 	}
 	if r.ipv6Prefix != nil {
-		parameterAddToQuery(localVarQueryParams, "ipv6-prefix", r.ipv6Prefix, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv6-prefix", r.ipv6Prefix, "")
 	}
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.fields != nil {
 		t := *r.fields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "fields", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "fields", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "fields", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "fields", t, "multi")
 		}
 	}
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -597,9 +598,9 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -616,8 +617,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -627,8 +628,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -638,8 +639,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -649,8 +650,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -660,8 +661,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -671,8 +672,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -682,8 +683,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -693,8 +694,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -704,8 +705,8 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

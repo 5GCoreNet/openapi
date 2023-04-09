@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting-provisioning
 
-API for 3GPP Data Reporting and Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting and Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -24,7 +24,7 @@ type DataAccessProfileUserAccessRestrictionsUserIdsInner struct {
 func (dst *DataAccessProfileUserAccessRestrictionsUserIdsInner) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableDataAccessProfileUserAccessRestrictionsUserIdsInner) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

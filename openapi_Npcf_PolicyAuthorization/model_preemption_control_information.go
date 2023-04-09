@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // PreemptionControlInformation Represents Pre-emption control information.
 type PreemptionControlInformation struct {
-	PreemptionControlInformationAnyOf *PreemptionControlInformationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PreemptionControlInformation) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PreemptionControlInformationAnyOf
-	err = json.Unmarshal(data, &dst.PreemptionControlInformationAnyOf);
-	if err == nil {
-		jsonPreemptionControlInformationAnyOf, _ := json.Marshal(dst.PreemptionControlInformationAnyOf)
-		if string(jsonPreemptionControlInformationAnyOf) == "{}" { // empty struct
-			dst.PreemptionControlInformationAnyOf = nil
-		} else {
-			return nil // data stored in dst.PreemptionControlInformationAnyOf, return on the first match
-		}
-	} else {
-		dst.PreemptionControlInformationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PreemptionControlInformation) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PreemptionControlInformation) MarshalJSON() ([]byte, error) {
-	if src.PreemptionControlInformationAnyOf != nil {
-		return json.Marshal(&src.PreemptionControlInformationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePreemptionControlInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

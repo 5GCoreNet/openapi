@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &N2MbsSmInfo{}
 
 // N2MbsSmInfo N2 MBS Session Management information
 type N2MbsSmInfo struct {
-	NgapIeType NgapIeType `json:"ngapIeType"`
-	NgapData RefToBinaryData `json:"ngapData"`
+	NgapIeType NgapIeType      `json:"ngapIeType"`
+	NgapData   RefToBinaryData `json:"ngapData"`
 }
 
 // NewN2MbsSmInfo instantiates a new N2MbsSmInfo object
@@ -91,7 +91,7 @@ func (o *N2MbsSmInfo) SetNgapData(v RefToBinaryData) {
 }
 
 func (o N2MbsSmInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableN2MbsSmInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

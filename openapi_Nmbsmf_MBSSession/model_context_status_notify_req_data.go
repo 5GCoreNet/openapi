@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ContextStatusNotifyReqData{}
 
 // ContextStatusNotifyReqData Context Status Notification
 type ContextStatusNotifyReqData struct {
-	ReportList []ContextStatusEventReport `json:"reportList"`
-	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
+	ReportList          []ContextStatusEventReport `json:"reportList"`
+	NotifyCorrelationId *string                    `json:"notifyCorrelationId,omitempty"`
 }
 
 // NewContextStatusNotifyReqData instantiates a new ContextStatusNotifyReqData object
@@ -67,7 +67,7 @@ func (o *ContextStatusNotifyReqData) SetReportList(v []ContextStatusEventReport)
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *ContextStatusNotifyReqData) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ContextStatusNotifyReqData) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusNotifyReqData) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -85,7 +85,7 @@ func (o *ContextStatusNotifyReqData) GetNotifyCorrelationIdOk() (*string, bool) 
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *ContextStatusNotifyReqData) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ContextStatusNotifyReqData) SetNotifyCorrelationId(v string) {
 }
 
 func (o ContextStatusNotifyReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ContextStatusNotifyReqData) MarshalJSON() ([]byte, error) {
 func (o ContextStatusNotifyReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reportList"] = o.ReportList
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableContextStatusNotifyReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &MbsSessPolCtrlData{}
 // MbsSessPolCtrlData Represents MBS Session Policy Control Data.
 type MbsSessPolCtrlData struct {
 	Var5qis []int32 `json:"5qis,omitempty"`
-	// nullable true shall not be used for this attribute. Unsigned integer indicating the ARP Priority Level (see clause 5.7.2.2 of 3GPP TS 23.501, within the range 1 to 15.Values are ordered in decreasing order of priority, i.e. with 1 as the highest priority and 15 as the lowest priority.  
+	// nullable true shall not be used for this attribute. Unsigned integer indicating the ARP Priority Level (see clause 5.7.2.2 of 3GPP TS 23.501, within the range 1 to 15.Values are ordered in decreasing order of priority, i.e. with 1 as the highest priority and 15 as the lowest priority.
 	MaxMbsArpLevel NullableInt32 `json:"maxMbsArpLevel,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxMbsSessionAmbr *string `json:"maxMbsSessionAmbr,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxGbr *string `json:"maxGbr,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -49,7 +49,7 @@ func NewMbsSessPolCtrlDataWithDefaults() *MbsSessPolCtrlData {
 
 // GetVar5qis returns the Var5qis field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetVar5qis() []int32 {
-	if o == nil || isNil(o.Var5qis) {
+	if o == nil || IsNil(o.Var5qis) {
 		var ret []int32
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *MbsSessPolCtrlData) GetVar5qis() []int32 {
 // GetVar5qisOk returns a tuple with the Var5qis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetVar5qisOk() ([]int32, bool) {
-	if o == nil || isNil(o.Var5qis) {
+	if o == nil || IsNil(o.Var5qis) {
 		return nil, false
 	}
 	return o.Var5qis, true
@@ -67,7 +67,7 @@ func (o *MbsSessPolCtrlData) GetVar5qisOk() ([]int32, bool) {
 
 // HasVar5qis returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasVar5qis() bool {
-	if o != nil && !isNil(o.Var5qis) {
+	if o != nil && !IsNil(o.Var5qis) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *MbsSessPolCtrlData) SetVar5qis(v []int32) {
 
 // GetMaxMbsArpLevel returns the MaxMbsArpLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MbsSessPolCtrlData) GetMaxMbsArpLevel() int32 {
-	if o == nil || isNil(o.MaxMbsArpLevel.Get()) {
+	if o == nil || IsNil(o.MaxMbsArpLevel.Get()) {
 		var ret int32
 		return ret
 	}
@@ -111,6 +111,7 @@ func (o *MbsSessPolCtrlData) HasMaxMbsArpLevel() bool {
 func (o *MbsSessPolCtrlData) SetMaxMbsArpLevel(v int32) {
 	o.MaxMbsArpLevel.Set(&v)
 }
+
 // SetMaxMbsArpLevelNil sets the value for MaxMbsArpLevel to be an explicit nil
 func (o *MbsSessPolCtrlData) SetMaxMbsArpLevelNil() {
 	o.MaxMbsArpLevel.Set(nil)
@@ -123,7 +124,7 @@ func (o *MbsSessPolCtrlData) UnsetMaxMbsArpLevel() {
 
 // GetMaxMbsSessionAmbr returns the MaxMbsSessionAmbr field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbr() string {
-	if o == nil || isNil(o.MaxMbsSessionAmbr) {
+	if o == nil || IsNil(o.MaxMbsSessionAmbr) {
 		var ret string
 		return ret
 	}
@@ -133,7 +134,7 @@ func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbr() string {
 // GetMaxMbsSessionAmbrOk returns a tuple with the MaxMbsSessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbrOk() (*string, bool) {
-	if o == nil || isNil(o.MaxMbsSessionAmbr) {
+	if o == nil || IsNil(o.MaxMbsSessionAmbr) {
 		return nil, false
 	}
 	return o.MaxMbsSessionAmbr, true
@@ -141,7 +142,7 @@ func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbrOk() (*string, bool) {
 
 // HasMaxMbsSessionAmbr returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasMaxMbsSessionAmbr() bool {
-	if o != nil && !isNil(o.MaxMbsSessionAmbr) {
+	if o != nil && !IsNil(o.MaxMbsSessionAmbr) {
 		return true
 	}
 
@@ -155,7 +156,7 @@ func (o *MbsSessPolCtrlData) SetMaxMbsSessionAmbr(v string) {
 
 // GetMaxGbr returns the MaxGbr field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetMaxGbr() string {
-	if o == nil || isNil(o.MaxGbr) {
+	if o == nil || IsNil(o.MaxGbr) {
 		var ret string
 		return ret
 	}
@@ -165,7 +166,7 @@ func (o *MbsSessPolCtrlData) GetMaxGbr() string {
 // GetMaxGbrOk returns a tuple with the MaxGbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetMaxGbrOk() (*string, bool) {
-	if o == nil || isNil(o.MaxGbr) {
+	if o == nil || IsNil(o.MaxGbr) {
 		return nil, false
 	}
 	return o.MaxGbr, true
@@ -173,7 +174,7 @@ func (o *MbsSessPolCtrlData) GetMaxGbrOk() (*string, bool) {
 
 // HasMaxGbr returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasMaxGbr() bool {
-	if o != nil && !isNil(o.MaxGbr) {
+	if o != nil && !IsNil(o.MaxGbr) {
 		return true
 	}
 
@@ -187,7 +188,7 @@ func (o *MbsSessPolCtrlData) SetMaxGbr(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -197,7 +198,7 @@ func (o *MbsSessPolCtrlData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -205,7 +206,7 @@ func (o *MbsSessPolCtrlData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -218,7 +219,7 @@ func (o *MbsSessPolCtrlData) SetSuppFeat(v string) {
 }
 
 func (o MbsSessPolCtrlData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -227,19 +228,19 @@ func (o MbsSessPolCtrlData) MarshalJSON() ([]byte, error) {
 
 func (o MbsSessPolCtrlData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Var5qis) {
+	if !IsNil(o.Var5qis) {
 		toSerialize["5qis"] = o.Var5qis
 	}
 	if o.MaxMbsArpLevel.IsSet() {
 		toSerialize["maxMbsArpLevel"] = o.MaxMbsArpLevel.Get()
 	}
-	if !isNil(o.MaxMbsSessionAmbr) {
+	if !IsNil(o.MaxMbsSessionAmbr) {
 		toSerialize["maxMbsSessionAmbr"] = o.MaxMbsSessionAmbr
 	}
-	if !isNil(o.MaxGbr) {
+	if !IsNil(o.MaxGbr) {
 		toSerialize["maxGbr"] = o.MaxGbr
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -280,5 +281,3 @@ func (v *NullableMbsSessPolCtrlData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

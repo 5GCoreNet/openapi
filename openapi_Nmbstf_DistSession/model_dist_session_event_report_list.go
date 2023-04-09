@@ -1,7 +1,7 @@
 /*
 Nmbstf-distsession
 
-MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &DistSessionEventReportList{}
 
 // DistSessionEventReportList List of Event Reports
 type DistSessionEventReportList struct {
-	EventReportList []DistSessionEventReport `json:"eventReportList"`
-	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
+	EventReportList     []DistSessionEventReport `json:"eventReportList"`
+	NotifyCorrelationId *string                  `json:"notifyCorrelationId,omitempty"`
 }
 
 // NewDistSessionEventReportList instantiates a new DistSessionEventReportList object
@@ -67,7 +67,7 @@ func (o *DistSessionEventReportList) SetEventReportList(v []DistSessionEventRepo
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *DistSessionEventReportList) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *DistSessionEventReportList) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionEventReportList) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -85,7 +85,7 @@ func (o *DistSessionEventReportList) GetNotifyCorrelationIdOk() (*string, bool) 
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *DistSessionEventReportList) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *DistSessionEventReportList) SetNotifyCorrelationId(v string) {
 }
 
 func (o DistSessionEventReportList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o DistSessionEventReportList) MarshalJSON() ([]byte, error) {
 func (o DistSessionEventReportList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventReportList"] = o.EventReportList
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableDistSessionEventReportList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &MediaStreamingAccessRecordAllOf{}
 
 // MediaStreamingAccessRecordAllOf struct for MediaStreamingAccessRecordAllOf
 type MediaStreamingAccessRecordAllOf struct {
-	MediaStreamHandlerEndpointAddress EndpointAddress `json:"mediaStreamHandlerEndpointAddress"`
-	ApplicationServerEndpointAddress EndpointAddress `json:"applicationServerEndpointAddress"`
-	SessionIdentifier *string `json:"sessionIdentifier,omitempty"`
-	RequestMessage MediaStreamingAccessRecordAllOfRequestMessage `json:"requestMessage"`
-	CacheStatus *CacheStatus `json:"cacheStatus,omitempty"`
-	ResponseMessage MediaStreamingAccessRecordAllOfResponseMessage `json:"responseMessage"`
+	MediaStreamHandlerEndpointAddress EndpointAddress                                `json:"mediaStreamHandlerEndpointAddress"`
+	ApplicationServerEndpointAddress  EndpointAddress                                `json:"applicationServerEndpointAddress"`
+	SessionIdentifier                 *string                                        `json:"sessionIdentifier,omitempty"`
+	RequestMessage                    MediaStreamingAccessRecordAllOfRequestMessage  `json:"requestMessage"`
+	CacheStatus                       *CacheStatus                                   `json:"cacheStatus,omitempty"`
+	ResponseMessage                   MediaStreamingAccessRecordAllOfResponseMessage `json:"responseMessage"`
 	// string with format 'float' as defined in OpenAPI.
-	ProcessingLatency float32 `json:"processingLatency"`
+	ProcessingLatency float32                                           `json:"processingLatency"`
 	ConnectionMetrics *MediaStreamingAccessRecordAllOfConnectionMetrics `json:"connectionMetrics,omitempty"`
 }
 
@@ -102,7 +102,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetApplicationServerEndpointAddress(v 
 
 // GetSessionIdentifier returns the SessionIdentifier field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifier() string {
-	if o == nil || isNil(o.SessionIdentifier) {
+	if o == nil || IsNil(o.SessionIdentifier) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifier() string {
 // GetSessionIdentifierOk returns a tuple with the SessionIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.SessionIdentifier) {
+	if o == nil || IsNil(o.SessionIdentifier) {
 		return nil, false
 	}
 	return o.SessionIdentifier, true
@@ -120,7 +120,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifierOk() (*string, boo
 
 // HasSessionIdentifier returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOf) HasSessionIdentifier() bool {
-	if o != nil && !isNil(o.SessionIdentifier) {
+	if o != nil && !IsNil(o.SessionIdentifier) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetRequestMessage(v MediaStreamingAcce
 
 // GetCacheStatus returns the CacheStatus field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOf) GetCacheStatus() CacheStatus {
-	if o == nil || isNil(o.CacheStatus) {
+	if o == nil || IsNil(o.CacheStatus) {
 		var ret CacheStatus
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetCacheStatus() CacheStatus {
 // GetCacheStatusOk returns a tuple with the CacheStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOf) GetCacheStatusOk() (*CacheStatus, bool) {
-	if o == nil || isNil(o.CacheStatus) {
+	if o == nil || IsNil(o.CacheStatus) {
 		return nil, false
 	}
 	return o.CacheStatus, true
@@ -176,7 +176,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetCacheStatusOk() (*CacheStatus, bool
 
 // HasCacheStatus returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOf) HasCacheStatus() bool {
-	if o != nil && !isNil(o.CacheStatus) {
+	if o != nil && !IsNil(o.CacheStatus) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetProcessingLatency(v float32) {
 
 // GetConnectionMetrics returns the ConnectionMetrics field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetrics() MediaStreamingAccessRecordAllOfConnectionMetrics {
-	if o == nil || isNil(o.ConnectionMetrics) {
+	if o == nil || IsNil(o.ConnectionMetrics) {
 		var ret MediaStreamingAccessRecordAllOfConnectionMetrics
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetrics() MediaStreamingA
 // GetConnectionMetricsOk returns a tuple with the ConnectionMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetricsOk() (*MediaStreamingAccessRecordAllOfConnectionMetrics, bool) {
-	if o == nil || isNil(o.ConnectionMetrics) {
+	if o == nil || IsNil(o.ConnectionMetrics) {
 		return nil, false
 	}
 	return o.ConnectionMetrics, true
@@ -256,7 +256,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetricsOk() (*MediaStream
 
 // HasConnectionMetrics returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOf) HasConnectionMetrics() bool {
-	if o != nil && !isNil(o.ConnectionMetrics) {
+	if o != nil && !IsNil(o.ConnectionMetrics) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetConnectionMetrics(v MediaStreamingA
 }
 
 func (o MediaStreamingAccessRecordAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,16 +280,16 @@ func (o MediaStreamingAccessRecordAllOf) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	toSerialize["mediaStreamHandlerEndpointAddress"] = o.MediaStreamHandlerEndpointAddress
 	toSerialize["applicationServerEndpointAddress"] = o.ApplicationServerEndpointAddress
-	if !isNil(o.SessionIdentifier) {
+	if !IsNil(o.SessionIdentifier) {
 		toSerialize["sessionIdentifier"] = o.SessionIdentifier
 	}
 	toSerialize["requestMessage"] = o.RequestMessage
-	if !isNil(o.CacheStatus) {
+	if !IsNil(o.CacheStatus) {
 		toSerialize["cacheStatus"] = o.CacheStatus
 	}
 	toSerialize["responseMessage"] = o.ResponseMessage
 	toSerialize["processingLatency"] = o.ProcessingLatency
-	if !isNil(o.ConnectionMetrics) {
+	if !IsNil(o.ConnectionMetrics) {
 		toSerialize["connectionMetrics"] = o.ConnectionMetrics
 	}
 	return toSerialize, nil
@@ -330,5 +330,3 @@ func (v *NullableMediaStreamingAccessRecordAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

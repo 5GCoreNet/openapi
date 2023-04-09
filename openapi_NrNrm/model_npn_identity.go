@@ -19,9 +19,9 @@ var _ MappedNullable = &NpnIdentity{}
 
 // NpnIdentity struct for NpnIdentity
 type NpnIdentity struct {
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
+	PlmnId    *PlmnId `json:"plmnId,omitempty"`
 	CagidList *string `json:"cagidList,omitempty"`
-	NidList *string `json:"nidList,omitempty"`
+	NidList   *string `json:"nidList,omitempty"`
 }
 
 // NewNpnIdentity instantiates a new NpnIdentity object
@@ -43,7 +43,7 @@ func NewNpnIdentityWithDefaults() *NpnIdentity {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *NpnIdentity) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *NpnIdentity) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnIdentity) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -61,7 +61,7 @@ func (o *NpnIdentity) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *NpnIdentity) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *NpnIdentity) SetPlmnId(v PlmnId) {
 
 // GetCagidList returns the CagidList field value if set, zero value otherwise.
 func (o *NpnIdentity) GetCagidList() string {
-	if o == nil || isNil(o.CagidList) {
+	if o == nil || IsNil(o.CagidList) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *NpnIdentity) GetCagidList() string {
 // GetCagidListOk returns a tuple with the CagidList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnIdentity) GetCagidListOk() (*string, bool) {
-	if o == nil || isNil(o.CagidList) {
+	if o == nil || IsNil(o.CagidList) {
 		return nil, false
 	}
 	return o.CagidList, true
@@ -93,7 +93,7 @@ func (o *NpnIdentity) GetCagidListOk() (*string, bool) {
 
 // HasCagidList returns a boolean if a field has been set.
 func (o *NpnIdentity) HasCagidList() bool {
-	if o != nil && !isNil(o.CagidList) {
+	if o != nil && !IsNil(o.CagidList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NpnIdentity) SetCagidList(v string) {
 
 // GetNidList returns the NidList field value if set, zero value otherwise.
 func (o *NpnIdentity) GetNidList() string {
-	if o == nil || isNil(o.NidList) {
+	if o == nil || IsNil(o.NidList) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NpnIdentity) GetNidList() string {
 // GetNidListOk returns a tuple with the NidList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnIdentity) GetNidListOk() (*string, bool) {
-	if o == nil || isNil(o.NidList) {
+	if o == nil || IsNil(o.NidList) {
 		return nil, false
 	}
 	return o.NidList, true
@@ -125,7 +125,7 @@ func (o *NpnIdentity) GetNidListOk() (*string, bool) {
 
 // HasNidList returns a boolean if a field has been set.
 func (o *NpnIdentity) HasNidList() bool {
-	if o != nil && !isNil(o.NidList) {
+	if o != nil && !IsNil(o.NidList) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *NpnIdentity) SetNidList(v string) {
 }
 
 func (o NpnIdentity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o NpnIdentity) MarshalJSON() ([]byte, error) {
 
 func (o NpnIdentity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.CagidList) {
+	if !IsNil(o.CagidList) {
 		toSerialize["cagidList"] = o.CagidList
 	}
-	if !isNil(o.NidList) {
+	if !IsNil(o.NidList) {
 		toSerialize["nidList"] = o.NidList
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableNpnIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

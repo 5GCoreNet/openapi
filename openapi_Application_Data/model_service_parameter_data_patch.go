@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &ServiceParameterDataPatch{}
 
 // ServiceParameterDataPatch Represents the service parameter data that can be updated.
 type ServiceParameterDataPatch struct {
-	// Represents configuration parameters for V2X communications over PC5 reference point. 
+	// Represents configuration parameters for V2X communications over PC5 reference point.
 	ParamOverPc5 *string `json:"paramOverPc5,omitempty"`
-	// Represents configuration parameters for V2X communications over Uu reference point. 
+	// Represents configuration parameters for V2X communications over Uu reference point.
 	ParamOverUu *string `json:"paramOverUu,omitempty"`
 	// Represents the service parameters for 5G ProSe direct discovery.
 	ParamForProSeDd *string `json:"paramForProSeDd,omitempty"`
@@ -58,7 +58,7 @@ func NewServiceParameterDataPatchWithDefaults() *ServiceParameterDataPatch {
 
 // GetParamOverPc5 returns the ParamOverPc5 field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetParamOverPc5() string {
-	if o == nil || isNil(o.ParamOverPc5) {
+	if o == nil || IsNil(o.ParamOverPc5) {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *ServiceParameterDataPatch) GetParamOverPc5() string {
 // GetParamOverPc5Ok returns a tuple with the ParamOverPc5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetParamOverPc5Ok() (*string, bool) {
-	if o == nil || isNil(o.ParamOverPc5) {
+	if o == nil || IsNil(o.ParamOverPc5) {
 		return nil, false
 	}
 	return o.ParamOverPc5, true
@@ -76,7 +76,7 @@ func (o *ServiceParameterDataPatch) GetParamOverPc5Ok() (*string, bool) {
 
 // HasParamOverPc5 returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasParamOverPc5() bool {
-	if o != nil && !isNil(o.ParamOverPc5) {
+	if o != nil && !IsNil(o.ParamOverPc5) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *ServiceParameterDataPatch) SetParamOverPc5(v string) {
 
 // GetParamOverUu returns the ParamOverUu field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetParamOverUu() string {
-	if o == nil || isNil(o.ParamOverUu) {
+	if o == nil || IsNil(o.ParamOverUu) {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *ServiceParameterDataPatch) GetParamOverUu() string {
 // GetParamOverUuOk returns a tuple with the ParamOverUu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetParamOverUuOk() (*string, bool) {
-	if o == nil || isNil(o.ParamOverUu) {
+	if o == nil || IsNil(o.ParamOverUu) {
 		return nil, false
 	}
 	return o.ParamOverUu, true
@@ -108,7 +108,7 @@ func (o *ServiceParameterDataPatch) GetParamOverUuOk() (*string, bool) {
 
 // HasParamOverUu returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasParamOverUu() bool {
-	if o != nil && !isNil(o.ParamOverUu) {
+	if o != nil && !IsNil(o.ParamOverUu) {
 		return true
 	}
 
@@ -122,7 +122,7 @@ func (o *ServiceParameterDataPatch) SetParamOverUu(v string) {
 
 // GetParamForProSeDd returns the ParamForProSeDd field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetParamForProSeDd() string {
-	if o == nil || isNil(o.ParamForProSeDd) {
+	if o == nil || IsNil(o.ParamForProSeDd) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeDd() string {
 // GetParamForProSeDdOk returns a tuple with the ParamForProSeDd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetParamForProSeDdOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeDd) {
+	if o == nil || IsNil(o.ParamForProSeDd) {
 		return nil, false
 	}
 	return o.ParamForProSeDd, true
@@ -140,7 +140,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeDdOk() (*string, bool) {
 
 // HasParamForProSeDd returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasParamForProSeDd() bool {
-	if o != nil && !isNil(o.ParamForProSeDd) {
+	if o != nil && !IsNil(o.ParamForProSeDd) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *ServiceParameterDataPatch) SetParamForProSeDd(v string) {
 
 // GetParamForProSeDc returns the ParamForProSeDc field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetParamForProSeDc() string {
-	if o == nil || isNil(o.ParamForProSeDc) {
+	if o == nil || IsNil(o.ParamForProSeDc) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeDc() string {
 // GetParamForProSeDcOk returns a tuple with the ParamForProSeDc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetParamForProSeDcOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeDc) {
+	if o == nil || IsNil(o.ParamForProSeDc) {
 		return nil, false
 	}
 	return o.ParamForProSeDc, true
@@ -172,7 +172,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeDcOk() (*string, bool) {
 
 // HasParamForProSeDc returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasParamForProSeDc() bool {
-	if o != nil && !isNil(o.ParamForProSeDc) {
+	if o != nil && !IsNil(o.ParamForProSeDc) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *ServiceParameterDataPatch) SetParamForProSeDc(v string) {
 
 // GetParamForProSeU2NRelUe returns the ParamForProSeU2NRelUe field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetParamForProSeU2NRelUe() string {
-	if o == nil || isNil(o.ParamForProSeU2NRelUe) {
+	if o == nil || IsNil(o.ParamForProSeU2NRelUe) {
 		var ret string
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeU2NRelUe() string {
 // GetParamForProSeU2NRelUeOk returns a tuple with the ParamForProSeU2NRelUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetParamForProSeU2NRelUeOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeU2NRelUe) {
+	if o == nil || IsNil(o.ParamForProSeU2NRelUe) {
 		return nil, false
 	}
 	return o.ParamForProSeU2NRelUe, true
@@ -204,7 +204,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeU2NRelUeOk() (*string, bool)
 
 // HasParamForProSeU2NRelUe returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasParamForProSeU2NRelUe() bool {
-	if o != nil && !isNil(o.ParamForProSeU2NRelUe) {
+	if o != nil && !IsNil(o.ParamForProSeU2NRelUe) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *ServiceParameterDataPatch) SetParamForProSeU2NRelUe(v string) {
 
 // GetParamForProSeRemUe returns the ParamForProSeRemUe field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetParamForProSeRemUe() string {
-	if o == nil || isNil(o.ParamForProSeRemUe) {
+	if o == nil || IsNil(o.ParamForProSeRemUe) {
 		var ret string
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeRemUe() string {
 // GetParamForProSeRemUeOk returns a tuple with the ParamForProSeRemUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetParamForProSeRemUeOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeRemUe) {
+	if o == nil || IsNil(o.ParamForProSeRemUe) {
 		return nil, false
 	}
 	return o.ParamForProSeRemUe, true
@@ -236,7 +236,7 @@ func (o *ServiceParameterDataPatch) GetParamForProSeRemUeOk() (*string, bool) {
 
 // HasParamForProSeRemUe returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasParamForProSeRemUe() bool {
-	if o != nil && !isNil(o.ParamForProSeRemUe) {
+	if o != nil && !IsNil(o.ParamForProSeRemUe) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *ServiceParameterDataPatch) SetParamForProSeRemUe(v string) {
 
 // GetUrspInfluence returns the UrspInfluence field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetUrspInfluence() []UrspRuleRequest {
-	if o == nil || isNil(o.UrspInfluence) {
+	if o == nil || IsNil(o.UrspInfluence) {
 		var ret []UrspRuleRequest
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *ServiceParameterDataPatch) GetUrspInfluence() []UrspRuleRequest {
 // GetUrspInfluenceOk returns a tuple with the UrspInfluence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetUrspInfluenceOk() ([]UrspRuleRequest, bool) {
-	if o == nil || isNil(o.UrspInfluence) {
+	if o == nil || IsNil(o.UrspInfluence) {
 		return nil, false
 	}
 	return o.UrspInfluence, true
@@ -268,7 +268,7 @@ func (o *ServiceParameterDataPatch) GetUrspInfluenceOk() ([]UrspRuleRequest, boo
 
 // HasUrspInfluence returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasUrspInfluence() bool {
-	if o != nil && !isNil(o.UrspInfluence) {
+	if o != nil && !IsNil(o.UrspInfluence) {
 		return true
 	}
 
@@ -282,7 +282,7 @@ func (o *ServiceParameterDataPatch) SetUrspInfluence(v []UrspRuleRequest) {
 
 // GetDeliveryEvents returns the DeliveryEvents field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetDeliveryEvents() []Event {
-	if o == nil || isNil(o.DeliveryEvents) {
+	if o == nil || IsNil(o.DeliveryEvents) {
 		var ret []Event
 		return ret
 	}
@@ -292,7 +292,7 @@ func (o *ServiceParameterDataPatch) GetDeliveryEvents() []Event {
 // GetDeliveryEventsOk returns a tuple with the DeliveryEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetDeliveryEventsOk() ([]Event, bool) {
-	if o == nil || isNil(o.DeliveryEvents) {
+	if o == nil || IsNil(o.DeliveryEvents) {
 		return nil, false
 	}
 	return o.DeliveryEvents, true
@@ -300,7 +300,7 @@ func (o *ServiceParameterDataPatch) GetDeliveryEventsOk() ([]Event, bool) {
 
 // HasDeliveryEvents returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasDeliveryEvents() bool {
-	if o != nil && !isNil(o.DeliveryEvents) {
+	if o != nil && !IsNil(o.DeliveryEvents) {
 		return true
 	}
 
@@ -314,7 +314,7 @@ func (o *ServiceParameterDataPatch) SetDeliveryEvents(v []Event) {
 
 // GetPolicDelivNotifUri returns the PolicDelivNotifUri field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetPolicDelivNotifUri() string {
-	if o == nil || isNil(o.PolicDelivNotifUri) {
+	if o == nil || IsNil(o.PolicDelivNotifUri) {
 		var ret string
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *ServiceParameterDataPatch) GetPolicDelivNotifUri() string {
 // GetPolicDelivNotifUriOk returns a tuple with the PolicDelivNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetPolicDelivNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.PolicDelivNotifUri) {
+	if o == nil || IsNil(o.PolicDelivNotifUri) {
 		return nil, false
 	}
 	return o.PolicDelivNotifUri, true
@@ -332,7 +332,7 @@ func (o *ServiceParameterDataPatch) GetPolicDelivNotifUriOk() (*string, bool) {
 
 // HasPolicDelivNotifUri returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasPolicDelivNotifUri() bool {
-	if o != nil && !isNil(o.PolicDelivNotifUri) {
+	if o != nil && !IsNil(o.PolicDelivNotifUri) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *ServiceParameterDataPatch) SetPolicDelivNotifUri(v string) {
 }
 
 func (o ServiceParameterDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -354,31 +354,31 @@ func (o ServiceParameterDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o ServiceParameterDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ParamOverPc5) {
+	if !IsNil(o.ParamOverPc5) {
 		toSerialize["paramOverPc5"] = o.ParamOverPc5
 	}
-	if !isNil(o.ParamOverUu) {
+	if !IsNil(o.ParamOverUu) {
 		toSerialize["paramOverUu"] = o.ParamOverUu
 	}
-	if !isNil(o.ParamForProSeDd) {
+	if !IsNil(o.ParamForProSeDd) {
 		toSerialize["paramForProSeDd"] = o.ParamForProSeDd
 	}
-	if !isNil(o.ParamForProSeDc) {
+	if !IsNil(o.ParamForProSeDc) {
 		toSerialize["paramForProSeDc"] = o.ParamForProSeDc
 	}
-	if !isNil(o.ParamForProSeU2NRelUe) {
+	if !IsNil(o.ParamForProSeU2NRelUe) {
 		toSerialize["paramForProSeU2NRelUe"] = o.ParamForProSeU2NRelUe
 	}
-	if !isNil(o.ParamForProSeRemUe) {
+	if !IsNil(o.ParamForProSeRemUe) {
 		toSerialize["paramForProSeRemUe"] = o.ParamForProSeRemUe
 	}
-	if !isNil(o.UrspInfluence) {
+	if !IsNil(o.UrspInfluence) {
 		toSerialize["urspInfluence"] = o.UrspInfluence
 	}
-	if !isNil(o.DeliveryEvents) {
+	if !IsNil(o.DeliveryEvents) {
 		toSerialize["deliveryEvents"] = o.DeliveryEvents
 	}
-	if !isNil(o.PolicDelivNotifUri) {
+	if !IsNil(o.PolicDelivNotifUri) {
 		toSerialize["policDelivNotifUri"] = o.PolicDelivNotifUri
 	}
 	return toSerialize, nil
@@ -419,5 +419,3 @@ func (v *NullableServiceParameterDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

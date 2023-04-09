@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AmfEventType Describes the supported event types of Namf_EventExposure Service
 type AmfEventType struct {
-	AmfEventTypeAnyOf *AmfEventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AmfEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AmfEventTypeAnyOf
-	err = json.Unmarshal(data, &dst.AmfEventTypeAnyOf);
-	if err == nil {
-		jsonAmfEventTypeAnyOf, _ := json.Marshal(dst.AmfEventTypeAnyOf)
-		if string(jsonAmfEventTypeAnyOf) == "{}" { // empty struct
-			dst.AmfEventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AmfEventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AmfEventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AmfEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AmfEventType) MarshalJSON() ([]byte, error) {
-	if src.AmfEventTypeAnyOf != nil {
-		return json.Marshal(&src.AmfEventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAmfEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

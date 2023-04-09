@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &N2SmInformation{}
 
 // N2SmInformation Represents the session management SMF related N2 information data part
 type N2SmInformation struct {
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionId int32 `json:"pduSessionId"`
-	N2InfoContent *N2InfoContent `json:"n2InfoContent,omitempty"`
-	SNssai *Snssai `json:"sNssai,omitempty"`
-	HomePlmnSnssai *Snssai `json:"homePlmnSnssai,omitempty"`
-	IwkSnssai *Snssai `json:"iwkSnssai,omitempty"`
-	SubjectToHo *bool `json:"subjectToHo,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionId   int32          `json:"pduSessionId"`
+	N2InfoContent  *N2InfoContent `json:"n2InfoContent,omitempty"`
+	SNssai         *Snssai        `json:"sNssai,omitempty"`
+	HomePlmnSnssai *Snssai        `json:"homePlmnSnssai,omitempty"`
+	IwkSnssai      *Snssai        `json:"iwkSnssai,omitempty"`
+	SubjectToHo    *bool          `json:"subjectToHo,omitempty"`
 }
 
 // NewN2SmInformation instantiates a new N2SmInformation object
@@ -72,7 +72,7 @@ func (o *N2SmInformation) SetPduSessionId(v int32) {
 
 // GetN2InfoContent returns the N2InfoContent field value if set, zero value otherwise.
 func (o *N2SmInformation) GetN2InfoContent() N2InfoContent {
-	if o == nil || isNil(o.N2InfoContent) {
+	if o == nil || IsNil(o.N2InfoContent) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *N2SmInformation) GetN2InfoContent() N2InfoContent {
 // GetN2InfoContentOk returns a tuple with the N2InfoContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2SmInformation) GetN2InfoContentOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.N2InfoContent) {
+	if o == nil || IsNil(o.N2InfoContent) {
 		return nil, false
 	}
 	return o.N2InfoContent, true
@@ -90,7 +90,7 @@ func (o *N2SmInformation) GetN2InfoContentOk() (*N2InfoContent, bool) {
 
 // HasN2InfoContent returns a boolean if a field has been set.
 func (o *N2SmInformation) HasN2InfoContent() bool {
-	if o != nil && !isNil(o.N2InfoContent) {
+	if o != nil && !IsNil(o.N2InfoContent) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *N2SmInformation) SetN2InfoContent(v N2InfoContent) {
 
 // GetSNssai returns the SNssai field value if set, zero value otherwise.
 func (o *N2SmInformation) GetSNssai() Snssai {
-	if o == nil || isNil(o.SNssai) {
+	if o == nil || IsNil(o.SNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *N2SmInformation) GetSNssai() Snssai {
 // GetSNssaiOk returns a tuple with the SNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2SmInformation) GetSNssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SNssai) {
+	if o == nil || IsNil(o.SNssai) {
 		return nil, false
 	}
 	return o.SNssai, true
@@ -122,7 +122,7 @@ func (o *N2SmInformation) GetSNssaiOk() (*Snssai, bool) {
 
 // HasSNssai returns a boolean if a field has been set.
 func (o *N2SmInformation) HasSNssai() bool {
-	if o != nil && !isNil(o.SNssai) {
+	if o != nil && !IsNil(o.SNssai) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *N2SmInformation) SetSNssai(v Snssai) {
 
 // GetHomePlmnSnssai returns the HomePlmnSnssai field value if set, zero value otherwise.
 func (o *N2SmInformation) GetHomePlmnSnssai() Snssai {
-	if o == nil || isNil(o.HomePlmnSnssai) {
+	if o == nil || IsNil(o.HomePlmnSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *N2SmInformation) GetHomePlmnSnssai() Snssai {
 // GetHomePlmnSnssaiOk returns a tuple with the HomePlmnSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2SmInformation) GetHomePlmnSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.HomePlmnSnssai) {
+	if o == nil || IsNil(o.HomePlmnSnssai) {
 		return nil, false
 	}
 	return o.HomePlmnSnssai, true
@@ -154,7 +154,7 @@ func (o *N2SmInformation) GetHomePlmnSnssaiOk() (*Snssai, bool) {
 
 // HasHomePlmnSnssai returns a boolean if a field has been set.
 func (o *N2SmInformation) HasHomePlmnSnssai() bool {
-	if o != nil && !isNil(o.HomePlmnSnssai) {
+	if o != nil && !IsNil(o.HomePlmnSnssai) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *N2SmInformation) SetHomePlmnSnssai(v Snssai) {
 
 // GetIwkSnssai returns the IwkSnssai field value if set, zero value otherwise.
 func (o *N2SmInformation) GetIwkSnssai() Snssai {
-	if o == nil || isNil(o.IwkSnssai) {
+	if o == nil || IsNil(o.IwkSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *N2SmInformation) GetIwkSnssai() Snssai {
 // GetIwkSnssaiOk returns a tuple with the IwkSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2SmInformation) GetIwkSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.IwkSnssai) {
+	if o == nil || IsNil(o.IwkSnssai) {
 		return nil, false
 	}
 	return o.IwkSnssai, true
@@ -186,7 +186,7 @@ func (o *N2SmInformation) GetIwkSnssaiOk() (*Snssai, bool) {
 
 // HasIwkSnssai returns a boolean if a field has been set.
 func (o *N2SmInformation) HasIwkSnssai() bool {
-	if o != nil && !isNil(o.IwkSnssai) {
+	if o != nil && !IsNil(o.IwkSnssai) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *N2SmInformation) SetIwkSnssai(v Snssai) {
 
 // GetSubjectToHo returns the SubjectToHo field value if set, zero value otherwise.
 func (o *N2SmInformation) GetSubjectToHo() bool {
-	if o == nil || isNil(o.SubjectToHo) {
+	if o == nil || IsNil(o.SubjectToHo) {
 		var ret bool
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *N2SmInformation) GetSubjectToHo() bool {
 // GetSubjectToHoOk returns a tuple with the SubjectToHo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2SmInformation) GetSubjectToHoOk() (*bool, bool) {
-	if o == nil || isNil(o.SubjectToHo) {
+	if o == nil || IsNil(o.SubjectToHo) {
 		return nil, false
 	}
 	return o.SubjectToHo, true
@@ -218,7 +218,7 @@ func (o *N2SmInformation) GetSubjectToHoOk() (*bool, bool) {
 
 // HasSubjectToHo returns a boolean if a field has been set.
 func (o *N2SmInformation) HasSubjectToHo() bool {
-	if o != nil && !isNil(o.SubjectToHo) {
+	if o != nil && !IsNil(o.SubjectToHo) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *N2SmInformation) SetSubjectToHo(v bool) {
 }
 
 func (o N2SmInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,19 +241,19 @@ func (o N2SmInformation) MarshalJSON() ([]byte, error) {
 func (o N2SmInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduSessionId"] = o.PduSessionId
-	if !isNil(o.N2InfoContent) {
+	if !IsNil(o.N2InfoContent) {
 		toSerialize["n2InfoContent"] = o.N2InfoContent
 	}
-	if !isNil(o.SNssai) {
+	if !IsNil(o.SNssai) {
 		toSerialize["sNssai"] = o.SNssai
 	}
-	if !isNil(o.HomePlmnSnssai) {
+	if !IsNil(o.HomePlmnSnssai) {
 		toSerialize["homePlmnSnssai"] = o.HomePlmnSnssai
 	}
-	if !isNil(o.IwkSnssai) {
+	if !IsNil(o.IwkSnssai) {
 		toSerialize["iwkSnssai"] = o.IwkSnssai
 	}
-	if !isNil(o.SubjectToHo) {
+	if !IsNil(o.SubjectToHo) {
 		toSerialize["subjectToHo"] = o.SubjectToHo
 	}
 	return toSerialize, nil
@@ -294,5 +294,3 @@ func (v *NullableN2SmInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

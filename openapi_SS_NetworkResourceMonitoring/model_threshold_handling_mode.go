@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceMonitoring
 
-API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ThresholdHandlingMode Possible values are: - ALL_REACHED: The decision criterion is met when all the provided thresholds are reached. - ANY_REACHED: The decision criterion is met when any of the provided threshold(s) is reached. 
+// ThresholdHandlingMode Possible values are: - ALL_REACHED: The decision criterion is met when all the provided thresholds are reached. - ANY_REACHED: The decision criterion is met when any of the provided threshold(s) is reached.
 type ThresholdHandlingMode struct {
-	ThresholdHandlingModeAnyOf *ThresholdHandlingModeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ThresholdHandlingMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ThresholdHandlingModeAnyOf
-	err = json.Unmarshal(data, &dst.ThresholdHandlingModeAnyOf);
-	if err == nil {
-		jsonThresholdHandlingModeAnyOf, _ := json.Marshal(dst.ThresholdHandlingModeAnyOf)
-		if string(jsonThresholdHandlingModeAnyOf) == "{}" { // empty struct
-			dst.ThresholdHandlingModeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ThresholdHandlingModeAnyOf, return on the first match
-		}
-	} else {
-		dst.ThresholdHandlingModeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ThresholdHandlingMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ThresholdHandlingMode) MarshalJSON() ([]byte, error) {
-	if src.ThresholdHandlingModeAnyOf != nil {
-		return json.Marshal(&src.ThresholdHandlingModeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableThresholdHandlingMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

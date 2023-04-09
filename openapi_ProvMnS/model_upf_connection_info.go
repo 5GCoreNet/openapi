@@ -20,7 +20,7 @@ var _ MappedNullable = &UPFConnectionInfo{}
 // UPFConnectionInfo struct for UPFConnectionInfo
 type UPFConnectionInfo struct {
 	UPFIpAddress *string `json:"uPFIpAddress,omitempty"`
-	UPFRef *string `json:"uPFRef,omitempty"`
+	UPFRef       *string `json:"uPFRef,omitempty"`
 }
 
 // NewUPFConnectionInfo instantiates a new UPFConnectionInfo object
@@ -42,7 +42,7 @@ func NewUPFConnectionInfoWithDefaults() *UPFConnectionInfo {
 
 // GetUPFIpAddress returns the UPFIpAddress field value if set, zero value otherwise.
 func (o *UPFConnectionInfo) GetUPFIpAddress() string {
-	if o == nil || isNil(o.UPFIpAddress) {
+	if o == nil || IsNil(o.UPFIpAddress) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UPFConnectionInfo) GetUPFIpAddress() string {
 // GetUPFIpAddressOk returns a tuple with the UPFIpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UPFConnectionInfo) GetUPFIpAddressOk() (*string, bool) {
-	if o == nil || isNil(o.UPFIpAddress) {
+	if o == nil || IsNil(o.UPFIpAddress) {
 		return nil, false
 	}
 	return o.UPFIpAddress, true
@@ -60,7 +60,7 @@ func (o *UPFConnectionInfo) GetUPFIpAddressOk() (*string, bool) {
 
 // HasUPFIpAddress returns a boolean if a field has been set.
 func (o *UPFConnectionInfo) HasUPFIpAddress() bool {
-	if o != nil && !isNil(o.UPFIpAddress) {
+	if o != nil && !IsNil(o.UPFIpAddress) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UPFConnectionInfo) SetUPFIpAddress(v string) {
 
 // GetUPFRef returns the UPFRef field value if set, zero value otherwise.
 func (o *UPFConnectionInfo) GetUPFRef() string {
-	if o == nil || isNil(o.UPFRef) {
+	if o == nil || IsNil(o.UPFRef) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UPFConnectionInfo) GetUPFRef() string {
 // GetUPFRefOk returns a tuple with the UPFRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UPFConnectionInfo) GetUPFRefOk() (*string, bool) {
-	if o == nil || isNil(o.UPFRef) {
+	if o == nil || IsNil(o.UPFRef) {
 		return nil, false
 	}
 	return o.UPFRef, true
@@ -92,7 +92,7 @@ func (o *UPFConnectionInfo) GetUPFRefOk() (*string, bool) {
 
 // HasUPFRef returns a boolean if a field has been set.
 func (o *UPFConnectionInfo) HasUPFRef() bool {
-	if o != nil && !isNil(o.UPFRef) {
+	if o != nil && !IsNil(o.UPFRef) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UPFConnectionInfo) SetUPFRef(v string) {
 }
 
 func (o UPFConnectionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o UPFConnectionInfo) MarshalJSON() ([]byte, error) {
 
 func (o UPFConnectionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UPFIpAddress) {
+	if !IsNil(o.UPFIpAddress) {
 		toSerialize["uPFIpAddress"] = o.UPFIpAddress
 	}
-	if !isNil(o.UPFRef) {
+	if !IsNil(o.UPFRef) {
 		toSerialize["uPFRef"] = o.UPFRef
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableUPFConnectionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

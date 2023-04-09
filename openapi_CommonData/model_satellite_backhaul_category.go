@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SatelliteBackhaulCategory Indicates the satellite backhaul used.
 type SatelliteBackhaulCategory struct {
-	SatelliteBackhaulCategoryAnyOf *SatelliteBackhaulCategoryAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SatelliteBackhaulCategory) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SatelliteBackhaulCategoryAnyOf
-	err = json.Unmarshal(data, &dst.SatelliteBackhaulCategoryAnyOf);
-	if err == nil {
-		jsonSatelliteBackhaulCategoryAnyOf, _ := json.Marshal(dst.SatelliteBackhaulCategoryAnyOf)
-		if string(jsonSatelliteBackhaulCategoryAnyOf) == "{}" { // empty struct
-			dst.SatelliteBackhaulCategoryAnyOf = nil
-		} else {
-			return nil // data stored in dst.SatelliteBackhaulCategoryAnyOf, return on the first match
-		}
-	} else {
-		dst.SatelliteBackhaulCategoryAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SatelliteBackhaulCategory) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SatelliteBackhaulCategory) MarshalJSON() ([]byte, error) {
-	if src.SatelliteBackhaulCategoryAnyOf != nil {
-		return json.Marshal(&src.SatelliteBackhaulCategoryAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSatelliteBackhaulCategory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

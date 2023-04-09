@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-session
 
-API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -13,19 +13,18 @@ package openapi_MBSSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualMBSSessionApiService IndividualMBSSessionApi service
 type IndividualMBSSessionApiService service
 
 type ApiDeleteIndMBSSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMBSSessionApiService
+	ctx           context.Context
+	ApiService    *IndividualMBSSessionApiService
 	mbsSessionRef string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteIndMBSSessionRequest) Execute() (*http.Response, error) {
 /*
 DeleteIndMBSSession Request the Deletion of an existing Individual MBS Session resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mbsSessionRef Identifier of the Individual MBS Session resource.
- @return ApiDeleteIndMBSSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mbsSessionRef Identifier of the Individual MBS Session resource.
+	@return ApiDeleteIndMBSSessionRequest
 */
 func (a *IndividualMBSSessionApiService) DeleteIndMBSSession(ctx context.Context, mbsSessionRef string) ApiDeleteIndMBSSessionRequest {
 	return ApiDeleteIndMBSSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		mbsSessionRef: mbsSessionRef,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSession(ctx context.Context
 // Execute executes the request
 func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteIndMBSSessionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSSessionApiService.DeleteIndMBSSession")
@@ -95,9 +94,9 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -191,10 +190,10 @@ func (a *IndividualMBSSessionApiService) DeleteIndMBSSessionExecute(r ApiDeleteI
 }
 
 type ApiModifyIndMBSSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMBSSessionApiService
+	ctx           context.Context
+	ApiService    *IndividualMBSSessionApiService
 	mbsSessionRef string
-	patchItem *[]PatchItem
+	patchItem     *[]PatchItem
 }
 
 func (r ApiModifyIndMBSSessionRequest) PatchItem(patchItem []PatchItem) ApiModifyIndMBSSessionRequest {
@@ -209,14 +208,14 @@ func (r ApiModifyIndMBSSessionRequest) Execute() (*http.Response, error) {
 /*
 ModifyIndMBSSession Request the modification of an existing Individual MBS Session resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mbsSessionRef Identifier of the Individual MBS Session resource.
- @return ApiModifyIndMBSSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mbsSessionRef Identifier of the Individual MBS Session resource.
+	@return ApiModifyIndMBSSessionRequest
 */
 func (a *IndividualMBSSessionApiService) ModifyIndMBSSession(ctx context.Context, mbsSessionRef string) ApiModifyIndMBSSessionRequest {
 	return ApiModifyIndMBSSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		mbsSessionRef: mbsSessionRef,
 	}
 }
@@ -224,9 +223,9 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSession(ctx context.Context
 // Execute executes the request
 func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyIndMBSSessionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSSessionApiService.ModifyIndMBSSession")
@@ -276,9 +275,9 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -295,8 +294,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -306,8 +305,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -317,8 +316,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -328,8 +327,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -339,8 +338,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -350,8 +349,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -361,8 +360,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -372,8 +371,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -383,8 +382,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -394,8 +393,8 @@ func (a *IndividualMBSSessionApiService) ModifyIndMBSSessionExecute(r ApiModifyI
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

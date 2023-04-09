@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &AmfEventSubscriptionAddInfo{}
 
 // AmfEventSubscriptionAddInfo Additional information received for an AMF event subscription, e.g. binding indications
 type AmfEventSubscriptionAddInfo struct {
-	BindingInfo []string `json:"bindingInfo,omitempty"`
-	SubscribingNfType *NFType `json:"subscribingNfType,omitempty"`
-	EventSyncInd *bool `json:"eventSyncInd,omitempty"`
-	NfConsumerInfo []string `json:"nfConsumerInfo,omitempty"`
-	// Map of subscribed Area of Interest (AoI) Event State in the old AMF. The JSON pointer to an AmfEventArea element in the areaList IE (or a PresenceInfo element in  presenceInfoList IE) of the AmfEvent data type shall be the key of the map. 
+	BindingInfo       []string `json:"bindingInfo,omitempty"`
+	SubscribingNfType *NFType  `json:"subscribingNfType,omitempty"`
+	EventSyncInd      *bool    `json:"eventSyncInd,omitempty"`
+	NfConsumerInfo    []string `json:"nfConsumerInfo,omitempty"`
+	// Map of subscribed Area of Interest (AoI) Event State in the old AMF. The JSON pointer to an AmfEventArea element in the areaList IE (or a PresenceInfo element in  presenceInfoList IE) of the AmfEvent data type shall be the key of the map.
 	AoiStateList *map[string]AreaOfInterestEventState `json:"aoiStateList,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewAmfEventSubscriptionAddInfoWithDefaults() *AmfEventSubscriptionAddInfo {
 
 // GetBindingInfo returns the BindingInfo field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionAddInfo) GetBindingInfo() []string {
-	if o == nil || isNil(o.BindingInfo) {
+	if o == nil || IsNil(o.BindingInfo) {
 		var ret []string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AmfEventSubscriptionAddInfo) GetBindingInfo() []string {
 // GetBindingInfoOk returns a tuple with the BindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionAddInfo) GetBindingInfoOk() ([]string, bool) {
-	if o == nil || isNil(o.BindingInfo) {
+	if o == nil || IsNil(o.BindingInfo) {
 		return nil, false
 	}
 	return o.BindingInfo, true
@@ -64,7 +64,7 @@ func (o *AmfEventSubscriptionAddInfo) GetBindingInfoOk() ([]string, bool) {
 
 // HasBindingInfo returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionAddInfo) HasBindingInfo() bool {
-	if o != nil && !isNil(o.BindingInfo) {
+	if o != nil && !IsNil(o.BindingInfo) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AmfEventSubscriptionAddInfo) SetBindingInfo(v []string) {
 
 // GetSubscribingNfType returns the SubscribingNfType field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionAddInfo) GetSubscribingNfType() NFType {
-	if o == nil || isNil(o.SubscribingNfType) {
+	if o == nil || IsNil(o.SubscribingNfType) {
 		var ret NFType
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AmfEventSubscriptionAddInfo) GetSubscribingNfType() NFType {
 // GetSubscribingNfTypeOk returns a tuple with the SubscribingNfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionAddInfo) GetSubscribingNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.SubscribingNfType) {
+	if o == nil || IsNil(o.SubscribingNfType) {
 		return nil, false
 	}
 	return o.SubscribingNfType, true
@@ -96,7 +96,7 @@ func (o *AmfEventSubscriptionAddInfo) GetSubscribingNfTypeOk() (*NFType, bool) {
 
 // HasSubscribingNfType returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionAddInfo) HasSubscribingNfType() bool {
-	if o != nil && !isNil(o.SubscribingNfType) {
+	if o != nil && !IsNil(o.SubscribingNfType) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AmfEventSubscriptionAddInfo) SetSubscribingNfType(v NFType) {
 
 // GetEventSyncInd returns the EventSyncInd field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionAddInfo) GetEventSyncInd() bool {
-	if o == nil || isNil(o.EventSyncInd) {
+	if o == nil || IsNil(o.EventSyncInd) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AmfEventSubscriptionAddInfo) GetEventSyncInd() bool {
 // GetEventSyncIndOk returns a tuple with the EventSyncInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionAddInfo) GetEventSyncIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EventSyncInd) {
+	if o == nil || IsNil(o.EventSyncInd) {
 		return nil, false
 	}
 	return o.EventSyncInd, true
@@ -128,7 +128,7 @@ func (o *AmfEventSubscriptionAddInfo) GetEventSyncIndOk() (*bool, bool) {
 
 // HasEventSyncInd returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionAddInfo) HasEventSyncInd() bool {
-	if o != nil && !isNil(o.EventSyncInd) {
+	if o != nil && !IsNil(o.EventSyncInd) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AmfEventSubscriptionAddInfo) SetEventSyncInd(v bool) {
 
 // GetNfConsumerInfo returns the NfConsumerInfo field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionAddInfo) GetNfConsumerInfo() []string {
-	if o == nil || isNil(o.NfConsumerInfo) {
+	if o == nil || IsNil(o.NfConsumerInfo) {
 		var ret []string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AmfEventSubscriptionAddInfo) GetNfConsumerInfo() []string {
 // GetNfConsumerInfoOk returns a tuple with the NfConsumerInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionAddInfo) GetNfConsumerInfoOk() ([]string, bool) {
-	if o == nil || isNil(o.NfConsumerInfo) {
+	if o == nil || IsNil(o.NfConsumerInfo) {
 		return nil, false
 	}
 	return o.NfConsumerInfo, true
@@ -160,7 +160,7 @@ func (o *AmfEventSubscriptionAddInfo) GetNfConsumerInfoOk() ([]string, bool) {
 
 // HasNfConsumerInfo returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionAddInfo) HasNfConsumerInfo() bool {
-	if o != nil && !isNil(o.NfConsumerInfo) {
+	if o != nil && !IsNil(o.NfConsumerInfo) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *AmfEventSubscriptionAddInfo) SetNfConsumerInfo(v []string) {
 
 // GetAoiStateList returns the AoiStateList field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionAddInfo) GetAoiStateList() map[string]AreaOfInterestEventState {
-	if o == nil || isNil(o.AoiStateList) {
+	if o == nil || IsNil(o.AoiStateList) {
 		var ret map[string]AreaOfInterestEventState
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *AmfEventSubscriptionAddInfo) GetAoiStateList() map[string]AreaOfInteres
 // GetAoiStateListOk returns a tuple with the AoiStateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionAddInfo) GetAoiStateListOk() (*map[string]AreaOfInterestEventState, bool) {
-	if o == nil || isNil(o.AoiStateList) {
+	if o == nil || IsNil(o.AoiStateList) {
 		return nil, false
 	}
 	return o.AoiStateList, true
@@ -192,7 +192,7 @@ func (o *AmfEventSubscriptionAddInfo) GetAoiStateListOk() (*map[string]AreaOfInt
 
 // HasAoiStateList returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionAddInfo) HasAoiStateList() bool {
-	if o != nil && !isNil(o.AoiStateList) {
+	if o != nil && !IsNil(o.AoiStateList) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *AmfEventSubscriptionAddInfo) SetAoiStateList(v map[string]AreaOfInteres
 }
 
 func (o AmfEventSubscriptionAddInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o AmfEventSubscriptionAddInfo) MarshalJSON() ([]byte, error) {
 
 func (o AmfEventSubscriptionAddInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.BindingInfo) {
+	if !IsNil(o.BindingInfo) {
 		toSerialize["bindingInfo"] = o.BindingInfo
 	}
-	if !isNil(o.SubscribingNfType) {
+	if !IsNil(o.SubscribingNfType) {
 		toSerialize["subscribingNfType"] = o.SubscribingNfType
 	}
-	if !isNil(o.EventSyncInd) {
+	if !IsNil(o.EventSyncInd) {
 		toSerialize["eventSyncInd"] = o.EventSyncInd
 	}
-	if !isNil(o.NfConsumerInfo) {
+	if !IsNil(o.NfConsumerInfo) {
 		toSerialize["nfConsumerInfo"] = o.NfConsumerInfo
 	}
-	if !isNil(o.AoiStateList) {
+	if !IsNil(o.AoiStateList) {
 		toSerialize["aoiStateList"] = o.AoiStateList
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullableAmfEventSubscriptionAddInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

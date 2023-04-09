@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AmInfluEvent Represents the service area coverage outcome event.
 type AmInfluEvent struct {
-	AmInfluEventAnyOf *AmInfluEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AmInfluEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AmInfluEventAnyOf
-	err = json.Unmarshal(data, &dst.AmInfluEventAnyOf);
-	if err == nil {
-		jsonAmInfluEventAnyOf, _ := json.Marshal(dst.AmInfluEventAnyOf)
-		if string(jsonAmInfluEventAnyOf) == "{}" { // empty struct
-			dst.AmInfluEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.AmInfluEventAnyOf, return on the first match
-		}
-	} else {
-		dst.AmInfluEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AmInfluEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AmInfluEvent) MarshalJSON() ([]byte, error) {
-	if src.AmInfluEventAnyOf != nil {
-		return json.Marshal(&src.AmInfluEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAmInfluEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

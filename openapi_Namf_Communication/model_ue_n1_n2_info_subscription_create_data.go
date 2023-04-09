@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,15 +21,15 @@ var _ MappedNullable = &UeN1N2InfoSubscriptionCreateData{}
 type UeN1N2InfoSubscriptionCreateData struct {
 	N2InformationClass *N2InformationClass `json:"n2InformationClass,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	N2NotifyCallbackUri *string `json:"n2NotifyCallbackUri,omitempty"`
-	N1MessageClass *N1MessageClass `json:"n1MessageClass,omitempty"`
+	N2NotifyCallbackUri *string         `json:"n2NotifyCallbackUri,omitempty"`
+	N1MessageClass      *N1MessageClass `json:"n1MessageClass,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	N1NotifyCallbackUri *string `json:"n1NotifyCallbackUri,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfId *string `json:"nfId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	OldGuami *Guami `json:"oldGuami,omitempty"`
+	OldGuami          *Guami  `json:"oldGuami,omitempty"`
 }
 
 // NewUeN1N2InfoSubscriptionCreateData instantiates a new UeN1N2InfoSubscriptionCreateData object
@@ -51,7 +51,7 @@ func NewUeN1N2InfoSubscriptionCreateDataWithDefaults() *UeN1N2InfoSubscriptionCr
 
 // GetN2InformationClass returns the N2InformationClass field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN2InformationClass() N2InformationClass {
-	if o == nil || isNil(o.N2InformationClass) {
+	if o == nil || IsNil(o.N2InformationClass) {
 		var ret N2InformationClass
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN2InformationClass() N2Information
 // GetN2InformationClassOk returns a tuple with the N2InformationClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN2InformationClassOk() (*N2InformationClass, bool) {
-	if o == nil || isNil(o.N2InformationClass) {
+	if o == nil || IsNil(o.N2InformationClass) {
 		return nil, false
 	}
 	return o.N2InformationClass, true
@@ -69,7 +69,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN2InformationClassOk() (*N2Informa
 
 // HasN2InformationClass returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasN2InformationClass() bool {
-	if o != nil && !isNil(o.N2InformationClass) {
+	if o != nil && !IsNil(o.N2InformationClass) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetN2InformationClass(v N2Information
 
 // GetN2NotifyCallbackUri returns the N2NotifyCallbackUri field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN2NotifyCallbackUri() string {
-	if o == nil || isNil(o.N2NotifyCallbackUri) {
+	if o == nil || IsNil(o.N2NotifyCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN2NotifyCallbackUri() string {
 // GetN2NotifyCallbackUriOk returns a tuple with the N2NotifyCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN2NotifyCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.N2NotifyCallbackUri) {
+	if o == nil || IsNil(o.N2NotifyCallbackUri) {
 		return nil, false
 	}
 	return o.N2NotifyCallbackUri, true
@@ -101,7 +101,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN2NotifyCallbackUriOk() (*string, 
 
 // HasN2NotifyCallbackUri returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasN2NotifyCallbackUri() bool {
-	if o != nil && !isNil(o.N2NotifyCallbackUri) {
+	if o != nil && !IsNil(o.N2NotifyCallbackUri) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetN2NotifyCallbackUri(v string) {
 
 // GetN1MessageClass returns the N1MessageClass field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN1MessageClass() N1MessageClass {
-	if o == nil || isNil(o.N1MessageClass) {
+	if o == nil || IsNil(o.N1MessageClass) {
 		var ret N1MessageClass
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN1MessageClass() N1MessageClass {
 // GetN1MessageClassOk returns a tuple with the N1MessageClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN1MessageClassOk() (*N1MessageClass, bool) {
-	if o == nil || isNil(o.N1MessageClass) {
+	if o == nil || IsNil(o.N1MessageClass) {
 		return nil, false
 	}
 	return o.N1MessageClass, true
@@ -133,7 +133,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN1MessageClassOk() (*N1MessageClas
 
 // HasN1MessageClass returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasN1MessageClass() bool {
-	if o != nil && !isNil(o.N1MessageClass) {
+	if o != nil && !IsNil(o.N1MessageClass) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetN1MessageClass(v N1MessageClass) {
 
 // GetN1NotifyCallbackUri returns the N1NotifyCallbackUri field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN1NotifyCallbackUri() string {
-	if o == nil || isNil(o.N1NotifyCallbackUri) {
+	if o == nil || IsNil(o.N1NotifyCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN1NotifyCallbackUri() string {
 // GetN1NotifyCallbackUriOk returns a tuple with the N1NotifyCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetN1NotifyCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.N1NotifyCallbackUri) {
+	if o == nil || IsNil(o.N1NotifyCallbackUri) {
 		return nil, false
 	}
 	return o.N1NotifyCallbackUri, true
@@ -165,7 +165,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetN1NotifyCallbackUriOk() (*string, 
 
 // HasN1NotifyCallbackUri returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasN1NotifyCallbackUri() bool {
-	if o != nil && !isNil(o.N1NotifyCallbackUri) {
+	if o != nil && !IsNil(o.N1NotifyCallbackUri) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetN1NotifyCallbackUri(v string) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetNfId() string {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -197,7 +197,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasNfId() bool {
-	if o != nil && !isNil(o.NfId) {
+	if o != nil && !IsNil(o.NfId) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetNfId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -229,7 +229,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetSupportedFeaturesOk() (*string, bo
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreateData) GetOldGuami() Guami {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -261,7 +261,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreateData) HasOldGuami() bool {
-	if o != nil && !isNil(o.OldGuami) {
+	if o != nil && !IsNil(o.OldGuami) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *UeN1N2InfoSubscriptionCreateData) SetOldGuami(v Guami) {
 }
 
 func (o UeN1N2InfoSubscriptionCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -283,25 +283,25 @@ func (o UeN1N2InfoSubscriptionCreateData) MarshalJSON() ([]byte, error) {
 
 func (o UeN1N2InfoSubscriptionCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.N2InformationClass) {
+	if !IsNil(o.N2InformationClass) {
 		toSerialize["n2InformationClass"] = o.N2InformationClass
 	}
-	if !isNil(o.N2NotifyCallbackUri) {
+	if !IsNil(o.N2NotifyCallbackUri) {
 		toSerialize["n2NotifyCallbackUri"] = o.N2NotifyCallbackUri
 	}
-	if !isNil(o.N1MessageClass) {
+	if !IsNil(o.N1MessageClass) {
 		toSerialize["n1MessageClass"] = o.N1MessageClass
 	}
-	if !isNil(o.N1NotifyCallbackUri) {
+	if !IsNil(o.N1NotifyCallbackUri) {
 		toSerialize["n1NotifyCallbackUri"] = o.N1NotifyCallbackUri
 	}
-	if !isNil(o.NfId) {
+	if !IsNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.OldGuami) {
+	if !IsNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
 	return toSerialize, nil
@@ -342,5 +342,3 @@ func (v *NullableUeN1N2InfoSubscriptionCreateData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,25 +13,24 @@ package openapi_Policy_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // SessionManagementPolicyDataDocumentApiService SessionManagementPolicyDataDocumentApi service
 type SessionManagementPolicyDataDocumentApiService service
 
 type ApiReadSessionManagementPolicyDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SessionManagementPolicyDataDocumentApiService
-	ueId string
-	snssai *Snssai
-	dnn *string
-	fields *[]string
-	suppFeat *string
+	ueId       string
+	snssai     *Snssai
+	dnn        *string
+	fields     *[]string
+	suppFeat   *string
 }
 
 func (r ApiReadSessionManagementPolicyDataRequest) Snssai(snssai Snssai) ApiReadSessionManagementPolicyDataRequest {
@@ -63,26 +62,27 @@ func (r ApiReadSessionManagementPolicyDataRequest) Execute() (*SmPolicyData, *ht
 /*
 ReadSessionManagementPolicyData Retrieves the session management policy data for a subscriber
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiReadSessionManagementPolicyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiReadSessionManagementPolicyDataRequest
 */
 func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPolicyData(ctx context.Context, ueId string) ApiReadSessionManagementPolicyDataRequest {
 	return ApiReadSessionManagementPolicyDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return SmPolicyData
+//
+//	@return SmPolicyData
 func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPolicyDataExecute(r ApiReadSessionManagementPolicyDataRequest) (*SmPolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmPolicyData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmPolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionManagementPolicyDataDocumentApiService.ReadSessionManagementPolicyData")
@@ -98,24 +98,24 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 	localVarFormParams := url.Values{}
 
 	if r.snssai != nil {
-		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.fields != nil {
 		t := *r.fields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "fields", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "fields", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "fields", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "fields", t, "multi")
 		}
 	}
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -144,9 +144,9 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -163,8 +163,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -174,8 +174,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -185,8 +185,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -196,8 +196,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -207,8 +207,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -218,8 +218,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -229,8 +229,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -240,8 +240,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -251,8 +251,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -271,9 +271,9 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 }
 
 type ApiUpdateSessionManagementPolicyDataRequest struct {
-	ctx context.Context
-	ApiService *SessionManagementPolicyDataDocumentApiService
-	ueId string
+	ctx               context.Context
+	ApiService        *SessionManagementPolicyDataDocumentApiService
+	ueId              string
 	smPolicyDataPatch *SmPolicyDataPatch
 }
 
@@ -289,26 +289,27 @@ func (r ApiUpdateSessionManagementPolicyDataRequest) Execute() (*SmPolicyData, *
 /*
 UpdateSessionManagementPolicyData Modify the session management policy data for a subscriber
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiUpdateSessionManagementPolicyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiUpdateSessionManagementPolicyDataRequest
 */
 func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementPolicyData(ctx context.Context, ueId string) ApiUpdateSessionManagementPolicyDataRequest {
 	return ApiUpdateSessionManagementPolicyDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return SmPolicyData
+//
+//	@return SmPolicyData
 func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementPolicyDataExecute(r ApiUpdateSessionManagementPolicyDataRequest) (*SmPolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmPolicyData
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmPolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionManagementPolicyDataDocumentApiService.UpdateSessionManagementPolicyData")
@@ -355,9 +356,9 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -374,8 +375,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -385,8 +386,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -396,8 +397,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -407,8 +408,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -418,8 +419,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -429,8 +430,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -440,8 +441,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -451,8 +452,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -462,8 +463,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -473,8 +474,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -484,8 +485,8 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

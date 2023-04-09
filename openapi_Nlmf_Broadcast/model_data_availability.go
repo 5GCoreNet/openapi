@@ -1,7 +1,7 @@
 /*
 LMF Broadcast
 
-LMF Broadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Broadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,23 +17,23 @@ import (
 
 // DataAvailability Indicates availability of ciphering key data at an LMF.
 type DataAvailability struct {
-	DataAvailabilityAnyOf *DataAvailabilityAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DataAvailability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DataAvailabilityAnyOf
-	err = json.Unmarshal(data, &dst.DataAvailabilityAnyOf);
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
-		jsonDataAvailabilityAnyOf, _ := json.Marshal(dst.DataAvailabilityAnyOf)
-		if string(jsonDataAvailabilityAnyOf) == "{}" { // empty struct
-			dst.DataAvailabilityAnyOf = nil
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
 		} else {
-			return nil // data stored in dst.DataAvailabilityAnyOf, return on the first match
+			return nil // data stored in dst.String, return on the first match
 		}
 	} else {
-		dst.DataAvailabilityAnyOf = nil
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DataAvailability)")
@@ -41,8 +41,8 @@ func (dst *DataAvailability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DataAvailability) MarshalJSON() ([]byte, error) {
-	if src.DataAvailabilityAnyOf != nil {
-		return json.Marshal(&src.DataAvailabilityAnyOf)
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas
@@ -83,5 +83,3 @@ func (v *NullableDataAvailability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nhss_SDM
 
-HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewSubscriptionDataSetsWithDefaults() *SubscriptionDataSets {
 
 // GetUeContextInPgwData returns the UeContextInPgwData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetUeContextInPgwData() UeContextInPgwData {
-	if o == nil || isNil(o.UeContextInPgwData) {
+	if o == nil || IsNil(o.UeContextInPgwData) {
 		var ret UeContextInPgwData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *SubscriptionDataSets) GetUeContextInPgwData() UeContextInPgwData {
 // GetUeContextInPgwDataOk returns a tuple with the UeContextInPgwData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetUeContextInPgwDataOk() (*UeContextInPgwData, bool) {
-	if o == nil || isNil(o.UeContextInPgwData) {
+	if o == nil || IsNil(o.UeContextInPgwData) {
 		return nil, false
 	}
 	return o.UeContextInPgwData, true
@@ -59,7 +59,7 @@ func (o *SubscriptionDataSets) GetUeContextInPgwDataOk() (*UeContextInPgwData, b
 
 // HasUeContextInPgwData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasUeContextInPgwData() bool {
-	if o != nil && !isNil(o.UeContextInPgwData) {
+	if o != nil && !IsNil(o.UeContextInPgwData) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *SubscriptionDataSets) SetUeContextInPgwData(v UeContextInPgwData) {
 }
 
 func (o SubscriptionDataSets) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o SubscriptionDataSets) MarshalJSON() ([]byte, error) {
 
 func (o SubscriptionDataSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UeContextInPgwData) {
+	if !IsNil(o.UeContextInPgwData) {
 		toSerialize["ueContextInPgwData"] = o.UeContextInPgwData
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableSubscriptionDataSets) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

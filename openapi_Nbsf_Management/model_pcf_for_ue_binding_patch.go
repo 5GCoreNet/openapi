@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -23,7 +23,7 @@ type PcfForUeBindingPatch struct {
 	PcfForUeFqdn *string `json:"pcfForUeFqdn,omitempty"`
 	// IP end points of the PCF hosting the Npcf_AmPolicyAuthorization service.
 	PcfForUeIpEndPoints []IpEndPoint `json:"pcfForUeIpEndPoints,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewPcfForUeBindingPatchWithDefaults() *PcfForUeBindingPatch {
 
 // GetPcfForUeFqdn returns the PcfForUeFqdn field value if set, zero value otherwise.
 func (o *PcfForUeBindingPatch) GetPcfForUeFqdn() string {
-	if o == nil || isNil(o.PcfForUeFqdn) {
+	if o == nil || IsNil(o.PcfForUeFqdn) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *PcfForUeBindingPatch) GetPcfForUeFqdn() string {
 // GetPcfForUeFqdnOk returns a tuple with the PcfForUeFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeBindingPatch) GetPcfForUeFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfForUeFqdn) {
+	if o == nil || IsNil(o.PcfForUeFqdn) {
 		return nil, false
 	}
 	return o.PcfForUeFqdn, true
@@ -64,7 +64,7 @@ func (o *PcfForUeBindingPatch) GetPcfForUeFqdnOk() (*string, bool) {
 
 // HasPcfForUeFqdn returns a boolean if a field has been set.
 func (o *PcfForUeBindingPatch) HasPcfForUeFqdn() bool {
-	if o != nil && !isNil(o.PcfForUeFqdn) {
+	if o != nil && !IsNil(o.PcfForUeFqdn) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *PcfForUeBindingPatch) SetPcfForUeFqdn(v string) {
 
 // GetPcfForUeIpEndPoints returns the PcfForUeIpEndPoints field value if set, zero value otherwise.
 func (o *PcfForUeBindingPatch) GetPcfForUeIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfForUeIpEndPoints) {
+	if o == nil || IsNil(o.PcfForUeIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *PcfForUeBindingPatch) GetPcfForUeIpEndPoints() []IpEndPoint {
 // GetPcfForUeIpEndPointsOk returns a tuple with the PcfForUeIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeBindingPatch) GetPcfForUeIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfForUeIpEndPoints) {
+	if o == nil || IsNil(o.PcfForUeIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfForUeIpEndPoints, true
@@ -96,7 +96,7 @@ func (o *PcfForUeBindingPatch) GetPcfForUeIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfForUeIpEndPoints returns a boolean if a field has been set.
 func (o *PcfForUeBindingPatch) HasPcfForUeIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfForUeIpEndPoints) {
+	if o != nil && !IsNil(o.PcfForUeIpEndPoints) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *PcfForUeBindingPatch) SetPcfForUeIpEndPoints(v []IpEndPoint) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfForUeBindingPatch) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *PcfForUeBindingPatch) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeBindingPatch) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -128,7 +128,7 @@ func (o *PcfForUeBindingPatch) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfForUeBindingPatch) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PcfForUeBindingPatch) SetPcfId(v string) {
 }
 
 func (o PcfForUeBindingPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o PcfForUeBindingPatch) MarshalJSON() ([]byte, error) {
 
 func (o PcfForUeBindingPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PcfForUeFqdn) {
+	if !IsNil(o.PcfForUeFqdn) {
 		toSerialize["pcfForUeFqdn"] = o.PcfForUeFqdn
 	}
-	if !isNil(o.PcfForUeIpEndPoints) {
+	if !IsNil(o.PcfForUeIpEndPoints) {
 		toSerialize["pcfForUeIpEndPoints"] = o.PcfForUeIpEndPoints
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullablePcfForUeBindingPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

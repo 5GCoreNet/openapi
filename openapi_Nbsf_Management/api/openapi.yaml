@@ -2275,6 +2275,7 @@ components:
           minItems: 1
           type: array
       type: object
+      x-parent: true
     MbsBindingResp:
       description: Contains the binding information for a PCF for an MBS Session.
       properties:
@@ -2292,6 +2293,7 @@ components:
           minItems: 1
           type: array
       type: object
+      x-parent: true
     BsfSubscription:
       description: Contains the event subscription data.
       example:
@@ -3059,7 +3061,10 @@ components:
       type: object
     BindingLevel:
       anyOf:
-      - $ref: '#/components/schemas/BindingLevel_anyOf'
+      - enum:
+        - NF_SET
+        - NF_INSTANCE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -3069,7 +3074,14 @@ components:
         - "NF_INSTANCE"
     BsfEvent:
       anyOf:
-      - $ref: '#/components/schemas/BsfEvent_anyOf'
+      - enum:
+        - PCF_PDU_SESSION_BINDING_REGISTRATION
+        - PCF_PDU_SESSION_BINDING_DEREGISTRATION
+        - PCF_UE_BINDING_REGISTRATION
+        - PCF_UE_BINDING_DEREGISTRATION
+        - SNSSAI_DNN_BINDING_REGISTRATION
+        - SNSSAI_DNN_BINDING_DEREGISTRATION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -3206,6 +3218,7 @@ components:
           minItems: 1
           type: array
       type: object
+      x-parent: true
     Uri:
       description: String providing an URI formatted according to RFC 3986.
       type: string
@@ -3416,7 +3429,9 @@ components:
       type: object
     TransportProtocol:
       anyOf:
-      - $ref: '#/components/schemas/TransportProtocol_anyOf'
+      - enum:
+        - TCP
+        type: string
       - type: string
       description: Types of transport protocol used in a given IP endpoint of an NF
         Service Instance
@@ -3604,7 +3619,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnIdNid:
@@ -3646,87 +3718,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    BindingLevel_anyOf:
-      enum:
-      - NF_SET
-      - NF_INSTANCE
-      type: string
-      example: null
-    BsfEvent_anyOf:
-      enum:
-      - PCF_PDU_SESSION_BINDING_REGISTRATION
-      - PCF_PDU_SESSION_BINDING_DEREGISTRATION
-      - PCF_UE_BINDING_REGISTRATION
-      - PCF_UE_BINDING_DEREGISTRATION
-      - SNSSAI_DNN_BINDING_REGISTRATION
-      - SNSSAI_DNN_BINDING_DEREGISTRATION
-      type: string
-      example: null
-    TransportProtocol_anyOf:
-      enum:
-      - TCP
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

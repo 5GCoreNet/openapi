@@ -1742,17 +1742,35 @@ components:
       type: integer
     EventType:
       anyOf:
-      - $ref: '#/components/schemas/EventType_anyOf'
+      - enum:
+        - LOSS_OF_CONNECTIVITY
+        - UE_REACHABILITY_FOR_DATA
+        - UE_REACHABILITY_FOR_SMS
+        - LOCATION_REPORTING
+        - COMMUNICATION_FAILURE
+        - AVAILABILITY_AFTER_DDN_FAILURE
+        - PDN_CONNECTIVITY_STATUS
+        type: string
       - type: string
       description: Type of Monitoring Event
     LocationAccuracy:
       anyOf:
-      - $ref: '#/components/schemas/LocationAccuracy_anyOf'
+      - enum:
+        - CELL_LEVEL
+        - RAN_NODE_LEVEL
+        - TA_LEVEL
+        type: string
       - type: string
       description: Location accuracy used in the 'Location Reporting' event type
     FailedCause:
       anyOf:
-      - $ref: '#/components/schemas/FailedCause_anyOf'
+      - enum:
+        - MTC_PROVIDER_NOT_ALLOWED
+        - MONITORING_NOT_ALLOWED
+        - UNSUPPORTED_MONITORING_EVENT_TYPE
+        - UNSUPPORTED_MONITORING_REPORT_OPTIONS
+        - UNSPECIFIED
+        type: string
       - type: string
       description: Indicates the Failed cause of the failed Monitoring Configuration
         in the EE subscription
@@ -1871,7 +1889,14 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - $ref: '#/components/schemas/PatchOperation_anyOf'
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -2152,7 +2177,10 @@ components:
       type: object
     PdnConnectivityStatus:
       anyOf:
-      - $ref: '#/components/schemas/PdnConnectivityStatus_anyOf'
+      - enum:
+        - ESTABLISHED
+        - RELEASED
+        type: string
       - type: string
     Dnn:
       description: |
@@ -2286,7 +2314,11 @@ components:
       type: object
     LossOfConnectivityReason:
       anyOf:
-      - $ref: '#/components/schemas/LossOfConnectivityReason_anyOf'
+      - enum:
+        - DEREGISTERED
+        - MAX_DETECTION_TIME_EXPIRED
+        - PURGED
+        type: string
       - type: string
       description: Describes the reason for loss of connectivity
     UserLocation:
@@ -3038,7 +3070,10 @@ components:
       type: integer
     TransportProtocol:
       anyOf:
-      - $ref: '#/components/schemas/TransportProtocol_anyOf'
+      - enum:
+        - UDP
+        - TCP
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -3119,7 +3154,10 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - $ref: '#/components/schemas/LineType_anyOf'
+      - enum:
+        - DSL
+        - PON
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -3396,7 +3434,13 @@ components:
       type: string
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -3408,7 +3452,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -3486,137 +3587,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    EventType_anyOf:
-      enum:
-      - LOSS_OF_CONNECTIVITY
-      - UE_REACHABILITY_FOR_DATA
-      - UE_REACHABILITY_FOR_SMS
-      - LOCATION_REPORTING
-      - COMMUNICATION_FAILURE
-      - AVAILABILITY_AFTER_DDN_FAILURE
-      - PDN_CONNECTIVITY_STATUS
-      type: string
-      example: null
-    LocationAccuracy_anyOf:
-      enum:
-      - CELL_LEVEL
-      - RAN_NODE_LEVEL
-      - TA_LEVEL
-      type: string
-      example: null
-    FailedCause_anyOf:
-      enum:
-      - MTC_PROVIDER_NOT_ALLOWED
-      - MONITORING_NOT_ALLOWED
-      - UNSUPPORTED_MONITORING_EVENT_TYPE
-      - UNSUPPORTED_MONITORING_REPORT_OPTIONS
-      - UNSPECIFIED
-      type: string
-      example: null
-    PatchOperation_anyOf:
-      enum:
-      - add
-      - copy
-      - move
-      - remove
-      - replace
-      - test
-      type: string
-      example: null
-    PdnConnectivityStatus_anyOf:
-      enum:
-      - ESTABLISHED
-      - RELEASED
-      type: string
-      example: null
-    LossOfConnectivityReason_anyOf:
-      enum:
-      - DEREGISTERED
-      - MAX_DETECTION_TIME_EXPIRED
-      - PURGED
-      type: string
-      example: null
-    TransportProtocol_anyOf:
-      enum:
-      - UDP
-      - TCP
-      type: string
-      example: null
-    LineType_anyOf:
-      enum:
-      - DSL
-      - PON
-      type: string
-      example: null
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

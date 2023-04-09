@@ -19,14 +19,11 @@ var _ MappedNullable = &OperatorDuSingle{}
 
 // OperatorDuSingle struct for OperatorDuSingle
 type OperatorDuSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
-	EPF1C *EPF1CSingle `json:"EP_F1C,omitempty"`
-	EPF1U []EPF1USingle `json:"EP_F1U,omitempty"`
+	Top
+	GnbId       *string       `json:"gnbId,omitempty"`
+	GnbIdLength *int32        `json:"gnbIdLength,omitempty"`
+	EPF1C       *EPF1CSingle  `json:"EP_F1C,omitempty"`
+	EPF1U       []EPF1USingle `json:"EP_F1U,omitempty"`
 }
 
 // NewOperatorDuSingle instantiates a new OperatorDuSingle object
@@ -47,131 +44,9 @@ func NewOperatorDuSingleWithDefaults() *OperatorDuSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *OperatorDuSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *OperatorDuSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *OperatorDuSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *OperatorDuSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OperatorDuSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *OperatorDuSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *OperatorDuSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *OperatorDuSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OperatorDuSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *OperatorDuSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *OperatorDuSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *OperatorDuSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OperatorDuSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *OperatorDuSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *OperatorDuSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetGnbId returns the GnbId field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetGnbId() string {
-	if o == nil || isNil(o.GnbId) {
+	if o == nil || IsNil(o.GnbId) {
 		var ret string
 		return ret
 	}
@@ -181,7 +56,7 @@ func (o *OperatorDuSingle) GetGnbId() string {
 // GetGnbIdOk returns a tuple with the GnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetGnbIdOk() (*string, bool) {
-	if o == nil || isNil(o.GnbId) {
+	if o == nil || IsNil(o.GnbId) {
 		return nil, false
 	}
 	return o.GnbId, true
@@ -189,7 +64,7 @@ func (o *OperatorDuSingle) GetGnbIdOk() (*string, bool) {
 
 // HasGnbId returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasGnbId() bool {
-	if o != nil && !isNil(o.GnbId) {
+	if o != nil && !IsNil(o.GnbId) {
 		return true
 	}
 
@@ -203,7 +78,7 @@ func (o *OperatorDuSingle) SetGnbId(v string) {
 
 // GetGnbIdLength returns the GnbIdLength field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetGnbIdLength() int32 {
-	if o == nil || isNil(o.GnbIdLength) {
+	if o == nil || IsNil(o.GnbIdLength) {
 		var ret int32
 		return ret
 	}
@@ -213,7 +88,7 @@ func (o *OperatorDuSingle) GetGnbIdLength() int32 {
 // GetGnbIdLengthOk returns a tuple with the GnbIdLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetGnbIdLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.GnbIdLength) {
+	if o == nil || IsNil(o.GnbIdLength) {
 		return nil, false
 	}
 	return o.GnbIdLength, true
@@ -221,7 +96,7 @@ func (o *OperatorDuSingle) GetGnbIdLengthOk() (*int32, bool) {
 
 // HasGnbIdLength returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasGnbIdLength() bool {
-	if o != nil && !isNil(o.GnbIdLength) {
+	if o != nil && !IsNil(o.GnbIdLength) {
 		return true
 	}
 
@@ -235,7 +110,7 @@ func (o *OperatorDuSingle) SetGnbIdLength(v int32) {
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetEPF1C() EPF1CSingle {
-	if o == nil || isNil(o.EPF1C) {
+	if o == nil || IsNil(o.EPF1C) {
 		var ret EPF1CSingle
 		return ret
 	}
@@ -245,7 +120,7 @@ func (o *OperatorDuSingle) GetEPF1C() EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetEPF1COk() (*EPF1CSingle, bool) {
-	if o == nil || isNil(o.EPF1C) {
+	if o == nil || IsNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -253,7 +128,7 @@ func (o *OperatorDuSingle) GetEPF1COk() (*EPF1CSingle, bool) {
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasEPF1C() bool {
-	if o != nil && !isNil(o.EPF1C) {
+	if o != nil && !IsNil(o.EPF1C) {
 		return true
 	}
 
@@ -267,7 +142,7 @@ func (o *OperatorDuSingle) SetEPF1C(v EPF1CSingle) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetEPF1U() []EPF1USingle {
-	if o == nil || isNil(o.EPF1U) {
+	if o == nil || IsNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -277,7 +152,7 @@ func (o *OperatorDuSingle) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || isNil(o.EPF1U) {
+	if o == nil || IsNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -285,7 +160,7 @@ func (o *OperatorDuSingle) GetEPF1UOk() ([]EPF1USingle, bool) {
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasEPF1U() bool {
-	if o != nil && !isNil(o.EPF1U) {
+	if o != nil && !IsNil(o.EPF1U) {
 		return true
 	}
 
@@ -298,7 +173,7 @@ func (o *OperatorDuSingle) SetEPF1U(v []EPF1USingle) {
 }
 
 func (o OperatorDuSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,26 +182,24 @@ func (o OperatorDuSingle) MarshalJSON() ([]byte, error) {
 
 func (o OperatorDuSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.GnbId) {
+	if !IsNil(o.GnbId) {
 		toSerialize["gnbId"] = o.GnbId
 	}
-	if !isNil(o.GnbIdLength) {
+	if !IsNil(o.GnbIdLength) {
 		toSerialize["gnbIdLength"] = o.GnbIdLength
 	}
-	if !isNil(o.EPF1C) {
+	if !IsNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
-	if !isNil(o.EPF1U) {
+	if !IsNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
 	return toSerialize, nil
@@ -367,5 +240,3 @@ func (v *NullableOperatorDuSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

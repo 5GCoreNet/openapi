@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // UcPurpose Indicates the purpose of the user consent.
 type UcPurpose struct {
-	UcPurposeAnyOf *UcPurposeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UcPurpose) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UcPurposeAnyOf
-	err = json.Unmarshal(data, &dst.UcPurposeAnyOf);
-	if err == nil {
-		jsonUcPurposeAnyOf, _ := json.Marshal(dst.UcPurposeAnyOf)
-		if string(jsonUcPurposeAnyOf) == "{}" { // empty struct
-			dst.UcPurposeAnyOf = nil
-		} else {
-			return nil // data stored in dst.UcPurposeAnyOf, return on the first match
-		}
-	} else {
-		dst.UcPurposeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UcPurpose) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UcPurpose) MarshalJSON() ([]byte, error) {
-	if src.UcPurposeAnyOf != nil {
-		return json.Marshal(&src.UcPurposeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUcPurpose) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

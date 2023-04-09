@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,8 +19,7 @@ var _ MappedNullable = &LocationRecord{}
 
 // LocationRecord struct for LocationRecord
 type LocationRecord struct {
-	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
+	BaseRecord
 	Location LocationData `json:"location"`
 }
 
@@ -28,7 +27,7 @@ type LocationRecord struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocationRecord(timestamp time.Time, location LocationData) *LocationRecord {
+func NewLocationRecord(location LocationData, timestamp time.Time) *LocationRecord {
 	this := LocationRecord{}
 	this.Timestamp = timestamp
 	this.Location = location
@@ -41,30 +40,6 @@ func NewLocationRecord(timestamp time.Time, location LocationData) *LocationReco
 func NewLocationRecordWithDefaults() *LocationRecord {
 	this := LocationRecord{}
 	return &this
-}
-
-// GetTimestamp returns the Timestamp field value
-func (o *LocationRecord) GetTimestamp() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.Timestamp
-}
-
-// GetTimestampOk returns a tuple with the Timestamp field value
-// and a boolean to check if the value has been set.
-func (o *LocationRecord) GetTimestampOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Timestamp, true
-}
-
-// SetTimestamp sets field value
-func (o *LocationRecord) SetTimestamp(v time.Time) {
-	o.Timestamp = v
 }
 
 // GetLocation returns the Location field value
@@ -92,7 +67,7 @@ func (o *LocationRecord) SetLocation(v LocationData) {
 }
 
 func (o LocationRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -101,7 +76,14 @@ func (o LocationRecord) MarshalJSON() ([]byte, error) {
 
 func (o LocationRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["timestamp"] = o.Timestamp
+	serializedBaseRecord, errBaseRecord := json.Marshal(o.BaseRecord)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
+	errBaseRecord = json.Unmarshal([]byte(serializedBaseRecord), &toSerialize)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
 	toSerialize["location"] = o.Location
 	return toSerialize, nil
 }
@@ -141,5 +123,3 @@ func (v *NullableLocationRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

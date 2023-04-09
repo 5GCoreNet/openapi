@@ -1,7 +1,7 @@
 /*
 Nnef_SMContext
 
-Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,22 +19,22 @@ var _ MappedNullable = &SmContextCreatedData{}
 
 // SmContextCreatedData Representation of an Individual SM context successfully created.
 type SmContextCreatedData struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi string `json:"supi"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
 	PduSessionId int32 `json:"pduSessionId"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn string `json:"dnn"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    string `json:"dnn"`
 	Snssai Snssai `json:"snssai"`
 	// This IE shall contain the NEF ID of the target NEF.
 	NefId string `json:"nefId"`
-	// When present, this IE shall indicate the NEF capability to support RDS. The value of this IE shall be set as following   - true  NEF supports RDS   - false (default)  NEF does not support RDS 
+	// When present, this IE shall indicate the NEF capability to support RDS. The value of this IE shall be set as following   - true  NEF supports RDS   - false (default)  NEF does not support RDS
 	RdsSupport *bool `json:"rdsSupport,omitempty"`
-	// When present, this IE shall indicate whether Extended Buffering applies or not. The value of this IE shall be set as following   - true  Extended Buffering applies   - false (default)  Extended Buffering does not apply 
+	// When present, this IE shall indicate whether Extended Buffering applies or not. The value of this IE shall be set as following   - true  Extended Buffering applies   - false (default)  Extended Buffering does not apply
 	ExtBufSupport *bool `json:"extBufSupport,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	MaxPacketSize *int32 `json:"maxPacketSize,omitempty"`
+	MaxPacketSize     *int32  `json:"maxPacketSize,omitempty"`
 }
 
 // NewSmContextCreatedData instantiates a new SmContextCreatedData object
@@ -189,7 +189,7 @@ func (o *SmContextCreatedData) SetNefId(v string) {
 
 // GetRdsSupport returns the RdsSupport field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetRdsSupport() bool {
-	if o == nil || isNil(o.RdsSupport) {
+	if o == nil || IsNil(o.RdsSupport) {
 		var ret bool
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *SmContextCreatedData) GetRdsSupport() bool {
 // GetRdsSupportOk returns a tuple with the RdsSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetRdsSupportOk() (*bool, bool) {
-	if o == nil || isNil(o.RdsSupport) {
+	if o == nil || IsNil(o.RdsSupport) {
 		return nil, false
 	}
 	return o.RdsSupport, true
@@ -207,7 +207,7 @@ func (o *SmContextCreatedData) GetRdsSupportOk() (*bool, bool) {
 
 // HasRdsSupport returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasRdsSupport() bool {
-	if o != nil && !isNil(o.RdsSupport) {
+	if o != nil && !IsNil(o.RdsSupport) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *SmContextCreatedData) SetRdsSupport(v bool) {
 
 // GetExtBufSupport returns the ExtBufSupport field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetExtBufSupport() bool {
-	if o == nil || isNil(o.ExtBufSupport) {
+	if o == nil || IsNil(o.ExtBufSupport) {
 		var ret bool
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *SmContextCreatedData) GetExtBufSupport() bool {
 // GetExtBufSupportOk returns a tuple with the ExtBufSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetExtBufSupportOk() (*bool, bool) {
-	if o == nil || isNil(o.ExtBufSupport) {
+	if o == nil || IsNil(o.ExtBufSupport) {
 		return nil, false
 	}
 	return o.ExtBufSupport, true
@@ -239,7 +239,7 @@ func (o *SmContextCreatedData) GetExtBufSupportOk() (*bool, bool) {
 
 // HasExtBufSupport returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasExtBufSupport() bool {
-	if o != nil && !isNil(o.ExtBufSupport) {
+	if o != nil && !IsNil(o.ExtBufSupport) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *SmContextCreatedData) SetExtBufSupport(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *SmContextCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -271,7 +271,7 @@ func (o *SmContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *SmContextCreatedData) SetSupportedFeatures(v string) {
 
 // GetMaxPacketSize returns the MaxPacketSize field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetMaxPacketSize() int32 {
-	if o == nil || isNil(o.MaxPacketSize) {
+	if o == nil || IsNil(o.MaxPacketSize) {
 		var ret int32
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *SmContextCreatedData) GetMaxPacketSize() int32 {
 // GetMaxPacketSizeOk returns a tuple with the MaxPacketSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetMaxPacketSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPacketSize) {
+	if o == nil || IsNil(o.MaxPacketSize) {
 		return nil, false
 	}
 	return o.MaxPacketSize, true
@@ -303,7 +303,7 @@ func (o *SmContextCreatedData) GetMaxPacketSizeOk() (*int32, bool) {
 
 // HasMaxPacketSize returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasMaxPacketSize() bool {
-	if o != nil && !isNil(o.MaxPacketSize) {
+	if o != nil && !IsNil(o.MaxPacketSize) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *SmContextCreatedData) SetMaxPacketSize(v int32) {
 }
 
 func (o SmContextCreatedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -330,16 +330,16 @@ func (o SmContextCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["nefId"] = o.NefId
-	if !isNil(o.RdsSupport) {
+	if !IsNil(o.RdsSupport) {
 		toSerialize["rdsSupport"] = o.RdsSupport
 	}
-	if !isNil(o.ExtBufSupport) {
+	if !IsNil(o.ExtBufSupport) {
 		toSerialize["extBufSupport"] = o.ExtBufSupport
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.MaxPacketSize) {
+	if !IsNil(o.MaxPacketSize) {
 		toSerialize["maxPacketSize"] = o.MaxPacketSize
 	}
 	return toSerialize, nil
@@ -380,5 +380,3 @@ func (v *NullableSmContextCreatedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

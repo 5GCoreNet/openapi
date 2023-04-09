@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // BsfEvent Represents an event to be notified by the BSF.
 type BsfEvent struct {
-	BsfEventAnyOf *BsfEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *BsfEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into BsfEventAnyOf
-	err = json.Unmarshal(data, &dst.BsfEventAnyOf);
-	if err == nil {
-		jsonBsfEventAnyOf, _ := json.Marshal(dst.BsfEventAnyOf)
-		if string(jsonBsfEventAnyOf) == "{}" { // empty struct
-			dst.BsfEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.BsfEventAnyOf, return on the first match
-		}
-	} else {
-		dst.BsfEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *BsfEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *BsfEvent) MarshalJSON() ([]byte, error) {
-	if src.BsfEventAnyOf != nil {
-		return json.Marshal(&src.BsfEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableBsfEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

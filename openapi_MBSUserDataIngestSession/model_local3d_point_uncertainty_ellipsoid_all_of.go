@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-ud-ingest
 
-API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &Local3dPointUncertaintyEllipsoidAllOf{}
 
 // Local3dPointUncertaintyEllipsoidAllOf struct for Local3dPointUncertaintyEllipsoidAllOf
 type Local3dPointUncertaintyEllipsoidAllOf struct {
-	LocalOrigin LocalOrigin `json:"localOrigin"`
-	Point RelativeCartesianLocation `json:"point"`
-	UncertaintyEllipsoid UncertaintyEllipsoid `json:"uncertaintyEllipsoid"`
+	LocalOrigin          LocalOrigin               `json:"localOrigin"`
+	Point                RelativeCartesianLocation `json:"point"`
+	UncertaintyEllipsoid UncertaintyEllipsoid      `json:"uncertaintyEllipsoid"`
 	// Indicates value of confidence.
 	Confidence int32 `json:"confidence"`
 }
@@ -144,7 +144,7 @@ func (o *Local3dPointUncertaintyEllipsoidAllOf) SetConfidence(v int32) {
 }
 
 func (o Local3dPointUncertaintyEllipsoidAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableLocal3dPointUncertaintyEllipsoidAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

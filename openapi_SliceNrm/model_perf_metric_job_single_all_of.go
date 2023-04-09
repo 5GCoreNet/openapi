@@ -20,7 +20,7 @@ var _ MappedNullable = &PerfMetricJobSingleAllOf{}
 // PerfMetricJobSingleAllOf struct for PerfMetricJobSingleAllOf
 type PerfMetricJobSingleAllOf struct {
 	Attributes *PerfMetricJobSingleAllOfAttributes `json:"attributes,omitempty"`
-	Files []FilesSingle `json:"Files,omitempty"`
+	Files      []FilesSingle                       `json:"Files,omitempty"`
 }
 
 // NewPerfMetricJobSingleAllOf instantiates a new PerfMetricJobSingleAllOf object
@@ -42,7 +42,7 @@ func NewPerfMetricJobSingleAllOfWithDefaults() *PerfMetricJobSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOf) GetAttributes() PerfMetricJobSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret PerfMetricJobSingleAllOfAttributes
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PerfMetricJobSingleAllOf) GetAttributes() PerfMetricJobSingleAllOfAttri
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOf) GetAttributesOk() (*PerfMetricJobSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *PerfMetricJobSingleAllOf) GetAttributesOk() (*PerfMetricJobSingleAllOfA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PerfMetricJobSingleAllOf) SetAttributes(v PerfMetricJobSingleAllOfAttri
 
 // GetFiles returns the Files field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOf) GetFiles() []FilesSingle {
-	if o == nil || isNil(o.Files) {
+	if o == nil || IsNil(o.Files) {
 		var ret []FilesSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PerfMetricJobSingleAllOf) GetFiles() []FilesSingle {
 // GetFilesOk returns a tuple with the Files field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOf) GetFilesOk() ([]FilesSingle, bool) {
-	if o == nil || isNil(o.Files) {
+	if o == nil || IsNil(o.Files) {
 		return nil, false
 	}
 	return o.Files, true
@@ -92,7 +92,7 @@ func (o *PerfMetricJobSingleAllOf) GetFilesOk() ([]FilesSingle, bool) {
 
 // HasFiles returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOf) HasFiles() bool {
-	if o != nil && !isNil(o.Files) {
+	if o != nil && !IsNil(o.Files) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *PerfMetricJobSingleAllOf) SetFiles(v []FilesSingle) {
 }
 
 func (o PerfMetricJobSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o PerfMetricJobSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o PerfMetricJobSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.Files) {
+	if !IsNil(o.Files) {
 		toSerialize["Files"] = o.Files
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullablePerfMetricJobSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &NiddDownlinkDataDeliveryStatusNotification{}
 // NiddDownlinkDataDeliveryStatusNotification Represents the delivery status of a specific NIDD downlink data delivery.
 type NiddDownlinkDataDeliveryStatusNotification struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
-	NiddDownlinkDataTransfer string `json:"niddDownlinkDataTransfer"`
-	DeliveryStatus DeliveryStatus `json:"deliveryStatus"`
+	NiddDownlinkDataTransfer string         `json:"niddDownlinkDataTransfer"`
+	DeliveryStatus           DeliveryStatus `json:"deliveryStatus"`
 	// string with format \"date-time\" as defined in OpenAPI.
 	RequestedRetransmissionTime *time.Time `json:"requestedRetransmissionTime,omitempty"`
 }
@@ -96,7 +96,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) SetDeliveryStatus(v Deliver
 
 // GetRequestedRetransmissionTime returns the RequestedRetransmissionTime field value if set, zero value otherwise.
 func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionTime() time.Time {
-	if o == nil || isNil(o.RequestedRetransmissionTime) {
+	if o == nil || IsNil(o.RequestedRetransmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionT
 // GetRequestedRetransmissionTimeOk returns a tuple with the RequestedRetransmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RequestedRetransmissionTime) {
+	if o == nil || IsNil(o.RequestedRetransmissionTime) {
 		return nil, false
 	}
 	return o.RequestedRetransmissionTime, true
@@ -114,7 +114,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionT
 
 // HasRequestedRetransmissionTime returns a boolean if a field has been set.
 func (o *NiddDownlinkDataDeliveryStatusNotification) HasRequestedRetransmissionTime() bool {
-	if o != nil && !isNil(o.RequestedRetransmissionTime) {
+	if o != nil && !IsNil(o.RequestedRetransmissionTime) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) SetRequestedRetransmissionT
 }
 
 func (o NiddDownlinkDataDeliveryStatusNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o NiddDownlinkDataDeliveryStatusNotification) ToMap() (map[string]interfac
 	toSerialize := map[string]interface{}{}
 	toSerialize["niddDownlinkDataTransfer"] = o.NiddDownlinkDataTransfer
 	toSerialize["deliveryStatus"] = o.DeliveryStatus
-	if !isNil(o.RequestedRetransmissionTime) {
+	if !IsNil(o.RequestedRetransmissionTime) {
 		toSerialize["requestedRetransmissionTime"] = o.RequestedRetransmissionTime
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableNiddDownlinkDataDeliveryStatusNotification) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

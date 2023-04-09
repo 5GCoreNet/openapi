@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &AmfSubscriptionInfo{}
 
 // AmfSubscriptionInfo Information the UDR stores and retrieves related to active subscriptions at the AMF(s).
 type AmfSubscriptionInfo struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AmfInstanceId string `json:"amfInstanceId"`
 	// String providing an URI formatted according to RFC 3986.
-	SubscriptionId string `json:"subscriptionId"`
-	SubsChangeNotifyCorrelationId *string `json:"subsChangeNotifyCorrelationId,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
+	SubscriptionId                string       `json:"subscriptionId"`
+	SubsChangeNotifyCorrelationId *string      `json:"subsChangeNotifyCorrelationId,omitempty"`
+	ContextInfo                   *ContextInfo `json:"contextInfo,omitempty"`
 }
 
 // NewAmfSubscriptionInfo instantiates a new AmfSubscriptionInfo object
@@ -96,7 +96,7 @@ func (o *AmfSubscriptionInfo) SetSubscriptionId(v string) {
 
 // GetSubsChangeNotifyCorrelationId returns the SubsChangeNotifyCorrelationId field value if set, zero value otherwise.
 func (o *AmfSubscriptionInfo) GetSubsChangeNotifyCorrelationId() string {
-	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AmfSubscriptionInfo) GetSubsChangeNotifyCorrelationId() string {
 // GetSubsChangeNotifyCorrelationIdOk returns a tuple with the SubsChangeNotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfSubscriptionInfo) GetSubsChangeNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
 		return nil, false
 	}
 	return o.SubsChangeNotifyCorrelationId, true
@@ -114,7 +114,7 @@ func (o *AmfSubscriptionInfo) GetSubsChangeNotifyCorrelationIdOk() (*string, boo
 
 // HasSubsChangeNotifyCorrelationId returns a boolean if a field has been set.
 func (o *AmfSubscriptionInfo) HasSubsChangeNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.SubsChangeNotifyCorrelationId) {
+	if o != nil && !IsNil(o.SubsChangeNotifyCorrelationId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmfSubscriptionInfo) SetSubsChangeNotifyCorrelationId(v string) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *AmfSubscriptionInfo) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AmfSubscriptionInfo) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfSubscriptionInfo) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -146,7 +146,7 @@ func (o *AmfSubscriptionInfo) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *AmfSubscriptionInfo) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *AmfSubscriptionInfo) SetContextInfo(v ContextInfo) {
 }
 
 func (o AmfSubscriptionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o AmfSubscriptionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfInstanceId"] = o.AmfInstanceId
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !isNil(o.SubsChangeNotifyCorrelationId) {
+	if !IsNil(o.SubsChangeNotifyCorrelationId) {
 		toSerialize["subsChangeNotifyCorrelationId"] = o.SubsChangeNotifyCorrelationId
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableAmfSubscriptionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

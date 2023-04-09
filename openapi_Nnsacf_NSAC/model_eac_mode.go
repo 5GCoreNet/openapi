@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// EACMode EAC mode. Possible values are - ACTIVE - DEACTIVE 
+// EACMode EAC mode. Possible values are - ACTIVE - DEACTIVE
 type EACMode struct {
-	EACModeAnyOf *EACModeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EACMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EACModeAnyOf
-	err = json.Unmarshal(data, &dst.EACModeAnyOf);
-	if err == nil {
-		jsonEACModeAnyOf, _ := json.Marshal(dst.EACModeAnyOf)
-		if string(jsonEACModeAnyOf) == "{}" { // empty struct
-			dst.EACModeAnyOf = nil
-		} else {
-			return nil // data stored in dst.EACModeAnyOf, return on the first match
-		}
-	} else {
-		dst.EACModeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EACMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EACMode) MarshalJSON() ([]byte, error) {
-	if src.EACModeAnyOf != nil {
-		return json.Marshal(&src.EACModeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEACMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,28 +17,14 @@ import (
 
 // N1MessageClass Enumeration for N1 Message Class
 type N1MessageClass struct {
-	N1MessageClassAnyOf *N1MessageClassAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N1MessageClass) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into N1MessageClassAnyOf
-	err = json.Unmarshal(data, &dst.N1MessageClassAnyOf);
-	if err == nil {
-		jsonN1MessageClassAnyOf, _ := json.Marshal(dst.N1MessageClassAnyOf)
-		if string(jsonN1MessageClassAnyOf) == "{}" { // empty struct
-			dst.N1MessageClassAnyOf = nil
-		} else {
-			return nil // data stored in dst.N1MessageClassAnyOf, return on the first match
-		}
-	} else {
-		dst.N1MessageClassAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *N1MessageClass) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N1MessageClass) MarshalJSON() ([]byte, error) {
-	if src.N1MessageClassAnyOf != nil {
-		return json.Marshal(&src.N1MessageClassAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableN1MessageClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

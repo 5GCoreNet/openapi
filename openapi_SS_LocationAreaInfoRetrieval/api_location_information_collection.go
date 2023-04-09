@@ -1,7 +1,7 @@
 /*
 SS_LocationAreaInfoRetrieval
 
-API for SEAL Location Area Info Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Location Area Info Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,20 +13,19 @@ package openapi_SS_LocationAreaInfoRetrieval
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // LocationInformationCollectionApiService LocationInformationCollectionApi service
 type LocationInformationCollectionApiService service
 
 type ApiRetrieveUeLocInfoRequest struct {
-	ctx context.Context
-	ApiService *LocationInformationCollectionApiService
+	ctx          context.Context
+	ApiService   *LocationInformationCollectionApiService
 	locationInfo *LocationInfo
-	range_ *float32
+	range_       *float32
 }
 
 // Location information around which the UE(s) information is requested.
@@ -35,7 +34,7 @@ func (r ApiRetrieveUeLocInfoRequest) LocationInfo(locationInfo LocationInfo) Api
 	return r
 }
 
-// The range information over which the UE(s) information is required, expressed in meters. 
+// The range information over which the UE(s) information is required, expressed in meters.
 func (r ApiRetrieveUeLocInfoRequest) Range_(range_ float32) ApiRetrieveUeLocInfoRequest {
 	r.range_ = &range_
 	return r
@@ -50,25 +49,25 @@ RetrieveUeLocInfo Method for RetrieveUeLocInfo
 
 Retrieve the UE(s) information in an application defined proximity range of a location.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrieveUeLocInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRetrieveUeLocInfoRequest
 */
 func (a *LocationInformationCollectionApiService) RetrieveUeLocInfo(ctx context.Context) ApiRetrieveUeLocInfoRequest {
 	return ApiRetrieveUeLocInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []LMInformation
+//
+//	@return []LMInformation
 func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r ApiRetrieveUeLocInfoRequest) ([]LMInformation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []LMInformation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []LMInformation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationInformationCollectionApiService.RetrieveUeLocInfo")
@@ -88,8 +87,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 		return localVarReturnValue, nil, reportError("range_ is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "location-info", r.locationInfo, "")
-	parameterAddToQuery(localVarQueryParams, "range", r.range_, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "location-info", r.locationInfo, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "range", r.range_, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -117,9 +116,9 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,8 +135,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -180,8 +179,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -191,8 +190,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -202,8 +201,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

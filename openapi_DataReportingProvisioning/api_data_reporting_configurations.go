@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting-provisioning
 
-API for 3GPP Data Reporting and Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting and Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,24 +13,23 @@ package openapi_DataReportingProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DataReportingConfigurationsApiService DataReportingConfigurationsApi service
 type DataReportingConfigurationsApiService service
 
 type ApiCreateDataRepConfigRequest struct {
-	ctx context.Context
-	ApiService *DataReportingConfigurationsApiService
-	sessionId string
+	ctx                        context.Context
+	ApiService                 *DataReportingConfigurationsApiService
+	sessionId                  string
 	dataReportingConfiguration *DataReportingConfiguration
 }
 
-// Representation of the Data Reporting Configuration to be created in the NEF. 
+// Representation of the Data Reporting Configuration to be created in the NEF.
 func (r ApiCreateDataRepConfigRequest) DataReportingConfiguration(dataReportingConfiguration DataReportingConfiguration) ApiCreateDataRepConfigRequest {
 	r.dataReportingConfiguration = &dataReportingConfiguration
 	return r
@@ -43,26 +42,27 @@ func (r ApiCreateDataRepConfigRequest) Execute() (*DataReportingConfiguration, *
 /*
 CreateDataRepConfig Create a new Data Reporting Configuration resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Identifier of the Data Reporting Provisioning Session.
- @return ApiCreateDataRepConfigRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Identifier of the Data Reporting Provisioning Session.
+	@return ApiCreateDataRepConfigRequest
 */
 func (a *DataReportingConfigurationsApiService) CreateDataRepConfig(ctx context.Context, sessionId string) ApiCreateDataRepConfigRequest {
 	return ApiCreateDataRepConfigRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return DataReportingConfiguration
+//
+//	@return DataReportingConfiguration
 func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r ApiCreateDataRepConfigRequest) (*DataReportingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DataReportingConfiguration
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DataReportingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataReportingConfigurationsApiService.CreateDataRepConfig")
@@ -109,9 +109,9 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -128,8 +128,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -139,8 +139,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -150,8 +150,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -161,8 +161,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -172,8 +172,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -183,8 +183,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -194,8 +194,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -205,8 +205,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -216,8 +216,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -227,8 +227,8 @@ func (a *DataReportingConfigurationsApiService) CreateDataRepConfigExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

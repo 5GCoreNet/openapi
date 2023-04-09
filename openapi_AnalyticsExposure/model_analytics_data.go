@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -25,18 +25,18 @@ type AnalyticsData struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeStampGen *time.Time `json:"timeStampGen,omitempty"`
-	UeMobilityInfos []UeMobilityExposure `json:"ueMobilityInfos,omitempty"`
-	UeCommInfos []UeCommunication `json:"ueCommInfos,omitempty"`
-	NwPerfInfos []NetworkPerfExposure `json:"nwPerfInfos,omitempty"`
-	AbnormalInfos []AbnormalExposure `json:"abnormalInfos,omitempty"`
-	CongestInfos []CongestInfo `json:"congestInfos,omitempty"`
+	TimeStampGen    *time.Time                  `json:"timeStampGen,omitempty"`
+	UeMobilityInfos []UeMobilityExposure        `json:"ueMobilityInfos,omitempty"`
+	UeCommInfos     []UeCommunication           `json:"ueCommInfos,omitempty"`
+	NwPerfInfos     []NetworkPerfExposure       `json:"nwPerfInfos,omitempty"`
+	AbnormalInfos   []AbnormalExposure          `json:"abnormalInfos,omitempty"`
+	CongestInfos    []CongestInfo               `json:"congestInfos,omitempty"`
 	QosSustainInfos []QosSustainabilityExposure `json:"qosSustainInfos,omitempty"`
-	DisperInfos []DispersionInfo `json:"disperInfos,omitempty"`
-	DnPerfInfos []DnPerfInfo `json:"dnPerfInfos,omitempty"`
-	SvcExps []ServiceExperienceInfo `json:"svcExps,omitempty"`
-	DisperReqs []DispersionRequirement `json:"disperReqs,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	DisperInfos     []DispersionInfo            `json:"disperInfos,omitempty"`
+	DnPerfInfos     []DnPerfInfo                `json:"dnPerfInfos,omitempty"`
+	SvcExps         []ServiceExperienceInfo     `json:"svcExps,omitempty"`
+	DisperReqs      []DispersionRequirement     `json:"disperReqs,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat string `json:"suppFeat"`
 }
 
@@ -60,7 +60,7 @@ func NewAnalyticsDataWithDefaults() *AnalyticsData {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *AnalyticsData) GetStart() time.Time {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret time.Time
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *AnalyticsData) GetStart() time.Time {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetStartOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -78,7 +78,7 @@ func (o *AnalyticsData) GetStartOk() (*time.Time, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *AnalyticsData) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *AnalyticsData) SetStart(v time.Time) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *AnalyticsData) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *AnalyticsData) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -110,7 +110,7 @@ func (o *AnalyticsData) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *AnalyticsData) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *AnalyticsData) SetExpiry(v time.Time) {
 
 // GetTimeStampGen returns the TimeStampGen field value if set, zero value otherwise.
 func (o *AnalyticsData) GetTimeStampGen() time.Time {
-	if o == nil || isNil(o.TimeStampGen) {
+	if o == nil || IsNil(o.TimeStampGen) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *AnalyticsData) GetTimeStampGen() time.Time {
 // GetTimeStampGenOk returns a tuple with the TimeStampGen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetTimeStampGenOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeStampGen) {
+	if o == nil || IsNil(o.TimeStampGen) {
 		return nil, false
 	}
 	return o.TimeStampGen, true
@@ -142,7 +142,7 @@ func (o *AnalyticsData) GetTimeStampGenOk() (*time.Time, bool) {
 
 // HasTimeStampGen returns a boolean if a field has been set.
 func (o *AnalyticsData) HasTimeStampGen() bool {
-	if o != nil && !isNil(o.TimeStampGen) {
+	if o != nil && !IsNil(o.TimeStampGen) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *AnalyticsData) SetTimeStampGen(v time.Time) {
 
 // GetUeMobilityInfos returns the UeMobilityInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetUeMobilityInfos() []UeMobilityExposure {
-	if o == nil || isNil(o.UeMobilityInfos) {
+	if o == nil || IsNil(o.UeMobilityInfos) {
 		var ret []UeMobilityExposure
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *AnalyticsData) GetUeMobilityInfos() []UeMobilityExposure {
 // GetUeMobilityInfosOk returns a tuple with the UeMobilityInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetUeMobilityInfosOk() ([]UeMobilityExposure, bool) {
-	if o == nil || isNil(o.UeMobilityInfos) {
+	if o == nil || IsNil(o.UeMobilityInfos) {
 		return nil, false
 	}
 	return o.UeMobilityInfos, true
@@ -174,7 +174,7 @@ func (o *AnalyticsData) GetUeMobilityInfosOk() ([]UeMobilityExposure, bool) {
 
 // HasUeMobilityInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasUeMobilityInfos() bool {
-	if o != nil && !isNil(o.UeMobilityInfos) {
+	if o != nil && !IsNil(o.UeMobilityInfos) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *AnalyticsData) SetUeMobilityInfos(v []UeMobilityExposure) {
 
 // GetUeCommInfos returns the UeCommInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetUeCommInfos() []UeCommunication {
-	if o == nil || isNil(o.UeCommInfos) {
+	if o == nil || IsNil(o.UeCommInfos) {
 		var ret []UeCommunication
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *AnalyticsData) GetUeCommInfos() []UeCommunication {
 // GetUeCommInfosOk returns a tuple with the UeCommInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetUeCommInfosOk() ([]UeCommunication, bool) {
-	if o == nil || isNil(o.UeCommInfos) {
+	if o == nil || IsNil(o.UeCommInfos) {
 		return nil, false
 	}
 	return o.UeCommInfos, true
@@ -206,7 +206,7 @@ func (o *AnalyticsData) GetUeCommInfosOk() ([]UeCommunication, bool) {
 
 // HasUeCommInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasUeCommInfos() bool {
-	if o != nil && !isNil(o.UeCommInfos) {
+	if o != nil && !IsNil(o.UeCommInfos) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *AnalyticsData) SetUeCommInfos(v []UeCommunication) {
 
 // GetNwPerfInfos returns the NwPerfInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetNwPerfInfos() []NetworkPerfExposure {
-	if o == nil || isNil(o.NwPerfInfos) {
+	if o == nil || IsNil(o.NwPerfInfos) {
 		var ret []NetworkPerfExposure
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *AnalyticsData) GetNwPerfInfos() []NetworkPerfExposure {
 // GetNwPerfInfosOk returns a tuple with the NwPerfInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetNwPerfInfosOk() ([]NetworkPerfExposure, bool) {
-	if o == nil || isNil(o.NwPerfInfos) {
+	if o == nil || IsNil(o.NwPerfInfos) {
 		return nil, false
 	}
 	return o.NwPerfInfos, true
@@ -238,7 +238,7 @@ func (o *AnalyticsData) GetNwPerfInfosOk() ([]NetworkPerfExposure, bool) {
 
 // HasNwPerfInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasNwPerfInfos() bool {
-	if o != nil && !isNil(o.NwPerfInfos) {
+	if o != nil && !IsNil(o.NwPerfInfos) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *AnalyticsData) SetNwPerfInfos(v []NetworkPerfExposure) {
 
 // GetAbnormalInfos returns the AbnormalInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetAbnormalInfos() []AbnormalExposure {
-	if o == nil || isNil(o.AbnormalInfos) {
+	if o == nil || IsNil(o.AbnormalInfos) {
 		var ret []AbnormalExposure
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *AnalyticsData) GetAbnormalInfos() []AbnormalExposure {
 // GetAbnormalInfosOk returns a tuple with the AbnormalInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetAbnormalInfosOk() ([]AbnormalExposure, bool) {
-	if o == nil || isNil(o.AbnormalInfos) {
+	if o == nil || IsNil(o.AbnormalInfos) {
 		return nil, false
 	}
 	return o.AbnormalInfos, true
@@ -270,7 +270,7 @@ func (o *AnalyticsData) GetAbnormalInfosOk() ([]AbnormalExposure, bool) {
 
 // HasAbnormalInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasAbnormalInfos() bool {
-	if o != nil && !isNil(o.AbnormalInfos) {
+	if o != nil && !IsNil(o.AbnormalInfos) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *AnalyticsData) SetAbnormalInfos(v []AbnormalExposure) {
 
 // GetCongestInfos returns the CongestInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetCongestInfos() []CongestInfo {
-	if o == nil || isNil(o.CongestInfos) {
+	if o == nil || IsNil(o.CongestInfos) {
 		var ret []CongestInfo
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *AnalyticsData) GetCongestInfos() []CongestInfo {
 // GetCongestInfosOk returns a tuple with the CongestInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetCongestInfosOk() ([]CongestInfo, bool) {
-	if o == nil || isNil(o.CongestInfos) {
+	if o == nil || IsNil(o.CongestInfos) {
 		return nil, false
 	}
 	return o.CongestInfos, true
@@ -302,7 +302,7 @@ func (o *AnalyticsData) GetCongestInfosOk() ([]CongestInfo, bool) {
 
 // HasCongestInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasCongestInfos() bool {
-	if o != nil && !isNil(o.CongestInfos) {
+	if o != nil && !IsNil(o.CongestInfos) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *AnalyticsData) SetCongestInfos(v []CongestInfo) {
 
 // GetQosSustainInfos returns the QosSustainInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetQosSustainInfos() []QosSustainabilityExposure {
-	if o == nil || isNil(o.QosSustainInfos) {
+	if o == nil || IsNil(o.QosSustainInfos) {
 		var ret []QosSustainabilityExposure
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *AnalyticsData) GetQosSustainInfos() []QosSustainabilityExposure {
 // GetQosSustainInfosOk returns a tuple with the QosSustainInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetQosSustainInfosOk() ([]QosSustainabilityExposure, bool) {
-	if o == nil || isNil(o.QosSustainInfos) {
+	if o == nil || IsNil(o.QosSustainInfos) {
 		return nil, false
 	}
 	return o.QosSustainInfos, true
@@ -334,7 +334,7 @@ func (o *AnalyticsData) GetQosSustainInfosOk() ([]QosSustainabilityExposure, boo
 
 // HasQosSustainInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasQosSustainInfos() bool {
-	if o != nil && !isNil(o.QosSustainInfos) {
+	if o != nil && !IsNil(o.QosSustainInfos) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *AnalyticsData) SetQosSustainInfos(v []QosSustainabilityExposure) {
 
 // GetDisperInfos returns the DisperInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetDisperInfos() []DispersionInfo {
-	if o == nil || isNil(o.DisperInfos) {
+	if o == nil || IsNil(o.DisperInfos) {
 		var ret []DispersionInfo
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *AnalyticsData) GetDisperInfos() []DispersionInfo {
 // GetDisperInfosOk returns a tuple with the DisperInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetDisperInfosOk() ([]DispersionInfo, bool) {
-	if o == nil || isNil(o.DisperInfos) {
+	if o == nil || IsNil(o.DisperInfos) {
 		return nil, false
 	}
 	return o.DisperInfos, true
@@ -366,7 +366,7 @@ func (o *AnalyticsData) GetDisperInfosOk() ([]DispersionInfo, bool) {
 
 // HasDisperInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasDisperInfos() bool {
-	if o != nil && !isNil(o.DisperInfos) {
+	if o != nil && !IsNil(o.DisperInfos) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *AnalyticsData) SetDisperInfos(v []DispersionInfo) {
 
 // GetDnPerfInfos returns the DnPerfInfos field value if set, zero value otherwise.
 func (o *AnalyticsData) GetDnPerfInfos() []DnPerfInfo {
-	if o == nil || isNil(o.DnPerfInfos) {
+	if o == nil || IsNil(o.DnPerfInfos) {
 		var ret []DnPerfInfo
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *AnalyticsData) GetDnPerfInfos() []DnPerfInfo {
 // GetDnPerfInfosOk returns a tuple with the DnPerfInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetDnPerfInfosOk() ([]DnPerfInfo, bool) {
-	if o == nil || isNil(o.DnPerfInfos) {
+	if o == nil || IsNil(o.DnPerfInfos) {
 		return nil, false
 	}
 	return o.DnPerfInfos, true
@@ -398,7 +398,7 @@ func (o *AnalyticsData) GetDnPerfInfosOk() ([]DnPerfInfo, bool) {
 
 // HasDnPerfInfos returns a boolean if a field has been set.
 func (o *AnalyticsData) HasDnPerfInfos() bool {
-	if o != nil && !isNil(o.DnPerfInfos) {
+	if o != nil && !IsNil(o.DnPerfInfos) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *AnalyticsData) SetDnPerfInfos(v []DnPerfInfo) {
 
 // GetSvcExps returns the SvcExps field value if set, zero value otherwise.
 func (o *AnalyticsData) GetSvcExps() []ServiceExperienceInfo {
-	if o == nil || isNil(o.SvcExps) {
+	if o == nil || IsNil(o.SvcExps) {
 		var ret []ServiceExperienceInfo
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *AnalyticsData) GetSvcExps() []ServiceExperienceInfo {
 // GetSvcExpsOk returns a tuple with the SvcExps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetSvcExpsOk() ([]ServiceExperienceInfo, bool) {
-	if o == nil || isNil(o.SvcExps) {
+	if o == nil || IsNil(o.SvcExps) {
 		return nil, false
 	}
 	return o.SvcExps, true
@@ -430,7 +430,7 @@ func (o *AnalyticsData) GetSvcExpsOk() ([]ServiceExperienceInfo, bool) {
 
 // HasSvcExps returns a boolean if a field has been set.
 func (o *AnalyticsData) HasSvcExps() bool {
-	if o != nil && !isNil(o.SvcExps) {
+	if o != nil && !IsNil(o.SvcExps) {
 		return true
 	}
 
@@ -444,7 +444,7 @@ func (o *AnalyticsData) SetSvcExps(v []ServiceExperienceInfo) {
 
 // GetDisperReqs returns the DisperReqs field value if set, zero value otherwise.
 func (o *AnalyticsData) GetDisperReqs() []DispersionRequirement {
-	if o == nil || isNil(o.DisperReqs) {
+	if o == nil || IsNil(o.DisperReqs) {
 		var ret []DispersionRequirement
 		return ret
 	}
@@ -454,7 +454,7 @@ func (o *AnalyticsData) GetDisperReqs() []DispersionRequirement {
 // GetDisperReqsOk returns a tuple with the DisperReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsData) GetDisperReqsOk() ([]DispersionRequirement, bool) {
-	if o == nil || isNil(o.DisperReqs) {
+	if o == nil || IsNil(o.DisperReqs) {
 		return nil, false
 	}
 	return o.DisperReqs, true
@@ -462,7 +462,7 @@ func (o *AnalyticsData) GetDisperReqsOk() ([]DispersionRequirement, bool) {
 
 // HasDisperReqs returns a boolean if a field has been set.
 func (o *AnalyticsData) HasDisperReqs() bool {
-	if o != nil && !isNil(o.DisperReqs) {
+	if o != nil && !IsNil(o.DisperReqs) {
 		return true
 	}
 
@@ -499,7 +499,7 @@ func (o *AnalyticsData) SetSuppFeat(v string) {
 }
 
 func (o AnalyticsData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -508,43 +508,43 @@ func (o AnalyticsData) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.TimeStampGen) {
+	if !IsNil(o.TimeStampGen) {
 		toSerialize["timeStampGen"] = o.TimeStampGen
 	}
-	if !isNil(o.UeMobilityInfos) {
+	if !IsNil(o.UeMobilityInfos) {
 		toSerialize["ueMobilityInfos"] = o.UeMobilityInfos
 	}
-	if !isNil(o.UeCommInfos) {
+	if !IsNil(o.UeCommInfos) {
 		toSerialize["ueCommInfos"] = o.UeCommInfos
 	}
-	if !isNil(o.NwPerfInfos) {
+	if !IsNil(o.NwPerfInfos) {
 		toSerialize["nwPerfInfos"] = o.NwPerfInfos
 	}
-	if !isNil(o.AbnormalInfos) {
+	if !IsNil(o.AbnormalInfos) {
 		toSerialize["abnormalInfos"] = o.AbnormalInfos
 	}
-	if !isNil(o.CongestInfos) {
+	if !IsNil(o.CongestInfos) {
 		toSerialize["congestInfos"] = o.CongestInfos
 	}
-	if !isNil(o.QosSustainInfos) {
+	if !IsNil(o.QosSustainInfos) {
 		toSerialize["qosSustainInfos"] = o.QosSustainInfos
 	}
-	if !isNil(o.DisperInfos) {
+	if !IsNil(o.DisperInfos) {
 		toSerialize["disperInfos"] = o.DisperInfos
 	}
-	if !isNil(o.DnPerfInfos) {
+	if !IsNil(o.DnPerfInfos) {
 		toSerialize["dnPerfInfos"] = o.DnPerfInfos
 	}
-	if !isNil(o.SvcExps) {
+	if !IsNil(o.SvcExps) {
 		toSerialize["svcExps"] = o.SvcExps
 	}
-	if !isNil(o.DisperReqs) {
+	if !IsNil(o.DisperReqs) {
 		toSerialize["disperReqs"] = o.DisperReqs
 	}
 	toSerialize["suppFeat"] = o.SuppFeat
@@ -586,5 +586,3 @@ func (v *NullableAnalyticsData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

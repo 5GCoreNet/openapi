@@ -1659,7 +1659,10 @@ components:
       type: object
     ServiceAnnoucementMode:
       anyOf:
-      - $ref: '#/components/schemas/ServiceAnnoucementMode_anyOf'
+      - enum:
+        - NRM
+        - VAL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1669,7 +1672,10 @@ components:
         - VAL: VAL server performs the service announcement.
     DeliveryMode:
       anyOf:
-      - $ref: '#/components/schemas/DeliveryMode_anyOf'
+      - enum:
+        - UNICAST
+        - MULTICAST
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1679,7 +1685,9 @@ components:
         - MULTICAST: Multicast delivery.
     NrmEvent:
       anyOf:
-      - $ref: '#/components/schemas/NrmEvent_anyOf'
+      - enum:
+        - UP_DELIVERY_MODE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2028,9 +2036,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2329,23 +2348,6 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
-    ServiceAnnoucementMode_anyOf:
-      enum:
-      - NRM
-      - VAL
-      type: string
-      example: null
-    DeliveryMode_anyOf:
-      enum:
-      - UNICAST
-      - MULTICAST
-      type: string
-      example: null
-    NrmEvent_anyOf:
-      enum:
-      - UP_DELIVERY_MODE
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -2353,19 +2355,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

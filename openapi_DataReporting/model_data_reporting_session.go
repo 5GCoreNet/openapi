@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting
 
-API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -25,9 +25,9 @@ type DataReportingSession struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidUntil *time.Time `json:"validUntil,omitempty"`
 	// String providing an application identifier.
-	ExternalApplicationId string `json:"externalApplicationId"`
-	SupportedDomains []DataDomain `json:"supportedDomains"`
-	ReportingConditions *DataReportingSessionReportingConditions `json:"reportingConditions,omitempty"`
+	ExternalApplicationId string                                   `json:"externalApplicationId"`
+	SupportedDomains      []DataDomain                             `json:"supportedDomains"`
+	ReportingConditions   *DataReportingSessionReportingConditions `json:"reportingConditions,omitempty"`
 }
 
 // NewDataReportingSession instantiates a new DataReportingSession object
@@ -51,7 +51,7 @@ func NewDataReportingSessionWithDefaults() *DataReportingSession {
 
 // GetSessionId returns the SessionId field value if set, zero value otherwise.
 func (o *DataReportingSession) GetSessionId() string {
-	if o == nil || isNil(o.SessionId) {
+	if o == nil || IsNil(o.SessionId) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *DataReportingSession) GetSessionId() string {
 // GetSessionIdOk returns a tuple with the SessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingSession) GetSessionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SessionId) {
+	if o == nil || IsNil(o.SessionId) {
 		return nil, false
 	}
 	return o.SessionId, true
@@ -69,7 +69,7 @@ func (o *DataReportingSession) GetSessionIdOk() (*string, bool) {
 
 // HasSessionId returns a boolean if a field has been set.
 func (o *DataReportingSession) HasSessionId() bool {
-	if o != nil && !isNil(o.SessionId) {
+	if o != nil && !IsNil(o.SessionId) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *DataReportingSession) SetSessionId(v string) {
 
 // GetValidUntil returns the ValidUntil field value if set, zero value otherwise.
 func (o *DataReportingSession) GetValidUntil() time.Time {
-	if o == nil || isNil(o.ValidUntil) {
+	if o == nil || IsNil(o.ValidUntil) {
 		var ret time.Time
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *DataReportingSession) GetValidUntil() time.Time {
 // GetValidUntilOk returns a tuple with the ValidUntil field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingSession) GetValidUntilOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidUntil) {
+	if o == nil || IsNil(o.ValidUntil) {
 		return nil, false
 	}
 	return o.ValidUntil, true
@@ -101,7 +101,7 @@ func (o *DataReportingSession) GetValidUntilOk() (*time.Time, bool) {
 
 // HasValidUntil returns a boolean if a field has been set.
 func (o *DataReportingSession) HasValidUntil() bool {
-	if o != nil && !isNil(o.ValidUntil) {
+	if o != nil && !IsNil(o.ValidUntil) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *DataReportingSession) SetSupportedDomains(v []DataDomain) {
 
 // GetReportingConditions returns the ReportingConditions field value if set, zero value otherwise.
 func (o *DataReportingSession) GetReportingConditions() DataReportingSessionReportingConditions {
-	if o == nil || isNil(o.ReportingConditions) {
+	if o == nil || IsNil(o.ReportingConditions) {
 		var ret DataReportingSessionReportingConditions
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *DataReportingSession) GetReportingConditions() DataReportingSessionRepo
 // GetReportingConditionsOk returns a tuple with the ReportingConditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingSession) GetReportingConditionsOk() (*DataReportingSessionReportingConditions, bool) {
-	if o == nil || isNil(o.ReportingConditions) {
+	if o == nil || IsNil(o.ReportingConditions) {
 		return nil, false
 	}
 	return o.ReportingConditions, true
@@ -181,7 +181,7 @@ func (o *DataReportingSession) GetReportingConditionsOk() (*DataReportingSession
 
 // HasReportingConditions returns a boolean if a field has been set.
 func (o *DataReportingSession) HasReportingConditions() bool {
-	if o != nil && !isNil(o.ReportingConditions) {
+	if o != nil && !IsNil(o.ReportingConditions) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *DataReportingSession) SetReportingConditions(v DataReportingSessionRepo
 }
 
 func (o DataReportingSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,15 +203,15 @@ func (o DataReportingSession) MarshalJSON() ([]byte, error) {
 
 func (o DataReportingSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SessionId) {
+	if !IsNil(o.SessionId) {
 		toSerialize["sessionId"] = o.SessionId
 	}
-	if !isNil(o.ValidUntil) {
+	if !IsNil(o.ValidUntil) {
 		toSerialize["validUntil"] = o.ValidUntil
 	}
 	toSerialize["externalApplicationId"] = o.ExternalApplicationId
 	toSerialize["supportedDomains"] = o.SupportedDomains
-	if !isNil(o.ReportingConditions) {
+	if !IsNil(o.ReportingConditions) {
 		toSerialize["reportingConditions"] = o.ReportingConditions
 	}
 	return toSerialize, nil
@@ -252,5 +252,3 @@ func (v *NullableDataReportingSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

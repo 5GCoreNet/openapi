@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the UpfCond type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UpfCond{}
 
-// UpfCond Subscription to a set of NF Instances (UPFs), able to serve a certain service area (i.e. SMF serving area or TAI list) 
+// UpfCond Subscription to a set of NF Instances (UPFs), able to serve a certain service area (i.e. SMF serving area or TAI list)
 type UpfCond struct {
-	ConditionType string `json:"conditionType"`
+	ConditionType  string   `json:"conditionType"`
 	SmfServingArea []string `json:"smfServingArea,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
+	TaiList        []Tai    `json:"taiList,omitempty"`
 }
 
 // NewUpfCond instantiates a new UpfCond object
@@ -68,7 +68,7 @@ func (o *UpfCond) SetConditionType(v string) {
 
 // GetSmfServingArea returns the SmfServingArea field value if set, zero value otherwise.
 func (o *UpfCond) GetSmfServingArea() []string {
-	if o == nil || isNil(o.SmfServingArea) {
+	if o == nil || IsNil(o.SmfServingArea) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UpfCond) GetSmfServingArea() []string {
 // GetSmfServingAreaOk returns a tuple with the SmfServingArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfCond) GetSmfServingAreaOk() ([]string, bool) {
-	if o == nil || isNil(o.SmfServingArea) {
+	if o == nil || IsNil(o.SmfServingArea) {
 		return nil, false
 	}
 	return o.SmfServingArea, true
@@ -86,7 +86,7 @@ func (o *UpfCond) GetSmfServingAreaOk() ([]string, bool) {
 
 // HasSmfServingArea returns a boolean if a field has been set.
 func (o *UpfCond) HasSmfServingArea() bool {
-	if o != nil && !isNil(o.SmfServingArea) {
+	if o != nil && !IsNil(o.SmfServingArea) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *UpfCond) SetSmfServingArea(v []string) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *UpfCond) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *UpfCond) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfCond) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -118,7 +118,7 @@ func (o *UpfCond) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *UpfCond) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *UpfCond) SetTaiList(v []Tai) {
 }
 
 func (o UpfCond) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o UpfCond) MarshalJSON() ([]byte, error) {
 func (o UpfCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["conditionType"] = o.ConditionType
-	if !isNil(o.SmfServingArea) {
+	if !IsNil(o.SmfServingArea) {
 		toSerialize["smfServingArea"] = o.SmfServingArea
 	}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableUpfCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

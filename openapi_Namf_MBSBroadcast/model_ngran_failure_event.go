@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NgranFailureEvent{}
 
 // NgranFailureEvent NG-RAN failure event for a NG-RAN
 type NgranFailureEvent struct {
-	NgranId GlobalRanNodeId `json:"ngranId"`
+	NgranId                GlobalRanNodeId        `json:"ngranId"`
 	NgranFailureIndication NgranFailureIndication `json:"ngranFailureIndication"`
 }
 
@@ -91,7 +91,7 @@ func (o *NgranFailureEvent) SetNgranFailureIndication(v NgranFailureIndication) 
 }
 
 func (o NgranFailureEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableNgranFailureEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

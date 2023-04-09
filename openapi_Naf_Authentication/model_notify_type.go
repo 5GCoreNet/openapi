@@ -1,7 +1,7 @@
 /*
 Naf_Authentication
 
-AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// NotifyType Possible values are: - REAUTHENTICATE: The UAV needs to be reauthenticated. - REAUTHORIZE: Authorization data needs to be updated to UAV. - REVOKE: Revoke UAV authentication and authorization. 
+// NotifyType Possible values are: - REAUTHENTICATE: The UAV needs to be reauthenticated. - REAUTHORIZE: Authorization data needs to be updated to UAV. - REVOKE: Revoke UAV authentication and authorization.
 type NotifyType struct {
-	NotifyTypeAnyOf *NotifyTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotifyType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NotifyTypeAnyOf
-	err = json.Unmarshal(data, &dst.NotifyTypeAnyOf);
-	if err == nil {
-		jsonNotifyTypeAnyOf, _ := json.Marshal(dst.NotifyTypeAnyOf)
-		if string(jsonNotifyTypeAnyOf) == "{}" { // empty struct
-			dst.NotifyTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.NotifyTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.NotifyTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NotifyType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotifyType) MarshalJSON() ([]byte, error) {
-	if src.NotifyTypeAnyOf != nil {
-		return json.Marshal(&src.NotifyTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNotifyType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

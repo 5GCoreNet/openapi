@@ -1,7 +1,7 @@
 /*
 CAPIF_Security_API
 
-API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,24 +13,23 @@ package openapi_CAPIF_Security_API
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiSecuritiesSecurityIdTokenPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	securityId string
-	grantType *string
-	clientId *string
+	ctx          context.Context
+	ApiService   *DefaultApiService
+	securityId   string
+	grantType    *string
+	clientId     *string
 	clientSecret *string
-	scope *string
+	scope        *string
 }
 
 func (r ApiSecuritiesSecurityIdTokenPostRequest) GrantType(grantType string) ApiSecuritiesSecurityIdTokenPostRequest {
@@ -60,26 +59,27 @@ func (r ApiSecuritiesSecurityIdTokenPostRequest) Execute() (*AccessTokenRsp, *ht
 /*
 SecuritiesSecurityIdTokenPost Method for SecuritiesSecurityIdTokenPost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param securityId Identifier of an individual API invoker
- @return ApiSecuritiesSecurityIdTokenPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param securityId Identifier of an individual API invoker
+	@return ApiSecuritiesSecurityIdTokenPostRequest
 */
 func (a *DefaultApiService) SecuritiesSecurityIdTokenPost(ctx context.Context, securityId string) ApiSecuritiesSecurityIdTokenPostRequest {
 	return ApiSecuritiesSecurityIdTokenPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		securityId: securityId,
 	}
 }
 
 // Execute executes the request
-//  @return AccessTokenRsp
+//
+//	@return AccessTokenRsp
 func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecuritiesSecurityIdTokenPostRequest) (*AccessTokenRsp, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AccessTokenRsp
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AccessTokenRsp
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SecuritiesSecurityIdTokenPost")
@@ -117,13 +117,13 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToQuery(localVarFormParams, "grant_type", r.grantType, "")
-	parameterAddToQuery(localVarFormParams, "client_id", r.clientId, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "grant_type", r.grantType, "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "client_id", r.clientId, "")
 	if r.clientSecret != nil {
-		parameterAddToQuery(localVarFormParams, "client_secret", r.clientSecret, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "client_secret", r.clientSecret, "")
 	}
 	if r.scope != nil {
-		parameterAddToQuery(localVarFormParams, "scope", r.scope, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "scope", r.scope, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -135,9 +135,9 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -154,8 +154,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -165,8 +165,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -176,8 +176,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -187,8 +187,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -198,8 +198,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -209,8 +209,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -220,8 +220,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -231,8 +231,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -242,8 +242,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -253,8 +253,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -273,8 +273,8 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 }
 
 type ApiTrustedInvokersApiInvokerIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	apiInvokerId string
 }
 
@@ -285,14 +285,14 @@ func (r ApiTrustedInvokersApiInvokerIdDeleteRequest) Execute() (*http.Response, 
 /*
 TrustedInvokersApiInvokerIdDelete Method for TrustedInvokersApiInvokerIdDelete
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiInvokerId Identifier of an individual API invoker
- @return ApiTrustedInvokersApiInvokerIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apiInvokerId Identifier of an individual API invoker
+	@return ApiTrustedInvokersApiInvokerIdDeleteRequest
 */
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdDelete(ctx context.Context, apiInvokerId string) ApiTrustedInvokersApiInvokerIdDeleteRequest {
 	return ApiTrustedInvokersApiInvokerIdDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		apiInvokerId: apiInvokerId,
 	}
 }
@@ -300,9 +300,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDelete(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTrustedInvokersApiInvokerIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.TrustedInvokersApiInvokerIdDelete")
@@ -344,9 +344,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -363,8 +363,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -374,8 +374,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -385,8 +385,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -396,8 +396,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -407,8 +407,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -418,8 +418,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -429,8 +429,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -440,9 +440,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 }
 
 type ApiTrustedInvokersApiInvokerIdDeletePostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	apiInvokerId string
+	ctx                  context.Context
+	ApiService           *DefaultApiService
+	apiInvokerId         string
 	securityNotification *SecurityNotification
 }
 
@@ -459,14 +459,14 @@ func (r ApiTrustedInvokersApiInvokerIdDeletePostRequest) Execute() (*http.Respon
 /*
 TrustedInvokersApiInvokerIdDeletePost Method for TrustedInvokersApiInvokerIdDeletePost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiInvokerId Identifier of an individual API invoker
- @return ApiTrustedInvokersApiInvokerIdDeletePostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apiInvokerId Identifier of an individual API invoker
+	@return ApiTrustedInvokersApiInvokerIdDeletePostRequest
 */
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePost(ctx context.Context, apiInvokerId string) ApiTrustedInvokersApiInvokerIdDeletePostRequest {
 	return ApiTrustedInvokersApiInvokerIdDeletePostRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		apiInvokerId: apiInvokerId,
 	}
 }
@@ -474,9 +474,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePost(ctx context.Co
 // Execute executes the request
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTrustedInvokersApiInvokerIdDeletePostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.TrustedInvokersApiInvokerIdDeletePost")
@@ -523,9 +523,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -542,8 +542,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -553,8 +553,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -564,8 +564,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -575,8 +575,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -586,8 +586,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -597,8 +597,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -608,8 +608,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -619,8 +619,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -630,8 +630,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -641,8 +641,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -652,20 +652,20 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 }
 
 type ApiTrustedInvokersApiInvokerIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	apiInvokerId string
+	ctx                context.Context
+	ApiService         *DefaultApiService
+	apiInvokerId       string
 	authenticationInfo *bool
-	authorizationInfo *bool
+	authorizationInfo  *bool
 }
 
-// When set to &#39;true&#39;, it indicates the CAPIF core function to send the authentication information of the API invoker. Set to false or omitted otherwise. 
+// When set to &#39;true&#39;, it indicates the CAPIF core function to send the authentication information of the API invoker. Set to false or omitted otherwise.
 func (r ApiTrustedInvokersApiInvokerIdGetRequest) AuthenticationInfo(authenticationInfo bool) ApiTrustedInvokersApiInvokerIdGetRequest {
 	r.authenticationInfo = &authenticationInfo
 	return r
 }
 
-// When set to &#39;true&#39;, it indicates the CAPIF core function to send the authorization information of the API invoker. Set to false or omitted otherwise. 
+// When set to &#39;true&#39;, it indicates the CAPIF core function to send the authorization information of the API invoker. Set to false or omitted otherwise.
 func (r ApiTrustedInvokersApiInvokerIdGetRequest) AuthorizationInfo(authorizationInfo bool) ApiTrustedInvokersApiInvokerIdGetRequest {
 	r.authorizationInfo = &authorizationInfo
 	return r
@@ -678,26 +678,27 @@ func (r ApiTrustedInvokersApiInvokerIdGetRequest) Execute() (*ServiceSecurity, *
 /*
 TrustedInvokersApiInvokerIdGet Method for TrustedInvokersApiInvokerIdGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiInvokerId Identifier of an individual API invoker
- @return ApiTrustedInvokersApiInvokerIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apiInvokerId Identifier of an individual API invoker
+	@return ApiTrustedInvokersApiInvokerIdGetRequest
 */
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdGet(ctx context.Context, apiInvokerId string) ApiTrustedInvokersApiInvokerIdGetRequest {
 	return ApiTrustedInvokersApiInvokerIdGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		apiInvokerId: apiInvokerId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceSecurity
+//
+//	@return ServiceSecurity
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedInvokersApiInvokerIdGetRequest) (*ServiceSecurity, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceSecurity
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceSecurity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.TrustedInvokersApiInvokerIdGet")
@@ -713,10 +714,10 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 	localVarFormParams := url.Values{}
 
 	if r.authenticationInfo != nil {
-		parameterAddToQuery(localVarQueryParams, "authenticationInfo", r.authenticationInfo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authenticationInfo", r.authenticationInfo, "")
 	}
 	if r.authorizationInfo != nil {
-		parameterAddToQuery(localVarQueryParams, "authorizationInfo", r.authorizationInfo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorizationInfo", r.authorizationInfo, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -745,9 +746,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -764,8 +765,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -775,8 +776,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -786,8 +787,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -797,8 +798,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -808,8 +809,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -819,8 +820,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -830,8 +831,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -841,8 +842,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -852,8 +853,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -872,9 +873,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 }
 
 type ApiTrustedInvokersApiInvokerIdPutRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	apiInvokerId string
+	ctx             context.Context
+	ApiService      *DefaultApiService
+	apiInvokerId    string
 	serviceSecurity *ServiceSecurity
 }
 
@@ -891,26 +892,27 @@ func (r ApiTrustedInvokersApiInvokerIdPutRequest) Execute() (*ServiceSecurity, *
 /*
 TrustedInvokersApiInvokerIdPut Method for TrustedInvokersApiInvokerIdPut
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiInvokerId Identifier of an individual API invoker
- @return ApiTrustedInvokersApiInvokerIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apiInvokerId Identifier of an individual API invoker
+	@return ApiTrustedInvokersApiInvokerIdPutRequest
 */
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdPut(ctx context.Context, apiInvokerId string) ApiTrustedInvokersApiInvokerIdPutRequest {
 	return ApiTrustedInvokersApiInvokerIdPutRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		apiInvokerId: apiInvokerId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceSecurity
+//
+//	@return ServiceSecurity
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedInvokersApiInvokerIdPutRequest) (*ServiceSecurity, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceSecurity
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceSecurity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.TrustedInvokersApiInvokerIdPut")
@@ -957,9 +959,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -976,8 +978,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -987,8 +989,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -998,8 +1000,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1009,8 +1011,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1020,8 +1022,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -1031,8 +1033,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1042,8 +1044,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1053,8 +1055,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1064,8 +1066,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1075,8 +1077,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1095,9 +1097,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 }
 
 type ApiTrustedInvokersApiInvokerIdUpdatePostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	apiInvokerId string
+	ctx             context.Context
+	ApiService      *DefaultApiService
+	apiInvokerId    string
 	serviceSecurity *ServiceSecurity
 }
 
@@ -1114,26 +1116,27 @@ func (r ApiTrustedInvokersApiInvokerIdUpdatePostRequest) Execute() (*ServiceSecu
 /*
 TrustedInvokersApiInvokerIdUpdatePost Method for TrustedInvokersApiInvokerIdUpdatePost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiInvokerId Identifier of an individual API invoker
- @return ApiTrustedInvokersApiInvokerIdUpdatePostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param apiInvokerId Identifier of an individual API invoker
+	@return ApiTrustedInvokersApiInvokerIdUpdatePostRequest
 */
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePost(ctx context.Context, apiInvokerId string) ApiTrustedInvokersApiInvokerIdUpdatePostRequest {
 	return ApiTrustedInvokersApiInvokerIdUpdatePostRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		apiInvokerId: apiInvokerId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceSecurity
+//
+//	@return ServiceSecurity
 func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTrustedInvokersApiInvokerIdUpdatePostRequest) (*ServiceSecurity, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceSecurity
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceSecurity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.TrustedInvokersApiInvokerIdUpdatePost")
@@ -1180,9 +1183,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1199,8 +1202,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1210,8 +1213,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1221,8 +1224,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1232,8 +1235,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1243,8 +1246,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1254,8 +1257,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1265,8 +1268,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1276,8 +1279,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1287,8 +1290,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1298,8 +1301,8 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

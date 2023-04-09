@@ -1836,7 +1836,10 @@ components:
       type: object
     DistributionMethod:
       anyOf:
-      - $ref: '#/components/schemas/DistributionMethod_anyOf'
+      - enum:
+        - OBJECT
+        - PACKET
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2209,7 +2212,19 @@ components:
       type: object
     Event:
       anyOf:
-      - $ref: '#/components/schemas/Event_anyOf'
+      - enum:
+        - USER_DATA_ING_SESS_STARTING
+        - USER_DATA_ING_SESS_STARTED
+        - USER_DATA_ING_SESS_TERMINATED
+        - DIST_SESS_STARTING
+        - DIST_SESS_STARTED
+        - DIST_SESS_TERMINATED
+        - DIST_SESS_SERV_MNGT_FAILURE
+        - DIST_SESS_POL_CRTL_FAILURE
+        - DATA_INGEST_FAILURE
+        - DELIVERY_STARTED
+        - SESSION_TERMINATED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2654,13 +2669,19 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
+      - enum:
+        - NOT_PREEMPT
+        - MAY_PREEMPT
+        type: string
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
+      - enum:
+        - NOT_PREEMPTABLE
+        - PREEMPTABLE
+        type: string
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -2676,7 +2697,12 @@ components:
       type: integer
     DistSessionState:
       anyOf:
-      - $ref: '#/components/schemas/DistSessionState_anyOf'
+      - enum:
+        - INACTIVE
+        - ESTABLISHED
+        - ACTIVE
+        - DEACTIVATING
+        type: string
       - type: string
       description: Current State of MBS distribution session
     MbsServiceArea:
@@ -2966,22 +2992,36 @@ components:
       type: string
     ObjDistributionOperatingMode:
       anyOf:
-      - $ref: '#/components/schemas/ObjDistributionOperatingMode_anyOf'
+      - enum:
+        - SINGLE
+        - COLLECTION
+        - CAROUSEL
+        - STREAMING
+        type: string
       - type: string
       description: Mode of data ingestion for Object distribution method
     ObjAcquisitionMethod:
       anyOf:
-      - $ref: '#/components/schemas/ObjAcquisitionMethod_anyOf'
+      - enum:
+        - PULL
+        - PUSH
+        type: string
       - type: string
       description: Object Acquisition Method
     PktDistributionOperatingMode:
       anyOf:
-      - $ref: '#/components/schemas/PktDistributionOperatingMode_anyOf'
+      - enum:
+        - PACKET_PROXY
+        - PACKET_FORWARD_ONLY
+        type: string
       - type: string
       description: Mode of data ingestion for Packet distribution method
     PktIngestMethod:
       anyOf:
-      - $ref: '#/components/schemas/PktIngestMethod_anyOf'
+      - enum:
+        - MULTICAST
+        - UNICAST
+        type: string
       - type: string
       description: Packet Ingest Method
     MbStfIngestAddr:
@@ -3019,6 +3059,7 @@ components:
       - portNumber
       - ssm
       type: object
+      x-parent: true
     ServiceNameDescription:
       anyOf:
       - required:
@@ -3043,7 +3084,24 @@ components:
       type: object
     ReservPriority:
       anyOf:
-      - $ref: '#/components/schemas/ReservPriority_anyOf'
+      - enum:
+        - PRIO_1
+        - PRIO_2
+        - PRIO_3
+        - PRIO_4
+        - PRIO_5
+        - PRIO_6
+        - PRIO_7
+        - PRIO_8
+        - PRIO_9
+        - PRIO_10
+        - PRIO_11
+        - PRIO_12
+        - PRIO_13
+        - PRIO_14
+        - PRIO_15
+        - PRIO_16
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -3056,7 +3114,16 @@ components:
       type: string
     MediaType:
       anyOf:
-      - $ref: '#/components/schemas/MediaType_anyOf'
+      - enum:
+        - AUDIO
+        - VIDEO
+        - DATA
+        - APPLICATION
+        - CONTROL
+        - TEXT
+        - MESSAGE
+        - OTHER
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -3099,9 +3166,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -3410,6 +3488,7 @@ components:
       required:
       - portNumber
       type: object
+      x-parent: true
     Uinteger:
       description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
       minimum: 0
@@ -3418,73 +3497,6 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
-    DistributionMethod_anyOf:
-      enum:
-      - OBJECT
-      - PACKET
-      type: string
-      example: null
-    Event_anyOf:
-      enum:
-      - USER_DATA_ING_SESS_STARTING
-      - USER_DATA_ING_SESS_STARTED
-      - USER_DATA_ING_SESS_TERMINATED
-      - DIST_SESS_STARTING
-      - DIST_SESS_STARTED
-      - DIST_SESS_TERMINATED
-      - DIST_SESS_SERV_MNGT_FAILURE
-      - DIST_SESS_POL_CRTL_FAILURE
-      - DATA_INGEST_FAILURE
-      - DELIVERY_STARTED
-      - SESSION_TERMINATED
-      type: string
-      example: null
-    PreemptionCapability_anyOf:
-      enum:
-      - NOT_PREEMPT
-      - MAY_PREEMPT
-      type: string
-      example: null
-    PreemptionVulnerability_anyOf:
-      enum:
-      - NOT_PREEMPTABLE
-      - PREEMPTABLE
-      type: string
-      example: null
-    DistSessionState_anyOf:
-      enum:
-      - INACTIVE
-      - ESTABLISHED
-      - ACTIVE
-      - DEACTIVATING
-      type: string
-      example: null
-    ObjDistributionOperatingMode_anyOf:
-      enum:
-      - SINGLE
-      - COLLECTION
-      - CAROUSEL
-      - STREAMING
-      type: string
-      example: null
-    ObjAcquisitionMethod_anyOf:
-      enum:
-      - PULL
-      - PUSH
-      type: string
-      example: null
-    PktDistributionOperatingMode_anyOf:
-      enum:
-      - PACKET_PROXY
-      - PACKET_FORWARD_ONLY
-      type: string
-      example: null
-    PktIngestMethod_anyOf:
-      enum:
-      - MULTICAST
-      - UNICAST
-      type: string
-      example: null
     MbStfIngestAddr_afEgressTunAddr:
       allOf:
       - $ref: '#/components/schemas/TunnelAddress'
@@ -3493,38 +3505,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/ExtSsm'
       writeOnly: true
-    ReservPriority_anyOf:
-      enum:
-      - PRIO_1
-      - PRIO_2
-      - PRIO_3
-      - PRIO_4
-      - PRIO_5
-      - PRIO_6
-      - PRIO_7
-      - PRIO_8
-      - PRIO_9
-      - PRIO_10
-      - PRIO_11
-      - PRIO_12
-      - PRIO_13
-      - PRIO_14
-      - PRIO_15
-      - PRIO_16
-      type: string
-      example: null
-    MediaType_anyOf:
-      enum:
-      - AUDIO
-      - VIDEO
-      - DATA
-      - APPLICATION
-      - CONTROL
-      - TEXT
-      - MESSAGE
-      - OTHER
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -3532,19 +3512,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

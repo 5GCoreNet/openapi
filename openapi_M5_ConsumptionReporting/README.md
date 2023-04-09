@@ -86,7 +86,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CellIdentifierType](docs/CellIdentifierType.md)
- - [CellIdentifierTypeAnyOf](docs/CellIdentifierTypeAnyOf.md)
  - [ConsumptionReport](docs/ConsumptionReport.md)
  - [ConsumptionReportingUnit](docs/ConsumptionReportingUnit.md)
  - [EndpointAddress](docs/EndpointAddress.md)

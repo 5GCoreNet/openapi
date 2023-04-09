@@ -1,7 +1,7 @@
 /*
 EES UE Location Information_API
 
-API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // LcsQosClass Specifies LCS QoS class.
 type LcsQosClass struct {
-	LcsQosClassAnyOf *LcsQosClassAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LcsQosClass) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LcsQosClassAnyOf
-	err = json.Unmarshal(data, &dst.LcsQosClassAnyOf);
-	if err == nil {
-		jsonLcsQosClassAnyOf, _ := json.Marshal(dst.LcsQosClassAnyOf)
-		if string(jsonLcsQosClassAnyOf) == "{}" { // empty struct
-			dst.LcsQosClassAnyOf = nil
-		} else {
-			return nil // data stored in dst.LcsQosClassAnyOf, return on the first match
-		}
-	} else {
-		dst.LcsQosClassAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LcsQosClass) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LcsQosClass) MarshalJSON() ([]byte, error) {
-	if src.LcsQosClassAnyOf != nil {
-		return json.Marshal(&src.LcsQosClassAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLcsQosClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

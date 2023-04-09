@@ -1,7 +1,7 @@
 /*
 Nucmf_UECapabilityManagement
 
-Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nucmf_UERCM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DicEntryIdDocumentApiService DicEntryIdDocumentApi service
 type DicEntryIdDocumentApiService service
 
 type ApiGetDicEntryRequest struct {
-	ctx context.Context
-	ApiService *DicEntryIdDocumentApiService
-	dicEntryId int32
-	racFormat *RacFormat
+	ctx               context.Context
+	ApiService        *DicEntryIdDocumentApiService
+	dicEntryId        int32
+	racFormat         *RacFormat
 	supportedFeatures *string
 }
 
@@ -50,26 +49,27 @@ func (r ApiGetDicEntryRequest) Execute() (*RetrieveDictionaryEntry200Response, *
 /*
 GetDicEntry Get an individual dictionary entry via dicEntryId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dicEntryId the ID of a dictionary entry in the UCMF
- @return ApiGetDicEntryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dicEntryId the ID of a dictionary entry in the UCMF
+	@return ApiGetDicEntryRequest
 */
 func (a *DicEntryIdDocumentApiService) GetDicEntry(ctx context.Context, dicEntryId int32) ApiGetDicEntryRequest {
 	return ApiGetDicEntryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		dicEntryId: dicEntryId,
 	}
 }
 
 // Execute executes the request
-//  @return RetrieveDictionaryEntry200Response
+//
+//	@return RetrieveDictionaryEntry200Response
 func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryRequest) (*RetrieveDictionaryEntry200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RetrieveDictionaryEntry200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RetrieveDictionaryEntry200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DicEntryIdDocumentApiService.GetDicEntry")
@@ -91,10 +91,10 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 	}
 
 	if r.racFormat != nil {
-		parameterAddToQuery(localVarQueryParams, "rac-format", r.racFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rac-format", r.racFormat, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -142,8 +142,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -153,8 +153,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -164,8 +164,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -175,8 +175,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -186,8 +186,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -197,8 +197,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -208,8 +208,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -219,8 +219,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -230,8 +230,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -241,8 +241,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -252,8 +252,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -263,8 +263,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -274,8 +274,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -285,8 +285,8 @@ func (a *DicEntryIdDocumentApiService) GetDicEntryExecute(r ApiGetDicEntryReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

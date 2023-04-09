@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewMbsBindingRespWithDefaults() *MbsBindingResp {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *MbsBindingResp) GetPcfFqdn() string {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MbsBindingResp) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsBindingResp) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -62,7 +62,7 @@ func (o *MbsBindingResp) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *MbsBindingResp) HasPcfFqdn() bool {
-	if o != nil && !isNil(o.PcfFqdn) {
+	if o != nil && !IsNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MbsBindingResp) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *MbsBindingResp) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MbsBindingResp) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsBindingResp) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -94,7 +94,7 @@ func (o *MbsBindingResp) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *MbsBindingResp) HasPcfIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfIpEndPoints) {
+	if o != nil && !IsNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MbsBindingResp) SetPcfIpEndPoints(v []IpEndPoint) {
 }
 
 func (o MbsBindingResp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o MbsBindingResp) MarshalJSON() ([]byte, error) {
 
 func (o MbsBindingResp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PcfFqdn) {
+	if !IsNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !isNil(o.PcfIpEndPoints) {
+	if !IsNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableMbsBindingResp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

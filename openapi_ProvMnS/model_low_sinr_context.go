@@ -19,9 +19,9 @@ var _ MappedNullable = &LowSINRContext{}
 
 // LowSINRContext This data type is the \"TargetContext\" data type with specialisations for LowSINRContext
 type LowSINRContext struct {
-	ContextAttribute *string `json:"contextAttribute,omitempty"`
-	ContextCondition *string `json:"contextCondition,omitempty"`
-	ContextValueRange *int32 `json:"contextValueRange,omitempty"`
+	ContextAttribute  *string `json:"contextAttribute,omitempty"`
+	ContextCondition  *string `json:"contextCondition,omitempty"`
+	ContextValueRange *int32  `json:"contextValueRange,omitempty"`
 }
 
 // NewLowSINRContext instantiates a new LowSINRContext object
@@ -43,7 +43,7 @@ func NewLowSINRContextWithDefaults() *LowSINRContext {
 
 // GetContextAttribute returns the ContextAttribute field value if set, zero value otherwise.
 func (o *LowSINRContext) GetContextAttribute() string {
-	if o == nil || isNil(o.ContextAttribute) {
+	if o == nil || IsNil(o.ContextAttribute) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *LowSINRContext) GetContextAttribute() string {
 // GetContextAttributeOk returns a tuple with the ContextAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowSINRContext) GetContextAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.ContextAttribute) {
+	if o == nil || IsNil(o.ContextAttribute) {
 		return nil, false
 	}
 	return o.ContextAttribute, true
@@ -61,7 +61,7 @@ func (o *LowSINRContext) GetContextAttributeOk() (*string, bool) {
 
 // HasContextAttribute returns a boolean if a field has been set.
 func (o *LowSINRContext) HasContextAttribute() bool {
-	if o != nil && !isNil(o.ContextAttribute) {
+	if o != nil && !IsNil(o.ContextAttribute) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *LowSINRContext) SetContextAttribute(v string) {
 
 // GetContextCondition returns the ContextCondition field value if set, zero value otherwise.
 func (o *LowSINRContext) GetContextCondition() string {
-	if o == nil || isNil(o.ContextCondition) {
+	if o == nil || IsNil(o.ContextCondition) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LowSINRContext) GetContextCondition() string {
 // GetContextConditionOk returns a tuple with the ContextCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowSINRContext) GetContextConditionOk() (*string, bool) {
-	if o == nil || isNil(o.ContextCondition) {
+	if o == nil || IsNil(o.ContextCondition) {
 		return nil, false
 	}
 	return o.ContextCondition, true
@@ -93,7 +93,7 @@ func (o *LowSINRContext) GetContextConditionOk() (*string, bool) {
 
 // HasContextCondition returns a boolean if a field has been set.
 func (o *LowSINRContext) HasContextCondition() bool {
-	if o != nil && !isNil(o.ContextCondition) {
+	if o != nil && !IsNil(o.ContextCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *LowSINRContext) SetContextCondition(v string) {
 
 // GetContextValueRange returns the ContextValueRange field value if set, zero value otherwise.
 func (o *LowSINRContext) GetContextValueRange() int32 {
-	if o == nil || isNil(o.ContextValueRange) {
+	if o == nil || IsNil(o.ContextValueRange) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *LowSINRContext) GetContextValueRange() int32 {
 // GetContextValueRangeOk returns a tuple with the ContextValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowSINRContext) GetContextValueRangeOk() (*int32, bool) {
-	if o == nil || isNil(o.ContextValueRange) {
+	if o == nil || IsNil(o.ContextValueRange) {
 		return nil, false
 	}
 	return o.ContextValueRange, true
@@ -125,7 +125,7 @@ func (o *LowSINRContext) GetContextValueRangeOk() (*int32, bool) {
 
 // HasContextValueRange returns a boolean if a field has been set.
 func (o *LowSINRContext) HasContextValueRange() bool {
-	if o != nil && !isNil(o.ContextValueRange) {
+	if o != nil && !IsNil(o.ContextValueRange) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *LowSINRContext) SetContextValueRange(v int32) {
 }
 
 func (o LowSINRContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o LowSINRContext) MarshalJSON() ([]byte, error) {
 
 func (o LowSINRContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ContextAttribute) {
+	if !IsNil(o.ContextAttribute) {
 		toSerialize["contextAttribute"] = o.ContextAttribute
 	}
-	if !isNil(o.ContextCondition) {
+	if !IsNil(o.ContextCondition) {
 		toSerialize["contextCondition"] = o.ContextCondition
 	}
-	if !isNil(o.ContextValueRange) {
+	if !IsNil(o.ContextValueRange) {
 		toSerialize["contextValueRange"] = o.ContextValueRange
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableLowSINRContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

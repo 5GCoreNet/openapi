@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// RoamingOdb The enumeration RoamingOdb defines the Barring of Roaming as. See 3GPP TS 23.015 for further description. It shall comply with the provisions defined in table 5.7.3.1-1. 
+// RoamingOdb The enumeration RoamingOdb defines the Barring of Roaming as. See 3GPP TS 23.015 for further description. It shall comply with the provisions defined in table 5.7.3.1-1.
 type RoamingOdb struct {
-	RoamingOdbAnyOf *RoamingOdbAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RoamingOdb) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RoamingOdbAnyOf
-	err = json.Unmarshal(data, &dst.RoamingOdbAnyOf);
-	if err == nil {
-		jsonRoamingOdbAnyOf, _ := json.Marshal(dst.RoamingOdbAnyOf)
-		if string(jsonRoamingOdbAnyOf) == "{}" { // empty struct
-			dst.RoamingOdbAnyOf = nil
-		} else {
-			return nil // data stored in dst.RoamingOdbAnyOf, return on the first match
-		}
-	} else {
-		dst.RoamingOdbAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RoamingOdb) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RoamingOdb) MarshalJSON() ([]byte, error) {
-	if src.RoamingOdbAnyOf != nil {
-		return json.Marshal(&src.RoamingOdbAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRoamingOdb) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

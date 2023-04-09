@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting-provisioning
 
-API for 3GPP Data Reporting and Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting and Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &DataReportingConfigurationPatch{}
 // DataReportingConfigurationPatch A JSON patch for a Data Reporting Configuration.
 type DataReportingConfigurationPatch struct {
 	// Uniform Resource Locator, comforming with the URI Generic Syntax specified in IETF RFC 3986.
-	AuthorizationURL *string `json:"authorizationURL,omitempty"`
+	AuthorizationURL   *string             `json:"authorizationURL,omitempty"`
 	DataAccessProfiles []DataAccessProfile `json:"dataAccessProfiles,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewDataReportingConfigurationPatchWithDefaults() *DataReportingConfiguratio
 
 // GetAuthorizationURL returns the AuthorizationURL field value if set, zero value otherwise.
 func (o *DataReportingConfigurationPatch) GetAuthorizationURL() string {
-	if o == nil || isNil(o.AuthorizationURL) {
+	if o == nil || IsNil(o.AuthorizationURL) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DataReportingConfigurationPatch) GetAuthorizationURL() string {
 // GetAuthorizationURLOk returns a tuple with the AuthorizationURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingConfigurationPatch) GetAuthorizationURLOk() (*string, bool) {
-	if o == nil || isNil(o.AuthorizationURL) {
+	if o == nil || IsNil(o.AuthorizationURL) {
 		return nil, false
 	}
 	return o.AuthorizationURL, true
@@ -61,7 +61,7 @@ func (o *DataReportingConfigurationPatch) GetAuthorizationURLOk() (*string, bool
 
 // HasAuthorizationURL returns a boolean if a field has been set.
 func (o *DataReportingConfigurationPatch) HasAuthorizationURL() bool {
-	if o != nil && !isNil(o.AuthorizationURL) {
+	if o != nil && !IsNil(o.AuthorizationURL) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DataReportingConfigurationPatch) SetAuthorizationURL(v string) {
 
 // GetDataAccessProfiles returns the DataAccessProfiles field value if set, zero value otherwise.
 func (o *DataReportingConfigurationPatch) GetDataAccessProfiles() []DataAccessProfile {
-	if o == nil || isNil(o.DataAccessProfiles) {
+	if o == nil || IsNil(o.DataAccessProfiles) {
 		var ret []DataAccessProfile
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DataReportingConfigurationPatch) GetDataAccessProfiles() []DataAccessPr
 // GetDataAccessProfilesOk returns a tuple with the DataAccessProfiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingConfigurationPatch) GetDataAccessProfilesOk() ([]DataAccessProfile, bool) {
-	if o == nil || isNil(o.DataAccessProfiles) {
+	if o == nil || IsNil(o.DataAccessProfiles) {
 		return nil, false
 	}
 	return o.DataAccessProfiles, true
@@ -93,7 +93,7 @@ func (o *DataReportingConfigurationPatch) GetDataAccessProfilesOk() ([]DataAcces
 
 // HasDataAccessProfiles returns a boolean if a field has been set.
 func (o *DataReportingConfigurationPatch) HasDataAccessProfiles() bool {
-	if o != nil && !isNil(o.DataAccessProfiles) {
+	if o != nil && !IsNil(o.DataAccessProfiles) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *DataReportingConfigurationPatch) SetDataAccessProfiles(v []DataAccessPr
 }
 
 func (o DataReportingConfigurationPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o DataReportingConfigurationPatch) MarshalJSON() ([]byte, error) {
 
 func (o DataReportingConfigurationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AuthorizationURL) {
+	if !IsNil(o.AuthorizationURL) {
 		toSerialize["authorizationURL"] = o.AuthorizationURL
 	}
-	if !isNil(o.DataAccessProfiles) {
+	if !IsNil(o.DataAccessProfiles) {
 		toSerialize["dataAccessProfiles"] = o.DataAccessProfiles
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableDataReportingConfigurationPatch) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

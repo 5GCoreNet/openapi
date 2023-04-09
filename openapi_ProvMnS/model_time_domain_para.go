@@ -19,18 +19,18 @@ var _ MappedNullable = &TimeDomainPara{}
 
 // TimeDomainPara struct for TimeDomainPara
 type TimeDomainPara struct {
-	DlULSwitchingPeriod1 *string `json:"dlULSwitchingPeriod1,omitempty"`
-	SymbolOffsetOfReferencePoint1 *int32 `json:"symbolOffsetOfReferencePoint1,omitempty"`
-	DlULSwitchingPeriod2 *string `json:"dlULSwitchingPeriod2,omitempty"`
-	SymbolOffsetOfReferencePoint2 *int32 `json:"symbolOffsetOfReferencePoint2,omitempty"`
-	TotalnrofSetIdofRS1 *int32 `json:"totalnrofSetIdofRS1,omitempty"`
-	TotalnrofSetIdofRS2 *int32 `json:"totalnrofSetIdofRS2,omitempty"`
-	NrofConsecutiveRIMRS1 *int32 `json:"nrofConsecutiveRIMRS1,omitempty"`
-	NrofConsecutiveRIMRS2 *int32 `json:"nrofConsecutiveRIMRS2,omitempty"`
-	ConsecutiveRIMRS1List []int32 `json:"consecutiveRIMRS1List,omitempty"`
-	ConsecutiveRIMRS2List []int32 `json:"consecutiveRIMRS2List,omitempty"`
-	EnablenearfarIndicationRS1 *string `json:"enablenearfarIndicationRS1,omitempty"`
-	EnablenearfarIndicationRS2 *string `json:"enablenearfarIndicationRS2,omitempty"`
+	DlULSwitchingPeriod1          *string `json:"dlULSwitchingPeriod1,omitempty"`
+	SymbolOffsetOfReferencePoint1 *int32  `json:"symbolOffsetOfReferencePoint1,omitempty"`
+	DlULSwitchingPeriod2          *string `json:"dlULSwitchingPeriod2,omitempty"`
+	SymbolOffsetOfReferencePoint2 *int32  `json:"symbolOffsetOfReferencePoint2,omitempty"`
+	TotalnrofSetIdofRS1           *int32  `json:"totalnrofSetIdofRS1,omitempty"`
+	TotalnrofSetIdofRS2           *int32  `json:"totalnrofSetIdofRS2,omitempty"`
+	NrofConsecutiveRIMRS1         *int32  `json:"nrofConsecutiveRIMRS1,omitempty"`
+	NrofConsecutiveRIMRS2         *int32  `json:"nrofConsecutiveRIMRS2,omitempty"`
+	ConsecutiveRIMRS1List         []int32 `json:"consecutiveRIMRS1List,omitempty"`
+	ConsecutiveRIMRS2List         []int32 `json:"consecutiveRIMRS2List,omitempty"`
+	EnablenearfarIndicationRS1    *string `json:"enablenearfarIndicationRS1,omitempty"`
+	EnablenearfarIndicationRS2    *string `json:"enablenearfarIndicationRS2,omitempty"`
 }
 
 // NewTimeDomainPara instantiates a new TimeDomainPara object
@@ -52,7 +52,7 @@ func NewTimeDomainParaWithDefaults() *TimeDomainPara {
 
 // GetDlULSwitchingPeriod1 returns the DlULSwitchingPeriod1 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetDlULSwitchingPeriod1() string {
-	if o == nil || isNil(o.DlULSwitchingPeriod1) {
+	if o == nil || IsNil(o.DlULSwitchingPeriod1) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *TimeDomainPara) GetDlULSwitchingPeriod1() string {
 // GetDlULSwitchingPeriod1Ok returns a tuple with the DlULSwitchingPeriod1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetDlULSwitchingPeriod1Ok() (*string, bool) {
-	if o == nil || isNil(o.DlULSwitchingPeriod1) {
+	if o == nil || IsNil(o.DlULSwitchingPeriod1) {
 		return nil, false
 	}
 	return o.DlULSwitchingPeriod1, true
@@ -70,7 +70,7 @@ func (o *TimeDomainPara) GetDlULSwitchingPeriod1Ok() (*string, bool) {
 
 // HasDlULSwitchingPeriod1 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasDlULSwitchingPeriod1() bool {
-	if o != nil && !isNil(o.DlULSwitchingPeriod1) {
+	if o != nil && !IsNil(o.DlULSwitchingPeriod1) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *TimeDomainPara) SetDlULSwitchingPeriod1(v string) {
 
 // GetSymbolOffsetOfReferencePoint1 returns the SymbolOffsetOfReferencePoint1 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint1() int32 {
-	if o == nil || isNil(o.SymbolOffsetOfReferencePoint1) {
+	if o == nil || IsNil(o.SymbolOffsetOfReferencePoint1) {
 		var ret int32
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint1() int32 {
 // GetSymbolOffsetOfReferencePoint1Ok returns a tuple with the SymbolOffsetOfReferencePoint1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint1Ok() (*int32, bool) {
-	if o == nil || isNil(o.SymbolOffsetOfReferencePoint1) {
+	if o == nil || IsNil(o.SymbolOffsetOfReferencePoint1) {
 		return nil, false
 	}
 	return o.SymbolOffsetOfReferencePoint1, true
@@ -102,7 +102,7 @@ func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint1Ok() (*int32, bool) {
 
 // HasSymbolOffsetOfReferencePoint1 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasSymbolOffsetOfReferencePoint1() bool {
-	if o != nil && !isNil(o.SymbolOffsetOfReferencePoint1) {
+	if o != nil && !IsNil(o.SymbolOffsetOfReferencePoint1) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *TimeDomainPara) SetSymbolOffsetOfReferencePoint1(v int32) {
 
 // GetDlULSwitchingPeriod2 returns the DlULSwitchingPeriod2 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetDlULSwitchingPeriod2() string {
-	if o == nil || isNil(o.DlULSwitchingPeriod2) {
+	if o == nil || IsNil(o.DlULSwitchingPeriod2) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *TimeDomainPara) GetDlULSwitchingPeriod2() string {
 // GetDlULSwitchingPeriod2Ok returns a tuple with the DlULSwitchingPeriod2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetDlULSwitchingPeriod2Ok() (*string, bool) {
-	if o == nil || isNil(o.DlULSwitchingPeriod2) {
+	if o == nil || IsNil(o.DlULSwitchingPeriod2) {
 		return nil, false
 	}
 	return o.DlULSwitchingPeriod2, true
@@ -134,7 +134,7 @@ func (o *TimeDomainPara) GetDlULSwitchingPeriod2Ok() (*string, bool) {
 
 // HasDlULSwitchingPeriod2 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasDlULSwitchingPeriod2() bool {
-	if o != nil && !isNil(o.DlULSwitchingPeriod2) {
+	if o != nil && !IsNil(o.DlULSwitchingPeriod2) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *TimeDomainPara) SetDlULSwitchingPeriod2(v string) {
 
 // GetSymbolOffsetOfReferencePoint2 returns the SymbolOffsetOfReferencePoint2 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint2() int32 {
-	if o == nil || isNil(o.SymbolOffsetOfReferencePoint2) {
+	if o == nil || IsNil(o.SymbolOffsetOfReferencePoint2) {
 		var ret int32
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint2() int32 {
 // GetSymbolOffsetOfReferencePoint2Ok returns a tuple with the SymbolOffsetOfReferencePoint2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint2Ok() (*int32, bool) {
-	if o == nil || isNil(o.SymbolOffsetOfReferencePoint2) {
+	if o == nil || IsNil(o.SymbolOffsetOfReferencePoint2) {
 		return nil, false
 	}
 	return o.SymbolOffsetOfReferencePoint2, true
@@ -166,7 +166,7 @@ func (o *TimeDomainPara) GetSymbolOffsetOfReferencePoint2Ok() (*int32, bool) {
 
 // HasSymbolOffsetOfReferencePoint2 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasSymbolOffsetOfReferencePoint2() bool {
-	if o != nil && !isNil(o.SymbolOffsetOfReferencePoint2) {
+	if o != nil && !IsNil(o.SymbolOffsetOfReferencePoint2) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *TimeDomainPara) SetSymbolOffsetOfReferencePoint2(v int32) {
 
 // GetTotalnrofSetIdofRS1 returns the TotalnrofSetIdofRS1 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetTotalnrofSetIdofRS1() int32 {
-	if o == nil || isNil(o.TotalnrofSetIdofRS1) {
+	if o == nil || IsNil(o.TotalnrofSetIdofRS1) {
 		var ret int32
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *TimeDomainPara) GetTotalnrofSetIdofRS1() int32 {
 // GetTotalnrofSetIdofRS1Ok returns a tuple with the TotalnrofSetIdofRS1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetTotalnrofSetIdofRS1Ok() (*int32, bool) {
-	if o == nil || isNil(o.TotalnrofSetIdofRS1) {
+	if o == nil || IsNil(o.TotalnrofSetIdofRS1) {
 		return nil, false
 	}
 	return o.TotalnrofSetIdofRS1, true
@@ -198,7 +198,7 @@ func (o *TimeDomainPara) GetTotalnrofSetIdofRS1Ok() (*int32, bool) {
 
 // HasTotalnrofSetIdofRS1 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasTotalnrofSetIdofRS1() bool {
-	if o != nil && !isNil(o.TotalnrofSetIdofRS1) {
+	if o != nil && !IsNil(o.TotalnrofSetIdofRS1) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *TimeDomainPara) SetTotalnrofSetIdofRS1(v int32) {
 
 // GetTotalnrofSetIdofRS2 returns the TotalnrofSetIdofRS2 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetTotalnrofSetIdofRS2() int32 {
-	if o == nil || isNil(o.TotalnrofSetIdofRS2) {
+	if o == nil || IsNil(o.TotalnrofSetIdofRS2) {
 		var ret int32
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *TimeDomainPara) GetTotalnrofSetIdofRS2() int32 {
 // GetTotalnrofSetIdofRS2Ok returns a tuple with the TotalnrofSetIdofRS2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetTotalnrofSetIdofRS2Ok() (*int32, bool) {
-	if o == nil || isNil(o.TotalnrofSetIdofRS2) {
+	if o == nil || IsNil(o.TotalnrofSetIdofRS2) {
 		return nil, false
 	}
 	return o.TotalnrofSetIdofRS2, true
@@ -230,7 +230,7 @@ func (o *TimeDomainPara) GetTotalnrofSetIdofRS2Ok() (*int32, bool) {
 
 // HasTotalnrofSetIdofRS2 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasTotalnrofSetIdofRS2() bool {
-	if o != nil && !isNil(o.TotalnrofSetIdofRS2) {
+	if o != nil && !IsNil(o.TotalnrofSetIdofRS2) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *TimeDomainPara) SetTotalnrofSetIdofRS2(v int32) {
 
 // GetNrofConsecutiveRIMRS1 returns the NrofConsecutiveRIMRS1 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetNrofConsecutiveRIMRS1() int32 {
-	if o == nil || isNil(o.NrofConsecutiveRIMRS1) {
+	if o == nil || IsNil(o.NrofConsecutiveRIMRS1) {
 		var ret int32
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *TimeDomainPara) GetNrofConsecutiveRIMRS1() int32 {
 // GetNrofConsecutiveRIMRS1Ok returns a tuple with the NrofConsecutiveRIMRS1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetNrofConsecutiveRIMRS1Ok() (*int32, bool) {
-	if o == nil || isNil(o.NrofConsecutiveRIMRS1) {
+	if o == nil || IsNil(o.NrofConsecutiveRIMRS1) {
 		return nil, false
 	}
 	return o.NrofConsecutiveRIMRS1, true
@@ -262,7 +262,7 @@ func (o *TimeDomainPara) GetNrofConsecutiveRIMRS1Ok() (*int32, bool) {
 
 // HasNrofConsecutiveRIMRS1 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasNrofConsecutiveRIMRS1() bool {
-	if o != nil && !isNil(o.NrofConsecutiveRIMRS1) {
+	if o != nil && !IsNil(o.NrofConsecutiveRIMRS1) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *TimeDomainPara) SetNrofConsecutiveRIMRS1(v int32) {
 
 // GetNrofConsecutiveRIMRS2 returns the NrofConsecutiveRIMRS2 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetNrofConsecutiveRIMRS2() int32 {
-	if o == nil || isNil(o.NrofConsecutiveRIMRS2) {
+	if o == nil || IsNil(o.NrofConsecutiveRIMRS2) {
 		var ret int32
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *TimeDomainPara) GetNrofConsecutiveRIMRS2() int32 {
 // GetNrofConsecutiveRIMRS2Ok returns a tuple with the NrofConsecutiveRIMRS2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetNrofConsecutiveRIMRS2Ok() (*int32, bool) {
-	if o == nil || isNil(o.NrofConsecutiveRIMRS2) {
+	if o == nil || IsNil(o.NrofConsecutiveRIMRS2) {
 		return nil, false
 	}
 	return o.NrofConsecutiveRIMRS2, true
@@ -294,7 +294,7 @@ func (o *TimeDomainPara) GetNrofConsecutiveRIMRS2Ok() (*int32, bool) {
 
 // HasNrofConsecutiveRIMRS2 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasNrofConsecutiveRIMRS2() bool {
-	if o != nil && !isNil(o.NrofConsecutiveRIMRS2) {
+	if o != nil && !IsNil(o.NrofConsecutiveRIMRS2) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *TimeDomainPara) SetNrofConsecutiveRIMRS2(v int32) {
 
 // GetConsecutiveRIMRS1List returns the ConsecutiveRIMRS1List field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetConsecutiveRIMRS1List() []int32 {
-	if o == nil || isNil(o.ConsecutiveRIMRS1List) {
+	if o == nil || IsNil(o.ConsecutiveRIMRS1List) {
 		var ret []int32
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *TimeDomainPara) GetConsecutiveRIMRS1List() []int32 {
 // GetConsecutiveRIMRS1ListOk returns a tuple with the ConsecutiveRIMRS1List field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetConsecutiveRIMRS1ListOk() ([]int32, bool) {
-	if o == nil || isNil(o.ConsecutiveRIMRS1List) {
+	if o == nil || IsNil(o.ConsecutiveRIMRS1List) {
 		return nil, false
 	}
 	return o.ConsecutiveRIMRS1List, true
@@ -326,7 +326,7 @@ func (o *TimeDomainPara) GetConsecutiveRIMRS1ListOk() ([]int32, bool) {
 
 // HasConsecutiveRIMRS1List returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasConsecutiveRIMRS1List() bool {
-	if o != nil && !isNil(o.ConsecutiveRIMRS1List) {
+	if o != nil && !IsNil(o.ConsecutiveRIMRS1List) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *TimeDomainPara) SetConsecutiveRIMRS1List(v []int32) {
 
 // GetConsecutiveRIMRS2List returns the ConsecutiveRIMRS2List field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetConsecutiveRIMRS2List() []int32 {
-	if o == nil || isNil(o.ConsecutiveRIMRS2List) {
+	if o == nil || IsNil(o.ConsecutiveRIMRS2List) {
 		var ret []int32
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *TimeDomainPara) GetConsecutiveRIMRS2List() []int32 {
 // GetConsecutiveRIMRS2ListOk returns a tuple with the ConsecutiveRIMRS2List field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetConsecutiveRIMRS2ListOk() ([]int32, bool) {
-	if o == nil || isNil(o.ConsecutiveRIMRS2List) {
+	if o == nil || IsNil(o.ConsecutiveRIMRS2List) {
 		return nil, false
 	}
 	return o.ConsecutiveRIMRS2List, true
@@ -358,7 +358,7 @@ func (o *TimeDomainPara) GetConsecutiveRIMRS2ListOk() ([]int32, bool) {
 
 // HasConsecutiveRIMRS2List returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasConsecutiveRIMRS2List() bool {
-	if o != nil && !isNil(o.ConsecutiveRIMRS2List) {
+	if o != nil && !IsNil(o.ConsecutiveRIMRS2List) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *TimeDomainPara) SetConsecutiveRIMRS2List(v []int32) {
 
 // GetEnablenearfarIndicationRS1 returns the EnablenearfarIndicationRS1 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetEnablenearfarIndicationRS1() string {
-	if o == nil || isNil(o.EnablenearfarIndicationRS1) {
+	if o == nil || IsNil(o.EnablenearfarIndicationRS1) {
 		var ret string
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *TimeDomainPara) GetEnablenearfarIndicationRS1() string {
 // GetEnablenearfarIndicationRS1Ok returns a tuple with the EnablenearfarIndicationRS1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetEnablenearfarIndicationRS1Ok() (*string, bool) {
-	if o == nil || isNil(o.EnablenearfarIndicationRS1) {
+	if o == nil || IsNil(o.EnablenearfarIndicationRS1) {
 		return nil, false
 	}
 	return o.EnablenearfarIndicationRS1, true
@@ -390,7 +390,7 @@ func (o *TimeDomainPara) GetEnablenearfarIndicationRS1Ok() (*string, bool) {
 
 // HasEnablenearfarIndicationRS1 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasEnablenearfarIndicationRS1() bool {
-	if o != nil && !isNil(o.EnablenearfarIndicationRS1) {
+	if o != nil && !IsNil(o.EnablenearfarIndicationRS1) {
 		return true
 	}
 
@@ -404,7 +404,7 @@ func (o *TimeDomainPara) SetEnablenearfarIndicationRS1(v string) {
 
 // GetEnablenearfarIndicationRS2 returns the EnablenearfarIndicationRS2 field value if set, zero value otherwise.
 func (o *TimeDomainPara) GetEnablenearfarIndicationRS2() string {
-	if o == nil || isNil(o.EnablenearfarIndicationRS2) {
+	if o == nil || IsNil(o.EnablenearfarIndicationRS2) {
 		var ret string
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *TimeDomainPara) GetEnablenearfarIndicationRS2() string {
 // GetEnablenearfarIndicationRS2Ok returns a tuple with the EnablenearfarIndicationRS2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeDomainPara) GetEnablenearfarIndicationRS2Ok() (*string, bool) {
-	if o == nil || isNil(o.EnablenearfarIndicationRS2) {
+	if o == nil || IsNil(o.EnablenearfarIndicationRS2) {
 		return nil, false
 	}
 	return o.EnablenearfarIndicationRS2, true
@@ -422,7 +422,7 @@ func (o *TimeDomainPara) GetEnablenearfarIndicationRS2Ok() (*string, bool) {
 
 // HasEnablenearfarIndicationRS2 returns a boolean if a field has been set.
 func (o *TimeDomainPara) HasEnablenearfarIndicationRS2() bool {
-	if o != nil && !isNil(o.EnablenearfarIndicationRS2) {
+	if o != nil && !IsNil(o.EnablenearfarIndicationRS2) {
 		return true
 	}
 
@@ -435,7 +435,7 @@ func (o *TimeDomainPara) SetEnablenearfarIndicationRS2(v string) {
 }
 
 func (o TimeDomainPara) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -444,40 +444,40 @@ func (o TimeDomainPara) MarshalJSON() ([]byte, error) {
 
 func (o TimeDomainPara) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DlULSwitchingPeriod1) {
+	if !IsNil(o.DlULSwitchingPeriod1) {
 		toSerialize["dlULSwitchingPeriod1"] = o.DlULSwitchingPeriod1
 	}
-	if !isNil(o.SymbolOffsetOfReferencePoint1) {
+	if !IsNil(o.SymbolOffsetOfReferencePoint1) {
 		toSerialize["symbolOffsetOfReferencePoint1"] = o.SymbolOffsetOfReferencePoint1
 	}
-	if !isNil(o.DlULSwitchingPeriod2) {
+	if !IsNil(o.DlULSwitchingPeriod2) {
 		toSerialize["dlULSwitchingPeriod2"] = o.DlULSwitchingPeriod2
 	}
-	if !isNil(o.SymbolOffsetOfReferencePoint2) {
+	if !IsNil(o.SymbolOffsetOfReferencePoint2) {
 		toSerialize["symbolOffsetOfReferencePoint2"] = o.SymbolOffsetOfReferencePoint2
 	}
-	if !isNil(o.TotalnrofSetIdofRS1) {
+	if !IsNil(o.TotalnrofSetIdofRS1) {
 		toSerialize["totalnrofSetIdofRS1"] = o.TotalnrofSetIdofRS1
 	}
-	if !isNil(o.TotalnrofSetIdofRS2) {
+	if !IsNil(o.TotalnrofSetIdofRS2) {
 		toSerialize["totalnrofSetIdofRS2"] = o.TotalnrofSetIdofRS2
 	}
-	if !isNil(o.NrofConsecutiveRIMRS1) {
+	if !IsNil(o.NrofConsecutiveRIMRS1) {
 		toSerialize["nrofConsecutiveRIMRS1"] = o.NrofConsecutiveRIMRS1
 	}
-	if !isNil(o.NrofConsecutiveRIMRS2) {
+	if !IsNil(o.NrofConsecutiveRIMRS2) {
 		toSerialize["nrofConsecutiveRIMRS2"] = o.NrofConsecutiveRIMRS2
 	}
-	if !isNil(o.ConsecutiveRIMRS1List) {
+	if !IsNil(o.ConsecutiveRIMRS1List) {
 		toSerialize["consecutiveRIMRS1List"] = o.ConsecutiveRIMRS1List
 	}
-	if !isNil(o.ConsecutiveRIMRS2List) {
+	if !IsNil(o.ConsecutiveRIMRS2List) {
 		toSerialize["consecutiveRIMRS2List"] = o.ConsecutiveRIMRS2List
 	}
-	if !isNil(o.EnablenearfarIndicationRS1) {
+	if !IsNil(o.EnablenearfarIndicationRS1) {
 		toSerialize["enablenearfarIndicationRS1"] = o.EnablenearfarIndicationRS1
 	}
-	if !isNil(o.EnablenearfarIndicationRS2) {
+	if !IsNil(o.EnablenearfarIndicationRS2) {
 		toSerialize["enablenearfarIndicationRS2"] = o.EnablenearfarIndicationRS2
 	}
 	return toSerialize, nil
@@ -518,5 +518,3 @@ func (v *NullableTimeDomainPara) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

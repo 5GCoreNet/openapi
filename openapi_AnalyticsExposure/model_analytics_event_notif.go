@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -24,19 +24,19 @@ type AnalyticsEventNotif struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
-	TimeStamp time.Time `json:"timeStamp"`
+	TimeStamp      time.Time         `json:"timeStamp"`
 	FailNotifyCode *NwdafFailureCode `json:"failNotifyCode,omitempty"`
 	// indicating a time in seconds.
-	RvWaitTime *int32 `json:"rvWaitTime,omitempty"`
-	UeMobilityInfos []UeMobilityExposure `json:"ueMobilityInfos,omitempty"`
-	UeCommInfos []UeCommunication `json:"ueCommInfos,omitempty"`
-	AbnormalInfos []AbnormalExposure `json:"abnormalInfos,omitempty"`
-	CongestInfos []CongestInfo `json:"congestInfos,omitempty"`
-	NwPerfInfos []NetworkPerfExposure `json:"nwPerfInfos,omitempty"`
+	RvWaitTime      *int32                      `json:"rvWaitTime,omitempty"`
+	UeMobilityInfos []UeMobilityExposure        `json:"ueMobilityInfos,omitempty"`
+	UeCommInfos     []UeCommunication           `json:"ueCommInfos,omitempty"`
+	AbnormalInfos   []AbnormalExposure          `json:"abnormalInfos,omitempty"`
+	CongestInfos    []CongestInfo               `json:"congestInfos,omitempty"`
+	NwPerfInfos     []NetworkPerfExposure       `json:"nwPerfInfos,omitempty"`
 	QosSustainInfos []QosSustainabilityExposure `json:"qosSustainInfos,omitempty"`
-	DisperInfos []DispersionInfo `json:"disperInfos,omitempty"`
-	DnPerfInfos []DnPerfInfo `json:"dnPerfInfos,omitempty"`
-	SvcExps []ServiceExperienceInfo `json:"svcExps,omitempty"`
+	DisperInfos     []DispersionInfo            `json:"disperInfos,omitempty"`
+	DnPerfInfos     []DnPerfInfo                `json:"dnPerfInfos,omitempty"`
+	SvcExps         []ServiceExperienceInfo     `json:"svcExps,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Start *time.Time `json:"start,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
@@ -88,7 +88,7 @@ func (o *AnalyticsEventNotif) SetAnalyEvent(v AnalyticsEvent) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *AnalyticsEventNotif) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -106,7 +106,7 @@ func (o *AnalyticsEventNotif) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *AnalyticsEventNotif) SetTimeStamp(v time.Time) {
 
 // GetFailNotifyCode returns the FailNotifyCode field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetFailNotifyCode() NwdafFailureCode {
-	if o == nil || isNil(o.FailNotifyCode) {
+	if o == nil || IsNil(o.FailNotifyCode) {
 		var ret NwdafFailureCode
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *AnalyticsEventNotif) GetFailNotifyCode() NwdafFailureCode {
 // GetFailNotifyCodeOk returns a tuple with the FailNotifyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetFailNotifyCodeOk() (*NwdafFailureCode, bool) {
-	if o == nil || isNil(o.FailNotifyCode) {
+	if o == nil || IsNil(o.FailNotifyCode) {
 		return nil, false
 	}
 	return o.FailNotifyCode, true
@@ -162,7 +162,7 @@ func (o *AnalyticsEventNotif) GetFailNotifyCodeOk() (*NwdafFailureCode, bool) {
 
 // HasFailNotifyCode returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasFailNotifyCode() bool {
-	if o != nil && !isNil(o.FailNotifyCode) {
+	if o != nil && !IsNil(o.FailNotifyCode) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *AnalyticsEventNotif) SetFailNotifyCode(v NwdafFailureCode) {
 
 // GetRvWaitTime returns the RvWaitTime field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetRvWaitTime() int32 {
-	if o == nil || isNil(o.RvWaitTime) {
+	if o == nil || IsNil(o.RvWaitTime) {
 		var ret int32
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *AnalyticsEventNotif) GetRvWaitTime() int32 {
 // GetRvWaitTimeOk returns a tuple with the RvWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetRvWaitTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.RvWaitTime) {
+	if o == nil || IsNil(o.RvWaitTime) {
 		return nil, false
 	}
 	return o.RvWaitTime, true
@@ -194,7 +194,7 @@ func (o *AnalyticsEventNotif) GetRvWaitTimeOk() (*int32, bool) {
 
 // HasRvWaitTime returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasRvWaitTime() bool {
-	if o != nil && !isNil(o.RvWaitTime) {
+	if o != nil && !IsNil(o.RvWaitTime) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *AnalyticsEventNotif) SetRvWaitTime(v int32) {
 
 // GetUeMobilityInfos returns the UeMobilityInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetUeMobilityInfos() []UeMobilityExposure {
-	if o == nil || isNil(o.UeMobilityInfos) {
+	if o == nil || IsNil(o.UeMobilityInfos) {
 		var ret []UeMobilityExposure
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *AnalyticsEventNotif) GetUeMobilityInfos() []UeMobilityExposure {
 // GetUeMobilityInfosOk returns a tuple with the UeMobilityInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetUeMobilityInfosOk() ([]UeMobilityExposure, bool) {
-	if o == nil || isNil(o.UeMobilityInfos) {
+	if o == nil || IsNil(o.UeMobilityInfos) {
 		return nil, false
 	}
 	return o.UeMobilityInfos, true
@@ -226,7 +226,7 @@ func (o *AnalyticsEventNotif) GetUeMobilityInfosOk() ([]UeMobilityExposure, bool
 
 // HasUeMobilityInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasUeMobilityInfos() bool {
-	if o != nil && !isNil(o.UeMobilityInfos) {
+	if o != nil && !IsNil(o.UeMobilityInfos) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *AnalyticsEventNotif) SetUeMobilityInfos(v []UeMobilityExposure) {
 
 // GetUeCommInfos returns the UeCommInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetUeCommInfos() []UeCommunication {
-	if o == nil || isNil(o.UeCommInfos) {
+	if o == nil || IsNil(o.UeCommInfos) {
 		var ret []UeCommunication
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *AnalyticsEventNotif) GetUeCommInfos() []UeCommunication {
 // GetUeCommInfosOk returns a tuple with the UeCommInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetUeCommInfosOk() ([]UeCommunication, bool) {
-	if o == nil || isNil(o.UeCommInfos) {
+	if o == nil || IsNil(o.UeCommInfos) {
 		return nil, false
 	}
 	return o.UeCommInfos, true
@@ -258,7 +258,7 @@ func (o *AnalyticsEventNotif) GetUeCommInfosOk() ([]UeCommunication, bool) {
 
 // HasUeCommInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasUeCommInfos() bool {
-	if o != nil && !isNil(o.UeCommInfos) {
+	if o != nil && !IsNil(o.UeCommInfos) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *AnalyticsEventNotif) SetUeCommInfos(v []UeCommunication) {
 
 // GetAbnormalInfos returns the AbnormalInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetAbnormalInfos() []AbnormalExposure {
-	if o == nil || isNil(o.AbnormalInfos) {
+	if o == nil || IsNil(o.AbnormalInfos) {
 		var ret []AbnormalExposure
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *AnalyticsEventNotif) GetAbnormalInfos() []AbnormalExposure {
 // GetAbnormalInfosOk returns a tuple with the AbnormalInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetAbnormalInfosOk() ([]AbnormalExposure, bool) {
-	if o == nil || isNil(o.AbnormalInfos) {
+	if o == nil || IsNil(o.AbnormalInfos) {
 		return nil, false
 	}
 	return o.AbnormalInfos, true
@@ -290,7 +290,7 @@ func (o *AnalyticsEventNotif) GetAbnormalInfosOk() ([]AbnormalExposure, bool) {
 
 // HasAbnormalInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasAbnormalInfos() bool {
-	if o != nil && !isNil(o.AbnormalInfos) {
+	if o != nil && !IsNil(o.AbnormalInfos) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *AnalyticsEventNotif) SetAbnormalInfos(v []AbnormalExposure) {
 
 // GetCongestInfos returns the CongestInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetCongestInfos() []CongestInfo {
-	if o == nil || isNil(o.CongestInfos) {
+	if o == nil || IsNil(o.CongestInfos) {
 		var ret []CongestInfo
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *AnalyticsEventNotif) GetCongestInfos() []CongestInfo {
 // GetCongestInfosOk returns a tuple with the CongestInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetCongestInfosOk() ([]CongestInfo, bool) {
-	if o == nil || isNil(o.CongestInfos) {
+	if o == nil || IsNil(o.CongestInfos) {
 		return nil, false
 	}
 	return o.CongestInfos, true
@@ -322,7 +322,7 @@ func (o *AnalyticsEventNotif) GetCongestInfosOk() ([]CongestInfo, bool) {
 
 // HasCongestInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasCongestInfos() bool {
-	if o != nil && !isNil(o.CongestInfos) {
+	if o != nil && !IsNil(o.CongestInfos) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *AnalyticsEventNotif) SetCongestInfos(v []CongestInfo) {
 
 // GetNwPerfInfos returns the NwPerfInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetNwPerfInfos() []NetworkPerfExposure {
-	if o == nil || isNil(o.NwPerfInfos) {
+	if o == nil || IsNil(o.NwPerfInfos) {
 		var ret []NetworkPerfExposure
 		return ret
 	}
@@ -346,7 +346,7 @@ func (o *AnalyticsEventNotif) GetNwPerfInfos() []NetworkPerfExposure {
 // GetNwPerfInfosOk returns a tuple with the NwPerfInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetNwPerfInfosOk() ([]NetworkPerfExposure, bool) {
-	if o == nil || isNil(o.NwPerfInfos) {
+	if o == nil || IsNil(o.NwPerfInfos) {
 		return nil, false
 	}
 	return o.NwPerfInfos, true
@@ -354,7 +354,7 @@ func (o *AnalyticsEventNotif) GetNwPerfInfosOk() ([]NetworkPerfExposure, bool) {
 
 // HasNwPerfInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasNwPerfInfos() bool {
-	if o != nil && !isNil(o.NwPerfInfos) {
+	if o != nil && !IsNil(o.NwPerfInfos) {
 		return true
 	}
 
@@ -368,7 +368,7 @@ func (o *AnalyticsEventNotif) SetNwPerfInfos(v []NetworkPerfExposure) {
 
 // GetQosSustainInfos returns the QosSustainInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetQosSustainInfos() []QosSustainabilityExposure {
-	if o == nil || isNil(o.QosSustainInfos) {
+	if o == nil || IsNil(o.QosSustainInfos) {
 		var ret []QosSustainabilityExposure
 		return ret
 	}
@@ -378,7 +378,7 @@ func (o *AnalyticsEventNotif) GetQosSustainInfos() []QosSustainabilityExposure {
 // GetQosSustainInfosOk returns a tuple with the QosSustainInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetQosSustainInfosOk() ([]QosSustainabilityExposure, bool) {
-	if o == nil || isNil(o.QosSustainInfos) {
+	if o == nil || IsNil(o.QosSustainInfos) {
 		return nil, false
 	}
 	return o.QosSustainInfos, true
@@ -386,7 +386,7 @@ func (o *AnalyticsEventNotif) GetQosSustainInfosOk() ([]QosSustainabilityExposur
 
 // HasQosSustainInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasQosSustainInfos() bool {
-	if o != nil && !isNil(o.QosSustainInfos) {
+	if o != nil && !IsNil(o.QosSustainInfos) {
 		return true
 	}
 
@@ -400,7 +400,7 @@ func (o *AnalyticsEventNotif) SetQosSustainInfos(v []QosSustainabilityExposure) 
 
 // GetDisperInfos returns the DisperInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetDisperInfos() []DispersionInfo {
-	if o == nil || isNil(o.DisperInfos) {
+	if o == nil || IsNil(o.DisperInfos) {
 		var ret []DispersionInfo
 		return ret
 	}
@@ -410,7 +410,7 @@ func (o *AnalyticsEventNotif) GetDisperInfos() []DispersionInfo {
 // GetDisperInfosOk returns a tuple with the DisperInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetDisperInfosOk() ([]DispersionInfo, bool) {
-	if o == nil || isNil(o.DisperInfos) {
+	if o == nil || IsNil(o.DisperInfos) {
 		return nil, false
 	}
 	return o.DisperInfos, true
@@ -418,7 +418,7 @@ func (o *AnalyticsEventNotif) GetDisperInfosOk() ([]DispersionInfo, bool) {
 
 // HasDisperInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasDisperInfos() bool {
-	if o != nil && !isNil(o.DisperInfos) {
+	if o != nil && !IsNil(o.DisperInfos) {
 		return true
 	}
 
@@ -432,7 +432,7 @@ func (o *AnalyticsEventNotif) SetDisperInfos(v []DispersionInfo) {
 
 // GetDnPerfInfos returns the DnPerfInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetDnPerfInfos() []DnPerfInfo {
-	if o == nil || isNil(o.DnPerfInfos) {
+	if o == nil || IsNil(o.DnPerfInfos) {
 		var ret []DnPerfInfo
 		return ret
 	}
@@ -442,7 +442,7 @@ func (o *AnalyticsEventNotif) GetDnPerfInfos() []DnPerfInfo {
 // GetDnPerfInfosOk returns a tuple with the DnPerfInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetDnPerfInfosOk() ([]DnPerfInfo, bool) {
-	if o == nil || isNil(o.DnPerfInfos) {
+	if o == nil || IsNil(o.DnPerfInfos) {
 		return nil, false
 	}
 	return o.DnPerfInfos, true
@@ -450,7 +450,7 @@ func (o *AnalyticsEventNotif) GetDnPerfInfosOk() ([]DnPerfInfo, bool) {
 
 // HasDnPerfInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasDnPerfInfos() bool {
-	if o != nil && !isNil(o.DnPerfInfos) {
+	if o != nil && !IsNil(o.DnPerfInfos) {
 		return true
 	}
 
@@ -464,7 +464,7 @@ func (o *AnalyticsEventNotif) SetDnPerfInfos(v []DnPerfInfo) {
 
 // GetSvcExps returns the SvcExps field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetSvcExps() []ServiceExperienceInfo {
-	if o == nil || isNil(o.SvcExps) {
+	if o == nil || IsNil(o.SvcExps) {
 		var ret []ServiceExperienceInfo
 		return ret
 	}
@@ -474,7 +474,7 @@ func (o *AnalyticsEventNotif) GetSvcExps() []ServiceExperienceInfo {
 // GetSvcExpsOk returns a tuple with the SvcExps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetSvcExpsOk() ([]ServiceExperienceInfo, bool) {
-	if o == nil || isNil(o.SvcExps) {
+	if o == nil || IsNil(o.SvcExps) {
 		return nil, false
 	}
 	return o.SvcExps, true
@@ -482,7 +482,7 @@ func (o *AnalyticsEventNotif) GetSvcExpsOk() ([]ServiceExperienceInfo, bool) {
 
 // HasSvcExps returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasSvcExps() bool {
-	if o != nil && !isNil(o.SvcExps) {
+	if o != nil && !IsNil(o.SvcExps) {
 		return true
 	}
 
@@ -496,7 +496,7 @@ func (o *AnalyticsEventNotif) SetSvcExps(v []ServiceExperienceInfo) {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetStart() time.Time {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret time.Time
 		return ret
 	}
@@ -506,7 +506,7 @@ func (o *AnalyticsEventNotif) GetStart() time.Time {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetStartOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -514,7 +514,7 @@ func (o *AnalyticsEventNotif) GetStartOk() (*time.Time, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -528,7 +528,7 @@ func (o *AnalyticsEventNotif) SetStart(v time.Time) {
 
 // GetTimeStampGen returns the TimeStampGen field value if set, zero value otherwise.
 func (o *AnalyticsEventNotif) GetTimeStampGen() time.Time {
-	if o == nil || isNil(o.TimeStampGen) {
+	if o == nil || IsNil(o.TimeStampGen) {
 		var ret time.Time
 		return ret
 	}
@@ -538,7 +538,7 @@ func (o *AnalyticsEventNotif) GetTimeStampGen() time.Time {
 // GetTimeStampGenOk returns a tuple with the TimeStampGen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotif) GetTimeStampGenOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeStampGen) {
+	if o == nil || IsNil(o.TimeStampGen) {
 		return nil, false
 	}
 	return o.TimeStampGen, true
@@ -546,7 +546,7 @@ func (o *AnalyticsEventNotif) GetTimeStampGenOk() (*time.Time, bool) {
 
 // HasTimeStampGen returns a boolean if a field has been set.
 func (o *AnalyticsEventNotif) HasTimeStampGen() bool {
-	if o != nil && !isNil(o.TimeStampGen) {
+	if o != nil && !IsNil(o.TimeStampGen) {
 		return true
 	}
 
@@ -559,7 +559,7 @@ func (o *AnalyticsEventNotif) SetTimeStampGen(v time.Time) {
 }
 
 func (o AnalyticsEventNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -569,47 +569,47 @@ func (o AnalyticsEventNotif) MarshalJSON() ([]byte, error) {
 func (o AnalyticsEventNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEvent"] = o.AnalyEvent
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !isNil(o.FailNotifyCode) {
+	if !IsNil(o.FailNotifyCode) {
 		toSerialize["failNotifyCode"] = o.FailNotifyCode
 	}
-	if !isNil(o.RvWaitTime) {
+	if !IsNil(o.RvWaitTime) {
 		toSerialize["rvWaitTime"] = o.RvWaitTime
 	}
-	if !isNil(o.UeMobilityInfos) {
+	if !IsNil(o.UeMobilityInfos) {
 		toSerialize["ueMobilityInfos"] = o.UeMobilityInfos
 	}
-	if !isNil(o.UeCommInfos) {
+	if !IsNil(o.UeCommInfos) {
 		toSerialize["ueCommInfos"] = o.UeCommInfos
 	}
-	if !isNil(o.AbnormalInfos) {
+	if !IsNil(o.AbnormalInfos) {
 		toSerialize["abnormalInfos"] = o.AbnormalInfos
 	}
-	if !isNil(o.CongestInfos) {
+	if !IsNil(o.CongestInfos) {
 		toSerialize["congestInfos"] = o.CongestInfos
 	}
-	if !isNil(o.NwPerfInfos) {
+	if !IsNil(o.NwPerfInfos) {
 		toSerialize["nwPerfInfos"] = o.NwPerfInfos
 	}
-	if !isNil(o.QosSustainInfos) {
+	if !IsNil(o.QosSustainInfos) {
 		toSerialize["qosSustainInfos"] = o.QosSustainInfos
 	}
-	if !isNil(o.DisperInfos) {
+	if !IsNil(o.DisperInfos) {
 		toSerialize["disperInfos"] = o.DisperInfos
 	}
-	if !isNil(o.DnPerfInfos) {
+	if !IsNil(o.DnPerfInfos) {
 		toSerialize["dnPerfInfos"] = o.DnPerfInfos
 	}
-	if !isNil(o.SvcExps) {
+	if !IsNil(o.SvcExps) {
 		toSerialize["svcExps"] = o.SvcExps
 	}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.TimeStampGen) {
+	if !IsNil(o.TimeStampGen) {
 		toSerialize["timeStampGen"] = o.TimeStampGen
 	}
 	return toSerialize, nil
@@ -650,5 +650,3 @@ func (v *NullableAnalyticsEventNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

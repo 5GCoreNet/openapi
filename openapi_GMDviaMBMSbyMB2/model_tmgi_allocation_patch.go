@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyMB2
 
-API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &TMGIAllocationPatch{}
 // TMGIAllocationPatch Represents the parameters to request the modification of a TMGI Allocation resource.
 type TMGIAllocationPatch struct {
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
-	ExternalGroupId *string `json:"externalGroupId,omitempty"`
-	MbmsLocArea *MbmsLocArea `json:"mbmsLocArea,omitempty"`
+	ExternalGroupId *string      `json:"externalGroupId,omitempty"`
+	MbmsLocArea     *MbmsLocArea `json:"mbmsLocArea,omitempty"`
 }
 
 // NewTMGIAllocationPatch instantiates a new TMGIAllocationPatch object
@@ -43,7 +43,7 @@ func NewTMGIAllocationPatchWithDefaults() *TMGIAllocationPatch {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *TMGIAllocationPatch) GetExternalGroupId() string {
-	if o == nil || isNil(o.ExternalGroupId) {
+	if o == nil || IsNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TMGIAllocationPatch) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocationPatch) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExternalGroupId) {
+	if o == nil || IsNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -61,7 +61,7 @@ func (o *TMGIAllocationPatch) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *TMGIAllocationPatch) HasExternalGroupId() bool {
-	if o != nil && !isNil(o.ExternalGroupId) {
+	if o != nil && !IsNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TMGIAllocationPatch) SetExternalGroupId(v string) {
 
 // GetMbmsLocArea returns the MbmsLocArea field value if set, zero value otherwise.
 func (o *TMGIAllocationPatch) GetMbmsLocArea() MbmsLocArea {
-	if o == nil || isNil(o.MbmsLocArea) {
+	if o == nil || IsNil(o.MbmsLocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TMGIAllocationPatch) GetMbmsLocArea() MbmsLocArea {
 // GetMbmsLocAreaOk returns a tuple with the MbmsLocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocationPatch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || isNil(o.MbmsLocArea) {
+	if o == nil || IsNil(o.MbmsLocArea) {
 		return nil, false
 	}
 	return o.MbmsLocArea, true
@@ -93,7 +93,7 @@ func (o *TMGIAllocationPatch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasMbmsLocArea returns a boolean if a field has been set.
 func (o *TMGIAllocationPatch) HasMbmsLocArea() bool {
-	if o != nil && !isNil(o.MbmsLocArea) {
+	if o != nil && !IsNil(o.MbmsLocArea) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *TMGIAllocationPatch) SetMbmsLocArea(v MbmsLocArea) {
 }
 
 func (o TMGIAllocationPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o TMGIAllocationPatch) MarshalJSON() ([]byte, error) {
 
 func (o TMGIAllocationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExternalGroupId) {
+	if !IsNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	if !isNil(o.MbmsLocArea) {
+	if !IsNil(o.MbmsLocArea) {
 		toSerialize["mbmsLocArea"] = o.MbmsLocArea
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableTMGIAllocationPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

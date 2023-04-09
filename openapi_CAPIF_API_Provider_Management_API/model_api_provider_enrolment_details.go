@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Provider_Management_API
 
-API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &APIProviderEnrolmentDetails{}
 
 // APIProviderEnrolmentDetails Represents an API provider domain's enrolment details.
 type APIProviderEnrolmentDetails struct {
-	// API provider domain ID assigned by the CAPIF core function to the API management function while registering the API provider domain. Shall not be present in the HTTP POST request from the API Management function to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses. 
+	// API provider domain ID assigned by the CAPIF core function to the API management function while registering the API provider domain. Shall not be present in the HTTP POST request from the API Management function to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses.
 	ApiProvDomId *string `json:"apiProvDomId,omitempty"`
-	// Security information necessary for the CAPIF core function to validate the registration of the API provider domain. Shall be present in HTTP POST request from API management function to CAPIF core function for API provider domain registration. 
+	// Security information necessary for the CAPIF core function to validate the registration of the API provider domain. Shall be present in HTTP POST request from API management function to CAPIF core function for API provider domain registration.
 	RegSec string `json:"regSec"`
-	// A list of individual API provider domain functions details. When included by the API management function in the HTTP request message, it lists the API provider domain functions that the API management function intends to register/update in registration or update registration procedure. When included by the CAPIF core function in the HTTP response message, it lists the API domain functions details that are registered or updated successfully. 
+	// A list of individual API provider domain functions details. When included by the API management function in the HTTP request message, it lists the API provider domain functions that the API management function intends to register/update in registration or update registration procedure. When included by the CAPIF core function in the HTTP response message, it lists the API domain functions details that are registered or updated successfully.
 	ApiProvFuncs []APIProviderFunctionDetails `json:"apiProvFuncs,omitempty"`
-	// Generic information related to the API provider domain such as details of the API provider applications. 
+	// Generic information related to the API provider domain such as details of the API provider applications.
 	ApiProvDomInfo *string `json:"apiProvDomInfo,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
-	// Registration or update specific failure information of failed API provider domain function registrations.Shall be present in the HTTP response body if atleast one of the API provider domain function registration or update registration fails. 
+	// Registration or update specific failure information of failed API provider domain function registrations.Shall be present in the HTTP response body if atleast one of the API provider domain function registration or update registration fails.
 	FailReason *string `json:"failReason,omitempty"`
 }
 
@@ -53,7 +53,7 @@ func NewAPIProviderEnrolmentDetailsWithDefaults() *APIProviderEnrolmentDetails {
 
 // GetApiProvDomId returns the ApiProvDomId field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomId() string {
-	if o == nil || isNil(o.ApiProvDomId) {
+	if o == nil || IsNil(o.ApiProvDomId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomId() string {
 // GetApiProvDomIdOk returns a tuple with the ApiProvDomId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomIdOk() (*string, bool) {
-	if o == nil || isNil(o.ApiProvDomId) {
+	if o == nil || IsNil(o.ApiProvDomId) {
 		return nil, false
 	}
 	return o.ApiProvDomId, true
@@ -71,7 +71,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomIdOk() (*string, bool) {
 
 // HasApiProvDomId returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasApiProvDomId() bool {
-	if o != nil && !isNil(o.ApiProvDomId) {
+	if o != nil && !IsNil(o.ApiProvDomId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *APIProviderEnrolmentDetails) SetRegSec(v string) {
 
 // GetApiProvFuncs returns the ApiProvFuncs field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetApiProvFuncs() []APIProviderFunctionDetails {
-	if o == nil || isNil(o.ApiProvFuncs) {
+	if o == nil || IsNil(o.ApiProvFuncs) {
 		var ret []APIProviderFunctionDetails
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvFuncs() []APIProviderFunctionDet
 // GetApiProvFuncsOk returns a tuple with the ApiProvFuncs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetApiProvFuncsOk() ([]APIProviderFunctionDetails, bool) {
-	if o == nil || isNil(o.ApiProvFuncs) {
+	if o == nil || IsNil(o.ApiProvFuncs) {
 		return nil, false
 	}
 	return o.ApiProvFuncs, true
@@ -127,7 +127,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvFuncsOk() ([]APIProviderFunction
 
 // HasApiProvFuncs returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasApiProvFuncs() bool {
-	if o != nil && !isNil(o.ApiProvFuncs) {
+	if o != nil && !IsNil(o.ApiProvFuncs) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *APIProviderEnrolmentDetails) SetApiProvFuncs(v []APIProviderFunctionDet
 
 // GetApiProvDomInfo returns the ApiProvDomInfo field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomInfo() string {
-	if o == nil || isNil(o.ApiProvDomInfo) {
+	if o == nil || IsNil(o.ApiProvDomInfo) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomInfo() string {
 // GetApiProvDomInfoOk returns a tuple with the ApiProvDomInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomInfoOk() (*string, bool) {
-	if o == nil || isNil(o.ApiProvDomInfo) {
+	if o == nil || IsNil(o.ApiProvDomInfo) {
 		return nil, false
 	}
 	return o.ApiProvDomInfo, true
@@ -159,7 +159,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomInfoOk() (*string, bool) {
 
 // HasApiProvDomInfo returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasApiProvDomInfo() bool {
-	if o != nil && !isNil(o.ApiProvDomInfo) {
+	if o != nil && !IsNil(o.ApiProvDomInfo) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *APIProviderEnrolmentDetails) SetApiProvDomInfo(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *APIProviderEnrolmentDetails) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -191,7 +191,7 @@ func (o *APIProviderEnrolmentDetails) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *APIProviderEnrolmentDetails) SetSuppFeat(v string) {
 
 // GetFailReason returns the FailReason field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetFailReason() string {
-	if o == nil || isNil(o.FailReason) {
+	if o == nil || IsNil(o.FailReason) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *APIProviderEnrolmentDetails) GetFailReason() string {
 // GetFailReasonOk returns a tuple with the FailReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetFailReasonOk() (*string, bool) {
-	if o == nil || isNil(o.FailReason) {
+	if o == nil || IsNil(o.FailReason) {
 		return nil, false
 	}
 	return o.FailReason, true
@@ -223,7 +223,7 @@ func (o *APIProviderEnrolmentDetails) GetFailReasonOk() (*string, bool) {
 
 // HasFailReason returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasFailReason() bool {
-	if o != nil && !isNil(o.FailReason) {
+	if o != nil && !IsNil(o.FailReason) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *APIProviderEnrolmentDetails) SetFailReason(v string) {
 }
 
 func (o APIProviderEnrolmentDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -245,20 +245,18 @@ func (o APIProviderEnrolmentDetails) MarshalJSON() ([]byte, error) {
 
 func (o APIProviderEnrolmentDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiProvDomId) {
-		toSerialize["apiProvDomId"] = o.ApiProvDomId
-	}
+	// skip: apiProvDomId is readOnly
 	toSerialize["regSec"] = o.RegSec
-	if !isNil(o.ApiProvFuncs) {
+	if !IsNil(o.ApiProvFuncs) {
 		toSerialize["apiProvFuncs"] = o.ApiProvFuncs
 	}
-	if !isNil(o.ApiProvDomInfo) {
+	if !IsNil(o.ApiProvDomInfo) {
 		toSerialize["apiProvDomInfo"] = o.ApiProvDomInfo
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.FailReason) {
+	if !IsNil(o.FailReason) {
 		toSerialize["failReason"] = o.FailReason
 	}
 	return toSerialize, nil
@@ -299,5 +297,3 @@ func (v *NullableAPIProviderEnrolmentDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

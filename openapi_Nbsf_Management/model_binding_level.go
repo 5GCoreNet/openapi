@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// BindingLevel Possible values are: - \"NF_SET\" - \"NF_INSTANCE\" 
+// BindingLevel Possible values are: - \"NF_SET\" - \"NF_INSTANCE\"
 type BindingLevel struct {
-	BindingLevelAnyOf *BindingLevelAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *BindingLevel) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into BindingLevelAnyOf
-	err = json.Unmarshal(data, &dst.BindingLevelAnyOf);
-	if err == nil {
-		jsonBindingLevelAnyOf, _ := json.Marshal(dst.BindingLevelAnyOf)
-		if string(jsonBindingLevelAnyOf) == "{}" { // empty struct
-			dst.BindingLevelAnyOf = nil
-		} else {
-			return nil // data stored in dst.BindingLevelAnyOf, return on the first match
-		}
-	} else {
-		dst.BindingLevelAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *BindingLevel) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *BindingLevel) MarshalJSON() ([]byte, error) {
-	if src.BindingLevelAnyOf != nil {
-		return json.Marshal(&src.BindingLevelAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableBindingLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

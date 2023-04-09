@@ -252,7 +252,13 @@ paths:
                     style: simple
                 style: form
             schema:
-              $ref: '#/components/schemas/ContextCreate_request'
+              properties:
+                jsonData:
+                  $ref: '#/components/schemas/ContextCreateReqData'
+                binaryDataN2Information:
+                  format: binary
+                  type: string
+              type: object
         required: true
       responses:
         "201":
@@ -356,7 +362,40 @@ paths:
                       style: simple
                   style: form
               schema:
-                $ref: '#/components/schemas/ContextCreate_201_response'
+                properties:
+                  jsonData:
+                    $ref: '#/components/schemas/ContextCreateRspData'
+                  binaryDataN2Information1:
+                    format: binary
+                    type: string
+                  binaryDataN2Information2:
+                    format: binary
+                    type: string
+                  binaryDataN2Information3:
+                    format: binary
+                    type: string
+                  binaryDataN2Information4:
+                    format: binary
+                    type: string
+                  binaryDataN2Information5:
+                    format: binary
+                    type: string
+                  binaryDataN2Information6:
+                    format: binary
+                    type: string
+                  binaryDataN2Information7:
+                    format: binary
+                    type: string
+                  binaryDataN2Information8:
+                    format: binary
+                    type: string
+                  binaryDataN2Information9:
+                    format: binary
+                    type: string
+                  binaryDataN2Information10:
+                    format: binary
+                    type: string
+                type: object
           description: MBS Broadcast context created successfully
           headers:
             Location:
@@ -1512,22 +1551,39 @@ components:
       type: object
     OperationStatus:
       anyOf:
-      - $ref: '#/components/schemas/OperationStatus_anyOf'
+      - enum:
+        - MBS_SESSION_START_COMPLETE
+        - MBS_SESSION_START_INCOMPLETE
+        - MBS_SESSION_UPDATE_COMPLETE
+        - MBS_SESSION_UPDATE_INCOMPLETE
+        type: string
       - type: string
       description: Status of a Broadcast MBS session start or update operation.
     NgapIeType:
       anyOf:
-      - $ref: '#/components/schemas/NgapIeType_anyOf'
+      - enum:
+        - MBS_SES_REQ
+        - MBS_SES_RSP
+        - MBS_SES_FAIL
+        - MBS_SES_REL_RSP
+        type: string
       - type: string
       description: NGAP Information Element Type
     OpEventType:
       anyOf:
-      - $ref: '#/components/schemas/OpEventType_anyOf'
+      - enum:
+        - AMF_CHANGE
+        - NG_RAN_EVENT
+        type: string
       - type: string
       description: Operation Event Type.
     NgranFailureIndication:
       anyOf:
-      - $ref: '#/components/schemas/NgranFailureIndication_anyOf'
+      - enum:
+        - NG_RAN_RESTART_OR_START
+        - NG_RAN_FAILURE_WITHOUT_RESTART
+        - NG_RAN_NOT_REACHABLE
+        type: string
       - type: string
       description: Indicates a NG-RAN failure event.
     RedirectResponse:
@@ -2245,7 +2301,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnIdNid:
@@ -2301,49 +2414,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    ContextCreate_request:
-      properties:
-        jsonData:
-          $ref: '#/components/schemas/ContextCreateReqData'
-        binaryDataN2Information:
-          format: binary
-          type: string
-      type: object
-    ContextCreate_201_response:
-      properties:
-        jsonData:
-          $ref: '#/components/schemas/ContextCreateRspData'
-        binaryDataN2Information1:
-          format: binary
-          type: string
-        binaryDataN2Information2:
-          format: binary
-          type: string
-        binaryDataN2Information3:
-          format: binary
-          type: string
-        binaryDataN2Information4:
-          format: binary
-          type: string
-        binaryDataN2Information5:
-          format: binary
-          type: string
-        binaryDataN2Information6:
-          format: binary
-          type: string
-        binaryDataN2Information7:
-          format: binary
-          type: string
-        binaryDataN2Information8:
-          format: binary
-          type: string
-        binaryDataN2Information9:
-          format: binary
-          type: string
-        binaryDataN2Information10:
-          format: binary
-          type: string
-      type: object
     _mbs_contexts_post_request:
       properties:
         jsonData:
@@ -2422,95 +2492,6 @@ components:
           format: binary
           type: string
       type: object
-    OperationStatus_anyOf:
-      enum:
-      - MBS_SESSION_START_COMPLETE
-      - MBS_SESSION_START_INCOMPLETE
-      - MBS_SESSION_UPDATE_COMPLETE
-      - MBS_SESSION_UPDATE_INCOMPLETE
-      type: string
-      example: null
-    NgapIeType_anyOf:
-      enum:
-      - MBS_SES_REQ
-      - MBS_SES_RSP
-      - MBS_SES_FAIL
-      - MBS_SES_REL_RSP
-      type: string
-      example: null
-    OpEventType_anyOf:
-      enum:
-      - AMF_CHANGE
-      - NG_RAN_EVENT
-      type: string
-      example: null
-    NgranFailureIndication_anyOf:
-      enum:
-      - NG_RAN_RESTART_OR_START
-      - NG_RAN_FAILURE_WITHOUT_RESTART
-      - NG_RAN_NOT_REACHABLE
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

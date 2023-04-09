@@ -17,58 +17,58 @@ import (
 
 // ResourcesNrNrm - struct for ResourcesNrNrm
 type ResourcesNrNrm struct {
-	BWPSetSingle *BWPSetSingle
-	BeamSingle *BeamSingle
-	BwpSingle *BwpSingle
-	CCOFunctionSingle *CCOFunctionSingle
+	BWPSetSingle                         *BWPSetSingle
+	BeamSingle                           *BeamSingle
+	BwpSingle                            *BwpSingle
+	CCOFunctionSingle                    *CCOFunctionSingle
 	CCOOvershootCoverageParametersSingle *CCOOvershootCoverageParametersSingle
-	CCOPilotPollutionParametersSingle *CCOPilotPollutionParametersSingle
-	CCOWeakCoverageParametersSingle *CCOWeakCoverageParametersSingle
-	CESManagementFunctionSingle *CESManagementFunctionSingle
-	CPCIConfigurationFunctionSingle *CPCIConfigurationFunctionSingle
-	CommonBeamformingFunctionSingle *CommonBeamformingFunctionSingle
-	DANRManagementFunctionSingle *DANRManagementFunctionSingle
-	DESManagementFunctionSingle *DESManagementFunctionSingle
-	DLBOFunctionSingle *DLBOFunctionSingle
-	DMROFunctionSingle *DMROFunctionSingle
-	DPCIConfigurationFunctionSingle *DPCIConfigurationFunctionSingle
-	DRACHOptimizationFunctionSingle *DRACHOptimizationFunctionSingle
-	EPE1Single *EPE1Single
-	EPF1CSingle *EPF1CSingle
-	EPF1USingle *EPF1USingle
-	EPNgCSingle *EPNgCSingle
-	EPNgUSingle *EPNgUSingle
-	EPS1USingle *EPS1USingle
-	EPX2CSingle *EPX2CSingle
-	EPX2USingle *EPX2USingle
-	EPXnCSingle *EPXnCSingle
-	EPXnUSingle *EPXnUSingle
-	EUtranCellRelationSingle *EUtranCellRelationSingle
-	EUtranFreqRelationSingle *EUtranFreqRelationSingle
-	EUtranFrequencySingle *EUtranFrequencySingle
-	ExternalENBFunctionSingle *ExternalENBFunctionSingle
-	ExternalEUTranCellSingle *ExternalEUTranCellSingle
-	ExternalGnbCuCpFunctionSingle *ExternalGnbCuCpFunctionSingle
-	ExternalGnbCuUpFunctionSingle *ExternalGnbCuUpFunctionSingle
-	ExternalGnbDuFunctionSingle *ExternalGnbDuFunctionSingle
-	ExternalNrCellCuSingle *ExternalNrCellCuSingle
-	GnbCuCpFunctionSingle *GnbCuCpFunctionSingle
-	GnbCuUpFunctionSingle *GnbCuUpFunctionSingle
-	GnbDuFunctionSingle *GnbDuFunctionSingle
-	ManagedElementSingle *ManagedElementSingle
-	MnS *MnS
-	NRCellRelationSingle *NRCellRelationSingle
-	NRFreqRelationSingle *NRFreqRelationSingle
-	NRFrequencySingle *NRFrequencySingle
-	NrCellCuSingle *NrCellCuSingle
-	NrCellDuSingle *NrCellDuSingle
-	NrOperatorCellDuSingle *NrOperatorCellDuSingle
-	NrSectorCarrierSingle *NrSectorCarrierSingle
-	OperatorDuSingle *OperatorDuSingle
-	RRMPolicyRatioSingle *RRMPolicyRatioSingle
-	RimRSGlobalSingle *RimRSGlobalSingle
-	RimRSSetSingle *RimRSSetSingle
-	SubNetworkSingle *SubNetworkSingle
+	CCOPilotPollutionParametersSingle    *CCOPilotPollutionParametersSingle
+	CCOWeakCoverageParametersSingle      *CCOWeakCoverageParametersSingle
+	CESManagementFunctionSingle          *CESManagementFunctionSingle
+	CPCIConfigurationFunctionSingle      *CPCIConfigurationFunctionSingle
+	CommonBeamformingFunctionSingle      *CommonBeamformingFunctionSingle
+	DANRManagementFunctionSingle         *DANRManagementFunctionSingle
+	DESManagementFunctionSingle          *DESManagementFunctionSingle
+	DLBOFunctionSingle                   *DLBOFunctionSingle
+	DMROFunctionSingle                   *DMROFunctionSingle
+	DPCIConfigurationFunctionSingle      *DPCIConfigurationFunctionSingle
+	DRACHOptimizationFunctionSingle      *DRACHOptimizationFunctionSingle
+	EPE1Single                           *EPE1Single
+	EPF1CSingle                          *EPF1CSingle
+	EPF1USingle                          *EPF1USingle
+	EPNgCSingle                          *EPNgCSingle
+	EPNgUSingle                          *EPNgUSingle
+	EPS1USingle                          *EPS1USingle
+	EPX2CSingle                          *EPX2CSingle
+	EPX2USingle                          *EPX2USingle
+	EPXnCSingle                          *EPXnCSingle
+	EPXnUSingle                          *EPXnUSingle
+	EUtranCellRelationSingle             *EUtranCellRelationSingle
+	EUtranFreqRelationSingle             *EUtranFreqRelationSingle
+	EUtranFrequencySingle                *EUtranFrequencySingle
+	ExternalENBFunctionSingle            *ExternalENBFunctionSingle
+	ExternalEUTranCellSingle             *ExternalEUTranCellSingle
+	ExternalGnbCuCpFunctionSingle        *ExternalGnbCuCpFunctionSingle
+	ExternalGnbCuUpFunctionSingle        *ExternalGnbCuUpFunctionSingle
+	ExternalGnbDuFunctionSingle          *ExternalGnbDuFunctionSingle
+	ExternalNrCellCuSingle               *ExternalNrCellCuSingle
+	GnbCuCpFunctionSingle                *GnbCuCpFunctionSingle
+	GnbCuUpFunctionSingle                *GnbCuUpFunctionSingle
+	GnbDuFunctionSingle                  *GnbDuFunctionSingle
+	ManagedElementSingle                 *ManagedElementSingle
+	MnS                                  *MnS
+	NRCellRelationSingle                 *NRCellRelationSingle
+	NRFreqRelationSingle                 *NRFreqRelationSingle
+	NRFrequencySingle                    *NRFrequencySingle
+	NrCellCuSingle                       *NrCellCuSingle
+	NrCellDuSingle                       *NrCellDuSingle
+	NrOperatorCellDuSingle               *NrOperatorCellDuSingle
+	NrSectorCarrierSingle                *NrSectorCarrierSingle
+	OperatorDuSingle                     *OperatorDuSingle
+	RRMPolicyRatioSingle                 *RRMPolicyRatioSingle
+	RimRSGlobalSingle                    *RimRSGlobalSingle
+	RimRSSetSingle                       *RimRSSetSingle
+	SubNetworkSingle                     *SubNetworkSingle
 }
 
 // BWPSetSingleAsResourcesNrNrm is a convenience function that returns BWPSetSingle wrapped in ResourcesNrNrm
@@ -434,7 +434,6 @@ func SubNetworkSingleAsResourcesNrNrm(v *SubNetworkSingle) ResourcesNrNrm {
 		SubNetworkSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesNrNrm) UnmarshalJSON(data []byte) error {
@@ -1393,7 +1392,7 @@ func (src ResourcesNrNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesNrNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesNrNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -1644,5 +1643,3 @@ func (v *NullableResourcesNrNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

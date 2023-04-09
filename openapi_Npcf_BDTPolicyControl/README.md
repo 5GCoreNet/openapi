@@ -100,7 +100,6 @@ Class | Method | HTTP request | Description
  - [GlobalRanNodeId](docs/GlobalRanNodeId.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [Ncgi](docs/Ncgi.md)
  - [NetworkAreaInfo](docs/NetworkAreaInfo.md)
  - [Notification](docs/Notification.md)

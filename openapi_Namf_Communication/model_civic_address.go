@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,39 +19,39 @@ var _ MappedNullable = &CivicAddress{}
 
 // CivicAddress Indicates a Civic address.
 type CivicAddress struct {
-	Country *string `json:"country,omitempty"`
-	A1 *string `json:"A1,omitempty"`
-	A2 *string `json:"A2,omitempty"`
-	A3 *string `json:"A3,omitempty"`
-	A4 *string `json:"A4,omitempty"`
-	A5 *string `json:"A5,omitempty"`
-	A6 *string `json:"A6,omitempty"`
-	PRD *string `json:"PRD,omitempty"`
-	POD *string `json:"POD,omitempty"`
-	STS *string `json:"STS,omitempty"`
-	HNO *string `json:"HNO,omitempty"`
-	HNS *string `json:"HNS,omitempty"`
-	LMK *string `json:"LMK,omitempty"`
-	LOC *string `json:"LOC,omitempty"`
-	NAM *string `json:"NAM,omitempty"`
-	PC *string `json:"PC,omitempty"`
-	BLD *string `json:"BLD,omitempty"`
-	UNIT *string `json:"UNIT,omitempty"`
-	FLR *string `json:"FLR,omitempty"`
-	ROOM *string `json:"ROOM,omitempty"`
-	PLC *string `json:"PLC,omitempty"`
-	PCN *string `json:"PCN,omitempty"`
-	POBOX *string `json:"POBOX,omitempty"`
-	ADDCODE *string `json:"ADDCODE,omitempty"`
-	SEAT *string `json:"SEAT,omitempty"`
-	RD *string `json:"RD,omitempty"`
-	RDSEC *string `json:"RDSEC,omitempty"`
-	RDBR *string `json:"RDBR,omitempty"`
-	RDSUBBR *string `json:"RDSUBBR,omitempty"`
-	PRM *string `json:"PRM,omitempty"`
-	POM *string `json:"POM,omitempty"`
+	Country    *string `json:"country,omitempty"`
+	A1         *string `json:"A1,omitempty"`
+	A2         *string `json:"A2,omitempty"`
+	A3         *string `json:"A3,omitempty"`
+	A4         *string `json:"A4,omitempty"`
+	A5         *string `json:"A5,omitempty"`
+	A6         *string `json:"A6,omitempty"`
+	PRD        *string `json:"PRD,omitempty"`
+	POD        *string `json:"POD,omitempty"`
+	STS        *string `json:"STS,omitempty"`
+	HNO        *string `json:"HNO,omitempty"`
+	HNS        *string `json:"HNS,omitempty"`
+	LMK        *string `json:"LMK,omitempty"`
+	LOC        *string `json:"LOC,omitempty"`
+	NAM        *string `json:"NAM,omitempty"`
+	PC         *string `json:"PC,omitempty"`
+	BLD        *string `json:"BLD,omitempty"`
+	UNIT       *string `json:"UNIT,omitempty"`
+	FLR        *string `json:"FLR,omitempty"`
+	ROOM       *string `json:"ROOM,omitempty"`
+	PLC        *string `json:"PLC,omitempty"`
+	PCN        *string `json:"PCN,omitempty"`
+	POBOX      *string `json:"POBOX,omitempty"`
+	ADDCODE    *string `json:"ADDCODE,omitempty"`
+	SEAT       *string `json:"SEAT,omitempty"`
+	RD         *string `json:"RD,omitempty"`
+	RDSEC      *string `json:"RDSEC,omitempty"`
+	RDBR       *string `json:"RDBR,omitempty"`
+	RDSUBBR    *string `json:"RDSUBBR,omitempty"`
+	PRM        *string `json:"PRM,omitempty"`
+	POM        *string `json:"POM,omitempty"`
 	UsageRules *string `json:"usageRules,omitempty"`
-	Method *string `json:"method,omitempty"`
+	Method     *string `json:"method,omitempty"`
 	ProvidedBy *string `json:"providedBy,omitempty"`
 }
 
@@ -74,7 +74,7 @@ func NewCivicAddressWithDefaults() *CivicAddress {
 
 // GetCountry returns the Country field value if set, zero value otherwise.
 func (o *CivicAddress) GetCountry() string {
-	if o == nil || isNil(o.Country) {
+	if o == nil || IsNil(o.Country) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *CivicAddress) GetCountry() string {
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetCountryOk() (*string, bool) {
-	if o == nil || isNil(o.Country) {
+	if o == nil || IsNil(o.Country) {
 		return nil, false
 	}
 	return o.Country, true
@@ -92,7 +92,7 @@ func (o *CivicAddress) GetCountryOk() (*string, bool) {
 
 // HasCountry returns a boolean if a field has been set.
 func (o *CivicAddress) HasCountry() bool {
-	if o != nil && !isNil(o.Country) {
+	if o != nil && !IsNil(o.Country) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *CivicAddress) SetCountry(v string) {
 
 // GetA1 returns the A1 field value if set, zero value otherwise.
 func (o *CivicAddress) GetA1() string {
-	if o == nil || isNil(o.A1) {
+	if o == nil || IsNil(o.A1) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *CivicAddress) GetA1() string {
 // GetA1Ok returns a tuple with the A1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetA1Ok() (*string, bool) {
-	if o == nil || isNil(o.A1) {
+	if o == nil || IsNil(o.A1) {
 		return nil, false
 	}
 	return o.A1, true
@@ -124,7 +124,7 @@ func (o *CivicAddress) GetA1Ok() (*string, bool) {
 
 // HasA1 returns a boolean if a field has been set.
 func (o *CivicAddress) HasA1() bool {
-	if o != nil && !isNil(o.A1) {
+	if o != nil && !IsNil(o.A1) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *CivicAddress) SetA1(v string) {
 
 // GetA2 returns the A2 field value if set, zero value otherwise.
 func (o *CivicAddress) GetA2() string {
-	if o == nil || isNil(o.A2) {
+	if o == nil || IsNil(o.A2) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *CivicAddress) GetA2() string {
 // GetA2Ok returns a tuple with the A2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetA2Ok() (*string, bool) {
-	if o == nil || isNil(o.A2) {
+	if o == nil || IsNil(o.A2) {
 		return nil, false
 	}
 	return o.A2, true
@@ -156,7 +156,7 @@ func (o *CivicAddress) GetA2Ok() (*string, bool) {
 
 // HasA2 returns a boolean if a field has been set.
 func (o *CivicAddress) HasA2() bool {
-	if o != nil && !isNil(o.A2) {
+	if o != nil && !IsNil(o.A2) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *CivicAddress) SetA2(v string) {
 
 // GetA3 returns the A3 field value if set, zero value otherwise.
 func (o *CivicAddress) GetA3() string {
-	if o == nil || isNil(o.A3) {
+	if o == nil || IsNil(o.A3) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *CivicAddress) GetA3() string {
 // GetA3Ok returns a tuple with the A3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetA3Ok() (*string, bool) {
-	if o == nil || isNil(o.A3) {
+	if o == nil || IsNil(o.A3) {
 		return nil, false
 	}
 	return o.A3, true
@@ -188,7 +188,7 @@ func (o *CivicAddress) GetA3Ok() (*string, bool) {
 
 // HasA3 returns a boolean if a field has been set.
 func (o *CivicAddress) HasA3() bool {
-	if o != nil && !isNil(o.A3) {
+	if o != nil && !IsNil(o.A3) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *CivicAddress) SetA3(v string) {
 
 // GetA4 returns the A4 field value if set, zero value otherwise.
 func (o *CivicAddress) GetA4() string {
-	if o == nil || isNil(o.A4) {
+	if o == nil || IsNil(o.A4) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *CivicAddress) GetA4() string {
 // GetA4Ok returns a tuple with the A4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetA4Ok() (*string, bool) {
-	if o == nil || isNil(o.A4) {
+	if o == nil || IsNil(o.A4) {
 		return nil, false
 	}
 	return o.A4, true
@@ -220,7 +220,7 @@ func (o *CivicAddress) GetA4Ok() (*string, bool) {
 
 // HasA4 returns a boolean if a field has been set.
 func (o *CivicAddress) HasA4() bool {
-	if o != nil && !isNil(o.A4) {
+	if o != nil && !IsNil(o.A4) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *CivicAddress) SetA4(v string) {
 
 // GetA5 returns the A5 field value if set, zero value otherwise.
 func (o *CivicAddress) GetA5() string {
-	if o == nil || isNil(o.A5) {
+	if o == nil || IsNil(o.A5) {
 		var ret string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *CivicAddress) GetA5() string {
 // GetA5Ok returns a tuple with the A5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetA5Ok() (*string, bool) {
-	if o == nil || isNil(o.A5) {
+	if o == nil || IsNil(o.A5) {
 		return nil, false
 	}
 	return o.A5, true
@@ -252,7 +252,7 @@ func (o *CivicAddress) GetA5Ok() (*string, bool) {
 
 // HasA5 returns a boolean if a field has been set.
 func (o *CivicAddress) HasA5() bool {
-	if o != nil && !isNil(o.A5) {
+	if o != nil && !IsNil(o.A5) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *CivicAddress) SetA5(v string) {
 
 // GetA6 returns the A6 field value if set, zero value otherwise.
 func (o *CivicAddress) GetA6() string {
-	if o == nil || isNil(o.A6) {
+	if o == nil || IsNil(o.A6) {
 		var ret string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *CivicAddress) GetA6() string {
 // GetA6Ok returns a tuple with the A6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetA6Ok() (*string, bool) {
-	if o == nil || isNil(o.A6) {
+	if o == nil || IsNil(o.A6) {
 		return nil, false
 	}
 	return o.A6, true
@@ -284,7 +284,7 @@ func (o *CivicAddress) GetA6Ok() (*string, bool) {
 
 // HasA6 returns a boolean if a field has been set.
 func (o *CivicAddress) HasA6() bool {
-	if o != nil && !isNil(o.A6) {
+	if o != nil && !IsNil(o.A6) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *CivicAddress) SetA6(v string) {
 
 // GetPRD returns the PRD field value if set, zero value otherwise.
 func (o *CivicAddress) GetPRD() string {
-	if o == nil || isNil(o.PRD) {
+	if o == nil || IsNil(o.PRD) {
 		var ret string
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *CivicAddress) GetPRD() string {
 // GetPRDOk returns a tuple with the PRD field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPRDOk() (*string, bool) {
-	if o == nil || isNil(o.PRD) {
+	if o == nil || IsNil(o.PRD) {
 		return nil, false
 	}
 	return o.PRD, true
@@ -316,7 +316,7 @@ func (o *CivicAddress) GetPRDOk() (*string, bool) {
 
 // HasPRD returns a boolean if a field has been set.
 func (o *CivicAddress) HasPRD() bool {
-	if o != nil && !isNil(o.PRD) {
+	if o != nil && !IsNil(o.PRD) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *CivicAddress) SetPRD(v string) {
 
 // GetPOD returns the POD field value if set, zero value otherwise.
 func (o *CivicAddress) GetPOD() string {
-	if o == nil || isNil(o.POD) {
+	if o == nil || IsNil(o.POD) {
 		var ret string
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *CivicAddress) GetPOD() string {
 // GetPODOk returns a tuple with the POD field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPODOk() (*string, bool) {
-	if o == nil || isNil(o.POD) {
+	if o == nil || IsNil(o.POD) {
 		return nil, false
 	}
 	return o.POD, true
@@ -348,7 +348,7 @@ func (o *CivicAddress) GetPODOk() (*string, bool) {
 
 // HasPOD returns a boolean if a field has been set.
 func (o *CivicAddress) HasPOD() bool {
-	if o != nil && !isNil(o.POD) {
+	if o != nil && !IsNil(o.POD) {
 		return true
 	}
 
@@ -362,7 +362,7 @@ func (o *CivicAddress) SetPOD(v string) {
 
 // GetSTS returns the STS field value if set, zero value otherwise.
 func (o *CivicAddress) GetSTS() string {
-	if o == nil || isNil(o.STS) {
+	if o == nil || IsNil(o.STS) {
 		var ret string
 		return ret
 	}
@@ -372,7 +372,7 @@ func (o *CivicAddress) GetSTS() string {
 // GetSTSOk returns a tuple with the STS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetSTSOk() (*string, bool) {
-	if o == nil || isNil(o.STS) {
+	if o == nil || IsNil(o.STS) {
 		return nil, false
 	}
 	return o.STS, true
@@ -380,7 +380,7 @@ func (o *CivicAddress) GetSTSOk() (*string, bool) {
 
 // HasSTS returns a boolean if a field has been set.
 func (o *CivicAddress) HasSTS() bool {
-	if o != nil && !isNil(o.STS) {
+	if o != nil && !IsNil(o.STS) {
 		return true
 	}
 
@@ -394,7 +394,7 @@ func (o *CivicAddress) SetSTS(v string) {
 
 // GetHNO returns the HNO field value if set, zero value otherwise.
 func (o *CivicAddress) GetHNO() string {
-	if o == nil || isNil(o.HNO) {
+	if o == nil || IsNil(o.HNO) {
 		var ret string
 		return ret
 	}
@@ -404,7 +404,7 @@ func (o *CivicAddress) GetHNO() string {
 // GetHNOOk returns a tuple with the HNO field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetHNOOk() (*string, bool) {
-	if o == nil || isNil(o.HNO) {
+	if o == nil || IsNil(o.HNO) {
 		return nil, false
 	}
 	return o.HNO, true
@@ -412,7 +412,7 @@ func (o *CivicAddress) GetHNOOk() (*string, bool) {
 
 // HasHNO returns a boolean if a field has been set.
 func (o *CivicAddress) HasHNO() bool {
-	if o != nil && !isNil(o.HNO) {
+	if o != nil && !IsNil(o.HNO) {
 		return true
 	}
 
@@ -426,7 +426,7 @@ func (o *CivicAddress) SetHNO(v string) {
 
 // GetHNS returns the HNS field value if set, zero value otherwise.
 func (o *CivicAddress) GetHNS() string {
-	if o == nil || isNil(o.HNS) {
+	if o == nil || IsNil(o.HNS) {
 		var ret string
 		return ret
 	}
@@ -436,7 +436,7 @@ func (o *CivicAddress) GetHNS() string {
 // GetHNSOk returns a tuple with the HNS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetHNSOk() (*string, bool) {
-	if o == nil || isNil(o.HNS) {
+	if o == nil || IsNil(o.HNS) {
 		return nil, false
 	}
 	return o.HNS, true
@@ -444,7 +444,7 @@ func (o *CivicAddress) GetHNSOk() (*string, bool) {
 
 // HasHNS returns a boolean if a field has been set.
 func (o *CivicAddress) HasHNS() bool {
-	if o != nil && !isNil(o.HNS) {
+	if o != nil && !IsNil(o.HNS) {
 		return true
 	}
 
@@ -458,7 +458,7 @@ func (o *CivicAddress) SetHNS(v string) {
 
 // GetLMK returns the LMK field value if set, zero value otherwise.
 func (o *CivicAddress) GetLMK() string {
-	if o == nil || isNil(o.LMK) {
+	if o == nil || IsNil(o.LMK) {
 		var ret string
 		return ret
 	}
@@ -468,7 +468,7 @@ func (o *CivicAddress) GetLMK() string {
 // GetLMKOk returns a tuple with the LMK field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetLMKOk() (*string, bool) {
-	if o == nil || isNil(o.LMK) {
+	if o == nil || IsNil(o.LMK) {
 		return nil, false
 	}
 	return o.LMK, true
@@ -476,7 +476,7 @@ func (o *CivicAddress) GetLMKOk() (*string, bool) {
 
 // HasLMK returns a boolean if a field has been set.
 func (o *CivicAddress) HasLMK() bool {
-	if o != nil && !isNil(o.LMK) {
+	if o != nil && !IsNil(o.LMK) {
 		return true
 	}
 
@@ -490,7 +490,7 @@ func (o *CivicAddress) SetLMK(v string) {
 
 // GetLOC returns the LOC field value if set, zero value otherwise.
 func (o *CivicAddress) GetLOC() string {
-	if o == nil || isNil(o.LOC) {
+	if o == nil || IsNil(o.LOC) {
 		var ret string
 		return ret
 	}
@@ -500,7 +500,7 @@ func (o *CivicAddress) GetLOC() string {
 // GetLOCOk returns a tuple with the LOC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetLOCOk() (*string, bool) {
-	if o == nil || isNil(o.LOC) {
+	if o == nil || IsNil(o.LOC) {
 		return nil, false
 	}
 	return o.LOC, true
@@ -508,7 +508,7 @@ func (o *CivicAddress) GetLOCOk() (*string, bool) {
 
 // HasLOC returns a boolean if a field has been set.
 func (o *CivicAddress) HasLOC() bool {
-	if o != nil && !isNil(o.LOC) {
+	if o != nil && !IsNil(o.LOC) {
 		return true
 	}
 
@@ -522,7 +522,7 @@ func (o *CivicAddress) SetLOC(v string) {
 
 // GetNAM returns the NAM field value if set, zero value otherwise.
 func (o *CivicAddress) GetNAM() string {
-	if o == nil || isNil(o.NAM) {
+	if o == nil || IsNil(o.NAM) {
 		var ret string
 		return ret
 	}
@@ -532,7 +532,7 @@ func (o *CivicAddress) GetNAM() string {
 // GetNAMOk returns a tuple with the NAM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetNAMOk() (*string, bool) {
-	if o == nil || isNil(o.NAM) {
+	if o == nil || IsNil(o.NAM) {
 		return nil, false
 	}
 	return o.NAM, true
@@ -540,7 +540,7 @@ func (o *CivicAddress) GetNAMOk() (*string, bool) {
 
 // HasNAM returns a boolean if a field has been set.
 func (o *CivicAddress) HasNAM() bool {
-	if o != nil && !isNil(o.NAM) {
+	if o != nil && !IsNil(o.NAM) {
 		return true
 	}
 
@@ -554,7 +554,7 @@ func (o *CivicAddress) SetNAM(v string) {
 
 // GetPC returns the PC field value if set, zero value otherwise.
 func (o *CivicAddress) GetPC() string {
-	if o == nil || isNil(o.PC) {
+	if o == nil || IsNil(o.PC) {
 		var ret string
 		return ret
 	}
@@ -564,7 +564,7 @@ func (o *CivicAddress) GetPC() string {
 // GetPCOk returns a tuple with the PC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPCOk() (*string, bool) {
-	if o == nil || isNil(o.PC) {
+	if o == nil || IsNil(o.PC) {
 		return nil, false
 	}
 	return o.PC, true
@@ -572,7 +572,7 @@ func (o *CivicAddress) GetPCOk() (*string, bool) {
 
 // HasPC returns a boolean if a field has been set.
 func (o *CivicAddress) HasPC() bool {
-	if o != nil && !isNil(o.PC) {
+	if o != nil && !IsNil(o.PC) {
 		return true
 	}
 
@@ -586,7 +586,7 @@ func (o *CivicAddress) SetPC(v string) {
 
 // GetBLD returns the BLD field value if set, zero value otherwise.
 func (o *CivicAddress) GetBLD() string {
-	if o == nil || isNil(o.BLD) {
+	if o == nil || IsNil(o.BLD) {
 		var ret string
 		return ret
 	}
@@ -596,7 +596,7 @@ func (o *CivicAddress) GetBLD() string {
 // GetBLDOk returns a tuple with the BLD field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetBLDOk() (*string, bool) {
-	if o == nil || isNil(o.BLD) {
+	if o == nil || IsNil(o.BLD) {
 		return nil, false
 	}
 	return o.BLD, true
@@ -604,7 +604,7 @@ func (o *CivicAddress) GetBLDOk() (*string, bool) {
 
 // HasBLD returns a boolean if a field has been set.
 func (o *CivicAddress) HasBLD() bool {
-	if o != nil && !isNil(o.BLD) {
+	if o != nil && !IsNil(o.BLD) {
 		return true
 	}
 
@@ -618,7 +618,7 @@ func (o *CivicAddress) SetBLD(v string) {
 
 // GetUNIT returns the UNIT field value if set, zero value otherwise.
 func (o *CivicAddress) GetUNIT() string {
-	if o == nil || isNil(o.UNIT) {
+	if o == nil || IsNil(o.UNIT) {
 		var ret string
 		return ret
 	}
@@ -628,7 +628,7 @@ func (o *CivicAddress) GetUNIT() string {
 // GetUNITOk returns a tuple with the UNIT field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetUNITOk() (*string, bool) {
-	if o == nil || isNil(o.UNIT) {
+	if o == nil || IsNil(o.UNIT) {
 		return nil, false
 	}
 	return o.UNIT, true
@@ -636,7 +636,7 @@ func (o *CivicAddress) GetUNITOk() (*string, bool) {
 
 // HasUNIT returns a boolean if a field has been set.
 func (o *CivicAddress) HasUNIT() bool {
-	if o != nil && !isNil(o.UNIT) {
+	if o != nil && !IsNil(o.UNIT) {
 		return true
 	}
 
@@ -650,7 +650,7 @@ func (o *CivicAddress) SetUNIT(v string) {
 
 // GetFLR returns the FLR field value if set, zero value otherwise.
 func (o *CivicAddress) GetFLR() string {
-	if o == nil || isNil(o.FLR) {
+	if o == nil || IsNil(o.FLR) {
 		var ret string
 		return ret
 	}
@@ -660,7 +660,7 @@ func (o *CivicAddress) GetFLR() string {
 // GetFLROk returns a tuple with the FLR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetFLROk() (*string, bool) {
-	if o == nil || isNil(o.FLR) {
+	if o == nil || IsNil(o.FLR) {
 		return nil, false
 	}
 	return o.FLR, true
@@ -668,7 +668,7 @@ func (o *CivicAddress) GetFLROk() (*string, bool) {
 
 // HasFLR returns a boolean if a field has been set.
 func (o *CivicAddress) HasFLR() bool {
-	if o != nil && !isNil(o.FLR) {
+	if o != nil && !IsNil(o.FLR) {
 		return true
 	}
 
@@ -682,7 +682,7 @@ func (o *CivicAddress) SetFLR(v string) {
 
 // GetROOM returns the ROOM field value if set, zero value otherwise.
 func (o *CivicAddress) GetROOM() string {
-	if o == nil || isNil(o.ROOM) {
+	if o == nil || IsNil(o.ROOM) {
 		var ret string
 		return ret
 	}
@@ -692,7 +692,7 @@ func (o *CivicAddress) GetROOM() string {
 // GetROOMOk returns a tuple with the ROOM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetROOMOk() (*string, bool) {
-	if o == nil || isNil(o.ROOM) {
+	if o == nil || IsNil(o.ROOM) {
 		return nil, false
 	}
 	return o.ROOM, true
@@ -700,7 +700,7 @@ func (o *CivicAddress) GetROOMOk() (*string, bool) {
 
 // HasROOM returns a boolean if a field has been set.
 func (o *CivicAddress) HasROOM() bool {
-	if o != nil && !isNil(o.ROOM) {
+	if o != nil && !IsNil(o.ROOM) {
 		return true
 	}
 
@@ -714,7 +714,7 @@ func (o *CivicAddress) SetROOM(v string) {
 
 // GetPLC returns the PLC field value if set, zero value otherwise.
 func (o *CivicAddress) GetPLC() string {
-	if o == nil || isNil(o.PLC) {
+	if o == nil || IsNil(o.PLC) {
 		var ret string
 		return ret
 	}
@@ -724,7 +724,7 @@ func (o *CivicAddress) GetPLC() string {
 // GetPLCOk returns a tuple with the PLC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPLCOk() (*string, bool) {
-	if o == nil || isNil(o.PLC) {
+	if o == nil || IsNil(o.PLC) {
 		return nil, false
 	}
 	return o.PLC, true
@@ -732,7 +732,7 @@ func (o *CivicAddress) GetPLCOk() (*string, bool) {
 
 // HasPLC returns a boolean if a field has been set.
 func (o *CivicAddress) HasPLC() bool {
-	if o != nil && !isNil(o.PLC) {
+	if o != nil && !IsNil(o.PLC) {
 		return true
 	}
 
@@ -746,7 +746,7 @@ func (o *CivicAddress) SetPLC(v string) {
 
 // GetPCN returns the PCN field value if set, zero value otherwise.
 func (o *CivicAddress) GetPCN() string {
-	if o == nil || isNil(o.PCN) {
+	if o == nil || IsNil(o.PCN) {
 		var ret string
 		return ret
 	}
@@ -756,7 +756,7 @@ func (o *CivicAddress) GetPCN() string {
 // GetPCNOk returns a tuple with the PCN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPCNOk() (*string, bool) {
-	if o == nil || isNil(o.PCN) {
+	if o == nil || IsNil(o.PCN) {
 		return nil, false
 	}
 	return o.PCN, true
@@ -764,7 +764,7 @@ func (o *CivicAddress) GetPCNOk() (*string, bool) {
 
 // HasPCN returns a boolean if a field has been set.
 func (o *CivicAddress) HasPCN() bool {
-	if o != nil && !isNil(o.PCN) {
+	if o != nil && !IsNil(o.PCN) {
 		return true
 	}
 
@@ -778,7 +778,7 @@ func (o *CivicAddress) SetPCN(v string) {
 
 // GetPOBOX returns the POBOX field value if set, zero value otherwise.
 func (o *CivicAddress) GetPOBOX() string {
-	if o == nil || isNil(o.POBOX) {
+	if o == nil || IsNil(o.POBOX) {
 		var ret string
 		return ret
 	}
@@ -788,7 +788,7 @@ func (o *CivicAddress) GetPOBOX() string {
 // GetPOBOXOk returns a tuple with the POBOX field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPOBOXOk() (*string, bool) {
-	if o == nil || isNil(o.POBOX) {
+	if o == nil || IsNil(o.POBOX) {
 		return nil, false
 	}
 	return o.POBOX, true
@@ -796,7 +796,7 @@ func (o *CivicAddress) GetPOBOXOk() (*string, bool) {
 
 // HasPOBOX returns a boolean if a field has been set.
 func (o *CivicAddress) HasPOBOX() bool {
-	if o != nil && !isNil(o.POBOX) {
+	if o != nil && !IsNil(o.POBOX) {
 		return true
 	}
 
@@ -810,7 +810,7 @@ func (o *CivicAddress) SetPOBOX(v string) {
 
 // GetADDCODE returns the ADDCODE field value if set, zero value otherwise.
 func (o *CivicAddress) GetADDCODE() string {
-	if o == nil || isNil(o.ADDCODE) {
+	if o == nil || IsNil(o.ADDCODE) {
 		var ret string
 		return ret
 	}
@@ -820,7 +820,7 @@ func (o *CivicAddress) GetADDCODE() string {
 // GetADDCODEOk returns a tuple with the ADDCODE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetADDCODEOk() (*string, bool) {
-	if o == nil || isNil(o.ADDCODE) {
+	if o == nil || IsNil(o.ADDCODE) {
 		return nil, false
 	}
 	return o.ADDCODE, true
@@ -828,7 +828,7 @@ func (o *CivicAddress) GetADDCODEOk() (*string, bool) {
 
 // HasADDCODE returns a boolean if a field has been set.
 func (o *CivicAddress) HasADDCODE() bool {
-	if o != nil && !isNil(o.ADDCODE) {
+	if o != nil && !IsNil(o.ADDCODE) {
 		return true
 	}
 
@@ -842,7 +842,7 @@ func (o *CivicAddress) SetADDCODE(v string) {
 
 // GetSEAT returns the SEAT field value if set, zero value otherwise.
 func (o *CivicAddress) GetSEAT() string {
-	if o == nil || isNil(o.SEAT) {
+	if o == nil || IsNil(o.SEAT) {
 		var ret string
 		return ret
 	}
@@ -852,7 +852,7 @@ func (o *CivicAddress) GetSEAT() string {
 // GetSEATOk returns a tuple with the SEAT field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetSEATOk() (*string, bool) {
-	if o == nil || isNil(o.SEAT) {
+	if o == nil || IsNil(o.SEAT) {
 		return nil, false
 	}
 	return o.SEAT, true
@@ -860,7 +860,7 @@ func (o *CivicAddress) GetSEATOk() (*string, bool) {
 
 // HasSEAT returns a boolean if a field has been set.
 func (o *CivicAddress) HasSEAT() bool {
-	if o != nil && !isNil(o.SEAT) {
+	if o != nil && !IsNil(o.SEAT) {
 		return true
 	}
 
@@ -874,7 +874,7 @@ func (o *CivicAddress) SetSEAT(v string) {
 
 // GetRD returns the RD field value if set, zero value otherwise.
 func (o *CivicAddress) GetRD() string {
-	if o == nil || isNil(o.RD) {
+	if o == nil || IsNil(o.RD) {
 		var ret string
 		return ret
 	}
@@ -884,7 +884,7 @@ func (o *CivicAddress) GetRD() string {
 // GetRDOk returns a tuple with the RD field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetRDOk() (*string, bool) {
-	if o == nil || isNil(o.RD) {
+	if o == nil || IsNil(o.RD) {
 		return nil, false
 	}
 	return o.RD, true
@@ -892,7 +892,7 @@ func (o *CivicAddress) GetRDOk() (*string, bool) {
 
 // HasRD returns a boolean if a field has been set.
 func (o *CivicAddress) HasRD() bool {
-	if o != nil && !isNil(o.RD) {
+	if o != nil && !IsNil(o.RD) {
 		return true
 	}
 
@@ -906,7 +906,7 @@ func (o *CivicAddress) SetRD(v string) {
 
 // GetRDSEC returns the RDSEC field value if set, zero value otherwise.
 func (o *CivicAddress) GetRDSEC() string {
-	if o == nil || isNil(o.RDSEC) {
+	if o == nil || IsNil(o.RDSEC) {
 		var ret string
 		return ret
 	}
@@ -916,7 +916,7 @@ func (o *CivicAddress) GetRDSEC() string {
 // GetRDSECOk returns a tuple with the RDSEC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetRDSECOk() (*string, bool) {
-	if o == nil || isNil(o.RDSEC) {
+	if o == nil || IsNil(o.RDSEC) {
 		return nil, false
 	}
 	return o.RDSEC, true
@@ -924,7 +924,7 @@ func (o *CivicAddress) GetRDSECOk() (*string, bool) {
 
 // HasRDSEC returns a boolean if a field has been set.
 func (o *CivicAddress) HasRDSEC() bool {
-	if o != nil && !isNil(o.RDSEC) {
+	if o != nil && !IsNil(o.RDSEC) {
 		return true
 	}
 
@@ -938,7 +938,7 @@ func (o *CivicAddress) SetRDSEC(v string) {
 
 // GetRDBR returns the RDBR field value if set, zero value otherwise.
 func (o *CivicAddress) GetRDBR() string {
-	if o == nil || isNil(o.RDBR) {
+	if o == nil || IsNil(o.RDBR) {
 		var ret string
 		return ret
 	}
@@ -948,7 +948,7 @@ func (o *CivicAddress) GetRDBR() string {
 // GetRDBROk returns a tuple with the RDBR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetRDBROk() (*string, bool) {
-	if o == nil || isNil(o.RDBR) {
+	if o == nil || IsNil(o.RDBR) {
 		return nil, false
 	}
 	return o.RDBR, true
@@ -956,7 +956,7 @@ func (o *CivicAddress) GetRDBROk() (*string, bool) {
 
 // HasRDBR returns a boolean if a field has been set.
 func (o *CivicAddress) HasRDBR() bool {
-	if o != nil && !isNil(o.RDBR) {
+	if o != nil && !IsNil(o.RDBR) {
 		return true
 	}
 
@@ -970,7 +970,7 @@ func (o *CivicAddress) SetRDBR(v string) {
 
 // GetRDSUBBR returns the RDSUBBR field value if set, zero value otherwise.
 func (o *CivicAddress) GetRDSUBBR() string {
-	if o == nil || isNil(o.RDSUBBR) {
+	if o == nil || IsNil(o.RDSUBBR) {
 		var ret string
 		return ret
 	}
@@ -980,7 +980,7 @@ func (o *CivicAddress) GetRDSUBBR() string {
 // GetRDSUBBROk returns a tuple with the RDSUBBR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetRDSUBBROk() (*string, bool) {
-	if o == nil || isNil(o.RDSUBBR) {
+	if o == nil || IsNil(o.RDSUBBR) {
 		return nil, false
 	}
 	return o.RDSUBBR, true
@@ -988,7 +988,7 @@ func (o *CivicAddress) GetRDSUBBROk() (*string, bool) {
 
 // HasRDSUBBR returns a boolean if a field has been set.
 func (o *CivicAddress) HasRDSUBBR() bool {
-	if o != nil && !isNil(o.RDSUBBR) {
+	if o != nil && !IsNil(o.RDSUBBR) {
 		return true
 	}
 
@@ -1002,7 +1002,7 @@ func (o *CivicAddress) SetRDSUBBR(v string) {
 
 // GetPRM returns the PRM field value if set, zero value otherwise.
 func (o *CivicAddress) GetPRM() string {
-	if o == nil || isNil(o.PRM) {
+	if o == nil || IsNil(o.PRM) {
 		var ret string
 		return ret
 	}
@@ -1012,7 +1012,7 @@ func (o *CivicAddress) GetPRM() string {
 // GetPRMOk returns a tuple with the PRM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPRMOk() (*string, bool) {
-	if o == nil || isNil(o.PRM) {
+	if o == nil || IsNil(o.PRM) {
 		return nil, false
 	}
 	return o.PRM, true
@@ -1020,7 +1020,7 @@ func (o *CivicAddress) GetPRMOk() (*string, bool) {
 
 // HasPRM returns a boolean if a field has been set.
 func (o *CivicAddress) HasPRM() bool {
-	if o != nil && !isNil(o.PRM) {
+	if o != nil && !IsNil(o.PRM) {
 		return true
 	}
 
@@ -1034,7 +1034,7 @@ func (o *CivicAddress) SetPRM(v string) {
 
 // GetPOM returns the POM field value if set, zero value otherwise.
 func (o *CivicAddress) GetPOM() string {
-	if o == nil || isNil(o.POM) {
+	if o == nil || IsNil(o.POM) {
 		var ret string
 		return ret
 	}
@@ -1044,7 +1044,7 @@ func (o *CivicAddress) GetPOM() string {
 // GetPOMOk returns a tuple with the POM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetPOMOk() (*string, bool) {
-	if o == nil || isNil(o.POM) {
+	if o == nil || IsNil(o.POM) {
 		return nil, false
 	}
 	return o.POM, true
@@ -1052,7 +1052,7 @@ func (o *CivicAddress) GetPOMOk() (*string, bool) {
 
 // HasPOM returns a boolean if a field has been set.
 func (o *CivicAddress) HasPOM() bool {
-	if o != nil && !isNil(o.POM) {
+	if o != nil && !IsNil(o.POM) {
 		return true
 	}
 
@@ -1066,7 +1066,7 @@ func (o *CivicAddress) SetPOM(v string) {
 
 // GetUsageRules returns the UsageRules field value if set, zero value otherwise.
 func (o *CivicAddress) GetUsageRules() string {
-	if o == nil || isNil(o.UsageRules) {
+	if o == nil || IsNil(o.UsageRules) {
 		var ret string
 		return ret
 	}
@@ -1076,7 +1076,7 @@ func (o *CivicAddress) GetUsageRules() string {
 // GetUsageRulesOk returns a tuple with the UsageRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetUsageRulesOk() (*string, bool) {
-	if o == nil || isNil(o.UsageRules) {
+	if o == nil || IsNil(o.UsageRules) {
 		return nil, false
 	}
 	return o.UsageRules, true
@@ -1084,7 +1084,7 @@ func (o *CivicAddress) GetUsageRulesOk() (*string, bool) {
 
 // HasUsageRules returns a boolean if a field has been set.
 func (o *CivicAddress) HasUsageRules() bool {
-	if o != nil && !isNil(o.UsageRules) {
+	if o != nil && !IsNil(o.UsageRules) {
 		return true
 	}
 
@@ -1098,7 +1098,7 @@ func (o *CivicAddress) SetUsageRules(v string) {
 
 // GetMethod returns the Method field value if set, zero value otherwise.
 func (o *CivicAddress) GetMethod() string {
-	if o == nil || isNil(o.Method) {
+	if o == nil || IsNil(o.Method) {
 		var ret string
 		return ret
 	}
@@ -1108,7 +1108,7 @@ func (o *CivicAddress) GetMethod() string {
 // GetMethodOk returns a tuple with the Method field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetMethodOk() (*string, bool) {
-	if o == nil || isNil(o.Method) {
+	if o == nil || IsNil(o.Method) {
 		return nil, false
 	}
 	return o.Method, true
@@ -1116,7 +1116,7 @@ func (o *CivicAddress) GetMethodOk() (*string, bool) {
 
 // HasMethod returns a boolean if a field has been set.
 func (o *CivicAddress) HasMethod() bool {
-	if o != nil && !isNil(o.Method) {
+	if o != nil && !IsNil(o.Method) {
 		return true
 	}
 
@@ -1130,7 +1130,7 @@ func (o *CivicAddress) SetMethod(v string) {
 
 // GetProvidedBy returns the ProvidedBy field value if set, zero value otherwise.
 func (o *CivicAddress) GetProvidedBy() string {
-	if o == nil || isNil(o.ProvidedBy) {
+	if o == nil || IsNil(o.ProvidedBy) {
 		var ret string
 		return ret
 	}
@@ -1140,7 +1140,7 @@ func (o *CivicAddress) GetProvidedBy() string {
 // GetProvidedByOk returns a tuple with the ProvidedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CivicAddress) GetProvidedByOk() (*string, bool) {
-	if o == nil || isNil(o.ProvidedBy) {
+	if o == nil || IsNil(o.ProvidedBy) {
 		return nil, false
 	}
 	return o.ProvidedBy, true
@@ -1148,7 +1148,7 @@ func (o *CivicAddress) GetProvidedByOk() (*string, bool) {
 
 // HasProvidedBy returns a boolean if a field has been set.
 func (o *CivicAddress) HasProvidedBy() bool {
-	if o != nil && !isNil(o.ProvidedBy) {
+	if o != nil && !IsNil(o.ProvidedBy) {
 		return true
 	}
 
@@ -1161,7 +1161,7 @@ func (o *CivicAddress) SetProvidedBy(v string) {
 }
 
 func (o CivicAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1170,106 +1170,106 @@ func (o CivicAddress) MarshalJSON() ([]byte, error) {
 
 func (o CivicAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Country) {
+	if !IsNil(o.Country) {
 		toSerialize["country"] = o.Country
 	}
-	if !isNil(o.A1) {
+	if !IsNil(o.A1) {
 		toSerialize["A1"] = o.A1
 	}
-	if !isNil(o.A2) {
+	if !IsNil(o.A2) {
 		toSerialize["A2"] = o.A2
 	}
-	if !isNil(o.A3) {
+	if !IsNil(o.A3) {
 		toSerialize["A3"] = o.A3
 	}
-	if !isNil(o.A4) {
+	if !IsNil(o.A4) {
 		toSerialize["A4"] = o.A4
 	}
-	if !isNil(o.A5) {
+	if !IsNil(o.A5) {
 		toSerialize["A5"] = o.A5
 	}
-	if !isNil(o.A6) {
+	if !IsNil(o.A6) {
 		toSerialize["A6"] = o.A6
 	}
-	if !isNil(o.PRD) {
+	if !IsNil(o.PRD) {
 		toSerialize["PRD"] = o.PRD
 	}
-	if !isNil(o.POD) {
+	if !IsNil(o.POD) {
 		toSerialize["POD"] = o.POD
 	}
-	if !isNil(o.STS) {
+	if !IsNil(o.STS) {
 		toSerialize["STS"] = o.STS
 	}
-	if !isNil(o.HNO) {
+	if !IsNil(o.HNO) {
 		toSerialize["HNO"] = o.HNO
 	}
-	if !isNil(o.HNS) {
+	if !IsNil(o.HNS) {
 		toSerialize["HNS"] = o.HNS
 	}
-	if !isNil(o.LMK) {
+	if !IsNil(o.LMK) {
 		toSerialize["LMK"] = o.LMK
 	}
-	if !isNil(o.LOC) {
+	if !IsNil(o.LOC) {
 		toSerialize["LOC"] = o.LOC
 	}
-	if !isNil(o.NAM) {
+	if !IsNil(o.NAM) {
 		toSerialize["NAM"] = o.NAM
 	}
-	if !isNil(o.PC) {
+	if !IsNil(o.PC) {
 		toSerialize["PC"] = o.PC
 	}
-	if !isNil(o.BLD) {
+	if !IsNil(o.BLD) {
 		toSerialize["BLD"] = o.BLD
 	}
-	if !isNil(o.UNIT) {
+	if !IsNil(o.UNIT) {
 		toSerialize["UNIT"] = o.UNIT
 	}
-	if !isNil(o.FLR) {
+	if !IsNil(o.FLR) {
 		toSerialize["FLR"] = o.FLR
 	}
-	if !isNil(o.ROOM) {
+	if !IsNil(o.ROOM) {
 		toSerialize["ROOM"] = o.ROOM
 	}
-	if !isNil(o.PLC) {
+	if !IsNil(o.PLC) {
 		toSerialize["PLC"] = o.PLC
 	}
-	if !isNil(o.PCN) {
+	if !IsNil(o.PCN) {
 		toSerialize["PCN"] = o.PCN
 	}
-	if !isNil(o.POBOX) {
+	if !IsNil(o.POBOX) {
 		toSerialize["POBOX"] = o.POBOX
 	}
-	if !isNil(o.ADDCODE) {
+	if !IsNil(o.ADDCODE) {
 		toSerialize["ADDCODE"] = o.ADDCODE
 	}
-	if !isNil(o.SEAT) {
+	if !IsNil(o.SEAT) {
 		toSerialize["SEAT"] = o.SEAT
 	}
-	if !isNil(o.RD) {
+	if !IsNil(o.RD) {
 		toSerialize["RD"] = o.RD
 	}
-	if !isNil(o.RDSEC) {
+	if !IsNil(o.RDSEC) {
 		toSerialize["RDSEC"] = o.RDSEC
 	}
-	if !isNil(o.RDBR) {
+	if !IsNil(o.RDBR) {
 		toSerialize["RDBR"] = o.RDBR
 	}
-	if !isNil(o.RDSUBBR) {
+	if !IsNil(o.RDSUBBR) {
 		toSerialize["RDSUBBR"] = o.RDSUBBR
 	}
-	if !isNil(o.PRM) {
+	if !IsNil(o.PRM) {
 		toSerialize["PRM"] = o.PRM
 	}
-	if !isNil(o.POM) {
+	if !IsNil(o.POM) {
 		toSerialize["POM"] = o.POM
 	}
-	if !isNil(o.UsageRules) {
+	if !IsNil(o.UsageRules) {
 		toSerialize["usageRules"] = o.UsageRules
 	}
-	if !isNil(o.Method) {
+	if !IsNil(o.Method) {
 		toSerialize["method"] = o.Method
 	}
-	if !isNil(o.ProvidedBy) {
+	if !IsNil(o.ProvidedBy) {
 		toSerialize["providedBy"] = o.ProvidedBy
 	}
 	return toSerialize, nil
@@ -1310,5 +1310,3 @@ func (v *NullableCivicAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

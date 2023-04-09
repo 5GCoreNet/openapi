@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewMMTelChargingInformationWithDefaults() *MMTelChargingInformation {
 
 // GetSupplementaryServices returns the SupplementaryServices field value if set, zero value otherwise.
 func (o *MMTelChargingInformation) GetSupplementaryServices() []SupplementaryService {
-	if o == nil || isNil(o.SupplementaryServices) {
+	if o == nil || IsNil(o.SupplementaryServices) {
 		var ret []SupplementaryService
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MMTelChargingInformation) GetSupplementaryServices() []SupplementarySer
 // GetSupplementaryServicesOk returns a tuple with the SupplementaryServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMTelChargingInformation) GetSupplementaryServicesOk() ([]SupplementaryService, bool) {
-	if o == nil || isNil(o.SupplementaryServices) {
+	if o == nil || IsNil(o.SupplementaryServices) {
 		return nil, false
 	}
 	return o.SupplementaryServices, true
@@ -59,7 +59,7 @@ func (o *MMTelChargingInformation) GetSupplementaryServicesOk() ([]Supplementary
 
 // HasSupplementaryServices returns a boolean if a field has been set.
 func (o *MMTelChargingInformation) HasSupplementaryServices() bool {
-	if o != nil && !isNil(o.SupplementaryServices) {
+	if o != nil && !IsNil(o.SupplementaryServices) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MMTelChargingInformation) SetSupplementaryServices(v []SupplementarySer
 }
 
 func (o MMTelChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MMTelChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o MMTelChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupplementaryServices) {
+	if !IsNil(o.SupplementaryServices) {
 		toSerialize["supplementaryServices"] = o.SupplementaryServices
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMMTelChargingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

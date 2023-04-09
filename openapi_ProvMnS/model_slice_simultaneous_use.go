@@ -20,11 +20,11 @@ type SliceSimultaneousUse string
 
 // List of SliceSimultaneousUse
 const (
-	ZERO SliceSimultaneousUse = "ZERO"
-	ONE SliceSimultaneousUse = "ONE"
-	TWO SliceSimultaneousUse = "TWO"
+	ZERO  SliceSimultaneousUse = "ZERO"
+	ONE   SliceSimultaneousUse = "ONE"
+	TWO   SliceSimultaneousUse = "TWO"
 	THREE SliceSimultaneousUse = "THREE"
-	FOUR SliceSimultaneousUse = "FOUR"
+	FOUR  SliceSimultaneousUse = "FOUR"
 )
 
 // All allowed values of SliceSimultaneousUse enum
@@ -114,4 +114,3 @@ func (v *NullableSliceSimultaneousUse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

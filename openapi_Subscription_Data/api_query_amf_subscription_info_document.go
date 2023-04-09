@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // QueryAMFSubscriptionInfoDocumentApiService QueryAMFSubscriptionInfoDocumentApi service
 type QueryAMFSubscriptionInfoDocumentApiService service
 
 type ApiGetAmfGroupSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *QueryAMFSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
+	ueGroupId  string
+	subsId     string
 }
 
 func (r ApiGetAmfGroupSubscriptionsRequest) Execute() ([]AmfSubscriptionInfo, *http.Response, error) {
@@ -37,28 +36,29 @@ func (r ApiGetAmfGroupSubscriptionsRequest) Execute() ([]AmfSubscriptionInfo, *h
 /*
 GetAmfGroupSubscriptions Retrieve AMF subscription Info for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiGetAmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiGetAmfGroupSubscriptionsRequest
 */
 func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiGetAmfGroupSubscriptionsRequest {
 	return ApiGetAmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return []AmfSubscriptionInfo
+//
+//	@return []AmfSubscriptionInfo
 func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfGroupSubscriptionsExecute(r ApiGetAmfGroupSubscriptionsRequest) ([]AmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueryAMFSubscriptionInfoDocumentApiService.GetAmfGroupSubscriptions")
@@ -101,9 +101,9 @@ func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfGroupSubscriptionsExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -129,10 +129,10 @@ func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfGroupSubscriptionsExe
 }
 
 type ApiGetAmfSubscriptionInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *QueryAMFSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiGetAmfSubscriptionInfoRequest) Execute() ([]AmfSubscriptionInfo, *http.Response, error) {
@@ -142,28 +142,29 @@ func (r ApiGetAmfSubscriptionInfoRequest) Execute() ([]AmfSubscriptionInfo, *htt
 /*
 GetAmfSubscriptionInfo Retrieve AMF subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiGetAmfSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiGetAmfSubscriptionInfoRequest
 */
 func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiGetAmfSubscriptionInfoRequest {
 	return ApiGetAmfSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return []AmfSubscriptionInfo
+//
+//	@return []AmfSubscriptionInfo
 func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfSubscriptionInfoExecute(r ApiGetAmfSubscriptionInfoRequest) ([]AmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueryAMFSubscriptionInfoDocumentApiService.GetAmfSubscriptionInfo")
@@ -206,9 +207,9 @@ func (a *QueryAMFSubscriptionInfoDocumentApiService) GetAmfSubscriptionInfoExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

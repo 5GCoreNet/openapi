@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &Model5GLANTypeService{}
 
 // Model5GLANTypeService struct for Model5GLANTypeService
 type Model5GLANTypeService struct {
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InternalGroupIdentifier *string `json:"internalGroupIdentifier,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewModel5GLANTypeServiceWithDefaults() *Model5GLANTypeService {
 
 // GetInternalGroupIdentifier returns the InternalGroupIdentifier field value if set, zero value otherwise.
 func (o *Model5GLANTypeService) GetInternalGroupIdentifier() string {
-	if o == nil || isNil(o.InternalGroupIdentifier) {
+	if o == nil || IsNil(o.InternalGroupIdentifier) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Model5GLANTypeService) GetInternalGroupIdentifier() string {
 // GetInternalGroupIdentifierOk returns a tuple with the InternalGroupIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLANTypeService) GetInternalGroupIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.InternalGroupIdentifier) {
+	if o == nil || IsNil(o.InternalGroupIdentifier) {
 		return nil, false
 	}
 	return o.InternalGroupIdentifier, true
@@ -60,7 +60,7 @@ func (o *Model5GLANTypeService) GetInternalGroupIdentifierOk() (*string, bool) {
 
 // HasInternalGroupIdentifier returns a boolean if a field has been set.
 func (o *Model5GLANTypeService) HasInternalGroupIdentifier() bool {
-	if o != nil && !isNil(o.InternalGroupIdentifier) {
+	if o != nil && !IsNil(o.InternalGroupIdentifier) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *Model5GLANTypeService) SetInternalGroupIdentifier(v string) {
 }
 
 func (o Model5GLANTypeService) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o Model5GLANTypeService) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLANTypeService) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.InternalGroupIdentifier) {
+	if !IsNil(o.InternalGroupIdentifier) {
 		toSerialize["internalGroupIdentifier"] = o.InternalGroupIdentifier
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableModel5GLANTypeService) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for structured data for exposure
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Exposure_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualExposureDataSubscriptionDocumentApiService IndividualExposureDataSubscriptionDocumentApi service
 type IndividualExposureDataSubscriptionDocumentApiService service
 
 type ApiDeleteIndividualExposureDataSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualExposureDataSubscriptionDocumentApiService
-	subId string
+	subId      string
 }
 
 func (r ApiDeleteIndividualExposureDataSubscriptionRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteIndividualExposureDataSubscriptionRequest) Execute() (*http.Res
 /*
 DeleteIndividualExposureDataSubscription Deletes the individual Exposure Data subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subId Subscription id
- @return ApiDeleteIndividualExposureDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subId Subscription id
+	@return ApiDeleteIndividualExposureDataSubscriptionRequest
 */
 func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualExposureDataSubscription(ctx context.Context, subId string) ApiDeleteIndividualExposureDataSubscriptionRequest {
 	return ApiDeleteIndividualExposureDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		subId: subId,
+		ctx:        ctx,
+		subId:      subId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualExposureDataSubscriptionExecute(r ApiDeleteIndividualExposureDataSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualExposureDataSubscriptionDocumentApiService.DeleteIndividualExposureDataSubscription")
@@ -95,9 +94,9 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -180,8 +179,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -191,8 +190,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -202,9 +201,9 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) DeleteIndividualE
 }
 
 type ApiReplaceIndividualExposureDataSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualExposureDataSubscriptionDocumentApiService
-	subId string
+	ctx                      context.Context
+	ApiService               *IndividualExposureDataSubscriptionDocumentApiService
+	subId                    string
 	exposureDataSubscription *ExposureDataSubscription
 }
 
@@ -220,26 +219,27 @@ func (r ApiReplaceIndividualExposureDataSubscriptionRequest) Execute() (*Exposur
 /*
 ReplaceIndividualExposureDataSubscription updates a subscription to receive notifications of exposure data changes
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subId Subscription id
- @return ApiReplaceIndividualExposureDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subId Subscription id
+	@return ApiReplaceIndividualExposureDataSubscriptionRequest
 */
 func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividualExposureDataSubscription(ctx context.Context, subId string) ApiReplaceIndividualExposureDataSubscriptionRequest {
 	return ApiReplaceIndividualExposureDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		subId: subId,
+		ctx:        ctx,
+		subId:      subId,
 	}
 }
 
 // Execute executes the request
-//  @return ExposureDataSubscription
+//
+//	@return ExposureDataSubscription
 func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividualExposureDataSubscriptionExecute(r ApiReplaceIndividualExposureDataSubscriptionRequest) (*ExposureDataSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExposureDataSubscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExposureDataSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualExposureDataSubscriptionDocumentApiService.ReplaceIndividualExposureDataSubscription")
@@ -286,9 +286,9 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -305,8 +305,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -316,8 +316,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -327,8 +327,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -338,8 +338,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -349,8 +349,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -360,8 +360,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -371,8 +371,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -382,8 +382,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -393,8 +393,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -404,8 +404,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -415,8 +415,8 @@ func (a *IndividualExposureDataSubscriptionDocumentApiService) ReplaceIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -19,7 +19,7 @@ var _ MappedNullable = &BwpSingleAllOf{}
 
 // BwpSingleAllOf struct for BwpSingleAllOf
 type BwpSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *BwpSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewBwpSingleAllOf instantiates a new BwpSingleAllOf object
@@ -40,9 +40,9 @@ func NewBwpSingleAllOfWithDefaults() *BwpSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *BwpSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *BwpSingleAllOf) GetAttributes() BwpSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret BwpSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *BwpSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BwpSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *BwpSingleAllOf) GetAttributesOk() (*BwpSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *BwpSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *BwpSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *BwpSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given BwpSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *BwpSingleAllOf) SetAttributes(v BwpSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o BwpSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o BwpSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o BwpSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableBwpSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

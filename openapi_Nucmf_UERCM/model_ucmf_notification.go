@@ -1,7 +1,7 @@
 /*
 Nucmf_UECapabilityManagement
 
-Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &UcmfNotification{}
 
 // UcmfNotification Data for a notification request from a UCMF
 type UcmfNotification struct {
-	DicEntryId int32 `json:"dicEntryId"`
-	EventType EventType `json:"eventType"`
+	DicEntryId          int32                `json:"dicEntryId"`
+	EventType           EventType            `json:"eventType"`
 	ManAssOpRequestlist *ManAssOpRequestlist `json:"manAssOpRequestlist,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	VersionId *int32 `json:"versionId,omitempty"`
@@ -95,7 +95,7 @@ func (o *UcmfNotification) SetEventType(v EventType) {
 
 // GetManAssOpRequestlist returns the ManAssOpRequestlist field value if set, zero value otherwise.
 func (o *UcmfNotification) GetManAssOpRequestlist() ManAssOpRequestlist {
-	if o == nil || isNil(o.ManAssOpRequestlist) {
+	if o == nil || IsNil(o.ManAssOpRequestlist) {
 		var ret ManAssOpRequestlist
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *UcmfNotification) GetManAssOpRequestlist() ManAssOpRequestlist {
 // GetManAssOpRequestlistOk returns a tuple with the ManAssOpRequestlist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UcmfNotification) GetManAssOpRequestlistOk() (*ManAssOpRequestlist, bool) {
-	if o == nil || isNil(o.ManAssOpRequestlist) {
+	if o == nil || IsNil(o.ManAssOpRequestlist) {
 		return nil, false
 	}
 	return o.ManAssOpRequestlist, true
@@ -113,7 +113,7 @@ func (o *UcmfNotification) GetManAssOpRequestlistOk() (*ManAssOpRequestlist, boo
 
 // HasManAssOpRequestlist returns a boolean if a field has been set.
 func (o *UcmfNotification) HasManAssOpRequestlist() bool {
-	if o != nil && !isNil(o.ManAssOpRequestlist) {
+	if o != nil && !IsNil(o.ManAssOpRequestlist) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *UcmfNotification) SetManAssOpRequestlist(v ManAssOpRequestlist) {
 
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
 func (o *UcmfNotification) GetVersionId() int32 {
-	if o == nil || isNil(o.VersionId) {
+	if o == nil || IsNil(o.VersionId) {
 		var ret int32
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *UcmfNotification) GetVersionId() int32 {
 // GetVersionIdOk returns a tuple with the VersionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UcmfNotification) GetVersionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.VersionId) {
+	if o == nil || IsNil(o.VersionId) {
 		return nil, false
 	}
 	return o.VersionId, true
@@ -145,7 +145,7 @@ func (o *UcmfNotification) GetVersionIdOk() (*int32, bool) {
 
 // HasVersionId returns a boolean if a field has been set.
 func (o *UcmfNotification) HasVersionId() bool {
-	if o != nil && !isNil(o.VersionId) {
+	if o != nil && !IsNil(o.VersionId) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *UcmfNotification) SetVersionId(v int32) {
 }
 
 func (o UcmfNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o UcmfNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dicEntryId"] = o.DicEntryId
 	toSerialize["eventType"] = o.EventType
-	if !isNil(o.ManAssOpRequestlist) {
+	if !IsNil(o.ManAssOpRequestlist) {
 		toSerialize["manAssOpRequestlist"] = o.ManAssOpRequestlist
 	}
-	if !isNil(o.VersionId) {
+	if !IsNil(o.VersionId) {
 		toSerialize["versionId"] = o.VersionId
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableUcmfNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

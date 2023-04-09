@@ -20,7 +20,7 @@ type SharingLevel string
 
 // List of SharingLevel
 const (
-	SHARED SharingLevel = "SHARED"
+	SHARED     SharingLevel = "SHARED"
 	NON_SHARED SharingLevel = "NON-SHARED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableSharingLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

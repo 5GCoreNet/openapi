@@ -20,10 +20,10 @@ type Condition string
 
 // List of Condition
 const (
-	EQUAL_TO Condition = "IS_EQUAL_TO"
-	LESS_THAN Condition = "IS_LESS_THAN"
-	GREATER_THAN Condition = "IS_GREATER_THAN"
-	WITHIN_RANGE Condition = "IS_WITHIN_RANGE"
+	EQUAL_TO      Condition = "IS_EQUAL_TO"
+	LESS_THAN     Condition = "IS_LESS_THAN"
+	GREATER_THAN  Condition = "IS_GREATER_THAN"
+	WITHIN_RANGE  Condition = "IS_WITHIN_RANGE"
 	OUTSIDE_RANGE Condition = "IS_OUTSIDE_RANGE"
 )
 
@@ -114,4 +114,3 @@ func (v *NullableCondition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

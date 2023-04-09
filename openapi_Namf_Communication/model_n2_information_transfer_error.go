@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &N2InformationTransferError{}
 
 // N2InformationTransferError Data within a failure response for a non-UE related N2 Information Transfer
 type N2InformationTransferError struct {
-	Error ProblemDetails `json:"error"`
-	PwsErrorInfo *PWSErrorData `json:"pwsErrorInfo,omitempty"`
+	Error        ProblemDetails `json:"error"`
+	PwsErrorInfo *PWSErrorData  `json:"pwsErrorInfo,omitempty"`
 }
 
 // NewN2InformationTransferError instantiates a new N2InformationTransferError object
@@ -67,7 +67,7 @@ func (o *N2InformationTransferError) SetError(v ProblemDetails) {
 
 // GetPwsErrorInfo returns the PwsErrorInfo field value if set, zero value otherwise.
 func (o *N2InformationTransferError) GetPwsErrorInfo() PWSErrorData {
-	if o == nil || isNil(o.PwsErrorInfo) {
+	if o == nil || IsNil(o.PwsErrorInfo) {
 		var ret PWSErrorData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *N2InformationTransferError) GetPwsErrorInfo() PWSErrorData {
 // GetPwsErrorInfoOk returns a tuple with the PwsErrorInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferError) GetPwsErrorInfoOk() (*PWSErrorData, bool) {
-	if o == nil || isNil(o.PwsErrorInfo) {
+	if o == nil || IsNil(o.PwsErrorInfo) {
 		return nil, false
 	}
 	return o.PwsErrorInfo, true
@@ -85,7 +85,7 @@ func (o *N2InformationTransferError) GetPwsErrorInfoOk() (*PWSErrorData, bool) {
 
 // HasPwsErrorInfo returns a boolean if a field has been set.
 func (o *N2InformationTransferError) HasPwsErrorInfo() bool {
-	if o != nil && !isNil(o.PwsErrorInfo) {
+	if o != nil && !IsNil(o.PwsErrorInfo) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *N2InformationTransferError) SetPwsErrorInfo(v PWSErrorData) {
 }
 
 func (o N2InformationTransferError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o N2InformationTransferError) MarshalJSON() ([]byte, error) {
 func (o N2InformationTransferError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.PwsErrorInfo) {
+	if !IsNil(o.PwsErrorInfo) {
 		toSerialize["pwsErrorInfo"] = o.PwsErrorInfo
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableN2InformationTransferError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -41,7 +41,7 @@ func NewMnsRegistrySingleWithDefaults() *MnsRegistrySingle {
 
 // GetMnsInfo returns the MnsInfo field value if set, zero value otherwise.
 func (o *MnsRegistrySingle) GetMnsInfo() []MnsInfoSingle {
-	if o == nil || isNil(o.MnsInfo) {
+	if o == nil || IsNil(o.MnsInfo) {
 		var ret []MnsInfoSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MnsRegistrySingle) GetMnsInfo() []MnsInfoSingle {
 // GetMnsInfoOk returns a tuple with the MnsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsRegistrySingle) GetMnsInfoOk() ([]MnsInfoSingle, bool) {
-	if o == nil || isNil(o.MnsInfo) {
+	if o == nil || IsNil(o.MnsInfo) {
 		return nil, false
 	}
 	return o.MnsInfo, true
@@ -59,7 +59,7 @@ func (o *MnsRegistrySingle) GetMnsInfoOk() ([]MnsInfoSingle, bool) {
 
 // HasMnsInfo returns a boolean if a field has been set.
 func (o *MnsRegistrySingle) HasMnsInfo() bool {
-	if o != nil && !isNil(o.MnsInfo) {
+	if o != nil && !IsNil(o.MnsInfo) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MnsRegistrySingle) SetMnsInfo(v []MnsInfoSingle) {
 }
 
 func (o MnsRegistrySingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MnsRegistrySingle) MarshalJSON() ([]byte, error) {
 
 func (o MnsRegistrySingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MnsInfo) {
+	if !IsNil(o.MnsInfo) {
 		toSerialize["MnsInfo"] = o.MnsInfo
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMnsRegistrySingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

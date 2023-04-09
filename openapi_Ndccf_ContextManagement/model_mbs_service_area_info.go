@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &MbsServiceAreaInfo{}
 // MbsServiceAreaInfo MBS Service Area Information for location dependent MBS session
 type MbsServiceAreaInfo struct {
 	// Integer where the allowed values correspond to the value range of an unsigned 16-bit integer.
-	AreaSessionId int32 `json:"areaSessionId"`
+	AreaSessionId  int32          `json:"areaSessionId"`
 	MbsServiceArea MbsServiceArea `json:"mbsServiceArea"`
 }
 
@@ -92,7 +92,7 @@ func (o *MbsServiceAreaInfo) SetMbsServiceArea(v MbsServiceArea) {
 }
 
 func (o MbsServiceAreaInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableMbsServiceAreaInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

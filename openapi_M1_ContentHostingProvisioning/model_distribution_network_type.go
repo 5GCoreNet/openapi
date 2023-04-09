@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -17,28 +17,14 @@ import (
 
 // DistributionNetworkType Type of distribution network.
 type DistributionNetworkType struct {
-	DistributionNetworkTypeAnyOf *DistributionNetworkTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DistributionNetworkType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DistributionNetworkTypeAnyOf
-	err = json.Unmarshal(data, &dst.DistributionNetworkTypeAnyOf);
-	if err == nil {
-		jsonDistributionNetworkTypeAnyOf, _ := json.Marshal(dst.DistributionNetworkTypeAnyOf)
-		if string(jsonDistributionNetworkTypeAnyOf) == "{}" { // empty struct
-			dst.DistributionNetworkTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.DistributionNetworkTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.DistributionNetworkTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DistributionNetworkType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DistributionNetworkType) MarshalJSON() ([]byte, error) {
-	if src.DistributionNetworkTypeAnyOf != nil {
-		return json.Marshal(&src.DistributionNetworkTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDistributionNetworkType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

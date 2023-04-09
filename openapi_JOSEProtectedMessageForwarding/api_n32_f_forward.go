@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,17 +13,16 @@ package openapi_JOSEProtectedMessageForwarding
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // N32FForwardApiService N32FForwardApi service
 type N32FForwardApiService service
 
 type ApiN32fProcessOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *N32FForwardApiService
 }
 
@@ -34,22 +33,22 @@ func (r ApiN32fProcessOptionsRequest) Execute() (*http.Response, error) {
 /*
 N32fProcessOptions Discover communication options supported by next hop (IPX or SEPP)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiN32fProcessOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiN32fProcessOptionsRequest
 */
 func (a *N32FForwardApiService) N32fProcessOptions(ctx context.Context) ApiN32fProcessOptionsRequest {
 	return ApiN32fProcessOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodOptions
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodOptions
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "N32FForwardApiService.N32fProcessOptions")
@@ -90,9 +89,9 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -109,8 +108,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -120,8 +119,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -131,8 +130,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -142,8 +141,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -153,8 +152,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -164,8 +163,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -175,8 +174,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -186,8 +185,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -197,8 +196,8 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -208,11 +207,11 @@ func (a *N32FForwardApiService) N32fProcessOptionsExecute(r ApiN32fProcessOption
 }
 
 type ApiPostN32fProcessRequest struct {
-	ctx context.Context
-	ApiService *N32FForwardApiService
-	n32fReformattedReqMsg *N32fReformattedReqMsg
-	contentEncoding *string
-	acceptEncoding *string
+	ctx                       context.Context
+	ApiService                *N32FForwardApiService
+	n32fReformattedReqMsg     *N32fReformattedReqMsg
+	contentEncoding           *string
+	acceptEncoding            *string
 	var3gppSbiMessagePriority *string
 }
 
@@ -247,24 +246,25 @@ func (r ApiPostN32fProcessRequest) Execute() (*N32fReformattedRspMsg, *http.Resp
 /*
 PostN32fProcess N32-f Message Forwarding
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostN32fProcessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostN32fProcessRequest
 */
 func (a *N32FForwardApiService) PostN32fProcess(ctx context.Context) ApiPostN32fProcessRequest {
 	return ApiPostN32fProcessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return N32fReformattedRspMsg
+//
+//	@return N32fReformattedRspMsg
 func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessRequest) (*N32fReformattedRspMsg, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *N32fReformattedRspMsg
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *N32fReformattedRspMsg
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "N32FForwardApiService.PostN32fProcess")
@@ -299,13 +299,13 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	if r.var3gppSbiMessagePriority != nil {
-		parameterAddToQuery(localVarQueryParams, "3gpp-Sbi-Message-Priority", r.var3gppSbiMessagePriority, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "3gpp-Sbi-Message-Priority", r.var3gppSbiMessagePriority, "")
 	}
 	// body params
 	localVarPostBody = r.n32fReformattedReqMsg
@@ -319,9 +319,9 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -338,8 +338,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -349,8 +349,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -360,8 +360,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -371,8 +371,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -382,8 +382,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -393,8 +393,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -404,8 +404,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -415,8 +415,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -426,8 +426,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -437,8 +437,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -448,8 +448,8 @@ func (a *N32FForwardApiService) PostN32fProcessExecute(r ApiPostN32fProcessReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

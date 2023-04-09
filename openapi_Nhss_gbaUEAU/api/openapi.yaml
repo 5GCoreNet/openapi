@@ -356,18 +356,27 @@ components:
       type: string
     AuthenticationScheme:
       anyOf:
-      - $ref: '#/components/schemas/AuthenticationScheme_anyOf'
+      - enum:
+        - DIGEST_AKAV1_MD5
+        - DIGEST_HTTP
+        type: string
       - type: string
       description: Authentication scheme to be used in the authentication request
         message
     DigestAlgorithm:
       anyOf:
-      - $ref: '#/components/schemas/DigestAlgorithm_anyOf'
+      - enum:
+        - MD5
+        - MD5_SESS
+        type: string
       - type: string
       description: Algorithm used for the Digest authentication scheme
     DigestQop:
       anyOf:
-      - $ref: '#/components/schemas/DigestQop_anyOf'
+      - enum:
+        - AUTH
+        - AUTH_INT
+        type: string
       - type: string
       description: Quality of Protection for the Digest authentication scheme
     RedirectResponse:
@@ -673,7 +682,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -785,84 +851,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    AuthenticationScheme_anyOf:
-      enum:
-      - DIGEST_AKAV1_MD5
-      - DIGEST_HTTP
-      type: string
-      example: null
-    DigestAlgorithm_anyOf:
-      enum:
-      - MD5
-      - MD5_SESS
-      type: string
-      example: null
-    DigestQop_anyOf:
-      enum:
-      - AUTH
-      - AUTH_INT
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

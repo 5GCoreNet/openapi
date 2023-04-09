@@ -20,10 +20,10 @@ type SourceIndicator string
 
 // List of SourceIndicator
 const (
-	RESOURCE_OPERATION SourceIndicator = "RESOURCE_OPERATION"
+	RESOURCE_OPERATION   SourceIndicator = "RESOURCE_OPERATION"
 	MANAGEMENT_OPERATION SourceIndicator = "MANAGEMENT_OPERATION"
-	SON_OPERATION SourceIndicator = "SON_OPERATION"
-	UNKNOWN SourceIndicator = "UNKNOWN"
+	SON_OPERATION        SourceIndicator = "SON_OPERATION"
+	UNKNOWN              SourceIndicator = "UNKNOWN"
 )
 
 // All allowed values of SourceIndicator enum
@@ -112,4 +112,3 @@ func (v *NullableSourceIndicator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

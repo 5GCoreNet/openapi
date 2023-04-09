@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NotificationSubscriptionsCRUDApiService NotificationSubscriptionsCRUDApi service
 type NotificationSubscriptionsCRUDApiService service
 
 type ApiGetNotificationSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *NotificationSubscriptionsCRUDApiService
-	realmId string
-	storageId string
-	limitRange *int32
+	ctx               context.Context
+	ApiService        *NotificationSubscriptionsCRUDApiService
+	realmId           string
+	storageId         string
+	limitRange        *int32
 	supportedFeatures *string
 }
 
@@ -53,28 +52,29 @@ GetNotificationSubscriptions Notification subscription retrieval
 
 retrieve all notification subscriptions of the storage
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @return ApiGetNotificationSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@return ApiGetNotificationSubscriptionsRequest
 */
 func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptions(ctx context.Context, realmId string, storageId string) ApiGetNotificationSubscriptionsRequest {
 	return ApiGetNotificationSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
 	}
 }
 
 // Execute executes the request
-//  @return []NotificationSubscription
+//
+//	@return []NotificationSubscription
 func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsExecute(r ApiGetNotificationSubscriptionsRequest) ([]NotificationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NotificationSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NotificationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationSubscriptionsCRUDApiService.GetNotificationSubscriptions")
@@ -91,10 +91,10 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 	localVarFormParams := url.Values{}
 
 	if r.limitRange != nil {
-		parameterAddToQuery(localVarQueryParams, "limit-range", r.limitRange, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit-range", r.limitRange, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -142,8 +142,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -153,8 +153,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -164,8 +164,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -175,8 +175,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -186,8 +186,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -197,8 +197,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -208,8 +208,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -219,8 +219,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -230,8 +230,8 @@ func (a *NotificationSubscriptionsCRUDApiService) GetNotificationSubscriptionsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

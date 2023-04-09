@@ -19,15 +19,15 @@ var _ MappedNullable = &QFQoSMonitoringControlSingleAllOfAttributes{}
 
 // QFQoSMonitoringControlSingleAllOfAttributes struct for QFQoSMonitoringControlSingleAllOfAttributes
 type QFQoSMonitoringControlSingleAllOfAttributes struct {
-	QFQoSMonitoringState *string `json:"qFQoSMonitoringState,omitempty"`
-	QFMonitoredSNSSAIs []Snssai `json:"qFMonitoredSNSSAIs,omitempty"`
-	QFMonitored5QIs []int32 `json:"qFMonitored5QIs,omitempty"`
-	IsEventTriggeredQFMonitoringSupported *bool `json:"isEventTriggeredQFMonitoringSupported,omitempty"`
-	IsPeriodicQFMonitoringSupported *bool `json:"isPeriodicQFMonitoringSupported,omitempty"`
-	IsSessionReleasedQFMonitoringSupported *bool `json:"isSessionReleasedQFMonitoringSupported,omitempty"`
-	QFPacketDelayThresholds *QFPacketDelayThresholdsType `json:"qFPacketDelayThresholds,omitempty"`
-	QFMinimumWaitTime *int32 `json:"qFMinimumWaitTime,omitempty"`
-	QFMeasurementPeriod *int32 `json:"qFMeasurementPeriod,omitempty"`
+	QFQoSMonitoringState                   *string                      `json:"qFQoSMonitoringState,omitempty"`
+	QFMonitoredSNSSAIs                     []Snssai                     `json:"qFMonitoredSNSSAIs,omitempty"`
+	QFMonitored5QIs                        []int32                      `json:"qFMonitored5QIs,omitempty"`
+	IsEventTriggeredQFMonitoringSupported  *bool                        `json:"isEventTriggeredQFMonitoringSupported,omitempty"`
+	IsPeriodicQFMonitoringSupported        *bool                        `json:"isPeriodicQFMonitoringSupported,omitempty"`
+	IsSessionReleasedQFMonitoringSupported *bool                        `json:"isSessionReleasedQFMonitoringSupported,omitempty"`
+	QFPacketDelayThresholds                *QFPacketDelayThresholdsType `json:"qFPacketDelayThresholds,omitempty"`
+	QFMinimumWaitTime                      *int32                       `json:"qFMinimumWaitTime,omitempty"`
+	QFMeasurementPeriod                    *int32                       `json:"qFMeasurementPeriod,omitempty"`
 }
 
 // NewQFQoSMonitoringControlSingleAllOfAttributes instantiates a new QFQoSMonitoringControlSingleAllOfAttributes object
@@ -336,7 +336,7 @@ func (o *QFQoSMonitoringControlSingleAllOfAttributes) SetQFMeasurementPeriod(v i
 }
 
 func (o QFQoSMonitoringControlSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -410,5 +410,3 @@ func (v *NullableQFQoSMonitoringControlSingleAllOfAttributes) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

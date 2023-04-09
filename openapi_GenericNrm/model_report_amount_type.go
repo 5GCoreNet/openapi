@@ -20,13 +20,13 @@ type ReportAmountType string
 
 // List of reportAmount-Type
 const (
-	_1 ReportAmountType = "1"
-	_2 ReportAmountType = "2"
-	_4 ReportAmountType = "4"
-	_8 ReportAmountType = "8"
-	_16 ReportAmountType = "16"
-	_32 ReportAmountType = "32"
-	_64 ReportAmountType = "64"
+	_1       ReportAmountType = "1"
+	_2       ReportAmountType = "2"
+	_4       ReportAmountType = "4"
+	_8       ReportAmountType = "8"
+	_16      ReportAmountType = "16"
+	_32      ReportAmountType = "32"
+	_64      ReportAmountType = "64"
 	INFINITY ReportAmountType = "INFINITY"
 )
 
@@ -120,4 +120,3 @@ func (v *NullableReportAmountType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

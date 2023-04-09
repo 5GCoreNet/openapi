@@ -20,13 +20,13 @@ type JobTypeType string
 
 // List of jobType-Type
 const (
-	IMMEDIATE_MDT_ONLY JobTypeType = "IMMEDIATE_MDT_ONLY"
-	LOGGED_MDT_ONLY JobTypeType = "LOGGED_MDT_ONLY"
-	TRACE_ONLY JobTypeType = "TRACE_ONLY"
+	IMMEDIATE_MDT_ONLY      JobTypeType = "IMMEDIATE_MDT_ONLY"
+	LOGGED_MDT_ONLY         JobTypeType = "LOGGED_MDT_ONLY"
+	TRACE_ONLY              JobTypeType = "TRACE_ONLY"
 	IMMEDIATE_MDT_AND_TRACE JobTypeType = "IMMEDIATE_MDT AND TRACE"
-	RLF_REPORT_ONLY JobTypeType = "RLF_REPORT_ONLY"
-	RCEF_REPORT_ONLY JobTypeType = "RCEF_REPORT_ONLY"
-	LOGGED_MBSFN_MDT JobTypeType = "LOGGED_MBSFN_MDT"
+	RLF_REPORT_ONLY         JobTypeType = "RLF_REPORT_ONLY"
+	RCEF_REPORT_ONLY        JobTypeType = "RCEF_REPORT_ONLY"
+	LOGGED_MBSFN_MDT        JobTypeType = "LOGGED_MBSFN_MDT"
 )
 
 // All allowed values of JobTypeType enum
@@ -118,4 +118,3 @@ func (v *NullableJobTypeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

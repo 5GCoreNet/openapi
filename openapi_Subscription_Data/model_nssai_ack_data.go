@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &NssaiAckData{}
 // NssaiAckData Used to store the status of the latest NSSAI data update.
 type NssaiAckData struct {
 	// string with format 'date-time' as defined in OpenAPI.
-	ProvisioningTime time.Time `json:"provisioningTime"`
-	UeUpdateStatus UeUpdateStatus `json:"ueUpdateStatus"`
+	ProvisioningTime time.Time      `json:"provisioningTime"`
+	UeUpdateStatus   UeUpdateStatus `json:"ueUpdateStatus"`
 }
 
 // NewNssaiAckData instantiates a new NssaiAckData object
@@ -93,7 +93,7 @@ func (o *NssaiAckData) SetUeUpdateStatus(v UeUpdateStatus) {
 }
 
 func (o NssaiAckData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableNssaiAckData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

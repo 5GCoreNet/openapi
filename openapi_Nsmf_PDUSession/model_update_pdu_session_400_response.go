@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdatePduSession400Response{}
 
 // UpdatePduSession400Response struct for UpdatePduSession400Response
 type UpdatePduSession400Response struct {
-	JsonData *HsmfUpdateError `json:"jsonData,omitempty"`
-	BinaryDataN1SmInfoToUe *os.File `json:"binaryDataN1SmInfoToUe,omitempty"`
+	JsonData               *HsmfUpdateError `json:"jsonData,omitempty"`
+	BinaryDataN1SmInfoToUe **os.File        `json:"binaryDataN1SmInfoToUe,omitempty"`
 }
 
 // NewUpdatePduSession400Response instantiates a new UpdatePduSession400Response object
@@ -43,7 +43,7 @@ func NewUpdatePduSession400ResponseWithDefaults() *UpdatePduSession400Response {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *UpdatePduSession400Response) GetJsonData() HsmfUpdateError {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret HsmfUpdateError
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UpdatePduSession400Response) GetJsonData() HsmfUpdateError {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdatePduSession400Response) GetJsonDataOk() (*HsmfUpdateError, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *UpdatePduSession400Response) GetJsonDataOk() (*HsmfUpdateError, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *UpdatePduSession400Response) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *UpdatePduSession400Response) SetJsonData(v HsmfUpdateError) {
 }
 
 // GetBinaryDataN1SmInfoToUe returns the BinaryDataN1SmInfoToUe field value if set, zero value otherwise.
-func (o *UpdatePduSession400Response) GetBinaryDataN1SmInfoToUe() os.File {
-	if o == nil || isNil(o.BinaryDataN1SmInfoToUe) {
-		var ret os.File
+func (o *UpdatePduSession400Response) GetBinaryDataN1SmInfoToUe() *os.File {
+	if o == nil || IsNil(o.BinaryDataN1SmInfoToUe) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryDataN1SmInfoToUe
@@ -84,8 +84,8 @@ func (o *UpdatePduSession400Response) GetBinaryDataN1SmInfoToUe() os.File {
 
 // GetBinaryDataN1SmInfoToUeOk returns a tuple with the BinaryDataN1SmInfoToUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdatePduSession400Response) GetBinaryDataN1SmInfoToUeOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryDataN1SmInfoToUe) {
+func (o *UpdatePduSession400Response) GetBinaryDataN1SmInfoToUeOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryDataN1SmInfoToUe) {
 		return nil, false
 	}
 	return o.BinaryDataN1SmInfoToUe, true
@@ -93,20 +93,20 @@ func (o *UpdatePduSession400Response) GetBinaryDataN1SmInfoToUeOk() (*os.File, b
 
 // HasBinaryDataN1SmInfoToUe returns a boolean if a field has been set.
 func (o *UpdatePduSession400Response) HasBinaryDataN1SmInfoToUe() bool {
-	if o != nil && !isNil(o.BinaryDataN1SmInfoToUe) {
+	if o != nil && !IsNil(o.BinaryDataN1SmInfoToUe) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN1SmInfoToUe gets a reference to the given os.File and assigns it to the BinaryDataN1SmInfoToUe field.
-func (o *UpdatePduSession400Response) SetBinaryDataN1SmInfoToUe(v os.File) {
+// SetBinaryDataN1SmInfoToUe gets a reference to the given *os.File and assigns it to the BinaryDataN1SmInfoToUe field.
+func (o *UpdatePduSession400Response) SetBinaryDataN1SmInfoToUe(v *os.File) {
 	o.BinaryDataN1SmInfoToUe = &v
 }
 
 func (o UpdatePduSession400Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o UpdatePduSession400Response) MarshalJSON() ([]byte, error) {
 
 func (o UpdatePduSession400Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryDataN1SmInfoToUe) {
+	if !IsNil(o.BinaryDataN1SmInfoToUe) {
 		toSerialize["binaryDataN1SmInfoToUe"] = o.BinaryDataN1SmInfoToUe
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableUpdatePduSession400Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

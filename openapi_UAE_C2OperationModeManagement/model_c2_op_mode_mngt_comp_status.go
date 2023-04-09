@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,9 +17,9 @@ import (
 // checks if the C2OpModeMngtCompStatus type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &C2OpModeMngtCompStatus{}
 
-// C2OpModeMngtCompStatus Represents the C2 Operation Mode Management Completion status for a UAV (e.g. UAV, UAV-C). 
+// C2OpModeMngtCompStatus Represents the C2 Operation Mode Management Completion status for a UAV (e.g. UAV, UAV-C).
 type C2OpModeMngtCompStatus struct {
-	UasId UasId `json:"uasId"`
+	UasId  UasId          `json:"uasId"`
 	Status C2OpModeStatus `json:"status"`
 }
 
@@ -91,7 +91,7 @@ func (o *C2OpModeMngtCompStatus) SetStatus(v C2OpModeStatus) {
 }
 
 func (o C2OpModeMngtCompStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableC2OpModeMngtCompStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

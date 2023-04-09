@@ -1,7 +1,7 @@
 /*
 M1_ProvisioningSessions
 
-5GMS AF M1 Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,18 +13,17 @@ package openapi_M1_ProvisioningSessions
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateProvisioningSessionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
 }
 
@@ -35,24 +34,25 @@ func (r ApiCreateProvisioningSessionRequest) Execute() (*ProvisioningSession, *h
 /*
 CreateProvisioningSession Create a new Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateProvisioningSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateProvisioningSessionRequest
 */
 func (a *DefaultApiService) CreateProvisioningSession(ctx context.Context) ApiCreateProvisioningSessionRequest {
 	return ApiCreateProvisioningSessionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ProvisioningSession
+//
+//	@return ProvisioningSession
 func (a *DefaultApiService) CreateProvisioningSessionExecute(r ApiCreateProvisioningSessionRequest) (*ProvisioningSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProvisioningSession
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProvisioningSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateProvisioningSession")
@@ -93,9 +93,9 @@ func (a *DefaultApiService) CreateProvisioningSessionExecute(r ApiCreateProvisio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -121,8 +121,8 @@ func (a *DefaultApiService) CreateProvisioningSessionExecute(r ApiCreateProvisio
 }
 
 type ApiDestroyProvisioningSessionRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -133,14 +133,14 @@ func (r ApiDestroyProvisioningSessionRequest) Execute() (*http.Response, error) 
 /*
 DestroyProvisioningSession Destroy an existing Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiDestroyProvisioningSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiDestroyProvisioningSessionRequest
 */
 func (a *DefaultApiService) DestroyProvisioningSession(ctx context.Context, provisioningSessionId string) ApiDestroyProvisioningSessionRequest {
 	return ApiDestroyProvisioningSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -148,9 +148,9 @@ func (a *DefaultApiService) DestroyProvisioningSession(ctx context.Context, prov
 // Execute executes the request
 func (a *DefaultApiService) DestroyProvisioningSessionExecute(r ApiDestroyProvisioningSessionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyProvisioningSession")
@@ -192,9 +192,9 @@ func (a *DefaultApiService) DestroyProvisioningSessionExecute(r ApiDestroyProvis
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -211,8 +211,8 @@ func (a *DefaultApiService) DestroyProvisioningSessionExecute(r ApiDestroyProvis
 }
 
 type ApiGetProvisioningSessionByIdRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -223,26 +223,27 @@ func (r ApiGetProvisioningSessionByIdRequest) Execute() (*ProvisioningSession, *
 /*
 GetProvisioningSessionById Retrieve an existing Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiGetProvisioningSessionByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiGetProvisioningSessionByIdRequest
 */
 func (a *DefaultApiService) GetProvisioningSessionById(ctx context.Context, provisioningSessionId string) ApiGetProvisioningSessionByIdRequest {
 	return ApiGetProvisioningSessionByIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ProvisioningSession
+//
+//	@return ProvisioningSession
 func (a *DefaultApiService) GetProvisioningSessionByIdExecute(r ApiGetProvisioningSessionByIdRequest) (*ProvisioningSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProvisioningSession
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProvisioningSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.GetProvisioningSessionById")
@@ -284,9 +285,9 @@ func (a *DefaultApiService) GetProvisioningSessionByIdExecute(r ApiGetProvisioni
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

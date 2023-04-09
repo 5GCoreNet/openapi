@@ -1,7 +1,7 @@
 /*
 M1_MetricsReportingProvisioning
 
-5GMS AF M1 Metrics Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Metrics Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -23,13 +23,13 @@ type MetricsReportingConfiguration struct {
 	MetricsReportingConfigurationId string `json:"metricsReportingConfigurationId"`
 	// String providing an URI formatted according to RFC 3986.
 	Scheme string `json:"scheme"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	DataNetworkName *string `json:"dataNetworkName,omitempty"`
 	// indicating a time in seconds.
-	ReportingInterval *int32 `json:"reportingInterval,omitempty"`
-	SamplePercentage *float32 `json:"samplePercentage,omitempty"`
-	UrlFilters []string `json:"urlFilters,omitempty"`
-	Metrics []string `json:"metrics,omitempty"`
+	ReportingInterval *int32   `json:"reportingInterval,omitempty"`
+	SamplePercentage  *float32 `json:"samplePercentage,omitempty"`
+	UrlFilters        []string `json:"urlFilters,omitempty"`
+	Metrics           []string `json:"metrics,omitempty"`
 }
 
 // NewMetricsReportingConfiguration instantiates a new MetricsReportingConfiguration object
@@ -101,7 +101,7 @@ func (o *MetricsReportingConfiguration) SetScheme(v string) {
 
 // GetDataNetworkName returns the DataNetworkName field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetDataNetworkName() string {
-	if o == nil || isNil(o.DataNetworkName) {
+	if o == nil || IsNil(o.DataNetworkName) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MetricsReportingConfiguration) GetDataNetworkName() string {
 // GetDataNetworkNameOk returns a tuple with the DataNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetDataNetworkNameOk() (*string, bool) {
-	if o == nil || isNil(o.DataNetworkName) {
+	if o == nil || IsNil(o.DataNetworkName) {
 		return nil, false
 	}
 	return o.DataNetworkName, true
@@ -119,7 +119,7 @@ func (o *MetricsReportingConfiguration) GetDataNetworkNameOk() (*string, bool) {
 
 // HasDataNetworkName returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasDataNetworkName() bool {
-	if o != nil && !isNil(o.DataNetworkName) {
+	if o != nil && !IsNil(o.DataNetworkName) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *MetricsReportingConfiguration) SetDataNetworkName(v string) {
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetReportingInterval() int32 {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *MetricsReportingConfiguration) GetReportingInterval() int32 {
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -151,7 +151,7 @@ func (o *MetricsReportingConfiguration) GetReportingIntervalOk() (*int32, bool) 
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasReportingInterval() bool {
-	if o != nil && !isNil(o.ReportingInterval) {
+	if o != nil && !IsNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *MetricsReportingConfiguration) SetReportingInterval(v int32) {
 
 // GetSamplePercentage returns the SamplePercentage field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetSamplePercentage() float32 {
-	if o == nil || isNil(o.SamplePercentage) {
+	if o == nil || IsNil(o.SamplePercentage) {
 		var ret float32
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *MetricsReportingConfiguration) GetSamplePercentage() float32 {
 // GetSamplePercentageOk returns a tuple with the SamplePercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetSamplePercentageOk() (*float32, bool) {
-	if o == nil || isNil(o.SamplePercentage) {
+	if o == nil || IsNil(o.SamplePercentage) {
 		return nil, false
 	}
 	return o.SamplePercentage, true
@@ -183,7 +183,7 @@ func (o *MetricsReportingConfiguration) GetSamplePercentageOk() (*float32, bool)
 
 // HasSamplePercentage returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasSamplePercentage() bool {
-	if o != nil && !isNil(o.SamplePercentage) {
+	if o != nil && !IsNil(o.SamplePercentage) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *MetricsReportingConfiguration) SetSamplePercentage(v float32) {
 
 // GetUrlFilters returns the UrlFilters field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetUrlFilters() []string {
-	if o == nil || isNil(o.UrlFilters) {
+	if o == nil || IsNil(o.UrlFilters) {
 		var ret []string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *MetricsReportingConfiguration) GetUrlFilters() []string {
 // GetUrlFiltersOk returns a tuple with the UrlFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetUrlFiltersOk() ([]string, bool) {
-	if o == nil || isNil(o.UrlFilters) {
+	if o == nil || IsNil(o.UrlFilters) {
 		return nil, false
 	}
 	return o.UrlFilters, true
@@ -215,7 +215,7 @@ func (o *MetricsReportingConfiguration) GetUrlFiltersOk() ([]string, bool) {
 
 // HasUrlFilters returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasUrlFilters() bool {
-	if o != nil && !isNil(o.UrlFilters) {
+	if o != nil && !IsNil(o.UrlFilters) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *MetricsReportingConfiguration) SetUrlFilters(v []string) {
 
 // GetMetrics returns the Metrics field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetMetrics() []string {
-	if o == nil || isNil(o.Metrics) {
+	if o == nil || IsNil(o.Metrics) {
 		var ret []string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *MetricsReportingConfiguration) GetMetrics() []string {
 // GetMetricsOk returns a tuple with the Metrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetMetricsOk() ([]string, bool) {
-	if o == nil || isNil(o.Metrics) {
+	if o == nil || IsNil(o.Metrics) {
 		return nil, false
 	}
 	return o.Metrics, true
@@ -247,7 +247,7 @@ func (o *MetricsReportingConfiguration) GetMetricsOk() ([]string, bool) {
 
 // HasMetrics returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasMetrics() bool {
-	if o != nil && !isNil(o.Metrics) {
+	if o != nil && !IsNil(o.Metrics) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *MetricsReportingConfiguration) SetMetrics(v []string) {
 }
 
 func (o MetricsReportingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,19 +271,19 @@ func (o MetricsReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["metricsReportingConfigurationId"] = o.MetricsReportingConfigurationId
 	toSerialize["scheme"] = o.Scheme
-	if !isNil(o.DataNetworkName) {
+	if !IsNil(o.DataNetworkName) {
 		toSerialize["dataNetworkName"] = o.DataNetworkName
 	}
-	if !isNil(o.ReportingInterval) {
+	if !IsNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
-	if !isNil(o.SamplePercentage) {
+	if !IsNil(o.SamplePercentage) {
 		toSerialize["samplePercentage"] = o.SamplePercentage
 	}
-	if !isNil(o.UrlFilters) {
+	if !IsNil(o.UrlFilters) {
 		toSerialize["urlFilters"] = o.UrlFilters
 	}
-	if !isNil(o.Metrics) {
+	if !IsNil(o.Metrics) {
 		toSerialize["metrics"] = o.Metrics
 	}
 	return toSerialize, nil
@@ -324,5 +324,3 @@ func (v *NullableMetricsReportingConfiguration) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

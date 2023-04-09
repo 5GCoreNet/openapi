@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,17 +15,9 @@ import (
 	"fmt"
 )
 
-// DispersionClass - Possible values are: - FIXED: Dispersion class as fixed UE its data or transaction usage at a location or a slice, is higher than its class threshold set for its all data or transaction usage. - CAMPER: Dispersion class as camper UE, its data or transaction usage at a location or a slice, is higher than its class threshold and lower than the fixed class threshold set for its all data or transaction usage.. - TRAVELLER: Dispersion class as traveller UE, its data or transaction usage at a location or a slice, is lower than the camper class threshold set for its all data or transaction usage. - TOP_HEAVY: Dispersion class as Top_Heavy UE, who's dispersion percentile rating at a location or a slice, is higher than its class threshold. 
+// DispersionClass - Possible values are: - FIXED: Dispersion class as fixed UE its data or transaction usage at a location or a slice, is higher than its class threshold set for its all data or transaction usage. - CAMPER: Dispersion class as camper UE, its data or transaction usage at a location or a slice, is higher than its class threshold and lower than the fixed class threshold set for its all data or transaction usage.. - TRAVELLER: Dispersion class as traveller UE, its data or transaction usage at a location or a slice, is lower than the camper class threshold set for its all data or transaction usage. - TOP_HEAVY: Dispersion class as Top_Heavy UE, who's dispersion percentile rating at a location or a slice, is higher than its class threshold.
 type DispersionClass struct {
-	DispersionClassOneOf *DispersionClassOneOf
 	String *string
-}
-
-// DispersionClassOneOfAsDispersionClass is a convenience function that returns DispersionClassOneOf wrapped in DispersionClass
-func DispersionClassOneOfAsDispersionClass(v *DispersionClassOneOf) DispersionClass {
-	return DispersionClass{
-		DispersionClassOneOf: v,
-	}
 }
 
 // stringAsDispersionClass is a convenience function that returns string wrapped in DispersionClass
@@ -35,24 +27,10 @@ func StringAsDispersionClass(v *string) DispersionClass {
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *DispersionClass) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into DispersionClassOneOf
-	err = newStrictDecoder(data).Decode(&dst.DispersionClassOneOf)
-	if err == nil {
-		jsonDispersionClassOneOf, _ := json.Marshal(dst.DispersionClassOneOf)
-		if string(jsonDispersionClassOneOf) == "{}" { // empty struct
-			dst.DispersionClassOneOf = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.DispersionClassOneOf = nil
-	}
-
 	// try to unmarshal data into String
 	err = newStrictDecoder(data).Decode(&dst.String)
 	if err == nil {
@@ -68,7 +46,6 @@ func (dst *DispersionClass) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.DispersionClassOneOf = nil
 		dst.String = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(DispersionClass)")
@@ -81,10 +58,6 @@ func (dst *DispersionClass) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src DispersionClass) MarshalJSON() ([]byte, error) {
-	if src.DispersionClassOneOf != nil {
-		return json.Marshal(&src.DispersionClassOneOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -93,14 +66,10 @@ func (src DispersionClass) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *DispersionClass) GetActualInstance() (interface{}) {
+func (obj *DispersionClass) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	if obj.DispersionClassOneOf != nil {
-		return obj.DispersionClassOneOf
-	}
-
 	if obj.String != nil {
 		return obj.String
 	}
@@ -144,5 +113,3 @@ func (v *NullableDispersionClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

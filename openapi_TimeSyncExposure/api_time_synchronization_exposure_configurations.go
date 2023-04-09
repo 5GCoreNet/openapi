@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_TimeSyncExposure
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // TimeSynchronizationExposureConfigurationsApiService TimeSynchronizationExposureConfigurationsApi service
 type TimeSynchronizationExposureConfigurationsApiService service
 
 type ApiCreateNewConfirguationRequest struct {
-	ctx context.Context
-	ApiService *TimeSynchronizationExposureConfigurationsApiService
-	afId string
-	subscriptionId string
+	ctx                    context.Context
+	ApiService             *TimeSynchronizationExposureConfigurationsApiService
+	afId                   string
+	subscriptionId         string
 	timeSyncExposureConfig *TimeSyncExposureConfig
 }
 
@@ -44,28 +43,29 @@ func (r ApiCreateNewConfirguationRequest) Execute() (*TimeSyncExposureConfig, *h
 /*
 CreateNewConfirguation Creates a new configuration resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId String identifying the individual synchronization Exposure Subscription resource in the NEF. 
- @return ApiCreateNewConfirguationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId String identifying the individual synchronization Exposure Subscription resource in the NEF.
+	@return ApiCreateNewConfirguationRequest
 */
 func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirguation(ctx context.Context, afId string, subscriptionId string) ApiCreateNewConfirguationRequest {
 	return ApiCreateNewConfirguationRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return TimeSyncExposureConfig
+//
+//	@return TimeSyncExposureConfig
 func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirguationExecute(r ApiCreateNewConfirguationRequest) (*TimeSyncExposureConfig, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimeSyncExposureConfig
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimeSyncExposureConfig
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimeSynchronizationExposureConfigurationsApiService.CreateNewConfirguation")
@@ -113,9 +113,9 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -132,8 +132,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -143,8 +143,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -154,8 +154,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -165,8 +165,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -176,8 +176,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -187,8 +187,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -198,8 +198,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -209,8 +209,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -220,8 +220,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -231,8 +231,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -251,9 +251,9 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) CreateNewConfirgua
 }
 
 type ApiReadAllConfirguationsRequest struct {
-	ctx context.Context
-	ApiService *TimeSynchronizationExposureConfigurationsApiService
-	afId string
+	ctx            context.Context
+	ApiService     *TimeSynchronizationExposureConfigurationsApiService
+	afId           string
 	subscriptionId string
 }
 
@@ -264,28 +264,29 @@ func (r ApiReadAllConfirguationsRequest) Execute() ([]TimeSyncExposureConfig, *h
 /*
 ReadAllConfirguations read all of the active configurations for the AF
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId String identifying the individual synchronization Exposure Subscription resource in the NEF
- @return ApiReadAllConfirguationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId String identifying the individual synchronization Exposure Subscription resource in the NEF
+	@return ApiReadAllConfirguationsRequest
 */
 func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguations(ctx context.Context, afId string, subscriptionId string) ApiReadAllConfirguationsRequest {
 	return ApiReadAllConfirguationsRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return []TimeSyncExposureConfig
+//
+//	@return []TimeSyncExposureConfig
 func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguationsExecute(r ApiReadAllConfirguationsRequest) ([]TimeSyncExposureConfig, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TimeSyncExposureConfig
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TimeSyncExposureConfig
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimeSynchronizationExposureConfigurationsApiService.ReadAllConfirguations")
@@ -328,9 +329,9 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -347,8 +348,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -358,8 +359,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -369,8 +370,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -380,8 +381,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -391,8 +392,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -402,8 +403,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -413,8 +414,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -424,8 +425,8 @@ func (a *TimeSynchronizationExposureConfigurationsApiService) ReadAllConfirguati
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

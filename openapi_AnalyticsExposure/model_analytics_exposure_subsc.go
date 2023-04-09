@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,19 +20,19 @@ var _ MappedNullable = &AnalyticsExposureSubsc{}
 // AnalyticsExposureSubsc Represents an analytics exposure subscription.
 type AnalyticsExposureSubsc struct {
 	AnalyEventsSubs []AnalyticsEventSubsc `json:"analyEventsSubs"`
-	AnalyRepInfo *ReportingInformation `json:"analyRepInfo,omitempty"`
+	AnalyRepInfo    *ReportingInformation `json:"analyRepInfo,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
-	NotifId string `json:"notifId"`
-	EventNotifis []AnalyticsEventNotif `json:"eventNotifis,omitempty"`
+	NotifUri         string                      `json:"notifUri"`
+	NotifId          string                      `json:"notifId"`
+	EventNotifis     []AnalyticsEventNotif       `json:"eventNotifis,omitempty"`
 	FailEventReports []AnalyticsFailureEventInfo `json:"failEventReports,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Self *string `json:"self,omitempty"`
-	// Set to true by the AF to request the NEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// Set to true by the AF to request the NEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
 }
 
 // NewAnalyticsExposureSubsc instantiates a new AnalyticsExposureSubsc object
@@ -81,7 +81,7 @@ func (o *AnalyticsExposureSubsc) SetAnalyEventsSubs(v []AnalyticsEventSubsc) {
 
 // GetAnalyRepInfo returns the AnalyRepInfo field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetAnalyRepInfo() ReportingInformation {
-	if o == nil || isNil(o.AnalyRepInfo) {
+	if o == nil || IsNil(o.AnalyRepInfo) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *AnalyticsExposureSubsc) GetAnalyRepInfo() ReportingInformation {
 // GetAnalyRepInfoOk returns a tuple with the AnalyRepInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetAnalyRepInfoOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.AnalyRepInfo) {
+	if o == nil || IsNil(o.AnalyRepInfo) {
 		return nil, false
 	}
 	return o.AnalyRepInfo, true
@@ -99,7 +99,7 @@ func (o *AnalyticsExposureSubsc) GetAnalyRepInfoOk() (*ReportingInformation, boo
 
 // HasAnalyRepInfo returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasAnalyRepInfo() bool {
-	if o != nil && !isNil(o.AnalyRepInfo) {
+	if o != nil && !IsNil(o.AnalyRepInfo) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *AnalyticsExposureSubsc) SetNotifId(v string) {
 
 // GetEventNotifis returns the EventNotifis field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetEventNotifis() []AnalyticsEventNotif {
-	if o == nil || isNil(o.EventNotifis) {
+	if o == nil || IsNil(o.EventNotifis) {
 		var ret []AnalyticsEventNotif
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *AnalyticsExposureSubsc) GetEventNotifis() []AnalyticsEventNotif {
 // GetEventNotifisOk returns a tuple with the EventNotifis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetEventNotifisOk() ([]AnalyticsEventNotif, bool) {
-	if o == nil || isNil(o.EventNotifis) {
+	if o == nil || IsNil(o.EventNotifis) {
 		return nil, false
 	}
 	return o.EventNotifis, true
@@ -179,7 +179,7 @@ func (o *AnalyticsExposureSubsc) GetEventNotifisOk() ([]AnalyticsEventNotif, boo
 
 // HasEventNotifis returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasEventNotifis() bool {
-	if o != nil && !isNil(o.EventNotifis) {
+	if o != nil && !IsNil(o.EventNotifis) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *AnalyticsExposureSubsc) SetEventNotifis(v []AnalyticsEventNotif) {
 
 // GetFailEventReports returns the FailEventReports field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetFailEventReports() []AnalyticsFailureEventInfo {
-	if o == nil || isNil(o.FailEventReports) {
+	if o == nil || IsNil(o.FailEventReports) {
 		var ret []AnalyticsFailureEventInfo
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *AnalyticsExposureSubsc) GetFailEventReports() []AnalyticsFailureEventIn
 // GetFailEventReportsOk returns a tuple with the FailEventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetFailEventReportsOk() ([]AnalyticsFailureEventInfo, bool) {
-	if o == nil || isNil(o.FailEventReports) {
+	if o == nil || IsNil(o.FailEventReports) {
 		return nil, false
 	}
 	return o.FailEventReports, true
@@ -211,7 +211,7 @@ func (o *AnalyticsExposureSubsc) GetFailEventReportsOk() ([]AnalyticsFailureEven
 
 // HasFailEventReports returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasFailEventReports() bool {
-	if o != nil && !isNil(o.FailEventReports) {
+	if o != nil && !IsNil(o.FailEventReports) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *AnalyticsExposureSubsc) SetFailEventReports(v []AnalyticsFailureEventIn
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *AnalyticsExposureSubsc) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -243,7 +243,7 @@ func (o *AnalyticsExposureSubsc) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *AnalyticsExposureSubsc) SetSuppFeat(v string) {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *AnalyticsExposureSubsc) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -275,7 +275,7 @@ func (o *AnalyticsExposureSubsc) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *AnalyticsExposureSubsc) SetSelf(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *AnalyticsExposureSubsc) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -307,7 +307,7 @@ func (o *AnalyticsExposureSubsc) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *AnalyticsExposureSubsc) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *AnalyticsExposureSubsc) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -339,7 +339,7 @@ func (o *AnalyticsExposureSubsc) GetWebsockNotifConfigOk() (*WebsockNotifConfig,
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -352,7 +352,7 @@ func (o *AnalyticsExposureSubsc) SetWebsockNotifConfig(v WebsockNotifConfig) {
 }
 
 func (o AnalyticsExposureSubsc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -362,27 +362,27 @@ func (o AnalyticsExposureSubsc) MarshalJSON() ([]byte, error) {
 func (o AnalyticsExposureSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEventsSubs"] = o.AnalyEventsSubs
-	if !isNil(o.AnalyRepInfo) {
+	if !IsNil(o.AnalyRepInfo) {
 		toSerialize["analyRepInfo"] = o.AnalyRepInfo
 	}
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["notifId"] = o.NotifId
-	if !isNil(o.EventNotifis) {
+	if !IsNil(o.EventNotifis) {
 		toSerialize["eventNotifis"] = o.EventNotifis
 	}
-	if !isNil(o.FailEventReports) {
+	if !IsNil(o.FailEventReports) {
 		toSerialize["failEventReports"] = o.FailEventReports
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
 	return toSerialize, nil
@@ -423,5 +423,3 @@ func (v *NullableAnalyticsExposureSubsc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

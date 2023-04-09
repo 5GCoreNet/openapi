@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AnalyticsEventNotification{}
 
 // AnalyticsEventNotification Represents an analytics event(s) notification.
 type AnalyticsEventNotification struct {
-	NotifId string `json:"notifId"`
+	NotifId          string                `json:"notifId"`
 	AnalyEventNotifs []AnalyticsEventNotif `json:"analyEventNotifs"`
-	TermCause *TermCause `json:"termCause,omitempty"`
+	TermCause        *TermCause            `json:"termCause,omitempty"`
 }
 
 // NewAnalyticsEventNotification instantiates a new AnalyticsEventNotification object
@@ -93,7 +93,7 @@ func (o *AnalyticsEventNotification) SetAnalyEventNotifs(v []AnalyticsEventNotif
 
 // GetTermCause returns the TermCause field value if set, zero value otherwise.
 func (o *AnalyticsEventNotification) GetTermCause() TermCause {
-	if o == nil || isNil(o.TermCause) {
+	if o == nil || IsNil(o.TermCause) {
 		var ret TermCause
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *AnalyticsEventNotification) GetTermCause() TermCause {
 // GetTermCauseOk returns a tuple with the TermCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotification) GetTermCauseOk() (*TermCause, bool) {
-	if o == nil || isNil(o.TermCause) {
+	if o == nil || IsNil(o.TermCause) {
 		return nil, false
 	}
 	return o.TermCause, true
@@ -111,7 +111,7 @@ func (o *AnalyticsEventNotification) GetTermCauseOk() (*TermCause, bool) {
 
 // HasTermCause returns a boolean if a field has been set.
 func (o *AnalyticsEventNotification) HasTermCause() bool {
-	if o != nil && !isNil(o.TermCause) {
+	if o != nil && !IsNil(o.TermCause) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *AnalyticsEventNotification) SetTermCause(v TermCause) {
 }
 
 func (o AnalyticsEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o AnalyticsEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["analyEventNotifs"] = o.AnalyEventNotifs
-	if !isNil(o.TermCause) {
+	if !IsNil(o.TermCause) {
 		toSerialize["termCause"] = o.TermCause
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableAnalyticsEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

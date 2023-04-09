@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-session
 
-API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -22,14 +22,14 @@ var _ MappedNullable = &MbsSessionSubscription{}
 type MbsSessionSubscription struct {
 	MbsSessionId *MbsSessionId `json:"mbsSessionId,omitempty"`
 	// Integer where the allowed values correspond to the value range of an unsigned 16-bit integer.
-	AreaSessionId *int32 `json:"areaSessionId,omitempty"`
-	EventList []MbsSessionEvent `json:"eventList"`
+	AreaSessionId *int32            `json:"areaSessionId,omitempty"`
+	EventList     []MbsSessionEvent `json:"eventList"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifyUri string `json:"notifyUri"`
+	NotifyUri           string  `json:"notifyUri"`
 	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ExpiryTime *time.Time `json:"expiryTime,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfcInstanceId *string `json:"nfcInstanceId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	MbsSessionSubscUri *string `json:"mbsSessionSubscUri,omitempty"`
@@ -56,7 +56,7 @@ func NewMbsSessionSubscriptionWithDefaults() *MbsSessionSubscription {
 
 // GetMbsSessionId returns the MbsSessionId field value if set, zero value otherwise.
 func (o *MbsSessionSubscription) GetMbsSessionId() MbsSessionId {
-	if o == nil || isNil(o.MbsSessionId) {
+	if o == nil || IsNil(o.MbsSessionId) {
 		var ret MbsSessionId
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *MbsSessionSubscription) GetMbsSessionId() MbsSessionId {
 // GetMbsSessionIdOk returns a tuple with the MbsSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubscription) GetMbsSessionIdOk() (*MbsSessionId, bool) {
-	if o == nil || isNil(o.MbsSessionId) {
+	if o == nil || IsNil(o.MbsSessionId) {
 		return nil, false
 	}
 	return o.MbsSessionId, true
@@ -74,7 +74,7 @@ func (o *MbsSessionSubscription) GetMbsSessionIdOk() (*MbsSessionId, bool) {
 
 // HasMbsSessionId returns a boolean if a field has been set.
 func (o *MbsSessionSubscription) HasMbsSessionId() bool {
-	if o != nil && !isNil(o.MbsSessionId) {
+	if o != nil && !IsNil(o.MbsSessionId) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *MbsSessionSubscription) SetMbsSessionId(v MbsSessionId) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *MbsSessionSubscription) GetAreaSessionId() int32 {
-	if o == nil || isNil(o.AreaSessionId) {
+	if o == nil || IsNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *MbsSessionSubscription) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubscription) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AreaSessionId) {
+	if o == nil || IsNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -106,7 +106,7 @@ func (o *MbsSessionSubscription) GetAreaSessionIdOk() (*int32, bool) {
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *MbsSessionSubscription) HasAreaSessionId() bool {
-	if o != nil && !isNil(o.AreaSessionId) {
+	if o != nil && !IsNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *MbsSessionSubscription) SetNotifyUri(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *MbsSessionSubscription) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *MbsSessionSubscription) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -186,7 +186,7 @@ func (o *MbsSessionSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *MbsSessionSubscription) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *MbsSessionSubscription) SetNotifyCorrelationId(v string) {
 
 // GetExpiryTime returns the ExpiryTime field value if set, zero value otherwise.
 func (o *MbsSessionSubscription) GetExpiryTime() time.Time {
-	if o == nil || isNil(o.ExpiryTime) {
+	if o == nil || IsNil(o.ExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *MbsSessionSubscription) GetExpiryTime() time.Time {
 // GetExpiryTimeOk returns a tuple with the ExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubscription) GetExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExpiryTime) {
+	if o == nil || IsNil(o.ExpiryTime) {
 		return nil, false
 	}
 	return o.ExpiryTime, true
@@ -218,7 +218,7 @@ func (o *MbsSessionSubscription) GetExpiryTimeOk() (*time.Time, bool) {
 
 // HasExpiryTime returns a boolean if a field has been set.
 func (o *MbsSessionSubscription) HasExpiryTime() bool {
-	if o != nil && !isNil(o.ExpiryTime) {
+	if o != nil && !IsNil(o.ExpiryTime) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *MbsSessionSubscription) SetExpiryTime(v time.Time) {
 
 // GetNfcInstanceId returns the NfcInstanceId field value if set, zero value otherwise.
 func (o *MbsSessionSubscription) GetNfcInstanceId() string {
-	if o == nil || isNil(o.NfcInstanceId) {
+	if o == nil || IsNil(o.NfcInstanceId) {
 		var ret string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *MbsSessionSubscription) GetNfcInstanceId() string {
 // GetNfcInstanceIdOk returns a tuple with the NfcInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubscription) GetNfcInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfcInstanceId) {
+	if o == nil || IsNil(o.NfcInstanceId) {
 		return nil, false
 	}
 	return o.NfcInstanceId, true
@@ -250,7 +250,7 @@ func (o *MbsSessionSubscription) GetNfcInstanceIdOk() (*string, bool) {
 
 // HasNfcInstanceId returns a boolean if a field has been set.
 func (o *MbsSessionSubscription) HasNfcInstanceId() bool {
-	if o != nil && !isNil(o.NfcInstanceId) {
+	if o != nil && !IsNil(o.NfcInstanceId) {
 		return true
 	}
 
@@ -264,7 +264,7 @@ func (o *MbsSessionSubscription) SetNfcInstanceId(v string) {
 
 // GetMbsSessionSubscUri returns the MbsSessionSubscUri field value if set, zero value otherwise.
 func (o *MbsSessionSubscription) GetMbsSessionSubscUri() string {
-	if o == nil || isNil(o.MbsSessionSubscUri) {
+	if o == nil || IsNil(o.MbsSessionSubscUri) {
 		var ret string
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *MbsSessionSubscription) GetMbsSessionSubscUri() string {
 // GetMbsSessionSubscUriOk returns a tuple with the MbsSessionSubscUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubscription) GetMbsSessionSubscUriOk() (*string, bool) {
-	if o == nil || isNil(o.MbsSessionSubscUri) {
+	if o == nil || IsNil(o.MbsSessionSubscUri) {
 		return nil, false
 	}
 	return o.MbsSessionSubscUri, true
@@ -282,7 +282,7 @@ func (o *MbsSessionSubscription) GetMbsSessionSubscUriOk() (*string, bool) {
 
 // HasMbsSessionSubscUri returns a boolean if a field has been set.
 func (o *MbsSessionSubscription) HasMbsSessionSubscUri() bool {
-	if o != nil && !isNil(o.MbsSessionSubscUri) {
+	if o != nil && !IsNil(o.MbsSessionSubscUri) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *MbsSessionSubscription) SetMbsSessionSubscUri(v string) {
 }
 
 func (o MbsSessionSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,24 +304,24 @@ func (o MbsSessionSubscription) MarshalJSON() ([]byte, error) {
 
 func (o MbsSessionSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsSessionId) {
+	if !IsNil(o.MbsSessionId) {
 		toSerialize["mbsSessionId"] = o.MbsSessionId
 	}
-	if !isNil(o.AreaSessionId) {
+	if !IsNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
 	toSerialize["eventList"] = o.EventList
 	toSerialize["notifyUri"] = o.NotifyUri
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !isNil(o.ExpiryTime) {
+	if !IsNil(o.ExpiryTime) {
 		toSerialize["expiryTime"] = o.ExpiryTime
 	}
-	if !isNil(o.NfcInstanceId) {
+	if !IsNil(o.NfcInstanceId) {
 		toSerialize["nfcInstanceId"] = o.NfcInstanceId
 	}
-	if !isNil(o.MbsSessionSubscUri) {
+	if !IsNil(o.MbsSessionSubscUri) {
 		toSerialize["mbsSessionSubscUri"] = o.MbsSessionSubscUri
 	}
 	return toSerialize, nil
@@ -362,5 +362,3 @@ func (v *NullableMbsSessionSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

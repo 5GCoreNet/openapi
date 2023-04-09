@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,12 +20,12 @@ var _ MappedNullable = &UdrInfo{}
 // UdrInfo Information of an UDR NF Instance
 type UdrInfo struct {
 	// Identifier of a group of NFs.
-	GroupId *string `json:"groupId,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	ExternalGroupIdentifiersRanges []IdentityRange `json:"externalGroupIdentifiersRanges,omitempty"`
-	SupportedDataSets []DataSetId `json:"supportedDataSets,omitempty"`
-	SharedDataIdRanges []SharedDataIdRange `json:"sharedDataIdRanges,omitempty"`
+	GroupId                        *string             `json:"groupId,omitempty"`
+	SupiRanges                     []SupiRange         `json:"supiRanges,omitempty"`
+	GpsiRanges                     []IdentityRange     `json:"gpsiRanges,omitempty"`
+	ExternalGroupIdentifiersRanges []IdentityRange     `json:"externalGroupIdentifiersRanges,omitempty"`
+	SupportedDataSets              []DataSetId         `json:"supportedDataSets,omitempty"`
+	SharedDataIdRanges             []SharedDataIdRange `json:"sharedDataIdRanges,omitempty"`
 }
 
 // NewUdrInfo instantiates a new UdrInfo object
@@ -47,7 +47,7 @@ func NewUdrInfoWithDefaults() *UdrInfo {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *UdrInfo) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *UdrInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdrInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -65,7 +65,7 @@ func (o *UdrInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *UdrInfo) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *UdrInfo) SetGroupId(v string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *UdrInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *UdrInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdrInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -97,7 +97,7 @@ func (o *UdrInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *UdrInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *UdrInfo) SetSupiRanges(v []SupiRange) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *UdrInfo) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *UdrInfo) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdrInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -129,7 +129,7 @@ func (o *UdrInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *UdrInfo) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *UdrInfo) SetGpsiRanges(v []IdentityRange) {
 
 // GetExternalGroupIdentifiersRanges returns the ExternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *UdrInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *UdrInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
 // GetExternalGroupIdentifiersRangesOk returns a tuple with the ExternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdrInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifiersRanges, true
@@ -161,7 +161,7 @@ func (o *UdrInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) 
 
 // HasExternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *UdrInfo) HasExternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.ExternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.ExternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *UdrInfo) SetExternalGroupIdentifiersRanges(v []IdentityRange) {
 
 // GetSupportedDataSets returns the SupportedDataSets field value if set, zero value otherwise.
 func (o *UdrInfo) GetSupportedDataSets() []DataSetId {
-	if o == nil || isNil(o.SupportedDataSets) {
+	if o == nil || IsNil(o.SupportedDataSets) {
 		var ret []DataSetId
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *UdrInfo) GetSupportedDataSets() []DataSetId {
 // GetSupportedDataSetsOk returns a tuple with the SupportedDataSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdrInfo) GetSupportedDataSetsOk() ([]DataSetId, bool) {
-	if o == nil || isNil(o.SupportedDataSets) {
+	if o == nil || IsNil(o.SupportedDataSets) {
 		return nil, false
 	}
 	return o.SupportedDataSets, true
@@ -193,7 +193,7 @@ func (o *UdrInfo) GetSupportedDataSetsOk() ([]DataSetId, bool) {
 
 // HasSupportedDataSets returns a boolean if a field has been set.
 func (o *UdrInfo) HasSupportedDataSets() bool {
-	if o != nil && !isNil(o.SupportedDataSets) {
+	if o != nil && !IsNil(o.SupportedDataSets) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *UdrInfo) SetSupportedDataSets(v []DataSetId) {
 
 // GetSharedDataIdRanges returns the SharedDataIdRanges field value if set, zero value otherwise.
 func (o *UdrInfo) GetSharedDataIdRanges() []SharedDataIdRange {
-	if o == nil || isNil(o.SharedDataIdRanges) {
+	if o == nil || IsNil(o.SharedDataIdRanges) {
 		var ret []SharedDataIdRange
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *UdrInfo) GetSharedDataIdRanges() []SharedDataIdRange {
 // GetSharedDataIdRangesOk returns a tuple with the SharedDataIdRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdrInfo) GetSharedDataIdRangesOk() ([]SharedDataIdRange, bool) {
-	if o == nil || isNil(o.SharedDataIdRanges) {
+	if o == nil || IsNil(o.SharedDataIdRanges) {
 		return nil, false
 	}
 	return o.SharedDataIdRanges, true
@@ -225,7 +225,7 @@ func (o *UdrInfo) GetSharedDataIdRangesOk() ([]SharedDataIdRange, bool) {
 
 // HasSharedDataIdRanges returns a boolean if a field has been set.
 func (o *UdrInfo) HasSharedDataIdRanges() bool {
-	if o != nil && !isNil(o.SharedDataIdRanges) {
+	if o != nil && !IsNil(o.SharedDataIdRanges) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *UdrInfo) SetSharedDataIdRanges(v []SharedDataIdRange) {
 }
 
 func (o UdrInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -247,22 +247,22 @@ func (o UdrInfo) MarshalJSON() ([]byte, error) {
 
 func (o UdrInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !isNil(o.ExternalGroupIdentifiersRanges) {
+	if !IsNil(o.ExternalGroupIdentifiersRanges) {
 		toSerialize["externalGroupIdentifiersRanges"] = o.ExternalGroupIdentifiersRanges
 	}
-	if !isNil(o.SupportedDataSets) {
+	if !IsNil(o.SupportedDataSets) {
 		toSerialize["supportedDataSets"] = o.SupportedDataSets
 	}
-	if !isNil(o.SharedDataIdRanges) {
+	if !IsNil(o.SharedDataIdRanges) {
 		toSerialize["sharedDataIdRanges"] = o.SharedDataIdRanges
 	}
 	return toSerialize, nil
@@ -303,5 +303,3 @@ func (v *NullableUdrInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

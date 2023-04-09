@@ -19,7 +19,7 @@ var _ MappedNullable = &UeAccProbilityDist{}
 
 // UeAccProbilityDist struct for UeAccProbilityDist
 type UeAccProbilityDist struct {
-	TargetProbability *int32 `json:"targetProbability,omitempty"`
+	TargetProbability     *int32 `json:"targetProbability,omitempty"`
 	Numberofpreamblessent *int32 `json:"numberofpreamblessent,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewUeAccProbilityDistWithDefaults() *UeAccProbilityDist {
 
 // GetTargetProbability returns the TargetProbability field value if set, zero value otherwise.
 func (o *UeAccProbilityDist) GetTargetProbability() int32 {
-	if o == nil || isNil(o.TargetProbability) {
+	if o == nil || IsNil(o.TargetProbability) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UeAccProbilityDist) GetTargetProbability() int32 {
 // GetTargetProbabilityOk returns a tuple with the TargetProbability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeAccProbilityDist) GetTargetProbabilityOk() (*int32, bool) {
-	if o == nil || isNil(o.TargetProbability) {
+	if o == nil || IsNil(o.TargetProbability) {
 		return nil, false
 	}
 	return o.TargetProbability, true
@@ -60,7 +60,7 @@ func (o *UeAccProbilityDist) GetTargetProbabilityOk() (*int32, bool) {
 
 // HasTargetProbability returns a boolean if a field has been set.
 func (o *UeAccProbilityDist) HasTargetProbability() bool {
-	if o != nil && !isNil(o.TargetProbability) {
+	if o != nil && !IsNil(o.TargetProbability) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UeAccProbilityDist) SetTargetProbability(v int32) {
 
 // GetNumberofpreamblessent returns the Numberofpreamblessent field value if set, zero value otherwise.
 func (o *UeAccProbilityDist) GetNumberofpreamblessent() int32 {
-	if o == nil || isNil(o.Numberofpreamblessent) {
+	if o == nil || IsNil(o.Numberofpreamblessent) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UeAccProbilityDist) GetNumberofpreamblessent() int32 {
 // GetNumberofpreamblessentOk returns a tuple with the Numberofpreamblessent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeAccProbilityDist) GetNumberofpreamblessentOk() (*int32, bool) {
-	if o == nil || isNil(o.Numberofpreamblessent) {
+	if o == nil || IsNil(o.Numberofpreamblessent) {
 		return nil, false
 	}
 	return o.Numberofpreamblessent, true
@@ -92,7 +92,7 @@ func (o *UeAccProbilityDist) GetNumberofpreamblessentOk() (*int32, bool) {
 
 // HasNumberofpreamblessent returns a boolean if a field has been set.
 func (o *UeAccProbilityDist) HasNumberofpreamblessent() bool {
-	if o != nil && !isNil(o.Numberofpreamblessent) {
+	if o != nil && !IsNil(o.Numberofpreamblessent) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UeAccProbilityDist) SetNumberofpreamblessent(v int32) {
 }
 
 func (o UeAccProbilityDist) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o UeAccProbilityDist) MarshalJSON() ([]byte, error) {
 
 func (o UeAccProbilityDist) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetProbability) {
+	if !IsNil(o.TargetProbability) {
 		toSerialize["targetProbability"] = o.TargetProbability
 	}
-	if !isNil(o.Numberofpreamblessent) {
+	if !IsNil(o.Numberofpreamblessent) {
 		toSerialize["numberofpreamblessent"] = o.Numberofpreamblessent
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableUeAccProbilityDist) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

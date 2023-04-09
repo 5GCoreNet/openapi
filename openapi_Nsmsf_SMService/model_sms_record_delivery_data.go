@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &SmsRecordDeliveryData{}
 // SmsRecordDeliveryData Represents information on the result of invoking the UplinkSMS service operation.
 type SmsRecordDeliveryData struct {
 	// Represents a record ID, used to identify a message carrying SMS payload.
-	SmsRecordId string `json:"smsRecordId"`
+	SmsRecordId    string            `json:"smsRecordId"`
 	DeliveryStatus SmsDeliveryStatus `json:"deliveryStatus"`
 }
 
@@ -92,7 +92,7 @@ func (o *SmsRecordDeliveryData) SetDeliveryStatus(v SmsDeliveryStatus) {
 }
 
 func (o SmsRecordDeliveryData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableSmsRecordDeliveryData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

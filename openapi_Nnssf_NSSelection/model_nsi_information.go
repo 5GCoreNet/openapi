@@ -1,7 +1,7 @@
 /*
 NSSF NS Selection
 
-NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the NsiInformation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NsiInformation{}
 
-// NsiInformation Contains the API URIs of NRF services to be used to discover NFs/services, subscribe to NF status changes and/or request access tokens within the selected Network Slice instance and optional the Identifier of the selected Network Slice instance 
+// NsiInformation Contains the API URIs of NRF services to be used to discover NFs/services, subscribe to NF status changes and/or request access tokens within the selected Network Slice instance and optional the Identifier of the selected Network Slice instance
 type NsiInformation struct {
 	// String providing an URI formatted according to RFC 3986.
 	NrfId string `json:"nrfId"`
@@ -27,7 +27,7 @@ type NsiInformation struct {
 	NrfNfMgtUri *string `json:"nrfNfMgtUri,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	NrfAccessTokenUri *string `json:"nrfAccessTokenUri,omitempty"`
-	// Map indicating whether the NRF requires Oauth2-based authorization for accessing its services. The key of the map shall be the name of an NRF service, e.g. \"nnrf-nfm\" or \"nnrf-disc\" 
+	// Map indicating whether the NRF requires Oauth2-based authorization for accessing its services. The key of the map shall be the name of an NRF service, e.g. \"nnrf-nfm\" or \"nnrf-disc\"
 	NrfOauth2Required *map[string]bool `json:"nrfOauth2Required,omitempty"`
 }
 
@@ -75,7 +75,7 @@ func (o *NsiInformation) SetNrfId(v string) {
 
 // GetNsiId returns the NsiId field value if set, zero value otherwise.
 func (o *NsiInformation) GetNsiId() string {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *NsiInformation) GetNsiId() string {
 // GetNsiIdOk returns a tuple with the NsiId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiInformation) GetNsiIdOk() (*string, bool) {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		return nil, false
 	}
 	return o.NsiId, true
@@ -93,7 +93,7 @@ func (o *NsiInformation) GetNsiIdOk() (*string, bool) {
 
 // HasNsiId returns a boolean if a field has been set.
 func (o *NsiInformation) HasNsiId() bool {
-	if o != nil && !isNil(o.NsiId) {
+	if o != nil && !IsNil(o.NsiId) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NsiInformation) SetNsiId(v string) {
 
 // GetNrfNfMgtUri returns the NrfNfMgtUri field value if set, zero value otherwise.
 func (o *NsiInformation) GetNrfNfMgtUri() string {
-	if o == nil || isNil(o.NrfNfMgtUri) {
+	if o == nil || IsNil(o.NrfNfMgtUri) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NsiInformation) GetNrfNfMgtUri() string {
 // GetNrfNfMgtUriOk returns a tuple with the NrfNfMgtUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiInformation) GetNrfNfMgtUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfNfMgtUri) {
+	if o == nil || IsNil(o.NrfNfMgtUri) {
 		return nil, false
 	}
 	return o.NrfNfMgtUri, true
@@ -125,7 +125,7 @@ func (o *NsiInformation) GetNrfNfMgtUriOk() (*string, bool) {
 
 // HasNrfNfMgtUri returns a boolean if a field has been set.
 func (o *NsiInformation) HasNrfNfMgtUri() bool {
-	if o != nil && !isNil(o.NrfNfMgtUri) {
+	if o != nil && !IsNil(o.NrfNfMgtUri) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *NsiInformation) SetNrfNfMgtUri(v string) {
 
 // GetNrfAccessTokenUri returns the NrfAccessTokenUri field value if set, zero value otherwise.
 func (o *NsiInformation) GetNrfAccessTokenUri() string {
-	if o == nil || isNil(o.NrfAccessTokenUri) {
+	if o == nil || IsNil(o.NrfAccessTokenUri) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *NsiInformation) GetNrfAccessTokenUri() string {
 // GetNrfAccessTokenUriOk returns a tuple with the NrfAccessTokenUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiInformation) GetNrfAccessTokenUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfAccessTokenUri) {
+	if o == nil || IsNil(o.NrfAccessTokenUri) {
 		return nil, false
 	}
 	return o.NrfAccessTokenUri, true
@@ -157,7 +157,7 @@ func (o *NsiInformation) GetNrfAccessTokenUriOk() (*string, bool) {
 
 // HasNrfAccessTokenUri returns a boolean if a field has been set.
 func (o *NsiInformation) HasNrfAccessTokenUri() bool {
-	if o != nil && !isNil(o.NrfAccessTokenUri) {
+	if o != nil && !IsNil(o.NrfAccessTokenUri) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NsiInformation) SetNrfAccessTokenUri(v string) {
 
 // GetNrfOauth2Required returns the NrfOauth2Required field value if set, zero value otherwise.
 func (o *NsiInformation) GetNrfOauth2Required() map[string]bool {
-	if o == nil || isNil(o.NrfOauth2Required) {
+	if o == nil || IsNil(o.NrfOauth2Required) {
 		var ret map[string]bool
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *NsiInformation) GetNrfOauth2Required() map[string]bool {
 // GetNrfOauth2RequiredOk returns a tuple with the NrfOauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiInformation) GetNrfOauth2RequiredOk() (*map[string]bool, bool) {
-	if o == nil || isNil(o.NrfOauth2Required) {
+	if o == nil || IsNil(o.NrfOauth2Required) {
 		return nil, false
 	}
 	return o.NrfOauth2Required, true
@@ -189,7 +189,7 @@ func (o *NsiInformation) GetNrfOauth2RequiredOk() (*map[string]bool, bool) {
 
 // HasNrfOauth2Required returns a boolean if a field has been set.
 func (o *NsiInformation) HasNrfOauth2Required() bool {
-	if o != nil && !isNil(o.NrfOauth2Required) {
+	if o != nil && !IsNil(o.NrfOauth2Required) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *NsiInformation) SetNrfOauth2Required(v map[string]bool) {
 }
 
 func (o NsiInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -212,16 +212,16 @@ func (o NsiInformation) MarshalJSON() ([]byte, error) {
 func (o NsiInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nrfId"] = o.NrfId
-	if !isNil(o.NsiId) {
+	if !IsNil(o.NsiId) {
 		toSerialize["nsiId"] = o.NsiId
 	}
-	if !isNil(o.NrfNfMgtUri) {
+	if !IsNil(o.NrfNfMgtUri) {
 		toSerialize["nrfNfMgtUri"] = o.NrfNfMgtUri
 	}
-	if !isNil(o.NrfAccessTokenUri) {
+	if !IsNil(o.NrfAccessTokenUri) {
 		toSerialize["nrfAccessTokenUri"] = o.NrfAccessTokenUri
 	}
-	if !isNil(o.NrfOauth2Required) {
+	if !IsNil(o.NrfOauth2Required) {
 		toSerialize["nrfOauth2Required"] = o.NrfOauth2Required
 	}
 	return toSerialize, nil
@@ -262,5 +262,3 @@ func (v *NullableNsiInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

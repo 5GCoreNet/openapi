@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &BsfInfo{}
 
 // BsfInfo Information of a BSF NF Instance
 type BsfInfo struct {
-	DnnList []string `json:"dnnList,omitempty"`
-	IpDomainList []string `json:"ipDomainList,omitempty"`
+	DnnList           []string           `json:"dnnList,omitempty"`
+	IpDomainList      []string           `json:"ipDomainList,omitempty"`
 	Ipv4AddressRanges []Ipv4AddressRange `json:"ipv4AddressRanges,omitempty"`
-	Ipv6PrefixRanges []Ipv6PrefixRange `json:"ipv6PrefixRanges,omitempty"`
+	Ipv6PrefixRanges  []Ipv6PrefixRange  `json:"ipv6PrefixRanges,omitempty"`
 	// Fully Qualified Domain Name
 	RxDiamHost *string `json:"rxDiamHost,omitempty"`
 	// Fully Qualified Domain Name
 	RxDiamRealm *string `json:"rxDiamRealm,omitempty"`
 	// Identifier of a group of NFs.
-	GroupId *string `json:"groupId,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
+	GroupId    *string         `json:"groupId,omitempty"`
+	SupiRanges []SupiRange     `json:"supiRanges,omitempty"`
 	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func NewBsfInfoWithDefaults() *BsfInfo {
 
 // GetDnnList returns the DnnList field value if set, zero value otherwise.
 func (o *BsfInfo) GetDnnList() []string {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		var ret []string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *BsfInfo) GetDnnList() []string {
 // GetDnnListOk returns a tuple with the DnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetDnnListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		return nil, false
 	}
 	return o.DnnList, true
@@ -70,7 +70,7 @@ func (o *BsfInfo) GetDnnListOk() ([]string, bool) {
 
 // HasDnnList returns a boolean if a field has been set.
 func (o *BsfInfo) HasDnnList() bool {
-	if o != nil && !isNil(o.DnnList) {
+	if o != nil && !IsNil(o.DnnList) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *BsfInfo) SetDnnList(v []string) {
 
 // GetIpDomainList returns the IpDomainList field value if set, zero value otherwise.
 func (o *BsfInfo) GetIpDomainList() []string {
-	if o == nil || isNil(o.IpDomainList) {
+	if o == nil || IsNil(o.IpDomainList) {
 		var ret []string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *BsfInfo) GetIpDomainList() []string {
 // GetIpDomainListOk returns a tuple with the IpDomainList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetIpDomainListOk() ([]string, bool) {
-	if o == nil || isNil(o.IpDomainList) {
+	if o == nil || IsNil(o.IpDomainList) {
 		return nil, false
 	}
 	return o.IpDomainList, true
@@ -102,7 +102,7 @@ func (o *BsfInfo) GetIpDomainListOk() ([]string, bool) {
 
 // HasIpDomainList returns a boolean if a field has been set.
 func (o *BsfInfo) HasIpDomainList() bool {
-	if o != nil && !isNil(o.IpDomainList) {
+	if o != nil && !IsNil(o.IpDomainList) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *BsfInfo) SetIpDomainList(v []string) {
 
 // GetIpv4AddressRanges returns the Ipv4AddressRanges field value if set, zero value otherwise.
 func (o *BsfInfo) GetIpv4AddressRanges() []Ipv4AddressRange {
-	if o == nil || isNil(o.Ipv4AddressRanges) {
+	if o == nil || IsNil(o.Ipv4AddressRanges) {
 		var ret []Ipv4AddressRange
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *BsfInfo) GetIpv4AddressRanges() []Ipv4AddressRange {
 // GetIpv4AddressRangesOk returns a tuple with the Ipv4AddressRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetIpv4AddressRangesOk() ([]Ipv4AddressRange, bool) {
-	if o == nil || isNil(o.Ipv4AddressRanges) {
+	if o == nil || IsNil(o.Ipv4AddressRanges) {
 		return nil, false
 	}
 	return o.Ipv4AddressRanges, true
@@ -134,7 +134,7 @@ func (o *BsfInfo) GetIpv4AddressRangesOk() ([]Ipv4AddressRange, bool) {
 
 // HasIpv4AddressRanges returns a boolean if a field has been set.
 func (o *BsfInfo) HasIpv4AddressRanges() bool {
-	if o != nil && !isNil(o.Ipv4AddressRanges) {
+	if o != nil && !IsNil(o.Ipv4AddressRanges) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *BsfInfo) SetIpv4AddressRanges(v []Ipv4AddressRange) {
 
 // GetIpv6PrefixRanges returns the Ipv6PrefixRanges field value if set, zero value otherwise.
 func (o *BsfInfo) GetIpv6PrefixRanges() []Ipv6PrefixRange {
-	if o == nil || isNil(o.Ipv6PrefixRanges) {
+	if o == nil || IsNil(o.Ipv6PrefixRanges) {
 		var ret []Ipv6PrefixRange
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *BsfInfo) GetIpv6PrefixRanges() []Ipv6PrefixRange {
 // GetIpv6PrefixRangesOk returns a tuple with the Ipv6PrefixRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
-	if o == nil || isNil(o.Ipv6PrefixRanges) {
+	if o == nil || IsNil(o.Ipv6PrefixRanges) {
 		return nil, false
 	}
 	return o.Ipv6PrefixRanges, true
@@ -166,7 +166,7 @@ func (o *BsfInfo) GetIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
 
 // HasIpv6PrefixRanges returns a boolean if a field has been set.
 func (o *BsfInfo) HasIpv6PrefixRanges() bool {
-	if o != nil && !isNil(o.Ipv6PrefixRanges) {
+	if o != nil && !IsNil(o.Ipv6PrefixRanges) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *BsfInfo) SetIpv6PrefixRanges(v []Ipv6PrefixRange) {
 
 // GetRxDiamHost returns the RxDiamHost field value if set, zero value otherwise.
 func (o *BsfInfo) GetRxDiamHost() string {
-	if o == nil || isNil(o.RxDiamHost) {
+	if o == nil || IsNil(o.RxDiamHost) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *BsfInfo) GetRxDiamHost() string {
 // GetRxDiamHostOk returns a tuple with the RxDiamHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetRxDiamHostOk() (*string, bool) {
-	if o == nil || isNil(o.RxDiamHost) {
+	if o == nil || IsNil(o.RxDiamHost) {
 		return nil, false
 	}
 	return o.RxDiamHost, true
@@ -198,7 +198,7 @@ func (o *BsfInfo) GetRxDiamHostOk() (*string, bool) {
 
 // HasRxDiamHost returns a boolean if a field has been set.
 func (o *BsfInfo) HasRxDiamHost() bool {
-	if o != nil && !isNil(o.RxDiamHost) {
+	if o != nil && !IsNil(o.RxDiamHost) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *BsfInfo) SetRxDiamHost(v string) {
 
 // GetRxDiamRealm returns the RxDiamRealm field value if set, zero value otherwise.
 func (o *BsfInfo) GetRxDiamRealm() string {
-	if o == nil || isNil(o.RxDiamRealm) {
+	if o == nil || IsNil(o.RxDiamRealm) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *BsfInfo) GetRxDiamRealm() string {
 // GetRxDiamRealmOk returns a tuple with the RxDiamRealm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetRxDiamRealmOk() (*string, bool) {
-	if o == nil || isNil(o.RxDiamRealm) {
+	if o == nil || IsNil(o.RxDiamRealm) {
 		return nil, false
 	}
 	return o.RxDiamRealm, true
@@ -230,7 +230,7 @@ func (o *BsfInfo) GetRxDiamRealmOk() (*string, bool) {
 
 // HasRxDiamRealm returns a boolean if a field has been set.
 func (o *BsfInfo) HasRxDiamRealm() bool {
-	if o != nil && !isNil(o.RxDiamRealm) {
+	if o != nil && !IsNil(o.RxDiamRealm) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *BsfInfo) SetRxDiamRealm(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *BsfInfo) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *BsfInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -262,7 +262,7 @@ func (o *BsfInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *BsfInfo) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *BsfInfo) SetGroupId(v string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *BsfInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *BsfInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -294,7 +294,7 @@ func (o *BsfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *BsfInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *BsfInfo) SetSupiRanges(v []SupiRange) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *BsfInfo) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *BsfInfo) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -326,7 +326,7 @@ func (o *BsfInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *BsfInfo) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *BsfInfo) SetGpsiRanges(v []IdentityRange) {
 }
 
 func (o BsfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,31 +348,31 @@ func (o BsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o BsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnnList) {
+	if !IsNil(o.DnnList) {
 		toSerialize["dnnList"] = o.DnnList
 	}
-	if !isNil(o.IpDomainList) {
+	if !IsNil(o.IpDomainList) {
 		toSerialize["ipDomainList"] = o.IpDomainList
 	}
-	if !isNil(o.Ipv4AddressRanges) {
+	if !IsNil(o.Ipv4AddressRanges) {
 		toSerialize["ipv4AddressRanges"] = o.Ipv4AddressRanges
 	}
-	if !isNil(o.Ipv6PrefixRanges) {
+	if !IsNil(o.Ipv6PrefixRanges) {
 		toSerialize["ipv6PrefixRanges"] = o.Ipv6PrefixRanges
 	}
-	if !isNil(o.RxDiamHost) {
+	if !IsNil(o.RxDiamHost) {
 		toSerialize["rxDiamHost"] = o.RxDiamHost
 	}
-	if !isNil(o.RxDiamRealm) {
+	if !IsNil(o.RxDiamRealm) {
 		toSerialize["rxDiamRealm"] = o.RxDiamRealm
 	}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
 	return toSerialize, nil
@@ -413,5 +413,3 @@ func (v *NullableBsfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,27 +13,26 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SessionManagementSubscriptionDataApiService SessionManagementSubscriptionDataApi service
 type SessionManagementSubscriptionDataApiService service
 
 type ApiQuerySmDataRequest struct {
-	ctx context.Context
-	ApiService *SessionManagementSubscriptionDataApiService
-	ueId string
-	servingPlmnId string
-	singleNssai *VarSnssai
-	dnn *string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *SessionManagementSubscriptionDataApiService
+	ueId              string
+	servingPlmnId     string
+	singleNssai       *VarSnssai
+	dnn               *string
+	fields            *[]string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // single NSSAI
@@ -79,28 +78,29 @@ func (r ApiQuerySmDataRequest) Execute() (*SmSubsData, *http.Response, error) {
 /*
 QuerySmData Retrieves the Session Management subscription data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingPlmnId PLMN ID
- @return ApiQuerySmDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingPlmnId PLMN ID
+	@return ApiQuerySmDataRequest
 */
 func (a *SessionManagementSubscriptionDataApiService) QuerySmData(ctx context.Context, ueId string, servingPlmnId string) ApiQuerySmDataRequest {
 	return ApiQuerySmDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:    a,
+		ctx:           ctx,
+		ueId:          ueId,
 		servingPlmnId: servingPlmnId,
 	}
 }
 
 // Execute executes the request
-//  @return SmSubsData
+//
+//	@return SmSubsData
 func (a *SessionManagementSubscriptionDataApiService) QuerySmDataExecute(r ApiQuerySmDataRequest) (*SmSubsData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmSubsData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmSubsData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionManagementSubscriptionDataApiService.QuerySmData")
@@ -117,16 +117,16 @@ func (a *SessionManagementSubscriptionDataApiService) QuerySmDataExecute(r ApiQu
 	localVarFormParams := url.Values{}
 
 	if r.singleNssai != nil {
-		parameterAddToQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
 	}
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -146,10 +146,10 @@ func (a *SessionManagementSubscriptionDataApiService) QuerySmDataExecute(r ApiQu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -161,9 +161,9 @@ func (a *SessionManagementSubscriptionDataApiService) QuerySmDataExecute(r ApiQu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

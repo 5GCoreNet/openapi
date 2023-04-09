@@ -20,38 +20,38 @@ var _ MappedNullable = &AlarmRecord{}
 
 // AlarmRecord The alarmId is not a property of an alarm record. It is used as key in the map of alarm records instead.
 type AlarmRecord struct {
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	NotificationId *int32 `json:"notificationId,omitempty"`
-	AlarmRaisedTime *time.Time `json:"alarmRaisedTime,omitempty"`
-	AlarmChangedTime *time.Time `json:"alarmChangedTime,omitempty"`
-	AlarmClearedTime *time.Time `json:"alarmClearedTime,omitempty"`
-	AlarmType *AlarmType `json:"alarmType,omitempty"`
-	ProbableCause *ProbableCause `json:"probableCause,omitempty"`
-	SpecificProblem *SpecificProblem `json:"specificProblem,omitempty"`
-	PerceivedSeverity *PerceivedSeverity `json:"perceivedSeverity,omitempty"`
-	BackedUpStatus *bool `json:"backedUpStatus,omitempty"`
-	BackUpObject *string `json:"backUpObject,omitempty"`
-	TrendIndication *TrendIndication `json:"trendIndication,omitempty"`
-	Thresholdinfo *ThresholdInfo2 `json:"thresholdinfo,omitempty"`
+	ObjectInstance          *string                   `json:"objectInstance,omitempty"`
+	NotificationId          *int32                    `json:"notificationId,omitempty"`
+	AlarmRaisedTime         *time.Time                `json:"alarmRaisedTime,omitempty"`
+	AlarmChangedTime        *time.Time                `json:"alarmChangedTime,omitempty"`
+	AlarmClearedTime        *time.Time                `json:"alarmClearedTime,omitempty"`
+	AlarmType               *AlarmType                `json:"alarmType,omitempty"`
+	ProbableCause           *ProbableCause            `json:"probableCause,omitempty"`
+	SpecificProblem         *SpecificProblem          `json:"specificProblem,omitempty"`
+	PerceivedSeverity       *PerceivedSeverity        `json:"perceivedSeverity,omitempty"`
+	BackedUpStatus          *bool                     `json:"backedUpStatus,omitempty"`
+	BackUpObject            *string                   `json:"backUpObject,omitempty"`
+	TrendIndication         *TrendIndication          `json:"trendIndication,omitempty"`
+	Thresholdinfo           *ThresholdInfo2           `json:"thresholdinfo,omitempty"`
 	CorrelatedNotifications []CorrelatedNotification1 `json:"correlatedNotifications,omitempty"`
 	// The first array item contains the attribute name value pairs with the new values, and the second array item the attribute name value pairs with the optional old values.
 	StateChangeDefinition []map[string]interface{} `json:"stateChangeDefinition,omitempty"`
 	// The key of this map is the attribute name, and the value the attribute value.
-	MonitoredAttributes map[string]interface{} `json:"monitoredAttributes,omitempty"`
-	ProposedRepairActions *string `json:"proposedRepairActions,omitempty"`
-	AdditionalText *string `json:"additionalText,omitempty"`
+	MonitoredAttributes   map[string]interface{} `json:"monitoredAttributes,omitempty"`
+	ProposedRepairActions *string                `json:"proposedRepairActions,omitempty"`
+	AdditionalText        *string                `json:"additionalText,omitempty"`
 	// The key of this map is the attribute name, and the value the attribute value.
 	AdditionalInformation map[string]interface{} `json:"additionalInformation,omitempty"`
-	RootCauseIndicator *bool `json:"rootCauseIndicator,omitempty"`
-	AckTime *time.Time `json:"ackTime,omitempty"`
-	AckUserId *string `json:"ackUserId,omitempty"`
-	AckSystemId *string `json:"ackSystemId,omitempty"`
-	AckState *AckState `json:"ackState,omitempty"`
-	ClearUserId *string `json:"clearUserId,omitempty"`
-	ClearSystemId *string `json:"clearSystemId,omitempty"`
-	ServiceUser *string `json:"serviceUser,omitempty"`
-	ServiceProvider *string `json:"serviceProvider,omitempty"`
-	SecurityAlarmDetector *string `json:"securityAlarmDetector,omitempty"`
+	RootCauseIndicator    *bool                  `json:"rootCauseIndicator,omitempty"`
+	AckTime               *time.Time             `json:"ackTime,omitempty"`
+	AckUserId             *string                `json:"ackUserId,omitempty"`
+	AckSystemId           *string                `json:"ackSystemId,omitempty"`
+	AckState              *AckState              `json:"ackState,omitempty"`
+	ClearUserId           *string                `json:"clearUserId,omitempty"`
+	ClearSystemId         *string                `json:"clearSystemId,omitempty"`
+	ServiceUser           *string                `json:"serviceUser,omitempty"`
+	ServiceProvider       *string                `json:"serviceProvider,omitempty"`
+	SecurityAlarmDetector *string                `json:"securityAlarmDetector,omitempty"`
 }
 
 // NewAlarmRecord instantiates a new AlarmRecord object
@@ -73,7 +73,7 @@ func NewAlarmRecordWithDefaults() *AlarmRecord {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *AlarmRecord) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *AlarmRecord) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -91,7 +91,7 @@ func (o *AlarmRecord) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *AlarmRecord) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
+	if o != nil && !IsNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *AlarmRecord) SetObjectInstance(v string) {
 
 // GetNotificationId returns the NotificationId field value if set, zero value otherwise.
 func (o *AlarmRecord) GetNotificationId() int32 {
-	if o == nil || isNil(o.NotificationId) {
+	if o == nil || IsNil(o.NotificationId) {
 		var ret int32
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *AlarmRecord) GetNotificationId() int32 {
 // GetNotificationIdOk returns a tuple with the NotificationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetNotificationIdOk() (*int32, bool) {
-	if o == nil || isNil(o.NotificationId) {
+	if o == nil || IsNil(o.NotificationId) {
 		return nil, false
 	}
 	return o.NotificationId, true
@@ -123,7 +123,7 @@ func (o *AlarmRecord) GetNotificationIdOk() (*int32, bool) {
 
 // HasNotificationId returns a boolean if a field has been set.
 func (o *AlarmRecord) HasNotificationId() bool {
-	if o != nil && !isNil(o.NotificationId) {
+	if o != nil && !IsNil(o.NotificationId) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *AlarmRecord) SetNotificationId(v int32) {
 
 // GetAlarmRaisedTime returns the AlarmRaisedTime field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAlarmRaisedTime() time.Time {
-	if o == nil || isNil(o.AlarmRaisedTime) {
+	if o == nil || IsNil(o.AlarmRaisedTime) {
 		var ret time.Time
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *AlarmRecord) GetAlarmRaisedTime() time.Time {
 // GetAlarmRaisedTimeOk returns a tuple with the AlarmRaisedTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAlarmRaisedTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.AlarmRaisedTime) {
+	if o == nil || IsNil(o.AlarmRaisedTime) {
 		return nil, false
 	}
 	return o.AlarmRaisedTime, true
@@ -155,7 +155,7 @@ func (o *AlarmRecord) GetAlarmRaisedTimeOk() (*time.Time, bool) {
 
 // HasAlarmRaisedTime returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAlarmRaisedTime() bool {
-	if o != nil && !isNil(o.AlarmRaisedTime) {
+	if o != nil && !IsNil(o.AlarmRaisedTime) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *AlarmRecord) SetAlarmRaisedTime(v time.Time) {
 
 // GetAlarmChangedTime returns the AlarmChangedTime field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAlarmChangedTime() time.Time {
-	if o == nil || isNil(o.AlarmChangedTime) {
+	if o == nil || IsNil(o.AlarmChangedTime) {
 		var ret time.Time
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *AlarmRecord) GetAlarmChangedTime() time.Time {
 // GetAlarmChangedTimeOk returns a tuple with the AlarmChangedTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAlarmChangedTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.AlarmChangedTime) {
+	if o == nil || IsNil(o.AlarmChangedTime) {
 		return nil, false
 	}
 	return o.AlarmChangedTime, true
@@ -187,7 +187,7 @@ func (o *AlarmRecord) GetAlarmChangedTimeOk() (*time.Time, bool) {
 
 // HasAlarmChangedTime returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAlarmChangedTime() bool {
-	if o != nil && !isNil(o.AlarmChangedTime) {
+	if o != nil && !IsNil(o.AlarmChangedTime) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *AlarmRecord) SetAlarmChangedTime(v time.Time) {
 
 // GetAlarmClearedTime returns the AlarmClearedTime field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAlarmClearedTime() time.Time {
-	if o == nil || isNil(o.AlarmClearedTime) {
+	if o == nil || IsNil(o.AlarmClearedTime) {
 		var ret time.Time
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *AlarmRecord) GetAlarmClearedTime() time.Time {
 // GetAlarmClearedTimeOk returns a tuple with the AlarmClearedTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAlarmClearedTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.AlarmClearedTime) {
+	if o == nil || IsNil(o.AlarmClearedTime) {
 		return nil, false
 	}
 	return o.AlarmClearedTime, true
@@ -219,7 +219,7 @@ func (o *AlarmRecord) GetAlarmClearedTimeOk() (*time.Time, bool) {
 
 // HasAlarmClearedTime returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAlarmClearedTime() bool {
-	if o != nil && !isNil(o.AlarmClearedTime) {
+	if o != nil && !IsNil(o.AlarmClearedTime) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *AlarmRecord) SetAlarmClearedTime(v time.Time) {
 
 // GetAlarmType returns the AlarmType field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAlarmType() AlarmType {
-	if o == nil || isNil(o.AlarmType) {
+	if o == nil || IsNil(o.AlarmType) {
 		var ret AlarmType
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *AlarmRecord) GetAlarmType() AlarmType {
 // GetAlarmTypeOk returns a tuple with the AlarmType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAlarmTypeOk() (*AlarmType, bool) {
-	if o == nil || isNil(o.AlarmType) {
+	if o == nil || IsNil(o.AlarmType) {
 		return nil, false
 	}
 	return o.AlarmType, true
@@ -251,7 +251,7 @@ func (o *AlarmRecord) GetAlarmTypeOk() (*AlarmType, bool) {
 
 // HasAlarmType returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAlarmType() bool {
-	if o != nil && !isNil(o.AlarmType) {
+	if o != nil && !IsNil(o.AlarmType) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *AlarmRecord) SetAlarmType(v AlarmType) {
 
 // GetProbableCause returns the ProbableCause field value if set, zero value otherwise.
 func (o *AlarmRecord) GetProbableCause() ProbableCause {
-	if o == nil || isNil(o.ProbableCause) {
+	if o == nil || IsNil(o.ProbableCause) {
 		var ret ProbableCause
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *AlarmRecord) GetProbableCause() ProbableCause {
 // GetProbableCauseOk returns a tuple with the ProbableCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetProbableCauseOk() (*ProbableCause, bool) {
-	if o == nil || isNil(o.ProbableCause) {
+	if o == nil || IsNil(o.ProbableCause) {
 		return nil, false
 	}
 	return o.ProbableCause, true
@@ -283,7 +283,7 @@ func (o *AlarmRecord) GetProbableCauseOk() (*ProbableCause, bool) {
 
 // HasProbableCause returns a boolean if a field has been set.
 func (o *AlarmRecord) HasProbableCause() bool {
-	if o != nil && !isNil(o.ProbableCause) {
+	if o != nil && !IsNil(o.ProbableCause) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *AlarmRecord) SetProbableCause(v ProbableCause) {
 
 // GetSpecificProblem returns the SpecificProblem field value if set, zero value otherwise.
 func (o *AlarmRecord) GetSpecificProblem() SpecificProblem {
-	if o == nil || isNil(o.SpecificProblem) {
+	if o == nil || IsNil(o.SpecificProblem) {
 		var ret SpecificProblem
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *AlarmRecord) GetSpecificProblem() SpecificProblem {
 // GetSpecificProblemOk returns a tuple with the SpecificProblem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetSpecificProblemOk() (*SpecificProblem, bool) {
-	if o == nil || isNil(o.SpecificProblem) {
+	if o == nil || IsNil(o.SpecificProblem) {
 		return nil, false
 	}
 	return o.SpecificProblem, true
@@ -315,7 +315,7 @@ func (o *AlarmRecord) GetSpecificProblemOk() (*SpecificProblem, bool) {
 
 // HasSpecificProblem returns a boolean if a field has been set.
 func (o *AlarmRecord) HasSpecificProblem() bool {
-	if o != nil && !isNil(o.SpecificProblem) {
+	if o != nil && !IsNil(o.SpecificProblem) {
 		return true
 	}
 
@@ -329,7 +329,7 @@ func (o *AlarmRecord) SetSpecificProblem(v SpecificProblem) {
 
 // GetPerceivedSeverity returns the PerceivedSeverity field value if set, zero value otherwise.
 func (o *AlarmRecord) GetPerceivedSeverity() PerceivedSeverity {
-	if o == nil || isNil(o.PerceivedSeverity) {
+	if o == nil || IsNil(o.PerceivedSeverity) {
 		var ret PerceivedSeverity
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *AlarmRecord) GetPerceivedSeverity() PerceivedSeverity {
 // GetPerceivedSeverityOk returns a tuple with the PerceivedSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetPerceivedSeverityOk() (*PerceivedSeverity, bool) {
-	if o == nil || isNil(o.PerceivedSeverity) {
+	if o == nil || IsNil(o.PerceivedSeverity) {
 		return nil, false
 	}
 	return o.PerceivedSeverity, true
@@ -347,7 +347,7 @@ func (o *AlarmRecord) GetPerceivedSeverityOk() (*PerceivedSeverity, bool) {
 
 // HasPerceivedSeverity returns a boolean if a field has been set.
 func (o *AlarmRecord) HasPerceivedSeverity() bool {
-	if o != nil && !isNil(o.PerceivedSeverity) {
+	if o != nil && !IsNil(o.PerceivedSeverity) {
 		return true
 	}
 
@@ -361,7 +361,7 @@ func (o *AlarmRecord) SetPerceivedSeverity(v PerceivedSeverity) {
 
 // GetBackedUpStatus returns the BackedUpStatus field value if set, zero value otherwise.
 func (o *AlarmRecord) GetBackedUpStatus() bool {
-	if o == nil || isNil(o.BackedUpStatus) {
+	if o == nil || IsNil(o.BackedUpStatus) {
 		var ret bool
 		return ret
 	}
@@ -371,7 +371,7 @@ func (o *AlarmRecord) GetBackedUpStatus() bool {
 // GetBackedUpStatusOk returns a tuple with the BackedUpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetBackedUpStatusOk() (*bool, bool) {
-	if o == nil || isNil(o.BackedUpStatus) {
+	if o == nil || IsNil(o.BackedUpStatus) {
 		return nil, false
 	}
 	return o.BackedUpStatus, true
@@ -379,7 +379,7 @@ func (o *AlarmRecord) GetBackedUpStatusOk() (*bool, bool) {
 
 // HasBackedUpStatus returns a boolean if a field has been set.
 func (o *AlarmRecord) HasBackedUpStatus() bool {
-	if o != nil && !isNil(o.BackedUpStatus) {
+	if o != nil && !IsNil(o.BackedUpStatus) {
 		return true
 	}
 
@@ -393,7 +393,7 @@ func (o *AlarmRecord) SetBackedUpStatus(v bool) {
 
 // GetBackUpObject returns the BackUpObject field value if set, zero value otherwise.
 func (o *AlarmRecord) GetBackUpObject() string {
-	if o == nil || isNil(o.BackUpObject) {
+	if o == nil || IsNil(o.BackUpObject) {
 		var ret string
 		return ret
 	}
@@ -403,7 +403,7 @@ func (o *AlarmRecord) GetBackUpObject() string {
 // GetBackUpObjectOk returns a tuple with the BackUpObject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetBackUpObjectOk() (*string, bool) {
-	if o == nil || isNil(o.BackUpObject) {
+	if o == nil || IsNil(o.BackUpObject) {
 		return nil, false
 	}
 	return o.BackUpObject, true
@@ -411,7 +411,7 @@ func (o *AlarmRecord) GetBackUpObjectOk() (*string, bool) {
 
 // HasBackUpObject returns a boolean if a field has been set.
 func (o *AlarmRecord) HasBackUpObject() bool {
-	if o != nil && !isNil(o.BackUpObject) {
+	if o != nil && !IsNil(o.BackUpObject) {
 		return true
 	}
 
@@ -425,7 +425,7 @@ func (o *AlarmRecord) SetBackUpObject(v string) {
 
 // GetTrendIndication returns the TrendIndication field value if set, zero value otherwise.
 func (o *AlarmRecord) GetTrendIndication() TrendIndication {
-	if o == nil || isNil(o.TrendIndication) {
+	if o == nil || IsNil(o.TrendIndication) {
 		var ret TrendIndication
 		return ret
 	}
@@ -435,7 +435,7 @@ func (o *AlarmRecord) GetTrendIndication() TrendIndication {
 // GetTrendIndicationOk returns a tuple with the TrendIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetTrendIndicationOk() (*TrendIndication, bool) {
-	if o == nil || isNil(o.TrendIndication) {
+	if o == nil || IsNil(o.TrendIndication) {
 		return nil, false
 	}
 	return o.TrendIndication, true
@@ -443,7 +443,7 @@ func (o *AlarmRecord) GetTrendIndicationOk() (*TrendIndication, bool) {
 
 // HasTrendIndication returns a boolean if a field has been set.
 func (o *AlarmRecord) HasTrendIndication() bool {
-	if o != nil && !isNil(o.TrendIndication) {
+	if o != nil && !IsNil(o.TrendIndication) {
 		return true
 	}
 
@@ -457,7 +457,7 @@ func (o *AlarmRecord) SetTrendIndication(v TrendIndication) {
 
 // GetThresholdinfo returns the Thresholdinfo field value if set, zero value otherwise.
 func (o *AlarmRecord) GetThresholdinfo() ThresholdInfo2 {
-	if o == nil || isNil(o.Thresholdinfo) {
+	if o == nil || IsNil(o.Thresholdinfo) {
 		var ret ThresholdInfo2
 		return ret
 	}
@@ -467,7 +467,7 @@ func (o *AlarmRecord) GetThresholdinfo() ThresholdInfo2 {
 // GetThresholdinfoOk returns a tuple with the Thresholdinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetThresholdinfoOk() (*ThresholdInfo2, bool) {
-	if o == nil || isNil(o.Thresholdinfo) {
+	if o == nil || IsNil(o.Thresholdinfo) {
 		return nil, false
 	}
 	return o.Thresholdinfo, true
@@ -475,7 +475,7 @@ func (o *AlarmRecord) GetThresholdinfoOk() (*ThresholdInfo2, bool) {
 
 // HasThresholdinfo returns a boolean if a field has been set.
 func (o *AlarmRecord) HasThresholdinfo() bool {
-	if o != nil && !isNil(o.Thresholdinfo) {
+	if o != nil && !IsNil(o.Thresholdinfo) {
 		return true
 	}
 
@@ -489,7 +489,7 @@ func (o *AlarmRecord) SetThresholdinfo(v ThresholdInfo2) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *AlarmRecord) GetCorrelatedNotifications() []CorrelatedNotification1 {
-	if o == nil || isNil(o.CorrelatedNotifications) {
+	if o == nil || IsNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification1
 		return ret
 	}
@@ -499,7 +499,7 @@ func (o *AlarmRecord) GetCorrelatedNotifications() []CorrelatedNotification1 {
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetCorrelatedNotificationsOk() ([]CorrelatedNotification1, bool) {
-	if o == nil || isNil(o.CorrelatedNotifications) {
+	if o == nil || IsNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -507,7 +507,7 @@ func (o *AlarmRecord) GetCorrelatedNotificationsOk() ([]CorrelatedNotification1,
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *AlarmRecord) HasCorrelatedNotifications() bool {
-	if o != nil && !isNil(o.CorrelatedNotifications) {
+	if o != nil && !IsNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -521,7 +521,7 @@ func (o *AlarmRecord) SetCorrelatedNotifications(v []CorrelatedNotification1) {
 
 // GetStateChangeDefinition returns the StateChangeDefinition field value if set, zero value otherwise.
 func (o *AlarmRecord) GetStateChangeDefinition() []map[string]interface{} {
-	if o == nil || isNil(o.StateChangeDefinition) {
+	if o == nil || IsNil(o.StateChangeDefinition) {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -531,7 +531,7 @@ func (o *AlarmRecord) GetStateChangeDefinition() []map[string]interface{} {
 // GetStateChangeDefinitionOk returns a tuple with the StateChangeDefinition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetStateChangeDefinitionOk() ([]map[string]interface{}, bool) {
-	if o == nil || isNil(o.StateChangeDefinition) {
+	if o == nil || IsNil(o.StateChangeDefinition) {
 		return nil, false
 	}
 	return o.StateChangeDefinition, true
@@ -539,7 +539,7 @@ func (o *AlarmRecord) GetStateChangeDefinitionOk() ([]map[string]interface{}, bo
 
 // HasStateChangeDefinition returns a boolean if a field has been set.
 func (o *AlarmRecord) HasStateChangeDefinition() bool {
-	if o != nil && !isNil(o.StateChangeDefinition) {
+	if o != nil && !IsNil(o.StateChangeDefinition) {
 		return true
 	}
 
@@ -553,7 +553,7 @@ func (o *AlarmRecord) SetStateChangeDefinition(v []map[string]interface{}) {
 
 // GetMonitoredAttributes returns the MonitoredAttributes field value if set, zero value otherwise.
 func (o *AlarmRecord) GetMonitoredAttributes() map[string]interface{} {
-	if o == nil || isNil(o.MonitoredAttributes) {
+	if o == nil || IsNil(o.MonitoredAttributes) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -563,7 +563,7 @@ func (o *AlarmRecord) GetMonitoredAttributes() map[string]interface{} {
 // GetMonitoredAttributesOk returns a tuple with the MonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetMonitoredAttributesOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.MonitoredAttributes) {
+	if o == nil || IsNil(o.MonitoredAttributes) {
 		return map[string]interface{}{}, false
 	}
 	return o.MonitoredAttributes, true
@@ -571,7 +571,7 @@ func (o *AlarmRecord) GetMonitoredAttributesOk() (map[string]interface{}, bool) 
 
 // HasMonitoredAttributes returns a boolean if a field has been set.
 func (o *AlarmRecord) HasMonitoredAttributes() bool {
-	if o != nil && !isNil(o.MonitoredAttributes) {
+	if o != nil && !IsNil(o.MonitoredAttributes) {
 		return true
 	}
 
@@ -585,7 +585,7 @@ func (o *AlarmRecord) SetMonitoredAttributes(v map[string]interface{}) {
 
 // GetProposedRepairActions returns the ProposedRepairActions field value if set, zero value otherwise.
 func (o *AlarmRecord) GetProposedRepairActions() string {
-	if o == nil || isNil(o.ProposedRepairActions) {
+	if o == nil || IsNil(o.ProposedRepairActions) {
 		var ret string
 		return ret
 	}
@@ -595,7 +595,7 @@ func (o *AlarmRecord) GetProposedRepairActions() string {
 // GetProposedRepairActionsOk returns a tuple with the ProposedRepairActions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetProposedRepairActionsOk() (*string, bool) {
-	if o == nil || isNil(o.ProposedRepairActions) {
+	if o == nil || IsNil(o.ProposedRepairActions) {
 		return nil, false
 	}
 	return o.ProposedRepairActions, true
@@ -603,7 +603,7 @@ func (o *AlarmRecord) GetProposedRepairActionsOk() (*string, bool) {
 
 // HasProposedRepairActions returns a boolean if a field has been set.
 func (o *AlarmRecord) HasProposedRepairActions() bool {
-	if o != nil && !isNil(o.ProposedRepairActions) {
+	if o != nil && !IsNil(o.ProposedRepairActions) {
 		return true
 	}
 
@@ -617,7 +617,7 @@ func (o *AlarmRecord) SetProposedRepairActions(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -627,7 +627,7 @@ func (o *AlarmRecord) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -635,7 +635,7 @@ func (o *AlarmRecord) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -649,7 +649,7 @@ func (o *AlarmRecord) SetAdditionalText(v string) {
 
 // GetAdditionalInformation returns the AdditionalInformation field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAdditionalInformation() map[string]interface{} {
-	if o == nil || isNil(o.AdditionalInformation) {
+	if o == nil || IsNil(o.AdditionalInformation) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -659,7 +659,7 @@ func (o *AlarmRecord) GetAdditionalInformation() map[string]interface{} {
 // GetAdditionalInformationOk returns a tuple with the AdditionalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAdditionalInformationOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.AdditionalInformation) {
+	if o == nil || IsNil(o.AdditionalInformation) {
 		return map[string]interface{}{}, false
 	}
 	return o.AdditionalInformation, true
@@ -667,7 +667,7 @@ func (o *AlarmRecord) GetAdditionalInformationOk() (map[string]interface{}, bool
 
 // HasAdditionalInformation returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAdditionalInformation() bool {
-	if o != nil && !isNil(o.AdditionalInformation) {
+	if o != nil && !IsNil(o.AdditionalInformation) {
 		return true
 	}
 
@@ -681,7 +681,7 @@ func (o *AlarmRecord) SetAdditionalInformation(v map[string]interface{}) {
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *AlarmRecord) GetRootCauseIndicator() bool {
-	if o == nil || isNil(o.RootCauseIndicator) {
+	if o == nil || IsNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -691,7 +691,7 @@ func (o *AlarmRecord) GetRootCauseIndicator() bool {
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.RootCauseIndicator) {
+	if o == nil || IsNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -699,7 +699,7 @@ func (o *AlarmRecord) GetRootCauseIndicatorOk() (*bool, bool) {
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *AlarmRecord) HasRootCauseIndicator() bool {
-	if o != nil && !isNil(o.RootCauseIndicator) {
+	if o != nil && !IsNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -713,7 +713,7 @@ func (o *AlarmRecord) SetRootCauseIndicator(v bool) {
 
 // GetAckTime returns the AckTime field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAckTime() time.Time {
-	if o == nil || isNil(o.AckTime) {
+	if o == nil || IsNil(o.AckTime) {
 		var ret time.Time
 		return ret
 	}
@@ -723,7 +723,7 @@ func (o *AlarmRecord) GetAckTime() time.Time {
 // GetAckTimeOk returns a tuple with the AckTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAckTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.AckTime) {
+	if o == nil || IsNil(o.AckTime) {
 		return nil, false
 	}
 	return o.AckTime, true
@@ -731,7 +731,7 @@ func (o *AlarmRecord) GetAckTimeOk() (*time.Time, bool) {
 
 // HasAckTime returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAckTime() bool {
-	if o != nil && !isNil(o.AckTime) {
+	if o != nil && !IsNil(o.AckTime) {
 		return true
 	}
 
@@ -745,7 +745,7 @@ func (o *AlarmRecord) SetAckTime(v time.Time) {
 
 // GetAckUserId returns the AckUserId field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAckUserId() string {
-	if o == nil || isNil(o.AckUserId) {
+	if o == nil || IsNil(o.AckUserId) {
 		var ret string
 		return ret
 	}
@@ -755,7 +755,7 @@ func (o *AlarmRecord) GetAckUserId() string {
 // GetAckUserIdOk returns a tuple with the AckUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAckUserIdOk() (*string, bool) {
-	if o == nil || isNil(o.AckUserId) {
+	if o == nil || IsNil(o.AckUserId) {
 		return nil, false
 	}
 	return o.AckUserId, true
@@ -763,7 +763,7 @@ func (o *AlarmRecord) GetAckUserIdOk() (*string, bool) {
 
 // HasAckUserId returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAckUserId() bool {
-	if o != nil && !isNil(o.AckUserId) {
+	if o != nil && !IsNil(o.AckUserId) {
 		return true
 	}
 
@@ -777,7 +777,7 @@ func (o *AlarmRecord) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAckSystemId() string {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -787,7 +787,7 @@ func (o *AlarmRecord) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -795,7 +795,7 @@ func (o *AlarmRecord) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAckSystemId() bool {
-	if o != nil && !isNil(o.AckSystemId) {
+	if o != nil && !IsNil(o.AckSystemId) {
 		return true
 	}
 
@@ -809,7 +809,7 @@ func (o *AlarmRecord) SetAckSystemId(v string) {
 
 // GetAckState returns the AckState field value if set, zero value otherwise.
 func (o *AlarmRecord) GetAckState() AckState {
-	if o == nil || isNil(o.AckState) {
+	if o == nil || IsNil(o.AckState) {
 		var ret AckState
 		return ret
 	}
@@ -819,7 +819,7 @@ func (o *AlarmRecord) GetAckState() AckState {
 // GetAckStateOk returns a tuple with the AckState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetAckStateOk() (*AckState, bool) {
-	if o == nil || isNil(o.AckState) {
+	if o == nil || IsNil(o.AckState) {
 		return nil, false
 	}
 	return o.AckState, true
@@ -827,7 +827,7 @@ func (o *AlarmRecord) GetAckStateOk() (*AckState, bool) {
 
 // HasAckState returns a boolean if a field has been set.
 func (o *AlarmRecord) HasAckState() bool {
-	if o != nil && !isNil(o.AckState) {
+	if o != nil && !IsNil(o.AckState) {
 		return true
 	}
 
@@ -841,7 +841,7 @@ func (o *AlarmRecord) SetAckState(v AckState) {
 
 // GetClearUserId returns the ClearUserId field value if set, zero value otherwise.
 func (o *AlarmRecord) GetClearUserId() string {
-	if o == nil || isNil(o.ClearUserId) {
+	if o == nil || IsNil(o.ClearUserId) {
 		var ret string
 		return ret
 	}
@@ -851,7 +851,7 @@ func (o *AlarmRecord) GetClearUserId() string {
 // GetClearUserIdOk returns a tuple with the ClearUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetClearUserIdOk() (*string, bool) {
-	if o == nil || isNil(o.ClearUserId) {
+	if o == nil || IsNil(o.ClearUserId) {
 		return nil, false
 	}
 	return o.ClearUserId, true
@@ -859,7 +859,7 @@ func (o *AlarmRecord) GetClearUserIdOk() (*string, bool) {
 
 // HasClearUserId returns a boolean if a field has been set.
 func (o *AlarmRecord) HasClearUserId() bool {
-	if o != nil && !isNil(o.ClearUserId) {
+	if o != nil && !IsNil(o.ClearUserId) {
 		return true
 	}
 
@@ -873,7 +873,7 @@ func (o *AlarmRecord) SetClearUserId(v string) {
 
 // GetClearSystemId returns the ClearSystemId field value if set, zero value otherwise.
 func (o *AlarmRecord) GetClearSystemId() string {
-	if o == nil || isNil(o.ClearSystemId) {
+	if o == nil || IsNil(o.ClearSystemId) {
 		var ret string
 		return ret
 	}
@@ -883,7 +883,7 @@ func (o *AlarmRecord) GetClearSystemId() string {
 // GetClearSystemIdOk returns a tuple with the ClearSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetClearSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.ClearSystemId) {
+	if o == nil || IsNil(o.ClearSystemId) {
 		return nil, false
 	}
 	return o.ClearSystemId, true
@@ -891,7 +891,7 @@ func (o *AlarmRecord) GetClearSystemIdOk() (*string, bool) {
 
 // HasClearSystemId returns a boolean if a field has been set.
 func (o *AlarmRecord) HasClearSystemId() bool {
-	if o != nil && !isNil(o.ClearSystemId) {
+	if o != nil && !IsNil(o.ClearSystemId) {
 		return true
 	}
 
@@ -905,7 +905,7 @@ func (o *AlarmRecord) SetClearSystemId(v string) {
 
 // GetServiceUser returns the ServiceUser field value if set, zero value otherwise.
 func (o *AlarmRecord) GetServiceUser() string {
-	if o == nil || isNil(o.ServiceUser) {
+	if o == nil || IsNil(o.ServiceUser) {
 		var ret string
 		return ret
 	}
@@ -915,7 +915,7 @@ func (o *AlarmRecord) GetServiceUser() string {
 // GetServiceUserOk returns a tuple with the ServiceUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetServiceUserOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceUser) {
+	if o == nil || IsNil(o.ServiceUser) {
 		return nil, false
 	}
 	return o.ServiceUser, true
@@ -923,7 +923,7 @@ func (o *AlarmRecord) GetServiceUserOk() (*string, bool) {
 
 // HasServiceUser returns a boolean if a field has been set.
 func (o *AlarmRecord) HasServiceUser() bool {
-	if o != nil && !isNil(o.ServiceUser) {
+	if o != nil && !IsNil(o.ServiceUser) {
 		return true
 	}
 
@@ -937,7 +937,7 @@ func (o *AlarmRecord) SetServiceUser(v string) {
 
 // GetServiceProvider returns the ServiceProvider field value if set, zero value otherwise.
 func (o *AlarmRecord) GetServiceProvider() string {
-	if o == nil || isNil(o.ServiceProvider) {
+	if o == nil || IsNil(o.ServiceProvider) {
 		var ret string
 		return ret
 	}
@@ -947,7 +947,7 @@ func (o *AlarmRecord) GetServiceProvider() string {
 // GetServiceProviderOk returns a tuple with the ServiceProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetServiceProviderOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceProvider) {
+	if o == nil || IsNil(o.ServiceProvider) {
 		return nil, false
 	}
 	return o.ServiceProvider, true
@@ -955,7 +955,7 @@ func (o *AlarmRecord) GetServiceProviderOk() (*string, bool) {
 
 // HasServiceProvider returns a boolean if a field has been set.
 func (o *AlarmRecord) HasServiceProvider() bool {
-	if o != nil && !isNil(o.ServiceProvider) {
+	if o != nil && !IsNil(o.ServiceProvider) {
 		return true
 	}
 
@@ -969,7 +969,7 @@ func (o *AlarmRecord) SetServiceProvider(v string) {
 
 // GetSecurityAlarmDetector returns the SecurityAlarmDetector field value if set, zero value otherwise.
 func (o *AlarmRecord) GetSecurityAlarmDetector() string {
-	if o == nil || isNil(o.SecurityAlarmDetector) {
+	if o == nil || IsNil(o.SecurityAlarmDetector) {
 		var ret string
 		return ret
 	}
@@ -979,7 +979,7 @@ func (o *AlarmRecord) GetSecurityAlarmDetector() string {
 // GetSecurityAlarmDetectorOk returns a tuple with the SecurityAlarmDetector field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmRecord) GetSecurityAlarmDetectorOk() (*string, bool) {
-	if o == nil || isNil(o.SecurityAlarmDetector) {
+	if o == nil || IsNil(o.SecurityAlarmDetector) {
 		return nil, false
 	}
 	return o.SecurityAlarmDetector, true
@@ -987,7 +987,7 @@ func (o *AlarmRecord) GetSecurityAlarmDetectorOk() (*string, bool) {
 
 // HasSecurityAlarmDetector returns a boolean if a field has been set.
 func (o *AlarmRecord) HasSecurityAlarmDetector() bool {
-	if o != nil && !isNil(o.SecurityAlarmDetector) {
+	if o != nil && !IsNil(o.SecurityAlarmDetector) {
 		return true
 	}
 
@@ -1000,7 +1000,7 @@ func (o *AlarmRecord) SetSecurityAlarmDetector(v string) {
 }
 
 func (o AlarmRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1009,91 +1009,91 @@ func (o AlarmRecord) MarshalJSON() ([]byte, error) {
 
 func (o AlarmRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ObjectInstance) {
+	if !IsNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !isNil(o.NotificationId) {
+	if !IsNil(o.NotificationId) {
 		toSerialize["notificationId"] = o.NotificationId
 	}
-	if !isNil(o.AlarmRaisedTime) {
+	if !IsNil(o.AlarmRaisedTime) {
 		toSerialize["alarmRaisedTime"] = o.AlarmRaisedTime
 	}
-	if !isNil(o.AlarmChangedTime) {
+	if !IsNil(o.AlarmChangedTime) {
 		toSerialize["alarmChangedTime"] = o.AlarmChangedTime
 	}
-	if !isNil(o.AlarmClearedTime) {
+	if !IsNil(o.AlarmClearedTime) {
 		toSerialize["alarmClearedTime"] = o.AlarmClearedTime
 	}
-	if !isNil(o.AlarmType) {
+	if !IsNil(o.AlarmType) {
 		toSerialize["alarmType"] = o.AlarmType
 	}
-	if !isNil(o.ProbableCause) {
+	if !IsNil(o.ProbableCause) {
 		toSerialize["probableCause"] = o.ProbableCause
 	}
-	if !isNil(o.SpecificProblem) {
+	if !IsNil(o.SpecificProblem) {
 		toSerialize["specificProblem"] = o.SpecificProblem
 	}
-	if !isNil(o.PerceivedSeverity) {
+	if !IsNil(o.PerceivedSeverity) {
 		toSerialize["perceivedSeverity"] = o.PerceivedSeverity
 	}
-	if !isNil(o.BackedUpStatus) {
+	if !IsNil(o.BackedUpStatus) {
 		toSerialize["backedUpStatus"] = o.BackedUpStatus
 	}
-	if !isNil(o.BackUpObject) {
+	if !IsNil(o.BackUpObject) {
 		toSerialize["backUpObject"] = o.BackUpObject
 	}
-	if !isNil(o.TrendIndication) {
+	if !IsNil(o.TrendIndication) {
 		toSerialize["trendIndication"] = o.TrendIndication
 	}
-	if !isNil(o.Thresholdinfo) {
+	if !IsNil(o.Thresholdinfo) {
 		toSerialize["thresholdinfo"] = o.Thresholdinfo
 	}
-	if !isNil(o.CorrelatedNotifications) {
+	if !IsNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !isNil(o.StateChangeDefinition) {
+	if !IsNil(o.StateChangeDefinition) {
 		toSerialize["stateChangeDefinition"] = o.StateChangeDefinition
 	}
-	if !isNil(o.MonitoredAttributes) {
+	if !IsNil(o.MonitoredAttributes) {
 		toSerialize["monitoredAttributes"] = o.MonitoredAttributes
 	}
-	if !isNil(o.ProposedRepairActions) {
+	if !IsNil(o.ProposedRepairActions) {
 		toSerialize["proposedRepairActions"] = o.ProposedRepairActions
 	}
-	if !isNil(o.AdditionalText) {
+	if !IsNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !isNil(o.AdditionalInformation) {
+	if !IsNil(o.AdditionalInformation) {
 		toSerialize["additionalInformation"] = o.AdditionalInformation
 	}
-	if !isNil(o.RootCauseIndicator) {
+	if !IsNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
-	if !isNil(o.AckTime) {
+	if !IsNil(o.AckTime) {
 		toSerialize["ackTime"] = o.AckTime
 	}
-	if !isNil(o.AckUserId) {
+	if !IsNil(o.AckUserId) {
 		toSerialize["ackUserId"] = o.AckUserId
 	}
-	if !isNil(o.AckSystemId) {
+	if !IsNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
-	if !isNil(o.AckState) {
+	if !IsNil(o.AckState) {
 		toSerialize["ackState"] = o.AckState
 	}
-	if !isNil(o.ClearUserId) {
+	if !IsNil(o.ClearUserId) {
 		toSerialize["clearUserId"] = o.ClearUserId
 	}
-	if !isNil(o.ClearSystemId) {
+	if !IsNil(o.ClearSystemId) {
 		toSerialize["clearSystemId"] = o.ClearSystemId
 	}
-	if !isNil(o.ServiceUser) {
+	if !IsNil(o.ServiceUser) {
 		toSerialize["serviceUser"] = o.ServiceUser
 	}
-	if !isNil(o.ServiceProvider) {
+	if !IsNil(o.ServiceProvider) {
 		toSerialize["serviceProvider"] = o.ServiceProvider
 	}
-	if !isNil(o.SecurityAlarmDetector) {
+	if !IsNil(o.SecurityAlarmDetector) {
 		toSerialize["securityAlarmDetector"] = o.SecurityAlarmDetector
 	}
 	return toSerialize, nil
@@ -1134,5 +1134,3 @@ func (v *NullableAlarmRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

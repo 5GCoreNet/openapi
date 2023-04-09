@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,18 +21,18 @@ var _ MappedNullable = &AuthorizationInfo{}
 // AuthorizationInfo Represents NIDD authorization information.
 type AuthorizationInfo struct {
 	Snssai Snssai `json:"snssai"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn string `json:"dnn"`
 	// String uniquely identifying MTC provider information.
 	MtcProviderInformation string `json:"mtcProviderInformation"`
 	// String providing an URI formatted according to RFC 3986.
-	AuthUpdateCallbackUri string `json:"authUpdateCallbackUri"`
-	AfId *string `json:"afId,omitempty"`
+	AuthUpdateCallbackUri string  `json:"authUpdateCallbackUri"`
+	AfId                  *string `json:"afId,omitempty"`
 	// Identity of the NEF
 	NefId *string `json:"nefId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	ValidityTime *time.Time `json:"validityTime,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
+	ValidityTime *time.Time   `json:"validityTime,omitempty"`
+	ContextInfo  *ContextInfo `json:"contextInfo,omitempty"`
 }
 
 // NewAuthorizationInfo instantiates a new AuthorizationInfo object
@@ -154,7 +154,7 @@ func (o *AuthorizationInfo) SetAuthUpdateCallbackUri(v string) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetAfId() string {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *AuthorizationInfo) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetAfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -172,7 +172,7 @@ func (o *AuthorizationInfo) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasAfId() bool {
-	if o != nil && !isNil(o.AfId) {
+	if o != nil && !IsNil(o.AfId) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *AuthorizationInfo) SetAfId(v string) {
 
 // GetNefId returns the NefId field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetNefId() string {
-	if o == nil || isNil(o.NefId) {
+	if o == nil || IsNil(o.NefId) {
 		var ret string
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *AuthorizationInfo) GetNefId() string {
 // GetNefIdOk returns a tuple with the NefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetNefIdOk() (*string, bool) {
-	if o == nil || isNil(o.NefId) {
+	if o == nil || IsNil(o.NefId) {
 		return nil, false
 	}
 	return o.NefId, true
@@ -204,7 +204,7 @@ func (o *AuthorizationInfo) GetNefIdOk() (*string, bool) {
 
 // HasNefId returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasNefId() bool {
-	if o != nil && !isNil(o.NefId) {
+	if o != nil && !IsNil(o.NefId) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *AuthorizationInfo) SetNefId(v string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *AuthorizationInfo) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -236,7 +236,7 @@ func (o *AuthorizationInfo) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *AuthorizationInfo) SetValidityTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *AuthorizationInfo) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -268,7 +268,7 @@ func (o *AuthorizationInfo) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *AuthorizationInfo) SetContextInfo(v ContextInfo) {
 }
 
 func (o AuthorizationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -294,16 +294,16 @@ func (o AuthorizationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	toSerialize["authUpdateCallbackUri"] = o.AuthUpdateCallbackUri
-	if !isNil(o.AfId) {
+	if !IsNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !isNil(o.NefId) {
+	if !IsNil(o.NefId) {
 		toSerialize["nefId"] = o.NefId
 	}
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
 	return toSerialize, nil
@@ -344,5 +344,3 @@ func (v *NullableAuthorizationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

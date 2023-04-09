@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &TraceDataResponse{}
 
 // TraceDataResponse struct for TraceDataResponse
 type TraceDataResponse struct {
-	TraceData NullableTraceData `json:"traceData,omitempty"`
-	SharedTraceDataId *string `json:"sharedTraceDataId,omitempty"`
+	TraceData         NullableTraceData `json:"traceData,omitempty"`
+	SharedTraceDataId *string           `json:"sharedTraceDataId,omitempty"`
 }
 
 // NewTraceDataResponse instantiates a new TraceDataResponse object
@@ -42,7 +42,7 @@ func NewTraceDataResponseWithDefaults() *TraceDataResponse {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TraceDataResponse) GetTraceData() TraceData {
-	if o == nil || isNil(o.TraceData.Get()) {
+	if o == nil || IsNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -72,6 +72,7 @@ func (o *TraceDataResponse) HasTraceData() bool {
 func (o *TraceDataResponse) SetTraceData(v TraceData) {
 	o.TraceData.Set(&v)
 }
+
 // SetTraceDataNil sets the value for TraceData to be an explicit nil
 func (o *TraceDataResponse) SetTraceDataNil() {
 	o.TraceData.Set(nil)
@@ -84,7 +85,7 @@ func (o *TraceDataResponse) UnsetTraceData() {
 
 // GetSharedTraceDataId returns the SharedTraceDataId field value if set, zero value otherwise.
 func (o *TraceDataResponse) GetSharedTraceDataId() string {
-	if o == nil || isNil(o.SharedTraceDataId) {
+	if o == nil || IsNil(o.SharedTraceDataId) {
 		var ret string
 		return ret
 	}
@@ -94,7 +95,7 @@ func (o *TraceDataResponse) GetSharedTraceDataId() string {
 // GetSharedTraceDataIdOk returns a tuple with the SharedTraceDataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceDataResponse) GetSharedTraceDataIdOk() (*string, bool) {
-	if o == nil || isNil(o.SharedTraceDataId) {
+	if o == nil || IsNil(o.SharedTraceDataId) {
 		return nil, false
 	}
 	return o.SharedTraceDataId, true
@@ -102,7 +103,7 @@ func (o *TraceDataResponse) GetSharedTraceDataIdOk() (*string, bool) {
 
 // HasSharedTraceDataId returns a boolean if a field has been set.
 func (o *TraceDataResponse) HasSharedTraceDataId() bool {
-	if o != nil && !isNil(o.SharedTraceDataId) {
+	if o != nil && !IsNil(o.SharedTraceDataId) {
 		return true
 	}
 
@@ -115,7 +116,7 @@ func (o *TraceDataResponse) SetSharedTraceDataId(v string) {
 }
 
 func (o TraceDataResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -127,7 +128,7 @@ func (o TraceDataResponse) ToMap() (map[string]interface{}, error) {
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !isNil(o.SharedTraceDataId) {
+	if !IsNil(o.SharedTraceDataId) {
 		toSerialize["sharedTraceDataId"] = o.SharedTraceDataId
 	}
 	return toSerialize, nil
@@ -168,5 +169,3 @@ func (v *NullableTraceDataResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

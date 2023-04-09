@@ -19,7 +19,7 @@ var _ MappedNullable = &SNssaiSmfInfoItem{}
 
 // SNssaiSmfInfoItem struct for SNssaiSmfInfoItem
 type SNssaiSmfInfoItem struct {
-	SNSSAI *Snssai `json:"sNSSAI,omitempty"`
+	SNSSAI         *Snssai          `json:"sNSSAI,omitempty"`
 	DnnSmfInfoList []DnnSmfInfoItem `json:"dnnSmfInfoList,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewSNssaiSmfInfoItemWithDefaults() *SNssaiSmfInfoItem {
 
 // GetSNSSAI returns the SNSSAI field value if set, zero value otherwise.
 func (o *SNssaiSmfInfoItem) GetSNSSAI() Snssai {
-	if o == nil || isNil(o.SNSSAI) {
+	if o == nil || IsNil(o.SNSSAI) {
 		var ret Snssai
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SNssaiSmfInfoItem) GetSNSSAI() Snssai {
 // GetSNSSAIOk returns a tuple with the SNSSAI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SNssaiSmfInfoItem) GetSNSSAIOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SNSSAI) {
+	if o == nil || IsNil(o.SNSSAI) {
 		return nil, false
 	}
 	return o.SNSSAI, true
@@ -60,7 +60,7 @@ func (o *SNssaiSmfInfoItem) GetSNSSAIOk() (*Snssai, bool) {
 
 // HasSNSSAI returns a boolean if a field has been set.
 func (o *SNssaiSmfInfoItem) HasSNSSAI() bool {
-	if o != nil && !isNil(o.SNSSAI) {
+	if o != nil && !IsNil(o.SNSSAI) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SNssaiSmfInfoItem) SetSNSSAI(v Snssai) {
 
 // GetDnnSmfInfoList returns the DnnSmfInfoList field value if set, zero value otherwise.
 func (o *SNssaiSmfInfoItem) GetDnnSmfInfoList() []DnnSmfInfoItem {
-	if o == nil || isNil(o.DnnSmfInfoList) {
+	if o == nil || IsNil(o.DnnSmfInfoList) {
 		var ret []DnnSmfInfoItem
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SNssaiSmfInfoItem) GetDnnSmfInfoList() []DnnSmfInfoItem {
 // GetDnnSmfInfoListOk returns a tuple with the DnnSmfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SNssaiSmfInfoItem) GetDnnSmfInfoListOk() ([]DnnSmfInfoItem, bool) {
-	if o == nil || isNil(o.DnnSmfInfoList) {
+	if o == nil || IsNil(o.DnnSmfInfoList) {
 		return nil, false
 	}
 	return o.DnnSmfInfoList, true
@@ -92,7 +92,7 @@ func (o *SNssaiSmfInfoItem) GetDnnSmfInfoListOk() ([]DnnSmfInfoItem, bool) {
 
 // HasDnnSmfInfoList returns a boolean if a field has been set.
 func (o *SNssaiSmfInfoItem) HasDnnSmfInfoList() bool {
-	if o != nil && !isNil(o.DnnSmfInfoList) {
+	if o != nil && !IsNil(o.DnnSmfInfoList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SNssaiSmfInfoItem) SetDnnSmfInfoList(v []DnnSmfInfoItem) {
 }
 
 func (o SNssaiSmfInfoItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SNssaiSmfInfoItem) MarshalJSON() ([]byte, error) {
 
 func (o SNssaiSmfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SNSSAI) {
+	if !IsNil(o.SNSSAI) {
 		toSerialize["sNSSAI"] = o.SNSSAI
 	}
-	if !isNil(o.DnnSmfInfoList) {
+	if !IsNil(o.DnnSmfInfoList) {
 		toSerialize["dnnSmfInfoList"] = o.DnnSmfInfoList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSNssaiSmfInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

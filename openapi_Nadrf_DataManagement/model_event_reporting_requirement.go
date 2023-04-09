@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,24 +21,24 @@ var _ MappedNullable = &EventReportingRequirement{}
 // EventReportingRequirement Represents the type of reporting that the subscription requires.
 type EventReportingRequirement struct {
 	Accuracy *Accuracy `json:"accuracy,omitempty"`
-	// Each element indicates the preferred accuracy level per analytics subset. It may be present if the \"listOfAnaSubsets\" attribute is present in the subscription request when the subscription event is NF_LOAD, UE_COMM, DISPERSION, NETWORK_PERFORMANCE, WLAN_PERFORMANCE, DN_PERFORMANCE or SERVICE_EXPERIENCE. 
+	// Each element indicates the preferred accuracy level per analytics subset. It may be present if the \"listOfAnaSubsets\" attribute is present in the subscription request when the subscription event is NF_LOAD, UE_COMM, DISPERSION, NETWORK_PERFORMANCE, WLAN_PERFORMANCE, DN_PERFORMANCE or SERVICE_EXPERIENCE.
 	AccPerSubset []Accuracy `json:"accPerSubset,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	StartTs *time.Time `json:"startTs,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	EndTs *time.Time `json:"endTs,omitempty"`
-	// Offset period in units of seconds to the reporting time, if the value is negative means  statistics in the past offset period, otherwise a positive value means prediction in the  future offset period. May be present if the \"repPeriod\" attribute is included within the  \"evtReq\" attribute. 
+	// Offset period in units of seconds to the reporting time, if the value is negative means  statistics in the past offset period, otherwise a positive value means prediction in the  future offset period. May be present if the \"repPeriod\" attribute is included within the  \"evtReq\" attribute.
 	OffsetPeriod *int32 `json:"offsetPeriod,omitempty"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
 	SampRatio *int32 `json:"sampRatio,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	MaxObjectNbr *int32 `json:"maxObjectNbr,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	MaxSupiNbr *int32 `json:"maxSupiNbr,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeAnaNeeded *time.Time `json:"timeAnaNeeded,omitempty"`
-	AnaMeta []AnalyticsMetadata `json:"anaMeta,omitempty"`
-	AnaMetaInd *AnalyticsMetadataIndication `json:"anaMetaInd,omitempty"`
+	TimeAnaNeeded *time.Time                   `json:"timeAnaNeeded,omitempty"`
+	AnaMeta       []AnalyticsMetadata          `json:"anaMeta,omitempty"`
+	AnaMetaInd    *AnalyticsMetadataIndication `json:"anaMetaInd,omitempty"`
 }
 
 // NewEventReportingRequirement instantiates a new EventReportingRequirement object
@@ -60,7 +60,7 @@ func NewEventReportingRequirementWithDefaults() *EventReportingRequirement {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetAccuracy() Accuracy {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret Accuracy
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *EventReportingRequirement) GetAccuracy() Accuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetAccuracyOk() (*Accuracy, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -78,7 +78,7 @@ func (o *EventReportingRequirement) GetAccuracyOk() (*Accuracy, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *EventReportingRequirement) SetAccuracy(v Accuracy) {
 
 // GetAccPerSubset returns the AccPerSubset field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetAccPerSubset() []Accuracy {
-	if o == nil || isNil(o.AccPerSubset) {
+	if o == nil || IsNil(o.AccPerSubset) {
 		var ret []Accuracy
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *EventReportingRequirement) GetAccPerSubset() []Accuracy {
 // GetAccPerSubsetOk returns a tuple with the AccPerSubset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetAccPerSubsetOk() ([]Accuracy, bool) {
-	if o == nil || isNil(o.AccPerSubset) {
+	if o == nil || IsNil(o.AccPerSubset) {
 		return nil, false
 	}
 	return o.AccPerSubset, true
@@ -110,7 +110,7 @@ func (o *EventReportingRequirement) GetAccPerSubsetOk() ([]Accuracy, bool) {
 
 // HasAccPerSubset returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasAccPerSubset() bool {
-	if o != nil && !isNil(o.AccPerSubset) {
+	if o != nil && !IsNil(o.AccPerSubset) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *EventReportingRequirement) SetAccPerSubset(v []Accuracy) {
 
 // GetStartTs returns the StartTs field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetStartTs() time.Time {
-	if o == nil || isNil(o.StartTs) {
+	if o == nil || IsNil(o.StartTs) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *EventReportingRequirement) GetStartTs() time.Time {
 // GetStartTsOk returns a tuple with the StartTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetStartTsOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTs) {
+	if o == nil || IsNil(o.StartTs) {
 		return nil, false
 	}
 	return o.StartTs, true
@@ -142,7 +142,7 @@ func (o *EventReportingRequirement) GetStartTsOk() (*time.Time, bool) {
 
 // HasStartTs returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasStartTs() bool {
-	if o != nil && !isNil(o.StartTs) {
+	if o != nil && !IsNil(o.StartTs) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *EventReportingRequirement) SetStartTs(v time.Time) {
 
 // GetEndTs returns the EndTs field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetEndTs() time.Time {
-	if o == nil || isNil(o.EndTs) {
+	if o == nil || IsNil(o.EndTs) {
 		var ret time.Time
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *EventReportingRequirement) GetEndTs() time.Time {
 // GetEndTsOk returns a tuple with the EndTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetEndTsOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EndTs) {
+	if o == nil || IsNil(o.EndTs) {
 		return nil, false
 	}
 	return o.EndTs, true
@@ -174,7 +174,7 @@ func (o *EventReportingRequirement) GetEndTsOk() (*time.Time, bool) {
 
 // HasEndTs returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasEndTs() bool {
-	if o != nil && !isNil(o.EndTs) {
+	if o != nil && !IsNil(o.EndTs) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *EventReportingRequirement) SetEndTs(v time.Time) {
 
 // GetOffsetPeriod returns the OffsetPeriod field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetOffsetPeriod() int32 {
-	if o == nil || isNil(o.OffsetPeriod) {
+	if o == nil || IsNil(o.OffsetPeriod) {
 		var ret int32
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *EventReportingRequirement) GetOffsetPeriod() int32 {
 // GetOffsetPeriodOk returns a tuple with the OffsetPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetOffsetPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.OffsetPeriod) {
+	if o == nil || IsNil(o.OffsetPeriod) {
 		return nil, false
 	}
 	return o.OffsetPeriod, true
@@ -206,7 +206,7 @@ func (o *EventReportingRequirement) GetOffsetPeriodOk() (*int32, bool) {
 
 // HasOffsetPeriod returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasOffsetPeriod() bool {
-	if o != nil && !isNil(o.OffsetPeriod) {
+	if o != nil && !IsNil(o.OffsetPeriod) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *EventReportingRequirement) SetOffsetPeriod(v int32) {
 
 // GetSampRatio returns the SampRatio field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetSampRatio() int32 {
-	if o == nil || isNil(o.SampRatio) {
+	if o == nil || IsNil(o.SampRatio) {
 		var ret int32
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *EventReportingRequirement) GetSampRatio() int32 {
 // GetSampRatioOk returns a tuple with the SampRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetSampRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.SampRatio) {
+	if o == nil || IsNil(o.SampRatio) {
 		return nil, false
 	}
 	return o.SampRatio, true
@@ -238,7 +238,7 @@ func (o *EventReportingRequirement) GetSampRatioOk() (*int32, bool) {
 
 // HasSampRatio returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasSampRatio() bool {
-	if o != nil && !isNil(o.SampRatio) {
+	if o != nil && !IsNil(o.SampRatio) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *EventReportingRequirement) SetSampRatio(v int32) {
 
 // GetMaxObjectNbr returns the MaxObjectNbr field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetMaxObjectNbr() int32 {
-	if o == nil || isNil(o.MaxObjectNbr) {
+	if o == nil || IsNil(o.MaxObjectNbr) {
 		var ret int32
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *EventReportingRequirement) GetMaxObjectNbr() int32 {
 // GetMaxObjectNbrOk returns a tuple with the MaxObjectNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetMaxObjectNbrOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxObjectNbr) {
+	if o == nil || IsNil(o.MaxObjectNbr) {
 		return nil, false
 	}
 	return o.MaxObjectNbr, true
@@ -270,7 +270,7 @@ func (o *EventReportingRequirement) GetMaxObjectNbrOk() (*int32, bool) {
 
 // HasMaxObjectNbr returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasMaxObjectNbr() bool {
-	if o != nil && !isNil(o.MaxObjectNbr) {
+	if o != nil && !IsNil(o.MaxObjectNbr) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *EventReportingRequirement) SetMaxObjectNbr(v int32) {
 
 // GetMaxSupiNbr returns the MaxSupiNbr field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetMaxSupiNbr() int32 {
-	if o == nil || isNil(o.MaxSupiNbr) {
+	if o == nil || IsNil(o.MaxSupiNbr) {
 		var ret int32
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *EventReportingRequirement) GetMaxSupiNbr() int32 {
 // GetMaxSupiNbrOk returns a tuple with the MaxSupiNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetMaxSupiNbrOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxSupiNbr) {
+	if o == nil || IsNil(o.MaxSupiNbr) {
 		return nil, false
 	}
 	return o.MaxSupiNbr, true
@@ -302,7 +302,7 @@ func (o *EventReportingRequirement) GetMaxSupiNbrOk() (*int32, bool) {
 
 // HasMaxSupiNbr returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasMaxSupiNbr() bool {
-	if o != nil && !isNil(o.MaxSupiNbr) {
+	if o != nil && !IsNil(o.MaxSupiNbr) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *EventReportingRequirement) SetMaxSupiNbr(v int32) {
 
 // GetTimeAnaNeeded returns the TimeAnaNeeded field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetTimeAnaNeeded() time.Time {
-	if o == nil || isNil(o.TimeAnaNeeded) {
+	if o == nil || IsNil(o.TimeAnaNeeded) {
 		var ret time.Time
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *EventReportingRequirement) GetTimeAnaNeeded() time.Time {
 // GetTimeAnaNeededOk returns a tuple with the TimeAnaNeeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetTimeAnaNeededOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeAnaNeeded) {
+	if o == nil || IsNil(o.TimeAnaNeeded) {
 		return nil, false
 	}
 	return o.TimeAnaNeeded, true
@@ -334,7 +334,7 @@ func (o *EventReportingRequirement) GetTimeAnaNeededOk() (*time.Time, bool) {
 
 // HasTimeAnaNeeded returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasTimeAnaNeeded() bool {
-	if o != nil && !isNil(o.TimeAnaNeeded) {
+	if o != nil && !IsNil(o.TimeAnaNeeded) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *EventReportingRequirement) SetTimeAnaNeeded(v time.Time) {
 
 // GetAnaMeta returns the AnaMeta field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetAnaMeta() []AnalyticsMetadata {
-	if o == nil || isNil(o.AnaMeta) {
+	if o == nil || IsNil(o.AnaMeta) {
 		var ret []AnalyticsMetadata
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *EventReportingRequirement) GetAnaMeta() []AnalyticsMetadata {
 // GetAnaMetaOk returns a tuple with the AnaMeta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetAnaMetaOk() ([]AnalyticsMetadata, bool) {
-	if o == nil || isNil(o.AnaMeta) {
+	if o == nil || IsNil(o.AnaMeta) {
 		return nil, false
 	}
 	return o.AnaMeta, true
@@ -366,7 +366,7 @@ func (o *EventReportingRequirement) GetAnaMetaOk() ([]AnalyticsMetadata, bool) {
 
 // HasAnaMeta returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasAnaMeta() bool {
-	if o != nil && !isNil(o.AnaMeta) {
+	if o != nil && !IsNil(o.AnaMeta) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *EventReportingRequirement) SetAnaMeta(v []AnalyticsMetadata) {
 
 // GetAnaMetaInd returns the AnaMetaInd field value if set, zero value otherwise.
 func (o *EventReportingRequirement) GetAnaMetaInd() AnalyticsMetadataIndication {
-	if o == nil || isNil(o.AnaMetaInd) {
+	if o == nil || IsNil(o.AnaMetaInd) {
 		var ret AnalyticsMetadataIndication
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *EventReportingRequirement) GetAnaMetaInd() AnalyticsMetadataIndication 
 // GetAnaMetaIndOk returns a tuple with the AnaMetaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingRequirement) GetAnaMetaIndOk() (*AnalyticsMetadataIndication, bool) {
-	if o == nil || isNil(o.AnaMetaInd) {
+	if o == nil || IsNil(o.AnaMetaInd) {
 		return nil, false
 	}
 	return o.AnaMetaInd, true
@@ -398,7 +398,7 @@ func (o *EventReportingRequirement) GetAnaMetaIndOk() (*AnalyticsMetadataIndicat
 
 // HasAnaMetaInd returns a boolean if a field has been set.
 func (o *EventReportingRequirement) HasAnaMetaInd() bool {
-	if o != nil && !isNil(o.AnaMetaInd) {
+	if o != nil && !IsNil(o.AnaMetaInd) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *EventReportingRequirement) SetAnaMetaInd(v AnalyticsMetadataIndication)
 }
 
 func (o EventReportingRequirement) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,37 +420,37 @@ func (o EventReportingRequirement) MarshalJSON() ([]byte, error) {
 
 func (o EventReportingRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
-	if !isNil(o.AccPerSubset) {
+	if !IsNil(o.AccPerSubset) {
 		toSerialize["accPerSubset"] = o.AccPerSubset
 	}
-	if !isNil(o.StartTs) {
+	if !IsNil(o.StartTs) {
 		toSerialize["startTs"] = o.StartTs
 	}
-	if !isNil(o.EndTs) {
+	if !IsNil(o.EndTs) {
 		toSerialize["endTs"] = o.EndTs
 	}
-	if !isNil(o.OffsetPeriod) {
+	if !IsNil(o.OffsetPeriod) {
 		toSerialize["offsetPeriod"] = o.OffsetPeriod
 	}
-	if !isNil(o.SampRatio) {
+	if !IsNil(o.SampRatio) {
 		toSerialize["sampRatio"] = o.SampRatio
 	}
-	if !isNil(o.MaxObjectNbr) {
+	if !IsNil(o.MaxObjectNbr) {
 		toSerialize["maxObjectNbr"] = o.MaxObjectNbr
 	}
-	if !isNil(o.MaxSupiNbr) {
+	if !IsNil(o.MaxSupiNbr) {
 		toSerialize["maxSupiNbr"] = o.MaxSupiNbr
 	}
-	if !isNil(o.TimeAnaNeeded) {
+	if !IsNil(o.TimeAnaNeeded) {
 		toSerialize["timeAnaNeeded"] = o.TimeAnaNeeded
 	}
-	if !isNil(o.AnaMeta) {
+	if !IsNil(o.AnaMeta) {
 		toSerialize["anaMeta"] = o.AnaMeta
 	}
-	if !isNil(o.AnaMetaInd) {
+	if !IsNil(o.AnaMetaInd) {
 		toSerialize["anaMetaInd"] = o.AnaMetaInd
 	}
 	return toSerialize, nil
@@ -491,5 +491,3 @@ func (v *NullableEventReportingRequirement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

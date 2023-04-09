@@ -1,7 +1,7 @@
 /*
 3gpp-network-parameter-configuration
 
-API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -17,7 +17,7 @@ import (
 // checks if the Ipv6Addr type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Ipv6Addr{}
 
-// Ipv6Addr String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used. 
+// Ipv6Addr String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
 type Ipv6Addr struct {
 }
 
@@ -39,7 +39,7 @@ func NewIpv6AddrWithDefaults() *Ipv6Addr {
 }
 
 func (o Ipv6Addr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -86,5 +86,3 @@ func (v *NullableIpv6Addr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // GbaAuthType struct for GbaAuthType
 type GbaAuthType struct {
-	GbaAuthTypeAnyOf *GbaAuthTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GbaAuthType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into GbaAuthTypeAnyOf
-	err = json.Unmarshal(data, &dst.GbaAuthTypeAnyOf);
-	if err == nil {
-		jsonGbaAuthTypeAnyOf, _ := json.Marshal(dst.GbaAuthTypeAnyOf)
-		if string(jsonGbaAuthTypeAnyOf) == "{}" { // empty struct
-			dst.GbaAuthTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.GbaAuthTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.GbaAuthTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *GbaAuthType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *GbaAuthType) MarshalJSON() ([]byte, error) {
-	if src.GbaAuthTypeAnyOf != nil {
-		return json.Marshal(&src.GbaAuthTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableGbaAuthType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

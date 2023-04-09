@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &FlowInfo{}
 type FlowInfo struct {
 	// Indicates the IP flow identifier.
 	FlowId int32 `json:"flowId"`
-	// Indicates the packet filters of the IP flow. Refer to clause 5.3.8 of 3GPP TS 29.214 for encoding. It shall contain UL and/or DL IP flow description. 
+	// Indicates the packet filters of the IP flow. Refer to clause 5.3.8 of 3GPP TS 29.214 for encoding. It shall contain UL and/or DL IP flow description.
 	FlowDescriptions []string `json:"flowDescriptions,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *FlowInfo) SetFlowId(v int32) {
 
 // GetFlowDescriptions returns the FlowDescriptions field value if set, zero value otherwise.
 func (o *FlowInfo) GetFlowDescriptions() []string {
-	if o == nil || isNil(o.FlowDescriptions) {
+	if o == nil || IsNil(o.FlowDescriptions) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *FlowInfo) GetFlowDescriptions() []string {
 // GetFlowDescriptionsOk returns a tuple with the FlowDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInfo) GetFlowDescriptionsOk() ([]string, bool) {
-	if o == nil || isNil(o.FlowDescriptions) {
+	if o == nil || IsNil(o.FlowDescriptions) {
 		return nil, false
 	}
 	return o.FlowDescriptions, true
@@ -87,7 +87,7 @@ func (o *FlowInfo) GetFlowDescriptionsOk() ([]string, bool) {
 
 // HasFlowDescriptions returns a boolean if a field has been set.
 func (o *FlowInfo) HasFlowDescriptions() bool {
-	if o != nil && !isNil(o.FlowDescriptions) {
+	if o != nil && !IsNil(o.FlowDescriptions) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *FlowInfo) SetFlowDescriptions(v []string) {
 }
 
 func (o FlowInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o FlowInfo) MarshalJSON() ([]byte, error) {
 func (o FlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["flowId"] = o.FlowId
-	if !isNil(o.FlowDescriptions) {
+	if !IsNil(o.FlowDescriptions) {
 		toSerialize["flowDescriptions"] = o.FlowDescriptions
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableFlowInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

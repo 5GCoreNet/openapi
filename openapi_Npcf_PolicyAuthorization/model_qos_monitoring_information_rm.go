@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the QosMonitoringInformationRm type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &QosMonitoringInformationRm{}
 
-// QosMonitoringInformationRm This data type is defined in the same way as the QosMonitoringInformation data type, but with the OpenAPI nullable property set to true. 
+// QosMonitoringInformationRm This data type is defined in the same way as the QosMonitoringInformation data type, but with the OpenAPI nullable property set to true.
 type QosMonitoringInformationRm struct {
 	RepThreshDl *int32 `json:"repThreshDl,omitempty"`
 	RepThreshUl *int32 `json:"repThreshUl,omitempty"`
@@ -43,7 +43,7 @@ func NewQosMonitoringInformationRmWithDefaults() *QosMonitoringInformationRm {
 
 // GetRepThreshDl returns the RepThreshDl field value if set, zero value otherwise.
 func (o *QosMonitoringInformationRm) GetRepThreshDl() int32 {
-	if o == nil || isNil(o.RepThreshDl) {
+	if o == nil || IsNil(o.RepThreshDl) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *QosMonitoringInformationRm) GetRepThreshDl() int32 {
 // GetRepThreshDlOk returns a tuple with the RepThreshDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInformationRm) GetRepThreshDlOk() (*int32, bool) {
-	if o == nil || isNil(o.RepThreshDl) {
+	if o == nil || IsNil(o.RepThreshDl) {
 		return nil, false
 	}
 	return o.RepThreshDl, true
@@ -61,7 +61,7 @@ func (o *QosMonitoringInformationRm) GetRepThreshDlOk() (*int32, bool) {
 
 // HasRepThreshDl returns a boolean if a field has been set.
 func (o *QosMonitoringInformationRm) HasRepThreshDl() bool {
-	if o != nil && !isNil(o.RepThreshDl) {
+	if o != nil && !IsNil(o.RepThreshDl) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *QosMonitoringInformationRm) SetRepThreshDl(v int32) {
 
 // GetRepThreshUl returns the RepThreshUl field value if set, zero value otherwise.
 func (o *QosMonitoringInformationRm) GetRepThreshUl() int32 {
-	if o == nil || isNil(o.RepThreshUl) {
+	if o == nil || IsNil(o.RepThreshUl) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *QosMonitoringInformationRm) GetRepThreshUl() int32 {
 // GetRepThreshUlOk returns a tuple with the RepThreshUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInformationRm) GetRepThreshUlOk() (*int32, bool) {
-	if o == nil || isNil(o.RepThreshUl) {
+	if o == nil || IsNil(o.RepThreshUl) {
 		return nil, false
 	}
 	return o.RepThreshUl, true
@@ -93,7 +93,7 @@ func (o *QosMonitoringInformationRm) GetRepThreshUlOk() (*int32, bool) {
 
 // HasRepThreshUl returns a boolean if a field has been set.
 func (o *QosMonitoringInformationRm) HasRepThreshUl() bool {
-	if o != nil && !isNil(o.RepThreshUl) {
+	if o != nil && !IsNil(o.RepThreshUl) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *QosMonitoringInformationRm) SetRepThreshUl(v int32) {
 
 // GetRepThreshRp returns the RepThreshRp field value if set, zero value otherwise.
 func (o *QosMonitoringInformationRm) GetRepThreshRp() int32 {
-	if o == nil || isNil(o.RepThreshRp) {
+	if o == nil || IsNil(o.RepThreshRp) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *QosMonitoringInformationRm) GetRepThreshRp() int32 {
 // GetRepThreshRpOk returns a tuple with the RepThreshRp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInformationRm) GetRepThreshRpOk() (*int32, bool) {
-	if o == nil || isNil(o.RepThreshRp) {
+	if o == nil || IsNil(o.RepThreshRp) {
 		return nil, false
 	}
 	return o.RepThreshRp, true
@@ -125,7 +125,7 @@ func (o *QosMonitoringInformationRm) GetRepThreshRpOk() (*int32, bool) {
 
 // HasRepThreshRp returns a boolean if a field has been set.
 func (o *QosMonitoringInformationRm) HasRepThreshRp() bool {
-	if o != nil && !isNil(o.RepThreshRp) {
+	if o != nil && !IsNil(o.RepThreshRp) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *QosMonitoringInformationRm) SetRepThreshRp(v int32) {
 }
 
 func (o QosMonitoringInformationRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o QosMonitoringInformationRm) MarshalJSON() ([]byte, error) {
 
 func (o QosMonitoringInformationRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RepThreshDl) {
+	if !IsNil(o.RepThreshDl) {
 		toSerialize["repThreshDl"] = o.RepThreshDl
 	}
-	if !isNil(o.RepThreshUl) {
+	if !IsNil(o.RepThreshUl) {
 		toSerialize["repThreshUl"] = o.RepThreshUl
 	}
-	if !isNil(o.RepThreshRp) {
+	if !IsNil(o.RepThreshRp) {
 		toSerialize["repThreshRp"] = o.RepThreshRp
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableQosMonitoringInformationRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

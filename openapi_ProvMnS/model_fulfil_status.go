@@ -20,7 +20,7 @@ type FulfilStatus string
 
 // List of FulfilStatus
 const (
-	FULFILLED FulfilStatus = "FULFILLED"
+	FULFILLED     FulfilStatus = "FULFILLED"
 	NOT_FULFILLED FulfilStatus = "NOT_FULFILLED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableFulfilStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

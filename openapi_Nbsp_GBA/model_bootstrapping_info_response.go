@@ -1,7 +1,7 @@
 /*
 GBA BSF Nbsp_GBA Service
 
-GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -27,9 +27,9 @@ type BootstrappingInfoResponse struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	KeyExpiryTime *time.Time `json:"keyExpiryTime,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	BootstrappingInfoCreationTime *time.Time `json:"bootstrappingInfoCreationTime,omitempty"`
-	UssList []UssListItem `json:"ussList,omitempty"`
-	GbaType *GbaType `json:"gbaType,omitempty"`
+	BootstrappingInfoCreationTime *time.Time    `json:"bootstrappingInfoCreationTime,omitempty"`
+	UssList                       []UssListItem `json:"ussList,omitempty"`
+	GbaType                       *GbaType      `json:"gbaType,omitempty"`
 	// IMS Private Identity of the UE
 	Impi *string `json:"impi,omitempty"`
 }
@@ -78,7 +78,7 @@ func (o *BootstrappingInfoResponse) SetMeKeyMaterial(v string) {
 
 // GetUiccKeyMaterial returns the UiccKeyMaterial field value if set, zero value otherwise.
 func (o *BootstrappingInfoResponse) GetUiccKeyMaterial() string {
-	if o == nil || isNil(o.UiccKeyMaterial) {
+	if o == nil || IsNil(o.UiccKeyMaterial) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *BootstrappingInfoResponse) GetUiccKeyMaterial() string {
 // GetUiccKeyMaterialOk returns a tuple with the UiccKeyMaterial field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoResponse) GetUiccKeyMaterialOk() (*string, bool) {
-	if o == nil || isNil(o.UiccKeyMaterial) {
+	if o == nil || IsNil(o.UiccKeyMaterial) {
 		return nil, false
 	}
 	return o.UiccKeyMaterial, true
@@ -96,7 +96,7 @@ func (o *BootstrappingInfoResponse) GetUiccKeyMaterialOk() (*string, bool) {
 
 // HasUiccKeyMaterial returns a boolean if a field has been set.
 func (o *BootstrappingInfoResponse) HasUiccKeyMaterial() bool {
-	if o != nil && !isNil(o.UiccKeyMaterial) {
+	if o != nil && !IsNil(o.UiccKeyMaterial) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *BootstrappingInfoResponse) SetUiccKeyMaterial(v string) {
 
 // GetKeyExpiryTime returns the KeyExpiryTime field value if set, zero value otherwise.
 func (o *BootstrappingInfoResponse) GetKeyExpiryTime() time.Time {
-	if o == nil || isNil(o.KeyExpiryTime) {
+	if o == nil || IsNil(o.KeyExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *BootstrappingInfoResponse) GetKeyExpiryTime() time.Time {
 // GetKeyExpiryTimeOk returns a tuple with the KeyExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoResponse) GetKeyExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.KeyExpiryTime) {
+	if o == nil || IsNil(o.KeyExpiryTime) {
 		return nil, false
 	}
 	return o.KeyExpiryTime, true
@@ -128,7 +128,7 @@ func (o *BootstrappingInfoResponse) GetKeyExpiryTimeOk() (*time.Time, bool) {
 
 // HasKeyExpiryTime returns a boolean if a field has been set.
 func (o *BootstrappingInfoResponse) HasKeyExpiryTime() bool {
-	if o != nil && !isNil(o.KeyExpiryTime) {
+	if o != nil && !IsNil(o.KeyExpiryTime) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *BootstrappingInfoResponse) SetKeyExpiryTime(v time.Time) {
 
 // GetBootstrappingInfoCreationTime returns the BootstrappingInfoCreationTime field value if set, zero value otherwise.
 func (o *BootstrappingInfoResponse) GetBootstrappingInfoCreationTime() time.Time {
-	if o == nil || isNil(o.BootstrappingInfoCreationTime) {
+	if o == nil || IsNil(o.BootstrappingInfoCreationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *BootstrappingInfoResponse) GetBootstrappingInfoCreationTime() time.Time
 // GetBootstrappingInfoCreationTimeOk returns a tuple with the BootstrappingInfoCreationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoResponse) GetBootstrappingInfoCreationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.BootstrappingInfoCreationTime) {
+	if o == nil || IsNil(o.BootstrappingInfoCreationTime) {
 		return nil, false
 	}
 	return o.BootstrappingInfoCreationTime, true
@@ -160,7 +160,7 @@ func (o *BootstrappingInfoResponse) GetBootstrappingInfoCreationTimeOk() (*time.
 
 // HasBootstrappingInfoCreationTime returns a boolean if a field has been set.
 func (o *BootstrappingInfoResponse) HasBootstrappingInfoCreationTime() bool {
-	if o != nil && !isNil(o.BootstrappingInfoCreationTime) {
+	if o != nil && !IsNil(o.BootstrappingInfoCreationTime) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *BootstrappingInfoResponse) SetBootstrappingInfoCreationTime(v time.Time
 
 // GetUssList returns the UssList field value if set, zero value otherwise.
 func (o *BootstrappingInfoResponse) GetUssList() []UssListItem {
-	if o == nil || isNil(o.UssList) {
+	if o == nil || IsNil(o.UssList) {
 		var ret []UssListItem
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *BootstrappingInfoResponse) GetUssList() []UssListItem {
 // GetUssListOk returns a tuple with the UssList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoResponse) GetUssListOk() ([]UssListItem, bool) {
-	if o == nil || isNil(o.UssList) {
+	if o == nil || IsNil(o.UssList) {
 		return nil, false
 	}
 	return o.UssList, true
@@ -192,7 +192,7 @@ func (o *BootstrappingInfoResponse) GetUssListOk() ([]UssListItem, bool) {
 
 // HasUssList returns a boolean if a field has been set.
 func (o *BootstrappingInfoResponse) HasUssList() bool {
-	if o != nil && !isNil(o.UssList) {
+	if o != nil && !IsNil(o.UssList) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *BootstrappingInfoResponse) SetUssList(v []UssListItem) {
 
 // GetGbaType returns the GbaType field value if set, zero value otherwise.
 func (o *BootstrappingInfoResponse) GetGbaType() GbaType {
-	if o == nil || isNil(o.GbaType) {
+	if o == nil || IsNil(o.GbaType) {
 		var ret GbaType
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *BootstrappingInfoResponse) GetGbaType() GbaType {
 // GetGbaTypeOk returns a tuple with the GbaType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoResponse) GetGbaTypeOk() (*GbaType, bool) {
-	if o == nil || isNil(o.GbaType) {
+	if o == nil || IsNil(o.GbaType) {
 		return nil, false
 	}
 	return o.GbaType, true
@@ -224,7 +224,7 @@ func (o *BootstrappingInfoResponse) GetGbaTypeOk() (*GbaType, bool) {
 
 // HasGbaType returns a boolean if a field has been set.
 func (o *BootstrappingInfoResponse) HasGbaType() bool {
-	if o != nil && !isNil(o.GbaType) {
+	if o != nil && !IsNil(o.GbaType) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *BootstrappingInfoResponse) SetGbaType(v GbaType) {
 
 // GetImpi returns the Impi field value if set, zero value otherwise.
 func (o *BootstrappingInfoResponse) GetImpi() string {
-	if o == nil || isNil(o.Impi) {
+	if o == nil || IsNil(o.Impi) {
 		var ret string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *BootstrappingInfoResponse) GetImpi() string {
 // GetImpiOk returns a tuple with the Impi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoResponse) GetImpiOk() (*string, bool) {
-	if o == nil || isNil(o.Impi) {
+	if o == nil || IsNil(o.Impi) {
 		return nil, false
 	}
 	return o.Impi, true
@@ -256,7 +256,7 @@ func (o *BootstrappingInfoResponse) GetImpiOk() (*string, bool) {
 
 // HasImpi returns a boolean if a field has been set.
 func (o *BootstrappingInfoResponse) HasImpi() bool {
-	if o != nil && !isNil(o.Impi) {
+	if o != nil && !IsNil(o.Impi) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *BootstrappingInfoResponse) SetImpi(v string) {
 }
 
 func (o BootstrappingInfoResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,22 +279,22 @@ func (o BootstrappingInfoResponse) MarshalJSON() ([]byte, error) {
 func (o BootstrappingInfoResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["meKeyMaterial"] = o.MeKeyMaterial
-	if !isNil(o.UiccKeyMaterial) {
+	if !IsNil(o.UiccKeyMaterial) {
 		toSerialize["uiccKeyMaterial"] = o.UiccKeyMaterial
 	}
-	if !isNil(o.KeyExpiryTime) {
+	if !IsNil(o.KeyExpiryTime) {
 		toSerialize["keyExpiryTime"] = o.KeyExpiryTime
 	}
-	if !isNil(o.BootstrappingInfoCreationTime) {
+	if !IsNil(o.BootstrappingInfoCreationTime) {
 		toSerialize["bootstrappingInfoCreationTime"] = o.BootstrappingInfoCreationTime
 	}
-	if !isNil(o.UssList) {
+	if !IsNil(o.UssList) {
 		toSerialize["ussList"] = o.UssList
 	}
-	if !isNil(o.GbaType) {
+	if !IsNil(o.GbaType) {
 		toSerialize["gbaType"] = o.GbaType
 	}
-	if !isNil(o.Impi) {
+	if !IsNil(o.Impi) {
 		toSerialize["impi"] = o.Impi
 	}
 	return toSerialize, nil
@@ -335,5 +335,3 @@ func (v *NullableBootstrappingInfoResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

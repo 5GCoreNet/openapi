@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &ReportingArea{}
 // ReportingArea Indicates an area for event reporting.
 type ReportingArea struct {
 	AreaType ReportingAreaType `json:"areaType"`
-	Tai *Tai `json:"tai,omitempty"`
-	Ecgi *Ecgi `json:"ecgi,omitempty"`
-	Ncgi *Ncgi `json:"ncgi,omitempty"`
+	Tai      *Tai              `json:"tai,omitempty"`
+	Ecgi     *Ecgi             `json:"ecgi,omitempty"`
+	Ncgi     *Ncgi             `json:"ncgi,omitempty"`
 }
 
 // NewReportingArea instantiates a new ReportingArea object
@@ -69,7 +69,7 @@ func (o *ReportingArea) SetAreaType(v ReportingAreaType) {
 
 // GetTai returns the Tai field value if set, zero value otherwise.
 func (o *ReportingArea) GetTai() Tai {
-	if o == nil || isNil(o.Tai) {
+	if o == nil || IsNil(o.Tai) {
 		var ret Tai
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReportingArea) GetTai() Tai {
 // GetTaiOk returns a tuple with the Tai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingArea) GetTaiOk() (*Tai, bool) {
-	if o == nil || isNil(o.Tai) {
+	if o == nil || IsNil(o.Tai) {
 		return nil, false
 	}
 	return o.Tai, true
@@ -87,7 +87,7 @@ func (o *ReportingArea) GetTaiOk() (*Tai, bool) {
 
 // HasTai returns a boolean if a field has been set.
 func (o *ReportingArea) HasTai() bool {
-	if o != nil && !isNil(o.Tai) {
+	if o != nil && !IsNil(o.Tai) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *ReportingArea) SetTai(v Tai) {
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *ReportingArea) GetEcgi() Ecgi {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ReportingArea) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingArea) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -119,7 +119,7 @@ func (o *ReportingArea) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *ReportingArea) HasEcgi() bool {
-	if o != nil && !isNil(o.Ecgi) {
+	if o != nil && !IsNil(o.Ecgi) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ReportingArea) SetEcgi(v Ecgi) {
 
 // GetNcgi returns the Ncgi field value if set, zero value otherwise.
 func (o *ReportingArea) GetNcgi() Ncgi {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ReportingArea) GetNcgi() Ncgi {
 // GetNcgiOk returns a tuple with the Ncgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingArea) GetNcgiOk() (*Ncgi, bool) {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		return nil, false
 	}
 	return o.Ncgi, true
@@ -151,7 +151,7 @@ func (o *ReportingArea) GetNcgiOk() (*Ncgi, bool) {
 
 // HasNcgi returns a boolean if a field has been set.
 func (o *ReportingArea) HasNcgi() bool {
-	if o != nil && !isNil(o.Ncgi) {
+	if o != nil && !IsNil(o.Ncgi) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *ReportingArea) SetNcgi(v Ncgi) {
 }
 
 func (o ReportingArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,13 +174,13 @@ func (o ReportingArea) MarshalJSON() ([]byte, error) {
 func (o ReportingArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["areaType"] = o.AreaType
-	if !isNil(o.Tai) {
+	if !IsNil(o.Tai) {
 		toSerialize["tai"] = o.Tai
 	}
-	if !isNil(o.Ecgi) {
+	if !IsNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
-	if !isNil(o.Ncgi) {
+	if !IsNil(o.Ncgi) {
 		toSerialize["ncgi"] = o.Ncgi
 	}
 	return toSerialize, nil
@@ -221,5 +221,3 @@ func (v *NullableReportingArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

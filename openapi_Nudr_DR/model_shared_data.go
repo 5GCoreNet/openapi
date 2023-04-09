@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,21 +19,21 @@ var _ MappedNullable = &SharedData{}
 
 // SharedData struct for SharedData
 type SharedData struct {
-	SharedDataId string `json:"sharedDataId"`
-	SharedAmData *AccessAndMobilitySubscriptionData1 `json:"sharedAmData,omitempty"`
-	SharedSmsSubsData *SmsSubscriptionData1 `json:"sharedSmsSubsData,omitempty"`
-	SharedSmsMngSubsData *SmsManagementSubscriptionData1 `json:"sharedSmsMngSubsData,omitempty"`
+	SharedDataId         string                              `json:"sharedDataId"`
+	SharedAmData         *AccessAndMobilitySubscriptionData1 `json:"sharedAmData,omitempty"`
+	SharedSmsSubsData    *SmsSubscriptionData1               `json:"sharedSmsSubsData,omitempty"`
+	SharedSmsMngSubsData *SmsManagementSubscriptionData1     `json:"sharedSmsMngSubsData,omitempty"`
 	// A map(list of key-value pairs) where Dnn, or optionally the Wildcard DNN, serves as key of DnnConfiguration
 	SharedDnnConfigurations *map[string]DnnConfiguration1 `json:"sharedDnnConfigurations,omitempty"`
-	SharedTraceData NullableTraceData `json:"sharedTraceData,omitempty"`
+	SharedTraceData         NullableTraceData             `json:"sharedTraceData,omitempty"`
 	// A map(list of key-value pairs) where singleNssai serves as key of SnssaiInfo
 	SharedSnssaiInfos *map[string]SnssaiInfo `json:"sharedSnssaiInfos,omitempty"`
 	// A map(list of key-value pairs) where GroupId serves as key of VnGroupData
 	SharedVnGroupDatas *map[string]VnGroupData `json:"sharedVnGroupDatas,omitempty"`
 	// A map(list of key-value pairs) where JSON pointer pointing to an attribute within the SharedData serves as key of SharedDataTreatmentInstruction
-	TreatmentInstructions *map[string]SharedDataTreatmentInstruction `json:"treatmentInstructions,omitempty"`
-	SharedSmSubsData *SessionManagementSubscriptionData1 `json:"sharedSmSubsData,omitempty"`
-	SharedEcsAddrConfigInfo NullableEcsAddrConfigInfo1 `json:"sharedEcsAddrConfigInfo,omitempty"`
+	TreatmentInstructions   *map[string]SharedDataTreatmentInstruction `json:"treatmentInstructions,omitempty"`
+	SharedSmSubsData        *SessionManagementSubscriptionData1        `json:"sharedSmSubsData,omitempty"`
+	SharedEcsAddrConfigInfo NullableEcsAddrConfigInfo1                 `json:"sharedEcsAddrConfigInfo,omitempty"`
 }
 
 // NewSharedData instantiates a new SharedData object
@@ -80,7 +80,7 @@ func (o *SharedData) SetSharedDataId(v string) {
 
 // GetSharedAmData returns the SharedAmData field value if set, zero value otherwise.
 func (o *SharedData) GetSharedAmData() AccessAndMobilitySubscriptionData1 {
-	if o == nil || isNil(o.SharedAmData) {
+	if o == nil || IsNil(o.SharedAmData) {
 		var ret AccessAndMobilitySubscriptionData1
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *SharedData) GetSharedAmData() AccessAndMobilitySubscriptionData1 {
 // GetSharedAmDataOk returns a tuple with the SharedAmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedAmDataOk() (*AccessAndMobilitySubscriptionData1, bool) {
-	if o == nil || isNil(o.SharedAmData) {
+	if o == nil || IsNil(o.SharedAmData) {
 		return nil, false
 	}
 	return o.SharedAmData, true
@@ -98,7 +98,7 @@ func (o *SharedData) GetSharedAmDataOk() (*AccessAndMobilitySubscriptionData1, b
 
 // HasSharedAmData returns a boolean if a field has been set.
 func (o *SharedData) HasSharedAmData() bool {
-	if o != nil && !isNil(o.SharedAmData) {
+	if o != nil && !IsNil(o.SharedAmData) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *SharedData) SetSharedAmData(v AccessAndMobilitySubscriptionData1) {
 
 // GetSharedSmsSubsData returns the SharedSmsSubsData field value if set, zero value otherwise.
 func (o *SharedData) GetSharedSmsSubsData() SmsSubscriptionData1 {
-	if o == nil || isNil(o.SharedSmsSubsData) {
+	if o == nil || IsNil(o.SharedSmsSubsData) {
 		var ret SmsSubscriptionData1
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *SharedData) GetSharedSmsSubsData() SmsSubscriptionData1 {
 // GetSharedSmsSubsDataOk returns a tuple with the SharedSmsSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedSmsSubsDataOk() (*SmsSubscriptionData1, bool) {
-	if o == nil || isNil(o.SharedSmsSubsData) {
+	if o == nil || IsNil(o.SharedSmsSubsData) {
 		return nil, false
 	}
 	return o.SharedSmsSubsData, true
@@ -130,7 +130,7 @@ func (o *SharedData) GetSharedSmsSubsDataOk() (*SmsSubscriptionData1, bool) {
 
 // HasSharedSmsSubsData returns a boolean if a field has been set.
 func (o *SharedData) HasSharedSmsSubsData() bool {
-	if o != nil && !isNil(o.SharedSmsSubsData) {
+	if o != nil && !IsNil(o.SharedSmsSubsData) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *SharedData) SetSharedSmsSubsData(v SmsSubscriptionData1) {
 
 // GetSharedSmsMngSubsData returns the SharedSmsMngSubsData field value if set, zero value otherwise.
 func (o *SharedData) GetSharedSmsMngSubsData() SmsManagementSubscriptionData1 {
-	if o == nil || isNil(o.SharedSmsMngSubsData) {
+	if o == nil || IsNil(o.SharedSmsMngSubsData) {
 		var ret SmsManagementSubscriptionData1
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *SharedData) GetSharedSmsMngSubsData() SmsManagementSubscriptionData1 {
 // GetSharedSmsMngSubsDataOk returns a tuple with the SharedSmsMngSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedSmsMngSubsDataOk() (*SmsManagementSubscriptionData1, bool) {
-	if o == nil || isNil(o.SharedSmsMngSubsData) {
+	if o == nil || IsNil(o.SharedSmsMngSubsData) {
 		return nil, false
 	}
 	return o.SharedSmsMngSubsData, true
@@ -162,7 +162,7 @@ func (o *SharedData) GetSharedSmsMngSubsDataOk() (*SmsManagementSubscriptionData
 
 // HasSharedSmsMngSubsData returns a boolean if a field has been set.
 func (o *SharedData) HasSharedSmsMngSubsData() bool {
-	if o != nil && !isNil(o.SharedSmsMngSubsData) {
+	if o != nil && !IsNil(o.SharedSmsMngSubsData) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *SharedData) SetSharedSmsMngSubsData(v SmsManagementSubscriptionData1) {
 
 // GetSharedDnnConfigurations returns the SharedDnnConfigurations field value if set, zero value otherwise.
 func (o *SharedData) GetSharedDnnConfigurations() map[string]DnnConfiguration1 {
-	if o == nil || isNil(o.SharedDnnConfigurations) {
+	if o == nil || IsNil(o.SharedDnnConfigurations) {
 		var ret map[string]DnnConfiguration1
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *SharedData) GetSharedDnnConfigurations() map[string]DnnConfiguration1 {
 // GetSharedDnnConfigurationsOk returns a tuple with the SharedDnnConfigurations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedDnnConfigurationsOk() (*map[string]DnnConfiguration1, bool) {
-	if o == nil || isNil(o.SharedDnnConfigurations) {
+	if o == nil || IsNil(o.SharedDnnConfigurations) {
 		return nil, false
 	}
 	return o.SharedDnnConfigurations, true
@@ -194,7 +194,7 @@ func (o *SharedData) GetSharedDnnConfigurationsOk() (*map[string]DnnConfiguratio
 
 // HasSharedDnnConfigurations returns a boolean if a field has been set.
 func (o *SharedData) HasSharedDnnConfigurations() bool {
-	if o != nil && !isNil(o.SharedDnnConfigurations) {
+	if o != nil && !IsNil(o.SharedDnnConfigurations) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *SharedData) SetSharedDnnConfigurations(v map[string]DnnConfiguration1) 
 
 // GetSharedTraceData returns the SharedTraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SharedData) GetSharedTraceData() TraceData {
-	if o == nil || isNil(o.SharedTraceData.Get()) {
+	if o == nil || IsNil(o.SharedTraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -238,6 +238,7 @@ func (o *SharedData) HasSharedTraceData() bool {
 func (o *SharedData) SetSharedTraceData(v TraceData) {
 	o.SharedTraceData.Set(&v)
 }
+
 // SetSharedTraceDataNil sets the value for SharedTraceData to be an explicit nil
 func (o *SharedData) SetSharedTraceDataNil() {
 	o.SharedTraceData.Set(nil)
@@ -250,7 +251,7 @@ func (o *SharedData) UnsetSharedTraceData() {
 
 // GetSharedSnssaiInfos returns the SharedSnssaiInfos field value if set, zero value otherwise.
 func (o *SharedData) GetSharedSnssaiInfos() map[string]SnssaiInfo {
-	if o == nil || isNil(o.SharedSnssaiInfos) {
+	if o == nil || IsNil(o.SharedSnssaiInfos) {
 		var ret map[string]SnssaiInfo
 		return ret
 	}
@@ -260,7 +261,7 @@ func (o *SharedData) GetSharedSnssaiInfos() map[string]SnssaiInfo {
 // GetSharedSnssaiInfosOk returns a tuple with the SharedSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedSnssaiInfosOk() (*map[string]SnssaiInfo, bool) {
-	if o == nil || isNil(o.SharedSnssaiInfos) {
+	if o == nil || IsNil(o.SharedSnssaiInfos) {
 		return nil, false
 	}
 	return o.SharedSnssaiInfos, true
@@ -268,7 +269,7 @@ func (o *SharedData) GetSharedSnssaiInfosOk() (*map[string]SnssaiInfo, bool) {
 
 // HasSharedSnssaiInfos returns a boolean if a field has been set.
 func (o *SharedData) HasSharedSnssaiInfos() bool {
-	if o != nil && !isNil(o.SharedSnssaiInfos) {
+	if o != nil && !IsNil(o.SharedSnssaiInfos) {
 		return true
 	}
 
@@ -282,7 +283,7 @@ func (o *SharedData) SetSharedSnssaiInfos(v map[string]SnssaiInfo) {
 
 // GetSharedVnGroupDatas returns the SharedVnGroupDatas field value if set, zero value otherwise.
 func (o *SharedData) GetSharedVnGroupDatas() map[string]VnGroupData {
-	if o == nil || isNil(o.SharedVnGroupDatas) {
+	if o == nil || IsNil(o.SharedVnGroupDatas) {
 		var ret map[string]VnGroupData
 		return ret
 	}
@@ -292,7 +293,7 @@ func (o *SharedData) GetSharedVnGroupDatas() map[string]VnGroupData {
 // GetSharedVnGroupDatasOk returns a tuple with the SharedVnGroupDatas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedVnGroupDatasOk() (*map[string]VnGroupData, bool) {
-	if o == nil || isNil(o.SharedVnGroupDatas) {
+	if o == nil || IsNil(o.SharedVnGroupDatas) {
 		return nil, false
 	}
 	return o.SharedVnGroupDatas, true
@@ -300,7 +301,7 @@ func (o *SharedData) GetSharedVnGroupDatasOk() (*map[string]VnGroupData, bool) {
 
 // HasSharedVnGroupDatas returns a boolean if a field has been set.
 func (o *SharedData) HasSharedVnGroupDatas() bool {
-	if o != nil && !isNil(o.SharedVnGroupDatas) {
+	if o != nil && !IsNil(o.SharedVnGroupDatas) {
 		return true
 	}
 
@@ -314,7 +315,7 @@ func (o *SharedData) SetSharedVnGroupDatas(v map[string]VnGroupData) {
 
 // GetTreatmentInstructions returns the TreatmentInstructions field value if set, zero value otherwise.
 func (o *SharedData) GetTreatmentInstructions() map[string]SharedDataTreatmentInstruction {
-	if o == nil || isNil(o.TreatmentInstructions) {
+	if o == nil || IsNil(o.TreatmentInstructions) {
 		var ret map[string]SharedDataTreatmentInstruction
 		return ret
 	}
@@ -324,7 +325,7 @@ func (o *SharedData) GetTreatmentInstructions() map[string]SharedDataTreatmentIn
 // GetTreatmentInstructionsOk returns a tuple with the TreatmentInstructions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetTreatmentInstructionsOk() (*map[string]SharedDataTreatmentInstruction, bool) {
-	if o == nil || isNil(o.TreatmentInstructions) {
+	if o == nil || IsNil(o.TreatmentInstructions) {
 		return nil, false
 	}
 	return o.TreatmentInstructions, true
@@ -332,7 +333,7 @@ func (o *SharedData) GetTreatmentInstructionsOk() (*map[string]SharedDataTreatme
 
 // HasTreatmentInstructions returns a boolean if a field has been set.
 func (o *SharedData) HasTreatmentInstructions() bool {
-	if o != nil && !isNil(o.TreatmentInstructions) {
+	if o != nil && !IsNil(o.TreatmentInstructions) {
 		return true
 	}
 
@@ -346,7 +347,7 @@ func (o *SharedData) SetTreatmentInstructions(v map[string]SharedDataTreatmentIn
 
 // GetSharedSmSubsData returns the SharedSmSubsData field value if set, zero value otherwise.
 func (o *SharedData) GetSharedSmSubsData() SessionManagementSubscriptionData1 {
-	if o == nil || isNil(o.SharedSmSubsData) {
+	if o == nil || IsNil(o.SharedSmSubsData) {
 		var ret SessionManagementSubscriptionData1
 		return ret
 	}
@@ -356,7 +357,7 @@ func (o *SharedData) GetSharedSmSubsData() SessionManagementSubscriptionData1 {
 // GetSharedSmSubsDataOk returns a tuple with the SharedSmSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedSmSubsDataOk() (*SessionManagementSubscriptionData1, bool) {
-	if o == nil || isNil(o.SharedSmSubsData) {
+	if o == nil || IsNil(o.SharedSmSubsData) {
 		return nil, false
 	}
 	return o.SharedSmSubsData, true
@@ -364,7 +365,7 @@ func (o *SharedData) GetSharedSmSubsDataOk() (*SessionManagementSubscriptionData
 
 // HasSharedSmSubsData returns a boolean if a field has been set.
 func (o *SharedData) HasSharedSmSubsData() bool {
-	if o != nil && !isNil(o.SharedSmSubsData) {
+	if o != nil && !IsNil(o.SharedSmSubsData) {
 		return true
 	}
 
@@ -378,7 +379,7 @@ func (o *SharedData) SetSharedSmSubsData(v SessionManagementSubscriptionData1) {
 
 // GetSharedEcsAddrConfigInfo returns the SharedEcsAddrConfigInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SharedData) GetSharedEcsAddrConfigInfo() EcsAddrConfigInfo1 {
-	if o == nil || isNil(o.SharedEcsAddrConfigInfo.Get()) {
+	if o == nil || IsNil(o.SharedEcsAddrConfigInfo.Get()) {
 		var ret EcsAddrConfigInfo1
 		return ret
 	}
@@ -408,6 +409,7 @@ func (o *SharedData) HasSharedEcsAddrConfigInfo() bool {
 func (o *SharedData) SetSharedEcsAddrConfigInfo(v EcsAddrConfigInfo1) {
 	o.SharedEcsAddrConfigInfo.Set(&v)
 }
+
 // SetSharedEcsAddrConfigInfoNil sets the value for SharedEcsAddrConfigInfo to be an explicit nil
 func (o *SharedData) SetSharedEcsAddrConfigInfoNil() {
 	o.SharedEcsAddrConfigInfo.Set(nil)
@@ -419,7 +421,7 @@ func (o *SharedData) UnsetSharedEcsAddrConfigInfo() {
 }
 
 func (o SharedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -429,31 +431,31 @@ func (o SharedData) MarshalJSON() ([]byte, error) {
 func (o SharedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sharedDataId"] = o.SharedDataId
-	if !isNil(o.SharedAmData) {
+	if !IsNil(o.SharedAmData) {
 		toSerialize["sharedAmData"] = o.SharedAmData
 	}
-	if !isNil(o.SharedSmsSubsData) {
+	if !IsNil(o.SharedSmsSubsData) {
 		toSerialize["sharedSmsSubsData"] = o.SharedSmsSubsData
 	}
-	if !isNil(o.SharedSmsMngSubsData) {
+	if !IsNil(o.SharedSmsMngSubsData) {
 		toSerialize["sharedSmsMngSubsData"] = o.SharedSmsMngSubsData
 	}
-	if !isNil(o.SharedDnnConfigurations) {
+	if !IsNil(o.SharedDnnConfigurations) {
 		toSerialize["sharedDnnConfigurations"] = o.SharedDnnConfigurations
 	}
 	if o.SharedTraceData.IsSet() {
 		toSerialize["sharedTraceData"] = o.SharedTraceData.Get()
 	}
-	if !isNil(o.SharedSnssaiInfos) {
+	if !IsNil(o.SharedSnssaiInfos) {
 		toSerialize["sharedSnssaiInfos"] = o.SharedSnssaiInfos
 	}
-	if !isNil(o.SharedVnGroupDatas) {
+	if !IsNil(o.SharedVnGroupDatas) {
 		toSerialize["sharedVnGroupDatas"] = o.SharedVnGroupDatas
 	}
-	if !isNil(o.TreatmentInstructions) {
+	if !IsNil(o.TreatmentInstructions) {
 		toSerialize["treatmentInstructions"] = o.TreatmentInstructions
 	}
-	if !isNil(o.SharedSmSubsData) {
+	if !IsNil(o.SharedSmSubsData) {
 		toSerialize["sharedSmSubsData"] = o.SharedSmSubsData
 	}
 	if o.SharedEcsAddrConfigInfo.IsSet() {
@@ -497,5 +499,3 @@ func (v *NullableSharedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

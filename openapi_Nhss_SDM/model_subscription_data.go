@@ -1,7 +1,7 @@
 /*
 Nhss_SDM
 
-HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &SubscriptionData{}
 
 // SubscriptionData Contains data about a subscription request, to be created by a consumer to an URI of the HSS_SDM API to be monitored; it also represents the response containing data about the created subscription
 type SubscriptionData struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfInstanceId string `json:"nfInstanceId"`
 	// String providing an URI formatted according to RFC 3986.
-	CallbackReference string `json:"callbackReference"`
+	CallbackReference     string   `json:"callbackReference"`
 	MonitoredResourceUris []string `json:"monitoredResourceUris"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Expires *time.Time `json:"expires,omitempty"`
-	ImmediateReport *bool `json:"immediateReport,omitempty"`
-	Report *SubscriptionDataSets `json:"report,omitempty"`
+	Expires         *time.Time            `json:"expires,omitempty"`
+	ImmediateReport *bool                 `json:"immediateReport,omitempty"`
+	Report          *SubscriptionDataSets `json:"report,omitempty"`
 }
 
 // NewSubscriptionData instantiates a new SubscriptionData object
@@ -129,7 +129,7 @@ func (o *SubscriptionData) SetMonitoredResourceUris(v []string) {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *SubscriptionData) GetExpires() time.Time {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *SubscriptionData) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -147,7 +147,7 @@ func (o *SubscriptionData) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *SubscriptionData) HasExpires() bool {
-	if o != nil && !isNil(o.Expires) {
+	if o != nil && !IsNil(o.Expires) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *SubscriptionData) SetExpires(v time.Time) {
 
 // GetImmediateReport returns the ImmediateReport field value if set, zero value otherwise.
 func (o *SubscriptionData) GetImmediateReport() bool {
-	if o == nil || isNil(o.ImmediateReport) {
+	if o == nil || IsNil(o.ImmediateReport) {
 		var ret bool
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *SubscriptionData) GetImmediateReport() bool {
 // GetImmediateReportOk returns a tuple with the ImmediateReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetImmediateReportOk() (*bool, bool) {
-	if o == nil || isNil(o.ImmediateReport) {
+	if o == nil || IsNil(o.ImmediateReport) {
 		return nil, false
 	}
 	return o.ImmediateReport, true
@@ -179,7 +179,7 @@ func (o *SubscriptionData) GetImmediateReportOk() (*bool, bool) {
 
 // HasImmediateReport returns a boolean if a field has been set.
 func (o *SubscriptionData) HasImmediateReport() bool {
-	if o != nil && !isNil(o.ImmediateReport) {
+	if o != nil && !IsNil(o.ImmediateReport) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *SubscriptionData) SetImmediateReport(v bool) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReport() SubscriptionDataSets {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		var ret SubscriptionDataSets
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *SubscriptionData) GetReport() SubscriptionDataSets {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReportOk() (*SubscriptionDataSets, bool) {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -211,7 +211,7 @@ func (o *SubscriptionData) GetReportOk() (*SubscriptionDataSets, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReport() bool {
-	if o != nil && !isNil(o.Report) {
+	if o != nil && !IsNil(o.Report) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *SubscriptionData) SetReport(v SubscriptionDataSets) {
 }
 
 func (o SubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -236,13 +236,13 @@ func (o SubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize["nfInstanceId"] = o.NfInstanceId
 	toSerialize["callbackReference"] = o.CallbackReference
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !isNil(o.Expires) {
+	if !IsNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
-	if !isNil(o.ImmediateReport) {
+	if !IsNil(o.ImmediateReport) {
 		toSerialize["immediateReport"] = o.ImmediateReport
 	}
-	if !isNil(o.Report) {
+	if !IsNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
 	return toSerialize, nil
@@ -283,5 +283,3 @@ func (v *NullableSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SessionFailover struct for SessionFailover
 type SessionFailover struct {
-	SessionFailoverAnyOf *SessionFailoverAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SessionFailover) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SessionFailoverAnyOf
-	err = json.Unmarshal(data, &dst.SessionFailoverAnyOf);
-	if err == nil {
-		jsonSessionFailoverAnyOf, _ := json.Marshal(dst.SessionFailoverAnyOf)
-		if string(jsonSessionFailoverAnyOf) == "{}" { // empty struct
-			dst.SessionFailoverAnyOf = nil
-		} else {
-			return nil // data stored in dst.SessionFailoverAnyOf, return on the first match
-		}
-	} else {
-		dst.SessionFailoverAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SessionFailover) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SessionFailover) MarshalJSON() ([]byte, error) {
-	if src.SessionFailoverAnyOf != nil {
-		return json.Marshal(&src.SessionFailoverAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSessionFailover) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

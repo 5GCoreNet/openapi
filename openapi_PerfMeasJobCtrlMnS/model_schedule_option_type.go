@@ -20,7 +20,7 @@ type ScheduleOptionType string
 
 // List of scheduleOption-Type
 const (
-	DAILY ScheduleOptionType = "daily"
+	DAILY  ScheduleOptionType = "daily"
 	WEEKLY ScheduleOptionType = "weekly"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableScheduleOptionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

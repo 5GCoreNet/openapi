@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the MBSUserDataIngSessionPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MBSUserDataIngSessionPatch{}
 
-// MBSUserDataIngSessionPatch Represents the requested modifications to an MBS User Data Ingest Session Status  Subscription. 
+// MBSUserDataIngSessionPatch Represents the requested modifications to an MBS User Data Ingest Session Status  Subscription.
 type MBSUserDataIngSessionPatch struct {
-	// Contains the requested modifications to one or more MBS Distribution Session(s)  composing the MBS User Data Ingest Session. 
+	// Contains the requested modifications to one or more MBS Distribution Session(s)  composing the MBS User Data Ingest Session.
 	MbsDisSessInfos *map[string]MBSDistributionSessionInfo `json:"mbsDisSessInfos,omitempty"`
-	ActPeriods []TimeWindow `json:"actPeriods,omitempty"`
+	ActPeriods      []TimeWindow                           `json:"actPeriods,omitempty"`
 }
 
 // NewMBSUserDataIngSessionPatch instantiates a new MBSUserDataIngSessionPatch object
@@ -43,7 +43,7 @@ func NewMBSUserDataIngSessionPatchWithDefaults() *MBSUserDataIngSessionPatch {
 
 // GetMbsDisSessInfos returns the MbsDisSessInfos field value if set, zero value otherwise.
 func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfos() map[string]MBSDistributionSessionInfo {
-	if o == nil || isNil(o.MbsDisSessInfos) {
+	if o == nil || IsNil(o.MbsDisSessInfos) {
 		var ret map[string]MBSDistributionSessionInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfos() map[string]MBSDistribu
 // GetMbsDisSessInfosOk returns a tuple with the MbsDisSessInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfosOk() (*map[string]MBSDistributionSessionInfo, bool) {
-	if o == nil || isNil(o.MbsDisSessInfos) {
+	if o == nil || IsNil(o.MbsDisSessInfos) {
 		return nil, false
 	}
 	return o.MbsDisSessInfos, true
@@ -61,7 +61,7 @@ func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfosOk() (*map[string]MBSDist
 
 // HasMbsDisSessInfos returns a boolean if a field has been set.
 func (o *MBSUserDataIngSessionPatch) HasMbsDisSessInfos() bool {
-	if o != nil && !isNil(o.MbsDisSessInfos) {
+	if o != nil && !IsNil(o.MbsDisSessInfos) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MBSUserDataIngSessionPatch) SetMbsDisSessInfos(v map[string]MBSDistribu
 
 // GetActPeriods returns the ActPeriods field value if set, zero value otherwise.
 func (o *MBSUserDataIngSessionPatch) GetActPeriods() []TimeWindow {
-	if o == nil || isNil(o.ActPeriods) {
+	if o == nil || IsNil(o.ActPeriods) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MBSUserDataIngSessionPatch) GetActPeriods() []TimeWindow {
 // GetActPeriodsOk returns a tuple with the ActPeriods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSessionPatch) GetActPeriodsOk() ([]TimeWindow, bool) {
-	if o == nil || isNil(o.ActPeriods) {
+	if o == nil || IsNil(o.ActPeriods) {
 		return nil, false
 	}
 	return o.ActPeriods, true
@@ -93,7 +93,7 @@ func (o *MBSUserDataIngSessionPatch) GetActPeriodsOk() ([]TimeWindow, bool) {
 
 // HasActPeriods returns a boolean if a field has been set.
 func (o *MBSUserDataIngSessionPatch) HasActPeriods() bool {
-	if o != nil && !isNil(o.ActPeriods) {
+	if o != nil && !IsNil(o.ActPeriods) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *MBSUserDataIngSessionPatch) SetActPeriods(v []TimeWindow) {
 }
 
 func (o MBSUserDataIngSessionPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o MBSUserDataIngSessionPatch) MarshalJSON() ([]byte, error) {
 
 func (o MBSUserDataIngSessionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsDisSessInfos) {
+	if !IsNil(o.MbsDisSessInfos) {
 		toSerialize["mbsDisSessInfos"] = o.MbsDisSessInfos
 	}
-	if !isNil(o.ActPeriods) {
+	if !IsNil(o.ActPeriods) {
 		toSerialize["actPeriods"] = o.ActPeriods
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableMBSUserDataIngSessionPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

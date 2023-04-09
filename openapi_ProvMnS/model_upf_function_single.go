@@ -19,20 +19,17 @@ var _ MappedNullable = &UpfFunctionSingle{}
 
 // UpfFunctionSingle struct for UpfFunctionSingle
 type UpfFunctionSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
-	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
-	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
-	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
-	TraceJob []TraceJobSingle `json:"TraceJob,omitempty"`
-	EPN3 []EPN3Single `json:"EP_N3,omitempty"`
-	EPN4 []EPN4Single `json:"EP_N4,omitempty"`
-	EPN6 []EPN6Single `json:"EP_N6,omitempty"`
-	EPN9 []EPN9Single `json:"EP_N9,omitempty"`
-	EPS5U []EPS5USingle `json:"EP_S5U,omitempty"`
+	Top
+	Attributes       *UpfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	PerfMetricJob    []PerfMetricJobSingle             `json:"PerfMetricJob,omitempty"`
+	ThresholdMonitor []ThresholdMonitorSingle          `json:"ThresholdMonitor,omitempty"`
+	ManagedNFService []ManagedNFServiceSingle          `json:"ManagedNFService,omitempty"`
+	TraceJob         []TraceJobSingle                  `json:"TraceJob,omitempty"`
+	EPN3             []EPN3Single                      `json:"EP_N3,omitempty"`
+	EPN4             []EPN4Single                      `json:"EP_N4,omitempty"`
+	EPN6             []EPN6Single                      `json:"EP_N6,omitempty"`
+	EPN9             []EPN9Single                      `json:"EP_N9,omitempty"`
+	EPS5U            []EPS5USingle                     `json:"EP_S5U,omitempty"`
 }
 
 // NewUpfFunctionSingle instantiates a new UpfFunctionSingle object
@@ -53,132 +50,10 @@ func NewUpfFunctionSingleWithDefaults() *UpfFunctionSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *UpfFunctionSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpfFunctionSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *UpfFunctionSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *UpfFunctionSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpfFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *UpfFunctionSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *UpfFunctionSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *UpfFunctionSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *UpfFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *UpfFunctionSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *UpfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *UpfFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *UpfFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *UpfFunctionSingle) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *UpfFunctionSingle) GetAttributes() UpfFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret UpfFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -186,8 +61,8 @@ func (o *UpfFunctionSingle) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *UpfFunctionSingle) GetAttributesOk() (*UpfFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -195,21 +70,21 @@ func (o *UpfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *UpfFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given UpfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *UpfFunctionSingle) SetAttributes(v UpfFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -219,7 +94,7 @@ func (o *UpfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -227,7 +102,7 @@ func (o *UpfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !isNil(o.PerfMetricJob) {
+	if o != nil && !IsNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -241,7 +116,7 @@ func (o *UpfFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -251,7 +126,7 @@ func (o *UpfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -259,7 +134,7 @@ func (o *UpfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, b
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !isNil(o.ThresholdMonitor) {
+	if o != nil && !IsNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -273,7 +148,7 @@ func (o *UpfFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -283,7 +158,7 @@ func (o *UpfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -291,7 +166,7 @@ func (o *UpfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, b
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !isNil(o.ManagedNFService) {
+	if o != nil && !IsNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -305,7 +180,7 @@ func (o *UpfFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -315,7 +190,7 @@ func (o *UpfFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -323,7 +198,7 @@ func (o *UpfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasTraceJob() bool {
-	if o != nil && !isNil(o.TraceJob) {
+	if o != nil && !IsNil(o.TraceJob) {
 		return true
 	}
 
@@ -337,7 +212,7 @@ func (o *UpfFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN3 returns the EPN3 field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetEPN3() []EPN3Single {
-	if o == nil || isNil(o.EPN3) {
+	if o == nil || IsNil(o.EPN3) {
 		var ret []EPN3Single
 		return ret
 	}
@@ -347,7 +222,7 @@ func (o *UpfFunctionSingle) GetEPN3() []EPN3Single {
 // GetEPN3Ok returns a tuple with the EPN3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetEPN3Ok() ([]EPN3Single, bool) {
-	if o == nil || isNil(o.EPN3) {
+	if o == nil || IsNil(o.EPN3) {
 		return nil, false
 	}
 	return o.EPN3, true
@@ -355,7 +230,7 @@ func (o *UpfFunctionSingle) GetEPN3Ok() ([]EPN3Single, bool) {
 
 // HasEPN3 returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasEPN3() bool {
-	if o != nil && !isNil(o.EPN3) {
+	if o != nil && !IsNil(o.EPN3) {
 		return true
 	}
 
@@ -369,7 +244,7 @@ func (o *UpfFunctionSingle) SetEPN3(v []EPN3Single) {
 
 // GetEPN4 returns the EPN4 field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetEPN4() []EPN4Single {
-	if o == nil || isNil(o.EPN4) {
+	if o == nil || IsNil(o.EPN4) {
 		var ret []EPN4Single
 		return ret
 	}
@@ -379,7 +254,7 @@ func (o *UpfFunctionSingle) GetEPN4() []EPN4Single {
 // GetEPN4Ok returns a tuple with the EPN4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetEPN4Ok() ([]EPN4Single, bool) {
-	if o == nil || isNil(o.EPN4) {
+	if o == nil || IsNil(o.EPN4) {
 		return nil, false
 	}
 	return o.EPN4, true
@@ -387,7 +262,7 @@ func (o *UpfFunctionSingle) GetEPN4Ok() ([]EPN4Single, bool) {
 
 // HasEPN4 returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasEPN4() bool {
-	if o != nil && !isNil(o.EPN4) {
+	if o != nil && !IsNil(o.EPN4) {
 		return true
 	}
 
@@ -401,7 +276,7 @@ func (o *UpfFunctionSingle) SetEPN4(v []EPN4Single) {
 
 // GetEPN6 returns the EPN6 field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetEPN6() []EPN6Single {
-	if o == nil || isNil(o.EPN6) {
+	if o == nil || IsNil(o.EPN6) {
 		var ret []EPN6Single
 		return ret
 	}
@@ -411,7 +286,7 @@ func (o *UpfFunctionSingle) GetEPN6() []EPN6Single {
 // GetEPN6Ok returns a tuple with the EPN6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetEPN6Ok() ([]EPN6Single, bool) {
-	if o == nil || isNil(o.EPN6) {
+	if o == nil || IsNil(o.EPN6) {
 		return nil, false
 	}
 	return o.EPN6, true
@@ -419,7 +294,7 @@ func (o *UpfFunctionSingle) GetEPN6Ok() ([]EPN6Single, bool) {
 
 // HasEPN6 returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasEPN6() bool {
-	if o != nil && !isNil(o.EPN6) {
+	if o != nil && !IsNil(o.EPN6) {
 		return true
 	}
 
@@ -433,7 +308,7 @@ func (o *UpfFunctionSingle) SetEPN6(v []EPN6Single) {
 
 // GetEPN9 returns the EPN9 field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetEPN9() []EPN9Single {
-	if o == nil || isNil(o.EPN9) {
+	if o == nil || IsNil(o.EPN9) {
 		var ret []EPN9Single
 		return ret
 	}
@@ -443,7 +318,7 @@ func (o *UpfFunctionSingle) GetEPN9() []EPN9Single {
 // GetEPN9Ok returns a tuple with the EPN9 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetEPN9Ok() ([]EPN9Single, bool) {
-	if o == nil || isNil(o.EPN9) {
+	if o == nil || IsNil(o.EPN9) {
 		return nil, false
 	}
 	return o.EPN9, true
@@ -451,7 +326,7 @@ func (o *UpfFunctionSingle) GetEPN9Ok() ([]EPN9Single, bool) {
 
 // HasEPN9 returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasEPN9() bool {
-	if o != nil && !isNil(o.EPN9) {
+	if o != nil && !IsNil(o.EPN9) {
 		return true
 	}
 
@@ -465,7 +340,7 @@ func (o *UpfFunctionSingle) SetEPN9(v []EPN9Single) {
 
 // GetEPS5U returns the EPS5U field value if set, zero value otherwise.
 func (o *UpfFunctionSingle) GetEPS5U() []EPS5USingle {
-	if o == nil || isNil(o.EPS5U) {
+	if o == nil || IsNil(o.EPS5U) {
 		var ret []EPS5USingle
 		return ret
 	}
@@ -475,7 +350,7 @@ func (o *UpfFunctionSingle) GetEPS5U() []EPS5USingle {
 // GetEPS5UOk returns a tuple with the EPS5U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingle) GetEPS5UOk() ([]EPS5USingle, bool) {
-	if o == nil || isNil(o.EPS5U) {
+	if o == nil || IsNil(o.EPS5U) {
 		return nil, false
 	}
 	return o.EPS5U, true
@@ -483,7 +358,7 @@ func (o *UpfFunctionSingle) GetEPS5UOk() ([]EPS5USingle, bool) {
 
 // HasEPS5U returns a boolean if a field has been set.
 func (o *UpfFunctionSingle) HasEPS5U() bool {
-	if o != nil && !isNil(o.EPS5U) {
+	if o != nil && !IsNil(o.EPS5U) {
 		return true
 	}
 
@@ -496,7 +371,7 @@ func (o *UpfFunctionSingle) SetEPS5U(v []EPS5USingle) {
 }
 
 func (o UpfFunctionSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -505,44 +380,42 @@ func (o UpfFunctionSingle) MarshalJSON() ([]byte, error) {
 
 func (o UpfFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.PerfMetricJob) {
+	if !IsNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !isNil(o.ThresholdMonitor) {
+	if !IsNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !isNil(o.ManagedNFService) {
+	if !IsNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !isNil(o.TraceJob) {
+	if !IsNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !isNil(o.EPN3) {
+	if !IsNil(o.EPN3) {
 		toSerialize["EP_N3"] = o.EPN3
 	}
-	if !isNil(o.EPN4) {
+	if !IsNil(o.EPN4) {
 		toSerialize["EP_N4"] = o.EPN4
 	}
-	if !isNil(o.EPN6) {
+	if !IsNil(o.EPN6) {
 		toSerialize["EP_N6"] = o.EPN6
 	}
-	if !isNil(o.EPN9) {
+	if !IsNil(o.EPN9) {
 		toSerialize["EP_N9"] = o.EPN9
 	}
-	if !isNil(o.EPS5U) {
+	if !IsNil(o.EPS5U) {
 		toSerialize["EP_S5U"] = o.EPS5U
 	}
 	return toSerialize, nil
@@ -583,5 +456,3 @@ func (v *NullableUpfFunctionSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

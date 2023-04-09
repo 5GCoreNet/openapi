@@ -1,7 +1,7 @@
 /*
 MSGS_MSGDelivery
 
-API for MSGG MSGin5G Server Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGG MSGin5G Server Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -43,7 +43,7 @@ func NewStoreAndForwardParametersWithDefaults() *StoreAndForwardParameters {
 
 // GetExprTime returns the ExprTime field value if set, zero value otherwise.
 func (o *StoreAndForwardParameters) GetExprTime() time.Time {
-	if o == nil || isNil(o.ExprTime) {
+	if o == nil || IsNil(o.ExprTime) {
 		var ret time.Time
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *StoreAndForwardParameters) GetExprTime() time.Time {
 // GetExprTimeOk returns a tuple with the ExprTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StoreAndForwardParameters) GetExprTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExprTime) {
+	if o == nil || IsNil(o.ExprTime) {
 		return nil, false
 	}
 	return o.ExprTime, true
@@ -61,7 +61,7 @@ func (o *StoreAndForwardParameters) GetExprTimeOk() (*time.Time, bool) {
 
 // HasExprTime returns a boolean if a field has been set.
 func (o *StoreAndForwardParameters) HasExprTime() bool {
-	if o != nil && !isNil(o.ExprTime) {
+	if o != nil && !IsNil(o.ExprTime) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *StoreAndForwardParameters) SetExprTime(v time.Time) {
 }
 
 func (o StoreAndForwardParameters) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -83,7 +83,7 @@ func (o StoreAndForwardParameters) MarshalJSON() ([]byte, error) {
 
 func (o StoreAndForwardParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExprTime) {
+	if !IsNil(o.ExprTime) {
 		toSerialize["exprTime"] = o.ExprTime
 	}
 	return toSerialize, nil
@@ -124,5 +124,3 @@ func (v *NullableStoreAndForwardParameters) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

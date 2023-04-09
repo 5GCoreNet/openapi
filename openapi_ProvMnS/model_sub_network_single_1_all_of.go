@@ -19,7 +19,7 @@ var _ MappedNullable = &SubNetworkSingle1AllOf{}
 
 // SubNetworkSingle1AllOf struct for SubNetworkSingle1AllOf
 type SubNetworkSingle1AllOf struct {
-	Attributes *SubNetworkAttr `json:"attributes,omitempty"`
+	Attributes *SubNetworkSingle1AllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewSubNetworkSingle1AllOf instantiates a new SubNetworkSingle1AllOf object
@@ -40,9 +40,9 @@ func NewSubNetworkSingle1AllOfWithDefaults() *SubNetworkSingle1AllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *SubNetworkSingle1AllOf) GetAttributes() SubNetworkAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret SubNetworkAttr
+func (o *SubNetworkSingle1AllOf) GetAttributes() SubNetworkSingle1AllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret SubNetworkSingle1AllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *SubNetworkSingle1AllOf) GetAttributes() SubNetworkAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubNetworkSingle1AllOf) GetAttributesOk() (*SubNetworkAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *SubNetworkSingle1AllOf) GetAttributesOk() (*SubNetworkSingle1AllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *SubNetworkSingle1AllOf) GetAttributesOk() (*SubNetworkAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given SubNetworkAttr and assigns it to the Attributes field.
-func (o *SubNetworkSingle1AllOf) SetAttributes(v SubNetworkAttr) {
+// SetAttributes gets a reference to the given SubNetworkSingle1AllOfAttributes and assigns it to the Attributes field.
+func (o *SubNetworkSingle1AllOf) SetAttributes(v SubNetworkSingle1AllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o SubNetworkSingle1AllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o SubNetworkSingle1AllOf) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle1AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableSubNetworkSingle1AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

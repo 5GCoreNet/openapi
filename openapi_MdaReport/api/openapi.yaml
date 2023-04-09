@@ -68,6 +68,7 @@ components:
       required:
       - id
       type: object
+      x-parent: true
     VsDataContainer-Multiple:
       items:
         $ref: '#/components/schemas/VsDataContainer-Single'
@@ -83,16 +84,20 @@ components:
             $ref: '#/components/schemas/VsDataContainer-Single'
           type: array
       type: object
+    MDAReport_allOf_attributes_allOf:
+      properties:
+        mDAReportID:
+          type: string
+        mDAOutputs:
+          $ref: '#/components/schemas/MDAOutputs'
+      type: object
+    MDAReport_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MDAReport_allOf_attributes_allOf'
     MDAReport_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              mDAReportID:
-                type: string
-              mDAOutputs:
-                $ref: '#/components/schemas/MDAOutputs'
-            type: object
+          $ref: '#/components/schemas/MDAReport_allOf_attributes'
       type: object
       example: null
     VsDataContainer_Single_attributes:

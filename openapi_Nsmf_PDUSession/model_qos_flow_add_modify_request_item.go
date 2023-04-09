@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -26,9 +26,9 @@ type QosFlowAddModifyRequestItem struct {
 	// string with format 'bytes' as defined in OpenAPI
 	QosRules *string `json:"qosRules,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
-	QosFlowDescription *string `json:"qosFlowDescription,omitempty"`
-	QosFlowProfile *QosFlowProfile `json:"qosFlowProfile,omitempty"`
-	AssociatedAnType *QosFlowAccessType `json:"associatedAnType,omitempty"`
+	QosFlowDescription *string            `json:"qosFlowDescription,omitempty"`
+	QosFlowProfile     *QosFlowProfile    `json:"qosFlowProfile,omitempty"`
+	AssociatedAnType   *QosFlowAccessType `json:"associatedAnType,omitempty"`
 }
 
 // NewQosFlowAddModifyRequestItem instantiates a new QosFlowAddModifyRequestItem object
@@ -75,7 +75,7 @@ func (o *QosFlowAddModifyRequestItem) SetQfi(v int32) {
 
 // GetEbi returns the Ebi field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetEbi() int32 {
-	if o == nil || isNil(o.Ebi) {
+	if o == nil || IsNil(o.Ebi) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *QosFlowAddModifyRequestItem) GetEbi() int32 {
 // GetEbiOk returns a tuple with the Ebi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetEbiOk() (*int32, bool) {
-	if o == nil || isNil(o.Ebi) {
+	if o == nil || IsNil(o.Ebi) {
 		return nil, false
 	}
 	return o.Ebi, true
@@ -93,7 +93,7 @@ func (o *QosFlowAddModifyRequestItem) GetEbiOk() (*int32, bool) {
 
 // HasEbi returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasEbi() bool {
-	if o != nil && !isNil(o.Ebi) {
+	if o != nil && !IsNil(o.Ebi) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *QosFlowAddModifyRequestItem) SetEbi(v int32) {
 
 // GetQosRules returns the QosRules field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetQosRules() string {
-	if o == nil || isNil(o.QosRules) {
+	if o == nil || IsNil(o.QosRules) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosRules() string {
 // GetQosRulesOk returns a tuple with the QosRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetQosRulesOk() (*string, bool) {
-	if o == nil || isNil(o.QosRules) {
+	if o == nil || IsNil(o.QosRules) {
 		return nil, false
 	}
 	return o.QosRules, true
@@ -125,7 +125,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosRulesOk() (*string, bool) {
 
 // HasQosRules returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasQosRules() bool {
-	if o != nil && !isNil(o.QosRules) {
+	if o != nil && !IsNil(o.QosRules) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *QosFlowAddModifyRequestItem) SetQosRules(v string) {
 
 // GetQosFlowDescription returns the QosFlowDescription field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowDescription() string {
-	if o == nil || isNil(o.QosFlowDescription) {
+	if o == nil || IsNil(o.QosFlowDescription) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowDescription() string {
 // GetQosFlowDescriptionOk returns a tuple with the QosFlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.QosFlowDescription) {
+	if o == nil || IsNil(o.QosFlowDescription) {
 		return nil, false
 	}
 	return o.QosFlowDescription, true
@@ -157,7 +157,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowDescriptionOk() (*string, bool) 
 
 // HasQosFlowDescription returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasQosFlowDescription() bool {
-	if o != nil && !isNil(o.QosFlowDescription) {
+	if o != nil && !IsNil(o.QosFlowDescription) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *QosFlowAddModifyRequestItem) SetQosFlowDescription(v string) {
 
 // GetQosFlowProfile returns the QosFlowProfile field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowProfile() QosFlowProfile {
-	if o == nil || isNil(o.QosFlowProfile) {
+	if o == nil || IsNil(o.QosFlowProfile) {
 		var ret QosFlowProfile
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowProfile() QosFlowProfile {
 // GetQosFlowProfileOk returns a tuple with the QosFlowProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowProfileOk() (*QosFlowProfile, bool) {
-	if o == nil || isNil(o.QosFlowProfile) {
+	if o == nil || IsNil(o.QosFlowProfile) {
 		return nil, false
 	}
 	return o.QosFlowProfile, true
@@ -189,7 +189,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowProfileOk() (*QosFlowProfile, bo
 
 // HasQosFlowProfile returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasQosFlowProfile() bool {
-	if o != nil && !isNil(o.QosFlowProfile) {
+	if o != nil && !IsNil(o.QosFlowProfile) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *QosFlowAddModifyRequestItem) SetQosFlowProfile(v QosFlowProfile) {
 
 // GetAssociatedAnType returns the AssociatedAnType field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetAssociatedAnType() QosFlowAccessType {
-	if o == nil || isNil(o.AssociatedAnType) {
+	if o == nil || IsNil(o.AssociatedAnType) {
 		var ret QosFlowAccessType
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *QosFlowAddModifyRequestItem) GetAssociatedAnType() QosFlowAccessType {
 // GetAssociatedAnTypeOk returns a tuple with the AssociatedAnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetAssociatedAnTypeOk() (*QosFlowAccessType, bool) {
-	if o == nil || isNil(o.AssociatedAnType) {
+	if o == nil || IsNil(o.AssociatedAnType) {
 		return nil, false
 	}
 	return o.AssociatedAnType, true
@@ -221,7 +221,7 @@ func (o *QosFlowAddModifyRequestItem) GetAssociatedAnTypeOk() (*QosFlowAccessTyp
 
 // HasAssociatedAnType returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasAssociatedAnType() bool {
-	if o != nil && !isNil(o.AssociatedAnType) {
+	if o != nil && !IsNil(o.AssociatedAnType) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *QosFlowAddModifyRequestItem) SetAssociatedAnType(v QosFlowAccessType) {
 }
 
 func (o QosFlowAddModifyRequestItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,19 +244,19 @@ func (o QosFlowAddModifyRequestItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowAddModifyRequestItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !isNil(o.Ebi) {
+	if !IsNil(o.Ebi) {
 		toSerialize["ebi"] = o.Ebi
 	}
-	if !isNil(o.QosRules) {
+	if !IsNil(o.QosRules) {
 		toSerialize["qosRules"] = o.QosRules
 	}
-	if !isNil(o.QosFlowDescription) {
+	if !IsNil(o.QosFlowDescription) {
 		toSerialize["qosFlowDescription"] = o.QosFlowDescription
 	}
-	if !isNil(o.QosFlowProfile) {
+	if !IsNil(o.QosFlowProfile) {
 		toSerialize["qosFlowProfile"] = o.QosFlowProfile
 	}
-	if !isNil(o.AssociatedAnType) {
+	if !IsNil(o.AssociatedAnType) {
 		toSerialize["associatedAnType"] = o.AssociatedAnType
 	}
 	return toSerialize, nil
@@ -297,5 +297,3 @@ func (v *NullableQosFlowAddModifyRequestItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Pc5QoSPara{}
 // Pc5QoSPara Contains policy data on the PC5 QoS parameters.
 type Pc5QoSPara struct {
 	Pc5QosFlowList []Pc5QosFlowItem `json:"pc5QosFlowList"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	Pc5LinkAmbr *string `json:"pc5LinkAmbr,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *Pc5QoSPara) SetPc5QosFlowList(v []Pc5QosFlowItem) {
 
 // GetPc5LinkAmbr returns the Pc5LinkAmbr field value if set, zero value otherwise.
 func (o *Pc5QoSPara) GetPc5LinkAmbr() string {
-	if o == nil || isNil(o.Pc5LinkAmbr) {
+	if o == nil || IsNil(o.Pc5LinkAmbr) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *Pc5QoSPara) GetPc5LinkAmbr() string {
 // GetPc5LinkAmbrOk returns a tuple with the Pc5LinkAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5QoSPara) GetPc5LinkAmbrOk() (*string, bool) {
-	if o == nil || isNil(o.Pc5LinkAmbr) {
+	if o == nil || IsNil(o.Pc5LinkAmbr) {
 		return nil, false
 	}
 	return o.Pc5LinkAmbr, true
@@ -86,7 +86,7 @@ func (o *Pc5QoSPara) GetPc5LinkAmbrOk() (*string, bool) {
 
 // HasPc5LinkAmbr returns a boolean if a field has been set.
 func (o *Pc5QoSPara) HasPc5LinkAmbr() bool {
-	if o != nil && !isNil(o.Pc5LinkAmbr) {
+	if o != nil && !IsNil(o.Pc5LinkAmbr) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *Pc5QoSPara) SetPc5LinkAmbr(v string) {
 }
 
 func (o Pc5QoSPara) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o Pc5QoSPara) MarshalJSON() ([]byte, error) {
 func (o Pc5QoSPara) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pc5QosFlowList"] = o.Pc5QosFlowList
-	if !isNil(o.Pc5LinkAmbr) {
+	if !IsNil(o.Pc5LinkAmbr) {
 		toSerialize["pc5LinkAmbr"] = o.Pc5LinkAmbr
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullablePc5QoSPara) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

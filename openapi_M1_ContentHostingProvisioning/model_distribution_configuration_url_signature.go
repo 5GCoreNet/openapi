@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &DistributionConfigurationUrlSignature{}
 
 // DistributionConfigurationUrlSignature struct for DistributionConfigurationUrlSignature
 type DistributionConfigurationUrlSignature struct {
-	UrlPattern string `json:"urlPattern"`
-	TokenName string `json:"tokenName"`
-	PassphraseName string `json:"passphraseName"`
-	Passphrase string `json:"passphrase"`
-	TokenExpiryName string `json:"tokenExpiryName"`
-	UseIPAddress bool `json:"useIPAddress"`
-	IpAddressName *string `json:"ipAddressName,omitempty"`
+	UrlPattern      string  `json:"urlPattern"`
+	TokenName       string  `json:"tokenName"`
+	PassphraseName  string  `json:"passphraseName"`
+	Passphrase      string  `json:"passphrase"`
+	TokenExpiryName string  `json:"tokenExpiryName"`
+	UseIPAddress    bool    `json:"useIPAddress"`
+	IpAddressName   *string `json:"ipAddressName,omitempty"`
 }
 
 // NewDistributionConfigurationUrlSignature instantiates a new DistributionConfigurationUrlSignature object
@@ -197,7 +197,7 @@ func (o *DistributionConfigurationUrlSignature) SetUseIPAddress(v bool) {
 
 // GetIpAddressName returns the IpAddressName field value if set, zero value otherwise.
 func (o *DistributionConfigurationUrlSignature) GetIpAddressName() string {
-	if o == nil || isNil(o.IpAddressName) {
+	if o == nil || IsNil(o.IpAddressName) {
 		var ret string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *DistributionConfigurationUrlSignature) GetIpAddressName() string {
 // GetIpAddressNameOk returns a tuple with the IpAddressName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfigurationUrlSignature) GetIpAddressNameOk() (*string, bool) {
-	if o == nil || isNil(o.IpAddressName) {
+	if o == nil || IsNil(o.IpAddressName) {
 		return nil, false
 	}
 	return o.IpAddressName, true
@@ -215,7 +215,7 @@ func (o *DistributionConfigurationUrlSignature) GetIpAddressNameOk() (*string, b
 
 // HasIpAddressName returns a boolean if a field has been set.
 func (o *DistributionConfigurationUrlSignature) HasIpAddressName() bool {
-	if o != nil && !isNil(o.IpAddressName) {
+	if o != nil && !IsNil(o.IpAddressName) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *DistributionConfigurationUrlSignature) SetIpAddressName(v string) {
 }
 
 func (o DistributionConfigurationUrlSignature) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,7 +243,7 @@ func (o DistributionConfigurationUrlSignature) ToMap() (map[string]interface{}, 
 	toSerialize["passphrase"] = o.Passphrase
 	toSerialize["tokenExpiryName"] = o.TokenExpiryName
 	toSerialize["useIPAddress"] = o.UseIPAddress
-	if !isNil(o.IpAddressName) {
+	if !IsNil(o.IpAddressName) {
 		toSerialize["ipAddressName"] = o.IpAddressName
 	}
 	return toSerialize, nil
@@ -284,5 +284,3 @@ func (v *NullableDistributionConfigurationUrlSignature) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

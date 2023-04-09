@@ -1,7 +1,7 @@
 /*
 Nhss_UECM
 
-HSS UE Context Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS UE Context Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &DeregistrationRequest{}
 
 // DeregistrationRequest It represents the request body of the deregistration request sent by UDM to HSS and contains the IMSI of the UE, the deregistration reason, etc.
 type DeregistrationRequest struct {
-	Imsi string `json:"imsi"`
+	Imsi        string               `json:"imsi"`
 	DeregReason DeregistrationReason `json:"deregReason"`
-	Guami *Guami `json:"guami,omitempty"`
+	Guami       *Guami               `json:"guami,omitempty"`
 }
 
 // NewDeregistrationRequest instantiates a new DeregistrationRequest object
@@ -93,7 +93,7 @@ func (o *DeregistrationRequest) SetDeregReason(v DeregistrationReason) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *DeregistrationRequest) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *DeregistrationRequest) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationRequest) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -111,7 +111,7 @@ func (o *DeregistrationRequest) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *DeregistrationRequest) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *DeregistrationRequest) SetGuami(v Guami) {
 }
 
 func (o DeregistrationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o DeregistrationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["imsi"] = o.Imsi
 	toSerialize["deregReason"] = o.DeregReason
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableDeregistrationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-iptvconfiguration
 
-API for IPTV configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for IPTV configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -13,20 +13,19 @@ package openapi_IPTVConfiguration
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualIPTVConfigurationApiService IndividualIPTVConfigurationApi service
 type IndividualIPTVConfigurationApiService service
 
 type ApiDeleteAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualIPTVConfigurationApiService
-	afId string
+	ctx             context.Context
+	ApiService      *IndividualIPTVConfigurationApiService
+	afId            string
 	configurationId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteAnSubscriptionRequest) Execute() (*http.Response, error) {
 /*
 DeleteAnSubscription Deletes an already existing configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configurationId Identifier of the configuration resource
- @return ApiDeleteAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configurationId Identifier of the configuration resource
+	@return ApiDeleteAnSubscriptionRequest
 */
 func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscription(ctx context.Context, afId string, configurationId string) ApiDeleteAnSubscriptionRequest {
 	return ApiDeleteAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		configurationId: configurationId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscription(ctx context
 // Execute executes the request
 func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r ApiDeleteAnSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualIPTVConfigurationApiService.DeleteAnSubscription")
@@ -99,9 +98,9 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,11 +194,11 @@ func (a *IndividualIPTVConfigurationApiService) DeleteAnSubscriptionExecute(r Ap
 }
 
 type ApiFullyUpdateAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualIPTVConfigurationApiService
-	afId string
+	ctx             context.Context
+	ApiService      *IndividualIPTVConfigurationApiService
+	afId            string
 	configurationId string
-	iptvConfigData *IptvConfigData
+	iptvConfigData  *IptvConfigData
 }
 
 // Parameters to update/replace the existing configuration
@@ -215,28 +214,29 @@ func (r ApiFullyUpdateAnSubscriptionRequest) Execute() (*IptvConfigData, *http.R
 /*
 FullyUpdateAnSubscription Fully updates/replaces an existing configuration resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configurationId Identifier of the configuration resource
- @return ApiFullyUpdateAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configurationId Identifier of the configuration resource
+	@return ApiFullyUpdateAnSubscriptionRequest
 */
 func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscription(ctx context.Context, afId string, configurationId string) ApiFullyUpdateAnSubscriptionRequest {
 	return ApiFullyUpdateAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return IptvConfigData
+//
+//	@return IptvConfigData
 func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute(r ApiFullyUpdateAnSubscriptionRequest) (*IptvConfigData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *IptvConfigData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *IptvConfigData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualIPTVConfigurationApiService.FullyUpdateAnSubscription")
@@ -284,9 +284,9 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -303,8 +303,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -314,8 +314,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -325,8 +325,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -336,8 +336,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -347,8 +347,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -358,8 +358,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -369,8 +369,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -422,10 +422,10 @@ func (a *IndividualIPTVConfigurationApiService) FullyUpdateAnSubscriptionExecute
 }
 
 type ApiPartialUpdateAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualIPTVConfigurationApiService
-	afId string
-	configurationId string
+	ctx                 context.Context
+	ApiService          *IndividualIPTVConfigurationApiService
+	afId                string
+	configurationId     string
 	iptvConfigDataPatch *IptvConfigDataPatch
 }
 
@@ -441,28 +441,29 @@ func (r ApiPartialUpdateAnSubscriptionRequest) Execute() (*IptvConfigData, *http
 /*
 PartialUpdateAnSubscription Partial updates an existing configuration resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configurationId Identifier of the configuration resource
- @return ApiPartialUpdateAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configurationId Identifier of the configuration resource
+	@return ApiPartialUpdateAnSubscriptionRequest
 */
 func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscription(ctx context.Context, afId string, configurationId string) ApiPartialUpdateAnSubscriptionRequest {
 	return ApiPartialUpdateAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return IptvConfigData
+//
+//	@return IptvConfigData
 func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecute(r ApiPartialUpdateAnSubscriptionRequest) (*IptvConfigData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *IptvConfigData
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *IptvConfigData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualIPTVConfigurationApiService.PartialUpdateAnSubscription")
@@ -510,9 +511,9 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -529,8 +530,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -540,8 +541,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -551,8 +552,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -562,8 +563,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -573,8 +574,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -584,8 +585,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -595,8 +596,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -606,8 +607,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -617,8 +618,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -628,8 +629,8 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -648,9 +649,9 @@ func (a *IndividualIPTVConfigurationApiService) PartialUpdateAnSubscriptionExecu
 }
 
 type ApiReadAnSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualIPTVConfigurationApiService
-	afId string
+	ctx             context.Context
+	ApiService      *IndividualIPTVConfigurationApiService
+	afId            string
 	configurationId string
 }
 
@@ -661,28 +662,29 @@ func (r ApiReadAnSubscriptionRequest) Execute() (*IptvConfigData, *http.Response
 /*
 ReadAnSubscription read an active configuration for the AF and the configuration Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configurationId Identifier of the configuration resource
- @return ApiReadAnSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configurationId Identifier of the configuration resource
+	@return ApiReadAnSubscriptionRequest
 */
 func (a *IndividualIPTVConfigurationApiService) ReadAnSubscription(ctx context.Context, afId string, configurationId string) ApiReadAnSubscriptionRequest {
 	return ApiReadAnSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:      a,
+		ctx:             ctx,
+		afId:            afId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return IptvConfigData
+//
+//	@return IptvConfigData
 func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiReadAnSubscriptionRequest) (*IptvConfigData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *IptvConfigData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *IptvConfigData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualIPTVConfigurationApiService.ReadAnSubscription")
@@ -725,9 +727,9 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -744,8 +746,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -755,8 +757,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -766,8 +768,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -777,8 +779,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -788,8 +790,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -799,8 +801,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -810,8 +812,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -821,8 +823,8 @@ func (a *IndividualIPTVConfigurationApiService) ReadAnSubscriptionExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

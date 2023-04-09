@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualApplicationDataSubscriptionDocumentApiService IndividualApplicationDataSubscriptionDocumentApi service
 type IndividualApplicationDataSubscriptionDocumentApiService service
 
 type ApiDeleteIndividualApplicationDataSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualApplicationDataSubscriptionDocumentApiService
-	subsId string
+	subsId     string
 }
 
 func (r ApiDeleteIndividualApplicationDataSubscriptionRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteIndividualApplicationDataSubscriptionRequest) Execute() (*http.
 /*
 DeleteIndividualApplicationDataSubscription Delete the individual Application Data subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsId
- @return ApiDeleteIndividualApplicationDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subsId
+	@return ApiDeleteIndividualApplicationDataSubscriptionRequest
 */
 func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividualApplicationDataSubscription(ctx context.Context, subsId string) ApiDeleteIndividualApplicationDataSubscriptionRequest {
 	return ApiDeleteIndividualApplicationDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsId: subsId,
+		ctx:        ctx,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividualApplicationDataSubscriptionExecute(r ApiDeleteIndividualApplicationDataSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationDataSubscriptionDocumentApiService.DeleteIndividualApplicationDataSubscription")
@@ -95,9 +94,9 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -180,8 +179,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -191,8 +190,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -202,9 +201,9 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) DeleteIndividu
 }
 
 type ApiReadIndividualApplicationDataSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualApplicationDataSubscriptionDocumentApiService
-	subsId string
+	subsId     string
 }
 
 func (r ApiReadIndividualApplicationDataSubscriptionRequest) Execute() (*ApplicationDataSubs, *http.Response, error) {
@@ -214,26 +213,27 @@ func (r ApiReadIndividualApplicationDataSubscriptionRequest) Execute() (*Applica
 /*
 ReadIndividualApplicationDataSubscription Get an existing individual Application Data Subscription resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsId String identifying a subscription to the Individual Application Data Subscription 
- @return ApiReadIndividualApplicationDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subsId String identifying a subscription to the Individual Application Data Subscription
+	@return ApiReadIndividualApplicationDataSubscriptionRequest
 */
 func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividualApplicationDataSubscription(ctx context.Context, subsId string) ApiReadIndividualApplicationDataSubscriptionRequest {
 	return ApiReadIndividualApplicationDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsId: subsId,
+		ctx:        ctx,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return ApplicationDataSubs
+//
+//	@return ApplicationDataSubs
 func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividualApplicationDataSubscriptionExecute(r ApiReadIndividualApplicationDataSubscriptionRequest) (*ApplicationDataSubs, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApplicationDataSubs
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApplicationDataSubs
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationDataSubscriptionDocumentApiService.ReadIndividualApplicationDataSubscription")
@@ -275,9 +275,9 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -294,8 +294,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -305,8 +305,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -316,8 +316,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -327,8 +327,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -338,8 +338,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -349,8 +349,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -360,8 +360,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -371,8 +371,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -382,8 +382,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -402,9 +402,9 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReadIndividual
 }
 
 type ApiReplaceIndividualApplicationDataSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualApplicationDataSubscriptionDocumentApiService
-	subsId string
+	ctx                 context.Context
+	ApiService          *IndividualApplicationDataSubscriptionDocumentApiService
+	subsId              string
 	applicationDataSubs *ApplicationDataSubs
 }
 
@@ -420,26 +420,27 @@ func (r ApiReplaceIndividualApplicationDataSubscriptionRequest) Execute() (*Appl
 /*
 ReplaceIndividualApplicationDataSubscription Modify a subscription to receive notification of application data changes
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsId
- @return ApiReplaceIndividualApplicationDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subsId
+	@return ApiReplaceIndividualApplicationDataSubscriptionRequest
 */
 func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndividualApplicationDataSubscription(ctx context.Context, subsId string) ApiReplaceIndividualApplicationDataSubscriptionRequest {
 	return ApiReplaceIndividualApplicationDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsId: subsId,
+		ctx:        ctx,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return ApplicationDataSubs
+//
+//	@return ApplicationDataSubs
 func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndividualApplicationDataSubscriptionExecute(r ApiReplaceIndividualApplicationDataSubscriptionRequest) (*ApplicationDataSubs, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApplicationDataSubs
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApplicationDataSubs
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationDataSubscriptionDocumentApiService.ReplaceIndividualApplicationDataSubscription")
@@ -486,9 +487,9 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -505,8 +506,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -516,8 +517,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -527,8 +528,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -538,8 +539,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -549,8 +550,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -560,8 +561,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -571,8 +572,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -582,8 +583,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -593,8 +594,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -604,8 +605,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -615,8 +616,8 @@ func (a *IndividualApplicationDataSubscriptionDocumentApiService) ReplaceIndivid
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

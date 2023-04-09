@@ -1,7 +1,7 @@
 /*
 3gpp-cp-parameter-provisioning
 
-API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -26,7 +26,6 @@ func InterfaceAsCpInfo(v *interface{}) CpInfo {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CpInfo) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src CpInfo) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CpInfo) GetActualInstance() (interface{}) {
+func (obj *CpInfo) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableCpInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

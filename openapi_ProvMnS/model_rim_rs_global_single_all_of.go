@@ -20,7 +20,7 @@ var _ MappedNullable = &RimRSGlobalSingleAllOf{}
 // RimRSGlobalSingleAllOf struct for RimRSGlobalSingleAllOf
 type RimRSGlobalSingleAllOf struct {
 	Attributes *RimRSGlobalSingleAllOfAttributes `json:"attributes,omitempty"`
-	RimRSSet []RimRSSetSingle `json:"RimRSSet,omitempty"`
+	RimRSSet   []RimRSSetSingle                  `json:"RimRSSet,omitempty"`
 }
 
 // NewRimRSGlobalSingleAllOf instantiates a new RimRSGlobalSingleAllOf object
@@ -42,7 +42,7 @@ func NewRimRSGlobalSingleAllOfWithDefaults() *RimRSGlobalSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *RimRSGlobalSingleAllOf) GetAttributes() RimRSGlobalSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret RimRSGlobalSingleAllOfAttributes
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RimRSGlobalSingleAllOf) GetAttributes() RimRSGlobalSingleAllOfAttribute
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingleAllOf) GetAttributesOk() (*RimRSGlobalSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *RimRSGlobalSingleAllOf) GetAttributesOk() (*RimRSGlobalSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *RimRSGlobalSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RimRSGlobalSingleAllOf) SetAttributes(v RimRSGlobalSingleAllOfAttribute
 
 // GetRimRSSet returns the RimRSSet field value if set, zero value otherwise.
 func (o *RimRSGlobalSingleAllOf) GetRimRSSet() []RimRSSetSingle {
-	if o == nil || isNil(o.RimRSSet) {
+	if o == nil || IsNil(o.RimRSSet) {
 		var ret []RimRSSetSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RimRSGlobalSingleAllOf) GetRimRSSet() []RimRSSetSingle {
 // GetRimRSSetOk returns a tuple with the RimRSSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingleAllOf) GetRimRSSetOk() ([]RimRSSetSingle, bool) {
-	if o == nil || isNil(o.RimRSSet) {
+	if o == nil || IsNil(o.RimRSSet) {
 		return nil, false
 	}
 	return o.RimRSSet, true
@@ -92,7 +92,7 @@ func (o *RimRSGlobalSingleAllOf) GetRimRSSetOk() ([]RimRSSetSingle, bool) {
 
 // HasRimRSSet returns a boolean if a field has been set.
 func (o *RimRSGlobalSingleAllOf) HasRimRSSet() bool {
-	if o != nil && !isNil(o.RimRSSet) {
+	if o != nil && !IsNil(o.RimRSSet) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RimRSGlobalSingleAllOf) SetRimRSSet(v []RimRSSetSingle) {
 }
 
 func (o RimRSGlobalSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RimRSGlobalSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o RimRSGlobalSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.RimRSSet) {
+	if !IsNil(o.RimRSSet) {
 		toSerialize["RimRSSet"] = o.RimRSSet
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRimRSGlobalSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

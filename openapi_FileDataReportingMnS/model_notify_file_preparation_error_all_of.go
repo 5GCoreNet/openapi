@@ -19,9 +19,9 @@ var _ MappedNullable = &NotifyFilePreparationErrorAllOf{}
 
 // NotifyFilePreparationErrorAllOf struct for NotifyFilePreparationErrorAllOf
 type NotifyFilePreparationErrorAllOf struct {
-	FileInfoList []FileInfo `json:"fileInfoList,omitempty"`
-	Reason *string `json:"reason,omitempty"`
-	AdditionalText *string `json:"additionalText,omitempty"`
+	FileInfoList   []FileInfo `json:"fileInfoList,omitempty"`
+	Reason         *string    `json:"reason,omitempty"`
+	AdditionalText *string    `json:"additionalText,omitempty"`
 }
 
 // NewNotifyFilePreparationErrorAllOf instantiates a new NotifyFilePreparationErrorAllOf object
@@ -43,7 +43,7 @@ func NewNotifyFilePreparationErrorAllOfWithDefaults() *NotifyFilePreparationErro
 
 // GetFileInfoList returns the FileInfoList field value if set, zero value otherwise.
 func (o *NotifyFilePreparationErrorAllOf) GetFileInfoList() []FileInfo {
-	if o == nil || isNil(o.FileInfoList) {
+	if o == nil || IsNil(o.FileInfoList) {
 		var ret []FileInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *NotifyFilePreparationErrorAllOf) GetFileInfoList() []FileInfo {
 // GetFileInfoListOk returns a tuple with the FileInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationErrorAllOf) GetFileInfoListOk() ([]FileInfo, bool) {
-	if o == nil || isNil(o.FileInfoList) {
+	if o == nil || IsNil(o.FileInfoList) {
 		return nil, false
 	}
 	return o.FileInfoList, true
@@ -61,7 +61,7 @@ func (o *NotifyFilePreparationErrorAllOf) GetFileInfoListOk() ([]FileInfo, bool)
 
 // HasFileInfoList returns a boolean if a field has been set.
 func (o *NotifyFilePreparationErrorAllOf) HasFileInfoList() bool {
-	if o != nil && !isNil(o.FileInfoList) {
+	if o != nil && !IsNil(o.FileInfoList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *NotifyFilePreparationErrorAllOf) SetFileInfoList(v []FileInfo) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *NotifyFilePreparationErrorAllOf) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *NotifyFilePreparationErrorAllOf) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationErrorAllOf) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -93,7 +93,7 @@ func (o *NotifyFilePreparationErrorAllOf) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *NotifyFilePreparationErrorAllOf) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NotifyFilePreparationErrorAllOf) SetReason(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyFilePreparationErrorAllOf) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NotifyFilePreparationErrorAllOf) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationErrorAllOf) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -125,7 +125,7 @@ func (o *NotifyFilePreparationErrorAllOf) GetAdditionalTextOk() (*string, bool) 
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyFilePreparationErrorAllOf) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *NotifyFilePreparationErrorAllOf) SetAdditionalText(v string) {
 }
 
 func (o NotifyFilePreparationErrorAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o NotifyFilePreparationErrorAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NotifyFilePreparationErrorAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FileInfoList) {
+	if !IsNil(o.FileInfoList) {
 		toSerialize["fileInfoList"] = o.FileInfoList
 	}
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !isNil(o.AdditionalText) {
+	if !IsNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableNotifyFilePreparationErrorAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

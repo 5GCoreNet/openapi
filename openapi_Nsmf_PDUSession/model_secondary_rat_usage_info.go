@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,11 +17,11 @@ import (
 // checks if the SecondaryRatUsageInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SecondaryRatUsageInfo{}
 
-// SecondaryRatUsageInfo Secondary RAT Usage Information to report usage data for a secondary RAT for QoS flows and/or the whole PDU session. 
+// SecondaryRatUsageInfo Secondary RAT Usage Information to report usage data for a secondary RAT for QoS flows and/or the whole PDU session.
 type SecondaryRatUsageInfo struct {
-	SecondaryRatType RatType `json:"secondaryRatType"`
-	QosFlowsUsageData []QosFlowUsageReport `json:"qosFlowsUsageData,omitempty"`
-	PduSessionUsageData []VolumeTimedReport `json:"pduSessionUsageData,omitempty"`
+	SecondaryRatType    RatType              `json:"secondaryRatType"`
+	QosFlowsUsageData   []QosFlowUsageReport `json:"qosFlowsUsageData,omitempty"`
+	PduSessionUsageData []VolumeTimedReport  `json:"pduSessionUsageData,omitempty"`
 }
 
 // NewSecondaryRatUsageInfo instantiates a new SecondaryRatUsageInfo object
@@ -68,7 +68,7 @@ func (o *SecondaryRatUsageInfo) SetSecondaryRatType(v RatType) {
 
 // GetQosFlowsUsageData returns the QosFlowsUsageData field value if set, zero value otherwise.
 func (o *SecondaryRatUsageInfo) GetQosFlowsUsageData() []QosFlowUsageReport {
-	if o == nil || isNil(o.QosFlowsUsageData) {
+	if o == nil || IsNil(o.QosFlowsUsageData) {
 		var ret []QosFlowUsageReport
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SecondaryRatUsageInfo) GetQosFlowsUsageData() []QosFlowUsageReport {
 // GetQosFlowsUsageDataOk returns a tuple with the QosFlowsUsageData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecondaryRatUsageInfo) GetQosFlowsUsageDataOk() ([]QosFlowUsageReport, bool) {
-	if o == nil || isNil(o.QosFlowsUsageData) {
+	if o == nil || IsNil(o.QosFlowsUsageData) {
 		return nil, false
 	}
 	return o.QosFlowsUsageData, true
@@ -86,7 +86,7 @@ func (o *SecondaryRatUsageInfo) GetQosFlowsUsageDataOk() ([]QosFlowUsageReport, 
 
 // HasQosFlowsUsageData returns a boolean if a field has been set.
 func (o *SecondaryRatUsageInfo) HasQosFlowsUsageData() bool {
-	if o != nil && !isNil(o.QosFlowsUsageData) {
+	if o != nil && !IsNil(o.QosFlowsUsageData) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SecondaryRatUsageInfo) SetQosFlowsUsageData(v []QosFlowUsageReport) {
 
 // GetPduSessionUsageData returns the PduSessionUsageData field value if set, zero value otherwise.
 func (o *SecondaryRatUsageInfo) GetPduSessionUsageData() []VolumeTimedReport {
-	if o == nil || isNil(o.PduSessionUsageData) {
+	if o == nil || IsNil(o.PduSessionUsageData) {
 		var ret []VolumeTimedReport
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SecondaryRatUsageInfo) GetPduSessionUsageData() []VolumeTimedReport {
 // GetPduSessionUsageDataOk returns a tuple with the PduSessionUsageData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecondaryRatUsageInfo) GetPduSessionUsageDataOk() ([]VolumeTimedReport, bool) {
-	if o == nil || isNil(o.PduSessionUsageData) {
+	if o == nil || IsNil(o.PduSessionUsageData) {
 		return nil, false
 	}
 	return o.PduSessionUsageData, true
@@ -118,7 +118,7 @@ func (o *SecondaryRatUsageInfo) GetPduSessionUsageDataOk() ([]VolumeTimedReport,
 
 // HasPduSessionUsageData returns a boolean if a field has been set.
 func (o *SecondaryRatUsageInfo) HasPduSessionUsageData() bool {
-	if o != nil && !isNil(o.PduSessionUsageData) {
+	if o != nil && !IsNil(o.PduSessionUsageData) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *SecondaryRatUsageInfo) SetPduSessionUsageData(v []VolumeTimedReport) {
 }
 
 func (o SecondaryRatUsageInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o SecondaryRatUsageInfo) MarshalJSON() ([]byte, error) {
 func (o SecondaryRatUsageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["secondaryRatType"] = o.SecondaryRatType
-	if !isNil(o.QosFlowsUsageData) {
+	if !IsNil(o.QosFlowsUsageData) {
 		toSerialize["qosFlowsUsageData"] = o.QosFlowsUsageData
 	}
-	if !isNil(o.PduSessionUsageData) {
+	if !IsNil(o.PduSessionUsageData) {
 		toSerialize["pduSessionUsageData"] = o.PduSessionUsageData
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableSecondaryRatUsageInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

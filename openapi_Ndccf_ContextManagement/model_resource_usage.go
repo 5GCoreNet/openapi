@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the ResourceUsage type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ResourceUsage{}
 
-// ResourceUsage The current usage of the virtual resources assigned to the NF instances belonging to a  particular network slice instance. 
+// ResourceUsage The current usage of the virtual resources assigned to the NF instances belonging to a  particular network slice instance.
 type ResourceUsage struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	CpuUsage *int32 `json:"cpuUsage,omitempty"`
@@ -46,7 +46,7 @@ func NewResourceUsageWithDefaults() *ResourceUsage {
 
 // GetCpuUsage returns the CpuUsage field value if set, zero value otherwise.
 func (o *ResourceUsage) GetCpuUsage() int32 {
-	if o == nil || isNil(o.CpuUsage) {
+	if o == nil || IsNil(o.CpuUsage) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ResourceUsage) GetCpuUsage() int32 {
 // GetCpuUsageOk returns a tuple with the CpuUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceUsage) GetCpuUsageOk() (*int32, bool) {
-	if o == nil || isNil(o.CpuUsage) {
+	if o == nil || IsNil(o.CpuUsage) {
 		return nil, false
 	}
 	return o.CpuUsage, true
@@ -64,7 +64,7 @@ func (o *ResourceUsage) GetCpuUsageOk() (*int32, bool) {
 
 // HasCpuUsage returns a boolean if a field has been set.
 func (o *ResourceUsage) HasCpuUsage() bool {
-	if o != nil && !isNil(o.CpuUsage) {
+	if o != nil && !IsNil(o.CpuUsage) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ResourceUsage) SetCpuUsage(v int32) {
 
 // GetMemoryUsage returns the MemoryUsage field value if set, zero value otherwise.
 func (o *ResourceUsage) GetMemoryUsage() int32 {
-	if o == nil || isNil(o.MemoryUsage) {
+	if o == nil || IsNil(o.MemoryUsage) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ResourceUsage) GetMemoryUsage() int32 {
 // GetMemoryUsageOk returns a tuple with the MemoryUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceUsage) GetMemoryUsageOk() (*int32, bool) {
-	if o == nil || isNil(o.MemoryUsage) {
+	if o == nil || IsNil(o.MemoryUsage) {
 		return nil, false
 	}
 	return o.MemoryUsage, true
@@ -96,7 +96,7 @@ func (o *ResourceUsage) GetMemoryUsageOk() (*int32, bool) {
 
 // HasMemoryUsage returns a boolean if a field has been set.
 func (o *ResourceUsage) HasMemoryUsage() bool {
-	if o != nil && !isNil(o.MemoryUsage) {
+	if o != nil && !IsNil(o.MemoryUsage) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ResourceUsage) SetMemoryUsage(v int32) {
 
 // GetStorageUsage returns the StorageUsage field value if set, zero value otherwise.
 func (o *ResourceUsage) GetStorageUsage() int32 {
-	if o == nil || isNil(o.StorageUsage) {
+	if o == nil || IsNil(o.StorageUsage) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ResourceUsage) GetStorageUsage() int32 {
 // GetStorageUsageOk returns a tuple with the StorageUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceUsage) GetStorageUsageOk() (*int32, bool) {
-	if o == nil || isNil(o.StorageUsage) {
+	if o == nil || IsNil(o.StorageUsage) {
 		return nil, false
 	}
 	return o.StorageUsage, true
@@ -128,7 +128,7 @@ func (o *ResourceUsage) GetStorageUsageOk() (*int32, bool) {
 
 // HasStorageUsage returns a boolean if a field has been set.
 func (o *ResourceUsage) HasStorageUsage() bool {
-	if o != nil && !isNil(o.StorageUsage) {
+	if o != nil && !IsNil(o.StorageUsage) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ResourceUsage) SetStorageUsage(v int32) {
 }
 
 func (o ResourceUsage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o ResourceUsage) MarshalJSON() ([]byte, error) {
 
 func (o ResourceUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CpuUsage) {
+	if !IsNil(o.CpuUsage) {
 		toSerialize["cpuUsage"] = o.CpuUsage
 	}
-	if !isNil(o.MemoryUsage) {
+	if !IsNil(o.MemoryUsage) {
 		toSerialize["memoryUsage"] = o.MemoryUsage
 	}
-	if !isNil(o.StorageUsage) {
+	if !IsNil(o.StorageUsage) {
 		toSerialize["storageUsage"] = o.StorageUsage
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableResourceUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

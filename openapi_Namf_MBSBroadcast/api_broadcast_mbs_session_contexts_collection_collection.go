@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Namf_MBSBroadcast
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"os"
 )
 
-
 // BroadcastMBSSessionContextsCollectionCollectionApiService BroadcastMBSSessionContextsCollectionCollectionApi service
 type BroadcastMBSSessionContextsCollectionCollectionApiService service
 
 type ApiContextCreateRequest struct {
-	ctx context.Context
-	ApiService *BroadcastMBSSessionContextsCollectionCollectionApiService
-	jsonData *ContextCreateReqData
+	ctx                     context.Context
+	ApiService              *BroadcastMBSSessionContextsCollectionCollectionApiService
+	jsonData                *ContextCreateReqData
 	binaryDataN2Information *os.File
 }
 
@@ -35,8 +34,8 @@ func (r ApiContextCreateRequest) JsonData(jsonData ContextCreateReqData) ApiCont
 	return r
 }
 
-func (r ApiContextCreateRequest) BinaryDataN2Information(binaryDataN2Information os.File) ApiContextCreateRequest {
-	r.binaryDataN2Information = &binaryDataN2Information
+func (r ApiContextCreateRequest) BinaryDataN2Information(binaryDataN2Information *os.File) ApiContextCreateRequest {
+	r.binaryDataN2Information = binaryDataN2Information
 	return r
 }
 
@@ -47,24 +46,25 @@ func (r ApiContextCreateRequest) Execute() (*ContextCreateRspData, *http.Respons
 /*
 ContextCreate Namf_MBSBroadcast ContextCreate service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiContextCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiContextCreateRequest
 */
 func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreate(ctx context.Context) ApiContextCreateRequest {
 	return ApiContextCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ContextCreateRspData
+//
+//	@return ContextCreateRspData
 func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreateExecute(r ApiContextCreateRequest) (*ContextCreateRspData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContextCreateRspData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContextCreateRspData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BroadcastMBSSessionContextsCollectionCollectionApiService.ContextCreate")
@@ -103,22 +103,21 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryDataN2InformationLocalVarFormFileName string
-	var binaryDataN2InformationLocalVarFileName     string
-	var binaryDataN2InformationLocalVarFileBytes    []byte
+	var binaryDataN2InformationLocalVarFileName string
+	var binaryDataN2InformationLocalVarFileBytes []byte
 
 	binaryDataN2InformationLocalVarFormFileName = "binaryDataN2Information"
 
-	var binaryDataN2InformationLocalVarFile *os.File
-	if r.binaryDataN2Information != nil {
-		binaryDataN2InformationLocalVarFile = r.binaryDataN2Information
-	}
+	binaryDataN2InformationLocalVarFile := r.binaryDataN2Information
+
 	if binaryDataN2InformationLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationLocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationLocalVarFile)
+
 		binaryDataN2InformationLocalVarFileBytes = fbs
 		binaryDataN2InformationLocalVarFileName = binaryDataN2InformationLocalVarFile.Name()
 		binaryDataN2InformationLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -129,9 +128,9 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -148,8 +147,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -159,8 +158,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -170,8 +169,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -181,8 +180,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -192,8 +191,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -203,8 +202,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -214,8 +213,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -225,8 +224,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -236,8 +235,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -247,8 +246,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -258,8 +257,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -269,8 +268,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -280,8 +279,8 @@ func (a *BroadcastMBSSessionContextsCollectionCollectionApiService) ContextCreat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

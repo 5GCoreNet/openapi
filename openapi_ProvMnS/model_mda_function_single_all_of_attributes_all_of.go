@@ -72,7 +72,7 @@ func (o *MDAFunctionSingleAllOfAttributesAllOf) SetSupportedMDACapabilities(v []
 }
 
 func (o MDAFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -122,5 +122,3 @@ func (v *NullableMDAFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

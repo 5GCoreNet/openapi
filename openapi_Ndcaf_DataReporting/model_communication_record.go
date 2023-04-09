@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,8 +19,7 @@ var _ MappedNullable = &CommunicationRecord{}
 
 // CommunicationRecord struct for CommunicationRecord
 type CommunicationRecord struct {
-	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
+	BaseRecord
 	TimeInterval TimeWindow `json:"timeInterval"`
 	// Unsigned integer identifying a volume in units of bytes.
 	UplinkVolume *int64 `json:"uplinkVolume,omitempty"`
@@ -32,7 +31,7 @@ type CommunicationRecord struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCommunicationRecord(timestamp time.Time, timeInterval TimeWindow) *CommunicationRecord {
+func NewCommunicationRecord(timeInterval TimeWindow, timestamp time.Time) *CommunicationRecord {
 	this := CommunicationRecord{}
 	this.Timestamp = timestamp
 	this.TimeInterval = timeInterval
@@ -45,30 +44,6 @@ func NewCommunicationRecord(timestamp time.Time, timeInterval TimeWindow) *Commu
 func NewCommunicationRecordWithDefaults() *CommunicationRecord {
 	this := CommunicationRecord{}
 	return &this
-}
-
-// GetTimestamp returns the Timestamp field value
-func (o *CommunicationRecord) GetTimestamp() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.Timestamp
-}
-
-// GetTimestampOk returns a tuple with the Timestamp field value
-// and a boolean to check if the value has been set.
-func (o *CommunicationRecord) GetTimestampOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Timestamp, true
-}
-
-// SetTimestamp sets field value
-func (o *CommunicationRecord) SetTimestamp(v time.Time) {
-	o.Timestamp = v
 }
 
 // GetTimeInterval returns the TimeInterval field value
@@ -97,7 +72,7 @@ func (o *CommunicationRecord) SetTimeInterval(v TimeWindow) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *CommunicationRecord) GetUplinkVolume() int64 {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -107,7 +82,7 @@ func (o *CommunicationRecord) GetUplinkVolume() int64 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationRecord) GetUplinkVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -115,7 +90,7 @@ func (o *CommunicationRecord) GetUplinkVolumeOk() (*int64, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *CommunicationRecord) HasUplinkVolume() bool {
-	if o != nil && !isNil(o.UplinkVolume) {
+	if o != nil && !IsNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -129,7 +104,7 @@ func (o *CommunicationRecord) SetUplinkVolume(v int64) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *CommunicationRecord) GetDownlinkVolume() int64 {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -139,7 +114,7 @@ func (o *CommunicationRecord) GetDownlinkVolume() int64 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationRecord) GetDownlinkVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -147,7 +122,7 @@ func (o *CommunicationRecord) GetDownlinkVolumeOk() (*int64, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *CommunicationRecord) HasDownlinkVolume() bool {
-	if o != nil && !isNil(o.DownlinkVolume) {
+	if o != nil && !IsNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -160,7 +135,7 @@ func (o *CommunicationRecord) SetDownlinkVolume(v int64) {
 }
 
 func (o CommunicationRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,12 +144,19 @@ func (o CommunicationRecord) MarshalJSON() ([]byte, error) {
 
 func (o CommunicationRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["timestamp"] = o.Timestamp
+	serializedBaseRecord, errBaseRecord := json.Marshal(o.BaseRecord)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
+	errBaseRecord = json.Unmarshal([]byte(serializedBaseRecord), &toSerialize)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
 	toSerialize["timeInterval"] = o.TimeInterval
-	if !isNil(o.UplinkVolume) {
+	if !IsNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !isNil(o.DownlinkVolume) {
+	if !IsNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
 	return toSerialize, nil
@@ -215,5 +197,3 @@ func (v *NullableCommunicationRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

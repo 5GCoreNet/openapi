@@ -1,7 +1,7 @@
 /*
 Nucmf_Provisioning
 
-UCMF_Provisioning Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UCMF_Provisioning Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -46,7 +46,7 @@ func NewRacsConfigurationRmWithDefaults() *RacsConfigurationRm {
 
 // GetRacsParamEps returns the RacsParamEps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RacsConfigurationRm) GetRacsParamEps() string {
-	if o == nil || isNil(o.RacsParamEps.Get()) {
+	if o == nil || IsNil(o.RacsParamEps.Get()) {
 		var ret string
 		return ret
 	}
@@ -76,6 +76,7 @@ func (o *RacsConfigurationRm) HasRacsParamEps() bool {
 func (o *RacsConfigurationRm) SetRacsParamEps(v string) {
 	o.RacsParamEps.Set(&v)
 }
+
 // SetRacsParamEpsNil sets the value for RacsParamEps to be an explicit nil
 func (o *RacsConfigurationRm) SetRacsParamEpsNil() {
 	o.RacsParamEps.Set(nil)
@@ -88,7 +89,7 @@ func (o *RacsConfigurationRm) UnsetRacsParamEps() {
 
 // GetRacsParam5Gs returns the RacsParam5Gs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RacsConfigurationRm) GetRacsParam5Gs() string {
-	if o == nil || isNil(o.RacsParam5Gs.Get()) {
+	if o == nil || IsNil(o.RacsParam5Gs.Get()) {
 		var ret string
 		return ret
 	}
@@ -118,6 +119,7 @@ func (o *RacsConfigurationRm) HasRacsParam5Gs() bool {
 func (o *RacsConfigurationRm) SetRacsParam5Gs(v string) {
 	o.RacsParam5Gs.Set(&v)
 }
+
 // SetRacsParam5GsNil sets the value for RacsParam5Gs to be an explicit nil
 func (o *RacsConfigurationRm) SetRacsParam5GsNil() {
 	o.RacsParam5Gs.Set(nil)
@@ -130,7 +132,7 @@ func (o *RacsConfigurationRm) UnsetRacsParam5Gs() {
 
 // GetImeiTacs returns the ImeiTacs field value if set, zero value otherwise.
 func (o *RacsConfigurationRm) GetImeiTacs() []string {
-	if o == nil || isNil(o.ImeiTacs) {
+	if o == nil || IsNil(o.ImeiTacs) {
 		var ret []string
 		return ret
 	}
@@ -140,7 +142,7 @@ func (o *RacsConfigurationRm) GetImeiTacs() []string {
 // GetImeiTacsOk returns a tuple with the ImeiTacs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsConfigurationRm) GetImeiTacsOk() ([]string, bool) {
-	if o == nil || isNil(o.ImeiTacs) {
+	if o == nil || IsNil(o.ImeiTacs) {
 		return nil, false
 	}
 	return o.ImeiTacs, true
@@ -148,7 +150,7 @@ func (o *RacsConfigurationRm) GetImeiTacsOk() ([]string, bool) {
 
 // HasImeiTacs returns a boolean if a field has been set.
 func (o *RacsConfigurationRm) HasImeiTacs() bool {
-	if o != nil && !isNil(o.ImeiTacs) {
+	if o != nil && !IsNil(o.ImeiTacs) {
 		return true
 	}
 
@@ -161,7 +163,7 @@ func (o *RacsConfigurationRm) SetImeiTacs(v []string) {
 }
 
 func (o RacsConfigurationRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,7 +178,7 @@ func (o RacsConfigurationRm) ToMap() (map[string]interface{}, error) {
 	if o.RacsParam5Gs.IsSet() {
 		toSerialize["racsParam5Gs"] = o.RacsParam5Gs.Get()
 	}
-	if !isNil(o.ImeiTacs) {
+	if !IsNil(o.ImeiTacs) {
 		toSerialize["imeiTacs"] = o.ImeiTacs
 	}
 	return toSerialize, nil
@@ -217,5 +219,3 @@ func (v *NullableRacsConfigurationRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

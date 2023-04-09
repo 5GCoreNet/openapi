@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the SpecificDataSubscription type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SpecificDataSubscription{}
 
-// SpecificDataSubscription Represents an existing subscription for data collection to a specific data source NF. 
+// SpecificDataSubscription Represents an existing subscription for data collection to a specific data source NF.
 type SpecificDataSubscription struct {
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	ProducerId *string `json:"producerId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	ProducerSetId *string `json:"producerSetId,omitempty"`
-	DataSub *DataSubscription `json:"dataSub,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	ProducerSetId *string           `json:"producerSetId,omitempty"`
+	DataSub       *DataSubscription `json:"dataSub,omitempty"`
 }
 
 // NewSpecificDataSubscription instantiates a new SpecificDataSubscription object
@@ -46,7 +46,7 @@ func NewSpecificDataSubscriptionWithDefaults() *SpecificDataSubscription {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SpecificDataSubscription) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -64,7 +64,7 @@ func (o *SpecificDataSubscription) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SpecificDataSubscription) SetSubscriptionId(v string) {
 
 // GetProducerId returns the ProducerId field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetProducerId() string {
-	if o == nil || isNil(o.ProducerId) {
+	if o == nil || IsNil(o.ProducerId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SpecificDataSubscription) GetProducerId() string {
 // GetProducerIdOk returns a tuple with the ProducerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetProducerIdOk() (*string, bool) {
-	if o == nil || isNil(o.ProducerId) {
+	if o == nil || IsNil(o.ProducerId) {
 		return nil, false
 	}
 	return o.ProducerId, true
@@ -96,7 +96,7 @@ func (o *SpecificDataSubscription) GetProducerIdOk() (*string, bool) {
 
 // HasProducerId returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasProducerId() bool {
-	if o != nil && !isNil(o.ProducerId) {
+	if o != nil && !IsNil(o.ProducerId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SpecificDataSubscription) SetProducerId(v string) {
 
 // GetProducerSetId returns the ProducerSetId field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetProducerSetId() string {
-	if o == nil || isNil(o.ProducerSetId) {
+	if o == nil || IsNil(o.ProducerSetId) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SpecificDataSubscription) GetProducerSetId() string {
 // GetProducerSetIdOk returns a tuple with the ProducerSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetProducerSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.ProducerSetId) {
+	if o == nil || IsNil(o.ProducerSetId) {
 		return nil, false
 	}
 	return o.ProducerSetId, true
@@ -128,7 +128,7 @@ func (o *SpecificDataSubscription) GetProducerSetIdOk() (*string, bool) {
 
 // HasProducerSetId returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasProducerSetId() bool {
-	if o != nil && !isNil(o.ProducerSetId) {
+	if o != nil && !IsNil(o.ProducerSetId) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SpecificDataSubscription) SetProducerSetId(v string) {
 
 // GetDataSub returns the DataSub field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetDataSub() DataSubscription {
-	if o == nil || isNil(o.DataSub) {
+	if o == nil || IsNil(o.DataSub) {
 		var ret DataSubscription
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SpecificDataSubscription) GetDataSub() DataSubscription {
 // GetDataSubOk returns a tuple with the DataSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetDataSubOk() (*DataSubscription, bool) {
-	if o == nil || isNil(o.DataSub) {
+	if o == nil || IsNil(o.DataSub) {
 		return nil, false
 	}
 	return o.DataSub, true
@@ -160,7 +160,7 @@ func (o *SpecificDataSubscription) GetDataSubOk() (*DataSubscription, bool) {
 
 // HasDataSub returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasDataSub() bool {
-	if o != nil && !isNil(o.DataSub) {
+	if o != nil && !IsNil(o.DataSub) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *SpecificDataSubscription) SetDataSub(v DataSubscription) {
 }
 
 func (o SpecificDataSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o SpecificDataSubscription) MarshalJSON() ([]byte, error) {
 
 func (o SpecificDataSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !isNil(o.ProducerId) {
+	if !IsNil(o.ProducerId) {
 		toSerialize["producerId"] = o.ProducerId
 	}
-	if !isNil(o.ProducerSetId) {
+	if !IsNil(o.ProducerSetId) {
 		toSerialize["producerSetId"] = o.ProducerSetId
 	}
-	if !isNil(o.DataSub) {
+	if !IsNil(o.DataSub) {
 		toSerialize["dataSub"] = o.DataSub
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableSpecificDataSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

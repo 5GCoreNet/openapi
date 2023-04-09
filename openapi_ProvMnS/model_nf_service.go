@@ -19,17 +19,17 @@ var _ MappedNullable = &NFService{}
 
 // NFService NF Service is defined in TS 29.510
 type NFService struct {
-	ServiceInstanceId *string `json:"serviceInstanceId,omitempty"`
-	ServiceName *string `json:"serviceName,omitempty"`
-	Version *string `json:"version,omitempty"`
-	Schema *string `json:"schema,omitempty"`
-	Fqdn *string `json:"fqdn,omitempty"`
-	InterPlmnFqdn *string `json:"interPlmnFqdn,omitempty"`
-	IpEndPoints []IpEndPoint `json:"ipEndPoints,omitempty"`
-	ApiPrfix *string `json:"apiPrfix,omitempty"`
-	AllowedPlmns *PlmnId `json:"allowedPlmns,omitempty"`
-	AllowedNfTypes []NFType `json:"allowedNfTypes,omitempty"`
-	AllowedNssais []Snssai `json:"allowedNssais,omitempty"`
+	ServiceInstanceId *string      `json:"serviceInstanceId,omitempty"`
+	ServiceName       *string      `json:"serviceName,omitempty"`
+	Version           *string      `json:"version,omitempty"`
+	Schema            *string      `json:"schema,omitempty"`
+	Fqdn              *string      `json:"fqdn,omitempty"`
+	InterPlmnFqdn     *string      `json:"interPlmnFqdn,omitempty"`
+	IpEndPoints       []IpEndPoint `json:"ipEndPoints,omitempty"`
+	ApiPrfix          *string      `json:"apiPrfix,omitempty"`
+	AllowedPlmns      *PlmnId      `json:"allowedPlmns,omitempty"`
+	AllowedNfTypes    []NFType     `json:"allowedNfTypes,omitempty"`
+	AllowedNssais     []Snssai     `json:"allowedNssais,omitempty"`
 }
 
 // NewNFService instantiates a new NFService object
@@ -51,7 +51,7 @@ func NewNFServiceWithDefaults() *NFService {
 
 // GetServiceInstanceId returns the ServiceInstanceId field value if set, zero value otherwise.
 func (o *NFService) GetServiceInstanceId() string {
-	if o == nil || isNil(o.ServiceInstanceId) {
+	if o == nil || IsNil(o.ServiceInstanceId) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *NFService) GetServiceInstanceId() string {
 // GetServiceInstanceIdOk returns a tuple with the ServiceInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetServiceInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceInstanceId) {
+	if o == nil || IsNil(o.ServiceInstanceId) {
 		return nil, false
 	}
 	return o.ServiceInstanceId, true
@@ -69,7 +69,7 @@ func (o *NFService) GetServiceInstanceIdOk() (*string, bool) {
 
 // HasServiceInstanceId returns a boolean if a field has been set.
 func (o *NFService) HasServiceInstanceId() bool {
-	if o != nil && !isNil(o.ServiceInstanceId) {
+	if o != nil && !IsNil(o.ServiceInstanceId) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *NFService) SetServiceInstanceId(v string) {
 
 // GetServiceName returns the ServiceName field value if set, zero value otherwise.
 func (o *NFService) GetServiceName() string {
-	if o == nil || isNil(o.ServiceName) {
+	if o == nil || IsNil(o.ServiceName) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *NFService) GetServiceName() string {
 // GetServiceNameOk returns a tuple with the ServiceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetServiceNameOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceName) {
+	if o == nil || IsNil(o.ServiceName) {
 		return nil, false
 	}
 	return o.ServiceName, true
@@ -101,7 +101,7 @@ func (o *NFService) GetServiceNameOk() (*string, bool) {
 
 // HasServiceName returns a boolean if a field has been set.
 func (o *NFService) HasServiceName() bool {
-	if o != nil && !isNil(o.ServiceName) {
+	if o != nil && !IsNil(o.ServiceName) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *NFService) SetServiceName(v string) {
 
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *NFService) GetVersion() string {
-	if o == nil || isNil(o.Version) {
+	if o == nil || IsNil(o.Version) {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *NFService) GetVersion() string {
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetVersionOk() (*string, bool) {
-	if o == nil || isNil(o.Version) {
+	if o == nil || IsNil(o.Version) {
 		return nil, false
 	}
 	return o.Version, true
@@ -133,7 +133,7 @@ func (o *NFService) GetVersionOk() (*string, bool) {
 
 // HasVersion returns a boolean if a field has been set.
 func (o *NFService) HasVersion() bool {
-	if o != nil && !isNil(o.Version) {
+	if o != nil && !IsNil(o.Version) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *NFService) SetVersion(v string) {
 
 // GetSchema returns the Schema field value if set, zero value otherwise.
 func (o *NFService) GetSchema() string {
-	if o == nil || isNil(o.Schema) {
+	if o == nil || IsNil(o.Schema) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *NFService) GetSchema() string {
 // GetSchemaOk returns a tuple with the Schema field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetSchemaOk() (*string, bool) {
-	if o == nil || isNil(o.Schema) {
+	if o == nil || IsNil(o.Schema) {
 		return nil, false
 	}
 	return o.Schema, true
@@ -165,7 +165,7 @@ func (o *NFService) GetSchemaOk() (*string, bool) {
 
 // HasSchema returns a boolean if a field has been set.
 func (o *NFService) HasSchema() bool {
-	if o != nil && !isNil(o.Schema) {
+	if o != nil && !IsNil(o.Schema) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *NFService) SetSchema(v string) {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *NFService) GetFqdn() string {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *NFService) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -197,7 +197,7 @@ func (o *NFService) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *NFService) HasFqdn() bool {
-	if o != nil && !isNil(o.Fqdn) {
+	if o != nil && !IsNil(o.Fqdn) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *NFService) SetFqdn(v string) {
 
 // GetInterPlmnFqdn returns the InterPlmnFqdn field value if set, zero value otherwise.
 func (o *NFService) GetInterPlmnFqdn() string {
-	if o == nil || isNil(o.InterPlmnFqdn) {
+	if o == nil || IsNil(o.InterPlmnFqdn) {
 		var ret string
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *NFService) GetInterPlmnFqdn() string {
 // GetInterPlmnFqdnOk returns a tuple with the InterPlmnFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetInterPlmnFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.InterPlmnFqdn) {
+	if o == nil || IsNil(o.InterPlmnFqdn) {
 		return nil, false
 	}
 	return o.InterPlmnFqdn, true
@@ -229,7 +229,7 @@ func (o *NFService) GetInterPlmnFqdnOk() (*string, bool) {
 
 // HasInterPlmnFqdn returns a boolean if a field has been set.
 func (o *NFService) HasInterPlmnFqdn() bool {
-	if o != nil && !isNil(o.InterPlmnFqdn) {
+	if o != nil && !IsNil(o.InterPlmnFqdn) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *NFService) SetInterPlmnFqdn(v string) {
 
 // GetIpEndPoints returns the IpEndPoints field value if set, zero value otherwise.
 func (o *NFService) GetIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.IpEndPoints) {
+	if o == nil || IsNil(o.IpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *NFService) GetIpEndPoints() []IpEndPoint {
 // GetIpEndPointsOk returns a tuple with the IpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.IpEndPoints) {
+	if o == nil || IsNil(o.IpEndPoints) {
 		return nil, false
 	}
 	return o.IpEndPoints, true
@@ -261,7 +261,7 @@ func (o *NFService) GetIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasIpEndPoints returns a boolean if a field has been set.
 func (o *NFService) HasIpEndPoints() bool {
-	if o != nil && !isNil(o.IpEndPoints) {
+	if o != nil && !IsNil(o.IpEndPoints) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *NFService) SetIpEndPoints(v []IpEndPoint) {
 
 // GetApiPrfix returns the ApiPrfix field value if set, zero value otherwise.
 func (o *NFService) GetApiPrfix() string {
-	if o == nil || isNil(o.ApiPrfix) {
+	if o == nil || IsNil(o.ApiPrfix) {
 		var ret string
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *NFService) GetApiPrfix() string {
 // GetApiPrfixOk returns a tuple with the ApiPrfix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetApiPrfixOk() (*string, bool) {
-	if o == nil || isNil(o.ApiPrfix) {
+	if o == nil || IsNil(o.ApiPrfix) {
 		return nil, false
 	}
 	return o.ApiPrfix, true
@@ -293,7 +293,7 @@ func (o *NFService) GetApiPrfixOk() (*string, bool) {
 
 // HasApiPrfix returns a boolean if a field has been set.
 func (o *NFService) HasApiPrfix() bool {
-	if o != nil && !isNil(o.ApiPrfix) {
+	if o != nil && !IsNil(o.ApiPrfix) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *NFService) SetApiPrfix(v string) {
 
 // GetAllowedPlmns returns the AllowedPlmns field value if set, zero value otherwise.
 func (o *NFService) GetAllowedPlmns() PlmnId {
-	if o == nil || isNil(o.AllowedPlmns) {
+	if o == nil || IsNil(o.AllowedPlmns) {
 		var ret PlmnId
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *NFService) GetAllowedPlmns() PlmnId {
 // GetAllowedPlmnsOk returns a tuple with the AllowedPlmns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetAllowedPlmnsOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.AllowedPlmns) {
+	if o == nil || IsNil(o.AllowedPlmns) {
 		return nil, false
 	}
 	return o.AllowedPlmns, true
@@ -325,7 +325,7 @@ func (o *NFService) GetAllowedPlmnsOk() (*PlmnId, bool) {
 
 // HasAllowedPlmns returns a boolean if a field has been set.
 func (o *NFService) HasAllowedPlmns() bool {
-	if o != nil && !isNil(o.AllowedPlmns) {
+	if o != nil && !IsNil(o.AllowedPlmns) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *NFService) SetAllowedPlmns(v PlmnId) {
 
 // GetAllowedNfTypes returns the AllowedNfTypes field value if set, zero value otherwise.
 func (o *NFService) GetAllowedNfTypes() []NFType {
-	if o == nil || isNil(o.AllowedNfTypes) {
+	if o == nil || IsNil(o.AllowedNfTypes) {
 		var ret []NFType
 		return ret
 	}
@@ -349,7 +349,7 @@ func (o *NFService) GetAllowedNfTypes() []NFType {
 // GetAllowedNfTypesOk returns a tuple with the AllowedNfTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetAllowedNfTypesOk() ([]NFType, bool) {
-	if o == nil || isNil(o.AllowedNfTypes) {
+	if o == nil || IsNil(o.AllowedNfTypes) {
 		return nil, false
 	}
 	return o.AllowedNfTypes, true
@@ -357,7 +357,7 @@ func (o *NFService) GetAllowedNfTypesOk() ([]NFType, bool) {
 
 // HasAllowedNfTypes returns a boolean if a field has been set.
 func (o *NFService) HasAllowedNfTypes() bool {
-	if o != nil && !isNil(o.AllowedNfTypes) {
+	if o != nil && !IsNil(o.AllowedNfTypes) {
 		return true
 	}
 
@@ -371,7 +371,7 @@ func (o *NFService) SetAllowedNfTypes(v []NFType) {
 
 // GetAllowedNssais returns the AllowedNssais field value if set, zero value otherwise.
 func (o *NFService) GetAllowedNssais() []Snssai {
-	if o == nil || isNil(o.AllowedNssais) {
+	if o == nil || IsNil(o.AllowedNssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -381,7 +381,7 @@ func (o *NFService) GetAllowedNssais() []Snssai {
 // GetAllowedNssaisOk returns a tuple with the AllowedNssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFService) GetAllowedNssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.AllowedNssais) {
+	if o == nil || IsNil(o.AllowedNssais) {
 		return nil, false
 	}
 	return o.AllowedNssais, true
@@ -389,7 +389,7 @@ func (o *NFService) GetAllowedNssaisOk() ([]Snssai, bool) {
 
 // HasAllowedNssais returns a boolean if a field has been set.
 func (o *NFService) HasAllowedNssais() bool {
-	if o != nil && !isNil(o.AllowedNssais) {
+	if o != nil && !IsNil(o.AllowedNssais) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *NFService) SetAllowedNssais(v []Snssai) {
 }
 
 func (o NFService) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -411,37 +411,37 @@ func (o NFService) MarshalJSON() ([]byte, error) {
 
 func (o NFService) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceInstanceId) {
+	if !IsNil(o.ServiceInstanceId) {
 		toSerialize["serviceInstanceId"] = o.ServiceInstanceId
 	}
-	if !isNil(o.ServiceName) {
+	if !IsNil(o.ServiceName) {
 		toSerialize["serviceName"] = o.ServiceName
 	}
-	if !isNil(o.Version) {
+	if !IsNil(o.Version) {
 		toSerialize["version"] = o.Version
 	}
-	if !isNil(o.Schema) {
+	if !IsNil(o.Schema) {
 		toSerialize["schema"] = o.Schema
 	}
-	if !isNil(o.Fqdn) {
+	if !IsNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if !isNil(o.InterPlmnFqdn) {
+	if !IsNil(o.InterPlmnFqdn) {
 		toSerialize["interPlmnFqdn"] = o.InterPlmnFqdn
 	}
-	if !isNil(o.IpEndPoints) {
+	if !IsNil(o.IpEndPoints) {
 		toSerialize["ipEndPoints"] = o.IpEndPoints
 	}
-	if !isNil(o.ApiPrfix) {
+	if !IsNil(o.ApiPrfix) {
 		toSerialize["apiPrfix"] = o.ApiPrfix
 	}
-	if !isNil(o.AllowedPlmns) {
+	if !IsNil(o.AllowedPlmns) {
 		toSerialize["allowedPlmns"] = o.AllowedPlmns
 	}
-	if !isNil(o.AllowedNfTypes) {
+	if !IsNil(o.AllowedNfTypes) {
 		toSerialize["allowedNfTypes"] = o.AllowedNfTypes
 	}
-	if !isNil(o.AllowedNssais) {
+	if !IsNil(o.AllowedNssais) {
 		toSerialize["allowedNssais"] = o.AllowedNssais
 	}
 	return toSerialize, nil
@@ -482,5 +482,3 @@ func (v *NullableNFService) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

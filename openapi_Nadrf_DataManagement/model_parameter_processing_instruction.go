@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,15 +17,15 @@ import (
 // checks if the ParameterProcessingInstruction type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ParameterProcessingInstruction{}
 
-// ParameterProcessingInstruction Contains an event parameter name and the respective event parameter values and sets of attributes to be used in summarized reports. 
+// ParameterProcessingInstruction Contains an event parameter name and the respective event parameter values and sets of attributes to be used in summarized reports.
 type ParameterProcessingInstruction struct {
-	// A JSON pointer value that references an attribute within the notification object to which the processing instruction is applied. 
+	// A JSON pointer value that references an attribute within the notification object to which the processing instruction is applied.
 	Name string `json:"name"`
 	// A list of values for the attribute identified by the name attribute.
 	Values []interface{} `json:"values"`
 	// Attributes requested to be used in the summarized reports.
-	SumAttrs []SummarizationAttribute `json:"sumAttrs"`
-	AggrLevel *AggregationLevel `json:"aggrLevel,omitempty"`
+	SumAttrs  []SummarizationAttribute `json:"sumAttrs"`
+	AggrLevel *AggregationLevel        `json:"aggrLevel,omitempty"`
 	// Indicates the UEs for which processed reports are requested.
 	Supis []string `json:"supis,omitempty"`
 	// Indicates the Areas of Interest for which processed reports are requested.
@@ -126,7 +126,7 @@ func (o *ParameterProcessingInstruction) SetSumAttrs(v []SummarizationAttribute)
 
 // GetAggrLevel returns the AggrLevel field value if set, zero value otherwise.
 func (o *ParameterProcessingInstruction) GetAggrLevel() AggregationLevel {
-	if o == nil || isNil(o.AggrLevel) {
+	if o == nil || IsNil(o.AggrLevel) {
 		var ret AggregationLevel
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *ParameterProcessingInstruction) GetAggrLevel() AggregationLevel {
 // GetAggrLevelOk returns a tuple with the AggrLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterProcessingInstruction) GetAggrLevelOk() (*AggregationLevel, bool) {
-	if o == nil || isNil(o.AggrLevel) {
+	if o == nil || IsNil(o.AggrLevel) {
 		return nil, false
 	}
 	return o.AggrLevel, true
@@ -144,7 +144,7 @@ func (o *ParameterProcessingInstruction) GetAggrLevelOk() (*AggregationLevel, bo
 
 // HasAggrLevel returns a boolean if a field has been set.
 func (o *ParameterProcessingInstruction) HasAggrLevel() bool {
-	if o != nil && !isNil(o.AggrLevel) {
+	if o != nil && !IsNil(o.AggrLevel) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *ParameterProcessingInstruction) SetAggrLevel(v AggregationLevel) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *ParameterProcessingInstruction) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *ParameterProcessingInstruction) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterProcessingInstruction) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -176,7 +176,7 @@ func (o *ParameterProcessingInstruction) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *ParameterProcessingInstruction) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *ParameterProcessingInstruction) SetSupis(v []string) {
 
 // GetAreas returns the Areas field value if set, zero value otherwise.
 func (o *ParameterProcessingInstruction) GetAreas() []NetworkAreaInfo {
-	if o == nil || isNil(o.Areas) {
+	if o == nil || IsNil(o.Areas) {
 		var ret []NetworkAreaInfo
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *ParameterProcessingInstruction) GetAreas() []NetworkAreaInfo {
 // GetAreasOk returns a tuple with the Areas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterProcessingInstruction) GetAreasOk() ([]NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.Areas) {
+	if o == nil || IsNil(o.Areas) {
 		return nil, false
 	}
 	return o.Areas, true
@@ -208,7 +208,7 @@ func (o *ParameterProcessingInstruction) GetAreasOk() ([]NetworkAreaInfo, bool) 
 
 // HasAreas returns a boolean if a field has been set.
 func (o *ParameterProcessingInstruction) HasAreas() bool {
-	if o != nil && !isNil(o.Areas) {
+	if o != nil && !IsNil(o.Areas) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *ParameterProcessingInstruction) SetAreas(v []NetworkAreaInfo) {
 }
 
 func (o ParameterProcessingInstruction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -233,13 +233,13 @@ func (o ParameterProcessingInstruction) ToMap() (map[string]interface{}, error) 
 	toSerialize["name"] = o.Name
 	toSerialize["values"] = o.Values
 	toSerialize["sumAttrs"] = o.SumAttrs
-	if !isNil(o.AggrLevel) {
+	if !IsNil(o.AggrLevel) {
 		toSerialize["aggrLevel"] = o.AggrLevel
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !isNil(o.Areas) {
+	if !IsNil(o.Areas) {
 		toSerialize["areas"] = o.Areas
 	}
 	return toSerialize, nil
@@ -280,5 +280,3 @@ func (v *NullableParameterProcessingInstruction) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

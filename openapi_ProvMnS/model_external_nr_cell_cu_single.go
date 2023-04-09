@@ -19,15 +19,12 @@ var _ MappedNullable = &ExternalNrCellCuSingle{}
 
 // ExternalNrCellCuSingle struct for ExternalNrCellCuSingle
 type ExternalNrCellCuSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
-	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
-	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
-	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
-	TraceJob []TraceJobSingle `json:"TraceJob,omitempty"`
+	Top
+	Attributes       *ExternalNrCellCuSingleAllOfAttributes `json:"attributes,omitempty"`
+	PerfMetricJob    []PerfMetricJobSingle                  `json:"PerfMetricJob,omitempty"`
+	ThresholdMonitor []ThresholdMonitorSingle               `json:"ThresholdMonitor,omitempty"`
+	ManagedNFService []ManagedNFServiceSingle               `json:"ManagedNFService,omitempty"`
+	TraceJob         []TraceJobSingle                       `json:"TraceJob,omitempty"`
 }
 
 // NewExternalNrCellCuSingle instantiates a new ExternalNrCellCuSingle object
@@ -48,132 +45,10 @@ func NewExternalNrCellCuSingleWithDefaults() *ExternalNrCellCuSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *ExternalNrCellCuSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ExternalNrCellCuSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *ExternalNrCellCuSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *ExternalNrCellCuSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExternalNrCellCuSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *ExternalNrCellCuSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *ExternalNrCellCuSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *ExternalNrCellCuSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExternalNrCellCuSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *ExternalNrCellCuSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *ExternalNrCellCuSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *ExternalNrCellCuSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExternalNrCellCuSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *ExternalNrCellCuSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *ExternalNrCellCuSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ExternalNrCellCuSingle) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *ExternalNrCellCuSingle) GetAttributes() ExternalNrCellCuSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret ExternalNrCellCuSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -181,8 +56,8 @@ func (o *ExternalNrCellCuSingle) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalNrCellCuSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *ExternalNrCellCuSingle) GetAttributesOk() (*ExternalNrCellCuSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -190,21 +65,21 @@ func (o *ExternalNrCellCuSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) 
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ExternalNrCellCuSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *ExternalNrCellCuSingle) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given ExternalNrCellCuSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *ExternalNrCellCuSingle) SetAttributes(v ExternalNrCellCuSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *ExternalNrCellCuSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -214,7 +89,7 @@ func (o *ExternalNrCellCuSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalNrCellCuSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -222,7 +97,7 @@ func (o *ExternalNrCellCuSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bo
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *ExternalNrCellCuSingle) HasPerfMetricJob() bool {
-	if o != nil && !isNil(o.PerfMetricJob) {
+	if o != nil && !IsNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -236,7 +111,7 @@ func (o *ExternalNrCellCuSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *ExternalNrCellCuSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -246,7 +121,7 @@ func (o *ExternalNrCellCuSingle) GetThresholdMonitor() []ThresholdMonitorSingle 
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalNrCellCuSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -254,7 +129,7 @@ func (o *ExternalNrCellCuSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSing
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *ExternalNrCellCuSingle) HasThresholdMonitor() bool {
-	if o != nil && !isNil(o.ThresholdMonitor) {
+	if o != nil && !IsNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -268,7 +143,7 @@ func (o *ExternalNrCellCuSingle) SetThresholdMonitor(v []ThresholdMonitorSingle)
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *ExternalNrCellCuSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -278,7 +153,7 @@ func (o *ExternalNrCellCuSingle) GetManagedNFService() []ManagedNFServiceSingle 
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalNrCellCuSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -286,7 +161,7 @@ func (o *ExternalNrCellCuSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSing
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *ExternalNrCellCuSingle) HasManagedNFService() bool {
-	if o != nil && !isNil(o.ManagedNFService) {
+	if o != nil && !IsNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -300,7 +175,7 @@ func (o *ExternalNrCellCuSingle) SetManagedNFService(v []ManagedNFServiceSingle)
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *ExternalNrCellCuSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -310,7 +185,7 @@ func (o *ExternalNrCellCuSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalNrCellCuSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -318,7 +193,7 @@ func (o *ExternalNrCellCuSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *ExternalNrCellCuSingle) HasTraceJob() bool {
-	if o != nil && !isNil(o.TraceJob) {
+	if o != nil && !IsNil(o.TraceJob) {
 		return true
 	}
 
@@ -331,7 +206,7 @@ func (o *ExternalNrCellCuSingle) SetTraceJob(v []TraceJobSingle) {
 }
 
 func (o ExternalNrCellCuSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -340,29 +215,27 @@ func (o ExternalNrCellCuSingle) MarshalJSON() ([]byte, error) {
 
 func (o ExternalNrCellCuSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.PerfMetricJob) {
+	if !IsNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !isNil(o.ThresholdMonitor) {
+	if !IsNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !isNil(o.ManagedNFService) {
+	if !IsNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !isNil(o.TraceJob) {
+	if !IsNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
 	return toSerialize, nil
@@ -403,5 +276,3 @@ func (v *NullableExternalNrCellCuSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

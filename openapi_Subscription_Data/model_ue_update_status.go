@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,10 +20,10 @@ type UeUpdateStatus string
 
 // List of UeUpdateStatus
 const (
-	NOT_SENT UeUpdateStatus = "NOT_SENT"
-	SENT_NO_ACK_REQUIRED UeUpdateStatus = "SENT_NO_ACK_REQUIRED"
-	WAITING_FOR_ACK UeUpdateStatus = "WAITING_FOR_ACK"
-	ACK_RECEIVED UeUpdateStatus = "ACK_RECEIVED"
+	NOT_SENT              UeUpdateStatus = "NOT_SENT"
+	SENT_NO_ACK_REQUIRED  UeUpdateStatus = "SENT_NO_ACK_REQUIRED"
+	WAITING_FOR_ACK       UeUpdateStatus = "WAITING_FOR_ACK"
+	ACK_RECEIVED          UeUpdateStatus = "ACK_RECEIVED"
 	NEGATIVE_ACK_RECEIVED UeUpdateStatus = "NEGATIVE_ACK_RECEIVED"
 )
 
@@ -114,4 +114,3 @@ func (v *NullableUeUpdateStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

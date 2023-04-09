@@ -41,7 +41,7 @@ func NewAnalyticsScopeTypeOneOf1WithDefaults() *AnalyticsScopeTypeOneOf1 {
 
 // GetAreaScope returns the AreaScope field value if set, zero value otherwise.
 func (o *AnalyticsScopeTypeOneOf1) GetAreaScope() GeoArea {
-	if o == nil || isNil(o.AreaScope) {
+	if o == nil || IsNil(o.AreaScope) {
 		var ret GeoArea
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnalyticsScopeTypeOneOf1) GetAreaScope() GeoArea {
 // GetAreaScopeOk returns a tuple with the AreaScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsScopeTypeOneOf1) GetAreaScopeOk() (*GeoArea, bool) {
-	if o == nil || isNil(o.AreaScope) {
+	if o == nil || IsNil(o.AreaScope) {
 		return nil, false
 	}
 	return o.AreaScope, true
@@ -59,7 +59,7 @@ func (o *AnalyticsScopeTypeOneOf1) GetAreaScopeOk() (*GeoArea, bool) {
 
 // HasAreaScope returns a boolean if a field has been set.
 func (o *AnalyticsScopeTypeOneOf1) HasAreaScope() bool {
-	if o != nil && !isNil(o.AreaScope) {
+	if o != nil && !IsNil(o.AreaScope) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AnalyticsScopeTypeOneOf1) SetAreaScope(v GeoArea) {
 }
 
 func (o AnalyticsScopeTypeOneOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AnalyticsScopeTypeOneOf1) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsScopeTypeOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AreaScope) {
+	if !IsNil(o.AreaScope) {
 		toSerialize["areaScope"] = o.AreaScope
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAnalyticsScopeTypeOneOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

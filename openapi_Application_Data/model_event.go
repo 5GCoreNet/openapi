@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Event Possible values are: - SUCCESS_UE_POL_DEL_SP: Successful UE Policy Delivery related to    the invocation of AF provisioned Service Parameters. - UNSUCCESS_UE_POL_DEL_SP: Unsuccessful UE Policy Delivery related to the invocation of AF    provisioned Service Parameters. 
+// Event Possible values are: - SUCCESS_UE_POL_DEL_SP: Successful UE Policy Delivery related to    the invocation of AF provisioned Service Parameters. - UNSUCCESS_UE_POL_DEL_SP: Unsuccessful UE Policy Delivery related to the invocation of AF    provisioned Service Parameters.
 type Event struct {
-	EventAnyOf *EventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Event) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EventAnyOf
-	err = json.Unmarshal(data, &dst.EventAnyOf);
-	if err == nil {
-		jsonEventAnyOf, _ := json.Marshal(dst.EventAnyOf)
-		if string(jsonEventAnyOf) == "{}" { // empty struct
-			dst.EventAnyOf = nil
-		} else {
-			return nil // data stored in dst.EventAnyOf, return on the first match
-		}
-	} else {
-		dst.EventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Event) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Event) MarshalJSON() ([]byte, error) {
-	if src.EventAnyOf != nil {
-		return json.Marshal(&src.EventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

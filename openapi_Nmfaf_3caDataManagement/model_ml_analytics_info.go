@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &MlAnalyticsInfo{}
 
 // MlAnalyticsInfo ML Analytics Filter information supported by the Nnwdaf_MLModelProvision service
 type MlAnalyticsInfo struct {
-	MlAnalyticsIds []NwdafEvent `json:"mlAnalyticsIds,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	TrackingAreaList []Tai `json:"trackingAreaList,omitempty"`
+	MlAnalyticsIds   []NwdafEvent `json:"mlAnalyticsIds,omitempty"`
+	SnssaiList       []Snssai     `json:"snssaiList,omitempty"`
+	TrackingAreaList []Tai        `json:"trackingAreaList,omitempty"`
 }
 
 // NewMlAnalyticsInfo instantiates a new MlAnalyticsInfo object
@@ -43,7 +43,7 @@ func NewMlAnalyticsInfoWithDefaults() *MlAnalyticsInfo {
 
 // GetMlAnalyticsIds returns the MlAnalyticsIds field value if set, zero value otherwise.
 func (o *MlAnalyticsInfo) GetMlAnalyticsIds() []NwdafEvent {
-	if o == nil || isNil(o.MlAnalyticsIds) {
+	if o == nil || IsNil(o.MlAnalyticsIds) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MlAnalyticsInfo) GetMlAnalyticsIds() []NwdafEvent {
 // GetMlAnalyticsIdsOk returns a tuple with the MlAnalyticsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MlAnalyticsInfo) GetMlAnalyticsIdsOk() ([]NwdafEvent, bool) {
-	if o == nil || isNil(o.MlAnalyticsIds) {
+	if o == nil || IsNil(o.MlAnalyticsIds) {
 		return nil, false
 	}
 	return o.MlAnalyticsIds, true
@@ -61,7 +61,7 @@ func (o *MlAnalyticsInfo) GetMlAnalyticsIdsOk() ([]NwdafEvent, bool) {
 
 // HasMlAnalyticsIds returns a boolean if a field has been set.
 func (o *MlAnalyticsInfo) HasMlAnalyticsIds() bool {
-	if o != nil && !isNil(o.MlAnalyticsIds) {
+	if o != nil && !IsNil(o.MlAnalyticsIds) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MlAnalyticsInfo) SetMlAnalyticsIds(v []NwdafEvent) {
 
 // GetSnssaiList returns the SnssaiList field value if set, zero value otherwise.
 func (o *MlAnalyticsInfo) GetSnssaiList() []Snssai {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MlAnalyticsInfo) GetSnssaiList() []Snssai {
 // GetSnssaiListOk returns a tuple with the SnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MlAnalyticsInfo) GetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		return nil, false
 	}
 	return o.SnssaiList, true
@@ -93,7 +93,7 @@ func (o *MlAnalyticsInfo) GetSnssaiListOk() ([]Snssai, bool) {
 
 // HasSnssaiList returns a boolean if a field has been set.
 func (o *MlAnalyticsInfo) HasSnssaiList() bool {
-	if o != nil && !isNil(o.SnssaiList) {
+	if o != nil && !IsNil(o.SnssaiList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MlAnalyticsInfo) SetSnssaiList(v []Snssai) {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *MlAnalyticsInfo) GetTrackingAreaList() []Tai {
-	if o == nil || isNil(o.TrackingAreaList) {
+	if o == nil || IsNil(o.TrackingAreaList) {
 		var ret []Tai
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MlAnalyticsInfo) GetTrackingAreaList() []Tai {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MlAnalyticsInfo) GetTrackingAreaListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TrackingAreaList) {
+	if o == nil || IsNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -125,7 +125,7 @@ func (o *MlAnalyticsInfo) GetTrackingAreaListOk() ([]Tai, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *MlAnalyticsInfo) HasTrackingAreaList() bool {
-	if o != nil && !isNil(o.TrackingAreaList) {
+	if o != nil && !IsNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *MlAnalyticsInfo) SetTrackingAreaList(v []Tai) {
 }
 
 func (o MlAnalyticsInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o MlAnalyticsInfo) MarshalJSON() ([]byte, error) {
 
 func (o MlAnalyticsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MlAnalyticsIds) {
+	if !IsNil(o.MlAnalyticsIds) {
 		toSerialize["mlAnalyticsIds"] = o.MlAnalyticsIds
 	}
-	if !isNil(o.SnssaiList) {
+	if !IsNil(o.SnssaiList) {
 		toSerialize["snssaiList"] = o.SnssaiList
 	}
-	if !isNil(o.TrackingAreaList) {
+	if !IsNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableMlAnalyticsInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

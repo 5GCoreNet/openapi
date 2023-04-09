@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NSSAIUpdateAckDocumentApiService NSSAIUpdateAckDocumentApi service
 type NSSAIUpdateAckDocumentApiService service
 
 type ApiCreateOrUpdateNssaiAckRequest struct {
-	ctx context.Context
-	ApiService *NSSAIUpdateAckDocumentApiService
-	ueId string
-	nssaiAckData *NssaiAckData
+	ctx               context.Context
+	ApiService        *NSSAIUpdateAckDocumentApiService
+	ueId              string
+	nssaiAckData      *NssaiAckData
 	supportedFeatures *string
 }
 
@@ -49,24 +48,24 @@ func (r ApiCreateOrUpdateNssaiAckRequest) Execute() (*http.Response, error) {
 /*
 CreateOrUpdateNssaiAck To store the NSSAI update acknowledgement information of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateOrUpdateNssaiAckRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateOrUpdateNssaiAckRequest
 */
 func (a *NSSAIUpdateAckDocumentApiService) CreateOrUpdateNssaiAck(ctx context.Context, ueId string) ApiCreateOrUpdateNssaiAckRequest {
 	return ApiCreateOrUpdateNssaiAckRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *NSSAIUpdateAckDocumentApiService) CreateOrUpdateNssaiAckExecute(r ApiCreateOrUpdateNssaiAckRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NSSAIUpdateAckDocumentApiService.CreateOrUpdateNssaiAck")
@@ -85,7 +84,7 @@ func (a *NSSAIUpdateAckDocumentApiService) CreateOrUpdateNssaiAckExecute(r ApiCr
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -116,9 +115,9 @@ func (a *NSSAIUpdateAckDocumentApiService) CreateOrUpdateNssaiAckExecute(r ApiCr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 AMInfluence
 
-AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the AmInfluSubPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AmInfluSubPatch{}
 
-// AmInfluSubPatch Represents parameters to request the modification of an AM influence subscription resource. 
+// AmInfluSubPatch Represents parameters to request the modification of an AM influence subscription resource.
 type AmInfluSubPatch struct {
 	HighThruInd NullableBool `json:"highThruInd,omitempty"`
 	// Identifies geographic areas of the user where the request is applicable.
@@ -30,7 +30,7 @@ type AmInfluSubPatch struct {
 	AfAppIds []string `json:"afAppIds,omitempty"`
 	// Indicates one or more AM influence related events.
 	SubscribedEvents []AmInfluEvent `json:"subscribedEvents,omitempty"`
-	// String formatted according to IETF RFC 3986 identifying a referenced resource, but with the nullable property set to true. 
+	// String formatted according to IETF RFC 3986 identifying a referenced resource, but with the nullable property set to true.
 	NotificationDestination NullableString `json:"notificationDestination,omitempty"`
 }
 
@@ -53,7 +53,7 @@ func NewAmInfluSubPatchWithDefaults() *AmInfluSubPatch {
 
 // GetHighThruInd returns the HighThruInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluSubPatch) GetHighThruInd() bool {
-	if o == nil || isNil(o.HighThruInd.Get()) {
+	if o == nil || IsNil(o.HighThruInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -83,6 +83,7 @@ func (o *AmInfluSubPatch) HasHighThruInd() bool {
 func (o *AmInfluSubPatch) SetHighThruInd(v bool) {
 	o.HighThruInd.Set(&v)
 }
+
 // SetHighThruIndNil sets the value for HighThruInd to be an explicit nil
 func (o *AmInfluSubPatch) SetHighThruIndNil() {
 	o.HighThruInd.Set(nil)
@@ -106,7 +107,7 @@ func (o *AmInfluSubPatch) GetGeoAreas() []GeographicArea {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetGeoAreasOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.GeoAreas) {
+	if o == nil || IsNil(o.GeoAreas) {
 		return nil, false
 	}
 	return o.GeoAreas, true
@@ -114,7 +115,7 @@ func (o *AmInfluSubPatch) GetGeoAreasOk() ([]GeographicArea, bool) {
 
 // HasGeoAreas returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasGeoAreas() bool {
-	if o != nil && isNil(o.GeoAreas) {
+	if o != nil && IsNil(o.GeoAreas) {
 		return true
 	}
 
@@ -128,7 +129,7 @@ func (o *AmInfluSubPatch) SetGeoAreas(v []GeographicArea) {
 
 // GetPolicyDuration returns the PolicyDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluSubPatch) GetPolicyDuration() int32 {
-	if o == nil || isNil(o.PolicyDuration.Get()) {
+	if o == nil || IsNil(o.PolicyDuration.Get()) {
 		var ret int32
 		return ret
 	}
@@ -158,6 +159,7 @@ func (o *AmInfluSubPatch) HasPolicyDuration() bool {
 func (o *AmInfluSubPatch) SetPolicyDuration(v int32) {
 	o.PolicyDuration.Set(&v)
 }
+
 // SetPolicyDurationNil sets the value for PolicyDuration to be an explicit nil
 func (o *AmInfluSubPatch) SetPolicyDurationNil() {
 	o.PolicyDuration.Set(nil)
@@ -181,7 +183,7 @@ func (o *AmInfluSubPatch) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || isNil(o.DnnSnssaiInfos) {
+	if o == nil || IsNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -189,7 +191,7 @@ func (o *AmInfluSubPatch) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasDnnSnssaiInfos() bool {
-	if o != nil && isNil(o.DnnSnssaiInfos) {
+	if o != nil && IsNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -214,7 +216,7 @@ func (o *AmInfluSubPatch) GetAfAppIds() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetAfAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AfAppIds) {
+	if o == nil || IsNil(o.AfAppIds) {
 		return nil, false
 	}
 	return o.AfAppIds, true
@@ -222,7 +224,7 @@ func (o *AmInfluSubPatch) GetAfAppIdsOk() ([]string, bool) {
 
 // HasAfAppIds returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasAfAppIds() bool {
-	if o != nil && isNil(o.AfAppIds) {
+	if o != nil && IsNil(o.AfAppIds) {
 		return true
 	}
 
@@ -247,7 +249,7 @@ func (o *AmInfluSubPatch) GetSubscribedEvents() []AmInfluEvent {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetSubscribedEventsOk() ([]AmInfluEvent, bool) {
-	if o == nil || isNil(o.SubscribedEvents) {
+	if o == nil || IsNil(o.SubscribedEvents) {
 		return nil, false
 	}
 	return o.SubscribedEvents, true
@@ -255,7 +257,7 @@ func (o *AmInfluSubPatch) GetSubscribedEventsOk() ([]AmInfluEvent, bool) {
 
 // HasSubscribedEvents returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasSubscribedEvents() bool {
-	if o != nil && isNil(o.SubscribedEvents) {
+	if o != nil && IsNil(o.SubscribedEvents) {
 		return true
 	}
 
@@ -269,7 +271,7 @@ func (o *AmInfluSubPatch) SetSubscribedEvents(v []AmInfluEvent) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluSubPatch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination.Get()) {
+	if o == nil || IsNil(o.NotificationDestination.Get()) {
 		var ret string
 		return ret
 	}
@@ -299,6 +301,7 @@ func (o *AmInfluSubPatch) HasNotificationDestination() bool {
 func (o *AmInfluSubPatch) SetNotificationDestination(v string) {
 	o.NotificationDestination.Set(&v)
 }
+
 // SetNotificationDestinationNil sets the value for NotificationDestination to be an explicit nil
 func (o *AmInfluSubPatch) SetNotificationDestinationNil() {
 	o.NotificationDestination.Set(nil)
@@ -310,7 +313,7 @@ func (o *AmInfluSubPatch) UnsetNotificationDestination() {
 }
 
 func (o AmInfluSubPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,5 +381,3 @@ func (v *NullableAmInfluSubPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

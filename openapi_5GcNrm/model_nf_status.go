@@ -21,7 +21,7 @@ type NFStatus string
 // List of NFStatus
 const (
 	REGISTERED NFStatus = "REGISTERED"
-	SUSPENDED NFStatus = "SUSPENDED"
+	SUSPENDED  NFStatus = "SUSPENDED"
 )
 
 // All allowed values of NFStatus enum
@@ -108,4 +108,3 @@ func (v *NullableNFStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

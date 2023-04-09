@@ -1,7 +1,7 @@
 /*
 Nmbsmf_TMGI
 
-MB-SMF TMGI Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF TMGI Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -24,7 +24,7 @@ type TmgiAllocated struct {
 	TmgiList []Tmgi `json:"tmgiList"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ExpirationTime time.Time `json:"expirationTime"`
-	// This represents the Network Identifier, which together with a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501 clause 5.30.2.1).  
+	// This represents the Network Identifier, which together with a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501 clause 5.30.2.1).
 	Nid *string `json:"nid,omitempty"`
 }
 
@@ -97,7 +97,7 @@ func (o *TmgiAllocated) SetExpirationTime(v time.Time) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *TmgiAllocated) GetNid() string {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *TmgiAllocated) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TmgiAllocated) GetNidOk() (*string, bool) {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -115,7 +115,7 @@ func (o *TmgiAllocated) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *TmgiAllocated) HasNid() bool {
-	if o != nil && !isNil(o.Nid) {
+	if o != nil && !IsNil(o.Nid) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *TmgiAllocated) SetNid(v string) {
 }
 
 func (o TmgiAllocated) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -139,7 +139,7 @@ func (o TmgiAllocated) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tmgiList"] = o.TmgiList
 	toSerialize["expirationTime"] = o.ExpirationTime
-	if !isNil(o.Nid) {
+	if !IsNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil
@@ -180,5 +180,3 @@ func (v *NullableTmgiAllocated) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

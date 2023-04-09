@@ -1,7 +1,7 @@
 /*
 NRF OAuth2
 
-NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -19,24 +19,24 @@ var _ MappedNullable = &AccessTokenClaims{}
 
 // AccessTokenClaims The claims data structure for the access token
 type AccessTokenClaims struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	Iss string `json:"iss"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	Sub string `json:"sub"`
-	Aud AccessTokenClaimsAud `json:"aud"`
-	Scope string `json:"scope"`
-	Exp int32 `json:"exp"`
-	ConsumerPlmnId *PlmnId `json:"consumerPlmnId,omitempty"`
-	ConsumerSnpnId *PlmnIdNid `json:"consumerSnpnId,omitempty"`
-	ProducerPlmnId *PlmnId `json:"producerPlmnId,omitempty"`
-	ProducerSnpnId *PlmnIdNid `json:"producerSnpnId,omitempty"`
-	ProducerSnssaiList []Snssai `json:"producerSnssaiList,omitempty"`
-	ProducerNsiList []string `json:"producerNsiList,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	Sub                string               `json:"sub"`
+	Aud                AccessTokenClaimsAud `json:"aud"`
+	Scope              string               `json:"scope"`
+	Exp                int32                `json:"exp"`
+	ConsumerPlmnId     *PlmnId              `json:"consumerPlmnId,omitempty"`
+	ConsumerSnpnId     *PlmnIdNid           `json:"consumerSnpnId,omitempty"`
+	ProducerPlmnId     *PlmnId              `json:"producerPlmnId,omitempty"`
+	ProducerSnpnId     *PlmnIdNid           `json:"producerSnpnId,omitempty"`
+	ProducerSnssaiList []Snssai             `json:"producerSnssaiList,omitempty"`
+	ProducerNsiList    []string             `json:"producerNsiList,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	ProducerNfSetId *string `json:"producerNfSetId,omitempty"`
-	// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NID> encoded as defined in clause 5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit. 
+	// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NID> encoded as defined in clause 5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit.
 	ProducerNfServiceSetId *string `json:"producerNfServiceSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SourceNfInstanceId *string `json:"sourceNfInstanceId,omitempty"`
 }
 
@@ -184,7 +184,7 @@ func (o *AccessTokenClaims) SetExp(v int32) {
 
 // GetConsumerPlmnId returns the ConsumerPlmnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetConsumerPlmnId() PlmnId {
-	if o == nil || isNil(o.ConsumerPlmnId) {
+	if o == nil || IsNil(o.ConsumerPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *AccessTokenClaims) GetConsumerPlmnId() PlmnId {
 // GetConsumerPlmnIdOk returns a tuple with the ConsumerPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetConsumerPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.ConsumerPlmnId) {
+	if o == nil || IsNil(o.ConsumerPlmnId) {
 		return nil, false
 	}
 	return o.ConsumerPlmnId, true
@@ -202,7 +202,7 @@ func (o *AccessTokenClaims) GetConsumerPlmnIdOk() (*PlmnId, bool) {
 
 // HasConsumerPlmnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasConsumerPlmnId() bool {
-	if o != nil && !isNil(o.ConsumerPlmnId) {
+	if o != nil && !IsNil(o.ConsumerPlmnId) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *AccessTokenClaims) SetConsumerPlmnId(v PlmnId) {
 
 // GetConsumerSnpnId returns the ConsumerSnpnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetConsumerSnpnId() PlmnIdNid {
-	if o == nil || isNil(o.ConsumerSnpnId) {
+	if o == nil || IsNil(o.ConsumerSnpnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *AccessTokenClaims) GetConsumerSnpnId() PlmnIdNid {
 // GetConsumerSnpnIdOk returns a tuple with the ConsumerSnpnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetConsumerSnpnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ConsumerSnpnId) {
+	if o == nil || IsNil(o.ConsumerSnpnId) {
 		return nil, false
 	}
 	return o.ConsumerSnpnId, true
@@ -234,7 +234,7 @@ func (o *AccessTokenClaims) GetConsumerSnpnIdOk() (*PlmnIdNid, bool) {
 
 // HasConsumerSnpnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasConsumerSnpnId() bool {
-	if o != nil && !isNil(o.ConsumerSnpnId) {
+	if o != nil && !IsNil(o.ConsumerSnpnId) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *AccessTokenClaims) SetConsumerSnpnId(v PlmnIdNid) {
 
 // GetProducerPlmnId returns the ProducerPlmnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerPlmnId() PlmnId {
-	if o == nil || isNil(o.ProducerPlmnId) {
+	if o == nil || IsNil(o.ProducerPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *AccessTokenClaims) GetProducerPlmnId() PlmnId {
 // GetProducerPlmnIdOk returns a tuple with the ProducerPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.ProducerPlmnId) {
+	if o == nil || IsNil(o.ProducerPlmnId) {
 		return nil, false
 	}
 	return o.ProducerPlmnId, true
@@ -266,7 +266,7 @@ func (o *AccessTokenClaims) GetProducerPlmnIdOk() (*PlmnId, bool) {
 
 // HasProducerPlmnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerPlmnId() bool {
-	if o != nil && !isNil(o.ProducerPlmnId) {
+	if o != nil && !IsNil(o.ProducerPlmnId) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *AccessTokenClaims) SetProducerPlmnId(v PlmnId) {
 
 // GetProducerSnpnId returns the ProducerSnpnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerSnpnId() PlmnIdNid {
-	if o == nil || isNil(o.ProducerSnpnId) {
+	if o == nil || IsNil(o.ProducerSnpnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *AccessTokenClaims) GetProducerSnpnId() PlmnIdNid {
 // GetProducerSnpnIdOk returns a tuple with the ProducerSnpnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerSnpnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ProducerSnpnId) {
+	if o == nil || IsNil(o.ProducerSnpnId) {
 		return nil, false
 	}
 	return o.ProducerSnpnId, true
@@ -298,7 +298,7 @@ func (o *AccessTokenClaims) GetProducerSnpnIdOk() (*PlmnIdNid, bool) {
 
 // HasProducerSnpnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerSnpnId() bool {
-	if o != nil && !isNil(o.ProducerSnpnId) {
+	if o != nil && !IsNil(o.ProducerSnpnId) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *AccessTokenClaims) SetProducerSnpnId(v PlmnIdNid) {
 
 // GetProducerSnssaiList returns the ProducerSnssaiList field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerSnssaiList() []Snssai {
-	if o == nil || isNil(o.ProducerSnssaiList) {
+	if o == nil || IsNil(o.ProducerSnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *AccessTokenClaims) GetProducerSnssaiList() []Snssai {
 // GetProducerSnssaiListOk returns a tuple with the ProducerSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.ProducerSnssaiList) {
+	if o == nil || IsNil(o.ProducerSnssaiList) {
 		return nil, false
 	}
 	return o.ProducerSnssaiList, true
@@ -330,7 +330,7 @@ func (o *AccessTokenClaims) GetProducerSnssaiListOk() ([]Snssai, bool) {
 
 // HasProducerSnssaiList returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerSnssaiList() bool {
-	if o != nil && !isNil(o.ProducerSnssaiList) {
+	if o != nil && !IsNil(o.ProducerSnssaiList) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *AccessTokenClaims) SetProducerSnssaiList(v []Snssai) {
 
 // GetProducerNsiList returns the ProducerNsiList field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerNsiList() []string {
-	if o == nil || isNil(o.ProducerNsiList) {
+	if o == nil || IsNil(o.ProducerNsiList) {
 		var ret []string
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *AccessTokenClaims) GetProducerNsiList() []string {
 // GetProducerNsiListOk returns a tuple with the ProducerNsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerNsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.ProducerNsiList) {
+	if o == nil || IsNil(o.ProducerNsiList) {
 		return nil, false
 	}
 	return o.ProducerNsiList, true
@@ -362,7 +362,7 @@ func (o *AccessTokenClaims) GetProducerNsiListOk() ([]string, bool) {
 
 // HasProducerNsiList returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerNsiList() bool {
-	if o != nil && !isNil(o.ProducerNsiList) {
+	if o != nil && !IsNil(o.ProducerNsiList) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *AccessTokenClaims) SetProducerNsiList(v []string) {
 
 // GetProducerNfSetId returns the ProducerNfSetId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerNfSetId() string {
-	if o == nil || isNil(o.ProducerNfSetId) {
+	if o == nil || IsNil(o.ProducerNfSetId) {
 		var ret string
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *AccessTokenClaims) GetProducerNfSetId() string {
 // GetProducerNfSetIdOk returns a tuple with the ProducerNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerNfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.ProducerNfSetId) {
+	if o == nil || IsNil(o.ProducerNfSetId) {
 		return nil, false
 	}
 	return o.ProducerNfSetId, true
@@ -394,7 +394,7 @@ func (o *AccessTokenClaims) GetProducerNfSetIdOk() (*string, bool) {
 
 // HasProducerNfSetId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerNfSetId() bool {
-	if o != nil && !isNil(o.ProducerNfSetId) {
+	if o != nil && !IsNil(o.ProducerNfSetId) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *AccessTokenClaims) SetProducerNfSetId(v string) {
 
 // GetProducerNfServiceSetId returns the ProducerNfServiceSetId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerNfServiceSetId() string {
-	if o == nil || isNil(o.ProducerNfServiceSetId) {
+	if o == nil || IsNil(o.ProducerNfServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *AccessTokenClaims) GetProducerNfServiceSetId() string {
 // GetProducerNfServiceSetIdOk returns a tuple with the ProducerNfServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerNfServiceSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.ProducerNfServiceSetId) {
+	if o == nil || IsNil(o.ProducerNfServiceSetId) {
 		return nil, false
 	}
 	return o.ProducerNfServiceSetId, true
@@ -426,7 +426,7 @@ func (o *AccessTokenClaims) GetProducerNfServiceSetIdOk() (*string, bool) {
 
 // HasProducerNfServiceSetId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerNfServiceSetId() bool {
-	if o != nil && !isNil(o.ProducerNfServiceSetId) {
+	if o != nil && !IsNil(o.ProducerNfServiceSetId) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *AccessTokenClaims) SetProducerNfServiceSetId(v string) {
 
 // GetSourceNfInstanceId returns the SourceNfInstanceId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetSourceNfInstanceId() string {
-	if o == nil || isNil(o.SourceNfInstanceId) {
+	if o == nil || IsNil(o.SourceNfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *AccessTokenClaims) GetSourceNfInstanceId() string {
 // GetSourceNfInstanceIdOk returns a tuple with the SourceNfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetSourceNfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.SourceNfInstanceId) {
+	if o == nil || IsNil(o.SourceNfInstanceId) {
 		return nil, false
 	}
 	return o.SourceNfInstanceId, true
@@ -458,7 +458,7 @@ func (o *AccessTokenClaims) GetSourceNfInstanceIdOk() (*string, bool) {
 
 // HasSourceNfInstanceId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasSourceNfInstanceId() bool {
-	if o != nil && !isNil(o.SourceNfInstanceId) {
+	if o != nil && !IsNil(o.SourceNfInstanceId) {
 		return true
 	}
 
@@ -471,7 +471,7 @@ func (o *AccessTokenClaims) SetSourceNfInstanceId(v string) {
 }
 
 func (o AccessTokenClaims) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -485,31 +485,31 @@ func (o AccessTokenClaims) ToMap() (map[string]interface{}, error) {
 	toSerialize["aud"] = o.Aud
 	toSerialize["scope"] = o.Scope
 	toSerialize["exp"] = o.Exp
-	if !isNil(o.ConsumerPlmnId) {
+	if !IsNil(o.ConsumerPlmnId) {
 		toSerialize["consumerPlmnId"] = o.ConsumerPlmnId
 	}
-	if !isNil(o.ConsumerSnpnId) {
+	if !IsNil(o.ConsumerSnpnId) {
 		toSerialize["consumerSnpnId"] = o.ConsumerSnpnId
 	}
-	if !isNil(o.ProducerPlmnId) {
+	if !IsNil(o.ProducerPlmnId) {
 		toSerialize["producerPlmnId"] = o.ProducerPlmnId
 	}
-	if !isNil(o.ProducerSnpnId) {
+	if !IsNil(o.ProducerSnpnId) {
 		toSerialize["producerSnpnId"] = o.ProducerSnpnId
 	}
-	if !isNil(o.ProducerSnssaiList) {
+	if !IsNil(o.ProducerSnssaiList) {
 		toSerialize["producerSnssaiList"] = o.ProducerSnssaiList
 	}
-	if !isNil(o.ProducerNsiList) {
+	if !IsNil(o.ProducerNsiList) {
 		toSerialize["producerNsiList"] = o.ProducerNsiList
 	}
-	if !isNil(o.ProducerNfSetId) {
+	if !IsNil(o.ProducerNfSetId) {
 		toSerialize["producerNfSetId"] = o.ProducerNfSetId
 	}
-	if !isNil(o.ProducerNfServiceSetId) {
+	if !IsNil(o.ProducerNfServiceSetId) {
 		toSerialize["producerNfServiceSetId"] = o.ProducerNfServiceSetId
 	}
-	if !isNil(o.SourceNfInstanceId) {
+	if !IsNil(o.SourceNfInstanceId) {
 		toSerialize["sourceNfInstanceId"] = o.SourceNfInstanceId
 	}
 	return toSerialize, nil
@@ -550,5 +550,3 @@ func (v *NullableAccessTokenClaims) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

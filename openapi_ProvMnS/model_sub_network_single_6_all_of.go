@@ -19,8 +19,8 @@ var _ MappedNullable = &SubNetworkSingle6AllOf{}
 
 // SubNetworkSingle6AllOf struct for SubNetworkSingle6AllOf
 type SubNetworkSingle6AllOf struct {
-	SubNetwork []SubNetworkSingle `json:"SubNetwork,omitempty"`
-	ManagedElement []ManagedElementSingle `json:"ManagedElement,omitempty"`
+	SubNetwork         []SubNetworkSingle         `json:"SubNetwork,omitempty"`
+	ManagedElement     []ManagedElementSingle     `json:"ManagedElement,omitempty"`
 	MLTrainingFunction []MLTrainingFunctionSingle `json:"MLTrainingFunction,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewSubNetworkSingle6AllOfWithDefaults() *SubNetworkSingle6AllOf {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingle6AllOf) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SubNetworkSingle6AllOf) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle6AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -61,7 +61,7 @@ func (o *SubNetworkSingle6AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingle6AllOf) HasSubNetwork() bool {
-	if o != nil && !isNil(o.SubNetwork) {
+	if o != nil && !IsNil(o.SubNetwork) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SubNetworkSingle6AllOf) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetManagedElement returns the ManagedElement field value if set, zero value otherwise.
 func (o *SubNetworkSingle6AllOf) GetManagedElement() []ManagedElementSingle {
-	if o == nil || isNil(o.ManagedElement) {
+	if o == nil || IsNil(o.ManagedElement) {
 		var ret []ManagedElementSingle
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SubNetworkSingle6AllOf) GetManagedElement() []ManagedElementSingle {
 // GetManagedElementOk returns a tuple with the ManagedElement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle6AllOf) GetManagedElementOk() ([]ManagedElementSingle, bool) {
-	if o == nil || isNil(o.ManagedElement) {
+	if o == nil || IsNil(o.ManagedElement) {
 		return nil, false
 	}
 	return o.ManagedElement, true
@@ -93,7 +93,7 @@ func (o *SubNetworkSingle6AllOf) GetManagedElementOk() ([]ManagedElementSingle, 
 
 // HasManagedElement returns a boolean if a field has been set.
 func (o *SubNetworkSingle6AllOf) HasManagedElement() bool {
-	if o != nil && !isNil(o.ManagedElement) {
+	if o != nil && !IsNil(o.ManagedElement) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SubNetworkSingle6AllOf) SetManagedElement(v []ManagedElementSingle) {
 
 // GetMLTrainingFunction returns the MLTrainingFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingle6AllOf) GetMLTrainingFunction() []MLTrainingFunctionSingle {
-	if o == nil || isNil(o.MLTrainingFunction) {
+	if o == nil || IsNil(o.MLTrainingFunction) {
 		var ret []MLTrainingFunctionSingle
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SubNetworkSingle6AllOf) GetMLTrainingFunction() []MLTrainingFunctionSin
 // GetMLTrainingFunctionOk returns a tuple with the MLTrainingFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle6AllOf) GetMLTrainingFunctionOk() ([]MLTrainingFunctionSingle, bool) {
-	if o == nil || isNil(o.MLTrainingFunction) {
+	if o == nil || IsNil(o.MLTrainingFunction) {
 		return nil, false
 	}
 	return o.MLTrainingFunction, true
@@ -125,7 +125,7 @@ func (o *SubNetworkSingle6AllOf) GetMLTrainingFunctionOk() ([]MLTrainingFunction
 
 // HasMLTrainingFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingle6AllOf) HasMLTrainingFunction() bool {
-	if o != nil && !isNil(o.MLTrainingFunction) {
+	if o != nil && !IsNil(o.MLTrainingFunction) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SubNetworkSingle6AllOf) SetMLTrainingFunction(v []MLTrainingFunctionSin
 }
 
 func (o SubNetworkSingle6AllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o SubNetworkSingle6AllOf) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle6AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubNetwork) {
+	if !IsNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !isNil(o.ManagedElement) {
+	if !IsNil(o.ManagedElement) {
 		toSerialize["ManagedElement"] = o.ManagedElement
 	}
-	if !isNil(o.MLTrainingFunction) {
+	if !IsNil(o.MLTrainingFunction) {
 		toSerialize["MLTrainingFunction"] = o.MLTrainingFunction
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableSubNetworkSingle6AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

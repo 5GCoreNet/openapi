@@ -20,7 +20,7 @@ type SerializationFormatType string
 
 // List of serializationFormat-Type
 const (
-	GPB SerializationFormatType = "GPB"
+	GPB  SerializationFormatType = "GPB"
 	ASN1 SerializationFormatType = "ASN1"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableSerializationFormatType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

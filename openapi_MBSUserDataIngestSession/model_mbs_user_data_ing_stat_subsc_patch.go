@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-ud-ingest
 
-API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the MBSUserDataIngStatSubscPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MBSUserDataIngStatSubscPatch{}
 
-// MBSUserDataIngStatSubscPatch Represents the requested modifications to an MBS User Data Ingest Session Status  Subscription. 
+// MBSUserDataIngStatSubscPatch Represents the requested modifications to an MBS User Data Ingest Session Status  Subscription.
 type MBSUserDataIngStatSubscPatch struct {
 	EventSubscs []SubscribedEvent `json:"eventSubscs,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -43,7 +43,7 @@ func NewMBSUserDataIngStatSubscPatchWithDefaults() *MBSUserDataIngStatSubscPatch
 
 // GetEventSubscs returns the EventSubscs field value if set, zero value otherwise.
 func (o *MBSUserDataIngStatSubscPatch) GetEventSubscs() []SubscribedEvent {
-	if o == nil || isNil(o.EventSubscs) {
+	if o == nil || IsNil(o.EventSubscs) {
 		var ret []SubscribedEvent
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetEventSubscs() []SubscribedEvent {
 // GetEventSubscsOk returns a tuple with the EventSubscs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngStatSubscPatch) GetEventSubscsOk() ([]SubscribedEvent, bool) {
-	if o == nil || isNil(o.EventSubscs) {
+	if o == nil || IsNil(o.EventSubscs) {
 		return nil, false
 	}
 	return o.EventSubscs, true
@@ -61,7 +61,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetEventSubscsOk() ([]SubscribedEvent, bo
 
 // HasEventSubscs returns a boolean if a field has been set.
 func (o *MBSUserDataIngStatSubscPatch) HasEventSubscs() bool {
-	if o != nil && !isNil(o.EventSubscs) {
+	if o != nil && !IsNil(o.EventSubscs) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MBSUserDataIngStatSubscPatch) SetEventSubscs(v []SubscribedEvent) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *MBSUserDataIngStatSubscPatch) GetNotifUri() string {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngStatSubscPatch) GetNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -93,7 +93,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *MBSUserDataIngStatSubscPatch) HasNotifUri() bool {
-	if o != nil && !isNil(o.NotifUri) {
+	if o != nil && !IsNil(o.NotifUri) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *MBSUserDataIngStatSubscPatch) SetNotifUri(v string) {
 }
 
 func (o MBSUserDataIngStatSubscPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o MBSUserDataIngStatSubscPatch) MarshalJSON() ([]byte, error) {
 
 func (o MBSUserDataIngStatSubscPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EventSubscs) {
+	if !IsNil(o.EventSubscs) {
 		toSerialize["eventSubscs"] = o.EventSubscs
 	}
-	if !isNil(o.NotifUri) {
+	if !IsNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableMBSUserDataIngStatSubscPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,79 +17,79 @@ import (
 
 // Resources5gcNrm - struct for Resources5gcNrm
 type Resources5gcNrm struct {
-	AmfFunctionSingle *AmfFunctionSingle
-	AmfRegionSingle *AmfRegionSingle
-	AmfSetSingle *AmfSetSingle
-	AusfFunctionSingle *AusfFunctionSingle
-	Configurable5QISetSingle *Configurable5QISetSingle
-	DDNMFFunctionSingle *DDNMFFunctionSingle
-	Dynamic5QISetSingle *Dynamic5QISetSingle
-	EASDFFunctionSingle *EASDFFunctionSingle
-	EPMAPSMSCSingle *EPMAPSMSCSingle
-	EPN10Single *EPN10Single
-	EPN11Single *EPN11Single
-	EPN12Single *EPN12Single
-	EPN13Single *EPN13Single
-	EPN14Single *EPN14Single
-	EPN15Single *EPN15Single
-	EPN16Single *EPN16Single
-	EPN17Single *EPN17Single
-	EPN20Single *EPN20Single
-	EPN21Single *EPN21Single
-	EPN22Single *EPN22Single
-	EPN26Single *EPN26Single
-	EPN27Single *EPN27Single
-	EPN2Single *EPN2Single
-	EPN31Single *EPN31Single
-	EPN32Single *EPN32Single
-	EPN33Single *EPN33Single
-	EPN3Single *EPN3Single
-	EPN4Single *EPN4Single
-	EPN5Single *EPN5Single
-	EPN60Single *EPN60Single
-	EPN6Single *EPN6Single
-	EPN7Single *EPN7Single
-	EPN88Single *EPN88Single
-	EPN8Single *EPN8Single
-	EPN9Single *EPN9Single
-	EPNLGSingle *EPNLGSingle
-	EPNLSSingle *EPNLSSingle
-	EPNpc4Single *EPNpc4Single
-	EPNpc6Single *EPNpc6Single
-	EPNpc7Single *EPNpc7Single
-	EPNpc8Single *EPNpc8Single
-	EPRxSingle *EPRxSingle
-	EPS5CSingle *EPS5CSingle
-	EPS5USingle *EPS5USingle
-	EcmConnectionInfoSingle *EcmConnectionInfoSingle
-	ExternalAmfFunctionSingle *ExternalAmfFunctionSingle
-	ExternalNrfFunctionSingle *ExternalNrfFunctionSingle
-	ExternalNssfFunctionSingle *ExternalNssfFunctionSingle
-	ExternalSeppFunctionSingle *ExternalSeppFunctionSingle
-	FiveQiDscpMappingSetSingle *FiveQiDscpMappingSetSingle
+	AmfFunctionSingle                  *AmfFunctionSingle
+	AmfRegionSingle                    *AmfRegionSingle
+	AmfSetSingle                       *AmfSetSingle
+	AusfFunctionSingle                 *AusfFunctionSingle
+	Configurable5QISetSingle           *Configurable5QISetSingle
+	DDNMFFunctionSingle                *DDNMFFunctionSingle
+	Dynamic5QISetSingle                *Dynamic5QISetSingle
+	EASDFFunctionSingle                *EASDFFunctionSingle
+	EPMAPSMSCSingle                    *EPMAPSMSCSingle
+	EPN10Single                        *EPN10Single
+	EPN11Single                        *EPN11Single
+	EPN12Single                        *EPN12Single
+	EPN13Single                        *EPN13Single
+	EPN14Single                        *EPN14Single
+	EPN15Single                        *EPN15Single
+	EPN16Single                        *EPN16Single
+	EPN17Single                        *EPN17Single
+	EPN20Single                        *EPN20Single
+	EPN21Single                        *EPN21Single
+	EPN22Single                        *EPN22Single
+	EPN26Single                        *EPN26Single
+	EPN27Single                        *EPN27Single
+	EPN2Single                         *EPN2Single
+	EPN31Single                        *EPN31Single
+	EPN32Single                        *EPN32Single
+	EPN33Single                        *EPN33Single
+	EPN3Single                         *EPN3Single
+	EPN4Single                         *EPN4Single
+	EPN5Single                         *EPN5Single
+	EPN60Single                        *EPN60Single
+	EPN6Single                         *EPN6Single
+	EPN7Single                         *EPN7Single
+	EPN88Single                        *EPN88Single
+	EPN8Single                         *EPN8Single
+	EPN9Single                         *EPN9Single
+	EPNLGSingle                        *EPNLGSingle
+	EPNLSSingle                        *EPNLSSingle
+	EPNpc4Single                       *EPNpc4Single
+	EPNpc6Single                       *EPNpc6Single
+	EPNpc7Single                       *EPNpc7Single
+	EPNpc8Single                       *EPNpc8Single
+	EPRxSingle                         *EPRxSingle
+	EPS5CSingle                        *EPS5CSingle
+	EPS5USingle                        *EPS5USingle
+	EcmConnectionInfoSingle            *EcmConnectionInfoSingle
+	ExternalAmfFunctionSingle          *ExternalAmfFunctionSingle
+	ExternalNrfFunctionSingle          *ExternalNrfFunctionSingle
+	ExternalNssfFunctionSingle         *ExternalNssfFunctionSingle
+	ExternalSeppFunctionSingle         *ExternalSeppFunctionSingle
+	FiveQiDscpMappingSetSingle         *FiveQiDscpMappingSetSingle
 	GtpUPathQoSMonitoringControlSingle *GtpUPathQoSMonitoringControlSingle
-	LmfFunctionSingle *LmfFunctionSingle
-	ManagedElementSingle *ManagedElementSingle
-	N3iwfFunctionSingle *N3iwfFunctionSingle
-	NefFunctionSingle *NefFunctionSingle
-	NgeirFunctionSingle *NgeirFunctionSingle
-	NrfFunctionSingle *NrfFunctionSingle
-	NsacfFunctionSingle *NsacfFunctionSingle
-	NssfFunctionSingle *NssfFunctionSingle
-	NwdafFunctionSingle *NwdafFunctionSingle
-	PcfFunctionSingle *PcfFunctionSingle
-	PredefinedPccRuleSetSingle *PredefinedPccRuleSetSingle
-	ProvMnS *ProvMnS
-	QFQoSMonitoringControlSingle *QFQoSMonitoringControlSingle
-	ScpFunctionSingle *ScpFunctionSingle
-	SeppFunctionSingle *SeppFunctionSingle
-	SmfFunctionSingle *SmfFunctionSingle
-	SmsfFunctionSingle *SmsfFunctionSingle
-	SubNetworkSingle *SubNetworkSingle
-	UdmFunctionSingle *UdmFunctionSingle
-	UdrFunctionSingle *UdrFunctionSingle
-	UdsfFunctionSingle *UdsfFunctionSingle
-	UpfFunctionSingle *UpfFunctionSingle
+	LmfFunctionSingle                  *LmfFunctionSingle
+	ManagedElementSingle               *ManagedElementSingle
+	N3iwfFunctionSingle                *N3iwfFunctionSingle
+	NefFunctionSingle                  *NefFunctionSingle
+	NgeirFunctionSingle                *NgeirFunctionSingle
+	NrfFunctionSingle                  *NrfFunctionSingle
+	NsacfFunctionSingle                *NsacfFunctionSingle
+	NssfFunctionSingle                 *NssfFunctionSingle
+	NwdafFunctionSingle                *NwdafFunctionSingle
+	PcfFunctionSingle                  *PcfFunctionSingle
+	PredefinedPccRuleSetSingle         *PredefinedPccRuleSetSingle
+	ProvMnS                            *ProvMnS
+	QFQoSMonitoringControlSingle       *QFQoSMonitoringControlSingle
+	ScpFunctionSingle                  *ScpFunctionSingle
+	SeppFunctionSingle                 *SeppFunctionSingle
+	SmfFunctionSingle                  *SmfFunctionSingle
+	SmsfFunctionSingle                 *SmsfFunctionSingle
+	SubNetworkSingle                   *SubNetworkSingle
+	UdmFunctionSingle                  *UdmFunctionSingle
+	UdrFunctionSingle                  *UdrFunctionSingle
+	UdsfFunctionSingle                 *UdsfFunctionSingle
+	UpfFunctionSingle                  *UpfFunctionSingle
 }
 
 // AmfFunctionSingleAsResources5gcNrm is a convenience function that returns AmfFunctionSingle wrapped in Resources5gcNrm
@@ -602,7 +602,6 @@ func UpfFunctionSingleAsResources5gcNrm(v *UpfFunctionSingle) Resources5gcNrm {
 		UpfFunctionSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *Resources5gcNrm) UnmarshalJSON(data []byte) error {
@@ -1939,7 +1938,7 @@ func (src Resources5gcNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *Resources5gcNrm) GetActualInstance() (interface{}) {
+func (obj *Resources5gcNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -2274,5 +2273,3 @@ func (v *NullableResources5gcNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

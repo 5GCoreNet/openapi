@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,20 +17,20 @@ import (
 // checks if the MediaSubComponentRm type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MediaSubComponentRm{}
 
-// MediaSubComponentRm This data type is defined in the same way as the MediaSubComponent data type, but with the OpenAPI nullable property set to true. Removable attributes marBwDl and marBwUl are defined with the corresponding removable data type. 
+// MediaSubComponentRm This data type is defined in the same way as the MediaSubComponent data type, but with the OpenAPI nullable property set to true. Removable attributes marBwDl and marBwUl are defined with the corresponding removable data type.
 type MediaSubComponentRm struct {
-	AfSigProtocol *AfSigProtocol `json:"afSigProtocol,omitempty"`
-	EthfDescs []EthFlowDescription `json:"ethfDescs,omitempty"`
-	FNum int32 `json:"fNum"`
-	FDescs []string `json:"fDescs,omitempty"`
-	FStatus *FlowStatus `json:"fStatus,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	AfSigProtocol *AfSigProtocol       `json:"afSigProtocol,omitempty"`
+	EthfDescs     []EthFlowDescription `json:"ethfDescs,omitempty"`
+	FNum          int32                `json:"fNum"`
+	FDescs        []string             `json:"fDescs,omitempty"`
+	FStatus       *FlowStatus          `json:"fStatus,omitempty"`
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	MarBwDl NullableString `json:"marBwDl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	MarBwUl NullableString `json:"marBwUl,omitempty"`
-	// This data type is defined in the same way as the TosTrafficClass data type, but with the OpenAPI nullable property set to true. 
-	TosTrCl NullableString `json:"tosTrCl,omitempty"`
-	FlowUsage *FlowUsage `json:"flowUsage,omitempty"`
+	// This data type is defined in the same way as the TosTrafficClass data type, but with the OpenAPI nullable property set to true.
+	TosTrCl   NullableString `json:"tosTrCl,omitempty"`
+	FlowUsage *FlowUsage     `json:"flowUsage,omitempty"`
 }
 
 // NewMediaSubComponentRm instantiates a new MediaSubComponentRm object
@@ -53,7 +53,7 @@ func NewMediaSubComponentRmWithDefaults() *MediaSubComponentRm {
 
 // GetAfSigProtocol returns the AfSigProtocol field value if set, zero value otherwise.
 func (o *MediaSubComponentRm) GetAfSigProtocol() AfSigProtocol {
-	if o == nil || isNil(o.AfSigProtocol) {
+	if o == nil || IsNil(o.AfSigProtocol) {
 		var ret AfSigProtocol
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *MediaSubComponentRm) GetAfSigProtocol() AfSigProtocol {
 // GetAfSigProtocolOk returns a tuple with the AfSigProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponentRm) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
-	if o == nil || isNil(o.AfSigProtocol) {
+	if o == nil || IsNil(o.AfSigProtocol) {
 		return nil, false
 	}
 	return o.AfSigProtocol, true
@@ -71,7 +71,7 @@ func (o *MediaSubComponentRm) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
 
 // HasAfSigProtocol returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasAfSigProtocol() bool {
-	if o != nil && !isNil(o.AfSigProtocol) {
+	if o != nil && !IsNil(o.AfSigProtocol) {
 		return true
 	}
 
@@ -96,7 +96,7 @@ func (o *MediaSubComponentRm) GetEthfDescs() []EthFlowDescription {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaSubComponentRm) GetEthfDescsOk() ([]EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthfDescs) {
+	if o == nil || IsNil(o.EthfDescs) {
 		return nil, false
 	}
 	return o.EthfDescs, true
@@ -104,7 +104,7 @@ func (o *MediaSubComponentRm) GetEthfDescsOk() ([]EthFlowDescription, bool) {
 
 // HasEthfDescs returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasEthfDescs() bool {
-	if o != nil && isNil(o.EthfDescs) {
+	if o != nil && IsNil(o.EthfDescs) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *MediaSubComponentRm) GetFDescs() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaSubComponentRm) GetFDescsOk() ([]string, bool) {
-	if o == nil || isNil(o.FDescs) {
+	if o == nil || IsNil(o.FDescs) {
 		return nil, false
 	}
 	return o.FDescs, true
@@ -161,7 +161,7 @@ func (o *MediaSubComponentRm) GetFDescsOk() ([]string, bool) {
 
 // HasFDescs returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasFDescs() bool {
-	if o != nil && isNil(o.FDescs) {
+	if o != nil && IsNil(o.FDescs) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *MediaSubComponentRm) SetFDescs(v []string) {
 
 // GetFStatus returns the FStatus field value if set, zero value otherwise.
 func (o *MediaSubComponentRm) GetFStatus() FlowStatus {
-	if o == nil || isNil(o.FStatus) {
+	if o == nil || IsNil(o.FStatus) {
 		var ret FlowStatus
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *MediaSubComponentRm) GetFStatus() FlowStatus {
 // GetFStatusOk returns a tuple with the FStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponentRm) GetFStatusOk() (*FlowStatus, bool) {
-	if o == nil || isNil(o.FStatus) {
+	if o == nil || IsNil(o.FStatus) {
 		return nil, false
 	}
 	return o.FStatus, true
@@ -193,7 +193,7 @@ func (o *MediaSubComponentRm) GetFStatusOk() (*FlowStatus, bool) {
 
 // HasFStatus returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasFStatus() bool {
-	if o != nil && !isNil(o.FStatus) {
+	if o != nil && !IsNil(o.FStatus) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *MediaSubComponentRm) SetFStatus(v FlowStatus) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaSubComponentRm) GetMarBwDl() string {
-	if o == nil || isNil(o.MarBwDl.Get()) {
+	if o == nil || IsNil(o.MarBwDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -237,6 +237,7 @@ func (o *MediaSubComponentRm) HasMarBwDl() bool {
 func (o *MediaSubComponentRm) SetMarBwDl(v string) {
 	o.MarBwDl.Set(&v)
 }
+
 // SetMarBwDlNil sets the value for MarBwDl to be an explicit nil
 func (o *MediaSubComponentRm) SetMarBwDlNil() {
 	o.MarBwDl.Set(nil)
@@ -249,7 +250,7 @@ func (o *MediaSubComponentRm) UnsetMarBwDl() {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaSubComponentRm) GetMarBwUl() string {
-	if o == nil || isNil(o.MarBwUl.Get()) {
+	if o == nil || IsNil(o.MarBwUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -279,6 +280,7 @@ func (o *MediaSubComponentRm) HasMarBwUl() bool {
 func (o *MediaSubComponentRm) SetMarBwUl(v string) {
 	o.MarBwUl.Set(&v)
 }
+
 // SetMarBwUlNil sets the value for MarBwUl to be an explicit nil
 func (o *MediaSubComponentRm) SetMarBwUlNil() {
 	o.MarBwUl.Set(nil)
@@ -291,7 +293,7 @@ func (o *MediaSubComponentRm) UnsetMarBwUl() {
 
 // GetTosTrCl returns the TosTrCl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaSubComponentRm) GetTosTrCl() string {
-	if o == nil || isNil(o.TosTrCl.Get()) {
+	if o == nil || IsNil(o.TosTrCl.Get()) {
 		var ret string
 		return ret
 	}
@@ -321,6 +323,7 @@ func (o *MediaSubComponentRm) HasTosTrCl() bool {
 func (o *MediaSubComponentRm) SetTosTrCl(v string) {
 	o.TosTrCl.Set(&v)
 }
+
 // SetTosTrClNil sets the value for TosTrCl to be an explicit nil
 func (o *MediaSubComponentRm) SetTosTrClNil() {
 	o.TosTrCl.Set(nil)
@@ -333,7 +336,7 @@ func (o *MediaSubComponentRm) UnsetTosTrCl() {
 
 // GetFlowUsage returns the FlowUsage field value if set, zero value otherwise.
 func (o *MediaSubComponentRm) GetFlowUsage() FlowUsage {
-	if o == nil || isNil(o.FlowUsage) {
+	if o == nil || IsNil(o.FlowUsage) {
 		var ret FlowUsage
 		return ret
 	}
@@ -343,7 +346,7 @@ func (o *MediaSubComponentRm) GetFlowUsage() FlowUsage {
 // GetFlowUsageOk returns a tuple with the FlowUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponentRm) GetFlowUsageOk() (*FlowUsage, bool) {
-	if o == nil || isNil(o.FlowUsage) {
+	if o == nil || IsNil(o.FlowUsage) {
 		return nil, false
 	}
 	return o.FlowUsage, true
@@ -351,7 +354,7 @@ func (o *MediaSubComponentRm) GetFlowUsageOk() (*FlowUsage, bool) {
 
 // HasFlowUsage returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasFlowUsage() bool {
-	if o != nil && !isNil(o.FlowUsage) {
+	if o != nil && !IsNil(o.FlowUsage) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *MediaSubComponentRm) SetFlowUsage(v FlowUsage) {
 }
 
 func (o MediaSubComponentRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -373,7 +376,7 @@ func (o MediaSubComponentRm) MarshalJSON() ([]byte, error) {
 
 func (o MediaSubComponentRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AfSigProtocol) {
+	if !IsNil(o.AfSigProtocol) {
 		toSerialize["afSigProtocol"] = o.AfSigProtocol
 	}
 	if o.EthfDescs != nil {
@@ -383,7 +386,7 @@ func (o MediaSubComponentRm) ToMap() (map[string]interface{}, error) {
 	if o.FDescs != nil {
 		toSerialize["fDescs"] = o.FDescs
 	}
-	if !isNil(o.FStatus) {
+	if !IsNil(o.FStatus) {
 		toSerialize["fStatus"] = o.FStatus
 	}
 	if o.MarBwDl.IsSet() {
@@ -395,7 +398,7 @@ func (o MediaSubComponentRm) ToMap() (map[string]interface{}, error) {
 	if o.TosTrCl.IsSet() {
 		toSerialize["tosTrCl"] = o.TosTrCl.Get()
 	}
-	if !isNil(o.FlowUsage) {
+	if !IsNil(o.FlowUsage) {
 		toSerialize["flowUsage"] = o.FlowUsage
 	}
 	return toSerialize, nil
@@ -436,5 +439,3 @@ func (v *NullableMediaSubComponentRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &DistributionConfigurationSupplementaryDistributionNetwor
 // DistributionConfigurationSupplementaryDistributionNetworksInner A duple tying a type of supplementary distribution network to its distribution mode.
 type DistributionConfigurationSupplementaryDistributionNetworksInner struct {
 	DistributionNetworkType DistributionNetworkType `json:"distributionNetworkType"`
-	DistributionMode DistributionMode `json:"distributionMode"`
+	DistributionMode        DistributionMode        `json:"distributionMode"`
 }
 
 // NewDistributionConfigurationSupplementaryDistributionNetworksInner instantiates a new DistributionConfigurationSupplementaryDistributionNetworksInner object
@@ -91,7 +91,7 @@ func (o *DistributionConfigurationSupplementaryDistributionNetworksInner) SetDis
 }
 
 func (o DistributionConfigurationSupplementaryDistributionNetworksInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableDistributionConfigurationSupplementaryDistributionNetworksInner
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

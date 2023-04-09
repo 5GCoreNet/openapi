@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // N2InfoNotifyReason N2 Information Notify Reason
 type N2InfoNotifyReason struct {
-	N2InfoNotifyReasonAnyOf *N2InfoNotifyReasonAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N2InfoNotifyReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into N2InfoNotifyReasonAnyOf
-	err = json.Unmarshal(data, &dst.N2InfoNotifyReasonAnyOf);
-	if err == nil {
-		jsonN2InfoNotifyReasonAnyOf, _ := json.Marshal(dst.N2InfoNotifyReasonAnyOf)
-		if string(jsonN2InfoNotifyReasonAnyOf) == "{}" { // empty struct
-			dst.N2InfoNotifyReasonAnyOf = nil
-		} else {
-			return nil // data stored in dst.N2InfoNotifyReasonAnyOf, return on the first match
-		}
-	} else {
-		dst.N2InfoNotifyReasonAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *N2InfoNotifyReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N2InfoNotifyReason) MarshalJSON() ([]byte, error) {
-	if src.N2InfoNotifyReasonAnyOf != nil {
-		return json.Marshal(&src.N2InfoNotifyReasonAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableN2InfoNotifyReason) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

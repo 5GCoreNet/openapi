@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &NSPAContainerInformation{}
 
 // NSPAContainerInformation struct for NSPAContainerInformation
 type NSPAContainerInformation struct {
-	Latency *int32 `json:"latency,omitempty"`
-	Throughput *Throughput `json:"throughput,omitempty"`
-	MaximumPacketLossRate *string `json:"maximumPacketLossRate,omitempty"`
-	ServiceExperienceStatisticsData *ServiceExperienceInfo `json:"serviceExperienceStatisticsData,omitempty"`
-	TheNumberOfPDUSessions *int32 `json:"theNumberOfPDUSessions,omitempty"`
-	TheNumberOfRegisteredSubscribers *int32 `json:"theNumberOfRegisteredSubscribers,omitempty"`
-	LoadLevel *NsiLoadLevelInfo `json:"loadLevel,omitempty"`
+	Latency                          *int32                 `json:"latency,omitempty"`
+	Throughput                       *Throughput            `json:"throughput,omitempty"`
+	MaximumPacketLossRate            *string                `json:"maximumPacketLossRate,omitempty"`
+	ServiceExperienceStatisticsData  *ServiceExperienceInfo `json:"serviceExperienceStatisticsData,omitempty"`
+	TheNumberOfPDUSessions           *int32                 `json:"theNumberOfPDUSessions,omitempty"`
+	TheNumberOfRegisteredSubscribers *int32                 `json:"theNumberOfRegisteredSubscribers,omitempty"`
+	LoadLevel                        *NsiLoadLevelInfo      `json:"loadLevel,omitempty"`
 }
 
 // NewNSPAContainerInformation instantiates a new NSPAContainerInformation object
@@ -47,7 +47,7 @@ func NewNSPAContainerInformationWithDefaults() *NSPAContainerInformation {
 
 // GetLatency returns the Latency field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetLatency() int32 {
-	if o == nil || isNil(o.Latency) {
+	if o == nil || IsNil(o.Latency) {
 		var ret int32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *NSPAContainerInformation) GetLatency() int32 {
 // GetLatencyOk returns a tuple with the Latency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.Latency) {
+	if o == nil || IsNil(o.Latency) {
 		return nil, false
 	}
 	return o.Latency, true
@@ -65,7 +65,7 @@ func (o *NSPAContainerInformation) GetLatencyOk() (*int32, bool) {
 
 // HasLatency returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasLatency() bool {
-	if o != nil && !isNil(o.Latency) {
+	if o != nil && !IsNil(o.Latency) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *NSPAContainerInformation) SetLatency(v int32) {
 
 // GetThroughput returns the Throughput field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetThroughput() Throughput {
-	if o == nil || isNil(o.Throughput) {
+	if o == nil || IsNil(o.Throughput) {
 		var ret Throughput
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *NSPAContainerInformation) GetThroughput() Throughput {
 // GetThroughputOk returns a tuple with the Throughput field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetThroughputOk() (*Throughput, bool) {
-	if o == nil || isNil(o.Throughput) {
+	if o == nil || IsNil(o.Throughput) {
 		return nil, false
 	}
 	return o.Throughput, true
@@ -97,7 +97,7 @@ func (o *NSPAContainerInformation) GetThroughputOk() (*Throughput, bool) {
 
 // HasThroughput returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasThroughput() bool {
-	if o != nil && !isNil(o.Throughput) {
+	if o != nil && !IsNil(o.Throughput) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *NSPAContainerInformation) SetThroughput(v Throughput) {
 
 // GetMaximumPacketLossRate returns the MaximumPacketLossRate field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetMaximumPacketLossRate() string {
-	if o == nil || isNil(o.MaximumPacketLossRate) {
+	if o == nil || IsNil(o.MaximumPacketLossRate) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *NSPAContainerInformation) GetMaximumPacketLossRate() string {
 // GetMaximumPacketLossRateOk returns a tuple with the MaximumPacketLossRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetMaximumPacketLossRateOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumPacketLossRate) {
+	if o == nil || IsNil(o.MaximumPacketLossRate) {
 		return nil, false
 	}
 	return o.MaximumPacketLossRate, true
@@ -129,7 +129,7 @@ func (o *NSPAContainerInformation) GetMaximumPacketLossRateOk() (*string, bool) 
 
 // HasMaximumPacketLossRate returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasMaximumPacketLossRate() bool {
-	if o != nil && !isNil(o.MaximumPacketLossRate) {
+	if o != nil && !IsNil(o.MaximumPacketLossRate) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *NSPAContainerInformation) SetMaximumPacketLossRate(v string) {
 
 // GetServiceExperienceStatisticsData returns the ServiceExperienceStatisticsData field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetServiceExperienceStatisticsData() ServiceExperienceInfo {
-	if o == nil || isNil(o.ServiceExperienceStatisticsData) {
+	if o == nil || IsNil(o.ServiceExperienceStatisticsData) {
 		var ret ServiceExperienceInfo
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *NSPAContainerInformation) GetServiceExperienceStatisticsData() ServiceE
 // GetServiceExperienceStatisticsDataOk returns a tuple with the ServiceExperienceStatisticsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetServiceExperienceStatisticsDataOk() (*ServiceExperienceInfo, bool) {
-	if o == nil || isNil(o.ServiceExperienceStatisticsData) {
+	if o == nil || IsNil(o.ServiceExperienceStatisticsData) {
 		return nil, false
 	}
 	return o.ServiceExperienceStatisticsData, true
@@ -161,7 +161,7 @@ func (o *NSPAContainerInformation) GetServiceExperienceStatisticsDataOk() (*Serv
 
 // HasServiceExperienceStatisticsData returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasServiceExperienceStatisticsData() bool {
-	if o != nil && !isNil(o.ServiceExperienceStatisticsData) {
+	if o != nil && !IsNil(o.ServiceExperienceStatisticsData) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *NSPAContainerInformation) SetServiceExperienceStatisticsData(v ServiceE
 
 // GetTheNumberOfPDUSessions returns the TheNumberOfPDUSessions field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetTheNumberOfPDUSessions() int32 {
-	if o == nil || isNil(o.TheNumberOfPDUSessions) {
+	if o == nil || IsNil(o.TheNumberOfPDUSessions) {
 		var ret int32
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *NSPAContainerInformation) GetTheNumberOfPDUSessions() int32 {
 // GetTheNumberOfPDUSessionsOk returns a tuple with the TheNumberOfPDUSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetTheNumberOfPDUSessionsOk() (*int32, bool) {
-	if o == nil || isNil(o.TheNumberOfPDUSessions) {
+	if o == nil || IsNil(o.TheNumberOfPDUSessions) {
 		return nil, false
 	}
 	return o.TheNumberOfPDUSessions, true
@@ -193,7 +193,7 @@ func (o *NSPAContainerInformation) GetTheNumberOfPDUSessionsOk() (*int32, bool) 
 
 // HasTheNumberOfPDUSessions returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasTheNumberOfPDUSessions() bool {
-	if o != nil && !isNil(o.TheNumberOfPDUSessions) {
+	if o != nil && !IsNil(o.TheNumberOfPDUSessions) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *NSPAContainerInformation) SetTheNumberOfPDUSessions(v int32) {
 
 // GetTheNumberOfRegisteredSubscribers returns the TheNumberOfRegisteredSubscribers field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetTheNumberOfRegisteredSubscribers() int32 {
-	if o == nil || isNil(o.TheNumberOfRegisteredSubscribers) {
+	if o == nil || IsNil(o.TheNumberOfRegisteredSubscribers) {
 		var ret int32
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *NSPAContainerInformation) GetTheNumberOfRegisteredSubscribers() int32 {
 // GetTheNumberOfRegisteredSubscribersOk returns a tuple with the TheNumberOfRegisteredSubscribers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetTheNumberOfRegisteredSubscribersOk() (*int32, bool) {
-	if o == nil || isNil(o.TheNumberOfRegisteredSubscribers) {
+	if o == nil || IsNil(o.TheNumberOfRegisteredSubscribers) {
 		return nil, false
 	}
 	return o.TheNumberOfRegisteredSubscribers, true
@@ -225,7 +225,7 @@ func (o *NSPAContainerInformation) GetTheNumberOfRegisteredSubscribersOk() (*int
 
 // HasTheNumberOfRegisteredSubscribers returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasTheNumberOfRegisteredSubscribers() bool {
-	if o != nil && !isNil(o.TheNumberOfRegisteredSubscribers) {
+	if o != nil && !IsNil(o.TheNumberOfRegisteredSubscribers) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *NSPAContainerInformation) SetTheNumberOfRegisteredSubscribers(v int32) 
 
 // GetLoadLevel returns the LoadLevel field value if set, zero value otherwise.
 func (o *NSPAContainerInformation) GetLoadLevel() NsiLoadLevelInfo {
-	if o == nil || isNil(o.LoadLevel) {
+	if o == nil || IsNil(o.LoadLevel) {
 		var ret NsiLoadLevelInfo
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *NSPAContainerInformation) GetLoadLevel() NsiLoadLevelInfo {
 // GetLoadLevelOk returns a tuple with the LoadLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSPAContainerInformation) GetLoadLevelOk() (*NsiLoadLevelInfo, bool) {
-	if o == nil || isNil(o.LoadLevel) {
+	if o == nil || IsNil(o.LoadLevel) {
 		return nil, false
 	}
 	return o.LoadLevel, true
@@ -257,7 +257,7 @@ func (o *NSPAContainerInformation) GetLoadLevelOk() (*NsiLoadLevelInfo, bool) {
 
 // HasLoadLevel returns a boolean if a field has been set.
 func (o *NSPAContainerInformation) HasLoadLevel() bool {
-	if o != nil && !isNil(o.LoadLevel) {
+	if o != nil && !IsNil(o.LoadLevel) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *NSPAContainerInformation) SetLoadLevel(v NsiLoadLevelInfo) {
 }
 
 func (o NSPAContainerInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,25 +279,25 @@ func (o NSPAContainerInformation) MarshalJSON() ([]byte, error) {
 
 func (o NSPAContainerInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Latency) {
+	if !IsNil(o.Latency) {
 		toSerialize["latency"] = o.Latency
 	}
-	if !isNil(o.Throughput) {
+	if !IsNil(o.Throughput) {
 		toSerialize["throughput"] = o.Throughput
 	}
-	if !isNil(o.MaximumPacketLossRate) {
+	if !IsNil(o.MaximumPacketLossRate) {
 		toSerialize["maximumPacketLossRate"] = o.MaximumPacketLossRate
 	}
-	if !isNil(o.ServiceExperienceStatisticsData) {
+	if !IsNil(o.ServiceExperienceStatisticsData) {
 		toSerialize["serviceExperienceStatisticsData"] = o.ServiceExperienceStatisticsData
 	}
-	if !isNil(o.TheNumberOfPDUSessions) {
+	if !IsNil(o.TheNumberOfPDUSessions) {
 		toSerialize["theNumberOfPDUSessions"] = o.TheNumberOfPDUSessions
 	}
-	if !isNil(o.TheNumberOfRegisteredSubscribers) {
+	if !IsNil(o.TheNumberOfRegisteredSubscribers) {
 		toSerialize["theNumberOfRegisteredSubscribers"] = o.TheNumberOfRegisteredSubscribers
 	}
-	if !isNil(o.LoadLevel) {
+	if !IsNil(o.LoadLevel) {
 		toSerialize["loadLevel"] = o.LoadLevel
 	}
 	return toSerialize, nil
@@ -338,5 +338,3 @@ func (v *NullableNSPAContainerInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

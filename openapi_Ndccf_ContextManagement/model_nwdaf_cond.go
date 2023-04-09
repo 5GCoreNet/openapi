@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,16 +17,16 @@ import (
 // checks if the NwdafCond type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NwdafCond{}
 
-// NwdafCond Subscription to a set of NF Instances (NWDAFs), identified by Analytics ID(s), S-NSSAI(s) or NWDAF Serving Area information, i.e. list of TAIs for which the NWDAF can provide analytics. 
+// NwdafCond Subscription to a set of NF Instances (NWDAFs), identified by Analytics ID(s), S-NSSAI(s) or NWDAF Serving Area information, i.e. list of TAIs for which the NWDAF can provide analytics.
 type NwdafCond struct {
-	ConditionType string `json:"conditionType"`
-	AnalyticsIds []string `json:"analyticsIds,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	ServingNfTypeList []NFType `json:"servingNfTypeList,omitempty"`
-	ServingNfSetIdList []string `json:"servingNfSetIdList,omitempty"`
-	MlAnalyticsList []MlAnalyticsInfo `json:"mlAnalyticsList,omitempty"`
+	ConditionType      string            `json:"conditionType"`
+	AnalyticsIds       []string          `json:"analyticsIds,omitempty"`
+	SnssaiList         []Snssai          `json:"snssaiList,omitempty"`
+	TaiList            []Tai             `json:"taiList,omitempty"`
+	TaiRangeList       []TaiRange        `json:"taiRangeList,omitempty"`
+	ServingNfTypeList  []NFType          `json:"servingNfTypeList,omitempty"`
+	ServingNfSetIdList []string          `json:"servingNfSetIdList,omitempty"`
+	MlAnalyticsList    []MlAnalyticsInfo `json:"mlAnalyticsList,omitempty"`
 }
 
 // NewNwdafCond instantiates a new NwdafCond object
@@ -73,7 +73,7 @@ func (o *NwdafCond) SetConditionType(v string) {
 
 // GetAnalyticsIds returns the AnalyticsIds field value if set, zero value otherwise.
 func (o *NwdafCond) GetAnalyticsIds() []string {
-	if o == nil || isNil(o.AnalyticsIds) {
+	if o == nil || IsNil(o.AnalyticsIds) {
 		var ret []string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *NwdafCond) GetAnalyticsIds() []string {
 // GetAnalyticsIdsOk returns a tuple with the AnalyticsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetAnalyticsIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AnalyticsIds) {
+	if o == nil || IsNil(o.AnalyticsIds) {
 		return nil, false
 	}
 	return o.AnalyticsIds, true
@@ -91,7 +91,7 @@ func (o *NwdafCond) GetAnalyticsIdsOk() ([]string, bool) {
 
 // HasAnalyticsIds returns a boolean if a field has been set.
 func (o *NwdafCond) HasAnalyticsIds() bool {
-	if o != nil && !isNil(o.AnalyticsIds) {
+	if o != nil && !IsNil(o.AnalyticsIds) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NwdafCond) SetAnalyticsIds(v []string) {
 
 // GetSnssaiList returns the SnssaiList field value if set, zero value otherwise.
 func (o *NwdafCond) GetSnssaiList() []Snssai {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *NwdafCond) GetSnssaiList() []Snssai {
 // GetSnssaiListOk returns a tuple with the SnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		return nil, false
 	}
 	return o.SnssaiList, true
@@ -123,7 +123,7 @@ func (o *NwdafCond) GetSnssaiListOk() ([]Snssai, bool) {
 
 // HasSnssaiList returns a boolean if a field has been set.
 func (o *NwdafCond) HasSnssaiList() bool {
-	if o != nil && !isNil(o.SnssaiList) {
+	if o != nil && !IsNil(o.SnssaiList) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *NwdafCond) SetSnssaiList(v []Snssai) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *NwdafCond) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *NwdafCond) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -155,7 +155,7 @@ func (o *NwdafCond) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *NwdafCond) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *NwdafCond) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *NwdafCond) GetTaiRangeList() []TaiRange {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *NwdafCond) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -187,7 +187,7 @@ func (o *NwdafCond) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *NwdafCond) HasTaiRangeList() bool {
-	if o != nil && !isNil(o.TaiRangeList) {
+	if o != nil && !IsNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *NwdafCond) SetTaiRangeList(v []TaiRange) {
 
 // GetServingNfTypeList returns the ServingNfTypeList field value if set, zero value otherwise.
 func (o *NwdafCond) GetServingNfTypeList() []NFType {
-	if o == nil || isNil(o.ServingNfTypeList) {
+	if o == nil || IsNil(o.ServingNfTypeList) {
 		var ret []NFType
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *NwdafCond) GetServingNfTypeList() []NFType {
 // GetServingNfTypeListOk returns a tuple with the ServingNfTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetServingNfTypeListOk() ([]NFType, bool) {
-	if o == nil || isNil(o.ServingNfTypeList) {
+	if o == nil || IsNil(o.ServingNfTypeList) {
 		return nil, false
 	}
 	return o.ServingNfTypeList, true
@@ -219,7 +219,7 @@ func (o *NwdafCond) GetServingNfTypeListOk() ([]NFType, bool) {
 
 // HasServingNfTypeList returns a boolean if a field has been set.
 func (o *NwdafCond) HasServingNfTypeList() bool {
-	if o != nil && !isNil(o.ServingNfTypeList) {
+	if o != nil && !IsNil(o.ServingNfTypeList) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *NwdafCond) SetServingNfTypeList(v []NFType) {
 
 // GetServingNfSetIdList returns the ServingNfSetIdList field value if set, zero value otherwise.
 func (o *NwdafCond) GetServingNfSetIdList() []string {
-	if o == nil || isNil(o.ServingNfSetIdList) {
+	if o == nil || IsNil(o.ServingNfSetIdList) {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *NwdafCond) GetServingNfSetIdList() []string {
 // GetServingNfSetIdListOk returns a tuple with the ServingNfSetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetServingNfSetIdListOk() ([]string, bool) {
-	if o == nil || isNil(o.ServingNfSetIdList) {
+	if o == nil || IsNil(o.ServingNfSetIdList) {
 		return nil, false
 	}
 	return o.ServingNfSetIdList, true
@@ -251,7 +251,7 @@ func (o *NwdafCond) GetServingNfSetIdListOk() ([]string, bool) {
 
 // HasServingNfSetIdList returns a boolean if a field has been set.
 func (o *NwdafCond) HasServingNfSetIdList() bool {
-	if o != nil && !isNil(o.ServingNfSetIdList) {
+	if o != nil && !IsNil(o.ServingNfSetIdList) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *NwdafCond) SetServingNfSetIdList(v []string) {
 
 // GetMlAnalyticsList returns the MlAnalyticsList field value if set, zero value otherwise.
 func (o *NwdafCond) GetMlAnalyticsList() []MlAnalyticsInfo {
-	if o == nil || isNil(o.MlAnalyticsList) {
+	if o == nil || IsNil(o.MlAnalyticsList) {
 		var ret []MlAnalyticsInfo
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *NwdafCond) GetMlAnalyticsList() []MlAnalyticsInfo {
 // GetMlAnalyticsListOk returns a tuple with the MlAnalyticsList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCond) GetMlAnalyticsListOk() ([]MlAnalyticsInfo, bool) {
-	if o == nil || isNil(o.MlAnalyticsList) {
+	if o == nil || IsNil(o.MlAnalyticsList) {
 		return nil, false
 	}
 	return o.MlAnalyticsList, true
@@ -283,7 +283,7 @@ func (o *NwdafCond) GetMlAnalyticsListOk() ([]MlAnalyticsInfo, bool) {
 
 // HasMlAnalyticsList returns a boolean if a field has been set.
 func (o *NwdafCond) HasMlAnalyticsList() bool {
-	if o != nil && !isNil(o.MlAnalyticsList) {
+	if o != nil && !IsNil(o.MlAnalyticsList) {
 		return true
 	}
 
@@ -296,7 +296,7 @@ func (o *NwdafCond) SetMlAnalyticsList(v []MlAnalyticsInfo) {
 }
 
 func (o NwdafCond) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -306,25 +306,25 @@ func (o NwdafCond) MarshalJSON() ([]byte, error) {
 func (o NwdafCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["conditionType"] = o.ConditionType
-	if !isNil(o.AnalyticsIds) {
+	if !IsNil(o.AnalyticsIds) {
 		toSerialize["analyticsIds"] = o.AnalyticsIds
 	}
-	if !isNil(o.SnssaiList) {
+	if !IsNil(o.SnssaiList) {
 		toSerialize["snssaiList"] = o.SnssaiList
 	}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.TaiRangeList) {
+	if !IsNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !isNil(o.ServingNfTypeList) {
+	if !IsNil(o.ServingNfTypeList) {
 		toSerialize["servingNfTypeList"] = o.ServingNfTypeList
 	}
-	if !isNil(o.ServingNfSetIdList) {
+	if !IsNil(o.ServingNfSetIdList) {
 		toSerialize["servingNfSetIdList"] = o.ServingNfSetIdList
 	}
-	if !isNil(o.MlAnalyticsList) {
+	if !IsNil(o.MlAnalyticsList) {
 		toSerialize["mlAnalyticsList"] = o.MlAnalyticsList
 	}
 	return toSerialize, nil
@@ -365,5 +365,3 @@ func (v *NullableNwdafCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

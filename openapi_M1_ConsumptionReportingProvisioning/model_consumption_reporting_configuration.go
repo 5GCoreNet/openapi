@@ -1,7 +1,7 @@
 /*
 M1_ConsumptionReportingProvisioning
 
-5GMS AF M1 Consumption Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Consumption Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &ConsumptionReportingConfiguration{}
 // ConsumptionReportingConfiguration A representation of a Consumption Reporting Configuration resource.
 type ConsumptionReportingConfiguration struct {
 	// indicating a time in seconds.
-	ReportingInterval *int32 `json:"reportingInterval,omitempty"`
-	SamplePercentage *float32 `json:"samplePercentage,omitempty"`
-	LocationReporting *bool `json:"locationReporting,omitempty"`
-	AccessReporting *bool `json:"accessReporting,omitempty"`
+	ReportingInterval *int32   `json:"reportingInterval,omitempty"`
+	SamplePercentage  *float32 `json:"samplePercentage,omitempty"`
+	LocationReporting *bool    `json:"locationReporting,omitempty"`
+	AccessReporting   *bool    `json:"accessReporting,omitempty"`
 }
 
 // NewConsumptionReportingConfiguration instantiates a new ConsumptionReportingConfiguration object
@@ -45,7 +45,7 @@ func NewConsumptionReportingConfigurationWithDefaults() *ConsumptionReportingCon
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetReportingInterval() int32 {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ConsumptionReportingConfiguration) GetReportingInterval() int32 {
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -63,7 +63,7 @@ func (o *ConsumptionReportingConfiguration) GetReportingIntervalOk() (*int32, bo
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasReportingInterval() bool {
-	if o != nil && !isNil(o.ReportingInterval) {
+	if o != nil && !IsNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ConsumptionReportingConfiguration) SetReportingInterval(v int32) {
 
 // GetSamplePercentage returns the SamplePercentage field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetSamplePercentage() float32 {
-	if o == nil || isNil(o.SamplePercentage) {
+	if o == nil || IsNil(o.SamplePercentage) {
 		var ret float32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ConsumptionReportingConfiguration) GetSamplePercentage() float32 {
 // GetSamplePercentageOk returns a tuple with the SamplePercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetSamplePercentageOk() (*float32, bool) {
-	if o == nil || isNil(o.SamplePercentage) {
+	if o == nil || IsNil(o.SamplePercentage) {
 		return nil, false
 	}
 	return o.SamplePercentage, true
@@ -95,7 +95,7 @@ func (o *ConsumptionReportingConfiguration) GetSamplePercentageOk() (*float32, b
 
 // HasSamplePercentage returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasSamplePercentage() bool {
-	if o != nil && !isNil(o.SamplePercentage) {
+	if o != nil && !IsNil(o.SamplePercentage) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ConsumptionReportingConfiguration) SetSamplePercentage(v float32) {
 
 // GetLocationReporting returns the LocationReporting field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetLocationReporting() bool {
-	if o == nil || isNil(o.LocationReporting) {
+	if o == nil || IsNil(o.LocationReporting) {
 		var ret bool
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ConsumptionReportingConfiguration) GetLocationReporting() bool {
 // GetLocationReportingOk returns a tuple with the LocationReporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetLocationReportingOk() (*bool, bool) {
-	if o == nil || isNil(o.LocationReporting) {
+	if o == nil || IsNil(o.LocationReporting) {
 		return nil, false
 	}
 	return o.LocationReporting, true
@@ -127,7 +127,7 @@ func (o *ConsumptionReportingConfiguration) GetLocationReportingOk() (*bool, boo
 
 // HasLocationReporting returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasLocationReporting() bool {
-	if o != nil && !isNil(o.LocationReporting) {
+	if o != nil && !IsNil(o.LocationReporting) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ConsumptionReportingConfiguration) SetLocationReporting(v bool) {
 
 // GetAccessReporting returns the AccessReporting field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetAccessReporting() bool {
-	if o == nil || isNil(o.AccessReporting) {
+	if o == nil || IsNil(o.AccessReporting) {
 		var ret bool
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ConsumptionReportingConfiguration) GetAccessReporting() bool {
 // GetAccessReportingOk returns a tuple with the AccessReporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetAccessReportingOk() (*bool, bool) {
-	if o == nil || isNil(o.AccessReporting) {
+	if o == nil || IsNil(o.AccessReporting) {
 		return nil, false
 	}
 	return o.AccessReporting, true
@@ -159,7 +159,7 @@ func (o *ConsumptionReportingConfiguration) GetAccessReportingOk() (*bool, bool)
 
 // HasAccessReporting returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasAccessReporting() bool {
-	if o != nil && !isNil(o.AccessReporting) {
+	if o != nil && !IsNil(o.AccessReporting) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ConsumptionReportingConfiguration) SetAccessReporting(v bool) {
 }
 
 func (o ConsumptionReportingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o ConsumptionReportingConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o ConsumptionReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ReportingInterval) {
+	if !IsNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
-	if !isNil(o.SamplePercentage) {
+	if !IsNil(o.SamplePercentage) {
 		toSerialize["samplePercentage"] = o.SamplePercentage
 	}
-	if !isNil(o.LocationReporting) {
+	if !IsNil(o.LocationReporting) {
 		toSerialize["locationReporting"] = o.LocationReporting
 	}
-	if !isNil(o.AccessReporting) {
+	if !IsNil(o.AccessReporting) {
 		toSerialize["accessReporting"] = o.AccessReporting
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableConsumptionReportingConfiguration) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,7 +19,7 @@ var _ MappedNullable = &GtpUPathQoSMonitoringControlSingleAllOf{}
 
 // GtpUPathQoSMonitoringControlSingleAllOf struct for GtpUPathQoSMonitoringControlSingleAllOf
 type GtpUPathQoSMonitoringControlSingleAllOf struct {
-	Attributes *interface{} `json:"attributes,omitempty"`
+	Attributes *GtpUPathQoSMonitoringControlSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewGtpUPathQoSMonitoringControlSingleAllOf instantiates a new GtpUPathQoSMonitoringControlSingleAllOf object
@@ -40,9 +40,9 @@ func NewGtpUPathQoSMonitoringControlSingleAllOfWithDefaults() *GtpUPathQoSMonito
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *GtpUPathQoSMonitoringControlSingleAllOf) GetAttributes() interface{} {
-	if o == nil || isNil(o.Attributes) {
-		var ret interface{}
+func (o *GtpUPathQoSMonitoringControlSingleAllOf) GetAttributes() GtpUPathQoSMonitoringControlSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret GtpUPathQoSMonitoringControlSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *GtpUPathQoSMonitoringControlSingleAllOf) GetAttributes() interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GtpUPathQoSMonitoringControlSingleAllOf) GetAttributesOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *GtpUPathQoSMonitoringControlSingleAllOf) GetAttributesOk() (*GtpUPathQoSMonitoringControlSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *GtpUPathQoSMonitoringControlSingleAllOf) GetAttributesOk() (*interface{
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *GtpUPathQoSMonitoringControlSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
-func (o *GtpUPathQoSMonitoringControlSingleAllOf) SetAttributes(v interface{}) {
+// SetAttributes gets a reference to the given GtpUPathQoSMonitoringControlSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *GtpUPathQoSMonitoringControlSingleAllOf) SetAttributes(v GtpUPathQoSMonitoringControlSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o GtpUPathQoSMonitoringControlSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o GtpUPathQoSMonitoringControlSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o GtpUPathQoSMonitoringControlSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableGtpUPathQoSMonitoringControlSingleAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

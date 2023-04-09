@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,31 +15,17 @@ import (
 	"fmt"
 )
 
-// MeteringMethod Possible values are: - DURATION: Indicates that the duration of the service data flow traffic shall be metered. - VOLUME: Indicates that volume of the service data flow traffic shall be metered. - DURATION_VOLUME: Indicates that the duration and the volume of the service data flow  traffic shall be metered. - EVENT: Indicates that events of the service data flow traffic shall be metered. 
+// MeteringMethod Possible values are: - DURATION: Indicates that the duration of the service data flow traffic shall be metered. - VOLUME: Indicates that volume of the service data flow traffic shall be metered. - DURATION_VOLUME: Indicates that the duration and the volume of the service data flow  traffic shall be metered. - EVENT: Indicates that events of the service data flow traffic shall be metered.
 type MeteringMethod struct {
-	MeteringMethodAnyOf *MeteringMethodAnyOf
 	NullValue *NullValue
-	String *string
+	String    *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MeteringMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MeteringMethodAnyOf
-	err = json.Unmarshal(data, &dst.MeteringMethodAnyOf);
-	if err == nil {
-		jsonMeteringMethodAnyOf, _ := json.Marshal(dst.MeteringMethodAnyOf)
-		if string(jsonMeteringMethodAnyOf) == "{}" { // empty struct
-			dst.MeteringMethodAnyOf = nil
-		} else {
-			return nil // data stored in dst.MeteringMethodAnyOf, return on the first match
-		}
-	} else {
-		dst.MeteringMethodAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -52,7 +38,7 @@ func (dst *MeteringMethod) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -69,10 +55,6 @@ func (dst *MeteringMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MeteringMethod) MarshalJSON() ([]byte, error) {
-	if src.MeteringMethodAnyOf != nil {
-		return json.Marshal(&src.MeteringMethodAnyOf)
-	}
-
 	if src.NullValue != nil {
 		return json.Marshal(&src.NullValue)
 	}
@@ -119,5 +101,3 @@ func (v *NullableMeteringMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

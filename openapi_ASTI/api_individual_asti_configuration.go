@@ -1,7 +1,7 @@
 /*
 3gpp-asti
 
-API for ASTI.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for ASTI.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,21 +13,20 @@ package openapi_ASTI
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualASTIConfigurationApiService IndividualASTIConfigurationApi service
 type IndividualASTIConfigurationApiService service
 
 type ApiDeleteAnConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualASTIConfigurationApiService
-	afId string
-	configId string
+	afId       string
+	configId   string
 }
 
 func (r ApiDeleteAnConfigurationRequest) Execute() (*http.Response, error) {
@@ -37,26 +36,26 @@ func (r ApiDeleteAnConfigurationRequest) Execute() (*http.Response, error) {
 /*
 DeleteAnConfiguration Deletes an already existing configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configId Identifier of the configuration resource
- @return ApiDeleteAnConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configId Identifier of the configuration resource
+	@return ApiDeleteAnConfigurationRequest
 */
 func (a *IndividualASTIConfigurationApiService) DeleteAnConfiguration(ctx context.Context, afId string, configId string) ApiDeleteAnConfigurationRequest {
 	return ApiDeleteAnConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		afId: afId,
-		configId: configId,
+		ctx:        ctx,
+		afId:       afId,
+		configId:   configId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r ApiDeleteAnConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualASTIConfigurationApiService.DeleteAnConfiguration")
@@ -99,9 +98,9 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,10 +194,10 @@ func (a *IndividualASTIConfigurationApiService) DeleteAnConfigurationExecute(r A
 }
 
 type ApiFullyModifyAnConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualASTIConfigurationApiService
-	afId string
-	configId string
+	ctx                        context.Context
+	ApiService                 *IndividualASTIConfigurationApiService
+	afId                       string
+	configId                   string
 	accessTimeDistributionData *AccessTimeDistributionData
 }
 
@@ -215,28 +214,29 @@ func (r ApiFullyModifyAnConfigurationRequest) Execute() (*AccessTimeDistribution
 /*
 FullyModifyAnConfiguration Modifies an active configuration for the AF and the configuration Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configId Identifier of the configuration resource
- @return ApiFullyModifyAnConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configId Identifier of the configuration resource
+	@return ApiFullyModifyAnConfigurationRequest
 */
 func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfiguration(ctx context.Context, afId string, configId string) ApiFullyModifyAnConfigurationRequest {
 	return ApiFullyModifyAnConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		afId: afId,
-		configId: configId,
+		ctx:        ctx,
+		afId:       afId,
+		configId:   configId,
 	}
 }
 
 // Execute executes the request
-//  @return AccessTimeDistributionData
+//
+//	@return AccessTimeDistributionData
 func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecute(r ApiFullyModifyAnConfigurationRequest) (*AccessTimeDistributionData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AccessTimeDistributionData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AccessTimeDistributionData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualASTIConfigurationApiService.FullyModifyAnConfiguration")
@@ -284,9 +284,9 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -303,8 +303,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -314,8 +314,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -325,8 +325,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -336,8 +336,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -347,8 +347,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -358,8 +358,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -369,8 +369,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -422,10 +422,10 @@ func (a *IndividualASTIConfigurationApiService) FullyModifyAnConfigurationExecut
 }
 
 type ApiReadAnConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualASTIConfigurationApiService
-	afId string
-	configId string
+	afId       string
+	configId   string
 }
 
 func (r ApiReadAnConfigurationRequest) Execute() (*AccessTimeDistributionData, *http.Response, error) {
@@ -435,28 +435,29 @@ func (r ApiReadAnConfigurationRequest) Execute() (*AccessTimeDistributionData, *
 /*
 ReadAnConfiguration Reads an active configuration for the AF and the configuration Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param configId Identifier of the configuration resource
- @return ApiReadAnConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param configId Identifier of the configuration resource
+	@return ApiReadAnConfigurationRequest
 */
 func (a *IndividualASTIConfigurationApiService) ReadAnConfiguration(ctx context.Context, afId string, configId string) ApiReadAnConfigurationRequest {
 	return ApiReadAnConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		afId: afId,
-		configId: configId,
+		ctx:        ctx,
+		afId:       afId,
+		configId:   configId,
 	}
 }
 
 // Execute executes the request
-//  @return AccessTimeDistributionData
+//
+//	@return AccessTimeDistributionData
 func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r ApiReadAnConfigurationRequest) (*AccessTimeDistributionData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AccessTimeDistributionData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AccessTimeDistributionData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualASTIConfigurationApiService.ReadAnConfiguration")
@@ -499,9 +500,9 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,8 +519,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -529,8 +530,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -540,8 +541,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -551,8 +552,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -562,8 +563,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -573,8 +574,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -584,8 +585,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -595,8 +596,8 @@ func (a *IndividualASTIConfigurationApiService) ReadAnConfigurationExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

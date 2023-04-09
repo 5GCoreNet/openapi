@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,10 +21,10 @@ var _ MappedNullable = &UpPathChgEvent{}
 type UpPathChgEvent struct {
 	// String providing an URI formatted according to RFC 3986.
 	NotificationUri string `json:"notificationUri"`
-	// It is used to set the value of Notification Correlation ID in the notification sent by  the SMF. 
-	NotifCorreId string `json:"notifCorreId"`
-	DnaiChgType DnaiChangeType `json:"dnaiChgType"`
-	AfAckInd *bool `json:"afAckInd,omitempty"`
+	// It is used to set the value of Notification Correlation ID in the notification sent by  the SMF.
+	NotifCorreId string         `json:"notifCorreId"`
+	DnaiChgType  DnaiChangeType `json:"dnaiChgType"`
+	AfAckInd     *bool          `json:"afAckInd,omitempty"`
 }
 
 // NewUpPathChgEvent instantiates a new UpPathChgEvent object
@@ -121,7 +121,7 @@ func (o *UpPathChgEvent) SetDnaiChgType(v DnaiChangeType) {
 
 // GetAfAckInd returns the AfAckInd field value if set, zero value otherwise.
 func (o *UpPathChgEvent) GetAfAckInd() bool {
-	if o == nil || isNil(o.AfAckInd) {
+	if o == nil || IsNil(o.AfAckInd) {
 		var ret bool
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *UpPathChgEvent) GetAfAckInd() bool {
 // GetAfAckIndOk returns a tuple with the AfAckInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChgEvent) GetAfAckIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AfAckInd) {
+	if o == nil || IsNil(o.AfAckInd) {
 		return nil, false
 	}
 	return o.AfAckInd, true
@@ -139,7 +139,7 @@ func (o *UpPathChgEvent) GetAfAckIndOk() (*bool, bool) {
 
 // HasAfAckInd returns a boolean if a field has been set.
 func (o *UpPathChgEvent) HasAfAckInd() bool {
-	if o != nil && !isNil(o.AfAckInd) {
+	if o != nil && !IsNil(o.AfAckInd) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *UpPathChgEvent) SetAfAckInd(v bool) {
 }
 
 func (o UpPathChgEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,7 +164,7 @@ func (o UpPathChgEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationUri"] = o.NotificationUri
 	toSerialize["notifCorreId"] = o.NotifCorreId
 	toSerialize["dnaiChgType"] = o.DnaiChgType
-	if !isNil(o.AfAckInd) {
+	if !IsNil(o.AfAckInd) {
 		toSerialize["afAckInd"] = o.AfAckInd
 	}
 	return toSerialize, nil
@@ -205,5 +205,3 @@ func (v *NullableUpPathChgEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

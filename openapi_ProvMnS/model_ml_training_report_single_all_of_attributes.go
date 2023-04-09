@@ -19,12 +19,12 @@ var _ MappedNullable = &MLTrainingReportSingleAllOfAttributes{}
 
 // MLTrainingReportSingleAllOfAttributes struct for MLTrainingReportSingleAllOfAttributes
 type MLTrainingReportSingleAllOfAttributes struct {
-	MLEntityId *string `json:"mLEntityId,omitempty"`
-	AreConsumerTrainingDataUsed *bool `json:"areConsumerTrainingDataUsed,omitempty"`
-	UsedConsumerTrainingData []string `json:"usedConsumerTrainingData,omitempty"`
-	ConfidenceIndication *int32 `json:"confidenceIndication,omitempty"`
-	ModelPerformanceTraining []ModelPerformance `json:"modelPerformanceTraining,omitempty"`
-	AreNewTrainingDataUsed *bool `json:"areNewTrainingDataUsed,omitempty"`
+	MLEntityId                  *string            `json:"mLEntityId,omitempty"`
+	AreConsumerTrainingDataUsed *bool              `json:"areConsumerTrainingDataUsed,omitempty"`
+	UsedConsumerTrainingData    []string           `json:"usedConsumerTrainingData,omitempty"`
+	ConfidenceIndication        *int32             `json:"confidenceIndication,omitempty"`
+	ModelPerformanceTraining    []ModelPerformance `json:"modelPerformanceTraining,omitempty"`
+	AreNewTrainingDataUsed      *bool              `json:"areNewTrainingDataUsed,omitempty"`
 }
 
 // NewMLTrainingReportSingleAllOfAttributes instantiates a new MLTrainingReportSingleAllOfAttributes object
@@ -237,7 +237,7 @@ func (o *MLTrainingReportSingleAllOfAttributes) SetAreNewTrainingDataUsed(v bool
 }
 
 func (o MLTrainingReportSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableMLTrainingReportSingleAllOfAttributes) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

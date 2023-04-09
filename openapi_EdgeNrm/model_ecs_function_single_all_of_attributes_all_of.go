@@ -19,14 +19,14 @@ var _ MappedNullable = &ECSFunctionSingleAllOfAttributesAllOf{}
 
 // ECSFunctionSingleAllOfAttributesAllOf struct for ECSFunctionSingleAllOfAttributesAllOf
 type ECSFunctionSingleAllOfAttributesAllOf struct {
-	ECSAddress *string `json:"eCSAddress,omitempty"`
-	ProviderIdentifier *string `json:"providerIdentifier,omitempty"`
-	EdgeDataNetworkRef []string `json:"edgeDataNetworkRef,omitempty"`
-	EESFuncitonRef []string `json:"eESFuncitonRef,omitempty"`
-	SoftwareImageInfo *SoftwareImageInfo `json:"softwareImageInfo,omitempty"`
-	TrackingAreaIdList []Tai `json:"trackingAreaIdList,omitempty"`
-	GeographicalLocation *GeoLoc `json:"geographicalLocation,omitempty"`
-	Mcc *string `json:"mcc,omitempty"`
+	ECSAddress           *string            `json:"eCSAddress,omitempty"`
+	ProviderIdentifier   *string            `json:"providerIdentifier,omitempty"`
+	EdgeDataNetworkRef   []string           `json:"edgeDataNetworkRef,omitempty"`
+	EESFuncitonRef       []string           `json:"eESFuncitonRef,omitempty"`
+	SoftwareImageInfo    *SoftwareImageInfo `json:"softwareImageInfo,omitempty"`
+	TrackingAreaIdList   []Tai              `json:"trackingAreaIdList,omitempty"`
+	GeographicalLocation *GeoLoc            `json:"geographicalLocation,omitempty"`
+	Mcc                  *string            `json:"mcc,omitempty"`
 }
 
 // NewECSFunctionSingleAllOfAttributesAllOf instantiates a new ECSFunctionSingleAllOfAttributesAllOf object
@@ -303,7 +303,7 @@ func (o *ECSFunctionSingleAllOfAttributesAllOf) SetMcc(v string) {
 }
 
 func (o ECSFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,5 +374,3 @@ func (v *NullableECSFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

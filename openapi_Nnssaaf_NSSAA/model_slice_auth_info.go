@@ -1,7 +1,7 @@
 /*
 Nnssaaf_NSSAA
 
-Network Slice-Specific Authentication and Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Network Slice-Specific Authentication and Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &SliceAuthInfo{}
 
 // SliceAuthInfo struct for SliceAuthInfo
 type SliceAuthInfo struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi   string `json:"gpsi"`
 	Snssai Snssai `json:"snssai"`
 	// contains an EAP packet
 	EapIdRsp NullableString `json:"eapIdRsp"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AmfInstanceId *string `json:"amfInstanceId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	ReauthNotifUri *string `json:"reauthNotifUri,omitempty"`
@@ -128,7 +128,7 @@ func (o *SliceAuthInfo) SetEapIdRsp(v string) {
 
 // GetAmfInstanceId returns the AmfInstanceId field value if set, zero value otherwise.
 func (o *SliceAuthInfo) GetAmfInstanceId() string {
-	if o == nil || isNil(o.AmfInstanceId) {
+	if o == nil || IsNil(o.AmfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *SliceAuthInfo) GetAmfInstanceId() string {
 // GetAmfInstanceIdOk returns a tuple with the AmfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceAuthInfo) GetAmfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfInstanceId) {
+	if o == nil || IsNil(o.AmfInstanceId) {
 		return nil, false
 	}
 	return o.AmfInstanceId, true
@@ -146,7 +146,7 @@ func (o *SliceAuthInfo) GetAmfInstanceIdOk() (*string, bool) {
 
 // HasAmfInstanceId returns a boolean if a field has been set.
 func (o *SliceAuthInfo) HasAmfInstanceId() bool {
-	if o != nil && !isNil(o.AmfInstanceId) {
+	if o != nil && !IsNil(o.AmfInstanceId) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *SliceAuthInfo) SetAmfInstanceId(v string) {
 
 // GetReauthNotifUri returns the ReauthNotifUri field value if set, zero value otherwise.
 func (o *SliceAuthInfo) GetReauthNotifUri() string {
-	if o == nil || isNil(o.ReauthNotifUri) {
+	if o == nil || IsNil(o.ReauthNotifUri) {
 		var ret string
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *SliceAuthInfo) GetReauthNotifUri() string {
 // GetReauthNotifUriOk returns a tuple with the ReauthNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceAuthInfo) GetReauthNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.ReauthNotifUri) {
+	if o == nil || IsNil(o.ReauthNotifUri) {
 		return nil, false
 	}
 	return o.ReauthNotifUri, true
@@ -178,7 +178,7 @@ func (o *SliceAuthInfo) GetReauthNotifUriOk() (*string, bool) {
 
 // HasReauthNotifUri returns a boolean if a field has been set.
 func (o *SliceAuthInfo) HasReauthNotifUri() bool {
-	if o != nil && !isNil(o.ReauthNotifUri) {
+	if o != nil && !IsNil(o.ReauthNotifUri) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *SliceAuthInfo) SetReauthNotifUri(v string) {
 
 // GetRevocNotifUri returns the RevocNotifUri field value if set, zero value otherwise.
 func (o *SliceAuthInfo) GetRevocNotifUri() string {
-	if o == nil || isNil(o.RevocNotifUri) {
+	if o == nil || IsNil(o.RevocNotifUri) {
 		var ret string
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *SliceAuthInfo) GetRevocNotifUri() string {
 // GetRevocNotifUriOk returns a tuple with the RevocNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceAuthInfo) GetRevocNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.RevocNotifUri) {
+	if o == nil || IsNil(o.RevocNotifUri) {
 		return nil, false
 	}
 	return o.RevocNotifUri, true
@@ -210,7 +210,7 @@ func (o *SliceAuthInfo) GetRevocNotifUriOk() (*string, bool) {
 
 // HasRevocNotifUri returns a boolean if a field has been set.
 func (o *SliceAuthInfo) HasRevocNotifUri() bool {
-	if o != nil && !isNil(o.RevocNotifUri) {
+	if o != nil && !IsNil(o.RevocNotifUri) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *SliceAuthInfo) SetRevocNotifUri(v string) {
 }
 
 func (o SliceAuthInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -235,13 +235,13 @@ func (o SliceAuthInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["eapIdRsp"] = o.EapIdRsp.Get()
-	if !isNil(o.AmfInstanceId) {
+	if !IsNil(o.AmfInstanceId) {
 		toSerialize["amfInstanceId"] = o.AmfInstanceId
 	}
-	if !isNil(o.ReauthNotifUri) {
+	if !IsNil(o.ReauthNotifUri) {
 		toSerialize["reauthNotifUri"] = o.ReauthNotifUri
 	}
-	if !isNil(o.RevocNotifUri) {
+	if !IsNil(o.RevocNotifUri) {
 		toSerialize["revocNotifUri"] = o.RevocNotifUri
 	}
 	return toSerialize, nil
@@ -282,5 +282,3 @@ func (v *NullableSliceAuthInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

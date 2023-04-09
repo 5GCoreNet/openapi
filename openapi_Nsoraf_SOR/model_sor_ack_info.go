@@ -1,7 +1,7 @@
 /*
 Nsoraf_SOR
 
-Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -18,12 +18,12 @@ import (
 // checks if the SorAckInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SorAckInfo{}
 
-// SorAckInfo Represents an indication to the SOR-AF on the reception status of the acknowledgment of successful reception of SoR Information by a UE. 
+// SorAckInfo Represents an indication to the SOR-AF on the reception status of the acknowledgment of successful reception of SoR Information by a UE.
 type SorAckInfo struct {
 	SorAckStatus SorAckStatus `json:"sorAckStatus"`
 	// string with format 'date-time' as defined in OpenAPI.
-	SorSendingTime time.Time `json:"sorSendingTime"`
-	MeSupportOfSorCmci *bool `json:"meSupportOfSorCmci,omitempty"`
+	SorSendingTime     time.Time `json:"sorSendingTime"`
+	MeSupportOfSorCmci *bool     `json:"meSupportOfSorCmci,omitempty"`
 }
 
 // NewSorAckInfo instantiates a new SorAckInfo object
@@ -95,7 +95,7 @@ func (o *SorAckInfo) SetSorSendingTime(v time.Time) {
 
 // GetMeSupportOfSorCmci returns the MeSupportOfSorCmci field value if set, zero value otherwise.
 func (o *SorAckInfo) GetMeSupportOfSorCmci() bool {
-	if o == nil || isNil(o.MeSupportOfSorCmci) {
+	if o == nil || IsNil(o.MeSupportOfSorCmci) {
 		var ret bool
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SorAckInfo) GetMeSupportOfSorCmci() bool {
 // GetMeSupportOfSorCmciOk returns a tuple with the MeSupportOfSorCmci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorAckInfo) GetMeSupportOfSorCmciOk() (*bool, bool) {
-	if o == nil || isNil(o.MeSupportOfSorCmci) {
+	if o == nil || IsNil(o.MeSupportOfSorCmci) {
 		return nil, false
 	}
 	return o.MeSupportOfSorCmci, true
@@ -113,7 +113,7 @@ func (o *SorAckInfo) GetMeSupportOfSorCmciOk() (*bool, bool) {
 
 // HasMeSupportOfSorCmci returns a boolean if a field has been set.
 func (o *SorAckInfo) HasMeSupportOfSorCmci() bool {
-	if o != nil && !isNil(o.MeSupportOfSorCmci) {
+	if o != nil && !IsNil(o.MeSupportOfSorCmci) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *SorAckInfo) SetMeSupportOfSorCmci(v bool) {
 }
 
 func (o SorAckInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o SorAckInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sorAckStatus"] = o.SorAckStatus
 	toSerialize["sorSendingTime"] = o.SorSendingTime
-	if !isNil(o.MeSupportOfSorCmci) {
+	if !IsNil(o.MeSupportOfSorCmci) {
 		toSerialize["meSupportOfSorCmci"] = o.MeSupportOfSorCmci
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableSorAckInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

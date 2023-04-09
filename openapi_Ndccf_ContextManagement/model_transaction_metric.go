@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// TransactionMetric Possible values are: - PDU_SES_EST: PDU Session Establishment - PDU_SES_AUTH: PDU Session Authentication - PDU_SES_MODIF: PDU Session Modification - PDU_SES_REL: PDU Session Release 
+// TransactionMetric Possible values are: - PDU_SES_EST: PDU Session Establishment - PDU_SES_AUTH: PDU Session Authentication - PDU_SES_MODIF: PDU Session Modification - PDU_SES_REL: PDU Session Release
 type TransactionMetric struct {
-	TransactionMetricAnyOf *TransactionMetricAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TransactionMetric) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into TransactionMetricAnyOf
-	err = json.Unmarshal(data, &dst.TransactionMetricAnyOf);
-	if err == nil {
-		jsonTransactionMetricAnyOf, _ := json.Marshal(dst.TransactionMetricAnyOf)
-		if string(jsonTransactionMetricAnyOf) == "{}" { // empty struct
-			dst.TransactionMetricAnyOf = nil
-		} else {
-			return nil // data stored in dst.TransactionMetricAnyOf, return on the first match
-		}
-	} else {
-		dst.TransactionMetricAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *TransactionMetric) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TransactionMetric) MarshalJSON() ([]byte, error) {
-	if src.TransactionMetricAnyOf != nil {
-		return json.Marshal(&src.TransactionMetricAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableTransactionMetric) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

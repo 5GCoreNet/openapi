@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &SmsRecordData{}
 // SmsRecordData Represents the information sent within a request message of the UplinkSMS service operation, for delivering SMS payload.
 type SmsRecordData struct {
 	// Represents a record ID, used to identify a message carrying SMS payload.
-	SmsRecordId string `json:"smsRecordId"`
-	SmsPayload RefToBinaryData `json:"smsPayload"`
-	AccessType *AccessType `json:"accessType,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	SmsRecordId string          `json:"smsRecordId"`
+	SmsPayload  RefToBinaryData `json:"smsPayload"`
+	AccessType  *AccessType     `json:"accessType,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei        *string       `json:"pei,omitempty"`
 	UeLocation *UserLocation `json:"ueLocation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
 	UeTimeZone *string `json:"ueTimeZone,omitempty"`
 }
 
@@ -101,7 +101,7 @@ func (o *SmsRecordData) SetSmsPayload(v RefToBinaryData) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *SmsRecordData) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SmsRecordData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -119,7 +119,7 @@ func (o *SmsRecordData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *SmsRecordData) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *SmsRecordData) SetAccessType(v AccessType) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *SmsRecordData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *SmsRecordData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -151,7 +151,7 @@ func (o *SmsRecordData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *SmsRecordData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *SmsRecordData) SetGpsi(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *SmsRecordData) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *SmsRecordData) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -183,7 +183,7 @@ func (o *SmsRecordData) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *SmsRecordData) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *SmsRecordData) SetPei(v string) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *SmsRecordData) GetUeLocation() UserLocation {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *SmsRecordData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -215,7 +215,7 @@ func (o *SmsRecordData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *SmsRecordData) HasUeLocation() bool {
-	if o != nil && !isNil(o.UeLocation) {
+	if o != nil && !IsNil(o.UeLocation) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *SmsRecordData) SetUeLocation(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *SmsRecordData) GetUeTimeZone() string {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *SmsRecordData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -247,7 +247,7 @@ func (o *SmsRecordData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *SmsRecordData) HasUeTimeZone() bool {
-	if o != nil && !isNil(o.UeTimeZone) {
+	if o != nil && !IsNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *SmsRecordData) SetUeTimeZone(v string) {
 }
 
 func (o SmsRecordData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,19 +271,19 @@ func (o SmsRecordData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsRecordId"] = o.SmsRecordId
 	toSerialize["smsPayload"] = o.SmsPayload
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.UeLocation) {
+	if !IsNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
-	if !isNil(o.UeTimeZone) {
+	if !IsNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
 	return toSerialize, nil
@@ -324,5 +324,3 @@ func (v *NullableSmsRecordData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

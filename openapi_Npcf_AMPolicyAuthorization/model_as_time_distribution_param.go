@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &AsTimeDistributionParam{}
 // AsTimeDistributionParam Contains the 5G acess stratum time distribution parameters.
 type AsTimeDistributionParam struct {
 	AsTimeDistInd *bool `json:"asTimeDistInd,omitempty"`
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property. 
+	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property.
 	UuErrorBudget NullableInt32 `json:"uuErrorBudget,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewAsTimeDistributionParamWithDefaults() *AsTimeDistributionParam {
 
 // GetAsTimeDistInd returns the AsTimeDistInd field value if set, zero value otherwise.
 func (o *AsTimeDistributionParam) GetAsTimeDistInd() bool {
-	if o == nil || isNil(o.AsTimeDistInd) {
+	if o == nil || IsNil(o.AsTimeDistInd) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AsTimeDistributionParam) GetAsTimeDistInd() bool {
 // GetAsTimeDistIndOk returns a tuple with the AsTimeDistInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsTimeDistributionParam) GetAsTimeDistIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AsTimeDistInd) {
+	if o == nil || IsNil(o.AsTimeDistInd) {
 		return nil, false
 	}
 	return o.AsTimeDistInd, true
@@ -61,7 +61,7 @@ func (o *AsTimeDistributionParam) GetAsTimeDistIndOk() (*bool, bool) {
 
 // HasAsTimeDistInd returns a boolean if a field has been set.
 func (o *AsTimeDistributionParam) HasAsTimeDistInd() bool {
-	if o != nil && !isNil(o.AsTimeDistInd) {
+	if o != nil && !IsNil(o.AsTimeDistInd) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AsTimeDistributionParam) SetAsTimeDistInd(v bool) {
 
 // GetUuErrorBudget returns the UuErrorBudget field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AsTimeDistributionParam) GetUuErrorBudget() int32 {
-	if o == nil || isNil(o.UuErrorBudget.Get()) {
+	if o == nil || IsNil(o.UuErrorBudget.Get()) {
 		var ret int32
 		return ret
 	}
@@ -105,6 +105,7 @@ func (o *AsTimeDistributionParam) HasUuErrorBudget() bool {
 func (o *AsTimeDistributionParam) SetUuErrorBudget(v int32) {
 	o.UuErrorBudget.Set(&v)
 }
+
 // SetUuErrorBudgetNil sets the value for UuErrorBudget to be an explicit nil
 func (o *AsTimeDistributionParam) SetUuErrorBudgetNil() {
 	o.UuErrorBudget.Set(nil)
@@ -116,7 +117,7 @@ func (o *AsTimeDistributionParam) UnsetUuErrorBudget() {
 }
 
 func (o AsTimeDistributionParam) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -125,7 +126,7 @@ func (o AsTimeDistributionParam) MarshalJSON() ([]byte, error) {
 
 func (o AsTimeDistributionParam) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AsTimeDistInd) {
+	if !IsNil(o.AsTimeDistInd) {
 		toSerialize["asTimeDistInd"] = o.AsTimeDistInd
 	}
 	if o.UuErrorBudget.IsSet() {
@@ -169,5 +170,3 @@ func (v *NullableAsTimeDistributionParam) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the UeRequestedValueRep type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UeRequestedValueRep{}
 
-// UeRequestedValueRep Contains the current applicable values corresponding to the policy control request triggers. 
+// UeRequestedValueRep Contains the current applicable values corresponding to the policy control request triggers.
 type UeRequestedValueRep struct {
 	UserLoc *UserLocation `json:"userLoc,omitempty"`
-	// Contains the UE presence statuses for tracking areas. The praId attribute within the PresenceInfo data type is the key of the map. 
-	PraStatuses *map[string]PresenceInfo `json:"praStatuses,omitempty"`
-	PlmnId *PlmnIdNid `json:"plmnId,omitempty"`
-	ConnectState *CmState `json:"connectState,omitempty"`
+	// Contains the UE presence statuses for tracking areas. The praId attribute within the PresenceInfo data type is the key of the map.
+	PraStatuses  *map[string]PresenceInfo `json:"praStatuses,omitempty"`
+	PlmnId       *PlmnIdNid               `json:"plmnId,omitempty"`
+	ConnectState *CmState                 `json:"connectState,omitempty"`
 }
 
 // NewUeRequestedValueRep instantiates a new UeRequestedValueRep object
@@ -45,7 +45,7 @@ func NewUeRequestedValueRepWithDefaults() *UeRequestedValueRep {
 
 // GetUserLoc returns the UserLoc field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetUserLoc() UserLocation {
-	if o == nil || isNil(o.UserLoc) {
+	if o == nil || IsNil(o.UserLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UeRequestedValueRep) GetUserLoc() UserLocation {
 // GetUserLocOk returns a tuple with the UserLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetUserLocOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLoc) {
+	if o == nil || IsNil(o.UserLoc) {
 		return nil, false
 	}
 	return o.UserLoc, true
@@ -63,7 +63,7 @@ func (o *UeRequestedValueRep) GetUserLocOk() (*UserLocation, bool) {
 
 // HasUserLoc returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasUserLoc() bool {
-	if o != nil && !isNil(o.UserLoc) {
+	if o != nil && !IsNil(o.UserLoc) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UeRequestedValueRep) SetUserLoc(v UserLocation) {
 
 // GetPraStatuses returns the PraStatuses field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetPraStatuses() map[string]PresenceInfo {
-	if o == nil || isNil(o.PraStatuses) {
+	if o == nil || IsNil(o.PraStatuses) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UeRequestedValueRep) GetPraStatuses() map[string]PresenceInfo {
 // GetPraStatusesOk returns a tuple with the PraStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetPraStatusesOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || isNil(o.PraStatuses) {
+	if o == nil || IsNil(o.PraStatuses) {
 		return nil, false
 	}
 	return o.PraStatuses, true
@@ -95,7 +95,7 @@ func (o *UeRequestedValueRep) GetPraStatusesOk() (*map[string]PresenceInfo, bool
 
 // HasPraStatuses returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasPraStatuses() bool {
-	if o != nil && !isNil(o.PraStatuses) {
+	if o != nil && !IsNil(o.PraStatuses) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UeRequestedValueRep) SetPraStatuses(v map[string]PresenceInfo) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetPlmnId() PlmnIdNid {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UeRequestedValueRep) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -127,7 +127,7 @@ func (o *UeRequestedValueRep) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *UeRequestedValueRep) SetPlmnId(v PlmnIdNid) {
 
 // GetConnectState returns the ConnectState field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetConnectState() CmState {
-	if o == nil || isNil(o.ConnectState) {
+	if o == nil || IsNil(o.ConnectState) {
 		var ret CmState
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *UeRequestedValueRep) GetConnectState() CmState {
 // GetConnectStateOk returns a tuple with the ConnectState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetConnectStateOk() (*CmState, bool) {
-	if o == nil || isNil(o.ConnectState) {
+	if o == nil || IsNil(o.ConnectState) {
 		return nil, false
 	}
 	return o.ConnectState, true
@@ -159,7 +159,7 @@ func (o *UeRequestedValueRep) GetConnectStateOk() (*CmState, bool) {
 
 // HasConnectState returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasConnectState() bool {
-	if o != nil && !isNil(o.ConnectState) {
+	if o != nil && !IsNil(o.ConnectState) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *UeRequestedValueRep) SetConnectState(v CmState) {
 }
 
 func (o UeRequestedValueRep) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o UeRequestedValueRep) MarshalJSON() ([]byte, error) {
 
 func (o UeRequestedValueRep) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UserLoc) {
+	if !IsNil(o.UserLoc) {
 		toSerialize["userLoc"] = o.UserLoc
 	}
-	if !isNil(o.PraStatuses) {
+	if !IsNil(o.PraStatuses) {
 		toSerialize["praStatuses"] = o.PraStatuses
 	}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.ConnectState) {
+	if !IsNil(o.ConnectState) {
 		toSerialize["connectState"] = o.ConnectState
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableUeRequestedValueRep) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nmfaf_3daDataManagement
 
-MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,18 +19,18 @@ var _ MappedNullable = &MessageConfiguration{}
 
 // MessageConfiguration Represents the message configuration.
 type MessageConfiguration struct {
-	// If the configuration is used for mapping analytics or data collection, representing the Analytics Consumer Notification Correlation ID or Data Consumer Notification Correlation ID. 
-	CorreId string `json:"correId"`
+	// If the configuration is used for mapping analytics or data collection, representing the Analytics Consumer Notification Correlation ID or Data Consumer Notification Correlation ID.
+	CorreId        string                 `json:"correId"`
 	FormatInstruct *FormattingInstruction `json:"formatInstruct,omitempty"`
-	MfafNotiInfo *MfafNotiInfo `json:"mfafNotiInfo,omitempty"`
+	MfafNotiInfo   *MfafNotiInfo          `json:"mfafNotiInfo,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotificationURI string `json:"notificationURI"`
-	ProcInstruct *ProcessingInstruction `json:"procInstruct,omitempty"`
+	NotificationURI string                 `json:"notificationURI"`
+	ProcInstruct    *ProcessingInstruction `json:"procInstruct,omitempty"`
 	// Processing instructions to be used for sending event notifications.
 	MultiProcInstructs []ProcessingInstruction `json:"multiProcInstructs,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AdrfId *string `json:"adrfId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -79,7 +79,7 @@ func (o *MessageConfiguration) SetCorreId(v string) {
 
 // GetFormatInstruct returns the FormatInstruct field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetFormatInstruct() FormattingInstruction {
-	if o == nil || isNil(o.FormatInstruct) {
+	if o == nil || IsNil(o.FormatInstruct) {
 		var ret FormattingInstruction
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *MessageConfiguration) GetFormatInstruct() FormattingInstruction {
 // GetFormatInstructOk returns a tuple with the FormatInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetFormatInstructOk() (*FormattingInstruction, bool) {
-	if o == nil || isNil(o.FormatInstruct) {
+	if o == nil || IsNil(o.FormatInstruct) {
 		return nil, false
 	}
 	return o.FormatInstruct, true
@@ -97,7 +97,7 @@ func (o *MessageConfiguration) GetFormatInstructOk() (*FormattingInstruction, bo
 
 // HasFormatInstruct returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasFormatInstruct() bool {
-	if o != nil && !isNil(o.FormatInstruct) {
+	if o != nil && !IsNil(o.FormatInstruct) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *MessageConfiguration) SetFormatInstruct(v FormattingInstruction) {
 
 // GetMfafNotiInfo returns the MfafNotiInfo field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetMfafNotiInfo() MfafNotiInfo {
-	if o == nil || isNil(o.MfafNotiInfo) {
+	if o == nil || IsNil(o.MfafNotiInfo) {
 		var ret MfafNotiInfo
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *MessageConfiguration) GetMfafNotiInfo() MfafNotiInfo {
 // GetMfafNotiInfoOk returns a tuple with the MfafNotiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetMfafNotiInfoOk() (*MfafNotiInfo, bool) {
-	if o == nil || isNil(o.MfafNotiInfo) {
+	if o == nil || IsNil(o.MfafNotiInfo) {
 		return nil, false
 	}
 	return o.MfafNotiInfo, true
@@ -129,7 +129,7 @@ func (o *MessageConfiguration) GetMfafNotiInfoOk() (*MfafNotiInfo, bool) {
 
 // HasMfafNotiInfo returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasMfafNotiInfo() bool {
-	if o != nil && !isNil(o.MfafNotiInfo) {
+	if o != nil && !IsNil(o.MfafNotiInfo) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *MessageConfiguration) SetNotificationURI(v string) {
 
 // GetProcInstruct returns the ProcInstruct field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetProcInstruct() ProcessingInstruction {
-	if o == nil || isNil(o.ProcInstruct) {
+	if o == nil || IsNil(o.ProcInstruct) {
 		var ret ProcessingInstruction
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *MessageConfiguration) GetProcInstruct() ProcessingInstruction {
 // GetProcInstructOk returns a tuple with the ProcInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetProcInstructOk() (*ProcessingInstruction, bool) {
-	if o == nil || isNil(o.ProcInstruct) {
+	if o == nil || IsNil(o.ProcInstruct) {
 		return nil, false
 	}
 	return o.ProcInstruct, true
@@ -185,7 +185,7 @@ func (o *MessageConfiguration) GetProcInstructOk() (*ProcessingInstruction, bool
 
 // HasProcInstruct returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasProcInstruct() bool {
-	if o != nil && !isNil(o.ProcInstruct) {
+	if o != nil && !IsNil(o.ProcInstruct) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *MessageConfiguration) SetProcInstruct(v ProcessingInstruction) {
 
 // GetMultiProcInstructs returns the MultiProcInstructs field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetMultiProcInstructs() []ProcessingInstruction {
-	if o == nil || isNil(o.MultiProcInstructs) {
+	if o == nil || IsNil(o.MultiProcInstructs) {
 		var ret []ProcessingInstruction
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *MessageConfiguration) GetMultiProcInstructs() []ProcessingInstruction {
 // GetMultiProcInstructsOk returns a tuple with the MultiProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetMultiProcInstructsOk() ([]ProcessingInstruction, bool) {
-	if o == nil || isNil(o.MultiProcInstructs) {
+	if o == nil || IsNil(o.MultiProcInstructs) {
 		return nil, false
 	}
 	return o.MultiProcInstructs, true
@@ -217,7 +217,7 @@ func (o *MessageConfiguration) GetMultiProcInstructsOk() ([]ProcessingInstructio
 
 // HasMultiProcInstructs returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasMultiProcInstructs() bool {
-	if o != nil && !isNil(o.MultiProcInstructs) {
+	if o != nil && !IsNil(o.MultiProcInstructs) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *MessageConfiguration) SetMultiProcInstructs(v []ProcessingInstruction) 
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetAdrfId() string {
-	if o == nil || isNil(o.AdrfId) {
+	if o == nil || IsNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *MessageConfiguration) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetAdrfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AdrfId) {
+	if o == nil || IsNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -249,7 +249,7 @@ func (o *MessageConfiguration) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasAdrfId() bool {
-	if o != nil && !isNil(o.AdrfId) {
+	if o != nil && !IsNil(o.AdrfId) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *MessageConfiguration) SetAdrfId(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *MessageConfiguration) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -281,7 +281,7 @@ func (o *MessageConfiguration) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -294,7 +294,7 @@ func (o *MessageConfiguration) SetSuppFeat(v string) {
 }
 
 func (o MessageConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,23 +304,23 @@ func (o MessageConfiguration) MarshalJSON() ([]byte, error) {
 func (o MessageConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["correId"] = o.CorreId
-	if !isNil(o.FormatInstruct) {
+	if !IsNil(o.FormatInstruct) {
 		toSerialize["formatInstruct"] = o.FormatInstruct
 	}
-	if !isNil(o.MfafNotiInfo) {
+	if !IsNil(o.MfafNotiInfo) {
 		toSerialize["mfafNotiInfo"] = o.MfafNotiInfo
 	}
 	toSerialize["notificationURI"] = o.NotificationURI
-	if !isNil(o.ProcInstruct) {
+	if !IsNil(o.ProcInstruct) {
 		toSerialize["procInstruct"] = o.ProcInstruct
 	}
-	if !isNil(o.MultiProcInstructs) {
+	if !IsNil(o.MultiProcInstructs) {
 		toSerialize["multiProcInstructs"] = o.MultiProcInstructs
 	}
-	if !isNil(o.AdrfId) {
+	if !IsNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -361,5 +361,3 @@ func (v *NullableMessageConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

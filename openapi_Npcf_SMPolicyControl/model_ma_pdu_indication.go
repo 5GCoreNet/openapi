@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MaPduIndication Contains the MA PDU session indication, i.e., MA PDU Request or MA PDU Network-Upgrade  Allowed. 
+// MaPduIndication Contains the MA PDU session indication, i.e., MA PDU Request or MA PDU Network-Upgrade  Allowed.
 type MaPduIndication struct {
-	MaPduIndicationAnyOf *MaPduIndicationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MaPduIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MaPduIndicationAnyOf
-	err = json.Unmarshal(data, &dst.MaPduIndicationAnyOf);
-	if err == nil {
-		jsonMaPduIndicationAnyOf, _ := json.Marshal(dst.MaPduIndicationAnyOf)
-		if string(jsonMaPduIndicationAnyOf) == "{}" { // empty struct
-			dst.MaPduIndicationAnyOf = nil
-		} else {
-			return nil // data stored in dst.MaPduIndicationAnyOf, return on the first match
-		}
-	} else {
-		dst.MaPduIndicationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MaPduIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MaPduIndication) MarshalJSON() ([]byte, error) {
-	if src.MaPduIndicationAnyOf != nil {
-		return json.Marshal(&src.MaPduIndicationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMaPduIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

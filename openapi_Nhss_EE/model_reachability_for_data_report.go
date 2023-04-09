@@ -1,7 +1,7 @@
 /*
 Nhss_EE
 
-HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -69,7 +69,7 @@ func (o *ReachabilityForDataReport) SetReachabilityDataStatus(v bool) {
 
 // GetMaxAvailabilityTime returns the MaxAvailabilityTime field value if set, zero value otherwise.
 func (o *ReachabilityForDataReport) GetMaxAvailabilityTime() time.Time {
-	if o == nil || isNil(o.MaxAvailabilityTime) {
+	if o == nil || IsNil(o.MaxAvailabilityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReachabilityForDataReport) GetMaxAvailabilityTime() time.Time {
 // GetMaxAvailabilityTimeOk returns a tuple with the MaxAvailabilityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityForDataReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MaxAvailabilityTime) {
+	if o == nil || IsNil(o.MaxAvailabilityTime) {
 		return nil, false
 	}
 	return o.MaxAvailabilityTime, true
@@ -87,7 +87,7 @@ func (o *ReachabilityForDataReport) GetMaxAvailabilityTimeOk() (*time.Time, bool
 
 // HasMaxAvailabilityTime returns a boolean if a field has been set.
 func (o *ReachabilityForDataReport) HasMaxAvailabilityTime() bool {
-	if o != nil && !isNil(o.MaxAvailabilityTime) {
+	if o != nil && !IsNil(o.MaxAvailabilityTime) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ReachabilityForDataReport) SetMaxAvailabilityTime(v time.Time) {
 }
 
 func (o ReachabilityForDataReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o ReachabilityForDataReport) MarshalJSON() ([]byte, error) {
 func (o ReachabilityForDataReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reachabilityDataStatus"] = o.ReachabilityDataStatus
-	if !isNil(o.MaxAvailabilityTime) {
+	if !IsNil(o.MaxAvailabilityTime) {
 		toSerialize["maxAvailabilityTime"] = o.MaxAvailabilityTime
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableReachabilityForDataReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

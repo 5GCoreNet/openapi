@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,28 +13,27 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // ServiceParameterDataStoreApiService ServiceParameterDataStoreApi service
 type ServiceParameterDataStoreApiService service
 
 type ApiReadServiceParameterDataRequest struct {
-	ctx context.Context
-	ApiService *ServiceParameterDataStoreApiService
-	serviceParamIds *[]string
-	dnns *[]string
-	snssais *[]Snssai
+	ctx              context.Context
+	ApiService       *ServiceParameterDataStoreApiService
+	serviceParamIds  *[]string
+	dnns             *[]string
+	snssais          *[]Snssai
 	internalGroupIds *[]string
-	supis *[]string
-	ueIpv4s *[]string
-	ueIpv6s *[]Ipv6Addr
-	ueMacs *[]string
-	anyUe *bool
-	suppFeat *string
+	supis            *[]string
+	ueIpv4s          *[]string
+	ueIpv6s          *[]Ipv6Addr
+	ueMacs           *[]string
+	anyUe            *bool
+	suppFeat         *string
 }
 
 // Each element identifies a service.
@@ -104,24 +103,25 @@ func (r ApiReadServiceParameterDataRequest) Execute() ([]ServiceParameterData, *
 /*
 ReadServiceParameterData Retrieve Service Parameter Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReadServiceParameterDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReadServiceParameterDataRequest
 */
 func (a *ServiceParameterDataStoreApiService) ReadServiceParameterData(ctx context.Context) ApiReadServiceParameterDataRequest {
 	return ApiReadServiceParameterDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ServiceParameterData
+//
+//	@return []ServiceParameterData
 func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r ApiReadServiceParameterDataRequest) ([]ServiceParameterData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ServiceParameterData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ServiceParameterData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceParameterDataStoreApiService.ReadServiceParameterData")
@@ -136,34 +136,34 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 	localVarFormParams := url.Values{}
 
 	if r.serviceParamIds != nil {
-		parameterAddToQuery(localVarQueryParams, "service-param-ids", r.serviceParamIds, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "service-param-ids", r.serviceParamIds, "csv")
 	}
 	if r.dnns != nil {
-		parameterAddToQuery(localVarQueryParams, "dnns", r.dnns, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", r.dnns, "csv")
 	}
 	if r.snssais != nil {
-		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.internalGroupIds != nil {
-		parameterAddToQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
 	}
 	if r.supis != nil {
-		parameterAddToQuery(localVarQueryParams, "supis", r.supis, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supis", r.supis, "csv")
 	}
 	if r.ueIpv4s != nil {
-		parameterAddToQuery(localVarQueryParams, "ue-ipv4s", r.ueIpv4s, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-ipv4s", r.ueIpv4s, "csv")
 	}
 	if r.ueIpv6s != nil {
-		parameterAddToQuery(localVarQueryParams, "ue-ipv6s", r.ueIpv6s, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-ipv6s", r.ueIpv6s, "csv")
 	}
 	if r.ueMacs != nil {
-		parameterAddToQuery(localVarQueryParams, "ue-macs", r.ueMacs, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-macs", r.ueMacs, "csv")
 	}
 	if r.anyUe != nil {
-		parameterAddToQuery(localVarQueryParams, "any-ue", r.anyUe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "any-ue", r.anyUe, "")
 	}
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -192,9 +192,9 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -211,8 +211,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -222,8 +222,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -233,8 +233,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -244,8 +244,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -255,8 +255,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -266,8 +266,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -277,8 +277,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -288,8 +288,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -299,8 +299,8 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

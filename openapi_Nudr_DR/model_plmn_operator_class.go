@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PlmnOperatorClass{}
 // PlmnOperatorClass struct for PlmnOperatorClass
 type PlmnOperatorClass struct {
 	LcsClientClass LcsClientClass `json:"lcsClientClass"`
-	LcsClientIds []string `json:"lcsClientIds"`
+	LcsClientIds   []string       `json:"lcsClientIds"`
 }
 
 // NewPlmnOperatorClass instantiates a new PlmnOperatorClass object
@@ -91,7 +91,7 @@ func (o *PlmnOperatorClass) SetLcsClientIds(v []string) {
 }
 
 func (o PlmnOperatorClass) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullablePlmnOperatorClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

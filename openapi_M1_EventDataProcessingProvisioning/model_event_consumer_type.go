@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -17,28 +17,14 @@ import (
 
 // EventConsumerType The type of event consumer.
 type EventConsumerType struct {
-	EventConsumerTypeAnyOf *EventConsumerTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EventConsumerType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EventConsumerTypeAnyOf
-	err = json.Unmarshal(data, &dst.EventConsumerTypeAnyOf);
-	if err == nil {
-		jsonEventConsumerTypeAnyOf, _ := json.Marshal(dst.EventConsumerTypeAnyOf)
-		if string(jsonEventConsumerTypeAnyOf) == "{}" { // empty struct
-			dst.EventConsumerTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.EventConsumerTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.EventConsumerTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EventConsumerType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EventConsumerType) MarshalJSON() ([]byte, error) {
-	if src.EventConsumerTypeAnyOf != nil {
-		return json.Marshal(&src.EventConsumerTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEventConsumerType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

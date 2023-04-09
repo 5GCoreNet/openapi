@@ -1,7 +1,7 @@
 /*
 3gpp-pfd-management
 
-API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,22 +13,21 @@ package openapi_PfdManagement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualApplicationPFDManagementApiService IndividualApplicationPFDManagementApi service
 type IndividualApplicationPFDManagementApiService service
 
 type ApiDeleteIndApplicationPFDManagementRequest struct {
-	ctx context.Context
-	ApiService *IndividualApplicationPFDManagementApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualApplicationPFDManagementApiService
+	scsAsId       string
 	transactionId string
-	appId string
+	appId         string
 }
 
 func (r ApiDeleteIndApplicationPFDManagementRequest) Execute() (*http.Response, error) {
@@ -38,28 +37,28 @@ func (r ApiDeleteIndApplicationPFDManagementRequest) Execute() (*http.Response, 
 /*
 DeleteIndApplicationPFDManagement Delete PFDs at individual application level.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param transactionId Transaction ID
- @param appId Identifier of the application
- @return ApiDeleteIndApplicationPFDManagementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param transactionId Transaction ID
+	@param appId Identifier of the application
+	@return ApiDeleteIndApplicationPFDManagementRequest
 */
 func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDManagement(ctx context.Context, scsAsId string, transactionId string, appId string) ApiDeleteIndApplicationPFDManagementRequest {
 	return ApiDeleteIndApplicationPFDManagementRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
-		appId: appId,
+		appId:         appId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDManagementExecute(r ApiDeleteIndApplicationPFDManagementRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationPFDManagementApiService.DeleteIndApplicationPFDManagement")
@@ -103,9 +102,9 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -122,8 +121,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -133,8 +132,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -144,8 +143,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +154,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -166,8 +165,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -177,8 +176,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -188,8 +187,8 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -199,11 +198,11 @@ func (a *IndividualApplicationPFDManagementApiService) DeleteIndApplicationPFDMa
 }
 
 type ApiFetchIndApplicationPFDManagementRequest struct {
-	ctx context.Context
-	ApiService *IndividualApplicationPFDManagementApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualApplicationPFDManagementApiService
+	scsAsId       string
 	transactionId string
-	appId string
+	appId         string
 }
 
 func (r ApiFetchIndApplicationPFDManagementRequest) Execute() (*PfdData, *http.Response, error) {
@@ -213,30 +212,31 @@ func (r ApiFetchIndApplicationPFDManagementRequest) Execute() (*PfdData, *http.R
 /*
 FetchIndApplicationPFDManagement Read PFDs at individual application level.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param transactionId Transaction ID
- @param appId Identifier of the application
- @return ApiFetchIndApplicationPFDManagementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param transactionId Transaction ID
+	@param appId Identifier of the application
+	@return ApiFetchIndApplicationPFDManagementRequest
 */
 func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDManagement(ctx context.Context, scsAsId string, transactionId string, appId string) ApiFetchIndApplicationPFDManagementRequest {
 	return ApiFetchIndApplicationPFDManagementRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
-		appId: appId,
+		appId:         appId,
 	}
 }
 
 // Execute executes the request
-//  @return PfdData
+//
+//	@return PfdData
 func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDManagementExecute(r ApiFetchIndApplicationPFDManagementRequest) (*PfdData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PfdData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PfdData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationPFDManagementApiService.FetchIndApplicationPFDManagement")
@@ -280,9 +280,9 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -299,8 +299,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -310,8 +310,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -321,8 +321,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -332,8 +332,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -343,8 +343,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -354,8 +354,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -365,8 +365,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -376,8 +376,8 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -396,12 +396,12 @@ func (a *IndividualApplicationPFDManagementApiService) FetchIndApplicationPFDMan
 }
 
 type ApiModifyIndApplicationPFDManagementRequest struct {
-	ctx context.Context
-	ApiService *IndividualApplicationPFDManagementApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualApplicationPFDManagementApiService
+	scsAsId       string
 	transactionId string
-	appId string
-	pfdData *PfdData
+	appId         string
+	pfdData       *PfdData
 }
 
 // Change information in PFD management transaction.
@@ -417,30 +417,31 @@ func (r ApiModifyIndApplicationPFDManagementRequest) Execute() (*PfdData, *http.
 /*
 ModifyIndApplicationPFDManagement Update PFDs at individual application level.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param transactionId Transaction ID
- @param appId Identifier of the application
- @return ApiModifyIndApplicationPFDManagementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param transactionId Transaction ID
+	@param appId Identifier of the application
+	@return ApiModifyIndApplicationPFDManagementRequest
 */
 func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDManagement(ctx context.Context, scsAsId string, transactionId string, appId string) ApiModifyIndApplicationPFDManagementRequest {
 	return ApiModifyIndApplicationPFDManagementRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
-		appId: appId,
+		appId:         appId,
 	}
 }
 
 // Execute executes the request
-//  @return PfdData
+//
+//	@return PfdData
 func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDManagementExecute(r ApiModifyIndApplicationPFDManagementRequest) (*PfdData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PfdData
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PfdData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationPFDManagementApiService.ModifyIndApplicationPFDManagement")
@@ -489,9 +490,9 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -508,8 +509,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -519,8 +520,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -530,8 +531,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -541,8 +542,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -552,8 +553,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -563,8 +564,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -574,8 +575,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -585,8 +586,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -596,8 +597,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -607,8 +608,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -618,8 +619,8 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -638,12 +639,12 @@ func (a *IndividualApplicationPFDManagementApiService) ModifyIndApplicationPFDMa
 }
 
 type ApiUpdateIndApplicationPFDManagementRequest struct {
-	ctx context.Context
-	ApiService *IndividualApplicationPFDManagementApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualApplicationPFDManagementApiService
+	scsAsId       string
 	transactionId string
-	appId string
-	pfdData *PfdData
+	appId         string
+	pfdData       *PfdData
 }
 
 // Change information in application.
@@ -659,30 +660,31 @@ func (r ApiUpdateIndApplicationPFDManagementRequest) Execute() (*PfdData, *http.
 /*
 UpdateIndApplicationPFDManagement Update PFDs at individual application level.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param transactionId Transaction ID
- @param appId Identifier of the application
- @return ApiUpdateIndApplicationPFDManagementRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param transactionId Transaction ID
+	@param appId Identifier of the application
+	@return ApiUpdateIndApplicationPFDManagementRequest
 */
 func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDManagement(ctx context.Context, scsAsId string, transactionId string, appId string) ApiUpdateIndApplicationPFDManagementRequest {
 	return ApiUpdateIndApplicationPFDManagementRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
-		appId: appId,
+		appId:         appId,
 	}
 }
 
 // Execute executes the request
-//  @return PfdData
+//
+//	@return PfdData
 func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDManagementExecute(r ApiUpdateIndApplicationPFDManagementRequest) (*PfdData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PfdData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PfdData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualApplicationPFDManagementApiService.UpdateIndApplicationPFDManagement")
@@ -731,9 +733,9 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -750,8 +752,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -761,8 +763,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -772,8 +774,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -783,8 +785,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -794,8 +796,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -805,8 +807,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -816,8 +818,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -827,8 +829,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -838,8 +840,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -849,8 +851,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -860,8 +862,8 @@ func (a *IndividualApplicationPFDManagementApiService) UpdateIndApplicationPFDMa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -17,10 +17,10 @@ import (
 // checks if the ULThptPerUETarget type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ULThptPerUETarget{}
 
-// ULThptPerUETarget This data type is the \"ExpectationTarget\" data type with specialisations for ULThptPerUETarget       
+// ULThptPerUETarget This data type is the \"ExpectationTarget\" data type with specialisations for ULThptPerUETarget
 type ULThptPerUETarget struct {
-	TargetName *string `json:"targetName,omitempty"`
-	TargetCondition *string `json:"targetCondition,omitempty"`
+	TargetName       *string `json:"targetName,omitempty"`
+	TargetCondition  *string `json:"targetCondition,omitempty"`
 	TargetValueRange *XLThpt `json:"targetValueRange,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewULThptPerUETargetWithDefaults() *ULThptPerUETarget {
 
 // GetTargetName returns the TargetName field value if set, zero value otherwise.
 func (o *ULThptPerUETarget) GetTargetName() string {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ULThptPerUETarget) GetTargetName() string {
 // GetTargetNameOk returns a tuple with the TargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ULThptPerUETarget) GetTargetNameOk() (*string, bool) {
-	if o == nil || isNil(o.TargetName) {
+	if o == nil || IsNil(o.TargetName) {
 		return nil, false
 	}
 	return o.TargetName, true
@@ -61,7 +61,7 @@ func (o *ULThptPerUETarget) GetTargetNameOk() (*string, bool) {
 
 // HasTargetName returns a boolean if a field has been set.
 func (o *ULThptPerUETarget) HasTargetName() bool {
-	if o != nil && !isNil(o.TargetName) {
+	if o != nil && !IsNil(o.TargetName) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ULThptPerUETarget) SetTargetName(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *ULThptPerUETarget) GetTargetCondition() string {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ULThptPerUETarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ULThptPerUETarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -93,7 +93,7 @@ func (o *ULThptPerUETarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *ULThptPerUETarget) HasTargetCondition() bool {
-	if o != nil && !isNil(o.TargetCondition) {
+	if o != nil && !IsNil(o.TargetCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ULThptPerUETarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *ULThptPerUETarget) GetTargetValueRange() XLThpt {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		var ret XLThpt
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ULThptPerUETarget) GetTargetValueRange() XLThpt {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ULThptPerUETarget) GetTargetValueRangeOk() (*XLThpt, bool) {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -125,7 +125,7 @@ func (o *ULThptPerUETarget) GetTargetValueRangeOk() (*XLThpt, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *ULThptPerUETarget) HasTargetValueRange() bool {
-	if o != nil && !isNil(o.TargetValueRange) {
+	if o != nil && !IsNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ULThptPerUETarget) SetTargetValueRange(v XLThpt) {
 }
 
 func (o ULThptPerUETarget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ULThptPerUETarget) MarshalJSON() ([]byte, error) {
 
 func (o ULThptPerUETarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetName) {
+	if !IsNil(o.TargetName) {
 		toSerialize["targetName"] = o.TargetName
 	}
-	if !isNil(o.TargetCondition) {
+	if !IsNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !isNil(o.TargetValueRange) {
+	if !IsNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableULThptPerUETarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -6,12 +7,6 @@ api_applied_bdt_policy_subscription.go
 api_individual_applied_bdt_policy_subscription.go
 client.go
 configuration.go
-docs/AppliedBDTPolicySubscriptionApi.md
-docs/AppliedBdtPolicy.md
-docs/AppliedBdtPolicyPatch.md
-docs/IndividualAppliedBDTPolicySubscriptionApi.md
-docs/InvalidParam.md
-docs/ProblemDetails.md
 git_push.sh
 go.mod
 go.sum
@@ -20,6 +15,4 @@ model_applied_bdt_policy_patch.go
 model_invalid_param.go
 model_problem_details.go
 response.go
-test/api_applied_bdt_policy_subscription_test.go
-test/api_individual_applied_bdt_policy_subscription_test.go
 utils.go

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,22 +19,22 @@ var _ MappedNullable = &ProvisionedDataSets{}
 
 // ProvisionedDataSets Contains the provisioned data sets.
 type ProvisionedDataSets struct {
-	AmData *AccessAndMobilitySubscriptionData `json:"amData,omitempty"`
-	SmfSelData *SmfSelectionSubscriptionData `json:"smfSelData,omitempty"`
-	SmsSubsData *SmsSubscriptionData `json:"smsSubsData,omitempty"`
-	SmData *SmSubsData `json:"smData,omitempty"`
-	TraceData NullableTraceData `json:"traceData,omitempty"`
-	SmsMngData *SmsManagementSubscriptionData `json:"smsMngData,omitempty"`
-	LcsPrivacyData *LcsPrivacyData `json:"lcsPrivacyData,omitempty"`
-	LcsMoData *LcsMoData `json:"lcsMoData,omitempty"`
-	LcsBcaData *LcsBroadcastAssistanceTypesData `json:"lcsBcaData,omitempty"`
-	V2xData *V2xSubscriptionData `json:"v2xData,omitempty"`
-	ProseData *ProseSubscriptionData `json:"proseData,omitempty"`
-	OdbData *OdbData `json:"odbData,omitempty"`
-	EeProfileData *EeProfileData `json:"eeProfileData,omitempty"`
-	PpProfileData *PpProfileData `json:"ppProfileData,omitempty"`
-	NiddAuthData *AuthorizationData `json:"niddAuthData,omitempty"`
-	MbsSubscriptionData *MbsSubscriptionData `json:"mbsSubscriptionData,omitempty"`
+	AmData              *AccessAndMobilitySubscriptionData `json:"amData,omitempty"`
+	SmfSelData          *SmfSelectionSubscriptionData      `json:"smfSelData,omitempty"`
+	SmsSubsData         *SmsSubscriptionData               `json:"smsSubsData,omitempty"`
+	SmData              *SmSubsData                        `json:"smData,omitempty"`
+	TraceData           NullableTraceData                  `json:"traceData,omitempty"`
+	SmsMngData          *SmsManagementSubscriptionData     `json:"smsMngData,omitempty"`
+	LcsPrivacyData      *LcsPrivacyData                    `json:"lcsPrivacyData,omitempty"`
+	LcsMoData           *LcsMoData                         `json:"lcsMoData,omitempty"`
+	LcsBcaData          *LcsBroadcastAssistanceTypesData   `json:"lcsBcaData,omitempty"`
+	V2xData             *V2xSubscriptionData               `json:"v2xData,omitempty"`
+	ProseData           *ProseSubscriptionData             `json:"proseData,omitempty"`
+	OdbData             *OdbData                           `json:"odbData,omitempty"`
+	EeProfileData       *EeProfileData                     `json:"eeProfileData,omitempty"`
+	PpProfileData       *PpProfileData                     `json:"ppProfileData,omitempty"`
+	NiddAuthData        *AuthorizationData                 `json:"niddAuthData,omitempty"`
+	MbsSubscriptionData *MbsSubscriptionData               `json:"mbsSubscriptionData,omitempty"`
 }
 
 // NewProvisionedDataSets instantiates a new ProvisionedDataSets object
@@ -56,7 +56,7 @@ func NewProvisionedDataSetsWithDefaults() *ProvisionedDataSets {
 
 // GetAmData returns the AmData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetAmData() AccessAndMobilitySubscriptionData {
-	if o == nil || isNil(o.AmData) {
+	if o == nil || IsNil(o.AmData) {
 		var ret AccessAndMobilitySubscriptionData
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ProvisionedDataSets) GetAmData() AccessAndMobilitySubscriptionData {
 // GetAmDataOk returns a tuple with the AmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetAmDataOk() (*AccessAndMobilitySubscriptionData, bool) {
-	if o == nil || isNil(o.AmData) {
+	if o == nil || IsNil(o.AmData) {
 		return nil, false
 	}
 	return o.AmData, true
@@ -74,7 +74,7 @@ func (o *ProvisionedDataSets) GetAmDataOk() (*AccessAndMobilitySubscriptionData,
 
 // HasAmData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasAmData() bool {
-	if o != nil && !isNil(o.AmData) {
+	if o != nil && !IsNil(o.AmData) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ProvisionedDataSets) SetAmData(v AccessAndMobilitySubscriptionData) {
 
 // GetSmfSelData returns the SmfSelData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetSmfSelData() SmfSelectionSubscriptionData {
-	if o == nil || isNil(o.SmfSelData) {
+	if o == nil || IsNil(o.SmfSelData) {
 		var ret SmfSelectionSubscriptionData
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ProvisionedDataSets) GetSmfSelData() SmfSelectionSubscriptionData {
 // GetSmfSelDataOk returns a tuple with the SmfSelData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetSmfSelDataOk() (*SmfSelectionSubscriptionData, bool) {
-	if o == nil || isNil(o.SmfSelData) {
+	if o == nil || IsNil(o.SmfSelData) {
 		return nil, false
 	}
 	return o.SmfSelData, true
@@ -106,7 +106,7 @@ func (o *ProvisionedDataSets) GetSmfSelDataOk() (*SmfSelectionSubscriptionData, 
 
 // HasSmfSelData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasSmfSelData() bool {
-	if o != nil && !isNil(o.SmfSelData) {
+	if o != nil && !IsNil(o.SmfSelData) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ProvisionedDataSets) SetSmfSelData(v SmfSelectionSubscriptionData) {
 
 // GetSmsSubsData returns the SmsSubsData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetSmsSubsData() SmsSubscriptionData {
-	if o == nil || isNil(o.SmsSubsData) {
+	if o == nil || IsNil(o.SmsSubsData) {
 		var ret SmsSubscriptionData
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ProvisionedDataSets) GetSmsSubsData() SmsSubscriptionData {
 // GetSmsSubsDataOk returns a tuple with the SmsSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetSmsSubsDataOk() (*SmsSubscriptionData, bool) {
-	if o == nil || isNil(o.SmsSubsData) {
+	if o == nil || IsNil(o.SmsSubsData) {
 		return nil, false
 	}
 	return o.SmsSubsData, true
@@ -138,7 +138,7 @@ func (o *ProvisionedDataSets) GetSmsSubsDataOk() (*SmsSubscriptionData, bool) {
 
 // HasSmsSubsData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasSmsSubsData() bool {
-	if o != nil && !isNil(o.SmsSubsData) {
+	if o != nil && !IsNil(o.SmsSubsData) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ProvisionedDataSets) SetSmsSubsData(v SmsSubscriptionData) {
 
 // GetSmData returns the SmData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetSmData() SmSubsData {
-	if o == nil || isNil(o.SmData) {
+	if o == nil || IsNil(o.SmData) {
 		var ret SmSubsData
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ProvisionedDataSets) GetSmData() SmSubsData {
 // GetSmDataOk returns a tuple with the SmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetSmDataOk() (*SmSubsData, bool) {
-	if o == nil || isNil(o.SmData) {
+	if o == nil || IsNil(o.SmData) {
 		return nil, false
 	}
 	return o.SmData, true
@@ -170,7 +170,7 @@ func (o *ProvisionedDataSets) GetSmDataOk() (*SmSubsData, bool) {
 
 // HasSmData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasSmData() bool {
-	if o != nil && !isNil(o.SmData) {
+	if o != nil && !IsNil(o.SmData) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ProvisionedDataSets) SetSmData(v SmSubsData) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProvisionedDataSets) GetTraceData() TraceData {
-	if o == nil || isNil(o.TraceData.Get()) {
+	if o == nil || IsNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -214,6 +214,7 @@ func (o *ProvisionedDataSets) HasTraceData() bool {
 func (o *ProvisionedDataSets) SetTraceData(v TraceData) {
 	o.TraceData.Set(&v)
 }
+
 // SetTraceDataNil sets the value for TraceData to be an explicit nil
 func (o *ProvisionedDataSets) SetTraceDataNil() {
 	o.TraceData.Set(nil)
@@ -226,7 +227,7 @@ func (o *ProvisionedDataSets) UnsetTraceData() {
 
 // GetSmsMngData returns the SmsMngData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetSmsMngData() SmsManagementSubscriptionData {
-	if o == nil || isNil(o.SmsMngData) {
+	if o == nil || IsNil(o.SmsMngData) {
 		var ret SmsManagementSubscriptionData
 		return ret
 	}
@@ -236,7 +237,7 @@ func (o *ProvisionedDataSets) GetSmsMngData() SmsManagementSubscriptionData {
 // GetSmsMngDataOk returns a tuple with the SmsMngData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetSmsMngDataOk() (*SmsManagementSubscriptionData, bool) {
-	if o == nil || isNil(o.SmsMngData) {
+	if o == nil || IsNil(o.SmsMngData) {
 		return nil, false
 	}
 	return o.SmsMngData, true
@@ -244,7 +245,7 @@ func (o *ProvisionedDataSets) GetSmsMngDataOk() (*SmsManagementSubscriptionData,
 
 // HasSmsMngData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasSmsMngData() bool {
-	if o != nil && !isNil(o.SmsMngData) {
+	if o != nil && !IsNil(o.SmsMngData) {
 		return true
 	}
 
@@ -258,7 +259,7 @@ func (o *ProvisionedDataSets) SetSmsMngData(v SmsManagementSubscriptionData) {
 
 // GetLcsPrivacyData returns the LcsPrivacyData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetLcsPrivacyData() LcsPrivacyData {
-	if o == nil || isNil(o.LcsPrivacyData) {
+	if o == nil || IsNil(o.LcsPrivacyData) {
 		var ret LcsPrivacyData
 		return ret
 	}
@@ -268,7 +269,7 @@ func (o *ProvisionedDataSets) GetLcsPrivacyData() LcsPrivacyData {
 // GetLcsPrivacyDataOk returns a tuple with the LcsPrivacyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetLcsPrivacyDataOk() (*LcsPrivacyData, bool) {
-	if o == nil || isNil(o.LcsPrivacyData) {
+	if o == nil || IsNil(o.LcsPrivacyData) {
 		return nil, false
 	}
 	return o.LcsPrivacyData, true
@@ -276,7 +277,7 @@ func (o *ProvisionedDataSets) GetLcsPrivacyDataOk() (*LcsPrivacyData, bool) {
 
 // HasLcsPrivacyData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasLcsPrivacyData() bool {
-	if o != nil && !isNil(o.LcsPrivacyData) {
+	if o != nil && !IsNil(o.LcsPrivacyData) {
 		return true
 	}
 
@@ -290,7 +291,7 @@ func (o *ProvisionedDataSets) SetLcsPrivacyData(v LcsPrivacyData) {
 
 // GetLcsMoData returns the LcsMoData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetLcsMoData() LcsMoData {
-	if o == nil || isNil(o.LcsMoData) {
+	if o == nil || IsNil(o.LcsMoData) {
 		var ret LcsMoData
 		return ret
 	}
@@ -300,7 +301,7 @@ func (o *ProvisionedDataSets) GetLcsMoData() LcsMoData {
 // GetLcsMoDataOk returns a tuple with the LcsMoData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetLcsMoDataOk() (*LcsMoData, bool) {
-	if o == nil || isNil(o.LcsMoData) {
+	if o == nil || IsNil(o.LcsMoData) {
 		return nil, false
 	}
 	return o.LcsMoData, true
@@ -308,7 +309,7 @@ func (o *ProvisionedDataSets) GetLcsMoDataOk() (*LcsMoData, bool) {
 
 // HasLcsMoData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasLcsMoData() bool {
-	if o != nil && !isNil(o.LcsMoData) {
+	if o != nil && !IsNil(o.LcsMoData) {
 		return true
 	}
 
@@ -322,7 +323,7 @@ func (o *ProvisionedDataSets) SetLcsMoData(v LcsMoData) {
 
 // GetLcsBcaData returns the LcsBcaData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetLcsBcaData() LcsBroadcastAssistanceTypesData {
-	if o == nil || isNil(o.LcsBcaData) {
+	if o == nil || IsNil(o.LcsBcaData) {
 		var ret LcsBroadcastAssistanceTypesData
 		return ret
 	}
@@ -332,7 +333,7 @@ func (o *ProvisionedDataSets) GetLcsBcaData() LcsBroadcastAssistanceTypesData {
 // GetLcsBcaDataOk returns a tuple with the LcsBcaData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetLcsBcaDataOk() (*LcsBroadcastAssistanceTypesData, bool) {
-	if o == nil || isNil(o.LcsBcaData) {
+	if o == nil || IsNil(o.LcsBcaData) {
 		return nil, false
 	}
 	return o.LcsBcaData, true
@@ -340,7 +341,7 @@ func (o *ProvisionedDataSets) GetLcsBcaDataOk() (*LcsBroadcastAssistanceTypesDat
 
 // HasLcsBcaData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasLcsBcaData() bool {
-	if o != nil && !isNil(o.LcsBcaData) {
+	if o != nil && !IsNil(o.LcsBcaData) {
 		return true
 	}
 
@@ -354,7 +355,7 @@ func (o *ProvisionedDataSets) SetLcsBcaData(v LcsBroadcastAssistanceTypesData) {
 
 // GetV2xData returns the V2xData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetV2xData() V2xSubscriptionData {
-	if o == nil || isNil(o.V2xData) {
+	if o == nil || IsNil(o.V2xData) {
 		var ret V2xSubscriptionData
 		return ret
 	}
@@ -364,7 +365,7 @@ func (o *ProvisionedDataSets) GetV2xData() V2xSubscriptionData {
 // GetV2xDataOk returns a tuple with the V2xData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetV2xDataOk() (*V2xSubscriptionData, bool) {
-	if o == nil || isNil(o.V2xData) {
+	if o == nil || IsNil(o.V2xData) {
 		return nil, false
 	}
 	return o.V2xData, true
@@ -372,7 +373,7 @@ func (o *ProvisionedDataSets) GetV2xDataOk() (*V2xSubscriptionData, bool) {
 
 // HasV2xData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasV2xData() bool {
-	if o != nil && !isNil(o.V2xData) {
+	if o != nil && !IsNil(o.V2xData) {
 		return true
 	}
 
@@ -386,7 +387,7 @@ func (o *ProvisionedDataSets) SetV2xData(v V2xSubscriptionData) {
 
 // GetProseData returns the ProseData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetProseData() ProseSubscriptionData {
-	if o == nil || isNil(o.ProseData) {
+	if o == nil || IsNil(o.ProseData) {
 		var ret ProseSubscriptionData
 		return ret
 	}
@@ -396,7 +397,7 @@ func (o *ProvisionedDataSets) GetProseData() ProseSubscriptionData {
 // GetProseDataOk returns a tuple with the ProseData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetProseDataOk() (*ProseSubscriptionData, bool) {
-	if o == nil || isNil(o.ProseData) {
+	if o == nil || IsNil(o.ProseData) {
 		return nil, false
 	}
 	return o.ProseData, true
@@ -404,7 +405,7 @@ func (o *ProvisionedDataSets) GetProseDataOk() (*ProseSubscriptionData, bool) {
 
 // HasProseData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasProseData() bool {
-	if o != nil && !isNil(o.ProseData) {
+	if o != nil && !IsNil(o.ProseData) {
 		return true
 	}
 
@@ -418,7 +419,7 @@ func (o *ProvisionedDataSets) SetProseData(v ProseSubscriptionData) {
 
 // GetOdbData returns the OdbData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetOdbData() OdbData {
-	if o == nil || isNil(o.OdbData) {
+	if o == nil || IsNil(o.OdbData) {
 		var ret OdbData
 		return ret
 	}
@@ -428,7 +429,7 @@ func (o *ProvisionedDataSets) GetOdbData() OdbData {
 // GetOdbDataOk returns a tuple with the OdbData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetOdbDataOk() (*OdbData, bool) {
-	if o == nil || isNil(o.OdbData) {
+	if o == nil || IsNil(o.OdbData) {
 		return nil, false
 	}
 	return o.OdbData, true
@@ -436,7 +437,7 @@ func (o *ProvisionedDataSets) GetOdbDataOk() (*OdbData, bool) {
 
 // HasOdbData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasOdbData() bool {
-	if o != nil && !isNil(o.OdbData) {
+	if o != nil && !IsNil(o.OdbData) {
 		return true
 	}
 
@@ -450,7 +451,7 @@ func (o *ProvisionedDataSets) SetOdbData(v OdbData) {
 
 // GetEeProfileData returns the EeProfileData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetEeProfileData() EeProfileData {
-	if o == nil || isNil(o.EeProfileData) {
+	if o == nil || IsNil(o.EeProfileData) {
 		var ret EeProfileData
 		return ret
 	}
@@ -460,7 +461,7 @@ func (o *ProvisionedDataSets) GetEeProfileData() EeProfileData {
 // GetEeProfileDataOk returns a tuple with the EeProfileData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetEeProfileDataOk() (*EeProfileData, bool) {
-	if o == nil || isNil(o.EeProfileData) {
+	if o == nil || IsNil(o.EeProfileData) {
 		return nil, false
 	}
 	return o.EeProfileData, true
@@ -468,7 +469,7 @@ func (o *ProvisionedDataSets) GetEeProfileDataOk() (*EeProfileData, bool) {
 
 // HasEeProfileData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasEeProfileData() bool {
-	if o != nil && !isNil(o.EeProfileData) {
+	if o != nil && !IsNil(o.EeProfileData) {
 		return true
 	}
 
@@ -482,7 +483,7 @@ func (o *ProvisionedDataSets) SetEeProfileData(v EeProfileData) {
 
 // GetPpProfileData returns the PpProfileData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetPpProfileData() PpProfileData {
-	if o == nil || isNil(o.PpProfileData) {
+	if o == nil || IsNil(o.PpProfileData) {
 		var ret PpProfileData
 		return ret
 	}
@@ -492,7 +493,7 @@ func (o *ProvisionedDataSets) GetPpProfileData() PpProfileData {
 // GetPpProfileDataOk returns a tuple with the PpProfileData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetPpProfileDataOk() (*PpProfileData, bool) {
-	if o == nil || isNil(o.PpProfileData) {
+	if o == nil || IsNil(o.PpProfileData) {
 		return nil, false
 	}
 	return o.PpProfileData, true
@@ -500,7 +501,7 @@ func (o *ProvisionedDataSets) GetPpProfileDataOk() (*PpProfileData, bool) {
 
 // HasPpProfileData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasPpProfileData() bool {
-	if o != nil && !isNil(o.PpProfileData) {
+	if o != nil && !IsNil(o.PpProfileData) {
 		return true
 	}
 
@@ -514,7 +515,7 @@ func (o *ProvisionedDataSets) SetPpProfileData(v PpProfileData) {
 
 // GetNiddAuthData returns the NiddAuthData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetNiddAuthData() AuthorizationData {
-	if o == nil || isNil(o.NiddAuthData) {
+	if o == nil || IsNil(o.NiddAuthData) {
 		var ret AuthorizationData
 		return ret
 	}
@@ -524,7 +525,7 @@ func (o *ProvisionedDataSets) GetNiddAuthData() AuthorizationData {
 // GetNiddAuthDataOk returns a tuple with the NiddAuthData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetNiddAuthDataOk() (*AuthorizationData, bool) {
-	if o == nil || isNil(o.NiddAuthData) {
+	if o == nil || IsNil(o.NiddAuthData) {
 		return nil, false
 	}
 	return o.NiddAuthData, true
@@ -532,7 +533,7 @@ func (o *ProvisionedDataSets) GetNiddAuthDataOk() (*AuthorizationData, bool) {
 
 // HasNiddAuthData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasNiddAuthData() bool {
-	if o != nil && !isNil(o.NiddAuthData) {
+	if o != nil && !IsNil(o.NiddAuthData) {
 		return true
 	}
 
@@ -546,7 +547,7 @@ func (o *ProvisionedDataSets) SetNiddAuthData(v AuthorizationData) {
 
 // GetMbsSubscriptionData returns the MbsSubscriptionData field value if set, zero value otherwise.
 func (o *ProvisionedDataSets) GetMbsSubscriptionData() MbsSubscriptionData {
-	if o == nil || isNil(o.MbsSubscriptionData) {
+	if o == nil || IsNil(o.MbsSubscriptionData) {
 		var ret MbsSubscriptionData
 		return ret
 	}
@@ -556,7 +557,7 @@ func (o *ProvisionedDataSets) GetMbsSubscriptionData() MbsSubscriptionData {
 // GetMbsSubscriptionDataOk returns a tuple with the MbsSubscriptionData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisionedDataSets) GetMbsSubscriptionDataOk() (*MbsSubscriptionData, bool) {
-	if o == nil || isNil(o.MbsSubscriptionData) {
+	if o == nil || IsNil(o.MbsSubscriptionData) {
 		return nil, false
 	}
 	return o.MbsSubscriptionData, true
@@ -564,7 +565,7 @@ func (o *ProvisionedDataSets) GetMbsSubscriptionDataOk() (*MbsSubscriptionData, 
 
 // HasMbsSubscriptionData returns a boolean if a field has been set.
 func (o *ProvisionedDataSets) HasMbsSubscriptionData() bool {
-	if o != nil && !isNil(o.MbsSubscriptionData) {
+	if o != nil && !IsNil(o.MbsSubscriptionData) {
 		return true
 	}
 
@@ -577,7 +578,7 @@ func (o *ProvisionedDataSets) SetMbsSubscriptionData(v MbsSubscriptionData) {
 }
 
 func (o ProvisionedDataSets) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -586,52 +587,52 @@ func (o ProvisionedDataSets) MarshalJSON() ([]byte, error) {
 
 func (o ProvisionedDataSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AmData) {
+	if !IsNil(o.AmData) {
 		toSerialize["amData"] = o.AmData
 	}
-	if !isNil(o.SmfSelData) {
+	if !IsNil(o.SmfSelData) {
 		toSerialize["smfSelData"] = o.SmfSelData
 	}
-	if !isNil(o.SmsSubsData) {
+	if !IsNil(o.SmsSubsData) {
 		toSerialize["smsSubsData"] = o.SmsSubsData
 	}
-	if !isNil(o.SmData) {
+	if !IsNil(o.SmData) {
 		toSerialize["smData"] = o.SmData
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !isNil(o.SmsMngData) {
+	if !IsNil(o.SmsMngData) {
 		toSerialize["smsMngData"] = o.SmsMngData
 	}
-	if !isNil(o.LcsPrivacyData) {
+	if !IsNil(o.LcsPrivacyData) {
 		toSerialize["lcsPrivacyData"] = o.LcsPrivacyData
 	}
-	if !isNil(o.LcsMoData) {
+	if !IsNil(o.LcsMoData) {
 		toSerialize["lcsMoData"] = o.LcsMoData
 	}
-	if !isNil(o.LcsBcaData) {
+	if !IsNil(o.LcsBcaData) {
 		toSerialize["lcsBcaData"] = o.LcsBcaData
 	}
-	if !isNil(o.V2xData) {
+	if !IsNil(o.V2xData) {
 		toSerialize["v2xData"] = o.V2xData
 	}
-	if !isNil(o.ProseData) {
+	if !IsNil(o.ProseData) {
 		toSerialize["proseData"] = o.ProseData
 	}
-	if !isNil(o.OdbData) {
+	if !IsNil(o.OdbData) {
 		toSerialize["odbData"] = o.OdbData
 	}
-	if !isNil(o.EeProfileData) {
+	if !IsNil(o.EeProfileData) {
 		toSerialize["eeProfileData"] = o.EeProfileData
 	}
-	if !isNil(o.PpProfileData) {
+	if !IsNil(o.PpProfileData) {
 		toSerialize["ppProfileData"] = o.PpProfileData
 	}
-	if !isNil(o.NiddAuthData) {
+	if !IsNil(o.NiddAuthData) {
 		toSerialize["niddAuthData"] = o.NiddAuthData
 	}
-	if !isNil(o.MbsSubscriptionData) {
+	if !IsNil(o.MbsSubscriptionData) {
 		toSerialize["mbsSubscriptionData"] = o.MbsSubscriptionData
 	}
 	return toSerialize, nil
@@ -672,5 +673,3 @@ func (v *NullableProvisionedDataSets) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

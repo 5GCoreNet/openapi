@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -69,7 +69,7 @@ func (o *ReachabilityForSmsReport) SetSmsfAccessType(v AccessType) {
 
 // GetMaxAvailabilityTime returns the MaxAvailabilityTime field value if set, zero value otherwise.
 func (o *ReachabilityForSmsReport) GetMaxAvailabilityTime() time.Time {
-	if o == nil || isNil(o.MaxAvailabilityTime) {
+	if o == nil || IsNil(o.MaxAvailabilityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReachabilityForSmsReport) GetMaxAvailabilityTime() time.Time {
 // GetMaxAvailabilityTimeOk returns a tuple with the MaxAvailabilityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityForSmsReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MaxAvailabilityTime) {
+	if o == nil || IsNil(o.MaxAvailabilityTime) {
 		return nil, false
 	}
 	return o.MaxAvailabilityTime, true
@@ -87,7 +87,7 @@ func (o *ReachabilityForSmsReport) GetMaxAvailabilityTimeOk() (*time.Time, bool)
 
 // HasMaxAvailabilityTime returns a boolean if a field has been set.
 func (o *ReachabilityForSmsReport) HasMaxAvailabilityTime() bool {
-	if o != nil && !isNil(o.MaxAvailabilityTime) {
+	if o != nil && !IsNil(o.MaxAvailabilityTime) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ReachabilityForSmsReport) SetMaxAvailabilityTime(v time.Time) {
 }
 
 func (o ReachabilityForSmsReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o ReachabilityForSmsReport) MarshalJSON() ([]byte, error) {
 func (o ReachabilityForSmsReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsfAccessType"] = o.SmsfAccessType
-	if !isNil(o.MaxAvailabilityTime) {
+	if !IsNil(o.MaxAvailabilityTime) {
 		toSerialize["maxAvailabilityTime"] = o.MaxAvailabilityTime
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableReachabilityForSmsReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

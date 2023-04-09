@@ -20,12 +20,12 @@ type MeasurementPeriodUmtsType string
 
 // List of measurementPeriodUmts-Type
 const (
-	_1000MS MeasurementPeriodUmtsType = "1000ms"
-	_2000MS MeasurementPeriodUmtsType = "2000ms"
-	_3000MS MeasurementPeriodUmtsType = "3000ms"
-	_4000MS MeasurementPeriodUmtsType = "4000ms"
-	_6000MS MeasurementPeriodUmtsType = "6000ms"
-	_8000MS MeasurementPeriodUmtsType = "8000ms"
+	_1000MS  MeasurementPeriodUmtsType = "1000ms"
+	_2000MS  MeasurementPeriodUmtsType = "2000ms"
+	_3000MS  MeasurementPeriodUmtsType = "3000ms"
+	_4000MS  MeasurementPeriodUmtsType = "4000ms"
+	_6000MS  MeasurementPeriodUmtsType = "6000ms"
+	_8000MS  MeasurementPeriodUmtsType = "8000ms"
 	_12000MS MeasurementPeriodUmtsType = "12000ms"
 	_16000MS MeasurementPeriodUmtsType = "16000ms"
 	_20000MS MeasurementPeriodUmtsType = "20000ms"
@@ -130,4 +130,3 @@ func (v *NullableMeasurementPeriodUmtsType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

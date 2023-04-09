@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &ClientId{}
 
 // ClientId Defines the identity of the NF Consumer
 type ClientId struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfId *string `json:"nfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	NfSetId *string `json:"nfSetId,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewClientIdWithDefaults() *ClientId {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *ClientId) GetNfId() string {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ClientId) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientId) GetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -62,7 +62,7 @@ func (o *ClientId) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *ClientId) HasNfId() bool {
-	if o != nil && !isNil(o.NfId) {
+	if o != nil && !IsNil(o.NfId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ClientId) SetNfId(v string) {
 
 // GetNfSetId returns the NfSetId field value if set, zero value otherwise.
 func (o *ClientId) GetNfSetId() string {
-	if o == nil || isNil(o.NfSetId) {
+	if o == nil || IsNil(o.NfSetId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ClientId) GetNfSetId() string {
 // GetNfSetIdOk returns a tuple with the NfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientId) GetNfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfSetId) {
+	if o == nil || IsNil(o.NfSetId) {
 		return nil, false
 	}
 	return o.NfSetId, true
@@ -94,7 +94,7 @@ func (o *ClientId) GetNfSetIdOk() (*string, bool) {
 
 // HasNfSetId returns a boolean if a field has been set.
 func (o *ClientId) HasNfSetId() bool {
-	if o != nil && !isNil(o.NfSetId) {
+	if o != nil && !IsNil(o.NfSetId) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ClientId) SetNfSetId(v string) {
 }
 
 func (o ClientId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o ClientId) MarshalJSON() ([]byte, error) {
 
 func (o ClientId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NfId) {
+	if !IsNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !isNil(o.NfSetId) {
+	if !IsNil(o.NfSetId) {
 		toSerialize["nfSetId"] = o.NfSetId
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableClientId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

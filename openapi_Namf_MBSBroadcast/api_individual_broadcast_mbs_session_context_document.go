@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Namf_MBSBroadcast
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // IndividualBroadcastMBSSessionContextDocumentApiService IndividualBroadcastMBSSessionContextDocumentApi service
 type IndividualBroadcastMBSSessionContextDocumentApiService service
 
 type ApiContextDeleteRequest struct {
-	ctx context.Context
-	ApiService *IndividualBroadcastMBSSessionContextDocumentApiService
+	ctx           context.Context
+	ApiService    *IndividualBroadcastMBSSessionContextDocumentApiService
 	mbsContextRef string
 }
 
@@ -37,14 +36,14 @@ func (r ApiContextDeleteRequest) Execute() (*http.Response, error) {
 /*
 ContextDelete Namf_MBSBroadcast ContextDelete service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mbsContextRef Unique ID of the broadcast MSB session context to be deleted
- @return ApiContextDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mbsContextRef Unique ID of the broadcast MSB session context to be deleted
+	@return ApiContextDeleteRequest
 */
 func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDelete(ctx context.Context, mbsContextRef string) ApiContextDeleteRequest {
 	return ApiContextDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		mbsContextRef: mbsContextRef,
 	}
 }
@@ -52,9 +51,9 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDelete(c
 // Execute executes the request
 func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteExecute(r ApiContextDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualBroadcastMBSSessionContextDocumentApiService.ContextDelete")
@@ -96,9 +95,9 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -115,8 +114,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -126,8 +125,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -137,8 +136,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -148,8 +147,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -159,8 +158,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -170,8 +169,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -181,8 +180,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -192,8 +191,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -203,8 +202,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -214,8 +213,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -225,10 +224,10 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 }
 
 type ApiContextUpdateRequest struct {
-	ctx context.Context
-	ApiService *IndividualBroadcastMBSSessionContextDocumentApiService
-	mbsContextRef string
-	jsonData *ContextUpdateReqData
+	ctx                     context.Context
+	ApiService              *IndividualBroadcastMBSSessionContextDocumentApiService
+	mbsContextRef           string
+	jsonData                *ContextUpdateReqData
 	binaryDataN2Information *os.File
 }
 
@@ -237,8 +236,8 @@ func (r ApiContextUpdateRequest) JsonData(jsonData ContextUpdateReqData) ApiCont
 	return r
 }
 
-func (r ApiContextUpdateRequest) BinaryDataN2Information(binaryDataN2Information os.File) ApiContextUpdateRequest {
-	r.binaryDataN2Information = &binaryDataN2Information
+func (r ApiContextUpdateRequest) BinaryDataN2Information(binaryDataN2Information *os.File) ApiContextUpdateRequest {
+	r.binaryDataN2Information = binaryDataN2Information
 	return r
 }
 
@@ -249,26 +248,27 @@ func (r ApiContextUpdateRequest) Execute() (*ContextUpdateRspData, *http.Respons
 /*
 ContextUpdate Namf_MBSBroadcast ContextUpdate service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mbsContextRef Unique ID of the broadcast MSB session context to be updated
- @return ApiContextUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mbsContextRef Unique ID of the broadcast MSB session context to be updated
+	@return ApiContextUpdateRequest
 */
 func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdate(ctx context.Context, mbsContextRef string) ApiContextUpdateRequest {
 	return ApiContextUpdateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		mbsContextRef: mbsContextRef,
 	}
 }
 
 // Execute executes the request
-//  @return ContextUpdateRspData
+//
+//	@return ContextUpdateRspData
 func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateExecute(r ApiContextUpdateRequest) (*ContextUpdateRspData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContextUpdateRspData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContextUpdateRspData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualBroadcastMBSSessionContextDocumentApiService.ContextUpdate")
@@ -308,22 +308,21 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryDataN2InformationLocalVarFormFileName string
-	var binaryDataN2InformationLocalVarFileName     string
-	var binaryDataN2InformationLocalVarFileBytes    []byte
+	var binaryDataN2InformationLocalVarFileName string
+	var binaryDataN2InformationLocalVarFileBytes []byte
 
 	binaryDataN2InformationLocalVarFormFileName = "binaryDataN2Information"
 
-	var binaryDataN2InformationLocalVarFile *os.File
-	if r.binaryDataN2Information != nil {
-		binaryDataN2InformationLocalVarFile = r.binaryDataN2Information
-	}
+	binaryDataN2InformationLocalVarFile := r.binaryDataN2Information
+
 	if binaryDataN2InformationLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationLocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationLocalVarFile)
+
 		binaryDataN2InformationLocalVarFileBytes = fbs
 		binaryDataN2InformationLocalVarFileName = binaryDataN2InformationLocalVarFile.Name()
 		binaryDataN2InformationLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -334,9 +333,9 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -353,8 +352,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -364,8 +363,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -375,8 +374,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -386,8 +385,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -397,8 +396,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -408,8 +407,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -419,8 +418,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -430,8 +429,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -441,8 +440,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -452,8 +451,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -463,8 +462,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -474,8 +473,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -485,8 +484,8 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

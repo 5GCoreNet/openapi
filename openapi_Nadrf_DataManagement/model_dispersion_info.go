@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,14 +18,14 @@ import (
 // checks if the DispersionInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DispersionInfo{}
 
-// DispersionInfo Represents the Dispersion information. When subscribed event is \"DISPERSION\", the  \"disperInfos\" attribute shall be included. 
+// DispersionInfo Represents the Dispersion information. When subscribed event is \"DISPERSION\", the  \"disperInfos\" attribute shall be included.
 type DispersionInfo struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	TsStart time.Time `json:"tsStart"`
 	// indicating a time in seconds.
-	TsDuration int32 `json:"tsDuration"`
+	TsDuration     int32                  `json:"tsDuration"`
 	DisperCollects []DispersionCollection `json:"disperCollects"`
-	DisperType DispersionType `json:"disperType"`
+	DisperType     DispersionType         `json:"disperType"`
 }
 
 // NewDispersionInfo instantiates a new DispersionInfo object
@@ -146,7 +146,7 @@ func (o *DispersionInfo) SetDisperType(v DispersionType) {
 }
 
 func (o DispersionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -197,5 +197,3 @@ func (v *NullableDispersionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

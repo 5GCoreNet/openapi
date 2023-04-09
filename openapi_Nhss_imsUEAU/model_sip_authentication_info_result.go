@@ -1,7 +1,7 @@
 /*
 Nhss_imsUEAU
 
-Nhss UE Authentication Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Authentication Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the SipAuthenticationInfoResult type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SipAuthenticationInfoResult{}
 
-// SipAuthenticationInfoResult Contains authentication information returned in the SIP authentication response message (e.g. authentication vectors, digest authentication parameters, line identifiers) 
+// SipAuthenticationInfoResult Contains authentication information returned in the SIP authentication response message (e.g. authentication vectors, digest authentication parameters, line identifiers)
 type SipAuthenticationInfoResult struct {
 	// IMS Private Identity of the UE
-	Impi string `json:"impi"`
-	Var3gAkaAvs []Model3GAkaAv `json:"3gAkaAvs,omitempty"`
-	DigestAuth *DigestAuthentication `json:"digestAuth,omitempty"`
-	LineIdentifierList []string `json:"lineIdentifierList,omitempty"`
-	IpAddress *IpAddr `json:"ipAddress,omitempty"`
+	Impi               string                `json:"impi"`
+	Var3gAkaAvs        []Model3GAkaAv        `json:"3gAkaAvs,omitempty"`
+	DigestAuth         *DigestAuthentication `json:"digestAuth,omitempty"`
+	LineIdentifierList []string              `json:"lineIdentifierList,omitempty"`
+	IpAddress          *IpAddr               `json:"ipAddress,omitempty"`
 }
 
 // NewSipAuthenticationInfoResult instantiates a new SipAuthenticationInfoResult object
@@ -71,7 +71,7 @@ func (o *SipAuthenticationInfoResult) SetImpi(v string) {
 
 // GetVar3gAkaAvs returns the Var3gAkaAvs field value if set, zero value otherwise.
 func (o *SipAuthenticationInfoResult) GetVar3gAkaAvs() []Model3GAkaAv {
-	if o == nil || isNil(o.Var3gAkaAvs) {
+	if o == nil || IsNil(o.Var3gAkaAvs) {
 		var ret []Model3GAkaAv
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *SipAuthenticationInfoResult) GetVar3gAkaAvs() []Model3GAkaAv {
 // GetVar3gAkaAvsOk returns a tuple with the Var3gAkaAvs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SipAuthenticationInfoResult) GetVar3gAkaAvsOk() ([]Model3GAkaAv, bool) {
-	if o == nil || isNil(o.Var3gAkaAvs) {
+	if o == nil || IsNil(o.Var3gAkaAvs) {
 		return nil, false
 	}
 	return o.Var3gAkaAvs, true
@@ -89,7 +89,7 @@ func (o *SipAuthenticationInfoResult) GetVar3gAkaAvsOk() ([]Model3GAkaAv, bool) 
 
 // HasVar3gAkaAvs returns a boolean if a field has been set.
 func (o *SipAuthenticationInfoResult) HasVar3gAkaAvs() bool {
-	if o != nil && !isNil(o.Var3gAkaAvs) {
+	if o != nil && !IsNil(o.Var3gAkaAvs) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *SipAuthenticationInfoResult) SetVar3gAkaAvs(v []Model3GAkaAv) {
 
 // GetDigestAuth returns the DigestAuth field value if set, zero value otherwise.
 func (o *SipAuthenticationInfoResult) GetDigestAuth() DigestAuthentication {
-	if o == nil || isNil(o.DigestAuth) {
+	if o == nil || IsNil(o.DigestAuth) {
 		var ret DigestAuthentication
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *SipAuthenticationInfoResult) GetDigestAuth() DigestAuthentication {
 // GetDigestAuthOk returns a tuple with the DigestAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SipAuthenticationInfoResult) GetDigestAuthOk() (*DigestAuthentication, bool) {
-	if o == nil || isNil(o.DigestAuth) {
+	if o == nil || IsNil(o.DigestAuth) {
 		return nil, false
 	}
 	return o.DigestAuth, true
@@ -121,7 +121,7 @@ func (o *SipAuthenticationInfoResult) GetDigestAuthOk() (*DigestAuthentication, 
 
 // HasDigestAuth returns a boolean if a field has been set.
 func (o *SipAuthenticationInfoResult) HasDigestAuth() bool {
-	if o != nil && !isNil(o.DigestAuth) {
+	if o != nil && !IsNil(o.DigestAuth) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *SipAuthenticationInfoResult) SetDigestAuth(v DigestAuthentication) {
 
 // GetLineIdentifierList returns the LineIdentifierList field value if set, zero value otherwise.
 func (o *SipAuthenticationInfoResult) GetLineIdentifierList() []string {
-	if o == nil || isNil(o.LineIdentifierList) {
+	if o == nil || IsNil(o.LineIdentifierList) {
 		var ret []string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *SipAuthenticationInfoResult) GetLineIdentifierList() []string {
 // GetLineIdentifierListOk returns a tuple with the LineIdentifierList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SipAuthenticationInfoResult) GetLineIdentifierListOk() ([]string, bool) {
-	if o == nil || isNil(o.LineIdentifierList) {
+	if o == nil || IsNil(o.LineIdentifierList) {
 		return nil, false
 	}
 	return o.LineIdentifierList, true
@@ -153,7 +153,7 @@ func (o *SipAuthenticationInfoResult) GetLineIdentifierListOk() ([]string, bool)
 
 // HasLineIdentifierList returns a boolean if a field has been set.
 func (o *SipAuthenticationInfoResult) HasLineIdentifierList() bool {
-	if o != nil && !isNil(o.LineIdentifierList) {
+	if o != nil && !IsNil(o.LineIdentifierList) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *SipAuthenticationInfoResult) SetLineIdentifierList(v []string) {
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
 func (o *SipAuthenticationInfoResult) GetIpAddress() IpAddr {
-	if o == nil || isNil(o.IpAddress) {
+	if o == nil || IsNil(o.IpAddress) {
 		var ret IpAddr
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *SipAuthenticationInfoResult) GetIpAddress() IpAddr {
 // GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SipAuthenticationInfoResult) GetIpAddressOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.IpAddress) {
+	if o == nil || IsNil(o.IpAddress) {
 		return nil, false
 	}
 	return o.IpAddress, true
@@ -185,7 +185,7 @@ func (o *SipAuthenticationInfoResult) GetIpAddressOk() (*IpAddr, bool) {
 
 // HasIpAddress returns a boolean if a field has been set.
 func (o *SipAuthenticationInfoResult) HasIpAddress() bool {
-	if o != nil && !isNil(o.IpAddress) {
+	if o != nil && !IsNil(o.IpAddress) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *SipAuthenticationInfoResult) SetIpAddress(v IpAddr) {
 }
 
 func (o SipAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,16 +208,16 @@ func (o SipAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 func (o SipAuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["impi"] = o.Impi
-	if !isNil(o.Var3gAkaAvs) {
+	if !IsNil(o.Var3gAkaAvs) {
 		toSerialize["3gAkaAvs"] = o.Var3gAkaAvs
 	}
-	if !isNil(o.DigestAuth) {
+	if !IsNil(o.DigestAuth) {
 		toSerialize["digestAuth"] = o.DigestAuth
 	}
-	if !isNil(o.LineIdentifierList) {
+	if !IsNil(o.LineIdentifierList) {
 		toSerialize["lineIdentifierList"] = o.LineIdentifierList
 	}
-	if !isNil(o.IpAddress) {
+	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableSipAuthenticationInfoResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

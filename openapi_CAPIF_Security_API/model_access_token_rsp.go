@@ -1,7 +1,7 @@
 /*
 CAPIF_Security_API
 
-API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &AccessTokenRsp{}
 
 // AccessTokenRsp Represents the access token response information.
 type AccessTokenRsp struct {
-	// JWS Compact Serialized representation of JWS signed JSON object (AccessTokenClaims) 
+	// JWS Compact Serialized representation of JWS signed JSON object (AccessTokenClaims)
 	AccessToken string `json:"access_token"`
-	TokenType string `json:"token_type"`
+	TokenType   string `json:"token_type"`
 	// Unsigned integer identifying a period of time in units of seconds.
-	ExpiresIn int32 `json:"expires_in"`
-	Scope *string `json:"scope,omitempty"`
+	ExpiresIn int32   `json:"expires_in"`
+	Scope     *string `json:"scope,omitempty"`
 }
 
 // NewAccessTokenRsp instantiates a new AccessTokenRsp object
@@ -121,7 +121,7 @@ func (o *AccessTokenRsp) SetExpiresIn(v int32) {
 
 // GetScope returns the Scope field value if set, zero value otherwise.
 func (o *AccessTokenRsp) GetScope() string {
-	if o == nil || isNil(o.Scope) {
+	if o == nil || IsNil(o.Scope) {
 		var ret string
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *AccessTokenRsp) GetScope() string {
 // GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenRsp) GetScopeOk() (*string, bool) {
-	if o == nil || isNil(o.Scope) {
+	if o == nil || IsNil(o.Scope) {
 		return nil, false
 	}
 	return o.Scope, true
@@ -139,7 +139,7 @@ func (o *AccessTokenRsp) GetScopeOk() (*string, bool) {
 
 // HasScope returns a boolean if a field has been set.
 func (o *AccessTokenRsp) HasScope() bool {
-	if o != nil && !isNil(o.Scope) {
+	if o != nil && !IsNil(o.Scope) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *AccessTokenRsp) SetScope(v string) {
 }
 
 func (o AccessTokenRsp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,7 +164,7 @@ func (o AccessTokenRsp) ToMap() (map[string]interface{}, error) {
 	toSerialize["access_token"] = o.AccessToken
 	toSerialize["token_type"] = o.TokenType
 	toSerialize["expires_in"] = o.ExpiresIn
-	if !isNil(o.Scope) {
+	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
 	return toSerialize, nil
@@ -205,5 +205,3 @@ func (v *NullableAccessTokenRsp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

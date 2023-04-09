@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the AppSessionContextUpdateDataPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AppSessionContextUpdateDataPatch{}
 
-// AppSessionContextUpdateDataPatch Identifies the modifications to an Individual Application Session Context and/or the modifications to the sub-resource Events Subscription. 
+// AppSessionContextUpdateDataPatch Identifies the modifications to an Individual Application Session Context and/or the modifications to the sub-resource Events Subscription.
 type AppSessionContextUpdateDataPatch struct {
 	AscReqData *AppSessionContextUpdateData `json:"ascReqData,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewAppSessionContextUpdateDataPatchWithDefaults() *AppSessionContextUpdateD
 
 // GetAscReqData returns the AscReqData field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateDataPatch) GetAscReqData() AppSessionContextUpdateData {
-	if o == nil || isNil(o.AscReqData) {
+	if o == nil || IsNil(o.AscReqData) {
 		var ret AppSessionContextUpdateData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AppSessionContextUpdateDataPatch) GetAscReqData() AppSessionContextUpda
 // GetAscReqDataOk returns a tuple with the AscReqData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateDataPatch) GetAscReqDataOk() (*AppSessionContextUpdateData, bool) {
-	if o == nil || isNil(o.AscReqData) {
+	if o == nil || IsNil(o.AscReqData) {
 		return nil, false
 	}
 	return o.AscReqData, true
@@ -59,7 +59,7 @@ func (o *AppSessionContextUpdateDataPatch) GetAscReqDataOk() (*AppSessionContext
 
 // HasAscReqData returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateDataPatch) HasAscReqData() bool {
-	if o != nil && !isNil(o.AscReqData) {
+	if o != nil && !IsNil(o.AscReqData) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AppSessionContextUpdateDataPatch) SetAscReqData(v AppSessionContextUpda
 }
 
 func (o AppSessionContextUpdateDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AppSessionContextUpdateDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o AppSessionContextUpdateDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AscReqData) {
+	if !IsNil(o.AscReqData) {
 		toSerialize["ascReqData"] = o.AscReqData
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAppSessionContextUpdateDataPatch) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

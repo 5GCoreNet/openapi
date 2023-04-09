@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,19 +13,18 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualEasDeploymentDataDocumentApiService IndividualEasDeploymentDataDocumentApi service
 type IndividualEasDeploymentDataDocumentApiService service
 
 type ApiDeleteIndividualEasDeployDataRequest struct {
-	ctx context.Context
-	ApiService *IndividualEasDeploymentDataDocumentApiService
+	ctx             context.Context
+	ApiService      *IndividualEasDeploymentDataDocumentApiService
 	easDeployInfoId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeleteIndividualEasDeployDataRequest) Execute() (*http.Response, erro
 /*
 DeleteIndividualEasDeployData Delete an individual EAS Deployment Data resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param easDeployInfoId The Identifier of an Individual EAS Deployment Data to be updated. It shall apply the format of Data type string. 
- @return ApiDeleteIndividualEasDeployDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param easDeployInfoId The Identifier of an Individual EAS Deployment Data to be updated. It shall apply the format of Data type string.
+	@return ApiDeleteIndividualEasDeployDataRequest
 */
 func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeployData(ctx context.Context, easDeployInfoId string) ApiDeleteIndividualEasDeployDataRequest {
 	return ApiDeleteIndividualEasDeployDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		easDeployInfoId: easDeployInfoId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 // Execute executes the request
 func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeployDataExecute(r ApiDeleteIndividualEasDeployDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualEasDeploymentDataDocumentApiService.DeleteIndividualEasDeployData")
@@ -95,9 +94,9 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualEasDeploymentDataDocumentApiService) DeleteIndividualEasDeplo
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

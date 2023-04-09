@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,26 +13,25 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // MetaSchemaCRUDApiService MetaSchemaCRUDApi service
 type MetaSchemaCRUDApiService service
 
 type ApiCreateOrModifyMetaSchemaRequest struct {
-	ctx context.Context
-	ApiService *MetaSchemaCRUDApiService
-	realmId string
-	storageId string
-	schemaId string
-	metaSchema *MetaSchema
-	ifNoneMatch *string
-	ifMatch *string
-	getPrevious *bool
+	ctx               context.Context
+	ApiService        *MetaSchemaCRUDApiService
+	realmId           string
+	storageId         string
+	schemaId          string
+	metaSchema        *MetaSchema
+	ifNoneMatch       *string
+	ifMatch           *string
+	getPrevious       *bool
 	supportedFeatures *string
 }
 
@@ -74,30 +73,31 @@ CreateOrModifyMetaSchema Create/Modify Meta Schema
 
 Create or Modify a Meta Schema with a user provided SchemaId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier(name) of the Realm
- @param storageId Identifier of the Storage
- @param schemaId Identifier of the Meta Schema
- @return ApiCreateOrModifyMetaSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier(name) of the Realm
+	@param storageId Identifier of the Storage
+	@param schemaId Identifier of the Meta Schema
+	@return ApiCreateOrModifyMetaSchemaRequest
 */
 func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchema(ctx context.Context, realmId string, storageId string, schemaId string) ApiCreateOrModifyMetaSchemaRequest {
 	return ApiCreateOrModifyMetaSchemaRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		schemaId: schemaId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		schemaId:   schemaId,
 	}
 }
 
 // Execute executes the request
-//  @return MetaSchema
+//
+//	@return MetaSchema
 func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOrModifyMetaSchemaRequest) (*MetaSchema, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MetaSchema
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MetaSchema
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaSchemaCRUDApiService.CreateOrModifyMetaSchema")
@@ -118,10 +118,10 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 	}
 
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -141,10 +141,10 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.metaSchema
@@ -158,9 +158,9 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -177,8 +177,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -188,8 +188,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -199,8 +199,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -210,8 +210,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -221,8 +221,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -232,8 +232,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -243,8 +243,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -254,8 +254,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -265,8 +265,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -276,8 +276,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -287,8 +287,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -298,8 +298,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -309,8 +309,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -320,8 +320,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -331,8 +331,8 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -351,13 +351,13 @@ func (a *MetaSchemaCRUDApiService) CreateOrModifyMetaSchemaExecute(r ApiCreateOr
 }
 
 type ApiDeleteMetaSchemaRequest struct {
-	ctx context.Context
-	ApiService *MetaSchemaCRUDApiService
-	realmId string
-	storageId string
-	schemaId string
-	ifMatch *string
-	getPrevious *bool
+	ctx               context.Context
+	ApiService        *MetaSchemaCRUDApiService
+	realmId           string
+	storageId         string
+	schemaId          string
+	ifMatch           *string
+	getPrevious       *bool
 	supportedFeatures *string
 }
 
@@ -386,30 +386,31 @@ func (r ApiDeleteMetaSchemaRequest) Execute() (*MetaSchema, *http.Response, erro
 /*
 DeleteMetaSchema Delete a Meta Schema with an user provided SchemaId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier(name) of the Realm
- @param storageId Identifier of the Storage
- @param schemaId Identifier of the Meta Schema
- @return ApiDeleteMetaSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier(name) of the Realm
+	@param storageId Identifier of the Storage
+	@param schemaId Identifier of the Meta Schema
+	@return ApiDeleteMetaSchemaRequest
 */
 func (a *MetaSchemaCRUDApiService) DeleteMetaSchema(ctx context.Context, realmId string, storageId string, schemaId string) ApiDeleteMetaSchemaRequest {
 	return ApiDeleteMetaSchemaRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		schemaId: schemaId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		schemaId:   schemaId,
 	}
 }
 
 // Execute executes the request
-//  @return MetaSchema
+//
+//	@return MetaSchema
 func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchemaRequest) (*MetaSchema, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MetaSchema
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MetaSchema
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaSchemaCRUDApiService.DeleteMetaSchema")
@@ -427,10 +428,10 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 	localVarFormParams := url.Values{}
 
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -450,7 +451,7 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -462,9 +463,9 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -481,8 +482,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -492,8 +493,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -503,8 +504,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -514,8 +515,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -525,8 +526,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -536,8 +537,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -547,8 +548,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -558,8 +559,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -569,8 +570,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -580,8 +581,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -591,8 +592,8 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -611,13 +612,13 @@ func (a *MetaSchemaCRUDApiService) DeleteMetaSchemaExecute(r ApiDeleteMetaSchema
 }
 
 type ApiGetMetaSchemaRequest struct {
-	ctx context.Context
-	ApiService *MetaSchemaCRUDApiService
-	realmId string
-	storageId string
-	schemaId string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ctx               context.Context
+	ApiService        *MetaSchemaCRUDApiService
+	realmId           string
+	storageId         string
+	schemaId          string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 	supportedFeatures *string
 }
 
@@ -648,30 +649,31 @@ GetMetaSchema Meta Schema access
 
 retrieve one specific Meta Schema
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param schemaId Identifier of the Meta Schema
- @return ApiGetMetaSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param schemaId Identifier of the Meta Schema
+	@return ApiGetMetaSchemaRequest
 */
 func (a *MetaSchemaCRUDApiService) GetMetaSchema(ctx context.Context, realmId string, storageId string, schemaId string) ApiGetMetaSchemaRequest {
 	return ApiGetMetaSchemaRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		schemaId: schemaId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		schemaId:   schemaId,
 	}
 }
 
 // Execute executes the request
-//  @return Record
+//
+//	@return Record
 func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaRequest) (*Record, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Record
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Record
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaSchemaCRUDApiService.GetMetaSchema")
@@ -689,7 +691,7 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -709,10 +711,10 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -724,9 +726,9 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -743,8 +745,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -754,8 +756,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -765,8 +767,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -776,8 +778,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -787,8 +789,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -798,8 +800,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -809,8 +811,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -820,8 +822,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -831,8 +833,8 @@ func (a *MetaSchemaCRUDApiService) GetMetaSchemaExecute(r ApiGetMetaSchemaReques
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

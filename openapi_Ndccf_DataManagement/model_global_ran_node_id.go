@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// GlobalRanNodeId - One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present. 
+// GlobalRanNodeId - One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present.
 type GlobalRanNodeId struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsGlobalRanNodeId(v *interface{}) GlobalRanNodeId {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GlobalRanNodeId) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src GlobalRanNodeId) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GlobalRanNodeId) GetActualInstance() (interface{}) {
+func (obj *GlobalRanNodeId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableGlobalRanNodeId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

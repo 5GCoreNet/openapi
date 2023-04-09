@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &KeyAmf{}
 // KeyAmf Represents the Kamf or K'amf
 type KeyAmf struct {
 	KeyType KeyAmfType `json:"keyType"`
-	KeyVal string `json:"keyVal"`
+	KeyVal  string     `json:"keyVal"`
 }
 
 // NewKeyAmf instantiates a new KeyAmf object
@@ -91,7 +91,7 @@ func (o *KeyAmf) SetKeyVal(v string) {
 }
 
 func (o KeyAmf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableKeyAmf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

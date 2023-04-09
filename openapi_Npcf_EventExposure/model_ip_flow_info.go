@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &IpFlowInfo{}
 
 // IpFlowInfo Identifies an UL/DL IP flow.
 type IpFlowInfo struct {
-	IpFlows []string `json:"ipFlows,omitempty"`
-	FlowNumber int32 `json:"flowNumber"`
+	IpFlows    []string `json:"ipFlows,omitempty"`
+	FlowNumber int32    `json:"flowNumber"`
 }
 
 // NewIpFlowInfo instantiates a new IpFlowInfo object
@@ -43,7 +43,7 @@ func NewIpFlowInfoWithDefaults() *IpFlowInfo {
 
 // GetIpFlows returns the IpFlows field value if set, zero value otherwise.
 func (o *IpFlowInfo) GetIpFlows() []string {
-	if o == nil || isNil(o.IpFlows) {
+	if o == nil || IsNil(o.IpFlows) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IpFlowInfo) GetIpFlows() []string {
 // GetIpFlowsOk returns a tuple with the IpFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpFlowInfo) GetIpFlowsOk() ([]string, bool) {
-	if o == nil || isNil(o.IpFlows) {
+	if o == nil || IsNil(o.IpFlows) {
 		return nil, false
 	}
 	return o.IpFlows, true
@@ -61,7 +61,7 @@ func (o *IpFlowInfo) GetIpFlowsOk() ([]string, bool) {
 
 // HasIpFlows returns a boolean if a field has been set.
 func (o *IpFlowInfo) HasIpFlows() bool {
-	if o != nil && !isNil(o.IpFlows) {
+	if o != nil && !IsNil(o.IpFlows) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *IpFlowInfo) SetFlowNumber(v int32) {
 }
 
 func (o IpFlowInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -107,7 +107,7 @@ func (o IpFlowInfo) MarshalJSON() ([]byte, error) {
 
 func (o IpFlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IpFlows) {
+	if !IsNil(o.IpFlows) {
 		toSerialize["ipFlows"] = o.IpFlows
 	}
 	toSerialize["flowNumber"] = o.FlowNumber
@@ -149,5 +149,3 @@ func (v *NullableIpFlowInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

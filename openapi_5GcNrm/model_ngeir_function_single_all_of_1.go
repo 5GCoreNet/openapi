@@ -41,7 +41,7 @@ func NewNgeirFunctionSingleAllOf1WithDefaults() *NgeirFunctionSingleAllOf1 {
 
 // GetEPN17 returns the EPN17 field value if set, zero value otherwise.
 func (o *NgeirFunctionSingleAllOf1) GetEPN17() []EPN17Single {
-	if o == nil || isNil(o.EPN17) {
+	if o == nil || IsNil(o.EPN17) {
 		var ret []EPN17Single
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NgeirFunctionSingleAllOf1) GetEPN17() []EPN17Single {
 // GetEPN17Ok returns a tuple with the EPN17 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NgeirFunctionSingleAllOf1) GetEPN17Ok() ([]EPN17Single, bool) {
-	if o == nil || isNil(o.EPN17) {
+	if o == nil || IsNil(o.EPN17) {
 		return nil, false
 	}
 	return o.EPN17, true
@@ -59,7 +59,7 @@ func (o *NgeirFunctionSingleAllOf1) GetEPN17Ok() ([]EPN17Single, bool) {
 
 // HasEPN17 returns a boolean if a field has been set.
 func (o *NgeirFunctionSingleAllOf1) HasEPN17() bool {
-	if o != nil && !isNil(o.EPN17) {
+	if o != nil && !IsNil(o.EPN17) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *NgeirFunctionSingleAllOf1) SetEPN17(v []EPN17Single) {
 }
 
 func (o NgeirFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o NgeirFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NgeirFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EPN17) {
+	if !IsNil(o.EPN17) {
 		toSerialize["EP_N17"] = o.EPN17
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableNgeirFunctionSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

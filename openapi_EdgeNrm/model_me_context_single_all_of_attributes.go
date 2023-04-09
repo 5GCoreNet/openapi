@@ -41,7 +41,7 @@ func NewMeContextSingleAllOfAttributesWithDefaults() *MeContextSingleAllOfAttrib
 
 // GetDnPrefix returns the DnPrefix field value if set, zero value otherwise.
 func (o *MeContextSingleAllOfAttributes) GetDnPrefix() string {
-	if o == nil || isNil(o.DnPrefix) {
+	if o == nil || IsNil(o.DnPrefix) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MeContextSingleAllOfAttributes) GetDnPrefix() string {
 // GetDnPrefixOk returns a tuple with the DnPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeContextSingleAllOfAttributes) GetDnPrefixOk() (*string, bool) {
-	if o == nil || isNil(o.DnPrefix) {
+	if o == nil || IsNil(o.DnPrefix) {
 		return nil, false
 	}
 	return o.DnPrefix, true
@@ -59,7 +59,7 @@ func (o *MeContextSingleAllOfAttributes) GetDnPrefixOk() (*string, bool) {
 
 // HasDnPrefix returns a boolean if a field has been set.
 func (o *MeContextSingleAllOfAttributes) HasDnPrefix() bool {
-	if o != nil && !isNil(o.DnPrefix) {
+	if o != nil && !IsNil(o.DnPrefix) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MeContextSingleAllOfAttributes) SetDnPrefix(v string) {
 }
 
 func (o MeContextSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MeContextSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o MeContextSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnPrefix) {
+	if !IsNil(o.DnPrefix) {
 		toSerialize["dnPrefix"] = o.DnPrefix
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMeContextSingleAllOfAttributes) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -48,7 +48,7 @@ func NewNetworkAreaInfo1WithDefaults() *NetworkAreaInfo1 {
 
 // GetEcgis returns the Ecgis field value if set, zero value otherwise.
 func (o *NetworkAreaInfo1) GetEcgis() []Ecgi {
-	if o == nil || isNil(o.Ecgis) {
+	if o == nil || IsNil(o.Ecgis) {
 		var ret []Ecgi
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *NetworkAreaInfo1) GetEcgis() []Ecgi {
 // GetEcgisOk returns a tuple with the Ecgis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo1) GetEcgisOk() ([]Ecgi, bool) {
-	if o == nil || isNil(o.Ecgis) {
+	if o == nil || IsNil(o.Ecgis) {
 		return nil, false
 	}
 	return o.Ecgis, true
@@ -66,7 +66,7 @@ func (o *NetworkAreaInfo1) GetEcgisOk() ([]Ecgi, bool) {
 
 // HasEcgis returns a boolean if a field has been set.
 func (o *NetworkAreaInfo1) HasEcgis() bool {
-	if o != nil && !isNil(o.Ecgis) {
+	if o != nil && !IsNil(o.Ecgis) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *NetworkAreaInfo1) SetEcgis(v []Ecgi) {
 
 // GetNcgis returns the Ncgis field value if set, zero value otherwise.
 func (o *NetworkAreaInfo1) GetNcgis() []Ncgi {
-	if o == nil || isNil(o.Ncgis) {
+	if o == nil || IsNil(o.Ncgis) {
 		var ret []Ncgi
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *NetworkAreaInfo1) GetNcgis() []Ncgi {
 // GetNcgisOk returns a tuple with the Ncgis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo1) GetNcgisOk() ([]Ncgi, bool) {
-	if o == nil || isNil(o.Ncgis) {
+	if o == nil || IsNil(o.Ncgis) {
 		return nil, false
 	}
 	return o.Ncgis, true
@@ -98,7 +98,7 @@ func (o *NetworkAreaInfo1) GetNcgisOk() ([]Ncgi, bool) {
 
 // HasNcgis returns a boolean if a field has been set.
 func (o *NetworkAreaInfo1) HasNcgis() bool {
-	if o != nil && !isNil(o.Ncgis) {
+	if o != nil && !IsNil(o.Ncgis) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *NetworkAreaInfo1) SetNcgis(v []Ncgi) {
 
 // GetGRanNodeIds returns the GRanNodeIds field value if set, zero value otherwise.
 func (o *NetworkAreaInfo1) GetGRanNodeIds() []GlobalRanNodeId {
-	if o == nil || isNil(o.GRanNodeIds) {
+	if o == nil || IsNil(o.GRanNodeIds) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *NetworkAreaInfo1) GetGRanNodeIds() []GlobalRanNodeId {
 // GetGRanNodeIdsOk returns a tuple with the GRanNodeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo1) GetGRanNodeIdsOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.GRanNodeIds) {
+	if o == nil || IsNil(o.GRanNodeIds) {
 		return nil, false
 	}
 	return o.GRanNodeIds, true
@@ -130,7 +130,7 @@ func (o *NetworkAreaInfo1) GetGRanNodeIdsOk() ([]GlobalRanNodeId, bool) {
 
 // HasGRanNodeIds returns a boolean if a field has been set.
 func (o *NetworkAreaInfo1) HasGRanNodeIds() bool {
-	if o != nil && !isNil(o.GRanNodeIds) {
+	if o != nil && !IsNil(o.GRanNodeIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *NetworkAreaInfo1) SetGRanNodeIds(v []GlobalRanNodeId) {
 
 // GetTais returns the Tais field value if set, zero value otherwise.
 func (o *NetworkAreaInfo1) GetTais() []Tai {
-	if o == nil || isNil(o.Tais) {
+	if o == nil || IsNil(o.Tais) {
 		var ret []Tai
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *NetworkAreaInfo1) GetTais() []Tai {
 // GetTaisOk returns a tuple with the Tais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo1) GetTaisOk() ([]Tai, bool) {
-	if o == nil || isNil(o.Tais) {
+	if o == nil || IsNil(o.Tais) {
 		return nil, false
 	}
 	return o.Tais, true
@@ -162,7 +162,7 @@ func (o *NetworkAreaInfo1) GetTaisOk() ([]Tai, bool) {
 
 // HasTais returns a boolean if a field has been set.
 func (o *NetworkAreaInfo1) HasTais() bool {
-	if o != nil && !isNil(o.Tais) {
+	if o != nil && !IsNil(o.Tais) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *NetworkAreaInfo1) SetTais(v []Tai) {
 }
 
 func (o NetworkAreaInfo1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,16 +184,16 @@ func (o NetworkAreaInfo1) MarshalJSON() ([]byte, error) {
 
 func (o NetworkAreaInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ecgis) {
+	if !IsNil(o.Ecgis) {
 		toSerialize["ecgis"] = o.Ecgis
 	}
-	if !isNil(o.Ncgis) {
+	if !IsNil(o.Ncgis) {
 		toSerialize["ncgis"] = o.Ncgis
 	}
-	if !isNil(o.GRanNodeIds) {
+	if !IsNil(o.GRanNodeIds) {
 		toSerialize["gRanNodeIds"] = o.GRanNodeIds
 	}
-	if !isNil(o.Tais) {
+	if !IsNil(o.Tais) {
 		toSerialize["tais"] = o.Tais
 	}
 	return toSerialize, nil
@@ -234,5 +234,3 @@ func (v *NullableNetworkAreaInfo1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

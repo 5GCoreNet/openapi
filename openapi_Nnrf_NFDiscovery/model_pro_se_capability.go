@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &ProSeCapability{}
 
 // ProSeCapability Indicate the supported ProSe Capability by the PCF.
 type ProSeCapability struct {
-	ProseDirectDiscovey *bool `json:"proseDirectDiscovey,omitempty"`
+	ProseDirectDiscovey      *bool `json:"proseDirectDiscovey,omitempty"`
 	ProseDirectCommunication *bool `json:"proseDirectCommunication,omitempty"`
-	ProseL2UetoNetworkRelay *bool `json:"proseL2UetoNetworkRelay,omitempty"`
-	ProseL3UetoNetworkRelay *bool `json:"proseL3UetoNetworkRelay,omitempty"`
-	ProseL2RemoteUe *bool `json:"proseL2RemoteUe,omitempty"`
-	ProseL3RemoteUe *bool `json:"proseL3RemoteUe,omitempty"`
+	ProseL2UetoNetworkRelay  *bool `json:"proseL2UetoNetworkRelay,omitempty"`
+	ProseL3UetoNetworkRelay  *bool `json:"proseL3UetoNetworkRelay,omitempty"`
+	ProseL2RemoteUe          *bool `json:"proseL2RemoteUe,omitempty"`
+	ProseL3RemoteUe          *bool `json:"proseL3RemoteUe,omitempty"`
 }
 
 // NewProSeCapability instantiates a new ProSeCapability object
@@ -70,7 +70,7 @@ func NewProSeCapabilityWithDefaults() *ProSeCapability {
 
 // GetProseDirectDiscovey returns the ProseDirectDiscovey field value if set, zero value otherwise.
 func (o *ProSeCapability) GetProseDirectDiscovey() bool {
-	if o == nil || isNil(o.ProseDirectDiscovey) {
+	if o == nil || IsNil(o.ProseDirectDiscovey) {
 		var ret bool
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ProSeCapability) GetProseDirectDiscovey() bool {
 // GetProseDirectDiscoveyOk returns a tuple with the ProseDirectDiscovey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeCapability) GetProseDirectDiscoveyOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseDirectDiscovey) {
+	if o == nil || IsNil(o.ProseDirectDiscovey) {
 		return nil, false
 	}
 	return o.ProseDirectDiscovey, true
@@ -88,7 +88,7 @@ func (o *ProSeCapability) GetProseDirectDiscoveyOk() (*bool, bool) {
 
 // HasProseDirectDiscovey returns a boolean if a field has been set.
 func (o *ProSeCapability) HasProseDirectDiscovey() bool {
-	if o != nil && !isNil(o.ProseDirectDiscovey) {
+	if o != nil && !IsNil(o.ProseDirectDiscovey) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *ProSeCapability) SetProseDirectDiscovey(v bool) {
 
 // GetProseDirectCommunication returns the ProseDirectCommunication field value if set, zero value otherwise.
 func (o *ProSeCapability) GetProseDirectCommunication() bool {
-	if o == nil || isNil(o.ProseDirectCommunication) {
+	if o == nil || IsNil(o.ProseDirectCommunication) {
 		var ret bool
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *ProSeCapability) GetProseDirectCommunication() bool {
 // GetProseDirectCommunicationOk returns a tuple with the ProseDirectCommunication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeCapability) GetProseDirectCommunicationOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseDirectCommunication) {
+	if o == nil || IsNil(o.ProseDirectCommunication) {
 		return nil, false
 	}
 	return o.ProseDirectCommunication, true
@@ -120,7 +120,7 @@ func (o *ProSeCapability) GetProseDirectCommunicationOk() (*bool, bool) {
 
 // HasProseDirectCommunication returns a boolean if a field has been set.
 func (o *ProSeCapability) HasProseDirectCommunication() bool {
-	if o != nil && !isNil(o.ProseDirectCommunication) {
+	if o != nil && !IsNil(o.ProseDirectCommunication) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *ProSeCapability) SetProseDirectCommunication(v bool) {
 
 // GetProseL2UetoNetworkRelay returns the ProseL2UetoNetworkRelay field value if set, zero value otherwise.
 func (o *ProSeCapability) GetProseL2UetoNetworkRelay() bool {
-	if o == nil || isNil(o.ProseL2UetoNetworkRelay) {
+	if o == nil || IsNil(o.ProseL2UetoNetworkRelay) {
 		var ret bool
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *ProSeCapability) GetProseL2UetoNetworkRelay() bool {
 // GetProseL2UetoNetworkRelayOk returns a tuple with the ProseL2UetoNetworkRelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeCapability) GetProseL2UetoNetworkRelayOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseL2UetoNetworkRelay) {
+	if o == nil || IsNil(o.ProseL2UetoNetworkRelay) {
 		return nil, false
 	}
 	return o.ProseL2UetoNetworkRelay, true
@@ -152,7 +152,7 @@ func (o *ProSeCapability) GetProseL2UetoNetworkRelayOk() (*bool, bool) {
 
 // HasProseL2UetoNetworkRelay returns a boolean if a field has been set.
 func (o *ProSeCapability) HasProseL2UetoNetworkRelay() bool {
-	if o != nil && !isNil(o.ProseL2UetoNetworkRelay) {
+	if o != nil && !IsNil(o.ProseL2UetoNetworkRelay) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *ProSeCapability) SetProseL2UetoNetworkRelay(v bool) {
 
 // GetProseL3UetoNetworkRelay returns the ProseL3UetoNetworkRelay field value if set, zero value otherwise.
 func (o *ProSeCapability) GetProseL3UetoNetworkRelay() bool {
-	if o == nil || isNil(o.ProseL3UetoNetworkRelay) {
+	if o == nil || IsNil(o.ProseL3UetoNetworkRelay) {
 		var ret bool
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *ProSeCapability) GetProseL3UetoNetworkRelay() bool {
 // GetProseL3UetoNetworkRelayOk returns a tuple with the ProseL3UetoNetworkRelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeCapability) GetProseL3UetoNetworkRelayOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseL3UetoNetworkRelay) {
+	if o == nil || IsNil(o.ProseL3UetoNetworkRelay) {
 		return nil, false
 	}
 	return o.ProseL3UetoNetworkRelay, true
@@ -184,7 +184,7 @@ func (o *ProSeCapability) GetProseL3UetoNetworkRelayOk() (*bool, bool) {
 
 // HasProseL3UetoNetworkRelay returns a boolean if a field has been set.
 func (o *ProSeCapability) HasProseL3UetoNetworkRelay() bool {
-	if o != nil && !isNil(o.ProseL3UetoNetworkRelay) {
+	if o != nil && !IsNil(o.ProseL3UetoNetworkRelay) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *ProSeCapability) SetProseL3UetoNetworkRelay(v bool) {
 
 // GetProseL2RemoteUe returns the ProseL2RemoteUe field value if set, zero value otherwise.
 func (o *ProSeCapability) GetProseL2RemoteUe() bool {
-	if o == nil || isNil(o.ProseL2RemoteUe) {
+	if o == nil || IsNil(o.ProseL2RemoteUe) {
 		var ret bool
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *ProSeCapability) GetProseL2RemoteUe() bool {
 // GetProseL2RemoteUeOk returns a tuple with the ProseL2RemoteUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeCapability) GetProseL2RemoteUeOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseL2RemoteUe) {
+	if o == nil || IsNil(o.ProseL2RemoteUe) {
 		return nil, false
 	}
 	return o.ProseL2RemoteUe, true
@@ -216,7 +216,7 @@ func (o *ProSeCapability) GetProseL2RemoteUeOk() (*bool, bool) {
 
 // HasProseL2RemoteUe returns a boolean if a field has been set.
 func (o *ProSeCapability) HasProseL2RemoteUe() bool {
-	if o != nil && !isNil(o.ProseL2RemoteUe) {
+	if o != nil && !IsNil(o.ProseL2RemoteUe) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *ProSeCapability) SetProseL2RemoteUe(v bool) {
 
 // GetProseL3RemoteUe returns the ProseL3RemoteUe field value if set, zero value otherwise.
 func (o *ProSeCapability) GetProseL3RemoteUe() bool {
-	if o == nil || isNil(o.ProseL3RemoteUe) {
+	if o == nil || IsNil(o.ProseL3RemoteUe) {
 		var ret bool
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *ProSeCapability) GetProseL3RemoteUe() bool {
 // GetProseL3RemoteUeOk returns a tuple with the ProseL3RemoteUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeCapability) GetProseL3RemoteUeOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseL3RemoteUe) {
+	if o == nil || IsNil(o.ProseL3RemoteUe) {
 		return nil, false
 	}
 	return o.ProseL3RemoteUe, true
@@ -248,7 +248,7 @@ func (o *ProSeCapability) GetProseL3RemoteUeOk() (*bool, bool) {
 
 // HasProseL3RemoteUe returns a boolean if a field has been set.
 func (o *ProSeCapability) HasProseL3RemoteUe() bool {
-	if o != nil && !isNil(o.ProseL3RemoteUe) {
+	if o != nil && !IsNil(o.ProseL3RemoteUe) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *ProSeCapability) SetProseL3RemoteUe(v bool) {
 }
 
 func (o ProSeCapability) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,22 +270,22 @@ func (o ProSeCapability) MarshalJSON() ([]byte, error) {
 
 func (o ProSeCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ProseDirectDiscovey) {
+	if !IsNil(o.ProseDirectDiscovey) {
 		toSerialize["proseDirectDiscovey"] = o.ProseDirectDiscovey
 	}
-	if !isNil(o.ProseDirectCommunication) {
+	if !IsNil(o.ProseDirectCommunication) {
 		toSerialize["proseDirectCommunication"] = o.ProseDirectCommunication
 	}
-	if !isNil(o.ProseL2UetoNetworkRelay) {
+	if !IsNil(o.ProseL2UetoNetworkRelay) {
 		toSerialize["proseL2UetoNetworkRelay"] = o.ProseL2UetoNetworkRelay
 	}
-	if !isNil(o.ProseL3UetoNetworkRelay) {
+	if !IsNil(o.ProseL3UetoNetworkRelay) {
 		toSerialize["proseL3UetoNetworkRelay"] = o.ProseL3UetoNetworkRelay
 	}
-	if !isNil(o.ProseL2RemoteUe) {
+	if !IsNil(o.ProseL2RemoteUe) {
 		toSerialize["proseL2RemoteUe"] = o.ProseL2RemoteUe
 	}
-	if !isNil(o.ProseL3RemoteUe) {
+	if !IsNil(o.ProseL3RemoteUe) {
 		toSerialize["proseL3RemoteUe"] = o.ProseL3RemoteUe
 	}
 	return toSerialize, nil
@@ -326,5 +326,3 @@ func (v *NullableProSeCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,11 +17,11 @@ import (
 // checks if the ObjectContext type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ObjectContext{}
 
-// ObjectContext This data type is the \"ObjectContext\" data type without specialisations        
+// ObjectContext This data type is the \"ObjectContext\" data type without specialisations
 type ObjectContext struct {
-	ContextAttribute *string `json:"contextAttribute,omitempty"`
-	ContextCondition *Condition `json:"contextCondition,omitempty"`
-	ContextValueRange []float32 `json:"contextValueRange,omitempty"`
+	ContextAttribute  *string    `json:"contextAttribute,omitempty"`
+	ContextCondition  *Condition `json:"contextCondition,omitempty"`
+	ContextValueRange []float32  `json:"contextValueRange,omitempty"`
 }
 
 // NewObjectContext instantiates a new ObjectContext object
@@ -43,7 +43,7 @@ func NewObjectContextWithDefaults() *ObjectContext {
 
 // GetContextAttribute returns the ContextAttribute field value if set, zero value otherwise.
 func (o *ObjectContext) GetContextAttribute() string {
-	if o == nil || isNil(o.ContextAttribute) {
+	if o == nil || IsNil(o.ContextAttribute) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ObjectContext) GetContextAttribute() string {
 // GetContextAttributeOk returns a tuple with the ContextAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectContext) GetContextAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.ContextAttribute) {
+	if o == nil || IsNil(o.ContextAttribute) {
 		return nil, false
 	}
 	return o.ContextAttribute, true
@@ -61,7 +61,7 @@ func (o *ObjectContext) GetContextAttributeOk() (*string, bool) {
 
 // HasContextAttribute returns a boolean if a field has been set.
 func (o *ObjectContext) HasContextAttribute() bool {
-	if o != nil && !isNil(o.ContextAttribute) {
+	if o != nil && !IsNil(o.ContextAttribute) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ObjectContext) SetContextAttribute(v string) {
 
 // GetContextCondition returns the ContextCondition field value if set, zero value otherwise.
 func (o *ObjectContext) GetContextCondition() Condition {
-	if o == nil || isNil(o.ContextCondition) {
+	if o == nil || IsNil(o.ContextCondition) {
 		var ret Condition
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ObjectContext) GetContextCondition() Condition {
 // GetContextConditionOk returns a tuple with the ContextCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectContext) GetContextConditionOk() (*Condition, bool) {
-	if o == nil || isNil(o.ContextCondition) {
+	if o == nil || IsNil(o.ContextCondition) {
 		return nil, false
 	}
 	return o.ContextCondition, true
@@ -93,7 +93,7 @@ func (o *ObjectContext) GetContextConditionOk() (*Condition, bool) {
 
 // HasContextCondition returns a boolean if a field has been set.
 func (o *ObjectContext) HasContextCondition() bool {
-	if o != nil && !isNil(o.ContextCondition) {
+	if o != nil && !IsNil(o.ContextCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ObjectContext) SetContextCondition(v Condition) {
 
 // GetContextValueRange returns the ContextValueRange field value if set, zero value otherwise.
 func (o *ObjectContext) GetContextValueRange() []float32 {
-	if o == nil || isNil(o.ContextValueRange) {
+	if o == nil || IsNil(o.ContextValueRange) {
 		var ret []float32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ObjectContext) GetContextValueRange() []float32 {
 // GetContextValueRangeOk returns a tuple with the ContextValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectContext) GetContextValueRangeOk() ([]float32, bool) {
-	if o == nil || isNil(o.ContextValueRange) {
+	if o == nil || IsNil(o.ContextValueRange) {
 		return nil, false
 	}
 	return o.ContextValueRange, true
@@ -125,7 +125,7 @@ func (o *ObjectContext) GetContextValueRangeOk() ([]float32, bool) {
 
 // HasContextValueRange returns a boolean if a field has been set.
 func (o *ObjectContext) HasContextValueRange() bool {
-	if o != nil && !isNil(o.ContextValueRange) {
+	if o != nil && !IsNil(o.ContextValueRange) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ObjectContext) SetContextValueRange(v []float32) {
 }
 
 func (o ObjectContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ObjectContext) MarshalJSON() ([]byte, error) {
 
 func (o ObjectContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ContextAttribute) {
+	if !IsNil(o.ContextAttribute) {
 		toSerialize["contextAttribute"] = o.ContextAttribute
 	}
-	if !isNil(o.ContextCondition) {
+	if !IsNil(o.ContextCondition) {
 		toSerialize["contextCondition"] = o.ContextCondition
 	}
-	if !isNil(o.ContextValueRange) {
+	if !IsNil(o.ContextValueRange) {
 		toSerialize["contextValueRange"] = o.ContextValueRange
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableObjectContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the AfEventExposureNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AfEventExposureNotif{}
 
-// AfEventExposureNotif Represents notifications on application event(s) that occurred for an Individual Application Event Subscription resource. 
+// AfEventExposureNotif Represents notifications on application event(s) that occurred for an Individual Application Event Subscription resource.
 type AfEventExposureNotif struct {
-	NotifId string `json:"notifId"`
+	NotifId     string                `json:"notifId"`
 	EventNotifs []AfEventNotification `json:"eventNotifs"`
 }
 
@@ -91,7 +91,7 @@ func (o *AfEventExposureNotif) SetEventNotifs(v []AfEventNotification) {
 }
 
 func (o AfEventExposureNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableAfEventExposureNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

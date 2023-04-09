@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &PlmnEcInfo{}
 
 // PlmnEcInfo struct for PlmnEcInfo
 type PlmnEcInfo struct {
-	PlmnId PlmnId `json:"plmnId"`
+	PlmnId              PlmnId               `json:"plmnId"`
 	EcRestrictionDataWb *EcRestrictionDataWb `json:"ecRestrictionDataWb,omitempty"`
-	EcRestrictionDataNb *bool `json:"ecRestrictionDataNb,omitempty"`
+	EcRestrictionDataNb *bool                `json:"ecRestrictionDataNb,omitempty"`
 }
 
 // NewPlmnEcInfo instantiates a new PlmnEcInfo object
@@ -72,7 +72,7 @@ func (o *PlmnEcInfo) SetPlmnId(v PlmnId) {
 
 // GetEcRestrictionDataWb returns the EcRestrictionDataWb field value if set, zero value otherwise.
 func (o *PlmnEcInfo) GetEcRestrictionDataWb() EcRestrictionDataWb {
-	if o == nil || isNil(o.EcRestrictionDataWb) {
+	if o == nil || IsNil(o.EcRestrictionDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *PlmnEcInfo) GetEcRestrictionDataWb() EcRestrictionDataWb {
 // GetEcRestrictionDataWbOk returns a tuple with the EcRestrictionDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcInfo) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || isNil(o.EcRestrictionDataWb) {
+	if o == nil || IsNil(o.EcRestrictionDataWb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataWb, true
@@ -90,7 +90,7 @@ func (o *PlmnEcInfo) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
 
 // HasEcRestrictionDataWb returns a boolean if a field has been set.
 func (o *PlmnEcInfo) HasEcRestrictionDataWb() bool {
-	if o != nil && !isNil(o.EcRestrictionDataWb) {
+	if o != nil && !IsNil(o.EcRestrictionDataWb) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *PlmnEcInfo) SetEcRestrictionDataWb(v EcRestrictionDataWb) {
 
 // GetEcRestrictionDataNb returns the EcRestrictionDataNb field value if set, zero value otherwise.
 func (o *PlmnEcInfo) GetEcRestrictionDataNb() bool {
-	if o == nil || isNil(o.EcRestrictionDataNb) {
+	if o == nil || IsNil(o.EcRestrictionDataNb) {
 		var ret bool
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *PlmnEcInfo) GetEcRestrictionDataNb() bool {
 // GetEcRestrictionDataNbOk returns a tuple with the EcRestrictionDataNb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcInfo) GetEcRestrictionDataNbOk() (*bool, bool) {
-	if o == nil || isNil(o.EcRestrictionDataNb) {
+	if o == nil || IsNil(o.EcRestrictionDataNb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataNb, true
@@ -122,7 +122,7 @@ func (o *PlmnEcInfo) GetEcRestrictionDataNbOk() (*bool, bool) {
 
 // HasEcRestrictionDataNb returns a boolean if a field has been set.
 func (o *PlmnEcInfo) HasEcRestrictionDataNb() bool {
-	if o != nil && !isNil(o.EcRestrictionDataNb) {
+	if o != nil && !IsNil(o.EcRestrictionDataNb) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *PlmnEcInfo) SetEcRestrictionDataNb(v bool) {
 }
 
 func (o PlmnEcInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -145,10 +145,10 @@ func (o PlmnEcInfo) MarshalJSON() ([]byte, error) {
 func (o PlmnEcInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.EcRestrictionDataWb) {
+	if !IsNil(o.EcRestrictionDataWb) {
 		toSerialize["ecRestrictionDataWb"] = o.EcRestrictionDataWb
 	}
-	if !isNil(o.EcRestrictionDataNb) {
+	if !IsNil(o.EcRestrictionDataNb) {
 		toSerialize["ecRestrictionDataNb"] = o.EcRestrictionDataNb
 	}
 	return toSerialize, nil
@@ -189,5 +189,3 @@ func (v *NullablePlmnEcInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

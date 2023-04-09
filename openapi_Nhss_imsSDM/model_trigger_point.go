@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the TriggerPoint type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TriggerPoint{}
 
-// TriggerPoint Contains the conditions that should be checked in order to find out if an Application Server should be contacted or not 
+// TriggerPoint Contains the conditions that should be checked in order to find out if an Application Server should be contacted or not
 type TriggerPoint struct {
 	ConditionType TypeOfCondition `json:"conditionType"`
-	SptList []Spt `json:"sptList"`
+	SptList       []Spt           `json:"sptList"`
 }
 
 // NewTriggerPoint instantiates a new TriggerPoint object
@@ -91,7 +91,7 @@ func (o *TriggerPoint) SetSptList(v []Spt) {
 }
 
 func (o TriggerPoint) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableTriggerPoint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

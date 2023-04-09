@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &Tmgi1{}
 // Tmgi1 Temporary Mobile Group Identity
 type Tmgi1 struct {
 	// MBS Service ID
-	MbsServiceId string `json:"mbsServiceId"`
-	PlmnId PlmnId1 `json:"plmnId"`
+	MbsServiceId string  `json:"mbsServiceId"`
+	PlmnId       PlmnId1 `json:"plmnId"`
 }
 
 // NewTmgi1 instantiates a new Tmgi1 object
@@ -92,7 +92,7 @@ func (o *Tmgi1) SetPlmnId(v PlmnId1) {
 }
 
 func (o Tmgi1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableTmgi1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // LocationAccuracy struct for LocationAccuracy
 type LocationAccuracy struct {
-	LocationAccuracyAnyOf *LocationAccuracyAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocationAccuracy) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocationAccuracyAnyOf
-	err = json.Unmarshal(data, &dst.LocationAccuracyAnyOf);
-	if err == nil {
-		jsonLocationAccuracyAnyOf, _ := json.Marshal(dst.LocationAccuracyAnyOf)
-		if string(jsonLocationAccuracyAnyOf) == "{}" { // empty struct
-			dst.LocationAccuracyAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocationAccuracyAnyOf, return on the first match
-		}
-	} else {
-		dst.LocationAccuracyAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocationAccuracy) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocationAccuracy) MarshalJSON() ([]byte, error) {
-	if src.LocationAccuracyAnyOf != nil {
-		return json.Marshal(&src.LocationAccuracyAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocationAccuracy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

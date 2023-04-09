@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Invoker_Management_API
 
-API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -69,7 +69,7 @@ func (o *InvalidParam) SetParam(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *InvalidParam) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *InvalidParam) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InvalidParam) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -87,7 +87,7 @@ func (o *InvalidParam) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *InvalidParam) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *InvalidParam) SetReason(v string) {
 }
 
 func (o InvalidParam) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o InvalidParam) MarshalJSON() ([]byte, error) {
 func (o InvalidParam) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["param"] = o.Param
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableInvalidParam) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SteeringInfo{}
 
 // SteeringInfo Contains a combination of one PLMN identity and zero or more access technologies.
 type SteeringInfo struct {
-	PlmnId PlmnId `json:"plmnId"`
+	PlmnId         PlmnId       `json:"plmnId"`
 	AccessTechList []AccessTech `json:"accessTechList,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *SteeringInfo) SetPlmnId(v PlmnId) {
 
 // GetAccessTechList returns the AccessTechList field value if set, zero value otherwise.
 func (o *SteeringInfo) GetAccessTechList() []AccessTech {
-	if o == nil || isNil(o.AccessTechList) {
+	if o == nil || IsNil(o.AccessTechList) {
 		var ret []AccessTech
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SteeringInfo) GetAccessTechList() []AccessTech {
 // GetAccessTechListOk returns a tuple with the AccessTechList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringInfo) GetAccessTechListOk() ([]AccessTech, bool) {
-	if o == nil || isNil(o.AccessTechList) {
+	if o == nil || IsNil(o.AccessTechList) {
 		return nil, false
 	}
 	return o.AccessTechList, true
@@ -85,7 +85,7 @@ func (o *SteeringInfo) GetAccessTechListOk() ([]AccessTech, bool) {
 
 // HasAccessTechList returns a boolean if a field has been set.
 func (o *SteeringInfo) HasAccessTechList() bool {
-	if o != nil && !isNil(o.AccessTechList) {
+	if o != nil && !IsNil(o.AccessTechList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SteeringInfo) SetAccessTechList(v []AccessTech) {
 }
 
 func (o SteeringInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SteeringInfo) MarshalJSON() ([]byte, error) {
 func (o SteeringInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.AccessTechList) {
+	if !IsNil(o.AccessTechList) {
 		toSerialize["accessTechList"] = o.AccessTechList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSteeringInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

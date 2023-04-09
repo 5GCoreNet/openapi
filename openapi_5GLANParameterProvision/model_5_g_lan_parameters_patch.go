@@ -1,7 +1,7 @@
 /*
 3gpp-5glan-pp
 
-API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &Model5GLanParametersPatch{}
 
 // Model5GLanParametersPatch Represents 5G LAN service related parameters that need to be modified.
 type Model5GLanParametersPatch struct {
-	// Contains the list of 5G VN Group members, each member is identified by GPSI. Any string value can be used as a key of the map. 
+	// Contains the list of 5G VN Group members, each member is identified by GPSI. Any string value can be used as a key of the map.
 	Gpsis *map[string]string `json:"gpsis,omitempty"`
-	// Describes the operation systems and the corresponding applications for each operation systems. The key of map is osId. 
+	// Describes the operation systems and the corresponding applications for each operation systems. The key of map is osId.
 	AppDesps *map[string]AppDescriptorRm `json:"appDesps,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewModel5GLanParametersPatchWithDefaults() *Model5GLanParametersPatch {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *Model5GLanParametersPatch) GetGpsis() map[string]string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret map[string]string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Model5GLanParametersPatch) GetGpsis() map[string]string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersPatch) GetGpsisOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -62,7 +62,7 @@ func (o *Model5GLanParametersPatch) GetGpsisOk() (*map[string]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *Model5GLanParametersPatch) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Model5GLanParametersPatch) SetGpsis(v map[string]string) {
 
 // GetAppDesps returns the AppDesps field value if set, zero value otherwise.
 func (o *Model5GLanParametersPatch) GetAppDesps() map[string]AppDescriptorRm {
-	if o == nil || isNil(o.AppDesps) {
+	if o == nil || IsNil(o.AppDesps) {
 		var ret map[string]AppDescriptorRm
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Model5GLanParametersPatch) GetAppDesps() map[string]AppDescriptorRm {
 // GetAppDespsOk returns a tuple with the AppDesps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersPatch) GetAppDespsOk() (*map[string]AppDescriptorRm, bool) {
-	if o == nil || isNil(o.AppDesps) {
+	if o == nil || IsNil(o.AppDesps) {
 		return nil, false
 	}
 	return o.AppDesps, true
@@ -94,7 +94,7 @@ func (o *Model5GLanParametersPatch) GetAppDespsOk() (*map[string]AppDescriptorRm
 
 // HasAppDesps returns a boolean if a field has been set.
 func (o *Model5GLanParametersPatch) HasAppDesps() bool {
-	if o != nil && !isNil(o.AppDesps) {
+	if o != nil && !IsNil(o.AppDesps) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Model5GLanParametersPatch) SetAppDesps(v map[string]AppDescriptorRm) {
 }
 
 func (o Model5GLanParametersPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o Model5GLanParametersPatch) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLanParametersPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.AppDesps) {
+	if !IsNil(o.AppDesps) {
 		toSerialize["appDesps"] = o.AppDesps
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableModel5GLanParametersPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

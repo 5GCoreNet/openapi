@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,25 +15,25 @@ import (
 	"fmt"
 )
 
-// SubscrCond - Condition to determine the set of NFs to monitor under a certain subscription in NRF 
+// SubscrCond - Condition to determine the set of NFs to monitor under a certain subscription in NRF
 type SubscrCond struct {
-	AmfCond *AmfCond
-	DccfCond *DccfCond
-	GuamiListCond *GuamiListCond
-	NefCond *NefCond
-	NetworkSliceCond *NetworkSliceCond
-	NfGroupCond *NfGroupCond
-	NfGroupListCond *NfGroupListCond
-	NfInstanceIdCond *NfInstanceIdCond
+	AmfCond              *AmfCond
+	DccfCond             *DccfCond
+	GuamiListCond        *GuamiListCond
+	NefCond              *NefCond
+	NetworkSliceCond     *NetworkSliceCond
+	NfGroupCond          *NfGroupCond
+	NfGroupListCond      *NfGroupListCond
+	NfInstanceIdCond     *NfInstanceIdCond
 	NfInstanceIdListCond *NfInstanceIdListCond
-	NfServiceSetCond *NfServiceSetCond
-	NfSetCond *NfSetCond
-	NfTypeCond *NfTypeCond
-	NwdafCond *NwdafCond
-	ScpDomainCond *ScpDomainCond
-	ServiceNameCond *ServiceNameCond
-	ServiceNameListCond *ServiceNameListCond
-	UpfCond *UpfCond
+	NfServiceSetCond     *NfServiceSetCond
+	NfSetCond            *NfSetCond
+	NfTypeCond           *NfTypeCond
+	NwdafCond            *NwdafCond
+	ScpDomainCond        *ScpDomainCond
+	ServiceNameCond      *ServiceNameCond
+	ServiceNameListCond  *ServiceNameListCond
+	UpfCond              *UpfCond
 }
 
 // AmfCondAsSubscrCond is a convenience function that returns AmfCond wrapped in SubscrCond
@@ -154,7 +154,6 @@ func UpfCondAsSubscrCond(v *UpfCond) SubscrCond {
 		UpfCond: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SubscrCond) UnmarshalJSON(data []byte) error {
@@ -483,7 +482,7 @@ func (src SubscrCond) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SubscrCond) GetActualInstance() (interface{}) {
+func (obj *SubscrCond) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -594,5 +593,3 @@ func (v *NullableSubscrCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

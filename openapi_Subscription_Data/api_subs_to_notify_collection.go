@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,19 +13,18 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // SubsToNotifyCollectionApiService SubsToNotifyCollectionApi service
 type SubsToNotifyCollectionApiService service
 
 type ApiQuerySubsToNotifyRequest struct {
-	ctx context.Context
-	ApiService *SubsToNotifyCollectionApiService
-	ueId *string
+	ctx               context.Context
+	ApiService        *SubsToNotifyCollectionApiService
+	ueId              *string
 	supportedFeatures *string
 }
 
@@ -48,24 +47,25 @@ func (r ApiQuerySubsToNotifyRequest) Execute() ([]SubscriptionDataSubscriptions,
 /*
 QuerySubsToNotify Retrieves the list of subscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiQuerySubsToNotifyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiQuerySubsToNotifyRequest
 */
 func (a *SubsToNotifyCollectionApiService) QuerySubsToNotify(ctx context.Context) ApiQuerySubsToNotifyRequest {
 	return ApiQuerySubsToNotifyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SubscriptionDataSubscriptions
+//
+//	@return []SubscriptionDataSubscriptions
 func (a *SubsToNotifyCollectionApiService) QuerySubsToNotifyExecute(r ApiQuerySubsToNotifyRequest) ([]SubscriptionDataSubscriptions, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SubscriptionDataSubscriptions
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SubscriptionDataSubscriptions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubsToNotifyCollectionApiService.QuerySubsToNotify")
@@ -82,9 +82,9 @@ func (a *SubsToNotifyCollectionApiService) QuerySubsToNotifyExecute(r ApiQuerySu
 		return localVarReturnValue, nil, reportError("ueId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "ue-id", r.ueId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id", r.ueId, "")
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -113,9 +113,9 @@ func (a *SubsToNotifyCollectionApiService) QuerySubsToNotifyExecute(r ApiQuerySu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -141,11 +141,11 @@ func (a *SubsToNotifyCollectionApiService) QuerySubsToNotifyExecute(r ApiQuerySu
 }
 
 type ApiRemoveMultipleSubscriptionDataSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *SubsToNotifyCollectionApiService
-	ueId *string
-	nfInstanceId *string
-	deleteAllNfs *bool
+	ctx                           context.Context
+	ApiService                    *SubsToNotifyCollectionApiService
+	ueId                          *string
+	nfInstanceId                  *string
+	deleteAllNfs                  *bool
 	implicitUnsubscribeIndication *bool
 }
 
@@ -180,22 +180,22 @@ func (r ApiRemoveMultipleSubscriptionDataSubscriptionsRequest) Execute() (*http.
 /*
 RemoveMultipleSubscriptionDataSubscriptions Deletes subscriptions identified by a given ue-id parameter
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRemoveMultipleSubscriptionDataSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRemoveMultipleSubscriptionDataSubscriptionsRequest
 */
 func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscriptions(ctx context.Context) ApiRemoveMultipleSubscriptionDataSubscriptionsRequest {
 	return ApiRemoveMultipleSubscriptionDataSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscriptionsExecute(r ApiRemoveMultipleSubscriptionDataSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubsToNotifyCollectionApiService.RemoveMultipleSubscriptionDataSubscriptions")
@@ -212,15 +212,15 @@ func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscri
 		return nil, reportError("ueId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "ue-id", r.ueId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id", r.ueId, "")
 	if r.nfInstanceId != nil {
-		parameterAddToQuery(localVarQueryParams, "nf-instance-id", r.nfInstanceId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nf-instance-id", r.nfInstanceId, "")
 	}
 	if r.deleteAllNfs != nil {
-		parameterAddToQuery(localVarQueryParams, "delete-all-nfs", r.deleteAllNfs, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "delete-all-nfs", r.deleteAllNfs, "")
 	}
 	if r.implicitUnsubscribeIndication != nil {
-		parameterAddToQuery(localVarQueryParams, "implicit-unsubscribe-indication", r.implicitUnsubscribeIndication, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "implicit-unsubscribe-indication", r.implicitUnsubscribeIndication, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -249,9 +249,9 @@ func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -268,8 +268,8 @@ func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscri
 }
 
 type ApiSubscriptionDataSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *SubsToNotifyCollectionApiService
+	ctx                           context.Context
+	ApiService                    *SubsToNotifyCollectionApiService
 	subscriptionDataSubscriptions *SubscriptionDataSubscriptions
 }
 
@@ -285,24 +285,25 @@ func (r ApiSubscriptionDataSubscriptionsRequest) Execute() (*SubscriptionDataSub
 /*
 SubscriptionDataSubscriptions Subscription data subscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSubscriptionDataSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSubscriptionDataSubscriptionsRequest
 */
 func (a *SubsToNotifyCollectionApiService) SubscriptionDataSubscriptions(ctx context.Context) ApiSubscriptionDataSubscriptionsRequest {
 	return ApiSubscriptionDataSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SubscriptionDataSubscriptions
+//
+//	@return SubscriptionDataSubscriptions
 func (a *SubsToNotifyCollectionApiService) SubscriptionDataSubscriptionsExecute(r ApiSubscriptionDataSubscriptionsRequest) (*SubscriptionDataSubscriptions, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SubscriptionDataSubscriptions
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SubscriptionDataSubscriptions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubsToNotifyCollectionApiService.SubscriptionDataSubscriptions")
@@ -348,9 +349,9 @@ func (a *SubsToNotifyCollectionApiService) SubscriptionDataSubscriptionsExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

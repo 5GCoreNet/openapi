@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,12 +22,12 @@ type NwdafMLModelProvSubsc struct {
 	// Subscribed events
 	MLEventSubscs []MLEventSubscription `json:"mLEventSubscs"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
+	NotifUri      string         `json:"notifUri"`
 	MLEventNotifs []MLEventNotif `json:"mLEventNotifs,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SuppFeats *string `json:"suppFeats,omitempty"`
-	NotifCorreId *string `json:"notifCorreId,omitempty"`
-	EventReq *ReportingInformation `json:"eventReq,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SuppFeats        *string                      `json:"suppFeats,omitempty"`
+	NotifCorreId     *string                      `json:"notifCorreId,omitempty"`
+	EventReq         *ReportingInformation        `json:"eventReq,omitempty"`
 	FailEventReports []FailureEventInfoForMLModel `json:"failEventReports,omitempty"`
 }
 
@@ -100,7 +100,7 @@ func (o *NwdafMLModelProvSubsc) SetNotifUri(v string) {
 
 // GetMLEventNotifs returns the MLEventNotifs field value if set, zero value otherwise.
 func (o *NwdafMLModelProvSubsc) GetMLEventNotifs() []MLEventNotif {
-	if o == nil || isNil(o.MLEventNotifs) {
+	if o == nil || IsNil(o.MLEventNotifs) {
 		var ret []MLEventNotif
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *NwdafMLModelProvSubsc) GetMLEventNotifs() []MLEventNotif {
 // GetMLEventNotifsOk returns a tuple with the MLEventNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafMLModelProvSubsc) GetMLEventNotifsOk() ([]MLEventNotif, bool) {
-	if o == nil || isNil(o.MLEventNotifs) {
+	if o == nil || IsNil(o.MLEventNotifs) {
 		return nil, false
 	}
 	return o.MLEventNotifs, true
@@ -118,7 +118,7 @@ func (o *NwdafMLModelProvSubsc) GetMLEventNotifsOk() ([]MLEventNotif, bool) {
 
 // HasMLEventNotifs returns a boolean if a field has been set.
 func (o *NwdafMLModelProvSubsc) HasMLEventNotifs() bool {
-	if o != nil && !isNil(o.MLEventNotifs) {
+	if o != nil && !IsNil(o.MLEventNotifs) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *NwdafMLModelProvSubsc) SetMLEventNotifs(v []MLEventNotif) {
 
 // GetSuppFeats returns the SuppFeats field value if set, zero value otherwise.
 func (o *NwdafMLModelProvSubsc) GetSuppFeats() string {
-	if o == nil || isNil(o.SuppFeats) {
+	if o == nil || IsNil(o.SuppFeats) {
 		var ret string
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *NwdafMLModelProvSubsc) GetSuppFeats() string {
 // GetSuppFeatsOk returns a tuple with the SuppFeats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafMLModelProvSubsc) GetSuppFeatsOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeats) {
+	if o == nil || IsNil(o.SuppFeats) {
 		return nil, false
 	}
 	return o.SuppFeats, true
@@ -150,7 +150,7 @@ func (o *NwdafMLModelProvSubsc) GetSuppFeatsOk() (*string, bool) {
 
 // HasSuppFeats returns a boolean if a field has been set.
 func (o *NwdafMLModelProvSubsc) HasSuppFeats() bool {
-	if o != nil && !isNil(o.SuppFeats) {
+	if o != nil && !IsNil(o.SuppFeats) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *NwdafMLModelProvSubsc) SetSuppFeats(v string) {
 
 // GetNotifCorreId returns the NotifCorreId field value if set, zero value otherwise.
 func (o *NwdafMLModelProvSubsc) GetNotifCorreId() string {
-	if o == nil || isNil(o.NotifCorreId) {
+	if o == nil || IsNil(o.NotifCorreId) {
 		var ret string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *NwdafMLModelProvSubsc) GetNotifCorreId() string {
 // GetNotifCorreIdOk returns a tuple with the NotifCorreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafMLModelProvSubsc) GetNotifCorreIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifCorreId) {
+	if o == nil || IsNil(o.NotifCorreId) {
 		return nil, false
 	}
 	return o.NotifCorreId, true
@@ -182,7 +182,7 @@ func (o *NwdafMLModelProvSubsc) GetNotifCorreIdOk() (*string, bool) {
 
 // HasNotifCorreId returns a boolean if a field has been set.
 func (o *NwdafMLModelProvSubsc) HasNotifCorreId() bool {
-	if o != nil && !isNil(o.NotifCorreId) {
+	if o != nil && !IsNil(o.NotifCorreId) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *NwdafMLModelProvSubsc) SetNotifCorreId(v string) {
 
 // GetEventReq returns the EventReq field value if set, zero value otherwise.
 func (o *NwdafMLModelProvSubsc) GetEventReq() ReportingInformation {
-	if o == nil || isNil(o.EventReq) {
+	if o == nil || IsNil(o.EventReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *NwdafMLModelProvSubsc) GetEventReq() ReportingInformation {
 // GetEventReqOk returns a tuple with the EventReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafMLModelProvSubsc) GetEventReqOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.EventReq) {
+	if o == nil || IsNil(o.EventReq) {
 		return nil, false
 	}
 	return o.EventReq, true
@@ -214,7 +214,7 @@ func (o *NwdafMLModelProvSubsc) GetEventReqOk() (*ReportingInformation, bool) {
 
 // HasEventReq returns a boolean if a field has been set.
 func (o *NwdafMLModelProvSubsc) HasEventReq() bool {
-	if o != nil && !isNil(o.EventReq) {
+	if o != nil && !IsNil(o.EventReq) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *NwdafMLModelProvSubsc) SetEventReq(v ReportingInformation) {
 
 // GetFailEventReports returns the FailEventReports field value if set, zero value otherwise.
 func (o *NwdafMLModelProvSubsc) GetFailEventReports() []FailureEventInfoForMLModel {
-	if o == nil || isNil(o.FailEventReports) {
+	if o == nil || IsNil(o.FailEventReports) {
 		var ret []FailureEventInfoForMLModel
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *NwdafMLModelProvSubsc) GetFailEventReports() []FailureEventInfoForMLMod
 // GetFailEventReportsOk returns a tuple with the FailEventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafMLModelProvSubsc) GetFailEventReportsOk() ([]FailureEventInfoForMLModel, bool) {
-	if o == nil || isNil(o.FailEventReports) {
+	if o == nil || IsNil(o.FailEventReports) {
 		return nil, false
 	}
 	return o.FailEventReports, true
@@ -246,7 +246,7 @@ func (o *NwdafMLModelProvSubsc) GetFailEventReportsOk() ([]FailureEventInfoForML
 
 // HasFailEventReports returns a boolean if a field has been set.
 func (o *NwdafMLModelProvSubsc) HasFailEventReports() bool {
-	if o != nil && !isNil(o.FailEventReports) {
+	if o != nil && !IsNil(o.FailEventReports) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *NwdafMLModelProvSubsc) SetFailEventReports(v []FailureEventInfoForMLMod
 }
 
 func (o NwdafMLModelProvSubsc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,19 +270,19 @@ func (o NwdafMLModelProvSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mLEventSubscs"] = o.MLEventSubscs
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.MLEventNotifs) {
+	if !IsNil(o.MLEventNotifs) {
 		toSerialize["mLEventNotifs"] = o.MLEventNotifs
 	}
-	if !isNil(o.SuppFeats) {
+	if !IsNil(o.SuppFeats) {
 		toSerialize["suppFeats"] = o.SuppFeats
 	}
-	if !isNil(o.NotifCorreId) {
+	if !IsNil(o.NotifCorreId) {
 		toSerialize["notifCorreId"] = o.NotifCorreId
 	}
-	if !isNil(o.EventReq) {
+	if !IsNil(o.EventReq) {
 		toSerialize["eventReq"] = o.EventReq
 	}
-	if !isNil(o.FailEventReports) {
+	if !IsNil(o.FailEventReports) {
 		toSerialize["failEventReports"] = o.FailEventReports
 	}
 	return toSerialize, nil
@@ -323,5 +323,3 @@ func (v *NullableNwdafMLModelProvSubsc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

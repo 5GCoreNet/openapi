@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the ApplicationServer type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApplicationServer{}
 
-// ApplicationServer Application Server which shall be triggered if the conditions of a certain IFC are met, and its associated data 
+// ApplicationServer Application Server which shall be triggered if the conditions of a certain IFC are met, and its associated data
 type ApplicationServer struct {
-	AsUri string `json:"asUri"`
-	SessionContinue *bool `json:"sessionContinue,omitempty"`
+	AsUri           string               `json:"asUri"`
+	SessionContinue *bool                `json:"sessionContinue,omitempty"`
 	ServiceInfoList []ServiceInformation `json:"serviceInfoList,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *ApplicationServer) SetAsUri(v string) {
 
 // GetSessionContinue returns the SessionContinue field value if set, zero value otherwise.
 func (o *ApplicationServer) GetSessionContinue() bool {
-	if o == nil || isNil(o.SessionContinue) {
+	if o == nil || IsNil(o.SessionContinue) {
 		var ret bool
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ApplicationServer) GetSessionContinue() bool {
 // GetSessionContinueOk returns a tuple with the SessionContinue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationServer) GetSessionContinueOk() (*bool, bool) {
-	if o == nil || isNil(o.SessionContinue) {
+	if o == nil || IsNil(o.SessionContinue) {
 		return nil, false
 	}
 	return o.SessionContinue, true
@@ -86,7 +86,7 @@ func (o *ApplicationServer) GetSessionContinueOk() (*bool, bool) {
 
 // HasSessionContinue returns a boolean if a field has been set.
 func (o *ApplicationServer) HasSessionContinue() bool {
-	if o != nil && !isNil(o.SessionContinue) {
+	if o != nil && !IsNil(o.SessionContinue) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ApplicationServer) SetSessionContinue(v bool) {
 
 // GetServiceInfoList returns the ServiceInfoList field value if set, zero value otherwise.
 func (o *ApplicationServer) GetServiceInfoList() []ServiceInformation {
-	if o == nil || isNil(o.ServiceInfoList) {
+	if o == nil || IsNil(o.ServiceInfoList) {
 		var ret []ServiceInformation
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ApplicationServer) GetServiceInfoList() []ServiceInformation {
 // GetServiceInfoListOk returns a tuple with the ServiceInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationServer) GetServiceInfoListOk() ([]ServiceInformation, bool) {
-	if o == nil || isNil(o.ServiceInfoList) {
+	if o == nil || IsNil(o.ServiceInfoList) {
 		return nil, false
 	}
 	return o.ServiceInfoList, true
@@ -118,7 +118,7 @@ func (o *ApplicationServer) GetServiceInfoListOk() ([]ServiceInformation, bool) 
 
 // HasServiceInfoList returns a boolean if a field has been set.
 func (o *ApplicationServer) HasServiceInfoList() bool {
-	if o != nil && !isNil(o.ServiceInfoList) {
+	if o != nil && !IsNil(o.ServiceInfoList) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *ApplicationServer) SetServiceInfoList(v []ServiceInformation) {
 }
 
 func (o ApplicationServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o ApplicationServer) MarshalJSON() ([]byte, error) {
 func (o ApplicationServer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["asUri"] = o.AsUri
-	if !isNil(o.SessionContinue) {
+	if !IsNil(o.SessionContinue) {
 		toSerialize["sessionContinue"] = o.SessionContinue
 	}
-	if !isNil(o.ServiceInfoList) {
+	if !IsNil(o.ServiceInfoList) {
 		toSerialize["serviceInfoList"] = o.ServiceInfoList
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableApplicationServer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

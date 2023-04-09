@@ -19,13 +19,9 @@ var _ MappedNullable = &NotifyFileReady{}
 
 // NotifyFileReady struct for NotifyFileReady
 type NotifyFileReady struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	FileInfoList []FileInfo `json:"fileInfoList,omitempty"`
-	AdditionalText *string `json:"additionalText,omitempty"`
+	NotificationHeader
+	FileInfoList   []FileInfo `json:"fileInfoList,omitempty"`
+	AdditionalText *string    `json:"additionalText,omitempty"`
 }
 
 // NewNotifyFileReady instantiates a new NotifyFileReady object
@@ -50,129 +46,9 @@ func NewNotifyFileReadyWithDefaults() *NotifyFileReady {
 	return &this
 }
 
-// GetHref returns the Href field value
-func (o *NotifyFileReady) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFileReady) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyFileReady) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyFileReady) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFileReady) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyFileReady) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyFileReady) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFileReady) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyFileReady) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyFileReady) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFileReady) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyFileReady) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyFileReady) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFileReady) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyFileReady) SetSystemDN(v string) {
-	o.SystemDN = v
-}
-
 // GetFileInfoList returns the FileInfoList field value if set, zero value otherwise.
 func (o *NotifyFileReady) GetFileInfoList() []FileInfo {
-	if o == nil || isNil(o.FileInfoList) {
+	if o == nil || IsNil(o.FileInfoList) {
 		var ret []FileInfo
 		return ret
 	}
@@ -182,7 +58,7 @@ func (o *NotifyFileReady) GetFileInfoList() []FileInfo {
 // GetFileInfoListOk returns a tuple with the FileInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFileReady) GetFileInfoListOk() ([]FileInfo, bool) {
-	if o == nil || isNil(o.FileInfoList) {
+	if o == nil || IsNil(o.FileInfoList) {
 		return nil, false
 	}
 	return o.FileInfoList, true
@@ -190,7 +66,7 @@ func (o *NotifyFileReady) GetFileInfoListOk() ([]FileInfo, bool) {
 
 // HasFileInfoList returns a boolean if a field has been set.
 func (o *NotifyFileReady) HasFileInfoList() bool {
-	if o != nil && !isNil(o.FileInfoList) {
+	if o != nil && !IsNil(o.FileInfoList) {
 		return true
 	}
 
@@ -204,7 +80,7 @@ func (o *NotifyFileReady) SetFileInfoList(v []FileInfo) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyFileReady) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -214,7 +90,7 @@ func (o *NotifyFileReady) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFileReady) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -222,7 +98,7 @@ func (o *NotifyFileReady) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyFileReady) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -235,7 +111,7 @@ func (o *NotifyFileReady) SetAdditionalText(v string) {
 }
 
 func (o NotifyFileReady) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,15 +120,18 @@ func (o NotifyFileReady) MarshalJSON() ([]byte, error) {
 
 func (o NotifyFileReady) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
-	if !isNil(o.FileInfoList) {
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	if !IsNil(o.FileInfoList) {
 		toSerialize["fileInfoList"] = o.FileInfoList
 	}
-	if !isNil(o.AdditionalText) {
+	if !IsNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil
@@ -293,5 +172,3 @@ func (v *NullableNotifyFileReady) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

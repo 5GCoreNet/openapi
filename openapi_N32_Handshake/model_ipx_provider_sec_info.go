@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &IpxProviderSecInfo{}
 // IpxProviderSecInfo Defines the security information list of an IPX
 type IpxProviderSecInfo struct {
 	// Fully Qualified Domain Name
-	IpxProviderId string `json:"ipxProviderId"`
+	IpxProviderId    string   `json:"ipxProviderId"`
 	RawPublicKeyList []string `json:"rawPublicKeyList,omitempty"`
-	CertificateList []string `json:"certificateList,omitempty"`
+	CertificateList  []string `json:"certificateList,omitempty"`
 }
 
 // NewIpxProviderSecInfo instantiates a new IpxProviderSecInfo object
@@ -69,7 +69,7 @@ func (o *IpxProviderSecInfo) SetIpxProviderId(v string) {
 
 // GetRawPublicKeyList returns the RawPublicKeyList field value if set, zero value otherwise.
 func (o *IpxProviderSecInfo) GetRawPublicKeyList() []string {
-	if o == nil || isNil(o.RawPublicKeyList) {
+	if o == nil || IsNil(o.RawPublicKeyList) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *IpxProviderSecInfo) GetRawPublicKeyList() []string {
 // GetRawPublicKeyListOk returns a tuple with the RawPublicKeyList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpxProviderSecInfo) GetRawPublicKeyListOk() ([]string, bool) {
-	if o == nil || isNil(o.RawPublicKeyList) {
+	if o == nil || IsNil(o.RawPublicKeyList) {
 		return nil, false
 	}
 	return o.RawPublicKeyList, true
@@ -87,7 +87,7 @@ func (o *IpxProviderSecInfo) GetRawPublicKeyListOk() ([]string, bool) {
 
 // HasRawPublicKeyList returns a boolean if a field has been set.
 func (o *IpxProviderSecInfo) HasRawPublicKeyList() bool {
-	if o != nil && !isNil(o.RawPublicKeyList) {
+	if o != nil && !IsNil(o.RawPublicKeyList) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *IpxProviderSecInfo) SetRawPublicKeyList(v []string) {
 
 // GetCertificateList returns the CertificateList field value if set, zero value otherwise.
 func (o *IpxProviderSecInfo) GetCertificateList() []string {
-	if o == nil || isNil(o.CertificateList) {
+	if o == nil || IsNil(o.CertificateList) {
 		var ret []string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *IpxProviderSecInfo) GetCertificateList() []string {
 // GetCertificateListOk returns a tuple with the CertificateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpxProviderSecInfo) GetCertificateListOk() ([]string, bool) {
-	if o == nil || isNil(o.CertificateList) {
+	if o == nil || IsNil(o.CertificateList) {
 		return nil, false
 	}
 	return o.CertificateList, true
@@ -119,7 +119,7 @@ func (o *IpxProviderSecInfo) GetCertificateListOk() ([]string, bool) {
 
 // HasCertificateList returns a boolean if a field has been set.
 func (o *IpxProviderSecInfo) HasCertificateList() bool {
-	if o != nil && !isNil(o.CertificateList) {
+	if o != nil && !IsNil(o.CertificateList) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *IpxProviderSecInfo) SetCertificateList(v []string) {
 }
 
 func (o IpxProviderSecInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o IpxProviderSecInfo) MarshalJSON() ([]byte, error) {
 func (o IpxProviderSecInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ipxProviderId"] = o.IpxProviderId
-	if !isNil(o.RawPublicKeyList) {
+	if !IsNil(o.RawPublicKeyList) {
 		toSerialize["rawPublicKeyList"] = o.RawPublicKeyList
 	}
-	if !isNil(o.CertificateList) {
+	if !IsNil(o.CertificateList) {
 		toSerialize["certificateList"] = o.CertificateList
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableIpxProviderSecInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

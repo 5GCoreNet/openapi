@@ -1,7 +1,7 @@
 /*
 Nmnpf_NPStatus
 
-Nmnpf Number Portability Status Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nmnpf Number Portability Status Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nmnpf_NPStatus
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NumberPortabilityStatusDocumentApiService NumberPortabilityStatusDocumentApi service
 type NumberPortabilityStatusDocumentApiService service
 
 type ApiGetNumberPortabilityStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NumberPortabilityStatusDocumentApiService
-	gpsi string
+	gpsi       string
 }
 
 func (r ApiGetNumberPortabilityStatusRequest) Execute() (*NpStatusInfo, *http.Response, error) {
@@ -36,26 +35,27 @@ func (r ApiGetNumberPortabilityStatusRequest) Execute() (*NpStatusInfo, *http.Re
 /*
 GetNumberPortabilityStatus Retrieves the Number Portability status of the UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param gpsi GPSI of the UE
- @return ApiGetNumberPortabilityStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param gpsi GPSI of the UE
+	@return ApiGetNumberPortabilityStatusRequest
 */
 func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatus(ctx context.Context, gpsi string) ApiGetNumberPortabilityStatusRequest {
 	return ApiGetNumberPortabilityStatusRequest{
 		ApiService: a,
-		ctx: ctx,
-		gpsi: gpsi,
+		ctx:        ctx,
+		gpsi:       gpsi,
 	}
 }
 
 // Execute executes the request
-//  @return NpStatusInfo
+//
+//	@return NpStatusInfo
 func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusExecute(r ApiGetNumberPortabilityStatusRequest) (*NpStatusInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NpStatusInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NpStatusInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NumberPortabilityStatusDocumentApiService.GetNumberPortabilityStatus")
@@ -97,9 +97,9 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -116,8 +116,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +127,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +138,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +149,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -160,8 +160,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -171,8 +171,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -182,8 +182,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -193,8 +193,8 @@ func (a *NumberPortabilityStatusDocumentApiService) GetNumberPortabilityStatusEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

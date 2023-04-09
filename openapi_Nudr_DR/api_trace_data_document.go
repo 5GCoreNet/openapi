@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // TraceDataDocumentApiService TraceDataDocumentApi service
 type TraceDataDocumentApiService service
 
 type ApiQueryTraceDataRequest struct {
-	ctx context.Context
-	ApiService *TraceDataDocumentApiService
-	ueId string
-	servingPlmnId string
-	ifNoneMatch *string
+	ctx             context.Context
+	ApiService      *TraceDataDocumentApiService
+	ueId            string
+	servingPlmnId   string
+	ifNoneMatch     *string
 	ifModifiedSince *string
 }
 
@@ -51,28 +50,29 @@ func (r ApiQueryTraceDataRequest) Execute() (*TraceData, *http.Response, error) 
 /*
 QueryTraceData Retrieves the trace configuration data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingPlmnId PLMN ID
- @return ApiQueryTraceDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingPlmnId PLMN ID
+	@return ApiQueryTraceDataRequest
 */
 func (a *TraceDataDocumentApiService) QueryTraceData(ctx context.Context, ueId string, servingPlmnId string) ApiQueryTraceDataRequest {
 	return ApiQueryTraceDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:    a,
+		ctx:           ctx,
+		ueId:          ueId,
 		servingPlmnId: servingPlmnId,
 	}
 }
 
 // Execute executes the request
-//  @return TraceData
+//
+//	@return TraceData
 func (a *TraceDataDocumentApiService) QueryTraceDataExecute(r ApiQueryTraceDataRequest) (*TraceData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TraceData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TraceData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TraceDataDocumentApiService.QueryTraceData")
@@ -106,10 +106,10 @@ func (a *TraceDataDocumentApiService) QueryTraceDataExecute(r ApiQueryTraceDataR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -121,9 +121,9 @@ func (a *TraceDataDocumentApiService) QueryTraceDataExecute(r ApiQueryTraceDataR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

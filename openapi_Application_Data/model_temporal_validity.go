@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -45,7 +45,7 @@ func NewTemporalValidityWithDefaults() *TemporalValidity {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *TemporalValidity) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *TemporalValidity) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TemporalValidity) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -63,7 +63,7 @@ func (o *TemporalValidity) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *TemporalValidity) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *TemporalValidity) SetStartTime(v time.Time) {
 
 // GetStopTime returns the StopTime field value if set, zero value otherwise.
 func (o *TemporalValidity) GetStopTime() time.Time {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *TemporalValidity) GetStopTime() time.Time {
 // GetStopTimeOk returns a tuple with the StopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TemporalValidity) GetStopTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		return nil, false
 	}
 	return o.StopTime, true
@@ -95,7 +95,7 @@ func (o *TemporalValidity) GetStopTimeOk() (*time.Time, bool) {
 
 // HasStopTime returns a boolean if a field has been set.
 func (o *TemporalValidity) HasStopTime() bool {
-	if o != nil && !isNil(o.StopTime) {
+	if o != nil && !IsNil(o.StopTime) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *TemporalValidity) SetStopTime(v time.Time) {
 }
 
 func (o TemporalValidity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,10 +117,10 @@ func (o TemporalValidity) MarshalJSON() ([]byte, error) {
 
 func (o TemporalValidity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.StopTime) {
+	if !IsNil(o.StopTime) {
 		toSerialize["stopTime"] = o.StopTime
 	}
 	return toSerialize, nil
@@ -161,5 +161,3 @@ func (v *NullableTemporalValidity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

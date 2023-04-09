@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &RoamingQBCInformation{}
 // RoamingQBCInformation struct for RoamingQBCInformation
 type RoamingQBCInformation struct {
 	MultipleQFIcontainer []MultipleQFIcontainer `json:"multipleQFIcontainer,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	UPFID *string `json:"uPFID,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	UPFID                  *string                 `json:"uPFID,omitempty"`
 	RoamingChargingProfile *RoamingChargingProfile `json:"roamingChargingProfile,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewRoamingQBCInformationWithDefaults() *RoamingQBCInformation {
 
 // GetMultipleQFIcontainer returns the MultipleQFIcontainer field value if set, zero value otherwise.
 func (o *RoamingQBCInformation) GetMultipleQFIcontainer() []MultipleQFIcontainer {
-	if o == nil || isNil(o.MultipleQFIcontainer) {
+	if o == nil || IsNil(o.MultipleQFIcontainer) {
 		var ret []MultipleQFIcontainer
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *RoamingQBCInformation) GetMultipleQFIcontainer() []MultipleQFIcontainer
 // GetMultipleQFIcontainerOk returns a tuple with the MultipleQFIcontainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingQBCInformation) GetMultipleQFIcontainerOk() ([]MultipleQFIcontainer, bool) {
-	if o == nil || isNil(o.MultipleQFIcontainer) {
+	if o == nil || IsNil(o.MultipleQFIcontainer) {
 		return nil, false
 	}
 	return o.MultipleQFIcontainer, true
@@ -62,7 +62,7 @@ func (o *RoamingQBCInformation) GetMultipleQFIcontainerOk() ([]MultipleQFIcontai
 
 // HasMultipleQFIcontainer returns a boolean if a field has been set.
 func (o *RoamingQBCInformation) HasMultipleQFIcontainer() bool {
-	if o != nil && !isNil(o.MultipleQFIcontainer) {
+	if o != nil && !IsNil(o.MultipleQFIcontainer) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *RoamingQBCInformation) SetMultipleQFIcontainer(v []MultipleQFIcontainer
 
 // GetUPFID returns the UPFID field value if set, zero value otherwise.
 func (o *RoamingQBCInformation) GetUPFID() string {
-	if o == nil || isNil(o.UPFID) {
+	if o == nil || IsNil(o.UPFID) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *RoamingQBCInformation) GetUPFID() string {
 // GetUPFIDOk returns a tuple with the UPFID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingQBCInformation) GetUPFIDOk() (*string, bool) {
-	if o == nil || isNil(o.UPFID) {
+	if o == nil || IsNil(o.UPFID) {
 		return nil, false
 	}
 	return o.UPFID, true
@@ -94,7 +94,7 @@ func (o *RoamingQBCInformation) GetUPFIDOk() (*string, bool) {
 
 // HasUPFID returns a boolean if a field has been set.
 func (o *RoamingQBCInformation) HasUPFID() bool {
-	if o != nil && !isNil(o.UPFID) {
+	if o != nil && !IsNil(o.UPFID) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *RoamingQBCInformation) SetUPFID(v string) {
 
 // GetRoamingChargingProfile returns the RoamingChargingProfile field value if set, zero value otherwise.
 func (o *RoamingQBCInformation) GetRoamingChargingProfile() RoamingChargingProfile {
-	if o == nil || isNil(o.RoamingChargingProfile) {
+	if o == nil || IsNil(o.RoamingChargingProfile) {
 		var ret RoamingChargingProfile
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *RoamingQBCInformation) GetRoamingChargingProfile() RoamingChargingProfi
 // GetRoamingChargingProfileOk returns a tuple with the RoamingChargingProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingQBCInformation) GetRoamingChargingProfileOk() (*RoamingChargingProfile, bool) {
-	if o == nil || isNil(o.RoamingChargingProfile) {
+	if o == nil || IsNil(o.RoamingChargingProfile) {
 		return nil, false
 	}
 	return o.RoamingChargingProfile, true
@@ -126,7 +126,7 @@ func (o *RoamingQBCInformation) GetRoamingChargingProfileOk() (*RoamingChargingP
 
 // HasRoamingChargingProfile returns a boolean if a field has been set.
 func (o *RoamingQBCInformation) HasRoamingChargingProfile() bool {
-	if o != nil && !isNil(o.RoamingChargingProfile) {
+	if o != nil && !IsNil(o.RoamingChargingProfile) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *RoamingQBCInformation) SetRoamingChargingProfile(v RoamingChargingProfi
 }
 
 func (o RoamingQBCInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o RoamingQBCInformation) MarshalJSON() ([]byte, error) {
 
 func (o RoamingQBCInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MultipleQFIcontainer) {
+	if !IsNil(o.MultipleQFIcontainer) {
 		toSerialize["multipleQFIcontainer"] = o.MultipleQFIcontainer
 	}
-	if !isNil(o.UPFID) {
+	if !IsNil(o.UPFID) {
 		toSerialize["uPFID"] = o.UPFID
 	}
-	if !isNil(o.RoamingChargingProfile) {
+	if !IsNil(o.RoamingChargingProfile) {
 		toSerialize["roamingChargingProfile"] = o.RoamingChargingProfile
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableRoamingQBCInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

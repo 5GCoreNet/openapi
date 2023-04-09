@@ -1,7 +1,7 @@
 /*
 UPF Event Exposure Service
 
-UPF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UPF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NotificationData{}
 // NotificationData the list of NotificationItems
 type NotificationData struct {
 	NotificationItems []NotificationItem `json:"notificationItems"`
-	CorrelationId *string `json:"correlationId,omitempty"`
+	CorrelationId     *string            `json:"correlationId,omitempty"`
 }
 
 // NewNotificationData instantiates a new NotificationData object
@@ -67,7 +67,7 @@ func (o *NotificationData) SetNotificationItems(v []NotificationItem) {
 
 // GetCorrelationId returns the CorrelationId field value if set, zero value otherwise.
 func (o *NotificationData) GetCorrelationId() string {
-	if o == nil || isNil(o.CorrelationId) {
+	if o == nil || IsNil(o.CorrelationId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NotificationData) GetCorrelationId() string {
 // GetCorrelationIdOk returns a tuple with the CorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationId) {
+	if o == nil || IsNil(o.CorrelationId) {
 		return nil, false
 	}
 	return o.CorrelationId, true
@@ -85,7 +85,7 @@ func (o *NotificationData) GetCorrelationIdOk() (*string, bool) {
 
 // HasCorrelationId returns a boolean if a field has been set.
 func (o *NotificationData) HasCorrelationId() bool {
-	if o != nil && !isNil(o.CorrelationId) {
+	if o != nil && !IsNil(o.CorrelationId) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *NotificationData) SetCorrelationId(v string) {
 }
 
 func (o NotificationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o NotificationData) MarshalJSON() ([]byte, error) {
 func (o NotificationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationItems"] = o.NotificationItems
-	if !isNil(o.CorrelationId) {
+	if !IsNil(o.CorrelationId) {
 		toSerialize["correlationId"] = o.CorrelationId
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableNotificationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TrafficInfluDataNotif{}
 // TrafficInfluDataNotif Represents traffic influence data for notification.
 type TrafficInfluDataNotif struct {
 	// String providing an URI formatted according to RFC 3986.
-	ResUri string `json:"resUri"`
+	ResUri           string            `json:"resUri"`
 	TrafficInfluData *TrafficInfluData `json:"trafficInfluData,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *TrafficInfluDataNotif) SetResUri(v string) {
 
 // GetTrafficInfluData returns the TrafficInfluData field value if set, zero value otherwise.
 func (o *TrafficInfluDataNotif) GetTrafficInfluData() TrafficInfluData {
-	if o == nil || isNil(o.TrafficInfluData) {
+	if o == nil || IsNil(o.TrafficInfluData) {
 		var ret TrafficInfluData
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *TrafficInfluDataNotif) GetTrafficInfluData() TrafficInfluData {
 // GetTrafficInfluDataOk returns a tuple with the TrafficInfluData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataNotif) GetTrafficInfluDataOk() (*TrafficInfluData, bool) {
-	if o == nil || isNil(o.TrafficInfluData) {
+	if o == nil || IsNil(o.TrafficInfluData) {
 		return nil, false
 	}
 	return o.TrafficInfluData, true
@@ -86,7 +86,7 @@ func (o *TrafficInfluDataNotif) GetTrafficInfluDataOk() (*TrafficInfluData, bool
 
 // HasTrafficInfluData returns a boolean if a field has been set.
 func (o *TrafficInfluDataNotif) HasTrafficInfluData() bool {
-	if o != nil && !isNil(o.TrafficInfluData) {
+	if o != nil && !IsNil(o.TrafficInfluData) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *TrafficInfluDataNotif) SetTrafficInfluData(v TrafficInfluData) {
 }
 
 func (o TrafficInfluDataNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o TrafficInfluDataNotif) MarshalJSON() ([]byte, error) {
 func (o TrafficInfluDataNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resUri"] = o.ResUri
-	if !isNil(o.TrafficInfluData) {
+	if !IsNil(o.TrafficInfluData) {
 		toSerialize["trafficInfluData"] = o.TrafficInfluData
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableTrafficInfluDataNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

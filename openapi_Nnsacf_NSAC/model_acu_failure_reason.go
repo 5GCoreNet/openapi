@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AcuFailureReason Failure Reason of ACU operation to an S-NSSAI. Possible values are - SLICE_NOT_FOUND - EXCEED_MAX_UE_NUM - EXCEED_MAX_UE_NUM_3GPP - EXCEED_MAX_UE_NUM_N3GPP - EXCEED_MAX_PDU_NUM - EXCEED_MAX_PDU_NUM_3GPP - EXCEED_MAX_PDU_NUM_N3GPP 
+// AcuFailureReason Failure Reason of ACU operation to an S-NSSAI. Possible values are - SLICE_NOT_FOUND - EXCEED_MAX_UE_NUM - EXCEED_MAX_UE_NUM_3GPP - EXCEED_MAX_UE_NUM_N3GPP - EXCEED_MAX_PDU_NUM - EXCEED_MAX_PDU_NUM_3GPP - EXCEED_MAX_PDU_NUM_N3GPP
 type AcuFailureReason struct {
-	AcuFailureReasonAnyOf *AcuFailureReasonAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AcuFailureReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AcuFailureReasonAnyOf
-	err = json.Unmarshal(data, &dst.AcuFailureReasonAnyOf);
-	if err == nil {
-		jsonAcuFailureReasonAnyOf, _ := json.Marshal(dst.AcuFailureReasonAnyOf)
-		if string(jsonAcuFailureReasonAnyOf) == "{}" { // empty struct
-			dst.AcuFailureReasonAnyOf = nil
-		} else {
-			return nil // data stored in dst.AcuFailureReasonAnyOf, return on the first match
-		}
-	} else {
-		dst.AcuFailureReasonAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AcuFailureReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AcuFailureReason) MarshalJSON() ([]byte, error) {
-	if src.AcuFailureReasonAnyOf != nil {
-		return json.Marshal(&src.AcuFailureReasonAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAcuFailureReason) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

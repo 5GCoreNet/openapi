@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -12,7 +12,6 @@ package openapi_CommonData
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -25,7 +24,7 @@ type MbsSession struct {
 func (dst *MbsSession) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -84,5 +83,3 @@ func (v *NullableMbsSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

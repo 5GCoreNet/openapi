@@ -20,11 +20,11 @@ var _ MappedNullable = &SteeringMode{}
 // SteeringMode struct for SteeringMode
 type SteeringMode struct {
 	SteerModeValue *SteerModeValue `json:"steerModeValue,omitempty"`
-	Active *AccessType `json:"active,omitempty"`
-	Standby *AccessTypeRm `json:"standby,omitempty"`
+	Active         *AccessType     `json:"active,omitempty"`
+	Standby        *AccessTypeRm   `json:"standby,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	ThreeGLoad *int32 `json:"threeGLoad,omitempty"`
-	PrioAcc *AccessType `json:"prioAcc,omitempty"`
+	ThreeGLoad *int32      `json:"threeGLoad,omitempty"`
+	PrioAcc    *AccessType `json:"prioAcc,omitempty"`
 }
 
 // NewSteeringMode instantiates a new SteeringMode object
@@ -46,7 +46,7 @@ func NewSteeringModeWithDefaults() *SteeringMode {
 
 // GetSteerModeValue returns the SteerModeValue field value if set, zero value otherwise.
 func (o *SteeringMode) GetSteerModeValue() SteerModeValue {
-	if o == nil || isNil(o.SteerModeValue) {
+	if o == nil || IsNil(o.SteerModeValue) {
 		var ret SteerModeValue
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SteeringMode) GetSteerModeValue() SteerModeValue {
 // GetSteerModeValueOk returns a tuple with the SteerModeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetSteerModeValueOk() (*SteerModeValue, bool) {
-	if o == nil || isNil(o.SteerModeValue) {
+	if o == nil || IsNil(o.SteerModeValue) {
 		return nil, false
 	}
 	return o.SteerModeValue, true
@@ -64,7 +64,7 @@ func (o *SteeringMode) GetSteerModeValueOk() (*SteerModeValue, bool) {
 
 // HasSteerModeValue returns a boolean if a field has been set.
 func (o *SteeringMode) HasSteerModeValue() bool {
-	if o != nil && !isNil(o.SteerModeValue) {
+	if o != nil && !IsNil(o.SteerModeValue) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SteeringMode) SetSteerModeValue(v SteerModeValue) {
 
 // GetActive returns the Active field value if set, zero value otherwise.
 func (o *SteeringMode) GetActive() AccessType {
-	if o == nil || isNil(o.Active) {
+	if o == nil || IsNil(o.Active) {
 		var ret AccessType
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SteeringMode) GetActive() AccessType {
 // GetActiveOk returns a tuple with the Active field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetActiveOk() (*AccessType, bool) {
-	if o == nil || isNil(o.Active) {
+	if o == nil || IsNil(o.Active) {
 		return nil, false
 	}
 	return o.Active, true
@@ -96,7 +96,7 @@ func (o *SteeringMode) GetActiveOk() (*AccessType, bool) {
 
 // HasActive returns a boolean if a field has been set.
 func (o *SteeringMode) HasActive() bool {
-	if o != nil && !isNil(o.Active) {
+	if o != nil && !IsNil(o.Active) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SteeringMode) SetActive(v AccessType) {
 
 // GetStandby returns the Standby field value if set, zero value otherwise.
 func (o *SteeringMode) GetStandby() AccessTypeRm {
-	if o == nil || isNil(o.Standby) {
+	if o == nil || IsNil(o.Standby) {
 		var ret AccessTypeRm
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SteeringMode) GetStandby() AccessTypeRm {
 // GetStandbyOk returns a tuple with the Standby field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetStandbyOk() (*AccessTypeRm, bool) {
-	if o == nil || isNil(o.Standby) {
+	if o == nil || IsNil(o.Standby) {
 		return nil, false
 	}
 	return o.Standby, true
@@ -128,7 +128,7 @@ func (o *SteeringMode) GetStandbyOk() (*AccessTypeRm, bool) {
 
 // HasStandby returns a boolean if a field has been set.
 func (o *SteeringMode) HasStandby() bool {
-	if o != nil && !isNil(o.Standby) {
+	if o != nil && !IsNil(o.Standby) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SteeringMode) SetStandby(v AccessTypeRm) {
 
 // GetThreeGLoad returns the ThreeGLoad field value if set, zero value otherwise.
 func (o *SteeringMode) GetThreeGLoad() int32 {
-	if o == nil || isNil(o.ThreeGLoad) {
+	if o == nil || IsNil(o.ThreeGLoad) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SteeringMode) GetThreeGLoad() int32 {
 // GetThreeGLoadOk returns a tuple with the ThreeGLoad field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetThreeGLoadOk() (*int32, bool) {
-	if o == nil || isNil(o.ThreeGLoad) {
+	if o == nil || IsNil(o.ThreeGLoad) {
 		return nil, false
 	}
 	return o.ThreeGLoad, true
@@ -160,7 +160,7 @@ func (o *SteeringMode) GetThreeGLoadOk() (*int32, bool) {
 
 // HasThreeGLoad returns a boolean if a field has been set.
 func (o *SteeringMode) HasThreeGLoad() bool {
-	if o != nil && !isNil(o.ThreeGLoad) {
+	if o != nil && !IsNil(o.ThreeGLoad) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *SteeringMode) SetThreeGLoad(v int32) {
 
 // GetPrioAcc returns the PrioAcc field value if set, zero value otherwise.
 func (o *SteeringMode) GetPrioAcc() AccessType {
-	if o == nil || isNil(o.PrioAcc) {
+	if o == nil || IsNil(o.PrioAcc) {
 		var ret AccessType
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *SteeringMode) GetPrioAcc() AccessType {
 // GetPrioAccOk returns a tuple with the PrioAcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetPrioAccOk() (*AccessType, bool) {
-	if o == nil || isNil(o.PrioAcc) {
+	if o == nil || IsNil(o.PrioAcc) {
 		return nil, false
 	}
 	return o.PrioAcc, true
@@ -192,7 +192,7 @@ func (o *SteeringMode) GetPrioAccOk() (*AccessType, bool) {
 
 // HasPrioAcc returns a boolean if a field has been set.
 func (o *SteeringMode) HasPrioAcc() bool {
-	if o != nil && !isNil(o.PrioAcc) {
+	if o != nil && !IsNil(o.PrioAcc) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *SteeringMode) SetPrioAcc(v AccessType) {
 }
 
 func (o SteeringMode) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o SteeringMode) MarshalJSON() ([]byte, error) {
 
 func (o SteeringMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SteerModeValue) {
+	if !IsNil(o.SteerModeValue) {
 		toSerialize["steerModeValue"] = o.SteerModeValue
 	}
-	if !isNil(o.Active) {
+	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
-	if !isNil(o.Standby) {
+	if !IsNil(o.Standby) {
 		toSerialize["standby"] = o.Standby
 	}
-	if !isNil(o.ThreeGLoad) {
+	if !IsNil(o.ThreeGLoad) {
 		toSerialize["threeGLoad"] = o.ThreeGLoad
 	}
-	if !isNil(o.PrioAcc) {
+	if !IsNil(o.PrioAcc) {
 		toSerialize["prioAcc"] = o.PrioAcc
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullableSteeringMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

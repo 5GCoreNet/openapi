@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &WlanPerformanceReq{}
 
 // WlanPerformanceReq Represents other WLAN performance analytics requirements.
 type WlanPerformanceReq struct {
-	SsIds []string `json:"ssIds,omitempty"`
-	BssIds []string `json:"bssIds,omitempty"`
+	SsIds           []string               `json:"ssIds,omitempty"`
+	BssIds          []string               `json:"bssIds,omitempty"`
 	WlanOrderCriter *WlanOrderingCriterion `json:"wlanOrderCriter,omitempty"`
-	Order *MatchingDirection `json:"order,omitempty"`
+	Order           *MatchingDirection     `json:"order,omitempty"`
 }
 
 // NewWlanPerformanceReq instantiates a new WlanPerformanceReq object
@@ -44,7 +44,7 @@ func NewWlanPerformanceReqWithDefaults() *WlanPerformanceReq {
 
 // GetSsIds returns the SsIds field value if set, zero value otherwise.
 func (o *WlanPerformanceReq) GetSsIds() []string {
-	if o == nil || isNil(o.SsIds) {
+	if o == nil || IsNil(o.SsIds) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *WlanPerformanceReq) GetSsIds() []string {
 // GetSsIdsOk returns a tuple with the SsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WlanPerformanceReq) GetSsIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.SsIds) {
+	if o == nil || IsNil(o.SsIds) {
 		return nil, false
 	}
 	return o.SsIds, true
@@ -62,7 +62,7 @@ func (o *WlanPerformanceReq) GetSsIdsOk() ([]string, bool) {
 
 // HasSsIds returns a boolean if a field has been set.
 func (o *WlanPerformanceReq) HasSsIds() bool {
-	if o != nil && !isNil(o.SsIds) {
+	if o != nil && !IsNil(o.SsIds) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *WlanPerformanceReq) SetSsIds(v []string) {
 
 // GetBssIds returns the BssIds field value if set, zero value otherwise.
 func (o *WlanPerformanceReq) GetBssIds() []string {
-	if o == nil || isNil(o.BssIds) {
+	if o == nil || IsNil(o.BssIds) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *WlanPerformanceReq) GetBssIds() []string {
 // GetBssIdsOk returns a tuple with the BssIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WlanPerformanceReq) GetBssIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.BssIds) {
+	if o == nil || IsNil(o.BssIds) {
 		return nil, false
 	}
 	return o.BssIds, true
@@ -94,7 +94,7 @@ func (o *WlanPerformanceReq) GetBssIdsOk() ([]string, bool) {
 
 // HasBssIds returns a boolean if a field has been set.
 func (o *WlanPerformanceReq) HasBssIds() bool {
-	if o != nil && !isNil(o.BssIds) {
+	if o != nil && !IsNil(o.BssIds) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *WlanPerformanceReq) SetBssIds(v []string) {
 
 // GetWlanOrderCriter returns the WlanOrderCriter field value if set, zero value otherwise.
 func (o *WlanPerformanceReq) GetWlanOrderCriter() WlanOrderingCriterion {
-	if o == nil || isNil(o.WlanOrderCriter) {
+	if o == nil || IsNil(o.WlanOrderCriter) {
 		var ret WlanOrderingCriterion
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *WlanPerformanceReq) GetWlanOrderCriter() WlanOrderingCriterion {
 // GetWlanOrderCriterOk returns a tuple with the WlanOrderCriter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WlanPerformanceReq) GetWlanOrderCriterOk() (*WlanOrderingCriterion, bool) {
-	if o == nil || isNil(o.WlanOrderCriter) {
+	if o == nil || IsNil(o.WlanOrderCriter) {
 		return nil, false
 	}
 	return o.WlanOrderCriter, true
@@ -126,7 +126,7 @@ func (o *WlanPerformanceReq) GetWlanOrderCriterOk() (*WlanOrderingCriterion, boo
 
 // HasWlanOrderCriter returns a boolean if a field has been set.
 func (o *WlanPerformanceReq) HasWlanOrderCriter() bool {
-	if o != nil && !isNil(o.WlanOrderCriter) {
+	if o != nil && !IsNil(o.WlanOrderCriter) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *WlanPerformanceReq) SetWlanOrderCriter(v WlanOrderingCriterion) {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *WlanPerformanceReq) GetOrder() MatchingDirection {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *WlanPerformanceReq) GetOrder() MatchingDirection {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WlanPerformanceReq) GetOrderOk() (*MatchingDirection, bool) {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -158,7 +158,7 @@ func (o *WlanPerformanceReq) GetOrderOk() (*MatchingDirection, bool) {
 
 // HasOrder returns a boolean if a field has been set.
 func (o *WlanPerformanceReq) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *WlanPerformanceReq) SetOrder(v MatchingDirection) {
 }
 
 func (o WlanPerformanceReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o WlanPerformanceReq) MarshalJSON() ([]byte, error) {
 
 func (o WlanPerformanceReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SsIds) {
+	if !IsNil(o.SsIds) {
 		toSerialize["ssIds"] = o.SsIds
 	}
-	if !isNil(o.BssIds) {
+	if !IsNil(o.BssIds) {
 		toSerialize["bssIds"] = o.BssIds
 	}
-	if !isNil(o.WlanOrderCriter) {
+	if !IsNil(o.WlanOrderCriter) {
 		toSerialize["wlanOrderCriter"] = o.WlanOrderCriter
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableWlanPerformanceReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

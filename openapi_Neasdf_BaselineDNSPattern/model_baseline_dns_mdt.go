@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &BaselineDnsMdt{}
 
 // BaselineDnsMdt Baseline DNS message detection template
 type BaselineDnsMdt struct {
-	MdtId string `json:"mdtId"`
+	MdtId string  `json:"mdtId"`
 	Label *string `json:"label,omitempty"`
 	// map of DNS query message detection templates where a valid JSON string serves as key
 	DnsQueryMdtList *map[string]DnsQueryMdt `json:"dnsQueryMdtList,omitempty"`
@@ -71,7 +71,7 @@ func (o *BaselineDnsMdt) SetMdtId(v string) {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *BaselineDnsMdt) GetLabel() string {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *BaselineDnsMdt) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsMdt) GetLabelOk() (*string, bool) {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -89,7 +89,7 @@ func (o *BaselineDnsMdt) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *BaselineDnsMdt) HasLabel() bool {
-	if o != nil && !isNil(o.Label) {
+	if o != nil && !IsNil(o.Label) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *BaselineDnsMdt) SetLabel(v string) {
 
 // GetDnsQueryMdtList returns the DnsQueryMdtList field value if set, zero value otherwise.
 func (o *BaselineDnsMdt) GetDnsQueryMdtList() map[string]DnsQueryMdt {
-	if o == nil || isNil(o.DnsQueryMdtList) {
+	if o == nil || IsNil(o.DnsQueryMdtList) {
 		var ret map[string]DnsQueryMdt
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *BaselineDnsMdt) GetDnsQueryMdtList() map[string]DnsQueryMdt {
 // GetDnsQueryMdtListOk returns a tuple with the DnsQueryMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsMdt) GetDnsQueryMdtListOk() (*map[string]DnsQueryMdt, bool) {
-	if o == nil || isNil(o.DnsQueryMdtList) {
+	if o == nil || IsNil(o.DnsQueryMdtList) {
 		return nil, false
 	}
 	return o.DnsQueryMdtList, true
@@ -121,7 +121,7 @@ func (o *BaselineDnsMdt) GetDnsQueryMdtListOk() (*map[string]DnsQueryMdt, bool) 
 
 // HasDnsQueryMdtList returns a boolean if a field has been set.
 func (o *BaselineDnsMdt) HasDnsQueryMdtList() bool {
-	if o != nil && !isNil(o.DnsQueryMdtList) {
+	if o != nil && !IsNil(o.DnsQueryMdtList) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *BaselineDnsMdt) SetDnsQueryMdtList(v map[string]DnsQueryMdt) {
 
 // GetDnsRspMdtList returns the DnsRspMdtList field value if set, zero value otherwise.
 func (o *BaselineDnsMdt) GetDnsRspMdtList() map[string]DnsRspMdt {
-	if o == nil || isNil(o.DnsRspMdtList) {
+	if o == nil || IsNil(o.DnsRspMdtList) {
 		var ret map[string]DnsRspMdt
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *BaselineDnsMdt) GetDnsRspMdtList() map[string]DnsRspMdt {
 // GetDnsRspMdtListOk returns a tuple with the DnsRspMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsMdt) GetDnsRspMdtListOk() (*map[string]DnsRspMdt, bool) {
-	if o == nil || isNil(o.DnsRspMdtList) {
+	if o == nil || IsNil(o.DnsRspMdtList) {
 		return nil, false
 	}
 	return o.DnsRspMdtList, true
@@ -153,7 +153,7 @@ func (o *BaselineDnsMdt) GetDnsRspMdtListOk() (*map[string]DnsRspMdt, bool) {
 
 // HasDnsRspMdtList returns a boolean if a field has been set.
 func (o *BaselineDnsMdt) HasDnsRspMdtList() bool {
-	if o != nil && !isNil(o.DnsRspMdtList) {
+	if o != nil && !IsNil(o.DnsRspMdtList) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *BaselineDnsMdt) SetDnsRspMdtList(v map[string]DnsRspMdt) {
 }
 
 func (o BaselineDnsMdt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o BaselineDnsMdt) MarshalJSON() ([]byte, error) {
 func (o BaselineDnsMdt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mdtId"] = o.MdtId
-	if !isNil(o.Label) {
+	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !isNil(o.DnsQueryMdtList) {
+	if !IsNil(o.DnsQueryMdtList) {
 		toSerialize["dnsQueryMdtList"] = o.DnsQueryMdtList
 	}
-	if !isNil(o.DnsRspMdtList) {
+	if !IsNil(o.DnsRspMdtList) {
 		toSerialize["dnsRspMdtList"] = o.DnsRspMdtList
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableBaselineDnsMdt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

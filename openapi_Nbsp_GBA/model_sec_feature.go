@@ -1,7 +1,7 @@
 /*
 GBA BSF Nbsp_GBA Service
 
-GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,28 +17,14 @@ import (
 
 // SecFeature Security features supported by the BSF or the NAF
 type SecFeature struct {
-	SecFeatureAnyOf *SecFeatureAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SecFeature) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SecFeatureAnyOf
-	err = json.Unmarshal(data, &dst.SecFeatureAnyOf);
-	if err == nil {
-		jsonSecFeatureAnyOf, _ := json.Marshal(dst.SecFeatureAnyOf)
-		if string(jsonSecFeatureAnyOf) == "{}" { // empty struct
-			dst.SecFeatureAnyOf = nil
-		} else {
-			return nil // data stored in dst.SecFeatureAnyOf, return on the first match
-		}
-	} else {
-		dst.SecFeatureAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SecFeature) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SecFeature) MarshalJSON() ([]byte, error) {
-	if src.SecFeatureAnyOf != nil {
-		return json.Marshal(&src.SecFeatureAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSecFeature) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

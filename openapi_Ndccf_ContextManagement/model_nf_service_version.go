@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &NFServiceVersion{}
 // NFServiceVersion Contains the version details of an NF service
 type NFServiceVersion struct {
 	ApiVersionInUri string `json:"apiVersionInUri"`
-	ApiFullVersion string `json:"apiFullVersion"`
+	ApiFullVersion  string `json:"apiFullVersion"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
 }
@@ -95,7 +95,7 @@ func (o *NFServiceVersion) SetApiFullVersion(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NFServiceVersion) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *NFServiceVersion) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFServiceVersion) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -113,7 +113,7 @@ func (o *NFServiceVersion) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NFServiceVersion) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *NFServiceVersion) SetExpiry(v time.Time) {
 }
 
 func (o NFServiceVersion) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o NFServiceVersion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiVersionInUri"] = o.ApiVersionInUri
 	toSerialize["apiFullVersion"] = o.ApiFullVersion
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableNFServiceVersion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

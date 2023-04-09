@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -41,7 +41,7 @@ func NewAnchorSmfFeaturesWithDefaults() *AnchorSmfFeatures {
 
 // GetPsetrSupportInd returns the PsetrSupportInd field value if set, zero value otherwise.
 func (o *AnchorSmfFeatures) GetPsetrSupportInd() bool {
-	if o == nil || isNil(o.PsetrSupportInd) {
+	if o == nil || IsNil(o.PsetrSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnchorSmfFeatures) GetPsetrSupportInd() bool {
 // GetPsetrSupportIndOk returns a tuple with the PsetrSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnchorSmfFeatures) GetPsetrSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PsetrSupportInd) {
+	if o == nil || IsNil(o.PsetrSupportInd) {
 		return nil, false
 	}
 	return o.PsetrSupportInd, true
@@ -59,7 +59,7 @@ func (o *AnchorSmfFeatures) GetPsetrSupportIndOk() (*bool, bool) {
 
 // HasPsetrSupportInd returns a boolean if a field has been set.
 func (o *AnchorSmfFeatures) HasPsetrSupportInd() bool {
-	if o != nil && !isNil(o.PsetrSupportInd) {
+	if o != nil && !IsNil(o.PsetrSupportInd) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AnchorSmfFeatures) SetPsetrSupportInd(v bool) {
 }
 
 func (o AnchorSmfFeatures) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AnchorSmfFeatures) MarshalJSON() ([]byte, error) {
 
 func (o AnchorSmfFeatures) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PsetrSupportInd) {
+	if !IsNil(o.PsetrSupportInd) {
 		toSerialize["psetrSupportInd"] = o.PsetrSupportInd
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAnchorSmfFeatures) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

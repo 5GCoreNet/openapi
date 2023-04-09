@@ -1,7 +1,7 @@
 /*
 EES EEL Managed ACR Service
 
-EES EEL Managed ACR Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES EEL Managed ACR Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &EELACRResp{}
 type EELACRResp struct {
 	// string providing an URI formatted according to IETF RFC 3986.
 	AppCtxtStoreAddr *string `json:"appCtxtStoreAddr,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewEELACRRespWithDefaults() *EELACRResp {
 
 // GetAppCtxtStoreAddr returns the AppCtxtStoreAddr field value if set, zero value otherwise.
 func (o *EELACRResp) GetAppCtxtStoreAddr() string {
-	if o == nil || isNil(o.AppCtxtStoreAddr) {
+	if o == nil || IsNil(o.AppCtxtStoreAddr) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EELACRResp) GetAppCtxtStoreAddr() string {
 // GetAppCtxtStoreAddrOk returns a tuple with the AppCtxtStoreAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EELACRResp) GetAppCtxtStoreAddrOk() (*string, bool) {
-	if o == nil || isNil(o.AppCtxtStoreAddr) {
+	if o == nil || IsNil(o.AppCtxtStoreAddr) {
 		return nil, false
 	}
 	return o.AppCtxtStoreAddr, true
@@ -62,7 +62,7 @@ func (o *EELACRResp) GetAppCtxtStoreAddrOk() (*string, bool) {
 
 // HasAppCtxtStoreAddr returns a boolean if a field has been set.
 func (o *EELACRResp) HasAppCtxtStoreAddr() bool {
-	if o != nil && !isNil(o.AppCtxtStoreAddr) {
+	if o != nil && !IsNil(o.AppCtxtStoreAddr) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EELACRResp) SetAppCtxtStoreAddr(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *EELACRResp) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EELACRResp) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EELACRResp) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -94,7 +94,7 @@ func (o *EELACRResp) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *EELACRResp) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EELACRResp) SetSuppFeat(v string) {
 }
 
 func (o EELACRResp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o EELACRResp) MarshalJSON() ([]byte, error) {
 
 func (o EELACRResp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppCtxtStoreAddr) {
+	if !IsNil(o.AppCtxtStoreAddr) {
 		toSerialize["appCtxtStoreAddr"] = o.AppCtxtStoreAddr
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableEELACRResp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

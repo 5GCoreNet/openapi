@@ -19,8 +19,8 @@ var _ MappedNullable = &ServiceSupportExpectationObject{}
 
 // ServiceSupportExpectationObject This data type is the \"ExpectationObject\" data type with specialisations for ServiceSupportExpectation
 type ServiceSupportExpectationObject struct {
-	ObjectType *string `json:"objectType,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
+	ObjectType     *string                                              `json:"objectType,omitempty"`
+	ObjectInstance *string                                              `json:"objectInstance,omitempty"`
 	ObjectContexts []ServiceSupportExpectationObjectObjectContextsInner `json:"objectContexts,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewServiceSupportExpectationObjectWithDefaults() *ServiceSupportExpectation
 
 // GetObjectType returns the ObjectType field value if set, zero value otherwise.
 func (o *ServiceSupportExpectationObject) GetObjectType() string {
-	if o == nil || isNil(o.ObjectType) {
+	if o == nil || IsNil(o.ObjectType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ServiceSupportExpectationObject) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectationObject) GetObjectTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectType) {
+	if o == nil || IsNil(o.ObjectType) {
 		return nil, false
 	}
 	return o.ObjectType, true
@@ -61,7 +61,7 @@ func (o *ServiceSupportExpectationObject) GetObjectTypeOk() (*string, bool) {
 
 // HasObjectType returns a boolean if a field has been set.
 func (o *ServiceSupportExpectationObject) HasObjectType() bool {
-	if o != nil && !isNil(o.ObjectType) {
+	if o != nil && !IsNil(o.ObjectType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ServiceSupportExpectationObject) SetObjectType(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *ServiceSupportExpectationObject) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ServiceSupportExpectationObject) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectationObject) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -93,7 +93,7 @@ func (o *ServiceSupportExpectationObject) GetObjectInstanceOk() (*string, bool) 
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *ServiceSupportExpectationObject) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
+	if o != nil && !IsNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ServiceSupportExpectationObject) SetObjectInstance(v string) {
 
 // GetObjectContexts returns the ObjectContexts field value if set, zero value otherwise.
 func (o *ServiceSupportExpectationObject) GetObjectContexts() []ServiceSupportExpectationObjectObjectContextsInner {
-	if o == nil || isNil(o.ObjectContexts) {
+	if o == nil || IsNil(o.ObjectContexts) {
 		var ret []ServiceSupportExpectationObjectObjectContextsInner
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ServiceSupportExpectationObject) GetObjectContexts() []ServiceSupportEx
 // GetObjectContextsOk returns a tuple with the ObjectContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectationObject) GetObjectContextsOk() ([]ServiceSupportExpectationObjectObjectContextsInner, bool) {
-	if o == nil || isNil(o.ObjectContexts) {
+	if o == nil || IsNil(o.ObjectContexts) {
 		return nil, false
 	}
 	return o.ObjectContexts, true
@@ -125,7 +125,7 @@ func (o *ServiceSupportExpectationObject) GetObjectContextsOk() ([]ServiceSuppor
 
 // HasObjectContexts returns a boolean if a field has been set.
 func (o *ServiceSupportExpectationObject) HasObjectContexts() bool {
-	if o != nil && !isNil(o.ObjectContexts) {
+	if o != nil && !IsNil(o.ObjectContexts) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ServiceSupportExpectationObject) SetObjectContexts(v []ServiceSupportEx
 }
 
 func (o ServiceSupportExpectationObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ServiceSupportExpectationObject) MarshalJSON() ([]byte, error) {
 
 func (o ServiceSupportExpectationObject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ObjectType) {
+	if !IsNil(o.ObjectType) {
 		toSerialize["objectType"] = o.ObjectType
 	}
-	if !isNil(o.ObjectInstance) {
+	if !IsNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !isNil(o.ObjectContexts) {
+	if !IsNil(o.ObjectContexts) {
 		toSerialize["objectContexts"] = o.ObjectContexts
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableServiceSupportExpectationObject) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

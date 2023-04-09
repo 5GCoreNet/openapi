@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &ContextUpdateRequest{}
 
 // ContextUpdateRequest struct for ContextUpdateRequest
 type ContextUpdateRequest struct {
-	JsonData *ContextUpdateReqData `json:"jsonData,omitempty"`
-	BinaryDataN2Information *os.File `json:"binaryDataN2Information,omitempty"`
+	JsonData                *ContextUpdateReqData `json:"jsonData,omitempty"`
+	BinaryDataN2Information **os.File             `json:"binaryDataN2Information,omitempty"`
 }
 
 // NewContextUpdateRequest instantiates a new ContextUpdateRequest object
@@ -43,7 +43,7 @@ func NewContextUpdateRequestWithDefaults() *ContextUpdateRequest {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *ContextUpdateRequest) GetJsonData() ContextUpdateReqData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret ContextUpdateReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ContextUpdateRequest) GetJsonData() ContextUpdateReqData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateRequest) GetJsonDataOk() (*ContextUpdateReqData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *ContextUpdateRequest) GetJsonDataOk() (*ContextUpdateReqData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *ContextUpdateRequest) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *ContextUpdateRequest) SetJsonData(v ContextUpdateReqData) {
 }
 
 // GetBinaryDataN2Information returns the BinaryDataN2Information field value if set, zero value otherwise.
-func (o *ContextUpdateRequest) GetBinaryDataN2Information() os.File {
-	if o == nil || isNil(o.BinaryDataN2Information) {
-		var ret os.File
+func (o *ContextUpdateRequest) GetBinaryDataN2Information() *os.File {
+	if o == nil || IsNil(o.BinaryDataN2Information) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information
@@ -84,8 +84,8 @@ func (o *ContextUpdateRequest) GetBinaryDataN2Information() os.File {
 
 // GetBinaryDataN2InformationOk returns a tuple with the BinaryDataN2Information field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdateRequest) GetBinaryDataN2InformationOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryDataN2Information) {
+func (o *ContextUpdateRequest) GetBinaryDataN2InformationOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryDataN2Information) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information, true
@@ -93,20 +93,20 @@ func (o *ContextUpdateRequest) GetBinaryDataN2InformationOk() (*os.File, bool) {
 
 // HasBinaryDataN2Information returns a boolean if a field has been set.
 func (o *ContextUpdateRequest) HasBinaryDataN2Information() bool {
-	if o != nil && !isNil(o.BinaryDataN2Information) {
+	if o != nil && !IsNil(o.BinaryDataN2Information) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information gets a reference to the given os.File and assigns it to the BinaryDataN2Information field.
-func (o *ContextUpdateRequest) SetBinaryDataN2Information(v os.File) {
+// SetBinaryDataN2Information gets a reference to the given *os.File and assigns it to the BinaryDataN2Information field.
+func (o *ContextUpdateRequest) SetBinaryDataN2Information(v *os.File) {
 	o.BinaryDataN2Information = &v
 }
 
 func (o ContextUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o ContextUpdateRequest) MarshalJSON() ([]byte, error) {
 
 func (o ContextUpdateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryDataN2Information) {
+	if !IsNil(o.BinaryDataN2Information) {
 		toSerialize["binaryDataN2Information"] = o.BinaryDataN2Information
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableContextUpdateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AppDetectionNotifType Indicates the notification type for Application Detection Control.
 type AppDetectionNotifType struct {
-	AppDetectionNotifTypeAnyOf *AppDetectionNotifTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AppDetectionNotifType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AppDetectionNotifTypeAnyOf
-	err = json.Unmarshal(data, &dst.AppDetectionNotifTypeAnyOf);
-	if err == nil {
-		jsonAppDetectionNotifTypeAnyOf, _ := json.Marshal(dst.AppDetectionNotifTypeAnyOf)
-		if string(jsonAppDetectionNotifTypeAnyOf) == "{}" { // empty struct
-			dst.AppDetectionNotifTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AppDetectionNotifTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AppDetectionNotifTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AppDetectionNotifType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AppDetectionNotifType) MarshalJSON() ([]byte, error) {
-	if src.AppDetectionNotifTypeAnyOf != nil {
-		return json.Marshal(&src.AppDetectionNotifTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAppDetectionNotifType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

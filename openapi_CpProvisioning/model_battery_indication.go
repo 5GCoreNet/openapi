@@ -1,7 +1,7 @@
 /*
 3gpp-cp-parameter-provisioning
 
-API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// BatteryIndication Possible values are - BATTERY_RECHARGE: UE powered with rechargeable battery. - BATTERY_REPLACE: UE powered with replaceable battery. - BATTERY_NO_RECHARGE: UE powered with no rechargeable battery. - BATTERY_NO_REPLACE: UE powered with no replaceable battery. - NO_BATTERY: UE not battery powered. 
+// BatteryIndication Possible values are - BATTERY_RECHARGE: UE powered with rechargeable battery. - BATTERY_REPLACE: UE powered with replaceable battery. - BATTERY_NO_RECHARGE: UE powered with no rechargeable battery. - BATTERY_NO_REPLACE: UE powered with no replaceable battery. - NO_BATTERY: UE not battery powered.
 type BatteryIndication struct {
-	BatteryIndicationAnyOf *BatteryIndicationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *BatteryIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into BatteryIndicationAnyOf
-	err = json.Unmarshal(data, &dst.BatteryIndicationAnyOf);
-	if err == nil {
-		jsonBatteryIndicationAnyOf, _ := json.Marshal(dst.BatteryIndicationAnyOf)
-		if string(jsonBatteryIndicationAnyOf) == "{}" { // empty struct
-			dst.BatteryIndicationAnyOf = nil
-		} else {
-			return nil // data stored in dst.BatteryIndicationAnyOf, return on the first match
-		}
-	} else {
-		dst.BatteryIndicationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *BatteryIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *BatteryIndication) MarshalJSON() ([]byte, error) {
-	if src.BatteryIndicationAnyOf != nil {
-		return json.Marshal(&src.BatteryIndicationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableBatteryIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

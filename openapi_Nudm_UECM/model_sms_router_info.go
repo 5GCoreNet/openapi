@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &SmsRouterInfo{}
 
 // SmsRouterInfo Addressing information of the SMS Router configured at the UDM
 type SmsRouterInfo struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfInstanceId *string `json:"nfInstanceId,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfInstanceId    *string                     `json:"nfInstanceId,omitempty"`
 	DiameterAddress *NetworkNodeDiameterAddress `json:"diameterAddress,omitempty"`
-	MapAddress *string `json:"mapAddress,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	RouterIpv4 *string `json:"routerIpv4,omitempty"`
+	MapAddress      *string                     `json:"mapAddress,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	RouterIpv4 *string   `json:"routerIpv4,omitempty"`
 	RouterIpv6 *Ipv6Addr `json:"routerIpv6,omitempty"`
 	// Fully Qualified Domain Name
 	RouterFqdn *string `json:"routerFqdn,omitempty"`
@@ -49,7 +49,7 @@ func NewSmsRouterInfoWithDefaults() *SmsRouterInfo {
 
 // GetNfInstanceId returns the NfInstanceId field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetNfInstanceId() string {
-	if o == nil || isNil(o.NfInstanceId) {
+	if o == nil || IsNil(o.NfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *SmsRouterInfo) GetNfInstanceId() string {
 // GetNfInstanceIdOk returns a tuple with the NfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetNfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfInstanceId) {
+	if o == nil || IsNil(o.NfInstanceId) {
 		return nil, false
 	}
 	return o.NfInstanceId, true
@@ -67,7 +67,7 @@ func (o *SmsRouterInfo) GetNfInstanceIdOk() (*string, bool) {
 
 // HasNfInstanceId returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasNfInstanceId() bool {
-	if o != nil && !isNil(o.NfInstanceId) {
+	if o != nil && !IsNil(o.NfInstanceId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *SmsRouterInfo) SetNfInstanceId(v string) {
 
 // GetDiameterAddress returns the DiameterAddress field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetDiameterAddress() NetworkNodeDiameterAddress {
-	if o == nil || isNil(o.DiameterAddress) {
+	if o == nil || IsNil(o.DiameterAddress) {
 		var ret NetworkNodeDiameterAddress
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *SmsRouterInfo) GetDiameterAddress() NetworkNodeDiameterAddress {
 // GetDiameterAddressOk returns a tuple with the DiameterAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetDiameterAddressOk() (*NetworkNodeDiameterAddress, bool) {
-	if o == nil || isNil(o.DiameterAddress) {
+	if o == nil || IsNil(o.DiameterAddress) {
 		return nil, false
 	}
 	return o.DiameterAddress, true
@@ -99,7 +99,7 @@ func (o *SmsRouterInfo) GetDiameterAddressOk() (*NetworkNodeDiameterAddress, boo
 
 // HasDiameterAddress returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasDiameterAddress() bool {
-	if o != nil && !isNil(o.DiameterAddress) {
+	if o != nil && !IsNil(o.DiameterAddress) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *SmsRouterInfo) SetDiameterAddress(v NetworkNodeDiameterAddress) {
 
 // GetMapAddress returns the MapAddress field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetMapAddress() string {
-	if o == nil || isNil(o.MapAddress) {
+	if o == nil || IsNil(o.MapAddress) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *SmsRouterInfo) GetMapAddress() string {
 // GetMapAddressOk returns a tuple with the MapAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetMapAddressOk() (*string, bool) {
-	if o == nil || isNil(o.MapAddress) {
+	if o == nil || IsNil(o.MapAddress) {
 		return nil, false
 	}
 	return o.MapAddress, true
@@ -131,7 +131,7 @@ func (o *SmsRouterInfo) GetMapAddressOk() (*string, bool) {
 
 // HasMapAddress returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasMapAddress() bool {
-	if o != nil && !isNil(o.MapAddress) {
+	if o != nil && !IsNil(o.MapAddress) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *SmsRouterInfo) SetMapAddress(v string) {
 
 // GetRouterIpv4 returns the RouterIpv4 field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetRouterIpv4() string {
-	if o == nil || isNil(o.RouterIpv4) {
+	if o == nil || IsNil(o.RouterIpv4) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *SmsRouterInfo) GetRouterIpv4() string {
 // GetRouterIpv4Ok returns a tuple with the RouterIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetRouterIpv4Ok() (*string, bool) {
-	if o == nil || isNil(o.RouterIpv4) {
+	if o == nil || IsNil(o.RouterIpv4) {
 		return nil, false
 	}
 	return o.RouterIpv4, true
@@ -163,7 +163,7 @@ func (o *SmsRouterInfo) GetRouterIpv4Ok() (*string, bool) {
 
 // HasRouterIpv4 returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasRouterIpv4() bool {
-	if o != nil && !isNil(o.RouterIpv4) {
+	if o != nil && !IsNil(o.RouterIpv4) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *SmsRouterInfo) SetRouterIpv4(v string) {
 
 // GetRouterIpv6 returns the RouterIpv6 field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetRouterIpv6() Ipv6Addr {
-	if o == nil || isNil(o.RouterIpv6) {
+	if o == nil || IsNil(o.RouterIpv6) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *SmsRouterInfo) GetRouterIpv6() Ipv6Addr {
 // GetRouterIpv6Ok returns a tuple with the RouterIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetRouterIpv6Ok() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.RouterIpv6) {
+	if o == nil || IsNil(o.RouterIpv6) {
 		return nil, false
 	}
 	return o.RouterIpv6, true
@@ -195,7 +195,7 @@ func (o *SmsRouterInfo) GetRouterIpv6Ok() (*Ipv6Addr, bool) {
 
 // HasRouterIpv6 returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasRouterIpv6() bool {
-	if o != nil && !isNil(o.RouterIpv6) {
+	if o != nil && !IsNil(o.RouterIpv6) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *SmsRouterInfo) SetRouterIpv6(v Ipv6Addr) {
 
 // GetRouterFqdn returns the RouterFqdn field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetRouterFqdn() string {
-	if o == nil || isNil(o.RouterFqdn) {
+	if o == nil || IsNil(o.RouterFqdn) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *SmsRouterInfo) GetRouterFqdn() string {
 // GetRouterFqdnOk returns a tuple with the RouterFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetRouterFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.RouterFqdn) {
+	if o == nil || IsNil(o.RouterFqdn) {
 		return nil, false
 	}
 	return o.RouterFqdn, true
@@ -227,7 +227,7 @@ func (o *SmsRouterInfo) GetRouterFqdnOk() (*string, bool) {
 
 // HasRouterFqdn returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasRouterFqdn() bool {
-	if o != nil && !isNil(o.RouterFqdn) {
+	if o != nil && !IsNil(o.RouterFqdn) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *SmsRouterInfo) SetRouterFqdn(v string) {
 }
 
 func (o SmsRouterInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,22 +249,22 @@ func (o SmsRouterInfo) MarshalJSON() ([]byte, error) {
 
 func (o SmsRouterInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NfInstanceId) {
+	if !IsNil(o.NfInstanceId) {
 		toSerialize["nfInstanceId"] = o.NfInstanceId
 	}
-	if !isNil(o.DiameterAddress) {
+	if !IsNil(o.DiameterAddress) {
 		toSerialize["diameterAddress"] = o.DiameterAddress
 	}
-	if !isNil(o.MapAddress) {
+	if !IsNil(o.MapAddress) {
 		toSerialize["mapAddress"] = o.MapAddress
 	}
-	if !isNil(o.RouterIpv4) {
+	if !IsNil(o.RouterIpv4) {
 		toSerialize["routerIpv4"] = o.RouterIpv4
 	}
-	if !isNil(o.RouterIpv6) {
+	if !IsNil(o.RouterIpv6) {
 		toSerialize["routerIpv6"] = o.RouterIpv6
 	}
-	if !isNil(o.RouterFqdn) {
+	if !IsNil(o.RouterFqdn) {
 		toSerialize["routerFqdn"] = o.RouterFqdn
 	}
 	return toSerialize, nil
@@ -305,5 +305,3 @@ func (v *NullableSmsRouterInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

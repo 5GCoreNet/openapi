@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nsmsf_SMService
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // SendSMSPayloadInUplinkDirectionApiService SendSMSPayloadInUplinkDirectionApi service
 type SendSMSPayloadInUplinkDirectionApiService service
 
 type ApiSendSMSRequest struct {
-	ctx context.Context
-	ApiService *SendSMSPayloadInUplinkDirectionApiService
-	supi string
-	jsonData *SmsRecordData
+	ctx           context.Context
+	ApiService    *SendSMSPayloadInUplinkDirectionApiService
+	supi          string
+	jsonData      *SmsRecordData
 	binaryPayload *os.File
 }
 
@@ -37,8 +36,8 @@ func (r ApiSendSMSRequest) JsonData(jsonData SmsRecordData) ApiSendSMSRequest {
 	return r
 }
 
-func (r ApiSendSMSRequest) BinaryPayload(binaryPayload os.File) ApiSendSMSRequest {
-	r.binaryPayload = &binaryPayload
+func (r ApiSendSMSRequest) BinaryPayload(binaryPayload *os.File) ApiSendSMSRequest {
+	r.binaryPayload = binaryPayload
 	return r
 }
 
@@ -49,26 +48,27 @@ func (r ApiSendSMSRequest) Execute() (*SmsRecordDeliveryData, *http.Response, er
 /*
 SendSMS Send SMS payload for a given UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Subscriber Permanent Identifier (SUPI)
- @return ApiSendSMSRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Subscriber Permanent Identifier (SUPI)
+	@return ApiSendSMSRequest
 */
 func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMS(ctx context.Context, supi string) ApiSendSMSRequest {
 	return ApiSendSMSRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
-//  @return SmsRecordDeliveryData
+//
+//	@return SmsRecordDeliveryData
 func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSRequest) (*SmsRecordDeliveryData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmsRecordDeliveryData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmsRecordDeliveryData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SendSMSPayloadInUplinkDirectionApiService.SendSMS")
@@ -108,22 +108,21 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryPayloadLocalVarFormFileName string
-	var binaryPayloadLocalVarFileName     string
-	var binaryPayloadLocalVarFileBytes    []byte
+	var binaryPayloadLocalVarFileName string
+	var binaryPayloadLocalVarFileBytes []byte
 
 	binaryPayloadLocalVarFormFileName = "binaryPayload"
 
-	var binaryPayloadLocalVarFile *os.File
-	if r.binaryPayload != nil {
-		binaryPayloadLocalVarFile = r.binaryPayload
-	}
+	binaryPayloadLocalVarFile := r.binaryPayload
+
 	if binaryPayloadLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryPayloadLocalVarFile)
+		fbs, _ := io.ReadAll(binaryPayloadLocalVarFile)
+
 		binaryPayloadLocalVarFileBytes = fbs
 		binaryPayloadLocalVarFileName = binaryPayloadLocalVarFile.Name()
 		binaryPayloadLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryPayloadLocalVarFileBytes, fileName: binaryPayloadLocalVarFileName, formFileName: binaryPayloadLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryPayloadLocalVarFileBytes, fileName: binaryPayloadLocalVarFileName, formFileName: binaryPayloadLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -134,9 +133,9 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -153,8 +152,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -164,8 +163,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -175,8 +174,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -186,8 +185,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -197,8 +196,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -208,8 +207,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -219,8 +218,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -230,8 +229,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -241,8 +240,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -252,8 +251,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -263,8 +262,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -274,8 +273,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -285,8 +284,8 @@ func (a *SendSMSPayloadInUplinkDirectionApiService) SendSMSExecute(r ApiSendSMSR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Eees_ACRManagementEvent
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualACRManagementEventsSubscriptionDocumentApiService IndividualACRManagementEventsSubscriptionDocumentApi service
 type IndividualACRManagementEventsSubscriptionDocumentApiService service
 
 type ApiDeleteIndACRMngEventSubscrRequest struct {
-	ctx context.Context
-	ApiService *IndividualACRManagementEventsSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualACRManagementEventsSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -38,14 +37,14 @@ DeleteIndACRMngEventSubscr Delete an Individual ACR Management Events Subscripti
 
 Delete an existing Individual ACR Management Events Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiDeleteIndACRMngEventSubscrRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiDeleteIndACRMngEventSubscrRequest
 */
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndACRMngEventSubscr(ctx context.Context, subscriptionId string) ApiDeleteIndACRMngEventSubscrRequest {
 	return ApiDeleteIndACRMngEventSubscrRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -53,9 +52,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 // Execute executes the request
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndACRMngEventSubscrExecute(r ApiDeleteIndACRMngEventSubscrRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualACRManagementEventsSubscriptionDocumentApiService.DeleteIndACRMngEventSubscr")
@@ -97,9 +96,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -116,8 +115,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +126,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +137,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +148,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -160,8 +159,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -171,8 +170,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -182,8 +181,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -193,10 +192,10 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) DeleteIndA
 }
 
 type ApiGetIndACRMngEventSubscrRequest struct {
-	ctx context.Context
-	ApiService *IndividualACRManagementEventsSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualACRManagementEventsSubscriptionDocumentApiService
 	subscriptionId string
-	suppFeat *string
+	suppFeat       *string
 }
 
 // Features supported by the EAS.
@@ -214,26 +213,27 @@ GetIndACRMngEventSubscr Read an Individual ACR Management Events Subscription
 
 Retrieve an Individual ACR Management Events Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiGetIndACRMngEventSubscrRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiGetIndACRMngEventSubscrRequest
 */
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRMngEventSubscr(ctx context.Context, subscriptionId string) ApiGetIndACRMngEventSubscrRequest {
 	return ApiGetIndACRMngEventSubscrRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AcrMgntEventsSubscription
+//
+//	@return AcrMgntEventsSubscription
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRMngEventSubscrExecute(r ApiGetIndACRMngEventSubscrRequest) (*AcrMgntEventsSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AcrMgntEventsSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AcrMgntEventsSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualACRManagementEventsSubscriptionDocumentApiService.GetIndACRMngEventSubscr")
@@ -249,7 +249,7 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 	localVarFormParams := url.Values{}
 
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -278,9 +278,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -297,8 +297,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -308,8 +308,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -319,8 +319,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -330,8 +330,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -341,8 +341,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -352,8 +352,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -363,8 +363,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -374,8 +374,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -394,9 +394,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) GetIndACRM
 }
 
 type ApiModifyIndACRMngEventSubscrRequest struct {
-	ctx context.Context
-	ApiService *IndividualACRManagementEventsSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                            context.Context
+	ApiService                     *IndividualACRManagementEventsSubscriptionDocumentApiService
+	subscriptionId                 string
 	acrMgntEventsSubscriptionPatch *AcrMgntEventsSubscriptionPatch
 }
 
@@ -413,26 +413,27 @@ func (r ApiModifyIndACRMngEventSubscrRequest) Execute() (*AcrMgntEventsSubscript
 /*
 ModifyIndACRMngEventSubscr Modify an Individual ACR Management Events Subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiModifyIndACRMngEventSubscrRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiModifyIndACRMngEventSubscrRequest
 */
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndACRMngEventSubscr(ctx context.Context, subscriptionId string) ApiModifyIndACRMngEventSubscrRequest {
 	return ApiModifyIndACRMngEventSubscrRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AcrMgntEventsSubscription
+//
+//	@return AcrMgntEventsSubscription
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndACRMngEventSubscrExecute(r ApiModifyIndACRMngEventSubscrRequest) (*AcrMgntEventsSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AcrMgntEventsSubscription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AcrMgntEventsSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualACRManagementEventsSubscriptionDocumentApiService.ModifyIndACRMngEventSubscr")
@@ -479,9 +480,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -498,8 +499,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -509,8 +510,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -520,8 +521,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -531,8 +532,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -542,8 +543,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -553,8 +554,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -564,8 +565,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -575,8 +576,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -586,8 +587,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -597,8 +598,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -617,9 +618,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) ModifyIndA
 }
 
 type ApiUpdateIndACRMngEventSubscrRequest struct {
-	ctx context.Context
-	ApiService *IndividualACRManagementEventsSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                       context.Context
+	ApiService                *IndividualACRManagementEventsSubscriptionDocumentApiService
+	subscriptionId            string
 	acrMgntEventsSubscription *AcrMgntEventsSubscription
 }
 
@@ -637,26 +638,27 @@ UpdateIndACRMngEventSubscr Update an Individual ACR Management Events Subscripti
 
 Fully replace an existing Individual ACR Management Events Subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Subscription Id.
- @return ApiUpdateIndACRMngEventSubscrRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Subscription Id.
+	@return ApiUpdateIndACRMngEventSubscrRequest
 */
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndACRMngEventSubscr(ctx context.Context, subscriptionId string) ApiUpdateIndACRMngEventSubscrRequest {
 	return ApiUpdateIndACRMngEventSubscrRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AcrMgntEventsSubscription
+//
+//	@return AcrMgntEventsSubscription
 func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndACRMngEventSubscrExecute(r ApiUpdateIndACRMngEventSubscrRequest) (*AcrMgntEventsSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AcrMgntEventsSubscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AcrMgntEventsSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualACRManagementEventsSubscriptionDocumentApiService.UpdateIndACRMngEventSubscr")
@@ -703,9 +705,9 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -722,8 +724,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -733,8 +735,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -744,8 +746,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -755,8 +757,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -766,8 +768,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -777,8 +779,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -788,8 +790,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -799,8 +801,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -810,8 +812,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -821,8 +823,8 @@ func (a *IndividualACRManagementEventsSubscriptionDocumentApiService) UpdateIndA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

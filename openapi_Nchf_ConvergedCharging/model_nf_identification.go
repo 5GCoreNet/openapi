@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &NFIdentification{}
 
 // NFIdentification struct for NFIdentification
 type NFIdentification struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NFName *string `json:"nFName,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	NFIPv4Address *string `json:"nFIPv4Address,omitempty"`
-	NFIPv6Address *Ipv6Addr `json:"nFIPv6Address,omitempty"`
-	NFPLMNID *PlmnId `json:"nFPLMNID,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	NFIPv4Address     *string           `json:"nFIPv4Address,omitempty"`
+	NFIPv6Address     *Ipv6Addr         `json:"nFIPv6Address,omitempty"`
+	NFPLMNID          *PlmnId           `json:"nFPLMNID,omitempty"`
 	NodeFunctionality NodeFunctionality `json:"nodeFunctionality"`
-	NFFqdn *string `json:"nFFqdn,omitempty"`
+	NFFqdn            *string           `json:"nFFqdn,omitempty"`
 }
 
 // NewNFIdentification instantiates a new NFIdentification object
@@ -49,7 +49,7 @@ func NewNFIdentificationWithDefaults() *NFIdentification {
 
 // GetNFName returns the NFName field value if set, zero value otherwise.
 func (o *NFIdentification) GetNFName() string {
-	if o == nil || isNil(o.NFName) {
+	if o == nil || IsNil(o.NFName) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *NFIdentification) GetNFName() string {
 // GetNFNameOk returns a tuple with the NFName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFIdentification) GetNFNameOk() (*string, bool) {
-	if o == nil || isNil(o.NFName) {
+	if o == nil || IsNil(o.NFName) {
 		return nil, false
 	}
 	return o.NFName, true
@@ -67,7 +67,7 @@ func (o *NFIdentification) GetNFNameOk() (*string, bool) {
 
 // HasNFName returns a boolean if a field has been set.
 func (o *NFIdentification) HasNFName() bool {
-	if o != nil && !isNil(o.NFName) {
+	if o != nil && !IsNil(o.NFName) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *NFIdentification) SetNFName(v string) {
 
 // GetNFIPv4Address returns the NFIPv4Address field value if set, zero value otherwise.
 func (o *NFIdentification) GetNFIPv4Address() string {
-	if o == nil || isNil(o.NFIPv4Address) {
+	if o == nil || IsNil(o.NFIPv4Address) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *NFIdentification) GetNFIPv4Address() string {
 // GetNFIPv4AddressOk returns a tuple with the NFIPv4Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFIdentification) GetNFIPv4AddressOk() (*string, bool) {
-	if o == nil || isNil(o.NFIPv4Address) {
+	if o == nil || IsNil(o.NFIPv4Address) {
 		return nil, false
 	}
 	return o.NFIPv4Address, true
@@ -99,7 +99,7 @@ func (o *NFIdentification) GetNFIPv4AddressOk() (*string, bool) {
 
 // HasNFIPv4Address returns a boolean if a field has been set.
 func (o *NFIdentification) HasNFIPv4Address() bool {
-	if o != nil && !isNil(o.NFIPv4Address) {
+	if o != nil && !IsNil(o.NFIPv4Address) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *NFIdentification) SetNFIPv4Address(v string) {
 
 // GetNFIPv6Address returns the NFIPv6Address field value if set, zero value otherwise.
 func (o *NFIdentification) GetNFIPv6Address() Ipv6Addr {
-	if o == nil || isNil(o.NFIPv6Address) {
+	if o == nil || IsNil(o.NFIPv6Address) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *NFIdentification) GetNFIPv6Address() Ipv6Addr {
 // GetNFIPv6AddressOk returns a tuple with the NFIPv6Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFIdentification) GetNFIPv6AddressOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.NFIPv6Address) {
+	if o == nil || IsNil(o.NFIPv6Address) {
 		return nil, false
 	}
 	return o.NFIPv6Address, true
@@ -131,7 +131,7 @@ func (o *NFIdentification) GetNFIPv6AddressOk() (*Ipv6Addr, bool) {
 
 // HasNFIPv6Address returns a boolean if a field has been set.
 func (o *NFIdentification) HasNFIPv6Address() bool {
-	if o != nil && !isNil(o.NFIPv6Address) {
+	if o != nil && !IsNil(o.NFIPv6Address) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *NFIdentification) SetNFIPv6Address(v Ipv6Addr) {
 
 // GetNFPLMNID returns the NFPLMNID field value if set, zero value otherwise.
 func (o *NFIdentification) GetNFPLMNID() PlmnId {
-	if o == nil || isNil(o.NFPLMNID) {
+	if o == nil || IsNil(o.NFPLMNID) {
 		var ret PlmnId
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *NFIdentification) GetNFPLMNID() PlmnId {
 // GetNFPLMNIDOk returns a tuple with the NFPLMNID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFIdentification) GetNFPLMNIDOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.NFPLMNID) {
+	if o == nil || IsNil(o.NFPLMNID) {
 		return nil, false
 	}
 	return o.NFPLMNID, true
@@ -163,7 +163,7 @@ func (o *NFIdentification) GetNFPLMNIDOk() (*PlmnId, bool) {
 
 // HasNFPLMNID returns a boolean if a field has been set.
 func (o *NFIdentification) HasNFPLMNID() bool {
-	if o != nil && !isNil(o.NFPLMNID) {
+	if o != nil && !IsNil(o.NFPLMNID) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *NFIdentification) SetNodeFunctionality(v NodeFunctionality) {
 
 // GetNFFqdn returns the NFFqdn field value if set, zero value otherwise.
 func (o *NFIdentification) GetNFFqdn() string {
-	if o == nil || isNil(o.NFFqdn) {
+	if o == nil || IsNil(o.NFFqdn) {
 		var ret string
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *NFIdentification) GetNFFqdn() string {
 // GetNFFqdnOk returns a tuple with the NFFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFIdentification) GetNFFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.NFFqdn) {
+	if o == nil || IsNil(o.NFFqdn) {
 		return nil, false
 	}
 	return o.NFFqdn, true
@@ -219,7 +219,7 @@ func (o *NFIdentification) GetNFFqdnOk() (*string, bool) {
 
 // HasNFFqdn returns a boolean if a field has been set.
 func (o *NFIdentification) HasNFFqdn() bool {
-	if o != nil && !isNil(o.NFFqdn) {
+	if o != nil && !IsNil(o.NFFqdn) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *NFIdentification) SetNFFqdn(v string) {
 }
 
 func (o NFIdentification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,20 +241,20 @@ func (o NFIdentification) MarshalJSON() ([]byte, error) {
 
 func (o NFIdentification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NFName) {
+	if !IsNil(o.NFName) {
 		toSerialize["nFName"] = o.NFName
 	}
-	if !isNil(o.NFIPv4Address) {
+	if !IsNil(o.NFIPv4Address) {
 		toSerialize["nFIPv4Address"] = o.NFIPv4Address
 	}
-	if !isNil(o.NFIPv6Address) {
+	if !IsNil(o.NFIPv6Address) {
 		toSerialize["nFIPv6Address"] = o.NFIPv6Address
 	}
-	if !isNil(o.NFPLMNID) {
+	if !IsNil(o.NFPLMNID) {
 		toSerialize["nFPLMNID"] = o.NFPLMNID
 	}
 	toSerialize["nodeFunctionality"] = o.NodeFunctionality
-	if !isNil(o.NFFqdn) {
+	if !IsNil(o.NFFqdn) {
 		toSerialize["nFFqdn"] = o.NFFqdn
 	}
 	return toSerialize, nil
@@ -295,5 +295,3 @@ func (v *NullableNFIdentification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

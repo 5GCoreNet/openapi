@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,17 +15,17 @@ import (
 	"fmt"
 )
 
-// SscModeRm represents the service and session continuity mode It shall comply with the provisions defined in table 5.4.3.6-1 but with the OpenAPI 'nullable: true' property.  
+// SscModeRm represents the service and session continuity mode It shall comply with the provisions defined in table 5.4.3.6-1 but with the OpenAPI 'nullable: true' property.
 type SscModeRm struct {
 	NullValue *NullValue
-	SscMode *SscMode
+	SscMode   *SscMode
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SscModeRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *SscModeRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into SscMode
-	err = json.Unmarshal(data, &dst.SscMode);
+	err = json.Unmarshal(data, &dst.SscMode)
 	if err == nil {
 		jsonSscMode, _ := json.Marshal(dst.SscMode)
 		if string(jsonSscMode) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableSscModeRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

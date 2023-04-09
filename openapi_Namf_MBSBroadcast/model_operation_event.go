@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &OperationEvent{}
 // OperationEvent Operation Event for a Broadcast MBS Session.
 type OperationEvent struct {
 	OpEventType OpEventType `json:"opEventType"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AmfId *string `json:"amfId,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AmfId                 *string             `json:"amfId,omitempty"`
 	NgranFailureEventList []NgranFailureEvent `json:"ngranFailureEventList,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *OperationEvent) SetOpEventType(v OpEventType) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *OperationEvent) GetAmfId() string {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *OperationEvent) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperationEvent) GetAmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -87,7 +87,7 @@ func (o *OperationEvent) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *OperationEvent) HasAmfId() bool {
-	if o != nil && !isNil(o.AmfId) {
+	if o != nil && !IsNil(o.AmfId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *OperationEvent) SetAmfId(v string) {
 
 // GetNgranFailureEventList returns the NgranFailureEventList field value if set, zero value otherwise.
 func (o *OperationEvent) GetNgranFailureEventList() []NgranFailureEvent {
-	if o == nil || isNil(o.NgranFailureEventList) {
+	if o == nil || IsNil(o.NgranFailureEventList) {
 		var ret []NgranFailureEvent
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *OperationEvent) GetNgranFailureEventList() []NgranFailureEvent {
 // GetNgranFailureEventListOk returns a tuple with the NgranFailureEventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperationEvent) GetNgranFailureEventListOk() ([]NgranFailureEvent, bool) {
-	if o == nil || isNil(o.NgranFailureEventList) {
+	if o == nil || IsNil(o.NgranFailureEventList) {
 		return nil, false
 	}
 	return o.NgranFailureEventList, true
@@ -119,7 +119,7 @@ func (o *OperationEvent) GetNgranFailureEventListOk() ([]NgranFailureEvent, bool
 
 // HasNgranFailureEventList returns a boolean if a field has been set.
 func (o *OperationEvent) HasNgranFailureEventList() bool {
-	if o != nil && !isNil(o.NgranFailureEventList) {
+	if o != nil && !IsNil(o.NgranFailureEventList) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *OperationEvent) SetNgranFailureEventList(v []NgranFailureEvent) {
 }
 
 func (o OperationEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o OperationEvent) MarshalJSON() ([]byte, error) {
 func (o OperationEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["opEventType"] = o.OpEventType
-	if !isNil(o.AmfId) {
+	if !IsNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
-	if !isNil(o.NgranFailureEventList) {
+	if !IsNil(o.NgranFailureEventList) {
 		toSerialize["ngranFailureEventList"] = o.NgranFailureEventList
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableOperationEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

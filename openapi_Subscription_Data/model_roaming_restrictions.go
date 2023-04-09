@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,7 +17,7 @@ import (
 // checks if the RoamingRestrictions type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RoamingRestrictions{}
 
-// RoamingRestrictions Indicates if access is allowed to a given serving network, e.g. a PLMN (MCC, MNC) or an  SNPN (MCC, MNC, NID). 
+// RoamingRestrictions Indicates if access is allowed to a given serving network, e.g. a PLMN (MCC, MNC) or an  SNPN (MCC, MNC, NID).
 type RoamingRestrictions struct {
 	AccessAllowed *bool `json:"accessAllowed,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewRoamingRestrictionsWithDefaults() *RoamingRestrictions {
 
 // GetAccessAllowed returns the AccessAllowed field value if set, zero value otherwise.
 func (o *RoamingRestrictions) GetAccessAllowed() bool {
-	if o == nil || isNil(o.AccessAllowed) {
+	if o == nil || IsNil(o.AccessAllowed) {
 		var ret bool
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *RoamingRestrictions) GetAccessAllowed() bool {
 // GetAccessAllowedOk returns a tuple with the AccessAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingRestrictions) GetAccessAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.AccessAllowed) {
+	if o == nil || IsNil(o.AccessAllowed) {
 		return nil, false
 	}
 	return o.AccessAllowed, true
@@ -59,7 +59,7 @@ func (o *RoamingRestrictions) GetAccessAllowedOk() (*bool, bool) {
 
 // HasAccessAllowed returns a boolean if a field has been set.
 func (o *RoamingRestrictions) HasAccessAllowed() bool {
-	if o != nil && !isNil(o.AccessAllowed) {
+	if o != nil && !IsNil(o.AccessAllowed) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *RoamingRestrictions) SetAccessAllowed(v bool) {
 }
 
 func (o RoamingRestrictions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o RoamingRestrictions) MarshalJSON() ([]byte, error) {
 
 func (o RoamingRestrictions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccessAllowed) {
+	if !IsNil(o.AccessAllowed) {
 		toSerialize["accessAllowed"] = o.AccessAllowed
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableRoamingRestrictions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

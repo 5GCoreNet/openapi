@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the IptvConfigDataPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IptvConfigDataPatch{}
 
-// IptvConfigDataPatch Represents the parameters to request the modification of an IPTV Configuration resource. 
+// IptvConfigDataPatch Represents the parameters to request the modification of an IPTV Configuration resource.
 type IptvConfigDataPatch struct {
-	// Identifies a list of multicast address access control information. Any string value can be used as a key of the map. 
+	// Identifies a list of multicast address access control information. Any string value can be used as a key of the map.
 	MultiAccCtrls *map[string]MulticastAccessControl `json:"multiAccCtrls,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewIptvConfigDataPatchWithDefaults() *IptvConfigDataPatch {
 
 // GetMultiAccCtrls returns the MultiAccCtrls field value if set, zero value otherwise.
 func (o *IptvConfigDataPatch) GetMultiAccCtrls() map[string]MulticastAccessControl {
-	if o == nil || isNil(o.MultiAccCtrls) {
+	if o == nil || IsNil(o.MultiAccCtrls) {
 		var ret map[string]MulticastAccessControl
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *IptvConfigDataPatch) GetMultiAccCtrls() map[string]MulticastAccessContr
 // GetMultiAccCtrlsOk returns a tuple with the MultiAccCtrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigDataPatch) GetMultiAccCtrlsOk() (*map[string]MulticastAccessControl, bool) {
-	if o == nil || isNil(o.MultiAccCtrls) {
+	if o == nil || IsNil(o.MultiAccCtrls) {
 		return nil, false
 	}
 	return o.MultiAccCtrls, true
@@ -60,7 +60,7 @@ func (o *IptvConfigDataPatch) GetMultiAccCtrlsOk() (*map[string]MulticastAccessC
 
 // HasMultiAccCtrls returns a boolean if a field has been set.
 func (o *IptvConfigDataPatch) HasMultiAccCtrls() bool {
-	if o != nil && !isNil(o.MultiAccCtrls) {
+	if o != nil && !IsNil(o.MultiAccCtrls) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *IptvConfigDataPatch) SetMultiAccCtrls(v map[string]MulticastAccessContr
 }
 
 func (o IptvConfigDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o IptvConfigDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o IptvConfigDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MultiAccCtrls) {
+	if !IsNil(o.MultiAccCtrls) {
 		toSerialize["multiAccCtrls"] = o.MultiAccCtrls
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableIptvConfigDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

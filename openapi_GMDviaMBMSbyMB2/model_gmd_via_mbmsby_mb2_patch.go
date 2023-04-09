@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyMB2
 
-API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &GMDViaMBMSByMb2Patch{}
 // GMDViaMBMSByMb2Patch Represents a modification request of a group message delivery via MBMS by MB2.
 type GMDViaMBMSByMb2Patch struct {
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
-	ExternalGroupId *string `json:"externalGroupId,omitempty"`
-	MbmsLocArea *MbmsLocArea `json:"mbmsLocArea,omitempty"`
+	ExternalGroupId *string      `json:"externalGroupId,omitempty"`
+	MbmsLocArea     *MbmsLocArea `json:"mbmsLocArea,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
 	MessageDeliveryStartTime *time.Time `json:"messageDeliveryStartTime,omitempty"`
 	// String with format \"byte\" as defined in OpenAPI Specification, i.e, base64-encoded characters.
@@ -50,7 +50,7 @@ func NewGMDViaMBMSByMb2PatchWithDefaults() *GMDViaMBMSByMb2Patch {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *GMDViaMBMSByMb2Patch) GetExternalGroupId() string {
-	if o == nil || isNil(o.ExternalGroupId) {
+	if o == nil || IsNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *GMDViaMBMSByMb2Patch) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByMb2Patch) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExternalGroupId) {
+	if o == nil || IsNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -68,7 +68,7 @@ func (o *GMDViaMBMSByMb2Patch) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *GMDViaMBMSByMb2Patch) HasExternalGroupId() bool {
-	if o != nil && !isNil(o.ExternalGroupId) {
+	if o != nil && !IsNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *GMDViaMBMSByMb2Patch) SetExternalGroupId(v string) {
 
 // GetMbmsLocArea returns the MbmsLocArea field value if set, zero value otherwise.
 func (o *GMDViaMBMSByMb2Patch) GetMbmsLocArea() MbmsLocArea {
-	if o == nil || isNil(o.MbmsLocArea) {
+	if o == nil || IsNil(o.MbmsLocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *GMDViaMBMSByMb2Patch) GetMbmsLocArea() MbmsLocArea {
 // GetMbmsLocAreaOk returns a tuple with the MbmsLocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByMb2Patch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || isNil(o.MbmsLocArea) {
+	if o == nil || IsNil(o.MbmsLocArea) {
 		return nil, false
 	}
 	return o.MbmsLocArea, true
@@ -100,7 +100,7 @@ func (o *GMDViaMBMSByMb2Patch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasMbmsLocArea returns a boolean if a field has been set.
 func (o *GMDViaMBMSByMb2Patch) HasMbmsLocArea() bool {
-	if o != nil && !isNil(o.MbmsLocArea) {
+	if o != nil && !IsNil(o.MbmsLocArea) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *GMDViaMBMSByMb2Patch) SetMbmsLocArea(v MbmsLocArea) {
 
 // GetMessageDeliveryStartTime returns the MessageDeliveryStartTime field value if set, zero value otherwise.
 func (o *GMDViaMBMSByMb2Patch) GetMessageDeliveryStartTime() time.Time {
-	if o == nil || isNil(o.MessageDeliveryStartTime) {
+	if o == nil || IsNil(o.MessageDeliveryStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *GMDViaMBMSByMb2Patch) GetMessageDeliveryStartTime() time.Time {
 // GetMessageDeliveryStartTimeOk returns a tuple with the MessageDeliveryStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByMb2Patch) GetMessageDeliveryStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MessageDeliveryStartTime) {
+	if o == nil || IsNil(o.MessageDeliveryStartTime) {
 		return nil, false
 	}
 	return o.MessageDeliveryStartTime, true
@@ -132,7 +132,7 @@ func (o *GMDViaMBMSByMb2Patch) GetMessageDeliveryStartTimeOk() (*time.Time, bool
 
 // HasMessageDeliveryStartTime returns a boolean if a field has been set.
 func (o *GMDViaMBMSByMb2Patch) HasMessageDeliveryStartTime() bool {
-	if o != nil && !isNil(o.MessageDeliveryStartTime) {
+	if o != nil && !IsNil(o.MessageDeliveryStartTime) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *GMDViaMBMSByMb2Patch) SetMessageDeliveryStartTime(v time.Time) {
 
 // GetGroupMessagePayload returns the GroupMessagePayload field value if set, zero value otherwise.
 func (o *GMDViaMBMSByMb2Patch) GetGroupMessagePayload() string {
-	if o == nil || isNil(o.GroupMessagePayload) {
+	if o == nil || IsNil(o.GroupMessagePayload) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *GMDViaMBMSByMb2Patch) GetGroupMessagePayload() string {
 // GetGroupMessagePayloadOk returns a tuple with the GroupMessagePayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByMb2Patch) GetGroupMessagePayloadOk() (*string, bool) {
-	if o == nil || isNil(o.GroupMessagePayload) {
+	if o == nil || IsNil(o.GroupMessagePayload) {
 		return nil, false
 	}
 	return o.GroupMessagePayload, true
@@ -164,7 +164,7 @@ func (o *GMDViaMBMSByMb2Patch) GetGroupMessagePayloadOk() (*string, bool) {
 
 // HasGroupMessagePayload returns a boolean if a field has been set.
 func (o *GMDViaMBMSByMb2Patch) HasGroupMessagePayload() bool {
-	if o != nil && !isNil(o.GroupMessagePayload) {
+	if o != nil && !IsNil(o.GroupMessagePayload) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *GMDViaMBMSByMb2Patch) SetGroupMessagePayload(v string) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *GMDViaMBMSByMb2Patch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *GMDViaMBMSByMb2Patch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByMb2Patch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -196,7 +196,7 @@ func (o *GMDViaMBMSByMb2Patch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *GMDViaMBMSByMb2Patch) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *GMDViaMBMSByMb2Patch) SetNotificationDestination(v string) {
 }
 
 func (o GMDViaMBMSByMb2Patch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,19 +218,19 @@ func (o GMDViaMBMSByMb2Patch) MarshalJSON() ([]byte, error) {
 
 func (o GMDViaMBMSByMb2Patch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExternalGroupId) {
+	if !IsNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	if !isNil(o.MbmsLocArea) {
+	if !IsNil(o.MbmsLocArea) {
 		toSerialize["mbmsLocArea"] = o.MbmsLocArea
 	}
-	if !isNil(o.MessageDeliveryStartTime) {
+	if !IsNil(o.MessageDeliveryStartTime) {
 		toSerialize["messageDeliveryStartTime"] = o.MessageDeliveryStartTime
 	}
-	if !isNil(o.GroupMessagePayload) {
+	if !IsNil(o.GroupMessagePayload) {
 		toSerialize["groupMessagePayload"] = o.GroupMessagePayload
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil
@@ -271,5 +271,3 @@ func (v *NullableGMDViaMBMSByMb2Patch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M1_EdgeResourcesProvisioning
 
-5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -13,20 +13,19 @@ package openapi_M1_EdgeResourcesProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateEdgeResourcesConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                        context.Context
+	ApiService                 *DefaultApiService
+	provisioningSessionId      string
 	edgeResourcesConfiguration *EdgeResourcesConfiguration
 }
 
@@ -43,14 +42,14 @@ func (r ApiCreateEdgeResourcesConfigurationRequest) Execute() (*http.Response, e
 /*
 CreateEdgeResourcesConfiguration Create an Edge Resources Configuration within the scope of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiCreateEdgeResourcesConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiCreateEdgeResourcesConfigurationRequest
 */
 func (a *DefaultApiService) CreateEdgeResourcesConfiguration(ctx context.Context, provisioningSessionId string) ApiCreateEdgeResourcesConfigurationRequest {
 	return ApiCreateEdgeResourcesConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) CreateEdgeResourcesConfiguration(ctx context.Context
 // Execute executes the request
 func (a *DefaultApiService) CreateEdgeResourcesConfigurationExecute(r ApiCreateEdgeResourcesConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateEdgeResourcesConfiguration")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) CreateEdgeResourcesConfigurationExecute(r ApiCreateE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,9 +125,9 @@ func (a *DefaultApiService) CreateEdgeResourcesConfigurationExecute(r ApiCreateE
 }
 
 type ApiDestroyEdgeResourcesConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	edgeResourcesConfigurationId string
 }
 
@@ -139,16 +138,16 @@ func (r ApiDestroyEdgeResourcesConfigurationRequest) Execute() (*http.Response, 
 /*
 DestroyEdgeResourcesConfiguration Method for DestroyEdgeResourcesConfiguration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
- @return ApiDestroyEdgeResourcesConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
+	@return ApiDestroyEdgeResourcesConfigurationRequest
 */
 func (a *DefaultApiService) DestroyEdgeResourcesConfiguration(ctx context.Context, provisioningSessionId string, edgeResourcesConfigurationId string) ApiDestroyEdgeResourcesConfigurationRequest {
 	return ApiDestroyEdgeResourcesConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		edgeResourcesConfigurationId: edgeResourcesConfigurationId,
 	}
 }
@@ -156,9 +155,9 @@ func (a *DefaultApiService) DestroyEdgeResourcesConfiguration(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) DestroyEdgeResourcesConfigurationExecute(r ApiDestroyEdgeResourcesConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyEdgeResourcesConfiguration")
@@ -201,9 +200,9 @@ func (a *DefaultApiService) DestroyEdgeResourcesConfigurationExecute(r ApiDestro
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -220,11 +219,11 @@ func (a *DefaultApiService) DestroyEdgeResourcesConfigurationExecute(r ApiDestro
 }
 
 type ApiPatchEdgeResourcesConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	edgeResourcesConfigurationId string
-	edgeResourcesConfiguration *EdgeResourcesConfiguration
+	edgeResourcesConfiguration   *EdgeResourcesConfiguration
 }
 
 // A JSON representation of a Edge Resources Configuration
@@ -240,28 +239,29 @@ func (r ApiPatchEdgeResourcesConfigurationRequest) Execute() (*EdgeResourcesConf
 /*
 PatchEdgeResourcesConfiguration Patch the Edge Resources Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
- @return ApiPatchEdgeResourcesConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
+	@return ApiPatchEdgeResourcesConfigurationRequest
 */
 func (a *DefaultApiService) PatchEdgeResourcesConfiguration(ctx context.Context, provisioningSessionId string, edgeResourcesConfigurationId string) ApiPatchEdgeResourcesConfigurationRequest {
 	return ApiPatchEdgeResourcesConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		edgeResourcesConfigurationId: edgeResourcesConfigurationId,
 	}
 }
 
 // Execute executes the request
-//  @return EdgeResourcesConfiguration
+//
+//	@return EdgeResourcesConfiguration
 func (a *DefaultApiService) PatchEdgeResourcesConfigurationExecute(r ApiPatchEdgeResourcesConfigurationRequest) (*EdgeResourcesConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EdgeResourcesConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EdgeResourcesConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchEdgeResourcesConfiguration")
@@ -309,9 +309,9 @@ func (a *DefaultApiService) PatchEdgeResourcesConfigurationExecute(r ApiPatchEdg
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -337,9 +337,9 @@ func (a *DefaultApiService) PatchEdgeResourcesConfigurationExecute(r ApiPatchEdg
 }
 
 type ApiRetrieveEdgeResourcesConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	edgeResourcesConfigurationId string
 }
 
@@ -350,28 +350,29 @@ func (r ApiRetrieveEdgeResourcesConfigurationRequest) Execute() (*EdgeResourcesC
 /*
 RetrieveEdgeResourcesConfiguration Retrieve the Edge Resources Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
- @return ApiRetrieveEdgeResourcesConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
+	@return ApiRetrieveEdgeResourcesConfigurationRequest
 */
 func (a *DefaultApiService) RetrieveEdgeResourcesConfiguration(ctx context.Context, provisioningSessionId string, edgeResourcesConfigurationId string) ApiRetrieveEdgeResourcesConfigurationRequest {
 	return ApiRetrieveEdgeResourcesConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		edgeResourcesConfigurationId: edgeResourcesConfigurationId,
 	}
 }
 
 // Execute executes the request
-//  @return EdgeResourcesConfiguration
+//
+//	@return EdgeResourcesConfiguration
 func (a *DefaultApiService) RetrieveEdgeResourcesConfigurationExecute(r ApiRetrieveEdgeResourcesConfigurationRequest) (*EdgeResourcesConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EdgeResourcesConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EdgeResourcesConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveEdgeResourcesConfiguration")
@@ -414,9 +415,9 @@ func (a *DefaultApiService) RetrieveEdgeResourcesConfigurationExecute(r ApiRetri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -442,11 +443,11 @@ func (a *DefaultApiService) RetrieveEdgeResourcesConfigurationExecute(r ApiRetri
 }
 
 type ApiUpdateEdgeResourcesConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	edgeResourcesConfigurationId string
-	edgeResourcesConfiguration *EdgeResourcesConfiguration
+	edgeResourcesConfiguration   *EdgeResourcesConfiguration
 }
 
 // A JSON representation of an Edge Resources Configuration
@@ -462,16 +463,16 @@ func (r ApiUpdateEdgeResourcesConfigurationRequest) Execute() (*http.Response, e
 /*
 UpdateEdgeResourcesConfiguration Update an Edge Resources Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
- @return ApiUpdateEdgeResourcesConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param edgeResourcesConfigurationId The resource identifier of an existing Edge Resources Configuration.
+	@return ApiUpdateEdgeResourcesConfigurationRequest
 */
 func (a *DefaultApiService) UpdateEdgeResourcesConfiguration(ctx context.Context, provisioningSessionId string, edgeResourcesConfigurationId string) ApiUpdateEdgeResourcesConfigurationRequest {
 	return ApiUpdateEdgeResourcesConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		edgeResourcesConfigurationId: edgeResourcesConfigurationId,
 	}
 }
@@ -479,9 +480,9 @@ func (a *DefaultApiService) UpdateEdgeResourcesConfiguration(ctx context.Context
 // Execute executes the request
 func (a *DefaultApiService) UpdateEdgeResourcesConfigurationExecute(r ApiUpdateEdgeResourcesConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateEdgeResourcesConfiguration")
@@ -529,9 +530,9 @@ func (a *DefaultApiService) UpdateEdgeResourcesConfigurationExecute(r ApiUpdateE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 Naf_ProSe API
 
-Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the PlmnIdNid type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PlmnIdNid{}
 
-// PlmnIdNid Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN. 
+// PlmnIdNid Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
 type PlmnIdNid struct {
-	// Mobile Country Code part of the PLMN, comprising 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.  
+	// Mobile Country Code part of the PLMN, comprising 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.
 	Mcc string `json:"mcc"`
 	// Mobile Network Code part of the PLMN, comprising 2 or 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.
 	Mnc string `json:"mnc"`
-	// This represents the Network Identifier, which together with a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501 clause 5.30.2.1).  
+	// This represents the Network Identifier, which together with a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501 clause 5.30.2.1).
 	Nid *string `json:"nid,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *PlmnIdNid) SetMnc(v string) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *PlmnIdNid) GetNid() string {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PlmnIdNid) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnIdNid) GetNidOk() (*string, bool) {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -114,7 +114,7 @@ func (o *PlmnIdNid) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *PlmnIdNid) HasNid() bool {
-	if o != nil && !isNil(o.Nid) {
+	if o != nil && !IsNil(o.Nid) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *PlmnIdNid) SetNid(v string) {
 }
 
 func (o PlmnIdNid) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o PlmnIdNid) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mcc"] = o.Mcc
 	toSerialize["mnc"] = o.Mnc
-	if !isNil(o.Nid) {
+	if !IsNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullablePlmnIdNid) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

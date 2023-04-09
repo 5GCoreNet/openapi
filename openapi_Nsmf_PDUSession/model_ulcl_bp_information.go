@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &UlclBpInformation{}
 
 // UlclBpInformation UL CL or BP Information
 type UlclBpInformation struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	UlclBpUpfId *string `json:"ulclBpUpfId,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewUlclBpInformationWithDefaults() *UlclBpInformation {
 
 // GetUlclBpUpfId returns the UlclBpUpfId field value if set, zero value otherwise.
 func (o *UlclBpInformation) GetUlclBpUpfId() string {
-	if o == nil || isNil(o.UlclBpUpfId) {
+	if o == nil || IsNil(o.UlclBpUpfId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UlclBpInformation) GetUlclBpUpfId() string {
 // GetUlclBpUpfIdOk returns a tuple with the UlclBpUpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UlclBpInformation) GetUlclBpUpfIdOk() (*string, bool) {
-	if o == nil || isNil(o.UlclBpUpfId) {
+	if o == nil || IsNil(o.UlclBpUpfId) {
 		return nil, false
 	}
 	return o.UlclBpUpfId, true
@@ -60,7 +60,7 @@ func (o *UlclBpInformation) GetUlclBpUpfIdOk() (*string, bool) {
 
 // HasUlclBpUpfId returns a boolean if a field has been set.
 func (o *UlclBpInformation) HasUlclBpUpfId() bool {
-	if o != nil && !isNil(o.UlclBpUpfId) {
+	if o != nil && !IsNil(o.UlclBpUpfId) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *UlclBpInformation) SetUlclBpUpfId(v string) {
 }
 
 func (o UlclBpInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o UlclBpInformation) MarshalJSON() ([]byte, error) {
 
 func (o UlclBpInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UlclBpUpfId) {
+	if !IsNil(o.UlclBpUpfId) {
 		toSerialize["ulclBpUpfId"] = o.UlclBpUpfId
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableUlclBpInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

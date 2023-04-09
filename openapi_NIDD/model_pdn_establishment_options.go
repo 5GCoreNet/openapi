@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// PdnEstablishmentOptions Possible values are - WAIT_FOR_UE: wait for the UE to establish the PDN connection  - INDICATE_ERROR: respond with an error cause - SEND_TRIGGER: send a device trigger 
+// PdnEstablishmentOptions Possible values are - WAIT_FOR_UE: wait for the UE to establish the PDN connection  - INDICATE_ERROR: respond with an error cause - SEND_TRIGGER: send a device trigger
 type PdnEstablishmentOptions struct {
-	PdnEstablishmentOptionsAnyOf *PdnEstablishmentOptionsAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PdnEstablishmentOptions) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PdnEstablishmentOptionsAnyOf
-	err = json.Unmarshal(data, &dst.PdnEstablishmentOptionsAnyOf);
-	if err == nil {
-		jsonPdnEstablishmentOptionsAnyOf, _ := json.Marshal(dst.PdnEstablishmentOptionsAnyOf)
-		if string(jsonPdnEstablishmentOptionsAnyOf) == "{}" { // empty struct
-			dst.PdnEstablishmentOptionsAnyOf = nil
-		} else {
-			return nil // data stored in dst.PdnEstablishmentOptionsAnyOf, return on the first match
-		}
-	} else {
-		dst.PdnEstablishmentOptionsAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PdnEstablishmentOptions) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PdnEstablishmentOptions) MarshalJSON() ([]byte, error) {
-	if src.PdnEstablishmentOptionsAnyOf != nil {
-		return json.Marshal(&src.PdnEstablishmentOptionsAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePdnEstablishmentOptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

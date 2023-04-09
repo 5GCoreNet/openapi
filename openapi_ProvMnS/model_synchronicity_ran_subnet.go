@@ -20,7 +20,7 @@ var _ MappedNullable = &SynchronicityRANSubnet{}
 // SynchronicityRANSubnet struct for SynchronicityRANSubnet
 type SynchronicityRANSubnet struct {
 	Availability *SynAvailability `json:"availability,omitempty"`
-	Accuracy *float32 `json:"accuracy,omitempty"`
+	Accuracy     *float32         `json:"accuracy,omitempty"`
 }
 
 // NewSynchronicityRANSubnet instantiates a new SynchronicityRANSubnet object
@@ -42,7 +42,7 @@ func NewSynchronicityRANSubnetWithDefaults() *SynchronicityRANSubnet {
 
 // GetAvailability returns the Availability field value if set, zero value otherwise.
 func (o *SynchronicityRANSubnet) GetAvailability() SynAvailability {
-	if o == nil || isNil(o.Availability) {
+	if o == nil || IsNil(o.Availability) {
 		var ret SynAvailability
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SynchronicityRANSubnet) GetAvailability() SynAvailability {
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SynchronicityRANSubnet) GetAvailabilityOk() (*SynAvailability, bool) {
-	if o == nil || isNil(o.Availability) {
+	if o == nil || IsNil(o.Availability) {
 		return nil, false
 	}
 	return o.Availability, true
@@ -60,7 +60,7 @@ func (o *SynchronicityRANSubnet) GetAvailabilityOk() (*SynAvailability, bool) {
 
 // HasAvailability returns a boolean if a field has been set.
 func (o *SynchronicityRANSubnet) HasAvailability() bool {
-	if o != nil && !isNil(o.Availability) {
+	if o != nil && !IsNil(o.Availability) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SynchronicityRANSubnet) SetAvailability(v SynAvailability) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *SynchronicityRANSubnet) GetAccuracy() float32 {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret float32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SynchronicityRANSubnet) GetAccuracy() float32 {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SynchronicityRANSubnet) GetAccuracyOk() (*float32, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -92,7 +92,7 @@ func (o *SynchronicityRANSubnet) GetAccuracyOk() (*float32, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *SynchronicityRANSubnet) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SynchronicityRANSubnet) SetAccuracy(v float32) {
 }
 
 func (o SynchronicityRANSubnet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SynchronicityRANSubnet) MarshalJSON() ([]byte, error) {
 
 func (o SynchronicityRANSubnet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Availability) {
+	if !IsNil(o.Availability) {
 		toSerialize["availability"] = o.Availability
 	}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSynchronicityRANSubnet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

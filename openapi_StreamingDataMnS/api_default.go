@@ -13,26 +13,25 @@ package openapi_StreamingDataMnS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiConnectionsConnectionIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	connectionId string
-	connection *WebsocketHeaderConnectionType
+	ctx                    context.Context
+	ApiService             *DefaultApiService
+	connectionId           string
+	connection             *WebsocketHeaderConnectionType
 	secWebSocketExtensions *string
-	secWebSocketKey *string
-	secWebSocketProtocol *string
-	secWebSocketVersion *string
+	secWebSocketKey        *string
+	secWebSocketProtocol   *string
+	secWebSocketVersion    *string
 }
 
 func (r ApiConnectionsConnectionIdGetRequest) Connection(connection WebsocketHeaderConnectionType) ApiConnectionsConnectionIdGetRequest {
@@ -69,26 +68,27 @@ ConnectionsConnectionIdGet Obtain information about a connection.
 
 Enables the streaming data reporting service producer to obtain information about one streaming connection.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionId Indicate the ID (URI) of the connection for which the information is being retrieved
- @return ApiConnectionsConnectionIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionId Indicate the ID (URI) of the connection for which the information is being retrieved
+	@return ApiConnectionsConnectionIdGetRequest
 */
 func (a *DefaultApiService) ConnectionsConnectionIdGet(ctx context.Context, connectionId string) ApiConnectionsConnectionIdGetRequest {
 	return ApiConnectionsConnectionIdGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		connectionId: connectionId,
 	}
 }
 
 // Execute executes the request
-//  @return ConnectionInfoType
+//
+//	@return ConnectionInfoType
 func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsConnectionIdGetRequest) (*ConnectionInfoType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConnectionInfoType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConnectionInfoType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsConnectionIdGet")
@@ -121,19 +121,19 @@ func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsCo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.connection != nil {
-		parameterAddToQuery(localVarQueryParams, "Connection", r.connection, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Connection", r.connection, "")
 	}
 	if r.secWebSocketExtensions != nil {
-		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Extensions", r.secWebSocketExtensions, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Extensions", r.secWebSocketExtensions, "")
 	}
 	if r.secWebSocketKey != nil {
-		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Key", r.secWebSocketKey, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Key", r.secWebSocketKey, "")
 	}
 	if r.secWebSocketProtocol != nil {
-		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Protocol", r.secWebSocketProtocol, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Protocol", r.secWebSocketProtocol, "")
 	}
 	if r.secWebSocketVersion != nil {
-		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Version", r.secWebSocketVersion, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Version", r.secWebSocketVersion, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -145,9 +145,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -157,14 +157,14 @@ func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsCo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -181,10 +181,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsCo
 }
 
 type ApiConnectionsConnectionIdStreamsDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	connectionId string
-	streamIds *[]string
+	streamIds    *[]string
 }
 
 // The list of streamId for the stream(s) to be deleted.
@@ -202,14 +202,14 @@ ConnectionsConnectionIdStreamsDelete Remove reporting streams from an existing c
 
 Allows the producer to remove one or more reporting streams from an already established streaming connection.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionId Indicate the ID (URI) of the connection for which the reporting stream information is being removed.
- @return ApiConnectionsConnectionIdStreamsDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionId Indicate the ID (URI) of the connection for which the reporting stream information is being removed.
+	@return ApiConnectionsConnectionIdStreamsDeleteRequest
 */
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsDelete(ctx context.Context, connectionId string) ApiConnectionsConnectionIdStreamsDeleteRequest {
 	return ApiConnectionsConnectionIdStreamsDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		connectionId: connectionId,
 	}
 }
@@ -217,9 +217,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDelete(ctx context.Con
 // Execute executes the request
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiConnectionsConnectionIdStreamsDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsConnectionIdStreamsDelete")
@@ -242,10 +242,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "streamIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -275,9 +275,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiCon
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -287,14 +287,14 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiCon
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -302,10 +302,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiCon
 }
 
 type ApiConnectionsConnectionIdStreamsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	connectionId string
-	streamIds *[]string
+	streamIds    *[]string
 }
 
 // The list of streamId for which the stream information is to be retrieved.
@@ -323,26 +323,27 @@ ConnectionsConnectionIdStreamsGet Obtain information about streams.
 
 Enables the streaming data reporting service producer to obtain information about one or more reporting streams.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionId Indicate the ID (URI) of the connection for which the information is being retrieved
- @return ApiConnectionsConnectionIdStreamsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionId Indicate the ID (URI) of the connection for which the information is being retrieved
+	@return ApiConnectionsConnectionIdStreamsGetRequest
 */
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsGet(ctx context.Context, connectionId string) ApiConnectionsConnectionIdStreamsGetRequest {
 	return ApiConnectionsConnectionIdStreamsGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		connectionId: connectionId,
 	}
 }
 
 // Execute executes the request
-//  @return []StreamInfoWithReportersType
+//
+//	@return []StreamInfoWithReportersType
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnectionsConnectionIdStreamsGetRequest) ([]StreamInfoWithReportersType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []StreamInfoWithReportersType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []StreamInfoWithReportersType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsConnectionIdStreamsGet")
@@ -365,10 +366,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnec
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "streamIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -398,9 +399,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -410,14 +411,14 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -434,9 +435,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnec
 }
 
 type ApiConnectionsConnectionIdStreamsPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	connectionId string
+	ctx            context.Context
+	ApiService     *DefaultApiService
+	connectionId   string
 	streamInfoType *[]StreamInfoType
 }
 
@@ -454,26 +455,27 @@ ConnectionsConnectionIdStreamsPost Inform consumer about new reporting streams o
 
 Allows the producer to add one or more reporting streams to an already established streaming connection.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionId Indicate the ID (URI) of the connection for which the reporting stream information is being added.
- @return ApiConnectionsConnectionIdStreamsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionId Indicate the ID (URI) of the connection for which the reporting stream information is being added.
+	@return ApiConnectionsConnectionIdStreamsPostRequest
 */
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsPost(ctx context.Context, connectionId string) ApiConnectionsConnectionIdStreamsPostRequest {
 	return ApiConnectionsConnectionIdStreamsPostRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		connectionId: connectionId,
 	}
 }
 
 // Execute executes the request
-//  @return []StreamInfoType
+//
+//	@return []StreamInfoType
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsPostExecute(r ApiConnectionsConnectionIdStreamsPostRequest) ([]StreamInfoType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []StreamInfoType
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []StreamInfoType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsConnectionIdStreamsPost")
@@ -520,9 +522,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsPostExecute(r ApiConne
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -532,14 +534,14 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsPostExecute(r ApiConne
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -556,10 +558,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsPostExecute(r ApiConne
 }
 
 type ApiConnectionsConnectionIdStreamsStreamIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx          context.Context
+	ApiService   *DefaultApiService
 	connectionId string
-	streamId string
+	streamId     string
 }
 
 func (r ApiConnectionsConnectionIdStreamsStreamIdGetRequest) Execute() (*StreamInfoWithReportersType, *http.Response, error) {
@@ -571,28 +573,29 @@ ConnectionsConnectionIdStreamsStreamIdGet Obtain information about stream
 
 Enables the streaming data reporting service producer to obtain information about a reporting stream.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionId Indicate the ID (URI) of the connection for which the information is being retrieved
- @param streamId Indicate the ID of the reporting stream for which the information is being retrieved
- @return ApiConnectionsConnectionIdStreamsStreamIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionId Indicate the ID (URI) of the connection for which the information is being retrieved
+	@param streamId Indicate the ID of the reporting stream for which the information is being retrieved
+	@return ApiConnectionsConnectionIdStreamsStreamIdGetRequest
 */
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsStreamIdGet(ctx context.Context, connectionId string, streamId string) ApiConnectionsConnectionIdStreamsStreamIdGetRequest {
 	return ApiConnectionsConnectionIdStreamsStreamIdGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		connectionId: connectionId,
-		streamId: streamId,
+		streamId:     streamId,
 	}
 }
 
 // Execute executes the request
-//  @return StreamInfoWithReportersType
+//
+//	@return StreamInfoWithReportersType
 func (a *DefaultApiService) ConnectionsConnectionIdStreamsStreamIdGetExecute(r ApiConnectionsConnectionIdStreamsStreamIdGetRequest) (*StreamInfoWithReportersType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StreamInfoWithReportersType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StreamInfoWithReportersType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsConnectionIdStreamsStreamIdGet")
@@ -635,9 +638,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsStreamIdGetExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -647,14 +650,14 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsStreamIdGetExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -671,8 +674,8 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsStreamIdGetExecute(r A
 }
 
 type ApiConnectionsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx              context.Context
+	ApiService       *DefaultApiService
 	connectionIdList *[]string
 }
 
@@ -691,24 +694,25 @@ ConnectionsGet Obtain information about connections.
 
 Enables the streaming data reporting service producer to obtain information about one or more streaming connections.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiConnectionsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiConnectionsGetRequest
 */
 func (a *DefaultApiService) ConnectionsGet(ctx context.Context) ApiConnectionsGetRequest {
 	return ApiConnectionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConnectionInfoType
+//
+//	@return []ConnectionInfoType
 func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([]ConnectionInfoType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConnectionInfoType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConnectionInfoType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsGet")
@@ -727,10 +731,10 @@ func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "connectionIdList", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "connectionIdList", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "connectionIdList", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "connectionIdList", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -760,9 +764,9 @@ func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -772,14 +776,14 @@ func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -796,8 +800,8 @@ func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([
 }
 
 type ApiConnectionsPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	connectionRequestType *ConnectionRequestType
 }
 
@@ -815,22 +819,22 @@ ConnectionsPost Inform consumer about reporting streams to be carried by the new
 
 Exchange of meta-data (producer informs consumer about its own identity and the nature of the data to be reported via streaming) phase of the connection establishement by streaming data reporting producer to the streaming data reporting consumer (i.e. streaming target).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiConnectionsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiConnectionsPostRequest
 */
 func (a *DefaultApiService) ConnectionsPost(ctx context.Context) ApiConnectionsPostRequest {
 	return ApiConnectionsPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) ConnectionsPostExecute(r ApiConnectionsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ConnectionsPost")
@@ -876,9 +880,9 @@ func (a *DefaultApiService) ConnectionsPostExecute(r ApiConnectionsPostRequest) 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -888,14 +892,14 @@ func (a *DefaultApiService) ConnectionsPostExecute(r ApiConnectionsPostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v FailedConnectionResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v FailedConnectionResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 

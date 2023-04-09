@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MaxIntegrityProtectedDataRate Maximum Integrity Protected Data Rate. Possible values are   - 64_KBPS   - MAX_UE_RATE 
+// MaxIntegrityProtectedDataRate Maximum Integrity Protected Data Rate. Possible values are   - 64_KBPS   - MAX_UE_RATE
 type MaxIntegrityProtectedDataRate struct {
-	MaxIntegrityProtectedDataRateAnyOf *MaxIntegrityProtectedDataRateAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MaxIntegrityProtectedDataRate) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MaxIntegrityProtectedDataRateAnyOf
-	err = json.Unmarshal(data, &dst.MaxIntegrityProtectedDataRateAnyOf);
-	if err == nil {
-		jsonMaxIntegrityProtectedDataRateAnyOf, _ := json.Marshal(dst.MaxIntegrityProtectedDataRateAnyOf)
-		if string(jsonMaxIntegrityProtectedDataRateAnyOf) == "{}" { // empty struct
-			dst.MaxIntegrityProtectedDataRateAnyOf = nil
-		} else {
-			return nil // data stored in dst.MaxIntegrityProtectedDataRateAnyOf, return on the first match
-		}
-	} else {
-		dst.MaxIntegrityProtectedDataRateAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MaxIntegrityProtectedDataRate) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MaxIntegrityProtectedDataRate) MarshalJSON() ([]byte, error) {
-	if src.MaxIntegrityProtectedDataRateAnyOf != nil {
-		return json.Marshal(&src.MaxIntegrityProtectedDataRateAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMaxIntegrityProtectedDataRate) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ var _ MappedNullable = &TimeWindow1{}
 // TimeWindow1 struct for TimeWindow1
 type TimeWindow1 struct {
 	StartTime *time.Time `json:"startTime,omitempty"`
-	EndTime *time.Time `json:"endTime,omitempty"`
+	EndTime   *time.Time `json:"endTime,omitempty"`
 }
 
 // NewTimeWindow1 instantiates a new TimeWindow1 object
@@ -43,7 +43,7 @@ func NewTimeWindow1WithDefaults() *TimeWindow1 {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *TimeWindow1) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TimeWindow1) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow1) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -61,7 +61,7 @@ func (o *TimeWindow1) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *TimeWindow1) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TimeWindow1) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *TimeWindow1) GetEndTime() time.Time {
-	if o == nil || isNil(o.EndTime) {
+	if o == nil || IsNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TimeWindow1) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow1) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EndTime) {
+	if o == nil || IsNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -93,7 +93,7 @@ func (o *TimeWindow1) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *TimeWindow1) HasEndTime() bool {
-	if o != nil && !isNil(o.EndTime) {
+	if o != nil && !IsNil(o.EndTime) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *TimeWindow1) SetEndTime(v time.Time) {
 }
 
 func (o TimeWindow1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o TimeWindow1) MarshalJSON() ([]byte, error) {
 
 func (o TimeWindow1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.EndTime) {
+	if !IsNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableTimeWindow1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

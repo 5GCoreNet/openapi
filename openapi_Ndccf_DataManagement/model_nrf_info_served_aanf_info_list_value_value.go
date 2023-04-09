@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // NrfInfoServedAanfInfoListValueValue struct for NrfInfoServedAanfInfoListValueValue
 type NrfInfoServedAanfInfoListValueValue struct {
-	AanfInfo *AanfInfo
+	AanfInfo       *AanfInfo
 	MapOfInterface *map[string]interface{}
 }
 
@@ -25,7 +25,7 @@ type NrfInfoServedAanfInfoListValueValue struct {
 func (dst *NrfInfoServedAanfInfoListValueValue) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AanfInfo
-	err = json.Unmarshal(data, &dst.AanfInfo);
+	err = json.Unmarshal(data, &dst.AanfInfo)
 	if err == nil {
 		jsonAanfInfo, _ := json.Marshal(dst.AanfInfo)
 		if string(jsonAanfInfo) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *NrfInfoServedAanfInfoListValueValue) UnmarshalJSON(data []byte) error
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.MapOfInterface);
+	err = json.Unmarshal(data, &dst.MapOfInterface)
 	if err == nil {
 		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
 		if string(jsonMapOfInterface) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableNrfInfoServedAanfInfoListValueValue) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type TReselectionNRSf int32
 
 // List of TReselectionNRSf
 const (
-	_25 TReselectionNRSf = 25
-	_50 TReselectionNRSf = 50
-	_75 TReselectionNRSf = 75
+	_25  TReselectionNRSf = 25
+	_50  TReselectionNRSf = 50
+	_75  TReselectionNRSf = 75
 	_100 TReselectionNRSf = 100
 )
 
@@ -112,4 +112,3 @@ func (v *NullableTReselectionNRSf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

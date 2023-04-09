@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SubsEventNotification{}
 
 // SubsEventNotification Notifications about subscribed Individual Events.
 type SubsEventNotification struct {
-	Event SubscribedEvent `json:"event"`
+	Event         SubscribedEvent      `json:"event"`
 	TimeSyncCapas []TimeSyncCapability `json:"timeSyncCapas,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *SubsEventNotification) SetEvent(v SubscribedEvent) {
 
 // GetTimeSyncCapas returns the TimeSyncCapas field value if set, zero value otherwise.
 func (o *SubsEventNotification) GetTimeSyncCapas() []TimeSyncCapability {
-	if o == nil || isNil(o.TimeSyncCapas) {
+	if o == nil || IsNil(o.TimeSyncCapas) {
 		var ret []TimeSyncCapability
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SubsEventNotification) GetTimeSyncCapas() []TimeSyncCapability {
 // GetTimeSyncCapasOk returns a tuple with the TimeSyncCapas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubsEventNotification) GetTimeSyncCapasOk() ([]TimeSyncCapability, bool) {
-	if o == nil || isNil(o.TimeSyncCapas) {
+	if o == nil || IsNil(o.TimeSyncCapas) {
 		return nil, false
 	}
 	return o.TimeSyncCapas, true
@@ -85,7 +85,7 @@ func (o *SubsEventNotification) GetTimeSyncCapasOk() ([]TimeSyncCapability, bool
 
 // HasTimeSyncCapas returns a boolean if a field has been set.
 func (o *SubsEventNotification) HasTimeSyncCapas() bool {
-	if o != nil && !isNil(o.TimeSyncCapas) {
+	if o != nil && !IsNil(o.TimeSyncCapas) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SubsEventNotification) SetTimeSyncCapas(v []TimeSyncCapability) {
 }
 
 func (o SubsEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SubsEventNotification) MarshalJSON() ([]byte, error) {
 func (o SubsEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.TimeSyncCapas) {
+	if !IsNil(o.TimeSyncCapas) {
 		toSerialize["timeSyncCapas"] = o.TimeSyncCapas
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSubsEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

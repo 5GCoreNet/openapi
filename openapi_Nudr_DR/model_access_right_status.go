@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AccessRightStatus Possible values are: - FULLY_ALLOWED: The User is fully allowed to access to the channel. - PREVIEW_ALLOWED: The User is preview allowed to access to the channel. - NO_ALLOWED: The User is not allowed to access to the channel. 
+// AccessRightStatus Possible values are: - FULLY_ALLOWED: The User is fully allowed to access to the channel. - PREVIEW_ALLOWED: The User is preview allowed to access to the channel. - NO_ALLOWED: The User is not allowed to access to the channel.
 type AccessRightStatus struct {
-	AccessRightStatusAnyOf *AccessRightStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessRightStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AccessRightStatusAnyOf
-	err = json.Unmarshal(data, &dst.AccessRightStatusAnyOf);
-	if err == nil {
-		jsonAccessRightStatusAnyOf, _ := json.Marshal(dst.AccessRightStatusAnyOf)
-		if string(jsonAccessRightStatusAnyOf) == "{}" { // empty struct
-			dst.AccessRightStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.AccessRightStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.AccessRightStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AccessRightStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessRightStatus) MarshalJSON() ([]byte, error) {
-	if src.AccessRightStatusAnyOf != nil {
-		return json.Marshal(&src.AccessRightStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAccessRightStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &EventDataProcessingConfiguration{}
 // EventDataProcessingConfiguration A representation of an Event Data Processing Configuration resource.
 type EventDataProcessingConfiguration struct {
 	// String chosen by the 5GMS AF to serve as an identifier in a resource URI.
-	EventDataProcessingConfigurationId string `json:"eventDataProcessingConfigurationId"`
-	EventId AfEvent `json:"eventId"`
+	EventDataProcessingConfigurationId string  `json:"eventDataProcessingConfigurationId"`
+	EventId                            AfEvent `json:"eventId"`
 	// Uniform Resource Locator, comforming with the URI Generic Syntax specified in IETF RFC 3986.
-	AuthorizationUrl *string `json:"authorizationUrl,omitempty"`
+	AuthorizationUrl   *string             `json:"authorizationUrl,omitempty"`
 	DataAccessProfiles []DataAccessProfile `json:"dataAccessProfiles"`
 }
 
@@ -97,7 +97,7 @@ func (o *EventDataProcessingConfiguration) SetEventId(v AfEvent) {
 
 // GetAuthorizationUrl returns the AuthorizationUrl field value if set, zero value otherwise.
 func (o *EventDataProcessingConfiguration) GetAuthorizationUrl() string {
-	if o == nil || isNil(o.AuthorizationUrl) {
+	if o == nil || IsNil(o.AuthorizationUrl) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *EventDataProcessingConfiguration) GetAuthorizationUrl() string {
 // GetAuthorizationUrlOk returns a tuple with the AuthorizationUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventDataProcessingConfiguration) GetAuthorizationUrlOk() (*string, bool) {
-	if o == nil || isNil(o.AuthorizationUrl) {
+	if o == nil || IsNil(o.AuthorizationUrl) {
 		return nil, false
 	}
 	return o.AuthorizationUrl, true
@@ -115,7 +115,7 @@ func (o *EventDataProcessingConfiguration) GetAuthorizationUrlOk() (*string, boo
 
 // HasAuthorizationUrl returns a boolean if a field has been set.
 func (o *EventDataProcessingConfiguration) HasAuthorizationUrl() bool {
-	if o != nil && !isNil(o.AuthorizationUrl) {
+	if o != nil && !IsNil(o.AuthorizationUrl) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *EventDataProcessingConfiguration) SetDataAccessProfiles(v []DataAccessP
 }
 
 func (o EventDataProcessingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o EventDataProcessingConfiguration) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventDataProcessingConfigurationId"] = o.EventDataProcessingConfigurationId
 	toSerialize["eventId"] = o.EventId
-	if !isNil(o.AuthorizationUrl) {
+	if !IsNil(o.AuthorizationUrl) {
 		toSerialize["authorizationUrl"] = o.AuthorizationUrl
 	}
 	toSerialize["dataAccessProfiles"] = o.DataAccessProfiles
@@ -205,5 +205,3 @@ func (v *NullableEventDataProcessingConfiguration) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

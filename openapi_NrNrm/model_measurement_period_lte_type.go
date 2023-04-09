@@ -20,11 +20,11 @@ type MeasurementPeriodLteType string
 
 // List of measurementPeriodLte-Type
 const (
-	_1024MS MeasurementPeriodLteType = "1024ms"
-	_2048MS MeasurementPeriodLteType = "2048ms"
-	_5120MS MeasurementPeriodLteType = "5120ms"
+	_1024MS  MeasurementPeriodLteType = "1024ms"
+	_2048MS  MeasurementPeriodLteType = "2048ms"
+	_5120MS  MeasurementPeriodLteType = "5120ms"
 	_10240MS MeasurementPeriodLteType = "10240ms"
-	_1MIN MeasurementPeriodLteType = "1min"
+	_1MIN    MeasurementPeriodLteType = "1min"
 )
 
 // All allowed values of MeasurementPeriodLteType enum
@@ -114,4 +114,3 @@ func (v *NullableMeasurementPeriodLteType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

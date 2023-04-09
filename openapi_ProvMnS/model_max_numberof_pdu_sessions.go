@@ -19,8 +19,8 @@ var _ MappedNullable = &MaxNumberofPDUSessions{}
 
 // MaxNumberofPDUSessions struct for MaxNumberofPDUSessions
 type MaxNumberofPDUSessions struct {
-	ServAttrCom *ServAttrCom `json:"servAttrCom,omitempty"`
-	NOofPDUSessions *int32 `json:"nOofPDUSessions,omitempty"`
+	ServAttrCom     *ServAttrCom `json:"servAttrCom,omitempty"`
+	NOofPDUSessions *int32       `json:"nOofPDUSessions,omitempty"`
 }
 
 // NewMaxNumberofPDUSessions instantiates a new MaxNumberofPDUSessions object
@@ -42,7 +42,7 @@ func NewMaxNumberofPDUSessionsWithDefaults() *MaxNumberofPDUSessions {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *MaxNumberofPDUSessions) GetServAttrCom() ServAttrCom {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MaxNumberofPDUSessions) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxNumberofPDUSessions) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *MaxNumberofPDUSessions) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *MaxNumberofPDUSessions) HasServAttrCom() bool {
-	if o != nil && !isNil(o.ServAttrCom) {
+	if o != nil && !IsNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MaxNumberofPDUSessions) SetServAttrCom(v ServAttrCom) {
 
 // GetNOofPDUSessions returns the NOofPDUSessions field value if set, zero value otherwise.
 func (o *MaxNumberofPDUSessions) GetNOofPDUSessions() int32 {
-	if o == nil || isNil(o.NOofPDUSessions) {
+	if o == nil || IsNil(o.NOofPDUSessions) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MaxNumberofPDUSessions) GetNOofPDUSessions() int32 {
 // GetNOofPDUSessionsOk returns a tuple with the NOofPDUSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxNumberofPDUSessions) GetNOofPDUSessionsOk() (*int32, bool) {
-	if o == nil || isNil(o.NOofPDUSessions) {
+	if o == nil || IsNil(o.NOofPDUSessions) {
 		return nil, false
 	}
 	return o.NOofPDUSessions, true
@@ -92,7 +92,7 @@ func (o *MaxNumberofPDUSessions) GetNOofPDUSessionsOk() (*int32, bool) {
 
 // HasNOofPDUSessions returns a boolean if a field has been set.
 func (o *MaxNumberofPDUSessions) HasNOofPDUSessions() bool {
-	if o != nil && !isNil(o.NOofPDUSessions) {
+	if o != nil && !IsNil(o.NOofPDUSessions) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *MaxNumberofPDUSessions) SetNOofPDUSessions(v int32) {
 }
 
 func (o MaxNumberofPDUSessions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o MaxNumberofPDUSessions) MarshalJSON() ([]byte, error) {
 
 func (o MaxNumberofPDUSessions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServAttrCom) {
+	if !IsNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !isNil(o.NOofPDUSessions) {
+	if !IsNil(o.NOofPDUSessions) {
 		toSerialize["nOofPDUSessions"] = o.NOofPDUSessions
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableMaxNumberofPDUSessions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

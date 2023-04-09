@@ -1,7 +1,7 @@
 /*
 Eees_EASDiscovery
 
-API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -24,9 +24,9 @@ type ACProfile struct {
 	// The category or type of AC.
 	AcType *string `json:"acType,omitempty"`
 	// Indicates to the ECS which ECSPs are preferred for the AC.
-	PrefEcsps []string `json:"prefEcsps,omitempty"`
-	AcSchedule *ScheduledCommunicationTime `json:"acSchedule,omitempty"`
-	ExpAcGeoServArea *LocationArea5G `json:"expAcGeoServArea,omitempty"`
+	PrefEcsps        []string                    `json:"prefEcsps,omitempty"`
+	AcSchedule       *ScheduledCommunicationTime `json:"acSchedule,omitempty"`
+	ExpAcGeoServArea *LocationArea5G             `json:"expAcGeoServArea,omitempty"`
 	// Profiles of ACs for which the EEC provides edge enabling services.
 	AcSvcContSupp []ACRScenario `json:"acSvcContSupp,omitempty"`
 	// List of EAS information.
@@ -77,7 +77,7 @@ func (o *ACProfile) SetAcId(v string) {
 
 // GetAcType returns the AcType field value if set, zero value otherwise.
 func (o *ACProfile) GetAcType() string {
-	if o == nil || isNil(o.AcType) {
+	if o == nil || IsNil(o.AcType) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ACProfile) GetAcType() string {
 // GetAcTypeOk returns a tuple with the AcType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACProfile) GetAcTypeOk() (*string, bool) {
-	if o == nil || isNil(o.AcType) {
+	if o == nil || IsNil(o.AcType) {
 		return nil, false
 	}
 	return o.AcType, true
@@ -95,7 +95,7 @@ func (o *ACProfile) GetAcTypeOk() (*string, bool) {
 
 // HasAcType returns a boolean if a field has been set.
 func (o *ACProfile) HasAcType() bool {
-	if o != nil && !isNil(o.AcType) {
+	if o != nil && !IsNil(o.AcType) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ACProfile) SetAcType(v string) {
 
 // GetPrefEcsps returns the PrefEcsps field value if set, zero value otherwise.
 func (o *ACProfile) GetPrefEcsps() []string {
-	if o == nil || isNil(o.PrefEcsps) {
+	if o == nil || IsNil(o.PrefEcsps) {
 		var ret []string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ACProfile) GetPrefEcsps() []string {
 // GetPrefEcspsOk returns a tuple with the PrefEcsps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACProfile) GetPrefEcspsOk() ([]string, bool) {
-	if o == nil || isNil(o.PrefEcsps) {
+	if o == nil || IsNil(o.PrefEcsps) {
 		return nil, false
 	}
 	return o.PrefEcsps, true
@@ -127,7 +127,7 @@ func (o *ACProfile) GetPrefEcspsOk() ([]string, bool) {
 
 // HasPrefEcsps returns a boolean if a field has been set.
 func (o *ACProfile) HasPrefEcsps() bool {
-	if o != nil && !isNil(o.PrefEcsps) {
+	if o != nil && !IsNil(o.PrefEcsps) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ACProfile) SetPrefEcsps(v []string) {
 
 // GetAcSchedule returns the AcSchedule field value if set, zero value otherwise.
 func (o *ACProfile) GetAcSchedule() ScheduledCommunicationTime {
-	if o == nil || isNil(o.AcSchedule) {
+	if o == nil || IsNil(o.AcSchedule) {
 		var ret ScheduledCommunicationTime
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ACProfile) GetAcSchedule() ScheduledCommunicationTime {
 // GetAcScheduleOk returns a tuple with the AcSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACProfile) GetAcScheduleOk() (*ScheduledCommunicationTime, bool) {
-	if o == nil || isNil(o.AcSchedule) {
+	if o == nil || IsNil(o.AcSchedule) {
 		return nil, false
 	}
 	return o.AcSchedule, true
@@ -159,7 +159,7 @@ func (o *ACProfile) GetAcScheduleOk() (*ScheduledCommunicationTime, bool) {
 
 // HasAcSchedule returns a boolean if a field has been set.
 func (o *ACProfile) HasAcSchedule() bool {
-	if o != nil && !isNil(o.AcSchedule) {
+	if o != nil && !IsNil(o.AcSchedule) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ACProfile) SetAcSchedule(v ScheduledCommunicationTime) {
 
 // GetExpAcGeoServArea returns the ExpAcGeoServArea field value if set, zero value otherwise.
 func (o *ACProfile) GetExpAcGeoServArea() LocationArea5G {
-	if o == nil || isNil(o.ExpAcGeoServArea) {
+	if o == nil || IsNil(o.ExpAcGeoServArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ACProfile) GetExpAcGeoServArea() LocationArea5G {
 // GetExpAcGeoServAreaOk returns a tuple with the ExpAcGeoServArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACProfile) GetExpAcGeoServAreaOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.ExpAcGeoServArea) {
+	if o == nil || IsNil(o.ExpAcGeoServArea) {
 		return nil, false
 	}
 	return o.ExpAcGeoServArea, true
@@ -191,7 +191,7 @@ func (o *ACProfile) GetExpAcGeoServAreaOk() (*LocationArea5G, bool) {
 
 // HasExpAcGeoServArea returns a boolean if a field has been set.
 func (o *ACProfile) HasExpAcGeoServArea() bool {
-	if o != nil && !isNil(o.ExpAcGeoServArea) {
+	if o != nil && !IsNil(o.ExpAcGeoServArea) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *ACProfile) SetExpAcGeoServArea(v LocationArea5G) {
 
 // GetAcSvcContSupp returns the AcSvcContSupp field value if set, zero value otherwise.
 func (o *ACProfile) GetAcSvcContSupp() []ACRScenario {
-	if o == nil || isNil(o.AcSvcContSupp) {
+	if o == nil || IsNil(o.AcSvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *ACProfile) GetAcSvcContSupp() []ACRScenario {
 // GetAcSvcContSuppOk returns a tuple with the AcSvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACProfile) GetAcSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || isNil(o.AcSvcContSupp) {
+	if o == nil || IsNil(o.AcSvcContSupp) {
 		return nil, false
 	}
 	return o.AcSvcContSupp, true
@@ -223,7 +223,7 @@ func (o *ACProfile) GetAcSvcContSuppOk() ([]ACRScenario, bool) {
 
 // HasAcSvcContSupp returns a boolean if a field has been set.
 func (o *ACProfile) HasAcSvcContSupp() bool {
-	if o != nil && !isNil(o.AcSvcContSupp) {
+	if o != nil && !IsNil(o.AcSvcContSupp) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *ACProfile) SetAcSvcContSupp(v []ACRScenario) {
 
 // GetEass returns the Eass field value if set, zero value otherwise.
 func (o *ACProfile) GetEass() []EasDetail {
-	if o == nil || isNil(o.Eass) {
+	if o == nil || IsNil(o.Eass) {
 		var ret []EasDetail
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *ACProfile) GetEass() []EasDetail {
 // GetEassOk returns a tuple with the Eass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACProfile) GetEassOk() ([]EasDetail, bool) {
-	if o == nil || isNil(o.Eass) {
+	if o == nil || IsNil(o.Eass) {
 		return nil, false
 	}
 	return o.Eass, true
@@ -255,7 +255,7 @@ func (o *ACProfile) GetEassOk() ([]EasDetail, bool) {
 
 // HasEass returns a boolean if a field has been set.
 func (o *ACProfile) HasEass() bool {
-	if o != nil && !isNil(o.Eass) {
+	if o != nil && !IsNil(o.Eass) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *ACProfile) SetEass(v []EasDetail) {
 }
 
 func (o ACProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -278,22 +278,22 @@ func (o ACProfile) MarshalJSON() ([]byte, error) {
 func (o ACProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["acId"] = o.AcId
-	if !isNil(o.AcType) {
+	if !IsNil(o.AcType) {
 		toSerialize["acType"] = o.AcType
 	}
-	if !isNil(o.PrefEcsps) {
+	if !IsNil(o.PrefEcsps) {
 		toSerialize["prefEcsps"] = o.PrefEcsps
 	}
-	if !isNil(o.AcSchedule) {
+	if !IsNil(o.AcSchedule) {
 		toSerialize["acSchedule"] = o.AcSchedule
 	}
-	if !isNil(o.ExpAcGeoServArea) {
+	if !IsNil(o.ExpAcGeoServArea) {
 		toSerialize["expAcGeoServArea"] = o.ExpAcGeoServArea
 	}
-	if !isNil(o.AcSvcContSupp) {
+	if !IsNil(o.AcSvcContSupp) {
 		toSerialize["acSvcContSupp"] = o.AcSvcContSupp
 	}
-	if !isNil(o.Eass) {
+	if !IsNil(o.Eass) {
 		toSerialize["eass"] = o.Eass
 	}
 	return toSerialize, nil
@@ -334,5 +334,3 @@ func (v *NullableACProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

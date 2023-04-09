@@ -1,7 +1,7 @@
 /*
 M5_ServiceAccessInformation
 
-5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &ServiceAccessInformationResourceDynamicPolicyInvocationC
 // ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration struct for ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration
 type ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration struct {
 	// A set of application endpoint addresses.
-	ServerAddresses []string `json:"serverAddresses"`
-	ValidPolicyTemplateIds []string `json:"validPolicyTemplateIds"`
-	SdfMethods []SdfMethod `json:"sdfMethods"`
-	ExternalReferences []string `json:"externalReferences,omitempty"`
+	ServerAddresses        []string    `json:"serverAddresses"`
+	ValidPolicyTemplateIds []string    `json:"validPolicyTemplateIds"`
+	SdfMethods             []SdfMethod `json:"sdfMethods"`
+	ExternalReferences     []string    `json:"externalReferences,omitempty"`
 }
 
 // NewServiceAccessInformationResourceDynamicPolicyInvocationConfiguration instantiates a new ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration object
@@ -120,7 +120,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) S
 
 // GetExternalReferences returns the ExternalReferences field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) GetExternalReferences() []string {
-	if o == nil || isNil(o.ExternalReferences) {
+	if o == nil || IsNil(o.ExternalReferences) {
 		var ret []string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) G
 // GetExternalReferencesOk returns a tuple with the ExternalReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) GetExternalReferencesOk() ([]string, bool) {
-	if o == nil || isNil(o.ExternalReferences) {
+	if o == nil || IsNil(o.ExternalReferences) {
 		return nil, false
 	}
 	return o.ExternalReferences, true
@@ -138,7 +138,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) G
 
 // HasExternalReferences returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) HasExternalReferences() bool {
-	if o != nil && !isNil(o.ExternalReferences) {
+	if o != nil && !IsNil(o.ExternalReferences) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) S
 }
 
 func (o ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) To
 	toSerialize["serverAddresses"] = o.ServerAddresses
 	toSerialize["validPolicyTemplateIds"] = o.ValidPolicyTemplateIds
 	toSerialize["sdfMethods"] = o.SdfMethods
-	if !isNil(o.ExternalReferences) {
+	if !IsNil(o.ExternalReferences) {
 		toSerialize["externalReferences"] = o.ExternalReferences
 	}
 	return toSerialize, nil
@@ -204,5 +204,3 @@ func (v *NullableServiceAccessInformationResourceDynamicPolicyInvocationConfigur
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

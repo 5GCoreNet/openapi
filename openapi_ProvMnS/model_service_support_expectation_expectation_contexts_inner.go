@@ -17,11 +17,11 @@ import (
 
 // ServiceSupportExpectationExpectationContextsInner - struct for ServiceSupportExpectationExpectationContextsInner
 type ServiceSupportExpectationExpectationContextsInner struct {
-	ExpectationContext *ExpectationContext
+	ExpectationContext          *ExpectationContext
 	ResourceSharingLevelContext *ResourceSharingLevelContext
-	ServiceEndTimeContext *ServiceEndTimeContext
-	ServiceStartTimeContext *ServiceStartTimeContext
-	UEMobilityLevelContext *UEMobilityLevelContext
+	ServiceEndTimeContext       *ServiceEndTimeContext
+	ServiceStartTimeContext     *ServiceStartTimeContext
+	UEMobilityLevelContext      *UEMobilityLevelContext
 }
 
 // ExpectationContextAsServiceSupportExpectationExpectationContextsInner is a convenience function that returns ExpectationContext wrapped in ServiceSupportExpectationExpectationContextsInner
@@ -58,7 +58,6 @@ func UEMobilityLevelContextAsServiceSupportExpectationExpectationContextsInner(v
 		UEMobilityLevelContext: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServiceSupportExpectationExpectationContextsInner) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src ServiceSupportExpectationExpectationContextsInner) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *ServiceSupportExpectationExpectationContextsInner) GetActualInstance() (interface{}) {
+func (obj *ServiceSupportExpectationExpectationContextsInner) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableServiceSupportExpectationExpectationContextsInner) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

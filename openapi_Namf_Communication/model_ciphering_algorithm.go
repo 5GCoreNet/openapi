@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // CipheringAlgorithm Indicates the supported Ciphering Algorithm
 type CipheringAlgorithm struct {
-	CipheringAlgorithmAnyOf *CipheringAlgorithmAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CipheringAlgorithm) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CipheringAlgorithmAnyOf
-	err = json.Unmarshal(data, &dst.CipheringAlgorithmAnyOf);
-	if err == nil {
-		jsonCipheringAlgorithmAnyOf, _ := json.Marshal(dst.CipheringAlgorithmAnyOf)
-		if string(jsonCipheringAlgorithmAnyOf) == "{}" { // empty struct
-			dst.CipheringAlgorithmAnyOf = nil
-		} else {
-			return nil // data stored in dst.CipheringAlgorithmAnyOf, return on the first match
-		}
-	} else {
-		dst.CipheringAlgorithmAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *CipheringAlgorithm) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CipheringAlgorithm) MarshalJSON() ([]byte, error) {
-	if src.CipheringAlgorithmAnyOf != nil {
-		return json.Marshal(&src.CipheringAlgorithmAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCipheringAlgorithm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

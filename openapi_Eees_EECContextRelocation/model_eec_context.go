@@ -1,7 +1,7 @@
 /*
 EES EEC Context Relocation API
 
-API for EEC Context Relocation.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EEC Context Relocation.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -23,13 +23,13 @@ type EECContext struct {
 	EecId string `json:"eecId"`
 	// Unique idenitfier assigned to the EEC context.
 	CntxId string `json:"cntxId"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	UeId *string `json:"ueId,omitempty"`
 	// List of subscription IDs for the capability expsoure for the EEC ID.
-	E1Subs []string `json:"e1Subs,omitempty"`
-	UeLoc *LocationArea5G `json:"ueLoc,omitempty"`
+	E1Subs []string        `json:"e1Subs,omitempty"`
+	UeLoc  *LocationArea5G `json:"ueLoc,omitempty"`
 	// List AC profiles.
-	AcProfs []ACProfile `json:"acProfs,omitempty"`
+	AcProfs   []ACProfile      `json:"acProfs,omitempty"`
 	SessCntxs *SessionContexts `json:"sessCntxs,omitempty"`
 }
 
@@ -102,7 +102,7 @@ func (o *EECContext) SetCntxId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *EECContext) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *EECContext) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECContext) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -120,7 +120,7 @@ func (o *EECContext) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *EECContext) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *EECContext) SetUeId(v string) {
 
 // GetE1Subs returns the E1Subs field value if set, zero value otherwise.
 func (o *EECContext) GetE1Subs() []string {
-	if o == nil || isNil(o.E1Subs) {
+	if o == nil || IsNil(o.E1Subs) {
 		var ret []string
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *EECContext) GetE1Subs() []string {
 // GetE1SubsOk returns a tuple with the E1Subs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECContext) GetE1SubsOk() ([]string, bool) {
-	if o == nil || isNil(o.E1Subs) {
+	if o == nil || IsNil(o.E1Subs) {
 		return nil, false
 	}
 	return o.E1Subs, true
@@ -152,7 +152,7 @@ func (o *EECContext) GetE1SubsOk() ([]string, bool) {
 
 // HasE1Subs returns a boolean if a field has been set.
 func (o *EECContext) HasE1Subs() bool {
-	if o != nil && !isNil(o.E1Subs) {
+	if o != nil && !IsNil(o.E1Subs) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *EECContext) SetE1Subs(v []string) {
 
 // GetUeLoc returns the UeLoc field value if set, zero value otherwise.
 func (o *EECContext) GetUeLoc() LocationArea5G {
-	if o == nil || isNil(o.UeLoc) {
+	if o == nil || IsNil(o.UeLoc) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *EECContext) GetUeLoc() LocationArea5G {
 // GetUeLocOk returns a tuple with the UeLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECContext) GetUeLocOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.UeLoc) {
+	if o == nil || IsNil(o.UeLoc) {
 		return nil, false
 	}
 	return o.UeLoc, true
@@ -184,7 +184,7 @@ func (o *EECContext) GetUeLocOk() (*LocationArea5G, bool) {
 
 // HasUeLoc returns a boolean if a field has been set.
 func (o *EECContext) HasUeLoc() bool {
-	if o != nil && !isNil(o.UeLoc) {
+	if o != nil && !IsNil(o.UeLoc) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *EECContext) SetUeLoc(v LocationArea5G) {
 
 // GetAcProfs returns the AcProfs field value if set, zero value otherwise.
 func (o *EECContext) GetAcProfs() []ACProfile {
-	if o == nil || isNil(o.AcProfs) {
+	if o == nil || IsNil(o.AcProfs) {
 		var ret []ACProfile
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *EECContext) GetAcProfs() []ACProfile {
 // GetAcProfsOk returns a tuple with the AcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECContext) GetAcProfsOk() ([]ACProfile, bool) {
-	if o == nil || isNil(o.AcProfs) {
+	if o == nil || IsNil(o.AcProfs) {
 		return nil, false
 	}
 	return o.AcProfs, true
@@ -216,7 +216,7 @@ func (o *EECContext) GetAcProfsOk() ([]ACProfile, bool) {
 
 // HasAcProfs returns a boolean if a field has been set.
 func (o *EECContext) HasAcProfs() bool {
-	if o != nil && !isNil(o.AcProfs) {
+	if o != nil && !IsNil(o.AcProfs) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *EECContext) SetAcProfs(v []ACProfile) {
 
 // GetSessCntxs returns the SessCntxs field value if set, zero value otherwise.
 func (o *EECContext) GetSessCntxs() SessionContexts {
-	if o == nil || isNil(o.SessCntxs) {
+	if o == nil || IsNil(o.SessCntxs) {
 		var ret SessionContexts
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *EECContext) GetSessCntxs() SessionContexts {
 // GetSessCntxsOk returns a tuple with the SessCntxs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECContext) GetSessCntxsOk() (*SessionContexts, bool) {
-	if o == nil || isNil(o.SessCntxs) {
+	if o == nil || IsNil(o.SessCntxs) {
 		return nil, false
 	}
 	return o.SessCntxs, true
@@ -248,7 +248,7 @@ func (o *EECContext) GetSessCntxsOk() (*SessionContexts, bool) {
 
 // HasSessCntxs returns a boolean if a field has been set.
 func (o *EECContext) HasSessCntxs() bool {
-	if o != nil && !isNil(o.SessCntxs) {
+	if o != nil && !IsNil(o.SessCntxs) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *EECContext) SetSessCntxs(v SessionContexts) {
 }
 
 func (o EECContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -272,19 +272,19 @@ func (o EECContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
 	toSerialize["cntxId"] = o.CntxId
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.E1Subs) {
+	if !IsNil(o.E1Subs) {
 		toSerialize["e1Subs"] = o.E1Subs
 	}
-	if !isNil(o.UeLoc) {
+	if !IsNil(o.UeLoc) {
 		toSerialize["ueLoc"] = o.UeLoc
 	}
-	if !isNil(o.AcProfs) {
+	if !IsNil(o.AcProfs) {
 		toSerialize["acProfs"] = o.AcProfs
 	}
-	if !isNil(o.SessCntxs) {
+	if !IsNil(o.SessCntxs) {
 		toSerialize["sessCntxs"] = o.SessCntxs
 	}
 	return toSerialize, nil
@@ -325,5 +325,3 @@ func (v *NullableEECContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

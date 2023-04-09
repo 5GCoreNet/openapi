@@ -1,7 +1,7 @@
 /*
 Eees Application Context Relocation Service
 
-Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,12 +17,12 @@ import (
 // checks if the AcrDecReq type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AcrDecReq{}
 
-// AcrDecReq Represents the parameters to inform about the selected target EAS and provide the associated information. 
+// AcrDecReq Represents the parameters to inform about the selected target EAS and provide the associated information.
 type AcrDecReq struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	UeId string `json:"ueId"`
-	AcId *string `json:"acId,omitempty"`
-	TEasId string `json:"tEasId"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	UeId         string   `json:"ueId"`
+	AcId         *string  `json:"acId,omitempty"`
+	TEasId       string   `json:"tEasId"`
 	TEasEndpoint EndPoint `json:"tEasEndpoint"`
 }
 
@@ -72,7 +72,7 @@ func (o *AcrDecReq) SetUeId(v string) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *AcrDecReq) GetAcId() string {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AcrDecReq) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDecReq) GetAcIdOk() (*string, bool) {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -90,7 +90,7 @@ func (o *AcrDecReq) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *AcrDecReq) HasAcId() bool {
-	if o != nil && !isNil(o.AcId) {
+	if o != nil && !IsNil(o.AcId) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *AcrDecReq) SetTEasEndpoint(v EndPoint) {
 }
 
 func (o AcrDecReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -161,7 +161,7 @@ func (o AcrDecReq) MarshalJSON() ([]byte, error) {
 func (o AcrDecReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueId"] = o.UeId
-	if !isNil(o.AcId) {
+	if !IsNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
 	toSerialize["tEasId"] = o.TEasId
@@ -204,5 +204,3 @@ func (v *NullableAcrDecReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

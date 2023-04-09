@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,9 +17,9 @@ import (
 // checks if the StoredSearchResult type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &StoredSearchResult{}
 
-// StoredSearchResult Contains a complete search result (i.e. a number of discovered NF Instances), stored by NRF as a consequence of a prior search result 
+// StoredSearchResult Contains a complete search result (i.e. a number of discovered NF Instances), stored by NRF as a consequence of a prior search result
 type StoredSearchResult struct {
-	NfInstances []NFProfile `json:"nfInstances"`
+	NfInstances         []NFProfile `json:"nfInstances"`
 	CompleteNfInstances []NFProfile `json:"completeNfInstances,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *StoredSearchResult) SetNfInstances(v []NFProfile) {
 
 // GetCompleteNfInstances returns the CompleteNfInstances field value if set, zero value otherwise.
 func (o *StoredSearchResult) GetCompleteNfInstances() []NFProfile {
-	if o == nil || isNil(o.CompleteNfInstances) {
+	if o == nil || IsNil(o.CompleteNfInstances) {
 		var ret []NFProfile
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *StoredSearchResult) GetCompleteNfInstances() []NFProfile {
 // GetCompleteNfInstancesOk returns a tuple with the CompleteNfInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StoredSearchResult) GetCompleteNfInstancesOk() ([]NFProfile, bool) {
-	if o == nil || isNil(o.CompleteNfInstances) {
+	if o == nil || IsNil(o.CompleteNfInstances) {
 		return nil, false
 	}
 	return o.CompleteNfInstances, true
@@ -85,7 +85,7 @@ func (o *StoredSearchResult) GetCompleteNfInstancesOk() ([]NFProfile, bool) {
 
 // HasCompleteNfInstances returns a boolean if a field has been set.
 func (o *StoredSearchResult) HasCompleteNfInstances() bool {
-	if o != nil && !isNil(o.CompleteNfInstances) {
+	if o != nil && !IsNil(o.CompleteNfInstances) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *StoredSearchResult) SetCompleteNfInstances(v []NFProfile) {
 }
 
 func (o StoredSearchResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o StoredSearchResult) MarshalJSON() ([]byte, error) {
 func (o StoredSearchResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfInstances"] = o.NfInstances
-	if !isNil(o.CompleteNfInstances) {
+	if !IsNil(o.CompleteNfInstances) {
 		toSerialize["completeNfInstances"] = o.CompleteNfInstances
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableStoredSearchResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

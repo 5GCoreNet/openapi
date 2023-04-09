@@ -19,7 +19,7 @@ var _ MappedNullable = &MLTrainingRequestSingleAllOf{}
 
 // MLTrainingRequestSingleAllOf struct for MLTrainingRequestSingleAllOf
 type MLTrainingRequestSingleAllOf struct {
-	Attributes *interface{} `json:"attributes,omitempty"`
+	Attributes *MLTrainingRequestSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewMLTrainingRequestSingleAllOf instantiates a new MLTrainingRequestSingleAllOf object
@@ -40,9 +40,9 @@ func NewMLTrainingRequestSingleAllOfWithDefaults() *MLTrainingRequestSingleAllOf
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MLTrainingRequestSingleAllOf) GetAttributes() interface{} {
-	if o == nil || isNil(o.Attributes) {
-		var ret interface{}
+func (o *MLTrainingRequestSingleAllOf) GetAttributes() MLTrainingRequestSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret MLTrainingRequestSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *MLTrainingRequestSingleAllOf) GetAttributes() interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MLTrainingRequestSingleAllOf) GetAttributesOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *MLTrainingRequestSingleAllOf) GetAttributesOk() (*MLTrainingRequestSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *MLTrainingRequestSingleAllOf) GetAttributesOk() (*interface{}, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MLTrainingRequestSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
-func (o *MLTrainingRequestSingleAllOf) SetAttributes(v interface{}) {
+// SetAttributes gets a reference to the given MLTrainingRequestSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *MLTrainingRequestSingleAllOf) SetAttributes(v MLTrainingRequestSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o MLTrainingRequestSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MLTrainingRequestSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MLTrainingRequestSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMLTrainingRequestSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LocationFailureCause This string Indicates the location positioning failure cause. Possible values are - POSITIONING_DENIED: Positioning is denied. - UNSUPPORTED_BY_UE: Positioning is not supported by UE. - NOT_REGISTED_UE: UE is not registered. - UNSPECIFIED: Unspecified. 
+// LocationFailureCause This string Indicates the location positioning failure cause. Possible values are - POSITIONING_DENIED: Positioning is denied. - UNSUPPORTED_BY_UE: Positioning is not supported by UE. - NOT_REGISTED_UE: UE is not registered. - UNSPECIFIED: Unspecified.
 type LocationFailureCause struct {
-	LocationFailureCauseAnyOf *LocationFailureCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocationFailureCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocationFailureCauseAnyOf
-	err = json.Unmarshal(data, &dst.LocationFailureCauseAnyOf);
-	if err == nil {
-		jsonLocationFailureCauseAnyOf, _ := json.Marshal(dst.LocationFailureCauseAnyOf)
-		if string(jsonLocationFailureCauseAnyOf) == "{}" { // empty struct
-			dst.LocationFailureCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocationFailureCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.LocationFailureCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocationFailureCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocationFailureCause) MarshalJSON() ([]byte, error) {
-	if src.LocationFailureCauseAnyOf != nil {
-		return json.Marshal(&src.LocationFailureCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocationFailureCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnef_SMContext
 
-Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SmallDataRateControlTimeUnit Possible values are - MINUTE: Indicates the rate control is applied per minute. - HOUR: Indicates the rate control is applied per hour. - DAY: Indicates the rate control is applied per day. - WEEK: Indicates the rate control is applied per week. - 6MINUTES: Indicates the rate control is applied per 6 minutes. 
+// SmallDataRateControlTimeUnit Possible values are - MINUTE: Indicates the rate control is applied per minute. - HOUR: Indicates the rate control is applied per hour. - DAY: Indicates the rate control is applied per day. - WEEK: Indicates the rate control is applied per week. - 6MINUTES: Indicates the rate control is applied per 6 minutes.
 type SmallDataRateControlTimeUnit struct {
-	SmallDataRateControlTimeUnitAnyOf *SmallDataRateControlTimeUnitAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmallDataRateControlTimeUnit) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SmallDataRateControlTimeUnitAnyOf
-	err = json.Unmarshal(data, &dst.SmallDataRateControlTimeUnitAnyOf);
-	if err == nil {
-		jsonSmallDataRateControlTimeUnitAnyOf, _ := json.Marshal(dst.SmallDataRateControlTimeUnitAnyOf)
-		if string(jsonSmallDataRateControlTimeUnitAnyOf) == "{}" { // empty struct
-			dst.SmallDataRateControlTimeUnitAnyOf = nil
-		} else {
-			return nil // data stored in dst.SmallDataRateControlTimeUnitAnyOf, return on the first match
-		}
-	} else {
-		dst.SmallDataRateControlTimeUnitAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SmallDataRateControlTimeUnit) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmallDataRateControlTimeUnit) MarshalJSON() ([]byte, error) {
-	if src.SmallDataRateControlTimeUnitAnyOf != nil {
-		return json.Marshal(&src.SmallDataRateControlTimeUnitAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSmallDataRateControlTimeUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

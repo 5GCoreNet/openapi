@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &UeContextCreateError{}
 
 // UeContextCreateError Data within a failure response for creating a UE context
 type UeContextCreateError struct {
-	Error ProblemDetails `json:"error"`
-	NgapCause *NgApCause `json:"ngapCause,omitempty"`
+	Error                     ProblemDetails `json:"error"`
+	NgapCause                 *NgApCause     `json:"ngapCause,omitempty"`
 	TargetToSourceFailureData *N2InfoContent `json:"targetToSourceFailureData,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *UeContextCreateError) SetError(v ProblemDetails) {
 
 // GetNgapCause returns the NgapCause field value if set, zero value otherwise.
 func (o *UeContextCreateError) GetNgapCause() NgApCause {
-	if o == nil || isNil(o.NgapCause) {
+	if o == nil || IsNil(o.NgapCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UeContextCreateError) GetNgapCause() NgApCause {
 // GetNgapCauseOk returns a tuple with the NgapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateError) GetNgapCauseOk() (*NgApCause, bool) {
-	if o == nil || isNil(o.NgapCause) {
+	if o == nil || IsNil(o.NgapCause) {
 		return nil, false
 	}
 	return o.NgapCause, true
@@ -86,7 +86,7 @@ func (o *UeContextCreateError) GetNgapCauseOk() (*NgApCause, bool) {
 
 // HasNgapCause returns a boolean if a field has been set.
 func (o *UeContextCreateError) HasNgapCause() bool {
-	if o != nil && !isNil(o.NgapCause) {
+	if o != nil && !IsNil(o.NgapCause) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *UeContextCreateError) SetNgapCause(v NgApCause) {
 
 // GetTargetToSourceFailureData returns the TargetToSourceFailureData field value if set, zero value otherwise.
 func (o *UeContextCreateError) GetTargetToSourceFailureData() N2InfoContent {
-	if o == nil || isNil(o.TargetToSourceFailureData) {
+	if o == nil || IsNil(o.TargetToSourceFailureData) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *UeContextCreateError) GetTargetToSourceFailureData() N2InfoContent {
 // GetTargetToSourceFailureDataOk returns a tuple with the TargetToSourceFailureData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateError) GetTargetToSourceFailureDataOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.TargetToSourceFailureData) {
+	if o == nil || IsNil(o.TargetToSourceFailureData) {
 		return nil, false
 	}
 	return o.TargetToSourceFailureData, true
@@ -118,7 +118,7 @@ func (o *UeContextCreateError) GetTargetToSourceFailureDataOk() (*N2InfoContent,
 
 // HasTargetToSourceFailureData returns a boolean if a field has been set.
 func (o *UeContextCreateError) HasTargetToSourceFailureData() bool {
-	if o != nil && !isNil(o.TargetToSourceFailureData) {
+	if o != nil && !IsNil(o.TargetToSourceFailureData) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *UeContextCreateError) SetTargetToSourceFailureData(v N2InfoContent) {
 }
 
 func (o UeContextCreateError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o UeContextCreateError) MarshalJSON() ([]byte, error) {
 func (o UeContextCreateError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.NgapCause) {
+	if !IsNil(o.NgapCause) {
 		toSerialize["ngapCause"] = o.NgapCause
 	}
-	if !isNil(o.TargetToSourceFailureData) {
+	if !IsNil(o.TargetToSourceFailureData) {
 		toSerialize["targetToSourceFailureData"] = o.TargetToSourceFailureData
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableUeContextCreateError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

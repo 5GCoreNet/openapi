@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &SeafData{}
 
 // SeafData Represents SEAF data derived from data received from AUSF
 type SeafData struct {
-	NgKsi NgKsi `json:"ngKsi"`
-	KeyAmf KeyAmf `json:"keyAmf"`
-	Nh *string `json:"nh,omitempty"`
-	Ncc *int32 `json:"ncc,omitempty"`
-	KeyAmfChangeInd *bool `json:"keyAmfChangeInd,omitempty"`
-	KeyAmfHDerivationInd *bool `json:"keyAmfHDerivationInd,omitempty"`
+	NgKsi                NgKsi   `json:"ngKsi"`
+	KeyAmf               KeyAmf  `json:"keyAmf"`
+	Nh                   *string `json:"nh,omitempty"`
+	Ncc                  *int32  `json:"ncc,omitempty"`
+	KeyAmfChangeInd      *bool   `json:"keyAmfChangeInd,omitempty"`
+	KeyAmfHDerivationInd *bool   `json:"keyAmfHDerivationInd,omitempty"`
 }
 
 // NewSeafData instantiates a new SeafData object
@@ -96,7 +96,7 @@ func (o *SeafData) SetKeyAmf(v KeyAmf) {
 
 // GetNh returns the Nh field value if set, zero value otherwise.
 func (o *SeafData) GetNh() string {
-	if o == nil || isNil(o.Nh) {
+	if o == nil || IsNil(o.Nh) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SeafData) GetNh() string {
 // GetNhOk returns a tuple with the Nh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetNhOk() (*string, bool) {
-	if o == nil || isNil(o.Nh) {
+	if o == nil || IsNil(o.Nh) {
 		return nil, false
 	}
 	return o.Nh, true
@@ -114,7 +114,7 @@ func (o *SeafData) GetNhOk() (*string, bool) {
 
 // HasNh returns a boolean if a field has been set.
 func (o *SeafData) HasNh() bool {
-	if o != nil && !isNil(o.Nh) {
+	if o != nil && !IsNil(o.Nh) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *SeafData) SetNh(v string) {
 
 // GetNcc returns the Ncc field value if set, zero value otherwise.
 func (o *SeafData) GetNcc() int32 {
-	if o == nil || isNil(o.Ncc) {
+	if o == nil || IsNil(o.Ncc) {
 		var ret int32
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *SeafData) GetNcc() int32 {
 // GetNccOk returns a tuple with the Ncc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetNccOk() (*int32, bool) {
-	if o == nil || isNil(o.Ncc) {
+	if o == nil || IsNil(o.Ncc) {
 		return nil, false
 	}
 	return o.Ncc, true
@@ -146,7 +146,7 @@ func (o *SeafData) GetNccOk() (*int32, bool) {
 
 // HasNcc returns a boolean if a field has been set.
 func (o *SeafData) HasNcc() bool {
-	if o != nil && !isNil(o.Ncc) {
+	if o != nil && !IsNil(o.Ncc) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *SeafData) SetNcc(v int32) {
 
 // GetKeyAmfChangeInd returns the KeyAmfChangeInd field value if set, zero value otherwise.
 func (o *SeafData) GetKeyAmfChangeInd() bool {
-	if o == nil || isNil(o.KeyAmfChangeInd) {
+	if o == nil || IsNil(o.KeyAmfChangeInd) {
 		var ret bool
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *SeafData) GetKeyAmfChangeInd() bool {
 // GetKeyAmfChangeIndOk returns a tuple with the KeyAmfChangeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetKeyAmfChangeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.KeyAmfChangeInd) {
+	if o == nil || IsNil(o.KeyAmfChangeInd) {
 		return nil, false
 	}
 	return o.KeyAmfChangeInd, true
@@ -178,7 +178,7 @@ func (o *SeafData) GetKeyAmfChangeIndOk() (*bool, bool) {
 
 // HasKeyAmfChangeInd returns a boolean if a field has been set.
 func (o *SeafData) HasKeyAmfChangeInd() bool {
-	if o != nil && !isNil(o.KeyAmfChangeInd) {
+	if o != nil && !IsNil(o.KeyAmfChangeInd) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *SeafData) SetKeyAmfChangeInd(v bool) {
 
 // GetKeyAmfHDerivationInd returns the KeyAmfHDerivationInd field value if set, zero value otherwise.
 func (o *SeafData) GetKeyAmfHDerivationInd() bool {
-	if o == nil || isNil(o.KeyAmfHDerivationInd) {
+	if o == nil || IsNil(o.KeyAmfHDerivationInd) {
 		var ret bool
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *SeafData) GetKeyAmfHDerivationInd() bool {
 // GetKeyAmfHDerivationIndOk returns a tuple with the KeyAmfHDerivationInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetKeyAmfHDerivationIndOk() (*bool, bool) {
-	if o == nil || isNil(o.KeyAmfHDerivationInd) {
+	if o == nil || IsNil(o.KeyAmfHDerivationInd) {
 		return nil, false
 	}
 	return o.KeyAmfHDerivationInd, true
@@ -210,7 +210,7 @@ func (o *SeafData) GetKeyAmfHDerivationIndOk() (*bool, bool) {
 
 // HasKeyAmfHDerivationInd returns a boolean if a field has been set.
 func (o *SeafData) HasKeyAmfHDerivationInd() bool {
-	if o != nil && !isNil(o.KeyAmfHDerivationInd) {
+	if o != nil && !IsNil(o.KeyAmfHDerivationInd) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *SeafData) SetKeyAmfHDerivationInd(v bool) {
 }
 
 func (o SeafData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -234,16 +234,16 @@ func (o SeafData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ngKsi"] = o.NgKsi
 	toSerialize["keyAmf"] = o.KeyAmf
-	if !isNil(o.Nh) {
+	if !IsNil(o.Nh) {
 		toSerialize["nh"] = o.Nh
 	}
-	if !isNil(o.Ncc) {
+	if !IsNil(o.Ncc) {
 		toSerialize["ncc"] = o.Ncc
 	}
-	if !isNil(o.KeyAmfChangeInd) {
+	if !IsNil(o.KeyAmfChangeInd) {
 		toSerialize["keyAmfChangeInd"] = o.KeyAmfChangeInd
 	}
-	if !isNil(o.KeyAmfHDerivationInd) {
+	if !IsNil(o.KeyAmfHDerivationInd) {
 		toSerialize["keyAmfHDerivationInd"] = o.KeyAmfHDerivationInd
 	}
 	return toSerialize, nil
@@ -284,5 +284,3 @@ func (v *NullableSeafData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

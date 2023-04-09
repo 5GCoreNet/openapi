@@ -90,15 +90,12 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Action](docs/Action.md)
- - [ActionAnyOf](docs/ActionAnyOf.md)
  - [AppplicationQosRequirement](docs/AppplicationQosRequirement.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [Notification](docs/Notification.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [QosResourceType](docs/QosResourceType.md)
- - [QosResourceTypeAnyOf](docs/QosResourceTypeAnyOf.md)
  - [Result](docs/Result.md)
- - [ResultAnyOf](docs/ResultAnyOf.md)
  - [SessionOrientedData](docs/SessionOrientedData.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)
 

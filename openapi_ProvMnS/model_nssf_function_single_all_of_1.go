@@ -42,7 +42,7 @@ func NewNssfFunctionSingleAllOf1WithDefaults() *NssfFunctionSingleAllOf1 {
 
 // GetEPN22 returns the EPN22 field value if set, zero value otherwise.
 func (o *NssfFunctionSingleAllOf1) GetEPN22() []EPN22Single {
-	if o == nil || isNil(o.EPN22) {
+	if o == nil || IsNil(o.EPN22) {
 		var ret []EPN22Single
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NssfFunctionSingleAllOf1) GetEPN22() []EPN22Single {
 // GetEPN22Ok returns a tuple with the EPN22 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfFunctionSingleAllOf1) GetEPN22Ok() ([]EPN22Single, bool) {
-	if o == nil || isNil(o.EPN22) {
+	if o == nil || IsNil(o.EPN22) {
 		return nil, false
 	}
 	return o.EPN22, true
@@ -60,7 +60,7 @@ func (o *NssfFunctionSingleAllOf1) GetEPN22Ok() ([]EPN22Single, bool) {
 
 // HasEPN22 returns a boolean if a field has been set.
 func (o *NssfFunctionSingleAllOf1) HasEPN22() bool {
-	if o != nil && !isNil(o.EPN22) {
+	if o != nil && !IsNil(o.EPN22) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NssfFunctionSingleAllOf1) SetEPN22(v []EPN22Single) {
 
 // GetEPN31 returns the EPN31 field value if set, zero value otherwise.
 func (o *NssfFunctionSingleAllOf1) GetEPN31() []EPN31Single {
-	if o == nil || isNil(o.EPN31) {
+	if o == nil || IsNil(o.EPN31) {
 		var ret []EPN31Single
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NssfFunctionSingleAllOf1) GetEPN31() []EPN31Single {
 // GetEPN31Ok returns a tuple with the EPN31 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfFunctionSingleAllOf1) GetEPN31Ok() ([]EPN31Single, bool) {
-	if o == nil || isNil(o.EPN31) {
+	if o == nil || IsNil(o.EPN31) {
 		return nil, false
 	}
 	return o.EPN31, true
@@ -92,7 +92,7 @@ func (o *NssfFunctionSingleAllOf1) GetEPN31Ok() ([]EPN31Single, bool) {
 
 // HasEPN31 returns a boolean if a field has been set.
 func (o *NssfFunctionSingleAllOf1) HasEPN31() bool {
-	if o != nil && !isNil(o.EPN31) {
+	if o != nil && !IsNil(o.EPN31) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NssfFunctionSingleAllOf1) SetEPN31(v []EPN31Single) {
 }
 
 func (o NssfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o NssfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NssfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EPN22) {
+	if !IsNil(o.EPN22) {
 		toSerialize["EP_N22"] = o.EPN22
 	}
-	if !isNil(o.EPN31) {
+	if !IsNil(o.EPN31) {
 		toSerialize["EP_N31"] = o.EPN31
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableNssfFunctionSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

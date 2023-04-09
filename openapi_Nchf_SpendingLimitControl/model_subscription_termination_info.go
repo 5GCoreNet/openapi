@@ -1,7 +1,7 @@
 /*
 Nchf_SpendingLimitControl
 
-Nchf Spending Limit Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nchf Spending Limit Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the SubscriptionTerminationInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SubscriptionTerminationInfo{}
 
-// SubscriptionTerminationInfo Represents the data structure presenting the indication of the termination of the  subscription. 
+// SubscriptionTerminationInfo Represents the data structure presenting the indication of the termination of the  subscription.
 type SubscriptionTerminationInfo struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi string `json:"supi"`
-	NotifId *string `json:"notifId,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi      string            `json:"supi"`
+	NotifId   *string           `json:"notifId,omitempty"`
 	TermCause *TerminationCause `json:"termCause,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *SubscriptionTerminationInfo) SetSupi(v string) {
 
 // GetNotifId returns the NotifId field value if set, zero value otherwise.
 func (o *SubscriptionTerminationInfo) GetNotifId() string {
-	if o == nil || isNil(o.NotifId) {
+	if o == nil || IsNil(o.NotifId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *SubscriptionTerminationInfo) GetNotifId() string {
 // GetNotifIdOk returns a tuple with the NotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTerminationInfo) GetNotifIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifId) {
+	if o == nil || IsNil(o.NotifId) {
 		return nil, false
 	}
 	return o.NotifId, true
@@ -87,7 +87,7 @@ func (o *SubscriptionTerminationInfo) GetNotifIdOk() (*string, bool) {
 
 // HasNotifId returns a boolean if a field has been set.
 func (o *SubscriptionTerminationInfo) HasNotifId() bool {
-	if o != nil && !isNil(o.NotifId) {
+	if o != nil && !IsNil(o.NotifId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *SubscriptionTerminationInfo) SetNotifId(v string) {
 
 // GetTermCause returns the TermCause field value if set, zero value otherwise.
 func (o *SubscriptionTerminationInfo) GetTermCause() TerminationCause {
-	if o == nil || isNil(o.TermCause) {
+	if o == nil || IsNil(o.TermCause) {
 		var ret TerminationCause
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SubscriptionTerminationInfo) GetTermCause() TerminationCause {
 // GetTermCauseOk returns a tuple with the TermCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTerminationInfo) GetTermCauseOk() (*TerminationCause, bool) {
-	if o == nil || isNil(o.TermCause) {
+	if o == nil || IsNil(o.TermCause) {
 		return nil, false
 	}
 	return o.TermCause, true
@@ -119,7 +119,7 @@ func (o *SubscriptionTerminationInfo) GetTermCauseOk() (*TerminationCause, bool)
 
 // HasTermCause returns a boolean if a field has been set.
 func (o *SubscriptionTerminationInfo) HasTermCause() bool {
-	if o != nil && !isNil(o.TermCause) {
+	if o != nil && !IsNil(o.TermCause) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *SubscriptionTerminationInfo) SetTermCause(v TerminationCause) {
 }
 
 func (o SubscriptionTerminationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o SubscriptionTerminationInfo) MarshalJSON() ([]byte, error) {
 func (o SubscriptionTerminationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !isNil(o.NotifId) {
+	if !IsNil(o.NotifId) {
 		toSerialize["notifId"] = o.NotifId
 	}
-	if !isNil(o.TermCause) {
+	if !IsNil(o.TermCause) {
 		toSerialize["termCause"] = o.TermCause
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableSubscriptionTerminationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

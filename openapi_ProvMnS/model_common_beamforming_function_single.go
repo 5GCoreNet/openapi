@@ -19,12 +19,9 @@ var _ MappedNullable = &CommonBeamformingFunctionSingle{}
 
 // CommonBeamformingFunctionSingle struct for CommonBeamformingFunctionSingle
 type CommonBeamformingFunctionSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *interface{} `json:"attributes,omitempty"`
-	Beam []BeamSingle `json:"Beam,omitempty"`
+	Top
+	Attributes *CommonBeamformingFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Beam       []BeamSingle                                    `json:"Beam,omitempty"`
 }
 
 // NewCommonBeamformingFunctionSingle instantiates a new CommonBeamformingFunctionSingle object
@@ -45,132 +42,10 @@ func NewCommonBeamformingFunctionSingleWithDefaults() *CommonBeamformingFunction
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *CommonBeamformingFunctionSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CommonBeamformingFunctionSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *CommonBeamformingFunctionSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *CommonBeamformingFunctionSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CommonBeamformingFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *CommonBeamformingFunctionSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *CommonBeamformingFunctionSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *CommonBeamformingFunctionSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CommonBeamformingFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *CommonBeamformingFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *CommonBeamformingFunctionSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *CommonBeamformingFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CommonBeamformingFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *CommonBeamformingFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *CommonBeamformingFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *CommonBeamformingFunctionSingle) GetAttributes() interface{} {
-	if o == nil || isNil(o.Attributes) {
-		var ret interface{}
+func (o *CommonBeamformingFunctionSingle) GetAttributes() CommonBeamformingFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret CommonBeamformingFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -178,8 +53,8 @@ func (o *CommonBeamformingFunctionSingle) GetAttributes() interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CommonBeamformingFunctionSingle) GetAttributesOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *CommonBeamformingFunctionSingle) GetAttributesOk() (*CommonBeamformingFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -187,21 +62,21 @@ func (o *CommonBeamformingFunctionSingle) GetAttributesOk() (*interface{}, bool)
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *CommonBeamformingFunctionSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
-func (o *CommonBeamformingFunctionSingle) SetAttributes(v interface{}) {
+// SetAttributes gets a reference to the given CommonBeamformingFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *CommonBeamformingFunctionSingle) SetAttributes(v CommonBeamformingFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 // GetBeam returns the Beam field value if set, zero value otherwise.
 func (o *CommonBeamformingFunctionSingle) GetBeam() []BeamSingle {
-	if o == nil || isNil(o.Beam) {
+	if o == nil || IsNil(o.Beam) {
 		var ret []BeamSingle
 		return ret
 	}
@@ -211,7 +86,7 @@ func (o *CommonBeamformingFunctionSingle) GetBeam() []BeamSingle {
 // GetBeamOk returns a tuple with the Beam field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommonBeamformingFunctionSingle) GetBeamOk() ([]BeamSingle, bool) {
-	if o == nil || isNil(o.Beam) {
+	if o == nil || IsNil(o.Beam) {
 		return nil, false
 	}
 	return o.Beam, true
@@ -219,7 +94,7 @@ func (o *CommonBeamformingFunctionSingle) GetBeamOk() ([]BeamSingle, bool) {
 
 // HasBeam returns a boolean if a field has been set.
 func (o *CommonBeamformingFunctionSingle) HasBeam() bool {
-	if o != nil && !isNil(o.Beam) {
+	if o != nil && !IsNil(o.Beam) {
 		return true
 	}
 
@@ -232,7 +107,7 @@ func (o *CommonBeamformingFunctionSingle) SetBeam(v []BeamSingle) {
 }
 
 func (o CommonBeamformingFunctionSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,20 +116,18 @@ func (o CommonBeamformingFunctionSingle) MarshalJSON() ([]byte, error) {
 
 func (o CommonBeamformingFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.Beam) {
+	if !IsNil(o.Beam) {
 		toSerialize["Beam"] = o.Beam
 	}
 	return toSerialize, nil
@@ -295,5 +168,3 @@ func (v *NullableCommonBeamformingFunctionSingle) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -22,16 +22,16 @@ var _ MappedNullable = &ChargingDataResponse{}
 type ChargingDataResponse struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	InvocationTimeStamp time.Time `json:"invocationTimeStamp"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	InvocationSequenceNumber int32 `json:"invocationSequenceNumber"`
-	InvocationResult *InvocationResult `json:"invocationResult,omitempty"`
-	SessionFailover *SessionFailover `json:"sessionFailover,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	MultipleUnitInformation []MultipleUnitInformation `json:"multipleUnitInformation,omitempty"`
-	Triggers []Trigger `json:"triggers,omitempty"`
-	PDUSessionChargingInformation *PDUSessionChargingInformation `json:"pDUSessionChargingInformation,omitempty"`
-	RoamingQBCInformation *RoamingQBCInformation `json:"roamingQBCInformation,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	InvocationSequenceNumber int32             `json:"invocationSequenceNumber"`
+	InvocationResult         *InvocationResult `json:"invocationResult,omitempty"`
+	SessionFailover          *SessionFailover  `json:"sessionFailover,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures                    *string                               `json:"supportedFeatures,omitempty"`
+	MultipleUnitInformation              []MultipleUnitInformation             `json:"multipleUnitInformation,omitempty"`
+	Triggers                             []Trigger                             `json:"triggers,omitempty"`
+	PDUSessionChargingInformation        *PDUSessionChargingInformation        `json:"pDUSessionChargingInformation,omitempty"`
+	RoamingQBCInformation                *RoamingQBCInformation                `json:"roamingQBCInformation,omitempty"`
 	LocationReportingChargingInformation *LocationReportingChargingInformation `json:"locationReportingChargingInformation,omitempty"`
 }
 
@@ -104,7 +104,7 @@ func (o *ChargingDataResponse) SetInvocationSequenceNumber(v int32) {
 
 // GetInvocationResult returns the InvocationResult field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetInvocationResult() InvocationResult {
-	if o == nil || isNil(o.InvocationResult) {
+	if o == nil || IsNil(o.InvocationResult) {
 		var ret InvocationResult
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ChargingDataResponse) GetInvocationResult() InvocationResult {
 // GetInvocationResultOk returns a tuple with the InvocationResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetInvocationResultOk() (*InvocationResult, bool) {
-	if o == nil || isNil(o.InvocationResult) {
+	if o == nil || IsNil(o.InvocationResult) {
 		return nil, false
 	}
 	return o.InvocationResult, true
@@ -122,7 +122,7 @@ func (o *ChargingDataResponse) GetInvocationResultOk() (*InvocationResult, bool)
 
 // HasInvocationResult returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasInvocationResult() bool {
-	if o != nil && !isNil(o.InvocationResult) {
+	if o != nil && !IsNil(o.InvocationResult) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *ChargingDataResponse) SetInvocationResult(v InvocationResult) {
 
 // GetSessionFailover returns the SessionFailover field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetSessionFailover() SessionFailover {
-	if o == nil || isNil(o.SessionFailover) {
+	if o == nil || IsNil(o.SessionFailover) {
 		var ret SessionFailover
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *ChargingDataResponse) GetSessionFailover() SessionFailover {
 // GetSessionFailoverOk returns a tuple with the SessionFailover field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetSessionFailoverOk() (*SessionFailover, bool) {
-	if o == nil || isNil(o.SessionFailover) {
+	if o == nil || IsNil(o.SessionFailover) {
 		return nil, false
 	}
 	return o.SessionFailover, true
@@ -154,7 +154,7 @@ func (o *ChargingDataResponse) GetSessionFailoverOk() (*SessionFailover, bool) {
 
 // HasSessionFailover returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasSessionFailover() bool {
-	if o != nil && !isNil(o.SessionFailover) {
+	if o != nil && !IsNil(o.SessionFailover) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *ChargingDataResponse) SetSessionFailover(v SessionFailover) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *ChargingDataResponse) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -186,7 +186,7 @@ func (o *ChargingDataResponse) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *ChargingDataResponse) SetSupportedFeatures(v string) {
 
 // GetMultipleUnitInformation returns the MultipleUnitInformation field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetMultipleUnitInformation() []MultipleUnitInformation {
-	if o == nil || isNil(o.MultipleUnitInformation) {
+	if o == nil || IsNil(o.MultipleUnitInformation) {
 		var ret []MultipleUnitInformation
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *ChargingDataResponse) GetMultipleUnitInformation() []MultipleUnitInform
 // GetMultipleUnitInformationOk returns a tuple with the MultipleUnitInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetMultipleUnitInformationOk() ([]MultipleUnitInformation, bool) {
-	if o == nil || isNil(o.MultipleUnitInformation) {
+	if o == nil || IsNil(o.MultipleUnitInformation) {
 		return nil, false
 	}
 	return o.MultipleUnitInformation, true
@@ -218,7 +218,7 @@ func (o *ChargingDataResponse) GetMultipleUnitInformationOk() ([]MultipleUnitInf
 
 // HasMultipleUnitInformation returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasMultipleUnitInformation() bool {
-	if o != nil && !isNil(o.MultipleUnitInformation) {
+	if o != nil && !IsNil(o.MultipleUnitInformation) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *ChargingDataResponse) SetMultipleUnitInformation(v []MultipleUnitInform
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetTriggers() []Trigger {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *ChargingDataResponse) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -250,7 +250,7 @@ func (o *ChargingDataResponse) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasTriggers() bool {
-	if o != nil && !isNil(o.Triggers) {
+	if o != nil && !IsNil(o.Triggers) {
 		return true
 	}
 
@@ -264,7 +264,7 @@ func (o *ChargingDataResponse) SetTriggers(v []Trigger) {
 
 // GetPDUSessionChargingInformation returns the PDUSessionChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetPDUSessionChargingInformation() PDUSessionChargingInformation {
-	if o == nil || isNil(o.PDUSessionChargingInformation) {
+	if o == nil || IsNil(o.PDUSessionChargingInformation) {
 		var ret PDUSessionChargingInformation
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *ChargingDataResponse) GetPDUSessionChargingInformation() PDUSessionChar
 // GetPDUSessionChargingInformationOk returns a tuple with the PDUSessionChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetPDUSessionChargingInformationOk() (*PDUSessionChargingInformation, bool) {
-	if o == nil || isNil(o.PDUSessionChargingInformation) {
+	if o == nil || IsNil(o.PDUSessionChargingInformation) {
 		return nil, false
 	}
 	return o.PDUSessionChargingInformation, true
@@ -282,7 +282,7 @@ func (o *ChargingDataResponse) GetPDUSessionChargingInformationOk() (*PDUSession
 
 // HasPDUSessionChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasPDUSessionChargingInformation() bool {
-	if o != nil && !isNil(o.PDUSessionChargingInformation) {
+	if o != nil && !IsNil(o.PDUSessionChargingInformation) {
 		return true
 	}
 
@@ -296,7 +296,7 @@ func (o *ChargingDataResponse) SetPDUSessionChargingInformation(v PDUSessionChar
 
 // GetRoamingQBCInformation returns the RoamingQBCInformation field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetRoamingQBCInformation() RoamingQBCInformation {
-	if o == nil || isNil(o.RoamingQBCInformation) {
+	if o == nil || IsNil(o.RoamingQBCInformation) {
 		var ret RoamingQBCInformation
 		return ret
 	}
@@ -306,7 +306,7 @@ func (o *ChargingDataResponse) GetRoamingQBCInformation() RoamingQBCInformation 
 // GetRoamingQBCInformationOk returns a tuple with the RoamingQBCInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetRoamingQBCInformationOk() (*RoamingQBCInformation, bool) {
-	if o == nil || isNil(o.RoamingQBCInformation) {
+	if o == nil || IsNil(o.RoamingQBCInformation) {
 		return nil, false
 	}
 	return o.RoamingQBCInformation, true
@@ -314,7 +314,7 @@ func (o *ChargingDataResponse) GetRoamingQBCInformationOk() (*RoamingQBCInformat
 
 // HasRoamingQBCInformation returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasRoamingQBCInformation() bool {
-	if o != nil && !isNil(o.RoamingQBCInformation) {
+	if o != nil && !IsNil(o.RoamingQBCInformation) {
 		return true
 	}
 
@@ -328,7 +328,7 @@ func (o *ChargingDataResponse) SetRoamingQBCInformation(v RoamingQBCInformation)
 
 // GetLocationReportingChargingInformation returns the LocationReportingChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetLocationReportingChargingInformation() LocationReportingChargingInformation {
-	if o == nil || isNil(o.LocationReportingChargingInformation) {
+	if o == nil || IsNil(o.LocationReportingChargingInformation) {
 		var ret LocationReportingChargingInformation
 		return ret
 	}
@@ -338,7 +338,7 @@ func (o *ChargingDataResponse) GetLocationReportingChargingInformation() Locatio
 // GetLocationReportingChargingInformationOk returns a tuple with the LocationReportingChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetLocationReportingChargingInformationOk() (*LocationReportingChargingInformation, bool) {
-	if o == nil || isNil(o.LocationReportingChargingInformation) {
+	if o == nil || IsNil(o.LocationReportingChargingInformation) {
 		return nil, false
 	}
 	return o.LocationReportingChargingInformation, true
@@ -346,7 +346,7 @@ func (o *ChargingDataResponse) GetLocationReportingChargingInformationOk() (*Loc
 
 // HasLocationReportingChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasLocationReportingChargingInformation() bool {
-	if o != nil && !isNil(o.LocationReportingChargingInformation) {
+	if o != nil && !IsNil(o.LocationReportingChargingInformation) {
 		return true
 	}
 
@@ -359,7 +359,7 @@ func (o *ChargingDataResponse) SetLocationReportingChargingInformation(v Locatio
 }
 
 func (o ChargingDataResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -370,28 +370,28 @@ func (o ChargingDataResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["invocationTimeStamp"] = o.InvocationTimeStamp
 	toSerialize["invocationSequenceNumber"] = o.InvocationSequenceNumber
-	if !isNil(o.InvocationResult) {
+	if !IsNil(o.InvocationResult) {
 		toSerialize["invocationResult"] = o.InvocationResult
 	}
-	if !isNil(o.SessionFailover) {
+	if !IsNil(o.SessionFailover) {
 		toSerialize["sessionFailover"] = o.SessionFailover
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.MultipleUnitInformation) {
+	if !IsNil(o.MultipleUnitInformation) {
 		toSerialize["multipleUnitInformation"] = o.MultipleUnitInformation
 	}
-	if !isNil(o.Triggers) {
+	if !IsNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !isNil(o.PDUSessionChargingInformation) {
+	if !IsNil(o.PDUSessionChargingInformation) {
 		toSerialize["pDUSessionChargingInformation"] = o.PDUSessionChargingInformation
 	}
-	if !isNil(o.RoamingQBCInformation) {
+	if !IsNil(o.RoamingQBCInformation) {
 		toSerialize["roamingQBCInformation"] = o.RoamingQBCInformation
 	}
-	if !isNil(o.LocationReportingChargingInformation) {
+	if !IsNil(o.LocationReportingChargingInformation) {
 		toSerialize["locationReportingChargingInformation"] = o.LocationReportingChargingInformation
 	}
 	return toSerialize, nil
@@ -432,5 +432,3 @@ func (v *NullableChargingDataResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 VAE_SessionOrientedService
 
-API for VAE_SessionOrientedService   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE_SessionOrientedService   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // Action Indicate the action to the session-oriented service.
 type Action struct {
-	ActionAnyOf *ActionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Action) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ActionAnyOf
-	err = json.Unmarshal(data, &dst.ActionAnyOf);
-	if err == nil {
-		jsonActionAnyOf, _ := json.Marshal(dst.ActionAnyOf)
-		if string(jsonActionAnyOf) == "{}" { // empty struct
-			dst.ActionAnyOf = nil
-		} else {
-			return nil // data stored in dst.ActionAnyOf, return on the first match
-		}
-	} else {
-		dst.ActionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Action) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Action) MarshalJSON() ([]byte, error) {
-	if src.ActionAnyOf != nil {
-		return json.Marshal(&src.ActionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

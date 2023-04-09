@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SmContextType Type of SM Context information. Possible values are   - EPS_PDN_CONNECTION   - SM_CONTEXT   - AF_COORDINATION_INFO 
+// SmContextType Type of SM Context information. Possible values are   - EPS_PDN_CONNECTION   - SM_CONTEXT   - AF_COORDINATION_INFO
 type SmContextType struct {
-	SmContextTypeAnyOf *SmContextTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmContextType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SmContextTypeAnyOf
-	err = json.Unmarshal(data, &dst.SmContextTypeAnyOf);
-	if err == nil {
-		jsonSmContextTypeAnyOf, _ := json.Marshal(dst.SmContextTypeAnyOf)
-		if string(jsonSmContextTypeAnyOf) == "{}" { // empty struct
-			dst.SmContextTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.SmContextTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.SmContextTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SmContextType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmContextType) MarshalJSON() ([]byte, error) {
-	if src.SmContextTypeAnyOf != nil {
-		return json.Marshal(&src.SmContextTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSmContextType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

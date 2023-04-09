@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &QosInfo{}
 // QosInfo QoS Information
 type QosInfo struct {
 	QosFlowsAddModRequestList []QosFlowAddModifyRequestItem `json:"qosFlowsAddModRequestList,omitempty"`
-	QosFlowsRelRequestList []int32 `json:"qosFlowsRelRequestList,omitempty"`
+	QosFlowsRelRequestList    []int32                       `json:"qosFlowsRelRequestList,omitempty"`
 }
 
 // NewQosInfo instantiates a new QosInfo object
@@ -42,7 +42,7 @@ func NewQosInfoWithDefaults() *QosInfo {
 
 // GetQosFlowsAddModRequestList returns the QosFlowsAddModRequestList field value if set, zero value otherwise.
 func (o *QosInfo) GetQosFlowsAddModRequestList() []QosFlowAddModifyRequestItem {
-	if o == nil || isNil(o.QosFlowsAddModRequestList) {
+	if o == nil || IsNil(o.QosFlowsAddModRequestList) {
 		var ret []QosFlowAddModifyRequestItem
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *QosInfo) GetQosFlowsAddModRequestList() []QosFlowAddModifyRequestItem {
 // GetQosFlowsAddModRequestListOk returns a tuple with the QosFlowsAddModRequestList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosInfo) GetQosFlowsAddModRequestListOk() ([]QosFlowAddModifyRequestItem, bool) {
-	if o == nil || isNil(o.QosFlowsAddModRequestList) {
+	if o == nil || IsNil(o.QosFlowsAddModRequestList) {
 		return nil, false
 	}
 	return o.QosFlowsAddModRequestList, true
@@ -60,7 +60,7 @@ func (o *QosInfo) GetQosFlowsAddModRequestListOk() ([]QosFlowAddModifyRequestIte
 
 // HasQosFlowsAddModRequestList returns a boolean if a field has been set.
 func (o *QosInfo) HasQosFlowsAddModRequestList() bool {
-	if o != nil && !isNil(o.QosFlowsAddModRequestList) {
+	if o != nil && !IsNil(o.QosFlowsAddModRequestList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *QosInfo) SetQosFlowsAddModRequestList(v []QosFlowAddModifyRequestItem) 
 
 // GetQosFlowsRelRequestList returns the QosFlowsRelRequestList field value if set, zero value otherwise.
 func (o *QosInfo) GetQosFlowsRelRequestList() []int32 {
-	if o == nil || isNil(o.QosFlowsRelRequestList) {
+	if o == nil || IsNil(o.QosFlowsRelRequestList) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *QosInfo) GetQosFlowsRelRequestList() []int32 {
 // GetQosFlowsRelRequestListOk returns a tuple with the QosFlowsRelRequestList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosInfo) GetQosFlowsRelRequestListOk() ([]int32, bool) {
-	if o == nil || isNil(o.QosFlowsRelRequestList) {
+	if o == nil || IsNil(o.QosFlowsRelRequestList) {
 		return nil, false
 	}
 	return o.QosFlowsRelRequestList, true
@@ -92,7 +92,7 @@ func (o *QosInfo) GetQosFlowsRelRequestListOk() ([]int32, bool) {
 
 // HasQosFlowsRelRequestList returns a boolean if a field has been set.
 func (o *QosInfo) HasQosFlowsRelRequestList() bool {
-	if o != nil && !isNil(o.QosFlowsRelRequestList) {
+	if o != nil && !IsNil(o.QosFlowsRelRequestList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *QosInfo) SetQosFlowsRelRequestList(v []int32) {
 }
 
 func (o QosInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o QosInfo) MarshalJSON() ([]byte, error) {
 
 func (o QosInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.QosFlowsAddModRequestList) {
+	if !IsNil(o.QosFlowsAddModRequestList) {
 		toSerialize["qosFlowsAddModRequestList"] = o.QosFlowsAddModRequestList
 	}
-	if !isNil(o.QosFlowsRelRequestList) {
+	if !IsNil(o.QosFlowsRelRequestList) {
 		toSerialize["qosFlowsRelRequestList"] = o.QosFlowsRelRequestList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableQosInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

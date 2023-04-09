@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // checks if the FetchInstruction type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &FetchInstruction{}
 
-// FetchInstruction The fetch instructions indicate whether the data or analytics are to be fetched by the consumer. 
+// FetchInstruction The fetch instructions indicate whether the data or analytics are to be fetched by the consumer.
 type FetchInstruction struct {
 	// String providing an URI formatted according to RFC 3986.
 	FetchUri string `json:"fetchUri"`
@@ -97,7 +97,7 @@ func (o *FetchInstruction) SetFetchCorrIds(v []string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *FetchInstruction) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *FetchInstruction) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FetchInstruction) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -115,7 +115,7 @@ func (o *FetchInstruction) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *FetchInstruction) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *FetchInstruction) SetExpiry(v time.Time) {
 }
 
 func (o FetchInstruction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -139,7 +139,7 @@ func (o FetchInstruction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["fetchUri"] = o.FetchUri
 	toSerialize["fetchCorrIds"] = o.FetchCorrIds
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
 	return toSerialize, nil
@@ -180,5 +180,3 @@ func (v *NullableFetchInstruction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M1_EdgeResourcesProvisioning
 
-5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -17,28 +17,14 @@ import (
 
 // EdgeManagementMode The management mode of an EAS.
 type EdgeManagementMode struct {
-	EdgeManagementModeAnyOf *EdgeManagementModeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EdgeManagementMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EdgeManagementModeAnyOf
-	err = json.Unmarshal(data, &dst.EdgeManagementModeAnyOf);
-	if err == nil {
-		jsonEdgeManagementModeAnyOf, _ := json.Marshal(dst.EdgeManagementModeAnyOf)
-		if string(jsonEdgeManagementModeAnyOf) == "{}" { // empty struct
-			dst.EdgeManagementModeAnyOf = nil
-		} else {
-			return nil // data stored in dst.EdgeManagementModeAnyOf, return on the first match
-		}
-	} else {
-		dst.EdgeManagementModeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EdgeManagementMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EdgeManagementMode) MarshalJSON() ([]byte, error) {
-	if src.EdgeManagementModeAnyOf != nil {
-		return json.Marshal(&src.EdgeManagementModeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEdgeManagementMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

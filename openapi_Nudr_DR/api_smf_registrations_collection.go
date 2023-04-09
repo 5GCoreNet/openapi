@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMFRegistrationsCollectionApiService SMFRegistrationsCollectionApi service
 type SMFRegistrationsCollectionApiService service
 
 type ApiQuerySmfRegListRequest struct {
-	ctx context.Context
-	ApiService *SMFRegistrationsCollectionApiService
-	ueId string
+	ctx               context.Context
+	ApiService        *SMFRegistrationsCollectionApiService
+	ueId              string
 	supportedFeatures *string
 }
 
@@ -43,26 +42,27 @@ func (r ApiQuerySmfRegListRequest) Execute() ([]SmfRegistration, *http.Response,
 /*
 QuerySmfRegList Retrieves the SMF registration list of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQuerySmfRegListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQuerySmfRegListRequest
 */
 func (a *SMFRegistrationsCollectionApiService) QuerySmfRegList(ctx context.Context, ueId string) ApiQuerySmfRegListRequest {
 	return ApiQuerySmfRegListRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return []SmfRegistration
+//
+//	@return []SmfRegistration
 func (a *SMFRegistrationsCollectionApiService) QuerySmfRegListExecute(r ApiQuerySmfRegListRequest) ([]SmfRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SmfRegistration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SmfRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFRegistrationsCollectionApiService.QuerySmfRegList")
@@ -78,7 +78,7 @@ func (a *SMFRegistrationsCollectionApiService) QuerySmfRegListExecute(r ApiQuery
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -107,9 +107,9 @@ func (a *SMFRegistrationsCollectionApiService) QuerySmfRegListExecute(r ApiQuery
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

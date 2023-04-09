@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewPublishedApiPathWithDefaults() *PublishedApiPath {
 
 // GetCcfIds returns the CcfIds field value if set, zero value otherwise.
 func (o *PublishedApiPath) GetCcfIds() []string {
-	if o == nil || isNil(o.CcfIds) {
+	if o == nil || IsNil(o.CcfIds) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PublishedApiPath) GetCcfIds() []string {
 // GetCcfIdsOk returns a tuple with the CcfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublishedApiPath) GetCcfIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.CcfIds) {
+	if o == nil || IsNil(o.CcfIds) {
 		return nil, false
 	}
 	return o.CcfIds, true
@@ -60,7 +60,7 @@ func (o *PublishedApiPath) GetCcfIdsOk() ([]string, bool) {
 
 // HasCcfIds returns a boolean if a field has been set.
 func (o *PublishedApiPath) HasCcfIds() bool {
-	if o != nil && !isNil(o.CcfIds) {
+	if o != nil && !IsNil(o.CcfIds) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *PublishedApiPath) SetCcfIds(v []string) {
 }
 
 func (o PublishedApiPath) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o PublishedApiPath) MarshalJSON() ([]byte, error) {
 
 func (o PublishedApiPath) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CcfIds) {
+	if !IsNil(o.CcfIds) {
 		toSerialize["ccfIds"] = o.CcfIds
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullablePublishedApiPath) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

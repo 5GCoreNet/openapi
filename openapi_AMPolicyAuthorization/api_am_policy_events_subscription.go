@@ -1,7 +1,7 @@
 /*
 3gpp-am-policyauthorization
 
-API for AM policy authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AM policy authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -13,20 +13,19 @@ package openapi_AMPolicyAuthorization
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AMPolicyEventsSubscriptionApiService AMPolicyEventsSubscriptionApi service
 type AMPolicyEventsSubscriptionApiService service
 
 type ApiDeleteAmEventsSubscRequest struct {
-	ctx context.Context
-	ApiService *AMPolicyEventsSubscriptionApiService
-	afId string
+	ctx            context.Context
+	ApiService     *AMPolicyEventsSubscriptionApiService
+	afId           string
 	appAmContextId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteAmEventsSubscRequest) Execute() (*http.Response, error) {
 /*
 DeleteAmEventsSubsc deletes the AM Policy Events Subscription sub-resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param appAmContextId string identifying the Individual Application AM Context resource.
- @return ApiDeleteAmEventsSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param appAmContextId string identifying the Individual Application AM Context resource.
+	@return ApiDeleteAmEventsSubscRequest
 */
 func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubsc(ctx context.Context, afId string, appAmContextId string) ApiDeleteAmEventsSubscRequest {
 	return ApiDeleteAmEventsSubscRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		appAmContextId: appAmContextId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubsc(ctx context.C
 // Execute executes the request
 func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiDeleteAmEventsSubscRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMPolicyEventsSubscriptionApiService.DeleteAmEventsSubsc")
@@ -99,9 +98,9 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,14 +194,14 @@ func (a *AMPolicyEventsSubscriptionApiService) DeleteAmEventsSubscExecute(r ApiD
 }
 
 type ApiUpdateAmEventsSubscRequest struct {
-	ctx context.Context
-	ApiService *AMPolicyEventsSubscriptionApiService
-	afId string
-	appAmContextId string
+	ctx               context.Context
+	ApiService        *AMPolicyEventsSubscriptionApiService
+	afId              string
+	appAmContextId    string
 	amEventsSubscData *AmEventsSubscData
 }
 
-// Creation or modification of an application AM Policy Events Subscription sub-resource. 
+// Creation or modification of an application AM Policy Events Subscription sub-resource.
 func (r ApiUpdateAmEventsSubscRequest) AmEventsSubscData(amEventsSubscData AmEventsSubscData) ApiUpdateAmEventsSubscRequest {
 	r.amEventsSubscData = &amEventsSubscData
 	return r
@@ -215,28 +214,29 @@ func (r ApiUpdateAmEventsSubscRequest) Execute() (*AmEventsSubscRespData, *http.
 /*
 UpdateAmEventsSubsc creates or modifies an AM Policy Events Subscription sub-resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param appAmContextId string identifying the AM Policy Events Subscription subresource
- @return ApiUpdateAmEventsSubscRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param appAmContextId string identifying the AM Policy Events Subscription subresource
+	@return ApiUpdateAmEventsSubscRequest
 */
 func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubsc(ctx context.Context, afId string, appAmContextId string) ApiUpdateAmEventsSubscRequest {
 	return ApiUpdateAmEventsSubscRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		appAmContextId: appAmContextId,
 	}
 }
 
 // Execute executes the request
-//  @return AmEventsSubscRespData
+//
+//	@return AmEventsSubscRespData
 func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiUpdateAmEventsSubscRequest) (*AmEventsSubscRespData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AmEventsSubscRespData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AmEventsSubscRespData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMPolicyEventsSubscriptionApiService.UpdateAmEventsSubsc")
@@ -284,9 +284,9 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -303,8 +303,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -314,8 +314,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -325,8 +325,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -336,8 +336,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -347,8 +347,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -358,8 +358,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -369,8 +369,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *AMPolicyEventsSubscriptionApiService) UpdateAmEventsSubscExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

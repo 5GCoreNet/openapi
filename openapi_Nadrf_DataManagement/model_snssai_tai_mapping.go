@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SnssaiTaiMapping{}
 
 // SnssaiTaiMapping List of restricted or unrestricted S-NSSAIs per TAI(s)
 type SnssaiTaiMapping struct {
-	ReportingArea TargetArea `json:"reportingArea"`
-	AccessTypeList []AccessType `json:"accessTypeList,omitempty"`
+	ReportingArea       TargetArea        `json:"reportingArea"`
+	AccessTypeList      []AccessType      `json:"accessTypeList,omitempty"`
 	SupportedSnssaiList []SupportedSnssai `json:"supportedSnssaiList,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *SnssaiTaiMapping) SetReportingArea(v TargetArea) {
 
 // GetAccessTypeList returns the AccessTypeList field value if set, zero value otherwise.
 func (o *SnssaiTaiMapping) GetAccessTypeList() []AccessType {
-	if o == nil || isNil(o.AccessTypeList) {
+	if o == nil || IsNil(o.AccessTypeList) {
 		var ret []AccessType
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SnssaiTaiMapping) GetAccessTypeList() []AccessType {
 // GetAccessTypeListOk returns a tuple with the AccessTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiTaiMapping) GetAccessTypeListOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessTypeList) {
+	if o == nil || IsNil(o.AccessTypeList) {
 		return nil, false
 	}
 	return o.AccessTypeList, true
@@ -86,7 +86,7 @@ func (o *SnssaiTaiMapping) GetAccessTypeListOk() ([]AccessType, bool) {
 
 // HasAccessTypeList returns a boolean if a field has been set.
 func (o *SnssaiTaiMapping) HasAccessTypeList() bool {
-	if o != nil && !isNil(o.AccessTypeList) {
+	if o != nil && !IsNil(o.AccessTypeList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SnssaiTaiMapping) SetAccessTypeList(v []AccessType) {
 
 // GetSupportedSnssaiList returns the SupportedSnssaiList field value if set, zero value otherwise.
 func (o *SnssaiTaiMapping) GetSupportedSnssaiList() []SupportedSnssai {
-	if o == nil || isNil(o.SupportedSnssaiList) {
+	if o == nil || IsNil(o.SupportedSnssaiList) {
 		var ret []SupportedSnssai
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SnssaiTaiMapping) GetSupportedSnssaiList() []SupportedSnssai {
 // GetSupportedSnssaiListOk returns a tuple with the SupportedSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiTaiMapping) GetSupportedSnssaiListOk() ([]SupportedSnssai, bool) {
-	if o == nil || isNil(o.SupportedSnssaiList) {
+	if o == nil || IsNil(o.SupportedSnssaiList) {
 		return nil, false
 	}
 	return o.SupportedSnssaiList, true
@@ -118,7 +118,7 @@ func (o *SnssaiTaiMapping) GetSupportedSnssaiListOk() ([]SupportedSnssai, bool) 
 
 // HasSupportedSnssaiList returns a boolean if a field has been set.
 func (o *SnssaiTaiMapping) HasSupportedSnssaiList() bool {
-	if o != nil && !isNil(o.SupportedSnssaiList) {
+	if o != nil && !IsNil(o.SupportedSnssaiList) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *SnssaiTaiMapping) SetSupportedSnssaiList(v []SupportedSnssai) {
 }
 
 func (o SnssaiTaiMapping) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o SnssaiTaiMapping) MarshalJSON() ([]byte, error) {
 func (o SnssaiTaiMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reportingArea"] = o.ReportingArea
-	if !isNil(o.AccessTypeList) {
+	if !IsNil(o.AccessTypeList) {
 		toSerialize["accessTypeList"] = o.AccessTypeList
 	}
-	if !isNil(o.SupportedSnssaiList) {
+	if !IsNil(o.SupportedSnssaiList) {
 		toSerialize["supportedSnssaiList"] = o.SupportedSnssaiList
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableSnssaiTaiMapping) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

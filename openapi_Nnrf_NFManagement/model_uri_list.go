@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,11 +17,11 @@ import (
 // checks if the UriList type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UriList{}
 
-// UriList Represents a set of URIs following the 3GPP hypermedia format (containing a \"_links\" attribute). 
+// UriList Represents a set of URIs following the 3GPP hypermedia format (containing a \"_links\" attribute).
 type UriList struct {
-	// List of the URI of NF instances. It has two members whose names are item and self. The item attribute contains an array of URIs. 
-	Links *map[string]LinksValueSchema `json:"_links,omitempty"`
-	TotalItemCount *int32 `json:"totalItemCount,omitempty"`
+	// List of the URI of NF instances. It has two members whose names are item and self. The item attribute contains an array of URIs.
+	Links          *map[string]LinksValueSchema `json:"_links,omitempty"`
+	TotalItemCount *int32                       `json:"totalItemCount,omitempty"`
 }
 
 // NewUriList instantiates a new UriList object
@@ -43,7 +43,7 @@ func NewUriListWithDefaults() *UriList {
 
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *UriList) GetLinks() map[string]LinksValueSchema {
-	if o == nil || isNil(o.Links) {
+	if o == nil || IsNil(o.Links) {
 		var ret map[string]LinksValueSchema
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UriList) GetLinks() map[string]LinksValueSchema {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UriList) GetLinksOk() (*map[string]LinksValueSchema, bool) {
-	if o == nil || isNil(o.Links) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -61,7 +61,7 @@ func (o *UriList) GetLinksOk() (*map[string]LinksValueSchema, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *UriList) HasLinks() bool {
-	if o != nil && !isNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UriList) SetLinks(v map[string]LinksValueSchema) {
 
 // GetTotalItemCount returns the TotalItemCount field value if set, zero value otherwise.
 func (o *UriList) GetTotalItemCount() int32 {
-	if o == nil || isNil(o.TotalItemCount) {
+	if o == nil || IsNil(o.TotalItemCount) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UriList) GetTotalItemCount() int32 {
 // GetTotalItemCountOk returns a tuple with the TotalItemCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UriList) GetTotalItemCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalItemCount) {
+	if o == nil || IsNil(o.TotalItemCount) {
 		return nil, false
 	}
 	return o.TotalItemCount, true
@@ -93,7 +93,7 @@ func (o *UriList) GetTotalItemCountOk() (*int32, bool) {
 
 // HasTotalItemCount returns a boolean if a field has been set.
 func (o *UriList) HasTotalItemCount() bool {
-	if o != nil && !isNil(o.TotalItemCount) {
+	if o != nil && !IsNil(o.TotalItemCount) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *UriList) SetTotalItemCount(v int32) {
 }
 
 func (o UriList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o UriList) MarshalJSON() ([]byte, error) {
 
 func (o UriList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Links) {
+	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
-	if !isNil(o.TotalItemCount) {
+	if !IsNil(o.TotalItemCount) {
 		toSerialize["totalItemCount"] = o.TotalItemCount
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableUriList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

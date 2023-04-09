@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &EeMonitoringRevoked{}
 type EeMonitoringRevoked struct {
 	// A map (list of key-value pairs where ReferenceId serves as key) of MonitoringEvents
 	RevokedMonitoringEventList map[string]MonitoringEvent `json:"revokedMonitoringEventList"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	RemovedGpsi *string `json:"removedGpsi,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	RemovedGpsi     *string  `json:"removedGpsi,omitempty"`
 	ExcludeGpsiList []string `json:"excludeGpsiList,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *EeMonitoringRevoked) SetRevokedMonitoringEventList(v map[string]Monitor
 
 // GetRemovedGpsi returns the RemovedGpsi field value if set, zero value otherwise.
 func (o *EeMonitoringRevoked) GetRemovedGpsi() string {
-	if o == nil || isNil(o.RemovedGpsi) {
+	if o == nil || IsNil(o.RemovedGpsi) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *EeMonitoringRevoked) GetRemovedGpsi() string {
 // GetRemovedGpsiOk returns a tuple with the RemovedGpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeMonitoringRevoked) GetRemovedGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.RemovedGpsi) {
+	if o == nil || IsNil(o.RemovedGpsi) {
 		return nil, false
 	}
 	return o.RemovedGpsi, true
@@ -88,7 +88,7 @@ func (o *EeMonitoringRevoked) GetRemovedGpsiOk() (*string, bool) {
 
 // HasRemovedGpsi returns a boolean if a field has been set.
 func (o *EeMonitoringRevoked) HasRemovedGpsi() bool {
-	if o != nil && !isNil(o.RemovedGpsi) {
+	if o != nil && !IsNil(o.RemovedGpsi) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *EeMonitoringRevoked) SetRemovedGpsi(v string) {
 
 // GetExcludeGpsiList returns the ExcludeGpsiList field value if set, zero value otherwise.
 func (o *EeMonitoringRevoked) GetExcludeGpsiList() []string {
-	if o == nil || isNil(o.ExcludeGpsiList) {
+	if o == nil || IsNil(o.ExcludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *EeMonitoringRevoked) GetExcludeGpsiList() []string {
 // GetExcludeGpsiListOk returns a tuple with the ExcludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeMonitoringRevoked) GetExcludeGpsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeGpsiList) {
+	if o == nil || IsNil(o.ExcludeGpsiList) {
 		return nil, false
 	}
 	return o.ExcludeGpsiList, true
@@ -120,7 +120,7 @@ func (o *EeMonitoringRevoked) GetExcludeGpsiListOk() ([]string, bool) {
 
 // HasExcludeGpsiList returns a boolean if a field has been set.
 func (o *EeMonitoringRevoked) HasExcludeGpsiList() bool {
-	if o != nil && !isNil(o.ExcludeGpsiList) {
+	if o != nil && !IsNil(o.ExcludeGpsiList) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *EeMonitoringRevoked) SetExcludeGpsiList(v []string) {
 }
 
 func (o EeMonitoringRevoked) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o EeMonitoringRevoked) MarshalJSON() ([]byte, error) {
 func (o EeMonitoringRevoked) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["revokedMonitoringEventList"] = o.RevokedMonitoringEventList
-	if !isNil(o.RemovedGpsi) {
+	if !IsNil(o.RemovedGpsi) {
 		toSerialize["removedGpsi"] = o.RemovedGpsi
 	}
-	if !isNil(o.ExcludeGpsiList) {
+	if !IsNil(o.ExcludeGpsiList) {
 		toSerialize["excludeGpsiList"] = o.ExcludeGpsiList
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableEeMonitoringRevoked) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

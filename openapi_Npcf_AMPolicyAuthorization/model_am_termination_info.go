@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AmTerminationInfo{}
 // AmTerminationInfo Includes information related to the termination of the Individual Application AM Context resource.
 type AmTerminationInfo struct {
 	// Contains the Individual application AM context resource identifier related to the termination notification.
-	AppAmContextId string `json:"appAmContextId"`
-	TermCause AmTerminationCause `json:"termCause"`
+	AppAmContextId string             `json:"appAmContextId"`
+	TermCause      AmTerminationCause `json:"termCause"`
 }
 
 // NewAmTerminationInfo instantiates a new AmTerminationInfo object
@@ -92,7 +92,7 @@ func (o *AmTerminationInfo) SetTermCause(v AmTerminationCause) {
 }
 
 func (o AmTerminationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableAmTerminationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

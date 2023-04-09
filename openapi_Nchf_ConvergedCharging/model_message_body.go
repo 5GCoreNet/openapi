@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &MessageBody{}
 // MessageBody struct for MessageBody
 type MessageBody struct {
 	ContentType string `json:"contentType"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	ContentLength int32 `json:"contentLength"`
-	ContentDisposition *string `json:"contentDisposition,omitempty"`
-	Originator *OriginatorPartyType `json:"originator,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	ContentLength      int32                `json:"contentLength"`
+	ContentDisposition *string              `json:"contentDisposition,omitempty"`
+	Originator         *OriginatorPartyType `json:"originator,omitempty"`
 }
 
 // NewMessageBody instantiates a new MessageBody object
@@ -95,7 +95,7 @@ func (o *MessageBody) SetContentLength(v int32) {
 
 // GetContentDisposition returns the ContentDisposition field value if set, zero value otherwise.
 func (o *MessageBody) GetContentDisposition() string {
-	if o == nil || isNil(o.ContentDisposition) {
+	if o == nil || IsNil(o.ContentDisposition) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *MessageBody) GetContentDisposition() string {
 // GetContentDispositionOk returns a tuple with the ContentDisposition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageBody) GetContentDispositionOk() (*string, bool) {
-	if o == nil || isNil(o.ContentDisposition) {
+	if o == nil || IsNil(o.ContentDisposition) {
 		return nil, false
 	}
 	return o.ContentDisposition, true
@@ -113,7 +113,7 @@ func (o *MessageBody) GetContentDispositionOk() (*string, bool) {
 
 // HasContentDisposition returns a boolean if a field has been set.
 func (o *MessageBody) HasContentDisposition() bool {
-	if o != nil && !isNil(o.ContentDisposition) {
+	if o != nil && !IsNil(o.ContentDisposition) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *MessageBody) SetContentDisposition(v string) {
 
 // GetOriginator returns the Originator field value if set, zero value otherwise.
 func (o *MessageBody) GetOriginator() OriginatorPartyType {
-	if o == nil || isNil(o.Originator) {
+	if o == nil || IsNil(o.Originator) {
 		var ret OriginatorPartyType
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *MessageBody) GetOriginator() OriginatorPartyType {
 // GetOriginatorOk returns a tuple with the Originator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageBody) GetOriginatorOk() (*OriginatorPartyType, bool) {
-	if o == nil || isNil(o.Originator) {
+	if o == nil || IsNil(o.Originator) {
 		return nil, false
 	}
 	return o.Originator, true
@@ -145,7 +145,7 @@ func (o *MessageBody) GetOriginatorOk() (*OriginatorPartyType, bool) {
 
 // HasOriginator returns a boolean if a field has been set.
 func (o *MessageBody) HasOriginator() bool {
-	if o != nil && !isNil(o.Originator) {
+	if o != nil && !IsNil(o.Originator) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *MessageBody) SetOriginator(v OriginatorPartyType) {
 }
 
 func (o MessageBody) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o MessageBody) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["contentType"] = o.ContentType
 	toSerialize["contentLength"] = o.ContentLength
-	if !isNil(o.ContentDisposition) {
+	if !IsNil(o.ContentDisposition) {
 		toSerialize["contentDisposition"] = o.ContentDisposition
 	}
-	if !isNil(o.Originator) {
+	if !IsNil(o.Originator) {
 		toSerialize["originator"] = o.Originator
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableMessageBody) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

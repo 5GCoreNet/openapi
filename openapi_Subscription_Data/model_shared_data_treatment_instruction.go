@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,28 +17,14 @@ import (
 
 // SharedDataTreatmentInstruction struct for SharedDataTreatmentInstruction
 type SharedDataTreatmentInstruction struct {
-	SharedDataTreatmentInstructionAnyOf *SharedDataTreatmentInstructionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SharedDataTreatmentInstruction) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SharedDataTreatmentInstructionAnyOf
-	err = json.Unmarshal(data, &dst.SharedDataTreatmentInstructionAnyOf);
-	if err == nil {
-		jsonSharedDataTreatmentInstructionAnyOf, _ := json.Marshal(dst.SharedDataTreatmentInstructionAnyOf)
-		if string(jsonSharedDataTreatmentInstructionAnyOf) == "{}" { // empty struct
-			dst.SharedDataTreatmentInstructionAnyOf = nil
-		} else {
-			return nil // data stored in dst.SharedDataTreatmentInstructionAnyOf, return on the first match
-		}
-	} else {
-		dst.SharedDataTreatmentInstructionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SharedDataTreatmentInstruction) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SharedDataTreatmentInstruction) MarshalJSON() ([]byte, error) {
-	if src.SharedDataTreatmentInstructionAnyOf != nil {
-		return json.Marshal(&src.SharedDataTreatmentInstructionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSharedDataTreatmentInstruction) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

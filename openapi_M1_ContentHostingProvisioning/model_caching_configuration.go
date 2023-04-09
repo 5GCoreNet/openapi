@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &CachingConfiguration{}
 
 // CachingConfiguration A content caching configuration.
 type CachingConfiguration struct {
-	UrlPatternFilter string `json:"urlPatternFilter"`
+	UrlPatternFilter  string                                 `json:"urlPatternFilter"`
 	CachingDirectives *CachingConfigurationCachingDirectives `json:"cachingDirectives,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *CachingConfiguration) SetUrlPatternFilter(v string) {
 
 // GetCachingDirectives returns the CachingDirectives field value if set, zero value otherwise.
 func (o *CachingConfiguration) GetCachingDirectives() CachingConfigurationCachingDirectives {
-	if o == nil || isNil(o.CachingDirectives) {
+	if o == nil || IsNil(o.CachingDirectives) {
 		var ret CachingConfigurationCachingDirectives
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CachingConfiguration) GetCachingDirectives() CachingConfigurationCachin
 // GetCachingDirectivesOk returns a tuple with the CachingDirectives field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CachingConfiguration) GetCachingDirectivesOk() (*CachingConfigurationCachingDirectives, bool) {
-	if o == nil || isNil(o.CachingDirectives) {
+	if o == nil || IsNil(o.CachingDirectives) {
 		return nil, false
 	}
 	return o.CachingDirectives, true
@@ -85,7 +85,7 @@ func (o *CachingConfiguration) GetCachingDirectivesOk() (*CachingConfigurationCa
 
 // HasCachingDirectives returns a boolean if a field has been set.
 func (o *CachingConfiguration) HasCachingDirectives() bool {
-	if o != nil && !isNil(o.CachingDirectives) {
+	if o != nil && !IsNil(o.CachingDirectives) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *CachingConfiguration) SetCachingDirectives(v CachingConfigurationCachin
 }
 
 func (o CachingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o CachingConfiguration) MarshalJSON() ([]byte, error) {
 func (o CachingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["urlPatternFilter"] = o.UrlPatternFilter
-	if !isNil(o.CachingDirectives) {
+	if !IsNil(o.CachingDirectives) {
 		toSerialize["cachingDirectives"] = o.CachingDirectives
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableCachingConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

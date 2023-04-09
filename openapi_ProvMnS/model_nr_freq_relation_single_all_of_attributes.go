@@ -19,23 +19,23 @@ var _ MappedNullable = &NRFreqRelationSingleAllOfAttributes{}
 
 // NRFreqRelationSingleAllOfAttributes struct for NRFreqRelationSingleAllOfAttributes
 type NRFreqRelationSingleAllOfAttributes struct {
-	OffsetMO *QOffsetRangeList `json:"offsetMO,omitempty"`
-	BlockListEntry []int32 `json:"blockListEntry,omitempty"`
-	BlockListEntryIdleMode *int32 `json:"blockListEntryIdleMode,omitempty"`
-	CellReselectionPriority *int32 `json:"cellReselectionPriority,omitempty"`
-	CellReselectionSubPriority *float32 `json:"cellReselectionSubPriority,omitempty"`
-	PMax *int32 `json:"pMax,omitempty"`
-	QOffsetFreq *float32 `json:"qOffsetFreq,omitempty"`
-	QQualMin *float32 `json:"qQualMin,omitempty"`
-	QRxLevMin *int32 `json:"qRxLevMin,omitempty"`
-	ThreshXHighP *int32 `json:"threshXHighP,omitempty"`
-	ThreshXHighQ *int32 `json:"threshXHighQ,omitempty"`
-	ThreshXLowP *int32 `json:"threshXLowP,omitempty"`
-	ThreshXLowQ *int32 `json:"threshXLowQ,omitempty"`
-	TReselectionNr *int32 `json:"tReselectionNr,omitempty"`
-	TReselectionNRSfHigh *TReselectionNRSf `json:"tReselectionNRSfHigh,omitempty"`
-	TReselectionNRSfMedium *TReselectionNRSf `json:"tReselectionNRSfMedium,omitempty"`
-	NRFrequencyRef *string `json:"nRFrequencyRef,omitempty"`
+	OffsetMO                   *QOffsetRangeList `json:"offsetMO,omitempty"`
+	BlockListEntry             []int32           `json:"blockListEntry,omitempty"`
+	BlockListEntryIdleMode     *int32            `json:"blockListEntryIdleMode,omitempty"`
+	CellReselectionPriority    *int32            `json:"cellReselectionPriority,omitempty"`
+	CellReselectionSubPriority *float32          `json:"cellReselectionSubPriority,omitempty"`
+	PMax                       *int32            `json:"pMax,omitempty"`
+	QOffsetFreq                *float32          `json:"qOffsetFreq,omitempty"`
+	QQualMin                   *float32          `json:"qQualMin,omitempty"`
+	QRxLevMin                  *int32            `json:"qRxLevMin,omitempty"`
+	ThreshXHighP               *int32            `json:"threshXHighP,omitempty"`
+	ThreshXHighQ               *int32            `json:"threshXHighQ,omitempty"`
+	ThreshXLowP                *int32            `json:"threshXLowP,omitempty"`
+	ThreshXLowQ                *int32            `json:"threshXLowQ,omitempty"`
+	TReselectionNr             *int32            `json:"tReselectionNr,omitempty"`
+	TReselectionNRSfHigh       *TReselectionNRSf `json:"tReselectionNRSfHigh,omitempty"`
+	TReselectionNRSfMedium     *TReselectionNRSf `json:"tReselectionNRSfMedium,omitempty"`
+	NRFrequencyRef             *string           `json:"nRFrequencyRef,omitempty"`
 }
 
 // NewNRFreqRelationSingleAllOfAttributes instantiates a new NRFreqRelationSingleAllOfAttributes object
@@ -57,7 +57,7 @@ func NewNRFreqRelationSingleAllOfAttributesWithDefaults() *NRFreqRelationSingleA
 
 // GetOffsetMO returns the OffsetMO field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetOffsetMO() QOffsetRangeList {
-	if o == nil || isNil(o.OffsetMO) {
+	if o == nil || IsNil(o.OffsetMO) {
 		var ret QOffsetRangeList
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetOffsetMO() QOffsetRangeList {
 // GetOffsetMOOk returns a tuple with the OffsetMO field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetOffsetMOOk() (*QOffsetRangeList, bool) {
-	if o == nil || isNil(o.OffsetMO) {
+	if o == nil || IsNil(o.OffsetMO) {
 		return nil, false
 	}
 	return o.OffsetMO, true
@@ -75,7 +75,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetOffsetMOOk() (*QOffsetRangeList
 
 // HasOffsetMO returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasOffsetMO() bool {
-	if o != nil && !isNil(o.OffsetMO) {
+	if o != nil && !IsNil(o.OffsetMO) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetOffsetMO(v QOffsetRangeList) {
 
 // GetBlockListEntry returns the BlockListEntry field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntry() []int32 {
-	if o == nil || isNil(o.BlockListEntry) {
+	if o == nil || IsNil(o.BlockListEntry) {
 		var ret []int32
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntry() []int32 {
 // GetBlockListEntryOk returns a tuple with the BlockListEntry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntryOk() ([]int32, bool) {
-	if o == nil || isNil(o.BlockListEntry) {
+	if o == nil || IsNil(o.BlockListEntry) {
 		return nil, false
 	}
 	return o.BlockListEntry, true
@@ -107,7 +107,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntryOk() ([]int32, bo
 
 // HasBlockListEntry returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasBlockListEntry() bool {
-	if o != nil && !isNil(o.BlockListEntry) {
+	if o != nil && !IsNil(o.BlockListEntry) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetBlockListEntry(v []int32) {
 
 // GetBlockListEntryIdleMode returns the BlockListEntryIdleMode field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntryIdleMode() int32 {
-	if o == nil || isNil(o.BlockListEntryIdleMode) {
+	if o == nil || IsNil(o.BlockListEntryIdleMode) {
 		var ret int32
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntryIdleMode() int32 
 // GetBlockListEntryIdleModeOk returns a tuple with the BlockListEntryIdleMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntryIdleModeOk() (*int32, bool) {
-	if o == nil || isNil(o.BlockListEntryIdleMode) {
+	if o == nil || IsNil(o.BlockListEntryIdleMode) {
 		return nil, false
 	}
 	return o.BlockListEntryIdleMode, true
@@ -139,7 +139,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetBlockListEntryIdleModeOk() (*in
 
 // HasBlockListEntryIdleMode returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasBlockListEntryIdleMode() bool {
-	if o != nil && !isNil(o.BlockListEntryIdleMode) {
+	if o != nil && !IsNil(o.BlockListEntryIdleMode) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetBlockListEntryIdleMode(v int32)
 
 // GetCellReselectionPriority returns the CellReselectionPriority field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionPriority() int32 {
-	if o == nil || isNil(o.CellReselectionPriority) {
+	if o == nil || IsNil(o.CellReselectionPriority) {
 		var ret int32
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionPriority() int32
 // GetCellReselectionPriorityOk returns a tuple with the CellReselectionPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionPriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.CellReselectionPriority) {
+	if o == nil || IsNil(o.CellReselectionPriority) {
 		return nil, false
 	}
 	return o.CellReselectionPriority, true
@@ -171,7 +171,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionPriorityOk() (*i
 
 // HasCellReselectionPriority returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasCellReselectionPriority() bool {
-	if o != nil && !isNil(o.CellReselectionPriority) {
+	if o != nil && !IsNil(o.CellReselectionPriority) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetCellReselectionPriority(v int32
 
 // GetCellReselectionSubPriority returns the CellReselectionSubPriority field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriority() float32 {
-	if o == nil || isNil(o.CellReselectionSubPriority) {
+	if o == nil || IsNil(o.CellReselectionSubPriority) {
 		var ret float32
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriority() fl
 // GetCellReselectionSubPriorityOk returns a tuple with the CellReselectionSubPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriorityOk() (*float32, bool) {
-	if o == nil || isNil(o.CellReselectionSubPriority) {
+	if o == nil || IsNil(o.CellReselectionSubPriority) {
 		return nil, false
 	}
 	return o.CellReselectionSubPriority, true
@@ -203,7 +203,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriorityOk() 
 
 // HasCellReselectionSubPriority returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasCellReselectionSubPriority() bool {
-	if o != nil && !isNil(o.CellReselectionSubPriority) {
+	if o != nil && !IsNil(o.CellReselectionSubPriority) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetCellReselectionSubPriority(v fl
 
 // GetPMax returns the PMax field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetPMax() int32 {
-	if o == nil || isNil(o.PMax) {
+	if o == nil || IsNil(o.PMax) {
 		var ret int32
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetPMax() int32 {
 // GetPMaxOk returns a tuple with the PMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetPMaxOk() (*int32, bool) {
-	if o == nil || isNil(o.PMax) {
+	if o == nil || IsNil(o.PMax) {
 		return nil, false
 	}
 	return o.PMax, true
@@ -235,7 +235,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetPMaxOk() (*int32, bool) {
 
 // HasPMax returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasPMax() bool {
-	if o != nil && !isNil(o.PMax) {
+	if o != nil && !IsNil(o.PMax) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetPMax(v int32) {
 
 // GetQOffsetFreq returns the QOffsetFreq field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetQOffsetFreq() float32 {
-	if o == nil || isNil(o.QOffsetFreq) {
+	if o == nil || IsNil(o.QOffsetFreq) {
 		var ret float32
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetQOffsetFreq() float32 {
 // GetQOffsetFreqOk returns a tuple with the QOffsetFreq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetQOffsetFreqOk() (*float32, bool) {
-	if o == nil || isNil(o.QOffsetFreq) {
+	if o == nil || IsNil(o.QOffsetFreq) {
 		return nil, false
 	}
 	return o.QOffsetFreq, true
@@ -267,7 +267,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetQOffsetFreqOk() (*float32, bool
 
 // HasQOffsetFreq returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasQOffsetFreq() bool {
-	if o != nil && !isNil(o.QOffsetFreq) {
+	if o != nil && !IsNil(o.QOffsetFreq) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetQOffsetFreq(v float32) {
 
 // GetQQualMin returns the QQualMin field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetQQualMin() float32 {
-	if o == nil || isNil(o.QQualMin) {
+	if o == nil || IsNil(o.QQualMin) {
 		var ret float32
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetQQualMin() float32 {
 // GetQQualMinOk returns a tuple with the QQualMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetQQualMinOk() (*float32, bool) {
-	if o == nil || isNil(o.QQualMin) {
+	if o == nil || IsNil(o.QQualMin) {
 		return nil, false
 	}
 	return o.QQualMin, true
@@ -299,7 +299,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetQQualMinOk() (*float32, bool) {
 
 // HasQQualMin returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasQQualMin() bool {
-	if o != nil && !isNil(o.QQualMin) {
+	if o != nil && !IsNil(o.QQualMin) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetQQualMin(v float32) {
 
 // GetQRxLevMin returns the QRxLevMin field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetQRxLevMin() int32 {
-	if o == nil || isNil(o.QRxLevMin) {
+	if o == nil || IsNil(o.QRxLevMin) {
 		var ret int32
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetQRxLevMin() int32 {
 // GetQRxLevMinOk returns a tuple with the QRxLevMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetQRxLevMinOk() (*int32, bool) {
-	if o == nil || isNil(o.QRxLevMin) {
+	if o == nil || IsNil(o.QRxLevMin) {
 		return nil, false
 	}
 	return o.QRxLevMin, true
@@ -331,7 +331,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetQRxLevMinOk() (*int32, bool) {
 
 // HasQRxLevMin returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasQRxLevMin() bool {
-	if o != nil && !isNil(o.QRxLevMin) {
+	if o != nil && !IsNil(o.QRxLevMin) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetQRxLevMin(v int32) {
 
 // GetThreshXHighP returns the ThreshXHighP field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighP() int32 {
-	if o == nil || isNil(o.ThreshXHighP) {
+	if o == nil || IsNil(o.ThreshXHighP) {
 		var ret int32
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighP() int32 {
 // GetThreshXHighPOk returns a tuple with the ThreshXHighP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighPOk() (*int32, bool) {
-	if o == nil || isNil(o.ThreshXHighP) {
+	if o == nil || IsNil(o.ThreshXHighP) {
 		return nil, false
 	}
 	return o.ThreshXHighP, true
@@ -363,7 +363,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighPOk() (*int32, bool)
 
 // HasThreshXHighP returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasThreshXHighP() bool {
-	if o != nil && !isNil(o.ThreshXHighP) {
+	if o != nil && !IsNil(o.ThreshXHighP) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetThreshXHighP(v int32) {
 
 // GetThreshXHighQ returns the ThreshXHighQ field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighQ() int32 {
-	if o == nil || isNil(o.ThreshXHighQ) {
+	if o == nil || IsNil(o.ThreshXHighQ) {
 		var ret int32
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighQ() int32 {
 // GetThreshXHighQOk returns a tuple with the ThreshXHighQ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighQOk() (*int32, bool) {
-	if o == nil || isNil(o.ThreshXHighQ) {
+	if o == nil || IsNil(o.ThreshXHighQ) {
 		return nil, false
 	}
 	return o.ThreshXHighQ, true
@@ -395,7 +395,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXHighQOk() (*int32, bool)
 
 // HasThreshXHighQ returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasThreshXHighQ() bool {
-	if o != nil && !isNil(o.ThreshXHighQ) {
+	if o != nil && !IsNil(o.ThreshXHighQ) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetThreshXHighQ(v int32) {
 
 // GetThreshXLowP returns the ThreshXLowP field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowP() int32 {
-	if o == nil || isNil(o.ThreshXLowP) {
+	if o == nil || IsNil(o.ThreshXLowP) {
 		var ret int32
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowP() int32 {
 // GetThreshXLowPOk returns a tuple with the ThreshXLowP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowPOk() (*int32, bool) {
-	if o == nil || isNil(o.ThreshXLowP) {
+	if o == nil || IsNil(o.ThreshXLowP) {
 		return nil, false
 	}
 	return o.ThreshXLowP, true
@@ -427,7 +427,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowPOk() (*int32, bool) 
 
 // HasThreshXLowP returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasThreshXLowP() bool {
-	if o != nil && !isNil(o.ThreshXLowP) {
+	if o != nil && !IsNil(o.ThreshXLowP) {
 		return true
 	}
 
@@ -441,7 +441,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetThreshXLowP(v int32) {
 
 // GetThreshXLowQ returns the ThreshXLowQ field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowQ() int32 {
-	if o == nil || isNil(o.ThreshXLowQ) {
+	if o == nil || IsNil(o.ThreshXLowQ) {
 		var ret int32
 		return ret
 	}
@@ -451,7 +451,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowQ() int32 {
 // GetThreshXLowQOk returns a tuple with the ThreshXLowQ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowQOk() (*int32, bool) {
-	if o == nil || isNil(o.ThreshXLowQ) {
+	if o == nil || IsNil(o.ThreshXLowQ) {
 		return nil, false
 	}
 	return o.ThreshXLowQ, true
@@ -459,7 +459,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetThreshXLowQOk() (*int32, bool) 
 
 // HasThreshXLowQ returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasThreshXLowQ() bool {
-	if o != nil && !isNil(o.ThreshXLowQ) {
+	if o != nil && !IsNil(o.ThreshXLowQ) {
 		return true
 	}
 
@@ -473,7 +473,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetThreshXLowQ(v int32) {
 
 // GetTReselectionNr returns the TReselectionNr field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNr() int32 {
-	if o == nil || isNil(o.TReselectionNr) {
+	if o == nil || IsNil(o.TReselectionNr) {
 		var ret int32
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNr() int32 {
 // GetTReselectionNrOk returns a tuple with the TReselectionNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNrOk() (*int32, bool) {
-	if o == nil || isNil(o.TReselectionNr) {
+	if o == nil || IsNil(o.TReselectionNr) {
 		return nil, false
 	}
 	return o.TReselectionNr, true
@@ -491,7 +491,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNrOk() (*int32, boo
 
 // HasTReselectionNr returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasTReselectionNr() bool {
-	if o != nil && !isNil(o.TReselectionNr) {
+	if o != nil && !IsNil(o.TReselectionNr) {
 		return true
 	}
 
@@ -505,7 +505,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetTReselectionNr(v int32) {
 
 // GetTReselectionNRSfHigh returns the TReselectionNRSfHigh field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHigh() TReselectionNRSf {
-	if o == nil || isNil(o.TReselectionNRSfHigh) {
+	if o == nil || IsNil(o.TReselectionNRSfHigh) {
 		var ret TReselectionNRSf
 		return ret
 	}
@@ -515,7 +515,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHigh() TReselec
 // GetTReselectionNRSfHighOk returns a tuple with the TReselectionNRSfHigh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHighOk() (*TReselectionNRSf, bool) {
-	if o == nil || isNil(o.TReselectionNRSfHigh) {
+	if o == nil || IsNil(o.TReselectionNRSfHigh) {
 		return nil, false
 	}
 	return o.TReselectionNRSfHigh, true
@@ -523,7 +523,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHighOk() (*TRes
 
 // HasTReselectionNRSfHigh returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasTReselectionNRSfHigh() bool {
-	if o != nil && !isNil(o.TReselectionNRSfHigh) {
+	if o != nil && !IsNil(o.TReselectionNRSfHigh) {
 		return true
 	}
 
@@ -537,7 +537,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetTReselectionNRSfHigh(v TReselec
 
 // GetTReselectionNRSfMedium returns the TReselectionNRSfMedium field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMedium() TReselectionNRSf {
-	if o == nil || isNil(o.TReselectionNRSfMedium) {
+	if o == nil || IsNil(o.TReselectionNRSfMedium) {
 		var ret TReselectionNRSf
 		return ret
 	}
@@ -547,7 +547,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMedium() TResel
 // GetTReselectionNRSfMediumOk returns a tuple with the TReselectionNRSfMedium field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMediumOk() (*TReselectionNRSf, bool) {
-	if o == nil || isNil(o.TReselectionNRSfMedium) {
+	if o == nil || IsNil(o.TReselectionNRSfMedium) {
 		return nil, false
 	}
 	return o.TReselectionNRSfMedium, true
@@ -555,7 +555,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMediumOk() (*TR
 
 // HasTReselectionNRSfMedium returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasTReselectionNRSfMedium() bool {
-	if o != nil && !isNil(o.TReselectionNRSfMedium) {
+	if o != nil && !IsNil(o.TReselectionNRSfMedium) {
 		return true
 	}
 
@@ -569,7 +569,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetTReselectionNRSfMedium(v TResel
 
 // GetNRFrequencyRef returns the NRFrequencyRef field value if set, zero value otherwise.
 func (o *NRFreqRelationSingleAllOfAttributes) GetNRFrequencyRef() string {
-	if o == nil || isNil(o.NRFrequencyRef) {
+	if o == nil || IsNil(o.NRFrequencyRef) {
 		var ret string
 		return ret
 	}
@@ -579,7 +579,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetNRFrequencyRef() string {
 // GetNRFrequencyRefOk returns a tuple with the NRFrequencyRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) GetNRFrequencyRefOk() (*string, bool) {
-	if o == nil || isNil(o.NRFrequencyRef) {
+	if o == nil || IsNil(o.NRFrequencyRef) {
 		return nil, false
 	}
 	return o.NRFrequencyRef, true
@@ -587,7 +587,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) GetNRFrequencyRefOk() (*string, bo
 
 // HasNRFrequencyRef returns a boolean if a field has been set.
 func (o *NRFreqRelationSingleAllOfAttributes) HasNRFrequencyRef() bool {
-	if o != nil && !isNil(o.NRFrequencyRef) {
+	if o != nil && !IsNil(o.NRFrequencyRef) {
 		return true
 	}
 
@@ -600,7 +600,7 @@ func (o *NRFreqRelationSingleAllOfAttributes) SetNRFrequencyRef(v string) {
 }
 
 func (o NRFreqRelationSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -609,55 +609,55 @@ func (o NRFreqRelationSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o NRFreqRelationSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.OffsetMO) {
+	if !IsNil(o.OffsetMO) {
 		toSerialize["offsetMO"] = o.OffsetMO
 	}
-	if !isNil(o.BlockListEntry) {
+	if !IsNil(o.BlockListEntry) {
 		toSerialize["blockListEntry"] = o.BlockListEntry
 	}
-	if !isNil(o.BlockListEntryIdleMode) {
+	if !IsNil(o.BlockListEntryIdleMode) {
 		toSerialize["blockListEntryIdleMode"] = o.BlockListEntryIdleMode
 	}
-	if !isNil(o.CellReselectionPriority) {
+	if !IsNil(o.CellReselectionPriority) {
 		toSerialize["cellReselectionPriority"] = o.CellReselectionPriority
 	}
-	if !isNil(o.CellReselectionSubPriority) {
+	if !IsNil(o.CellReselectionSubPriority) {
 		toSerialize["cellReselectionSubPriority"] = o.CellReselectionSubPriority
 	}
-	if !isNil(o.PMax) {
+	if !IsNil(o.PMax) {
 		toSerialize["pMax"] = o.PMax
 	}
-	if !isNil(o.QOffsetFreq) {
+	if !IsNil(o.QOffsetFreq) {
 		toSerialize["qOffsetFreq"] = o.QOffsetFreq
 	}
-	if !isNil(o.QQualMin) {
+	if !IsNil(o.QQualMin) {
 		toSerialize["qQualMin"] = o.QQualMin
 	}
-	if !isNil(o.QRxLevMin) {
+	if !IsNil(o.QRxLevMin) {
 		toSerialize["qRxLevMin"] = o.QRxLevMin
 	}
-	if !isNil(o.ThreshXHighP) {
+	if !IsNil(o.ThreshXHighP) {
 		toSerialize["threshXHighP"] = o.ThreshXHighP
 	}
-	if !isNil(o.ThreshXHighQ) {
+	if !IsNil(o.ThreshXHighQ) {
 		toSerialize["threshXHighQ"] = o.ThreshXHighQ
 	}
-	if !isNil(o.ThreshXLowP) {
+	if !IsNil(o.ThreshXLowP) {
 		toSerialize["threshXLowP"] = o.ThreshXLowP
 	}
-	if !isNil(o.ThreshXLowQ) {
+	if !IsNil(o.ThreshXLowQ) {
 		toSerialize["threshXLowQ"] = o.ThreshXLowQ
 	}
-	if !isNil(o.TReselectionNr) {
+	if !IsNil(o.TReselectionNr) {
 		toSerialize["tReselectionNr"] = o.TReselectionNr
 	}
-	if !isNil(o.TReselectionNRSfHigh) {
+	if !IsNil(o.TReselectionNRSfHigh) {
 		toSerialize["tReselectionNRSfHigh"] = o.TReselectionNRSfHigh
 	}
-	if !isNil(o.TReselectionNRSfMedium) {
+	if !IsNil(o.TReselectionNRSfMedium) {
 		toSerialize["tReselectionNRSfMedium"] = o.TReselectionNRSfMedium
 	}
-	if !isNil(o.NRFrequencyRef) {
+	if !IsNil(o.NRFrequencyRef) {
 		toSerialize["nRFrequencyRef"] = o.NRFrequencyRef
 	}
 	return toSerialize, nil
@@ -698,5 +698,3 @@ func (v *NullableNRFreqRelationSingleAllOfAttributes) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &BaselineDnsAit{}
 
 // BaselineDnsAit Baseline DNS action information Template
 type BaselineDnsAit struct {
-	AitId string `json:"aitId"`
-	Label *string `json:"label,omitempty"`
-	EcsOption *EcsOption `json:"ecsOption,omitempty"`
-	DnsServerAddressList []IpAddr `json:"dnsServerAddressList,omitempty"`
+	AitId                string     `json:"aitId"`
+	Label                *string    `json:"label,omitempty"`
+	EcsOption            *EcsOption `json:"ecsOption,omitempty"`
+	DnsServerAddressList []IpAddr   `json:"dnsServerAddressList,omitempty"`
 }
 
 // NewBaselineDnsAit instantiates a new BaselineDnsAit object
@@ -69,7 +69,7 @@ func (o *BaselineDnsAit) SetAitId(v string) {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *BaselineDnsAit) GetLabel() string {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *BaselineDnsAit) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsAit) GetLabelOk() (*string, bool) {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -87,7 +87,7 @@ func (o *BaselineDnsAit) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *BaselineDnsAit) HasLabel() bool {
-	if o != nil && !isNil(o.Label) {
+	if o != nil && !IsNil(o.Label) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *BaselineDnsAit) SetLabel(v string) {
 
 // GetEcsOption returns the EcsOption field value if set, zero value otherwise.
 func (o *BaselineDnsAit) GetEcsOption() EcsOption {
-	if o == nil || isNil(o.EcsOption) {
+	if o == nil || IsNil(o.EcsOption) {
 		var ret EcsOption
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *BaselineDnsAit) GetEcsOption() EcsOption {
 // GetEcsOptionOk returns a tuple with the EcsOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsAit) GetEcsOptionOk() (*EcsOption, bool) {
-	if o == nil || isNil(o.EcsOption) {
+	if o == nil || IsNil(o.EcsOption) {
 		return nil, false
 	}
 	return o.EcsOption, true
@@ -119,7 +119,7 @@ func (o *BaselineDnsAit) GetEcsOptionOk() (*EcsOption, bool) {
 
 // HasEcsOption returns a boolean if a field has been set.
 func (o *BaselineDnsAit) HasEcsOption() bool {
-	if o != nil && !isNil(o.EcsOption) {
+	if o != nil && !IsNil(o.EcsOption) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *BaselineDnsAit) SetEcsOption(v EcsOption) {
 
 // GetDnsServerAddressList returns the DnsServerAddressList field value if set, zero value otherwise.
 func (o *BaselineDnsAit) GetDnsServerAddressList() []IpAddr {
-	if o == nil || isNil(o.DnsServerAddressList) {
+	if o == nil || IsNil(o.DnsServerAddressList) {
 		var ret []IpAddr
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *BaselineDnsAit) GetDnsServerAddressList() []IpAddr {
 // GetDnsServerAddressListOk returns a tuple with the DnsServerAddressList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsAit) GetDnsServerAddressListOk() ([]IpAddr, bool) {
-	if o == nil || isNil(o.DnsServerAddressList) {
+	if o == nil || IsNil(o.DnsServerAddressList) {
 		return nil, false
 	}
 	return o.DnsServerAddressList, true
@@ -151,7 +151,7 @@ func (o *BaselineDnsAit) GetDnsServerAddressListOk() ([]IpAddr, bool) {
 
 // HasDnsServerAddressList returns a boolean if a field has been set.
 func (o *BaselineDnsAit) HasDnsServerAddressList() bool {
-	if o != nil && !isNil(o.DnsServerAddressList) {
+	if o != nil && !IsNil(o.DnsServerAddressList) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *BaselineDnsAit) SetDnsServerAddressList(v []IpAddr) {
 }
 
 func (o BaselineDnsAit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,13 +174,13 @@ func (o BaselineDnsAit) MarshalJSON() ([]byte, error) {
 func (o BaselineDnsAit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aitId"] = o.AitId
-	if !isNil(o.Label) {
+	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !isNil(o.EcsOption) {
+	if !IsNil(o.EcsOption) {
 		toSerialize["ecsOption"] = o.EcsOption
 	}
-	if !isNil(o.DnsServerAddressList) {
+	if !IsNil(o.DnsServerAddressList) {
 		toSerialize["dnsServerAddressList"] = o.DnsServerAddressList
 	}
 	return toSerialize, nil
@@ -221,5 +221,3 @@ func (v *NullableBaselineDnsAit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

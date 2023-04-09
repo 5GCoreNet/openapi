@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewEventNotifyDataAdditionalInfoWithDefaults() *EventNotifyDataAdditionalIn
 
 // GetAddEventDataList returns the AddEventDataList field value if set, zero value otherwise.
 func (o *EventNotifyDataAdditionalInfo) GetAddEventDataList() []EventNotifyData {
-	if o == nil || isNil(o.AddEventDataList) {
+	if o == nil || IsNil(o.AddEventDataList) {
 		var ret []EventNotifyData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EventNotifyDataAdditionalInfo) GetAddEventDataList() []EventNotifyData 
 // GetAddEventDataListOk returns a tuple with the AddEventDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyDataAdditionalInfo) GetAddEventDataListOk() ([]EventNotifyData, bool) {
-	if o == nil || isNil(o.AddEventDataList) {
+	if o == nil || IsNil(o.AddEventDataList) {
 		return nil, false
 	}
 	return o.AddEventDataList, true
@@ -59,7 +59,7 @@ func (o *EventNotifyDataAdditionalInfo) GetAddEventDataListOk() ([]EventNotifyDa
 
 // HasAddEventDataList returns a boolean if a field has been set.
 func (o *EventNotifyDataAdditionalInfo) HasAddEventDataList() bool {
-	if o != nil && !isNil(o.AddEventDataList) {
+	if o != nil && !IsNil(o.AddEventDataList) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *EventNotifyDataAdditionalInfo) SetAddEventDataList(v []EventNotifyData)
 }
 
 func (o EventNotifyDataAdditionalInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o EventNotifyDataAdditionalInfo) MarshalJSON() ([]byte, error) {
 
 func (o EventNotifyDataAdditionalInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AddEventDataList) {
+	if !IsNil(o.AddEventDataList) {
 		toSerialize["addEventDataList"] = o.AddEventDataList
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableEventNotifyDataAdditionalInfo) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

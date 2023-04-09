@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// SatelliteBackhaulCategoryRm Provides information about the satellite backhaul but with the OpenAPI 'nullable: true' property.  
+// SatelliteBackhaulCategoryRm Provides information about the satellite backhaul but with the OpenAPI 'nullable: true' property.
 type SatelliteBackhaulCategoryRm struct {
-	NullValue *NullValue
+	NullValue                 *NullValue
 	SatelliteBackhaulCategory *SatelliteBackhaulCategory
 }
 
@@ -25,7 +25,7 @@ type SatelliteBackhaulCategoryRm struct {
 func (dst *SatelliteBackhaulCategoryRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *SatelliteBackhaulCategoryRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into SatelliteBackhaulCategory
-	err = json.Unmarshal(data, &dst.SatelliteBackhaulCategory);
+	err = json.Unmarshal(data, &dst.SatelliteBackhaulCategory)
 	if err == nil {
 		jsonSatelliteBackhaulCategory, _ := json.Marshal(dst.SatelliteBackhaulCategory)
 		if string(jsonSatelliteBackhaulCategory) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableSatelliteBackhaulCategoryRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

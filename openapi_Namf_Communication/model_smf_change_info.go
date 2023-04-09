@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SmfChangeInfo{}
 
 // SmfChangeInfo SMF change information for PDU session(s)
 type SmfChangeInfo struct {
-	PduSessionIdList []int32 `json:"pduSessionIdList"`
-	SmfChangeInd SmfChangeIndication `json:"smfChangeInd"`
+	PduSessionIdList []int32             `json:"pduSessionIdList"`
+	SmfChangeInd     SmfChangeIndication `json:"smfChangeInd"`
 }
 
 // NewSmfChangeInfo instantiates a new SmfChangeInfo object
@@ -91,7 +91,7 @@ func (o *SmfChangeInfo) SetSmfChangeInd(v SmfChangeIndication) {
 }
 
 func (o SmfChangeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSmfChangeInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

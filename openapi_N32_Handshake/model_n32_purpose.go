@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,28 +17,14 @@ import (
 
 // N32Purpose Usage purpose of establishing N32 connectivity
 type N32Purpose struct {
-	N32PurposeAnyOf *N32PurposeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N32Purpose) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into N32PurposeAnyOf
-	err = json.Unmarshal(data, &dst.N32PurposeAnyOf);
-	if err == nil {
-		jsonN32PurposeAnyOf, _ := json.Marshal(dst.N32PurposeAnyOf)
-		if string(jsonN32PurposeAnyOf) == "{}" { // empty struct
-			dst.N32PurposeAnyOf = nil
-		} else {
-			return nil // data stored in dst.N32PurposeAnyOf, return on the first match
-		}
-	} else {
-		dst.N32PurposeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *N32Purpose) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N32Purpose) MarshalJSON() ([]byte, error) {
-	if src.N32PurposeAnyOf != nil {
-		return json.Marshal(&src.N32PurposeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableN32Purpose) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

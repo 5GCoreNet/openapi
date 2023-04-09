@@ -1272,7 +1272,10 @@ components:
       type: object
     AmEvent:
       anyOf:
-      - $ref: '#/components/schemas/AmEvent_anyOf'
+      - enum:
+        - SAC_CH
+        - PDUID_CH
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1585,9 +1588,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1898,7 +1912,11 @@ components:
       type: string
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1953,12 +1971,6 @@ components:
       minimum: 0
       nullable: true
       type: integer
-    AmEvent_anyOf:
-      enum:
-      - SAC_CH
-      - PDUID_CH
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -1966,19 +1978,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -2147,13 +2146,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

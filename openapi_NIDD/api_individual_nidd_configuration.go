@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,20 +13,19 @@ package openapi_NIDD
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualNIDDConfigurationApiService IndividualNIDDConfigurationApi service
 type IndividualNIDDConfigurationApiService service
 
 type ApiDeleteNIDDConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualNIDDConfigurationApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *IndividualNIDDConfigurationApiService
+	scsAsId         string
 	configurationId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteNIDDConfigurationRequest) Execute() (*http.Response, error) {
 /*
 DeleteNIDDConfiguration Delete an existing NIDD configuration resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @return ApiDeleteNIDDConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@return ApiDeleteNIDDConfigurationRequest
 */
 func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfiguration(ctx context.Context, scsAsId string, configurationId string) ApiDeleteNIDDConfigurationRequest {
 	return ApiDeleteNIDDConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfiguration(ctx cont
 // Execute executes the request
 func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r ApiDeleteNIDDConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNIDDConfigurationApiService.DeleteNIDDConfiguration")
@@ -99,9 +98,9 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,9 +194,9 @@ func (a *IndividualNIDDConfigurationApiService) DeleteNIDDConfigurationExecute(r
 }
 
 type ApiFetchIndNIDDConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualNIDDConfigurationApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *IndividualNIDDConfigurationApiService
+	scsAsId         string
 	configurationId string
 }
 
@@ -208,28 +207,29 @@ func (r ApiFetchIndNIDDConfigurationRequest) Execute() (*NiddConfiguration, *htt
 /*
 FetchIndNIDDConfiguration Read an NIDD configuration resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @return ApiFetchIndNIDDConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@return ApiFetchIndNIDDConfigurationRequest
 */
 func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfiguration(ctx context.Context, scsAsId string, configurationId string) ApiFetchIndNIDDConfigurationRequest {
 	return ApiFetchIndNIDDConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return NiddConfiguration
+//
+//	@return NiddConfiguration
 func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute(r ApiFetchIndNIDDConfigurationRequest) (*NiddConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NiddConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NiddConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNIDDConfigurationApiService.FetchIndNIDDConfiguration")
@@ -272,9 +272,9 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -291,8 +291,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -302,8 +302,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -313,8 +313,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -324,8 +324,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -335,8 +335,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -346,8 +346,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -357,8 +357,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -368,8 +368,8 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -388,10 +388,10 @@ func (a *IndividualNIDDConfigurationApiService) FetchIndNIDDConfigurationExecute
 }
 
 type ApiModifyNIDDConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualNIDDConfigurationApiService
-	scsAsId string
-	configurationId string
+	ctx                    context.Context
+	ApiService             *IndividualNIDDConfigurationApiService
+	scsAsId                string
+	configurationId        string
 	niddConfigurationPatch *NiddConfigurationPatch
 }
 
@@ -408,28 +408,29 @@ func (r ApiModifyNIDDConfigurationRequest) Execute() (*NiddConfiguration, *http.
 /*
 ModifyNIDDConfiguration Modify an existing NIDD configuration resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @return ApiModifyNIDDConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@return ApiModifyNIDDConfigurationRequest
 */
 func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfiguration(ctx context.Context, scsAsId string, configurationId string) ApiModifyNIDDConfigurationRequest {
 	return ApiModifyNIDDConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return NiddConfiguration
+//
+//	@return NiddConfiguration
 func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r ApiModifyNIDDConfigurationRequest) (*NiddConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NiddConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NiddConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualNIDDConfigurationApiService.ModifyNIDDConfiguration")
@@ -477,9 +478,9 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -496,8 +497,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -507,8 +508,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -518,8 +519,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -529,8 +530,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -540,8 +541,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -551,8 +552,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -562,8 +563,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -573,8 +574,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -584,8 +585,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -595,8 +596,8 @@ func (a *IndividualNIDDConfigurationApiService) ModifyNIDDConfigurationExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

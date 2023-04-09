@@ -1,7 +1,7 @@
 /*
 Nudm_SSAU
 
-Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &ServiceSpecificAuthorizationData{}
 // ServiceSpecificAuthorizationData Authorization Response for a specific service.
 type ServiceSpecificAuthorizationData struct {
 	AuthorizationUeId *AuthorizationUeId `json:"authorizationUeId,omitempty"`
-	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.  
+	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.
 	ExtGroupId *string `json:"extGroupId,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	IntGroupId *string `json:"intGroupId,omitempty"`
-	AuthId *string `json:"authId,omitempty"`
+	AuthId     *string `json:"authId,omitempty"`
 }
 
 // NewServiceSpecificAuthorizationData instantiates a new ServiceSpecificAuthorizationData object
@@ -46,7 +46,7 @@ func NewServiceSpecificAuthorizationDataWithDefaults() *ServiceSpecificAuthoriza
 
 // GetAuthorizationUeId returns the AuthorizationUeId field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationData) GetAuthorizationUeId() AuthorizationUeId {
-	if o == nil || isNil(o.AuthorizationUeId) {
+	if o == nil || IsNil(o.AuthorizationUeId) {
 		var ret AuthorizationUeId
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ServiceSpecificAuthorizationData) GetAuthorizationUeId() AuthorizationU
 // GetAuthorizationUeIdOk returns a tuple with the AuthorizationUeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationData) GetAuthorizationUeIdOk() (*AuthorizationUeId, bool) {
-	if o == nil || isNil(o.AuthorizationUeId) {
+	if o == nil || IsNil(o.AuthorizationUeId) {
 		return nil, false
 	}
 	return o.AuthorizationUeId, true
@@ -64,7 +64,7 @@ func (o *ServiceSpecificAuthorizationData) GetAuthorizationUeIdOk() (*Authorizat
 
 // HasAuthorizationUeId returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationData) HasAuthorizationUeId() bool {
-	if o != nil && !isNil(o.AuthorizationUeId) {
+	if o != nil && !IsNil(o.AuthorizationUeId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ServiceSpecificAuthorizationData) SetAuthorizationUeId(v AuthorizationU
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationData) GetExtGroupId() string {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ServiceSpecificAuthorizationData) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationData) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -96,7 +96,7 @@ func (o *ServiceSpecificAuthorizationData) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationData) HasExtGroupId() bool {
-	if o != nil && !isNil(o.ExtGroupId) {
+	if o != nil && !IsNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ServiceSpecificAuthorizationData) SetExtGroupId(v string) {
 
 // GetIntGroupId returns the IntGroupId field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationData) GetIntGroupId() string {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ServiceSpecificAuthorizationData) GetIntGroupId() string {
 // GetIntGroupIdOk returns a tuple with the IntGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationData) GetIntGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		return nil, false
 	}
 	return o.IntGroupId, true
@@ -128,7 +128,7 @@ func (o *ServiceSpecificAuthorizationData) GetIntGroupIdOk() (*string, bool) {
 
 // HasIntGroupId returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationData) HasIntGroupId() bool {
-	if o != nil && !isNil(o.IntGroupId) {
+	if o != nil && !IsNil(o.IntGroupId) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ServiceSpecificAuthorizationData) SetIntGroupId(v string) {
 
 // GetAuthId returns the AuthId field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationData) GetAuthId() string {
-	if o == nil || isNil(o.AuthId) {
+	if o == nil || IsNil(o.AuthId) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ServiceSpecificAuthorizationData) GetAuthId() string {
 // GetAuthIdOk returns a tuple with the AuthId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationData) GetAuthIdOk() (*string, bool) {
-	if o == nil || isNil(o.AuthId) {
+	if o == nil || IsNil(o.AuthId) {
 		return nil, false
 	}
 	return o.AuthId, true
@@ -160,7 +160,7 @@ func (o *ServiceSpecificAuthorizationData) GetAuthIdOk() (*string, bool) {
 
 // HasAuthId returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationData) HasAuthId() bool {
-	if o != nil && !isNil(o.AuthId) {
+	if o != nil && !IsNil(o.AuthId) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ServiceSpecificAuthorizationData) SetAuthId(v string) {
 }
 
 func (o ServiceSpecificAuthorizationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o ServiceSpecificAuthorizationData) MarshalJSON() ([]byte, error) {
 
 func (o ServiceSpecificAuthorizationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AuthorizationUeId) {
+	if !IsNil(o.AuthorizationUeId) {
 		toSerialize["authorizationUeId"] = o.AuthorizationUeId
 	}
-	if !isNil(o.ExtGroupId) {
+	if !IsNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
-	if !isNil(o.IntGroupId) {
+	if !IsNil(o.IntGroupId) {
 		toSerialize["intGroupId"] = o.IntGroupId
 	}
-	if !isNil(o.AuthId) {
+	if !IsNil(o.AuthId) {
 		toSerialize["authId"] = o.AuthId
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableServiceSpecificAuthorizationData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,11 +19,11 @@ var _ MappedNullable = &ManagementDataCollectionSingleAllOfAttributes{}
 
 // ManagementDataCollectionSingleAllOfAttributes struct for ManagementDataCollectionSingleAllOfAttributes
 type ManagementDataCollectionSingleAllOfAttributes struct {
-	ManagementData *ManagementData `json:"managementData,omitempty"`
-	TargetNodeFilter *NodeFilter `json:"targetNodeFilter,omitempty"`
-	CollectionTimeWindow *TimeWindow `json:"collectionTimeWindow,omitempty"`
-	ReportingCtrl *ReportingCtrl `json:"reportingCtrl,omitempty"`
-	DataScope *string `json:"dataScope,omitempty"`
+	ManagementData       *ManagementData `json:"managementData,omitempty"`
+	TargetNodeFilter     *NodeFilter     `json:"targetNodeFilter,omitempty"`
+	CollectionTimeWindow *TimeWindow     `json:"collectionTimeWindow,omitempty"`
+	ReportingCtrl        *ReportingCtrl  `json:"reportingCtrl,omitempty"`
+	DataScope            *string         `json:"dataScope,omitempty"`
 }
 
 // NewManagementDataCollectionSingleAllOfAttributes instantiates a new ManagementDataCollectionSingleAllOfAttributes object
@@ -45,7 +45,7 @@ func NewManagementDataCollectionSingleAllOfAttributesWithDefaults() *ManagementD
 
 // GetManagementData returns the ManagementData field value if set, zero value otherwise.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetManagementData() ManagementData {
-	if o == nil || isNil(o.ManagementData) {
+	if o == nil || IsNil(o.ManagementData) {
 		var ret ManagementData
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetManagementData() Mana
 // GetManagementDataOk returns a tuple with the ManagementData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetManagementDataOk() (*ManagementData, bool) {
-	if o == nil || isNil(o.ManagementData) {
+	if o == nil || IsNil(o.ManagementData) {
 		return nil, false
 	}
 	return o.ManagementData, true
@@ -63,7 +63,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetManagementDataOk() (*
 
 // HasManagementData returns a boolean if a field has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) HasManagementData() bool {
-	if o != nil && !isNil(o.ManagementData) {
+	if o != nil && !IsNil(o.ManagementData) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) SetManagementData(v Mana
 
 // GetTargetNodeFilter returns the TargetNodeFilter field value if set, zero value otherwise.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetTargetNodeFilter() NodeFilter {
-	if o == nil || isNil(o.TargetNodeFilter) {
+	if o == nil || IsNil(o.TargetNodeFilter) {
 		var ret NodeFilter
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetTargetNodeFilter() No
 // GetTargetNodeFilterOk returns a tuple with the TargetNodeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetTargetNodeFilterOk() (*NodeFilter, bool) {
-	if o == nil || isNil(o.TargetNodeFilter) {
+	if o == nil || IsNil(o.TargetNodeFilter) {
 		return nil, false
 	}
 	return o.TargetNodeFilter, true
@@ -95,7 +95,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetTargetNodeFilterOk() 
 
 // HasTargetNodeFilter returns a boolean if a field has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) HasTargetNodeFilter() bool {
-	if o != nil && !isNil(o.TargetNodeFilter) {
+	if o != nil && !IsNil(o.TargetNodeFilter) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) SetTargetNodeFilter(v No
 
 // GetCollectionTimeWindow returns the CollectionTimeWindow field value if set, zero value otherwise.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetCollectionTimeWindow() TimeWindow {
-	if o == nil || isNil(o.CollectionTimeWindow) {
+	if o == nil || IsNil(o.CollectionTimeWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetCollectionTimeWindow(
 // GetCollectionTimeWindowOk returns a tuple with the CollectionTimeWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetCollectionTimeWindowOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.CollectionTimeWindow) {
+	if o == nil || IsNil(o.CollectionTimeWindow) {
 		return nil, false
 	}
 	return o.CollectionTimeWindow, true
@@ -127,7 +127,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetCollectionTimeWindowO
 
 // HasCollectionTimeWindow returns a boolean if a field has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) HasCollectionTimeWindow() bool {
-	if o != nil && !isNil(o.CollectionTimeWindow) {
+	if o != nil && !IsNil(o.CollectionTimeWindow) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) SetCollectionTimeWindow(
 
 // GetReportingCtrl returns the ReportingCtrl field value if set, zero value otherwise.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetReportingCtrl() ReportingCtrl {
-	if o == nil || isNil(o.ReportingCtrl) {
+	if o == nil || IsNil(o.ReportingCtrl) {
 		var ret ReportingCtrl
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetReportingCtrl() Repor
 // GetReportingCtrlOk returns a tuple with the ReportingCtrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetReportingCtrlOk() (*ReportingCtrl, bool) {
-	if o == nil || isNil(o.ReportingCtrl) {
+	if o == nil || IsNil(o.ReportingCtrl) {
 		return nil, false
 	}
 	return o.ReportingCtrl, true
@@ -159,7 +159,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetReportingCtrlOk() (*R
 
 // HasReportingCtrl returns a boolean if a field has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) HasReportingCtrl() bool {
-	if o != nil && !isNil(o.ReportingCtrl) {
+	if o != nil && !IsNil(o.ReportingCtrl) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) SetReportingCtrl(v Repor
 
 // GetDataScope returns the DataScope field value if set, zero value otherwise.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetDataScope() string {
-	if o == nil || isNil(o.DataScope) {
+	if o == nil || IsNil(o.DataScope) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetDataScope() string {
 // GetDataScopeOk returns a tuple with the DataScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) GetDataScopeOk() (*string, bool) {
-	if o == nil || isNil(o.DataScope) {
+	if o == nil || IsNil(o.DataScope) {
 		return nil, false
 	}
 	return o.DataScope, true
@@ -191,7 +191,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) GetDataScopeOk() (*strin
 
 // HasDataScope returns a boolean if a field has been set.
 func (o *ManagementDataCollectionSingleAllOfAttributes) HasDataScope() bool {
-	if o != nil && !isNil(o.DataScope) {
+	if o != nil && !IsNil(o.DataScope) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *ManagementDataCollectionSingleAllOfAttributes) SetDataScope(v string) {
 }
 
 func (o ManagementDataCollectionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -213,19 +213,19 @@ func (o ManagementDataCollectionSingleAllOfAttributes) MarshalJSON() ([]byte, er
 
 func (o ManagementDataCollectionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ManagementData) {
+	if !IsNil(o.ManagementData) {
 		toSerialize["managementData"] = o.ManagementData
 	}
-	if !isNil(o.TargetNodeFilter) {
+	if !IsNil(o.TargetNodeFilter) {
 		toSerialize["targetNodeFilter"] = o.TargetNodeFilter
 	}
-	if !isNil(o.CollectionTimeWindow) {
+	if !IsNil(o.CollectionTimeWindow) {
 		toSerialize["collectionTimeWindow"] = o.CollectionTimeWindow
 	}
-	if !isNil(o.ReportingCtrl) {
+	if !IsNil(o.ReportingCtrl) {
 		toSerialize["reportingCtrl"] = o.ReportingCtrl
 	}
-	if !isNil(o.DataScope) {
+	if !IsNil(o.DataScope) {
 		toSerialize["dataScope"] = o.DataScope
 	}
 	return toSerialize, nil
@@ -266,5 +266,3 @@ func (v *NullableManagementDataCollectionSingleAllOfAttributes) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

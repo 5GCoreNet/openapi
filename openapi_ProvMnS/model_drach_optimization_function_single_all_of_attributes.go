@@ -19,9 +19,9 @@ var _ MappedNullable = &DRACHOptimizationFunctionSingleAllOfAttributes{}
 
 // DRACHOptimizationFunctionSingleAllOfAttributes struct for DRACHOptimizationFunctionSingleAllOfAttributes
 type DRACHOptimizationFunctionSingleAllOfAttributes struct {
-	DrachOptimizationControl *bool `json:"drachOptimizationControl,omitempty"`
-	UeAccProbilityDist *UeAccProbilityDist `json:"ueAccProbilityDist,omitempty"`
-	UeAccDelayProbilityDist *UeAccDelayProbilityDist `json:"ueAccDelayProbilityDist,omitempty"`
+	DrachOptimizationControl *bool                    `json:"drachOptimizationControl,omitempty"`
+	UeAccProbilityDist       *UeAccProbilityDist      `json:"ueAccProbilityDist,omitempty"`
+	UeAccDelayProbilityDist  *UeAccDelayProbilityDist `json:"ueAccDelayProbilityDist,omitempty"`
 }
 
 // NewDRACHOptimizationFunctionSingleAllOfAttributes instantiates a new DRACHOptimizationFunctionSingleAllOfAttributes object
@@ -43,7 +43,7 @@ func NewDRACHOptimizationFunctionSingleAllOfAttributesWithDefaults() *DRACHOptim
 
 // GetDrachOptimizationControl returns the DrachOptimizationControl field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetDrachOptimizationControl() bool {
-	if o == nil || isNil(o.DrachOptimizationControl) {
+	if o == nil || IsNil(o.DrachOptimizationControl) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetDrachOptimizationCon
 // GetDrachOptimizationControlOk returns a tuple with the DrachOptimizationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetDrachOptimizationControlOk() (*bool, bool) {
-	if o == nil || isNil(o.DrachOptimizationControl) {
+	if o == nil || IsNil(o.DrachOptimizationControl) {
 		return nil, false
 	}
 	return o.DrachOptimizationControl, true
@@ -61,7 +61,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetDrachOptimizationCon
 
 // HasDrachOptimizationControl returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) HasDrachOptimizationControl() bool {
-	if o != nil && !isNil(o.DrachOptimizationControl) {
+	if o != nil && !IsNil(o.DrachOptimizationControl) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) SetDrachOptimizationCon
 
 // GetUeAccProbilityDist returns the UeAccProbilityDist field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccProbilityDist() UeAccProbilityDist {
-	if o == nil || isNil(o.UeAccProbilityDist) {
+	if o == nil || IsNil(o.UeAccProbilityDist) {
 		var ret UeAccProbilityDist
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccProbilityDist()
 // GetUeAccProbilityDistOk returns a tuple with the UeAccProbilityDist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccProbilityDistOk() (*UeAccProbilityDist, bool) {
-	if o == nil || isNil(o.UeAccProbilityDist) {
+	if o == nil || IsNil(o.UeAccProbilityDist) {
 		return nil, false
 	}
 	return o.UeAccProbilityDist, true
@@ -93,7 +93,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccProbilityDistOk
 
 // HasUeAccProbilityDist returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) HasUeAccProbilityDist() bool {
-	if o != nil && !isNil(o.UeAccProbilityDist) {
+	if o != nil && !IsNil(o.UeAccProbilityDist) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) SetUeAccProbilityDist(v
 
 // GetUeAccDelayProbilityDist returns the UeAccDelayProbilityDist field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccDelayProbilityDist() UeAccDelayProbilityDist {
-	if o == nil || isNil(o.UeAccDelayProbilityDist) {
+	if o == nil || IsNil(o.UeAccDelayProbilityDist) {
 		var ret UeAccDelayProbilityDist
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccDelayProbilityD
 // GetUeAccDelayProbilityDistOk returns a tuple with the UeAccDelayProbilityDist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccDelayProbilityDistOk() (*UeAccDelayProbilityDist, bool) {
-	if o == nil || isNil(o.UeAccDelayProbilityDist) {
+	if o == nil || IsNil(o.UeAccDelayProbilityDist) {
 		return nil, false
 	}
 	return o.UeAccDelayProbilityDist, true
@@ -125,7 +125,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) GetUeAccDelayProbilityD
 
 // HasUeAccDelayProbilityDist returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingleAllOfAttributes) HasUeAccDelayProbilityDist() bool {
-	if o != nil && !isNil(o.UeAccDelayProbilityDist) {
+	if o != nil && !IsNil(o.UeAccDelayProbilityDist) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *DRACHOptimizationFunctionSingleAllOfAttributes) SetUeAccDelayProbilityD
 }
 
 func (o DRACHOptimizationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o DRACHOptimizationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, e
 
 func (o DRACHOptimizationFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DrachOptimizationControl) {
+	if !IsNil(o.DrachOptimizationControl) {
 		toSerialize["drachOptimizationControl"] = o.DrachOptimizationControl
 	}
-	if !isNil(o.UeAccProbilityDist) {
+	if !IsNil(o.UeAccProbilityDist) {
 		toSerialize["ueAccProbilityDist"] = o.UeAccProbilityDist
 	}
-	if !isNil(o.UeAccDelayProbilityDist) {
+	if !IsNil(o.UeAccDelayProbilityDist) {
 		toSerialize["ueAccDelayProbilityDist"] = o.UeAccDelayProbilityDist
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableDRACHOptimizationFunctionSingleAllOfAttributes) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

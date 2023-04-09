@@ -93,7 +93,6 @@ Class | Method | HTTP request | Description
 
  - [InvalidParam](docs/InvalidParam.md)
  - [LocationPrivacyInd](docs/LocationPrivacyInd.md)
- - [LocationPrivacyIndAnyOf](docs/LocationPrivacyIndAnyOf.md)
  - [Lpi](docs/Lpi.md)
  - [LpiParametersProvision](docs/LpiParametersProvision.md)
  - [LpiParametersProvisionPatch](docs/LpiParametersProvisionPatch.md)

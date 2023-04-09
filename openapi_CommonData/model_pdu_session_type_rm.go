@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// PduSessionTypeRm PduSessionType indicates the type of a PDU session. It shall comply with the provisions defined in table 5.4.3.3-1 but with the OpenAPI \"nullable: true\" property.  
+// PduSessionTypeRm PduSessionType indicates the type of a PDU session. It shall comply with the provisions defined in table 5.4.3.3-1 but with the OpenAPI \"nullable: true\" property.
 type PduSessionTypeRm struct {
-	NullValue *NullValue
+	NullValue      *NullValue
 	PduSessionType *PduSessionType
 }
 
@@ -25,7 +25,7 @@ type PduSessionTypeRm struct {
 func (dst *PduSessionTypeRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *PduSessionTypeRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into PduSessionType
-	err = json.Unmarshal(data, &dst.PduSessionType);
+	err = json.Unmarshal(data, &dst.PduSessionType)
 	if err == nil {
 		jsonPduSessionType, _ := json.Marshal(dst.PduSessionType)
 		if string(jsonPduSessionType) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullablePduSessionTypeRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

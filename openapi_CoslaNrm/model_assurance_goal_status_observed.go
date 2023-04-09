@@ -20,7 +20,7 @@ type AssuranceGoalStatusObserved string
 
 // List of AssuranceGoalStatusObserved
 const (
-	FULFILLED AssuranceGoalStatusObserved = "FULFILLED"
+	FULFILLED     AssuranceGoalStatusObserved = "FULFILLED"
 	NOT_FULFILLED AssuranceGoalStatusObserved = "NOT_FULFILLED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableAssuranceGoalStatusObserved) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

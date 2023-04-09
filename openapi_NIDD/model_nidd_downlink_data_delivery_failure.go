@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -69,7 +69,7 @@ func (o *NiddDownlinkDataDeliveryFailure) SetProblemDetail(v ProblemDetails) {
 
 // GetRequestedRetransmissionTime returns the RequestedRetransmissionTime field value if set, zero value otherwise.
 func (o *NiddDownlinkDataDeliveryFailure) GetRequestedRetransmissionTime() time.Time {
-	if o == nil || isNil(o.RequestedRetransmissionTime) {
+	if o == nil || IsNil(o.RequestedRetransmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NiddDownlinkDataDeliveryFailure) GetRequestedRetransmissionTime() time.
 // GetRequestedRetransmissionTimeOk returns a tuple with the RequestedRetransmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataDeliveryFailure) GetRequestedRetransmissionTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RequestedRetransmissionTime) {
+	if o == nil || IsNil(o.RequestedRetransmissionTime) {
 		return nil, false
 	}
 	return o.RequestedRetransmissionTime, true
@@ -87,7 +87,7 @@ func (o *NiddDownlinkDataDeliveryFailure) GetRequestedRetransmissionTimeOk() (*t
 
 // HasRequestedRetransmissionTime returns a boolean if a field has been set.
 func (o *NiddDownlinkDataDeliveryFailure) HasRequestedRetransmissionTime() bool {
-	if o != nil && !isNil(o.RequestedRetransmissionTime) {
+	if o != nil && !IsNil(o.RequestedRetransmissionTime) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *NiddDownlinkDataDeliveryFailure) SetRequestedRetransmissionTime(v time.
 }
 
 func (o NiddDownlinkDataDeliveryFailure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o NiddDownlinkDataDeliveryFailure) MarshalJSON() ([]byte, error) {
 func (o NiddDownlinkDataDeliveryFailure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["problemDetail"] = o.ProblemDetail
-	if !isNil(o.RequestedRetransmissionTime) {
+	if !IsNil(o.RequestedRetransmissionTime) {
 		toSerialize["requestedRetransmissionTime"] = o.RequestedRetransmissionTime
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableNiddDownlinkDataDeliveryFailure) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

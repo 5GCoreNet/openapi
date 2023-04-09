@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,10 +21,10 @@ var _ MappedNullable = &Notification{}
 type Notification struct {
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
 	BdtRefId string `json:"bdtRefId"`
-	// Contains a list of the candidate transfer policies from which the AF may select a new transfer policy due to a network performance is below the criteria set by the operator. 
+	// Contains a list of the candidate transfer policies from which the AF may select a new transfer policy due to a network performance is below the criteria set by the operator.
 	CandPolicies []TransferPolicy `json:"candPolicies,omitempty"`
-	NwAreaInfo *NetworkAreaInfo `json:"nwAreaInfo,omitempty"`
-	TimeWindow *TimeWindow `json:"timeWindow,omitempty"`
+	NwAreaInfo   *NetworkAreaInfo `json:"nwAreaInfo,omitempty"`
+	TimeWindow   *TimeWindow      `json:"timeWindow,omitempty"`
 }
 
 // NewNotification instantiates a new Notification object
@@ -71,7 +71,7 @@ func (o *Notification) SetBdtRefId(v string) {
 
 // GetCandPolicies returns the CandPolicies field value if set, zero value otherwise.
 func (o *Notification) GetCandPolicies() []TransferPolicy {
-	if o == nil || isNil(o.CandPolicies) {
+	if o == nil || IsNil(o.CandPolicies) {
 		var ret []TransferPolicy
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *Notification) GetCandPolicies() []TransferPolicy {
 // GetCandPoliciesOk returns a tuple with the CandPolicies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetCandPoliciesOk() ([]TransferPolicy, bool) {
-	if o == nil || isNil(o.CandPolicies) {
+	if o == nil || IsNil(o.CandPolicies) {
 		return nil, false
 	}
 	return o.CandPolicies, true
@@ -89,7 +89,7 @@ func (o *Notification) GetCandPoliciesOk() ([]TransferPolicy, bool) {
 
 // HasCandPolicies returns a boolean if a field has been set.
 func (o *Notification) HasCandPolicies() bool {
-	if o != nil && !isNil(o.CandPolicies) {
+	if o != nil && !IsNil(o.CandPolicies) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *Notification) SetCandPolicies(v []TransferPolicy) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *Notification) GetNwAreaInfo() NetworkAreaInfo {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *Notification) GetNwAreaInfo() NetworkAreaInfo {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -121,7 +121,7 @@ func (o *Notification) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *Notification) HasNwAreaInfo() bool {
-	if o != nil && !isNil(o.NwAreaInfo) {
+	if o != nil && !IsNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *Notification) SetNwAreaInfo(v NetworkAreaInfo) {
 
 // GetTimeWindow returns the TimeWindow field value if set, zero value otherwise.
 func (o *Notification) GetTimeWindow() TimeWindow {
-	if o == nil || isNil(o.TimeWindow) {
+	if o == nil || IsNil(o.TimeWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *Notification) GetTimeWindow() TimeWindow {
 // GetTimeWindowOk returns a tuple with the TimeWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetTimeWindowOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.TimeWindow) {
+	if o == nil || IsNil(o.TimeWindow) {
 		return nil, false
 	}
 	return o.TimeWindow, true
@@ -153,7 +153,7 @@ func (o *Notification) GetTimeWindowOk() (*TimeWindow, bool) {
 
 // HasTimeWindow returns a boolean if a field has been set.
 func (o *Notification) HasTimeWindow() bool {
-	if o != nil && !isNil(o.TimeWindow) {
+	if o != nil && !IsNil(o.TimeWindow) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *Notification) SetTimeWindow(v TimeWindow) {
 }
 
 func (o Notification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o Notification) MarshalJSON() ([]byte, error) {
 func (o Notification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bdtRefId"] = o.BdtRefId
-	if !isNil(o.CandPolicies) {
+	if !IsNil(o.CandPolicies) {
 		toSerialize["candPolicies"] = o.CandPolicies
 	}
-	if !isNil(o.NwAreaInfo) {
+	if !IsNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
-	if !isNil(o.TimeWindow) {
+	if !IsNil(o.TimeWindow) {
 		toSerialize["timeWindow"] = o.TimeWindow
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

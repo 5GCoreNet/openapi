@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &EarlyMediaDescription{}
 
 // EarlyMediaDescription struct for EarlyMediaDescription
 type EarlyMediaDescription struct {
-	SDPTimeStamps *SDPTimeStamps `json:"sDPTimeStamps,omitempty"`
-	SDPMediaComponent []SDPMediaComponent `json:"sDPMediaComponent,omitempty"`
-	SDPSessionDescription []string `json:"sDPSessionDescription,omitempty"`
+	SDPTimeStamps         *SDPTimeStamps      `json:"sDPTimeStamps,omitempty"`
+	SDPMediaComponent     []SDPMediaComponent `json:"sDPMediaComponent,omitempty"`
+	SDPSessionDescription []string            `json:"sDPSessionDescription,omitempty"`
 }
 
 // NewEarlyMediaDescription instantiates a new EarlyMediaDescription object
@@ -43,7 +43,7 @@ func NewEarlyMediaDescriptionWithDefaults() *EarlyMediaDescription {
 
 // GetSDPTimeStamps returns the SDPTimeStamps field value if set, zero value otherwise.
 func (o *EarlyMediaDescription) GetSDPTimeStamps() SDPTimeStamps {
-	if o == nil || isNil(o.SDPTimeStamps) {
+	if o == nil || IsNil(o.SDPTimeStamps) {
 		var ret SDPTimeStamps
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EarlyMediaDescription) GetSDPTimeStamps() SDPTimeStamps {
 // GetSDPTimeStampsOk returns a tuple with the SDPTimeStamps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EarlyMediaDescription) GetSDPTimeStampsOk() (*SDPTimeStamps, bool) {
-	if o == nil || isNil(o.SDPTimeStamps) {
+	if o == nil || IsNil(o.SDPTimeStamps) {
 		return nil, false
 	}
 	return o.SDPTimeStamps, true
@@ -61,7 +61,7 @@ func (o *EarlyMediaDescription) GetSDPTimeStampsOk() (*SDPTimeStamps, bool) {
 
 // HasSDPTimeStamps returns a boolean if a field has been set.
 func (o *EarlyMediaDescription) HasSDPTimeStamps() bool {
-	if o != nil && !isNil(o.SDPTimeStamps) {
+	if o != nil && !IsNil(o.SDPTimeStamps) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EarlyMediaDescription) SetSDPTimeStamps(v SDPTimeStamps) {
 
 // GetSDPMediaComponent returns the SDPMediaComponent field value if set, zero value otherwise.
 func (o *EarlyMediaDescription) GetSDPMediaComponent() []SDPMediaComponent {
-	if o == nil || isNil(o.SDPMediaComponent) {
+	if o == nil || IsNil(o.SDPMediaComponent) {
 		var ret []SDPMediaComponent
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EarlyMediaDescription) GetSDPMediaComponent() []SDPMediaComponent {
 // GetSDPMediaComponentOk returns a tuple with the SDPMediaComponent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EarlyMediaDescription) GetSDPMediaComponentOk() ([]SDPMediaComponent, bool) {
-	if o == nil || isNil(o.SDPMediaComponent) {
+	if o == nil || IsNil(o.SDPMediaComponent) {
 		return nil, false
 	}
 	return o.SDPMediaComponent, true
@@ -93,7 +93,7 @@ func (o *EarlyMediaDescription) GetSDPMediaComponentOk() ([]SDPMediaComponent, b
 
 // HasSDPMediaComponent returns a boolean if a field has been set.
 func (o *EarlyMediaDescription) HasSDPMediaComponent() bool {
-	if o != nil && !isNil(o.SDPMediaComponent) {
+	if o != nil && !IsNil(o.SDPMediaComponent) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EarlyMediaDescription) SetSDPMediaComponent(v []SDPMediaComponent) {
 
 // GetSDPSessionDescription returns the SDPSessionDescription field value if set, zero value otherwise.
 func (o *EarlyMediaDescription) GetSDPSessionDescription() []string {
-	if o == nil || isNil(o.SDPSessionDescription) {
+	if o == nil || IsNil(o.SDPSessionDescription) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *EarlyMediaDescription) GetSDPSessionDescription() []string {
 // GetSDPSessionDescriptionOk returns a tuple with the SDPSessionDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EarlyMediaDescription) GetSDPSessionDescriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.SDPSessionDescription) {
+	if o == nil || IsNil(o.SDPSessionDescription) {
 		return nil, false
 	}
 	return o.SDPSessionDescription, true
@@ -125,7 +125,7 @@ func (o *EarlyMediaDescription) GetSDPSessionDescriptionOk() ([]string, bool) {
 
 // HasSDPSessionDescription returns a boolean if a field has been set.
 func (o *EarlyMediaDescription) HasSDPSessionDescription() bool {
-	if o != nil && !isNil(o.SDPSessionDescription) {
+	if o != nil && !IsNil(o.SDPSessionDescription) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *EarlyMediaDescription) SetSDPSessionDescription(v []string) {
 }
 
 func (o EarlyMediaDescription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o EarlyMediaDescription) MarshalJSON() ([]byte, error) {
 
 func (o EarlyMediaDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SDPTimeStamps) {
+	if !IsNil(o.SDPTimeStamps) {
 		toSerialize["sDPTimeStamps"] = o.SDPTimeStamps
 	}
-	if !isNil(o.SDPMediaComponent) {
+	if !IsNil(o.SDPMediaComponent) {
 		toSerialize["sDPMediaComponent"] = o.SDPMediaComponent
 	}
-	if !isNil(o.SDPSessionDescription) {
+	if !IsNil(o.SDPSessionDescription) {
 		toSerialize["sDPSessionDescription"] = o.SDPSessionDescription
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableEarlyMediaDescription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ConditionEventType Indicates whether a notification is due to the NF Instance to start or stop being part of a condition for a subscription to a set of NFs 
+// ConditionEventType Indicates whether a notification is due to the NF Instance to start or stop being part of a condition for a subscription to a set of NFs
 type ConditionEventType struct {
-	ConditionEventTypeAnyOf *ConditionEventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ConditionEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ConditionEventTypeAnyOf
-	err = json.Unmarshal(data, &dst.ConditionEventTypeAnyOf);
-	if err == nil {
-		jsonConditionEventTypeAnyOf, _ := json.Marshal(dst.ConditionEventTypeAnyOf)
-		if string(jsonConditionEventTypeAnyOf) == "{}" { // empty struct
-			dst.ConditionEventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ConditionEventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ConditionEventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ConditionEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ConditionEventType) MarshalJSON() ([]byte, error) {
-	if src.ConditionEventTypeAnyOf != nil {
-		return json.Marshal(&src.ConditionEventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableConditionEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

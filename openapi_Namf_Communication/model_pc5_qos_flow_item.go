@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &Pc5QosFlowItem{}
 
 // Pc5QosFlowItem Contains a PC5 QOS flow.
 type Pc5QosFlowItem struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
-	Pqi int32 `json:"pqi"`
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
+	Pqi             int32            `json:"pqi"`
 	Pc5FlowBitRates *Pc5FlowBitRates `json:"pc5FlowBitRates,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Range *int32 `json:"range,omitempty"`
@@ -70,7 +70,7 @@ func (o *Pc5QosFlowItem) SetPqi(v int32) {
 
 // GetPc5FlowBitRates returns the Pc5FlowBitRates field value if set, zero value otherwise.
 func (o *Pc5QosFlowItem) GetPc5FlowBitRates() Pc5FlowBitRates {
-	if o == nil || isNil(o.Pc5FlowBitRates) {
+	if o == nil || IsNil(o.Pc5FlowBitRates) {
 		var ret Pc5FlowBitRates
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *Pc5QosFlowItem) GetPc5FlowBitRates() Pc5FlowBitRates {
 // GetPc5FlowBitRatesOk returns a tuple with the Pc5FlowBitRates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5QosFlowItem) GetPc5FlowBitRatesOk() (*Pc5FlowBitRates, bool) {
-	if o == nil || isNil(o.Pc5FlowBitRates) {
+	if o == nil || IsNil(o.Pc5FlowBitRates) {
 		return nil, false
 	}
 	return o.Pc5FlowBitRates, true
@@ -88,7 +88,7 @@ func (o *Pc5QosFlowItem) GetPc5FlowBitRatesOk() (*Pc5FlowBitRates, bool) {
 
 // HasPc5FlowBitRates returns a boolean if a field has been set.
 func (o *Pc5QosFlowItem) HasPc5FlowBitRates() bool {
-	if o != nil && !isNil(o.Pc5FlowBitRates) {
+	if o != nil && !IsNil(o.Pc5FlowBitRates) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *Pc5QosFlowItem) SetPc5FlowBitRates(v Pc5FlowBitRates) {
 
 // GetRange returns the Range field value if set, zero value otherwise.
 func (o *Pc5QosFlowItem) GetRange() int32 {
-	if o == nil || isNil(o.Range) {
+	if o == nil || IsNil(o.Range) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *Pc5QosFlowItem) GetRange() int32 {
 // GetRangeOk returns a tuple with the Range field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5QosFlowItem) GetRangeOk() (*int32, bool) {
-	if o == nil || isNil(o.Range) {
+	if o == nil || IsNil(o.Range) {
 		return nil, false
 	}
 	return o.Range, true
@@ -120,7 +120,7 @@ func (o *Pc5QosFlowItem) GetRangeOk() (*int32, bool) {
 
 // HasRange returns a boolean if a field has been set.
 func (o *Pc5QosFlowItem) HasRange() bool {
-	if o != nil && !isNil(o.Range) {
+	if o != nil && !IsNil(o.Range) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *Pc5QosFlowItem) SetRange(v int32) {
 }
 
 func (o Pc5QosFlowItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o Pc5QosFlowItem) MarshalJSON() ([]byte, error) {
 func (o Pc5QosFlowItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pqi"] = o.Pqi
-	if !isNil(o.Pc5FlowBitRates) {
+	if !IsNil(o.Pc5FlowBitRates) {
 		toSerialize["pc5FlowBitRates"] = o.Pc5FlowBitRates
 	}
-	if !isNil(o.Range) {
+	if !IsNil(o.Range) {
 		toSerialize["range"] = o.Range
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullablePc5QosFlowItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

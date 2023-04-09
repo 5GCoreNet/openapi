@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &MonitorLocationInterestFilter{}
 type MonitorLocationInterestFilter struct {
 	// List of VAL Users or UE IDs for which location monitoring is requested.
 	TgtUes []ValTargetUe `json:"tgtUes"`
-	LocInt LocationInfo `json:"locInt"`
+	LocInt LocationInfo  `json:"locInt"`
 	// indicating a time in seconds.
 	NotInt int32 `json:"notInt"`
 }
@@ -119,7 +119,7 @@ func (o *MonitorLocationInterestFilter) SetNotInt(v int32) {
 }
 
 func (o MonitorLocationInterestFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,5 +169,3 @@ func (v *NullableMonitorLocationInterestFilter) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

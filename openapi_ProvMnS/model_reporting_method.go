@@ -20,8 +20,8 @@ type ReportingMethod string
 
 // List of ReportingMethod
 const (
-	FILE ReportingMethod = "FILE"
-	STREAMING ReportingMethod = "STREAMING"
+	FILE         ReportingMethod = "FILE"
+	STREAMING    ReportingMethod = "STREAMING"
 	NOTIFICATION ReportingMethod = "NOTIFICATION"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableReportingMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

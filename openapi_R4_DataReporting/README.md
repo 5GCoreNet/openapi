@@ -86,7 +86,6 @@ Class | Method | HTTP request | Description
 
  - [BaseRecord](docs/BaseRecord.md)
  - [CacheStatus](docs/CacheStatus.md)
- - [CacheStatusAnyOf](docs/CacheStatusAnyOf.md)
  - [EndpointAddress](docs/EndpointAddress.md)
  - [Ipv6Addr](docs/Ipv6Addr.md)
  - [MediaStreamingAccessRecord](docs/MediaStreamingAccessRecord.md)

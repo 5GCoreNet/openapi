@@ -27,7 +27,6 @@ func MnSOneOfAsMnS(v *MnSOneOf) MnS {
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MnS) UnmarshalJSON(data []byte) error {
 	var err error
@@ -67,7 +66,7 @@ func (src MnS) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MnS) GetActualInstance() (interface{}) {
+func (obj *MnS) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableMnS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

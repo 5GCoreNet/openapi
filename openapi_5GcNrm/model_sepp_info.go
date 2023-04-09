@@ -20,10 +20,10 @@ var _ MappedNullable = &SeppInfo{}
 // SeppInfo Information of a SEPP Instance
 type SeppInfo struct {
 	SeppPrefix *string `json:"seppPrefix,omitempty"`
-	// Port numbers for HTTP and HTTPS. The key of the map shall be \"http\" or \"https\". 
-	SeppPorts *map[string]int32 `json:"seppPorts,omitempty"`
-	RemotePlmnList []PlmnId1 `json:"remotePlmnList,omitempty"`
-	RemoteSnpnList []PlmnIdNid1 `json:"remoteSnpnList,omitempty"`
+	// Port numbers for HTTP and HTTPS. The key of the map shall be \"http\" or \"https\".
+	SeppPorts      *map[string]int32 `json:"seppPorts,omitempty"`
+	RemotePlmnList []PlmnId1         `json:"remotePlmnList,omitempty"`
+	RemoteSnpnList []PlmnIdNid1      `json:"remoteSnpnList,omitempty"`
 }
 
 // NewSeppInfo instantiates a new SeppInfo object
@@ -45,7 +45,7 @@ func NewSeppInfoWithDefaults() *SeppInfo {
 
 // GetSeppPrefix returns the SeppPrefix field value if set, zero value otherwise.
 func (o *SeppInfo) GetSeppPrefix() string {
-	if o == nil || isNil(o.SeppPrefix) {
+	if o == nil || IsNil(o.SeppPrefix) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *SeppInfo) GetSeppPrefix() string {
 // GetSeppPrefixOk returns a tuple with the SeppPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeppInfo) GetSeppPrefixOk() (*string, bool) {
-	if o == nil || isNil(o.SeppPrefix) {
+	if o == nil || IsNil(o.SeppPrefix) {
 		return nil, false
 	}
 	return o.SeppPrefix, true
@@ -63,7 +63,7 @@ func (o *SeppInfo) GetSeppPrefixOk() (*string, bool) {
 
 // HasSeppPrefix returns a boolean if a field has been set.
 func (o *SeppInfo) HasSeppPrefix() bool {
-	if o != nil && !isNil(o.SeppPrefix) {
+	if o != nil && !IsNil(o.SeppPrefix) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SeppInfo) SetSeppPrefix(v string) {
 
 // GetSeppPorts returns the SeppPorts field value if set, zero value otherwise.
 func (o *SeppInfo) GetSeppPorts() map[string]int32 {
-	if o == nil || isNil(o.SeppPorts) {
+	if o == nil || IsNil(o.SeppPorts) {
 		var ret map[string]int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SeppInfo) GetSeppPorts() map[string]int32 {
 // GetSeppPortsOk returns a tuple with the SeppPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeppInfo) GetSeppPortsOk() (*map[string]int32, bool) {
-	if o == nil || isNil(o.SeppPorts) {
+	if o == nil || IsNil(o.SeppPorts) {
 		return nil, false
 	}
 	return o.SeppPorts, true
@@ -95,7 +95,7 @@ func (o *SeppInfo) GetSeppPortsOk() (*map[string]int32, bool) {
 
 // HasSeppPorts returns a boolean if a field has been set.
 func (o *SeppInfo) HasSeppPorts() bool {
-	if o != nil && !isNil(o.SeppPorts) {
+	if o != nil && !IsNil(o.SeppPorts) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *SeppInfo) SetSeppPorts(v map[string]int32) {
 
 // GetRemotePlmnList returns the RemotePlmnList field value if set, zero value otherwise.
 func (o *SeppInfo) GetRemotePlmnList() []PlmnId1 {
-	if o == nil || isNil(o.RemotePlmnList) {
+	if o == nil || IsNil(o.RemotePlmnList) {
 		var ret []PlmnId1
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *SeppInfo) GetRemotePlmnList() []PlmnId1 {
 // GetRemotePlmnListOk returns a tuple with the RemotePlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeppInfo) GetRemotePlmnListOk() ([]PlmnId1, bool) {
-	if o == nil || isNil(o.RemotePlmnList) {
+	if o == nil || IsNil(o.RemotePlmnList) {
 		return nil, false
 	}
 	return o.RemotePlmnList, true
@@ -127,7 +127,7 @@ func (o *SeppInfo) GetRemotePlmnListOk() ([]PlmnId1, bool) {
 
 // HasRemotePlmnList returns a boolean if a field has been set.
 func (o *SeppInfo) HasRemotePlmnList() bool {
-	if o != nil && !isNil(o.RemotePlmnList) {
+	if o != nil && !IsNil(o.RemotePlmnList) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *SeppInfo) SetRemotePlmnList(v []PlmnId1) {
 
 // GetRemoteSnpnList returns the RemoteSnpnList field value if set, zero value otherwise.
 func (o *SeppInfo) GetRemoteSnpnList() []PlmnIdNid1 {
-	if o == nil || isNil(o.RemoteSnpnList) {
+	if o == nil || IsNil(o.RemoteSnpnList) {
 		var ret []PlmnIdNid1
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *SeppInfo) GetRemoteSnpnList() []PlmnIdNid1 {
 // GetRemoteSnpnListOk returns a tuple with the RemoteSnpnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeppInfo) GetRemoteSnpnListOk() ([]PlmnIdNid1, bool) {
-	if o == nil || isNil(o.RemoteSnpnList) {
+	if o == nil || IsNil(o.RemoteSnpnList) {
 		return nil, false
 	}
 	return o.RemoteSnpnList, true
@@ -159,7 +159,7 @@ func (o *SeppInfo) GetRemoteSnpnListOk() ([]PlmnIdNid1, bool) {
 
 // HasRemoteSnpnList returns a boolean if a field has been set.
 func (o *SeppInfo) HasRemoteSnpnList() bool {
-	if o != nil && !isNil(o.RemoteSnpnList) {
+	if o != nil && !IsNil(o.RemoteSnpnList) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *SeppInfo) SetRemoteSnpnList(v []PlmnIdNid1) {
 }
 
 func (o SeppInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o SeppInfo) MarshalJSON() ([]byte, error) {
 
 func (o SeppInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SeppPrefix) {
+	if !IsNil(o.SeppPrefix) {
 		toSerialize["seppPrefix"] = o.SeppPrefix
 	}
-	if !isNil(o.SeppPorts) {
+	if !IsNil(o.SeppPorts) {
 		toSerialize["seppPorts"] = o.SeppPorts
 	}
-	if !isNil(o.RemotePlmnList) {
+	if !IsNil(o.RemotePlmnList) {
 		toSerialize["remotePlmnList"] = o.RemotePlmnList
 	}
-	if !isNil(o.RemoteSnpnList) {
+	if !IsNil(o.RemoteSnpnList) {
 		toSerialize["remoteSnpnList"] = o.RemoteSnpnList
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableSeppInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

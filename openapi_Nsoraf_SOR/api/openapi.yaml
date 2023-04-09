@@ -447,7 +447,11 @@ components:
       type: object
     SorAckStatus:
       anyOf:
-      - $ref: '#/components/schemas/SorAckStatus_anyOf'
+      - enum:
+        - ACK_SUCCESSFUL
+        - ACK_NOT_RECEIVED
+        - ACK_NOT_SUCCESSFUL
+        type: string
       - type: string
       description: |
         Represents the reception status of the acknowledgment of successful reception of SoR Information by a UE.
@@ -637,7 +641,19 @@ components:
       type: object
     AccessTech:
       anyOf:
-      - $ref: '#/components/schemas/AccessTech_anyOf'
+      - enum:
+        - NR
+        - EUTRAN_IN_WBS1_MODE_AND_NBS1_MODE
+        - EUTRAN_IN_NBS1_MODE_ONLY
+        - EUTRAN_IN_WBS1_MODE_ONLY
+        - UTRAN
+        - GSM_AND_ECGSM_IoT
+        - GSM_WITHOUT_ECGSM_IoT
+        - ECGSM_IoT_ONLY
+        - CDMA_1xRTT
+        - CDMA_HRPD
+        - GSM_COMPACT
+        type: string
       - type: string
       description: Represents the access technology
     AccessTokenErr:
@@ -774,7 +790,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -828,88 +901,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    SorAckStatus_anyOf:
-      enum:
-      - ACK_SUCCESSFUL
-      - ACK_NOT_RECEIVED
-      - ACK_NOT_SUCCESSFUL
-      type: string
-      example: null
-    AccessTech_anyOf:
-      enum:
-      - NR
-      - EUTRAN_IN_WBS1_MODE_AND_NBS1_MODE
-      - EUTRAN_IN_NBS1_MODE_ONLY
-      - EUTRAN_IN_WBS1_MODE_ONLY
-      - UTRAN
-      - GSM_AND_ECGSM_IoT
-      - GSM_WITHOUT_ECGSM_IoT
-      - ECGSM_IoT_ONLY
-      - CDMA_1xRTT
-      - CDMA_HRPD
-      - GSM_COMPACT
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

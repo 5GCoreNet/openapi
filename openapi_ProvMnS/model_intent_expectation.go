@@ -19,12 +19,12 @@ var _ MappedNullable = &IntentExpectation{}
 
 // IntentExpectation This data type is the \"IntentExpectation\" data type without specialisations
 type IntentExpectation struct {
-	ExpectationId *string `json:"expectationId,omitempty"`
-	ExpectationVerb *ExpectationVerb `json:"expectationVerb,omitempty"`
-	ExpectationObjects []ExpectationObject `json:"expectationObjects,omitempty"`
-	ExpectationTargets []ExpectationTarget `json:"expectationTargets,omitempty"`
-	ExpectationContexts []ExpectationContext `json:"expectationContexts,omitempty"`
-	ExpectationfulfilmentInfo *FulfilmentInfo `json:"expectationfulfilmentInfo,omitempty"`
+	ExpectationId             *string              `json:"expectationId,omitempty"`
+	ExpectationVerb           *ExpectationVerb     `json:"expectationVerb,omitempty"`
+	ExpectationObjects        []ExpectationObject  `json:"expectationObjects,omitempty"`
+	ExpectationTargets        []ExpectationTarget  `json:"expectationTargets,omitempty"`
+	ExpectationContexts       []ExpectationContext `json:"expectationContexts,omitempty"`
+	ExpectationfulfilmentInfo *FulfilmentInfo      `json:"expectationfulfilmentInfo,omitempty"`
 }
 
 // NewIntentExpectation instantiates a new IntentExpectation object
@@ -46,7 +46,7 @@ func NewIntentExpectationWithDefaults() *IntentExpectation {
 
 // GetExpectationId returns the ExpectationId field value if set, zero value otherwise.
 func (o *IntentExpectation) GetExpectationId() string {
-	if o == nil || isNil(o.ExpectationId) {
+	if o == nil || IsNil(o.ExpectationId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *IntentExpectation) GetExpectationId() string {
 // GetExpectationIdOk returns a tuple with the ExpectationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentExpectation) GetExpectationIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExpectationId) {
+	if o == nil || IsNil(o.ExpectationId) {
 		return nil, false
 	}
 	return o.ExpectationId, true
@@ -64,7 +64,7 @@ func (o *IntentExpectation) GetExpectationIdOk() (*string, bool) {
 
 // HasExpectationId returns a boolean if a field has been set.
 func (o *IntentExpectation) HasExpectationId() bool {
-	if o != nil && !isNil(o.ExpectationId) {
+	if o != nil && !IsNil(o.ExpectationId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *IntentExpectation) SetExpectationId(v string) {
 
 // GetExpectationVerb returns the ExpectationVerb field value if set, zero value otherwise.
 func (o *IntentExpectation) GetExpectationVerb() ExpectationVerb {
-	if o == nil || isNil(o.ExpectationVerb) {
+	if o == nil || IsNil(o.ExpectationVerb) {
 		var ret ExpectationVerb
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *IntentExpectation) GetExpectationVerb() ExpectationVerb {
 // GetExpectationVerbOk returns a tuple with the ExpectationVerb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentExpectation) GetExpectationVerbOk() (*ExpectationVerb, bool) {
-	if o == nil || isNil(o.ExpectationVerb) {
+	if o == nil || IsNil(o.ExpectationVerb) {
 		return nil, false
 	}
 	return o.ExpectationVerb, true
@@ -96,7 +96,7 @@ func (o *IntentExpectation) GetExpectationVerbOk() (*ExpectationVerb, bool) {
 
 // HasExpectationVerb returns a boolean if a field has been set.
 func (o *IntentExpectation) HasExpectationVerb() bool {
-	if o != nil && !isNil(o.ExpectationVerb) {
+	if o != nil && !IsNil(o.ExpectationVerb) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *IntentExpectation) SetExpectationVerb(v ExpectationVerb) {
 
 // GetExpectationObjects returns the ExpectationObjects field value if set, zero value otherwise.
 func (o *IntentExpectation) GetExpectationObjects() []ExpectationObject {
-	if o == nil || isNil(o.ExpectationObjects) {
+	if o == nil || IsNil(o.ExpectationObjects) {
 		var ret []ExpectationObject
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *IntentExpectation) GetExpectationObjects() []ExpectationObject {
 // GetExpectationObjectsOk returns a tuple with the ExpectationObjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentExpectation) GetExpectationObjectsOk() ([]ExpectationObject, bool) {
-	if o == nil || isNil(o.ExpectationObjects) {
+	if o == nil || IsNil(o.ExpectationObjects) {
 		return nil, false
 	}
 	return o.ExpectationObjects, true
@@ -128,7 +128,7 @@ func (o *IntentExpectation) GetExpectationObjectsOk() ([]ExpectationObject, bool
 
 // HasExpectationObjects returns a boolean if a field has been set.
 func (o *IntentExpectation) HasExpectationObjects() bool {
-	if o != nil && !isNil(o.ExpectationObjects) {
+	if o != nil && !IsNil(o.ExpectationObjects) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *IntentExpectation) SetExpectationObjects(v []ExpectationObject) {
 
 // GetExpectationTargets returns the ExpectationTargets field value if set, zero value otherwise.
 func (o *IntentExpectation) GetExpectationTargets() []ExpectationTarget {
-	if o == nil || isNil(o.ExpectationTargets) {
+	if o == nil || IsNil(o.ExpectationTargets) {
 		var ret []ExpectationTarget
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *IntentExpectation) GetExpectationTargets() []ExpectationTarget {
 // GetExpectationTargetsOk returns a tuple with the ExpectationTargets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentExpectation) GetExpectationTargetsOk() ([]ExpectationTarget, bool) {
-	if o == nil || isNil(o.ExpectationTargets) {
+	if o == nil || IsNil(o.ExpectationTargets) {
 		return nil, false
 	}
 	return o.ExpectationTargets, true
@@ -160,7 +160,7 @@ func (o *IntentExpectation) GetExpectationTargetsOk() ([]ExpectationTarget, bool
 
 // HasExpectationTargets returns a boolean if a field has been set.
 func (o *IntentExpectation) HasExpectationTargets() bool {
-	if o != nil && !isNil(o.ExpectationTargets) {
+	if o != nil && !IsNil(o.ExpectationTargets) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *IntentExpectation) SetExpectationTargets(v []ExpectationTarget) {
 
 // GetExpectationContexts returns the ExpectationContexts field value if set, zero value otherwise.
 func (o *IntentExpectation) GetExpectationContexts() []ExpectationContext {
-	if o == nil || isNil(o.ExpectationContexts) {
+	if o == nil || IsNil(o.ExpectationContexts) {
 		var ret []ExpectationContext
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *IntentExpectation) GetExpectationContexts() []ExpectationContext {
 // GetExpectationContextsOk returns a tuple with the ExpectationContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentExpectation) GetExpectationContextsOk() ([]ExpectationContext, bool) {
-	if o == nil || isNil(o.ExpectationContexts) {
+	if o == nil || IsNil(o.ExpectationContexts) {
 		return nil, false
 	}
 	return o.ExpectationContexts, true
@@ -192,7 +192,7 @@ func (o *IntentExpectation) GetExpectationContextsOk() ([]ExpectationContext, bo
 
 // HasExpectationContexts returns a boolean if a field has been set.
 func (o *IntentExpectation) HasExpectationContexts() bool {
-	if o != nil && !isNil(o.ExpectationContexts) {
+	if o != nil && !IsNil(o.ExpectationContexts) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *IntentExpectation) SetExpectationContexts(v []ExpectationContext) {
 
 // GetExpectationfulfilmentInfo returns the ExpectationfulfilmentInfo field value if set, zero value otherwise.
 func (o *IntentExpectation) GetExpectationfulfilmentInfo() FulfilmentInfo {
-	if o == nil || isNil(o.ExpectationfulfilmentInfo) {
+	if o == nil || IsNil(o.ExpectationfulfilmentInfo) {
 		var ret FulfilmentInfo
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *IntentExpectation) GetExpectationfulfilmentInfo() FulfilmentInfo {
 // GetExpectationfulfilmentInfoOk returns a tuple with the ExpectationfulfilmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentExpectation) GetExpectationfulfilmentInfoOk() (*FulfilmentInfo, bool) {
-	if o == nil || isNil(o.ExpectationfulfilmentInfo) {
+	if o == nil || IsNil(o.ExpectationfulfilmentInfo) {
 		return nil, false
 	}
 	return o.ExpectationfulfilmentInfo, true
@@ -224,7 +224,7 @@ func (o *IntentExpectation) GetExpectationfulfilmentInfoOk() (*FulfilmentInfo, b
 
 // HasExpectationfulfilmentInfo returns a boolean if a field has been set.
 func (o *IntentExpectation) HasExpectationfulfilmentInfo() bool {
-	if o != nil && !isNil(o.ExpectationfulfilmentInfo) {
+	if o != nil && !IsNil(o.ExpectationfulfilmentInfo) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *IntentExpectation) SetExpectationfulfilmentInfo(v FulfilmentInfo) {
 }
 
 func (o IntentExpectation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,22 +246,22 @@ func (o IntentExpectation) MarshalJSON() ([]byte, error) {
 
 func (o IntentExpectation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExpectationId) {
+	if !IsNil(o.ExpectationId) {
 		toSerialize["expectationId"] = o.ExpectationId
 	}
-	if !isNil(o.ExpectationVerb) {
+	if !IsNil(o.ExpectationVerb) {
 		toSerialize["expectationVerb"] = o.ExpectationVerb
 	}
-	if !isNil(o.ExpectationObjects) {
+	if !IsNil(o.ExpectationObjects) {
 		toSerialize["expectationObjects"] = o.ExpectationObjects
 	}
-	if !isNil(o.ExpectationTargets) {
+	if !IsNil(o.ExpectationTargets) {
 		toSerialize["expectationTargets"] = o.ExpectationTargets
 	}
-	if !isNil(o.ExpectationContexts) {
+	if !IsNil(o.ExpectationContexts) {
 		toSerialize["expectationContexts"] = o.ExpectationContexts
 	}
-	if !isNil(o.ExpectationfulfilmentInfo) {
+	if !IsNil(o.ExpectationfulfilmentInfo) {
 		toSerialize["expectationfulfilmentInfo"] = o.ExpectationfulfilmentInfo
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableIntentExpectation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting
 
-API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ApplicationSpecificRecordAllOf{}
 // ApplicationSpecificRecordAllOf struct for ApplicationSpecificRecordAllOf
 type ApplicationSpecificRecordAllOf struct {
 	// String providing an URI formatted according to RFC 3986.
-	RecordType string `json:"recordType"`
+	RecordType      string      `json:"recordType"`
 	RecordContainer interface{} `json:"recordContainer"`
 }
 
@@ -82,7 +82,7 @@ func (o *ApplicationSpecificRecordAllOf) GetRecordContainer() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationSpecificRecordAllOf) GetRecordContainerOk() (*interface{}, bool) {
-	if o == nil || isNil(o.RecordContainer) {
+	if o == nil || IsNil(o.RecordContainer) {
 		return nil, false
 	}
 	return &o.RecordContainer, true
@@ -94,7 +94,7 @@ func (o *ApplicationSpecificRecordAllOf) SetRecordContainer(v interface{}) {
 }
 
 func (o ApplicationSpecificRecordAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -145,5 +145,3 @@ func (v *NullableApplicationSpecificRecordAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

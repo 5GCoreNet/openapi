@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &ConfirmationDataResponse{}
 // ConfirmationDataResponse Contains the result of the authentication
 type ConfirmationDataResponse struct {
 	AuthResult AuthResult `json:"authResult"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
 	// Contains the Kseaf.
-	Kseaf *string `json:"kseaf,omitempty"`
+	Kseaf   *string                `json:"kseaf,omitempty"`
 	PvsInfo []ServerAddressingInfo `json:"pvsInfo,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *ConfirmationDataResponse) SetAuthResult(v AuthResult) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *ConfirmationDataResponse) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ConfirmationDataResponse) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfirmationDataResponse) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -89,7 +89,7 @@ func (o *ConfirmationDataResponse) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *ConfirmationDataResponse) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ConfirmationDataResponse) SetSupi(v string) {
 
 // GetKseaf returns the Kseaf field value if set, zero value otherwise.
 func (o *ConfirmationDataResponse) GetKseaf() string {
-	if o == nil || isNil(o.Kseaf) {
+	if o == nil || IsNil(o.Kseaf) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ConfirmationDataResponse) GetKseaf() string {
 // GetKseafOk returns a tuple with the Kseaf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfirmationDataResponse) GetKseafOk() (*string, bool) {
-	if o == nil || isNil(o.Kseaf) {
+	if o == nil || IsNil(o.Kseaf) {
 		return nil, false
 	}
 	return o.Kseaf, true
@@ -121,7 +121,7 @@ func (o *ConfirmationDataResponse) GetKseafOk() (*string, bool) {
 
 // HasKseaf returns a boolean if a field has been set.
 func (o *ConfirmationDataResponse) HasKseaf() bool {
-	if o != nil && !isNil(o.Kseaf) {
+	if o != nil && !IsNil(o.Kseaf) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ConfirmationDataResponse) SetKseaf(v string) {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *ConfirmationDataResponse) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || isNil(o.PvsInfo) {
+	if o == nil || IsNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ConfirmationDataResponse) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfirmationDataResponse) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || isNil(o.PvsInfo) {
+	if o == nil || IsNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -153,7 +153,7 @@ func (o *ConfirmationDataResponse) GetPvsInfoOk() ([]ServerAddressingInfo, bool)
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *ConfirmationDataResponse) HasPvsInfo() bool {
-	if o != nil && !isNil(o.PvsInfo) {
+	if o != nil && !IsNil(o.PvsInfo) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *ConfirmationDataResponse) SetPvsInfo(v []ServerAddressingInfo) {
 }
 
 func (o ConfirmationDataResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o ConfirmationDataResponse) MarshalJSON() ([]byte, error) {
 func (o ConfirmationDataResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authResult"] = o.AuthResult
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.Kseaf) {
+	if !IsNil(o.Kseaf) {
 		toSerialize["kseaf"] = o.Kseaf
 	}
-	if !isNil(o.PvsInfo) {
+	if !IsNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableConfirmationDataResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 EES Application Client Information_API
 
-API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ACInfoNotification{}
 
 // ACInfoNotification AC Information notification.
 type ACInfoNotification struct {
-	// Identifier of the AC information subscription for which this notification is related to. 
+	// Identifier of the AC information subscription for which this notification is related to.
 	SubId string `json:"subId"`
 	// Notifications that include the ACs information matching filter criteria.
 	AcInfs []ACInformation `json:"acInfs"`
@@ -93,7 +93,7 @@ func (o *ACInfoNotification) SetAcInfs(v []ACInformation) {
 }
 
 func (o ACInfoNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableACInfoNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

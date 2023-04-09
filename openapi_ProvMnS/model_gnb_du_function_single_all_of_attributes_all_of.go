@@ -19,10 +19,10 @@ var _ MappedNullable = &GnbDuFunctionSingleAllOfAttributesAllOf{}
 
 // GnbDuFunctionSingleAllOfAttributesAllOf struct for GnbDuFunctionSingleAllOfAttributesAllOf
 type GnbDuFunctionSingleAllOfAttributesAllOf struct {
-	GnbDuId *float32 `json:"gnbDuId,omitempty"`
-	GnbDuName *string `json:"gnbDuName,omitempty"`
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
+	GnbDuId         *float32         `json:"gnbDuId,omitempty"`
+	GnbDuName       *string          `json:"gnbDuName,omitempty"`
+	GnbId           *string          `json:"gnbId,omitempty"`
+	GnbIdLength     *int32           `json:"gnbIdLength,omitempty"`
 	RimRSReportConf *RimRSReportConf `json:"rimRSReportConf,omitempty"`
 }
 
@@ -204,7 +204,7 @@ func (o *GnbDuFunctionSingleAllOfAttributesAllOf) SetRimRSReportConf(v RimRSRepo
 }
 
 func (o GnbDuFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,5 +266,3 @@ func (v *NullableGnbDuFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &Exception{}
 
 // Exception Represents the Exception information.
 type Exception struct {
-	ExcepId ExceptionId `json:"excepId"`
-	ExcepLevel *int32 `json:"excepLevel,omitempty"`
+	ExcepId    ExceptionId     `json:"excepId"`
+	ExcepLevel *int32          `json:"excepLevel,omitempty"`
 	ExcepTrend *ExceptionTrend `json:"excepTrend,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *Exception) SetExcepId(v ExceptionId) {
 
 // GetExcepLevel returns the ExcepLevel field value if set, zero value otherwise.
 func (o *Exception) GetExcepLevel() int32 {
-	if o == nil || isNil(o.ExcepLevel) {
+	if o == nil || IsNil(o.ExcepLevel) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *Exception) GetExcepLevel() int32 {
 // GetExcepLevelOk returns a tuple with the ExcepLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Exception) GetExcepLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.ExcepLevel) {
+	if o == nil || IsNil(o.ExcepLevel) {
 		return nil, false
 	}
 	return o.ExcepLevel, true
@@ -86,7 +86,7 @@ func (o *Exception) GetExcepLevelOk() (*int32, bool) {
 
 // HasExcepLevel returns a boolean if a field has been set.
 func (o *Exception) HasExcepLevel() bool {
-	if o != nil && !isNil(o.ExcepLevel) {
+	if o != nil && !IsNil(o.ExcepLevel) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *Exception) SetExcepLevel(v int32) {
 
 // GetExcepTrend returns the ExcepTrend field value if set, zero value otherwise.
 func (o *Exception) GetExcepTrend() ExceptionTrend {
-	if o == nil || isNil(o.ExcepTrend) {
+	if o == nil || IsNil(o.ExcepTrend) {
 		var ret ExceptionTrend
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *Exception) GetExcepTrend() ExceptionTrend {
 // GetExcepTrendOk returns a tuple with the ExcepTrend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Exception) GetExcepTrendOk() (*ExceptionTrend, bool) {
-	if o == nil || isNil(o.ExcepTrend) {
+	if o == nil || IsNil(o.ExcepTrend) {
 		return nil, false
 	}
 	return o.ExcepTrend, true
@@ -118,7 +118,7 @@ func (o *Exception) GetExcepTrendOk() (*ExceptionTrend, bool) {
 
 // HasExcepTrend returns a boolean if a field has been set.
 func (o *Exception) HasExcepTrend() bool {
-	if o != nil && !isNil(o.ExcepTrend) {
+	if o != nil && !IsNil(o.ExcepTrend) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *Exception) SetExcepTrend(v ExceptionTrend) {
 }
 
 func (o Exception) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o Exception) MarshalJSON() ([]byte, error) {
 func (o Exception) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["excepId"] = o.ExcepId
-	if !isNil(o.ExcepLevel) {
+	if !IsNil(o.ExcepLevel) {
 		toSerialize["excepLevel"] = o.ExcepLevel
 	}
-	if !isNil(o.ExcepTrend) {
+	if !IsNil(o.ExcepTrend) {
 		toSerialize["excepTrend"] = o.ExcepTrend
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableException) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

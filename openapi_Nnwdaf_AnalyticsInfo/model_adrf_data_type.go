@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AdrfDataType Possible values are: - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF. - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF. 
+// AdrfDataType Possible values are: - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF. - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
 type AdrfDataType struct {
-	AdrfDataTypeAnyOf *AdrfDataTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AdrfDataType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AdrfDataTypeAnyOf
-	err = json.Unmarshal(data, &dst.AdrfDataTypeAnyOf);
-	if err == nil {
-		jsonAdrfDataTypeAnyOf, _ := json.Marshal(dst.AdrfDataTypeAnyOf)
-		if string(jsonAdrfDataTypeAnyOf) == "{}" { // empty struct
-			dst.AdrfDataTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AdrfDataTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AdrfDataTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AdrfDataType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AdrfDataType) MarshalJSON() ([]byte, error) {
-	if src.AdrfDataTypeAnyOf != nil {
-		return json.Marshal(&src.AdrfDataTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAdrfDataType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

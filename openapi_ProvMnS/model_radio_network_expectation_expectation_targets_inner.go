@@ -17,13 +17,13 @@ import (
 
 // RadioNetworkExpectationExpectationTargetsInner - struct for RadioNetworkExpectationExpectationTargetsInner
 type RadioNetworkExpectationExpectationTargetsInner struct {
-	AveDLRANUEThptTarget *AveDLRANUEThptTarget
-	AveULRANUEThptTarget *AveULRANUEThptTarget
-	ExpectationTarget *ExpectationTarget
+	AveDLRANUEThptTarget      *AveDLRANUEThptTarget
+	AveULRANUEThptTarget      *AveULRANUEThptTarget
+	ExpectationTarget         *ExpectationTarget
 	LowDLRANUEThptRatioTarget *LowDLRANUEThptRatioTarget
-	LowSINRRatioTarget *LowSINRRatioTarget
+	LowSINRRatioTarget        *LowSINRRatioTarget
 	LowULRANUEThptRatioTarget *LowULRANUEThptRatioTarget
-	WeakRSRPRatioTarget *WeakRSRPRatioTarget
+	WeakRSRPRatioTarget       *WeakRSRPRatioTarget
 }
 
 // AveDLRANUEThptTargetAsRadioNetworkExpectationExpectationTargetsInner is a convenience function that returns AveDLRANUEThptTarget wrapped in RadioNetworkExpectationExpectationTargetsInner
@@ -74,7 +74,6 @@ func WeakRSRPRatioTargetAsRadioNetworkExpectationExpectationTargetsInner(v *Weak
 		WeakRSRPRatioTarget: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RadioNetworkExpectationExpectationTargetsInner) UnmarshalJSON(data []byte) error {
@@ -223,7 +222,7 @@ func (src RadioNetworkExpectationExpectationTargetsInner) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *RadioNetworkExpectationExpectationTargetsInner) GetActualInstance() (interface{}) {
+func (obj *RadioNetworkExpectationExpectationTargetsInner) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -294,5 +293,3 @@ func (v *NullableRadioNetworkExpectationExpectationTargetsInner) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

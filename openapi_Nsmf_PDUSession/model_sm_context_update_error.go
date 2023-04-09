@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &SmContextUpdateError{}
 
 // SmContextUpdateError Error within Update SM Context Response
 type SmContextUpdateError struct {
-	Error ExtProblemDetails `json:"error"`
-	N1SmMsg *RefToBinaryData `json:"n1SmMsg,omitempty"`
-	N2SmInfo *RefToBinaryData `json:"n2SmInfo,omitempty"`
-	N2SmInfoType *N2SmInfoType `json:"n2SmInfoType,omitempty"`
-	UpCnxState *UpCnxState `json:"upCnxState,omitempty"`
+	Error        ExtProblemDetails `json:"error"`
+	N1SmMsg      *RefToBinaryData  `json:"n1SmMsg,omitempty"`
+	N2SmInfo     *RefToBinaryData  `json:"n2SmInfo,omitempty"`
+	N2SmInfoType *N2SmInfoType     `json:"n2SmInfoType,omitempty"`
+	UpCnxState   *UpCnxState       `json:"upCnxState,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	RecoveryTime *time.Time `json:"recoveryTime,omitempty"`
 }
@@ -73,7 +73,7 @@ func (o *SmContextUpdateError) SetError(v ExtProblemDetails) {
 
 // GetN1SmMsg returns the N1SmMsg field value if set, zero value otherwise.
 func (o *SmContextUpdateError) GetN1SmMsg() RefToBinaryData {
-	if o == nil || isNil(o.N1SmMsg) {
+	if o == nil || IsNil(o.N1SmMsg) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *SmContextUpdateError) GetN1SmMsg() RefToBinaryData {
 // GetN1SmMsgOk returns a tuple with the N1SmMsg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateError) GetN1SmMsgOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N1SmMsg) {
+	if o == nil || IsNil(o.N1SmMsg) {
 		return nil, false
 	}
 	return o.N1SmMsg, true
@@ -91,7 +91,7 @@ func (o *SmContextUpdateError) GetN1SmMsgOk() (*RefToBinaryData, bool) {
 
 // HasN1SmMsg returns a boolean if a field has been set.
 func (o *SmContextUpdateError) HasN1SmMsg() bool {
-	if o != nil && !isNil(o.N1SmMsg) {
+	if o != nil && !IsNil(o.N1SmMsg) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SmContextUpdateError) SetN1SmMsg(v RefToBinaryData) {
 
 // GetN2SmInfo returns the N2SmInfo field value if set, zero value otherwise.
 func (o *SmContextUpdateError) GetN2SmInfo() RefToBinaryData {
-	if o == nil || isNil(o.N2SmInfo) {
+	if o == nil || IsNil(o.N2SmInfo) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *SmContextUpdateError) GetN2SmInfo() RefToBinaryData {
 // GetN2SmInfoOk returns a tuple with the N2SmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateError) GetN2SmInfoOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N2SmInfo) {
+	if o == nil || IsNil(o.N2SmInfo) {
 		return nil, false
 	}
 	return o.N2SmInfo, true
@@ -123,7 +123,7 @@ func (o *SmContextUpdateError) GetN2SmInfoOk() (*RefToBinaryData, bool) {
 
 // HasN2SmInfo returns a boolean if a field has been set.
 func (o *SmContextUpdateError) HasN2SmInfo() bool {
-	if o != nil && !isNil(o.N2SmInfo) {
+	if o != nil && !IsNil(o.N2SmInfo) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *SmContextUpdateError) SetN2SmInfo(v RefToBinaryData) {
 
 // GetN2SmInfoType returns the N2SmInfoType field value if set, zero value otherwise.
 func (o *SmContextUpdateError) GetN2SmInfoType() N2SmInfoType {
-	if o == nil || isNil(o.N2SmInfoType) {
+	if o == nil || IsNil(o.N2SmInfoType) {
 		var ret N2SmInfoType
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *SmContextUpdateError) GetN2SmInfoType() N2SmInfoType {
 // GetN2SmInfoTypeOk returns a tuple with the N2SmInfoType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateError) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
-	if o == nil || isNil(o.N2SmInfoType) {
+	if o == nil || IsNil(o.N2SmInfoType) {
 		return nil, false
 	}
 	return o.N2SmInfoType, true
@@ -155,7 +155,7 @@ func (o *SmContextUpdateError) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
 
 // HasN2SmInfoType returns a boolean if a field has been set.
 func (o *SmContextUpdateError) HasN2SmInfoType() bool {
-	if o != nil && !isNil(o.N2SmInfoType) {
+	if o != nil && !IsNil(o.N2SmInfoType) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *SmContextUpdateError) SetN2SmInfoType(v N2SmInfoType) {
 
 // GetUpCnxState returns the UpCnxState field value if set, zero value otherwise.
 func (o *SmContextUpdateError) GetUpCnxState() UpCnxState {
-	if o == nil || isNil(o.UpCnxState) {
+	if o == nil || IsNil(o.UpCnxState) {
 		var ret UpCnxState
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *SmContextUpdateError) GetUpCnxState() UpCnxState {
 // GetUpCnxStateOk returns a tuple with the UpCnxState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateError) GetUpCnxStateOk() (*UpCnxState, bool) {
-	if o == nil || isNil(o.UpCnxState) {
+	if o == nil || IsNil(o.UpCnxState) {
 		return nil, false
 	}
 	return o.UpCnxState, true
@@ -187,7 +187,7 @@ func (o *SmContextUpdateError) GetUpCnxStateOk() (*UpCnxState, bool) {
 
 // HasUpCnxState returns a boolean if a field has been set.
 func (o *SmContextUpdateError) HasUpCnxState() bool {
-	if o != nil && !isNil(o.UpCnxState) {
+	if o != nil && !IsNil(o.UpCnxState) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *SmContextUpdateError) SetUpCnxState(v UpCnxState) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *SmContextUpdateError) GetRecoveryTime() time.Time {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *SmContextUpdateError) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateError) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -219,7 +219,7 @@ func (o *SmContextUpdateError) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *SmContextUpdateError) HasRecoveryTime() bool {
-	if o != nil && !isNil(o.RecoveryTime) {
+	if o != nil && !IsNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *SmContextUpdateError) SetRecoveryTime(v time.Time) {
 }
 
 func (o SmContextUpdateError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -242,19 +242,19 @@ func (o SmContextUpdateError) MarshalJSON() ([]byte, error) {
 func (o SmContextUpdateError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.N1SmMsg) {
+	if !IsNil(o.N1SmMsg) {
 		toSerialize["n1SmMsg"] = o.N1SmMsg
 	}
-	if !isNil(o.N2SmInfo) {
+	if !IsNil(o.N2SmInfo) {
 		toSerialize["n2SmInfo"] = o.N2SmInfo
 	}
-	if !isNil(o.N2SmInfoType) {
+	if !IsNil(o.N2SmInfoType) {
 		toSerialize["n2SmInfoType"] = o.N2SmInfoType
 	}
-	if !isNil(o.UpCnxState) {
+	if !IsNil(o.UpCnxState) {
 		toSerialize["upCnxState"] = o.UpCnxState
 	}
-	if !isNil(o.RecoveryTime) {
+	if !IsNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
 	return toSerialize, nil
@@ -295,5 +295,3 @@ func (v *NullableSmContextUpdateError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

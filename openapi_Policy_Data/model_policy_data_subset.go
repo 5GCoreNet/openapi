@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,28 +17,14 @@ import (
 
 // PolicyDataSubset Indicates a policy data subset.
 type PolicyDataSubset struct {
-	PolicyDataSubsetAnyOf *PolicyDataSubsetAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PolicyDataSubset) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PolicyDataSubsetAnyOf
-	err = json.Unmarshal(data, &dst.PolicyDataSubsetAnyOf);
-	if err == nil {
-		jsonPolicyDataSubsetAnyOf, _ := json.Marshal(dst.PolicyDataSubsetAnyOf)
-		if string(jsonPolicyDataSubsetAnyOf) == "{}" { // empty struct
-			dst.PolicyDataSubsetAnyOf = nil
-		} else {
-			return nil // data stored in dst.PolicyDataSubsetAnyOf, return on the first match
-		}
-	} else {
-		dst.PolicyDataSubsetAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PolicyDataSubset) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PolicyDataSubset) MarshalJSON() ([]byte, error) {
-	if src.PolicyDataSubsetAnyOf != nil {
-		return json.Marshal(&src.PolicyDataSubsetAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePolicyDataSubset) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

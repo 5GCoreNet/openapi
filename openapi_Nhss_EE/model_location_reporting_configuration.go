@@ -1,7 +1,7 @@
 /*
 Nhss_EE
 
-HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &LocationReportingConfiguration{}
 
 // LocationReportingConfiguration Contains data needed for a Monitoring Configuration, specific to the 'Location Reporting' event type
 type LocationReportingConfiguration struct {
-	CurrentLocation bool `json:"currentLocation"`
-	Accuracy *LocationAccuracy `json:"accuracy,omitempty"`
+	CurrentLocation bool              `json:"currentLocation"`
+	Accuracy        *LocationAccuracy `json:"accuracy,omitempty"`
 }
 
 // NewLocationReportingConfiguration instantiates a new LocationReportingConfiguration object
@@ -67,7 +67,7 @@ func (o *LocationReportingConfiguration) SetCurrentLocation(v bool) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *LocationReportingConfiguration) GetAccuracy() LocationAccuracy {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret LocationAccuracy
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LocationReportingConfiguration) GetAccuracy() LocationAccuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingConfiguration) GetAccuracyOk() (*LocationAccuracy, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -85,7 +85,7 @@ func (o *LocationReportingConfiguration) GetAccuracyOk() (*LocationAccuracy, boo
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *LocationReportingConfiguration) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *LocationReportingConfiguration) SetAccuracy(v LocationAccuracy) {
 }
 
 func (o LocationReportingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o LocationReportingConfiguration) MarshalJSON() ([]byte, error) {
 func (o LocationReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["currentLocation"] = o.CurrentLocation
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableLocationReportingConfiguration) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

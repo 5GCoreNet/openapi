@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -22,10 +22,10 @@ type EeGroupProfileData struct {
 	RestrictedEventTypes []EventType `json:"restrictedEventTypes,omitempty"`
 	// A map (list of key-value pairs where EventType serves as key) of MTC provider lists. In addition to defined EventTypes, the key value \"ALL\" may be used to identify a map entry which contains a list of MtcProviders that are allowed monitoring all Event Types.
 	AllowedMtcProvider *map[string][]MtcProvider `json:"allowedMtcProvider,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	IwkEpcRestricted *bool `json:"iwkEpcRestricted,omitempty"`
-	ExtGroupId *string `json:"extGroupId,omitempty"`
+	IwkEpcRestricted  *bool   `json:"iwkEpcRestricted,omitempty"`
+	ExtGroupId        *string `json:"extGroupId,omitempty"`
 	// Identifier of a group of NFs.
 	HssGroupId *string `json:"hssGroupId,omitempty"`
 }
@@ -53,7 +53,7 @@ func NewEeGroupProfileDataWithDefaults() *EeGroupProfileData {
 
 // GetRestrictedEventTypes returns the RestrictedEventTypes field value if set, zero value otherwise.
 func (o *EeGroupProfileData) GetRestrictedEventTypes() []EventType {
-	if o == nil || isNil(o.RestrictedEventTypes) {
+	if o == nil || IsNil(o.RestrictedEventTypes) {
 		var ret []EventType
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *EeGroupProfileData) GetRestrictedEventTypes() []EventType {
 // GetRestrictedEventTypesOk returns a tuple with the RestrictedEventTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeGroupProfileData) GetRestrictedEventTypesOk() ([]EventType, bool) {
-	if o == nil || isNil(o.RestrictedEventTypes) {
+	if o == nil || IsNil(o.RestrictedEventTypes) {
 		return nil, false
 	}
 	return o.RestrictedEventTypes, true
@@ -71,7 +71,7 @@ func (o *EeGroupProfileData) GetRestrictedEventTypesOk() ([]EventType, bool) {
 
 // HasRestrictedEventTypes returns a boolean if a field has been set.
 func (o *EeGroupProfileData) HasRestrictedEventTypes() bool {
-	if o != nil && !isNil(o.RestrictedEventTypes) {
+	if o != nil && !IsNil(o.RestrictedEventTypes) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *EeGroupProfileData) SetRestrictedEventTypes(v []EventType) {
 
 // GetAllowedMtcProvider returns the AllowedMtcProvider field value if set, zero value otherwise.
 func (o *EeGroupProfileData) GetAllowedMtcProvider() map[string][]MtcProvider {
-	if o == nil || isNil(o.AllowedMtcProvider) {
+	if o == nil || IsNil(o.AllowedMtcProvider) {
 		var ret map[string][]MtcProvider
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *EeGroupProfileData) GetAllowedMtcProvider() map[string][]MtcProvider {
 // GetAllowedMtcProviderOk returns a tuple with the AllowedMtcProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeGroupProfileData) GetAllowedMtcProviderOk() (*map[string][]MtcProvider, bool) {
-	if o == nil || isNil(o.AllowedMtcProvider) {
+	if o == nil || IsNil(o.AllowedMtcProvider) {
 		return nil, false
 	}
 	return o.AllowedMtcProvider, true
@@ -103,7 +103,7 @@ func (o *EeGroupProfileData) GetAllowedMtcProviderOk() (*map[string][]MtcProvide
 
 // HasAllowedMtcProvider returns a boolean if a field has been set.
 func (o *EeGroupProfileData) HasAllowedMtcProvider() bool {
-	if o != nil && !isNil(o.AllowedMtcProvider) {
+	if o != nil && !IsNil(o.AllowedMtcProvider) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *EeGroupProfileData) SetAllowedMtcProvider(v map[string][]MtcProvider) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EeGroupProfileData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *EeGroupProfileData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeGroupProfileData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -135,7 +135,7 @@ func (o *EeGroupProfileData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EeGroupProfileData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *EeGroupProfileData) SetSupportedFeatures(v string) {
 
 // GetIwkEpcRestricted returns the IwkEpcRestricted field value if set, zero value otherwise.
 func (o *EeGroupProfileData) GetIwkEpcRestricted() bool {
-	if o == nil || isNil(o.IwkEpcRestricted) {
+	if o == nil || IsNil(o.IwkEpcRestricted) {
 		var ret bool
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *EeGroupProfileData) GetIwkEpcRestricted() bool {
 // GetIwkEpcRestrictedOk returns a tuple with the IwkEpcRestricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeGroupProfileData) GetIwkEpcRestrictedOk() (*bool, bool) {
-	if o == nil || isNil(o.IwkEpcRestricted) {
+	if o == nil || IsNil(o.IwkEpcRestricted) {
 		return nil, false
 	}
 	return o.IwkEpcRestricted, true
@@ -167,7 +167,7 @@ func (o *EeGroupProfileData) GetIwkEpcRestrictedOk() (*bool, bool) {
 
 // HasIwkEpcRestricted returns a boolean if a field has been set.
 func (o *EeGroupProfileData) HasIwkEpcRestricted() bool {
-	if o != nil && !isNil(o.IwkEpcRestricted) {
+	if o != nil && !IsNil(o.IwkEpcRestricted) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *EeGroupProfileData) SetIwkEpcRestricted(v bool) {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *EeGroupProfileData) GetExtGroupId() string {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *EeGroupProfileData) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeGroupProfileData) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -199,7 +199,7 @@ func (o *EeGroupProfileData) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *EeGroupProfileData) HasExtGroupId() bool {
-	if o != nil && !isNil(o.ExtGroupId) {
+	if o != nil && !IsNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *EeGroupProfileData) SetExtGroupId(v string) {
 
 // GetHssGroupId returns the HssGroupId field value if set, zero value otherwise.
 func (o *EeGroupProfileData) GetHssGroupId() string {
-	if o == nil || isNil(o.HssGroupId) {
+	if o == nil || IsNil(o.HssGroupId) {
 		var ret string
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *EeGroupProfileData) GetHssGroupId() string {
 // GetHssGroupIdOk returns a tuple with the HssGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeGroupProfileData) GetHssGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.HssGroupId) {
+	if o == nil || IsNil(o.HssGroupId) {
 		return nil, false
 	}
 	return o.HssGroupId, true
@@ -231,7 +231,7 @@ func (o *EeGroupProfileData) GetHssGroupIdOk() (*string, bool) {
 
 // HasHssGroupId returns a boolean if a field has been set.
 func (o *EeGroupProfileData) HasHssGroupId() bool {
-	if o != nil && !isNil(o.HssGroupId) {
+	if o != nil && !IsNil(o.HssGroupId) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *EeGroupProfileData) SetHssGroupId(v string) {
 }
 
 func (o EeGroupProfileData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -253,22 +253,22 @@ func (o EeGroupProfileData) MarshalJSON() ([]byte, error) {
 
 func (o EeGroupProfileData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RestrictedEventTypes) {
+	if !IsNil(o.RestrictedEventTypes) {
 		toSerialize["restrictedEventTypes"] = o.RestrictedEventTypes
 	}
-	if !isNil(o.AllowedMtcProvider) {
+	if !IsNil(o.AllowedMtcProvider) {
 		toSerialize["allowedMtcProvider"] = o.AllowedMtcProvider
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.IwkEpcRestricted) {
+	if !IsNil(o.IwkEpcRestricted) {
 		toSerialize["iwkEpcRestricted"] = o.IwkEpcRestricted
 	}
-	if !isNil(o.ExtGroupId) {
+	if !IsNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
-	if !isNil(o.HssGroupId) {
+	if !IsNil(o.HssGroupId) {
 		toSerialize["hssGroupId"] = o.HssGroupId
 	}
 	return toSerialize, nil
@@ -309,5 +309,3 @@ func (v *NullableEeGroupProfileData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

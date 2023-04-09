@@ -1,7 +1,7 @@
 /*
 Eees_EECRegistration
 
-API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UnfulfilledAcProfile{}
 // UnfulfilledAcProfile Desrcibes AC Profile ID and reason sent by EES in EEC Register response.
 type UnfulfilledAcProfile struct {
 	// The AC ID of a AC profile.
-	AcId *string `json:"acId,omitempty"`
+	AcId   *string             `json:"acId,omitempty"`
 	Reason *UnfulfillACProfRsn `json:"reason,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewUnfulfilledAcProfileWithDefaults() *UnfulfilledAcProfile {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *UnfulfilledAcProfile) GetAcId() string {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UnfulfilledAcProfile) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnfulfilledAcProfile) GetAcIdOk() (*string, bool) {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -61,7 +61,7 @@ func (o *UnfulfilledAcProfile) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *UnfulfilledAcProfile) HasAcId() bool {
-	if o != nil && !isNil(o.AcId) {
+	if o != nil && !IsNil(o.AcId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UnfulfilledAcProfile) SetAcId(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *UnfulfilledAcProfile) GetReason() UnfulfillACProfRsn {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret UnfulfillACProfRsn
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UnfulfilledAcProfile) GetReason() UnfulfillACProfRsn {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnfulfilledAcProfile) GetReasonOk() (*UnfulfillACProfRsn, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -93,7 +93,7 @@ func (o *UnfulfilledAcProfile) GetReasonOk() (*UnfulfillACProfRsn, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *UnfulfilledAcProfile) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *UnfulfilledAcProfile) SetReason(v UnfulfillACProfRsn) {
 }
 
 func (o UnfulfilledAcProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o UnfulfilledAcProfile) MarshalJSON() ([]byte, error) {
 
 func (o UnfulfilledAcProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AcId) {
+	if !IsNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableUnfulfilledAcProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

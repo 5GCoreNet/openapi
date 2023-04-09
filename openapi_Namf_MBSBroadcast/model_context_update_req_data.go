@@ -1,7 +1,7 @@
 /*
 Namf_MBSBroadcast
 
-AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF MBSBroadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,16 +19,16 @@ var _ MappedNullable = &ContextUpdateReqData{}
 
 // ContextUpdateReqData Data within ContextUpdate Request
 type ContextUpdateReqData struct {
-	MbsServiceArea *MbsServiceArea `json:"mbsServiceArea,omitempty"`
+	MbsServiceArea         *MbsServiceArea      `json:"mbsServiceArea,omitempty"`
 	MbsServiceAreaInfoList []MbsServiceAreaInfo `json:"mbsServiceAreaInfoList,omitempty"`
-	N2MbsSmInfo *N2MbsSmInfo `json:"n2MbsSmInfo,omitempty"`
-	RanIdList []GlobalRanNodeId `json:"ranIdList,omitempty"`
-	NoNgapSignallingInd *bool `json:"noNgapSignallingInd,omitempty"`
+	N2MbsSmInfo            *N2MbsSmInfo         `json:"n2MbsSmInfo,omitempty"`
+	RanIdList              []GlobalRanNodeId    `json:"ranIdList,omitempty"`
+	NoNgapSignallingInd    *bool                `json:"noNgapSignallingInd,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	NotifyUri *string `json:"notifyUri,omitempty"`
 	// indicating a time in seconds.
-	MaxResponseTime *int32 `json:"maxResponseTime,omitempty"`
-	N2MbsInfoChangeInd *bool `json:"n2MbsInfoChangeInd,omitempty"`
+	MaxResponseTime    *int32 `json:"maxResponseTime,omitempty"`
+	N2MbsInfoChangeInd *bool  `json:"n2MbsInfoChangeInd,omitempty"`
 }
 
 // NewContextUpdateReqData instantiates a new ContextUpdateReqData object
@@ -50,7 +50,7 @@ func NewContextUpdateReqDataWithDefaults() *ContextUpdateReqData {
 
 // GetMbsServiceArea returns the MbsServiceArea field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetMbsServiceArea() MbsServiceArea {
-	if o == nil || isNil(o.MbsServiceArea) {
+	if o == nil || IsNil(o.MbsServiceArea) {
 		var ret MbsServiceArea
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *ContextUpdateReqData) GetMbsServiceArea() MbsServiceArea {
 // GetMbsServiceAreaOk returns a tuple with the MbsServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetMbsServiceAreaOk() (*MbsServiceArea, bool) {
-	if o == nil || isNil(o.MbsServiceArea) {
+	if o == nil || IsNil(o.MbsServiceArea) {
 		return nil, false
 	}
 	return o.MbsServiceArea, true
@@ -68,7 +68,7 @@ func (o *ContextUpdateReqData) GetMbsServiceAreaOk() (*MbsServiceArea, bool) {
 
 // HasMbsServiceArea returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasMbsServiceArea() bool {
-	if o != nil && !isNil(o.MbsServiceArea) {
+	if o != nil && !IsNil(o.MbsServiceArea) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *ContextUpdateReqData) SetMbsServiceArea(v MbsServiceArea) {
 
 // GetMbsServiceAreaInfoList returns the MbsServiceAreaInfoList field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetMbsServiceAreaInfoList() []MbsServiceAreaInfo {
-	if o == nil || isNil(o.MbsServiceAreaInfoList) {
+	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
 		var ret []MbsServiceAreaInfo
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *ContextUpdateReqData) GetMbsServiceAreaInfoList() []MbsServiceAreaInfo 
 // GetMbsServiceAreaInfoListOk returns a tuple with the MbsServiceAreaInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetMbsServiceAreaInfoListOk() ([]MbsServiceAreaInfo, bool) {
-	if o == nil || isNil(o.MbsServiceAreaInfoList) {
+	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
 		return nil, false
 	}
 	return o.MbsServiceAreaInfoList, true
@@ -100,7 +100,7 @@ func (o *ContextUpdateReqData) GetMbsServiceAreaInfoListOk() ([]MbsServiceAreaIn
 
 // HasMbsServiceAreaInfoList returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasMbsServiceAreaInfoList() bool {
-	if o != nil && !isNil(o.MbsServiceAreaInfoList) {
+	if o != nil && !IsNil(o.MbsServiceAreaInfoList) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *ContextUpdateReqData) SetMbsServiceAreaInfoList(v []MbsServiceAreaInfo)
 
 // GetN2MbsSmInfo returns the N2MbsSmInfo field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetN2MbsSmInfo() N2MbsSmInfo {
-	if o == nil || isNil(o.N2MbsSmInfo) {
+	if o == nil || IsNil(o.N2MbsSmInfo) {
 		var ret N2MbsSmInfo
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *ContextUpdateReqData) GetN2MbsSmInfo() N2MbsSmInfo {
 // GetN2MbsSmInfoOk returns a tuple with the N2MbsSmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetN2MbsSmInfoOk() (*N2MbsSmInfo, bool) {
-	if o == nil || isNil(o.N2MbsSmInfo) {
+	if o == nil || IsNil(o.N2MbsSmInfo) {
 		return nil, false
 	}
 	return o.N2MbsSmInfo, true
@@ -132,7 +132,7 @@ func (o *ContextUpdateReqData) GetN2MbsSmInfoOk() (*N2MbsSmInfo, bool) {
 
 // HasN2MbsSmInfo returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasN2MbsSmInfo() bool {
-	if o != nil && !isNil(o.N2MbsSmInfo) {
+	if o != nil && !IsNil(o.N2MbsSmInfo) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *ContextUpdateReqData) SetN2MbsSmInfo(v N2MbsSmInfo) {
 
 // GetRanIdList returns the RanIdList field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetRanIdList() []GlobalRanNodeId {
-	if o == nil || isNil(o.RanIdList) {
+	if o == nil || IsNil(o.RanIdList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *ContextUpdateReqData) GetRanIdList() []GlobalRanNodeId {
 // GetRanIdListOk returns a tuple with the RanIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetRanIdListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.RanIdList) {
+	if o == nil || IsNil(o.RanIdList) {
 		return nil, false
 	}
 	return o.RanIdList, true
@@ -164,7 +164,7 @@ func (o *ContextUpdateReqData) GetRanIdListOk() ([]GlobalRanNodeId, bool) {
 
 // HasRanIdList returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasRanIdList() bool {
-	if o != nil && !isNil(o.RanIdList) {
+	if o != nil && !IsNil(o.RanIdList) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *ContextUpdateReqData) SetRanIdList(v []GlobalRanNodeId) {
 
 // GetNoNgapSignallingInd returns the NoNgapSignallingInd field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetNoNgapSignallingInd() bool {
-	if o == nil || isNil(o.NoNgapSignallingInd) {
+	if o == nil || IsNil(o.NoNgapSignallingInd) {
 		var ret bool
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *ContextUpdateReqData) GetNoNgapSignallingInd() bool {
 // GetNoNgapSignallingIndOk returns a tuple with the NoNgapSignallingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetNoNgapSignallingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.NoNgapSignallingInd) {
+	if o == nil || IsNil(o.NoNgapSignallingInd) {
 		return nil, false
 	}
 	return o.NoNgapSignallingInd, true
@@ -196,7 +196,7 @@ func (o *ContextUpdateReqData) GetNoNgapSignallingIndOk() (*bool, bool) {
 
 // HasNoNgapSignallingInd returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasNoNgapSignallingInd() bool {
-	if o != nil && !isNil(o.NoNgapSignallingInd) {
+	if o != nil && !IsNil(o.NoNgapSignallingInd) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *ContextUpdateReqData) SetNoNgapSignallingInd(v bool) {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetNotifyUri() string {
-	if o == nil || isNil(o.NotifyUri) {
+	if o == nil || IsNil(o.NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *ContextUpdateReqData) GetNotifyUri() string {
 // GetNotifyUriOk returns a tuple with the NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetNotifyUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyUri) {
+	if o == nil || IsNil(o.NotifyUri) {
 		return nil, false
 	}
 	return o.NotifyUri, true
@@ -228,7 +228,7 @@ func (o *ContextUpdateReqData) GetNotifyUriOk() (*string, bool) {
 
 // HasNotifyUri returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasNotifyUri() bool {
-	if o != nil && !isNil(o.NotifyUri) {
+	if o != nil && !IsNil(o.NotifyUri) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *ContextUpdateReqData) SetNotifyUri(v string) {
 
 // GetMaxResponseTime returns the MaxResponseTime field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetMaxResponseTime() int32 {
-	if o == nil || isNil(o.MaxResponseTime) {
+	if o == nil || IsNil(o.MaxResponseTime) {
 		var ret int32
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *ContextUpdateReqData) GetMaxResponseTime() int32 {
 // GetMaxResponseTimeOk returns a tuple with the MaxResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetMaxResponseTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxResponseTime) {
+	if o == nil || IsNil(o.MaxResponseTime) {
 		return nil, false
 	}
 	return o.MaxResponseTime, true
@@ -260,7 +260,7 @@ func (o *ContextUpdateReqData) GetMaxResponseTimeOk() (*int32, bool) {
 
 // HasMaxResponseTime returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasMaxResponseTime() bool {
-	if o != nil && !isNil(o.MaxResponseTime) {
+	if o != nil && !IsNil(o.MaxResponseTime) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *ContextUpdateReqData) SetMaxResponseTime(v int32) {
 
 // GetN2MbsInfoChangeInd returns the N2MbsInfoChangeInd field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetN2MbsInfoChangeInd() bool {
-	if o == nil || isNil(o.N2MbsInfoChangeInd) {
+	if o == nil || IsNil(o.N2MbsInfoChangeInd) {
 		var ret bool
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *ContextUpdateReqData) GetN2MbsInfoChangeInd() bool {
 // GetN2MbsInfoChangeIndOk returns a tuple with the N2MbsInfoChangeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetN2MbsInfoChangeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.N2MbsInfoChangeInd) {
+	if o == nil || IsNil(o.N2MbsInfoChangeInd) {
 		return nil, false
 	}
 	return o.N2MbsInfoChangeInd, true
@@ -292,7 +292,7 @@ func (o *ContextUpdateReqData) GetN2MbsInfoChangeIndOk() (*bool, bool) {
 
 // HasN2MbsInfoChangeInd returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasN2MbsInfoChangeInd() bool {
-	if o != nil && !isNil(o.N2MbsInfoChangeInd) {
+	if o != nil && !IsNil(o.N2MbsInfoChangeInd) {
 		return true
 	}
 
@@ -305,7 +305,7 @@ func (o *ContextUpdateReqData) SetN2MbsInfoChangeInd(v bool) {
 }
 
 func (o ContextUpdateReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -314,28 +314,28 @@ func (o ContextUpdateReqData) MarshalJSON() ([]byte, error) {
 
 func (o ContextUpdateReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsServiceArea) {
+	if !IsNil(o.MbsServiceArea) {
 		toSerialize["mbsServiceArea"] = o.MbsServiceArea
 	}
-	if !isNil(o.MbsServiceAreaInfoList) {
+	if !IsNil(o.MbsServiceAreaInfoList) {
 		toSerialize["mbsServiceAreaInfoList"] = o.MbsServiceAreaInfoList
 	}
-	if !isNil(o.N2MbsSmInfo) {
+	if !IsNil(o.N2MbsSmInfo) {
 		toSerialize["n2MbsSmInfo"] = o.N2MbsSmInfo
 	}
-	if !isNil(o.RanIdList) {
+	if !IsNil(o.RanIdList) {
 		toSerialize["ranIdList"] = o.RanIdList
 	}
-	if !isNil(o.NoNgapSignallingInd) {
+	if !IsNil(o.NoNgapSignallingInd) {
 		toSerialize["noNgapSignallingInd"] = o.NoNgapSignallingInd
 	}
-	if !isNil(o.NotifyUri) {
+	if !IsNil(o.NotifyUri) {
 		toSerialize["notifyUri"] = o.NotifyUri
 	}
-	if !isNil(o.MaxResponseTime) {
+	if !IsNil(o.MaxResponseTime) {
 		toSerialize["maxResponseTime"] = o.MaxResponseTime
 	}
-	if !isNil(o.N2MbsInfoChangeInd) {
+	if !IsNil(o.N2MbsInfoChangeInd) {
 		toSerialize["n2MbsInfoChangeInd"] = o.N2MbsInfoChangeInd
 	}
 	return toSerialize, nil
@@ -376,5 +376,3 @@ func (v *NullableContextUpdateReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

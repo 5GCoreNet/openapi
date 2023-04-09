@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the GbaSubscriberData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GbaSubscriberData{}
 
-// GbaSubscriberData GBA subscriber data of the UE; it includes the GBA User Security Settings (GUSS) data 
+// GbaSubscriberData GBA subscriber data of the UE; it includes the GBA User Security Settings (GUSS) data
 type GbaSubscriberData struct {
 	Guss *Guss `json:"guss,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewGbaSubscriberDataWithDefaults() *GbaSubscriberData {
 
 // GetGuss returns the Guss field value if set, zero value otherwise.
 func (o *GbaSubscriberData) GetGuss() Guss {
-	if o == nil || isNil(o.Guss) {
+	if o == nil || IsNil(o.Guss) {
 		var ret Guss
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *GbaSubscriberData) GetGuss() Guss {
 // GetGussOk returns a tuple with the Guss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaSubscriberData) GetGussOk() (*Guss, bool) {
-	if o == nil || isNil(o.Guss) {
+	if o == nil || IsNil(o.Guss) {
 		return nil, false
 	}
 	return o.Guss, true
@@ -59,7 +59,7 @@ func (o *GbaSubscriberData) GetGussOk() (*Guss, bool) {
 
 // HasGuss returns a boolean if a field has been set.
 func (o *GbaSubscriberData) HasGuss() bool {
-	if o != nil && !isNil(o.Guss) {
+	if o != nil && !IsNil(o.Guss) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *GbaSubscriberData) SetGuss(v Guss) {
 }
 
 func (o GbaSubscriberData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o GbaSubscriberData) MarshalJSON() ([]byte, error) {
 
 func (o GbaSubscriberData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Guss) {
+	if !IsNil(o.Guss) {
 		toSerialize["guss"] = o.Guss
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableGbaSubscriberData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

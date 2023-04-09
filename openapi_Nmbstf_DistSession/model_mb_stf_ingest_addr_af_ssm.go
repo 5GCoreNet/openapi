@@ -1,7 +1,7 @@
 /*
 Nmbstf-distsession
 
-MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,9 +19,7 @@ var _ MappedNullable = &MbStfIngestAddrAfSsm{}
 
 // MbStfIngestAddrAfSsm struct for MbStfIngestAddrAfSsm
 type MbStfIngestAddrAfSsm struct {
-	Ssm Ssm `json:"ssm"`
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	PortNumber int32 `json:"portNumber"`
+	ExtSsm
 }
 
 // NewMbStfIngestAddrAfSsm instantiates a new MbStfIngestAddrAfSsm object
@@ -43,56 +41,8 @@ func NewMbStfIngestAddrAfSsmWithDefaults() *MbStfIngestAddrAfSsm {
 	return &this
 }
 
-// GetSsm returns the Ssm field value
-func (o *MbStfIngestAddrAfSsm) GetSsm() Ssm {
-	if o == nil {
-		var ret Ssm
-		return ret
-	}
-
-	return o.Ssm
-}
-
-// GetSsmOk returns a tuple with the Ssm field value
-// and a boolean to check if the value has been set.
-func (o *MbStfIngestAddrAfSsm) GetSsmOk() (*Ssm, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Ssm, true
-}
-
-// SetSsm sets field value
-func (o *MbStfIngestAddrAfSsm) SetSsm(v Ssm) {
-	o.Ssm = v
-}
-
-// GetPortNumber returns the PortNumber field value
-func (o *MbStfIngestAddrAfSsm) GetPortNumber() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.PortNumber
-}
-
-// GetPortNumberOk returns a tuple with the PortNumber field value
-// and a boolean to check if the value has been set.
-func (o *MbStfIngestAddrAfSsm) GetPortNumberOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PortNumber, true
-}
-
-// SetPortNumber sets field value
-func (o *MbStfIngestAddrAfSsm) SetPortNumber(v int32) {
-	o.PortNumber = v
-}
-
 func (o MbStfIngestAddrAfSsm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -101,8 +51,14 @@ func (o MbStfIngestAddrAfSsm) MarshalJSON() ([]byte, error) {
 
 func (o MbStfIngestAddrAfSsm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["ssm"] = o.Ssm
-	toSerialize["portNumber"] = o.PortNumber
+	serializedExtSsm, errExtSsm := json.Marshal(o.ExtSsm)
+	if errExtSsm != nil {
+		return map[string]interface{}{}, errExtSsm
+	}
+	errExtSsm = json.Unmarshal([]byte(serializedExtSsm), &toSerialize)
+	if errExtSsm != nil {
+		return map[string]interface{}{}, errExtSsm
+	}
 	return toSerialize, nil
 }
 
@@ -141,5 +97,3 @@ func (v *NullableMbStfIngestAddrAfSsm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

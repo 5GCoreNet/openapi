@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &EcsAddrConfigInfo{}
 
 // EcsAddrConfigInfo struct for EcsAddrConfigInfo
 type EcsAddrConfigInfo struct {
-	EcsServerAddr *EcsServerAddr `json:"ecsServerAddr,omitempty"`
+	EcsServerAddr       *EcsServerAddr       `json:"ecsServerAddr,omitempty"`
 	SpatialValidityCond *SpatialValidityCond `json:"spatialValidityCond,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewEcsAddrConfigInfoWithDefaults() *EcsAddrConfigInfo {
 
 // GetEcsServerAddr returns the EcsServerAddr field value if set, zero value otherwise.
 func (o *EcsAddrConfigInfo) GetEcsServerAddr() EcsServerAddr {
-	if o == nil || isNil(o.EcsServerAddr) {
+	if o == nil || IsNil(o.EcsServerAddr) {
 		var ret EcsServerAddr
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EcsAddrConfigInfo) GetEcsServerAddr() EcsServerAddr {
 // GetEcsServerAddrOk returns a tuple with the EcsServerAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddrConfigInfo) GetEcsServerAddrOk() (*EcsServerAddr, bool) {
-	if o == nil || isNil(o.EcsServerAddr) {
+	if o == nil || IsNil(o.EcsServerAddr) {
 		return nil, false
 	}
 	return o.EcsServerAddr, true
@@ -60,7 +60,7 @@ func (o *EcsAddrConfigInfo) GetEcsServerAddrOk() (*EcsServerAddr, bool) {
 
 // HasEcsServerAddr returns a boolean if a field has been set.
 func (o *EcsAddrConfigInfo) HasEcsServerAddr() bool {
-	if o != nil && !isNil(o.EcsServerAddr) {
+	if o != nil && !IsNil(o.EcsServerAddr) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EcsAddrConfigInfo) SetEcsServerAddr(v EcsServerAddr) {
 
 // GetSpatialValidityCond returns the SpatialValidityCond field value if set, zero value otherwise.
 func (o *EcsAddrConfigInfo) GetSpatialValidityCond() SpatialValidityCond {
-	if o == nil || isNil(o.SpatialValidityCond) {
+	if o == nil || IsNil(o.SpatialValidityCond) {
 		var ret SpatialValidityCond
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EcsAddrConfigInfo) GetSpatialValidityCond() SpatialValidityCond {
 // GetSpatialValidityCondOk returns a tuple with the SpatialValidityCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddrConfigInfo) GetSpatialValidityCondOk() (*SpatialValidityCond, bool) {
-	if o == nil || isNil(o.SpatialValidityCond) {
+	if o == nil || IsNil(o.SpatialValidityCond) {
 		return nil, false
 	}
 	return o.SpatialValidityCond, true
@@ -92,7 +92,7 @@ func (o *EcsAddrConfigInfo) GetSpatialValidityCondOk() (*SpatialValidityCond, bo
 
 // HasSpatialValidityCond returns a boolean if a field has been set.
 func (o *EcsAddrConfigInfo) HasSpatialValidityCond() bool {
-	if o != nil && !isNil(o.SpatialValidityCond) {
+	if o != nil && !IsNil(o.SpatialValidityCond) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EcsAddrConfigInfo) SetSpatialValidityCond(v SpatialValidityCond) {
 }
 
 func (o EcsAddrConfigInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o EcsAddrConfigInfo) MarshalJSON() ([]byte, error) {
 
 func (o EcsAddrConfigInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EcsServerAddr) {
+	if !IsNil(o.EcsServerAddr) {
 		toSerialize["ecsServerAddr"] = o.EcsServerAddr
 	}
-	if !isNil(o.SpatialValidityCond) {
+	if !IsNil(o.SpatialValidityCond) {
 		toSerialize["spatialValidityCond"] = o.SpatialValidityCond
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableEcsAddrConfigInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

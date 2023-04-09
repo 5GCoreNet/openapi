@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Nmfaf_3caDataManagement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // MFAFDataOrAnalyticsResourcesCollectionApiService MFAFDataOrAnalyticsResourcesCollectionApi service
 type MFAFDataOrAnalyticsResourcesCollectionApiService service
 
 type ApiCreateIndividualSubcriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MFAFDataOrAnalyticsResourcesCollectionApiService
-	body *interface{}
+	body       *interface{}
 }
 
 func (r ApiCreateIndividualSubcriptionRequest) Body(body interface{}) ApiCreateIndividualSubcriptionRequest {
@@ -40,22 +39,22 @@ func (r ApiCreateIndividualSubcriptionRequest) Execute() (*http.Response, error)
 /*
 CreateIndividualSubcription subscribe to notifications
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateIndividualSubcriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateIndividualSubcriptionRequest
 */
 func (a *MFAFDataOrAnalyticsResourcesCollectionApiService) CreateIndividualSubcription(ctx context.Context) ApiCreateIndividualSubcriptionRequest {
 	return ApiCreateIndividualSubcriptionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *MFAFDataOrAnalyticsResourcesCollectionApiService) CreateIndividualSubcriptionExecute(r ApiCreateIndividualSubcriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MFAFDataOrAnalyticsResourcesCollectionApiService.CreateIndividualSubcription")
@@ -101,9 +100,9 @@ func (a *MFAFDataOrAnalyticsResourcesCollectionApiService) CreateIndividualSubcr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

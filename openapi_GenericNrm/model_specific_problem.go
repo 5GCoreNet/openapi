@@ -17,7 +17,7 @@ import (
 
 // SpecificProblem - struct for SpecificProblem
 type SpecificProblem struct {
-	Int32 *int32
+	Int32  *int32
 	String *string
 }
 
@@ -34,7 +34,6 @@ func StringAsSpecificProblem(v *string) SpecificProblem {
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SpecificProblem) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src SpecificProblem) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SpecificProblem) GetActualInstance() (interface{}) {
+func (obj *SpecificProblem) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableSpecificProblem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

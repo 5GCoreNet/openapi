@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nudm_UECM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ParameterUpdateInTheSMFRegistrationApiService ParameterUpdateInTheSMFRegistrationApi service
 type ParameterUpdateInTheSMFRegistrationApiService service
 
 type ApiUpdateSmfRegistrationRequest struct {
-	ctx context.Context
-	ApiService *ParameterUpdateInTheSMFRegistrationApiService
-	ueId string
-	pduSessionId int32
+	ctx                         context.Context
+	ApiService                  *ParameterUpdateInTheSMFRegistrationApiService
+	ueId                        string
+	pduSessionId                int32
 	smfRegistrationModification *SmfRegistrationModification
-	supportedFeatures *string
+	supportedFeatures           *string
 }
 
 func (r ApiUpdateSmfRegistrationRequest) SmfRegistrationModification(smfRegistrationModification SmfRegistrationModification) ApiUpdateSmfRegistrationRequest {
@@ -50,28 +49,29 @@ func (r ApiUpdateSmfRegistrationRequest) Execute() (*PatchResult, *http.Response
 /*
 UpdateSmfRegistration update a parameter in the SMF registration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @param pduSessionId Identifier of the PDU session
- @return ApiUpdateSmfRegistrationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@param pduSessionId Identifier of the PDU session
+	@return ApiUpdateSmfRegistrationRequest
 */
 func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistration(ctx context.Context, ueId string, pduSessionId int32) ApiUpdateSmfRegistrationRequest {
 	return ApiUpdateSmfRegistrationRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExecute(r ApiUpdateSmfRegistrationRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParameterUpdateInTheSMFRegistrationApiService.UpdateSmfRegistration")
@@ -97,7 +97,7 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/merge-patch+json"}
@@ -128,9 +128,9 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -147,8 +147,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -158,8 +158,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -169,8 +169,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -180,8 +180,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -191,8 +191,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -202,8 +202,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -213,8 +213,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -224,8 +224,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -235,8 +235,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -246,8 +246,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -257,8 +257,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -268,8 +268,8 @@ func (a *ParameterUpdateInTheSMFRegistrationApiService) UpdateSmfRegistrationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -23,14 +23,14 @@ type EventParamReport struct {
 	Name string `json:"name"`
 	// The list of values of the reported parameter.
 	Values []interface{} `json:"values"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi *string `json:"supi,omitempty"`
-	Area *NetworkAreaInfo `json:"area,omitempty"`
-	Spacing *NumberAverage `json:"spacing,omitempty"`
-	Duration *NumberAverage `json:"duration,omitempty"`
-	AvgAndVar *NumberAverage `json:"avgAndVar,omitempty"`
-	MostFreqVal interface{} `json:"mostFreqVal,omitempty"`
-	LeastFreqVal interface{} `json:"leastFreqVal,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi         *string          `json:"supi,omitempty"`
+	Area         *NetworkAreaInfo `json:"area,omitempty"`
+	Spacing      *NumberAverage   `json:"spacing,omitempty"`
+	Duration     *NumberAverage   `json:"duration,omitempty"`
+	AvgAndVar    *NumberAverage   `json:"avgAndVar,omitempty"`
+	MostFreqVal  interface{}      `json:"mostFreqVal,omitempty"`
+	LeastFreqVal interface{}      `json:"leastFreqVal,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Count *int32 `json:"count,omitempty"`
 	// The minimum value of the parameter.
@@ -108,7 +108,7 @@ func (o *EventParamReport) SetValues(v []interface{}) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *EventParamReport) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EventParamReport) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -126,7 +126,7 @@ func (o *EventParamReport) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *EventParamReport) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EventParamReport) SetSupi(v string) {
 
 // GetArea returns the Area field value if set, zero value otherwise.
 func (o *EventParamReport) GetArea() NetworkAreaInfo {
-	if o == nil || isNil(o.Area) {
+	if o == nil || IsNil(o.Area) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EventParamReport) GetArea() NetworkAreaInfo {
 // GetAreaOk returns a tuple with the Area field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.Area) {
+	if o == nil || IsNil(o.Area) {
 		return nil, false
 	}
 	return o.Area, true
@@ -158,7 +158,7 @@ func (o *EventParamReport) GetAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasArea returns a boolean if a field has been set.
 func (o *EventParamReport) HasArea() bool {
-	if o != nil && !isNil(o.Area) {
+	if o != nil && !IsNil(o.Area) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *EventParamReport) SetArea(v NetworkAreaInfo) {
 
 // GetSpacing returns the Spacing field value if set, zero value otherwise.
 func (o *EventParamReport) GetSpacing() NumberAverage {
-	if o == nil || isNil(o.Spacing) {
+	if o == nil || IsNil(o.Spacing) {
 		var ret NumberAverage
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *EventParamReport) GetSpacing() NumberAverage {
 // GetSpacingOk returns a tuple with the Spacing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetSpacingOk() (*NumberAverage, bool) {
-	if o == nil || isNil(o.Spacing) {
+	if o == nil || IsNil(o.Spacing) {
 		return nil, false
 	}
 	return o.Spacing, true
@@ -190,7 +190,7 @@ func (o *EventParamReport) GetSpacingOk() (*NumberAverage, bool) {
 
 // HasSpacing returns a boolean if a field has been set.
 func (o *EventParamReport) HasSpacing() bool {
-	if o != nil && !isNil(o.Spacing) {
+	if o != nil && !IsNil(o.Spacing) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *EventParamReport) SetSpacing(v NumberAverage) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *EventParamReport) GetDuration() NumberAverage {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret NumberAverage
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *EventParamReport) GetDuration() NumberAverage {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetDurationOk() (*NumberAverage, bool) {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -222,7 +222,7 @@ func (o *EventParamReport) GetDurationOk() (*NumberAverage, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *EventParamReport) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *EventParamReport) SetDuration(v NumberAverage) {
 
 // GetAvgAndVar returns the AvgAndVar field value if set, zero value otherwise.
 func (o *EventParamReport) GetAvgAndVar() NumberAverage {
-	if o == nil || isNil(o.AvgAndVar) {
+	if o == nil || IsNil(o.AvgAndVar) {
 		var ret NumberAverage
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *EventParamReport) GetAvgAndVar() NumberAverage {
 // GetAvgAndVarOk returns a tuple with the AvgAndVar field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetAvgAndVarOk() (*NumberAverage, bool) {
-	if o == nil || isNil(o.AvgAndVar) {
+	if o == nil || IsNil(o.AvgAndVar) {
 		return nil, false
 	}
 	return o.AvgAndVar, true
@@ -254,7 +254,7 @@ func (o *EventParamReport) GetAvgAndVarOk() (*NumberAverage, bool) {
 
 // HasAvgAndVar returns a boolean if a field has been set.
 func (o *EventParamReport) HasAvgAndVar() bool {
-	if o != nil && !isNil(o.AvgAndVar) {
+	if o != nil && !IsNil(o.AvgAndVar) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *EventParamReport) GetMostFreqVal() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EventParamReport) GetMostFreqValOk() (*interface{}, bool) {
-	if o == nil || isNil(o.MostFreqVal) {
+	if o == nil || IsNil(o.MostFreqVal) {
 		return nil, false
 	}
 	return &o.MostFreqVal, true
@@ -287,7 +287,7 @@ func (o *EventParamReport) GetMostFreqValOk() (*interface{}, bool) {
 
 // HasMostFreqVal returns a boolean if a field has been set.
 func (o *EventParamReport) HasMostFreqVal() bool {
-	if o != nil && isNil(o.MostFreqVal) {
+	if o != nil && IsNil(o.MostFreqVal) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *EventParamReport) GetLeastFreqVal() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EventParamReport) GetLeastFreqValOk() (*interface{}, bool) {
-	if o == nil || isNil(o.LeastFreqVal) {
+	if o == nil || IsNil(o.LeastFreqVal) {
 		return nil, false
 	}
 	return &o.LeastFreqVal, true
@@ -320,7 +320,7 @@ func (o *EventParamReport) GetLeastFreqValOk() (*interface{}, bool) {
 
 // HasLeastFreqVal returns a boolean if a field has been set.
 func (o *EventParamReport) HasLeastFreqVal() bool {
-	if o != nil && isNil(o.LeastFreqVal) {
+	if o != nil && IsNil(o.LeastFreqVal) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *EventParamReport) SetLeastFreqVal(v interface{}) {
 
 // GetCount returns the Count field value if set, zero value otherwise.
 func (o *EventParamReport) GetCount() int32 {
-	if o == nil || isNil(o.Count) {
+	if o == nil || IsNil(o.Count) {
 		var ret int32
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *EventParamReport) GetCount() int32 {
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetCountOk() (*int32, bool) {
-	if o == nil || isNil(o.Count) {
+	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
 	return o.Count, true
@@ -352,7 +352,7 @@ func (o *EventParamReport) GetCountOk() (*int32, bool) {
 
 // HasCount returns a boolean if a field has been set.
 func (o *EventParamReport) HasCount() bool {
-	if o != nil && !isNil(o.Count) {
+	if o != nil && !IsNil(o.Count) {
 		return true
 	}
 
@@ -366,7 +366,7 @@ func (o *EventParamReport) SetCount(v int32) {
 
 // GetMinValue returns the MinValue field value if set, zero value otherwise.
 func (o *EventParamReport) GetMinValue() string {
-	if o == nil || isNil(o.MinValue) {
+	if o == nil || IsNil(o.MinValue) {
 		var ret string
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *EventParamReport) GetMinValue() string {
 // GetMinValueOk returns a tuple with the MinValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetMinValueOk() (*string, bool) {
-	if o == nil || isNil(o.MinValue) {
+	if o == nil || IsNil(o.MinValue) {
 		return nil, false
 	}
 	return o.MinValue, true
@@ -384,7 +384,7 @@ func (o *EventParamReport) GetMinValueOk() (*string, bool) {
 
 // HasMinValue returns a boolean if a field has been set.
 func (o *EventParamReport) HasMinValue() bool {
-	if o != nil && !isNil(o.MinValue) {
+	if o != nil && !IsNil(o.MinValue) {
 		return true
 	}
 
@@ -398,7 +398,7 @@ func (o *EventParamReport) SetMinValue(v string) {
 
 // GetMaxValue returns the MaxValue field value if set, zero value otherwise.
 func (o *EventParamReport) GetMaxValue() string {
-	if o == nil || isNil(o.MaxValue) {
+	if o == nil || IsNil(o.MaxValue) {
 		var ret string
 		return ret
 	}
@@ -408,7 +408,7 @@ func (o *EventParamReport) GetMaxValue() string {
 // GetMaxValueOk returns a tuple with the MaxValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventParamReport) GetMaxValueOk() (*string, bool) {
-	if o == nil || isNil(o.MaxValue) {
+	if o == nil || IsNil(o.MaxValue) {
 		return nil, false
 	}
 	return o.MaxValue, true
@@ -416,7 +416,7 @@ func (o *EventParamReport) GetMaxValueOk() (*string, bool) {
 
 // HasMaxValue returns a boolean if a field has been set.
 func (o *EventParamReport) HasMaxValue() bool {
-	if o != nil && !isNil(o.MaxValue) {
+	if o != nil && !IsNil(o.MaxValue) {
 		return true
 	}
 
@@ -429,7 +429,7 @@ func (o *EventParamReport) SetMaxValue(v string) {
 }
 
 func (o EventParamReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -440,19 +440,19 @@ func (o EventParamReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["values"] = o.Values
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.Area) {
+	if !IsNil(o.Area) {
 		toSerialize["area"] = o.Area
 	}
-	if !isNil(o.Spacing) {
+	if !IsNil(o.Spacing) {
 		toSerialize["spacing"] = o.Spacing
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !isNil(o.AvgAndVar) {
+	if !IsNil(o.AvgAndVar) {
 		toSerialize["avgAndVar"] = o.AvgAndVar
 	}
 	if o.MostFreqVal != nil {
@@ -461,13 +461,13 @@ func (o EventParamReport) ToMap() (map[string]interface{}, error) {
 	if o.LeastFreqVal != nil {
 		toSerialize["leastFreqVal"] = o.LeastFreqVal
 	}
-	if !isNil(o.Count) {
+	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
 	}
-	if !isNil(o.MinValue) {
+	if !IsNil(o.MinValue) {
 		toSerialize["minValue"] = o.MinValue
 	}
-	if !isNil(o.MaxValue) {
+	if !IsNil(o.MaxValue) {
 		toSerialize["maxValue"] = o.MaxValue
 	}
 	return toSerialize, nil
@@ -508,5 +508,3 @@ func (v *NullableEventParamReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

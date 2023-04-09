@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AuthenticationSoRDocumentApiService AuthenticationSoRDocumentApi service
 type AuthenticationSoRDocumentApiService service
 
 type ApiCreateAuthenticationSoRRequest struct {
-	ctx context.Context
-	ApiService *AuthenticationSoRDocumentApiService
-	ueId string
-	sorData *SorData
+	ctx               context.Context
+	ApiService        *AuthenticationSoRDocumentApiService
+	ueId              string
+	sorData           *SorData
 	supportedFeatures *string
 }
 
@@ -49,24 +48,24 @@ func (r ApiCreateAuthenticationSoRRequest) Execute() (*http.Response, error) {
 /*
 CreateAuthenticationSoR To store the SoR acknowledgement information of a UE and ME support of SOR CMCI
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateAuthenticationSoRRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateAuthenticationSoRRequest
 */
 func (a *AuthenticationSoRDocumentApiService) CreateAuthenticationSoR(ctx context.Context, ueId string) ApiCreateAuthenticationSoRRequest {
 	return ApiCreateAuthenticationSoRRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthenticationSoRDocumentApiService) CreateAuthenticationSoRExecute(r ApiCreateAuthenticationSoRRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSoRDocumentApiService.CreateAuthenticationSoR")
@@ -85,7 +84,7 @@ func (a *AuthenticationSoRDocumentApiService) CreateAuthenticationSoRExecute(r A
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -116,9 +115,9 @@ func (a *AuthenticationSoRDocumentApiService) CreateAuthenticationSoRExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -135,9 +134,9 @@ func (a *AuthenticationSoRDocumentApiService) CreateAuthenticationSoRExecute(r A
 }
 
 type ApiQueryAuthSoRRequest struct {
-	ctx context.Context
-	ApiService *AuthenticationSoRDocumentApiService
-	ueId string
+	ctx               context.Context
+	ApiService        *AuthenticationSoRDocumentApiService
+	ueId              string
 	supportedFeatures *string
 }
 
@@ -154,26 +153,27 @@ func (r ApiQueryAuthSoRRequest) Execute() (*SorData, *http.Response, error) {
 /*
 QueryAuthSoR Retrieves the SoR acknowledgement information of a UE and ME support of SOR CMCI
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryAuthSoRRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryAuthSoRRequest
 */
 func (a *AuthenticationSoRDocumentApiService) QueryAuthSoR(ctx context.Context, ueId string) ApiQueryAuthSoRRequest {
 	return ApiQueryAuthSoRRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return SorData
+//
+//	@return SorData
 func (a *AuthenticationSoRDocumentApiService) QueryAuthSoRExecute(r ApiQueryAuthSoRRequest) (*SorData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SorData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SorData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSoRDocumentApiService.QueryAuthSoR")
@@ -189,7 +189,7 @@ func (a *AuthenticationSoRDocumentApiService) QueryAuthSoRExecute(r ApiQueryAuth
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -218,9 +218,9 @@ func (a *AuthenticationSoRDocumentApiService) QueryAuthSoRExecute(r ApiQueryAuth
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -246,10 +246,10 @@ func (a *AuthenticationSoRDocumentApiService) QueryAuthSoRExecute(r ApiQueryAuth
 }
 
 type ApiUpdateAuthenticationSoRRequest struct {
-	ctx context.Context
-	ApiService *AuthenticationSoRDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *AuthenticationSoRDocumentApiService
+	ueId              string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -271,26 +271,27 @@ func (r ApiUpdateAuthenticationSoRRequest) Execute() (*PatchResult, *http.Respon
 /*
 UpdateAuthenticationSoR Updates the ME support of SOR CMCI information of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @return ApiUpdateAuthenticationSoRRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@return ApiUpdateAuthenticationSoRRequest
 */
 func (a *AuthenticationSoRDocumentApiService) UpdateAuthenticationSoR(ctx context.Context, ueId string) ApiUpdateAuthenticationSoRRequest {
 	return ApiUpdateAuthenticationSoRRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *AuthenticationSoRDocumentApiService) UpdateAuthenticationSoRExecute(r ApiUpdateAuthenticationSoRRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationSoRDocumentApiService.UpdateAuthenticationSoR")
@@ -309,7 +310,7 @@ func (a *AuthenticationSoRDocumentApiService) UpdateAuthenticationSoRExecute(r A
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -340,9 +341,9 @@ func (a *AuthenticationSoRDocumentApiService) UpdateAuthenticationSoRExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -359,8 +360,8 @@ func (a *AuthenticationSoRDocumentApiService) UpdateAuthenticationSoRExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

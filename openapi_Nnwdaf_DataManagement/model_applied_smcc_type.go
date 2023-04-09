@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AppliedSmccType Possible values are: - DNN_CC: Indicates the DNN based congestion control. - SNSSAI_CC: Indicates the S-NSSAI based congestion control. 
+// AppliedSmccType Possible values are: - DNN_CC: Indicates the DNN based congestion control. - SNSSAI_CC: Indicates the S-NSSAI based congestion control.
 type AppliedSmccType struct {
-	AppliedSmccTypeAnyOf *AppliedSmccTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AppliedSmccType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AppliedSmccTypeAnyOf
-	err = json.Unmarshal(data, &dst.AppliedSmccTypeAnyOf);
-	if err == nil {
-		jsonAppliedSmccTypeAnyOf, _ := json.Marshal(dst.AppliedSmccTypeAnyOf)
-		if string(jsonAppliedSmccTypeAnyOf) == "{}" { // empty struct
-			dst.AppliedSmccTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AppliedSmccTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AppliedSmccTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AppliedSmccType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AppliedSmccType) MarshalJSON() ([]byte, error) {
-	if src.AppliedSmccTypeAnyOf != nil {
-		return json.Marshal(&src.AppliedSmccTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAppliedSmccType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

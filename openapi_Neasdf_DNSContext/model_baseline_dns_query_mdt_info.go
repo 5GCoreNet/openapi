@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &BaselineDnsQueryMdtInfo{}
 
 // BaselineDnsQueryMdtInfo Baseline DNS Query MDT Information
 type BaselineDnsQueryMdtInfo struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	SourceIpv4Addr *string `json:"sourceIpv4Addr,omitempty"`
-	SourceIpv6Prefix *Ipv6Prefix `json:"sourceIpv6Prefix,omitempty"`
-	BaseDnsMdtList []BaselineDnsMdtId `json:"baseDnsMdtList"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	SourceIpv4Addr   *string            `json:"sourceIpv4Addr,omitempty"`
+	SourceIpv6Prefix *Ipv6Prefix        `json:"sourceIpv6Prefix,omitempty"`
+	BaseDnsMdtList   []BaselineDnsMdtId `json:"baseDnsMdtList"`
 }
 
 // NewBaselineDnsQueryMdtInfo instantiates a new BaselineDnsQueryMdtInfo object
@@ -45,7 +45,7 @@ func NewBaselineDnsQueryMdtInfoWithDefaults() *BaselineDnsQueryMdtInfo {
 
 // GetSourceIpv4Addr returns the SourceIpv4Addr field value if set, zero value otherwise.
 func (o *BaselineDnsQueryMdtInfo) GetSourceIpv4Addr() string {
-	if o == nil || isNil(o.SourceIpv4Addr) {
+	if o == nil || IsNil(o.SourceIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *BaselineDnsQueryMdtInfo) GetSourceIpv4Addr() string {
 // GetSourceIpv4AddrOk returns a tuple with the SourceIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsQueryMdtInfo) GetSourceIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.SourceIpv4Addr) {
+	if o == nil || IsNil(o.SourceIpv4Addr) {
 		return nil, false
 	}
 	return o.SourceIpv4Addr, true
@@ -63,7 +63,7 @@ func (o *BaselineDnsQueryMdtInfo) GetSourceIpv4AddrOk() (*string, bool) {
 
 // HasSourceIpv4Addr returns a boolean if a field has been set.
 func (o *BaselineDnsQueryMdtInfo) HasSourceIpv4Addr() bool {
-	if o != nil && !isNil(o.SourceIpv4Addr) {
+	if o != nil && !IsNil(o.SourceIpv4Addr) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *BaselineDnsQueryMdtInfo) SetSourceIpv4Addr(v string) {
 
 // GetSourceIpv6Prefix returns the SourceIpv6Prefix field value if set, zero value otherwise.
 func (o *BaselineDnsQueryMdtInfo) GetSourceIpv6Prefix() Ipv6Prefix {
-	if o == nil || isNil(o.SourceIpv6Prefix) {
+	if o == nil || IsNil(o.SourceIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *BaselineDnsQueryMdtInfo) GetSourceIpv6Prefix() Ipv6Prefix {
 // GetSourceIpv6PrefixOk returns a tuple with the SourceIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsQueryMdtInfo) GetSourceIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.SourceIpv6Prefix) {
+	if o == nil || IsNil(o.SourceIpv6Prefix) {
 		return nil, false
 	}
 	return o.SourceIpv6Prefix, true
@@ -95,7 +95,7 @@ func (o *BaselineDnsQueryMdtInfo) GetSourceIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasSourceIpv6Prefix returns a boolean if a field has been set.
 func (o *BaselineDnsQueryMdtInfo) HasSourceIpv6Prefix() bool {
-	if o != nil && !isNil(o.SourceIpv6Prefix) {
+	if o != nil && !IsNil(o.SourceIpv6Prefix) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *BaselineDnsQueryMdtInfo) SetBaseDnsMdtList(v []BaselineDnsMdtId) {
 }
 
 func (o BaselineDnsQueryMdtInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o BaselineDnsQueryMdtInfo) MarshalJSON() ([]byte, error) {
 
 func (o BaselineDnsQueryMdtInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SourceIpv4Addr) {
+	if !IsNil(o.SourceIpv4Addr) {
 		toSerialize["sourceIpv4Addr"] = o.SourceIpv4Addr
 	}
-	if !isNil(o.SourceIpv6Prefix) {
+	if !IsNil(o.SourceIpv6Prefix) {
 		toSerialize["sourceIpv6Prefix"] = o.SourceIpv6Prefix
 	}
 	toSerialize["baseDnsMdtList"] = o.BaseDnsMdtList
@@ -186,5 +186,3 @@ func (v *NullableBaselineDnsQueryMdtInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

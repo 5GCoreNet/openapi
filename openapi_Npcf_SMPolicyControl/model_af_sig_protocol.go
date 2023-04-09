@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,31 +15,17 @@ import (
 	"fmt"
 )
 
-// AfSigProtocol Possible values are - NO_INFORMATION: Indicate that no information about the AF signalling protocol is being  provided.  - SIP: Indicate that the signalling protocol is Session Initiation Protocol. 
+// AfSigProtocol Possible values are - NO_INFORMATION: Indicate that no information about the AF signalling protocol is being  provided.  - SIP: Indicate that the signalling protocol is Session Initiation Protocol.
 type AfSigProtocol struct {
-	AfSigProtocolAnyOf *AfSigProtocolAnyOf
 	NullValue *NullValue
-	String *string
+	String    *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AfSigProtocol) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AfSigProtocolAnyOf
-	err = json.Unmarshal(data, &dst.AfSigProtocolAnyOf);
-	if err == nil {
-		jsonAfSigProtocolAnyOf, _ := json.Marshal(dst.AfSigProtocolAnyOf)
-		if string(jsonAfSigProtocolAnyOf) == "{}" { // empty struct
-			dst.AfSigProtocolAnyOf = nil
-		} else {
-			return nil // data stored in dst.AfSigProtocolAnyOf, return on the first match
-		}
-	} else {
-		dst.AfSigProtocolAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -52,7 +38,7 @@ func (dst *AfSigProtocol) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -69,10 +55,6 @@ func (dst *AfSigProtocol) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AfSigProtocol) MarshalJSON() ([]byte, error) {
-	if src.AfSigProtocolAnyOf != nil {
-		return json.Marshal(&src.AfSigProtocolAnyOf)
-	}
-
 	if src.NullValue != nil {
 		return json.Marshal(&src.NullValue)
 	}
@@ -119,5 +101,3 @@ func (v *NullableAfSigProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

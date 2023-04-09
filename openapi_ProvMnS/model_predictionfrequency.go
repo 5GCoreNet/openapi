@@ -20,8 +20,8 @@ type Predictionfrequency string
 
 // List of Predictionfrequency
 const (
-	PERSEC Predictionfrequency = "PERSEC"
-	PERMIN Predictionfrequency = "PERMIN"
+	PERSEC  Predictionfrequency = "PERSEC"
+	PERMIN  Predictionfrequency = "PERMIN"
 	PERHOUR Predictionfrequency = "PERHOUR"
 )
 
@@ -110,4 +110,3 @@ func (v *NullablePredictionfrequency) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

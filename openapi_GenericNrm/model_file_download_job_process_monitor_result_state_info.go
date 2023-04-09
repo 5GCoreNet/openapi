@@ -27,7 +27,6 @@ func StringAsFileDownloadJobProcessMonitorResultStateInfo(v *string) FileDownloa
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FileDownloadJobProcessMonitorResultStateInfo) UnmarshalJSON(data []byte) error {
 	var err error
@@ -67,7 +66,7 @@ func (src FileDownloadJobProcessMonitorResultStateInfo) MarshalJSON() ([]byte, e
 }
 
 // Get the actual instance
-func (obj *FileDownloadJobProcessMonitorResultStateInfo) GetActualInstance() (interface{}) {
+func (obj *FileDownloadJobProcessMonitorResultStateInfo) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableFileDownloadJobProcessMonitorResultStateInfo) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

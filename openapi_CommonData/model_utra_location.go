@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -12,7 +12,6 @@ package openapi_CommonData
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -27,7 +26,6 @@ func InterfaceAsUtraLocation(v *interface{}) UtraLocation {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UtraLocation) UnmarshalJSON(data []byte) error {
@@ -68,7 +66,7 @@ func (src UtraLocation) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UtraLocation) GetActualInstance() (interface{}) {
+func (obj *UtraLocation) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -115,5 +113,3 @@ func (v *NullableUtraLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

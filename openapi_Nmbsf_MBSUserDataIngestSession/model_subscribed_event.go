@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the SubscribedEvent type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SubscribedEvent{}
 
-// SubscribedEvent Represents a subscribed MBS User Data Ingest Session Status event and the related  information. 
+// SubscribedEvent Represents a subscribed MBS User Data Ingest Session Status event and the related  information.
 type SubscribedEvent struct {
-	StatusEvent Event `json:"statusEvent"`
+	StatusEvent      Event   `json:"statusEvent"`
 	MbsDistSessionId *string `json:"mbsDistSessionId,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *SubscribedEvent) SetStatusEvent(v Event) {
 
 // GetMbsDistSessionId returns the MbsDistSessionId field value if set, zero value otherwise.
 func (o *SubscribedEvent) GetMbsDistSessionId() string {
-	if o == nil || isNil(o.MbsDistSessionId) {
+	if o == nil || IsNil(o.MbsDistSessionId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SubscribedEvent) GetMbsDistSessionId() string {
 // GetMbsDistSessionIdOk returns a tuple with the MbsDistSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedEvent) GetMbsDistSessionIdOk() (*string, bool) {
-	if o == nil || isNil(o.MbsDistSessionId) {
+	if o == nil || IsNil(o.MbsDistSessionId) {
 		return nil, false
 	}
 	return o.MbsDistSessionId, true
@@ -85,7 +85,7 @@ func (o *SubscribedEvent) GetMbsDistSessionIdOk() (*string, bool) {
 
 // HasMbsDistSessionId returns a boolean if a field has been set.
 func (o *SubscribedEvent) HasMbsDistSessionId() bool {
-	if o != nil && !isNil(o.MbsDistSessionId) {
+	if o != nil && !IsNil(o.MbsDistSessionId) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SubscribedEvent) SetMbsDistSessionId(v string) {
 }
 
 func (o SubscribedEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SubscribedEvent) MarshalJSON() ([]byte, error) {
 func (o SubscribedEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusEvent"] = o.StatusEvent
-	if !isNil(o.MbsDistSessionId) {
+	if !IsNil(o.MbsDistSessionId) {
 		toSerialize["mbsDistSessionId"] = o.MbsDistSessionId
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSubscribedEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AtsssCapability Contains the ATSSS capability supported for the MA PDU Session.
 type AtsssCapability struct {
-	AtsssCapabilityAnyOf *AtsssCapabilityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AtsssCapability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AtsssCapabilityAnyOf
-	err = json.Unmarshal(data, &dst.AtsssCapabilityAnyOf);
-	if err == nil {
-		jsonAtsssCapabilityAnyOf, _ := json.Marshal(dst.AtsssCapabilityAnyOf)
-		if string(jsonAtsssCapabilityAnyOf) == "{}" { // empty struct
-			dst.AtsssCapabilityAnyOf = nil
-		} else {
-			return nil // data stored in dst.AtsssCapabilityAnyOf, return on the first match
-		}
-	} else {
-		dst.AtsssCapabilityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AtsssCapability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AtsssCapability) MarshalJSON() ([]byte, error) {
-	if src.AtsssCapabilityAnyOf != nil {
-		return json.Marshal(&src.AtsssCapabilityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAtsssCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

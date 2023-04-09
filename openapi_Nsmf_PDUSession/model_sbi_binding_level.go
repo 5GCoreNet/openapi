@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,28 +17,14 @@ import (
 
 // SbiBindingLevel SBI Binding Level
 type SbiBindingLevel struct {
-	SbiBindingLevelAnyOf *SbiBindingLevelAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SbiBindingLevel) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SbiBindingLevelAnyOf
-	err = json.Unmarshal(data, &dst.SbiBindingLevelAnyOf);
-	if err == nil {
-		jsonSbiBindingLevelAnyOf, _ := json.Marshal(dst.SbiBindingLevelAnyOf)
-		if string(jsonSbiBindingLevelAnyOf) == "{}" { // empty struct
-			dst.SbiBindingLevelAnyOf = nil
-		} else {
-			return nil // data stored in dst.SbiBindingLevelAnyOf, return on the first match
-		}
-	} else {
-		dst.SbiBindingLevelAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SbiBindingLevel) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SbiBindingLevel) MarshalJSON() ([]byte, error) {
-	if src.SbiBindingLevelAnyOf != nil {
-		return json.Marshal(&src.SbiBindingLevelAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSbiBindingLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

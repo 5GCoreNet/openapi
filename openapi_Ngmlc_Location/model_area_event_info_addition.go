@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &AreaEventInfoAddition{}
 
 // AreaEventInfoAddition Additional information for Extended Area event information
 type AreaEventInfoAddition struct {
-	GeoAreaList []GeographicArea `json:"geoAreaList,omitempty"`
-	IgnoreAreaDefInd *bool `json:"ignoreAreaDefInd,omitempty"`
+	GeoAreaList      []GeographicArea `json:"geoAreaList,omitempty"`
+	IgnoreAreaDefInd *bool            `json:"ignoreAreaDefInd,omitempty"`
 }
 
 // NewAreaEventInfoAddition instantiates a new AreaEventInfoAddition object
@@ -46,7 +46,7 @@ func NewAreaEventInfoAdditionWithDefaults() *AreaEventInfoAddition {
 
 // GetGeoAreaList returns the GeoAreaList field value if set, zero value otherwise.
 func (o *AreaEventInfoAddition) GetGeoAreaList() []GeographicArea {
-	if o == nil || isNil(o.GeoAreaList) {
+	if o == nil || IsNil(o.GeoAreaList) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AreaEventInfoAddition) GetGeoAreaList() []GeographicArea {
 // GetGeoAreaListOk returns a tuple with the GeoAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoAddition) GetGeoAreaListOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.GeoAreaList) {
+	if o == nil || IsNil(o.GeoAreaList) {
 		return nil, false
 	}
 	return o.GeoAreaList, true
@@ -64,7 +64,7 @@ func (o *AreaEventInfoAddition) GetGeoAreaListOk() ([]GeographicArea, bool) {
 
 // HasGeoAreaList returns a boolean if a field has been set.
 func (o *AreaEventInfoAddition) HasGeoAreaList() bool {
-	if o != nil && !isNil(o.GeoAreaList) {
+	if o != nil && !IsNil(o.GeoAreaList) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AreaEventInfoAddition) SetGeoAreaList(v []GeographicArea) {
 
 // GetIgnoreAreaDefInd returns the IgnoreAreaDefInd field value if set, zero value otherwise.
 func (o *AreaEventInfoAddition) GetIgnoreAreaDefInd() bool {
-	if o == nil || isNil(o.IgnoreAreaDefInd) {
+	if o == nil || IsNil(o.IgnoreAreaDefInd) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AreaEventInfoAddition) GetIgnoreAreaDefInd() bool {
 // GetIgnoreAreaDefIndOk returns a tuple with the IgnoreAreaDefInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoAddition) GetIgnoreAreaDefIndOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreAreaDefInd) {
+	if o == nil || IsNil(o.IgnoreAreaDefInd) {
 		return nil, false
 	}
 	return o.IgnoreAreaDefInd, true
@@ -96,7 +96,7 @@ func (o *AreaEventInfoAddition) GetIgnoreAreaDefIndOk() (*bool, bool) {
 
 // HasIgnoreAreaDefInd returns a boolean if a field has been set.
 func (o *AreaEventInfoAddition) HasIgnoreAreaDefInd() bool {
-	if o != nil && !isNil(o.IgnoreAreaDefInd) {
+	if o != nil && !IsNil(o.IgnoreAreaDefInd) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AreaEventInfoAddition) SetIgnoreAreaDefInd(v bool) {
 }
 
 func (o AreaEventInfoAddition) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -118,10 +118,10 @@ func (o AreaEventInfoAddition) MarshalJSON() ([]byte, error) {
 
 func (o AreaEventInfoAddition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GeoAreaList) {
+	if !IsNil(o.GeoAreaList) {
 		toSerialize["geoAreaList"] = o.GeoAreaList
 	}
-	if !isNil(o.IgnoreAreaDefInd) {
+	if !IsNil(o.IgnoreAreaDefInd) {
 		toSerialize["ignoreAreaDefInd"] = o.IgnoreAreaDefInd
 	}
 	return toSerialize, nil
@@ -162,5 +162,3 @@ func (v *NullableAreaEventInfoAddition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

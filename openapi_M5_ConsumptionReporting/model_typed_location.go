@@ -1,7 +1,7 @@
 /*
 M5_ConsumptionReporting
 
-5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TypedLocation{}
 // TypedLocation struct for TypedLocation
 type TypedLocation struct {
 	LocationIdentifierType CellIdentifierType `json:"locationIdentifierType"`
-	Location string `json:"location"`
+	Location               string             `json:"location"`
 }
 
 // NewTypedLocation instantiates a new TypedLocation object
@@ -91,7 +91,7 @@ func (o *TypedLocation) SetLocation(v string) {
 }
 
 func (o TypedLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableTypedLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,11 +18,11 @@ import (
 // ResourcesAiMlNrm - struct for ResourcesAiMlNrm
 type ResourcesAiMlNrm struct {
 	MLTrainingFunctionSingle *MLTrainingFunctionSingle
-	MLTrainingProcessSingle *MLTrainingProcessSingle
-	MLTrainingReportSingle *MLTrainingReportSingle
-	MLTrainingRequestSingle *MLTrainingRequestSingle
-	ManagedElementSingle4 *ManagedElementSingle4
-	SubNetworkSingle6 *SubNetworkSingle6
+	MLTrainingProcessSingle  *MLTrainingProcessSingle
+	MLTrainingReportSingle   *MLTrainingReportSingle
+	MLTrainingRequestSingle  *MLTrainingRequestSingle
+	ManagedElementSingle4    *ManagedElementSingle4
+	SubNetworkSingle6        *SubNetworkSingle6
 }
 
 // MLTrainingFunctionSingleAsResourcesAiMlNrm is a convenience function that returns MLTrainingFunctionSingle wrapped in ResourcesAiMlNrm
@@ -66,7 +66,6 @@ func SubNetworkSingle6AsResourcesAiMlNrm(v *SubNetworkSingle6) ResourcesAiMlNrm 
 		SubNetworkSingle6: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesAiMlNrm) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src ResourcesAiMlNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesAiMlNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesAiMlNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableResourcesAiMlNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Eees_EASDiscovery
 
-API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -24,9 +24,9 @@ type EasCharacteristics struct {
 	// EAS provider identifier.
 	EasProvId *string `json:"easProvId,omitempty"`
 	// EAS type.
-	EasType *string `json:"easType,omitempty"`
-	EasSched *TimeWindow `json:"easSched,omitempty"`
-	SvcArea *LocationArea5G `json:"svcArea,omitempty"`
+	EasType  *string         `json:"easType,omitempty"`
+	EasSched *TimeWindow     `json:"easSched,omitempty"`
+	SvcArea  *LocationArea5G `json:"svcArea,omitempty"`
 	// Indicates if the EEC supports service continuity or not, also indicates which ACR scenarios are supported by the EEC.
 	EasSvcContinuity []ACRScenario `json:"easSvcContinuity,omitempty"`
 	// Service permissions level.
@@ -54,7 +54,7 @@ func NewEasCharacteristicsWithDefaults() *EasCharacteristics {
 
 // GetEasId returns the EasId field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetEasId() string {
-	if o == nil || isNil(o.EasId) {
+	if o == nil || IsNil(o.EasId) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *EasCharacteristics) GetEasId() string {
 // GetEasIdOk returns a tuple with the EasId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetEasIdOk() (*string, bool) {
-	if o == nil || isNil(o.EasId) {
+	if o == nil || IsNil(o.EasId) {
 		return nil, false
 	}
 	return o.EasId, true
@@ -72,7 +72,7 @@ func (o *EasCharacteristics) GetEasIdOk() (*string, bool) {
 
 // HasEasId returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasEasId() bool {
-	if o != nil && !isNil(o.EasId) {
+	if o != nil && !IsNil(o.EasId) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *EasCharacteristics) SetEasId(v string) {
 
 // GetEasProvId returns the EasProvId field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetEasProvId() string {
-	if o == nil || isNil(o.EasProvId) {
+	if o == nil || IsNil(o.EasProvId) {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *EasCharacteristics) GetEasProvId() string {
 // GetEasProvIdOk returns a tuple with the EasProvId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetEasProvIdOk() (*string, bool) {
-	if o == nil || isNil(o.EasProvId) {
+	if o == nil || IsNil(o.EasProvId) {
 		return nil, false
 	}
 	return o.EasProvId, true
@@ -104,7 +104,7 @@ func (o *EasCharacteristics) GetEasProvIdOk() (*string, bool) {
 
 // HasEasProvId returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasEasProvId() bool {
-	if o != nil && !isNil(o.EasProvId) {
+	if o != nil && !IsNil(o.EasProvId) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *EasCharacteristics) SetEasProvId(v string) {
 
 // GetEasType returns the EasType field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetEasType() string {
-	if o == nil || isNil(o.EasType) {
+	if o == nil || IsNil(o.EasType) {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *EasCharacteristics) GetEasType() string {
 // GetEasTypeOk returns a tuple with the EasType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetEasTypeOk() (*string, bool) {
-	if o == nil || isNil(o.EasType) {
+	if o == nil || IsNil(o.EasType) {
 		return nil, false
 	}
 	return o.EasType, true
@@ -136,7 +136,7 @@ func (o *EasCharacteristics) GetEasTypeOk() (*string, bool) {
 
 // HasEasType returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasEasType() bool {
-	if o != nil && !isNil(o.EasType) {
+	if o != nil && !IsNil(o.EasType) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *EasCharacteristics) SetEasType(v string) {
 
 // GetEasSched returns the EasSched field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetEasSched() TimeWindow {
-	if o == nil || isNil(o.EasSched) {
+	if o == nil || IsNil(o.EasSched) {
 		var ret TimeWindow
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *EasCharacteristics) GetEasSched() TimeWindow {
 // GetEasSchedOk returns a tuple with the EasSched field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetEasSchedOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.EasSched) {
+	if o == nil || IsNil(o.EasSched) {
 		return nil, false
 	}
 	return o.EasSched, true
@@ -168,7 +168,7 @@ func (o *EasCharacteristics) GetEasSchedOk() (*TimeWindow, bool) {
 
 // HasEasSched returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasEasSched() bool {
-	if o != nil && !isNil(o.EasSched) {
+	if o != nil && !IsNil(o.EasSched) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *EasCharacteristics) SetEasSched(v TimeWindow) {
 
 // GetSvcArea returns the SvcArea field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetSvcArea() LocationArea5G {
-	if o == nil || isNil(o.SvcArea) {
+	if o == nil || IsNil(o.SvcArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *EasCharacteristics) GetSvcArea() LocationArea5G {
 // GetSvcAreaOk returns a tuple with the SvcArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetSvcAreaOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.SvcArea) {
+	if o == nil || IsNil(o.SvcArea) {
 		return nil, false
 	}
 	return o.SvcArea, true
@@ -200,7 +200,7 @@ func (o *EasCharacteristics) GetSvcAreaOk() (*LocationArea5G, bool) {
 
 // HasSvcArea returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasSvcArea() bool {
-	if o != nil && !isNil(o.SvcArea) {
+	if o != nil && !IsNil(o.SvcArea) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *EasCharacteristics) SetSvcArea(v LocationArea5G) {
 
 // GetEasSvcContinuity returns the EasSvcContinuity field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetEasSvcContinuity() []ACRScenario {
-	if o == nil || isNil(o.EasSvcContinuity) {
+	if o == nil || IsNil(o.EasSvcContinuity) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *EasCharacteristics) GetEasSvcContinuity() []ACRScenario {
 // GetEasSvcContinuityOk returns a tuple with the EasSvcContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetEasSvcContinuityOk() ([]ACRScenario, bool) {
-	if o == nil || isNil(o.EasSvcContinuity) {
+	if o == nil || IsNil(o.EasSvcContinuity) {
 		return nil, false
 	}
 	return o.EasSvcContinuity, true
@@ -232,7 +232,7 @@ func (o *EasCharacteristics) GetEasSvcContinuityOk() ([]ACRScenario, bool) {
 
 // HasEasSvcContinuity returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasEasSvcContinuity() bool {
-	if o != nil && !isNil(o.EasSvcContinuity) {
+	if o != nil && !IsNil(o.EasSvcContinuity) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *EasCharacteristics) SetEasSvcContinuity(v []ACRScenario) {
 
 // GetSvcPermLevel returns the SvcPermLevel field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetSvcPermLevel() string {
-	if o == nil || isNil(o.SvcPermLevel) {
+	if o == nil || IsNil(o.SvcPermLevel) {
 		var ret string
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *EasCharacteristics) GetSvcPermLevel() string {
 // GetSvcPermLevelOk returns a tuple with the SvcPermLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetSvcPermLevelOk() (*string, bool) {
-	if o == nil || isNil(o.SvcPermLevel) {
+	if o == nil || IsNil(o.SvcPermLevel) {
 		return nil, false
 	}
 	return o.SvcPermLevel, true
@@ -264,7 +264,7 @@ func (o *EasCharacteristics) GetSvcPermLevelOk() (*string, bool) {
 
 // HasSvcPermLevel returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasSvcPermLevel() bool {
-	if o != nil && !isNil(o.SvcPermLevel) {
+	if o != nil && !IsNil(o.SvcPermLevel) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *EasCharacteristics) SetSvcPermLevel(v string) {
 
 // GetSvcFeats returns the SvcFeats field value if set, zero value otherwise.
 func (o *EasCharacteristics) GetSvcFeats() []string {
-	if o == nil || isNil(o.SvcFeats) {
+	if o == nil || IsNil(o.SvcFeats) {
 		var ret []string
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *EasCharacteristics) GetSvcFeats() []string {
 // GetSvcFeatsOk returns a tuple with the SvcFeats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasCharacteristics) GetSvcFeatsOk() ([]string, bool) {
-	if o == nil || isNil(o.SvcFeats) {
+	if o == nil || IsNil(o.SvcFeats) {
 		return nil, false
 	}
 	return o.SvcFeats, true
@@ -296,7 +296,7 @@ func (o *EasCharacteristics) GetSvcFeatsOk() ([]string, bool) {
 
 // HasSvcFeats returns a boolean if a field has been set.
 func (o *EasCharacteristics) HasSvcFeats() bool {
-	if o != nil && !isNil(o.SvcFeats) {
+	if o != nil && !IsNil(o.SvcFeats) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *EasCharacteristics) SetSvcFeats(v []string) {
 }
 
 func (o EasCharacteristics) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -318,28 +318,28 @@ func (o EasCharacteristics) MarshalJSON() ([]byte, error) {
 
 func (o EasCharacteristics) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EasId) {
+	if !IsNil(o.EasId) {
 		toSerialize["easId"] = o.EasId
 	}
-	if !isNil(o.EasProvId) {
+	if !IsNil(o.EasProvId) {
 		toSerialize["easProvId"] = o.EasProvId
 	}
-	if !isNil(o.EasType) {
+	if !IsNil(o.EasType) {
 		toSerialize["easType"] = o.EasType
 	}
-	if !isNil(o.EasSched) {
+	if !IsNil(o.EasSched) {
 		toSerialize["easSched"] = o.EasSched
 	}
-	if !isNil(o.SvcArea) {
+	if !IsNil(o.SvcArea) {
 		toSerialize["svcArea"] = o.SvcArea
 	}
-	if !isNil(o.EasSvcContinuity) {
+	if !IsNil(o.EasSvcContinuity) {
 		toSerialize["easSvcContinuity"] = o.EasSvcContinuity
 	}
-	if !isNil(o.SvcPermLevel) {
+	if !IsNil(o.SvcPermLevel) {
 		toSerialize["svcPermLevel"] = o.SvcPermLevel
 	}
-	if !isNil(o.SvcFeats) {
+	if !IsNil(o.SvcFeats) {
 		toSerialize["svcFeats"] = o.SvcFeats
 	}
 	return toSerialize, nil
@@ -380,5 +380,3 @@ func (v *NullableEasCharacteristics) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

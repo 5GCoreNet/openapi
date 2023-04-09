@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &NrppaInformation{}
 
 // NrppaInformation Represents a NRPPa related N2 information data part
 type NrppaInformation struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfId string `json:"nfId"`
-	NrppaPdu N2InfoContent `json:"nrppaPdu"`
-	ServiceInstanceId *string `json:"serviceInstanceId,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfId              string        `json:"nfId"`
+	NrppaPdu          N2InfoContent `json:"nrppaPdu"`
+	ServiceInstanceId *string       `json:"serviceInstanceId,omitempty"`
 }
 
 // NewNrppaInformation instantiates a new NrppaInformation object
@@ -94,7 +94,7 @@ func (o *NrppaInformation) SetNrppaPdu(v N2InfoContent) {
 
 // GetServiceInstanceId returns the ServiceInstanceId field value if set, zero value otherwise.
 func (o *NrppaInformation) GetServiceInstanceId() string {
-	if o == nil || isNil(o.ServiceInstanceId) {
+	if o == nil || IsNil(o.ServiceInstanceId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *NrppaInformation) GetServiceInstanceId() string {
 // GetServiceInstanceIdOk returns a tuple with the ServiceInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrppaInformation) GetServiceInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceInstanceId) {
+	if o == nil || IsNil(o.ServiceInstanceId) {
 		return nil, false
 	}
 	return o.ServiceInstanceId, true
@@ -112,7 +112,7 @@ func (o *NrppaInformation) GetServiceInstanceIdOk() (*string, bool) {
 
 // HasServiceInstanceId returns a boolean if a field has been set.
 func (o *NrppaInformation) HasServiceInstanceId() bool {
-	if o != nil && !isNil(o.ServiceInstanceId) {
+	if o != nil && !IsNil(o.ServiceInstanceId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *NrppaInformation) SetServiceInstanceId(v string) {
 }
 
 func (o NrppaInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o NrppaInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfId"] = o.NfId
 	toSerialize["nrppaPdu"] = o.NrppaPdu
-	if !isNil(o.ServiceInstanceId) {
+	if !IsNil(o.ServiceInstanceId) {
 		toSerialize["serviceInstanceId"] = o.ServiceInstanceId
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableNrppaInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

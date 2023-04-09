@@ -1,7 +1,7 @@
 /*
 Nhss_imsUEAU
 
-Nhss UE Authentication Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Authentication Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,12 +17,12 @@ import (
 // checks if the SipAuthenticationInfoRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SipAuthenticationInfoRequest{}
 
-// SipAuthenticationInfoRequest Contains input data to the SIP authentication request message (e.g. SIP authentication scheme, requested number of authentication items, resynchronization information) 
+// SipAuthenticationInfoRequest Contains input data to the SIP authentication request message (e.g. SIP authentication scheme, requested number of authentication items, resynchronization information)
 type SipAuthenticationInfoRequest struct {
-	CscfServerName string `json:"cscfServerName"`
+	CscfServerName          string                  `json:"cscfServerName"`
 	SipAuthenticationScheme SipAuthenticationScheme `json:"sipAuthenticationScheme"`
 	// Indicates the number of requested SIP authentication items
-	SipNumberAuthItems *int32 `json:"sipNumberAuthItems,omitempty"`
+	SipNumberAuthItems    *int32                 `json:"sipNumberAuthItems,omitempty"`
 	ResynchronizationInfo *ResynchronizationInfo `json:"resynchronizationInfo,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *SipAuthenticationInfoRequest) SetSipAuthenticationScheme(v SipAuthentic
 
 // GetSipNumberAuthItems returns the SipNumberAuthItems field value if set, zero value otherwise.
 func (o *SipAuthenticationInfoRequest) GetSipNumberAuthItems() int32 {
-	if o == nil || isNil(o.SipNumberAuthItems) {
+	if o == nil || IsNil(o.SipNumberAuthItems) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SipAuthenticationInfoRequest) GetSipNumberAuthItems() int32 {
 // GetSipNumberAuthItemsOk returns a tuple with the SipNumberAuthItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SipAuthenticationInfoRequest) GetSipNumberAuthItemsOk() (*int32, bool) {
-	if o == nil || isNil(o.SipNumberAuthItems) {
+	if o == nil || IsNil(o.SipNumberAuthItems) {
 		return nil, false
 	}
 	return o.SipNumberAuthItems, true
@@ -113,7 +113,7 @@ func (o *SipAuthenticationInfoRequest) GetSipNumberAuthItemsOk() (*int32, bool) 
 
 // HasSipNumberAuthItems returns a boolean if a field has been set.
 func (o *SipAuthenticationInfoRequest) HasSipNumberAuthItems() bool {
-	if o != nil && !isNil(o.SipNumberAuthItems) {
+	if o != nil && !IsNil(o.SipNumberAuthItems) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *SipAuthenticationInfoRequest) SetSipNumberAuthItems(v int32) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *SipAuthenticationInfoRequest) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || isNil(o.ResynchronizationInfo) {
+	if o == nil || IsNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *SipAuthenticationInfoRequest) GetResynchronizationInfo() Resynchronizat
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SipAuthenticationInfoRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || isNil(o.ResynchronizationInfo) {
+	if o == nil || IsNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -145,7 +145,7 @@ func (o *SipAuthenticationInfoRequest) GetResynchronizationInfoOk() (*Resynchron
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *SipAuthenticationInfoRequest) HasResynchronizationInfo() bool {
-	if o != nil && !isNil(o.ResynchronizationInfo) {
+	if o != nil && !IsNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *SipAuthenticationInfoRequest) SetResynchronizationInfo(v Resynchronizat
 }
 
 func (o SipAuthenticationInfoRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o SipAuthenticationInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cscfServerName"] = o.CscfServerName
 	toSerialize["sipAuthenticationScheme"] = o.SipAuthenticationScheme
-	if !isNil(o.SipNumberAuthItems) {
+	if !IsNil(o.SipNumberAuthItems) {
 		toSerialize["sipNumberAuthItems"] = o.SipNumberAuthItems
 	}
-	if !isNil(o.ResynchronizationInfo) {
+	if !IsNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableSipAuthenticationInfoRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

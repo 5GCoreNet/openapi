@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &MonitoringEvent{}
 
 // MonitoringEvent struct for MonitoringEvent
 type MonitoringEvent struct {
-	EventType EventType `json:"eventType"`
+	EventType    EventType     `json:"eventType"`
 	RevokedCause *RevokedCause `json:"revokedCause,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *MonitoringEvent) SetEventType(v EventType) {
 
 // GetRevokedCause returns the RevokedCause field value if set, zero value otherwise.
 func (o *MonitoringEvent) GetRevokedCause() RevokedCause {
-	if o == nil || isNil(o.RevokedCause) {
+	if o == nil || IsNil(o.RevokedCause) {
 		var ret RevokedCause
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *MonitoringEvent) GetRevokedCause() RevokedCause {
 // GetRevokedCauseOk returns a tuple with the RevokedCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEvent) GetRevokedCauseOk() (*RevokedCause, bool) {
-	if o == nil || isNil(o.RevokedCause) {
+	if o == nil || IsNil(o.RevokedCause) {
 		return nil, false
 	}
 	return o.RevokedCause, true
@@ -85,7 +85,7 @@ func (o *MonitoringEvent) GetRevokedCauseOk() (*RevokedCause, bool) {
 
 // HasRevokedCause returns a boolean if a field has been set.
 func (o *MonitoringEvent) HasRevokedCause() bool {
-	if o != nil && !isNil(o.RevokedCause) {
+	if o != nil && !IsNil(o.RevokedCause) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *MonitoringEvent) SetRevokedCause(v RevokedCause) {
 }
 
 func (o MonitoringEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o MonitoringEvent) MarshalJSON() ([]byte, error) {
 func (o MonitoringEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !isNil(o.RevokedCause) {
+	if !IsNil(o.RevokedCause) {
 		toSerialize["revokedCause"] = o.RevokedCause
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableMonitoringEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -41,7 +41,7 @@ func NewNotifyHeartbeatAllOfWithDefaults() *NotifyHeartbeatAllOf {
 
 // GetHeartbeatNtfPeriod returns the HeartbeatNtfPeriod field value if set, zero value otherwise.
 func (o *NotifyHeartbeatAllOf) GetHeartbeatNtfPeriod() int32 {
-	if o == nil || isNil(o.HeartbeatNtfPeriod) {
+	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NotifyHeartbeatAllOf) GetHeartbeatNtfPeriod() int32 {
 // GetHeartbeatNtfPeriodOk returns a tuple with the HeartbeatNtfPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyHeartbeatAllOf) GetHeartbeatNtfPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.HeartbeatNtfPeriod) {
+	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
 		return nil, false
 	}
 	return o.HeartbeatNtfPeriod, true
@@ -59,7 +59,7 @@ func (o *NotifyHeartbeatAllOf) GetHeartbeatNtfPeriodOk() (*int32, bool) {
 
 // HasHeartbeatNtfPeriod returns a boolean if a field has been set.
 func (o *NotifyHeartbeatAllOf) HasHeartbeatNtfPeriod() bool {
-	if o != nil && !isNil(o.HeartbeatNtfPeriod) {
+	if o != nil && !IsNil(o.HeartbeatNtfPeriod) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *NotifyHeartbeatAllOf) SetHeartbeatNtfPeriod(v int32) {
 }
 
 func (o NotifyHeartbeatAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o NotifyHeartbeatAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NotifyHeartbeatAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.HeartbeatNtfPeriod) {
+	if !IsNil(o.HeartbeatNtfPeriod) {
 		toSerialize["heartbeatNtfPeriod"] = o.HeartbeatNtfPeriod
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableNotifyHeartbeatAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

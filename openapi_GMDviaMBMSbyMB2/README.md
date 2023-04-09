@@ -129,7 +129,6 @@ Class | Method | HTTP request | Description
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
- - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [TMGIAllocation](docs/TMGIAllocation.md)
  - [TMGIAllocationPatch](docs/TMGIAllocationPatch.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)

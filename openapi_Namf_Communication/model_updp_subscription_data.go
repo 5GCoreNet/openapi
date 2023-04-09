@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,8 +22,8 @@ type UpdpSubscriptionData struct {
 	UpdpNotifySubscriptionId string `json:"updpNotifySubscriptionId"`
 	// String providing an URI formatted according to RFC 3986.
 	UpdpNotifyCallbackUri string `json:"updpNotifyCallbackUri"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures   *string `json:"supportedFeatures,omitempty"`
 	UpdpCallbackBinding *string `json:"updpCallbackBinding,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *UpdpSubscriptionData) SetUpdpNotifyCallbackUri(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UpdpSubscriptionData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UpdpSubscriptionData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdpSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -114,7 +114,7 @@ func (o *UpdpSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UpdpSubscriptionData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *UpdpSubscriptionData) SetSupportedFeatures(v string) {
 
 // GetUpdpCallbackBinding returns the UpdpCallbackBinding field value if set, zero value otherwise.
 func (o *UpdpSubscriptionData) GetUpdpCallbackBinding() string {
-	if o == nil || isNil(o.UpdpCallbackBinding) {
+	if o == nil || IsNil(o.UpdpCallbackBinding) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *UpdpSubscriptionData) GetUpdpCallbackBinding() string {
 // GetUpdpCallbackBindingOk returns a tuple with the UpdpCallbackBinding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdpSubscriptionData) GetUpdpCallbackBindingOk() (*string, bool) {
-	if o == nil || isNil(o.UpdpCallbackBinding) {
+	if o == nil || IsNil(o.UpdpCallbackBinding) {
 		return nil, false
 	}
 	return o.UpdpCallbackBinding, true
@@ -146,7 +146,7 @@ func (o *UpdpSubscriptionData) GetUpdpCallbackBindingOk() (*string, bool) {
 
 // HasUpdpCallbackBinding returns a boolean if a field has been set.
 func (o *UpdpSubscriptionData) HasUpdpCallbackBinding() bool {
-	if o != nil && !isNil(o.UpdpCallbackBinding) {
+	if o != nil && !IsNil(o.UpdpCallbackBinding) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *UpdpSubscriptionData) SetUpdpCallbackBinding(v string) {
 }
 
 func (o UpdpSubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o UpdpSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["updpNotifySubscriptionId"] = o.UpdpNotifySubscriptionId
 	toSerialize["updpNotifyCallbackUri"] = o.UpdpNotifyCallbackUri
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.UpdpCallbackBinding) {
+	if !IsNil(o.UpdpCallbackBinding) {
 		toSerialize["updpCallbackBinding"] = o.UpdpCallbackBinding
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableUpdpSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

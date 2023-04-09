@@ -1,7 +1,7 @@
 /*
 NhssUEAU
 
-HSS UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AuthType struct for AuthType
 type AuthType struct {
-	AuthTypeAnyOf *AuthTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AuthType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AuthTypeAnyOf
-	err = json.Unmarshal(data, &dst.AuthTypeAnyOf);
-	if err == nil {
-		jsonAuthTypeAnyOf, _ := json.Marshal(dst.AuthTypeAnyOf)
-		if string(jsonAuthTypeAnyOf) == "{}" { // empty struct
-			dst.AuthTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AuthTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AuthTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AuthType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AuthType) MarshalJSON() ([]byte, error) {
-	if src.AuthTypeAnyOf != nil {
-		return json.Marshal(&src.AuthTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAuthType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

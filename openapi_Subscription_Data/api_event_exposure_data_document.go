@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // EventExposureDataDocumentApiService EventExposureDataDocumentApi service
 type EventExposureDataDocumentApiService service
 
 type ApiQueryEEDataRequest struct {
-	ctx context.Context
-	ApiService *EventExposureDataDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *EventExposureDataDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -50,26 +49,27 @@ func (r ApiQueryEEDataRequest) Execute() (*EeProfileData, *http.Response, error)
 /*
 QueryEEData Retrieves the ee profile data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryEEDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryEEDataRequest
 */
 func (a *EventExposureDataDocumentApiService) QueryEEData(ctx context.Context, ueId string) ApiQueryEEDataRequest {
 	return ApiQueryEEDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return EeProfileData
+//
+//	@return EeProfileData
 func (a *EventExposureDataDocumentApiService) QueryEEDataExecute(r ApiQueryEEDataRequest) (*EeProfileData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EeProfileData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EeProfileData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureDataDocumentApiService.QueryEEData")
@@ -85,10 +85,10 @@ func (a *EventExposureDataDocumentApiService) QueryEEDataExecute(r ApiQueryEEDat
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -117,9 +117,9 @@ func (a *EventExposureDataDocumentApiService) QueryEEDataExecute(r ApiQueryEEDat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

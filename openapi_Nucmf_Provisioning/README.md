@@ -95,7 +95,6 @@ Class | Method | HTTP request | Description
  - [InvalidParam](docs/InvalidParam.md)
  - [InvalidParam1](docs/InvalidParam1.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
@@ -105,7 +104,6 @@ Class | Method | HTTP request | Description
  - [RacsData](docs/RacsData.md)
  - [RacsDataPatch](docs/RacsDataPatch.md)
  - [RacsFailureCode](docs/RacsFailureCode.md)
- - [RacsFailureCodeAnyOf](docs/RacsFailureCodeAnyOf.md)
  - [RacsFailureReport](docs/RacsFailureReport.md)
  - [Snssai](docs/Snssai.md)
 

@@ -42,7 +42,7 @@ func NewEventThresholdL1TypeWithDefaults() *EventThresholdL1Type {
 
 // GetRSRP returns the RSRP field value if set, zero value otherwise.
 func (o *EventThresholdL1Type) GetRSRP() int32 {
-	if o == nil || isNil(o.RSRP) {
+	if o == nil || IsNil(o.RSRP) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EventThresholdL1Type) GetRSRP() int32 {
 // GetRSRPOk returns a tuple with the RSRP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdL1Type) GetRSRPOk() (*int32, bool) {
-	if o == nil || isNil(o.RSRP) {
+	if o == nil || IsNil(o.RSRP) {
 		return nil, false
 	}
 	return o.RSRP, true
@@ -60,7 +60,7 @@ func (o *EventThresholdL1Type) GetRSRPOk() (*int32, bool) {
 
 // HasRSRP returns a boolean if a field has been set.
 func (o *EventThresholdL1Type) HasRSRP() bool {
-	if o != nil && !isNil(o.RSRP) {
+	if o != nil && !IsNil(o.RSRP) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EventThresholdL1Type) SetRSRP(v int32) {
 
 // GetRSRQ returns the RSRQ field value if set, zero value otherwise.
 func (o *EventThresholdL1Type) GetRSRQ() int32 {
-	if o == nil || isNil(o.RSRQ) {
+	if o == nil || IsNil(o.RSRQ) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EventThresholdL1Type) GetRSRQ() int32 {
 // GetRSRQOk returns a tuple with the RSRQ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdL1Type) GetRSRQOk() (*int32, bool) {
-	if o == nil || isNil(o.RSRQ) {
+	if o == nil || IsNil(o.RSRQ) {
 		return nil, false
 	}
 	return o.RSRQ, true
@@ -92,7 +92,7 @@ func (o *EventThresholdL1Type) GetRSRQOk() (*int32, bool) {
 
 // HasRSRQ returns a boolean if a field has been set.
 func (o *EventThresholdL1Type) HasRSRQ() bool {
-	if o != nil && !isNil(o.RSRQ) {
+	if o != nil && !IsNil(o.RSRQ) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EventThresholdL1Type) SetRSRQ(v int32) {
 }
 
 func (o EventThresholdL1Type) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o EventThresholdL1Type) MarshalJSON() ([]byte, error) {
 
 func (o EventThresholdL1Type) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RSRP) {
+	if !IsNil(o.RSRP) {
 		toSerialize["RSRP"] = o.RSRP
 	}
-	if !isNil(o.RSRQ) {
+	if !IsNil(o.RSRQ) {
 		toSerialize["RSRQ"] = o.RSRQ
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableEventThresholdL1Type) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

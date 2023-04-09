@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsNiddConfigurationStatusNotification(v *interface{}) NiddConfigur
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiddConfigurationStatusNotification) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src NiddConfigurationStatusNotification) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiddConfigurationStatusNotification) GetActualInstance() (interface{}) {
+func (obj *NiddConfigurationStatusNotification) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableNiddConfigurationStatusNotification) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,8 +22,8 @@ type Model3GAkaAv struct {
 	Rand string `json:"rand"`
 	Xres string `json:"xres"`
 	Autn string `json:"autn"`
-	Ck string `json:"ck"`
-	Ik string `json:"ik"`
+	Ck   string `json:"ck"`
+	Ik   string `json:"ik"`
 }
 
 // NewModel3GAkaAv instantiates a new Model3GAkaAv object
@@ -169,7 +169,7 @@ func (o *Model3GAkaAv) SetIk(v string) {
 }
 
 func (o Model3GAkaAv) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -221,5 +221,3 @@ func (v *NullableModel3GAkaAv) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

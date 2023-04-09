@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &VendorSpecificFeature{}
 
 // VendorSpecificFeature Information about a vendor-specific feature
 type VendorSpecificFeature struct {
-	FeatureName string `json:"featureName"`
+	FeatureName    string `json:"featureName"`
 	FeatureVersion string `json:"featureVersion"`
 }
 
@@ -91,7 +91,7 @@ func (o *VendorSpecificFeature) SetFeatureVersion(v string) {
 }
 
 func (o VendorSpecificFeature) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableVendorSpecificFeature) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

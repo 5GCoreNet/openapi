@@ -19,8 +19,8 @@ var _ MappedNullable = &Snssai{}
 
 // Snssai struct for Snssai
 type Snssai struct {
-	Sst *int32 `json:"sst,omitempty"`
-	Sd *string `json:"sd,omitempty"`
+	Sst *int32  `json:"sst,omitempty"`
+	Sd  *string `json:"sd,omitempty"`
 }
 
 // NewSnssai instantiates a new Snssai object
@@ -42,7 +42,7 @@ func NewSnssaiWithDefaults() *Snssai {
 
 // GetSst returns the Sst field value if set, zero value otherwise.
 func (o *Snssai) GetSst() int32 {
-	if o == nil || isNil(o.Sst) {
+	if o == nil || IsNil(o.Sst) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Snssai) GetSst() int32 {
 // GetSstOk returns a tuple with the Sst field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Snssai) GetSstOk() (*int32, bool) {
-	if o == nil || isNil(o.Sst) {
+	if o == nil || IsNil(o.Sst) {
 		return nil, false
 	}
 	return o.Sst, true
@@ -60,7 +60,7 @@ func (o *Snssai) GetSstOk() (*int32, bool) {
 
 // HasSst returns a boolean if a field has been set.
 func (o *Snssai) HasSst() bool {
-	if o != nil && !isNil(o.Sst) {
+	if o != nil && !IsNil(o.Sst) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Snssai) SetSst(v int32) {
 
 // GetSd returns the Sd field value if set, zero value otherwise.
 func (o *Snssai) GetSd() string {
-	if o == nil || isNil(o.Sd) {
+	if o == nil || IsNil(o.Sd) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Snssai) GetSd() string {
 // GetSdOk returns a tuple with the Sd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Snssai) GetSdOk() (*string, bool) {
-	if o == nil || isNil(o.Sd) {
+	if o == nil || IsNil(o.Sd) {
 		return nil, false
 	}
 	return o.Sd, true
@@ -92,7 +92,7 @@ func (o *Snssai) GetSdOk() (*string, bool) {
 
 // HasSd returns a boolean if a field has been set.
 func (o *Snssai) HasSd() bool {
-	if o != nil && !isNil(o.Sd) {
+	if o != nil && !IsNil(o.Sd) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Snssai) SetSd(v string) {
 }
 
 func (o Snssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o Snssai) MarshalJSON() ([]byte, error) {
 
 func (o Snssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Sst) {
+	if !IsNil(o.Sst) {
 		toSerialize["sst"] = o.Sst
 	}
-	if !isNil(o.Sd) {
+	if !IsNil(o.Sd) {
 		toSerialize["sd"] = o.Sd
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

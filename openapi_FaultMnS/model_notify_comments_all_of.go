@@ -19,9 +19,9 @@ var _ MappedNullable = &NotifyCommentsAllOf{}
 
 // NotifyCommentsAllOf struct for NotifyCommentsAllOf
 type NotifyCommentsAllOf struct {
-	AlarmId string `json:"alarmId"`
-	AlarmType AlarmType `json:"alarmType"`
-	ProbableCause ProbableCause `json:"probableCause"`
+	AlarmId           string            `json:"alarmId"`
+	AlarmType         AlarmType         `json:"alarmType"`
+	ProbableCause     ProbableCause     `json:"probableCause"`
 	PerceivedSeverity PerceivedSeverity `json:"perceivedSeverity"`
 	// Collection of comments. The comment identifiers are allocated by the MnS producer and used as key in the map.
 	Comments map[string]Comment `json:"comments"`
@@ -170,7 +170,7 @@ func (o *NotifyCommentsAllOf) SetComments(v map[string]Comment) {
 }
 
 func (o NotifyCommentsAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -222,5 +222,3 @@ func (v *NullableNotifyCommentsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

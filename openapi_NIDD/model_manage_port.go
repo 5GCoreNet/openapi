@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -22,13 +22,13 @@ type ManagePort struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Self *string `json:"self,omitempty"`
 	// Identifies the application.
-	AppId string `json:"appId"`
+	AppId        string        `json:"appId"`
 	ManageEntity *ManageEntity `json:"manageEntity,omitempty"`
 	// Indicate whether to skip UE inquiry.
 	SkipUeInquiry *bool `json:"skipUeInquiry,omitempty"`
 	// Indicates the serialization format(s) that are supported by the SCS/AS on the associated RDS port.
 	SupportedFormats []SerializationFormat `json:"supportedFormats,omitempty"`
-	ConfiguredFormat *SerializationFormat `json:"configuredFormat,omitempty"`
+	ConfiguredFormat *SerializationFormat  `json:"configuredFormat,omitempty"`
 }
 
 // NewManagePort instantiates a new ManagePort object
@@ -51,7 +51,7 @@ func NewManagePortWithDefaults() *ManagePort {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *ManagePort) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *ManagePort) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -69,7 +69,7 @@ func (o *ManagePort) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *ManagePort) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ManagePort) SetAppId(v string) {
 
 // GetManageEntity returns the ManageEntity field value if set, zero value otherwise.
 func (o *ManagePort) GetManageEntity() ManageEntity {
-	if o == nil || isNil(o.ManageEntity) {
+	if o == nil || IsNil(o.ManageEntity) {
 		var ret ManageEntity
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ManagePort) GetManageEntity() ManageEntity {
 // GetManageEntityOk returns a tuple with the ManageEntity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetManageEntityOk() (*ManageEntity, bool) {
-	if o == nil || isNil(o.ManageEntity) {
+	if o == nil || IsNil(o.ManageEntity) {
 		return nil, false
 	}
 	return o.ManageEntity, true
@@ -125,7 +125,7 @@ func (o *ManagePort) GetManageEntityOk() (*ManageEntity, bool) {
 
 // HasManageEntity returns a boolean if a field has been set.
 func (o *ManagePort) HasManageEntity() bool {
-	if o != nil && !isNil(o.ManageEntity) {
+	if o != nil && !IsNil(o.ManageEntity) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *ManagePort) SetManageEntity(v ManageEntity) {
 
 // GetSkipUeInquiry returns the SkipUeInquiry field value if set, zero value otherwise.
 func (o *ManagePort) GetSkipUeInquiry() bool {
-	if o == nil || isNil(o.SkipUeInquiry) {
+	if o == nil || IsNil(o.SkipUeInquiry) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ManagePort) GetSkipUeInquiry() bool {
 // GetSkipUeInquiryOk returns a tuple with the SkipUeInquiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetSkipUeInquiryOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipUeInquiry) {
+	if o == nil || IsNil(o.SkipUeInquiry) {
 		return nil, false
 	}
 	return o.SkipUeInquiry, true
@@ -157,7 +157,7 @@ func (o *ManagePort) GetSkipUeInquiryOk() (*bool, bool) {
 
 // HasSkipUeInquiry returns a boolean if a field has been set.
 func (o *ManagePort) HasSkipUeInquiry() bool {
-	if o != nil && !isNil(o.SkipUeInquiry) {
+	if o != nil && !IsNil(o.SkipUeInquiry) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *ManagePort) SetSkipUeInquiry(v bool) {
 
 // GetSupportedFormats returns the SupportedFormats field value if set, zero value otherwise.
 func (o *ManagePort) GetSupportedFormats() []SerializationFormat {
-	if o == nil || isNil(o.SupportedFormats) {
+	if o == nil || IsNil(o.SupportedFormats) {
 		var ret []SerializationFormat
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *ManagePort) GetSupportedFormats() []SerializationFormat {
 // GetSupportedFormatsOk returns a tuple with the SupportedFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetSupportedFormatsOk() ([]SerializationFormat, bool) {
-	if o == nil || isNil(o.SupportedFormats) {
+	if o == nil || IsNil(o.SupportedFormats) {
 		return nil, false
 	}
 	return o.SupportedFormats, true
@@ -189,7 +189,7 @@ func (o *ManagePort) GetSupportedFormatsOk() ([]SerializationFormat, bool) {
 
 // HasSupportedFormats returns a boolean if a field has been set.
 func (o *ManagePort) HasSupportedFormats() bool {
-	if o != nil && !isNil(o.SupportedFormats) {
+	if o != nil && !IsNil(o.SupportedFormats) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *ManagePort) SetSupportedFormats(v []SerializationFormat) {
 
 // GetConfiguredFormat returns the ConfiguredFormat field value if set, zero value otherwise.
 func (o *ManagePort) GetConfiguredFormat() SerializationFormat {
-	if o == nil || isNil(o.ConfiguredFormat) {
+	if o == nil || IsNil(o.ConfiguredFormat) {
 		var ret SerializationFormat
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *ManagePort) GetConfiguredFormat() SerializationFormat {
 // GetConfiguredFormatOk returns a tuple with the ConfiguredFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetConfiguredFormatOk() (*SerializationFormat, bool) {
-	if o == nil || isNil(o.ConfiguredFormat) {
+	if o == nil || IsNil(o.ConfiguredFormat) {
 		return nil, false
 	}
 	return o.ConfiguredFormat, true
@@ -221,7 +221,7 @@ func (o *ManagePort) GetConfiguredFormatOk() (*SerializationFormat, bool) {
 
 // HasConfiguredFormat returns a boolean if a field has been set.
 func (o *ManagePort) HasConfiguredFormat() bool {
-	if o != nil && !isNil(o.ConfiguredFormat) {
+	if o != nil && !IsNil(o.ConfiguredFormat) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *ManagePort) SetConfiguredFormat(v SerializationFormat) {
 }
 
 func (o ManagePort) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,20 +243,20 @@ func (o ManagePort) MarshalJSON() ([]byte, error) {
 
 func (o ManagePort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["appId"] = o.AppId
-	if !isNil(o.ManageEntity) {
+	if !IsNil(o.ManageEntity) {
 		toSerialize["manageEntity"] = o.ManageEntity
 	}
-	if !isNil(o.SkipUeInquiry) {
+	if !IsNil(o.SkipUeInquiry) {
 		toSerialize["skipUeInquiry"] = o.SkipUeInquiry
 	}
-	if !isNil(o.SupportedFormats) {
+	if !IsNil(o.SupportedFormats) {
 		toSerialize["supportedFormats"] = o.SupportedFormats
 	}
-	if !isNil(o.ConfiguredFormat) {
+	if !IsNil(o.ConfiguredFormat) {
 		toSerialize["configuredFormat"] = o.ConfiguredFormat
 	}
 	return toSerialize, nil
@@ -297,5 +297,3 @@ func (v *NullableManagePort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

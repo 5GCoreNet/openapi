@@ -4269,7 +4269,10 @@ components:
       type: object
     EASDiscEventIDs:
       anyOf:
-      - $ref: '#/components/schemas/EASDiscEventIDs_anyOf'
+      - enum:
+        - EAS_AVAILABILITY_CHANGE
+        - EAS_DYNAMIC_INFO_CHANGE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5076,7 +5079,14 @@ components:
       type: string
     ACRScenario:
       anyOf:
-      - $ref: '#/components/schemas/ACRScenario_anyOf'
+      - enum:
+        - EEC_INITIATED
+        - EEC_EXECUTED_VIA_SOURCE_EES
+        - EEC_EXECUTED_VIA_TARGET_EES
+        - SOURCE_EAS_DECIDED
+        - SOURCE_EES_EXECUTED
+        - EEL_MANAGED_ACR
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5677,7 +5687,11 @@ components:
       type: object
     EASCategory:
       anyOf:
-      - $ref: '#/components/schemas/EASCategory_anyOf'
+      - enum:
+        - UAS
+        - V2X
+        - OTHER
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5741,7 +5755,12 @@ components:
       type: object
     PermissionLevel:
       anyOf:
-      - $ref: '#/components/schemas/PermissionLevel_anyOf'
+      - enum:
+        - TRIAL
+        - GOLD
+        - SILVER
+        - OTHER
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -6089,9 +6108,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -6378,12 +6408,31 @@ components:
       type: object
     PositioningMethod:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMethod_anyOf'
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
       - type: string
       description: Indicates supported positioning methods.
     AccuracyFulfilmentIndicator:
       anyOf:
-      - $ref: '#/components/schemas/AccuracyFulfilmentIndicator_anyOf'
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
       - type: string
       description: Indicates fulfilment of requested accuracy.
     VelocityEstimate:
@@ -6532,7 +6581,14 @@ components:
       type: object
     LdrType:
       anyOf:
-      - $ref: '#/components/schemas/LdrType_anyOf'
+      - enum:
+        - UE_AVAILABLE
+        - PERIODIC
+        - ENTERING_INTO_AREA
+        - LEAVING_FROM_AREA
+        - BEING_INSIDE_AREA
+        - MOTION
+        type: string
       - type: string
       description: Indicates LDR types.
     MinorLocationQoS:
@@ -7419,37 +7475,6 @@ components:
       description: "String encoding a Mobile Network Code part of the PLMN, comprising\
         \ 2 or 3 digits, as defined in 3GPP TS 38.413."
       type: string
-    EASDiscEventIDs_anyOf:
-      enum:
-      - EAS_AVAILABILITY_CHANGE
-      - EAS_DYNAMIC_INFO_CHANGE
-      type: string
-      example: null
-    ACRScenario_anyOf:
-      enum:
-      - EEC_INITIATED
-      - EEC_EXECUTED_VIA_SOURCE_EES
-      - EEC_EXECUTED_VIA_TARGET_EES
-      - SOURCE_EAS_DECIDED
-      - SOURCE_EES_EXECUTED
-      - EEL_MANAGED_ACR
-      type: string
-      example: null
-    EASCategory_anyOf:
-      enum:
-      - UAS
-      - V2X
-      - OTHER
-      type: string
-      example: null
-    PermissionLevel_anyOf:
-      enum:
-      - TRIAL
-      - GOLD
-      - SILVER
-      - OTHER
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -7457,19 +7482,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -7638,41 +7650,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    PositioningMethod_anyOf:
-      enum:
-      - CELLID
-      - ECID
-      - OTDOA
-      - BAROMETRIC_PRESSURE
-      - WLAN
-      - BLUETOOTH
-      - MBS
-      - MOTION_SENSOR
-      - DL_TDOA
-      - DL_AOD
-      - MULTI-RTT
-      - NR_ECID
-      - UL_TDOA
-      - UL_AOA
-      - NETWORK_SPECIFIC
-      type: string
-      example: null
-    AccuracyFulfilmentIndicator_anyOf:
-      enum:
-      - REQUESTED_ACCURACY_FULFILLED
-      - REQUESTED_ACCURACY_NOT_FULFILLED
-      type: string
-      example: null
-    LdrType_anyOf:
-      enum:
-      - UE_AVAILABLE
-      - PERIODIC
-      - ENTERING_INTO_AREA
-      - LEAVING_FROM_AREA
-      - BEING_INSIDE_AREA
-      - MOTION
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

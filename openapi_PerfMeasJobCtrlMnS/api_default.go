@@ -13,21 +13,20 @@ package openapi_PerfMeasJobCtrlMnS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiMeasJobsGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	jobIdList *[]string
+	jobIdList  *[]string
 }
 
 // This parameter identifies the list of jobId to select the resources from the collection resources identified with the path component of the URI.
@@ -45,24 +44,25 @@ MeasJobsGet Read resources of measurement jobs
 
 With HTTP GET, resources of measurement jobs are read. The resources to be read are identified with the path component (base resource) and the query component (jobIdList) of the URI. The fields query component allows to select the resource properties to be returned.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeasJobsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMeasJobsGetRequest
 */
 func (a *DefaultApiService) MeasJobsGet(ctx context.Context) ApiMeasJobsGetRequest {
 	return ApiMeasJobsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return MeasJobsRetrievalResponseType
+//
+//	@return MeasJobsRetrievalResponseType
 func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJobsRetrievalResponseType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MeasJobsRetrievalResponseType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MeasJobsRetrievalResponseType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.MeasJobsGet")
@@ -84,10 +84,10 @@ func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "jobIdList", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "jobIdList", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "jobIdList", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "jobIdList", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -117,9 +117,9 @@ func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -129,14 +129,14 @@ func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -153,9 +153,9 @@ func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJo
 }
 
 type ApiMeasJobsJobIdDeleteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	jobId string
+	jobId      string
 }
 
 func (r ApiMeasJobsJobIdDeleteRequest) Execute() (*http.Response, error) {
@@ -167,24 +167,24 @@ MeasJobsJobIdDelete Delete a single measurement job
 
 The measurement job is deleted by deleting the corresponding measurement job resource. The resource to be deleted is identified with the path component of the URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param jobId Identifies the measurement job to be deleted.
- @return ApiMeasJobsJobIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param jobId Identifies the measurement job to be deleted.
+	@return ApiMeasJobsJobIdDeleteRequest
 */
 func (a *DefaultApiService) MeasJobsJobIdDelete(ctx context.Context, jobId string) ApiMeasJobsJobIdDeleteRequest {
 	return ApiMeasJobsJobIdDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		jobId: jobId,
+		ctx:        ctx,
+		jobId:      jobId,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) MeasJobsJobIdDeleteExecute(r ApiMeasJobsJobIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.MeasJobsJobIdDelete")
@@ -226,9 +226,9 @@ func (a *DefaultApiService) MeasJobsJobIdDeleteExecute(r ApiMeasJobsJobIdDeleteR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -238,14 +238,14 @@ func (a *DefaultApiService) MeasJobsJobIdDeleteExecute(r ApiMeasJobsJobIdDeleteR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -253,9 +253,9 @@ func (a *DefaultApiService) MeasJobsJobIdDeleteExecute(r ApiMeasJobsJobIdDeleteR
 }
 
 type ApiMeasJobsJobIdGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	jobId string
+	jobId      string
 }
 
 func (r ApiMeasJobsJobIdGetRequest) Execute() (*MeasJobsRetrievalResponseType, *http.Response, error) {
@@ -267,26 +267,27 @@ MeasJobsJobIdGet Read resource of a single measurement job
 
 With HTTP GET, resource of a measurement job is read. The resource to be read is identified with the path component of the URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param jobId Identifies the measurement job to be read.
- @return ApiMeasJobsJobIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param jobId Identifies the measurement job to be read.
+	@return ApiMeasJobsJobIdGetRequest
 */
 func (a *DefaultApiService) MeasJobsJobIdGet(ctx context.Context, jobId string) ApiMeasJobsJobIdGetRequest {
 	return ApiMeasJobsJobIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		jobId: jobId,
+		ctx:        ctx,
+		jobId:      jobId,
 	}
 }
 
 // Execute executes the request
-//  @return MeasJobsRetrievalResponseType
+//
+//	@return MeasJobsRetrievalResponseType
 func (a *DefaultApiService) MeasJobsJobIdGetExecute(r ApiMeasJobsJobIdGetRequest) (*MeasJobsRetrievalResponseType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MeasJobsRetrievalResponseType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MeasJobsRetrievalResponseType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.MeasJobsJobIdGet")
@@ -328,9 +329,9 @@ func (a *DefaultApiService) MeasJobsJobIdGetExecute(r ApiMeasJobsJobIdGetRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -340,14 +341,14 @@ func (a *DefaultApiService) MeasJobsJobIdGetExecute(r ApiMeasJobsJobIdGetRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -364,8 +365,8 @@ func (a *DefaultApiService) MeasJobsJobIdGetExecute(r ApiMeasJobsJobIdGetRequest
 }
 
 type ApiMeasJobsPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                        context.Context
+	ApiService                 *DefaultApiService
 	measJobCreationRequestType *MeasJobCreationRequestType
 }
 
@@ -383,24 +384,25 @@ MeasJobsPost Create a measurement job
 
 To create a measurement job the representation of the measurement job is POSTed on the /measJobs collection resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMeasJobsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMeasJobsPostRequest
 */
 func (a *DefaultApiService) MeasJobsPost(ctx context.Context) ApiMeasJobsPostRequest {
 	return ApiMeasJobsPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return MeasJobCreationResponseType
+//
+//	@return MeasJobCreationResponseType
 func (a *DefaultApiService) MeasJobsPostExecute(r ApiMeasJobsPostRequest) (*MeasJobCreationResponseType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MeasJobCreationResponseType
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MeasJobCreationResponseType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.MeasJobsPost")
@@ -446,9 +448,9 @@ func (a *DefaultApiService) MeasJobsPostExecute(r ApiMeasJobsPostRequest) (*Meas
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -458,14 +460,14 @@ func (a *DefaultApiService) MeasJobsPostExecute(r ApiMeasJobsPostRequest) (*Meas
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponseType
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponseType
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ProvisionedParameterDataDocumentApiService ProvisionedParameterDataDocumentApi service
 type ProvisionedParameterDataDocumentApiService service
 
 type ApiModifyPpDataRequest struct {
-	ctx context.Context
-	ApiService *ProvisionedParameterDataDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *ProvisionedParameterDataDocumentApiService
+	ueId              string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -49,26 +48,27 @@ func (r ApiModifyPpDataRequest) Execute() (*PatchResult, *http.Response, error) 
 /*
 ModifyPpData modify the provisioned parameter data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId pp data for a UE
- @return ApiModifyPpDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId pp data for a UE
+	@return ApiModifyPpDataRequest
 */
 func (a *ProvisionedParameterDataDocumentApiService) ModifyPpData(ctx context.Context, ueId string) ApiModifyPpDataRequest {
 	return ApiModifyPpDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *ProvisionedParameterDataDocumentApiService) ModifyPpDataExecute(r ApiModifyPpDataRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisionedParameterDataDocumentApiService.ModifyPpData")
@@ -87,7 +87,7 @@ func (a *ProvisionedParameterDataDocumentApiService) ModifyPpDataExecute(r ApiMo
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -118,9 +118,9 @@ func (a *ProvisionedParameterDataDocumentApiService) ModifyPpDataExecute(r ApiMo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -137,8 +137,8 @@ func (a *ProvisionedParameterDataDocumentApiService) ModifyPpDataExecute(r ApiMo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

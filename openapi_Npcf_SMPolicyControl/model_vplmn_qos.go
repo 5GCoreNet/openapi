@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &VplmnQos{}
 
 // VplmnQos VPLMN QoS
 type VplmnQos struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
-	Var5qi *int32 `json:"5qi,omitempty"`
-	Arp *Arp `json:"arp,omitempty"`
-	SessionAmbr *Ambr `json:"sessionAmbr,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
+	Var5qi      *int32 `json:"5qi,omitempty"`
+	Arp         *Arp   `json:"arp,omitempty"`
+	SessionAmbr *Ambr  `json:"sessionAmbr,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxFbrDl *string `json:"maxFbrDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxFbrUl *string `json:"maxFbrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbrDl *string `json:"guaFbrDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbrUl *string `json:"guaFbrUl,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func NewVplmnQosWithDefaults() *VplmnQos {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *VplmnQos) GetVar5qi() int32 {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *VplmnQos) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetVar5qiOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -70,7 +70,7 @@ func (o *VplmnQos) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *VplmnQos) HasVar5qi() bool {
-	if o != nil && !isNil(o.Var5qi) {
+	if o != nil && !IsNil(o.Var5qi) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *VplmnQos) SetVar5qi(v int32) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *VplmnQos) GetArp() Arp {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *VplmnQos) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -102,7 +102,7 @@ func (o *VplmnQos) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *VplmnQos) HasArp() bool {
-	if o != nil && !isNil(o.Arp) {
+	if o != nil && !IsNil(o.Arp) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *VplmnQos) SetArp(v Arp) {
 
 // GetSessionAmbr returns the SessionAmbr field value if set, zero value otherwise.
 func (o *VplmnQos) GetSessionAmbr() Ambr {
-	if o == nil || isNil(o.SessionAmbr) {
+	if o == nil || IsNil(o.SessionAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *VplmnQos) GetSessionAmbr() Ambr {
 // GetSessionAmbrOk returns a tuple with the SessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetSessionAmbrOk() (*Ambr, bool) {
-	if o == nil || isNil(o.SessionAmbr) {
+	if o == nil || IsNil(o.SessionAmbr) {
 		return nil, false
 	}
 	return o.SessionAmbr, true
@@ -134,7 +134,7 @@ func (o *VplmnQos) GetSessionAmbrOk() (*Ambr, bool) {
 
 // HasSessionAmbr returns a boolean if a field has been set.
 func (o *VplmnQos) HasSessionAmbr() bool {
-	if o != nil && !isNil(o.SessionAmbr) {
+	if o != nil && !IsNil(o.SessionAmbr) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *VplmnQos) SetSessionAmbr(v Ambr) {
 
 // GetMaxFbrDl returns the MaxFbrDl field value if set, zero value otherwise.
 func (o *VplmnQos) GetMaxFbrDl() string {
-	if o == nil || isNil(o.MaxFbrDl) {
+	if o == nil || IsNil(o.MaxFbrDl) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *VplmnQos) GetMaxFbrDl() string {
 // GetMaxFbrDlOk returns a tuple with the MaxFbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetMaxFbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxFbrDl) {
+	if o == nil || IsNil(o.MaxFbrDl) {
 		return nil, false
 	}
 	return o.MaxFbrDl, true
@@ -166,7 +166,7 @@ func (o *VplmnQos) GetMaxFbrDlOk() (*string, bool) {
 
 // HasMaxFbrDl returns a boolean if a field has been set.
 func (o *VplmnQos) HasMaxFbrDl() bool {
-	if o != nil && !isNil(o.MaxFbrDl) {
+	if o != nil && !IsNil(o.MaxFbrDl) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *VplmnQos) SetMaxFbrDl(v string) {
 
 // GetMaxFbrUl returns the MaxFbrUl field value if set, zero value otherwise.
 func (o *VplmnQos) GetMaxFbrUl() string {
-	if o == nil || isNil(o.MaxFbrUl) {
+	if o == nil || IsNil(o.MaxFbrUl) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *VplmnQos) GetMaxFbrUl() string {
 // GetMaxFbrUlOk returns a tuple with the MaxFbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetMaxFbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxFbrUl) {
+	if o == nil || IsNil(o.MaxFbrUl) {
 		return nil, false
 	}
 	return o.MaxFbrUl, true
@@ -198,7 +198,7 @@ func (o *VplmnQos) GetMaxFbrUlOk() (*string, bool) {
 
 // HasMaxFbrUl returns a boolean if a field has been set.
 func (o *VplmnQos) HasMaxFbrUl() bool {
-	if o != nil && !isNil(o.MaxFbrUl) {
+	if o != nil && !IsNil(o.MaxFbrUl) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *VplmnQos) SetMaxFbrUl(v string) {
 
 // GetGuaFbrDl returns the GuaFbrDl field value if set, zero value otherwise.
 func (o *VplmnQos) GetGuaFbrDl() string {
-	if o == nil || isNil(o.GuaFbrDl) {
+	if o == nil || IsNil(o.GuaFbrDl) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *VplmnQos) GetGuaFbrDl() string {
 // GetGuaFbrDlOk returns a tuple with the GuaFbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetGuaFbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.GuaFbrDl) {
+	if o == nil || IsNil(o.GuaFbrDl) {
 		return nil, false
 	}
 	return o.GuaFbrDl, true
@@ -230,7 +230,7 @@ func (o *VplmnQos) GetGuaFbrDlOk() (*string, bool) {
 
 // HasGuaFbrDl returns a boolean if a field has been set.
 func (o *VplmnQos) HasGuaFbrDl() bool {
-	if o != nil && !isNil(o.GuaFbrDl) {
+	if o != nil && !IsNil(o.GuaFbrDl) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *VplmnQos) SetGuaFbrDl(v string) {
 
 // GetGuaFbrUl returns the GuaFbrUl field value if set, zero value otherwise.
 func (o *VplmnQos) GetGuaFbrUl() string {
-	if o == nil || isNil(o.GuaFbrUl) {
+	if o == nil || IsNil(o.GuaFbrUl) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *VplmnQos) GetGuaFbrUl() string {
 // GetGuaFbrUlOk returns a tuple with the GuaFbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VplmnQos) GetGuaFbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.GuaFbrUl) {
+	if o == nil || IsNil(o.GuaFbrUl) {
 		return nil, false
 	}
 	return o.GuaFbrUl, true
@@ -262,7 +262,7 @@ func (o *VplmnQos) GetGuaFbrUlOk() (*string, bool) {
 
 // HasGuaFbrUl returns a boolean if a field has been set.
 func (o *VplmnQos) HasGuaFbrUl() bool {
-	if o != nil && !isNil(o.GuaFbrUl) {
+	if o != nil && !IsNil(o.GuaFbrUl) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *VplmnQos) SetGuaFbrUl(v string) {
 }
 
 func (o VplmnQos) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -284,25 +284,25 @@ func (o VplmnQos) MarshalJSON() ([]byte, error) {
 
 func (o VplmnQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Var5qi) {
+	if !IsNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !isNil(o.Arp) {
+	if !IsNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !isNil(o.SessionAmbr) {
+	if !IsNil(o.SessionAmbr) {
 		toSerialize["sessionAmbr"] = o.SessionAmbr
 	}
-	if !isNil(o.MaxFbrDl) {
+	if !IsNil(o.MaxFbrDl) {
 		toSerialize["maxFbrDl"] = o.MaxFbrDl
 	}
-	if !isNil(o.MaxFbrUl) {
+	if !IsNil(o.MaxFbrUl) {
 		toSerialize["maxFbrUl"] = o.MaxFbrUl
 	}
-	if !isNil(o.GuaFbrDl) {
+	if !IsNil(o.GuaFbrDl) {
 		toSerialize["guaFbrDl"] = o.GuaFbrDl
 	}
-	if !isNil(o.GuaFbrUl) {
+	if !IsNil(o.GuaFbrUl) {
 		toSerialize["guaFbrUl"] = o.GuaFbrUl
 	}
 	return toSerialize, nil
@@ -343,5 +343,3 @@ func (v *NullableVplmnQos) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

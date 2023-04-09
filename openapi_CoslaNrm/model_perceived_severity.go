@@ -21,11 +21,11 @@ type PerceivedSeverity string
 // List of PerceivedSeverity
 const (
 	INDETERMINATE PerceivedSeverity = "INDETERMINATE"
-	CRITICAL PerceivedSeverity = "CRITICAL"
-	MAJOR PerceivedSeverity = "MAJOR"
-	MINOR PerceivedSeverity = "MINOR"
-	WARNING PerceivedSeverity = "WARNING"
-	CLEARED PerceivedSeverity = "CLEARED"
+	CRITICAL      PerceivedSeverity = "CRITICAL"
+	MAJOR         PerceivedSeverity = "MAJOR"
+	MINOR         PerceivedSeverity = "MINOR"
+	WARNING       PerceivedSeverity = "WARNING"
+	CLEARED       PerceivedSeverity = "CLEARED"
 )
 
 // All allowed values of PerceivedSeverity enum
@@ -116,4 +116,3 @@ func (v *NullablePerceivedSeverity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &EventSubscription1{}
 
 // EventSubscription1 Represents a subscription to a single event.
 type EventSubscription1 struct {
-	Event SmfEvent `json:"event"`
-	DnaiChgType *DnaiChangeType `json:"dnaiChgType,omitempty"`
+	Event             SmfEvent               `json:"event"`
+	DnaiChgType       *DnaiChangeType        `json:"dnaiChgType,omitempty"`
 	DddTraDescriptors []DddTrafficDescriptor `json:"dddTraDescriptors,omitempty"`
-	DddStati []DlDataDeliveryStatus `json:"dddStati,omitempty"`
-	AppIds []string `json:"appIds,omitempty"`
-	TargetPeriod *TimeWindow `json:"targetPeriod,omitempty"`
-	// Indicates the subscription for UE transaction dispersion collectionon, if it is included and set to \"true\". Default value is \"false\". 
+	DddStati          []DlDataDeliveryStatus `json:"dddStati,omitempty"`
+	AppIds            []string               `json:"appIds,omitempty"`
+	TargetPeriod      *TimeWindow            `json:"targetPeriod,omitempty"`
+	// Indicates the subscription for UE transaction dispersion collectionon, if it is included and set to \"true\". Default value is \"false\".
 	TransacDispInd *bool `json:"transacDispInd,omitempty"`
 	// Indicates Session Management Transaction metrics.
 	TransacMetrics []TransactionMetric `json:"transacMetrics,omitempty"`
-	UeIpAddr *IpAddr `json:"ueIpAddr,omitempty"`
+	UeIpAddr       *IpAddr             `json:"ueIpAddr,omitempty"`
 }
 
 // NewEventSubscription1 instantiates a new EventSubscription1 object
@@ -76,7 +76,7 @@ func (o *EventSubscription1) SetEvent(v SmfEvent) {
 
 // GetDnaiChgType returns the DnaiChgType field value if set, zero value otherwise.
 func (o *EventSubscription1) GetDnaiChgType() DnaiChangeType {
-	if o == nil || isNil(o.DnaiChgType) {
+	if o == nil || IsNil(o.DnaiChgType) {
 		var ret DnaiChangeType
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EventSubscription1) GetDnaiChgType() DnaiChangeType {
 // GetDnaiChgTypeOk returns a tuple with the DnaiChgType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetDnaiChgTypeOk() (*DnaiChangeType, bool) {
-	if o == nil || isNil(o.DnaiChgType) {
+	if o == nil || IsNil(o.DnaiChgType) {
 		return nil, false
 	}
 	return o.DnaiChgType, true
@@ -94,7 +94,7 @@ func (o *EventSubscription1) GetDnaiChgTypeOk() (*DnaiChangeType, bool) {
 
 // HasDnaiChgType returns a boolean if a field has been set.
 func (o *EventSubscription1) HasDnaiChgType() bool {
-	if o != nil && !isNil(o.DnaiChgType) {
+	if o != nil && !IsNil(o.DnaiChgType) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EventSubscription1) SetDnaiChgType(v DnaiChangeType) {
 
 // GetDddTraDescriptors returns the DddTraDescriptors field value if set, zero value otherwise.
 func (o *EventSubscription1) GetDddTraDescriptors() []DddTrafficDescriptor {
-	if o == nil || isNil(o.DddTraDescriptors) {
+	if o == nil || IsNil(o.DddTraDescriptors) {
 		var ret []DddTrafficDescriptor
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EventSubscription1) GetDddTraDescriptors() []DddTrafficDescriptor {
 // GetDddTraDescriptorsOk returns a tuple with the DddTraDescriptors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetDddTraDescriptorsOk() ([]DddTrafficDescriptor, bool) {
-	if o == nil || isNil(o.DddTraDescriptors) {
+	if o == nil || IsNil(o.DddTraDescriptors) {
 		return nil, false
 	}
 	return o.DddTraDescriptors, true
@@ -126,7 +126,7 @@ func (o *EventSubscription1) GetDddTraDescriptorsOk() ([]DddTrafficDescriptor, b
 
 // HasDddTraDescriptors returns a boolean if a field has been set.
 func (o *EventSubscription1) HasDddTraDescriptors() bool {
-	if o != nil && !isNil(o.DddTraDescriptors) {
+	if o != nil && !IsNil(o.DddTraDescriptors) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EventSubscription1) SetDddTraDescriptors(v []DddTrafficDescriptor) {
 
 // GetDddStati returns the DddStati field value if set, zero value otherwise.
 func (o *EventSubscription1) GetDddStati() []DlDataDeliveryStatus {
-	if o == nil || isNil(o.DddStati) {
+	if o == nil || IsNil(o.DddStati) {
 		var ret []DlDataDeliveryStatus
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EventSubscription1) GetDddStati() []DlDataDeliveryStatus {
 // GetDddStatiOk returns a tuple with the DddStati field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetDddStatiOk() ([]DlDataDeliveryStatus, bool) {
-	if o == nil || isNil(o.DddStati) {
+	if o == nil || IsNil(o.DddStati) {
 		return nil, false
 	}
 	return o.DddStati, true
@@ -158,7 +158,7 @@ func (o *EventSubscription1) GetDddStatiOk() ([]DlDataDeliveryStatus, bool) {
 
 // HasDddStati returns a boolean if a field has been set.
 func (o *EventSubscription1) HasDddStati() bool {
-	if o != nil && !isNil(o.DddStati) {
+	if o != nil && !IsNil(o.DddStati) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *EventSubscription1) SetDddStati(v []DlDataDeliveryStatus) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *EventSubscription1) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *EventSubscription1) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -190,7 +190,7 @@ func (o *EventSubscription1) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *EventSubscription1) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *EventSubscription1) SetAppIds(v []string) {
 
 // GetTargetPeriod returns the TargetPeriod field value if set, zero value otherwise.
 func (o *EventSubscription1) GetTargetPeriod() TimeWindow {
-	if o == nil || isNil(o.TargetPeriod) {
+	if o == nil || IsNil(o.TargetPeriod) {
 		var ret TimeWindow
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *EventSubscription1) GetTargetPeriod() TimeWindow {
 // GetTargetPeriodOk returns a tuple with the TargetPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetTargetPeriodOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.TargetPeriod) {
+	if o == nil || IsNil(o.TargetPeriod) {
 		return nil, false
 	}
 	return o.TargetPeriod, true
@@ -222,7 +222,7 @@ func (o *EventSubscription1) GetTargetPeriodOk() (*TimeWindow, bool) {
 
 // HasTargetPeriod returns a boolean if a field has been set.
 func (o *EventSubscription1) HasTargetPeriod() bool {
-	if o != nil && !isNil(o.TargetPeriod) {
+	if o != nil && !IsNil(o.TargetPeriod) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *EventSubscription1) SetTargetPeriod(v TimeWindow) {
 
 // GetTransacDispInd returns the TransacDispInd field value if set, zero value otherwise.
 func (o *EventSubscription1) GetTransacDispInd() bool {
-	if o == nil || isNil(o.TransacDispInd) {
+	if o == nil || IsNil(o.TransacDispInd) {
 		var ret bool
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *EventSubscription1) GetTransacDispInd() bool {
 // GetTransacDispIndOk returns a tuple with the TransacDispInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetTransacDispIndOk() (*bool, bool) {
-	if o == nil || isNil(o.TransacDispInd) {
+	if o == nil || IsNil(o.TransacDispInd) {
 		return nil, false
 	}
 	return o.TransacDispInd, true
@@ -254,7 +254,7 @@ func (o *EventSubscription1) GetTransacDispIndOk() (*bool, bool) {
 
 // HasTransacDispInd returns a boolean if a field has been set.
 func (o *EventSubscription1) HasTransacDispInd() bool {
-	if o != nil && !isNil(o.TransacDispInd) {
+	if o != nil && !IsNil(o.TransacDispInd) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *EventSubscription1) SetTransacDispInd(v bool) {
 
 // GetTransacMetrics returns the TransacMetrics field value if set, zero value otherwise.
 func (o *EventSubscription1) GetTransacMetrics() []TransactionMetric {
-	if o == nil || isNil(o.TransacMetrics) {
+	if o == nil || IsNil(o.TransacMetrics) {
 		var ret []TransactionMetric
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *EventSubscription1) GetTransacMetrics() []TransactionMetric {
 // GetTransacMetricsOk returns a tuple with the TransacMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetTransacMetricsOk() ([]TransactionMetric, bool) {
-	if o == nil || isNil(o.TransacMetrics) {
+	if o == nil || IsNil(o.TransacMetrics) {
 		return nil, false
 	}
 	return o.TransacMetrics, true
@@ -286,7 +286,7 @@ func (o *EventSubscription1) GetTransacMetricsOk() ([]TransactionMetric, bool) {
 
 // HasTransacMetrics returns a boolean if a field has been set.
 func (o *EventSubscription1) HasTransacMetrics() bool {
-	if o != nil && !isNil(o.TransacMetrics) {
+	if o != nil && !IsNil(o.TransacMetrics) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *EventSubscription1) SetTransacMetrics(v []TransactionMetric) {
 
 // GetUeIpAddr returns the UeIpAddr field value if set, zero value otherwise.
 func (o *EventSubscription1) GetUeIpAddr() IpAddr {
-	if o == nil || isNil(o.UeIpAddr) {
+	if o == nil || IsNil(o.UeIpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *EventSubscription1) GetUeIpAddr() IpAddr {
 // GetUeIpAddrOk returns a tuple with the UeIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription1) GetUeIpAddrOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.UeIpAddr) {
+	if o == nil || IsNil(o.UeIpAddr) {
 		return nil, false
 	}
 	return o.UeIpAddr, true
@@ -318,7 +318,7 @@ func (o *EventSubscription1) GetUeIpAddrOk() (*IpAddr, bool) {
 
 // HasUeIpAddr returns a boolean if a field has been set.
 func (o *EventSubscription1) HasUeIpAddr() bool {
-	if o != nil && !isNil(o.UeIpAddr) {
+	if o != nil && !IsNil(o.UeIpAddr) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *EventSubscription1) SetUeIpAddr(v IpAddr) {
 }
 
 func (o EventSubscription1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,28 +341,28 @@ func (o EventSubscription1) MarshalJSON() ([]byte, error) {
 func (o EventSubscription1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.DnaiChgType) {
+	if !IsNil(o.DnaiChgType) {
 		toSerialize["dnaiChgType"] = o.DnaiChgType
 	}
-	if !isNil(o.DddTraDescriptors) {
+	if !IsNil(o.DddTraDescriptors) {
 		toSerialize["dddTraDescriptors"] = o.DddTraDescriptors
 	}
-	if !isNil(o.DddStati) {
+	if !IsNil(o.DddStati) {
 		toSerialize["dddStati"] = o.DddStati
 	}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !isNil(o.TargetPeriod) {
+	if !IsNil(o.TargetPeriod) {
 		toSerialize["targetPeriod"] = o.TargetPeriod
 	}
-	if !isNil(o.TransacDispInd) {
+	if !IsNil(o.TransacDispInd) {
 		toSerialize["transacDispInd"] = o.TransacDispInd
 	}
-	if !isNil(o.TransacMetrics) {
+	if !IsNil(o.TransacMetrics) {
 		toSerialize["transacMetrics"] = o.TransacMetrics
 	}
-	if !isNil(o.UeIpAddr) {
+	if !IsNil(o.UeIpAddr) {
 		toSerialize["ueIpAddr"] = o.UeIpAddr
 	}
 	return toSerialize, nil
@@ -403,5 +403,3 @@ func (v *NullableEventSubscription1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

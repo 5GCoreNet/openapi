@@ -85,6 +85,8 @@ Class | Method | HTTP request | Description
  - [MDAOutputs](docs/MDAOutputs.md)
  - [MDAReport](docs/MDAReport.md)
  - [MDAReportAllOf](docs/MDAReportAllOf.md)
+ - [MDAReportAllOfAttributes](docs/MDAReportAllOfAttributes.md)
+ - [MDAReportAllOfAttributesAllOf](docs/MDAReportAllOfAttributesAllOf.md)
  - [TimeWindow](docs/TimeWindow.md)
  - [Top](docs/Top.md)
  - [VsDataContainerSingle](docs/VsDataContainerSingle.md)

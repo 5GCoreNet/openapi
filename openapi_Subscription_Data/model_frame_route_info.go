@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &FrameRouteInfo{}
 
 // FrameRouteInfo struct for FrameRouteInfo
 type FrameRouteInfo struct {
-	// \"String identifying a IPv4 address mask formatted in the 'dotted decimal' notation as defined in RFC 1166.\" 
-	Ipv4Mask *string `json:"ipv4Mask,omitempty"`
+	// \"String identifying a IPv4 address mask formatted in the 'dotted decimal' notation as defined in RFC 1166.\"
+	Ipv4Mask   *string     `json:"ipv4Mask,omitempty"`
 	Ipv6Prefix *Ipv6Prefix `json:"ipv6Prefix,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewFrameRouteInfoWithDefaults() *FrameRouteInfo {
 
 // GetIpv4Mask returns the Ipv4Mask field value if set, zero value otherwise.
 func (o *FrameRouteInfo) GetIpv4Mask() string {
-	if o == nil || isNil(o.Ipv4Mask) {
+	if o == nil || IsNil(o.Ipv4Mask) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *FrameRouteInfo) GetIpv4Mask() string {
 // GetIpv4MaskOk returns a tuple with the Ipv4Mask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrameRouteInfo) GetIpv4MaskOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Mask) {
+	if o == nil || IsNil(o.Ipv4Mask) {
 		return nil, false
 	}
 	return o.Ipv4Mask, true
@@ -61,7 +61,7 @@ func (o *FrameRouteInfo) GetIpv4MaskOk() (*string, bool) {
 
 // HasIpv4Mask returns a boolean if a field has been set.
 func (o *FrameRouteInfo) HasIpv4Mask() bool {
-	if o != nil && !isNil(o.Ipv4Mask) {
+	if o != nil && !IsNil(o.Ipv4Mask) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *FrameRouteInfo) SetIpv4Mask(v string) {
 
 // GetIpv6Prefix returns the Ipv6Prefix field value if set, zero value otherwise.
 func (o *FrameRouteInfo) GetIpv6Prefix() Ipv6Prefix {
-	if o == nil || isNil(o.Ipv6Prefix) {
+	if o == nil || IsNil(o.Ipv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *FrameRouteInfo) GetIpv6Prefix() Ipv6Prefix {
 // GetIpv6PrefixOk returns a tuple with the Ipv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrameRouteInfo) GetIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.Ipv6Prefix) {
+	if o == nil || IsNil(o.Ipv6Prefix) {
 		return nil, false
 	}
 	return o.Ipv6Prefix, true
@@ -93,7 +93,7 @@ func (o *FrameRouteInfo) GetIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasIpv6Prefix returns a boolean if a field has been set.
 func (o *FrameRouteInfo) HasIpv6Prefix() bool {
-	if o != nil && !isNil(o.Ipv6Prefix) {
+	if o != nil && !IsNil(o.Ipv6Prefix) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *FrameRouteInfo) SetIpv6Prefix(v Ipv6Prefix) {
 }
 
 func (o FrameRouteInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o FrameRouteInfo) MarshalJSON() ([]byte, error) {
 
 func (o FrameRouteInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ipv4Mask) {
+	if !IsNil(o.Ipv4Mask) {
 		toSerialize["ipv4Mask"] = o.Ipv4Mask
 	}
-	if !isNil(o.Ipv6Prefix) {
+	if !IsNil(o.Ipv6Prefix) {
 		toSerialize["ipv6Prefix"] = o.Ipv6Prefix
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableFrameRouteInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

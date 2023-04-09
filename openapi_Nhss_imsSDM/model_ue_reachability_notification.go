@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the UeReachabilityNotification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UeReachabilityNotification{}
 
-// UeReachabilityNotification Represents the contents of a notification of UE reachability for IP sent by the HSS 
+// UeReachabilityNotification Represents the contents of a notification of UE reachability for IP sent by the HSS
 type UeReachabilityNotification struct {
-	ReachabilityIndicator bool `json:"reachabilityIndicator"`
-	DetectingNode DetectingNode `json:"detectingNode"`
-	AccessType AccessType `json:"accessType"`
+	ReachabilityIndicator bool          `json:"reachabilityIndicator"`
+	DetectingNode         DetectingNode `json:"detectingNode"`
+	AccessType            AccessType    `json:"accessType"`
 }
 
 // NewUeReachabilityNotification instantiates a new UeReachabilityNotification object
@@ -117,7 +117,7 @@ func (o *UeReachabilityNotification) SetAccessType(v AccessType) {
 }
 
 func (o UeReachabilityNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableUeReachabilityNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &ServiceSchedule{}
 
 // ServiceSchedule struct for ServiceSchedule
 type ServiceSchedule struct {
-	SessionSchedule []SessionScheduleInner `json:"sessionSchedule,omitempty"`
+	SessionSchedule         []SessionScheduleInner         `json:"sessionSchedule,omitempty"`
 	SessionScheduleOverride []SessionScheduleOverrideInner `json:"sessionScheduleOverride,omitempty"`
-	ObjectSchedule []ObjectScheduleInner `json:"objectSchedule,omitempty"`
-	ServiceId string `json:"serviceId"`
+	ObjectSchedule          []ObjectScheduleInner          `json:"objectSchedule,omitempty"`
+	ServiceId               string                         `json:"serviceId"`
 	// String providing an URI formatted according to RFC 3986.
 	ServiceClass string `json:"serviceClass"`
 }
@@ -48,7 +48,7 @@ func NewServiceScheduleWithDefaults() *ServiceSchedule {
 
 // GetSessionSchedule returns the SessionSchedule field value if set, zero value otherwise.
 func (o *ServiceSchedule) GetSessionSchedule() []SessionScheduleInner {
-	if o == nil || isNil(o.SessionSchedule) {
+	if o == nil || IsNil(o.SessionSchedule) {
 		var ret []SessionScheduleInner
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ServiceSchedule) GetSessionSchedule() []SessionScheduleInner {
 // GetSessionScheduleOk returns a tuple with the SessionSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSchedule) GetSessionScheduleOk() ([]SessionScheduleInner, bool) {
-	if o == nil || isNil(o.SessionSchedule) {
+	if o == nil || IsNil(o.SessionSchedule) {
 		return nil, false
 	}
 	return o.SessionSchedule, true
@@ -66,7 +66,7 @@ func (o *ServiceSchedule) GetSessionScheduleOk() ([]SessionScheduleInner, bool) 
 
 // HasSessionSchedule returns a boolean if a field has been set.
 func (o *ServiceSchedule) HasSessionSchedule() bool {
-	if o != nil && !isNil(o.SessionSchedule) {
+	if o != nil && !IsNil(o.SessionSchedule) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ServiceSchedule) SetSessionSchedule(v []SessionScheduleInner) {
 
 // GetSessionScheduleOverride returns the SessionScheduleOverride field value if set, zero value otherwise.
 func (o *ServiceSchedule) GetSessionScheduleOverride() []SessionScheduleOverrideInner {
-	if o == nil || isNil(o.SessionScheduleOverride) {
+	if o == nil || IsNil(o.SessionScheduleOverride) {
 		var ret []SessionScheduleOverrideInner
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ServiceSchedule) GetSessionScheduleOverride() []SessionScheduleOverride
 // GetSessionScheduleOverrideOk returns a tuple with the SessionScheduleOverride field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSchedule) GetSessionScheduleOverrideOk() ([]SessionScheduleOverrideInner, bool) {
-	if o == nil || isNil(o.SessionScheduleOverride) {
+	if o == nil || IsNil(o.SessionScheduleOverride) {
 		return nil, false
 	}
 	return o.SessionScheduleOverride, true
@@ -98,7 +98,7 @@ func (o *ServiceSchedule) GetSessionScheduleOverrideOk() ([]SessionScheduleOverr
 
 // HasSessionScheduleOverride returns a boolean if a field has been set.
 func (o *ServiceSchedule) HasSessionScheduleOverride() bool {
-	if o != nil && !isNil(o.SessionScheduleOverride) {
+	if o != nil && !IsNil(o.SessionScheduleOverride) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ServiceSchedule) SetSessionScheduleOverride(v []SessionScheduleOverride
 
 // GetObjectSchedule returns the ObjectSchedule field value if set, zero value otherwise.
 func (o *ServiceSchedule) GetObjectSchedule() []ObjectScheduleInner {
-	if o == nil || isNil(o.ObjectSchedule) {
+	if o == nil || IsNil(o.ObjectSchedule) {
 		var ret []ObjectScheduleInner
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ServiceSchedule) GetObjectSchedule() []ObjectScheduleInner {
 // GetObjectScheduleOk returns a tuple with the ObjectSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSchedule) GetObjectScheduleOk() ([]ObjectScheduleInner, bool) {
-	if o == nil || isNil(o.ObjectSchedule) {
+	if o == nil || IsNil(o.ObjectSchedule) {
 		return nil, false
 	}
 	return o.ObjectSchedule, true
@@ -130,7 +130,7 @@ func (o *ServiceSchedule) GetObjectScheduleOk() ([]ObjectScheduleInner, bool) {
 
 // HasObjectSchedule returns a boolean if a field has been set.
 func (o *ServiceSchedule) HasObjectSchedule() bool {
-	if o != nil && !isNil(o.ObjectSchedule) {
+	if o != nil && !IsNil(o.ObjectSchedule) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *ServiceSchedule) SetServiceClass(v string) {
 }
 
 func (o ServiceSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -200,13 +200,13 @@ func (o ServiceSchedule) MarshalJSON() ([]byte, error) {
 
 func (o ServiceSchedule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SessionSchedule) {
+	if !IsNil(o.SessionSchedule) {
 		toSerialize["sessionSchedule"] = o.SessionSchedule
 	}
-	if !isNil(o.SessionScheduleOverride) {
+	if !IsNil(o.SessionScheduleOverride) {
 		toSerialize["sessionScheduleOverride"] = o.SessionScheduleOverride
 	}
-	if !isNil(o.ObjectSchedule) {
+	if !IsNil(o.ObjectSchedule) {
 		toSerialize["objectSchedule"] = o.ObjectSchedule
 	}
 	toSerialize["serviceId"] = o.ServiceId
@@ -249,5 +249,3 @@ func (v *NullableServiceSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LoggingIntervalNrMdt The enumeration LoggingIntervalNrMdt defines Logging Interval in NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.18-1. 
+// LoggingIntervalNrMdt The enumeration LoggingIntervalNrMdt defines Logging Interval in NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.18-1.
 type LoggingIntervalNrMdt struct {
-	LoggingIntervalNrMdtAnyOf *LoggingIntervalNrMdtAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LoggingIntervalNrMdt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LoggingIntervalNrMdtAnyOf
-	err = json.Unmarshal(data, &dst.LoggingIntervalNrMdtAnyOf);
-	if err == nil {
-		jsonLoggingIntervalNrMdtAnyOf, _ := json.Marshal(dst.LoggingIntervalNrMdtAnyOf)
-		if string(jsonLoggingIntervalNrMdtAnyOf) == "{}" { // empty struct
-			dst.LoggingIntervalNrMdtAnyOf = nil
-		} else {
-			return nil // data stored in dst.LoggingIntervalNrMdtAnyOf, return on the first match
-		}
-	} else {
-		dst.LoggingIntervalNrMdtAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LoggingIntervalNrMdt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LoggingIntervalNrMdt) MarshalJSON() ([]byte, error) {
-	if src.LoggingIntervalNrMdtAnyOf != nil {
-		return json.Marshal(&src.LoggingIntervalNrMdtAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLoggingIntervalNrMdt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

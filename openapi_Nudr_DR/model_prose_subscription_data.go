@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &ProseSubscriptionData{}
 // ProseSubscriptionData Contains the ProSe Subscription Data.
 type ProseSubscriptionData struct {
 	ProseServiceAuth *ProseServiceAuth `json:"proseServiceAuth,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	NrUePc5Ambr *string `json:"nrUePc5Ambr,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	NrUePc5Ambr      *string            `json:"nrUePc5Ambr,omitempty"`
 	ProseAllowedPlmn []ProSeAllowedPlmn `json:"proseAllowedPlmn,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewProseSubscriptionDataWithDefaults() *ProseSubscriptionData {
 
 // GetProseServiceAuth returns the ProseServiceAuth field value if set, zero value otherwise.
 func (o *ProseSubscriptionData) GetProseServiceAuth() ProseServiceAuth {
-	if o == nil || isNil(o.ProseServiceAuth) {
+	if o == nil || IsNil(o.ProseServiceAuth) {
 		var ret ProseServiceAuth
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ProseSubscriptionData) GetProseServiceAuth() ProseServiceAuth {
 // GetProseServiceAuthOk returns a tuple with the ProseServiceAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseSubscriptionData) GetProseServiceAuthOk() (*ProseServiceAuth, bool) {
-	if o == nil || isNil(o.ProseServiceAuth) {
+	if o == nil || IsNil(o.ProseServiceAuth) {
 		return nil, false
 	}
 	return o.ProseServiceAuth, true
@@ -62,7 +62,7 @@ func (o *ProseSubscriptionData) GetProseServiceAuthOk() (*ProseServiceAuth, bool
 
 // HasProseServiceAuth returns a boolean if a field has been set.
 func (o *ProseSubscriptionData) HasProseServiceAuth() bool {
-	if o != nil && !isNil(o.ProseServiceAuth) {
+	if o != nil && !IsNil(o.ProseServiceAuth) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ProseSubscriptionData) SetProseServiceAuth(v ProseServiceAuth) {
 
 // GetNrUePc5Ambr returns the NrUePc5Ambr field value if set, zero value otherwise.
 func (o *ProseSubscriptionData) GetNrUePc5Ambr() string {
-	if o == nil || isNil(o.NrUePc5Ambr) {
+	if o == nil || IsNil(o.NrUePc5Ambr) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ProseSubscriptionData) GetNrUePc5Ambr() string {
 // GetNrUePc5AmbrOk returns a tuple with the NrUePc5Ambr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseSubscriptionData) GetNrUePc5AmbrOk() (*string, bool) {
-	if o == nil || isNil(o.NrUePc5Ambr) {
+	if o == nil || IsNil(o.NrUePc5Ambr) {
 		return nil, false
 	}
 	return o.NrUePc5Ambr, true
@@ -94,7 +94,7 @@ func (o *ProseSubscriptionData) GetNrUePc5AmbrOk() (*string, bool) {
 
 // HasNrUePc5Ambr returns a boolean if a field has been set.
 func (o *ProseSubscriptionData) HasNrUePc5Ambr() bool {
-	if o != nil && !isNil(o.NrUePc5Ambr) {
+	if o != nil && !IsNil(o.NrUePc5Ambr) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ProseSubscriptionData) SetNrUePc5Ambr(v string) {
 
 // GetProseAllowedPlmn returns the ProseAllowedPlmn field value if set, zero value otherwise.
 func (o *ProseSubscriptionData) GetProseAllowedPlmn() []ProSeAllowedPlmn {
-	if o == nil || isNil(o.ProseAllowedPlmn) {
+	if o == nil || IsNil(o.ProseAllowedPlmn) {
 		var ret []ProSeAllowedPlmn
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ProseSubscriptionData) GetProseAllowedPlmn() []ProSeAllowedPlmn {
 // GetProseAllowedPlmnOk returns a tuple with the ProseAllowedPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseSubscriptionData) GetProseAllowedPlmnOk() ([]ProSeAllowedPlmn, bool) {
-	if o == nil || isNil(o.ProseAllowedPlmn) {
+	if o == nil || IsNil(o.ProseAllowedPlmn) {
 		return nil, false
 	}
 	return o.ProseAllowedPlmn, true
@@ -126,7 +126,7 @@ func (o *ProseSubscriptionData) GetProseAllowedPlmnOk() ([]ProSeAllowedPlmn, boo
 
 // HasProseAllowedPlmn returns a boolean if a field has been set.
 func (o *ProseSubscriptionData) HasProseAllowedPlmn() bool {
-	if o != nil && !isNil(o.ProseAllowedPlmn) {
+	if o != nil && !IsNil(o.ProseAllowedPlmn) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *ProseSubscriptionData) SetProseAllowedPlmn(v []ProSeAllowedPlmn) {
 }
 
 func (o ProseSubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o ProseSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o ProseSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ProseServiceAuth) {
+	if !IsNil(o.ProseServiceAuth) {
 		toSerialize["proseServiceAuth"] = o.ProseServiceAuth
 	}
-	if !isNil(o.NrUePc5Ambr) {
+	if !IsNil(o.NrUePc5Ambr) {
 		toSerialize["nrUePc5Ambr"] = o.NrUePc5Ambr
 	}
-	if !isNil(o.ProseAllowedPlmn) {
+	if !IsNil(o.ProseAllowedPlmn) {
 		toSerialize["proseAllowedPlmn"] = o.ProseAllowedPlmn
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableProseSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

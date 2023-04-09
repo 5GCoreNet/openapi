@@ -1,7 +1,7 @@
 /*
 LMF Broadcast
 
-LMF Broadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Broadcast Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &CipheringSetReport{}
 // CipheringSetReport Represents a report of Ciphering Data Set storage.
 type CipheringSetReport struct {
 	// Ciphering Data Set Identifier.
-	CipheringSetID int32 `json:"cipheringSetID"`
+	CipheringSetID int32          `json:"cipheringSetID"`
 	StorageOutcome StorageOutcome `json:"storageOutcome"`
 }
 
@@ -92,7 +92,7 @@ func (o *CipheringSetReport) SetStorageOutcome(v StorageOutcome) {
 }
 
 func (o CipheringSetReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableCipheringSetReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

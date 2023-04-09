@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -22,7 +22,7 @@ var _ MappedNullable = &CoverageInfo{}
 type CoverageInfo struct {
 	CoverageStatus *bool `json:"coverageStatus,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	ChangeTime *time.Time `json:"changeTime,omitempty"`
+	ChangeTime   *time.Time     `json:"changeTime,omitempty"`
 	LocationInfo []UserLocation `json:"locationInfo,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewCoverageInfoWithDefaults() *CoverageInfo {
 
 // GetCoverageStatus returns the CoverageStatus field value if set, zero value otherwise.
 func (o *CoverageInfo) GetCoverageStatus() bool {
-	if o == nil || isNil(o.CoverageStatus) {
+	if o == nil || IsNil(o.CoverageStatus) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *CoverageInfo) GetCoverageStatus() bool {
 // GetCoverageStatusOk returns a tuple with the CoverageStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoverageInfo) GetCoverageStatusOk() (*bool, bool) {
-	if o == nil || isNil(o.CoverageStatus) {
+	if o == nil || IsNil(o.CoverageStatus) {
 		return nil, false
 	}
 	return o.CoverageStatus, true
@@ -63,7 +63,7 @@ func (o *CoverageInfo) GetCoverageStatusOk() (*bool, bool) {
 
 // HasCoverageStatus returns a boolean if a field has been set.
 func (o *CoverageInfo) HasCoverageStatus() bool {
-	if o != nil && !isNil(o.CoverageStatus) {
+	if o != nil && !IsNil(o.CoverageStatus) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *CoverageInfo) SetCoverageStatus(v bool) {
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *CoverageInfo) GetChangeTime() time.Time {
-	if o == nil || isNil(o.ChangeTime) {
+	if o == nil || IsNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *CoverageInfo) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoverageInfo) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ChangeTime) {
+	if o == nil || IsNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -95,7 +95,7 @@ func (o *CoverageInfo) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *CoverageInfo) HasChangeTime() bool {
-	if o != nil && !isNil(o.ChangeTime) {
+	if o != nil && !IsNil(o.ChangeTime) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *CoverageInfo) SetChangeTime(v time.Time) {
 
 // GetLocationInfo returns the LocationInfo field value if set, zero value otherwise.
 func (o *CoverageInfo) GetLocationInfo() []UserLocation {
-	if o == nil || isNil(o.LocationInfo) {
+	if o == nil || IsNil(o.LocationInfo) {
 		var ret []UserLocation
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *CoverageInfo) GetLocationInfo() []UserLocation {
 // GetLocationInfoOk returns a tuple with the LocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoverageInfo) GetLocationInfoOk() ([]UserLocation, bool) {
-	if o == nil || isNil(o.LocationInfo) {
+	if o == nil || IsNil(o.LocationInfo) {
 		return nil, false
 	}
 	return o.LocationInfo, true
@@ -127,7 +127,7 @@ func (o *CoverageInfo) GetLocationInfoOk() ([]UserLocation, bool) {
 
 // HasLocationInfo returns a boolean if a field has been set.
 func (o *CoverageInfo) HasLocationInfo() bool {
-	if o != nil && !isNil(o.LocationInfo) {
+	if o != nil && !IsNil(o.LocationInfo) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *CoverageInfo) SetLocationInfo(v []UserLocation) {
 }
 
 func (o CoverageInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o CoverageInfo) MarshalJSON() ([]byte, error) {
 
 func (o CoverageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CoverageStatus) {
+	if !IsNil(o.CoverageStatus) {
 		toSerialize["coverageStatus"] = o.CoverageStatus
 	}
-	if !isNil(o.ChangeTime) {
+	if !IsNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
-	if !isNil(o.LocationInfo) {
+	if !IsNil(o.LocationInfo) {
 		toSerialize["locationInfo"] = o.LocationInfo
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableCoverageInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

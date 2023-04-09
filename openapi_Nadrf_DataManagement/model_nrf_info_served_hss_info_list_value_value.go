@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // NrfInfoServedHssInfoListValueValue struct for NrfInfoServedHssInfoListValueValue
 type NrfInfoServedHssInfoListValueValue struct {
-	HssInfo *HssInfo
+	HssInfo        *HssInfo
 	MapOfInterface *map[string]interface{}
 }
 
@@ -25,7 +25,7 @@ type NrfInfoServedHssInfoListValueValue struct {
 func (dst *NrfInfoServedHssInfoListValueValue) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into HssInfo
-	err = json.Unmarshal(data, &dst.HssInfo);
+	err = json.Unmarshal(data, &dst.HssInfo)
 	if err == nil {
 		jsonHssInfo, _ := json.Marshal(dst.HssInfo)
 		if string(jsonHssInfo) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *NrfInfoServedHssInfoListValueValue) UnmarshalJSON(data []byte) error 
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.MapOfInterface);
+	err = json.Unmarshal(data, &dst.MapOfInterface)
 	if err == nil {
 		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
 		if string(jsonMapOfInterface) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableNrfInfoServedHssInfoListValueValue) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

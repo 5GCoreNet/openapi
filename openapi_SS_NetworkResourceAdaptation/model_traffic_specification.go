@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -17,9 +17,9 @@ import (
 // checks if the TrafficSpecification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TrafficSpecification{}
 
-// TrafficSpecification The traffic classe supported by the DS-TTs and available end-to-end maximum latency value. 
+// TrafficSpecification The traffic classe supported by the DS-TTs and available end-to-end maximum latency value.
 type TrafficSpecification struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	TrafficClass int32 `json:"trafficClass"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	E2eMaxLatency int32 `json:"e2eMaxLatency"`
@@ -93,7 +93,7 @@ func (o *TrafficSpecification) SetE2eMaxLatency(v int32) {
 }
 
 func (o TrafficSpecification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableTrafficSpecification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

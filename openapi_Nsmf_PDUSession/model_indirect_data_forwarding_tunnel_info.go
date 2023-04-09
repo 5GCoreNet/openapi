@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &IndirectDataForwardingTunnelInfo{}
 
 // IndirectDataForwardingTunnelInfo Indirect Data Forwarding Tunnel Information
 type IndirectDataForwardingTunnelInfo struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4Addr *string `json:"ipv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4Addr *string   `json:"ipv4Addr,omitempty"`
 	Ipv6Addr *Ipv6Addr `json:"ipv6Addr,omitempty"`
 	// GTP Tunnel Endpoint Identifier
 	GtpTeid string `json:"gtpTeid"`
@@ -50,7 +50,7 @@ func NewIndirectDataForwardingTunnelInfoWithDefaults() *IndirectDataForwardingTu
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *IndirectDataForwardingTunnelInfo) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndirectDataForwardingTunnelInfo) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -68,7 +68,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *IndirectDataForwardingTunnelInfo) HasIpv4Addr() bool {
-	if o != nil && !isNil(o.Ipv4Addr) {
+	if o != nil && !IsNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *IndirectDataForwardingTunnelInfo) SetIpv4Addr(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *IndirectDataForwardingTunnelInfo) GetIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.Ipv6Addr) {
+	if o == nil || IsNil(o.Ipv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetIpv6Addr() Ipv6Addr {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndirectDataForwardingTunnelInfo) GetIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.Ipv6Addr) {
+	if o == nil || IsNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -100,7 +100,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *IndirectDataForwardingTunnelInfo) HasIpv6Addr() bool {
-	if o != nil && !isNil(o.Ipv6Addr) {
+	if o != nil && !IsNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *IndirectDataForwardingTunnelInfo) SetGtpTeid(v string) {
 
 // GetDrbId returns the DrbId field value if set, zero value otherwise.
 func (o *IndirectDataForwardingTunnelInfo) GetDrbId() int32 {
-	if o == nil || isNil(o.DrbId) {
+	if o == nil || IsNil(o.DrbId) {
 		var ret int32
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetDrbId() int32 {
 // GetDrbIdOk returns a tuple with the DrbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndirectDataForwardingTunnelInfo) GetDrbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.DrbId) {
+	if o == nil || IsNil(o.DrbId) {
 		return nil, false
 	}
 	return o.DrbId, true
@@ -156,7 +156,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetDrbIdOk() (*int32, bool) {
 
 // HasDrbId returns a boolean if a field has been set.
 func (o *IndirectDataForwardingTunnelInfo) HasDrbId() bool {
-	if o != nil && !isNil(o.DrbId) {
+	if o != nil && !IsNil(o.DrbId) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *IndirectDataForwardingTunnelInfo) SetDrbId(v int32) {
 
 // GetAdditionalTnlNb returns the AdditionalTnlNb field value if set, zero value otherwise.
 func (o *IndirectDataForwardingTunnelInfo) GetAdditionalTnlNb() int32 {
-	if o == nil || isNil(o.AdditionalTnlNb) {
+	if o == nil || IsNil(o.AdditionalTnlNb) {
 		var ret int32
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetAdditionalTnlNb() int32 {
 // GetAdditionalTnlNbOk returns a tuple with the AdditionalTnlNb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndirectDataForwardingTunnelInfo) GetAdditionalTnlNbOk() (*int32, bool) {
-	if o == nil || isNil(o.AdditionalTnlNb) {
+	if o == nil || IsNil(o.AdditionalTnlNb) {
 		return nil, false
 	}
 	return o.AdditionalTnlNb, true
@@ -188,7 +188,7 @@ func (o *IndirectDataForwardingTunnelInfo) GetAdditionalTnlNbOk() (*int32, bool)
 
 // HasAdditionalTnlNb returns a boolean if a field has been set.
 func (o *IndirectDataForwardingTunnelInfo) HasAdditionalTnlNb() bool {
-	if o != nil && !isNil(o.AdditionalTnlNb) {
+	if o != nil && !IsNil(o.AdditionalTnlNb) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *IndirectDataForwardingTunnelInfo) SetAdditionalTnlNb(v int32) {
 }
 
 func (o IndirectDataForwardingTunnelInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -210,17 +210,17 @@ func (o IndirectDataForwardingTunnelInfo) MarshalJSON() ([]byte, error) {
 
 func (o IndirectDataForwardingTunnelInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ipv4Addr) {
+	if !IsNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !isNil(o.Ipv6Addr) {
+	if !IsNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
 	toSerialize["gtpTeid"] = o.GtpTeid
-	if !isNil(o.DrbId) {
+	if !IsNil(o.DrbId) {
 		toSerialize["drbId"] = o.DrbId
 	}
-	if !isNil(o.AdditionalTnlNb) {
+	if !IsNil(o.AdditionalTnlNb) {
 		toSerialize["additionalTnlNb"] = o.AdditionalTnlNb
 	}
 	return toSerialize, nil
@@ -261,5 +261,3 @@ func (v *NullableIndirectDataForwardingTunnelInfo) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

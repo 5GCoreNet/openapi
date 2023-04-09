@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ScheduledCommunicationType Possible values are: -DOWNLINK_ONLY: Downlink only -UPLINK_ONLY: Uplink only -BIDIRECTIONA: Bi-directional 
+// ScheduledCommunicationType Possible values are: -DOWNLINK_ONLY: Downlink only -UPLINK_ONLY: Uplink only -BIDIRECTIONA: Bi-directional
 type ScheduledCommunicationType struct {
-	ScheduledCommunicationTypeAnyOf *ScheduledCommunicationTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ScheduledCommunicationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ScheduledCommunicationTypeAnyOf
-	err = json.Unmarshal(data, &dst.ScheduledCommunicationTypeAnyOf);
-	if err == nil {
-		jsonScheduledCommunicationTypeAnyOf, _ := json.Marshal(dst.ScheduledCommunicationTypeAnyOf)
-		if string(jsonScheduledCommunicationTypeAnyOf) == "{}" { // empty struct
-			dst.ScheduledCommunicationTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ScheduledCommunicationTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ScheduledCommunicationTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ScheduledCommunicationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ScheduledCommunicationType) MarshalJSON() ([]byte, error) {
-	if src.ScheduledCommunicationTypeAnyOf != nil {
-		return json.Marshal(&src.ScheduledCommunicationTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableScheduledCommunicationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

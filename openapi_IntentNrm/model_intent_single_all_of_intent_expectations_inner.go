@@ -17,8 +17,8 @@ import (
 
 // IntentSingleAllOfIntentExpectationsInner - struct for IntentSingleAllOfIntentExpectationsInner
 type IntentSingleAllOfIntentExpectationsInner struct {
-	IntentExpectation *IntentExpectation
-	RadioNetworkExpectation *RadioNetworkExpectation
+	IntentExpectation         *IntentExpectation
+	RadioNetworkExpectation   *RadioNetworkExpectation
 	ServiceSupportExpectation *ServiceSupportExpectation
 }
 
@@ -42,7 +42,6 @@ func ServiceSupportExpectationAsIntentSingleAllOfIntentExpectationsInner(v *Serv
 		ServiceSupportExpectation: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IntentSingleAllOfIntentExpectationsInner) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src IntentSingleAllOfIntentExpectationsInner) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *IntentSingleAllOfIntentExpectationsInner) GetActualInstance() (interface{}) {
+func (obj *IntentSingleAllOfIntentExpectationsInner) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableIntentSingleAllOfIntentExpectationsInner) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

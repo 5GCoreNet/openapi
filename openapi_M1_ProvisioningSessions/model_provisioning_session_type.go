@@ -1,7 +1,7 @@
 /*
 M1_ProvisioningSessions
 
-5GMS AF M1 Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -17,28 +17,14 @@ import (
 
 // ProvisioningSessionType struct for ProvisioningSessionType
 type ProvisioningSessionType struct {
-	ProvisioningSessionTypeAnyOf *ProvisioningSessionTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ProvisioningSessionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ProvisioningSessionTypeAnyOf
-	err = json.Unmarshal(data, &dst.ProvisioningSessionTypeAnyOf);
-	if err == nil {
-		jsonProvisioningSessionTypeAnyOf, _ := json.Marshal(dst.ProvisioningSessionTypeAnyOf)
-		if string(jsonProvisioningSessionTypeAnyOf) == "{}" { // empty struct
-			dst.ProvisioningSessionTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ProvisioningSessionTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ProvisioningSessionTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ProvisioningSessionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ProvisioningSessionType) MarshalJSON() ([]byte, error) {
-	if src.ProvisioningSessionTypeAnyOf != nil {
-		return json.Marshal(&src.ProvisioningSessionTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableProvisioningSessionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

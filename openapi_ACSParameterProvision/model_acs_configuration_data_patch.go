@@ -1,7 +1,7 @@
 /*
 3gpp-acs-pp
 
-API for 5G ACS Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 5G ACS Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.2
 */
@@ -17,7 +17,7 @@ import (
 // checks if the AcsConfigurationDataPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AcsConfigurationDataPatch{}
 
-// AcsConfigurationDataPatch Represents the parameters to request to modify an existing Individual ACS Configuration subscription resource. 
+// AcsConfigurationDataPatch Represents the parameters to request to modify an existing Individual ACS Configuration subscription resource.
 type AcsConfigurationDataPatch struct {
 	AcsInfo *AcsInfo `json:"acsInfo,omitempty"`
 	// String uniquely identifying MTC provider information.
@@ -43,7 +43,7 @@ func NewAcsConfigurationDataPatchWithDefaults() *AcsConfigurationDataPatch {
 
 // GetAcsInfo returns the AcsInfo field value if set, zero value otherwise.
 func (o *AcsConfigurationDataPatch) GetAcsInfo() AcsInfo {
-	if o == nil || isNil(o.AcsInfo) {
+	if o == nil || IsNil(o.AcsInfo) {
 		var ret AcsInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AcsConfigurationDataPatch) GetAcsInfo() AcsInfo {
 // GetAcsInfoOk returns a tuple with the AcsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcsConfigurationDataPatch) GetAcsInfoOk() (*AcsInfo, bool) {
-	if o == nil || isNil(o.AcsInfo) {
+	if o == nil || IsNil(o.AcsInfo) {
 		return nil, false
 	}
 	return o.AcsInfo, true
@@ -61,7 +61,7 @@ func (o *AcsConfigurationDataPatch) GetAcsInfoOk() (*AcsInfo, bool) {
 
 // HasAcsInfo returns a boolean if a field has been set.
 func (o *AcsConfigurationDataPatch) HasAcsInfo() bool {
-	if o != nil && !isNil(o.AcsInfo) {
+	if o != nil && !IsNil(o.AcsInfo) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AcsConfigurationDataPatch) SetAcsInfo(v AcsInfo) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *AcsConfigurationDataPatch) GetMtcProviderId() string {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AcsConfigurationDataPatch) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcsConfigurationDataPatch) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -93,7 +93,7 @@ func (o *AcsConfigurationDataPatch) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *AcsConfigurationDataPatch) HasMtcProviderId() bool {
-	if o != nil && !isNil(o.MtcProviderId) {
+	if o != nil && !IsNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AcsConfigurationDataPatch) SetMtcProviderId(v string) {
 }
 
 func (o AcsConfigurationDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o AcsConfigurationDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o AcsConfigurationDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AcsInfo) {
+	if !IsNil(o.AcsInfo) {
 		toSerialize["acsInfo"] = o.AcsInfo
 	}
-	if !isNil(o.MtcProviderId) {
+	if !IsNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableAcsConfigurationDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

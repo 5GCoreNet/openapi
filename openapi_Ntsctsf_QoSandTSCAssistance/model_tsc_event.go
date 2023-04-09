@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // TscEvent Represents an event to notify to the AF.
 type TscEvent struct {
-	TscEventAnyOf *TscEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TscEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into TscEventAnyOf
-	err = json.Unmarshal(data, &dst.TscEventAnyOf);
-	if err == nil {
-		jsonTscEventAnyOf, _ := json.Marshal(dst.TscEventAnyOf)
-		if string(jsonTscEventAnyOf) == "{}" { // empty struct
-			dst.TscEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.TscEventAnyOf, return on the first match
-		}
-	} else {
-		dst.TscEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *TscEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TscEvent) MarshalJSON() ([]byte, error) {
-	if src.TscEventAnyOf != nil {
-		return json.Marshal(&src.TscEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableTscEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

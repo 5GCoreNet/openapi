@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // RestrictionType It contains the restriction type ALLOWED_AREAS or NOT_ALLOWED_AREAS.
 type RestrictionType struct {
-	RestrictionTypeAnyOf *RestrictionTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RestrictionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RestrictionTypeAnyOf
-	err = json.Unmarshal(data, &dst.RestrictionTypeAnyOf);
-	if err == nil {
-		jsonRestrictionTypeAnyOf, _ := json.Marshal(dst.RestrictionTypeAnyOf)
-		if string(jsonRestrictionTypeAnyOf) == "{}" { // empty struct
-			dst.RestrictionTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.RestrictionTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.RestrictionTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RestrictionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RestrictionType) MarshalJSON() ([]byte, error) {
-	if src.RestrictionTypeAnyOf != nil {
-		return json.Marshal(&src.RestrictionTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRestrictionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

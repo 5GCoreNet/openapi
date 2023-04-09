@@ -1,7 +1,7 @@
 /*
 VAE_ApplicationRequirement
 
-API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // checks if the ApplicationRequirementData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApplicationRequirementData{}
 
-// ApplicationRequirementData Represents an individual Application Requirement resource for a V2X UE ID or a V2X group ID. 
+// ApplicationRequirementData Represents an individual Application Requirement resource for a V2X UE ID or a V2X group ID.
 type ApplicationRequirementData struct {
 	// Represents the identifier of the V2X UE.
 	UeId *string `json:"ueId,omitempty"`
@@ -27,14 +27,14 @@ type ApplicationRequirementData struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Duration *time.Time `json:"duration,omitempty"`
 	// Represents the V2X service ID to which a V2X message belongs.
-	ServiceId string `json:"serviceId"`
+	ServiceId      string                 `json:"serviceId"`
 	AppRequirement ApplicationRequirement `json:"appRequirement"`
 	// String providing an URI formatted according to RFC 3986.
 	NotifUri string `json:"notifUri"`
-	// Set to true by the NF service consumer to request the VAE server to send a test notification as defined in clause 6.3.5.3. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by the NF service consumer to request the VAE server to send a test notification as defined in clause 6.3.5.3. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -60,7 +60,7 @@ func NewApplicationRequirementDataWithDefaults() *ApplicationRequirementData {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *ApplicationRequirementData) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -78,7 +78,7 @@ func (o *ApplicationRequirementData) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *ApplicationRequirementData) SetUeId(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *ApplicationRequirementData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -110,7 +110,7 @@ func (o *ApplicationRequirementData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *ApplicationRequirementData) SetGroupId(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetDuration() time.Time {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *ApplicationRequirementData) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetDurationOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -142,7 +142,7 @@ func (o *ApplicationRequirementData) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *ApplicationRequirementData) SetNotifUri(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *ApplicationRequirementData) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -246,7 +246,7 @@ func (o *ApplicationRequirementData) GetRequestTestNotificationOk() (*bool, bool
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *ApplicationRequirementData) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *ApplicationRequirementData) GetWebsockNotifConfig() WebsockNotifConfig 
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -278,7 +278,7 @@ func (o *ApplicationRequirementData) GetWebsockNotifConfigOk() (*WebsockNotifCon
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *ApplicationRequirementData) SetWebsockNotifConfig(v WebsockNotifConfig)
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *ApplicationRequirementData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -310,7 +310,7 @@ func (o *ApplicationRequirementData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *ApplicationRequirementData) SetSuppFeat(v string) {
 }
 
 func (o ApplicationRequirementData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -332,25 +332,25 @@ func (o ApplicationRequirementData) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationRequirementData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
 	toSerialize["serviceId"] = o.ServiceId
 	toSerialize["appRequirement"] = o.AppRequirement
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -391,5 +391,3 @@ func (v *NullableApplicationRequirementData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

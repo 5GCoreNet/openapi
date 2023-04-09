@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &UeSubscriptionInfo{}
 // UeSubscriptionInfo Subscription information of the UE for the SIP Registration State event
 type UeSubscriptionInfo struct {
 	CallIdSipHeader string `json:"callIdSipHeader"`
-	FromSipHeader string `json:"fromSipHeader"`
-	ToSipHeader string `json:"toSipHeader"`
-	RecordRoute string `json:"recordRoute"`
-	Contact string `json:"contact"`
+	FromSipHeader   string `json:"fromSipHeader"`
+	ToSipHeader     string `json:"toSipHeader"`
+	RecordRoute     string `json:"recordRoute"`
+	Contact         string `json:"contact"`
 }
 
 // NewUeSubscriptionInfo instantiates a new UeSubscriptionInfo object
@@ -169,7 +169,7 @@ func (o *UeSubscriptionInfo) SetContact(v string) {
 }
 
 func (o UeSubscriptionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -221,5 +221,3 @@ func (v *NullableUeSubscriptionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

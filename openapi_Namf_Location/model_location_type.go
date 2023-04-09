@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // LocationType Type of location measurement requested
 type LocationType struct {
-	LocationTypeAnyOf *LocationTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocationTypeAnyOf
-	err = json.Unmarshal(data, &dst.LocationTypeAnyOf);
-	if err == nil {
-		jsonLocationTypeAnyOf, _ := json.Marshal(dst.LocationTypeAnyOf)
-		if string(jsonLocationTypeAnyOf) == "{}" { // empty struct
-			dst.LocationTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocationTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.LocationTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocationType) MarshalJSON() ([]byte, error) {
-	if src.LocationTypeAnyOf != nil {
-		return json.Marshal(&src.LocationTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

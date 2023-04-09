@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Npcf_AMPolicyControl
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualAMPolicyAssociationDocumentApiService IndividualAMPolicyAssociationDocumentApi service
 type IndividualAMPolicyAssociationDocumentApiService service
 
 type ApiDeleteIndividualAMPolicyAssociationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualAMPolicyAssociationDocumentApiService
-	polAssoId string
+	polAssoId  string
 }
 
 func (r ApiDeleteIndividualAMPolicyAssociationRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteIndividualAMPolicyAssociationRequest) Execute() (*http.Response
 /*
 DeleteIndividualAMPolicyAssociation Delete individual AM policy association.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param polAssoId Identifier of a policy association
- @return ApiDeleteIndividualAMPolicyAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param polAssoId Identifier of a policy association
+	@return ApiDeleteIndividualAMPolicyAssociationRequest
 */
 func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPolicyAssociation(ctx context.Context, polAssoId string) ApiDeleteIndividualAMPolicyAssociationRequest {
 	return ApiDeleteIndividualAMPolicyAssociationRequest{
 		ApiService: a,
-		ctx: ctx,
-		polAssoId: polAssoId,
+		ctx:        ctx,
+		polAssoId:  polAssoId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPolicyAssociationExecute(r ApiDeleteIndividualAMPolicyAssociationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMPolicyAssociationDocumentApiService.DeleteIndividualAMPolicyAssociation")
@@ -95,9 +94,9 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,9 +223,9 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) DeleteIndividualAMPoli
 }
 
 type ApiReadIndividualAMPolicyAssociationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualAMPolicyAssociationDocumentApiService
-	polAssoId string
+	polAssoId  string
 }
 
 func (r ApiReadIndividualAMPolicyAssociationRequest) Execute() (*PolicyAssociation, *http.Response, error) {
@@ -236,26 +235,27 @@ func (r ApiReadIndividualAMPolicyAssociationRequest) Execute() (*PolicyAssociati
 /*
 ReadIndividualAMPolicyAssociation Read individual AM policy association.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param polAssoId Identifier of a policy association
- @return ApiReadIndividualAMPolicyAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param polAssoId Identifier of a policy association
+	@return ApiReadIndividualAMPolicyAssociationRequest
 */
 func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicyAssociation(ctx context.Context, polAssoId string) ApiReadIndividualAMPolicyAssociationRequest {
 	return ApiReadIndividualAMPolicyAssociationRequest{
 		ApiService: a,
-		ctx: ctx,
-		polAssoId: polAssoId,
+		ctx:        ctx,
+		polAssoId:  polAssoId,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyAssociation
+//
+//	@return PolicyAssociation
 func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicyAssociationExecute(r ApiReadIndividualAMPolicyAssociationRequest) (*PolicyAssociation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyAssociation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyAssociation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMPolicyAssociationDocumentApiService.ReadIndividualAMPolicyAssociation")
@@ -297,9 +297,9 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -316,8 +316,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -327,8 +327,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -338,8 +338,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -349,8 +349,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -360,8 +360,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -371,8 +371,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -382,8 +382,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -393,8 +393,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -404,8 +404,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -415,8 +415,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -435,9 +435,9 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReadIndividualAMPolicy
 }
 
 type ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest struct {
-	ctx context.Context
-	ApiService *IndividualAMPolicyAssociationDocumentApiService
-	polAssoId string
+	ctx                            context.Context
+	ApiService                     *IndividualAMPolicyAssociationDocumentApiService
+	polAssoId                      string
 	policyAssociationUpdateRequest *PolicyAssociationUpdateRequest
 }
 
@@ -451,28 +451,29 @@ func (r ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest) E
 }
 
 /*
-ReportObservedEventTriggersForIndividualAMPolicyAssociation Report observed event triggers and obtain updated policies for an individual AM policy association. 
+ReportObservedEventTriggersForIndividualAMPolicyAssociation Report observed event triggers and obtain updated policies for an individual AM policy association.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param polAssoId Identifier of a policy association
- @return ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param polAssoId Identifier of a policy association
+	@return ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest
 */
 func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTriggersForIndividualAMPolicyAssociation(ctx context.Context, polAssoId string) ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest {
 	return ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest{
 		ApiService: a,
-		ctx: ctx,
-		polAssoId: polAssoId,
+		ctx:        ctx,
+		polAssoId:  polAssoId,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyUpdate
+//
+//	@return PolicyUpdate
 func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTriggersForIndividualAMPolicyAssociationExecute(r ApiReportObservedEventTriggersForIndividualAMPolicyAssociationRequest) (*PolicyUpdate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyUpdate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyUpdate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMPolicyAssociationDocumentApiService.ReportObservedEventTriggersForIndividualAMPolicyAssociation")
@@ -519,9 +520,9 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -538,8 +539,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -549,8 +550,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -560,8 +561,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -571,8 +572,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -582,8 +583,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -593,8 +594,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -604,8 +605,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -615,8 +616,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -626,8 +627,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -637,8 +638,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -648,8 +649,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -659,8 +660,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -670,8 +671,8 @@ func (a *IndividualAMPolicyAssociationDocumentApiService) ReportObservedEventTri
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

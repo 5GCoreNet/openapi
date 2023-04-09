@@ -1,7 +1,7 @@
 /*
 Eees_EECRegistration
 
-API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -23,7 +23,7 @@ type EECRegistrationPatch struct {
 	// Profiles of ACs for which the EEC provides edge enabling services.
 	AcProfs []ACProfile `json:"acProfs,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
-	ExpTime *time.Time `json:"expTime,omitempty"`
+	ExpTime            *time.Time            `json:"expTime,omitempty"`
 	UnfulfilledAcProfs *UnfulfilledAcProfile `json:"unfulfilledAcProfs,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewEECRegistrationPatchWithDefaults() *EECRegistrationPatch {
 
 // GetAcProfs returns the AcProfs field value if set, zero value otherwise.
 func (o *EECRegistrationPatch) GetAcProfs() []ACProfile {
-	if o == nil || isNil(o.AcProfs) {
+	if o == nil || IsNil(o.AcProfs) {
 		var ret []ACProfile
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *EECRegistrationPatch) GetAcProfs() []ACProfile {
 // GetAcProfsOk returns a tuple with the AcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistrationPatch) GetAcProfsOk() ([]ACProfile, bool) {
-	if o == nil || isNil(o.AcProfs) {
+	if o == nil || IsNil(o.AcProfs) {
 		return nil, false
 	}
 	return o.AcProfs, true
@@ -64,7 +64,7 @@ func (o *EECRegistrationPatch) GetAcProfsOk() ([]ACProfile, bool) {
 
 // HasAcProfs returns a boolean if a field has been set.
 func (o *EECRegistrationPatch) HasAcProfs() bool {
-	if o != nil && !isNil(o.AcProfs) {
+	if o != nil && !IsNil(o.AcProfs) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *EECRegistrationPatch) SetAcProfs(v []ACProfile) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *EECRegistrationPatch) GetExpTime() time.Time {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *EECRegistrationPatch) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistrationPatch) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -96,7 +96,7 @@ func (o *EECRegistrationPatch) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *EECRegistrationPatch) HasExpTime() bool {
-	if o != nil && !isNil(o.ExpTime) {
+	if o != nil && !IsNil(o.ExpTime) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *EECRegistrationPatch) SetExpTime(v time.Time) {
 
 // GetUnfulfilledAcProfs returns the UnfulfilledAcProfs field value if set, zero value otherwise.
 func (o *EECRegistrationPatch) GetUnfulfilledAcProfs() UnfulfilledAcProfile {
-	if o == nil || isNil(o.UnfulfilledAcProfs) {
+	if o == nil || IsNil(o.UnfulfilledAcProfs) {
 		var ret UnfulfilledAcProfile
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *EECRegistrationPatch) GetUnfulfilledAcProfs() UnfulfilledAcProfile {
 // GetUnfulfilledAcProfsOk returns a tuple with the UnfulfilledAcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistrationPatch) GetUnfulfilledAcProfsOk() (*UnfulfilledAcProfile, bool) {
-	if o == nil || isNil(o.UnfulfilledAcProfs) {
+	if o == nil || IsNil(o.UnfulfilledAcProfs) {
 		return nil, false
 	}
 	return o.UnfulfilledAcProfs, true
@@ -128,7 +128,7 @@ func (o *EECRegistrationPatch) GetUnfulfilledAcProfsOk() (*UnfulfilledAcProfile,
 
 // HasUnfulfilledAcProfs returns a boolean if a field has been set.
 func (o *EECRegistrationPatch) HasUnfulfilledAcProfs() bool {
-	if o != nil && !isNil(o.UnfulfilledAcProfs) {
+	if o != nil && !IsNil(o.UnfulfilledAcProfs) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *EECRegistrationPatch) SetUnfulfilledAcProfs(v UnfulfilledAcProfile) {
 }
 
 func (o EECRegistrationPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o EECRegistrationPatch) MarshalJSON() ([]byte, error) {
 
 func (o EECRegistrationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AcProfs) {
+	if !IsNil(o.AcProfs) {
 		toSerialize["acProfs"] = o.AcProfs
 	}
-	if !isNil(o.ExpTime) {
+	if !IsNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !isNil(o.UnfulfilledAcProfs) {
+	if !IsNil(o.UnfulfilledAcProfs) {
 		toSerialize["unfulfilledAcProfs"] = o.UnfulfilledAcProfs
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableEECRegistrationPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

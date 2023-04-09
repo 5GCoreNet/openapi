@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SipAuthenticationScheme Authentication scheme to be used in the SIP authentication request message
 type SipAuthenticationScheme struct {
-	SipAuthenticationSchemeAnyOf *SipAuthenticationSchemeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SipAuthenticationScheme) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SipAuthenticationSchemeAnyOf
-	err = json.Unmarshal(data, &dst.SipAuthenticationSchemeAnyOf);
-	if err == nil {
-		jsonSipAuthenticationSchemeAnyOf, _ := json.Marshal(dst.SipAuthenticationSchemeAnyOf)
-		if string(jsonSipAuthenticationSchemeAnyOf) == "{}" { // empty struct
-			dst.SipAuthenticationSchemeAnyOf = nil
-		} else {
-			return nil // data stored in dst.SipAuthenticationSchemeAnyOf, return on the first match
-		}
-	} else {
-		dst.SipAuthenticationSchemeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SipAuthenticationScheme) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SipAuthenticationScheme) MarshalJSON() ([]byte, error) {
-	if src.SipAuthenticationSchemeAnyOf != nil {
-		return json.Marshal(&src.SipAuthenticationSchemeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSipAuthenticationScheme) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

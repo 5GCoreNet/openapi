@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // EventExposureDataForAGroupDocumentApiService EventExposureDataForAGroupDocumentApi service
 type EventExposureDataForAGroupDocumentApiService service
 
 type ApiQueryGroupEEDataRequest struct {
-	ctx context.Context
-	ApiService *EventExposureDataForAGroupDocumentApiService
-	ueGroupId string
+	ctx               context.Context
+	ApiService        *EventExposureDataForAGroupDocumentApiService
+	ueGroupId         string
 	supportedFeatures *string
 }
 
@@ -43,26 +42,27 @@ func (r ApiQueryGroupEEDataRequest) Execute() (*EeGroupProfileData, *http.Respon
 /*
 QueryGroupEEData Retrieves the ee profile data profile data of a group or anyUE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId Group of UEs or any UE
- @return ApiQueryGroupEEDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId Group of UEs or any UE
+	@return ApiQueryGroupEEDataRequest
 */
 func (a *EventExposureDataForAGroupDocumentApiService) QueryGroupEEData(ctx context.Context, ueGroupId string) ApiQueryGroupEEDataRequest {
 	return ApiQueryGroupEEDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
 	}
 }
 
 // Execute executes the request
-//  @return EeGroupProfileData
+//
+//	@return EeGroupProfileData
 func (a *EventExposureDataForAGroupDocumentApiService) QueryGroupEEDataExecute(r ApiQueryGroupEEDataRequest) (*EeGroupProfileData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EeGroupProfileData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EeGroupProfileData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureDataForAGroupDocumentApiService.QueryGroupEEData")
@@ -78,7 +78,7 @@ func (a *EventExposureDataForAGroupDocumentApiService) QueryGroupEEDataExecute(r
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -107,9 +107,9 @@ func (a *EventExposureDataForAGroupDocumentApiService) QueryGroupEEDataExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

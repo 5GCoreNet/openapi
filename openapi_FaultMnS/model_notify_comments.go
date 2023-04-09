@@ -19,14 +19,10 @@ var _ MappedNullable = &NotifyComments{}
 
 // NotifyComments struct for NotifyComments
 type NotifyComments struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	AlarmId string `json:"alarmId"`
-	AlarmType AlarmType `json:"alarmType"`
-	ProbableCause ProbableCause `json:"probableCause"`
+	NotificationHeader
+	AlarmId           string            `json:"alarmId"`
+	AlarmType         AlarmType         `json:"alarmType"`
+	ProbableCause     ProbableCause     `json:"probableCause"`
 	PerceivedSeverity PerceivedSeverity `json:"perceivedSeverity"`
 	// Collection of comments. The comment identifiers are allocated by the MnS producer and used as key in the map.
 	Comments map[string]Comment `json:"comments"`
@@ -36,7 +32,7 @@ type NotifyComments struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyComments(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, alarmId string, alarmType AlarmType, probableCause ProbableCause, perceivedSeverity PerceivedSeverity, comments map[string]Comment) *NotifyComments {
+func NewNotifyComments(alarmId string, alarmType AlarmType, probableCause ProbableCause, perceivedSeverity PerceivedSeverity, comments map[string]Comment, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyComments {
 	this := NotifyComments{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -57,126 +53,6 @@ func NewNotifyComments(href string, notificationId int32, notificationType Notif
 func NewNotifyCommentsWithDefaults() *NotifyComments {
 	this := NotifyComments{}
 	return &this
-}
-
-// GetHref returns the Href field value
-func (o *NotifyComments) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyComments) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyComments) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyComments) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyComments) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyComments) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyComments) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyComments) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyComments) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyComments) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyComments) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyComments) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyComments) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyComments) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyComments) SetSystemDN(v string) {
-	o.SystemDN = v
 }
 
 // GetAlarmId returns the AlarmId field value
@@ -300,7 +176,7 @@ func (o *NotifyComments) SetComments(v map[string]Comment) {
 }
 
 func (o NotifyComments) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -309,11 +185,14 @@ func (o NotifyComments) MarshalJSON() ([]byte, error) {
 
 func (o NotifyComments) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
 	toSerialize["alarmId"] = o.AlarmId
 	toSerialize["alarmType"] = o.AlarmType
 	toSerialize["probableCause"] = o.ProbableCause
@@ -357,5 +236,3 @@ func (v *NullableNotifyComments) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

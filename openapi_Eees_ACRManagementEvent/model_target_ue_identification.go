@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsTargetUeIdentification(v *interface{}) TargetUeIdentification {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TargetUeIdentification) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src TargetUeIdentification) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TargetUeIdentification) GetActualInstance() (interface{}) {
+func (obj *TargetUeIdentification) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableTargetUeIdentification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

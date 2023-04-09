@@ -1,7 +1,7 @@
 /*
 Nmbstf-distsession
 
-MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &PktDistributionData{}
 // PktDistributionData Info for Packet Distribution Method
 type PktDistributionData struct {
 	PktDistributionOperatingMode PktDistributionOperatingMode `json:"pktDistributionOperatingMode"`
-	PktIngestMethod *PktIngestMethod `json:"pktIngestMethod,omitempty"`
-	MbStfIngestAddr MbStfIngestAddr `json:"mbStfIngestAddr"`
+	PktIngestMethod              *PktIngestMethod             `json:"pktIngestMethod,omitempty"`
+	MbStfIngestAddr              MbStfIngestAddr              `json:"mbStfIngestAddr"`
 }
 
 // NewPktDistributionData instantiates a new PktDistributionData object
@@ -69,7 +69,7 @@ func (o *PktDistributionData) SetPktDistributionOperatingMode(v PktDistributionO
 
 // GetPktIngestMethod returns the PktIngestMethod field value if set, zero value otherwise.
 func (o *PktDistributionData) GetPktIngestMethod() PktIngestMethod {
-	if o == nil || isNil(o.PktIngestMethod) {
+	if o == nil || IsNil(o.PktIngestMethod) {
 		var ret PktIngestMethod
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *PktDistributionData) GetPktIngestMethod() PktIngestMethod {
 // GetPktIngestMethodOk returns a tuple with the PktIngestMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PktDistributionData) GetPktIngestMethodOk() (*PktIngestMethod, bool) {
-	if o == nil || isNil(o.PktIngestMethod) {
+	if o == nil || IsNil(o.PktIngestMethod) {
 		return nil, false
 	}
 	return o.PktIngestMethod, true
@@ -87,7 +87,7 @@ func (o *PktDistributionData) GetPktIngestMethodOk() (*PktIngestMethod, bool) {
 
 // HasPktIngestMethod returns a boolean if a field has been set.
 func (o *PktDistributionData) HasPktIngestMethod() bool {
-	if o != nil && !isNil(o.PktIngestMethod) {
+	if o != nil && !IsNil(o.PktIngestMethod) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *PktDistributionData) SetMbStfIngestAddr(v MbStfIngestAddr) {
 }
 
 func (o PktDistributionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -134,7 +134,7 @@ func (o PktDistributionData) MarshalJSON() ([]byte, error) {
 func (o PktDistributionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pktDistributionOperatingMode"] = o.PktDistributionOperatingMode
-	if !isNil(o.PktIngestMethod) {
+	if !IsNil(o.PktIngestMethod) {
 		toSerialize["pktIngestMethod"] = o.PktIngestMethod
 	}
 	toSerialize["mbStfIngestAddr"] = o.MbStfIngestAddr
@@ -176,5 +176,3 @@ func (v *NullablePktDistributionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

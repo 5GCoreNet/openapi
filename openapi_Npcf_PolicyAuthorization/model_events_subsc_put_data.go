@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// EventsSubscPutData Identifies the events the application subscribes to within an Events Subscription sub-resource data. It may contain the notification of the already met events. 
+// EventsSubscPutData Identifies the events the application subscribes to within an Events Subscription sub-resource data. It may contain the notification of the already met events.
 type EventsSubscPutData struct {
 	EventsNotification *EventsNotification
 	EventsSubscReqData *EventsSubscReqData
@@ -25,7 +25,7 @@ type EventsSubscPutData struct {
 func (dst *EventsSubscPutData) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into EventsNotification
-	err = json.Unmarshal(data, &dst.EventsNotification);
+	err = json.Unmarshal(data, &dst.EventsNotification)
 	if err == nil {
 		jsonEventsNotification, _ := json.Marshal(dst.EventsNotification)
 		if string(jsonEventsNotification) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *EventsSubscPutData) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into EventsSubscReqData
-	err = json.Unmarshal(data, &dst.EventsSubscReqData);
+	err = json.Unmarshal(data, &dst.EventsSubscReqData)
 	if err == nil {
 		jsonEventsSubscReqData, _ := json.Marshal(dst.EventsSubscReqData)
 		if string(jsonEventsSubscReqData) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableEventsSubscPutData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

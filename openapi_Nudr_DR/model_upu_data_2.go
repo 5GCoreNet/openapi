@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UpuData2{}
 // UpuData2 Contains UE parameters update data set (e.g., the updated Routing ID Data or the Default configured NSSAI).
 type UpuData2 struct {
 	// Contains a secure packet.
-	SecPacket *string `json:"secPacket,omitempty"`
+	SecPacket        *string  `json:"secPacket,omitempty"`
 	DefaultConfNssai []Snssai `json:"defaultConfNssai,omitempty"`
 	// Represents a routing indicator.
 	RoutingId *string `json:"routingId,omitempty"`
@@ -45,7 +45,7 @@ func NewUpuData2WithDefaults() *UpuData2 {
 
 // GetSecPacket returns the SecPacket field value if set, zero value otherwise.
 func (o *UpuData2) GetSecPacket() string {
-	if o == nil || isNil(o.SecPacket) {
+	if o == nil || IsNil(o.SecPacket) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UpuData2) GetSecPacket() string {
 // GetSecPacketOk returns a tuple with the SecPacket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData2) GetSecPacketOk() (*string, bool) {
-	if o == nil || isNil(o.SecPacket) {
+	if o == nil || IsNil(o.SecPacket) {
 		return nil, false
 	}
 	return o.SecPacket, true
@@ -63,7 +63,7 @@ func (o *UpuData2) GetSecPacketOk() (*string, bool) {
 
 // HasSecPacket returns a boolean if a field has been set.
 func (o *UpuData2) HasSecPacket() bool {
-	if o != nil && !isNil(o.SecPacket) {
+	if o != nil && !IsNil(o.SecPacket) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UpuData2) SetSecPacket(v string) {
 
 // GetDefaultConfNssai returns the DefaultConfNssai field value if set, zero value otherwise.
 func (o *UpuData2) GetDefaultConfNssai() []Snssai {
-	if o == nil || isNil(o.DefaultConfNssai) {
+	if o == nil || IsNil(o.DefaultConfNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UpuData2) GetDefaultConfNssai() []Snssai {
 // GetDefaultConfNssaiOk returns a tuple with the DefaultConfNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData2) GetDefaultConfNssaiOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.DefaultConfNssai) {
+	if o == nil || IsNil(o.DefaultConfNssai) {
 		return nil, false
 	}
 	return o.DefaultConfNssai, true
@@ -95,7 +95,7 @@ func (o *UpuData2) GetDefaultConfNssaiOk() ([]Snssai, bool) {
 
 // HasDefaultConfNssai returns a boolean if a field has been set.
 func (o *UpuData2) HasDefaultConfNssai() bool {
-	if o != nil && !isNil(o.DefaultConfNssai) {
+	if o != nil && !IsNil(o.DefaultConfNssai) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UpuData2) SetDefaultConfNssai(v []Snssai) {
 
 // GetRoutingId returns the RoutingId field value if set, zero value otherwise.
 func (o *UpuData2) GetRoutingId() string {
-	if o == nil || isNil(o.RoutingId) {
+	if o == nil || IsNil(o.RoutingId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UpuData2) GetRoutingId() string {
 // GetRoutingIdOk returns a tuple with the RoutingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData2) GetRoutingIdOk() (*string, bool) {
-	if o == nil || isNil(o.RoutingId) {
+	if o == nil || IsNil(o.RoutingId) {
 		return nil, false
 	}
 	return o.RoutingId, true
@@ -127,7 +127,7 @@ func (o *UpuData2) GetRoutingIdOk() (*string, bool) {
 
 // HasRoutingId returns a boolean if a field has been set.
 func (o *UpuData2) HasRoutingId() bool {
-	if o != nil && !isNil(o.RoutingId) {
+	if o != nil && !IsNil(o.RoutingId) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UpuData2) SetRoutingId(v string) {
 }
 
 func (o UpuData2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o UpuData2) MarshalJSON() ([]byte, error) {
 
 func (o UpuData2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SecPacket) {
+	if !IsNil(o.SecPacket) {
 		toSerialize["secPacket"] = o.SecPacket
 	}
-	if !isNil(o.DefaultConfNssai) {
+	if !IsNil(o.DefaultConfNssai) {
 		toSerialize["defaultConfNssai"] = o.DefaultConfNssai
 	}
-	if !isNil(o.RoutingId) {
+	if !IsNil(o.RoutingId) {
 		toSerialize["routingId"] = o.RoutingId
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableUpuData2) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

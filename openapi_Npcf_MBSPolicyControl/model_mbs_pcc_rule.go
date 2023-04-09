@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &MbsPccRule{}
 
 // MbsPccRule Represents the parameters constituting an MBS PCC rule.
 type MbsPccRule struct {
-	MbsPccRuleId string `json:"mbsPccRuleId"`
+	MbsPccRuleId    string   `json:"mbsPccRuleId"`
 	MbsDlIpFlowInfo []string `json:"mbsDlIpFlowInfo,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	Precedence *int32 `json:"precedence,omitempty"`
+	Precedence   *int32   `json:"precedence,omitempty"`
 	RefMbsQosDec []string `json:"refMbsQosDec,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *MbsPccRule) SetMbsPccRuleId(v string) {
 
 // GetMbsDlIpFlowInfo returns the MbsDlIpFlowInfo field value if set, zero value otherwise.
 func (o *MbsPccRule) GetMbsDlIpFlowInfo() []string {
-	if o == nil || isNil(o.MbsDlIpFlowInfo) {
+	if o == nil || IsNil(o.MbsDlIpFlowInfo) {
 		var ret []string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *MbsPccRule) GetMbsDlIpFlowInfo() []string {
 // GetMbsDlIpFlowInfoOk returns a tuple with the MbsDlIpFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPccRule) GetMbsDlIpFlowInfoOk() ([]string, bool) {
-	if o == nil || isNil(o.MbsDlIpFlowInfo) {
+	if o == nil || IsNil(o.MbsDlIpFlowInfo) {
 		return nil, false
 	}
 	return o.MbsDlIpFlowInfo, true
@@ -88,7 +88,7 @@ func (o *MbsPccRule) GetMbsDlIpFlowInfoOk() ([]string, bool) {
 
 // HasMbsDlIpFlowInfo returns a boolean if a field has been set.
 func (o *MbsPccRule) HasMbsDlIpFlowInfo() bool {
-	if o != nil && !isNil(o.MbsDlIpFlowInfo) {
+	if o != nil && !IsNil(o.MbsDlIpFlowInfo) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *MbsPccRule) SetMbsDlIpFlowInfo(v []string) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *MbsPccRule) GetPrecedence() int32 {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *MbsPccRule) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPccRule) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -120,7 +120,7 @@ func (o *MbsPccRule) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *MbsPccRule) HasPrecedence() bool {
-	if o != nil && !isNil(o.Precedence) {
+	if o != nil && !IsNil(o.Precedence) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *MbsPccRule) SetPrecedence(v int32) {
 
 // GetRefMbsQosDec returns the RefMbsQosDec field value if set, zero value otherwise.
 func (o *MbsPccRule) GetRefMbsQosDec() []string {
-	if o == nil || isNil(o.RefMbsQosDec) {
+	if o == nil || IsNil(o.RefMbsQosDec) {
 		var ret []string
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *MbsPccRule) GetRefMbsQosDec() []string {
 // GetRefMbsQosDecOk returns a tuple with the RefMbsQosDec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPccRule) GetRefMbsQosDecOk() ([]string, bool) {
-	if o == nil || isNil(o.RefMbsQosDec) {
+	if o == nil || IsNil(o.RefMbsQosDec) {
 		return nil, false
 	}
 	return o.RefMbsQosDec, true
@@ -152,7 +152,7 @@ func (o *MbsPccRule) GetRefMbsQosDecOk() ([]string, bool) {
 
 // HasRefMbsQosDec returns a boolean if a field has been set.
 func (o *MbsPccRule) HasRefMbsQosDec() bool {
-	if o != nil && !isNil(o.RefMbsQosDec) {
+	if o != nil && !IsNil(o.RefMbsQosDec) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *MbsPccRule) SetRefMbsQosDec(v []string) {
 }
 
 func (o MbsPccRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,13 +175,13 @@ func (o MbsPccRule) MarshalJSON() ([]byte, error) {
 func (o MbsPccRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsPccRuleId"] = o.MbsPccRuleId
-	if !isNil(o.MbsDlIpFlowInfo) {
+	if !IsNil(o.MbsDlIpFlowInfo) {
 		toSerialize["mbsDlIpFlowInfo"] = o.MbsDlIpFlowInfo
 	}
-	if !isNil(o.Precedence) {
+	if !IsNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
-	if !isNil(o.RefMbsQosDec) {
+	if !IsNil(o.RefMbsQosDec) {
 		toSerialize["refMbsQosDec"] = o.RefMbsQosDec
 	}
 	return toSerialize, nil
@@ -222,5 +222,3 @@ func (v *NullableMbsPccRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

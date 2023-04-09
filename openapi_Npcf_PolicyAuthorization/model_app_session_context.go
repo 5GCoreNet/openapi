@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AppSessionContext{}
 
 // AppSessionContext Represents an Individual Application Session Context resource.
 type AppSessionContext struct {
-	AscReqData *AppSessionContextReqData `json:"ascReqData,omitempty"`
+	AscReqData  *AppSessionContextReqData  `json:"ascReqData,omitempty"`
 	AscRespData *AppSessionContextRespData `json:"ascRespData,omitempty"`
-	EvsNotif *EventsNotification `json:"evsNotif,omitempty"`
+	EvsNotif    *EventsNotification        `json:"evsNotif,omitempty"`
 }
 
 // NewAppSessionContext instantiates a new AppSessionContext object
@@ -43,7 +43,7 @@ func NewAppSessionContextWithDefaults() *AppSessionContext {
 
 // GetAscReqData returns the AscReqData field value if set, zero value otherwise.
 func (o *AppSessionContext) GetAscReqData() AppSessionContextReqData {
-	if o == nil || isNil(o.AscReqData) {
+	if o == nil || IsNil(o.AscReqData) {
 		var ret AppSessionContextReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AppSessionContext) GetAscReqData() AppSessionContextReqData {
 // GetAscReqDataOk returns a tuple with the AscReqData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContext) GetAscReqDataOk() (*AppSessionContextReqData, bool) {
-	if o == nil || isNil(o.AscReqData) {
+	if o == nil || IsNil(o.AscReqData) {
 		return nil, false
 	}
 	return o.AscReqData, true
@@ -61,7 +61,7 @@ func (o *AppSessionContext) GetAscReqDataOk() (*AppSessionContextReqData, bool) 
 
 // HasAscReqData returns a boolean if a field has been set.
 func (o *AppSessionContext) HasAscReqData() bool {
-	if o != nil && !isNil(o.AscReqData) {
+	if o != nil && !IsNil(o.AscReqData) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AppSessionContext) SetAscReqData(v AppSessionContextReqData) {
 
 // GetAscRespData returns the AscRespData field value if set, zero value otherwise.
 func (o *AppSessionContext) GetAscRespData() AppSessionContextRespData {
-	if o == nil || isNil(o.AscRespData) {
+	if o == nil || IsNil(o.AscRespData) {
 		var ret AppSessionContextRespData
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AppSessionContext) GetAscRespData() AppSessionContextRespData {
 // GetAscRespDataOk returns a tuple with the AscRespData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContext) GetAscRespDataOk() (*AppSessionContextRespData, bool) {
-	if o == nil || isNil(o.AscRespData) {
+	if o == nil || IsNil(o.AscRespData) {
 		return nil, false
 	}
 	return o.AscRespData, true
@@ -93,7 +93,7 @@ func (o *AppSessionContext) GetAscRespDataOk() (*AppSessionContextRespData, bool
 
 // HasAscRespData returns a boolean if a field has been set.
 func (o *AppSessionContext) HasAscRespData() bool {
-	if o != nil && !isNil(o.AscRespData) {
+	if o != nil && !IsNil(o.AscRespData) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AppSessionContext) SetAscRespData(v AppSessionContextRespData) {
 
 // GetEvsNotif returns the EvsNotif field value if set, zero value otherwise.
 func (o *AppSessionContext) GetEvsNotif() EventsNotification {
-	if o == nil || isNil(o.EvsNotif) {
+	if o == nil || IsNil(o.EvsNotif) {
 		var ret EventsNotification
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AppSessionContext) GetEvsNotif() EventsNotification {
 // GetEvsNotifOk returns a tuple with the EvsNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContext) GetEvsNotifOk() (*EventsNotification, bool) {
-	if o == nil || isNil(o.EvsNotif) {
+	if o == nil || IsNil(o.EvsNotif) {
 		return nil, false
 	}
 	return o.EvsNotif, true
@@ -125,7 +125,7 @@ func (o *AppSessionContext) GetEvsNotifOk() (*EventsNotification, bool) {
 
 // HasEvsNotif returns a boolean if a field has been set.
 func (o *AppSessionContext) HasEvsNotif() bool {
-	if o != nil && !isNil(o.EvsNotif) {
+	if o != nil && !IsNil(o.EvsNotif) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AppSessionContext) SetEvsNotif(v EventsNotification) {
 }
 
 func (o AppSessionContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o AppSessionContext) MarshalJSON() ([]byte, error) {
 
 func (o AppSessionContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AscReqData) {
+	if !IsNil(o.AscReqData) {
 		toSerialize["ascReqData"] = o.AscReqData
 	}
-	if !isNil(o.AscRespData) {
+	if !IsNil(o.AscRespData) {
 		toSerialize["ascRespData"] = o.AscRespData
 	}
-	if !isNil(o.EvsNotif) {
+	if !IsNil(o.EvsNotif) {
 		toSerialize["evsNotif"] = o.EvsNotif
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableAppSessionContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

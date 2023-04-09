@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AerialUeIndication Indicates the Aerial service for the UE is allowed or not allowed, possible values are - AERIAL_UE_ALLOWED: Aerial service for the UE is allowed. - AERIAL_UE_NOT_ALLOWED: Aerial service for the UE is not allowed. 
+// AerialUeIndication Indicates the Aerial service for the UE is allowed or not allowed, possible values are - AERIAL_UE_ALLOWED: Aerial service for the UE is allowed. - AERIAL_UE_NOT_ALLOWED: Aerial service for the UE is not allowed.
 type AerialUeIndication struct {
-	AerialUeIndicationAnyOf *AerialUeIndicationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AerialUeIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AerialUeIndicationAnyOf
-	err = json.Unmarshal(data, &dst.AerialUeIndicationAnyOf);
-	if err == nil {
-		jsonAerialUeIndicationAnyOf, _ := json.Marshal(dst.AerialUeIndicationAnyOf)
-		if string(jsonAerialUeIndicationAnyOf) == "{}" { // empty struct
-			dst.AerialUeIndicationAnyOf = nil
-		} else {
-			return nil // data stored in dst.AerialUeIndicationAnyOf, return on the first match
-		}
-	} else {
-		dst.AerialUeIndicationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AerialUeIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AerialUeIndication) MarshalJSON() ([]byte, error) {
-	if src.AerialUeIndicationAnyOf != nil {
-		return json.Marshal(&src.AerialUeIndicationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAerialUeIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

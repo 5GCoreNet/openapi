@@ -19,10 +19,10 @@ var _ MappedNullable = &UdsfFunctionSingleAllOfAttributesAllOf{}
 
 // UdsfFunctionSingleAllOfAttributesAllOf struct for UdsfFunctionSingleAllOfAttributesAllOf
 type UdsfFunctionSingleAllOfAttributesAllOf struct {
-	PlmnInfoList []PlmnInfo `json:"plmnInfoList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
+	PlmnInfoList     []PlmnInfo        `json:"plmnInfoList,omitempty"`
+	SBIFqdn          *string           `json:"sBIFqdn,omitempty"`
 	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	UdsfInfo *UdsfInfo `json:"udsfInfo,omitempty"`
+	UdsfInfo         *UdsfInfo         `json:"udsfInfo,omitempty"`
 }
 
 // NewUdsfFunctionSingleAllOfAttributesAllOf instantiates a new UdsfFunctionSingleAllOfAttributesAllOf object
@@ -171,7 +171,7 @@ func (o *UdsfFunctionSingleAllOfAttributesAllOf) SetUdsfInfo(v UdsfInfo) {
 }
 
 func (o UdsfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableUdsfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

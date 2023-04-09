@@ -1,7 +1,7 @@
 /*
 AMInfluence
 
-AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &GeographicalArea{}
 
 // GeographicalArea Contains geographical area information (e.g.a civic address or shapes).
 type GeographicalArea struct {
-	CivicAddress *CivicAddress `json:"civicAddress,omitempty"`
-	Shapes *GeographicArea `json:"shapes,omitempty"`
+	CivicAddress *CivicAddress   `json:"civicAddress,omitempty"`
+	Shapes       *GeographicArea `json:"shapes,omitempty"`
 }
 
 // NewGeographicalArea instantiates a new GeographicalArea object
@@ -42,7 +42,7 @@ func NewGeographicalAreaWithDefaults() *GeographicalArea {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *GeographicalArea) GetCivicAddress() CivicAddress {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeographicalArea) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalArea) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -60,7 +60,7 @@ func (o *GeographicalArea) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *GeographicalArea) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeographicalArea) SetCivicAddress(v CivicAddress) {
 
 // GetShapes returns the Shapes field value if set, zero value otherwise.
 func (o *GeographicalArea) GetShapes() GeographicArea {
-	if o == nil || isNil(o.Shapes) {
+	if o == nil || IsNil(o.Shapes) {
 		var ret GeographicArea
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeographicalArea) GetShapes() GeographicArea {
 // GetShapesOk returns a tuple with the Shapes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalArea) GetShapesOk() (*GeographicArea, bool) {
-	if o == nil || isNil(o.Shapes) {
+	if o == nil || IsNil(o.Shapes) {
 		return nil, false
 	}
 	return o.Shapes, true
@@ -92,7 +92,7 @@ func (o *GeographicalArea) GetShapesOk() (*GeographicArea, bool) {
 
 // HasShapes returns a boolean if a field has been set.
 func (o *GeographicalArea) HasShapes() bool {
-	if o != nil && !isNil(o.Shapes) {
+	if o != nil && !IsNil(o.Shapes) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *GeographicalArea) SetShapes(v GeographicArea) {
 }
 
 func (o GeographicalArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o GeographicalArea) MarshalJSON() ([]byte, error) {
 
 func (o GeographicalArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
-	if !isNil(o.Shapes) {
+	if !IsNil(o.Shapes) {
 		toSerialize["shapes"] = o.Shapes
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableGeographicalArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

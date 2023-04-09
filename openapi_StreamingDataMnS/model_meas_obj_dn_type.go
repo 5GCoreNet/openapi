@@ -19,6 +19,7 @@ var _ MappedNullable = &MeasObjDnType{}
 
 // MeasObjDnType DN of the measured object instance (see 3GPP TS 28.550)
 type MeasObjDnType struct {
+	SystemDNType
 }
 
 // NewMeasObjDnType instantiates a new MeasObjDnType object
@@ -39,7 +40,7 @@ func NewMeasObjDnTypeWithDefaults() *MeasObjDnType {
 }
 
 func (o MeasObjDnType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -48,6 +49,14 @@ func (o MeasObjDnType) MarshalJSON() ([]byte, error) {
 
 func (o MeasObjDnType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedSystemDNType, errSystemDNType := json.Marshal(o.SystemDNType)
+	if errSystemDNType != nil {
+		return map[string]interface{}{}, errSystemDNType
+	}
+	errSystemDNType = json.Unmarshal([]byte(serializedSystemDNType), &toSerialize)
+	if errSystemDNType != nil {
+		return map[string]interface{}{}, errSystemDNType
+	}
 	return toSerialize, nil
 }
 
@@ -86,5 +95,3 @@ func (v *NullableMeasObjDnType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

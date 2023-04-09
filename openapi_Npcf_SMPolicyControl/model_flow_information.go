@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,18 +20,18 @@ var _ MappedNullable = &FlowInformation{}
 // FlowInformation Contains the flow information.
 type FlowInformation struct {
 	// Defines a packet filter for an IP flow.
-	FlowDescription *string `json:"flowDescription,omitempty"`
+	FlowDescription    *string             `json:"flowDescription,omitempty"`
 	EthFlowDescription *EthFlowDescription `json:"ethFlowDescription,omitempty"`
 	// An identifier of packet filter.
 	PackFiltId *string `json:"packFiltId,omitempty"`
 	// The packet shall be sent to the UE.
 	PacketFilterUsage *bool `json:"packetFilterUsage,omitempty"`
-	// Contains the Ipv4 Type-of-Service and mask field or the Ipv6 Traffic-Class field and  mask field. 
+	// Contains the Ipv4 Type-of-Service and mask field or the Ipv6 Traffic-Class field and  mask field.
 	TosTrafficClass NullableString `json:"tosTrafficClass,omitempty"`
 	// the security parameter index of the IPSec packet.
 	Spi NullableString `json:"spi,omitempty"`
 	// the Ipv6 flow label header field.
-	FlowLabel NullableString `json:"flowLabel,omitempty"`
+	FlowLabel     NullableString   `json:"flowLabel,omitempty"`
 	FlowDirection *FlowDirectionRm `json:"flowDirection,omitempty"`
 }
 
@@ -54,7 +54,7 @@ func NewFlowInformationWithDefaults() *FlowInformation {
 
 // GetFlowDescription returns the FlowDescription field value if set, zero value otherwise.
 func (o *FlowInformation) GetFlowDescription() string {
-	if o == nil || isNil(o.FlowDescription) {
+	if o == nil || IsNil(o.FlowDescription) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *FlowInformation) GetFlowDescription() string {
 // GetFlowDescriptionOk returns a tuple with the FlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInformation) GetFlowDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.FlowDescription) {
+	if o == nil || IsNil(o.FlowDescription) {
 		return nil, false
 	}
 	return o.FlowDescription, true
@@ -72,7 +72,7 @@ func (o *FlowInformation) GetFlowDescriptionOk() (*string, bool) {
 
 // HasFlowDescription returns a boolean if a field has been set.
 func (o *FlowInformation) HasFlowDescription() bool {
-	if o != nil && !isNil(o.FlowDescription) {
+	if o != nil && !IsNil(o.FlowDescription) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *FlowInformation) SetFlowDescription(v string) {
 
 // GetEthFlowDescription returns the EthFlowDescription field value if set, zero value otherwise.
 func (o *FlowInformation) GetEthFlowDescription() EthFlowDescription {
-	if o == nil || isNil(o.EthFlowDescription) {
+	if o == nil || IsNil(o.EthFlowDescription) {
 		var ret EthFlowDescription
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *FlowInformation) GetEthFlowDescription() EthFlowDescription {
 // GetEthFlowDescriptionOk returns a tuple with the EthFlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInformation) GetEthFlowDescriptionOk() (*EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthFlowDescription) {
+	if o == nil || IsNil(o.EthFlowDescription) {
 		return nil, false
 	}
 	return o.EthFlowDescription, true
@@ -104,7 +104,7 @@ func (o *FlowInformation) GetEthFlowDescriptionOk() (*EthFlowDescription, bool) 
 
 // HasEthFlowDescription returns a boolean if a field has been set.
 func (o *FlowInformation) HasEthFlowDescription() bool {
-	if o != nil && !isNil(o.EthFlowDescription) {
+	if o != nil && !IsNil(o.EthFlowDescription) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *FlowInformation) SetEthFlowDescription(v EthFlowDescription) {
 
 // GetPackFiltId returns the PackFiltId field value if set, zero value otherwise.
 func (o *FlowInformation) GetPackFiltId() string {
-	if o == nil || isNil(o.PackFiltId) {
+	if o == nil || IsNil(o.PackFiltId) {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *FlowInformation) GetPackFiltId() string {
 // GetPackFiltIdOk returns a tuple with the PackFiltId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInformation) GetPackFiltIdOk() (*string, bool) {
-	if o == nil || isNil(o.PackFiltId) {
+	if o == nil || IsNil(o.PackFiltId) {
 		return nil, false
 	}
 	return o.PackFiltId, true
@@ -136,7 +136,7 @@ func (o *FlowInformation) GetPackFiltIdOk() (*string, bool) {
 
 // HasPackFiltId returns a boolean if a field has been set.
 func (o *FlowInformation) HasPackFiltId() bool {
-	if o != nil && !isNil(o.PackFiltId) {
+	if o != nil && !IsNil(o.PackFiltId) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *FlowInformation) SetPackFiltId(v string) {
 
 // GetPacketFilterUsage returns the PacketFilterUsage field value if set, zero value otherwise.
 func (o *FlowInformation) GetPacketFilterUsage() bool {
-	if o == nil || isNil(o.PacketFilterUsage) {
+	if o == nil || IsNil(o.PacketFilterUsage) {
 		var ret bool
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *FlowInformation) GetPacketFilterUsage() bool {
 // GetPacketFilterUsageOk returns a tuple with the PacketFilterUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInformation) GetPacketFilterUsageOk() (*bool, bool) {
-	if o == nil || isNil(o.PacketFilterUsage) {
+	if o == nil || IsNil(o.PacketFilterUsage) {
 		return nil, false
 	}
 	return o.PacketFilterUsage, true
@@ -168,7 +168,7 @@ func (o *FlowInformation) GetPacketFilterUsageOk() (*bool, bool) {
 
 // HasPacketFilterUsage returns a boolean if a field has been set.
 func (o *FlowInformation) HasPacketFilterUsage() bool {
-	if o != nil && !isNil(o.PacketFilterUsage) {
+	if o != nil && !IsNil(o.PacketFilterUsage) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *FlowInformation) SetPacketFilterUsage(v bool) {
 
 // GetTosTrafficClass returns the TosTrafficClass field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FlowInformation) GetTosTrafficClass() string {
-	if o == nil || isNil(o.TosTrafficClass.Get()) {
+	if o == nil || IsNil(o.TosTrafficClass.Get()) {
 		var ret string
 		return ret
 	}
@@ -212,6 +212,7 @@ func (o *FlowInformation) HasTosTrafficClass() bool {
 func (o *FlowInformation) SetTosTrafficClass(v string) {
 	o.TosTrafficClass.Set(&v)
 }
+
 // SetTosTrafficClassNil sets the value for TosTrafficClass to be an explicit nil
 func (o *FlowInformation) SetTosTrafficClassNil() {
 	o.TosTrafficClass.Set(nil)
@@ -224,7 +225,7 @@ func (o *FlowInformation) UnsetTosTrafficClass() {
 
 // GetSpi returns the Spi field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FlowInformation) GetSpi() string {
-	if o == nil || isNil(o.Spi.Get()) {
+	if o == nil || IsNil(o.Spi.Get()) {
 		var ret string
 		return ret
 	}
@@ -254,6 +255,7 @@ func (o *FlowInformation) HasSpi() bool {
 func (o *FlowInformation) SetSpi(v string) {
 	o.Spi.Set(&v)
 }
+
 // SetSpiNil sets the value for Spi to be an explicit nil
 func (o *FlowInformation) SetSpiNil() {
 	o.Spi.Set(nil)
@@ -266,7 +268,7 @@ func (o *FlowInformation) UnsetSpi() {
 
 // GetFlowLabel returns the FlowLabel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FlowInformation) GetFlowLabel() string {
-	if o == nil || isNil(o.FlowLabel.Get()) {
+	if o == nil || IsNil(o.FlowLabel.Get()) {
 		var ret string
 		return ret
 	}
@@ -296,6 +298,7 @@ func (o *FlowInformation) HasFlowLabel() bool {
 func (o *FlowInformation) SetFlowLabel(v string) {
 	o.FlowLabel.Set(&v)
 }
+
 // SetFlowLabelNil sets the value for FlowLabel to be an explicit nil
 func (o *FlowInformation) SetFlowLabelNil() {
 	o.FlowLabel.Set(nil)
@@ -308,7 +311,7 @@ func (o *FlowInformation) UnsetFlowLabel() {
 
 // GetFlowDirection returns the FlowDirection field value if set, zero value otherwise.
 func (o *FlowInformation) GetFlowDirection() FlowDirectionRm {
-	if o == nil || isNil(o.FlowDirection) {
+	if o == nil || IsNil(o.FlowDirection) {
 		var ret FlowDirectionRm
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *FlowInformation) GetFlowDirection() FlowDirectionRm {
 // GetFlowDirectionOk returns a tuple with the FlowDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInformation) GetFlowDirectionOk() (*FlowDirectionRm, bool) {
-	if o == nil || isNil(o.FlowDirection) {
+	if o == nil || IsNil(o.FlowDirection) {
 		return nil, false
 	}
 	return o.FlowDirection, true
@@ -326,7 +329,7 @@ func (o *FlowInformation) GetFlowDirectionOk() (*FlowDirectionRm, bool) {
 
 // HasFlowDirection returns a boolean if a field has been set.
 func (o *FlowInformation) HasFlowDirection() bool {
-	if o != nil && !isNil(o.FlowDirection) {
+	if o != nil && !IsNil(o.FlowDirection) {
 		return true
 	}
 
@@ -339,7 +342,7 @@ func (o *FlowInformation) SetFlowDirection(v FlowDirectionRm) {
 }
 
 func (o FlowInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,16 +351,16 @@ func (o FlowInformation) MarshalJSON() ([]byte, error) {
 
 func (o FlowInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FlowDescription) {
+	if !IsNil(o.FlowDescription) {
 		toSerialize["flowDescription"] = o.FlowDescription
 	}
-	if !isNil(o.EthFlowDescription) {
+	if !IsNil(o.EthFlowDescription) {
 		toSerialize["ethFlowDescription"] = o.EthFlowDescription
 	}
-	if !isNil(o.PackFiltId) {
+	if !IsNil(o.PackFiltId) {
 		toSerialize["packFiltId"] = o.PackFiltId
 	}
-	if !isNil(o.PacketFilterUsage) {
+	if !IsNil(o.PacketFilterUsage) {
 		toSerialize["packetFilterUsage"] = o.PacketFilterUsage
 	}
 	if o.TosTrafficClass.IsSet() {
@@ -369,7 +372,7 @@ func (o FlowInformation) ToMap() (map[string]interface{}, error) {
 	if o.FlowLabel.IsSet() {
 		toSerialize["flowLabel"] = o.FlowLabel.Get()
 	}
-	if !isNil(o.FlowDirection) {
+	if !IsNil(o.FlowDirection) {
 		toSerialize["flowDirection"] = o.FlowDirection
 	}
 	return toSerialize, nil
@@ -410,5 +413,3 @@ func (v *NullableFlowInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

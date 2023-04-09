@@ -19,9 +19,9 @@ var _ MappedNullable = &NotifyChangedAlarmAllOf{}
 
 // NotifyChangedAlarmAllOf struct for NotifyChangedAlarmAllOf
 type NotifyChangedAlarmAllOf struct {
-	AlarmId string `json:"alarmId"`
-	AlarmType AlarmType `json:"alarmType"`
-	ProbableCause ProbableCause `json:"probableCause"`
+	AlarmId           string            `json:"alarmId"`
+	AlarmType         AlarmType         `json:"alarmType"`
+	ProbableCause     ProbableCause     `json:"probableCause"`
 	PerceivedSeverity PerceivedSeverity `json:"perceivedSeverity"`
 }
 
@@ -143,7 +143,7 @@ func (o *NotifyChangedAlarmAllOf) SetPerceivedSeverity(v PerceivedSeverity) {
 }
 
 func (o NotifyChangedAlarmAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableNotifyChangedAlarmAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

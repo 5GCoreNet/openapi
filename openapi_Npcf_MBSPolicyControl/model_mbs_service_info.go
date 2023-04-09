@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &MbsServiceInfo{}
 // MbsServiceInfo Represent MBS Service Information.
 type MbsServiceInfo struct {
 	MbsMediaComps map[string]MbsMediaCompRm `json:"mbsMediaComps"`
-	MbsSdfResPrio *ReservPriority `json:"mbsSdfResPrio,omitempty"`
+	MbsSdfResPrio *ReservPriority           `json:"mbsSdfResPrio,omitempty"`
 	// Contains an AF application identifier.
 	AfAppId *string `json:"afAppId,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MbsSessionAmbr *string `json:"mbsSessionAmbr,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *MbsServiceInfo) SetMbsMediaComps(v map[string]MbsMediaCompRm) {
 
 // GetMbsSdfResPrio returns the MbsSdfResPrio field value if set, zero value otherwise.
 func (o *MbsServiceInfo) GetMbsSdfResPrio() ReservPriority {
-	if o == nil || isNil(o.MbsSdfResPrio) {
+	if o == nil || IsNil(o.MbsSdfResPrio) {
 		var ret ReservPriority
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *MbsServiceInfo) GetMbsSdfResPrio() ReservPriority {
 // GetMbsSdfResPrioOk returns a tuple with the MbsSdfResPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsServiceInfo) GetMbsSdfResPrioOk() (*ReservPriority, bool) {
-	if o == nil || isNil(o.MbsSdfResPrio) {
+	if o == nil || IsNil(o.MbsSdfResPrio) {
 		return nil, false
 	}
 	return o.MbsSdfResPrio, true
@@ -89,7 +89,7 @@ func (o *MbsServiceInfo) GetMbsSdfResPrioOk() (*ReservPriority, bool) {
 
 // HasMbsSdfResPrio returns a boolean if a field has been set.
 func (o *MbsServiceInfo) HasMbsSdfResPrio() bool {
-	if o != nil && !isNil(o.MbsSdfResPrio) {
+	if o != nil && !IsNil(o.MbsSdfResPrio) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *MbsServiceInfo) SetMbsSdfResPrio(v ReservPriority) {
 
 // GetAfAppId returns the AfAppId field value if set, zero value otherwise.
 func (o *MbsServiceInfo) GetAfAppId() string {
-	if o == nil || isNil(o.AfAppId) {
+	if o == nil || IsNil(o.AfAppId) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *MbsServiceInfo) GetAfAppId() string {
 // GetAfAppIdOk returns a tuple with the AfAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsServiceInfo) GetAfAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfAppId) {
+	if o == nil || IsNil(o.AfAppId) {
 		return nil, false
 	}
 	return o.AfAppId, true
@@ -121,7 +121,7 @@ func (o *MbsServiceInfo) GetAfAppIdOk() (*string, bool) {
 
 // HasAfAppId returns a boolean if a field has been set.
 func (o *MbsServiceInfo) HasAfAppId() bool {
-	if o != nil && !isNil(o.AfAppId) {
+	if o != nil && !IsNil(o.AfAppId) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *MbsServiceInfo) SetAfAppId(v string) {
 
 // GetMbsSessionAmbr returns the MbsSessionAmbr field value if set, zero value otherwise.
 func (o *MbsServiceInfo) GetMbsSessionAmbr() string {
-	if o == nil || isNil(o.MbsSessionAmbr) {
+	if o == nil || IsNil(o.MbsSessionAmbr) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *MbsServiceInfo) GetMbsSessionAmbr() string {
 // GetMbsSessionAmbrOk returns a tuple with the MbsSessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsServiceInfo) GetMbsSessionAmbrOk() (*string, bool) {
-	if o == nil || isNil(o.MbsSessionAmbr) {
+	if o == nil || IsNil(o.MbsSessionAmbr) {
 		return nil, false
 	}
 	return o.MbsSessionAmbr, true
@@ -153,7 +153,7 @@ func (o *MbsServiceInfo) GetMbsSessionAmbrOk() (*string, bool) {
 
 // HasMbsSessionAmbr returns a boolean if a field has been set.
 func (o *MbsServiceInfo) HasMbsSessionAmbr() bool {
-	if o != nil && !isNil(o.MbsSessionAmbr) {
+	if o != nil && !IsNil(o.MbsSessionAmbr) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *MbsServiceInfo) SetMbsSessionAmbr(v string) {
 }
 
 func (o MbsServiceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o MbsServiceInfo) MarshalJSON() ([]byte, error) {
 func (o MbsServiceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsMediaComps"] = o.MbsMediaComps
-	if !isNil(o.MbsSdfResPrio) {
+	if !IsNil(o.MbsSdfResPrio) {
 		toSerialize["mbsSdfResPrio"] = o.MbsSdfResPrio
 	}
-	if !isNil(o.AfAppId) {
+	if !IsNil(o.AfAppId) {
 		toSerialize["afAppId"] = o.AfAppId
 	}
-	if !isNil(o.MbsSessionAmbr) {
+	if !IsNil(o.MbsSessionAmbr) {
 		toSerialize["mbsSessionAmbr"] = o.MbsSessionAmbr
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableMbsServiceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

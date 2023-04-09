@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Ssm{}
 // Ssm Source specific IP multicast address
 type Ssm struct {
 	SourceIpAddr IpAddr `json:"sourceIpAddr"`
-	DestIpAddr IpAddr `json:"destIpAddr"`
+	DestIpAddr   IpAddr `json:"destIpAddr"`
 }
 
 // NewSsm instantiates a new Ssm object
@@ -91,7 +91,7 @@ func (o *Ssm) SetDestIpAddr(v IpAddr) {
 }
 
 func (o Ssm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSsm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

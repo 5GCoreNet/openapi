@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,25 +13,24 @@ package openapi_Nudm_UEAU
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // GetAuthDataForFNRGApiService GetAuthDataForFNRGApi service
 type GetAuthDataForFNRGApiService service
 
 type ApiGetRgAuthDataRequest struct {
-	ctx context.Context
-	ApiService *GetAuthDataForFNRGApiService
-	supiOrSuci string
-	authenticatedInd *bool
+	ctx               context.Context
+	ApiService        *GetAuthDataForFNRGApiService
+	supiOrSuci        string
+	authenticatedInd  *bool
 	supportedFeatures *string
-	plmnId *PlmnId
-	ifNoneMatch *string
-	ifModifiedSince *string
+	plmnId            *PlmnId
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // Authenticated indication
@@ -71,26 +70,27 @@ func (r ApiGetRgAuthDataRequest) Execute() (*RgAuthCtx, *http.Response, error) {
 /*
 GetRgAuthData Get authentication data for the FN-RG
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supiOrSuci SUPI or SUCI of the user
- @return ApiGetRgAuthDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supiOrSuci SUPI or SUCI of the user
+	@return ApiGetRgAuthDataRequest
 */
 func (a *GetAuthDataForFNRGApiService) GetRgAuthData(ctx context.Context, supiOrSuci string) ApiGetRgAuthDataRequest {
 	return ApiGetRgAuthDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		supiOrSuci: supiOrSuci,
 	}
 }
 
 // Execute executes the request
-//  @return RgAuthCtx
+//
+//	@return RgAuthCtx
 func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRequest) (*RgAuthCtx, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RgAuthCtx
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RgAuthCtx
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GetAuthDataForFNRGApiService.GetRgAuthData")
@@ -108,12 +108,12 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 		return localVarReturnValue, nil, reportError("authenticatedInd is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "authenticated-ind", r.authenticatedInd, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "authenticated-ind", r.authenticatedInd, "")
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.plmnId != nil {
-		parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -133,10 +133,10 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -148,9 +148,9 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -167,8 +167,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -178,8 +178,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -189,8 +189,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -200,8 +200,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -211,8 +211,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -222,8 +222,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -233,8 +233,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -244,8 +244,8 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

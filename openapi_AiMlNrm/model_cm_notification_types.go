@@ -20,10 +20,10 @@ type CmNotificationTypes string
 
 // List of CmNotificationTypes
 const (
-	NOTIFY_MOI_CREATION CmNotificationTypes = "notifyMOICreation"
-	NOTIFY_MOI_DELETION CmNotificationTypes = "notifyMOIDeletion"
+	NOTIFY_MOI_CREATION                CmNotificationTypes = "notifyMOICreation"
+	NOTIFY_MOI_DELETION                CmNotificationTypes = "notifyMOIDeletion"
 	NOTIFY_MOI_ATTRIBUTE_VALUE_CHANGES CmNotificationTypes = "notifyMOIAttributeValueChanges"
-	NOTIFY_MOI_CHANGES CmNotificationTypes = "notifyMOIChanges"
+	NOTIFY_MOI_CHANGES                 CmNotificationTypes = "notifyMOIChanges"
 )
 
 // All allowed values of CmNotificationTypes enum
@@ -112,4 +112,3 @@ func (v *NullableCmNotificationTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

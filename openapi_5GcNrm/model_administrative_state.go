@@ -20,7 +20,7 @@ type AdministrativeState string
 
 // List of AdministrativeState
 const (
-	LOCKED AdministrativeState = "LOCKED"
+	LOCKED   AdministrativeState = "LOCKED"
 	UNLOCKED AdministrativeState = "UNLOCKED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableAdministrativeState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

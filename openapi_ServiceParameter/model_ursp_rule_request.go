@@ -1,7 +1,7 @@
 /*
 3gpp-service-parameter
 
-API for AF service paramter   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF service paramter   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -22,7 +22,7 @@ type UrspRuleRequest struct {
 	TrafficDesc *TrafficDescriptorComponents `json:"trafficDesc,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	RelatPrecedence *int32 `json:"relatPrecedence,omitempty"`
-	// Sets of parameters that may be used to guide the Route Selection Descriptors of the  URSP. 
+	// Sets of parameters that may be used to guide the Route Selection Descriptors of the  URSP.
 	RouteSelParamSets []RouteSelectionParameterSet `json:"routeSelParamSets,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewUrspRuleRequestWithDefaults() *UrspRuleRequest {
 
 // GetTrafficDesc returns the TrafficDesc field value if set, zero value otherwise.
 func (o *UrspRuleRequest) GetTrafficDesc() TrafficDescriptorComponents {
-	if o == nil || isNil(o.TrafficDesc) {
+	if o == nil || IsNil(o.TrafficDesc) {
 		var ret TrafficDescriptorComponents
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UrspRuleRequest) GetTrafficDesc() TrafficDescriptorComponents {
 // GetTrafficDescOk returns a tuple with the TrafficDesc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UrspRuleRequest) GetTrafficDescOk() (*TrafficDescriptorComponents, bool) {
-	if o == nil || isNil(o.TrafficDesc) {
+	if o == nil || IsNil(o.TrafficDesc) {
 		return nil, false
 	}
 	return o.TrafficDesc, true
@@ -63,7 +63,7 @@ func (o *UrspRuleRequest) GetTrafficDescOk() (*TrafficDescriptorComponents, bool
 
 // HasTrafficDesc returns a boolean if a field has been set.
 func (o *UrspRuleRequest) HasTrafficDesc() bool {
-	if o != nil && !isNil(o.TrafficDesc) {
+	if o != nil && !IsNil(o.TrafficDesc) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UrspRuleRequest) SetTrafficDesc(v TrafficDescriptorComponents) {
 
 // GetRelatPrecedence returns the RelatPrecedence field value if set, zero value otherwise.
 func (o *UrspRuleRequest) GetRelatPrecedence() int32 {
-	if o == nil || isNil(o.RelatPrecedence) {
+	if o == nil || IsNil(o.RelatPrecedence) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UrspRuleRequest) GetRelatPrecedence() int32 {
 // GetRelatPrecedenceOk returns a tuple with the RelatPrecedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UrspRuleRequest) GetRelatPrecedenceOk() (*int32, bool) {
-	if o == nil || isNil(o.RelatPrecedence) {
+	if o == nil || IsNil(o.RelatPrecedence) {
 		return nil, false
 	}
 	return o.RelatPrecedence, true
@@ -95,7 +95,7 @@ func (o *UrspRuleRequest) GetRelatPrecedenceOk() (*int32, bool) {
 
 // HasRelatPrecedence returns a boolean if a field has been set.
 func (o *UrspRuleRequest) HasRelatPrecedence() bool {
-	if o != nil && !isNil(o.RelatPrecedence) {
+	if o != nil && !IsNil(o.RelatPrecedence) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UrspRuleRequest) SetRelatPrecedence(v int32) {
 
 // GetRouteSelParamSets returns the RouteSelParamSets field value if set, zero value otherwise.
 func (o *UrspRuleRequest) GetRouteSelParamSets() []RouteSelectionParameterSet {
-	if o == nil || isNil(o.RouteSelParamSets) {
+	if o == nil || IsNil(o.RouteSelParamSets) {
 		var ret []RouteSelectionParameterSet
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UrspRuleRequest) GetRouteSelParamSets() []RouteSelectionParameterSet {
 // GetRouteSelParamSetsOk returns a tuple with the RouteSelParamSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UrspRuleRequest) GetRouteSelParamSetsOk() ([]RouteSelectionParameterSet, bool) {
-	if o == nil || isNil(o.RouteSelParamSets) {
+	if o == nil || IsNil(o.RouteSelParamSets) {
 		return nil, false
 	}
 	return o.RouteSelParamSets, true
@@ -127,7 +127,7 @@ func (o *UrspRuleRequest) GetRouteSelParamSetsOk() ([]RouteSelectionParameterSet
 
 // HasRouteSelParamSets returns a boolean if a field has been set.
 func (o *UrspRuleRequest) HasRouteSelParamSets() bool {
-	if o != nil && !isNil(o.RouteSelParamSets) {
+	if o != nil && !IsNil(o.RouteSelParamSets) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UrspRuleRequest) SetRouteSelParamSets(v []RouteSelectionParameterSet) {
 }
 
 func (o UrspRuleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o UrspRuleRequest) MarshalJSON() ([]byte, error) {
 
 func (o UrspRuleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TrafficDesc) {
+	if !IsNil(o.TrafficDesc) {
 		toSerialize["trafficDesc"] = o.TrafficDesc
 	}
-	if !isNil(o.RelatPrecedence) {
+	if !IsNil(o.RelatPrecedence) {
 		toSerialize["relatPrecedence"] = o.RelatPrecedence
 	}
-	if !isNil(o.RouteSelParamSets) {
+	if !IsNil(o.RouteSelParamSets) {
 		toSerialize["routeSelParamSets"] = o.RouteSelParamSets
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableUrspRuleRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nhss_SDM
 
-HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ModificationNotification{}
 
 // ModificationNotification struct for ModificationNotification
 type ModificationNotification struct {
-	NotifyItems []NotifyItem `json:"notifyItems"`
-	SubscriptionId *string `json:"subscriptionId,omitempty"`
+	NotifyItems    []NotifyItem `json:"notifyItems"`
+	SubscriptionId *string      `json:"subscriptionId,omitempty"`
 }
 
 // NewModificationNotification instantiates a new ModificationNotification object
@@ -67,7 +67,7 @@ func (o *ModificationNotification) SetNotifyItems(v []NotifyItem) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *ModificationNotification) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ModificationNotification) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModificationNotification) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -85,7 +85,7 @@ func (o *ModificationNotification) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *ModificationNotification) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ModificationNotification) SetSubscriptionId(v string) {
 }
 
 func (o ModificationNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ModificationNotification) MarshalJSON() ([]byte, error) {
 func (o ModificationNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifyItems"] = o.NotifyItems
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableModificationNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

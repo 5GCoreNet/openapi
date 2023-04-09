@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &DispersionArea{}
 
 // DispersionArea Dispersion Area
 type DispersionArea struct {
-	TaiList []Tai `json:"taiList,omitempty"`
+	TaiList  []Tai  `json:"taiList,omitempty"`
 	NcgiList []Ncgi `json:"ncgiList,omitempty"`
 	EcgiList []Ecgi `json:"ecgiList,omitempty"`
-	N3gaInd *bool `json:"n3gaInd,omitempty"`
+	N3gaInd  *bool  `json:"n3gaInd,omitempty"`
 }
 
 // NewDispersionArea instantiates a new DispersionArea object
@@ -48,7 +48,7 @@ func NewDispersionAreaWithDefaults() *DispersionArea {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *DispersionArea) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *DispersionArea) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionArea) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -66,7 +66,7 @@ func (o *DispersionArea) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *DispersionArea) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *DispersionArea) SetTaiList(v []Tai) {
 
 // GetNcgiList returns the NcgiList field value if set, zero value otherwise.
 func (o *DispersionArea) GetNcgiList() []Ncgi {
-	if o == nil || isNil(o.NcgiList) {
+	if o == nil || IsNil(o.NcgiList) {
 		var ret []Ncgi
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *DispersionArea) GetNcgiList() []Ncgi {
 // GetNcgiListOk returns a tuple with the NcgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionArea) GetNcgiListOk() ([]Ncgi, bool) {
-	if o == nil || isNil(o.NcgiList) {
+	if o == nil || IsNil(o.NcgiList) {
 		return nil, false
 	}
 	return o.NcgiList, true
@@ -98,7 +98,7 @@ func (o *DispersionArea) GetNcgiListOk() ([]Ncgi, bool) {
 
 // HasNcgiList returns a boolean if a field has been set.
 func (o *DispersionArea) HasNcgiList() bool {
-	if o != nil && !isNil(o.NcgiList) {
+	if o != nil && !IsNil(o.NcgiList) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *DispersionArea) SetNcgiList(v []Ncgi) {
 
 // GetEcgiList returns the EcgiList field value if set, zero value otherwise.
 func (o *DispersionArea) GetEcgiList() []Ecgi {
-	if o == nil || isNil(o.EcgiList) {
+	if o == nil || IsNil(o.EcgiList) {
 		var ret []Ecgi
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *DispersionArea) GetEcgiList() []Ecgi {
 // GetEcgiListOk returns a tuple with the EcgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionArea) GetEcgiListOk() ([]Ecgi, bool) {
-	if o == nil || isNil(o.EcgiList) {
+	if o == nil || IsNil(o.EcgiList) {
 		return nil, false
 	}
 	return o.EcgiList, true
@@ -130,7 +130,7 @@ func (o *DispersionArea) GetEcgiListOk() ([]Ecgi, bool) {
 
 // HasEcgiList returns a boolean if a field has been set.
 func (o *DispersionArea) HasEcgiList() bool {
-	if o != nil && !isNil(o.EcgiList) {
+	if o != nil && !IsNil(o.EcgiList) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *DispersionArea) SetEcgiList(v []Ecgi) {
 
 // GetN3gaInd returns the N3gaInd field value if set, zero value otherwise.
 func (o *DispersionArea) GetN3gaInd() bool {
-	if o == nil || isNil(o.N3gaInd) {
+	if o == nil || IsNil(o.N3gaInd) {
 		var ret bool
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *DispersionArea) GetN3gaInd() bool {
 // GetN3gaIndOk returns a tuple with the N3gaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionArea) GetN3gaIndOk() (*bool, bool) {
-	if o == nil || isNil(o.N3gaInd) {
+	if o == nil || IsNil(o.N3gaInd) {
 		return nil, false
 	}
 	return o.N3gaInd, true
@@ -162,7 +162,7 @@ func (o *DispersionArea) GetN3gaIndOk() (*bool, bool) {
 
 // HasN3gaInd returns a boolean if a field has been set.
 func (o *DispersionArea) HasN3gaInd() bool {
-	if o != nil && !isNil(o.N3gaInd) {
+	if o != nil && !IsNil(o.N3gaInd) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *DispersionArea) SetN3gaInd(v bool) {
 }
 
 func (o DispersionArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,16 +184,16 @@ func (o DispersionArea) MarshalJSON() ([]byte, error) {
 
 func (o DispersionArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.NcgiList) {
+	if !IsNil(o.NcgiList) {
 		toSerialize["ncgiList"] = o.NcgiList
 	}
-	if !isNil(o.EcgiList) {
+	if !IsNil(o.EcgiList) {
 		toSerialize["ecgiList"] = o.EcgiList
 	}
-	if !isNil(o.N3gaInd) {
+	if !IsNil(o.N3gaInd) {
 		toSerialize["n3gaInd"] = o.N3gaInd
 	}
 	return toSerialize, nil
@@ -234,5 +234,3 @@ func (v *NullableDispersionArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

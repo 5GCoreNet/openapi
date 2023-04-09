@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ReportTypeMdt The enumeration ReportTypeMdt defines Report Type for logged MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.4-1. 
+// ReportTypeMdt The enumeration ReportTypeMdt defines Report Type for logged MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.4-1.
 type ReportTypeMdt struct {
-	ReportTypeMdtAnyOf *ReportTypeMdtAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportTypeMdt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReportTypeMdtAnyOf
-	err = json.Unmarshal(data, &dst.ReportTypeMdtAnyOf);
-	if err == nil {
-		jsonReportTypeMdtAnyOf, _ := json.Marshal(dst.ReportTypeMdtAnyOf)
-		if string(jsonReportTypeMdtAnyOf) == "{}" { // empty struct
-			dst.ReportTypeMdtAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReportTypeMdtAnyOf, return on the first match
-		}
-	} else {
-		dst.ReportTypeMdtAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReportTypeMdt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportTypeMdt) MarshalJSON() ([]byte, error) {
-	if src.ReportTypeMdtAnyOf != nil {
-		return json.Marshal(&src.ReportTypeMdtAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReportTypeMdt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

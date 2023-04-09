@@ -1,7 +1,7 @@
 /*
 5GMS Data Reporting data types
 
-5GMS Data Reporting data types © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS Data Reporting data types © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.0
 */
@@ -67,7 +67,7 @@ func (o *BaseRecord) SetTimestamp(v time.Time) {
 }
 
 func (o BaseRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,5 +115,3 @@ func (v *NullableBaseRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

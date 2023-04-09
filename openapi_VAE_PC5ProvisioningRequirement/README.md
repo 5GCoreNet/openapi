@@ -96,9 +96,7 @@ Class | Method | HTTP request | Description
  - [ProblemDetails](docs/ProblemDetails.md)
  - [ProvisioningRequirement](docs/ProvisioningRequirement.md)
  - [QosResourceType](docs/QosResourceType.md)
- - [QosResourceTypeAnyOf](docs/QosResourceTypeAnyOf.md)
  - [Result](docs/Result.md)
- - [ResultAnyOf](docs/ResultAnyOf.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)
 
 

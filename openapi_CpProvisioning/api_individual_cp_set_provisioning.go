@@ -1,7 +1,7 @@
 /*
 3gpp-cp-parameter-provisioning
 
-API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,22 +13,21 @@ package openapi_CpProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualCPSetProvisioningApiService IndividualCPSetProvisioningApi service
 type IndividualCPSetProvisioningApiService service
 
 type ApiDeleteIndCPSetProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualCPSetProvisioningApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualCPSetProvisioningApiService
+	scsAsId        string
 	subscriptionId string
-	setId string
+	setId          string
 }
 
 func (r ApiDeleteIndCPSetProvisioningRequest) Execute() (*http.Response, error) {
@@ -38,28 +37,28 @@ func (r ApiDeleteIndCPSetProvisioningRequest) Execute() (*http.Response, error) 
 /*
 DeleteIndCPSetProvisioning Delete CP at individual CP set(s) level associated with a CP parameter set Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param subscriptionId Subscription ID
- @param setId Identifier of the CP parameter set
- @return ApiDeleteIndCPSetProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param subscriptionId Subscription ID
+	@param setId Identifier of the CP parameter set
+	@return ApiDeleteIndCPSetProvisioningRequest
 */
 func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioning(ctx context.Context, scsAsId string, subscriptionId string, setId string) ApiDeleteIndCPSetProvisioningRequest {
 	return ApiDeleteIndCPSetProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
-		setId: setId,
+		setId:          setId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecute(r ApiDeleteIndCPSetProvisioningRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualCPSetProvisioningApiService.DeleteIndCPSetProvisioning")
@@ -103,9 +102,9 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -122,8 +121,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -133,8 +132,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -144,8 +143,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +154,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -166,8 +165,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -177,8 +176,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -188,8 +187,8 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -199,11 +198,11 @@ func (a *IndividualCPSetProvisioningApiService) DeleteIndCPSetProvisioningExecut
 }
 
 type ApiFetchIndCPSetProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualCPSetProvisioningApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualCPSetProvisioningApiService
+	scsAsId        string
 	subscriptionId string
-	setId string
+	setId          string
 }
 
 func (r ApiFetchIndCPSetProvisioningRequest) Execute() (*CpParameterSet, *http.Response, error) {
@@ -213,30 +212,31 @@ func (r ApiFetchIndCPSetProvisioningRequest) Execute() (*CpParameterSet, *http.R
 /*
 FetchIndCPSetProvisioning Read CP at individual CP set(s) level associated with a CP parameter set Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param subscriptionId Subscription ID
- @param setId Identifier of the CP parameter set
- @return ApiFetchIndCPSetProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param subscriptionId Subscription ID
+	@param setId Identifier of the CP parameter set
+	@return ApiFetchIndCPSetProvisioningRequest
 */
 func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioning(ctx context.Context, scsAsId string, subscriptionId string, setId string) ApiFetchIndCPSetProvisioningRequest {
 	return ApiFetchIndCPSetProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
-		setId: setId,
+		setId:          setId,
 	}
 }
 
 // Execute executes the request
-//  @return CpParameterSet
+//
+//	@return CpParameterSet
 func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute(r ApiFetchIndCPSetProvisioningRequest) (*CpParameterSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CpParameterSet
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CpParameterSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualCPSetProvisioningApiService.FetchIndCPSetProvisioning")
@@ -280,9 +280,9 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -299,8 +299,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -310,8 +310,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -321,8 +321,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -332,8 +332,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -343,8 +343,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -354,8 +354,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -365,8 +365,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -376,8 +376,8 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -396,11 +396,11 @@ func (a *IndividualCPSetProvisioningApiService) FetchIndCPSetProvisioningExecute
 }
 
 type ApiUpdateIndCPSetProvisioningRequest struct {
-	ctx context.Context
-	ApiService *IndividualCPSetProvisioningApiService
-	scsAsId string
+	ctx            context.Context
+	ApiService     *IndividualCPSetProvisioningApiService
+	scsAsId        string
 	subscriptionId string
-	setId string
+	setId          string
 	cpParameterSet *CpParameterSet
 }
 
@@ -417,30 +417,31 @@ func (r ApiUpdateIndCPSetProvisioningRequest) Execute() (*CpParameterSet, *http.
 /*
 UpdateIndCPSetProvisioning Update CP at individual CP set(s) level associated with a CP parameter set Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
- @param subscriptionId Subscription ID
- @param setId Identifier of the CP parameter set
- @return ApiUpdateIndCPSetProvisioningRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122.
+	@param subscriptionId Subscription ID
+	@param setId Identifier of the CP parameter set
+	@return ApiUpdateIndCPSetProvisioningRequest
 */
 func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioning(ctx context.Context, scsAsId string, subscriptionId string, setId string) ApiUpdateIndCPSetProvisioningRequest {
 	return ApiUpdateIndCPSetProvisioningRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:     a,
+		ctx:            ctx,
+		scsAsId:        scsAsId,
 		subscriptionId: subscriptionId,
-		setId: setId,
+		setId:          setId,
 	}
 }
 
 // Execute executes the request
-//  @return CpParameterSet
+//
+//	@return CpParameterSet
 func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecute(r ApiUpdateIndCPSetProvisioningRequest) (*CpParameterSet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CpParameterSet
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CpParameterSet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualCPSetProvisioningApiService.UpdateIndCPSetProvisioning")
@@ -489,9 +490,9 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -508,8 +509,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -519,8 +520,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -530,8 +531,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -541,8 +542,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -552,8 +553,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -563,8 +564,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -574,8 +575,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -585,8 +586,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -596,8 +597,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -607,8 +608,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -618,8 +619,8 @@ func (a *IndividualCPSetProvisioningApiService) UpdateIndCPSetProvisioningExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

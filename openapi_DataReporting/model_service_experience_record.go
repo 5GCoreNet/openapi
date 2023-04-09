@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting
 
-API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -19,8 +19,7 @@ var _ MappedNullable = &ServiceExperienceRecord{}
 
 // ServiceExperienceRecord struct for ServiceExperienceRecord
 type ServiceExperienceRecord struct {
-	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
+	BaseRecord
 	ServiceExperienceInfos PerFlowServiceExperienceInfo `json:"serviceExperienceInfos"`
 }
 
@@ -28,7 +27,7 @@ type ServiceExperienceRecord struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceExperienceRecord(timestamp time.Time, serviceExperienceInfos PerFlowServiceExperienceInfo) *ServiceExperienceRecord {
+func NewServiceExperienceRecord(serviceExperienceInfos PerFlowServiceExperienceInfo, timestamp time.Time) *ServiceExperienceRecord {
 	this := ServiceExperienceRecord{}
 	this.Timestamp = timestamp
 	this.ServiceExperienceInfos = serviceExperienceInfos
@@ -41,30 +40,6 @@ func NewServiceExperienceRecord(timestamp time.Time, serviceExperienceInfos PerF
 func NewServiceExperienceRecordWithDefaults() *ServiceExperienceRecord {
 	this := ServiceExperienceRecord{}
 	return &this
-}
-
-// GetTimestamp returns the Timestamp field value
-func (o *ServiceExperienceRecord) GetTimestamp() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.Timestamp
-}
-
-// GetTimestampOk returns a tuple with the Timestamp field value
-// and a boolean to check if the value has been set.
-func (o *ServiceExperienceRecord) GetTimestampOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Timestamp, true
-}
-
-// SetTimestamp sets field value
-func (o *ServiceExperienceRecord) SetTimestamp(v time.Time) {
-	o.Timestamp = v
 }
 
 // GetServiceExperienceInfos returns the ServiceExperienceInfos field value
@@ -92,7 +67,7 @@ func (o *ServiceExperienceRecord) SetServiceExperienceInfos(v PerFlowServiceExpe
 }
 
 func (o ServiceExperienceRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -101,7 +76,14 @@ func (o ServiceExperienceRecord) MarshalJSON() ([]byte, error) {
 
 func (o ServiceExperienceRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["timestamp"] = o.Timestamp
+	serializedBaseRecord, errBaseRecord := json.Marshal(o.BaseRecord)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
+	errBaseRecord = json.Unmarshal([]byte(serializedBaseRecord), &toSerialize)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
 	toSerialize["serviceExperienceInfos"] = o.ServiceExperienceInfos
 	return toSerialize, nil
 }
@@ -141,5 +123,3 @@ func (v *NullableServiceExperienceRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

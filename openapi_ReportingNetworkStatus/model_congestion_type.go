@@ -1,7 +1,7 @@
 /*
 3gpp-network-status-reporting
 
-API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for reporting network status.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// CongestionType Possible values are - HIGH: The congestion status is high. - MEDIUM: The congestion status is medium. - LOW: The congestion status is low. 
+// CongestionType Possible values are - HIGH: The congestion status is high. - MEDIUM: The congestion status is medium. - LOW: The congestion status is low.
 type CongestionType struct {
-	CongestionTypeAnyOf *CongestionTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CongestionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CongestionTypeAnyOf
-	err = json.Unmarshal(data, &dst.CongestionTypeAnyOf);
-	if err == nil {
-		jsonCongestionTypeAnyOf, _ := json.Marshal(dst.CongestionTypeAnyOf)
-		if string(jsonCongestionTypeAnyOf) == "{}" { // empty struct
-			dst.CongestionTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.CongestionTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.CongestionTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *CongestionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CongestionType) MarshalJSON() ([]byte, error) {
-	if src.CongestionTypeAnyOf != nil {
-		return json.Marshal(&src.CongestionTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCongestionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

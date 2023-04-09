@@ -1,7 +1,7 @@
 /*
 VAE_HDMapDynamicInfo
 
-API for VAE HDMapDynamicInfo Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE HDMapDynamicInfo Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &NearbyUeInfo{}
 // NearbyUeInfo Represents the informaiotn of nearby UEs.
 type NearbyUeInfo struct {
 	// Represents the identifier of the V2X UE.
-	NearbyUeId string `json:"nearbyUeId"`
-	Location UserLocation `json:"location"`
+	NearbyUeId string       `json:"nearbyUeId"`
+	Location   UserLocation `json:"location"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Distance int32 `json:"distance"`
 }
@@ -119,7 +119,7 @@ func (o *NearbyUeInfo) SetDistance(v int32) {
 }
 
 func (o NearbyUeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,5 +169,3 @@ func (v *NullableNearbyUeInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

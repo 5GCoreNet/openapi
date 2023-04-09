@@ -41,7 +41,7 @@ func NewSubNetworkSingle3AllOfWithDefaults() *SubNetworkSingle3AllOf {
 
 // GetAssuranceClosedControlLoop returns the AssuranceClosedControlLoop field value if set, zero value otherwise.
 func (o *SubNetworkSingle3AllOf) GetAssuranceClosedControlLoop() []AssuranceClosedControlLoopSingle {
-	if o == nil || isNil(o.AssuranceClosedControlLoop) {
+	if o == nil || IsNil(o.AssuranceClosedControlLoop) {
 		var ret []AssuranceClosedControlLoopSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *SubNetworkSingle3AllOf) GetAssuranceClosedControlLoop() []AssuranceClos
 // GetAssuranceClosedControlLoopOk returns a tuple with the AssuranceClosedControlLoop field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle3AllOf) GetAssuranceClosedControlLoopOk() ([]AssuranceClosedControlLoopSingle, bool) {
-	if o == nil || isNil(o.AssuranceClosedControlLoop) {
+	if o == nil || IsNil(o.AssuranceClosedControlLoop) {
 		return nil, false
 	}
 	return o.AssuranceClosedControlLoop, true
@@ -59,7 +59,7 @@ func (o *SubNetworkSingle3AllOf) GetAssuranceClosedControlLoopOk() ([]AssuranceC
 
 // HasAssuranceClosedControlLoop returns a boolean if a field has been set.
 func (o *SubNetworkSingle3AllOf) HasAssuranceClosedControlLoop() bool {
-	if o != nil && !isNil(o.AssuranceClosedControlLoop) {
+	if o != nil && !IsNil(o.AssuranceClosedControlLoop) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *SubNetworkSingle3AllOf) SetAssuranceClosedControlLoop(v []AssuranceClos
 }
 
 func (o SubNetworkSingle3AllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o SubNetworkSingle3AllOf) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle3AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AssuranceClosedControlLoop) {
+	if !IsNil(o.AssuranceClosedControlLoop) {
 		toSerialize["AssuranceClosedControlLoop"] = o.AssuranceClosedControlLoop
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableSubNetworkSingle3AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

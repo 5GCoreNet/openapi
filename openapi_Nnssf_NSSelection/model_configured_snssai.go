@@ -1,7 +1,7 @@
 /*
 NSSF NS Selection
 
-NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ConfiguredSnssai{}
 
 // ConfiguredSnssai Contains the configured S-NSSAI(s) authorized by the NSSF in the serving PLMN and optional mapped home S-NSSAI
 type ConfiguredSnssai struct {
-	ConfiguredSnssai Snssai `json:"configuredSnssai"`
+	ConfiguredSnssai Snssai  `json:"configuredSnssai"`
 	MappedHomeSnssai *Snssai `json:"mappedHomeSnssai,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *ConfiguredSnssai) SetConfiguredSnssai(v Snssai) {
 
 // GetMappedHomeSnssai returns the MappedHomeSnssai field value if set, zero value otherwise.
 func (o *ConfiguredSnssai) GetMappedHomeSnssai() Snssai {
-	if o == nil || isNil(o.MappedHomeSnssai) {
+	if o == nil || IsNil(o.MappedHomeSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ConfiguredSnssai) GetMappedHomeSnssai() Snssai {
 // GetMappedHomeSnssaiOk returns a tuple with the MappedHomeSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfiguredSnssai) GetMappedHomeSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.MappedHomeSnssai) {
+	if o == nil || IsNil(o.MappedHomeSnssai) {
 		return nil, false
 	}
 	return o.MappedHomeSnssai, true
@@ -85,7 +85,7 @@ func (o *ConfiguredSnssai) GetMappedHomeSnssaiOk() (*Snssai, bool) {
 
 // HasMappedHomeSnssai returns a boolean if a field has been set.
 func (o *ConfiguredSnssai) HasMappedHomeSnssai() bool {
-	if o != nil && !isNil(o.MappedHomeSnssai) {
+	if o != nil && !IsNil(o.MappedHomeSnssai) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ConfiguredSnssai) SetMappedHomeSnssai(v Snssai) {
 }
 
 func (o ConfiguredSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ConfiguredSnssai) MarshalJSON() ([]byte, error) {
 func (o ConfiguredSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["configuredSnssai"] = o.ConfiguredSnssai
-	if !isNil(o.MappedHomeSnssai) {
+	if !IsNil(o.MappedHomeSnssai) {
 		toSerialize["mappedHomeSnssai"] = o.MappedHomeSnssai
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableConfiguredSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

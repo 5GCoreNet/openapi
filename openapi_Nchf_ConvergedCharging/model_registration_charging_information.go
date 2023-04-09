@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,25 +20,25 @@ var _ MappedNullable = &RegistrationChargingInformation{}
 // RegistrationChargingInformation struct for RegistrationChargingInformation
 type RegistrationChargingInformation struct {
 	RegistrationMessagetype RegistrationMessageType `json:"registrationMessagetype"`
-	UserInformation *UserInformation `json:"userInformation,omitempty"`
-	UserLocationinfo *UserLocation `json:"userLocationinfo,omitempty"`
-	PSCellInformation *PSCellInformation `json:"pSCellInformation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	UetimeZone *string `json:"uetimeZone,omitempty"`
-	RATType *RatType `json:"rATType,omitempty"`
+	UserInformation         *UserInformation        `json:"userInformation,omitempty"`
+	UserLocationinfo        *UserLocation           `json:"userLocationinfo,omitempty"`
+	PSCellInformation       *PSCellInformation      `json:"pSCellInformation,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	UetimeZone *string  `json:"uetimeZone,omitempty"`
+	RATType    *RatType `json:"rATType,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
-	Var5GMMCapability *string `json:"5GMMCapability,omitempty"`
-	MICOModeIndication *MICOModeIndication `json:"mICOModeIndication,omitempty"`
-	SmsIndication *SmsIndication `json:"smsIndication,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
+	Var5GMMCapability      *string                  `json:"5GMMCapability,omitempty"`
+	MICOModeIndication     *MICOModeIndication      `json:"mICOModeIndication,omitempty"`
+	SmsIndication          *SmsIndication           `json:"smsIndication,omitempty"`
+	TaiList                []Tai                    `json:"taiList,omitempty"`
 	ServiceAreaRestriction []ServiceAreaRestriction `json:"serviceAreaRestriction,omitempty"`
-	RequestedNSSAI []Snssai `json:"requestedNSSAI,omitempty"`
-	AllowedNSSAI []Snssai `json:"allowedNSSAI,omitempty"`
-	RejectedNSSAI []Snssai `json:"rejectedNSSAI,omitempty"`
-	NSSAIMapList []NSSAIMap `json:"nSSAIMapList,omitempty"`
-	AmfUeNgapId *int32 `json:"amfUeNgapId,omitempty"`
-	RanUeNgapId *int32 `json:"ranUeNgapId,omitempty"`
-	RanNodeId *GlobalRanNodeId `json:"ranNodeId,omitempty"`
+	RequestedNSSAI         []Snssai                 `json:"requestedNSSAI,omitempty"`
+	AllowedNSSAI           []Snssai                 `json:"allowedNSSAI,omitempty"`
+	RejectedNSSAI          []Snssai                 `json:"rejectedNSSAI,omitempty"`
+	NSSAIMapList           []NSSAIMap               `json:"nSSAIMapList,omitempty"`
+	AmfUeNgapId            *int32                   `json:"amfUeNgapId,omitempty"`
+	RanUeNgapId            *int32                   `json:"ranUeNgapId,omitempty"`
+	RanNodeId              *GlobalRanNodeId         `json:"ranNodeId,omitempty"`
 }
 
 // NewRegistrationChargingInformation instantiates a new RegistrationChargingInformation object
@@ -85,7 +85,7 @@ func (o *RegistrationChargingInformation) SetRegistrationMessagetype(v Registrat
 
 // GetUserInformation returns the UserInformation field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetUserInformation() UserInformation {
-	if o == nil || isNil(o.UserInformation) {
+	if o == nil || IsNil(o.UserInformation) {
 		var ret UserInformation
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *RegistrationChargingInformation) GetUserInformation() UserInformation {
 // GetUserInformationOk returns a tuple with the UserInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetUserInformationOk() (*UserInformation, bool) {
-	if o == nil || isNil(o.UserInformation) {
+	if o == nil || IsNil(o.UserInformation) {
 		return nil, false
 	}
 	return o.UserInformation, true
@@ -103,7 +103,7 @@ func (o *RegistrationChargingInformation) GetUserInformationOk() (*UserInformati
 
 // HasUserInformation returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasUserInformation() bool {
-	if o != nil && !isNil(o.UserInformation) {
+	if o != nil && !IsNil(o.UserInformation) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *RegistrationChargingInformation) SetUserInformation(v UserInformation) 
 
 // GetUserLocationinfo returns the UserLocationinfo field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetUserLocationinfo() UserLocation {
-	if o == nil || isNil(o.UserLocationinfo) {
+	if o == nil || IsNil(o.UserLocationinfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *RegistrationChargingInformation) GetUserLocationinfo() UserLocation {
 // GetUserLocationinfoOk returns a tuple with the UserLocationinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLocationinfo) {
+	if o == nil || IsNil(o.UserLocationinfo) {
 		return nil, false
 	}
 	return o.UserLocationinfo, true
@@ -135,7 +135,7 @@ func (o *RegistrationChargingInformation) GetUserLocationinfoOk() (*UserLocation
 
 // HasUserLocationinfo returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasUserLocationinfo() bool {
-	if o != nil && !isNil(o.UserLocationinfo) {
+	if o != nil && !IsNil(o.UserLocationinfo) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *RegistrationChargingInformation) SetUserLocationinfo(v UserLocation) {
 
 // GetPSCellInformation returns the PSCellInformation field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetPSCellInformation() PSCellInformation {
-	if o == nil || isNil(o.PSCellInformation) {
+	if o == nil || IsNil(o.PSCellInformation) {
 		var ret PSCellInformation
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *RegistrationChargingInformation) GetPSCellInformation() PSCellInformati
 // GetPSCellInformationOk returns a tuple with the PSCellInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetPSCellInformationOk() (*PSCellInformation, bool) {
-	if o == nil || isNil(o.PSCellInformation) {
+	if o == nil || IsNil(o.PSCellInformation) {
 		return nil, false
 	}
 	return o.PSCellInformation, true
@@ -167,7 +167,7 @@ func (o *RegistrationChargingInformation) GetPSCellInformationOk() (*PSCellInfor
 
 // HasPSCellInformation returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasPSCellInformation() bool {
-	if o != nil && !isNil(o.PSCellInformation) {
+	if o != nil && !IsNil(o.PSCellInformation) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *RegistrationChargingInformation) SetPSCellInformation(v PSCellInformati
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetUetimeZone() string {
-	if o == nil || isNil(o.UetimeZone) {
+	if o == nil || IsNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *RegistrationChargingInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UetimeZone) {
+	if o == nil || IsNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -199,7 +199,7 @@ func (o *RegistrationChargingInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasUetimeZone() bool {
-	if o != nil && !isNil(o.UetimeZone) {
+	if o != nil && !IsNil(o.UetimeZone) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *RegistrationChargingInformation) SetUetimeZone(v string) {
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetRATType() RatType {
-	if o == nil || isNil(o.RATType) {
+	if o == nil || IsNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *RegistrationChargingInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RATType) {
+	if o == nil || IsNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -231,7 +231,7 @@ func (o *RegistrationChargingInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasRATType() bool {
-	if o != nil && !isNil(o.RATType) {
+	if o != nil && !IsNil(o.RATType) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *RegistrationChargingInformation) SetRATType(v RatType) {
 
 // GetVar5GMMCapability returns the Var5GMMCapability field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetVar5GMMCapability() string {
-	if o == nil || isNil(o.Var5GMMCapability) {
+	if o == nil || IsNil(o.Var5GMMCapability) {
 		var ret string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *RegistrationChargingInformation) GetVar5GMMCapability() string {
 // GetVar5GMMCapabilityOk returns a tuple with the Var5GMMCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetVar5GMMCapabilityOk() (*string, bool) {
-	if o == nil || isNil(o.Var5GMMCapability) {
+	if o == nil || IsNil(o.Var5GMMCapability) {
 		return nil, false
 	}
 	return o.Var5GMMCapability, true
@@ -263,7 +263,7 @@ func (o *RegistrationChargingInformation) GetVar5GMMCapabilityOk() (*string, boo
 
 // HasVar5GMMCapability returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasVar5GMMCapability() bool {
-	if o != nil && !isNil(o.Var5GMMCapability) {
+	if o != nil && !IsNil(o.Var5GMMCapability) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *RegistrationChargingInformation) SetVar5GMMCapability(v string) {
 
 // GetMICOModeIndication returns the MICOModeIndication field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetMICOModeIndication() MICOModeIndication {
-	if o == nil || isNil(o.MICOModeIndication) {
+	if o == nil || IsNil(o.MICOModeIndication) {
 		var ret MICOModeIndication
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *RegistrationChargingInformation) GetMICOModeIndication() MICOModeIndica
 // GetMICOModeIndicationOk returns a tuple with the MICOModeIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetMICOModeIndicationOk() (*MICOModeIndication, bool) {
-	if o == nil || isNil(o.MICOModeIndication) {
+	if o == nil || IsNil(o.MICOModeIndication) {
 		return nil, false
 	}
 	return o.MICOModeIndication, true
@@ -295,7 +295,7 @@ func (o *RegistrationChargingInformation) GetMICOModeIndicationOk() (*MICOModeIn
 
 // HasMICOModeIndication returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasMICOModeIndication() bool {
-	if o != nil && !isNil(o.MICOModeIndication) {
+	if o != nil && !IsNil(o.MICOModeIndication) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *RegistrationChargingInformation) SetMICOModeIndication(v MICOModeIndica
 
 // GetSmsIndication returns the SmsIndication field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetSmsIndication() SmsIndication {
-	if o == nil || isNil(o.SmsIndication) {
+	if o == nil || IsNil(o.SmsIndication) {
 		var ret SmsIndication
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *RegistrationChargingInformation) GetSmsIndication() SmsIndication {
 // GetSmsIndicationOk returns a tuple with the SmsIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetSmsIndicationOk() (*SmsIndication, bool) {
-	if o == nil || isNil(o.SmsIndication) {
+	if o == nil || IsNil(o.SmsIndication) {
 		return nil, false
 	}
 	return o.SmsIndication, true
@@ -327,7 +327,7 @@ func (o *RegistrationChargingInformation) GetSmsIndicationOk() (*SmsIndication, 
 
 // HasSmsIndication returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasSmsIndication() bool {
-	if o != nil && !isNil(o.SmsIndication) {
+	if o != nil && !IsNil(o.SmsIndication) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *RegistrationChargingInformation) SetSmsIndication(v SmsIndication) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *RegistrationChargingInformation) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -359,7 +359,7 @@ func (o *RegistrationChargingInformation) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o *RegistrationChargingInformation) SetTaiList(v []Tai) {
 
 // GetServiceAreaRestriction returns the ServiceAreaRestriction field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetServiceAreaRestriction() []ServiceAreaRestriction {
-	if o == nil || isNil(o.ServiceAreaRestriction) {
+	if o == nil || IsNil(o.ServiceAreaRestriction) {
 		var ret []ServiceAreaRestriction
 		return ret
 	}
@@ -383,7 +383,7 @@ func (o *RegistrationChargingInformation) GetServiceAreaRestriction() []ServiceA
 // GetServiceAreaRestrictionOk returns a tuple with the ServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetServiceAreaRestrictionOk() ([]ServiceAreaRestriction, bool) {
-	if o == nil || isNil(o.ServiceAreaRestriction) {
+	if o == nil || IsNil(o.ServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.ServiceAreaRestriction, true
@@ -391,7 +391,7 @@ func (o *RegistrationChargingInformation) GetServiceAreaRestrictionOk() ([]Servi
 
 // HasServiceAreaRestriction returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasServiceAreaRestriction() bool {
-	if o != nil && !isNil(o.ServiceAreaRestriction) {
+	if o != nil && !IsNil(o.ServiceAreaRestriction) {
 		return true
 	}
 
@@ -405,7 +405,7 @@ func (o *RegistrationChargingInformation) SetServiceAreaRestriction(v []ServiceA
 
 // GetRequestedNSSAI returns the RequestedNSSAI field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetRequestedNSSAI() []Snssai {
-	if o == nil || isNil(o.RequestedNSSAI) {
+	if o == nil || IsNil(o.RequestedNSSAI) {
 		var ret []Snssai
 		return ret
 	}
@@ -415,7 +415,7 @@ func (o *RegistrationChargingInformation) GetRequestedNSSAI() []Snssai {
 // GetRequestedNSSAIOk returns a tuple with the RequestedNSSAI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetRequestedNSSAIOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.RequestedNSSAI) {
+	if o == nil || IsNil(o.RequestedNSSAI) {
 		return nil, false
 	}
 	return o.RequestedNSSAI, true
@@ -423,7 +423,7 @@ func (o *RegistrationChargingInformation) GetRequestedNSSAIOk() ([]Snssai, bool)
 
 // HasRequestedNSSAI returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasRequestedNSSAI() bool {
-	if o != nil && !isNil(o.RequestedNSSAI) {
+	if o != nil && !IsNil(o.RequestedNSSAI) {
 		return true
 	}
 
@@ -437,7 +437,7 @@ func (o *RegistrationChargingInformation) SetRequestedNSSAI(v []Snssai) {
 
 // GetAllowedNSSAI returns the AllowedNSSAI field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetAllowedNSSAI() []Snssai {
-	if o == nil || isNil(o.AllowedNSSAI) {
+	if o == nil || IsNil(o.AllowedNSSAI) {
 		var ret []Snssai
 		return ret
 	}
@@ -447,7 +447,7 @@ func (o *RegistrationChargingInformation) GetAllowedNSSAI() []Snssai {
 // GetAllowedNSSAIOk returns a tuple with the AllowedNSSAI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetAllowedNSSAIOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.AllowedNSSAI) {
+	if o == nil || IsNil(o.AllowedNSSAI) {
 		return nil, false
 	}
 	return o.AllowedNSSAI, true
@@ -455,7 +455,7 @@ func (o *RegistrationChargingInformation) GetAllowedNSSAIOk() ([]Snssai, bool) {
 
 // HasAllowedNSSAI returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasAllowedNSSAI() bool {
-	if o != nil && !isNil(o.AllowedNSSAI) {
+	if o != nil && !IsNil(o.AllowedNSSAI) {
 		return true
 	}
 
@@ -469,7 +469,7 @@ func (o *RegistrationChargingInformation) SetAllowedNSSAI(v []Snssai) {
 
 // GetRejectedNSSAI returns the RejectedNSSAI field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetRejectedNSSAI() []Snssai {
-	if o == nil || isNil(o.RejectedNSSAI) {
+	if o == nil || IsNil(o.RejectedNSSAI) {
 		var ret []Snssai
 		return ret
 	}
@@ -479,7 +479,7 @@ func (o *RegistrationChargingInformation) GetRejectedNSSAI() []Snssai {
 // GetRejectedNSSAIOk returns a tuple with the RejectedNSSAI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetRejectedNSSAIOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.RejectedNSSAI) {
+	if o == nil || IsNil(o.RejectedNSSAI) {
 		return nil, false
 	}
 	return o.RejectedNSSAI, true
@@ -487,7 +487,7 @@ func (o *RegistrationChargingInformation) GetRejectedNSSAIOk() ([]Snssai, bool) 
 
 // HasRejectedNSSAI returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasRejectedNSSAI() bool {
-	if o != nil && !isNil(o.RejectedNSSAI) {
+	if o != nil && !IsNil(o.RejectedNSSAI) {
 		return true
 	}
 
@@ -501,7 +501,7 @@ func (o *RegistrationChargingInformation) SetRejectedNSSAI(v []Snssai) {
 
 // GetNSSAIMapList returns the NSSAIMapList field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetNSSAIMapList() []NSSAIMap {
-	if o == nil || isNil(o.NSSAIMapList) {
+	if o == nil || IsNil(o.NSSAIMapList) {
 		var ret []NSSAIMap
 		return ret
 	}
@@ -511,7 +511,7 @@ func (o *RegistrationChargingInformation) GetNSSAIMapList() []NSSAIMap {
 // GetNSSAIMapListOk returns a tuple with the NSSAIMapList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetNSSAIMapListOk() ([]NSSAIMap, bool) {
-	if o == nil || isNil(o.NSSAIMapList) {
+	if o == nil || IsNil(o.NSSAIMapList) {
 		return nil, false
 	}
 	return o.NSSAIMapList, true
@@ -519,7 +519,7 @@ func (o *RegistrationChargingInformation) GetNSSAIMapListOk() ([]NSSAIMap, bool)
 
 // HasNSSAIMapList returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasNSSAIMapList() bool {
-	if o != nil && !isNil(o.NSSAIMapList) {
+	if o != nil && !IsNil(o.NSSAIMapList) {
 		return true
 	}
 
@@ -533,7 +533,7 @@ func (o *RegistrationChargingInformation) SetNSSAIMapList(v []NSSAIMap) {
 
 // GetAmfUeNgapId returns the AmfUeNgapId field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetAmfUeNgapId() int32 {
-	if o == nil || isNil(o.AmfUeNgapId) {
+	if o == nil || IsNil(o.AmfUeNgapId) {
 		var ret int32
 		return ret
 	}
@@ -543,7 +543,7 @@ func (o *RegistrationChargingInformation) GetAmfUeNgapId() int32 {
 // GetAmfUeNgapIdOk returns a tuple with the AmfUeNgapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetAmfUeNgapIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AmfUeNgapId) {
+	if o == nil || IsNil(o.AmfUeNgapId) {
 		return nil, false
 	}
 	return o.AmfUeNgapId, true
@@ -551,7 +551,7 @@ func (o *RegistrationChargingInformation) GetAmfUeNgapIdOk() (*int32, bool) {
 
 // HasAmfUeNgapId returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasAmfUeNgapId() bool {
-	if o != nil && !isNil(o.AmfUeNgapId) {
+	if o != nil && !IsNil(o.AmfUeNgapId) {
 		return true
 	}
 
@@ -565,7 +565,7 @@ func (o *RegistrationChargingInformation) SetAmfUeNgapId(v int32) {
 
 // GetRanUeNgapId returns the RanUeNgapId field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetRanUeNgapId() int32 {
-	if o == nil || isNil(o.RanUeNgapId) {
+	if o == nil || IsNil(o.RanUeNgapId) {
 		var ret int32
 		return ret
 	}
@@ -575,7 +575,7 @@ func (o *RegistrationChargingInformation) GetRanUeNgapId() int32 {
 // GetRanUeNgapIdOk returns a tuple with the RanUeNgapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetRanUeNgapIdOk() (*int32, bool) {
-	if o == nil || isNil(o.RanUeNgapId) {
+	if o == nil || IsNil(o.RanUeNgapId) {
 		return nil, false
 	}
 	return o.RanUeNgapId, true
@@ -583,7 +583,7 @@ func (o *RegistrationChargingInformation) GetRanUeNgapIdOk() (*int32, bool) {
 
 // HasRanUeNgapId returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasRanUeNgapId() bool {
-	if o != nil && !isNil(o.RanUeNgapId) {
+	if o != nil && !IsNil(o.RanUeNgapId) {
 		return true
 	}
 
@@ -597,7 +597,7 @@ func (o *RegistrationChargingInformation) SetRanUeNgapId(v int32) {
 
 // GetRanNodeId returns the RanNodeId field value if set, zero value otherwise.
 func (o *RegistrationChargingInformation) GetRanNodeId() GlobalRanNodeId {
-	if o == nil || isNil(o.RanNodeId) {
+	if o == nil || IsNil(o.RanNodeId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -607,7 +607,7 @@ func (o *RegistrationChargingInformation) GetRanNodeId() GlobalRanNodeId {
 // GetRanNodeIdOk returns a tuple with the RanNodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationChargingInformation) GetRanNodeIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.RanNodeId) {
+	if o == nil || IsNil(o.RanNodeId) {
 		return nil, false
 	}
 	return o.RanNodeId, true
@@ -615,7 +615,7 @@ func (o *RegistrationChargingInformation) GetRanNodeIdOk() (*GlobalRanNodeId, bo
 
 // HasRanNodeId returns a boolean if a field has been set.
 func (o *RegistrationChargingInformation) HasRanNodeId() bool {
-	if o != nil && !isNil(o.RanNodeId) {
+	if o != nil && !IsNil(o.RanNodeId) {
 		return true
 	}
 
@@ -628,7 +628,7 @@ func (o *RegistrationChargingInformation) SetRanNodeId(v GlobalRanNodeId) {
 }
 
 func (o RegistrationChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -638,55 +638,55 @@ func (o RegistrationChargingInformation) MarshalJSON() ([]byte, error) {
 func (o RegistrationChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["registrationMessagetype"] = o.RegistrationMessagetype
-	if !isNil(o.UserInformation) {
+	if !IsNil(o.UserInformation) {
 		toSerialize["userInformation"] = o.UserInformation
 	}
-	if !isNil(o.UserLocationinfo) {
+	if !IsNil(o.UserLocationinfo) {
 		toSerialize["userLocationinfo"] = o.UserLocationinfo
 	}
-	if !isNil(o.PSCellInformation) {
+	if !IsNil(o.PSCellInformation) {
 		toSerialize["pSCellInformation"] = o.PSCellInformation
 	}
-	if !isNil(o.UetimeZone) {
+	if !IsNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !isNil(o.RATType) {
+	if !IsNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !isNil(o.Var5GMMCapability) {
+	if !IsNil(o.Var5GMMCapability) {
 		toSerialize["5GMMCapability"] = o.Var5GMMCapability
 	}
-	if !isNil(o.MICOModeIndication) {
+	if !IsNil(o.MICOModeIndication) {
 		toSerialize["mICOModeIndication"] = o.MICOModeIndication
 	}
-	if !isNil(o.SmsIndication) {
+	if !IsNil(o.SmsIndication) {
 		toSerialize["smsIndication"] = o.SmsIndication
 	}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.ServiceAreaRestriction) {
+	if !IsNil(o.ServiceAreaRestriction) {
 		toSerialize["serviceAreaRestriction"] = o.ServiceAreaRestriction
 	}
-	if !isNil(o.RequestedNSSAI) {
+	if !IsNil(o.RequestedNSSAI) {
 		toSerialize["requestedNSSAI"] = o.RequestedNSSAI
 	}
-	if !isNil(o.AllowedNSSAI) {
+	if !IsNil(o.AllowedNSSAI) {
 		toSerialize["allowedNSSAI"] = o.AllowedNSSAI
 	}
-	if !isNil(o.RejectedNSSAI) {
+	if !IsNil(o.RejectedNSSAI) {
 		toSerialize["rejectedNSSAI"] = o.RejectedNSSAI
 	}
-	if !isNil(o.NSSAIMapList) {
+	if !IsNil(o.NSSAIMapList) {
 		toSerialize["nSSAIMapList"] = o.NSSAIMapList
 	}
-	if !isNil(o.AmfUeNgapId) {
+	if !IsNil(o.AmfUeNgapId) {
 		toSerialize["amfUeNgapId"] = o.AmfUeNgapId
 	}
-	if !isNil(o.RanUeNgapId) {
+	if !IsNil(o.RanUeNgapId) {
 		toSerialize["ranUeNgapId"] = o.RanUeNgapId
 	}
-	if !isNil(o.RanNodeId) {
+	if !IsNil(o.RanNodeId) {
 		toSerialize["ranNodeId"] = o.RanNodeId
 	}
 	return toSerialize, nil
@@ -727,5 +727,3 @@ func (v *NullableRegistrationChargingInformation) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AccessTech Represents the access technology
 type AccessTech struct {
-	AccessTechAnyOf *AccessTechAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessTech) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AccessTechAnyOf
-	err = json.Unmarshal(data, &dst.AccessTechAnyOf);
-	if err == nil {
-		jsonAccessTechAnyOf, _ := json.Marshal(dst.AccessTechAnyOf)
-		if string(jsonAccessTechAnyOf) == "{}" { // empty struct
-			dst.AccessTechAnyOf = nil
-		} else {
-			return nil // data stored in dst.AccessTechAnyOf, return on the first match
-		}
-	} else {
-		dst.AccessTechAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AccessTech) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessTech) MarshalJSON() ([]byte, error) {
-	if src.AccessTechAnyOf != nil {
-		return json.Marshal(&src.AccessTechAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAccessTech) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

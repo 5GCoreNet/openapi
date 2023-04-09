@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // IdentityType Represents the type of IMS Public Identity
 type IdentityType struct {
-	IdentityTypeAnyOf *IdentityTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *IdentityType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into IdentityTypeAnyOf
-	err = json.Unmarshal(data, &dst.IdentityTypeAnyOf);
-	if err == nil {
-		jsonIdentityTypeAnyOf, _ := json.Marshal(dst.IdentityTypeAnyOf)
-		if string(jsonIdentityTypeAnyOf) == "{}" { // empty struct
-			dst.IdentityTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.IdentityTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.IdentityTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *IdentityType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *IdentityType) MarshalJSON() ([]byte, error) {
-	if src.IdentityTypeAnyOf != nil {
-		return json.Marshal(&src.IdentityTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableIdentityType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

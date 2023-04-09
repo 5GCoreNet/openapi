@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the SdpDescription type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SdpDescription{}
 
-// SdpDescription Contains a SDP line (and optionally the value in the line) within the body (if any) of a SIP request 
+// SdpDescription Contains a SDP line (and optionally the value in the line) within the body (if any) of a SIP request
 type SdpDescription struct {
-	Line string `json:"line"`
+	Line    string  `json:"line"`
 	Content *string `json:"content,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *SdpDescription) SetLine(v string) {
 
 // GetContent returns the Content field value if set, zero value otherwise.
 func (o *SdpDescription) GetContent() string {
-	if o == nil || isNil(o.Content) {
+	if o == nil || IsNil(o.Content) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SdpDescription) GetContent() string {
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdpDescription) GetContentOk() (*string, bool) {
-	if o == nil || isNil(o.Content) {
+	if o == nil || IsNil(o.Content) {
 		return nil, false
 	}
 	return o.Content, true
@@ -85,7 +85,7 @@ func (o *SdpDescription) GetContentOk() (*string, bool) {
 
 // HasContent returns a boolean if a field has been set.
 func (o *SdpDescription) HasContent() bool {
-	if o != nil && !isNil(o.Content) {
+	if o != nil && !IsNil(o.Content) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SdpDescription) SetContent(v string) {
 }
 
 func (o SdpDescription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SdpDescription) MarshalJSON() ([]byte, error) {
 func (o SdpDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["line"] = o.Line
-	if !isNil(o.Content) {
+	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSdpDescription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

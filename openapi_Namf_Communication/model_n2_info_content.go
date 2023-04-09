@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &N2InfoContent{}
 // N2InfoContent Represents a transparent N2 information content to be relayed by AMF
 type N2InfoContent struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	NgapMessageType *int32 `json:"ngapMessageType,omitempty"`
-	NgapIeType *NgapIeType `json:"ngapIeType,omitempty"`
-	NgapData RefToBinaryData `json:"ngapData"`
+	NgapMessageType *int32          `json:"ngapMessageType,omitempty"`
+	NgapIeType      *NgapIeType     `json:"ngapIeType,omitempty"`
+	NgapData        RefToBinaryData `json:"ngapData"`
 }
 
 // NewN2InfoContent instantiates a new N2InfoContent object
@@ -45,7 +45,7 @@ func NewN2InfoContentWithDefaults() *N2InfoContent {
 
 // GetNgapMessageType returns the NgapMessageType field value if set, zero value otherwise.
 func (o *N2InfoContent) GetNgapMessageType() int32 {
-	if o == nil || isNil(o.NgapMessageType) {
+	if o == nil || IsNil(o.NgapMessageType) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *N2InfoContent) GetNgapMessageType() int32 {
 // GetNgapMessageTypeOk returns a tuple with the NgapMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContent) GetNgapMessageTypeOk() (*int32, bool) {
-	if o == nil || isNil(o.NgapMessageType) {
+	if o == nil || IsNil(o.NgapMessageType) {
 		return nil, false
 	}
 	return o.NgapMessageType, true
@@ -63,7 +63,7 @@ func (o *N2InfoContent) GetNgapMessageTypeOk() (*int32, bool) {
 
 // HasNgapMessageType returns a boolean if a field has been set.
 func (o *N2InfoContent) HasNgapMessageType() bool {
-	if o != nil && !isNil(o.NgapMessageType) {
+	if o != nil && !IsNil(o.NgapMessageType) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *N2InfoContent) SetNgapMessageType(v int32) {
 
 // GetNgapIeType returns the NgapIeType field value if set, zero value otherwise.
 func (o *N2InfoContent) GetNgapIeType() NgapIeType {
-	if o == nil || isNil(o.NgapIeType) {
+	if o == nil || IsNil(o.NgapIeType) {
 		var ret NgapIeType
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *N2InfoContent) GetNgapIeType() NgapIeType {
 // GetNgapIeTypeOk returns a tuple with the NgapIeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContent) GetNgapIeTypeOk() (*NgapIeType, bool) {
-	if o == nil || isNil(o.NgapIeType) {
+	if o == nil || IsNil(o.NgapIeType) {
 		return nil, false
 	}
 	return o.NgapIeType, true
@@ -95,7 +95,7 @@ func (o *N2InfoContent) GetNgapIeTypeOk() (*NgapIeType, bool) {
 
 // HasNgapIeType returns a boolean if a field has been set.
 func (o *N2InfoContent) HasNgapIeType() bool {
-	if o != nil && !isNil(o.NgapIeType) {
+	if o != nil && !IsNil(o.NgapIeType) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *N2InfoContent) SetNgapData(v RefToBinaryData) {
 }
 
 func (o N2InfoContent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o N2InfoContent) MarshalJSON() ([]byte, error) {
 
 func (o N2InfoContent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NgapMessageType) {
+	if !IsNil(o.NgapMessageType) {
 		toSerialize["ngapMessageType"] = o.NgapMessageType
 	}
-	if !isNil(o.NgapIeType) {
+	if !IsNil(o.NgapIeType) {
 		toSerialize["ngapIeType"] = o.NgapIeType
 	}
 	toSerialize["ngapData"] = o.NgapData
@@ -186,5 +186,3 @@ func (v *NullableN2InfoContent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

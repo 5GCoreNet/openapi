@@ -20,11 +20,11 @@ type NotFulfilledState string
 
 // List of NotFulfilledState
 const (
-	ACKNOWLEDGED NotFulfilledState = "ACKNOWLEDGED"
-	COMPLIANT NotFulfilledState = "COMPLIANT"
-	DEGRADED NotFulfilledState = "DEGRADED"
-	SUSPENDED NotFulfilledState = "SUSPENDED"
-	TERMINATED NotFulfilledState = "TERMINATED"
+	ACKNOWLEDGED     NotFulfilledState = "ACKNOWLEDGED"
+	COMPLIANT        NotFulfilledState = "COMPLIANT"
+	DEGRADED         NotFulfilledState = "DEGRADED"
+	SUSPENDED        NotFulfilledState = "SUSPENDED"
+	TERMINATED       NotFulfilledState = "TERMINATED"
 	FULFILMENTFAILED NotFulfilledState = "FULFILMENTFAILED"
 )
 
@@ -116,4 +116,3 @@ func (v *NullableNotFulfilledState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

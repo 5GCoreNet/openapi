@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &CnTypeChangeReport{}
 
 // CnTypeChangeReport struct for CnTypeChangeReport
 type CnTypeChangeReport struct {
-	NewCnType CnType `json:"newCnType"`
+	NewCnType CnType  `json:"newCnType"`
 	OldCnType *CnType `json:"oldCnType,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *CnTypeChangeReport) SetNewCnType(v CnType) {
 
 // GetOldCnType returns the OldCnType field value if set, zero value otherwise.
 func (o *CnTypeChangeReport) GetOldCnType() CnType {
-	if o == nil || isNil(o.OldCnType) {
+	if o == nil || IsNil(o.OldCnType) {
 		var ret CnType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CnTypeChangeReport) GetOldCnType() CnType {
 // GetOldCnTypeOk returns a tuple with the OldCnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnTypeChangeReport) GetOldCnTypeOk() (*CnType, bool) {
-	if o == nil || isNil(o.OldCnType) {
+	if o == nil || IsNil(o.OldCnType) {
 		return nil, false
 	}
 	return o.OldCnType, true
@@ -85,7 +85,7 @@ func (o *CnTypeChangeReport) GetOldCnTypeOk() (*CnType, bool) {
 
 // HasOldCnType returns a boolean if a field has been set.
 func (o *CnTypeChangeReport) HasOldCnType() bool {
-	if o != nil && !isNil(o.OldCnType) {
+	if o != nil && !IsNil(o.OldCnType) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *CnTypeChangeReport) SetOldCnType(v CnType) {
 }
 
 func (o CnTypeChangeReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o CnTypeChangeReport) MarshalJSON() ([]byte, error) {
 func (o CnTypeChangeReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["newCnType"] = o.NewCnType
-	if !isNil(o.OldCnType) {
+	if !IsNil(o.OldCnType) {
 		toSerialize["oldCnType"] = o.OldCnType
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableCnTypeChangeReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

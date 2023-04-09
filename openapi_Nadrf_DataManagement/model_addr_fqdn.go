@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -43,7 +43,7 @@ func NewAddrFqdnWithDefaults() *AddrFqdn {
 
 // GetIpAddr returns the IpAddr field value if set, zero value otherwise.
 func (o *AddrFqdn) GetIpAddr() IpAddr {
-	if o == nil || isNil(o.IpAddr) {
+	if o == nil || IsNil(o.IpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AddrFqdn) GetIpAddr() IpAddr {
 // GetIpAddrOk returns a tuple with the IpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddrFqdn) GetIpAddrOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.IpAddr) {
+	if o == nil || IsNil(o.IpAddr) {
 		return nil, false
 	}
 	return o.IpAddr, true
@@ -61,7 +61,7 @@ func (o *AddrFqdn) GetIpAddrOk() (*IpAddr, bool) {
 
 // HasIpAddr returns a boolean if a field has been set.
 func (o *AddrFqdn) HasIpAddr() bool {
-	if o != nil && !isNil(o.IpAddr) {
+	if o != nil && !IsNil(o.IpAddr) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AddrFqdn) SetIpAddr(v IpAddr) {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *AddrFqdn) GetFqdn() string {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AddrFqdn) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddrFqdn) GetFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -93,7 +93,7 @@ func (o *AddrFqdn) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *AddrFqdn) HasFqdn() bool {
-	if o != nil && !isNil(o.Fqdn) {
+	if o != nil && !IsNil(o.Fqdn) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AddrFqdn) SetFqdn(v string) {
 }
 
 func (o AddrFqdn) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o AddrFqdn) MarshalJSON() ([]byte, error) {
 
 func (o AddrFqdn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IpAddr) {
+	if !IsNil(o.IpAddr) {
 		toSerialize["ipAddr"] = o.IpAddr
 	}
-	if !isNil(o.Fqdn) {
+	if !IsNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableAddrFqdn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

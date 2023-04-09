@@ -5541,6 +5541,7 @@ components:
             A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
           pattern: "^[A-Fa-f0-9]*$"
           type: string
+          x-parent: true
         nfServiceSetIdList:
           items:
             $ref: '#/components/schemas/NfServiceSetId'
@@ -5584,7 +5585,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     NefId:
@@ -6151,7 +6209,24 @@ components:
       type: object
     DataSetId:
       anyOf:
-      - $ref: '#/components/schemas/DataSetId_anyOf'
+      - enum:
+        - SUBSCRIPTION
+        - POLICY
+        - EXPOSURE
+        - APPLICATION
+        - A_PFD
+        - A_AFTI
+        - A_IPTV
+        - A_BDT
+        - A_SPD
+        - A_EASD
+        - A_AMI
+        - P_UE
+        - P_SCD
+        - P_BDT
+        - P_PLMNUE
+        - P_NSSCD
+        type: string
       - type: string
       description: Types of data sets and subsets stored in UDR
     UdmInfo:
@@ -7064,7 +7139,16 @@ components:
       type: object
     UPInterfaceType:
       anyOf:
-      - $ref: '#/components/schemas/UPInterfaceType_anyOf'
+      - enum:
+        - N3
+        - N6
+        - N9
+        - DATA_FORWARDING
+        - N3MB
+        - N6MB
+        - N19MB
+        - NMB9
+        type: string
       - type: string
       description: Types of User-Plane interfaces of the UPF
     WAgfInfo:
@@ -7440,6 +7524,7 @@ components:
             A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
           pattern: "^[A-Fa-f0-9]*$"
           type: string
+          x-parent: true
         serviceInfoList:
           additionalProperties:
             $ref: '#/components/schemas/DefSubServiceInfo'
@@ -7613,19 +7698,38 @@ components:
       type: object
     NotificationType:
       anyOf:
-      - $ref: '#/components/schemas/NotificationType_anyOf'
+      - enum:
+        - N1_MESSAGES
+        - N2_INFORMATION
+        - LOCATION_NOTIFICATION
+        - DATA_REMOVAL_NOTIFICATION
+        - DATA_CHANGE_NOTIFICATION
+        - LOCATION_UPDATE_NOTIFICATION
+        - NSSAA_REAUTH_NOTIFICATION
+        - NSSAA_REVOC_NOTIFICATION
+        - MATCH_INFO_NOTIFICATION
+        - DATA_RESTORATION_NOTIFICATION
+        - TSCTS_NOTIFICATION
+        - LCS_KEY_DELIVERY_NOTIFICATION
+        type: string
       - type: string
       description: |
         Types of notifications used in Default Notification URIs in the NF Profile of an NF Instance
     TransportProtocol:
       anyOf:
-      - $ref: '#/components/schemas/TransportProtocol_anyOf'
+      - enum:
+        - TCP
+        type: string
       - type: string
       description: Types of transport protocol used in a given IP endpoint of an NF
         Service Instance
     NotificationEventType:
       anyOf:
-      - $ref: '#/components/schemas/NotificationEventType_anyOf'
+      - enum:
+        - NF_REGISTERED
+        - NF_DEREGISTERED
+        - NF_PROFILE_CHANGED
+        type: string
       - type: string
       description: Types of events sent in notifications from NRF to subscribed NF
         Instances
@@ -11053,7 +11157,11 @@ components:
       type: object
     NFStatus:
       anyOf:
-      - $ref: '#/components/schemas/NFStatus_anyOf'
+      - enum:
+        - REGISTERED
+        - SUSPENDED
+        - UNDISCOVERABLE
+        type: string
       - type: string
       description: Status of a given NF Instance stored in NRF
     NFServiceVersion:
@@ -11077,7 +11185,127 @@ components:
       type: object
     ServiceName:
       anyOf:
-      - $ref: '#/components/schemas/ServiceName_anyOf'
+      - enum:
+        - nnrf-nfm
+        - nnrf-disc
+        - nnrf-oauth2
+        - nudm-sdm
+        - nudm-uecm
+        - nudm-ueau
+        - nudm-ee
+        - nudm-pp
+        - nudm-niddau
+        - nudm-mt
+        - nudm-ssau
+        - nudm-rsds
+        - namf-comm
+        - namf-evts
+        - namf-mt
+        - namf-loc
+        - namf-mbs-comm
+        - namf-mbs-bc
+        - nsmf-pdusession
+        - nsmf-event-exposure
+        - nsmf-nidd
+        - nausf-auth
+        - nausf-sorprotection
+        - nausf-upuprotection
+        - nnef-pfdmanagement
+        - nnef-smcontext
+        - nnef-eventexposure
+        - nnef-eas-deployment-info
+        - 3gpp-cp-parameter-provisioning
+        - 3gpp-device-triggering
+        - 3gpp-bdt
+        - 3gpp-traffic-influence
+        - 3gpp-chargeable-party
+        - 3gpp-as-session-with-qos
+        - 3gpp-msisdn-less-mo-sms
+        - 3gpp-service-parameter
+        - 3gpp-monitoring-event
+        - 3gpp-nidd-configuration-trigger
+        - 3gpp-nidd
+        - 3gpp-analyticsexposure
+        - 3gpp-racs-parameter-provisioning
+        - 3gpp-ecr-control
+        - 3gpp-applying-bdt-policy
+        - 3gpp-mo-lcs-notify
+        - 3gpp-time-sync
+        - 3gpp-am-influence
+        - 3gpp-am-policyauthorization
+        - 3gpp-akma
+        - 3gpp-eas-deployment
+        - 3gpp-iptvconfiguration
+        - 3gpp-mbs-tmgi
+        - 3gpp-mbs-session
+        - 3gpp-authentication
+        - 3gpp-asti
+        - npcf-am-policy-control
+        - npcf-smpolicycontrol
+        - npcf-policyauthorization
+        - npcf-bdtpolicycontrol
+        - npcf-eventexposure
+        - npcf-ue-policy-control
+        - npcf-am-policyauthorization
+        - nsmsf-sms
+        - nnssf-nsselection
+        - nnssf-nssaiavailability
+        - nudr-dr
+        - nudr-group-id-map
+        - nlmf-loc
+        - n5g-eir-eic
+        - nbsf-management
+        - nchf-spendinglimitcontrol
+        - nchf-convergedcharging
+        - nchf-offlineonlycharging
+        - nnwdaf-eventssubscription
+        - nnwdaf-analyticsinfo
+        - nnwdaf-datamanagement
+        - nnwdaf-mlmodelprovision
+        - ngmlc-loc
+        - nucmf-provisioning
+        - nucmf-uecapabilitymanagement
+        - nhss-sdm
+        - nhss-uecm
+        - nhss-ueau
+        - nhss-ee
+        - nhss-ims-sdm
+        - nhss-ims-uecm
+        - nhss-ims-ueau
+        - nhss-gba-sdm
+        - nhss-gba-ueau
+        - nsepp-telescopic
+        - nsoraf-sor
+        - nspaf-secured-packet
+        - nudsf-dr
+        - nudsf-timer
+        - nnssaaf-nssaa
+        - nnssaaf-aiw
+        - naanf-akma
+        - n5gddnmf-discovery
+        - nmfaf-3dadm
+        - nmfaf-3cadm
+        - neasdf-dnscontext
+        - neasdf-baselinednspattern
+        - ndccf-dm
+        - ndccf-cm
+        - nnsacf-nsac
+        - nnsacf-slice-ee
+        - nmbsmf-tmgi
+        - nmbsmf-mbssession
+        - nadrf-dm
+        - nbsp-gba
+        - ntsctsf-time-sync
+        - ntsctsf-qos-tscai
+        - ntsctsf-asti
+        - npkmf-keyreq
+        - nmnpf-npstatus
+        - niwmsc-smservice
+        - nmbsf-mbsuserserv
+        - nmbsf-mbsuserdataing
+        - nmbstf-distsession
+        - npanf-prosekey
+        type: string
       - type: string
       description: Service names known to NRF
     N2InterfaceAmfInfo:
@@ -11116,7 +11344,11 @@ components:
       type: object
     NFServiceStatus:
       anyOf:
-      - $ref: '#/components/schemas/NFStatus_anyOf'
+      - enum:
+        - REGISTERED
+        - SUSPENDED
+        - UNDISCOVERABLE
+        type: string
       - type: string
       description: Status of a given NF Service Instance of an NF Instance stored
         in NRF
@@ -12845,7 +13077,10 @@ components:
       type: object
     AnNodeType:
       anyOf:
-      - $ref: '#/components/schemas/AnNodeType_anyOf'
+      - enum:
+        - GNB
+        - NG_ENB
+        type: string
       - type: string
       description: "Access Network Node Type (gNB, ng-eNB...)"
     UdsfInfo:
@@ -13081,10 +13316,14 @@ components:
             A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
           pattern: "^[A-Fa-f0-9]*$"
           type: string
+          x-parent: true
       type: object
     ConditionEventType:
       anyOf:
-      - $ref: '#/components/schemas/ConditionEventType_anyOf'
+      - enum:
+        - NF_ADDED
+        - NF_REMOVED
+        type: string
       - type: string
       description: |
         Indicates whether a notification is due to the NF Instance to start or stop being part of a condition for a subscription to a set of NFs
@@ -13163,7 +13402,11 @@ components:
       type: object
     IpReachability:
       anyOf:
-      - $ref: '#/components/schemas/IpReachability_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        type: string
       - type: string
       description: Indicates the type(s) of IP addresses reachable via an SCP
     UriList:
@@ -13457,7 +13700,9 @@ components:
       type: object
     ScpCapability:
       anyOf:
-      - $ref: '#/components/schemas/ScpCapability_anyOf'
+      - enum:
+        - INDIRECT_COM_WITH_DELEG_DISC
+        type: string
       - type: string
       description: Indicates the capabilities supported by an SCP
     NsacfInfo:
@@ -14328,7 +14573,12 @@ components:
       type: object
     CollocatedNfType:
       anyOf:
-      - $ref: '#/components/schemas/CollocatedNfType_anyOf'
+      - enum:
+        - UPF
+        - SMF
+        - MB_UPF
+        - MB_SMF
+        type: string
       - type: string
       description: NF types for a collocated NF
     PlmnOauth2:
@@ -14539,6 +14789,7 @@ components:
             A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
           pattern: "^[A-Fa-f0-9]*$"
           type: string
+          x-parent: true
       type: object
     LocalityDescriptionItem:
       description: Locality description item
@@ -14580,7 +14831,18 @@ components:
       type: object
     LocalityType:
       anyOf:
-      - $ref: '#/components/schemas/LocalityType_anyOf'
+      - enum:
+        - DATA_CENTER
+        - CITY
+        - COUNTY
+        - DISTRICT
+        - STATE
+        - CANTON
+        - REGION
+        - PROVINCE
+        - PREFECTURE
+        - COUNTRY
+        type: string
       - type: string
       description: "Type of locality description. An operator may define custom locality\
         \ type values other  than those listed in this enumeration. \n"
@@ -14651,6 +14913,7 @@ components:
             A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
           pattern: "^[A-Fa-f0-9]*$"
           type: string
+          x-parent: true
         accessTokenError:
           $ref: '#/components/schemas/AccessTokenErr'
         accessTokenRequest:
@@ -14687,6 +14950,7 @@ components:
         A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
       pattern: "^[A-Fa-f0-9]*$"
       type: string
+      x-parent: true
     Fqdn:
       description: Fully Qualified Domain Name
       maxLength: 253
@@ -14725,7 +14989,14 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - $ref: '#/components/schemas/PatchOperation_anyOf'
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PlmnId:
@@ -14824,6 +15095,7 @@ components:
       required:
       - sst
       type: object
+      x-parent: true
     SnssaiExtension:
       description: |
         Extensions to the Snssai data type, sdRanges and wildcardSd shall not be present simultaneously
@@ -14846,6 +15118,7 @@ components:
           - true
           type: boolean
       type: object
+      x-parent: true
     SdRange:
       description: A range of SDs (Slice Differentiators)
       properties:
@@ -14894,7 +15167,10 @@ components:
       type: string
     UriScheme:
       anyOf:
-      - $ref: '#/components/schemas/UriScheme_anyOf'
+      - enum:
+        - http
+        - https
+        type: string
       - type: string
       description: HTTP and HTTPS URI scheme.
     NfServiceSetId:
@@ -15059,7 +15335,13 @@ components:
       type: string
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -15097,17 +15379,47 @@ components:
       $ref: '#/components/schemas/Fqdn'
     N1MessageClass:
       anyOf:
-      - $ref: '#/components/schemas/N1MessageClass_anyOf'
+      - enum:
+        - 5GMM
+        - SM
+        - LPP
+        - SMS
+        - UPDP
+        - LCS
+        type: string
       - type: string
       description: Enumeration for N1 Message Class
     N2InformationClass:
       anyOf:
-      - $ref: '#/components/schemas/N2InformationClass_anyOf'
+      - enum:
+        - SM
+        - NRPPa
+        - PWS
+        - PWS-BCAL
+        - PWS-RF
+        - RAN
+        - V2X
+        - PROSE
+        type: string
       - type: string
       description: Enumeration for N2 Information Class
     AfEvent:
       anyOf:
-      - $ref: '#/components/schemas/AfEvent_anyOf'
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -15139,7 +15451,12 @@ components:
       type: object
     ChangeType:
       anyOf:
-      - $ref: '#/components/schemas/ChangeType_anyOf'
+      - enum:
+        - ADD
+        - MOVE
+        - REMOVE
+        - REPLACE
+        type: string
       - type: string
       description: Indicates the type of change to be performed.
     AmfName:
@@ -15151,7 +15468,23 @@ components:
       type: object
     EventId:
       anyOf:
-      - $ref: '#/components/schemas/EventId_anyOf'
+      - enum:
+        - LOAD_LEVEL_INFORMATION
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - SM_CONGESTION
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - DN_PERFORMANCE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -15174,7 +15507,23 @@ components:
         - DN_PERFORMANCE: Represents the analytics of DN performance.
     NwdafEvent:
       anyOf:
-      - $ref: '#/components/schemas/NwdafEvent_anyOf'
+      - enum:
+        - SLICE_LOAD_LEVEL
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - DN_PERFORMANCE
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - SM_CONGESTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -15203,7 +15552,16 @@ components:
       type: integer
     ExternalClientType:
       anyOf:
-      - $ref: '#/components/schemas/ExternalClientType_anyOf'
+      - enum:
+        - EMERGENCY_SERVICES
+        - VALUE_ADDED_SERVICES
+        - PLMN_OPERATOR_SERVICES
+        - LAWFUL_INTERCEPT_SERVICES
+        - PLMN_OPERATOR_BROADCAST_SERVICES
+        - PLMN_OPERATOR_OM
+        - PLMN_OPERATOR_ANONYMOUS_STATISTICS
+        - PLMN_OPERATOR_TARGET_MS_SERVICE_SUPPORT
+        type: string
       - type: string
       description: Indicates types of External Clients.
     LMFIdentification:
@@ -15211,12 +15569,43 @@ components:
       type: string
     RatType:
       anyOf:
-      - $ref: '#/components/schemas/RatType_anyOf'
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
       - type: string
       description: Indicates the radio access used.
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     NetworkNodeDiameterAddress:
@@ -15244,7 +15633,18 @@ components:
       type: object
     N32Purpose:
       anyOf:
-      - $ref: '#/components/schemas/N32Purpose_anyOf'
+      - enum:
+        - ROAMING
+        - INTER_PLMN_MOBILITY
+        - SMS_INTERCONNECT
+        - ROAMING_TEST
+        - INTER_PLMN_MOBILITY_TEST
+        - SMS_INTERCONNECT_TEST
+        - SNPN_INTERCONNECT
+        - SNPN_INTERCONNECT_TEST
+        - DISASTER_ROAMING
+        - DISASTER_ROAMING_TEST
+        type: string
       - type: string
       description: Usage purpose of establishing N32 connectivity
     LinksValueSchema:
@@ -15676,86 +16076,6 @@ components:
       - nfInstanceId
       - scope
       type: object
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
-    DataSetId_anyOf:
-      enum:
-      - SUBSCRIPTION
-      - POLICY
-      - EXPOSURE
-      - APPLICATION
-      - A_PFD
-      - A_AFTI
-      - A_IPTV
-      - A_BDT
-      - A_SPD
-      - A_EASD
-      - A_AMI
-      - P_UE
-      - P_SCD
-      - P_BDT
-      - P_PLMNUE
-      - P_NSSCD
-      type: string
-      example: null
     DnnSmfInfoItem_dnn:
       anyOf:
       - $ref: '#/components/schemas/Dnn'
@@ -15764,176 +16084,6 @@ components:
       anyOf:
       - $ref: '#/components/schemas/Dnai'
       - $ref: '#/components/schemas/WildcardDnai'
-    UPInterfaceType_anyOf:
-      enum:
-      - N3
-      - N6
-      - N9
-      - DATA_FORWARDING
-      - N3MB
-      - N6MB
-      - N19MB
-      - NMB9
-      type: string
-      example: null
-    NotificationType_anyOf:
-      enum:
-      - N1_MESSAGES
-      - N2_INFORMATION
-      - LOCATION_NOTIFICATION
-      - DATA_REMOVAL_NOTIFICATION
-      - DATA_CHANGE_NOTIFICATION
-      - LOCATION_UPDATE_NOTIFICATION
-      - NSSAA_REAUTH_NOTIFICATION
-      - NSSAA_REVOC_NOTIFICATION
-      - MATCH_INFO_NOTIFICATION
-      - DATA_RESTORATION_NOTIFICATION
-      - TSCTS_NOTIFICATION
-      - LCS_KEY_DELIVERY_NOTIFICATION
-      type: string
-      example: null
-    TransportProtocol_anyOf:
-      enum:
-      - TCP
-      type: string
-      example: null
-    NotificationEventType_anyOf:
-      enum:
-      - NF_REGISTERED
-      - NF_DEREGISTERED
-      - NF_PROFILE_CHANGED
-      type: string
-      example: null
-    NFStatus_anyOf:
-      enum:
-      - REGISTERED
-      - SUSPENDED
-      - UNDISCOVERABLE
-      type: string
-      example: null
-    ServiceName_anyOf:
-      enum:
-      - nnrf-nfm
-      - nnrf-disc
-      - nnrf-oauth2
-      - nudm-sdm
-      - nudm-uecm
-      - nudm-ueau
-      - nudm-ee
-      - nudm-pp
-      - nudm-niddau
-      - nudm-mt
-      - nudm-ssau
-      - nudm-rsds
-      - namf-comm
-      - namf-evts
-      - namf-mt
-      - namf-loc
-      - namf-mbs-comm
-      - namf-mbs-bc
-      - nsmf-pdusession
-      - nsmf-event-exposure
-      - nsmf-nidd
-      - nausf-auth
-      - nausf-sorprotection
-      - nausf-upuprotection
-      - nnef-pfdmanagement
-      - nnef-smcontext
-      - nnef-eventexposure
-      - nnef-eas-deployment-info
-      - 3gpp-cp-parameter-provisioning
-      - 3gpp-device-triggering
-      - 3gpp-bdt
-      - 3gpp-traffic-influence
-      - 3gpp-chargeable-party
-      - 3gpp-as-session-with-qos
-      - 3gpp-msisdn-less-mo-sms
-      - 3gpp-service-parameter
-      - 3gpp-monitoring-event
-      - 3gpp-nidd-configuration-trigger
-      - 3gpp-nidd
-      - 3gpp-analyticsexposure
-      - 3gpp-racs-parameter-provisioning
-      - 3gpp-ecr-control
-      - 3gpp-applying-bdt-policy
-      - 3gpp-mo-lcs-notify
-      - 3gpp-time-sync
-      - 3gpp-am-influence
-      - 3gpp-am-policyauthorization
-      - 3gpp-akma
-      - 3gpp-eas-deployment
-      - 3gpp-iptvconfiguration
-      - 3gpp-mbs-tmgi
-      - 3gpp-mbs-session
-      - 3gpp-authentication
-      - 3gpp-asti
-      - npcf-am-policy-control
-      - npcf-smpolicycontrol
-      - npcf-policyauthorization
-      - npcf-bdtpolicycontrol
-      - npcf-eventexposure
-      - npcf-ue-policy-control
-      - npcf-am-policyauthorization
-      - nsmsf-sms
-      - nnssf-nsselection
-      - nnssf-nssaiavailability
-      - nudr-dr
-      - nudr-group-id-map
-      - nlmf-loc
-      - n5g-eir-eic
-      - nbsf-management
-      - nchf-spendinglimitcontrol
-      - nchf-convergedcharging
-      - nchf-offlineonlycharging
-      - nnwdaf-eventssubscription
-      - nnwdaf-analyticsinfo
-      - nnwdaf-datamanagement
-      - nnwdaf-mlmodelprovision
-      - ngmlc-loc
-      - nucmf-provisioning
-      - nucmf-uecapabilitymanagement
-      - nhss-sdm
-      - nhss-uecm
-      - nhss-ueau
-      - nhss-ee
-      - nhss-ims-sdm
-      - nhss-ims-uecm
-      - nhss-ims-ueau
-      - nhss-gba-sdm
-      - nhss-gba-ueau
-      - nsepp-telescopic
-      - nsoraf-sor
-      - nspaf-secured-packet
-      - nudsf-dr
-      - nudsf-timer
-      - nnssaaf-nssaa
-      - nnssaaf-aiw
-      - naanf-akma
-      - n5gddnmf-discovery
-      - nmfaf-3dadm
-      - nmfaf-3cadm
-      - neasdf-dnscontext
-      - neasdf-baselinednspattern
-      - ndccf-dm
-      - ndccf-cm
-      - nnsacf-nsac
-      - nnsacf-slice-ee
-      - nmbsmf-tmgi
-      - nmbsmf-mbssession
-      - nadrf-dm
-      - nbsp-gba
-      - ntsctsf-time-sync
-      - ntsctsf-qos-tscai
-      - ntsctsf-asti
-      - npkmf-keyreq
-      - nmnpf-npstatus
-      - niwmsc-smservice
-      - nmbsf-mbsuserserv
-      - nmbsf-mbsuserdataing
-      - nmbstf-distsession
-      - npanf-prosekey
-      type: string
-      example: null
     NrfInfo_servedUdrInfo_value:
       anyOf:
       - $ref: '#/components/schemas/UdrInfo'
@@ -16014,225 +16164,6 @@ components:
       anyOf:
       - $ref: '#/components/schemas/MbSmfInfo'
       - $ref: '#/components/schemas/EmptyObject'
-    AnNodeType_anyOf:
-      enum:
-      - GNB
-      - NG_ENB
-      type: string
-      example: null
-    ConditionEventType_anyOf:
-      enum:
-      - NF_ADDED
-      - NF_REMOVED
-      type: string
-      example: null
-    IpReachability_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      type: string
-      example: null
-    ScpCapability_anyOf:
-      enum:
-      - INDIRECT_COM_WITH_DELEG_DISC
-      type: string
-      example: null
-    CollocatedNfType_anyOf:
-      enum:
-      - UPF
-      - SMF
-      - MB_UPF
-      - MB_SMF
-      type: string
-      example: null
-    LocalityType_anyOf:
-      enum:
-      - DATA_CENTER
-      - CITY
-      - COUNTY
-      - DISTRICT
-      - STATE
-      - CANTON
-      - REGION
-      - PROVINCE
-      - PREFECTURE
-      - COUNTRY
-      type: string
-      example: null
-    PatchOperation_anyOf:
-      enum:
-      - add
-      - copy
-      - move
-      - remove
-      - replace
-      - test
-      type: string
-      example: null
-    UriScheme_anyOf:
-      enum:
-      - http
-      - https
-      type: string
-      example: null
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
-    N1MessageClass_anyOf:
-      enum:
-      - 5GMM
-      - SM
-      - LPP
-      - SMS
-      - UPDP
-      - LCS
-      type: string
-      example: null
-    N2InformationClass_anyOf:
-      enum:
-      - SM
-      - NRPPa
-      - PWS
-      - PWS-BCAL
-      - PWS-RF
-      - RAN
-      - V2X
-      - PROSE
-      type: string
-      example: null
-    AfEvent_anyOf:
-      enum:
-      - SVC_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMM
-      - EXCEPTIONS
-      - USER_DATA_CONGESTION
-      - PERF_DATA
-      - DISPERSION
-      - COLLECTIVE_BEHAVIOUR
-      - MS_QOE_METRICS
-      - MS_CONSUMPTION
-      - MS_NET_ASSIST_INVOCATION
-      - MS_DYN_POLICY_INVOCATION
-      - MS_ACCESS_ACTIVITY
-      type: string
-      example: null
-    ChangeType_anyOf:
-      enum:
-      - ADD
-      - MOVE
-      - REMOVE
-      - REPLACE
-      type: string
-      example: null
-    EventId_anyOf:
-      enum:
-      - LOAD_LEVEL_INFORMATION
-      - NETWORK_PERFORMANCE
-      - NF_LOAD
-      - SERVICE_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMMUNICATION
-      - QOS_SUSTAINABILITY
-      - ABNORMAL_BEHAVIOUR
-      - USER_DATA_CONGESTION
-      - NSI_LOAD_LEVEL
-      - SM_CONGESTION
-      - DISPERSION
-      - RED_TRANS_EXP
-      - WLAN_PERFORMANCE
-      - DN_PERFORMANCE
-      type: string
-      example: null
-    NwdafEvent_anyOf:
-      enum:
-      - SLICE_LOAD_LEVEL
-      - NETWORK_PERFORMANCE
-      - NF_LOAD
-      - SERVICE_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMMUNICATION
-      - QOS_SUSTAINABILITY
-      - ABNORMAL_BEHAVIOUR
-      - USER_DATA_CONGESTION
-      - NSI_LOAD_LEVEL
-      - DN_PERFORMANCE
-      - DISPERSION
-      - RED_TRANS_EXP
-      - WLAN_PERFORMANCE
-      - SM_CONGESTION
-      type: string
-      example: null
-    ExternalClientType_anyOf:
-      enum:
-      - EMERGENCY_SERVICES
-      - VALUE_ADDED_SERVICES
-      - PLMN_OPERATOR_SERVICES
-      - LAWFUL_INTERCEPT_SERVICES
-      - PLMN_OPERATOR_BROADCAST_SERVICES
-      - PLMN_OPERATOR_OM
-      - PLMN_OPERATOR_ANONYMOUS_STATISTICS
-      - PLMN_OPERATOR_TARGET_MS_SERVICE_SUPPORT
-      type: string
-      example: null
-    RatType_anyOf:
-      enum:
-      - NR
-      - EUTRA
-      - WLAN
-      - VIRTUAL
-      - NBIOT
-      - WIRELINE
-      - WIRELINE_CABLE
-      - WIRELINE_BBF
-      - LTE-M
-      - NR_U
-      - EUTRA_U
-      - TRUSTED_N3GA
-      - TRUSTED_WLAN
-      - UTRA
-      - GERA
-      - NR_LEO
-      - NR_MEO
-      - NR_GEO
-      - NR_OTHER_SAT
-      - NR_REDCAP
-      type: string
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
-      example: null
-    N32Purpose_anyOf:
-      enum:
-      - ROAMING
-      - INTER_PLMN_MOBILITY
-      - SMS_INTERCONNECT
-      - ROAMING_TEST
-      - INTER_PLMN_MOBILITY_TEST
-      - SMS_INTERCONNECT_TEST
-      - SNPN_INTERCONNECT
-      - SNPN_INTERCONNECT_TEST
-      - DISASTER_ROAMING
-      - DISASTER_ROAMING_TEST
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

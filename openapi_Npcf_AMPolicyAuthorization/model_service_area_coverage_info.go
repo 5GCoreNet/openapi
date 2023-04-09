@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ServiceAreaCoverageInfo{}
 // ServiceAreaCoverageInfo It represents a list of Tracking Areas within a serving network.
 type ServiceAreaCoverageInfo struct {
 	// Indicates a list of Tracking Areas where the service is allowed.
-	TacList []string `json:"tacList"`
+	TacList        []string   `json:"tacList"`
 	ServingNetwork *PlmnIdNid `json:"servingNetwork,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *ServiceAreaCoverageInfo) SetTacList(v []string) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *ServiceAreaCoverageInfo) GetServingNetwork() PlmnIdNid {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ServiceAreaCoverageInfo) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAreaCoverageInfo) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -86,7 +86,7 @@ func (o *ServiceAreaCoverageInfo) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *ServiceAreaCoverageInfo) HasServingNetwork() bool {
-	if o != nil && !isNil(o.ServingNetwork) {
+	if o != nil && !IsNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *ServiceAreaCoverageInfo) SetServingNetwork(v PlmnIdNid) {
 }
 
 func (o ServiceAreaCoverageInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o ServiceAreaCoverageInfo) MarshalJSON() ([]byte, error) {
 func (o ServiceAreaCoverageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tacList"] = o.TacList
-	if !isNil(o.ServingNetwork) {
+	if !IsNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableServiceAreaCoverageInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

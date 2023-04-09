@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,24 +13,23 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // LCSBroadcastAssistanceSubscriptionDataApiService LCSBroadcastAssistanceSubscriptionDataApi service
 type LCSBroadcastAssistanceSubscriptionDataApiService service
 
 type ApiQueryLcsBcaDataRequest struct {
-	ctx context.Context
-	ApiService *LCSBroadcastAssistanceSubscriptionDataApiService
-	ueId string
-	servingPlmnId string
+	ctx               context.Context
+	ApiService        *LCSBroadcastAssistanceSubscriptionDataApiService
+	ueId              string
+	servingPlmnId     string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // Supported Features
@@ -58,28 +57,29 @@ func (r ApiQueryLcsBcaDataRequest) Execute() (*LcsBroadcastAssistanceTypesData, 
 /*
 QueryLcsBcaData Retrieves the LCS Broadcast Assistance subscription data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingPlmnId PLMN ID
- @return ApiQueryLcsBcaDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingPlmnId PLMN ID
+	@return ApiQueryLcsBcaDataRequest
 */
 func (a *LCSBroadcastAssistanceSubscriptionDataApiService) QueryLcsBcaData(ctx context.Context, ueId string, servingPlmnId string) ApiQueryLcsBcaDataRequest {
 	return ApiQueryLcsBcaDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:    a,
+		ctx:           ctx,
+		ueId:          ueId,
 		servingPlmnId: servingPlmnId,
 	}
 }
 
 // Execute executes the request
-//  @return LcsBroadcastAssistanceTypesData
+//
+//	@return LcsBroadcastAssistanceTypesData
 func (a *LCSBroadcastAssistanceSubscriptionDataApiService) QueryLcsBcaDataExecute(r ApiQueryLcsBcaDataRequest) (*LcsBroadcastAssistanceTypesData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LcsBroadcastAssistanceTypesData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LcsBroadcastAssistanceTypesData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LCSBroadcastAssistanceSubscriptionDataApiService.QueryLcsBcaData")
@@ -96,7 +96,7 @@ func (a *LCSBroadcastAssistanceSubscriptionDataApiService) QueryLcsBcaDataExecut
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -116,10 +116,10 @@ func (a *LCSBroadcastAssistanceSubscriptionDataApiService) QueryLcsBcaDataExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -131,9 +131,9 @@ func (a *LCSBroadcastAssistanceSubscriptionDataApiService) QueryLcsBcaDataExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -143,14 +143,14 @@ func (a *LCSBroadcastAssistanceSubscriptionDataApiService) QueryLcsBcaDataExecut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ProblemDetails
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ProblemDetails
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

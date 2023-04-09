@@ -1,7 +1,7 @@
 /*
 Nchf_SpendingLimitControl
 
-Nchf Spending Limit Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nchf Spending Limit Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &PolicyCounterInfo{}
 type PolicyCounterInfo struct {
 	// Identifies a policy counter.
 	PolicyCounterId string `json:"policyCounterId"`
-	// Identifies the policy counter status applicable for a specific policy counter identified by the policyCounterId. The values (e.g. valid, invalid or any other status) are not specified. The interpretation and actions related to the defined values are out of scope of 3GPP. 
+	// Identifies the policy counter status applicable for a specific policy counter identified by the policyCounterId. The values (e.g. valid, invalid or any other status) are not specified. The interpretation and actions related to the defined values are out of scope of 3GPP.
 	CurrentStatus string `json:"currentStatus"`
 	// Provides the pending policy counter status.
 	PenPolCounterStatuses []PendingPolicyCounterStatus `json:"penPolCounterStatuses,omitempty"`
@@ -96,7 +96,7 @@ func (o *PolicyCounterInfo) SetCurrentStatus(v string) {
 
 // GetPenPolCounterStatuses returns the PenPolCounterStatuses field value if set, zero value otherwise.
 func (o *PolicyCounterInfo) GetPenPolCounterStatuses() []PendingPolicyCounterStatus {
-	if o == nil || isNil(o.PenPolCounterStatuses) {
+	if o == nil || IsNil(o.PenPolCounterStatuses) {
 		var ret []PendingPolicyCounterStatus
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PolicyCounterInfo) GetPenPolCounterStatuses() []PendingPolicyCounterSta
 // GetPenPolCounterStatusesOk returns a tuple with the PenPolCounterStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyCounterInfo) GetPenPolCounterStatusesOk() ([]PendingPolicyCounterStatus, bool) {
-	if o == nil || isNil(o.PenPolCounterStatuses) {
+	if o == nil || IsNil(o.PenPolCounterStatuses) {
 		return nil, false
 	}
 	return o.PenPolCounterStatuses, true
@@ -114,7 +114,7 @@ func (o *PolicyCounterInfo) GetPenPolCounterStatusesOk() ([]PendingPolicyCounter
 
 // HasPenPolCounterStatuses returns a boolean if a field has been set.
 func (o *PolicyCounterInfo) HasPenPolCounterStatuses() bool {
-	if o != nil && !isNil(o.PenPolCounterStatuses) {
+	if o != nil && !IsNil(o.PenPolCounterStatuses) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *PolicyCounterInfo) SetPenPolCounterStatuses(v []PendingPolicyCounterSta
 }
 
 func (o PolicyCounterInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o PolicyCounterInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["policyCounterId"] = o.PolicyCounterId
 	toSerialize["currentStatus"] = o.CurrentStatus
-	if !isNil(o.PenPolCounterStatuses) {
+	if !IsNil(o.PenPolCounterStatuses) {
 		toSerialize["penPolCounterStatuses"] = o.PenPolCounterStatuses
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullablePolicyCounterInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

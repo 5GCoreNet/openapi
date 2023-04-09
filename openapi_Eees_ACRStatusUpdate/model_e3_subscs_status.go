@@ -1,7 +1,7 @@
 /*
 EES ACR Status Update Service
 
-EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// E3SubscsStatus Possible values are: - SUCCESSFUL: Indicates that the initialization of EDGE-3 subscriptions was successful. - FAILED: Indicates that the initialization of EDGE-3 subscriptions failed. 
+// E3SubscsStatus Possible values are: - SUCCESSFUL: Indicates that the initialization of EDGE-3 subscriptions was successful. - FAILED: Indicates that the initialization of EDGE-3 subscriptions failed.
 type E3SubscsStatus struct {
-	ACTResultAnyOf *ACTResultAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *E3SubscsStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ACTResultAnyOf
-	err = json.Unmarshal(data, &dst.ACTResultAnyOf);
-	if err == nil {
-		jsonACTResultAnyOf, _ := json.Marshal(dst.ACTResultAnyOf)
-		if string(jsonACTResultAnyOf) == "{}" { // empty struct
-			dst.ACTResultAnyOf = nil
-		} else {
-			return nil // data stored in dst.ACTResultAnyOf, return on the first match
-		}
-	} else {
-		dst.ACTResultAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *E3SubscsStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *E3SubscsStatus) MarshalJSON() ([]byte, error) {
-	if src.ACTResultAnyOf != nil {
-		return json.Marshal(&src.ACTResultAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableE3SubscsStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

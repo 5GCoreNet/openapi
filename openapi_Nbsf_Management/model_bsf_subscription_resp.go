@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// BsfSubscriptionResp It represents a response to a modification or creation request of an Individual Binding Subscription resource. It may contain the notification of the already met events. 
+// BsfSubscriptionResp It represents a response to a modification or creation request of an Individual Binding Subscription resource. It may contain the notification of the already met events.
 type BsfSubscriptionResp struct {
 	BsfNotification *BsfNotification
 	BsfSubscription *BsfSubscription
@@ -25,7 +25,7 @@ type BsfSubscriptionResp struct {
 func (dst *BsfSubscriptionResp) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into BsfNotification
-	err = json.Unmarshal(data, &dst.BsfNotification);
+	err = json.Unmarshal(data, &dst.BsfNotification)
 	if err == nil {
 		jsonBsfNotification, _ := json.Marshal(dst.BsfNotification)
 		if string(jsonBsfNotification) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *BsfSubscriptionResp) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BsfSubscription
-	err = json.Unmarshal(data, &dst.BsfSubscription);
+	err = json.Unmarshal(data, &dst.BsfSubscription)
 	if err == nil {
 		jsonBsfSubscription, _ := json.Marshal(dst.BsfSubscription)
 		if string(jsonBsfSubscription) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableBsfSubscriptionResp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

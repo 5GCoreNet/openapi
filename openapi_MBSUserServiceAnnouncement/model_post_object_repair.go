@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -45,7 +45,7 @@ func NewPostObjectRepairWithDefaults() *PostObjectRepair {
 
 // GetServiceURIs returns the ServiceURIs field value if set, zero value otherwise.
 func (o *PostObjectRepair) GetServiceURIs() []string {
-	if o == nil || isNil(o.ServiceURIs) {
+	if o == nil || IsNil(o.ServiceURIs) {
 		var ret []string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *PostObjectRepair) GetServiceURIs() []string {
 // GetServiceURIsOk returns a tuple with the ServiceURIs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PostObjectRepair) GetServiceURIsOk() ([]string, bool) {
-	if o == nil || isNil(o.ServiceURIs) {
+	if o == nil || IsNil(o.ServiceURIs) {
 		return nil, false
 	}
 	return o.ServiceURIs, true
@@ -63,7 +63,7 @@ func (o *PostObjectRepair) GetServiceURIsOk() ([]string, bool) {
 
 // HasServiceURIs returns a boolean if a field has been set.
 func (o *PostObjectRepair) HasServiceURIs() bool {
-	if o != nil && !isNil(o.ServiceURIs) {
+	if o != nil && !IsNil(o.ServiceURIs) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *PostObjectRepair) SetServiceURIs(v []string) {
 
 // GetOffsetTime returns the OffsetTime field value if set, zero value otherwise.
 func (o *PostObjectRepair) GetOffsetTime() int32 {
-	if o == nil || isNil(o.OffsetTime) {
+	if o == nil || IsNil(o.OffsetTime) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PostObjectRepair) GetOffsetTime() int32 {
 // GetOffsetTimeOk returns a tuple with the OffsetTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PostObjectRepair) GetOffsetTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.OffsetTime) {
+	if o == nil || IsNil(o.OffsetTime) {
 		return nil, false
 	}
 	return o.OffsetTime, true
@@ -95,7 +95,7 @@ func (o *PostObjectRepair) GetOffsetTimeOk() (*int32, bool) {
 
 // HasOffsetTime returns a boolean if a field has been set.
 func (o *PostObjectRepair) HasOffsetTime() bool {
-	if o != nil && !isNil(o.OffsetTime) {
+	if o != nil && !IsNil(o.OffsetTime) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *PostObjectRepair) SetOffsetTime(v int32) {
 
 // GetRandomTimePeriod returns the RandomTimePeriod field value if set, zero value otherwise.
 func (o *PostObjectRepair) GetRandomTimePeriod() int32 {
-	if o == nil || isNil(o.RandomTimePeriod) {
+	if o == nil || IsNil(o.RandomTimePeriod) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PostObjectRepair) GetRandomTimePeriod() int32 {
 // GetRandomTimePeriodOk returns a tuple with the RandomTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PostObjectRepair) GetRandomTimePeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.RandomTimePeriod) {
+	if o == nil || IsNil(o.RandomTimePeriod) {
 		return nil, false
 	}
 	return o.RandomTimePeriod, true
@@ -127,7 +127,7 @@ func (o *PostObjectRepair) GetRandomTimePeriodOk() (*int32, bool) {
 
 // HasRandomTimePeriod returns a boolean if a field has been set.
 func (o *PostObjectRepair) HasRandomTimePeriod() bool {
-	if o != nil && !isNil(o.RandomTimePeriod) {
+	if o != nil && !IsNil(o.RandomTimePeriod) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *PostObjectRepair) SetRandomTimePeriod(v int32) {
 }
 
 func (o PostObjectRepair) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o PostObjectRepair) MarshalJSON() ([]byte, error) {
 
 func (o PostObjectRepair) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceURIs) {
+	if !IsNil(o.ServiceURIs) {
 		toSerialize["serviceURIs"] = o.ServiceURIs
 	}
-	if !isNil(o.OffsetTime) {
+	if !IsNil(o.OffsetTime) {
 		toSerialize["offsetTime"] = o.OffsetTime
 	}
-	if !isNil(o.RandomTimePeriod) {
+	if !IsNil(o.RandomTimePeriod) {
 		toSerialize["randomTimePeriod"] = o.RandomTimePeriod
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullablePostObjectRepair) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

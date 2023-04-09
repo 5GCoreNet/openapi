@@ -1,7 +1,7 @@
 /*
 Nucmf_UECapabilityManagement
 
-Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -23,7 +23,7 @@ type CreatedSubscription struct {
 	DicEntryId int32 `json:"dicEntryId"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ConfirmedExpires *time.Time `json:"confirmedExpires,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *CreatedSubscription) SetDicEntryId(v int32) {
 
 // GetConfirmedExpires returns the ConfirmedExpires field value if set, zero value otherwise.
 func (o *CreatedSubscription) GetConfirmedExpires() time.Time {
-	if o == nil || isNil(o.ConfirmedExpires) {
+	if o == nil || IsNil(o.ConfirmedExpires) {
 		var ret time.Time
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *CreatedSubscription) GetConfirmedExpires() time.Time {
 // GetConfirmedExpiresOk returns a tuple with the ConfirmedExpires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedSubscription) GetConfirmedExpiresOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ConfirmedExpires) {
+	if o == nil || IsNil(o.ConfirmedExpires) {
 		return nil, false
 	}
 	return o.ConfirmedExpires, true
@@ -89,7 +89,7 @@ func (o *CreatedSubscription) GetConfirmedExpiresOk() (*time.Time, bool) {
 
 // HasConfirmedExpires returns a boolean if a field has been set.
 func (o *CreatedSubscription) HasConfirmedExpires() bool {
-	if o != nil && !isNil(o.ConfirmedExpires) {
+	if o != nil && !IsNil(o.ConfirmedExpires) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *CreatedSubscription) SetConfirmedExpires(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreatedSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *CreatedSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -121,7 +121,7 @@ func (o *CreatedSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreatedSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *CreatedSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o CreatedSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o CreatedSubscription) MarshalJSON() ([]byte, error) {
 func (o CreatedSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dicEntryId"] = o.DicEntryId
-	if !isNil(o.ConfirmedExpires) {
+	if !IsNil(o.ConfirmedExpires) {
 		toSerialize["confirmedExpires"] = o.ConfirmedExpires
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableCreatedSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

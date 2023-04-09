@@ -1,7 +1,7 @@
 /*
 CAPIF_Auditing_API
 
-API for auditing.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for auditing.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,32 +13,31 @@ package openapi_CAPIF_Auditing_API
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"time"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiApiInvocationLogsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	aefId *string
-	apiInvokerId *string
-	timeRangeStart *time.Time
-	timeRangeEnd *time.Time
-	apiId *string
-	apiName *string
-	apiVersion *string
-	protocol *Protocol
-	operation *Operation
-	result *string
-	resourceName *string
-	srcInterface *InterfaceDescription
-	destInterface *InterfaceDescription
+	ctx               context.Context
+	ApiService        *DefaultApiService
+	aefId             *string
+	apiInvokerId      *string
+	timeRangeStart    *time.Time
+	timeRangeEnd      *time.Time
+	apiId             *string
+	apiName           *string
+	apiVersion        *string
+	protocol          *Protocol
+	operation         *Operation
+	result            *string
+	resourceName      *string
+	srcInterface      *InterfaceDescription
+	destInterface     *InterfaceDescription
 	supportedFeatures *string
 }
 
@@ -72,7 +71,7 @@ func (r ApiApiInvocationLogsGetRequest) ApiId(apiId string) ApiApiInvocationLogs
 	return r
 }
 
-// API name, it is set as {apiName} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122. 
+// API name, it is set as {apiName} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122.
 func (r ApiApiInvocationLogsGetRequest) ApiName(apiName string) ApiApiInvocationLogsGetRequest {
 	r.apiName = &apiName
 	return r
@@ -135,24 +134,25 @@ ApiInvocationLogsGet Method for ApiInvocationLogsGet
 
 Query and retrieve service API invocation logs stored on the CAPIF core function.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiInvocationLogsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiInvocationLogsGetRequest
 */
 func (a *DefaultApiService) ApiInvocationLogsGet(ctx context.Context) ApiApiInvocationLogsGetRequest {
 	return ApiApiInvocationLogsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return InvocationLog
+//
+//	@return InvocationLog
 func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGetRequest) (*InvocationLog, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InvocationLog
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InvocationLog
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApiInvocationLogsGet")
@@ -167,46 +167,46 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 	localVarFormParams := url.Values{}
 
 	if r.aefId != nil {
-		parameterAddToQuery(localVarQueryParams, "aef-id", r.aefId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "aef-id", r.aefId, "")
 	}
 	if r.apiInvokerId != nil {
-		parameterAddToQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
 	}
 	if r.timeRangeStart != nil {
-		parameterAddToQuery(localVarQueryParams, "time-range-start", r.timeRangeStart, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "time-range-start", r.timeRangeStart, "")
 	}
 	if r.timeRangeEnd != nil {
-		parameterAddToQuery(localVarQueryParams, "time-range-end", r.timeRangeEnd, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "time-range-end", r.timeRangeEnd, "")
 	}
 	if r.apiId != nil {
-		parameterAddToQuery(localVarQueryParams, "api-id", r.apiId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-id", r.apiId, "")
 	}
 	if r.apiName != nil {
-		parameterAddToQuery(localVarQueryParams, "api-name", r.apiName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-name", r.apiName, "")
 	}
 	if r.apiVersion != nil {
-		parameterAddToQuery(localVarQueryParams, "api-version", r.apiVersion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-version", r.apiVersion, "")
 	}
 	if r.protocol != nil {
-		parameterAddToQuery(localVarQueryParams, "protocol", r.protocol, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", r.protocol, "")
 	}
 	if r.operation != nil {
-		parameterAddToQuery(localVarQueryParams, "operation", r.operation, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "operation", r.operation, "")
 	}
 	if r.result != nil {
-		parameterAddToQuery(localVarQueryParams, "result", r.result, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "result", r.result, "")
 	}
 	if r.resourceName != nil {
-		parameterAddToQuery(localVarQueryParams, "resource-name", r.resourceName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resource-name", r.resourceName, "")
 	}
 	if r.srcInterface != nil {
-		parameterAddToQuery(localVarQueryParams, "src-interface", r.srcInterface, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "src-interface", r.srcInterface, "")
 	}
 	if r.destInterface != nil {
-		parameterAddToQuery(localVarQueryParams, "dest-interface", r.destInterface, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dest-interface", r.destInterface, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -235,9 +235,9 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -254,8 +254,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -265,8 +265,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -276,8 +276,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -287,8 +287,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -298,8 +298,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -309,8 +309,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -320,8 +320,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -331,8 +331,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -342,8 +342,8 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

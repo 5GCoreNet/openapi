@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // UuaaMmStatus Indicates the UUAA-MM status
 type UuaaMmStatus struct {
-	UuaaMmStatusAnyOf *UuaaMmStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UuaaMmStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UuaaMmStatusAnyOf
-	err = json.Unmarshal(data, &dst.UuaaMmStatusAnyOf);
-	if err == nil {
-		jsonUuaaMmStatusAnyOf, _ := json.Marshal(dst.UuaaMmStatusAnyOf)
-		if string(jsonUuaaMmStatusAnyOf) == "{}" { // empty struct
-			dst.UuaaMmStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.UuaaMmStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.UuaaMmStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UuaaMmStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UuaaMmStatus) MarshalJSON() ([]byte, error) {
-	if src.UuaaMmStatusAnyOf != nil {
-		return json.Marshal(&src.UuaaMmStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUuaaMmStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

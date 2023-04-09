@@ -17,21 +17,21 @@ import (
 
 // ResourceOneOf1 struct for ResourceOneOf1
 type ResourceOneOf1 struct {
-	Resources5gcNrm *Resources5gcNrm
-	ResourcesAiMlNrm *ResourcesAiMlNrm
-	ResourcesCoslaNrm *ResourcesCoslaNrm
+	Resources5gcNrm     *Resources5gcNrm
+	ResourcesAiMlNrm    *ResourcesAiMlNrm
+	ResourcesCoslaNrm   *ResourcesCoslaNrm
 	ResourcesGenericNrm *ResourcesGenericNrm
-	ResourcesIntentNrm *ResourcesIntentNrm
-	ResourcesMdaNrm *ResourcesMdaNrm
-	ResourcesNrNrm *ResourcesNrNrm
-	ResourcesSliceNrm *ResourcesSliceNrm
+	ResourcesIntentNrm  *ResourcesIntentNrm
+	ResourcesMdaNrm     *ResourcesMdaNrm
+	ResourcesNrNrm      *ResourcesNrNrm
+	ResourcesSliceNrm   *ResourcesSliceNrm
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into Resources5gcNrm
-	err = json.Unmarshal(data, &dst.Resources5gcNrm);
+	err = json.Unmarshal(data, &dst.Resources5gcNrm)
 	if err == nil {
 		jsonResources5gcNrm, _ := json.Marshal(dst.Resources5gcNrm)
 		if string(jsonResources5gcNrm) == "{}" { // empty struct
@@ -44,7 +44,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesAiMlNrm
-	err = json.Unmarshal(data, &dst.ResourcesAiMlNrm);
+	err = json.Unmarshal(data, &dst.ResourcesAiMlNrm)
 	if err == nil {
 		jsonResourcesAiMlNrm, _ := json.Marshal(dst.ResourcesAiMlNrm)
 		if string(jsonResourcesAiMlNrm) == "{}" { // empty struct
@@ -57,7 +57,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesCoslaNrm
-	err = json.Unmarshal(data, &dst.ResourcesCoslaNrm);
+	err = json.Unmarshal(data, &dst.ResourcesCoslaNrm)
 	if err == nil {
 		jsonResourcesCoslaNrm, _ := json.Marshal(dst.ResourcesCoslaNrm)
 		if string(jsonResourcesCoslaNrm) == "{}" { // empty struct
@@ -70,7 +70,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesGenericNrm
-	err = json.Unmarshal(data, &dst.ResourcesGenericNrm);
+	err = json.Unmarshal(data, &dst.ResourcesGenericNrm)
 	if err == nil {
 		jsonResourcesGenericNrm, _ := json.Marshal(dst.ResourcesGenericNrm)
 		if string(jsonResourcesGenericNrm) == "{}" { // empty struct
@@ -83,7 +83,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesIntentNrm
-	err = json.Unmarshal(data, &dst.ResourcesIntentNrm);
+	err = json.Unmarshal(data, &dst.ResourcesIntentNrm)
 	if err == nil {
 		jsonResourcesIntentNrm, _ := json.Marshal(dst.ResourcesIntentNrm)
 		if string(jsonResourcesIntentNrm) == "{}" { // empty struct
@@ -96,7 +96,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesMdaNrm
-	err = json.Unmarshal(data, &dst.ResourcesMdaNrm);
+	err = json.Unmarshal(data, &dst.ResourcesMdaNrm)
 	if err == nil {
 		jsonResourcesMdaNrm, _ := json.Marshal(dst.ResourcesMdaNrm)
 		if string(jsonResourcesMdaNrm) == "{}" { // empty struct
@@ -109,7 +109,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesNrNrm
-	err = json.Unmarshal(data, &dst.ResourcesNrNrm);
+	err = json.Unmarshal(data, &dst.ResourcesNrNrm)
 	if err == nil {
 		jsonResourcesNrNrm, _ := json.Marshal(dst.ResourcesNrNrm)
 		if string(jsonResourcesNrNrm) == "{}" { // empty struct
@@ -122,7 +122,7 @@ func (dst *ResourceOneOf1) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ResourcesSliceNrm
-	err = json.Unmarshal(data, &dst.ResourcesSliceNrm);
+	err = json.Unmarshal(data, &dst.ResourcesSliceNrm)
 	if err == nil {
 		jsonResourcesSliceNrm, _ := json.Marshal(dst.ResourcesSliceNrm)
 		if string(jsonResourcesSliceNrm) == "{}" { // empty struct
@@ -209,5 +209,3 @@ func (v *NullableResourceOneOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

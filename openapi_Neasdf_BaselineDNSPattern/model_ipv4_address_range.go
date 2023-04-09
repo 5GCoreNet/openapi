@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &Ipv4AddressRange{}
 
 // Ipv4AddressRange Range of IPv4 addresses
 type Ipv4AddressRange struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
 	Start string `json:"start"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
 	End string `json:"end"`
 }
 
@@ -93,7 +93,7 @@ func (o *Ipv4AddressRange) SetEnd(v string) {
 }
 
 func (o Ipv4AddressRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableIpv4AddressRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

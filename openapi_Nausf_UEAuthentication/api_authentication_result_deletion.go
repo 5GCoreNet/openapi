@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nausf_UEAuthentication
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AuthenticationResultDeletionApiService AuthenticationResultDeletionApi service
 type AuthenticationResultDeletionApiService service
 
 type ApiDelete5gAkaAuthenticationResultRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthenticationResultDeletionApiService
-	authCtxId string
+	authCtxId  string
 }
 
 func (r ApiDelete5gAkaAuthenticationResultRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDelete5gAkaAuthenticationResultRequest) Execute() (*http.Response, er
 /*
 Delete5gAkaAuthenticationResult Deletes the authentication result in the UDM
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authCtxId
- @return ApiDelete5gAkaAuthenticationResultRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authCtxId
+	@return ApiDelete5gAkaAuthenticationResultRequest
 */
 func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult(ctx context.Context, authCtxId string) ApiDelete5gAkaAuthenticationResultRequest {
 	return ApiDelete5gAkaAuthenticationResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		authCtxId: authCtxId,
+		ctx:        ctx,
+		authCtxId:  authCtxId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResultExecute(r ApiDelete5gAkaAuthenticationResultRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationResultDeletionApiService.Delete5gAkaAuthenticationResult")
@@ -95,9 +94,9 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,9 +223,9 @@ func (a *AuthenticationResultDeletionApiService) Delete5gAkaAuthenticationResult
 }
 
 type ApiDeleteEapAuthenticationResultRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthenticationResultDeletionApiService
-	authCtxId string
+	authCtxId  string
 }
 
 func (r ApiDeleteEapAuthenticationResultRequest) Execute() (*http.Response, error) {
@@ -236,24 +235,24 @@ func (r ApiDeleteEapAuthenticationResultRequest) Execute() (*http.Response, erro
 /*
 DeleteEapAuthenticationResult Deletes the authentication result in the UDM
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authCtxId
- @return ApiDeleteEapAuthenticationResultRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authCtxId
+	@return ApiDeleteEapAuthenticationResultRequest
 */
 func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResult(ctx context.Context, authCtxId string) ApiDeleteEapAuthenticationResultRequest {
 	return ApiDeleteEapAuthenticationResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		authCtxId: authCtxId,
+		ctx:        ctx,
+		authCtxId:  authCtxId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultExecute(r ApiDeleteEapAuthenticationResultRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationResultDeletionApiService.DeleteEapAuthenticationResult")
@@ -295,9 +294,9 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -314,8 +313,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -325,8 +324,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -336,8 +335,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -347,8 +346,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -358,8 +357,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -369,8 +368,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +379,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +390,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -402,8 +401,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -413,8 +412,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -424,9 +423,9 @@ func (a *AuthenticationResultDeletionApiService) DeleteEapAuthenticationResultEx
 }
 
 type ApiDeleteProSeAuthenticationResultRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthenticationResultDeletionApiService
-	authCtxId string
+	authCtxId  string
 }
 
 func (r ApiDeleteProSeAuthenticationResultRequest) Execute() (*http.Response, error) {
@@ -436,24 +435,24 @@ func (r ApiDeleteProSeAuthenticationResultRequest) Execute() (*http.Response, er
 /*
 DeleteProSeAuthenticationResult Deletes the authentication result in the UDM
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authCtxId
- @return ApiDeleteProSeAuthenticationResultRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authCtxId
+	@return ApiDeleteProSeAuthenticationResultRequest
 */
 func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult(ctx context.Context, authCtxId string) ApiDeleteProSeAuthenticationResultRequest {
 	return ApiDeleteProSeAuthenticationResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		authCtxId: authCtxId,
+		ctx:        ctx,
+		authCtxId:  authCtxId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResultExecute(r ApiDeleteProSeAuthenticationResultRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationResultDeletionApiService.DeleteProSeAuthenticationResult")
@@ -495,9 +494,9 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -514,8 +513,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -525,8 +524,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -536,8 +535,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -547,8 +546,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -558,8 +557,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -569,8 +568,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -580,8 +579,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -591,8 +590,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -602,8 +601,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -613,8 +612,8 @@ func (a *AuthenticationResultDeletionApiService) DeleteProSeAuthenticationResult
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

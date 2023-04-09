@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -20,21 +20,21 @@ var _ MappedNullable = &PcfBinding{}
 
 // PcfBinding Identifies an Individual PCF for a PDU Session binding.
 type PcfBinding struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4Addr *string `json:"ipv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4Addr   *string     `json:"ipv4Addr,omitempty"`
 	Ipv6Prefix *Ipv6Prefix `json:"ipv6Prefix,omitempty"`
 	// The additional IPv6 Address Prefixes of the served UE.
 	AddIpv6Prefixes []Ipv6Prefix `json:"addIpv6Prefixes,omitempty"`
-	IpDomain *string `json:"ipDomain,omitempty"`
-	// String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042. 
+	IpDomain        *string      `json:"ipDomain,omitempty"`
+	// String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
 	MacAddr48 *string `json:"macAddr48,omitempty"`
 	// The additional MAC Addresses of the served UE.
 	AddMacAddrs []string `json:"addMacAddrs,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn string `json:"dnn"`
 	// Fully Qualified Domain Name
 	PcfFqdn *string `json:"pcfFqdn,omitempty"`
@@ -48,19 +48,19 @@ type PcfBinding struct {
 	PcfSmFqdn *string `json:"pcfSmFqdn,omitempty"`
 	// IP end points of the PCF hosting the Npcf_SMPolicyControl service.
 	PcfSmIpEndPoints []IpEndPoint `json:"pcfSmIpEndPoints,omitempty"`
-	Snssai Snssai `json:"snssai"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	Snssai           Snssai       `json:"snssai"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	PcfSetId *string `json:"pcfSetId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	RecoveryTime *time.Time `json:"recoveryTime,omitempty"`
-	ParaCom *ParameterCombination `json:"paraCom,omitempty"`
-	BindLevel *BindingLevel `json:"bindLevel,omitempty"`
-	Ipv4FrameRouteList []string `json:"ipv4FrameRouteList,omitempty"`
-	Ipv6FrameRouteList []Ipv6Prefix `json:"ipv6FrameRouteList,omitempty"`
+	RecoveryTime       *time.Time            `json:"recoveryTime,omitempty"`
+	ParaCom            *ParameterCombination `json:"paraCom,omitempty"`
+	BindLevel          *BindingLevel         `json:"bindLevel,omitempty"`
+	Ipv4FrameRouteList []string              `json:"ipv4FrameRouteList,omitempty"`
+	Ipv6FrameRouteList []Ipv6Prefix          `json:"ipv6FrameRouteList,omitempty"`
 }
 
 // NewPcfBinding instantiates a new PcfBinding object
@@ -84,7 +84,7 @@ func NewPcfBindingWithDefaults() *PcfBinding {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *PcfBinding) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *PcfBinding) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -102,7 +102,7 @@ func (o *PcfBinding) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *PcfBinding) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *PcfBinding) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *PcfBinding) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *PcfBinding) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -134,7 +134,7 @@ func (o *PcfBinding) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *PcfBinding) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *PcfBinding) SetGpsi(v string) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *PcfBinding) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *PcfBinding) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -166,7 +166,7 @@ func (o *PcfBinding) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *PcfBinding) HasIpv4Addr() bool {
-	if o != nil && !isNil(o.Ipv4Addr) {
+	if o != nil && !IsNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *PcfBinding) SetIpv4Addr(v string) {
 
 // GetIpv6Prefix returns the Ipv6Prefix field value if set, zero value otherwise.
 func (o *PcfBinding) GetIpv6Prefix() Ipv6Prefix {
-	if o == nil || isNil(o.Ipv6Prefix) {
+	if o == nil || IsNil(o.Ipv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *PcfBinding) GetIpv6Prefix() Ipv6Prefix {
 // GetIpv6PrefixOk returns a tuple with the Ipv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.Ipv6Prefix) {
+	if o == nil || IsNil(o.Ipv6Prefix) {
 		return nil, false
 	}
 	return o.Ipv6Prefix, true
@@ -198,7 +198,7 @@ func (o *PcfBinding) GetIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasIpv6Prefix returns a boolean if a field has been set.
 func (o *PcfBinding) HasIpv6Prefix() bool {
-	if o != nil && !isNil(o.Ipv6Prefix) {
+	if o != nil && !IsNil(o.Ipv6Prefix) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *PcfBinding) SetIpv6Prefix(v Ipv6Prefix) {
 
 // GetAddIpv6Prefixes returns the AddIpv6Prefixes field value if set, zero value otherwise.
 func (o *PcfBinding) GetAddIpv6Prefixes() []Ipv6Prefix {
-	if o == nil || isNil(o.AddIpv6Prefixes) {
+	if o == nil || IsNil(o.AddIpv6Prefixes) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *PcfBinding) GetAddIpv6Prefixes() []Ipv6Prefix {
 // GetAddIpv6PrefixesOk returns a tuple with the AddIpv6Prefixes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetAddIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
-	if o == nil || isNil(o.AddIpv6Prefixes) {
+	if o == nil || IsNil(o.AddIpv6Prefixes) {
 		return nil, false
 	}
 	return o.AddIpv6Prefixes, true
@@ -230,7 +230,7 @@ func (o *PcfBinding) GetAddIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
 
 // HasAddIpv6Prefixes returns a boolean if a field has been set.
 func (o *PcfBinding) HasAddIpv6Prefixes() bool {
-	if o != nil && !isNil(o.AddIpv6Prefixes) {
+	if o != nil && !IsNil(o.AddIpv6Prefixes) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *PcfBinding) SetAddIpv6Prefixes(v []Ipv6Prefix) {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *PcfBinding) GetIpDomain() string {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *PcfBinding) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetIpDomainOk() (*string, bool) {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -262,7 +262,7 @@ func (o *PcfBinding) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *PcfBinding) HasIpDomain() bool {
-	if o != nil && !isNil(o.IpDomain) {
+	if o != nil && !IsNil(o.IpDomain) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *PcfBinding) SetIpDomain(v string) {
 
 // GetMacAddr48 returns the MacAddr48 field value if set, zero value otherwise.
 func (o *PcfBinding) GetMacAddr48() string {
-	if o == nil || isNil(o.MacAddr48) {
+	if o == nil || IsNil(o.MacAddr48) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *PcfBinding) GetMacAddr48() string {
 // GetMacAddr48Ok returns a tuple with the MacAddr48 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetMacAddr48Ok() (*string, bool) {
-	if o == nil || isNil(o.MacAddr48) {
+	if o == nil || IsNil(o.MacAddr48) {
 		return nil, false
 	}
 	return o.MacAddr48, true
@@ -294,7 +294,7 @@ func (o *PcfBinding) GetMacAddr48Ok() (*string, bool) {
 
 // HasMacAddr48 returns a boolean if a field has been set.
 func (o *PcfBinding) HasMacAddr48() bool {
-	if o != nil && !isNil(o.MacAddr48) {
+	if o != nil && !IsNil(o.MacAddr48) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *PcfBinding) SetMacAddr48(v string) {
 
 // GetAddMacAddrs returns the AddMacAddrs field value if set, zero value otherwise.
 func (o *PcfBinding) GetAddMacAddrs() []string {
-	if o == nil || isNil(o.AddMacAddrs) {
+	if o == nil || IsNil(o.AddMacAddrs) {
 		var ret []string
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *PcfBinding) GetAddMacAddrs() []string {
 // GetAddMacAddrsOk returns a tuple with the AddMacAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetAddMacAddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.AddMacAddrs) {
+	if o == nil || IsNil(o.AddMacAddrs) {
 		return nil, false
 	}
 	return o.AddMacAddrs, true
@@ -326,7 +326,7 @@ func (o *PcfBinding) GetAddMacAddrsOk() ([]string, bool) {
 
 // HasAddMacAddrs returns a boolean if a field has been set.
 func (o *PcfBinding) HasAddMacAddrs() bool {
-	if o != nil && !isNil(o.AddMacAddrs) {
+	if o != nil && !IsNil(o.AddMacAddrs) {
 		return true
 	}
 
@@ -364,7 +364,7 @@ func (o *PcfBinding) SetDnn(v string) {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfFqdn() string {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -374,7 +374,7 @@ func (o *PcfBinding) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -382,7 +382,7 @@ func (o *PcfBinding) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfFqdn() bool {
-	if o != nil && !isNil(o.PcfFqdn) {
+	if o != nil && !IsNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -396,7 +396,7 @@ func (o *PcfBinding) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -406,7 +406,7 @@ func (o *PcfBinding) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -414,7 +414,7 @@ func (o *PcfBinding) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfIpEndPoints) {
+	if o != nil && !IsNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -428,7 +428,7 @@ func (o *PcfBinding) SetPcfIpEndPoints(v []IpEndPoint) {
 
 // GetPcfDiamHost returns the PcfDiamHost field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfDiamHost() string {
-	if o == nil || isNil(o.PcfDiamHost) {
+	if o == nil || IsNil(o.PcfDiamHost) {
 		var ret string
 		return ret
 	}
@@ -438,7 +438,7 @@ func (o *PcfBinding) GetPcfDiamHost() string {
 // GetPcfDiamHostOk returns a tuple with the PcfDiamHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfDiamHostOk() (*string, bool) {
-	if o == nil || isNil(o.PcfDiamHost) {
+	if o == nil || IsNil(o.PcfDiamHost) {
 		return nil, false
 	}
 	return o.PcfDiamHost, true
@@ -446,7 +446,7 @@ func (o *PcfBinding) GetPcfDiamHostOk() (*string, bool) {
 
 // HasPcfDiamHost returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfDiamHost() bool {
-	if o != nil && !isNil(o.PcfDiamHost) {
+	if o != nil && !IsNil(o.PcfDiamHost) {
 		return true
 	}
 
@@ -460,7 +460,7 @@ func (o *PcfBinding) SetPcfDiamHost(v string) {
 
 // GetPcfDiamRealm returns the PcfDiamRealm field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfDiamRealm() string {
-	if o == nil || isNil(o.PcfDiamRealm) {
+	if o == nil || IsNil(o.PcfDiamRealm) {
 		var ret string
 		return ret
 	}
@@ -470,7 +470,7 @@ func (o *PcfBinding) GetPcfDiamRealm() string {
 // GetPcfDiamRealmOk returns a tuple with the PcfDiamRealm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfDiamRealmOk() (*string, bool) {
-	if o == nil || isNil(o.PcfDiamRealm) {
+	if o == nil || IsNil(o.PcfDiamRealm) {
 		return nil, false
 	}
 	return o.PcfDiamRealm, true
@@ -478,7 +478,7 @@ func (o *PcfBinding) GetPcfDiamRealmOk() (*string, bool) {
 
 // HasPcfDiamRealm returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfDiamRealm() bool {
-	if o != nil && !isNil(o.PcfDiamRealm) {
+	if o != nil && !IsNil(o.PcfDiamRealm) {
 		return true
 	}
 
@@ -492,7 +492,7 @@ func (o *PcfBinding) SetPcfDiamRealm(v string) {
 
 // GetPcfSmFqdn returns the PcfSmFqdn field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfSmFqdn() string {
-	if o == nil || isNil(o.PcfSmFqdn) {
+	if o == nil || IsNil(o.PcfSmFqdn) {
 		var ret string
 		return ret
 	}
@@ -502,7 +502,7 @@ func (o *PcfBinding) GetPcfSmFqdn() string {
 // GetPcfSmFqdnOk returns a tuple with the PcfSmFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfSmFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfSmFqdn) {
+	if o == nil || IsNil(o.PcfSmFqdn) {
 		return nil, false
 	}
 	return o.PcfSmFqdn, true
@@ -510,7 +510,7 @@ func (o *PcfBinding) GetPcfSmFqdnOk() (*string, bool) {
 
 // HasPcfSmFqdn returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfSmFqdn() bool {
-	if o != nil && !isNil(o.PcfSmFqdn) {
+	if o != nil && !IsNil(o.PcfSmFqdn) {
 		return true
 	}
 
@@ -524,7 +524,7 @@ func (o *PcfBinding) SetPcfSmFqdn(v string) {
 
 // GetPcfSmIpEndPoints returns the PcfSmIpEndPoints field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfSmIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfSmIpEndPoints) {
+	if o == nil || IsNil(o.PcfSmIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -534,7 +534,7 @@ func (o *PcfBinding) GetPcfSmIpEndPoints() []IpEndPoint {
 // GetPcfSmIpEndPointsOk returns a tuple with the PcfSmIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfSmIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfSmIpEndPoints) {
+	if o == nil || IsNil(o.PcfSmIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfSmIpEndPoints, true
@@ -542,7 +542,7 @@ func (o *PcfBinding) GetPcfSmIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfSmIpEndPoints returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfSmIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfSmIpEndPoints) {
+	if o != nil && !IsNil(o.PcfSmIpEndPoints) {
 		return true
 	}
 
@@ -580,7 +580,7 @@ func (o *PcfBinding) SetSnssai(v Snssai) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PcfBinding) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -590,7 +590,7 @@ func (o *PcfBinding) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -598,7 +598,7 @@ func (o *PcfBinding) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PcfBinding) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -612,7 +612,7 @@ func (o *PcfBinding) SetSuppFeat(v string) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -622,7 +622,7 @@ func (o *PcfBinding) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -630,7 +630,7 @@ func (o *PcfBinding) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -644,7 +644,7 @@ func (o *PcfBinding) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *PcfBinding) GetPcfSetId() string {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -654,7 +654,7 @@ func (o *PcfBinding) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -662,7 +662,7 @@ func (o *PcfBinding) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *PcfBinding) HasPcfSetId() bool {
-	if o != nil && !isNil(o.PcfSetId) {
+	if o != nil && !IsNil(o.PcfSetId) {
 		return true
 	}
 
@@ -676,7 +676,7 @@ func (o *PcfBinding) SetPcfSetId(v string) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *PcfBinding) GetRecoveryTime() time.Time {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -686,7 +686,7 @@ func (o *PcfBinding) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -694,7 +694,7 @@ func (o *PcfBinding) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *PcfBinding) HasRecoveryTime() bool {
-	if o != nil && !isNil(o.RecoveryTime) {
+	if o != nil && !IsNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -708,7 +708,7 @@ func (o *PcfBinding) SetRecoveryTime(v time.Time) {
 
 // GetParaCom returns the ParaCom field value if set, zero value otherwise.
 func (o *PcfBinding) GetParaCom() ParameterCombination {
-	if o == nil || isNil(o.ParaCom) {
+	if o == nil || IsNil(o.ParaCom) {
 		var ret ParameterCombination
 		return ret
 	}
@@ -718,7 +718,7 @@ func (o *PcfBinding) GetParaCom() ParameterCombination {
 // GetParaComOk returns a tuple with the ParaCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetParaComOk() (*ParameterCombination, bool) {
-	if o == nil || isNil(o.ParaCom) {
+	if o == nil || IsNil(o.ParaCom) {
 		return nil, false
 	}
 	return o.ParaCom, true
@@ -726,7 +726,7 @@ func (o *PcfBinding) GetParaComOk() (*ParameterCombination, bool) {
 
 // HasParaCom returns a boolean if a field has been set.
 func (o *PcfBinding) HasParaCom() bool {
-	if o != nil && !isNil(o.ParaCom) {
+	if o != nil && !IsNil(o.ParaCom) {
 		return true
 	}
 
@@ -740,7 +740,7 @@ func (o *PcfBinding) SetParaCom(v ParameterCombination) {
 
 // GetBindLevel returns the BindLevel field value if set, zero value otherwise.
 func (o *PcfBinding) GetBindLevel() BindingLevel {
-	if o == nil || isNil(o.BindLevel) {
+	if o == nil || IsNil(o.BindLevel) {
 		var ret BindingLevel
 		return ret
 	}
@@ -750,7 +750,7 @@ func (o *PcfBinding) GetBindLevel() BindingLevel {
 // GetBindLevelOk returns a tuple with the BindLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetBindLevelOk() (*BindingLevel, bool) {
-	if o == nil || isNil(o.BindLevel) {
+	if o == nil || IsNil(o.BindLevel) {
 		return nil, false
 	}
 	return o.BindLevel, true
@@ -758,7 +758,7 @@ func (o *PcfBinding) GetBindLevelOk() (*BindingLevel, bool) {
 
 // HasBindLevel returns a boolean if a field has been set.
 func (o *PcfBinding) HasBindLevel() bool {
-	if o != nil && !isNil(o.BindLevel) {
+	if o != nil && !IsNil(o.BindLevel) {
 		return true
 	}
 
@@ -772,7 +772,7 @@ func (o *PcfBinding) SetBindLevel(v BindingLevel) {
 
 // GetIpv4FrameRouteList returns the Ipv4FrameRouteList field value if set, zero value otherwise.
 func (o *PcfBinding) GetIpv4FrameRouteList() []string {
-	if o == nil || isNil(o.Ipv4FrameRouteList) {
+	if o == nil || IsNil(o.Ipv4FrameRouteList) {
 		var ret []string
 		return ret
 	}
@@ -782,7 +782,7 @@ func (o *PcfBinding) GetIpv4FrameRouteList() []string {
 // GetIpv4FrameRouteListOk returns a tuple with the Ipv4FrameRouteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetIpv4FrameRouteListOk() ([]string, bool) {
-	if o == nil || isNil(o.Ipv4FrameRouteList) {
+	if o == nil || IsNil(o.Ipv4FrameRouteList) {
 		return nil, false
 	}
 	return o.Ipv4FrameRouteList, true
@@ -790,7 +790,7 @@ func (o *PcfBinding) GetIpv4FrameRouteListOk() ([]string, bool) {
 
 // HasIpv4FrameRouteList returns a boolean if a field has been set.
 func (o *PcfBinding) HasIpv4FrameRouteList() bool {
-	if o != nil && !isNil(o.Ipv4FrameRouteList) {
+	if o != nil && !IsNil(o.Ipv4FrameRouteList) {
 		return true
 	}
 
@@ -804,7 +804,7 @@ func (o *PcfBinding) SetIpv4FrameRouteList(v []string) {
 
 // GetIpv6FrameRouteList returns the Ipv6FrameRouteList field value if set, zero value otherwise.
 func (o *PcfBinding) GetIpv6FrameRouteList() []Ipv6Prefix {
-	if o == nil || isNil(o.Ipv6FrameRouteList) {
+	if o == nil || IsNil(o.Ipv6FrameRouteList) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -814,7 +814,7 @@ func (o *PcfBinding) GetIpv6FrameRouteList() []Ipv6Prefix {
 // GetIpv6FrameRouteListOk returns a tuple with the Ipv6FrameRouteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBinding) GetIpv6FrameRouteListOk() ([]Ipv6Prefix, bool) {
-	if o == nil || isNil(o.Ipv6FrameRouteList) {
+	if o == nil || IsNil(o.Ipv6FrameRouteList) {
 		return nil, false
 	}
 	return o.Ipv6FrameRouteList, true
@@ -822,7 +822,7 @@ func (o *PcfBinding) GetIpv6FrameRouteListOk() ([]Ipv6Prefix, bool) {
 
 // HasIpv6FrameRouteList returns a boolean if a field has been set.
 func (o *PcfBinding) HasIpv6FrameRouteList() bool {
-	if o != nil && !isNil(o.Ipv6FrameRouteList) {
+	if o != nil && !IsNil(o.Ipv6FrameRouteList) {
 		return true
 	}
 
@@ -835,7 +835,7 @@ func (o *PcfBinding) SetIpv6FrameRouteList(v []Ipv6Prefix) {
 }
 
 func (o PcfBinding) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -844,72 +844,72 @@ func (o PcfBinding) MarshalJSON() ([]byte, error) {
 
 func (o PcfBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Ipv4Addr) {
+	if !IsNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !isNil(o.Ipv6Prefix) {
+	if !IsNil(o.Ipv6Prefix) {
 		toSerialize["ipv6Prefix"] = o.Ipv6Prefix
 	}
-	if !isNil(o.AddIpv6Prefixes) {
+	if !IsNil(o.AddIpv6Prefixes) {
 		toSerialize["addIpv6Prefixes"] = o.AddIpv6Prefixes
 	}
-	if !isNil(o.IpDomain) {
+	if !IsNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !isNil(o.MacAddr48) {
+	if !IsNil(o.MacAddr48) {
 		toSerialize["macAddr48"] = o.MacAddr48
 	}
-	if !isNil(o.AddMacAddrs) {
+	if !IsNil(o.AddMacAddrs) {
 		toSerialize["addMacAddrs"] = o.AddMacAddrs
 	}
 	toSerialize["dnn"] = o.Dnn
-	if !isNil(o.PcfFqdn) {
+	if !IsNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !isNil(o.PcfIpEndPoints) {
+	if !IsNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
-	if !isNil(o.PcfDiamHost) {
+	if !IsNil(o.PcfDiamHost) {
 		toSerialize["pcfDiamHost"] = o.PcfDiamHost
 	}
-	if !isNil(o.PcfDiamRealm) {
+	if !IsNil(o.PcfDiamRealm) {
 		toSerialize["pcfDiamRealm"] = o.PcfDiamRealm
 	}
-	if !isNil(o.PcfSmFqdn) {
+	if !IsNil(o.PcfSmFqdn) {
 		toSerialize["pcfSmFqdn"] = o.PcfSmFqdn
 	}
-	if !isNil(o.PcfSmIpEndPoints) {
+	if !IsNil(o.PcfSmIpEndPoints) {
 		toSerialize["pcfSmIpEndPoints"] = o.PcfSmIpEndPoints
 	}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.PcfSetId) {
+	if !IsNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !isNil(o.RecoveryTime) {
+	if !IsNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
-	if !isNil(o.ParaCom) {
+	if !IsNil(o.ParaCom) {
 		toSerialize["paraCom"] = o.ParaCom
 	}
-	if !isNil(o.BindLevel) {
+	if !IsNil(o.BindLevel) {
 		toSerialize["bindLevel"] = o.BindLevel
 	}
-	if !isNil(o.Ipv4FrameRouteList) {
+	if !IsNil(o.Ipv4FrameRouteList) {
 		toSerialize["ipv4FrameRouteList"] = o.Ipv4FrameRouteList
 	}
-	if !isNil(o.Ipv6FrameRouteList) {
+	if !IsNil(o.Ipv6FrameRouteList) {
 		toSerialize["ipv6FrameRouteList"] = o.Ipv6FrameRouteList
 	}
 	return toSerialize, nil
@@ -950,5 +950,3 @@ func (v *NullablePcfBinding) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

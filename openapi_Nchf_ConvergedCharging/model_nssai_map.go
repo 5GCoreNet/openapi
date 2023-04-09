@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NSSAIMap{}
 // NSSAIMap struct for NSSAIMap
 type NSSAIMap struct {
 	ServingSnssai Snssai `json:"servingSnssai"`
-	HomeSnssai Snssai `json:"homeSnssai"`
+	HomeSnssai    Snssai `json:"homeSnssai"`
 }
 
 // NewNSSAIMap instantiates a new NSSAIMap object
@@ -91,7 +91,7 @@ func (o *NSSAIMap) SetHomeSnssai(v Snssai) {
 }
 
 func (o NSSAIMap) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableNSSAIMap) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // TerminationCause Specifies causes of event reporting termination.
 type TerminationCause struct {
-	TerminationCauseAnyOf *TerminationCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TerminationCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into TerminationCauseAnyOf
-	err = json.Unmarshal(data, &dst.TerminationCauseAnyOf);
-	if err == nil {
-		jsonTerminationCauseAnyOf, _ := json.Marshal(dst.TerminationCauseAnyOf)
-		if string(jsonTerminationCauseAnyOf) == "{}" { // empty struct
-			dst.TerminationCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.TerminationCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.TerminationCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *TerminationCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TerminationCause) MarshalJSON() ([]byte, error) {
-	if src.TerminationCauseAnyOf != nil {
-		return json.Marshal(&src.TerminationCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableTerminationCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

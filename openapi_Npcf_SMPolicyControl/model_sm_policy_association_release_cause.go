@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SmPolicyAssociationReleaseCause Represents the cause due to which the PCF requests the termination of the SM policy  association. 
+// SmPolicyAssociationReleaseCause Represents the cause due to which the PCF requests the termination of the SM policy  association.
 type SmPolicyAssociationReleaseCause struct {
-	SmPolicyAssociationReleaseCauseAnyOf *SmPolicyAssociationReleaseCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmPolicyAssociationReleaseCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SmPolicyAssociationReleaseCauseAnyOf
-	err = json.Unmarshal(data, &dst.SmPolicyAssociationReleaseCauseAnyOf);
-	if err == nil {
-		jsonSmPolicyAssociationReleaseCauseAnyOf, _ := json.Marshal(dst.SmPolicyAssociationReleaseCauseAnyOf)
-		if string(jsonSmPolicyAssociationReleaseCauseAnyOf) == "{}" { // empty struct
-			dst.SmPolicyAssociationReleaseCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.SmPolicyAssociationReleaseCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.SmPolicyAssociationReleaseCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SmPolicyAssociationReleaseCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmPolicyAssociationReleaseCause) MarshalJSON() ([]byte, error) {
-	if src.SmPolicyAssociationReleaseCauseAnyOf != nil {
-		return json.Marshal(&src.SmPolicyAssociationReleaseCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSmPolicyAssociationReleaseCause) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

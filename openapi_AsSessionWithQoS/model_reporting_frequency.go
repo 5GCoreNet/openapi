@@ -1,7 +1,7 @@
 /*
 3gpp-as-session-with-qos
 
-API for setting us an AS session with required QoS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for setting us an AS session with required QoS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.2
 */
@@ -17,28 +17,14 @@ import (
 
 // ReportingFrequency Indicates the frequency for the reporting.
 type ReportingFrequency struct {
-	ReportingFrequencyAnyOf *ReportingFrequencyAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingFrequency) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReportingFrequencyAnyOf
-	err = json.Unmarshal(data, &dst.ReportingFrequencyAnyOf);
-	if err == nil {
-		jsonReportingFrequencyAnyOf, _ := json.Marshal(dst.ReportingFrequencyAnyOf)
-		if string(jsonReportingFrequencyAnyOf) == "{}" { // empty struct
-			dst.ReportingFrequencyAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReportingFrequencyAnyOf, return on the first match
-		}
-	} else {
-		dst.ReportingFrequencyAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReportingFrequency) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportingFrequency) MarshalJSON() ([]byte, error) {
-	if src.ReportingFrequencyAnyOf != nil {
-		return json.Marshal(&src.ReportingFrequencyAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReportingFrequency) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

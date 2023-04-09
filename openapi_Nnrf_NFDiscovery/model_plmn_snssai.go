@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &PlmnSnssai{}
 
 // PlmnSnssai List of network slices (S-NSSAIs) for a given PLMN ID
 type PlmnSnssai struct {
-	PlmnId PlmnId `json:"plmnId"`
+	PlmnId     PlmnId      `json:"plmnId"`
 	SNssaiList []ExtSnssai `json:"sNssaiList"`
-	// This represents the Network Identifier, which together with a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501 clause 5.30.2.1).  
+	// This represents the Network Identifier, which together with a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501 clause 5.30.2.1).
 	Nid *string `json:"nid,omitempty"`
 }
 
@@ -94,7 +94,7 @@ func (o *PlmnSnssai) SetSNssaiList(v []ExtSnssai) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *PlmnSnssai) GetNid() string {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *PlmnSnssai) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnSnssai) GetNidOk() (*string, bool) {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -112,7 +112,7 @@ func (o *PlmnSnssai) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *PlmnSnssai) HasNid() bool {
-	if o != nil && !isNil(o.Nid) {
+	if o != nil && !IsNil(o.Nid) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *PlmnSnssai) SetNid(v string) {
 }
 
 func (o PlmnSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o PlmnSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
 	toSerialize["sNssaiList"] = o.SNssaiList
-	if !isNil(o.Nid) {
+	if !IsNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullablePlmnSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,29 +19,29 @@ var _ MappedNullable = &UeSmsContextData{}
 
 // UeSmsContextData Represents the information used for activating the SMS service for a service user, or updating the parameters of the SMS service.
 type UeSmsContextData struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi string `json:"supi"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
 	Pei *string `json:"pei,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AmfId string `json:"amfId"`
-	Guamis []Guami `json:"guamis,omitempty"`
-	AccessType AccessType `json:"accessType"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AmfId                string      `json:"amfId"`
+	Guamis               []Guami     `json:"guamis,omitempty"`
+	AccessType           AccessType  `json:"accessType"`
 	AdditionalAccessType *AccessType `json:"additionalAccessType,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi *string `json:"gpsi,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi       *string       `json:"gpsi,omitempty"`
 	UeLocation *UserLocation `json:"ueLocation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	UeTimeZone *string `json:"ueTimeZone,omitempty"`
-	TraceData NullableTraceData `json:"traceData,omitempty"`
-	BackupAmfInfo []BackupAmfInfo `json:"backupAmfInfo,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	UeTimeZone    *string           `json:"ueTimeZone,omitempty"`
+	TraceData     NullableTraceData `json:"traceData,omitempty"`
+	BackupAmfInfo []BackupAmfInfo   `json:"backupAmfInfo,omitempty"`
 	// Identifier of a group of NFs.
-	UdmGroupId *string `json:"udmGroupId,omitempty"`
-	RoutingIndicator *string `json:"routingIndicator,omitempty"`
-	HNwPubKeyId *int32 `json:"hNwPubKeyId,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
+	UdmGroupId        *string  `json:"udmGroupId,omitempty"`
+	RoutingIndicator  *string  `json:"routingIndicator,omitempty"`
+	HNwPubKeyId       *int32   `json:"hNwPubKeyId,omitempty"`
+	RatType           *RatType `json:"ratType,omitempty"`
 	AdditionalRatType *RatType `json:"additionalRatType,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -91,7 +91,7 @@ func (o *UeSmsContextData) SetSupi(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *UeSmsContextData) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -109,7 +109,7 @@ func (o *UeSmsContextData) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *UeSmsContextData) SetAmfId(v string) {
 
 // GetGuamis returns the Guamis field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetGuamis() []Guami {
-	if o == nil || isNil(o.Guamis) {
+	if o == nil || IsNil(o.Guamis) {
 		var ret []Guami
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *UeSmsContextData) GetGuamis() []Guami {
 // GetGuamisOk returns a tuple with the Guamis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetGuamisOk() ([]Guami, bool) {
-	if o == nil || isNil(o.Guamis) {
+	if o == nil || IsNil(o.Guamis) {
 		return nil, false
 	}
 	return o.Guamis, true
@@ -165,7 +165,7 @@ func (o *UeSmsContextData) GetGuamisOk() ([]Guami, bool) {
 
 // HasGuamis returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasGuamis() bool {
-	if o != nil && !isNil(o.Guamis) {
+	if o != nil && !IsNil(o.Guamis) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *UeSmsContextData) SetAccessType(v AccessType) {
 
 // GetAdditionalAccessType returns the AdditionalAccessType field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetAdditionalAccessType() AccessType {
-	if o == nil || isNil(o.AdditionalAccessType) {
+	if o == nil || IsNil(o.AdditionalAccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *UeSmsContextData) GetAdditionalAccessType() AccessType {
 // GetAdditionalAccessTypeOk returns a tuple with the AdditionalAccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetAdditionalAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AdditionalAccessType) {
+	if o == nil || IsNil(o.AdditionalAccessType) {
 		return nil, false
 	}
 	return o.AdditionalAccessType, true
@@ -221,7 +221,7 @@ func (o *UeSmsContextData) GetAdditionalAccessTypeOk() (*AccessType, bool) {
 
 // HasAdditionalAccessType returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasAdditionalAccessType() bool {
-	if o != nil && !isNil(o.AdditionalAccessType) {
+	if o != nil && !IsNil(o.AdditionalAccessType) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *UeSmsContextData) SetAdditionalAccessType(v AccessType) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *UeSmsContextData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -253,7 +253,7 @@ func (o *UeSmsContextData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *UeSmsContextData) SetGpsi(v string) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetUeLocation() UserLocation {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *UeSmsContextData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -285,7 +285,7 @@ func (o *UeSmsContextData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasUeLocation() bool {
-	if o != nil && !isNil(o.UeLocation) {
+	if o != nil && !IsNil(o.UeLocation) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *UeSmsContextData) SetUeLocation(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetUeTimeZone() string {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *UeSmsContextData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -317,7 +317,7 @@ func (o *UeSmsContextData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasUeTimeZone() bool {
-	if o != nil && !isNil(o.UeTimeZone) {
+	if o != nil && !IsNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *UeSmsContextData) SetUeTimeZone(v string) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UeSmsContextData) GetTraceData() TraceData {
-	if o == nil || isNil(o.TraceData.Get()) {
+	if o == nil || IsNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -361,6 +361,7 @@ func (o *UeSmsContextData) HasTraceData() bool {
 func (o *UeSmsContextData) SetTraceData(v TraceData) {
 	o.TraceData.Set(&v)
 }
+
 // SetTraceDataNil sets the value for TraceData to be an explicit nil
 func (o *UeSmsContextData) SetTraceDataNil() {
 	o.TraceData.Set(nil)
@@ -373,7 +374,7 @@ func (o *UeSmsContextData) UnsetTraceData() {
 
 // GetBackupAmfInfo returns the BackupAmfInfo field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetBackupAmfInfo() []BackupAmfInfo {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		var ret []BackupAmfInfo
 		return ret
 	}
@@ -383,7 +384,7 @@ func (o *UeSmsContextData) GetBackupAmfInfo() []BackupAmfInfo {
 // GetBackupAmfInfoOk returns a tuple with the BackupAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		return nil, false
 	}
 	return o.BackupAmfInfo, true
@@ -391,7 +392,7 @@ func (o *UeSmsContextData) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
 
 // HasBackupAmfInfo returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasBackupAmfInfo() bool {
-	if o != nil && !isNil(o.BackupAmfInfo) {
+	if o != nil && !IsNil(o.BackupAmfInfo) {
 		return true
 	}
 
@@ -405,7 +406,7 @@ func (o *UeSmsContextData) SetBackupAmfInfo(v []BackupAmfInfo) {
 
 // GetUdmGroupId returns the UdmGroupId field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetUdmGroupId() string {
-	if o == nil || isNil(o.UdmGroupId) {
+	if o == nil || IsNil(o.UdmGroupId) {
 		var ret string
 		return ret
 	}
@@ -415,7 +416,7 @@ func (o *UeSmsContextData) GetUdmGroupId() string {
 // GetUdmGroupIdOk returns a tuple with the UdmGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetUdmGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.UdmGroupId) {
+	if o == nil || IsNil(o.UdmGroupId) {
 		return nil, false
 	}
 	return o.UdmGroupId, true
@@ -423,7 +424,7 @@ func (o *UeSmsContextData) GetUdmGroupIdOk() (*string, bool) {
 
 // HasUdmGroupId returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasUdmGroupId() bool {
-	if o != nil && !isNil(o.UdmGroupId) {
+	if o != nil && !IsNil(o.UdmGroupId) {
 		return true
 	}
 
@@ -437,7 +438,7 @@ func (o *UeSmsContextData) SetUdmGroupId(v string) {
 
 // GetRoutingIndicator returns the RoutingIndicator field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetRoutingIndicator() string {
-	if o == nil || isNil(o.RoutingIndicator) {
+	if o == nil || IsNil(o.RoutingIndicator) {
 		var ret string
 		return ret
 	}
@@ -447,7 +448,7 @@ func (o *UeSmsContextData) GetRoutingIndicator() string {
 // GetRoutingIndicatorOk returns a tuple with the RoutingIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetRoutingIndicatorOk() (*string, bool) {
-	if o == nil || isNil(o.RoutingIndicator) {
+	if o == nil || IsNil(o.RoutingIndicator) {
 		return nil, false
 	}
 	return o.RoutingIndicator, true
@@ -455,7 +456,7 @@ func (o *UeSmsContextData) GetRoutingIndicatorOk() (*string, bool) {
 
 // HasRoutingIndicator returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasRoutingIndicator() bool {
-	if o != nil && !isNil(o.RoutingIndicator) {
+	if o != nil && !IsNil(o.RoutingIndicator) {
 		return true
 	}
 
@@ -469,7 +470,7 @@ func (o *UeSmsContextData) SetRoutingIndicator(v string) {
 
 // GetHNwPubKeyId returns the HNwPubKeyId field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetHNwPubKeyId() int32 {
-	if o == nil || isNil(o.HNwPubKeyId) {
+	if o == nil || IsNil(o.HNwPubKeyId) {
 		var ret int32
 		return ret
 	}
@@ -479,7 +480,7 @@ func (o *UeSmsContextData) GetHNwPubKeyId() int32 {
 // GetHNwPubKeyIdOk returns a tuple with the HNwPubKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetHNwPubKeyIdOk() (*int32, bool) {
-	if o == nil || isNil(o.HNwPubKeyId) {
+	if o == nil || IsNil(o.HNwPubKeyId) {
 		return nil, false
 	}
 	return o.HNwPubKeyId, true
@@ -487,7 +488,7 @@ func (o *UeSmsContextData) GetHNwPubKeyIdOk() (*int32, bool) {
 
 // HasHNwPubKeyId returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasHNwPubKeyId() bool {
-	if o != nil && !isNil(o.HNwPubKeyId) {
+	if o != nil && !IsNil(o.HNwPubKeyId) {
 		return true
 	}
 
@@ -501,7 +502,7 @@ func (o *UeSmsContextData) SetHNwPubKeyId(v int32) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -511,7 +512,7 @@ func (o *UeSmsContextData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -519,7 +520,7 @@ func (o *UeSmsContextData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -533,7 +534,7 @@ func (o *UeSmsContextData) SetRatType(v RatType) {
 
 // GetAdditionalRatType returns the AdditionalRatType field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetAdditionalRatType() RatType {
-	if o == nil || isNil(o.AdditionalRatType) {
+	if o == nil || IsNil(o.AdditionalRatType) {
 		var ret RatType
 		return ret
 	}
@@ -543,7 +544,7 @@ func (o *UeSmsContextData) GetAdditionalRatType() RatType {
 // GetAdditionalRatTypeOk returns a tuple with the AdditionalRatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetAdditionalRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.AdditionalRatType) {
+	if o == nil || IsNil(o.AdditionalRatType) {
 		return nil, false
 	}
 	return o.AdditionalRatType, true
@@ -551,7 +552,7 @@ func (o *UeSmsContextData) GetAdditionalRatTypeOk() (*RatType, bool) {
 
 // HasAdditionalRatType returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasAdditionalRatType() bool {
-	if o != nil && !isNil(o.AdditionalRatType) {
+	if o != nil && !IsNil(o.AdditionalRatType) {
 		return true
 	}
 
@@ -565,7 +566,7 @@ func (o *UeSmsContextData) SetAdditionalRatType(v RatType) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeSmsContextData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -575,7 +576,7 @@ func (o *UeSmsContextData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSmsContextData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -583,7 +584,7 @@ func (o *UeSmsContextData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeSmsContextData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -596,7 +597,7 @@ func (o *UeSmsContextData) SetSupportedFeatures(v string) {
 }
 
 func (o UeSmsContextData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -606,48 +607,48 @@ func (o UeSmsContextData) MarshalJSON() ([]byte, error) {
 func (o UeSmsContextData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
 	toSerialize["amfId"] = o.AmfId
-	if !isNil(o.Guamis) {
+	if !IsNil(o.Guamis) {
 		toSerialize["guamis"] = o.Guamis
 	}
 	toSerialize["accessType"] = o.AccessType
-	if !isNil(o.AdditionalAccessType) {
+	if !IsNil(o.AdditionalAccessType) {
 		toSerialize["additionalAccessType"] = o.AdditionalAccessType
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.UeLocation) {
+	if !IsNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
-	if !isNil(o.UeTimeZone) {
+	if !IsNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !isNil(o.BackupAmfInfo) {
+	if !IsNil(o.BackupAmfInfo) {
 		toSerialize["backupAmfInfo"] = o.BackupAmfInfo
 	}
-	if !isNil(o.UdmGroupId) {
+	if !IsNil(o.UdmGroupId) {
 		toSerialize["udmGroupId"] = o.UdmGroupId
 	}
-	if !isNil(o.RoutingIndicator) {
+	if !IsNil(o.RoutingIndicator) {
 		toSerialize["routingIndicator"] = o.RoutingIndicator
 	}
-	if !isNil(o.HNwPubKeyId) {
+	if !IsNil(o.HNwPubKeyId) {
 		toSerialize["hNwPubKeyId"] = o.HNwPubKeyId
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.AdditionalRatType) {
+	if !IsNil(o.AdditionalRatType) {
 		toSerialize["additionalRatType"] = o.AdditionalRatType
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -688,5 +689,3 @@ func (v *NullableUeSmsContextData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

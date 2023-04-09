@@ -41,7 +41,7 @@ func NewDESManagementFunctionSingleAllOfWithDefaults() *DESManagementFunctionSin
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOf) GetAttributes() DESManagementFunctionSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret DESManagementFunctionSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *DESManagementFunctionSingleAllOf) GetAttributes() DESManagementFunction
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOf) GetAttributesOk() (*DESManagementFunctionSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *DESManagementFunctionSingleAllOf) GetAttributesOk() (*DESManagementFunc
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *DESManagementFunctionSingleAllOf) SetAttributes(v DESManagementFunction
 }
 
 func (o DESManagementFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o DESManagementFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o DESManagementFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableDESManagementFunctionSingleAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

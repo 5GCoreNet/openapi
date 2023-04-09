@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &ContextUpdateRspData{}
 // ContextUpdateRspData Data within ContextUpdate Response
 type ContextUpdateRspData struct {
 	LlSsm *Ssm `json:"llSsm,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	CTeid *int32 `json:"cTeid,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	CTeid       *int32       `json:"cTeid,omitempty"`
 	N2MbsSmInfo *N2MbsSmInfo `json:"n2MbsSmInfo,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewContextUpdateRspDataWithDefaults() *ContextUpdateRspData {
 
 // GetLlSsm returns the LlSsm field value if set, zero value otherwise.
 func (o *ContextUpdateRspData) GetLlSsm() Ssm {
-	if o == nil || isNil(o.LlSsm) {
+	if o == nil || IsNil(o.LlSsm) {
 		var ret Ssm
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ContextUpdateRspData) GetLlSsm() Ssm {
 // GetLlSsmOk returns a tuple with the LlSsm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateRspData) GetLlSsmOk() (*Ssm, bool) {
-	if o == nil || isNil(o.LlSsm) {
+	if o == nil || IsNil(o.LlSsm) {
 		return nil, false
 	}
 	return o.LlSsm, true
@@ -62,7 +62,7 @@ func (o *ContextUpdateRspData) GetLlSsmOk() (*Ssm, bool) {
 
 // HasLlSsm returns a boolean if a field has been set.
 func (o *ContextUpdateRspData) HasLlSsm() bool {
-	if o != nil && !isNil(o.LlSsm) {
+	if o != nil && !IsNil(o.LlSsm) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ContextUpdateRspData) SetLlSsm(v Ssm) {
 
 // GetCTeid returns the CTeid field value if set, zero value otherwise.
 func (o *ContextUpdateRspData) GetCTeid() int32 {
-	if o == nil || isNil(o.CTeid) {
+	if o == nil || IsNil(o.CTeid) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ContextUpdateRspData) GetCTeid() int32 {
 // GetCTeidOk returns a tuple with the CTeid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateRspData) GetCTeidOk() (*int32, bool) {
-	if o == nil || isNil(o.CTeid) {
+	if o == nil || IsNil(o.CTeid) {
 		return nil, false
 	}
 	return o.CTeid, true
@@ -94,7 +94,7 @@ func (o *ContextUpdateRspData) GetCTeidOk() (*int32, bool) {
 
 // HasCTeid returns a boolean if a field has been set.
 func (o *ContextUpdateRspData) HasCTeid() bool {
-	if o != nil && !isNil(o.CTeid) {
+	if o != nil && !IsNil(o.CTeid) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ContextUpdateRspData) SetCTeid(v int32) {
 
 // GetN2MbsSmInfo returns the N2MbsSmInfo field value if set, zero value otherwise.
 func (o *ContextUpdateRspData) GetN2MbsSmInfo() N2MbsSmInfo {
-	if o == nil || isNil(o.N2MbsSmInfo) {
+	if o == nil || IsNil(o.N2MbsSmInfo) {
 		var ret N2MbsSmInfo
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ContextUpdateRspData) GetN2MbsSmInfo() N2MbsSmInfo {
 // GetN2MbsSmInfoOk returns a tuple with the N2MbsSmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateRspData) GetN2MbsSmInfoOk() (*N2MbsSmInfo, bool) {
-	if o == nil || isNil(o.N2MbsSmInfo) {
+	if o == nil || IsNil(o.N2MbsSmInfo) {
 		return nil, false
 	}
 	return o.N2MbsSmInfo, true
@@ -126,7 +126,7 @@ func (o *ContextUpdateRspData) GetN2MbsSmInfoOk() (*N2MbsSmInfo, bool) {
 
 // HasN2MbsSmInfo returns a boolean if a field has been set.
 func (o *ContextUpdateRspData) HasN2MbsSmInfo() bool {
-	if o != nil && !isNil(o.N2MbsSmInfo) {
+	if o != nil && !IsNil(o.N2MbsSmInfo) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *ContextUpdateRspData) SetN2MbsSmInfo(v N2MbsSmInfo) {
 }
 
 func (o ContextUpdateRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o ContextUpdateRspData) MarshalJSON() ([]byte, error) {
 
 func (o ContextUpdateRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LlSsm) {
+	if !IsNil(o.LlSsm) {
 		toSerialize["llSsm"] = o.LlSsm
 	}
-	if !isNil(o.CTeid) {
+	if !IsNil(o.CTeid) {
 		toSerialize["cTeid"] = o.CTeid
 	}
-	if !isNil(o.N2MbsSmInfo) {
+	if !IsNil(o.N2MbsSmInfo) {
 		toSerialize["n2MbsSmInfo"] = o.N2MbsSmInfo
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableContextUpdateRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

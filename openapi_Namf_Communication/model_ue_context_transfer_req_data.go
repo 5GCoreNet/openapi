@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &UeContextTransferReqData{}
 
 // UeContextTransferReqData Data within a UE Context Transfer Request to start transferring of an individual ueContext resource from old AMF to new AMF
 type UeContextTransferReqData struct {
-	Reason TransferReason `json:"reason"`
-	AccessType AccessType `json:"accessType"`
-	PlmnId *PlmnIdNid `json:"plmnId,omitempty"`
+	Reason     TransferReason      `json:"reason"`
+	AccessType AccessType          `json:"accessType"`
+	PlmnId     *PlmnIdNid          `json:"plmnId,omitempty"`
 	RegRequest *N1MessageContainer `json:"regRequest,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *UeContextTransferReqData) SetAccessType(v AccessType) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *UeContextTransferReqData) GetPlmnId() PlmnIdNid {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UeContextTransferReqData) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferReqData) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -114,7 +114,7 @@ func (o *UeContextTransferReqData) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *UeContextTransferReqData) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *UeContextTransferReqData) SetPlmnId(v PlmnIdNid) {
 
 // GetRegRequest returns the RegRequest field value if set, zero value otherwise.
 func (o *UeContextTransferReqData) GetRegRequest() N1MessageContainer {
-	if o == nil || isNil(o.RegRequest) {
+	if o == nil || IsNil(o.RegRequest) {
 		var ret N1MessageContainer
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *UeContextTransferReqData) GetRegRequest() N1MessageContainer {
 // GetRegRequestOk returns a tuple with the RegRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferReqData) GetRegRequestOk() (*N1MessageContainer, bool) {
-	if o == nil || isNil(o.RegRequest) {
+	if o == nil || IsNil(o.RegRequest) {
 		return nil, false
 	}
 	return o.RegRequest, true
@@ -146,7 +146,7 @@ func (o *UeContextTransferReqData) GetRegRequestOk() (*N1MessageContainer, bool)
 
 // HasRegRequest returns a boolean if a field has been set.
 func (o *UeContextTransferReqData) HasRegRequest() bool {
-	if o != nil && !isNil(o.RegRequest) {
+	if o != nil && !IsNil(o.RegRequest) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *UeContextTransferReqData) SetRegRequest(v N1MessageContainer) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextTransferReqData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *UeContextTransferReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -178,7 +178,7 @@ func (o *UeContextTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextTransferReqData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *UeContextTransferReqData) SetSupportedFeatures(v string) {
 }
 
 func (o UeContextTransferReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -202,13 +202,13 @@ func (o UeContextTransferReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reason"] = o.Reason
 	toSerialize["accessType"] = o.AccessType
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.RegRequest) {
+	if !IsNil(o.RegRequest) {
 		toSerialize["regRequest"] = o.RegRequest
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -249,5 +249,3 @@ func (v *NullableUeContextTransferReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

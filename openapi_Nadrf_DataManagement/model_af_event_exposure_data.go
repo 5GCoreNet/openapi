@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AfEventExposureData{}
 // AfEventExposureData AF Event Exposure data managed by a given NEF Instance
 type AfEventExposureData struct {
 	AfEvents []AfEvent `json:"afEvents"`
-	AfIds []string `json:"afIds,omitempty"`
-	AppIds []string `json:"appIds,omitempty"`
+	AfIds    []string  `json:"afIds,omitempty"`
+	AppIds   []string  `json:"appIds,omitempty"`
 }
 
 // NewAfEventExposureData instantiates a new AfEventExposureData object
@@ -68,7 +68,7 @@ func (o *AfEventExposureData) SetAfEvents(v []AfEvent) {
 
 // GetAfIds returns the AfIds field value if set, zero value otherwise.
 func (o *AfEventExposureData) GetAfIds() []string {
-	if o == nil || isNil(o.AfIds) {
+	if o == nil || IsNil(o.AfIds) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AfEventExposureData) GetAfIds() []string {
 // GetAfIdsOk returns a tuple with the AfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureData) GetAfIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AfIds) {
+	if o == nil || IsNil(o.AfIds) {
 		return nil, false
 	}
 	return o.AfIds, true
@@ -86,7 +86,7 @@ func (o *AfEventExposureData) GetAfIdsOk() ([]string, bool) {
 
 // HasAfIds returns a boolean if a field has been set.
 func (o *AfEventExposureData) HasAfIds() bool {
-	if o != nil && !isNil(o.AfIds) {
+	if o != nil && !IsNil(o.AfIds) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AfEventExposureData) SetAfIds(v []string) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *AfEventExposureData) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AfEventExposureData) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureData) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -118,7 +118,7 @@ func (o *AfEventExposureData) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AfEventExposureData) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AfEventExposureData) SetAppIds(v []string) {
 }
 
 func (o AfEventExposureData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o AfEventExposureData) MarshalJSON() ([]byte, error) {
 func (o AfEventExposureData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afEvents"] = o.AfEvents
-	if !isNil(o.AfIds) {
+	if !IsNil(o.AfIds) {
 		toSerialize["afIds"] = o.AfIds
 	}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableAfEventExposureData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

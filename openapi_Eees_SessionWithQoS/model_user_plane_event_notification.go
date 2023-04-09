@@ -1,7 +1,7 @@
 /*
 EES Session with QoS API
 
-API for EES Session with Qos service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Session with Qos service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &UserPlaneEventNotification{}
 
 // UserPlaneEventNotification Represents the user plane event notification.
 type UserPlaneEventNotification struct {
-	// String identifying the individual data session information for which the QoS event notification is delivered. 
+	// String identifying the individual data session information for which the QoS event notification is delivered.
 	SessionId string `json:"sessionId"`
-	// Contains the flow description for the Uplink and/or Downlink IP flows. 
+	// Contains the flow description for the Uplink and/or Downlink IP flows.
 	EventReports []UserPlaneEventReport `json:"eventReports"`
 }
 
@@ -93,7 +93,7 @@ func (o *UserPlaneEventNotification) SetEventReports(v []UserPlaneEventReport) {
 }
 
 func (o UserPlaneEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableUserPlaneEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

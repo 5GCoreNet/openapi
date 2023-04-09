@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -96,7 +96,7 @@ func (o *NsmfEventExposureNotification) SetEventNotifs(v []EventNotification1) {
 
 // GetAckUri returns the AckUri field value if set, zero value otherwise.
 func (o *NsmfEventExposureNotification) GetAckUri() string {
-	if o == nil || isNil(o.AckUri) {
+	if o == nil || IsNil(o.AckUri) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NsmfEventExposureNotification) GetAckUri() string {
 // GetAckUriOk returns a tuple with the AckUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposureNotification) GetAckUriOk() (*string, bool) {
-	if o == nil || isNil(o.AckUri) {
+	if o == nil || IsNil(o.AckUri) {
 		return nil, false
 	}
 	return o.AckUri, true
@@ -114,7 +114,7 @@ func (o *NsmfEventExposureNotification) GetAckUriOk() (*string, bool) {
 
 // HasAckUri returns a boolean if a field has been set.
 func (o *NsmfEventExposureNotification) HasAckUri() bool {
-	if o != nil && !isNil(o.AckUri) {
+	if o != nil && !IsNil(o.AckUri) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *NsmfEventExposureNotification) SetAckUri(v string) {
 }
 
 func (o NsmfEventExposureNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o NsmfEventExposureNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["eventNotifs"] = o.EventNotifs
-	if !isNil(o.AckUri) {
+	if !IsNil(o.AckUri) {
 		toSerialize["ackUri"] = o.AckUri
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableNsmfEventExposureNotification) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

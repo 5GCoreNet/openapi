@@ -19,14 +19,14 @@ var _ MappedNullable = &NwdafFunctionSingleAllOfAttributesAllOf{}
 
 // NwdafFunctionSingleAllOfAttributesAllOf struct for NwdafFunctionSingleAllOfAttributesAllOf
 type NwdafFunctionSingleAllOfAttributesAllOf struct {
-	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
-	NetworkSliceInfoList []NetworkSliceInfo `json:"networkSliceInfoList,omitempty"`
-	AdministrativeState *AdministrativeState `json:"administrativeState,omitempty"`
-	NwdafInfo *NwdafInfo `json:"nwdafInfo,omitempty"`
+	PlmnIdList           []PlmnId             `json:"plmnIdList,omitempty"`
+	SBIFqdn              *string              `json:"sBIFqdn,omitempty"`
+	SnssaiList           []Snssai             `json:"snssaiList,omitempty"`
+	ManagedNFProfile     *ManagedNFProfile    `json:"managedNFProfile,omitempty"`
+	CommModelList        []CommModel          `json:"commModelList,omitempty"`
+	NetworkSliceInfoList []NetworkSliceInfo   `json:"networkSliceInfoList,omitempty"`
+	AdministrativeState  *AdministrativeState `json:"administrativeState,omitempty"`
+	NwdafInfo            *NwdafInfo           `json:"nwdafInfo,omitempty"`
 }
 
 // NewNwdafFunctionSingleAllOfAttributesAllOf instantiates a new NwdafFunctionSingleAllOfAttributesAllOf object
@@ -303,7 +303,7 @@ func (o *NwdafFunctionSingleAllOfAttributesAllOf) SetNwdafInfo(v NwdafInfo) {
 }
 
 func (o NwdafFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,5 +374,3 @@ func (v *NullableNwdafFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

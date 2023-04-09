@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &QosFlowNotifyItem{}
 // QosFlowNotifyItem Notification related to a QoS flow
 type QosFlowNotifyItem struct {
 	// Unsigned integer identifying a QoS flow, within the range 0 to 63.
-	Qfi int32 `json:"qfi"`
-	NotificationCause NotificationCause `json:"notificationCause"`
-	CurrentQosProfileIndex *int32 `json:"currentQosProfileIndex,omitempty"`
-	NullQoSProfileIndex *bool `json:"nullQoSProfileIndex,omitempty"`
+	Qfi                    int32             `json:"qfi"`
+	NotificationCause      NotificationCause `json:"notificationCause"`
+	CurrentQosProfileIndex *int32            `json:"currentQosProfileIndex,omitempty"`
+	NullQoSProfileIndex    *bool             `json:"nullQoSProfileIndex,omitempty"`
 }
 
 // NewQosFlowNotifyItem instantiates a new QosFlowNotifyItem object
@@ -95,7 +95,7 @@ func (o *QosFlowNotifyItem) SetNotificationCause(v NotificationCause) {
 
 // GetCurrentQosProfileIndex returns the CurrentQosProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowNotifyItem) GetCurrentQosProfileIndex() int32 {
-	if o == nil || isNil(o.CurrentQosProfileIndex) {
+	if o == nil || IsNil(o.CurrentQosProfileIndex) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *QosFlowNotifyItem) GetCurrentQosProfileIndex() int32 {
 // GetCurrentQosProfileIndexOk returns a tuple with the CurrentQosProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowNotifyItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.CurrentQosProfileIndex) {
+	if o == nil || IsNil(o.CurrentQosProfileIndex) {
 		return nil, false
 	}
 	return o.CurrentQosProfileIndex, true
@@ -113,7 +113,7 @@ func (o *QosFlowNotifyItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
 
 // HasCurrentQosProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowNotifyItem) HasCurrentQosProfileIndex() bool {
-	if o != nil && !isNil(o.CurrentQosProfileIndex) {
+	if o != nil && !IsNil(o.CurrentQosProfileIndex) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *QosFlowNotifyItem) SetCurrentQosProfileIndex(v int32) {
 
 // GetNullQoSProfileIndex returns the NullQoSProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowNotifyItem) GetNullQoSProfileIndex() bool {
-	if o == nil || isNil(o.NullQoSProfileIndex) {
+	if o == nil || IsNil(o.NullQoSProfileIndex) {
 		var ret bool
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *QosFlowNotifyItem) GetNullQoSProfileIndex() bool {
 // GetNullQoSProfileIndexOk returns a tuple with the NullQoSProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowNotifyItem) GetNullQoSProfileIndexOk() (*bool, bool) {
-	if o == nil || isNil(o.NullQoSProfileIndex) {
+	if o == nil || IsNil(o.NullQoSProfileIndex) {
 		return nil, false
 	}
 	return o.NullQoSProfileIndex, true
@@ -145,7 +145,7 @@ func (o *QosFlowNotifyItem) GetNullQoSProfileIndexOk() (*bool, bool) {
 
 // HasNullQoSProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowNotifyItem) HasNullQoSProfileIndex() bool {
-	if o != nil && !isNil(o.NullQoSProfileIndex) {
+	if o != nil && !IsNil(o.NullQoSProfileIndex) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *QosFlowNotifyItem) SetNullQoSProfileIndex(v bool) {
 }
 
 func (o QosFlowNotifyItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o QosFlowNotifyItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
 	toSerialize["notificationCause"] = o.NotificationCause
-	if !isNil(o.CurrentQosProfileIndex) {
+	if !IsNil(o.CurrentQosProfileIndex) {
 		toSerialize["currentQosProfileIndex"] = o.CurrentQosProfileIndex
 	}
-	if !isNil(o.NullQoSProfileIndex) {
+	if !IsNil(o.NullQoSProfileIndex) {
 		toSerialize["nullQoSProfileIndex"] = o.NullQoSProfileIndex
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableQosFlowNotifyItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

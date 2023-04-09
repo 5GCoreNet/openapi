@@ -20,11 +20,11 @@ type RequestStatus string
 
 // List of RequestStatus
 const (
-	NOT_STARTED RequestStatus = "NOT_STARTED"
+	NOT_STARTED          RequestStatus = "NOT_STARTED"
 	TRAINING_IN_PROGRESS RequestStatus = "TRAINING_IN_PROGRESS"
-	SUSPENDED RequestStatus = "SUSPENDED"
-	FINISHED RequestStatus = "FINISHED"
-	CANCELLED RequestStatus = "CANCELLED"
+	SUSPENDED            RequestStatus = "SUSPENDED"
+	FINISHED             RequestStatus = "FINISHED"
+	CANCELLED            RequestStatus = "CANCELLED"
 )
 
 // All allowed values of RequestStatus enum
@@ -114,4 +114,3 @@ func (v *NullableRequestStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

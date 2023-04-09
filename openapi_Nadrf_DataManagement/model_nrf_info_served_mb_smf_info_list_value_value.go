@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // NrfInfoServedMbSmfInfoListValueValue struct for NrfInfoServedMbSmfInfoListValueValue
 type NrfInfoServedMbSmfInfoListValueValue struct {
-	MbSmfInfo *MbSmfInfo
+	MbSmfInfo      *MbSmfInfo
 	MapOfInterface *map[string]interface{}
 }
 
@@ -25,7 +25,7 @@ type NrfInfoServedMbSmfInfoListValueValue struct {
 func (dst *NrfInfoServedMbSmfInfoListValueValue) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into MbSmfInfo
-	err = json.Unmarshal(data, &dst.MbSmfInfo);
+	err = json.Unmarshal(data, &dst.MbSmfInfo)
 	if err == nil {
 		jsonMbSmfInfo, _ := json.Marshal(dst.MbSmfInfo)
 		if string(jsonMbSmfInfo) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *NrfInfoServedMbSmfInfoListValueValue) UnmarshalJSON(data []byte) erro
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.MapOfInterface);
+	err = json.Unmarshal(data, &dst.MapOfInterface)
 	if err == nil {
 		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
 		if string(jsonMapOfInterface) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableNrfInfoServedMbSmfInfoListValueValue) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

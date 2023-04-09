@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// SupiRange - A range of SUPIs (subscriber identities), either based on a numeric range, or based on regular-expression matching 
+// SupiRange - A range of SUPIs (subscriber identities), either based on a numeric range, or based on regular-expression matching
 type SupiRange struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsSupiRange(v *interface{}) SupiRange {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SupiRange) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src SupiRange) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SupiRange) GetActualInstance() (interface{}) {
+func (obj *SupiRange) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableSupiRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

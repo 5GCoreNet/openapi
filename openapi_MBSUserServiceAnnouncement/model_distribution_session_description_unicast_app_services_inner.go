@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -41,7 +41,7 @@ func NewDistributionSessionDescriptionUnicastAppServicesInnerWithDefaults() *Dis
 
 // GetUnicastAppService returns the UnicastAppService field value if set, zero value otherwise.
 func (o *DistributionSessionDescriptionUnicastAppServicesInner) GetUnicastAppService() []ApplicationService {
-	if o == nil || isNil(o.UnicastAppService) {
+	if o == nil || IsNil(o.UnicastAppService) {
 		var ret []ApplicationService
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *DistributionSessionDescriptionUnicastAppServicesInner) GetUnicastAppSer
 // GetUnicastAppServiceOk returns a tuple with the UnicastAppService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionSessionDescriptionUnicastAppServicesInner) GetUnicastAppServiceOk() ([]ApplicationService, bool) {
-	if o == nil || isNil(o.UnicastAppService) {
+	if o == nil || IsNil(o.UnicastAppService) {
 		return nil, false
 	}
 	return o.UnicastAppService, true
@@ -59,7 +59,7 @@ func (o *DistributionSessionDescriptionUnicastAppServicesInner) GetUnicastAppSer
 
 // HasUnicastAppService returns a boolean if a field has been set.
 func (o *DistributionSessionDescriptionUnicastAppServicesInner) HasUnicastAppService() bool {
-	if o != nil && !isNil(o.UnicastAppService) {
+	if o != nil && !IsNil(o.UnicastAppService) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *DistributionSessionDescriptionUnicastAppServicesInner) SetUnicastAppSer
 }
 
 func (o DistributionSessionDescriptionUnicastAppServicesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o DistributionSessionDescriptionUnicastAppServicesInner) MarshalJSON() ([]
 
 func (o DistributionSessionDescriptionUnicastAppServicesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UnicastAppService) {
+	if !IsNil(o.UnicastAppService) {
 		toSerialize["unicastAppService"] = o.UnicastAppService
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableDistributionSessionDescriptionUnicastAppServicesInner) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

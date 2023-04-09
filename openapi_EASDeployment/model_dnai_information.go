@@ -1,7 +1,7 @@
 /*
 3gpp-eas-deployment
 
-API for AF provisioned EAS Deployment.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF provisioned EAS Deployment.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -24,7 +24,7 @@ type DnaiInformation struct {
 func (dst *DnaiInformation) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableDnaiInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApi service
 type UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService service
 
 type ApiCreateOrUpdatePeiInformationRequest struct {
-	ctx context.Context
-	ApiService *UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService
-	ueId string
+	ctx           context.Context
+	ApiService    *UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService
+	ueId          string
 	peiUpdateInfo *PeiUpdateInfo
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateOrUpdatePeiInformationRequest) Execute() (*PeiUpdateInfo, *http
 /*
 CreateOrUpdatePeiInformation Update the PEI Information of the 5GC/EPC domains
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateOrUpdatePeiInformationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateOrUpdatePeiInformationRequest
 */
 func (a *UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService) CreateOrUpdatePeiInformation(ctx context.Context, ueId string) ApiCreateOrUpdatePeiInformationRequest {
 	return ApiCreateOrUpdatePeiInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return PeiUpdateInfo
+//
+//	@return PeiUpdateInfo
 func (a *UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService) CreateOrUpdatePeiInformationExecute(r ApiCreateOrUpdatePeiInformationRequest) (*PeiUpdateInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PeiUpdateInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PeiUpdateInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService.CreateOrUpdatePeiInformation")
@@ -108,9 +108,9 @@ func (a *UpdateThePEIInformationOfThe5GCEPCDomainsDocumentApiService) CreateOrUp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

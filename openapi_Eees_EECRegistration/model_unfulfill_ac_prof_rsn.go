@@ -1,7 +1,7 @@
 /*
 Eees_EECRegistration
 
-API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -17,23 +17,23 @@ import (
 
 // UnfulfillACProfRsn represents reason for unfulfilled AC profile requirements.
 type UnfulfillACProfRsn struct {
-	UnfulfillACProfRsnAnyOf *UnfulfillACProfRsnAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UnfulfillACProfRsn) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UnfulfillACProfRsnAnyOf
-	err = json.Unmarshal(data, &dst.UnfulfillACProfRsnAnyOf);
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
-		jsonUnfulfillACProfRsnAnyOf, _ := json.Marshal(dst.UnfulfillACProfRsnAnyOf)
-		if string(jsonUnfulfillACProfRsnAnyOf) == "{}" { // empty struct
-			dst.UnfulfillACProfRsnAnyOf = nil
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
 		} else {
-			return nil // data stored in dst.UnfulfillACProfRsnAnyOf, return on the first match
+			return nil // data stored in dst.String, return on the first match
 		}
 	} else {
-		dst.UnfulfillACProfRsnAnyOf = nil
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(UnfulfillACProfRsn)")
@@ -41,8 +41,8 @@ func (dst *UnfulfillACProfRsn) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UnfulfillACProfRsn) MarshalJSON() ([]byte, error) {
-	if src.UnfulfillACProfRsnAnyOf != nil {
-		return json.Marshal(&src.UnfulfillACProfRsnAnyOf)
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas
@@ -83,5 +83,3 @@ func (v *NullableUnfulfillACProfRsn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

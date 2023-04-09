@@ -20,14 +20,14 @@ type NotificationType string
 
 // List of NotificationType
 const (
-	N1_MESSAGES NotificationType = "N1_MESSAGES"
-	N2_INFORMATION NotificationType = "N2_INFORMATION"
-	LOCATION_NOTIFICATION NotificationType = "LOCATION_NOTIFICATION"
-	DATA_REMOVAL_NOTIFICATION NotificationType = "DATA_REMOVAL_NOTIFICATION"
-	DATA_CHANGE_NOTIFICATION NotificationType = "DATA_CHANGE_NOTIFICATION"
+	N1_MESSAGES                  NotificationType = "N1_MESSAGES"
+	N2_INFORMATION               NotificationType = "N2_INFORMATION"
+	LOCATION_NOTIFICATION        NotificationType = "LOCATION_NOTIFICATION"
+	DATA_REMOVAL_NOTIFICATION    NotificationType = "DATA_REMOVAL_NOTIFICATION"
+	DATA_CHANGE_NOTIFICATION     NotificationType = "DATA_CHANGE_NOTIFICATION"
 	LOCATION_UPDATE_NOTIFICATION NotificationType = "LOCATION_UPDATE_NOTIFICATION"
-	NSSAA_REAUTH_NOTIFICATION NotificationType = "NSSAA_REAUTH_NOTIFICATION"
-	NSSAA_REVOC_NOTIFICATION NotificationType = "NSSAA_REVOC_NOTIFICATION"
+	NSSAA_REAUTH_NOTIFICATION    NotificationType = "NSSAA_REAUTH_NOTIFICATION"
+	NSSAA_REVOC_NOTIFICATION     NotificationType = "NSSAA_REVOC_NOTIFICATION"
 )
 
 // All allowed values of NotificationType enum
@@ -120,4 +120,3 @@ func (v *NullableNotificationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -62,9 +62,9 @@ type ServerVariable struct {
 
 // ServerConfiguration stores the information about a server
 type ServerConfiguration struct {
-	URL string
+	URL         string
 	Description string
-	Variables map[string]ServerVariable
+	Variables   map[string]ServerVariable
 }
 
 // ServerConfigurations stores multiple ServerConfiguration items
@@ -85,27 +85,26 @@ type Configuration struct {
 // NewConfiguration returns a new Configuration object
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
-		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/1.0.0/go",
-		Debug:            false,
-		Servers:          ServerConfigurations{
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "OpenAPI-Generator/1.0.0/go",
+		Debug:         false,
+		Servers: ServerConfigurations{
 			{
-				URL: "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}",
+				URL:         "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}",
 				Description: "No description provided",
 				Variables: map[string]ServerVariable{
 					"MnSRoot": ServerVariable{
-						Description: "See clause 4.4.3 of TS 32.158.",
+						Description:  "See clause 4.4.3 of TS 32.158.",
 						DefaultValue: "https://example.com/3GPPManagement",
 					},
 					"MnSVersion": ServerVariable{
-						Description: "See clause 4.4.3 of TS 32.158.",
+						Description:  "See clause 4.4.3 of TS 32.158.",
 						DefaultValue: "",
 					},
 				},
 			},
 		},
-		OperationServers: map[string]ServerConfigurations{
-		},
+		OperationServers: map[string]ServerConfigurations{},
 	}
 	return cfg
 }

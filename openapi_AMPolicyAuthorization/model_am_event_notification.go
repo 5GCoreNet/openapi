@@ -1,7 +1,7 @@
 /*
 3gpp-am-policyauthorization
 
-API for AM policy authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AM policy authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AmEventNotification{}
 
 // AmEventNotification Describes the notification of a subscription.
 type AmEventNotification struct {
-	Event AmEvent `json:"event"`
+	Event      AmEvent                  `json:"event"`
 	AppliedCov *ServiceAreaCoverageInfo `json:"appliedCov,omitempty"`
-	PduidInfo *PduidInformation `json:"pduidInfo,omitempty"`
+	PduidInfo  *PduidInformation        `json:"pduidInfo,omitempty"`
 }
 
 // NewAmEventNotification instantiates a new AmEventNotification object
@@ -68,7 +68,7 @@ func (o *AmEventNotification) SetEvent(v AmEvent) {
 
 // GetAppliedCov returns the AppliedCov field value if set, zero value otherwise.
 func (o *AmEventNotification) GetAppliedCov() ServiceAreaCoverageInfo {
-	if o == nil || isNil(o.AppliedCov) {
+	if o == nil || IsNil(o.AppliedCov) {
 		var ret ServiceAreaCoverageInfo
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AmEventNotification) GetAppliedCov() ServiceAreaCoverageInfo {
 // GetAppliedCovOk returns a tuple with the AppliedCov field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventNotification) GetAppliedCovOk() (*ServiceAreaCoverageInfo, bool) {
-	if o == nil || isNil(o.AppliedCov) {
+	if o == nil || IsNil(o.AppliedCov) {
 		return nil, false
 	}
 	return o.AppliedCov, true
@@ -86,7 +86,7 @@ func (o *AmEventNotification) GetAppliedCovOk() (*ServiceAreaCoverageInfo, bool)
 
 // HasAppliedCov returns a boolean if a field has been set.
 func (o *AmEventNotification) HasAppliedCov() bool {
-	if o != nil && !isNil(o.AppliedCov) {
+	if o != nil && !IsNil(o.AppliedCov) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AmEventNotification) SetAppliedCov(v ServiceAreaCoverageInfo) {
 
 // GetPduidInfo returns the PduidInfo field value if set, zero value otherwise.
 func (o *AmEventNotification) GetPduidInfo() PduidInformation {
-	if o == nil || isNil(o.PduidInfo) {
+	if o == nil || IsNil(o.PduidInfo) {
 		var ret PduidInformation
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AmEventNotification) GetPduidInfo() PduidInformation {
 // GetPduidInfoOk returns a tuple with the PduidInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventNotification) GetPduidInfoOk() (*PduidInformation, bool) {
-	if o == nil || isNil(o.PduidInfo) {
+	if o == nil || IsNil(o.PduidInfo) {
 		return nil, false
 	}
 	return o.PduidInfo, true
@@ -118,7 +118,7 @@ func (o *AmEventNotification) GetPduidInfoOk() (*PduidInformation, bool) {
 
 // HasPduidInfo returns a boolean if a field has been set.
 func (o *AmEventNotification) HasPduidInfo() bool {
-	if o != nil && !isNil(o.PduidInfo) {
+	if o != nil && !IsNil(o.PduidInfo) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AmEventNotification) SetPduidInfo(v PduidInformation) {
 }
 
 func (o AmEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o AmEventNotification) MarshalJSON() ([]byte, error) {
 func (o AmEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.AppliedCov) {
+	if !IsNil(o.AppliedCov) {
 		toSerialize["appliedCov"] = o.AppliedCov
 	}
-	if !isNil(o.PduidInfo) {
+	if !IsNil(o.PduidInfo) {
 		toSerialize["pduidInfo"] = o.PduidInfo
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableAmEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

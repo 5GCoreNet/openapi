@@ -19,10 +19,10 @@ var _ MappedNullable = &NrOperatorCellDuSingleAllOf{}
 
 // NrOperatorCellDuSingleAllOf struct for NrOperatorCellDuSingleAllOf
 type NrOperatorCellDuSingleAllOf struct {
-	CellLocalId *int32 `json:"cellLocalId,omitempty"`
+	CellLocalId         *int32               `json:"cellLocalId,omitempty"`
 	AdministrativeState *AdministrativeState `json:"administrativeState,omitempty"`
-	PlmnInfoList []PlmnInfo `json:"plmnInfoList,omitempty"`
-	NrTac *int32 `json:"nrTac,omitempty"`
+	PlmnInfoList        []PlmnInfo           `json:"plmnInfoList,omitempty"`
+	NrTac               *int32               `json:"nrTac,omitempty"`
 }
 
 // NewNrOperatorCellDuSingleAllOf instantiates a new NrOperatorCellDuSingleAllOf object
@@ -44,7 +44,7 @@ func NewNrOperatorCellDuSingleAllOfWithDefaults() *NrOperatorCellDuSingleAllOf {
 
 // GetCellLocalId returns the CellLocalId field value if set, zero value otherwise.
 func (o *NrOperatorCellDuSingleAllOf) GetCellLocalId() int32 {
-	if o == nil || isNil(o.CellLocalId) {
+	if o == nil || IsNil(o.CellLocalId) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetCellLocalId() int32 {
 // GetCellLocalIdOk returns a tuple with the CellLocalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrOperatorCellDuSingleAllOf) GetCellLocalIdOk() (*int32, bool) {
-	if o == nil || isNil(o.CellLocalId) {
+	if o == nil || IsNil(o.CellLocalId) {
 		return nil, false
 	}
 	return o.CellLocalId, true
@@ -62,7 +62,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetCellLocalIdOk() (*int32, bool) {
 
 // HasCellLocalId returns a boolean if a field has been set.
 func (o *NrOperatorCellDuSingleAllOf) HasCellLocalId() bool {
-	if o != nil && !isNil(o.CellLocalId) {
+	if o != nil && !IsNil(o.CellLocalId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *NrOperatorCellDuSingleAllOf) SetCellLocalId(v int32) {
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *NrOperatorCellDuSingleAllOf) GetAdministrativeState() AdministrativeState {
-	if o == nil || isNil(o.AdministrativeState) {
+	if o == nil || IsNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetAdministrativeState() AdministrativeSta
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrOperatorCellDuSingleAllOf) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || isNil(o.AdministrativeState) {
+	if o == nil || IsNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -94,7 +94,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetAdministrativeStateOk() (*Administrativ
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *NrOperatorCellDuSingleAllOf) HasAdministrativeState() bool {
-	if o != nil && !isNil(o.AdministrativeState) {
+	if o != nil && !IsNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *NrOperatorCellDuSingleAllOf) SetAdministrativeState(v AdministrativeSta
 
 // GetPlmnInfoList returns the PlmnInfoList field value if set, zero value otherwise.
 func (o *NrOperatorCellDuSingleAllOf) GetPlmnInfoList() []PlmnInfo {
-	if o == nil || isNil(o.PlmnInfoList) {
+	if o == nil || IsNil(o.PlmnInfoList) {
 		var ret []PlmnInfo
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetPlmnInfoList() []PlmnInfo {
 // GetPlmnInfoListOk returns a tuple with the PlmnInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrOperatorCellDuSingleAllOf) GetPlmnInfoListOk() ([]PlmnInfo, bool) {
-	if o == nil || isNil(o.PlmnInfoList) {
+	if o == nil || IsNil(o.PlmnInfoList) {
 		return nil, false
 	}
 	return o.PlmnInfoList, true
@@ -126,7 +126,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetPlmnInfoListOk() ([]PlmnInfo, bool) {
 
 // HasPlmnInfoList returns a boolean if a field has been set.
 func (o *NrOperatorCellDuSingleAllOf) HasPlmnInfoList() bool {
-	if o != nil && !isNil(o.PlmnInfoList) {
+	if o != nil && !IsNil(o.PlmnInfoList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *NrOperatorCellDuSingleAllOf) SetPlmnInfoList(v []PlmnInfo) {
 
 // GetNrTac returns the NrTac field value if set, zero value otherwise.
 func (o *NrOperatorCellDuSingleAllOf) GetNrTac() int32 {
-	if o == nil || isNil(o.NrTac) {
+	if o == nil || IsNil(o.NrTac) {
 		var ret int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetNrTac() int32 {
 // GetNrTacOk returns a tuple with the NrTac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrOperatorCellDuSingleAllOf) GetNrTacOk() (*int32, bool) {
-	if o == nil || isNil(o.NrTac) {
+	if o == nil || IsNil(o.NrTac) {
 		return nil, false
 	}
 	return o.NrTac, true
@@ -158,7 +158,7 @@ func (o *NrOperatorCellDuSingleAllOf) GetNrTacOk() (*int32, bool) {
 
 // HasNrTac returns a boolean if a field has been set.
 func (o *NrOperatorCellDuSingleAllOf) HasNrTac() bool {
-	if o != nil && !isNil(o.NrTac) {
+	if o != nil && !IsNil(o.NrTac) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NrOperatorCellDuSingleAllOf) SetNrTac(v int32) {
 }
 
 func (o NrOperatorCellDuSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o NrOperatorCellDuSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NrOperatorCellDuSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CellLocalId) {
+	if !IsNil(o.CellLocalId) {
 		toSerialize["cellLocalId"] = o.CellLocalId
 	}
-	if !isNil(o.AdministrativeState) {
+	if !IsNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
-	if !isNil(o.PlmnInfoList) {
+	if !IsNil(o.PlmnInfoList) {
 		toSerialize["plmnInfoList"] = o.PlmnInfoList
 	}
-	if !isNil(o.NrTac) {
+	if !IsNil(o.NrTac) {
 		toSerialize["nrTac"] = o.NrTac
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableNrOperatorCellDuSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

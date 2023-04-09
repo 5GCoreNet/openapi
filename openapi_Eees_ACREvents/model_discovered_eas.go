@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -69,7 +69,7 @@ func (o *DiscoveredEas) SetEas(v EASProfile) {
 
 // GetLifeTime returns the LifeTime field value if set, zero value otherwise.
 func (o *DiscoveredEas) GetLifeTime() time.Time {
-	if o == nil || isNil(o.LifeTime) {
+	if o == nil || IsNil(o.LifeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *DiscoveredEas) GetLifeTime() time.Time {
 // GetLifeTimeOk returns a tuple with the LifeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiscoveredEas) GetLifeTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LifeTime) {
+	if o == nil || IsNil(o.LifeTime) {
 		return nil, false
 	}
 	return o.LifeTime, true
@@ -87,7 +87,7 @@ func (o *DiscoveredEas) GetLifeTimeOk() (*time.Time, bool) {
 
 // HasLifeTime returns a boolean if a field has been set.
 func (o *DiscoveredEas) HasLifeTime() bool {
-	if o != nil && !isNil(o.LifeTime) {
+	if o != nil && !IsNil(o.LifeTime) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *DiscoveredEas) SetLifeTime(v time.Time) {
 }
 
 func (o DiscoveredEas) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o DiscoveredEas) MarshalJSON() ([]byte, error) {
 func (o DiscoveredEas) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eas"] = o.Eas
-	if !isNil(o.LifeTime) {
+	if !IsNil(o.LifeTime) {
 		toSerialize["lifeTime"] = o.LifeTime
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableDiscoveredEas) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

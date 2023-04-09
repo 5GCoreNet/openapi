@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -47,7 +47,7 @@ func NewRecordMetaWithDefaults() *RecordMeta {
 
 // GetTtl returns the Ttl field value if set, zero value otherwise.
 func (o *RecordMeta) GetTtl() time.Time {
-	if o == nil || isNil(o.Ttl) {
+	if o == nil || IsNil(o.Ttl) {
 		var ret time.Time
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *RecordMeta) GetTtl() time.Time {
 // GetTtlOk returns a tuple with the Ttl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordMeta) GetTtlOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Ttl) {
+	if o == nil || IsNil(o.Ttl) {
 		return nil, false
 	}
 	return o.Ttl, true
@@ -65,7 +65,7 @@ func (o *RecordMeta) GetTtlOk() (*time.Time, bool) {
 
 // HasTtl returns a boolean if a field has been set.
 func (o *RecordMeta) HasTtl() bool {
-	if o != nil && !isNil(o.Ttl) {
+	if o != nil && !IsNil(o.Ttl) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *RecordMeta) SetTtl(v time.Time) {
 
 // GetCallbackReference returns the CallbackReference field value if set, zero value otherwise.
 func (o *RecordMeta) GetCallbackReference() string {
-	if o == nil || isNil(o.CallbackReference) {
+	if o == nil || IsNil(o.CallbackReference) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *RecordMeta) GetCallbackReference() string {
 // GetCallbackReferenceOk returns a tuple with the CallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordMeta) GetCallbackReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.CallbackReference) {
+	if o == nil || IsNil(o.CallbackReference) {
 		return nil, false
 	}
 	return o.CallbackReference, true
@@ -97,7 +97,7 @@ func (o *RecordMeta) GetCallbackReferenceOk() (*string, bool) {
 
 // HasCallbackReference returns a boolean if a field has been set.
 func (o *RecordMeta) HasCallbackReference() bool {
-	if o != nil && !isNil(o.CallbackReference) {
+	if o != nil && !IsNil(o.CallbackReference) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *RecordMeta) SetCallbackReference(v string) {
 
 // GetTags returns the Tags field value if set, zero value otherwise.
 func (o *RecordMeta) GetTags() map[string][]string {
-	if o == nil || isNil(o.Tags) {
+	if o == nil || IsNil(o.Tags) {
 		var ret map[string][]string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *RecordMeta) GetTags() map[string][]string {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordMeta) GetTagsOk() (*map[string][]string, bool) {
-	if o == nil || isNil(o.Tags) {
+	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
 	return o.Tags, true
@@ -129,7 +129,7 @@ func (o *RecordMeta) GetTagsOk() (*map[string][]string, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *RecordMeta) HasTags() bool {
-	if o != nil && !isNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *RecordMeta) SetTags(v map[string][]string) {
 }
 
 func (o RecordMeta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -151,13 +151,13 @@ func (o RecordMeta) MarshalJSON() ([]byte, error) {
 
 func (o RecordMeta) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ttl) {
+	if !IsNil(o.Ttl) {
 		toSerialize["ttl"] = o.Ttl
 	}
-	if !isNil(o.CallbackReference) {
+	if !IsNil(o.CallbackReference) {
 		toSerialize["callbackReference"] = o.CallbackReference
 	}
-	if !isNil(o.Tags) {
+	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
@@ -198,5 +198,3 @@ func (v *NullableRecordMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AdditionalSnssaiData{}
 
 // AdditionalSnssaiData struct for AdditionalSnssaiData
 type AdditionalSnssaiData struct {
-	RequiredAuthnAuthz *bool `json:"requiredAuthnAuthz,omitempty"`
+	RequiredAuthnAuthz   *bool       `json:"requiredAuthnAuthz,omitempty"`
 	SubscribedUeSliceMbr *SliceMbrRm `json:"subscribedUeSliceMbr,omitempty"`
-	SubscribedNsSrgList []string `json:"subscribedNsSrgList,omitempty"`
+	SubscribedNsSrgList  []string    `json:"subscribedNsSrgList,omitempty"`
 }
 
 // NewAdditionalSnssaiData instantiates a new AdditionalSnssaiData object
@@ -43,7 +43,7 @@ func NewAdditionalSnssaiDataWithDefaults() *AdditionalSnssaiData {
 
 // GetRequiredAuthnAuthz returns the RequiredAuthnAuthz field value if set, zero value otherwise.
 func (o *AdditionalSnssaiData) GetRequiredAuthnAuthz() bool {
-	if o == nil || isNil(o.RequiredAuthnAuthz) {
+	if o == nil || IsNil(o.RequiredAuthnAuthz) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AdditionalSnssaiData) GetRequiredAuthnAuthz() bool {
 // GetRequiredAuthnAuthzOk returns a tuple with the RequiredAuthnAuthz field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalSnssaiData) GetRequiredAuthnAuthzOk() (*bool, bool) {
-	if o == nil || isNil(o.RequiredAuthnAuthz) {
+	if o == nil || IsNil(o.RequiredAuthnAuthz) {
 		return nil, false
 	}
 	return o.RequiredAuthnAuthz, true
@@ -61,7 +61,7 @@ func (o *AdditionalSnssaiData) GetRequiredAuthnAuthzOk() (*bool, bool) {
 
 // HasRequiredAuthnAuthz returns a boolean if a field has been set.
 func (o *AdditionalSnssaiData) HasRequiredAuthnAuthz() bool {
-	if o != nil && !isNil(o.RequiredAuthnAuthz) {
+	if o != nil && !IsNil(o.RequiredAuthnAuthz) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AdditionalSnssaiData) SetRequiredAuthnAuthz(v bool) {
 
 // GetSubscribedUeSliceMbr returns the SubscribedUeSliceMbr field value if set, zero value otherwise.
 func (o *AdditionalSnssaiData) GetSubscribedUeSliceMbr() SliceMbrRm {
-	if o == nil || isNil(o.SubscribedUeSliceMbr) {
+	if o == nil || IsNil(o.SubscribedUeSliceMbr) {
 		var ret SliceMbrRm
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AdditionalSnssaiData) GetSubscribedUeSliceMbr() SliceMbrRm {
 // GetSubscribedUeSliceMbrOk returns a tuple with the SubscribedUeSliceMbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalSnssaiData) GetSubscribedUeSliceMbrOk() (*SliceMbrRm, bool) {
-	if o == nil || isNil(o.SubscribedUeSliceMbr) {
+	if o == nil || IsNil(o.SubscribedUeSliceMbr) {
 		return nil, false
 	}
 	return o.SubscribedUeSliceMbr, true
@@ -93,7 +93,7 @@ func (o *AdditionalSnssaiData) GetSubscribedUeSliceMbrOk() (*SliceMbrRm, bool) {
 
 // HasSubscribedUeSliceMbr returns a boolean if a field has been set.
 func (o *AdditionalSnssaiData) HasSubscribedUeSliceMbr() bool {
-	if o != nil && !isNil(o.SubscribedUeSliceMbr) {
+	if o != nil && !IsNil(o.SubscribedUeSliceMbr) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AdditionalSnssaiData) SetSubscribedUeSliceMbr(v SliceMbrRm) {
 
 // GetSubscribedNsSrgList returns the SubscribedNsSrgList field value if set, zero value otherwise.
 func (o *AdditionalSnssaiData) GetSubscribedNsSrgList() []string {
-	if o == nil || isNil(o.SubscribedNsSrgList) {
+	if o == nil || IsNil(o.SubscribedNsSrgList) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AdditionalSnssaiData) GetSubscribedNsSrgList() []string {
 // GetSubscribedNsSrgListOk returns a tuple with the SubscribedNsSrgList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalSnssaiData) GetSubscribedNsSrgListOk() ([]string, bool) {
-	if o == nil || isNil(o.SubscribedNsSrgList) {
+	if o == nil || IsNil(o.SubscribedNsSrgList) {
 		return nil, false
 	}
 	return o.SubscribedNsSrgList, true
@@ -125,7 +125,7 @@ func (o *AdditionalSnssaiData) GetSubscribedNsSrgListOk() ([]string, bool) {
 
 // HasSubscribedNsSrgList returns a boolean if a field has been set.
 func (o *AdditionalSnssaiData) HasSubscribedNsSrgList() bool {
-	if o != nil && !isNil(o.SubscribedNsSrgList) {
+	if o != nil && !IsNil(o.SubscribedNsSrgList) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AdditionalSnssaiData) SetSubscribedNsSrgList(v []string) {
 }
 
 func (o AdditionalSnssaiData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o AdditionalSnssaiData) MarshalJSON() ([]byte, error) {
 
 func (o AdditionalSnssaiData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RequiredAuthnAuthz) {
+	if !IsNil(o.RequiredAuthnAuthz) {
 		toSerialize["requiredAuthnAuthz"] = o.RequiredAuthnAuthz
 	}
-	if !isNil(o.SubscribedUeSliceMbr) {
+	if !IsNil(o.SubscribedUeSliceMbr) {
 		toSerialize["subscribedUeSliceMbr"] = o.SubscribedUeSliceMbr
 	}
-	if !isNil(o.SubscribedNsSrgList) {
+	if !IsNil(o.SubscribedNsSrgList) {
 		toSerialize["subscribedNsSrgList"] = o.SubscribedNsSrgList
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableAdditionalSnssaiData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

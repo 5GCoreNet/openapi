@@ -40,6 +40,7 @@ components:
       - notificationType
       - systemDN
       type: object
+      x-parent: true
     Uri:
       type: string
     NotificationId:

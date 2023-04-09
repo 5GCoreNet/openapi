@@ -18,7 +18,7 @@ import (
 // IpAddress - struct for IpAddress
 type IpAddress struct {
 	Ipv6Addr *Ipv6Addr
-	String *string
+	String   *string
 }
 
 // Ipv6AddrAsIpAddress is a convenience function that returns Ipv6Addr wrapped in IpAddress
@@ -34,7 +34,6 @@ func StringAsIpAddress(v *string) IpAddress {
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IpAddress) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src IpAddress) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IpAddress) GetActualInstance() (interface{}) {
+func (obj *IpAddress) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableIpAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

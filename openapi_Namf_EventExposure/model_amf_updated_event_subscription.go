@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &AmfUpdatedEventSubscription{}
 // AmfUpdatedEventSubscription Represents a successful update on an AMF Event Subscription
 type AmfUpdatedEventSubscription struct {
 	Subscription AmfEventSubscription `json:"subscription"`
-	ReportList []AmfEventReport `json:"reportList,omitempty"`
+	ReportList   []AmfEventReport     `json:"reportList,omitempty"`
 }
 
 // NewAmfUpdatedEventSubscription instantiates a new AmfUpdatedEventSubscription object
@@ -67,7 +67,7 @@ func (o *AmfUpdatedEventSubscription) SetSubscription(v AmfEventSubscription) {
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *AmfUpdatedEventSubscription) GetReportList() []AmfEventReport {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		var ret []AmfEventReport
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *AmfUpdatedEventSubscription) GetReportList() []AmfEventReport {
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool) {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -85,7 +85,7 @@ func (o *AmfUpdatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool)
 
 // HasReportList returns a boolean if a field has been set.
 func (o *AmfUpdatedEventSubscription) HasReportList() bool {
-	if o != nil && !isNil(o.ReportList) {
+	if o != nil && !IsNil(o.ReportList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *AmfUpdatedEventSubscription) SetReportList(v []AmfEventReport) {
 }
 
 func (o AmfUpdatedEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o AmfUpdatedEventSubscription) MarshalJSON() ([]byte, error) {
 func (o AmfUpdatedEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !isNil(o.ReportList) {
+	if !IsNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableAmfUpdatedEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

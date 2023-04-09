@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &EventsSubs{}
 
 // EventsSubs Represents an event to be subscribed and the related event filter information.
 type EventsSubs struct {
-	Event AfEvent `json:"event"`
+	Event       AfEvent     `json:"event"`
 	EventFilter EventFilter `json:"eventFilter"`
 }
 
@@ -91,7 +91,7 @@ func (o *EventsSubs) SetEventFilter(v EventFilter) {
 }
 
 func (o EventsSubs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableEventsSubs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

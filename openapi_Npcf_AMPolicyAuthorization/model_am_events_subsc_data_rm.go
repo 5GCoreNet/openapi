@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AmEventsSubscDataRm{}
 // AmEventsSubscDataRm This data type is defined in the same way as the AmEventsSubscData but with the OpenAPI nullable property set to true.
 type AmEventsSubscDataRm struct {
 	// String providing an URI formatted according to RFC 3986.
-	EventNotifUri *string `json:"eventNotifUri,omitempty"`
-	Events []AmEventData `json:"events,omitempty"`
+	EventNotifUri *string       `json:"eventNotifUri,omitempty"`
+	Events        []AmEventData `json:"events,omitempty"`
 }
 
 // NewAmEventsSubscDataRm instantiates a new AmEventsSubscDataRm object
@@ -43,7 +43,7 @@ func NewAmEventsSubscDataRmWithDefaults() *AmEventsSubscDataRm {
 
 // GetEventNotifUri returns the EventNotifUri field value if set, zero value otherwise.
 func (o *AmEventsSubscDataRm) GetEventNotifUri() string {
-	if o == nil || isNil(o.EventNotifUri) {
+	if o == nil || IsNil(o.EventNotifUri) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AmEventsSubscDataRm) GetEventNotifUri() string {
 // GetEventNotifUriOk returns a tuple with the EventNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsSubscDataRm) GetEventNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.EventNotifUri) {
+	if o == nil || IsNil(o.EventNotifUri) {
 		return nil, false
 	}
 	return o.EventNotifUri, true
@@ -61,7 +61,7 @@ func (o *AmEventsSubscDataRm) GetEventNotifUriOk() (*string, bool) {
 
 // HasEventNotifUri returns a boolean if a field has been set.
 func (o *AmEventsSubscDataRm) HasEventNotifUri() bool {
-	if o != nil && !isNil(o.EventNotifUri) {
+	if o != nil && !IsNil(o.EventNotifUri) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AmEventsSubscDataRm) SetEventNotifUri(v string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *AmEventsSubscDataRm) GetEvents() []AmEventData {
-	if o == nil || isNil(o.Events) {
+	if o == nil || IsNil(o.Events) {
 		var ret []AmEventData
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AmEventsSubscDataRm) GetEvents() []AmEventData {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsSubscDataRm) GetEventsOk() ([]AmEventData, bool) {
-	if o == nil || isNil(o.Events) {
+	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -93,7 +93,7 @@ func (o *AmEventsSubscDataRm) GetEventsOk() ([]AmEventData, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *AmEventsSubscDataRm) HasEvents() bool {
-	if o != nil && !isNil(o.Events) {
+	if o != nil && !IsNil(o.Events) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AmEventsSubscDataRm) SetEvents(v []AmEventData) {
 }
 
 func (o AmEventsSubscDataRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o AmEventsSubscDataRm) MarshalJSON() ([]byte, error) {
 
 func (o AmEventsSubscDataRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EventNotifUri) {
+	if !IsNil(o.EventNotifUri) {
 		toSerialize["eventNotifUri"] = o.EventNotifUri
 	}
-	if !isNil(o.Events) {
+	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableAmEventsSubscDataRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

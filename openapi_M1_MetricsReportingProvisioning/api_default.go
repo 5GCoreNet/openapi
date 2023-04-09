@@ -1,7 +1,7 @@
 /*
 M1_MetricsReportingProvisioning
 
-5GMS AF M1 Metrics Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Metrics Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,20 +13,19 @@ package openapi_M1_MetricsReportingProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiActivateMetricsReportingRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                           context.Context
+	ApiService                    *DefaultApiService
+	provisioningSessionId         string
 	metricsReportingConfiguration *MetricsReportingConfiguration
 }
 
@@ -43,14 +42,14 @@ func (r ApiActivateMetricsReportingRequest) Execute() (*http.Response, error) {
 /*
 ActivateMetricsReporting Activate the Metrics reporting procedure for the specified Provisioning Session by providing the Metrics Reporting Configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiActivateMetricsReportingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiActivateMetricsReportingRequest
 */
 func (a *DefaultApiService) ActivateMetricsReporting(ctx context.Context, provisioningSessionId string) ApiActivateMetricsReportingRequest {
 	return ApiActivateMetricsReportingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) ActivateMetricsReporting(ctx context.Context, provis
 // Execute executes the request
 func (a *DefaultApiService) ActivateMetricsReportingExecute(r ApiActivateMetricsReportingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ActivateMetricsReporting")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) ActivateMetricsReportingExecute(r ApiActivateMetrics
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,9 +125,9 @@ func (a *DefaultApiService) ActivateMetricsReportingExecute(r ApiActivateMetrics
 }
 
 type ApiDestroyMetricsReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                             context.Context
+	ApiService                      *DefaultApiService
+	provisioningSessionId           string
 	metricsReportingConfigurationId string
 }
 
@@ -139,16 +138,16 @@ func (r ApiDestroyMetricsReportingConfigurationRequest) Execute() (*http.Respons
 /*
 DestroyMetricsReportingConfiguration Destroy the specified Metrics Reporting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
- @return ApiDestroyMetricsReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
+	@return ApiDestroyMetricsReportingConfigurationRequest
 */
 func (a *DefaultApiService) DestroyMetricsReportingConfiguration(ctx context.Context, provisioningSessionId string, metricsReportingConfigurationId string) ApiDestroyMetricsReportingConfigurationRequest {
 	return ApiDestroyMetricsReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                      a,
+		ctx:                             ctx,
+		provisioningSessionId:           provisioningSessionId,
 		metricsReportingConfigurationId: metricsReportingConfigurationId,
 	}
 }
@@ -156,9 +155,9 @@ func (a *DefaultApiService) DestroyMetricsReportingConfiguration(ctx context.Con
 // Execute executes the request
 func (a *DefaultApiService) DestroyMetricsReportingConfigurationExecute(r ApiDestroyMetricsReportingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyMetricsReportingConfiguration")
@@ -201,9 +200,9 @@ func (a *DefaultApiService) DestroyMetricsReportingConfigurationExecute(r ApiDes
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -220,11 +219,11 @@ func (a *DefaultApiService) DestroyMetricsReportingConfigurationExecute(r ApiDes
 }
 
 type ApiPatchMetricsReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                             context.Context
+	ApiService                      *DefaultApiService
+	provisioningSessionId           string
 	metricsReportingConfigurationId string
-	metricsReportingConfiguration *MetricsReportingConfiguration
+	metricsReportingConfiguration   *MetricsReportingConfiguration
 }
 
 // A JSON representation of a Metrics Reporting Configuration
@@ -240,28 +239,29 @@ func (r ApiPatchMetricsReportingConfigurationRequest) Execute() (*MetricsReporti
 /*
 PatchMetricsReportingConfiguration Patch the specified Metrics Reporting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
- @return ApiPatchMetricsReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
+	@return ApiPatchMetricsReportingConfigurationRequest
 */
 func (a *DefaultApiService) PatchMetricsReportingConfiguration(ctx context.Context, provisioningSessionId string, metricsReportingConfigurationId string) ApiPatchMetricsReportingConfigurationRequest {
 	return ApiPatchMetricsReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                      a,
+		ctx:                             ctx,
+		provisioningSessionId:           provisioningSessionId,
 		metricsReportingConfigurationId: metricsReportingConfigurationId,
 	}
 }
 
 // Execute executes the request
-//  @return MetricsReportingConfiguration
+//
+//	@return MetricsReportingConfiguration
 func (a *DefaultApiService) PatchMetricsReportingConfigurationExecute(r ApiPatchMetricsReportingConfigurationRequest) (*MetricsReportingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MetricsReportingConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MetricsReportingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchMetricsReportingConfiguration")
@@ -309,9 +309,9 @@ func (a *DefaultApiService) PatchMetricsReportingConfigurationExecute(r ApiPatch
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -337,9 +337,9 @@ func (a *DefaultApiService) PatchMetricsReportingConfigurationExecute(r ApiPatch
 }
 
 type ApiRetrieveMetricsReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                             context.Context
+	ApiService                      *DefaultApiService
+	provisioningSessionId           string
 	metricsReportingConfigurationId string
 }
 
@@ -350,28 +350,29 @@ func (r ApiRetrieveMetricsReportingConfigurationRequest) Execute() (*MetricsRepo
 /*
 RetrieveMetricsReportingConfiguration Retrieve the specified Metrics Reporting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
- @return ApiRetrieveMetricsReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
+	@return ApiRetrieveMetricsReportingConfigurationRequest
 */
 func (a *DefaultApiService) RetrieveMetricsReportingConfiguration(ctx context.Context, provisioningSessionId string, metricsReportingConfigurationId string) ApiRetrieveMetricsReportingConfigurationRequest {
 	return ApiRetrieveMetricsReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                      a,
+		ctx:                             ctx,
+		provisioningSessionId:           provisioningSessionId,
 		metricsReportingConfigurationId: metricsReportingConfigurationId,
 	}
 }
 
 // Execute executes the request
-//  @return MetricsReportingConfiguration
+//
+//	@return MetricsReportingConfiguration
 func (a *DefaultApiService) RetrieveMetricsReportingConfigurationExecute(r ApiRetrieveMetricsReportingConfigurationRequest) (*MetricsReportingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MetricsReportingConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MetricsReportingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveMetricsReportingConfiguration")
@@ -414,9 +415,9 @@ func (a *DefaultApiService) RetrieveMetricsReportingConfigurationExecute(r ApiRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -442,11 +443,11 @@ func (a *DefaultApiService) RetrieveMetricsReportingConfigurationExecute(r ApiRe
 }
 
 type ApiUpdateMetricsReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                             context.Context
+	ApiService                      *DefaultApiService
+	provisioningSessionId           string
 	metricsReportingConfigurationId string
-	metricsReportingConfiguration *MetricsReportingConfiguration
+	metricsReportingConfiguration   *MetricsReportingConfiguration
 }
 
 // A JSON representation of a Metrics Reporting Configuration
@@ -462,16 +463,16 @@ func (r ApiUpdateMetricsReportingConfigurationRequest) Execute() (*http.Response
 /*
 UpdateMetricsReportingConfiguration Update the specified Metrics Reporting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
- @return ApiUpdateMetricsReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param metricsReportingConfigurationId The resource identifier of a Metrics Reporting Configuration.
+	@return ApiUpdateMetricsReportingConfigurationRequest
 */
 func (a *DefaultApiService) UpdateMetricsReportingConfiguration(ctx context.Context, provisioningSessionId string, metricsReportingConfigurationId string) ApiUpdateMetricsReportingConfigurationRequest {
 	return ApiUpdateMetricsReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                      a,
+		ctx:                             ctx,
+		provisioningSessionId:           provisioningSessionId,
 		metricsReportingConfigurationId: metricsReportingConfigurationId,
 	}
 }
@@ -479,9 +480,9 @@ func (a *DefaultApiService) UpdateMetricsReportingConfiguration(ctx context.Cont
 // Execute executes the request
 func (a *DefaultApiService) UpdateMetricsReportingConfigurationExecute(r ApiUpdateMetricsReportingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateMetricsReportingConfiguration")
@@ -529,9 +530,9 @@ func (a *DefaultApiService) UpdateMetricsReportingConfigurationExecute(r ApiUpda
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,19 +8,6 @@ api_determine_acr.go
 api_initiate_acr.go
 client.go
 configuration.go
-docs/AcrDecReq.md
-docs/AcrDetermReq.md
-docs/AcrInitReq.md
-docs/DeclareSelectedTargetEASApi.md
-docs/DetermineACRApi.md
-docs/EecCtxtReloc.md
-docs/EndPoint.md
-docs/InitiateACRApi.md
-docs/InvalidParam.md
-docs/Ipv6Addr.md
-docs/ProblemDetails.md
-docs/RouteInformation.md
-docs/RouteToLocation.md
 git_push.sh
 go.mod
 go.sum
@@ -34,7 +22,4 @@ model_problem_details.go
 model_route_information.go
 model_route_to_location.go
 response.go
-test/api_declare_selected_target_eas_test.go
-test/api_determine_acr_test.go
-test/api_initiate_acr_test.go
 utils.go

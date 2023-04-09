@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &IdentityFilter{}
 type IdentityFilter struct {
 	// Identity of the VAL service
 	ValSvcId *string `json:"valSvcId,omitempty"`
-	// VAL User IDs or VAL UE IDs that the event subscriber wants to know in the interested event. 
+	// VAL User IDs or VAL UE IDs that the event subscriber wants to know in the interested event.
 	ValTgtUes []ValTargetUe `json:"valTgtUes,omitempty"`
 	// Set to true by Subscriber to request the supplementary location information.
 	SuppLoc *bool `json:"suppLoc,omitempty"`
@@ -46,7 +46,7 @@ func NewIdentityFilterWithDefaults() *IdentityFilter {
 
 // GetValSvcId returns the ValSvcId field value if set, zero value otherwise.
 func (o *IdentityFilter) GetValSvcId() string {
-	if o == nil || isNil(o.ValSvcId) {
+	if o == nil || IsNil(o.ValSvcId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *IdentityFilter) GetValSvcId() string {
 // GetValSvcIdOk returns a tuple with the ValSvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityFilter) GetValSvcIdOk() (*string, bool) {
-	if o == nil || isNil(o.ValSvcId) {
+	if o == nil || IsNil(o.ValSvcId) {
 		return nil, false
 	}
 	return o.ValSvcId, true
@@ -64,7 +64,7 @@ func (o *IdentityFilter) GetValSvcIdOk() (*string, bool) {
 
 // HasValSvcId returns a boolean if a field has been set.
 func (o *IdentityFilter) HasValSvcId() bool {
-	if o != nil && !isNil(o.ValSvcId) {
+	if o != nil && !IsNil(o.ValSvcId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *IdentityFilter) SetValSvcId(v string) {
 
 // GetValTgtUes returns the ValTgtUes field value if set, zero value otherwise.
 func (o *IdentityFilter) GetValTgtUes() []ValTargetUe {
-	if o == nil || isNil(o.ValTgtUes) {
+	if o == nil || IsNil(o.ValTgtUes) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *IdentityFilter) GetValTgtUes() []ValTargetUe {
 // GetValTgtUesOk returns a tuple with the ValTgtUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityFilter) GetValTgtUesOk() ([]ValTargetUe, bool) {
-	if o == nil || isNil(o.ValTgtUes) {
+	if o == nil || IsNil(o.ValTgtUes) {
 		return nil, false
 	}
 	return o.ValTgtUes, true
@@ -96,7 +96,7 @@ func (o *IdentityFilter) GetValTgtUesOk() ([]ValTargetUe, bool) {
 
 // HasValTgtUes returns a boolean if a field has been set.
 func (o *IdentityFilter) HasValTgtUes() bool {
-	if o != nil && !isNil(o.ValTgtUes) {
+	if o != nil && !IsNil(o.ValTgtUes) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *IdentityFilter) SetValTgtUes(v []ValTargetUe) {
 
 // GetSuppLoc returns the SuppLoc field value if set, zero value otherwise.
 func (o *IdentityFilter) GetSuppLoc() bool {
-	if o == nil || isNil(o.SuppLoc) {
+	if o == nil || IsNil(o.SuppLoc) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *IdentityFilter) GetSuppLoc() bool {
 // GetSuppLocOk returns a tuple with the SuppLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityFilter) GetSuppLocOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppLoc) {
+	if o == nil || IsNil(o.SuppLoc) {
 		return nil, false
 	}
 	return o.SuppLoc, true
@@ -128,7 +128,7 @@ func (o *IdentityFilter) GetSuppLocOk() (*bool, bool) {
 
 // HasSuppLoc returns a boolean if a field has been set.
 func (o *IdentityFilter) HasSuppLoc() bool {
-	if o != nil && !isNil(o.SuppLoc) {
+	if o != nil && !IsNil(o.SuppLoc) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *IdentityFilter) SetSuppLoc(v bool) {
 }
 
 func (o IdentityFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o IdentityFilter) MarshalJSON() ([]byte, error) {
 
 func (o IdentityFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ValSvcId) {
+	if !IsNil(o.ValSvcId) {
 		toSerialize["valSvcId"] = o.ValSvcId
 	}
-	if !isNil(o.ValTgtUes) {
+	if !IsNil(o.ValTgtUes) {
 		toSerialize["valTgtUes"] = o.ValTgtUes
 	}
-	if !isNil(o.SuppLoc) {
+	if !IsNil(o.SuppLoc) {
 		toSerialize["suppLoc"] = o.SuppLoc
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableIdentityFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

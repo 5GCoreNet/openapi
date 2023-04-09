@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,35 +19,35 @@ var _ MappedNullable = &SmPolicyDnnData{}
 
 // SmPolicyDnnData Contains the SM policy data for a given DNN (and S-NSSAI).
 type SmPolicyDnnData struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn string `json:"dnn"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn             string   `json:"dnn"`
 	AllowedServices []string `json:"allowedServices,omitempty"`
-	SubscCats []string `json:"subscCats,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	SubscCats       []string `json:"subscCats,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GbrUl *string `json:"gbrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	GbrDl *string `json:"gbrDl,omitempty"`
-	AdcSupport *bool `json:"adcSupport,omitempty"`
-	SubscSpendingLimits *bool `json:"subscSpendingLimits,omitempty"`
-	// Represents information that identifies which IP pool or external server is used to allocate the IP address. 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	GbrDl               *string `json:"gbrDl,omitempty"`
+	AdcSupport          *bool   `json:"adcSupport,omitempty"`
+	SubscSpendingLimits *bool   `json:"subscSpendingLimits,omitempty"`
+	// Represents information that identifies which IP pool or external server is used to allocate the IP address.
 	Ipv4Index *int32 `json:"ipv4Index,omitempty"`
-	// Represents information that identifies which IP pool or external server is used to allocate the IP address. 
-	Ipv6Index *int32 `json:"ipv6Index,omitempty"`
-	Offline *bool `json:"offline,omitempty"`
-	Online *bool `json:"online,omitempty"`
-	ChfInfo *ChargingInformation `json:"chfInfo,omitempty"`
-	// A reference to the UsageMonitoringDataLimit or UsageMonitoringData instances for this DNN and SNSSAI that may also include the related monitoring key(s). The key of the map is the limit identifier. 
+	// Represents information that identifies which IP pool or external server is used to allocate the IP address.
+	Ipv6Index *int32               `json:"ipv6Index,omitempty"`
+	Offline   *bool                `json:"offline,omitempty"`
+	Online    *bool                `json:"online,omitempty"`
+	ChfInfo   *ChargingInformation `json:"chfInfo,omitempty"`
+	// A reference to the UsageMonitoringDataLimit or UsageMonitoringData instances for this DNN and SNSSAI that may also include the related monitoring key(s). The key of the map is the limit identifier.
 	RefUmDataLimitIds *map[string]LimitIdToMonitoringKey `json:"refUmDataLimitIds,omitempty"`
-	MpsPriority *bool `json:"mpsPriority,omitempty"`
-	McsPriority *bool `json:"mcsPriority,omitempty"`
-	ImsSignallingPrio *bool `json:"imsSignallingPrio,omitempty"`
-	MpsPriorityLevel *int32 `json:"mpsPriorityLevel,omitempty"`
-	McsPriorityLevel *int32 `json:"mcsPriorityLevel,omitempty"`
-	// Contains Presence reporting area information. The praId attribute within the PresenceInfo data type is the key of the map. 
+	MpsPriority       *bool                              `json:"mpsPriority,omitempty"`
+	McsPriority       *bool                              `json:"mcsPriority,omitempty"`
+	ImsSignallingPrio *bool                              `json:"imsSignallingPrio,omitempty"`
+	MpsPriorityLevel  *int32                             `json:"mpsPriorityLevel,omitempty"`
+	McsPriorityLevel  *int32                             `json:"mcsPriorityLevel,omitempty"`
+	// Contains Presence reporting area information. The praId attribute within the PresenceInfo data type is the key of the map.
 	PraInfos *map[string]PresenceInfo `json:"praInfos,omitempty"`
-	// Identifies transfer policies of background data transfer. Any string value can be used as a key of the map. 
-	BdtRefIds map[string]string `json:"bdtRefIds,omitempty"`
-	LocRoutNotAllowed *bool `json:"locRoutNotAllowed,omitempty"`
+	// Identifies transfer policies of background data transfer. Any string value can be used as a key of the map.
+	BdtRefIds         map[string]string `json:"bdtRefIds,omitempty"`
+	LocRoutNotAllowed *bool             `json:"locRoutNotAllowed,omitempty"`
 }
 
 // NewSmPolicyDnnData instantiates a new SmPolicyDnnData object
@@ -94,7 +94,7 @@ func (o *SmPolicyDnnData) SetDnn(v string) {
 
 // GetAllowedServices returns the AllowedServices field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetAllowedServices() []string {
-	if o == nil || isNil(o.AllowedServices) {
+	if o == nil || IsNil(o.AllowedServices) {
 		var ret []string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *SmPolicyDnnData) GetAllowedServices() []string {
 // GetAllowedServicesOk returns a tuple with the AllowedServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetAllowedServicesOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedServices) {
+	if o == nil || IsNil(o.AllowedServices) {
 		return nil, false
 	}
 	return o.AllowedServices, true
@@ -112,7 +112,7 @@ func (o *SmPolicyDnnData) GetAllowedServicesOk() ([]string, bool) {
 
 // HasAllowedServices returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasAllowedServices() bool {
-	if o != nil && !isNil(o.AllowedServices) {
+	if o != nil && !IsNil(o.AllowedServices) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *SmPolicyDnnData) SetAllowedServices(v []string) {
 
 // GetSubscCats returns the SubscCats field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetSubscCats() []string {
-	if o == nil || isNil(o.SubscCats) {
+	if o == nil || IsNil(o.SubscCats) {
 		var ret []string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *SmPolicyDnnData) GetSubscCats() []string {
 // GetSubscCatsOk returns a tuple with the SubscCats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetSubscCatsOk() ([]string, bool) {
-	if o == nil || isNil(o.SubscCats) {
+	if o == nil || IsNil(o.SubscCats) {
 		return nil, false
 	}
 	return o.SubscCats, true
@@ -144,7 +144,7 @@ func (o *SmPolicyDnnData) GetSubscCatsOk() ([]string, bool) {
 
 // HasSubscCats returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasSubscCats() bool {
-	if o != nil && !isNil(o.SubscCats) {
+	if o != nil && !IsNil(o.SubscCats) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *SmPolicyDnnData) SetSubscCats(v []string) {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetGbrUl() string {
-	if o == nil || isNil(o.GbrUl) {
+	if o == nil || IsNil(o.GbrUl) {
 		var ret string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *SmPolicyDnnData) GetGbrUl() string {
 // GetGbrUlOk returns a tuple with the GbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetGbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.GbrUl) {
+	if o == nil || IsNil(o.GbrUl) {
 		return nil, false
 	}
 	return o.GbrUl, true
@@ -176,7 +176,7 @@ func (o *SmPolicyDnnData) GetGbrUlOk() (*string, bool) {
 
 // HasGbrUl returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasGbrUl() bool {
-	if o != nil && !isNil(o.GbrUl) {
+	if o != nil && !IsNil(o.GbrUl) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *SmPolicyDnnData) SetGbrUl(v string) {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetGbrDl() string {
-	if o == nil || isNil(o.GbrDl) {
+	if o == nil || IsNil(o.GbrDl) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *SmPolicyDnnData) GetGbrDl() string {
 // GetGbrDlOk returns a tuple with the GbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetGbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.GbrDl) {
+	if o == nil || IsNil(o.GbrDl) {
 		return nil, false
 	}
 	return o.GbrDl, true
@@ -208,7 +208,7 @@ func (o *SmPolicyDnnData) GetGbrDlOk() (*string, bool) {
 
 // HasGbrDl returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasGbrDl() bool {
-	if o != nil && !isNil(o.GbrDl) {
+	if o != nil && !IsNil(o.GbrDl) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *SmPolicyDnnData) SetGbrDl(v string) {
 
 // GetAdcSupport returns the AdcSupport field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetAdcSupport() bool {
-	if o == nil || isNil(o.AdcSupport) {
+	if o == nil || IsNil(o.AdcSupport) {
 		var ret bool
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *SmPolicyDnnData) GetAdcSupport() bool {
 // GetAdcSupportOk returns a tuple with the AdcSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetAdcSupportOk() (*bool, bool) {
-	if o == nil || isNil(o.AdcSupport) {
+	if o == nil || IsNil(o.AdcSupport) {
 		return nil, false
 	}
 	return o.AdcSupport, true
@@ -240,7 +240,7 @@ func (o *SmPolicyDnnData) GetAdcSupportOk() (*bool, bool) {
 
 // HasAdcSupport returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasAdcSupport() bool {
-	if o != nil && !isNil(o.AdcSupport) {
+	if o != nil && !IsNil(o.AdcSupport) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *SmPolicyDnnData) SetAdcSupport(v bool) {
 
 // GetSubscSpendingLimits returns the SubscSpendingLimits field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetSubscSpendingLimits() bool {
-	if o == nil || isNil(o.SubscSpendingLimits) {
+	if o == nil || IsNil(o.SubscSpendingLimits) {
 		var ret bool
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *SmPolicyDnnData) GetSubscSpendingLimits() bool {
 // GetSubscSpendingLimitsOk returns a tuple with the SubscSpendingLimits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetSubscSpendingLimitsOk() (*bool, bool) {
-	if o == nil || isNil(o.SubscSpendingLimits) {
+	if o == nil || IsNil(o.SubscSpendingLimits) {
 		return nil, false
 	}
 	return o.SubscSpendingLimits, true
@@ -272,7 +272,7 @@ func (o *SmPolicyDnnData) GetSubscSpendingLimitsOk() (*bool, bool) {
 
 // HasSubscSpendingLimits returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasSubscSpendingLimits() bool {
-	if o != nil && !isNil(o.SubscSpendingLimits) {
+	if o != nil && !IsNil(o.SubscSpendingLimits) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *SmPolicyDnnData) SetSubscSpendingLimits(v bool) {
 
 // GetIpv4Index returns the Ipv4Index field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetIpv4Index() int32 {
-	if o == nil || isNil(o.Ipv4Index) {
+	if o == nil || IsNil(o.Ipv4Index) {
 		var ret int32
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *SmPolicyDnnData) GetIpv4Index() int32 {
 // GetIpv4IndexOk returns a tuple with the Ipv4Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetIpv4IndexOk() (*int32, bool) {
-	if o == nil || isNil(o.Ipv4Index) {
+	if o == nil || IsNil(o.Ipv4Index) {
 		return nil, false
 	}
 	return o.Ipv4Index, true
@@ -304,7 +304,7 @@ func (o *SmPolicyDnnData) GetIpv4IndexOk() (*int32, bool) {
 
 // HasIpv4Index returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasIpv4Index() bool {
-	if o != nil && !isNil(o.Ipv4Index) {
+	if o != nil && !IsNil(o.Ipv4Index) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *SmPolicyDnnData) SetIpv4Index(v int32) {
 
 // GetIpv6Index returns the Ipv6Index field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetIpv6Index() int32 {
-	if o == nil || isNil(o.Ipv6Index) {
+	if o == nil || IsNil(o.Ipv6Index) {
 		var ret int32
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *SmPolicyDnnData) GetIpv6Index() int32 {
 // GetIpv6IndexOk returns a tuple with the Ipv6Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetIpv6IndexOk() (*int32, bool) {
-	if o == nil || isNil(o.Ipv6Index) {
+	if o == nil || IsNil(o.Ipv6Index) {
 		return nil, false
 	}
 	return o.Ipv6Index, true
@@ -336,7 +336,7 @@ func (o *SmPolicyDnnData) GetIpv6IndexOk() (*int32, bool) {
 
 // HasIpv6Index returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasIpv6Index() bool {
-	if o != nil && !isNil(o.Ipv6Index) {
+	if o != nil && !IsNil(o.Ipv6Index) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *SmPolicyDnnData) SetIpv6Index(v int32) {
 
 // GetOffline returns the Offline field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetOffline() bool {
-	if o == nil || isNil(o.Offline) {
+	if o == nil || IsNil(o.Offline) {
 		var ret bool
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *SmPolicyDnnData) GetOffline() bool {
 // GetOfflineOk returns a tuple with the Offline field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetOfflineOk() (*bool, bool) {
-	if o == nil || isNil(o.Offline) {
+	if o == nil || IsNil(o.Offline) {
 		return nil, false
 	}
 	return o.Offline, true
@@ -368,7 +368,7 @@ func (o *SmPolicyDnnData) GetOfflineOk() (*bool, bool) {
 
 // HasOffline returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasOffline() bool {
-	if o != nil && !isNil(o.Offline) {
+	if o != nil && !IsNil(o.Offline) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *SmPolicyDnnData) SetOffline(v bool) {
 
 // GetOnline returns the Online field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetOnline() bool {
-	if o == nil || isNil(o.Online) {
+	if o == nil || IsNil(o.Online) {
 		var ret bool
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *SmPolicyDnnData) GetOnline() bool {
 // GetOnlineOk returns a tuple with the Online field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetOnlineOk() (*bool, bool) {
-	if o == nil || isNil(o.Online) {
+	if o == nil || IsNil(o.Online) {
 		return nil, false
 	}
 	return o.Online, true
@@ -400,7 +400,7 @@ func (o *SmPolicyDnnData) GetOnlineOk() (*bool, bool) {
 
 // HasOnline returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasOnline() bool {
-	if o != nil && !isNil(o.Online) {
+	if o != nil && !IsNil(o.Online) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *SmPolicyDnnData) SetOnline(v bool) {
 
 // GetChfInfo returns the ChfInfo field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetChfInfo() ChargingInformation {
-	if o == nil || isNil(o.ChfInfo) {
+	if o == nil || IsNil(o.ChfInfo) {
 		var ret ChargingInformation
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *SmPolicyDnnData) GetChfInfo() ChargingInformation {
 // GetChfInfoOk returns a tuple with the ChfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetChfInfoOk() (*ChargingInformation, bool) {
-	if o == nil || isNil(o.ChfInfo) {
+	if o == nil || IsNil(o.ChfInfo) {
 		return nil, false
 	}
 	return o.ChfInfo, true
@@ -432,7 +432,7 @@ func (o *SmPolicyDnnData) GetChfInfoOk() (*ChargingInformation, bool) {
 
 // HasChfInfo returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasChfInfo() bool {
-	if o != nil && !isNil(o.ChfInfo) {
+	if o != nil && !IsNil(o.ChfInfo) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *SmPolicyDnnData) SetChfInfo(v ChargingInformation) {
 
 // GetRefUmDataLimitIds returns the RefUmDataLimitIds field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetRefUmDataLimitIds() map[string]LimitIdToMonitoringKey {
-	if o == nil || isNil(o.RefUmDataLimitIds) {
+	if o == nil || IsNil(o.RefUmDataLimitIds) {
 		var ret map[string]LimitIdToMonitoringKey
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *SmPolicyDnnData) GetRefUmDataLimitIds() map[string]LimitIdToMonitoringK
 // GetRefUmDataLimitIdsOk returns a tuple with the RefUmDataLimitIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetRefUmDataLimitIdsOk() (*map[string]LimitIdToMonitoringKey, bool) {
-	if o == nil || isNil(o.RefUmDataLimitIds) {
+	if o == nil || IsNil(o.RefUmDataLimitIds) {
 		return nil, false
 	}
 	return o.RefUmDataLimitIds, true
@@ -464,7 +464,7 @@ func (o *SmPolicyDnnData) GetRefUmDataLimitIdsOk() (*map[string]LimitIdToMonitor
 
 // HasRefUmDataLimitIds returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasRefUmDataLimitIds() bool {
-	if o != nil && !isNil(o.RefUmDataLimitIds) {
+	if o != nil && !IsNil(o.RefUmDataLimitIds) {
 		return true
 	}
 
@@ -478,7 +478,7 @@ func (o *SmPolicyDnnData) SetRefUmDataLimitIds(v map[string]LimitIdToMonitoringK
 
 // GetMpsPriority returns the MpsPriority field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetMpsPriority() bool {
-	if o == nil || isNil(o.MpsPriority) {
+	if o == nil || IsNil(o.MpsPriority) {
 		var ret bool
 		return ret
 	}
@@ -488,7 +488,7 @@ func (o *SmPolicyDnnData) GetMpsPriority() bool {
 // GetMpsPriorityOk returns a tuple with the MpsPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetMpsPriorityOk() (*bool, bool) {
-	if o == nil || isNil(o.MpsPriority) {
+	if o == nil || IsNil(o.MpsPriority) {
 		return nil, false
 	}
 	return o.MpsPriority, true
@@ -496,7 +496,7 @@ func (o *SmPolicyDnnData) GetMpsPriorityOk() (*bool, bool) {
 
 // HasMpsPriority returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasMpsPriority() bool {
-	if o != nil && !isNil(o.MpsPriority) {
+	if o != nil && !IsNil(o.MpsPriority) {
 		return true
 	}
 
@@ -510,7 +510,7 @@ func (o *SmPolicyDnnData) SetMpsPriority(v bool) {
 
 // GetMcsPriority returns the McsPriority field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetMcsPriority() bool {
-	if o == nil || isNil(o.McsPriority) {
+	if o == nil || IsNil(o.McsPriority) {
 		var ret bool
 		return ret
 	}
@@ -520,7 +520,7 @@ func (o *SmPolicyDnnData) GetMcsPriority() bool {
 // GetMcsPriorityOk returns a tuple with the McsPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetMcsPriorityOk() (*bool, bool) {
-	if o == nil || isNil(o.McsPriority) {
+	if o == nil || IsNil(o.McsPriority) {
 		return nil, false
 	}
 	return o.McsPriority, true
@@ -528,7 +528,7 @@ func (o *SmPolicyDnnData) GetMcsPriorityOk() (*bool, bool) {
 
 // HasMcsPriority returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasMcsPriority() bool {
-	if o != nil && !isNil(o.McsPriority) {
+	if o != nil && !IsNil(o.McsPriority) {
 		return true
 	}
 
@@ -542,7 +542,7 @@ func (o *SmPolicyDnnData) SetMcsPriority(v bool) {
 
 // GetImsSignallingPrio returns the ImsSignallingPrio field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetImsSignallingPrio() bool {
-	if o == nil || isNil(o.ImsSignallingPrio) {
+	if o == nil || IsNil(o.ImsSignallingPrio) {
 		var ret bool
 		return ret
 	}
@@ -552,7 +552,7 @@ func (o *SmPolicyDnnData) GetImsSignallingPrio() bool {
 // GetImsSignallingPrioOk returns a tuple with the ImsSignallingPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetImsSignallingPrioOk() (*bool, bool) {
-	if o == nil || isNil(o.ImsSignallingPrio) {
+	if o == nil || IsNil(o.ImsSignallingPrio) {
 		return nil, false
 	}
 	return o.ImsSignallingPrio, true
@@ -560,7 +560,7 @@ func (o *SmPolicyDnnData) GetImsSignallingPrioOk() (*bool, bool) {
 
 // HasImsSignallingPrio returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasImsSignallingPrio() bool {
-	if o != nil && !isNil(o.ImsSignallingPrio) {
+	if o != nil && !IsNil(o.ImsSignallingPrio) {
 		return true
 	}
 
@@ -574,7 +574,7 @@ func (o *SmPolicyDnnData) SetImsSignallingPrio(v bool) {
 
 // GetMpsPriorityLevel returns the MpsPriorityLevel field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetMpsPriorityLevel() int32 {
-	if o == nil || isNil(o.MpsPriorityLevel) {
+	if o == nil || IsNil(o.MpsPriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -584,7 +584,7 @@ func (o *SmPolicyDnnData) GetMpsPriorityLevel() int32 {
 // GetMpsPriorityLevelOk returns a tuple with the MpsPriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetMpsPriorityLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.MpsPriorityLevel) {
+	if o == nil || IsNil(o.MpsPriorityLevel) {
 		return nil, false
 	}
 	return o.MpsPriorityLevel, true
@@ -592,7 +592,7 @@ func (o *SmPolicyDnnData) GetMpsPriorityLevelOk() (*int32, bool) {
 
 // HasMpsPriorityLevel returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasMpsPriorityLevel() bool {
-	if o != nil && !isNil(o.MpsPriorityLevel) {
+	if o != nil && !IsNil(o.MpsPriorityLevel) {
 		return true
 	}
 
@@ -606,7 +606,7 @@ func (o *SmPolicyDnnData) SetMpsPriorityLevel(v int32) {
 
 // GetMcsPriorityLevel returns the McsPriorityLevel field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetMcsPriorityLevel() int32 {
-	if o == nil || isNil(o.McsPriorityLevel) {
+	if o == nil || IsNil(o.McsPriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -616,7 +616,7 @@ func (o *SmPolicyDnnData) GetMcsPriorityLevel() int32 {
 // GetMcsPriorityLevelOk returns a tuple with the McsPriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetMcsPriorityLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.McsPriorityLevel) {
+	if o == nil || IsNil(o.McsPriorityLevel) {
 		return nil, false
 	}
 	return o.McsPriorityLevel, true
@@ -624,7 +624,7 @@ func (o *SmPolicyDnnData) GetMcsPriorityLevelOk() (*int32, bool) {
 
 // HasMcsPriorityLevel returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasMcsPriorityLevel() bool {
-	if o != nil && !isNil(o.McsPriorityLevel) {
+	if o != nil && !IsNil(o.McsPriorityLevel) {
 		return true
 	}
 
@@ -638,7 +638,7 @@ func (o *SmPolicyDnnData) SetMcsPriorityLevel(v int32) {
 
 // GetPraInfos returns the PraInfos field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetPraInfos() map[string]PresenceInfo {
-	if o == nil || isNil(o.PraInfos) {
+	if o == nil || IsNil(o.PraInfos) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *SmPolicyDnnData) GetPraInfos() map[string]PresenceInfo {
 // GetPraInfosOk returns a tuple with the PraInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || isNil(o.PraInfos) {
+	if o == nil || IsNil(o.PraInfos) {
 		return nil, false
 	}
 	return o.PraInfos, true
@@ -656,7 +656,7 @@ func (o *SmPolicyDnnData) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
 
 // HasPraInfos returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasPraInfos() bool {
-	if o != nil && !isNil(o.PraInfos) {
+	if o != nil && !IsNil(o.PraInfos) {
 		return true
 	}
 
@@ -681,7 +681,7 @@ func (o *SmPolicyDnnData) GetBdtRefIds() map[string]string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDnnData) GetBdtRefIdsOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.BdtRefIds) {
+	if o == nil || IsNil(o.BdtRefIds) {
 		return nil, false
 	}
 	return &o.BdtRefIds, true
@@ -689,7 +689,7 @@ func (o *SmPolicyDnnData) GetBdtRefIdsOk() (*map[string]string, bool) {
 
 // HasBdtRefIds returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasBdtRefIds() bool {
-	if o != nil && isNil(o.BdtRefIds) {
+	if o != nil && IsNil(o.BdtRefIds) {
 		return true
 	}
 
@@ -703,7 +703,7 @@ func (o *SmPolicyDnnData) SetBdtRefIds(v map[string]string) {
 
 // GetLocRoutNotAllowed returns the LocRoutNotAllowed field value if set, zero value otherwise.
 func (o *SmPolicyDnnData) GetLocRoutNotAllowed() bool {
-	if o == nil || isNil(o.LocRoutNotAllowed) {
+	if o == nil || IsNil(o.LocRoutNotAllowed) {
 		var ret bool
 		return ret
 	}
@@ -713,7 +713,7 @@ func (o *SmPolicyDnnData) GetLocRoutNotAllowed() bool {
 // GetLocRoutNotAllowedOk returns a tuple with the LocRoutNotAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDnnData) GetLocRoutNotAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.LocRoutNotAllowed) {
+	if o == nil || IsNil(o.LocRoutNotAllowed) {
 		return nil, false
 	}
 	return o.LocRoutNotAllowed, true
@@ -721,7 +721,7 @@ func (o *SmPolicyDnnData) GetLocRoutNotAllowedOk() (*bool, bool) {
 
 // HasLocRoutNotAllowed returns a boolean if a field has been set.
 func (o *SmPolicyDnnData) HasLocRoutNotAllowed() bool {
-	if o != nil && !isNil(o.LocRoutNotAllowed) {
+	if o != nil && !IsNil(o.LocRoutNotAllowed) {
 		return true
 	}
 
@@ -734,7 +734,7 @@ func (o *SmPolicyDnnData) SetLocRoutNotAllowed(v bool) {
 }
 
 func (o SmPolicyDnnData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -744,64 +744,64 @@ func (o SmPolicyDnnData) MarshalJSON() ([]byte, error) {
 func (o SmPolicyDnnData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !isNil(o.AllowedServices) {
+	if !IsNil(o.AllowedServices) {
 		toSerialize["allowedServices"] = o.AllowedServices
 	}
-	if !isNil(o.SubscCats) {
+	if !IsNil(o.SubscCats) {
 		toSerialize["subscCats"] = o.SubscCats
 	}
-	if !isNil(o.GbrUl) {
+	if !IsNil(o.GbrUl) {
 		toSerialize["gbrUl"] = o.GbrUl
 	}
-	if !isNil(o.GbrDl) {
+	if !IsNil(o.GbrDl) {
 		toSerialize["gbrDl"] = o.GbrDl
 	}
-	if !isNil(o.AdcSupport) {
+	if !IsNil(o.AdcSupport) {
 		toSerialize["adcSupport"] = o.AdcSupport
 	}
-	if !isNil(o.SubscSpendingLimits) {
+	if !IsNil(o.SubscSpendingLimits) {
 		toSerialize["subscSpendingLimits"] = o.SubscSpendingLimits
 	}
-	if !isNil(o.Ipv4Index) {
+	if !IsNil(o.Ipv4Index) {
 		toSerialize["ipv4Index"] = o.Ipv4Index
 	}
-	if !isNil(o.Ipv6Index) {
+	if !IsNil(o.Ipv6Index) {
 		toSerialize["ipv6Index"] = o.Ipv6Index
 	}
-	if !isNil(o.Offline) {
+	if !IsNil(o.Offline) {
 		toSerialize["offline"] = o.Offline
 	}
-	if !isNil(o.Online) {
+	if !IsNil(o.Online) {
 		toSerialize["online"] = o.Online
 	}
-	if !isNil(o.ChfInfo) {
+	if !IsNil(o.ChfInfo) {
 		toSerialize["chfInfo"] = o.ChfInfo
 	}
-	if !isNil(o.RefUmDataLimitIds) {
+	if !IsNil(o.RefUmDataLimitIds) {
 		toSerialize["refUmDataLimitIds"] = o.RefUmDataLimitIds
 	}
-	if !isNil(o.MpsPriority) {
+	if !IsNil(o.MpsPriority) {
 		toSerialize["mpsPriority"] = o.MpsPriority
 	}
-	if !isNil(o.McsPriority) {
+	if !IsNil(o.McsPriority) {
 		toSerialize["mcsPriority"] = o.McsPriority
 	}
-	if !isNil(o.ImsSignallingPrio) {
+	if !IsNil(o.ImsSignallingPrio) {
 		toSerialize["imsSignallingPrio"] = o.ImsSignallingPrio
 	}
-	if !isNil(o.MpsPriorityLevel) {
+	if !IsNil(o.MpsPriorityLevel) {
 		toSerialize["mpsPriorityLevel"] = o.MpsPriorityLevel
 	}
-	if !isNil(o.McsPriorityLevel) {
+	if !IsNil(o.McsPriorityLevel) {
 		toSerialize["mcsPriorityLevel"] = o.McsPriorityLevel
 	}
-	if !isNil(o.PraInfos) {
+	if !IsNil(o.PraInfos) {
 		toSerialize["praInfos"] = o.PraInfos
 	}
 	if o.BdtRefIds != nil {
 		toSerialize["bdtRefIds"] = o.BdtRefIds
 	}
-	if !isNil(o.LocRoutNotAllowed) {
+	if !IsNil(o.LocRoutNotAllowed) {
 		toSerialize["locRoutNotAllowed"] = o.LocRoutNotAllowed
 	}
 	return toSerialize, nil
@@ -842,5 +842,3 @@ func (v *NullableSmPolicyDnnData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

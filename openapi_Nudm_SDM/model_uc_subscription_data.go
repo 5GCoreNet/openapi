@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewUcSubscriptionDataWithDefaults() *UcSubscriptionData {
 
 // GetUserConsentPerPurposeList returns the UserConsentPerPurposeList field value if set, zero value otherwise.
 func (o *UcSubscriptionData) GetUserConsentPerPurposeList() map[string]UserConsent {
-	if o == nil || isNil(o.UserConsentPerPurposeList) {
+	if o == nil || IsNil(o.UserConsentPerPurposeList) {
 		var ret map[string]UserConsent
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UcSubscriptionData) GetUserConsentPerPurposeList() map[string]UserConse
 // GetUserConsentPerPurposeListOk returns a tuple with the UserConsentPerPurposeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UcSubscriptionData) GetUserConsentPerPurposeListOk() (*map[string]UserConsent, bool) {
-	if o == nil || isNil(o.UserConsentPerPurposeList) {
+	if o == nil || IsNil(o.UserConsentPerPurposeList) {
 		return nil, false
 	}
 	return o.UserConsentPerPurposeList, true
@@ -60,7 +60,7 @@ func (o *UcSubscriptionData) GetUserConsentPerPurposeListOk() (*map[string]UserC
 
 // HasUserConsentPerPurposeList returns a boolean if a field has been set.
 func (o *UcSubscriptionData) HasUserConsentPerPurposeList() bool {
-	if o != nil && !isNil(o.UserConsentPerPurposeList) {
+	if o != nil && !IsNil(o.UserConsentPerPurposeList) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *UcSubscriptionData) SetUserConsentPerPurposeList(v map[string]UserConse
 }
 
 func (o UcSubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o UcSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o UcSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UserConsentPerPurposeList) {
+	if !IsNil(o.UserConsentPerPurposeList) {
 		toSerialize["userConsentPerPurposeList"] = o.UserConsentPerPurposeList
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableUcSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

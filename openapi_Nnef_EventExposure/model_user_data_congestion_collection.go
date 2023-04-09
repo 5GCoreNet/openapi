@@ -1,7 +1,7 @@
 /*
 Nnef_EventExposure
 
-NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsUserDataCongestionCollection(v *interface{}) UserDataCongestionC
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UserDataCongestionCollection) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src UserDataCongestionCollection) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UserDataCongestionCollection) GetActualInstance() (interface{}) {
+func (obj *UserDataCongestionCollection) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableUserDataCongestionCollection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

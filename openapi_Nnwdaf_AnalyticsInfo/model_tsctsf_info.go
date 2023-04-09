@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &TsctsfInfo{}
 // TsctsfInfo Information of a TSCTSF NF Instance
 type TsctsfInfo struct {
 	// A map (list of key-value pairs) where a valid JSON string serves as key
-	SNssaiInfoList *map[string]SnssaiTsctsfInfoItem `json:"sNssaiInfoList,omitempty"`
-	ExternalGroupIdentifiersRanges []IdentityRange `json:"externalGroupIdentifiersRanges,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	InternalGroupIdentifiersRanges []InternalGroupIdRange `json:"internalGroupIdentifiersRanges,omitempty"`
+	SNssaiInfoList                 *map[string]SnssaiTsctsfInfoItem `json:"sNssaiInfoList,omitempty"`
+	ExternalGroupIdentifiersRanges []IdentityRange                  `json:"externalGroupIdentifiersRanges,omitempty"`
+	SupiRanges                     []SupiRange                      `json:"supiRanges,omitempty"`
+	GpsiRanges                     []IdentityRange                  `json:"gpsiRanges,omitempty"`
+	InternalGroupIdentifiersRanges []InternalGroupIdRange           `json:"internalGroupIdentifiersRanges,omitempty"`
 }
 
 // NewTsctsfInfo instantiates a new TsctsfInfo object
@@ -46,7 +46,7 @@ func NewTsctsfInfoWithDefaults() *TsctsfInfo {
 
 // GetSNssaiInfoList returns the SNssaiInfoList field value if set, zero value otherwise.
 func (o *TsctsfInfo) GetSNssaiInfoList() map[string]SnssaiTsctsfInfoItem {
-	if o == nil || isNil(o.SNssaiInfoList) {
+	if o == nil || IsNil(o.SNssaiInfoList) {
 		var ret map[string]SnssaiTsctsfInfoItem
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *TsctsfInfo) GetSNssaiInfoList() map[string]SnssaiTsctsfInfoItem {
 // GetSNssaiInfoListOk returns a tuple with the SNssaiInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsctsfInfo) GetSNssaiInfoListOk() (*map[string]SnssaiTsctsfInfoItem, bool) {
-	if o == nil || isNil(o.SNssaiInfoList) {
+	if o == nil || IsNil(o.SNssaiInfoList) {
 		return nil, false
 	}
 	return o.SNssaiInfoList, true
@@ -64,7 +64,7 @@ func (o *TsctsfInfo) GetSNssaiInfoListOk() (*map[string]SnssaiTsctsfInfoItem, bo
 
 // HasSNssaiInfoList returns a boolean if a field has been set.
 func (o *TsctsfInfo) HasSNssaiInfoList() bool {
-	if o != nil && !isNil(o.SNssaiInfoList) {
+	if o != nil && !IsNil(o.SNssaiInfoList) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *TsctsfInfo) SetSNssaiInfoList(v map[string]SnssaiTsctsfInfoItem) {
 
 // GetExternalGroupIdentifiersRanges returns the ExternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *TsctsfInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *TsctsfInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
 // GetExternalGroupIdentifiersRangesOk returns a tuple with the ExternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsctsfInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifiersRanges, true
@@ -96,7 +96,7 @@ func (o *TsctsfInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, boo
 
 // HasExternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *TsctsfInfo) HasExternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.ExternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.ExternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *TsctsfInfo) SetExternalGroupIdentifiersRanges(v []IdentityRange) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *TsctsfInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *TsctsfInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsctsfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -128,7 +128,7 @@ func (o *TsctsfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *TsctsfInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *TsctsfInfo) SetSupiRanges(v []SupiRange) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *TsctsfInfo) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *TsctsfInfo) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsctsfInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -160,7 +160,7 @@ func (o *TsctsfInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *TsctsfInfo) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *TsctsfInfo) SetGpsiRanges(v []IdentityRange) {
 
 // GetInternalGroupIdentifiersRanges returns the InternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *TsctsfInfo) GetInternalGroupIdentifiersRanges() []InternalGroupIdRange {
-	if o == nil || isNil(o.InternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.InternalGroupIdentifiersRanges) {
 		var ret []InternalGroupIdRange
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *TsctsfInfo) GetInternalGroupIdentifiersRanges() []InternalGroupIdRange 
 // GetInternalGroupIdentifiersRangesOk returns a tuple with the InternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsctsfInfo) GetInternalGroupIdentifiersRangesOk() ([]InternalGroupIdRange, bool) {
-	if o == nil || isNil(o.InternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.InternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.InternalGroupIdentifiersRanges, true
@@ -192,7 +192,7 @@ func (o *TsctsfInfo) GetInternalGroupIdentifiersRangesOk() ([]InternalGroupIdRan
 
 // HasInternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *TsctsfInfo) HasInternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.InternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.InternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *TsctsfInfo) SetInternalGroupIdentifiersRanges(v []InternalGroupIdRange)
 }
 
 func (o TsctsfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o TsctsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o TsctsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SNssaiInfoList) {
+	if !IsNil(o.SNssaiInfoList) {
 		toSerialize["sNssaiInfoList"] = o.SNssaiInfoList
 	}
-	if !isNil(o.ExternalGroupIdentifiersRanges) {
+	if !IsNil(o.ExternalGroupIdentifiersRanges) {
 		toSerialize["externalGroupIdentifiersRanges"] = o.ExternalGroupIdentifiersRanges
 	}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !isNil(o.InternalGroupIdentifiersRanges) {
+	if !IsNil(o.InternalGroupIdentifiersRanges) {
 		toSerialize["internalGroupIdentifiersRanges"] = o.InternalGroupIdentifiersRanges
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullableTsctsfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

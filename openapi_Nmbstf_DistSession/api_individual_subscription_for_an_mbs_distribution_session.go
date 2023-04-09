@@ -1,7 +1,7 @@
 /*
 Nmbstf-distsession
 
-MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -13,22 +13,21 @@ package openapi_Nmbstf_DistSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualSubscriptionForAnMBSDistributionSessionApiService IndividualSubscriptionForAnMBSDistributionSessionApi service
 type IndividualSubscriptionForAnMBSDistributionSessionApiService service
 
 type ApiStatusSubscribeModRequest struct {
-	ctx context.Context
-	ApiService *IndividualSubscriptionForAnMBSDistributionSessionApiService
+	ctx            context.Context
+	ApiService     *IndividualSubscriptionForAnMBSDistributionSessionApiService
 	subscriptionId string
 	distSessionRef string
-	patchItem *[]PatchItem
+	patchItem      *[]PatchItem
 }
 
 // Data to be modified in the DistSessionSubscription
@@ -44,28 +43,29 @@ func (r ApiStatusSubscribeModRequest) Execute() (*DistSessionSubscription, *http
 /*
 StatusSubscribeMod StatusSubscribe to modify (update or renew) an individual subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Unique ID of the individual subscription to be modified
- @param distSessionRef Unique ID of the MBS distribution session
- @return ApiStatusSubscribeModRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Unique ID of the individual subscription to be modified
+	@param distSessionRef Unique ID of the MBS distribution session
+	@return ApiStatusSubscribeModRequest
 */
 func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubscribeMod(ctx context.Context, subscriptionId string, distSessionRef string) ApiStatusSubscribeModRequest {
 	return ApiStatusSubscribeModRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 		distSessionRef: distSessionRef,
 	}
 }
 
 // Execute executes the request
-//  @return DistSessionSubscription
+//
+//	@return DistSessionSubscription
 func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubscribeModExecute(r ApiStatusSubscribeModRequest) (*DistSessionSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DistSessionSubscription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DistSessionSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSubscriptionForAnMBSDistributionSessionApiService.StatusSubscribeMod")
@@ -116,9 +116,9 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -135,8 +135,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -146,8 +146,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -157,8 +157,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -168,8 +168,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -179,8 +179,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -190,8 +190,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -201,8 +201,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -212,8 +212,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -223,8 +223,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -234,8 +234,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -245,8 +245,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -256,8 +256,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -267,8 +267,8 @@ func (a *IndividualSubscriptionForAnMBSDistributionSessionApiService) StatusSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

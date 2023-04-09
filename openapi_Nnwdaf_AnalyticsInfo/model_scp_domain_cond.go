@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the ScpDomainCond type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ScpDomainCond{}
 
-// ScpDomainCond Subscription to a set of NF or SCP or SEPP instances belonging to certain SCP domains 
+// ScpDomainCond Subscription to a set of NF or SCP or SEPP instances belonging to certain SCP domains
 type ScpDomainCond struct {
 	ScpDomains []string `json:"scpDomains"`
 	NfTypeList []NFType `json:"nfTypeList,omitempty"`
@@ -67,7 +67,7 @@ func (o *ScpDomainCond) SetScpDomains(v []string) {
 
 // GetNfTypeList returns the NfTypeList field value if set, zero value otherwise.
 func (o *ScpDomainCond) GetNfTypeList() []NFType {
-	if o == nil || isNil(o.NfTypeList) {
+	if o == nil || IsNil(o.NfTypeList) {
 		var ret []NFType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ScpDomainCond) GetNfTypeList() []NFType {
 // GetNfTypeListOk returns a tuple with the NfTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainCond) GetNfTypeListOk() ([]NFType, bool) {
-	if o == nil || isNil(o.NfTypeList) {
+	if o == nil || IsNil(o.NfTypeList) {
 		return nil, false
 	}
 	return o.NfTypeList, true
@@ -85,7 +85,7 @@ func (o *ScpDomainCond) GetNfTypeListOk() ([]NFType, bool) {
 
 // HasNfTypeList returns a boolean if a field has been set.
 func (o *ScpDomainCond) HasNfTypeList() bool {
-	if o != nil && !isNil(o.NfTypeList) {
+	if o != nil && !IsNil(o.NfTypeList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ScpDomainCond) SetNfTypeList(v []NFType) {
 }
 
 func (o ScpDomainCond) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ScpDomainCond) MarshalJSON() ([]byte, error) {
 func (o ScpDomainCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["scpDomains"] = o.ScpDomains
-	if !isNil(o.NfTypeList) {
+	if !IsNil(o.NfTypeList) {
 		toSerialize["nfTypeList"] = o.NfTypeList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableScpDomainCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

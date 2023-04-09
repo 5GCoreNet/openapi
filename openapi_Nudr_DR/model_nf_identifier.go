@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NfIdentifier{}
 // NfIdentifier struct for NfIdentifier
 type NfIdentifier struct {
 	NfType NFType `json:"nfType"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfInstanceId *string `json:"nfInstanceId,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *NfIdentifier) SetNfType(v NFType) {
 
 // GetNfInstanceId returns the NfInstanceId field value if set, zero value otherwise.
 func (o *NfIdentifier) GetNfInstanceId() string {
-	if o == nil || isNil(o.NfInstanceId) {
+	if o == nil || IsNil(o.NfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *NfIdentifier) GetNfInstanceId() string {
 // GetNfInstanceIdOk returns a tuple with the NfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfIdentifier) GetNfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfInstanceId) {
+	if o == nil || IsNil(o.NfInstanceId) {
 		return nil, false
 	}
 	return o.NfInstanceId, true
@@ -86,7 +86,7 @@ func (o *NfIdentifier) GetNfInstanceIdOk() (*string, bool) {
 
 // HasNfInstanceId returns a boolean if a field has been set.
 func (o *NfIdentifier) HasNfInstanceId() bool {
-	if o != nil && !isNil(o.NfInstanceId) {
+	if o != nil && !IsNil(o.NfInstanceId) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *NfIdentifier) SetNfInstanceId(v string) {
 }
 
 func (o NfIdentifier) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o NfIdentifier) MarshalJSON() ([]byte, error) {
 func (o NfIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfType"] = o.NfType
-	if !isNil(o.NfInstanceId) {
+	if !IsNil(o.NfInstanceId) {
 		toSerialize["nfInstanceId"] = o.NfInstanceId
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableNfIdentifier) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

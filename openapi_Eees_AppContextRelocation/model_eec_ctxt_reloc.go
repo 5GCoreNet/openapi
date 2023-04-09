@@ -1,7 +1,7 @@
 /*
 Eees Application Context Relocation Service
 
-Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.0
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &EecCtxtReloc{}
 
 // EecCtxtReloc Represents EEC Context relocation information.
 type EecCtxtReloc struct {
-	EecCtxtId string `json:"eecCtxtId"`
-	SEesId *string `json:"sEesId,omitempty"`
+	EecCtxtId    string    `json:"eecCtxtId"`
+	SEesId       *string   `json:"sEesId,omitempty"`
 	SEecEndpoint *EndPoint `json:"sEecEndpoint,omitempty"`
-	TEesId *string `json:"tEesId,omitempty"`
+	TEesId       *string   `json:"tEesId,omitempty"`
 	TEecEndpoint *EndPoint `json:"tEecEndpoint,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *EecCtxtReloc) SetEecCtxtId(v string) {
 
 // GetSEesId returns the SEesId field value if set, zero value otherwise.
 func (o *EecCtxtReloc) GetSEesId() string {
-	if o == nil || isNil(o.SEesId) {
+	if o == nil || IsNil(o.SEesId) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *EecCtxtReloc) GetSEesId() string {
 // GetSEesIdOk returns a tuple with the SEesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EecCtxtReloc) GetSEesIdOk() (*string, bool) {
-	if o == nil || isNil(o.SEesId) {
+	if o == nil || IsNil(o.SEesId) {
 		return nil, false
 	}
 	return o.SEesId, true
@@ -88,7 +88,7 @@ func (o *EecCtxtReloc) GetSEesIdOk() (*string, bool) {
 
 // HasSEesId returns a boolean if a field has been set.
 func (o *EecCtxtReloc) HasSEesId() bool {
-	if o != nil && !isNil(o.SEesId) {
+	if o != nil && !IsNil(o.SEesId) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *EecCtxtReloc) SetSEesId(v string) {
 
 // GetSEecEndpoint returns the SEecEndpoint field value if set, zero value otherwise.
 func (o *EecCtxtReloc) GetSEecEndpoint() EndPoint {
-	if o == nil || isNil(o.SEecEndpoint) {
+	if o == nil || IsNil(o.SEecEndpoint) {
 		var ret EndPoint
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *EecCtxtReloc) GetSEecEndpoint() EndPoint {
 // GetSEecEndpointOk returns a tuple with the SEecEndpoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EecCtxtReloc) GetSEecEndpointOk() (*EndPoint, bool) {
-	if o == nil || isNil(o.SEecEndpoint) {
+	if o == nil || IsNil(o.SEecEndpoint) {
 		return nil, false
 	}
 	return o.SEecEndpoint, true
@@ -120,7 +120,7 @@ func (o *EecCtxtReloc) GetSEecEndpointOk() (*EndPoint, bool) {
 
 // HasSEecEndpoint returns a boolean if a field has been set.
 func (o *EecCtxtReloc) HasSEecEndpoint() bool {
-	if o != nil && !isNil(o.SEecEndpoint) {
+	if o != nil && !IsNil(o.SEecEndpoint) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *EecCtxtReloc) SetSEecEndpoint(v EndPoint) {
 
 // GetTEesId returns the TEesId field value if set, zero value otherwise.
 func (o *EecCtxtReloc) GetTEesId() string {
-	if o == nil || isNil(o.TEesId) {
+	if o == nil || IsNil(o.TEesId) {
 		var ret string
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *EecCtxtReloc) GetTEesId() string {
 // GetTEesIdOk returns a tuple with the TEesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EecCtxtReloc) GetTEesIdOk() (*string, bool) {
-	if o == nil || isNil(o.TEesId) {
+	if o == nil || IsNil(o.TEesId) {
 		return nil, false
 	}
 	return o.TEesId, true
@@ -152,7 +152,7 @@ func (o *EecCtxtReloc) GetTEesIdOk() (*string, bool) {
 
 // HasTEesId returns a boolean if a field has been set.
 func (o *EecCtxtReloc) HasTEesId() bool {
-	if o != nil && !isNil(o.TEesId) {
+	if o != nil && !IsNil(o.TEesId) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *EecCtxtReloc) SetTEesId(v string) {
 
 // GetTEecEndpoint returns the TEecEndpoint field value if set, zero value otherwise.
 func (o *EecCtxtReloc) GetTEecEndpoint() EndPoint {
-	if o == nil || isNil(o.TEecEndpoint) {
+	if o == nil || IsNil(o.TEecEndpoint) {
 		var ret EndPoint
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *EecCtxtReloc) GetTEecEndpoint() EndPoint {
 // GetTEecEndpointOk returns a tuple with the TEecEndpoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EecCtxtReloc) GetTEecEndpointOk() (*EndPoint, bool) {
-	if o == nil || isNil(o.TEecEndpoint) {
+	if o == nil || IsNil(o.TEecEndpoint) {
 		return nil, false
 	}
 	return o.TEecEndpoint, true
@@ -184,7 +184,7 @@ func (o *EecCtxtReloc) GetTEecEndpointOk() (*EndPoint, bool) {
 
 // HasTEecEndpoint returns a boolean if a field has been set.
 func (o *EecCtxtReloc) HasTEecEndpoint() bool {
-	if o != nil && !isNil(o.TEecEndpoint) {
+	if o != nil && !IsNil(o.TEecEndpoint) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *EecCtxtReloc) SetTEecEndpoint(v EndPoint) {
 }
 
 func (o EecCtxtReloc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,16 +207,16 @@ func (o EecCtxtReloc) MarshalJSON() ([]byte, error) {
 func (o EecCtxtReloc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecCtxtId"] = o.EecCtxtId
-	if !isNil(o.SEesId) {
+	if !IsNil(o.SEesId) {
 		toSerialize["sEesId"] = o.SEesId
 	}
-	if !isNil(o.SEecEndpoint) {
+	if !IsNil(o.SEecEndpoint) {
 		toSerialize["sEecEndpoint"] = o.SEecEndpoint
 	}
-	if !isNil(o.TEesId) {
+	if !IsNil(o.TEesId) {
 		toSerialize["tEesId"] = o.TEesId
 	}
-	if !isNil(o.TEecEndpoint) {
+	if !IsNil(o.TEecEndpoint) {
 		toSerialize["tEecEndpoint"] = o.TEecEndpoint
 	}
 	return toSerialize, nil
@@ -257,5 +257,3 @@ func (v *NullableEecCtxtReloc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

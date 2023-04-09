@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &UserDataCongestionInfo{}
 
 // UserDataCongestionInfo Represents the user data congestion information.
 type UserDataCongestionInfo struct {
-	NetworkArea NetworkAreaInfo `json:"networkArea"`
-	CongestionInfo CongestionInfo `json:"congestionInfo"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	NetworkArea    NetworkAreaInfo `json:"networkArea"`
+	CongestionInfo CongestionInfo  `json:"congestionInfo"`
+	Snssai         *Snssai         `json:"snssai,omitempty"`
 }
 
 // NewUserDataCongestionInfo instantiates a new UserDataCongestionInfo object
@@ -93,7 +93,7 @@ func (o *UserDataCongestionInfo) SetCongestionInfo(v CongestionInfo) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *UserDataCongestionInfo) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *UserDataCongestionInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserDataCongestionInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -111,7 +111,7 @@ func (o *UserDataCongestionInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *UserDataCongestionInfo) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *UserDataCongestionInfo) SetSnssai(v Snssai) {
 }
 
 func (o UserDataCongestionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o UserDataCongestionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["networkArea"] = o.NetworkArea
 	toSerialize["congestionInfo"] = o.CongestionInfo
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableUserDataCongestionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

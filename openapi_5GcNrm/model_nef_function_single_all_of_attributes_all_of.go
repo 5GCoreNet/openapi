@@ -19,23 +19,23 @@ var _ MappedNullable = &NefFunctionSingleAllOfAttributesAllOf{}
 
 // NefFunctionSingleAllOfAttributesAllOf struct for NefFunctionSingleAllOfAttributesAllOf
 type NefFunctionSingleAllOfAttributesAllOf struct {
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CapabilityList []string `json:"capabilityList,omitempty"`
-	IsCAPIFSup *bool `json:"isCAPIFSup,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	Dnai *string `json:"dnai,omitempty"`
-	NefId *string `json:"nefId,omitempty"`
-	PfdData *PfdData `json:"pfdData,omitempty"`
-	AfEeData *AfEventExposureData `json:"afEeData,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	ExternalGroupIdentifiersRanges []IdentityRange `json:"externalGroupIdentifiersRanges,omitempty"`
-	ServedFqdnList []string `json:"servedFqdnList,omitempty"`
-	DnaiList []string `json:"dnaiList,omitempty"`
-	UnTrustAfInfoList []UnTrustAfInfo `json:"unTrustAfInfoList,omitempty"`
-	UasNfFunctionalityInd *bool `json:"uasNfFunctionalityInd,omitempty"`
+	SBIFqdn                        *string              `json:"sBIFqdn,omitempty"`
+	SnssaiList                     []Snssai             `json:"snssaiList,omitempty"`
+	ManagedNFProfile               *ManagedNFProfile    `json:"managedNFProfile,omitempty"`
+	CapabilityList                 []string             `json:"capabilityList,omitempty"`
+	IsCAPIFSup                     *bool                `json:"isCAPIFSup,omitempty"`
+	TaiList                        []Tai                `json:"taiList,omitempty"`
+	TaiRangeList                   []TaiRange           `json:"taiRangeList,omitempty"`
+	Dnai                           *string              `json:"dnai,omitempty"`
+	NefId                          *string              `json:"nefId,omitempty"`
+	PfdData                        *PfdData             `json:"pfdData,omitempty"`
+	AfEeData                       *AfEventExposureData `json:"afEeData,omitempty"`
+	GpsiRanges                     []IdentityRange      `json:"gpsiRanges,omitempty"`
+	ExternalGroupIdentifiersRanges []IdentityRange      `json:"externalGroupIdentifiersRanges,omitempty"`
+	ServedFqdnList                 []string             `json:"servedFqdnList,omitempty"`
+	DnaiList                       []string             `json:"dnaiList,omitempty"`
+	UnTrustAfInfoList              []UnTrustAfInfo      `json:"unTrustAfInfoList,omitempty"`
+	UasNfFunctionalityInd          *bool                `json:"uasNfFunctionalityInd,omitempty"`
 }
 
 // NewNefFunctionSingleAllOfAttributesAllOf instantiates a new NefFunctionSingleAllOfAttributesAllOf object
@@ -604,7 +604,7 @@ func (o *NefFunctionSingleAllOfAttributesAllOf) SetUasNfFunctionalityInd(v bool)
 }
 
 func (o NefFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -702,5 +702,3 @@ func (v *NullableNefFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

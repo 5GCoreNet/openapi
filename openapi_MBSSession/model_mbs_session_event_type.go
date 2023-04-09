@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-session
 
-API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,28 +17,14 @@ import (
 
 // MbsSessionEventType MBS Session Event Type
 type MbsSessionEventType struct {
-	MbsSessionEventTypeAnyOf *MbsSessionEventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsSessionEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MbsSessionEventTypeAnyOf
-	err = json.Unmarshal(data, &dst.MbsSessionEventTypeAnyOf);
-	if err == nil {
-		jsonMbsSessionEventTypeAnyOf, _ := json.Marshal(dst.MbsSessionEventTypeAnyOf)
-		if string(jsonMbsSessionEventTypeAnyOf) == "{}" { // empty struct
-			dst.MbsSessionEventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.MbsSessionEventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.MbsSessionEventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MbsSessionEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsSessionEventType) MarshalJSON() ([]byte, error) {
-	if src.MbsSessionEventTypeAnyOf != nil {
-		return json.Marshal(&src.MbsSessionEventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMbsSessionEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

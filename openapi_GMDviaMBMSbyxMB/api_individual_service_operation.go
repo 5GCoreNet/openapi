@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyxMB
 
-API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,21 +13,20 @@ package openapi_GMDviaMBMSbyxMB
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualServiceOperationApiService IndividualServiceOperationApi service
 type IndividualServiceOperationApiService service
 
 type ApiDeletexMBServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualServiceOperationApiService
-	scsAsId string
-	serviceId string
+	scsAsId    string
+	serviceId  string
 }
 
 func (r ApiDeletexMBServiceRequest) Execute() (*http.Response, error) {
@@ -37,26 +36,26 @@ func (r ApiDeletexMBServiceRequest) Execute() (*http.Response, error) {
 /*
 DeletexMBService Deletes an existing service resource for a given SCS/AS and a service id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param serviceId Service Id
- @return ApiDeletexMBServiceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param serviceId Service Id
+	@return ApiDeletexMBServiceRequest
 */
 func (a *IndividualServiceOperationApiService) DeletexMBService(ctx context.Context, scsAsId string, serviceId string) ApiDeletexMBServiceRequest {
 	return ApiDeletexMBServiceRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		serviceId: serviceId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		serviceId:  serviceId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDeletexMBServiceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualServiceOperationApiService.DeletexMBService")
@@ -99,9 +98,9 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,10 +194,10 @@ func (a *IndividualServiceOperationApiService) DeletexMBServiceExecute(r ApiDele
 }
 
 type ApiFetchIndxMBServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualServiceOperationApiService
-	scsAsId string
-	serviceId string
+	scsAsId    string
+	serviceId  string
 }
 
 func (r ApiFetchIndxMBServiceRequest) Execute() (*ServiceCreation, *http.Response, error) {
@@ -208,28 +207,29 @@ func (r ApiFetchIndxMBServiceRequest) Execute() (*ServiceCreation, *http.Respons
 /*
 FetchIndxMBService Read a service resource for a given SCS/AS and a Service Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param serviceId Service Id
- @return ApiFetchIndxMBServiceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param serviceId Service Id
+	@return ApiFetchIndxMBServiceRequest
 */
 func (a *IndividualServiceOperationApiService) FetchIndxMBService(ctx context.Context, scsAsId string, serviceId string) ApiFetchIndxMBServiceRequest {
 	return ApiFetchIndxMBServiceRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		serviceId: serviceId,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		serviceId:  serviceId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceCreation
+//
+//	@return ServiceCreation
 func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFetchIndxMBServiceRequest) (*ServiceCreation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceCreation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceCreation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualServiceOperationApiService.FetchIndxMBService")
@@ -272,9 +272,9 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -291,8 +291,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -302,8 +302,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -313,8 +313,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -324,8 +324,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -335,8 +335,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -346,8 +346,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -357,8 +357,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -368,8 +368,8 @@ func (a *IndividualServiceOperationApiService) FetchIndxMBServiceExecute(r ApiFe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

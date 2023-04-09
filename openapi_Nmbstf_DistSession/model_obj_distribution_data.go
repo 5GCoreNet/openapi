@@ -1,7 +1,7 @@
 /*
 Nmbstf-distsession
 
-MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &ObjDistributionData{}
 // ObjDistributionData Info for Object Distribution Method
 type ObjDistributionData struct {
 	ObjDistributionOperatingMode ObjDistributionOperatingMode `json:"objDistributionOperatingMode"`
-	ObjAcquisitionMethod ObjAcquisitionMethod `json:"objAcquisitionMethod"`
-	ObjAcquisitionIdsPull []string `json:"objAcquisitionIdsPull,omitempty"`
+	ObjAcquisitionMethod         ObjAcquisitionMethod         `json:"objAcquisitionMethod"`
+	ObjAcquisitionIdsPull        []string                     `json:"objAcquisitionIdsPull,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	ObjAcquisitionIdPush *string `json:"objAcquisitionIdPush,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -101,7 +101,7 @@ func (o *ObjDistributionData) SetObjAcquisitionMethod(v ObjAcquisitionMethod) {
 
 // GetObjAcquisitionIdsPull returns the ObjAcquisitionIdsPull field value if set, zero value otherwise.
 func (o *ObjDistributionData) GetObjAcquisitionIdsPull() []string {
-	if o == nil || isNil(o.ObjAcquisitionIdsPull) {
+	if o == nil || IsNil(o.ObjAcquisitionIdsPull) {
 		var ret []string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ObjDistributionData) GetObjAcquisitionIdsPull() []string {
 // GetObjAcquisitionIdsPullOk returns a tuple with the ObjAcquisitionIdsPull field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjDistributionData) GetObjAcquisitionIdsPullOk() ([]string, bool) {
-	if o == nil || isNil(o.ObjAcquisitionIdsPull) {
+	if o == nil || IsNil(o.ObjAcquisitionIdsPull) {
 		return nil, false
 	}
 	return o.ObjAcquisitionIdsPull, true
@@ -119,7 +119,7 @@ func (o *ObjDistributionData) GetObjAcquisitionIdsPullOk() ([]string, bool) {
 
 // HasObjAcquisitionIdsPull returns a boolean if a field has been set.
 func (o *ObjDistributionData) HasObjAcquisitionIdsPull() bool {
-	if o != nil && !isNil(o.ObjAcquisitionIdsPull) {
+	if o != nil && !IsNil(o.ObjAcquisitionIdsPull) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ObjDistributionData) SetObjAcquisitionIdsPull(v []string) {
 
 // GetObjAcquisitionIdPush returns the ObjAcquisitionIdPush field value if set, zero value otherwise.
 func (o *ObjDistributionData) GetObjAcquisitionIdPush() string {
-	if o == nil || isNil(o.ObjAcquisitionIdPush) {
+	if o == nil || IsNil(o.ObjAcquisitionIdPush) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ObjDistributionData) GetObjAcquisitionIdPush() string {
 // GetObjAcquisitionIdPushOk returns a tuple with the ObjAcquisitionIdPush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjDistributionData) GetObjAcquisitionIdPushOk() (*string, bool) {
-	if o == nil || isNil(o.ObjAcquisitionIdPush) {
+	if o == nil || IsNil(o.ObjAcquisitionIdPush) {
 		return nil, false
 	}
 	return o.ObjAcquisitionIdPush, true
@@ -151,7 +151,7 @@ func (o *ObjDistributionData) GetObjAcquisitionIdPushOk() (*string, bool) {
 
 // HasObjAcquisitionIdPush returns a boolean if a field has been set.
 func (o *ObjDistributionData) HasObjAcquisitionIdPush() bool {
-	if o != nil && !isNil(o.ObjAcquisitionIdPush) {
+	if o != nil && !IsNil(o.ObjAcquisitionIdPush) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *ObjDistributionData) SetObjAcquisitionIdPush(v string) {
 
 // GetObjIngestBaseUrl returns the ObjIngestBaseUrl field value if set, zero value otherwise.
 func (o *ObjDistributionData) GetObjIngestBaseUrl() string {
-	if o == nil || isNil(o.ObjIngestBaseUrl) {
+	if o == nil || IsNil(o.ObjIngestBaseUrl) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *ObjDistributionData) GetObjIngestBaseUrl() string {
 // GetObjIngestBaseUrlOk returns a tuple with the ObjIngestBaseUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjDistributionData) GetObjIngestBaseUrlOk() (*string, bool) {
-	if o == nil || isNil(o.ObjIngestBaseUrl) {
+	if o == nil || IsNil(o.ObjIngestBaseUrl) {
 		return nil, false
 	}
 	return o.ObjIngestBaseUrl, true
@@ -183,7 +183,7 @@ func (o *ObjDistributionData) GetObjIngestBaseUrlOk() (*string, bool) {
 
 // HasObjIngestBaseUrl returns a boolean if a field has been set.
 func (o *ObjDistributionData) HasObjIngestBaseUrl() bool {
-	if o != nil && !isNil(o.ObjIngestBaseUrl) {
+	if o != nil && !IsNil(o.ObjIngestBaseUrl) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *ObjDistributionData) SetObjIngestBaseUrl(v string) {
 
 // GetObjDistributionBaseUrl returns the ObjDistributionBaseUrl field value if set, zero value otherwise.
 func (o *ObjDistributionData) GetObjDistributionBaseUrl() string {
-	if o == nil || isNil(o.ObjDistributionBaseUrl) {
+	if o == nil || IsNil(o.ObjDistributionBaseUrl) {
 		var ret string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *ObjDistributionData) GetObjDistributionBaseUrl() string {
 // GetObjDistributionBaseUrlOk returns a tuple with the ObjDistributionBaseUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjDistributionData) GetObjDistributionBaseUrlOk() (*string, bool) {
-	if o == nil || isNil(o.ObjDistributionBaseUrl) {
+	if o == nil || IsNil(o.ObjDistributionBaseUrl) {
 		return nil, false
 	}
 	return o.ObjDistributionBaseUrl, true
@@ -215,7 +215,7 @@ func (o *ObjDistributionData) GetObjDistributionBaseUrlOk() (*string, bool) {
 
 // HasObjDistributionBaseUrl returns a boolean if a field has been set.
 func (o *ObjDistributionData) HasObjDistributionBaseUrl() bool {
-	if o != nil && !isNil(o.ObjDistributionBaseUrl) {
+	if o != nil && !IsNil(o.ObjDistributionBaseUrl) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *ObjDistributionData) SetObjDistributionBaseUrl(v string) {
 
 // GetObjRepairBaseUrl returns the ObjRepairBaseUrl field value if set, zero value otherwise.
 func (o *ObjDistributionData) GetObjRepairBaseUrl() string {
-	if o == nil || isNil(o.ObjRepairBaseUrl) {
+	if o == nil || IsNil(o.ObjRepairBaseUrl) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *ObjDistributionData) GetObjRepairBaseUrl() string {
 // GetObjRepairBaseUrlOk returns a tuple with the ObjRepairBaseUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjDistributionData) GetObjRepairBaseUrlOk() (*string, bool) {
-	if o == nil || isNil(o.ObjRepairBaseUrl) {
+	if o == nil || IsNil(o.ObjRepairBaseUrl) {
 		return nil, false
 	}
 	return o.ObjRepairBaseUrl, true
@@ -247,7 +247,7 @@ func (o *ObjDistributionData) GetObjRepairBaseUrlOk() (*string, bool) {
 
 // HasObjRepairBaseUrl returns a boolean if a field has been set.
 func (o *ObjDistributionData) HasObjRepairBaseUrl() bool {
-	if o != nil && !isNil(o.ObjRepairBaseUrl) {
+	if o != nil && !IsNil(o.ObjRepairBaseUrl) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *ObjDistributionData) SetObjRepairBaseUrl(v string) {
 }
 
 func (o ObjDistributionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,19 +271,19 @@ func (o ObjDistributionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["objDistributionOperatingMode"] = o.ObjDistributionOperatingMode
 	toSerialize["objAcquisitionMethod"] = o.ObjAcquisitionMethod
-	if !isNil(o.ObjAcquisitionIdsPull) {
+	if !IsNil(o.ObjAcquisitionIdsPull) {
 		toSerialize["objAcquisitionIdsPull"] = o.ObjAcquisitionIdsPull
 	}
-	if !isNil(o.ObjAcquisitionIdPush) {
+	if !IsNil(o.ObjAcquisitionIdPush) {
 		toSerialize["objAcquisitionIdPush"] = o.ObjAcquisitionIdPush
 	}
-	if !isNil(o.ObjIngestBaseUrl) {
+	if !IsNil(o.ObjIngestBaseUrl) {
 		toSerialize["objIngestBaseUrl"] = o.ObjIngestBaseUrl
 	}
-	if !isNil(o.ObjDistributionBaseUrl) {
+	if !IsNil(o.ObjDistributionBaseUrl) {
 		toSerialize["objDistributionBaseUrl"] = o.ObjDistributionBaseUrl
 	}
-	if !isNil(o.ObjRepairBaseUrl) {
+	if !IsNil(o.ObjRepairBaseUrl) {
 		toSerialize["objRepairBaseUrl"] = o.ObjRepairBaseUrl
 	}
 	return toSerialize, nil
@@ -324,5 +324,3 @@ func (v *NullableObjDistributionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

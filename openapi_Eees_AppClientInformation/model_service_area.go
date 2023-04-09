@@ -1,7 +1,7 @@
 /*
 EES Application Client Information_API
 
-API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ServiceArea{}
 
 // ServiceArea Represents a service area information of the EdgeApp entity.
 type ServiceArea struct {
-	TopServAr *TopologicalServiceArea `json:"topServAr,omitempty"`
+	TopServAr *TopologicalServiceArea  `json:"topServAr,omitempty"`
 	GeoServAr *GeographicalServiceArea `json:"geoServAr,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewServiceAreaWithDefaults() *ServiceArea {
 
 // GetTopServAr returns the TopServAr field value if set, zero value otherwise.
 func (o *ServiceArea) GetTopServAr() TopologicalServiceArea {
-	if o == nil || isNil(o.TopServAr) {
+	if o == nil || IsNil(o.TopServAr) {
 		var ret TopologicalServiceArea
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ServiceArea) GetTopServAr() TopologicalServiceArea {
 // GetTopServArOk returns a tuple with the TopServAr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceArea) GetTopServArOk() (*TopologicalServiceArea, bool) {
-	if o == nil || isNil(o.TopServAr) {
+	if o == nil || IsNil(o.TopServAr) {
 		return nil, false
 	}
 	return o.TopServAr, true
@@ -60,7 +60,7 @@ func (o *ServiceArea) GetTopServArOk() (*TopologicalServiceArea, bool) {
 
 // HasTopServAr returns a boolean if a field has been set.
 func (o *ServiceArea) HasTopServAr() bool {
-	if o != nil && !isNil(o.TopServAr) {
+	if o != nil && !IsNil(o.TopServAr) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ServiceArea) SetTopServAr(v TopologicalServiceArea) {
 
 // GetGeoServAr returns the GeoServAr field value if set, zero value otherwise.
 func (o *ServiceArea) GetGeoServAr() GeographicalServiceArea {
-	if o == nil || isNil(o.GeoServAr) {
+	if o == nil || IsNil(o.GeoServAr) {
 		var ret GeographicalServiceArea
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ServiceArea) GetGeoServAr() GeographicalServiceArea {
 // GetGeoServArOk returns a tuple with the GeoServAr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceArea) GetGeoServArOk() (*GeographicalServiceArea, bool) {
-	if o == nil || isNil(o.GeoServAr) {
+	if o == nil || IsNil(o.GeoServAr) {
 		return nil, false
 	}
 	return o.GeoServAr, true
@@ -92,7 +92,7 @@ func (o *ServiceArea) GetGeoServArOk() (*GeographicalServiceArea, bool) {
 
 // HasGeoServAr returns a boolean if a field has been set.
 func (o *ServiceArea) HasGeoServAr() bool {
-	if o != nil && !isNil(o.GeoServAr) {
+	if o != nil && !IsNil(o.GeoServAr) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ServiceArea) SetGeoServAr(v GeographicalServiceArea) {
 }
 
 func (o ServiceArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ServiceArea) MarshalJSON() ([]byte, error) {
 
 func (o ServiceArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TopServAr) {
+	if !IsNil(o.TopServAr) {
 		toSerialize["topServAr"] = o.TopServAr
 	}
-	if !isNil(o.GeoServAr) {
+	if !IsNil(o.GeoServAr) {
 		toSerialize["geoServAr"] = o.GeoServAr
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableServiceArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

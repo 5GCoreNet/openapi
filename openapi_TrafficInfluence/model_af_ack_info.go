@@ -1,7 +1,7 @@
 /*
 3gpp-traffic-influence
 
-API for AF traffic influence   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF traffic influence   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AfAckInfo{}
 
 // AfAckInfo Represents acknowledgement information of a traffic influence event notification.
 type AfAckInfo struct {
-	AfTransId *string `json:"afTransId,omitempty"`
+	AfTransId *string      `json:"afTransId,omitempty"`
 	AckResult AfResultInfo `json:"ackResult"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewAfAckInfoWithDefaults() *AfAckInfo {
 
 // GetAfTransId returns the AfTransId field value if set, zero value otherwise.
 func (o *AfAckInfo) GetAfTransId() string {
-	if o == nil || isNil(o.AfTransId) {
+	if o == nil || IsNil(o.AfTransId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AfAckInfo) GetAfTransId() string {
 // GetAfTransIdOk returns a tuple with the AfTransId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfAckInfo) GetAfTransIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfTransId) {
+	if o == nil || IsNil(o.AfTransId) {
 		return nil, false
 	}
 	return o.AfTransId, true
@@ -63,7 +63,7 @@ func (o *AfAckInfo) GetAfTransIdOk() (*string, bool) {
 
 // HasAfTransId returns a boolean if a field has been set.
 func (o *AfAckInfo) HasAfTransId() bool {
-	if o != nil && !isNil(o.AfTransId) {
+	if o != nil && !IsNil(o.AfTransId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AfAckInfo) SetAckResult(v AfResultInfo) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *AfAckInfo) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AfAckInfo) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfAckInfo) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -119,7 +119,7 @@ func (o *AfAckInfo) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *AfAckInfo) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *AfAckInfo) SetGpsi(v string) {
 }
 
 func (o AfAckInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,11 +141,11 @@ func (o AfAckInfo) MarshalJSON() ([]byte, error) {
 
 func (o AfAckInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AfTransId) {
+	if !IsNil(o.AfTransId) {
 		toSerialize["afTransId"] = o.AfTransId
 	}
 	toSerialize["ackResult"] = o.AckResult
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableAfAckInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-5glan-pp
 
-API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -21,18 +21,18 @@ var _ MappedNullable = &Model5GLanParameters{}
 type Model5GLanParameters struct {
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
 	ExterGroupId string `json:"exterGroupId"`
-	// Contains the list of 5G VN Group members, each member is identified by GPSI. Any string value can be used as a key of the map. 
+	// Contains the list of 5G VN Group members, each member is identified by GPSI. Any string value can be used as a key of the map.
 	Gpsis map[string]string `json:"gpsis"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn string `json:"dnn"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	AaaIpv4Addr *string `json:"aaaIpv4Addr,omitempty"`
-	AaaIpv6Addr *Ipv6Addr `json:"aaaIpv6Addr,omitempty"`
-	AaaUsgs []AaaUsage `json:"aaaUsgs,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	AaaIpv4Addr *string    `json:"aaaIpv4Addr,omitempty"`
+	AaaIpv6Addr *Ipv6Addr  `json:"aaaIpv6Addr,omitempty"`
+	AaaUsgs     []AaaUsage `json:"aaaUsgs,omitempty"`
 	// String uniquely identifying MTC provider information.
-	MtcProviderId *string `json:"mtcProviderId,omitempty"`
-	Snssai Snssai `json:"snssai"`
-	SessionType PduSessionType `json:"sessionType"`
+	MtcProviderId *string        `json:"mtcProviderId,omitempty"`
+	Snssai        Snssai         `json:"snssai"`
+	SessionType   PduSessionType `json:"sessionType"`
 	// Further allowed PDU Session types.
 	SessionTypes []PduSessionType `json:"sessionTypes,omitempty"`
 	// Describes the operation systems and the corresponding applications for each operation systems. The key of map is osId.
@@ -136,7 +136,7 @@ func (o *Model5GLanParameters) SetDnn(v string) {
 
 // GetAaaIpv4Addr returns the AaaIpv4Addr field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetAaaIpv4Addr() string {
-	if o == nil || isNil(o.AaaIpv4Addr) {
+	if o == nil || IsNil(o.AaaIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *Model5GLanParameters) GetAaaIpv4Addr() string {
 // GetAaaIpv4AddrOk returns a tuple with the AaaIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetAaaIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.AaaIpv4Addr) {
+	if o == nil || IsNil(o.AaaIpv4Addr) {
 		return nil, false
 	}
 	return o.AaaIpv4Addr, true
@@ -154,7 +154,7 @@ func (o *Model5GLanParameters) GetAaaIpv4AddrOk() (*string, bool) {
 
 // HasAaaIpv4Addr returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasAaaIpv4Addr() bool {
-	if o != nil && !isNil(o.AaaIpv4Addr) {
+	if o != nil && !IsNil(o.AaaIpv4Addr) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *Model5GLanParameters) SetAaaIpv4Addr(v string) {
 
 // GetAaaIpv6Addr returns the AaaIpv6Addr field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetAaaIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.AaaIpv6Addr) {
+	if o == nil || IsNil(o.AaaIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *Model5GLanParameters) GetAaaIpv6Addr() Ipv6Addr {
 // GetAaaIpv6AddrOk returns a tuple with the AaaIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetAaaIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.AaaIpv6Addr) {
+	if o == nil || IsNil(o.AaaIpv6Addr) {
 		return nil, false
 	}
 	return o.AaaIpv6Addr, true
@@ -186,7 +186,7 @@ func (o *Model5GLanParameters) GetAaaIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasAaaIpv6Addr returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasAaaIpv6Addr() bool {
-	if o != nil && !isNil(o.AaaIpv6Addr) {
+	if o != nil && !IsNil(o.AaaIpv6Addr) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *Model5GLanParameters) SetAaaIpv6Addr(v Ipv6Addr) {
 
 // GetAaaUsgs returns the AaaUsgs field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetAaaUsgs() []AaaUsage {
-	if o == nil || isNil(o.AaaUsgs) {
+	if o == nil || IsNil(o.AaaUsgs) {
 		var ret []AaaUsage
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *Model5GLanParameters) GetAaaUsgs() []AaaUsage {
 // GetAaaUsgsOk returns a tuple with the AaaUsgs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetAaaUsgsOk() ([]AaaUsage, bool) {
-	if o == nil || isNil(o.AaaUsgs) {
+	if o == nil || IsNil(o.AaaUsgs) {
 		return nil, false
 	}
 	return o.AaaUsgs, true
@@ -218,7 +218,7 @@ func (o *Model5GLanParameters) GetAaaUsgsOk() ([]AaaUsage, bool) {
 
 // HasAaaUsgs returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasAaaUsgs() bool {
-	if o != nil && !isNil(o.AaaUsgs) {
+	if o != nil && !IsNil(o.AaaUsgs) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *Model5GLanParameters) SetAaaUsgs(v []AaaUsage) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetMtcProviderId() string {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *Model5GLanParameters) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -250,7 +250,7 @@ func (o *Model5GLanParameters) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasMtcProviderId() bool {
-	if o != nil && !isNil(o.MtcProviderId) {
+	if o != nil && !IsNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *Model5GLanParameters) SetSessionType(v PduSessionType) {
 
 // GetSessionTypes returns the SessionTypes field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetSessionTypes() []PduSessionType {
-	if o == nil || isNil(o.SessionTypes) {
+	if o == nil || IsNil(o.SessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *Model5GLanParameters) GetSessionTypes() []PduSessionType {
 // GetSessionTypesOk returns a tuple with the SessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || isNil(o.SessionTypes) {
+	if o == nil || IsNil(o.SessionTypes) {
 		return nil, false
 	}
 	return o.SessionTypes, true
@@ -330,7 +330,7 @@ func (o *Model5GLanParameters) GetSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasSessionTypes returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasSessionTypes() bool {
-	if o != nil && !isNil(o.SessionTypes) {
+	if o != nil && !IsNil(o.SessionTypes) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *Model5GLanParameters) SetAppDesps(v map[string]AppDescriptor) {
 }
 
 func (o Model5GLanParameters) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -379,21 +379,21 @@ func (o Model5GLanParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize["exterGroupId"] = o.ExterGroupId
 	toSerialize["gpsis"] = o.Gpsis
 	toSerialize["dnn"] = o.Dnn
-	if !isNil(o.AaaIpv4Addr) {
+	if !IsNil(o.AaaIpv4Addr) {
 		toSerialize["aaaIpv4Addr"] = o.AaaIpv4Addr
 	}
-	if !isNil(o.AaaIpv6Addr) {
+	if !IsNil(o.AaaIpv6Addr) {
 		toSerialize["aaaIpv6Addr"] = o.AaaIpv6Addr
 	}
-	if !isNil(o.AaaUsgs) {
+	if !IsNil(o.AaaUsgs) {
 		toSerialize["aaaUsgs"] = o.AaaUsgs
 	}
-	if !isNil(o.MtcProviderId) {
+	if !IsNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["sessionType"] = o.SessionType
-	if !isNil(o.SessionTypes) {
+	if !IsNil(o.SessionTypes) {
 		toSerialize["sessionTypes"] = o.SessionTypes
 	}
 	toSerialize["appDesps"] = o.AppDesps
@@ -435,5 +435,3 @@ func (v *NullableModel5GLanParameters) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

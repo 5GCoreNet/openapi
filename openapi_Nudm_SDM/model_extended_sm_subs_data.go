@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ExtendedSmSubsData{}
 
 // ExtendedSmSubsData Contains identifiers of shared Session Management Subscription Data and optionally individual Session Management Subscription Data.
 type ExtendedSmSubsData struct {
-	SharedSmSubsDataIds []string `json:"sharedSmSubsDataIds"`
+	SharedSmSubsDataIds  []string                            `json:"sharedSmSubsDataIds"`
 	IndividualSmSubsData []SessionManagementSubscriptionData `json:"individualSmSubsData,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *ExtendedSmSubsData) SetSharedSmSubsDataIds(v []string) {
 
 // GetIndividualSmSubsData returns the IndividualSmSubsData field value if set, zero value otherwise.
 func (o *ExtendedSmSubsData) GetIndividualSmSubsData() []SessionManagementSubscriptionData {
-	if o == nil || isNil(o.IndividualSmSubsData) {
+	if o == nil || IsNil(o.IndividualSmSubsData) {
 		var ret []SessionManagementSubscriptionData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ExtendedSmSubsData) GetIndividualSmSubsData() []SessionManagementSubscr
 // GetIndividualSmSubsDataOk returns a tuple with the IndividualSmSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedSmSubsData) GetIndividualSmSubsDataOk() ([]SessionManagementSubscriptionData, bool) {
-	if o == nil || isNil(o.IndividualSmSubsData) {
+	if o == nil || IsNil(o.IndividualSmSubsData) {
 		return nil, false
 	}
 	return o.IndividualSmSubsData, true
@@ -85,7 +85,7 @@ func (o *ExtendedSmSubsData) GetIndividualSmSubsDataOk() ([]SessionManagementSub
 
 // HasIndividualSmSubsData returns a boolean if a field has been set.
 func (o *ExtendedSmSubsData) HasIndividualSmSubsData() bool {
-	if o != nil && !isNil(o.IndividualSmSubsData) {
+	if o != nil && !IsNil(o.IndividualSmSubsData) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ExtendedSmSubsData) SetIndividualSmSubsData(v []SessionManagementSubscr
 }
 
 func (o ExtendedSmSubsData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ExtendedSmSubsData) MarshalJSON() ([]byte, error) {
 func (o ExtendedSmSubsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sharedSmSubsDataIds"] = o.SharedSmSubsDataIds
-	if !isNil(o.IndividualSmSubsData) {
+	if !IsNil(o.IndividualSmSubsData) {
 		toSerialize["individualSmSubsData"] = o.IndividualSmSubsData
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableExtendedSmSubsData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

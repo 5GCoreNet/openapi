@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewRadioParameterSetInfoWithDefaults() *RadioParameterSetInfo {
 
 // GetRadioParameterSetValues returns the RadioParameterSetValues field value if set, zero value otherwise.
 func (o *RadioParameterSetInfo) GetRadioParameterSetValues() []string {
-	if o == nil || isNil(o.RadioParameterSetValues) {
+	if o == nil || IsNil(o.RadioParameterSetValues) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *RadioParameterSetInfo) GetRadioParameterSetValues() []string {
 // GetRadioParameterSetValuesOk returns a tuple with the RadioParameterSetValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioParameterSetInfo) GetRadioParameterSetValuesOk() ([]string, bool) {
-	if o == nil || isNil(o.RadioParameterSetValues) {
+	if o == nil || IsNil(o.RadioParameterSetValues) {
 		return nil, false
 	}
 	return o.RadioParameterSetValues, true
@@ -62,7 +62,7 @@ func (o *RadioParameterSetInfo) GetRadioParameterSetValuesOk() ([]string, bool) 
 
 // HasRadioParameterSetValues returns a boolean if a field has been set.
 func (o *RadioParameterSetInfo) HasRadioParameterSetValues() bool {
-	if o != nil && !isNil(o.RadioParameterSetValues) {
+	if o != nil && !IsNil(o.RadioParameterSetValues) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *RadioParameterSetInfo) SetRadioParameterSetValues(v []string) {
 
 // GetChangeTimestamp returns the ChangeTimestamp field value if set, zero value otherwise.
 func (o *RadioParameterSetInfo) GetChangeTimestamp() time.Time {
-	if o == nil || isNil(o.ChangeTimestamp) {
+	if o == nil || IsNil(o.ChangeTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *RadioParameterSetInfo) GetChangeTimestamp() time.Time {
 // GetChangeTimestampOk returns a tuple with the ChangeTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioParameterSetInfo) GetChangeTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ChangeTimestamp) {
+	if o == nil || IsNil(o.ChangeTimestamp) {
 		return nil, false
 	}
 	return o.ChangeTimestamp, true
@@ -94,7 +94,7 @@ func (o *RadioParameterSetInfo) GetChangeTimestampOk() (*time.Time, bool) {
 
 // HasChangeTimestamp returns a boolean if a field has been set.
 func (o *RadioParameterSetInfo) HasChangeTimestamp() bool {
-	if o != nil && !isNil(o.ChangeTimestamp) {
+	if o != nil && !IsNil(o.ChangeTimestamp) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RadioParameterSetInfo) SetChangeTimestamp(v time.Time) {
 }
 
 func (o RadioParameterSetInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o RadioParameterSetInfo) MarshalJSON() ([]byte, error) {
 
 func (o RadioParameterSetInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RadioParameterSetValues) {
+	if !IsNil(o.RadioParameterSetValues) {
 		toSerialize["radioParameterSetValues"] = o.RadioParameterSetValues
 	}
-	if !isNil(o.ChangeTimestamp) {
+	if !IsNil(o.ChangeTimestamp) {
 		toSerialize["changeTimestamp"] = o.ChangeTimestamp
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableRadioParameterSetInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

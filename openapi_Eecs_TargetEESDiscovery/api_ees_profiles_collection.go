@@ -1,7 +1,7 @@
 /*
 ECS Target EES Discovery API
 
-API for Target EES Discovery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Target EES Discovery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Eecs_TargetEESDiscovery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // EESProfilesCollectionApiService EESProfilesCollectionApi service
 type EESProfilesCollectionApiService service
 
 type ApiGetEESProfilesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EESProfilesCollectionApiService
-	eesId *string
-	easId *string
+	eesId      *string
+	easId      *string
 	targetDnai *string
-	ueId *string
+	ueId       *string
 	ueLocation *LocationArea5G
 }
 
@@ -71,24 +70,25 @@ GetEESProfiles Read all EES Profiles
 
 Retrieve the T-EES information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetEESProfilesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetEESProfilesRequest
 */
 func (a *EESProfilesCollectionApiService) GetEESProfiles(ctx context.Context) ApiGetEESProfilesRequest {
 	return ApiGetEESProfilesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ECSServProvResp
+//
+//	@return ECSServProvResp
 func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfilesRequest) (*ECSServProvResp, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ECSServProvResp
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ECSServProvResp
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EESProfilesCollectionApiService.GetEESProfiles")
@@ -108,16 +108,16 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 		return localVarReturnValue, nil, reportError("easId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "ees-id", r.eesId, "")
-	parameterAddToQuery(localVarQueryParams, "eas-id", r.easId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "ees-id", r.eesId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "eas-id", r.easId, "")
 	if r.targetDnai != nil {
-		parameterAddToQuery(localVarQueryParams, "target-dnai", r.targetDnai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "target-dnai", r.targetDnai, "")
 	}
 	if r.ueId != nil {
-		parameterAddToQuery(localVarQueryParams, "ue-id", r.ueId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id", r.ueId, "")
 	}
 	if r.ueLocation != nil {
-		parameterAddToQuery(localVarQueryParams, "ue-location", r.ueLocation, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-location", r.ueLocation, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -146,9 +146,9 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -165,8 +165,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -176,8 +176,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -187,8 +187,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -198,8 +198,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -209,8 +209,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -220,8 +220,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -231,8 +231,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -242,8 +242,8 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

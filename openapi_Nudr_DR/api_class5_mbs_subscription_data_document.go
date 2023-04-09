@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // Class5MBSSubscriptionDataDocumentApiService Class5MBSSubscriptionDataDocumentApi service
 type Class5MBSSubscriptionDataDocumentApiService service
 
 type ApiQuery5mbsDataRequest struct {
-	ctx context.Context
-	ApiService *Class5MBSSubscriptionDataDocumentApiService
-	ueId string
+	ctx               context.Context
+	ApiService        *Class5MBSSubscriptionDataDocumentApiService
+	ueId              string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // Supported Features
@@ -57,26 +56,27 @@ func (r ApiQuery5mbsDataRequest) Execute() (*MbsSubscriptionData1, *http.Respons
 /*
 Query5mbsData Retrieves the 5mbs subscription data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQuery5mbsDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQuery5mbsDataRequest
 */
 func (a *Class5MBSSubscriptionDataDocumentApiService) Query5mbsData(ctx context.Context, ueId string) ApiQuery5mbsDataRequest {
 	return ApiQuery5mbsDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return MbsSubscriptionData1
+//
+//	@return MbsSubscriptionData1
 func (a *Class5MBSSubscriptionDataDocumentApiService) Query5mbsDataExecute(r ApiQuery5mbsDataRequest) (*MbsSubscriptionData1, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MbsSubscriptionData1
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MbsSubscriptionData1
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class5MBSSubscriptionDataDocumentApiService.Query5mbsData")
@@ -92,7 +92,7 @@ func (a *Class5MBSSubscriptionDataDocumentApiService) Query5mbsDataExecute(r Api
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -112,10 +112,10 @@ func (a *Class5MBSSubscriptionDataDocumentApiService) Query5mbsDataExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -127,9 +127,9 @@ func (a *Class5MBSSubscriptionDataDocumentApiService) Query5mbsDataExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

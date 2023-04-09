@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,24 +20,24 @@ var _ MappedNullable = &InputData{}
 
 // InputData Contains the input parameters in ProvideLocation service operation
 type InputData struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
-	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.  
+	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.
 	ExtGroupId *string `json:"extGroupId,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
-	IntGroupId *string `json:"intGroupId,omitempty"`
-	ExternalClientType ExternalClientType `json:"externalClientType"`
-	LocationQoS *LocationQoS `json:"locationQoS,omitempty"`
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
+	IntGroupId         *string              `json:"intGroupId,omitempty"`
+	ExternalClientType ExternalClientType   `json:"externalClientType"`
+	LocationQoS        *LocationQoS         `json:"locationQoS,omitempty"`
 	SupportedGADShapes []SupportedGADShapes `json:"supportedGADShapes,omitempty"`
 	// Contains the service identity
-	ServiceIdentity *string `json:"serviceIdentity,omitempty"`
-	ServiceCoverage []string `json:"serviceCoverage,omitempty"`
-	LdrType *LdrType `json:"ldrType,omitempty"`
+	ServiceIdentity   *string            `json:"serviceIdentity,omitempty"`
+	ServiceCoverage   []string           `json:"serviceCoverage,omitempty"`
+	LdrType           *LdrType           `json:"ldrType,omitempty"`
 	PeriodicEventInfo *PeriodicEventInfo `json:"periodicEventInfo,omitempty"`
-	AreaEventInfo *AreaEventInfoExt `json:"areaEventInfo,omitempty"`
-	MotionEventInfo *MotionEventInfo `json:"motionEventInfo,omitempty"`
+	AreaEventInfo     *AreaEventInfoExt  `json:"areaEventInfo,omitempty"`
+	MotionEventInfo   *MotionEventInfo   `json:"motionEventInfo,omitempty"`
 	// LDR Reference.
 	LdrReference *string `json:"ldrReference,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -45,23 +45,23 @@ type InputData struct {
 	// String providing an URI formatted according to RFC 3986.
 	EventNotificationUri *string `json:"eventNotificationUri,omitempty"`
 	// Contains the external client identification
-	ExternalClientIdentification *string `json:"externalClientIdentification,omitempty"`
-	AfId *string `json:"afId,omitempty"`
-	UePrivacyRequirements *UePrivacyRequirements `json:"uePrivacyRequirements,omitempty"`
+	ExternalClientIdentification *string                `json:"externalClientIdentification,omitempty"`
+	AfId                         *string                `json:"afId,omitempty"`
+	UePrivacyRequirements        *UePrivacyRequirements `json:"uePrivacyRequirements,omitempty"`
 	// LCS service type.
-	LcsServiceType *int32 `json:"lcsServiceType,omitempty"`
-	VelocityRequested *VelocityRequested `json:"velocityRequested,omitempty"`
-	Priority *LcsPriority `json:"priority,omitempty"`
+	LcsServiceType        *int32                 `json:"lcsServiceType,omitempty"`
+	VelocityRequested     *VelocityRequested     `json:"velocityRequested,omitempty"`
+	Priority              *LcsPriority           `json:"priority,omitempty"`
 	LocationTypeRequested *LocationTypeRequested `json:"locationTypeRequested,omitempty"`
 	// Indicates value of the age of the location estimate.
 	MaximumAgeOfLocationEstimate *int32 `json:"maximumAgeOfLocationEstimate,omitempty"`
-	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).  
+	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).
 	AmfId *string `json:"amfId,omitempty"`
 	// Contains the codeword
 	CodeWord *string `json:"codeWord,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ScheduledLocTime *time.Time `json:"scheduledLocTime,omitempty"`
-	ReliableLocReq *bool `json:"reliableLocReq,omitempty"`
+	ReliableLocReq   *bool      `json:"reliableLocReq,omitempty"`
 }
 
 // NewInputData instantiates a new InputData object
@@ -88,7 +88,7 @@ func NewInputDataWithDefaults() *InputData {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *InputData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *InputData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -106,7 +106,7 @@ func (o *InputData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *InputData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *InputData) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *InputData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *InputData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -138,7 +138,7 @@ func (o *InputData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *InputData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *InputData) SetSupi(v string) {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *InputData) GetExtGroupId() string {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *InputData) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -170,7 +170,7 @@ func (o *InputData) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *InputData) HasExtGroupId() bool {
-	if o != nil && !isNil(o.ExtGroupId) {
+	if o != nil && !IsNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *InputData) SetExtGroupId(v string) {
 
 // GetIntGroupId returns the IntGroupId field value if set, zero value otherwise.
 func (o *InputData) GetIntGroupId() string {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *InputData) GetIntGroupId() string {
 // GetIntGroupIdOk returns a tuple with the IntGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetIntGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		return nil, false
 	}
 	return o.IntGroupId, true
@@ -202,7 +202,7 @@ func (o *InputData) GetIntGroupIdOk() (*string, bool) {
 
 // HasIntGroupId returns a boolean if a field has been set.
 func (o *InputData) HasIntGroupId() bool {
-	if o != nil && !isNil(o.IntGroupId) {
+	if o != nil && !IsNil(o.IntGroupId) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *InputData) SetExternalClientType(v ExternalClientType) {
 
 // GetLocationQoS returns the LocationQoS field value if set, zero value otherwise.
 func (o *InputData) GetLocationQoS() LocationQoS {
-	if o == nil || isNil(o.LocationQoS) {
+	if o == nil || IsNil(o.LocationQoS) {
 		var ret LocationQoS
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *InputData) GetLocationQoS() LocationQoS {
 // GetLocationQoSOk returns a tuple with the LocationQoS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetLocationQoSOk() (*LocationQoS, bool) {
-	if o == nil || isNil(o.LocationQoS) {
+	if o == nil || IsNil(o.LocationQoS) {
 		return nil, false
 	}
 	return o.LocationQoS, true
@@ -258,7 +258,7 @@ func (o *InputData) GetLocationQoSOk() (*LocationQoS, bool) {
 
 // HasLocationQoS returns a boolean if a field has been set.
 func (o *InputData) HasLocationQoS() bool {
-	if o != nil && !isNil(o.LocationQoS) {
+	if o != nil && !IsNil(o.LocationQoS) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *InputData) SetLocationQoS(v LocationQoS) {
 
 // GetSupportedGADShapes returns the SupportedGADShapes field value if set, zero value otherwise.
 func (o *InputData) GetSupportedGADShapes() []SupportedGADShapes {
-	if o == nil || isNil(o.SupportedGADShapes) {
+	if o == nil || IsNil(o.SupportedGADShapes) {
 		var ret []SupportedGADShapes
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *InputData) GetSupportedGADShapes() []SupportedGADShapes {
 // GetSupportedGADShapesOk returns a tuple with the SupportedGADShapes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetSupportedGADShapesOk() ([]SupportedGADShapes, bool) {
-	if o == nil || isNil(o.SupportedGADShapes) {
+	if o == nil || IsNil(o.SupportedGADShapes) {
 		return nil, false
 	}
 	return o.SupportedGADShapes, true
@@ -290,7 +290,7 @@ func (o *InputData) GetSupportedGADShapesOk() ([]SupportedGADShapes, bool) {
 
 // HasSupportedGADShapes returns a boolean if a field has been set.
 func (o *InputData) HasSupportedGADShapes() bool {
-	if o != nil && !isNil(o.SupportedGADShapes) {
+	if o != nil && !IsNil(o.SupportedGADShapes) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *InputData) SetSupportedGADShapes(v []SupportedGADShapes) {
 
 // GetServiceIdentity returns the ServiceIdentity field value if set, zero value otherwise.
 func (o *InputData) GetServiceIdentity() string {
-	if o == nil || isNil(o.ServiceIdentity) {
+	if o == nil || IsNil(o.ServiceIdentity) {
 		var ret string
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *InputData) GetServiceIdentity() string {
 // GetServiceIdentityOk returns a tuple with the ServiceIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetServiceIdentityOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceIdentity) {
+	if o == nil || IsNil(o.ServiceIdentity) {
 		return nil, false
 	}
 	return o.ServiceIdentity, true
@@ -322,7 +322,7 @@ func (o *InputData) GetServiceIdentityOk() (*string, bool) {
 
 // HasServiceIdentity returns a boolean if a field has been set.
 func (o *InputData) HasServiceIdentity() bool {
-	if o != nil && !isNil(o.ServiceIdentity) {
+	if o != nil && !IsNil(o.ServiceIdentity) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *InputData) SetServiceIdentity(v string) {
 
 // GetServiceCoverage returns the ServiceCoverage field value if set, zero value otherwise.
 func (o *InputData) GetServiceCoverage() []string {
-	if o == nil || isNil(o.ServiceCoverage) {
+	if o == nil || IsNil(o.ServiceCoverage) {
 		var ret []string
 		return ret
 	}
@@ -346,7 +346,7 @@ func (o *InputData) GetServiceCoverage() []string {
 // GetServiceCoverageOk returns a tuple with the ServiceCoverage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetServiceCoverageOk() ([]string, bool) {
-	if o == nil || isNil(o.ServiceCoverage) {
+	if o == nil || IsNil(o.ServiceCoverage) {
 		return nil, false
 	}
 	return o.ServiceCoverage, true
@@ -354,7 +354,7 @@ func (o *InputData) GetServiceCoverageOk() ([]string, bool) {
 
 // HasServiceCoverage returns a boolean if a field has been set.
 func (o *InputData) HasServiceCoverage() bool {
-	if o != nil && !isNil(o.ServiceCoverage) {
+	if o != nil && !IsNil(o.ServiceCoverage) {
 		return true
 	}
 
@@ -368,7 +368,7 @@ func (o *InputData) SetServiceCoverage(v []string) {
 
 // GetLdrType returns the LdrType field value if set, zero value otherwise.
 func (o *InputData) GetLdrType() LdrType {
-	if o == nil || isNil(o.LdrType) {
+	if o == nil || IsNil(o.LdrType) {
 		var ret LdrType
 		return ret
 	}
@@ -378,7 +378,7 @@ func (o *InputData) GetLdrType() LdrType {
 // GetLdrTypeOk returns a tuple with the LdrType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetLdrTypeOk() (*LdrType, bool) {
-	if o == nil || isNil(o.LdrType) {
+	if o == nil || IsNil(o.LdrType) {
 		return nil, false
 	}
 	return o.LdrType, true
@@ -386,7 +386,7 @@ func (o *InputData) GetLdrTypeOk() (*LdrType, bool) {
 
 // HasLdrType returns a boolean if a field has been set.
 func (o *InputData) HasLdrType() bool {
-	if o != nil && !isNil(o.LdrType) {
+	if o != nil && !IsNil(o.LdrType) {
 		return true
 	}
 
@@ -400,7 +400,7 @@ func (o *InputData) SetLdrType(v LdrType) {
 
 // GetPeriodicEventInfo returns the PeriodicEventInfo field value if set, zero value otherwise.
 func (o *InputData) GetPeriodicEventInfo() PeriodicEventInfo {
-	if o == nil || isNil(o.PeriodicEventInfo) {
+	if o == nil || IsNil(o.PeriodicEventInfo) {
 		var ret PeriodicEventInfo
 		return ret
 	}
@@ -410,7 +410,7 @@ func (o *InputData) GetPeriodicEventInfo() PeriodicEventInfo {
 // GetPeriodicEventInfoOk returns a tuple with the PeriodicEventInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetPeriodicEventInfoOk() (*PeriodicEventInfo, bool) {
-	if o == nil || isNil(o.PeriodicEventInfo) {
+	if o == nil || IsNil(o.PeriodicEventInfo) {
 		return nil, false
 	}
 	return o.PeriodicEventInfo, true
@@ -418,7 +418,7 @@ func (o *InputData) GetPeriodicEventInfoOk() (*PeriodicEventInfo, bool) {
 
 // HasPeriodicEventInfo returns a boolean if a field has been set.
 func (o *InputData) HasPeriodicEventInfo() bool {
-	if o != nil && !isNil(o.PeriodicEventInfo) {
+	if o != nil && !IsNil(o.PeriodicEventInfo) {
 		return true
 	}
 
@@ -432,7 +432,7 @@ func (o *InputData) SetPeriodicEventInfo(v PeriodicEventInfo) {
 
 // GetAreaEventInfo returns the AreaEventInfo field value if set, zero value otherwise.
 func (o *InputData) GetAreaEventInfo() AreaEventInfoExt {
-	if o == nil || isNil(o.AreaEventInfo) {
+	if o == nil || IsNil(o.AreaEventInfo) {
 		var ret AreaEventInfoExt
 		return ret
 	}
@@ -442,7 +442,7 @@ func (o *InputData) GetAreaEventInfo() AreaEventInfoExt {
 // GetAreaEventInfoOk returns a tuple with the AreaEventInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetAreaEventInfoOk() (*AreaEventInfoExt, bool) {
-	if o == nil || isNil(o.AreaEventInfo) {
+	if o == nil || IsNil(o.AreaEventInfo) {
 		return nil, false
 	}
 	return o.AreaEventInfo, true
@@ -450,7 +450,7 @@ func (o *InputData) GetAreaEventInfoOk() (*AreaEventInfoExt, bool) {
 
 // HasAreaEventInfo returns a boolean if a field has been set.
 func (o *InputData) HasAreaEventInfo() bool {
-	if o != nil && !isNil(o.AreaEventInfo) {
+	if o != nil && !IsNil(o.AreaEventInfo) {
 		return true
 	}
 
@@ -464,7 +464,7 @@ func (o *InputData) SetAreaEventInfo(v AreaEventInfoExt) {
 
 // GetMotionEventInfo returns the MotionEventInfo field value if set, zero value otherwise.
 func (o *InputData) GetMotionEventInfo() MotionEventInfo {
-	if o == nil || isNil(o.MotionEventInfo) {
+	if o == nil || IsNil(o.MotionEventInfo) {
 		var ret MotionEventInfo
 		return ret
 	}
@@ -474,7 +474,7 @@ func (o *InputData) GetMotionEventInfo() MotionEventInfo {
 // GetMotionEventInfoOk returns a tuple with the MotionEventInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetMotionEventInfoOk() (*MotionEventInfo, bool) {
-	if o == nil || isNil(o.MotionEventInfo) {
+	if o == nil || IsNil(o.MotionEventInfo) {
 		return nil, false
 	}
 	return o.MotionEventInfo, true
@@ -482,7 +482,7 @@ func (o *InputData) GetMotionEventInfoOk() (*MotionEventInfo, bool) {
 
 // HasMotionEventInfo returns a boolean if a field has been set.
 func (o *InputData) HasMotionEventInfo() bool {
-	if o != nil && !isNil(o.MotionEventInfo) {
+	if o != nil && !IsNil(o.MotionEventInfo) {
 		return true
 	}
 
@@ -496,7 +496,7 @@ func (o *InputData) SetMotionEventInfo(v MotionEventInfo) {
 
 // GetLdrReference returns the LdrReference field value if set, zero value otherwise.
 func (o *InputData) GetLdrReference() string {
-	if o == nil || isNil(o.LdrReference) {
+	if o == nil || IsNil(o.LdrReference) {
 		var ret string
 		return ret
 	}
@@ -506,7 +506,7 @@ func (o *InputData) GetLdrReference() string {
 // GetLdrReferenceOk returns a tuple with the LdrReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetLdrReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.LdrReference) {
+	if o == nil || IsNil(o.LdrReference) {
 		return nil, false
 	}
 	return o.LdrReference, true
@@ -514,7 +514,7 @@ func (o *InputData) GetLdrReferenceOk() (*string, bool) {
 
 // HasLdrReference returns a boolean if a field has been set.
 func (o *InputData) HasLdrReference() bool {
-	if o != nil && !isNil(o.LdrReference) {
+	if o != nil && !IsNil(o.LdrReference) {
 		return true
 	}
 
@@ -528,7 +528,7 @@ func (o *InputData) SetLdrReference(v string) {
 
 // GetHgmlcCallBackUri returns the HgmlcCallBackUri field value if set, zero value otherwise.
 func (o *InputData) GetHgmlcCallBackUri() string {
-	if o == nil || isNil(o.HgmlcCallBackUri) {
+	if o == nil || IsNil(o.HgmlcCallBackUri) {
 		var ret string
 		return ret
 	}
@@ -538,7 +538,7 @@ func (o *InputData) GetHgmlcCallBackUri() string {
 // GetHgmlcCallBackUriOk returns a tuple with the HgmlcCallBackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetHgmlcCallBackUriOk() (*string, bool) {
-	if o == nil || isNil(o.HgmlcCallBackUri) {
+	if o == nil || IsNil(o.HgmlcCallBackUri) {
 		return nil, false
 	}
 	return o.HgmlcCallBackUri, true
@@ -546,7 +546,7 @@ func (o *InputData) GetHgmlcCallBackUriOk() (*string, bool) {
 
 // HasHgmlcCallBackUri returns a boolean if a field has been set.
 func (o *InputData) HasHgmlcCallBackUri() bool {
-	if o != nil && !isNil(o.HgmlcCallBackUri) {
+	if o != nil && !IsNil(o.HgmlcCallBackUri) {
 		return true
 	}
 
@@ -560,7 +560,7 @@ func (o *InputData) SetHgmlcCallBackUri(v string) {
 
 // GetEventNotificationUri returns the EventNotificationUri field value if set, zero value otherwise.
 func (o *InputData) GetEventNotificationUri() string {
-	if o == nil || isNil(o.EventNotificationUri) {
+	if o == nil || IsNil(o.EventNotificationUri) {
 		var ret string
 		return ret
 	}
@@ -570,7 +570,7 @@ func (o *InputData) GetEventNotificationUri() string {
 // GetEventNotificationUriOk returns a tuple with the EventNotificationUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetEventNotificationUriOk() (*string, bool) {
-	if o == nil || isNil(o.EventNotificationUri) {
+	if o == nil || IsNil(o.EventNotificationUri) {
 		return nil, false
 	}
 	return o.EventNotificationUri, true
@@ -578,7 +578,7 @@ func (o *InputData) GetEventNotificationUriOk() (*string, bool) {
 
 // HasEventNotificationUri returns a boolean if a field has been set.
 func (o *InputData) HasEventNotificationUri() bool {
-	if o != nil && !isNil(o.EventNotificationUri) {
+	if o != nil && !IsNil(o.EventNotificationUri) {
 		return true
 	}
 
@@ -592,7 +592,7 @@ func (o *InputData) SetEventNotificationUri(v string) {
 
 // GetExternalClientIdentification returns the ExternalClientIdentification field value if set, zero value otherwise.
 func (o *InputData) GetExternalClientIdentification() string {
-	if o == nil || isNil(o.ExternalClientIdentification) {
+	if o == nil || IsNil(o.ExternalClientIdentification) {
 		var ret string
 		return ret
 	}
@@ -602,7 +602,7 @@ func (o *InputData) GetExternalClientIdentification() string {
 // GetExternalClientIdentificationOk returns a tuple with the ExternalClientIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetExternalClientIdentificationOk() (*string, bool) {
-	if o == nil || isNil(o.ExternalClientIdentification) {
+	if o == nil || IsNil(o.ExternalClientIdentification) {
 		return nil, false
 	}
 	return o.ExternalClientIdentification, true
@@ -610,7 +610,7 @@ func (o *InputData) GetExternalClientIdentificationOk() (*string, bool) {
 
 // HasExternalClientIdentification returns a boolean if a field has been set.
 func (o *InputData) HasExternalClientIdentification() bool {
-	if o != nil && !isNil(o.ExternalClientIdentification) {
+	if o != nil && !IsNil(o.ExternalClientIdentification) {
 		return true
 	}
 
@@ -624,7 +624,7 @@ func (o *InputData) SetExternalClientIdentification(v string) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *InputData) GetAfId() string {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -634,7 +634,7 @@ func (o *InputData) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetAfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -642,7 +642,7 @@ func (o *InputData) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *InputData) HasAfId() bool {
-	if o != nil && !isNil(o.AfId) {
+	if o != nil && !IsNil(o.AfId) {
 		return true
 	}
 
@@ -656,7 +656,7 @@ func (o *InputData) SetAfId(v string) {
 
 // GetUePrivacyRequirements returns the UePrivacyRequirements field value if set, zero value otherwise.
 func (o *InputData) GetUePrivacyRequirements() UePrivacyRequirements {
-	if o == nil || isNil(o.UePrivacyRequirements) {
+	if o == nil || IsNil(o.UePrivacyRequirements) {
 		var ret UePrivacyRequirements
 		return ret
 	}
@@ -666,7 +666,7 @@ func (o *InputData) GetUePrivacyRequirements() UePrivacyRequirements {
 // GetUePrivacyRequirementsOk returns a tuple with the UePrivacyRequirements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetUePrivacyRequirementsOk() (*UePrivacyRequirements, bool) {
-	if o == nil || isNil(o.UePrivacyRequirements) {
+	if o == nil || IsNil(o.UePrivacyRequirements) {
 		return nil, false
 	}
 	return o.UePrivacyRequirements, true
@@ -674,7 +674,7 @@ func (o *InputData) GetUePrivacyRequirementsOk() (*UePrivacyRequirements, bool) 
 
 // HasUePrivacyRequirements returns a boolean if a field has been set.
 func (o *InputData) HasUePrivacyRequirements() bool {
-	if o != nil && !isNil(o.UePrivacyRequirements) {
+	if o != nil && !IsNil(o.UePrivacyRequirements) {
 		return true
 	}
 
@@ -688,7 +688,7 @@ func (o *InputData) SetUePrivacyRequirements(v UePrivacyRequirements) {
 
 // GetLcsServiceType returns the LcsServiceType field value if set, zero value otherwise.
 func (o *InputData) GetLcsServiceType() int32 {
-	if o == nil || isNil(o.LcsServiceType) {
+	if o == nil || IsNil(o.LcsServiceType) {
 		var ret int32
 		return ret
 	}
@@ -698,7 +698,7 @@ func (o *InputData) GetLcsServiceType() int32 {
 // GetLcsServiceTypeOk returns a tuple with the LcsServiceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetLcsServiceTypeOk() (*int32, bool) {
-	if o == nil || isNil(o.LcsServiceType) {
+	if o == nil || IsNil(o.LcsServiceType) {
 		return nil, false
 	}
 	return o.LcsServiceType, true
@@ -706,7 +706,7 @@ func (o *InputData) GetLcsServiceTypeOk() (*int32, bool) {
 
 // HasLcsServiceType returns a boolean if a field has been set.
 func (o *InputData) HasLcsServiceType() bool {
-	if o != nil && !isNil(o.LcsServiceType) {
+	if o != nil && !IsNil(o.LcsServiceType) {
 		return true
 	}
 
@@ -720,7 +720,7 @@ func (o *InputData) SetLcsServiceType(v int32) {
 
 // GetVelocityRequested returns the VelocityRequested field value if set, zero value otherwise.
 func (o *InputData) GetVelocityRequested() VelocityRequested {
-	if o == nil || isNil(o.VelocityRequested) {
+	if o == nil || IsNil(o.VelocityRequested) {
 		var ret VelocityRequested
 		return ret
 	}
@@ -730,7 +730,7 @@ func (o *InputData) GetVelocityRequested() VelocityRequested {
 // GetVelocityRequestedOk returns a tuple with the VelocityRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetVelocityRequestedOk() (*VelocityRequested, bool) {
-	if o == nil || isNil(o.VelocityRequested) {
+	if o == nil || IsNil(o.VelocityRequested) {
 		return nil, false
 	}
 	return o.VelocityRequested, true
@@ -738,7 +738,7 @@ func (o *InputData) GetVelocityRequestedOk() (*VelocityRequested, bool) {
 
 // HasVelocityRequested returns a boolean if a field has been set.
 func (o *InputData) HasVelocityRequested() bool {
-	if o != nil && !isNil(o.VelocityRequested) {
+	if o != nil && !IsNil(o.VelocityRequested) {
 		return true
 	}
 
@@ -752,7 +752,7 @@ func (o *InputData) SetVelocityRequested(v VelocityRequested) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *InputData) GetPriority() LcsPriority {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret LcsPriority
 		return ret
 	}
@@ -762,7 +762,7 @@ func (o *InputData) GetPriority() LcsPriority {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetPriorityOk() (*LcsPriority, bool) {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -770,7 +770,7 @@ func (o *InputData) GetPriorityOk() (*LcsPriority, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *InputData) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -784,7 +784,7 @@ func (o *InputData) SetPriority(v LcsPriority) {
 
 // GetLocationTypeRequested returns the LocationTypeRequested field value if set, zero value otherwise.
 func (o *InputData) GetLocationTypeRequested() LocationTypeRequested {
-	if o == nil || isNil(o.LocationTypeRequested) {
+	if o == nil || IsNil(o.LocationTypeRequested) {
 		var ret LocationTypeRequested
 		return ret
 	}
@@ -794,7 +794,7 @@ func (o *InputData) GetLocationTypeRequested() LocationTypeRequested {
 // GetLocationTypeRequestedOk returns a tuple with the LocationTypeRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetLocationTypeRequestedOk() (*LocationTypeRequested, bool) {
-	if o == nil || isNil(o.LocationTypeRequested) {
+	if o == nil || IsNil(o.LocationTypeRequested) {
 		return nil, false
 	}
 	return o.LocationTypeRequested, true
@@ -802,7 +802,7 @@ func (o *InputData) GetLocationTypeRequestedOk() (*LocationTypeRequested, bool) 
 
 // HasLocationTypeRequested returns a boolean if a field has been set.
 func (o *InputData) HasLocationTypeRequested() bool {
-	if o != nil && !isNil(o.LocationTypeRequested) {
+	if o != nil && !IsNil(o.LocationTypeRequested) {
 		return true
 	}
 
@@ -816,7 +816,7 @@ func (o *InputData) SetLocationTypeRequested(v LocationTypeRequested) {
 
 // GetMaximumAgeOfLocationEstimate returns the MaximumAgeOfLocationEstimate field value if set, zero value otherwise.
 func (o *InputData) GetMaximumAgeOfLocationEstimate() int32 {
-	if o == nil || isNil(o.MaximumAgeOfLocationEstimate) {
+	if o == nil || IsNil(o.MaximumAgeOfLocationEstimate) {
 		var ret int32
 		return ret
 	}
@@ -826,7 +826,7 @@ func (o *InputData) GetMaximumAgeOfLocationEstimate() int32 {
 // GetMaximumAgeOfLocationEstimateOk returns a tuple with the MaximumAgeOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetMaximumAgeOfLocationEstimateOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumAgeOfLocationEstimate) {
+	if o == nil || IsNil(o.MaximumAgeOfLocationEstimate) {
 		return nil, false
 	}
 	return o.MaximumAgeOfLocationEstimate, true
@@ -834,7 +834,7 @@ func (o *InputData) GetMaximumAgeOfLocationEstimateOk() (*int32, bool) {
 
 // HasMaximumAgeOfLocationEstimate returns a boolean if a field has been set.
 func (o *InputData) HasMaximumAgeOfLocationEstimate() bool {
-	if o != nil && !isNil(o.MaximumAgeOfLocationEstimate) {
+	if o != nil && !IsNil(o.MaximumAgeOfLocationEstimate) {
 		return true
 	}
 
@@ -848,7 +848,7 @@ func (o *InputData) SetMaximumAgeOfLocationEstimate(v int32) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *InputData) GetAmfId() string {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -858,7 +858,7 @@ func (o *InputData) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetAmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -866,7 +866,7 @@ func (o *InputData) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *InputData) HasAmfId() bool {
-	if o != nil && !isNil(o.AmfId) {
+	if o != nil && !IsNil(o.AmfId) {
 		return true
 	}
 
@@ -880,7 +880,7 @@ func (o *InputData) SetAmfId(v string) {
 
 // GetCodeWord returns the CodeWord field value if set, zero value otherwise.
 func (o *InputData) GetCodeWord() string {
-	if o == nil || isNil(o.CodeWord) {
+	if o == nil || IsNil(o.CodeWord) {
 		var ret string
 		return ret
 	}
@@ -890,7 +890,7 @@ func (o *InputData) GetCodeWord() string {
 // GetCodeWordOk returns a tuple with the CodeWord field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetCodeWordOk() (*string, bool) {
-	if o == nil || isNil(o.CodeWord) {
+	if o == nil || IsNil(o.CodeWord) {
 		return nil, false
 	}
 	return o.CodeWord, true
@@ -898,7 +898,7 @@ func (o *InputData) GetCodeWordOk() (*string, bool) {
 
 // HasCodeWord returns a boolean if a field has been set.
 func (o *InputData) HasCodeWord() bool {
-	if o != nil && !isNil(o.CodeWord) {
+	if o != nil && !IsNil(o.CodeWord) {
 		return true
 	}
 
@@ -912,7 +912,7 @@ func (o *InputData) SetCodeWord(v string) {
 
 // GetScheduledLocTime returns the ScheduledLocTime field value if set, zero value otherwise.
 func (o *InputData) GetScheduledLocTime() time.Time {
-	if o == nil || isNil(o.ScheduledLocTime) {
+	if o == nil || IsNil(o.ScheduledLocTime) {
 		var ret time.Time
 		return ret
 	}
@@ -922,7 +922,7 @@ func (o *InputData) GetScheduledLocTime() time.Time {
 // GetScheduledLocTimeOk returns a tuple with the ScheduledLocTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetScheduledLocTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ScheduledLocTime) {
+	if o == nil || IsNil(o.ScheduledLocTime) {
 		return nil, false
 	}
 	return o.ScheduledLocTime, true
@@ -930,7 +930,7 @@ func (o *InputData) GetScheduledLocTimeOk() (*time.Time, bool) {
 
 // HasScheduledLocTime returns a boolean if a field has been set.
 func (o *InputData) HasScheduledLocTime() bool {
-	if o != nil && !isNil(o.ScheduledLocTime) {
+	if o != nil && !IsNil(o.ScheduledLocTime) {
 		return true
 	}
 
@@ -944,7 +944,7 @@ func (o *InputData) SetScheduledLocTime(v time.Time) {
 
 // GetReliableLocReq returns the ReliableLocReq field value if set, zero value otherwise.
 func (o *InputData) GetReliableLocReq() bool {
-	if o == nil || isNil(o.ReliableLocReq) {
+	if o == nil || IsNil(o.ReliableLocReq) {
 		var ret bool
 		return ret
 	}
@@ -954,7 +954,7 @@ func (o *InputData) GetReliableLocReq() bool {
 // GetReliableLocReqOk returns a tuple with the ReliableLocReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InputData) GetReliableLocReqOk() (*bool, bool) {
-	if o == nil || isNil(o.ReliableLocReq) {
+	if o == nil || IsNil(o.ReliableLocReq) {
 		return nil, false
 	}
 	return o.ReliableLocReq, true
@@ -962,7 +962,7 @@ func (o *InputData) GetReliableLocReqOk() (*bool, bool) {
 
 // HasReliableLocReq returns a boolean if a field has been set.
 func (o *InputData) HasReliableLocReq() bool {
-	if o != nil && !isNil(o.ReliableLocReq) {
+	if o != nil && !IsNil(o.ReliableLocReq) {
 		return true
 	}
 
@@ -975,7 +975,7 @@ func (o *InputData) SetReliableLocReq(v bool) {
 }
 
 func (o InputData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -984,86 +984,86 @@ func (o InputData) MarshalJSON() ([]byte, error) {
 
 func (o InputData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.ExtGroupId) {
+	if !IsNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
-	if !isNil(o.IntGroupId) {
+	if !IsNil(o.IntGroupId) {
 		toSerialize["intGroupId"] = o.IntGroupId
 	}
 	toSerialize["externalClientType"] = o.ExternalClientType
-	if !isNil(o.LocationQoS) {
+	if !IsNil(o.LocationQoS) {
 		toSerialize["locationQoS"] = o.LocationQoS
 	}
-	if !isNil(o.SupportedGADShapes) {
+	if !IsNil(o.SupportedGADShapes) {
 		toSerialize["supportedGADShapes"] = o.SupportedGADShapes
 	}
-	if !isNil(o.ServiceIdentity) {
+	if !IsNil(o.ServiceIdentity) {
 		toSerialize["serviceIdentity"] = o.ServiceIdentity
 	}
-	if !isNil(o.ServiceCoverage) {
+	if !IsNil(o.ServiceCoverage) {
 		toSerialize["serviceCoverage"] = o.ServiceCoverage
 	}
-	if !isNil(o.LdrType) {
+	if !IsNil(o.LdrType) {
 		toSerialize["ldrType"] = o.LdrType
 	}
-	if !isNil(o.PeriodicEventInfo) {
+	if !IsNil(o.PeriodicEventInfo) {
 		toSerialize["periodicEventInfo"] = o.PeriodicEventInfo
 	}
-	if !isNil(o.AreaEventInfo) {
+	if !IsNil(o.AreaEventInfo) {
 		toSerialize["areaEventInfo"] = o.AreaEventInfo
 	}
-	if !isNil(o.MotionEventInfo) {
+	if !IsNil(o.MotionEventInfo) {
 		toSerialize["motionEventInfo"] = o.MotionEventInfo
 	}
-	if !isNil(o.LdrReference) {
+	if !IsNil(o.LdrReference) {
 		toSerialize["ldrReference"] = o.LdrReference
 	}
-	if !isNil(o.HgmlcCallBackUri) {
+	if !IsNil(o.HgmlcCallBackUri) {
 		toSerialize["hgmlcCallBackUri"] = o.HgmlcCallBackUri
 	}
-	if !isNil(o.EventNotificationUri) {
+	if !IsNil(o.EventNotificationUri) {
 		toSerialize["eventNotificationUri"] = o.EventNotificationUri
 	}
-	if !isNil(o.ExternalClientIdentification) {
+	if !IsNil(o.ExternalClientIdentification) {
 		toSerialize["externalClientIdentification"] = o.ExternalClientIdentification
 	}
-	if !isNil(o.AfId) {
+	if !IsNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !isNil(o.UePrivacyRequirements) {
+	if !IsNil(o.UePrivacyRequirements) {
 		toSerialize["uePrivacyRequirements"] = o.UePrivacyRequirements
 	}
-	if !isNil(o.LcsServiceType) {
+	if !IsNil(o.LcsServiceType) {
 		toSerialize["lcsServiceType"] = o.LcsServiceType
 	}
-	if !isNil(o.VelocityRequested) {
+	if !IsNil(o.VelocityRequested) {
 		toSerialize["velocityRequested"] = o.VelocityRequested
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.LocationTypeRequested) {
+	if !IsNil(o.LocationTypeRequested) {
 		toSerialize["locationTypeRequested"] = o.LocationTypeRequested
 	}
-	if !isNil(o.MaximumAgeOfLocationEstimate) {
+	if !IsNil(o.MaximumAgeOfLocationEstimate) {
 		toSerialize["maximumAgeOfLocationEstimate"] = o.MaximumAgeOfLocationEstimate
 	}
-	if !isNil(o.AmfId) {
+	if !IsNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
-	if !isNil(o.CodeWord) {
+	if !IsNil(o.CodeWord) {
 		toSerialize["codeWord"] = o.CodeWord
 	}
-	if !isNil(o.ScheduledLocTime) {
+	if !IsNil(o.ScheduledLocTime) {
 		toSerialize["scheduledLocTime"] = o.ScheduledLocTime
 	}
-	if !isNil(o.ReliableLocReq) {
+	if !IsNil(o.ReliableLocReq) {
 		toSerialize["reliableLocReq"] = o.ReliableLocReq
 	}
 	return toSerialize, nil
@@ -1104,5 +1104,3 @@ func (v *NullableInputData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

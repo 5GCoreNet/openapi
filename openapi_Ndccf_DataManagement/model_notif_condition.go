@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the NotifCondition type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NotifCondition{}
 
-// NotifCondition Condition (list of attributes in the NF Profile) to determine whether a notification must be sent by NRF 
+// NotifCondition Condition (list of attributes in the NF Profile) to determine whether a notification must be sent by NRF
 type NotifCondition struct {
-	MonitoredAttributes []string `json:"monitoredAttributes,omitempty"`
+	MonitoredAttributes   []string `json:"monitoredAttributes,omitempty"`
 	UnmonitoredAttributes []string `json:"unmonitoredAttributes,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewNotifConditionWithDefaults() *NotifCondition {
 
 // GetMonitoredAttributes returns the MonitoredAttributes field value if set, zero value otherwise.
 func (o *NotifCondition) GetMonitoredAttributes() []string {
-	if o == nil || isNil(o.MonitoredAttributes) {
+	if o == nil || IsNil(o.MonitoredAttributes) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NotifCondition) GetMonitoredAttributes() []string {
 // GetMonitoredAttributesOk returns a tuple with the MonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifCondition) GetMonitoredAttributesOk() ([]string, bool) {
-	if o == nil || isNil(o.MonitoredAttributes) {
+	if o == nil || IsNil(o.MonitoredAttributes) {
 		return nil, false
 	}
 	return o.MonitoredAttributes, true
@@ -60,7 +60,7 @@ func (o *NotifCondition) GetMonitoredAttributesOk() ([]string, bool) {
 
 // HasMonitoredAttributes returns a boolean if a field has been set.
 func (o *NotifCondition) HasMonitoredAttributes() bool {
-	if o != nil && !isNil(o.MonitoredAttributes) {
+	if o != nil && !IsNil(o.MonitoredAttributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NotifCondition) SetMonitoredAttributes(v []string) {
 
 // GetUnmonitoredAttributes returns the UnmonitoredAttributes field value if set, zero value otherwise.
 func (o *NotifCondition) GetUnmonitoredAttributes() []string {
-	if o == nil || isNil(o.UnmonitoredAttributes) {
+	if o == nil || IsNil(o.UnmonitoredAttributes) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NotifCondition) GetUnmonitoredAttributes() []string {
 // GetUnmonitoredAttributesOk returns a tuple with the UnmonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifCondition) GetUnmonitoredAttributesOk() ([]string, bool) {
-	if o == nil || isNil(o.UnmonitoredAttributes) {
+	if o == nil || IsNil(o.UnmonitoredAttributes) {
 		return nil, false
 	}
 	return o.UnmonitoredAttributes, true
@@ -92,7 +92,7 @@ func (o *NotifCondition) GetUnmonitoredAttributesOk() ([]string, bool) {
 
 // HasUnmonitoredAttributes returns a boolean if a field has been set.
 func (o *NotifCondition) HasUnmonitoredAttributes() bool {
-	if o != nil && !isNil(o.UnmonitoredAttributes) {
+	if o != nil && !IsNil(o.UnmonitoredAttributes) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NotifCondition) SetUnmonitoredAttributes(v []string) {
 }
 
 func (o NotifCondition) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o NotifCondition) MarshalJSON() ([]byte, error) {
 
 func (o NotifCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MonitoredAttributes) {
+	if !IsNil(o.MonitoredAttributes) {
 		toSerialize["monitoredAttributes"] = o.MonitoredAttributes
 	}
-	if !isNil(o.UnmonitoredAttributes) {
+	if !IsNil(o.UnmonitoredAttributes) {
 		toSerialize["unmonitoredAttributes"] = o.UnmonitoredAttributes
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableNotifCondition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

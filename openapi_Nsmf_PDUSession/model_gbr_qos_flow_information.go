@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,19 +19,19 @@ var _ MappedNullable = &GbrQosFlowInformation{}
 
 // GbrQosFlowInformation GBR QoS flow information
 type GbrQosFlowInformation struct {
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxFbrDl string `json:"maxFbrDl"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxFbrUl string `json:"maxFbrUl"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbrDl string `json:"guaFbrDl"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	GuaFbrUl string `json:"guaFbrUl"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	GuaFbrUl     string               `json:"guaFbrUl"`
 	NotifControl *NotificationControl `json:"notifControl,omitempty"`
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
 	MaxPacketLossRateDl *int32 `json:"maxPacketLossRateDl,omitempty"`
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
-	MaxPacketLossRateUl *int32 `json:"maxPacketLossRateUl,omitempty"`
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
+	MaxPacketLossRateUl       *int32                  `json:"maxPacketLossRateUl,omitempty"`
 	AlternativeQosProfileList []AlternativeQosProfile `json:"alternativeQosProfileList,omitempty"`
 }
 
@@ -154,7 +154,7 @@ func (o *GbrQosFlowInformation) SetGuaFbrUl(v string) {
 
 // GetNotifControl returns the NotifControl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetNotifControl() NotificationControl {
-	if o == nil || isNil(o.NotifControl) {
+	if o == nil || IsNil(o.NotifControl) {
 		var ret NotificationControl
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *GbrQosFlowInformation) GetNotifControl() NotificationControl {
 // GetNotifControlOk returns a tuple with the NotifControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetNotifControlOk() (*NotificationControl, bool) {
-	if o == nil || isNil(o.NotifControl) {
+	if o == nil || IsNil(o.NotifControl) {
 		return nil, false
 	}
 	return o.NotifControl, true
@@ -172,7 +172,7 @@ func (o *GbrQosFlowInformation) GetNotifControlOk() (*NotificationControl, bool)
 
 // HasNotifControl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasNotifControl() bool {
-	if o != nil && !isNil(o.NotifControl) {
+	if o != nil && !IsNil(o.NotifControl) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *GbrQosFlowInformation) SetNotifControl(v NotificationControl) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateDl) {
+	if o == nil || IsNil(o.MaxPacketLossRateDl) {
 		var ret int32
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
 // GetMaxPacketLossRateDlOk returns a tuple with the MaxPacketLossRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPacketLossRateDl) {
+	if o == nil || IsNil(o.MaxPacketLossRateDl) {
 		return nil, false
 	}
 	return o.MaxPacketLossRateDl, true
@@ -204,7 +204,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
 
 // HasMaxPacketLossRateDl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasMaxPacketLossRateDl() bool {
-	if o != nil && !isNil(o.MaxPacketLossRateDl) {
+	if o != nil && !IsNil(o.MaxPacketLossRateDl) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *GbrQosFlowInformation) SetMaxPacketLossRateDl(v int32) {
 
 // GetMaxPacketLossRateUl returns the MaxPacketLossRateUl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateUl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateUl) {
+	if o == nil || IsNil(o.MaxPacketLossRateUl) {
 		var ret int32
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateUl() int32 {
 // GetMaxPacketLossRateUlOk returns a tuple with the MaxPacketLossRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateUlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPacketLossRateUl) {
+	if o == nil || IsNil(o.MaxPacketLossRateUl) {
 		return nil, false
 	}
 	return o.MaxPacketLossRateUl, true
@@ -236,7 +236,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateUlOk() (*int32, bool) {
 
 // HasMaxPacketLossRateUl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasMaxPacketLossRateUl() bool {
-	if o != nil && !isNil(o.MaxPacketLossRateUl) {
+	if o != nil && !IsNil(o.MaxPacketLossRateUl) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *GbrQosFlowInformation) SetMaxPacketLossRateUl(v int32) {
 
 // GetAlternativeQosProfileList returns the AlternativeQosProfileList field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetAlternativeQosProfileList() []AlternativeQosProfile {
-	if o == nil || isNil(o.AlternativeQosProfileList) {
+	if o == nil || IsNil(o.AlternativeQosProfileList) {
 		var ret []AlternativeQosProfile
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *GbrQosFlowInformation) GetAlternativeQosProfileList() []AlternativeQosP
 // GetAlternativeQosProfileListOk returns a tuple with the AlternativeQosProfileList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetAlternativeQosProfileListOk() ([]AlternativeQosProfile, bool) {
-	if o == nil || isNil(o.AlternativeQosProfileList) {
+	if o == nil || IsNil(o.AlternativeQosProfileList) {
 		return nil, false
 	}
 	return o.AlternativeQosProfileList, true
@@ -268,7 +268,7 @@ func (o *GbrQosFlowInformation) GetAlternativeQosProfileListOk() ([]AlternativeQ
 
 // HasAlternativeQosProfileList returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasAlternativeQosProfileList() bool {
-	if o != nil && !isNil(o.AlternativeQosProfileList) {
+	if o != nil && !IsNil(o.AlternativeQosProfileList) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *GbrQosFlowInformation) SetAlternativeQosProfileList(v []AlternativeQosP
 }
 
 func (o GbrQosFlowInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -294,16 +294,16 @@ func (o GbrQosFlowInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize["maxFbrUl"] = o.MaxFbrUl
 	toSerialize["guaFbrDl"] = o.GuaFbrDl
 	toSerialize["guaFbrUl"] = o.GuaFbrUl
-	if !isNil(o.NotifControl) {
+	if !IsNil(o.NotifControl) {
 		toSerialize["notifControl"] = o.NotifControl
 	}
-	if !isNil(o.MaxPacketLossRateDl) {
+	if !IsNil(o.MaxPacketLossRateDl) {
 		toSerialize["maxPacketLossRateDl"] = o.MaxPacketLossRateDl
 	}
-	if !isNil(o.MaxPacketLossRateUl) {
+	if !IsNil(o.MaxPacketLossRateUl) {
 		toSerialize["maxPacketLossRateUl"] = o.MaxPacketLossRateUl
 	}
-	if !isNil(o.AlternativeQosProfileList) {
+	if !IsNil(o.AlternativeQosProfileList) {
 		toSerialize["alternativeQosProfileList"] = o.AlternativeQosProfileList
 	}
 	return toSerialize, nil
@@ -344,5 +344,3 @@ func (v *NullableGbrQosFlowInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

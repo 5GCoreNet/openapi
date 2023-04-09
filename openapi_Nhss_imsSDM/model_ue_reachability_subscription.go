@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // checks if the UeReachabilitySubscription type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UeReachabilitySubscription{}
 
-// UeReachabilitySubscription Contains the request parameters received by the HSS for a subscription to notifications of UE reachability for IP 
+// UeReachabilitySubscription Contains the request parameters received by the HSS for a subscription to notifications of UE reachability for IP
 type UeReachabilitySubscription struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry time.Time `json:"expiry"`
@@ -94,7 +94,7 @@ func (o *UeReachabilitySubscription) SetCallbackReference(v string) {
 }
 
 func (o UeReachabilitySubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,5 +143,3 @@ func (v *NullableUeReachabilitySubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

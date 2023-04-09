@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &UpSecurity{}
 
 // UpSecurity Contains Userplain security information.
 type UpSecurity struct {
-	UpIntegr UpIntegrity `json:"upIntegr"`
+	UpIntegr UpIntegrity       `json:"upIntegr"`
 	UpConfid UpConfidentiality `json:"upConfid"`
 }
 
@@ -91,7 +91,7 @@ func (o *UpSecurity) SetUpConfid(v UpConfidentiality) {
 }
 
 func (o UpSecurity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableUpSecurity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

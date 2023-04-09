@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,20 +13,19 @@ package openapi_Nnrf_NFDiscovery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // CompleteStoredSearchDocumentApiService CompleteStoredSearchDocumentApi service
 type CompleteStoredSearchDocumentApiService service
 
 type ApiRetrieveCompleteSearchRequest struct {
-	ctx context.Context
-	ApiService *CompleteStoredSearchDocumentApiService
-	searchId string
+	ctx            context.Context
+	ApiService     *CompleteStoredSearchDocumentApiService
+	searchId       string
 	acceptEncoding *string
 }
 
@@ -43,26 +42,27 @@ func (r ApiRetrieveCompleteSearchRequest) Execute() (*StoredSearchResult, *http.
 /*
 RetrieveCompleteSearch Method for RetrieveCompleteSearch
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param searchId Id of a stored search
- @return ApiRetrieveCompleteSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param searchId Id of a stored search
+	@return ApiRetrieveCompleteSearchRequest
 */
 func (a *CompleteStoredSearchDocumentApiService) RetrieveCompleteSearch(ctx context.Context, searchId string) ApiRetrieveCompleteSearchRequest {
 	return ApiRetrieveCompleteSearchRequest{
 		ApiService: a,
-		ctx: ctx,
-		searchId: searchId,
+		ctx:        ctx,
+		searchId:   searchId,
 	}
 }
 
 // Execute executes the request
-//  @return StoredSearchResult
+//
+//	@return StoredSearchResult
 func (a *CompleteStoredSearchDocumentApiService) RetrieveCompleteSearchExecute(r ApiRetrieveCompleteSearchRequest) (*StoredSearchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StoredSearchResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StoredSearchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompleteStoredSearchDocumentApiService.RetrieveCompleteSearch")
@@ -95,7 +95,7 @@ func (a *CompleteStoredSearchDocumentApiService) RetrieveCompleteSearchExecute(r
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -107,9 +107,9 @@ func (a *CompleteStoredSearchDocumentApiService) RetrieveCompleteSearchExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,8 +126,8 @@ func (a *CompleteStoredSearchDocumentApiService) RetrieveCompleteSearchExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -137,8 +137,8 @@ func (a *CompleteStoredSearchDocumentApiService) RetrieveCompleteSearchExecute(r
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

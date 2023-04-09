@@ -19,7 +19,7 @@ var _ MappedNullable = &ExternalGnbCuCpFunctionSingleAllOf{}
 
 // ExternalGnbCuCpFunctionSingleAllOf struct for ExternalGnbCuCpFunctionSingleAllOf
 type ExternalGnbCuCpFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *ExternalGnbCuCpFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewExternalGnbCuCpFunctionSingleAllOf instantiates a new ExternalGnbCuCpFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewExternalGnbCuCpFunctionSingleAllOfWithDefaults() *ExternalGnbCuCpFunctio
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ExternalGnbCuCpFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *ExternalGnbCuCpFunctionSingleAllOf) GetAttributes() ExternalGnbCuCpFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret ExternalGnbCuCpFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalGnbCuCpFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *ExternalGnbCuCpFunctionSingleAllOf) GetAttributesOk() (*ExternalGnbCuCpFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf) GetAttributesOk() (*ManagedFunction
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *ExternalGnbCuCpFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given ExternalGnbCuCpFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *ExternalGnbCuCpFunctionSingleAllOf) SetAttributes(v ExternalGnbCuCpFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o ExternalGnbCuCpFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ExternalGnbCuCpFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ExternalGnbCuCpFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableExternalGnbCuCpFunctionSingleAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

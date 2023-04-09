@@ -1,7 +1,7 @@
 /*
 SS_KeyInfoRetrieval
 
-API for SEAL Key Information Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Key Information Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,15 +17,15 @@ import (
 // checks if the ValKeyInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ValKeyInfo{}
 
-// ValKeyInfo Represents key management information associated with VAL server, VAL user or VAL UE. 
+// ValKeyInfo Represents key management information associated with VAL server, VAL user or VAL UE.
 type ValKeyInfo struct {
 	// string providing an URI formatted according to IETF RFC 3986.
 	UserUri string `json:"userUri"`
 	// String identifying the key management server.
 	SkmsId *string `json:"skmsId,omitempty"`
 	// Unique identifier of a VAL Service.
-	ValService string `json:"valService"`
-	ValTgtUe *ValTargetUe `json:"valTgtUe,omitempty"`
+	ValService string       `json:"valService"`
+	ValTgtUe   *ValTargetUe `json:"valTgtUe,omitempty"`
 	// Key management information specific to VAL service, VAL User or VAL UE.
 	KeyInfo string `json:"keyInfo"`
 }
@@ -76,7 +76,7 @@ func (o *ValKeyInfo) SetUserUri(v string) {
 
 // GetSkmsId returns the SkmsId field value if set, zero value otherwise.
 func (o *ValKeyInfo) GetSkmsId() string {
-	if o == nil || isNil(o.SkmsId) {
+	if o == nil || IsNil(o.SkmsId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ValKeyInfo) GetSkmsId() string {
 // GetSkmsIdOk returns a tuple with the SkmsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValKeyInfo) GetSkmsIdOk() (*string, bool) {
-	if o == nil || isNil(o.SkmsId) {
+	if o == nil || IsNil(o.SkmsId) {
 		return nil, false
 	}
 	return o.SkmsId, true
@@ -94,7 +94,7 @@ func (o *ValKeyInfo) GetSkmsIdOk() (*string, bool) {
 
 // HasSkmsId returns a boolean if a field has been set.
 func (o *ValKeyInfo) HasSkmsId() bool {
-	if o != nil && !isNil(o.SkmsId) {
+	if o != nil && !IsNil(o.SkmsId) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *ValKeyInfo) SetValService(v string) {
 
 // GetValTgtUe returns the ValTgtUe field value if set, zero value otherwise.
 func (o *ValKeyInfo) GetValTgtUe() ValTargetUe {
-	if o == nil || isNil(o.ValTgtUe) {
+	if o == nil || IsNil(o.ValTgtUe) {
 		var ret ValTargetUe
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *ValKeyInfo) GetValTgtUe() ValTargetUe {
 // GetValTgtUeOk returns a tuple with the ValTgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValKeyInfo) GetValTgtUeOk() (*ValTargetUe, bool) {
-	if o == nil || isNil(o.ValTgtUe) {
+	if o == nil || IsNil(o.ValTgtUe) {
 		return nil, false
 	}
 	return o.ValTgtUe, true
@@ -150,7 +150,7 @@ func (o *ValKeyInfo) GetValTgtUeOk() (*ValTargetUe, bool) {
 
 // HasValTgtUe returns a boolean if a field has been set.
 func (o *ValKeyInfo) HasValTgtUe() bool {
-	if o != nil && !isNil(o.ValTgtUe) {
+	if o != nil && !IsNil(o.ValTgtUe) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *ValKeyInfo) SetKeyInfo(v string) {
 }
 
 func (o ValKeyInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -197,11 +197,11 @@ func (o ValKeyInfo) MarshalJSON() ([]byte, error) {
 func (o ValKeyInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["userUri"] = o.UserUri
-	if !isNil(o.SkmsId) {
+	if !IsNil(o.SkmsId) {
 		toSerialize["skmsId"] = o.SkmsId
 	}
 	toSerialize["valService"] = o.ValService
-	if !isNil(o.ValTgtUe) {
+	if !IsNil(o.ValTgtUe) {
 		toSerialize["valTgtUe"] = o.ValTgtUe
 	}
 	toSerialize["keyInfo"] = o.KeyInfo
@@ -243,5 +243,3 @@ func (v *NullableValKeyInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

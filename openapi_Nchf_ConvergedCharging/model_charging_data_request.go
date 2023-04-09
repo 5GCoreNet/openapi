@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,48 +20,48 @@ var _ MappedNullable = &ChargingDataRequest{}
 
 // ChargingDataRequest struct for ChargingDataRequest
 type ChargingDataRequest struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	SubscriberIdentifier *string `json:"subscriberIdentifier,omitempty"`
-	TenantIdentifier *string `json:"tenantIdentifier,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	TenantIdentifier     *string `json:"tenantIdentifier,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	// Deprecated
-	ChargingId *int32 `json:"chargingId,omitempty"`
-	MnSConsumerIdentifier *string `json:"mnSConsumerIdentifier,omitempty"`
+	ChargingId               *int32           `json:"chargingId,omitempty"`
+	MnSConsumerIdentifier    *string          `json:"mnSConsumerIdentifier,omitempty"`
 	NfConsumerIdentification NFIdentification `json:"nfConsumerIdentification"`
 	// string with format 'date-time' as defined in OpenAPI.
 	InvocationTimeStamp time.Time `json:"invocationTimeStamp"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	InvocationSequenceNumber int32 `json:"invocationSequenceNumber"`
-	RetransmissionIndicator *bool `json:"retransmissionIndicator,omitempty"`
-	OneTimeEvent *bool `json:"oneTimeEvent,omitempty"`
-	OneTimeEventType *OneTimeEventType `json:"oneTimeEventType,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	InvocationSequenceNumber int32             `json:"invocationSequenceNumber"`
+	RetransmissionIndicator  *bool             `json:"retransmissionIndicator,omitempty"`
+	OneTimeEvent             *bool             `json:"oneTimeEvent,omitempty"`
+	OneTimeEventType         *OneTimeEventType `json:"oneTimeEventType,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	NotifyUri *string `json:"notifyUri,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	ServiceSpecificationInfo *string `json:"serviceSpecificationInfo,omitempty"`
-	MultipleUnitUsage []MultipleUnitUsage `json:"multipleUnitUsage,omitempty"`
-	Triggers []Trigger `json:"triggers,omitempty"`
-	Easid *string `json:"easid,omitempty"`
-	Ednid *string `json:"ednid,omitempty"`
-	EASProviderIdentifier *string `json:"eASProviderIdentifier,omitempty"`
-	PDUSessionChargingInformation *PDUSessionChargingInformation `json:"pDUSessionChargingInformation,omitempty"`
-	RoamingQBCInformation *RoamingQBCInformation `json:"roamingQBCInformation,omitempty"`
-	SMSChargingInformation *SMSChargingInformation `json:"sMSChargingInformation,omitempty"`
-	NEFChargingInformation *NEFChargingInformation `json:"nEFChargingInformation,omitempty"`
-	RegistrationChargingInformation *RegistrationChargingInformation `json:"registrationChargingInformation,omitempty"`
-	N2ConnectionChargingInformation *N2ConnectionChargingInformation `json:"n2ConnectionChargingInformation,omitempty"`
-	LocationReportingChargingInformation *LocationReportingChargingInformation `json:"locationReportingChargingInformation,omitempty"`
-	NSPAChargingInformation *NSPAChargingInformation `json:"nSPAChargingInformation,omitempty"`
-	NSMChargingInformation *NSMChargingInformation `json:"nSMChargingInformation,omitempty"`
-	MMTelChargingInformation *MMTelChargingInformation `json:"mMTelChargingInformation,omitempty"`
-	IMSChargingInformation *IMSChargingInformation `json:"iMSChargingInformation,omitempty"`
-	EdgeInfrastructureUsageChargingInformation *EdgeInfrastructureUsageChargingInformation `json:"edgeInfrastructureUsageChargingInformation&#39;,omitempty"`
-	EASDeploymentChargingInformation *EASDeploymentChargingInformation `json:"eASDeploymentChargingInformation,omitempty"`
-	DirectEdgeEnablingServiceChargingInformation *NEFChargingInformation `json:"directEdgeEnablingServiceChargingInformation,omitempty"`
-	ExposedEdgeEnablingServiceChargingInformation *NEFChargingInformation `json:"exposedEdgeEnablingServiceChargingInformation,omitempty"`
-	ProSeChargingInformation *ProseChargingInformation `json:"proSeChargingInformation,omitempty"`
-	MMSChargingInformation *MMSChargingInformation `json:"mMSChargingInformation,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures                             *string                                     `json:"supportedFeatures,omitempty"`
+	ServiceSpecificationInfo                      *string                                     `json:"serviceSpecificationInfo,omitempty"`
+	MultipleUnitUsage                             []MultipleUnitUsage                         `json:"multipleUnitUsage,omitempty"`
+	Triggers                                      []Trigger                                   `json:"triggers,omitempty"`
+	Easid                                         *string                                     `json:"easid,omitempty"`
+	Ednid                                         *string                                     `json:"ednid,omitempty"`
+	EASProviderIdentifier                         *string                                     `json:"eASProviderIdentifier,omitempty"`
+	PDUSessionChargingInformation                 *PDUSessionChargingInformation              `json:"pDUSessionChargingInformation,omitempty"`
+	RoamingQBCInformation                         *RoamingQBCInformation                      `json:"roamingQBCInformation,omitempty"`
+	SMSChargingInformation                        *SMSChargingInformation                     `json:"sMSChargingInformation,omitempty"`
+	NEFChargingInformation                        *NEFChargingInformation                     `json:"nEFChargingInformation,omitempty"`
+	RegistrationChargingInformation               *RegistrationChargingInformation            `json:"registrationChargingInformation,omitempty"`
+	N2ConnectionChargingInformation               *N2ConnectionChargingInformation            `json:"n2ConnectionChargingInformation,omitempty"`
+	LocationReportingChargingInformation          *LocationReportingChargingInformation       `json:"locationReportingChargingInformation,omitempty"`
+	NSPAChargingInformation                       *NSPAChargingInformation                    `json:"nSPAChargingInformation,omitempty"`
+	NSMChargingInformation                        *NSMChargingInformation                     `json:"nSMChargingInformation,omitempty"`
+	MMTelChargingInformation                      *MMTelChargingInformation                   `json:"mMTelChargingInformation,omitempty"`
+	IMSChargingInformation                        *IMSChargingInformation                     `json:"iMSChargingInformation,omitempty"`
+	EdgeInfrastructureUsageChargingInformation    *EdgeInfrastructureUsageChargingInformation `json:"edgeInfrastructureUsageChargingInformation&#39;,omitempty"`
+	EASDeploymentChargingInformation              *EASDeploymentChargingInformation           `json:"eASDeploymentChargingInformation,omitempty"`
+	DirectEdgeEnablingServiceChargingInformation  *NEFChargingInformation                     `json:"directEdgeEnablingServiceChargingInformation,omitempty"`
+	ExposedEdgeEnablingServiceChargingInformation *NEFChargingInformation                     `json:"exposedEdgeEnablingServiceChargingInformation,omitempty"`
+	ProSeChargingInformation                      *ProseChargingInformation                   `json:"proSeChargingInformation,omitempty"`
+	MMSChargingInformation                        *MMSChargingInformation                     `json:"mMSChargingInformation,omitempty"`
 }
 
 // NewChargingDataRequest instantiates a new ChargingDataRequest object
@@ -86,7 +86,7 @@ func NewChargingDataRequestWithDefaults() *ChargingDataRequest {
 
 // GetSubscriberIdentifier returns the SubscriberIdentifier field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetSubscriberIdentifier() string {
-	if o == nil || isNil(o.SubscriberIdentifier) {
+	if o == nil || IsNil(o.SubscriberIdentifier) {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *ChargingDataRequest) GetSubscriberIdentifier() string {
 // GetSubscriberIdentifierOk returns a tuple with the SubscriberIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetSubscriberIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriberIdentifier) {
+	if o == nil || IsNil(o.SubscriberIdentifier) {
 		return nil, false
 	}
 	return o.SubscriberIdentifier, true
@@ -104,7 +104,7 @@ func (o *ChargingDataRequest) GetSubscriberIdentifierOk() (*string, bool) {
 
 // HasSubscriberIdentifier returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasSubscriberIdentifier() bool {
-	if o != nil && !isNil(o.SubscriberIdentifier) {
+	if o != nil && !IsNil(o.SubscriberIdentifier) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *ChargingDataRequest) SetSubscriberIdentifier(v string) {
 
 // GetTenantIdentifier returns the TenantIdentifier field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetTenantIdentifier() string {
-	if o == nil || isNil(o.TenantIdentifier) {
+	if o == nil || IsNil(o.TenantIdentifier) {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *ChargingDataRequest) GetTenantIdentifier() string {
 // GetTenantIdentifierOk returns a tuple with the TenantIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetTenantIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.TenantIdentifier) {
+	if o == nil || IsNil(o.TenantIdentifier) {
 		return nil, false
 	}
 	return o.TenantIdentifier, true
@@ -136,7 +136,7 @@ func (o *ChargingDataRequest) GetTenantIdentifierOk() (*string, bool) {
 
 // HasTenantIdentifier returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasTenantIdentifier() bool {
-	if o != nil && !isNil(o.TenantIdentifier) {
+	if o != nil && !IsNil(o.TenantIdentifier) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ChargingDataRequest) SetTenantIdentifier(v string) {
 // GetChargingId returns the ChargingId field value if set, zero value otherwise.
 // Deprecated
 func (o *ChargingDataRequest) GetChargingId() int32 {
-	if o == nil || isNil(o.ChargingId) {
+	if o == nil || IsNil(o.ChargingId) {
 		var ret int32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ChargingDataRequest) GetChargingId() int32 {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *ChargingDataRequest) GetChargingIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ChargingId) {
+	if o == nil || IsNil(o.ChargingId) {
 		return nil, false
 	}
 	return o.ChargingId, true
@@ -170,7 +170,7 @@ func (o *ChargingDataRequest) GetChargingIdOk() (*int32, bool) {
 
 // HasChargingId returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasChargingId() bool {
-	if o != nil && !isNil(o.ChargingId) {
+	if o != nil && !IsNil(o.ChargingId) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *ChargingDataRequest) SetChargingId(v int32) {
 
 // GetMnSConsumerIdentifier returns the MnSConsumerIdentifier field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetMnSConsumerIdentifier() string {
-	if o == nil || isNil(o.MnSConsumerIdentifier) {
+	if o == nil || IsNil(o.MnSConsumerIdentifier) {
 		var ret string
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *ChargingDataRequest) GetMnSConsumerIdentifier() string {
 // GetMnSConsumerIdentifierOk returns a tuple with the MnSConsumerIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetMnSConsumerIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.MnSConsumerIdentifier) {
+	if o == nil || IsNil(o.MnSConsumerIdentifier) {
 		return nil, false
 	}
 	return o.MnSConsumerIdentifier, true
@@ -203,7 +203,7 @@ func (o *ChargingDataRequest) GetMnSConsumerIdentifierOk() (*string, bool) {
 
 // HasMnSConsumerIdentifier returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasMnSConsumerIdentifier() bool {
-	if o != nil && !isNil(o.MnSConsumerIdentifier) {
+	if o != nil && !IsNil(o.MnSConsumerIdentifier) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *ChargingDataRequest) SetInvocationSequenceNumber(v int32) {
 
 // GetRetransmissionIndicator returns the RetransmissionIndicator field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetRetransmissionIndicator() bool {
-	if o == nil || isNil(o.RetransmissionIndicator) {
+	if o == nil || IsNil(o.RetransmissionIndicator) {
 		var ret bool
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *ChargingDataRequest) GetRetransmissionIndicator() bool {
 // GetRetransmissionIndicatorOk returns a tuple with the RetransmissionIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetRetransmissionIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.RetransmissionIndicator) {
+	if o == nil || IsNil(o.RetransmissionIndicator) {
 		return nil, false
 	}
 	return o.RetransmissionIndicator, true
@@ -307,7 +307,7 @@ func (o *ChargingDataRequest) GetRetransmissionIndicatorOk() (*bool, bool) {
 
 // HasRetransmissionIndicator returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasRetransmissionIndicator() bool {
-	if o != nil && !isNil(o.RetransmissionIndicator) {
+	if o != nil && !IsNil(o.RetransmissionIndicator) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *ChargingDataRequest) SetRetransmissionIndicator(v bool) {
 
 // GetOneTimeEvent returns the OneTimeEvent field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetOneTimeEvent() bool {
-	if o == nil || isNil(o.OneTimeEvent) {
+	if o == nil || IsNil(o.OneTimeEvent) {
 		var ret bool
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *ChargingDataRequest) GetOneTimeEvent() bool {
 // GetOneTimeEventOk returns a tuple with the OneTimeEvent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetOneTimeEventOk() (*bool, bool) {
-	if o == nil || isNil(o.OneTimeEvent) {
+	if o == nil || IsNil(o.OneTimeEvent) {
 		return nil, false
 	}
 	return o.OneTimeEvent, true
@@ -339,7 +339,7 @@ func (o *ChargingDataRequest) GetOneTimeEventOk() (*bool, bool) {
 
 // HasOneTimeEvent returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasOneTimeEvent() bool {
-	if o != nil && !isNil(o.OneTimeEvent) {
+	if o != nil && !IsNil(o.OneTimeEvent) {
 		return true
 	}
 
@@ -353,7 +353,7 @@ func (o *ChargingDataRequest) SetOneTimeEvent(v bool) {
 
 // GetOneTimeEventType returns the OneTimeEventType field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetOneTimeEventType() OneTimeEventType {
-	if o == nil || isNil(o.OneTimeEventType) {
+	if o == nil || IsNil(o.OneTimeEventType) {
 		var ret OneTimeEventType
 		return ret
 	}
@@ -363,7 +363,7 @@ func (o *ChargingDataRequest) GetOneTimeEventType() OneTimeEventType {
 // GetOneTimeEventTypeOk returns a tuple with the OneTimeEventType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetOneTimeEventTypeOk() (*OneTimeEventType, bool) {
-	if o == nil || isNil(o.OneTimeEventType) {
+	if o == nil || IsNil(o.OneTimeEventType) {
 		return nil, false
 	}
 	return o.OneTimeEventType, true
@@ -371,7 +371,7 @@ func (o *ChargingDataRequest) GetOneTimeEventTypeOk() (*OneTimeEventType, bool) 
 
 // HasOneTimeEventType returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasOneTimeEventType() bool {
-	if o != nil && !isNil(o.OneTimeEventType) {
+	if o != nil && !IsNil(o.OneTimeEventType) {
 		return true
 	}
 
@@ -385,7 +385,7 @@ func (o *ChargingDataRequest) SetOneTimeEventType(v OneTimeEventType) {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetNotifyUri() string {
-	if o == nil || isNil(o.NotifyUri) {
+	if o == nil || IsNil(o.NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -395,7 +395,7 @@ func (o *ChargingDataRequest) GetNotifyUri() string {
 // GetNotifyUriOk returns a tuple with the NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetNotifyUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyUri) {
+	if o == nil || IsNil(o.NotifyUri) {
 		return nil, false
 	}
 	return o.NotifyUri, true
@@ -403,7 +403,7 @@ func (o *ChargingDataRequest) GetNotifyUriOk() (*string, bool) {
 
 // HasNotifyUri returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasNotifyUri() bool {
-	if o != nil && !isNil(o.NotifyUri) {
+	if o != nil && !IsNil(o.NotifyUri) {
 		return true
 	}
 
@@ -417,7 +417,7 @@ func (o *ChargingDataRequest) SetNotifyUri(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -427,7 +427,7 @@ func (o *ChargingDataRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -435,7 +435,7 @@ func (o *ChargingDataRequest) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -449,7 +449,7 @@ func (o *ChargingDataRequest) SetSupportedFeatures(v string) {
 
 // GetServiceSpecificationInfo returns the ServiceSpecificationInfo field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetServiceSpecificationInfo() string {
-	if o == nil || isNil(o.ServiceSpecificationInfo) {
+	if o == nil || IsNil(o.ServiceSpecificationInfo) {
 		var ret string
 		return ret
 	}
@@ -459,7 +459,7 @@ func (o *ChargingDataRequest) GetServiceSpecificationInfo() string {
 // GetServiceSpecificationInfoOk returns a tuple with the ServiceSpecificationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetServiceSpecificationInfoOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceSpecificationInfo) {
+	if o == nil || IsNil(o.ServiceSpecificationInfo) {
 		return nil, false
 	}
 	return o.ServiceSpecificationInfo, true
@@ -467,7 +467,7 @@ func (o *ChargingDataRequest) GetServiceSpecificationInfoOk() (*string, bool) {
 
 // HasServiceSpecificationInfo returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasServiceSpecificationInfo() bool {
-	if o != nil && !isNil(o.ServiceSpecificationInfo) {
+	if o != nil && !IsNil(o.ServiceSpecificationInfo) {
 		return true
 	}
 
@@ -481,7 +481,7 @@ func (o *ChargingDataRequest) SetServiceSpecificationInfo(v string) {
 
 // GetMultipleUnitUsage returns the MultipleUnitUsage field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetMultipleUnitUsage() []MultipleUnitUsage {
-	if o == nil || isNil(o.MultipleUnitUsage) {
+	if o == nil || IsNil(o.MultipleUnitUsage) {
 		var ret []MultipleUnitUsage
 		return ret
 	}
@@ -491,7 +491,7 @@ func (o *ChargingDataRequest) GetMultipleUnitUsage() []MultipleUnitUsage {
 // GetMultipleUnitUsageOk returns a tuple with the MultipleUnitUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetMultipleUnitUsageOk() ([]MultipleUnitUsage, bool) {
-	if o == nil || isNil(o.MultipleUnitUsage) {
+	if o == nil || IsNil(o.MultipleUnitUsage) {
 		return nil, false
 	}
 	return o.MultipleUnitUsage, true
@@ -499,7 +499,7 @@ func (o *ChargingDataRequest) GetMultipleUnitUsageOk() ([]MultipleUnitUsage, boo
 
 // HasMultipleUnitUsage returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasMultipleUnitUsage() bool {
-	if o != nil && !isNil(o.MultipleUnitUsage) {
+	if o != nil && !IsNil(o.MultipleUnitUsage) {
 		return true
 	}
 
@@ -513,7 +513,7 @@ func (o *ChargingDataRequest) SetMultipleUnitUsage(v []MultipleUnitUsage) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetTriggers() []Trigger {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -523,7 +523,7 @@ func (o *ChargingDataRequest) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -531,7 +531,7 @@ func (o *ChargingDataRequest) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasTriggers() bool {
-	if o != nil && !isNil(o.Triggers) {
+	if o != nil && !IsNil(o.Triggers) {
 		return true
 	}
 
@@ -545,7 +545,7 @@ func (o *ChargingDataRequest) SetTriggers(v []Trigger) {
 
 // GetEasid returns the Easid field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetEasid() string {
-	if o == nil || isNil(o.Easid) {
+	if o == nil || IsNil(o.Easid) {
 		var ret string
 		return ret
 	}
@@ -555,7 +555,7 @@ func (o *ChargingDataRequest) GetEasid() string {
 // GetEasidOk returns a tuple with the Easid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetEasidOk() (*string, bool) {
-	if o == nil || isNil(o.Easid) {
+	if o == nil || IsNil(o.Easid) {
 		return nil, false
 	}
 	return o.Easid, true
@@ -563,7 +563,7 @@ func (o *ChargingDataRequest) GetEasidOk() (*string, bool) {
 
 // HasEasid returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasEasid() bool {
-	if o != nil && !isNil(o.Easid) {
+	if o != nil && !IsNil(o.Easid) {
 		return true
 	}
 
@@ -577,7 +577,7 @@ func (o *ChargingDataRequest) SetEasid(v string) {
 
 // GetEdnid returns the Ednid field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetEdnid() string {
-	if o == nil || isNil(o.Ednid) {
+	if o == nil || IsNil(o.Ednid) {
 		var ret string
 		return ret
 	}
@@ -587,7 +587,7 @@ func (o *ChargingDataRequest) GetEdnid() string {
 // GetEdnidOk returns a tuple with the Ednid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetEdnidOk() (*string, bool) {
-	if o == nil || isNil(o.Ednid) {
+	if o == nil || IsNil(o.Ednid) {
 		return nil, false
 	}
 	return o.Ednid, true
@@ -595,7 +595,7 @@ func (o *ChargingDataRequest) GetEdnidOk() (*string, bool) {
 
 // HasEdnid returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasEdnid() bool {
-	if o != nil && !isNil(o.Ednid) {
+	if o != nil && !IsNil(o.Ednid) {
 		return true
 	}
 
@@ -609,7 +609,7 @@ func (o *ChargingDataRequest) SetEdnid(v string) {
 
 // GetEASProviderIdentifier returns the EASProviderIdentifier field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetEASProviderIdentifier() string {
-	if o == nil || isNil(o.EASProviderIdentifier) {
+	if o == nil || IsNil(o.EASProviderIdentifier) {
 		var ret string
 		return ret
 	}
@@ -619,7 +619,7 @@ func (o *ChargingDataRequest) GetEASProviderIdentifier() string {
 // GetEASProviderIdentifierOk returns a tuple with the EASProviderIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetEASProviderIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.EASProviderIdentifier) {
+	if o == nil || IsNil(o.EASProviderIdentifier) {
 		return nil, false
 	}
 	return o.EASProviderIdentifier, true
@@ -627,7 +627,7 @@ func (o *ChargingDataRequest) GetEASProviderIdentifierOk() (*string, bool) {
 
 // HasEASProviderIdentifier returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasEASProviderIdentifier() bool {
-	if o != nil && !isNil(o.EASProviderIdentifier) {
+	if o != nil && !IsNil(o.EASProviderIdentifier) {
 		return true
 	}
 
@@ -641,7 +641,7 @@ func (o *ChargingDataRequest) SetEASProviderIdentifier(v string) {
 
 // GetPDUSessionChargingInformation returns the PDUSessionChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetPDUSessionChargingInformation() PDUSessionChargingInformation {
-	if o == nil || isNil(o.PDUSessionChargingInformation) {
+	if o == nil || IsNil(o.PDUSessionChargingInformation) {
 		var ret PDUSessionChargingInformation
 		return ret
 	}
@@ -651,7 +651,7 @@ func (o *ChargingDataRequest) GetPDUSessionChargingInformation() PDUSessionCharg
 // GetPDUSessionChargingInformationOk returns a tuple with the PDUSessionChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetPDUSessionChargingInformationOk() (*PDUSessionChargingInformation, bool) {
-	if o == nil || isNil(o.PDUSessionChargingInformation) {
+	if o == nil || IsNil(o.PDUSessionChargingInformation) {
 		return nil, false
 	}
 	return o.PDUSessionChargingInformation, true
@@ -659,7 +659,7 @@ func (o *ChargingDataRequest) GetPDUSessionChargingInformationOk() (*PDUSessionC
 
 // HasPDUSessionChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasPDUSessionChargingInformation() bool {
-	if o != nil && !isNil(o.PDUSessionChargingInformation) {
+	if o != nil && !IsNil(o.PDUSessionChargingInformation) {
 		return true
 	}
 
@@ -673,7 +673,7 @@ func (o *ChargingDataRequest) SetPDUSessionChargingInformation(v PDUSessionCharg
 
 // GetRoamingQBCInformation returns the RoamingQBCInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetRoamingQBCInformation() RoamingQBCInformation {
-	if o == nil || isNil(o.RoamingQBCInformation) {
+	if o == nil || IsNil(o.RoamingQBCInformation) {
 		var ret RoamingQBCInformation
 		return ret
 	}
@@ -683,7 +683,7 @@ func (o *ChargingDataRequest) GetRoamingQBCInformation() RoamingQBCInformation {
 // GetRoamingQBCInformationOk returns a tuple with the RoamingQBCInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetRoamingQBCInformationOk() (*RoamingQBCInformation, bool) {
-	if o == nil || isNil(o.RoamingQBCInformation) {
+	if o == nil || IsNil(o.RoamingQBCInformation) {
 		return nil, false
 	}
 	return o.RoamingQBCInformation, true
@@ -691,7 +691,7 @@ func (o *ChargingDataRequest) GetRoamingQBCInformationOk() (*RoamingQBCInformati
 
 // HasRoamingQBCInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasRoamingQBCInformation() bool {
-	if o != nil && !isNil(o.RoamingQBCInformation) {
+	if o != nil && !IsNil(o.RoamingQBCInformation) {
 		return true
 	}
 
@@ -705,7 +705,7 @@ func (o *ChargingDataRequest) SetRoamingQBCInformation(v RoamingQBCInformation) 
 
 // GetSMSChargingInformation returns the SMSChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetSMSChargingInformation() SMSChargingInformation {
-	if o == nil || isNil(o.SMSChargingInformation) {
+	if o == nil || IsNil(o.SMSChargingInformation) {
 		var ret SMSChargingInformation
 		return ret
 	}
@@ -715,7 +715,7 @@ func (o *ChargingDataRequest) GetSMSChargingInformation() SMSChargingInformation
 // GetSMSChargingInformationOk returns a tuple with the SMSChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetSMSChargingInformationOk() (*SMSChargingInformation, bool) {
-	if o == nil || isNil(o.SMSChargingInformation) {
+	if o == nil || IsNil(o.SMSChargingInformation) {
 		return nil, false
 	}
 	return o.SMSChargingInformation, true
@@ -723,7 +723,7 @@ func (o *ChargingDataRequest) GetSMSChargingInformationOk() (*SMSChargingInforma
 
 // HasSMSChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasSMSChargingInformation() bool {
-	if o != nil && !isNil(o.SMSChargingInformation) {
+	if o != nil && !IsNil(o.SMSChargingInformation) {
 		return true
 	}
 
@@ -737,7 +737,7 @@ func (o *ChargingDataRequest) SetSMSChargingInformation(v SMSChargingInformation
 
 // GetNEFChargingInformation returns the NEFChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetNEFChargingInformation() NEFChargingInformation {
-	if o == nil || isNil(o.NEFChargingInformation) {
+	if o == nil || IsNil(o.NEFChargingInformation) {
 		var ret NEFChargingInformation
 		return ret
 	}
@@ -747,7 +747,7 @@ func (o *ChargingDataRequest) GetNEFChargingInformation() NEFChargingInformation
 // GetNEFChargingInformationOk returns a tuple with the NEFChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetNEFChargingInformationOk() (*NEFChargingInformation, bool) {
-	if o == nil || isNil(o.NEFChargingInformation) {
+	if o == nil || IsNil(o.NEFChargingInformation) {
 		return nil, false
 	}
 	return o.NEFChargingInformation, true
@@ -755,7 +755,7 @@ func (o *ChargingDataRequest) GetNEFChargingInformationOk() (*NEFChargingInforma
 
 // HasNEFChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasNEFChargingInformation() bool {
-	if o != nil && !isNil(o.NEFChargingInformation) {
+	if o != nil && !IsNil(o.NEFChargingInformation) {
 		return true
 	}
 
@@ -769,7 +769,7 @@ func (o *ChargingDataRequest) SetNEFChargingInformation(v NEFChargingInformation
 
 // GetRegistrationChargingInformation returns the RegistrationChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetRegistrationChargingInformation() RegistrationChargingInformation {
-	if o == nil || isNil(o.RegistrationChargingInformation) {
+	if o == nil || IsNil(o.RegistrationChargingInformation) {
 		var ret RegistrationChargingInformation
 		return ret
 	}
@@ -779,7 +779,7 @@ func (o *ChargingDataRequest) GetRegistrationChargingInformation() RegistrationC
 // GetRegistrationChargingInformationOk returns a tuple with the RegistrationChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetRegistrationChargingInformationOk() (*RegistrationChargingInformation, bool) {
-	if o == nil || isNil(o.RegistrationChargingInformation) {
+	if o == nil || IsNil(o.RegistrationChargingInformation) {
 		return nil, false
 	}
 	return o.RegistrationChargingInformation, true
@@ -787,7 +787,7 @@ func (o *ChargingDataRequest) GetRegistrationChargingInformationOk() (*Registrat
 
 // HasRegistrationChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasRegistrationChargingInformation() bool {
-	if o != nil && !isNil(o.RegistrationChargingInformation) {
+	if o != nil && !IsNil(o.RegistrationChargingInformation) {
 		return true
 	}
 
@@ -801,7 +801,7 @@ func (o *ChargingDataRequest) SetRegistrationChargingInformation(v RegistrationC
 
 // GetN2ConnectionChargingInformation returns the N2ConnectionChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetN2ConnectionChargingInformation() N2ConnectionChargingInformation {
-	if o == nil || isNil(o.N2ConnectionChargingInformation) {
+	if o == nil || IsNil(o.N2ConnectionChargingInformation) {
 		var ret N2ConnectionChargingInformation
 		return ret
 	}
@@ -811,7 +811,7 @@ func (o *ChargingDataRequest) GetN2ConnectionChargingInformation() N2ConnectionC
 // GetN2ConnectionChargingInformationOk returns a tuple with the N2ConnectionChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetN2ConnectionChargingInformationOk() (*N2ConnectionChargingInformation, bool) {
-	if o == nil || isNil(o.N2ConnectionChargingInformation) {
+	if o == nil || IsNil(o.N2ConnectionChargingInformation) {
 		return nil, false
 	}
 	return o.N2ConnectionChargingInformation, true
@@ -819,7 +819,7 @@ func (o *ChargingDataRequest) GetN2ConnectionChargingInformationOk() (*N2Connect
 
 // HasN2ConnectionChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasN2ConnectionChargingInformation() bool {
-	if o != nil && !isNil(o.N2ConnectionChargingInformation) {
+	if o != nil && !IsNil(o.N2ConnectionChargingInformation) {
 		return true
 	}
 
@@ -833,7 +833,7 @@ func (o *ChargingDataRequest) SetN2ConnectionChargingInformation(v N2ConnectionC
 
 // GetLocationReportingChargingInformation returns the LocationReportingChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetLocationReportingChargingInformation() LocationReportingChargingInformation {
-	if o == nil || isNil(o.LocationReportingChargingInformation) {
+	if o == nil || IsNil(o.LocationReportingChargingInformation) {
 		var ret LocationReportingChargingInformation
 		return ret
 	}
@@ -843,7 +843,7 @@ func (o *ChargingDataRequest) GetLocationReportingChargingInformation() Location
 // GetLocationReportingChargingInformationOk returns a tuple with the LocationReportingChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetLocationReportingChargingInformationOk() (*LocationReportingChargingInformation, bool) {
-	if o == nil || isNil(o.LocationReportingChargingInformation) {
+	if o == nil || IsNil(o.LocationReportingChargingInformation) {
 		return nil, false
 	}
 	return o.LocationReportingChargingInformation, true
@@ -851,7 +851,7 @@ func (o *ChargingDataRequest) GetLocationReportingChargingInformationOk() (*Loca
 
 // HasLocationReportingChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasLocationReportingChargingInformation() bool {
-	if o != nil && !isNil(o.LocationReportingChargingInformation) {
+	if o != nil && !IsNil(o.LocationReportingChargingInformation) {
 		return true
 	}
 
@@ -865,7 +865,7 @@ func (o *ChargingDataRequest) SetLocationReportingChargingInformation(v Location
 
 // GetNSPAChargingInformation returns the NSPAChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetNSPAChargingInformation() NSPAChargingInformation {
-	if o == nil || isNil(o.NSPAChargingInformation) {
+	if o == nil || IsNil(o.NSPAChargingInformation) {
 		var ret NSPAChargingInformation
 		return ret
 	}
@@ -875,7 +875,7 @@ func (o *ChargingDataRequest) GetNSPAChargingInformation() NSPAChargingInformati
 // GetNSPAChargingInformationOk returns a tuple with the NSPAChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetNSPAChargingInformationOk() (*NSPAChargingInformation, bool) {
-	if o == nil || isNil(o.NSPAChargingInformation) {
+	if o == nil || IsNil(o.NSPAChargingInformation) {
 		return nil, false
 	}
 	return o.NSPAChargingInformation, true
@@ -883,7 +883,7 @@ func (o *ChargingDataRequest) GetNSPAChargingInformationOk() (*NSPAChargingInfor
 
 // HasNSPAChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasNSPAChargingInformation() bool {
-	if o != nil && !isNil(o.NSPAChargingInformation) {
+	if o != nil && !IsNil(o.NSPAChargingInformation) {
 		return true
 	}
 
@@ -897,7 +897,7 @@ func (o *ChargingDataRequest) SetNSPAChargingInformation(v NSPAChargingInformati
 
 // GetNSMChargingInformation returns the NSMChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetNSMChargingInformation() NSMChargingInformation {
-	if o == nil || isNil(o.NSMChargingInformation) {
+	if o == nil || IsNil(o.NSMChargingInformation) {
 		var ret NSMChargingInformation
 		return ret
 	}
@@ -907,7 +907,7 @@ func (o *ChargingDataRequest) GetNSMChargingInformation() NSMChargingInformation
 // GetNSMChargingInformationOk returns a tuple with the NSMChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetNSMChargingInformationOk() (*NSMChargingInformation, bool) {
-	if o == nil || isNil(o.NSMChargingInformation) {
+	if o == nil || IsNil(o.NSMChargingInformation) {
 		return nil, false
 	}
 	return o.NSMChargingInformation, true
@@ -915,7 +915,7 @@ func (o *ChargingDataRequest) GetNSMChargingInformationOk() (*NSMChargingInforma
 
 // HasNSMChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasNSMChargingInformation() bool {
-	if o != nil && !isNil(o.NSMChargingInformation) {
+	if o != nil && !IsNil(o.NSMChargingInformation) {
 		return true
 	}
 
@@ -929,7 +929,7 @@ func (o *ChargingDataRequest) SetNSMChargingInformation(v NSMChargingInformation
 
 // GetMMTelChargingInformation returns the MMTelChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetMMTelChargingInformation() MMTelChargingInformation {
-	if o == nil || isNil(o.MMTelChargingInformation) {
+	if o == nil || IsNil(o.MMTelChargingInformation) {
 		var ret MMTelChargingInformation
 		return ret
 	}
@@ -939,7 +939,7 @@ func (o *ChargingDataRequest) GetMMTelChargingInformation() MMTelChargingInforma
 // GetMMTelChargingInformationOk returns a tuple with the MMTelChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetMMTelChargingInformationOk() (*MMTelChargingInformation, bool) {
-	if o == nil || isNil(o.MMTelChargingInformation) {
+	if o == nil || IsNil(o.MMTelChargingInformation) {
 		return nil, false
 	}
 	return o.MMTelChargingInformation, true
@@ -947,7 +947,7 @@ func (o *ChargingDataRequest) GetMMTelChargingInformationOk() (*MMTelChargingInf
 
 // HasMMTelChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasMMTelChargingInformation() bool {
-	if o != nil && !isNil(o.MMTelChargingInformation) {
+	if o != nil && !IsNil(o.MMTelChargingInformation) {
 		return true
 	}
 
@@ -961,7 +961,7 @@ func (o *ChargingDataRequest) SetMMTelChargingInformation(v MMTelChargingInforma
 
 // GetIMSChargingInformation returns the IMSChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetIMSChargingInformation() IMSChargingInformation {
-	if o == nil || isNil(o.IMSChargingInformation) {
+	if o == nil || IsNil(o.IMSChargingInformation) {
 		var ret IMSChargingInformation
 		return ret
 	}
@@ -971,7 +971,7 @@ func (o *ChargingDataRequest) GetIMSChargingInformation() IMSChargingInformation
 // GetIMSChargingInformationOk returns a tuple with the IMSChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetIMSChargingInformationOk() (*IMSChargingInformation, bool) {
-	if o == nil || isNil(o.IMSChargingInformation) {
+	if o == nil || IsNil(o.IMSChargingInformation) {
 		return nil, false
 	}
 	return o.IMSChargingInformation, true
@@ -979,7 +979,7 @@ func (o *ChargingDataRequest) GetIMSChargingInformationOk() (*IMSChargingInforma
 
 // HasIMSChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasIMSChargingInformation() bool {
-	if o != nil && !isNil(o.IMSChargingInformation) {
+	if o != nil && !IsNil(o.IMSChargingInformation) {
 		return true
 	}
 
@@ -993,7 +993,7 @@ func (o *ChargingDataRequest) SetIMSChargingInformation(v IMSChargingInformation
 
 // GetEdgeInfrastructureUsageChargingInformation returns the EdgeInfrastructureUsageChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetEdgeInfrastructureUsageChargingInformation() EdgeInfrastructureUsageChargingInformation {
-	if o == nil || isNil(o.EdgeInfrastructureUsageChargingInformation) {
+	if o == nil || IsNil(o.EdgeInfrastructureUsageChargingInformation) {
 		var ret EdgeInfrastructureUsageChargingInformation
 		return ret
 	}
@@ -1003,7 +1003,7 @@ func (o *ChargingDataRequest) GetEdgeInfrastructureUsageChargingInformation() Ed
 // GetEdgeInfrastructureUsageChargingInformationOk returns a tuple with the EdgeInfrastructureUsageChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetEdgeInfrastructureUsageChargingInformationOk() (*EdgeInfrastructureUsageChargingInformation, bool) {
-	if o == nil || isNil(o.EdgeInfrastructureUsageChargingInformation) {
+	if o == nil || IsNil(o.EdgeInfrastructureUsageChargingInformation) {
 		return nil, false
 	}
 	return o.EdgeInfrastructureUsageChargingInformation, true
@@ -1011,7 +1011,7 @@ func (o *ChargingDataRequest) GetEdgeInfrastructureUsageChargingInformationOk() 
 
 // HasEdgeInfrastructureUsageChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasEdgeInfrastructureUsageChargingInformation() bool {
-	if o != nil && !isNil(o.EdgeInfrastructureUsageChargingInformation) {
+	if o != nil && !IsNil(o.EdgeInfrastructureUsageChargingInformation) {
 		return true
 	}
 
@@ -1025,7 +1025,7 @@ func (o *ChargingDataRequest) SetEdgeInfrastructureUsageChargingInformation(v Ed
 
 // GetEASDeploymentChargingInformation returns the EASDeploymentChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetEASDeploymentChargingInformation() EASDeploymentChargingInformation {
-	if o == nil || isNil(o.EASDeploymentChargingInformation) {
+	if o == nil || IsNil(o.EASDeploymentChargingInformation) {
 		var ret EASDeploymentChargingInformation
 		return ret
 	}
@@ -1035,7 +1035,7 @@ func (o *ChargingDataRequest) GetEASDeploymentChargingInformation() EASDeploymen
 // GetEASDeploymentChargingInformationOk returns a tuple with the EASDeploymentChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetEASDeploymentChargingInformationOk() (*EASDeploymentChargingInformation, bool) {
-	if o == nil || isNil(o.EASDeploymentChargingInformation) {
+	if o == nil || IsNil(o.EASDeploymentChargingInformation) {
 		return nil, false
 	}
 	return o.EASDeploymentChargingInformation, true
@@ -1043,7 +1043,7 @@ func (o *ChargingDataRequest) GetEASDeploymentChargingInformationOk() (*EASDeplo
 
 // HasEASDeploymentChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasEASDeploymentChargingInformation() bool {
-	if o != nil && !isNil(o.EASDeploymentChargingInformation) {
+	if o != nil && !IsNil(o.EASDeploymentChargingInformation) {
 		return true
 	}
 
@@ -1057,7 +1057,7 @@ func (o *ChargingDataRequest) SetEASDeploymentChargingInformation(v EASDeploymen
 
 // GetDirectEdgeEnablingServiceChargingInformation returns the DirectEdgeEnablingServiceChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetDirectEdgeEnablingServiceChargingInformation() NEFChargingInformation {
-	if o == nil || isNil(o.DirectEdgeEnablingServiceChargingInformation) {
+	if o == nil || IsNil(o.DirectEdgeEnablingServiceChargingInformation) {
 		var ret NEFChargingInformation
 		return ret
 	}
@@ -1067,7 +1067,7 @@ func (o *ChargingDataRequest) GetDirectEdgeEnablingServiceChargingInformation() 
 // GetDirectEdgeEnablingServiceChargingInformationOk returns a tuple with the DirectEdgeEnablingServiceChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetDirectEdgeEnablingServiceChargingInformationOk() (*NEFChargingInformation, bool) {
-	if o == nil || isNil(o.DirectEdgeEnablingServiceChargingInformation) {
+	if o == nil || IsNil(o.DirectEdgeEnablingServiceChargingInformation) {
 		return nil, false
 	}
 	return o.DirectEdgeEnablingServiceChargingInformation, true
@@ -1075,7 +1075,7 @@ func (o *ChargingDataRequest) GetDirectEdgeEnablingServiceChargingInformationOk(
 
 // HasDirectEdgeEnablingServiceChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasDirectEdgeEnablingServiceChargingInformation() bool {
-	if o != nil && !isNil(o.DirectEdgeEnablingServiceChargingInformation) {
+	if o != nil && !IsNil(o.DirectEdgeEnablingServiceChargingInformation) {
 		return true
 	}
 
@@ -1089,7 +1089,7 @@ func (o *ChargingDataRequest) SetDirectEdgeEnablingServiceChargingInformation(v 
 
 // GetExposedEdgeEnablingServiceChargingInformation returns the ExposedEdgeEnablingServiceChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetExposedEdgeEnablingServiceChargingInformation() NEFChargingInformation {
-	if o == nil || isNil(o.ExposedEdgeEnablingServiceChargingInformation) {
+	if o == nil || IsNil(o.ExposedEdgeEnablingServiceChargingInformation) {
 		var ret NEFChargingInformation
 		return ret
 	}
@@ -1099,7 +1099,7 @@ func (o *ChargingDataRequest) GetExposedEdgeEnablingServiceChargingInformation()
 // GetExposedEdgeEnablingServiceChargingInformationOk returns a tuple with the ExposedEdgeEnablingServiceChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetExposedEdgeEnablingServiceChargingInformationOk() (*NEFChargingInformation, bool) {
-	if o == nil || isNil(o.ExposedEdgeEnablingServiceChargingInformation) {
+	if o == nil || IsNil(o.ExposedEdgeEnablingServiceChargingInformation) {
 		return nil, false
 	}
 	return o.ExposedEdgeEnablingServiceChargingInformation, true
@@ -1107,7 +1107,7 @@ func (o *ChargingDataRequest) GetExposedEdgeEnablingServiceChargingInformationOk
 
 // HasExposedEdgeEnablingServiceChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasExposedEdgeEnablingServiceChargingInformation() bool {
-	if o != nil && !isNil(o.ExposedEdgeEnablingServiceChargingInformation) {
+	if o != nil && !IsNil(o.ExposedEdgeEnablingServiceChargingInformation) {
 		return true
 	}
 
@@ -1121,7 +1121,7 @@ func (o *ChargingDataRequest) SetExposedEdgeEnablingServiceChargingInformation(v
 
 // GetProSeChargingInformation returns the ProSeChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetProSeChargingInformation() ProseChargingInformation {
-	if o == nil || isNil(o.ProSeChargingInformation) {
+	if o == nil || IsNil(o.ProSeChargingInformation) {
 		var ret ProseChargingInformation
 		return ret
 	}
@@ -1131,7 +1131,7 @@ func (o *ChargingDataRequest) GetProSeChargingInformation() ProseChargingInforma
 // GetProSeChargingInformationOk returns a tuple with the ProSeChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetProSeChargingInformationOk() (*ProseChargingInformation, bool) {
-	if o == nil || isNil(o.ProSeChargingInformation) {
+	if o == nil || IsNil(o.ProSeChargingInformation) {
 		return nil, false
 	}
 	return o.ProSeChargingInformation, true
@@ -1139,7 +1139,7 @@ func (o *ChargingDataRequest) GetProSeChargingInformationOk() (*ProseChargingInf
 
 // HasProSeChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasProSeChargingInformation() bool {
-	if o != nil && !isNil(o.ProSeChargingInformation) {
+	if o != nil && !IsNil(o.ProSeChargingInformation) {
 		return true
 	}
 
@@ -1153,7 +1153,7 @@ func (o *ChargingDataRequest) SetProSeChargingInformation(v ProseChargingInforma
 
 // GetMMSChargingInformation returns the MMSChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetMMSChargingInformation() MMSChargingInformation {
-	if o == nil || isNil(o.MMSChargingInformation) {
+	if o == nil || IsNil(o.MMSChargingInformation) {
 		var ret MMSChargingInformation
 		return ret
 	}
@@ -1163,7 +1163,7 @@ func (o *ChargingDataRequest) GetMMSChargingInformation() MMSChargingInformation
 // GetMMSChargingInformationOk returns a tuple with the MMSChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetMMSChargingInformationOk() (*MMSChargingInformation, bool) {
-	if o == nil || isNil(o.MMSChargingInformation) {
+	if o == nil || IsNil(o.MMSChargingInformation) {
 		return nil, false
 	}
 	return o.MMSChargingInformation, true
@@ -1171,7 +1171,7 @@ func (o *ChargingDataRequest) GetMMSChargingInformationOk() (*MMSChargingInforma
 
 // HasMMSChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasMMSChargingInformation() bool {
-	if o != nil && !isNil(o.MMSChargingInformation) {
+	if o != nil && !IsNil(o.MMSChargingInformation) {
 		return true
 	}
 
@@ -1184,7 +1184,7 @@ func (o *ChargingDataRequest) SetMMSChargingInformation(v MMSChargingInformation
 }
 
 func (o ChargingDataRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1193,103 +1193,103 @@ func (o ChargingDataRequest) MarshalJSON() ([]byte, error) {
 
 func (o ChargingDataRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubscriberIdentifier) {
+	if !IsNil(o.SubscriberIdentifier) {
 		toSerialize["subscriberIdentifier"] = o.SubscriberIdentifier
 	}
-	if !isNil(o.TenantIdentifier) {
+	if !IsNil(o.TenantIdentifier) {
 		toSerialize["tenantIdentifier"] = o.TenantIdentifier
 	}
-	if !isNil(o.ChargingId) {
+	if !IsNil(o.ChargingId) {
 		toSerialize["chargingId"] = o.ChargingId
 	}
-	if !isNil(o.MnSConsumerIdentifier) {
+	if !IsNil(o.MnSConsumerIdentifier) {
 		toSerialize["mnSConsumerIdentifier"] = o.MnSConsumerIdentifier
 	}
 	toSerialize["nfConsumerIdentification"] = o.NfConsumerIdentification
 	toSerialize["invocationTimeStamp"] = o.InvocationTimeStamp
 	toSerialize["invocationSequenceNumber"] = o.InvocationSequenceNumber
-	if !isNil(o.RetransmissionIndicator) {
+	if !IsNil(o.RetransmissionIndicator) {
 		toSerialize["retransmissionIndicator"] = o.RetransmissionIndicator
 	}
-	if !isNil(o.OneTimeEvent) {
+	if !IsNil(o.OneTimeEvent) {
 		toSerialize["oneTimeEvent"] = o.OneTimeEvent
 	}
-	if !isNil(o.OneTimeEventType) {
+	if !IsNil(o.OneTimeEventType) {
 		toSerialize["oneTimeEventType"] = o.OneTimeEventType
 	}
-	if !isNil(o.NotifyUri) {
+	if !IsNil(o.NotifyUri) {
 		toSerialize["notifyUri"] = o.NotifyUri
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.ServiceSpecificationInfo) {
+	if !IsNil(o.ServiceSpecificationInfo) {
 		toSerialize["serviceSpecificationInfo"] = o.ServiceSpecificationInfo
 	}
-	if !isNil(o.MultipleUnitUsage) {
+	if !IsNil(o.MultipleUnitUsage) {
 		toSerialize["multipleUnitUsage"] = o.MultipleUnitUsage
 	}
-	if !isNil(o.Triggers) {
+	if !IsNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !isNil(o.Easid) {
+	if !IsNil(o.Easid) {
 		toSerialize["easid"] = o.Easid
 	}
-	if !isNil(o.Ednid) {
+	if !IsNil(o.Ednid) {
 		toSerialize["ednid"] = o.Ednid
 	}
-	if !isNil(o.EASProviderIdentifier) {
+	if !IsNil(o.EASProviderIdentifier) {
 		toSerialize["eASProviderIdentifier"] = o.EASProviderIdentifier
 	}
-	if !isNil(o.PDUSessionChargingInformation) {
+	if !IsNil(o.PDUSessionChargingInformation) {
 		toSerialize["pDUSessionChargingInformation"] = o.PDUSessionChargingInformation
 	}
-	if !isNil(o.RoamingQBCInformation) {
+	if !IsNil(o.RoamingQBCInformation) {
 		toSerialize["roamingQBCInformation"] = o.RoamingQBCInformation
 	}
-	if !isNil(o.SMSChargingInformation) {
+	if !IsNil(o.SMSChargingInformation) {
 		toSerialize["sMSChargingInformation"] = o.SMSChargingInformation
 	}
-	if !isNil(o.NEFChargingInformation) {
+	if !IsNil(o.NEFChargingInformation) {
 		toSerialize["nEFChargingInformation"] = o.NEFChargingInformation
 	}
-	if !isNil(o.RegistrationChargingInformation) {
+	if !IsNil(o.RegistrationChargingInformation) {
 		toSerialize["registrationChargingInformation"] = o.RegistrationChargingInformation
 	}
-	if !isNil(o.N2ConnectionChargingInformation) {
+	if !IsNil(o.N2ConnectionChargingInformation) {
 		toSerialize["n2ConnectionChargingInformation"] = o.N2ConnectionChargingInformation
 	}
-	if !isNil(o.LocationReportingChargingInformation) {
+	if !IsNil(o.LocationReportingChargingInformation) {
 		toSerialize["locationReportingChargingInformation"] = o.LocationReportingChargingInformation
 	}
-	if !isNil(o.NSPAChargingInformation) {
+	if !IsNil(o.NSPAChargingInformation) {
 		toSerialize["nSPAChargingInformation"] = o.NSPAChargingInformation
 	}
-	if !isNil(o.NSMChargingInformation) {
+	if !IsNil(o.NSMChargingInformation) {
 		toSerialize["nSMChargingInformation"] = o.NSMChargingInformation
 	}
-	if !isNil(o.MMTelChargingInformation) {
+	if !IsNil(o.MMTelChargingInformation) {
 		toSerialize["mMTelChargingInformation"] = o.MMTelChargingInformation
 	}
-	if !isNil(o.IMSChargingInformation) {
+	if !IsNil(o.IMSChargingInformation) {
 		toSerialize["iMSChargingInformation"] = o.IMSChargingInformation
 	}
-	if !isNil(o.EdgeInfrastructureUsageChargingInformation) {
+	if !IsNil(o.EdgeInfrastructureUsageChargingInformation) {
 		toSerialize["edgeInfrastructureUsageChargingInformation&#39;"] = o.EdgeInfrastructureUsageChargingInformation
 	}
-	if !isNil(o.EASDeploymentChargingInformation) {
+	if !IsNil(o.EASDeploymentChargingInformation) {
 		toSerialize["eASDeploymentChargingInformation"] = o.EASDeploymentChargingInformation
 	}
-	if !isNil(o.DirectEdgeEnablingServiceChargingInformation) {
+	if !IsNil(o.DirectEdgeEnablingServiceChargingInformation) {
 		toSerialize["directEdgeEnablingServiceChargingInformation"] = o.DirectEdgeEnablingServiceChargingInformation
 	}
-	if !isNil(o.ExposedEdgeEnablingServiceChargingInformation) {
+	if !IsNil(o.ExposedEdgeEnablingServiceChargingInformation) {
 		toSerialize["exposedEdgeEnablingServiceChargingInformation"] = o.ExposedEdgeEnablingServiceChargingInformation
 	}
-	if !isNil(o.ProSeChargingInformation) {
+	if !IsNil(o.ProSeChargingInformation) {
 		toSerialize["proSeChargingInformation"] = o.ProSeChargingInformation
 	}
-	if !isNil(o.MMSChargingInformation) {
+	if !IsNil(o.MMSChargingInformation) {
 		toSerialize["mMSChargingInformation"] = o.MMSChargingInformation
 	}
 	return toSerialize, nil
@@ -1330,5 +1330,3 @@ func (v *NullableChargingDataRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

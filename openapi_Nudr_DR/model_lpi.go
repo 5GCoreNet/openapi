@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Lpi{}
 // Lpi struct for Lpi
 type Lpi struct {
 	LocationPrivacyInd LocationPrivacyInd `json:"locationPrivacyInd"`
-	ValidTimePeriod *ValidTimePeriod `json:"validTimePeriod,omitempty"`
+	ValidTimePeriod    *ValidTimePeriod   `json:"validTimePeriod,omitempty"`
 }
 
 // NewLpi instantiates a new Lpi object
@@ -67,7 +67,7 @@ func (o *Lpi) SetLocationPrivacyInd(v LocationPrivacyInd) {
 
 // GetValidTimePeriod returns the ValidTimePeriod field value if set, zero value otherwise.
 func (o *Lpi) GetValidTimePeriod() ValidTimePeriod {
-	if o == nil || isNil(o.ValidTimePeriod) {
+	if o == nil || IsNil(o.ValidTimePeriod) {
 		var ret ValidTimePeriod
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *Lpi) GetValidTimePeriod() ValidTimePeriod {
 // GetValidTimePeriodOk returns a tuple with the ValidTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Lpi) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
-	if o == nil || isNil(o.ValidTimePeriod) {
+	if o == nil || IsNil(o.ValidTimePeriod) {
 		return nil, false
 	}
 	return o.ValidTimePeriod, true
@@ -85,7 +85,7 @@ func (o *Lpi) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
 
 // HasValidTimePeriod returns a boolean if a field has been set.
 func (o *Lpi) HasValidTimePeriod() bool {
-	if o != nil && !isNil(o.ValidTimePeriod) {
+	if o != nil && !IsNil(o.ValidTimePeriod) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *Lpi) SetValidTimePeriod(v ValidTimePeriod) {
 }
 
 func (o Lpi) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o Lpi) MarshalJSON() ([]byte, error) {
 func (o Lpi) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locationPrivacyInd"] = o.LocationPrivacyInd
-	if !isNil(o.ValidTimePeriod) {
+	if !IsNil(o.ValidTimePeriod) {
 		toSerialize["validTimePeriod"] = o.ValidTimePeriod
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableLpi) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

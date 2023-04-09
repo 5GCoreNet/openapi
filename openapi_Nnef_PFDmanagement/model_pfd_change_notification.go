@@ -1,7 +1,7 @@
 /*
 Nnef_PFDmanagement Service API
 
-Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &PfdChangeNotification{}
 // PfdChangeNotification Represents information related to a notification of PFD change.
 type PfdChangeNotification struct {
 	// String providing an application identifier.
-	ApplicationId string `json:"applicationId"`
-	RemovalFlag *bool `json:"removalFlag,omitempty"`
-	PartialFlag *bool `json:"partialFlag,omitempty"`
-	Pfds []PfdContent `json:"pfds,omitempty"`
+	ApplicationId string       `json:"applicationId"`
+	RemovalFlag   *bool        `json:"removalFlag,omitempty"`
+	PartialFlag   *bool        `json:"partialFlag,omitempty"`
+	Pfds          []PfdContent `json:"pfds,omitempty"`
 }
 
 // NewPfdChangeNotification instantiates a new PfdChangeNotification object
@@ -78,7 +78,7 @@ func (o *PfdChangeNotification) SetApplicationId(v string) {
 
 // GetRemovalFlag returns the RemovalFlag field value if set, zero value otherwise.
 func (o *PfdChangeNotification) GetRemovalFlag() bool {
-	if o == nil || isNil(o.RemovalFlag) {
+	if o == nil || IsNil(o.RemovalFlag) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *PfdChangeNotification) GetRemovalFlag() bool {
 // GetRemovalFlagOk returns a tuple with the RemovalFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdChangeNotification) GetRemovalFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.RemovalFlag) {
+	if o == nil || IsNil(o.RemovalFlag) {
 		return nil, false
 	}
 	return o.RemovalFlag, true
@@ -96,7 +96,7 @@ func (o *PfdChangeNotification) GetRemovalFlagOk() (*bool, bool) {
 
 // HasRemovalFlag returns a boolean if a field has been set.
 func (o *PfdChangeNotification) HasRemovalFlag() bool {
-	if o != nil && !isNil(o.RemovalFlag) {
+	if o != nil && !IsNil(o.RemovalFlag) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *PfdChangeNotification) SetRemovalFlag(v bool) {
 
 // GetPartialFlag returns the PartialFlag field value if set, zero value otherwise.
 func (o *PfdChangeNotification) GetPartialFlag() bool {
-	if o == nil || isNil(o.PartialFlag) {
+	if o == nil || IsNil(o.PartialFlag) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *PfdChangeNotification) GetPartialFlag() bool {
 // GetPartialFlagOk returns a tuple with the PartialFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdChangeNotification) GetPartialFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.PartialFlag) {
+	if o == nil || IsNil(o.PartialFlag) {
 		return nil, false
 	}
 	return o.PartialFlag, true
@@ -128,7 +128,7 @@ func (o *PfdChangeNotification) GetPartialFlagOk() (*bool, bool) {
 
 // HasPartialFlag returns a boolean if a field has been set.
 func (o *PfdChangeNotification) HasPartialFlag() bool {
-	if o != nil && !isNil(o.PartialFlag) {
+	if o != nil && !IsNil(o.PartialFlag) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *PfdChangeNotification) SetPartialFlag(v bool) {
 
 // GetPfds returns the Pfds field value if set, zero value otherwise.
 func (o *PfdChangeNotification) GetPfds() []PfdContent {
-	if o == nil || isNil(o.Pfds) {
+	if o == nil || IsNil(o.Pfds) {
 		var ret []PfdContent
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PfdChangeNotification) GetPfds() []PfdContent {
 // GetPfdsOk returns a tuple with the Pfds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdChangeNotification) GetPfdsOk() ([]PfdContent, bool) {
-	if o == nil || isNil(o.Pfds) {
+	if o == nil || IsNil(o.Pfds) {
 		return nil, false
 	}
 	return o.Pfds, true
@@ -160,7 +160,7 @@ func (o *PfdChangeNotification) GetPfdsOk() ([]PfdContent, bool) {
 
 // HasPfds returns a boolean if a field has been set.
 func (o *PfdChangeNotification) HasPfds() bool {
-	if o != nil && !isNil(o.Pfds) {
+	if o != nil && !IsNil(o.Pfds) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *PfdChangeNotification) SetPfds(v []PfdContent) {
 }
 
 func (o PfdChangeNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,13 +183,13 @@ func (o PfdChangeNotification) MarshalJSON() ([]byte, error) {
 func (o PfdChangeNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applicationId"] = o.ApplicationId
-	if !isNil(o.RemovalFlag) {
+	if !IsNil(o.RemovalFlag) {
 		toSerialize["removalFlag"] = o.RemovalFlag
 	}
-	if !isNil(o.PartialFlag) {
+	if !IsNil(o.PartialFlag) {
 		toSerialize["partialFlag"] = o.PartialFlag
 	}
-	if !isNil(o.Pfds) {
+	if !IsNil(o.Pfds) {
 		toSerialize["pfds"] = o.Pfds
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullablePfdChangeNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

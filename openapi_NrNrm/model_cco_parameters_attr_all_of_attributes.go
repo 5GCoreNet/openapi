@@ -19,12 +19,12 @@ var _ MappedNullable = &CCOParametersAttrAllOfAttributes{}
 
 // CCOParametersAttrAllOfAttributes struct for CCOParametersAttrAllOfAttributes
 type CCOParametersAttrAllOfAttributes struct {
-	CoverageShapeList *int32 `json:"coverageShapeList,omitempty"`
+	CoverageShapeList          *int32          `json:"coverageShapeList,omitempty"`
 	DownlinkTransmitPowerRange *ParameterRange `json:"downlinkTransmitPowerRange,omitempty"`
-	AntennaTiltRange *ParameterRange `json:"antennaTiltRange,omitempty"`
-	AntennaAzimuthRange *ParameterRange `json:"antennaAzimuthRange,omitempty"`
-	DigitalTiltRange *ParameterRange `json:"digitalTiltRange,omitempty"`
-	DigitalAzimuthRange *ParameterRange `json:"digitalAzimuthRange,omitempty"`
+	AntennaTiltRange           *ParameterRange `json:"antennaTiltRange,omitempty"`
+	AntennaAzimuthRange        *ParameterRange `json:"antennaAzimuthRange,omitempty"`
+	DigitalTiltRange           *ParameterRange `json:"digitalTiltRange,omitempty"`
+	DigitalAzimuthRange        *ParameterRange `json:"digitalAzimuthRange,omitempty"`
 }
 
 // NewCCOParametersAttrAllOfAttributes instantiates a new CCOParametersAttrAllOfAttributes object
@@ -46,7 +46,7 @@ func NewCCOParametersAttrAllOfAttributesWithDefaults() *CCOParametersAttrAllOfAt
 
 // GetCoverageShapeList returns the CoverageShapeList field value if set, zero value otherwise.
 func (o *CCOParametersAttrAllOfAttributes) GetCoverageShapeList() int32 {
-	if o == nil || isNil(o.CoverageShapeList) {
+	if o == nil || IsNil(o.CoverageShapeList) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetCoverageShapeList() int32 {
 // GetCoverageShapeListOk returns a tuple with the CoverageShapeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOParametersAttrAllOfAttributes) GetCoverageShapeListOk() (*int32, bool) {
-	if o == nil || isNil(o.CoverageShapeList) {
+	if o == nil || IsNil(o.CoverageShapeList) {
 		return nil, false
 	}
 	return o.CoverageShapeList, true
@@ -64,7 +64,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetCoverageShapeListOk() (*int32, boo
 
 // HasCoverageShapeList returns a boolean if a field has been set.
 func (o *CCOParametersAttrAllOfAttributes) HasCoverageShapeList() bool {
-	if o != nil && !isNil(o.CoverageShapeList) {
+	if o != nil && !IsNil(o.CoverageShapeList) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *CCOParametersAttrAllOfAttributes) SetCoverageShapeList(v int32) {
 
 // GetDownlinkTransmitPowerRange returns the DownlinkTransmitPowerRange field value if set, zero value otherwise.
 func (o *CCOParametersAttrAllOfAttributes) GetDownlinkTransmitPowerRange() ParameterRange {
-	if o == nil || isNil(o.DownlinkTransmitPowerRange) {
+	if o == nil || IsNil(o.DownlinkTransmitPowerRange) {
 		var ret ParameterRange
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetDownlinkTransmitPowerRange() Param
 // GetDownlinkTransmitPowerRangeOk returns a tuple with the DownlinkTransmitPowerRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOParametersAttrAllOfAttributes) GetDownlinkTransmitPowerRangeOk() (*ParameterRange, bool) {
-	if o == nil || isNil(o.DownlinkTransmitPowerRange) {
+	if o == nil || IsNil(o.DownlinkTransmitPowerRange) {
 		return nil, false
 	}
 	return o.DownlinkTransmitPowerRange, true
@@ -96,7 +96,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetDownlinkTransmitPowerRangeOk() (*P
 
 // HasDownlinkTransmitPowerRange returns a boolean if a field has been set.
 func (o *CCOParametersAttrAllOfAttributes) HasDownlinkTransmitPowerRange() bool {
-	if o != nil && !isNil(o.DownlinkTransmitPowerRange) {
+	if o != nil && !IsNil(o.DownlinkTransmitPowerRange) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *CCOParametersAttrAllOfAttributes) SetDownlinkTransmitPowerRange(v Param
 
 // GetAntennaTiltRange returns the AntennaTiltRange field value if set, zero value otherwise.
 func (o *CCOParametersAttrAllOfAttributes) GetAntennaTiltRange() ParameterRange {
-	if o == nil || isNil(o.AntennaTiltRange) {
+	if o == nil || IsNil(o.AntennaTiltRange) {
 		var ret ParameterRange
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetAntennaTiltRange() ParameterRange 
 // GetAntennaTiltRangeOk returns a tuple with the AntennaTiltRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOParametersAttrAllOfAttributes) GetAntennaTiltRangeOk() (*ParameterRange, bool) {
-	if o == nil || isNil(o.AntennaTiltRange) {
+	if o == nil || IsNil(o.AntennaTiltRange) {
 		return nil, false
 	}
 	return o.AntennaTiltRange, true
@@ -128,7 +128,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetAntennaTiltRangeOk() (*ParameterRa
 
 // HasAntennaTiltRange returns a boolean if a field has been set.
 func (o *CCOParametersAttrAllOfAttributes) HasAntennaTiltRange() bool {
-	if o != nil && !isNil(o.AntennaTiltRange) {
+	if o != nil && !IsNil(o.AntennaTiltRange) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *CCOParametersAttrAllOfAttributes) SetAntennaTiltRange(v ParameterRange)
 
 // GetAntennaAzimuthRange returns the AntennaAzimuthRange field value if set, zero value otherwise.
 func (o *CCOParametersAttrAllOfAttributes) GetAntennaAzimuthRange() ParameterRange {
-	if o == nil || isNil(o.AntennaAzimuthRange) {
+	if o == nil || IsNil(o.AntennaAzimuthRange) {
 		var ret ParameterRange
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetAntennaAzimuthRange() ParameterRan
 // GetAntennaAzimuthRangeOk returns a tuple with the AntennaAzimuthRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOParametersAttrAllOfAttributes) GetAntennaAzimuthRangeOk() (*ParameterRange, bool) {
-	if o == nil || isNil(o.AntennaAzimuthRange) {
+	if o == nil || IsNil(o.AntennaAzimuthRange) {
 		return nil, false
 	}
 	return o.AntennaAzimuthRange, true
@@ -160,7 +160,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetAntennaAzimuthRangeOk() (*Paramete
 
 // HasAntennaAzimuthRange returns a boolean if a field has been set.
 func (o *CCOParametersAttrAllOfAttributes) HasAntennaAzimuthRange() bool {
-	if o != nil && !isNil(o.AntennaAzimuthRange) {
+	if o != nil && !IsNil(o.AntennaAzimuthRange) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *CCOParametersAttrAllOfAttributes) SetAntennaAzimuthRange(v ParameterRan
 
 // GetDigitalTiltRange returns the DigitalTiltRange field value if set, zero value otherwise.
 func (o *CCOParametersAttrAllOfAttributes) GetDigitalTiltRange() ParameterRange {
-	if o == nil || isNil(o.DigitalTiltRange) {
+	if o == nil || IsNil(o.DigitalTiltRange) {
 		var ret ParameterRange
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetDigitalTiltRange() ParameterRange 
 // GetDigitalTiltRangeOk returns a tuple with the DigitalTiltRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOParametersAttrAllOfAttributes) GetDigitalTiltRangeOk() (*ParameterRange, bool) {
-	if o == nil || isNil(o.DigitalTiltRange) {
+	if o == nil || IsNil(o.DigitalTiltRange) {
 		return nil, false
 	}
 	return o.DigitalTiltRange, true
@@ -192,7 +192,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetDigitalTiltRangeOk() (*ParameterRa
 
 // HasDigitalTiltRange returns a boolean if a field has been set.
 func (o *CCOParametersAttrAllOfAttributes) HasDigitalTiltRange() bool {
-	if o != nil && !isNil(o.DigitalTiltRange) {
+	if o != nil && !IsNil(o.DigitalTiltRange) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *CCOParametersAttrAllOfAttributes) SetDigitalTiltRange(v ParameterRange)
 
 // GetDigitalAzimuthRange returns the DigitalAzimuthRange field value if set, zero value otherwise.
 func (o *CCOParametersAttrAllOfAttributes) GetDigitalAzimuthRange() ParameterRange {
-	if o == nil || isNil(o.DigitalAzimuthRange) {
+	if o == nil || IsNil(o.DigitalAzimuthRange) {
 		var ret ParameterRange
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetDigitalAzimuthRange() ParameterRan
 // GetDigitalAzimuthRangeOk returns a tuple with the DigitalAzimuthRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOParametersAttrAllOfAttributes) GetDigitalAzimuthRangeOk() (*ParameterRange, bool) {
-	if o == nil || isNil(o.DigitalAzimuthRange) {
+	if o == nil || IsNil(o.DigitalAzimuthRange) {
 		return nil, false
 	}
 	return o.DigitalAzimuthRange, true
@@ -224,7 +224,7 @@ func (o *CCOParametersAttrAllOfAttributes) GetDigitalAzimuthRangeOk() (*Paramete
 
 // HasDigitalAzimuthRange returns a boolean if a field has been set.
 func (o *CCOParametersAttrAllOfAttributes) HasDigitalAzimuthRange() bool {
-	if o != nil && !isNil(o.DigitalAzimuthRange) {
+	if o != nil && !IsNil(o.DigitalAzimuthRange) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *CCOParametersAttrAllOfAttributes) SetDigitalAzimuthRange(v ParameterRan
 }
 
 func (o CCOParametersAttrAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,22 +246,22 @@ func (o CCOParametersAttrAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o CCOParametersAttrAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CoverageShapeList) {
+	if !IsNil(o.CoverageShapeList) {
 		toSerialize["coverageShapeList"] = o.CoverageShapeList
 	}
-	if !isNil(o.DownlinkTransmitPowerRange) {
+	if !IsNil(o.DownlinkTransmitPowerRange) {
 		toSerialize["downlinkTransmitPowerRange"] = o.DownlinkTransmitPowerRange
 	}
-	if !isNil(o.AntennaTiltRange) {
+	if !IsNil(o.AntennaTiltRange) {
 		toSerialize["antennaTiltRange"] = o.AntennaTiltRange
 	}
-	if !isNil(o.AntennaAzimuthRange) {
+	if !IsNil(o.AntennaAzimuthRange) {
 		toSerialize["antennaAzimuthRange"] = o.AntennaAzimuthRange
 	}
-	if !isNil(o.DigitalTiltRange) {
+	if !IsNil(o.DigitalTiltRange) {
 		toSerialize["digitalTiltRange"] = o.DigitalTiltRange
 	}
-	if !isNil(o.DigitalAzimuthRange) {
+	if !IsNil(o.DigitalAzimuthRange) {
 		toSerialize["digitalAzimuthRange"] = o.DigitalAzimuthRange
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableCCOParametersAttrAllOfAttributes) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

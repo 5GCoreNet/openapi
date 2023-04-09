@@ -1,7 +1,7 @@
 /*
 VAE_PC5ProvisioningRequirement
 
-API for VAE_PC5ProvisioningRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE_PC5ProvisioningRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_VAE_PC5ProvisioningRequirement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi service
 type VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService service
 
 type ApiUpdatePC5ProvisioningRequirementSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService
-	subscriptionId string
+	ctx                     context.Context
+	ApiService              *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService
+	subscriptionId          string
 	provisioningRequirement *ProvisioningRequirement
 }
 
@@ -43,26 +42,27 @@ func (r ApiUpdatePC5ProvisioningRequirementSubscriptionRequest) Execute() (*Prov
 /*
 UpdatePC5ProvisioningRequirementSubscription Updates/replaces an existing subscription resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of an PC5 Provisioning Requirement Subscription resource
- @return ApiUpdatePC5ProvisioningRequirementSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of an PC5 Provisioning Requirement Subscription resource
+	@return ApiUpdatePC5ProvisioningRequirementSubscriptionRequest
 */
 func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService) UpdatePC5ProvisioningRequirementSubscription(ctx context.Context, subscriptionId string) ApiUpdatePC5ProvisioningRequirementSubscriptionRequest {
 	return ApiUpdatePC5ProvisioningRequirementSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return ProvisioningRequirement
+//
+//	@return ProvisioningRequirement
 func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService) UpdatePC5ProvisioningRequirementSubscriptionExecute(r ApiUpdatePC5ProvisioningRequirementSubscriptionRequest) (*ProvisioningRequirement, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProvisioningRequirement
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProvisioningRequirement
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApiService.UpdatePC5ProvisioningRequirementSubscription")
@@ -109,9 +109,9 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -128,8 +128,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -139,8 +139,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -150,8 +150,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -161,8 +161,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -172,8 +172,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -183,8 +183,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -194,8 +194,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -205,8 +205,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -216,8 +216,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -227,8 +227,8 @@ func (a *VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

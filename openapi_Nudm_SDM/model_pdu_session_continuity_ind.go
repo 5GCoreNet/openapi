@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // PduSessionContinuityInd struct for PduSessionContinuityInd
 type PduSessionContinuityInd struct {
-	PduSessionContinuityIndAnyOf *PduSessionContinuityIndAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PduSessionContinuityInd) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PduSessionContinuityIndAnyOf
-	err = json.Unmarshal(data, &dst.PduSessionContinuityIndAnyOf);
-	if err == nil {
-		jsonPduSessionContinuityIndAnyOf, _ := json.Marshal(dst.PduSessionContinuityIndAnyOf)
-		if string(jsonPduSessionContinuityIndAnyOf) == "{}" { // empty struct
-			dst.PduSessionContinuityIndAnyOf = nil
-		} else {
-			return nil // data stored in dst.PduSessionContinuityIndAnyOf, return on the first match
-		}
-	} else {
-		dst.PduSessionContinuityIndAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PduSessionContinuityInd) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PduSessionContinuityInd) MarshalJSON() ([]byte, error) {
-	if src.PduSessionContinuityIndAnyOf != nil {
-		return json.Marshal(&src.PduSessionContinuityIndAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePduSessionContinuityInd) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

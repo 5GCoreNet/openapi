@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for structured data for exposure
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &ExposureDataChangeNotification{}
 // ExposureDataChangeNotification Represents changed exposure data for one UE for which Notification was requested.
 type ExposureDataChangeNotification struct {
 	// String represents the SUPI or GPSI
-	UeId *string `json:"ueId,omitempty"`
-	AccessAndMobilityData *AccessAndMobilityData `json:"accessAndMobilityData,omitempty"`
+	UeId                     *string                    `json:"ueId,omitempty"`
+	AccessAndMobilityData    *AccessAndMobilityData     `json:"accessAndMobilityData,omitempty"`
 	PduSessionManagementData []PduSessionManagementData `json:"pduSessionManagementData,omitempty"`
-	DelResources []string `json:"delResources,omitempty"`
+	DelResources             []string                   `json:"delResources,omitempty"`
 }
 
 // NewExposureDataChangeNotification instantiates a new ExposureDataChangeNotification object
@@ -45,7 +45,7 @@ func NewExposureDataChangeNotificationWithDefaults() *ExposureDataChangeNotifica
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ExposureDataChangeNotification) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ExposureDataChangeNotification) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExposureDataChangeNotification) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -63,7 +63,7 @@ func (o *ExposureDataChangeNotification) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ExposureDataChangeNotification) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ExposureDataChangeNotification) SetUeId(v string) {
 
 // GetAccessAndMobilityData returns the AccessAndMobilityData field value if set, zero value otherwise.
 func (o *ExposureDataChangeNotification) GetAccessAndMobilityData() AccessAndMobilityData {
-	if o == nil || isNil(o.AccessAndMobilityData) {
+	if o == nil || IsNil(o.AccessAndMobilityData) {
 		var ret AccessAndMobilityData
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ExposureDataChangeNotification) GetAccessAndMobilityData() AccessAndMob
 // GetAccessAndMobilityDataOk returns a tuple with the AccessAndMobilityData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExposureDataChangeNotification) GetAccessAndMobilityDataOk() (*AccessAndMobilityData, bool) {
-	if o == nil || isNil(o.AccessAndMobilityData) {
+	if o == nil || IsNil(o.AccessAndMobilityData) {
 		return nil, false
 	}
 	return o.AccessAndMobilityData, true
@@ -95,7 +95,7 @@ func (o *ExposureDataChangeNotification) GetAccessAndMobilityDataOk() (*AccessAn
 
 // HasAccessAndMobilityData returns a boolean if a field has been set.
 func (o *ExposureDataChangeNotification) HasAccessAndMobilityData() bool {
-	if o != nil && !isNil(o.AccessAndMobilityData) {
+	if o != nil && !IsNil(o.AccessAndMobilityData) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ExposureDataChangeNotification) SetAccessAndMobilityData(v AccessAndMob
 
 // GetPduSessionManagementData returns the PduSessionManagementData field value if set, zero value otherwise.
 func (o *ExposureDataChangeNotification) GetPduSessionManagementData() []PduSessionManagementData {
-	if o == nil || isNil(o.PduSessionManagementData) {
+	if o == nil || IsNil(o.PduSessionManagementData) {
 		var ret []PduSessionManagementData
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ExposureDataChangeNotification) GetPduSessionManagementData() []PduSess
 // GetPduSessionManagementDataOk returns a tuple with the PduSessionManagementData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExposureDataChangeNotification) GetPduSessionManagementDataOk() ([]PduSessionManagementData, bool) {
-	if o == nil || isNil(o.PduSessionManagementData) {
+	if o == nil || IsNil(o.PduSessionManagementData) {
 		return nil, false
 	}
 	return o.PduSessionManagementData, true
@@ -127,7 +127,7 @@ func (o *ExposureDataChangeNotification) GetPduSessionManagementDataOk() ([]PduS
 
 // HasPduSessionManagementData returns a boolean if a field has been set.
 func (o *ExposureDataChangeNotification) HasPduSessionManagementData() bool {
-	if o != nil && !isNil(o.PduSessionManagementData) {
+	if o != nil && !IsNil(o.PduSessionManagementData) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ExposureDataChangeNotification) SetPduSessionManagementData(v []PduSess
 
 // GetDelResources returns the DelResources field value if set, zero value otherwise.
 func (o *ExposureDataChangeNotification) GetDelResources() []string {
-	if o == nil || isNil(o.DelResources) {
+	if o == nil || IsNil(o.DelResources) {
 		var ret []string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ExposureDataChangeNotification) GetDelResources() []string {
 // GetDelResourcesOk returns a tuple with the DelResources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExposureDataChangeNotification) GetDelResourcesOk() ([]string, bool) {
-	if o == nil || isNil(o.DelResources) {
+	if o == nil || IsNil(o.DelResources) {
 		return nil, false
 	}
 	return o.DelResources, true
@@ -159,7 +159,7 @@ func (o *ExposureDataChangeNotification) GetDelResourcesOk() ([]string, bool) {
 
 // HasDelResources returns a boolean if a field has been set.
 func (o *ExposureDataChangeNotification) HasDelResources() bool {
-	if o != nil && !isNil(o.DelResources) {
+	if o != nil && !IsNil(o.DelResources) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ExposureDataChangeNotification) SetDelResources(v []string) {
 }
 
 func (o ExposureDataChangeNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o ExposureDataChangeNotification) MarshalJSON() ([]byte, error) {
 
 func (o ExposureDataChangeNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.AccessAndMobilityData) {
+	if !IsNil(o.AccessAndMobilityData) {
 		toSerialize["accessAndMobilityData"] = o.AccessAndMobilityData
 	}
-	if !isNil(o.PduSessionManagementData) {
+	if !IsNil(o.PduSessionManagementData) {
 		toSerialize["pduSessionManagementData"] = o.PduSessionManagementData
 	}
-	if !isNil(o.DelResources) {
+	if !IsNil(o.DelResources) {
 		toSerialize["delResources"] = o.DelResources
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableExposureDataChangeNotification) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

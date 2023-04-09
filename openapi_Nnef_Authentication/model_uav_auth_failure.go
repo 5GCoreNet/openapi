@@ -1,7 +1,7 @@
 /*
 Nnef_Authentication
 
-NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &UAVAuthFailure{}
 
 // UAVAuthFailure UAV auth failure
 type UAVAuthFailure struct {
-	Error ProblemDetails `json:"error"`
-	UasResourceRelease *bool `json:"uasResourceRelease,omitempty"`
+	Error              ProblemDetails `json:"error"`
+	UasResourceRelease *bool          `json:"uasResourceRelease,omitempty"`
 }
 
 // NewUAVAuthFailure instantiates a new UAVAuthFailure object
@@ -71,7 +71,7 @@ func (o *UAVAuthFailure) SetError(v ProblemDetails) {
 
 // GetUasResourceRelease returns the UasResourceRelease field value if set, zero value otherwise.
 func (o *UAVAuthFailure) GetUasResourceRelease() bool {
-	if o == nil || isNil(o.UasResourceRelease) {
+	if o == nil || IsNil(o.UasResourceRelease) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *UAVAuthFailure) GetUasResourceRelease() bool {
 // GetUasResourceReleaseOk returns a tuple with the UasResourceRelease field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthFailure) GetUasResourceReleaseOk() (*bool, bool) {
-	if o == nil || isNil(o.UasResourceRelease) {
+	if o == nil || IsNil(o.UasResourceRelease) {
 		return nil, false
 	}
 	return o.UasResourceRelease, true
@@ -89,7 +89,7 @@ func (o *UAVAuthFailure) GetUasResourceReleaseOk() (*bool, bool) {
 
 // HasUasResourceRelease returns a boolean if a field has been set.
 func (o *UAVAuthFailure) HasUasResourceRelease() bool {
-	if o != nil && !isNil(o.UasResourceRelease) {
+	if o != nil && !IsNil(o.UasResourceRelease) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *UAVAuthFailure) SetUasResourceRelease(v bool) {
 }
 
 func (o UAVAuthFailure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -112,7 +112,7 @@ func (o UAVAuthFailure) MarshalJSON() ([]byte, error) {
 func (o UAVAuthFailure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.UasResourceRelease) {
+	if !IsNil(o.UasResourceRelease) {
 		toSerialize["uasResourceRelease"] = o.UasResourceRelease
 	}
 	return toSerialize, nil
@@ -153,5 +153,3 @@ func (v *NullableUAVAuthFailure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

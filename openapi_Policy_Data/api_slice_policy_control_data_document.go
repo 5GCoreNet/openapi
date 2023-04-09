@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Policy_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SlicePolicyControlDataDocumentApiService SlicePolicyControlDataDocumentApi service
 type SlicePolicyControlDataDocumentApiService service
 
 type ApiReadSlicePolicyControlDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SlicePolicyControlDataDocumentApiService
-	snssai Snssai
-	suppFeat *string
+	snssai     Snssai
+	suppFeat   *string
 }
 
 // Supported Features
@@ -43,26 +42,27 @@ func (r ApiReadSlicePolicyControlDataRequest) Execute() (*SlicePolicyData, *http
 /*
 ReadSlicePolicyControlData Retrieves a network Slice specific policy control data resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param snssai
- @return ApiReadSlicePolicyControlDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param snssai
+	@return ApiReadSlicePolicyControlDataRequest
 */
 func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlData(ctx context.Context, snssai Snssai) ApiReadSlicePolicyControlDataRequest {
 	return ApiReadSlicePolicyControlDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		snssai: snssai,
+		ctx:        ctx,
+		snssai:     snssai,
 	}
 }
 
 // Execute executes the request
-//  @return SlicePolicyData
+//
+//	@return SlicePolicyData
 func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExecute(r ApiReadSlicePolicyControlDataRequest) (*SlicePolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SlicePolicyData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SlicePolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SlicePolicyControlDataDocumentApiService.ReadSlicePolicyControlData")
@@ -78,7 +78,7 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 	localVarFormParams := url.Values{}
 
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -107,9 +107,9 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,8 +126,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -137,8 +137,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -148,8 +148,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -159,8 +159,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -170,8 +170,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -181,8 +181,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -192,8 +192,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -203,8 +203,8 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -223,9 +223,9 @@ func (a *SlicePolicyControlDataDocumentApiService) ReadSlicePolicyControlDataExe
 }
 
 type ApiUpdateSlicePolicyControlDataRequest struct {
-	ctx context.Context
-	ApiService *SlicePolicyControlDataDocumentApiService
-	snssai Snssai
+	ctx                  context.Context
+	ApiService           *SlicePolicyControlDataDocumentApiService
+	snssai               Snssai
 	slicePolicyDataPatch *SlicePolicyDataPatch
 }
 
@@ -241,26 +241,27 @@ func (r ApiUpdateSlicePolicyControlDataRequest) Execute() (*SlicePolicyData, *ht
 /*
 UpdateSlicePolicyControlData Modify a network Slice specific policy control data resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param snssai
- @return ApiUpdateSlicePolicyControlDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param snssai
+	@return ApiUpdateSlicePolicyControlDataRequest
 */
 func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlData(ctx context.Context, snssai Snssai) ApiUpdateSlicePolicyControlDataRequest {
 	return ApiUpdateSlicePolicyControlDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		snssai: snssai,
+		ctx:        ctx,
+		snssai:     snssai,
 	}
 }
 
 // Execute executes the request
-//  @return SlicePolicyData
+//
+//	@return SlicePolicyData
 func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataExecute(r ApiUpdateSlicePolicyControlDataRequest) (*SlicePolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SlicePolicyData
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SlicePolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SlicePolicyControlDataDocumentApiService.UpdateSlicePolicyControlData")
@@ -307,9 +308,9 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -326,8 +327,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -337,8 +338,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -348,8 +349,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -359,8 +360,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -370,8 +371,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -381,8 +382,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -392,8 +393,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -403,8 +404,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -414,8 +415,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -425,8 +426,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -436,8 +437,8 @@ func (a *SlicePolicyControlDataDocumentApiService) UpdateSlicePolicyControlDataE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

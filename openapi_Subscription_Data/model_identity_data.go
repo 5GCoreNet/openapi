@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &IdentityData{}
 
 // IdentityData Identity data corresponds to the provided ueId.
 type IdentityData struct {
-	SupiList []string `json:"supiList,omitempty"`
-	GpsiList []string `json:"gpsiList,omitempty"`
+	SupiList     []string `json:"supiList,omitempty"`
+	GpsiList     []string `json:"gpsiList,omitempty"`
 	AllowedAfIds []string `json:"allowedAfIds,omitempty"`
 	// A map (list of key-value pairs where AppPortId serves as key) of GPSIs.
 	ApplicationPortIds *map[string]string `json:"applicationPortIds,omitempty"`
@@ -45,7 +45,7 @@ func NewIdentityDataWithDefaults() *IdentityData {
 
 // GetSupiList returns the SupiList field value if set, zero value otherwise.
 func (o *IdentityData) GetSupiList() []string {
-	if o == nil || isNil(o.SupiList) {
+	if o == nil || IsNil(o.SupiList) {
 		var ret []string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *IdentityData) GetSupiList() []string {
 // GetSupiListOk returns a tuple with the SupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityData) GetSupiListOk() ([]string, bool) {
-	if o == nil || isNil(o.SupiList) {
+	if o == nil || IsNil(o.SupiList) {
 		return nil, false
 	}
 	return o.SupiList, true
@@ -63,7 +63,7 @@ func (o *IdentityData) GetSupiListOk() ([]string, bool) {
 
 // HasSupiList returns a boolean if a field has been set.
 func (o *IdentityData) HasSupiList() bool {
-	if o != nil && !isNil(o.SupiList) {
+	if o != nil && !IsNil(o.SupiList) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *IdentityData) SetSupiList(v []string) {
 
 // GetGpsiList returns the GpsiList field value if set, zero value otherwise.
 func (o *IdentityData) GetGpsiList() []string {
-	if o == nil || isNil(o.GpsiList) {
+	if o == nil || IsNil(o.GpsiList) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IdentityData) GetGpsiList() []string {
 // GetGpsiListOk returns a tuple with the GpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityData) GetGpsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.GpsiList) {
+	if o == nil || IsNil(o.GpsiList) {
 		return nil, false
 	}
 	return o.GpsiList, true
@@ -95,7 +95,7 @@ func (o *IdentityData) GetGpsiListOk() ([]string, bool) {
 
 // HasGpsiList returns a boolean if a field has been set.
 func (o *IdentityData) HasGpsiList() bool {
-	if o != nil && !isNil(o.GpsiList) {
+	if o != nil && !IsNil(o.GpsiList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *IdentityData) SetGpsiList(v []string) {
 
 // GetAllowedAfIds returns the AllowedAfIds field value if set, zero value otherwise.
 func (o *IdentityData) GetAllowedAfIds() []string {
-	if o == nil || isNil(o.AllowedAfIds) {
+	if o == nil || IsNil(o.AllowedAfIds) {
 		var ret []string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *IdentityData) GetAllowedAfIds() []string {
 // GetAllowedAfIdsOk returns a tuple with the AllowedAfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityData) GetAllowedAfIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedAfIds) {
+	if o == nil || IsNil(o.AllowedAfIds) {
 		return nil, false
 	}
 	return o.AllowedAfIds, true
@@ -127,7 +127,7 @@ func (o *IdentityData) GetAllowedAfIdsOk() ([]string, bool) {
 
 // HasAllowedAfIds returns a boolean if a field has been set.
 func (o *IdentityData) HasAllowedAfIds() bool {
-	if o != nil && !isNil(o.AllowedAfIds) {
+	if o != nil && !IsNil(o.AllowedAfIds) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *IdentityData) SetAllowedAfIds(v []string) {
 
 // GetApplicationPortIds returns the ApplicationPortIds field value if set, zero value otherwise.
 func (o *IdentityData) GetApplicationPortIds() map[string]string {
-	if o == nil || isNil(o.ApplicationPortIds) {
+	if o == nil || IsNil(o.ApplicationPortIds) {
 		var ret map[string]string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *IdentityData) GetApplicationPortIds() map[string]string {
 // GetApplicationPortIdsOk returns a tuple with the ApplicationPortIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityData) GetApplicationPortIdsOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.ApplicationPortIds) {
+	if o == nil || IsNil(o.ApplicationPortIds) {
 		return nil, false
 	}
 	return o.ApplicationPortIds, true
@@ -159,7 +159,7 @@ func (o *IdentityData) GetApplicationPortIdsOk() (*map[string]string, bool) {
 
 // HasApplicationPortIds returns a boolean if a field has been set.
 func (o *IdentityData) HasApplicationPortIds() bool {
-	if o != nil && !isNil(o.ApplicationPortIds) {
+	if o != nil && !IsNil(o.ApplicationPortIds) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *IdentityData) SetApplicationPortIds(v map[string]string) {
 }
 
 func (o IdentityData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o IdentityData) MarshalJSON() ([]byte, error) {
 
 func (o IdentityData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupiList) {
+	if !IsNil(o.SupiList) {
 		toSerialize["supiList"] = o.SupiList
 	}
-	if !isNil(o.GpsiList) {
+	if !IsNil(o.GpsiList) {
 		toSerialize["gpsiList"] = o.GpsiList
 	}
-	if !isNil(o.AllowedAfIds) {
+	if !IsNil(o.AllowedAfIds) {
 		toSerialize["allowedAfIds"] = o.AllowedAfIds
 	}
-	if !isNil(o.ApplicationPortIds) {
+	if !IsNil(o.ApplicationPortIds) {
 		toSerialize["applicationPortIds"] = o.ApplicationPortIds
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableIdentityData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

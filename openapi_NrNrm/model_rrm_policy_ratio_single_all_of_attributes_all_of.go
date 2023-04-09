@@ -19,8 +19,8 @@ var _ MappedNullable = &RRMPolicyRatioSingleAllOfAttributesAllOf{}
 
 // RRMPolicyRatioSingleAllOfAttributesAllOf struct for RRMPolicyRatioSingleAllOfAttributesAllOf
 type RRMPolicyRatioSingleAllOfAttributesAllOf struct {
-	RRMPolicyMaxRatio *int32 `json:"rRMPolicyMaxRatio,omitempty"`
-	RRMPolicyMinRatio *int32 `json:"rRMPolicyMinRatio,omitempty"`
+	RRMPolicyMaxRatio       *int32 `json:"rRMPolicyMaxRatio,omitempty"`
+	RRMPolicyMinRatio       *int32 `json:"rRMPolicyMinRatio,omitempty"`
 	RRMPolicyDedicatedRatio *int32 `json:"rRMPolicyDedicatedRatio,omitempty"`
 }
 
@@ -138,7 +138,7 @@ func (o *RRMPolicyRatioSingleAllOfAttributesAllOf) SetRRMPolicyDedicatedRatio(v 
 }
 
 func (o RRMPolicyRatioSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableRRMPolicyRatioSingleAllOfAttributesAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &SmContextRetrieveData{}
 
 // SmContextRetrieveData Data within Retrieve SM Context Request
 type SmContextRetrieveData struct {
-	TargetMmeCap *MmeCapabilities `json:"targetMmeCap,omitempty"`
-	SmContextType *SmContextType `json:"smContextType,omitempty"`
-	ServingNetwork *PlmnId `json:"servingNetwork,omitempty"`
-	NotToTransferEbiList []int32 `json:"notToTransferEbiList,omitempty"`
-	RanUnchangedInd *bool `json:"ranUnchangedInd,omitempty"`
+	TargetMmeCap         *MmeCapabilities `json:"targetMmeCap,omitempty"`
+	SmContextType        *SmContextType   `json:"smContextType,omitempty"`
+	ServingNetwork       *PlmnId          `json:"servingNetwork,omitempty"`
+	NotToTransferEbiList []int32          `json:"notToTransferEbiList,omitempty"`
+	RanUnchangedInd      *bool            `json:"ranUnchangedInd,omitempty"`
 }
 
 // NewSmContextRetrieveData instantiates a new SmContextRetrieveData object
@@ -49,7 +49,7 @@ func NewSmContextRetrieveDataWithDefaults() *SmContextRetrieveData {
 
 // GetTargetMmeCap returns the TargetMmeCap field value if set, zero value otherwise.
 func (o *SmContextRetrieveData) GetTargetMmeCap() MmeCapabilities {
-	if o == nil || isNil(o.TargetMmeCap) {
+	if o == nil || IsNil(o.TargetMmeCap) {
 		var ret MmeCapabilities
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *SmContextRetrieveData) GetTargetMmeCap() MmeCapabilities {
 // GetTargetMmeCapOk returns a tuple with the TargetMmeCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrieveData) GetTargetMmeCapOk() (*MmeCapabilities, bool) {
-	if o == nil || isNil(o.TargetMmeCap) {
+	if o == nil || IsNil(o.TargetMmeCap) {
 		return nil, false
 	}
 	return o.TargetMmeCap, true
@@ -67,7 +67,7 @@ func (o *SmContextRetrieveData) GetTargetMmeCapOk() (*MmeCapabilities, bool) {
 
 // HasTargetMmeCap returns a boolean if a field has been set.
 func (o *SmContextRetrieveData) HasTargetMmeCap() bool {
-	if o != nil && !isNil(o.TargetMmeCap) {
+	if o != nil && !IsNil(o.TargetMmeCap) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *SmContextRetrieveData) SetTargetMmeCap(v MmeCapabilities) {
 
 // GetSmContextType returns the SmContextType field value if set, zero value otherwise.
 func (o *SmContextRetrieveData) GetSmContextType() SmContextType {
-	if o == nil || isNil(o.SmContextType) {
+	if o == nil || IsNil(o.SmContextType) {
 		var ret SmContextType
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *SmContextRetrieveData) GetSmContextType() SmContextType {
 // GetSmContextTypeOk returns a tuple with the SmContextType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrieveData) GetSmContextTypeOk() (*SmContextType, bool) {
-	if o == nil || isNil(o.SmContextType) {
+	if o == nil || IsNil(o.SmContextType) {
 		return nil, false
 	}
 	return o.SmContextType, true
@@ -99,7 +99,7 @@ func (o *SmContextRetrieveData) GetSmContextTypeOk() (*SmContextType, bool) {
 
 // HasSmContextType returns a boolean if a field has been set.
 func (o *SmContextRetrieveData) HasSmContextType() bool {
-	if o != nil && !isNil(o.SmContextType) {
+	if o != nil && !IsNil(o.SmContextType) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *SmContextRetrieveData) SetSmContextType(v SmContextType) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *SmContextRetrieveData) GetServingNetwork() PlmnId {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		var ret PlmnId
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *SmContextRetrieveData) GetServingNetwork() PlmnId {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrieveData) GetServingNetworkOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -131,7 +131,7 @@ func (o *SmContextRetrieveData) GetServingNetworkOk() (*PlmnId, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *SmContextRetrieveData) HasServingNetwork() bool {
-	if o != nil && !isNil(o.ServingNetwork) {
+	if o != nil && !IsNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *SmContextRetrieveData) SetServingNetwork(v PlmnId) {
 
 // GetNotToTransferEbiList returns the NotToTransferEbiList field value if set, zero value otherwise.
 func (o *SmContextRetrieveData) GetNotToTransferEbiList() []int32 {
-	if o == nil || isNil(o.NotToTransferEbiList) {
+	if o == nil || IsNil(o.NotToTransferEbiList) {
 		var ret []int32
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *SmContextRetrieveData) GetNotToTransferEbiList() []int32 {
 // GetNotToTransferEbiListOk returns a tuple with the NotToTransferEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrieveData) GetNotToTransferEbiListOk() ([]int32, bool) {
-	if o == nil || isNil(o.NotToTransferEbiList) {
+	if o == nil || IsNil(o.NotToTransferEbiList) {
 		return nil, false
 	}
 	return o.NotToTransferEbiList, true
@@ -163,7 +163,7 @@ func (o *SmContextRetrieveData) GetNotToTransferEbiListOk() ([]int32, bool) {
 
 // HasNotToTransferEbiList returns a boolean if a field has been set.
 func (o *SmContextRetrieveData) HasNotToTransferEbiList() bool {
-	if o != nil && !isNil(o.NotToTransferEbiList) {
+	if o != nil && !IsNil(o.NotToTransferEbiList) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *SmContextRetrieveData) SetNotToTransferEbiList(v []int32) {
 
 // GetRanUnchangedInd returns the RanUnchangedInd field value if set, zero value otherwise.
 func (o *SmContextRetrieveData) GetRanUnchangedInd() bool {
-	if o == nil || isNil(o.RanUnchangedInd) {
+	if o == nil || IsNil(o.RanUnchangedInd) {
 		var ret bool
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *SmContextRetrieveData) GetRanUnchangedInd() bool {
 // GetRanUnchangedIndOk returns a tuple with the RanUnchangedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrieveData) GetRanUnchangedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.RanUnchangedInd) {
+	if o == nil || IsNil(o.RanUnchangedInd) {
 		return nil, false
 	}
 	return o.RanUnchangedInd, true
@@ -195,7 +195,7 @@ func (o *SmContextRetrieveData) GetRanUnchangedIndOk() (*bool, bool) {
 
 // HasRanUnchangedInd returns a boolean if a field has been set.
 func (o *SmContextRetrieveData) HasRanUnchangedInd() bool {
-	if o != nil && !isNil(o.RanUnchangedInd) {
+	if o != nil && !IsNil(o.RanUnchangedInd) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *SmContextRetrieveData) SetRanUnchangedInd(v bool) {
 }
 
 func (o SmContextRetrieveData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,19 +217,19 @@ func (o SmContextRetrieveData) MarshalJSON() ([]byte, error) {
 
 func (o SmContextRetrieveData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetMmeCap) {
+	if !IsNil(o.TargetMmeCap) {
 		toSerialize["targetMmeCap"] = o.TargetMmeCap
 	}
-	if !isNil(o.SmContextType) {
+	if !IsNil(o.SmContextType) {
 		toSerialize["smContextType"] = o.SmContextType
 	}
-	if !isNil(o.ServingNetwork) {
+	if !IsNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
-	if !isNil(o.NotToTransferEbiList) {
+	if !IsNil(o.NotToTransferEbiList) {
 		toSerialize["notToTransferEbiList"] = o.NotToTransferEbiList
 	}
-	if !isNil(o.RanUnchangedInd) {
+	if !IsNil(o.RanUnchangedInd) {
 		toSerialize["ranUnchangedInd"] = o.RanUnchangedInd
 	}
 	return toSerialize, nil
@@ -270,5 +270,3 @@ func (v *NullableSmContextRetrieveData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

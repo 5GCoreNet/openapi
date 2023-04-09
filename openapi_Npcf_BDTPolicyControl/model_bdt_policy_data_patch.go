@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the BdtPolicyDataPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BdtPolicyDataPatch{}
 
-// BdtPolicyDataPatch A JSON Merge Patch body schema containing modification instruction to be performed on the bdtPolData attribute of the BdtPolicy data structure to select a transfer policy. Adds selTransPolicyId to BdtPolicyData data structure. 
+// BdtPolicyDataPatch A JSON Merge Patch body schema containing modification instruction to be performed on the bdtPolData attribute of the BdtPolicy data structure to select a transfer policy. Adds selTransPolicyId to BdtPolicyData data structure.
 type BdtPolicyDataPatch struct {
-	// Contains an identity (i.e. transPolicyId value) of the selected transfer policy. If the BdtNotification_5G feature is supported value 0 indicates that no transfer policy is selected. 
+	// Contains an identity (i.e. transPolicyId value) of the selected transfer policy. If the BdtNotification_5G feature is supported value 0 indicates that no transfer policy is selected.
 	SelTransPolicyId int32 `json:"selTransPolicyId"`
 }
 
@@ -66,7 +66,7 @@ func (o *BdtPolicyDataPatch) SetSelTransPolicyId(v int32) {
 }
 
 func (o BdtPolicyDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullableBdtPolicyDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

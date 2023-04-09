@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -22,8 +22,8 @@ var _ MappedNullable = &HsmfUpdateError{}
 type HsmfUpdateError struct {
 	Error ProblemDetails `json:"error"`
 	// Procedure Transaction Identifier
-	Pti *int32 `json:"pti,omitempty"`
-	N1smCause *string `json:"n1smCause,omitempty"`
+	Pti          *int32           `json:"pti,omitempty"`
+	N1smCause    *string          `json:"n1smCause,omitempty"`
 	N1SmInfoToUe *RefToBinaryData `json:"n1SmInfoToUe,omitempty"`
 	// indicating a time in seconds.
 	BackOffTimer *int32 `json:"backOffTimer,omitempty"`
@@ -75,7 +75,7 @@ func (o *HsmfUpdateError) SetError(v ProblemDetails) {
 
 // GetPti returns the Pti field value if set, zero value otherwise.
 func (o *HsmfUpdateError) GetPti() int32 {
-	if o == nil || isNil(o.Pti) {
+	if o == nil || IsNil(o.Pti) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *HsmfUpdateError) GetPti() int32 {
 // GetPtiOk returns a tuple with the Pti field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdateError) GetPtiOk() (*int32, bool) {
-	if o == nil || isNil(o.Pti) {
+	if o == nil || IsNil(o.Pti) {
 		return nil, false
 	}
 	return o.Pti, true
@@ -93,7 +93,7 @@ func (o *HsmfUpdateError) GetPtiOk() (*int32, bool) {
 
 // HasPti returns a boolean if a field has been set.
 func (o *HsmfUpdateError) HasPti() bool {
-	if o != nil && !isNil(o.Pti) {
+	if o != nil && !IsNil(o.Pti) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *HsmfUpdateError) SetPti(v int32) {
 
 // GetN1smCause returns the N1smCause field value if set, zero value otherwise.
 func (o *HsmfUpdateError) GetN1smCause() string {
-	if o == nil || isNil(o.N1smCause) {
+	if o == nil || IsNil(o.N1smCause) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *HsmfUpdateError) GetN1smCause() string {
 // GetN1smCauseOk returns a tuple with the N1smCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdateError) GetN1smCauseOk() (*string, bool) {
-	if o == nil || isNil(o.N1smCause) {
+	if o == nil || IsNil(o.N1smCause) {
 		return nil, false
 	}
 	return o.N1smCause, true
@@ -125,7 +125,7 @@ func (o *HsmfUpdateError) GetN1smCauseOk() (*string, bool) {
 
 // HasN1smCause returns a boolean if a field has been set.
 func (o *HsmfUpdateError) HasN1smCause() bool {
-	if o != nil && !isNil(o.N1smCause) {
+	if o != nil && !IsNil(o.N1smCause) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *HsmfUpdateError) SetN1smCause(v string) {
 
 // GetN1SmInfoToUe returns the N1SmInfoToUe field value if set, zero value otherwise.
 func (o *HsmfUpdateError) GetN1SmInfoToUe() RefToBinaryData {
-	if o == nil || isNil(o.N1SmInfoToUe) {
+	if o == nil || IsNil(o.N1SmInfoToUe) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *HsmfUpdateError) GetN1SmInfoToUe() RefToBinaryData {
 // GetN1SmInfoToUeOk returns a tuple with the N1SmInfoToUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdateError) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N1SmInfoToUe) {
+	if o == nil || IsNil(o.N1SmInfoToUe) {
 		return nil, false
 	}
 	return o.N1SmInfoToUe, true
@@ -157,7 +157,7 @@ func (o *HsmfUpdateError) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
 
 // HasN1SmInfoToUe returns a boolean if a field has been set.
 func (o *HsmfUpdateError) HasN1SmInfoToUe() bool {
-	if o != nil && !isNil(o.N1SmInfoToUe) {
+	if o != nil && !IsNil(o.N1SmInfoToUe) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *HsmfUpdateError) SetN1SmInfoToUe(v RefToBinaryData) {
 
 // GetBackOffTimer returns the BackOffTimer field value if set, zero value otherwise.
 func (o *HsmfUpdateError) GetBackOffTimer() int32 {
-	if o == nil || isNil(o.BackOffTimer) {
+	if o == nil || IsNil(o.BackOffTimer) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *HsmfUpdateError) GetBackOffTimer() int32 {
 // GetBackOffTimerOk returns a tuple with the BackOffTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdateError) GetBackOffTimerOk() (*int32, bool) {
-	if o == nil || isNil(o.BackOffTimer) {
+	if o == nil || IsNil(o.BackOffTimer) {
 		return nil, false
 	}
 	return o.BackOffTimer, true
@@ -189,7 +189,7 @@ func (o *HsmfUpdateError) GetBackOffTimerOk() (*int32, bool) {
 
 // HasBackOffTimer returns a boolean if a field has been set.
 func (o *HsmfUpdateError) HasBackOffTimer() bool {
-	if o != nil && !isNil(o.BackOffTimer) {
+	if o != nil && !IsNil(o.BackOffTimer) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *HsmfUpdateError) SetBackOffTimer(v int32) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *HsmfUpdateError) GetRecoveryTime() time.Time {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *HsmfUpdateError) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdateError) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -221,7 +221,7 @@ func (o *HsmfUpdateError) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *HsmfUpdateError) HasRecoveryTime() bool {
-	if o != nil && !isNil(o.RecoveryTime) {
+	if o != nil && !IsNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *HsmfUpdateError) SetRecoveryTime(v time.Time) {
 }
 
 func (o HsmfUpdateError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,19 +244,19 @@ func (o HsmfUpdateError) MarshalJSON() ([]byte, error) {
 func (o HsmfUpdateError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.Pti) {
+	if !IsNil(o.Pti) {
 		toSerialize["pti"] = o.Pti
 	}
-	if !isNil(o.N1smCause) {
+	if !IsNil(o.N1smCause) {
 		toSerialize["n1smCause"] = o.N1smCause
 	}
-	if !isNil(o.N1SmInfoToUe) {
+	if !IsNil(o.N1SmInfoToUe) {
 		toSerialize["n1SmInfoToUe"] = o.N1SmInfoToUe
 	}
-	if !isNil(o.BackOffTimer) {
+	if !IsNil(o.BackOffTimer) {
 		toSerialize["backOffTimer"] = o.BackOffTimer
 	}
-	if !isNil(o.RecoveryTime) {
+	if !IsNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
 	return toSerialize, nil
@@ -297,5 +297,3 @@ func (v *NullableHsmfUpdateError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

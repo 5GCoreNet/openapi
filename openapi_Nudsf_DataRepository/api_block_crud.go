@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,27 +13,26 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // BlockCRUDApiService BlockCRUDApi service
 type BlockCRUDApiService service
 
 type ApiCreateOrModifyBlockRequest struct {
-	ctx context.Context
-	ApiService *BlockCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	blockId string
-	body *interface{}
-	getPrevious *bool
-	ifNoneMatch *string
-	ifMatch *string
+	ctx               context.Context
+	ApiService        *BlockCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	blockId           string
+	body              *interface{}
+	getPrevious       *bool
+	ifNoneMatch       *string
+	ifMatch           *string
 	supportedFeatures *string
 }
 
@@ -76,32 +75,33 @@ CreateOrModifyBlock Create or Update a specific Block in a Record.
 
 Create or update a specific Block, related to a Record
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @param blockId Id of the Block
- @return ApiCreateOrModifyBlockRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@param blockId Id of the Block
+	@return ApiCreateOrModifyBlockRequest
 */
 func (a *BlockCRUDApiService) CreateOrModifyBlock(ctx context.Context, realmId string, storageId string, recordId string, blockId string) ApiCreateOrModifyBlockRequest {
 	return ApiCreateOrModifyBlockRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
-		blockId: blockId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
+		blockId:    blockId,
 	}
 }
 
 // Execute executes the request
-//  @return interface{}
+//
+//	@return interface{}
 func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBlockRequest) (interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  interface{}
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlockCRUDApiService.CreateOrModifyBlock")
@@ -123,10 +123,10 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 	}
 
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -146,10 +146,10 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.body
@@ -163,9 +163,9 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -182,8 +182,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -193,8 +193,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -204,8 +204,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -215,8 +215,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -226,8 +226,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -237,8 +237,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -248,8 +248,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -259,8 +259,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -270,8 +270,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -281,8 +281,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -292,8 +292,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -303,8 +303,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -314,8 +314,8 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -334,14 +334,14 @@ func (a *BlockCRUDApiService) CreateOrModifyBlockExecute(r ApiCreateOrModifyBloc
 }
 
 type ApiDeleteBlockRequest struct {
-	ctx context.Context
-	ApiService *BlockCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	blockId string
-	getPrevious *bool
-	ifMatch *string
+	ctx               context.Context
+	ApiService        *BlockCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	blockId           string
+	getPrevious       *bool
+	ifMatch           *string
 	supportedFeatures *string
 }
 
@@ -372,32 +372,33 @@ DeleteBlock Delete a specific Block. Then update the Record
 
 delete a specific Block, related to a Record
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @param blockId Id of the Block
- @return ApiDeleteBlockRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@param blockId Id of the Block
+	@return ApiDeleteBlockRequest
 */
 func (a *BlockCRUDApiService) DeleteBlock(ctx context.Context, realmId string, storageId string, recordId string, blockId string) ApiDeleteBlockRequest {
 	return ApiDeleteBlockRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
-		blockId: blockId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
+		blockId:    blockId,
 	}
 }
 
 // Execute executes the request
-//  @return interface{}
+//
+//	@return interface{}
 func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  interface{}
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlockCRUDApiService.DeleteBlock")
@@ -416,10 +417,10 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 	localVarFormParams := url.Values{}
 
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -439,7 +440,7 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -451,9 +452,9 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -470,8 +471,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -481,8 +482,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -492,8 +493,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -503,8 +504,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -514,8 +515,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -525,8 +526,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -536,8 +537,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -547,8 +548,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -558,8 +559,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -569,8 +570,8 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -589,14 +590,14 @@ func (a *BlockCRUDApiService) DeleteBlockExecute(r ApiDeleteBlockRequest) (inter
 }
 
 type ApiGetBlockRequest struct {
-	ctx context.Context
-	ApiService *BlockCRUDApiService
-	realmId string
-	storageId string
-	recordId string
-	blockId string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ctx               context.Context
+	ApiService        *BlockCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
+	blockId           string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 	supportedFeatures *string
 }
 
@@ -627,32 +628,33 @@ GetBlock Retrieve a specific Block
 
 retrieve a specific Block
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @param blockId Id of the Block
- @return ApiGetBlockRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@param blockId Id of the Block
+	@return ApiGetBlockRequest
 */
 func (a *BlockCRUDApiService) GetBlock(ctx context.Context, realmId string, storageId string, recordId string, blockId string) ApiGetBlockRequest {
 	return ApiGetBlockRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
-		blockId: blockId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
+		blockId:    blockId,
 	}
 }
 
 // Execute executes the request
-//  @return interface{}
+//
+//	@return interface{}
 func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlockCRUDApiService.GetBlock")
@@ -671,7 +673,7 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -691,10 +693,10 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -706,9 +708,9 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -725,8 +727,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -736,8 +738,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -747,8 +749,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -758,8 +760,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -769,8 +771,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -780,8 +782,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -791,8 +793,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -802,8 +804,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -813,8 +815,8 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -833,11 +835,11 @@ func (a *BlockCRUDApiService) GetBlockExecute(r ApiGetBlockRequest) (interface{}
 }
 
 type ApiGetBlockListRequest struct {
-	ctx context.Context
-	ApiService *BlockCRUDApiService
-	realmId string
-	storageId string
-	recordId string
+	ctx               context.Context
+	ApiService        *BlockCRUDApiService
+	realmId           string
+	storageId         string
+	recordId          string
 	supportedFeatures *string
 }
 
@@ -856,30 +858,31 @@ GetBlockList Record's Blocks access
 
 retrieve all Blocks of a specific Record
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param recordId Identifier of the Record
- @return ApiGetBlockListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param recordId Identifier of the Record
+	@return ApiGetBlockListRequest
 */
 func (a *BlockCRUDApiService) GetBlockList(ctx context.Context, realmId string, storageId string, recordId string) ApiGetBlockListRequest {
 	return ApiGetBlockListRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		recordId: recordId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		recordId:   recordId,
 	}
 }
 
 // Execute executes the request
-//  @return GetBlockList200Response
+//
+//	@return GetBlockList200Response
 func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*GetBlockList200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBlockList200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBlockList200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlockCRUDApiService.GetBlockList")
@@ -897,7 +900,7 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -926,9 +929,9 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -945,8 +948,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -956,8 +959,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -967,8 +970,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -978,8 +981,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -989,8 +992,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1000,8 +1003,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1011,8 +1014,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1022,8 +1025,8 @@ func (a *BlockCRUDApiService) GetBlockListExecute(r ApiGetBlockListRequest) (*Ge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

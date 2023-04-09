@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-tmgi
 
-API for the allocation, deallocation and management of TMGI(s) for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for the allocation, deallocation and management of TMGI(s) for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -44,7 +44,7 @@ func NewTmgiAllocateWithDefaults() *TmgiAllocate {
 
 // GetTmgiNumber returns the TmgiNumber field value if set, zero value otherwise.
 func (o *TmgiAllocate) GetTmgiNumber() int32 {
-	if o == nil || isNil(o.TmgiNumber) {
+	if o == nil || IsNil(o.TmgiNumber) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *TmgiAllocate) GetTmgiNumber() int32 {
 // GetTmgiNumberOk returns a tuple with the TmgiNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TmgiAllocate) GetTmgiNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.TmgiNumber) {
+	if o == nil || IsNil(o.TmgiNumber) {
 		return nil, false
 	}
 	return o.TmgiNumber, true
@@ -62,7 +62,7 @@ func (o *TmgiAllocate) GetTmgiNumberOk() (*int32, bool) {
 
 // HasTmgiNumber returns a boolean if a field has been set.
 func (o *TmgiAllocate) HasTmgiNumber() bool {
-	if o != nil && !isNil(o.TmgiNumber) {
+	if o != nil && !IsNil(o.TmgiNumber) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *TmgiAllocate) SetTmgiNumber(v int32) {
 
 // GetTmgiList returns the TmgiList field value if set, zero value otherwise.
 func (o *TmgiAllocate) GetTmgiList() []Tmgi {
-	if o == nil || isNil(o.TmgiList) {
+	if o == nil || IsNil(o.TmgiList) {
 		var ret []Tmgi
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *TmgiAllocate) GetTmgiList() []Tmgi {
 // GetTmgiListOk returns a tuple with the TmgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TmgiAllocate) GetTmgiListOk() ([]Tmgi, bool) {
-	if o == nil || isNil(o.TmgiList) {
+	if o == nil || IsNil(o.TmgiList) {
 		return nil, false
 	}
 	return o.TmgiList, true
@@ -94,7 +94,7 @@ func (o *TmgiAllocate) GetTmgiListOk() ([]Tmgi, bool) {
 
 // HasTmgiList returns a boolean if a field has been set.
 func (o *TmgiAllocate) HasTmgiList() bool {
-	if o != nil && !isNil(o.TmgiList) {
+	if o != nil && !IsNil(o.TmgiList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *TmgiAllocate) SetTmgiList(v []Tmgi) {
 }
 
 func (o TmgiAllocate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o TmgiAllocate) MarshalJSON() ([]byte, error) {
 
 func (o TmgiAllocate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TmgiNumber) {
+	if !IsNil(o.TmgiNumber) {
 		toSerialize["tmgiNumber"] = o.TmgiNumber
 	}
-	if !isNil(o.TmgiList) {
+	if !IsNil(o.TmgiList) {
 		toSerialize["tmgiList"] = o.TmgiList
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableTmgiAllocate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

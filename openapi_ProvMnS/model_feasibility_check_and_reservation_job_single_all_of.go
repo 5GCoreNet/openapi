@@ -41,7 +41,7 @@ func NewFeasibilityCheckAndReservationJobSingleAllOfWithDefaults() *FeasibilityC
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOf) GetAttributes() FeasibilityCheckAndReservationJobSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret FeasibilityCheckAndReservationJobSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOf) GetAttributes() Feasibili
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOf) GetAttributesOk() (*FeasibilityCheckAndReservationJobSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOf) GetAttributesOk() (*Feasi
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOf) SetAttributes(v Feasibili
 }
 
 func (o FeasibilityCheckAndReservationJobSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o FeasibilityCheckAndReservationJobSingleAllOf) MarshalJSON() ([]byte, err
 
 func (o FeasibilityCheckAndReservationJobSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableFeasibilityCheckAndReservationJobSingleAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

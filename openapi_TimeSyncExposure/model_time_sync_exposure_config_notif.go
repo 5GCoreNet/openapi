@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TimeSyncExposureConfigNotif{}
 // TimeSyncExposureConfigNotif Contains the notification of time synchronization service state.
 type TimeSyncExposureConfigNotif struct {
 	// Notification Correlation ID assigned by the NF service consumer.
-	ConfigNotifId string `json:"configNotifId"`
+	ConfigNotifId string               `json:"configNotifId"`
 	StateOfConfig StateOfConfiguration `json:"stateOfConfig"`
 }
 
@@ -92,7 +92,7 @@ func (o *TimeSyncExposureConfigNotif) SetStateOfConfig(v StateOfConfiguration) {
 }
 
 func (o TimeSyncExposureConfigNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableTimeSyncExposureConfigNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

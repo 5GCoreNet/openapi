@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &UeContextRelocateData{}
 
 // UeContextRelocateData Data within a Relocate UE Context request
 type UeContextRelocateData struct {
-	UeContext UeContext `json:"ueContext"`
-	TargetId NgRanTargetId `json:"targetId"`
-	SourceToTargetData N2InfoContent `json:"sourceToTargetData"`
-	ForwardRelocationRequest RefToBinaryData `json:"forwardRelocationRequest"`
-	PduSessionList []N2SmInformation `json:"pduSessionList,omitempty"`
-	UeRadioCapability *N2InfoContent `json:"ueRadioCapability,omitempty"`
-	NgapCause *NgApCause `json:"ngapCause,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	UeContext                UeContext         `json:"ueContext"`
+	TargetId                 NgRanTargetId     `json:"targetId"`
+	SourceToTargetData       N2InfoContent     `json:"sourceToTargetData"`
+	ForwardRelocationRequest RefToBinaryData   `json:"forwardRelocationRequest"`
+	PduSessionList           []N2SmInformation `json:"pduSessionList,omitempty"`
+	UeRadioCapability        *N2InfoContent    `json:"ueRadioCapability,omitempty"`
+	NgapCause                *NgApCause        `json:"ngapCause,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -149,7 +149,7 @@ func (o *UeContextRelocateData) SetForwardRelocationRequest(v RefToBinaryData) {
 
 // GetPduSessionList returns the PduSessionList field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetPduSessionList() []N2SmInformation {
-	if o == nil || isNil(o.PduSessionList) {
+	if o == nil || IsNil(o.PduSessionList) {
 		var ret []N2SmInformation
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *UeContextRelocateData) GetPduSessionList() []N2SmInformation {
 // GetPduSessionListOk returns a tuple with the PduSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetPduSessionListOk() ([]N2SmInformation, bool) {
-	if o == nil || isNil(o.PduSessionList) {
+	if o == nil || IsNil(o.PduSessionList) {
 		return nil, false
 	}
 	return o.PduSessionList, true
@@ -167,7 +167,7 @@ func (o *UeContextRelocateData) GetPduSessionListOk() ([]N2SmInformation, bool) 
 
 // HasPduSessionList returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasPduSessionList() bool {
-	if o != nil && !isNil(o.PduSessionList) {
+	if o != nil && !IsNil(o.PduSessionList) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *UeContextRelocateData) SetPduSessionList(v []N2SmInformation) {
 
 // GetUeRadioCapability returns the UeRadioCapability field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetUeRadioCapability() N2InfoContent {
-	if o == nil || isNil(o.UeRadioCapability) {
+	if o == nil || IsNil(o.UeRadioCapability) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *UeContextRelocateData) GetUeRadioCapability() N2InfoContent {
 // GetUeRadioCapabilityOk returns a tuple with the UeRadioCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.UeRadioCapability) {
+	if o == nil || IsNil(o.UeRadioCapability) {
 		return nil, false
 	}
 	return o.UeRadioCapability, true
@@ -199,7 +199,7 @@ func (o *UeContextRelocateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) 
 
 // HasUeRadioCapability returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasUeRadioCapability() bool {
-	if o != nil && !isNil(o.UeRadioCapability) {
+	if o != nil && !IsNil(o.UeRadioCapability) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *UeContextRelocateData) SetUeRadioCapability(v N2InfoContent) {
 
 // GetNgapCause returns the NgapCause field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetNgapCause() NgApCause {
-	if o == nil || isNil(o.NgapCause) {
+	if o == nil || IsNil(o.NgapCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *UeContextRelocateData) GetNgapCause() NgApCause {
 // GetNgapCauseOk returns a tuple with the NgapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetNgapCauseOk() (*NgApCause, bool) {
-	if o == nil || isNil(o.NgapCause) {
+	if o == nil || IsNil(o.NgapCause) {
 		return nil, false
 	}
 	return o.NgapCause, true
@@ -231,7 +231,7 @@ func (o *UeContextRelocateData) GetNgapCauseOk() (*NgApCause, bool) {
 
 // HasNgapCause returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasNgapCause() bool {
-	if o != nil && !isNil(o.NgapCause) {
+	if o != nil && !IsNil(o.NgapCause) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *UeContextRelocateData) SetNgapCause(v NgApCause) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *UeContextRelocateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -263,7 +263,7 @@ func (o *UeContextRelocateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *UeContextRelocateData) SetSupportedFeatures(v string) {
 }
 
 func (o UeContextRelocateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -289,16 +289,16 @@ func (o UeContextRelocateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["targetId"] = o.TargetId
 	toSerialize["sourceToTargetData"] = o.SourceToTargetData
 	toSerialize["forwardRelocationRequest"] = o.ForwardRelocationRequest
-	if !isNil(o.PduSessionList) {
+	if !IsNil(o.PduSessionList) {
 		toSerialize["pduSessionList"] = o.PduSessionList
 	}
-	if !isNil(o.UeRadioCapability) {
+	if !IsNil(o.UeRadioCapability) {
 		toSerialize["ueRadioCapability"] = o.UeRadioCapability
 	}
-	if !isNil(o.NgapCause) {
+	if !IsNil(o.NgapCause) {
 		toSerialize["ngapCause"] = o.NgapCause
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -339,5 +339,3 @@ func (v *NullableUeContextRelocateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

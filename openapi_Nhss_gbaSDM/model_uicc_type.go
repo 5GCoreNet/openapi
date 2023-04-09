@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // UiccType Indicates whether GBA or GBA_U is to be used
 type UiccType struct {
-	UiccTypeAnyOf *UiccTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UiccType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UiccTypeAnyOf
-	err = json.Unmarshal(data, &dst.UiccTypeAnyOf);
-	if err == nil {
-		jsonUiccTypeAnyOf, _ := json.Marshal(dst.UiccTypeAnyOf)
-		if string(jsonUiccTypeAnyOf) == "{}" { // empty struct
-			dst.UiccTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.UiccTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.UiccTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UiccType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UiccType) MarshalJSON() ([]byte, error) {
-	if src.UiccTypeAnyOf != nil {
-		return json.Marshal(&src.UiccTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUiccType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

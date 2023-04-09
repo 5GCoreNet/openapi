@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,22 +13,21 @@ package openapi_Nsmf_PDUSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // IndividualPDUSessionHSMFOrSMFApiService IndividualPDUSessionHSMFOrSMFApi service
 type IndividualPDUSessionHSMFOrSMFApiService service
 
 type ApiReleasePduSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualPDUSessionHSMFOrSMFApiService
+	ctx           context.Context
+	ApiService    *IndividualPDUSessionHSMFOrSMFApiService
 	pduSessionRef string
-	releaseData *ReleaseData
+	releaseData   *ReleaseData
 }
 
 // data sent to H-SMF or SMF when releasing the PDU session
@@ -44,26 +43,27 @@ func (r ApiReleasePduSessionRequest) Execute() (*ReleasedData, *http.Response, e
 /*
 ReleasePduSession Release
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pduSessionRef PDU session reference
- @return ApiReleasePduSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pduSessionRef PDU session reference
+	@return ApiReleasePduSessionRequest
 */
 func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSession(ctx context.Context, pduSessionRef string) ApiReleasePduSessionRequest {
 	return ApiReleasePduSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		pduSessionRef: pduSessionRef,
 	}
 }
 
 // Execute executes the request
-//  @return ReleasedData
+//
+//	@return ReleasedData
 func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r ApiReleasePduSessionRequest) (*ReleasedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ReleasedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ReleasedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPDUSessionHSMFOrSMFApiService.ReleasePduSession")
@@ -107,9 +107,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,8 +126,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -137,8 +137,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -148,8 +148,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -159,8 +159,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -170,8 +170,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -181,8 +181,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -192,8 +192,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -203,8 +203,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -214,8 +214,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -225,8 +225,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -236,8 +236,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -247,8 +247,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -258,8 +258,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -278,10 +278,10 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 }
 
 type ApiRetrievePduSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualPDUSessionHSMFOrSMFApiService
+	ctx           context.Context
+	ApiService    *IndividualPDUSessionHSMFOrSMFApiService
 	pduSessionRef string
-	retrieveData *RetrieveData
+	retrieveData  *RetrieveData
 }
 
 // representation of the payload of the Retrieve Request
@@ -297,26 +297,27 @@ func (r ApiRetrievePduSessionRequest) Execute() (*RetrievedData, *http.Response,
 /*
 RetrievePduSession Retrieve
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pduSessionRef PDU session reference
- @return ApiRetrievePduSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pduSessionRef PDU session reference
+	@return ApiRetrievePduSessionRequest
 */
 func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSession(ctx context.Context, pduSessionRef string) ApiRetrievePduSessionRequest {
 	return ApiRetrievePduSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		pduSessionRef: pduSessionRef,
 	}
 }
 
 // Execute executes the request
-//  @return RetrievedData
+//
+//	@return RetrievedData
 func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r ApiRetrievePduSessionRequest) (*RetrievedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RetrievedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RetrievedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPDUSessionHSMFOrSMFApiService.RetrievePduSession")
@@ -363,9 +364,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -382,8 +383,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -393,8 +394,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -404,8 +405,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -415,8 +416,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -426,8 +427,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -437,8 +438,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -448,8 +449,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -459,8 +460,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -470,8 +471,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -481,8 +482,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -492,8 +493,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -503,8 +504,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -514,8 +515,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 504 {
@@ -525,8 +526,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -545,11 +546,11 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 }
 
 type ApiTransferMoDataRequest struct {
-	ctx context.Context
-	ApiService *IndividualPDUSessionHSMFOrSMFApiService
+	ctx           context.Context
+	ApiService    *IndividualPDUSessionHSMFOrSMFApiService
 	pduSessionRef string
-	jsonData *TransferMoDataReqData
-	binaryMoData *os.File
+	jsonData      *TransferMoDataReqData
+	binaryMoData  *os.File
 }
 
 func (r ApiTransferMoDataRequest) JsonData(jsonData TransferMoDataReqData) ApiTransferMoDataRequest {
@@ -557,8 +558,8 @@ func (r ApiTransferMoDataRequest) JsonData(jsonData TransferMoDataReqData) ApiTr
 	return r
 }
 
-func (r ApiTransferMoDataRequest) BinaryMoData(binaryMoData os.File) ApiTransferMoDataRequest {
-	r.binaryMoData = &binaryMoData
+func (r ApiTransferMoDataRequest) BinaryMoData(binaryMoData *os.File) ApiTransferMoDataRequest {
+	r.binaryMoData = binaryMoData
 	return r
 }
 
@@ -569,14 +570,14 @@ func (r ApiTransferMoDataRequest) Execute() (*http.Response, error) {
 /*
 TransferMoData Transfer MO Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pduSessionRef PDU session reference
- @return ApiTransferMoDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pduSessionRef PDU session reference
+	@return ApiTransferMoDataRequest
 */
 func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoData(ctx context.Context, pduSessionRef string) ApiTransferMoDataRequest {
 	return ApiTransferMoDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		pduSessionRef: pduSessionRef,
 	}
 }
@@ -584,9 +585,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoData(ctx context.Con
 // Execute executes the request
 func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTransferMoDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPDUSessionHSMFOrSMFApiService.TransferMoData")
@@ -626,22 +627,21 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryMoDataLocalVarFormFileName string
-	var binaryMoDataLocalVarFileName     string
-	var binaryMoDataLocalVarFileBytes    []byte
+	var binaryMoDataLocalVarFileName string
+	var binaryMoDataLocalVarFileBytes []byte
 
 	binaryMoDataLocalVarFormFileName = "binaryMoData"
 
-	var binaryMoDataLocalVarFile *os.File
-	if r.binaryMoData != nil {
-		binaryMoDataLocalVarFile = r.binaryMoData
-	}
+	binaryMoDataLocalVarFile := r.binaryMoData
+
 	if binaryMoDataLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryMoDataLocalVarFile)
+		fbs, _ := io.ReadAll(binaryMoDataLocalVarFile)
+
 		binaryMoDataLocalVarFileBytes = fbs
 		binaryMoDataLocalVarFileName = binaryMoDataLocalVarFile.Name()
 		binaryMoDataLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -652,9 +652,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -671,8 +671,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -682,8 +682,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -693,8 +693,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -704,8 +704,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -715,8 +715,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -726,8 +726,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -737,8 +737,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -748,8 +748,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -759,8 +759,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -770,8 +770,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -781,8 +781,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -792,8 +792,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -803,8 +803,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -814,9 +814,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 }
 
 type ApiUpdatePduSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualPDUSessionHSMFOrSMFApiService
-	pduSessionRef string
+	ctx            context.Context
+	ApiService     *IndividualPDUSessionHSMFOrSMFApiService
+	pduSessionRef  string
 	hsmfUpdateData *HsmfUpdateData
 }
 
@@ -833,26 +833,27 @@ func (r ApiUpdatePduSessionRequest) Execute() (*HsmfUpdatedData, *http.Response,
 /*
 UpdatePduSession Update (initiated by V-SMF or I-SMF)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pduSessionRef PDU session reference
- @return ApiUpdatePduSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pduSessionRef PDU session reference
+	@return ApiUpdatePduSessionRequest
 */
 func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSession(ctx context.Context, pduSessionRef string) ApiUpdatePduSessionRequest {
 	return ApiUpdatePduSessionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		pduSessionRef: pduSessionRef,
 	}
 }
 
 // Execute executes the request
-//  @return HsmfUpdatedData
+//
+//	@return HsmfUpdatedData
 func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiUpdatePduSessionRequest) (*HsmfUpdatedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HsmfUpdatedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HsmfUpdatedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPDUSessionHSMFOrSMFApiService.UpdatePduSession")
@@ -899,9 +900,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -918,8 +919,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -929,8 +930,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -940,8 +941,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -951,8 +952,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -962,8 +963,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -973,8 +974,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -984,8 +985,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -995,8 +996,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1006,8 +1007,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1017,8 +1018,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1028,8 +1029,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1039,8 +1040,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1050,8 +1051,8 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

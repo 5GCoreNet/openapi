@@ -1,7 +1,7 @@
 /*
 Nnef_PFDmanagement Service API
 
-Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -70,7 +70,7 @@ func (o *ApplicationForPfdRequest) SetApplicationId(v string) {
 
 // GetPfdTimestamp returns the PfdTimestamp field value if set, zero value otherwise.
 func (o *ApplicationForPfdRequest) GetPfdTimestamp() time.Time {
-	if o == nil || isNil(o.PfdTimestamp) {
+	if o == nil || IsNil(o.PfdTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ApplicationForPfdRequest) GetPfdTimestamp() time.Time {
 // GetPfdTimestampOk returns a tuple with the PfdTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationForPfdRequest) GetPfdTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.PfdTimestamp) {
+	if o == nil || IsNil(o.PfdTimestamp) {
 		return nil, false
 	}
 	return o.PfdTimestamp, true
@@ -88,7 +88,7 @@ func (o *ApplicationForPfdRequest) GetPfdTimestampOk() (*time.Time, bool) {
 
 // HasPfdTimestamp returns a boolean if a field has been set.
 func (o *ApplicationForPfdRequest) HasPfdTimestamp() bool {
-	if o != nil && !isNil(o.PfdTimestamp) {
+	if o != nil && !IsNil(o.PfdTimestamp) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *ApplicationForPfdRequest) SetPfdTimestamp(v time.Time) {
 }
 
 func (o ApplicationForPfdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -111,7 +111,7 @@ func (o ApplicationForPfdRequest) MarshalJSON() ([]byte, error) {
 func (o ApplicationForPfdRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applicationId"] = o.ApplicationId
-	if !isNil(o.PfdTimestamp) {
+	if !IsNil(o.PfdTimestamp) {
 		toSerialize["pfdTimestamp"] = o.PfdTimestamp
 	}
 	return toSerialize, nil
@@ -152,5 +152,3 @@ func (v *NullableApplicationForPfdRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

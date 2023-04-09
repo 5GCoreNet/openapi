@@ -20,9 +20,9 @@ type CyclicPrefix string
 
 // List of CyclicPrefix
 const (
-	_15 CyclicPrefix = "15"
-	_30 CyclicPrefix = "30"
-	_60 CyclicPrefix = "60"
+	_15  CyclicPrefix = "15"
+	_30  CyclicPrefix = "30"
+	_60  CyclicPrefix = "60"
 	_120 CyclicPrefix = "120"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableCyclicPrefix) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

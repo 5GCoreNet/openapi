@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &TscStreamData{}
 
 // TscStreamData TSC stream data information.
 type TscStreamData struct {
-	StreamSpec StreamSpecification `json:"streamSpec"`
+	StreamSpec      StreamSpecification    `json:"streamSpec"`
 	TrafficSpecInfo TrafficSpecInformation `json:"trafficSpecInfo"`
 }
 
@@ -91,7 +91,7 @@ func (o *TscStreamData) SetTrafficSpecInfo(v TrafficSpecInformation) {
 }
 
 func (o TscStreamData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableTscStreamData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 
 // ResourcesIntentNrm - struct for ResourcesIntentNrm
 type ResourcesIntentNrm struct {
-	IntentSingle *IntentSingle
+	IntentSingle     *IntentSingle
 	SubNetworkSingle *SubNetworkSingle
 }
 
@@ -34,7 +34,6 @@ func SubNetworkSingleAsResourcesIntentNrm(v *SubNetworkSingle) ResourcesIntentNr
 		SubNetworkSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesIntentNrm) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ResourcesIntentNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesIntentNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesIntentNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableResourcesIntentNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

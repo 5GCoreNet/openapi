@@ -19,14 +19,14 @@ var _ MappedNullable = &MLTrainingProcessSingleAllOfAttributesAllOf{}
 
 // MLTrainingProcessSingleAllOfAttributesAllOf struct for MLTrainingProcessSingleAllOfAttributesAllOf
 type MLTrainingProcessSingleAllOfAttributesAllOf struct {
-	MLTrainingProcessId *string `json:"mLTrainingProcessId,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	TerminationConditions *string `json:"terminationConditions,omitempty"`
-	ProgressStatus *TrainingProcessMonitor `json:"progressStatus,omitempty"`
-	CancelProcess *bool `json:"cancelProcess,omitempty"`
-	SuspendProcess *bool `json:"suspendProcess,omitempty"`
-	TrainingRequestRef []string `json:"trainingRequestRef,omitempty"`
-	TrainingReportRef *string `json:"trainingReportRef,omitempty"`
+	MLTrainingProcessId   *string                 `json:"mLTrainingProcessId,omitempty"`
+	Priority              *int32                  `json:"priority,omitempty"`
+	TerminationConditions *string                 `json:"terminationConditions,omitempty"`
+	ProgressStatus        *TrainingProcessMonitor `json:"progressStatus,omitempty"`
+	CancelProcess         *bool                   `json:"cancelProcess,omitempty"`
+	SuspendProcess        *bool                   `json:"suspendProcess,omitempty"`
+	TrainingRequestRef    []string                `json:"trainingRequestRef,omitempty"`
+	TrainingReportRef     *string                 `json:"trainingReportRef,omitempty"`
 }
 
 // NewMLTrainingProcessSingleAllOfAttributesAllOf instantiates a new MLTrainingProcessSingleAllOfAttributesAllOf object
@@ -303,7 +303,7 @@ func (o *MLTrainingProcessSingleAllOfAttributesAllOf) SetTrainingReportRef(v str
 }
 
 func (o MLTrainingProcessSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,5 +374,3 @@ func (v *NullableMLTrainingProcessSingleAllOfAttributesAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,16 +20,16 @@ var _ MappedNullable = &DnsRule{}
 // DnsRule DNS message handling rule
 type DnsRule struct {
 	DnsRuleId *string `json:"dnsRuleId,omitempty"`
-	Label *string `json:"label,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	Label     *string `json:"label,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	Precedence *int32 `json:"precedence,omitempty"`
 	// map of DNS query message detection templates where a valid JSON string serves as key
-	DnsQueryMdtList *map[string]DnsQueryMdt `json:"dnsQueryMdtList,omitempty"`
+	DnsQueryMdtList     *map[string]DnsQueryMdt   `json:"dnsQueryMdtList,omitempty"`
 	BaseDnsQueryMdtList []BaselineDnsQueryMdtInfo `json:"baseDnsQueryMdtList,omitempty"`
 	// map of DNS response message detection templates where a valid JSON string serves as key
-	DnsRspMdtList *map[string]DnsRspMdt `json:"dnsRspMdtList,omitempty"`
+	DnsRspMdtList     *map[string]DnsRspMdt   `json:"dnsRspMdtList,omitempty"`
 	BaseDnsRspMdtList []BaselineDnsRspMdtInfo `json:"baseDnsRspMdtList,omitempty"`
-	DnsMsgId *string `json:"dnsMsgId,omitempty"`
+	DnsMsgId          *string                 `json:"dnsMsgId,omitempty"`
 	// map of actions where a valid JSON string serves as key
 	ActionList map[string]Action `json:"actionList"`
 }
@@ -53,7 +53,7 @@ func NewDnsRuleWithDefaults() *DnsRule {
 
 // GetDnsRuleId returns the DnsRuleId field value if set, zero value otherwise.
 func (o *DnsRule) GetDnsRuleId() string {
-	if o == nil || isNil(o.DnsRuleId) {
+	if o == nil || IsNil(o.DnsRuleId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *DnsRule) GetDnsRuleId() string {
 // GetDnsRuleIdOk returns a tuple with the DnsRuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetDnsRuleIdOk() (*string, bool) {
-	if o == nil || isNil(o.DnsRuleId) {
+	if o == nil || IsNil(o.DnsRuleId) {
 		return nil, false
 	}
 	return o.DnsRuleId, true
@@ -71,7 +71,7 @@ func (o *DnsRule) GetDnsRuleIdOk() (*string, bool) {
 
 // HasDnsRuleId returns a boolean if a field has been set.
 func (o *DnsRule) HasDnsRuleId() bool {
-	if o != nil && !isNil(o.DnsRuleId) {
+	if o != nil && !IsNil(o.DnsRuleId) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *DnsRule) SetDnsRuleId(v string) {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *DnsRule) GetLabel() string {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *DnsRule) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetLabelOk() (*string, bool) {
-	if o == nil || isNil(o.Label) {
+	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -103,7 +103,7 @@ func (o *DnsRule) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *DnsRule) HasLabel() bool {
-	if o != nil && !isNil(o.Label) {
+	if o != nil && !IsNil(o.Label) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *DnsRule) SetLabel(v string) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *DnsRule) GetPrecedence() int32 {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *DnsRule) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -135,7 +135,7 @@ func (o *DnsRule) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *DnsRule) HasPrecedence() bool {
-	if o != nil && !isNil(o.Precedence) {
+	if o != nil && !IsNil(o.Precedence) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *DnsRule) SetPrecedence(v int32) {
 
 // GetDnsQueryMdtList returns the DnsQueryMdtList field value if set, zero value otherwise.
 func (o *DnsRule) GetDnsQueryMdtList() map[string]DnsQueryMdt {
-	if o == nil || isNil(o.DnsQueryMdtList) {
+	if o == nil || IsNil(o.DnsQueryMdtList) {
 		var ret map[string]DnsQueryMdt
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *DnsRule) GetDnsQueryMdtList() map[string]DnsQueryMdt {
 // GetDnsQueryMdtListOk returns a tuple with the DnsQueryMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetDnsQueryMdtListOk() (*map[string]DnsQueryMdt, bool) {
-	if o == nil || isNil(o.DnsQueryMdtList) {
+	if o == nil || IsNil(o.DnsQueryMdtList) {
 		return nil, false
 	}
 	return o.DnsQueryMdtList, true
@@ -167,7 +167,7 @@ func (o *DnsRule) GetDnsQueryMdtListOk() (*map[string]DnsQueryMdt, bool) {
 
 // HasDnsQueryMdtList returns a boolean if a field has been set.
 func (o *DnsRule) HasDnsQueryMdtList() bool {
-	if o != nil && !isNil(o.DnsQueryMdtList) {
+	if o != nil && !IsNil(o.DnsQueryMdtList) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *DnsRule) SetDnsQueryMdtList(v map[string]DnsQueryMdt) {
 
 // GetBaseDnsQueryMdtList returns the BaseDnsQueryMdtList field value if set, zero value otherwise.
 func (o *DnsRule) GetBaseDnsQueryMdtList() []BaselineDnsQueryMdtInfo {
-	if o == nil || isNil(o.BaseDnsQueryMdtList) {
+	if o == nil || IsNil(o.BaseDnsQueryMdtList) {
 		var ret []BaselineDnsQueryMdtInfo
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *DnsRule) GetBaseDnsQueryMdtList() []BaselineDnsQueryMdtInfo {
 // GetBaseDnsQueryMdtListOk returns a tuple with the BaseDnsQueryMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetBaseDnsQueryMdtListOk() ([]BaselineDnsQueryMdtInfo, bool) {
-	if o == nil || isNil(o.BaseDnsQueryMdtList) {
+	if o == nil || IsNil(o.BaseDnsQueryMdtList) {
 		return nil, false
 	}
 	return o.BaseDnsQueryMdtList, true
@@ -199,7 +199,7 @@ func (o *DnsRule) GetBaseDnsQueryMdtListOk() ([]BaselineDnsQueryMdtInfo, bool) {
 
 // HasBaseDnsQueryMdtList returns a boolean if a field has been set.
 func (o *DnsRule) HasBaseDnsQueryMdtList() bool {
-	if o != nil && !isNil(o.BaseDnsQueryMdtList) {
+	if o != nil && !IsNil(o.BaseDnsQueryMdtList) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *DnsRule) SetBaseDnsQueryMdtList(v []BaselineDnsQueryMdtInfo) {
 
 // GetDnsRspMdtList returns the DnsRspMdtList field value if set, zero value otherwise.
 func (o *DnsRule) GetDnsRspMdtList() map[string]DnsRspMdt {
-	if o == nil || isNil(o.DnsRspMdtList) {
+	if o == nil || IsNil(o.DnsRspMdtList) {
 		var ret map[string]DnsRspMdt
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *DnsRule) GetDnsRspMdtList() map[string]DnsRspMdt {
 // GetDnsRspMdtListOk returns a tuple with the DnsRspMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetDnsRspMdtListOk() (*map[string]DnsRspMdt, bool) {
-	if o == nil || isNil(o.DnsRspMdtList) {
+	if o == nil || IsNil(o.DnsRspMdtList) {
 		return nil, false
 	}
 	return o.DnsRspMdtList, true
@@ -231,7 +231,7 @@ func (o *DnsRule) GetDnsRspMdtListOk() (*map[string]DnsRspMdt, bool) {
 
 // HasDnsRspMdtList returns a boolean if a field has been set.
 func (o *DnsRule) HasDnsRspMdtList() bool {
-	if o != nil && !isNil(o.DnsRspMdtList) {
+	if o != nil && !IsNil(o.DnsRspMdtList) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *DnsRule) SetDnsRspMdtList(v map[string]DnsRspMdt) {
 
 // GetBaseDnsRspMdtList returns the BaseDnsRspMdtList field value if set, zero value otherwise.
 func (o *DnsRule) GetBaseDnsRspMdtList() []BaselineDnsRspMdtInfo {
-	if o == nil || isNil(o.BaseDnsRspMdtList) {
+	if o == nil || IsNil(o.BaseDnsRspMdtList) {
 		var ret []BaselineDnsRspMdtInfo
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *DnsRule) GetBaseDnsRspMdtList() []BaselineDnsRspMdtInfo {
 // GetBaseDnsRspMdtListOk returns a tuple with the BaseDnsRspMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetBaseDnsRspMdtListOk() ([]BaselineDnsRspMdtInfo, bool) {
-	if o == nil || isNil(o.BaseDnsRspMdtList) {
+	if o == nil || IsNil(o.BaseDnsRspMdtList) {
 		return nil, false
 	}
 	return o.BaseDnsRspMdtList, true
@@ -263,7 +263,7 @@ func (o *DnsRule) GetBaseDnsRspMdtListOk() ([]BaselineDnsRspMdtInfo, bool) {
 
 // HasBaseDnsRspMdtList returns a boolean if a field has been set.
 func (o *DnsRule) HasBaseDnsRspMdtList() bool {
-	if o != nil && !isNil(o.BaseDnsRspMdtList) {
+	if o != nil && !IsNil(o.BaseDnsRspMdtList) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *DnsRule) SetBaseDnsRspMdtList(v []BaselineDnsRspMdtInfo) {
 
 // GetDnsMsgId returns the DnsMsgId field value if set, zero value otherwise.
 func (o *DnsRule) GetDnsMsgId() string {
-	if o == nil || isNil(o.DnsMsgId) {
+	if o == nil || IsNil(o.DnsMsgId) {
 		var ret string
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *DnsRule) GetDnsMsgId() string {
 // GetDnsMsgIdOk returns a tuple with the DnsMsgId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRule) GetDnsMsgIdOk() (*string, bool) {
-	if o == nil || isNil(o.DnsMsgId) {
+	if o == nil || IsNil(o.DnsMsgId) {
 		return nil, false
 	}
 	return o.DnsMsgId, true
@@ -295,7 +295,7 @@ func (o *DnsRule) GetDnsMsgIdOk() (*string, bool) {
 
 // HasDnsMsgId returns a boolean if a field has been set.
 func (o *DnsRule) HasDnsMsgId() bool {
-	if o != nil && !isNil(o.DnsMsgId) {
+	if o != nil && !IsNil(o.DnsMsgId) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *DnsRule) SetActionList(v map[string]Action) {
 }
 
 func (o DnsRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,28 +341,28 @@ func (o DnsRule) MarshalJSON() ([]byte, error) {
 
 func (o DnsRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnsRuleId) {
+	if !IsNil(o.DnsRuleId) {
 		toSerialize["dnsRuleId"] = o.DnsRuleId
 	}
-	if !isNil(o.Label) {
+	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !isNil(o.Precedence) {
+	if !IsNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
-	if !isNil(o.DnsQueryMdtList) {
+	if !IsNil(o.DnsQueryMdtList) {
 		toSerialize["dnsQueryMdtList"] = o.DnsQueryMdtList
 	}
-	if !isNil(o.BaseDnsQueryMdtList) {
+	if !IsNil(o.BaseDnsQueryMdtList) {
 		toSerialize["baseDnsQueryMdtList"] = o.BaseDnsQueryMdtList
 	}
-	if !isNil(o.DnsRspMdtList) {
+	if !IsNil(o.DnsRspMdtList) {
 		toSerialize["dnsRspMdtList"] = o.DnsRspMdtList
 	}
-	if !isNil(o.BaseDnsRspMdtList) {
+	if !IsNil(o.BaseDnsRspMdtList) {
 		toSerialize["baseDnsRspMdtList"] = o.BaseDnsRspMdtList
 	}
-	if !isNil(o.DnsMsgId) {
+	if !IsNil(o.DnsMsgId) {
 		toSerialize["dnsMsgId"] = o.DnsMsgId
 	}
 	toSerialize["actionList"] = o.ActionList
@@ -404,5 +404,3 @@ func (v *NullableDnsRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 VAE_DynamicGroup
 
-VAE_Dynamic_Group Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+VAE_Dynamic_Group Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,12 +17,12 @@ import (
 // checks if the DynamicGroupNotification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DynamicGroupNotification{}
 
-// DynamicGroupNotification Represents a notification on the dynamic group information (i.e. group member joins or leaves). 
+// DynamicGroupNotification Represents a notification on the dynamic group information (i.e. group member joins or leaves).
 type DynamicGroupNotification struct {
 	// String providing an URI formatted according to RFC 3986.
-	ResourceUri string `json:"resourceUri"`
+	ResourceUri string   `json:"resourceUri"`
 	JoinedUeIds []string `json:"joinedUeIds,omitempty"`
-	LeftUeIds []string `json:"leftUeIds,omitempty"`
+	LeftUeIds   []string `json:"leftUeIds,omitempty"`
 }
 
 // NewDynamicGroupNotification instantiates a new DynamicGroupNotification object
@@ -69,7 +69,7 @@ func (o *DynamicGroupNotification) SetResourceUri(v string) {
 
 // GetJoinedUeIds returns the JoinedUeIds field value if set, zero value otherwise.
 func (o *DynamicGroupNotification) GetJoinedUeIds() []string {
-	if o == nil || isNil(o.JoinedUeIds) {
+	if o == nil || IsNil(o.JoinedUeIds) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *DynamicGroupNotification) GetJoinedUeIds() []string {
 // GetJoinedUeIdsOk returns a tuple with the JoinedUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicGroupNotification) GetJoinedUeIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.JoinedUeIds) {
+	if o == nil || IsNil(o.JoinedUeIds) {
 		return nil, false
 	}
 	return o.JoinedUeIds, true
@@ -87,7 +87,7 @@ func (o *DynamicGroupNotification) GetJoinedUeIdsOk() ([]string, bool) {
 
 // HasJoinedUeIds returns a boolean if a field has been set.
 func (o *DynamicGroupNotification) HasJoinedUeIds() bool {
-	if o != nil && !isNil(o.JoinedUeIds) {
+	if o != nil && !IsNil(o.JoinedUeIds) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *DynamicGroupNotification) SetJoinedUeIds(v []string) {
 
 // GetLeftUeIds returns the LeftUeIds field value if set, zero value otherwise.
 func (o *DynamicGroupNotification) GetLeftUeIds() []string {
-	if o == nil || isNil(o.LeftUeIds) {
+	if o == nil || IsNil(o.LeftUeIds) {
 		var ret []string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *DynamicGroupNotification) GetLeftUeIds() []string {
 // GetLeftUeIdsOk returns a tuple with the LeftUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicGroupNotification) GetLeftUeIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.LeftUeIds) {
+	if o == nil || IsNil(o.LeftUeIds) {
 		return nil, false
 	}
 	return o.LeftUeIds, true
@@ -119,7 +119,7 @@ func (o *DynamicGroupNotification) GetLeftUeIdsOk() ([]string, bool) {
 
 // HasLeftUeIds returns a boolean if a field has been set.
 func (o *DynamicGroupNotification) HasLeftUeIds() bool {
-	if o != nil && !isNil(o.LeftUeIds) {
+	if o != nil && !IsNil(o.LeftUeIds) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *DynamicGroupNotification) SetLeftUeIds(v []string) {
 }
 
 func (o DynamicGroupNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o DynamicGroupNotification) MarshalJSON() ([]byte, error) {
 func (o DynamicGroupNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourceUri"] = o.ResourceUri
-	if !isNil(o.JoinedUeIds) {
+	if !IsNil(o.JoinedUeIds) {
 		toSerialize["joinedUeIds"] = o.JoinedUeIds
 	}
-	if !isNil(o.LeftUeIds) {
+	if !IsNil(o.LeftUeIds) {
 		toSerialize["leftUeIds"] = o.LeftUeIds
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableDynamicGroupNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ResponseTime Indicates acceptable delay of location request.
 type ResponseTime struct {
-	ResponseTimeAnyOf *ResponseTimeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ResponseTime) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ResponseTimeAnyOf
-	err = json.Unmarshal(data, &dst.ResponseTimeAnyOf);
-	if err == nil {
-		jsonResponseTimeAnyOf, _ := json.Marshal(dst.ResponseTimeAnyOf)
-		if string(jsonResponseTimeAnyOf) == "{}" { // empty struct
-			dst.ResponseTimeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ResponseTimeAnyOf, return on the first match
-		}
-	} else {
-		dst.ResponseTimeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ResponseTime) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ResponseTime) MarshalJSON() ([]byte, error) {
-	if src.ResponseTimeAnyOf != nil {
-		return json.Marshal(&src.ResponseTimeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableResponseTime) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

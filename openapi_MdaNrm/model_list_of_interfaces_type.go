@@ -20,41 +20,41 @@ var _ MappedNullable = &ListOfInterfacesType{}
 // ListOfInterfacesType The interfaces to be recorded in the Network Element. See 3GPP TS 32.422 clause 5.5 for additional details.
 type ListOfInterfacesType struct {
 	MSCServerInterfaces []string `json:"MSCServerInterfaces,omitempty"`
-	MGWInterfaces []string `json:"MGWInterfaces,omitempty"`
-	RNCInterfaces []string `json:"RNCInterfaces,omitempty"`
-	SGSNInterfaces []string `json:"SGSNInterfaces,omitempty"`
-	GGSNInterfaces []string `json:"GGSNInterfaces,omitempty"`
-	SCSCFInterfaces []string `json:"S-CSCFInterfaces,omitempty"`
-	PCSCFInterfaces []string `json:"P-CSCFInterfaces,omitempty"`
-	ICSCFInterfaces []string `json:"I-CSCFInterfaces,omitempty"`
-	MRFCInterfaces []string `json:"MRFCInterfaces,omitempty"`
-	MGCFInterfaces []string `json:"MGCFInterfaces,omitempty"`
-	IBCFInterfaces []string `json:"IBCFInterfaces,omitempty"`
-	ECSCFInterfaces []string `json:"E-CSCFInterfaces,omitempty"`
-	BGCFInterfaces []string `json:"BGCFInterfaces,omitempty"`
-	ASInterfaces []string `json:"ASInterfaces,omitempty"`
-	HSSInterfaces []string `json:"HSSInterfaces,omitempty"`
-	EIRInterfaces []string `json:"EIRInterfaces,omitempty"`
-	BMSCInterfaces []string `json:"BM-SCInterfaces,omitempty"`
-	MMEInterfaces []string `json:"MMEInterfaces,omitempty"`
-	SGWInterfaces []string `json:"SGWInterfaces,omitempty"`
-	PDNGWInterfaces []string `json:"PDN_GWInterfaces,omitempty"`
-	ENBInterfaces []string `json:"eNBInterfaces,omitempty"`
-	EnGNBInterfaces []string `json:"en-gNBInterfaces,omitempty"`
-	AMFInterfaces []string `json:"AMFInterfaces,omitempty"`
-	AUSFInterfaces []string `json:"AUSFInterfaces,omitempty"`
-	NEFInterfaces []string `json:"NEFInterfaces,omitempty"`
-	NRFInterfaces []string `json:"NRFInterfaces,omitempty"`
-	NSSFInterfaces []string `json:"NSSFInterfaces,omitempty"`
-	PCFInterfaces []string `json:"PCFInterfaces,omitempty"`
-	SMFInterfaces []string `json:"SMFInterfaces,omitempty"`
-	SMSFInterfaces []string `json:"SMSFInterfaces,omitempty"`
-	UDMInterfaces []string `json:"UDMInterfaces,omitempty"`
-	UPFInterfaces []string `json:"UPFInterfaces,omitempty"`
-	NgENBInterfaces []string `json:"ng-eNBInterfaces,omitempty"`
-	GNBCUCPInterfaces []string `json:"gNB-CU-CPInterfaces,omitempty"`
-	GNBCUUPInterfaces []string `json:"gNB-CU-UPInterfaces,omitempty"`
-	GNBDUInterfaces []string `json:"gNB-DUInterfaces,omitempty"`
+	MGWInterfaces       []string `json:"MGWInterfaces,omitempty"`
+	RNCInterfaces       []string `json:"RNCInterfaces,omitempty"`
+	SGSNInterfaces      []string `json:"SGSNInterfaces,omitempty"`
+	GGSNInterfaces      []string `json:"GGSNInterfaces,omitempty"`
+	SCSCFInterfaces     []string `json:"S-CSCFInterfaces,omitempty"`
+	PCSCFInterfaces     []string `json:"P-CSCFInterfaces,omitempty"`
+	ICSCFInterfaces     []string `json:"I-CSCFInterfaces,omitempty"`
+	MRFCInterfaces      []string `json:"MRFCInterfaces,omitempty"`
+	MGCFInterfaces      []string `json:"MGCFInterfaces,omitempty"`
+	IBCFInterfaces      []string `json:"IBCFInterfaces,omitempty"`
+	ECSCFInterfaces     []string `json:"E-CSCFInterfaces,omitempty"`
+	BGCFInterfaces      []string `json:"BGCFInterfaces,omitempty"`
+	ASInterfaces        []string `json:"ASInterfaces,omitempty"`
+	HSSInterfaces       []string `json:"HSSInterfaces,omitempty"`
+	EIRInterfaces       []string `json:"EIRInterfaces,omitempty"`
+	BMSCInterfaces      []string `json:"BM-SCInterfaces,omitempty"`
+	MMEInterfaces       []string `json:"MMEInterfaces,omitempty"`
+	SGWInterfaces       []string `json:"SGWInterfaces,omitempty"`
+	PDNGWInterfaces     []string `json:"PDN_GWInterfaces,omitempty"`
+	ENBInterfaces       []string `json:"eNBInterfaces,omitempty"`
+	EnGNBInterfaces     []string `json:"en-gNBInterfaces,omitempty"`
+	AMFInterfaces       []string `json:"AMFInterfaces,omitempty"`
+	AUSFInterfaces      []string `json:"AUSFInterfaces,omitempty"`
+	NEFInterfaces       []string `json:"NEFInterfaces,omitempty"`
+	NRFInterfaces       []string `json:"NRFInterfaces,omitempty"`
+	NSSFInterfaces      []string `json:"NSSFInterfaces,omitempty"`
+	PCFInterfaces       []string `json:"PCFInterfaces,omitempty"`
+	SMFInterfaces       []string `json:"SMFInterfaces,omitempty"`
+	SMSFInterfaces      []string `json:"SMSFInterfaces,omitempty"`
+	UDMInterfaces       []string `json:"UDMInterfaces,omitempty"`
+	UPFInterfaces       []string `json:"UPFInterfaces,omitempty"`
+	NgENBInterfaces     []string `json:"ng-eNBInterfaces,omitempty"`
+	GNBCUCPInterfaces   []string `json:"gNB-CU-CPInterfaces,omitempty"`
+	GNBCUUPInterfaces   []string `json:"gNB-CU-UPInterfaces,omitempty"`
+	GNBDUInterfaces     []string `json:"gNB-DUInterfaces,omitempty"`
 }
 
 // NewListOfInterfacesType instantiates a new ListOfInterfacesType object
@@ -76,7 +76,7 @@ func NewListOfInterfacesTypeWithDefaults() *ListOfInterfacesType {
 
 // GetMSCServerInterfaces returns the MSCServerInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetMSCServerInterfaces() []string {
-	if o == nil || isNil(o.MSCServerInterfaces) {
+	if o == nil || IsNil(o.MSCServerInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ListOfInterfacesType) GetMSCServerInterfaces() []string {
 // GetMSCServerInterfacesOk returns a tuple with the MSCServerInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetMSCServerInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.MSCServerInterfaces) {
+	if o == nil || IsNil(o.MSCServerInterfaces) {
 		return nil, false
 	}
 	return o.MSCServerInterfaces, true
@@ -94,7 +94,7 @@ func (o *ListOfInterfacesType) GetMSCServerInterfacesOk() ([]string, bool) {
 
 // HasMSCServerInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasMSCServerInterfaces() bool {
-	if o != nil && !isNil(o.MSCServerInterfaces) {
+	if o != nil && !IsNil(o.MSCServerInterfaces) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ListOfInterfacesType) SetMSCServerInterfaces(v []string) {
 
 // GetMGWInterfaces returns the MGWInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetMGWInterfaces() []string {
-	if o == nil || isNil(o.MGWInterfaces) {
+	if o == nil || IsNil(o.MGWInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ListOfInterfacesType) GetMGWInterfaces() []string {
 // GetMGWInterfacesOk returns a tuple with the MGWInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetMGWInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.MGWInterfaces) {
+	if o == nil || IsNil(o.MGWInterfaces) {
 		return nil, false
 	}
 	return o.MGWInterfaces, true
@@ -126,7 +126,7 @@ func (o *ListOfInterfacesType) GetMGWInterfacesOk() ([]string, bool) {
 
 // HasMGWInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasMGWInterfaces() bool {
-	if o != nil && !isNil(o.MGWInterfaces) {
+	if o != nil && !IsNil(o.MGWInterfaces) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ListOfInterfacesType) SetMGWInterfaces(v []string) {
 
 // GetRNCInterfaces returns the RNCInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetRNCInterfaces() []string {
-	if o == nil || isNil(o.RNCInterfaces) {
+	if o == nil || IsNil(o.RNCInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ListOfInterfacesType) GetRNCInterfaces() []string {
 // GetRNCInterfacesOk returns a tuple with the RNCInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetRNCInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.RNCInterfaces) {
+	if o == nil || IsNil(o.RNCInterfaces) {
 		return nil, false
 	}
 	return o.RNCInterfaces, true
@@ -158,7 +158,7 @@ func (o *ListOfInterfacesType) GetRNCInterfacesOk() ([]string, bool) {
 
 // HasRNCInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasRNCInterfaces() bool {
-	if o != nil && !isNil(o.RNCInterfaces) {
+	if o != nil && !IsNil(o.RNCInterfaces) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ListOfInterfacesType) SetRNCInterfaces(v []string) {
 
 // GetSGSNInterfaces returns the SGSNInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetSGSNInterfaces() []string {
-	if o == nil || isNil(o.SGSNInterfaces) {
+	if o == nil || IsNil(o.SGSNInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *ListOfInterfacesType) GetSGSNInterfaces() []string {
 // GetSGSNInterfacesOk returns a tuple with the SGSNInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetSGSNInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.SGSNInterfaces) {
+	if o == nil || IsNil(o.SGSNInterfaces) {
 		return nil, false
 	}
 	return o.SGSNInterfaces, true
@@ -190,7 +190,7 @@ func (o *ListOfInterfacesType) GetSGSNInterfacesOk() ([]string, bool) {
 
 // HasSGSNInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasSGSNInterfaces() bool {
-	if o != nil && !isNil(o.SGSNInterfaces) {
+	if o != nil && !IsNil(o.SGSNInterfaces) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *ListOfInterfacesType) SetSGSNInterfaces(v []string) {
 
 // GetGGSNInterfaces returns the GGSNInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetGGSNInterfaces() []string {
-	if o == nil || isNil(o.GGSNInterfaces) {
+	if o == nil || IsNil(o.GGSNInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *ListOfInterfacesType) GetGGSNInterfaces() []string {
 // GetGGSNInterfacesOk returns a tuple with the GGSNInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetGGSNInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.GGSNInterfaces) {
+	if o == nil || IsNil(o.GGSNInterfaces) {
 		return nil, false
 	}
 	return o.GGSNInterfaces, true
@@ -222,7 +222,7 @@ func (o *ListOfInterfacesType) GetGGSNInterfacesOk() ([]string, bool) {
 
 // HasGGSNInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasGGSNInterfaces() bool {
-	if o != nil && !isNil(o.GGSNInterfaces) {
+	if o != nil && !IsNil(o.GGSNInterfaces) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *ListOfInterfacesType) SetGGSNInterfaces(v []string) {
 
 // GetSCSCFInterfaces returns the SCSCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetSCSCFInterfaces() []string {
-	if o == nil || isNil(o.SCSCFInterfaces) {
+	if o == nil || IsNil(o.SCSCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *ListOfInterfacesType) GetSCSCFInterfaces() []string {
 // GetSCSCFInterfacesOk returns a tuple with the SCSCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetSCSCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.SCSCFInterfaces) {
+	if o == nil || IsNil(o.SCSCFInterfaces) {
 		return nil, false
 	}
 	return o.SCSCFInterfaces, true
@@ -254,7 +254,7 @@ func (o *ListOfInterfacesType) GetSCSCFInterfacesOk() ([]string, bool) {
 
 // HasSCSCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasSCSCFInterfaces() bool {
-	if o != nil && !isNil(o.SCSCFInterfaces) {
+	if o != nil && !IsNil(o.SCSCFInterfaces) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *ListOfInterfacesType) SetSCSCFInterfaces(v []string) {
 
 // GetPCSCFInterfaces returns the PCSCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetPCSCFInterfaces() []string {
-	if o == nil || isNil(o.PCSCFInterfaces) {
+	if o == nil || IsNil(o.PCSCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *ListOfInterfacesType) GetPCSCFInterfaces() []string {
 // GetPCSCFInterfacesOk returns a tuple with the PCSCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetPCSCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.PCSCFInterfaces) {
+	if o == nil || IsNil(o.PCSCFInterfaces) {
 		return nil, false
 	}
 	return o.PCSCFInterfaces, true
@@ -286,7 +286,7 @@ func (o *ListOfInterfacesType) GetPCSCFInterfacesOk() ([]string, bool) {
 
 // HasPCSCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasPCSCFInterfaces() bool {
-	if o != nil && !isNil(o.PCSCFInterfaces) {
+	if o != nil && !IsNil(o.PCSCFInterfaces) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *ListOfInterfacesType) SetPCSCFInterfaces(v []string) {
 
 // GetICSCFInterfaces returns the ICSCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetICSCFInterfaces() []string {
-	if o == nil || isNil(o.ICSCFInterfaces) {
+	if o == nil || IsNil(o.ICSCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *ListOfInterfacesType) GetICSCFInterfaces() []string {
 // GetICSCFInterfacesOk returns a tuple with the ICSCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetICSCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.ICSCFInterfaces) {
+	if o == nil || IsNil(o.ICSCFInterfaces) {
 		return nil, false
 	}
 	return o.ICSCFInterfaces, true
@@ -318,7 +318,7 @@ func (o *ListOfInterfacesType) GetICSCFInterfacesOk() ([]string, bool) {
 
 // HasICSCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasICSCFInterfaces() bool {
-	if o != nil && !isNil(o.ICSCFInterfaces) {
+	if o != nil && !IsNil(o.ICSCFInterfaces) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *ListOfInterfacesType) SetICSCFInterfaces(v []string) {
 
 // GetMRFCInterfaces returns the MRFCInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetMRFCInterfaces() []string {
-	if o == nil || isNil(o.MRFCInterfaces) {
+	if o == nil || IsNil(o.MRFCInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *ListOfInterfacesType) GetMRFCInterfaces() []string {
 // GetMRFCInterfacesOk returns a tuple with the MRFCInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetMRFCInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.MRFCInterfaces) {
+	if o == nil || IsNil(o.MRFCInterfaces) {
 		return nil, false
 	}
 	return o.MRFCInterfaces, true
@@ -350,7 +350,7 @@ func (o *ListOfInterfacesType) GetMRFCInterfacesOk() ([]string, bool) {
 
 // HasMRFCInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasMRFCInterfaces() bool {
-	if o != nil && !isNil(o.MRFCInterfaces) {
+	if o != nil && !IsNil(o.MRFCInterfaces) {
 		return true
 	}
 
@@ -364,7 +364,7 @@ func (o *ListOfInterfacesType) SetMRFCInterfaces(v []string) {
 
 // GetMGCFInterfaces returns the MGCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetMGCFInterfaces() []string {
-	if o == nil || isNil(o.MGCFInterfaces) {
+	if o == nil || IsNil(o.MGCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -374,7 +374,7 @@ func (o *ListOfInterfacesType) GetMGCFInterfaces() []string {
 // GetMGCFInterfacesOk returns a tuple with the MGCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetMGCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.MGCFInterfaces) {
+	if o == nil || IsNil(o.MGCFInterfaces) {
 		return nil, false
 	}
 	return o.MGCFInterfaces, true
@@ -382,7 +382,7 @@ func (o *ListOfInterfacesType) GetMGCFInterfacesOk() ([]string, bool) {
 
 // HasMGCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasMGCFInterfaces() bool {
-	if o != nil && !isNil(o.MGCFInterfaces) {
+	if o != nil && !IsNil(o.MGCFInterfaces) {
 		return true
 	}
 
@@ -396,7 +396,7 @@ func (o *ListOfInterfacesType) SetMGCFInterfaces(v []string) {
 
 // GetIBCFInterfaces returns the IBCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetIBCFInterfaces() []string {
-	if o == nil || isNil(o.IBCFInterfaces) {
+	if o == nil || IsNil(o.IBCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -406,7 +406,7 @@ func (o *ListOfInterfacesType) GetIBCFInterfaces() []string {
 // GetIBCFInterfacesOk returns a tuple with the IBCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetIBCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.IBCFInterfaces) {
+	if o == nil || IsNil(o.IBCFInterfaces) {
 		return nil, false
 	}
 	return o.IBCFInterfaces, true
@@ -414,7 +414,7 @@ func (o *ListOfInterfacesType) GetIBCFInterfacesOk() ([]string, bool) {
 
 // HasIBCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasIBCFInterfaces() bool {
-	if o != nil && !isNil(o.IBCFInterfaces) {
+	if o != nil && !IsNil(o.IBCFInterfaces) {
 		return true
 	}
 
@@ -428,7 +428,7 @@ func (o *ListOfInterfacesType) SetIBCFInterfaces(v []string) {
 
 // GetECSCFInterfaces returns the ECSCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetECSCFInterfaces() []string {
-	if o == nil || isNil(o.ECSCFInterfaces) {
+	if o == nil || IsNil(o.ECSCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -438,7 +438,7 @@ func (o *ListOfInterfacesType) GetECSCFInterfaces() []string {
 // GetECSCFInterfacesOk returns a tuple with the ECSCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetECSCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.ECSCFInterfaces) {
+	if o == nil || IsNil(o.ECSCFInterfaces) {
 		return nil, false
 	}
 	return o.ECSCFInterfaces, true
@@ -446,7 +446,7 @@ func (o *ListOfInterfacesType) GetECSCFInterfacesOk() ([]string, bool) {
 
 // HasECSCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasECSCFInterfaces() bool {
-	if o != nil && !isNil(o.ECSCFInterfaces) {
+	if o != nil && !IsNil(o.ECSCFInterfaces) {
 		return true
 	}
 
@@ -460,7 +460,7 @@ func (o *ListOfInterfacesType) SetECSCFInterfaces(v []string) {
 
 // GetBGCFInterfaces returns the BGCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetBGCFInterfaces() []string {
-	if o == nil || isNil(o.BGCFInterfaces) {
+	if o == nil || IsNil(o.BGCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -470,7 +470,7 @@ func (o *ListOfInterfacesType) GetBGCFInterfaces() []string {
 // GetBGCFInterfacesOk returns a tuple with the BGCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetBGCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.BGCFInterfaces) {
+	if o == nil || IsNil(o.BGCFInterfaces) {
 		return nil, false
 	}
 	return o.BGCFInterfaces, true
@@ -478,7 +478,7 @@ func (o *ListOfInterfacesType) GetBGCFInterfacesOk() ([]string, bool) {
 
 // HasBGCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasBGCFInterfaces() bool {
-	if o != nil && !isNil(o.BGCFInterfaces) {
+	if o != nil && !IsNil(o.BGCFInterfaces) {
 		return true
 	}
 
@@ -492,7 +492,7 @@ func (o *ListOfInterfacesType) SetBGCFInterfaces(v []string) {
 
 // GetASInterfaces returns the ASInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetASInterfaces() []string {
-	if o == nil || isNil(o.ASInterfaces) {
+	if o == nil || IsNil(o.ASInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -502,7 +502,7 @@ func (o *ListOfInterfacesType) GetASInterfaces() []string {
 // GetASInterfacesOk returns a tuple with the ASInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetASInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.ASInterfaces) {
+	if o == nil || IsNil(o.ASInterfaces) {
 		return nil, false
 	}
 	return o.ASInterfaces, true
@@ -510,7 +510,7 @@ func (o *ListOfInterfacesType) GetASInterfacesOk() ([]string, bool) {
 
 // HasASInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasASInterfaces() bool {
-	if o != nil && !isNil(o.ASInterfaces) {
+	if o != nil && !IsNil(o.ASInterfaces) {
 		return true
 	}
 
@@ -524,7 +524,7 @@ func (o *ListOfInterfacesType) SetASInterfaces(v []string) {
 
 // GetHSSInterfaces returns the HSSInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetHSSInterfaces() []string {
-	if o == nil || isNil(o.HSSInterfaces) {
+	if o == nil || IsNil(o.HSSInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -534,7 +534,7 @@ func (o *ListOfInterfacesType) GetHSSInterfaces() []string {
 // GetHSSInterfacesOk returns a tuple with the HSSInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetHSSInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.HSSInterfaces) {
+	if o == nil || IsNil(o.HSSInterfaces) {
 		return nil, false
 	}
 	return o.HSSInterfaces, true
@@ -542,7 +542,7 @@ func (o *ListOfInterfacesType) GetHSSInterfacesOk() ([]string, bool) {
 
 // HasHSSInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasHSSInterfaces() bool {
-	if o != nil && !isNil(o.HSSInterfaces) {
+	if o != nil && !IsNil(o.HSSInterfaces) {
 		return true
 	}
 
@@ -556,7 +556,7 @@ func (o *ListOfInterfacesType) SetHSSInterfaces(v []string) {
 
 // GetEIRInterfaces returns the EIRInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetEIRInterfaces() []string {
-	if o == nil || isNil(o.EIRInterfaces) {
+	if o == nil || IsNil(o.EIRInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -566,7 +566,7 @@ func (o *ListOfInterfacesType) GetEIRInterfaces() []string {
 // GetEIRInterfacesOk returns a tuple with the EIRInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetEIRInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.EIRInterfaces) {
+	if o == nil || IsNil(o.EIRInterfaces) {
 		return nil, false
 	}
 	return o.EIRInterfaces, true
@@ -574,7 +574,7 @@ func (o *ListOfInterfacesType) GetEIRInterfacesOk() ([]string, bool) {
 
 // HasEIRInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasEIRInterfaces() bool {
-	if o != nil && !isNil(o.EIRInterfaces) {
+	if o != nil && !IsNil(o.EIRInterfaces) {
 		return true
 	}
 
@@ -588,7 +588,7 @@ func (o *ListOfInterfacesType) SetEIRInterfaces(v []string) {
 
 // GetBMSCInterfaces returns the BMSCInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetBMSCInterfaces() []string {
-	if o == nil || isNil(o.BMSCInterfaces) {
+	if o == nil || IsNil(o.BMSCInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -598,7 +598,7 @@ func (o *ListOfInterfacesType) GetBMSCInterfaces() []string {
 // GetBMSCInterfacesOk returns a tuple with the BMSCInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetBMSCInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.BMSCInterfaces) {
+	if o == nil || IsNil(o.BMSCInterfaces) {
 		return nil, false
 	}
 	return o.BMSCInterfaces, true
@@ -606,7 +606,7 @@ func (o *ListOfInterfacesType) GetBMSCInterfacesOk() ([]string, bool) {
 
 // HasBMSCInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasBMSCInterfaces() bool {
-	if o != nil && !isNil(o.BMSCInterfaces) {
+	if o != nil && !IsNil(o.BMSCInterfaces) {
 		return true
 	}
 
@@ -620,7 +620,7 @@ func (o *ListOfInterfacesType) SetBMSCInterfaces(v []string) {
 
 // GetMMEInterfaces returns the MMEInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetMMEInterfaces() []string {
-	if o == nil || isNil(o.MMEInterfaces) {
+	if o == nil || IsNil(o.MMEInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -630,7 +630,7 @@ func (o *ListOfInterfacesType) GetMMEInterfaces() []string {
 // GetMMEInterfacesOk returns a tuple with the MMEInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetMMEInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.MMEInterfaces) {
+	if o == nil || IsNil(o.MMEInterfaces) {
 		return nil, false
 	}
 	return o.MMEInterfaces, true
@@ -638,7 +638,7 @@ func (o *ListOfInterfacesType) GetMMEInterfacesOk() ([]string, bool) {
 
 // HasMMEInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasMMEInterfaces() bool {
-	if o != nil && !isNil(o.MMEInterfaces) {
+	if o != nil && !IsNil(o.MMEInterfaces) {
 		return true
 	}
 
@@ -652,7 +652,7 @@ func (o *ListOfInterfacesType) SetMMEInterfaces(v []string) {
 
 // GetSGWInterfaces returns the SGWInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetSGWInterfaces() []string {
-	if o == nil || isNil(o.SGWInterfaces) {
+	if o == nil || IsNil(o.SGWInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -662,7 +662,7 @@ func (o *ListOfInterfacesType) GetSGWInterfaces() []string {
 // GetSGWInterfacesOk returns a tuple with the SGWInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetSGWInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.SGWInterfaces) {
+	if o == nil || IsNil(o.SGWInterfaces) {
 		return nil, false
 	}
 	return o.SGWInterfaces, true
@@ -670,7 +670,7 @@ func (o *ListOfInterfacesType) GetSGWInterfacesOk() ([]string, bool) {
 
 // HasSGWInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasSGWInterfaces() bool {
-	if o != nil && !isNil(o.SGWInterfaces) {
+	if o != nil && !IsNil(o.SGWInterfaces) {
 		return true
 	}
 
@@ -684,7 +684,7 @@ func (o *ListOfInterfacesType) SetSGWInterfaces(v []string) {
 
 // GetPDNGWInterfaces returns the PDNGWInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetPDNGWInterfaces() []string {
-	if o == nil || isNil(o.PDNGWInterfaces) {
+	if o == nil || IsNil(o.PDNGWInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -694,7 +694,7 @@ func (o *ListOfInterfacesType) GetPDNGWInterfaces() []string {
 // GetPDNGWInterfacesOk returns a tuple with the PDNGWInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetPDNGWInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.PDNGWInterfaces) {
+	if o == nil || IsNil(o.PDNGWInterfaces) {
 		return nil, false
 	}
 	return o.PDNGWInterfaces, true
@@ -702,7 +702,7 @@ func (o *ListOfInterfacesType) GetPDNGWInterfacesOk() ([]string, bool) {
 
 // HasPDNGWInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasPDNGWInterfaces() bool {
-	if o != nil && !isNil(o.PDNGWInterfaces) {
+	if o != nil && !IsNil(o.PDNGWInterfaces) {
 		return true
 	}
 
@@ -716,7 +716,7 @@ func (o *ListOfInterfacesType) SetPDNGWInterfaces(v []string) {
 
 // GetENBInterfaces returns the ENBInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetENBInterfaces() []string {
-	if o == nil || isNil(o.ENBInterfaces) {
+	if o == nil || IsNil(o.ENBInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -726,7 +726,7 @@ func (o *ListOfInterfacesType) GetENBInterfaces() []string {
 // GetENBInterfacesOk returns a tuple with the ENBInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetENBInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.ENBInterfaces) {
+	if o == nil || IsNil(o.ENBInterfaces) {
 		return nil, false
 	}
 	return o.ENBInterfaces, true
@@ -734,7 +734,7 @@ func (o *ListOfInterfacesType) GetENBInterfacesOk() ([]string, bool) {
 
 // HasENBInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasENBInterfaces() bool {
-	if o != nil && !isNil(o.ENBInterfaces) {
+	if o != nil && !IsNil(o.ENBInterfaces) {
 		return true
 	}
 
@@ -748,7 +748,7 @@ func (o *ListOfInterfacesType) SetENBInterfaces(v []string) {
 
 // GetEnGNBInterfaces returns the EnGNBInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetEnGNBInterfaces() []string {
-	if o == nil || isNil(o.EnGNBInterfaces) {
+	if o == nil || IsNil(o.EnGNBInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -758,7 +758,7 @@ func (o *ListOfInterfacesType) GetEnGNBInterfaces() []string {
 // GetEnGNBInterfacesOk returns a tuple with the EnGNBInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetEnGNBInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.EnGNBInterfaces) {
+	if o == nil || IsNil(o.EnGNBInterfaces) {
 		return nil, false
 	}
 	return o.EnGNBInterfaces, true
@@ -766,7 +766,7 @@ func (o *ListOfInterfacesType) GetEnGNBInterfacesOk() ([]string, bool) {
 
 // HasEnGNBInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasEnGNBInterfaces() bool {
-	if o != nil && !isNil(o.EnGNBInterfaces) {
+	if o != nil && !IsNil(o.EnGNBInterfaces) {
 		return true
 	}
 
@@ -780,7 +780,7 @@ func (o *ListOfInterfacesType) SetEnGNBInterfaces(v []string) {
 
 // GetAMFInterfaces returns the AMFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetAMFInterfaces() []string {
-	if o == nil || isNil(o.AMFInterfaces) {
+	if o == nil || IsNil(o.AMFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -790,7 +790,7 @@ func (o *ListOfInterfacesType) GetAMFInterfaces() []string {
 // GetAMFInterfacesOk returns a tuple with the AMFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetAMFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.AMFInterfaces) {
+	if o == nil || IsNil(o.AMFInterfaces) {
 		return nil, false
 	}
 	return o.AMFInterfaces, true
@@ -798,7 +798,7 @@ func (o *ListOfInterfacesType) GetAMFInterfacesOk() ([]string, bool) {
 
 // HasAMFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasAMFInterfaces() bool {
-	if o != nil && !isNil(o.AMFInterfaces) {
+	if o != nil && !IsNil(o.AMFInterfaces) {
 		return true
 	}
 
@@ -812,7 +812,7 @@ func (o *ListOfInterfacesType) SetAMFInterfaces(v []string) {
 
 // GetAUSFInterfaces returns the AUSFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetAUSFInterfaces() []string {
-	if o == nil || isNil(o.AUSFInterfaces) {
+	if o == nil || IsNil(o.AUSFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -822,7 +822,7 @@ func (o *ListOfInterfacesType) GetAUSFInterfaces() []string {
 // GetAUSFInterfacesOk returns a tuple with the AUSFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetAUSFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.AUSFInterfaces) {
+	if o == nil || IsNil(o.AUSFInterfaces) {
 		return nil, false
 	}
 	return o.AUSFInterfaces, true
@@ -830,7 +830,7 @@ func (o *ListOfInterfacesType) GetAUSFInterfacesOk() ([]string, bool) {
 
 // HasAUSFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasAUSFInterfaces() bool {
-	if o != nil && !isNil(o.AUSFInterfaces) {
+	if o != nil && !IsNil(o.AUSFInterfaces) {
 		return true
 	}
 
@@ -844,7 +844,7 @@ func (o *ListOfInterfacesType) SetAUSFInterfaces(v []string) {
 
 // GetNEFInterfaces returns the NEFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetNEFInterfaces() []string {
-	if o == nil || isNil(o.NEFInterfaces) {
+	if o == nil || IsNil(o.NEFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -854,7 +854,7 @@ func (o *ListOfInterfacesType) GetNEFInterfaces() []string {
 // GetNEFInterfacesOk returns a tuple with the NEFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetNEFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.NEFInterfaces) {
+	if o == nil || IsNil(o.NEFInterfaces) {
 		return nil, false
 	}
 	return o.NEFInterfaces, true
@@ -862,7 +862,7 @@ func (o *ListOfInterfacesType) GetNEFInterfacesOk() ([]string, bool) {
 
 // HasNEFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasNEFInterfaces() bool {
-	if o != nil && !isNil(o.NEFInterfaces) {
+	if o != nil && !IsNil(o.NEFInterfaces) {
 		return true
 	}
 
@@ -876,7 +876,7 @@ func (o *ListOfInterfacesType) SetNEFInterfaces(v []string) {
 
 // GetNRFInterfaces returns the NRFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetNRFInterfaces() []string {
-	if o == nil || isNil(o.NRFInterfaces) {
+	if o == nil || IsNil(o.NRFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -886,7 +886,7 @@ func (o *ListOfInterfacesType) GetNRFInterfaces() []string {
 // GetNRFInterfacesOk returns a tuple with the NRFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetNRFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.NRFInterfaces) {
+	if o == nil || IsNil(o.NRFInterfaces) {
 		return nil, false
 	}
 	return o.NRFInterfaces, true
@@ -894,7 +894,7 @@ func (o *ListOfInterfacesType) GetNRFInterfacesOk() ([]string, bool) {
 
 // HasNRFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasNRFInterfaces() bool {
-	if o != nil && !isNil(o.NRFInterfaces) {
+	if o != nil && !IsNil(o.NRFInterfaces) {
 		return true
 	}
 
@@ -908,7 +908,7 @@ func (o *ListOfInterfacesType) SetNRFInterfaces(v []string) {
 
 // GetNSSFInterfaces returns the NSSFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetNSSFInterfaces() []string {
-	if o == nil || isNil(o.NSSFInterfaces) {
+	if o == nil || IsNil(o.NSSFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -918,7 +918,7 @@ func (o *ListOfInterfacesType) GetNSSFInterfaces() []string {
 // GetNSSFInterfacesOk returns a tuple with the NSSFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetNSSFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.NSSFInterfaces) {
+	if o == nil || IsNil(o.NSSFInterfaces) {
 		return nil, false
 	}
 	return o.NSSFInterfaces, true
@@ -926,7 +926,7 @@ func (o *ListOfInterfacesType) GetNSSFInterfacesOk() ([]string, bool) {
 
 // HasNSSFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasNSSFInterfaces() bool {
-	if o != nil && !isNil(o.NSSFInterfaces) {
+	if o != nil && !IsNil(o.NSSFInterfaces) {
 		return true
 	}
 
@@ -940,7 +940,7 @@ func (o *ListOfInterfacesType) SetNSSFInterfaces(v []string) {
 
 // GetPCFInterfaces returns the PCFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetPCFInterfaces() []string {
-	if o == nil || isNil(o.PCFInterfaces) {
+	if o == nil || IsNil(o.PCFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -950,7 +950,7 @@ func (o *ListOfInterfacesType) GetPCFInterfaces() []string {
 // GetPCFInterfacesOk returns a tuple with the PCFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetPCFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.PCFInterfaces) {
+	if o == nil || IsNil(o.PCFInterfaces) {
 		return nil, false
 	}
 	return o.PCFInterfaces, true
@@ -958,7 +958,7 @@ func (o *ListOfInterfacesType) GetPCFInterfacesOk() ([]string, bool) {
 
 // HasPCFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasPCFInterfaces() bool {
-	if o != nil && !isNil(o.PCFInterfaces) {
+	if o != nil && !IsNil(o.PCFInterfaces) {
 		return true
 	}
 
@@ -972,7 +972,7 @@ func (o *ListOfInterfacesType) SetPCFInterfaces(v []string) {
 
 // GetSMFInterfaces returns the SMFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetSMFInterfaces() []string {
-	if o == nil || isNil(o.SMFInterfaces) {
+	if o == nil || IsNil(o.SMFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -982,7 +982,7 @@ func (o *ListOfInterfacesType) GetSMFInterfaces() []string {
 // GetSMFInterfacesOk returns a tuple with the SMFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetSMFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.SMFInterfaces) {
+	if o == nil || IsNil(o.SMFInterfaces) {
 		return nil, false
 	}
 	return o.SMFInterfaces, true
@@ -990,7 +990,7 @@ func (o *ListOfInterfacesType) GetSMFInterfacesOk() ([]string, bool) {
 
 // HasSMFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasSMFInterfaces() bool {
-	if o != nil && !isNil(o.SMFInterfaces) {
+	if o != nil && !IsNil(o.SMFInterfaces) {
 		return true
 	}
 
@@ -1004,7 +1004,7 @@ func (o *ListOfInterfacesType) SetSMFInterfaces(v []string) {
 
 // GetSMSFInterfaces returns the SMSFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetSMSFInterfaces() []string {
-	if o == nil || isNil(o.SMSFInterfaces) {
+	if o == nil || IsNil(o.SMSFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1014,7 +1014,7 @@ func (o *ListOfInterfacesType) GetSMSFInterfaces() []string {
 // GetSMSFInterfacesOk returns a tuple with the SMSFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetSMSFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.SMSFInterfaces) {
+	if o == nil || IsNil(o.SMSFInterfaces) {
 		return nil, false
 	}
 	return o.SMSFInterfaces, true
@@ -1022,7 +1022,7 @@ func (o *ListOfInterfacesType) GetSMSFInterfacesOk() ([]string, bool) {
 
 // HasSMSFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasSMSFInterfaces() bool {
-	if o != nil && !isNil(o.SMSFInterfaces) {
+	if o != nil && !IsNil(o.SMSFInterfaces) {
 		return true
 	}
 
@@ -1036,7 +1036,7 @@ func (o *ListOfInterfacesType) SetSMSFInterfaces(v []string) {
 
 // GetUDMInterfaces returns the UDMInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetUDMInterfaces() []string {
-	if o == nil || isNil(o.UDMInterfaces) {
+	if o == nil || IsNil(o.UDMInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1046,7 +1046,7 @@ func (o *ListOfInterfacesType) GetUDMInterfaces() []string {
 // GetUDMInterfacesOk returns a tuple with the UDMInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetUDMInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.UDMInterfaces) {
+	if o == nil || IsNil(o.UDMInterfaces) {
 		return nil, false
 	}
 	return o.UDMInterfaces, true
@@ -1054,7 +1054,7 @@ func (o *ListOfInterfacesType) GetUDMInterfacesOk() ([]string, bool) {
 
 // HasUDMInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasUDMInterfaces() bool {
-	if o != nil && !isNil(o.UDMInterfaces) {
+	if o != nil && !IsNil(o.UDMInterfaces) {
 		return true
 	}
 
@@ -1068,7 +1068,7 @@ func (o *ListOfInterfacesType) SetUDMInterfaces(v []string) {
 
 // GetUPFInterfaces returns the UPFInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetUPFInterfaces() []string {
-	if o == nil || isNil(o.UPFInterfaces) {
+	if o == nil || IsNil(o.UPFInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1078,7 +1078,7 @@ func (o *ListOfInterfacesType) GetUPFInterfaces() []string {
 // GetUPFInterfacesOk returns a tuple with the UPFInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetUPFInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.UPFInterfaces) {
+	if o == nil || IsNil(o.UPFInterfaces) {
 		return nil, false
 	}
 	return o.UPFInterfaces, true
@@ -1086,7 +1086,7 @@ func (o *ListOfInterfacesType) GetUPFInterfacesOk() ([]string, bool) {
 
 // HasUPFInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasUPFInterfaces() bool {
-	if o != nil && !isNil(o.UPFInterfaces) {
+	if o != nil && !IsNil(o.UPFInterfaces) {
 		return true
 	}
 
@@ -1100,7 +1100,7 @@ func (o *ListOfInterfacesType) SetUPFInterfaces(v []string) {
 
 // GetNgENBInterfaces returns the NgENBInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetNgENBInterfaces() []string {
-	if o == nil || isNil(o.NgENBInterfaces) {
+	if o == nil || IsNil(o.NgENBInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1110,7 +1110,7 @@ func (o *ListOfInterfacesType) GetNgENBInterfaces() []string {
 // GetNgENBInterfacesOk returns a tuple with the NgENBInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetNgENBInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.NgENBInterfaces) {
+	if o == nil || IsNil(o.NgENBInterfaces) {
 		return nil, false
 	}
 	return o.NgENBInterfaces, true
@@ -1118,7 +1118,7 @@ func (o *ListOfInterfacesType) GetNgENBInterfacesOk() ([]string, bool) {
 
 // HasNgENBInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasNgENBInterfaces() bool {
-	if o != nil && !isNil(o.NgENBInterfaces) {
+	if o != nil && !IsNil(o.NgENBInterfaces) {
 		return true
 	}
 
@@ -1132,7 +1132,7 @@ func (o *ListOfInterfacesType) SetNgENBInterfaces(v []string) {
 
 // GetGNBCUCPInterfaces returns the GNBCUCPInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetGNBCUCPInterfaces() []string {
-	if o == nil || isNil(o.GNBCUCPInterfaces) {
+	if o == nil || IsNil(o.GNBCUCPInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1142,7 +1142,7 @@ func (o *ListOfInterfacesType) GetGNBCUCPInterfaces() []string {
 // GetGNBCUCPInterfacesOk returns a tuple with the GNBCUCPInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetGNBCUCPInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.GNBCUCPInterfaces) {
+	if o == nil || IsNil(o.GNBCUCPInterfaces) {
 		return nil, false
 	}
 	return o.GNBCUCPInterfaces, true
@@ -1150,7 +1150,7 @@ func (o *ListOfInterfacesType) GetGNBCUCPInterfacesOk() ([]string, bool) {
 
 // HasGNBCUCPInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasGNBCUCPInterfaces() bool {
-	if o != nil && !isNil(o.GNBCUCPInterfaces) {
+	if o != nil && !IsNil(o.GNBCUCPInterfaces) {
 		return true
 	}
 
@@ -1164,7 +1164,7 @@ func (o *ListOfInterfacesType) SetGNBCUCPInterfaces(v []string) {
 
 // GetGNBCUUPInterfaces returns the GNBCUUPInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetGNBCUUPInterfaces() []string {
-	if o == nil || isNil(o.GNBCUUPInterfaces) {
+	if o == nil || IsNil(o.GNBCUUPInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1174,7 +1174,7 @@ func (o *ListOfInterfacesType) GetGNBCUUPInterfaces() []string {
 // GetGNBCUUPInterfacesOk returns a tuple with the GNBCUUPInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetGNBCUUPInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.GNBCUUPInterfaces) {
+	if o == nil || IsNil(o.GNBCUUPInterfaces) {
 		return nil, false
 	}
 	return o.GNBCUUPInterfaces, true
@@ -1182,7 +1182,7 @@ func (o *ListOfInterfacesType) GetGNBCUUPInterfacesOk() ([]string, bool) {
 
 // HasGNBCUUPInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasGNBCUUPInterfaces() bool {
-	if o != nil && !isNil(o.GNBCUUPInterfaces) {
+	if o != nil && !IsNil(o.GNBCUUPInterfaces) {
 		return true
 	}
 
@@ -1196,7 +1196,7 @@ func (o *ListOfInterfacesType) SetGNBCUUPInterfaces(v []string) {
 
 // GetGNBDUInterfaces returns the GNBDUInterfaces field value if set, zero value otherwise.
 func (o *ListOfInterfacesType) GetGNBDUInterfaces() []string {
-	if o == nil || isNil(o.GNBDUInterfaces) {
+	if o == nil || IsNil(o.GNBDUInterfaces) {
 		var ret []string
 		return ret
 	}
@@ -1206,7 +1206,7 @@ func (o *ListOfInterfacesType) GetGNBDUInterfaces() []string {
 // GetGNBDUInterfacesOk returns a tuple with the GNBDUInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListOfInterfacesType) GetGNBDUInterfacesOk() ([]string, bool) {
-	if o == nil || isNil(o.GNBDUInterfaces) {
+	if o == nil || IsNil(o.GNBDUInterfaces) {
 		return nil, false
 	}
 	return o.GNBDUInterfaces, true
@@ -1214,7 +1214,7 @@ func (o *ListOfInterfacesType) GetGNBDUInterfacesOk() ([]string, bool) {
 
 // HasGNBDUInterfaces returns a boolean if a field has been set.
 func (o *ListOfInterfacesType) HasGNBDUInterfaces() bool {
-	if o != nil && !isNil(o.GNBDUInterfaces) {
+	if o != nil && !IsNil(o.GNBDUInterfaces) {
 		return true
 	}
 
@@ -1227,7 +1227,7 @@ func (o *ListOfInterfacesType) SetGNBDUInterfaces(v []string) {
 }
 
 func (o ListOfInterfacesType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1236,112 +1236,112 @@ func (o ListOfInterfacesType) MarshalJSON() ([]byte, error) {
 
 func (o ListOfInterfacesType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MSCServerInterfaces) {
+	if !IsNil(o.MSCServerInterfaces) {
 		toSerialize["MSCServerInterfaces"] = o.MSCServerInterfaces
 	}
-	if !isNil(o.MGWInterfaces) {
+	if !IsNil(o.MGWInterfaces) {
 		toSerialize["MGWInterfaces"] = o.MGWInterfaces
 	}
-	if !isNil(o.RNCInterfaces) {
+	if !IsNil(o.RNCInterfaces) {
 		toSerialize["RNCInterfaces"] = o.RNCInterfaces
 	}
-	if !isNil(o.SGSNInterfaces) {
+	if !IsNil(o.SGSNInterfaces) {
 		toSerialize["SGSNInterfaces"] = o.SGSNInterfaces
 	}
-	if !isNil(o.GGSNInterfaces) {
+	if !IsNil(o.GGSNInterfaces) {
 		toSerialize["GGSNInterfaces"] = o.GGSNInterfaces
 	}
-	if !isNil(o.SCSCFInterfaces) {
+	if !IsNil(o.SCSCFInterfaces) {
 		toSerialize["S-CSCFInterfaces"] = o.SCSCFInterfaces
 	}
-	if !isNil(o.PCSCFInterfaces) {
+	if !IsNil(o.PCSCFInterfaces) {
 		toSerialize["P-CSCFInterfaces"] = o.PCSCFInterfaces
 	}
-	if !isNil(o.ICSCFInterfaces) {
+	if !IsNil(o.ICSCFInterfaces) {
 		toSerialize["I-CSCFInterfaces"] = o.ICSCFInterfaces
 	}
-	if !isNil(o.MRFCInterfaces) {
+	if !IsNil(o.MRFCInterfaces) {
 		toSerialize["MRFCInterfaces"] = o.MRFCInterfaces
 	}
-	if !isNil(o.MGCFInterfaces) {
+	if !IsNil(o.MGCFInterfaces) {
 		toSerialize["MGCFInterfaces"] = o.MGCFInterfaces
 	}
-	if !isNil(o.IBCFInterfaces) {
+	if !IsNil(o.IBCFInterfaces) {
 		toSerialize["IBCFInterfaces"] = o.IBCFInterfaces
 	}
-	if !isNil(o.ECSCFInterfaces) {
+	if !IsNil(o.ECSCFInterfaces) {
 		toSerialize["E-CSCFInterfaces"] = o.ECSCFInterfaces
 	}
-	if !isNil(o.BGCFInterfaces) {
+	if !IsNil(o.BGCFInterfaces) {
 		toSerialize["BGCFInterfaces"] = o.BGCFInterfaces
 	}
-	if !isNil(o.ASInterfaces) {
+	if !IsNil(o.ASInterfaces) {
 		toSerialize["ASInterfaces"] = o.ASInterfaces
 	}
-	if !isNil(o.HSSInterfaces) {
+	if !IsNil(o.HSSInterfaces) {
 		toSerialize["HSSInterfaces"] = o.HSSInterfaces
 	}
-	if !isNil(o.EIRInterfaces) {
+	if !IsNil(o.EIRInterfaces) {
 		toSerialize["EIRInterfaces"] = o.EIRInterfaces
 	}
-	if !isNil(o.BMSCInterfaces) {
+	if !IsNil(o.BMSCInterfaces) {
 		toSerialize["BM-SCInterfaces"] = o.BMSCInterfaces
 	}
-	if !isNil(o.MMEInterfaces) {
+	if !IsNil(o.MMEInterfaces) {
 		toSerialize["MMEInterfaces"] = o.MMEInterfaces
 	}
-	if !isNil(o.SGWInterfaces) {
+	if !IsNil(o.SGWInterfaces) {
 		toSerialize["SGWInterfaces"] = o.SGWInterfaces
 	}
-	if !isNil(o.PDNGWInterfaces) {
+	if !IsNil(o.PDNGWInterfaces) {
 		toSerialize["PDN_GWInterfaces"] = o.PDNGWInterfaces
 	}
-	if !isNil(o.ENBInterfaces) {
+	if !IsNil(o.ENBInterfaces) {
 		toSerialize["eNBInterfaces"] = o.ENBInterfaces
 	}
-	if !isNil(o.EnGNBInterfaces) {
+	if !IsNil(o.EnGNBInterfaces) {
 		toSerialize["en-gNBInterfaces"] = o.EnGNBInterfaces
 	}
-	if !isNil(o.AMFInterfaces) {
+	if !IsNil(o.AMFInterfaces) {
 		toSerialize["AMFInterfaces"] = o.AMFInterfaces
 	}
-	if !isNil(o.AUSFInterfaces) {
+	if !IsNil(o.AUSFInterfaces) {
 		toSerialize["AUSFInterfaces"] = o.AUSFInterfaces
 	}
-	if !isNil(o.NEFInterfaces) {
+	if !IsNil(o.NEFInterfaces) {
 		toSerialize["NEFInterfaces"] = o.NEFInterfaces
 	}
-	if !isNil(o.NRFInterfaces) {
+	if !IsNil(o.NRFInterfaces) {
 		toSerialize["NRFInterfaces"] = o.NRFInterfaces
 	}
-	if !isNil(o.NSSFInterfaces) {
+	if !IsNil(o.NSSFInterfaces) {
 		toSerialize["NSSFInterfaces"] = o.NSSFInterfaces
 	}
-	if !isNil(o.PCFInterfaces) {
+	if !IsNil(o.PCFInterfaces) {
 		toSerialize["PCFInterfaces"] = o.PCFInterfaces
 	}
-	if !isNil(o.SMFInterfaces) {
+	if !IsNil(o.SMFInterfaces) {
 		toSerialize["SMFInterfaces"] = o.SMFInterfaces
 	}
-	if !isNil(o.SMSFInterfaces) {
+	if !IsNil(o.SMSFInterfaces) {
 		toSerialize["SMSFInterfaces"] = o.SMSFInterfaces
 	}
-	if !isNil(o.UDMInterfaces) {
+	if !IsNil(o.UDMInterfaces) {
 		toSerialize["UDMInterfaces"] = o.UDMInterfaces
 	}
-	if !isNil(o.UPFInterfaces) {
+	if !IsNil(o.UPFInterfaces) {
 		toSerialize["UPFInterfaces"] = o.UPFInterfaces
 	}
-	if !isNil(o.NgENBInterfaces) {
+	if !IsNil(o.NgENBInterfaces) {
 		toSerialize["ng-eNBInterfaces"] = o.NgENBInterfaces
 	}
-	if !isNil(o.GNBCUCPInterfaces) {
+	if !IsNil(o.GNBCUCPInterfaces) {
 		toSerialize["gNB-CU-CPInterfaces"] = o.GNBCUCPInterfaces
 	}
-	if !isNil(o.GNBCUUPInterfaces) {
+	if !IsNil(o.GNBCUUPInterfaces) {
 		toSerialize["gNB-CU-UPInterfaces"] = o.GNBCUUPInterfaces
 	}
-	if !isNil(o.GNBDUInterfaces) {
+	if !IsNil(o.GNBDUInterfaces) {
 		toSerialize["gNB-DUInterfaces"] = o.GNBDUInterfaces
 	}
 	return toSerialize, nil
@@ -1382,5 +1382,3 @@ func (v *NullableListOfInterfacesType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

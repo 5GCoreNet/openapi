@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ImsVoPs struct for ImsVoPs
 type ImsVoPs struct {
-	ImsVoPsAnyOf *ImsVoPsAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ImsVoPs) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ImsVoPsAnyOf
-	err = json.Unmarshal(data, &dst.ImsVoPsAnyOf);
-	if err == nil {
-		jsonImsVoPsAnyOf, _ := json.Marshal(dst.ImsVoPsAnyOf)
-		if string(jsonImsVoPsAnyOf) == "{}" { // empty struct
-			dst.ImsVoPsAnyOf = nil
-		} else {
-			return nil // data stored in dst.ImsVoPsAnyOf, return on the first match
-		}
-	} else {
-		dst.ImsVoPsAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ImsVoPs) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ImsVoPs) MarshalJSON() ([]byte, error) {
-	if src.ImsVoPsAnyOf != nil {
-		return json.Marshal(&src.ImsVoPsAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableImsVoPs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

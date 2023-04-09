@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &CandidateForReplacement{}
 
 // CandidateForReplacement Represents a list of candidate DNNs for replacement for an S-NSSAI.
 type CandidateForReplacement struct {
-	Snssai Snssai `json:"snssai"`
-	Dnns []string `json:"dnns,omitempty"`
+	Snssai Snssai   `json:"snssai"`
+	Dnns   []string `json:"dnns,omitempty"`
 }
 
 // NewCandidateForReplacement instantiates a new CandidateForReplacement object
@@ -78,7 +78,7 @@ func (o *CandidateForReplacement) GetDnns() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CandidateForReplacement) GetDnnsOk() ([]string, bool) {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		return nil, false
 	}
 	return o.Dnns, true
@@ -86,7 +86,7 @@ func (o *CandidateForReplacement) GetDnnsOk() ([]string, bool) {
 
 // HasDnns returns a boolean if a field has been set.
 func (o *CandidateForReplacement) HasDnns() bool {
-	if o != nil && isNil(o.Dnns) {
+	if o != nil && IsNil(o.Dnns) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *CandidateForReplacement) SetDnns(v []string) {
 }
 
 func (o CandidateForReplacement) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,5 +150,3 @@ func (v *NullableCandidateForReplacement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

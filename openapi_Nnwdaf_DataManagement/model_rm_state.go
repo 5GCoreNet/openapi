@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // RmState Describes the registration management state of a UE
 type RmState struct {
-	RmStateAnyOf *RmStateAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RmState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RmStateAnyOf
-	err = json.Unmarshal(data, &dst.RmStateAnyOf);
-	if err == nil {
-		jsonRmStateAnyOf, _ := json.Marshal(dst.RmStateAnyOf)
-		if string(jsonRmStateAnyOf) == "{}" { // empty struct
-			dst.RmStateAnyOf = nil
-		} else {
-			return nil // data stored in dst.RmStateAnyOf, return on the first match
-		}
-	} else {
-		dst.RmStateAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RmState) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RmState) MarshalJSON() ([]byte, error) {
-	if src.RmStateAnyOf != nil {
-		return json.Marshal(&src.RmStateAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRmState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

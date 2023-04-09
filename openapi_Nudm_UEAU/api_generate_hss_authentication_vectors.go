@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudm_UEAU
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // GenerateHSSAuthenticationVectorsApiService GenerateHSSAuthenticationVectorsApi service
 type GenerateHSSAuthenticationVectorsApiService service
 
 type ApiGenerateAvRequest struct {
-	ctx context.Context
-	ApiService *GenerateHSSAuthenticationVectorsApiService
-	supi string
-	hssAuthType HssAuthTypeInUri
+	ctx                          context.Context
+	ApiService                   *GenerateHSSAuthenticationVectorsApiService
+	supi                         string
+	hssAuthType                  HssAuthTypeInUri
 	hssAuthenticationInfoRequest *HssAuthenticationInfoRequest
 }
 
@@ -43,28 +42,29 @@ func (r ApiGenerateAvRequest) Execute() (*HssAuthenticationInfoResult, *http.Res
 /*
 GenerateAv Generate authentication data for the UE in EPS or IMS domain
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi SUPI of the user
- @param hssAuthType Type of AV requested by HSS
- @return ApiGenerateAvRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi SUPI of the user
+	@param hssAuthType Type of AV requested by HSS
+	@return ApiGenerateAvRequest
 */
 func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAv(ctx context.Context, supi string, hssAuthType HssAuthTypeInUri) ApiGenerateAvRequest {
 	return ApiGenerateAvRequest{
-		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ApiService:  a,
+		ctx:         ctx,
+		supi:        supi,
 		hssAuthType: hssAuthType,
 	}
 }
 
 // Execute executes the request
-//  @return HssAuthenticationInfoResult
+//
+//	@return HssAuthenticationInfoResult
 func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGenerateAvRequest) (*HssAuthenticationInfoResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HssAuthenticationInfoResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HssAuthenticationInfoResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GenerateHSSAuthenticationVectorsApiService.GenerateAv")
@@ -112,9 +112,9 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -131,8 +131,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -142,8 +142,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -153,8 +153,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -164,8 +164,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -175,8 +175,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -186,8 +186,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -197,8 +197,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -208,8 +208,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -219,8 +219,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -230,8 +230,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -241,8 +241,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -252,8 +252,8 @@ func (a *GenerateHSSAuthenticationVectorsApiService) GenerateAvExecute(r ApiGene
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

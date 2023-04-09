@@ -18,7 +18,7 @@ import (
 // ThresholdHysteresisHigh - struct for ThresholdHysteresisHigh
 type ThresholdHysteresisHigh struct {
 	Float32 *float32
-	Int32 *int32
+	Int32   *int32
 }
 
 // float32AsThresholdHysteresisHigh is a convenience function that returns float32 wrapped in ThresholdHysteresisHigh
@@ -34,7 +34,6 @@ func Int32AsThresholdHysteresisHigh(v *int32) ThresholdHysteresisHigh {
 		Int32: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ThresholdHysteresisHigh) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ThresholdHysteresisHigh) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ThresholdHysteresisHigh) GetActualInstance() (interface{}) {
+func (obj *ThresholdHysteresisHigh) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableThresholdHysteresisHigh) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

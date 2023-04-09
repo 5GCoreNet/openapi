@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // EASDeploymentDataStoreApiService EASDeploymentDataStoreApi service
 type EASDeploymentDataStoreApiService service
 
 type ApiReadEasDeployDataRequest struct {
-	ctx context.Context
-	ApiService *EASDeploymentDataStoreApiService
-	dnn *string
-	snssai *Snssai
+	ctx             context.Context
+	ApiService      *EASDeploymentDataStoreApiService
+	dnn             *string
+	snssai          *Snssai
 	internalGroupId *string
-	appId *string
+	appId           *string
 }
 
 // Identifies a DNN.
@@ -62,24 +61,25 @@ func (r ApiReadEasDeployDataRequest) Execute() ([]EasDeployInfoData, *http.Respo
 /*
 ReadEasDeployData Retrieve EAS Deployment Information Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReadEasDeployDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReadEasDeployDataRequest
 */
 func (a *EASDeploymentDataStoreApiService) ReadEasDeployData(ctx context.Context) ApiReadEasDeployDataRequest {
 	return ApiReadEasDeployDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []EasDeployInfoData
+//
+//	@return []EasDeployInfoData
 func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEasDeployDataRequest) ([]EasDeployInfoData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []EasDeployInfoData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EasDeployInfoData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EASDeploymentDataStoreApiService.ReadEasDeployData")
@@ -94,16 +94,16 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 	localVarFormParams := url.Values{}
 
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.snssai != nil {
-		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.internalGroupId != nil {
-		parameterAddToQuery(localVarQueryParams, "internal-group-id", r.internalGroupId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-id", r.internalGroupId, "")
 	}
 	if r.appId != nil {
-		parameterAddToQuery(localVarQueryParams, "appId", r.appId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "appId", r.appId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,9 +132,9 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -151,8 +151,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -162,8 +162,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -173,8 +173,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -184,8 +184,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -195,8 +195,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -206,8 +206,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -217,8 +217,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -228,8 +228,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -239,8 +239,8 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 CAPIF_Security_API
 
-API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -25,7 +25,7 @@ type SecurityNotification struct {
 	AefId *string `json:"aefId,omitempty"`
 	// Identifier of the service API
 	ApiIds []string `json:"apiIds"`
-	Cause Cause `json:"cause"`
+	Cause  Cause    `json:"cause"`
 }
 
 // NewSecurityNotification instantiates a new SecurityNotification object
@@ -74,7 +74,7 @@ func (o *SecurityNotification) SetApiInvokerId(v string) {
 
 // GetAefId returns the AefId field value if set, zero value otherwise.
 func (o *SecurityNotification) GetAefId() string {
-	if o == nil || isNil(o.AefId) {
+	if o == nil || IsNil(o.AefId) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SecurityNotification) GetAefId() string {
 // GetAefIdOk returns a tuple with the AefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecurityNotification) GetAefIdOk() (*string, bool) {
-	if o == nil || isNil(o.AefId) {
+	if o == nil || IsNil(o.AefId) {
 		return nil, false
 	}
 	return o.AefId, true
@@ -92,7 +92,7 @@ func (o *SecurityNotification) GetAefIdOk() (*string, bool) {
 
 // HasAefId returns a boolean if a field has been set.
 func (o *SecurityNotification) HasAefId() bool {
-	if o != nil && !isNil(o.AefId) {
+	if o != nil && !IsNil(o.AefId) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *SecurityNotification) SetCause(v Cause) {
 }
 
 func (o SecurityNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o SecurityNotification) MarshalJSON() ([]byte, error) {
 func (o SecurityNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiInvokerId"] = o.ApiInvokerId
-	if !isNil(o.AefId) {
+	if !IsNil(o.AefId) {
 		toSerialize["aefId"] = o.AefId
 	}
 	toSerialize["apiIds"] = o.ApiIds
@@ -206,5 +206,3 @@ func (v *NullableSecurityNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

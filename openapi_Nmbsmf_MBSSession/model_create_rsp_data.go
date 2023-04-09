@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &CreateRspData{}
 
 // CreateRspData Data within Create Response
 type CreateRspData struct {
-	MbsSession ExtMbsSession `json:"mbsSession"`
-	EventList *MbsSessionEventReportList `json:"eventList,omitempty"`
+	MbsSession ExtMbsSession              `json:"mbsSession"`
+	EventList  *MbsSessionEventReportList `json:"eventList,omitempty"`
 }
 
 // NewCreateRspData instantiates a new CreateRspData object
@@ -67,7 +67,7 @@ func (o *CreateRspData) SetMbsSession(v ExtMbsSession) {
 
 // GetEventList returns the EventList field value if set, zero value otherwise.
 func (o *CreateRspData) GetEventList() MbsSessionEventReportList {
-	if o == nil || isNil(o.EventList) {
+	if o == nil || IsNil(o.EventList) {
 		var ret MbsSessionEventReportList
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CreateRspData) GetEventList() MbsSessionEventReportList {
 // GetEventListOk returns a tuple with the EventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateRspData) GetEventListOk() (*MbsSessionEventReportList, bool) {
-	if o == nil || isNil(o.EventList) {
+	if o == nil || IsNil(o.EventList) {
 		return nil, false
 	}
 	return o.EventList, true
@@ -85,7 +85,7 @@ func (o *CreateRspData) GetEventListOk() (*MbsSessionEventReportList, bool) {
 
 // HasEventList returns a boolean if a field has been set.
 func (o *CreateRspData) HasEventList() bool {
-	if o != nil && !isNil(o.EventList) {
+	if o != nil && !IsNil(o.EventList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *CreateRspData) SetEventList(v MbsSessionEventReportList) {
 }
 
 func (o CreateRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o CreateRspData) MarshalJSON() ([]byte, error) {
 func (o CreateRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSession"] = o.MbsSession
-	if !isNil(o.EventList) {
+	if !IsNil(o.EventList) {
 		toSerialize["eventList"] = o.EventList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableCreateRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

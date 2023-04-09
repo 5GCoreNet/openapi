@@ -19,7 +19,7 @@ var _ MappedNullable = &PredefinedPccRuleSetSingleAllOf{}
 
 // PredefinedPccRuleSetSingleAllOf struct for PredefinedPccRuleSetSingleAllOf
 type PredefinedPccRuleSetSingleAllOf struct {
-	Attributes *interface{} `json:"attributes,omitempty"`
+	Attributes *PredefinedPccRuleSetSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewPredefinedPccRuleSetSingleAllOf instantiates a new PredefinedPccRuleSetSingleAllOf object
@@ -40,9 +40,9 @@ func NewPredefinedPccRuleSetSingleAllOfWithDefaults() *PredefinedPccRuleSetSingl
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PredefinedPccRuleSetSingleAllOf) GetAttributes() interface{} {
-	if o == nil || isNil(o.Attributes) {
-		var ret interface{}
+func (o *PredefinedPccRuleSetSingleAllOf) GetAttributes() PredefinedPccRuleSetSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret PredefinedPccRuleSetSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *PredefinedPccRuleSetSingleAllOf) GetAttributes() interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PredefinedPccRuleSetSingleAllOf) GetAttributesOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *PredefinedPccRuleSetSingleAllOf) GetAttributesOk() (*PredefinedPccRuleSetSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *PredefinedPccRuleSetSingleAllOf) GetAttributesOk() (*interface{}, bool)
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PredefinedPccRuleSetSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
-func (o *PredefinedPccRuleSetSingleAllOf) SetAttributes(v interface{}) {
+// SetAttributes gets a reference to the given PredefinedPccRuleSetSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *PredefinedPccRuleSetSingleAllOf) SetAttributes(v PredefinedPccRuleSetSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o PredefinedPccRuleSetSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o PredefinedPccRuleSetSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o PredefinedPccRuleSetSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullablePredefinedPccRuleSetSingleAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 
 // EEPerfReq - struct for EEPerfReq
 type EEPerfReq struct {
-	EmbbEEPerfReq *EmbbEEPerfReq
-	MIoTEEPerfReq *MIoTEEPerfReq
+	EmbbEEPerfReq  *EmbbEEPerfReq
+	MIoTEEPerfReq  *MIoTEEPerfReq
 	UrllcEEPerfReq *UrllcEEPerfReq
 }
 
@@ -42,7 +42,6 @@ func UrllcEEPerfReqAsEEPerfReq(v *UrllcEEPerfReq) EEPerfReq {
 		UrllcEEPerfReq: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EEPerfReq) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src EEPerfReq) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EEPerfReq) GetActualInstance() (interface{}) {
+func (obj *EEPerfReq) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableEEPerfReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

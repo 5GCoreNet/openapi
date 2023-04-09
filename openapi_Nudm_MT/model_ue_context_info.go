@@ -1,7 +1,7 @@
 /*
 Nudm_MT
 
-UDM MT Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM MT Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &UeContextInfo{}
 
 // UeContextInfo UE Context Information
 type UeContextInfo struct {
-	SupportVoPS *bool `json:"supportVoPS,omitempty"`
+	SupportVoPS      *bool `json:"supportVoPS,omitempty"`
 	SupportVoPSn3gpp *bool `json:"supportVoPSn3gpp,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	LastActTime *time.Time `json:"lastActTime,omitempty"`
-	AccessType *AccessType `json:"accessType,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	LastActTime *time.Time  `json:"lastActTime,omitempty"`
+	AccessType  *AccessType `json:"accessType,omitempty"`
+	RatType     *RatType    `json:"ratType,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -49,7 +49,7 @@ func NewUeContextInfoWithDefaults() *UeContextInfo {
 
 // GetSupportVoPS returns the SupportVoPS field value if set, zero value otherwise.
 func (o *UeContextInfo) GetSupportVoPS() bool {
-	if o == nil || isNil(o.SupportVoPS) {
+	if o == nil || IsNil(o.SupportVoPS) {
 		var ret bool
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *UeContextInfo) GetSupportVoPS() bool {
 // GetSupportVoPSOk returns a tuple with the SupportVoPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInfo) GetSupportVoPSOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportVoPS) {
+	if o == nil || IsNil(o.SupportVoPS) {
 		return nil, false
 	}
 	return o.SupportVoPS, true
@@ -67,7 +67,7 @@ func (o *UeContextInfo) GetSupportVoPSOk() (*bool, bool) {
 
 // HasSupportVoPS returns a boolean if a field has been set.
 func (o *UeContextInfo) HasSupportVoPS() bool {
-	if o != nil && !isNil(o.SupportVoPS) {
+	if o != nil && !IsNil(o.SupportVoPS) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *UeContextInfo) SetSupportVoPS(v bool) {
 
 // GetSupportVoPSn3gpp returns the SupportVoPSn3gpp field value if set, zero value otherwise.
 func (o *UeContextInfo) GetSupportVoPSn3gpp() bool {
-	if o == nil || isNil(o.SupportVoPSn3gpp) {
+	if o == nil || IsNil(o.SupportVoPSn3gpp) {
 		var ret bool
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *UeContextInfo) GetSupportVoPSn3gpp() bool {
 // GetSupportVoPSn3gppOk returns a tuple with the SupportVoPSn3gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInfo) GetSupportVoPSn3gppOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportVoPSn3gpp) {
+	if o == nil || IsNil(o.SupportVoPSn3gpp) {
 		return nil, false
 	}
 	return o.SupportVoPSn3gpp, true
@@ -99,7 +99,7 @@ func (o *UeContextInfo) GetSupportVoPSn3gppOk() (*bool, bool) {
 
 // HasSupportVoPSn3gpp returns a boolean if a field has been set.
 func (o *UeContextInfo) HasSupportVoPSn3gpp() bool {
-	if o != nil && !isNil(o.SupportVoPSn3gpp) {
+	if o != nil && !IsNil(o.SupportVoPSn3gpp) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *UeContextInfo) SetSupportVoPSn3gpp(v bool) {
 
 // GetLastActTime returns the LastActTime field value if set, zero value otherwise.
 func (o *UeContextInfo) GetLastActTime() time.Time {
-	if o == nil || isNil(o.LastActTime) {
+	if o == nil || IsNil(o.LastActTime) {
 		var ret time.Time
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *UeContextInfo) GetLastActTime() time.Time {
 // GetLastActTimeOk returns a tuple with the LastActTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInfo) GetLastActTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastActTime) {
+	if o == nil || IsNil(o.LastActTime) {
 		return nil, false
 	}
 	return o.LastActTime, true
@@ -131,7 +131,7 @@ func (o *UeContextInfo) GetLastActTimeOk() (*time.Time, bool) {
 
 // HasLastActTime returns a boolean if a field has been set.
 func (o *UeContextInfo) HasLastActTime() bool {
-	if o != nil && !isNil(o.LastActTime) {
+	if o != nil && !IsNil(o.LastActTime) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *UeContextInfo) SetLastActTime(v time.Time) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *UeContextInfo) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *UeContextInfo) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInfo) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -163,7 +163,7 @@ func (o *UeContextInfo) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *UeContextInfo) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *UeContextInfo) SetAccessType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *UeContextInfo) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *UeContextInfo) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInfo) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -195,7 +195,7 @@ func (o *UeContextInfo) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *UeContextInfo) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *UeContextInfo) SetRatType(v RatType) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextInfo) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *UeContextInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -227,7 +227,7 @@ func (o *UeContextInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextInfo) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *UeContextInfo) SetSupportedFeatures(v string) {
 }
 
 func (o UeContextInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,22 +249,22 @@ func (o UeContextInfo) MarshalJSON() ([]byte, error) {
 
 func (o UeContextInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportVoPS) {
+	if !IsNil(o.SupportVoPS) {
 		toSerialize["supportVoPS"] = o.SupportVoPS
 	}
-	if !isNil(o.SupportVoPSn3gpp) {
+	if !IsNil(o.SupportVoPSn3gpp) {
 		toSerialize["supportVoPSn3gpp"] = o.SupportVoPSn3gpp
 	}
-	if !isNil(o.LastActTime) {
+	if !IsNil(o.LastActTime) {
 		toSerialize["lastActTime"] = o.LastActTime
 	}
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -305,5 +305,3 @@ func (v *NullableUeContextInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

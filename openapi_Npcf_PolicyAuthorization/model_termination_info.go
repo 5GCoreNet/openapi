@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the TerminationInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TerminationInfo{}
 
-// TerminationInfo Indicates the cause for requesting the deletion of the Individual Application Session Context resource. 
+// TerminationInfo Indicates the cause for requesting the deletion of the Individual Application Session Context resource.
 type TerminationInfo struct {
 	TermCause TerminationCause `json:"termCause"`
 	// String providing an URI formatted according to RFC 3986.
@@ -92,7 +92,7 @@ func (o *TerminationInfo) SetResUri(v string) {
 }
 
 func (o TerminationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableTerminationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

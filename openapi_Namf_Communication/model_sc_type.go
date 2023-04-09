@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ScType Indicates the security context type
 type ScType struct {
-	ScTypeAnyOf *ScTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ScType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ScTypeAnyOf
-	err = json.Unmarshal(data, &dst.ScTypeAnyOf);
-	if err == nil {
-		jsonScTypeAnyOf, _ := json.Marshal(dst.ScTypeAnyOf)
-		if string(jsonScTypeAnyOf) == "{}" { // empty struct
-			dst.ScTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ScTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ScTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ScType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ScType) MarshalJSON() ([]byte, error) {
-	if src.ScTypeAnyOf != nil {
-		return json.Marshal(&src.ScTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableScType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -96,7 +96,7 @@ func (o *NumberAverage) SetVariance(v float32) {
 
 // GetSkewness returns the Skewness field value if set, zero value otherwise.
 func (o *NumberAverage) GetSkewness() float32 {
-	if o == nil || isNil(o.Skewness) {
+	if o == nil || IsNil(o.Skewness) {
 		var ret float32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NumberAverage) GetSkewness() float32 {
 // GetSkewnessOk returns a tuple with the Skewness field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NumberAverage) GetSkewnessOk() (*float32, bool) {
-	if o == nil || isNil(o.Skewness) {
+	if o == nil || IsNil(o.Skewness) {
 		return nil, false
 	}
 	return o.Skewness, true
@@ -114,7 +114,7 @@ func (o *NumberAverage) GetSkewnessOk() (*float32, bool) {
 
 // HasSkewness returns a boolean if a field has been set.
 func (o *NumberAverage) HasSkewness() bool {
-	if o != nil && !isNil(o.Skewness) {
+	if o != nil && !IsNil(o.Skewness) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *NumberAverage) SetSkewness(v float32) {
 }
 
 func (o NumberAverage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o NumberAverage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["number"] = o.Number
 	toSerialize["variance"] = o.Variance
-	if !isNil(o.Skewness) {
+	if !IsNil(o.Skewness) {
 		toSerialize["skewness"] = o.Skewness
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableNumberAverage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Eecs_ServiceProvisioning
 
-API for ECS Service Provisioning. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ECS Service Provisioning. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -96,7 +96,7 @@ func (o *EDNConfigInfo) SetEess(v []EESInfo) {
 
 // GetLifeTime returns the LifeTime field value if set, zero value otherwise.
 func (o *EDNConfigInfo) GetLifeTime() time.Time {
-	if o == nil || isNil(o.LifeTime) {
+	if o == nil || IsNil(o.LifeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *EDNConfigInfo) GetLifeTime() time.Time {
 // GetLifeTimeOk returns a tuple with the LifeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConfigInfo) GetLifeTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LifeTime) {
+	if o == nil || IsNil(o.LifeTime) {
 		return nil, false
 	}
 	return o.LifeTime, true
@@ -114,7 +114,7 @@ func (o *EDNConfigInfo) GetLifeTimeOk() (*time.Time, bool) {
 
 // HasLifeTime returns a boolean if a field has been set.
 func (o *EDNConfigInfo) HasLifeTime() bool {
-	if o != nil && !isNil(o.LifeTime) {
+	if o != nil && !IsNil(o.LifeTime) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *EDNConfigInfo) SetLifeTime(v time.Time) {
 }
 
 func (o EDNConfigInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o EDNConfigInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ednConInfo"] = o.EdnConInfo
 	toSerialize["eess"] = o.Eess
-	if !isNil(o.LifeTime) {
+	if !IsNil(o.LifeTime) {
 		toSerialize["lifeTime"] = o.LifeTime
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableEDNConfigInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

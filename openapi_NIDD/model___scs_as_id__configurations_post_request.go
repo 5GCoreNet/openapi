@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -17,11 +17,11 @@ import (
 
 // ScsAsIdConfigurationsPostRequest - struct for ScsAsIdConfigurationsPostRequest
 type ScsAsIdConfigurationsPostRequest struct {
-	GmdNiddDownlinkDataDeliveryNotification *GmdNiddDownlinkDataDeliveryNotification
-	ManagePortNotification *ManagePortNotification
-	NiddConfigurationStatusNotification *NiddConfigurationStatusNotification
+	GmdNiddDownlinkDataDeliveryNotification    *GmdNiddDownlinkDataDeliveryNotification
+	ManagePortNotification                     *ManagePortNotification
+	NiddConfigurationStatusNotification        *NiddConfigurationStatusNotification
 	NiddDownlinkDataDeliveryStatusNotification *NiddDownlinkDataDeliveryStatusNotification
-	NiddUplinkDataNotification *NiddUplinkDataNotification
+	NiddUplinkDataNotification                 *NiddUplinkDataNotification
 }
 
 // GmdNiddDownlinkDataDeliveryNotificationAsScsAsIdConfigurationsPostRequest is a convenience function that returns GmdNiddDownlinkDataDeliveryNotification wrapped in ScsAsIdConfigurationsPostRequest
@@ -58,7 +58,6 @@ func NiddUplinkDataNotificationAsScsAsIdConfigurationsPostRequest(v *NiddUplinkD
 		NiddUplinkDataNotification: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ScsAsIdConfigurationsPostRequest) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src ScsAsIdConfigurationsPostRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ScsAsIdConfigurationsPostRequest) GetActualInstance() (interface{}) {
+func (obj *ScsAsIdConfigurationsPostRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableScsAsIdConfigurationsPostRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

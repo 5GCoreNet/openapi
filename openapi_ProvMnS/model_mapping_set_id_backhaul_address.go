@@ -19,7 +19,7 @@ var _ MappedNullable = &MappingSetIDBackhaulAddress{}
 
 // MappingSetIDBackhaulAddress struct for MappingSetIDBackhaulAddress
 type MappingSetIDBackhaulAddress struct {
-	SetID *int32 `json:"setID,omitempty"`
+	SetID           *int32           `json:"setID,omitempty"`
 	BackhaulAddress *BackhaulAddress `json:"backhaulAddress,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewMappingSetIDBackhaulAddressWithDefaults() *MappingSetIDBackhaulAddress {
 
 // GetSetID returns the SetID field value if set, zero value otherwise.
 func (o *MappingSetIDBackhaulAddress) GetSetID() int32 {
-	if o == nil || isNil(o.SetID) {
+	if o == nil || IsNil(o.SetID) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MappingSetIDBackhaulAddress) GetSetID() int32 {
 // GetSetIDOk returns a tuple with the SetID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MappingSetIDBackhaulAddress) GetSetIDOk() (*int32, bool) {
-	if o == nil || isNil(o.SetID) {
+	if o == nil || IsNil(o.SetID) {
 		return nil, false
 	}
 	return o.SetID, true
@@ -60,7 +60,7 @@ func (o *MappingSetIDBackhaulAddress) GetSetIDOk() (*int32, bool) {
 
 // HasSetID returns a boolean if a field has been set.
 func (o *MappingSetIDBackhaulAddress) HasSetID() bool {
-	if o != nil && !isNil(o.SetID) {
+	if o != nil && !IsNil(o.SetID) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MappingSetIDBackhaulAddress) SetSetID(v int32) {
 
 // GetBackhaulAddress returns the BackhaulAddress field value if set, zero value otherwise.
 func (o *MappingSetIDBackhaulAddress) GetBackhaulAddress() BackhaulAddress {
-	if o == nil || isNil(o.BackhaulAddress) {
+	if o == nil || IsNil(o.BackhaulAddress) {
 		var ret BackhaulAddress
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MappingSetIDBackhaulAddress) GetBackhaulAddress() BackhaulAddress {
 // GetBackhaulAddressOk returns a tuple with the BackhaulAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MappingSetIDBackhaulAddress) GetBackhaulAddressOk() (*BackhaulAddress, bool) {
-	if o == nil || isNil(o.BackhaulAddress) {
+	if o == nil || IsNil(o.BackhaulAddress) {
 		return nil, false
 	}
 	return o.BackhaulAddress, true
@@ -92,7 +92,7 @@ func (o *MappingSetIDBackhaulAddress) GetBackhaulAddressOk() (*BackhaulAddress, 
 
 // HasBackhaulAddress returns a boolean if a field has been set.
 func (o *MappingSetIDBackhaulAddress) HasBackhaulAddress() bool {
-	if o != nil && !isNil(o.BackhaulAddress) {
+	if o != nil && !IsNil(o.BackhaulAddress) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *MappingSetIDBackhaulAddress) SetBackhaulAddress(v BackhaulAddress) {
 }
 
 func (o MappingSetIDBackhaulAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o MappingSetIDBackhaulAddress) MarshalJSON() ([]byte, error) {
 
 func (o MappingSetIDBackhaulAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SetID) {
+	if !IsNil(o.SetID) {
 		toSerialize["setID"] = o.SetID
 	}
-	if !isNil(o.BackhaulAddress) {
+	if !IsNil(o.BackhaulAddress) {
 		toSerialize["backhaulAddress"] = o.BackhaulAddress
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableMappingSetIDBackhaulAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

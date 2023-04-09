@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &CollocatedNfInstance{}
 
 // CollocatedNfInstance Information of an collocated NF Instance registered in the NRF
 type CollocatedNfInstance struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfInstanceId string `json:"nfInstanceId"`
-	NfType CollocatedNfType `json:"nfType"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfInstanceId string           `json:"nfInstanceId"`
+	NfType       CollocatedNfType `json:"nfType"`
 }
 
 // NewCollocatedNfInstance instantiates a new CollocatedNfInstance object
@@ -92,7 +92,7 @@ func (o *CollocatedNfInstance) SetNfType(v CollocatedNfType) {
 }
 
 func (o CollocatedNfInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableCollocatedNfInstance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

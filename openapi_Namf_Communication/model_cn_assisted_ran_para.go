@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -23,11 +23,11 @@ type CnAssistedRanPara struct {
 	// indicating a time in seconds.
 	CommunicationDurationTime *int32 `json:"communicationDurationTime,omitempty"`
 	// indicating a time in seconds.
-	PeriodicTime *int32 `json:"periodicTime,omitempty"`
+	PeriodicTime               *int32                      `json:"periodicTime,omitempty"`
 	ScheduledCommunicationTime *ScheduledCommunicationTime `json:"scheduledCommunicationTime,omitempty"`
 	ScheduledCommunicationType *ScheduledCommunicationType `json:"scheduledCommunicationType,omitempty"`
-	TrafficProfile *TrafficProfile `json:"trafficProfile,omitempty"`
-	BatteryIndication *BatteryIndication `json:"batteryIndication,omitempty"`
+	TrafficProfile             *TrafficProfile             `json:"trafficProfile,omitempty"`
+	BatteryIndication          *BatteryIndication          `json:"batteryIndication,omitempty"`
 }
 
 // NewCnAssistedRanPara instantiates a new CnAssistedRanPara object
@@ -49,7 +49,7 @@ func NewCnAssistedRanParaWithDefaults() *CnAssistedRanPara {
 
 // GetStationaryIndication returns the StationaryIndication field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetStationaryIndication() StationaryIndication {
-	if o == nil || isNil(o.StationaryIndication) {
+	if o == nil || IsNil(o.StationaryIndication) {
 		var ret StationaryIndication
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *CnAssistedRanPara) GetStationaryIndication() StationaryIndication {
 // GetStationaryIndicationOk returns a tuple with the StationaryIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetStationaryIndicationOk() (*StationaryIndication, bool) {
-	if o == nil || isNil(o.StationaryIndication) {
+	if o == nil || IsNil(o.StationaryIndication) {
 		return nil, false
 	}
 	return o.StationaryIndication, true
@@ -67,7 +67,7 @@ func (o *CnAssistedRanPara) GetStationaryIndicationOk() (*StationaryIndication, 
 
 // HasStationaryIndication returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasStationaryIndication() bool {
-	if o != nil && !isNil(o.StationaryIndication) {
+	if o != nil && !IsNil(o.StationaryIndication) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *CnAssistedRanPara) SetStationaryIndication(v StationaryIndication) {
 
 // GetCommunicationDurationTime returns the CommunicationDurationTime field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetCommunicationDurationTime() int32 {
-	if o == nil || isNil(o.CommunicationDurationTime) {
+	if o == nil || IsNil(o.CommunicationDurationTime) {
 		var ret int32
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *CnAssistedRanPara) GetCommunicationDurationTime() int32 {
 // GetCommunicationDurationTimeOk returns a tuple with the CommunicationDurationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetCommunicationDurationTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.CommunicationDurationTime) {
+	if o == nil || IsNil(o.CommunicationDurationTime) {
 		return nil, false
 	}
 	return o.CommunicationDurationTime, true
@@ -99,7 +99,7 @@ func (o *CnAssistedRanPara) GetCommunicationDurationTimeOk() (*int32, bool) {
 
 // HasCommunicationDurationTime returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasCommunicationDurationTime() bool {
-	if o != nil && !isNil(o.CommunicationDurationTime) {
+	if o != nil && !IsNil(o.CommunicationDurationTime) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *CnAssistedRanPara) SetCommunicationDurationTime(v int32) {
 
 // GetPeriodicTime returns the PeriodicTime field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetPeriodicTime() int32 {
-	if o == nil || isNil(o.PeriodicTime) {
+	if o == nil || IsNil(o.PeriodicTime) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *CnAssistedRanPara) GetPeriodicTime() int32 {
 // GetPeriodicTimeOk returns a tuple with the PeriodicTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetPeriodicTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.PeriodicTime) {
+	if o == nil || IsNil(o.PeriodicTime) {
 		return nil, false
 	}
 	return o.PeriodicTime, true
@@ -131,7 +131,7 @@ func (o *CnAssistedRanPara) GetPeriodicTimeOk() (*int32, bool) {
 
 // HasPeriodicTime returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasPeriodicTime() bool {
-	if o != nil && !isNil(o.PeriodicTime) {
+	if o != nil && !IsNil(o.PeriodicTime) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *CnAssistedRanPara) SetPeriodicTime(v int32) {
 
 // GetScheduledCommunicationTime returns the ScheduledCommunicationTime field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetScheduledCommunicationTime() ScheduledCommunicationTime {
-	if o == nil || isNil(o.ScheduledCommunicationTime) {
+	if o == nil || IsNil(o.ScheduledCommunicationTime) {
 		var ret ScheduledCommunicationTime
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *CnAssistedRanPara) GetScheduledCommunicationTime() ScheduledCommunicati
 // GetScheduledCommunicationTimeOk returns a tuple with the ScheduledCommunicationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetScheduledCommunicationTimeOk() (*ScheduledCommunicationTime, bool) {
-	if o == nil || isNil(o.ScheduledCommunicationTime) {
+	if o == nil || IsNil(o.ScheduledCommunicationTime) {
 		return nil, false
 	}
 	return o.ScheduledCommunicationTime, true
@@ -163,7 +163,7 @@ func (o *CnAssistedRanPara) GetScheduledCommunicationTimeOk() (*ScheduledCommuni
 
 // HasScheduledCommunicationTime returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasScheduledCommunicationTime() bool {
-	if o != nil && !isNil(o.ScheduledCommunicationTime) {
+	if o != nil && !IsNil(o.ScheduledCommunicationTime) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *CnAssistedRanPara) SetScheduledCommunicationTime(v ScheduledCommunicati
 
 // GetScheduledCommunicationType returns the ScheduledCommunicationType field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetScheduledCommunicationType() ScheduledCommunicationType {
-	if o == nil || isNil(o.ScheduledCommunicationType) {
+	if o == nil || IsNil(o.ScheduledCommunicationType) {
 		var ret ScheduledCommunicationType
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *CnAssistedRanPara) GetScheduledCommunicationType() ScheduledCommunicati
 // GetScheduledCommunicationTypeOk returns a tuple with the ScheduledCommunicationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetScheduledCommunicationTypeOk() (*ScheduledCommunicationType, bool) {
-	if o == nil || isNil(o.ScheduledCommunicationType) {
+	if o == nil || IsNil(o.ScheduledCommunicationType) {
 		return nil, false
 	}
 	return o.ScheduledCommunicationType, true
@@ -195,7 +195,7 @@ func (o *CnAssistedRanPara) GetScheduledCommunicationTypeOk() (*ScheduledCommuni
 
 // HasScheduledCommunicationType returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasScheduledCommunicationType() bool {
-	if o != nil && !isNil(o.ScheduledCommunicationType) {
+	if o != nil && !IsNil(o.ScheduledCommunicationType) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *CnAssistedRanPara) SetScheduledCommunicationType(v ScheduledCommunicati
 
 // GetTrafficProfile returns the TrafficProfile field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetTrafficProfile() TrafficProfile {
-	if o == nil || isNil(o.TrafficProfile) {
+	if o == nil || IsNil(o.TrafficProfile) {
 		var ret TrafficProfile
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *CnAssistedRanPara) GetTrafficProfile() TrafficProfile {
 // GetTrafficProfileOk returns a tuple with the TrafficProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetTrafficProfileOk() (*TrafficProfile, bool) {
-	if o == nil || isNil(o.TrafficProfile) {
+	if o == nil || IsNil(o.TrafficProfile) {
 		return nil, false
 	}
 	return o.TrafficProfile, true
@@ -227,7 +227,7 @@ func (o *CnAssistedRanPara) GetTrafficProfileOk() (*TrafficProfile, bool) {
 
 // HasTrafficProfile returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasTrafficProfile() bool {
-	if o != nil && !isNil(o.TrafficProfile) {
+	if o != nil && !IsNil(o.TrafficProfile) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *CnAssistedRanPara) SetTrafficProfile(v TrafficProfile) {
 
 // GetBatteryIndication returns the BatteryIndication field value if set, zero value otherwise.
 func (o *CnAssistedRanPara) GetBatteryIndication() BatteryIndication {
-	if o == nil || isNil(o.BatteryIndication) {
+	if o == nil || IsNil(o.BatteryIndication) {
 		var ret BatteryIndication
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *CnAssistedRanPara) GetBatteryIndication() BatteryIndication {
 // GetBatteryIndicationOk returns a tuple with the BatteryIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnAssistedRanPara) GetBatteryIndicationOk() (*BatteryIndication, bool) {
-	if o == nil || isNil(o.BatteryIndication) {
+	if o == nil || IsNil(o.BatteryIndication) {
 		return nil, false
 	}
 	return o.BatteryIndication, true
@@ -259,7 +259,7 @@ func (o *CnAssistedRanPara) GetBatteryIndicationOk() (*BatteryIndication, bool) 
 
 // HasBatteryIndication returns a boolean if a field has been set.
 func (o *CnAssistedRanPara) HasBatteryIndication() bool {
-	if o != nil && !isNil(o.BatteryIndication) {
+	if o != nil && !IsNil(o.BatteryIndication) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *CnAssistedRanPara) SetBatteryIndication(v BatteryIndication) {
 }
 
 func (o CnAssistedRanPara) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -281,25 +281,25 @@ func (o CnAssistedRanPara) MarshalJSON() ([]byte, error) {
 
 func (o CnAssistedRanPara) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StationaryIndication) {
+	if !IsNil(o.StationaryIndication) {
 		toSerialize["stationaryIndication"] = o.StationaryIndication
 	}
-	if !isNil(o.CommunicationDurationTime) {
+	if !IsNil(o.CommunicationDurationTime) {
 		toSerialize["communicationDurationTime"] = o.CommunicationDurationTime
 	}
-	if !isNil(o.PeriodicTime) {
+	if !IsNil(o.PeriodicTime) {
 		toSerialize["periodicTime"] = o.PeriodicTime
 	}
-	if !isNil(o.ScheduledCommunicationTime) {
+	if !IsNil(o.ScheduledCommunicationTime) {
 		toSerialize["scheduledCommunicationTime"] = o.ScheduledCommunicationTime
 	}
-	if !isNil(o.ScheduledCommunicationType) {
+	if !IsNil(o.ScheduledCommunicationType) {
 		toSerialize["scheduledCommunicationType"] = o.ScheduledCommunicationType
 	}
-	if !isNil(o.TrafficProfile) {
+	if !IsNil(o.TrafficProfile) {
 		toSerialize["trafficProfile"] = o.TrafficProfile
 	}
-	if !isNil(o.BatteryIndication) {
+	if !IsNil(o.BatteryIndication) {
 		toSerialize["batteryIndication"] = o.BatteryIndication
 	}
 	return toSerialize, nil
@@ -340,5 +340,3 @@ func (v *NullableCnAssistedRanPara) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

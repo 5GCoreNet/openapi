@@ -19,7 +19,7 @@ var _ MappedNullable = &CorrelatedNotification{}
 
 // CorrelatedNotification struct for CorrelatedNotification
 type CorrelatedNotification struct {
-	Source string `json:"source"`
+	Source          string  `json:"source"`
 	NotificationIds []int32 `json:"notificationIds"`
 }
 
@@ -91,7 +91,7 @@ func (o *CorrelatedNotification) SetNotificationIds(v []int32) {
 }
 
 func (o CorrelatedNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableCorrelatedNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

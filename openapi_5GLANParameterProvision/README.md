@@ -92,7 +92,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AaaUsage](docs/AaaUsage.md)
- - [AaaUsageAnyOf](docs/AaaUsageAnyOf.md)
  - [AppDescriptor](docs/AppDescriptor.md)
  - [AppDescriptorRm](docs/AppDescriptorRm.md)
  - [InvalidParam](docs/InvalidParam.md)
@@ -102,7 +101,6 @@ Class | Method | HTTP request | Description
  - [Model5GLanParametersProvision](docs/Model5GLanParametersProvision.md)
  - [Model5GLanParametersProvisionPatch](docs/Model5GLanParametersProvisionPatch.md)
  - [PduSessionType](docs/PduSessionType.md)
- - [PduSessionTypeAnyOf](docs/PduSessionTypeAnyOf.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [Snssai](docs/Snssai.md)
 

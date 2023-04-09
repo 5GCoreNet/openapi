@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"reflect"
 )
 
-
 // BdtPolicyDataStoreApiService BdtPolicyDataStoreApi service
 type BdtPolicyDataStoreApiService service
 
 type ApiReadBdtPolicyDataRequest struct {
-	ctx context.Context
-	ApiService *BdtPolicyDataStoreApiService
-	bdtPolicyIds *[]string
+	ctx              context.Context
+	ApiService       *BdtPolicyDataStoreApiService
+	bdtPolicyIds     *[]string
 	internalGroupIds *[]string
-	supis *[]string
+	supis            *[]string
 }
 
 // Each element identifies a service.
@@ -56,24 +55,25 @@ func (r ApiReadBdtPolicyDataRequest) Execute() ([]BdtPolicyData, *http.Response,
 /*
 ReadBdtPolicyData Retrieve applied BDT Policy Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReadBdtPolicyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReadBdtPolicyDataRequest
 */
 func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyData(ctx context.Context) ApiReadBdtPolicyDataRequest {
 	return ApiReadBdtPolicyDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []BdtPolicyData
+//
+//	@return []BdtPolicyData
 func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPolicyDataRequest) ([]BdtPolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []BdtPolicyData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []BdtPolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BdtPolicyDataStoreApiService.ReadBdtPolicyData")
@@ -92,10 +92,10 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "bdt-policy-ids", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bdt-policy-ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "bdt-policy-ids", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bdt-policy-ids", t, "multi")
 		}
 	}
 	if r.internalGroupIds != nil {
@@ -103,10 +103,10 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "internal-group-ids", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "internal-group-ids", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", t, "multi")
 		}
 	}
 	if r.supis != nil {
@@ -114,10 +114,10 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "supis", s.Index(i), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "supis", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToQuery(localVarQueryParams, "supis", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "supis", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -147,9 +147,9 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -166,8 +166,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -177,8 +177,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -188,8 +188,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -199,8 +199,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -210,8 +210,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -221,8 +221,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -232,8 +232,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -243,8 +243,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -254,8 +254,8 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -25,16 +25,16 @@ type QFIContainerInformation struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeofFirstUsage *time.Time `json:"timeofFirstUsage,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeofLastUsage *time.Time `json:"timeofLastUsage,omitempty"`
-	QoSInformation NullableQosData `json:"qoSInformation,omitempty"`
-	QoSCharacteristics *QosCharacteristics `json:"qoSCharacteristics,omitempty"`
-	UserLocationInformation *UserLocation `json:"userLocationInformation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	UetimeZone *string `json:"uetimeZone,omitempty"`
-	PresenceReportingAreaInformation *map[string]PresenceInfo `json:"presenceReportingAreaInformation,omitempty"`
-	RATType *RatType `json:"rATType,omitempty"`
-	ServingNetworkFunctionID []ServingNetworkFunctionID `json:"servingNetworkFunctionID,omitempty"`
-	Var3gppPSDataOffStatus *Model3GPPPSDataOffStatus `json:"3gppPSDataOffStatus,omitempty"`
+	TimeofLastUsage         *time.Time          `json:"timeofLastUsage,omitempty"`
+	QoSInformation          NullableQosData     `json:"qoSInformation,omitempty"`
+	QoSCharacteristics      *QosCharacteristics `json:"qoSCharacteristics,omitempty"`
+	UserLocationInformation *UserLocation       `json:"userLocationInformation,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	UetimeZone                       *string                    `json:"uetimeZone,omitempty"`
+	PresenceReportingAreaInformation *map[string]PresenceInfo   `json:"presenceReportingAreaInformation,omitempty"`
+	RATType                          *RatType                   `json:"rATType,omitempty"`
+	ServingNetworkFunctionID         []ServingNetworkFunctionID `json:"servingNetworkFunctionID,omitempty"`
+	Var3gppPSDataOffStatus           *Model3GPPPSDataOffStatus  `json:"3gppPSDataOffStatus,omitempty"`
 }
 
 // NewQFIContainerInformation instantiates a new QFIContainerInformation object
@@ -56,7 +56,7 @@ func NewQFIContainerInformationWithDefaults() *QFIContainerInformation {
 
 // GetQFI returns the QFI field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetQFI() int32 {
-	if o == nil || isNil(o.QFI) {
+	if o == nil || IsNil(o.QFI) {
 		var ret int32
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *QFIContainerInformation) GetQFI() int32 {
 // GetQFIOk returns a tuple with the QFI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetQFIOk() (*int32, bool) {
-	if o == nil || isNil(o.QFI) {
+	if o == nil || IsNil(o.QFI) {
 		return nil, false
 	}
 	return o.QFI, true
@@ -74,7 +74,7 @@ func (o *QFIContainerInformation) GetQFIOk() (*int32, bool) {
 
 // HasQFI returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasQFI() bool {
-	if o != nil && !isNil(o.QFI) {
+	if o != nil && !IsNil(o.QFI) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *QFIContainerInformation) SetQFI(v int32) {
 
 // GetTimeofFirstUsage returns the TimeofFirstUsage field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetTimeofFirstUsage() time.Time {
-	if o == nil || isNil(o.TimeofFirstUsage) {
+	if o == nil || IsNil(o.TimeofFirstUsage) {
 		var ret time.Time
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *QFIContainerInformation) GetTimeofFirstUsage() time.Time {
 // GetTimeofFirstUsageOk returns a tuple with the TimeofFirstUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetTimeofFirstUsageOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeofFirstUsage) {
+	if o == nil || IsNil(o.TimeofFirstUsage) {
 		return nil, false
 	}
 	return o.TimeofFirstUsage, true
@@ -106,7 +106,7 @@ func (o *QFIContainerInformation) GetTimeofFirstUsageOk() (*time.Time, bool) {
 
 // HasTimeofFirstUsage returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasTimeofFirstUsage() bool {
-	if o != nil && !isNil(o.TimeofFirstUsage) {
+	if o != nil && !IsNil(o.TimeofFirstUsage) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *QFIContainerInformation) SetTimeofFirstUsage(v time.Time) {
 
 // GetTimeofLastUsage returns the TimeofLastUsage field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetTimeofLastUsage() time.Time {
-	if o == nil || isNil(o.TimeofLastUsage) {
+	if o == nil || IsNil(o.TimeofLastUsage) {
 		var ret time.Time
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *QFIContainerInformation) GetTimeofLastUsage() time.Time {
 // GetTimeofLastUsageOk returns a tuple with the TimeofLastUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetTimeofLastUsageOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeofLastUsage) {
+	if o == nil || IsNil(o.TimeofLastUsage) {
 		return nil, false
 	}
 	return o.TimeofLastUsage, true
@@ -138,7 +138,7 @@ func (o *QFIContainerInformation) GetTimeofLastUsageOk() (*time.Time, bool) {
 
 // HasTimeofLastUsage returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasTimeofLastUsage() bool {
-	if o != nil && !isNil(o.TimeofLastUsage) {
+	if o != nil && !IsNil(o.TimeofLastUsage) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *QFIContainerInformation) SetTimeofLastUsage(v time.Time) {
 
 // GetQoSInformation returns the QoSInformation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QFIContainerInformation) GetQoSInformation() QosData {
-	if o == nil || isNil(o.QoSInformation.Get()) {
+	if o == nil || IsNil(o.QoSInformation.Get()) {
 		var ret QosData
 		return ret
 	}
@@ -182,6 +182,7 @@ func (o *QFIContainerInformation) HasQoSInformation() bool {
 func (o *QFIContainerInformation) SetQoSInformation(v QosData) {
 	o.QoSInformation.Set(&v)
 }
+
 // SetQoSInformationNil sets the value for QoSInformation to be an explicit nil
 func (o *QFIContainerInformation) SetQoSInformationNil() {
 	o.QoSInformation.Set(nil)
@@ -194,7 +195,7 @@ func (o *QFIContainerInformation) UnsetQoSInformation() {
 
 // GetQoSCharacteristics returns the QoSCharacteristics field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetQoSCharacteristics() QosCharacteristics {
-	if o == nil || isNil(o.QoSCharacteristics) {
+	if o == nil || IsNil(o.QoSCharacteristics) {
 		var ret QosCharacteristics
 		return ret
 	}
@@ -204,7 +205,7 @@ func (o *QFIContainerInformation) GetQoSCharacteristics() QosCharacteristics {
 // GetQoSCharacteristicsOk returns a tuple with the QoSCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetQoSCharacteristicsOk() (*QosCharacteristics, bool) {
-	if o == nil || isNil(o.QoSCharacteristics) {
+	if o == nil || IsNil(o.QoSCharacteristics) {
 		return nil, false
 	}
 	return o.QoSCharacteristics, true
@@ -212,7 +213,7 @@ func (o *QFIContainerInformation) GetQoSCharacteristicsOk() (*QosCharacteristics
 
 // HasQoSCharacteristics returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasQoSCharacteristics() bool {
-	if o != nil && !isNil(o.QoSCharacteristics) {
+	if o != nil && !IsNil(o.QoSCharacteristics) {
 		return true
 	}
 
@@ -226,7 +227,7 @@ func (o *QFIContainerInformation) SetQoSCharacteristics(v QosCharacteristics) {
 
 // GetUserLocationInformation returns the UserLocationInformation field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetUserLocationInformation() UserLocation {
-	if o == nil || isNil(o.UserLocationInformation) {
+	if o == nil || IsNil(o.UserLocationInformation) {
 		var ret UserLocation
 		return ret
 	}
@@ -236,7 +237,7 @@ func (o *QFIContainerInformation) GetUserLocationInformation() UserLocation {
 // GetUserLocationInformationOk returns a tuple with the UserLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetUserLocationInformationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLocationInformation) {
+	if o == nil || IsNil(o.UserLocationInformation) {
 		return nil, false
 	}
 	return o.UserLocationInformation, true
@@ -244,7 +245,7 @@ func (o *QFIContainerInformation) GetUserLocationInformationOk() (*UserLocation,
 
 // HasUserLocationInformation returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasUserLocationInformation() bool {
-	if o != nil && !isNil(o.UserLocationInformation) {
+	if o != nil && !IsNil(o.UserLocationInformation) {
 		return true
 	}
 
@@ -258,7 +259,7 @@ func (o *QFIContainerInformation) SetUserLocationInformation(v UserLocation) {
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetUetimeZone() string {
-	if o == nil || isNil(o.UetimeZone) {
+	if o == nil || IsNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -268,7 +269,7 @@ func (o *QFIContainerInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UetimeZone) {
+	if o == nil || IsNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -276,7 +277,7 @@ func (o *QFIContainerInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasUetimeZone() bool {
-	if o != nil && !isNil(o.UetimeZone) {
+	if o != nil && !IsNil(o.UetimeZone) {
 		return true
 	}
 
@@ -290,7 +291,7 @@ func (o *QFIContainerInformation) SetUetimeZone(v string) {
 
 // GetPresenceReportingAreaInformation returns the PresenceReportingAreaInformation field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetPresenceReportingAreaInformation() map[string]PresenceInfo {
-	if o == nil || isNil(o.PresenceReportingAreaInformation) {
+	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -300,7 +301,7 @@ func (o *QFIContainerInformation) GetPresenceReportingAreaInformation() map[stri
 // GetPresenceReportingAreaInformationOk returns a tuple with the PresenceReportingAreaInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetPresenceReportingAreaInformationOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || isNil(o.PresenceReportingAreaInformation) {
+	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
 		return nil, false
 	}
 	return o.PresenceReportingAreaInformation, true
@@ -308,7 +309,7 @@ func (o *QFIContainerInformation) GetPresenceReportingAreaInformationOk() (*map[
 
 // HasPresenceReportingAreaInformation returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasPresenceReportingAreaInformation() bool {
-	if o != nil && !isNil(o.PresenceReportingAreaInformation) {
+	if o != nil && !IsNil(o.PresenceReportingAreaInformation) {
 		return true
 	}
 
@@ -322,7 +323,7 @@ func (o *QFIContainerInformation) SetPresenceReportingAreaInformation(v map[stri
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetRATType() RatType {
-	if o == nil || isNil(o.RATType) {
+	if o == nil || IsNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -332,7 +333,7 @@ func (o *QFIContainerInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RATType) {
+	if o == nil || IsNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -340,7 +341,7 @@ func (o *QFIContainerInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasRATType() bool {
-	if o != nil && !isNil(o.RATType) {
+	if o != nil && !IsNil(o.RATType) {
 		return true
 	}
 
@@ -354,7 +355,7 @@ func (o *QFIContainerInformation) SetRATType(v RatType) {
 
 // GetServingNetworkFunctionID returns the ServingNetworkFunctionID field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetServingNetworkFunctionID() []ServingNetworkFunctionID {
-	if o == nil || isNil(o.ServingNetworkFunctionID) {
+	if o == nil || IsNil(o.ServingNetworkFunctionID) {
 		var ret []ServingNetworkFunctionID
 		return ret
 	}
@@ -364,7 +365,7 @@ func (o *QFIContainerInformation) GetServingNetworkFunctionID() []ServingNetwork
 // GetServingNetworkFunctionIDOk returns a tuple with the ServingNetworkFunctionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetServingNetworkFunctionIDOk() ([]ServingNetworkFunctionID, bool) {
-	if o == nil || isNil(o.ServingNetworkFunctionID) {
+	if o == nil || IsNil(o.ServingNetworkFunctionID) {
 		return nil, false
 	}
 	return o.ServingNetworkFunctionID, true
@@ -372,7 +373,7 @@ func (o *QFIContainerInformation) GetServingNetworkFunctionIDOk() ([]ServingNetw
 
 // HasServingNetworkFunctionID returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasServingNetworkFunctionID() bool {
-	if o != nil && !isNil(o.ServingNetworkFunctionID) {
+	if o != nil && !IsNil(o.ServingNetworkFunctionID) {
 		return true
 	}
 
@@ -386,7 +387,7 @@ func (o *QFIContainerInformation) SetServingNetworkFunctionID(v []ServingNetwork
 
 // GetVar3gppPSDataOffStatus returns the Var3gppPSDataOffStatus field value if set, zero value otherwise.
 func (o *QFIContainerInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOffStatus {
-	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
 		var ret Model3GPPPSDataOffStatus
 		return ret
 	}
@@ -396,7 +397,7 @@ func (o *QFIContainerInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOff
 // GetVar3gppPSDataOffStatusOk returns a tuple with the Var3gppPSDataOffStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFIContainerInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDataOffStatus, bool) {
-	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
 		return nil, false
 	}
 	return o.Var3gppPSDataOffStatus, true
@@ -404,7 +405,7 @@ func (o *QFIContainerInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDat
 
 // HasVar3gppPSDataOffStatus returns a boolean if a field has been set.
 func (o *QFIContainerInformation) HasVar3gppPSDataOffStatus() bool {
-	if o != nil && !isNil(o.Var3gppPSDataOffStatus) {
+	if o != nil && !IsNil(o.Var3gppPSDataOffStatus) {
 		return true
 	}
 
@@ -417,7 +418,7 @@ func (o *QFIContainerInformation) SetVar3gppPSDataOffStatus(v Model3GPPPSDataOff
 }
 
 func (o QFIContainerInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -426,37 +427,37 @@ func (o QFIContainerInformation) MarshalJSON() ([]byte, error) {
 
 func (o QFIContainerInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.QFI) {
+	if !IsNil(o.QFI) {
 		toSerialize["qFI"] = o.QFI
 	}
-	if !isNil(o.TimeofFirstUsage) {
+	if !IsNil(o.TimeofFirstUsage) {
 		toSerialize["timeofFirstUsage"] = o.TimeofFirstUsage
 	}
-	if !isNil(o.TimeofLastUsage) {
+	if !IsNil(o.TimeofLastUsage) {
 		toSerialize["timeofLastUsage"] = o.TimeofLastUsage
 	}
 	if o.QoSInformation.IsSet() {
 		toSerialize["qoSInformation"] = o.QoSInformation.Get()
 	}
-	if !isNil(o.QoSCharacteristics) {
+	if !IsNil(o.QoSCharacteristics) {
 		toSerialize["qoSCharacteristics"] = o.QoSCharacteristics
 	}
-	if !isNil(o.UserLocationInformation) {
+	if !IsNil(o.UserLocationInformation) {
 		toSerialize["userLocationInformation"] = o.UserLocationInformation
 	}
-	if !isNil(o.UetimeZone) {
+	if !IsNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !isNil(o.PresenceReportingAreaInformation) {
+	if !IsNil(o.PresenceReportingAreaInformation) {
 		toSerialize["presenceReportingAreaInformation"] = o.PresenceReportingAreaInformation
 	}
-	if !isNil(o.RATType) {
+	if !IsNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !isNil(o.ServingNetworkFunctionID) {
+	if !IsNil(o.ServingNetworkFunctionID) {
 		toSerialize["servingNetworkFunctionID"] = o.ServingNetworkFunctionID
 	}
-	if !isNil(o.Var3gppPSDataOffStatus) {
+	if !IsNil(o.Var3gppPSDataOffStatus) {
 		toSerialize["3gppPSDataOffStatus"] = o.Var3gppPSDataOffStatus
 	}
 	return toSerialize, nil
@@ -497,5 +498,3 @@ func (v *NullableQFIContainerInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewSharedDataIdRangeWithDefaults() *SharedDataIdRange {
 
 // GetPattern returns the Pattern field value if set, zero value otherwise.
 func (o *SharedDataIdRange) GetPattern() string {
-	if o == nil || isNil(o.Pattern) {
+	if o == nil || IsNil(o.Pattern) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *SharedDataIdRange) GetPattern() string {
 // GetPatternOk returns a tuple with the Pattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedDataIdRange) GetPatternOk() (*string, bool) {
-	if o == nil || isNil(o.Pattern) {
+	if o == nil || IsNil(o.Pattern) {
 		return nil, false
 	}
 	return o.Pattern, true
@@ -59,7 +59,7 @@ func (o *SharedDataIdRange) GetPatternOk() (*string, bool) {
 
 // HasPattern returns a boolean if a field has been set.
 func (o *SharedDataIdRange) HasPattern() bool {
-	if o != nil && !isNil(o.Pattern) {
+	if o != nil && !IsNil(o.Pattern) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *SharedDataIdRange) SetPattern(v string) {
 }
 
 func (o SharedDataIdRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o SharedDataIdRange) MarshalJSON() ([]byte, error) {
 
 func (o SharedDataIdRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Pattern) {
+	if !IsNil(o.Pattern) {
 		toSerialize["pattern"] = o.Pattern
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableSharedDataIdRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

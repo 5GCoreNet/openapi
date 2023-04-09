@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ResultReason Possible values are: - ROAMING_NOT_ALLOWED: Identifies the configuration parameters are not allowed by roaming agreement. - OTHER_REASON: Identifies the configuration parameters are not configured due to other reason. 
+// ResultReason Possible values are: - ROAMING_NOT_ALLOWED: Identifies the configuration parameters are not allowed by roaming agreement. - OTHER_REASON: Identifies the configuration parameters are not configured due to other reason.
 type ResultReason struct {
-	ResultReasonAnyOf *ResultReasonAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ResultReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ResultReasonAnyOf
-	err = json.Unmarshal(data, &dst.ResultReasonAnyOf);
-	if err == nil {
-		jsonResultReasonAnyOf, _ := json.Marshal(dst.ResultReasonAnyOf)
-		if string(jsonResultReasonAnyOf) == "{}" { // empty struct
-			dst.ResultReasonAnyOf = nil
-		} else {
-			return nil // data stored in dst.ResultReasonAnyOf, return on the first match
-		}
-	} else {
-		dst.ResultReasonAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ResultReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ResultReason) MarshalJSON() ([]byte, error) {
-	if src.ResultReasonAnyOf != nil {
-		return json.Marshal(&src.ResultReasonAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableResultReason) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

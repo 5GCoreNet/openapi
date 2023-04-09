@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewLossConnectivityCfg1WithDefaults() *LossConnectivityCfg1 {
 
 // GetMaxDetectionTime returns the MaxDetectionTime field value if set, zero value otherwise.
 func (o *LossConnectivityCfg1) GetMaxDetectionTime() int32 {
-	if o == nil || isNil(o.MaxDetectionTime) {
+	if o == nil || IsNil(o.MaxDetectionTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LossConnectivityCfg1) GetMaxDetectionTime() int32 {
 // GetMaxDetectionTimeOk returns a tuple with the MaxDetectionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LossConnectivityCfg1) GetMaxDetectionTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxDetectionTime) {
+	if o == nil || IsNil(o.MaxDetectionTime) {
 		return nil, false
 	}
 	return o.MaxDetectionTime, true
@@ -60,7 +60,7 @@ func (o *LossConnectivityCfg1) GetMaxDetectionTimeOk() (*int32, bool) {
 
 // HasMaxDetectionTime returns a boolean if a field has been set.
 func (o *LossConnectivityCfg1) HasMaxDetectionTime() bool {
-	if o != nil && !isNil(o.MaxDetectionTime) {
+	if o != nil && !IsNil(o.MaxDetectionTime) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *LossConnectivityCfg1) SetMaxDetectionTime(v int32) {
 }
 
 func (o LossConnectivityCfg1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o LossConnectivityCfg1) MarshalJSON() ([]byte, error) {
 
 func (o LossConnectivityCfg1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MaxDetectionTime) {
+	if !IsNil(o.MaxDetectionTime) {
 		toSerialize["maxDetectionTime"] = o.MaxDetectionTime
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableLossConnectivityCfg1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

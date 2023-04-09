@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,9 +17,9 @@ import (
 // checks if the SnssaiInfoItem type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SnssaiInfoItem{}
 
-// SnssaiInfoItem Parameters supported by an NF for a given S-NSSAI Set of parameters supported by NF for a given S-NSSAI 
+// SnssaiInfoItem Parameters supported by an NF for a given S-NSSAI Set of parameters supported by NF for a given S-NSSAI
 type SnssaiInfoItem struct {
-	SNssai ExtSnssai `json:"sNssai"`
+	SNssai      ExtSnssai     `json:"sNssai"`
 	DnnInfoList []DnnInfoItem `json:"dnnInfoList"`
 }
 
@@ -91,7 +91,7 @@ func (o *SnssaiInfoItem) SetDnnInfoList(v []DnnInfoItem) {
 }
 
 func (o SnssaiInfoItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSnssaiInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

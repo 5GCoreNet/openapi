@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &RequestLine{}
 
 // RequestLine Contains the request line of the HTTP API request being reformatted and forwarded over N32-f
 type RequestLine struct {
-	Method HttpMethod `json:"method"`
-	Scheme UriScheme `json:"scheme"`
-	Authority string `json:"authority"`
-	Path string `json:"path"`
-	ProtocolVersion string `json:"protocolVersion"`
-	QueryFragment *string `json:"queryFragment,omitempty"`
+	Method          HttpMethod `json:"method"`
+	Scheme          UriScheme  `json:"scheme"`
+	Authority       string     `json:"authority"`
+	Path            string     `json:"path"`
+	ProtocolVersion string     `json:"protocolVersion"`
+	QueryFragment   *string    `json:"queryFragment,omitempty"`
 }
 
 // NewRequestLine instantiates a new RequestLine object
@@ -171,7 +171,7 @@ func (o *RequestLine) SetProtocolVersion(v string) {
 
 // GetQueryFragment returns the QueryFragment field value if set, zero value otherwise.
 func (o *RequestLine) GetQueryFragment() string {
-	if o == nil || isNil(o.QueryFragment) {
+	if o == nil || IsNil(o.QueryFragment) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *RequestLine) GetQueryFragment() string {
 // GetQueryFragmentOk returns a tuple with the QueryFragment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLine) GetQueryFragmentOk() (*string, bool) {
-	if o == nil || isNil(o.QueryFragment) {
+	if o == nil || IsNil(o.QueryFragment) {
 		return nil, false
 	}
 	return o.QueryFragment, true
@@ -189,7 +189,7 @@ func (o *RequestLine) GetQueryFragmentOk() (*string, bool) {
 
 // HasQueryFragment returns a boolean if a field has been set.
 func (o *RequestLine) HasQueryFragment() bool {
-	if o != nil && !isNil(o.QueryFragment) {
+	if o != nil && !IsNil(o.QueryFragment) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *RequestLine) SetQueryFragment(v string) {
 }
 
 func (o RequestLine) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,7 +216,7 @@ func (o RequestLine) ToMap() (map[string]interface{}, error) {
 	toSerialize["authority"] = o.Authority
 	toSerialize["path"] = o.Path
 	toSerialize["protocolVersion"] = o.ProtocolVersion
-	if !isNil(o.QueryFragment) {
+	if !IsNil(o.QueryFragment) {
 		toSerialize["queryFragment"] = o.QueryFragment
 	}
 	return toSerialize, nil
@@ -257,5 +257,3 @@ func (v *NullableRequestLine) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

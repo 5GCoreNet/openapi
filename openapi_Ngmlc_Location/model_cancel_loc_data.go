@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &CancelLocData{}
 
 // CancelLocData Contains the input parameters in CancelLocation service operation
 type CancelLocData struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
-	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.  
+	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.
 	ExtGroupId *string `json:"extGroupId,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	IntGroupId *string `json:"intGroupId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	HgmlcCallBackUri string `json:"hgmlcCallBackUri"`
@@ -33,7 +33,7 @@ type CancelLocData struct {
 	LdrReference string `json:"ldrReference"`
 	// LMF identification.
 	LmfIdentification *string `json:"lmfIdentification,omitempty"`
-	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).  
+	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).
 	AmfId *string `json:"amfId,omitempty"`
 }
 
@@ -58,7 +58,7 @@ func NewCancelLocDataWithDefaults() *CancelLocData {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *CancelLocData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *CancelLocData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -76,7 +76,7 @@ func (o *CancelLocData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *CancelLocData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *CancelLocData) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *CancelLocData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *CancelLocData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -108,7 +108,7 @@ func (o *CancelLocData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *CancelLocData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -122,7 +122,7 @@ func (o *CancelLocData) SetSupi(v string) {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *CancelLocData) GetExtGroupId() string {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *CancelLocData) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -140,7 +140,7 @@ func (o *CancelLocData) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *CancelLocData) HasExtGroupId() bool {
-	if o != nil && !isNil(o.ExtGroupId) {
+	if o != nil && !IsNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *CancelLocData) SetExtGroupId(v string) {
 
 // GetIntGroupId returns the IntGroupId field value if set, zero value otherwise.
 func (o *CancelLocData) GetIntGroupId() string {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *CancelLocData) GetIntGroupId() string {
 // GetIntGroupIdOk returns a tuple with the IntGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetIntGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		return nil, false
 	}
 	return o.IntGroupId, true
@@ -172,7 +172,7 @@ func (o *CancelLocData) GetIntGroupIdOk() (*string, bool) {
 
 // HasIntGroupId returns a boolean if a field has been set.
 func (o *CancelLocData) HasIntGroupId() bool {
-	if o != nil && !isNil(o.IntGroupId) {
+	if o != nil && !IsNil(o.IntGroupId) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *CancelLocData) SetLdrReference(v string) {
 
 // GetLmfIdentification returns the LmfIdentification field value if set, zero value otherwise.
 func (o *CancelLocData) GetLmfIdentification() string {
-	if o == nil || isNil(o.LmfIdentification) {
+	if o == nil || IsNil(o.LmfIdentification) {
 		var ret string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *CancelLocData) GetLmfIdentification() string {
 // GetLmfIdentificationOk returns a tuple with the LmfIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetLmfIdentificationOk() (*string, bool) {
-	if o == nil || isNil(o.LmfIdentification) {
+	if o == nil || IsNil(o.LmfIdentification) {
 		return nil, false
 	}
 	return o.LmfIdentification, true
@@ -252,7 +252,7 @@ func (o *CancelLocData) GetLmfIdentificationOk() (*string, bool) {
 
 // HasLmfIdentification returns a boolean if a field has been set.
 func (o *CancelLocData) HasLmfIdentification() bool {
-	if o != nil && !isNil(o.LmfIdentification) {
+	if o != nil && !IsNil(o.LmfIdentification) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *CancelLocData) SetLmfIdentification(v string) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *CancelLocData) GetAmfId() string {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *CancelLocData) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetAmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -284,7 +284,7 @@ func (o *CancelLocData) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *CancelLocData) HasAmfId() bool {
-	if o != nil && !isNil(o.AmfId) {
+	if o != nil && !IsNil(o.AmfId) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *CancelLocData) SetAmfId(v string) {
 }
 
 func (o CancelLocData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -306,24 +306,24 @@ func (o CancelLocData) MarshalJSON() ([]byte, error) {
 
 func (o CancelLocData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.ExtGroupId) {
+	if !IsNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
-	if !isNil(o.IntGroupId) {
+	if !IsNil(o.IntGroupId) {
 		toSerialize["intGroupId"] = o.IntGroupId
 	}
 	toSerialize["hgmlcCallBackUri"] = o.HgmlcCallBackUri
 	toSerialize["ldrReference"] = o.LdrReference
-	if !isNil(o.LmfIdentification) {
+	if !IsNil(o.LmfIdentification) {
 		toSerialize["lmfIdentification"] = o.LmfIdentification
 	}
-	if !isNil(o.AmfId) {
+	if !IsNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
 	return toSerialize, nil
@@ -364,5 +364,3 @@ func (v *NullableCancelLocData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

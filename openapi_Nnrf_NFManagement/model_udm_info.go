@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &UdmInfo{}
 // UdmInfo Information of an UDM NF Instance
 type UdmInfo struct {
 	// Identifier of a group of NFs.
-	GroupId *string `json:"groupId,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	ExternalGroupIdentifiersRanges []IdentityRange `json:"externalGroupIdentifiersRanges,omitempty"`
-	RoutingIndicators []string `json:"routingIndicators,omitempty"`
+	GroupId                        *string                `json:"groupId,omitempty"`
+	SupiRanges                     []SupiRange            `json:"supiRanges,omitempty"`
+	GpsiRanges                     []IdentityRange        `json:"gpsiRanges,omitempty"`
+	ExternalGroupIdentifiersRanges []IdentityRange        `json:"externalGroupIdentifiersRanges,omitempty"`
+	RoutingIndicators              []string               `json:"routingIndicators,omitempty"`
 	InternalGroupIdentifiersRanges []InternalGroupIdRange `json:"internalGroupIdentifiersRanges,omitempty"`
-	SuciInfos []SuciInfo `json:"suciInfos,omitempty"`
+	SuciInfos                      []SuciInfo             `json:"suciInfos,omitempty"`
 }
 
 // NewUdmInfo instantiates a new UdmInfo object
@@ -48,7 +48,7 @@ func NewUdmInfoWithDefaults() *UdmInfo {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *UdmInfo) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *UdmInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -66,7 +66,7 @@ func (o *UdmInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *UdmInfo) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *UdmInfo) SetGroupId(v string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *UdmInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *UdmInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -98,7 +98,7 @@ func (o *UdmInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *UdmInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *UdmInfo) SetSupiRanges(v []SupiRange) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *UdmInfo) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *UdmInfo) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -130,7 +130,7 @@ func (o *UdmInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *UdmInfo) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *UdmInfo) SetGpsiRanges(v []IdentityRange) {
 
 // GetExternalGroupIdentifiersRanges returns the ExternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *UdmInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *UdmInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
 // GetExternalGroupIdentifiersRangesOk returns a tuple with the ExternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifiersRanges, true
@@ -162,7 +162,7 @@ func (o *UdmInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) 
 
 // HasExternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *UdmInfo) HasExternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.ExternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.ExternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *UdmInfo) SetExternalGroupIdentifiersRanges(v []IdentityRange) {
 
 // GetRoutingIndicators returns the RoutingIndicators field value if set, zero value otherwise.
 func (o *UdmInfo) GetRoutingIndicators() []string {
-	if o == nil || isNil(o.RoutingIndicators) {
+	if o == nil || IsNil(o.RoutingIndicators) {
 		var ret []string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *UdmInfo) GetRoutingIndicators() []string {
 // GetRoutingIndicatorsOk returns a tuple with the RoutingIndicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetRoutingIndicatorsOk() ([]string, bool) {
-	if o == nil || isNil(o.RoutingIndicators) {
+	if o == nil || IsNil(o.RoutingIndicators) {
 		return nil, false
 	}
 	return o.RoutingIndicators, true
@@ -194,7 +194,7 @@ func (o *UdmInfo) GetRoutingIndicatorsOk() ([]string, bool) {
 
 // HasRoutingIndicators returns a boolean if a field has been set.
 func (o *UdmInfo) HasRoutingIndicators() bool {
-	if o != nil && !isNil(o.RoutingIndicators) {
+	if o != nil && !IsNil(o.RoutingIndicators) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *UdmInfo) SetRoutingIndicators(v []string) {
 
 // GetInternalGroupIdentifiersRanges returns the InternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *UdmInfo) GetInternalGroupIdentifiersRanges() []InternalGroupIdRange {
-	if o == nil || isNil(o.InternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.InternalGroupIdentifiersRanges) {
 		var ret []InternalGroupIdRange
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *UdmInfo) GetInternalGroupIdentifiersRanges() []InternalGroupIdRange {
 // GetInternalGroupIdentifiersRangesOk returns a tuple with the InternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetInternalGroupIdentifiersRangesOk() ([]InternalGroupIdRange, bool) {
-	if o == nil || isNil(o.InternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.InternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.InternalGroupIdentifiersRanges, true
@@ -226,7 +226,7 @@ func (o *UdmInfo) GetInternalGroupIdentifiersRangesOk() ([]InternalGroupIdRange,
 
 // HasInternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *UdmInfo) HasInternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.InternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.InternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *UdmInfo) SetInternalGroupIdentifiersRanges(v []InternalGroupIdRange) {
 
 // GetSuciInfos returns the SuciInfos field value if set, zero value otherwise.
 func (o *UdmInfo) GetSuciInfos() []SuciInfo {
-	if o == nil || isNil(o.SuciInfos) {
+	if o == nil || IsNil(o.SuciInfos) {
 		var ret []SuciInfo
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *UdmInfo) GetSuciInfos() []SuciInfo {
 // GetSuciInfosOk returns a tuple with the SuciInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmInfo) GetSuciInfosOk() ([]SuciInfo, bool) {
-	if o == nil || isNil(o.SuciInfos) {
+	if o == nil || IsNil(o.SuciInfos) {
 		return nil, false
 	}
 	return o.SuciInfos, true
@@ -258,7 +258,7 @@ func (o *UdmInfo) GetSuciInfosOk() ([]SuciInfo, bool) {
 
 // HasSuciInfos returns a boolean if a field has been set.
 func (o *UdmInfo) HasSuciInfos() bool {
-	if o != nil && !isNil(o.SuciInfos) {
+	if o != nil && !IsNil(o.SuciInfos) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *UdmInfo) SetSuciInfos(v []SuciInfo) {
 }
 
 func (o UdmInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,25 +280,25 @@ func (o UdmInfo) MarshalJSON() ([]byte, error) {
 
 func (o UdmInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !isNil(o.ExternalGroupIdentifiersRanges) {
+	if !IsNil(o.ExternalGroupIdentifiersRanges) {
 		toSerialize["externalGroupIdentifiersRanges"] = o.ExternalGroupIdentifiersRanges
 	}
-	if !isNil(o.RoutingIndicators) {
+	if !IsNil(o.RoutingIndicators) {
 		toSerialize["routingIndicators"] = o.RoutingIndicators
 	}
-	if !isNil(o.InternalGroupIdentifiersRanges) {
+	if !IsNil(o.InternalGroupIdentifiersRanges) {
 		toSerialize["internalGroupIdentifiersRanges"] = o.InternalGroupIdentifiersRanges
 	}
-	if !isNil(o.SuciInfos) {
+	if !IsNil(o.SuciInfos) {
 		toSerialize["suciInfos"] = o.SuciInfos
 	}
 	return toSerialize, nil
@@ -339,5 +339,3 @@ func (v *NullableUdmInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

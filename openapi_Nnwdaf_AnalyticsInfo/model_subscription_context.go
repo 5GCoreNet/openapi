@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the SubscriptionContext type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SubscriptionContext{}
 
-// SubscriptionContext Context data related to a created subscription, to be included in notifications sent by NRF 
+// SubscriptionContext Context data related to a created subscription, to be included in notifications sent by NRF
 type SubscriptionContext struct {
-	SubscriptionId string `json:"subscriptionId"`
-	SubscrCond *SubscrCond `json:"subscrCond,omitempty"`
+	SubscriptionId string      `json:"subscriptionId"`
+	SubscrCond     *SubscrCond `json:"subscrCond,omitempty"`
 }
 
 // NewSubscriptionContext instantiates a new SubscriptionContext object
@@ -67,7 +67,7 @@ func (o *SubscriptionContext) SetSubscriptionId(v string) {
 
 // GetSubscrCond returns the SubscrCond field value if set, zero value otherwise.
 func (o *SubscriptionContext) GetSubscrCond() SubscrCond {
-	if o == nil || isNil(o.SubscrCond) {
+	if o == nil || IsNil(o.SubscrCond) {
 		var ret SubscrCond
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SubscriptionContext) GetSubscrCond() SubscrCond {
 // GetSubscrCondOk returns a tuple with the SubscrCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionContext) GetSubscrCondOk() (*SubscrCond, bool) {
-	if o == nil || isNil(o.SubscrCond) {
+	if o == nil || IsNil(o.SubscrCond) {
 		return nil, false
 	}
 	return o.SubscrCond, true
@@ -85,7 +85,7 @@ func (o *SubscriptionContext) GetSubscrCondOk() (*SubscrCond, bool) {
 
 // HasSubscrCond returns a boolean if a field has been set.
 func (o *SubscriptionContext) HasSubscrCond() bool {
-	if o != nil && !isNil(o.SubscrCond) {
+	if o != nil && !IsNil(o.SubscrCond) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SubscriptionContext) SetSubscrCond(v SubscrCond) {
 }
 
 func (o SubscriptionContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SubscriptionContext) MarshalJSON() ([]byte, error) {
 func (o SubscriptionContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !isNil(o.SubscrCond) {
+	if !IsNil(o.SubscrCond) {
 		toSerialize["subscrCond"] = o.SubscrCond
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSubscriptionContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

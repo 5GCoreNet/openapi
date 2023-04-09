@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &CellGlobalId{}
 // CellGlobalId Contains a Cell Global Identification as defined in 3GPP TS 23.003, clause 4.3.1.
 type CellGlobalId struct {
 	PlmnId PlmnId `json:"plmnId"`
-	Lac string `json:"lac"`
+	Lac    string `json:"lac"`
 	CellId string `json:"cellId"`
 }
 
@@ -117,7 +117,7 @@ func (o *CellGlobalId) SetCellId(v string) {
 }
 
 func (o CellGlobalId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableCellGlobalId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

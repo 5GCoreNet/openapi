@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // UEAuthenticationCtx5gAuthData - struct for UEAuthenticationCtx5gAuthData
 type UEAuthenticationCtx5gAuthData struct {
 	Av5gAka *Av5gAka
-	String *string
+	String  *string
 }
 
 // Av5gAkaAsUEAuthenticationCtx5gAuthData is a convenience function that returns Av5gAka wrapped in UEAuthenticationCtx5gAuthData
@@ -34,7 +34,6 @@ func StringAsUEAuthenticationCtx5gAuthData(v *string) UEAuthenticationCtx5gAuthD
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UEAuthenticationCtx5gAuthData) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src UEAuthenticationCtx5gAuthData) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UEAuthenticationCtx5gAuthData) GetActualInstance() (interface{}) {
+func (obj *UEAuthenticationCtx5gAuthData) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableUEAuthenticationCtx5gAuthData) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

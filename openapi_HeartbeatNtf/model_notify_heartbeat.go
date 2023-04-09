@@ -19,11 +19,7 @@ var _ MappedNullable = &NotifyHeartbeat{}
 
 // NotifyHeartbeat struct for NotifyHeartbeat
 type NotifyHeartbeat struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
+	NotificationHeader
 	HeartbeatNtfPeriod *int32 `json:"heartbeatNtfPeriod,omitempty"`
 }
 
@@ -49,129 +45,9 @@ func NewNotifyHeartbeatWithDefaults() *NotifyHeartbeat {
 	return &this
 }
 
-// GetHref returns the Href field value
-func (o *NotifyHeartbeat) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyHeartbeat) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyHeartbeat) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyHeartbeat) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyHeartbeat) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyHeartbeat) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyHeartbeat) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyHeartbeat) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyHeartbeat) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyHeartbeat) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyHeartbeat) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyHeartbeat) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyHeartbeat) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyHeartbeat) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyHeartbeat) SetSystemDN(v string) {
-	o.SystemDN = v
-}
-
 // GetHeartbeatNtfPeriod returns the HeartbeatNtfPeriod field value if set, zero value otherwise.
 func (o *NotifyHeartbeat) GetHeartbeatNtfPeriod() int32 {
-	if o == nil || isNil(o.HeartbeatNtfPeriod) {
+	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +57,7 @@ func (o *NotifyHeartbeat) GetHeartbeatNtfPeriod() int32 {
 // GetHeartbeatNtfPeriodOk returns a tuple with the HeartbeatNtfPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyHeartbeat) GetHeartbeatNtfPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.HeartbeatNtfPeriod) {
+	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
 		return nil, false
 	}
 	return o.HeartbeatNtfPeriod, true
@@ -189,7 +65,7 @@ func (o *NotifyHeartbeat) GetHeartbeatNtfPeriodOk() (*int32, bool) {
 
 // HasHeartbeatNtfPeriod returns a boolean if a field has been set.
 func (o *NotifyHeartbeat) HasHeartbeatNtfPeriod() bool {
-	if o != nil && !isNil(o.HeartbeatNtfPeriod) {
+	if o != nil && !IsNil(o.HeartbeatNtfPeriod) {
 		return true
 	}
 
@@ -202,7 +78,7 @@ func (o *NotifyHeartbeat) SetHeartbeatNtfPeriod(v int32) {
 }
 
 func (o NotifyHeartbeat) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -211,12 +87,15 @@ func (o NotifyHeartbeat) MarshalJSON() ([]byte, error) {
 
 func (o NotifyHeartbeat) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
-	if !isNil(o.HeartbeatNtfPeriod) {
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	if !IsNil(o.HeartbeatNtfPeriod) {
 		toSerialize["heartbeatNtfPeriod"] = o.HeartbeatNtfPeriod
 	}
 	return toSerialize, nil
@@ -257,5 +136,3 @@ func (v *NullableNotifyHeartbeat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

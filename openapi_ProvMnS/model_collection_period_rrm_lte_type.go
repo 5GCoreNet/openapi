@@ -20,13 +20,13 @@ type CollectionPeriodRrmLteType string
 
 // List of collectionPeriodRrmLte-Type
 const (
-	_100MS CollectionPeriodRrmLteType = "100ms"
-	_1000MS CollectionPeriodRrmLteType = "1000ms"
-	_1024MS CollectionPeriodRrmLteType = "1024ms"
-	_1280MS CollectionPeriodRrmLteType = "1280ms"
-	_2048MS CollectionPeriodRrmLteType = "2048ms"
-	_2560MS CollectionPeriodRrmLteType = "2560ms"
-	_5120MS CollectionPeriodRrmLteType = "5120ms"
+	_100MS   CollectionPeriodRrmLteType = "100ms"
+	_1000MS  CollectionPeriodRrmLteType = "1000ms"
+	_1024MS  CollectionPeriodRrmLteType = "1024ms"
+	_1280MS  CollectionPeriodRrmLteType = "1280ms"
+	_2048MS  CollectionPeriodRrmLteType = "2048ms"
+	_2560MS  CollectionPeriodRrmLteType = "2560ms"
+	_5120MS  CollectionPeriodRrmLteType = "5120ms"
 	_10000MS CollectionPeriodRrmLteType = "10000ms"
 	_10240MS CollectionPeriodRrmLteType = "10240ms"
 	_60000MS CollectionPeriodRrmLteType = "60000ms"
@@ -124,4 +124,3 @@ func (v *NullableCollectionPeriodRrmLteType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Nhss_gbaUEAU
 
-Nhss UE Authentication Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Authentication Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the AuthenticationInfoResult type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AuthenticationInfoResult{}
 
-// AuthenticationInfoResult Contains authentication information returned in the authentication response message (e.g. authentication vector, digest authentication parameters) 
+// AuthenticationInfoResult Contains authentication information returned in the authentication response message (e.g. authentication vector, digest authentication parameters)
 type AuthenticationInfoResult struct {
 	// IMS Private Identity of the UE
-	Impi *string `json:"impi,omitempty"`
-	Var3gAkaAv *Model3GAkaAv `json:"3gAkaAv,omitempty"`
+	Impi       *string               `json:"impi,omitempty"`
+	Var3gAkaAv *Model3GAkaAv         `json:"3gAkaAv,omitempty"`
 	DigestAuth *DigestAuthentication `json:"digestAuth,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewAuthenticationInfoResultWithDefaults() *AuthenticationInfoResult {
 
 // GetImpi returns the Impi field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetImpi() string {
-	if o == nil || isNil(o.Impi) {
+	if o == nil || IsNil(o.Impi) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AuthenticationInfoResult) GetImpi() string {
 // GetImpiOk returns a tuple with the Impi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetImpiOk() (*string, bool) {
-	if o == nil || isNil(o.Impi) {
+	if o == nil || IsNil(o.Impi) {
 		return nil, false
 	}
 	return o.Impi, true
@@ -64,7 +64,7 @@ func (o *AuthenticationInfoResult) GetImpiOk() (*string, bool) {
 
 // HasImpi returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasImpi() bool {
-	if o != nil && !isNil(o.Impi) {
+	if o != nil && !IsNil(o.Impi) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AuthenticationInfoResult) SetImpi(v string) {
 
 // GetVar3gAkaAv returns the Var3gAkaAv field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetVar3gAkaAv() Model3GAkaAv {
-	if o == nil || isNil(o.Var3gAkaAv) {
+	if o == nil || IsNil(o.Var3gAkaAv) {
 		var ret Model3GAkaAv
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AuthenticationInfoResult) GetVar3gAkaAv() Model3GAkaAv {
 // GetVar3gAkaAvOk returns a tuple with the Var3gAkaAv field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetVar3gAkaAvOk() (*Model3GAkaAv, bool) {
-	if o == nil || isNil(o.Var3gAkaAv) {
+	if o == nil || IsNil(o.Var3gAkaAv) {
 		return nil, false
 	}
 	return o.Var3gAkaAv, true
@@ -96,7 +96,7 @@ func (o *AuthenticationInfoResult) GetVar3gAkaAvOk() (*Model3GAkaAv, bool) {
 
 // HasVar3gAkaAv returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasVar3gAkaAv() bool {
-	if o != nil && !isNil(o.Var3gAkaAv) {
+	if o != nil && !IsNil(o.Var3gAkaAv) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AuthenticationInfoResult) SetVar3gAkaAv(v Model3GAkaAv) {
 
 // GetDigestAuth returns the DigestAuth field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetDigestAuth() DigestAuthentication {
-	if o == nil || isNil(o.DigestAuth) {
+	if o == nil || IsNil(o.DigestAuth) {
 		var ret DigestAuthentication
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AuthenticationInfoResult) GetDigestAuth() DigestAuthentication {
 // GetDigestAuthOk returns a tuple with the DigestAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetDigestAuthOk() (*DigestAuthentication, bool) {
-	if o == nil || isNil(o.DigestAuth) {
+	if o == nil || IsNil(o.DigestAuth) {
 		return nil, false
 	}
 	return o.DigestAuth, true
@@ -128,7 +128,7 @@ func (o *AuthenticationInfoResult) GetDigestAuthOk() (*DigestAuthentication, boo
 
 // HasDigestAuth returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasDigestAuth() bool {
-	if o != nil && !isNil(o.DigestAuth) {
+	if o != nil && !IsNil(o.DigestAuth) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AuthenticationInfoResult) SetDigestAuth(v DigestAuthentication) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AuthenticationInfoResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -160,7 +160,7 @@ func (o *AuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *AuthenticationInfoResult) SetSupportedFeatures(v string) {
 }
 
 func (o AuthenticationInfoResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o AuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 
 func (o AuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Impi) {
+	if !IsNil(o.Impi) {
 		toSerialize["impi"] = o.Impi
 	}
-	if !isNil(o.Var3gAkaAv) {
+	if !IsNil(o.Var3gAkaAv) {
 		toSerialize["3gAkaAv"] = o.Var3gAkaAv
 	}
-	if !isNil(o.DigestAuth) {
+	if !IsNil(o.DigestAuth) {
 		toSerialize["digestAuth"] = o.DigestAuth
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableAuthenticationInfoResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

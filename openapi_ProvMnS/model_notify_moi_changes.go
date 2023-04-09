@@ -19,11 +19,7 @@ var _ MappedNullable = &NotifyMoiChanges{}
 
 // NotifyMoiChanges struct for NotifyMoiChanges
 type NotifyMoiChanges struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
+	NotificationHeader
 	MoiChanges []MoiChange `json:"moiChanges"`
 }
 
@@ -31,7 +27,7 @@ type NotifyMoiChanges struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyMoiChanges(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, moiChanges []MoiChange) *NotifyMoiChanges {
+func NewNotifyMoiChanges(moiChanges []MoiChange, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyMoiChanges {
 	this := NotifyMoiChanges{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -48,126 +44,6 @@ func NewNotifyMoiChanges(href string, notificationId int32, notificationType Not
 func NewNotifyMoiChangesWithDefaults() *NotifyMoiChanges {
 	this := NotifyMoiChanges{}
 	return &this
-}
-
-// GetHref returns the Href field value
-func (o *NotifyMoiChanges) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiChanges) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyMoiChanges) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyMoiChanges) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiChanges) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyMoiChanges) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyMoiChanges) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiChanges) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyMoiChanges) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyMoiChanges) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiChanges) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyMoiChanges) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyMoiChanges) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiChanges) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyMoiChanges) SetSystemDN(v string) {
-	o.SystemDN = v
 }
 
 // GetMoiChanges returns the MoiChanges field value
@@ -195,7 +71,7 @@ func (o *NotifyMoiChanges) SetMoiChanges(v []MoiChange) {
 }
 
 func (o NotifyMoiChanges) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,11 +80,14 @@ func (o NotifyMoiChanges) MarshalJSON() ([]byte, error) {
 
 func (o NotifyMoiChanges) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
 	toSerialize["moiChanges"] = o.MoiChanges
 	return toSerialize, nil
 }
@@ -248,5 +127,3 @@ func (v *NullableNotifyMoiChanges) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

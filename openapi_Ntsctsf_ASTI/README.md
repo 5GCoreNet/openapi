@@ -96,7 +96,6 @@ Class | Method | HTTP request | Description
  - [AsTimeDistributionParam](docs/AsTimeDistributionParam.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)

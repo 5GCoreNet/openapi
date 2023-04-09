@@ -1,7 +1,7 @@
 /*
 3gpp-pfd-management
 
-API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &PfdReport{}
 // PfdReport Represents a PFD report indicating the external application identifier(s) which PFD(s) are not added or modified successfully and the corresponding failure cause(s).
 type PfdReport struct {
 	// Identifies the external application identifier(s) which PFD(s) are not added or modified successfully
-	ExternalAppIds []string `json:"externalAppIds"`
-	FailureCode FailureCode `json:"failureCode"`
+	ExternalAppIds []string    `json:"externalAppIds"`
+	FailureCode    FailureCode `json:"failureCode"`
 	// Unsigned integer identifying a period of time in units of seconds.
-	CachingTime *int32 `json:"cachingTime,omitempty"`
+	CachingTime  *int32                 `json:"cachingTime,omitempty"`
 	LocationArea *UserPlaneLocationArea `json:"locationArea,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *PfdReport) SetFailureCode(v FailureCode) {
 
 // GetCachingTime returns the CachingTime field value if set, zero value otherwise.
 func (o *PfdReport) GetCachingTime() int32 {
-	if o == nil || isNil(o.CachingTime) {
+	if o == nil || IsNil(o.CachingTime) {
 		var ret int32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PfdReport) GetCachingTime() int32 {
 // GetCachingTimeOk returns a tuple with the CachingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdReport) GetCachingTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.CachingTime) {
+	if o == nil || IsNil(o.CachingTime) {
 		return nil, false
 	}
 	return o.CachingTime, true
@@ -114,7 +114,7 @@ func (o *PfdReport) GetCachingTimeOk() (*int32, bool) {
 
 // HasCachingTime returns a boolean if a field has been set.
 func (o *PfdReport) HasCachingTime() bool {
-	if o != nil && !isNil(o.CachingTime) {
+	if o != nil && !IsNil(o.CachingTime) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *PfdReport) SetCachingTime(v int32) {
 
 // GetLocationArea returns the LocationArea field value if set, zero value otherwise.
 func (o *PfdReport) GetLocationArea() UserPlaneLocationArea {
-	if o == nil || isNil(o.LocationArea) {
+	if o == nil || IsNil(o.LocationArea) {
 		var ret UserPlaneLocationArea
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *PfdReport) GetLocationArea() UserPlaneLocationArea {
 // GetLocationAreaOk returns a tuple with the LocationArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdReport) GetLocationAreaOk() (*UserPlaneLocationArea, bool) {
-	if o == nil || isNil(o.LocationArea) {
+	if o == nil || IsNil(o.LocationArea) {
 		return nil, false
 	}
 	return o.LocationArea, true
@@ -146,7 +146,7 @@ func (o *PfdReport) GetLocationAreaOk() (*UserPlaneLocationArea, bool) {
 
 // HasLocationArea returns a boolean if a field has been set.
 func (o *PfdReport) HasLocationArea() bool {
-	if o != nil && !isNil(o.LocationArea) {
+	if o != nil && !IsNil(o.LocationArea) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *PfdReport) SetLocationArea(v UserPlaneLocationArea) {
 }
 
 func (o PfdReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o PfdReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["externalAppIds"] = o.ExternalAppIds
 	toSerialize["failureCode"] = o.FailureCode
-	if !isNil(o.CachingTime) {
+	if !IsNil(o.CachingTime) {
 		toSerialize["cachingTime"] = o.CachingTime
 	}
-	if !isNil(o.LocationArea) {
+	if !IsNil(o.LocationArea) {
 		toSerialize["locationArea"] = o.LocationArea
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullablePfdReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

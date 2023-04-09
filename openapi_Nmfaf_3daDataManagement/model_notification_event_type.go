@@ -1,7 +1,7 @@
 /*
 Nmfaf_3daDataManagement
 
-MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // NotificationEventType Types of events sent in notifications from NRF to subscribed NF Instances
 type NotificationEventType struct {
-	NotificationEventTypeAnyOf *NotificationEventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotificationEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NotificationEventTypeAnyOf
-	err = json.Unmarshal(data, &dst.NotificationEventTypeAnyOf);
-	if err == nil {
-		jsonNotificationEventTypeAnyOf, _ := json.Marshal(dst.NotificationEventTypeAnyOf)
-		if string(jsonNotificationEventTypeAnyOf) == "{}" { // empty struct
-			dst.NotificationEventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.NotificationEventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.NotificationEventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NotificationEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotificationEventType) MarshalJSON() ([]byte, error) {
-	if src.NotificationEventTypeAnyOf != nil {
-		return json.Marshal(&src.NotificationEventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNotificationEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

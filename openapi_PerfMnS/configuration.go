@@ -62,9 +62,9 @@ type ServerVariable struct {
 
 // ServerConfiguration stores the information about a server
 type ServerConfiguration struct {
-	URL string
+	URL         string
 	Description string
-	Variables map[string]ServerVariable
+	Variables   map[string]ServerVariable
 }
 
 // ServerConfigurations stores multiple ServerConfiguration items
@@ -85,23 +85,22 @@ type Configuration struct {
 // NewConfiguration returns a new Configuration object
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
-		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/1.0.0/go",
-		Debug:            false,
-		Servers:          ServerConfigurations{
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "OpenAPI-Generator/1.0.0/go",
+		Debug:         false,
+		Servers: ServerConfigurations{
 			{
-				URL: "{root}",
+				URL:         "{root}",
 				Description: "No description provided",
 				Variables: map[string]ServerVariable{
 					"root": ServerVariable{
-						Description: "The open API server of the performance threshold monitoring service is located in the consumer side, see monitoringNotifTarget attribute of the IOC ThresholdMonitor defined in 3GPP TS 28.622 [11]. ",
+						Description:  "The open API server of the performance threshold monitoring service is located in the consumer side, see monitoringNotifTarget attribute of the IOC ThresholdMonitor defined in 3GPP TS 28.622 [11]. ",
 						DefaultValue: "http://example.com/3GPPManagement",
 					},
 				},
 			},
 		},
-		OperationServers: map[string]ServerConfigurations{
-		},
+		OperationServers: map[string]ServerConfigurations{},
 	}
 	return cfg
 }

@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the SmPolicyControl type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SmPolicyControl{}
 
-// SmPolicyControl Contains the parameters used to request the SM policies and the SM policies authorized by  the PCF. 
+// SmPolicyControl Contains the parameters used to request the SM policies and the SM policies authorized by  the PCF.
 type SmPolicyControl struct {
 	Context SmPolicyContextData `json:"context"`
-	Policy SmPolicyDecision `json:"policy"`
+	Policy  SmPolicyDecision    `json:"policy"`
 }
 
 // NewSmPolicyControl instantiates a new SmPolicyControl object
@@ -91,7 +91,7 @@ func (o *SmPolicyControl) SetPolicy(v SmPolicyDecision) {
 }
 
 func (o SmPolicyControl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSmPolicyControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

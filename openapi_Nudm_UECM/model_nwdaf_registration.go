@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,17 +20,17 @@ var _ MappedNullable = &NwdafRegistration{}
 
 // NwdafRegistration The complete set of information relevant to an NWDAF serving the UE
 type NwdafRegistration struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NwdafInstanceId string `json:"nwdafInstanceId"`
-	AnalyticsIds []EventId `json:"analyticsIds"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NwdafInstanceId string    `json:"nwdafInstanceId"`
+	AnalyticsIds    []EventId `json:"analyticsIds"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	NwdafSetId *string `json:"nwdafSetId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	RegistrationTime *time.Time `json:"registrationTime,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
+	RegistrationTime *time.Time   `json:"registrationTime,omitempty"`
+	ContextInfo      *ContextInfo `json:"contextInfo,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string  `json:"supportedFeatures,omitempty"`
+	ResetIds          []string `json:"resetIds,omitempty"`
 }
 
 // NewNwdafRegistration instantiates a new NwdafRegistration object
@@ -102,7 +102,7 @@ func (o *NwdafRegistration) SetAnalyticsIds(v []EventId) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetNwdafSetId() string {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NwdafRegistration) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -120,7 +120,7 @@ func (o *NwdafRegistration) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasNwdafSetId() bool {
-	if o != nil && !isNil(o.NwdafSetId) {
+	if o != nil && !IsNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *NwdafRegistration) SetNwdafSetId(v string) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetRegistrationTime() time.Time {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *NwdafRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -152,7 +152,7 @@ func (o *NwdafRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasRegistrationTime() bool {
-	if o != nil && !isNil(o.RegistrationTime) {
+	if o != nil && !IsNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *NwdafRegistration) SetRegistrationTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *NwdafRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -184,7 +184,7 @@ func (o *NwdafRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *NwdafRegistration) SetContextInfo(v ContextInfo) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *NwdafRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -216,7 +216,7 @@ func (o *NwdafRegistration) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *NwdafRegistration) SetSupportedFeatures(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *NwdafRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -248,7 +248,7 @@ func (o *NwdafRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *NwdafRegistration) SetResetIds(v []string) {
 }
 
 func (o NwdafRegistration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -272,19 +272,19 @@ func (o NwdafRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwdafInstanceId"] = o.NwdafInstanceId
 	toSerialize["analyticsIds"] = o.AnalyticsIds
-	if !isNil(o.NwdafSetId) {
+	if !IsNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
-	if !isNil(o.RegistrationTime) {
+	if !IsNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -325,5 +325,3 @@ func (v *NullableNwdafRegistration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

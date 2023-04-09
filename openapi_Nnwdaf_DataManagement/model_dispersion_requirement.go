@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &DispersionRequirement{}
 
 // DispersionRequirement Represents the dispersion analytics requirements.
 type DispersionRequirement struct {
-	DisperType DispersionType `json:"disperType"`
-	ClassCriters []ClassCriterion `json:"classCriters,omitempty"`
-	RankCriters []RankingCriterion `json:"rankCriters,omitempty"`
+	DisperType      DispersionType               `json:"disperType"`
+	ClassCriters    []ClassCriterion             `json:"classCriters,omitempty"`
+	RankCriters     []RankingCriterion           `json:"rankCriters,omitempty"`
 	DispOrderCriter *DispersionOrderingCriterion `json:"dispOrderCriter,omitempty"`
-	Order *MatchingDirection `json:"order,omitempty"`
+	Order           *MatchingDirection           `json:"order,omitempty"`
 }
 
 // NewDispersionRequirement instantiates a new DispersionRequirement object
@@ -70,7 +70,7 @@ func (o *DispersionRequirement) SetDisperType(v DispersionType) {
 
 // GetClassCriters returns the ClassCriters field value if set, zero value otherwise.
 func (o *DispersionRequirement) GetClassCriters() []ClassCriterion {
-	if o == nil || isNil(o.ClassCriters) {
+	if o == nil || IsNil(o.ClassCriters) {
 		var ret []ClassCriterion
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *DispersionRequirement) GetClassCriters() []ClassCriterion {
 // GetClassCritersOk returns a tuple with the ClassCriters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionRequirement) GetClassCritersOk() ([]ClassCriterion, bool) {
-	if o == nil || isNil(o.ClassCriters) {
+	if o == nil || IsNil(o.ClassCriters) {
 		return nil, false
 	}
 	return o.ClassCriters, true
@@ -88,7 +88,7 @@ func (o *DispersionRequirement) GetClassCritersOk() ([]ClassCriterion, bool) {
 
 // HasClassCriters returns a boolean if a field has been set.
 func (o *DispersionRequirement) HasClassCriters() bool {
-	if o != nil && !isNil(o.ClassCriters) {
+	if o != nil && !IsNil(o.ClassCriters) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *DispersionRequirement) SetClassCriters(v []ClassCriterion) {
 
 // GetRankCriters returns the RankCriters field value if set, zero value otherwise.
 func (o *DispersionRequirement) GetRankCriters() []RankingCriterion {
-	if o == nil || isNil(o.RankCriters) {
+	if o == nil || IsNil(o.RankCriters) {
 		var ret []RankingCriterion
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *DispersionRequirement) GetRankCriters() []RankingCriterion {
 // GetRankCritersOk returns a tuple with the RankCriters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionRequirement) GetRankCritersOk() ([]RankingCriterion, bool) {
-	if o == nil || isNil(o.RankCriters) {
+	if o == nil || IsNil(o.RankCriters) {
 		return nil, false
 	}
 	return o.RankCriters, true
@@ -120,7 +120,7 @@ func (o *DispersionRequirement) GetRankCritersOk() ([]RankingCriterion, bool) {
 
 // HasRankCriters returns a boolean if a field has been set.
 func (o *DispersionRequirement) HasRankCriters() bool {
-	if o != nil && !isNil(o.RankCriters) {
+	if o != nil && !IsNil(o.RankCriters) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *DispersionRequirement) SetRankCriters(v []RankingCriterion) {
 
 // GetDispOrderCriter returns the DispOrderCriter field value if set, zero value otherwise.
 func (o *DispersionRequirement) GetDispOrderCriter() DispersionOrderingCriterion {
-	if o == nil || isNil(o.DispOrderCriter) {
+	if o == nil || IsNil(o.DispOrderCriter) {
 		var ret DispersionOrderingCriterion
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *DispersionRequirement) GetDispOrderCriter() DispersionOrderingCriterion
 // GetDispOrderCriterOk returns a tuple with the DispOrderCriter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionRequirement) GetDispOrderCriterOk() (*DispersionOrderingCriterion, bool) {
-	if o == nil || isNil(o.DispOrderCriter) {
+	if o == nil || IsNil(o.DispOrderCriter) {
 		return nil, false
 	}
 	return o.DispOrderCriter, true
@@ -152,7 +152,7 @@ func (o *DispersionRequirement) GetDispOrderCriterOk() (*DispersionOrderingCrite
 
 // HasDispOrderCriter returns a boolean if a field has been set.
 func (o *DispersionRequirement) HasDispOrderCriter() bool {
-	if o != nil && !isNil(o.DispOrderCriter) {
+	if o != nil && !IsNil(o.DispOrderCriter) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *DispersionRequirement) SetDispOrderCriter(v DispersionOrderingCriterion
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *DispersionRequirement) GetOrder() MatchingDirection {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *DispersionRequirement) GetOrder() MatchingDirection {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionRequirement) GetOrderOk() (*MatchingDirection, bool) {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -184,7 +184,7 @@ func (o *DispersionRequirement) GetOrderOk() (*MatchingDirection, bool) {
 
 // HasOrder returns a boolean if a field has been set.
 func (o *DispersionRequirement) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *DispersionRequirement) SetOrder(v MatchingDirection) {
 }
 
 func (o DispersionRequirement) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,16 +207,16 @@ func (o DispersionRequirement) MarshalJSON() ([]byte, error) {
 func (o DispersionRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["disperType"] = o.DisperType
-	if !isNil(o.ClassCriters) {
+	if !IsNil(o.ClassCriters) {
 		toSerialize["classCriters"] = o.ClassCriters
 	}
-	if !isNil(o.RankCriters) {
+	if !IsNil(o.RankCriters) {
 		toSerialize["rankCriters"] = o.RankCriters
 	}
-	if !isNil(o.DispOrderCriter) {
+	if !IsNil(o.DispOrderCriter) {
 		toSerialize["dispOrderCriter"] = o.DispOrderCriter
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	return toSerialize, nil
@@ -257,5 +257,3 @@ func (v *NullableDispersionRequirement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

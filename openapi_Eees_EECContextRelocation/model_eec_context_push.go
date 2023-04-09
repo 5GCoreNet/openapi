@@ -1,7 +1,7 @@
 /*
 EES EEC Context Relocation API
 
-API for EEC Context Relocation.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EEC Context Relocation.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &EECContextPush{}
 // EECContextPush Represents the EEC context push request data.
 type EECContextPush struct {
 	// Identifier of the S-EES pushing the EEC context information.
-	EesId string `json:"eesId"`
+	EesId   string     `json:"eesId"`
 	EecCntx EECContext `json:"eecCntx"`
 }
 
@@ -92,7 +92,7 @@ func (o *EECContextPush) SetEecCntx(v EECContext) {
 }
 
 func (o EECContextPush) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableEECContextPush) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // Delete5GVnGroupApiService Delete5GVnGroupApi service
 type Delete5GVnGroupApiService service
 
 type ApiDelete5GVnGroupRequest struct {
-	ctx context.Context
-	ApiService *Delete5GVnGroupApiService
+	ctx             context.Context
+	ApiService      *Delete5GVnGroupApiService
 	externalGroupId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDelete5GVnGroupRequest) Execute() (*http.Response, error) {
 /*
 Delete5GVnGroup Deletes the 5GVnGroup
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @return ApiDelete5GVnGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@return ApiDelete5GVnGroupRequest
 */
 func (a *Delete5GVnGroupApiService) Delete5GVnGroup(ctx context.Context, externalGroupId string) ApiDelete5GVnGroupRequest {
 	return ApiDelete5GVnGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *Delete5GVnGroupApiService) Delete5GVnGroup(ctx context.Context, externa
 // Execute executes the request
 func (a *Delete5GVnGroupApiService) Delete5GVnGroupExecute(r ApiDelete5GVnGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Delete5GVnGroupApiService.Delete5GVnGroup")
@@ -95,9 +94,9 @@ func (a *Delete5GVnGroupApiService) Delete5GVnGroupExecute(r ApiDelete5GVnGroupR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

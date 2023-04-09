@@ -1,7 +1,7 @@
 /*
 Nsmf_NIDD
 
-SMF NIDD Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF NIDD Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &DeliverRequest{}
 
 // DeliverRequest struct for DeliverRequest
 type DeliverRequest struct {
-	JsonData *DeliverReqData `json:"jsonData,omitempty"`
-	BinaryMtData *os.File `json:"binaryMtData,omitempty"`
+	JsonData     *DeliverReqData `json:"jsonData,omitempty"`
+	BinaryMtData **os.File       `json:"binaryMtData,omitempty"`
 }
 
 // NewDeliverRequest instantiates a new DeliverRequest object
@@ -43,7 +43,7 @@ func NewDeliverRequestWithDefaults() *DeliverRequest {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *DeliverRequest) GetJsonData() DeliverReqData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret DeliverReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DeliverRequest) GetJsonData() DeliverReqData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeliverRequest) GetJsonDataOk() (*DeliverReqData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *DeliverRequest) GetJsonDataOk() (*DeliverReqData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *DeliverRequest) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *DeliverRequest) SetJsonData(v DeliverReqData) {
 }
 
 // GetBinaryMtData returns the BinaryMtData field value if set, zero value otherwise.
-func (o *DeliverRequest) GetBinaryMtData() os.File {
-	if o == nil || isNil(o.BinaryMtData) {
-		var ret os.File
+func (o *DeliverRequest) GetBinaryMtData() *os.File {
+	if o == nil || IsNil(o.BinaryMtData) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryMtData
@@ -84,8 +84,8 @@ func (o *DeliverRequest) GetBinaryMtData() os.File {
 
 // GetBinaryMtDataOk returns a tuple with the BinaryMtData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeliverRequest) GetBinaryMtDataOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryMtData) {
+func (o *DeliverRequest) GetBinaryMtDataOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryMtData) {
 		return nil, false
 	}
 	return o.BinaryMtData, true
@@ -93,20 +93,20 @@ func (o *DeliverRequest) GetBinaryMtDataOk() (*os.File, bool) {
 
 // HasBinaryMtData returns a boolean if a field has been set.
 func (o *DeliverRequest) HasBinaryMtData() bool {
-	if o != nil && !isNil(o.BinaryMtData) {
+	if o != nil && !IsNil(o.BinaryMtData) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryMtData gets a reference to the given os.File and assigns it to the BinaryMtData field.
-func (o *DeliverRequest) SetBinaryMtData(v os.File) {
+// SetBinaryMtData gets a reference to the given *os.File and assigns it to the BinaryMtData field.
+func (o *DeliverRequest) SetBinaryMtData(v *os.File) {
 	o.BinaryMtData = &v
 }
 
 func (o DeliverRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o DeliverRequest) MarshalJSON() ([]byte, error) {
 
 func (o DeliverRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryMtData) {
+	if !IsNil(o.BinaryMtData) {
 		toSerialize["binaryMtData"] = o.BinaryMtData
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableDeliverRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

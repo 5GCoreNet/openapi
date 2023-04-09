@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &StateOfConfiguration{}
 
 // StateOfConfiguration Contains the state of the time synchronization configuration.
 type StateOfConfiguration struct {
-	// When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for NW-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of configuration for NW-TT port is inactive. Default value is false. 
+	// When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for NW-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of configuration for NW-TT port is inactive. Default value is false.
 	StateOfNwtt *bool `json:"stateOfNwtt,omitempty"`
-	// Contains the PTP port states of the DS-TT(s). 
+	// Contains the PTP port states of the DS-TT(s).
 	StateOfDstts []StateOfDstt `json:"stateOfDstts,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewStateOfConfigurationWithDefaults() *StateOfConfiguration {
 
 // GetStateOfNwtt returns the StateOfNwtt field value if set, zero value otherwise.
 func (o *StateOfConfiguration) GetStateOfNwtt() bool {
-	if o == nil || isNil(o.StateOfNwtt) {
+	if o == nil || IsNil(o.StateOfNwtt) {
 		var ret bool
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *StateOfConfiguration) GetStateOfNwtt() bool {
 // GetStateOfNwttOk returns a tuple with the StateOfNwtt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StateOfConfiguration) GetStateOfNwttOk() (*bool, bool) {
-	if o == nil || isNil(o.StateOfNwtt) {
+	if o == nil || IsNil(o.StateOfNwtt) {
 		return nil, false
 	}
 	return o.StateOfNwtt, true
@@ -62,7 +62,7 @@ func (o *StateOfConfiguration) GetStateOfNwttOk() (*bool, bool) {
 
 // HasStateOfNwtt returns a boolean if a field has been set.
 func (o *StateOfConfiguration) HasStateOfNwtt() bool {
-	if o != nil && !isNil(o.StateOfNwtt) {
+	if o != nil && !IsNil(o.StateOfNwtt) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *StateOfConfiguration) SetStateOfNwtt(v bool) {
 
 // GetStateOfDstts returns the StateOfDstts field value if set, zero value otherwise.
 func (o *StateOfConfiguration) GetStateOfDstts() []StateOfDstt {
-	if o == nil || isNil(o.StateOfDstts) {
+	if o == nil || IsNil(o.StateOfDstts) {
 		var ret []StateOfDstt
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *StateOfConfiguration) GetStateOfDstts() []StateOfDstt {
 // GetStateOfDsttsOk returns a tuple with the StateOfDstts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StateOfConfiguration) GetStateOfDsttsOk() ([]StateOfDstt, bool) {
-	if o == nil || isNil(o.StateOfDstts) {
+	if o == nil || IsNil(o.StateOfDstts) {
 		return nil, false
 	}
 	return o.StateOfDstts, true
@@ -94,7 +94,7 @@ func (o *StateOfConfiguration) GetStateOfDsttsOk() ([]StateOfDstt, bool) {
 
 // HasStateOfDstts returns a boolean if a field has been set.
 func (o *StateOfConfiguration) HasStateOfDstts() bool {
-	if o != nil && !isNil(o.StateOfDstts) {
+	if o != nil && !IsNil(o.StateOfDstts) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *StateOfConfiguration) SetStateOfDstts(v []StateOfDstt) {
 }
 
 func (o StateOfConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o StateOfConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o StateOfConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StateOfNwtt) {
+	if !IsNil(o.StateOfNwtt) {
 		toSerialize["stateOfNwtt"] = o.StateOfNwtt
 	}
-	if !isNil(o.StateOfDstts) {
+	if !IsNil(o.StateOfDstts) {
 		toSerialize["stateOfDstts"] = o.StateOfDstts
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableStateOfConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

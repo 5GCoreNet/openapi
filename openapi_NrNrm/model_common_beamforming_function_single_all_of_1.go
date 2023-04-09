@@ -41,7 +41,7 @@ func NewCommonBeamformingFunctionSingleAllOf1WithDefaults() *CommonBeamformingFu
 
 // GetBeam returns the Beam field value if set, zero value otherwise.
 func (o *CommonBeamformingFunctionSingleAllOf1) GetBeam() []BeamSingle {
-	if o == nil || isNil(o.Beam) {
+	if o == nil || IsNil(o.Beam) {
 		var ret []BeamSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CommonBeamformingFunctionSingleAllOf1) GetBeam() []BeamSingle {
 // GetBeamOk returns a tuple with the Beam field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommonBeamformingFunctionSingleAllOf1) GetBeamOk() ([]BeamSingle, bool) {
-	if o == nil || isNil(o.Beam) {
+	if o == nil || IsNil(o.Beam) {
 		return nil, false
 	}
 	return o.Beam, true
@@ -59,7 +59,7 @@ func (o *CommonBeamformingFunctionSingleAllOf1) GetBeamOk() ([]BeamSingle, bool)
 
 // HasBeam returns a boolean if a field has been set.
 func (o *CommonBeamformingFunctionSingleAllOf1) HasBeam() bool {
-	if o != nil && !isNil(o.Beam) {
+	if o != nil && !IsNil(o.Beam) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *CommonBeamformingFunctionSingleAllOf1) SetBeam(v []BeamSingle) {
 }
 
 func (o CommonBeamformingFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o CommonBeamformingFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o CommonBeamformingFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Beam) {
+	if !IsNil(o.Beam) {
 		toSerialize["Beam"] = o.Beam
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableCommonBeamformingFunctionSingleAllOf1) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

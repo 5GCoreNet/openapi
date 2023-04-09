@@ -1,7 +1,7 @@
 /*
 Nhss_UECM
 
-HSS UE Context Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS UE Context Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// ImeiUpdateResponse It represents the response body of the IMEI update request sent by UDM to HSS, and contains the previous IMEI(SV) stored by HSS 
+// ImeiUpdateResponse It represents the response body of the IMEI update request sent by UDM to HSS, and contains the previous IMEI(SV) stored by HSS
 type ImeiUpdateResponse struct {
 	Interface *interface{}
 }
@@ -24,7 +24,7 @@ type ImeiUpdateResponse struct {
 func (dst *ImeiUpdateResponse) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableImeiUpdateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

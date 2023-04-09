@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -18,7 +18,7 @@ import (
 // ImmediateReport1 - struct for ImmediateReport1
 type ImmediateReport1 struct {
 	SubscriptionDataSets *SubscriptionDataSets
-	ArrayOfSharedData *[]SharedData
+	ArrayOfSharedData    *[]SharedData
 }
 
 // SubscriptionDataSetsAsImmediateReport1 is a convenience function that returns SubscriptionDataSets wrapped in ImmediateReport1
@@ -34,7 +34,6 @@ func ArrayOfSharedDataAsImmediateReport1(v *[]SharedData) ImmediateReport1 {
 		ArrayOfSharedData: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ImmediateReport1) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ImmediateReport1) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ImmediateReport1) GetActualInstance() (interface{}) {
+func (obj *ImmediateReport1) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableImmediateReport1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

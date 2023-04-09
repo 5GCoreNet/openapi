@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,24 +19,24 @@ var _ MappedNullable = &AuthorizedDefaultQos{}
 
 // AuthorizedDefaultQos Represents the Authorized Default QoS.
 type AuthorizedDefaultQos struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi *int32 `json:"5qi,omitempty"`
-	Arp *Arp `json:"arp,omitempty"`
-	// This data type is defined in the same way as the '5QiPriorityLevel' data type, but with the OpenAPI 'nullable: true' property. 
+	Arp    *Arp   `json:"arp,omitempty"`
+	// This data type is defined in the same way as the '5QiPriorityLevel' data type, but with the OpenAPI 'nullable: true' property.
 	PriorityLevel NullableInt32 `json:"priorityLevel,omitempty"`
-	// This data type is defined in the same way as the 'AverWindow' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'AverWindow' data type, but with the OpenAPI 'nullable: true' property.
 	AverWindow NullableInt32 `json:"averWindow,omitempty"`
-	// This data type is defined in the same way as the 'MaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'MaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property.
 	MaxDataBurstVol NullableInt32 `json:"maxDataBurstVol,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxbrUl NullableString `json:"maxbrUl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxbrDl NullableString `json:"maxbrDl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	GbrUl NullableString `json:"gbrUl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	GbrDl NullableString `json:"gbrDl,omitempty"`
-	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property.
 	ExtMaxDataBurstVol NullableInt32 `json:"extMaxDataBurstVol,omitempty"`
 }
 
@@ -63,7 +63,7 @@ func NewAuthorizedDefaultQosWithDefaults() *AuthorizedDefaultQos {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *AuthorizedDefaultQos) GetVar5qi() int32 {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -73,7 +73,7 @@ func (o *AuthorizedDefaultQos) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedDefaultQos) GetVar5qiOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -81,7 +81,7 @@ func (o *AuthorizedDefaultQos) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *AuthorizedDefaultQos) HasVar5qi() bool {
-	if o != nil && !isNil(o.Var5qi) {
+	if o != nil && !IsNil(o.Var5qi) {
 		return true
 	}
 
@@ -95,7 +95,7 @@ func (o *AuthorizedDefaultQos) SetVar5qi(v int32) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *AuthorizedDefaultQos) GetArp() Arp {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *AuthorizedDefaultQos) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedDefaultQos) GetArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -113,7 +113,7 @@ func (o *AuthorizedDefaultQos) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *AuthorizedDefaultQos) HasArp() bool {
-	if o != nil && !isNil(o.Arp) {
+	if o != nil && !IsNil(o.Arp) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *AuthorizedDefaultQos) SetArp(v Arp) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetPriorityLevel() int32 {
-	if o == nil || isNil(o.PriorityLevel.Get()) {
+	if o == nil || IsNil(o.PriorityLevel.Get()) {
 		var ret int32
 		return ret
 	}
@@ -157,6 +157,7 @@ func (o *AuthorizedDefaultQos) HasPriorityLevel() bool {
 func (o *AuthorizedDefaultQos) SetPriorityLevel(v int32) {
 	o.PriorityLevel.Set(&v)
 }
+
 // SetPriorityLevelNil sets the value for PriorityLevel to be an explicit nil
 func (o *AuthorizedDefaultQos) SetPriorityLevelNil() {
 	o.PriorityLevel.Set(nil)
@@ -169,7 +170,7 @@ func (o *AuthorizedDefaultQos) UnsetPriorityLevel() {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetAverWindow() int32 {
-	if o == nil || isNil(o.AverWindow.Get()) {
+	if o == nil || IsNil(o.AverWindow.Get()) {
 		var ret int32
 		return ret
 	}
@@ -199,6 +200,7 @@ func (o *AuthorizedDefaultQos) HasAverWindow() bool {
 func (o *AuthorizedDefaultQos) SetAverWindow(v int32) {
 	o.AverWindow.Set(&v)
 }
+
 // SetAverWindowNil sets the value for AverWindow to be an explicit nil
 func (o *AuthorizedDefaultQos) SetAverWindowNil() {
 	o.AverWindow.Set(nil)
@@ -211,7 +213,7 @@ func (o *AuthorizedDefaultQos) UnsetAverWindow() {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.MaxDataBurstVol.Get()) {
+	if o == nil || IsNil(o.MaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -241,6 +243,7 @@ func (o *AuthorizedDefaultQos) HasMaxDataBurstVol() bool {
 func (o *AuthorizedDefaultQos) SetMaxDataBurstVol(v int32) {
 	o.MaxDataBurstVol.Set(&v)
 }
+
 // SetMaxDataBurstVolNil sets the value for MaxDataBurstVol to be an explicit nil
 func (o *AuthorizedDefaultQos) SetMaxDataBurstVolNil() {
 	o.MaxDataBurstVol.Set(nil)
@@ -253,7 +256,7 @@ func (o *AuthorizedDefaultQos) UnsetMaxDataBurstVol() {
 
 // GetMaxbrUl returns the MaxbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetMaxbrUl() string {
-	if o == nil || isNil(o.MaxbrUl.Get()) {
+	if o == nil || IsNil(o.MaxbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -283,6 +286,7 @@ func (o *AuthorizedDefaultQos) HasMaxbrUl() bool {
 func (o *AuthorizedDefaultQos) SetMaxbrUl(v string) {
 	o.MaxbrUl.Set(&v)
 }
+
 // SetMaxbrUlNil sets the value for MaxbrUl to be an explicit nil
 func (o *AuthorizedDefaultQos) SetMaxbrUlNil() {
 	o.MaxbrUl.Set(nil)
@@ -295,7 +299,7 @@ func (o *AuthorizedDefaultQos) UnsetMaxbrUl() {
 
 // GetMaxbrDl returns the MaxbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetMaxbrDl() string {
-	if o == nil || isNil(o.MaxbrDl.Get()) {
+	if o == nil || IsNil(o.MaxbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -325,6 +329,7 @@ func (o *AuthorizedDefaultQos) HasMaxbrDl() bool {
 func (o *AuthorizedDefaultQos) SetMaxbrDl(v string) {
 	o.MaxbrDl.Set(&v)
 }
+
 // SetMaxbrDlNil sets the value for MaxbrDl to be an explicit nil
 func (o *AuthorizedDefaultQos) SetMaxbrDlNil() {
 	o.MaxbrDl.Set(nil)
@@ -337,7 +342,7 @@ func (o *AuthorizedDefaultQos) UnsetMaxbrDl() {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetGbrUl() string {
-	if o == nil || isNil(o.GbrUl.Get()) {
+	if o == nil || IsNil(o.GbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -367,6 +372,7 @@ func (o *AuthorizedDefaultQos) HasGbrUl() bool {
 func (o *AuthorizedDefaultQos) SetGbrUl(v string) {
 	o.GbrUl.Set(&v)
 }
+
 // SetGbrUlNil sets the value for GbrUl to be an explicit nil
 func (o *AuthorizedDefaultQos) SetGbrUlNil() {
 	o.GbrUl.Set(nil)
@@ -379,7 +385,7 @@ func (o *AuthorizedDefaultQos) UnsetGbrUl() {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetGbrDl() string {
-	if o == nil || isNil(o.GbrDl.Get()) {
+	if o == nil || IsNil(o.GbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -409,6 +415,7 @@ func (o *AuthorizedDefaultQos) HasGbrDl() bool {
 func (o *AuthorizedDefaultQos) SetGbrDl(v string) {
 	o.GbrDl.Set(&v)
 }
+
 // SetGbrDlNil sets the value for GbrDl to be an explicit nil
 func (o *AuthorizedDefaultQos) SetGbrDlNil() {
 	o.GbrDl.Set(nil)
@@ -421,7 +428,7 @@ func (o *AuthorizedDefaultQos) UnsetGbrDl() {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetExtMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.ExtMaxDataBurstVol.Get()) {
+	if o == nil || IsNil(o.ExtMaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -451,6 +458,7 @@ func (o *AuthorizedDefaultQos) HasExtMaxDataBurstVol() bool {
 func (o *AuthorizedDefaultQos) SetExtMaxDataBurstVol(v int32) {
 	o.ExtMaxDataBurstVol.Set(&v)
 }
+
 // SetExtMaxDataBurstVolNil sets the value for ExtMaxDataBurstVol to be an explicit nil
 func (o *AuthorizedDefaultQos) SetExtMaxDataBurstVolNil() {
 	o.ExtMaxDataBurstVol.Set(nil)
@@ -462,7 +470,7 @@ func (o *AuthorizedDefaultQos) UnsetExtMaxDataBurstVol() {
 }
 
 func (o AuthorizedDefaultQos) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -471,10 +479,10 @@ func (o AuthorizedDefaultQos) MarshalJSON() ([]byte, error) {
 
 func (o AuthorizedDefaultQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Var5qi) {
+	if !IsNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !isNil(o.Arp) {
+	if !IsNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
 	if o.PriorityLevel.IsSet() {
@@ -539,5 +547,3 @@ func (v *NullableAuthorizedDefaultQos) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

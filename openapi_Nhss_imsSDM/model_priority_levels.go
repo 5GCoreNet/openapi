@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PriorityLevels{}
 // PriorityLevels Namespaces and priority levels allowed for the IMS public Identity
 type PriorityLevels struct {
 	ServicePriorityLevelList []string `json:"servicePriorityLevelList"`
-	ServicePriorityLevel *int32 `json:"servicePriorityLevel,omitempty"`
+	ServicePriorityLevel     *int32   `json:"servicePriorityLevel,omitempty"`
 }
 
 // NewPriorityLevels instantiates a new PriorityLevels object
@@ -67,7 +67,7 @@ func (o *PriorityLevels) SetServicePriorityLevelList(v []string) {
 
 // GetServicePriorityLevel returns the ServicePriorityLevel field value if set, zero value otherwise.
 func (o *PriorityLevels) GetServicePriorityLevel() int32 {
-	if o == nil || isNil(o.ServicePriorityLevel) {
+	if o == nil || IsNil(o.ServicePriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *PriorityLevels) GetServicePriorityLevel() int32 {
 // GetServicePriorityLevelOk returns a tuple with the ServicePriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriorityLevels) GetServicePriorityLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.ServicePriorityLevel) {
+	if o == nil || IsNil(o.ServicePriorityLevel) {
 		return nil, false
 	}
 	return o.ServicePriorityLevel, true
@@ -85,7 +85,7 @@ func (o *PriorityLevels) GetServicePriorityLevelOk() (*int32, bool) {
 
 // HasServicePriorityLevel returns a boolean if a field has been set.
 func (o *PriorityLevels) HasServicePriorityLevel() bool {
-	if o != nil && !isNil(o.ServicePriorityLevel) {
+	if o != nil && !IsNil(o.ServicePriorityLevel) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *PriorityLevels) SetServicePriorityLevel(v int32) {
 }
 
 func (o PriorityLevels) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o PriorityLevels) MarshalJSON() ([]byte, error) {
 func (o PriorityLevels) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["servicePriorityLevelList"] = o.ServicePriorityLevelList
-	if !isNil(o.ServicePriorityLevel) {
+	if !IsNil(o.ServicePriorityLevel) {
 		toSerialize["servicePriorityLevel"] = o.ServicePriorityLevel
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullablePriorityLevels) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

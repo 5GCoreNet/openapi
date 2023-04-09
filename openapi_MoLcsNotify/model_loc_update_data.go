@@ -1,7 +1,7 @@
 /*
 3gpp-mo-lcs-notify
 
-API for UE updated location information notification.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for UE updated location information notification.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &LocUpdateData{}
 
 // LocUpdateData Represents a UE updated location information.
 type LocUpdateData struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
-	LocInfo LocationInfo `json:"locInfo"`
-	LcsQosClass LcsQosClass `json:"lcsQosClass"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi        string       `json:"gpsi"`
+	LocInfo     LocationInfo `json:"locInfo"`
+	LcsQosClass LcsQosClass  `json:"lcsQosClass"`
 	// Contains the service identity
 	SvcId *string `json:"svcId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat string `json:"suppFeat"`
 }
 
@@ -124,7 +124,7 @@ func (o *LocUpdateData) SetLcsQosClass(v LcsQosClass) {
 
 // GetSvcId returns the SvcId field value if set, zero value otherwise.
 func (o *LocUpdateData) GetSvcId() string {
-	if o == nil || isNil(o.SvcId) {
+	if o == nil || IsNil(o.SvcId) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *LocUpdateData) GetSvcId() string {
 // GetSvcIdOk returns a tuple with the SvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetSvcIdOk() (*string, bool) {
-	if o == nil || isNil(o.SvcId) {
+	if o == nil || IsNil(o.SvcId) {
 		return nil, false
 	}
 	return o.SvcId, true
@@ -142,7 +142,7 @@ func (o *LocUpdateData) GetSvcIdOk() (*string, bool) {
 
 // HasSvcId returns a boolean if a field has been set.
 func (o *LocUpdateData) HasSvcId() bool {
-	if o != nil && !isNil(o.SvcId) {
+	if o != nil && !IsNil(o.SvcId) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *LocUpdateData) SetSuppFeat(v string) {
 }
 
 func (o LocUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -191,7 +191,7 @@ func (o LocUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["locInfo"] = o.LocInfo
 	toSerialize["lcsQosClass"] = o.LcsQosClass
-	if !isNil(o.SvcId) {
+	if !IsNil(o.SvcId) {
 		toSerialize["svcId"] = o.SvcId
 	}
 	toSerialize["suppFeat"] = o.SuppFeat
@@ -233,5 +233,3 @@ func (v *NullableLocUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

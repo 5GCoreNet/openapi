@@ -1,7 +1,7 @@
 /*
 Ntsctsf_TimeSynchronization Service API
 
-TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,18 +18,18 @@ import (
 // checks if the TimeSyncExposureSubsc1 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TimeSyncExposureSubsc1{}
 
-// TimeSyncExposureSubsc1 Contains requested parameters for the subscription to the notification of time synchronization capability. 
+// TimeSyncExposureSubsc1 Contains requested parameters for the subscription to the notification of time synchronization capability.
 type TimeSyncExposureSubsc1 struct {
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
 	ExterGroupId *string `json:"exterGroupId,omitempty"`
-	// Contains a list of UE for which the time synchronization capabilities is requested. 
+	// Contains a list of UE for which the time synchronization capabilities is requested.
 	Gpsis []string `json:"gpsis,omitempty"`
-	// Any UE indication. This IE shall be present if the event subscription is applicable to any UE. Default value \"false\" is used, if not present. 
+	// Any UE indication. This IE shall be present if the event subscription is applicable to any UE. Default value \"false\" is used, if not present.
 	AnyUeInd *bool `json:"anyUeInd,omitempty"`
 	// Identifies a service on behalf of which the AF is issuing the request.
 	AfServiceId *string `json:"afServiceId,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
 	// Notification Correlation ID assigned by the NF service consumer.
 	SubsNotifId string `json:"subsNotifId"`
@@ -37,19 +37,19 @@ type TimeSyncExposureSubsc1 struct {
 	SubsNotifUri string `json:"subsNotifUri"`
 	// Subscribed events
 	SubscribedEvents []SubscribedEvent `json:"subscribedEvents,omitempty"`
-	// Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities for a list of UE(s). 
-	EventFilters []EventFilter `json:"eventFilters,omitempty"`
-	NotifMethod *NotificationMethod `json:"notifMethod,omitempty"`
+	// Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities for a list of UE(s).
+	EventFilters []EventFilter       `json:"eventFilters,omitempty"`
+	NotifMethod  *NotificationMethod `json:"notifMethod,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	MaxReportNbr *int32 `json:"maxReportNbr,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
 	// indicating a time in seconds.
 	RepPeriod *int32 `json:"repPeriod,omitempty"`
-	// Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -74,7 +74,7 @@ func NewTimeSyncExposureSubsc1WithDefaults() *TimeSyncExposureSubsc1 {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetExterGroupId() string {
-	if o == nil || isNil(o.ExterGroupId) {
+	if o == nil || IsNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TimeSyncExposureSubsc1) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExterGroupId) {
+	if o == nil || IsNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -92,7 +92,7 @@ func (o *TimeSyncExposureSubsc1) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasExterGroupId() bool {
-	if o != nil && !isNil(o.ExterGroupId) {
+	if o != nil && !IsNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *TimeSyncExposureSubsc1) SetExterGroupId(v string) {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetGpsis() []string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *TimeSyncExposureSubsc1) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetGpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -124,7 +124,7 @@ func (o *TimeSyncExposureSubsc1) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *TimeSyncExposureSubsc1) SetGpsis(v []string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetAnyUeInd() bool {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *TimeSyncExposureSubsc1) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -156,7 +156,7 @@ func (o *TimeSyncExposureSubsc1) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasAnyUeInd() bool {
-	if o != nil && !isNil(o.AnyUeInd) {
+	if o != nil && !IsNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *TimeSyncExposureSubsc1) SetAnyUeInd(v bool) {
 
 // GetAfServiceId returns the AfServiceId field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetAfServiceId() string {
-	if o == nil || isNil(o.AfServiceId) {
+	if o == nil || IsNil(o.AfServiceId) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *TimeSyncExposureSubsc1) GetAfServiceId() string {
 // GetAfServiceIdOk returns a tuple with the AfServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetAfServiceIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfServiceId) {
+	if o == nil || IsNil(o.AfServiceId) {
 		return nil, false
 	}
 	return o.AfServiceId, true
@@ -188,7 +188,7 @@ func (o *TimeSyncExposureSubsc1) GetAfServiceIdOk() (*string, bool) {
 
 // HasAfServiceId returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasAfServiceId() bool {
-	if o != nil && !isNil(o.AfServiceId) {
+	if o != nil && !IsNil(o.AfServiceId) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *TimeSyncExposureSubsc1) SetAfServiceId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *TimeSyncExposureSubsc1) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -220,7 +220,7 @@ func (o *TimeSyncExposureSubsc1) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *TimeSyncExposureSubsc1) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *TimeSyncExposureSubsc1) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -252,7 +252,7 @@ func (o *TimeSyncExposureSubsc1) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -314,7 +314,7 @@ func (o *TimeSyncExposureSubsc1) SetSubsNotifUri(v string) {
 
 // GetSubscribedEvents returns the SubscribedEvents field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetSubscribedEvents() []SubscribedEvent {
-	if o == nil || isNil(o.SubscribedEvents) {
+	if o == nil || IsNil(o.SubscribedEvents) {
 		var ret []SubscribedEvent
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *TimeSyncExposureSubsc1) GetSubscribedEvents() []SubscribedEvent {
 // GetSubscribedEventsOk returns a tuple with the SubscribedEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetSubscribedEventsOk() ([]SubscribedEvent, bool) {
-	if o == nil || isNil(o.SubscribedEvents) {
+	if o == nil || IsNil(o.SubscribedEvents) {
 		return nil, false
 	}
 	return o.SubscribedEvents, true
@@ -332,7 +332,7 @@ func (o *TimeSyncExposureSubsc1) GetSubscribedEventsOk() ([]SubscribedEvent, boo
 
 // HasSubscribedEvents returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasSubscribedEvents() bool {
-	if o != nil && !isNil(o.SubscribedEvents) {
+	if o != nil && !IsNil(o.SubscribedEvents) {
 		return true
 	}
 
@@ -346,7 +346,7 @@ func (o *TimeSyncExposureSubsc1) SetSubscribedEvents(v []SubscribedEvent) {
 
 // GetEventFilters returns the EventFilters field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetEventFilters() []EventFilter {
-	if o == nil || isNil(o.EventFilters) {
+	if o == nil || IsNil(o.EventFilters) {
 		var ret []EventFilter
 		return ret
 	}
@@ -356,7 +356,7 @@ func (o *TimeSyncExposureSubsc1) GetEventFilters() []EventFilter {
 // GetEventFiltersOk returns a tuple with the EventFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetEventFiltersOk() ([]EventFilter, bool) {
-	if o == nil || isNil(o.EventFilters) {
+	if o == nil || IsNil(o.EventFilters) {
 		return nil, false
 	}
 	return o.EventFilters, true
@@ -364,7 +364,7 @@ func (o *TimeSyncExposureSubsc1) GetEventFiltersOk() ([]EventFilter, bool) {
 
 // HasEventFilters returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasEventFilters() bool {
-	if o != nil && !isNil(o.EventFilters) {
+	if o != nil && !IsNil(o.EventFilters) {
 		return true
 	}
 
@@ -378,7 +378,7 @@ func (o *TimeSyncExposureSubsc1) SetEventFilters(v []EventFilter) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetNotifMethod() NotificationMethod {
-	if o == nil || isNil(o.NotifMethod) {
+	if o == nil || IsNil(o.NotifMethod) {
 		var ret NotificationMethod
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *TimeSyncExposureSubsc1) GetNotifMethod() NotificationMethod {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetNotifMethodOk() (*NotificationMethod, bool) {
-	if o == nil || isNil(o.NotifMethod) {
+	if o == nil || IsNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -396,7 +396,7 @@ func (o *TimeSyncExposureSubsc1) GetNotifMethodOk() (*NotificationMethod, bool) 
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasNotifMethod() bool {
-	if o != nil && !isNil(o.NotifMethod) {
+	if o != nil && !IsNil(o.NotifMethod) {
 		return true
 	}
 
@@ -410,7 +410,7 @@ func (o *TimeSyncExposureSubsc1) SetNotifMethod(v NotificationMethod) {
 
 // GetMaxReportNbr returns the MaxReportNbr field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetMaxReportNbr() int32 {
-	if o == nil || isNil(o.MaxReportNbr) {
+	if o == nil || IsNil(o.MaxReportNbr) {
 		var ret int32
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *TimeSyncExposureSubsc1) GetMaxReportNbr() int32 {
 // GetMaxReportNbrOk returns a tuple with the MaxReportNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetMaxReportNbrOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxReportNbr) {
+	if o == nil || IsNil(o.MaxReportNbr) {
 		return nil, false
 	}
 	return o.MaxReportNbr, true
@@ -428,7 +428,7 @@ func (o *TimeSyncExposureSubsc1) GetMaxReportNbrOk() (*int32, bool) {
 
 // HasMaxReportNbr returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasMaxReportNbr() bool {
-	if o != nil && !isNil(o.MaxReportNbr) {
+	if o != nil && !IsNil(o.MaxReportNbr) {
 		return true
 	}
 
@@ -442,7 +442,7 @@ func (o *TimeSyncExposureSubsc1) SetMaxReportNbr(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -452,7 +452,7 @@ func (o *TimeSyncExposureSubsc1) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -460,7 +460,7 @@ func (o *TimeSyncExposureSubsc1) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -474,7 +474,7 @@ func (o *TimeSyncExposureSubsc1) SetExpiry(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetRepPeriod() int32 {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -484,7 +484,7 @@ func (o *TimeSyncExposureSubsc1) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -492,7 +492,7 @@ func (o *TimeSyncExposureSubsc1) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasRepPeriod() bool {
-	if o != nil && !isNil(o.RepPeriod) {
+	if o != nil && !IsNil(o.RepPeriod) {
 		return true
 	}
 
@@ -506,7 +506,7 @@ func (o *TimeSyncExposureSubsc1) SetRepPeriod(v int32) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -516,7 +516,7 @@ func (o *TimeSyncExposureSubsc1) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -524,7 +524,7 @@ func (o *TimeSyncExposureSubsc1) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -538,7 +538,7 @@ func (o *TimeSyncExposureSubsc1) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -548,7 +548,7 @@ func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -556,7 +556,7 @@ func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfigOk() (*WebsockNotifConfig,
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -570,7 +570,7 @@ func (o *TimeSyncExposureSubsc1) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -580,7 +580,7 @@ func (o *TimeSyncExposureSubsc1) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -588,7 +588,7 @@ func (o *TimeSyncExposureSubsc1) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -601,7 +601,7 @@ func (o *TimeSyncExposureSubsc1) SetSuppFeat(v string) {
 }
 
 func (o TimeSyncExposureSubsc1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -610,51 +610,51 @@ func (o TimeSyncExposureSubsc1) MarshalJSON() ([]byte, error) {
 
 func (o TimeSyncExposureSubsc1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExterGroupId) {
+	if !IsNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.AnyUeInd) {
+	if !IsNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !isNil(o.AfServiceId) {
+	if !IsNil(o.AfServiceId) {
 		toSerialize["afServiceId"] = o.AfServiceId
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["subsNotifId"] = o.SubsNotifId
 	toSerialize["subsNotifUri"] = o.SubsNotifUri
-	if !isNil(o.SubscribedEvents) {
+	if !IsNil(o.SubscribedEvents) {
 		toSerialize["subscribedEvents"] = o.SubscribedEvents
 	}
-	if !isNil(o.EventFilters) {
+	if !IsNil(o.EventFilters) {
 		toSerialize["eventFilters"] = o.EventFilters
 	}
-	if !isNil(o.NotifMethod) {
+	if !IsNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !isNil(o.MaxReportNbr) {
+	if !IsNil(o.MaxReportNbr) {
 		toSerialize["maxReportNbr"] = o.MaxReportNbr
 	}
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.RepPeriod) {
+	if !IsNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -695,5 +695,3 @@ func (v *NullableTimeSyncExposureSubsc1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

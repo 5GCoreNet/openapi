@@ -1927,14 +1927,25 @@ components:
       type: object
     EventConsumerType:
       anyOf:
-      - $ref: '#/components/schemas/EventConsumerType_anyOf'
+      - enum:
+        - NWDAF
+        - EVENT_CONSUMER_AF
+        - NEF
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
       description: The type of event consumer.
     DataAggregationFunctionType:
       anyOf:
-      - $ref: '#/components/schemas/DataAggregationFunctionType_anyOf'
+      - enum:
+        - "NULL"
+        - COUNT
+        - MEAN
+        - MAXIMUM
+        - MINIMUM
+        - SUM
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2546,7 +2557,21 @@ components:
       type: string
     AfEvent:
       anyOf:
-      - $ref: '#/components/schemas/AfEvent_anyOf'
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2558,7 +2583,11 @@ components:
       type: string
     DataCollectionClientType:
       anyOf:
-      - $ref: '#/components/schemas/DataCollectionClientType_anyOf'
+      - enum:
+        - DIRECT
+        - INDIRECT
+        - APPLICATION_SERVER
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2786,9 +2815,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -3835,47 +3875,6 @@ components:
       - aggregationFunctions
       - locationAreas
       type: object
-    EventConsumerType_anyOf:
-      enum:
-      - NWDAF
-      - EVENT_CONSUMER_AF
-      - NEF
-      type: string
-      example: null
-    DataAggregationFunctionType_anyOf:
-      enum:
-      - "NULL"
-      - COUNT
-      - MEAN
-      - MAXIMUM
-      - MINIMUM
-      - SUM
-      type: string
-      example: null
-    AfEvent_anyOf:
-      enum:
-      - SVC_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMM
-      - EXCEPTIONS
-      - USER_DATA_CONGESTION
-      - PERF_DATA
-      - DISPERSION
-      - COLLECTIVE_BEHAVIOUR
-      - MS_QOE_METRICS
-      - MS_CONSUMPTION
-      - MS_NET_ASSIST_INVOCATION
-      - MS_DYN_POLICY_INVOCATION
-      - MS_ACCESS_ACTIVITY
-      type: string
-      example: null
-    DataCollectionClientType_anyOf:
-      enum:
-      - DIRECT
-      - INDIRECT
-      - APPLICATION_SERVER
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -3883,19 +3882,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

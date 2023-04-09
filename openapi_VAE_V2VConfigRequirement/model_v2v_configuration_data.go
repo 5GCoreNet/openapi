@@ -1,7 +1,7 @@
 /*
 VAE_V2VConfigRequirement
 
-API for VAE_V2VConfigRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE_V2VConfigRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,10 +22,10 @@ type V2vConfigurationData struct {
 	// Represents the group ID for which a V2X message is addressed.
 	GroupId *string `json:"groupId,omitempty"`
 	// Represents the V2X service ID to which a V2X message belongs.
-	ServiceId *string `json:"serviceId,omitempty"`
-	CanUeIds []string `json:"canUeIds,omitempty"`
+	ServiceId *string                     `json:"serviceId,omitempty"`
+	CanUeIds  []string                    `json:"canUeIds,omitempty"`
 	AppQosReq *AppplicationQosRequirement `json:"appQosReq,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -48,7 +48,7 @@ func NewV2vConfigurationDataWithDefaults() *V2vConfigurationData {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *V2vConfigurationData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -66,7 +66,7 @@ func (o *V2vConfigurationData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *V2vConfigurationData) SetGroupId(v string) {
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetServiceId() string {
-	if o == nil || isNil(o.ServiceId) {
+	if o == nil || IsNil(o.ServiceId) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *V2vConfigurationData) GetServiceId() string {
 // GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetServiceIdOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceId) {
+	if o == nil || IsNil(o.ServiceId) {
 		return nil, false
 	}
 	return o.ServiceId, true
@@ -98,7 +98,7 @@ func (o *V2vConfigurationData) GetServiceIdOk() (*string, bool) {
 
 // HasServiceId returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasServiceId() bool {
-	if o != nil && !isNil(o.ServiceId) {
+	if o != nil && !IsNil(o.ServiceId) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *V2vConfigurationData) SetServiceId(v string) {
 
 // GetCanUeIds returns the CanUeIds field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetCanUeIds() []string {
-	if o == nil || isNil(o.CanUeIds) {
+	if o == nil || IsNil(o.CanUeIds) {
 		var ret []string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *V2vConfigurationData) GetCanUeIds() []string {
 // GetCanUeIdsOk returns a tuple with the CanUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetCanUeIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.CanUeIds) {
+	if o == nil || IsNil(o.CanUeIds) {
 		return nil, false
 	}
 	return o.CanUeIds, true
@@ -130,7 +130,7 @@ func (o *V2vConfigurationData) GetCanUeIdsOk() ([]string, bool) {
 
 // HasCanUeIds returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasCanUeIds() bool {
-	if o != nil && !isNil(o.CanUeIds) {
+	if o != nil && !IsNil(o.CanUeIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *V2vConfigurationData) SetCanUeIds(v []string) {
 
 // GetAppQosReq returns the AppQosReq field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetAppQosReq() AppplicationQosRequirement {
-	if o == nil || isNil(o.AppQosReq) {
+	if o == nil || IsNil(o.AppQosReq) {
 		var ret AppplicationQosRequirement
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *V2vConfigurationData) GetAppQosReq() AppplicationQosRequirement {
 // GetAppQosReqOk returns a tuple with the AppQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetAppQosReqOk() (*AppplicationQosRequirement, bool) {
-	if o == nil || isNil(o.AppQosReq) {
+	if o == nil || IsNil(o.AppQosReq) {
 		return nil, false
 	}
 	return o.AppQosReq, true
@@ -162,7 +162,7 @@ func (o *V2vConfigurationData) GetAppQosReqOk() (*AppplicationQosRequirement, bo
 
 // HasAppQosReq returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasAppQosReq() bool {
-	if o != nil && !isNil(o.AppQosReq) {
+	if o != nil && !IsNil(o.AppQosReq) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *V2vConfigurationData) SetAppQosReq(v AppplicationQosRequirement) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *V2vConfigurationData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -194,7 +194,7 @@ func (o *V2vConfigurationData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *V2vConfigurationData) SetSuppFeat(v string) {
 }
 
 func (o V2vConfigurationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,19 +216,19 @@ func (o V2vConfigurationData) MarshalJSON() ([]byte, error) {
 
 func (o V2vConfigurationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.ServiceId) {
+	if !IsNil(o.ServiceId) {
 		toSerialize["serviceId"] = o.ServiceId
 	}
-	if !isNil(o.CanUeIds) {
+	if !IsNil(o.CanUeIds) {
 		toSerialize["canUeIds"] = o.CanUeIds
 	}
-	if !isNil(o.AppQosReq) {
+	if !IsNil(o.AppQosReq) {
 		toSerialize["appQosReq"] = o.AppQosReq
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -269,5 +269,3 @@ func (v *NullableV2vConfigurationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

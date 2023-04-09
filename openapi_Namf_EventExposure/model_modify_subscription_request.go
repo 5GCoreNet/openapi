@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // ModifySubscriptionRequest - struct for ModifySubscriptionRequest
 type ModifySubscriptionRequest struct {
-	ArrayOfAmfUpdateEventOptionItem *[]AmfUpdateEventOptionItem
+	ArrayOfAmfUpdateEventOptionItem       *[]AmfUpdateEventOptionItem
 	ArrayOfAmfUpdateEventSubscriptionItem *[]AmfUpdateEventSubscriptionItem
 }
 
@@ -34,7 +34,6 @@ func ArrayOfAmfUpdateEventSubscriptionItemAsModifySubscriptionRequest(v *[]AmfUp
 		ArrayOfAmfUpdateEventSubscriptionItem: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ModifySubscriptionRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ModifySubscriptionRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ModifySubscriptionRequest) GetActualInstance() (interface{}) {
+func (obj *ModifySubscriptionRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableModifySubscriptionRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

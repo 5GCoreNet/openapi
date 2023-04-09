@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,16 +19,16 @@ var _ MappedNullable = &SmsManagementSubscriptionData1{}
 
 // SmsManagementSubscriptionData1 struct for SmsManagementSubscriptionData1
 type SmsManagementSubscriptionData1 struct {
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	MtSmsSubscribed *bool `json:"mtSmsSubscribed,omitempty"`
-	MtSmsBarringAll *bool `json:"mtSmsBarringAll,omitempty"`
-	MtSmsBarringRoaming *bool `json:"mtSmsBarringRoaming,omitempty"`
-	MoSmsSubscribed *bool `json:"moSmsSubscribed,omitempty"`
-	MoSmsBarringAll *bool `json:"moSmsBarringAll,omitempty"`
-	MoSmsBarringRoaming *bool `json:"moSmsBarringRoaming,omitempty"`
-	SharedSmsMngDataIds []string `json:"sharedSmsMngDataIds,omitempty"`
-	TraceData NullableTraceData `json:"traceData,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures   *string           `json:"supportedFeatures,omitempty"`
+	MtSmsSubscribed     *bool             `json:"mtSmsSubscribed,omitempty"`
+	MtSmsBarringAll     *bool             `json:"mtSmsBarringAll,omitempty"`
+	MtSmsBarringRoaming *bool             `json:"mtSmsBarringRoaming,omitempty"`
+	MoSmsSubscribed     *bool             `json:"moSmsSubscribed,omitempty"`
+	MoSmsBarringAll     *bool             `json:"moSmsBarringAll,omitempty"`
+	MoSmsBarringRoaming *bool             `json:"moSmsBarringRoaming,omitempty"`
+	SharedSmsMngDataIds []string          `json:"sharedSmsMngDataIds,omitempty"`
+	TraceData           NullableTraceData `json:"traceData,omitempty"`
 }
 
 // NewSmsManagementSubscriptionData1 instantiates a new SmsManagementSubscriptionData1 object
@@ -50,7 +50,7 @@ func NewSmsManagementSubscriptionData1WithDefaults() *SmsManagementSubscriptionD
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *SmsManagementSubscriptionData1) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -68,7 +68,7 @@ func (o *SmsManagementSubscriptionData1) GetSupportedFeaturesOk() (*string, bool
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *SmsManagementSubscriptionData1) SetSupportedFeatures(v string) {
 
 // GetMtSmsSubscribed returns the MtSmsSubscribed field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetMtSmsSubscribed() bool {
-	if o == nil || isNil(o.MtSmsSubscribed) {
+	if o == nil || IsNil(o.MtSmsSubscribed) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *SmsManagementSubscriptionData1) GetMtSmsSubscribed() bool {
 // GetMtSmsSubscribedOk returns a tuple with the MtSmsSubscribed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetMtSmsSubscribedOk() (*bool, bool) {
-	if o == nil || isNil(o.MtSmsSubscribed) {
+	if o == nil || IsNil(o.MtSmsSubscribed) {
 		return nil, false
 	}
 	return o.MtSmsSubscribed, true
@@ -100,7 +100,7 @@ func (o *SmsManagementSubscriptionData1) GetMtSmsSubscribedOk() (*bool, bool) {
 
 // HasMtSmsSubscribed returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasMtSmsSubscribed() bool {
-	if o != nil && !isNil(o.MtSmsSubscribed) {
+	if o != nil && !IsNil(o.MtSmsSubscribed) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *SmsManagementSubscriptionData1) SetMtSmsSubscribed(v bool) {
 
 // GetMtSmsBarringAll returns the MtSmsBarringAll field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetMtSmsBarringAll() bool {
-	if o == nil || isNil(o.MtSmsBarringAll) {
+	if o == nil || IsNil(o.MtSmsBarringAll) {
 		var ret bool
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SmsManagementSubscriptionData1) GetMtSmsBarringAll() bool {
 // GetMtSmsBarringAllOk returns a tuple with the MtSmsBarringAll field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetMtSmsBarringAllOk() (*bool, bool) {
-	if o == nil || isNil(o.MtSmsBarringAll) {
+	if o == nil || IsNil(o.MtSmsBarringAll) {
 		return nil, false
 	}
 	return o.MtSmsBarringAll, true
@@ -132,7 +132,7 @@ func (o *SmsManagementSubscriptionData1) GetMtSmsBarringAllOk() (*bool, bool) {
 
 // HasMtSmsBarringAll returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasMtSmsBarringAll() bool {
-	if o != nil && !isNil(o.MtSmsBarringAll) {
+	if o != nil && !IsNil(o.MtSmsBarringAll) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SmsManagementSubscriptionData1) SetMtSmsBarringAll(v bool) {
 
 // GetMtSmsBarringRoaming returns the MtSmsBarringRoaming field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetMtSmsBarringRoaming() bool {
-	if o == nil || isNil(o.MtSmsBarringRoaming) {
+	if o == nil || IsNil(o.MtSmsBarringRoaming) {
 		var ret bool
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SmsManagementSubscriptionData1) GetMtSmsBarringRoaming() bool {
 // GetMtSmsBarringRoamingOk returns a tuple with the MtSmsBarringRoaming field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetMtSmsBarringRoamingOk() (*bool, bool) {
-	if o == nil || isNil(o.MtSmsBarringRoaming) {
+	if o == nil || IsNil(o.MtSmsBarringRoaming) {
 		return nil, false
 	}
 	return o.MtSmsBarringRoaming, true
@@ -164,7 +164,7 @@ func (o *SmsManagementSubscriptionData1) GetMtSmsBarringRoamingOk() (*bool, bool
 
 // HasMtSmsBarringRoaming returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasMtSmsBarringRoaming() bool {
-	if o != nil && !isNil(o.MtSmsBarringRoaming) {
+	if o != nil && !IsNil(o.MtSmsBarringRoaming) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SmsManagementSubscriptionData1) SetMtSmsBarringRoaming(v bool) {
 
 // GetMoSmsSubscribed returns the MoSmsSubscribed field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetMoSmsSubscribed() bool {
-	if o == nil || isNil(o.MoSmsSubscribed) {
+	if o == nil || IsNil(o.MoSmsSubscribed) {
 		var ret bool
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *SmsManagementSubscriptionData1) GetMoSmsSubscribed() bool {
 // GetMoSmsSubscribedOk returns a tuple with the MoSmsSubscribed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetMoSmsSubscribedOk() (*bool, bool) {
-	if o == nil || isNil(o.MoSmsSubscribed) {
+	if o == nil || IsNil(o.MoSmsSubscribed) {
 		return nil, false
 	}
 	return o.MoSmsSubscribed, true
@@ -196,7 +196,7 @@ func (o *SmsManagementSubscriptionData1) GetMoSmsSubscribedOk() (*bool, bool) {
 
 // HasMoSmsSubscribed returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasMoSmsSubscribed() bool {
-	if o != nil && !isNil(o.MoSmsSubscribed) {
+	if o != nil && !IsNil(o.MoSmsSubscribed) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *SmsManagementSubscriptionData1) SetMoSmsSubscribed(v bool) {
 
 // GetMoSmsBarringAll returns the MoSmsBarringAll field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetMoSmsBarringAll() bool {
-	if o == nil || isNil(o.MoSmsBarringAll) {
+	if o == nil || IsNil(o.MoSmsBarringAll) {
 		var ret bool
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *SmsManagementSubscriptionData1) GetMoSmsBarringAll() bool {
 // GetMoSmsBarringAllOk returns a tuple with the MoSmsBarringAll field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetMoSmsBarringAllOk() (*bool, bool) {
-	if o == nil || isNil(o.MoSmsBarringAll) {
+	if o == nil || IsNil(o.MoSmsBarringAll) {
 		return nil, false
 	}
 	return o.MoSmsBarringAll, true
@@ -228,7 +228,7 @@ func (o *SmsManagementSubscriptionData1) GetMoSmsBarringAllOk() (*bool, bool) {
 
 // HasMoSmsBarringAll returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasMoSmsBarringAll() bool {
-	if o != nil && !isNil(o.MoSmsBarringAll) {
+	if o != nil && !IsNil(o.MoSmsBarringAll) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *SmsManagementSubscriptionData1) SetMoSmsBarringAll(v bool) {
 
 // GetMoSmsBarringRoaming returns the MoSmsBarringRoaming field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetMoSmsBarringRoaming() bool {
-	if o == nil || isNil(o.MoSmsBarringRoaming) {
+	if o == nil || IsNil(o.MoSmsBarringRoaming) {
 		var ret bool
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *SmsManagementSubscriptionData1) GetMoSmsBarringRoaming() bool {
 // GetMoSmsBarringRoamingOk returns a tuple with the MoSmsBarringRoaming field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetMoSmsBarringRoamingOk() (*bool, bool) {
-	if o == nil || isNil(o.MoSmsBarringRoaming) {
+	if o == nil || IsNil(o.MoSmsBarringRoaming) {
 		return nil, false
 	}
 	return o.MoSmsBarringRoaming, true
@@ -260,7 +260,7 @@ func (o *SmsManagementSubscriptionData1) GetMoSmsBarringRoamingOk() (*bool, bool
 
 // HasMoSmsBarringRoaming returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasMoSmsBarringRoaming() bool {
-	if o != nil && !isNil(o.MoSmsBarringRoaming) {
+	if o != nil && !IsNil(o.MoSmsBarringRoaming) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *SmsManagementSubscriptionData1) SetMoSmsBarringRoaming(v bool) {
 
 // GetSharedSmsMngDataIds returns the SharedSmsMngDataIds field value if set, zero value otherwise.
 func (o *SmsManagementSubscriptionData1) GetSharedSmsMngDataIds() []string {
-	if o == nil || isNil(o.SharedSmsMngDataIds) {
+	if o == nil || IsNil(o.SharedSmsMngDataIds) {
 		var ret []string
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *SmsManagementSubscriptionData1) GetSharedSmsMngDataIds() []string {
 // GetSharedSmsMngDataIdsOk returns a tuple with the SharedSmsMngDataIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsManagementSubscriptionData1) GetSharedSmsMngDataIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.SharedSmsMngDataIds) {
+	if o == nil || IsNil(o.SharedSmsMngDataIds) {
 		return nil, false
 	}
 	return o.SharedSmsMngDataIds, true
@@ -292,7 +292,7 @@ func (o *SmsManagementSubscriptionData1) GetSharedSmsMngDataIdsOk() ([]string, b
 
 // HasSharedSmsMngDataIds returns a boolean if a field has been set.
 func (o *SmsManagementSubscriptionData1) HasSharedSmsMngDataIds() bool {
-	if o != nil && !isNil(o.SharedSmsMngDataIds) {
+	if o != nil && !IsNil(o.SharedSmsMngDataIds) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *SmsManagementSubscriptionData1) SetSharedSmsMngDataIds(v []string) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmsManagementSubscriptionData1) GetTraceData() TraceData {
-	if o == nil || isNil(o.TraceData.Get()) {
+	if o == nil || IsNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -336,6 +336,7 @@ func (o *SmsManagementSubscriptionData1) HasTraceData() bool {
 func (o *SmsManagementSubscriptionData1) SetTraceData(v TraceData) {
 	o.TraceData.Set(&v)
 }
+
 // SetTraceDataNil sets the value for TraceData to be an explicit nil
 func (o *SmsManagementSubscriptionData1) SetTraceDataNil() {
 	o.TraceData.Set(nil)
@@ -347,7 +348,7 @@ func (o *SmsManagementSubscriptionData1) UnsetTraceData() {
 }
 
 func (o SmsManagementSubscriptionData1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -356,28 +357,28 @@ func (o SmsManagementSubscriptionData1) MarshalJSON() ([]byte, error) {
 
 func (o SmsManagementSubscriptionData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.MtSmsSubscribed) {
+	if !IsNil(o.MtSmsSubscribed) {
 		toSerialize["mtSmsSubscribed"] = o.MtSmsSubscribed
 	}
-	if !isNil(o.MtSmsBarringAll) {
+	if !IsNil(o.MtSmsBarringAll) {
 		toSerialize["mtSmsBarringAll"] = o.MtSmsBarringAll
 	}
-	if !isNil(o.MtSmsBarringRoaming) {
+	if !IsNil(o.MtSmsBarringRoaming) {
 		toSerialize["mtSmsBarringRoaming"] = o.MtSmsBarringRoaming
 	}
-	if !isNil(o.MoSmsSubscribed) {
+	if !IsNil(o.MoSmsSubscribed) {
 		toSerialize["moSmsSubscribed"] = o.MoSmsSubscribed
 	}
-	if !isNil(o.MoSmsBarringAll) {
+	if !IsNil(o.MoSmsBarringAll) {
 		toSerialize["moSmsBarringAll"] = o.MoSmsBarringAll
 	}
-	if !isNil(o.MoSmsBarringRoaming) {
+	if !IsNil(o.MoSmsBarringRoaming) {
 		toSerialize["moSmsBarringRoaming"] = o.MoSmsBarringRoaming
 	}
-	if !isNil(o.SharedSmsMngDataIds) {
+	if !IsNil(o.SharedSmsMngDataIds) {
 		toSerialize["sharedSmsMngDataIds"] = o.SharedSmsMngDataIds
 	}
 	if o.TraceData.IsSet() {
@@ -421,5 +422,3 @@ func (v *NullableSmsManagementSubscriptionData1) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// NiddStatus Possible values are - ACTIVE: The NIDD configuration is active. - TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s authorisation was revoked. - TERMINATED: The NIDD configuration was terminated. - RDS_PORT_UNKNOWN: The RDS port is unknown. 
+// NiddStatus Possible values are - ACTIVE: The NIDD configuration is active. - TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s authorisation was revoked. - TERMINATED: The NIDD configuration was terminated. - RDS_PORT_UNKNOWN: The RDS port is unknown.
 type NiddStatus struct {
-	NiddStatusAnyOf *NiddStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NiddStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NiddStatusAnyOf
-	err = json.Unmarshal(data, &dst.NiddStatusAnyOf);
-	if err == nil {
-		jsonNiddStatusAnyOf, _ := json.Marshal(dst.NiddStatusAnyOf)
-		if string(jsonNiddStatusAnyOf) == "{}" { // empty struct
-			dst.NiddStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.NiddStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.NiddStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NiddStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NiddStatus) MarshalJSON() ([]byte, error) {
-	if src.NiddStatusAnyOf != nil {
-		return json.Marshal(&src.NiddStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNiddStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

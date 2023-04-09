@@ -20,20 +20,20 @@ type CollectionPeriodM6NrType string
 
 // List of collectionPeriodM6Nr-Type
 const (
-	_120MS CollectionPeriodM6NrType = "120ms"
-	_240MS CollectionPeriodM6NrType = "240ms"
-	_480MS CollectionPeriodM6NrType = "480ms"
-	_640MS CollectionPeriodM6NrType = "640ms"
-	_1024MS CollectionPeriodM6NrType = "1024ms"
-	_2048MS CollectionPeriodM6NrType = "2048ms"
-	_5120MS CollectionPeriodM6NrType = "5120ms"
+	_120MS   CollectionPeriodM6NrType = "120ms"
+	_240MS   CollectionPeriodM6NrType = "240ms"
+	_480MS   CollectionPeriodM6NrType = "480ms"
+	_640MS   CollectionPeriodM6NrType = "640ms"
+	_1024MS  CollectionPeriodM6NrType = "1024ms"
+	_2048MS  CollectionPeriodM6NrType = "2048ms"
+	_5120MS  CollectionPeriodM6NrType = "5120ms"
 	_10240MS CollectionPeriodM6NrType = "10240ms"
 	_20480MS CollectionPeriodM6NrType = "20480ms"
 	_40960MS CollectionPeriodM6NrType = "40960ms"
-	_1MIN CollectionPeriodM6NrType = "1min"
-	_6MIN CollectionPeriodM6NrType = "6min"
-	_12MIN CollectionPeriodM6NrType = "12min"
-	_30MIN CollectionPeriodM6NrType = "30min"
+	_1MIN    CollectionPeriodM6NrType = "1min"
+	_6MIN    CollectionPeriodM6NrType = "6min"
+	_12MIN   CollectionPeriodM6NrType = "12min"
+	_30MIN   CollectionPeriodM6NrType = "30min"
 )
 
 // All allowed values of CollectionPeriodM6NrType enum
@@ -132,4 +132,3 @@ func (v *NullableCollectionPeriodM6NrType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

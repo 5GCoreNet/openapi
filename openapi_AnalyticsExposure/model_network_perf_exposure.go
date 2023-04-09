@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &NetworkPerfExposure{}
 
 // NetworkPerfExposure Represents network performance information.
 type NetworkPerfExposure struct {
-	LocArea LocationArea5G `json:"locArea"`
+	LocArea    LocationArea5G  `json:"locArea"`
 	NwPerfType NetworkPerfType `json:"nwPerfType"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
 	RelativeRatio *int32 `json:"relativeRatio,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	AbsoluteNum *int32 `json:"absoluteNum,omitempty"`
@@ -98,7 +98,7 @@ func (o *NetworkPerfExposure) SetNwPerfType(v NetworkPerfType) {
 
 // GetRelativeRatio returns the RelativeRatio field value if set, zero value otherwise.
 func (o *NetworkPerfExposure) GetRelativeRatio() int32 {
-	if o == nil || isNil(o.RelativeRatio) {
+	if o == nil || IsNil(o.RelativeRatio) {
 		var ret int32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *NetworkPerfExposure) GetRelativeRatio() int32 {
 // GetRelativeRatioOk returns a tuple with the RelativeRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfExposure) GetRelativeRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.RelativeRatio) {
+	if o == nil || IsNil(o.RelativeRatio) {
 		return nil, false
 	}
 	return o.RelativeRatio, true
@@ -116,7 +116,7 @@ func (o *NetworkPerfExposure) GetRelativeRatioOk() (*int32, bool) {
 
 // HasRelativeRatio returns a boolean if a field has been set.
 func (o *NetworkPerfExposure) HasRelativeRatio() bool {
-	if o != nil && !isNil(o.RelativeRatio) {
+	if o != nil && !IsNil(o.RelativeRatio) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *NetworkPerfExposure) SetRelativeRatio(v int32) {
 
 // GetAbsoluteNum returns the AbsoluteNum field value if set, zero value otherwise.
 func (o *NetworkPerfExposure) GetAbsoluteNum() int32 {
-	if o == nil || isNil(o.AbsoluteNum) {
+	if o == nil || IsNil(o.AbsoluteNum) {
 		var ret int32
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *NetworkPerfExposure) GetAbsoluteNum() int32 {
 // GetAbsoluteNumOk returns a tuple with the AbsoluteNum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfExposure) GetAbsoluteNumOk() (*int32, bool) {
-	if o == nil || isNil(o.AbsoluteNum) {
+	if o == nil || IsNil(o.AbsoluteNum) {
 		return nil, false
 	}
 	return o.AbsoluteNum, true
@@ -148,7 +148,7 @@ func (o *NetworkPerfExposure) GetAbsoluteNumOk() (*int32, bool) {
 
 // HasAbsoluteNum returns a boolean if a field has been set.
 func (o *NetworkPerfExposure) HasAbsoluteNum() bool {
-	if o != nil && !isNil(o.AbsoluteNum) {
+	if o != nil && !IsNil(o.AbsoluteNum) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *NetworkPerfExposure) SetAbsoluteNum(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *NetworkPerfExposure) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *NetworkPerfExposure) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfExposure) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -180,7 +180,7 @@ func (o *NetworkPerfExposure) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *NetworkPerfExposure) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *NetworkPerfExposure) SetConfidence(v int32) {
 }
 
 func (o NetworkPerfExposure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,13 +204,13 @@ func (o NetworkPerfExposure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locArea"] = o.LocArea
 	toSerialize["nwPerfType"] = o.NwPerfType
-	if !isNil(o.RelativeRatio) {
+	if !IsNil(o.RelativeRatio) {
 		toSerialize["relativeRatio"] = o.RelativeRatio
 	}
-	if !isNil(o.AbsoluteNum) {
+	if !IsNil(o.AbsoluteNum) {
 		toSerialize["absoluteNum"] = o.AbsoluteNum
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil
@@ -251,5 +251,3 @@ func (v *NullableNetworkPerfExposure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

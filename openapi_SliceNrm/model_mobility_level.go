@@ -20,10 +20,10 @@ type MobilityLevel string
 
 // List of MobilityLevel
 const (
-	STATIONARY MobilityLevel = "STATIONARY"
-	NOMADIC MobilityLevel = "NOMADIC"
+	STATIONARY          MobilityLevel = "STATIONARY"
+	NOMADIC             MobilityLevel = "NOMADIC"
 	RESTRICTED_MOBILITY MobilityLevel = "RESTRICTED MOBILITY"
-	FULLY_MOBILITY MobilityLevel = "FULLY MOBILITY"
+	FULLY_MOBILITY      MobilityLevel = "FULLY MOBILITY"
 )
 
 // All allowed values of MobilityLevel enum
@@ -112,4 +112,3 @@ func (v *NullableMobilityLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

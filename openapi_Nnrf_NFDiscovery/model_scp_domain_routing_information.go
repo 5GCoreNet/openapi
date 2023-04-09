@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ScpDomainRoutingInformation{}
 
 // ScpDomainRoutingInformation SCP Domain Routing Information
 type ScpDomainRoutingInformation struct {
-	// This IE shall contain a map of SCP domain interconnection information, where the key of the map is a SCP domain. The value of each entry shall be the interconnectivity information of the the SCP domain indicated by the key. An empty map indicates that there is no SCP domain currently registered in the NRF. 
+	// This IE shall contain a map of SCP domain interconnection information, where the key of the map is a SCP domain. The value of each entry shall be the interconnectivity information of the the SCP domain indicated by the key. An empty map indicates that there is no SCP domain currently registered in the NRF.
 	ScpDomainList map[string]ScpDomainConnectivity `json:"scpDomainList"`
 }
 
@@ -66,7 +66,7 @@ func (o *ScpDomainRoutingInformation) SetScpDomainList(v map[string]ScpDomainCon
 }
 
 func (o ScpDomainRoutingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullableScpDomainRoutingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

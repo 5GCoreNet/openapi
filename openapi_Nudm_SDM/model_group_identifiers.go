@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &GroupIdentifiers{}
 // GroupIdentifiers struct for GroupIdentifiers
 type GroupIdentifiers struct {
 	ExtGroupId *string `json:"extGroupId,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	IntGroupId *string `json:"intGroupId,omitempty"`
-	UeIdList []UeId `json:"ueIdList,omitempty"`
+	UeIdList   []UeId  `json:"ueIdList,omitempty"`
 }
 
 // NewGroupIdentifiers instantiates a new GroupIdentifiers object
@@ -44,7 +44,7 @@ func NewGroupIdentifiersWithDefaults() *GroupIdentifiers {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *GroupIdentifiers) GetExtGroupId() string {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *GroupIdentifiers) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupIdentifiers) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGroupId) {
+	if o == nil || IsNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -62,7 +62,7 @@ func (o *GroupIdentifiers) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *GroupIdentifiers) HasExtGroupId() bool {
-	if o != nil && !isNil(o.ExtGroupId) {
+	if o != nil && !IsNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *GroupIdentifiers) SetExtGroupId(v string) {
 
 // GetIntGroupId returns the IntGroupId field value if set, zero value otherwise.
 func (o *GroupIdentifiers) GetIntGroupId() string {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *GroupIdentifiers) GetIntGroupId() string {
 // GetIntGroupIdOk returns a tuple with the IntGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupIdentifiers) GetIntGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.IntGroupId) {
+	if o == nil || IsNil(o.IntGroupId) {
 		return nil, false
 	}
 	return o.IntGroupId, true
@@ -94,7 +94,7 @@ func (o *GroupIdentifiers) GetIntGroupIdOk() (*string, bool) {
 
 // HasIntGroupId returns a boolean if a field has been set.
 func (o *GroupIdentifiers) HasIntGroupId() bool {
-	if o != nil && !isNil(o.IntGroupId) {
+	if o != nil && !IsNil(o.IntGroupId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *GroupIdentifiers) SetIntGroupId(v string) {
 
 // GetUeIdList returns the UeIdList field value if set, zero value otherwise.
 func (o *GroupIdentifiers) GetUeIdList() []UeId {
-	if o == nil || isNil(o.UeIdList) {
+	if o == nil || IsNil(o.UeIdList) {
 		var ret []UeId
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *GroupIdentifiers) GetUeIdList() []UeId {
 // GetUeIdListOk returns a tuple with the UeIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupIdentifiers) GetUeIdListOk() ([]UeId, bool) {
-	if o == nil || isNil(o.UeIdList) {
+	if o == nil || IsNil(o.UeIdList) {
 		return nil, false
 	}
 	return o.UeIdList, true
@@ -126,7 +126,7 @@ func (o *GroupIdentifiers) GetUeIdListOk() ([]UeId, bool) {
 
 // HasUeIdList returns a boolean if a field has been set.
 func (o *GroupIdentifiers) HasUeIdList() bool {
-	if o != nil && !isNil(o.UeIdList) {
+	if o != nil && !IsNil(o.UeIdList) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *GroupIdentifiers) SetUeIdList(v []UeId) {
 }
 
 func (o GroupIdentifiers) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o GroupIdentifiers) MarshalJSON() ([]byte, error) {
 
 func (o GroupIdentifiers) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExtGroupId) {
+	if !IsNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
-	if !isNil(o.IntGroupId) {
+	if !IsNil(o.IntGroupId) {
 		toSerialize["intGroupId"] = o.IntGroupId
 	}
-	if !isNil(o.UeIdList) {
+	if !IsNil(o.UeIdList) {
 		toSerialize["ueIdList"] = o.UeIdList
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableGroupIdentifiers) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

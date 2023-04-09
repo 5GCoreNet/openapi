@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,21 +13,20 @@ package openapi_NIDD
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NIDDDownlinkDataDeliveriesApiService NIDDDownlinkDataDeliveriesApi service
 type NIDDDownlinkDataDeliveriesApiService service
 
 type ApiCreateDownlinkDataDeliveryRequest struct {
-	ctx context.Context
-	ApiService *NIDDDownlinkDataDeliveriesApiService
-	scsAsId string
-	configurationId string
+	ctx                      context.Context
+	ApiService               *NIDDDownlinkDataDeliveriesApiService
+	scsAsId                  string
+	configurationId          string
 	niddDownlinkDataTransfer *NiddDownlinkDataTransfer
 }
 
@@ -44,28 +43,29 @@ func (r ApiCreateDownlinkDataDeliveryRequest) Execute() (*NiddDownlinkDataTransf
 /*
 CreateDownlinkDataDelivery Create an NIDD downlink data delivery resource related to a particular NIDD configuration resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @return ApiCreateDownlinkDataDeliveryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@return ApiCreateDownlinkDataDeliveryRequest
 */
 func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDelivery(ctx context.Context, scsAsId string, configurationId string) ApiCreateDownlinkDataDeliveryRequest {
 	return ApiCreateDownlinkDataDeliveryRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return NiddDownlinkDataTransfer
+//
+//	@return NiddDownlinkDataTransfer
 func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute(r ApiCreateDownlinkDataDeliveryRequest) (*NiddDownlinkDataTransfer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NiddDownlinkDataTransfer
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NiddDownlinkDataTransfer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NIDDDownlinkDataDeliveriesApiService.CreateDownlinkDataDelivery")
@@ -113,9 +113,9 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -132,8 +132,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -143,8 +143,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -154,8 +154,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -165,8 +165,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -176,8 +176,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -187,8 +187,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -198,8 +198,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -209,8 +209,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -220,8 +220,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -231,8 +231,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -251,9 +251,9 @@ func (a *NIDDDownlinkDataDeliveriesApiService) CreateDownlinkDataDeliveryExecute
 }
 
 type ApiFetchAllDownlinkDataDeliveriesRequest struct {
-	ctx context.Context
-	ApiService *NIDDDownlinkDataDeliveriesApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *NIDDDownlinkDataDeliveriesApiService
+	scsAsId         string
 	configurationId string
 }
 
@@ -264,28 +264,29 @@ func (r ApiFetchAllDownlinkDataDeliveriesRequest) Execute() ([]NiddDownlinkDataT
 /*
 FetchAllDownlinkDataDeliveries Read all pending NIDD downlink data delivery resources related to a particular NIDD configuration resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @return ApiFetchAllDownlinkDataDeliveriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@return ApiFetchAllDownlinkDataDeliveriesRequest
 */
 func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveries(ctx context.Context, scsAsId string, configurationId string) ApiFetchAllDownlinkDataDeliveriesRequest {
 	return ApiFetchAllDownlinkDataDeliveriesRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
 	}
 }
 
 // Execute executes the request
-//  @return []NiddDownlinkDataTransfer
+//
+//	@return []NiddDownlinkDataTransfer
 func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExecute(r ApiFetchAllDownlinkDataDeliveriesRequest) ([]NiddDownlinkDataTransfer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NiddDownlinkDataTransfer
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NiddDownlinkDataTransfer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NIDDDownlinkDataDeliveriesApiService.FetchAllDownlinkDataDeliveries")
@@ -328,9 +329,9 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -347,8 +348,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -358,8 +359,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -369,8 +370,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -380,8 +381,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -391,8 +392,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -402,8 +403,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -413,8 +414,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -424,8 +425,8 @@ func (a *NIDDDownlinkDataDeliveriesApiService) FetchAllDownlinkDataDeliveriesExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

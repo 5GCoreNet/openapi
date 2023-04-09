@@ -87,13 +87,11 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessTech](docs/AccessTech.md)
- - [AccessTechAnyOf](docs/AccessTechAnyOf.md)
  - [AccessTokenErr](docs/AccessTokenErr.md)
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [ExtendedSteeringContainer](docs/ExtendedSteeringContainer.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)

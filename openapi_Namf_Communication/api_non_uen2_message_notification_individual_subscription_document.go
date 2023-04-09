@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Namf_Communication
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService NonUEN2MessageNotificationIndividualSubscriptionDocumentApi service
 type NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService service
 
 type ApiNonUeN2InfoUnSubscribeRequest struct {
-	ctx context.Context
-	ApiService *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService
+	ctx                    context.Context
+	ApiService             *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService
 	n2NotifySubscriptionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiNonUeN2InfoUnSubscribeRequest) Execute() (*http.Response, error) {
 /*
 NonUeN2InfoUnSubscribe Namf_Communication Non UE N2 Info UnSubscribe service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param n2NotifySubscriptionId N2 info Subscription Identifier
- @return ApiNonUeN2InfoUnSubscribeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param n2NotifySubscriptionId N2 info Subscription Identifier
+	@return ApiNonUeN2InfoUnSubscribeRequest
 */
 func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) NonUeN2InfoUnSubscribe(ctx context.Context, n2NotifySubscriptionId string) ApiNonUeN2InfoUnSubscribeRequest {
 	return ApiNonUeN2InfoUnSubscribeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		n2NotifySubscriptionId: n2NotifySubscriptionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 // Execute executes the request
 func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) NonUeN2InfoUnSubscribeExecute(r ApiNonUeN2InfoUnSubscribeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService.NonUeN2InfoUnSubscribe")
@@ -95,9 +94,9 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}

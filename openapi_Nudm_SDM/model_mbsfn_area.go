@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewMbsfnAreaWithDefaults() *MbsfnArea {
 
 // GetMbsfnAreaId returns the MbsfnAreaId field value if set, zero value otherwise.
 func (o *MbsfnArea) GetMbsfnAreaId() int32 {
-	if o == nil || isNil(o.MbsfnAreaId) {
+	if o == nil || IsNil(o.MbsfnAreaId) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MbsfnArea) GetMbsfnAreaId() int32 {
 // GetMbsfnAreaIdOk returns a tuple with the MbsfnAreaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsfnArea) GetMbsfnAreaIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MbsfnAreaId) {
+	if o == nil || IsNil(o.MbsfnAreaId) {
 		return nil, false
 	}
 	return o.MbsfnAreaId, true
@@ -62,7 +62,7 @@ func (o *MbsfnArea) GetMbsfnAreaIdOk() (*int32, bool) {
 
 // HasMbsfnAreaId returns a boolean if a field has been set.
 func (o *MbsfnArea) HasMbsfnAreaId() bool {
-	if o != nil && !isNil(o.MbsfnAreaId) {
+	if o != nil && !IsNil(o.MbsfnAreaId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MbsfnArea) SetMbsfnAreaId(v int32) {
 
 // GetCarrierFrequency returns the CarrierFrequency field value if set, zero value otherwise.
 func (o *MbsfnArea) GetCarrierFrequency() int32 {
-	if o == nil || isNil(o.CarrierFrequency) {
+	if o == nil || IsNil(o.CarrierFrequency) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MbsfnArea) GetCarrierFrequency() int32 {
 // GetCarrierFrequencyOk returns a tuple with the CarrierFrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsfnArea) GetCarrierFrequencyOk() (*int32, bool) {
-	if o == nil || isNil(o.CarrierFrequency) {
+	if o == nil || IsNil(o.CarrierFrequency) {
 		return nil, false
 	}
 	return o.CarrierFrequency, true
@@ -94,7 +94,7 @@ func (o *MbsfnArea) GetCarrierFrequencyOk() (*int32, bool) {
 
 // HasCarrierFrequency returns a boolean if a field has been set.
 func (o *MbsfnArea) HasCarrierFrequency() bool {
-	if o != nil && !isNil(o.CarrierFrequency) {
+	if o != nil && !IsNil(o.CarrierFrequency) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MbsfnArea) SetCarrierFrequency(v int32) {
 }
 
 func (o MbsfnArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o MbsfnArea) MarshalJSON() ([]byte, error) {
 
 func (o MbsfnArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsfnAreaId) {
+	if !IsNil(o.MbsfnAreaId) {
 		toSerialize["mbsfnAreaId"] = o.MbsfnAreaId
 	}
-	if !isNil(o.CarrierFrequency) {
+	if !IsNil(o.CarrierFrequency) {
 		toSerialize["carrierFrequency"] = o.CarrierFrequency
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableMbsfnArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the AcrMgntEventsSubscriptionPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AcrMgntEventsSubscriptionPatch{}
 
-// AcrMgntEventsSubscriptionPatch Represents a modification request of Individual ACR Management Events Subscription. 
+// AcrMgntEventsSubscriptionPatch Represents a modification request of Individual ACR Management Events Subscription.
 type AcrMgntEventsSubscriptionPatch struct {
 	// The subscribed ACR management events.
-	EventSubscs []AcrMgntEventSubsc `json:"eventSubscs,omitempty"`
-	EvtReq *ReportingInformation `json:"evtReq,omitempty"`
+	EventSubscs []AcrMgntEventSubsc   `json:"eventSubscs,omitempty"`
+	EvtReq      *ReportingInformation `json:"evtReq,omitempty"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination *string `json:"notificationDestination,omitempty"`
 }
@@ -45,7 +45,7 @@ func NewAcrMgntEventsSubscriptionPatchWithDefaults() *AcrMgntEventsSubscriptionP
 
 // GetEventSubscs returns the EventSubscs field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscriptionPatch) GetEventSubscs() []AcrMgntEventSubsc {
-	if o == nil || isNil(o.EventSubscs) {
+	if o == nil || IsNil(o.EventSubscs) {
 		var ret []AcrMgntEventSubsc
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AcrMgntEventsSubscriptionPatch) GetEventSubscs() []AcrMgntEventSubsc {
 // GetEventSubscsOk returns a tuple with the EventSubscs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscriptionPatch) GetEventSubscsOk() ([]AcrMgntEventSubsc, bool) {
-	if o == nil || isNil(o.EventSubscs) {
+	if o == nil || IsNil(o.EventSubscs) {
 		return nil, false
 	}
 	return o.EventSubscs, true
@@ -63,7 +63,7 @@ func (o *AcrMgntEventsSubscriptionPatch) GetEventSubscsOk() ([]AcrMgntEventSubsc
 
 // HasEventSubscs returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscriptionPatch) HasEventSubscs() bool {
-	if o != nil && !isNil(o.EventSubscs) {
+	if o != nil && !IsNil(o.EventSubscs) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AcrMgntEventsSubscriptionPatch) SetEventSubscs(v []AcrMgntEventSubsc) {
 
 // GetEvtReq returns the EvtReq field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscriptionPatch) GetEvtReq() ReportingInformation {
-	if o == nil || isNil(o.EvtReq) {
+	if o == nil || IsNil(o.EvtReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AcrMgntEventsSubscriptionPatch) GetEvtReq() ReportingInformation {
 // GetEvtReqOk returns a tuple with the EvtReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscriptionPatch) GetEvtReqOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.EvtReq) {
+	if o == nil || IsNil(o.EvtReq) {
 		return nil, false
 	}
 	return o.EvtReq, true
@@ -95,7 +95,7 @@ func (o *AcrMgntEventsSubscriptionPatch) GetEvtReqOk() (*ReportingInformation, b
 
 // HasEvtReq returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscriptionPatch) HasEvtReq() bool {
-	if o != nil && !isNil(o.EvtReq) {
+	if o != nil && !IsNil(o.EvtReq) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AcrMgntEventsSubscriptionPatch) SetEvtReq(v ReportingInformation) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscriptionPatch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AcrMgntEventsSubscriptionPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscriptionPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -127,7 +127,7 @@ func (o *AcrMgntEventsSubscriptionPatch) GetNotificationDestinationOk() (*string
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscriptionPatch) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AcrMgntEventsSubscriptionPatch) SetNotificationDestination(v string) {
 }
 
 func (o AcrMgntEventsSubscriptionPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o AcrMgntEventsSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o AcrMgntEventsSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EventSubscs) {
+	if !IsNil(o.EventSubscs) {
 		toSerialize["eventSubscs"] = o.EventSubscs
 	}
-	if !isNil(o.EvtReq) {
+	if !IsNil(o.EvtReq) {
 		toSerialize["evtReq"] = o.EvtReq
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableAcrMgntEventsSubscriptionPatch) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

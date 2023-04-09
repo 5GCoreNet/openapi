@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceMonitoring
 
-API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the FailureReport type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &FailureReport{}
 
-// FailureReport Represents the failure report indicating the VAL UE(s) or VAL Stream ID(s) for which the NRM server failed to obtain the requested data. 
+// FailureReport Represents the failure report indicating the VAL UE(s) or VAL Stream ID(s) for which the NRM server failed to obtain the requested data.
 type FailureReport struct {
-	// List of VAL UE(s) whose measurement data is not obtained successfully. 
+	// List of VAL UE(s) whose measurement data is not obtained successfully.
 	ValUeIds []ValTargetUe `json:"valUeIds,omitempty"`
-	// List of VAL stream ID(s) whose measurement data is not obtained successfully. 
-	ValStreamIds []string `json:"valStreamIds,omitempty"`
-	FailureReason *FailureReason `json:"failureReason,omitempty"`
-	MeasDataType MeasurementDataType `json:"measDataType"`
+	// List of VAL stream ID(s) whose measurement data is not obtained successfully.
+	ValStreamIds  []string            `json:"valStreamIds,omitempty"`
+	FailureReason *FailureReason      `json:"failureReason,omitempty"`
+	MeasDataType  MeasurementDataType `json:"measDataType"`
 }
 
 // NewFailureReport instantiates a new FailureReport object
@@ -47,7 +47,7 @@ func NewFailureReportWithDefaults() *FailureReport {
 
 // GetValUeIds returns the ValUeIds field value if set, zero value otherwise.
 func (o *FailureReport) GetValUeIds() []ValTargetUe {
-	if o == nil || isNil(o.ValUeIds) {
+	if o == nil || IsNil(o.ValUeIds) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *FailureReport) GetValUeIds() []ValTargetUe {
 // GetValUeIdsOk returns a tuple with the ValUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureReport) GetValUeIdsOk() ([]ValTargetUe, bool) {
-	if o == nil || isNil(o.ValUeIds) {
+	if o == nil || IsNil(o.ValUeIds) {
 		return nil, false
 	}
 	return o.ValUeIds, true
@@ -65,7 +65,7 @@ func (o *FailureReport) GetValUeIdsOk() ([]ValTargetUe, bool) {
 
 // HasValUeIds returns a boolean if a field has been set.
 func (o *FailureReport) HasValUeIds() bool {
-	if o != nil && !isNil(o.ValUeIds) {
+	if o != nil && !IsNil(o.ValUeIds) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *FailureReport) SetValUeIds(v []ValTargetUe) {
 
 // GetValStreamIds returns the ValStreamIds field value if set, zero value otherwise.
 func (o *FailureReport) GetValStreamIds() []string {
-	if o == nil || isNil(o.ValStreamIds) {
+	if o == nil || IsNil(o.ValStreamIds) {
 		var ret []string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *FailureReport) GetValStreamIds() []string {
 // GetValStreamIdsOk returns a tuple with the ValStreamIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureReport) GetValStreamIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ValStreamIds) {
+	if o == nil || IsNil(o.ValStreamIds) {
 		return nil, false
 	}
 	return o.ValStreamIds, true
@@ -97,7 +97,7 @@ func (o *FailureReport) GetValStreamIdsOk() ([]string, bool) {
 
 // HasValStreamIds returns a boolean if a field has been set.
 func (o *FailureReport) HasValStreamIds() bool {
-	if o != nil && !isNil(o.ValStreamIds) {
+	if o != nil && !IsNil(o.ValStreamIds) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *FailureReport) SetValStreamIds(v []string) {
 
 // GetFailureReason returns the FailureReason field value if set, zero value otherwise.
 func (o *FailureReport) GetFailureReason() FailureReason {
-	if o == nil || isNil(o.FailureReason) {
+	if o == nil || IsNil(o.FailureReason) {
 		var ret FailureReason
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *FailureReport) GetFailureReason() FailureReason {
 // GetFailureReasonOk returns a tuple with the FailureReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureReport) GetFailureReasonOk() (*FailureReason, bool) {
-	if o == nil || isNil(o.FailureReason) {
+	if o == nil || IsNil(o.FailureReason) {
 		return nil, false
 	}
 	return o.FailureReason, true
@@ -129,7 +129,7 @@ func (o *FailureReport) GetFailureReasonOk() (*FailureReason, bool) {
 
 // HasFailureReason returns a boolean if a field has been set.
 func (o *FailureReport) HasFailureReason() bool {
-	if o != nil && !isNil(o.FailureReason) {
+	if o != nil && !IsNil(o.FailureReason) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *FailureReport) SetMeasDataType(v MeasurementDataType) {
 }
 
 func (o FailureReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,13 +175,13 @@ func (o FailureReport) MarshalJSON() ([]byte, error) {
 
 func (o FailureReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ValUeIds) {
+	if !IsNil(o.ValUeIds) {
 		toSerialize["valUeIds"] = o.ValUeIds
 	}
-	if !isNil(o.ValStreamIds) {
+	if !IsNil(o.ValStreamIds) {
 		toSerialize["valStreamIds"] = o.ValStreamIds
 	}
-	if !isNil(o.FailureReason) {
+	if !IsNil(o.FailureReason) {
 		toSerialize["failureReason"] = o.FailureReason
 	}
 	toSerialize["measDataType"] = o.MeasDataType
@@ -223,5 +223,3 @@ func (v *NullableFailureReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

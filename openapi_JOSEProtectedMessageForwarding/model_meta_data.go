@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &MetaData{}
 
 // MetaData Contains the meta data information needed for replay protection
 type MetaData struct {
-	N32fContextId string `json:"n32fContextId"`
-	MessageId string `json:"messageId"`
+	N32fContextId   string `json:"n32fContextId"`
+	MessageId       string `json:"messageId"`
 	AuthorizedIpxId string `json:"authorizedIpxId"`
 }
 
@@ -117,7 +117,7 @@ func (o *MetaData) SetAuthorizedIpxId(v string) {
 }
 
 func (o MetaData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableMetaData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

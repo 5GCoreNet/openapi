@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &ExemptionInd{}
 
 // ExemptionInd Exemption Indication
 type ExemptionInd struct {
-	DnnCongestion *bool `json:"dnnCongestion,omitempty"`
+	DnnCongestion        *bool `json:"dnnCongestion,omitempty"`
 	SnssaiOnlyCongestion *bool `json:"snssaiOnlyCongestion,omitempty"`
-	SnssaiDnnCongestion *bool `json:"snssaiDnnCongestion,omitempty"`
+	SnssaiDnnCongestion  *bool `json:"snssaiDnnCongestion,omitempty"`
 }
 
 // NewExemptionInd instantiates a new ExemptionInd object
@@ -55,7 +55,7 @@ func NewExemptionIndWithDefaults() *ExemptionInd {
 
 // GetDnnCongestion returns the DnnCongestion field value if set, zero value otherwise.
 func (o *ExemptionInd) GetDnnCongestion() bool {
-	if o == nil || isNil(o.DnnCongestion) {
+	if o == nil || IsNil(o.DnnCongestion) {
 		var ret bool
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *ExemptionInd) GetDnnCongestion() bool {
 // GetDnnCongestionOk returns a tuple with the DnnCongestion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExemptionInd) GetDnnCongestionOk() (*bool, bool) {
-	if o == nil || isNil(o.DnnCongestion) {
+	if o == nil || IsNil(o.DnnCongestion) {
 		return nil, false
 	}
 	return o.DnnCongestion, true
@@ -73,7 +73,7 @@ func (o *ExemptionInd) GetDnnCongestionOk() (*bool, bool) {
 
 // HasDnnCongestion returns a boolean if a field has been set.
 func (o *ExemptionInd) HasDnnCongestion() bool {
-	if o != nil && !isNil(o.DnnCongestion) {
+	if o != nil && !IsNil(o.DnnCongestion) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *ExemptionInd) SetDnnCongestion(v bool) {
 
 // GetSnssaiOnlyCongestion returns the SnssaiOnlyCongestion field value if set, zero value otherwise.
 func (o *ExemptionInd) GetSnssaiOnlyCongestion() bool {
-	if o == nil || isNil(o.SnssaiOnlyCongestion) {
+	if o == nil || IsNil(o.SnssaiOnlyCongestion) {
 		var ret bool
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *ExemptionInd) GetSnssaiOnlyCongestion() bool {
 // GetSnssaiOnlyCongestionOk returns a tuple with the SnssaiOnlyCongestion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExemptionInd) GetSnssaiOnlyCongestionOk() (*bool, bool) {
-	if o == nil || isNil(o.SnssaiOnlyCongestion) {
+	if o == nil || IsNil(o.SnssaiOnlyCongestion) {
 		return nil, false
 	}
 	return o.SnssaiOnlyCongestion, true
@@ -105,7 +105,7 @@ func (o *ExemptionInd) GetSnssaiOnlyCongestionOk() (*bool, bool) {
 
 // HasSnssaiOnlyCongestion returns a boolean if a field has been set.
 func (o *ExemptionInd) HasSnssaiOnlyCongestion() bool {
-	if o != nil && !isNil(o.SnssaiOnlyCongestion) {
+	if o != nil && !IsNil(o.SnssaiOnlyCongestion) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *ExemptionInd) SetSnssaiOnlyCongestion(v bool) {
 
 // GetSnssaiDnnCongestion returns the SnssaiDnnCongestion field value if set, zero value otherwise.
 func (o *ExemptionInd) GetSnssaiDnnCongestion() bool {
-	if o == nil || isNil(o.SnssaiDnnCongestion) {
+	if o == nil || IsNil(o.SnssaiDnnCongestion) {
 		var ret bool
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *ExemptionInd) GetSnssaiDnnCongestion() bool {
 // GetSnssaiDnnCongestionOk returns a tuple with the SnssaiDnnCongestion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExemptionInd) GetSnssaiDnnCongestionOk() (*bool, bool) {
-	if o == nil || isNil(o.SnssaiDnnCongestion) {
+	if o == nil || IsNil(o.SnssaiDnnCongestion) {
 		return nil, false
 	}
 	return o.SnssaiDnnCongestion, true
@@ -137,7 +137,7 @@ func (o *ExemptionInd) GetSnssaiDnnCongestionOk() (*bool, bool) {
 
 // HasSnssaiDnnCongestion returns a boolean if a field has been set.
 func (o *ExemptionInd) HasSnssaiDnnCongestion() bool {
-	if o != nil && !isNil(o.SnssaiDnnCongestion) {
+	if o != nil && !IsNil(o.SnssaiDnnCongestion) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *ExemptionInd) SetSnssaiDnnCongestion(v bool) {
 }
 
 func (o ExemptionInd) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,13 +159,13 @@ func (o ExemptionInd) MarshalJSON() ([]byte, error) {
 
 func (o ExemptionInd) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnnCongestion) {
+	if !IsNil(o.DnnCongestion) {
 		toSerialize["dnnCongestion"] = o.DnnCongestion
 	}
-	if !isNil(o.SnssaiOnlyCongestion) {
+	if !IsNil(o.SnssaiOnlyCongestion) {
 		toSerialize["snssaiOnlyCongestion"] = o.SnssaiOnlyCongestion
 	}
-	if !isNil(o.SnssaiDnnCongestion) {
+	if !IsNil(o.SnssaiDnnCongestion) {
 		toSerialize["snssaiDnnCongestion"] = o.SnssaiDnnCongestion
 	}
 	return toSerialize, nil
@@ -206,5 +206,3 @@ func (v *NullableExemptionInd) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

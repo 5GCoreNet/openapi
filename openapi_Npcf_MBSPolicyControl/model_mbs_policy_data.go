@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the MbsPolicyData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsPolicyData{}
 
-// MbsPolicyData Contains the MBS policy data provisioned as part of an MBS Policy Association. 
+// MbsPolicyData Contains the MBS policy data provisioned as part of an MBS Policy Association.
 type MbsPolicyData struct {
-	MbsPolicyCtxtData MbsPolicyCtxtData `json:"mbsPolicyCtxtData"`
-	MbsPolicies *MbsPolicyDecision `json:"mbsPolicies,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	MbsPolicyCtxtData MbsPolicyCtxtData  `json:"mbsPolicyCtxtData"`
+	MbsPolicies       *MbsPolicyDecision `json:"mbsPolicies,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *MbsPolicyData) SetMbsPolicyCtxtData(v MbsPolicyCtxtData) {
 
 // GetMbsPolicies returns the MbsPolicies field value if set, zero value otherwise.
 func (o *MbsPolicyData) GetMbsPolicies() MbsPolicyDecision {
-	if o == nil || isNil(o.MbsPolicies) {
+	if o == nil || IsNil(o.MbsPolicies) {
 		var ret MbsPolicyDecision
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MbsPolicyData) GetMbsPolicies() MbsPolicyDecision {
 // GetMbsPoliciesOk returns a tuple with the MbsPolicies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyData) GetMbsPoliciesOk() (*MbsPolicyDecision, bool) {
-	if o == nil || isNil(o.MbsPolicies) {
+	if o == nil || IsNil(o.MbsPolicies) {
 		return nil, false
 	}
 	return o.MbsPolicies, true
@@ -87,7 +87,7 @@ func (o *MbsPolicyData) GetMbsPoliciesOk() (*MbsPolicyDecision, bool) {
 
 // HasMbsPolicies returns a boolean if a field has been set.
 func (o *MbsPolicyData) HasMbsPolicies() bool {
-	if o != nil && !isNil(o.MbsPolicies) {
+	if o != nil && !IsNil(o.MbsPolicies) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *MbsPolicyData) SetMbsPolicies(v MbsPolicyDecision) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsPolicyData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MbsPolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -119,7 +119,7 @@ func (o *MbsPolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsPolicyData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *MbsPolicyData) SetSuppFeat(v string) {
 }
 
 func (o MbsPolicyData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o MbsPolicyData) MarshalJSON() ([]byte, error) {
 func (o MbsPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsPolicyCtxtData"] = o.MbsPolicyCtxtData
-	if !isNil(o.MbsPolicies) {
+	if !IsNil(o.MbsPolicies) {
 		toSerialize["mbsPolicies"] = o.MbsPolicies
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableMbsPolicyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // checks if the TimeRangeList type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TimeRangeList{}
 
-// TimeRangeList Represents the time range during which the invocation of a service API is allowed by the API invoker. 
+// TimeRangeList Represents the time range during which the invocation of a service API is allowed by the API invoker.
 type TimeRangeList struct {
 	// string with format \"date-time\" as defined in OpenAPI.
 	StartTime *time.Time `json:"startTime,omitempty"`
@@ -45,7 +45,7 @@ func NewTimeRangeListWithDefaults() *TimeRangeList {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *TimeRangeList) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *TimeRangeList) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeRangeList) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -63,7 +63,7 @@ func (o *TimeRangeList) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *TimeRangeList) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *TimeRangeList) SetStartTime(v time.Time) {
 
 // GetStopTime returns the StopTime field value if set, zero value otherwise.
 func (o *TimeRangeList) GetStopTime() time.Time {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *TimeRangeList) GetStopTime() time.Time {
 // GetStopTimeOk returns a tuple with the StopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeRangeList) GetStopTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		return nil, false
 	}
 	return o.StopTime, true
@@ -95,7 +95,7 @@ func (o *TimeRangeList) GetStopTimeOk() (*time.Time, bool) {
 
 // HasStopTime returns a boolean if a field has been set.
 func (o *TimeRangeList) HasStopTime() bool {
-	if o != nil && !isNil(o.StopTime) {
+	if o != nil && !IsNil(o.StopTime) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *TimeRangeList) SetStopTime(v time.Time) {
 }
 
 func (o TimeRangeList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,10 +117,10 @@ func (o TimeRangeList) MarshalJSON() ([]byte, error) {
 
 func (o TimeRangeList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.StopTime) {
+	if !IsNil(o.StopTime) {
 		toSerialize["stopTime"] = o.StopTime
 	}
 	return toSerialize, nil
@@ -161,5 +161,3 @@ func (v *NullableTimeRangeList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

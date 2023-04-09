@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,12 +18,12 @@ import (
 // Report - struct for Report
 type Report struct {
 	ChangeOfSupiPeiAssociationReport *ChangeOfSupiPeiAssociationReport
-	CmInfoReport *CmInfoReport
-	CnTypeChangeReport *CnTypeChangeReport
-	LocationReport *LocationReport
-	LossConnectivityReport *LossConnectivityReport
-	PdnConnectivityStatReport *PdnConnectivityStatReport
-	RoamingStatusReport *RoamingStatusReport
+	CmInfoReport                     *CmInfoReport
+	CnTypeChangeReport               *CnTypeChangeReport
+	LocationReport                   *LocationReport
+	LossConnectivityReport           *LossConnectivityReport
+	PdnConnectivityStatReport        *PdnConnectivityStatReport
+	RoamingStatusReport              *RoamingStatusReport
 }
 
 // ChangeOfSupiPeiAssociationReportAsReport is a convenience function that returns ChangeOfSupiPeiAssociationReport wrapped in Report
@@ -74,7 +74,6 @@ func RoamingStatusReportAsReport(v *RoamingStatusReport) Report {
 		RoamingStatusReport: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *Report) UnmarshalJSON(data []byte) error {
@@ -223,7 +222,7 @@ func (src Report) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *Report) GetActualInstance() (interface{}) {
+func (obj *Report) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -294,5 +293,3 @@ func (v *NullableReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

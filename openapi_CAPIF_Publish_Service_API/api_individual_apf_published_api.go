@@ -1,7 +1,7 @@
 /*
 CAPIF_Publish_Service_API
 
-API for publishing service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for publishing service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_CAPIF_Publish_Service_API
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualAPFPublishedAPIApiService IndividualAPFPublishedAPIApi service
 type IndividualAPFPublishedAPIApiService service
 
 type ApiModifyIndAPFPubAPIRequest struct {
-	ctx context.Context
-	ApiService *IndividualAPFPublishedAPIApiService
-	serviceApiId string
-	apfId string
+	ctx                        context.Context
+	ApiService                 *IndividualAPFPublishedAPIApiService
+	serviceApiId               string
+	apfId                      string
 	serviceAPIDescriptionPatch *ServiceAPIDescriptionPatch
 }
 
@@ -45,28 +44,29 @@ ModifyIndAPFPubAPI Method for ModifyIndAPFPubAPI
 
 Modify an existing published service API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceApiId
- @param apfId
- @return ApiModifyIndAPFPubAPIRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serviceApiId
+	@param apfId
+	@return ApiModifyIndAPFPubAPIRequest
 */
 func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPI(ctx context.Context, serviceApiId string, apfId string) ApiModifyIndAPFPubAPIRequest {
 	return ApiModifyIndAPFPubAPIRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		serviceApiId: serviceApiId,
-		apfId: apfId,
+		apfId:        apfId,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceAPIDescription
+//
+//	@return ServiceAPIDescription
 func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiModifyIndAPFPubAPIRequest) (*ServiceAPIDescription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAPIDescription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceAPIDescription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAPFPublishedAPIApiService.ModifyIndAPFPubAPI")
@@ -114,9 +114,9 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -133,8 +133,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -144,8 +144,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -155,8 +155,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -166,8 +166,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -177,8 +177,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -188,8 +188,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -199,8 +199,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -210,8 +210,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -221,8 +221,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -232,8 +232,8 @@ func (a *IndividualAPFPublishedAPIApiService) ModifyIndAPFPubAPIExecute(r ApiMod
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

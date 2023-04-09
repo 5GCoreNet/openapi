@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,32 +19,32 @@ var _ MappedNullable = &SmContextUpdatedData{}
 
 // SmContextUpdatedData Data within Update SM Context Response
 type SmContextUpdatedData struct {
-	UpCnxState *UpCnxState `json:"upCnxState,omitempty"`
-	HoState *HoState `json:"hoState,omitempty"`
-	ReleaseEbiList []int32 `json:"releaseEbiList,omitempty"`
-	AllocatedEbiList []EbiArpMapping `json:"allocatedEbiList,omitempty"`
-	ModifiedEbiList []EbiArpMapping `json:"modifiedEbiList,omitempty"`
-	N1SmMsg *RefToBinaryData `json:"n1SmMsg,omitempty"`
-	N2SmInfo *RefToBinaryData `json:"n2SmInfo,omitempty"`
-	N2SmInfoType *N2SmInfoType `json:"n2SmInfoType,omitempty"`
-	EpsBearerSetup []string `json:"epsBearerSetup,omitempty"`
-	DataForwarding *bool `json:"dataForwarding,omitempty"`
+	UpCnxState            *UpCnxState                        `json:"upCnxState,omitempty"`
+	HoState               *HoState                           `json:"hoState,omitempty"`
+	ReleaseEbiList        []int32                            `json:"releaseEbiList,omitempty"`
+	AllocatedEbiList      []EbiArpMapping                    `json:"allocatedEbiList,omitempty"`
+	ModifiedEbiList       []EbiArpMapping                    `json:"modifiedEbiList,omitempty"`
+	N1SmMsg               *RefToBinaryData                   `json:"n1SmMsg,omitempty"`
+	N2SmInfo              *RefToBinaryData                   `json:"n2SmInfo,omitempty"`
+	N2SmInfoType          *N2SmInfoType                      `json:"n2SmInfoType,omitempty"`
+	EpsBearerSetup        []string                           `json:"epsBearerSetup,omitempty"`
+	DataForwarding        *bool                              `json:"dataForwarding,omitempty"`
 	N3DlForwardingTnlList []IndirectDataForwardingTunnelInfo `json:"n3DlForwardingTnlList,omitempty"`
 	N3UlForwardingTnlList []IndirectDataForwardingTunnelInfo `json:"n3UlForwardingTnlList,omitempty"`
-	N9UlForwardingTunnel *TunnelInfo `json:"n9UlForwardingTunnel,omitempty"`
-	Cause *Cause `json:"cause,omitempty"`
-	MaAcceptedInd *bool `json:"maAcceptedInd,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	N9UlForwardingTunnel  *TunnelInfo                        `json:"n9UlForwardingTunnel,omitempty"`
+	Cause                 *Cause                             `json:"cause,omitempty"`
+	MaAcceptedInd         *bool                              `json:"maAcceptedInd,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
-	ForwardingFTeid *string `json:"forwardingFTeid,omitempty"`
+	ForwardingFTeid          *string  `json:"forwardingFTeid,omitempty"`
 	ForwardingBearerContexts []string `json:"forwardingBearerContexts,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SelectedSmfId *string `json:"selectedSmfId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SelectedOldSmfId *string `json:"selectedOldSmfId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	InterPlmnApiRoot *string `json:"interPlmnApiRoot,omitempty"`
+	InterPlmnApiRoot  *string            `json:"interPlmnApiRoot,omitempty"`
 	AnchorSmfFeatures *AnchorSmfFeatures `json:"anchorSmfFeatures,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func NewSmContextUpdatedDataWithDefaults() *SmContextUpdatedData {
 
 // GetUpCnxState returns the UpCnxState field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetUpCnxState() UpCnxState {
-	if o == nil || isNil(o.UpCnxState) {
+	if o == nil || IsNil(o.UpCnxState) {
 		var ret UpCnxState
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *SmContextUpdatedData) GetUpCnxState() UpCnxState {
 // GetUpCnxStateOk returns a tuple with the UpCnxState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetUpCnxStateOk() (*UpCnxState, bool) {
-	if o == nil || isNil(o.UpCnxState) {
+	if o == nil || IsNil(o.UpCnxState) {
 		return nil, false
 	}
 	return o.UpCnxState, true
@@ -89,7 +89,7 @@ func (o *SmContextUpdatedData) GetUpCnxStateOk() (*UpCnxState, bool) {
 
 // HasUpCnxState returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasUpCnxState() bool {
-	if o != nil && !isNil(o.UpCnxState) {
+	if o != nil && !IsNil(o.UpCnxState) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *SmContextUpdatedData) SetUpCnxState(v UpCnxState) {
 
 // GetHoState returns the HoState field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetHoState() HoState {
-	if o == nil || isNil(o.HoState) {
+	if o == nil || IsNil(o.HoState) {
 		var ret HoState
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *SmContextUpdatedData) GetHoState() HoState {
 // GetHoStateOk returns a tuple with the HoState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetHoStateOk() (*HoState, bool) {
-	if o == nil || isNil(o.HoState) {
+	if o == nil || IsNil(o.HoState) {
 		return nil, false
 	}
 	return o.HoState, true
@@ -121,7 +121,7 @@ func (o *SmContextUpdatedData) GetHoStateOk() (*HoState, bool) {
 
 // HasHoState returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasHoState() bool {
-	if o != nil && !isNil(o.HoState) {
+	if o != nil && !IsNil(o.HoState) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *SmContextUpdatedData) SetHoState(v HoState) {
 
 // GetReleaseEbiList returns the ReleaseEbiList field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetReleaseEbiList() []int32 {
-	if o == nil || isNil(o.ReleaseEbiList) {
+	if o == nil || IsNil(o.ReleaseEbiList) {
 		var ret []int32
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *SmContextUpdatedData) GetReleaseEbiList() []int32 {
 // GetReleaseEbiListOk returns a tuple with the ReleaseEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetReleaseEbiListOk() ([]int32, bool) {
-	if o == nil || isNil(o.ReleaseEbiList) {
+	if o == nil || IsNil(o.ReleaseEbiList) {
 		return nil, false
 	}
 	return o.ReleaseEbiList, true
@@ -153,7 +153,7 @@ func (o *SmContextUpdatedData) GetReleaseEbiListOk() ([]int32, bool) {
 
 // HasReleaseEbiList returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasReleaseEbiList() bool {
-	if o != nil && !isNil(o.ReleaseEbiList) {
+	if o != nil && !IsNil(o.ReleaseEbiList) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *SmContextUpdatedData) SetReleaseEbiList(v []int32) {
 
 // GetAllocatedEbiList returns the AllocatedEbiList field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetAllocatedEbiList() []EbiArpMapping {
-	if o == nil || isNil(o.AllocatedEbiList) {
+	if o == nil || IsNil(o.AllocatedEbiList) {
 		var ret []EbiArpMapping
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *SmContextUpdatedData) GetAllocatedEbiList() []EbiArpMapping {
 // GetAllocatedEbiListOk returns a tuple with the AllocatedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetAllocatedEbiListOk() ([]EbiArpMapping, bool) {
-	if o == nil || isNil(o.AllocatedEbiList) {
+	if o == nil || IsNil(o.AllocatedEbiList) {
 		return nil, false
 	}
 	return o.AllocatedEbiList, true
@@ -185,7 +185,7 @@ func (o *SmContextUpdatedData) GetAllocatedEbiListOk() ([]EbiArpMapping, bool) {
 
 // HasAllocatedEbiList returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasAllocatedEbiList() bool {
-	if o != nil && !isNil(o.AllocatedEbiList) {
+	if o != nil && !IsNil(o.AllocatedEbiList) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *SmContextUpdatedData) SetAllocatedEbiList(v []EbiArpMapping) {
 
 // GetModifiedEbiList returns the ModifiedEbiList field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetModifiedEbiList() []EbiArpMapping {
-	if o == nil || isNil(o.ModifiedEbiList) {
+	if o == nil || IsNil(o.ModifiedEbiList) {
 		var ret []EbiArpMapping
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *SmContextUpdatedData) GetModifiedEbiList() []EbiArpMapping {
 // GetModifiedEbiListOk returns a tuple with the ModifiedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetModifiedEbiListOk() ([]EbiArpMapping, bool) {
-	if o == nil || isNil(o.ModifiedEbiList) {
+	if o == nil || IsNil(o.ModifiedEbiList) {
 		return nil, false
 	}
 	return o.ModifiedEbiList, true
@@ -217,7 +217,7 @@ func (o *SmContextUpdatedData) GetModifiedEbiListOk() ([]EbiArpMapping, bool) {
 
 // HasModifiedEbiList returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasModifiedEbiList() bool {
-	if o != nil && !isNil(o.ModifiedEbiList) {
+	if o != nil && !IsNil(o.ModifiedEbiList) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *SmContextUpdatedData) SetModifiedEbiList(v []EbiArpMapping) {
 
 // GetN1SmMsg returns the N1SmMsg field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetN1SmMsg() RefToBinaryData {
-	if o == nil || isNil(o.N1SmMsg) {
+	if o == nil || IsNil(o.N1SmMsg) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *SmContextUpdatedData) GetN1SmMsg() RefToBinaryData {
 // GetN1SmMsgOk returns a tuple with the N1SmMsg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetN1SmMsgOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N1SmMsg) {
+	if o == nil || IsNil(o.N1SmMsg) {
 		return nil, false
 	}
 	return o.N1SmMsg, true
@@ -249,7 +249,7 @@ func (o *SmContextUpdatedData) GetN1SmMsgOk() (*RefToBinaryData, bool) {
 
 // HasN1SmMsg returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasN1SmMsg() bool {
-	if o != nil && !isNil(o.N1SmMsg) {
+	if o != nil && !IsNil(o.N1SmMsg) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *SmContextUpdatedData) SetN1SmMsg(v RefToBinaryData) {
 
 // GetN2SmInfo returns the N2SmInfo field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetN2SmInfo() RefToBinaryData {
-	if o == nil || isNil(o.N2SmInfo) {
+	if o == nil || IsNil(o.N2SmInfo) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *SmContextUpdatedData) GetN2SmInfo() RefToBinaryData {
 // GetN2SmInfoOk returns a tuple with the N2SmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetN2SmInfoOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.N2SmInfo) {
+	if o == nil || IsNil(o.N2SmInfo) {
 		return nil, false
 	}
 	return o.N2SmInfo, true
@@ -281,7 +281,7 @@ func (o *SmContextUpdatedData) GetN2SmInfoOk() (*RefToBinaryData, bool) {
 
 // HasN2SmInfo returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasN2SmInfo() bool {
-	if o != nil && !isNil(o.N2SmInfo) {
+	if o != nil && !IsNil(o.N2SmInfo) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *SmContextUpdatedData) SetN2SmInfo(v RefToBinaryData) {
 
 // GetN2SmInfoType returns the N2SmInfoType field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetN2SmInfoType() N2SmInfoType {
-	if o == nil || isNil(o.N2SmInfoType) {
+	if o == nil || IsNil(o.N2SmInfoType) {
 		var ret N2SmInfoType
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *SmContextUpdatedData) GetN2SmInfoType() N2SmInfoType {
 // GetN2SmInfoTypeOk returns a tuple with the N2SmInfoType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
-	if o == nil || isNil(o.N2SmInfoType) {
+	if o == nil || IsNil(o.N2SmInfoType) {
 		return nil, false
 	}
 	return o.N2SmInfoType, true
@@ -313,7 +313,7 @@ func (o *SmContextUpdatedData) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
 
 // HasN2SmInfoType returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasN2SmInfoType() bool {
-	if o != nil && !isNil(o.N2SmInfoType) {
+	if o != nil && !IsNil(o.N2SmInfoType) {
 		return true
 	}
 
@@ -327,7 +327,7 @@ func (o *SmContextUpdatedData) SetN2SmInfoType(v N2SmInfoType) {
 
 // GetEpsBearerSetup returns the EpsBearerSetup field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetEpsBearerSetup() []string {
-	if o == nil || isNil(o.EpsBearerSetup) {
+	if o == nil || IsNil(o.EpsBearerSetup) {
 		var ret []string
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *SmContextUpdatedData) GetEpsBearerSetup() []string {
 // GetEpsBearerSetupOk returns a tuple with the EpsBearerSetup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetEpsBearerSetupOk() ([]string, bool) {
-	if o == nil || isNil(o.EpsBearerSetup) {
+	if o == nil || IsNil(o.EpsBearerSetup) {
 		return nil, false
 	}
 	return o.EpsBearerSetup, true
@@ -345,7 +345,7 @@ func (o *SmContextUpdatedData) GetEpsBearerSetupOk() ([]string, bool) {
 
 // HasEpsBearerSetup returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasEpsBearerSetup() bool {
-	if o != nil && !isNil(o.EpsBearerSetup) {
+	if o != nil && !IsNil(o.EpsBearerSetup) {
 		return true
 	}
 
@@ -359,7 +359,7 @@ func (o *SmContextUpdatedData) SetEpsBearerSetup(v []string) {
 
 // GetDataForwarding returns the DataForwarding field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetDataForwarding() bool {
-	if o == nil || isNil(o.DataForwarding) {
+	if o == nil || IsNil(o.DataForwarding) {
 		var ret bool
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *SmContextUpdatedData) GetDataForwarding() bool {
 // GetDataForwardingOk returns a tuple with the DataForwarding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetDataForwardingOk() (*bool, bool) {
-	if o == nil || isNil(o.DataForwarding) {
+	if o == nil || IsNil(o.DataForwarding) {
 		return nil, false
 	}
 	return o.DataForwarding, true
@@ -377,7 +377,7 @@ func (o *SmContextUpdatedData) GetDataForwardingOk() (*bool, bool) {
 
 // HasDataForwarding returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasDataForwarding() bool {
-	if o != nil && !isNil(o.DataForwarding) {
+	if o != nil && !IsNil(o.DataForwarding) {
 		return true
 	}
 
@@ -391,7 +391,7 @@ func (o *SmContextUpdatedData) SetDataForwarding(v bool) {
 
 // GetN3DlForwardingTnlList returns the N3DlForwardingTnlList field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetN3DlForwardingTnlList() []IndirectDataForwardingTunnelInfo {
-	if o == nil || isNil(o.N3DlForwardingTnlList) {
+	if o == nil || IsNil(o.N3DlForwardingTnlList) {
 		var ret []IndirectDataForwardingTunnelInfo
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o *SmContextUpdatedData) GetN3DlForwardingTnlList() []IndirectDataForwardi
 // GetN3DlForwardingTnlListOk returns a tuple with the N3DlForwardingTnlList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetN3DlForwardingTnlListOk() ([]IndirectDataForwardingTunnelInfo, bool) {
-	if o == nil || isNil(o.N3DlForwardingTnlList) {
+	if o == nil || IsNil(o.N3DlForwardingTnlList) {
 		return nil, false
 	}
 	return o.N3DlForwardingTnlList, true
@@ -409,7 +409,7 @@ func (o *SmContextUpdatedData) GetN3DlForwardingTnlListOk() ([]IndirectDataForwa
 
 // HasN3DlForwardingTnlList returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasN3DlForwardingTnlList() bool {
-	if o != nil && !isNil(o.N3DlForwardingTnlList) {
+	if o != nil && !IsNil(o.N3DlForwardingTnlList) {
 		return true
 	}
 
@@ -423,7 +423,7 @@ func (o *SmContextUpdatedData) SetN3DlForwardingTnlList(v []IndirectDataForwardi
 
 // GetN3UlForwardingTnlList returns the N3UlForwardingTnlList field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetN3UlForwardingTnlList() []IndirectDataForwardingTunnelInfo {
-	if o == nil || isNil(o.N3UlForwardingTnlList) {
+	if o == nil || IsNil(o.N3UlForwardingTnlList) {
 		var ret []IndirectDataForwardingTunnelInfo
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *SmContextUpdatedData) GetN3UlForwardingTnlList() []IndirectDataForwardi
 // GetN3UlForwardingTnlListOk returns a tuple with the N3UlForwardingTnlList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetN3UlForwardingTnlListOk() ([]IndirectDataForwardingTunnelInfo, bool) {
-	if o == nil || isNil(o.N3UlForwardingTnlList) {
+	if o == nil || IsNil(o.N3UlForwardingTnlList) {
 		return nil, false
 	}
 	return o.N3UlForwardingTnlList, true
@@ -441,7 +441,7 @@ func (o *SmContextUpdatedData) GetN3UlForwardingTnlListOk() ([]IndirectDataForwa
 
 // HasN3UlForwardingTnlList returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasN3UlForwardingTnlList() bool {
-	if o != nil && !isNil(o.N3UlForwardingTnlList) {
+	if o != nil && !IsNil(o.N3UlForwardingTnlList) {
 		return true
 	}
 
@@ -455,7 +455,7 @@ func (o *SmContextUpdatedData) SetN3UlForwardingTnlList(v []IndirectDataForwardi
 
 // GetN9UlForwardingTunnel returns the N9UlForwardingTunnel field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetN9UlForwardingTunnel() TunnelInfo {
-	if o == nil || isNil(o.N9UlForwardingTunnel) {
+	if o == nil || IsNil(o.N9UlForwardingTunnel) {
 		var ret TunnelInfo
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *SmContextUpdatedData) GetN9UlForwardingTunnel() TunnelInfo {
 // GetN9UlForwardingTunnelOk returns a tuple with the N9UlForwardingTunnel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetN9UlForwardingTunnelOk() (*TunnelInfo, bool) {
-	if o == nil || isNil(o.N9UlForwardingTunnel) {
+	if o == nil || IsNil(o.N9UlForwardingTunnel) {
 		return nil, false
 	}
 	return o.N9UlForwardingTunnel, true
@@ -473,7 +473,7 @@ func (o *SmContextUpdatedData) GetN9UlForwardingTunnelOk() (*TunnelInfo, bool) {
 
 // HasN9UlForwardingTunnel returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasN9UlForwardingTunnel() bool {
-	if o != nil && !isNil(o.N9UlForwardingTunnel) {
+	if o != nil && !IsNil(o.N9UlForwardingTunnel) {
 		return true
 	}
 
@@ -487,7 +487,7 @@ func (o *SmContextUpdatedData) SetN9UlForwardingTunnel(v TunnelInfo) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetCause() Cause {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -497,7 +497,7 @@ func (o *SmContextUpdatedData) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetCauseOk() (*Cause, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -505,7 +505,7 @@ func (o *SmContextUpdatedData) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -519,7 +519,7 @@ func (o *SmContextUpdatedData) SetCause(v Cause) {
 
 // GetMaAcceptedInd returns the MaAcceptedInd field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetMaAcceptedInd() bool {
-	if o == nil || isNil(o.MaAcceptedInd) {
+	if o == nil || IsNil(o.MaAcceptedInd) {
 		var ret bool
 		return ret
 	}
@@ -529,7 +529,7 @@ func (o *SmContextUpdatedData) GetMaAcceptedInd() bool {
 // GetMaAcceptedIndOk returns a tuple with the MaAcceptedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetMaAcceptedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.MaAcceptedInd) {
+	if o == nil || IsNil(o.MaAcceptedInd) {
 		return nil, false
 	}
 	return o.MaAcceptedInd, true
@@ -537,7 +537,7 @@ func (o *SmContextUpdatedData) GetMaAcceptedIndOk() (*bool, bool) {
 
 // HasMaAcceptedInd returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasMaAcceptedInd() bool {
-	if o != nil && !isNil(o.MaAcceptedInd) {
+	if o != nil && !IsNil(o.MaAcceptedInd) {
 		return true
 	}
 
@@ -551,7 +551,7 @@ func (o *SmContextUpdatedData) SetMaAcceptedInd(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -561,7 +561,7 @@ func (o *SmContextUpdatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -569,7 +569,7 @@ func (o *SmContextUpdatedData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -583,7 +583,7 @@ func (o *SmContextUpdatedData) SetSupportedFeatures(v string) {
 
 // GetForwardingFTeid returns the ForwardingFTeid field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetForwardingFTeid() string {
-	if o == nil || isNil(o.ForwardingFTeid) {
+	if o == nil || IsNil(o.ForwardingFTeid) {
 		var ret string
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *SmContextUpdatedData) GetForwardingFTeid() string {
 // GetForwardingFTeidOk returns a tuple with the ForwardingFTeid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetForwardingFTeidOk() (*string, bool) {
-	if o == nil || isNil(o.ForwardingFTeid) {
+	if o == nil || IsNil(o.ForwardingFTeid) {
 		return nil, false
 	}
 	return o.ForwardingFTeid, true
@@ -601,7 +601,7 @@ func (o *SmContextUpdatedData) GetForwardingFTeidOk() (*string, bool) {
 
 // HasForwardingFTeid returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasForwardingFTeid() bool {
-	if o != nil && !isNil(o.ForwardingFTeid) {
+	if o != nil && !IsNil(o.ForwardingFTeid) {
 		return true
 	}
 
@@ -615,7 +615,7 @@ func (o *SmContextUpdatedData) SetForwardingFTeid(v string) {
 
 // GetForwardingBearerContexts returns the ForwardingBearerContexts field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetForwardingBearerContexts() []string {
-	if o == nil || isNil(o.ForwardingBearerContexts) {
+	if o == nil || IsNil(o.ForwardingBearerContexts) {
 		var ret []string
 		return ret
 	}
@@ -625,7 +625,7 @@ func (o *SmContextUpdatedData) GetForwardingBearerContexts() []string {
 // GetForwardingBearerContextsOk returns a tuple with the ForwardingBearerContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetForwardingBearerContextsOk() ([]string, bool) {
-	if o == nil || isNil(o.ForwardingBearerContexts) {
+	if o == nil || IsNil(o.ForwardingBearerContexts) {
 		return nil, false
 	}
 	return o.ForwardingBearerContexts, true
@@ -633,7 +633,7 @@ func (o *SmContextUpdatedData) GetForwardingBearerContextsOk() ([]string, bool) 
 
 // HasForwardingBearerContexts returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasForwardingBearerContexts() bool {
-	if o != nil && !isNil(o.ForwardingBearerContexts) {
+	if o != nil && !IsNil(o.ForwardingBearerContexts) {
 		return true
 	}
 
@@ -647,7 +647,7 @@ func (o *SmContextUpdatedData) SetForwardingBearerContexts(v []string) {
 
 // GetSelectedSmfId returns the SelectedSmfId field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetSelectedSmfId() string {
-	if o == nil || isNil(o.SelectedSmfId) {
+	if o == nil || IsNil(o.SelectedSmfId) {
 		var ret string
 		return ret
 	}
@@ -657,7 +657,7 @@ func (o *SmContextUpdatedData) GetSelectedSmfId() string {
 // GetSelectedSmfIdOk returns a tuple with the SelectedSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetSelectedSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.SelectedSmfId) {
+	if o == nil || IsNil(o.SelectedSmfId) {
 		return nil, false
 	}
 	return o.SelectedSmfId, true
@@ -665,7 +665,7 @@ func (o *SmContextUpdatedData) GetSelectedSmfIdOk() (*string, bool) {
 
 // HasSelectedSmfId returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasSelectedSmfId() bool {
-	if o != nil && !isNil(o.SelectedSmfId) {
+	if o != nil && !IsNil(o.SelectedSmfId) {
 		return true
 	}
 
@@ -679,7 +679,7 @@ func (o *SmContextUpdatedData) SetSelectedSmfId(v string) {
 
 // GetSelectedOldSmfId returns the SelectedOldSmfId field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetSelectedOldSmfId() string {
-	if o == nil || isNil(o.SelectedOldSmfId) {
+	if o == nil || IsNil(o.SelectedOldSmfId) {
 		var ret string
 		return ret
 	}
@@ -689,7 +689,7 @@ func (o *SmContextUpdatedData) GetSelectedOldSmfId() string {
 // GetSelectedOldSmfIdOk returns a tuple with the SelectedOldSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetSelectedOldSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.SelectedOldSmfId) {
+	if o == nil || IsNil(o.SelectedOldSmfId) {
 		return nil, false
 	}
 	return o.SelectedOldSmfId, true
@@ -697,7 +697,7 @@ func (o *SmContextUpdatedData) GetSelectedOldSmfIdOk() (*string, bool) {
 
 // HasSelectedOldSmfId returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasSelectedOldSmfId() bool {
-	if o != nil && !isNil(o.SelectedOldSmfId) {
+	if o != nil && !IsNil(o.SelectedOldSmfId) {
 		return true
 	}
 
@@ -711,7 +711,7 @@ func (o *SmContextUpdatedData) SetSelectedOldSmfId(v string) {
 
 // GetInterPlmnApiRoot returns the InterPlmnApiRoot field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetInterPlmnApiRoot() string {
-	if o == nil || isNil(o.InterPlmnApiRoot) {
+	if o == nil || IsNil(o.InterPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -721,7 +721,7 @@ func (o *SmContextUpdatedData) GetInterPlmnApiRoot() string {
 // GetInterPlmnApiRootOk returns a tuple with the InterPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetInterPlmnApiRootOk() (*string, bool) {
-	if o == nil || isNil(o.InterPlmnApiRoot) {
+	if o == nil || IsNil(o.InterPlmnApiRoot) {
 		return nil, false
 	}
 	return o.InterPlmnApiRoot, true
@@ -729,7 +729,7 @@ func (o *SmContextUpdatedData) GetInterPlmnApiRootOk() (*string, bool) {
 
 // HasInterPlmnApiRoot returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasInterPlmnApiRoot() bool {
-	if o != nil && !isNil(o.InterPlmnApiRoot) {
+	if o != nil && !IsNil(o.InterPlmnApiRoot) {
 		return true
 	}
 
@@ -743,7 +743,7 @@ func (o *SmContextUpdatedData) SetInterPlmnApiRoot(v string) {
 
 // GetAnchorSmfFeatures returns the AnchorSmfFeatures field value if set, zero value otherwise.
 func (o *SmContextUpdatedData) GetAnchorSmfFeatures() AnchorSmfFeatures {
-	if o == nil || isNil(o.AnchorSmfFeatures) {
+	if o == nil || IsNil(o.AnchorSmfFeatures) {
 		var ret AnchorSmfFeatures
 		return ret
 	}
@@ -753,7 +753,7 @@ func (o *SmContextUpdatedData) GetAnchorSmfFeatures() AnchorSmfFeatures {
 // GetAnchorSmfFeaturesOk returns a tuple with the AnchorSmfFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdatedData) GetAnchorSmfFeaturesOk() (*AnchorSmfFeatures, bool) {
-	if o == nil || isNil(o.AnchorSmfFeatures) {
+	if o == nil || IsNil(o.AnchorSmfFeatures) {
 		return nil, false
 	}
 	return o.AnchorSmfFeatures, true
@@ -761,7 +761,7 @@ func (o *SmContextUpdatedData) GetAnchorSmfFeaturesOk() (*AnchorSmfFeatures, boo
 
 // HasAnchorSmfFeatures returns a boolean if a field has been set.
 func (o *SmContextUpdatedData) HasAnchorSmfFeatures() bool {
-	if o != nil && !isNil(o.AnchorSmfFeatures) {
+	if o != nil && !IsNil(o.AnchorSmfFeatures) {
 		return true
 	}
 
@@ -774,7 +774,7 @@ func (o *SmContextUpdatedData) SetAnchorSmfFeatures(v AnchorSmfFeatures) {
 }
 
 func (o SmContextUpdatedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -783,70 +783,70 @@ func (o SmContextUpdatedData) MarshalJSON() ([]byte, error) {
 
 func (o SmContextUpdatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UpCnxState) {
+	if !IsNil(o.UpCnxState) {
 		toSerialize["upCnxState"] = o.UpCnxState
 	}
-	if !isNil(o.HoState) {
+	if !IsNil(o.HoState) {
 		toSerialize["hoState"] = o.HoState
 	}
-	if !isNil(o.ReleaseEbiList) {
+	if !IsNil(o.ReleaseEbiList) {
 		toSerialize["releaseEbiList"] = o.ReleaseEbiList
 	}
-	if !isNil(o.AllocatedEbiList) {
+	if !IsNil(o.AllocatedEbiList) {
 		toSerialize["allocatedEbiList"] = o.AllocatedEbiList
 	}
-	if !isNil(o.ModifiedEbiList) {
+	if !IsNil(o.ModifiedEbiList) {
 		toSerialize["modifiedEbiList"] = o.ModifiedEbiList
 	}
-	if !isNil(o.N1SmMsg) {
+	if !IsNil(o.N1SmMsg) {
 		toSerialize["n1SmMsg"] = o.N1SmMsg
 	}
-	if !isNil(o.N2SmInfo) {
+	if !IsNil(o.N2SmInfo) {
 		toSerialize["n2SmInfo"] = o.N2SmInfo
 	}
-	if !isNil(o.N2SmInfoType) {
+	if !IsNil(o.N2SmInfoType) {
 		toSerialize["n2SmInfoType"] = o.N2SmInfoType
 	}
-	if !isNil(o.EpsBearerSetup) {
+	if !IsNil(o.EpsBearerSetup) {
 		toSerialize["epsBearerSetup"] = o.EpsBearerSetup
 	}
-	if !isNil(o.DataForwarding) {
+	if !IsNil(o.DataForwarding) {
 		toSerialize["dataForwarding"] = o.DataForwarding
 	}
-	if !isNil(o.N3DlForwardingTnlList) {
+	if !IsNil(o.N3DlForwardingTnlList) {
 		toSerialize["n3DlForwardingTnlList"] = o.N3DlForwardingTnlList
 	}
-	if !isNil(o.N3UlForwardingTnlList) {
+	if !IsNil(o.N3UlForwardingTnlList) {
 		toSerialize["n3UlForwardingTnlList"] = o.N3UlForwardingTnlList
 	}
-	if !isNil(o.N9UlForwardingTunnel) {
+	if !IsNil(o.N9UlForwardingTunnel) {
 		toSerialize["n9UlForwardingTunnel"] = o.N9UlForwardingTunnel
 	}
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !isNil(o.MaAcceptedInd) {
+	if !IsNil(o.MaAcceptedInd) {
 		toSerialize["maAcceptedInd"] = o.MaAcceptedInd
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.ForwardingFTeid) {
+	if !IsNil(o.ForwardingFTeid) {
 		toSerialize["forwardingFTeid"] = o.ForwardingFTeid
 	}
-	if !isNil(o.ForwardingBearerContexts) {
+	if !IsNil(o.ForwardingBearerContexts) {
 		toSerialize["forwardingBearerContexts"] = o.ForwardingBearerContexts
 	}
-	if !isNil(o.SelectedSmfId) {
+	if !IsNil(o.SelectedSmfId) {
 		toSerialize["selectedSmfId"] = o.SelectedSmfId
 	}
-	if !isNil(o.SelectedOldSmfId) {
+	if !IsNil(o.SelectedOldSmfId) {
 		toSerialize["selectedOldSmfId"] = o.SelectedOldSmfId
 	}
-	if !isNil(o.InterPlmnApiRoot) {
+	if !IsNil(o.InterPlmnApiRoot) {
 		toSerialize["interPlmnApiRoot"] = o.InterPlmnApiRoot
 	}
-	if !isNil(o.AnchorSmfFeatures) {
+	if !IsNil(o.AnchorSmfFeatures) {
 		toSerialize["anchorSmfFeatures"] = o.AnchorSmfFeatures
 	}
 	return toSerialize, nil
@@ -887,5 +887,3 @@ func (v *NullableSmContextUpdatedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

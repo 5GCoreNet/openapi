@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AMF3GPPAccessRegistrationDocumentApiService AMF3GPPAccessRegistrationDocumentApi service
 type AMF3GPPAccessRegistrationDocumentApiService service
 
 type ApiAmfContext3gppRequest struct {
-	ctx context.Context
-	ApiService *AMF3GPPAccessRegistrationDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *AMF3GPPAccessRegistrationDocumentApiService
+	ueId              string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -49,26 +48,27 @@ func (r ApiAmfContext3gppRequest) Execute() (*PatchResult, *http.Response, error
 /*
 AmfContext3gpp To modify the AMF context data of a UE using 3gpp access in the UDR
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiAmfContext3gppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiAmfContext3gppRequest
 */
 func (a *AMF3GPPAccessRegistrationDocumentApiService) AmfContext3gpp(ctx context.Context, ueId string) ApiAmfContext3gppRequest {
 	return ApiAmfContext3gppRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *AMF3GPPAccessRegistrationDocumentApiService) AmfContext3gppExecute(r ApiAmfContext3gppRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMF3GPPAccessRegistrationDocumentApiService.AmfContext3gpp")
@@ -87,7 +87,7 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) AmfContext3gppExecute(r Ap
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -118,9 +118,9 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) AmfContext3gppExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -137,8 +137,8 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) AmfContext3gppExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -157,9 +157,9 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) AmfContext3gppExecute(r Ap
 }
 
 type ApiCreateAmfContext3gppRequest struct {
-	ctx context.Context
-	ApiService *AMF3GPPAccessRegistrationDocumentApiService
-	ueId string
+	ctx                       context.Context
+	ApiService                *AMF3GPPAccessRegistrationDocumentApiService
+	ueId                      string
 	amf3GppAccessRegistration *Amf3GppAccessRegistration
 }
 
@@ -175,26 +175,27 @@ func (r ApiCreateAmfContext3gppRequest) Execute() (*Amf3GppAccessRegistration, *
 /*
 CreateAmfContext3gpp To store the AMF context data of a UE using 3gpp access in the UDR
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateAmfContext3gppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateAmfContext3gppRequest
 */
 func (a *AMF3GPPAccessRegistrationDocumentApiService) CreateAmfContext3gpp(ctx context.Context, ueId string) ApiCreateAmfContext3gppRequest {
 	return ApiCreateAmfContext3gppRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return Amf3GppAccessRegistration
+//
+//	@return Amf3GppAccessRegistration
 func (a *AMF3GPPAccessRegistrationDocumentApiService) CreateAmfContext3gppExecute(r ApiCreateAmfContext3gppRequest) (*Amf3GppAccessRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Amf3GppAccessRegistration
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Amf3GppAccessRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMF3GPPAccessRegistrationDocumentApiService.CreateAmfContext3gpp")
@@ -241,9 +242,9 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) CreateAmfContext3gppExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -269,10 +270,10 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) CreateAmfContext3gppExecut
 }
 
 type ApiQueryAmfContext3gppRequest struct {
-	ctx context.Context
-	ApiService *AMF3GPPAccessRegistrationDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *AMF3GPPAccessRegistrationDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -295,26 +296,27 @@ func (r ApiQueryAmfContext3gppRequest) Execute() (*Amf3GppAccessRegistration, *h
 /*
 QueryAmfContext3gpp Retrieves the AMF context data of a UE using 3gpp access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryAmfContext3gppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryAmfContext3gppRequest
 */
 func (a *AMF3GPPAccessRegistrationDocumentApiService) QueryAmfContext3gpp(ctx context.Context, ueId string) ApiQueryAmfContext3gppRequest {
 	return ApiQueryAmfContext3gppRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return Amf3GppAccessRegistration
+//
+//	@return Amf3GppAccessRegistration
 func (a *AMF3GPPAccessRegistrationDocumentApiService) QueryAmfContext3gppExecute(r ApiQueryAmfContext3gppRequest) (*Amf3GppAccessRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Amf3GppAccessRegistration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Amf3GppAccessRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMF3GPPAccessRegistrationDocumentApiService.QueryAmfContext3gpp")
@@ -330,10 +332,10 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) QueryAmfContext3gppExecute
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -362,9 +364,9 @@ func (a *AMF3GPPAccessRegistrationDocumentApiService) QueryAmfContext3gppExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

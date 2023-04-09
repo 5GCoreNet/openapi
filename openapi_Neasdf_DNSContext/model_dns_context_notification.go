@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewDnsContextNotificationWithDefaults() *DnsContextNotification {
 
 // GetEventreportList returns the EventreportList field value if set, zero value otherwise.
 func (o *DnsContextNotification) GetEventreportList() []DnsContextEventReport {
-	if o == nil || isNil(o.EventreportList) {
+	if o == nil || IsNil(o.EventreportList) {
 		var ret []DnsContextEventReport
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *DnsContextNotification) GetEventreportList() []DnsContextEventReport {
 // GetEventreportListOk returns a tuple with the EventreportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextNotification) GetEventreportListOk() ([]DnsContextEventReport, bool) {
-	if o == nil || isNil(o.EventreportList) {
+	if o == nil || IsNil(o.EventreportList) {
 		return nil, false
 	}
 	return o.EventreportList, true
@@ -59,7 +59,7 @@ func (o *DnsContextNotification) GetEventreportListOk() ([]DnsContextEventReport
 
 // HasEventreportList returns a boolean if a field has been set.
 func (o *DnsContextNotification) HasEventreportList() bool {
-	if o != nil && !isNil(o.EventreportList) {
+	if o != nil && !IsNil(o.EventreportList) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *DnsContextNotification) SetEventreportList(v []DnsContextEventReport) {
 }
 
 func (o DnsContextNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o DnsContextNotification) MarshalJSON() ([]byte, error) {
 
 func (o DnsContextNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EventreportList) {
+	if !IsNil(o.EventreportList) {
 		toSerialize["eventreportList"] = o.EventreportList
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableDnsContextNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

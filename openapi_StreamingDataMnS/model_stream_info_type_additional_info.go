@@ -17,9 +17,9 @@ import (
 
 // StreamInfoTypeAdditionalInfo - struct for StreamInfoTypeAdditionalInfo
 type StreamInfoTypeAdditionalInfo struct {
-	AnalyticsInfoType *AnalyticsInfoType
+	AnalyticsInfoType   *AnalyticsInfoType
 	PerformanceInfoType *PerformanceInfoType
-	TraceInfoType *TraceInfoType
+	TraceInfoType       *TraceInfoType
 	VsDataContainerType *VsDataContainerType
 }
 
@@ -50,7 +50,6 @@ func VsDataContainerTypeAsStreamInfoTypeAdditionalInfo(v *VsDataContainerType) S
 		VsDataContainerType: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StreamInfoTypeAdditionalInfo) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src StreamInfoTypeAdditionalInfo) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StreamInfoTypeAdditionalInfo) GetActualInstance() (interface{}) {
+func (obj *StreamInfoTypeAdditionalInfo) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableStreamInfoTypeAdditionalInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

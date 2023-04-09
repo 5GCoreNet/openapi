@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &InterFreqTargetInfo1{}
 
 // InterFreqTargetInfo1 Indicates the Inter Frequency Target information.
 type InterFreqTargetInfo1 struct {
-	// Integer value indicating the ARFCN applicable for a downlink, uplink or bi-directional (TDD) NR global frequency raster, as definition of \"ARFCN-ValueNR\" IE in clause 6.3.2 of 3GPP TS 38.331. 
+	// Integer value indicating the ARFCN applicable for a downlink, uplink or bi-directional (TDD) NR global frequency raster, as definition of \"ARFCN-ValueNR\" IE in clause 6.3.2 of 3GPP TS 38.331.
 	DlCarrierFreq int32 `json:"dlCarrierFreq"`
-	// When present, this IE shall contain a list of the physical cell identities where the UE is requested to perform measurement logging for the indicated frequency. 
+	// When present, this IE shall contain a list of the physical cell identities where the UE is requested to perform measurement logging for the indicated frequency.
 	CellIdList []int32 `json:"cellIdList,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *InterFreqTargetInfo1) SetDlCarrierFreq(v int32) {
 
 // GetCellIdList returns the CellIdList field value if set, zero value otherwise.
 func (o *InterFreqTargetInfo1) GetCellIdList() []int32 {
-	if o == nil || isNil(o.CellIdList) {
+	if o == nil || IsNil(o.CellIdList) {
 		var ret []int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *InterFreqTargetInfo1) GetCellIdList() []int32 {
 // GetCellIdListOk returns a tuple with the CellIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterFreqTargetInfo1) GetCellIdListOk() ([]int32, bool) {
-	if o == nil || isNil(o.CellIdList) {
+	if o == nil || IsNil(o.CellIdList) {
 		return nil, false
 	}
 	return o.CellIdList, true
@@ -87,7 +87,7 @@ func (o *InterFreqTargetInfo1) GetCellIdListOk() ([]int32, bool) {
 
 // HasCellIdList returns a boolean if a field has been set.
 func (o *InterFreqTargetInfo1) HasCellIdList() bool {
-	if o != nil && !isNil(o.CellIdList) {
+	if o != nil && !IsNil(o.CellIdList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *InterFreqTargetInfo1) SetCellIdList(v []int32) {
 }
 
 func (o InterFreqTargetInfo1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o InterFreqTargetInfo1) MarshalJSON() ([]byte, error) {
 func (o InterFreqTargetInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dlCarrierFreq"] = o.DlCarrierFreq
-	if !isNil(o.CellIdList) {
+	if !IsNil(o.CellIdList) {
 		toSerialize["cellIdList"] = o.CellIdList
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableInterFreqTargetInfo1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

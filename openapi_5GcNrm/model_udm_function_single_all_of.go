@@ -19,7 +19,7 @@ var _ MappedNullable = &UdmFunctionSingleAllOf{}
 
 // UdmFunctionSingleAllOf struct for UdmFunctionSingleAllOf
 type UdmFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *UdmFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewUdmFunctionSingleAllOf instantiates a new UdmFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewUdmFunctionSingleAllOfWithDefaults() *UdmFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *UdmFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *UdmFunctionSingleAllOf) GetAttributes() UdmFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret UdmFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *UdmFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UdmFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *UdmFunctionSingleAllOf) GetAttributesOk() (*UdmFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *UdmFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) 
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *UdmFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *UdmFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given UdmFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *UdmFunctionSingleAllOf) SetAttributes(v UdmFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o UdmFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o UdmFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o UdmFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableUdmFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

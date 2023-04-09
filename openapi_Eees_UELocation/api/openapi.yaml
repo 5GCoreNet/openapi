@@ -2270,7 +2270,15 @@ components:
       type: string
     Accuracy:
       anyOf:
-      - $ref: '#/components/schemas/Accuracy_anyOf'
+      - enum:
+        - CGI_ECGI
+        - ENODEB
+        - TA_RA
+        - PLMN
+        - TWAN_ID
+        - GEO_AREA
+        - CIVIC_ADDR
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2320,7 +2328,11 @@ components:
       type: number
     ResponseTime:
       anyOf:
-      - $ref: '#/components/schemas/ResponseTime_anyOf'
+      - enum:
+        - LOW_DELAY
+        - DELAY_TOLERANT
+        - NO_DELAY
+        type: string
       - type: string
       description: Indicates acceptable delay of location request.
     MinorLocationQoS:
@@ -2342,7 +2354,11 @@ components:
       type: object
     LcsQosClass:
       anyOf:
-      - $ref: '#/components/schemas/LcsQosClass_anyOf'
+      - enum:
+        - BEST_EFFORT
+        - ASSURED
+        - MULTIPLE_QOS
+        type: string
       - type: string
       description: Specifies LCS QoS class.
     ReportingInformation:
@@ -2979,7 +2995,12 @@ components:
       type: object
     UcPurpose:
       anyOf:
-      - $ref: '#/components/schemas/UcPurpose_anyOf'
+      - enum:
+        - ANALYTICS
+        - MODEL_TRAINING
+        - NW_CAP_EXPOSURE
+        - EDGEAPP_UE_LOCATION
+        type: string
       - type: string
       description: Indicates the purpose of the user consent.
     ExternalId:
@@ -2990,7 +3011,11 @@ components:
       type: string
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -3018,7 +3043,13 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -3031,7 +3062,11 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -3081,9 +3116,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -3370,12 +3416,31 @@ components:
       type: object
     PositioningMethod:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMethod_anyOf'
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
       - type: string
       description: Indicates supported positioning methods.
     AccuracyFulfilmentIndicator:
       anyOf:
-      - $ref: '#/components/schemas/AccuracyFulfilmentIndicator_anyOf'
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
       - type: string
       description: Indicates fulfilment of requested accuracy.
     VelocityEstimate:
@@ -3524,7 +3589,14 @@ components:
       type: object
     LdrType:
       anyOf:
-      - $ref: '#/components/schemas/LdrType_anyOf'
+      - enum:
+        - UE_AVAILABLE
+        - PERIODIC
+        - ENTERING_INTO_AREA
+        - LEAVING_FROM_AREA
+        - BEING_INSIDE_AREA
+        - MOTION
+        type: string
       - type: string
       description: Indicates LDR types.
     ScheduledCommunicationTime:
@@ -4144,62 +4216,6 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
-    Accuracy_anyOf:
-      enum:
-      - CGI_ECGI
-      - ENODEB
-      - TA_RA
-      - PLMN
-      - TWAN_ID
-      - GEO_AREA
-      - CIVIC_ADDR
-      type: string
-      example: null
-    ResponseTime_anyOf:
-      enum:
-      - LOW_DELAY
-      - DELAY_TOLERANT
-      - NO_DELAY
-      type: string
-      example: null
-    LcsQosClass_anyOf:
-      enum:
-      - BEST_EFFORT
-      - ASSURED
-      - MULTIPLE_QOS
-      type: string
-      example: null
-    UcPurpose_anyOf:
-      enum:
-      - ANALYTICS
-      - MODEL_TRAINING
-      - NW_CAP_EXPOSURE
-      - EDGEAPP_UE_LOCATION
-      type: string
-      example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    PartitioningCriteria_anyOf:
-      enum:
-      - TAC
-      - SUBPLMN
-      - GEOAREA
-      - SNSSAI
-      - DNN
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -4207,19 +4223,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -4388,41 +4391,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    PositioningMethod_anyOf:
-      enum:
-      - CELLID
-      - ECID
-      - OTDOA
-      - BAROMETRIC_PRESSURE
-      - WLAN
-      - BLUETOOTH
-      - MBS
-      - MOTION_SENSOR
-      - DL_TDOA
-      - DL_AOD
-      - MULTI-RTT
-      - NR_ECID
-      - UL_TDOA
-      - UL_AOA
-      - NETWORK_SPECIFIC
-      type: string
-      example: null
-    AccuracyFulfilmentIndicator_anyOf:
-      enum:
-      - REQUESTED_ACCURACY_FULFILLED
-      - REQUESTED_ACCURACY_NOT_FULFILLED
-      type: string
-      example: null
-    LdrType_anyOf:
-      enum:
-      - UE_AVAILABLE
-      - PERIODIC
-      - ENTERING_INTO_AREA
-      - LEAVING_FROM_AREA
-      - BEING_INSIDE_AREA
-      - MOTION
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

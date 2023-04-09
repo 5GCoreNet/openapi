@@ -89,7 +89,6 @@ Class | Method | HTTP request | Description
 
  - [ProvisioningSession](docs/ProvisioningSession.md)
  - [ProvisioningSessionType](docs/ProvisioningSessionType.md)
- - [ProvisioningSessionTypeAnyOf](docs/ProvisioningSessionTypeAnyOf.md)
 
 
 ## Documentation For Authorization

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &MbUpfInfo{}
 
 // MbUpfInfo Information of an MB-UPF NF Instance
 type MbUpfInfo struct {
-	SNssaiMbUpfInfoList []SnssaiUpfInfoItem `json:"sNssaiMbUpfInfoList"`
-	MbSmfServingArea []string `json:"mbSmfServingArea,omitempty"`
+	SNssaiMbUpfInfoList    []SnssaiUpfInfoItem    `json:"sNssaiMbUpfInfoList"`
+	MbSmfServingArea       []string               `json:"mbSmfServingArea,omitempty"`
 	InterfaceMbUpfInfoList []InterfaceUpfInfoItem `json:"interfaceMbUpfInfoList,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	SupportedPfcpFeatures *string `json:"supportedPfcpFeatures,omitempty"`
+	TaiList                []Tai                  `json:"taiList,omitempty"`
+	TaiRangeList           []TaiRange             `json:"taiRangeList,omitempty"`
+	Priority               *int32                 `json:"priority,omitempty"`
+	SupportedPfcpFeatures  *string                `json:"supportedPfcpFeatures,omitempty"`
 }
 
 // NewMbUpfInfo instantiates a new MbUpfInfo object
@@ -72,7 +72,7 @@ func (o *MbUpfInfo) SetSNssaiMbUpfInfoList(v []SnssaiUpfInfoItem) {
 
 // GetMbSmfServingArea returns the MbSmfServingArea field value if set, zero value otherwise.
 func (o *MbUpfInfo) GetMbSmfServingArea() []string {
-	if o == nil || isNil(o.MbSmfServingArea) {
+	if o == nil || IsNil(o.MbSmfServingArea) {
 		var ret []string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *MbUpfInfo) GetMbSmfServingArea() []string {
 // GetMbSmfServingAreaOk returns a tuple with the MbSmfServingArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbUpfInfo) GetMbSmfServingAreaOk() ([]string, bool) {
-	if o == nil || isNil(o.MbSmfServingArea) {
+	if o == nil || IsNil(o.MbSmfServingArea) {
 		return nil, false
 	}
 	return o.MbSmfServingArea, true
@@ -90,7 +90,7 @@ func (o *MbUpfInfo) GetMbSmfServingAreaOk() ([]string, bool) {
 
 // HasMbSmfServingArea returns a boolean if a field has been set.
 func (o *MbUpfInfo) HasMbSmfServingArea() bool {
-	if o != nil && !isNil(o.MbSmfServingArea) {
+	if o != nil && !IsNil(o.MbSmfServingArea) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *MbUpfInfo) SetMbSmfServingArea(v []string) {
 
 // GetInterfaceMbUpfInfoList returns the InterfaceMbUpfInfoList field value if set, zero value otherwise.
 func (o *MbUpfInfo) GetInterfaceMbUpfInfoList() []InterfaceUpfInfoItem {
-	if o == nil || isNil(o.InterfaceMbUpfInfoList) {
+	if o == nil || IsNil(o.InterfaceMbUpfInfoList) {
 		var ret []InterfaceUpfInfoItem
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *MbUpfInfo) GetInterfaceMbUpfInfoList() []InterfaceUpfInfoItem {
 // GetInterfaceMbUpfInfoListOk returns a tuple with the InterfaceMbUpfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbUpfInfo) GetInterfaceMbUpfInfoListOk() ([]InterfaceUpfInfoItem, bool) {
-	if o == nil || isNil(o.InterfaceMbUpfInfoList) {
+	if o == nil || IsNil(o.InterfaceMbUpfInfoList) {
 		return nil, false
 	}
 	return o.InterfaceMbUpfInfoList, true
@@ -122,7 +122,7 @@ func (o *MbUpfInfo) GetInterfaceMbUpfInfoListOk() ([]InterfaceUpfInfoItem, bool)
 
 // HasInterfaceMbUpfInfoList returns a boolean if a field has been set.
 func (o *MbUpfInfo) HasInterfaceMbUpfInfoList() bool {
-	if o != nil && !isNil(o.InterfaceMbUpfInfoList) {
+	if o != nil && !IsNil(o.InterfaceMbUpfInfoList) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *MbUpfInfo) SetInterfaceMbUpfInfoList(v []InterfaceUpfInfoItem) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *MbUpfInfo) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *MbUpfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbUpfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -154,7 +154,7 @@ func (o *MbUpfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *MbUpfInfo) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *MbUpfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *MbUpfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *MbUpfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbUpfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -186,7 +186,7 @@ func (o *MbUpfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *MbUpfInfo) HasTaiRangeList() bool {
-	if o != nil && !isNil(o.TaiRangeList) {
+	if o != nil && !IsNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *MbUpfInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *MbUpfInfo) GetPriority() int32 {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *MbUpfInfo) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbUpfInfo) GetPriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -218,7 +218,7 @@ func (o *MbUpfInfo) GetPriorityOk() (*int32, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *MbUpfInfo) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *MbUpfInfo) SetPriority(v int32) {
 
 // GetSupportedPfcpFeatures returns the SupportedPfcpFeatures field value if set, zero value otherwise.
 func (o *MbUpfInfo) GetSupportedPfcpFeatures() string {
-	if o == nil || isNil(o.SupportedPfcpFeatures) {
+	if o == nil || IsNil(o.SupportedPfcpFeatures) {
 		var ret string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *MbUpfInfo) GetSupportedPfcpFeatures() string {
 // GetSupportedPfcpFeaturesOk returns a tuple with the SupportedPfcpFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbUpfInfo) GetSupportedPfcpFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedPfcpFeatures) {
+	if o == nil || IsNil(o.SupportedPfcpFeatures) {
 		return nil, false
 	}
 	return o.SupportedPfcpFeatures, true
@@ -250,7 +250,7 @@ func (o *MbUpfInfo) GetSupportedPfcpFeaturesOk() (*string, bool) {
 
 // HasSupportedPfcpFeatures returns a boolean if a field has been set.
 func (o *MbUpfInfo) HasSupportedPfcpFeatures() bool {
-	if o != nil && !isNil(o.SupportedPfcpFeatures) {
+	if o != nil && !IsNil(o.SupportedPfcpFeatures) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *MbUpfInfo) SetSupportedPfcpFeatures(v string) {
 }
 
 func (o MbUpfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -273,22 +273,22 @@ func (o MbUpfInfo) MarshalJSON() ([]byte, error) {
 func (o MbUpfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssaiMbUpfInfoList"] = o.SNssaiMbUpfInfoList
-	if !isNil(o.MbSmfServingArea) {
+	if !IsNil(o.MbSmfServingArea) {
 		toSerialize["mbSmfServingArea"] = o.MbSmfServingArea
 	}
-	if !isNil(o.InterfaceMbUpfInfoList) {
+	if !IsNil(o.InterfaceMbUpfInfoList) {
 		toSerialize["interfaceMbUpfInfoList"] = o.InterfaceMbUpfInfoList
 	}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.TaiRangeList) {
+	if !IsNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.SupportedPfcpFeatures) {
+	if !IsNil(o.SupportedPfcpFeatures) {
 		toSerialize["supportedPfcpFeatures"] = o.SupportedPfcpFeatures
 	}
 	return toSerialize, nil
@@ -329,5 +329,3 @@ func (v *NullableMbUpfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

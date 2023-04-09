@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,17 +17,17 @@ import (
 // checks if the MbsPolicyDecision type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsPolicyDecision{}
 
-// MbsPolicyDecision Represents the parameters constituting an MBS Policy Decision. 
+// MbsPolicyDecision Represents the parameters constituting an MBS Policy Decision.
 type MbsPolicyDecision struct {
-	// A map of MBS PCC rule(s) with each map entry containing the MbsPccRule data structure. The key of the map for each entry is the mbsPccRuleId attribute of the corresponding MbsPccRule data structure. 
+	// A map of MBS PCC rule(s) with each map entry containing the MbsPccRule data structure. The key of the map for each entry is the mbsPccRuleId attribute of the corresponding MbsPccRule data structure.
 	MbsPccRules map[string]MbsPccRule `json:"mbsPccRules,omitempty"`
-	// A map of MBS QoS Decision(s) with each map entry containing the MbsQosDec data structure. The key of the map for each entry is the mbsQosId attribute of the corresponding MbsQosDec data structure. 
+	// A map of MBS QoS Decision(s) with each map entry containing the MbsQosDec data structure. The key of the map for each entry is the mbsQosId attribute of the corresponding MbsQosDec data structure.
 	MbsQosDecs *map[string]MbsQosDec `json:"mbsQosDecs,omitempty"`
-	// A map of MBS QoS Characteristics set(s) with each map entry containing the MbsQosChar data structure. The key of the map for each entry is the 5QI attribute of the corresponding MbsQosDec data structure. 
+	// A map of MBS QoS Characteristics set(s) with each map entry containing the MbsQosChar data structure. The key of the map for each entry is the 5QI attribute of the corresponding MbsQosDec data structure.
 	MbsQosChars *map[string]MbsQosChar `json:"mbsQosChars,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	AuthMbsSessAmbr *string `json:"authMbsSessAmbr,omitempty"`
-	MbsPcrts []MbsPcrt `json:"mbsPcrts,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	AuthMbsSessAmbr *string   `json:"authMbsSessAmbr,omitempty"`
+	MbsPcrts        []MbsPcrt `json:"mbsPcrts,omitempty"`
 }
 
 // NewMbsPolicyDecision instantiates a new MbsPolicyDecision object
@@ -60,7 +60,7 @@ func (o *MbsPolicyDecision) GetMbsPccRules() map[string]MbsPccRule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MbsPolicyDecision) GetMbsPccRulesOk() (*map[string]MbsPccRule, bool) {
-	if o == nil || isNil(o.MbsPccRules) {
+	if o == nil || IsNil(o.MbsPccRules) {
 		return nil, false
 	}
 	return &o.MbsPccRules, true
@@ -68,7 +68,7 @@ func (o *MbsPolicyDecision) GetMbsPccRulesOk() (*map[string]MbsPccRule, bool) {
 
 // HasMbsPccRules returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsPccRules() bool {
-	if o != nil && isNil(o.MbsPccRules) {
+	if o != nil && IsNil(o.MbsPccRules) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *MbsPolicyDecision) SetMbsPccRules(v map[string]MbsPccRule) {
 
 // GetMbsQosDecs returns the MbsQosDecs field value if set, zero value otherwise.
 func (o *MbsPolicyDecision) GetMbsQosDecs() map[string]MbsQosDec {
-	if o == nil || isNil(o.MbsQosDecs) {
+	if o == nil || IsNil(o.MbsQosDecs) {
 		var ret map[string]MbsQosDec
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *MbsPolicyDecision) GetMbsQosDecs() map[string]MbsQosDec {
 // GetMbsQosDecsOk returns a tuple with the MbsQosDecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyDecision) GetMbsQosDecsOk() (*map[string]MbsQosDec, bool) {
-	if o == nil || isNil(o.MbsQosDecs) {
+	if o == nil || IsNil(o.MbsQosDecs) {
 		return nil, false
 	}
 	return o.MbsQosDecs, true
@@ -100,7 +100,7 @@ func (o *MbsPolicyDecision) GetMbsQosDecsOk() (*map[string]MbsQosDec, bool) {
 
 // HasMbsQosDecs returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsQosDecs() bool {
-	if o != nil && !isNil(o.MbsQosDecs) {
+	if o != nil && !IsNil(o.MbsQosDecs) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *MbsPolicyDecision) SetMbsQosDecs(v map[string]MbsQosDec) {
 
 // GetMbsQosChars returns the MbsQosChars field value if set, zero value otherwise.
 func (o *MbsPolicyDecision) GetMbsQosChars() map[string]MbsQosChar {
-	if o == nil || isNil(o.MbsQosChars) {
+	if o == nil || IsNil(o.MbsQosChars) {
 		var ret map[string]MbsQosChar
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *MbsPolicyDecision) GetMbsQosChars() map[string]MbsQosChar {
 // GetMbsQosCharsOk returns a tuple with the MbsQosChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyDecision) GetMbsQosCharsOk() (*map[string]MbsQosChar, bool) {
-	if o == nil || isNil(o.MbsQosChars) {
+	if o == nil || IsNil(o.MbsQosChars) {
 		return nil, false
 	}
 	return o.MbsQosChars, true
@@ -132,7 +132,7 @@ func (o *MbsPolicyDecision) GetMbsQosCharsOk() (*map[string]MbsQosChar, bool) {
 
 // HasMbsQosChars returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsQosChars() bool {
-	if o != nil && !isNil(o.MbsQosChars) {
+	if o != nil && !IsNil(o.MbsQosChars) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *MbsPolicyDecision) SetMbsQosChars(v map[string]MbsQosChar) {
 
 // GetAuthMbsSessAmbr returns the AuthMbsSessAmbr field value if set, zero value otherwise.
 func (o *MbsPolicyDecision) GetAuthMbsSessAmbr() string {
-	if o == nil || isNil(o.AuthMbsSessAmbr) {
+	if o == nil || IsNil(o.AuthMbsSessAmbr) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *MbsPolicyDecision) GetAuthMbsSessAmbr() string {
 // GetAuthMbsSessAmbrOk returns a tuple with the AuthMbsSessAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyDecision) GetAuthMbsSessAmbrOk() (*string, bool) {
-	if o == nil || isNil(o.AuthMbsSessAmbr) {
+	if o == nil || IsNil(o.AuthMbsSessAmbr) {
 		return nil, false
 	}
 	return o.AuthMbsSessAmbr, true
@@ -164,7 +164,7 @@ func (o *MbsPolicyDecision) GetAuthMbsSessAmbrOk() (*string, bool) {
 
 // HasAuthMbsSessAmbr returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasAuthMbsSessAmbr() bool {
-	if o != nil && !isNil(o.AuthMbsSessAmbr) {
+	if o != nil && !IsNil(o.AuthMbsSessAmbr) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *MbsPolicyDecision) GetMbsPcrts() []MbsPcrt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MbsPolicyDecision) GetMbsPcrtsOk() ([]MbsPcrt, bool) {
-	if o == nil || isNil(o.MbsPcrts) {
+	if o == nil || IsNil(o.MbsPcrts) {
 		return nil, false
 	}
 	return o.MbsPcrts, true
@@ -197,7 +197,7 @@ func (o *MbsPolicyDecision) GetMbsPcrtsOk() ([]MbsPcrt, bool) {
 
 // HasMbsPcrts returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsPcrts() bool {
-	if o != nil && isNil(o.MbsPcrts) {
+	if o != nil && IsNil(o.MbsPcrts) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *MbsPolicyDecision) SetMbsPcrts(v []MbsPcrt) {
 }
 
 func (o MbsPolicyDecision) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -222,13 +222,13 @@ func (o MbsPolicyDecision) ToMap() (map[string]interface{}, error) {
 	if o.MbsPccRules != nil {
 		toSerialize["mbsPccRules"] = o.MbsPccRules
 	}
-	if !isNil(o.MbsQosDecs) {
+	if !IsNil(o.MbsQosDecs) {
 		toSerialize["mbsQosDecs"] = o.MbsQosDecs
 	}
-	if !isNil(o.MbsQosChars) {
+	if !IsNil(o.MbsQosChars) {
 		toSerialize["mbsQosChars"] = o.MbsQosChars
 	}
-	if !isNil(o.AuthMbsSessAmbr) {
+	if !IsNil(o.AuthMbsSessAmbr) {
 		toSerialize["authMbsSessAmbr"] = o.AuthMbsSessAmbr
 	}
 	if o.MbsPcrts != nil {
@@ -272,5 +272,3 @@ func (v *NullableMbsPolicyDecision) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

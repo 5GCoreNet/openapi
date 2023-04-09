@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AmfSubscriptionInfoDocumentApiService AmfSubscriptionInfoDocumentApi service
 type AmfSubscriptionInfoDocumentApiService service
 
 type ApiModifyAmfGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *AmfSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *AmfSubscriptionInfoDocumentApiService
+	ueGroupId         string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -50,28 +49,29 @@ func (r ApiModifyAmfGroupSubscriptionsRequest) Execute() (*PatchResult, *http.Re
 /*
 ModifyAmfGroupSubscriptions modify the AMF Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiModifyAmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiModifyAmfGroupSubscriptionsRequest
 */
 func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiModifyAmfGroupSubscriptionsRequest {
 	return ApiModifyAmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfGroupSubscriptionsExecute(r ApiModifyAmfGroupSubscriptionsRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AmfSubscriptionInfoDocumentApiService.ModifyAmfGroupSubscriptions")
@@ -91,7 +91,7 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfGroupSubscriptionsExecu
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -122,9 +122,9 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfGroupSubscriptionsExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -141,8 +141,8 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfGroupSubscriptionsExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -161,11 +161,11 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfGroupSubscriptionsExecu
 }
 
 type ApiModifyAmfSubscriptionInfoRequest struct {
-	ctx context.Context
-	ApiService *AmfSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *AmfSubscriptionInfoDocumentApiService
+	ueId              string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -187,28 +187,29 @@ func (r ApiModifyAmfSubscriptionInfoRequest) Execute() (*PatchResult, *http.Resp
 /*
 ModifyAmfSubscriptionInfo modify the AMF Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiModifyAmfSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiModifyAmfSubscriptionInfoRequest
 */
 func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiModifyAmfSubscriptionInfoRequest {
 	return ApiModifyAmfSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfoExecute(r ApiModifyAmfSubscriptionInfoRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AmfSubscriptionInfoDocumentApiService.ModifyAmfSubscriptionInfo")
@@ -228,7 +229,7 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfoExecute
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -259,9 +260,9 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfoExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -278,8 +279,8 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfoExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

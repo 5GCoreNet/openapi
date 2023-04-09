@@ -19,7 +19,7 @@ var _ MappedNullable = &MDAReportAllOf{}
 
 // MDAReportAllOf struct for MDAReportAllOf
 type MDAReportAllOf struct {
-	Attributes *interface{} `json:"attributes,omitempty"`
+	Attributes *MDAReportAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewMDAReportAllOf instantiates a new MDAReportAllOf object
@@ -40,9 +40,9 @@ func NewMDAReportAllOfWithDefaults() *MDAReportAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MDAReportAllOf) GetAttributes() interface{} {
-	if o == nil || isNil(o.Attributes) {
-		var ret interface{}
+func (o *MDAReportAllOf) GetAttributes() MDAReportAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret MDAReportAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *MDAReportAllOf) GetAttributes() interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MDAReportAllOf) GetAttributesOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *MDAReportAllOf) GetAttributesOk() (*MDAReportAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *MDAReportAllOf) GetAttributesOk() (*interface{}, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MDAReportAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
-func (o *MDAReportAllOf) SetAttributes(v interface{}) {
+// SetAttributes gets a reference to the given MDAReportAllOfAttributes and assigns it to the Attributes field.
+func (o *MDAReportAllOf) SetAttributes(v MDAReportAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o MDAReportAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MDAReportAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MDAReportAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMDAReportAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

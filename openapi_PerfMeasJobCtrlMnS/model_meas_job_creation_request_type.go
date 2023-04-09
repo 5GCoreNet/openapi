@@ -19,18 +19,18 @@ var _ MappedNullable = &MeasJobCreationRequestType{}
 
 // MeasJobCreationRequestType struct for MeasJobCreationRequestType
 type MeasJobCreationRequestType struct {
-	IOCName *string `json:"iOCName,omitempty"`
-	IOCInstanceList []string `json:"iOCInstanceList,omitempty"`
-	MeasurementCategoryList []string `json:"measurementCategoryList,omitempty"`
-	ReportingMethod *ReportingMethodType `json:"reportingMethod,omitempty"`
-	GranularityPeriod *int32 `json:"granularityPeriod,omitempty"`
-	ReportingPeriod *int32 `json:"reportingPeriod,omitempty"`
-	StartTime *string `json:"startTime,omitempty"`
-	StopTime *string `json:"stopTime,omitempty"`
-	Schedule *ScheduleType `json:"schedule,omitempty"`
-	StreamTarget *string `json:"streamTarget,omitempty"`
-	Priority *PriorityType `json:"priority,omitempty"`
-	Reliability *string `json:"reliability,omitempty"`
+	IOCName                 *string              `json:"iOCName,omitempty"`
+	IOCInstanceList         []string             `json:"iOCInstanceList,omitempty"`
+	MeasurementCategoryList []string             `json:"measurementCategoryList,omitempty"`
+	ReportingMethod         *ReportingMethodType `json:"reportingMethod,omitempty"`
+	GranularityPeriod       *int32               `json:"granularityPeriod,omitempty"`
+	ReportingPeriod         *int32               `json:"reportingPeriod,omitempty"`
+	StartTime               *string              `json:"startTime,omitempty"`
+	StopTime                *string              `json:"stopTime,omitempty"`
+	Schedule                *ScheduleType        `json:"schedule,omitempty"`
+	StreamTarget            *string              `json:"streamTarget,omitempty"`
+	Priority                *PriorityType        `json:"priority,omitempty"`
+	Reliability             *string              `json:"reliability,omitempty"`
 }
 
 // NewMeasJobCreationRequestType instantiates a new MeasJobCreationRequestType object
@@ -52,7 +52,7 @@ func NewMeasJobCreationRequestTypeWithDefaults() *MeasJobCreationRequestType {
 
 // GetIOCName returns the IOCName field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetIOCName() string {
-	if o == nil || isNil(o.IOCName) {
+	if o == nil || IsNil(o.IOCName) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *MeasJobCreationRequestType) GetIOCName() string {
 // GetIOCNameOk returns a tuple with the IOCName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetIOCNameOk() (*string, bool) {
-	if o == nil || isNil(o.IOCName) {
+	if o == nil || IsNil(o.IOCName) {
 		return nil, false
 	}
 	return o.IOCName, true
@@ -70,7 +70,7 @@ func (o *MeasJobCreationRequestType) GetIOCNameOk() (*string, bool) {
 
 // HasIOCName returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasIOCName() bool {
-	if o != nil && !isNil(o.IOCName) {
+	if o != nil && !IsNil(o.IOCName) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *MeasJobCreationRequestType) SetIOCName(v string) {
 
 // GetIOCInstanceList returns the IOCInstanceList field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetIOCInstanceList() []string {
-	if o == nil || isNil(o.IOCInstanceList) {
+	if o == nil || IsNil(o.IOCInstanceList) {
 		var ret []string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *MeasJobCreationRequestType) GetIOCInstanceList() []string {
 // GetIOCInstanceListOk returns a tuple with the IOCInstanceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetIOCInstanceListOk() ([]string, bool) {
-	if o == nil || isNil(o.IOCInstanceList) {
+	if o == nil || IsNil(o.IOCInstanceList) {
 		return nil, false
 	}
 	return o.IOCInstanceList, true
@@ -102,7 +102,7 @@ func (o *MeasJobCreationRequestType) GetIOCInstanceListOk() ([]string, bool) {
 
 // HasIOCInstanceList returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasIOCInstanceList() bool {
-	if o != nil && !isNil(o.IOCInstanceList) {
+	if o != nil && !IsNil(o.IOCInstanceList) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *MeasJobCreationRequestType) SetIOCInstanceList(v []string) {
 
 // GetMeasurementCategoryList returns the MeasurementCategoryList field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetMeasurementCategoryList() []string {
-	if o == nil || isNil(o.MeasurementCategoryList) {
+	if o == nil || IsNil(o.MeasurementCategoryList) {
 		var ret []string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *MeasJobCreationRequestType) GetMeasurementCategoryList() []string {
 // GetMeasurementCategoryListOk returns a tuple with the MeasurementCategoryList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetMeasurementCategoryListOk() ([]string, bool) {
-	if o == nil || isNil(o.MeasurementCategoryList) {
+	if o == nil || IsNil(o.MeasurementCategoryList) {
 		return nil, false
 	}
 	return o.MeasurementCategoryList, true
@@ -134,7 +134,7 @@ func (o *MeasJobCreationRequestType) GetMeasurementCategoryListOk() ([]string, b
 
 // HasMeasurementCategoryList returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasMeasurementCategoryList() bool {
-	if o != nil && !isNil(o.MeasurementCategoryList) {
+	if o != nil && !IsNil(o.MeasurementCategoryList) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *MeasJobCreationRequestType) SetMeasurementCategoryList(v []string) {
 
 // GetReportingMethod returns the ReportingMethod field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetReportingMethod() ReportingMethodType {
-	if o == nil || isNil(o.ReportingMethod) {
+	if o == nil || IsNil(o.ReportingMethod) {
 		var ret ReportingMethodType
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *MeasJobCreationRequestType) GetReportingMethod() ReportingMethodType {
 // GetReportingMethodOk returns a tuple with the ReportingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetReportingMethodOk() (*ReportingMethodType, bool) {
-	if o == nil || isNil(o.ReportingMethod) {
+	if o == nil || IsNil(o.ReportingMethod) {
 		return nil, false
 	}
 	return o.ReportingMethod, true
@@ -166,7 +166,7 @@ func (o *MeasJobCreationRequestType) GetReportingMethodOk() (*ReportingMethodTyp
 
 // HasReportingMethod returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasReportingMethod() bool {
-	if o != nil && !isNil(o.ReportingMethod) {
+	if o != nil && !IsNil(o.ReportingMethod) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *MeasJobCreationRequestType) SetReportingMethod(v ReportingMethodType) {
 
 // GetGranularityPeriod returns the GranularityPeriod field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetGranularityPeriod() int32 {
-	if o == nil || isNil(o.GranularityPeriod) {
+	if o == nil || IsNil(o.GranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *MeasJobCreationRequestType) GetGranularityPeriod() int32 {
 // GetGranularityPeriodOk returns a tuple with the GranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetGranularityPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.GranularityPeriod) {
+	if o == nil || IsNil(o.GranularityPeriod) {
 		return nil, false
 	}
 	return o.GranularityPeriod, true
@@ -198,7 +198,7 @@ func (o *MeasJobCreationRequestType) GetGranularityPeriodOk() (*int32, bool) {
 
 // HasGranularityPeriod returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasGranularityPeriod() bool {
-	if o != nil && !isNil(o.GranularityPeriod) {
+	if o != nil && !IsNil(o.GranularityPeriod) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *MeasJobCreationRequestType) SetGranularityPeriod(v int32) {
 
 // GetReportingPeriod returns the ReportingPeriod field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetReportingPeriod() int32 {
-	if o == nil || isNil(o.ReportingPeriod) {
+	if o == nil || IsNil(o.ReportingPeriod) {
 		var ret int32
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *MeasJobCreationRequestType) GetReportingPeriod() int32 {
 // GetReportingPeriodOk returns a tuple with the ReportingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetReportingPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportingPeriod) {
+	if o == nil || IsNil(o.ReportingPeriod) {
 		return nil, false
 	}
 	return o.ReportingPeriod, true
@@ -230,7 +230,7 @@ func (o *MeasJobCreationRequestType) GetReportingPeriodOk() (*int32, bool) {
 
 // HasReportingPeriod returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasReportingPeriod() bool {
-	if o != nil && !isNil(o.ReportingPeriod) {
+	if o != nil && !IsNil(o.ReportingPeriod) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *MeasJobCreationRequestType) SetReportingPeriod(v int32) {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetStartTime() string {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *MeasJobCreationRequestType) GetStartTime() string {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetStartTimeOk() (*string, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -262,7 +262,7 @@ func (o *MeasJobCreationRequestType) GetStartTimeOk() (*string, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *MeasJobCreationRequestType) SetStartTime(v string) {
 
 // GetStopTime returns the StopTime field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetStopTime() string {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *MeasJobCreationRequestType) GetStopTime() string {
 // GetStopTimeOk returns a tuple with the StopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetStopTimeOk() (*string, bool) {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		return nil, false
 	}
 	return o.StopTime, true
@@ -294,7 +294,7 @@ func (o *MeasJobCreationRequestType) GetStopTimeOk() (*string, bool) {
 
 // HasStopTime returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasStopTime() bool {
-	if o != nil && !isNil(o.StopTime) {
+	if o != nil && !IsNil(o.StopTime) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *MeasJobCreationRequestType) SetStopTime(v string) {
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetSchedule() ScheduleType {
-	if o == nil || isNil(o.Schedule) {
+	if o == nil || IsNil(o.Schedule) {
 		var ret ScheduleType
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *MeasJobCreationRequestType) GetSchedule() ScheduleType {
 // GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetScheduleOk() (*ScheduleType, bool) {
-	if o == nil || isNil(o.Schedule) {
+	if o == nil || IsNil(o.Schedule) {
 		return nil, false
 	}
 	return o.Schedule, true
@@ -326,7 +326,7 @@ func (o *MeasJobCreationRequestType) GetScheduleOk() (*ScheduleType, bool) {
 
 // HasSchedule returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasSchedule() bool {
-	if o != nil && !isNil(o.Schedule) {
+	if o != nil && !IsNil(o.Schedule) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *MeasJobCreationRequestType) SetSchedule(v ScheduleType) {
 
 // GetStreamTarget returns the StreamTarget field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetStreamTarget() string {
-	if o == nil || isNil(o.StreamTarget) {
+	if o == nil || IsNil(o.StreamTarget) {
 		var ret string
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *MeasJobCreationRequestType) GetStreamTarget() string {
 // GetStreamTargetOk returns a tuple with the StreamTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetStreamTargetOk() (*string, bool) {
-	if o == nil || isNil(o.StreamTarget) {
+	if o == nil || IsNil(o.StreamTarget) {
 		return nil, false
 	}
 	return o.StreamTarget, true
@@ -358,7 +358,7 @@ func (o *MeasJobCreationRequestType) GetStreamTargetOk() (*string, bool) {
 
 // HasStreamTarget returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasStreamTarget() bool {
-	if o != nil && !isNil(o.StreamTarget) {
+	if o != nil && !IsNil(o.StreamTarget) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *MeasJobCreationRequestType) SetStreamTarget(v string) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetPriority() PriorityType {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret PriorityType
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *MeasJobCreationRequestType) GetPriority() PriorityType {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetPriorityOk() (*PriorityType, bool) {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -390,7 +390,7 @@ func (o *MeasJobCreationRequestType) GetPriorityOk() (*PriorityType, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -404,7 +404,7 @@ func (o *MeasJobCreationRequestType) SetPriority(v PriorityType) {
 
 // GetReliability returns the Reliability field value if set, zero value otherwise.
 func (o *MeasJobCreationRequestType) GetReliability() string {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		var ret string
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *MeasJobCreationRequestType) GetReliability() string {
 // GetReliabilityOk returns a tuple with the Reliability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationRequestType) GetReliabilityOk() (*string, bool) {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		return nil, false
 	}
 	return o.Reliability, true
@@ -422,7 +422,7 @@ func (o *MeasJobCreationRequestType) GetReliabilityOk() (*string, bool) {
 
 // HasReliability returns a boolean if a field has been set.
 func (o *MeasJobCreationRequestType) HasReliability() bool {
-	if o != nil && !isNil(o.Reliability) {
+	if o != nil && !IsNil(o.Reliability) {
 		return true
 	}
 
@@ -435,7 +435,7 @@ func (o *MeasJobCreationRequestType) SetReliability(v string) {
 }
 
 func (o MeasJobCreationRequestType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -444,40 +444,40 @@ func (o MeasJobCreationRequestType) MarshalJSON() ([]byte, error) {
 
 func (o MeasJobCreationRequestType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IOCName) {
+	if !IsNil(o.IOCName) {
 		toSerialize["iOCName"] = o.IOCName
 	}
-	if !isNil(o.IOCInstanceList) {
+	if !IsNil(o.IOCInstanceList) {
 		toSerialize["iOCInstanceList"] = o.IOCInstanceList
 	}
-	if !isNil(o.MeasurementCategoryList) {
+	if !IsNil(o.MeasurementCategoryList) {
 		toSerialize["measurementCategoryList"] = o.MeasurementCategoryList
 	}
-	if !isNil(o.ReportingMethod) {
+	if !IsNil(o.ReportingMethod) {
 		toSerialize["reportingMethod"] = o.ReportingMethod
 	}
-	if !isNil(o.GranularityPeriod) {
+	if !IsNil(o.GranularityPeriod) {
 		toSerialize["granularityPeriod"] = o.GranularityPeriod
 	}
-	if !isNil(o.ReportingPeriod) {
+	if !IsNil(o.ReportingPeriod) {
 		toSerialize["reportingPeriod"] = o.ReportingPeriod
 	}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.StopTime) {
+	if !IsNil(o.StopTime) {
 		toSerialize["stopTime"] = o.StopTime
 	}
-	if !isNil(o.Schedule) {
+	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
 	}
-	if !isNil(o.StreamTarget) {
+	if !IsNil(o.StreamTarget) {
 		toSerialize["streamTarget"] = o.StreamTarget
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.Reliability) {
+	if !IsNil(o.Reliability) {
 		toSerialize["reliability"] = o.Reliability
 	}
 	return toSerialize, nil
@@ -518,5 +518,3 @@ func (v *NullableMeasJobCreationRequestType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

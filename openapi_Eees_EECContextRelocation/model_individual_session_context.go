@@ -1,7 +1,7 @@
 /*
 EES EEC Context Relocation API
 
-API for EEC Context Relocation.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EEC Context Relocation.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &IndividualSessionContext{}
 // IndividualSessionContext Represents a single service session context information.
 type IndividualSessionContext struct {
 	// Identifier of the EAS providing the application services.
-	EasId string `json:"easId"`
+	EasId string   `json:"easId"`
 	EndPt EndPoint `json:"endPt"`
 	// Identifier of the AC for which the service session information is provided.
 	AcId *string `json:"acId,omitempty"`
@@ -95,7 +95,7 @@ func (o *IndividualSessionContext) SetEndPt(v EndPoint) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *IndividualSessionContext) GetAcId() string {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *IndividualSessionContext) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndividualSessionContext) GetAcIdOk() (*string, bool) {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -113,7 +113,7 @@ func (o *IndividualSessionContext) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *IndividualSessionContext) HasAcId() bool {
-	if o != nil && !isNil(o.AcId) {
+	if o != nil && !IsNil(o.AcId) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *IndividualSessionContext) SetAcId(v string) {
 }
 
 func (o IndividualSessionContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o IndividualSessionContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
 	toSerialize["endPt"] = o.EndPt
-	if !isNil(o.AcId) {
+	if !IsNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableIndividualSessionContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

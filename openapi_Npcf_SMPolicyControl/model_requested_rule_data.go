@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the RequestedRuleData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RequestedRuleData{}
 
-// RequestedRuleData Contains rule data requested by the PCF to receive information associated with PCC rule(s). 
+// RequestedRuleData Contains rule data requested by the PCF to receive information associated with PCC rule(s).
 type RequestedRuleData struct {
-	// An array of PCC rule id references to the PCC rules associated with the control data.  
+	// An array of PCC rule id references to the PCC rules associated with the control data.
 	RefPccRuleIds []string `json:"refPccRuleIds"`
-	// Array of requested rule data type elements indicating what type of rule data is  requested for the corresponding referenced PCC rules. 
+	// Array of requested rule data type elements indicating what type of rule data is  requested for the corresponding referenced PCC rules.
 	ReqData []RequestedRuleDataType `json:"reqData"`
 }
 
@@ -93,7 +93,7 @@ func (o *RequestedRuleData) SetReqData(v []RequestedRuleDataType) {
 }
 
 func (o RequestedRuleData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableRequestedRuleData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

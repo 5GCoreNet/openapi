@@ -1,7 +1,7 @@
 /*
 3gpp-traffic-influence
 
-API for AF traffic influence   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF traffic influence   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -17,7 +17,7 @@ import (
 
 // TrafficInfluSub Represents a traffic influence subscription.
 type TrafficInfluSub struct {
-	OneOfAnyTypeAnyTypeAnyType *OneOfAnyTypeAnyTypeAnyType
+	OneOfAnyTypeAnyTypeAnyType                      *OneOfAnyTypeAnyTypeAnyType
 	OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType *OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType
 }
 
@@ -25,7 +25,7 @@ type TrafficInfluSub struct {
 func (dst *TrafficInfluSub) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into OneOfAnyTypeAnyTypeAnyType
-	err = json.Unmarshal(data, &dst.OneOfAnyTypeAnyTypeAnyType);
+	err = json.Unmarshal(data, &dst.OneOfAnyTypeAnyTypeAnyType)
 	if err == nil {
 		jsonOneOfAnyTypeAnyTypeAnyType, _ := json.Marshal(dst.OneOfAnyTypeAnyTypeAnyType)
 		if string(jsonOneOfAnyTypeAnyTypeAnyType) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *TrafficInfluSub) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType
-	err = json.Unmarshal(data, &dst.OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType);
+	err = json.Unmarshal(data, &dst.OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType)
 	if err == nil {
 		jsonOneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType, _ := json.Marshal(dst.OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType)
 		if string(jsonOneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyTypeAnyType) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableTrafficInfluSub) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,10 +21,10 @@ var _ MappedNullable = &DataChangeNotify{}
 type DataChangeNotify struct {
 	OriginalCallbackReference []string `json:"originalCallbackReference,omitempty"`
 	// String represents the SUPI or GPSI
-	UeId *string `json:"ueId,omitempty"`
-	NotifyItems []NotifyItem `json:"notifyItems,omitempty"`
-	SdmSubscription *SdmSubscription1 `json:"sdmSubscription,omitempty"`
-	AdditionalSdmSubscriptions []SdmSubscription1 `json:"additionalSdmSubscriptions,omitempty"`
+	UeId                          *string                         `json:"ueId,omitempty"`
+	NotifyItems                   []NotifyItem                    `json:"notifyItems,omitempty"`
+	SdmSubscription               *SdmSubscription1               `json:"sdmSubscription,omitempty"`
+	AdditionalSdmSubscriptions    []SdmSubscription1              `json:"additionalSdmSubscriptions,omitempty"`
 	SubscriptionDataSubscriptions []SubscriptionDataSubscriptions `json:"subscriptionDataSubscriptions,omitempty"`
 }
 
@@ -47,7 +47,7 @@ func NewDataChangeNotifyWithDefaults() *DataChangeNotify {
 
 // GetOriginalCallbackReference returns the OriginalCallbackReference field value if set, zero value otherwise.
 func (o *DataChangeNotify) GetOriginalCallbackReference() []string {
-	if o == nil || isNil(o.OriginalCallbackReference) {
+	if o == nil || IsNil(o.OriginalCallbackReference) {
 		var ret []string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *DataChangeNotify) GetOriginalCallbackReference() []string {
 // GetOriginalCallbackReferenceOk returns a tuple with the OriginalCallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataChangeNotify) GetOriginalCallbackReferenceOk() ([]string, bool) {
-	if o == nil || isNil(o.OriginalCallbackReference) {
+	if o == nil || IsNil(o.OriginalCallbackReference) {
 		return nil, false
 	}
 	return o.OriginalCallbackReference, true
@@ -65,7 +65,7 @@ func (o *DataChangeNotify) GetOriginalCallbackReferenceOk() ([]string, bool) {
 
 // HasOriginalCallbackReference returns a boolean if a field has been set.
 func (o *DataChangeNotify) HasOriginalCallbackReference() bool {
-	if o != nil && !isNil(o.OriginalCallbackReference) {
+	if o != nil && !IsNil(o.OriginalCallbackReference) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *DataChangeNotify) SetOriginalCallbackReference(v []string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *DataChangeNotify) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *DataChangeNotify) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataChangeNotify) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -97,7 +97,7 @@ func (o *DataChangeNotify) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *DataChangeNotify) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *DataChangeNotify) SetUeId(v string) {
 
 // GetNotifyItems returns the NotifyItems field value if set, zero value otherwise.
 func (o *DataChangeNotify) GetNotifyItems() []NotifyItem {
-	if o == nil || isNil(o.NotifyItems) {
+	if o == nil || IsNil(o.NotifyItems) {
 		var ret []NotifyItem
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *DataChangeNotify) GetNotifyItems() []NotifyItem {
 // GetNotifyItemsOk returns a tuple with the NotifyItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataChangeNotify) GetNotifyItemsOk() ([]NotifyItem, bool) {
-	if o == nil || isNil(o.NotifyItems) {
+	if o == nil || IsNil(o.NotifyItems) {
 		return nil, false
 	}
 	return o.NotifyItems, true
@@ -129,7 +129,7 @@ func (o *DataChangeNotify) GetNotifyItemsOk() ([]NotifyItem, bool) {
 
 // HasNotifyItems returns a boolean if a field has been set.
 func (o *DataChangeNotify) HasNotifyItems() bool {
-	if o != nil && !isNil(o.NotifyItems) {
+	if o != nil && !IsNil(o.NotifyItems) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *DataChangeNotify) SetNotifyItems(v []NotifyItem) {
 
 // GetSdmSubscription returns the SdmSubscription field value if set, zero value otherwise.
 func (o *DataChangeNotify) GetSdmSubscription() SdmSubscription1 {
-	if o == nil || isNil(o.SdmSubscription) {
+	if o == nil || IsNil(o.SdmSubscription) {
 		var ret SdmSubscription1
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *DataChangeNotify) GetSdmSubscription() SdmSubscription1 {
 // GetSdmSubscriptionOk returns a tuple with the SdmSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataChangeNotify) GetSdmSubscriptionOk() (*SdmSubscription1, bool) {
-	if o == nil || isNil(o.SdmSubscription) {
+	if o == nil || IsNil(o.SdmSubscription) {
 		return nil, false
 	}
 	return o.SdmSubscription, true
@@ -161,7 +161,7 @@ func (o *DataChangeNotify) GetSdmSubscriptionOk() (*SdmSubscription1, bool) {
 
 // HasSdmSubscription returns a boolean if a field has been set.
 func (o *DataChangeNotify) HasSdmSubscription() bool {
-	if o != nil && !isNil(o.SdmSubscription) {
+	if o != nil && !IsNil(o.SdmSubscription) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *DataChangeNotify) SetSdmSubscription(v SdmSubscription1) {
 
 // GetAdditionalSdmSubscriptions returns the AdditionalSdmSubscriptions field value if set, zero value otherwise.
 func (o *DataChangeNotify) GetAdditionalSdmSubscriptions() []SdmSubscription1 {
-	if o == nil || isNil(o.AdditionalSdmSubscriptions) {
+	if o == nil || IsNil(o.AdditionalSdmSubscriptions) {
 		var ret []SdmSubscription1
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *DataChangeNotify) GetAdditionalSdmSubscriptions() []SdmSubscription1 {
 // GetAdditionalSdmSubscriptionsOk returns a tuple with the AdditionalSdmSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataChangeNotify) GetAdditionalSdmSubscriptionsOk() ([]SdmSubscription1, bool) {
-	if o == nil || isNil(o.AdditionalSdmSubscriptions) {
+	if o == nil || IsNil(o.AdditionalSdmSubscriptions) {
 		return nil, false
 	}
 	return o.AdditionalSdmSubscriptions, true
@@ -193,7 +193,7 @@ func (o *DataChangeNotify) GetAdditionalSdmSubscriptionsOk() ([]SdmSubscription1
 
 // HasAdditionalSdmSubscriptions returns a boolean if a field has been set.
 func (o *DataChangeNotify) HasAdditionalSdmSubscriptions() bool {
-	if o != nil && !isNil(o.AdditionalSdmSubscriptions) {
+	if o != nil && !IsNil(o.AdditionalSdmSubscriptions) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *DataChangeNotify) SetAdditionalSdmSubscriptions(v []SdmSubscription1) {
 
 // GetSubscriptionDataSubscriptions returns the SubscriptionDataSubscriptions field value if set, zero value otherwise.
 func (o *DataChangeNotify) GetSubscriptionDataSubscriptions() []SubscriptionDataSubscriptions {
-	if o == nil || isNil(o.SubscriptionDataSubscriptions) {
+	if o == nil || IsNil(o.SubscriptionDataSubscriptions) {
 		var ret []SubscriptionDataSubscriptions
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *DataChangeNotify) GetSubscriptionDataSubscriptions() []SubscriptionData
 // GetSubscriptionDataSubscriptionsOk returns a tuple with the SubscriptionDataSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataChangeNotify) GetSubscriptionDataSubscriptionsOk() ([]SubscriptionDataSubscriptions, bool) {
-	if o == nil || isNil(o.SubscriptionDataSubscriptions) {
+	if o == nil || IsNil(o.SubscriptionDataSubscriptions) {
 		return nil, false
 	}
 	return o.SubscriptionDataSubscriptions, true
@@ -225,7 +225,7 @@ func (o *DataChangeNotify) GetSubscriptionDataSubscriptionsOk() ([]SubscriptionD
 
 // HasSubscriptionDataSubscriptions returns a boolean if a field has been set.
 func (o *DataChangeNotify) HasSubscriptionDataSubscriptions() bool {
-	if o != nil && !isNil(o.SubscriptionDataSubscriptions) {
+	if o != nil && !IsNil(o.SubscriptionDataSubscriptions) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *DataChangeNotify) SetSubscriptionDataSubscriptions(v []SubscriptionData
 }
 
 func (o DataChangeNotify) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -247,22 +247,22 @@ func (o DataChangeNotify) MarshalJSON() ([]byte, error) {
 
 func (o DataChangeNotify) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.OriginalCallbackReference) {
+	if !IsNil(o.OriginalCallbackReference) {
 		toSerialize["originalCallbackReference"] = o.OriginalCallbackReference
 	}
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.NotifyItems) {
+	if !IsNil(o.NotifyItems) {
 		toSerialize["notifyItems"] = o.NotifyItems
 	}
-	if !isNil(o.SdmSubscription) {
+	if !IsNil(o.SdmSubscription) {
 		toSerialize["sdmSubscription"] = o.SdmSubscription
 	}
-	if !isNil(o.AdditionalSdmSubscriptions) {
+	if !IsNil(o.AdditionalSdmSubscriptions) {
 		toSerialize["additionalSdmSubscriptions"] = o.AdditionalSdmSubscriptions
 	}
-	if !isNil(o.SubscriptionDataSubscriptions) {
+	if !IsNil(o.SubscriptionDataSubscriptions) {
 		toSerialize["subscriptionDataSubscriptions"] = o.SubscriptionDataSubscriptions
 	}
 	return toSerialize, nil
@@ -303,5 +303,3 @@ func (v *NullableDataChangeNotify) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

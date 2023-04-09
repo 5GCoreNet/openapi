@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &PC5ContainerInformation{}
 
 // PC5ContainerInformation struct for PC5ContainerInformation
 type PC5ContainerInformation struct {
-	CoverageInfoList []CoverageInfo `json:"coverageInfoList,omitempty"`
+	CoverageInfoList          []CoverageInfo          `json:"coverageInfoList,omitempty"`
 	RadioParameterSetInfoList []RadioParameterSetInfo `json:"radioParameterSetInfoList,omitempty"`
-	TransmitterInfoList []TransmitterInfo `json:"transmitterInfoList,omitempty"`
+	TransmitterInfoList       []TransmitterInfo       `json:"transmitterInfoList,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeOfFirstTransmission *time.Time `json:"timeOfFirst Transmission,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
@@ -48,7 +48,7 @@ func NewPC5ContainerInformationWithDefaults() *PC5ContainerInformation {
 
 // GetCoverageInfoList returns the CoverageInfoList field value if set, zero value otherwise.
 func (o *PC5ContainerInformation) GetCoverageInfoList() []CoverageInfo {
-	if o == nil || isNil(o.CoverageInfoList) {
+	if o == nil || IsNil(o.CoverageInfoList) {
 		var ret []CoverageInfo
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PC5ContainerInformation) GetCoverageInfoList() []CoverageInfo {
 // GetCoverageInfoListOk returns a tuple with the CoverageInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5ContainerInformation) GetCoverageInfoListOk() ([]CoverageInfo, bool) {
-	if o == nil || isNil(o.CoverageInfoList) {
+	if o == nil || IsNil(o.CoverageInfoList) {
 		return nil, false
 	}
 	return o.CoverageInfoList, true
@@ -66,7 +66,7 @@ func (o *PC5ContainerInformation) GetCoverageInfoListOk() ([]CoverageInfo, bool)
 
 // HasCoverageInfoList returns a boolean if a field has been set.
 func (o *PC5ContainerInformation) HasCoverageInfoList() bool {
-	if o != nil && !isNil(o.CoverageInfoList) {
+	if o != nil && !IsNil(o.CoverageInfoList) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *PC5ContainerInformation) SetCoverageInfoList(v []CoverageInfo) {
 
 // GetRadioParameterSetInfoList returns the RadioParameterSetInfoList field value if set, zero value otherwise.
 func (o *PC5ContainerInformation) GetRadioParameterSetInfoList() []RadioParameterSetInfo {
-	if o == nil || isNil(o.RadioParameterSetInfoList) {
+	if o == nil || IsNil(o.RadioParameterSetInfoList) {
 		var ret []RadioParameterSetInfo
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *PC5ContainerInformation) GetRadioParameterSetInfoList() []RadioParamete
 // GetRadioParameterSetInfoListOk returns a tuple with the RadioParameterSetInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5ContainerInformation) GetRadioParameterSetInfoListOk() ([]RadioParameterSetInfo, bool) {
-	if o == nil || isNil(o.RadioParameterSetInfoList) {
+	if o == nil || IsNil(o.RadioParameterSetInfoList) {
 		return nil, false
 	}
 	return o.RadioParameterSetInfoList, true
@@ -98,7 +98,7 @@ func (o *PC5ContainerInformation) GetRadioParameterSetInfoListOk() ([]RadioParam
 
 // HasRadioParameterSetInfoList returns a boolean if a field has been set.
 func (o *PC5ContainerInformation) HasRadioParameterSetInfoList() bool {
-	if o != nil && !isNil(o.RadioParameterSetInfoList) {
+	if o != nil && !IsNil(o.RadioParameterSetInfoList) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *PC5ContainerInformation) SetRadioParameterSetInfoList(v []RadioParamete
 
 // GetTransmitterInfoList returns the TransmitterInfoList field value if set, zero value otherwise.
 func (o *PC5ContainerInformation) GetTransmitterInfoList() []TransmitterInfo {
-	if o == nil || isNil(o.TransmitterInfoList) {
+	if o == nil || IsNil(o.TransmitterInfoList) {
 		var ret []TransmitterInfo
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PC5ContainerInformation) GetTransmitterInfoList() []TransmitterInfo {
 // GetTransmitterInfoListOk returns a tuple with the TransmitterInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5ContainerInformation) GetTransmitterInfoListOk() ([]TransmitterInfo, bool) {
-	if o == nil || isNil(o.TransmitterInfoList) {
+	if o == nil || IsNil(o.TransmitterInfoList) {
 		return nil, false
 	}
 	return o.TransmitterInfoList, true
@@ -130,7 +130,7 @@ func (o *PC5ContainerInformation) GetTransmitterInfoListOk() ([]TransmitterInfo,
 
 // HasTransmitterInfoList returns a boolean if a field has been set.
 func (o *PC5ContainerInformation) HasTransmitterInfoList() bool {
-	if o != nil && !isNil(o.TransmitterInfoList) {
+	if o != nil && !IsNil(o.TransmitterInfoList) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *PC5ContainerInformation) SetTransmitterInfoList(v []TransmitterInfo) {
 
 // GetTimeOfFirstTransmission returns the TimeOfFirstTransmission field value if set, zero value otherwise.
 func (o *PC5ContainerInformation) GetTimeOfFirstTransmission() time.Time {
-	if o == nil || isNil(o.TimeOfFirstTransmission) {
+	if o == nil || IsNil(o.TimeOfFirstTransmission) {
 		var ret time.Time
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *PC5ContainerInformation) GetTimeOfFirstTransmission() time.Time {
 // GetTimeOfFirstTransmissionOk returns a tuple with the TimeOfFirstTransmission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5ContainerInformation) GetTimeOfFirstTransmissionOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeOfFirstTransmission) {
+	if o == nil || IsNil(o.TimeOfFirstTransmission) {
 		return nil, false
 	}
 	return o.TimeOfFirstTransmission, true
@@ -162,7 +162,7 @@ func (o *PC5ContainerInformation) GetTimeOfFirstTransmissionOk() (*time.Time, bo
 
 // HasTimeOfFirstTransmission returns a boolean if a field has been set.
 func (o *PC5ContainerInformation) HasTimeOfFirstTransmission() bool {
-	if o != nil && !isNil(o.TimeOfFirstTransmission) {
+	if o != nil && !IsNil(o.TimeOfFirstTransmission) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *PC5ContainerInformation) SetTimeOfFirstTransmission(v time.Time) {
 
 // GetTimeOfFirstReception returns the TimeOfFirstReception field value if set, zero value otherwise.
 func (o *PC5ContainerInformation) GetTimeOfFirstReception() time.Time {
-	if o == nil || isNil(o.TimeOfFirstReception) {
+	if o == nil || IsNil(o.TimeOfFirstReception) {
 		var ret time.Time
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *PC5ContainerInformation) GetTimeOfFirstReception() time.Time {
 // GetTimeOfFirstReceptionOk returns a tuple with the TimeOfFirstReception field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5ContainerInformation) GetTimeOfFirstReceptionOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeOfFirstReception) {
+	if o == nil || IsNil(o.TimeOfFirstReception) {
 		return nil, false
 	}
 	return o.TimeOfFirstReception, true
@@ -194,7 +194,7 @@ func (o *PC5ContainerInformation) GetTimeOfFirstReceptionOk() (*time.Time, bool)
 
 // HasTimeOfFirstReception returns a boolean if a field has been set.
 func (o *PC5ContainerInformation) HasTimeOfFirstReception() bool {
-	if o != nil && !isNil(o.TimeOfFirstReception) {
+	if o != nil && !IsNil(o.TimeOfFirstReception) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *PC5ContainerInformation) SetTimeOfFirstReception(v time.Time) {
 }
 
 func (o PC5ContainerInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,19 +216,19 @@ func (o PC5ContainerInformation) MarshalJSON() ([]byte, error) {
 
 func (o PC5ContainerInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CoverageInfoList) {
+	if !IsNil(o.CoverageInfoList) {
 		toSerialize["coverageInfoList"] = o.CoverageInfoList
 	}
-	if !isNil(o.RadioParameterSetInfoList) {
+	if !IsNil(o.RadioParameterSetInfoList) {
 		toSerialize["radioParameterSetInfoList"] = o.RadioParameterSetInfoList
 	}
-	if !isNil(o.TransmitterInfoList) {
+	if !IsNil(o.TransmitterInfoList) {
 		toSerialize["transmitterInfoList"] = o.TransmitterInfoList
 	}
-	if !isNil(o.TimeOfFirstTransmission) {
+	if !IsNil(o.TimeOfFirstTransmission) {
 		toSerialize["timeOfFirst Transmission"] = o.TimeOfFirstTransmission
 	}
-	if !isNil(o.TimeOfFirstReception) {
+	if !IsNil(o.TimeOfFirstReception) {
 		toSerialize["timeOfFirst Reception"] = o.TimeOfFirstReception
 	}
 	return toSerialize, nil
@@ -269,5 +269,3 @@ func (v *NullablePC5ContainerInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

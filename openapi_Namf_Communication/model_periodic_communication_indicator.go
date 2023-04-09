@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // PeriodicCommunicationIndicator Indicates the Periodic Communication Indicator
 type PeriodicCommunicationIndicator struct {
-	PeriodicCommunicationIndicatorAnyOf *PeriodicCommunicationIndicatorAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PeriodicCommunicationIndicator) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PeriodicCommunicationIndicatorAnyOf
-	err = json.Unmarshal(data, &dst.PeriodicCommunicationIndicatorAnyOf);
-	if err == nil {
-		jsonPeriodicCommunicationIndicatorAnyOf, _ := json.Marshal(dst.PeriodicCommunicationIndicatorAnyOf)
-		if string(jsonPeriodicCommunicationIndicatorAnyOf) == "{}" { // empty struct
-			dst.PeriodicCommunicationIndicatorAnyOf = nil
-		} else {
-			return nil // data stored in dst.PeriodicCommunicationIndicatorAnyOf, return on the first match
-		}
-	} else {
-		dst.PeriodicCommunicationIndicatorAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PeriodicCommunicationIndicator) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PeriodicCommunicationIndicator) MarshalJSON() ([]byte, error) {
-	if src.PeriodicCommunicationIndicatorAnyOf != nil {
-		return json.Marshal(&src.PeriodicCommunicationIndicatorAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePeriodicCommunicationIndicator) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

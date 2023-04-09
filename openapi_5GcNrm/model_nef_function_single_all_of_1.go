@@ -41,7 +41,7 @@ func NewNefFunctionSingleAllOf1WithDefaults() *NefFunctionSingleAllOf1 {
 
 // GetEPN33 returns the EPN33 field value if set, zero value otherwise.
 func (o *NefFunctionSingleAllOf1) GetEPN33() []EPN33Single {
-	if o == nil || isNil(o.EPN33) {
+	if o == nil || IsNil(o.EPN33) {
 		var ret []EPN33Single
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NefFunctionSingleAllOf1) GetEPN33() []EPN33Single {
 // GetEPN33Ok returns a tuple with the EPN33 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefFunctionSingleAllOf1) GetEPN33Ok() ([]EPN33Single, bool) {
-	if o == nil || isNil(o.EPN33) {
+	if o == nil || IsNil(o.EPN33) {
 		return nil, false
 	}
 	return o.EPN33, true
@@ -59,7 +59,7 @@ func (o *NefFunctionSingleAllOf1) GetEPN33Ok() ([]EPN33Single, bool) {
 
 // HasEPN33 returns a boolean if a field has been set.
 func (o *NefFunctionSingleAllOf1) HasEPN33() bool {
-	if o != nil && !isNil(o.EPN33) {
+	if o != nil && !IsNil(o.EPN33) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *NefFunctionSingleAllOf1) SetEPN33(v []EPN33Single) {
 }
 
 func (o NefFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o NefFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NefFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EPN33) {
+	if !IsNil(o.EPN33) {
 		toSerialize["EP_N33"] = o.EPN33
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableNefFunctionSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

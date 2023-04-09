@@ -41,7 +41,7 @@ func NewMnsAgentSingleAllOfAttributesWithDefaults() *MnsAgentSingleAllOfAttribut
 
 // GetSystemDN returns the SystemDN field value if set, zero value otherwise.
 func (o *MnsAgentSingleAllOfAttributes) GetSystemDN() string {
-	if o == nil || isNil(o.SystemDN) {
+	if o == nil || IsNil(o.SystemDN) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MnsAgentSingleAllOfAttributes) GetSystemDN() string {
 // GetSystemDNOk returns a tuple with the SystemDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsAgentSingleAllOfAttributes) GetSystemDNOk() (*string, bool) {
-	if o == nil || isNil(o.SystemDN) {
+	if o == nil || IsNil(o.SystemDN) {
 		return nil, false
 	}
 	return o.SystemDN, true
@@ -59,7 +59,7 @@ func (o *MnsAgentSingleAllOfAttributes) GetSystemDNOk() (*string, bool) {
 
 // HasSystemDN returns a boolean if a field has been set.
 func (o *MnsAgentSingleAllOfAttributes) HasSystemDN() bool {
-	if o != nil && !isNil(o.SystemDN) {
+	if o != nil && !IsNil(o.SystemDN) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MnsAgentSingleAllOfAttributes) SetSystemDN(v string) {
 }
 
 func (o MnsAgentSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MnsAgentSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o MnsAgentSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SystemDN) {
+	if !IsNil(o.SystemDN) {
 		toSerialize["systemDN"] = o.SystemDN
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMnsAgentSingleAllOfAttributes) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

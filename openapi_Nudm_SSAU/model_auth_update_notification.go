@@ -1,7 +1,7 @@
 /*
 Nudm_SSAU
 
-Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &AuthUpdateNotification{}
 // AuthUpdateNotification Represents an authorization update notification.
 type AuthUpdateNotification struct {
 	ServiceType ServiceType `json:"serviceType"`
-	Snssai *Snssai `json:"snssai,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	Snssai      *Snssai     `json:"snssai,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn                *string          `json:"dnn,omitempty"`
 	AuthUpdateInfoList []AuthUpdateInfo `json:"authUpdateInfoList"`
 	// String uniquely identifying MTC provider information.
 	MtcProviderInformation *string `json:"mtcProviderInformation,omitempty"`
-	AfId *string `json:"afId,omitempty"`
+	AfId                   *string `json:"afId,omitempty"`
 }
 
 // NewAuthUpdateNotification instantiates a new AuthUpdateNotification object
@@ -74,7 +74,7 @@ func (o *AuthUpdateNotification) SetServiceType(v ServiceType) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *AuthUpdateNotification) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AuthUpdateNotification) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateNotification) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -92,7 +92,7 @@ func (o *AuthUpdateNotification) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *AuthUpdateNotification) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AuthUpdateNotification) SetSnssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *AuthUpdateNotification) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *AuthUpdateNotification) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateNotification) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -124,7 +124,7 @@ func (o *AuthUpdateNotification) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *AuthUpdateNotification) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *AuthUpdateNotification) SetAuthUpdateInfoList(v []AuthUpdateInfo) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *AuthUpdateNotification) GetMtcProviderInformation() string {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *AuthUpdateNotification) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateNotification) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -180,7 +180,7 @@ func (o *AuthUpdateNotification) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *AuthUpdateNotification) HasMtcProviderInformation() bool {
-	if o != nil && !isNil(o.MtcProviderInformation) {
+	if o != nil && !IsNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *AuthUpdateNotification) SetMtcProviderInformation(v string) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *AuthUpdateNotification) GetAfId() string {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *AuthUpdateNotification) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateNotification) GetAfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -212,7 +212,7 @@ func (o *AuthUpdateNotification) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *AuthUpdateNotification) HasAfId() bool {
-	if o != nil && !isNil(o.AfId) {
+	if o != nil && !IsNil(o.AfId) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *AuthUpdateNotification) SetAfId(v string) {
 }
 
 func (o AuthUpdateNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -235,17 +235,17 @@ func (o AuthUpdateNotification) MarshalJSON() ([]byte, error) {
 func (o AuthUpdateNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["serviceType"] = o.ServiceType
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	toSerialize["authUpdateInfoList"] = o.AuthUpdateInfoList
-	if !isNil(o.MtcProviderInformation) {
+	if !IsNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
-	if !isNil(o.AfId) {
+	if !IsNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
 	return toSerialize, nil
@@ -286,5 +286,3 @@ func (v *NullableAuthUpdateNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

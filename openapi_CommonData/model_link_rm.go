@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the LinkRm type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LinkRm{}
 
-// LinkRm It contains the URI of the linked resource with the OpenAPI 'nullable: true' property. 
+// LinkRm It contains the URI of the linked resource with the OpenAPI 'nullable: true' property.
 type LinkRm struct {
 	// String providing an URI formatted according to RFC 3986.
 	Href *string `json:"href,omitempty"`
@@ -42,7 +42,7 @@ func NewLinkRmWithDefaults() *LinkRm {
 
 // GetHref returns the Href field value if set, zero value otherwise.
 func (o *LinkRm) GetHref() string {
-	if o == nil || isNil(o.Href) {
+	if o == nil || IsNil(o.Href) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LinkRm) GetHref() string {
 // GetHrefOk returns a tuple with the Href field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LinkRm) GetHrefOk() (*string, bool) {
-	if o == nil || isNil(o.Href) {
+	if o == nil || IsNil(o.Href) {
 		return nil, false
 	}
 	return o.Href, true
@@ -60,7 +60,7 @@ func (o *LinkRm) GetHrefOk() (*string, bool) {
 
 // HasHref returns a boolean if a field has been set.
 func (o *LinkRm) HasHref() bool {
-	if o != nil && !isNil(o.Href) {
+	if o != nil && !IsNil(o.Href) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *LinkRm) SetHref(v string) {
 }
 
 func (o LinkRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o LinkRm) MarshalJSON() ([]byte, error) {
 
 func (o LinkRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Href) {
+	if !IsNil(o.Href) {
 		toSerialize["href"] = o.Href
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableLinkRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

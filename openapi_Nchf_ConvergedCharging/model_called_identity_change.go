@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewCalledIdentityChangeWithDefaults() *CalledIdentityChange {
 
 // GetCalledIdentity returns the CalledIdentity field value if set, zero value otherwise.
 func (o *CalledIdentityChange) GetCalledIdentity() string {
-	if o == nil || isNil(o.CalledIdentity) {
+	if o == nil || IsNil(o.CalledIdentity) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CalledIdentityChange) GetCalledIdentity() string {
 // GetCalledIdentityOk returns a tuple with the CalledIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CalledIdentityChange) GetCalledIdentityOk() (*string, bool) {
-	if o == nil || isNil(o.CalledIdentity) {
+	if o == nil || IsNil(o.CalledIdentity) {
 		return nil, false
 	}
 	return o.CalledIdentity, true
@@ -62,7 +62,7 @@ func (o *CalledIdentityChange) GetCalledIdentityOk() (*string, bool) {
 
 // HasCalledIdentity returns a boolean if a field has been set.
 func (o *CalledIdentityChange) HasCalledIdentity() bool {
-	if o != nil && !isNil(o.CalledIdentity) {
+	if o != nil && !IsNil(o.CalledIdentity) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *CalledIdentityChange) SetCalledIdentity(v string) {
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *CalledIdentityChange) GetChangeTime() time.Time {
-	if o == nil || isNil(o.ChangeTime) {
+	if o == nil || IsNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *CalledIdentityChange) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CalledIdentityChange) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ChangeTime) {
+	if o == nil || IsNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -94,7 +94,7 @@ func (o *CalledIdentityChange) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *CalledIdentityChange) HasChangeTime() bool {
-	if o != nil && !isNil(o.ChangeTime) {
+	if o != nil && !IsNil(o.ChangeTime) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *CalledIdentityChange) SetChangeTime(v time.Time) {
 }
 
 func (o CalledIdentityChange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o CalledIdentityChange) MarshalJSON() ([]byte, error) {
 
 func (o CalledIdentityChange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CalledIdentity) {
+	if !IsNil(o.CalledIdentity) {
 		toSerialize["calledIdentity"] = o.CalledIdentity
 	}
-	if !isNil(o.ChangeTime) {
+	if !IsNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableCalledIdentityChange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

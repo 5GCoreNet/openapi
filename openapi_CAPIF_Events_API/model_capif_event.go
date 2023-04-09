@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// CAPIFEvent Possible values are: - SERVICE_API_AVAILABLE:      Events related to the availability of service APIs after the service APIs are published. - SERVICE_API_UNAVAILABLE:      Events related to the unavailability of service APIs after the service APIs are      unpublished. - SERVICE_API_UPDATE: Events related to change in service API information. - API_INVOKER_ONBOARDED: Events related to API invoker onboarded to CAPIF. - API_INVOKER_OFFBOARDED: Events related to API invoker offboarded from CAPIF. - SERVICE_API_INVOCATION_SUCCESS:      Events related to the successful invocation of service APIs. - SERVICE_API_INVOCATION_FAILURE: Events related to the failed invocation of service APIs. - ACCESS_CONTROL_POLICY_UPDATE:      Events related to the update for the access control policy related to the service APIs. - ACCESS_CONTROL_POLICY_UNAVAILABLE:      Events related to the unavailability of the access control policy related to      the service APIs. - API_INVOKER_AUTHORIZATION_REVOKED: Events related to the revocation of the authorization of API invokers to access the service APIs. - API_INVOKER_UPDATED: Events related to API invoker profile updated to CAPIF. - API_TOPOLOGY_HIDING_CREATED:      Events related to the creation or update of the API topology hiding      information of the service APIs after the service APIs are published. - API_TOPOLOGY_HIDING_REVOKED:      Events related to the revocation of the API topology hiding information of      the service APIs after the service APIs are unpublished. 
+// CAPIFEvent Possible values are: - SERVICE_API_AVAILABLE:      Events related to the availability of service APIs after the service APIs are published. - SERVICE_API_UNAVAILABLE:      Events related to the unavailability of service APIs after the service APIs are      unpublished. - SERVICE_API_UPDATE: Events related to change in service API information. - API_INVOKER_ONBOARDED: Events related to API invoker onboarded to CAPIF. - API_INVOKER_OFFBOARDED: Events related to API invoker offboarded from CAPIF. - SERVICE_API_INVOCATION_SUCCESS:      Events related to the successful invocation of service APIs. - SERVICE_API_INVOCATION_FAILURE: Events related to the failed invocation of service APIs. - ACCESS_CONTROL_POLICY_UPDATE:      Events related to the update for the access control policy related to the service APIs. - ACCESS_CONTROL_POLICY_UNAVAILABLE:      Events related to the unavailability of the access control policy related to      the service APIs. - API_INVOKER_AUTHORIZATION_REVOKED: Events related to the revocation of the authorization of API invokers to access the service APIs. - API_INVOKER_UPDATED: Events related to API invoker profile updated to CAPIF. - API_TOPOLOGY_HIDING_CREATED:      Events related to the creation or update of the API topology hiding      information of the service APIs after the service APIs are published. - API_TOPOLOGY_HIDING_REVOKED:      Events related to the revocation of the API topology hiding information of      the service APIs after the service APIs are unpublished.
 type CAPIFEvent struct {
-	CAPIFEventAnyOf *CAPIFEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CAPIFEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CAPIFEventAnyOf
-	err = json.Unmarshal(data, &dst.CAPIFEventAnyOf);
-	if err == nil {
-		jsonCAPIFEventAnyOf, _ := json.Marshal(dst.CAPIFEventAnyOf)
-		if string(jsonCAPIFEventAnyOf) == "{}" { // empty struct
-			dst.CAPIFEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.CAPIFEventAnyOf, return on the first match
-		}
-	} else {
-		dst.CAPIFEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *CAPIFEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CAPIFEvent) MarshalJSON() ([]byte, error) {
-	if src.CAPIFEventAnyOf != nil {
-		return json.Marshal(&src.CAPIFEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCAPIFEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

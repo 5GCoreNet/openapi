@@ -15,17 +15,17 @@ import (
 	"fmt"
 )
 
-// FlowDirectionRm This data type is defined in the same way as the \"FlowDirection\" data type, with the only  difference that it allows null value. 
+// FlowDirectionRm This data type is defined in the same way as the \"FlowDirection\" data type, with the only  difference that it allows null value.
 type FlowDirectionRm struct {
 	FlowDirection *FlowDirection
-	NullValue *NullValue
+	NullValue     *NullValue
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *FlowDirectionRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into FlowDirection
-	err = json.Unmarshal(data, &dst.FlowDirection);
+	err = json.Unmarshal(data, &dst.FlowDirection)
 	if err == nil {
 		jsonFlowDirection, _ := json.Marshal(dst.FlowDirection)
 		if string(jsonFlowDirection) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *FlowDirectionRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableFlowDirectionRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AuthenticationStatusDocumentApiService AuthenticationStatusDocumentApi service
 type AuthenticationStatusDocumentApiService service
 
 type ApiCreateAuthenticationStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthenticationStatusDocumentApiService
-	ueId string
-	authEvent *AuthEvent
+	ueId       string
+	authEvent  *AuthEvent
 }
 
 func (r ApiCreateAuthenticationStatusRequest) AuthEvent(authEvent AuthEvent) ApiCreateAuthenticationStatusRequest {
@@ -42,24 +41,24 @@ func (r ApiCreateAuthenticationStatusRequest) Execute() (*http.Response, error) 
 /*
 CreateAuthenticationStatus To store the Authentication Status data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateAuthenticationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateAuthenticationStatusRequest
 */
 func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatus(ctx context.Context, ueId string) ApiCreateAuthenticationStatusRequest {
 	return ApiCreateAuthenticationStatusRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatusExecute(r ApiCreateAuthenticationStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationStatusDocumentApiService.CreateAuthenticationStatus")
@@ -106,9 +105,9 @@ func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatusExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

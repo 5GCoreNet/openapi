@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SendMoDataReqData{}
 
 // SendMoDataReqData Data within Send MO Data Request
 type SendMoDataReqData struct {
-	MoData RefToBinaryData `json:"moData"`
+	MoData           RefToBinaryData   `json:"moData"`
 	MoExpDataCounter *MoExpDataCounter `json:"moExpDataCounter,omitempty"`
-	UeLocation *UserLocation `json:"ueLocation,omitempty"`
+	UeLocation       *UserLocation     `json:"ueLocation,omitempty"`
 }
 
 // NewSendMoDataReqData instantiates a new SendMoDataReqData object
@@ -68,7 +68,7 @@ func (o *SendMoDataReqData) SetMoData(v RefToBinaryData) {
 
 // GetMoExpDataCounter returns the MoExpDataCounter field value if set, zero value otherwise.
 func (o *SendMoDataReqData) GetMoExpDataCounter() MoExpDataCounter {
-	if o == nil || isNil(o.MoExpDataCounter) {
+	if o == nil || IsNil(o.MoExpDataCounter) {
 		var ret MoExpDataCounter
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SendMoDataReqData) GetMoExpDataCounter() MoExpDataCounter {
 // GetMoExpDataCounterOk returns a tuple with the MoExpDataCounter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SendMoDataReqData) GetMoExpDataCounterOk() (*MoExpDataCounter, bool) {
-	if o == nil || isNil(o.MoExpDataCounter) {
+	if o == nil || IsNil(o.MoExpDataCounter) {
 		return nil, false
 	}
 	return o.MoExpDataCounter, true
@@ -86,7 +86,7 @@ func (o *SendMoDataReqData) GetMoExpDataCounterOk() (*MoExpDataCounter, bool) {
 
 // HasMoExpDataCounter returns a boolean if a field has been set.
 func (o *SendMoDataReqData) HasMoExpDataCounter() bool {
-	if o != nil && !isNil(o.MoExpDataCounter) {
+	if o != nil && !IsNil(o.MoExpDataCounter) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SendMoDataReqData) SetMoExpDataCounter(v MoExpDataCounter) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *SendMoDataReqData) GetUeLocation() UserLocation {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SendMoDataReqData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SendMoDataReqData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UeLocation) {
+	if o == nil || IsNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -118,7 +118,7 @@ func (o *SendMoDataReqData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *SendMoDataReqData) HasUeLocation() bool {
-	if o != nil && !isNil(o.UeLocation) {
+	if o != nil && !IsNil(o.UeLocation) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *SendMoDataReqData) SetUeLocation(v UserLocation) {
 }
 
 func (o SendMoDataReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o SendMoDataReqData) MarshalJSON() ([]byte, error) {
 func (o SendMoDataReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["moData"] = o.MoData
-	if !isNil(o.MoExpDataCounter) {
+	if !IsNil(o.MoExpDataCounter) {
 		toSerialize["moExpDataCounter"] = o.MoExpDataCounter
 	}
-	if !isNil(o.UeLocation) {
+	if !IsNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableSendMoDataReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &IntendedN32Purpose{}
 
 // IntendedN32Purpose Indicates the intended N32 establishment purpose
 type IntendedN32Purpose struct {
-	UsagePurpose N32Purpose `json:"usagePurpose"`
-	AdditionalInfo *string `json:"additionalInfo,omitempty"`
-	Cause *string `json:"cause,omitempty"`
+	UsagePurpose   N32Purpose `json:"usagePurpose"`
+	AdditionalInfo *string    `json:"additionalInfo,omitempty"`
+	Cause          *string    `json:"cause,omitempty"`
 }
 
 // NewIntendedN32Purpose instantiates a new IntendedN32Purpose object
@@ -68,7 +68,7 @@ func (o *IntendedN32Purpose) SetUsagePurpose(v N32Purpose) {
 
 // GetAdditionalInfo returns the AdditionalInfo field value if set, zero value otherwise.
 func (o *IntendedN32Purpose) GetAdditionalInfo() string {
-	if o == nil || isNil(o.AdditionalInfo) {
+	if o == nil || IsNil(o.AdditionalInfo) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *IntendedN32Purpose) GetAdditionalInfo() string {
 // GetAdditionalInfoOk returns a tuple with the AdditionalInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntendedN32Purpose) GetAdditionalInfoOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalInfo) {
+	if o == nil || IsNil(o.AdditionalInfo) {
 		return nil, false
 	}
 	return o.AdditionalInfo, true
@@ -86,7 +86,7 @@ func (o *IntendedN32Purpose) GetAdditionalInfoOk() (*string, bool) {
 
 // HasAdditionalInfo returns a boolean if a field has been set.
 func (o *IntendedN32Purpose) HasAdditionalInfo() bool {
-	if o != nil && !isNil(o.AdditionalInfo) {
+	if o != nil && !IsNil(o.AdditionalInfo) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *IntendedN32Purpose) SetAdditionalInfo(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *IntendedN32Purpose) GetCause() string {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *IntendedN32Purpose) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntendedN32Purpose) GetCauseOk() (*string, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -118,7 +118,7 @@ func (o *IntendedN32Purpose) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *IntendedN32Purpose) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *IntendedN32Purpose) SetCause(v string) {
 }
 
 func (o IntendedN32Purpose) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o IntendedN32Purpose) MarshalJSON() ([]byte, error) {
 func (o IntendedN32Purpose) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["usagePurpose"] = o.UsagePurpose
-	if !isNil(o.AdditionalInfo) {
+	if !IsNil(o.AdditionalInfo) {
 		toSerialize["additionalInfo"] = o.AdditionalInfo
 	}
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableIntendedN32Purpose) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

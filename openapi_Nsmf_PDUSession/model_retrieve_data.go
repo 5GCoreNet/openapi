@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &RetrieveData{}
 
 // RetrieveData Data within Retrieve Request
 type RetrieveData struct {
-	SmallDataRateStatusReq *bool `json:"smallDataRateStatusReq,omitempty"`
-	PduSessionContextType *PduSessionContextType `json:"pduSessionContextType,omitempty"`
+	SmallDataRateStatusReq *bool                  `json:"smallDataRateStatusReq,omitempty"`
+	PduSessionContextType  *PduSessionContextType `json:"pduSessionContextType,omitempty"`
 }
 
 // NewRetrieveData instantiates a new RetrieveData object
@@ -46,7 +46,7 @@ func NewRetrieveDataWithDefaults() *RetrieveData {
 
 // GetSmallDataRateStatusReq returns the SmallDataRateStatusReq field value if set, zero value otherwise.
 func (o *RetrieveData) GetSmallDataRateStatusReq() bool {
-	if o == nil || isNil(o.SmallDataRateStatusReq) {
+	if o == nil || IsNil(o.SmallDataRateStatusReq) {
 		var ret bool
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *RetrieveData) GetSmallDataRateStatusReq() bool {
 // GetSmallDataRateStatusReqOk returns a tuple with the SmallDataRateStatusReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetrieveData) GetSmallDataRateStatusReqOk() (*bool, bool) {
-	if o == nil || isNil(o.SmallDataRateStatusReq) {
+	if o == nil || IsNil(o.SmallDataRateStatusReq) {
 		return nil, false
 	}
 	return o.SmallDataRateStatusReq, true
@@ -64,7 +64,7 @@ func (o *RetrieveData) GetSmallDataRateStatusReqOk() (*bool, bool) {
 
 // HasSmallDataRateStatusReq returns a boolean if a field has been set.
 func (o *RetrieveData) HasSmallDataRateStatusReq() bool {
-	if o != nil && !isNil(o.SmallDataRateStatusReq) {
+	if o != nil && !IsNil(o.SmallDataRateStatusReq) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *RetrieveData) SetSmallDataRateStatusReq(v bool) {
 
 // GetPduSessionContextType returns the PduSessionContextType field value if set, zero value otherwise.
 func (o *RetrieveData) GetPduSessionContextType() PduSessionContextType {
-	if o == nil || isNil(o.PduSessionContextType) {
+	if o == nil || IsNil(o.PduSessionContextType) {
 		var ret PduSessionContextType
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *RetrieveData) GetPduSessionContextType() PduSessionContextType {
 // GetPduSessionContextTypeOk returns a tuple with the PduSessionContextType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetrieveData) GetPduSessionContextTypeOk() (*PduSessionContextType, bool) {
-	if o == nil || isNil(o.PduSessionContextType) {
+	if o == nil || IsNil(o.PduSessionContextType) {
 		return nil, false
 	}
 	return o.PduSessionContextType, true
@@ -96,7 +96,7 @@ func (o *RetrieveData) GetPduSessionContextTypeOk() (*PduSessionContextType, boo
 
 // HasPduSessionContextType returns a boolean if a field has been set.
 func (o *RetrieveData) HasPduSessionContextType() bool {
-	if o != nil && !isNil(o.PduSessionContextType) {
+	if o != nil && !IsNil(o.PduSessionContextType) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *RetrieveData) SetPduSessionContextType(v PduSessionContextType) {
 }
 
 func (o RetrieveData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -118,10 +118,10 @@ func (o RetrieveData) MarshalJSON() ([]byte, error) {
 
 func (o RetrieveData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SmallDataRateStatusReq) {
+	if !IsNil(o.SmallDataRateStatusReq) {
 		toSerialize["smallDataRateStatusReq"] = o.SmallDataRateStatusReq
 	}
-	if !isNil(o.PduSessionContextType) {
+	if !IsNil(o.PduSessionContextType) {
 		toSerialize["pduSessionContextType"] = o.PduSessionContextType
 	}
 	return toSerialize, nil
@@ -162,5 +162,3 @@ func (v *NullableRetrieveData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

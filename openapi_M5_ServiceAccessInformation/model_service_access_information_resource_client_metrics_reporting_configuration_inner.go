@@ -1,7 +1,7 @@
 /*
 M5_ServiceAccessInformation
 
-5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -23,13 +23,13 @@ type ServiceAccessInformationResourceClientMetricsReportingConfigurationInner st
 	ServerAddresses []string `json:"serverAddresses"`
 	// String providing an URI formatted according to RFC 3986.
 	Scheme string `json:"scheme"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	DataNetworkName *string `json:"dataNetworkName,omitempty"`
 	// indicating a time in seconds.
-	ReportingInterval *int32 `json:"reportingInterval,omitempty"`
-	SamplePercentage float32 `json:"samplePercentage"`
-	UrlFilters []string `json:"urlFilters"`
-	Metrics []string `json:"metrics"`
+	ReportingInterval *int32   `json:"reportingInterval,omitempty"`
+	SamplePercentage  float32  `json:"samplePercentage"`
+	UrlFilters        []string `json:"urlFilters"`
+	Metrics           []string `json:"metrics"`
 }
 
 // NewServiceAccessInformationResourceClientMetricsReportingConfigurationInner instantiates a new ServiceAccessInformationResourceClientMetricsReportingConfigurationInner object
@@ -104,7 +104,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // GetDataNetworkName returns the DataNetworkName field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetDataNetworkName() string {
-	if o == nil || isNil(o.DataNetworkName) {
+	if o == nil || IsNil(o.DataNetworkName) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 // GetDataNetworkNameOk returns a tuple with the DataNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetDataNetworkNameOk() (*string, bool) {
-	if o == nil || isNil(o.DataNetworkName) {
+	if o == nil || IsNil(o.DataNetworkName) {
 		return nil, false
 	}
 	return o.DataNetworkName, true
@@ -122,7 +122,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // HasDataNetworkName returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) HasDataNetworkName() bool {
-	if o != nil && !isNil(o.DataNetworkName) {
+	if o != nil && !IsNil(o.DataNetworkName) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetReportingInterval() int32 {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportingInterval) {
+	if o == nil || IsNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -154,7 +154,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) HasReportingInterval() bool {
-	if o != nil && !isNil(o.ReportingInterval) {
+	if o != nil && !IsNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 }
 
 func (o ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -250,10 +250,10 @@ func (o ServiceAccessInformationResourceClientMetricsReportingConfigurationInner
 	toSerialize := map[string]interface{}{}
 	toSerialize["serverAddresses"] = o.ServerAddresses
 	toSerialize["scheme"] = o.Scheme
-	if !isNil(o.DataNetworkName) {
+	if !IsNil(o.DataNetworkName) {
 		toSerialize["dataNetworkName"] = o.DataNetworkName
 	}
-	if !isNil(o.ReportingInterval) {
+	if !IsNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
 	toSerialize["samplePercentage"] = o.SamplePercentage
@@ -297,5 +297,3 @@ func (v *NullableServiceAccessInformationResourceClientMetricsReportingConfigura
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

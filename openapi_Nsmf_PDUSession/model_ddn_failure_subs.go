@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &DdnFailureSubs{}
 
 // DdnFailureSubs DDN Failure Subscription
 type DdnFailureSubs struct {
-	DdnFailureSubsInd *bool `json:"ddnFailureSubsInd,omitempty"`
+	DdnFailureSubsInd      *bool               `json:"ddnFailureSubsInd,omitempty"`
 	DdnFailureSubsInfoList []DdnFailureSubInfo `json:"ddnFailureSubsInfoList,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewDdnFailureSubsWithDefaults() *DdnFailureSubs {
 
 // GetDdnFailureSubsInd returns the DdnFailureSubsInd field value if set, zero value otherwise.
 func (o *DdnFailureSubs) GetDdnFailureSubsInd() bool {
-	if o == nil || isNil(o.DdnFailureSubsInd) {
+	if o == nil || IsNil(o.DdnFailureSubsInd) {
 		var ret bool
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *DdnFailureSubs) GetDdnFailureSubsInd() bool {
 // GetDdnFailureSubsIndOk returns a tuple with the DdnFailureSubsInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DdnFailureSubs) GetDdnFailureSubsIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DdnFailureSubsInd) {
+	if o == nil || IsNil(o.DdnFailureSubsInd) {
 		return nil, false
 	}
 	return o.DdnFailureSubsInd, true
@@ -64,7 +64,7 @@ func (o *DdnFailureSubs) GetDdnFailureSubsIndOk() (*bool, bool) {
 
 // HasDdnFailureSubsInd returns a boolean if a field has been set.
 func (o *DdnFailureSubs) HasDdnFailureSubsInd() bool {
-	if o != nil && !isNil(o.DdnFailureSubsInd) {
+	if o != nil && !IsNil(o.DdnFailureSubsInd) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *DdnFailureSubs) SetDdnFailureSubsInd(v bool) {
 
 // GetDdnFailureSubsInfoList returns the DdnFailureSubsInfoList field value if set, zero value otherwise.
 func (o *DdnFailureSubs) GetDdnFailureSubsInfoList() []DdnFailureSubInfo {
-	if o == nil || isNil(o.DdnFailureSubsInfoList) {
+	if o == nil || IsNil(o.DdnFailureSubsInfoList) {
 		var ret []DdnFailureSubInfo
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *DdnFailureSubs) GetDdnFailureSubsInfoList() []DdnFailureSubInfo {
 // GetDdnFailureSubsInfoListOk returns a tuple with the DdnFailureSubsInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DdnFailureSubs) GetDdnFailureSubsInfoListOk() ([]DdnFailureSubInfo, bool) {
-	if o == nil || isNil(o.DdnFailureSubsInfoList) {
+	if o == nil || IsNil(o.DdnFailureSubsInfoList) {
 		return nil, false
 	}
 	return o.DdnFailureSubsInfoList, true
@@ -96,7 +96,7 @@ func (o *DdnFailureSubs) GetDdnFailureSubsInfoListOk() ([]DdnFailureSubInfo, boo
 
 // HasDdnFailureSubsInfoList returns a boolean if a field has been set.
 func (o *DdnFailureSubs) HasDdnFailureSubsInfoList() bool {
-	if o != nil && !isNil(o.DdnFailureSubsInfoList) {
+	if o != nil && !IsNil(o.DdnFailureSubsInfoList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DdnFailureSubs) SetDdnFailureSubsInfoList(v []DdnFailureSubInfo) {
 }
 
 func (o DdnFailureSubs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -118,10 +118,10 @@ func (o DdnFailureSubs) MarshalJSON() ([]byte, error) {
 
 func (o DdnFailureSubs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DdnFailureSubsInd) {
+	if !IsNil(o.DdnFailureSubsInd) {
 		toSerialize["ddnFailureSubsInd"] = o.DdnFailureSubsInd
 	}
-	if !isNil(o.DdnFailureSubsInfoList) {
+	if !IsNil(o.DdnFailureSubsInfoList) {
 		toSerialize["ddnFailureSubsInfoList"] = o.DdnFailureSubsInfoList
 	}
 	return toSerialize, nil
@@ -162,5 +162,3 @@ func (v *NullableDdnFailureSubs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

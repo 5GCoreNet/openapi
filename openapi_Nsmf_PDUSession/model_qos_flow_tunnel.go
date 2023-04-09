@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &QosFlowTunnel{}
 
 // QosFlowTunnel Tunnel Information per QoS Flow
 type QosFlowTunnel struct {
-	QfiList []int32 `json:"qfiList"`
+	QfiList    []int32    `json:"qfiList"`
 	TunnelInfo TunnelInfo `json:"tunnelInfo"`
 }
 
@@ -91,7 +91,7 @@ func (o *QosFlowTunnel) SetTunnelInfo(v TunnelInfo) {
 }
 
 func (o QosFlowTunnel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableQosFlowTunnel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

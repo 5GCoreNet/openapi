@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ManagementOperationStatus struct for ManagementOperationStatus
 type ManagementOperationStatus struct {
-	ManagementOperationStatusAnyOf *ManagementOperationStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ManagementOperationStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ManagementOperationStatusAnyOf
-	err = json.Unmarshal(data, &dst.ManagementOperationStatusAnyOf);
-	if err == nil {
-		jsonManagementOperationStatusAnyOf, _ := json.Marshal(dst.ManagementOperationStatusAnyOf)
-		if string(jsonManagementOperationStatusAnyOf) == "{}" { // empty struct
-			dst.ManagementOperationStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.ManagementOperationStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.ManagementOperationStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ManagementOperationStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ManagementOperationStatus) MarshalJSON() ([]byte, error) {
-	if src.ManagementOperationStatusAnyOf != nil {
-		return json.Marshal(&src.ManagementOperationStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableManagementOperationStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

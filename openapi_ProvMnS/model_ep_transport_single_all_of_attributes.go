@@ -19,11 +19,11 @@ var _ MappedNullable = &EPTransportSingleAllOfAttributes{}
 
 // EPTransportSingleAllOfAttributes struct for EPTransportSingleAllOfAttributes
 type EPTransportSingleAllOfAttributes struct {
-	IpAddress *IpAddress `json:"ipAddress,omitempty"`
+	IpAddress            *IpAddress            `json:"ipAddress,omitempty"`
 	LogicalInterfaceInfo *LogicalInterfaceInfo `json:"logicalInterfaceInfo,omitempty"`
-	NextHopInfo *string `json:"nextHopInfo,omitempty"`
-	QosProfile *string `json:"qosProfile,omitempty"`
-	EpApplicationRefs []string `json:"epApplicationRefs,omitempty"`
+	NextHopInfo          *string               `json:"nextHopInfo,omitempty"`
+	QosProfile           *string               `json:"qosProfile,omitempty"`
+	EpApplicationRefs    []string              `json:"epApplicationRefs,omitempty"`
 }
 
 // NewEPTransportSingleAllOfAttributes instantiates a new EPTransportSingleAllOfAttributes object
@@ -45,7 +45,7 @@ func NewEPTransportSingleAllOfAttributesWithDefaults() *EPTransportSingleAllOfAt
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
 func (o *EPTransportSingleAllOfAttributes) GetIpAddress() IpAddress {
-	if o == nil || isNil(o.IpAddress) {
+	if o == nil || IsNil(o.IpAddress) {
 		var ret IpAddress
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *EPTransportSingleAllOfAttributes) GetIpAddress() IpAddress {
 // GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingleAllOfAttributes) GetIpAddressOk() (*IpAddress, bool) {
-	if o == nil || isNil(o.IpAddress) {
+	if o == nil || IsNil(o.IpAddress) {
 		return nil, false
 	}
 	return o.IpAddress, true
@@ -63,7 +63,7 @@ func (o *EPTransportSingleAllOfAttributes) GetIpAddressOk() (*IpAddress, bool) {
 
 // HasIpAddress returns a boolean if a field has been set.
 func (o *EPTransportSingleAllOfAttributes) HasIpAddress() bool {
-	if o != nil && !isNil(o.IpAddress) {
+	if o != nil && !IsNil(o.IpAddress) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *EPTransportSingleAllOfAttributes) SetIpAddress(v IpAddress) {
 
 // GetLogicalInterfaceInfo returns the LogicalInterfaceInfo field value if set, zero value otherwise.
 func (o *EPTransportSingleAllOfAttributes) GetLogicalInterfaceInfo() LogicalInterfaceInfo {
-	if o == nil || isNil(o.LogicalInterfaceInfo) {
+	if o == nil || IsNil(o.LogicalInterfaceInfo) {
 		var ret LogicalInterfaceInfo
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *EPTransportSingleAllOfAttributes) GetLogicalInterfaceInfo() LogicalInte
 // GetLogicalInterfaceInfoOk returns a tuple with the LogicalInterfaceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingleAllOfAttributes) GetLogicalInterfaceInfoOk() (*LogicalInterfaceInfo, bool) {
-	if o == nil || isNil(o.LogicalInterfaceInfo) {
+	if o == nil || IsNil(o.LogicalInterfaceInfo) {
 		return nil, false
 	}
 	return o.LogicalInterfaceInfo, true
@@ -95,7 +95,7 @@ func (o *EPTransportSingleAllOfAttributes) GetLogicalInterfaceInfoOk() (*Logical
 
 // HasLogicalInterfaceInfo returns a boolean if a field has been set.
 func (o *EPTransportSingleAllOfAttributes) HasLogicalInterfaceInfo() bool {
-	if o != nil && !isNil(o.LogicalInterfaceInfo) {
+	if o != nil && !IsNil(o.LogicalInterfaceInfo) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *EPTransportSingleAllOfAttributes) SetLogicalInterfaceInfo(v LogicalInte
 
 // GetNextHopInfo returns the NextHopInfo field value if set, zero value otherwise.
 func (o *EPTransportSingleAllOfAttributes) GetNextHopInfo() string {
-	if o == nil || isNil(o.NextHopInfo) {
+	if o == nil || IsNil(o.NextHopInfo) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *EPTransportSingleAllOfAttributes) GetNextHopInfo() string {
 // GetNextHopInfoOk returns a tuple with the NextHopInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingleAllOfAttributes) GetNextHopInfoOk() (*string, bool) {
-	if o == nil || isNil(o.NextHopInfo) {
+	if o == nil || IsNil(o.NextHopInfo) {
 		return nil, false
 	}
 	return o.NextHopInfo, true
@@ -127,7 +127,7 @@ func (o *EPTransportSingleAllOfAttributes) GetNextHopInfoOk() (*string, bool) {
 
 // HasNextHopInfo returns a boolean if a field has been set.
 func (o *EPTransportSingleAllOfAttributes) HasNextHopInfo() bool {
-	if o != nil && !isNil(o.NextHopInfo) {
+	if o != nil && !IsNil(o.NextHopInfo) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *EPTransportSingleAllOfAttributes) SetNextHopInfo(v string) {
 
 // GetQosProfile returns the QosProfile field value if set, zero value otherwise.
 func (o *EPTransportSingleAllOfAttributes) GetQosProfile() string {
-	if o == nil || isNil(o.QosProfile) {
+	if o == nil || IsNil(o.QosProfile) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *EPTransportSingleAllOfAttributes) GetQosProfile() string {
 // GetQosProfileOk returns a tuple with the QosProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingleAllOfAttributes) GetQosProfileOk() (*string, bool) {
-	if o == nil || isNil(o.QosProfile) {
+	if o == nil || IsNil(o.QosProfile) {
 		return nil, false
 	}
 	return o.QosProfile, true
@@ -159,7 +159,7 @@ func (o *EPTransportSingleAllOfAttributes) GetQosProfileOk() (*string, bool) {
 
 // HasQosProfile returns a boolean if a field has been set.
 func (o *EPTransportSingleAllOfAttributes) HasQosProfile() bool {
-	if o != nil && !isNil(o.QosProfile) {
+	if o != nil && !IsNil(o.QosProfile) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *EPTransportSingleAllOfAttributes) SetQosProfile(v string) {
 
 // GetEpApplicationRefs returns the EpApplicationRefs field value if set, zero value otherwise.
 func (o *EPTransportSingleAllOfAttributes) GetEpApplicationRefs() []string {
-	if o == nil || isNil(o.EpApplicationRefs) {
+	if o == nil || IsNil(o.EpApplicationRefs) {
 		var ret []string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *EPTransportSingleAllOfAttributes) GetEpApplicationRefs() []string {
 // GetEpApplicationRefsOk returns a tuple with the EpApplicationRefs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingleAllOfAttributes) GetEpApplicationRefsOk() ([]string, bool) {
-	if o == nil || isNil(o.EpApplicationRefs) {
+	if o == nil || IsNil(o.EpApplicationRefs) {
 		return nil, false
 	}
 	return o.EpApplicationRefs, true
@@ -191,7 +191,7 @@ func (o *EPTransportSingleAllOfAttributes) GetEpApplicationRefsOk() ([]string, b
 
 // HasEpApplicationRefs returns a boolean if a field has been set.
 func (o *EPTransportSingleAllOfAttributes) HasEpApplicationRefs() bool {
-	if o != nil && !isNil(o.EpApplicationRefs) {
+	if o != nil && !IsNil(o.EpApplicationRefs) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *EPTransportSingleAllOfAttributes) SetEpApplicationRefs(v []string) {
 }
 
 func (o EPTransportSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -213,19 +213,19 @@ func (o EPTransportSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o EPTransportSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IpAddress) {
+	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
-	if !isNil(o.LogicalInterfaceInfo) {
+	if !IsNil(o.LogicalInterfaceInfo) {
 		toSerialize["logicalInterfaceInfo"] = o.LogicalInterfaceInfo
 	}
-	if !isNil(o.NextHopInfo) {
+	if !IsNil(o.NextHopInfo) {
 		toSerialize["nextHopInfo"] = o.NextHopInfo
 	}
-	if !isNil(o.QosProfile) {
+	if !IsNil(o.QosProfile) {
 		toSerialize["qosProfile"] = o.QosProfile
 	}
-	if !isNil(o.EpApplicationRefs) {
+	if !IsNil(o.EpApplicationRefs) {
 		toSerialize["epApplicationRefs"] = o.EpApplicationRefs
 	}
 	return toSerialize, nil
@@ -266,5 +266,3 @@ func (v *NullableEPTransportSingleAllOfAttributes) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

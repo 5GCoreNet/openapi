@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Model5GsUserStateInfo{}
 // Model5GsUserStateInfo Represents the 5GS User state of the UE for an access type
 type Model5GsUserStateInfo struct {
 	Var5gsUserState Model5GsUserState `json:"5gsUserState"`
-	AccessType AccessType `json:"accessType"`
+	AccessType      AccessType        `json:"accessType"`
 }
 
 // NewModel5GsUserStateInfo instantiates a new Model5GsUserStateInfo object
@@ -91,7 +91,7 @@ func (o *Model5GsUserStateInfo) SetAccessType(v AccessType) {
 }
 
 func (o Model5GsUserStateInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableModel5GsUserStateInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,13 +17,13 @@ import (
 // checks if the DnnRouteSelectionDescriptor type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DnnRouteSelectionDescriptor{}
 
-// DnnRouteSelectionDescriptor Contains the route selector parameters (PDU session types, SSC modes and ATSSS information) per DNN 
+// DnnRouteSelectionDescriptor Contains the route selector parameters (PDU session types, SSC modes and ATSSS information) per DNN
 type DnnRouteSelectionDescriptor struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn string `json:"dnn"`
-	SscModes []SscMode `json:"sscModes,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn          string           `json:"dnn"`
+	SscModes     []SscMode        `json:"sscModes,omitempty"`
 	PduSessTypes []PduSessionType `json:"pduSessTypes,omitempty"`
-	// Indicates whether MA PDU session establishment is allowed for this DNN. When set to value true MA PDU session establishment is allowed for this DNN. 
+	// Indicates whether MA PDU session establishment is allowed for this DNN. When set to value true MA PDU session establishment is allowed for this DNN.
 	AtsssInfo *bool `json:"atsssInfo,omitempty"`
 }
 
@@ -75,7 +75,7 @@ func (o *DnnRouteSelectionDescriptor) SetDnn(v string) {
 
 // GetSscModes returns the SscModes field value if set, zero value otherwise.
 func (o *DnnRouteSelectionDescriptor) GetSscModes() []SscMode {
-	if o == nil || isNil(o.SscModes) {
+	if o == nil || IsNil(o.SscModes) {
 		var ret []SscMode
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DnnRouteSelectionDescriptor) GetSscModes() []SscMode {
 // GetSscModesOk returns a tuple with the SscModes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnRouteSelectionDescriptor) GetSscModesOk() ([]SscMode, bool) {
-	if o == nil || isNil(o.SscModes) {
+	if o == nil || IsNil(o.SscModes) {
 		return nil, false
 	}
 	return o.SscModes, true
@@ -93,7 +93,7 @@ func (o *DnnRouteSelectionDescriptor) GetSscModesOk() ([]SscMode, bool) {
 
 // HasSscModes returns a boolean if a field has been set.
 func (o *DnnRouteSelectionDescriptor) HasSscModes() bool {
-	if o != nil && !isNil(o.SscModes) {
+	if o != nil && !IsNil(o.SscModes) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DnnRouteSelectionDescriptor) SetSscModes(v []SscMode) {
 
 // GetPduSessTypes returns the PduSessTypes field value if set, zero value otherwise.
 func (o *DnnRouteSelectionDescriptor) GetPduSessTypes() []PduSessionType {
-	if o == nil || isNil(o.PduSessTypes) {
+	if o == nil || IsNil(o.PduSessTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DnnRouteSelectionDescriptor) GetPduSessTypes() []PduSessionType {
 // GetPduSessTypesOk returns a tuple with the PduSessTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnRouteSelectionDescriptor) GetPduSessTypesOk() ([]PduSessionType, bool) {
-	if o == nil || isNil(o.PduSessTypes) {
+	if o == nil || IsNil(o.PduSessTypes) {
 		return nil, false
 	}
 	return o.PduSessTypes, true
@@ -125,7 +125,7 @@ func (o *DnnRouteSelectionDescriptor) GetPduSessTypesOk() ([]PduSessionType, boo
 
 // HasPduSessTypes returns a boolean if a field has been set.
 func (o *DnnRouteSelectionDescriptor) HasPduSessTypes() bool {
-	if o != nil && !isNil(o.PduSessTypes) {
+	if o != nil && !IsNil(o.PduSessTypes) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *DnnRouteSelectionDescriptor) SetPduSessTypes(v []PduSessionType) {
 
 // GetAtsssInfo returns the AtsssInfo field value if set, zero value otherwise.
 func (o *DnnRouteSelectionDescriptor) GetAtsssInfo() bool {
-	if o == nil || isNil(o.AtsssInfo) {
+	if o == nil || IsNil(o.AtsssInfo) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *DnnRouteSelectionDescriptor) GetAtsssInfo() bool {
 // GetAtsssInfoOk returns a tuple with the AtsssInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnRouteSelectionDescriptor) GetAtsssInfoOk() (*bool, bool) {
-	if o == nil || isNil(o.AtsssInfo) {
+	if o == nil || IsNil(o.AtsssInfo) {
 		return nil, false
 	}
 	return o.AtsssInfo, true
@@ -157,7 +157,7 @@ func (o *DnnRouteSelectionDescriptor) GetAtsssInfoOk() (*bool, bool) {
 
 // HasAtsssInfo returns a boolean if a field has been set.
 func (o *DnnRouteSelectionDescriptor) HasAtsssInfo() bool {
-	if o != nil && !isNil(o.AtsssInfo) {
+	if o != nil && !IsNil(o.AtsssInfo) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *DnnRouteSelectionDescriptor) SetAtsssInfo(v bool) {
 }
 
 func (o DnnRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,13 +180,13 @@ func (o DnnRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
 func (o DnnRouteSelectionDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !isNil(o.SscModes) {
+	if !IsNil(o.SscModes) {
 		toSerialize["sscModes"] = o.SscModes
 	}
-	if !isNil(o.PduSessTypes) {
+	if !IsNil(o.PduSessTypes) {
 		toSerialize["pduSessTypes"] = o.PduSessTypes
 	}
-	if !isNil(o.AtsssInfo) {
+	if !IsNil(o.AtsssInfo) {
 		toSerialize["atsssInfo"] = o.AtsssInfo
 	}
 	return toSerialize, nil
@@ -227,5 +227,3 @@ func (v *NullableDnnRouteSelectionDescriptor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

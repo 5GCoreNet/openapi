@@ -1,7 +1,7 @@
 /*
 3gpp-bdt
 
-API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -21,14 +21,14 @@ var _ MappedNullable = &Bdt{}
 type Bdt struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Self *string `json:"self,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	VolumePerUE UsageThreshold `json:"volumePerUE"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string        `json:"supportedFeatures,omitempty"`
+	VolumePerUE       UsageThreshold `json:"volumePerUE"`
 	// Identifies the number of UEs.
-	NumberOfUEs int32 `json:"numberOfUEs"`
-	DesiredTimeWindow TimeWindow `json:"desiredTimeWindow"`
-	LocationArea *LocationArea `json:"locationArea,omitempty"`
-	LocationArea5G *LocationArea5G `json:"locationArea5G,omitempty"`
+	NumberOfUEs       int32           `json:"numberOfUEs"`
+	DesiredTimeWindow TimeWindow      `json:"desiredTimeWindow"`
+	LocationArea      *LocationArea   `json:"locationArea,omitempty"`
+	LocationArea5G    *LocationArea5G `json:"locationArea5G,omitempty"`
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
 	ReferenceId *string `json:"referenceId,omitempty"`
 	// Identifies an offered transfer policy.
@@ -39,7 +39,7 @@ type Bdt struct {
 	ExternalGroupId *string `json:"externalGroupId,omitempty"`
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	NotificationDestination *string `json:"notificationDestination,omitempty"`
-	// Indicates whether the BDT warning notification is enabled (true) or not (false). Default value is false. 
+	// Indicates whether the BDT warning notification is enabled (true) or not (false). Default value is false.
 	WarnNotifEnabled *bool `json:"warnNotifEnabled,omitempty"`
 	// Identify a traffic descriptor as defined in Figure 5.2.2 of 3GPP TS 24.526, octets v+5 to w.
 	TrafficDes *string `json:"trafficDes,omitempty"`
@@ -67,7 +67,7 @@ func NewBdtWithDefaults() *Bdt {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *Bdt) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *Bdt) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -85,7 +85,7 @@ func (o *Bdt) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *Bdt) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *Bdt) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *Bdt) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *Bdt) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -117,7 +117,7 @@ func (o *Bdt) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *Bdt) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *Bdt) SetDesiredTimeWindow(v TimeWindow) {
 
 // GetLocationArea returns the LocationArea field value if set, zero value otherwise.
 func (o *Bdt) GetLocationArea() LocationArea {
-	if o == nil || isNil(o.LocationArea) {
+	if o == nil || IsNil(o.LocationArea) {
 		var ret LocationArea
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *Bdt) GetLocationArea() LocationArea {
 // GetLocationAreaOk returns a tuple with the LocationArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetLocationAreaOk() (*LocationArea, bool) {
-	if o == nil || isNil(o.LocationArea) {
+	if o == nil || IsNil(o.LocationArea) {
 		return nil, false
 	}
 	return o.LocationArea, true
@@ -221,7 +221,7 @@ func (o *Bdt) GetLocationAreaOk() (*LocationArea, bool) {
 
 // HasLocationArea returns a boolean if a field has been set.
 func (o *Bdt) HasLocationArea() bool {
-	if o != nil && !isNil(o.LocationArea) {
+	if o != nil && !IsNil(o.LocationArea) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *Bdt) SetLocationArea(v LocationArea) {
 
 // GetLocationArea5G returns the LocationArea5G field value if set, zero value otherwise.
 func (o *Bdt) GetLocationArea5G() LocationArea5G {
-	if o == nil || isNil(o.LocationArea5G) {
+	if o == nil || IsNil(o.LocationArea5G) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *Bdt) GetLocationArea5G() LocationArea5G {
 // GetLocationArea5GOk returns a tuple with the LocationArea5G field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetLocationArea5GOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.LocationArea5G) {
+	if o == nil || IsNil(o.LocationArea5G) {
 		return nil, false
 	}
 	return o.LocationArea5G, true
@@ -253,7 +253,7 @@ func (o *Bdt) GetLocationArea5GOk() (*LocationArea5G, bool) {
 
 // HasLocationArea5G returns a boolean if a field has been set.
 func (o *Bdt) HasLocationArea5G() bool {
-	if o != nil && !isNil(o.LocationArea5G) {
+	if o != nil && !IsNil(o.LocationArea5G) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *Bdt) SetLocationArea5G(v LocationArea5G) {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *Bdt) GetReferenceId() string {
-	if o == nil || isNil(o.ReferenceId) {
+	if o == nil || IsNil(o.ReferenceId) {
 		var ret string
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *Bdt) GetReferenceId() string {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetReferenceIdOk() (*string, bool) {
-	if o == nil || isNil(o.ReferenceId) {
+	if o == nil || IsNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -285,7 +285,7 @@ func (o *Bdt) GetReferenceIdOk() (*string, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *Bdt) HasReferenceId() bool {
-	if o != nil && !isNil(o.ReferenceId) {
+	if o != nil && !IsNil(o.ReferenceId) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *Bdt) SetReferenceId(v string) {
 
 // GetTransferPolicies returns the TransferPolicies field value if set, zero value otherwise.
 func (o *Bdt) GetTransferPolicies() []TransferPolicy {
-	if o == nil || isNil(o.TransferPolicies) {
+	if o == nil || IsNil(o.TransferPolicies) {
 		var ret []TransferPolicy
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *Bdt) GetTransferPolicies() []TransferPolicy {
 // GetTransferPoliciesOk returns a tuple with the TransferPolicies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetTransferPoliciesOk() ([]TransferPolicy, bool) {
-	if o == nil || isNil(o.TransferPolicies) {
+	if o == nil || IsNil(o.TransferPolicies) {
 		return nil, false
 	}
 	return o.TransferPolicies, true
@@ -317,7 +317,7 @@ func (o *Bdt) GetTransferPoliciesOk() ([]TransferPolicy, bool) {
 
 // HasTransferPolicies returns a boolean if a field has been set.
 func (o *Bdt) HasTransferPolicies() bool {
-	if o != nil && !isNil(o.TransferPolicies) {
+	if o != nil && !IsNil(o.TransferPolicies) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *Bdt) SetTransferPolicies(v []TransferPolicy) {
 
 // GetSelectedPolicy returns the SelectedPolicy field value if set, zero value otherwise.
 func (o *Bdt) GetSelectedPolicy() int32 {
-	if o == nil || isNil(o.SelectedPolicy) {
+	if o == nil || IsNil(o.SelectedPolicy) {
 		var ret int32
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *Bdt) GetSelectedPolicy() int32 {
 // GetSelectedPolicyOk returns a tuple with the SelectedPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetSelectedPolicyOk() (*int32, bool) {
-	if o == nil || isNil(o.SelectedPolicy) {
+	if o == nil || IsNil(o.SelectedPolicy) {
 		return nil, false
 	}
 	return o.SelectedPolicy, true
@@ -349,7 +349,7 @@ func (o *Bdt) GetSelectedPolicyOk() (*int32, bool) {
 
 // HasSelectedPolicy returns a boolean if a field has been set.
 func (o *Bdt) HasSelectedPolicy() bool {
-	if o != nil && !isNil(o.SelectedPolicy) {
+	if o != nil && !IsNil(o.SelectedPolicy) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *Bdt) SetSelectedPolicy(v int32) {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *Bdt) GetExternalGroupId() string {
-	if o == nil || isNil(o.ExternalGroupId) {
+	if o == nil || IsNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *Bdt) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExternalGroupId) {
+	if o == nil || IsNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -381,7 +381,7 @@ func (o *Bdt) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *Bdt) HasExternalGroupId() bool {
-	if o != nil && !isNil(o.ExternalGroupId) {
+	if o != nil && !IsNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *Bdt) SetExternalGroupId(v string) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *Bdt) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *Bdt) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -413,7 +413,7 @@ func (o *Bdt) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *Bdt) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -427,7 +427,7 @@ func (o *Bdt) SetNotificationDestination(v string) {
 
 // GetWarnNotifEnabled returns the WarnNotifEnabled field value if set, zero value otherwise.
 func (o *Bdt) GetWarnNotifEnabled() bool {
-	if o == nil || isNil(o.WarnNotifEnabled) {
+	if o == nil || IsNil(o.WarnNotifEnabled) {
 		var ret bool
 		return ret
 	}
@@ -437,7 +437,7 @@ func (o *Bdt) GetWarnNotifEnabled() bool {
 // GetWarnNotifEnabledOk returns a tuple with the WarnNotifEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetWarnNotifEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.WarnNotifEnabled) {
+	if o == nil || IsNil(o.WarnNotifEnabled) {
 		return nil, false
 	}
 	return o.WarnNotifEnabled, true
@@ -445,7 +445,7 @@ func (o *Bdt) GetWarnNotifEnabledOk() (*bool, bool) {
 
 // HasWarnNotifEnabled returns a boolean if a field has been set.
 func (o *Bdt) HasWarnNotifEnabled() bool {
-	if o != nil && !isNil(o.WarnNotifEnabled) {
+	if o != nil && !IsNil(o.WarnNotifEnabled) {
 		return true
 	}
 
@@ -459,7 +459,7 @@ func (o *Bdt) SetWarnNotifEnabled(v bool) {
 
 // GetTrafficDes returns the TrafficDes field value if set, zero value otherwise.
 func (o *Bdt) GetTrafficDes() string {
-	if o == nil || isNil(o.TrafficDes) {
+	if o == nil || IsNil(o.TrafficDes) {
 		var ret string
 		return ret
 	}
@@ -469,7 +469,7 @@ func (o *Bdt) GetTrafficDes() string {
 // GetTrafficDesOk returns a tuple with the TrafficDes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bdt) GetTrafficDesOk() (*string, bool) {
-	if o == nil || isNil(o.TrafficDes) {
+	if o == nil || IsNil(o.TrafficDes) {
 		return nil, false
 	}
 	return o.TrafficDes, true
@@ -477,7 +477,7 @@ func (o *Bdt) GetTrafficDesOk() (*string, bool) {
 
 // HasTrafficDes returns a boolean if a field has been set.
 func (o *Bdt) HasTrafficDes() bool {
-	if o != nil && !isNil(o.TrafficDes) {
+	if o != nil && !IsNil(o.TrafficDes) {
 		return true
 	}
 
@@ -490,7 +490,7 @@ func (o *Bdt) SetTrafficDes(v string) {
 }
 
 func (o Bdt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -499,40 +499,38 @@ func (o Bdt) MarshalJSON() ([]byte, error) {
 
 func (o Bdt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["volumePerUE"] = o.VolumePerUE
 	toSerialize["numberOfUEs"] = o.NumberOfUEs
 	toSerialize["desiredTimeWindow"] = o.DesiredTimeWindow
-	if !isNil(o.LocationArea) {
+	if !IsNil(o.LocationArea) {
 		toSerialize["locationArea"] = o.LocationArea
 	}
-	if !isNil(o.LocationArea5G) {
+	if !IsNil(o.LocationArea5G) {
 		toSerialize["locationArea5G"] = o.LocationArea5G
 	}
-	if !isNil(o.ReferenceId) {
+	if !IsNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
-	if !isNil(o.TransferPolicies) {
-		toSerialize["transferPolicies"] = o.TransferPolicies
-	}
-	if !isNil(o.SelectedPolicy) {
+	// skip: transferPolicies is readOnly
+	if !IsNil(o.SelectedPolicy) {
 		toSerialize["selectedPolicy"] = o.SelectedPolicy
 	}
-	if !isNil(o.ExternalGroupId) {
+	if !IsNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !isNil(o.WarnNotifEnabled) {
+	if !IsNil(o.WarnNotifEnabled) {
 		toSerialize["warnNotifEnabled"] = o.WarnNotifEnabled
 	}
-	if !isNil(o.TrafficDes) {
+	if !IsNil(o.TrafficDes) {
 		toSerialize["trafficDes"] = o.TrafficDes
 	}
 	return toSerialize, nil
@@ -573,5 +571,3 @@ func (v *NullableBdt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

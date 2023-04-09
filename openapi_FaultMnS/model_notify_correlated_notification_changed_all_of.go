@@ -19,9 +19,9 @@ var _ MappedNullable = &NotifyCorrelatedNotificationChangedAllOf{}
 
 // NotifyCorrelatedNotificationChangedAllOf struct for NotifyCorrelatedNotificationChangedAllOf
 type NotifyCorrelatedNotificationChangedAllOf struct {
-	AlarmId string `json:"alarmId"`
+	AlarmId                 string                   `json:"alarmId"`
 	CorrelatedNotifications []CorrelatedNotification `json:"correlatedNotifications"`
-	RootCauseIndicator *bool `json:"rootCauseIndicator,omitempty"`
+	RootCauseIndicator      *bool                    `json:"rootCauseIndicator,omitempty"`
 }
 
 // NewNotifyCorrelatedNotificationChangedAllOf instantiates a new NotifyCorrelatedNotificationChangedAllOf object
@@ -93,7 +93,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) SetCorrelatedNotifications(v 
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicator() bool {
-	if o == nil || isNil(o.RootCauseIndicator) {
+	if o == nil || IsNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicator() bool 
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.RootCauseIndicator) {
+	if o == nil || IsNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -111,7 +111,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicatorOk() (*b
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *NotifyCorrelatedNotificationChangedAllOf) HasRootCauseIndicator() bool {
-	if o != nil && !isNil(o.RootCauseIndicator) {
+	if o != nil && !IsNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) SetRootCauseIndicator(v bool)
 }
 
 func (o NotifyCorrelatedNotificationChangedAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o NotifyCorrelatedNotificationChangedAllOf) ToMap() (map[string]interface{
 	toSerialize := map[string]interface{}{}
 	toSerialize["alarmId"] = o.AlarmId
 	toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
-	if !isNil(o.RootCauseIndicator) {
+	if !IsNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableNotifyCorrelatedNotificationChangedAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

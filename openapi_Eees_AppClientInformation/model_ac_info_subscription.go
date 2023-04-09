@@ -1,7 +1,7 @@
 /*
 EES Application Client Information_API
 
-API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -25,14 +25,14 @@ type ACInfoSubscription struct {
 	// Filters to retrieve the information about specific ACs.
 	AcFltrs []ACFilters `json:"acFltrs,omitempty"`
 	// string with format \"date-time\" as defined in OpenAPI.
-	ExpTime *time.Time `json:"expTime,omitempty"`
+	ExpTime  *time.Time            `json:"expTime,omitempty"`
 	EventReq *ReportingInformation `json:"eventReq,omitempty"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination *string `json:"notificationDestination,omitempty"`
-	// Set to true by the EAS to request the EES to send a test notification. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by the EAS to request the EES to send a test notification. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -80,7 +80,7 @@ func (o *ACInfoSubscription) SetEasId(v string) {
 
 // GetAcFltrs returns the AcFltrs field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetAcFltrs() []ACFilters {
-	if o == nil || isNil(o.AcFltrs) {
+	if o == nil || IsNil(o.AcFltrs) {
 		var ret []ACFilters
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ACInfoSubscription) GetAcFltrs() []ACFilters {
 // GetAcFltrsOk returns a tuple with the AcFltrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetAcFltrsOk() ([]ACFilters, bool) {
-	if o == nil || isNil(o.AcFltrs) {
+	if o == nil || IsNil(o.AcFltrs) {
 		return nil, false
 	}
 	return o.AcFltrs, true
@@ -98,7 +98,7 @@ func (o *ACInfoSubscription) GetAcFltrsOk() ([]ACFilters, bool) {
 
 // HasAcFltrs returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasAcFltrs() bool {
-	if o != nil && !isNil(o.AcFltrs) {
+	if o != nil && !IsNil(o.AcFltrs) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ACInfoSubscription) SetAcFltrs(v []ACFilters) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetExpTime() time.Time {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ACInfoSubscription) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -130,7 +130,7 @@ func (o *ACInfoSubscription) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasExpTime() bool {
-	if o != nil && !isNil(o.ExpTime) {
+	if o != nil && !IsNil(o.ExpTime) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ACInfoSubscription) SetExpTime(v time.Time) {
 
 // GetEventReq returns the EventReq field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetEventReq() ReportingInformation {
-	if o == nil || isNil(o.EventReq) {
+	if o == nil || IsNil(o.EventReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ACInfoSubscription) GetEventReq() ReportingInformation {
 // GetEventReqOk returns a tuple with the EventReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetEventReqOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.EventReq) {
+	if o == nil || IsNil(o.EventReq) {
 		return nil, false
 	}
 	return o.EventReq, true
@@ -162,7 +162,7 @@ func (o *ACInfoSubscription) GetEventReqOk() (*ReportingInformation, bool) {
 
 // HasEventReq returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasEventReq() bool {
-	if o != nil && !isNil(o.EventReq) {
+	if o != nil && !IsNil(o.EventReq) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ACInfoSubscription) SetEventReq(v ReportingInformation) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ACInfoSubscription) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -194,7 +194,7 @@ func (o *ACInfoSubscription) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ACInfoSubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *ACInfoSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -226,7 +226,7 @@ func (o *ACInfoSubscription) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ACInfoSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *ACInfoSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -258,7 +258,7 @@ func (o *ACInfoSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, boo
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *ACInfoSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ACInfoSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *ACInfoSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -290,7 +290,7 @@ func (o *ACInfoSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ACInfoSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *ACInfoSubscription) SetSuppFeat(v string) {
 }
 
 func (o ACInfoSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -313,25 +313,25 @@ func (o ACInfoSubscription) MarshalJSON() ([]byte, error) {
 func (o ACInfoSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
-	if !isNil(o.AcFltrs) {
+	if !IsNil(o.AcFltrs) {
 		toSerialize["acFltrs"] = o.AcFltrs
 	}
-	if !isNil(o.ExpTime) {
+	if !IsNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !isNil(o.EventReq) {
+	if !IsNil(o.EventReq) {
 		toSerialize["eventReq"] = o.EventReq
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -372,5 +372,3 @@ func (v *NullableACInfoSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -445,18 +445,30 @@ components:
       type: string
     SipAuthenticationScheme:
       anyOf:
-      - $ref: '#/components/schemas/SipAuthenticationScheme_anyOf'
+      - enum:
+        - DIGEST-AKAV1-MD5
+        - DIGEST-HTTP
+        - NBA
+        - GIBA
+        - UNKNOWN
+        type: string
       - type: string
       description: Authentication scheme to be used in the SIP authentication request
         message
     SipDigestAlgorithm:
       anyOf:
-      - $ref: '#/components/schemas/SipDigestAlgorithm_anyOf'
+      - enum:
+        - MD5
+        - MD5_SESS
+        type: string
       - type: string
       description: Algorithm used for the SIP Digest authentication scheme
     SipDigestQop:
       anyOf:
-      - $ref: '#/components/schemas/SipDigestQop_anyOf'
+      - enum:
+        - AUTH
+        - AUTH_INT
+        type: string
       - type: string
       description: Quality of Protection for the SIP Digest authentication scheme
     RedirectResponse:
@@ -750,7 +762,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -862,87 +931,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    SipAuthenticationScheme_anyOf:
-      enum:
-      - DIGEST-AKAV1-MD5
-      - DIGEST-HTTP
-      - NBA
-      - GIBA
-      - UNKNOWN
-      type: string
-      example: null
-    SipDigestAlgorithm_anyOf:
-      enum:
-      - MD5
-      - MD5_SESS
-      type: string
-      example: null
-    SipDigestQop_anyOf:
-      enum:
-      - AUTH
-      - AUTH_INT
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

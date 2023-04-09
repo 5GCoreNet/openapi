@@ -19,13 +19,13 @@ var _ MappedNullable = &NotifyClearedAlarmAllOf{}
 
 // NotifyClearedAlarmAllOf struct for NotifyClearedAlarmAllOf
 type NotifyClearedAlarmAllOf struct {
-	AlarmId string `json:"alarmId"`
-	AlarmType AlarmType `json:"alarmType"`
-	ProbableCause ProbableCause `json:"probableCause"`
-	PerceivedSeverity PerceivedSeverity `json:"perceivedSeverity"`
+	AlarmId                 string                   `json:"alarmId"`
+	AlarmType               AlarmType                `json:"alarmType"`
+	ProbableCause           ProbableCause            `json:"probableCause"`
+	PerceivedSeverity       PerceivedSeverity        `json:"perceivedSeverity"`
 	CorrelatedNotifications []CorrelatedNotification `json:"correlatedNotifications,omitempty"`
-	ClearUserId *string `json:"clearUserId,omitempty"`
-	ClearSystemId *string `json:"clearSystemId,omitempty"`
+	ClearUserId             *string                  `json:"clearUserId,omitempty"`
+	ClearSystemId           *string                  `json:"clearSystemId,omitempty"`
 }
 
 // NewNotifyClearedAlarmAllOf instantiates a new NotifyClearedAlarmAllOf object
@@ -147,7 +147,7 @@ func (o *NotifyClearedAlarmAllOf) SetPerceivedSeverity(v PerceivedSeverity) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyClearedAlarmAllOf) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || isNil(o.CorrelatedNotifications) {
+	if o == nil || IsNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *NotifyClearedAlarmAllOf) GetCorrelatedNotifications() []CorrelatedNotif
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyClearedAlarmAllOf) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || isNil(o.CorrelatedNotifications) {
+	if o == nil || IsNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -165,7 +165,7 @@ func (o *NotifyClearedAlarmAllOf) GetCorrelatedNotificationsOk() ([]CorrelatedNo
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyClearedAlarmAllOf) HasCorrelatedNotifications() bool {
-	if o != nil && !isNil(o.CorrelatedNotifications) {
+	if o != nil && !IsNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *NotifyClearedAlarmAllOf) SetCorrelatedNotifications(v []CorrelatedNotif
 
 // GetClearUserId returns the ClearUserId field value if set, zero value otherwise.
 func (o *NotifyClearedAlarmAllOf) GetClearUserId() string {
-	if o == nil || isNil(o.ClearUserId) {
+	if o == nil || IsNil(o.ClearUserId) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *NotifyClearedAlarmAllOf) GetClearUserId() string {
 // GetClearUserIdOk returns a tuple with the ClearUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyClearedAlarmAllOf) GetClearUserIdOk() (*string, bool) {
-	if o == nil || isNil(o.ClearUserId) {
+	if o == nil || IsNil(o.ClearUserId) {
 		return nil, false
 	}
 	return o.ClearUserId, true
@@ -197,7 +197,7 @@ func (o *NotifyClearedAlarmAllOf) GetClearUserIdOk() (*string, bool) {
 
 // HasClearUserId returns a boolean if a field has been set.
 func (o *NotifyClearedAlarmAllOf) HasClearUserId() bool {
-	if o != nil && !isNil(o.ClearUserId) {
+	if o != nil && !IsNil(o.ClearUserId) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *NotifyClearedAlarmAllOf) SetClearUserId(v string) {
 
 // GetClearSystemId returns the ClearSystemId field value if set, zero value otherwise.
 func (o *NotifyClearedAlarmAllOf) GetClearSystemId() string {
-	if o == nil || isNil(o.ClearSystemId) {
+	if o == nil || IsNil(o.ClearSystemId) {
 		var ret string
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *NotifyClearedAlarmAllOf) GetClearSystemId() string {
 // GetClearSystemIdOk returns a tuple with the ClearSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyClearedAlarmAllOf) GetClearSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.ClearSystemId) {
+	if o == nil || IsNil(o.ClearSystemId) {
 		return nil, false
 	}
 	return o.ClearSystemId, true
@@ -229,7 +229,7 @@ func (o *NotifyClearedAlarmAllOf) GetClearSystemIdOk() (*string, bool) {
 
 // HasClearSystemId returns a boolean if a field has been set.
 func (o *NotifyClearedAlarmAllOf) HasClearSystemId() bool {
-	if o != nil && !isNil(o.ClearSystemId) {
+	if o != nil && !IsNil(o.ClearSystemId) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *NotifyClearedAlarmAllOf) SetClearSystemId(v string) {
 }
 
 func (o NotifyClearedAlarmAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -255,13 +255,13 @@ func (o NotifyClearedAlarmAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize["alarmType"] = o.AlarmType
 	toSerialize["probableCause"] = o.ProbableCause
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity
-	if !isNil(o.CorrelatedNotifications) {
+	if !IsNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !isNil(o.ClearUserId) {
+	if !IsNil(o.ClearUserId) {
 		toSerialize["clearUserId"] = o.ClearUserId
 	}
-	if !isNil(o.ClearSystemId) {
+	if !IsNil(o.ClearSystemId) {
 		toSerialize["clearSystemId"] = o.ClearSystemId
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableNotifyClearedAlarmAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

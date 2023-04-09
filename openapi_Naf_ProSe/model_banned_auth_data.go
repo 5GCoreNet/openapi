@@ -1,7 +1,7 @@
 /*
 Naf_ProSe API
 
-Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,7 +22,7 @@ type BannedAuthData struct {
 	// Contains the RPAUID.
 	BannedRpauid string `json:"bannedRpauid"`
 	// Contains the PDUID.
-	BannedPduid string `json:"bannedPduid"`
+	BannedPduid      string            `json:"bannedPduid"`
 	RevocationResult *RevocationResult `json:"revocationResult,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *BannedAuthData) SetBannedPduid(v string) {
 
 // GetRevocationResult returns the RevocationResult field value if set, zero value otherwise.
 func (o *BannedAuthData) GetRevocationResult() RevocationResult {
-	if o == nil || isNil(o.RevocationResult) {
+	if o == nil || IsNil(o.RevocationResult) {
 		var ret RevocationResult
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *BannedAuthData) GetRevocationResult() RevocationResult {
 // GetRevocationResultOk returns a tuple with the RevocationResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BannedAuthData) GetRevocationResultOk() (*RevocationResult, bool) {
-	if o == nil || isNil(o.RevocationResult) {
+	if o == nil || IsNil(o.RevocationResult) {
 		return nil, false
 	}
 	return o.RevocationResult, true
@@ -113,7 +113,7 @@ func (o *BannedAuthData) GetRevocationResultOk() (*RevocationResult, bool) {
 
 // HasRevocationResult returns a boolean if a field has been set.
 func (o *BannedAuthData) HasRevocationResult() bool {
-	if o != nil && !isNil(o.RevocationResult) {
+	if o != nil && !IsNil(o.RevocationResult) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *BannedAuthData) SetRevocationResult(v RevocationResult) {
 }
 
 func (o BannedAuthData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o BannedAuthData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bannedRpauid"] = o.BannedRpauid
 	toSerialize["bannedPduid"] = o.BannedPduid
-	if !isNil(o.RevocationResult) {
+	if !IsNil(o.RevocationResult) {
 		toSerialize["revocationResult"] = o.RevocationResult
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableBannedAuthData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

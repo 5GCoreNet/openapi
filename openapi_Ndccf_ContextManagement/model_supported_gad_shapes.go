@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SupportedGADShapes Indicates supported GAD shapes.
 type SupportedGADShapes struct {
-	SupportedGADShapesAnyOf *SupportedGADShapesAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SupportedGADShapes) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SupportedGADShapesAnyOf
-	err = json.Unmarshal(data, &dst.SupportedGADShapesAnyOf);
-	if err == nil {
-		jsonSupportedGADShapesAnyOf, _ := json.Marshal(dst.SupportedGADShapesAnyOf)
-		if string(jsonSupportedGADShapesAnyOf) == "{}" { // empty struct
-			dst.SupportedGADShapesAnyOf = nil
-		} else {
-			return nil // data stored in dst.SupportedGADShapesAnyOf, return on the first match
-		}
-	} else {
-		dst.SupportedGADShapesAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SupportedGADShapes) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SupportedGADShapes) MarshalJSON() ([]byte, error) {
-	if src.SupportedGADShapesAnyOf != nil {
-		return json.Marshal(&src.SupportedGADShapesAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSupportedGADShapes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

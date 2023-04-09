@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,20 +19,20 @@ var _ MappedNullable = &QosCharacteristics{}
 
 // QosCharacteristics Contains QoS characteristics for a non-standardized or a non-configured 5QI.
 type QosCharacteristics struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
-	Var5qi int32 `json:"5qi"`
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
+	Var5qi       int32           `json:"5qi"`
 	ResourceType QosResourceType `json:"resourceType"`
-	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.  
+	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.
 	PriorityLevel int32 `json:"priorityLevel"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	PacketDelayBudget int32 `json:"packetDelayBudget"`
-	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit. 
+	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit.
 	PacketErrorRate string `json:"packetErrorRate"`
 	// Unsigned integer indicating Averaging Window (see clause 5.7.3.6 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AveragingWindow *int32 `json:"averagingWindow,omitempty"`
-	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.  
+	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.
 	MaxDataBurstVol *int32 `json:"maxDataBurstVol,omitempty"`
-	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.  
+	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.
 	ExtMaxDataBurstVol *int32 `json:"extMaxDataBurstVol,omitempty"`
 }
 
@@ -184,7 +184,7 @@ func (o *QosCharacteristics) SetPacketErrorRate(v string) {
 
 // GetAveragingWindow returns the AveragingWindow field value if set, zero value otherwise.
 func (o *QosCharacteristics) GetAveragingWindow() int32 {
-	if o == nil || isNil(o.AveragingWindow) {
+	if o == nil || IsNil(o.AveragingWindow) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *QosCharacteristics) GetAveragingWindow() int32 {
 // GetAveragingWindowOk returns a tuple with the AveragingWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosCharacteristics) GetAveragingWindowOk() (*int32, bool) {
-	if o == nil || isNil(o.AveragingWindow) {
+	if o == nil || IsNil(o.AveragingWindow) {
 		return nil, false
 	}
 	return o.AveragingWindow, true
@@ -202,7 +202,7 @@ func (o *QosCharacteristics) GetAveragingWindowOk() (*int32, bool) {
 
 // HasAveragingWindow returns a boolean if a field has been set.
 func (o *QosCharacteristics) HasAveragingWindow() bool {
-	if o != nil && !isNil(o.AveragingWindow) {
+	if o != nil && !IsNil(o.AveragingWindow) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *QosCharacteristics) SetAveragingWindow(v int32) {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise.
 func (o *QosCharacteristics) GetMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.MaxDataBurstVol) {
+	if o == nil || IsNil(o.MaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *QosCharacteristics) GetMaxDataBurstVol() int32 {
 // GetMaxDataBurstVolOk returns a tuple with the MaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosCharacteristics) GetMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxDataBurstVol) {
+	if o == nil || IsNil(o.MaxDataBurstVol) {
 		return nil, false
 	}
 	return o.MaxDataBurstVol, true
@@ -234,7 +234,7 @@ func (o *QosCharacteristics) GetMaxDataBurstVolOk() (*int32, bool) {
 
 // HasMaxDataBurstVol returns a boolean if a field has been set.
 func (o *QosCharacteristics) HasMaxDataBurstVol() bool {
-	if o != nil && !isNil(o.MaxDataBurstVol) {
+	if o != nil && !IsNil(o.MaxDataBurstVol) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *QosCharacteristics) SetMaxDataBurstVol(v int32) {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise.
 func (o *QosCharacteristics) GetExtMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.ExtMaxDataBurstVol) {
+	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *QosCharacteristics) GetExtMaxDataBurstVol() int32 {
 // GetExtMaxDataBurstVolOk returns a tuple with the ExtMaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosCharacteristics) GetExtMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || isNil(o.ExtMaxDataBurstVol) {
+	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
 		return nil, false
 	}
 	return o.ExtMaxDataBurstVol, true
@@ -266,7 +266,7 @@ func (o *QosCharacteristics) GetExtMaxDataBurstVolOk() (*int32, bool) {
 
 // HasExtMaxDataBurstVol returns a boolean if a field has been set.
 func (o *QosCharacteristics) HasExtMaxDataBurstVol() bool {
-	if o != nil && !isNil(o.ExtMaxDataBurstVol) {
+	if o != nil && !IsNil(o.ExtMaxDataBurstVol) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *QosCharacteristics) SetExtMaxDataBurstVol(v int32) {
 }
 
 func (o QosCharacteristics) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -293,13 +293,13 @@ func (o QosCharacteristics) ToMap() (map[string]interface{}, error) {
 	toSerialize["priorityLevel"] = o.PriorityLevel
 	toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	toSerialize["packetErrorRate"] = o.PacketErrorRate
-	if !isNil(o.AveragingWindow) {
+	if !IsNil(o.AveragingWindow) {
 		toSerialize["averagingWindow"] = o.AveragingWindow
 	}
-	if !isNil(o.MaxDataBurstVol) {
+	if !IsNil(o.MaxDataBurstVol) {
 		toSerialize["maxDataBurstVol"] = o.MaxDataBurstVol
 	}
-	if !isNil(o.ExtMaxDataBurstVol) {
+	if !IsNil(o.ExtMaxDataBurstVol) {
 		toSerialize["extMaxDataBurstVol"] = o.ExtMaxDataBurstVol
 	}
 	return toSerialize, nil
@@ -340,5 +340,3 @@ func (v *NullableQosCharacteristics) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

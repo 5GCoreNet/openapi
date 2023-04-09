@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SearchCondition{}
 
 // SearchCondition A logical condition
 type SearchCondition struct {
-	Cond ConditionOperator `json:"cond"`
+	Cond  ConditionOperator  `json:"cond"`
 	Units []SearchExpression `json:"units"`
 	// Represents the Identifier of a Meta schema.
 	SchemaId *string `json:"schemaId,omitempty"`
@@ -94,7 +94,7 @@ func (o *SearchCondition) SetUnits(v []SearchExpression) {
 
 // GetSchemaId returns the SchemaId field value if set, zero value otherwise.
 func (o *SearchCondition) GetSchemaId() string {
-	if o == nil || isNil(o.SchemaId) {
+	if o == nil || IsNil(o.SchemaId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *SearchCondition) GetSchemaId() string {
 // GetSchemaIdOk returns a tuple with the SchemaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchCondition) GetSchemaIdOk() (*string, bool) {
-	if o == nil || isNil(o.SchemaId) {
+	if o == nil || IsNil(o.SchemaId) {
 		return nil, false
 	}
 	return o.SchemaId, true
@@ -112,7 +112,7 @@ func (o *SearchCondition) GetSchemaIdOk() (*string, bool) {
 
 // HasSchemaId returns a boolean if a field has been set.
 func (o *SearchCondition) HasSchemaId() bool {
-	if o != nil && !isNil(o.SchemaId) {
+	if o != nil && !IsNil(o.SchemaId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *SearchCondition) SetSchemaId(v string) {
 }
 
 func (o SearchCondition) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o SearchCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cond"] = o.Cond
 	toSerialize["units"] = o.Units
-	if !isNil(o.SchemaId) {
+	if !IsNil(o.SchemaId) {
 		toSerialize["schemaId"] = o.SchemaId
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableSearchCondition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

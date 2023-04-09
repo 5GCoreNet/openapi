@@ -1,7 +1,7 @@
 /*
 CAPIF_Discover_Service_API
 
-API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &Resource{}
 // Resource Represents the API resource data.
 type Resource struct {
 	// Resource name
-	ResourceName string `json:"resourceName"`
-	CommType CommunicationType `json:"commType"`
-	// Relative URI of the API resource, it is set as {apiSpecificSuffixes} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122. 
+	ResourceName string            `json:"resourceName"`
+	CommType     CommunicationType `json:"commType"`
+	// Relative URI of the API resource, it is set as {apiSpecificSuffixes} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122.
 	Uri string `json:"uri"`
-	// it is set as {custOpName} part of the URI structure for a custom operation associated with a resource as defined in clause 5.2.4 of 3GPP TS 29.122. 
+	// it is set as {custOpName} part of the URI structure for a custom operation associated with a resource as defined in clause 5.2.4 of 3GPP TS 29.122.
 	CustOpName *string `json:"custOpName,omitempty"`
-	// Custom operations associated with this resource. 
+	// Custom operations associated with this resource.
 	CustOperations []CustomOperation `json:"custOperations,omitempty"`
-	// Supported HTTP methods for the API resource. Only applicable when the protocol in AefProfile indicates HTTP. 
+	// Supported HTTP methods for the API resource. Only applicable when the protocol in AefProfile indicates HTTP.
 	Operations []Operation `json:"operations,omitempty"`
 	// Text description of the API resource
 	Description *string `json:"description,omitempty"`
@@ -128,7 +128,7 @@ func (o *Resource) SetUri(v string) {
 
 // GetCustOpName returns the CustOpName field value if set, zero value otherwise.
 func (o *Resource) GetCustOpName() string {
-	if o == nil || isNil(o.CustOpName) {
+	if o == nil || IsNil(o.CustOpName) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *Resource) GetCustOpName() string {
 // GetCustOpNameOk returns a tuple with the CustOpName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetCustOpNameOk() (*string, bool) {
-	if o == nil || isNil(o.CustOpName) {
+	if o == nil || IsNil(o.CustOpName) {
 		return nil, false
 	}
 	return o.CustOpName, true
@@ -146,7 +146,7 @@ func (o *Resource) GetCustOpNameOk() (*string, bool) {
 
 // HasCustOpName returns a boolean if a field has been set.
 func (o *Resource) HasCustOpName() bool {
-	if o != nil && !isNil(o.CustOpName) {
+	if o != nil && !IsNil(o.CustOpName) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *Resource) SetCustOpName(v string) {
 
 // GetCustOperations returns the CustOperations field value if set, zero value otherwise.
 func (o *Resource) GetCustOperations() []CustomOperation {
-	if o == nil || isNil(o.CustOperations) {
+	if o == nil || IsNil(o.CustOperations) {
 		var ret []CustomOperation
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *Resource) GetCustOperations() []CustomOperation {
 // GetCustOperationsOk returns a tuple with the CustOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetCustOperationsOk() ([]CustomOperation, bool) {
-	if o == nil || isNil(o.CustOperations) {
+	if o == nil || IsNil(o.CustOperations) {
 		return nil, false
 	}
 	return o.CustOperations, true
@@ -178,7 +178,7 @@ func (o *Resource) GetCustOperationsOk() ([]CustomOperation, bool) {
 
 // HasCustOperations returns a boolean if a field has been set.
 func (o *Resource) HasCustOperations() bool {
-	if o != nil && !isNil(o.CustOperations) {
+	if o != nil && !IsNil(o.CustOperations) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *Resource) SetCustOperations(v []CustomOperation) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *Resource) GetOperations() []Operation {
-	if o == nil || isNil(o.Operations) {
+	if o == nil || IsNil(o.Operations) {
 		var ret []Operation
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *Resource) GetOperations() []Operation {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetOperationsOk() ([]Operation, bool) {
-	if o == nil || isNil(o.Operations) {
+	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -210,7 +210,7 @@ func (o *Resource) GetOperationsOk() ([]Operation, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *Resource) HasOperations() bool {
-	if o != nil && !isNil(o.Operations) {
+	if o != nil && !IsNil(o.Operations) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *Resource) SetOperations(v []Operation) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Resource) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *Resource) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -242,7 +242,7 @@ func (o *Resource) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *Resource) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -255,7 +255,7 @@ func (o *Resource) SetDescription(v string) {
 }
 
 func (o Resource) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,16 +267,16 @@ func (o Resource) ToMap() (map[string]interface{}, error) {
 	toSerialize["resourceName"] = o.ResourceName
 	toSerialize["commType"] = o.CommType
 	toSerialize["uri"] = o.Uri
-	if !isNil(o.CustOpName) {
+	if !IsNil(o.CustOpName) {
 		toSerialize["custOpName"] = o.CustOpName
 	}
-	if !isNil(o.CustOperations) {
+	if !IsNil(o.CustOperations) {
 		toSerialize["custOperations"] = o.CustOperations
 	}
-	if !isNil(o.Operations) {
+	if !IsNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
-	if !isNil(o.Description) {
+	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	return toSerialize, nil
@@ -317,5 +317,3 @@ func (v *NullableResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

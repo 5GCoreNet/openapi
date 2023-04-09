@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the QosNotificationControlInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &QosNotificationControlInfo{}
 
-// QosNotificationControlInfo Indicates whether the QoS targets for a GRB flow are not guaranteed or guaranteed again. 
+// QosNotificationControlInfo Indicates whether the QoS targets for a GRB flow are not guaranteed or guaranteed again.
 type QosNotificationControlInfo struct {
 	NotifType QosNotifType `json:"notifType"`
-	Flows []Flows `json:"flows,omitempty"`
-	// Indicates the alternative service requirement NG-RAN can guarantee. When it is omitted and the notifType attribute is set to NOT_GUAARANTEED it indicates that the lowest priority alternative alternative service requirement could not be fulfilled by NG-RAN. 
+	Flows     []Flows      `json:"flows,omitempty"`
+	// Indicates the alternative service requirement NG-RAN can guarantee. When it is omitted and the notifType attribute is set to NOT_GUAARANTEED it indicates that the lowest priority alternative alternative service requirement could not be fulfilled by NG-RAN.
 	AltSerReq *string `json:"altSerReq,omitempty"`
-	// When present and set to true it indicates that Alternative Service Requirements are not  supported by NG-RAN. 
+	// When present and set to true it indicates that Alternative Service Requirements are not  supported by NG-RAN.
 	AltSerReqNotSuppInd *bool `json:"altSerReqNotSuppInd,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *QosNotificationControlInfo) SetNotifType(v QosNotifType) {
 
 // GetFlows returns the Flows field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetFlows() []Flows {
-	if o == nil || isNil(o.Flows) {
+	if o == nil || IsNil(o.Flows) {
 		var ret []Flows
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *QosNotificationControlInfo) GetFlows() []Flows {
 // GetFlowsOk returns a tuple with the Flows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetFlowsOk() ([]Flows, bool) {
-	if o == nil || isNil(o.Flows) {
+	if o == nil || IsNil(o.Flows) {
 		return nil, false
 	}
 	return o.Flows, true
@@ -89,7 +89,7 @@ func (o *QosNotificationControlInfo) GetFlowsOk() ([]Flows, bool) {
 
 // HasFlows returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasFlows() bool {
-	if o != nil && !isNil(o.Flows) {
+	if o != nil && !IsNil(o.Flows) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *QosNotificationControlInfo) SetFlows(v []Flows) {
 
 // GetAltSerReq returns the AltSerReq field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetAltSerReq() string {
-	if o == nil || isNil(o.AltSerReq) {
+	if o == nil || IsNil(o.AltSerReq) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *QosNotificationControlInfo) GetAltSerReq() string {
 // GetAltSerReqOk returns a tuple with the AltSerReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetAltSerReqOk() (*string, bool) {
-	if o == nil || isNil(o.AltSerReq) {
+	if o == nil || IsNil(o.AltSerReq) {
 		return nil, false
 	}
 	return o.AltSerReq, true
@@ -121,7 +121,7 @@ func (o *QosNotificationControlInfo) GetAltSerReqOk() (*string, bool) {
 
 // HasAltSerReq returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasAltSerReq() bool {
-	if o != nil && !isNil(o.AltSerReq) {
+	if o != nil && !IsNil(o.AltSerReq) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *QosNotificationControlInfo) SetAltSerReq(v string) {
 
 // GetAltSerReqNotSuppInd returns the AltSerReqNotSuppInd field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetAltSerReqNotSuppInd() bool {
-	if o == nil || isNil(o.AltSerReqNotSuppInd) {
+	if o == nil || IsNil(o.AltSerReqNotSuppInd) {
 		var ret bool
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *QosNotificationControlInfo) GetAltSerReqNotSuppInd() bool {
 // GetAltSerReqNotSuppIndOk returns a tuple with the AltSerReqNotSuppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetAltSerReqNotSuppIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AltSerReqNotSuppInd) {
+	if o == nil || IsNil(o.AltSerReqNotSuppInd) {
 		return nil, false
 	}
 	return o.AltSerReqNotSuppInd, true
@@ -153,7 +153,7 @@ func (o *QosNotificationControlInfo) GetAltSerReqNotSuppIndOk() (*bool, bool) {
 
 // HasAltSerReqNotSuppInd returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasAltSerReqNotSuppInd() bool {
-	if o != nil && !isNil(o.AltSerReqNotSuppInd) {
+	if o != nil && !IsNil(o.AltSerReqNotSuppInd) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *QosNotificationControlInfo) SetAltSerReqNotSuppInd(v bool) {
 }
 
 func (o QosNotificationControlInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o QosNotificationControlInfo) MarshalJSON() ([]byte, error) {
 func (o QosNotificationControlInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifType"] = o.NotifType
-	if !isNil(o.Flows) {
+	if !IsNil(o.Flows) {
 		toSerialize["flows"] = o.Flows
 	}
-	if !isNil(o.AltSerReq) {
+	if !IsNil(o.AltSerReq) {
 		toSerialize["altSerReq"] = o.AltSerReq
 	}
-	if !isNil(o.AltSerReqNotSuppInd) {
+	if !IsNil(o.AltSerReqNotSuppInd) {
 		toSerialize["altSerReqNotSuppInd"] = o.AltSerReqNotSuppInd
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableQosNotificationControlInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

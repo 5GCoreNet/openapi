@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // ChargingdataChargingDataRefUpdatePost400Response - struct for ChargingdataChargingDataRefUpdatePost400Response
 type ChargingdataChargingDataRefUpdatePost400Response struct {
 	ChargingDataResponse *ChargingDataResponse
-	ProblemDetails *ProblemDetails
+	ProblemDetails       *ProblemDetails
 }
 
 // ChargingDataResponseAsChargingdataChargingDataRefUpdatePost400Response is a convenience function that returns ChargingDataResponse wrapped in ChargingdataChargingDataRefUpdatePost400Response
@@ -34,7 +34,6 @@ func ProblemDetailsAsChargingdataChargingDataRefUpdatePost400Response(v *Problem
 		ProblemDetails: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChargingdataChargingDataRefUpdatePost400Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ChargingdataChargingDataRefUpdatePost400Response) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *ChargingdataChargingDataRefUpdatePost400Response) GetActualInstance() (interface{}) {
+func (obj *ChargingdataChargingDataRefUpdatePost400Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableChargingdataChargingDataRefUpdatePost400Response) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

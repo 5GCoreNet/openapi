@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,19 +20,19 @@ var _ MappedNullable = &SmfInfo{}
 // SmfInfo Information of an SMF NF Instance
 type SmfInfo struct {
 	SNssaiSmfInfoList []SnssaiSmfInfoItem `json:"sNssaiSmfInfoList"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
+	TaiList           []Tai               `json:"taiList,omitempty"`
+	TaiRangeList      []TaiRange          `json:"taiRangeList,omitempty"`
 	// Fully Qualified Domain Name
-	PgwFqdn *string `json:"pgwFqdn,omitempty"`
-	PgwIpAddrList []IpAddr `json:"pgwIpAddrList,omitempty"`
-	AccessType []AccessType `json:"accessType,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	VsmfSupportInd *bool `json:"vsmfSupportInd,omitempty"`
-	PgwFqdnList []string `json:"pgwFqdnList,omitempty"`
+	PgwFqdn        *string      `json:"pgwFqdn,omitempty"`
+	PgwIpAddrList  []IpAddr     `json:"pgwIpAddrList,omitempty"`
+	AccessType     []AccessType `json:"accessType,omitempty"`
+	Priority       *int32       `json:"priority,omitempty"`
+	VsmfSupportInd *bool        `json:"vsmfSupportInd,omitempty"`
+	PgwFqdnList    []string     `json:"pgwFqdnList,omitempty"`
 	// Deprecated
 	SmfOnboardingCapability *bool `json:"smfOnboardingCapability,omitempty"`
-	IsmfSupportInd *bool `json:"ismfSupportInd,omitempty"`
-	SmfUPRPCapability *bool `json:"smfUPRPCapability,omitempty"`
+	IsmfSupportInd          *bool `json:"ismfSupportInd,omitempty"`
+	SmfUPRPCapability       *bool `json:"smfUPRPCapability,omitempty"`
 }
 
 // NewSmfInfo instantiates a new SmfInfo object
@@ -87,7 +87,7 @@ func (o *SmfInfo) SetSNssaiSmfInfoList(v []SnssaiSmfInfoItem) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *SmfInfo) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *SmfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -105,7 +105,7 @@ func (o *SmfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *SmfInfo) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *SmfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *SmfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *SmfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -137,7 +137,7 @@ func (o *SmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *SmfInfo) HasTaiRangeList() bool {
-	if o != nil && !isNil(o.TaiRangeList) {
+	if o != nil && !IsNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *SmfInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetPgwFqdn returns the PgwFqdn field value if set, zero value otherwise.
 func (o *SmfInfo) GetPgwFqdn() string {
-	if o == nil || isNil(o.PgwFqdn) {
+	if o == nil || IsNil(o.PgwFqdn) {
 		var ret string
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *SmfInfo) GetPgwFqdn() string {
 // GetPgwFqdnOk returns a tuple with the PgwFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetPgwFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PgwFqdn) {
+	if o == nil || IsNil(o.PgwFqdn) {
 		return nil, false
 	}
 	return o.PgwFqdn, true
@@ -169,7 +169,7 @@ func (o *SmfInfo) GetPgwFqdnOk() (*string, bool) {
 
 // HasPgwFqdn returns a boolean if a field has been set.
 func (o *SmfInfo) HasPgwFqdn() bool {
-	if o != nil && !isNil(o.PgwFqdn) {
+	if o != nil && !IsNil(o.PgwFqdn) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *SmfInfo) SetPgwFqdn(v string) {
 
 // GetPgwIpAddrList returns the PgwIpAddrList field value if set, zero value otherwise.
 func (o *SmfInfo) GetPgwIpAddrList() []IpAddr {
-	if o == nil || isNil(o.PgwIpAddrList) {
+	if o == nil || IsNil(o.PgwIpAddrList) {
 		var ret []IpAddr
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *SmfInfo) GetPgwIpAddrList() []IpAddr {
 // GetPgwIpAddrListOk returns a tuple with the PgwIpAddrList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetPgwIpAddrListOk() ([]IpAddr, bool) {
-	if o == nil || isNil(o.PgwIpAddrList) {
+	if o == nil || IsNil(o.PgwIpAddrList) {
 		return nil, false
 	}
 	return o.PgwIpAddrList, true
@@ -201,7 +201,7 @@ func (o *SmfInfo) GetPgwIpAddrListOk() ([]IpAddr, bool) {
 
 // HasPgwIpAddrList returns a boolean if a field has been set.
 func (o *SmfInfo) HasPgwIpAddrList() bool {
-	if o != nil && !isNil(o.PgwIpAddrList) {
+	if o != nil && !IsNil(o.PgwIpAddrList) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *SmfInfo) SetPgwIpAddrList(v []IpAddr) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *SmfInfo) GetAccessType() []AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret []AccessType
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *SmfInfo) GetAccessType() []AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetAccessTypeOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -233,7 +233,7 @@ func (o *SmfInfo) GetAccessTypeOk() ([]AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *SmfInfo) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *SmfInfo) SetAccessType(v []AccessType) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *SmfInfo) GetPriority() int32 {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *SmfInfo) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetPriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -265,7 +265,7 @@ func (o *SmfInfo) GetPriorityOk() (*int32, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *SmfInfo) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *SmfInfo) SetPriority(v int32) {
 
 // GetVsmfSupportInd returns the VsmfSupportInd field value if set, zero value otherwise.
 func (o *SmfInfo) GetVsmfSupportInd() bool {
-	if o == nil || isNil(o.VsmfSupportInd) {
+	if o == nil || IsNil(o.VsmfSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *SmfInfo) GetVsmfSupportInd() bool {
 // GetVsmfSupportIndOk returns a tuple with the VsmfSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetVsmfSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.VsmfSupportInd) {
+	if o == nil || IsNil(o.VsmfSupportInd) {
 		return nil, false
 	}
 	return o.VsmfSupportInd, true
@@ -297,7 +297,7 @@ func (o *SmfInfo) GetVsmfSupportIndOk() (*bool, bool) {
 
 // HasVsmfSupportInd returns a boolean if a field has been set.
 func (o *SmfInfo) HasVsmfSupportInd() bool {
-	if o != nil && !isNil(o.VsmfSupportInd) {
+	if o != nil && !IsNil(o.VsmfSupportInd) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *SmfInfo) SetVsmfSupportInd(v bool) {
 
 // GetPgwFqdnList returns the PgwFqdnList field value if set, zero value otherwise.
 func (o *SmfInfo) GetPgwFqdnList() []string {
-	if o == nil || isNil(o.PgwFqdnList) {
+	if o == nil || IsNil(o.PgwFqdnList) {
 		var ret []string
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *SmfInfo) GetPgwFqdnList() []string {
 // GetPgwFqdnListOk returns a tuple with the PgwFqdnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetPgwFqdnListOk() ([]string, bool) {
-	if o == nil || isNil(o.PgwFqdnList) {
+	if o == nil || IsNil(o.PgwFqdnList) {
 		return nil, false
 	}
 	return o.PgwFqdnList, true
@@ -329,7 +329,7 @@ func (o *SmfInfo) GetPgwFqdnListOk() ([]string, bool) {
 
 // HasPgwFqdnList returns a boolean if a field has been set.
 func (o *SmfInfo) HasPgwFqdnList() bool {
-	if o != nil && !isNil(o.PgwFqdnList) {
+	if o != nil && !IsNil(o.PgwFqdnList) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *SmfInfo) SetPgwFqdnList(v []string) {
 // GetSmfOnboardingCapability returns the SmfOnboardingCapability field value if set, zero value otherwise.
 // Deprecated
 func (o *SmfInfo) GetSmfOnboardingCapability() bool {
-	if o == nil || isNil(o.SmfOnboardingCapability) {
+	if o == nil || IsNil(o.SmfOnboardingCapability) {
 		var ret bool
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *SmfInfo) GetSmfOnboardingCapability() bool {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *SmfInfo) GetSmfOnboardingCapabilityOk() (*bool, bool) {
-	if o == nil || isNil(o.SmfOnboardingCapability) {
+	if o == nil || IsNil(o.SmfOnboardingCapability) {
 		return nil, false
 	}
 	return o.SmfOnboardingCapability, true
@@ -363,7 +363,7 @@ func (o *SmfInfo) GetSmfOnboardingCapabilityOk() (*bool, bool) {
 
 // HasSmfOnboardingCapability returns a boolean if a field has been set.
 func (o *SmfInfo) HasSmfOnboardingCapability() bool {
-	if o != nil && !isNil(o.SmfOnboardingCapability) {
+	if o != nil && !IsNil(o.SmfOnboardingCapability) {
 		return true
 	}
 
@@ -378,7 +378,7 @@ func (o *SmfInfo) SetSmfOnboardingCapability(v bool) {
 
 // GetIsmfSupportInd returns the IsmfSupportInd field value if set, zero value otherwise.
 func (o *SmfInfo) GetIsmfSupportInd() bool {
-	if o == nil || isNil(o.IsmfSupportInd) {
+	if o == nil || IsNil(o.IsmfSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *SmfInfo) GetIsmfSupportInd() bool {
 // GetIsmfSupportIndOk returns a tuple with the IsmfSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetIsmfSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.IsmfSupportInd) {
+	if o == nil || IsNil(o.IsmfSupportInd) {
 		return nil, false
 	}
 	return o.IsmfSupportInd, true
@@ -396,7 +396,7 @@ func (o *SmfInfo) GetIsmfSupportIndOk() (*bool, bool) {
 
 // HasIsmfSupportInd returns a boolean if a field has been set.
 func (o *SmfInfo) HasIsmfSupportInd() bool {
-	if o != nil && !isNil(o.IsmfSupportInd) {
+	if o != nil && !IsNil(o.IsmfSupportInd) {
 		return true
 	}
 
@@ -410,7 +410,7 @@ func (o *SmfInfo) SetIsmfSupportInd(v bool) {
 
 // GetSmfUPRPCapability returns the SmfUPRPCapability field value if set, zero value otherwise.
 func (o *SmfInfo) GetSmfUPRPCapability() bool {
-	if o == nil || isNil(o.SmfUPRPCapability) {
+	if o == nil || IsNil(o.SmfUPRPCapability) {
 		var ret bool
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *SmfInfo) GetSmfUPRPCapability() bool {
 // GetSmfUPRPCapabilityOk returns a tuple with the SmfUPRPCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfInfo) GetSmfUPRPCapabilityOk() (*bool, bool) {
-	if o == nil || isNil(o.SmfUPRPCapability) {
+	if o == nil || IsNil(o.SmfUPRPCapability) {
 		return nil, false
 	}
 	return o.SmfUPRPCapability, true
@@ -428,7 +428,7 @@ func (o *SmfInfo) GetSmfUPRPCapabilityOk() (*bool, bool) {
 
 // HasSmfUPRPCapability returns a boolean if a field has been set.
 func (o *SmfInfo) HasSmfUPRPCapability() bool {
-	if o != nil && !isNil(o.SmfUPRPCapability) {
+	if o != nil && !IsNil(o.SmfUPRPCapability) {
 		return true
 	}
 
@@ -441,7 +441,7 @@ func (o *SmfInfo) SetSmfUPRPCapability(v bool) {
 }
 
 func (o SmfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -451,37 +451,37 @@ func (o SmfInfo) MarshalJSON() ([]byte, error) {
 func (o SmfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssaiSmfInfoList"] = o.SNssaiSmfInfoList
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.TaiRangeList) {
+	if !IsNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !isNil(o.PgwFqdn) {
+	if !IsNil(o.PgwFqdn) {
 		toSerialize["pgwFqdn"] = o.PgwFqdn
 	}
-	if !isNil(o.PgwIpAddrList) {
+	if !IsNil(o.PgwIpAddrList) {
 		toSerialize["pgwIpAddrList"] = o.PgwIpAddrList
 	}
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.VsmfSupportInd) {
+	if !IsNil(o.VsmfSupportInd) {
 		toSerialize["vsmfSupportInd"] = o.VsmfSupportInd
 	}
-	if !isNil(o.PgwFqdnList) {
+	if !IsNil(o.PgwFqdnList) {
 		toSerialize["pgwFqdnList"] = o.PgwFqdnList
 	}
-	if !isNil(o.SmfOnboardingCapability) {
+	if !IsNil(o.SmfOnboardingCapability) {
 		toSerialize["smfOnboardingCapability"] = o.SmfOnboardingCapability
 	}
-	if !isNil(o.IsmfSupportInd) {
+	if !IsNil(o.IsmfSupportInd) {
 		toSerialize["ismfSupportInd"] = o.IsmfSupportInd
 	}
-	if !isNil(o.SmfUPRPCapability) {
+	if !IsNil(o.SmfUPRPCapability) {
 		toSerialize["smfUPRPCapability"] = o.SmfUPRPCapability
 	}
 	return toSerialize, nil
@@ -522,5 +522,3 @@ func (v *NullableSmfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

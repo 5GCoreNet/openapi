@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceMonitoring
 
-API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MeasurementDataType Possible values are: - DL_DELAY: Downlink packet delay. - UL_DELAY: Uplink packet delay. - RT_DELAY: Round trip packet delay. - AVG_PLR: Average packet loss rate. - AVG_DATA_RATE: Average data rate. - MAX_DATA_RATE: Maximum data rate. - AVG_DL_TRAFFIC_VOLUME: Average downlink traffic volume. - AVG_UL_TRAFFIC_VOLUME: Average uplink traffic volume. 
+// MeasurementDataType Possible values are: - DL_DELAY: Downlink packet delay. - UL_DELAY: Uplink packet delay. - RT_DELAY: Round trip packet delay. - AVG_PLR: Average packet loss rate. - AVG_DATA_RATE: Average data rate. - MAX_DATA_RATE: Maximum data rate. - AVG_DL_TRAFFIC_VOLUME: Average downlink traffic volume. - AVG_UL_TRAFFIC_VOLUME: Average uplink traffic volume.
 type MeasurementDataType struct {
-	MeasurementDataTypeAnyOf *MeasurementDataTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MeasurementDataType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MeasurementDataTypeAnyOf
-	err = json.Unmarshal(data, &dst.MeasurementDataTypeAnyOf);
-	if err == nil {
-		jsonMeasurementDataTypeAnyOf, _ := json.Marshal(dst.MeasurementDataTypeAnyOf)
-		if string(jsonMeasurementDataTypeAnyOf) == "{}" { // empty struct
-			dst.MeasurementDataTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.MeasurementDataTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.MeasurementDataTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MeasurementDataType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MeasurementDataType) MarshalJSON() ([]byte, error) {
-	if src.MeasurementDataTypeAnyOf != nil {
-		return json.Marshal(&src.MeasurementDataTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMeasurementDataType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

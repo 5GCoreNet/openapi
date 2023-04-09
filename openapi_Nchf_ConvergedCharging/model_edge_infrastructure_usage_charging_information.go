@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -51,7 +51,7 @@ func NewEdgeInfrastructureUsageChargingInformationWithDefaults() *EdgeInfrastruc
 
 // GetMeanVirtualCPUUsage returns the MeanVirtualCPUUsage field value if set, zero value otherwise.
 func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualCPUUsage() float32 {
-	if o == nil || isNil(o.MeanVirtualCPUUsage) {
+	if o == nil || IsNil(o.MeanVirtualCPUUsage) {
 		var ret float32
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualCPUUsage() fl
 // GetMeanVirtualCPUUsageOk returns a tuple with the MeanVirtualCPUUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualCPUUsageOk() (*float32, bool) {
-	if o == nil || isNil(o.MeanVirtualCPUUsage) {
+	if o == nil || IsNil(o.MeanVirtualCPUUsage) {
 		return nil, false
 	}
 	return o.MeanVirtualCPUUsage, true
@@ -69,7 +69,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualCPUUsageOk() 
 
 // HasMeanVirtualCPUUsage returns a boolean if a field has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) HasMeanVirtualCPUUsage() bool {
-	if o != nil && !isNil(o.MeanVirtualCPUUsage) {
+	if o != nil && !IsNil(o.MeanVirtualCPUUsage) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) SetMeanVirtualCPUUsage(v fl
 
 // GetMeanVirtualMemoryUsage returns the MeanVirtualMemoryUsage field value if set, zero value otherwise.
 func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualMemoryUsage() float32 {
-	if o == nil || isNil(o.MeanVirtualMemoryUsage) {
+	if o == nil || IsNil(o.MeanVirtualMemoryUsage) {
 		var ret float32
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualMemoryUsage()
 // GetMeanVirtualMemoryUsageOk returns a tuple with the MeanVirtualMemoryUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualMemoryUsageOk() (*float32, bool) {
-	if o == nil || isNil(o.MeanVirtualMemoryUsage) {
+	if o == nil || IsNil(o.MeanVirtualMemoryUsage) {
 		return nil, false
 	}
 	return o.MeanVirtualMemoryUsage, true
@@ -101,7 +101,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualMemoryUsageOk
 
 // HasMeanVirtualMemoryUsage returns a boolean if a field has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) HasMeanVirtualMemoryUsage() bool {
-	if o != nil && !isNil(o.MeanVirtualMemoryUsage) {
+	if o != nil && !IsNil(o.MeanVirtualMemoryUsage) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) SetMeanVirtualMemoryUsage(v
 
 // GetMeanVirtualDiskUsage returns the MeanVirtualDiskUsage field value if set, zero value otherwise.
 func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualDiskUsage() float32 {
-	if o == nil || isNil(o.MeanVirtualDiskUsage) {
+	if o == nil || IsNil(o.MeanVirtualDiskUsage) {
 		var ret float32
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualDiskUsage() f
 // GetMeanVirtualDiskUsageOk returns a tuple with the MeanVirtualDiskUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualDiskUsageOk() (*float32, bool) {
-	if o == nil || isNil(o.MeanVirtualDiskUsage) {
+	if o == nil || IsNil(o.MeanVirtualDiskUsage) {
 		return nil, false
 	}
 	return o.MeanVirtualDiskUsage, true
@@ -133,7 +133,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetMeanVirtualDiskUsageOk()
 
 // HasMeanVirtualDiskUsage returns a boolean if a field has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) HasMeanVirtualDiskUsage() bool {
-	if o != nil && !isNil(o.MeanVirtualDiskUsage) {
+	if o != nil && !IsNil(o.MeanVirtualDiskUsage) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) SetMeanVirtualDiskUsage(v f
 
 // GetDurationStartTime returns the DurationStartTime field value if set, zero value otherwise.
 func (o *EdgeInfrastructureUsageChargingInformation) GetDurationStartTime() time.Time {
-	if o == nil || isNil(o.DurationStartTime) {
+	if o == nil || IsNil(o.DurationStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetDurationStartTime() time
 // GetDurationStartTimeOk returns a tuple with the DurationStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) GetDurationStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.DurationStartTime) {
+	if o == nil || IsNil(o.DurationStartTime) {
 		return nil, false
 	}
 	return o.DurationStartTime, true
@@ -165,7 +165,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetDurationStartTimeOk() (*
 
 // HasDurationStartTime returns a boolean if a field has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) HasDurationStartTime() bool {
-	if o != nil && !isNil(o.DurationStartTime) {
+	if o != nil && !IsNil(o.DurationStartTime) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) SetDurationStartTime(v time
 
 // GetDurationEndTime returns the DurationEndTime field value if set, zero value otherwise.
 func (o *EdgeInfrastructureUsageChargingInformation) GetDurationEndTime() time.Time {
-	if o == nil || isNil(o.DurationEndTime) {
+	if o == nil || IsNil(o.DurationEndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetDurationEndTime() time.T
 // GetDurationEndTimeOk returns a tuple with the DurationEndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) GetDurationEndTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.DurationEndTime) {
+	if o == nil || IsNil(o.DurationEndTime) {
 		return nil, false
 	}
 	return o.DurationEndTime, true
@@ -197,7 +197,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) GetDurationEndTimeOk() (*ti
 
 // HasDurationEndTime returns a boolean if a field has been set.
 func (o *EdgeInfrastructureUsageChargingInformation) HasDurationEndTime() bool {
-	if o != nil && !isNil(o.DurationEndTime) {
+	if o != nil && !IsNil(o.DurationEndTime) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *EdgeInfrastructureUsageChargingInformation) SetDurationEndTime(v time.T
 }
 
 func (o EdgeInfrastructureUsageChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -219,19 +219,19 @@ func (o EdgeInfrastructureUsageChargingInformation) MarshalJSON() ([]byte, error
 
 func (o EdgeInfrastructureUsageChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MeanVirtualCPUUsage) {
+	if !IsNil(o.MeanVirtualCPUUsage) {
 		toSerialize["meanVirtualCPUUsage"] = o.MeanVirtualCPUUsage
 	}
-	if !isNil(o.MeanVirtualMemoryUsage) {
+	if !IsNil(o.MeanVirtualMemoryUsage) {
 		toSerialize["meanVirtualMemoryUsage"] = o.MeanVirtualMemoryUsage
 	}
-	if !isNil(o.MeanVirtualDiskUsage) {
+	if !IsNil(o.MeanVirtualDiskUsage) {
 		toSerialize["meanVirtualDiskUsage"] = o.MeanVirtualDiskUsage
 	}
-	if !isNil(o.DurationStartTime) {
+	if !IsNil(o.DurationStartTime) {
 		toSerialize["durationStartTime"] = o.DurationStartTime
 	}
-	if !isNil(o.DurationEndTime) {
+	if !IsNil(o.DurationEndTime) {
 		toSerialize["durationEndTime"] = o.DurationEndTime
 	}
 	return toSerialize, nil
@@ -272,5 +272,3 @@ func (v *NullableEdgeInfrastructureUsageChargingInformation) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

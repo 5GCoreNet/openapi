@@ -1,7 +1,7 @@
 /*
 3gpp-ecr-control
 
-API for enhanced converage restriction control.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for enhanced converage restriction control.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &PlmnEcRestrictionDataWb{}
 
 // PlmnEcRestrictionDataWb Indicates whether enhanced coverage mode is restricted or not for a PLMN ID.
 type PlmnEcRestrictionDataWb struct {
-	PlmnId PlmnId `json:"plmnId"`
+	PlmnId        PlmnId               `json:"plmnId"`
 	PlmnEcrDataWb *EcRestrictionDataWb `json:"plmnEcrDataWb,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *PlmnEcRestrictionDataWb) SetPlmnId(v PlmnId) {
 
 // GetPlmnEcrDataWb returns the PlmnEcrDataWb field value if set, zero value otherwise.
 func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWb() EcRestrictionDataWb {
-	if o == nil || isNil(o.PlmnEcrDataWb) {
+	if o == nil || IsNil(o.PlmnEcrDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWb() EcRestrictionDataWb {
 // GetPlmnEcrDataWbOk returns a tuple with the PlmnEcrDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || isNil(o.PlmnEcrDataWb) {
+	if o == nil || IsNil(o.PlmnEcrDataWb) {
 		return nil, false
 	}
 	return o.PlmnEcrDataWb, true
@@ -85,7 +85,7 @@ func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWbOk() (*EcRestrictionDataWb, bo
 
 // HasPlmnEcrDataWb returns a boolean if a field has been set.
 func (o *PlmnEcRestrictionDataWb) HasPlmnEcrDataWb() bool {
-	if o != nil && !isNil(o.PlmnEcrDataWb) {
+	if o != nil && !IsNil(o.PlmnEcrDataWb) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *PlmnEcRestrictionDataWb) SetPlmnEcrDataWb(v EcRestrictionDataWb) {
 }
 
 func (o PlmnEcRestrictionDataWb) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o PlmnEcRestrictionDataWb) MarshalJSON() ([]byte, error) {
 func (o PlmnEcRestrictionDataWb) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.PlmnEcrDataWb) {
+	if !IsNil(o.PlmnEcrDataWb) {
 		toSerialize["plmnEcrDataWb"] = o.PlmnEcrDataWb
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullablePlmnEcRestrictionDataWb) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

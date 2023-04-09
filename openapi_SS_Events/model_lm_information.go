@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &LMInformation{}
 
 // LMInformation Represents the location information for a VAL User ID or a VAL UE ID.
 type LMInformation struct {
-	ValTgtUe ValTargetUe `json:"valTgtUe"`
-	LocInfo LocationInfo `json:"locInfo"`
+	ValTgtUe ValTargetUe  `json:"valTgtUe"`
+	LocInfo  LocationInfo `json:"locInfo"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeStamp *time.Time `json:"timeStamp,omitempty"`
 	// Identity of the VAL service
@@ -97,7 +97,7 @@ func (o *LMInformation) SetLocInfo(v LocationInfo) {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *LMInformation) GetTimeStamp() time.Time {
-	if o == nil || isNil(o.TimeStamp) {
+	if o == nil || IsNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *LMInformation) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LMInformation) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeStamp) {
+	if o == nil || IsNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -115,7 +115,7 @@ func (o *LMInformation) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *LMInformation) HasTimeStamp() bool {
-	if o != nil && !isNil(o.TimeStamp) {
+	if o != nil && !IsNil(o.TimeStamp) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *LMInformation) SetTimeStamp(v time.Time) {
 
 // GetValSvcId returns the ValSvcId field value if set, zero value otherwise.
 func (o *LMInformation) GetValSvcId() string {
-	if o == nil || isNil(o.ValSvcId) {
+	if o == nil || IsNil(o.ValSvcId) {
 		var ret string
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *LMInformation) GetValSvcId() string {
 // GetValSvcIdOk returns a tuple with the ValSvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LMInformation) GetValSvcIdOk() (*string, bool) {
-	if o == nil || isNil(o.ValSvcId) {
+	if o == nil || IsNil(o.ValSvcId) {
 		return nil, false
 	}
 	return o.ValSvcId, true
@@ -147,7 +147,7 @@ func (o *LMInformation) GetValSvcIdOk() (*string, bool) {
 
 // HasValSvcId returns a boolean if a field has been set.
 func (o *LMInformation) HasValSvcId() bool {
-	if o != nil && !isNil(o.ValSvcId) {
+	if o != nil && !IsNil(o.ValSvcId) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *LMInformation) SetValSvcId(v string) {
 }
 
 func (o LMInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -171,10 +171,10 @@ func (o LMInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valTgtUe"] = o.ValTgtUe
 	toSerialize["locInfo"] = o.LocInfo
-	if !isNil(o.TimeStamp) {
+	if !IsNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
-	if !isNil(o.ValSvcId) {
+	if !IsNil(o.ValSvcId) {
 		toSerialize["valSvcId"] = o.ValSvcId
 	}
 	return toSerialize, nil
@@ -215,5 +215,3 @@ func (v *NullableLMInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

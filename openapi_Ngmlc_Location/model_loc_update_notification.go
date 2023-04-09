@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,20 +20,20 @@ var _ MappedNullable = &LocUpdateNotification{}
 
 // LocUpdateNotification Location Update Notification
 type LocUpdateNotification struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi *string `json:"supi,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi                *string             `json:"supi,omitempty"`
 	LocationRequestType LocationRequestType `json:"locationRequestType"`
-	LocationEstimate GeographicArea `json:"locationEstimate"`
+	LocationEstimate    GeographicArea      `json:"locationEstimate"`
 	// Indicates value of the age of the location estimate.
 	AgeOfLocationEstimate int32 `json:"ageOfLocationEstimate"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimestampOfLocationEstimate *time.Time `json:"timestampOfLocationEstimate,omitempty"`
+	TimestampOfLocationEstimate *time.Time                  `json:"timestampOfLocationEstimate,omitempty"`
 	AccuracyFulfilmentIndicator AccuracyFulfilmentIndicator `json:"accuracyFulfilmentIndicator"`
-	CivicAddress *CivicAddress `json:"civicAddress,omitempty"`
-	LcsQosClass LcsQosClass `json:"lcsQosClass"`
-	AfId *string `json:"afId,omitempty"`
+	CivicAddress                *CivicAddress               `json:"civicAddress,omitempty"`
+	LcsQosClass                 LcsQosClass                 `json:"lcsQosClass"`
+	AfId                        *string                     `json:"afId,omitempty"`
 	// Contains the service identity
 	ServiceIdentity *string `json:"serviceIdentity,omitempty"`
 }
@@ -62,7 +62,7 @@ func NewLocUpdateNotificationWithDefaults() *LocUpdateNotification {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *LocUpdateNotification) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *LocUpdateNotification) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateNotification) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -80,7 +80,7 @@ func (o *LocUpdateNotification) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *LocUpdateNotification) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *LocUpdateNotification) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *LocUpdateNotification) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *LocUpdateNotification) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateNotification) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -112,7 +112,7 @@ func (o *LocUpdateNotification) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *LocUpdateNotification) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *LocUpdateNotification) SetAgeOfLocationEstimate(v int32) {
 
 // GetTimestampOfLocationEstimate returns the TimestampOfLocationEstimate field value if set, zero value otherwise.
 func (o *LocUpdateNotification) GetTimestampOfLocationEstimate() time.Time {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		var ret time.Time
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *LocUpdateNotification) GetTimestampOfLocationEstimate() time.Time {
 // GetTimestampOfLocationEstimateOk returns a tuple with the TimestampOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateNotification) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		return nil, false
 	}
 	return o.TimestampOfLocationEstimate, true
@@ -216,7 +216,7 @@ func (o *LocUpdateNotification) GetTimestampOfLocationEstimateOk() (*time.Time, 
 
 // HasTimestampOfLocationEstimate returns a boolean if a field has been set.
 func (o *LocUpdateNotification) HasTimestampOfLocationEstimate() bool {
-	if o != nil && !isNil(o.TimestampOfLocationEstimate) {
+	if o != nil && !IsNil(o.TimestampOfLocationEstimate) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *LocUpdateNotification) SetAccuracyFulfilmentIndicator(v AccuracyFulfilm
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *LocUpdateNotification) GetCivicAddress() CivicAddress {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *LocUpdateNotification) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateNotification) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -272,7 +272,7 @@ func (o *LocUpdateNotification) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *LocUpdateNotification) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *LocUpdateNotification) SetLcsQosClass(v LcsQosClass) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *LocUpdateNotification) GetAfId() string {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *LocUpdateNotification) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateNotification) GetAfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfId) {
+	if o == nil || IsNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -328,7 +328,7 @@ func (o *LocUpdateNotification) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *LocUpdateNotification) HasAfId() bool {
-	if o != nil && !isNil(o.AfId) {
+	if o != nil && !IsNil(o.AfId) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *LocUpdateNotification) SetAfId(v string) {
 
 // GetServiceIdentity returns the ServiceIdentity field value if set, zero value otherwise.
 func (o *LocUpdateNotification) GetServiceIdentity() string {
-	if o == nil || isNil(o.ServiceIdentity) {
+	if o == nil || IsNil(o.ServiceIdentity) {
 		var ret string
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *LocUpdateNotification) GetServiceIdentity() string {
 // GetServiceIdentityOk returns a tuple with the ServiceIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateNotification) GetServiceIdentityOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceIdentity) {
+	if o == nil || IsNil(o.ServiceIdentity) {
 		return nil, false
 	}
 	return o.ServiceIdentity, true
@@ -360,7 +360,7 @@ func (o *LocUpdateNotification) GetServiceIdentityOk() (*string, bool) {
 
 // HasServiceIdentity returns a boolean if a field has been set.
 func (o *LocUpdateNotification) HasServiceIdentity() bool {
-	if o != nil && !isNil(o.ServiceIdentity) {
+	if o != nil && !IsNil(o.ServiceIdentity) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o *LocUpdateNotification) SetServiceIdentity(v string) {
 }
 
 func (o LocUpdateNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -382,27 +382,27 @@ func (o LocUpdateNotification) MarshalJSON() ([]byte, error) {
 
 func (o LocUpdateNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	toSerialize["locationRequestType"] = o.LocationRequestType
 	toSerialize["locationEstimate"] = o.LocationEstimate
 	toSerialize["ageOfLocationEstimate"] = o.AgeOfLocationEstimate
-	if !isNil(o.TimestampOfLocationEstimate) {
+	if !IsNil(o.TimestampOfLocationEstimate) {
 		toSerialize["timestampOfLocationEstimate"] = o.TimestampOfLocationEstimate
 	}
 	toSerialize["accuracyFulfilmentIndicator"] = o.AccuracyFulfilmentIndicator
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	toSerialize["lcsQosClass"] = o.LcsQosClass
-	if !isNil(o.AfId) {
+	if !IsNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !isNil(o.ServiceIdentity) {
+	if !IsNil(o.ServiceIdentity) {
 		toSerialize["serviceIdentity"] = o.ServiceIdentity
 	}
 	return toSerialize, nil
@@ -443,5 +443,3 @@ func (v *NullableLocUpdateNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

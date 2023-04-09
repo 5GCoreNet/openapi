@@ -1,7 +1,7 @@
 /*
 Naf_EventExposure
 
-AF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &EventFilter{}
 
 // EventFilter Represents event filter information for an event.
 type EventFilter struct {
-	Gpsis []string `json:"gpsis,omitempty"`
-	Supis []string `json:"supis,omitempty"`
-	ExterGroupIds []string `json:"exterGroupIds,omitempty"`
-	InterGroupIds []string `json:"interGroupIds,omitempty"`
-	AnyUeInd *bool `json:"anyUeInd,omitempty"`
-	AppIds []string `json:"appIds,omitempty"`
-	LocArea *LocationArea5G `json:"locArea,omitempty"`
-	CollAttrs []CollectiveBehaviourFilter `json:"collAttrs,omitempty"`
+	Gpsis         []string                    `json:"gpsis,omitempty"`
+	Supis         []string                    `json:"supis,omitempty"`
+	ExterGroupIds []string                    `json:"exterGroupIds,omitempty"`
+	InterGroupIds []string                    `json:"interGroupIds,omitempty"`
+	AnyUeInd      *bool                       `json:"anyUeInd,omitempty"`
+	AppIds        []string                    `json:"appIds,omitempty"`
+	LocArea       *LocationArea5G             `json:"locArea,omitempty"`
+	CollAttrs     []CollectiveBehaviourFilter `json:"collAttrs,omitempty"`
 }
 
 // NewEventFilter instantiates a new EventFilter object
@@ -48,7 +48,7 @@ func NewEventFilterWithDefaults() *EventFilter {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *EventFilter) GetGpsis() []string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *EventFilter) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetGpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -66,7 +66,7 @@ func (o *EventFilter) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *EventFilter) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *EventFilter) SetGpsis(v []string) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *EventFilter) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *EventFilter) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -98,7 +98,7 @@ func (o *EventFilter) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *EventFilter) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *EventFilter) SetSupis(v []string) {
 
 // GetExterGroupIds returns the ExterGroupIds field value if set, zero value otherwise.
 func (o *EventFilter) GetExterGroupIds() []string {
-	if o == nil || isNil(o.ExterGroupIds) {
+	if o == nil || IsNil(o.ExterGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *EventFilter) GetExterGroupIds() []string {
 // GetExterGroupIdsOk returns a tuple with the ExterGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetExterGroupIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ExterGroupIds) {
+	if o == nil || IsNil(o.ExterGroupIds) {
 		return nil, false
 	}
 	return o.ExterGroupIds, true
@@ -130,7 +130,7 @@ func (o *EventFilter) GetExterGroupIdsOk() ([]string, bool) {
 
 // HasExterGroupIds returns a boolean if a field has been set.
 func (o *EventFilter) HasExterGroupIds() bool {
-	if o != nil && !isNil(o.ExterGroupIds) {
+	if o != nil && !IsNil(o.ExterGroupIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *EventFilter) SetExterGroupIds(v []string) {
 
 // GetInterGroupIds returns the InterGroupIds field value if set, zero value otherwise.
 func (o *EventFilter) GetInterGroupIds() []string {
-	if o == nil || isNil(o.InterGroupIds) {
+	if o == nil || IsNil(o.InterGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *EventFilter) GetInterGroupIds() []string {
 // GetInterGroupIdsOk returns a tuple with the InterGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetInterGroupIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.InterGroupIds) {
+	if o == nil || IsNil(o.InterGroupIds) {
 		return nil, false
 	}
 	return o.InterGroupIds, true
@@ -162,7 +162,7 @@ func (o *EventFilter) GetInterGroupIdsOk() ([]string, bool) {
 
 // HasInterGroupIds returns a boolean if a field has been set.
 func (o *EventFilter) HasInterGroupIds() bool {
-	if o != nil && !isNil(o.InterGroupIds) {
+	if o != nil && !IsNil(o.InterGroupIds) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *EventFilter) SetInterGroupIds(v []string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *EventFilter) GetAnyUeInd() bool {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *EventFilter) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -194,7 +194,7 @@ func (o *EventFilter) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *EventFilter) HasAnyUeInd() bool {
-	if o != nil && !isNil(o.AnyUeInd) {
+	if o != nil && !IsNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *EventFilter) SetAnyUeInd(v bool) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *EventFilter) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *EventFilter) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -226,7 +226,7 @@ func (o *EventFilter) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *EventFilter) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *EventFilter) SetAppIds(v []string) {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *EventFilter) GetLocArea() LocationArea5G {
-	if o == nil || isNil(o.LocArea) {
+	if o == nil || IsNil(o.LocArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *EventFilter) GetLocArea() LocationArea5G {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetLocAreaOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.LocArea) {
+	if o == nil || IsNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -258,7 +258,7 @@ func (o *EventFilter) GetLocAreaOk() (*LocationArea5G, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *EventFilter) HasLocArea() bool {
-	if o != nil && !isNil(o.LocArea) {
+	if o != nil && !IsNil(o.LocArea) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *EventFilter) SetLocArea(v LocationArea5G) {
 
 // GetCollAttrs returns the CollAttrs field value if set, zero value otherwise.
 func (o *EventFilter) GetCollAttrs() []CollectiveBehaviourFilter {
-	if o == nil || isNil(o.CollAttrs) {
+	if o == nil || IsNil(o.CollAttrs) {
 		var ret []CollectiveBehaviourFilter
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *EventFilter) GetCollAttrs() []CollectiveBehaviourFilter {
 // GetCollAttrsOk returns a tuple with the CollAttrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetCollAttrsOk() ([]CollectiveBehaviourFilter, bool) {
-	if o == nil || isNil(o.CollAttrs) {
+	if o == nil || IsNil(o.CollAttrs) {
 		return nil, false
 	}
 	return o.CollAttrs, true
@@ -290,7 +290,7 @@ func (o *EventFilter) GetCollAttrsOk() ([]CollectiveBehaviourFilter, bool) {
 
 // HasCollAttrs returns a boolean if a field has been set.
 func (o *EventFilter) HasCollAttrs() bool {
-	if o != nil && !isNil(o.CollAttrs) {
+	if o != nil && !IsNil(o.CollAttrs) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *EventFilter) SetCollAttrs(v []CollectiveBehaviourFilter) {
 }
 
 func (o EventFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,28 +312,28 @@ func (o EventFilter) MarshalJSON() ([]byte, error) {
 
 func (o EventFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !isNil(o.ExterGroupIds) {
+	if !IsNil(o.ExterGroupIds) {
 		toSerialize["exterGroupIds"] = o.ExterGroupIds
 	}
-	if !isNil(o.InterGroupIds) {
+	if !IsNil(o.InterGroupIds) {
 		toSerialize["interGroupIds"] = o.InterGroupIds
 	}
-	if !isNil(o.AnyUeInd) {
+	if !IsNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !isNil(o.LocArea) {
+	if !IsNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !isNil(o.CollAttrs) {
+	if !IsNil(o.CollAttrs) {
 		toSerialize["collAttrs"] = o.CollAttrs
 	}
 	return toSerialize, nil
@@ -374,5 +374,3 @@ func (v *NullableEventFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

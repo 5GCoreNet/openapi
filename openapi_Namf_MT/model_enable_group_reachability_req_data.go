@@ -1,7 +1,7 @@
 /*
 Namf_MT
 
-AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &EnableGroupReachabilityReqData{}
 // EnableGroupReachabilityReqData Data within the Enable Group Reachability Request
 type EnableGroupReachabilityReqData struct {
 	UeInfoList []UeInfo `json:"ueInfoList"`
-	Tmgi Tmgi `json:"tmgi"`
+	Tmgi       Tmgi     `json:"tmgi"`
 	// String providing an URI formatted according to RFC 3986.
-	ReachabilityNotifyUri *string `json:"reachabilityNotifyUri,omitempty"`
+	ReachabilityNotifyUri  *string              `json:"reachabilityNotifyUri,omitempty"`
 	MbsServiceAreaInfoList []MbsServiceAreaInfo `json:"mbsServiceAreaInfoList,omitempty"`
-	Arp *Arp `json:"arp,omitempty"`
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	Arp                    *Arp                 `json:"arp,omitempty"`
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi *int32 `json:"5qi,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -100,7 +100,7 @@ func (o *EnableGroupReachabilityReqData) SetTmgi(v Tmgi) {
 
 // GetReachabilityNotifyUri returns the ReachabilityNotifyUri field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUri() string {
-	if o == nil || isNil(o.ReachabilityNotifyUri) {
+	if o == nil || IsNil(o.ReachabilityNotifyUri) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUri() string {
 // GetReachabilityNotifyUriOk returns a tuple with the ReachabilityNotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUriOk() (*string, bool) {
-	if o == nil || isNil(o.ReachabilityNotifyUri) {
+	if o == nil || IsNil(o.ReachabilityNotifyUri) {
 		return nil, false
 	}
 	return o.ReachabilityNotifyUri, true
@@ -118,7 +118,7 @@ func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUriOk() (*string, 
 
 // HasReachabilityNotifyUri returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasReachabilityNotifyUri() bool {
-	if o != nil && !isNil(o.ReachabilityNotifyUri) {
+	if o != nil && !IsNil(o.ReachabilityNotifyUri) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *EnableGroupReachabilityReqData) SetReachabilityNotifyUri(v string) {
 
 // GetMbsServiceAreaInfoList returns the MbsServiceAreaInfoList field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoList() []MbsServiceAreaInfo {
-	if o == nil || isNil(o.MbsServiceAreaInfoList) {
+	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
 		var ret []MbsServiceAreaInfo
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoList() []MbsServic
 // GetMbsServiceAreaInfoListOk returns a tuple with the MbsServiceAreaInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoListOk() ([]MbsServiceAreaInfo, bool) {
-	if o == nil || isNil(o.MbsServiceAreaInfoList) {
+	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
 		return nil, false
 	}
 	return o.MbsServiceAreaInfoList, true
@@ -150,7 +150,7 @@ func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoListOk() ([]MbsSer
 
 // HasMbsServiceAreaInfoList returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasMbsServiceAreaInfoList() bool {
-	if o != nil && !isNil(o.MbsServiceAreaInfoList) {
+	if o != nil && !IsNil(o.MbsServiceAreaInfoList) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *EnableGroupReachabilityReqData) SetMbsServiceAreaInfoList(v []MbsServic
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetArp() Arp {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *EnableGroupReachabilityReqData) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -182,7 +182,7 @@ func (o *EnableGroupReachabilityReqData) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasArp() bool {
-	if o != nil && !isNil(o.Arp) {
+	if o != nil && !IsNil(o.Arp) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *EnableGroupReachabilityReqData) SetArp(v Arp) {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetVar5qi() int32 {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *EnableGroupReachabilityReqData) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetVar5qiOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -214,7 +214,7 @@ func (o *EnableGroupReachabilityReqData) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasVar5qi() bool {
-	if o != nil && !isNil(o.Var5qi) {
+	if o != nil && !IsNil(o.Var5qi) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *EnableGroupReachabilityReqData) SetVar5qi(v int32) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *EnableGroupReachabilityReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -246,7 +246,7 @@ func (o *EnableGroupReachabilityReqData) GetSupportedFeaturesOk() (*string, bool
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *EnableGroupReachabilityReqData) SetSupportedFeatures(v string) {
 }
 
 func (o EnableGroupReachabilityReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,19 +270,19 @@ func (o EnableGroupReachabilityReqData) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueInfoList"] = o.UeInfoList
 	toSerialize["tmgi"] = o.Tmgi
-	if !isNil(o.ReachabilityNotifyUri) {
+	if !IsNil(o.ReachabilityNotifyUri) {
 		toSerialize["reachabilityNotifyUri"] = o.ReachabilityNotifyUri
 	}
-	if !isNil(o.MbsServiceAreaInfoList) {
+	if !IsNil(o.MbsServiceAreaInfoList) {
 		toSerialize["mbsServiceAreaInfoList"] = o.MbsServiceAreaInfoList
 	}
-	if !isNil(o.Arp) {
+	if !IsNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !isNil(o.Var5qi) {
+	if !IsNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -323,5 +323,3 @@ func (v *NullableEnableGroupReachabilityReqData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

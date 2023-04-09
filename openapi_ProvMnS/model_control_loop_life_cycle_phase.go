@@ -20,9 +20,9 @@ type ControlLoopLifeCyclePhase string
 
 // List of ControlLoopLifeCyclePhase
 const (
-	PREPARATION ControlLoopLifeCyclePhase = "PREPARATION"
-	COMMISSIONING ControlLoopLifeCyclePhase = "COMMISSIONING"
-	OPERATION ControlLoopLifeCyclePhase = "OPERATION"
+	PREPARATION     ControlLoopLifeCyclePhase = "PREPARATION"
+	COMMISSIONING   ControlLoopLifeCyclePhase = "COMMISSIONING"
+	OPERATION       ControlLoopLifeCyclePhase = "OPERATION"
 	DECOMMISSIONING ControlLoopLifeCyclePhase = "DECOMMISSIONING"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableControlLoopLifeCyclePhase) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 EES UE Location Information_API
 
-API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewMinorLocationQoSWithDefaults() *MinorLocationQoS {
 
 // GetHAccuracy returns the HAccuracy field value if set, zero value otherwise.
 func (o *MinorLocationQoS) GetHAccuracy() float32 {
-	if o == nil || isNil(o.HAccuracy) {
+	if o == nil || IsNil(o.HAccuracy) {
 		var ret float32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MinorLocationQoS) GetHAccuracy() float32 {
 // GetHAccuracyOk returns a tuple with the HAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MinorLocationQoS) GetHAccuracyOk() (*float32, bool) {
-	if o == nil || isNil(o.HAccuracy) {
+	if o == nil || IsNil(o.HAccuracy) {
 		return nil, false
 	}
 	return o.HAccuracy, true
@@ -62,7 +62,7 @@ func (o *MinorLocationQoS) GetHAccuracyOk() (*float32, bool) {
 
 // HasHAccuracy returns a boolean if a field has been set.
 func (o *MinorLocationQoS) HasHAccuracy() bool {
-	if o != nil && !isNil(o.HAccuracy) {
+	if o != nil && !IsNil(o.HAccuracy) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MinorLocationQoS) SetHAccuracy(v float32) {
 
 // GetVAccuracy returns the VAccuracy field value if set, zero value otherwise.
 func (o *MinorLocationQoS) GetVAccuracy() float32 {
-	if o == nil || isNil(o.VAccuracy) {
+	if o == nil || IsNil(o.VAccuracy) {
 		var ret float32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MinorLocationQoS) GetVAccuracy() float32 {
 // GetVAccuracyOk returns a tuple with the VAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MinorLocationQoS) GetVAccuracyOk() (*float32, bool) {
-	if o == nil || isNil(o.VAccuracy) {
+	if o == nil || IsNil(o.VAccuracy) {
 		return nil, false
 	}
 	return o.VAccuracy, true
@@ -94,7 +94,7 @@ func (o *MinorLocationQoS) GetVAccuracyOk() (*float32, bool) {
 
 // HasVAccuracy returns a boolean if a field has been set.
 func (o *MinorLocationQoS) HasVAccuracy() bool {
-	if o != nil && !isNil(o.VAccuracy) {
+	if o != nil && !IsNil(o.VAccuracy) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MinorLocationQoS) SetVAccuracy(v float32) {
 }
 
 func (o MinorLocationQoS) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o MinorLocationQoS) MarshalJSON() ([]byte, error) {
 
 func (o MinorLocationQoS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.HAccuracy) {
+	if !IsNil(o.HAccuracy) {
 		toSerialize["hAccuracy"] = o.HAccuracy
 	}
-	if !isNil(o.VAccuracy) {
+	if !IsNil(o.VAccuracy) {
 		toSerialize["vAccuracy"] = o.VAccuracy
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableMinorLocationQoS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

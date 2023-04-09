@@ -7419,28 +7419,46 @@ components:
       type: string
     UsageMonLevel:
       anyOf:
-      - $ref: '#/components/schemas/UsageMonLevel_anyOf'
+      - enum:
+        - SESSION_LEVEL
+        - SERVICE_LEVEL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Represents the usage monitoring level.
     Periodicity:
       anyOf:
-      - $ref: '#/components/schemas/Periodicity_anyOf'
+      - enum:
+        - YEARLY
+        - MONTHLY
+        - WEEKLY
+        - DAILY
+        - HOURLY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Represents the time period.
     BdtPolicyStatus:
       anyOf:
-      - $ref: '#/components/schemas/BdtPolicyStatus_anyOf'
+      - enum:
+        - INVALID
+        - VALID
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the validation status of a negotiated BDT policy.
     PolicyDataSubset:
       anyOf:
-      - $ref: '#/components/schemas/PolicyDataSubset_anyOf'
+      - enum:
+        - AM_POLICY_DATA
+        - SM_POLICY_DATA
+        - UE_POLICY_DATA
+        - UM_DATA
+        - OPERATOR_SPECIFIC_DATA
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7622,7 +7640,14 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - $ref: '#/components/schemas/PatchOperation_anyOf'
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -7812,7 +7837,12 @@ components:
       type: object
     PresenceState:
       anyOf:
-      - $ref: '#/components/schemas/PresenceState_anyOf'
+      - enum:
+        - IN_AREA
+        - OUT_OF_AREA
+        - UNKNOWN
+        - INACTIVE
+        type: string
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -8422,13 +8452,23 @@ components:
       type: string
     SscMode:
       anyOf:
-      - $ref: '#/components/schemas/SscMode_anyOf'
+      - enum:
+        - SSC_MODE_1
+        - SSC_MODE_2
+        - SSC_MODE_3
+        type: string
       - type: string
       description: "represents the service and session continuity mode It shall comply\
         \ with the provisions defined in table 5.4.3.6-1. \n"
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -8706,7 +8746,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnIdNid:
@@ -8748,36 +8845,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    UsageMonLevel_anyOf:
-      enum:
-      - SESSION_LEVEL
-      - SERVICE_LEVEL
-      type: string
-      example: null
-    Periodicity_anyOf:
-      enum:
-      - YEARLY
-      - MONTHLY
-      - WEEKLY
-      - DAILY
-      - HOURLY
-      type: string
-      example: null
-    BdtPolicyStatus_anyOf:
-      enum:
-      - INVALID
-      - VALID
-      type: string
-      example: null
-    PolicyDataSubset_anyOf:
-      enum:
-      - AM_POLICY_DATA
-      - SM_POLICY_DATA
-      - UE_POLICY_DATA
-      - UM_DATA
-      - OPERATOR_SPECIFIC_DATA
-      type: string
-      example: null
     OperatorSpecificDataContainer_value:
       oneOf:
       - type: string
@@ -8786,97 +8853,3 @@ components:
       - type: boolean
       - type: object
       - type: array
-    PatchOperation_anyOf:
-      enum:
-      - add
-      - copy
-      - move
-      - remove
-      - replace
-      - test
-      type: string
-      example: null
-    PresenceState_anyOf:
-      enum:
-      - IN_AREA
-      - OUT_OF_AREA
-      - UNKNOWN
-      - INACTIVE
-      type: string
-      example: null
-    SscMode_anyOf:
-      enum:
-      - SSC_MODE_1
-      - SSC_MODE_2
-      - SSC_MODE_3
-      type: string
-      example: null
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null

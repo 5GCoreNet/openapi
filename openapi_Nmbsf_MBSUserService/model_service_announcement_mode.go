@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-us
 
-API for MBS User Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for MBS User Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ServiceAnnouncementMode Possible values are: - VIA_MBS_5: Indicates the MBS User Service Announcement compiled by the MBSF is advertised to the MBSF Client at reference point MBS-5. - VIA_MBS_DISTRIBUTION_SESSION: Indicates the MBS User Service Announcement compiled by the MBSF is advertised to the MBSF Client via the MBS Distribution Session. - PASSED_BACK: Indicates the MBS User Service Announcement compiled by the MBSF is passed back to the MBS Application Provider. 
+// ServiceAnnouncementMode Possible values are: - VIA_MBS_5: Indicates the MBS User Service Announcement compiled by the MBSF is advertised to the MBSF Client at reference point MBS-5. - VIA_MBS_DISTRIBUTION_SESSION: Indicates the MBS User Service Announcement compiled by the MBSF is advertised to the MBSF Client via the MBS Distribution Session. - PASSED_BACK: Indicates the MBS User Service Announcement compiled by the MBSF is passed back to the MBS Application Provider.
 type ServiceAnnouncementMode struct {
-	ServiceAnnouncementModeAnyOf *ServiceAnnouncementModeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ServiceAnnouncementMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ServiceAnnouncementModeAnyOf
-	err = json.Unmarshal(data, &dst.ServiceAnnouncementModeAnyOf);
-	if err == nil {
-		jsonServiceAnnouncementModeAnyOf, _ := json.Marshal(dst.ServiceAnnouncementModeAnyOf)
-		if string(jsonServiceAnnouncementModeAnyOf) == "{}" { // empty struct
-			dst.ServiceAnnouncementModeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ServiceAnnouncementModeAnyOf, return on the first match
-		}
-	} else {
-		dst.ServiceAnnouncementModeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ServiceAnnouncementMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ServiceAnnouncementMode) MarshalJSON() ([]byte, error) {
-	if src.ServiceAnnouncementModeAnyOf != nil {
-		return json.Marshal(&src.ServiceAnnouncementModeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableServiceAnnouncementMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

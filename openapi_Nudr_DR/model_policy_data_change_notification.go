@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,28 +19,28 @@ var _ MappedNullable = &PolicyDataChangeNotification{}
 
 // PolicyDataChangeNotification Contains changed policy data for which notification was requested.
 type PolicyDataChangeNotification struct {
-	AmPolicyData *AmPolicyData `json:"amPolicyData,omitempty"`
-	UePolicySet *UePolicySet `json:"uePolicySet,omitempty"`
-	PlmnUePolicySet *UePolicySet `json:"plmnUePolicySet,omitempty"`
-	SmPolicyData *SmPolicyData `json:"smPolicyData,omitempty"`
-	UsageMonData *UsageMonData `json:"usageMonData,omitempty"`
-	SponsorConnectivityData *SponsorConnectivityData `json:"SponsorConnectivityData,omitempty"`
-	BdtData *BdtData `json:"bdtData,omitempty"`
-	OpSpecData *OperatorSpecificDataContainer `json:"opSpecData,omitempty"`
-	// Operator Specific Data resource data, if changed and notification was requested. The key of the map is operator specific data element name and the value is the operator specific data of the UE. 
+	AmPolicyData            *AmPolicyData                  `json:"amPolicyData,omitempty"`
+	UePolicySet             *UePolicySet                   `json:"uePolicySet,omitempty"`
+	PlmnUePolicySet         *UePolicySet                   `json:"plmnUePolicySet,omitempty"`
+	SmPolicyData            *SmPolicyData                  `json:"smPolicyData,omitempty"`
+	UsageMonData            *UsageMonData                  `json:"usageMonData,omitempty"`
+	SponsorConnectivityData *SponsorConnectivityData       `json:"SponsorConnectivityData,omitempty"`
+	BdtData                 *BdtData                       `json:"bdtData,omitempty"`
+	OpSpecData              *OperatorSpecificDataContainer `json:"opSpecData,omitempty"`
+	// Operator Specific Data resource data, if changed and notification was requested. The key of the map is operator specific data element name and the value is the operator specific data of the UE.
 	OpSpecDataMap *map[string]OperatorSpecificDataContainer `json:"opSpecDataMap,omitempty"`
 	// String represents the SUPI or GPSI
-	UeId *string `json:"ueId,omitempty"`
+	UeId      *string `json:"ueId,omitempty"`
 	SponsorId *string `json:"sponsorId,omitempty"`
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
-	BdtRefId *string `json:"bdtRefId,omitempty"`
-	UsageMonId *string `json:"usageMonId,omitempty"`
-	PlmnId *PlmnId1 `json:"plmnId,omitempty"`
-	DelResources []string `json:"delResources,omitempty"`
-	NotifId *string `json:"notifId,omitempty"`
+	BdtRefId          *string            `json:"bdtRefId,omitempty"`
+	UsageMonId        *string            `json:"usageMonId,omitempty"`
+	PlmnId            *PlmnId1           `json:"plmnId,omitempty"`
+	DelResources      []string           `json:"delResources,omitempty"`
+	NotifId           *string            `json:"notifId,omitempty"`
 	ReportedFragments []NotificationItem `json:"reportedFragments,omitempty"`
-	SlicePolicyData *SlicePolicyData `json:"slicePolicyData,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	SlicePolicyData   *SlicePolicyData   `json:"slicePolicyData,omitempty"`
+	Snssai            *Snssai            `json:"snssai,omitempty"`
 }
 
 // NewPolicyDataChangeNotification instantiates a new PolicyDataChangeNotification object
@@ -62,7 +62,7 @@ func NewPolicyDataChangeNotificationWithDefaults() *PolicyDataChangeNotification
 
 // GetAmPolicyData returns the AmPolicyData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetAmPolicyData() AmPolicyData {
-	if o == nil || isNil(o.AmPolicyData) {
+	if o == nil || IsNil(o.AmPolicyData) {
 		var ret AmPolicyData
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *PolicyDataChangeNotification) GetAmPolicyData() AmPolicyData {
 // GetAmPolicyDataOk returns a tuple with the AmPolicyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetAmPolicyDataOk() (*AmPolicyData, bool) {
-	if o == nil || isNil(o.AmPolicyData) {
+	if o == nil || IsNil(o.AmPolicyData) {
 		return nil, false
 	}
 	return o.AmPolicyData, true
@@ -80,7 +80,7 @@ func (o *PolicyDataChangeNotification) GetAmPolicyDataOk() (*AmPolicyData, bool)
 
 // HasAmPolicyData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasAmPolicyData() bool {
-	if o != nil && !isNil(o.AmPolicyData) {
+	if o != nil && !IsNil(o.AmPolicyData) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *PolicyDataChangeNotification) SetAmPolicyData(v AmPolicyData) {
 
 // GetUePolicySet returns the UePolicySet field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetUePolicySet() UePolicySet {
-	if o == nil || isNil(o.UePolicySet) {
+	if o == nil || IsNil(o.UePolicySet) {
 		var ret UePolicySet
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *PolicyDataChangeNotification) GetUePolicySet() UePolicySet {
 // GetUePolicySetOk returns a tuple with the UePolicySet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetUePolicySetOk() (*UePolicySet, bool) {
-	if o == nil || isNil(o.UePolicySet) {
+	if o == nil || IsNil(o.UePolicySet) {
 		return nil, false
 	}
 	return o.UePolicySet, true
@@ -112,7 +112,7 @@ func (o *PolicyDataChangeNotification) GetUePolicySetOk() (*UePolicySet, bool) {
 
 // HasUePolicySet returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasUePolicySet() bool {
-	if o != nil && !isNil(o.UePolicySet) {
+	if o != nil && !IsNil(o.UePolicySet) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *PolicyDataChangeNotification) SetUePolicySet(v UePolicySet) {
 
 // GetPlmnUePolicySet returns the PlmnUePolicySet field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetPlmnUePolicySet() UePolicySet {
-	if o == nil || isNil(o.PlmnUePolicySet) {
+	if o == nil || IsNil(o.PlmnUePolicySet) {
 		var ret UePolicySet
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *PolicyDataChangeNotification) GetPlmnUePolicySet() UePolicySet {
 // GetPlmnUePolicySetOk returns a tuple with the PlmnUePolicySet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetPlmnUePolicySetOk() (*UePolicySet, bool) {
-	if o == nil || isNil(o.PlmnUePolicySet) {
+	if o == nil || IsNil(o.PlmnUePolicySet) {
 		return nil, false
 	}
 	return o.PlmnUePolicySet, true
@@ -144,7 +144,7 @@ func (o *PolicyDataChangeNotification) GetPlmnUePolicySetOk() (*UePolicySet, boo
 
 // HasPlmnUePolicySet returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasPlmnUePolicySet() bool {
-	if o != nil && !isNil(o.PlmnUePolicySet) {
+	if o != nil && !IsNil(o.PlmnUePolicySet) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *PolicyDataChangeNotification) SetPlmnUePolicySet(v UePolicySet) {
 
 // GetSmPolicyData returns the SmPolicyData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetSmPolicyData() SmPolicyData {
-	if o == nil || isNil(o.SmPolicyData) {
+	if o == nil || IsNil(o.SmPolicyData) {
 		var ret SmPolicyData
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *PolicyDataChangeNotification) GetSmPolicyData() SmPolicyData {
 // GetSmPolicyDataOk returns a tuple with the SmPolicyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetSmPolicyDataOk() (*SmPolicyData, bool) {
-	if o == nil || isNil(o.SmPolicyData) {
+	if o == nil || IsNil(o.SmPolicyData) {
 		return nil, false
 	}
 	return o.SmPolicyData, true
@@ -176,7 +176,7 @@ func (o *PolicyDataChangeNotification) GetSmPolicyDataOk() (*SmPolicyData, bool)
 
 // HasSmPolicyData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasSmPolicyData() bool {
-	if o != nil && !isNil(o.SmPolicyData) {
+	if o != nil && !IsNil(o.SmPolicyData) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *PolicyDataChangeNotification) SetSmPolicyData(v SmPolicyData) {
 
 // GetUsageMonData returns the UsageMonData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetUsageMonData() UsageMonData {
-	if o == nil || isNil(o.UsageMonData) {
+	if o == nil || IsNil(o.UsageMonData) {
 		var ret UsageMonData
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *PolicyDataChangeNotification) GetUsageMonData() UsageMonData {
 // GetUsageMonDataOk returns a tuple with the UsageMonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetUsageMonDataOk() (*UsageMonData, bool) {
-	if o == nil || isNil(o.UsageMonData) {
+	if o == nil || IsNil(o.UsageMonData) {
 		return nil, false
 	}
 	return o.UsageMonData, true
@@ -208,7 +208,7 @@ func (o *PolicyDataChangeNotification) GetUsageMonDataOk() (*UsageMonData, bool)
 
 // HasUsageMonData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasUsageMonData() bool {
-	if o != nil && !isNil(o.UsageMonData) {
+	if o != nil && !IsNil(o.UsageMonData) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *PolicyDataChangeNotification) SetUsageMonData(v UsageMonData) {
 
 // GetSponsorConnectivityData returns the SponsorConnectivityData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetSponsorConnectivityData() SponsorConnectivityData {
-	if o == nil || isNil(o.SponsorConnectivityData) {
+	if o == nil || IsNil(o.SponsorConnectivityData) {
 		var ret SponsorConnectivityData
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *PolicyDataChangeNotification) GetSponsorConnectivityData() SponsorConne
 // GetSponsorConnectivityDataOk returns a tuple with the SponsorConnectivityData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetSponsorConnectivityDataOk() (*SponsorConnectivityData, bool) {
-	if o == nil || isNil(o.SponsorConnectivityData) {
+	if o == nil || IsNil(o.SponsorConnectivityData) {
 		return nil, false
 	}
 	return o.SponsorConnectivityData, true
@@ -240,7 +240,7 @@ func (o *PolicyDataChangeNotification) GetSponsorConnectivityDataOk() (*SponsorC
 
 // HasSponsorConnectivityData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasSponsorConnectivityData() bool {
-	if o != nil && !isNil(o.SponsorConnectivityData) {
+	if o != nil && !IsNil(o.SponsorConnectivityData) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *PolicyDataChangeNotification) SetSponsorConnectivityData(v SponsorConne
 
 // GetBdtData returns the BdtData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetBdtData() BdtData {
-	if o == nil || isNil(o.BdtData) {
+	if o == nil || IsNil(o.BdtData) {
 		var ret BdtData
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *PolicyDataChangeNotification) GetBdtData() BdtData {
 // GetBdtDataOk returns a tuple with the BdtData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetBdtDataOk() (*BdtData, bool) {
-	if o == nil || isNil(o.BdtData) {
+	if o == nil || IsNil(o.BdtData) {
 		return nil, false
 	}
 	return o.BdtData, true
@@ -272,7 +272,7 @@ func (o *PolicyDataChangeNotification) GetBdtDataOk() (*BdtData, bool) {
 
 // HasBdtData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasBdtData() bool {
-	if o != nil && !isNil(o.BdtData) {
+	if o != nil && !IsNil(o.BdtData) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *PolicyDataChangeNotification) SetBdtData(v BdtData) {
 
 // GetOpSpecData returns the OpSpecData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetOpSpecData() OperatorSpecificDataContainer {
-	if o == nil || isNil(o.OpSpecData) {
+	if o == nil || IsNil(o.OpSpecData) {
 		var ret OperatorSpecificDataContainer
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *PolicyDataChangeNotification) GetOpSpecData() OperatorSpecificDataConta
 // GetOpSpecDataOk returns a tuple with the OpSpecData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetOpSpecDataOk() (*OperatorSpecificDataContainer, bool) {
-	if o == nil || isNil(o.OpSpecData) {
+	if o == nil || IsNil(o.OpSpecData) {
 		return nil, false
 	}
 	return o.OpSpecData, true
@@ -304,7 +304,7 @@ func (o *PolicyDataChangeNotification) GetOpSpecDataOk() (*OperatorSpecificDataC
 
 // HasOpSpecData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasOpSpecData() bool {
-	if o != nil && !isNil(o.OpSpecData) {
+	if o != nil && !IsNil(o.OpSpecData) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *PolicyDataChangeNotification) SetOpSpecData(v OperatorSpecificDataConta
 
 // GetOpSpecDataMap returns the OpSpecDataMap field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetOpSpecDataMap() map[string]OperatorSpecificDataContainer {
-	if o == nil || isNil(o.OpSpecDataMap) {
+	if o == nil || IsNil(o.OpSpecDataMap) {
 		var ret map[string]OperatorSpecificDataContainer
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *PolicyDataChangeNotification) GetOpSpecDataMap() map[string]OperatorSpe
 // GetOpSpecDataMapOk returns a tuple with the OpSpecDataMap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetOpSpecDataMapOk() (*map[string]OperatorSpecificDataContainer, bool) {
-	if o == nil || isNil(o.OpSpecDataMap) {
+	if o == nil || IsNil(o.OpSpecDataMap) {
 		return nil, false
 	}
 	return o.OpSpecDataMap, true
@@ -336,7 +336,7 @@ func (o *PolicyDataChangeNotification) GetOpSpecDataMapOk() (*map[string]Operato
 
 // HasOpSpecDataMap returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasOpSpecDataMap() bool {
-	if o != nil && !isNil(o.OpSpecDataMap) {
+	if o != nil && !IsNil(o.OpSpecDataMap) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *PolicyDataChangeNotification) SetOpSpecDataMap(v map[string]OperatorSpe
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *PolicyDataChangeNotification) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -368,7 +368,7 @@ func (o *PolicyDataChangeNotification) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *PolicyDataChangeNotification) SetUeId(v string) {
 
 // GetSponsorId returns the SponsorId field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetSponsorId() string {
-	if o == nil || isNil(o.SponsorId) {
+	if o == nil || IsNil(o.SponsorId) {
 		var ret string
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *PolicyDataChangeNotification) GetSponsorId() string {
 // GetSponsorIdOk returns a tuple with the SponsorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetSponsorIdOk() (*string, bool) {
-	if o == nil || isNil(o.SponsorId) {
+	if o == nil || IsNil(o.SponsorId) {
 		return nil, false
 	}
 	return o.SponsorId, true
@@ -400,7 +400,7 @@ func (o *PolicyDataChangeNotification) GetSponsorIdOk() (*string, bool) {
 
 // HasSponsorId returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasSponsorId() bool {
-	if o != nil && !isNil(o.SponsorId) {
+	if o != nil && !IsNil(o.SponsorId) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *PolicyDataChangeNotification) SetSponsorId(v string) {
 
 // GetBdtRefId returns the BdtRefId field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetBdtRefId() string {
-	if o == nil || isNil(o.BdtRefId) {
+	if o == nil || IsNil(o.BdtRefId) {
 		var ret string
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *PolicyDataChangeNotification) GetBdtRefId() string {
 // GetBdtRefIdOk returns a tuple with the BdtRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetBdtRefIdOk() (*string, bool) {
-	if o == nil || isNil(o.BdtRefId) {
+	if o == nil || IsNil(o.BdtRefId) {
 		return nil, false
 	}
 	return o.BdtRefId, true
@@ -432,7 +432,7 @@ func (o *PolicyDataChangeNotification) GetBdtRefIdOk() (*string, bool) {
 
 // HasBdtRefId returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasBdtRefId() bool {
-	if o != nil && !isNil(o.BdtRefId) {
+	if o != nil && !IsNil(o.BdtRefId) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *PolicyDataChangeNotification) SetBdtRefId(v string) {
 
 // GetUsageMonId returns the UsageMonId field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetUsageMonId() string {
-	if o == nil || isNil(o.UsageMonId) {
+	if o == nil || IsNil(o.UsageMonId) {
 		var ret string
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *PolicyDataChangeNotification) GetUsageMonId() string {
 // GetUsageMonIdOk returns a tuple with the UsageMonId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetUsageMonIdOk() (*string, bool) {
-	if o == nil || isNil(o.UsageMonId) {
+	if o == nil || IsNil(o.UsageMonId) {
 		return nil, false
 	}
 	return o.UsageMonId, true
@@ -464,7 +464,7 @@ func (o *PolicyDataChangeNotification) GetUsageMonIdOk() (*string, bool) {
 
 // HasUsageMonId returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasUsageMonId() bool {
-	if o != nil && !isNil(o.UsageMonId) {
+	if o != nil && !IsNil(o.UsageMonId) {
 		return true
 	}
 
@@ -478,7 +478,7 @@ func (o *PolicyDataChangeNotification) SetUsageMonId(v string) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetPlmnId() PlmnId1 {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId1
 		return ret
 	}
@@ -488,7 +488,7 @@ func (o *PolicyDataChangeNotification) GetPlmnId() PlmnId1 {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetPlmnIdOk() (*PlmnId1, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -496,7 +496,7 @@ func (o *PolicyDataChangeNotification) GetPlmnIdOk() (*PlmnId1, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -510,7 +510,7 @@ func (o *PolicyDataChangeNotification) SetPlmnId(v PlmnId1) {
 
 // GetDelResources returns the DelResources field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetDelResources() []string {
-	if o == nil || isNil(o.DelResources) {
+	if o == nil || IsNil(o.DelResources) {
 		var ret []string
 		return ret
 	}
@@ -520,7 +520,7 @@ func (o *PolicyDataChangeNotification) GetDelResources() []string {
 // GetDelResourcesOk returns a tuple with the DelResources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetDelResourcesOk() ([]string, bool) {
-	if o == nil || isNil(o.DelResources) {
+	if o == nil || IsNil(o.DelResources) {
 		return nil, false
 	}
 	return o.DelResources, true
@@ -528,7 +528,7 @@ func (o *PolicyDataChangeNotification) GetDelResourcesOk() ([]string, bool) {
 
 // HasDelResources returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasDelResources() bool {
-	if o != nil && !isNil(o.DelResources) {
+	if o != nil && !IsNil(o.DelResources) {
 		return true
 	}
 
@@ -542,7 +542,7 @@ func (o *PolicyDataChangeNotification) SetDelResources(v []string) {
 
 // GetNotifId returns the NotifId field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetNotifId() string {
-	if o == nil || isNil(o.NotifId) {
+	if o == nil || IsNil(o.NotifId) {
 		var ret string
 		return ret
 	}
@@ -552,7 +552,7 @@ func (o *PolicyDataChangeNotification) GetNotifId() string {
 // GetNotifIdOk returns a tuple with the NotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetNotifIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifId) {
+	if o == nil || IsNil(o.NotifId) {
 		return nil, false
 	}
 	return o.NotifId, true
@@ -560,7 +560,7 @@ func (o *PolicyDataChangeNotification) GetNotifIdOk() (*string, bool) {
 
 // HasNotifId returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasNotifId() bool {
-	if o != nil && !isNil(o.NotifId) {
+	if o != nil && !IsNil(o.NotifId) {
 		return true
 	}
 
@@ -574,7 +574,7 @@ func (o *PolicyDataChangeNotification) SetNotifId(v string) {
 
 // GetReportedFragments returns the ReportedFragments field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetReportedFragments() []NotificationItem {
-	if o == nil || isNil(o.ReportedFragments) {
+	if o == nil || IsNil(o.ReportedFragments) {
 		var ret []NotificationItem
 		return ret
 	}
@@ -584,7 +584,7 @@ func (o *PolicyDataChangeNotification) GetReportedFragments() []NotificationItem
 // GetReportedFragmentsOk returns a tuple with the ReportedFragments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetReportedFragmentsOk() ([]NotificationItem, bool) {
-	if o == nil || isNil(o.ReportedFragments) {
+	if o == nil || IsNil(o.ReportedFragments) {
 		return nil, false
 	}
 	return o.ReportedFragments, true
@@ -592,7 +592,7 @@ func (o *PolicyDataChangeNotification) GetReportedFragmentsOk() ([]NotificationI
 
 // HasReportedFragments returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasReportedFragments() bool {
-	if o != nil && !isNil(o.ReportedFragments) {
+	if o != nil && !IsNil(o.ReportedFragments) {
 		return true
 	}
 
@@ -606,7 +606,7 @@ func (o *PolicyDataChangeNotification) SetReportedFragments(v []NotificationItem
 
 // GetSlicePolicyData returns the SlicePolicyData field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetSlicePolicyData() SlicePolicyData {
-	if o == nil || isNil(o.SlicePolicyData) {
+	if o == nil || IsNil(o.SlicePolicyData) {
 		var ret SlicePolicyData
 		return ret
 	}
@@ -616,7 +616,7 @@ func (o *PolicyDataChangeNotification) GetSlicePolicyData() SlicePolicyData {
 // GetSlicePolicyDataOk returns a tuple with the SlicePolicyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetSlicePolicyDataOk() (*SlicePolicyData, bool) {
-	if o == nil || isNil(o.SlicePolicyData) {
+	if o == nil || IsNil(o.SlicePolicyData) {
 		return nil, false
 	}
 	return o.SlicePolicyData, true
@@ -624,7 +624,7 @@ func (o *PolicyDataChangeNotification) GetSlicePolicyDataOk() (*SlicePolicyData,
 
 // HasSlicePolicyData returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasSlicePolicyData() bool {
-	if o != nil && !isNil(o.SlicePolicyData) {
+	if o != nil && !IsNil(o.SlicePolicyData) {
 		return true
 	}
 
@@ -638,7 +638,7 @@ func (o *PolicyDataChangeNotification) SetSlicePolicyData(v SlicePolicyData) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *PolicyDataChangeNotification) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *PolicyDataChangeNotification) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataChangeNotification) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -656,7 +656,7 @@ func (o *PolicyDataChangeNotification) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *PolicyDataChangeNotification) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -669,7 +669,7 @@ func (o *PolicyDataChangeNotification) SetSnssai(v Snssai) {
 }
 
 func (o PolicyDataChangeNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -678,61 +678,61 @@ func (o PolicyDataChangeNotification) MarshalJSON() ([]byte, error) {
 
 func (o PolicyDataChangeNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AmPolicyData) {
+	if !IsNil(o.AmPolicyData) {
 		toSerialize["amPolicyData"] = o.AmPolicyData
 	}
-	if !isNil(o.UePolicySet) {
+	if !IsNil(o.UePolicySet) {
 		toSerialize["uePolicySet"] = o.UePolicySet
 	}
-	if !isNil(o.PlmnUePolicySet) {
+	if !IsNil(o.PlmnUePolicySet) {
 		toSerialize["plmnUePolicySet"] = o.PlmnUePolicySet
 	}
-	if !isNil(o.SmPolicyData) {
+	if !IsNil(o.SmPolicyData) {
 		toSerialize["smPolicyData"] = o.SmPolicyData
 	}
-	if !isNil(o.UsageMonData) {
+	if !IsNil(o.UsageMonData) {
 		toSerialize["usageMonData"] = o.UsageMonData
 	}
-	if !isNil(o.SponsorConnectivityData) {
+	if !IsNil(o.SponsorConnectivityData) {
 		toSerialize["SponsorConnectivityData"] = o.SponsorConnectivityData
 	}
-	if !isNil(o.BdtData) {
+	if !IsNil(o.BdtData) {
 		toSerialize["bdtData"] = o.BdtData
 	}
-	if !isNil(o.OpSpecData) {
+	if !IsNil(o.OpSpecData) {
 		toSerialize["opSpecData"] = o.OpSpecData
 	}
-	if !isNil(o.OpSpecDataMap) {
+	if !IsNil(o.OpSpecDataMap) {
 		toSerialize["opSpecDataMap"] = o.OpSpecDataMap
 	}
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.SponsorId) {
+	if !IsNil(o.SponsorId) {
 		toSerialize["sponsorId"] = o.SponsorId
 	}
-	if !isNil(o.BdtRefId) {
+	if !IsNil(o.BdtRefId) {
 		toSerialize["bdtRefId"] = o.BdtRefId
 	}
-	if !isNil(o.UsageMonId) {
+	if !IsNil(o.UsageMonId) {
 		toSerialize["usageMonId"] = o.UsageMonId
 	}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.DelResources) {
+	if !IsNil(o.DelResources) {
 		toSerialize["delResources"] = o.DelResources
 	}
-	if !isNil(o.NotifId) {
+	if !IsNil(o.NotifId) {
 		toSerialize["notifId"] = o.NotifId
 	}
-	if !isNil(o.ReportedFragments) {
+	if !IsNil(o.ReportedFragments) {
 		toSerialize["reportedFragments"] = o.ReportedFragments
 	}
-	if !isNil(o.SlicePolicyData) {
+	if !IsNil(o.SlicePolicyData) {
 		toSerialize["slicePolicyData"] = o.SlicePolicyData
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil
@@ -773,5 +773,3 @@ func (v *NullablePolicyDataChangeNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

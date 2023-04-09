@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,21 +13,20 @@ package openapi_Nsmf_PDUSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // IndividualSMContextApiService IndividualSMContextApi service
 type IndividualSMContextApiService service
 
 type ApiReleaseSmContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualSMContextApiService
-	smContextRef string
+	ctx                  context.Context
+	ApiService           *IndividualSMContextApiService
+	smContextRef         string
 	smContextReleaseData *SmContextReleaseData
 }
 
@@ -44,26 +43,27 @@ func (r ApiReleaseSmContextRequest) Execute() (*SmContextReleasedData, *http.Res
 /*
 ReleaseSmContext Release SM Context
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smContextRef SM context reference
- @return ApiReleaseSmContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smContextRef SM context reference
+	@return ApiReleaseSmContextRequest
 */
 func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, smContextRef string) ApiReleaseSmContextRequest {
 	return ApiReleaseSmContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		smContextRef: smContextRef,
 	}
 }
 
 // Execute executes the request
-//  @return SmContextReleasedData
+//
+//	@return SmContextReleasedData
 func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmContextRequest) (*SmContextReleasedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmContextReleasedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmContextReleasedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSMContextApiService.ReleaseSmContext")
@@ -107,9 +107,9 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,8 +126,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -137,8 +137,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -148,8 +148,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -159,8 +159,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -170,8 +170,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -181,8 +181,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -192,8 +192,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -203,8 +203,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -214,8 +214,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -225,8 +225,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -236,8 +236,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -247,8 +247,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -258,8 +258,8 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -278,9 +278,9 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 }
 
 type ApiRetrieveSmContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualSMContextApiService
-	smContextRef string
+	ctx                   context.Context
+	ApiService            *IndividualSMContextApiService
+	smContextRef          string
 	smContextRetrieveData *SmContextRetrieveData
 }
 
@@ -297,26 +297,27 @@ func (r ApiRetrieveSmContextRequest) Execute() (*SmContextRetrievedData, *http.R
 /*
 RetrieveSmContext Retrieve SM Context
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smContextRef SM context reference
- @return ApiRetrieveSmContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smContextRef SM context reference
+	@return ApiRetrieveSmContextRequest
 */
 func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, smContextRef string) ApiRetrieveSmContextRequest {
 	return ApiRetrieveSmContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		smContextRef: smContextRef,
 	}
 }
 
 // Execute executes the request
-//  @return SmContextRetrievedData
+//
+//	@return SmContextRetrievedData
 func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSmContextRequest) (*SmContextRetrievedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmContextRetrievedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmContextRetrievedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSMContextApiService.RetrieveSmContext")
@@ -360,9 +361,9 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -379,8 +380,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -390,8 +391,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -401,8 +402,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -412,8 +413,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -423,8 +424,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -434,8 +435,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -445,8 +446,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -456,8 +457,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -467,8 +468,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -478,8 +479,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -489,8 +490,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -500,8 +501,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -511,8 +512,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 504 {
@@ -522,8 +523,8 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -542,10 +543,10 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 }
 
 type ApiSendMoDataRequest struct {
-	ctx context.Context
-	ApiService *IndividualSMContextApiService
+	ctx          context.Context
+	ApiService   *IndividualSMContextApiService
 	smContextRef string
-	jsonData *SendMoDataReqData
+	jsonData     *SendMoDataReqData
 	binaryMoData *os.File
 }
 
@@ -554,8 +555,8 @@ func (r ApiSendMoDataRequest) JsonData(jsonData SendMoDataReqData) ApiSendMoData
 	return r
 }
 
-func (r ApiSendMoDataRequest) BinaryMoData(binaryMoData os.File) ApiSendMoDataRequest {
-	r.binaryMoData = &binaryMoData
+func (r ApiSendMoDataRequest) BinaryMoData(binaryMoData *os.File) ApiSendMoDataRequest {
+	r.binaryMoData = binaryMoData
 	return r
 }
 
@@ -566,14 +567,14 @@ func (r ApiSendMoDataRequest) Execute() (*http.Response, error) {
 /*
 SendMoData Send MO Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smContextRef SM context reference
- @return ApiSendMoDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smContextRef SM context reference
+	@return ApiSendMoDataRequest
 */
 func (a *IndividualSMContextApiService) SendMoData(ctx context.Context, smContextRef string) ApiSendMoDataRequest {
 	return ApiSendMoDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		smContextRef: smContextRef,
 	}
 }
@@ -581,9 +582,9 @@ func (a *IndividualSMContextApiService) SendMoData(ctx context.Context, smContex
 // Execute executes the request
 func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSMContextApiService.SendMoData")
@@ -623,22 +624,21 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryMoDataLocalVarFormFileName string
-	var binaryMoDataLocalVarFileName     string
-	var binaryMoDataLocalVarFileBytes    []byte
+	var binaryMoDataLocalVarFileName string
+	var binaryMoDataLocalVarFileBytes []byte
 
 	binaryMoDataLocalVarFormFileName = "binaryMoData"
 
-	var binaryMoDataLocalVarFile *os.File
-	if r.binaryMoData != nil {
-		binaryMoDataLocalVarFile = r.binaryMoData
-	}
+	binaryMoDataLocalVarFile := r.binaryMoData
+
 	if binaryMoDataLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryMoDataLocalVarFile)
+		fbs, _ := io.ReadAll(binaryMoDataLocalVarFile)
+
 		binaryMoDataLocalVarFileBytes = fbs
 		binaryMoDataLocalVarFileName = binaryMoDataLocalVarFile.Name()
 		binaryMoDataLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -649,9 +649,9 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -668,8 +668,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -679,8 +679,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -690,8 +690,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -701,8 +701,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -712,8 +712,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -723,8 +723,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -734,8 +734,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -745,8 +745,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -756,8 +756,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -767,8 +767,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -778,8 +778,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -789,8 +789,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -800,8 +800,8 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -811,9 +811,9 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 }
 
 type ApiUpdateSmContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualSMContextApiService
-	smContextRef string
+	ctx                 context.Context
+	ApiService          *IndividualSMContextApiService
+	smContextRef        string
 	smContextUpdateData *SmContextUpdateData
 }
 
@@ -830,26 +830,27 @@ func (r ApiUpdateSmContextRequest) Execute() (*SmContextUpdatedData, *http.Respo
 /*
 UpdateSmContext Update SM Context
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smContextRef SM context reference
- @return ApiUpdateSmContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smContextRef SM context reference
+	@return ApiUpdateSmContextRequest
 */
 func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smContextRef string) ApiUpdateSmContextRequest {
 	return ApiUpdateSmContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		smContextRef: smContextRef,
 	}
 }
 
 // Execute executes the request
-//  @return SmContextUpdatedData
+//
+//	@return SmContextUpdatedData
 func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmContextRequest) (*SmContextUpdatedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmContextUpdatedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmContextUpdatedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSMContextApiService.UpdateSmContext")
@@ -896,9 +897,9 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -915,8 +916,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -926,8 +927,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -937,8 +938,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -948,8 +949,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -959,8 +960,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -970,8 +971,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -981,8 +982,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -992,8 +993,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1003,8 +1004,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1014,8 +1015,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1025,8 +1026,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1036,8 +1037,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1047,8 +1048,8 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // NrfInfoServedChfInfoValue struct for NrfInfoServedChfInfoValue
 type NrfInfoServedChfInfoValue struct {
-	ChfInfo *ChfInfo
+	ChfInfo        *ChfInfo
 	MapOfInterface *map[string]interface{}
 }
 
@@ -25,7 +25,7 @@ type NrfInfoServedChfInfoValue struct {
 func (dst *NrfInfoServedChfInfoValue) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ChfInfo
-	err = json.Unmarshal(data, &dst.ChfInfo);
+	err = json.Unmarshal(data, &dst.ChfInfo)
 	if err == nil {
 		jsonChfInfo, _ := json.Marshal(dst.ChfInfo)
 		if string(jsonChfInfo) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *NrfInfoServedChfInfoValue) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.MapOfInterface);
+	err = json.Unmarshal(data, &dst.MapOfInterface)
 	if err == nil {
 		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
 		if string(jsonMapOfInterface) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableNrfInfoServedChfInfoValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,11 +18,11 @@ import (
 // ResourcesCoslaNrm - struct for ResourcesCoslaNrm
 type ResourcesCoslaNrm struct {
 	AssuranceClosedControlLoopSingle *AssuranceClosedControlLoopSingle
-	AssuranceGoalSingle *AssuranceGoalSingle
-	AssuranceReportSingle *AssuranceReportSingle
-	ManagedElementSingle2 *ManagedElementSingle2
-	MnS *MnS
-	SubNetworkSingle3 *SubNetworkSingle3
+	AssuranceGoalSingle              *AssuranceGoalSingle
+	AssuranceReportSingle            *AssuranceReportSingle
+	ManagedElementSingle2            *ManagedElementSingle2
+	MnS                              *MnS
+	SubNetworkSingle3                *SubNetworkSingle3
 }
 
 // AssuranceClosedControlLoopSingleAsResourcesCoslaNrm is a convenience function that returns AssuranceClosedControlLoopSingle wrapped in ResourcesCoslaNrm
@@ -66,7 +66,6 @@ func SubNetworkSingle3AsResourcesCoslaNrm(v *SubNetworkSingle3) ResourcesCoslaNr
 		SubNetworkSingle3: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesCoslaNrm) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src ResourcesCoslaNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesCoslaNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesCoslaNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableResourcesCoslaNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

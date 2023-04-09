@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting
 
-API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &PerFlowServiceExperienceInfo{}
 // PerFlowServiceExperienceInfo struct for PerFlowServiceExperienceInfo
 type PerFlowServiceExperienceInfo struct {
 	ServiceExperience SvcExperience `json:"serviceExperience"`
-	TimeInterval TimeWindow `json:"timeInterval"`
-	RemoteEndpoint AddrFqdn `json:"remoteEndpoint"`
+	TimeInterval      TimeWindow    `json:"timeInterval"`
+	RemoteEndpoint    AddrFqdn      `json:"remoteEndpoint"`
 }
 
 // NewPerFlowServiceExperienceInfo instantiates a new PerFlowServiceExperienceInfo object
@@ -117,7 +117,7 @@ func (o *PerFlowServiceExperienceInfo) SetRemoteEndpoint(v AddrFqdn) {
 }
 
 func (o PerFlowServiceExperienceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullablePerFlowServiceExperienceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

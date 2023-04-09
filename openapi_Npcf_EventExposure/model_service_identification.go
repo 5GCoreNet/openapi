@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ServiceIdentification{}
 // ServiceIdentification Identifies the service to which the subscription applies.
 type ServiceIdentification struct {
 	ServEthFlows []EthernetFlowInfo `json:"servEthFlows,omitempty"`
-	ServIpFlows []IpFlowInfo `json:"servIpFlows,omitempty"`
+	ServIpFlows  []IpFlowInfo       `json:"servIpFlows,omitempty"`
 	// Contains an AF application identifier.
 	AfAppId *string `json:"afAppId,omitempty"`
 }
@@ -44,7 +44,7 @@ func NewServiceIdentificationWithDefaults() *ServiceIdentification {
 
 // GetServEthFlows returns the ServEthFlows field value if set, zero value otherwise.
 func (o *ServiceIdentification) GetServEthFlows() []EthernetFlowInfo {
-	if o == nil || isNil(o.ServEthFlows) {
+	if o == nil || IsNil(o.ServEthFlows) {
 		var ret []EthernetFlowInfo
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ServiceIdentification) GetServEthFlows() []EthernetFlowInfo {
 // GetServEthFlowsOk returns a tuple with the ServEthFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceIdentification) GetServEthFlowsOk() ([]EthernetFlowInfo, bool) {
-	if o == nil || isNil(o.ServEthFlows) {
+	if o == nil || IsNil(o.ServEthFlows) {
 		return nil, false
 	}
 	return o.ServEthFlows, true
@@ -62,7 +62,7 @@ func (o *ServiceIdentification) GetServEthFlowsOk() ([]EthernetFlowInfo, bool) {
 
 // HasServEthFlows returns a boolean if a field has been set.
 func (o *ServiceIdentification) HasServEthFlows() bool {
-	if o != nil && !isNil(o.ServEthFlows) {
+	if o != nil && !IsNil(o.ServEthFlows) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ServiceIdentification) SetServEthFlows(v []EthernetFlowInfo) {
 
 // GetServIpFlows returns the ServIpFlows field value if set, zero value otherwise.
 func (o *ServiceIdentification) GetServIpFlows() []IpFlowInfo {
-	if o == nil || isNil(o.ServIpFlows) {
+	if o == nil || IsNil(o.ServIpFlows) {
 		var ret []IpFlowInfo
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ServiceIdentification) GetServIpFlows() []IpFlowInfo {
 // GetServIpFlowsOk returns a tuple with the ServIpFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceIdentification) GetServIpFlowsOk() ([]IpFlowInfo, bool) {
-	if o == nil || isNil(o.ServIpFlows) {
+	if o == nil || IsNil(o.ServIpFlows) {
 		return nil, false
 	}
 	return o.ServIpFlows, true
@@ -94,7 +94,7 @@ func (o *ServiceIdentification) GetServIpFlowsOk() ([]IpFlowInfo, bool) {
 
 // HasServIpFlows returns a boolean if a field has been set.
 func (o *ServiceIdentification) HasServIpFlows() bool {
-	if o != nil && !isNil(o.ServIpFlows) {
+	if o != nil && !IsNil(o.ServIpFlows) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ServiceIdentification) SetServIpFlows(v []IpFlowInfo) {
 
 // GetAfAppId returns the AfAppId field value if set, zero value otherwise.
 func (o *ServiceIdentification) GetAfAppId() string {
-	if o == nil || isNil(o.AfAppId) {
+	if o == nil || IsNil(o.AfAppId) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ServiceIdentification) GetAfAppId() string {
 // GetAfAppIdOk returns a tuple with the AfAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceIdentification) GetAfAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfAppId) {
+	if o == nil || IsNil(o.AfAppId) {
 		return nil, false
 	}
 	return o.AfAppId, true
@@ -126,7 +126,7 @@ func (o *ServiceIdentification) GetAfAppIdOk() (*string, bool) {
 
 // HasAfAppId returns a boolean if a field has been set.
 func (o *ServiceIdentification) HasAfAppId() bool {
-	if o != nil && !isNil(o.AfAppId) {
+	if o != nil && !IsNil(o.AfAppId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *ServiceIdentification) SetAfAppId(v string) {
 }
 
 func (o ServiceIdentification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o ServiceIdentification) MarshalJSON() ([]byte, error) {
 
 func (o ServiceIdentification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServEthFlows) {
+	if !IsNil(o.ServEthFlows) {
 		toSerialize["servEthFlows"] = o.ServEthFlows
 	}
-	if !isNil(o.ServIpFlows) {
+	if !IsNil(o.ServIpFlows) {
 		toSerialize["servIpFlows"] = o.ServIpFlows
 	}
-	if !isNil(o.AfAppId) {
+	if !IsNil(o.AfAppId) {
 		toSerialize["afAppId"] = o.AfAppId
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableServiceIdentification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

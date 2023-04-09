@@ -1,7 +1,7 @@
 /*
 M5_ConsumptionReporting
 
-5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Consumption Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,12 +20,12 @@ var _ MappedNullable = &ConsumptionReportingUnit{}
 
 // ConsumptionReportingUnit A Consumption Reporting Unit.
 type ConsumptionReportingUnit struct {
-	MediaConsumed string `json:"mediaConsumed"`
+	MediaConsumed        string           `json:"mediaConsumed"`
 	MediaEndpointAddress *EndpointAddress `json:"mediaEndpointAddress,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	StartTime time.Time `json:"startTime"`
 	// indicating a time in seconds.
-	Duration int32 `json:"duration"`
+	Duration  int32           `json:"duration"`
 	Locations []TypedLocation `json:"locations,omitempty"`
 }
 
@@ -75,7 +75,7 @@ func (o *ConsumptionReportingUnit) SetMediaConsumed(v string) {
 
 // GetMediaEndpointAddress returns the MediaEndpointAddress field value if set, zero value otherwise.
 func (o *ConsumptionReportingUnit) GetMediaEndpointAddress() EndpointAddress {
-	if o == nil || isNil(o.MediaEndpointAddress) {
+	if o == nil || IsNil(o.MediaEndpointAddress) {
 		var ret EndpointAddress
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ConsumptionReportingUnit) GetMediaEndpointAddress() EndpointAddress {
 // GetMediaEndpointAddressOk returns a tuple with the MediaEndpointAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingUnit) GetMediaEndpointAddressOk() (*EndpointAddress, bool) {
-	if o == nil || isNil(o.MediaEndpointAddress) {
+	if o == nil || IsNil(o.MediaEndpointAddress) {
 		return nil, false
 	}
 	return o.MediaEndpointAddress, true
@@ -93,7 +93,7 @@ func (o *ConsumptionReportingUnit) GetMediaEndpointAddressOk() (*EndpointAddress
 
 // HasMediaEndpointAddress returns a boolean if a field has been set.
 func (o *ConsumptionReportingUnit) HasMediaEndpointAddress() bool {
-	if o != nil && !isNil(o.MediaEndpointAddress) {
+	if o != nil && !IsNil(o.MediaEndpointAddress) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *ConsumptionReportingUnit) SetDuration(v int32) {
 
 // GetLocations returns the Locations field value if set, zero value otherwise.
 func (o *ConsumptionReportingUnit) GetLocations() []TypedLocation {
-	if o == nil || isNil(o.Locations) {
+	if o == nil || IsNil(o.Locations) {
 		var ret []TypedLocation
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *ConsumptionReportingUnit) GetLocations() []TypedLocation {
 // GetLocationsOk returns a tuple with the Locations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingUnit) GetLocationsOk() ([]TypedLocation, bool) {
-	if o == nil || isNil(o.Locations) {
+	if o == nil || IsNil(o.Locations) {
 		return nil, false
 	}
 	return o.Locations, true
@@ -173,7 +173,7 @@ func (o *ConsumptionReportingUnit) GetLocationsOk() ([]TypedLocation, bool) {
 
 // HasLocations returns a boolean if a field has been set.
 func (o *ConsumptionReportingUnit) HasLocations() bool {
-	if o != nil && !isNil(o.Locations) {
+	if o != nil && !IsNil(o.Locations) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *ConsumptionReportingUnit) SetLocations(v []TypedLocation) {
 }
 
 func (o ConsumptionReportingUnit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -196,12 +196,12 @@ func (o ConsumptionReportingUnit) MarshalJSON() ([]byte, error) {
 func (o ConsumptionReportingUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mediaConsumed"] = o.MediaConsumed
-	if !isNil(o.MediaEndpointAddress) {
+	if !IsNil(o.MediaEndpointAddress) {
 		toSerialize["mediaEndpointAddress"] = o.MediaEndpointAddress
 	}
 	toSerialize["startTime"] = o.StartTime
 	toSerialize["duration"] = o.Duration
-	if !isNil(o.Locations) {
+	if !IsNil(o.Locations) {
 		toSerialize["locations"] = o.Locations
 	}
 	return toSerialize, nil
@@ -242,5 +242,3 @@ func (v *NullableConsumptionReportingUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

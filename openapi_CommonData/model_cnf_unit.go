@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the CnfUnit type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CnfUnit{}
 
-// CnfUnit During the processing of cnfUnits attribute, all the members in the array shall be  interpreted as logically concatenated with logical \"AND\". 
+// CnfUnit During the processing of cnfUnits attribute, all the members in the array shall be  interpreted as logically concatenated with logical \"AND\".
 type CnfUnit struct {
 	CnfUnit []Atom `json:"cnfUnit"`
 }
@@ -65,7 +65,7 @@ func (o *CnfUnit) SetCnfUnit(v []Atom) {
 }
 
 func (o CnfUnit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullableCnfUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnef_EventExposure
 
-NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,7 +22,7 @@ type CollectiveBehaviourFilter struct {
 	Type CollectiveBehaviourFilterType `json:"type"`
 	// Value of the parameter type as in the type attribute.
 	Value string `json:"value"`
-	// Indicates whether request list of UE IDs that fulfill a collective behaviour within the area of interest. This attribute shall set to \"true\" if request the list of UE IDs, otherwise, set to \"false\". May only be present and sets to \"true\" if \"AfEvent\" sets to \"COLLECTIVE_BEHAVIOUR\". 
+	// Indicates whether request list of UE IDs that fulfill a collective behaviour within the area of interest. This attribute shall set to \"true\" if request the list of UE IDs, otherwise, set to \"false\". May only be present and sets to \"true\" if \"AfEvent\" sets to \"COLLECTIVE_BEHAVIOUR\".
 	ListOfUeInd *bool `json:"listOfUeInd,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *CollectiveBehaviourFilter) SetValue(v string) {
 
 // GetListOfUeInd returns the ListOfUeInd field value if set, zero value otherwise.
 func (o *CollectiveBehaviourFilter) GetListOfUeInd() bool {
-	if o == nil || isNil(o.ListOfUeInd) {
+	if o == nil || IsNil(o.ListOfUeInd) {
 		var ret bool
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *CollectiveBehaviourFilter) GetListOfUeInd() bool {
 // GetListOfUeIndOk returns a tuple with the ListOfUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectiveBehaviourFilter) GetListOfUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.ListOfUeInd) {
+	if o == nil || IsNil(o.ListOfUeInd) {
 		return nil, false
 	}
 	return o.ListOfUeInd, true
@@ -113,7 +113,7 @@ func (o *CollectiveBehaviourFilter) GetListOfUeIndOk() (*bool, bool) {
 
 // HasListOfUeInd returns a boolean if a field has been set.
 func (o *CollectiveBehaviourFilter) HasListOfUeInd() bool {
-	if o != nil && !isNil(o.ListOfUeInd) {
+	if o != nil && !IsNil(o.ListOfUeInd) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *CollectiveBehaviourFilter) SetListOfUeInd(v bool) {
 }
 
 func (o CollectiveBehaviourFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o CollectiveBehaviourFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["type"] = o.Type
 	toSerialize["value"] = o.Value
-	if !isNil(o.ListOfUeInd) {
+	if !IsNil(o.ListOfUeInd) {
 		toSerialize["listOfUeInd"] = o.ListOfUeInd
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableCollectiveBehaviourFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

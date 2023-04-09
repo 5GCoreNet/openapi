@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,20 +17,20 @@ import (
 // checks if the PreferredSearch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PreferredSearch{}
 
-// PreferredSearch Contains information on whether the returned NFProfiles match the preferred query parameters 
+// PreferredSearch Contains information on whether the returned NFProfiles match the preferred query parameters
 type PreferredSearch struct {
-	PreferredTaiMatchInd *bool `json:"preferredTaiMatchInd,omitempty"`
-	PreferredFullPlmnMatchInd *bool `json:"preferredFullPlmnMatchInd,omitempty"`
-	PreferredApiVersionsMatchInd *bool `json:"preferredApiVersionsMatchInd,omitempty"`
-	OtherApiVersionsInd *bool `json:"otherApiVersionsInd,omitempty"`
-	PreferredLocalityMatchInd *bool `json:"preferredLocalityMatchInd,omitempty"`
-	OtherLocalityInd *bool `json:"otherLocalityInd,omitempty"`
+	PreferredTaiMatchInd               *bool `json:"preferredTaiMatchInd,omitempty"`
+	PreferredFullPlmnMatchInd          *bool `json:"preferredFullPlmnMatchInd,omitempty"`
+	PreferredApiVersionsMatchInd       *bool `json:"preferredApiVersionsMatchInd,omitempty"`
+	OtherApiVersionsInd                *bool `json:"otherApiVersionsInd,omitempty"`
+	PreferredLocalityMatchInd          *bool `json:"preferredLocalityMatchInd,omitempty"`
+	OtherLocalityInd                   *bool `json:"otherLocalityInd,omitempty"`
 	PreferredVendorSpecificFeaturesInd *bool `json:"preferredVendorSpecificFeaturesInd,omitempty"`
-	PreferredCollocatedNfTypeInd *bool `json:"preferredCollocatedNfTypeInd,omitempty"`
-	PreferredPgwMatchInd *bool `json:"preferredPgwMatchInd,omitempty"`
-	PreferredAnalyticsDelaysInd *bool `json:"preferredAnalyticsDelaysInd,omitempty"`
-	PreferredFeaturesMatchInd *bool `json:"preferredFeaturesMatchInd,omitempty"`
-	NoPreferredFeaturesInd *bool `json:"noPreferredFeaturesInd,omitempty"`
+	PreferredCollocatedNfTypeInd       *bool `json:"preferredCollocatedNfTypeInd,omitempty"`
+	PreferredPgwMatchInd               *bool `json:"preferredPgwMatchInd,omitempty"`
+	PreferredAnalyticsDelaysInd        *bool `json:"preferredAnalyticsDelaysInd,omitempty"`
+	PreferredFeaturesMatchInd          *bool `json:"preferredFeaturesMatchInd,omitempty"`
+	NoPreferredFeaturesInd             *bool `json:"noPreferredFeaturesInd,omitempty"`
 }
 
 // NewPreferredSearch instantiates a new PreferredSearch object
@@ -76,7 +76,7 @@ func NewPreferredSearchWithDefaults() *PreferredSearch {
 
 // GetPreferredTaiMatchInd returns the PreferredTaiMatchInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredTaiMatchInd() bool {
-	if o == nil || isNil(o.PreferredTaiMatchInd) {
+	if o == nil || IsNil(o.PreferredTaiMatchInd) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *PreferredSearch) GetPreferredTaiMatchInd() bool {
 // GetPreferredTaiMatchIndOk returns a tuple with the PreferredTaiMatchInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredTaiMatchIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredTaiMatchInd) {
+	if o == nil || IsNil(o.PreferredTaiMatchInd) {
 		return nil, false
 	}
 	return o.PreferredTaiMatchInd, true
@@ -94,7 +94,7 @@ func (o *PreferredSearch) GetPreferredTaiMatchIndOk() (*bool, bool) {
 
 // HasPreferredTaiMatchInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredTaiMatchInd() bool {
-	if o != nil && !isNil(o.PreferredTaiMatchInd) {
+	if o != nil && !IsNil(o.PreferredTaiMatchInd) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *PreferredSearch) SetPreferredTaiMatchInd(v bool) {
 
 // GetPreferredFullPlmnMatchInd returns the PreferredFullPlmnMatchInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredFullPlmnMatchInd() bool {
-	if o == nil || isNil(o.PreferredFullPlmnMatchInd) {
+	if o == nil || IsNil(o.PreferredFullPlmnMatchInd) {
 		var ret bool
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *PreferredSearch) GetPreferredFullPlmnMatchInd() bool {
 // GetPreferredFullPlmnMatchIndOk returns a tuple with the PreferredFullPlmnMatchInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredFullPlmnMatchIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredFullPlmnMatchInd) {
+	if o == nil || IsNil(o.PreferredFullPlmnMatchInd) {
 		return nil, false
 	}
 	return o.PreferredFullPlmnMatchInd, true
@@ -126,7 +126,7 @@ func (o *PreferredSearch) GetPreferredFullPlmnMatchIndOk() (*bool, bool) {
 
 // HasPreferredFullPlmnMatchInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredFullPlmnMatchInd() bool {
-	if o != nil && !isNil(o.PreferredFullPlmnMatchInd) {
+	if o != nil && !IsNil(o.PreferredFullPlmnMatchInd) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *PreferredSearch) SetPreferredFullPlmnMatchInd(v bool) {
 
 // GetPreferredApiVersionsMatchInd returns the PreferredApiVersionsMatchInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredApiVersionsMatchInd() bool {
-	if o == nil || isNil(o.PreferredApiVersionsMatchInd) {
+	if o == nil || IsNil(o.PreferredApiVersionsMatchInd) {
 		var ret bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *PreferredSearch) GetPreferredApiVersionsMatchInd() bool {
 // GetPreferredApiVersionsMatchIndOk returns a tuple with the PreferredApiVersionsMatchInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredApiVersionsMatchIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredApiVersionsMatchInd) {
+	if o == nil || IsNil(o.PreferredApiVersionsMatchInd) {
 		return nil, false
 	}
 	return o.PreferredApiVersionsMatchInd, true
@@ -158,7 +158,7 @@ func (o *PreferredSearch) GetPreferredApiVersionsMatchIndOk() (*bool, bool) {
 
 // HasPreferredApiVersionsMatchInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredApiVersionsMatchInd() bool {
-	if o != nil && !isNil(o.PreferredApiVersionsMatchInd) {
+	if o != nil && !IsNil(o.PreferredApiVersionsMatchInd) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *PreferredSearch) SetPreferredApiVersionsMatchInd(v bool) {
 
 // GetOtherApiVersionsInd returns the OtherApiVersionsInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetOtherApiVersionsInd() bool {
-	if o == nil || isNil(o.OtherApiVersionsInd) {
+	if o == nil || IsNil(o.OtherApiVersionsInd) {
 		var ret bool
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *PreferredSearch) GetOtherApiVersionsInd() bool {
 // GetOtherApiVersionsIndOk returns a tuple with the OtherApiVersionsInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetOtherApiVersionsIndOk() (*bool, bool) {
-	if o == nil || isNil(o.OtherApiVersionsInd) {
+	if o == nil || IsNil(o.OtherApiVersionsInd) {
 		return nil, false
 	}
 	return o.OtherApiVersionsInd, true
@@ -190,7 +190,7 @@ func (o *PreferredSearch) GetOtherApiVersionsIndOk() (*bool, bool) {
 
 // HasOtherApiVersionsInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasOtherApiVersionsInd() bool {
-	if o != nil && !isNil(o.OtherApiVersionsInd) {
+	if o != nil && !IsNil(o.OtherApiVersionsInd) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *PreferredSearch) SetOtherApiVersionsInd(v bool) {
 
 // GetPreferredLocalityMatchInd returns the PreferredLocalityMatchInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredLocalityMatchInd() bool {
-	if o == nil || isNil(o.PreferredLocalityMatchInd) {
+	if o == nil || IsNil(o.PreferredLocalityMatchInd) {
 		var ret bool
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *PreferredSearch) GetPreferredLocalityMatchInd() bool {
 // GetPreferredLocalityMatchIndOk returns a tuple with the PreferredLocalityMatchInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredLocalityMatchIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredLocalityMatchInd) {
+	if o == nil || IsNil(o.PreferredLocalityMatchInd) {
 		return nil, false
 	}
 	return o.PreferredLocalityMatchInd, true
@@ -222,7 +222,7 @@ func (o *PreferredSearch) GetPreferredLocalityMatchIndOk() (*bool, bool) {
 
 // HasPreferredLocalityMatchInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredLocalityMatchInd() bool {
-	if o != nil && !isNil(o.PreferredLocalityMatchInd) {
+	if o != nil && !IsNil(o.PreferredLocalityMatchInd) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *PreferredSearch) SetPreferredLocalityMatchInd(v bool) {
 
 // GetOtherLocalityInd returns the OtherLocalityInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetOtherLocalityInd() bool {
-	if o == nil || isNil(o.OtherLocalityInd) {
+	if o == nil || IsNil(o.OtherLocalityInd) {
 		var ret bool
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *PreferredSearch) GetOtherLocalityInd() bool {
 // GetOtherLocalityIndOk returns a tuple with the OtherLocalityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetOtherLocalityIndOk() (*bool, bool) {
-	if o == nil || isNil(o.OtherLocalityInd) {
+	if o == nil || IsNil(o.OtherLocalityInd) {
 		return nil, false
 	}
 	return o.OtherLocalityInd, true
@@ -254,7 +254,7 @@ func (o *PreferredSearch) GetOtherLocalityIndOk() (*bool, bool) {
 
 // HasOtherLocalityInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasOtherLocalityInd() bool {
-	if o != nil && !isNil(o.OtherLocalityInd) {
+	if o != nil && !IsNil(o.OtherLocalityInd) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *PreferredSearch) SetOtherLocalityInd(v bool) {
 
 // GetPreferredVendorSpecificFeaturesInd returns the PreferredVendorSpecificFeaturesInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredVendorSpecificFeaturesInd() bool {
-	if o == nil || isNil(o.PreferredVendorSpecificFeaturesInd) {
+	if o == nil || IsNil(o.PreferredVendorSpecificFeaturesInd) {
 		var ret bool
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *PreferredSearch) GetPreferredVendorSpecificFeaturesInd() bool {
 // GetPreferredVendorSpecificFeaturesIndOk returns a tuple with the PreferredVendorSpecificFeaturesInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredVendorSpecificFeaturesIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredVendorSpecificFeaturesInd) {
+	if o == nil || IsNil(o.PreferredVendorSpecificFeaturesInd) {
 		return nil, false
 	}
 	return o.PreferredVendorSpecificFeaturesInd, true
@@ -286,7 +286,7 @@ func (o *PreferredSearch) GetPreferredVendorSpecificFeaturesIndOk() (*bool, bool
 
 // HasPreferredVendorSpecificFeaturesInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredVendorSpecificFeaturesInd() bool {
-	if o != nil && !isNil(o.PreferredVendorSpecificFeaturesInd) {
+	if o != nil && !IsNil(o.PreferredVendorSpecificFeaturesInd) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *PreferredSearch) SetPreferredVendorSpecificFeaturesInd(v bool) {
 
 // GetPreferredCollocatedNfTypeInd returns the PreferredCollocatedNfTypeInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredCollocatedNfTypeInd() bool {
-	if o == nil || isNil(o.PreferredCollocatedNfTypeInd) {
+	if o == nil || IsNil(o.PreferredCollocatedNfTypeInd) {
 		var ret bool
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *PreferredSearch) GetPreferredCollocatedNfTypeInd() bool {
 // GetPreferredCollocatedNfTypeIndOk returns a tuple with the PreferredCollocatedNfTypeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredCollocatedNfTypeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredCollocatedNfTypeInd) {
+	if o == nil || IsNil(o.PreferredCollocatedNfTypeInd) {
 		return nil, false
 	}
 	return o.PreferredCollocatedNfTypeInd, true
@@ -318,7 +318,7 @@ func (o *PreferredSearch) GetPreferredCollocatedNfTypeIndOk() (*bool, bool) {
 
 // HasPreferredCollocatedNfTypeInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredCollocatedNfTypeInd() bool {
-	if o != nil && !isNil(o.PreferredCollocatedNfTypeInd) {
+	if o != nil && !IsNil(o.PreferredCollocatedNfTypeInd) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *PreferredSearch) SetPreferredCollocatedNfTypeInd(v bool) {
 
 // GetPreferredPgwMatchInd returns the PreferredPgwMatchInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredPgwMatchInd() bool {
-	if o == nil || isNil(o.PreferredPgwMatchInd) {
+	if o == nil || IsNil(o.PreferredPgwMatchInd) {
 		var ret bool
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *PreferredSearch) GetPreferredPgwMatchInd() bool {
 // GetPreferredPgwMatchIndOk returns a tuple with the PreferredPgwMatchInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredPgwMatchIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredPgwMatchInd) {
+	if o == nil || IsNil(o.PreferredPgwMatchInd) {
 		return nil, false
 	}
 	return o.PreferredPgwMatchInd, true
@@ -350,7 +350,7 @@ func (o *PreferredSearch) GetPreferredPgwMatchIndOk() (*bool, bool) {
 
 // HasPreferredPgwMatchInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredPgwMatchInd() bool {
-	if o != nil && !isNil(o.PreferredPgwMatchInd) {
+	if o != nil && !IsNil(o.PreferredPgwMatchInd) {
 		return true
 	}
 
@@ -364,7 +364,7 @@ func (o *PreferredSearch) SetPreferredPgwMatchInd(v bool) {
 
 // GetPreferredAnalyticsDelaysInd returns the PreferredAnalyticsDelaysInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredAnalyticsDelaysInd() bool {
-	if o == nil || isNil(o.PreferredAnalyticsDelaysInd) {
+	if o == nil || IsNil(o.PreferredAnalyticsDelaysInd) {
 		var ret bool
 		return ret
 	}
@@ -374,7 +374,7 @@ func (o *PreferredSearch) GetPreferredAnalyticsDelaysInd() bool {
 // GetPreferredAnalyticsDelaysIndOk returns a tuple with the PreferredAnalyticsDelaysInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredAnalyticsDelaysIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredAnalyticsDelaysInd) {
+	if o == nil || IsNil(o.PreferredAnalyticsDelaysInd) {
 		return nil, false
 	}
 	return o.PreferredAnalyticsDelaysInd, true
@@ -382,7 +382,7 @@ func (o *PreferredSearch) GetPreferredAnalyticsDelaysIndOk() (*bool, bool) {
 
 // HasPreferredAnalyticsDelaysInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredAnalyticsDelaysInd() bool {
-	if o != nil && !isNil(o.PreferredAnalyticsDelaysInd) {
+	if o != nil && !IsNil(o.PreferredAnalyticsDelaysInd) {
 		return true
 	}
 
@@ -396,7 +396,7 @@ func (o *PreferredSearch) SetPreferredAnalyticsDelaysInd(v bool) {
 
 // GetPreferredFeaturesMatchInd returns the PreferredFeaturesMatchInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetPreferredFeaturesMatchInd() bool {
-	if o == nil || isNil(o.PreferredFeaturesMatchInd) {
+	if o == nil || IsNil(o.PreferredFeaturesMatchInd) {
 		var ret bool
 		return ret
 	}
@@ -406,7 +406,7 @@ func (o *PreferredSearch) GetPreferredFeaturesMatchInd() bool {
 // GetPreferredFeaturesMatchIndOk returns a tuple with the PreferredFeaturesMatchInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetPreferredFeaturesMatchIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferredFeaturesMatchInd) {
+	if o == nil || IsNil(o.PreferredFeaturesMatchInd) {
 		return nil, false
 	}
 	return o.PreferredFeaturesMatchInd, true
@@ -414,7 +414,7 @@ func (o *PreferredSearch) GetPreferredFeaturesMatchIndOk() (*bool, bool) {
 
 // HasPreferredFeaturesMatchInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasPreferredFeaturesMatchInd() bool {
-	if o != nil && !isNil(o.PreferredFeaturesMatchInd) {
+	if o != nil && !IsNil(o.PreferredFeaturesMatchInd) {
 		return true
 	}
 
@@ -428,7 +428,7 @@ func (o *PreferredSearch) SetPreferredFeaturesMatchInd(v bool) {
 
 // GetNoPreferredFeaturesInd returns the NoPreferredFeaturesInd field value if set, zero value otherwise.
 func (o *PreferredSearch) GetNoPreferredFeaturesInd() bool {
-	if o == nil || isNil(o.NoPreferredFeaturesInd) {
+	if o == nil || IsNil(o.NoPreferredFeaturesInd) {
 		var ret bool
 		return ret
 	}
@@ -438,7 +438,7 @@ func (o *PreferredSearch) GetNoPreferredFeaturesInd() bool {
 // GetNoPreferredFeaturesIndOk returns a tuple with the NoPreferredFeaturesInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PreferredSearch) GetNoPreferredFeaturesIndOk() (*bool, bool) {
-	if o == nil || isNil(o.NoPreferredFeaturesInd) {
+	if o == nil || IsNil(o.NoPreferredFeaturesInd) {
 		return nil, false
 	}
 	return o.NoPreferredFeaturesInd, true
@@ -446,7 +446,7 @@ func (o *PreferredSearch) GetNoPreferredFeaturesIndOk() (*bool, bool) {
 
 // HasNoPreferredFeaturesInd returns a boolean if a field has been set.
 func (o *PreferredSearch) HasNoPreferredFeaturesInd() bool {
-	if o != nil && !isNil(o.NoPreferredFeaturesInd) {
+	if o != nil && !IsNil(o.NoPreferredFeaturesInd) {
 		return true
 	}
 
@@ -459,7 +459,7 @@ func (o *PreferredSearch) SetNoPreferredFeaturesInd(v bool) {
 }
 
 func (o PreferredSearch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -468,40 +468,40 @@ func (o PreferredSearch) MarshalJSON() ([]byte, error) {
 
 func (o PreferredSearch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PreferredTaiMatchInd) {
+	if !IsNil(o.PreferredTaiMatchInd) {
 		toSerialize["preferredTaiMatchInd"] = o.PreferredTaiMatchInd
 	}
-	if !isNil(o.PreferredFullPlmnMatchInd) {
+	if !IsNil(o.PreferredFullPlmnMatchInd) {
 		toSerialize["preferredFullPlmnMatchInd"] = o.PreferredFullPlmnMatchInd
 	}
-	if !isNil(o.PreferredApiVersionsMatchInd) {
+	if !IsNil(o.PreferredApiVersionsMatchInd) {
 		toSerialize["preferredApiVersionsMatchInd"] = o.PreferredApiVersionsMatchInd
 	}
-	if !isNil(o.OtherApiVersionsInd) {
+	if !IsNil(o.OtherApiVersionsInd) {
 		toSerialize["otherApiVersionsInd"] = o.OtherApiVersionsInd
 	}
-	if !isNil(o.PreferredLocalityMatchInd) {
+	if !IsNil(o.PreferredLocalityMatchInd) {
 		toSerialize["preferredLocalityMatchInd"] = o.PreferredLocalityMatchInd
 	}
-	if !isNil(o.OtherLocalityInd) {
+	if !IsNil(o.OtherLocalityInd) {
 		toSerialize["otherLocalityInd"] = o.OtherLocalityInd
 	}
-	if !isNil(o.PreferredVendorSpecificFeaturesInd) {
+	if !IsNil(o.PreferredVendorSpecificFeaturesInd) {
 		toSerialize["preferredVendorSpecificFeaturesInd"] = o.PreferredVendorSpecificFeaturesInd
 	}
-	if !isNil(o.PreferredCollocatedNfTypeInd) {
+	if !IsNil(o.PreferredCollocatedNfTypeInd) {
 		toSerialize["preferredCollocatedNfTypeInd"] = o.PreferredCollocatedNfTypeInd
 	}
-	if !isNil(o.PreferredPgwMatchInd) {
+	if !IsNil(o.PreferredPgwMatchInd) {
 		toSerialize["preferredPgwMatchInd"] = o.PreferredPgwMatchInd
 	}
-	if !isNil(o.PreferredAnalyticsDelaysInd) {
+	if !IsNil(o.PreferredAnalyticsDelaysInd) {
 		toSerialize["preferredAnalyticsDelaysInd"] = o.PreferredAnalyticsDelaysInd
 	}
-	if !isNil(o.PreferredFeaturesMatchInd) {
+	if !IsNil(o.PreferredFeaturesMatchInd) {
 		toSerialize["preferredFeaturesMatchInd"] = o.PreferredFeaturesMatchInd
 	}
-	if !isNil(o.NoPreferredFeaturesInd) {
+	if !IsNil(o.NoPreferredFeaturesInd) {
 		toSerialize["noPreferredFeaturesInd"] = o.NoPreferredFeaturesInd
 	}
 	return toSerialize, nil
@@ -542,5 +542,3 @@ func (v *NullablePreferredSearch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

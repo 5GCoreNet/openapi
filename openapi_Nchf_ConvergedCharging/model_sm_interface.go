@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SMInterface{}
 
 // SMInterface struct for SMInterface
 type SMInterface struct {
-	InterfaceId *string `json:"interfaceId,omitempty"`
-	InterfaceText *string `json:"interfaceText,omitempty"`
-	InterfacePort *string `json:"interfacePort,omitempty"`
+	InterfaceId   *string        `json:"interfaceId,omitempty"`
+	InterfaceText *string        `json:"interfaceText,omitempty"`
+	InterfacePort *string        `json:"interfacePort,omitempty"`
 	InterfaceType *InterfaceType `json:"interfaceType,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewSMInterfaceWithDefaults() *SMInterface {
 
 // GetInterfaceId returns the InterfaceId field value if set, zero value otherwise.
 func (o *SMInterface) GetInterfaceId() string {
-	if o == nil || isNil(o.InterfaceId) {
+	if o == nil || IsNil(o.InterfaceId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SMInterface) GetInterfaceId() string {
 // GetInterfaceIdOk returns a tuple with the InterfaceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMInterface) GetInterfaceIdOk() (*string, bool) {
-	if o == nil || isNil(o.InterfaceId) {
+	if o == nil || IsNil(o.InterfaceId) {
 		return nil, false
 	}
 	return o.InterfaceId, true
@@ -62,7 +62,7 @@ func (o *SMInterface) GetInterfaceIdOk() (*string, bool) {
 
 // HasInterfaceId returns a boolean if a field has been set.
 func (o *SMInterface) HasInterfaceId() bool {
-	if o != nil && !isNil(o.InterfaceId) {
+	if o != nil && !IsNil(o.InterfaceId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SMInterface) SetInterfaceId(v string) {
 
 // GetInterfaceText returns the InterfaceText field value if set, zero value otherwise.
 func (o *SMInterface) GetInterfaceText() string {
-	if o == nil || isNil(o.InterfaceText) {
+	if o == nil || IsNil(o.InterfaceText) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SMInterface) GetInterfaceText() string {
 // GetInterfaceTextOk returns a tuple with the InterfaceText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMInterface) GetInterfaceTextOk() (*string, bool) {
-	if o == nil || isNil(o.InterfaceText) {
+	if o == nil || IsNil(o.InterfaceText) {
 		return nil, false
 	}
 	return o.InterfaceText, true
@@ -94,7 +94,7 @@ func (o *SMInterface) GetInterfaceTextOk() (*string, bool) {
 
 // HasInterfaceText returns a boolean if a field has been set.
 func (o *SMInterface) HasInterfaceText() bool {
-	if o != nil && !isNil(o.InterfaceText) {
+	if o != nil && !IsNil(o.InterfaceText) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SMInterface) SetInterfaceText(v string) {
 
 // GetInterfacePort returns the InterfacePort field value if set, zero value otherwise.
 func (o *SMInterface) GetInterfacePort() string {
-	if o == nil || isNil(o.InterfacePort) {
+	if o == nil || IsNil(o.InterfacePort) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SMInterface) GetInterfacePort() string {
 // GetInterfacePortOk returns a tuple with the InterfacePort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMInterface) GetInterfacePortOk() (*string, bool) {
-	if o == nil || isNil(o.InterfacePort) {
+	if o == nil || IsNil(o.InterfacePort) {
 		return nil, false
 	}
 	return o.InterfacePort, true
@@ -126,7 +126,7 @@ func (o *SMInterface) GetInterfacePortOk() (*string, bool) {
 
 // HasInterfacePort returns a boolean if a field has been set.
 func (o *SMInterface) HasInterfacePort() bool {
-	if o != nil && !isNil(o.InterfacePort) {
+	if o != nil && !IsNil(o.InterfacePort) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *SMInterface) SetInterfacePort(v string) {
 
 // GetInterfaceType returns the InterfaceType field value if set, zero value otherwise.
 func (o *SMInterface) GetInterfaceType() InterfaceType {
-	if o == nil || isNil(o.InterfaceType) {
+	if o == nil || IsNil(o.InterfaceType) {
 		var ret InterfaceType
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SMInterface) GetInterfaceType() InterfaceType {
 // GetInterfaceTypeOk returns a tuple with the InterfaceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMInterface) GetInterfaceTypeOk() (*InterfaceType, bool) {
-	if o == nil || isNil(o.InterfaceType) {
+	if o == nil || IsNil(o.InterfaceType) {
 		return nil, false
 	}
 	return o.InterfaceType, true
@@ -158,7 +158,7 @@ func (o *SMInterface) GetInterfaceTypeOk() (*InterfaceType, bool) {
 
 // HasInterfaceType returns a boolean if a field has been set.
 func (o *SMInterface) HasInterfaceType() bool {
-	if o != nil && !isNil(o.InterfaceType) {
+	if o != nil && !IsNil(o.InterfaceType) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *SMInterface) SetInterfaceType(v InterfaceType) {
 }
 
 func (o SMInterface) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o SMInterface) MarshalJSON() ([]byte, error) {
 
 func (o SMInterface) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.InterfaceId) {
+	if !IsNil(o.InterfaceId) {
 		toSerialize["interfaceId"] = o.InterfaceId
 	}
-	if !isNil(o.InterfaceText) {
+	if !IsNil(o.InterfaceText) {
 		toSerialize["interfaceText"] = o.InterfaceText
 	}
-	if !isNil(o.InterfacePort) {
+	if !IsNil(o.InterfacePort) {
 		toSerialize["interfacePort"] = o.InterfacePort
 	}
-	if !isNil(o.InterfaceType) {
+	if !IsNil(o.InterfaceType) {
 		toSerialize["interfaceType"] = o.InterfaceType
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableSMInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

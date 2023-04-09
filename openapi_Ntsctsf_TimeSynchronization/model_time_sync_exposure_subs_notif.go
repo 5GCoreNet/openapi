@@ -1,7 +1,7 @@
 /*
 Ntsctsf_TimeSynchronization Service API
 
-TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TimeSyncExposureSubsNotif{}
 // TimeSyncExposureSubsNotif Contains the notification of time synchronization service.
 type TimeSyncExposureSubsNotif struct {
 	// Notification Correlation ID assigned by the NF service consumer.
-	SubsNotifId *string `json:"subsNotifId,omitempty"`
+	SubsNotifId *string                 `json:"subsNotifId,omitempty"`
 	EventNotifs []SubsEventNotification `json:"eventNotifs,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewTimeSyncExposureSubsNotifWithDefaults() *TimeSyncExposureSubsNotif {
 
 // GetSubsNotifId returns the SubsNotifId field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsNotif) GetSubsNotifId() string {
-	if o == nil || isNil(o.SubsNotifId) {
+	if o == nil || IsNil(o.SubsNotifId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TimeSyncExposureSubsNotif) GetSubsNotifId() string {
 // GetSubsNotifIdOk returns a tuple with the SubsNotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsNotif) GetSubsNotifIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubsNotifId) {
+	if o == nil || IsNil(o.SubsNotifId) {
 		return nil, false
 	}
 	return o.SubsNotifId, true
@@ -61,7 +61,7 @@ func (o *TimeSyncExposureSubsNotif) GetSubsNotifIdOk() (*string, bool) {
 
 // HasSubsNotifId returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsNotif) HasSubsNotifId() bool {
-	if o != nil && !isNil(o.SubsNotifId) {
+	if o != nil && !IsNil(o.SubsNotifId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TimeSyncExposureSubsNotif) SetSubsNotifId(v string) {
 
 // GetEventNotifs returns the EventNotifs field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsNotif) GetEventNotifs() []SubsEventNotification {
-	if o == nil || isNil(o.EventNotifs) {
+	if o == nil || IsNil(o.EventNotifs) {
 		var ret []SubsEventNotification
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TimeSyncExposureSubsNotif) GetEventNotifs() []SubsEventNotification {
 // GetEventNotifsOk returns a tuple with the EventNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsNotif) GetEventNotifsOk() ([]SubsEventNotification, bool) {
-	if o == nil || isNil(o.EventNotifs) {
+	if o == nil || IsNil(o.EventNotifs) {
 		return nil, false
 	}
 	return o.EventNotifs, true
@@ -93,7 +93,7 @@ func (o *TimeSyncExposureSubsNotif) GetEventNotifsOk() ([]SubsEventNotification,
 
 // HasEventNotifs returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsNotif) HasEventNotifs() bool {
-	if o != nil && !isNil(o.EventNotifs) {
+	if o != nil && !IsNil(o.EventNotifs) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *TimeSyncExposureSubsNotif) SetEventNotifs(v []SubsEventNotification) {
 }
 
 func (o TimeSyncExposureSubsNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o TimeSyncExposureSubsNotif) MarshalJSON() ([]byte, error) {
 
 func (o TimeSyncExposureSubsNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubsNotifId) {
+	if !IsNil(o.SubsNotifId) {
 		toSerialize["subsNotifId"] = o.SubsNotifId
 	}
-	if !isNil(o.EventNotifs) {
+	if !IsNil(o.EventNotifs) {
 		toSerialize["eventNotifs"] = o.EventNotifs
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableTimeSyncExposureSubsNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

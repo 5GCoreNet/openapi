@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ActStatus Possible values are: - ACT_START: Indicates ACT start. - ACT_STOP: Indicates ACT stop. 
+// ActStatus Possible values are: - ACT_START: Indicates ACT start. - ACT_STOP: Indicates ACT stop.
 type ActStatus struct {
-	ActStatusAnyOf *ActStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ActStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ActStatusAnyOf
-	err = json.Unmarshal(data, &dst.ActStatusAnyOf);
-	if err == nil {
-		jsonActStatusAnyOf, _ := json.Marshal(dst.ActStatusAnyOf)
-		if string(jsonActStatusAnyOf) == "{}" { // empty struct
-			dst.ActStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.ActStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.ActStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ActStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ActStatus) MarshalJSON() ([]byte, error) {
-	if src.ActStatusAnyOf != nil {
-		return json.Marshal(&src.ActStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableActStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

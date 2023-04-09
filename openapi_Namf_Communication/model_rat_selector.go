@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // RatSelector Indicates the RAT type for the transfer of N2 information
 type RatSelector struct {
-	RatSelectorAnyOf *RatSelectorAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RatSelector) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RatSelectorAnyOf
-	err = json.Unmarshal(data, &dst.RatSelectorAnyOf);
-	if err == nil {
-		jsonRatSelectorAnyOf, _ := json.Marshal(dst.RatSelectorAnyOf)
-		if string(jsonRatSelectorAnyOf) == "{}" { // empty struct
-			dst.RatSelectorAnyOf = nil
-		} else {
-			return nil // data stored in dst.RatSelectorAnyOf, return on the first match
-		}
-	} else {
-		dst.RatSelectorAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RatSelector) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RatSelector) MarshalJSON() ([]byte, error) {
-	if src.RatSelectorAnyOf != nil {
-		return json.Marshal(&src.RatSelectorAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRatSelector) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

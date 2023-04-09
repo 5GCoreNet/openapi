@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &N32fReformattedReqMsg{}
 
 // N32fReformattedReqMsg Contains the reformatted HTTP/2 request message
 type N32fReformattedReqMsg struct {
-	ReformattedData FlatJweJson `json:"reformattedData"`
+	ReformattedData    FlatJweJson   `json:"reformattedData"`
 	ModificationsBlock []FlatJwsJson `json:"modificationsBlock,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *N32fReformattedReqMsg) SetReformattedData(v FlatJweJson) {
 
 // GetModificationsBlock returns the ModificationsBlock field value if set, zero value otherwise.
 func (o *N32fReformattedReqMsg) GetModificationsBlock() []FlatJwsJson {
-	if o == nil || isNil(o.ModificationsBlock) {
+	if o == nil || IsNil(o.ModificationsBlock) {
 		var ret []FlatJwsJson
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *N32fReformattedReqMsg) GetModificationsBlock() []FlatJwsJson {
 // GetModificationsBlockOk returns a tuple with the ModificationsBlock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fReformattedReqMsg) GetModificationsBlockOk() ([]FlatJwsJson, bool) {
-	if o == nil || isNil(o.ModificationsBlock) {
+	if o == nil || IsNil(o.ModificationsBlock) {
 		return nil, false
 	}
 	return o.ModificationsBlock, true
@@ -85,7 +85,7 @@ func (o *N32fReformattedReqMsg) GetModificationsBlockOk() ([]FlatJwsJson, bool) 
 
 // HasModificationsBlock returns a boolean if a field has been set.
 func (o *N32fReformattedReqMsg) HasModificationsBlock() bool {
-	if o != nil && !isNil(o.ModificationsBlock) {
+	if o != nil && !IsNil(o.ModificationsBlock) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *N32fReformattedReqMsg) SetModificationsBlock(v []FlatJwsJson) {
 }
 
 func (o N32fReformattedReqMsg) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o N32fReformattedReqMsg) MarshalJSON() ([]byte, error) {
 func (o N32fReformattedReqMsg) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reformattedData"] = o.ReformattedData
-	if !isNil(o.ModificationsBlock) {
+	if !IsNil(o.ModificationsBlock) {
 		toSerialize["modificationsBlock"] = o.ModificationsBlock
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableN32fReformattedReqMsg) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

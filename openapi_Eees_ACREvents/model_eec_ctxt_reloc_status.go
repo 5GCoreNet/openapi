@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -41,7 +41,7 @@ func NewEecCtxtRelocStatusWithDefaults() *EecCtxtRelocStatus {
 
 // GetImplReg returns the ImplReg field value if set, zero value otherwise.
 func (o *EecCtxtRelocStatus) GetImplReg() ImplicitRegDetails {
-	if o == nil || isNil(o.ImplReg) {
+	if o == nil || IsNil(o.ImplReg) {
 		var ret ImplicitRegDetails
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EecCtxtRelocStatus) GetImplReg() ImplicitRegDetails {
 // GetImplRegOk returns a tuple with the ImplReg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EecCtxtRelocStatus) GetImplRegOk() (*ImplicitRegDetails, bool) {
-	if o == nil || isNil(o.ImplReg) {
+	if o == nil || IsNil(o.ImplReg) {
 		return nil, false
 	}
 	return o.ImplReg, true
@@ -59,7 +59,7 @@ func (o *EecCtxtRelocStatus) GetImplRegOk() (*ImplicitRegDetails, bool) {
 
 // HasImplReg returns a boolean if a field has been set.
 func (o *EecCtxtRelocStatus) HasImplReg() bool {
-	if o != nil && !isNil(o.ImplReg) {
+	if o != nil && !IsNil(o.ImplReg) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *EecCtxtRelocStatus) SetImplReg(v ImplicitRegDetails) {
 }
 
 func (o EecCtxtRelocStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o EecCtxtRelocStatus) MarshalJSON() ([]byte, error) {
 
 func (o EecCtxtRelocStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ImplReg) {
+	if !IsNil(o.ImplReg) {
 		toSerialize["implReg"] = o.ImplReg
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableEecCtxtRelocStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,25 +22,25 @@ type ServiceExperienceInfo struct {
 	SvcExprc SvcExperience `json:"svcExprc"`
 	// string with format 'float' as defined in OpenAPI.
 	SvcExprcVariance *float32 `json:"svcExprcVariance,omitempty"`
-	Supis []string `json:"supis,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	Supis            []string `json:"supis,omitempty"`
+	Snssai           *Snssai  `json:"snssai,omitempty"`
 	// String providing an application identifier.
-	AppId *string `json:"appId,omitempty"`
+	AppId       *string                `json:"appId,omitempty"`
 	SrvExpcType *ServiceExperienceType `json:"srvExpcType,omitempty"`
-	UeLocs []LocationInfo `json:"ueLocs,omitempty"`
-	UpfInfo *UpfInformation `json:"upfInfo,omitempty"`
+	UeLocs      []LocationInfo         `json:"ueLocs,omitempty"`
+	UpfInfo     *UpfInformation        `json:"upfInfo,omitempty"`
 	// DNAI (Data network access identifier), see clause 5.6.7 of 3GPP TS 23.501.
-	Dnai *string `json:"dnai,omitempty"`
+	Dnai          *string   `json:"dnai,omitempty"`
 	AppServerInst *AddrFqdn `json:"appServerInst,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Confidence *int32 `json:"confidence,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn         *string          `json:"dnn,omitempty"`
 	NetworkArea *NetworkAreaInfo `json:"networkArea,omitempty"`
 	// Contains the Identifier of the selected Network Slice instance
 	NsiId *string `json:"nsiId,omitempty"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
-	Ratio *int32 `json:"ratio,omitempty"`
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
+	Ratio   *int32              `json:"ratio,omitempty"`
 	RatFreq *RatFreqInformation `json:"ratFreq,omitempty"`
 }
 
@@ -88,7 +88,7 @@ func (o *ServiceExperienceInfo) SetSvcExprc(v SvcExperience) {
 
 // GetSvcExprcVariance returns the SvcExprcVariance field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetSvcExprcVariance() float32 {
-	if o == nil || isNil(o.SvcExprcVariance) {
+	if o == nil || IsNil(o.SvcExprcVariance) {
 		var ret float32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ServiceExperienceInfo) GetSvcExprcVariance() float32 {
 // GetSvcExprcVarianceOk returns a tuple with the SvcExprcVariance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetSvcExprcVarianceOk() (*float32, bool) {
-	if o == nil || isNil(o.SvcExprcVariance) {
+	if o == nil || IsNil(o.SvcExprcVariance) {
 		return nil, false
 	}
 	return o.SvcExprcVariance, true
@@ -106,7 +106,7 @@ func (o *ServiceExperienceInfo) GetSvcExprcVarianceOk() (*float32, bool) {
 
 // HasSvcExprcVariance returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasSvcExprcVariance() bool {
-	if o != nil && !isNil(o.SvcExprcVariance) {
+	if o != nil && !IsNil(o.SvcExprcVariance) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ServiceExperienceInfo) SetSvcExprcVariance(v float32) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ServiceExperienceInfo) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -138,7 +138,7 @@ func (o *ServiceExperienceInfo) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ServiceExperienceInfo) SetSupis(v []string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ServiceExperienceInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -170,7 +170,7 @@ func (o *ServiceExperienceInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ServiceExperienceInfo) SetSnssai(v Snssai) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ServiceExperienceInfo) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -202,7 +202,7 @@ func (o *ServiceExperienceInfo) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ServiceExperienceInfo) SetAppId(v string) {
 
 // GetSrvExpcType returns the SrvExpcType field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetSrvExpcType() ServiceExperienceType {
-	if o == nil || isNil(o.SrvExpcType) {
+	if o == nil || IsNil(o.SrvExpcType) {
 		var ret ServiceExperienceType
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ServiceExperienceInfo) GetSrvExpcType() ServiceExperienceType {
 // GetSrvExpcTypeOk returns a tuple with the SrvExpcType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetSrvExpcTypeOk() (*ServiceExperienceType, bool) {
-	if o == nil || isNil(o.SrvExpcType) {
+	if o == nil || IsNil(o.SrvExpcType) {
 		return nil, false
 	}
 	return o.SrvExpcType, true
@@ -234,7 +234,7 @@ func (o *ServiceExperienceInfo) GetSrvExpcTypeOk() (*ServiceExperienceType, bool
 
 // HasSrvExpcType returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasSrvExpcType() bool {
-	if o != nil && !isNil(o.SrvExpcType) {
+	if o != nil && !IsNil(o.SrvExpcType) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ServiceExperienceInfo) SetSrvExpcType(v ServiceExperienceType) {
 
 // GetUeLocs returns the UeLocs field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetUeLocs() []LocationInfo {
-	if o == nil || isNil(o.UeLocs) {
+	if o == nil || IsNil(o.UeLocs) {
 		var ret []LocationInfo
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ServiceExperienceInfo) GetUeLocs() []LocationInfo {
 // GetUeLocsOk returns a tuple with the UeLocs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetUeLocsOk() ([]LocationInfo, bool) {
-	if o == nil || isNil(o.UeLocs) {
+	if o == nil || IsNil(o.UeLocs) {
 		return nil, false
 	}
 	return o.UeLocs, true
@@ -266,7 +266,7 @@ func (o *ServiceExperienceInfo) GetUeLocsOk() ([]LocationInfo, bool) {
 
 // HasUeLocs returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasUeLocs() bool {
-	if o != nil && !isNil(o.UeLocs) {
+	if o != nil && !IsNil(o.UeLocs) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ServiceExperienceInfo) SetUeLocs(v []LocationInfo) {
 
 // GetUpfInfo returns the UpfInfo field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetUpfInfo() UpfInformation {
-	if o == nil || isNil(o.UpfInfo) {
+	if o == nil || IsNil(o.UpfInfo) {
 		var ret UpfInformation
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ServiceExperienceInfo) GetUpfInfo() UpfInformation {
 // GetUpfInfoOk returns a tuple with the UpfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetUpfInfoOk() (*UpfInformation, bool) {
-	if o == nil || isNil(o.UpfInfo) {
+	if o == nil || IsNil(o.UpfInfo) {
 		return nil, false
 	}
 	return o.UpfInfo, true
@@ -298,7 +298,7 @@ func (o *ServiceExperienceInfo) GetUpfInfoOk() (*UpfInformation, bool) {
 
 // HasUpfInfo returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasUpfInfo() bool {
-	if o != nil && !isNil(o.UpfInfo) {
+	if o != nil && !IsNil(o.UpfInfo) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *ServiceExperienceInfo) SetUpfInfo(v UpfInformation) {
 
 // GetDnai returns the Dnai field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetDnai() string {
-	if o == nil || isNil(o.Dnai) {
+	if o == nil || IsNil(o.Dnai) {
 		var ret string
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *ServiceExperienceInfo) GetDnai() string {
 // GetDnaiOk returns a tuple with the Dnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetDnaiOk() (*string, bool) {
-	if o == nil || isNil(o.Dnai) {
+	if o == nil || IsNil(o.Dnai) {
 		return nil, false
 	}
 	return o.Dnai, true
@@ -330,7 +330,7 @@ func (o *ServiceExperienceInfo) GetDnaiOk() (*string, bool) {
 
 // HasDnai returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasDnai() bool {
-	if o != nil && !isNil(o.Dnai) {
+	if o != nil && !IsNil(o.Dnai) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *ServiceExperienceInfo) SetDnai(v string) {
 
 // GetAppServerInst returns the AppServerInst field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetAppServerInst() AddrFqdn {
-	if o == nil || isNil(o.AppServerInst) {
+	if o == nil || IsNil(o.AppServerInst) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *ServiceExperienceInfo) GetAppServerInst() AddrFqdn {
 // GetAppServerInstOk returns a tuple with the AppServerInst field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetAppServerInstOk() (*AddrFqdn, bool) {
-	if o == nil || isNil(o.AppServerInst) {
+	if o == nil || IsNil(o.AppServerInst) {
 		return nil, false
 	}
 	return o.AppServerInst, true
@@ -362,7 +362,7 @@ func (o *ServiceExperienceInfo) GetAppServerInstOk() (*AddrFqdn, bool) {
 
 // HasAppServerInst returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasAppServerInst() bool {
-	if o != nil && !isNil(o.AppServerInst) {
+	if o != nil && !IsNil(o.AppServerInst) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *ServiceExperienceInfo) SetAppServerInst(v AddrFqdn) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *ServiceExperienceInfo) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -394,7 +394,7 @@ func (o *ServiceExperienceInfo) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *ServiceExperienceInfo) SetConfidence(v int32) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *ServiceExperienceInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -426,7 +426,7 @@ func (o *ServiceExperienceInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *ServiceExperienceInfo) SetDnn(v string) {
 
 // GetNetworkArea returns the NetworkArea field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetNetworkArea() NetworkAreaInfo {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *ServiceExperienceInfo) GetNetworkArea() NetworkAreaInfo {
 // GetNetworkAreaOk returns a tuple with the NetworkArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		return nil, false
 	}
 	return o.NetworkArea, true
@@ -458,7 +458,7 @@ func (o *ServiceExperienceInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasNetworkArea returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasNetworkArea() bool {
-	if o != nil && !isNil(o.NetworkArea) {
+	if o != nil && !IsNil(o.NetworkArea) {
 		return true
 	}
 
@@ -472,7 +472,7 @@ func (o *ServiceExperienceInfo) SetNetworkArea(v NetworkAreaInfo) {
 
 // GetNsiId returns the NsiId field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetNsiId() string {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		var ret string
 		return ret
 	}
@@ -482,7 +482,7 @@ func (o *ServiceExperienceInfo) GetNsiId() string {
 // GetNsiIdOk returns a tuple with the NsiId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetNsiIdOk() (*string, bool) {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		return nil, false
 	}
 	return o.NsiId, true
@@ -490,7 +490,7 @@ func (o *ServiceExperienceInfo) GetNsiIdOk() (*string, bool) {
 
 // HasNsiId returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasNsiId() bool {
-	if o != nil && !isNil(o.NsiId) {
+	if o != nil && !IsNil(o.NsiId) {
 		return true
 	}
 
@@ -504,7 +504,7 @@ func (o *ServiceExperienceInfo) SetNsiId(v string) {
 
 // GetRatio returns the Ratio field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetRatio() int32 {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		var ret int32
 		return ret
 	}
@@ -514,7 +514,7 @@ func (o *ServiceExperienceInfo) GetRatio() int32 {
 // GetRatioOk returns a tuple with the Ratio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		return nil, false
 	}
 	return o.Ratio, true
@@ -522,7 +522,7 @@ func (o *ServiceExperienceInfo) GetRatioOk() (*int32, bool) {
 
 // HasRatio returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasRatio() bool {
-	if o != nil && !isNil(o.Ratio) {
+	if o != nil && !IsNil(o.Ratio) {
 		return true
 	}
 
@@ -536,7 +536,7 @@ func (o *ServiceExperienceInfo) SetRatio(v int32) {
 
 // GetRatFreq returns the RatFreq field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetRatFreq() RatFreqInformation {
-	if o == nil || isNil(o.RatFreq) {
+	if o == nil || IsNil(o.RatFreq) {
 		var ret RatFreqInformation
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *ServiceExperienceInfo) GetRatFreq() RatFreqInformation {
 // GetRatFreqOk returns a tuple with the RatFreq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetRatFreqOk() (*RatFreqInformation, bool) {
-	if o == nil || isNil(o.RatFreq) {
+	if o == nil || IsNil(o.RatFreq) {
 		return nil, false
 	}
 	return o.RatFreq, true
@@ -554,7 +554,7 @@ func (o *ServiceExperienceInfo) GetRatFreqOk() (*RatFreqInformation, bool) {
 
 // HasRatFreq returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasRatFreq() bool {
-	if o != nil && !isNil(o.RatFreq) {
+	if o != nil && !IsNil(o.RatFreq) {
 		return true
 	}
 
@@ -567,7 +567,7 @@ func (o *ServiceExperienceInfo) SetRatFreq(v RatFreqInformation) {
 }
 
 func (o ServiceExperienceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -577,49 +577,49 @@ func (o ServiceExperienceInfo) MarshalJSON() ([]byte, error) {
 func (o ServiceExperienceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["svcExprc"] = o.SvcExprc
-	if !isNil(o.SvcExprcVariance) {
+	if !IsNil(o.SvcExprcVariance) {
 		toSerialize["svcExprcVariance"] = o.SvcExprcVariance
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.SrvExpcType) {
+	if !IsNil(o.SrvExpcType) {
 		toSerialize["srvExpcType"] = o.SrvExpcType
 	}
-	if !isNil(o.UeLocs) {
+	if !IsNil(o.UeLocs) {
 		toSerialize["ueLocs"] = o.UeLocs
 	}
-	if !isNil(o.UpfInfo) {
+	if !IsNil(o.UpfInfo) {
 		toSerialize["upfInfo"] = o.UpfInfo
 	}
-	if !isNil(o.Dnai) {
+	if !IsNil(o.Dnai) {
 		toSerialize["dnai"] = o.Dnai
 	}
-	if !isNil(o.AppServerInst) {
+	if !IsNil(o.AppServerInst) {
 		toSerialize["appServerInst"] = o.AppServerInst
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.NetworkArea) {
+	if !IsNil(o.NetworkArea) {
 		toSerialize["networkArea"] = o.NetworkArea
 	}
-	if !isNil(o.NsiId) {
+	if !IsNil(o.NsiId) {
 		toSerialize["nsiId"] = o.NsiId
 	}
-	if !isNil(o.Ratio) {
+	if !IsNil(o.Ratio) {
 		toSerialize["ratio"] = o.Ratio
 	}
-	if !isNil(o.RatFreq) {
+	if !IsNil(o.RatFreq) {
 		toSerialize["ratFreq"] = o.RatFreq
 	}
 	return toSerialize, nil
@@ -660,5 +660,3 @@ func (v *NullableServiceExperienceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

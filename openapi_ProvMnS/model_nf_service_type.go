@@ -20,13 +20,13 @@ type NFServiceType string
 
 // List of NFServiceType
 const (
-	NAMF_COMMUNICATION NFServiceType = "Namf_Communication"
+	NAMF_COMMUNICATION  NFServiceType = "Namf_Communication"
 	NAMF_EVENT_EXPOSURE NFServiceType = "Namf_EventExposure"
-	NAMF_MT NFServiceType = "Namf_MT"
-	NAMF_LOCATION NFServiceType = "Namf_Location"
-	NSMF_PDU_SESSION NFServiceType = "Nsmf_PDUSession"
+	NAMF_MT             NFServiceType = "Namf_MT"
+	NAMF_LOCATION       NFServiceType = "Namf_Location"
+	NSMF_PDU_SESSION    NFServiceType = "Nsmf_PDUSession"
 	NSMF_EVENT_EXPOSURE NFServiceType = "Nsmf_EventExposure"
-	OTHERS NFServiceType = "Others"
+	OTHERS              NFServiceType = "Others"
 )
 
 // All allowed values of NFServiceType enum
@@ -118,4 +118,3 @@ func (v *NullableNFServiceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

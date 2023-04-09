@@ -19,7 +19,7 @@ var _ MappedNullable = &FulfilmentInfo{}
 
 // FulfilmentInfo struct for FulfilmentInfo
 type FulfilmentInfo struct {
-	FulfilStatus *FulfilStatus `json:"fulfilStatus,omitempty"`
+	FulfilStatus       *FulfilStatus      `json:"fulfilStatus,omitempty"`
 	NotFullfilledState *NotFulfilledState `json:"notFullfilledState,omitempty"`
 	// -> An attribute which is used when FulfilmentInfo is implemented for IntentFulfilmentInfo
 	NotFulfilledReasons *string `json:"notFulfilledReasons,omitempty"`
@@ -44,7 +44,7 @@ func NewFulfilmentInfoWithDefaults() *FulfilmentInfo {
 
 // GetFulfilStatus returns the FulfilStatus field value if set, zero value otherwise.
 func (o *FulfilmentInfo) GetFulfilStatus() FulfilStatus {
-	if o == nil || isNil(o.FulfilStatus) {
+	if o == nil || IsNil(o.FulfilStatus) {
 		var ret FulfilStatus
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *FulfilmentInfo) GetFulfilStatus() FulfilStatus {
 // GetFulfilStatusOk returns a tuple with the FulfilStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FulfilmentInfo) GetFulfilStatusOk() (*FulfilStatus, bool) {
-	if o == nil || isNil(o.FulfilStatus) {
+	if o == nil || IsNil(o.FulfilStatus) {
 		return nil, false
 	}
 	return o.FulfilStatus, true
@@ -62,7 +62,7 @@ func (o *FulfilmentInfo) GetFulfilStatusOk() (*FulfilStatus, bool) {
 
 // HasFulfilStatus returns a boolean if a field has been set.
 func (o *FulfilmentInfo) HasFulfilStatus() bool {
-	if o != nil && !isNil(o.FulfilStatus) {
+	if o != nil && !IsNil(o.FulfilStatus) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *FulfilmentInfo) SetFulfilStatus(v FulfilStatus) {
 
 // GetNotFullfilledState returns the NotFullfilledState field value if set, zero value otherwise.
 func (o *FulfilmentInfo) GetNotFullfilledState() NotFulfilledState {
-	if o == nil || isNil(o.NotFullfilledState) {
+	if o == nil || IsNil(o.NotFullfilledState) {
 		var ret NotFulfilledState
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *FulfilmentInfo) GetNotFullfilledState() NotFulfilledState {
 // GetNotFullfilledStateOk returns a tuple with the NotFullfilledState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FulfilmentInfo) GetNotFullfilledStateOk() (*NotFulfilledState, bool) {
-	if o == nil || isNil(o.NotFullfilledState) {
+	if o == nil || IsNil(o.NotFullfilledState) {
 		return nil, false
 	}
 	return o.NotFullfilledState, true
@@ -94,7 +94,7 @@ func (o *FulfilmentInfo) GetNotFullfilledStateOk() (*NotFulfilledState, bool) {
 
 // HasNotFullfilledState returns a boolean if a field has been set.
 func (o *FulfilmentInfo) HasNotFullfilledState() bool {
-	if o != nil && !isNil(o.NotFullfilledState) {
+	if o != nil && !IsNil(o.NotFullfilledState) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *FulfilmentInfo) SetNotFullfilledState(v NotFulfilledState) {
 
 // GetNotFulfilledReasons returns the NotFulfilledReasons field value if set, zero value otherwise.
 func (o *FulfilmentInfo) GetNotFulfilledReasons() string {
-	if o == nil || isNil(o.NotFulfilledReasons) {
+	if o == nil || IsNil(o.NotFulfilledReasons) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *FulfilmentInfo) GetNotFulfilledReasons() string {
 // GetNotFulfilledReasonsOk returns a tuple with the NotFulfilledReasons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FulfilmentInfo) GetNotFulfilledReasonsOk() (*string, bool) {
-	if o == nil || isNil(o.NotFulfilledReasons) {
+	if o == nil || IsNil(o.NotFulfilledReasons) {
 		return nil, false
 	}
 	return o.NotFulfilledReasons, true
@@ -126,7 +126,7 @@ func (o *FulfilmentInfo) GetNotFulfilledReasonsOk() (*string, bool) {
 
 // HasNotFulfilledReasons returns a boolean if a field has been set.
 func (o *FulfilmentInfo) HasNotFulfilledReasons() bool {
-	if o != nil && !isNil(o.NotFulfilledReasons) {
+	if o != nil && !IsNil(o.NotFulfilledReasons) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *FulfilmentInfo) SetNotFulfilledReasons(v string) {
 }
 
 func (o FulfilmentInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o FulfilmentInfo) MarshalJSON() ([]byte, error) {
 
 func (o FulfilmentInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FulfilStatus) {
+	if !IsNil(o.FulfilStatus) {
 		toSerialize["fulfilStatus"] = o.FulfilStatus
 	}
-	if !isNil(o.NotFullfilledState) {
+	if !IsNil(o.NotFullfilledState) {
 		toSerialize["notFullfilledState"] = o.NotFullfilledState
 	}
-	if !isNil(o.NotFulfilledReasons) {
+	if !IsNil(o.NotFulfilledReasons) {
 		toSerialize["notFulfilledReasons"] = o.NotFulfilledReasons
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableFulfilmentInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

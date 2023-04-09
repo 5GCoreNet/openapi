@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,11 +17,11 @@ import (
 // checks if the VarSnssai type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &VarSnssai{}
 
-// VarSnssai When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits \"sst\" optionally followed by \"-\" and 6 hexadecimal digits \"sd\". 
+// VarSnssai When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits \"sst\" optionally followed by \"-\" and 6 hexadecimal digits \"sd\".
 type VarSnssai struct {
-	// Unsigned integer, within the range 0 to 255, representing the Slice/Service Type.  It indicates the expected Network Slice behaviour in terms of features and services. Values 0 to 127 correspond to the standardized SST range. Values 128 to 255 correspond  to the Operator-specific range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are defined in clause 5.15.2.2 of 3GPP TS 23.501.  
+	// Unsigned integer, within the range 0 to 255, representing the Slice/Service Type.  It indicates the expected Network Slice behaviour in terms of features and services. Values 0 to 127 correspond to the standardized SST range. Values 128 to 255 correspond  to the Operator-specific range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are defined in clause 5.15.2.2 of 3GPP TS 23.501.
 	Sst int32 `json:"sst"`
-	// 3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST. 
+	// 3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
 	Sd *string `json:"sd,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *VarSnssai) SetSst(v int32) {
 
 // GetSd returns the Sd field value if set, zero value otherwise.
 func (o *VarSnssai) GetSd() string {
-	if o == nil || isNil(o.Sd) {
+	if o == nil || IsNil(o.Sd) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *VarSnssai) GetSd() string {
 // GetSdOk returns a tuple with the Sd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VarSnssai) GetSdOk() (*string, bool) {
-	if o == nil || isNil(o.Sd) {
+	if o == nil || IsNil(o.Sd) {
 		return nil, false
 	}
 	return o.Sd, true
@@ -87,7 +87,7 @@ func (o *VarSnssai) GetSdOk() (*string, bool) {
 
 // HasSd returns a boolean if a field has been set.
 func (o *VarSnssai) HasSd() bool {
-	if o != nil && !isNil(o.Sd) {
+	if o != nil && !IsNil(o.Sd) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *VarSnssai) SetSd(v string) {
 }
 
 func (o VarSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o VarSnssai) MarshalJSON() ([]byte, error) {
 func (o VarSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sst"] = o.Sst
-	if !isNil(o.Sd) {
+	if !IsNil(o.Sd) {
 		toSerialize["sd"] = o.Sd
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableVarSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

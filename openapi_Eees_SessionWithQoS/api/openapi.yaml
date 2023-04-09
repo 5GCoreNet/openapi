@@ -1145,7 +1145,20 @@ components:
       type: string
     UserPlaneEvent:
       anyOf:
-      - $ref: '#/components/schemas/UserPlaneEvent_anyOf'
+      - enum:
+        - SESSION_TERMINATION
+        - LOSS_OF_BEARER
+        - RECOVERY_OF_BEARER
+        - RELEASE_OF_BEARER
+        - USAGE_REPORT
+        - FAILED_RESOURCES_ALLOCATION
+        - QOS_GUARANTEED
+        - QOS_NOT_GUARANTEED
+        - QOS_MONITORING
+        - SUCCESSFUL_RESOURCES_ALLOCATION
+        - ACCESS_TYPE_CHANGE
+        - PLMN_CHG
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1422,14 +1435,22 @@ components:
       type: object
     RequestedQosMonitoringParameter:
       anyOf:
-      - $ref: '#/components/schemas/RequestedQosMonitoringParameter_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - ROUND_TRIP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the requested QoS monitoring parameters to be measured.
     ReportingFrequency:
       anyOf:
-      - $ref: '#/components/schemas/ReportingFrequency_anyOf'
+      - enum:
+        - EVENT_TRIGGERED
+        - PERIODIC
+        - SESSION_RELEASE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1535,63 +1556,30 @@ components:
       type: string
     RatType:
       anyOf:
-      - $ref: '#/components/schemas/RatType_anyOf'
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
       - type: string
       description: Indicates the radio access used.
-    UserPlaneEvent_anyOf:
-      enum:
-      - SESSION_TERMINATION
-      - LOSS_OF_BEARER
-      - RECOVERY_OF_BEARER
-      - RELEASE_OF_BEARER
-      - USAGE_REPORT
-      - FAILED_RESOURCES_ALLOCATION
-      - QOS_GUARANTEED
-      - QOS_NOT_GUARANTEED
-      - QOS_MONITORING
-      - SUCCESSFUL_RESOURCES_ALLOCATION
-      - ACCESS_TYPE_CHANGE
-      - PLMN_CHG
-      type: string
-      example: null
-    RequestedQosMonitoringParameter_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - ROUND_TRIP
-      type: string
-      example: null
-    ReportingFrequency_anyOf:
-      enum:
-      - EVENT_TRIGGERED
-      - PERIODIC
-      - SESSION_RELEASE
-      type: string
-      example: null
-    RatType_anyOf:
-      enum:
-      - NR
-      - EUTRA
-      - WLAN
-      - VIRTUAL
-      - NBIOT
-      - WIRELINE
-      - WIRELINE_CABLE
-      - WIRELINE_BBF
-      - LTE-M
-      - NR_U
-      - EUTRA_U
-      - TRUSTED_N3GA
-      - TRUSTED_WLAN
-      - UTRA
-      - GERA
-      - NR_LEO
-      - NR_MEO
-      - NR_GEO
-      - NR_OTHER_SAT
-      - NR_REDCAP
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

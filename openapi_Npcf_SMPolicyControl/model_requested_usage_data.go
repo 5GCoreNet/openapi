@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the RequestedUsageData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RequestedUsageData{}
 
-// RequestedUsageData Contains usage data requested by the PCF requesting usage reports for the corresponding  usage monitoring data instances. 
+// RequestedUsageData Contains usage data requested by the PCF requesting usage reports for the corresponding  usage monitoring data instances.
 type RequestedUsageData struct {
-	// An array of usage monitoring data id references to the usage monitoring data instances for which the PCF is requesting a usage report. This attribute shall only be provided when allUmIds is not set to true. 
+	// An array of usage monitoring data id references to the usage monitoring data instances for which the PCF is requesting a usage report. This attribute shall only be provided when allUmIds is not set to true.
 	RefUmIds []string `json:"refUmIds,omitempty"`
-	// This boolean indicates whether requested usage data applies to all usage monitoring data instances. When it's not included, it means requested usage data shall only apply to the usage monitoring data instances referenced by the refUmIds attribute. 
+	// This boolean indicates whether requested usage data applies to all usage monitoring data instances. When it's not included, it means requested usage data shall only apply to the usage monitoring data instances referenced by the refUmIds attribute.
 	AllUmIds *bool `json:"allUmIds,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewRequestedUsageDataWithDefaults() *RequestedUsageData {
 
 // GetRefUmIds returns the RefUmIds field value if set, zero value otherwise.
 func (o *RequestedUsageData) GetRefUmIds() []string {
-	if o == nil || isNil(o.RefUmIds) {
+	if o == nil || IsNil(o.RefUmIds) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *RequestedUsageData) GetRefUmIds() []string {
 // GetRefUmIdsOk returns a tuple with the RefUmIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUsageData) GetRefUmIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.RefUmIds) {
+	if o == nil || IsNil(o.RefUmIds) {
 		return nil, false
 	}
 	return o.RefUmIds, true
@@ -62,7 +62,7 @@ func (o *RequestedUsageData) GetRefUmIdsOk() ([]string, bool) {
 
 // HasRefUmIds returns a boolean if a field has been set.
 func (o *RequestedUsageData) HasRefUmIds() bool {
-	if o != nil && !isNil(o.RefUmIds) {
+	if o != nil && !IsNil(o.RefUmIds) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *RequestedUsageData) SetRefUmIds(v []string) {
 
 // GetAllUmIds returns the AllUmIds field value if set, zero value otherwise.
 func (o *RequestedUsageData) GetAllUmIds() bool {
-	if o == nil || isNil(o.AllUmIds) {
+	if o == nil || IsNil(o.AllUmIds) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *RequestedUsageData) GetAllUmIds() bool {
 // GetAllUmIdsOk returns a tuple with the AllUmIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUsageData) GetAllUmIdsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllUmIds) {
+	if o == nil || IsNil(o.AllUmIds) {
 		return nil, false
 	}
 	return o.AllUmIds, true
@@ -94,7 +94,7 @@ func (o *RequestedUsageData) GetAllUmIdsOk() (*bool, bool) {
 
 // HasAllUmIds returns a boolean if a field has been set.
 func (o *RequestedUsageData) HasAllUmIds() bool {
-	if o != nil && !isNil(o.AllUmIds) {
+	if o != nil && !IsNil(o.AllUmIds) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RequestedUsageData) SetAllUmIds(v bool) {
 }
 
 func (o RequestedUsageData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o RequestedUsageData) MarshalJSON() ([]byte, error) {
 
 func (o RequestedUsageData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RefUmIds) {
+	if !IsNil(o.RefUmIds) {
 		toSerialize["refUmIds"] = o.RefUmIds
 	}
-	if !isNil(o.AllUmIds) {
+	if !IsNil(o.AllUmIds) {
 		toSerialize["allUmIds"] = o.AllUmIds
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableRequestedUsageData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

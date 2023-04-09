@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -41,7 +41,7 @@ func NewMbsObjectRepairWithDefaults() *MbsObjectRepair {
 
 // GetSessionDescriptionURI returns the SessionDescriptionURI field value if set, zero value otherwise.
 func (o *MbsObjectRepair) GetSessionDescriptionURI() string {
-	if o == nil || isNil(o.SessionDescriptionURI) {
+	if o == nil || IsNil(o.SessionDescriptionURI) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MbsObjectRepair) GetSessionDescriptionURI() string {
 // GetSessionDescriptionURIOk returns a tuple with the SessionDescriptionURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsObjectRepair) GetSessionDescriptionURIOk() (*string, bool) {
-	if o == nil || isNil(o.SessionDescriptionURI) {
+	if o == nil || IsNil(o.SessionDescriptionURI) {
 		return nil, false
 	}
 	return o.SessionDescriptionURI, true
@@ -59,7 +59,7 @@ func (o *MbsObjectRepair) GetSessionDescriptionURIOk() (*string, bool) {
 
 // HasSessionDescriptionURI returns a boolean if a field has been set.
 func (o *MbsObjectRepair) HasSessionDescriptionURI() bool {
-	if o != nil && !isNil(o.SessionDescriptionURI) {
+	if o != nil && !IsNil(o.SessionDescriptionURI) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MbsObjectRepair) SetSessionDescriptionURI(v string) {
 }
 
 func (o MbsObjectRepair) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MbsObjectRepair) MarshalJSON() ([]byte, error) {
 
 func (o MbsObjectRepair) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SessionDescriptionURI) {
+	if !IsNil(o.SessionDescriptionURI) {
 		toSerialize["sessionDescriptionURI"] = o.SessionDescriptionURI
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMbsObjectRepair) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

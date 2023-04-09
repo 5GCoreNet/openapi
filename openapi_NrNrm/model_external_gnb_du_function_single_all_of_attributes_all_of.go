@@ -19,8 +19,8 @@ var _ MappedNullable = &ExternalGnbDuFunctionSingleAllOfAttributesAllOf{}
 
 // ExternalGnbDuFunctionSingleAllOfAttributesAllOf struct for ExternalGnbDuFunctionSingleAllOfAttributesAllOf
 type ExternalGnbDuFunctionSingleAllOfAttributesAllOf struct {
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
+	GnbId       *string `json:"gnbId,omitempty"`
+	GnbIdLength *int32  `json:"gnbIdLength,omitempty"`
 }
 
 // NewExternalGnbDuFunctionSingleAllOfAttributesAllOf instantiates a new ExternalGnbDuFunctionSingleAllOfAttributesAllOf object
@@ -105,7 +105,7 @@ func (o *ExternalGnbDuFunctionSingleAllOfAttributesAllOf) SetGnbIdLength(v int32
 }
 
 func (o ExternalGnbDuFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,5 +158,3 @@ func (v *NullableExternalGnbDuFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

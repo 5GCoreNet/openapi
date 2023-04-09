@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &RoamingStatusReport{}
 
 // RoamingStatusReport struct for RoamingStatusReport
 type RoamingStatusReport struct {
-	Roaming bool `json:"roaming"`
-	NewServingPlmn PlmnId `json:"newServingPlmn"`
-	AccessType *AccessType `json:"accessType,omitempty"`
+	Roaming        bool        `json:"roaming"`
+	NewServingPlmn PlmnId      `json:"newServingPlmn"`
+	AccessType     *AccessType `json:"accessType,omitempty"`
 }
 
 // NewRoamingStatusReport instantiates a new RoamingStatusReport object
@@ -93,7 +93,7 @@ func (o *RoamingStatusReport) SetNewServingPlmn(v PlmnId) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *RoamingStatusReport) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *RoamingStatusReport) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingStatusReport) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -111,7 +111,7 @@ func (o *RoamingStatusReport) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *RoamingStatusReport) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *RoamingStatusReport) SetAccessType(v AccessType) {
 }
 
 func (o RoamingStatusReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o RoamingStatusReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["roaming"] = o.Roaming
 	toSerialize["newServingPlmn"] = o.NewServingPlmn
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableRoamingStatusReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

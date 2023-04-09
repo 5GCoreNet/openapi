@@ -474,6 +474,7 @@ components:
       description: See 3GPP TS 32.300 for details
       example: "SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100"
       type: string
+      x-parent: true
     streamType-Type:
       enum:
       - TRACE
@@ -725,6 +726,7 @@ components:
               type: string
           type: array
       type: object
+      x-parent: true
     jobType-Type:
       description: "Specifies whether the TraceJob represents only MDT, Logged MBSFN\
         \ MDT, Trace or a combined Trace and MDT job. Applicable for Trace, MDT, RCEF\

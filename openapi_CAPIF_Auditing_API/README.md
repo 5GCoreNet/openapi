@@ -90,12 +90,9 @@ Class | Method | HTTP request | Description
  - [InvocationLog](docs/InvocationLog.md)
  - [Log](docs/Log.md)
  - [Operation](docs/Operation.md)
- - [OperationAnyOf](docs/OperationAnyOf.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [Protocol](docs/Protocol.md)
- - [ProtocolAnyOf](docs/ProtocolAnyOf.md)
  - [SecurityMethod](docs/SecurityMethod.md)
- - [SecurityMethodAnyOf](docs/SecurityMethodAnyOf.md)
 
 
 ## Documentation For Authorization

@@ -1,7 +1,7 @@
 /*
 Nudm_SSAU
 
-Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AuthUpdateInfo{}
 // AuthUpdateInfo Represents authorization update information.
 type AuthUpdateInfo struct {
 	AuthorizationData ServiceSpecificAuthorizationData `json:"authorizationData"`
-	InvalidityInd *bool `json:"invalidityInd,omitempty"`
-	InvalidCause *InvalidCause `json:"invalidCause,omitempty"`
+	InvalidityInd     *bool                            `json:"invalidityInd,omitempty"`
+	InvalidCause      *InvalidCause                    `json:"invalidCause,omitempty"`
 }
 
 // NewAuthUpdateInfo instantiates a new AuthUpdateInfo object
@@ -68,7 +68,7 @@ func (o *AuthUpdateInfo) SetAuthorizationData(v ServiceSpecificAuthorizationData
 
 // GetInvalidityInd returns the InvalidityInd field value if set, zero value otherwise.
 func (o *AuthUpdateInfo) GetInvalidityInd() bool {
-	if o == nil || isNil(o.InvalidityInd) {
+	if o == nil || IsNil(o.InvalidityInd) {
 		var ret bool
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AuthUpdateInfo) GetInvalidityInd() bool {
 // GetInvalidityIndOk returns a tuple with the InvalidityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateInfo) GetInvalidityIndOk() (*bool, bool) {
-	if o == nil || isNil(o.InvalidityInd) {
+	if o == nil || IsNil(o.InvalidityInd) {
 		return nil, false
 	}
 	return o.InvalidityInd, true
@@ -86,7 +86,7 @@ func (o *AuthUpdateInfo) GetInvalidityIndOk() (*bool, bool) {
 
 // HasInvalidityInd returns a boolean if a field has been set.
 func (o *AuthUpdateInfo) HasInvalidityInd() bool {
-	if o != nil && !isNil(o.InvalidityInd) {
+	if o != nil && !IsNil(o.InvalidityInd) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AuthUpdateInfo) SetInvalidityInd(v bool) {
 
 // GetInvalidCause returns the InvalidCause field value if set, zero value otherwise.
 func (o *AuthUpdateInfo) GetInvalidCause() InvalidCause {
-	if o == nil || isNil(o.InvalidCause) {
+	if o == nil || IsNil(o.InvalidCause) {
 		var ret InvalidCause
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AuthUpdateInfo) GetInvalidCause() InvalidCause {
 // GetInvalidCauseOk returns a tuple with the InvalidCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateInfo) GetInvalidCauseOk() (*InvalidCause, bool) {
-	if o == nil || isNil(o.InvalidCause) {
+	if o == nil || IsNil(o.InvalidCause) {
 		return nil, false
 	}
 	return o.InvalidCause, true
@@ -118,7 +118,7 @@ func (o *AuthUpdateInfo) GetInvalidCauseOk() (*InvalidCause, bool) {
 
 // HasInvalidCause returns a boolean if a field has been set.
 func (o *AuthUpdateInfo) HasInvalidCause() bool {
-	if o != nil && !isNil(o.InvalidCause) {
+	if o != nil && !IsNil(o.InvalidCause) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AuthUpdateInfo) SetInvalidCause(v InvalidCause) {
 }
 
 func (o AuthUpdateInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o AuthUpdateInfo) MarshalJSON() ([]byte, error) {
 func (o AuthUpdateInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authorizationData"] = o.AuthorizationData
-	if !isNil(o.InvalidityInd) {
+	if !IsNil(o.InvalidityInd) {
 		toSerialize["invalidityInd"] = o.InvalidityInd
 	}
-	if !isNil(o.InvalidCause) {
+	if !IsNil(o.InvalidCause) {
 		toSerialize["invalidCause"] = o.InvalidCause
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableAuthUpdateInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_MT
 
-AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UeInfo{}
 // UeInfo list of UEs requested to be made reachable for the MBS Session
 type UeInfo struct {
 	UeList []string `json:"ueList"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
 	PduSessionId *int32 `json:"pduSessionId,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *UeInfo) SetUeList(v []string) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *UeInfo) GetPduSessionId() int32 {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UeInfo) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInfo) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -86,7 +86,7 @@ func (o *UeInfo) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *UeInfo) HasPduSessionId() bool {
-	if o != nil && !isNil(o.PduSessionId) {
+	if o != nil && !IsNil(o.PduSessionId) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *UeInfo) SetPduSessionId(v int32) {
 }
 
 func (o UeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o UeInfo) MarshalJSON() ([]byte, error) {
 func (o UeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueList"] = o.UeList
-	if !isNil(o.PduSessionId) {
+	if !IsNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableUeInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

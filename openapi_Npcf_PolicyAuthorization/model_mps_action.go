@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MpsAction Indicates whether it is an invocation, a revocation or an invocation with authorization of the MPS for DTS service. 
+// MpsAction Indicates whether it is an invocation, a revocation or an invocation with authorization of the MPS for DTS service.
 type MpsAction struct {
-	MpsActionAnyOf *MpsActionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MpsAction) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MpsActionAnyOf
-	err = json.Unmarshal(data, &dst.MpsActionAnyOf);
-	if err == nil {
-		jsonMpsActionAnyOf, _ := json.Marshal(dst.MpsActionAnyOf)
-		if string(jsonMpsActionAnyOf) == "{}" { // empty struct
-			dst.MpsActionAnyOf = nil
-		} else {
-			return nil // data stored in dst.MpsActionAnyOf, return on the first match
-		}
-	} else {
-		dst.MpsActionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MpsAction) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MpsAction) MarshalJSON() ([]byte, error) {
-	if src.MpsActionAnyOf != nil {
-		return json.Marshal(&src.MpsActionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMpsAction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

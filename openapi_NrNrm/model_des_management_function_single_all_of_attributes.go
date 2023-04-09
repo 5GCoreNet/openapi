@@ -19,16 +19,16 @@ var _ MappedNullable = &DESManagementFunctionSingleAllOfAttributes{}
 
 // DESManagementFunctionSingleAllOfAttributes struct for DESManagementFunctionSingleAllOfAttributes
 type DESManagementFunctionSingleAllOfAttributes struct {
-	DesSwitch *bool `json:"desSwitch,omitempty"`
-	IntraRatEsActivationOriginalCellLoadParameters *IntraRatEsActivationOriginalCellLoadParameters `json:"intraRatEsActivationOriginalCellLoadParameters,omitempty"`
-	IntraRatEsActivationCandidateCellsLoadParameters *IntraRatEsActivationCandidateCellsLoadParameters `json:"intraRatEsActivationCandidateCellsLoadParameters,omitempty"`
+	DesSwitch                                          *bool                                               `json:"desSwitch,omitempty"`
+	IntraRatEsActivationOriginalCellLoadParameters     *IntraRatEsActivationOriginalCellLoadParameters     `json:"intraRatEsActivationOriginalCellLoadParameters,omitempty"`
+	IntraRatEsActivationCandidateCellsLoadParameters   *IntraRatEsActivationCandidateCellsLoadParameters   `json:"intraRatEsActivationCandidateCellsLoadParameters,omitempty"`
 	IntraRatEsDeactivationCandidateCellsLoadParameters *IntraRatEsDeactivationCandidateCellsLoadParameters `json:"intraRatEsDeactivationCandidateCellsLoadParameters,omitempty"`
-	EsNotAllowedTimePeriod *EsNotAllowedTimePeriod `json:"esNotAllowedTimePeriod,omitempty"`
-	InterRatEsActivationOriginalCellParameters *InterRatEsActivationOriginalCellParameters `json:"interRatEsActivationOriginalCellParameters,omitempty"`
-	InterRatEsActivationCandidateCellParameters *InterRatEsActivationCandidateCellParameters `json:"interRatEsActivationCandidateCellParameters,omitempty"`
-	InterRatEsDeactivationCandidateCellParameters *InterRatEsDeactivationCandidateCellParameters `json:"interRatEsDeactivationCandidateCellParameters,omitempty"`
-	IsProbingCapable *string `json:"isProbingCapable,omitempty"`
-	EnergySavingState *string `json:"energySavingState,omitempty"`
+	EsNotAllowedTimePeriod                             *EsNotAllowedTimePeriod                             `json:"esNotAllowedTimePeriod,omitempty"`
+	InterRatEsActivationOriginalCellParameters         *InterRatEsActivationOriginalCellParameters         `json:"interRatEsActivationOriginalCellParameters,omitempty"`
+	InterRatEsActivationCandidateCellParameters        *InterRatEsActivationCandidateCellParameters        `json:"interRatEsActivationCandidateCellParameters,omitempty"`
+	InterRatEsDeactivationCandidateCellParameters      *InterRatEsDeactivationCandidateCellParameters      `json:"interRatEsDeactivationCandidateCellParameters,omitempty"`
+	IsProbingCapable                                   *string                                             `json:"isProbingCapable,omitempty"`
+	EnergySavingState                                  *string                                             `json:"energySavingState,omitempty"`
 }
 
 // NewDESManagementFunctionSingleAllOfAttributes instantiates a new DESManagementFunctionSingleAllOfAttributes object
@@ -50,7 +50,7 @@ func NewDESManagementFunctionSingleAllOfAttributesWithDefaults() *DESManagementF
 
 // GetDesSwitch returns the DesSwitch field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetDesSwitch() bool {
-	if o == nil || isNil(o.DesSwitch) {
+	if o == nil || IsNil(o.DesSwitch) {
 		var ret bool
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetDesSwitch() bool {
 // GetDesSwitchOk returns a tuple with the DesSwitch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetDesSwitchOk() (*bool, bool) {
-	if o == nil || isNil(o.DesSwitch) {
+	if o == nil || IsNil(o.DesSwitch) {
 		return nil, false
 	}
 	return o.DesSwitch, true
@@ -68,7 +68,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetDesSwitchOk() (*bool, bo
 
 // HasDesSwitch returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasDesSwitch() bool {
-	if o != nil && !isNil(o.DesSwitch) {
+	if o != nil && !IsNil(o.DesSwitch) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetDesSwitch(v bool) {
 
 // GetIntraRatEsActivationOriginalCellLoadParameters returns the IntraRatEsActivationOriginalCellLoadParameters field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationOriginalCellLoadParameters() IntraRatEsActivationOriginalCellLoadParameters {
-	if o == nil || isNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
+	if o == nil || IsNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
 		var ret IntraRatEsActivationOriginalCellLoadParameters
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationOrig
 // GetIntraRatEsActivationOriginalCellLoadParametersOk returns a tuple with the IntraRatEsActivationOriginalCellLoadParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationOriginalCellLoadParametersOk() (*IntraRatEsActivationOriginalCellLoadParameters, bool) {
-	if o == nil || isNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
+	if o == nil || IsNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
 		return nil, false
 	}
 	return o.IntraRatEsActivationOriginalCellLoadParameters, true
@@ -100,7 +100,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationOrig
 
 // HasIntraRatEsActivationOriginalCellLoadParameters returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasIntraRatEsActivationOriginalCellLoadParameters() bool {
-	if o != nil && !isNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
+	if o != nil && !IsNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetIntraRatEsActivationOrig
 
 // GetIntraRatEsActivationCandidateCellsLoadParameters returns the IntraRatEsActivationCandidateCellsLoadParameters field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationCandidateCellsLoadParameters() IntraRatEsActivationCandidateCellsLoadParameters {
-	if o == nil || isNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
+	if o == nil || IsNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
 		var ret IntraRatEsActivationCandidateCellsLoadParameters
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationCand
 // GetIntraRatEsActivationCandidateCellsLoadParametersOk returns a tuple with the IntraRatEsActivationCandidateCellsLoadParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationCandidateCellsLoadParametersOk() (*IntraRatEsActivationCandidateCellsLoadParameters, bool) {
-	if o == nil || isNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
+	if o == nil || IsNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
 		return nil, false
 	}
 	return o.IntraRatEsActivationCandidateCellsLoadParameters, true
@@ -132,7 +132,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsActivationCand
 
 // HasIntraRatEsActivationCandidateCellsLoadParameters returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasIntraRatEsActivationCandidateCellsLoadParameters() bool {
-	if o != nil && !isNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
+	if o != nil && !IsNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetIntraRatEsActivationCand
 
 // GetIntraRatEsDeactivationCandidateCellsLoadParameters returns the IntraRatEsDeactivationCandidateCellsLoadParameters field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsDeactivationCandidateCellsLoadParameters() IntraRatEsDeactivationCandidateCellsLoadParameters {
-	if o == nil || isNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
+	if o == nil || IsNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
 		var ret IntraRatEsDeactivationCandidateCellsLoadParameters
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsDeactivationCa
 // GetIntraRatEsDeactivationCandidateCellsLoadParametersOk returns a tuple with the IntraRatEsDeactivationCandidateCellsLoadParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsDeactivationCandidateCellsLoadParametersOk() (*IntraRatEsDeactivationCandidateCellsLoadParameters, bool) {
-	if o == nil || isNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
+	if o == nil || IsNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
 		return nil, false
 	}
 	return o.IntraRatEsDeactivationCandidateCellsLoadParameters, true
@@ -164,7 +164,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIntraRatEsDeactivationCa
 
 // HasIntraRatEsDeactivationCandidateCellsLoadParameters returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasIntraRatEsDeactivationCandidateCellsLoadParameters() bool {
-	if o != nil && !isNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
+	if o != nil && !IsNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetIntraRatEsDeactivationCa
 
 // GetEsNotAllowedTimePeriod returns the EsNotAllowedTimePeriod field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetEsNotAllowedTimePeriod() EsNotAllowedTimePeriod {
-	if o == nil || isNil(o.EsNotAllowedTimePeriod) {
+	if o == nil || IsNil(o.EsNotAllowedTimePeriod) {
 		var ret EsNotAllowedTimePeriod
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetEsNotAllowedTimePeriod()
 // GetEsNotAllowedTimePeriodOk returns a tuple with the EsNotAllowedTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetEsNotAllowedTimePeriodOk() (*EsNotAllowedTimePeriod, bool) {
-	if o == nil || isNil(o.EsNotAllowedTimePeriod) {
+	if o == nil || IsNil(o.EsNotAllowedTimePeriod) {
 		return nil, false
 	}
 	return o.EsNotAllowedTimePeriod, true
@@ -196,7 +196,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetEsNotAllowedTimePeriodOk
 
 // HasEsNotAllowedTimePeriod returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasEsNotAllowedTimePeriod() bool {
-	if o != nil && !isNil(o.EsNotAllowedTimePeriod) {
+	if o != nil && !IsNil(o.EsNotAllowedTimePeriod) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetEsNotAllowedTimePeriod(v
 
 // GetInterRatEsActivationOriginalCellParameters returns the InterRatEsActivationOriginalCellParameters field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationOriginalCellParameters() InterRatEsActivationOriginalCellParameters {
-	if o == nil || isNil(o.InterRatEsActivationOriginalCellParameters) {
+	if o == nil || IsNil(o.InterRatEsActivationOriginalCellParameters) {
 		var ret InterRatEsActivationOriginalCellParameters
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationOrig
 // GetInterRatEsActivationOriginalCellParametersOk returns a tuple with the InterRatEsActivationOriginalCellParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationOriginalCellParametersOk() (*InterRatEsActivationOriginalCellParameters, bool) {
-	if o == nil || isNil(o.InterRatEsActivationOriginalCellParameters) {
+	if o == nil || IsNil(o.InterRatEsActivationOriginalCellParameters) {
 		return nil, false
 	}
 	return o.InterRatEsActivationOriginalCellParameters, true
@@ -228,7 +228,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationOrig
 
 // HasInterRatEsActivationOriginalCellParameters returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasInterRatEsActivationOriginalCellParameters() bool {
-	if o != nil && !isNil(o.InterRatEsActivationOriginalCellParameters) {
+	if o != nil && !IsNil(o.InterRatEsActivationOriginalCellParameters) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetInterRatEsActivationOrig
 
 // GetInterRatEsActivationCandidateCellParameters returns the InterRatEsActivationCandidateCellParameters field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationCandidateCellParameters() InterRatEsActivationCandidateCellParameters {
-	if o == nil || isNil(o.InterRatEsActivationCandidateCellParameters) {
+	if o == nil || IsNil(o.InterRatEsActivationCandidateCellParameters) {
 		var ret InterRatEsActivationCandidateCellParameters
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationCand
 // GetInterRatEsActivationCandidateCellParametersOk returns a tuple with the InterRatEsActivationCandidateCellParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationCandidateCellParametersOk() (*InterRatEsActivationCandidateCellParameters, bool) {
-	if o == nil || isNil(o.InterRatEsActivationCandidateCellParameters) {
+	if o == nil || IsNil(o.InterRatEsActivationCandidateCellParameters) {
 		return nil, false
 	}
 	return o.InterRatEsActivationCandidateCellParameters, true
@@ -260,7 +260,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsActivationCand
 
 // HasInterRatEsActivationCandidateCellParameters returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasInterRatEsActivationCandidateCellParameters() bool {
-	if o != nil && !isNil(o.InterRatEsActivationCandidateCellParameters) {
+	if o != nil && !IsNil(o.InterRatEsActivationCandidateCellParameters) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetInterRatEsActivationCand
 
 // GetInterRatEsDeactivationCandidateCellParameters returns the InterRatEsDeactivationCandidateCellParameters field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsDeactivationCandidateCellParameters() InterRatEsDeactivationCandidateCellParameters {
-	if o == nil || isNil(o.InterRatEsDeactivationCandidateCellParameters) {
+	if o == nil || IsNil(o.InterRatEsDeactivationCandidateCellParameters) {
 		var ret InterRatEsDeactivationCandidateCellParameters
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsDeactivationCa
 // GetInterRatEsDeactivationCandidateCellParametersOk returns a tuple with the InterRatEsDeactivationCandidateCellParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsDeactivationCandidateCellParametersOk() (*InterRatEsDeactivationCandidateCellParameters, bool) {
-	if o == nil || isNil(o.InterRatEsDeactivationCandidateCellParameters) {
+	if o == nil || IsNil(o.InterRatEsDeactivationCandidateCellParameters) {
 		return nil, false
 	}
 	return o.InterRatEsDeactivationCandidateCellParameters, true
@@ -292,7 +292,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetInterRatEsDeactivationCa
 
 // HasInterRatEsDeactivationCandidateCellParameters returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasInterRatEsDeactivationCandidateCellParameters() bool {
-	if o != nil && !isNil(o.InterRatEsDeactivationCandidateCellParameters) {
+	if o != nil && !IsNil(o.InterRatEsDeactivationCandidateCellParameters) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetInterRatEsDeactivationCa
 
 // GetIsProbingCapable returns the IsProbingCapable field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIsProbingCapable() string {
-	if o == nil || isNil(o.IsProbingCapable) {
+	if o == nil || IsNil(o.IsProbingCapable) {
 		var ret string
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIsProbingCapable() strin
 // GetIsProbingCapableOk returns a tuple with the IsProbingCapable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetIsProbingCapableOk() (*string, bool) {
-	if o == nil || isNil(o.IsProbingCapable) {
+	if o == nil || IsNil(o.IsProbingCapable) {
 		return nil, false
 	}
 	return o.IsProbingCapable, true
@@ -324,7 +324,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetIsProbingCapableOk() (*s
 
 // HasIsProbingCapable returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasIsProbingCapable() bool {
-	if o != nil && !isNil(o.IsProbingCapable) {
+	if o != nil && !IsNil(o.IsProbingCapable) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetIsProbingCapable(v strin
 
 // GetEnergySavingState returns the EnergySavingState field value if set, zero value otherwise.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetEnergySavingState() string {
-	if o == nil || isNil(o.EnergySavingState) {
+	if o == nil || IsNil(o.EnergySavingState) {
 		var ret string
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetEnergySavingState() stri
 // GetEnergySavingStateOk returns a tuple with the EnergySavingState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) GetEnergySavingStateOk() (*string, bool) {
-	if o == nil || isNil(o.EnergySavingState) {
+	if o == nil || IsNil(o.EnergySavingState) {
 		return nil, false
 	}
 	return o.EnergySavingState, true
@@ -356,7 +356,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) GetEnergySavingStateOk() (*
 
 // HasEnergySavingState returns a boolean if a field has been set.
 func (o *DESManagementFunctionSingleAllOfAttributes) HasEnergySavingState() bool {
-	if o != nil && !isNil(o.EnergySavingState) {
+	if o != nil && !IsNil(o.EnergySavingState) {
 		return true
 	}
 
@@ -369,7 +369,7 @@ func (o *DESManagementFunctionSingleAllOfAttributes) SetEnergySavingState(v stri
 }
 
 func (o DESManagementFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,34 +378,34 @@ func (o DESManagementFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error
 
 func (o DESManagementFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DesSwitch) {
+	if !IsNil(o.DesSwitch) {
 		toSerialize["desSwitch"] = o.DesSwitch
 	}
-	if !isNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
+	if !IsNil(o.IntraRatEsActivationOriginalCellLoadParameters) {
 		toSerialize["intraRatEsActivationOriginalCellLoadParameters"] = o.IntraRatEsActivationOriginalCellLoadParameters
 	}
-	if !isNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
+	if !IsNil(o.IntraRatEsActivationCandidateCellsLoadParameters) {
 		toSerialize["intraRatEsActivationCandidateCellsLoadParameters"] = o.IntraRatEsActivationCandidateCellsLoadParameters
 	}
-	if !isNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
+	if !IsNil(o.IntraRatEsDeactivationCandidateCellsLoadParameters) {
 		toSerialize["intraRatEsDeactivationCandidateCellsLoadParameters"] = o.IntraRatEsDeactivationCandidateCellsLoadParameters
 	}
-	if !isNil(o.EsNotAllowedTimePeriod) {
+	if !IsNil(o.EsNotAllowedTimePeriod) {
 		toSerialize["esNotAllowedTimePeriod"] = o.EsNotAllowedTimePeriod
 	}
-	if !isNil(o.InterRatEsActivationOriginalCellParameters) {
+	if !IsNil(o.InterRatEsActivationOriginalCellParameters) {
 		toSerialize["interRatEsActivationOriginalCellParameters"] = o.InterRatEsActivationOriginalCellParameters
 	}
-	if !isNil(o.InterRatEsActivationCandidateCellParameters) {
+	if !IsNil(o.InterRatEsActivationCandidateCellParameters) {
 		toSerialize["interRatEsActivationCandidateCellParameters"] = o.InterRatEsActivationCandidateCellParameters
 	}
-	if !isNil(o.InterRatEsDeactivationCandidateCellParameters) {
+	if !IsNil(o.InterRatEsDeactivationCandidateCellParameters) {
 		toSerialize["interRatEsDeactivationCandidateCellParameters"] = o.InterRatEsDeactivationCandidateCellParameters
 	}
-	if !isNil(o.IsProbingCapable) {
+	if !IsNil(o.IsProbingCapable) {
 		toSerialize["isProbingCapable"] = o.IsProbingCapable
 	}
-	if !isNil(o.EnergySavingState) {
+	if !IsNil(o.EnergySavingState) {
 		toSerialize["energySavingState"] = o.EnergySavingState
 	}
 	return toSerialize, nil
@@ -446,5 +446,3 @@ func (v *NullableDESManagementFunctionSingleAllOfAttributes) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

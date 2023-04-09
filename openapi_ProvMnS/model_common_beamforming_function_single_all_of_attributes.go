@@ -19,9 +19,9 @@ var _ MappedNullable = &CommonBeamformingFunctionSingleAllOfAttributes{}
 
 // CommonBeamformingFunctionSingleAllOfAttributes struct for CommonBeamformingFunctionSingleAllOfAttributes
 type CommonBeamformingFunctionSingleAllOfAttributes struct {
-	CoverageShape *int32 `json:"coverageShape,omitempty"`
+	CoverageShape  *int32 `json:"coverageShape,omitempty"`
 	DigitalAzimuth *int32 `json:"digitalAzimuth,omitempty"`
-	DigitalTilt *int32 `json:"digitalTilt,omitempty"`
+	DigitalTilt    *int32 `json:"digitalTilt,omitempty"`
 }
 
 // NewCommonBeamformingFunctionSingleAllOfAttributes instantiates a new CommonBeamformingFunctionSingleAllOfAttributes object
@@ -138,7 +138,7 @@ func (o *CommonBeamformingFunctionSingleAllOfAttributes) SetDigitalTilt(v int32)
 }
 
 func (o CommonBeamformingFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableCommonBeamformingFunctionSingleAllOfAttributes) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

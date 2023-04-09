@@ -41,7 +41,7 @@ func NewThresholdLevelIndOneOfWithDefaults() *ThresholdLevelIndOneOf {
 
 // GetUp returns the Up field value if set, zero value otherwise.
 func (o *ThresholdLevelIndOneOf) GetUp() ThresholdHysteresis {
-	if o == nil || isNil(o.Up) {
+	if o == nil || IsNil(o.Up) {
 		var ret ThresholdHysteresis
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ThresholdLevelIndOneOf) GetUp() ThresholdHysteresis {
 // GetUpOk returns a tuple with the Up field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevelIndOneOf) GetUpOk() (*ThresholdHysteresis, bool) {
-	if o == nil || isNil(o.Up) {
+	if o == nil || IsNil(o.Up) {
 		return nil, false
 	}
 	return o.Up, true
@@ -59,7 +59,7 @@ func (o *ThresholdLevelIndOneOf) GetUpOk() (*ThresholdHysteresis, bool) {
 
 // HasUp returns a boolean if a field has been set.
 func (o *ThresholdLevelIndOneOf) HasUp() bool {
-	if o != nil && !isNil(o.Up) {
+	if o != nil && !IsNil(o.Up) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ThresholdLevelIndOneOf) SetUp(v ThresholdHysteresis) {
 }
 
 func (o ThresholdLevelIndOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ThresholdLevelIndOneOf) MarshalJSON() ([]byte, error) {
 
 func (o ThresholdLevelIndOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Up) {
+	if !IsNil(o.Up) {
 		toSerialize["up"] = o.Up
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableThresholdLevelIndOneOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

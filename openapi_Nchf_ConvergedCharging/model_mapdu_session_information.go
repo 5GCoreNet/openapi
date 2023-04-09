@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &MAPDUSessionInformation{}
 // MAPDUSessionInformation struct for MAPDUSessionInformation
 type MAPDUSessionInformation struct {
 	MAPDUSessionIndicator *MaPduIndication `json:"mAPDUSessionIndicator,omitempty"`
-	ATSSSCapability *AtsssCapability `json:"aTSSSCapability,omitempty"`
+	ATSSSCapability       *AtsssCapability `json:"aTSSSCapability,omitempty"`
 }
 
 // NewMAPDUSessionInformation instantiates a new MAPDUSessionInformation object
@@ -42,7 +42,7 @@ func NewMAPDUSessionInformationWithDefaults() *MAPDUSessionInformation {
 
 // GetMAPDUSessionIndicator returns the MAPDUSessionIndicator field value if set, zero value otherwise.
 func (o *MAPDUSessionInformation) GetMAPDUSessionIndicator() MaPduIndication {
-	if o == nil || isNil(o.MAPDUSessionIndicator) {
+	if o == nil || IsNil(o.MAPDUSessionIndicator) {
 		var ret MaPduIndication
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MAPDUSessionInformation) GetMAPDUSessionIndicator() MaPduIndication {
 // GetMAPDUSessionIndicatorOk returns a tuple with the MAPDUSessionIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MAPDUSessionInformation) GetMAPDUSessionIndicatorOk() (*MaPduIndication, bool) {
-	if o == nil || isNil(o.MAPDUSessionIndicator) {
+	if o == nil || IsNil(o.MAPDUSessionIndicator) {
 		return nil, false
 	}
 	return o.MAPDUSessionIndicator, true
@@ -60,7 +60,7 @@ func (o *MAPDUSessionInformation) GetMAPDUSessionIndicatorOk() (*MaPduIndication
 
 // HasMAPDUSessionIndicator returns a boolean if a field has been set.
 func (o *MAPDUSessionInformation) HasMAPDUSessionIndicator() bool {
-	if o != nil && !isNil(o.MAPDUSessionIndicator) {
+	if o != nil && !IsNil(o.MAPDUSessionIndicator) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MAPDUSessionInformation) SetMAPDUSessionIndicator(v MaPduIndication) {
 
 // GetATSSSCapability returns the ATSSSCapability field value if set, zero value otherwise.
 func (o *MAPDUSessionInformation) GetATSSSCapability() AtsssCapability {
-	if o == nil || isNil(o.ATSSSCapability) {
+	if o == nil || IsNil(o.ATSSSCapability) {
 		var ret AtsssCapability
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MAPDUSessionInformation) GetATSSSCapability() AtsssCapability {
 // GetATSSSCapabilityOk returns a tuple with the ATSSSCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MAPDUSessionInformation) GetATSSSCapabilityOk() (*AtsssCapability, bool) {
-	if o == nil || isNil(o.ATSSSCapability) {
+	if o == nil || IsNil(o.ATSSSCapability) {
 		return nil, false
 	}
 	return o.ATSSSCapability, true
@@ -92,7 +92,7 @@ func (o *MAPDUSessionInformation) GetATSSSCapabilityOk() (*AtsssCapability, bool
 
 // HasATSSSCapability returns a boolean if a field has been set.
 func (o *MAPDUSessionInformation) HasATSSSCapability() bool {
-	if o != nil && !isNil(o.ATSSSCapability) {
+	if o != nil && !IsNil(o.ATSSSCapability) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *MAPDUSessionInformation) SetATSSSCapability(v AtsssCapability) {
 }
 
 func (o MAPDUSessionInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o MAPDUSessionInformation) MarshalJSON() ([]byte, error) {
 
 func (o MAPDUSessionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MAPDUSessionIndicator) {
+	if !IsNil(o.MAPDUSessionIndicator) {
 		toSerialize["mAPDUSessionIndicator"] = o.MAPDUSessionIndicator
 	}
-	if !isNil(o.ATSSSCapability) {
+	if !IsNil(o.ATSSSCapability) {
 		toSerialize["aTSSSCapability"] = o.ATSSSCapability
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableMAPDUSessionInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

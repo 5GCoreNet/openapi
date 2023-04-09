@@ -19,25 +19,21 @@ var _ MappedNullable = &NotifyAckStateChanged{}
 
 // NotifyAckStateChanged struct for NotifyAckStateChanged
 type NotifyAckStateChanged struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	AlarmId string `json:"alarmId"`
-	AlarmType AlarmType `json:"alarmType"`
-	ProbableCause ProbableCause `json:"probableCause"`
+	NotificationHeader
+	AlarmId           string            `json:"alarmId"`
+	AlarmType         AlarmType         `json:"alarmType"`
+	ProbableCause     ProbableCause     `json:"probableCause"`
 	PerceivedSeverity PerceivedSeverity `json:"perceivedSeverity"`
-	AckState AckState `json:"ackState"`
-	AckUserId string `json:"ackUserId"`
-	AckSystemId *string `json:"ackSystemId,omitempty"`
+	AckState          AckState          `json:"ackState"`
+	AckUserId         string            `json:"ackUserId"`
+	AckSystemId       *string           `json:"ackSystemId,omitempty"`
 }
 
 // NewNotifyAckStateChanged instantiates a new NotifyAckStateChanged object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyAckStateChanged(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, alarmId string, alarmType AlarmType, probableCause ProbableCause, perceivedSeverity PerceivedSeverity, ackState AckState, ackUserId string) *NotifyAckStateChanged {
+func NewNotifyAckStateChanged(alarmId string, alarmType AlarmType, probableCause ProbableCause, perceivedSeverity PerceivedSeverity, ackState AckState, ackUserId string, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyAckStateChanged {
 	this := NotifyAckStateChanged{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -59,126 +55,6 @@ func NewNotifyAckStateChanged(href string, notificationId int32, notificationTyp
 func NewNotifyAckStateChangedWithDefaults() *NotifyAckStateChanged {
 	this := NotifyAckStateChanged{}
 	return &this
-}
-
-// GetHref returns the Href field value
-func (o *NotifyAckStateChanged) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAckStateChanged) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyAckStateChanged) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyAckStateChanged) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAckStateChanged) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyAckStateChanged) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyAckStateChanged) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAckStateChanged) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyAckStateChanged) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyAckStateChanged) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAckStateChanged) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyAckStateChanged) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyAckStateChanged) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAckStateChanged) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyAckStateChanged) SetSystemDN(v string) {
-	o.SystemDN = v
 }
 
 // GetAlarmId returns the AlarmId field value
@@ -327,7 +203,7 @@ func (o *NotifyAckStateChanged) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *NotifyAckStateChanged) GetAckSystemId() string {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -337,7 +213,7 @@ func (o *NotifyAckStateChanged) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAckStateChanged) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -345,7 +221,7 @@ func (o *NotifyAckStateChanged) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *NotifyAckStateChanged) HasAckSystemId() bool {
-	if o != nil && !isNil(o.AckSystemId) {
+	if o != nil && !IsNil(o.AckSystemId) {
 		return true
 	}
 
@@ -358,7 +234,7 @@ func (o *NotifyAckStateChanged) SetAckSystemId(v string) {
 }
 
 func (o NotifyAckStateChanged) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -367,18 +243,21 @@ func (o NotifyAckStateChanged) MarshalJSON() ([]byte, error) {
 
 func (o NotifyAckStateChanged) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
 	toSerialize["alarmId"] = o.AlarmId
 	toSerialize["alarmType"] = o.AlarmType
 	toSerialize["probableCause"] = o.ProbableCause
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity
 	toSerialize["ackState"] = o.AckState
 	toSerialize["ackUserId"] = o.AckUserId
-	if !isNil(o.AckSystemId) {
+	if !IsNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
 	return toSerialize, nil
@@ -419,5 +298,3 @@ func (v *NullableNotifyAckStateChanged) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

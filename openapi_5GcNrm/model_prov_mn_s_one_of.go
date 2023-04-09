@@ -41,7 +41,7 @@ func NewProvMnSOneOfWithDefaults() *ProvMnSOneOf {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *ProvMnSOneOf) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProvMnSOneOf) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvMnSOneOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -59,7 +59,7 @@ func (o *ProvMnSOneOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *ProvMnSOneOf) HasSubNetwork() bool {
-	if o != nil && !isNil(o.SubNetwork) {
+	if o != nil && !IsNil(o.SubNetwork) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ProvMnSOneOf) SetSubNetwork(v []SubNetworkSingle) {
 }
 
 func (o ProvMnSOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ProvMnSOneOf) MarshalJSON() ([]byte, error) {
 
 func (o ProvMnSOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubNetwork) {
+	if !IsNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableProvMnSOneOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,22 +19,22 @@ var _ MappedNullable = &BdtData{}
 
 // BdtData Contains the background data transfer data.
 type BdtData struct {
-	AspId string `json:"aspId"`
+	AspId       string         `json:"aspId"`
 	TransPolicy TransferPolicy `json:"transPolicy"`
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
-	BdtRefId *string `json:"bdtRefId,omitempty"`
+	BdtRefId   *string           `json:"bdtRefId,omitempty"`
 	NwAreaInfo *NetworkAreaInfo2 `json:"nwAreaInfo,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	NumOfUes *int32 `json:"numOfUes,omitempty"`
+	NumOfUes *int32          `json:"numOfUes,omitempty"`
 	VolPerUe *UsageThreshold `json:"volPerUe,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
 	// Identify a traffic descriptor as defined in Figure 5.2.2 of 3GPP TS 24.526, octets v+5 to w.
-	TrafficDes *string `json:"trafficDes,omitempty"`
+	TrafficDes *string          `json:"trafficDes,omitempty"`
 	BdtpStatus *BdtPolicyStatus `json:"bdtpStatus,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SuppFeat *string `json:"suppFeat,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SuppFeat *string  `json:"suppFeat,omitempty"`
 	ResetIds []string `json:"resetIds,omitempty"`
 }
 
@@ -107,7 +107,7 @@ func (o *BdtData) SetTransPolicy(v TransferPolicy) {
 
 // GetBdtRefId returns the BdtRefId field value if set, zero value otherwise.
 func (o *BdtData) GetBdtRefId() string {
-	if o == nil || isNil(o.BdtRefId) {
+	if o == nil || IsNil(o.BdtRefId) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *BdtData) GetBdtRefId() string {
 // GetBdtRefIdOk returns a tuple with the BdtRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetBdtRefIdOk() (*string, bool) {
-	if o == nil || isNil(o.BdtRefId) {
+	if o == nil || IsNil(o.BdtRefId) {
 		return nil, false
 	}
 	return o.BdtRefId, true
@@ -125,7 +125,7 @@ func (o *BdtData) GetBdtRefIdOk() (*string, bool) {
 
 // HasBdtRefId returns a boolean if a field has been set.
 func (o *BdtData) HasBdtRefId() bool {
-	if o != nil && !isNil(o.BdtRefId) {
+	if o != nil && !IsNil(o.BdtRefId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *BdtData) SetBdtRefId(v string) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *BdtData) GetNwAreaInfo() NetworkAreaInfo2 {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo2
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *BdtData) GetNwAreaInfo() NetworkAreaInfo2 {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetNwAreaInfoOk() (*NetworkAreaInfo2, bool) {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -157,7 +157,7 @@ func (o *BdtData) GetNwAreaInfoOk() (*NetworkAreaInfo2, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *BdtData) HasNwAreaInfo() bool {
-	if o != nil && !isNil(o.NwAreaInfo) {
+	if o != nil && !IsNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *BdtData) SetNwAreaInfo(v NetworkAreaInfo2) {
 
 // GetNumOfUes returns the NumOfUes field value if set, zero value otherwise.
 func (o *BdtData) GetNumOfUes() int32 {
-	if o == nil || isNil(o.NumOfUes) {
+	if o == nil || IsNil(o.NumOfUes) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *BdtData) GetNumOfUes() int32 {
 // GetNumOfUesOk returns a tuple with the NumOfUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetNumOfUesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumOfUes) {
+	if o == nil || IsNil(o.NumOfUes) {
 		return nil, false
 	}
 	return o.NumOfUes, true
@@ -189,7 +189,7 @@ func (o *BdtData) GetNumOfUesOk() (*int32, bool) {
 
 // HasNumOfUes returns a boolean if a field has been set.
 func (o *BdtData) HasNumOfUes() bool {
-	if o != nil && !isNil(o.NumOfUes) {
+	if o != nil && !IsNil(o.NumOfUes) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *BdtData) SetNumOfUes(v int32) {
 
 // GetVolPerUe returns the VolPerUe field value if set, zero value otherwise.
 func (o *BdtData) GetVolPerUe() UsageThreshold {
-	if o == nil || isNil(o.VolPerUe) {
+	if o == nil || IsNil(o.VolPerUe) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *BdtData) GetVolPerUe() UsageThreshold {
 // GetVolPerUeOk returns a tuple with the VolPerUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetVolPerUeOk() (*UsageThreshold, bool) {
-	if o == nil || isNil(o.VolPerUe) {
+	if o == nil || IsNil(o.VolPerUe) {
 		return nil, false
 	}
 	return o.VolPerUe, true
@@ -221,7 +221,7 @@ func (o *BdtData) GetVolPerUeOk() (*UsageThreshold, bool) {
 
 // HasVolPerUe returns a boolean if a field has been set.
 func (o *BdtData) HasVolPerUe() bool {
-	if o != nil && !isNil(o.VolPerUe) {
+	if o != nil && !IsNil(o.VolPerUe) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *BdtData) SetVolPerUe(v UsageThreshold) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *BdtData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *BdtData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -253,7 +253,7 @@ func (o *BdtData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *BdtData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *BdtData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *BdtData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *BdtData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -285,7 +285,7 @@ func (o *BdtData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *BdtData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *BdtData) SetSnssai(v Snssai) {
 
 // GetTrafficDes returns the TrafficDes field value if set, zero value otherwise.
 func (o *BdtData) GetTrafficDes() string {
-	if o == nil || isNil(o.TrafficDes) {
+	if o == nil || IsNil(o.TrafficDes) {
 		var ret string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *BdtData) GetTrafficDes() string {
 // GetTrafficDesOk returns a tuple with the TrafficDes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetTrafficDesOk() (*string, bool) {
-	if o == nil || isNil(o.TrafficDes) {
+	if o == nil || IsNil(o.TrafficDes) {
 		return nil, false
 	}
 	return o.TrafficDes, true
@@ -317,7 +317,7 @@ func (o *BdtData) GetTrafficDesOk() (*string, bool) {
 
 // HasTrafficDes returns a boolean if a field has been set.
 func (o *BdtData) HasTrafficDes() bool {
-	if o != nil && !isNil(o.TrafficDes) {
+	if o != nil && !IsNil(o.TrafficDes) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *BdtData) SetTrafficDes(v string) {
 
 // GetBdtpStatus returns the BdtpStatus field value if set, zero value otherwise.
 func (o *BdtData) GetBdtpStatus() BdtPolicyStatus {
-	if o == nil || isNil(o.BdtpStatus) {
+	if o == nil || IsNil(o.BdtpStatus) {
 		var ret BdtPolicyStatus
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *BdtData) GetBdtpStatus() BdtPolicyStatus {
 // GetBdtpStatusOk returns a tuple with the BdtpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
-	if o == nil || isNil(o.BdtpStatus) {
+	if o == nil || IsNil(o.BdtpStatus) {
 		return nil, false
 	}
 	return o.BdtpStatus, true
@@ -349,7 +349,7 @@ func (o *BdtData) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
 
 // HasBdtpStatus returns a boolean if a field has been set.
 func (o *BdtData) HasBdtpStatus() bool {
-	if o != nil && !isNil(o.BdtpStatus) {
+	if o != nil && !IsNil(o.BdtpStatus) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *BdtData) SetBdtpStatus(v BdtPolicyStatus) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BdtData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *BdtData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -381,7 +381,7 @@ func (o *BdtData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BdtData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *BdtData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *BdtData) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *BdtData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -413,7 +413,7 @@ func (o *BdtData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *BdtData) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -426,7 +426,7 @@ func (o *BdtData) SetResetIds(v []string) {
 }
 
 func (o BdtData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -437,34 +437,34 @@ func (o BdtData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aspId"] = o.AspId
 	toSerialize["transPolicy"] = o.TransPolicy
-	if !isNil(o.BdtRefId) {
+	if !IsNil(o.BdtRefId) {
 		toSerialize["bdtRefId"] = o.BdtRefId
 	}
-	if !isNil(o.NwAreaInfo) {
+	if !IsNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
-	if !isNil(o.NumOfUes) {
+	if !IsNil(o.NumOfUes) {
 		toSerialize["numOfUes"] = o.NumOfUes
 	}
-	if !isNil(o.VolPerUe) {
+	if !IsNil(o.VolPerUe) {
 		toSerialize["volPerUe"] = o.VolPerUe
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.TrafficDes) {
+	if !IsNil(o.TrafficDes) {
 		toSerialize["trafficDes"] = o.TrafficDes
 	}
-	if !isNil(o.BdtpStatus) {
+	if !IsNil(o.BdtpStatus) {
 		toSerialize["bdtpStatus"] = o.BdtpStatus
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -505,5 +505,3 @@ func (v *NullableBdtData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

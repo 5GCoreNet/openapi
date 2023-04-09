@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,42 +21,42 @@ var _ MappedNullable = &QosData{}
 type QosData struct {
 	// Univocally identifies the QoS control policy data within a PDU session.
 	QosId string `json:"qosId"`
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi *int32 `json:"5qi,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxbrUl NullableString `json:"maxbrUl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxbrDl NullableString `json:"maxbrDl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	GbrUl NullableString `json:"gbrUl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	GbrDl NullableString `json:"gbrDl,omitempty"`
-	Arp *Arp `json:"arp,omitempty"`
-	// Indicates whether notifications are requested from 3GPP NG-RAN when the GFBR can no longer (or again) be guaranteed for a QoS Flow during the lifetime of the QoS Flow. 
+	Arp   *Arp           `json:"arp,omitempty"`
+	// Indicates whether notifications are requested from 3GPP NG-RAN when the GFBR can no longer (or again) be guaranteed for a QoS Flow during the lifetime of the QoS Flow.
 	Qnc *bool `json:"qnc,omitempty"`
-	// This data type is defined in the same way as the '5QiPriorityLevel' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the '5QiPriorityLevel' data type, but with the OpenAPI 'nullable: true' property.
 	PriorityLevel NullableInt32 `json:"priorityLevel,omitempty"`
-	// This data type is defined in the same way as the 'AverWindow' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'AverWindow' data type, but with the OpenAPI 'nullable: true' property.
 	AverWindow NullableInt32 `json:"averWindow,omitempty"`
-	// This data type is defined in the same way as the 'MaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'MaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property.
 	MaxDataBurstVol NullableInt32 `json:"maxDataBurstVol,omitempty"`
-	// Indicates whether the QoS information is reflective for the corresponding service data  flow. 
+	// Indicates whether the QoS information is reflective for the corresponding service data  flow.
 	ReflectiveQos *bool `json:"reflectiveQos,omitempty"`
-	// Indicates, by containing the same value, what PCC rules may share resource in downlink  direction. 
+	// Indicates, by containing the same value, what PCC rules may share resource in downlink  direction.
 	SharingKeyDl *string `json:"sharingKeyDl,omitempty"`
-	// Indicates, by containing the same value, what PCC rules may share resource in uplink  direction. 
+	// Indicates, by containing the same value, what PCC rules may share resource in uplink  direction.
 	SharingKeyUl *string `json:"sharingKeyUl,omitempty"`
-	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxPacketLossRateDl NullableInt32 `json:"maxPacketLossRateDl,omitempty"`
-	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxPacketLossRateUl NullableInt32 `json:"maxPacketLossRateUl,omitempty"`
-	// Indicates that the dynamic PCC rule shall always have its binding with the QoS Flow  associated with the default QoS rule 
+	// Indicates that the dynamic PCC rule shall always have its binding with the QoS Flow  associated with the default QoS rule
 	DefQosFlowIndication *bool `json:"defQosFlowIndication,omitempty"`
-	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property.
 	ExtMaxDataBurstVol NullableInt32 `json:"extMaxDataBurstVol,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	PacketDelayBudget *int32 `json:"packetDelayBudget,omitempty"`
-	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit. 
+	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit.
 	PacketErrorRate *string `json:"packetErrorRate,omitempty"`
 }
 
@@ -108,7 +108,7 @@ func (o *QosData) SetQosId(v string) {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *QosData) GetVar5qi() int32 {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *QosData) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetVar5qiOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -126,7 +126,7 @@ func (o *QosData) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *QosData) HasVar5qi() bool {
-	if o != nil && !isNil(o.Var5qi) {
+	if o != nil && !IsNil(o.Var5qi) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *QosData) SetVar5qi(v int32) {
 
 // GetMaxbrUl returns the MaxbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxbrUl() string {
-	if o == nil || isNil(o.MaxbrUl.Get()) {
+	if o == nil || IsNil(o.MaxbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -170,6 +170,7 @@ func (o *QosData) HasMaxbrUl() bool {
 func (o *QosData) SetMaxbrUl(v string) {
 	o.MaxbrUl.Set(&v)
 }
+
 // SetMaxbrUlNil sets the value for MaxbrUl to be an explicit nil
 func (o *QosData) SetMaxbrUlNil() {
 	o.MaxbrUl.Set(nil)
@@ -182,7 +183,7 @@ func (o *QosData) UnsetMaxbrUl() {
 
 // GetMaxbrDl returns the MaxbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxbrDl() string {
-	if o == nil || isNil(o.MaxbrDl.Get()) {
+	if o == nil || IsNil(o.MaxbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -212,6 +213,7 @@ func (o *QosData) HasMaxbrDl() bool {
 func (o *QosData) SetMaxbrDl(v string) {
 	o.MaxbrDl.Set(&v)
 }
+
 // SetMaxbrDlNil sets the value for MaxbrDl to be an explicit nil
 func (o *QosData) SetMaxbrDlNil() {
 	o.MaxbrDl.Set(nil)
@@ -224,7 +226,7 @@ func (o *QosData) UnsetMaxbrDl() {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetGbrUl() string {
-	if o == nil || isNil(o.GbrUl.Get()) {
+	if o == nil || IsNil(o.GbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -254,6 +256,7 @@ func (o *QosData) HasGbrUl() bool {
 func (o *QosData) SetGbrUl(v string) {
 	o.GbrUl.Set(&v)
 }
+
 // SetGbrUlNil sets the value for GbrUl to be an explicit nil
 func (o *QosData) SetGbrUlNil() {
 	o.GbrUl.Set(nil)
@@ -266,7 +269,7 @@ func (o *QosData) UnsetGbrUl() {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetGbrDl() string {
-	if o == nil || isNil(o.GbrDl.Get()) {
+	if o == nil || IsNil(o.GbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -296,6 +299,7 @@ func (o *QosData) HasGbrDl() bool {
 func (o *QosData) SetGbrDl(v string) {
 	o.GbrDl.Set(&v)
 }
+
 // SetGbrDlNil sets the value for GbrDl to be an explicit nil
 func (o *QosData) SetGbrDlNil() {
 	o.GbrDl.Set(nil)
@@ -308,7 +312,7 @@ func (o *QosData) UnsetGbrDl() {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *QosData) GetArp() Arp {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -318,7 +322,7 @@ func (o *QosData) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -326,7 +330,7 @@ func (o *QosData) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *QosData) HasArp() bool {
-	if o != nil && !isNil(o.Arp) {
+	if o != nil && !IsNil(o.Arp) {
 		return true
 	}
 
@@ -340,7 +344,7 @@ func (o *QosData) SetArp(v Arp) {
 
 // GetQnc returns the Qnc field value if set, zero value otherwise.
 func (o *QosData) GetQnc() bool {
-	if o == nil || isNil(o.Qnc) {
+	if o == nil || IsNil(o.Qnc) {
 		var ret bool
 		return ret
 	}
@@ -350,7 +354,7 @@ func (o *QosData) GetQnc() bool {
 // GetQncOk returns a tuple with the Qnc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetQncOk() (*bool, bool) {
-	if o == nil || isNil(o.Qnc) {
+	if o == nil || IsNil(o.Qnc) {
 		return nil, false
 	}
 	return o.Qnc, true
@@ -358,7 +362,7 @@ func (o *QosData) GetQncOk() (*bool, bool) {
 
 // HasQnc returns a boolean if a field has been set.
 func (o *QosData) HasQnc() bool {
-	if o != nil && !isNil(o.Qnc) {
+	if o != nil && !IsNil(o.Qnc) {
 		return true
 	}
 
@@ -372,7 +376,7 @@ func (o *QosData) SetQnc(v bool) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetPriorityLevel() int32 {
-	if o == nil || isNil(o.PriorityLevel.Get()) {
+	if o == nil || IsNil(o.PriorityLevel.Get()) {
 		var ret int32
 		return ret
 	}
@@ -402,6 +406,7 @@ func (o *QosData) HasPriorityLevel() bool {
 func (o *QosData) SetPriorityLevel(v int32) {
 	o.PriorityLevel.Set(&v)
 }
+
 // SetPriorityLevelNil sets the value for PriorityLevel to be an explicit nil
 func (o *QosData) SetPriorityLevelNil() {
 	o.PriorityLevel.Set(nil)
@@ -414,7 +419,7 @@ func (o *QosData) UnsetPriorityLevel() {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetAverWindow() int32 {
-	if o == nil || isNil(o.AverWindow.Get()) {
+	if o == nil || IsNil(o.AverWindow.Get()) {
 		var ret int32
 		return ret
 	}
@@ -444,6 +449,7 @@ func (o *QosData) HasAverWindow() bool {
 func (o *QosData) SetAverWindow(v int32) {
 	o.AverWindow.Set(&v)
 }
+
 // SetAverWindowNil sets the value for AverWindow to be an explicit nil
 func (o *QosData) SetAverWindowNil() {
 	o.AverWindow.Set(nil)
@@ -456,7 +462,7 @@ func (o *QosData) UnsetAverWindow() {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.MaxDataBurstVol.Get()) {
+	if o == nil || IsNil(o.MaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -486,6 +492,7 @@ func (o *QosData) HasMaxDataBurstVol() bool {
 func (o *QosData) SetMaxDataBurstVol(v int32) {
 	o.MaxDataBurstVol.Set(&v)
 }
+
 // SetMaxDataBurstVolNil sets the value for MaxDataBurstVol to be an explicit nil
 func (o *QosData) SetMaxDataBurstVolNil() {
 	o.MaxDataBurstVol.Set(nil)
@@ -498,7 +505,7 @@ func (o *QosData) UnsetMaxDataBurstVol() {
 
 // GetReflectiveQos returns the ReflectiveQos field value if set, zero value otherwise.
 func (o *QosData) GetReflectiveQos() bool {
-	if o == nil || isNil(o.ReflectiveQos) {
+	if o == nil || IsNil(o.ReflectiveQos) {
 		var ret bool
 		return ret
 	}
@@ -508,7 +515,7 @@ func (o *QosData) GetReflectiveQos() bool {
 // GetReflectiveQosOk returns a tuple with the ReflectiveQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetReflectiveQosOk() (*bool, bool) {
-	if o == nil || isNil(o.ReflectiveQos) {
+	if o == nil || IsNil(o.ReflectiveQos) {
 		return nil, false
 	}
 	return o.ReflectiveQos, true
@@ -516,7 +523,7 @@ func (o *QosData) GetReflectiveQosOk() (*bool, bool) {
 
 // HasReflectiveQos returns a boolean if a field has been set.
 func (o *QosData) HasReflectiveQos() bool {
-	if o != nil && !isNil(o.ReflectiveQos) {
+	if o != nil && !IsNil(o.ReflectiveQos) {
 		return true
 	}
 
@@ -530,7 +537,7 @@ func (o *QosData) SetReflectiveQos(v bool) {
 
 // GetSharingKeyDl returns the SharingKeyDl field value if set, zero value otherwise.
 func (o *QosData) GetSharingKeyDl() string {
-	if o == nil || isNil(o.SharingKeyDl) {
+	if o == nil || IsNil(o.SharingKeyDl) {
 		var ret string
 		return ret
 	}
@@ -540,7 +547,7 @@ func (o *QosData) GetSharingKeyDl() string {
 // GetSharingKeyDlOk returns a tuple with the SharingKeyDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetSharingKeyDlOk() (*string, bool) {
-	if o == nil || isNil(o.SharingKeyDl) {
+	if o == nil || IsNil(o.SharingKeyDl) {
 		return nil, false
 	}
 	return o.SharingKeyDl, true
@@ -548,7 +555,7 @@ func (o *QosData) GetSharingKeyDlOk() (*string, bool) {
 
 // HasSharingKeyDl returns a boolean if a field has been set.
 func (o *QosData) HasSharingKeyDl() bool {
-	if o != nil && !isNil(o.SharingKeyDl) {
+	if o != nil && !IsNil(o.SharingKeyDl) {
 		return true
 	}
 
@@ -562,7 +569,7 @@ func (o *QosData) SetSharingKeyDl(v string) {
 
 // GetSharingKeyUl returns the SharingKeyUl field value if set, zero value otherwise.
 func (o *QosData) GetSharingKeyUl() string {
-	if o == nil || isNil(o.SharingKeyUl) {
+	if o == nil || IsNil(o.SharingKeyUl) {
 		var ret string
 		return ret
 	}
@@ -572,7 +579,7 @@ func (o *QosData) GetSharingKeyUl() string {
 // GetSharingKeyUlOk returns a tuple with the SharingKeyUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetSharingKeyUlOk() (*string, bool) {
-	if o == nil || isNil(o.SharingKeyUl) {
+	if o == nil || IsNil(o.SharingKeyUl) {
 		return nil, false
 	}
 	return o.SharingKeyUl, true
@@ -580,7 +587,7 @@ func (o *QosData) GetSharingKeyUlOk() (*string, bool) {
 
 // HasSharingKeyUl returns a boolean if a field has been set.
 func (o *QosData) HasSharingKeyUl() bool {
-	if o != nil && !isNil(o.SharingKeyUl) {
+	if o != nil && !IsNil(o.SharingKeyUl) {
 		return true
 	}
 
@@ -594,7 +601,7 @@ func (o *QosData) SetSharingKeyUl(v string) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxPacketLossRateDl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateDl.Get()) {
+	if o == nil || IsNil(o.MaxPacketLossRateDl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -624,6 +631,7 @@ func (o *QosData) HasMaxPacketLossRateDl() bool {
 func (o *QosData) SetMaxPacketLossRateDl(v int32) {
 	o.MaxPacketLossRateDl.Set(&v)
 }
+
 // SetMaxPacketLossRateDlNil sets the value for MaxPacketLossRateDl to be an explicit nil
 func (o *QosData) SetMaxPacketLossRateDlNil() {
 	o.MaxPacketLossRateDl.Set(nil)
@@ -636,7 +644,7 @@ func (o *QosData) UnsetMaxPacketLossRateDl() {
 
 // GetMaxPacketLossRateUl returns the MaxPacketLossRateUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxPacketLossRateUl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateUl.Get()) {
+	if o == nil || IsNil(o.MaxPacketLossRateUl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -666,6 +674,7 @@ func (o *QosData) HasMaxPacketLossRateUl() bool {
 func (o *QosData) SetMaxPacketLossRateUl(v int32) {
 	o.MaxPacketLossRateUl.Set(&v)
 }
+
 // SetMaxPacketLossRateUlNil sets the value for MaxPacketLossRateUl to be an explicit nil
 func (o *QosData) SetMaxPacketLossRateUlNil() {
 	o.MaxPacketLossRateUl.Set(nil)
@@ -678,7 +687,7 @@ func (o *QosData) UnsetMaxPacketLossRateUl() {
 
 // GetDefQosFlowIndication returns the DefQosFlowIndication field value if set, zero value otherwise.
 func (o *QosData) GetDefQosFlowIndication() bool {
-	if o == nil || isNil(o.DefQosFlowIndication) {
+	if o == nil || IsNil(o.DefQosFlowIndication) {
 		var ret bool
 		return ret
 	}
@@ -688,7 +697,7 @@ func (o *QosData) GetDefQosFlowIndication() bool {
 // GetDefQosFlowIndicationOk returns a tuple with the DefQosFlowIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetDefQosFlowIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.DefQosFlowIndication) {
+	if o == nil || IsNil(o.DefQosFlowIndication) {
 		return nil, false
 	}
 	return o.DefQosFlowIndication, true
@@ -696,7 +705,7 @@ func (o *QosData) GetDefQosFlowIndicationOk() (*bool, bool) {
 
 // HasDefQosFlowIndication returns a boolean if a field has been set.
 func (o *QosData) HasDefQosFlowIndication() bool {
-	if o != nil && !isNil(o.DefQosFlowIndication) {
+	if o != nil && !IsNil(o.DefQosFlowIndication) {
 		return true
 	}
 
@@ -710,7 +719,7 @@ func (o *QosData) SetDefQosFlowIndication(v bool) {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetExtMaxDataBurstVol() int32 {
-	if o == nil || isNil(o.ExtMaxDataBurstVol.Get()) {
+	if o == nil || IsNil(o.ExtMaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -740,6 +749,7 @@ func (o *QosData) HasExtMaxDataBurstVol() bool {
 func (o *QosData) SetExtMaxDataBurstVol(v int32) {
 	o.ExtMaxDataBurstVol.Set(&v)
 }
+
 // SetExtMaxDataBurstVolNil sets the value for ExtMaxDataBurstVol to be an explicit nil
 func (o *QosData) SetExtMaxDataBurstVolNil() {
 	o.ExtMaxDataBurstVol.Set(nil)
@@ -752,7 +762,7 @@ func (o *QosData) UnsetExtMaxDataBurstVol() {
 
 // GetPacketDelayBudget returns the PacketDelayBudget field value if set, zero value otherwise.
 func (o *QosData) GetPacketDelayBudget() int32 {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		var ret int32
 		return ret
 	}
@@ -762,7 +772,7 @@ func (o *QosData) GetPacketDelayBudget() int32 {
 // GetPacketDelayBudgetOk returns a tuple with the PacketDelayBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetPacketDelayBudgetOk() (*int32, bool) {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		return nil, false
 	}
 	return o.PacketDelayBudget, true
@@ -770,7 +780,7 @@ func (o *QosData) GetPacketDelayBudgetOk() (*int32, bool) {
 
 // HasPacketDelayBudget returns a boolean if a field has been set.
 func (o *QosData) HasPacketDelayBudget() bool {
-	if o != nil && !isNil(o.PacketDelayBudget) {
+	if o != nil && !IsNil(o.PacketDelayBudget) {
 		return true
 	}
 
@@ -784,7 +794,7 @@ func (o *QosData) SetPacketDelayBudget(v int32) {
 
 // GetPacketErrorRate returns the PacketErrorRate field value if set, zero value otherwise.
 func (o *QosData) GetPacketErrorRate() string {
-	if o == nil || isNil(o.PacketErrorRate) {
+	if o == nil || IsNil(o.PacketErrorRate) {
 		var ret string
 		return ret
 	}
@@ -794,7 +804,7 @@ func (o *QosData) GetPacketErrorRate() string {
 // GetPacketErrorRateOk returns a tuple with the PacketErrorRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetPacketErrorRateOk() (*string, bool) {
-	if o == nil || isNil(o.PacketErrorRate) {
+	if o == nil || IsNil(o.PacketErrorRate) {
 		return nil, false
 	}
 	return o.PacketErrorRate, true
@@ -802,7 +812,7 @@ func (o *QosData) GetPacketErrorRateOk() (*string, bool) {
 
 // HasPacketErrorRate returns a boolean if a field has been set.
 func (o *QosData) HasPacketErrorRate() bool {
-	if o != nil && !isNil(o.PacketErrorRate) {
+	if o != nil && !IsNil(o.PacketErrorRate) {
 		return true
 	}
 
@@ -815,7 +825,7 @@ func (o *QosData) SetPacketErrorRate(v string) {
 }
 
 func (o QosData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -825,7 +835,7 @@ func (o QosData) MarshalJSON() ([]byte, error) {
 func (o QosData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qosId"] = o.QosId
-	if !isNil(o.Var5qi) {
+	if !IsNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
 	if o.MaxbrUl.IsSet() {
@@ -840,10 +850,10 @@ func (o QosData) ToMap() (map[string]interface{}, error) {
 	if o.GbrDl.IsSet() {
 		toSerialize["gbrDl"] = o.GbrDl.Get()
 	}
-	if !isNil(o.Arp) {
+	if !IsNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !isNil(o.Qnc) {
+	if !IsNil(o.Qnc) {
 		toSerialize["qnc"] = o.Qnc
 	}
 	if o.PriorityLevel.IsSet() {
@@ -855,13 +865,13 @@ func (o QosData) ToMap() (map[string]interface{}, error) {
 	if o.MaxDataBurstVol.IsSet() {
 		toSerialize["maxDataBurstVol"] = o.MaxDataBurstVol.Get()
 	}
-	if !isNil(o.ReflectiveQos) {
+	if !IsNil(o.ReflectiveQos) {
 		toSerialize["reflectiveQos"] = o.ReflectiveQos
 	}
-	if !isNil(o.SharingKeyDl) {
+	if !IsNil(o.SharingKeyDl) {
 		toSerialize["sharingKeyDl"] = o.SharingKeyDl
 	}
-	if !isNil(o.SharingKeyUl) {
+	if !IsNil(o.SharingKeyUl) {
 		toSerialize["sharingKeyUl"] = o.SharingKeyUl
 	}
 	if o.MaxPacketLossRateDl.IsSet() {
@@ -870,16 +880,16 @@ func (o QosData) ToMap() (map[string]interface{}, error) {
 	if o.MaxPacketLossRateUl.IsSet() {
 		toSerialize["maxPacketLossRateUl"] = o.MaxPacketLossRateUl.Get()
 	}
-	if !isNil(o.DefQosFlowIndication) {
+	if !IsNil(o.DefQosFlowIndication) {
 		toSerialize["defQosFlowIndication"] = o.DefQosFlowIndication
 	}
 	if o.ExtMaxDataBurstVol.IsSet() {
 		toSerialize["extMaxDataBurstVol"] = o.ExtMaxDataBurstVol.Get()
 	}
-	if !isNil(o.PacketDelayBudget) {
+	if !IsNil(o.PacketDelayBudget) {
 		toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	}
-	if !isNil(o.PacketErrorRate) {
+	if !IsNil(o.PacketErrorRate) {
 		toSerialize["packetErrorRate"] = o.PacketErrorRate
 	}
 	return toSerialize, nil
@@ -920,5 +930,3 @@ func (v *NullableQosData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

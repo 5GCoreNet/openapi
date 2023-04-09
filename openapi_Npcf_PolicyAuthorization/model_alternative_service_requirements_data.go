@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,11 +21,11 @@ var _ MappedNullable = &AlternativeServiceRequirementsData{}
 type AlternativeServiceRequirementsData struct {
 	// Reference to this alternative QoS related parameter set.
 	AltQosParamSetRef string `json:"altQosParamSetRef"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GbrUl *string `json:"gbrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GbrDl *string `json:"gbrDl,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	Pdb *int32 `json:"pdb,omitempty"`
 }
 
@@ -73,7 +73,7 @@ func (o *AlternativeServiceRequirementsData) SetAltQosParamSetRef(v string) {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise.
 func (o *AlternativeServiceRequirementsData) GetGbrUl() string {
-	if o == nil || isNil(o.GbrUl) {
+	if o == nil || IsNil(o.GbrUl) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *AlternativeServiceRequirementsData) GetGbrUl() string {
 // GetGbrUlOk returns a tuple with the GbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeServiceRequirementsData) GetGbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.GbrUl) {
+	if o == nil || IsNil(o.GbrUl) {
 		return nil, false
 	}
 	return o.GbrUl, true
@@ -91,7 +91,7 @@ func (o *AlternativeServiceRequirementsData) GetGbrUlOk() (*string, bool) {
 
 // HasGbrUl returns a boolean if a field has been set.
 func (o *AlternativeServiceRequirementsData) HasGbrUl() bool {
-	if o != nil && !isNil(o.GbrUl) {
+	if o != nil && !IsNil(o.GbrUl) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *AlternativeServiceRequirementsData) SetGbrUl(v string) {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise.
 func (o *AlternativeServiceRequirementsData) GetGbrDl() string {
-	if o == nil || isNil(o.GbrDl) {
+	if o == nil || IsNil(o.GbrDl) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *AlternativeServiceRequirementsData) GetGbrDl() string {
 // GetGbrDlOk returns a tuple with the GbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeServiceRequirementsData) GetGbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.GbrDl) {
+	if o == nil || IsNil(o.GbrDl) {
 		return nil, false
 	}
 	return o.GbrDl, true
@@ -123,7 +123,7 @@ func (o *AlternativeServiceRequirementsData) GetGbrDlOk() (*string, bool) {
 
 // HasGbrDl returns a boolean if a field has been set.
 func (o *AlternativeServiceRequirementsData) HasGbrDl() bool {
-	if o != nil && !isNil(o.GbrDl) {
+	if o != nil && !IsNil(o.GbrDl) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *AlternativeServiceRequirementsData) SetGbrDl(v string) {
 
 // GetPdb returns the Pdb field value if set, zero value otherwise.
 func (o *AlternativeServiceRequirementsData) GetPdb() int32 {
-	if o == nil || isNil(o.Pdb) {
+	if o == nil || IsNil(o.Pdb) {
 		var ret int32
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *AlternativeServiceRequirementsData) GetPdb() int32 {
 // GetPdbOk returns a tuple with the Pdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeServiceRequirementsData) GetPdbOk() (*int32, bool) {
-	if o == nil || isNil(o.Pdb) {
+	if o == nil || IsNil(o.Pdb) {
 		return nil, false
 	}
 	return o.Pdb, true
@@ -155,7 +155,7 @@ func (o *AlternativeServiceRequirementsData) GetPdbOk() (*int32, bool) {
 
 // HasPdb returns a boolean if a field has been set.
 func (o *AlternativeServiceRequirementsData) HasPdb() bool {
-	if o != nil && !isNil(o.Pdb) {
+	if o != nil && !IsNil(o.Pdb) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *AlternativeServiceRequirementsData) SetPdb(v int32) {
 }
 
 func (o AlternativeServiceRequirementsData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -178,13 +178,13 @@ func (o AlternativeServiceRequirementsData) MarshalJSON() ([]byte, error) {
 func (o AlternativeServiceRequirementsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["altQosParamSetRef"] = o.AltQosParamSetRef
-	if !isNil(o.GbrUl) {
+	if !IsNil(o.GbrUl) {
 		toSerialize["gbrUl"] = o.GbrUl
 	}
-	if !isNil(o.GbrDl) {
+	if !IsNil(o.GbrDl) {
 		toSerialize["gbrDl"] = o.GbrDl
 	}
-	if !isNil(o.Pdb) {
+	if !IsNil(o.Pdb) {
 		toSerialize["pdb"] = o.Pdb
 	}
 	return toSerialize, nil
@@ -225,5 +225,3 @@ func (v *NullableAlternativeServiceRequirementsData) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

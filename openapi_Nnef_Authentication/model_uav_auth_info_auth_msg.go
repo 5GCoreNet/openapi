@@ -1,7 +1,7 @@
 /*
 Nnef_Authentication
 
-NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,8 +19,7 @@ var _ MappedNullable = &UAVAuthInfoAuthMsg{}
 
 // UAVAuthInfoAuthMsg struct for UAVAuthInfoAuthMsg
 type UAVAuthInfoAuthMsg struct {
-	// This IE shall contain the value of the Content-ID header of the referenced binary body part. 
-	ContentId string `json:"contentId"`
+	RefToBinaryData
 }
 
 // NewUAVAuthInfoAuthMsg instantiates a new UAVAuthInfoAuthMsg object
@@ -41,32 +40,8 @@ func NewUAVAuthInfoAuthMsgWithDefaults() *UAVAuthInfoAuthMsg {
 	return &this
 }
 
-// GetContentId returns the ContentId field value
-func (o *UAVAuthInfoAuthMsg) GetContentId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ContentId
-}
-
-// GetContentIdOk returns a tuple with the ContentId field value
-// and a boolean to check if the value has been set.
-func (o *UAVAuthInfoAuthMsg) GetContentIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ContentId, true
-}
-
-// SetContentId sets field value
-func (o *UAVAuthInfoAuthMsg) SetContentId(v string) {
-	o.ContentId = v
-}
-
 func (o UAVAuthInfoAuthMsg) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -75,7 +50,14 @@ func (o UAVAuthInfoAuthMsg) MarshalJSON() ([]byte, error) {
 
 func (o UAVAuthInfoAuthMsg) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["contentId"] = o.ContentId
+	serializedRefToBinaryData, errRefToBinaryData := json.Marshal(o.RefToBinaryData)
+	if errRefToBinaryData != nil {
+		return map[string]interface{}{}, errRefToBinaryData
+	}
+	errRefToBinaryData = json.Unmarshal([]byte(serializedRefToBinaryData), &toSerialize)
+	if errRefToBinaryData != nil {
+		return map[string]interface{}{}, errRefToBinaryData
+	}
 	return toSerialize, nil
 }
 
@@ -114,5 +96,3 @@ func (v *NullableUAVAuthInfoAuthMsg) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -5270,7 +5270,21 @@ components:
       type: object
     AfEvent:
       anyOf:
-      - $ref: '#/components/schemas/AfEvent_anyOf'
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5491,7 +5505,10 @@ components:
       type: object
     CollectiveBehaviourFilterType:
       anyOf:
-      - $ref: '#/components/schemas/CollectiveBehaviourFilterType_anyOf'
+      - enum:
+        - COLLECTIVE_ATTRIBUTE
+        - DATA_PROCESSING
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -14005,7 +14022,17 @@ components:
       type: object
     ExceptionId:
       anyOf:
-      - $ref: '#/components/schemas/ExceptionId_anyOf'
+      - enum:
+        - UNEXPECTED_UE_LOCATION
+        - UNEXPECTED_LONG_LIVE_FLOW
+        - UNEXPECTED_LARGE_RATE_FLOW
+        - UNEXPECTED_WAKEUP
+        - SUSPICION_OF_DDOS_ATTACK
+        - WRONG_DESTINATION_ADDRESS
+        - TOO_FREQUENT_SERVICE_ACCESS
+        - UNEXPECTED_RADIO_LINK_FAILURES
+        - PING_PONG_ACROSS_CELLS
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -14022,7 +14049,12 @@ components:
         - PING_PONG_ACROSS_CELLS: Ping-ponging across neighbouring cells
     ExceptionTrend:
       anyOf:
-      - $ref: '#/components/schemas/ExceptionTrend_anyOf'
+      - enum:
+        - UP
+        - DOWN
+        - UNKNOW
+        - STABLE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -14231,7 +14263,11 @@ components:
       - $ref: '#/components/schemas/MediaStreamingAccessRecord_allOf'
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -14252,7 +14288,13 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -14265,7 +14307,11 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -14310,9 +14356,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -14692,7 +14749,12 @@ components:
       type: string
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -14829,6 +14891,7 @@ components:
       required:
       - timestamp
       type: object
+      x-parent: true
     EndpointAddress:
       properties:
         ipv4Addr:
@@ -14850,7 +14913,11 @@ components:
       type: object
     CacheStatus:
       anyOf:
-      - $ref: '#/components/schemas/CacheStatus_anyOf'
+      - enum:
+        - HIT
+        - MISS
+        - EXPIRED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -15186,50 +15253,6 @@ components:
       maximum: 65535
       minimum: 0
       type: integer
-    AfEvent_anyOf:
-      enum:
-      - SVC_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMM
-      - EXCEPTIONS
-      - USER_DATA_CONGESTION
-      - PERF_DATA
-      - DISPERSION
-      - COLLECTIVE_BEHAVIOUR
-      - MS_QOE_METRICS
-      - MS_CONSUMPTION
-      - MS_NET_ASSIST_INVOCATION
-      - MS_DYN_POLICY_INVOCATION
-      - MS_ACCESS_ACTIVITY
-      type: string
-      example: null
-    CollectiveBehaviourFilterType_anyOf:
-      enum:
-      - COLLECTIVE_ATTRIBUTE
-      - DATA_PROCESSING
-      type: string
-      example: null
-    ExceptionId_anyOf:
-      enum:
-      - UNEXPECTED_UE_LOCATION
-      - UNEXPECTED_LONG_LIVE_FLOW
-      - UNEXPECTED_LARGE_RATE_FLOW
-      - UNEXPECTED_WAKEUP
-      - SUSPICION_OF_DDOS_ATTACK
-      - WRONG_DESTINATION_ADDRESS
-      - TOO_FREQUENT_SERVICE_ACCESS
-      - UNEXPECTED_RADIO_LINK_FAILURES
-      - PING_PONG_ACROSS_CELLS
-      type: string
-      example: null
-    ExceptionTrend_anyOf:
-      enum:
-      - UP
-      - DOWN
-      - UNKNOW
-      - STABLE
-      type: string
-      example: null
     MediaStreamingAccessRecord_allOf_requestMessage:
       properties:
         method:
@@ -15346,29 +15369,6 @@ components:
       - responseMessage
       type: object
       example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    PartitioningCriteria_anyOf:
-      enum:
-      - TAC
-      - SUBPLMN
-      - GEOAREA
-      - SNSSAI
-      - DNN
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -15376,19 +15376,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -15557,21 +15544,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
-      example: null
-    CacheStatus_anyOf:
-      enum:
-      - HIT
-      - MISS
-      - EXPIRED
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

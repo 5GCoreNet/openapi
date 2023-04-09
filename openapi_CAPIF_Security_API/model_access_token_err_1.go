@@ -1,7 +1,7 @@
 /*
 CAPIF_Security_API
 
-API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AccessTokenErr1{}
 
 // AccessTokenErr1 Error returned in the access token response message
 type AccessTokenErr1 struct {
-	Error string `json:"error"`
+	Error            string  `json:"error"`
 	ErrorDescription *string `json:"error_description,omitempty"`
-	ErrorUri *string `json:"error_uri,omitempty"`
+	ErrorUri         *string `json:"error_uri,omitempty"`
 }
 
 // NewAccessTokenErr1 instantiates a new AccessTokenErr1 object
@@ -68,7 +68,7 @@ func (o *AccessTokenErr1) SetError(v string) {
 
 // GetErrorDescription returns the ErrorDescription field value if set, zero value otherwise.
 func (o *AccessTokenErr1) GetErrorDescription() string {
-	if o == nil || isNil(o.ErrorDescription) {
+	if o == nil || IsNil(o.ErrorDescription) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AccessTokenErr1) GetErrorDescription() string {
 // GetErrorDescriptionOk returns a tuple with the ErrorDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenErr1) GetErrorDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ErrorDescription) {
+	if o == nil || IsNil(o.ErrorDescription) {
 		return nil, false
 	}
 	return o.ErrorDescription, true
@@ -86,7 +86,7 @@ func (o *AccessTokenErr1) GetErrorDescriptionOk() (*string, bool) {
 
 // HasErrorDescription returns a boolean if a field has been set.
 func (o *AccessTokenErr1) HasErrorDescription() bool {
-	if o != nil && !isNil(o.ErrorDescription) {
+	if o != nil && !IsNil(o.ErrorDescription) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AccessTokenErr1) SetErrorDescription(v string) {
 
 // GetErrorUri returns the ErrorUri field value if set, zero value otherwise.
 func (o *AccessTokenErr1) GetErrorUri() string {
-	if o == nil || isNil(o.ErrorUri) {
+	if o == nil || IsNil(o.ErrorUri) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AccessTokenErr1) GetErrorUri() string {
 // GetErrorUriOk returns a tuple with the ErrorUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenErr1) GetErrorUriOk() (*string, bool) {
-	if o == nil || isNil(o.ErrorUri) {
+	if o == nil || IsNil(o.ErrorUri) {
 		return nil, false
 	}
 	return o.ErrorUri, true
@@ -118,7 +118,7 @@ func (o *AccessTokenErr1) GetErrorUriOk() (*string, bool) {
 
 // HasErrorUri returns a boolean if a field has been set.
 func (o *AccessTokenErr1) HasErrorUri() bool {
-	if o != nil && !isNil(o.ErrorUri) {
+	if o != nil && !IsNil(o.ErrorUri) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AccessTokenErr1) SetErrorUri(v string) {
 }
 
 func (o AccessTokenErr1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o AccessTokenErr1) MarshalJSON() ([]byte, error) {
 func (o AccessTokenErr1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.ErrorDescription) {
+	if !IsNil(o.ErrorDescription) {
 		toSerialize["error_description"] = o.ErrorDescription
 	}
-	if !isNil(o.ErrorUri) {
+	if !IsNil(o.ErrorUri) {
 		toSerialize["error_uri"] = o.ErrorUri
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableAccessTokenErr1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

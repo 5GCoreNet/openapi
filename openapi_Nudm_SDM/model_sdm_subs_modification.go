@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &SdmSubsModification{}
 // SdmSubsModification struct for SdmSubsModification
 type SdmSubsModification struct {
 	// string with format 'date-time' as defined in OpenAPI.
-	Expires *time.Time `json:"expires,omitempty"`
-	MonitoredResourceUris []string `json:"monitoredResourceUris,omitempty"`
+	Expires               *time.Time `json:"expires,omitempty"`
+	MonitoredResourceUris []string   `json:"monitoredResourceUris,omitempty"`
 }
 
 // NewSdmSubsModification instantiates a new SdmSubsModification object
@@ -44,7 +44,7 @@ func NewSdmSubsModificationWithDefaults() *SdmSubsModification {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *SdmSubsModification) GetExpires() time.Time {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SdmSubsModification) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubsModification) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -62,7 +62,7 @@ func (o *SdmSubsModification) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *SdmSubsModification) HasExpires() bool {
-	if o != nil && !isNil(o.Expires) {
+	if o != nil && !IsNil(o.Expires) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SdmSubsModification) SetExpires(v time.Time) {
 
 // GetMonitoredResourceUris returns the MonitoredResourceUris field value if set, zero value otherwise.
 func (o *SdmSubsModification) GetMonitoredResourceUris() []string {
-	if o == nil || isNil(o.MonitoredResourceUris) {
+	if o == nil || IsNil(o.MonitoredResourceUris) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SdmSubsModification) GetMonitoredResourceUris() []string {
 // GetMonitoredResourceUrisOk returns a tuple with the MonitoredResourceUris field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubsModification) GetMonitoredResourceUrisOk() ([]string, bool) {
-	if o == nil || isNil(o.MonitoredResourceUris) {
+	if o == nil || IsNil(o.MonitoredResourceUris) {
 		return nil, false
 	}
 	return o.MonitoredResourceUris, true
@@ -94,7 +94,7 @@ func (o *SdmSubsModification) GetMonitoredResourceUrisOk() ([]string, bool) {
 
 // HasMonitoredResourceUris returns a boolean if a field has been set.
 func (o *SdmSubsModification) HasMonitoredResourceUris() bool {
-	if o != nil && !isNil(o.MonitoredResourceUris) {
+	if o != nil && !IsNil(o.MonitoredResourceUris) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SdmSubsModification) SetMonitoredResourceUris(v []string) {
 }
 
 func (o SdmSubsModification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o SdmSubsModification) MarshalJSON() ([]byte, error) {
 
 func (o SdmSubsModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Expires) {
+	if !IsNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
-	if !isNil(o.MonitoredResourceUris) {
+	if !IsNil(o.MonitoredResourceUris) {
 		toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableSdmSubsModification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

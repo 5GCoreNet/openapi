@@ -1,7 +1,7 @@
 /*
 Nsoraf_SOR
 
-Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// SteeringInfo - Contains either a PLMN-ID, an SNPN-ID or a GIN and, for the case of PLMNs, zero or more preferred access technologies for accessing such PLMN 
+// SteeringInfo - Contains either a PLMN-ID, an SNPN-ID or a GIN and, for the case of PLMNs, zero or more preferred access technologies for accessing such PLMN
 type SteeringInfo struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsSteeringInfo(v *interface{}) SteeringInfo {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SteeringInfo) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src SteeringInfo) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SteeringInfo) GetActualInstance() (interface{}) {
+func (obj *SteeringInfo) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableSteeringInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

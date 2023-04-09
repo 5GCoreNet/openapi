@@ -1,7 +1,7 @@
 /*
 Nnef_Authentication
 
-NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &AuthContainer{}
 // AuthContainer Authentication/Authorization data
 type AuthContainer struct {
 	// string with format 'bytes' as defined in OpenAPI
-	AuthMsgType *string `json:"authMsgType,omitempty"`
+	AuthMsgType    *string          `json:"authMsgType,omitempty"`
 	AuthMsgPayload *RefToBinaryData `json:"authMsgPayload,omitempty"`
-	AuthResult *AuthResult `json:"authResult,omitempty"`
+	AuthResult     *AuthResult      `json:"authResult,omitempty"`
 }
 
 // NewAuthContainer instantiates a new AuthContainer object
@@ -44,7 +44,7 @@ func NewAuthContainerWithDefaults() *AuthContainer {
 
 // GetAuthMsgType returns the AuthMsgType field value if set, zero value otherwise.
 func (o *AuthContainer) GetAuthMsgType() string {
-	if o == nil || isNil(o.AuthMsgType) {
+	if o == nil || IsNil(o.AuthMsgType) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AuthContainer) GetAuthMsgType() string {
 // GetAuthMsgTypeOk returns a tuple with the AuthMsgType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthContainer) GetAuthMsgTypeOk() (*string, bool) {
-	if o == nil || isNil(o.AuthMsgType) {
+	if o == nil || IsNil(o.AuthMsgType) {
 		return nil, false
 	}
 	return o.AuthMsgType, true
@@ -62,7 +62,7 @@ func (o *AuthContainer) GetAuthMsgTypeOk() (*string, bool) {
 
 // HasAuthMsgType returns a boolean if a field has been set.
 func (o *AuthContainer) HasAuthMsgType() bool {
-	if o != nil && !isNil(o.AuthMsgType) {
+	if o != nil && !IsNil(o.AuthMsgType) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AuthContainer) SetAuthMsgType(v string) {
 
 // GetAuthMsgPayload returns the AuthMsgPayload field value if set, zero value otherwise.
 func (o *AuthContainer) GetAuthMsgPayload() RefToBinaryData {
-	if o == nil || isNil(o.AuthMsgPayload) {
+	if o == nil || IsNil(o.AuthMsgPayload) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AuthContainer) GetAuthMsgPayload() RefToBinaryData {
 // GetAuthMsgPayloadOk returns a tuple with the AuthMsgPayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthContainer) GetAuthMsgPayloadOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.AuthMsgPayload) {
+	if o == nil || IsNil(o.AuthMsgPayload) {
 		return nil, false
 	}
 	return o.AuthMsgPayload, true
@@ -94,7 +94,7 @@ func (o *AuthContainer) GetAuthMsgPayloadOk() (*RefToBinaryData, bool) {
 
 // HasAuthMsgPayload returns a boolean if a field has been set.
 func (o *AuthContainer) HasAuthMsgPayload() bool {
-	if o != nil && !isNil(o.AuthMsgPayload) {
+	if o != nil && !IsNil(o.AuthMsgPayload) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AuthContainer) SetAuthMsgPayload(v RefToBinaryData) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *AuthContainer) GetAuthResult() AuthResult {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		var ret AuthResult
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AuthContainer) GetAuthResult() AuthResult {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthContainer) GetAuthResultOk() (*AuthResult, bool) {
-	if o == nil || isNil(o.AuthResult) {
+	if o == nil || IsNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -126,7 +126,7 @@ func (o *AuthContainer) GetAuthResultOk() (*AuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *AuthContainer) HasAuthResult() bool {
-	if o != nil && !isNil(o.AuthResult) {
+	if o != nil && !IsNil(o.AuthResult) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *AuthContainer) SetAuthResult(v AuthResult) {
 }
 
 func (o AuthContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o AuthContainer) MarshalJSON() ([]byte, error) {
 
 func (o AuthContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AuthMsgType) {
+	if !IsNil(o.AuthMsgType) {
 		toSerialize["authMsgType"] = o.AuthMsgType
 	}
-	if !isNil(o.AuthMsgPayload) {
+	if !IsNil(o.AuthMsgPayload) {
 		toSerialize["authMsgPayload"] = o.AuthMsgPayload
 	}
-	if !isNil(o.AuthResult) {
+	if !IsNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableAuthContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

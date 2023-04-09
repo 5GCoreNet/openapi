@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AmTerminationCause It represents the cause values that the PCF should report when requesting to an NF service consumer the deletion of an \"AF application AM context\" resource.
 type AmTerminationCause struct {
-	AmTerminationCauseAnyOf *AmTerminationCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AmTerminationCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AmTerminationCauseAnyOf
-	err = json.Unmarshal(data, &dst.AmTerminationCauseAnyOf);
-	if err == nil {
-		jsonAmTerminationCauseAnyOf, _ := json.Marshal(dst.AmTerminationCauseAnyOf)
-		if string(jsonAmTerminationCauseAnyOf) == "{}" { // empty struct
-			dst.AmTerminationCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.AmTerminationCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.AmTerminationCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AmTerminationCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AmTerminationCause) MarshalJSON() ([]byte, error) {
-	if src.AmTerminationCauseAnyOf != nil {
-		return json.Marshal(&src.AmTerminationCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAmTerminationCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

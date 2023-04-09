@@ -19,57 +19,57 @@ var _ MappedNullable = &TraceJobAttr{}
 
 // TraceJobAttr abstract class used as a container of all TraceJob attributes
 type TraceJobAttr struct {
-	JobType *JobTypeType `json:"jobType,omitempty"`
+	JobType          *JobTypeType          `json:"jobType,omitempty"`
 	ListOfInterfaces *ListOfInterfacesType `json:"listOfInterfaces,omitempty"`
 	// The Network Element types where Trace Session activation is needed. See 3GPP TS 32.422 clause 5.4 for additional details.
-	ListOfNeTypes []string `json:"listOfNeTypes,omitempty"`
-	PlmnTarget *PlmnTargetType `json:"plmnTarget,omitempty"`
-	TraceReportingConsumerUri *string `json:"traceReportingConsumerUri,omitempty"`
-	TraceCollectionEntityIpAddress *IpAddr `json:"traceCollectionEntityIpAddress,omitempty"`
-	TraceDepth *TraceDepthType `json:"traceDepth,omitempty"`
-	TraceReference *TraceReferenceType `json:"traceReference,omitempty"`
-	TraceRecordingSessionReference *string `json:"traceRecordingSessionReference,omitempty"`
-	JobId *string `json:"jobId,omitempty"`
-	TraceReportingFormat *TraceReportingFormatType `json:"traceReportingFormat,omitempty"`
-	TraceTarget *TraceTargetType `json:"traceTarget,omitempty"`
-	TriggeringEvents *TriggeringEventsType `json:"triggeringEvents,omitempty"`
-	AnonymizationOfMdtData *AnonymizationOfMdtDataType `json:"anonymizationOfMdtData,omitempty"`
-	AreaConfigurationForNeighCell *AreaConfig `json:"areaConfigurationForNeighCell,omitempty"`
-	AreaScope []AreaScope `json:"areaScope,omitempty"`
+	ListOfNeTypes                  []string                    `json:"listOfNeTypes,omitempty"`
+	PlmnTarget                     *PlmnTargetType             `json:"plmnTarget,omitempty"`
+	TraceReportingConsumerUri      *string                     `json:"traceReportingConsumerUri,omitempty"`
+	TraceCollectionEntityIpAddress *IpAddr                     `json:"traceCollectionEntityIpAddress,omitempty"`
+	TraceDepth                     *TraceDepthType             `json:"traceDepth,omitempty"`
+	TraceReference                 *TraceReferenceType         `json:"traceReference,omitempty"`
+	TraceRecordingSessionReference *string                     `json:"traceRecordingSessionReference,omitempty"`
+	JobId                          *string                     `json:"jobId,omitempty"`
+	TraceReportingFormat           *TraceReportingFormatType   `json:"traceReportingFormat,omitempty"`
+	TraceTarget                    *TraceTargetType            `json:"traceTarget,omitempty"`
+	TriggeringEvents               *TriggeringEventsType       `json:"triggeringEvents,omitempty"`
+	AnonymizationOfMdtData         *AnonymizationOfMdtDataType `json:"anonymizationOfMdtData,omitempty"`
+	AreaConfigurationForNeighCell  *AreaConfig                 `json:"areaConfigurationForNeighCell,omitempty"`
+	AreaScope                      []AreaScope                 `json:"areaScope,omitempty"`
 	// Determines whether beam level measurements shall be included in case of immediate MDT M1 measurement in NR. For additional details see 3GPP TS 32.422 clause 5.10.40.
-	BeamLevelMeasurement *bool `json:"beamLevelMeasurement,omitempty"`
+	BeamLevelMeasurement   *bool                       `json:"beamLevelMeasurement,omitempty"`
 	CollectionPeriodRrmLte *CollectionPeriodRrmLteType `json:"collectionPeriodRrmLte,omitempty"`
-	CollectionPeriodM6Lte *CollectionPeriodM6LteType `json:"collectionPeriodM6Lte,omitempty"`
+	CollectionPeriodM6Lte  *CollectionPeriodM6LteType  `json:"collectionPeriodM6Lte,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.33.
-	CollectionPeriodM7Lte *int32 `json:"collectionPeriodM7Lte,omitempty"`
+	CollectionPeriodM7Lte   *int32                       `json:"collectionPeriodM7Lte,omitempty"`
 	CollectionPeriodRrmUmts *CollectionPeriodRrmUmtsType `json:"collectionPeriodRrmUmts,omitempty"`
-	CollectionPeriodRrmNr *CollectionPeriodRrmNrType `json:"collectionPeriodRrmNr,omitempty"`
-	CollectionPeriodM6Nr *CollectionPeriodM6NrType `json:"collectionPeriodM6Nr,omitempty"`
+	CollectionPeriodRrmNr   *CollectionPeriodRrmNrType   `json:"collectionPeriodRrmNr,omitempty"`
+	CollectionPeriodM6Nr    *CollectionPeriodM6NrType    `json:"collectionPeriodM6Nr,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.35.
-	CollectionPeriodM7Nr *int32 `json:"collectionPeriodM7Nr,omitempty"`
+	CollectionPeriodM7Nr                  *int32                                     `json:"collectionPeriodM7Nr,omitempty"`
 	EventListForEventTriggeredMeasurement *EventListForEventTriggeredMeasurementType `json:"eventListForEventTriggeredMeasurement,omitempty"`
-	EventThreshold *EventThresholdType `json:"eventThreshold,omitempty"`
-	ListOfMeasurements *ListOfMeasurementsType `json:"listOfMeasurements,omitempty"`
-	LoggingDuration *LoggingDurationType `json:"loggingDuration,omitempty"`
-	LoggingInterval *LoggingIntervalType `json:"loggingInterval,omitempty"`
-	EventThresholdL1 *EventThresholdL1Type `json:"eventThresholdL1,omitempty"`
+	EventThreshold                        *EventThresholdType                        `json:"eventThreshold,omitempty"`
+	ListOfMeasurements                    *ListOfMeasurementsType                    `json:"listOfMeasurements,omitempty"`
+	LoggingDuration                       *LoggingDurationType                       `json:"loggingDuration,omitempty"`
+	LoggingInterval                       *LoggingIntervalType                       `json:"loggingInterval,omitempty"`
+	EventThresholdL1                      *EventThresholdL1Type                      `json:"eventThresholdL1,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.Y.
-	HysteresisL1 *int32 `json:"hysteresisL1,omitempty"`
-	TimeToTriggerL1 *TimeToTriggerL1Type `json:"timeToTriggerL1,omitempty"`
-	MbsfnAreaList []MbsfnArea `json:"mbsfnAreaList,omitempty"`
-	MeasurementPeriodLte *MeasurementPeriodLteType `json:"measurementPeriodLte,omitempty"`
+	HysteresisL1          *int32                     `json:"hysteresisL1,omitempty"`
+	TimeToTriggerL1       *TimeToTriggerL1Type       `json:"timeToTriggerL1,omitempty"`
+	MbsfnAreaList         []MbsfnArea                `json:"mbsfnAreaList,omitempty"`
+	MeasurementPeriodLte  *MeasurementPeriodLteType  `json:"measurementPeriodLte,omitempty"`
 	MeasurementPeriodUmts *MeasurementPeriodUmtsType `json:"measurementPeriodUmts,omitempty"`
-	MeasurementQuantity *MeasurementQuantityType `json:"measurementQuantity,omitempty"`
+	MeasurementQuantity   *MeasurementQuantityType   `json:"measurementQuantity,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.A.
 	EventThresholdUphUmts *int32 `json:"eventThresholdUphUmts,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.24.
-	PlmnList []PlmnListTypeInner `json:"plmnList,omitempty"`
+	PlmnList          []PlmnListTypeInner    `json:"plmnList,omitempty"`
 	PositioningMethod *PositioningMethodType `json:"positioningMethod,omitempty"`
-	ReportAmount *ReportAmountType `json:"reportAmount,omitempty"`
+	ReportAmount      *ReportAmountType      `json:"reportAmount,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.4.
-	ReportingTrigger []string `json:"reportingTrigger,omitempty"`
-	ReportInterval *ReportIntervalType `json:"reportInterval,omitempty"`
-	ReportType *ReportTypeType `json:"reportType,omitempty"`
+	ReportingTrigger []string            `json:"reportingTrigger,omitempty"`
+	ReportInterval   *ReportIntervalType `json:"reportInterval,omitempty"`
+	ReportType       *ReportTypeType     `json:"reportType,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.29.
 	SensorInformation []string `json:"sensorInformation,omitempty"`
 	// See details in 3GPP TS 32.422 clause 5.10.11. Only TCE Id value may be sent over the air to the UE being configured for Logged MDT.
@@ -97,7 +97,7 @@ func NewTraceJobAttrWithDefaults() *TraceJobAttr {
 
 // GetJobType returns the JobType field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetJobType() JobTypeType {
-	if o == nil || isNil(o.JobType) {
+	if o == nil || IsNil(o.JobType) {
 		var ret JobTypeType
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *TraceJobAttr) GetJobType() JobTypeType {
 // GetJobTypeOk returns a tuple with the JobType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetJobTypeOk() (*JobTypeType, bool) {
-	if o == nil || isNil(o.JobType) {
+	if o == nil || IsNil(o.JobType) {
 		return nil, false
 	}
 	return o.JobType, true
@@ -115,7 +115,7 @@ func (o *TraceJobAttr) GetJobTypeOk() (*JobTypeType, bool) {
 
 // HasJobType returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasJobType() bool {
-	if o != nil && !isNil(o.JobType) {
+	if o != nil && !IsNil(o.JobType) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *TraceJobAttr) SetJobType(v JobTypeType) {
 
 // GetListOfInterfaces returns the ListOfInterfaces field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetListOfInterfaces() ListOfInterfacesType {
-	if o == nil || isNil(o.ListOfInterfaces) {
+	if o == nil || IsNil(o.ListOfInterfaces) {
 		var ret ListOfInterfacesType
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *TraceJobAttr) GetListOfInterfaces() ListOfInterfacesType {
 // GetListOfInterfacesOk returns a tuple with the ListOfInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetListOfInterfacesOk() (*ListOfInterfacesType, bool) {
-	if o == nil || isNil(o.ListOfInterfaces) {
+	if o == nil || IsNil(o.ListOfInterfaces) {
 		return nil, false
 	}
 	return o.ListOfInterfaces, true
@@ -147,7 +147,7 @@ func (o *TraceJobAttr) GetListOfInterfacesOk() (*ListOfInterfacesType, bool) {
 
 // HasListOfInterfaces returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasListOfInterfaces() bool {
-	if o != nil && !isNil(o.ListOfInterfaces) {
+	if o != nil && !IsNil(o.ListOfInterfaces) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *TraceJobAttr) SetListOfInterfaces(v ListOfInterfacesType) {
 
 // GetListOfNeTypes returns the ListOfNeTypes field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetListOfNeTypes() []string {
-	if o == nil || isNil(o.ListOfNeTypes) {
+	if o == nil || IsNil(o.ListOfNeTypes) {
 		var ret []string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *TraceJobAttr) GetListOfNeTypes() []string {
 // GetListOfNeTypesOk returns a tuple with the ListOfNeTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetListOfNeTypesOk() ([]string, bool) {
-	if o == nil || isNil(o.ListOfNeTypes) {
+	if o == nil || IsNil(o.ListOfNeTypes) {
 		return nil, false
 	}
 	return o.ListOfNeTypes, true
@@ -179,7 +179,7 @@ func (o *TraceJobAttr) GetListOfNeTypesOk() ([]string, bool) {
 
 // HasListOfNeTypes returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasListOfNeTypes() bool {
-	if o != nil && !isNil(o.ListOfNeTypes) {
+	if o != nil && !IsNil(o.ListOfNeTypes) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *TraceJobAttr) SetListOfNeTypes(v []string) {
 
 // GetPlmnTarget returns the PlmnTarget field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetPlmnTarget() PlmnTargetType {
-	if o == nil || isNil(o.PlmnTarget) {
+	if o == nil || IsNil(o.PlmnTarget) {
 		var ret PlmnTargetType
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *TraceJobAttr) GetPlmnTarget() PlmnTargetType {
 // GetPlmnTargetOk returns a tuple with the PlmnTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetPlmnTargetOk() (*PlmnTargetType, bool) {
-	if o == nil || isNil(o.PlmnTarget) {
+	if o == nil || IsNil(o.PlmnTarget) {
 		return nil, false
 	}
 	return o.PlmnTarget, true
@@ -211,7 +211,7 @@ func (o *TraceJobAttr) GetPlmnTargetOk() (*PlmnTargetType, bool) {
 
 // HasPlmnTarget returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasPlmnTarget() bool {
-	if o != nil && !isNil(o.PlmnTarget) {
+	if o != nil && !IsNil(o.PlmnTarget) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *TraceJobAttr) SetPlmnTarget(v PlmnTargetType) {
 
 // GetTraceReportingConsumerUri returns the TraceReportingConsumerUri field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceReportingConsumerUri() string {
-	if o == nil || isNil(o.TraceReportingConsumerUri) {
+	if o == nil || IsNil(o.TraceReportingConsumerUri) {
 		var ret string
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *TraceJobAttr) GetTraceReportingConsumerUri() string {
 // GetTraceReportingConsumerUriOk returns a tuple with the TraceReportingConsumerUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceReportingConsumerUriOk() (*string, bool) {
-	if o == nil || isNil(o.TraceReportingConsumerUri) {
+	if o == nil || IsNil(o.TraceReportingConsumerUri) {
 		return nil, false
 	}
 	return o.TraceReportingConsumerUri, true
@@ -243,7 +243,7 @@ func (o *TraceJobAttr) GetTraceReportingConsumerUriOk() (*string, bool) {
 
 // HasTraceReportingConsumerUri returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceReportingConsumerUri() bool {
-	if o != nil && !isNil(o.TraceReportingConsumerUri) {
+	if o != nil && !IsNil(o.TraceReportingConsumerUri) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *TraceJobAttr) SetTraceReportingConsumerUri(v string) {
 
 // GetTraceCollectionEntityIpAddress returns the TraceCollectionEntityIpAddress field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceCollectionEntityIpAddress() IpAddr {
-	if o == nil || isNil(o.TraceCollectionEntityIpAddress) {
+	if o == nil || IsNil(o.TraceCollectionEntityIpAddress) {
 		var ret IpAddr
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *TraceJobAttr) GetTraceCollectionEntityIpAddress() IpAddr {
 // GetTraceCollectionEntityIpAddressOk returns a tuple with the TraceCollectionEntityIpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceCollectionEntityIpAddressOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.TraceCollectionEntityIpAddress) {
+	if o == nil || IsNil(o.TraceCollectionEntityIpAddress) {
 		return nil, false
 	}
 	return o.TraceCollectionEntityIpAddress, true
@@ -275,7 +275,7 @@ func (o *TraceJobAttr) GetTraceCollectionEntityIpAddressOk() (*IpAddr, bool) {
 
 // HasTraceCollectionEntityIpAddress returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceCollectionEntityIpAddress() bool {
-	if o != nil && !isNil(o.TraceCollectionEntityIpAddress) {
+	if o != nil && !IsNil(o.TraceCollectionEntityIpAddress) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *TraceJobAttr) SetTraceCollectionEntityIpAddress(v IpAddr) {
 
 // GetTraceDepth returns the TraceDepth field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceDepth() TraceDepthType {
-	if o == nil || isNil(o.TraceDepth) {
+	if o == nil || IsNil(o.TraceDepth) {
 		var ret TraceDepthType
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *TraceJobAttr) GetTraceDepth() TraceDepthType {
 // GetTraceDepthOk returns a tuple with the TraceDepth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceDepthOk() (*TraceDepthType, bool) {
-	if o == nil || isNil(o.TraceDepth) {
+	if o == nil || IsNil(o.TraceDepth) {
 		return nil, false
 	}
 	return o.TraceDepth, true
@@ -307,7 +307,7 @@ func (o *TraceJobAttr) GetTraceDepthOk() (*TraceDepthType, bool) {
 
 // HasTraceDepth returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceDepth() bool {
-	if o != nil && !isNil(o.TraceDepth) {
+	if o != nil && !IsNil(o.TraceDepth) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *TraceJobAttr) SetTraceDepth(v TraceDepthType) {
 
 // GetTraceReference returns the TraceReference field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceReference() TraceReferenceType {
-	if o == nil || isNil(o.TraceReference) {
+	if o == nil || IsNil(o.TraceReference) {
 		var ret TraceReferenceType
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *TraceJobAttr) GetTraceReference() TraceReferenceType {
 // GetTraceReferenceOk returns a tuple with the TraceReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceReferenceOk() (*TraceReferenceType, bool) {
-	if o == nil || isNil(o.TraceReference) {
+	if o == nil || IsNil(o.TraceReference) {
 		return nil, false
 	}
 	return o.TraceReference, true
@@ -339,7 +339,7 @@ func (o *TraceJobAttr) GetTraceReferenceOk() (*TraceReferenceType, bool) {
 
 // HasTraceReference returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceReference() bool {
-	if o != nil && !isNil(o.TraceReference) {
+	if o != nil && !IsNil(o.TraceReference) {
 		return true
 	}
 
@@ -353,7 +353,7 @@ func (o *TraceJobAttr) SetTraceReference(v TraceReferenceType) {
 
 // GetTraceRecordingSessionReference returns the TraceRecordingSessionReference field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceRecordingSessionReference() string {
-	if o == nil || isNil(o.TraceRecordingSessionReference) {
+	if o == nil || IsNil(o.TraceRecordingSessionReference) {
 		var ret string
 		return ret
 	}
@@ -363,7 +363,7 @@ func (o *TraceJobAttr) GetTraceRecordingSessionReference() string {
 // GetTraceRecordingSessionReferenceOk returns a tuple with the TraceRecordingSessionReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceRecordingSessionReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.TraceRecordingSessionReference) {
+	if o == nil || IsNil(o.TraceRecordingSessionReference) {
 		return nil, false
 	}
 	return o.TraceRecordingSessionReference, true
@@ -371,7 +371,7 @@ func (o *TraceJobAttr) GetTraceRecordingSessionReferenceOk() (*string, bool) {
 
 // HasTraceRecordingSessionReference returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceRecordingSessionReference() bool {
-	if o != nil && !isNil(o.TraceRecordingSessionReference) {
+	if o != nil && !IsNil(o.TraceRecordingSessionReference) {
 		return true
 	}
 
@@ -385,7 +385,7 @@ func (o *TraceJobAttr) SetTraceRecordingSessionReference(v string) {
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetJobId() string {
-	if o == nil || isNil(o.JobId) {
+	if o == nil || IsNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -395,7 +395,7 @@ func (o *TraceJobAttr) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetJobIdOk() (*string, bool) {
-	if o == nil || isNil(o.JobId) {
+	if o == nil || IsNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -403,7 +403,7 @@ func (o *TraceJobAttr) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasJobId() bool {
-	if o != nil && !isNil(o.JobId) {
+	if o != nil && !IsNil(o.JobId) {
 		return true
 	}
 
@@ -417,7 +417,7 @@ func (o *TraceJobAttr) SetJobId(v string) {
 
 // GetTraceReportingFormat returns the TraceReportingFormat field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceReportingFormat() TraceReportingFormatType {
-	if o == nil || isNil(o.TraceReportingFormat) {
+	if o == nil || IsNil(o.TraceReportingFormat) {
 		var ret TraceReportingFormatType
 		return ret
 	}
@@ -427,7 +427,7 @@ func (o *TraceJobAttr) GetTraceReportingFormat() TraceReportingFormatType {
 // GetTraceReportingFormatOk returns a tuple with the TraceReportingFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceReportingFormatOk() (*TraceReportingFormatType, bool) {
-	if o == nil || isNil(o.TraceReportingFormat) {
+	if o == nil || IsNil(o.TraceReportingFormat) {
 		return nil, false
 	}
 	return o.TraceReportingFormat, true
@@ -435,7 +435,7 @@ func (o *TraceJobAttr) GetTraceReportingFormatOk() (*TraceReportingFormatType, b
 
 // HasTraceReportingFormat returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceReportingFormat() bool {
-	if o != nil && !isNil(o.TraceReportingFormat) {
+	if o != nil && !IsNil(o.TraceReportingFormat) {
 		return true
 	}
 
@@ -449,7 +449,7 @@ func (o *TraceJobAttr) SetTraceReportingFormat(v TraceReportingFormatType) {
 
 // GetTraceTarget returns the TraceTarget field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceTarget() TraceTargetType {
-	if o == nil || isNil(o.TraceTarget) {
+	if o == nil || IsNil(o.TraceTarget) {
 		var ret TraceTargetType
 		return ret
 	}
@@ -459,7 +459,7 @@ func (o *TraceJobAttr) GetTraceTarget() TraceTargetType {
 // GetTraceTargetOk returns a tuple with the TraceTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceTargetOk() (*TraceTargetType, bool) {
-	if o == nil || isNil(o.TraceTarget) {
+	if o == nil || IsNil(o.TraceTarget) {
 		return nil, false
 	}
 	return o.TraceTarget, true
@@ -467,7 +467,7 @@ func (o *TraceJobAttr) GetTraceTargetOk() (*TraceTargetType, bool) {
 
 // HasTraceTarget returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceTarget() bool {
-	if o != nil && !isNil(o.TraceTarget) {
+	if o != nil && !IsNil(o.TraceTarget) {
 		return true
 	}
 
@@ -481,7 +481,7 @@ func (o *TraceJobAttr) SetTraceTarget(v TraceTargetType) {
 
 // GetTriggeringEvents returns the TriggeringEvents field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTriggeringEvents() TriggeringEventsType {
-	if o == nil || isNil(o.TriggeringEvents) {
+	if o == nil || IsNil(o.TriggeringEvents) {
 		var ret TriggeringEventsType
 		return ret
 	}
@@ -491,7 +491,7 @@ func (o *TraceJobAttr) GetTriggeringEvents() TriggeringEventsType {
 // GetTriggeringEventsOk returns a tuple with the TriggeringEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTriggeringEventsOk() (*TriggeringEventsType, bool) {
-	if o == nil || isNil(o.TriggeringEvents) {
+	if o == nil || IsNil(o.TriggeringEvents) {
 		return nil, false
 	}
 	return o.TriggeringEvents, true
@@ -499,7 +499,7 @@ func (o *TraceJobAttr) GetTriggeringEventsOk() (*TriggeringEventsType, bool) {
 
 // HasTriggeringEvents returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTriggeringEvents() bool {
-	if o != nil && !isNil(o.TriggeringEvents) {
+	if o != nil && !IsNil(o.TriggeringEvents) {
 		return true
 	}
 
@@ -513,7 +513,7 @@ func (o *TraceJobAttr) SetTriggeringEvents(v TriggeringEventsType) {
 
 // GetAnonymizationOfMdtData returns the AnonymizationOfMdtData field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetAnonymizationOfMdtData() AnonymizationOfMdtDataType {
-	if o == nil || isNil(o.AnonymizationOfMdtData) {
+	if o == nil || IsNil(o.AnonymizationOfMdtData) {
 		var ret AnonymizationOfMdtDataType
 		return ret
 	}
@@ -523,7 +523,7 @@ func (o *TraceJobAttr) GetAnonymizationOfMdtData() AnonymizationOfMdtDataType {
 // GetAnonymizationOfMdtDataOk returns a tuple with the AnonymizationOfMdtData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetAnonymizationOfMdtDataOk() (*AnonymizationOfMdtDataType, bool) {
-	if o == nil || isNil(o.AnonymizationOfMdtData) {
+	if o == nil || IsNil(o.AnonymizationOfMdtData) {
 		return nil, false
 	}
 	return o.AnonymizationOfMdtData, true
@@ -531,7 +531,7 @@ func (o *TraceJobAttr) GetAnonymizationOfMdtDataOk() (*AnonymizationOfMdtDataTyp
 
 // HasAnonymizationOfMdtData returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasAnonymizationOfMdtData() bool {
-	if o != nil && !isNil(o.AnonymizationOfMdtData) {
+	if o != nil && !IsNil(o.AnonymizationOfMdtData) {
 		return true
 	}
 
@@ -545,7 +545,7 @@ func (o *TraceJobAttr) SetAnonymizationOfMdtData(v AnonymizationOfMdtDataType) {
 
 // GetAreaConfigurationForNeighCell returns the AreaConfigurationForNeighCell field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetAreaConfigurationForNeighCell() AreaConfig {
-	if o == nil || isNil(o.AreaConfigurationForNeighCell) {
+	if o == nil || IsNil(o.AreaConfigurationForNeighCell) {
 		var ret AreaConfig
 		return ret
 	}
@@ -555,7 +555,7 @@ func (o *TraceJobAttr) GetAreaConfigurationForNeighCell() AreaConfig {
 // GetAreaConfigurationForNeighCellOk returns a tuple with the AreaConfigurationForNeighCell field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetAreaConfigurationForNeighCellOk() (*AreaConfig, bool) {
-	if o == nil || isNil(o.AreaConfigurationForNeighCell) {
+	if o == nil || IsNil(o.AreaConfigurationForNeighCell) {
 		return nil, false
 	}
 	return o.AreaConfigurationForNeighCell, true
@@ -563,7 +563,7 @@ func (o *TraceJobAttr) GetAreaConfigurationForNeighCellOk() (*AreaConfig, bool) 
 
 // HasAreaConfigurationForNeighCell returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasAreaConfigurationForNeighCell() bool {
-	if o != nil && !isNil(o.AreaConfigurationForNeighCell) {
+	if o != nil && !IsNil(o.AreaConfigurationForNeighCell) {
 		return true
 	}
 
@@ -577,7 +577,7 @@ func (o *TraceJobAttr) SetAreaConfigurationForNeighCell(v AreaConfig) {
 
 // GetAreaScope returns the AreaScope field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetAreaScope() []AreaScope {
-	if o == nil || isNil(o.AreaScope) {
+	if o == nil || IsNil(o.AreaScope) {
 		var ret []AreaScope
 		return ret
 	}
@@ -587,7 +587,7 @@ func (o *TraceJobAttr) GetAreaScope() []AreaScope {
 // GetAreaScopeOk returns a tuple with the AreaScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetAreaScopeOk() ([]AreaScope, bool) {
-	if o == nil || isNil(o.AreaScope) {
+	if o == nil || IsNil(o.AreaScope) {
 		return nil, false
 	}
 	return o.AreaScope, true
@@ -595,7 +595,7 @@ func (o *TraceJobAttr) GetAreaScopeOk() ([]AreaScope, bool) {
 
 // HasAreaScope returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasAreaScope() bool {
-	if o != nil && !isNil(o.AreaScope) {
+	if o != nil && !IsNil(o.AreaScope) {
 		return true
 	}
 
@@ -609,7 +609,7 @@ func (o *TraceJobAttr) SetAreaScope(v []AreaScope) {
 
 // GetBeamLevelMeasurement returns the BeamLevelMeasurement field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetBeamLevelMeasurement() bool {
-	if o == nil || isNil(o.BeamLevelMeasurement) {
+	if o == nil || IsNil(o.BeamLevelMeasurement) {
 		var ret bool
 		return ret
 	}
@@ -619,7 +619,7 @@ func (o *TraceJobAttr) GetBeamLevelMeasurement() bool {
 // GetBeamLevelMeasurementOk returns a tuple with the BeamLevelMeasurement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetBeamLevelMeasurementOk() (*bool, bool) {
-	if o == nil || isNil(o.BeamLevelMeasurement) {
+	if o == nil || IsNil(o.BeamLevelMeasurement) {
 		return nil, false
 	}
 	return o.BeamLevelMeasurement, true
@@ -627,7 +627,7 @@ func (o *TraceJobAttr) GetBeamLevelMeasurementOk() (*bool, bool) {
 
 // HasBeamLevelMeasurement returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasBeamLevelMeasurement() bool {
-	if o != nil && !isNil(o.BeamLevelMeasurement) {
+	if o != nil && !IsNil(o.BeamLevelMeasurement) {
 		return true
 	}
 
@@ -641,7 +641,7 @@ func (o *TraceJobAttr) SetBeamLevelMeasurement(v bool) {
 
 // GetCollectionPeriodRrmLte returns the CollectionPeriodRrmLte field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodRrmLte() CollectionPeriodRrmLteType {
-	if o == nil || isNil(o.CollectionPeriodRrmLte) {
+	if o == nil || IsNil(o.CollectionPeriodRrmLte) {
 		var ret CollectionPeriodRrmLteType
 		return ret
 	}
@@ -651,7 +651,7 @@ func (o *TraceJobAttr) GetCollectionPeriodRrmLte() CollectionPeriodRrmLteType {
 // GetCollectionPeriodRrmLteOk returns a tuple with the CollectionPeriodRrmLte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodRrmLteOk() (*CollectionPeriodRrmLteType, bool) {
-	if o == nil || isNil(o.CollectionPeriodRrmLte) {
+	if o == nil || IsNil(o.CollectionPeriodRrmLte) {
 		return nil, false
 	}
 	return o.CollectionPeriodRrmLte, true
@@ -659,7 +659,7 @@ func (o *TraceJobAttr) GetCollectionPeriodRrmLteOk() (*CollectionPeriodRrmLteTyp
 
 // HasCollectionPeriodRrmLte returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodRrmLte() bool {
-	if o != nil && !isNil(o.CollectionPeriodRrmLte) {
+	if o != nil && !IsNil(o.CollectionPeriodRrmLte) {
 		return true
 	}
 
@@ -673,7 +673,7 @@ func (o *TraceJobAttr) SetCollectionPeriodRrmLte(v CollectionPeriodRrmLteType) {
 
 // GetCollectionPeriodM6Lte returns the CollectionPeriodM6Lte field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodM6Lte() CollectionPeriodM6LteType {
-	if o == nil || isNil(o.CollectionPeriodM6Lte) {
+	if o == nil || IsNil(o.CollectionPeriodM6Lte) {
 		var ret CollectionPeriodM6LteType
 		return ret
 	}
@@ -683,7 +683,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM6Lte() CollectionPeriodM6LteType {
 // GetCollectionPeriodM6LteOk returns a tuple with the CollectionPeriodM6Lte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodM6LteOk() (*CollectionPeriodM6LteType, bool) {
-	if o == nil || isNil(o.CollectionPeriodM6Lte) {
+	if o == nil || IsNil(o.CollectionPeriodM6Lte) {
 		return nil, false
 	}
 	return o.CollectionPeriodM6Lte, true
@@ -691,7 +691,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM6LteOk() (*CollectionPeriodM6LteType,
 
 // HasCollectionPeriodM6Lte returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodM6Lte() bool {
-	if o != nil && !isNil(o.CollectionPeriodM6Lte) {
+	if o != nil && !IsNil(o.CollectionPeriodM6Lte) {
 		return true
 	}
 
@@ -705,7 +705,7 @@ func (o *TraceJobAttr) SetCollectionPeriodM6Lte(v CollectionPeriodM6LteType) {
 
 // GetCollectionPeriodM7Lte returns the CollectionPeriodM7Lte field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodM7Lte() int32 {
-	if o == nil || isNil(o.CollectionPeriodM7Lte) {
+	if o == nil || IsNil(o.CollectionPeriodM7Lte) {
 		var ret int32
 		return ret
 	}
@@ -715,7 +715,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM7Lte() int32 {
 // GetCollectionPeriodM7LteOk returns a tuple with the CollectionPeriodM7Lte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodM7LteOk() (*int32, bool) {
-	if o == nil || isNil(o.CollectionPeriodM7Lte) {
+	if o == nil || IsNil(o.CollectionPeriodM7Lte) {
 		return nil, false
 	}
 	return o.CollectionPeriodM7Lte, true
@@ -723,7 +723,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM7LteOk() (*int32, bool) {
 
 // HasCollectionPeriodM7Lte returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodM7Lte() bool {
-	if o != nil && !isNil(o.CollectionPeriodM7Lte) {
+	if o != nil && !IsNil(o.CollectionPeriodM7Lte) {
 		return true
 	}
 
@@ -737,7 +737,7 @@ func (o *TraceJobAttr) SetCollectionPeriodM7Lte(v int32) {
 
 // GetCollectionPeriodRrmUmts returns the CollectionPeriodRrmUmts field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodRrmUmts() CollectionPeriodRrmUmtsType {
-	if o == nil || isNil(o.CollectionPeriodRrmUmts) {
+	if o == nil || IsNil(o.CollectionPeriodRrmUmts) {
 		var ret CollectionPeriodRrmUmtsType
 		return ret
 	}
@@ -747,7 +747,7 @@ func (o *TraceJobAttr) GetCollectionPeriodRrmUmts() CollectionPeriodRrmUmtsType 
 // GetCollectionPeriodRrmUmtsOk returns a tuple with the CollectionPeriodRrmUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodRrmUmtsOk() (*CollectionPeriodRrmUmtsType, bool) {
-	if o == nil || isNil(o.CollectionPeriodRrmUmts) {
+	if o == nil || IsNil(o.CollectionPeriodRrmUmts) {
 		return nil, false
 	}
 	return o.CollectionPeriodRrmUmts, true
@@ -755,7 +755,7 @@ func (o *TraceJobAttr) GetCollectionPeriodRrmUmtsOk() (*CollectionPeriodRrmUmtsT
 
 // HasCollectionPeriodRrmUmts returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodRrmUmts() bool {
-	if o != nil && !isNil(o.CollectionPeriodRrmUmts) {
+	if o != nil && !IsNil(o.CollectionPeriodRrmUmts) {
 		return true
 	}
 
@@ -769,7 +769,7 @@ func (o *TraceJobAttr) SetCollectionPeriodRrmUmts(v CollectionPeriodRrmUmtsType)
 
 // GetCollectionPeriodRrmNr returns the CollectionPeriodRrmNr field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodRrmNr() CollectionPeriodRrmNrType {
-	if o == nil || isNil(o.CollectionPeriodRrmNr) {
+	if o == nil || IsNil(o.CollectionPeriodRrmNr) {
 		var ret CollectionPeriodRrmNrType
 		return ret
 	}
@@ -779,7 +779,7 @@ func (o *TraceJobAttr) GetCollectionPeriodRrmNr() CollectionPeriodRrmNrType {
 // GetCollectionPeriodRrmNrOk returns a tuple with the CollectionPeriodRrmNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodRrmNrOk() (*CollectionPeriodRrmNrType, bool) {
-	if o == nil || isNil(o.CollectionPeriodRrmNr) {
+	if o == nil || IsNil(o.CollectionPeriodRrmNr) {
 		return nil, false
 	}
 	return o.CollectionPeriodRrmNr, true
@@ -787,7 +787,7 @@ func (o *TraceJobAttr) GetCollectionPeriodRrmNrOk() (*CollectionPeriodRrmNrType,
 
 // HasCollectionPeriodRrmNr returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodRrmNr() bool {
-	if o != nil && !isNil(o.CollectionPeriodRrmNr) {
+	if o != nil && !IsNil(o.CollectionPeriodRrmNr) {
 		return true
 	}
 
@@ -801,7 +801,7 @@ func (o *TraceJobAttr) SetCollectionPeriodRrmNr(v CollectionPeriodRrmNrType) {
 
 // GetCollectionPeriodM6Nr returns the CollectionPeriodM6Nr field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodM6Nr() CollectionPeriodM6NrType {
-	if o == nil || isNil(o.CollectionPeriodM6Nr) {
+	if o == nil || IsNil(o.CollectionPeriodM6Nr) {
 		var ret CollectionPeriodM6NrType
 		return ret
 	}
@@ -811,7 +811,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM6Nr() CollectionPeriodM6NrType {
 // GetCollectionPeriodM6NrOk returns a tuple with the CollectionPeriodM6Nr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodM6NrOk() (*CollectionPeriodM6NrType, bool) {
-	if o == nil || isNil(o.CollectionPeriodM6Nr) {
+	if o == nil || IsNil(o.CollectionPeriodM6Nr) {
 		return nil, false
 	}
 	return o.CollectionPeriodM6Nr, true
@@ -819,7 +819,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM6NrOk() (*CollectionPeriodM6NrType, b
 
 // HasCollectionPeriodM6Nr returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodM6Nr() bool {
-	if o != nil && !isNil(o.CollectionPeriodM6Nr) {
+	if o != nil && !IsNil(o.CollectionPeriodM6Nr) {
 		return true
 	}
 
@@ -833,7 +833,7 @@ func (o *TraceJobAttr) SetCollectionPeriodM6Nr(v CollectionPeriodM6NrType) {
 
 // GetCollectionPeriodM7Nr returns the CollectionPeriodM7Nr field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetCollectionPeriodM7Nr() int32 {
-	if o == nil || isNil(o.CollectionPeriodM7Nr) {
+	if o == nil || IsNil(o.CollectionPeriodM7Nr) {
 		var ret int32
 		return ret
 	}
@@ -843,7 +843,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM7Nr() int32 {
 // GetCollectionPeriodM7NrOk returns a tuple with the CollectionPeriodM7Nr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetCollectionPeriodM7NrOk() (*int32, bool) {
-	if o == nil || isNil(o.CollectionPeriodM7Nr) {
+	if o == nil || IsNil(o.CollectionPeriodM7Nr) {
 		return nil, false
 	}
 	return o.CollectionPeriodM7Nr, true
@@ -851,7 +851,7 @@ func (o *TraceJobAttr) GetCollectionPeriodM7NrOk() (*int32, bool) {
 
 // HasCollectionPeriodM7Nr returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasCollectionPeriodM7Nr() bool {
-	if o != nil && !isNil(o.CollectionPeriodM7Nr) {
+	if o != nil && !IsNil(o.CollectionPeriodM7Nr) {
 		return true
 	}
 
@@ -865,7 +865,7 @@ func (o *TraceJobAttr) SetCollectionPeriodM7Nr(v int32) {
 
 // GetEventListForEventTriggeredMeasurement returns the EventListForEventTriggeredMeasurement field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetEventListForEventTriggeredMeasurement() EventListForEventTriggeredMeasurementType {
-	if o == nil || isNil(o.EventListForEventTriggeredMeasurement) {
+	if o == nil || IsNil(o.EventListForEventTriggeredMeasurement) {
 		var ret EventListForEventTriggeredMeasurementType
 		return ret
 	}
@@ -875,7 +875,7 @@ func (o *TraceJobAttr) GetEventListForEventTriggeredMeasurement() EventListForEv
 // GetEventListForEventTriggeredMeasurementOk returns a tuple with the EventListForEventTriggeredMeasurement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetEventListForEventTriggeredMeasurementOk() (*EventListForEventTriggeredMeasurementType, bool) {
-	if o == nil || isNil(o.EventListForEventTriggeredMeasurement) {
+	if o == nil || IsNil(o.EventListForEventTriggeredMeasurement) {
 		return nil, false
 	}
 	return o.EventListForEventTriggeredMeasurement, true
@@ -883,7 +883,7 @@ func (o *TraceJobAttr) GetEventListForEventTriggeredMeasurementOk() (*EventListF
 
 // HasEventListForEventTriggeredMeasurement returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasEventListForEventTriggeredMeasurement() bool {
-	if o != nil && !isNil(o.EventListForEventTriggeredMeasurement) {
+	if o != nil && !IsNil(o.EventListForEventTriggeredMeasurement) {
 		return true
 	}
 
@@ -897,7 +897,7 @@ func (o *TraceJobAttr) SetEventListForEventTriggeredMeasurement(v EventListForEv
 
 // GetEventThreshold returns the EventThreshold field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetEventThreshold() EventThresholdType {
-	if o == nil || isNil(o.EventThreshold) {
+	if o == nil || IsNil(o.EventThreshold) {
 		var ret EventThresholdType
 		return ret
 	}
@@ -907,7 +907,7 @@ func (o *TraceJobAttr) GetEventThreshold() EventThresholdType {
 // GetEventThresholdOk returns a tuple with the EventThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetEventThresholdOk() (*EventThresholdType, bool) {
-	if o == nil || isNil(o.EventThreshold) {
+	if o == nil || IsNil(o.EventThreshold) {
 		return nil, false
 	}
 	return o.EventThreshold, true
@@ -915,7 +915,7 @@ func (o *TraceJobAttr) GetEventThresholdOk() (*EventThresholdType, bool) {
 
 // HasEventThreshold returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasEventThreshold() bool {
-	if o != nil && !isNil(o.EventThreshold) {
+	if o != nil && !IsNil(o.EventThreshold) {
 		return true
 	}
 
@@ -929,7 +929,7 @@ func (o *TraceJobAttr) SetEventThreshold(v EventThresholdType) {
 
 // GetListOfMeasurements returns the ListOfMeasurements field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetListOfMeasurements() ListOfMeasurementsType {
-	if o == nil || isNil(o.ListOfMeasurements) {
+	if o == nil || IsNil(o.ListOfMeasurements) {
 		var ret ListOfMeasurementsType
 		return ret
 	}
@@ -939,7 +939,7 @@ func (o *TraceJobAttr) GetListOfMeasurements() ListOfMeasurementsType {
 // GetListOfMeasurementsOk returns a tuple with the ListOfMeasurements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetListOfMeasurementsOk() (*ListOfMeasurementsType, bool) {
-	if o == nil || isNil(o.ListOfMeasurements) {
+	if o == nil || IsNil(o.ListOfMeasurements) {
 		return nil, false
 	}
 	return o.ListOfMeasurements, true
@@ -947,7 +947,7 @@ func (o *TraceJobAttr) GetListOfMeasurementsOk() (*ListOfMeasurementsType, bool)
 
 // HasListOfMeasurements returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasListOfMeasurements() bool {
-	if o != nil && !isNil(o.ListOfMeasurements) {
+	if o != nil && !IsNil(o.ListOfMeasurements) {
 		return true
 	}
 
@@ -961,7 +961,7 @@ func (o *TraceJobAttr) SetListOfMeasurements(v ListOfMeasurementsType) {
 
 // GetLoggingDuration returns the LoggingDuration field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetLoggingDuration() LoggingDurationType {
-	if o == nil || isNil(o.LoggingDuration) {
+	if o == nil || IsNil(o.LoggingDuration) {
 		var ret LoggingDurationType
 		return ret
 	}
@@ -971,7 +971,7 @@ func (o *TraceJobAttr) GetLoggingDuration() LoggingDurationType {
 // GetLoggingDurationOk returns a tuple with the LoggingDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetLoggingDurationOk() (*LoggingDurationType, bool) {
-	if o == nil || isNil(o.LoggingDuration) {
+	if o == nil || IsNil(o.LoggingDuration) {
 		return nil, false
 	}
 	return o.LoggingDuration, true
@@ -979,7 +979,7 @@ func (o *TraceJobAttr) GetLoggingDurationOk() (*LoggingDurationType, bool) {
 
 // HasLoggingDuration returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasLoggingDuration() bool {
-	if o != nil && !isNil(o.LoggingDuration) {
+	if o != nil && !IsNil(o.LoggingDuration) {
 		return true
 	}
 
@@ -993,7 +993,7 @@ func (o *TraceJobAttr) SetLoggingDuration(v LoggingDurationType) {
 
 // GetLoggingInterval returns the LoggingInterval field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetLoggingInterval() LoggingIntervalType {
-	if o == nil || isNil(o.LoggingInterval) {
+	if o == nil || IsNil(o.LoggingInterval) {
 		var ret LoggingIntervalType
 		return ret
 	}
@@ -1003,7 +1003,7 @@ func (o *TraceJobAttr) GetLoggingInterval() LoggingIntervalType {
 // GetLoggingIntervalOk returns a tuple with the LoggingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetLoggingIntervalOk() (*LoggingIntervalType, bool) {
-	if o == nil || isNil(o.LoggingInterval) {
+	if o == nil || IsNil(o.LoggingInterval) {
 		return nil, false
 	}
 	return o.LoggingInterval, true
@@ -1011,7 +1011,7 @@ func (o *TraceJobAttr) GetLoggingIntervalOk() (*LoggingIntervalType, bool) {
 
 // HasLoggingInterval returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasLoggingInterval() bool {
-	if o != nil && !isNil(o.LoggingInterval) {
+	if o != nil && !IsNil(o.LoggingInterval) {
 		return true
 	}
 
@@ -1025,7 +1025,7 @@ func (o *TraceJobAttr) SetLoggingInterval(v LoggingIntervalType) {
 
 // GetEventThresholdL1 returns the EventThresholdL1 field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetEventThresholdL1() EventThresholdL1Type {
-	if o == nil || isNil(o.EventThresholdL1) {
+	if o == nil || IsNil(o.EventThresholdL1) {
 		var ret EventThresholdL1Type
 		return ret
 	}
@@ -1035,7 +1035,7 @@ func (o *TraceJobAttr) GetEventThresholdL1() EventThresholdL1Type {
 // GetEventThresholdL1Ok returns a tuple with the EventThresholdL1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetEventThresholdL1Ok() (*EventThresholdL1Type, bool) {
-	if o == nil || isNil(o.EventThresholdL1) {
+	if o == nil || IsNil(o.EventThresholdL1) {
 		return nil, false
 	}
 	return o.EventThresholdL1, true
@@ -1043,7 +1043,7 @@ func (o *TraceJobAttr) GetEventThresholdL1Ok() (*EventThresholdL1Type, bool) {
 
 // HasEventThresholdL1 returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasEventThresholdL1() bool {
-	if o != nil && !isNil(o.EventThresholdL1) {
+	if o != nil && !IsNil(o.EventThresholdL1) {
 		return true
 	}
 
@@ -1057,7 +1057,7 @@ func (o *TraceJobAttr) SetEventThresholdL1(v EventThresholdL1Type) {
 
 // GetHysteresisL1 returns the HysteresisL1 field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetHysteresisL1() int32 {
-	if o == nil || isNil(o.HysteresisL1) {
+	if o == nil || IsNil(o.HysteresisL1) {
 		var ret int32
 		return ret
 	}
@@ -1067,7 +1067,7 @@ func (o *TraceJobAttr) GetHysteresisL1() int32 {
 // GetHysteresisL1Ok returns a tuple with the HysteresisL1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetHysteresisL1Ok() (*int32, bool) {
-	if o == nil || isNil(o.HysteresisL1) {
+	if o == nil || IsNil(o.HysteresisL1) {
 		return nil, false
 	}
 	return o.HysteresisL1, true
@@ -1075,7 +1075,7 @@ func (o *TraceJobAttr) GetHysteresisL1Ok() (*int32, bool) {
 
 // HasHysteresisL1 returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasHysteresisL1() bool {
-	if o != nil && !isNil(o.HysteresisL1) {
+	if o != nil && !IsNil(o.HysteresisL1) {
 		return true
 	}
 
@@ -1089,7 +1089,7 @@ func (o *TraceJobAttr) SetHysteresisL1(v int32) {
 
 // GetTimeToTriggerL1 returns the TimeToTriggerL1 field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTimeToTriggerL1() TimeToTriggerL1Type {
-	if o == nil || isNil(o.TimeToTriggerL1) {
+	if o == nil || IsNil(o.TimeToTriggerL1) {
 		var ret TimeToTriggerL1Type
 		return ret
 	}
@@ -1099,7 +1099,7 @@ func (o *TraceJobAttr) GetTimeToTriggerL1() TimeToTriggerL1Type {
 // GetTimeToTriggerL1Ok returns a tuple with the TimeToTriggerL1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTimeToTriggerL1Ok() (*TimeToTriggerL1Type, bool) {
-	if o == nil || isNil(o.TimeToTriggerL1) {
+	if o == nil || IsNil(o.TimeToTriggerL1) {
 		return nil, false
 	}
 	return o.TimeToTriggerL1, true
@@ -1107,7 +1107,7 @@ func (o *TraceJobAttr) GetTimeToTriggerL1Ok() (*TimeToTriggerL1Type, bool) {
 
 // HasTimeToTriggerL1 returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTimeToTriggerL1() bool {
-	if o != nil && !isNil(o.TimeToTriggerL1) {
+	if o != nil && !IsNil(o.TimeToTriggerL1) {
 		return true
 	}
 
@@ -1121,7 +1121,7 @@ func (o *TraceJobAttr) SetTimeToTriggerL1(v TimeToTriggerL1Type) {
 
 // GetMbsfnAreaList returns the MbsfnAreaList field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetMbsfnAreaList() []MbsfnArea {
-	if o == nil || isNil(o.MbsfnAreaList) {
+	if o == nil || IsNil(o.MbsfnAreaList) {
 		var ret []MbsfnArea
 		return ret
 	}
@@ -1131,7 +1131,7 @@ func (o *TraceJobAttr) GetMbsfnAreaList() []MbsfnArea {
 // GetMbsfnAreaListOk returns a tuple with the MbsfnAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetMbsfnAreaListOk() ([]MbsfnArea, bool) {
-	if o == nil || isNil(o.MbsfnAreaList) {
+	if o == nil || IsNil(o.MbsfnAreaList) {
 		return nil, false
 	}
 	return o.MbsfnAreaList, true
@@ -1139,7 +1139,7 @@ func (o *TraceJobAttr) GetMbsfnAreaListOk() ([]MbsfnArea, bool) {
 
 // HasMbsfnAreaList returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasMbsfnAreaList() bool {
-	if o != nil && !isNil(o.MbsfnAreaList) {
+	if o != nil && !IsNil(o.MbsfnAreaList) {
 		return true
 	}
 
@@ -1153,7 +1153,7 @@ func (o *TraceJobAttr) SetMbsfnAreaList(v []MbsfnArea) {
 
 // GetMeasurementPeriodLte returns the MeasurementPeriodLte field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetMeasurementPeriodLte() MeasurementPeriodLteType {
-	if o == nil || isNil(o.MeasurementPeriodLte) {
+	if o == nil || IsNil(o.MeasurementPeriodLte) {
 		var ret MeasurementPeriodLteType
 		return ret
 	}
@@ -1163,7 +1163,7 @@ func (o *TraceJobAttr) GetMeasurementPeriodLte() MeasurementPeriodLteType {
 // GetMeasurementPeriodLteOk returns a tuple with the MeasurementPeriodLte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetMeasurementPeriodLteOk() (*MeasurementPeriodLteType, bool) {
-	if o == nil || isNil(o.MeasurementPeriodLte) {
+	if o == nil || IsNil(o.MeasurementPeriodLte) {
 		return nil, false
 	}
 	return o.MeasurementPeriodLte, true
@@ -1171,7 +1171,7 @@ func (o *TraceJobAttr) GetMeasurementPeriodLteOk() (*MeasurementPeriodLteType, b
 
 // HasMeasurementPeriodLte returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasMeasurementPeriodLte() bool {
-	if o != nil && !isNil(o.MeasurementPeriodLte) {
+	if o != nil && !IsNil(o.MeasurementPeriodLte) {
 		return true
 	}
 
@@ -1185,7 +1185,7 @@ func (o *TraceJobAttr) SetMeasurementPeriodLte(v MeasurementPeriodLteType) {
 
 // GetMeasurementPeriodUmts returns the MeasurementPeriodUmts field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetMeasurementPeriodUmts() MeasurementPeriodUmtsType {
-	if o == nil || isNil(o.MeasurementPeriodUmts) {
+	if o == nil || IsNil(o.MeasurementPeriodUmts) {
 		var ret MeasurementPeriodUmtsType
 		return ret
 	}
@@ -1195,7 +1195,7 @@ func (o *TraceJobAttr) GetMeasurementPeriodUmts() MeasurementPeriodUmtsType {
 // GetMeasurementPeriodUmtsOk returns a tuple with the MeasurementPeriodUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetMeasurementPeriodUmtsOk() (*MeasurementPeriodUmtsType, bool) {
-	if o == nil || isNil(o.MeasurementPeriodUmts) {
+	if o == nil || IsNil(o.MeasurementPeriodUmts) {
 		return nil, false
 	}
 	return o.MeasurementPeriodUmts, true
@@ -1203,7 +1203,7 @@ func (o *TraceJobAttr) GetMeasurementPeriodUmtsOk() (*MeasurementPeriodUmtsType,
 
 // HasMeasurementPeriodUmts returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasMeasurementPeriodUmts() bool {
-	if o != nil && !isNil(o.MeasurementPeriodUmts) {
+	if o != nil && !IsNil(o.MeasurementPeriodUmts) {
 		return true
 	}
 
@@ -1217,7 +1217,7 @@ func (o *TraceJobAttr) SetMeasurementPeriodUmts(v MeasurementPeriodUmtsType) {
 
 // GetMeasurementQuantity returns the MeasurementQuantity field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetMeasurementQuantity() MeasurementQuantityType {
-	if o == nil || isNil(o.MeasurementQuantity) {
+	if o == nil || IsNil(o.MeasurementQuantity) {
 		var ret MeasurementQuantityType
 		return ret
 	}
@@ -1227,7 +1227,7 @@ func (o *TraceJobAttr) GetMeasurementQuantity() MeasurementQuantityType {
 // GetMeasurementQuantityOk returns a tuple with the MeasurementQuantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetMeasurementQuantityOk() (*MeasurementQuantityType, bool) {
-	if o == nil || isNil(o.MeasurementQuantity) {
+	if o == nil || IsNil(o.MeasurementQuantity) {
 		return nil, false
 	}
 	return o.MeasurementQuantity, true
@@ -1235,7 +1235,7 @@ func (o *TraceJobAttr) GetMeasurementQuantityOk() (*MeasurementQuantityType, boo
 
 // HasMeasurementQuantity returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasMeasurementQuantity() bool {
-	if o != nil && !isNil(o.MeasurementQuantity) {
+	if o != nil && !IsNil(o.MeasurementQuantity) {
 		return true
 	}
 
@@ -1249,7 +1249,7 @@ func (o *TraceJobAttr) SetMeasurementQuantity(v MeasurementQuantityType) {
 
 // GetEventThresholdUphUmts returns the EventThresholdUphUmts field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetEventThresholdUphUmts() int32 {
-	if o == nil || isNil(o.EventThresholdUphUmts) {
+	if o == nil || IsNil(o.EventThresholdUphUmts) {
 		var ret int32
 		return ret
 	}
@@ -1259,7 +1259,7 @@ func (o *TraceJobAttr) GetEventThresholdUphUmts() int32 {
 // GetEventThresholdUphUmtsOk returns a tuple with the EventThresholdUphUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetEventThresholdUphUmtsOk() (*int32, bool) {
-	if o == nil || isNil(o.EventThresholdUphUmts) {
+	if o == nil || IsNil(o.EventThresholdUphUmts) {
 		return nil, false
 	}
 	return o.EventThresholdUphUmts, true
@@ -1267,7 +1267,7 @@ func (o *TraceJobAttr) GetEventThresholdUphUmtsOk() (*int32, bool) {
 
 // HasEventThresholdUphUmts returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasEventThresholdUphUmts() bool {
-	if o != nil && !isNil(o.EventThresholdUphUmts) {
+	if o != nil && !IsNil(o.EventThresholdUphUmts) {
 		return true
 	}
 
@@ -1281,7 +1281,7 @@ func (o *TraceJobAttr) SetEventThresholdUphUmts(v int32) {
 
 // GetPlmnList returns the PlmnList field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetPlmnList() []PlmnListTypeInner {
-	if o == nil || isNil(o.PlmnList) {
+	if o == nil || IsNil(o.PlmnList) {
 		var ret []PlmnListTypeInner
 		return ret
 	}
@@ -1291,7 +1291,7 @@ func (o *TraceJobAttr) GetPlmnList() []PlmnListTypeInner {
 // GetPlmnListOk returns a tuple with the PlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetPlmnListOk() ([]PlmnListTypeInner, bool) {
-	if o == nil || isNil(o.PlmnList) {
+	if o == nil || IsNil(o.PlmnList) {
 		return nil, false
 	}
 	return o.PlmnList, true
@@ -1299,7 +1299,7 @@ func (o *TraceJobAttr) GetPlmnListOk() ([]PlmnListTypeInner, bool) {
 
 // HasPlmnList returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasPlmnList() bool {
-	if o != nil && !isNil(o.PlmnList) {
+	if o != nil && !IsNil(o.PlmnList) {
 		return true
 	}
 
@@ -1313,7 +1313,7 @@ func (o *TraceJobAttr) SetPlmnList(v []PlmnListTypeInner) {
 
 // GetPositioningMethod returns the PositioningMethod field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetPositioningMethod() PositioningMethodType {
-	if o == nil || isNil(o.PositioningMethod) {
+	if o == nil || IsNil(o.PositioningMethod) {
 		var ret PositioningMethodType
 		return ret
 	}
@@ -1323,7 +1323,7 @@ func (o *TraceJobAttr) GetPositioningMethod() PositioningMethodType {
 // GetPositioningMethodOk returns a tuple with the PositioningMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetPositioningMethodOk() (*PositioningMethodType, bool) {
-	if o == nil || isNil(o.PositioningMethod) {
+	if o == nil || IsNil(o.PositioningMethod) {
 		return nil, false
 	}
 	return o.PositioningMethod, true
@@ -1331,7 +1331,7 @@ func (o *TraceJobAttr) GetPositioningMethodOk() (*PositioningMethodType, bool) {
 
 // HasPositioningMethod returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasPositioningMethod() bool {
-	if o != nil && !isNil(o.PositioningMethod) {
+	if o != nil && !IsNil(o.PositioningMethod) {
 		return true
 	}
 
@@ -1345,7 +1345,7 @@ func (o *TraceJobAttr) SetPositioningMethod(v PositioningMethodType) {
 
 // GetReportAmount returns the ReportAmount field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetReportAmount() ReportAmountType {
-	if o == nil || isNil(o.ReportAmount) {
+	if o == nil || IsNil(o.ReportAmount) {
 		var ret ReportAmountType
 		return ret
 	}
@@ -1355,7 +1355,7 @@ func (o *TraceJobAttr) GetReportAmount() ReportAmountType {
 // GetReportAmountOk returns a tuple with the ReportAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetReportAmountOk() (*ReportAmountType, bool) {
-	if o == nil || isNil(o.ReportAmount) {
+	if o == nil || IsNil(o.ReportAmount) {
 		return nil, false
 	}
 	return o.ReportAmount, true
@@ -1363,7 +1363,7 @@ func (o *TraceJobAttr) GetReportAmountOk() (*ReportAmountType, bool) {
 
 // HasReportAmount returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasReportAmount() bool {
-	if o != nil && !isNil(o.ReportAmount) {
+	if o != nil && !IsNil(o.ReportAmount) {
 		return true
 	}
 
@@ -1377,7 +1377,7 @@ func (o *TraceJobAttr) SetReportAmount(v ReportAmountType) {
 
 // GetReportingTrigger returns the ReportingTrigger field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetReportingTrigger() []string {
-	if o == nil || isNil(o.ReportingTrigger) {
+	if o == nil || IsNil(o.ReportingTrigger) {
 		var ret []string
 		return ret
 	}
@@ -1387,7 +1387,7 @@ func (o *TraceJobAttr) GetReportingTrigger() []string {
 // GetReportingTriggerOk returns a tuple with the ReportingTrigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetReportingTriggerOk() ([]string, bool) {
-	if o == nil || isNil(o.ReportingTrigger) {
+	if o == nil || IsNil(o.ReportingTrigger) {
 		return nil, false
 	}
 	return o.ReportingTrigger, true
@@ -1395,7 +1395,7 @@ func (o *TraceJobAttr) GetReportingTriggerOk() ([]string, bool) {
 
 // HasReportingTrigger returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasReportingTrigger() bool {
-	if o != nil && !isNil(o.ReportingTrigger) {
+	if o != nil && !IsNil(o.ReportingTrigger) {
 		return true
 	}
 
@@ -1409,7 +1409,7 @@ func (o *TraceJobAttr) SetReportingTrigger(v []string) {
 
 // GetReportInterval returns the ReportInterval field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetReportInterval() ReportIntervalType {
-	if o == nil || isNil(o.ReportInterval) {
+	if o == nil || IsNil(o.ReportInterval) {
 		var ret ReportIntervalType
 		return ret
 	}
@@ -1419,7 +1419,7 @@ func (o *TraceJobAttr) GetReportInterval() ReportIntervalType {
 // GetReportIntervalOk returns a tuple with the ReportInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetReportIntervalOk() (*ReportIntervalType, bool) {
-	if o == nil || isNil(o.ReportInterval) {
+	if o == nil || IsNil(o.ReportInterval) {
 		return nil, false
 	}
 	return o.ReportInterval, true
@@ -1427,7 +1427,7 @@ func (o *TraceJobAttr) GetReportIntervalOk() (*ReportIntervalType, bool) {
 
 // HasReportInterval returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasReportInterval() bool {
-	if o != nil && !isNil(o.ReportInterval) {
+	if o != nil && !IsNil(o.ReportInterval) {
 		return true
 	}
 
@@ -1441,7 +1441,7 @@ func (o *TraceJobAttr) SetReportInterval(v ReportIntervalType) {
 
 // GetReportType returns the ReportType field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetReportType() ReportTypeType {
-	if o == nil || isNil(o.ReportType) {
+	if o == nil || IsNil(o.ReportType) {
 		var ret ReportTypeType
 		return ret
 	}
@@ -1451,7 +1451,7 @@ func (o *TraceJobAttr) GetReportType() ReportTypeType {
 // GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetReportTypeOk() (*ReportTypeType, bool) {
-	if o == nil || isNil(o.ReportType) {
+	if o == nil || IsNil(o.ReportType) {
 		return nil, false
 	}
 	return o.ReportType, true
@@ -1459,7 +1459,7 @@ func (o *TraceJobAttr) GetReportTypeOk() (*ReportTypeType, bool) {
 
 // HasReportType returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasReportType() bool {
-	if o != nil && !isNil(o.ReportType) {
+	if o != nil && !IsNil(o.ReportType) {
 		return true
 	}
 
@@ -1473,7 +1473,7 @@ func (o *TraceJobAttr) SetReportType(v ReportTypeType) {
 
 // GetSensorInformation returns the SensorInformation field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetSensorInformation() []string {
-	if o == nil || isNil(o.SensorInformation) {
+	if o == nil || IsNil(o.SensorInformation) {
 		var ret []string
 		return ret
 	}
@@ -1483,7 +1483,7 @@ func (o *TraceJobAttr) GetSensorInformation() []string {
 // GetSensorInformationOk returns a tuple with the SensorInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetSensorInformationOk() ([]string, bool) {
-	if o == nil || isNil(o.SensorInformation) {
+	if o == nil || IsNil(o.SensorInformation) {
 		return nil, false
 	}
 	return o.SensorInformation, true
@@ -1491,7 +1491,7 @@ func (o *TraceJobAttr) GetSensorInformationOk() ([]string, bool) {
 
 // HasSensorInformation returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasSensorInformation() bool {
-	if o != nil && !isNil(o.SensorInformation) {
+	if o != nil && !IsNil(o.SensorInformation) {
 		return true
 	}
 
@@ -1505,7 +1505,7 @@ func (o *TraceJobAttr) SetSensorInformation(v []string) {
 
 // GetTraceCollectionEntityId returns the TraceCollectionEntityId field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetTraceCollectionEntityId() int32 {
-	if o == nil || isNil(o.TraceCollectionEntityId) {
+	if o == nil || IsNil(o.TraceCollectionEntityId) {
 		var ret int32
 		return ret
 	}
@@ -1515,7 +1515,7 @@ func (o *TraceJobAttr) GetTraceCollectionEntityId() int32 {
 // GetTraceCollectionEntityIdOk returns a tuple with the TraceCollectionEntityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetTraceCollectionEntityIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TraceCollectionEntityId) {
+	if o == nil || IsNil(o.TraceCollectionEntityId) {
 		return nil, false
 	}
 	return o.TraceCollectionEntityId, true
@@ -1523,7 +1523,7 @@ func (o *TraceJobAttr) GetTraceCollectionEntityIdOk() (*int32, bool) {
 
 // HasTraceCollectionEntityId returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasTraceCollectionEntityId() bool {
-	if o != nil && !isNil(o.TraceCollectionEntityId) {
+	if o != nil && !IsNil(o.TraceCollectionEntityId) {
 		return true
 	}
 
@@ -1537,7 +1537,7 @@ func (o *TraceJobAttr) SetTraceCollectionEntityId(v int32) {
 
 // GetExcessPacketDelayThresholds returns the ExcessPacketDelayThresholds field value if set, zero value otherwise.
 func (o *TraceJobAttr) GetExcessPacketDelayThresholds() map[string]interface{} {
-	if o == nil || isNil(o.ExcessPacketDelayThresholds) {
+	if o == nil || IsNil(o.ExcessPacketDelayThresholds) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -1547,7 +1547,7 @@ func (o *TraceJobAttr) GetExcessPacketDelayThresholds() map[string]interface{} {
 // GetExcessPacketDelayThresholdsOk returns a tuple with the ExcessPacketDelayThresholds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobAttr) GetExcessPacketDelayThresholdsOk() (*map[string]interface{}, bool) {
-	if o == nil || isNil(o.ExcessPacketDelayThresholds) {
+	if o == nil || IsNil(o.ExcessPacketDelayThresholds) {
 		return nil, false
 	}
 	return o.ExcessPacketDelayThresholds, true
@@ -1555,7 +1555,7 @@ func (o *TraceJobAttr) GetExcessPacketDelayThresholdsOk() (*map[string]interface
 
 // HasExcessPacketDelayThresholds returns a boolean if a field has been set.
 func (o *TraceJobAttr) HasExcessPacketDelayThresholds() bool {
-	if o != nil && !isNil(o.ExcessPacketDelayThresholds) {
+	if o != nil && !IsNil(o.ExcessPacketDelayThresholds) {
 		return true
 	}
 
@@ -1568,7 +1568,7 @@ func (o *TraceJobAttr) SetExcessPacketDelayThresholds(v map[string]interface{}) 
 }
 
 func (o TraceJobAttr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1577,142 +1577,142 @@ func (o TraceJobAttr) MarshalJSON() ([]byte, error) {
 
 func (o TraceJobAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JobType) {
+	if !IsNil(o.JobType) {
 		toSerialize["jobType"] = o.JobType
 	}
-	if !isNil(o.ListOfInterfaces) {
+	if !IsNil(o.ListOfInterfaces) {
 		toSerialize["listOfInterfaces"] = o.ListOfInterfaces
 	}
-	if !isNil(o.ListOfNeTypes) {
+	if !IsNil(o.ListOfNeTypes) {
 		toSerialize["listOfNeTypes"] = o.ListOfNeTypes
 	}
-	if !isNil(o.PlmnTarget) {
+	if !IsNil(o.PlmnTarget) {
 		toSerialize["plmnTarget"] = o.PlmnTarget
 	}
-	if !isNil(o.TraceReportingConsumerUri) {
+	if !IsNil(o.TraceReportingConsumerUri) {
 		toSerialize["traceReportingConsumerUri"] = o.TraceReportingConsumerUri
 	}
-	if !isNil(o.TraceCollectionEntityIpAddress) {
+	if !IsNil(o.TraceCollectionEntityIpAddress) {
 		toSerialize["traceCollectionEntityIpAddress"] = o.TraceCollectionEntityIpAddress
 	}
-	if !isNil(o.TraceDepth) {
+	if !IsNil(o.TraceDepth) {
 		toSerialize["traceDepth"] = o.TraceDepth
 	}
-	if !isNil(o.TraceReference) {
+	if !IsNil(o.TraceReference) {
 		toSerialize["traceReference"] = o.TraceReference
 	}
-	if !isNil(o.TraceRecordingSessionReference) {
+	if !IsNil(o.TraceRecordingSessionReference) {
 		toSerialize["traceRecordingSessionReference"] = o.TraceRecordingSessionReference
 	}
-	if !isNil(o.JobId) {
+	if !IsNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
-	if !isNil(o.TraceReportingFormat) {
+	if !IsNil(o.TraceReportingFormat) {
 		toSerialize["traceReportingFormat"] = o.TraceReportingFormat
 	}
-	if !isNil(o.TraceTarget) {
+	if !IsNil(o.TraceTarget) {
 		toSerialize["traceTarget"] = o.TraceTarget
 	}
-	if !isNil(o.TriggeringEvents) {
+	if !IsNil(o.TriggeringEvents) {
 		toSerialize["triggeringEvents"] = o.TriggeringEvents
 	}
-	if !isNil(o.AnonymizationOfMdtData) {
+	if !IsNil(o.AnonymizationOfMdtData) {
 		toSerialize["anonymizationOfMdtData"] = o.AnonymizationOfMdtData
 	}
-	if !isNil(o.AreaConfigurationForNeighCell) {
+	if !IsNil(o.AreaConfigurationForNeighCell) {
 		toSerialize["areaConfigurationForNeighCell"] = o.AreaConfigurationForNeighCell
 	}
-	if !isNil(o.AreaScope) {
+	if !IsNil(o.AreaScope) {
 		toSerialize["areaScope"] = o.AreaScope
 	}
-	if !isNil(o.BeamLevelMeasurement) {
+	if !IsNil(o.BeamLevelMeasurement) {
 		toSerialize["beamLevelMeasurement"] = o.BeamLevelMeasurement
 	}
-	if !isNil(o.CollectionPeriodRrmLte) {
+	if !IsNil(o.CollectionPeriodRrmLte) {
 		toSerialize["collectionPeriodRrmLte"] = o.CollectionPeriodRrmLte
 	}
-	if !isNil(o.CollectionPeriodM6Lte) {
+	if !IsNil(o.CollectionPeriodM6Lte) {
 		toSerialize["collectionPeriodM6Lte"] = o.CollectionPeriodM6Lte
 	}
-	if !isNil(o.CollectionPeriodM7Lte) {
+	if !IsNil(o.CollectionPeriodM7Lte) {
 		toSerialize["collectionPeriodM7Lte"] = o.CollectionPeriodM7Lte
 	}
-	if !isNil(o.CollectionPeriodRrmUmts) {
+	if !IsNil(o.CollectionPeriodRrmUmts) {
 		toSerialize["collectionPeriodRrmUmts"] = o.CollectionPeriodRrmUmts
 	}
-	if !isNil(o.CollectionPeriodRrmNr) {
+	if !IsNil(o.CollectionPeriodRrmNr) {
 		toSerialize["collectionPeriodRrmNr"] = o.CollectionPeriodRrmNr
 	}
-	if !isNil(o.CollectionPeriodM6Nr) {
+	if !IsNil(o.CollectionPeriodM6Nr) {
 		toSerialize["collectionPeriodM6Nr"] = o.CollectionPeriodM6Nr
 	}
-	if !isNil(o.CollectionPeriodM7Nr) {
+	if !IsNil(o.CollectionPeriodM7Nr) {
 		toSerialize["collectionPeriodM7Nr"] = o.CollectionPeriodM7Nr
 	}
-	if !isNil(o.EventListForEventTriggeredMeasurement) {
+	if !IsNil(o.EventListForEventTriggeredMeasurement) {
 		toSerialize["eventListForEventTriggeredMeasurement"] = o.EventListForEventTriggeredMeasurement
 	}
-	if !isNil(o.EventThreshold) {
+	if !IsNil(o.EventThreshold) {
 		toSerialize["eventThreshold"] = o.EventThreshold
 	}
-	if !isNil(o.ListOfMeasurements) {
+	if !IsNil(o.ListOfMeasurements) {
 		toSerialize["listOfMeasurements"] = o.ListOfMeasurements
 	}
-	if !isNil(o.LoggingDuration) {
+	if !IsNil(o.LoggingDuration) {
 		toSerialize["loggingDuration"] = o.LoggingDuration
 	}
-	if !isNil(o.LoggingInterval) {
+	if !IsNil(o.LoggingInterval) {
 		toSerialize["loggingInterval"] = o.LoggingInterval
 	}
-	if !isNil(o.EventThresholdL1) {
+	if !IsNil(o.EventThresholdL1) {
 		toSerialize["eventThresholdL1"] = o.EventThresholdL1
 	}
-	if !isNil(o.HysteresisL1) {
+	if !IsNil(o.HysteresisL1) {
 		toSerialize["hysteresisL1"] = o.HysteresisL1
 	}
-	if !isNil(o.TimeToTriggerL1) {
+	if !IsNil(o.TimeToTriggerL1) {
 		toSerialize["timeToTriggerL1"] = o.TimeToTriggerL1
 	}
-	if !isNil(o.MbsfnAreaList) {
+	if !IsNil(o.MbsfnAreaList) {
 		toSerialize["mbsfnAreaList"] = o.MbsfnAreaList
 	}
-	if !isNil(o.MeasurementPeriodLte) {
+	if !IsNil(o.MeasurementPeriodLte) {
 		toSerialize["measurementPeriodLte"] = o.MeasurementPeriodLte
 	}
-	if !isNil(o.MeasurementPeriodUmts) {
+	if !IsNil(o.MeasurementPeriodUmts) {
 		toSerialize["measurementPeriodUmts"] = o.MeasurementPeriodUmts
 	}
-	if !isNil(o.MeasurementQuantity) {
+	if !IsNil(o.MeasurementQuantity) {
 		toSerialize["measurementQuantity"] = o.MeasurementQuantity
 	}
-	if !isNil(o.EventThresholdUphUmts) {
+	if !IsNil(o.EventThresholdUphUmts) {
 		toSerialize["eventThresholdUphUmts"] = o.EventThresholdUphUmts
 	}
-	if !isNil(o.PlmnList) {
+	if !IsNil(o.PlmnList) {
 		toSerialize["plmnList"] = o.PlmnList
 	}
-	if !isNil(o.PositioningMethod) {
+	if !IsNil(o.PositioningMethod) {
 		toSerialize["positioningMethod"] = o.PositioningMethod
 	}
-	if !isNil(o.ReportAmount) {
+	if !IsNil(o.ReportAmount) {
 		toSerialize["reportAmount"] = o.ReportAmount
 	}
-	if !isNil(o.ReportingTrigger) {
+	if !IsNil(o.ReportingTrigger) {
 		toSerialize["reportingTrigger"] = o.ReportingTrigger
 	}
-	if !isNil(o.ReportInterval) {
+	if !IsNil(o.ReportInterval) {
 		toSerialize["reportInterval"] = o.ReportInterval
 	}
-	if !isNil(o.ReportType) {
+	if !IsNil(o.ReportType) {
 		toSerialize["reportType"] = o.ReportType
 	}
-	if !isNil(o.SensorInformation) {
+	if !IsNil(o.SensorInformation) {
 		toSerialize["sensorInformation"] = o.SensorInformation
 	}
-	if !isNil(o.TraceCollectionEntityId) {
+	if !IsNil(o.TraceCollectionEntityId) {
 		toSerialize["traceCollectionEntityId"] = o.TraceCollectionEntityId
 	}
-	if !isNil(o.ExcessPacketDelayThresholds) {
+	if !IsNil(o.ExcessPacketDelayThresholds) {
 		toSerialize["excessPacketDelayThresholds"] = o.ExcessPacketDelayThresholds
 	}
 	return toSerialize, nil
@@ -1753,5 +1753,3 @@ func (v *NullableTraceJobAttr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

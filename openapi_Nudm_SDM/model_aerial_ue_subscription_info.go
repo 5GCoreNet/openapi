@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &AerialUeSubscriptionInfo{}
 // AerialUeSubscriptionInfo Contains the Aerial UE Subscription Information, it at least contains the Aerial UE Indication.
 type AerialUeSubscriptionInfo struct {
 	AerialUeInd AerialUeIndication `json:"aerialUeInd"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Var3gppUavId *string `json:"3gppUavId,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *AerialUeSubscriptionInfo) SetAerialUeInd(v AerialUeIndication) {
 
 // GetVar3gppUavId returns the Var3gppUavId field value if set, zero value otherwise.
 func (o *AerialUeSubscriptionInfo) GetVar3gppUavId() string {
-	if o == nil || isNil(o.Var3gppUavId) {
+	if o == nil || IsNil(o.Var3gppUavId) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AerialUeSubscriptionInfo) GetVar3gppUavId() string {
 // GetVar3gppUavIdOk returns a tuple with the Var3gppUavId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AerialUeSubscriptionInfo) GetVar3gppUavIdOk() (*string, bool) {
-	if o == nil || isNil(o.Var3gppUavId) {
+	if o == nil || IsNil(o.Var3gppUavId) {
 		return nil, false
 	}
 	return o.Var3gppUavId, true
@@ -86,7 +86,7 @@ func (o *AerialUeSubscriptionInfo) GetVar3gppUavIdOk() (*string, bool) {
 
 // HasVar3gppUavId returns a boolean if a field has been set.
 func (o *AerialUeSubscriptionInfo) HasVar3gppUavId() bool {
-	if o != nil && !isNil(o.Var3gppUavId) {
+	if o != nil && !IsNil(o.Var3gppUavId) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *AerialUeSubscriptionInfo) SetVar3gppUavId(v string) {
 }
 
 func (o AerialUeSubscriptionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o AerialUeSubscriptionInfo) MarshalJSON() ([]byte, error) {
 func (o AerialUeSubscriptionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aerialUeInd"] = o.AerialUeInd
-	if !isNil(o.Var3gppUavId) {
+	if !IsNil(o.Var3gppUavId) {
 		toSerialize["3gppUavId"] = o.Var3gppUavId
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableAerialUeSubscriptionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

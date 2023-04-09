@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PfdData{}
 // PfdData List of Application IDs and/or AF IDs managed by a given NEF Instance
 type PfdData struct {
 	AppIds []string `json:"appIds,omitempty"`
-	AfIds []string `json:"afIds,omitempty"`
+	AfIds  []string `json:"afIds,omitempty"`
 }
 
 // NewPfdData instantiates a new PfdData object
@@ -42,7 +42,7 @@ func NewPfdDataWithDefaults() *PfdData {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *PfdData) GetAppIds() []string {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PfdData) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdData) GetAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AppIds) {
+	if o == nil || IsNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -60,7 +60,7 @@ func (o *PfdData) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *PfdData) HasAppIds() bool {
-	if o != nil && !isNil(o.AppIds) {
+	if o != nil && !IsNil(o.AppIds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PfdData) SetAppIds(v []string) {
 
 // GetAfIds returns the AfIds field value if set, zero value otherwise.
 func (o *PfdData) GetAfIds() []string {
-	if o == nil || isNil(o.AfIds) {
+	if o == nil || IsNil(o.AfIds) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PfdData) GetAfIds() []string {
 // GetAfIdsOk returns a tuple with the AfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdData) GetAfIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AfIds) {
+	if o == nil || IsNil(o.AfIds) {
 		return nil, false
 	}
 	return o.AfIds, true
@@ -92,7 +92,7 @@ func (o *PfdData) GetAfIdsOk() ([]string, bool) {
 
 // HasAfIds returns a boolean if a field has been set.
 func (o *PfdData) HasAfIds() bool {
-	if o != nil && !isNil(o.AfIds) {
+	if o != nil && !IsNil(o.AfIds) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *PfdData) SetAfIds(v []string) {
 }
 
 func (o PfdData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o PfdData) MarshalJSON() ([]byte, error) {
 
 func (o PfdData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppIds) {
+	if !IsNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !isNil(o.AfIds) {
+	if !IsNil(o.AfIds) {
 		toSerialize["afIds"] = o.AfIds
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullablePfdData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

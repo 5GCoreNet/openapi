@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &EdrxParameters1{}
 
 // EdrxParameters1 struct for EdrxParameters1
 type EdrxParameters1 struct {
-	RatType RatType `json:"ratType"`
-	EdrxValue string `json:"edrxValue"`
+	RatType   RatType `json:"ratType"`
+	EdrxValue string  `json:"edrxValue"`
 }
 
 // NewEdrxParameters1 instantiates a new EdrxParameters1 object
@@ -91,7 +91,7 @@ func (o *EdrxParameters1) SetEdrxValue(v string) {
 }
 
 func (o EdrxParameters1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableEdrxParameters1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

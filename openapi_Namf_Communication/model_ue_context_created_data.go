@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &UeContextCreatedData{}
 
 // UeContextCreatedData Data within a successful response for creating an individual ueContext resource
 type UeContextCreatedData struct {
-	UeContext UeContext `json:"ueContext"`
-	TargetToSourceData N2InfoContent `json:"targetToSourceData"`
-	PduSessionList []N2SmInformation `json:"pduSessionList"`
-	FailedSessionList []N2SmInformation `json:"failedSessionList,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	PcfReselectedInd *bool `json:"pcfReselectedInd,omitempty"`
+	UeContext          UeContext         `json:"ueContext"`
+	TargetToSourceData N2InfoContent     `json:"targetToSourceData"`
+	PduSessionList     []N2SmInformation `json:"pduSessionList"`
+	FailedSessionList  []N2SmInformation `json:"failedSessionList,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures    *string  `json:"supportedFeatures,omitempty"`
+	PcfReselectedInd     *bool    `json:"pcfReselectedInd,omitempty"`
 	AnalyticsNotUsedList []string `json:"analyticsNotUsedList,omitempty"`
 }
 
@@ -123,7 +123,7 @@ func (o *UeContextCreatedData) SetPduSessionList(v []N2SmInformation) {
 
 // GetFailedSessionList returns the FailedSessionList field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetFailedSessionList() []N2SmInformation {
-	if o == nil || isNil(o.FailedSessionList) {
+	if o == nil || IsNil(o.FailedSessionList) {
 		var ret []N2SmInformation
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *UeContextCreatedData) GetFailedSessionList() []N2SmInformation {
 // GetFailedSessionListOk returns a tuple with the FailedSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetFailedSessionListOk() ([]N2SmInformation, bool) {
-	if o == nil || isNil(o.FailedSessionList) {
+	if o == nil || IsNil(o.FailedSessionList) {
 		return nil, false
 	}
 	return o.FailedSessionList, true
@@ -141,7 +141,7 @@ func (o *UeContextCreatedData) GetFailedSessionListOk() ([]N2SmInformation, bool
 
 // HasFailedSessionList returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasFailedSessionList() bool {
-	if o != nil && !isNil(o.FailedSessionList) {
+	if o != nil && !IsNil(o.FailedSessionList) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *UeContextCreatedData) SetFailedSessionList(v []N2SmInformation) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *UeContextCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -173,7 +173,7 @@ func (o *UeContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *UeContextCreatedData) SetSupportedFeatures(v string) {
 
 // GetPcfReselectedInd returns the PcfReselectedInd field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetPcfReselectedInd() bool {
-	if o == nil || isNil(o.PcfReselectedInd) {
+	if o == nil || IsNil(o.PcfReselectedInd) {
 		var ret bool
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *UeContextCreatedData) GetPcfReselectedInd() bool {
 // GetPcfReselectedIndOk returns a tuple with the PcfReselectedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetPcfReselectedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PcfReselectedInd) {
+	if o == nil || IsNil(o.PcfReselectedInd) {
 		return nil, false
 	}
 	return o.PcfReselectedInd, true
@@ -205,7 +205,7 @@ func (o *UeContextCreatedData) GetPcfReselectedIndOk() (*bool, bool) {
 
 // HasPcfReselectedInd returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasPcfReselectedInd() bool {
-	if o != nil && !isNil(o.PcfReselectedInd) {
+	if o != nil && !IsNil(o.PcfReselectedInd) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *UeContextCreatedData) SetPcfReselectedInd(v bool) {
 
 // GetAnalyticsNotUsedList returns the AnalyticsNotUsedList field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetAnalyticsNotUsedList() []string {
-	if o == nil || isNil(o.AnalyticsNotUsedList) {
+	if o == nil || IsNil(o.AnalyticsNotUsedList) {
 		var ret []string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *UeContextCreatedData) GetAnalyticsNotUsedList() []string {
 // GetAnalyticsNotUsedListOk returns a tuple with the AnalyticsNotUsedList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetAnalyticsNotUsedListOk() ([]string, bool) {
-	if o == nil || isNil(o.AnalyticsNotUsedList) {
+	if o == nil || IsNil(o.AnalyticsNotUsedList) {
 		return nil, false
 	}
 	return o.AnalyticsNotUsedList, true
@@ -237,7 +237,7 @@ func (o *UeContextCreatedData) GetAnalyticsNotUsedListOk() ([]string, bool) {
 
 // HasAnalyticsNotUsedList returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasAnalyticsNotUsedList() bool {
-	if o != nil && !isNil(o.AnalyticsNotUsedList) {
+	if o != nil && !IsNil(o.AnalyticsNotUsedList) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *UeContextCreatedData) SetAnalyticsNotUsedList(v []string) {
 }
 
 func (o UeContextCreatedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -262,16 +262,16 @@ func (o UeContextCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize["ueContext"] = o.UeContext
 	toSerialize["targetToSourceData"] = o.TargetToSourceData
 	toSerialize["pduSessionList"] = o.PduSessionList
-	if !isNil(o.FailedSessionList) {
+	if !IsNil(o.FailedSessionList) {
 		toSerialize["failedSessionList"] = o.FailedSessionList
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.PcfReselectedInd) {
+	if !IsNil(o.PcfReselectedInd) {
 		toSerialize["pcfReselectedInd"] = o.PcfReselectedInd
 	}
-	if !isNil(o.AnalyticsNotUsedList) {
+	if !IsNil(o.AnalyticsNotUsedList) {
 		toSerialize["analyticsNotUsedList"] = o.AnalyticsNotUsedList
 	}
 	return toSerialize, nil
@@ -312,5 +312,3 @@ func (v *NullableUeContextCreatedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,17 +13,16 @@ package openapi_Nnwdaf_AnalyticsInfo
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // NWDAFContextDocumentApiService NWDAFContextDocumentApi service
 type NWDAFContextDocumentApiService service
 
 type ApiGetNwdafContextRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NWDAFContextDocumentApiService
 	contextIds *ContextIdList
 	reqContext *RequestedContext
@@ -35,7 +34,7 @@ func (r ApiGetNwdafContextRequest) ContextIds(contextIds ContextIdList) ApiGetNw
 	return r
 }
 
-// Identfies the type(s) of the analytics context information the consumer wishes to receive. 
+// Identfies the type(s) of the analytics context information the consumer wishes to receive.
 func (r ApiGetNwdafContextRequest) ReqContext(reqContext RequestedContext) ApiGetNwdafContextRequest {
 	r.reqContext = &reqContext
 	return r
@@ -48,24 +47,25 @@ func (r ApiGetNwdafContextRequest) Execute() (*ContextData, *http.Response, erro
 /*
 GetNwdafContext Get context information related to analytics subscriptions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNwdafContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNwdafContextRequest
 */
 func (a *NWDAFContextDocumentApiService) GetNwdafContext(ctx context.Context) ApiGetNwdafContextRequest {
 	return ApiGetNwdafContextRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ContextData
+//
+//	@return ContextData
 func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafContextRequest) (*ContextData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContextData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContextData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NWDAFContextDocumentApiService.GetNwdafContext")
@@ -82,9 +82,9 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 		return localVarReturnValue, nil, reportError("contextIds is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "context-ids", r.contextIds, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "context-ids", r.contextIds, "")
 	if r.reqContext != nil {
-		parameterAddToQuery(localVarQueryParams, "req-context", r.reqContext, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "req-context", r.reqContext, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -113,9 +113,9 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -132,8 +132,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -143,8 +143,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -154,8 +154,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -165,8 +165,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -176,8 +176,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -187,8 +187,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -198,8 +198,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -209,8 +209,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -220,8 +220,8 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

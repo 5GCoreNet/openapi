@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,29 +21,29 @@ var _ MappedNullable = &AmfEventSubscription{}
 type AmfEventSubscription struct {
 	EventList []AmfEvent `json:"eventList"`
 	// String providing an URI formatted according to RFC 3986.
-	EventNotifyUri string `json:"eventNotifyUri"`
+	EventNotifyUri      string `json:"eventNotifyUri"`
 	NotifyCorrelationId string `json:"notifyCorrelationId"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfId string `json:"nfId"`
 	// String providing an URI formatted according to RFC 3986.
-	SubsChangeNotifyUri *string `json:"subsChangeNotifyUri,omitempty"`
+	SubsChangeNotifyUri           *string `json:"subsChangeNotifyUri,omitempty"`
 	SubsChangeNotifyCorrelationId *string `json:"subsChangeNotifyCorrelationId,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
-	GroupId *string `json:"groupId,omitempty"`
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
+	GroupId         *string  `json:"groupId,omitempty"`
 	ExcludeSupiList []string `json:"excludeSupiList,omitempty"`
 	ExcludeGpsiList []string `json:"excludeGpsiList,omitempty"`
 	IncludeSupiList []string `json:"includeSupiList,omitempty"`
 	IncludeGpsiList []string `json:"includeGpsiList,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
-	AnyUE *bool `json:"anyUE,omitempty"`
-	Options *AmfEventMode `json:"options,omitempty"`
-	SourceNfType *NFType `json:"sourceNfType,omitempty"`
-	TermNotifyInd *bool `json:"termNotifyInd,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei           *string       `json:"pei,omitempty"`
+	AnyUE         *bool         `json:"anyUE,omitempty"`
+	Options       *AmfEventMode `json:"options,omitempty"`
+	SourceNfType  *NFType       `json:"sourceNfType,omitempty"`
+	TermNotifyInd *bool         `json:"termNotifyInd,omitempty"`
 }
 
 // NewAmfEventSubscription instantiates a new AmfEventSubscription object
@@ -165,7 +165,7 @@ func (o *AmfEventSubscription) SetNfId(v string) {
 
 // GetSubsChangeNotifyUri returns the SubsChangeNotifyUri field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetSubsChangeNotifyUri() string {
-	if o == nil || isNil(o.SubsChangeNotifyUri) {
+	if o == nil || IsNil(o.SubsChangeNotifyUri) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *AmfEventSubscription) GetSubsChangeNotifyUri() string {
 // GetSubsChangeNotifyUriOk returns a tuple with the SubsChangeNotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetSubsChangeNotifyUriOk() (*string, bool) {
-	if o == nil || isNil(o.SubsChangeNotifyUri) {
+	if o == nil || IsNil(o.SubsChangeNotifyUri) {
 		return nil, false
 	}
 	return o.SubsChangeNotifyUri, true
@@ -183,7 +183,7 @@ func (o *AmfEventSubscription) GetSubsChangeNotifyUriOk() (*string, bool) {
 
 // HasSubsChangeNotifyUri returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasSubsChangeNotifyUri() bool {
-	if o != nil && !isNil(o.SubsChangeNotifyUri) {
+	if o != nil && !IsNil(o.SubsChangeNotifyUri) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *AmfEventSubscription) SetSubsChangeNotifyUri(v string) {
 
 // GetSubsChangeNotifyCorrelationId returns the SubsChangeNotifyCorrelationId field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetSubsChangeNotifyCorrelationId() string {
-	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *AmfEventSubscription) GetSubsChangeNotifyCorrelationId() string {
 // GetSubsChangeNotifyCorrelationIdOk returns a tuple with the SubsChangeNotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetSubsChangeNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
 		return nil, false
 	}
 	return o.SubsChangeNotifyCorrelationId, true
@@ -215,7 +215,7 @@ func (o *AmfEventSubscription) GetSubsChangeNotifyCorrelationIdOk() (*string, bo
 
 // HasSubsChangeNotifyCorrelationId returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasSubsChangeNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.SubsChangeNotifyCorrelationId) {
+	if o != nil && !IsNil(o.SubsChangeNotifyCorrelationId) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *AmfEventSubscription) SetSubsChangeNotifyCorrelationId(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *AmfEventSubscription) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -247,7 +247,7 @@ func (o *AmfEventSubscription) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *AmfEventSubscription) SetSupi(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *AmfEventSubscription) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -279,7 +279,7 @@ func (o *AmfEventSubscription) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *AmfEventSubscription) SetGroupId(v string) {
 
 // GetExcludeSupiList returns the ExcludeSupiList field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetExcludeSupiList() []string {
-	if o == nil || isNil(o.ExcludeSupiList) {
+	if o == nil || IsNil(o.ExcludeSupiList) {
 		var ret []string
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *AmfEventSubscription) GetExcludeSupiList() []string {
 // GetExcludeSupiListOk returns a tuple with the ExcludeSupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetExcludeSupiListOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeSupiList) {
+	if o == nil || IsNil(o.ExcludeSupiList) {
 		return nil, false
 	}
 	return o.ExcludeSupiList, true
@@ -311,7 +311,7 @@ func (o *AmfEventSubscription) GetExcludeSupiListOk() ([]string, bool) {
 
 // HasExcludeSupiList returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasExcludeSupiList() bool {
-	if o != nil && !isNil(o.ExcludeSupiList) {
+	if o != nil && !IsNil(o.ExcludeSupiList) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *AmfEventSubscription) SetExcludeSupiList(v []string) {
 
 // GetExcludeGpsiList returns the ExcludeGpsiList field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetExcludeGpsiList() []string {
-	if o == nil || isNil(o.ExcludeGpsiList) {
+	if o == nil || IsNil(o.ExcludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *AmfEventSubscription) GetExcludeGpsiList() []string {
 // GetExcludeGpsiListOk returns a tuple with the ExcludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetExcludeGpsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeGpsiList) {
+	if o == nil || IsNil(o.ExcludeGpsiList) {
 		return nil, false
 	}
 	return o.ExcludeGpsiList, true
@@ -343,7 +343,7 @@ func (o *AmfEventSubscription) GetExcludeGpsiListOk() ([]string, bool) {
 
 // HasExcludeGpsiList returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasExcludeGpsiList() bool {
-	if o != nil && !isNil(o.ExcludeGpsiList) {
+	if o != nil && !IsNil(o.ExcludeGpsiList) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *AmfEventSubscription) SetExcludeGpsiList(v []string) {
 
 // GetIncludeSupiList returns the IncludeSupiList field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetIncludeSupiList() []string {
-	if o == nil || isNil(o.IncludeSupiList) {
+	if o == nil || IsNil(o.IncludeSupiList) {
 		var ret []string
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *AmfEventSubscription) GetIncludeSupiList() []string {
 // GetIncludeSupiListOk returns a tuple with the IncludeSupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetIncludeSupiListOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeSupiList) {
+	if o == nil || IsNil(o.IncludeSupiList) {
 		return nil, false
 	}
 	return o.IncludeSupiList, true
@@ -375,7 +375,7 @@ func (o *AmfEventSubscription) GetIncludeSupiListOk() ([]string, bool) {
 
 // HasIncludeSupiList returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasIncludeSupiList() bool {
-	if o != nil && !isNil(o.IncludeSupiList) {
+	if o != nil && !IsNil(o.IncludeSupiList) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *AmfEventSubscription) SetIncludeSupiList(v []string) {
 
 // GetIncludeGpsiList returns the IncludeGpsiList field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetIncludeGpsiList() []string {
-	if o == nil || isNil(o.IncludeGpsiList) {
+	if o == nil || IsNil(o.IncludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *AmfEventSubscription) GetIncludeGpsiList() []string {
 // GetIncludeGpsiListOk returns a tuple with the IncludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetIncludeGpsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeGpsiList) {
+	if o == nil || IsNil(o.IncludeGpsiList) {
 		return nil, false
 	}
 	return o.IncludeGpsiList, true
@@ -407,7 +407,7 @@ func (o *AmfEventSubscription) GetIncludeGpsiListOk() ([]string, bool) {
 
 // HasIncludeGpsiList returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasIncludeGpsiList() bool {
-	if o != nil && !isNil(o.IncludeGpsiList) {
+	if o != nil && !IsNil(o.IncludeGpsiList) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *AmfEventSubscription) SetIncludeGpsiList(v []string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *AmfEventSubscription) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -439,7 +439,7 @@ func (o *AmfEventSubscription) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *AmfEventSubscription) SetGpsi(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *AmfEventSubscription) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -471,7 +471,7 @@ func (o *AmfEventSubscription) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *AmfEventSubscription) SetPei(v string) {
 
 // GetAnyUE returns the AnyUE field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetAnyUE() bool {
-	if o == nil || isNil(o.AnyUE) {
+	if o == nil || IsNil(o.AnyUE) {
 		var ret bool
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *AmfEventSubscription) GetAnyUE() bool {
 // GetAnyUEOk returns a tuple with the AnyUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetAnyUEOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUE) {
+	if o == nil || IsNil(o.AnyUE) {
 		return nil, false
 	}
 	return o.AnyUE, true
@@ -503,7 +503,7 @@ func (o *AmfEventSubscription) GetAnyUEOk() (*bool, bool) {
 
 // HasAnyUE returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasAnyUE() bool {
-	if o != nil && !isNil(o.AnyUE) {
+	if o != nil && !IsNil(o.AnyUE) {
 		return true
 	}
 
@@ -517,7 +517,7 @@ func (o *AmfEventSubscription) SetAnyUE(v bool) {
 
 // GetOptions returns the Options field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetOptions() AmfEventMode {
-	if o == nil || isNil(o.Options) {
+	if o == nil || IsNil(o.Options) {
 		var ret AmfEventMode
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *AmfEventSubscription) GetOptions() AmfEventMode {
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetOptionsOk() (*AmfEventMode, bool) {
-	if o == nil || isNil(o.Options) {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return o.Options, true
@@ -535,7 +535,7 @@ func (o *AmfEventSubscription) GetOptionsOk() (*AmfEventMode, bool) {
 
 // HasOptions returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasOptions() bool {
-	if o != nil && !isNil(o.Options) {
+	if o != nil && !IsNil(o.Options) {
 		return true
 	}
 
@@ -549,7 +549,7 @@ func (o *AmfEventSubscription) SetOptions(v AmfEventMode) {
 
 // GetSourceNfType returns the SourceNfType field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetSourceNfType() NFType {
-	if o == nil || isNil(o.SourceNfType) {
+	if o == nil || IsNil(o.SourceNfType) {
 		var ret NFType
 		return ret
 	}
@@ -559,7 +559,7 @@ func (o *AmfEventSubscription) GetSourceNfType() NFType {
 // GetSourceNfTypeOk returns a tuple with the SourceNfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetSourceNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.SourceNfType) {
+	if o == nil || IsNil(o.SourceNfType) {
 		return nil, false
 	}
 	return o.SourceNfType, true
@@ -567,7 +567,7 @@ func (o *AmfEventSubscription) GetSourceNfTypeOk() (*NFType, bool) {
 
 // HasSourceNfType returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasSourceNfType() bool {
-	if o != nil && !isNil(o.SourceNfType) {
+	if o != nil && !IsNil(o.SourceNfType) {
 		return true
 	}
 
@@ -581,7 +581,7 @@ func (o *AmfEventSubscription) SetSourceNfType(v NFType) {
 
 // GetTermNotifyInd returns the TermNotifyInd field value if set, zero value otherwise.
 func (o *AmfEventSubscription) GetTermNotifyInd() bool {
-	if o == nil || isNil(o.TermNotifyInd) {
+	if o == nil || IsNil(o.TermNotifyInd) {
 		var ret bool
 		return ret
 	}
@@ -591,7 +591,7 @@ func (o *AmfEventSubscription) GetTermNotifyInd() bool {
 // GetTermNotifyIndOk returns a tuple with the TermNotifyInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscription) GetTermNotifyIndOk() (*bool, bool) {
-	if o == nil || isNil(o.TermNotifyInd) {
+	if o == nil || IsNil(o.TermNotifyInd) {
 		return nil, false
 	}
 	return o.TermNotifyInd, true
@@ -599,7 +599,7 @@ func (o *AmfEventSubscription) GetTermNotifyIndOk() (*bool, bool) {
 
 // HasTermNotifyInd returns a boolean if a field has been set.
 func (o *AmfEventSubscription) HasTermNotifyInd() bool {
-	if o != nil && !isNil(o.TermNotifyInd) {
+	if o != nil && !IsNil(o.TermNotifyInd) {
 		return true
 	}
 
@@ -612,7 +612,7 @@ func (o *AmfEventSubscription) SetTermNotifyInd(v bool) {
 }
 
 func (o AmfEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -625,46 +625,46 @@ func (o AmfEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventNotifyUri"] = o.EventNotifyUri
 	toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	toSerialize["nfId"] = o.NfId
-	if !isNil(o.SubsChangeNotifyUri) {
+	if !IsNil(o.SubsChangeNotifyUri) {
 		toSerialize["subsChangeNotifyUri"] = o.SubsChangeNotifyUri
 	}
-	if !isNil(o.SubsChangeNotifyCorrelationId) {
+	if !IsNil(o.SubsChangeNotifyCorrelationId) {
 		toSerialize["subsChangeNotifyCorrelationId"] = o.SubsChangeNotifyCorrelationId
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.ExcludeSupiList) {
+	if !IsNil(o.ExcludeSupiList) {
 		toSerialize["excludeSupiList"] = o.ExcludeSupiList
 	}
-	if !isNil(o.ExcludeGpsiList) {
+	if !IsNil(o.ExcludeGpsiList) {
 		toSerialize["excludeGpsiList"] = o.ExcludeGpsiList
 	}
-	if !isNil(o.IncludeSupiList) {
+	if !IsNil(o.IncludeSupiList) {
 		toSerialize["includeSupiList"] = o.IncludeSupiList
 	}
-	if !isNil(o.IncludeGpsiList) {
+	if !IsNil(o.IncludeGpsiList) {
 		toSerialize["includeGpsiList"] = o.IncludeGpsiList
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.AnyUE) {
+	if !IsNil(o.AnyUE) {
 		toSerialize["anyUE"] = o.AnyUE
 	}
-	if !isNil(o.Options) {
+	if !IsNil(o.Options) {
 		toSerialize["options"] = o.Options
 	}
-	if !isNil(o.SourceNfType) {
+	if !IsNil(o.SourceNfType) {
 		toSerialize["sourceNfType"] = o.SourceNfType
 	}
-	if !isNil(o.TermNotifyInd) {
+	if !IsNil(o.TermNotifyInd) {
 		toSerialize["termNotifyInd"] = o.TermNotifyInd
 	}
 	return toSerialize, nil
@@ -705,5 +705,3 @@ func (v *NullableAmfEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

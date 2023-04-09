@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualAuthEventDocumentApiService IndividualAuthEventDocumentApi service
 type IndividualAuthEventDocumentApiService service
 
 type ApiDeleteIndividualAuthenticationStatusRequest struct {
-	ctx context.Context
-	ApiService *IndividualAuthEventDocumentApiService
-	ueId string
+	ctx                context.Context
+	ApiService         *IndividualAuthEventDocumentApiService
+	ueId               string
 	servingNetworkName string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteIndividualAuthenticationStatusRequest) Execute() (*http.Respons
 /*
 DeleteIndividualAuthenticationStatus To remove the Individual Authentication Status of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingNetworkName Serving Network Name
- @return ApiDeleteIndividualAuthenticationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingNetworkName Serving Network Name
+	@return ApiDeleteIndividualAuthenticationStatusRequest
 */
 func (a *IndividualAuthEventDocumentApiService) DeleteIndividualAuthenticationStatus(ctx context.Context, ueId string, servingNetworkName string) ApiDeleteIndividualAuthenticationStatusRequest {
 	return ApiDeleteIndividualAuthenticationStatusRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:         a,
+		ctx:                ctx,
+		ueId:               ueId,
 		servingNetworkName: servingNetworkName,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualAuthEventDocumentApiService) DeleteIndividualAuthenticationSt
 // Execute executes the request
 func (a *IndividualAuthEventDocumentApiService) DeleteIndividualAuthenticationStatusExecute(r ApiDeleteIndividualAuthenticationStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAuthEventDocumentApiService.DeleteIndividualAuthenticationStatus")
@@ -99,9 +98,9 @@ func (a *IndividualAuthEventDocumentApiService) DeleteIndividualAuthenticationSt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,12 +117,12 @@ func (a *IndividualAuthEventDocumentApiService) DeleteIndividualAuthenticationSt
 }
 
 type ApiQueryIndividualAuthenticationStatusRequest struct {
-	ctx context.Context
-	ApiService *IndividualAuthEventDocumentApiService
-	ueId string
+	ctx                context.Context
+	ApiService         *IndividualAuthEventDocumentApiService
+	ueId               string
 	servingNetworkName string
-	fields *[]string
-	supportedFeatures *string
+	fields             *[]string
+	supportedFeatures  *string
 }
 
 // attributes to be retrieved
@@ -145,28 +144,29 @@ func (r ApiQueryIndividualAuthenticationStatusRequest) Execute() (*AuthEvent, *h
 /*
 QueryIndividualAuthenticationStatus Retrieves the Individual Authentication Status of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingNetworkName Serving Network Name
- @return ApiQueryIndividualAuthenticationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingNetworkName Serving Network Name
+	@return ApiQueryIndividualAuthenticationStatusRequest
 */
 func (a *IndividualAuthEventDocumentApiService) QueryIndividualAuthenticationStatus(ctx context.Context, ueId string, servingNetworkName string) ApiQueryIndividualAuthenticationStatusRequest {
 	return ApiQueryIndividualAuthenticationStatusRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:         a,
+		ctx:                ctx,
+		ueId:               ueId,
 		servingNetworkName: servingNetworkName,
 	}
 }
 
 // Execute executes the request
-//  @return AuthEvent
+//
+//	@return AuthEvent
 func (a *IndividualAuthEventDocumentApiService) QueryIndividualAuthenticationStatusExecute(r ApiQueryIndividualAuthenticationStatusRequest) (*AuthEvent, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthEvent
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthEvent
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAuthEventDocumentApiService.QueryIndividualAuthenticationStatus")
@@ -183,10 +183,10 @@ func (a *IndividualAuthEventDocumentApiService) QueryIndividualAuthenticationSta
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -215,9 +215,9 @@ func (a *IndividualAuthEventDocumentApiService) QueryIndividualAuthenticationSta
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

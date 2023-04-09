@@ -19,6 +19,7 @@ var _ MappedNullable = &ProducerIdType{}
 
 // ProducerIdType DN of the streaming data reporting MnS producer.
 type ProducerIdType struct {
+	SystemDNType
 }
 
 // NewProducerIdType instantiates a new ProducerIdType object
@@ -39,7 +40,7 @@ func NewProducerIdTypeWithDefaults() *ProducerIdType {
 }
 
 func (o ProducerIdType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -48,6 +49,14 @@ func (o ProducerIdType) MarshalJSON() ([]byte, error) {
 
 func (o ProducerIdType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedSystemDNType, errSystemDNType := json.Marshal(o.SystemDNType)
+	if errSystemDNType != nil {
+		return map[string]interface{}{}, errSystemDNType
+	}
+	errSystemDNType = json.Unmarshal([]byte(serializedSystemDNType), &toSerialize)
+	if errSystemDNType != nil {
+		return map[string]interface{}{}, errSystemDNType
+	}
 	return toSerialize, nil
 }
 
@@ -86,5 +95,3 @@ func (v *NullableProducerIdType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -28,7 +28,7 @@ type AcknowledgeInfo struct {
 	ProvisioningTime time.Time `json:"provisioningTime"`
 	// string with format 'bytes' as defined in OpenAPI
 	SorTransparentContainer *string `json:"sorTransparentContainer,omitempty"`
-	UeNotReachable *bool `json:"ueNotReachable,omitempty"`
+	UeNotReachable          *bool   `json:"ueNotReachable,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
 	UpuTransparentContainer *string `json:"upuTransparentContainer,omitempty"`
 }
@@ -57,7 +57,7 @@ func NewAcknowledgeInfoWithDefaults() *AcknowledgeInfo {
 
 // GetSorMacIue returns the SorMacIue field value if set, zero value otherwise.
 func (o *AcknowledgeInfo) GetSorMacIue() string {
-	if o == nil || isNil(o.SorMacIue) {
+	if o == nil || IsNil(o.SorMacIue) {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *AcknowledgeInfo) GetSorMacIue() string {
 // GetSorMacIueOk returns a tuple with the SorMacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcknowledgeInfo) GetSorMacIueOk() (*string, bool) {
-	if o == nil || isNil(o.SorMacIue) {
+	if o == nil || IsNil(o.SorMacIue) {
 		return nil, false
 	}
 	return o.SorMacIue, true
@@ -75,7 +75,7 @@ func (o *AcknowledgeInfo) GetSorMacIueOk() (*string, bool) {
 
 // HasSorMacIue returns a boolean if a field has been set.
 func (o *AcknowledgeInfo) HasSorMacIue() bool {
-	if o != nil && !isNil(o.SorMacIue) {
+	if o != nil && !IsNil(o.SorMacIue) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *AcknowledgeInfo) SetSorMacIue(v string) {
 
 // GetUpuMacIue returns the UpuMacIue field value if set, zero value otherwise.
 func (o *AcknowledgeInfo) GetUpuMacIue() string {
-	if o == nil || isNil(o.UpuMacIue) {
+	if o == nil || IsNil(o.UpuMacIue) {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *AcknowledgeInfo) GetUpuMacIue() string {
 // GetUpuMacIueOk returns a tuple with the UpuMacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcknowledgeInfo) GetUpuMacIueOk() (*string, bool) {
-	if o == nil || isNil(o.UpuMacIue) {
+	if o == nil || IsNil(o.UpuMacIue) {
 		return nil, false
 	}
 	return o.UpuMacIue, true
@@ -107,7 +107,7 @@ func (o *AcknowledgeInfo) GetUpuMacIueOk() (*string, bool) {
 
 // HasUpuMacIue returns a boolean if a field has been set.
 func (o *AcknowledgeInfo) HasUpuMacIue() bool {
-	if o != nil && !isNil(o.UpuMacIue) {
+	if o != nil && !IsNil(o.UpuMacIue) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *AcknowledgeInfo) SetProvisioningTime(v time.Time) {
 
 // GetSorTransparentContainer returns the SorTransparentContainer field value if set, zero value otherwise.
 func (o *AcknowledgeInfo) GetSorTransparentContainer() string {
-	if o == nil || isNil(o.SorTransparentContainer) {
+	if o == nil || IsNil(o.SorTransparentContainer) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *AcknowledgeInfo) GetSorTransparentContainer() string {
 // GetSorTransparentContainerOk returns a tuple with the SorTransparentContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcknowledgeInfo) GetSorTransparentContainerOk() (*string, bool) {
-	if o == nil || isNil(o.SorTransparentContainer) {
+	if o == nil || IsNil(o.SorTransparentContainer) {
 		return nil, false
 	}
 	return o.SorTransparentContainer, true
@@ -163,7 +163,7 @@ func (o *AcknowledgeInfo) GetSorTransparentContainerOk() (*string, bool) {
 
 // HasSorTransparentContainer returns a boolean if a field has been set.
 func (o *AcknowledgeInfo) HasSorTransparentContainer() bool {
-	if o != nil && !isNil(o.SorTransparentContainer) {
+	if o != nil && !IsNil(o.SorTransparentContainer) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *AcknowledgeInfo) SetSorTransparentContainer(v string) {
 
 // GetUeNotReachable returns the UeNotReachable field value if set, zero value otherwise.
 func (o *AcknowledgeInfo) GetUeNotReachable() bool {
-	if o == nil || isNil(o.UeNotReachable) {
+	if o == nil || IsNil(o.UeNotReachable) {
 		var ret bool
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *AcknowledgeInfo) GetUeNotReachable() bool {
 // GetUeNotReachableOk returns a tuple with the UeNotReachable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcknowledgeInfo) GetUeNotReachableOk() (*bool, bool) {
-	if o == nil || isNil(o.UeNotReachable) {
+	if o == nil || IsNil(o.UeNotReachable) {
 		return nil, false
 	}
 	return o.UeNotReachable, true
@@ -195,7 +195,7 @@ func (o *AcknowledgeInfo) GetUeNotReachableOk() (*bool, bool) {
 
 // HasUeNotReachable returns a boolean if a field has been set.
 func (o *AcknowledgeInfo) HasUeNotReachable() bool {
-	if o != nil && !isNil(o.UeNotReachable) {
+	if o != nil && !IsNil(o.UeNotReachable) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *AcknowledgeInfo) SetUeNotReachable(v bool) {
 
 // GetUpuTransparentContainer returns the UpuTransparentContainer field value if set, zero value otherwise.
 func (o *AcknowledgeInfo) GetUpuTransparentContainer() string {
-	if o == nil || isNil(o.UpuTransparentContainer) {
+	if o == nil || IsNil(o.UpuTransparentContainer) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *AcknowledgeInfo) GetUpuTransparentContainer() string {
 // GetUpuTransparentContainerOk returns a tuple with the UpuTransparentContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcknowledgeInfo) GetUpuTransparentContainerOk() (*string, bool) {
-	if o == nil || isNil(o.UpuTransparentContainer) {
+	if o == nil || IsNil(o.UpuTransparentContainer) {
 		return nil, false
 	}
 	return o.UpuTransparentContainer, true
@@ -227,7 +227,7 @@ func (o *AcknowledgeInfo) GetUpuTransparentContainerOk() (*string, bool) {
 
 // HasUpuTransparentContainer returns a boolean if a field has been set.
 func (o *AcknowledgeInfo) HasUpuTransparentContainer() bool {
-	if o != nil && !isNil(o.UpuTransparentContainer) {
+	if o != nil && !IsNil(o.UpuTransparentContainer) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *AcknowledgeInfo) SetUpuTransparentContainer(v string) {
 }
 
 func (o AcknowledgeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,20 +249,20 @@ func (o AcknowledgeInfo) MarshalJSON() ([]byte, error) {
 
 func (o AcknowledgeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SorMacIue) {
+	if !IsNil(o.SorMacIue) {
 		toSerialize["sorMacIue"] = o.SorMacIue
 	}
-	if !isNil(o.UpuMacIue) {
+	if !IsNil(o.UpuMacIue) {
 		toSerialize["upuMacIue"] = o.UpuMacIue
 	}
 	toSerialize["provisioningTime"] = o.ProvisioningTime
-	if !isNil(o.SorTransparentContainer) {
+	if !IsNil(o.SorTransparentContainer) {
 		toSerialize["sorTransparentContainer"] = o.SorTransparentContainer
 	}
-	if !isNil(o.UeNotReachable) {
+	if !IsNil(o.UeNotReachable) {
 		toSerialize["ueNotReachable"] = o.UeNotReachable
 	}
-	if !isNil(o.UpuTransparentContainer) {
+	if !IsNil(o.UpuTransparentContainer) {
 		toSerialize["upuTransparentContainer"] = o.UpuTransparentContainer
 	}
 	return toSerialize, nil
@@ -303,5 +303,3 @@ func (v *NullableAcknowledgeInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

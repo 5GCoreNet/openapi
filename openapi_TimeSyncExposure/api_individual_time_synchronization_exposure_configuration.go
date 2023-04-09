@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_TimeSyncExposure
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualTimeSynchronizationExposureConfigurationApiService IndividualTimeSynchronizationExposureConfigurationApi service
 type IndividualTimeSynchronizationExposureConfigurationApiService service
 
 type ApiDeleteAnConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualTimeSynchronizationExposureConfigurationApiService
-	afId string
-	subscriptionId string
+	ctx               context.Context
+	ApiService        *IndividualTimeSynchronizationExposureConfigurationApiService
+	afId              string
+	subscriptionId    string
 	instanceReference string
 }
 
@@ -38,18 +37,18 @@ func (r ApiDeleteAnConfigurationRequest) Execute() (*http.Response, error) {
 /*
 DeleteAnConfiguration Deletes an already existing configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId Identifier of the subscription resource
- @param instanceReference Identifier of the configuration resource
- @return ApiDeleteAnConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId Identifier of the subscription resource
+	@param instanceReference Identifier of the configuration resource
+	@return ApiDeleteAnConfigurationRequest
 */
 func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnConfiguration(ctx context.Context, afId string, subscriptionId string, instanceReference string) ApiDeleteAnConfigurationRequest {
 	return ApiDeleteAnConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
-		subscriptionId: subscriptionId,
+		ApiService:        a,
+		ctx:               ctx,
+		afId:              afId,
+		subscriptionId:    subscriptionId,
 		instanceReference: instanceReference,
 	}
 }
@@ -57,9 +56,9 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 // Execute executes the request
 func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnConfigurationExecute(r ApiDeleteAnConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTimeSynchronizationExposureConfigurationApiService.DeleteAnConfiguration")
@@ -103,9 +102,9 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -122,8 +121,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -133,8 +132,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -144,8 +143,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +154,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -166,8 +165,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -177,8 +176,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -188,8 +187,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -199,11 +198,11 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) DeleteAnC
 }
 
 type ApiFullyUpdateAnConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualTimeSynchronizationExposureConfigurationApiService
-	afId string
-	subscriptionId string
-	instanceReference string
+	ctx                    context.Context
+	ApiService             *IndividualTimeSynchronizationExposureConfigurationApiService
+	afId                   string
+	subscriptionId         string
+	instanceReference      string
 	timeSyncExposureConfig *TimeSyncExposureConfig
 }
 
@@ -220,30 +219,31 @@ func (r ApiFullyUpdateAnConfigurationRequest) Execute() (*TimeSyncExposureConfig
 /*
 FullyUpdateAnConfiguration Fully updates/replaces an existing configuration resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param subscriptionId Identifier of the subscription resource
- @param instanceReference Identifier of the configuration resource
- @return ApiFullyUpdateAnConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param subscriptionId Identifier of the subscription resource
+	@param instanceReference Identifier of the configuration resource
+	@return ApiFullyUpdateAnConfigurationRequest
 */
 func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpdateAnConfiguration(ctx context.Context, afId string, subscriptionId string, instanceReference string) ApiFullyUpdateAnConfigurationRequest {
 	return ApiFullyUpdateAnConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
-		subscriptionId: subscriptionId,
+		ApiService:        a,
+		ctx:               ctx,
+		afId:              afId,
+		subscriptionId:    subscriptionId,
 		instanceReference: instanceReference,
 	}
 }
 
 // Execute executes the request
-//  @return TimeSyncExposureConfig
+//
+//	@return TimeSyncExposureConfig
 func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpdateAnConfigurationExecute(r ApiFullyUpdateAnConfigurationRequest) (*TimeSyncExposureConfig, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimeSyncExposureConfig
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimeSyncExposureConfig
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTimeSynchronizationExposureConfigurationApiService.FullyUpdateAnConfiguration")
@@ -292,9 +292,9 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -311,8 +311,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -322,8 +322,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -333,8 +333,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -344,8 +344,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -355,8 +355,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -366,8 +366,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -377,8 +377,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -388,8 +388,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -399,8 +399,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -410,8 +410,8 @@ func (a *IndividualTimeSynchronizationExposureConfigurationApiService) FullyUpda
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

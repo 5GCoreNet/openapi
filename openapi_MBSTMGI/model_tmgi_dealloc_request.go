@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-tmgi
 
-API for the allocation, deallocation and management of TMGI(s) for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for the allocation, deallocation and management of TMGI(s) for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &TmgiDeallocRequest{}
 
 // TmgiDeallocRequest Represents information to request the deallocation of MBS TMGI(s).
 type TmgiDeallocRequest struct {
-	AfId string `json:"afId"`
+	AfId  string `json:"afId"`
 	Tmgis []Tmgi `json:"tmgis"`
 }
 
@@ -91,7 +91,7 @@ func (o *TmgiDeallocRequest) SetTmgis(v []Tmgi) {
 }
 
 func (o TmgiDeallocRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableTmgiDeallocRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type PriorityType string
 
 // List of priority-Type
 const (
-	LOW PriorityType = "low"
+	LOW    PriorityType = "low"
 	MEDIUM PriorityType = "medium"
-	HIGH PriorityType = "high"
+	HIGH   PriorityType = "high"
 )
 
 // All allowed values of PriorityType enum
@@ -110,4 +110,3 @@ func (v *NullablePriorityType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

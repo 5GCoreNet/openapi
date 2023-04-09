@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Ipv6PrefixRange{}
 // Ipv6PrefixRange Range of IPv6 prefixes
 type Ipv6PrefixRange struct {
 	Start Ipv6Prefix `json:"start"`
-	End Ipv6Prefix `json:"end"`
+	End   Ipv6Prefix `json:"end"`
 }
 
 // NewIpv6PrefixRange instantiates a new Ipv6PrefixRange object
@@ -91,7 +91,7 @@ func (o *Ipv6PrefixRange) SetEnd(v Ipv6Prefix) {
 }
 
 func (o Ipv6PrefixRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableIpv6PrefixRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

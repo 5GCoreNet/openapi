@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &NonUeN2InfoSubscriptionCreateData{}
 
 // NonUeN2InfoSubscriptionCreateData Data within a create subscription request for non-UE specific N2 information notification
 type NonUeN2InfoSubscriptionCreateData struct {
-	GlobalRanNodeList []GlobalRanNodeId `json:"globalRanNodeList,omitempty"`
-	AnTypeList []AccessType `json:"anTypeList,omitempty"`
+	GlobalRanNodeList  []GlobalRanNodeId  `json:"globalRanNodeList,omitempty"`
+	AnTypeList         []AccessType       `json:"anTypeList,omitempty"`
 	N2InformationClass N2InformationClass `json:"n2InformationClass"`
 	// String providing an URI formatted according to RFC 3986.
 	N2NotifyCallbackUri string `json:"n2NotifyCallbackUri"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfId *string `json:"nfId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func NewNonUeN2InfoSubscriptionCreateDataWithDefaults() *NonUeN2InfoSubscription
 
 // GetGlobalRanNodeList returns the GlobalRanNodeList field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeList() []GlobalRanNodeId {
-	if o == nil || isNil(o.GlobalRanNodeList) {
+	if o == nil || IsNil(o.GlobalRanNodeList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeList() []GlobalRanNo
 // GetGlobalRanNodeListOk returns a tuple with the GlobalRanNodeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.GlobalRanNodeList) {
+	if o == nil || IsNil(o.GlobalRanNodeList) {
 		return nil, false
 	}
 	return o.GlobalRanNodeList, true
@@ -69,7 +69,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeListOk() ([]GlobalRa
 
 // HasGlobalRanNodeList returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasGlobalRanNodeList() bool {
-	if o != nil && !isNil(o.GlobalRanNodeList) {
+	if o != nil && !IsNil(o.GlobalRanNodeList) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetGlobalRanNodeList(v []GlobalRanNo
 
 // GetAnTypeList returns the AnTypeList field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeList() []AccessType {
-	if o == nil || isNil(o.AnTypeList) {
+	if o == nil || IsNil(o.AnTypeList) {
 		var ret []AccessType
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeList() []AccessType {
 // GetAnTypeListOk returns a tuple with the AnTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeListOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AnTypeList) {
+	if o == nil || IsNil(o.AnTypeList) {
 		return nil, false
 	}
 	return o.AnTypeList, true
@@ -101,7 +101,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeListOk() ([]AccessType, boo
 
 // HasAnTypeList returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasAnTypeList() bool {
-	if o != nil && !isNil(o.AnTypeList) {
+	if o != nil && !IsNil(o.AnTypeList) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetN2NotifyCallbackUri(v string) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetNfId() string {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -181,7 +181,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasNfId() bool {
-	if o != nil && !isNil(o.NfId) {
+	if o != nil && !IsNil(o.NfId) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetNfId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -213,7 +213,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeaturesOk() (*string, b
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetSupportedFeatures(v string) {
 }
 
 func (o NonUeN2InfoSubscriptionCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -235,18 +235,18 @@ func (o NonUeN2InfoSubscriptionCreateData) MarshalJSON() ([]byte, error) {
 
 func (o NonUeN2InfoSubscriptionCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GlobalRanNodeList) {
+	if !IsNil(o.GlobalRanNodeList) {
 		toSerialize["globalRanNodeList"] = o.GlobalRanNodeList
 	}
-	if !isNil(o.AnTypeList) {
+	if !IsNil(o.AnTypeList) {
 		toSerialize["anTypeList"] = o.AnTypeList
 	}
 	toSerialize["n2InformationClass"] = o.N2InformationClass
 	toSerialize["n2NotifyCallbackUri"] = o.N2NotifyCallbackUri
-	if !isNil(o.NfId) {
+	if !IsNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -287,5 +287,3 @@ func (v *NullableNonUeN2InfoSubscriptionCreateData) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

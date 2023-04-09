@@ -41,7 +41,7 @@ func NewManagedElementSingleAllOfWithDefaults() *ManagedElementSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf) GetAttributes() ManagedElementAttr {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret ManagedElementAttr
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ManagedElementSingleAllOf) GetAttributes() ManagedElementAttr {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf) GetAttributesOk() (*ManagedElementAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *ManagedElementSingleAllOf) GetAttributesOk() (*ManagedElementAttr, bool
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ManagedElementSingleAllOf) SetAttributes(v ManagedElementAttr) {
 }
 
 func (o ManagedElementSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ManagedElementSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableManagedElementSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

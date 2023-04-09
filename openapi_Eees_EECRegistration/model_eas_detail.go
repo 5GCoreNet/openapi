@@ -1,7 +1,7 @@
 /*
 Eees_EECRegistration
 
-API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EEC registration. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &EasDetail{}
 // EasDetail EAS details.
 type EasDetail struct {
 	// Application identifier of the EAS.
-	EasId string `json:"easId"`
-	ExpectedSvcKPIs *ACServiceKPIs `json:"expectedSvcKPIs,omitempty"`
+	EasId             string         `json:"easId"`
+	ExpectedSvcKPIs   *ACServiceKPIs `json:"expectedSvcKPIs,omitempty"`
 	MinimumReqSvcKPIs *ACServiceKPIs `json:"minimumReqSvcKPIs,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *EasDetail) SetEasId(v string) {
 
 // GetExpectedSvcKPIs returns the ExpectedSvcKPIs field value if set, zero value otherwise.
 func (o *EasDetail) GetExpectedSvcKPIs() ACServiceKPIs {
-	if o == nil || isNil(o.ExpectedSvcKPIs) {
+	if o == nil || IsNil(o.ExpectedSvcKPIs) {
 		var ret ACServiceKPIs
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EasDetail) GetExpectedSvcKPIs() ACServiceKPIs {
 // GetExpectedSvcKPIsOk returns a tuple with the ExpectedSvcKPIs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDetail) GetExpectedSvcKPIsOk() (*ACServiceKPIs, bool) {
-	if o == nil || isNil(o.ExpectedSvcKPIs) {
+	if o == nil || IsNil(o.ExpectedSvcKPIs) {
 		return nil, false
 	}
 	return o.ExpectedSvcKPIs, true
@@ -87,7 +87,7 @@ func (o *EasDetail) GetExpectedSvcKPIsOk() (*ACServiceKPIs, bool) {
 
 // HasExpectedSvcKPIs returns a boolean if a field has been set.
 func (o *EasDetail) HasExpectedSvcKPIs() bool {
-	if o != nil && !isNil(o.ExpectedSvcKPIs) {
+	if o != nil && !IsNil(o.ExpectedSvcKPIs) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *EasDetail) SetExpectedSvcKPIs(v ACServiceKPIs) {
 
 // GetMinimumReqSvcKPIs returns the MinimumReqSvcKPIs field value if set, zero value otherwise.
 func (o *EasDetail) GetMinimumReqSvcKPIs() ACServiceKPIs {
-	if o == nil || isNil(o.MinimumReqSvcKPIs) {
+	if o == nil || IsNil(o.MinimumReqSvcKPIs) {
 		var ret ACServiceKPIs
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *EasDetail) GetMinimumReqSvcKPIs() ACServiceKPIs {
 // GetMinimumReqSvcKPIsOk returns a tuple with the MinimumReqSvcKPIs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDetail) GetMinimumReqSvcKPIsOk() (*ACServiceKPIs, bool) {
-	if o == nil || isNil(o.MinimumReqSvcKPIs) {
+	if o == nil || IsNil(o.MinimumReqSvcKPIs) {
 		return nil, false
 	}
 	return o.MinimumReqSvcKPIs, true
@@ -119,7 +119,7 @@ func (o *EasDetail) GetMinimumReqSvcKPIsOk() (*ACServiceKPIs, bool) {
 
 // HasMinimumReqSvcKPIs returns a boolean if a field has been set.
 func (o *EasDetail) HasMinimumReqSvcKPIs() bool {
-	if o != nil && !isNil(o.MinimumReqSvcKPIs) {
+	if o != nil && !IsNil(o.MinimumReqSvcKPIs) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *EasDetail) SetMinimumReqSvcKPIs(v ACServiceKPIs) {
 }
 
 func (o EasDetail) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o EasDetail) MarshalJSON() ([]byte, error) {
 func (o EasDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
-	if !isNil(o.ExpectedSvcKPIs) {
+	if !IsNil(o.ExpectedSvcKPIs) {
 		toSerialize["expectedSvcKPIs"] = o.ExpectedSvcKPIs
 	}
-	if !isNil(o.MinimumReqSvcKPIs) {
+	if !IsNil(o.MinimumReqSvcKPIs) {
 		toSerialize["minimumReqSvcKPIs"] = o.MinimumReqSvcKPIs
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableEasDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

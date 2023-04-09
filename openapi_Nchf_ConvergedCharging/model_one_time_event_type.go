@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // OneTimeEventType struct for OneTimeEventType
 type OneTimeEventType struct {
-	OneTimeEventTypeAnyOf *OneTimeEventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *OneTimeEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into OneTimeEventTypeAnyOf
-	err = json.Unmarshal(data, &dst.OneTimeEventTypeAnyOf);
-	if err == nil {
-		jsonOneTimeEventTypeAnyOf, _ := json.Marshal(dst.OneTimeEventTypeAnyOf)
-		if string(jsonOneTimeEventTypeAnyOf) == "{}" { // empty struct
-			dst.OneTimeEventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.OneTimeEventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.OneTimeEventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *OneTimeEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *OneTimeEventType) MarshalJSON() ([]byte, error) {
-	if src.OneTimeEventTypeAnyOf != nil {
-		return json.Marshal(&src.OneTimeEventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableOneTimeEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

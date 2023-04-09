@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the CongestionAnalytics type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CongestionAnalytics{}
 
-// CongestionAnalytics Represents data congestion analytics for transfer over the user plane, control plane or both. 
+// CongestionAnalytics Represents data congestion analytics for transfer over the user plane, control plane or both.
 type CongestionAnalytics struct {
 	CngType CongestionType `json:"cngType"`
-	TmWdw TimeWindow `json:"tmWdw"`
-	Nsi ThresholdLevel `json:"nsi"`
+	TmWdw   TimeWindow     `json:"tmWdw"`
+	Nsi     ThresholdLevel `json:"nsi"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	Confidence *int32 `json:"confidence,omitempty"`
+	Confidence   *int32           `json:"confidence,omitempty"`
 	TopAppListUl []TopApplication `json:"topAppListUl,omitempty"`
 	TopAppListDl []TopApplication `json:"topAppListDl,omitempty"`
 }
@@ -122,7 +122,7 @@ func (o *CongestionAnalytics) SetNsi(v ThresholdLevel) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *CongestionAnalytics) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *CongestionAnalytics) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CongestionAnalytics) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -140,7 +140,7 @@ func (o *CongestionAnalytics) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *CongestionAnalytics) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *CongestionAnalytics) SetConfidence(v int32) {
 
 // GetTopAppListUl returns the TopAppListUl field value if set, zero value otherwise.
 func (o *CongestionAnalytics) GetTopAppListUl() []TopApplication {
-	if o == nil || isNil(o.TopAppListUl) {
+	if o == nil || IsNil(o.TopAppListUl) {
 		var ret []TopApplication
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *CongestionAnalytics) GetTopAppListUl() []TopApplication {
 // GetTopAppListUlOk returns a tuple with the TopAppListUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CongestionAnalytics) GetTopAppListUlOk() ([]TopApplication, bool) {
-	if o == nil || isNil(o.TopAppListUl) {
+	if o == nil || IsNil(o.TopAppListUl) {
 		return nil, false
 	}
 	return o.TopAppListUl, true
@@ -172,7 +172,7 @@ func (o *CongestionAnalytics) GetTopAppListUlOk() ([]TopApplication, bool) {
 
 // HasTopAppListUl returns a boolean if a field has been set.
 func (o *CongestionAnalytics) HasTopAppListUl() bool {
-	if o != nil && !isNil(o.TopAppListUl) {
+	if o != nil && !IsNil(o.TopAppListUl) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *CongestionAnalytics) SetTopAppListUl(v []TopApplication) {
 
 // GetTopAppListDl returns the TopAppListDl field value if set, zero value otherwise.
 func (o *CongestionAnalytics) GetTopAppListDl() []TopApplication {
-	if o == nil || isNil(o.TopAppListDl) {
+	if o == nil || IsNil(o.TopAppListDl) {
 		var ret []TopApplication
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *CongestionAnalytics) GetTopAppListDl() []TopApplication {
 // GetTopAppListDlOk returns a tuple with the TopAppListDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CongestionAnalytics) GetTopAppListDlOk() ([]TopApplication, bool) {
-	if o == nil || isNil(o.TopAppListDl) {
+	if o == nil || IsNil(o.TopAppListDl) {
 		return nil, false
 	}
 	return o.TopAppListDl, true
@@ -204,7 +204,7 @@ func (o *CongestionAnalytics) GetTopAppListDlOk() ([]TopApplication, bool) {
 
 // HasTopAppListDl returns a boolean if a field has been set.
 func (o *CongestionAnalytics) HasTopAppListDl() bool {
-	if o != nil && !isNil(o.TopAppListDl) {
+	if o != nil && !IsNil(o.TopAppListDl) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *CongestionAnalytics) SetTopAppListDl(v []TopApplication) {
 }
 
 func (o CongestionAnalytics) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -229,13 +229,13 @@ func (o CongestionAnalytics) ToMap() (map[string]interface{}, error) {
 	toSerialize["cngType"] = o.CngType
 	toSerialize["tmWdw"] = o.TmWdw
 	toSerialize["nsi"] = o.Nsi
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
-	if !isNil(o.TopAppListUl) {
+	if !IsNil(o.TopAppListUl) {
 		toSerialize["topAppListUl"] = o.TopAppListUl
 	}
-	if !isNil(o.TopAppListDl) {
+	if !IsNil(o.TopAppListDl) {
 		toSerialize["topAppListDl"] = o.TopAppListDl
 	}
 	return toSerialize, nil
@@ -276,5 +276,3 @@ func (v *NullableCongestionAnalytics) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

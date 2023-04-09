@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,12 +20,12 @@ var _ MappedNullable = &N2InfoContainer{}
 // N2InfoContainer N2 information container
 type N2InfoContainer struct {
 	N2InformationClass N2InformationClass `json:"n2InformationClass"`
-	SmInfo *N2SmInformation `json:"smInfo,omitempty"`
-	RanInfo *N2RanInformation `json:"ranInfo,omitempty"`
-	NrppaInfo *NrppaInformation `json:"nrppaInfo,omitempty"`
-	PwsInfo *PwsInformation `json:"pwsInfo,omitempty"`
-	V2xInfo *V2xInformation `json:"v2xInfo,omitempty"`
-	ProseInfo *ProSeInformation `json:"proseInfo,omitempty"`
+	SmInfo             *N2SmInformation   `json:"smInfo,omitempty"`
+	RanInfo            *N2RanInformation  `json:"ranInfo,omitempty"`
+	NrppaInfo          *NrppaInformation  `json:"nrppaInfo,omitempty"`
+	PwsInfo            *PwsInformation    `json:"pwsInfo,omitempty"`
+	V2xInfo            *V2xInformation    `json:"v2xInfo,omitempty"`
+	ProseInfo          *ProSeInformation  `json:"proseInfo,omitempty"`
 }
 
 // NewN2InfoContainer instantiates a new N2InfoContainer object
@@ -72,7 +72,7 @@ func (o *N2InfoContainer) SetN2InformationClass(v N2InformationClass) {
 
 // GetSmInfo returns the SmInfo field value if set, zero value otherwise.
 func (o *N2InfoContainer) GetSmInfo() N2SmInformation {
-	if o == nil || isNil(o.SmInfo) {
+	if o == nil || IsNil(o.SmInfo) {
 		var ret N2SmInformation
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *N2InfoContainer) GetSmInfo() N2SmInformation {
 // GetSmInfoOk returns a tuple with the SmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContainer) GetSmInfoOk() (*N2SmInformation, bool) {
-	if o == nil || isNil(o.SmInfo) {
+	if o == nil || IsNil(o.SmInfo) {
 		return nil, false
 	}
 	return o.SmInfo, true
@@ -90,7 +90,7 @@ func (o *N2InfoContainer) GetSmInfoOk() (*N2SmInformation, bool) {
 
 // HasSmInfo returns a boolean if a field has been set.
 func (o *N2InfoContainer) HasSmInfo() bool {
-	if o != nil && !isNil(o.SmInfo) {
+	if o != nil && !IsNil(o.SmInfo) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *N2InfoContainer) SetSmInfo(v N2SmInformation) {
 
 // GetRanInfo returns the RanInfo field value if set, zero value otherwise.
 func (o *N2InfoContainer) GetRanInfo() N2RanInformation {
-	if o == nil || isNil(o.RanInfo) {
+	if o == nil || IsNil(o.RanInfo) {
 		var ret N2RanInformation
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *N2InfoContainer) GetRanInfo() N2RanInformation {
 // GetRanInfoOk returns a tuple with the RanInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContainer) GetRanInfoOk() (*N2RanInformation, bool) {
-	if o == nil || isNil(o.RanInfo) {
+	if o == nil || IsNil(o.RanInfo) {
 		return nil, false
 	}
 	return o.RanInfo, true
@@ -122,7 +122,7 @@ func (o *N2InfoContainer) GetRanInfoOk() (*N2RanInformation, bool) {
 
 // HasRanInfo returns a boolean if a field has been set.
 func (o *N2InfoContainer) HasRanInfo() bool {
-	if o != nil && !isNil(o.RanInfo) {
+	if o != nil && !IsNil(o.RanInfo) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *N2InfoContainer) SetRanInfo(v N2RanInformation) {
 
 // GetNrppaInfo returns the NrppaInfo field value if set, zero value otherwise.
 func (o *N2InfoContainer) GetNrppaInfo() NrppaInformation {
-	if o == nil || isNil(o.NrppaInfo) {
+	if o == nil || IsNil(o.NrppaInfo) {
 		var ret NrppaInformation
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *N2InfoContainer) GetNrppaInfo() NrppaInformation {
 // GetNrppaInfoOk returns a tuple with the NrppaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContainer) GetNrppaInfoOk() (*NrppaInformation, bool) {
-	if o == nil || isNil(o.NrppaInfo) {
+	if o == nil || IsNil(o.NrppaInfo) {
 		return nil, false
 	}
 	return o.NrppaInfo, true
@@ -154,7 +154,7 @@ func (o *N2InfoContainer) GetNrppaInfoOk() (*NrppaInformation, bool) {
 
 // HasNrppaInfo returns a boolean if a field has been set.
 func (o *N2InfoContainer) HasNrppaInfo() bool {
-	if o != nil && !isNil(o.NrppaInfo) {
+	if o != nil && !IsNil(o.NrppaInfo) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *N2InfoContainer) SetNrppaInfo(v NrppaInformation) {
 
 // GetPwsInfo returns the PwsInfo field value if set, zero value otherwise.
 func (o *N2InfoContainer) GetPwsInfo() PwsInformation {
-	if o == nil || isNil(o.PwsInfo) {
+	if o == nil || IsNil(o.PwsInfo) {
 		var ret PwsInformation
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *N2InfoContainer) GetPwsInfo() PwsInformation {
 // GetPwsInfoOk returns a tuple with the PwsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContainer) GetPwsInfoOk() (*PwsInformation, bool) {
-	if o == nil || isNil(o.PwsInfo) {
+	if o == nil || IsNil(o.PwsInfo) {
 		return nil, false
 	}
 	return o.PwsInfo, true
@@ -186,7 +186,7 @@ func (o *N2InfoContainer) GetPwsInfoOk() (*PwsInformation, bool) {
 
 // HasPwsInfo returns a boolean if a field has been set.
 func (o *N2InfoContainer) HasPwsInfo() bool {
-	if o != nil && !isNil(o.PwsInfo) {
+	if o != nil && !IsNil(o.PwsInfo) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *N2InfoContainer) SetPwsInfo(v PwsInformation) {
 
 // GetV2xInfo returns the V2xInfo field value if set, zero value otherwise.
 func (o *N2InfoContainer) GetV2xInfo() V2xInformation {
-	if o == nil || isNil(o.V2xInfo) {
+	if o == nil || IsNil(o.V2xInfo) {
 		var ret V2xInformation
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *N2InfoContainer) GetV2xInfo() V2xInformation {
 // GetV2xInfoOk returns a tuple with the V2xInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContainer) GetV2xInfoOk() (*V2xInformation, bool) {
-	if o == nil || isNil(o.V2xInfo) {
+	if o == nil || IsNil(o.V2xInfo) {
 		return nil, false
 	}
 	return o.V2xInfo, true
@@ -218,7 +218,7 @@ func (o *N2InfoContainer) GetV2xInfoOk() (*V2xInformation, bool) {
 
 // HasV2xInfo returns a boolean if a field has been set.
 func (o *N2InfoContainer) HasV2xInfo() bool {
-	if o != nil && !isNil(o.V2xInfo) {
+	if o != nil && !IsNil(o.V2xInfo) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *N2InfoContainer) SetV2xInfo(v V2xInformation) {
 
 // GetProseInfo returns the ProseInfo field value if set, zero value otherwise.
 func (o *N2InfoContainer) GetProseInfo() ProSeInformation {
-	if o == nil || isNil(o.ProseInfo) {
+	if o == nil || IsNil(o.ProseInfo) {
 		var ret ProSeInformation
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *N2InfoContainer) GetProseInfo() ProSeInformation {
 // GetProseInfoOk returns a tuple with the ProseInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContainer) GetProseInfoOk() (*ProSeInformation, bool) {
-	if o == nil || isNil(o.ProseInfo) {
+	if o == nil || IsNil(o.ProseInfo) {
 		return nil, false
 	}
 	return o.ProseInfo, true
@@ -250,7 +250,7 @@ func (o *N2InfoContainer) GetProseInfoOk() (*ProSeInformation, bool) {
 
 // HasProseInfo returns a boolean if a field has been set.
 func (o *N2InfoContainer) HasProseInfo() bool {
-	if o != nil && !isNil(o.ProseInfo) {
+	if o != nil && !IsNil(o.ProseInfo) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *N2InfoContainer) SetProseInfo(v ProSeInformation) {
 }
 
 func (o N2InfoContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -273,22 +273,22 @@ func (o N2InfoContainer) MarshalJSON() ([]byte, error) {
 func (o N2InfoContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n2InformationClass"] = o.N2InformationClass
-	if !isNil(o.SmInfo) {
+	if !IsNil(o.SmInfo) {
 		toSerialize["smInfo"] = o.SmInfo
 	}
-	if !isNil(o.RanInfo) {
+	if !IsNil(o.RanInfo) {
 		toSerialize["ranInfo"] = o.RanInfo
 	}
-	if !isNil(o.NrppaInfo) {
+	if !IsNil(o.NrppaInfo) {
 		toSerialize["nrppaInfo"] = o.NrppaInfo
 	}
-	if !isNil(o.PwsInfo) {
+	if !IsNil(o.PwsInfo) {
 		toSerialize["pwsInfo"] = o.PwsInfo
 	}
-	if !isNil(o.V2xInfo) {
+	if !IsNil(o.V2xInfo) {
 		toSerialize["v2xInfo"] = o.V2xInfo
 	}
-	if !isNil(o.ProseInfo) {
+	if !IsNil(o.ProseInfo) {
 		toSerialize["proseInfo"] = o.ProseInfo
 	}
 	return toSerialize, nil
@@ -329,5 +329,3 @@ func (v *NullableN2InfoContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

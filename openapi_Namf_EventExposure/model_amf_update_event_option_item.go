@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &AmfUpdateEventOptionItem{}
 
 // AmfUpdateEventOptionItem Document describing the modifications to AMF event subscription options
 type AmfUpdateEventOptionItem struct {
-	Op string `json:"op"`
+	Op   string `json:"op"`
 	Path string `json:"path"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Value time.Time `json:"value"`
+	Value     time.Time         `json:"value"`
 	NotifFlag *NotificationFlag `json:"notifFlag,omitempty"`
 }
 
@@ -121,7 +121,7 @@ func (o *AmfUpdateEventOptionItem) SetValue(v time.Time) {
 
 // GetNotifFlag returns the NotifFlag field value if set, zero value otherwise.
 func (o *AmfUpdateEventOptionItem) GetNotifFlag() NotificationFlag {
-	if o == nil || isNil(o.NotifFlag) {
+	if o == nil || IsNil(o.NotifFlag) {
 		var ret NotificationFlag
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *AmfUpdateEventOptionItem) GetNotifFlag() NotificationFlag {
 // GetNotifFlagOk returns a tuple with the NotifFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventOptionItem) GetNotifFlagOk() (*NotificationFlag, bool) {
-	if o == nil || isNil(o.NotifFlag) {
+	if o == nil || IsNil(o.NotifFlag) {
 		return nil, false
 	}
 	return o.NotifFlag, true
@@ -139,7 +139,7 @@ func (o *AmfUpdateEventOptionItem) GetNotifFlagOk() (*NotificationFlag, bool) {
 
 // HasNotifFlag returns a boolean if a field has been set.
 func (o *AmfUpdateEventOptionItem) HasNotifFlag() bool {
-	if o != nil && !isNil(o.NotifFlag) {
+	if o != nil && !IsNil(o.NotifFlag) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *AmfUpdateEventOptionItem) SetNotifFlag(v NotificationFlag) {
 }
 
 func (o AmfUpdateEventOptionItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,7 +164,7 @@ func (o AmfUpdateEventOptionItem) ToMap() (map[string]interface{}, error) {
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
 	toSerialize["value"] = o.Value
-	if !isNil(o.NotifFlag) {
+	if !IsNil(o.NotifFlag) {
 		toSerialize["notifFlag"] = o.NotifFlag
 	}
 	return toSerialize, nil
@@ -205,5 +205,3 @@ func (v *NullableAmfUpdateEventOptionItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

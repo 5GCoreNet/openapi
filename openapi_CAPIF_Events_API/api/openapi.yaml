@@ -3482,7 +3482,21 @@ components:
       type: object
     CAPIFEvent:
       anyOf:
-      - $ref: '#/components/schemas/CAPIFEvent_anyOf'
+      - enum:
+        - SERVICE_API_AVAILABLE
+        - SERVICE_API_UNAVAILABLE
+        - SERVICE_API_UPDATE
+        - API_INVOKER_ONBOARDED
+        - API_INVOKER_OFFBOARDED
+        - SERVICE_API_INVOCATION_SUCCESS
+        - SERVICE_API_INVOCATION_FAILURE
+        - ACCESS_CONTROL_POLICY_UPDATE
+        - ACCESS_CONTROL_POLICY_UNAVAILABLE
+        - API_INVOKER_AUTHORIZATION_REVOKED
+        - API_INVOKER_UPDATED
+        - API_TOPOLOGY_HIDING_CREATED
+        - API_TOPOLOGY_HIDING_REVOKED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4430,7 +4444,10 @@ components:
       type: object
     CommunicationType:
       anyOf:
-      - $ref: '#/components/schemas/CommunicationType_anyOf'
+      - enum:
+        - REQUEST_RESPONSE
+        - SUBSCRIBE_NOTIFY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4470,7 +4487,13 @@ components:
       type: object
     Operation:
       anyOf:
-      - $ref: '#/components/schemas/Operation_anyOf'
+      - enum:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4483,7 +4506,10 @@ components:
         - DELETE: HTTP DELETE method
     Protocol:
       anyOf:
-      - $ref: '#/components/schemas/Protocol_anyOf'
+      - enum:
+        - HTTP_1_1
+        - HTTP_2
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4493,7 +4519,9 @@ components:
         - HTTP_2: HTTP version 2
     DataFormat:
       anyOf:
-      - $ref: '#/components/schemas/DataFormat_anyOf'
+      - enum:
+        - JSON
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4502,7 +4530,11 @@ components:
         - JSON: JavaScript Object Notation
     SecurityMethod:
       anyOf:
-      - $ref: '#/components/schemas/SecurityMethod_anyOf'
+      - enum:
+        - PSK
+        - PKI
+        - OAUTH
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4850,6 +4882,7 @@ components:
           minItems: 0
           type: array
       type: object
+      x-parent: true
     ApiInvokerPolicy:
       description: Represents the policy of an API Invoker.
       properties:
@@ -5118,7 +5151,11 @@ components:
       type: object
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -5146,7 +5183,13 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5159,7 +5202,11 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -5336,9 +5383,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -5551,79 +5609,6 @@ components:
           type: string
       type: object
       example: null
-    CAPIFEvent_anyOf:
-      enum:
-      - SERVICE_API_AVAILABLE
-      - SERVICE_API_UNAVAILABLE
-      - SERVICE_API_UPDATE
-      - API_INVOKER_ONBOARDED
-      - API_INVOKER_OFFBOARDED
-      - SERVICE_API_INVOCATION_SUCCESS
-      - SERVICE_API_INVOCATION_FAILURE
-      - ACCESS_CONTROL_POLICY_UPDATE
-      - ACCESS_CONTROL_POLICY_UNAVAILABLE
-      - API_INVOKER_AUTHORIZATION_REVOKED
-      - API_INVOKER_UPDATED
-      - API_TOPOLOGY_HIDING_CREATED
-      - API_TOPOLOGY_HIDING_REVOKED
-      type: string
-      example: null
-    CommunicationType_anyOf:
-      enum:
-      - REQUEST_RESPONSE
-      - SUBSCRIBE_NOTIFY
-      type: string
-      example: null
-    Operation_anyOf:
-      enum:
-      - GET
-      - POST
-      - PUT
-      - PATCH
-      - DELETE
-      type: string
-      example: null
-    Protocol_anyOf:
-      enum:
-      - HTTP_1_1
-      - HTTP_2
-      type: string
-      example: null
-    DataFormat_anyOf:
-      enum:
-      - JSON
-      type: string
-      example: null
-    SecurityMethod_anyOf:
-      enum:
-      - PSK
-      - PKI
-      - OAUTH
-      type: string
-      example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    PartitioningCriteria_anyOf:
-      enum:
-      - TAC
-      - SUBPLMN
-      - GEOAREA
-      - SNSSAI
-      - DNN
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -5631,19 +5616,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

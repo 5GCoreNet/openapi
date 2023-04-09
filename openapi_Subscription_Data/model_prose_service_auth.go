@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,9 +17,9 @@ import (
 // checks if the ProseServiceAuth type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ProseServiceAuth{}
 
-// ProseServiceAuth Indicates whether the UE is authorized to use ProSe Direct Discovery, ProSe Direct Communication, or both. 
+// ProseServiceAuth Indicates whether the UE is authorized to use ProSe Direct Discovery, ProSe Direct Communication, or both.
 type ProseServiceAuth struct {
-	ProseDirectDiscoveryAuth *UeAuth `json:"proseDirectDiscoveryAuth,omitempty"`
+	ProseDirectDiscoveryAuth     *UeAuth `json:"proseDirectDiscoveryAuth,omitempty"`
 	ProseDirectCommunicationAuth *UeAuth `json:"proseDirectCommunicationAuth,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewProseServiceAuthWithDefaults() *ProseServiceAuth {
 
 // GetProseDirectDiscoveryAuth returns the ProseDirectDiscoveryAuth field value if set, zero value otherwise.
 func (o *ProseServiceAuth) GetProseDirectDiscoveryAuth() UeAuth {
-	if o == nil || isNil(o.ProseDirectDiscoveryAuth) {
+	if o == nil || IsNil(o.ProseDirectDiscoveryAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ProseServiceAuth) GetProseDirectDiscoveryAuth() UeAuth {
 // GetProseDirectDiscoveryAuthOk returns a tuple with the ProseDirectDiscoveryAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseServiceAuth) GetProseDirectDiscoveryAuthOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.ProseDirectDiscoveryAuth) {
+	if o == nil || IsNil(o.ProseDirectDiscoveryAuth) {
 		return nil, false
 	}
 	return o.ProseDirectDiscoveryAuth, true
@@ -60,7 +60,7 @@ func (o *ProseServiceAuth) GetProseDirectDiscoveryAuthOk() (*UeAuth, bool) {
 
 // HasProseDirectDiscoveryAuth returns a boolean if a field has been set.
 func (o *ProseServiceAuth) HasProseDirectDiscoveryAuth() bool {
-	if o != nil && !isNil(o.ProseDirectDiscoveryAuth) {
+	if o != nil && !IsNil(o.ProseDirectDiscoveryAuth) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ProseServiceAuth) SetProseDirectDiscoveryAuth(v UeAuth) {
 
 // GetProseDirectCommunicationAuth returns the ProseDirectCommunicationAuth field value if set, zero value otherwise.
 func (o *ProseServiceAuth) GetProseDirectCommunicationAuth() UeAuth {
-	if o == nil || isNil(o.ProseDirectCommunicationAuth) {
+	if o == nil || IsNil(o.ProseDirectCommunicationAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ProseServiceAuth) GetProseDirectCommunicationAuth() UeAuth {
 // GetProseDirectCommunicationAuthOk returns a tuple with the ProseDirectCommunicationAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseServiceAuth) GetProseDirectCommunicationAuthOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.ProseDirectCommunicationAuth) {
+	if o == nil || IsNil(o.ProseDirectCommunicationAuth) {
 		return nil, false
 	}
 	return o.ProseDirectCommunicationAuth, true
@@ -92,7 +92,7 @@ func (o *ProseServiceAuth) GetProseDirectCommunicationAuthOk() (*UeAuth, bool) {
 
 // HasProseDirectCommunicationAuth returns a boolean if a field has been set.
 func (o *ProseServiceAuth) HasProseDirectCommunicationAuth() bool {
-	if o != nil && !isNil(o.ProseDirectCommunicationAuth) {
+	if o != nil && !IsNil(o.ProseDirectCommunicationAuth) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ProseServiceAuth) SetProseDirectCommunicationAuth(v UeAuth) {
 }
 
 func (o ProseServiceAuth) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ProseServiceAuth) MarshalJSON() ([]byte, error) {
 
 func (o ProseServiceAuth) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ProseDirectDiscoveryAuth) {
+	if !IsNil(o.ProseDirectDiscoveryAuth) {
 		toSerialize["proseDirectDiscoveryAuth"] = o.ProseDirectDiscoveryAuth
 	}
-	if !isNil(o.ProseDirectCommunicationAuth) {
+	if !IsNil(o.ProseDirectCommunicationAuth) {
 		toSerialize["proseDirectCommunicationAuth"] = o.ProseDirectCommunicationAuth
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableProseServiceAuth) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

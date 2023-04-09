@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &TraceData{}
 
 // TraceData contains Trace control and configuration parameters.
 type TraceData struct {
-	// Trace Reference (see 3GPP TS 32.422).It shall be encoded as the concatenation of MCC, MNC and Trace ID as follows: 'MCC'<MNC'-'Trace ID'The Trace ID shall be encoded as a 3 octet string in hexadecimal representation. Each character in the Trace ID string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the Trace ID shall appear first  in the string, and the character representing the 4 least significant bit of the Trace ID shall appear last in the string. 
-	TraceRef string `json:"traceRef"`
+	// Trace Reference (see 3GPP TS 32.422).It shall be encoded as the concatenation of MCC, MNC and Trace ID as follows: 'MCC'<MNC'-'Trace ID'The Trace ID shall be encoded as a 3 octet string in hexadecimal representation. Each character in the Trace ID string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the Trace ID shall appear first  in the string, and the character representing the 4 least significant bit of the Trace ID shall appear last in the string.
+	TraceRef   string     `json:"traceRef"`
 	TraceDepth TraceDepth `json:"traceDepth"`
-	// List of NE Types (see 3GPP TS 32.422).It shall be encoded as an octet string in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits shall appear first in the string, and the character representing the 4 least significant bit shall appear last in the string.Octets shall be coded according to 3GPP TS 32.422. 
+	// List of NE Types (see 3GPP TS 32.422).It shall be encoded as an octet string in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits shall appear first in the string, and the character representing the 4 least significant bit shall appear last in the string.Octets shall be coded according to 3GPP TS 32.422.
 	NeTypeList string `json:"neTypeList"`
-	// Triggering events (see 3GPP TS 32.422).It shall be encoded as an octet string in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits shall appear first in the string, and the character representing the 4 least significant bit shall appear last in the string. Octets shall be coded according to 3GPP TS 32.422. 
+	// Triggering events (see 3GPP TS 32.422).It shall be encoded as an octet string in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits shall appear first in the string, and the character representing the 4 least significant bit shall appear last in the string. Octets shall be coded according to 3GPP TS 32.422.
 	EventList string `json:"eventList"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	CollectionEntityIpv4Addr *string `json:"collectionEntityIpv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	CollectionEntityIpv4Addr *string   `json:"collectionEntityIpv4Addr,omitempty"`
 	CollectionEntityIpv6Addr *Ipv6Addr `json:"collectionEntityIpv6Addr,omitempty"`
-	// List of Interfaces (see 3GPP TS 32.422).It shall be encoded as an octet string in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits shall appear first in the string, and the character representing the  4 least significant bit shall appear last in the string. Octets shall be coded according to 3GPP TS 32.422. If this attribute is not present, all the interfaces applicable to the list of NE types indicated in the neTypeList attribute should be traced. 
+	// List of Interfaces (see 3GPP TS 32.422).It shall be encoded as an octet string in hexadecimal representation. Each character in the string shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant character representing the 4 most significant bits shall appear first in the string, and the character representing the  4 least significant bit shall appear last in the string. Octets shall be coded according to 3GPP TS 32.422. If this attribute is not present, all the interfaces applicable to the list of NE types indicated in the neTypeList attribute should be traced.
 	InterfaceList *string `json:"interfaceList,omitempty"`
 }
 
@@ -152,7 +152,7 @@ func (o *TraceData) SetEventList(v string) {
 
 // GetCollectionEntityIpv4Addr returns the CollectionEntityIpv4Addr field value if set, zero value otherwise.
 func (o *TraceData) GetCollectionEntityIpv4Addr() string {
-	if o == nil || isNil(o.CollectionEntityIpv4Addr) {
+	if o == nil || IsNil(o.CollectionEntityIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *TraceData) GetCollectionEntityIpv4Addr() string {
 // GetCollectionEntityIpv4AddrOk returns a tuple with the CollectionEntityIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceData) GetCollectionEntityIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.CollectionEntityIpv4Addr) {
+	if o == nil || IsNil(o.CollectionEntityIpv4Addr) {
 		return nil, false
 	}
 	return o.CollectionEntityIpv4Addr, true
@@ -170,7 +170,7 @@ func (o *TraceData) GetCollectionEntityIpv4AddrOk() (*string, bool) {
 
 // HasCollectionEntityIpv4Addr returns a boolean if a field has been set.
 func (o *TraceData) HasCollectionEntityIpv4Addr() bool {
-	if o != nil && !isNil(o.CollectionEntityIpv4Addr) {
+	if o != nil && !IsNil(o.CollectionEntityIpv4Addr) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *TraceData) SetCollectionEntityIpv4Addr(v string) {
 
 // GetCollectionEntityIpv6Addr returns the CollectionEntityIpv6Addr field value if set, zero value otherwise.
 func (o *TraceData) GetCollectionEntityIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.CollectionEntityIpv6Addr) {
+	if o == nil || IsNil(o.CollectionEntityIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *TraceData) GetCollectionEntityIpv6Addr() Ipv6Addr {
 // GetCollectionEntityIpv6AddrOk returns a tuple with the CollectionEntityIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceData) GetCollectionEntityIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.CollectionEntityIpv6Addr) {
+	if o == nil || IsNil(o.CollectionEntityIpv6Addr) {
 		return nil, false
 	}
 	return o.CollectionEntityIpv6Addr, true
@@ -202,7 +202,7 @@ func (o *TraceData) GetCollectionEntityIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasCollectionEntityIpv6Addr returns a boolean if a field has been set.
 func (o *TraceData) HasCollectionEntityIpv6Addr() bool {
-	if o != nil && !isNil(o.CollectionEntityIpv6Addr) {
+	if o != nil && !IsNil(o.CollectionEntityIpv6Addr) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *TraceData) SetCollectionEntityIpv6Addr(v Ipv6Addr) {
 
 // GetInterfaceList returns the InterfaceList field value if set, zero value otherwise.
 func (o *TraceData) GetInterfaceList() string {
-	if o == nil || isNil(o.InterfaceList) {
+	if o == nil || IsNil(o.InterfaceList) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *TraceData) GetInterfaceList() string {
 // GetInterfaceListOk returns a tuple with the InterfaceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceData) GetInterfaceListOk() (*string, bool) {
-	if o == nil || isNil(o.InterfaceList) {
+	if o == nil || IsNil(o.InterfaceList) {
 		return nil, false
 	}
 	return o.InterfaceList, true
@@ -234,7 +234,7 @@ func (o *TraceData) GetInterfaceListOk() (*string, bool) {
 
 // HasInterfaceList returns a boolean if a field has been set.
 func (o *TraceData) HasInterfaceList() bool {
-	if o != nil && !isNil(o.InterfaceList) {
+	if o != nil && !IsNil(o.InterfaceList) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *TraceData) SetInterfaceList(v string) {
 }
 
 func (o TraceData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -260,13 +260,13 @@ func (o TraceData) ToMap() (map[string]interface{}, error) {
 	toSerialize["traceDepth"] = o.TraceDepth
 	toSerialize["neTypeList"] = o.NeTypeList
 	toSerialize["eventList"] = o.EventList
-	if !isNil(o.CollectionEntityIpv4Addr) {
+	if !IsNil(o.CollectionEntityIpv4Addr) {
 		toSerialize["collectionEntityIpv4Addr"] = o.CollectionEntityIpv4Addr
 	}
-	if !isNil(o.CollectionEntityIpv6Addr) {
+	if !IsNil(o.CollectionEntityIpv6Addr) {
 		toSerialize["collectionEntityIpv6Addr"] = o.CollectionEntityIpv6Addr
 	}
-	if !isNil(o.InterfaceList) {
+	if !IsNil(o.InterfaceList) {
 		toSerialize["interfaceList"] = o.InterfaceList
 	}
 	return toSerialize, nil
@@ -307,5 +307,3 @@ func (v *NullableTraceData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

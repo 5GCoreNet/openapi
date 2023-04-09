@@ -19,8 +19,8 @@ var _ MappedNullable = &GUAMInfo{}
 
 // GUAMInfo struct for GUAMInfo
 type GUAMInfo struct {
-	PLMNId *PlmnId `json:"pLMNId,omitempty"`
-	AMFIdentifier *int32 `json:"aMFIdentifier,omitempty"`
+	PLMNId        *PlmnId `json:"pLMNId,omitempty"`
+	AMFIdentifier *int32  `json:"aMFIdentifier,omitempty"`
 }
 
 // NewGUAMInfo instantiates a new GUAMInfo object
@@ -42,7 +42,7 @@ func NewGUAMInfoWithDefaults() *GUAMInfo {
 
 // GetPLMNId returns the PLMNId field value if set, zero value otherwise.
 func (o *GUAMInfo) GetPLMNId() PlmnId {
-	if o == nil || isNil(o.PLMNId) {
+	if o == nil || IsNil(o.PLMNId) {
 		var ret PlmnId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GUAMInfo) GetPLMNId() PlmnId {
 // GetPLMNIdOk returns a tuple with the PLMNId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GUAMInfo) GetPLMNIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PLMNId) {
+	if o == nil || IsNil(o.PLMNId) {
 		return nil, false
 	}
 	return o.PLMNId, true
@@ -60,7 +60,7 @@ func (o *GUAMInfo) GetPLMNIdOk() (*PlmnId, bool) {
 
 // HasPLMNId returns a boolean if a field has been set.
 func (o *GUAMInfo) HasPLMNId() bool {
-	if o != nil && !isNil(o.PLMNId) {
+	if o != nil && !IsNil(o.PLMNId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GUAMInfo) SetPLMNId(v PlmnId) {
 
 // GetAMFIdentifier returns the AMFIdentifier field value if set, zero value otherwise.
 func (o *GUAMInfo) GetAMFIdentifier() int32 {
-	if o == nil || isNil(o.AMFIdentifier) {
+	if o == nil || IsNil(o.AMFIdentifier) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GUAMInfo) GetAMFIdentifier() int32 {
 // GetAMFIdentifierOk returns a tuple with the AMFIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GUAMInfo) GetAMFIdentifierOk() (*int32, bool) {
-	if o == nil || isNil(o.AMFIdentifier) {
+	if o == nil || IsNil(o.AMFIdentifier) {
 		return nil, false
 	}
 	return o.AMFIdentifier, true
@@ -92,7 +92,7 @@ func (o *GUAMInfo) GetAMFIdentifierOk() (*int32, bool) {
 
 // HasAMFIdentifier returns a boolean if a field has been set.
 func (o *GUAMInfo) HasAMFIdentifier() bool {
-	if o != nil && !isNil(o.AMFIdentifier) {
+	if o != nil && !IsNil(o.AMFIdentifier) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *GUAMInfo) SetAMFIdentifier(v int32) {
 }
 
 func (o GUAMInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o GUAMInfo) MarshalJSON() ([]byte, error) {
 
 func (o GUAMInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PLMNId) {
+	if !IsNil(o.PLMNId) {
 		toSerialize["pLMNId"] = o.PLMNId
 	}
-	if !isNil(o.AMFIdentifier) {
+	if !IsNil(o.AMFIdentifier) {
 		toSerialize["aMFIdentifier"] = o.AMFIdentifier
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableGUAMInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

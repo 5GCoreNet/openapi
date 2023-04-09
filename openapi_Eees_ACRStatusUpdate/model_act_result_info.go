@@ -1,7 +1,7 @@
 /*
 EES ACR Status Update Service
 
-EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &ACTResultInfo{}
 
 // ACTResultInfo Represents the result of ACT and the related information.
 type ACTResultInfo struct {
-	ActResult ACTResult `json:"actResult"`
+	ActResult       ACTResult        `json:"actResult"`
 	ActFailureCause *ACTFailureCause `json:"actFailureCause,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	UeId string `json:"ueId"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	UeId        string   `json:"ueId"`
 	EasEndPoint EndPoint `json:"easEndPoint"`
 }
 
@@ -72,7 +72,7 @@ func (o *ACTResultInfo) SetActResult(v ACTResult) {
 
 // GetActFailureCause returns the ActFailureCause field value if set, zero value otherwise.
 func (o *ACTResultInfo) GetActFailureCause() ACTFailureCause {
-	if o == nil || isNil(o.ActFailureCause) {
+	if o == nil || IsNil(o.ActFailureCause) {
 		var ret ACTFailureCause
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ACTResultInfo) GetActFailureCause() ACTFailureCause {
 // GetActFailureCauseOk returns a tuple with the ActFailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACTResultInfo) GetActFailureCauseOk() (*ACTFailureCause, bool) {
-	if o == nil || isNil(o.ActFailureCause) {
+	if o == nil || IsNil(o.ActFailureCause) {
 		return nil, false
 	}
 	return o.ActFailureCause, true
@@ -90,7 +90,7 @@ func (o *ACTResultInfo) GetActFailureCauseOk() (*ACTFailureCause, bool) {
 
 // HasActFailureCause returns a boolean if a field has been set.
 func (o *ACTResultInfo) HasActFailureCause() bool {
-	if o != nil && !isNil(o.ActFailureCause) {
+	if o != nil && !IsNil(o.ActFailureCause) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ACTResultInfo) SetEasEndPoint(v EndPoint) {
 }
 
 func (o ACTResultInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -161,7 +161,7 @@ func (o ACTResultInfo) MarshalJSON() ([]byte, error) {
 func (o ACTResultInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["actResult"] = o.ActResult
-	if !isNil(o.ActFailureCause) {
+	if !IsNil(o.ActFailureCause) {
 		toSerialize["actFailureCause"] = o.ActFailureCause
 	}
 	toSerialize["ueId"] = o.UeId
@@ -204,5 +204,3 @@ func (v *NullableACTResultInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

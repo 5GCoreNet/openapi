@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ApplyAction Action to apply to the DNS packet 
+// ApplyAction Action to apply to the DNS packet
 type ApplyAction struct {
-	ApplyActionAnyOf *ApplyActionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ApplyAction) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ApplyActionAnyOf
-	err = json.Unmarshal(data, &dst.ApplyActionAnyOf);
-	if err == nil {
-		jsonApplyActionAnyOf, _ := json.Marshal(dst.ApplyActionAnyOf)
-		if string(jsonApplyActionAnyOf) == "{}" { // empty struct
-			dst.ApplyActionAnyOf = nil
-		} else {
-			return nil // data stored in dst.ApplyActionAnyOf, return on the first match
-		}
-	} else {
-		dst.ApplyActionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ApplyAction) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ApplyAction) MarshalJSON() ([]byte, error) {
-	if src.ApplyActionAnyOf != nil {
-		return json.Marshal(&src.ApplyActionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableApplyAction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

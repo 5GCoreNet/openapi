@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // SMSServiceParameterUpdate200Response - struct for SMSServiceParameterUpdate200Response
 type SMSServiceParameterUpdate200Response struct {
-	PatchResult *PatchResult
+	PatchResult      *PatchResult
 	UeSmsContextData *UeSmsContextData
 }
 
@@ -34,7 +34,6 @@ func UeSmsContextDataAsSMSServiceParameterUpdate200Response(v *UeSmsContextData)
 		UeSmsContextData: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SMSServiceParameterUpdate200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src SMSServiceParameterUpdate200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SMSServiceParameterUpdate200Response) GetActualInstance() (interface{}) {
+func (obj *SMSServiceParameterUpdate200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableSMSServiceParameterUpdate200Response) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

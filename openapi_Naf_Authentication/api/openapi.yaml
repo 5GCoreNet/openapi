@@ -623,9 +623,13 @@ components:
             Indicates to release the UAV resources during authentication failure, when set to "true". Default is set to "false".
           type: boolean
       type: object
+      x-parent: true
     AuthResult:
       anyOf:
-      - $ref: '#/components/schemas/AuthResult_anyOf'
+      - enum:
+        - AUTH_SUCCESS
+        - AUTH_FAIL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -633,9 +637,14 @@ components:
         Possible values are:
         - AUTH_SUCCESS: The UUAA or C2 authorization has succeeded.
         - AUTH_FAIL: The UUAA or C2 authorization has failed.
+      x-parent: true
     NotifyType:
       anyOf:
-      - $ref: '#/components/schemas/NotifyType_anyOf'
+      - enum:
+        - REAUTHENTICATE
+        - REAUTHORIZE
+        - REVOKE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -646,7 +655,10 @@ components:
         - REVOKE: Revoke UAV authentication and authorization.
     AuthMsgType:
       anyOf:
-      - $ref: '#/components/schemas/AuthMsgType_anyOf'
+      - enum:
+        - UUAA
+        - C2AUTH
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -688,6 +700,7 @@ components:
           pattern: "^[A-Fa-f0-9]*$"
           type: string
       type: object
+      x-parent: true
     Uri:
       description: string providing an URI formatted according to IETF RFC 3986.
       type: string
@@ -984,9 +997,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1693,25 +1717,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/AuthResult'
       deprecated: true
-    AuthResult_anyOf:
-      enum:
-      - AUTH_SUCCESS
-      - AUTH_FAIL
-      type: string
-      example: null
-    NotifyType_anyOf:
-      enum:
-      - REAUTHENTICATE
-      - REAUTHORIZE
-      - REVOKE
-      type: string
-      example: null
-    AuthMsgType_anyOf:
-      enum:
-      - UUAA
-      - C2AUTH
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -1719,19 +1724,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // Modify5GVnGroupApiService Modify5GVnGroupApi service
 type Modify5GVnGroupApiService service
 
 type ApiModify5GVnGroupRequest struct {
-	ctx context.Context
-	ApiService *Modify5GVnGroupApiService
-	externalGroupId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *Modify5GVnGroupApiService
+	externalGroupId   string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -49,26 +48,27 @@ func (r ApiModify5GVnGroupRequest) Execute() (*PatchResult, *http.Response, erro
 /*
 Modify5GVnGroup modify the 5GVnGroup
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @return ApiModify5GVnGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@return ApiModify5GVnGroupRequest
 */
 func (a *Modify5GVnGroupApiService) Modify5GVnGroup(ctx context.Context, externalGroupId string) ApiModify5GVnGroupRequest {
 	return ApiModify5GVnGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *Modify5GVnGroupApiService) Modify5GVnGroupExecute(r ApiModify5GVnGroupRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Modify5GVnGroupApiService.Modify5GVnGroup")
@@ -87,7 +87,7 @@ func (a *Modify5GVnGroupApiService) Modify5GVnGroupExecute(r ApiModify5GVnGroupR
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -118,9 +118,9 @@ func (a *Modify5GVnGroupApiService) Modify5GVnGroupExecute(r ApiModify5GVnGroupR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -137,8 +137,8 @@ func (a *Modify5GVnGroupApiService) Modify5GVnGroupExecute(r ApiModify5GVnGroupR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

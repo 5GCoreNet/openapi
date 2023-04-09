@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewSubscriptionFilterWithDefaults() *SubscriptionFilter {
 
 // GetMonitoredResourceUris returns the MonitoredResourceUris field value if set, zero value otherwise.
 func (o *SubscriptionFilter) GetMonitoredResourceUris() []string {
-	if o == nil || isNil(o.MonitoredResourceUris) {
+	if o == nil || IsNil(o.MonitoredResourceUris) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SubscriptionFilter) GetMonitoredResourceUris() []string {
 // GetMonitoredResourceUrisOk returns a tuple with the MonitoredResourceUris field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionFilter) GetMonitoredResourceUrisOk() ([]string, bool) {
-	if o == nil || isNil(o.MonitoredResourceUris) {
+	if o == nil || IsNil(o.MonitoredResourceUris) {
 		return nil, false
 	}
 	return o.MonitoredResourceUris, true
@@ -62,7 +62,7 @@ func (o *SubscriptionFilter) GetMonitoredResourceUrisOk() ([]string, bool) {
 
 // HasMonitoredResourceUris returns a boolean if a field has been set.
 func (o *SubscriptionFilter) HasMonitoredResourceUris() bool {
-	if o != nil && !isNil(o.MonitoredResourceUris) {
+	if o != nil && !IsNil(o.MonitoredResourceUris) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SubscriptionFilter) SetMonitoredResourceUris(v []string) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *SubscriptionFilter) GetOperations() []RecordOperation {
-	if o == nil || isNil(o.Operations) {
+	if o == nil || IsNil(o.Operations) {
 		var ret []RecordOperation
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SubscriptionFilter) GetOperations() []RecordOperation {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionFilter) GetOperationsOk() ([]RecordOperation, bool) {
-	if o == nil || isNil(o.Operations) {
+	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -94,7 +94,7 @@ func (o *SubscriptionFilter) GetOperationsOk() ([]RecordOperation, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *SubscriptionFilter) HasOperations() bool {
-	if o != nil && !isNil(o.Operations) {
+	if o != nil && !IsNil(o.Operations) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SubscriptionFilter) SetOperations(v []RecordOperation) {
 }
 
 func (o SubscriptionFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o SubscriptionFilter) MarshalJSON() ([]byte, error) {
 
 func (o SubscriptionFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MonitoredResourceUris) {
+	if !IsNil(o.MonitoredResourceUris) {
 		toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
 	}
-	if !isNil(o.Operations) {
+	if !IsNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableSubscriptionFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

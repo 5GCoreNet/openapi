@@ -1,7 +1,7 @@
 /*
 SS_LocationAreaInfoRetrieval
 
-API for SEAL Location Area Info Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Location Area Info Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -24,7 +24,7 @@ type HorizontalWithVerticalVelocityAndUncertainty struct {
 	// Indicates value of angle.
 	Bearing int32 `json:"bearing"`
 	// Indicates value of vertical speed.
-	VSpeed float32 `json:"vSpeed"`
+	VSpeed     float32           `json:"vSpeed"`
 	VDirection VerticalDirection `json:"vDirection"`
 	// Indicates value of speed uncertainty.
 	HUncertainty float32 `json:"hUncertainty"`
@@ -200,7 +200,7 @@ func (o *HorizontalWithVerticalVelocityAndUncertainty) SetVUncertainty(v float32
 }
 
 func (o HorizontalWithVerticalVelocityAndUncertainty) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -253,5 +253,3 @@ func (v *NullableHorizontalWithVerticalVelocityAndUncertainty) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

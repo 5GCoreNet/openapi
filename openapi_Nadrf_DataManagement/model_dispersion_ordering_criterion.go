@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DispersionOrderingCriterion Possible values are: - TIME_SLOT_START: Indicates the order of time slot start. - DISPERSION: Indicates the order of data/transaction dispersion. - CLASSIFICATION: Indicates the order of data/transaction classification. - RANKING: Indicates the order of data/transaction ranking. - PERCENTILE_RANKING: Indicates the order of data/transaction percentile ranking. 
+// DispersionOrderingCriterion Possible values are: - TIME_SLOT_START: Indicates the order of time slot start. - DISPERSION: Indicates the order of data/transaction dispersion. - CLASSIFICATION: Indicates the order of data/transaction classification. - RANKING: Indicates the order of data/transaction ranking. - PERCENTILE_RANKING: Indicates the order of data/transaction percentile ranking.
 type DispersionOrderingCriterion struct {
-	DispersionOrderingCriterionAnyOf *DispersionOrderingCriterionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DispersionOrderingCriterion) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DispersionOrderingCriterionAnyOf
-	err = json.Unmarshal(data, &dst.DispersionOrderingCriterionAnyOf);
-	if err == nil {
-		jsonDispersionOrderingCriterionAnyOf, _ := json.Marshal(dst.DispersionOrderingCriterionAnyOf)
-		if string(jsonDispersionOrderingCriterionAnyOf) == "{}" { // empty struct
-			dst.DispersionOrderingCriterionAnyOf = nil
-		} else {
-			return nil // data stored in dst.DispersionOrderingCriterionAnyOf, return on the first match
-		}
-	} else {
-		dst.DispersionOrderingCriterionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DispersionOrderingCriterion) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DispersionOrderingCriterion) MarshalJSON() ([]byte, error) {
-	if src.DispersionOrderingCriterionAnyOf != nil {
-		return json.Marshal(&src.DispersionOrderingCriterionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDispersionOrderingCriterion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

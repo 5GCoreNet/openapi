@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,18 +13,17 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // Class5GVNGroupsInternalDocumentApiService Class5GVNGroupsInternalDocumentApi service
 type Class5GVNGroupsInternalDocumentApiService service
 
 type ApiQuery5GVnGroupInternalRequest struct {
-	ctx context.Context
-	ApiService *Class5GVNGroupsInternalDocumentApiService
+	ctx              context.Context
+	ApiService       *Class5GVNGroupsInternalDocumentApiService
 	internalGroupIds *[]string
 }
 
@@ -41,24 +40,25 @@ func (r ApiQuery5GVnGroupInternalRequest) Execute() (*map[string]Model5GVnGroupC
 /*
 Query5GVnGroupInternal Retrieves the data of 5G VN Group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiQuery5GVnGroupInternalRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiQuery5GVnGroupInternalRequest
 */
 func (a *Class5GVNGroupsInternalDocumentApiService) Query5GVnGroupInternal(ctx context.Context) ApiQuery5GVnGroupInternalRequest {
 	return ApiQuery5GVnGroupInternalRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]Model5GVnGroupConfiguration
+//
+//	@return map[string]Model5GVnGroupConfiguration
 func (a *Class5GVNGroupsInternalDocumentApiService) Query5GVnGroupInternalExecute(r ApiQuery5GVnGroupInternalRequest) (*map[string]Model5GVnGroupConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *map[string]Model5GVnGroupConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *map[string]Model5GVnGroupConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class5GVNGroupsInternalDocumentApiService.Query5GVnGroupInternal")
@@ -75,7 +75,7 @@ func (a *Class5GVNGroupsInternalDocumentApiService) Query5GVnGroupInternalExecut
 		return localVarReturnValue, nil, reportError("internalGroupIds is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -103,9 +103,9 @@ func (a *Class5GVNGroupsInternalDocumentApiService) Query5GVnGroupInternalExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

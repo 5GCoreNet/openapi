@@ -20,8 +20,8 @@ var _ MappedNullable = &TceMappingInfo{}
 // TceMappingInfo struct for TceMappingInfo
 type TceMappingInfo struct {
 	TceIPAddress *TceMappingInfoTceIPAddress `json:"TceIPAddress,omitempty"`
-	TceID *int32 `json:"TceID,omitempty"`
-	PlmnTarget *PlmnId `json:"PlmnTarget,omitempty"`
+	TceID        *int32                      `json:"TceID,omitempty"`
+	PlmnTarget   *PlmnId                     `json:"PlmnTarget,omitempty"`
 }
 
 // NewTceMappingInfo instantiates a new TceMappingInfo object
@@ -43,7 +43,7 @@ func NewTceMappingInfoWithDefaults() *TceMappingInfo {
 
 // GetTceIPAddress returns the TceIPAddress field value if set, zero value otherwise.
 func (o *TceMappingInfo) GetTceIPAddress() TceMappingInfoTceIPAddress {
-	if o == nil || isNil(o.TceIPAddress) {
+	if o == nil || IsNil(o.TceIPAddress) {
 		var ret TceMappingInfoTceIPAddress
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TceMappingInfo) GetTceIPAddress() TceMappingInfoTceIPAddress {
 // GetTceIPAddressOk returns a tuple with the TceIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TceMappingInfo) GetTceIPAddressOk() (*TceMappingInfoTceIPAddress, bool) {
-	if o == nil || isNil(o.TceIPAddress) {
+	if o == nil || IsNil(o.TceIPAddress) {
 		return nil, false
 	}
 	return o.TceIPAddress, true
@@ -61,7 +61,7 @@ func (o *TceMappingInfo) GetTceIPAddressOk() (*TceMappingInfoTceIPAddress, bool)
 
 // HasTceIPAddress returns a boolean if a field has been set.
 func (o *TceMappingInfo) HasTceIPAddress() bool {
-	if o != nil && !isNil(o.TceIPAddress) {
+	if o != nil && !IsNil(o.TceIPAddress) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TceMappingInfo) SetTceIPAddress(v TceMappingInfoTceIPAddress) {
 
 // GetTceID returns the TceID field value if set, zero value otherwise.
 func (o *TceMappingInfo) GetTceID() int32 {
-	if o == nil || isNil(o.TceID) {
+	if o == nil || IsNil(o.TceID) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TceMappingInfo) GetTceID() int32 {
 // GetTceIDOk returns a tuple with the TceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TceMappingInfo) GetTceIDOk() (*int32, bool) {
-	if o == nil || isNil(o.TceID) {
+	if o == nil || IsNil(o.TceID) {
 		return nil, false
 	}
 	return o.TceID, true
@@ -93,7 +93,7 @@ func (o *TceMappingInfo) GetTceIDOk() (*int32, bool) {
 
 // HasTceID returns a boolean if a field has been set.
 func (o *TceMappingInfo) HasTceID() bool {
-	if o != nil && !isNil(o.TceID) {
+	if o != nil && !IsNil(o.TceID) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *TceMappingInfo) SetTceID(v int32) {
 
 // GetPlmnTarget returns the PlmnTarget field value if set, zero value otherwise.
 func (o *TceMappingInfo) GetPlmnTarget() PlmnId {
-	if o == nil || isNil(o.PlmnTarget) {
+	if o == nil || IsNil(o.PlmnTarget) {
 		var ret PlmnId
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *TceMappingInfo) GetPlmnTarget() PlmnId {
 // GetPlmnTargetOk returns a tuple with the PlmnTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TceMappingInfo) GetPlmnTargetOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnTarget) {
+	if o == nil || IsNil(o.PlmnTarget) {
 		return nil, false
 	}
 	return o.PlmnTarget, true
@@ -125,7 +125,7 @@ func (o *TceMappingInfo) GetPlmnTargetOk() (*PlmnId, bool) {
 
 // HasPlmnTarget returns a boolean if a field has been set.
 func (o *TceMappingInfo) HasPlmnTarget() bool {
-	if o != nil && !isNil(o.PlmnTarget) {
+	if o != nil && !IsNil(o.PlmnTarget) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *TceMappingInfo) SetPlmnTarget(v PlmnId) {
 }
 
 func (o TceMappingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o TceMappingInfo) MarshalJSON() ([]byte, error) {
 
 func (o TceMappingInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TceIPAddress) {
+	if !IsNil(o.TceIPAddress) {
 		toSerialize["TceIPAddress"] = o.TceIPAddress
 	}
-	if !isNil(o.TceID) {
+	if !IsNil(o.TceID) {
 		toSerialize["TceID"] = o.TceID
 	}
-	if !isNil(o.PlmnTarget) {
+	if !IsNil(o.PlmnTarget) {
 		toSerialize["PlmnTarget"] = o.PlmnTarget
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableTceMappingInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

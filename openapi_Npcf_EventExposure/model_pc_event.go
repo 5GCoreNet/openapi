@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // PcEvent Represents the policy control events that can be subscribed.
 type PcEvent struct {
-	PcEventAnyOf *PcEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PcEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PcEventAnyOf
-	err = json.Unmarshal(data, &dst.PcEventAnyOf);
-	if err == nil {
-		jsonPcEventAnyOf, _ := json.Marshal(dst.PcEventAnyOf)
-		if string(jsonPcEventAnyOf) == "{}" { // empty struct
-			dst.PcEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.PcEventAnyOf, return on the first match
-		}
-	} else {
-		dst.PcEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PcEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PcEvent) MarshalJSON() ([]byte, error) {
-	if src.PcEventAnyOf != nil {
-		return json.Marshal(&src.PcEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePcEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

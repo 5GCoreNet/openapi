@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -13,20 +13,19 @@ package openapi_M1_ContentHostingProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateContentHostingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                         context.Context
+	ApiService                  *DefaultApiService
+	provisioningSessionId       string
 	contentHostingConfiguration *ContentHostingConfiguration
 }
 
@@ -43,14 +42,14 @@ func (r ApiCreateContentHostingConfigurationRequest) Execute() (*http.Response, 
 /*
 CreateContentHostingConfiguration Create (and optionally upload) the Content Hosting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiCreateContentHostingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiCreateContentHostingConfigurationRequest
 */
 func (a *DefaultApiService) CreateContentHostingConfiguration(ctx context.Context, provisioningSessionId string) ApiCreateContentHostingConfigurationRequest {
 	return ApiCreateContentHostingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) CreateContentHostingConfiguration(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) CreateContentHostingConfigurationExecute(r ApiCreateContentHostingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateContentHostingConfiguration")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) CreateContentHostingConfigurationExecute(r ApiCreate
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,8 +125,8 @@ func (a *DefaultApiService) CreateContentHostingConfigurationExecute(r ApiCreate
 }
 
 type ApiDestroyContentHostingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -138,14 +137,14 @@ func (r ApiDestroyContentHostingConfigurationRequest) Execute() (*http.Response,
 /*
 DestroyContentHostingConfiguration Destroy the current Content Hosting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiDestroyContentHostingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiDestroyContentHostingConfigurationRequest
 */
 func (a *DefaultApiService) DestroyContentHostingConfiguration(ctx context.Context, provisioningSessionId string) ApiDestroyContentHostingConfigurationRequest {
 	return ApiDestroyContentHostingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -153,9 +152,9 @@ func (a *DefaultApiService) DestroyContentHostingConfiguration(ctx context.Conte
 // Execute executes the request
 func (a *DefaultApiService) DestroyContentHostingConfigurationExecute(r ApiDestroyContentHostingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyContentHostingConfiguration")
@@ -197,9 +196,9 @@ func (a *DefaultApiService) DestroyContentHostingConfigurationExecute(r ApiDestr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -216,9 +215,9 @@ func (a *DefaultApiService) DestroyContentHostingConfigurationExecute(r ApiDestr
 }
 
 type ApiPatchContentHostingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                         context.Context
+	ApiService                  *DefaultApiService
+	provisioningSessionId       string
 	contentHostingConfiguration *ContentHostingConfiguration
 }
 
@@ -235,26 +234,27 @@ func (r ApiPatchContentHostingConfigurationRequest) Execute() (*ContentHostingCo
 /*
 PatchContentHostingConfiguration Patch the Content Hosting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiPatchContentHostingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiPatchContentHostingConfigurationRequest
 */
 func (a *DefaultApiService) PatchContentHostingConfiguration(ctx context.Context, provisioningSessionId string) ApiPatchContentHostingConfigurationRequest {
 	return ApiPatchContentHostingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ContentHostingConfiguration
+//
+//	@return ContentHostingConfiguration
 func (a *DefaultApiService) PatchContentHostingConfigurationExecute(r ApiPatchContentHostingConfigurationRequest) (*ContentHostingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContentHostingConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContentHostingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchContentHostingConfiguration")
@@ -301,9 +301,9 @@ func (a *DefaultApiService) PatchContentHostingConfigurationExecute(r ApiPatchCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -329,11 +329,11 @@ func (a *DefaultApiService) PatchContentHostingConfigurationExecute(r ApiPatchCo
 }
 
 type ApiPurgeContentHostingCacheRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	pattern *string
-	value *string
+	pattern               *string
+	value                 *string
 }
 
 // Keyword
@@ -355,14 +355,14 @@ func (r ApiPurgeContentHostingCacheRequest) Execute() (*http.Response, error) {
 /*
 PurgeContentHostingCache Purge the content of the cache for the Content Hosting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId A unique identifier of the Provisioning
- @return ApiPurgeContentHostingCacheRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId A unique identifier of the Provisioning
+	@return ApiPurgeContentHostingCacheRequest
 */
 func (a *DefaultApiService) PurgeContentHostingCache(ctx context.Context, provisioningSessionId string) ApiPurgeContentHostingCacheRequest {
 	return ApiPurgeContentHostingCacheRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -370,9 +370,9 @@ func (a *DefaultApiService) PurgeContentHostingCache(ctx context.Context, provis
 // Execute executes the request
 func (a *DefaultApiService) PurgeContentHostingCacheExecute(r ApiPurgeContentHostingCacheRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PurgeContentHostingCache")
@@ -405,10 +405,10 @@ func (a *DefaultApiService) PurgeContentHostingCacheExecute(r ApiPurgeContentHos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.pattern != nil {
-		parameterAddToQuery(localVarFormParams, "pattern", r.pattern, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "pattern", r.pattern, "")
 	}
 	if r.value != nil {
-		parameterAddToQuery(localVarFormParams, "value", r.value, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "value", r.value, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -420,9 +420,9 @@ func (a *DefaultApiService) PurgeContentHostingCacheExecute(r ApiPurgeContentHos
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -439,8 +439,8 @@ func (a *DefaultApiService) PurgeContentHostingCacheExecute(r ApiPurgeContentHos
 }
 
 type ApiRetrieveContentHostingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -451,26 +451,27 @@ func (r ApiRetrieveContentHostingConfigurationRequest) Execute() (*ContentHostin
 /*
 RetrieveContentHostingConfiguration Retrieve the Content Hosting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiRetrieveContentHostingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiRetrieveContentHostingConfigurationRequest
 */
 func (a *DefaultApiService) RetrieveContentHostingConfiguration(ctx context.Context, provisioningSessionId string) ApiRetrieveContentHostingConfigurationRequest {
 	return ApiRetrieveContentHostingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ContentHostingConfiguration
+//
+//	@return ContentHostingConfiguration
 func (a *DefaultApiService) RetrieveContentHostingConfigurationExecute(r ApiRetrieveContentHostingConfigurationRequest) (*ContentHostingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContentHostingConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContentHostingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveContentHostingConfiguration")
@@ -512,9 +513,9 @@ func (a *DefaultApiService) RetrieveContentHostingConfigurationExecute(r ApiRetr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -540,9 +541,9 @@ func (a *DefaultApiService) RetrieveContentHostingConfigurationExecute(r ApiRetr
 }
 
 type ApiUpdateContentHostingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                         context.Context
+	ApiService                  *DefaultApiService
+	provisioningSessionId       string
 	contentHostingConfiguration *ContentHostingConfiguration
 }
 
@@ -559,14 +560,14 @@ func (r ApiUpdateContentHostingConfigurationRequest) Execute() (*http.Response, 
 /*
 UpdateContentHostingConfiguration Update the Content Hosting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiUpdateContentHostingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiUpdateContentHostingConfigurationRequest
 */
 func (a *DefaultApiService) UpdateContentHostingConfiguration(ctx context.Context, provisioningSessionId string) ApiUpdateContentHostingConfigurationRequest {
 	return ApiUpdateContentHostingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -574,9 +575,9 @@ func (a *DefaultApiService) UpdateContentHostingConfiguration(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) UpdateContentHostingConfigurationExecute(r ApiUpdateContentHostingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateContentHostingConfiguration")
@@ -623,9 +624,9 @@ func (a *DefaultApiService) UpdateContentHostingConfigurationExecute(r ApiUpdate
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

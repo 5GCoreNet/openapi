@@ -17,13 +17,13 @@ import (
 
 // ResourcesSliceNrm - struct for ResourcesSliceNrm
 type ResourcesSliceNrm struct {
-	EPTransportSingle *EPTransportSingle
-	FeasibilityCheckAndReservationJobSingle *FeasibilityCheckAndReservationJobSingle
-	MnS *MnS
-	NetworkSliceSingle *NetworkSliceSingle
+	EPTransportSingle                            *EPTransportSingle
+	FeasibilityCheckAndReservationJobSingle      *FeasibilityCheckAndReservationJobSingle
+	MnS                                          *MnS
+	NetworkSliceSingle                           *NetworkSliceSingle
 	NetworkSliceSubnetProviderCapabilitiesSingle *NetworkSliceSubnetProviderCapabilitiesSingle
-	NetworkSliceSubnetSingle *NetworkSliceSubnetSingle
-	SubNetworkSingle *SubNetworkSingle
+	NetworkSliceSubnetSingle                     *NetworkSliceSubnetSingle
+	SubNetworkSingle                             *SubNetworkSingle
 }
 
 // EPTransportSingleAsResourcesSliceNrm is a convenience function that returns EPTransportSingle wrapped in ResourcesSliceNrm
@@ -74,7 +74,6 @@ func SubNetworkSingleAsResourcesSliceNrm(v *SubNetworkSingle) ResourcesSliceNrm 
 		SubNetworkSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesSliceNrm) UnmarshalJSON(data []byte) error {
@@ -223,7 +222,7 @@ func (src ResourcesSliceNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesSliceNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesSliceNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -294,5 +293,3 @@ func (v *NullableResourcesSliceNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &UePolicySetPatch{}
 
 // UePolicySetPatch Contains the UE policy set for a given subscriber.
 type UePolicySetPatch struct {
-	// Contains the UE Policy Sections. The UE Policy Section Identifier is used as the key of the map. 
+	// Contains the UE Policy Sections. The UE Policy Section Identifier is used as the key of the map.
 	UePolicySections *map[string]UePolicySection `json:"uePolicySections,omitempty"`
-	Upsis []string `json:"upsis,omitempty"`
-	AndspInd *bool `json:"andspInd,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
+	Upsis            []string                    `json:"upsis,omitempty"`
+	AndspInd         *bool                       `json:"andspInd,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei   *string  `json:"pei,omitempty"`
 	OsIds []string `json:"osIds,omitempty"`
 }
 
@@ -47,7 +47,7 @@ func NewUePolicySetPatchWithDefaults() *UePolicySetPatch {
 
 // GetUePolicySections returns the UePolicySections field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetUePolicySections() map[string]UePolicySection {
-	if o == nil || isNil(o.UePolicySections) {
+	if o == nil || IsNil(o.UePolicySections) {
 		var ret map[string]UePolicySection
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *UePolicySetPatch) GetUePolicySections() map[string]UePolicySection {
 // GetUePolicySectionsOk returns a tuple with the UePolicySections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetUePolicySectionsOk() (*map[string]UePolicySection, bool) {
-	if o == nil || isNil(o.UePolicySections) {
+	if o == nil || IsNil(o.UePolicySections) {
 		return nil, false
 	}
 	return o.UePolicySections, true
@@ -65,7 +65,7 @@ func (o *UePolicySetPatch) GetUePolicySectionsOk() (*map[string]UePolicySection,
 
 // HasUePolicySections returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasUePolicySections() bool {
-	if o != nil && !isNil(o.UePolicySections) {
+	if o != nil && !IsNil(o.UePolicySections) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *UePolicySetPatch) SetUePolicySections(v map[string]UePolicySection) {
 
 // GetUpsis returns the Upsis field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetUpsis() []string {
-	if o == nil || isNil(o.Upsis) {
+	if o == nil || IsNil(o.Upsis) {
 		var ret []string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *UePolicySetPatch) GetUpsis() []string {
 // GetUpsisOk returns a tuple with the Upsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetUpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Upsis) {
+	if o == nil || IsNil(o.Upsis) {
 		return nil, false
 	}
 	return o.Upsis, true
@@ -97,7 +97,7 @@ func (o *UePolicySetPatch) GetUpsisOk() ([]string, bool) {
 
 // HasUpsis returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasUpsis() bool {
-	if o != nil && !isNil(o.Upsis) {
+	if o != nil && !IsNil(o.Upsis) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *UePolicySetPatch) SetUpsis(v []string) {
 
 // GetAndspInd returns the AndspInd field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetAndspInd() bool {
-	if o == nil || isNil(o.AndspInd) {
+	if o == nil || IsNil(o.AndspInd) {
 		var ret bool
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *UePolicySetPatch) GetAndspInd() bool {
 // GetAndspIndOk returns a tuple with the AndspInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetAndspIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AndspInd) {
+	if o == nil || IsNil(o.AndspInd) {
 		return nil, false
 	}
 	return o.AndspInd, true
@@ -129,7 +129,7 @@ func (o *UePolicySetPatch) GetAndspIndOk() (*bool, bool) {
 
 // HasAndspInd returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasAndspInd() bool {
-	if o != nil && !isNil(o.AndspInd) {
+	if o != nil && !IsNil(o.AndspInd) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *UePolicySetPatch) SetAndspInd(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *UePolicySetPatch) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -161,7 +161,7 @@ func (o *UePolicySetPatch) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *UePolicySetPatch) SetPei(v string) {
 
 // GetOsIds returns the OsIds field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetOsIds() []string {
-	if o == nil || isNil(o.OsIds) {
+	if o == nil || IsNil(o.OsIds) {
 		var ret []string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *UePolicySetPatch) GetOsIds() []string {
 // GetOsIdsOk returns a tuple with the OsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetOsIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.OsIds) {
+	if o == nil || IsNil(o.OsIds) {
 		return nil, false
 	}
 	return o.OsIds, true
@@ -193,7 +193,7 @@ func (o *UePolicySetPatch) GetOsIdsOk() ([]string, bool) {
 
 // HasOsIds returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasOsIds() bool {
-	if o != nil && !isNil(o.OsIds) {
+	if o != nil && !IsNil(o.OsIds) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *UePolicySetPatch) SetOsIds(v []string) {
 }
 
 func (o UePolicySetPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -215,19 +215,19 @@ func (o UePolicySetPatch) MarshalJSON() ([]byte, error) {
 
 func (o UePolicySetPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UePolicySections) {
+	if !IsNil(o.UePolicySections) {
 		toSerialize["uePolicySections"] = o.UePolicySections
 	}
-	if !isNil(o.Upsis) {
+	if !IsNil(o.Upsis) {
 		toSerialize["upsis"] = o.Upsis
 	}
-	if !isNil(o.AndspInd) {
+	if !IsNil(o.AndspInd) {
 		toSerialize["andspInd"] = o.AndspInd
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.OsIds) {
+	if !IsNil(o.OsIds) {
 		toSerialize["osIds"] = o.OsIds
 	}
 	return toSerialize, nil
@@ -268,5 +268,3 @@ func (v *NullableUePolicySetPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

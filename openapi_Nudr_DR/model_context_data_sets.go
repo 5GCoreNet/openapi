@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,18 +19,18 @@ var _ MappedNullable = &ContextDataSets{}
 
 // ContextDataSets Contains the context data sets.
 type ContextDataSets struct {
-	Amf3Gpp *Amf3GppAccessRegistration `json:"amf3Gpp,omitempty"`
-	AmfNon3Gpp *AmfNon3GppAccessRegistration `json:"amfNon3Gpp,omitempty"`
-	SdmSubscriptions []SdmSubscription `json:"sdmSubscriptions,omitempty"`
-	EeSubscriptions []EeSubscription `json:"eeSubscriptions,omitempty"`
-	Smsf3GppAccess *SmsfRegistration `json:"smsf3GppAccess,omitempty"`
-	SmsfNon3GppAccess *SmsfRegistration `json:"smsfNon3GppAccess,omitempty"`
+	Amf3Gpp                       *Amf3GppAccessRegistration      `json:"amf3Gpp,omitempty"`
+	AmfNon3Gpp                    *AmfNon3GppAccessRegistration   `json:"amfNon3Gpp,omitempty"`
+	SdmSubscriptions              []SdmSubscription               `json:"sdmSubscriptions,omitempty"`
+	EeSubscriptions               []EeSubscription                `json:"eeSubscriptions,omitempty"`
+	Smsf3GppAccess                *SmsfRegistration               `json:"smsf3GppAccess,omitempty"`
+	SmsfNon3GppAccess             *SmsfRegistration               `json:"smsfNon3GppAccess,omitempty"`
 	SubscriptionDataSubscriptions []SubscriptionDataSubscriptions `json:"subscriptionDataSubscriptions,omitempty"`
 	// The list of all the SMF registrations of a UE.
-	SmfRegistrations []SmfRegistration `json:"smfRegistrations,omitempty"`
-	IpSmGw *IpSmGwRegistration `json:"ipSmGw,omitempty"`
-	RoamingInfo *RoamingInfoUpdate `json:"roamingInfo,omitempty"`
-	PeiInfo *PeiUpdateInfo `json:"peiInfo,omitempty"`
+	SmfRegistrations []SmfRegistration   `json:"smfRegistrations,omitempty"`
+	IpSmGw           *IpSmGwRegistration `json:"ipSmGw,omitempty"`
+	RoamingInfo      *RoamingInfoUpdate  `json:"roamingInfo,omitempty"`
+	PeiInfo          *PeiUpdateInfo      `json:"peiInfo,omitempty"`
 }
 
 // NewContextDataSets instantiates a new ContextDataSets object
@@ -52,7 +52,7 @@ func NewContextDataSetsWithDefaults() *ContextDataSets {
 
 // GetAmf3Gpp returns the Amf3Gpp field value if set, zero value otherwise.
 func (o *ContextDataSets) GetAmf3Gpp() Amf3GppAccessRegistration {
-	if o == nil || isNil(o.Amf3Gpp) {
+	if o == nil || IsNil(o.Amf3Gpp) {
 		var ret Amf3GppAccessRegistration
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ContextDataSets) GetAmf3Gpp() Amf3GppAccessRegistration {
 // GetAmf3GppOk returns a tuple with the Amf3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetAmf3GppOk() (*Amf3GppAccessRegistration, bool) {
-	if o == nil || isNil(o.Amf3Gpp) {
+	if o == nil || IsNil(o.Amf3Gpp) {
 		return nil, false
 	}
 	return o.Amf3Gpp, true
@@ -70,7 +70,7 @@ func (o *ContextDataSets) GetAmf3GppOk() (*Amf3GppAccessRegistration, bool) {
 
 // HasAmf3Gpp returns a boolean if a field has been set.
 func (o *ContextDataSets) HasAmf3Gpp() bool {
-	if o != nil && !isNil(o.Amf3Gpp) {
+	if o != nil && !IsNil(o.Amf3Gpp) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *ContextDataSets) SetAmf3Gpp(v Amf3GppAccessRegistration) {
 
 // GetAmfNon3Gpp returns the AmfNon3Gpp field value if set, zero value otherwise.
 func (o *ContextDataSets) GetAmfNon3Gpp() AmfNon3GppAccessRegistration {
-	if o == nil || isNil(o.AmfNon3Gpp) {
+	if o == nil || IsNil(o.AmfNon3Gpp) {
 		var ret AmfNon3GppAccessRegistration
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ContextDataSets) GetAmfNon3Gpp() AmfNon3GppAccessRegistration {
 // GetAmfNon3GppOk returns a tuple with the AmfNon3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetAmfNon3GppOk() (*AmfNon3GppAccessRegistration, bool) {
-	if o == nil || isNil(o.AmfNon3Gpp) {
+	if o == nil || IsNil(o.AmfNon3Gpp) {
 		return nil, false
 	}
 	return o.AmfNon3Gpp, true
@@ -102,7 +102,7 @@ func (o *ContextDataSets) GetAmfNon3GppOk() (*AmfNon3GppAccessRegistration, bool
 
 // HasAmfNon3Gpp returns a boolean if a field has been set.
 func (o *ContextDataSets) HasAmfNon3Gpp() bool {
-	if o != nil && !isNil(o.AmfNon3Gpp) {
+	if o != nil && !IsNil(o.AmfNon3Gpp) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *ContextDataSets) SetAmfNon3Gpp(v AmfNon3GppAccessRegistration) {
 
 // GetSdmSubscriptions returns the SdmSubscriptions field value if set, zero value otherwise.
 func (o *ContextDataSets) GetSdmSubscriptions() []SdmSubscription {
-	if o == nil || isNil(o.SdmSubscriptions) {
+	if o == nil || IsNil(o.SdmSubscriptions) {
 		var ret []SdmSubscription
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ContextDataSets) GetSdmSubscriptions() []SdmSubscription {
 // GetSdmSubscriptionsOk returns a tuple with the SdmSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetSdmSubscriptionsOk() ([]SdmSubscription, bool) {
-	if o == nil || isNil(o.SdmSubscriptions) {
+	if o == nil || IsNil(o.SdmSubscriptions) {
 		return nil, false
 	}
 	return o.SdmSubscriptions, true
@@ -134,7 +134,7 @@ func (o *ContextDataSets) GetSdmSubscriptionsOk() ([]SdmSubscription, bool) {
 
 // HasSdmSubscriptions returns a boolean if a field has been set.
 func (o *ContextDataSets) HasSdmSubscriptions() bool {
-	if o != nil && !isNil(o.SdmSubscriptions) {
+	if o != nil && !IsNil(o.SdmSubscriptions) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *ContextDataSets) SetSdmSubscriptions(v []SdmSubscription) {
 
 // GetEeSubscriptions returns the EeSubscriptions field value if set, zero value otherwise.
 func (o *ContextDataSets) GetEeSubscriptions() []EeSubscription {
-	if o == nil || isNil(o.EeSubscriptions) {
+	if o == nil || IsNil(o.EeSubscriptions) {
 		var ret []EeSubscription
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ContextDataSets) GetEeSubscriptions() []EeSubscription {
 // GetEeSubscriptionsOk returns a tuple with the EeSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetEeSubscriptionsOk() ([]EeSubscription, bool) {
-	if o == nil || isNil(o.EeSubscriptions) {
+	if o == nil || IsNil(o.EeSubscriptions) {
 		return nil, false
 	}
 	return o.EeSubscriptions, true
@@ -166,7 +166,7 @@ func (o *ContextDataSets) GetEeSubscriptionsOk() ([]EeSubscription, bool) {
 
 // HasEeSubscriptions returns a boolean if a field has been set.
 func (o *ContextDataSets) HasEeSubscriptions() bool {
-	if o != nil && !isNil(o.EeSubscriptions) {
+	if o != nil && !IsNil(o.EeSubscriptions) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *ContextDataSets) SetEeSubscriptions(v []EeSubscription) {
 
 // GetSmsf3GppAccess returns the Smsf3GppAccess field value if set, zero value otherwise.
 func (o *ContextDataSets) GetSmsf3GppAccess() SmsfRegistration {
-	if o == nil || isNil(o.Smsf3GppAccess) {
+	if o == nil || IsNil(o.Smsf3GppAccess) {
 		var ret SmsfRegistration
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *ContextDataSets) GetSmsf3GppAccess() SmsfRegistration {
 // GetSmsf3GppAccessOk returns a tuple with the Smsf3GppAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetSmsf3GppAccessOk() (*SmsfRegistration, bool) {
-	if o == nil || isNil(o.Smsf3GppAccess) {
+	if o == nil || IsNil(o.Smsf3GppAccess) {
 		return nil, false
 	}
 	return o.Smsf3GppAccess, true
@@ -198,7 +198,7 @@ func (o *ContextDataSets) GetSmsf3GppAccessOk() (*SmsfRegistration, bool) {
 
 // HasSmsf3GppAccess returns a boolean if a field has been set.
 func (o *ContextDataSets) HasSmsf3GppAccess() bool {
-	if o != nil && !isNil(o.Smsf3GppAccess) {
+	if o != nil && !IsNil(o.Smsf3GppAccess) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *ContextDataSets) SetSmsf3GppAccess(v SmsfRegistration) {
 
 // GetSmsfNon3GppAccess returns the SmsfNon3GppAccess field value if set, zero value otherwise.
 func (o *ContextDataSets) GetSmsfNon3GppAccess() SmsfRegistration {
-	if o == nil || isNil(o.SmsfNon3GppAccess) {
+	if o == nil || IsNil(o.SmsfNon3GppAccess) {
 		var ret SmsfRegistration
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *ContextDataSets) GetSmsfNon3GppAccess() SmsfRegistration {
 // GetSmsfNon3GppAccessOk returns a tuple with the SmsfNon3GppAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetSmsfNon3GppAccessOk() (*SmsfRegistration, bool) {
-	if o == nil || isNil(o.SmsfNon3GppAccess) {
+	if o == nil || IsNil(o.SmsfNon3GppAccess) {
 		return nil, false
 	}
 	return o.SmsfNon3GppAccess, true
@@ -230,7 +230,7 @@ func (o *ContextDataSets) GetSmsfNon3GppAccessOk() (*SmsfRegistration, bool) {
 
 // HasSmsfNon3GppAccess returns a boolean if a field has been set.
 func (o *ContextDataSets) HasSmsfNon3GppAccess() bool {
-	if o != nil && !isNil(o.SmsfNon3GppAccess) {
+	if o != nil && !IsNil(o.SmsfNon3GppAccess) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *ContextDataSets) SetSmsfNon3GppAccess(v SmsfRegistration) {
 
 // GetSubscriptionDataSubscriptions returns the SubscriptionDataSubscriptions field value if set, zero value otherwise.
 func (o *ContextDataSets) GetSubscriptionDataSubscriptions() []SubscriptionDataSubscriptions {
-	if o == nil || isNil(o.SubscriptionDataSubscriptions) {
+	if o == nil || IsNil(o.SubscriptionDataSubscriptions) {
 		var ret []SubscriptionDataSubscriptions
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *ContextDataSets) GetSubscriptionDataSubscriptions() []SubscriptionDataS
 // GetSubscriptionDataSubscriptionsOk returns a tuple with the SubscriptionDataSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetSubscriptionDataSubscriptionsOk() ([]SubscriptionDataSubscriptions, bool) {
-	if o == nil || isNil(o.SubscriptionDataSubscriptions) {
+	if o == nil || IsNil(o.SubscriptionDataSubscriptions) {
 		return nil, false
 	}
 	return o.SubscriptionDataSubscriptions, true
@@ -262,7 +262,7 @@ func (o *ContextDataSets) GetSubscriptionDataSubscriptionsOk() ([]SubscriptionDa
 
 // HasSubscriptionDataSubscriptions returns a boolean if a field has been set.
 func (o *ContextDataSets) HasSubscriptionDataSubscriptions() bool {
-	if o != nil && !isNil(o.SubscriptionDataSubscriptions) {
+	if o != nil && !IsNil(o.SubscriptionDataSubscriptions) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *ContextDataSets) SetSubscriptionDataSubscriptions(v []SubscriptionDataS
 
 // GetSmfRegistrations returns the SmfRegistrations field value if set, zero value otherwise.
 func (o *ContextDataSets) GetSmfRegistrations() []SmfRegistration {
-	if o == nil || isNil(o.SmfRegistrations) {
+	if o == nil || IsNil(o.SmfRegistrations) {
 		var ret []SmfRegistration
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *ContextDataSets) GetSmfRegistrations() []SmfRegistration {
 // GetSmfRegistrationsOk returns a tuple with the SmfRegistrations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetSmfRegistrationsOk() ([]SmfRegistration, bool) {
-	if o == nil || isNil(o.SmfRegistrations) {
+	if o == nil || IsNil(o.SmfRegistrations) {
 		return nil, false
 	}
 	return o.SmfRegistrations, true
@@ -294,7 +294,7 @@ func (o *ContextDataSets) GetSmfRegistrationsOk() ([]SmfRegistration, bool) {
 
 // HasSmfRegistrations returns a boolean if a field has been set.
 func (o *ContextDataSets) HasSmfRegistrations() bool {
-	if o != nil && !isNil(o.SmfRegistrations) {
+	if o != nil && !IsNil(o.SmfRegistrations) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *ContextDataSets) SetSmfRegistrations(v []SmfRegistration) {
 
 // GetIpSmGw returns the IpSmGw field value if set, zero value otherwise.
 func (o *ContextDataSets) GetIpSmGw() IpSmGwRegistration {
-	if o == nil || isNil(o.IpSmGw) {
+	if o == nil || IsNil(o.IpSmGw) {
 		var ret IpSmGwRegistration
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *ContextDataSets) GetIpSmGw() IpSmGwRegistration {
 // GetIpSmGwOk returns a tuple with the IpSmGw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetIpSmGwOk() (*IpSmGwRegistration, bool) {
-	if o == nil || isNil(o.IpSmGw) {
+	if o == nil || IsNil(o.IpSmGw) {
 		return nil, false
 	}
 	return o.IpSmGw, true
@@ -326,7 +326,7 @@ func (o *ContextDataSets) GetIpSmGwOk() (*IpSmGwRegistration, bool) {
 
 // HasIpSmGw returns a boolean if a field has been set.
 func (o *ContextDataSets) HasIpSmGw() bool {
-	if o != nil && !isNil(o.IpSmGw) {
+	if o != nil && !IsNil(o.IpSmGw) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *ContextDataSets) SetIpSmGw(v IpSmGwRegistration) {
 
 // GetRoamingInfo returns the RoamingInfo field value if set, zero value otherwise.
 func (o *ContextDataSets) GetRoamingInfo() RoamingInfoUpdate {
-	if o == nil || isNil(o.RoamingInfo) {
+	if o == nil || IsNil(o.RoamingInfo) {
 		var ret RoamingInfoUpdate
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *ContextDataSets) GetRoamingInfo() RoamingInfoUpdate {
 // GetRoamingInfoOk returns a tuple with the RoamingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetRoamingInfoOk() (*RoamingInfoUpdate, bool) {
-	if o == nil || isNil(o.RoamingInfo) {
+	if o == nil || IsNil(o.RoamingInfo) {
 		return nil, false
 	}
 	return o.RoamingInfo, true
@@ -358,7 +358,7 @@ func (o *ContextDataSets) GetRoamingInfoOk() (*RoamingInfoUpdate, bool) {
 
 // HasRoamingInfo returns a boolean if a field has been set.
 func (o *ContextDataSets) HasRoamingInfo() bool {
-	if o != nil && !isNil(o.RoamingInfo) {
+	if o != nil && !IsNil(o.RoamingInfo) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *ContextDataSets) SetRoamingInfo(v RoamingInfoUpdate) {
 
 // GetPeiInfo returns the PeiInfo field value if set, zero value otherwise.
 func (o *ContextDataSets) GetPeiInfo() PeiUpdateInfo {
-	if o == nil || isNil(o.PeiInfo) {
+	if o == nil || IsNil(o.PeiInfo) {
 		var ret PeiUpdateInfo
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *ContextDataSets) GetPeiInfo() PeiUpdateInfo {
 // GetPeiInfoOk returns a tuple with the PeiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextDataSets) GetPeiInfoOk() (*PeiUpdateInfo, bool) {
-	if o == nil || isNil(o.PeiInfo) {
+	if o == nil || IsNil(o.PeiInfo) {
 		return nil, false
 	}
 	return o.PeiInfo, true
@@ -390,7 +390,7 @@ func (o *ContextDataSets) GetPeiInfoOk() (*PeiUpdateInfo, bool) {
 
 // HasPeiInfo returns a boolean if a field has been set.
 func (o *ContextDataSets) HasPeiInfo() bool {
-	if o != nil && !isNil(o.PeiInfo) {
+	if o != nil && !IsNil(o.PeiInfo) {
 		return true
 	}
 
@@ -403,7 +403,7 @@ func (o *ContextDataSets) SetPeiInfo(v PeiUpdateInfo) {
 }
 
 func (o ContextDataSets) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -412,37 +412,37 @@ func (o ContextDataSets) MarshalJSON() ([]byte, error) {
 
 func (o ContextDataSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Amf3Gpp) {
+	if !IsNil(o.Amf3Gpp) {
 		toSerialize["amf3Gpp"] = o.Amf3Gpp
 	}
-	if !isNil(o.AmfNon3Gpp) {
+	if !IsNil(o.AmfNon3Gpp) {
 		toSerialize["amfNon3Gpp"] = o.AmfNon3Gpp
 	}
-	if !isNil(o.SdmSubscriptions) {
+	if !IsNil(o.SdmSubscriptions) {
 		toSerialize["sdmSubscriptions"] = o.SdmSubscriptions
 	}
-	if !isNil(o.EeSubscriptions) {
+	if !IsNil(o.EeSubscriptions) {
 		toSerialize["eeSubscriptions"] = o.EeSubscriptions
 	}
-	if !isNil(o.Smsf3GppAccess) {
+	if !IsNil(o.Smsf3GppAccess) {
 		toSerialize["smsf3GppAccess"] = o.Smsf3GppAccess
 	}
-	if !isNil(o.SmsfNon3GppAccess) {
+	if !IsNil(o.SmsfNon3GppAccess) {
 		toSerialize["smsfNon3GppAccess"] = o.SmsfNon3GppAccess
 	}
-	if !isNil(o.SubscriptionDataSubscriptions) {
+	if !IsNil(o.SubscriptionDataSubscriptions) {
 		toSerialize["subscriptionDataSubscriptions"] = o.SubscriptionDataSubscriptions
 	}
-	if !isNil(o.SmfRegistrations) {
+	if !IsNil(o.SmfRegistrations) {
 		toSerialize["smfRegistrations"] = o.SmfRegistrations
 	}
-	if !isNil(o.IpSmGw) {
+	if !IsNil(o.IpSmGw) {
 		toSerialize["ipSmGw"] = o.IpSmGw
 	}
-	if !isNil(o.RoamingInfo) {
+	if !IsNil(o.RoamingInfo) {
 		toSerialize["roamingInfo"] = o.RoamingInfo
 	}
-	if !isNil(o.PeiInfo) {
+	if !IsNil(o.PeiInfo) {
 		toSerialize["peiInfo"] = o.PeiInfo
 	}
 	return toSerialize, nil
@@ -483,5 +483,3 @@ func (v *NullableContextDataSets) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

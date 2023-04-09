@@ -20,12 +20,12 @@ type PatchOperation string
 
 // List of PatchOperation
 const (
-	ADD PatchOperation = "add"
+	ADD     PatchOperation = "add"
 	REPLACE PatchOperation = "replace"
-	REMOVE PatchOperation = "remove"
-	COPY PatchOperation = "copy"
-	MOVE PatchOperation = "move"
-	TEST PatchOperation = "test"
+	REMOVE  PatchOperation = "remove"
+	COPY    PatchOperation = "copy"
+	MOVE    PatchOperation = "move"
+	TEST    PatchOperation = "test"
 )
 
 // All allowed values of PatchOperation enum
@@ -116,4 +116,3 @@ func (v *NullablePatchOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

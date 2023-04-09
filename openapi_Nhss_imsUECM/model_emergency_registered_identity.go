@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the EmergencyRegisteredIdentity type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &EmergencyRegisteredIdentity{}
 
-// EmergencyRegisteredIdentity A pair of private and public user identities which have not been de-registered due to emergency registration 
+// EmergencyRegisteredIdentity A pair of private and public user identities which have not been de-registered due to emergency registration
 type EmergencyRegisteredIdentity struct {
 	// IMS Private Identity of the UE
 	Impi string `json:"impi"`
@@ -93,7 +93,7 @@ func (o *EmergencyRegisteredIdentity) SetImpu(v string) {
 }
 
 func (o EmergencyRegisteredIdentity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableEmergencyRegisteredIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

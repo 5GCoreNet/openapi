@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &MmeLocationData{}
 // MmeLocationData Location information as retrieved from the MME serving node
 type MmeLocationData struct {
 	// Fully Qualified Domain Name
-	MmeAddress string `json:"mmeAddress"`
-	PlmnId PlmnId `json:"plmnId"`
-	MmeLocation *EutraLocation `json:"mmeLocation,omitempty"`
+	MmeAddress     string          `json:"mmeAddress"`
+	PlmnId         PlmnId          `json:"plmnId"`
+	MmeLocation    *EutraLocation  `json:"mmeLocation,omitempty"`
 	CsgInformation *CsgInformation `json:"csgInformation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	TimeZone *string `json:"timeZone,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	TimeZone *string  `json:"timeZone,omitempty"`
+	RatType  *RatType `json:"ratType,omitempty"`
 }
 
 // NewMmeLocationData instantiates a new MmeLocationData object
@@ -98,7 +98,7 @@ func (o *MmeLocationData) SetPlmnId(v PlmnId) {
 
 // GetMmeLocation returns the MmeLocation field value if set, zero value otherwise.
 func (o *MmeLocationData) GetMmeLocation() EutraLocation {
-	if o == nil || isNil(o.MmeLocation) {
+	if o == nil || IsNil(o.MmeLocation) {
 		var ret EutraLocation
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *MmeLocationData) GetMmeLocation() EutraLocation {
 // GetMmeLocationOk returns a tuple with the MmeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetMmeLocationOk() (*EutraLocation, bool) {
-	if o == nil || isNil(o.MmeLocation) {
+	if o == nil || IsNil(o.MmeLocation) {
 		return nil, false
 	}
 	return o.MmeLocation, true
@@ -116,7 +116,7 @@ func (o *MmeLocationData) GetMmeLocationOk() (*EutraLocation, bool) {
 
 // HasMmeLocation returns a boolean if a field has been set.
 func (o *MmeLocationData) HasMmeLocation() bool {
-	if o != nil && !isNil(o.MmeLocation) {
+	if o != nil && !IsNil(o.MmeLocation) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *MmeLocationData) SetMmeLocation(v EutraLocation) {
 
 // GetCsgInformation returns the CsgInformation field value if set, zero value otherwise.
 func (o *MmeLocationData) GetCsgInformation() CsgInformation {
-	if o == nil || isNil(o.CsgInformation) {
+	if o == nil || IsNil(o.CsgInformation) {
 		var ret CsgInformation
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *MmeLocationData) GetCsgInformation() CsgInformation {
 // GetCsgInformationOk returns a tuple with the CsgInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
-	if o == nil || isNil(o.CsgInformation) {
+	if o == nil || IsNil(o.CsgInformation) {
 		return nil, false
 	}
 	return o.CsgInformation, true
@@ -148,7 +148,7 @@ func (o *MmeLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
 
 // HasCsgInformation returns a boolean if a field has been set.
 func (o *MmeLocationData) HasCsgInformation() bool {
-	if o != nil && !isNil(o.CsgInformation) {
+	if o != nil && !IsNil(o.CsgInformation) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *MmeLocationData) SetCsgInformation(v CsgInformation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *MmeLocationData) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *MmeLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -180,7 +180,7 @@ func (o *MmeLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *MmeLocationData) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *MmeLocationData) SetTimeZone(v string) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *MmeLocationData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *MmeLocationData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -212,7 +212,7 @@ func (o *MmeLocationData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *MmeLocationData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *MmeLocationData) SetRatType(v RatType) {
 }
 
 func (o MmeLocationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -236,16 +236,16 @@ func (o MmeLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mmeAddress"] = o.MmeAddress
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.MmeLocation) {
+	if !IsNil(o.MmeLocation) {
 		toSerialize["mmeLocation"] = o.MmeLocation
 	}
-	if !isNil(o.CsgInformation) {
+	if !IsNil(o.CsgInformation) {
 		toSerialize["csgInformation"] = o.CsgInformation
 	}
-	if !isNil(o.TimeZone) {
+	if !IsNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil
@@ -286,5 +286,3 @@ func (v *NullableMmeLocationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

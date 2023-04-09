@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // UpdateSRVCCDataApiService UpdateSRVCCDataApi service
 type UpdateSRVCCDataApiService service
 
 type ApiUpdateSrvccDataRequest struct {
-	ctx context.Context
-	ApiService *UpdateSRVCCDataApiService
-	imsUeId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *UpdateSRVCCDataApiService
+	imsUeId           string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
-	privateIdentity *string
+	privateIdentity   *string
 }
 
 func (r ApiUpdateSrvccDataRequest) PatchItem(patchItem []PatchItem) ApiUpdateSrvccDataRequest {
@@ -56,26 +55,27 @@ func (r ApiUpdateSrvccDataRequest) Execute() (*PatchResult, *http.Response, erro
 /*
 UpdateSrvccData Patch
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imsUeId IMS Public Identity or IMS Private Identity
- @return ApiUpdateSrvccDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imsUeId IMS Public Identity or IMS Private Identity
+	@return ApiUpdateSrvccDataRequest
 */
 func (a *UpdateSRVCCDataApiService) UpdateSrvccData(ctx context.Context, imsUeId string) ApiUpdateSrvccDataRequest {
 	return ApiUpdateSrvccDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		imsUeId: imsUeId,
+		ctx:        ctx,
+		imsUeId:    imsUeId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateSRVCCDataApiService.UpdateSrvccData")
@@ -97,10 +97,10 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.privateIdentity != nil {
-		parameterAddToQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -131,9 +131,9 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -150,8 +150,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -161,8 +161,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -172,8 +172,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -183,8 +183,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -194,8 +194,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -205,8 +205,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -216,8 +216,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -227,8 +227,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -238,8 +238,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -249,8 +249,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -260,8 +260,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -271,8 +271,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -282,8 +282,8 @@ func (a *UpdateSRVCCDataApiService) UpdateSrvccDataExecute(r ApiUpdateSrvccDataR
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

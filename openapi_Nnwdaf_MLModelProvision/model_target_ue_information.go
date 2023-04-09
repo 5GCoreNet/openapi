@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &TargetUeInformation{}
 
 // TargetUeInformation Identifies the target UE information.
 type TargetUeInformation struct {
-	AnyUe *bool `json:"anyUe,omitempty"`
-	Supis []string `json:"supis,omitempty"`
-	Gpsis []string `json:"gpsis,omitempty"`
+	AnyUe       *bool    `json:"anyUe,omitempty"`
+	Supis       []string `json:"supis,omitempty"`
+	Gpsis       []string `json:"gpsis,omitempty"`
 	IntGroupIds []string `json:"intGroupIds,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewTargetUeInformationWithDefaults() *TargetUeInformation {
 
 // GetAnyUe returns the AnyUe field value if set, zero value otherwise.
 func (o *TargetUeInformation) GetAnyUe() bool {
-	if o == nil || isNil(o.AnyUe) {
+	if o == nil || IsNil(o.AnyUe) {
 		var ret bool
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *TargetUeInformation) GetAnyUe() bool {
 // GetAnyUeOk returns a tuple with the AnyUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeInformation) GetAnyUeOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUe) {
+	if o == nil || IsNil(o.AnyUe) {
 		return nil, false
 	}
 	return o.AnyUe, true
@@ -62,7 +62,7 @@ func (o *TargetUeInformation) GetAnyUeOk() (*bool, bool) {
 
 // HasAnyUe returns a boolean if a field has been set.
 func (o *TargetUeInformation) HasAnyUe() bool {
-	if o != nil && !isNil(o.AnyUe) {
+	if o != nil && !IsNil(o.AnyUe) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *TargetUeInformation) SetAnyUe(v bool) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *TargetUeInformation) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *TargetUeInformation) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeInformation) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -94,7 +94,7 @@ func (o *TargetUeInformation) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *TargetUeInformation) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *TargetUeInformation) SetSupis(v []string) {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *TargetUeInformation) GetGpsis() []string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *TargetUeInformation) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeInformation) GetGpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -126,7 +126,7 @@ func (o *TargetUeInformation) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *TargetUeInformation) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *TargetUeInformation) SetGpsis(v []string) {
 
 // GetIntGroupIds returns the IntGroupIds field value if set, zero value otherwise.
 func (o *TargetUeInformation) GetIntGroupIds() []string {
-	if o == nil || isNil(o.IntGroupIds) {
+	if o == nil || IsNil(o.IntGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *TargetUeInformation) GetIntGroupIds() []string {
 // GetIntGroupIdsOk returns a tuple with the IntGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeInformation) GetIntGroupIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.IntGroupIds) {
+	if o == nil || IsNil(o.IntGroupIds) {
 		return nil, false
 	}
 	return o.IntGroupIds, true
@@ -158,7 +158,7 @@ func (o *TargetUeInformation) GetIntGroupIdsOk() ([]string, bool) {
 
 // HasIntGroupIds returns a boolean if a field has been set.
 func (o *TargetUeInformation) HasIntGroupIds() bool {
-	if o != nil && !isNil(o.IntGroupIds) {
+	if o != nil && !IsNil(o.IntGroupIds) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *TargetUeInformation) SetIntGroupIds(v []string) {
 }
 
 func (o TargetUeInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o TargetUeInformation) MarshalJSON() ([]byte, error) {
 
 func (o TargetUeInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnyUe) {
+	if !IsNil(o.AnyUe) {
 		toSerialize["anyUe"] = o.AnyUe
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.IntGroupIds) {
+	if !IsNil(o.IntGroupIds) {
 		toSerialize["intGroupIds"] = o.IntGroupIds
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableTargetUeInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

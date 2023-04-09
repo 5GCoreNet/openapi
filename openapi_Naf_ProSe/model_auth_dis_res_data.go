@@ -1,7 +1,7 @@
 /*
 Naf_ProSe API
 
-Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,17 +17,17 @@ import (
 // checks if the AuthDisResData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AuthDisResData{}
 
-// AuthDisResData Represents the obtained authorization Data for a UE of a 5G ProSe Direct Discovery  request. 
+// AuthDisResData Represents the obtained authorization Data for a UE of a 5G ProSe Direct Discovery  request.
 type AuthDisResData struct {
-	AuthResponseType AuthResponseType `json:"authResponseType"`
-	ProseAppCodeSuffixPool *ProseApplicationCodeSuffixPool `json:"proseAppCodeSuffixPool,omitempty"`
-	Pduids []string `json:"pduids,omitempty"`
-	RestrictedCodeSuffixPool []RestrictedCodeSuffixPool `json:"restrictedCodeSuffixPool,omitempty"`
-	ProseAppMasks []string `json:"proseAppMasks,omitempty"`
-	ProSeRestrictedMasks []string `json:"proSeRestrictedMasks,omitempty"`
+	AuthResponseType         AuthResponseType                `json:"authResponseType"`
+	ProseAppCodeSuffixPool   *ProseApplicationCodeSuffixPool `json:"proseAppCodeSuffixPool,omitempty"`
+	Pduids                   []string                        `json:"pduids,omitempty"`
+	RestrictedCodeSuffixPool []RestrictedCodeSuffixPool      `json:"restrictedCodeSuffixPool,omitempty"`
+	ProseAppMasks            []string                        `json:"proseAppMasks,omitempty"`
+	ProSeRestrictedMasks     []string                        `json:"proSeRestrictedMasks,omitempty"`
 	// Contains the Application Level Container.
-	ResAppLevelContainer *string `json:"resAppLevelContainer,omitempty"`
-	TargetDataSet []TargetData `json:"targetDataSet,omitempty"`
+	ResAppLevelContainer *string      `json:"resAppLevelContainer,omitempty"`
+	TargetDataSet        []TargetData `json:"targetDataSet,omitempty"`
 	// Contains the PDUID.
 	TargetPduid *string `json:"targetPduid,omitempty"`
 	// Contains the metadata.
@@ -78,7 +78,7 @@ func (o *AuthDisResData) SetAuthResponseType(v AuthResponseType) {
 
 // GetProseAppCodeSuffixPool returns the ProseAppCodeSuffixPool field value if set, zero value otherwise.
 func (o *AuthDisResData) GetProseAppCodeSuffixPool() ProseApplicationCodeSuffixPool {
-	if o == nil || isNil(o.ProseAppCodeSuffixPool) {
+	if o == nil || IsNil(o.ProseAppCodeSuffixPool) {
 		var ret ProseApplicationCodeSuffixPool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AuthDisResData) GetProseAppCodeSuffixPool() ProseApplicationCodeSuffixP
 // GetProseAppCodeSuffixPoolOk returns a tuple with the ProseAppCodeSuffixPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetProseAppCodeSuffixPoolOk() (*ProseApplicationCodeSuffixPool, bool) {
-	if o == nil || isNil(o.ProseAppCodeSuffixPool) {
+	if o == nil || IsNil(o.ProseAppCodeSuffixPool) {
 		return nil, false
 	}
 	return o.ProseAppCodeSuffixPool, true
@@ -96,7 +96,7 @@ func (o *AuthDisResData) GetProseAppCodeSuffixPoolOk() (*ProseApplicationCodeSuf
 
 // HasProseAppCodeSuffixPool returns a boolean if a field has been set.
 func (o *AuthDisResData) HasProseAppCodeSuffixPool() bool {
-	if o != nil && !isNil(o.ProseAppCodeSuffixPool) {
+	if o != nil && !IsNil(o.ProseAppCodeSuffixPool) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AuthDisResData) SetProseAppCodeSuffixPool(v ProseApplicationCodeSuffixP
 
 // GetPduids returns the Pduids field value if set, zero value otherwise.
 func (o *AuthDisResData) GetPduids() []string {
-	if o == nil || isNil(o.Pduids) {
+	if o == nil || IsNil(o.Pduids) {
 		var ret []string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AuthDisResData) GetPduids() []string {
 // GetPduidsOk returns a tuple with the Pduids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetPduidsOk() ([]string, bool) {
-	if o == nil || isNil(o.Pduids) {
+	if o == nil || IsNil(o.Pduids) {
 		return nil, false
 	}
 	return o.Pduids, true
@@ -128,7 +128,7 @@ func (o *AuthDisResData) GetPduidsOk() ([]string, bool) {
 
 // HasPduids returns a boolean if a field has been set.
 func (o *AuthDisResData) HasPduids() bool {
-	if o != nil && !isNil(o.Pduids) {
+	if o != nil && !IsNil(o.Pduids) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AuthDisResData) SetPduids(v []string) {
 
 // GetRestrictedCodeSuffixPool returns the RestrictedCodeSuffixPool field value if set, zero value otherwise.
 func (o *AuthDisResData) GetRestrictedCodeSuffixPool() []RestrictedCodeSuffixPool {
-	if o == nil || isNil(o.RestrictedCodeSuffixPool) {
+	if o == nil || IsNil(o.RestrictedCodeSuffixPool) {
 		var ret []RestrictedCodeSuffixPool
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AuthDisResData) GetRestrictedCodeSuffixPool() []RestrictedCodeSuffixPoo
 // GetRestrictedCodeSuffixPoolOk returns a tuple with the RestrictedCodeSuffixPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetRestrictedCodeSuffixPoolOk() ([]RestrictedCodeSuffixPool, bool) {
-	if o == nil || isNil(o.RestrictedCodeSuffixPool) {
+	if o == nil || IsNil(o.RestrictedCodeSuffixPool) {
 		return nil, false
 	}
 	return o.RestrictedCodeSuffixPool, true
@@ -160,7 +160,7 @@ func (o *AuthDisResData) GetRestrictedCodeSuffixPoolOk() ([]RestrictedCodeSuffix
 
 // HasRestrictedCodeSuffixPool returns a boolean if a field has been set.
 func (o *AuthDisResData) HasRestrictedCodeSuffixPool() bool {
-	if o != nil && !isNil(o.RestrictedCodeSuffixPool) {
+	if o != nil && !IsNil(o.RestrictedCodeSuffixPool) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *AuthDisResData) SetRestrictedCodeSuffixPool(v []RestrictedCodeSuffixPoo
 
 // GetProseAppMasks returns the ProseAppMasks field value if set, zero value otherwise.
 func (o *AuthDisResData) GetProseAppMasks() []string {
-	if o == nil || isNil(o.ProseAppMasks) {
+	if o == nil || IsNil(o.ProseAppMasks) {
 		var ret []string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *AuthDisResData) GetProseAppMasks() []string {
 // GetProseAppMasksOk returns a tuple with the ProseAppMasks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetProseAppMasksOk() ([]string, bool) {
-	if o == nil || isNil(o.ProseAppMasks) {
+	if o == nil || IsNil(o.ProseAppMasks) {
 		return nil, false
 	}
 	return o.ProseAppMasks, true
@@ -192,7 +192,7 @@ func (o *AuthDisResData) GetProseAppMasksOk() ([]string, bool) {
 
 // HasProseAppMasks returns a boolean if a field has been set.
 func (o *AuthDisResData) HasProseAppMasks() bool {
-	if o != nil && !isNil(o.ProseAppMasks) {
+	if o != nil && !IsNil(o.ProseAppMasks) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *AuthDisResData) SetProseAppMasks(v []string) {
 
 // GetProSeRestrictedMasks returns the ProSeRestrictedMasks field value if set, zero value otherwise.
 func (o *AuthDisResData) GetProSeRestrictedMasks() []string {
-	if o == nil || isNil(o.ProSeRestrictedMasks) {
+	if o == nil || IsNil(o.ProSeRestrictedMasks) {
 		var ret []string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *AuthDisResData) GetProSeRestrictedMasks() []string {
 // GetProSeRestrictedMasksOk returns a tuple with the ProSeRestrictedMasks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetProSeRestrictedMasksOk() ([]string, bool) {
-	if o == nil || isNil(o.ProSeRestrictedMasks) {
+	if o == nil || IsNil(o.ProSeRestrictedMasks) {
 		return nil, false
 	}
 	return o.ProSeRestrictedMasks, true
@@ -224,7 +224,7 @@ func (o *AuthDisResData) GetProSeRestrictedMasksOk() ([]string, bool) {
 
 // HasProSeRestrictedMasks returns a boolean if a field has been set.
 func (o *AuthDisResData) HasProSeRestrictedMasks() bool {
-	if o != nil && !isNil(o.ProSeRestrictedMasks) {
+	if o != nil && !IsNil(o.ProSeRestrictedMasks) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *AuthDisResData) SetProSeRestrictedMasks(v []string) {
 
 // GetResAppLevelContainer returns the ResAppLevelContainer field value if set, zero value otherwise.
 func (o *AuthDisResData) GetResAppLevelContainer() string {
-	if o == nil || isNil(o.ResAppLevelContainer) {
+	if o == nil || IsNil(o.ResAppLevelContainer) {
 		var ret string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *AuthDisResData) GetResAppLevelContainer() string {
 // GetResAppLevelContainerOk returns a tuple with the ResAppLevelContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetResAppLevelContainerOk() (*string, bool) {
-	if o == nil || isNil(o.ResAppLevelContainer) {
+	if o == nil || IsNil(o.ResAppLevelContainer) {
 		return nil, false
 	}
 	return o.ResAppLevelContainer, true
@@ -256,7 +256,7 @@ func (o *AuthDisResData) GetResAppLevelContainerOk() (*string, bool) {
 
 // HasResAppLevelContainer returns a boolean if a field has been set.
 func (o *AuthDisResData) HasResAppLevelContainer() bool {
-	if o != nil && !isNil(o.ResAppLevelContainer) {
+	if o != nil && !IsNil(o.ResAppLevelContainer) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *AuthDisResData) SetResAppLevelContainer(v string) {
 
 // GetTargetDataSet returns the TargetDataSet field value if set, zero value otherwise.
 func (o *AuthDisResData) GetTargetDataSet() []TargetData {
-	if o == nil || isNil(o.TargetDataSet) {
+	if o == nil || IsNil(o.TargetDataSet) {
 		var ret []TargetData
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *AuthDisResData) GetTargetDataSet() []TargetData {
 // GetTargetDataSetOk returns a tuple with the TargetDataSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetTargetDataSetOk() ([]TargetData, bool) {
-	if o == nil || isNil(o.TargetDataSet) {
+	if o == nil || IsNil(o.TargetDataSet) {
 		return nil, false
 	}
 	return o.TargetDataSet, true
@@ -288,7 +288,7 @@ func (o *AuthDisResData) GetTargetDataSetOk() ([]TargetData, bool) {
 
 // HasTargetDataSet returns a boolean if a field has been set.
 func (o *AuthDisResData) HasTargetDataSet() bool {
-	if o != nil && !isNil(o.TargetDataSet) {
+	if o != nil && !IsNil(o.TargetDataSet) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *AuthDisResData) SetTargetDataSet(v []TargetData) {
 
 // GetTargetPduid returns the TargetPduid field value if set, zero value otherwise.
 func (o *AuthDisResData) GetTargetPduid() string {
-	if o == nil || isNil(o.TargetPduid) {
+	if o == nil || IsNil(o.TargetPduid) {
 		var ret string
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *AuthDisResData) GetTargetPduid() string {
 // GetTargetPduidOk returns a tuple with the TargetPduid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetTargetPduidOk() (*string, bool) {
-	if o == nil || isNil(o.TargetPduid) {
+	if o == nil || IsNil(o.TargetPduid) {
 		return nil, false
 	}
 	return o.TargetPduid, true
@@ -320,7 +320,7 @@ func (o *AuthDisResData) GetTargetPduidOk() (*string, bool) {
 
 // HasTargetPduid returns a boolean if a field has been set.
 func (o *AuthDisResData) HasTargetPduid() bool {
-	if o != nil && !isNil(o.TargetPduid) {
+	if o != nil && !IsNil(o.TargetPduid) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *AuthDisResData) SetTargetPduid(v string) {
 
 // GetMetaData returns the MetaData field value if set, zero value otherwise.
 func (o *AuthDisResData) GetMetaData() string {
-	if o == nil || isNil(o.MetaData) {
+	if o == nil || IsNil(o.MetaData) {
 		var ret string
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *AuthDisResData) GetMetaData() string {
 // GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisResData) GetMetaDataOk() (*string, bool) {
-	if o == nil || isNil(o.MetaData) {
+	if o == nil || IsNil(o.MetaData) {
 		return nil, false
 	}
 	return o.MetaData, true
@@ -352,7 +352,7 @@ func (o *AuthDisResData) GetMetaDataOk() (*string, bool) {
 
 // HasMetaData returns a boolean if a field has been set.
 func (o *AuthDisResData) HasMetaData() bool {
-	if o != nil && !isNil(o.MetaData) {
+	if o != nil && !IsNil(o.MetaData) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *AuthDisResData) SetMetaData(v string) {
 }
 
 func (o AuthDisResData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -375,31 +375,31 @@ func (o AuthDisResData) MarshalJSON() ([]byte, error) {
 func (o AuthDisResData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authResponseType"] = o.AuthResponseType
-	if !isNil(o.ProseAppCodeSuffixPool) {
+	if !IsNil(o.ProseAppCodeSuffixPool) {
 		toSerialize["proseAppCodeSuffixPool"] = o.ProseAppCodeSuffixPool
 	}
-	if !isNil(o.Pduids) {
+	if !IsNil(o.Pduids) {
 		toSerialize["pduids"] = o.Pduids
 	}
-	if !isNil(o.RestrictedCodeSuffixPool) {
+	if !IsNil(o.RestrictedCodeSuffixPool) {
 		toSerialize["restrictedCodeSuffixPool"] = o.RestrictedCodeSuffixPool
 	}
-	if !isNil(o.ProseAppMasks) {
+	if !IsNil(o.ProseAppMasks) {
 		toSerialize["proseAppMasks"] = o.ProseAppMasks
 	}
-	if !isNil(o.ProSeRestrictedMasks) {
+	if !IsNil(o.ProSeRestrictedMasks) {
 		toSerialize["proSeRestrictedMasks"] = o.ProSeRestrictedMasks
 	}
-	if !isNil(o.ResAppLevelContainer) {
+	if !IsNil(o.ResAppLevelContainer) {
 		toSerialize["resAppLevelContainer"] = o.ResAppLevelContainer
 	}
-	if !isNil(o.TargetDataSet) {
+	if !IsNil(o.TargetDataSet) {
 		toSerialize["targetDataSet"] = o.TargetDataSet
 	}
-	if !isNil(o.TargetPduid) {
+	if !IsNil(o.TargetPduid) {
 		toSerialize["targetPduid"] = o.TargetPduid
 	}
-	if !isNil(o.MetaData) {
+	if !IsNil(o.MetaData) {
 		toSerialize["metaData"] = o.MetaData
 	}
 	return toSerialize, nil
@@ -440,5 +440,3 @@ func (v *NullableAuthDisResData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

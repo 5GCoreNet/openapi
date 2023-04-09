@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // GroupIdentifiersApiService GroupIdentifiersApi service
 type GroupIdentifiersApiService service
 
 type ApiGetGroupIdentifiersRequest struct {
-	ctx context.Context
-	ApiService *GroupIdentifiersApiService
-	extGroupId *string
-	intGroupId *string
-	ueIdInd *bool
+	ctx               context.Context
+	ApiService        *GroupIdentifiersApiService
+	extGroupId        *string
+	intGroupId        *string
+	ueIdInd           *bool
 	supportedFeatures *string
 }
 
@@ -62,24 +61,25 @@ func (r ApiGetGroupIdentifiersRequest) Execute() (*GroupIdentifiers, *http.Respo
 /*
 GetGroupIdentifiers Mapping of Group Identifiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGroupIdentifiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetGroupIdentifiersRequest
 */
 func (a *GroupIdentifiersApiService) GetGroupIdentifiers(ctx context.Context) ApiGetGroupIdentifiersRequest {
 	return ApiGetGroupIdentifiersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GroupIdentifiers
+//
+//	@return GroupIdentifiers
 func (a *GroupIdentifiersApiService) GetGroupIdentifiersExecute(r ApiGetGroupIdentifiersRequest) (*GroupIdentifiers, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GroupIdentifiers
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GroupIdentifiers
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupIdentifiersApiService.GetGroupIdentifiers")
@@ -94,16 +94,16 @@ func (a *GroupIdentifiersApiService) GetGroupIdentifiersExecute(r ApiGetGroupIde
 	localVarFormParams := url.Values{}
 
 	if r.extGroupId != nil {
-		parameterAddToQuery(localVarQueryParams, "ext-group-id", r.extGroupId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ext-group-id", r.extGroupId, "")
 	}
 	if r.intGroupId != nil {
-		parameterAddToQuery(localVarQueryParams, "int-group-id", r.intGroupId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "int-group-id", r.intGroupId, "")
 	}
 	if r.ueIdInd != nil {
-		parameterAddToQuery(localVarQueryParams, "ue-id-ind", r.ueIdInd, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id-ind", r.ueIdInd, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,9 +132,9 @@ func (a *GroupIdentifiersApiService) GetGroupIdentifiersExecute(r ApiGetGroupIde
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -151,8 +151,8 @@ func (a *GroupIdentifiersApiService) GetGroupIdentifiersExecute(r ApiGetGroupIde
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

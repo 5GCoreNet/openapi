@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyMB2
 
-API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,21 +13,20 @@ package openapi_GMDviaMBMSbyMB2
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualTMGIAllocationOperationApiService IndividualTMGIAllocationOperationApi service
 type IndividualTMGIAllocationOperationApiService service
 
 type ApiDeleteTMGIAllocationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualTMGIAllocationOperationApiService
-	scsAsId string
-	tmgi string
+	scsAsId    string
+	tmgi       string
 }
 
 func (r ApiDeleteTMGIAllocationRequest) Execute() (*http.Response, error) {
@@ -37,26 +36,26 @@ func (r ApiDeleteTMGIAllocationRequest) Execute() (*http.Response, error) {
 /*
 DeleteTMGIAllocation Deletes an existing TMGI Allocation resource for a given SCS/AS and a TMGI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param tmgi TMGI
- @return ApiDeleteTMGIAllocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param tmgi TMGI
+	@return ApiDeleteTMGIAllocationRequest
 */
 func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocation(ctx context.Context, scsAsId string, tmgi string) ApiDeleteTMGIAllocationRequest {
 	return ApiDeleteTMGIAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		tmgi: tmgi,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		tmgi:       tmgi,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecute(r ApiDeleteTMGIAllocationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTMGIAllocationOperationApiService.DeleteTMGIAllocation")
@@ -99,9 +98,9 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,10 +194,10 @@ func (a *IndividualTMGIAllocationOperationApiService) DeleteTMGIAllocationExecut
 }
 
 type ApiFetchIndTMGIAllocationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualTMGIAllocationOperationApiService
-	scsAsId string
-	tmgi string
+	scsAsId    string
+	tmgi       string
 }
 
 func (r ApiFetchIndTMGIAllocationRequest) Execute() (*TMGIAllocation, *http.Response, error) {
@@ -208,28 +207,29 @@ func (r ApiFetchIndTMGIAllocationRequest) Execute() (*TMGIAllocation, *http.Resp
 /*
 FetchIndTMGIAllocation Read a TMGI Allocation resource for a given SCS/AS and a TMGI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param tmgi TMGI
- @return ApiFetchIndTMGIAllocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param tmgi TMGI
+	@return ApiFetchIndTMGIAllocationRequest
 */
 func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocation(ctx context.Context, scsAsId string, tmgi string) ApiFetchIndTMGIAllocationRequest {
 	return ApiFetchIndTMGIAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		tmgi: tmgi,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		tmgi:       tmgi,
 	}
 }
 
 // Execute executes the request
-//  @return TMGIAllocation
+//
+//	@return TMGIAllocation
 func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExecute(r ApiFetchIndTMGIAllocationRequest) (*TMGIAllocation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TMGIAllocation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TMGIAllocation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTMGIAllocationOperationApiService.FetchIndTMGIAllocation")
@@ -272,9 +272,9 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -291,8 +291,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -302,8 +302,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -313,8 +313,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -324,8 +324,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -335,8 +335,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -346,8 +346,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -357,8 +357,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -368,8 +368,8 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -388,10 +388,10 @@ func (a *IndividualTMGIAllocationOperationApiService) FetchIndTMGIAllocationExec
 }
 
 type ApiModifyIndTMGIAllocationRequest struct {
-	ctx context.Context
-	ApiService *IndividualTMGIAllocationOperationApiService
-	scsAsId string
-	tmgi string
+	ctx                 context.Context
+	ApiService          *IndividualTMGIAllocationOperationApiService
+	scsAsId             string
+	tmgi                string
 	tMGIAllocationPatch *TMGIAllocationPatch
 }
 
@@ -408,28 +408,29 @@ func (r ApiModifyIndTMGIAllocationRequest) Execute() (*TMGIAllocation, *http.Res
 /*
 ModifyIndTMGIAllocation Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param tmgi TMGI
- @return ApiModifyIndTMGIAllocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param tmgi TMGI
+	@return ApiModifyIndTMGIAllocationRequest
 */
 func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocation(ctx context.Context, scsAsId string, tmgi string) ApiModifyIndTMGIAllocationRequest {
 	return ApiModifyIndTMGIAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		tmgi: tmgi,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		tmgi:       tmgi,
 	}
 }
 
 // Execute executes the request
-//  @return TMGIAllocation
+//
+//	@return TMGIAllocation
 func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExecute(r ApiModifyIndTMGIAllocationRequest) (*TMGIAllocation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TMGIAllocation
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TMGIAllocation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTMGIAllocationOperationApiService.ModifyIndTMGIAllocation")
@@ -477,9 +478,9 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -496,8 +497,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -507,8 +508,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -518,8 +519,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -529,8 +530,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -540,8 +541,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -551,8 +552,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -562,8 +563,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -573,8 +574,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -584,8 +585,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -595,8 +596,8 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -615,10 +616,10 @@ func (a *IndividualTMGIAllocationOperationApiService) ModifyIndTMGIAllocationExe
 }
 
 type ApiUpdateIndTMGIAllocationRequest struct {
-	ctx context.Context
-	ApiService *IndividualTMGIAllocationOperationApiService
-	scsAsId string
-	tmgi string
+	ctx            context.Context
+	ApiService     *IndividualTMGIAllocationOperationApiService
+	scsAsId        string
+	tmgi           string
 	tMGIAllocation *TMGIAllocation
 }
 
@@ -635,28 +636,29 @@ func (r ApiUpdateIndTMGIAllocationRequest) Execute() (*TMGIAllocation, *http.Res
 /*
 UpdateIndTMGIAllocation Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param tmgi TMGI
- @return ApiUpdateIndTMGIAllocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param tmgi TMGI
+	@return ApiUpdateIndTMGIAllocationRequest
 */
 func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocation(ctx context.Context, scsAsId string, tmgi string) ApiUpdateIndTMGIAllocationRequest {
 	return ApiUpdateIndTMGIAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		tmgi: tmgi,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		tmgi:       tmgi,
 	}
 }
 
 // Execute executes the request
-//  @return TMGIAllocation
+//
+//	@return TMGIAllocation
 func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExecute(r ApiUpdateIndTMGIAllocationRequest) (*TMGIAllocation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TMGIAllocation
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TMGIAllocation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualTMGIAllocationOperationApiService.UpdateIndTMGIAllocation")
@@ -704,9 +706,9 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -723,8 +725,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -734,8 +736,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -745,8 +747,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -756,8 +758,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -767,8 +769,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -778,8 +780,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -789,8 +791,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -800,8 +802,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -811,8 +813,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -822,8 +824,8 @@ func (a *IndividualTMGIAllocationOperationApiService) UpdateIndTMGIAllocationExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

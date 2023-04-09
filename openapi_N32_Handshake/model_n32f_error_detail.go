@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &N32fErrorDetail{}
 
 // N32fErrorDetail Details about the N32f error
 type N32fErrorDetail struct {
-	Attribute string `json:"attribute"`
+	Attribute                string        `json:"attribute"`
 	MsgReconstructFailReason FailureReason `json:"msgReconstructFailReason"`
 }
 
@@ -91,7 +91,7 @@ func (o *N32fErrorDetail) SetMsgReconstructFailReason(v FailureReason) {
 }
 
 func (o N32fErrorDetail) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableN32fErrorDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

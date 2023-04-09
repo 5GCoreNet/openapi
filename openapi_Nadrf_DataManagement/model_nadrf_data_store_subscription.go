@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,19 +17,19 @@ import (
 // checks if the NadrfDataStoreSubscription type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NadrfDataStoreSubscription{}
 
-// NadrfDataStoreSubscription Contains information to be used by the ADRF to create a Data or Analytics subscription. 
+// NadrfDataStoreSubscription Contains information to be used by the ADRF to create a Data or Analytics subscription.
 type NadrfDataStoreSubscription struct {
-	AnaSub *NnwdafEventsSubscription `json:"anaSub,omitempty"`
-	DataSub *DataSubscription `json:"dataSub,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	AnaSub  *NnwdafEventsSubscription `json:"anaSub,omitempty"`
+	DataSub *DataSubscription         `json:"dataSub,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	TargetNfId *string `json:"targetNfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	TargetNfSetId *string `json:"targetNfSetId,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	TargetNfSetId  *string                `json:"targetNfSetId,omitempty"`
 	FormatInstruct *FormattingInstruction `json:"formatInstruct,omitempty"`
-	ProcInstruct *ProcessingInstruction `json:"procInstruct,omitempty"`
+	ProcInstruct   *ProcessingInstruction `json:"procInstruct,omitempty"`
 	// Processing instructions to be used for sending event notifications.
 	MultiProcInstructs []ProcessingInstruction `json:"multiProcInstructs,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func NewNadrfDataStoreSubscriptionWithDefaults() *NadrfDataStoreSubscription {
 
 // GetAnaSub returns the AnaSub field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetAnaSub() NnwdafEventsSubscription {
-	if o == nil || isNil(o.AnaSub) {
+	if o == nil || IsNil(o.AnaSub) {
 		var ret NnwdafEventsSubscription
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *NadrfDataStoreSubscription) GetAnaSub() NnwdafEventsSubscription {
 // GetAnaSubOk returns a tuple with the AnaSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetAnaSubOk() (*NnwdafEventsSubscription, bool) {
-	if o == nil || isNil(o.AnaSub) {
+	if o == nil || IsNil(o.AnaSub) {
 		return nil, false
 	}
 	return o.AnaSub, true
@@ -70,7 +70,7 @@ func (o *NadrfDataStoreSubscription) GetAnaSubOk() (*NnwdafEventsSubscription, b
 
 // HasAnaSub returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasAnaSub() bool {
-	if o != nil && !isNil(o.AnaSub) {
+	if o != nil && !IsNil(o.AnaSub) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *NadrfDataStoreSubscription) SetAnaSub(v NnwdafEventsSubscription) {
 
 // GetDataSub returns the DataSub field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetDataSub() DataSubscription {
-	if o == nil || isNil(o.DataSub) {
+	if o == nil || IsNil(o.DataSub) {
 		var ret DataSubscription
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *NadrfDataStoreSubscription) GetDataSub() DataSubscription {
 // GetDataSubOk returns a tuple with the DataSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetDataSubOk() (*DataSubscription, bool) {
-	if o == nil || isNil(o.DataSub) {
+	if o == nil || IsNil(o.DataSub) {
 		return nil, false
 	}
 	return o.DataSub, true
@@ -102,7 +102,7 @@ func (o *NadrfDataStoreSubscription) GetDataSubOk() (*DataSubscription, bool) {
 
 // HasDataSub returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasDataSub() bool {
-	if o != nil && !isNil(o.DataSub) {
+	if o != nil && !IsNil(o.DataSub) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *NadrfDataStoreSubscription) SetDataSub(v DataSubscription) {
 
 // GetTargetNfId returns the TargetNfId field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetTargetNfId() string {
-	if o == nil || isNil(o.TargetNfId) {
+	if o == nil || IsNil(o.TargetNfId) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfId() string {
 // GetTargetNfIdOk returns a tuple with the TargetNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetTargetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfId) {
+	if o == nil || IsNil(o.TargetNfId) {
 		return nil, false
 	}
 	return o.TargetNfId, true
@@ -134,7 +134,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfIdOk() (*string, bool) {
 
 // HasTargetNfId returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasTargetNfId() bool {
-	if o != nil && !isNil(o.TargetNfId) {
+	if o != nil && !IsNil(o.TargetNfId) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *NadrfDataStoreSubscription) SetTargetNfId(v string) {
 
 // GetTargetNfSetId returns the TargetNfSetId field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetTargetNfSetId() string {
-	if o == nil || isNil(o.TargetNfSetId) {
+	if o == nil || IsNil(o.TargetNfSetId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfSetId() string {
 // GetTargetNfSetIdOk returns a tuple with the TargetNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetTargetNfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfSetId) {
+	if o == nil || IsNil(o.TargetNfSetId) {
 		return nil, false
 	}
 	return o.TargetNfSetId, true
@@ -166,7 +166,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfSetIdOk() (*string, bool) {
 
 // HasTargetNfSetId returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasTargetNfSetId() bool {
-	if o != nil && !isNil(o.TargetNfSetId) {
+	if o != nil && !IsNil(o.TargetNfSetId) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *NadrfDataStoreSubscription) SetTargetNfSetId(v string) {
 
 // GetFormatInstruct returns the FormatInstruct field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetFormatInstruct() FormattingInstruction {
-	if o == nil || isNil(o.FormatInstruct) {
+	if o == nil || IsNil(o.FormatInstruct) {
 		var ret FormattingInstruction
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *NadrfDataStoreSubscription) GetFormatInstruct() FormattingInstruction {
 // GetFormatInstructOk returns a tuple with the FormatInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetFormatInstructOk() (*FormattingInstruction, bool) {
-	if o == nil || isNil(o.FormatInstruct) {
+	if o == nil || IsNil(o.FormatInstruct) {
 		return nil, false
 	}
 	return o.FormatInstruct, true
@@ -198,7 +198,7 @@ func (o *NadrfDataStoreSubscription) GetFormatInstructOk() (*FormattingInstructi
 
 // HasFormatInstruct returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasFormatInstruct() bool {
-	if o != nil && !isNil(o.FormatInstruct) {
+	if o != nil && !IsNil(o.FormatInstruct) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *NadrfDataStoreSubscription) SetFormatInstruct(v FormattingInstruction) 
 
 // GetProcInstruct returns the ProcInstruct field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetProcInstruct() ProcessingInstruction {
-	if o == nil || isNil(o.ProcInstruct) {
+	if o == nil || IsNil(o.ProcInstruct) {
 		var ret ProcessingInstruction
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *NadrfDataStoreSubscription) GetProcInstruct() ProcessingInstruction {
 // GetProcInstructOk returns a tuple with the ProcInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetProcInstructOk() (*ProcessingInstruction, bool) {
-	if o == nil || isNil(o.ProcInstruct) {
+	if o == nil || IsNil(o.ProcInstruct) {
 		return nil, false
 	}
 	return o.ProcInstruct, true
@@ -230,7 +230,7 @@ func (o *NadrfDataStoreSubscription) GetProcInstructOk() (*ProcessingInstruction
 
 // HasProcInstruct returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasProcInstruct() bool {
-	if o != nil && !isNil(o.ProcInstruct) {
+	if o != nil && !IsNil(o.ProcInstruct) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *NadrfDataStoreSubscription) SetProcInstruct(v ProcessingInstruction) {
 
 // GetMultiProcInstructs returns the MultiProcInstructs field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetMultiProcInstructs() []ProcessingInstruction {
-	if o == nil || isNil(o.MultiProcInstructs) {
+	if o == nil || IsNil(o.MultiProcInstructs) {
 		var ret []ProcessingInstruction
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *NadrfDataStoreSubscription) GetMultiProcInstructs() []ProcessingInstruc
 // GetMultiProcInstructsOk returns a tuple with the MultiProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetMultiProcInstructsOk() ([]ProcessingInstruction, bool) {
-	if o == nil || isNil(o.MultiProcInstructs) {
+	if o == nil || IsNil(o.MultiProcInstructs) {
 		return nil, false
 	}
 	return o.MultiProcInstructs, true
@@ -262,7 +262,7 @@ func (o *NadrfDataStoreSubscription) GetMultiProcInstructsOk() ([]ProcessingInst
 
 // HasMultiProcInstructs returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasMultiProcInstructs() bool {
-	if o != nil && !isNil(o.MultiProcInstructs) {
+	if o != nil && !IsNil(o.MultiProcInstructs) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *NadrfDataStoreSubscription) SetMultiProcInstructs(v []ProcessingInstruc
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *NadrfDataStoreSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -294,7 +294,7 @@ func (o *NadrfDataStoreSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *NadrfDataStoreSubscription) SetSuppFeat(v string) {
 }
 
 func (o NadrfDataStoreSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -316,28 +316,28 @@ func (o NadrfDataStoreSubscription) MarshalJSON() ([]byte, error) {
 
 func (o NadrfDataStoreSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnaSub) {
+	if !IsNil(o.AnaSub) {
 		toSerialize["anaSub"] = o.AnaSub
 	}
-	if !isNil(o.DataSub) {
+	if !IsNil(o.DataSub) {
 		toSerialize["dataSub"] = o.DataSub
 	}
-	if !isNil(o.TargetNfId) {
+	if !IsNil(o.TargetNfId) {
 		toSerialize["targetNfId"] = o.TargetNfId
 	}
-	if !isNil(o.TargetNfSetId) {
+	if !IsNil(o.TargetNfSetId) {
 		toSerialize["targetNfSetId"] = o.TargetNfSetId
 	}
-	if !isNil(o.FormatInstruct) {
+	if !IsNil(o.FormatInstruct) {
 		toSerialize["formatInstruct"] = o.FormatInstruct
 	}
-	if !isNil(o.ProcInstruct) {
+	if !IsNil(o.ProcInstruct) {
 		toSerialize["procInstruct"] = o.ProcInstruct
 	}
-	if !isNil(o.MultiProcInstructs) {
+	if !IsNil(o.MultiProcInstructs) {
 		toSerialize["multiProcInstructs"] = o.MultiProcInstructs
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -378,5 +378,3 @@ func (v *NullableNadrfDataStoreSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

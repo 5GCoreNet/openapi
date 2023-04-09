@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,28 +17,14 @@ import (
 
 // SorUpdateIndicator struct for SorUpdateIndicator
 type SorUpdateIndicator struct {
-	SorUpdateIndicatorAnyOf *SorUpdateIndicatorAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SorUpdateIndicator) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SorUpdateIndicatorAnyOf
-	err = json.Unmarshal(data, &dst.SorUpdateIndicatorAnyOf);
-	if err == nil {
-		jsonSorUpdateIndicatorAnyOf, _ := json.Marshal(dst.SorUpdateIndicatorAnyOf)
-		if string(jsonSorUpdateIndicatorAnyOf) == "{}" { // empty struct
-			dst.SorUpdateIndicatorAnyOf = nil
-		} else {
-			return nil // data stored in dst.SorUpdateIndicatorAnyOf, return on the first match
-		}
-	} else {
-		dst.SorUpdateIndicatorAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SorUpdateIndicator) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SorUpdateIndicator) MarshalJSON() ([]byte, error) {
-	if src.SorUpdateIndicatorAnyOf != nil {
-		return json.Marshal(&src.SorUpdateIndicatorAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSorUpdateIndicator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

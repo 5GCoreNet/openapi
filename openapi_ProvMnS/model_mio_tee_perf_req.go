@@ -19,8 +19,8 @@ var _ MappedNullable = &MIoTEEPerfReq{}
 
 // MIoTEEPerfReq struct for MIoTEEPerfReq
 type MIoTEEPerfReq struct {
-	KpiType *string `json:"kpiType,omitempty"`
-	Req *float32 `json:"req,omitempty"`
+	KpiType *string  `json:"kpiType,omitempty"`
+	Req     *float32 `json:"req,omitempty"`
 }
 
 // NewMIoTEEPerfReq instantiates a new MIoTEEPerfReq object
@@ -42,7 +42,7 @@ func NewMIoTEEPerfReqWithDefaults() *MIoTEEPerfReq {
 
 // GetKpiType returns the KpiType field value if set, zero value otherwise.
 func (o *MIoTEEPerfReq) GetKpiType() string {
-	if o == nil || isNil(o.KpiType) {
+	if o == nil || IsNil(o.KpiType) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MIoTEEPerfReq) GetKpiType() string {
 // GetKpiTypeOk returns a tuple with the KpiType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MIoTEEPerfReq) GetKpiTypeOk() (*string, bool) {
-	if o == nil || isNil(o.KpiType) {
+	if o == nil || IsNil(o.KpiType) {
 		return nil, false
 	}
 	return o.KpiType, true
@@ -60,7 +60,7 @@ func (o *MIoTEEPerfReq) GetKpiTypeOk() (*string, bool) {
 
 // HasKpiType returns a boolean if a field has been set.
 func (o *MIoTEEPerfReq) HasKpiType() bool {
-	if o != nil && !isNil(o.KpiType) {
+	if o != nil && !IsNil(o.KpiType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MIoTEEPerfReq) SetKpiType(v string) {
 
 // GetReq returns the Req field value if set, zero value otherwise.
 func (o *MIoTEEPerfReq) GetReq() float32 {
-	if o == nil || isNil(o.Req) {
+	if o == nil || IsNil(o.Req) {
 		var ret float32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MIoTEEPerfReq) GetReq() float32 {
 // GetReqOk returns a tuple with the Req field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MIoTEEPerfReq) GetReqOk() (*float32, bool) {
-	if o == nil || isNil(o.Req) {
+	if o == nil || IsNil(o.Req) {
 		return nil, false
 	}
 	return o.Req, true
@@ -92,7 +92,7 @@ func (o *MIoTEEPerfReq) GetReqOk() (*float32, bool) {
 
 // HasReq returns a boolean if a field has been set.
 func (o *MIoTEEPerfReq) HasReq() bool {
-	if o != nil && !isNil(o.Req) {
+	if o != nil && !IsNil(o.Req) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *MIoTEEPerfReq) SetReq(v float32) {
 }
 
 func (o MIoTEEPerfReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o MIoTEEPerfReq) MarshalJSON() ([]byte, error) {
 
 func (o MIoTEEPerfReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.KpiType) {
+	if !IsNil(o.KpiType) {
 		toSerialize["kpiType"] = o.KpiType
 	}
-	if !isNil(o.Req) {
+	if !IsNil(o.Req) {
 		toSerialize["req"] = o.Req
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableMIoTEEPerfReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

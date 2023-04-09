@@ -95,10 +95,8 @@ Class | Method | HTTP request | Description
  - [MBSUserService](docs/MBSUserService.md)
  - [MBSUserServicePatch](docs/MBSUserServicePatch.md)
  - [MbsServiceType](docs/MbsServiceType.md)
- - [MbsServiceTypeAnyOf](docs/MbsServiceTypeAnyOf.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [ServiceAnnouncementMode](docs/ServiceAnnouncementMode.md)
- - [ServiceAnnouncementModeAnyOf](docs/ServiceAnnouncementModeAnyOf.md)
  - [ServiceNameDescription](docs/ServiceNameDescription.md)
 
 

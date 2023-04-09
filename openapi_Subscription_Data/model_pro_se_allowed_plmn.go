@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ProSeAllowedPlmn{}
 
 // ProSeAllowedPlmn Contains the PLMN identities where the Prose services are authorised to use and the authorised Prose services on this given PLMNs.
 type ProSeAllowedPlmn struct {
-	VisitedPlmn PlmnId `json:"visitedPlmn"`
+	VisitedPlmn        PlmnId               `json:"visitedPlmn"`
 	ProseDirectAllowed []ProseDirectAllowed `json:"proseDirectAllowed,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *ProSeAllowedPlmn) SetVisitedPlmn(v PlmnId) {
 
 // GetProseDirectAllowed returns the ProseDirectAllowed field value if set, zero value otherwise.
 func (o *ProSeAllowedPlmn) GetProseDirectAllowed() []ProseDirectAllowed {
-	if o == nil || isNil(o.ProseDirectAllowed) {
+	if o == nil || IsNil(o.ProseDirectAllowed) {
 		var ret []ProseDirectAllowed
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ProSeAllowedPlmn) GetProseDirectAllowed() []ProseDirectAllowed {
 // GetProseDirectAllowedOk returns a tuple with the ProseDirectAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAllowedPlmn) GetProseDirectAllowedOk() ([]ProseDirectAllowed, bool) {
-	if o == nil || isNil(o.ProseDirectAllowed) {
+	if o == nil || IsNil(o.ProseDirectAllowed) {
 		return nil, false
 	}
 	return o.ProseDirectAllowed, true
@@ -85,7 +85,7 @@ func (o *ProSeAllowedPlmn) GetProseDirectAllowedOk() ([]ProseDirectAllowed, bool
 
 // HasProseDirectAllowed returns a boolean if a field has been set.
 func (o *ProSeAllowedPlmn) HasProseDirectAllowed() bool {
-	if o != nil && !isNil(o.ProseDirectAllowed) {
+	if o != nil && !IsNil(o.ProseDirectAllowed) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ProSeAllowedPlmn) SetProseDirectAllowed(v []ProseDirectAllowed) {
 }
 
 func (o ProSeAllowedPlmn) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ProSeAllowedPlmn) MarshalJSON() ([]byte, error) {
 func (o ProSeAllowedPlmn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["visitedPlmn"] = o.VisitedPlmn
-	if !isNil(o.ProseDirectAllowed) {
+	if !IsNil(o.ProseDirectAllowed) {
 		toSerialize["proseDirectAllowed"] = o.ProseDirectAllowed
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableProSeAllowedPlmn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

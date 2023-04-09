@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // N2InformationClass Enumeration for N2 Information Class
 type N2InformationClass struct {
-	N2InformationClassAnyOf *N2InformationClassAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N2InformationClass) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into N2InformationClassAnyOf
-	err = json.Unmarshal(data, &dst.N2InformationClassAnyOf);
-	if err == nil {
-		jsonN2InformationClassAnyOf, _ := json.Marshal(dst.N2InformationClassAnyOf)
-		if string(jsonN2InformationClassAnyOf) == "{}" { // empty struct
-			dst.N2InformationClassAnyOf = nil
-		} else {
-			return nil // data stored in dst.N2InformationClassAnyOf, return on the first match
-		}
-	} else {
-		dst.N2InformationClassAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *N2InformationClass) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N2InformationClass) MarshalJSON() ([]byte, error) {
-	if src.N2InformationClassAnyOf != nil {
-		return json.Marshal(&src.N2InformationClassAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableN2InformationClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &FailedMonitoringConfiguration{}
 
 // FailedMonitoringConfiguration Contains the event type and failed cause of the failed Monitoring Configuration in the EE subscription
 type FailedMonitoringConfiguration struct {
-	EventType EventType `json:"eventType"`
+	EventType   EventType   `json:"eventType"`
 	FailedCause FailedCause `json:"failedCause"`
 }
 
@@ -91,7 +91,7 @@ func (o *FailedMonitoringConfiguration) SetFailedCause(v FailedCause) {
 }
 
 func (o FailedMonitoringConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableFailedMonitoringConfiguration) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

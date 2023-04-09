@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // Model3GPPPSDataOffStatus struct for Model3GPPPSDataOffStatus
 type Model3GPPPSDataOffStatus struct {
-	3GPPPSDataOffStatusAnyOf *3GPPPSDataOffStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Model3GPPPSDataOffStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into 3GPPPSDataOffStatusAnyOf
-	err = json.Unmarshal(data, &dst.3GPPPSDataOffStatusAnyOf);
-	if err == nil {
-		json3GPPPSDataOffStatusAnyOf, _ := json.Marshal(dst.3GPPPSDataOffStatusAnyOf)
-		if string(json3GPPPSDataOffStatusAnyOf) == "{}" { // empty struct
-			dst.3GPPPSDataOffStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.3GPPPSDataOffStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.3GPPPSDataOffStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Model3GPPPSDataOffStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Model3GPPPSDataOffStatus) MarshalJSON() ([]byte, error) {
-	if src.3GPPPSDataOffStatusAnyOf != nil {
-		return json.Marshal(&src.3GPPPSDataOffStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableModel3GPPPSDataOffStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

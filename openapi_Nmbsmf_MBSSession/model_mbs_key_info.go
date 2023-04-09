@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -103,7 +103,7 @@ func (o *MbsKeyInfo) SetMskId(v string) {
 
 // GetMsk returns the Msk field value if set, zero value otherwise.
 func (o *MbsKeyInfo) GetMsk() string {
-	if o == nil || isNil(o.Msk) {
+	if o == nil || IsNil(o.Msk) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *MbsKeyInfo) GetMsk() string {
 // GetMskOk returns a tuple with the Msk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsKeyInfo) GetMskOk() (*string, bool) {
-	if o == nil || isNil(o.Msk) {
+	if o == nil || IsNil(o.Msk) {
 		return nil, false
 	}
 	return o.Msk, true
@@ -121,7 +121,7 @@ func (o *MbsKeyInfo) GetMskOk() (*string, bool) {
 
 // HasMsk returns a boolean if a field has been set.
 func (o *MbsKeyInfo) HasMsk() bool {
-	if o != nil && !isNil(o.Msk) {
+	if o != nil && !IsNil(o.Msk) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *MbsKeyInfo) SetMsk(v string) {
 
 // GetMskLifetime returns the MskLifetime field value if set, zero value otherwise.
 func (o *MbsKeyInfo) GetMskLifetime() time.Time {
-	if o == nil || isNil(o.MskLifetime) {
+	if o == nil || IsNil(o.MskLifetime) {
 		var ret time.Time
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *MbsKeyInfo) GetMskLifetime() time.Time {
 // GetMskLifetimeOk returns a tuple with the MskLifetime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsKeyInfo) GetMskLifetimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MskLifetime) {
+	if o == nil || IsNil(o.MskLifetime) {
 		return nil, false
 	}
 	return o.MskLifetime, true
@@ -153,7 +153,7 @@ func (o *MbsKeyInfo) GetMskLifetimeOk() (*time.Time, bool) {
 
 // HasMskLifetime returns a boolean if a field has been set.
 func (o *MbsKeyInfo) HasMskLifetime() bool {
-	if o != nil && !isNil(o.MskLifetime) {
+	if o != nil && !IsNil(o.MskLifetime) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *MbsKeyInfo) SetMskLifetime(v time.Time) {
 
 // GetMtkId returns the MtkId field value if set, zero value otherwise.
 func (o *MbsKeyInfo) GetMtkId() string {
-	if o == nil || isNil(o.MtkId) {
+	if o == nil || IsNil(o.MtkId) {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *MbsKeyInfo) GetMtkId() string {
 // GetMtkIdOk returns a tuple with the MtkId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsKeyInfo) GetMtkIdOk() (*string, bool) {
-	if o == nil || isNil(o.MtkId) {
+	if o == nil || IsNil(o.MtkId) {
 		return nil, false
 	}
 	return o.MtkId, true
@@ -185,7 +185,7 @@ func (o *MbsKeyInfo) GetMtkIdOk() (*string, bool) {
 
 // HasMtkId returns a boolean if a field has been set.
 func (o *MbsKeyInfo) HasMtkId() bool {
-	if o != nil && !isNil(o.MtkId) {
+	if o != nil && !IsNil(o.MtkId) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *MbsKeyInfo) SetMtkId(v string) {
 
 // GetMtk returns the Mtk field value if set, zero value otherwise.
 func (o *MbsKeyInfo) GetMtk() string {
-	if o == nil || isNil(o.Mtk) {
+	if o == nil || IsNil(o.Mtk) {
 		var ret string
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *MbsKeyInfo) GetMtk() string {
 // GetMtkOk returns a tuple with the Mtk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsKeyInfo) GetMtkOk() (*string, bool) {
-	if o == nil || isNil(o.Mtk) {
+	if o == nil || IsNil(o.Mtk) {
 		return nil, false
 	}
 	return o.Mtk, true
@@ -217,7 +217,7 @@ func (o *MbsKeyInfo) GetMtkOk() (*string, bool) {
 
 // HasMtk returns a boolean if a field has been set.
 func (o *MbsKeyInfo) HasMtk() bool {
-	if o != nil && !isNil(o.Mtk) {
+	if o != nil && !IsNil(o.Mtk) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *MbsKeyInfo) SetMtk(v string) {
 }
 
 func (o MbsKeyInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,16 +241,16 @@ func (o MbsKeyInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["keyDomainId"] = o.KeyDomainId
 	toSerialize["mskId"] = o.MskId
-	if !isNil(o.Msk) {
+	if !IsNil(o.Msk) {
 		toSerialize["msk"] = o.Msk
 	}
-	if !isNil(o.MskLifetime) {
+	if !IsNil(o.MskLifetime) {
 		toSerialize["mskLifetime"] = o.MskLifetime
 	}
-	if !isNil(o.MtkId) {
+	if !IsNil(o.MtkId) {
 		toSerialize["mtkId"] = o.MtkId
 	}
-	if !isNil(o.Mtk) {
+	if !IsNil(o.Mtk) {
 		toSerialize["mtk"] = o.Mtk
 	}
 	return toSerialize, nil
@@ -291,5 +291,3 @@ func (v *NullableMbsKeyInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

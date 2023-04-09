@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,8 +22,8 @@ var _ MappedNullable = &MmTransactionSliceReportItem{}
 type MmTransactionSliceReportItem struct {
 	Snssai *Snssai `json:"snssai,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
-	Transactions int32 `json:"transactions"`
+	Timestamp    time.Time `json:"timestamp"`
+	Transactions int32     `json:"transactions"`
 }
 
 // NewMmTransactionSliceReportItem instantiates a new MmTransactionSliceReportItem object
@@ -47,7 +47,7 @@ func NewMmTransactionSliceReportItemWithDefaults() *MmTransactionSliceReportItem
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *MmTransactionSliceReportItem) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *MmTransactionSliceReportItem) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmTransactionSliceReportItem) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -65,7 +65,7 @@ func (o *MmTransactionSliceReportItem) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *MmTransactionSliceReportItem) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *MmTransactionSliceReportItem) SetTransactions(v int32) {
 }
 
 func (o MmTransactionSliceReportItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o MmTransactionSliceReportItem) MarshalJSON() ([]byte, error) {
 
 func (o MmTransactionSliceReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["timestamp"] = o.Timestamp
@@ -178,5 +178,3 @@ func (v *NullableMmTransactionSliceReportItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

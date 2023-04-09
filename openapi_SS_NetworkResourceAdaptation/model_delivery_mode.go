@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DeliveryMode Possible values are: - UNICAST: Unicast delivery. - MULTICAST: Multicast delivery. 
+// DeliveryMode Possible values are: - UNICAST: Unicast delivery. - MULTICAST: Multicast delivery.
 type DeliveryMode struct {
-	DeliveryModeAnyOf *DeliveryModeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DeliveryMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DeliveryModeAnyOf
-	err = json.Unmarshal(data, &dst.DeliveryModeAnyOf);
-	if err == nil {
-		jsonDeliveryModeAnyOf, _ := json.Marshal(dst.DeliveryModeAnyOf)
-		if string(jsonDeliveryModeAnyOf) == "{}" { // empty struct
-			dst.DeliveryModeAnyOf = nil
-		} else {
-			return nil // data stored in dst.DeliveryModeAnyOf, return on the first match
-		}
-	} else {
-		dst.DeliveryModeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DeliveryMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DeliveryMode) MarshalJSON() ([]byte, error) {
-	if src.DeliveryModeAnyOf != nil {
-		return json.Marshal(&src.DeliveryModeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDeliveryMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

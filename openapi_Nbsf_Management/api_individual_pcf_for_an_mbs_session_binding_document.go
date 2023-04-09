@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nbsf_Management
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualPCFForAnMBSSessionBindingDocumentApiService IndividualPCFForAnMBSSessionBindingDocumentApi service
 type IndividualPCFForAnMBSSessionBindingDocumentApiService service
 
 type ApiDeleteIndPCFMbsBindingRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualPCFForAnMBSSessionBindingDocumentApiService
-	bindingId string
+	bindingId  string
 }
 
 func (r ApiDeleteIndPCFMbsBindingRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteIndPCFMbsBindingRequest) Execute() (*http.Response, error) {
 /*
 DeleteIndPCFMbsBinding Request the deletion of an existing Individual PCF for an MBS Session Binding.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bindingId Represents the identifier of the Individual PCF for an MBS Session Binding resource. 
- @return ApiDeleteIndPCFMbsBindingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bindingId Represents the identifier of the Individual PCF for an MBS Session Binding resource.
+	@return ApiDeleteIndPCFMbsBindingRequest
 */
 func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsBinding(ctx context.Context, bindingId string) ApiDeleteIndPCFMbsBindingRequest {
 	return ApiDeleteIndPCFMbsBindingRequest{
 		ApiService: a,
-		ctx: ctx,
-		bindingId: bindingId,
+		ctx:        ctx,
+		bindingId:  bindingId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsBindingExecute(r ApiDeleteIndPCFMbsBindingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPCFForAnMBSSessionBindingDocumentApiService.DeleteIndPCFMbsBinding")
@@ -95,9 +94,9 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,9 +223,9 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) DeleteIndPCFMbsB
 }
 
 type ApiModifyIndPCFMbsBindingRequest struct {
-	ctx context.Context
-	ApiService *IndividualPCFForAnMBSSessionBindingDocumentApiService
-	bindingId string
+	ctx                context.Context
+	ApiService         *IndividualPCFForAnMBSSessionBindingDocumentApiService
+	bindingId          string
 	pcfMbsBindingPatch *PcfMbsBindingPatch
 }
 
@@ -243,26 +242,27 @@ func (r ApiModifyIndPCFMbsBindingRequest) Execute() (*PcfMbsBinding, *http.Respo
 /*
 ModifyIndPCFMbsBinding Request the modification of an existing Individual PCF for an MBS Session Binding resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bindingId Represents the identifier of the Individual PCF for an MBS Session Binding resource. 
- @return ApiModifyIndPCFMbsBindingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bindingId Represents the identifier of the Individual PCF for an MBS Session Binding resource.
+	@return ApiModifyIndPCFMbsBindingRequest
 */
 func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsBinding(ctx context.Context, bindingId string) ApiModifyIndPCFMbsBindingRequest {
 	return ApiModifyIndPCFMbsBindingRequest{
 		ApiService: a,
-		ctx: ctx,
-		bindingId: bindingId,
+		ctx:        ctx,
+		bindingId:  bindingId,
 	}
 }
 
 // Execute executes the request
-//  @return PcfMbsBinding
+//
+//	@return PcfMbsBinding
 func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsBindingExecute(r ApiModifyIndPCFMbsBindingRequest) (*PcfMbsBinding, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PcfMbsBinding
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PcfMbsBinding
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPCFForAnMBSSessionBindingDocumentApiService.ModifyIndPCFMbsBinding")
@@ -309,9 +309,9 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -328,8 +328,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -339,8 +339,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -350,8 +350,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -361,8 +361,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -372,8 +372,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -383,8 +383,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -394,8 +394,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -405,8 +405,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -416,8 +416,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -427,8 +427,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -438,8 +438,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -449,8 +449,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -460,8 +460,8 @@ func (a *IndividualPCFForAnMBSSessionBindingDocumentApiService) ModifyIndPCFMbsB
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

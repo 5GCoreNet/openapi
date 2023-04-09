@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &NsacfInfo{}
 // NsacfInfo Information of a NSACF NF Instance
 type NsacfInfo struct {
 	NsacfCapability NsacfCapability `json:"nsacfCapability"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
+	TaiList         []Tai           `json:"taiList,omitempty"`
+	TaiRangeList    []TaiRange      `json:"taiRangeList,omitempty"`
 }
 
 // NewNsacfInfo instantiates a new NsacfInfo object
@@ -68,7 +68,7 @@ func (o *NsacfInfo) SetNsacfCapability(v NsacfCapability) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *NsacfInfo) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *NsacfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -86,7 +86,7 @@ func (o *NsacfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *NsacfInfo) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *NsacfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *NsacfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *NsacfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -118,7 +118,7 @@ func (o *NsacfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *NsacfInfo) HasTaiRangeList() bool {
-	if o != nil && !isNil(o.TaiRangeList) {
+	if o != nil && !IsNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *NsacfInfo) SetTaiRangeList(v []TaiRange) {
 }
 
 func (o NsacfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o NsacfInfo) MarshalJSON() ([]byte, error) {
 func (o NsacfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nsacfCapability"] = o.NsacfCapability
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.TaiRangeList) {
+	if !IsNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableNsacfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

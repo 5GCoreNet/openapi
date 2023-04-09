@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ReachabilityType Possible values are - SMS : The SCS/AS requests to be notified when the UE becomes reachable for sending SMS to the UE - DATA: The SCS/AS requests to be notified when the UE becomes reachable for sending downlink data to the UE 
+// ReachabilityType Possible values are - SMS : The SCS/AS requests to be notified when the UE becomes reachable for sending SMS to the UE - DATA: The SCS/AS requests to be notified when the UE becomes reachable for sending downlink data to the UE
 type ReachabilityType struct {
-	ReachabilityTypeAnyOf *ReachabilityTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReachabilityType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReachabilityTypeAnyOf
-	err = json.Unmarshal(data, &dst.ReachabilityTypeAnyOf);
-	if err == nil {
-		jsonReachabilityTypeAnyOf, _ := json.Marshal(dst.ReachabilityTypeAnyOf)
-		if string(jsonReachabilityTypeAnyOf) == "{}" { // empty struct
-			dst.ReachabilityTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReachabilityTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ReachabilityTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReachabilityType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReachabilityType) MarshalJSON() ([]byte, error) {
-	if src.ReachabilityTypeAnyOf != nil {
-		return json.Marshal(&src.ReachabilityTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReachabilityType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

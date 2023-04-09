@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &CommunicationCharacteristics{}
 
 // CommunicationCharacteristics struct for CommunicationCharacteristics
 type CommunicationCharacteristics struct {
-	PpSubsRegTimer NullablePpSubsRegTimer `json:"ppSubsRegTimer,omitempty"`
-	PpActiveTime NullablePpActiveTime `json:"ppActiveTime,omitempty"`
-	PpDlPacketCount NullableInt32 `json:"ppDlPacketCount,omitempty"`
-	PpDlPacketCountExt NullablePpDlPacketCountExt `json:"ppDlPacketCountExt,omitempty"`
+	PpSubsRegTimer        NullablePpSubsRegTimer        `json:"ppSubsRegTimer,omitempty"`
+	PpActiveTime          NullablePpActiveTime          `json:"ppActiveTime,omitempty"`
+	PpDlPacketCount       NullableInt32                 `json:"ppDlPacketCount,omitempty"`
+	PpDlPacketCountExt    NullablePpDlPacketCountExt    `json:"ppDlPacketCountExt,omitempty"`
 	PpMaximumResponseTime NullablePpMaximumResponseTime `json:"ppMaximumResponseTime,omitempty"`
-	PpMaximumLatency NullablePpMaximumLatency `json:"ppMaximumLatency,omitempty"`
+	PpMaximumLatency      NullablePpMaximumLatency      `json:"ppMaximumLatency,omitempty"`
 }
 
 // NewCommunicationCharacteristics instantiates a new CommunicationCharacteristics object
@@ -46,7 +46,7 @@ func NewCommunicationCharacteristicsWithDefaults() *CommunicationCharacteristics
 
 // GetPpSubsRegTimer returns the PpSubsRegTimer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpSubsRegTimer() PpSubsRegTimer {
-	if o == nil || isNil(o.PpSubsRegTimer.Get()) {
+	if o == nil || IsNil(o.PpSubsRegTimer.Get()) {
 		var ret PpSubsRegTimer
 		return ret
 	}
@@ -76,6 +76,7 @@ func (o *CommunicationCharacteristics) HasPpSubsRegTimer() bool {
 func (o *CommunicationCharacteristics) SetPpSubsRegTimer(v PpSubsRegTimer) {
 	o.PpSubsRegTimer.Set(&v)
 }
+
 // SetPpSubsRegTimerNil sets the value for PpSubsRegTimer to be an explicit nil
 func (o *CommunicationCharacteristics) SetPpSubsRegTimerNil() {
 	o.PpSubsRegTimer.Set(nil)
@@ -88,7 +89,7 @@ func (o *CommunicationCharacteristics) UnsetPpSubsRegTimer() {
 
 // GetPpActiveTime returns the PpActiveTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpActiveTime() PpActiveTime {
-	if o == nil || isNil(o.PpActiveTime.Get()) {
+	if o == nil || IsNil(o.PpActiveTime.Get()) {
 		var ret PpActiveTime
 		return ret
 	}
@@ -118,6 +119,7 @@ func (o *CommunicationCharacteristics) HasPpActiveTime() bool {
 func (o *CommunicationCharacteristics) SetPpActiveTime(v PpActiveTime) {
 	o.PpActiveTime.Set(&v)
 }
+
 // SetPpActiveTimeNil sets the value for PpActiveTime to be an explicit nil
 func (o *CommunicationCharacteristics) SetPpActiveTimeNil() {
 	o.PpActiveTime.Set(nil)
@@ -130,7 +132,7 @@ func (o *CommunicationCharacteristics) UnsetPpActiveTime() {
 
 // GetPpDlPacketCount returns the PpDlPacketCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpDlPacketCount() int32 {
-	if o == nil || isNil(o.PpDlPacketCount.Get()) {
+	if o == nil || IsNil(o.PpDlPacketCount.Get()) {
 		var ret int32
 		return ret
 	}
@@ -160,6 +162,7 @@ func (o *CommunicationCharacteristics) HasPpDlPacketCount() bool {
 func (o *CommunicationCharacteristics) SetPpDlPacketCount(v int32) {
 	o.PpDlPacketCount.Set(&v)
 }
+
 // SetPpDlPacketCountNil sets the value for PpDlPacketCount to be an explicit nil
 func (o *CommunicationCharacteristics) SetPpDlPacketCountNil() {
 	o.PpDlPacketCount.Set(nil)
@@ -172,7 +175,7 @@ func (o *CommunicationCharacteristics) UnsetPpDlPacketCount() {
 
 // GetPpDlPacketCountExt returns the PpDlPacketCountExt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpDlPacketCountExt() PpDlPacketCountExt {
-	if o == nil || isNil(o.PpDlPacketCountExt.Get()) {
+	if o == nil || IsNil(o.PpDlPacketCountExt.Get()) {
 		var ret PpDlPacketCountExt
 		return ret
 	}
@@ -202,6 +205,7 @@ func (o *CommunicationCharacteristics) HasPpDlPacketCountExt() bool {
 func (o *CommunicationCharacteristics) SetPpDlPacketCountExt(v PpDlPacketCountExt) {
 	o.PpDlPacketCountExt.Set(&v)
 }
+
 // SetPpDlPacketCountExtNil sets the value for PpDlPacketCountExt to be an explicit nil
 func (o *CommunicationCharacteristics) SetPpDlPacketCountExtNil() {
 	o.PpDlPacketCountExt.Set(nil)
@@ -214,7 +218,7 @@ func (o *CommunicationCharacteristics) UnsetPpDlPacketCountExt() {
 
 // GetPpMaximumResponseTime returns the PpMaximumResponseTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpMaximumResponseTime() PpMaximumResponseTime {
-	if o == nil || isNil(o.PpMaximumResponseTime.Get()) {
+	if o == nil || IsNil(o.PpMaximumResponseTime.Get()) {
 		var ret PpMaximumResponseTime
 		return ret
 	}
@@ -244,6 +248,7 @@ func (o *CommunicationCharacteristics) HasPpMaximumResponseTime() bool {
 func (o *CommunicationCharacteristics) SetPpMaximumResponseTime(v PpMaximumResponseTime) {
 	o.PpMaximumResponseTime.Set(&v)
 }
+
 // SetPpMaximumResponseTimeNil sets the value for PpMaximumResponseTime to be an explicit nil
 func (o *CommunicationCharacteristics) SetPpMaximumResponseTimeNil() {
 	o.PpMaximumResponseTime.Set(nil)
@@ -256,7 +261,7 @@ func (o *CommunicationCharacteristics) UnsetPpMaximumResponseTime() {
 
 // GetPpMaximumLatency returns the PpMaximumLatency field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpMaximumLatency() PpMaximumLatency {
-	if o == nil || isNil(o.PpMaximumLatency.Get()) {
+	if o == nil || IsNil(o.PpMaximumLatency.Get()) {
 		var ret PpMaximumLatency
 		return ret
 	}
@@ -286,6 +291,7 @@ func (o *CommunicationCharacteristics) HasPpMaximumLatency() bool {
 func (o *CommunicationCharacteristics) SetPpMaximumLatency(v PpMaximumLatency) {
 	o.PpMaximumLatency.Set(&v)
 }
+
 // SetPpMaximumLatencyNil sets the value for PpMaximumLatency to be an explicit nil
 func (o *CommunicationCharacteristics) SetPpMaximumLatencyNil() {
 	o.PpMaximumLatency.Set(nil)
@@ -297,7 +303,7 @@ func (o *CommunicationCharacteristics) UnsetPpMaximumLatency() {
 }
 
 func (o CommunicationCharacteristics) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -362,5 +368,3 @@ func (v *NullableCommunicationCharacteristics) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsMLModelInfo(v *interface{}) MLModelInfo {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MLModelInfo) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src MLModelInfo) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MLModelInfo) GetActualInstance() (interface{}) {
+func (obj *MLModelInfo) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableMLModelInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

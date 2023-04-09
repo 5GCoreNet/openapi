@@ -1,7 +1,7 @@
 /*
 NSSF NS Selection
 
-NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,26 +13,25 @@ package openapi_Nnssf_NSSelection
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // NetworkSliceInformationDocumentApiService NetworkSliceInformationDocumentApi service
 type NetworkSliceInformationDocumentApiService service
 
 type ApiNSSelectionGetRequest struct {
-	ctx context.Context
-	ApiService *NetworkSliceInformationDocumentApiService
-	nfType *NFType
-	nfId *string
+	ctx                             context.Context
+	ApiService                      *NetworkSliceInformationDocumentApiService
+	nfType                          *NFType
+	nfId                            *string
 	sliceInfoRequestForRegistration *SliceInfoForRegistration
-	sliceInfoRequestForPduSession *SliceInfoForPDUSession
-	sliceInfoRequestForUeCu *SliceInfoForUEConfigurationUpdate
-	homePlmnId *PlmnId
-	tai *Tai
-	supportedFeatures *string
+	sliceInfoRequestForPduSession   *SliceInfoForPDUSession
+	sliceInfoRequestForUeCu         *SliceInfoForUEConfigurationUpdate
+	homePlmnId                      *PlmnId
+	tai                             *Tai
+	supportedFeatures               *string
 }
 
 // NF type of the NF service consumer
@@ -90,24 +89,25 @@ func (r ApiNSSelectionGetRequest) Execute() (*AuthorizedNetworkSliceInfo, *http.
 /*
 NSSelectionGet Retrieve the Network Slice Selection Information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiNSSelectionGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiNSSelectionGetRequest
 */
 func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.Context) ApiNSSelectionGetRequest {
 	return ApiNSSelectionGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AuthorizedNetworkSliceInfo
+//
+//	@return AuthorizedNetworkSliceInfo
 func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiNSSelectionGetRequest) (*AuthorizedNetworkSliceInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthorizedNetworkSliceInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthorizedNetworkSliceInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkSliceInformationDocumentApiService.NSSelectionGet")
@@ -127,25 +127,25 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 		return localVarReturnValue, nil, reportError("nfId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "nf-type", r.nfType, "")
-	parameterAddToQuery(localVarQueryParams, "nf-id", r.nfId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "nf-type", r.nfType, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "nf-id", r.nfId, "")
 	if r.sliceInfoRequestForRegistration != nil {
-		parameterAddToQuery(localVarQueryParams, "slice-info-request-for-registration", r.sliceInfoRequestForRegistration, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slice-info-request-for-registration", r.sliceInfoRequestForRegistration, "")
 	}
 	if r.sliceInfoRequestForPduSession != nil {
-		parameterAddToQuery(localVarQueryParams, "slice-info-request-for-pdu-session", r.sliceInfoRequestForPduSession, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slice-info-request-for-pdu-session", r.sliceInfoRequestForPduSession, "")
 	}
 	if r.sliceInfoRequestForUeCu != nil {
-		parameterAddToQuery(localVarQueryParams, "slice-info-request-for-ue-cu", r.sliceInfoRequestForUeCu, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "slice-info-request-for-ue-cu", r.sliceInfoRequestForUeCu, "")
 	}
 	if r.homePlmnId != nil {
-		parameterAddToQuery(localVarQueryParams, "home-plmn-id", r.homePlmnId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "home-plmn-id", r.homePlmnId, "")
 	}
 	if r.tai != nil {
-		parameterAddToQuery(localVarQueryParams, "tai", r.tai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tai", r.tai, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -174,9 +174,9 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -193,8 +193,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -204,8 +204,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -215,8 +215,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -226,8 +226,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -237,8 +237,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -248,8 +248,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -259,8 +259,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -270,8 +270,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -281,8 +281,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -292,8 +292,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -303,8 +303,8 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

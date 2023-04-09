@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ProvisionedParameterDataEntryDocumentApiService ProvisionedParameterDataEntryDocumentApi service
 type ProvisionedParameterDataEntryDocumentApiService service
 
 type ApiCreatePPDataEntryRequest struct {
-	ctx context.Context
-	ApiService *ProvisionedParameterDataEntryDocumentApiService
-	ueId GetPPDataEntryUeIdParameter
+	ctx          context.Context
+	ApiService   *ProvisionedParameterDataEntryDocumentApiService
+	ueId         GetPPDataEntryUeIdParameter
 	afInstanceId string
-	ppDataEntry *PpDataEntry
+	ppDataEntry  *PpDataEntry
 }
 
 func (r ApiCreatePPDataEntryRequest) PpDataEntry(ppDataEntry PpDataEntry) ApiCreatePPDataEntryRequest {
@@ -43,28 +42,29 @@ func (r ApiCreatePPDataEntryRequest) Execute() (*PpDataEntry, *http.Response, er
 /*
 CreatePPDataEntry create a Provisioning Parameter Data Entry
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @param afInstanceId Application Function Instance Identifier
- @return ApiCreatePPDataEntryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@param afInstanceId Application Function Instance Identifier
+	@return ApiCreatePPDataEntryRequest
 */
 func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntry(ctx context.Context, ueId GetPPDataEntryUeIdParameter, afInstanceId string) ApiCreatePPDataEntryRequest {
 	return ApiCreatePPDataEntryRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		afInstanceId: afInstanceId,
 	}
 }
 
 // Execute executes the request
-//  @return PpDataEntry
+//
+//	@return PpDataEntry
 func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecute(r ApiCreatePPDataEntryRequest) (*PpDataEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PpDataEntry
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PpDataEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisionedParameterDataEntryDocumentApiService.CreatePPDataEntry")
@@ -112,9 +112,9 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -131,8 +131,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -142,8 +142,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -153,8 +153,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -164,8 +164,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -175,8 +175,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -195,9 +195,9 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) CreatePPDataEntryExecu
 }
 
 type ApiDeletePPDataEntryRequest struct {
-	ctx context.Context
-	ApiService *ProvisionedParameterDataEntryDocumentApiService
-	ueId GetPPDataEntryUeIdParameter
+	ctx          context.Context
+	ApiService   *ProvisionedParameterDataEntryDocumentApiService
+	ueId         GetPPDataEntryUeIdParameter
 	afInstanceId string
 }
 
@@ -208,16 +208,16 @@ func (r ApiDeletePPDataEntryRequest) Execute() (*http.Response, error) {
 /*
 DeletePPDataEntry Delete a Provisioning Parameter Data Entry
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @param afInstanceId Application Function Instance Identifier
- @return ApiDeletePPDataEntryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@param afInstanceId Application Function Instance Identifier
+	@return ApiDeletePPDataEntryRequest
 */
 func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntry(ctx context.Context, ueId GetPPDataEntryUeIdParameter, afInstanceId string) ApiDeletePPDataEntryRequest {
 	return ApiDeletePPDataEntryRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		afInstanceId: afInstanceId,
 	}
 }
@@ -225,9 +225,9 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntry(ctx 
 // Execute executes the request
 func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecute(r ApiDeletePPDataEntryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisionedParameterDataEntryDocumentApiService.DeletePPDataEntry")
@@ -270,9 +270,9 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -289,8 +289,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -300,8 +300,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -311,8 +311,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -322,8 +322,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -333,8 +333,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -344,10 +344,10 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) DeletePPDataEntryExecu
 }
 
 type ApiGetPPDataEntryRequest struct {
-	ctx context.Context
-	ApiService *ProvisionedParameterDataEntryDocumentApiService
-	ueId GetPPDataEntryUeIdParameter
-	afInstanceId string
+	ctx               context.Context
+	ApiService        *ProvisionedParameterDataEntryDocumentApiService
+	ueId              GetPPDataEntryUeIdParameter
+	afInstanceId      string
 	supportedFeatures *string
 }
 
@@ -364,28 +364,29 @@ func (r ApiGetPPDataEntryRequest) Execute() (*PpDataEntry, *http.Response, error
 /*
 GetPPDataEntry get a Parameter Provisioning Data Entry
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @param afInstanceId Application Function Instance Identifier
- @return ApiGetPPDataEntryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@param afInstanceId Application Function Instance Identifier
+	@return ApiGetPPDataEntryRequest
 */
 func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntry(ctx context.Context, ueId GetPPDataEntryUeIdParameter, afInstanceId string) ApiGetPPDataEntryRequest {
 	return ApiGetPPDataEntryRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		afInstanceId: afInstanceId,
 	}
 }
 
 // Execute executes the request
-//  @return PpDataEntry
+//
+//	@return PpDataEntry
 func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(r ApiGetPPDataEntryRequest) (*PpDataEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PpDataEntry
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PpDataEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisionedParameterDataEntryDocumentApiService.GetPPDataEntry")
@@ -402,7 +403,7 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -431,9 +432,9 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -450,8 +451,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -461,8 +462,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -472,8 +473,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -483,8 +484,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -494,8 +495,8 @@ func (a *ProvisionedParameterDataEntryDocumentApiService) GetPPDataEntryExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

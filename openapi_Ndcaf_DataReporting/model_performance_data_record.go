@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,18 +19,17 @@ var _ MappedNullable = &PerformanceDataRecord{}
 
 // PerformanceDataRecord struct for PerformanceDataRecord
 type PerformanceDataRecord struct {
-	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
-	TimeInterval TimeWindow `json:"timeInterval"`
-	Location *LocationArea5G `json:"location,omitempty"`
-	RemoteEndpoint *AddrFqdn `json:"remoteEndpoint,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	BaseRecord
+	TimeInterval   TimeWindow      `json:"timeInterval"`
+	Location       *LocationArea5G `json:"location,omitempty"`
+	RemoteEndpoint *AddrFqdn       `json:"remoteEndpoint,omitempty"`
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	PacketDelayBudget *int32 `json:"packetDelayBudget,omitempty"`
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
 	PacketLossRate *int32 `json:"packetLossRate,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	UplinkThroughput *string `json:"uplinkThroughput,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	DownlinkThrougput *string `json:"downlinkThrougput,omitempty"`
 }
 
@@ -38,7 +37,7 @@ type PerformanceDataRecord struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPerformanceDataRecord(timestamp time.Time, timeInterval TimeWindow) *PerformanceDataRecord {
+func NewPerformanceDataRecord(timeInterval TimeWindow, timestamp time.Time) *PerformanceDataRecord {
 	this := PerformanceDataRecord{}
 	this.Timestamp = timestamp
 	this.TimeInterval = timeInterval
@@ -51,30 +50,6 @@ func NewPerformanceDataRecord(timestamp time.Time, timeInterval TimeWindow) *Per
 func NewPerformanceDataRecordWithDefaults() *PerformanceDataRecord {
 	this := PerformanceDataRecord{}
 	return &this
-}
-
-// GetTimestamp returns the Timestamp field value
-func (o *PerformanceDataRecord) GetTimestamp() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.Timestamp
-}
-
-// GetTimestampOk returns a tuple with the Timestamp field value
-// and a boolean to check if the value has been set.
-func (o *PerformanceDataRecord) GetTimestampOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Timestamp, true
-}
-
-// SetTimestamp sets field value
-func (o *PerformanceDataRecord) SetTimestamp(v time.Time) {
-	o.Timestamp = v
 }
 
 // GetTimeInterval returns the TimeInterval field value
@@ -103,7 +78,7 @@ func (o *PerformanceDataRecord) SetTimeInterval(v TimeWindow) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *PerformanceDataRecord) GetLocation() LocationArea5G {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -113,7 +88,7 @@ func (o *PerformanceDataRecord) GetLocation() LocationArea5G {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataRecord) GetLocationOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -121,7 +96,7 @@ func (o *PerformanceDataRecord) GetLocationOk() (*LocationArea5G, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *PerformanceDataRecord) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -135,7 +110,7 @@ func (o *PerformanceDataRecord) SetLocation(v LocationArea5G) {
 
 // GetRemoteEndpoint returns the RemoteEndpoint field value if set, zero value otherwise.
 func (o *PerformanceDataRecord) GetRemoteEndpoint() AddrFqdn {
-	if o == nil || isNil(o.RemoteEndpoint) {
+	if o == nil || IsNil(o.RemoteEndpoint) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -145,7 +120,7 @@ func (o *PerformanceDataRecord) GetRemoteEndpoint() AddrFqdn {
 // GetRemoteEndpointOk returns a tuple with the RemoteEndpoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataRecord) GetRemoteEndpointOk() (*AddrFqdn, bool) {
-	if o == nil || isNil(o.RemoteEndpoint) {
+	if o == nil || IsNil(o.RemoteEndpoint) {
 		return nil, false
 	}
 	return o.RemoteEndpoint, true
@@ -153,7 +128,7 @@ func (o *PerformanceDataRecord) GetRemoteEndpointOk() (*AddrFqdn, bool) {
 
 // HasRemoteEndpoint returns a boolean if a field has been set.
 func (o *PerformanceDataRecord) HasRemoteEndpoint() bool {
-	if o != nil && !isNil(o.RemoteEndpoint) {
+	if o != nil && !IsNil(o.RemoteEndpoint) {
 		return true
 	}
 
@@ -167,7 +142,7 @@ func (o *PerformanceDataRecord) SetRemoteEndpoint(v AddrFqdn) {
 
 // GetPacketDelayBudget returns the PacketDelayBudget field value if set, zero value otherwise.
 func (o *PerformanceDataRecord) GetPacketDelayBudget() int32 {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +152,7 @@ func (o *PerformanceDataRecord) GetPacketDelayBudget() int32 {
 // GetPacketDelayBudgetOk returns a tuple with the PacketDelayBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataRecord) GetPacketDelayBudgetOk() (*int32, bool) {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		return nil, false
 	}
 	return o.PacketDelayBudget, true
@@ -185,7 +160,7 @@ func (o *PerformanceDataRecord) GetPacketDelayBudgetOk() (*int32, bool) {
 
 // HasPacketDelayBudget returns a boolean if a field has been set.
 func (o *PerformanceDataRecord) HasPacketDelayBudget() bool {
-	if o != nil && !isNil(o.PacketDelayBudget) {
+	if o != nil && !IsNil(o.PacketDelayBudget) {
 		return true
 	}
 
@@ -199,7 +174,7 @@ func (o *PerformanceDataRecord) SetPacketDelayBudget(v int32) {
 
 // GetPacketLossRate returns the PacketLossRate field value if set, zero value otherwise.
 func (o *PerformanceDataRecord) GetPacketLossRate() int32 {
-	if o == nil || isNil(o.PacketLossRate) {
+	if o == nil || IsNil(o.PacketLossRate) {
 		var ret int32
 		return ret
 	}
@@ -209,7 +184,7 @@ func (o *PerformanceDataRecord) GetPacketLossRate() int32 {
 // GetPacketLossRateOk returns a tuple with the PacketLossRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataRecord) GetPacketLossRateOk() (*int32, bool) {
-	if o == nil || isNil(o.PacketLossRate) {
+	if o == nil || IsNil(o.PacketLossRate) {
 		return nil, false
 	}
 	return o.PacketLossRate, true
@@ -217,7 +192,7 @@ func (o *PerformanceDataRecord) GetPacketLossRateOk() (*int32, bool) {
 
 // HasPacketLossRate returns a boolean if a field has been set.
 func (o *PerformanceDataRecord) HasPacketLossRate() bool {
-	if o != nil && !isNil(o.PacketLossRate) {
+	if o != nil && !IsNil(o.PacketLossRate) {
 		return true
 	}
 
@@ -231,7 +206,7 @@ func (o *PerformanceDataRecord) SetPacketLossRate(v int32) {
 
 // GetUplinkThroughput returns the UplinkThroughput field value if set, zero value otherwise.
 func (o *PerformanceDataRecord) GetUplinkThroughput() string {
-	if o == nil || isNil(o.UplinkThroughput) {
+	if o == nil || IsNil(o.UplinkThroughput) {
 		var ret string
 		return ret
 	}
@@ -241,7 +216,7 @@ func (o *PerformanceDataRecord) GetUplinkThroughput() string {
 // GetUplinkThroughputOk returns a tuple with the UplinkThroughput field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataRecord) GetUplinkThroughputOk() (*string, bool) {
-	if o == nil || isNil(o.UplinkThroughput) {
+	if o == nil || IsNil(o.UplinkThroughput) {
 		return nil, false
 	}
 	return o.UplinkThroughput, true
@@ -249,7 +224,7 @@ func (o *PerformanceDataRecord) GetUplinkThroughputOk() (*string, bool) {
 
 // HasUplinkThroughput returns a boolean if a field has been set.
 func (o *PerformanceDataRecord) HasUplinkThroughput() bool {
-	if o != nil && !isNil(o.UplinkThroughput) {
+	if o != nil && !IsNil(o.UplinkThroughput) {
 		return true
 	}
 
@@ -263,7 +238,7 @@ func (o *PerformanceDataRecord) SetUplinkThroughput(v string) {
 
 // GetDownlinkThrougput returns the DownlinkThrougput field value if set, zero value otherwise.
 func (o *PerformanceDataRecord) GetDownlinkThrougput() string {
-	if o == nil || isNil(o.DownlinkThrougput) {
+	if o == nil || IsNil(o.DownlinkThrougput) {
 		var ret string
 		return ret
 	}
@@ -273,7 +248,7 @@ func (o *PerformanceDataRecord) GetDownlinkThrougput() string {
 // GetDownlinkThrougputOk returns a tuple with the DownlinkThrougput field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceDataRecord) GetDownlinkThrougputOk() (*string, bool) {
-	if o == nil || isNil(o.DownlinkThrougput) {
+	if o == nil || IsNil(o.DownlinkThrougput) {
 		return nil, false
 	}
 	return o.DownlinkThrougput, true
@@ -281,7 +256,7 @@ func (o *PerformanceDataRecord) GetDownlinkThrougputOk() (*string, bool) {
 
 // HasDownlinkThrougput returns a boolean if a field has been set.
 func (o *PerformanceDataRecord) HasDownlinkThrougput() bool {
-	if o != nil && !isNil(o.DownlinkThrougput) {
+	if o != nil && !IsNil(o.DownlinkThrougput) {
 		return true
 	}
 
@@ -294,7 +269,7 @@ func (o *PerformanceDataRecord) SetDownlinkThrougput(v string) {
 }
 
 func (o PerformanceDataRecord) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -303,24 +278,31 @@ func (o PerformanceDataRecord) MarshalJSON() ([]byte, error) {
 
 func (o PerformanceDataRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["timestamp"] = o.Timestamp
+	serializedBaseRecord, errBaseRecord := json.Marshal(o.BaseRecord)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
+	errBaseRecord = json.Unmarshal([]byte(serializedBaseRecord), &toSerialize)
+	if errBaseRecord != nil {
+		return map[string]interface{}{}, errBaseRecord
+	}
 	toSerialize["timeInterval"] = o.TimeInterval
-	if !isNil(o.Location) {
+	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
-	if !isNil(o.RemoteEndpoint) {
+	if !IsNil(o.RemoteEndpoint) {
 		toSerialize["remoteEndpoint"] = o.RemoteEndpoint
 	}
-	if !isNil(o.PacketDelayBudget) {
+	if !IsNil(o.PacketDelayBudget) {
 		toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	}
-	if !isNil(o.PacketLossRate) {
+	if !IsNil(o.PacketLossRate) {
 		toSerialize["packetLossRate"] = o.PacketLossRate
 	}
-	if !isNil(o.UplinkThroughput) {
+	if !IsNil(o.UplinkThroughput) {
 		toSerialize["uplinkThroughput"] = o.UplinkThroughput
 	}
-	if !isNil(o.DownlinkThrougput) {
+	if !IsNil(o.DownlinkThrougput) {
 		toSerialize["downlinkThrougput"] = o.DownlinkThrougput
 	}
 	return toSerialize, nil
@@ -361,5 +343,3 @@ func (v *NullablePerformanceDataRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

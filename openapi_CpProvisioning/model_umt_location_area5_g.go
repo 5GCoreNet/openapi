@@ -1,7 +1,7 @@
 /*
 3gpp-cp-parameter-provisioning
 
-API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -19,11 +19,7 @@ var _ MappedNullable = &UmtLocationArea5G{}
 
 // UmtLocationArea5G Represents the user location area describing the UE moving trajectory.
 type UmtLocationArea5G struct {
-	// Identifies a list of geographic area of the user where the UE is located.
-	GeographicAreas []GeographicArea `json:"geographicAreas,omitempty"`
-	// Identifies a list of civic addresses of the user where the UE is located.
-	CivicAddresses []CivicAddress `json:"civicAddresses,omitempty"`
-	NwAreaInfo *NetworkAreaInfo `json:"nwAreaInfo,omitempty"`
+	LocationArea5G
 	// String with format partial-time or full-time as defined in clause 5.6 of IETF RFC 3339. Examples, 20:15:00, 20:15:00-08:00 (for 8 hours behind UTC).
 	UmtTime *string `json:"umtTime,omitempty"`
 	// Unsigned integer identifying a period of time in units of seconds.
@@ -47,105 +43,9 @@ func NewUmtLocationArea5GWithDefaults() *UmtLocationArea5G {
 	return &this
 }
 
-// GetGeographicAreas returns the GeographicAreas field value if set, zero value otherwise.
-func (o *UmtLocationArea5G) GetGeographicAreas() []GeographicArea {
-	if o == nil || isNil(o.GeographicAreas) {
-		var ret []GeographicArea
-		return ret
-	}
-	return o.GeographicAreas
-}
-
-// GetGeographicAreasOk returns a tuple with the GeographicAreas field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UmtLocationArea5G) GetGeographicAreasOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.GeographicAreas) {
-		return nil, false
-	}
-	return o.GeographicAreas, true
-}
-
-// HasGeographicAreas returns a boolean if a field has been set.
-func (o *UmtLocationArea5G) HasGeographicAreas() bool {
-	if o != nil && !isNil(o.GeographicAreas) {
-		return true
-	}
-
-	return false
-}
-
-// SetGeographicAreas gets a reference to the given []GeographicArea and assigns it to the GeographicAreas field.
-func (o *UmtLocationArea5G) SetGeographicAreas(v []GeographicArea) {
-	o.GeographicAreas = v
-}
-
-// GetCivicAddresses returns the CivicAddresses field value if set, zero value otherwise.
-func (o *UmtLocationArea5G) GetCivicAddresses() []CivicAddress {
-	if o == nil || isNil(o.CivicAddresses) {
-		var ret []CivicAddress
-		return ret
-	}
-	return o.CivicAddresses
-}
-
-// GetCivicAddressesOk returns a tuple with the CivicAddresses field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UmtLocationArea5G) GetCivicAddressesOk() ([]CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddresses) {
-		return nil, false
-	}
-	return o.CivicAddresses, true
-}
-
-// HasCivicAddresses returns a boolean if a field has been set.
-func (o *UmtLocationArea5G) HasCivicAddresses() bool {
-	if o != nil && !isNil(o.CivicAddresses) {
-		return true
-	}
-
-	return false
-}
-
-// SetCivicAddresses gets a reference to the given []CivicAddress and assigns it to the CivicAddresses field.
-func (o *UmtLocationArea5G) SetCivicAddresses(v []CivicAddress) {
-	o.CivicAddresses = v
-}
-
-// GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
-func (o *UmtLocationArea5G) GetNwAreaInfo() NetworkAreaInfo {
-	if o == nil || isNil(o.NwAreaInfo) {
-		var ret NetworkAreaInfo
-		return ret
-	}
-	return *o.NwAreaInfo
-}
-
-// GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UmtLocationArea5G) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NwAreaInfo) {
-		return nil, false
-	}
-	return o.NwAreaInfo, true
-}
-
-// HasNwAreaInfo returns a boolean if a field has been set.
-func (o *UmtLocationArea5G) HasNwAreaInfo() bool {
-	if o != nil && !isNil(o.NwAreaInfo) {
-		return true
-	}
-
-	return false
-}
-
-// SetNwAreaInfo gets a reference to the given NetworkAreaInfo and assigns it to the NwAreaInfo field.
-func (o *UmtLocationArea5G) SetNwAreaInfo(v NetworkAreaInfo) {
-	o.NwAreaInfo = &v
-}
-
 // GetUmtTime returns the UmtTime field value if set, zero value otherwise.
 func (o *UmtLocationArea5G) GetUmtTime() string {
-	if o == nil || isNil(o.UmtTime) {
+	if o == nil || IsNil(o.UmtTime) {
 		var ret string
 		return ret
 	}
@@ -155,7 +55,7 @@ func (o *UmtLocationArea5G) GetUmtTime() string {
 // GetUmtTimeOk returns a tuple with the UmtTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UmtLocationArea5G) GetUmtTimeOk() (*string, bool) {
-	if o == nil || isNil(o.UmtTime) {
+	if o == nil || IsNil(o.UmtTime) {
 		return nil, false
 	}
 	return o.UmtTime, true
@@ -163,7 +63,7 @@ func (o *UmtLocationArea5G) GetUmtTimeOk() (*string, bool) {
 
 // HasUmtTime returns a boolean if a field has been set.
 func (o *UmtLocationArea5G) HasUmtTime() bool {
-	if o != nil && !isNil(o.UmtTime) {
+	if o != nil && !IsNil(o.UmtTime) {
 		return true
 	}
 
@@ -177,7 +77,7 @@ func (o *UmtLocationArea5G) SetUmtTime(v string) {
 
 // GetUmtDuration returns the UmtDuration field value if set, zero value otherwise.
 func (o *UmtLocationArea5G) GetUmtDuration() int32 {
-	if o == nil || isNil(o.UmtDuration) {
+	if o == nil || IsNil(o.UmtDuration) {
 		var ret int32
 		return ret
 	}
@@ -187,7 +87,7 @@ func (o *UmtLocationArea5G) GetUmtDuration() int32 {
 // GetUmtDurationOk returns a tuple with the UmtDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UmtLocationArea5G) GetUmtDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.UmtDuration) {
+	if o == nil || IsNil(o.UmtDuration) {
 		return nil, false
 	}
 	return o.UmtDuration, true
@@ -195,7 +95,7 @@ func (o *UmtLocationArea5G) GetUmtDurationOk() (*int32, bool) {
 
 // HasUmtDuration returns a boolean if a field has been set.
 func (o *UmtLocationArea5G) HasUmtDuration() bool {
-	if o != nil && !isNil(o.UmtDuration) {
+	if o != nil && !IsNil(o.UmtDuration) {
 		return true
 	}
 
@@ -208,7 +108,7 @@ func (o *UmtLocationArea5G) SetUmtDuration(v int32) {
 }
 
 func (o UmtLocationArea5G) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,19 +117,18 @@ func (o UmtLocationArea5G) MarshalJSON() ([]byte, error) {
 
 func (o UmtLocationArea5G) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GeographicAreas) {
-		toSerialize["geographicAreas"] = o.GeographicAreas
+	serializedLocationArea5G, errLocationArea5G := json.Marshal(o.LocationArea5G)
+	if errLocationArea5G != nil {
+		return map[string]interface{}{}, errLocationArea5G
 	}
-	if !isNil(o.CivicAddresses) {
-		toSerialize["civicAddresses"] = o.CivicAddresses
+	errLocationArea5G = json.Unmarshal([]byte(serializedLocationArea5G), &toSerialize)
+	if errLocationArea5G != nil {
+		return map[string]interface{}{}, errLocationArea5G
 	}
-	if !isNil(o.NwAreaInfo) {
-		toSerialize["nwAreaInfo"] = o.NwAreaInfo
-	}
-	if !isNil(o.UmtTime) {
+	if !IsNil(o.UmtTime) {
 		toSerialize["umtTime"] = o.UmtTime
 	}
-	if !isNil(o.UmtDuration) {
+	if !IsNil(o.UmtDuration) {
 		toSerialize["umtDuration"] = o.UmtDuration
 	}
 	return toSerialize, nil
@@ -270,5 +169,3 @@ func (v *NullableUmtLocationArea5G) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

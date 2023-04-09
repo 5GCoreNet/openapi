@@ -18,7 +18,7 @@ import (
 // ThresholdInfoThresholdValue - struct for ThresholdInfoThresholdValue
 type ThresholdInfoThresholdValue struct {
 	Float32 *float32
-	Int32 *int32
+	Int32   *int32
 }
 
 // float32AsThresholdInfoThresholdValue is a convenience function that returns float32 wrapped in ThresholdInfoThresholdValue
@@ -34,7 +34,6 @@ func Int32AsThresholdInfoThresholdValue(v *int32) ThresholdInfoThresholdValue {
 		Int32: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ThresholdInfoThresholdValue) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ThresholdInfoThresholdValue) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ThresholdInfoThresholdValue) GetActualInstance() (interface{}) {
+func (obj *ThresholdInfoThresholdValue) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableThresholdInfoThresholdValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Eecs_ServiceProvisioning
 
-API for ECS Service Provisioning. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ECS Service Provisioning. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ACServiceKPIs{}
 
 // ACServiceKPIs EAS details.
 type ACServiceKPIs struct {
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ConnBand *string `json:"connBand,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	ReqRate *int32 `json:"reqRate,omitempty"`
@@ -56,7 +56,7 @@ func NewACServiceKPIsWithDefaults() *ACServiceKPIs {
 
 // GetConnBand returns the ConnBand field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetConnBand() string {
-	if o == nil || isNil(o.ConnBand) {
+	if o == nil || IsNil(o.ConnBand) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ACServiceKPIs) GetConnBand() string {
 // GetConnBandOk returns a tuple with the ConnBand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetConnBandOk() (*string, bool) {
-	if o == nil || isNil(o.ConnBand) {
+	if o == nil || IsNil(o.ConnBand) {
 		return nil, false
 	}
 	return o.ConnBand, true
@@ -74,7 +74,7 @@ func (o *ACServiceKPIs) GetConnBandOk() (*string, bool) {
 
 // HasConnBand returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasConnBand() bool {
-	if o != nil && !isNil(o.ConnBand) {
+	if o != nil && !IsNil(o.ConnBand) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ACServiceKPIs) SetConnBand(v string) {
 
 // GetReqRate returns the ReqRate field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetReqRate() int32 {
-	if o == nil || isNil(o.ReqRate) {
+	if o == nil || IsNil(o.ReqRate) {
 		var ret int32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ACServiceKPIs) GetReqRate() int32 {
 // GetReqRateOk returns a tuple with the ReqRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetReqRateOk() (*int32, bool) {
-	if o == nil || isNil(o.ReqRate) {
+	if o == nil || IsNil(o.ReqRate) {
 		return nil, false
 	}
 	return o.ReqRate, true
@@ -106,7 +106,7 @@ func (o *ACServiceKPIs) GetReqRateOk() (*int32, bool) {
 
 // HasReqRate returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasReqRate() bool {
-	if o != nil && !isNil(o.ReqRate) {
+	if o != nil && !IsNil(o.ReqRate) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ACServiceKPIs) SetReqRate(v int32) {
 
 // GetRespTime returns the RespTime field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetRespTime() int32 {
-	if o == nil || isNil(o.RespTime) {
+	if o == nil || IsNil(o.RespTime) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ACServiceKPIs) GetRespTime() int32 {
 // GetRespTimeOk returns a tuple with the RespTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetRespTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.RespTime) {
+	if o == nil || IsNil(o.RespTime) {
 		return nil, false
 	}
 	return o.RespTime, true
@@ -138,7 +138,7 @@ func (o *ACServiceKPIs) GetRespTimeOk() (*int32, bool) {
 
 // HasRespTime returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasRespTime() bool {
-	if o != nil && !isNil(o.RespTime) {
+	if o != nil && !IsNil(o.RespTime) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ACServiceKPIs) SetRespTime(v int32) {
 
 // GetAvail returns the Avail field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetAvail() int32 {
-	if o == nil || isNil(o.Avail) {
+	if o == nil || IsNil(o.Avail) {
 		var ret int32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ACServiceKPIs) GetAvail() int32 {
 // GetAvailOk returns a tuple with the Avail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetAvailOk() (*int32, bool) {
-	if o == nil || isNil(o.Avail) {
+	if o == nil || IsNil(o.Avail) {
 		return nil, false
 	}
 	return o.Avail, true
@@ -170,7 +170,7 @@ func (o *ACServiceKPIs) GetAvailOk() (*int32, bool) {
 
 // HasAvail returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasAvail() bool {
-	if o != nil && !isNil(o.Avail) {
+	if o != nil && !IsNil(o.Avail) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ACServiceKPIs) SetAvail(v int32) {
 
 // GetReqComp returns the ReqComp field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetReqComp() string {
-	if o == nil || isNil(o.ReqComp) {
+	if o == nil || IsNil(o.ReqComp) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ACServiceKPIs) GetReqComp() string {
 // GetReqCompOk returns a tuple with the ReqComp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetReqCompOk() (*string, bool) {
-	if o == nil || isNil(o.ReqComp) {
+	if o == nil || IsNil(o.ReqComp) {
 		return nil, false
 	}
 	return o.ReqComp, true
@@ -202,7 +202,7 @@ func (o *ACServiceKPIs) GetReqCompOk() (*string, bool) {
 
 // HasReqComp returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasReqComp() bool {
-	if o != nil && !isNil(o.ReqComp) {
+	if o != nil && !IsNil(o.ReqComp) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ACServiceKPIs) SetReqComp(v string) {
 
 // GetReqGrapComp returns the ReqGrapComp field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetReqGrapComp() string {
-	if o == nil || isNil(o.ReqGrapComp) {
+	if o == nil || IsNil(o.ReqGrapComp) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ACServiceKPIs) GetReqGrapComp() string {
 // GetReqGrapCompOk returns a tuple with the ReqGrapComp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetReqGrapCompOk() (*string, bool) {
-	if o == nil || isNil(o.ReqGrapComp) {
+	if o == nil || IsNil(o.ReqGrapComp) {
 		return nil, false
 	}
 	return o.ReqGrapComp, true
@@ -234,7 +234,7 @@ func (o *ACServiceKPIs) GetReqGrapCompOk() (*string, bool) {
 
 // HasReqGrapComp returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasReqGrapComp() bool {
-	if o != nil && !isNil(o.ReqGrapComp) {
+	if o != nil && !IsNil(o.ReqGrapComp) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ACServiceKPIs) SetReqGrapComp(v string) {
 
 // GetReqMem returns the ReqMem field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetReqMem() string {
-	if o == nil || isNil(o.ReqMem) {
+	if o == nil || IsNil(o.ReqMem) {
 		var ret string
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ACServiceKPIs) GetReqMem() string {
 // GetReqMemOk returns a tuple with the ReqMem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetReqMemOk() (*string, bool) {
-	if o == nil || isNil(o.ReqMem) {
+	if o == nil || IsNil(o.ReqMem) {
 		return nil, false
 	}
 	return o.ReqMem, true
@@ -266,7 +266,7 @@ func (o *ACServiceKPIs) GetReqMemOk() (*string, bool) {
 
 // HasReqMem returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasReqMem() bool {
-	if o != nil && !isNil(o.ReqMem) {
+	if o != nil && !IsNil(o.ReqMem) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ACServiceKPIs) SetReqMem(v string) {
 
 // GetReqStrg returns the ReqStrg field value if set, zero value otherwise.
 func (o *ACServiceKPIs) GetReqStrg() string {
-	if o == nil || isNil(o.ReqStrg) {
+	if o == nil || IsNil(o.ReqStrg) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ACServiceKPIs) GetReqStrg() string {
 // GetReqStrgOk returns a tuple with the ReqStrg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACServiceKPIs) GetReqStrgOk() (*string, bool) {
-	if o == nil || isNil(o.ReqStrg) {
+	if o == nil || IsNil(o.ReqStrg) {
 		return nil, false
 	}
 	return o.ReqStrg, true
@@ -298,7 +298,7 @@ func (o *ACServiceKPIs) GetReqStrgOk() (*string, bool) {
 
 // HasReqStrg returns a boolean if a field has been set.
 func (o *ACServiceKPIs) HasReqStrg() bool {
-	if o != nil && !isNil(o.ReqStrg) {
+	if o != nil && !IsNil(o.ReqStrg) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *ACServiceKPIs) SetReqStrg(v string) {
 }
 
 func (o ACServiceKPIs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,28 +320,28 @@ func (o ACServiceKPIs) MarshalJSON() ([]byte, error) {
 
 func (o ACServiceKPIs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ConnBand) {
+	if !IsNil(o.ConnBand) {
 		toSerialize["connBand"] = o.ConnBand
 	}
-	if !isNil(o.ReqRate) {
+	if !IsNil(o.ReqRate) {
 		toSerialize["reqRate"] = o.ReqRate
 	}
-	if !isNil(o.RespTime) {
+	if !IsNil(o.RespTime) {
 		toSerialize["respTime"] = o.RespTime
 	}
-	if !isNil(o.Avail) {
+	if !IsNil(o.Avail) {
 		toSerialize["avail"] = o.Avail
 	}
-	if !isNil(o.ReqComp) {
+	if !IsNil(o.ReqComp) {
 		toSerialize["reqComp"] = o.ReqComp
 	}
-	if !isNil(o.ReqGrapComp) {
+	if !IsNil(o.ReqGrapComp) {
 		toSerialize["reqGrapComp"] = o.ReqGrapComp
 	}
-	if !isNil(o.ReqMem) {
+	if !IsNil(o.ReqMem) {
 		toSerialize["reqMem"] = o.ReqMem
 	}
-	if !isNil(o.ReqStrg) {
+	if !IsNil(o.ReqStrg) {
 		toSerialize["reqStrg"] = o.ReqStrg
 	}
 	return toSerialize, nil
@@ -382,5 +382,3 @@ func (v *NullableACServiceKPIs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

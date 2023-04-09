@@ -1265,7 +1265,10 @@ components:
       type: object
     CommunicationType:
       anyOf:
-      - $ref: '#/components/schemas/CommunicationType_anyOf'
+      - enum:
+        - REQUEST_RESPONSE
+        - SUBSCRIBE_NOTIFY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1305,7 +1308,13 @@ components:
       type: object
     Operation:
       anyOf:
-      - $ref: '#/components/schemas/Operation_anyOf'
+      - enum:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1318,7 +1327,10 @@ components:
         - DELETE: HTTP DELETE method
     Protocol:
       anyOf:
-      - $ref: '#/components/schemas/Protocol_anyOf'
+      - enum:
+        - HTTP_1_1
+        - HTTP_2
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1328,7 +1340,9 @@ components:
         - HTTP_2: HTTP version 2
     DataFormat:
       anyOf:
-      - $ref: '#/components/schemas/DataFormat_anyOf'
+      - enum:
+        - JSON
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1337,7 +1351,11 @@ components:
         - JSON: JavaScript Object Notation
     SecurityMethod:
       anyOf:
-      - $ref: '#/components/schemas/SecurityMethod_anyOf'
+      - enum:
+        - PSK
+        - PKI
+        - OAUTH
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1622,9 +1640,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1806,39 +1835,6 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
-    CommunicationType_anyOf:
-      enum:
-      - REQUEST_RESPONSE
-      - SUBSCRIBE_NOTIFY
-      type: string
-      example: null
-    Operation_anyOf:
-      enum:
-      - GET
-      - POST
-      - PUT
-      - PATCH
-      - DELETE
-      type: string
-      example: null
-    Protocol_anyOf:
-      enum:
-      - HTTP_1_1
-      - HTTP_2
-      type: string
-      example: null
-    DataFormat_anyOf:
-      enum:
-      - JSON
-      type: string
-      example: null
-    SecurityMethod_anyOf:
-      enum:
-      - PSK
-      - PKI
-      - OAUTH
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -1846,19 +1842,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

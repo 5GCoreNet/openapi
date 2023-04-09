@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService RetrieveTheRoamingInformationOfTheEPCDomainDocumentApi service
 type RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService service
 
 type ApiQueryRoamingInformationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiQueryRoamingInformationRequest) Execute() (*RoamingInfoUpdate, *http.Response, error) {
@@ -36,26 +35,27 @@ func (r ApiQueryRoamingInformationRequest) Execute() (*RoamingInfoUpdate, *http.
 /*
 QueryRoamingInformation Retrieves the Roaming Information of the EPC domain
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryRoamingInformationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryRoamingInformationRequest
 */
 func (a *RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService) QueryRoamingInformation(ctx context.Context, ueId string) ApiQueryRoamingInformationRequest {
 	return ApiQueryRoamingInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return RoamingInfoUpdate
+//
+//	@return RoamingInfoUpdate
 func (a *RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService) QueryRoamingInformationExecute(r ApiQueryRoamingInformationRequest) (*RoamingInfoUpdate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RoamingInfoUpdate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RoamingInfoUpdate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService.QueryRoamingInformation")
@@ -97,9 +97,9 @@ func (a *RetrieveTheRoamingInformationOfTheEPCDomainDocumentApiService) QueryRoa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

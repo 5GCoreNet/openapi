@@ -19,17 +19,12 @@ var _ MappedNullable = &NgeirFunctionSingleAllOfAttributes{}
 
 // NgeirFunctionSingleAllOfAttributes struct for NgeirFunctionSingleAllOfAttributes
 type NgeirFunctionSingleAllOfAttributes struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	VnfParametersList []VnfParameter `json:"vnfParametersList,omitempty"`
-	PeeParametersList []PeeParameter `json:"peeParametersList,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
-	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	SupportedTraceMetrics []string `json:"supportedTraceMetrics,omitempty"`
-	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
+	ManagedFunctionAttr
+	PlmnIdList       []PlmnId          `json:"plmnIdList,omitempty"`
+	SBIFqdn          *string           `json:"sBIFqdn,omitempty"`
+	SnssaiList       []Snssai          `json:"snssaiList,omitempty"`
 	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
+	CommModelList    []CommModel       `json:"commModelList,omitempty"`
 }
 
 // NewNgeirFunctionSingleAllOfAttributes instantiates a new NgeirFunctionSingleAllOfAttributes object
@@ -47,198 +42,6 @@ func NewNgeirFunctionSingleAllOfAttributes() *NgeirFunctionSingleAllOfAttributes
 func NewNgeirFunctionSingleAllOfAttributesWithDefaults() *NgeirFunctionSingleAllOfAttributes {
 	this := NgeirFunctionSingleAllOfAttributes{}
 	return &this
-}
-
-// GetUserLabel returns the UserLabel field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
-		var ret string
-		return ret
-	}
-	return *o.UserLabel
-}
-
-// GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
-		return nil, false
-	}
-	return o.UserLabel, true
-}
-
-// HasUserLabel returns a boolean if a field has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserLabel gets a reference to the given string and assigns it to the UserLabel field.
-func (o *NgeirFunctionSingleAllOfAttributes) SetUserLabel(v string) {
-	o.UserLabel = &v
-}
-
-// GetVnfParametersList returns the VnfParametersList field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOfAttributes) GetVnfParametersList() []VnfParameter {
-	if o == nil || IsNil(o.VnfParametersList) {
-		var ret []VnfParameter
-		return ret
-	}
-	return o.VnfParametersList
-}
-
-// GetVnfParametersListOk returns a tuple with the VnfParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) GetVnfParametersListOk() ([]VnfParameter, bool) {
-	if o == nil || IsNil(o.VnfParametersList) {
-		return nil, false
-	}
-	return o.VnfParametersList, true
-}
-
-// HasVnfParametersList returns a boolean if a field has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) HasVnfParametersList() bool {
-	if o != nil && !IsNil(o.VnfParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetVnfParametersList gets a reference to the given []VnfParameter and assigns it to the VnfParametersList field.
-func (o *NgeirFunctionSingleAllOfAttributes) SetVnfParametersList(v []VnfParameter) {
-	o.VnfParametersList = v
-}
-
-// GetPeeParametersList returns the PeeParametersList field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOfAttributes) GetPeeParametersList() []PeeParameter {
-	if o == nil || IsNil(o.PeeParametersList) {
-		var ret []PeeParameter
-		return ret
-	}
-	return o.PeeParametersList
-}
-
-// GetPeeParametersListOk returns a tuple with the PeeParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) GetPeeParametersListOk() ([]PeeParameter, bool) {
-	if o == nil || IsNil(o.PeeParametersList) {
-		return nil, false
-	}
-	return o.PeeParametersList, true
-}
-
-// HasPeeParametersList returns a boolean if a field has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) HasPeeParametersList() bool {
-	if o != nil && !IsNil(o.PeeParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetPeeParametersList gets a reference to the given []PeeParameter and assigns it to the PeeParametersList field.
-func (o *NgeirFunctionSingleAllOfAttributes) SetPeeParametersList(v []PeeParameter) {
-	o.PeeParametersList = v
-}
-
-// GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOfAttributes) GetPriorityLabel() int32 {
-	if o == nil || IsNil(o.PriorityLabel) {
-		var ret int32
-		return ret
-	}
-	return *o.PriorityLabel
-}
-
-// GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLabel) {
-		return nil, false
-	}
-	return o.PriorityLabel, true
-}
-
-// HasPriorityLabel returns a boolean if a field has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) HasPriorityLabel() bool {
-	if o != nil && !IsNil(o.PriorityLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetPriorityLabel gets a reference to the given int32 and assigns it to the PriorityLabel field.
-func (o *NgeirFunctionSingleAllOfAttributes) SetPriorityLabel(v int32) {
-	o.PriorityLabel = &v
-}
-
-// GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOfAttributes) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		var ret []SupportedPerfMetricGroup
-		return ret
-	}
-	return o.SupportedPerfMetricGroups
-}
-
-// GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		return nil, false
-	}
-	return o.SupportedPerfMetricGroups, true
-}
-
-// HasSupportedPerfMetricGroups returns a boolean if a field has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedPerfMetricGroups gets a reference to the given []SupportedPerfMetricGroup and assigns it to the SupportedPerfMetricGroups field.
-func (o *NgeirFunctionSingleAllOfAttributes) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGroup) {
-	o.SupportedPerfMetricGroups = v
-}
-
-// GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOfAttributes) GetSupportedTraceMetrics() []string {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		var ret []string
-		return ret
-	}
-	return o.SupportedTraceMetrics
-}
-
-// GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		return nil, false
-	}
-	return o.SupportedTraceMetrics, true
-}
-
-// HasSupportedTraceMetrics returns a boolean if a field has been set.
-func (o *NgeirFunctionSingleAllOfAttributes) HasSupportedTraceMetrics() bool {
-	if o != nil && !IsNil(o.SupportedTraceMetrics) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedTraceMetrics gets a reference to the given []string and assigns it to the SupportedTraceMetrics field.
-func (o *NgeirFunctionSingleAllOfAttributes) SetSupportedTraceMetrics(v []string) {
-	o.SupportedTraceMetrics = v
 }
 
 // GetPlmnIdList returns the PlmnIdList field value if set, zero value otherwise.
@@ -402,7 +205,7 @@ func (o *NgeirFunctionSingleAllOfAttributes) SetCommModelList(v []CommModel) {
 }
 
 func (o NgeirFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -411,23 +214,13 @@ func (o NgeirFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o NgeirFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
-		toSerialize["userLabel"] = o.UserLabel
+	serializedManagedFunctionAttr, errManagedFunctionAttr := json.Marshal(o.ManagedFunctionAttr)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
-	if !IsNil(o.VnfParametersList) {
-		toSerialize["vnfParametersList"] = o.VnfParametersList
-	}
-	if !IsNil(o.PeeParametersList) {
-		toSerialize["peeParametersList"] = o.PeeParametersList
-	}
-	if !IsNil(o.PriorityLabel) {
-		toSerialize["priorityLabel"] = o.PriorityLabel
-	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
-		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
-	}
-	if !IsNil(o.SupportedTraceMetrics) {
-		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
+	errManagedFunctionAttr = json.Unmarshal([]byte(serializedManagedFunctionAttr), &toSerialize)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
 	if !IsNil(o.PlmnIdList) {
 		toSerialize["plmnIdList"] = o.PlmnIdList
@@ -482,5 +275,3 @@ func (v *NullableNgeirFunctionSingleAllOfAttributes) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

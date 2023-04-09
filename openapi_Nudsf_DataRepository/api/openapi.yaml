@@ -4019,17 +4019,32 @@ components:
       type: object
     RecordOperation:
       anyOf:
-      - $ref: '#/components/schemas/RecordOperation_anyOf'
+      - enum:
+        - CREATED
+        - UPDATED
+        - DELETED
+        type: string
       - type: string
       description: Indicate operation made on a record
     ConditionOperator:
       anyOf:
-      - $ref: '#/components/schemas/ConditionOperator_anyOf'
+      - enum:
+        - AND
+        - OR
+        - NOT
+        type: string
       - type: string
       description: TBD
     ComparisonOperator:
       anyOf:
-      - $ref: '#/components/schemas/ComparisonOperator_anyOf'
+      - enum:
+        - EQ
+        - NEQ
+        - GT
+        - GTE
+        - LT
+        - LTE
+        type: string
       - type: string
       description: TBD
     SearchExpression:
@@ -4143,12 +4158,21 @@ components:
       type: string
     KeyType:
       anyOf:
-      - $ref: '#/components/schemas/KeyType_anyOf'
+      - enum:
+        - UNIQUE_KEY
+        - SEARCH_KEY
+        - COUNT_KEY
+        - SEARCH_AND_COUNT_KEY
+        - OTHER_TAG
+        type: string
       - type: string
       description: Represents the type of a key.
     RetrieveRecords:
       anyOf:
-      - $ref: '#/components/schemas/RetrieveRecords_anyOf'
+      - enum:
+        - ONLY_META
+        - META_AND_BLOCKS
+        type: string
       - type: string
       description: Indicates the data to be retrieved.
     NotificationInfo:
@@ -4301,7 +4325,14 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - $ref: '#/components/schemas/PatchOperation_anyOf'
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -4492,7 +4523,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -4598,115 +4686,6 @@ components:
             $ref: '#/components/schemas/Block'
           type: array
       type: object
-    RecordOperation_anyOf:
-      enum:
-      - CREATED
-      - UPDATED
-      - DELETED
-      type: string
-      example: null
-    ConditionOperator_anyOf:
-      enum:
-      - AND
-      - OR
-      - NOT
-      type: string
-      example: null
-    ComparisonOperator_anyOf:
-      enum:
-      - EQ
-      - NEQ
-      - GT
-      - GTE
-      - LT
-      - LTE
-      type: string
-      example: null
-    KeyType_anyOf:
-      enum:
-      - UNIQUE_KEY
-      - SEARCH_KEY
-      - COUNT_KEY
-      - SEARCH_AND_COUNT_KEY
-      - OTHER_TAG
-      type: string
-      example: null
-    RetrieveRecords_anyOf:
-      enum:
-      - ONLY_META
-      - META_AND_BLOCKS
-      type: string
-      example: null
-    PatchOperation_anyOf:
-      enum:
-      - add
-      - copy
-      - move
-      - remove
-      - replace
-      - test
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

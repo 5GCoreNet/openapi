@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,19 +19,19 @@ var _ MappedNullable = &ObservedRedundantTransExp{}
 
 // ObservedRedundantTransExp Represents the observed redundant transmission experience related information.
 type ObservedRedundantTransExp struct {
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
 	AvgPktDropRateUl *int32 `json:"avgPktDropRateUl,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
 	VarPktDropRateUl *float32 `json:"varPktDropRateUl,omitempty"`
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
 	AvgPktDropRateDl *int32 `json:"avgPktDropRateDl,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
 	VarPktDropRateDl *float32 `json:"varPktDropRateDl,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AvgPktDelayUl *int32 `json:"avgPktDelayUl,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
 	VarPktDelayUl *float32 `json:"varPktDelayUl,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AvgPktDelayDl *int32 `json:"avgPktDelayDl,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
 	VarPktDelayDl *float32 `json:"varPktDelayDl,omitempty"`
@@ -56,7 +56,7 @@ func NewObservedRedundantTransExpWithDefaults() *ObservedRedundantTransExp {
 
 // GetAvgPktDropRateUl returns the AvgPktDropRateUl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetAvgPktDropRateUl() int32 {
-	if o == nil || isNil(o.AvgPktDropRateUl) {
+	if o == nil || IsNil(o.AvgPktDropRateUl) {
 		var ret int32
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDropRateUl() int32 {
 // GetAvgPktDropRateUlOk returns a tuple with the AvgPktDropRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetAvgPktDropRateUlOk() (*int32, bool) {
-	if o == nil || isNil(o.AvgPktDropRateUl) {
+	if o == nil || IsNil(o.AvgPktDropRateUl) {
 		return nil, false
 	}
 	return o.AvgPktDropRateUl, true
@@ -74,7 +74,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDropRateUlOk() (*int32, bool) {
 
 // HasAvgPktDropRateUl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasAvgPktDropRateUl() bool {
-	if o != nil && !isNil(o.AvgPktDropRateUl) {
+	if o != nil && !IsNil(o.AvgPktDropRateUl) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ObservedRedundantTransExp) SetAvgPktDropRateUl(v int32) {
 
 // GetVarPktDropRateUl returns the VarPktDropRateUl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetVarPktDropRateUl() float32 {
-	if o == nil || isNil(o.VarPktDropRateUl) {
+	if o == nil || IsNil(o.VarPktDropRateUl) {
 		var ret float32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDropRateUl() float32 {
 // GetVarPktDropRateUlOk returns a tuple with the VarPktDropRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetVarPktDropRateUlOk() (*float32, bool) {
-	if o == nil || isNil(o.VarPktDropRateUl) {
+	if o == nil || IsNil(o.VarPktDropRateUl) {
 		return nil, false
 	}
 	return o.VarPktDropRateUl, true
@@ -106,7 +106,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDropRateUlOk() (*float32, bool) {
 
 // HasVarPktDropRateUl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasVarPktDropRateUl() bool {
-	if o != nil && !isNil(o.VarPktDropRateUl) {
+	if o != nil && !IsNil(o.VarPktDropRateUl) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ObservedRedundantTransExp) SetVarPktDropRateUl(v float32) {
 
 // GetAvgPktDropRateDl returns the AvgPktDropRateDl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetAvgPktDropRateDl() int32 {
-	if o == nil || isNil(o.AvgPktDropRateDl) {
+	if o == nil || IsNil(o.AvgPktDropRateDl) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDropRateDl() int32 {
 // GetAvgPktDropRateDlOk returns a tuple with the AvgPktDropRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetAvgPktDropRateDlOk() (*int32, bool) {
-	if o == nil || isNil(o.AvgPktDropRateDl) {
+	if o == nil || IsNil(o.AvgPktDropRateDl) {
 		return nil, false
 	}
 	return o.AvgPktDropRateDl, true
@@ -138,7 +138,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDropRateDlOk() (*int32, bool) {
 
 // HasAvgPktDropRateDl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasAvgPktDropRateDl() bool {
-	if o != nil && !isNil(o.AvgPktDropRateDl) {
+	if o != nil && !IsNil(o.AvgPktDropRateDl) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ObservedRedundantTransExp) SetAvgPktDropRateDl(v int32) {
 
 // GetVarPktDropRateDl returns the VarPktDropRateDl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetVarPktDropRateDl() float32 {
-	if o == nil || isNil(o.VarPktDropRateDl) {
+	if o == nil || IsNil(o.VarPktDropRateDl) {
 		var ret float32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDropRateDl() float32 {
 // GetVarPktDropRateDlOk returns a tuple with the VarPktDropRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetVarPktDropRateDlOk() (*float32, bool) {
-	if o == nil || isNil(o.VarPktDropRateDl) {
+	if o == nil || IsNil(o.VarPktDropRateDl) {
 		return nil, false
 	}
 	return o.VarPktDropRateDl, true
@@ -170,7 +170,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDropRateDlOk() (*float32, bool) {
 
 // HasVarPktDropRateDl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasVarPktDropRateDl() bool {
-	if o != nil && !isNil(o.VarPktDropRateDl) {
+	if o != nil && !IsNil(o.VarPktDropRateDl) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ObservedRedundantTransExp) SetVarPktDropRateDl(v float32) {
 
 // GetAvgPktDelayUl returns the AvgPktDelayUl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetAvgPktDelayUl() int32 {
-	if o == nil || isNil(o.AvgPktDelayUl) {
+	if o == nil || IsNil(o.AvgPktDelayUl) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDelayUl() int32 {
 // GetAvgPktDelayUlOk returns a tuple with the AvgPktDelayUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetAvgPktDelayUlOk() (*int32, bool) {
-	if o == nil || isNil(o.AvgPktDelayUl) {
+	if o == nil || IsNil(o.AvgPktDelayUl) {
 		return nil, false
 	}
 	return o.AvgPktDelayUl, true
@@ -202,7 +202,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDelayUlOk() (*int32, bool) {
 
 // HasAvgPktDelayUl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasAvgPktDelayUl() bool {
-	if o != nil && !isNil(o.AvgPktDelayUl) {
+	if o != nil && !IsNil(o.AvgPktDelayUl) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ObservedRedundantTransExp) SetAvgPktDelayUl(v int32) {
 
 // GetVarPktDelayUl returns the VarPktDelayUl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetVarPktDelayUl() float32 {
-	if o == nil || isNil(o.VarPktDelayUl) {
+	if o == nil || IsNil(o.VarPktDelayUl) {
 		var ret float32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDelayUl() float32 {
 // GetVarPktDelayUlOk returns a tuple with the VarPktDelayUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetVarPktDelayUlOk() (*float32, bool) {
-	if o == nil || isNil(o.VarPktDelayUl) {
+	if o == nil || IsNil(o.VarPktDelayUl) {
 		return nil, false
 	}
 	return o.VarPktDelayUl, true
@@ -234,7 +234,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDelayUlOk() (*float32, bool) {
 
 // HasVarPktDelayUl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasVarPktDelayUl() bool {
-	if o != nil && !isNil(o.VarPktDelayUl) {
+	if o != nil && !IsNil(o.VarPktDelayUl) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ObservedRedundantTransExp) SetVarPktDelayUl(v float32) {
 
 // GetAvgPktDelayDl returns the AvgPktDelayDl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetAvgPktDelayDl() int32 {
-	if o == nil || isNil(o.AvgPktDelayDl) {
+	if o == nil || IsNil(o.AvgPktDelayDl) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDelayDl() int32 {
 // GetAvgPktDelayDlOk returns a tuple with the AvgPktDelayDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetAvgPktDelayDlOk() (*int32, bool) {
-	if o == nil || isNil(o.AvgPktDelayDl) {
+	if o == nil || IsNil(o.AvgPktDelayDl) {
 		return nil, false
 	}
 	return o.AvgPktDelayDl, true
@@ -266,7 +266,7 @@ func (o *ObservedRedundantTransExp) GetAvgPktDelayDlOk() (*int32, bool) {
 
 // HasAvgPktDelayDl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasAvgPktDelayDl() bool {
-	if o != nil && !isNil(o.AvgPktDelayDl) {
+	if o != nil && !IsNil(o.AvgPktDelayDl) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ObservedRedundantTransExp) SetAvgPktDelayDl(v int32) {
 
 // GetVarPktDelayDl returns the VarPktDelayDl field value if set, zero value otherwise.
 func (o *ObservedRedundantTransExp) GetVarPktDelayDl() float32 {
-	if o == nil || isNil(o.VarPktDelayDl) {
+	if o == nil || IsNil(o.VarPktDelayDl) {
 		var ret float32
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDelayDl() float32 {
 // GetVarPktDelayDlOk returns a tuple with the VarPktDelayDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObservedRedundantTransExp) GetVarPktDelayDlOk() (*float32, bool) {
-	if o == nil || isNil(o.VarPktDelayDl) {
+	if o == nil || IsNil(o.VarPktDelayDl) {
 		return nil, false
 	}
 	return o.VarPktDelayDl, true
@@ -298,7 +298,7 @@ func (o *ObservedRedundantTransExp) GetVarPktDelayDlOk() (*float32, bool) {
 
 // HasVarPktDelayDl returns a boolean if a field has been set.
 func (o *ObservedRedundantTransExp) HasVarPktDelayDl() bool {
-	if o != nil && !isNil(o.VarPktDelayDl) {
+	if o != nil && !IsNil(o.VarPktDelayDl) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *ObservedRedundantTransExp) SetVarPktDelayDl(v float32) {
 }
 
 func (o ObservedRedundantTransExp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,28 +320,28 @@ func (o ObservedRedundantTransExp) MarshalJSON() ([]byte, error) {
 
 func (o ObservedRedundantTransExp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AvgPktDropRateUl) {
+	if !IsNil(o.AvgPktDropRateUl) {
 		toSerialize["avgPktDropRateUl"] = o.AvgPktDropRateUl
 	}
-	if !isNil(o.VarPktDropRateUl) {
+	if !IsNil(o.VarPktDropRateUl) {
 		toSerialize["varPktDropRateUl"] = o.VarPktDropRateUl
 	}
-	if !isNil(o.AvgPktDropRateDl) {
+	if !IsNil(o.AvgPktDropRateDl) {
 		toSerialize["avgPktDropRateDl"] = o.AvgPktDropRateDl
 	}
-	if !isNil(o.VarPktDropRateDl) {
+	if !IsNil(o.VarPktDropRateDl) {
 		toSerialize["varPktDropRateDl"] = o.VarPktDropRateDl
 	}
-	if !isNil(o.AvgPktDelayUl) {
+	if !IsNil(o.AvgPktDelayUl) {
 		toSerialize["avgPktDelayUl"] = o.AvgPktDelayUl
 	}
-	if !isNil(o.VarPktDelayUl) {
+	if !IsNil(o.VarPktDelayUl) {
 		toSerialize["varPktDelayUl"] = o.VarPktDelayUl
 	}
-	if !isNil(o.AvgPktDelayDl) {
+	if !IsNil(o.AvgPktDelayDl) {
 		toSerialize["avgPktDelayDl"] = o.AvgPktDelayDl
 	}
-	if !isNil(o.VarPktDelayDl) {
+	if !IsNil(o.VarPktDelayDl) {
 		toSerialize["varPktDelayDl"] = o.VarPktDelayDl
 	}
 	return toSerialize, nil
@@ -382,5 +382,3 @@ func (v *NullableObservedRedundantTransExp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

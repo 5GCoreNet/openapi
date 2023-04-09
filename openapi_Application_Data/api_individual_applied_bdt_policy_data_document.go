@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualAppliedBDTPolicyDataDocumentApiService IndividualAppliedBDTPolicyDataDocumentApi service
 type IndividualAppliedBDTPolicyDataDocumentApiService service
 
 type ApiCreateIndividualAppliedBdtPolicyDataRequest struct {
-	ctx context.Context
-	ApiService *IndividualAppliedBDTPolicyDataDocumentApiService
-	bdtPolicyId string
+	ctx           context.Context
+	ApiService    *IndividualAppliedBDTPolicyDataDocumentApiService
+	bdtPolicyId   string
 	bdtPolicyData *BdtPolicyData
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateIndividualAppliedBdtPolicyDataRequest) Execute() (*BdtPolicyDat
 /*
 CreateIndividualAppliedBdtPolicyData Create an individual applied BDT Policy Data resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bdtPolicyId The Identifier of an Individual Applied BDT Policy Data to be created or updated. It shall apply the format of Data type string. 
- @return ApiCreateIndividualAppliedBdtPolicyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bdtPolicyId The Identifier of an Individual Applied BDT Policy Data to be created or updated. It shall apply the format of Data type string.
+	@return ApiCreateIndividualAppliedBdtPolicyDataRequest
 */
 func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppliedBdtPolicyData(ctx context.Context, bdtPolicyId string) ApiCreateIndividualAppliedBdtPolicyDataRequest {
 	return ApiCreateIndividualAppliedBdtPolicyDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		bdtPolicyId: bdtPolicyId,
 	}
 }
 
 // Execute executes the request
-//  @return BdtPolicyData
+//
+//	@return BdtPolicyData
 func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppliedBdtPolicyDataExecute(r ApiCreateIndividualAppliedBdtPolicyDataRequest) (*BdtPolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BdtPolicyData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BdtPolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAppliedBDTPolicyDataDocumentApiService.CreateIndividualAppliedBdtPolicyData")
@@ -108,9 +108,9 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -127,8 +127,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -138,8 +138,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -149,8 +149,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -160,8 +160,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -171,8 +171,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -182,8 +182,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -193,8 +193,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -204,8 +204,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -215,8 +215,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -226,8 +226,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -237,8 +237,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -248,8 +248,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -268,8 +268,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) CreateIndividualAppli
 }
 
 type ApiDeleteIndividualAppliedBdtPolicyDataRequest struct {
-	ctx context.Context
-	ApiService *IndividualAppliedBDTPolicyDataDocumentApiService
+	ctx         context.Context
+	ApiService  *IndividualAppliedBDTPolicyDataDocumentApiService
 	bdtPolicyId string
 }
 
@@ -280,14 +280,14 @@ func (r ApiDeleteIndividualAppliedBdtPolicyDataRequest) Execute() (*http.Respons
 /*
 DeleteIndividualAppliedBdtPolicyData Delete an individual Applied BDT Policy Data resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bdtPolicyId The Identifier of an Individual Applied BDT Policy Data to be deleted. It shall apply the format of Data type string. 
- @return ApiDeleteIndividualAppliedBdtPolicyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bdtPolicyId The Identifier of an Individual Applied BDT Policy Data to be deleted. It shall apply the format of Data type string.
+	@return ApiDeleteIndividualAppliedBdtPolicyDataRequest
 */
 func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppliedBdtPolicyData(ctx context.Context, bdtPolicyId string) ApiDeleteIndividualAppliedBdtPolicyDataRequest {
 	return ApiDeleteIndividualAppliedBdtPolicyDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		bdtPolicyId: bdtPolicyId,
 	}
 }
@@ -295,9 +295,9 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 // Execute executes the request
 func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppliedBdtPolicyDataExecute(r ApiDeleteIndividualAppliedBdtPolicyDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAppliedBDTPolicyDataDocumentApiService.DeleteIndividualAppliedBdtPolicyData")
@@ -339,9 +339,9 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -358,8 +358,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -369,8 +369,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -380,8 +380,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -391,8 +391,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -402,8 +402,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -413,8 +413,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -424,8 +424,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -435,8 +435,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -446,9 +446,9 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) DeleteIndividualAppli
 }
 
 type ApiUpdateIndividualAppliedBdtPolicyDataRequest struct {
-	ctx context.Context
-	ApiService *IndividualAppliedBDTPolicyDataDocumentApiService
-	bdtPolicyId string
+	ctx                context.Context
+	ApiService         *IndividualAppliedBDTPolicyDataDocumentApiService
+	bdtPolicyId        string
 	bdtPolicyDataPatch *BdtPolicyDataPatch
 }
 
@@ -464,26 +464,27 @@ func (r ApiUpdateIndividualAppliedBdtPolicyDataRequest) Execute() (*BdtPolicyDat
 /*
 UpdateIndividualAppliedBdtPolicyData Modify part of the properties of an individual Applied BDT Policy Data resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bdtPolicyId The Identifier of an Individual Applied BDT Policy Data to be updated. It shall apply the format of Data type string. 
- @return ApiUpdateIndividualAppliedBdtPolicyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bdtPolicyId The Identifier of an Individual Applied BDT Policy Data to be updated. It shall apply the format of Data type string.
+	@return ApiUpdateIndividualAppliedBdtPolicyDataRequest
 */
 func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppliedBdtPolicyData(ctx context.Context, bdtPolicyId string) ApiUpdateIndividualAppliedBdtPolicyDataRequest {
 	return ApiUpdateIndividualAppliedBdtPolicyDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		bdtPolicyId: bdtPolicyId,
 	}
 }
 
 // Execute executes the request
-//  @return BdtPolicyData
+//
+//	@return BdtPolicyData
 func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppliedBdtPolicyDataExecute(r ApiUpdateIndividualAppliedBdtPolicyDataRequest) (*BdtPolicyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BdtPolicyData
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BdtPolicyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAppliedBDTPolicyDataDocumentApiService.UpdateIndividualAppliedBdtPolicyData")
@@ -530,9 +531,9 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -549,8 +550,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -560,8 +561,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -571,8 +572,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -582,8 +583,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -593,8 +594,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -604,8 +605,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -615,8 +616,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -626,8 +627,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -637,8 +638,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -648,8 +649,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -659,8 +660,8 @@ func (a *IndividualAppliedBDTPolicyDataDocumentApiService) UpdateIndividualAppli
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

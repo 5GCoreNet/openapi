@@ -18,11 +18,11 @@ import (
 // RadioNetworkExpectationObjectObjectContextsInner - struct for RadioNetworkExpectationObjectObjectContextsInner
 type RadioNetworkExpectationObjectObjectContextsInner struct {
 	CoverageAreaPolygonContext *CoverageAreaPolygonContext
-	CoverageTACContext *CoverageTACContext
-	NRFqBandContext *NRFqBandContext
-	ObjectContext *ObjectContext
-	PLMNContext *PLMNContext
-	RATContext *RATContext
+	CoverageTACContext         *CoverageTACContext
+	NRFqBandContext            *NRFqBandContext
+	ObjectContext              *ObjectContext
+	PLMNContext                *PLMNContext
+	RATContext                 *RATContext
 }
 
 // CoverageAreaPolygonContextAsRadioNetworkExpectationObjectObjectContextsInner is a convenience function that returns CoverageAreaPolygonContext wrapped in RadioNetworkExpectationObjectObjectContextsInner
@@ -66,7 +66,6 @@ func RATContextAsRadioNetworkExpectationObjectObjectContextsInner(v *RATContext)
 		RATContext: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RadioNetworkExpectationObjectObjectContextsInner) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src RadioNetworkExpectationObjectObjectContextsInner) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *RadioNetworkExpectationObjectObjectContextsInner) GetActualInstance() (interface{}) {
+func (obj *RadioNetworkExpectationObjectObjectContextsInner) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableRadioNetworkExpectationObjectObjectContextsInner) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

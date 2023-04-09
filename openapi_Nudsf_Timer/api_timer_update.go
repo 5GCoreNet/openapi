@@ -1,7 +1,7 @@
 /*
 Nudsf_Timer
 
-Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nudsf_Timer
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // TimerUpdateApiService TimerUpdateApi service
 type TimerUpdateApiService service
 
 type ApiUpdateTimerRequest struct {
-	ctx context.Context
-	ApiService *TimerUpdateApiService
-	realmId string
-	storageId string
-	timerId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *TimerUpdateApiService
+	realmId           string
+	storageId         string
+	timerId           string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -54,30 +53,31 @@ UpdateTimer Timer modification
 
 update a specific Timer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param timerId Identifier of the Timer
- @return ApiUpdateTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param timerId Identifier of the Timer
+	@return ApiUpdateTimerRequest
 */
 func (a *TimerUpdateApiService) UpdateTimer(ctx context.Context, realmId string, storageId string, timerId string) ApiUpdateTimerRequest {
 	return ApiUpdateTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
-		timerId: timerId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
+		timerId:    timerId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimerUpdateApiService.UpdateTimer")
@@ -101,7 +101,7 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -132,9 +132,9 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -151,8 +151,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -162,8 +162,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -173,8 +173,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -184,8 +184,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -195,8 +195,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -206,8 +206,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -217,8 +217,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -228,8 +228,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -239,8 +239,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -250,8 +250,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -261,8 +261,8 @@ func (a *TimerUpdateApiService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*Pa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

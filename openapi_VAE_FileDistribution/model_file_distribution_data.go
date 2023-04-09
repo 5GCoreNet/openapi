@@ -1,7 +1,7 @@
 /*
 VAE_FileDistribution
 
-API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,17 +20,17 @@ var _ MappedNullable = &FileDistributionData{}
 // FileDistributionData Represents an individual File Distribution resource for a V2X group ID.
 type FileDistributionData struct {
 	// Represents the group ID for which a V2X message is addressed.
-	GroupId *string `json:"groupId,omitempty"`
-	FileLists []FileList `json:"fileLists"`
-	ServiceClass *string `json:"serviceClass,omitempty"`
-	GeoArea GeographicArea `json:"geoArea"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	GroupId      *string        `json:"groupId,omitempty"`
+	FileLists    []FileList     `json:"fileLists"`
+	ServiceClass *string        `json:"serviceClass,omitempty"`
+	GeoArea      GeographicArea `json:"geoArea"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxBitrate string `json:"maxBitrate"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	MaxDelay int32 `json:"maxDelay"`
-	LocalMbmsInfo *LocalMbmsInfo `json:"localMbmsInfo,omitempty"`
-	LocalMbmsActInd *bool `json:"localMbmsActInd,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	MaxDelay        int32          `json:"maxDelay"`
+	LocalMbmsInfo   *LocalMbmsInfo `json:"localMbmsInfo,omitempty"`
+	LocalMbmsActInd *bool          `json:"localMbmsActInd,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -57,7 +57,7 @@ func NewFileDistributionDataWithDefaults() *FileDistributionData {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *FileDistributionData) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *FileDistributionData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -75,7 +75,7 @@ func (o *FileDistributionData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *FileDistributionData) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *FileDistributionData) SetFileLists(v []FileList) {
 
 // GetServiceClass returns the ServiceClass field value if set, zero value otherwise.
 func (o *FileDistributionData) GetServiceClass() string {
-	if o == nil || isNil(o.ServiceClass) {
+	if o == nil || IsNil(o.ServiceClass) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *FileDistributionData) GetServiceClass() string {
 // GetServiceClassOk returns a tuple with the ServiceClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetServiceClassOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceClass) {
+	if o == nil || IsNil(o.ServiceClass) {
 		return nil, false
 	}
 	return o.ServiceClass, true
@@ -131,7 +131,7 @@ func (o *FileDistributionData) GetServiceClassOk() (*string, bool) {
 
 // HasServiceClass returns a boolean if a field has been set.
 func (o *FileDistributionData) HasServiceClass() bool {
-	if o != nil && !isNil(o.ServiceClass) {
+	if o != nil && !IsNil(o.ServiceClass) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *FileDistributionData) SetMaxDelay(v int32) {
 
 // GetLocalMbmsInfo returns the LocalMbmsInfo field value if set, zero value otherwise.
 func (o *FileDistributionData) GetLocalMbmsInfo() LocalMbmsInfo {
-	if o == nil || isNil(o.LocalMbmsInfo) {
+	if o == nil || IsNil(o.LocalMbmsInfo) {
 		var ret LocalMbmsInfo
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *FileDistributionData) GetLocalMbmsInfo() LocalMbmsInfo {
 // GetLocalMbmsInfoOk returns a tuple with the LocalMbmsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetLocalMbmsInfoOk() (*LocalMbmsInfo, bool) {
-	if o == nil || isNil(o.LocalMbmsInfo) {
+	if o == nil || IsNil(o.LocalMbmsInfo) {
 		return nil, false
 	}
 	return o.LocalMbmsInfo, true
@@ -235,7 +235,7 @@ func (o *FileDistributionData) GetLocalMbmsInfoOk() (*LocalMbmsInfo, bool) {
 
 // HasLocalMbmsInfo returns a boolean if a field has been set.
 func (o *FileDistributionData) HasLocalMbmsInfo() bool {
-	if o != nil && !isNil(o.LocalMbmsInfo) {
+	if o != nil && !IsNil(o.LocalMbmsInfo) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *FileDistributionData) SetLocalMbmsInfo(v LocalMbmsInfo) {
 
 // GetLocalMbmsActInd returns the LocalMbmsActInd field value if set, zero value otherwise.
 func (o *FileDistributionData) GetLocalMbmsActInd() bool {
-	if o == nil || isNil(o.LocalMbmsActInd) {
+	if o == nil || IsNil(o.LocalMbmsActInd) {
 		var ret bool
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *FileDistributionData) GetLocalMbmsActInd() bool {
 // GetLocalMbmsActIndOk returns a tuple with the LocalMbmsActInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetLocalMbmsActIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LocalMbmsActInd) {
+	if o == nil || IsNil(o.LocalMbmsActInd) {
 		return nil, false
 	}
 	return o.LocalMbmsActInd, true
@@ -267,7 +267,7 @@ func (o *FileDistributionData) GetLocalMbmsActIndOk() (*bool, bool) {
 
 // HasLocalMbmsActInd returns a boolean if a field has been set.
 func (o *FileDistributionData) HasLocalMbmsActInd() bool {
-	if o != nil && !isNil(o.LocalMbmsActInd) {
+	if o != nil && !IsNil(o.LocalMbmsActInd) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *FileDistributionData) SetLocalMbmsActInd(v bool) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *FileDistributionData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *FileDistributionData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -299,7 +299,7 @@ func (o *FileDistributionData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *FileDistributionData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *FileDistributionData) SetSuppFeat(v string) {
 }
 
 func (o FileDistributionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -321,23 +321,23 @@ func (o FileDistributionData) MarshalJSON() ([]byte, error) {
 
 func (o FileDistributionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
 	toSerialize["fileLists"] = o.FileLists
-	if !isNil(o.ServiceClass) {
+	if !IsNil(o.ServiceClass) {
 		toSerialize["serviceClass"] = o.ServiceClass
 	}
 	toSerialize["geoArea"] = o.GeoArea
 	toSerialize["maxBitrate"] = o.MaxBitrate
 	toSerialize["maxDelay"] = o.MaxDelay
-	if !isNil(o.LocalMbmsInfo) {
+	if !IsNil(o.LocalMbmsInfo) {
 		toSerialize["localMbmsInfo"] = o.LocalMbmsInfo
 	}
-	if !isNil(o.LocalMbmsActInd) {
+	if !IsNil(o.LocalMbmsActInd) {
 		toSerialize["localMbmsActInd"] = o.LocalMbmsActInd
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -378,5 +378,3 @@ func (v *NullableFileDistributionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

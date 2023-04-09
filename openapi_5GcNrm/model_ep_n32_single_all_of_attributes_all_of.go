@@ -19,12 +19,12 @@ var _ MappedNullable = &EPN32SingleAllOfAttributesAllOf{}
 
 // EPN32SingleAllOfAttributesAllOf struct for EPN32SingleAllOfAttributesAllOf
 type EPN32SingleAllOfAttributesAllOf struct {
-	RemotePlmnId *PlmnId `json:"remotePlmnId,omitempty"`
+	RemotePlmnId      *PlmnId   `json:"remotePlmnId,omitempty"`
 	RemoteSeppAddress *HostAddr `json:"remoteSeppAddress,omitempty"`
-	RemoteSeppId *int32 `json:"remoteSeppId,omitempty"`
-	N32cParas *string `json:"n32cParas,omitempty"`
-	N32fPolicy *string `json:"n32fPolicy,omitempty"`
-	WithIPX *bool `json:"withIPX,omitempty"`
+	RemoteSeppId      *int32    `json:"remoteSeppId,omitempty"`
+	N32cParas         *string   `json:"n32cParas,omitempty"`
+	N32fPolicy        *string   `json:"n32fPolicy,omitempty"`
+	WithIPX           *bool     `json:"withIPX,omitempty"`
 }
 
 // NewEPN32SingleAllOfAttributesAllOf instantiates a new EPN32SingleAllOfAttributesAllOf object
@@ -237,7 +237,7 @@ func (o *EPN32SingleAllOfAttributesAllOf) SetWithIPX(v bool) {
 }
 
 func (o EPN32SingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableEPN32SingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualAuthenticationStatusDocumentApiService IndividualAuthenticationStatusDocumentApi service
 type IndividualAuthenticationStatusDocumentApiService service
 
 type ApiCreateIndividualAuthenticationStatusRequest struct {
-	ctx context.Context
-	ApiService *IndividualAuthenticationStatusDocumentApiService
-	ueId string
+	ctx                context.Context
+	ApiService         *IndividualAuthenticationStatusDocumentApiService
+	ueId               string
 	servingNetworkName string
-	authEvent *AuthEvent
+	authEvent          *AuthEvent
 }
 
 func (r ApiCreateIndividualAuthenticationStatusRequest) AuthEvent(authEvent AuthEvent) ApiCreateIndividualAuthenticationStatusRequest {
@@ -43,16 +42,16 @@ func (r ApiCreateIndividualAuthenticationStatusRequest) Execute() (*http.Respons
 /*
 CreateIndividualAuthenticationStatus To store the individual Authentication Status data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingNetworkName Serving Network Name
- @return ApiCreateIndividualAuthenticationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingNetworkName Serving Network Name
+	@return ApiCreateIndividualAuthenticationStatusRequest
 */
 func (a *IndividualAuthenticationStatusDocumentApiService) CreateIndividualAuthenticationStatus(ctx context.Context, ueId string, servingNetworkName string) ApiCreateIndividualAuthenticationStatusRequest {
 	return ApiCreateIndividualAuthenticationStatusRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:         a,
+		ctx:                ctx,
+		ueId:               ueId,
 		servingNetworkName: servingNetworkName,
 	}
 }
@@ -60,9 +59,9 @@ func (a *IndividualAuthenticationStatusDocumentApiService) CreateIndividualAuthe
 // Execute executes the request
 func (a *IndividualAuthenticationStatusDocumentApiService) CreateIndividualAuthenticationStatusExecute(r ApiCreateIndividualAuthenticationStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAuthenticationStatusDocumentApiService.CreateIndividualAuthenticationStatus")
@@ -110,9 +109,9 @@ func (a *IndividualAuthenticationStatusDocumentApiService) CreateIndividualAuthe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

@@ -41,7 +41,7 @@ func NewNRPciListWithDefaults() *NRPciList {
 
 // GetNRPci returns the NRPci field value if set, zero value otherwise.
 func (o *NRPciList) GetNRPci() int32 {
-	if o == nil || isNil(o.NRPci) {
+	if o == nil || IsNil(o.NRPci) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NRPciList) GetNRPci() int32 {
 // GetNRPciOk returns a tuple with the NRPci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRPciList) GetNRPciOk() (*int32, bool) {
-	if o == nil || isNil(o.NRPci) {
+	if o == nil || IsNil(o.NRPci) {
 		return nil, false
 	}
 	return o.NRPci, true
@@ -59,7 +59,7 @@ func (o *NRPciList) GetNRPciOk() (*int32, bool) {
 
 // HasNRPci returns a boolean if a field has been set.
 func (o *NRPciList) HasNRPci() bool {
-	if o != nil && !isNil(o.NRPci) {
+	if o != nil && !IsNil(o.NRPci) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *NRPciList) SetNRPci(v int32) {
 }
 
 func (o NRPciList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o NRPciList) MarshalJSON() ([]byte, error) {
 
 func (o NRPciList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NRPci) {
+	if !IsNil(o.NRPci) {
 		toSerialize["NRPci"] = o.NRPci
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableNRPciList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -46,7 +46,7 @@ func NewAmfIdentifierWithDefaults() *AmfIdentifier {
 
 // GetAmfRegionId returns the AmfRegionId field value if set, zero value otherwise.
 func (o *AmfIdentifier) GetAmfRegionId() int32 {
-	if o == nil || isNil(o.AmfRegionId) {
+	if o == nil || IsNil(o.AmfRegionId) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AmfIdentifier) GetAmfRegionId() int32 {
 // GetAmfRegionIdOk returns a tuple with the AmfRegionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfIdentifier) GetAmfRegionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AmfRegionId) {
+	if o == nil || IsNil(o.AmfRegionId) {
 		return nil, false
 	}
 	return o.AmfRegionId, true
@@ -64,7 +64,7 @@ func (o *AmfIdentifier) GetAmfRegionIdOk() (*int32, bool) {
 
 // HasAmfRegionId returns a boolean if a field has been set.
 func (o *AmfIdentifier) HasAmfRegionId() bool {
-	if o != nil && !isNil(o.AmfRegionId) {
+	if o != nil && !IsNil(o.AmfRegionId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AmfIdentifier) SetAmfRegionId(v int32) {
 
 // GetAmfSetId returns the AmfSetId field value if set, zero value otherwise.
 func (o *AmfIdentifier) GetAmfSetId() string {
-	if o == nil || isNil(o.AmfSetId) {
+	if o == nil || IsNil(o.AmfSetId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AmfIdentifier) GetAmfSetId() string {
 // GetAmfSetIdOk returns a tuple with the AmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfIdentifier) GetAmfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfSetId) {
+	if o == nil || IsNil(o.AmfSetId) {
 		return nil, false
 	}
 	return o.AmfSetId, true
@@ -96,7 +96,7 @@ func (o *AmfIdentifier) GetAmfSetIdOk() (*string, bool) {
 
 // HasAmfSetId returns a boolean if a field has been set.
 func (o *AmfIdentifier) HasAmfSetId() bool {
-	if o != nil && !isNil(o.AmfSetId) {
+	if o != nil && !IsNil(o.AmfSetId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AmfIdentifier) SetAmfSetId(v string) {
 
 // GetAmfPointer returns the AmfPointer field value if set, zero value otherwise.
 func (o *AmfIdentifier) GetAmfPointer() int32 {
-	if o == nil || isNil(o.AmfPointer) {
+	if o == nil || IsNil(o.AmfPointer) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AmfIdentifier) GetAmfPointer() int32 {
 // GetAmfPointerOk returns a tuple with the AmfPointer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfIdentifier) GetAmfPointerOk() (*int32, bool) {
-	if o == nil || isNil(o.AmfPointer) {
+	if o == nil || IsNil(o.AmfPointer) {
 		return nil, false
 	}
 	return o.AmfPointer, true
@@ -128,7 +128,7 @@ func (o *AmfIdentifier) GetAmfPointerOk() (*int32, bool) {
 
 // HasAmfPointer returns a boolean if a field has been set.
 func (o *AmfIdentifier) HasAmfPointer() bool {
-	if o != nil && !isNil(o.AmfPointer) {
+	if o != nil && !IsNil(o.AmfPointer) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AmfIdentifier) SetAmfPointer(v int32) {
 }
 
 func (o AmfIdentifier) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o AmfIdentifier) MarshalJSON() ([]byte, error) {
 
 func (o AmfIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AmfRegionId) {
+	if !IsNil(o.AmfRegionId) {
 		toSerialize["amfRegionId"] = o.AmfRegionId
 	}
-	if !isNil(o.AmfSetId) {
+	if !IsNil(o.AmfSetId) {
 		toSerialize["amfSetId"] = o.AmfSetId
 	}
-	if !isNil(o.AmfPointer) {
+	if !IsNil(o.AmfPointer) {
 		toSerialize["amfPointer"] = o.AmfPointer
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableAmfIdentifier) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

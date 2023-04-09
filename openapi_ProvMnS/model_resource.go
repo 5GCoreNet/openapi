@@ -17,15 +17,8 @@ import (
 
 // Resource - struct for Resource
 type Resource struct {
-	AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm *AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm
-	ResourceOneOf *ResourceOneOf
-}
-
-// AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrmAsResource is a convenience function that returns AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm wrapped in Resource
-func AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrmAsResource(v *AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm) Resource {
-	return Resource{
-		AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm: v,
-	}
+	ResourceOneOf  *ResourceOneOf
+	ResourceOneOf1 *ResourceOneOf1
 }
 
 // ResourceOneOfAsResource is a convenience function that returns ResourceOneOf wrapped in Resource
@@ -35,24 +28,17 @@ func ResourceOneOfAsResource(v *ResourceOneOf) Resource {
 	}
 }
 
+// ResourceOneOf1AsResource is a convenience function that returns ResourceOneOf1 wrapped in Resource
+func ResourceOneOf1AsResource(v *ResourceOneOf1) Resource {
+	return Resource{
+		ResourceOneOf1: v,
+	}
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *Resource) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm
-	err = newStrictDecoder(data).Decode(&dst.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm)
-	if err == nil {
-		jsonAnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm, _ := json.Marshal(dst.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm)
-		if string(jsonAnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm) == "{}" { // empty struct
-			dst.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm = nil
-	}
-
 	// try to unmarshal data into ResourceOneOf
 	err = newStrictDecoder(data).Decode(&dst.ResourceOneOf)
 	if err == nil {
@@ -66,10 +52,23 @@ func (dst *Resource) UnmarshalJSON(data []byte) error {
 		dst.ResourceOneOf = nil
 	}
 
+	// try to unmarshal data into ResourceOneOf1
+	err = newStrictDecoder(data).Decode(&dst.ResourceOneOf1)
+	if err == nil {
+		jsonResourceOneOf1, _ := json.Marshal(dst.ResourceOneOf1)
+		if string(jsonResourceOneOf1) == "{}" { // empty struct
+			dst.ResourceOneOf1 = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.ResourceOneOf1 = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm = nil
 		dst.ResourceOneOf = nil
+		dst.ResourceOneOf1 = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(Resource)")
 	} else if match == 1 {
@@ -81,28 +80,28 @@ func (dst *Resource) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src Resource) MarshalJSON() ([]byte, error) {
-	if src.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm != nil {
-		return json.Marshal(&src.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm)
-	}
-
 	if src.ResourceOneOf != nil {
 		return json.Marshal(&src.ResourceOneOf)
+	}
+
+	if src.ResourceOneOf1 != nil {
+		return json.Marshal(&src.ResourceOneOf1)
 	}
 
 	return nil, nil // no data in oneOf schemas
 }
 
 // Get the actual instance
-func (obj *Resource) GetActualInstance() (interface{}) {
+func (obj *Resource) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	if obj.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm != nil {
-		return obj.AnyOfresourcesGenericNrmresourcesNrNrmresources5gcNrmresourcesSliceNrmresourcesCoslaNrmresourcesIntentNrmresourcesMdaNrmresourcesAiMlNrm
-	}
-
 	if obj.ResourceOneOf != nil {
 		return obj.ResourceOneOf
+	}
+
+	if obj.ResourceOneOf1 != nil {
+		return obj.ResourceOneOf1
 	}
 
 	// all schemas are nil
@@ -144,5 +143,3 @@ func (v *NullableResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

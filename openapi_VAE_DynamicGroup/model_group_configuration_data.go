@@ -1,7 +1,7 @@
 /*
 VAE_DynamicGroup
 
-VAE_Dynamic_Group Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+VAE_Dynamic_Group Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &GroupConfigurationData{}
 // GroupConfigurationData Represents an individual Group Configuration resource for a V2X group ID.
 type GroupConfigurationData struct {
 	// Represents the group ID for which a V2X message is addressed.
-	GroupId string `json:"groupId"`
+	GroupId    string `json:"groupId"`
 	Definition string `json:"definition"`
 	// Represents the identifier of the V2X UE.
 	LeaderId string `json:"leaderId"`
@@ -29,10 +29,10 @@ type GroupConfigurationData struct {
 	NotifUri string `json:"notifUri"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Duration *time.Time `json:"duration,omitempty"`
-	// Set to true by the NF service consumer to request the VAE server to test a notification connection. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by the NF service consumer to request the VAE server to test a notification connection. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -155,7 +155,7 @@ func (o *GroupConfigurationData) SetNotifUri(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetDuration() time.Time {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *GroupConfigurationData) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetDurationOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -173,7 +173,7 @@ func (o *GroupConfigurationData) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *GroupConfigurationData) SetDuration(v time.Time) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *GroupConfigurationData) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -205,7 +205,7 @@ func (o *GroupConfigurationData) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *GroupConfigurationData) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *GroupConfigurationData) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -237,7 +237,7 @@ func (o *GroupConfigurationData) GetWebsockNotifConfigOk() (*WebsockNotifConfig,
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *GroupConfigurationData) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *GroupConfigurationData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -269,7 +269,7 @@ func (o *GroupConfigurationData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -282,7 +282,7 @@ func (o *GroupConfigurationData) SetSuppFeat(v string) {
 }
 
 func (o GroupConfigurationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -295,16 +295,16 @@ func (o GroupConfigurationData) ToMap() (map[string]interface{}, error) {
 	toSerialize["definition"] = o.Definition
 	toSerialize["leaderId"] = o.LeaderId
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -345,5 +345,3 @@ func (v *NullableGroupConfigurationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

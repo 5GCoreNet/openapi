@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &PerUeAttribute{}
 // PerUeAttribute UE application data collected per UE.
 type PerUeAttribute struct {
 	UeDest *LocationArea5G `json:"ueDest,omitempty"`
-	Route *string `json:"route,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	Route  *string         `json:"route,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	AvgSpeed *string `json:"avgSpeed,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeOfArrival *time.Time `json:"timeOfArrival,omitempty"`
@@ -47,7 +47,7 @@ func NewPerUeAttributeWithDefaults() *PerUeAttribute {
 
 // GetUeDest returns the UeDest field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetUeDest() LocationArea5G {
-	if o == nil || isNil(o.UeDest) {
+	if o == nil || IsNil(o.UeDest) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PerUeAttribute) GetUeDest() LocationArea5G {
 // GetUeDestOk returns a tuple with the UeDest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetUeDestOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.UeDest) {
+	if o == nil || IsNil(o.UeDest) {
 		return nil, false
 	}
 	return o.UeDest, true
@@ -65,7 +65,7 @@ func (o *PerUeAttribute) GetUeDestOk() (*LocationArea5G, bool) {
 
 // HasUeDest returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasUeDest() bool {
-	if o != nil && !isNil(o.UeDest) {
+	if o != nil && !IsNil(o.UeDest) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *PerUeAttribute) SetUeDest(v LocationArea5G) {
 
 // GetRoute returns the Route field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetRoute() string {
-	if o == nil || isNil(o.Route) {
+	if o == nil || IsNil(o.Route) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PerUeAttribute) GetRoute() string {
 // GetRouteOk returns a tuple with the Route field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetRouteOk() (*string, bool) {
-	if o == nil || isNil(o.Route) {
+	if o == nil || IsNil(o.Route) {
 		return nil, false
 	}
 	return o.Route, true
@@ -97,7 +97,7 @@ func (o *PerUeAttribute) GetRouteOk() (*string, bool) {
 
 // HasRoute returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasRoute() bool {
-	if o != nil && !isNil(o.Route) {
+	if o != nil && !IsNil(o.Route) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *PerUeAttribute) SetRoute(v string) {
 
 // GetAvgSpeed returns the AvgSpeed field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetAvgSpeed() string {
-	if o == nil || isNil(o.AvgSpeed) {
+	if o == nil || IsNil(o.AvgSpeed) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PerUeAttribute) GetAvgSpeed() string {
 // GetAvgSpeedOk returns a tuple with the AvgSpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetAvgSpeedOk() (*string, bool) {
-	if o == nil || isNil(o.AvgSpeed) {
+	if o == nil || IsNil(o.AvgSpeed) {
 		return nil, false
 	}
 	return o.AvgSpeed, true
@@ -129,7 +129,7 @@ func (o *PerUeAttribute) GetAvgSpeedOk() (*string, bool) {
 
 // HasAvgSpeed returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasAvgSpeed() bool {
-	if o != nil && !isNil(o.AvgSpeed) {
+	if o != nil && !IsNil(o.AvgSpeed) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PerUeAttribute) SetAvgSpeed(v string) {
 
 // GetTimeOfArrival returns the TimeOfArrival field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetTimeOfArrival() time.Time {
-	if o == nil || isNil(o.TimeOfArrival) {
+	if o == nil || IsNil(o.TimeOfArrival) {
 		var ret time.Time
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PerUeAttribute) GetTimeOfArrival() time.Time {
 // GetTimeOfArrivalOk returns a tuple with the TimeOfArrival field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetTimeOfArrivalOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeOfArrival) {
+	if o == nil || IsNil(o.TimeOfArrival) {
 		return nil, false
 	}
 	return o.TimeOfArrival, true
@@ -161,7 +161,7 @@ func (o *PerUeAttribute) GetTimeOfArrivalOk() (*time.Time, bool) {
 
 // HasTimeOfArrival returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasTimeOfArrival() bool {
-	if o != nil && !isNil(o.TimeOfArrival) {
+	if o != nil && !IsNil(o.TimeOfArrival) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *PerUeAttribute) SetTimeOfArrival(v time.Time) {
 }
 
 func (o PerUeAttribute) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,16 +183,16 @@ func (o PerUeAttribute) MarshalJSON() ([]byte, error) {
 
 func (o PerUeAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UeDest) {
+	if !IsNil(o.UeDest) {
 		toSerialize["ueDest"] = o.UeDest
 	}
-	if !isNil(o.Route) {
+	if !IsNil(o.Route) {
 		toSerialize["route"] = o.Route
 	}
-	if !isNil(o.AvgSpeed) {
+	if !IsNil(o.AvgSpeed) {
 		toSerialize["avgSpeed"] = o.AvgSpeed
 	}
-	if !isNil(o.TimeOfArrival) {
+	if !IsNil(o.TimeOfArrival) {
 		toSerialize["timeOfArrival"] = o.TimeOfArrival
 	}
 	return toSerialize, nil
@@ -233,5 +233,3 @@ func (v *NullablePerUeAttribute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

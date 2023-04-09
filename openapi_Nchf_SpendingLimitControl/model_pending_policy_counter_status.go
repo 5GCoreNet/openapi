@@ -1,7 +1,7 @@
 /*
 Nchf_SpendingLimitControl
 
-Nchf Spending Limit Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nchf Spending Limit Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,9 +18,9 @@ import (
 // checks if the PendingPolicyCounterStatus type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PendingPolicyCounterStatus{}
 
-// PendingPolicyCounterStatus Represents the data structure presenting the pending policy counter status. 
+// PendingPolicyCounterStatus Represents the data structure presenting the pending policy counter status.
 type PendingPolicyCounterStatus struct {
-	// Identifies the policy counter status applicable for a specific policy counter identified by the policyCounterId. The values (e.g. valid, invalid or any other status) are not specified. The interpretation and actions related to the defined values are out of scope of 3GPP. 
+	// Identifies the policy counter status applicable for a specific policy counter identified by the policyCounterId. The values (e.g. valid, invalid or any other status) are not specified. The interpretation and actions related to the defined values are out of scope of 3GPP.
 	PolicyCounterStatus string `json:"policyCounterStatus"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ActivationTime time.Time `json:"activationTime"`
@@ -94,7 +94,7 @@ func (o *PendingPolicyCounterStatus) SetActivationTime(v time.Time) {
 }
 
 func (o PendingPolicyCounterStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,5 +143,3 @@ func (v *NullablePendingPolicyCounterStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

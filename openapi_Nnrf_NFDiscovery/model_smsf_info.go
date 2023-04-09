@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SmsfInfo{}
 
 // SmsfInfo Specific Data for SMSF
 type SmsfInfo struct {
-	RoamingUeInd *bool `json:"roamingUeInd,omitempty"`
+	RoamingUeInd        *bool       `json:"roamingUeInd,omitempty"`
 	RemotePlmnRangeList []PlmnRange `json:"remotePlmnRangeList,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewSmsfInfoWithDefaults() *SmsfInfo {
 
 // GetRoamingUeInd returns the RoamingUeInd field value if set, zero value otherwise.
 func (o *SmsfInfo) GetRoamingUeInd() bool {
-	if o == nil || isNil(o.RoamingUeInd) {
+	if o == nil || IsNil(o.RoamingUeInd) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SmsfInfo) GetRoamingUeInd() bool {
 // GetRoamingUeIndOk returns a tuple with the RoamingUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfInfo) GetRoamingUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.RoamingUeInd) {
+	if o == nil || IsNil(o.RoamingUeInd) {
 		return nil, false
 	}
 	return o.RoamingUeInd, true
@@ -60,7 +60,7 @@ func (o *SmsfInfo) GetRoamingUeIndOk() (*bool, bool) {
 
 // HasRoamingUeInd returns a boolean if a field has been set.
 func (o *SmsfInfo) HasRoamingUeInd() bool {
-	if o != nil && !isNil(o.RoamingUeInd) {
+	if o != nil && !IsNil(o.RoamingUeInd) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SmsfInfo) SetRoamingUeInd(v bool) {
 
 // GetRemotePlmnRangeList returns the RemotePlmnRangeList field value if set, zero value otherwise.
 func (o *SmsfInfo) GetRemotePlmnRangeList() []PlmnRange {
-	if o == nil || isNil(o.RemotePlmnRangeList) {
+	if o == nil || IsNil(o.RemotePlmnRangeList) {
 		var ret []PlmnRange
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SmsfInfo) GetRemotePlmnRangeList() []PlmnRange {
 // GetRemotePlmnRangeListOk returns a tuple with the RemotePlmnRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfInfo) GetRemotePlmnRangeListOk() ([]PlmnRange, bool) {
-	if o == nil || isNil(o.RemotePlmnRangeList) {
+	if o == nil || IsNil(o.RemotePlmnRangeList) {
 		return nil, false
 	}
 	return o.RemotePlmnRangeList, true
@@ -92,7 +92,7 @@ func (o *SmsfInfo) GetRemotePlmnRangeListOk() ([]PlmnRange, bool) {
 
 // HasRemotePlmnRangeList returns a boolean if a field has been set.
 func (o *SmsfInfo) HasRemotePlmnRangeList() bool {
-	if o != nil && !isNil(o.RemotePlmnRangeList) {
+	if o != nil && !IsNil(o.RemotePlmnRangeList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SmsfInfo) SetRemotePlmnRangeList(v []PlmnRange) {
 }
 
 func (o SmsfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SmsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o SmsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RoamingUeInd) {
+	if !IsNil(o.RoamingUeInd) {
 		toSerialize["roamingUeInd"] = o.RoamingUeInd
 	}
-	if !isNil(o.RemotePlmnRangeList) {
+	if !IsNil(o.RemotePlmnRangeList) {
 		toSerialize["remotePlmnRangeList"] = o.RemotePlmnRangeList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSmsfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &TempGroupInfo{}
 
 // TempGroupInfo Represents the created temporary VAL group information.
 type TempGroupInfo struct {
-	ValGrpIds []string `json:"valGrpIds"`
-	TempValGrpId string `json:"tempValGrpId"`
-	ValServIds []string `json:"valServIds,omitempty"`
+	ValGrpIds    []string `json:"valGrpIds"`
+	TempValGrpId string   `json:"tempValGrpId"`
+	ValServIds   []string `json:"valServIds,omitempty"`
 }
 
 // NewTempGroupInfo instantiates a new TempGroupInfo object
@@ -93,7 +93,7 @@ func (o *TempGroupInfo) SetTempValGrpId(v string) {
 
 // GetValServIds returns the ValServIds field value if set, zero value otherwise.
 func (o *TempGroupInfo) GetValServIds() []string {
-	if o == nil || isNil(o.ValServIds) {
+	if o == nil || IsNil(o.ValServIds) {
 		var ret []string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *TempGroupInfo) GetValServIds() []string {
 // GetValServIdsOk returns a tuple with the ValServIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TempGroupInfo) GetValServIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ValServIds) {
+	if o == nil || IsNil(o.ValServIds) {
 		return nil, false
 	}
 	return o.ValServIds, true
@@ -111,7 +111,7 @@ func (o *TempGroupInfo) GetValServIdsOk() ([]string, bool) {
 
 // HasValServIds returns a boolean if a field has been set.
 func (o *TempGroupInfo) HasValServIds() bool {
-	if o != nil && !isNil(o.ValServIds) {
+	if o != nil && !IsNil(o.ValServIds) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *TempGroupInfo) SetValServIds(v []string) {
 }
 
 func (o TempGroupInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o TempGroupInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valGrpIds"] = o.ValGrpIds
 	toSerialize["tempValGrpId"] = o.TempValGrpId
-	if !isNil(o.ValServIds) {
+	if !IsNil(o.ValServIds) {
 		toSerialize["valServIds"] = o.ValServIds
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableTempGroupInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

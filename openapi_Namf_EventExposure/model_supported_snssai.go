@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SupportedSnssai{}
 
 // SupportedSnssai Supported S-NSSAIs
 type SupportedSnssai struct {
-	SNssai ExtSnssai `json:"sNssai"`
-	RestrictionInd *bool `json:"restrictionInd,omitempty"`
+	SNssai         ExtSnssai `json:"sNssai"`
+	RestrictionInd *bool     `json:"restrictionInd,omitempty"`
 }
 
 // NewSupportedSnssai instantiates a new SupportedSnssai object
@@ -71,7 +71,7 @@ func (o *SupportedSnssai) SetSNssai(v ExtSnssai) {
 
 // GetRestrictionInd returns the RestrictionInd field value if set, zero value otherwise.
 func (o *SupportedSnssai) GetRestrictionInd() bool {
-	if o == nil || isNil(o.RestrictionInd) {
+	if o == nil || IsNil(o.RestrictionInd) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *SupportedSnssai) GetRestrictionInd() bool {
 // GetRestrictionIndOk returns a tuple with the RestrictionInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedSnssai) GetRestrictionIndOk() (*bool, bool) {
-	if o == nil || isNil(o.RestrictionInd) {
+	if o == nil || IsNil(o.RestrictionInd) {
 		return nil, false
 	}
 	return o.RestrictionInd, true
@@ -89,7 +89,7 @@ func (o *SupportedSnssai) GetRestrictionIndOk() (*bool, bool) {
 
 // HasRestrictionInd returns a boolean if a field has been set.
 func (o *SupportedSnssai) HasRestrictionInd() bool {
-	if o != nil && !isNil(o.RestrictionInd) {
+	if o != nil && !IsNil(o.RestrictionInd) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *SupportedSnssai) SetRestrictionInd(v bool) {
 }
 
 func (o SupportedSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -112,7 +112,7 @@ func (o SupportedSnssai) MarshalJSON() ([]byte, error) {
 func (o SupportedSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssai"] = o.SNssai
-	if !isNil(o.RestrictionInd) {
+	if !IsNil(o.RestrictionInd) {
 		toSerialize["restrictionInd"] = o.RestrictionInd
 	}
 	return toSerialize, nil
@@ -153,5 +153,3 @@ func (v *NullableSupportedSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

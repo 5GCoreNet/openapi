@@ -20,8 +20,8 @@ type TxDirection string
 
 // List of TxDirection
 const (
-	DL TxDirection = "DL"
-	UL TxDirection = "UL"
+	DL        TxDirection = "DL"
+	UL        TxDirection = "UL"
 	DL_AND_UL TxDirection = "DL and UL"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableTxDirection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

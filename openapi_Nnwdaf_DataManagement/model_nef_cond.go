@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,15 +17,15 @@ import (
 // checks if the NefCond type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NefCond{}
 
-// NefCond Subscription to a set of NF Instances (NEFs), identified by Event ID(s) provided by AF, S-NSSAI(s), AF Instance ID, Application Identifier, External Identifier, External Group Identifier, or domain name. 
+// NefCond Subscription to a set of NF Instances (NEFs), identified by Event ID(s) provided by AF, S-NSSAI(s), AF Instance ID, Application Identifier, External Identifier, External Group Identifier, or domain name.
 type NefCond struct {
-	ConditionType string `json:"conditionType"`
-	AfEvents []AfEvent `json:"afEvents,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	PfdData *PfdData `json:"pfdData,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
+	ConditionType                  string          `json:"conditionType"`
+	AfEvents                       []AfEvent       `json:"afEvents,omitempty"`
+	SnssaiList                     []Snssai        `json:"snssaiList,omitempty"`
+	PfdData                        *PfdData        `json:"pfdData,omitempty"`
+	GpsiRanges                     []IdentityRange `json:"gpsiRanges,omitempty"`
 	ExternalGroupIdentifiersRanges []IdentityRange `json:"externalGroupIdentifiersRanges,omitempty"`
-	ServedFqdnList []string `json:"servedFqdnList,omitempty"`
+	ServedFqdnList                 []string        `json:"servedFqdnList,omitempty"`
 }
 
 // NewNefCond instantiates a new NefCond object
@@ -72,7 +72,7 @@ func (o *NefCond) SetConditionType(v string) {
 
 // GetAfEvents returns the AfEvents field value if set, zero value otherwise.
 func (o *NefCond) GetAfEvents() []AfEvent {
-	if o == nil || isNil(o.AfEvents) {
+	if o == nil || IsNil(o.AfEvents) {
 		var ret []AfEvent
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *NefCond) GetAfEvents() []AfEvent {
 // GetAfEventsOk returns a tuple with the AfEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefCond) GetAfEventsOk() ([]AfEvent, bool) {
-	if o == nil || isNil(o.AfEvents) {
+	if o == nil || IsNil(o.AfEvents) {
 		return nil, false
 	}
 	return o.AfEvents, true
@@ -90,7 +90,7 @@ func (o *NefCond) GetAfEventsOk() ([]AfEvent, bool) {
 
 // HasAfEvents returns a boolean if a field has been set.
 func (o *NefCond) HasAfEvents() bool {
-	if o != nil && !isNil(o.AfEvents) {
+	if o != nil && !IsNil(o.AfEvents) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *NefCond) SetAfEvents(v []AfEvent) {
 
 // GetSnssaiList returns the SnssaiList field value if set, zero value otherwise.
 func (o *NefCond) GetSnssaiList() []Snssai {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *NefCond) GetSnssaiList() []Snssai {
 // GetSnssaiListOk returns a tuple with the SnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefCond) GetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		return nil, false
 	}
 	return o.SnssaiList, true
@@ -122,7 +122,7 @@ func (o *NefCond) GetSnssaiListOk() ([]Snssai, bool) {
 
 // HasSnssaiList returns a boolean if a field has been set.
 func (o *NefCond) HasSnssaiList() bool {
-	if o != nil && !isNil(o.SnssaiList) {
+	if o != nil && !IsNil(o.SnssaiList) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *NefCond) SetSnssaiList(v []Snssai) {
 
 // GetPfdData returns the PfdData field value if set, zero value otherwise.
 func (o *NefCond) GetPfdData() PfdData {
-	if o == nil || isNil(o.PfdData) {
+	if o == nil || IsNil(o.PfdData) {
 		var ret PfdData
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *NefCond) GetPfdData() PfdData {
 // GetPfdDataOk returns a tuple with the PfdData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefCond) GetPfdDataOk() (*PfdData, bool) {
-	if o == nil || isNil(o.PfdData) {
+	if o == nil || IsNil(o.PfdData) {
 		return nil, false
 	}
 	return o.PfdData, true
@@ -154,7 +154,7 @@ func (o *NefCond) GetPfdDataOk() (*PfdData, bool) {
 
 // HasPfdData returns a boolean if a field has been set.
 func (o *NefCond) HasPfdData() bool {
-	if o != nil && !isNil(o.PfdData) {
+	if o != nil && !IsNil(o.PfdData) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *NefCond) SetPfdData(v PfdData) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *NefCond) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *NefCond) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefCond) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -186,7 +186,7 @@ func (o *NefCond) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *NefCond) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *NefCond) SetGpsiRanges(v []IdentityRange) {
 
 // GetExternalGroupIdentifiersRanges returns the ExternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *NefCond) GetExternalGroupIdentifiersRanges() []IdentityRange {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *NefCond) GetExternalGroupIdentifiersRanges() []IdentityRange {
 // GetExternalGroupIdentifiersRangesOk returns a tuple with the ExternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefCond) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifiersRanges, true
@@ -218,7 +218,7 @@ func (o *NefCond) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) 
 
 // HasExternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *NefCond) HasExternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.ExternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.ExternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *NefCond) SetExternalGroupIdentifiersRanges(v []IdentityRange) {
 
 // GetServedFqdnList returns the ServedFqdnList field value if set, zero value otherwise.
 func (o *NefCond) GetServedFqdnList() []string {
-	if o == nil || isNil(o.ServedFqdnList) {
+	if o == nil || IsNil(o.ServedFqdnList) {
 		var ret []string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *NefCond) GetServedFqdnList() []string {
 // GetServedFqdnListOk returns a tuple with the ServedFqdnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefCond) GetServedFqdnListOk() ([]string, bool) {
-	if o == nil || isNil(o.ServedFqdnList) {
+	if o == nil || IsNil(o.ServedFqdnList) {
 		return nil, false
 	}
 	return o.ServedFqdnList, true
@@ -250,7 +250,7 @@ func (o *NefCond) GetServedFqdnListOk() ([]string, bool) {
 
 // HasServedFqdnList returns a boolean if a field has been set.
 func (o *NefCond) HasServedFqdnList() bool {
-	if o != nil && !isNil(o.ServedFqdnList) {
+	if o != nil && !IsNil(o.ServedFqdnList) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *NefCond) SetServedFqdnList(v []string) {
 }
 
 func (o NefCond) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -273,22 +273,22 @@ func (o NefCond) MarshalJSON() ([]byte, error) {
 func (o NefCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["conditionType"] = o.ConditionType
-	if !isNil(o.AfEvents) {
+	if !IsNil(o.AfEvents) {
 		toSerialize["afEvents"] = o.AfEvents
 	}
-	if !isNil(o.SnssaiList) {
+	if !IsNil(o.SnssaiList) {
 		toSerialize["snssaiList"] = o.SnssaiList
 	}
-	if !isNil(o.PfdData) {
+	if !IsNil(o.PfdData) {
 		toSerialize["pfdData"] = o.PfdData
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !isNil(o.ExternalGroupIdentifiersRanges) {
+	if !IsNil(o.ExternalGroupIdentifiersRanges) {
 		toSerialize["externalGroupIdentifiersRanges"] = o.ExternalGroupIdentifiersRanges
 	}
-	if !isNil(o.ServedFqdnList) {
+	if !IsNil(o.ServedFqdnList) {
 		toSerialize["servedFqdnList"] = o.ServedFqdnList
 	}
 	return toSerialize, nil
@@ -329,5 +329,3 @@ func (v *NullableNefCond) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

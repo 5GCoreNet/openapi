@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &TransferPolicy{}
 
 // TransferPolicy Describes a transfer policy.
 type TransferPolicy struct {
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxBitRateDl *string `json:"maxBitRateDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxBitRateUl *string `json:"maxBitRateUl,omitempty"`
 	// Indicates a rating group for the recommended time window.
-	RatingGroup int32 `json:"ratingGroup"`
-	RecTimeInt TimeWindow `json:"recTimeInt"`
+	RatingGroup int32      `json:"ratingGroup"`
+	RecTimeInt  TimeWindow `json:"recTimeInt"`
 	// Contains an identity of a transfer policy.
 	TransPolicyId int32 `json:"transPolicyId"`
 }
@@ -52,7 +52,7 @@ func NewTransferPolicyWithDefaults() *TransferPolicy {
 
 // GetMaxBitRateDl returns the MaxBitRateDl field value if set, zero value otherwise.
 func (o *TransferPolicy) GetMaxBitRateDl() string {
-	if o == nil || isNil(o.MaxBitRateDl) {
+	if o == nil || IsNil(o.MaxBitRateDl) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *TransferPolicy) GetMaxBitRateDl() string {
 // GetMaxBitRateDlOk returns a tuple with the MaxBitRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferPolicy) GetMaxBitRateDlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxBitRateDl) {
+	if o == nil || IsNil(o.MaxBitRateDl) {
 		return nil, false
 	}
 	return o.MaxBitRateDl, true
@@ -70,7 +70,7 @@ func (o *TransferPolicy) GetMaxBitRateDlOk() (*string, bool) {
 
 // HasMaxBitRateDl returns a boolean if a field has been set.
 func (o *TransferPolicy) HasMaxBitRateDl() bool {
-	if o != nil && !isNil(o.MaxBitRateDl) {
+	if o != nil && !IsNil(o.MaxBitRateDl) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *TransferPolicy) SetMaxBitRateDl(v string) {
 
 // GetMaxBitRateUl returns the MaxBitRateUl field value if set, zero value otherwise.
 func (o *TransferPolicy) GetMaxBitRateUl() string {
-	if o == nil || isNil(o.MaxBitRateUl) {
+	if o == nil || IsNil(o.MaxBitRateUl) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *TransferPolicy) GetMaxBitRateUl() string {
 // GetMaxBitRateUlOk returns a tuple with the MaxBitRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferPolicy) GetMaxBitRateUlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxBitRateUl) {
+	if o == nil || IsNil(o.MaxBitRateUl) {
 		return nil, false
 	}
 	return o.MaxBitRateUl, true
@@ -102,7 +102,7 @@ func (o *TransferPolicy) GetMaxBitRateUlOk() (*string, bool) {
 
 // HasMaxBitRateUl returns a boolean if a field has been set.
 func (o *TransferPolicy) HasMaxBitRateUl() bool {
-	if o != nil && !isNil(o.MaxBitRateUl) {
+	if o != nil && !IsNil(o.MaxBitRateUl) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *TransferPolicy) SetTransPolicyId(v int32) {
 }
 
 func (o TransferPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -196,10 +196,10 @@ func (o TransferPolicy) MarshalJSON() ([]byte, error) {
 
 func (o TransferPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MaxBitRateDl) {
+	if !IsNil(o.MaxBitRateDl) {
 		toSerialize["maxBitRateDl"] = o.MaxBitRateDl
 	}
-	if !isNil(o.MaxBitRateUl) {
+	if !IsNil(o.MaxBitRateUl) {
 		toSerialize["maxBitRateUl"] = o.MaxBitRateUl
 	}
 	toSerialize["ratingGroup"] = o.RatingGroup
@@ -243,5 +243,3 @@ func (v *NullableTransferPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

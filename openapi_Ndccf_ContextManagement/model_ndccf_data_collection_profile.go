@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &NdccfDataCollectionProfile{}
 
 // NdccfDataCollectionProfile Represents an Individual DCCF Data Collection Profile.
 type NdccfDataCollectionProfile struct {
-	AnaSub *NnwdafEventsSubscription `json:"anaSub,omitempty"`
-	DataSub *DataNotification `json:"dataSub,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	AnaSub  *NnwdafEventsSubscription `json:"anaSub,omitempty"`
+	DataSub *DataNotification         `json:"dataSub,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NwdafId *string `json:"nwdafId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	NwdafSetId *string `json:"nwdafSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AdrfId *string `json:"adrfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	AdrfSetId *string `json:"adrfSetId,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func NewNdccfDataCollectionProfileWithDefaults() *NdccfDataCollectionProfile {
 
 // GetAnaSub returns the AnaSub field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetAnaSub() NnwdafEventsSubscription {
-	if o == nil || isNil(o.AnaSub) {
+	if o == nil || IsNil(o.AnaSub) {
 		var ret NnwdafEventsSubscription
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NdccfDataCollectionProfile) GetAnaSub() NnwdafEventsSubscription {
 // GetAnaSubOk returns a tuple with the AnaSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetAnaSubOk() (*NnwdafEventsSubscription, bool) {
-	if o == nil || isNil(o.AnaSub) {
+	if o == nil || IsNil(o.AnaSub) {
 		return nil, false
 	}
 	return o.AnaSub, true
@@ -68,7 +68,7 @@ func (o *NdccfDataCollectionProfile) GetAnaSubOk() (*NnwdafEventsSubscription, b
 
 // HasAnaSub returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasAnaSub() bool {
-	if o != nil && !isNil(o.AnaSub) {
+	if o != nil && !IsNil(o.AnaSub) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *NdccfDataCollectionProfile) SetAnaSub(v NnwdafEventsSubscription) {
 
 // GetDataSub returns the DataSub field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetDataSub() DataNotification {
-	if o == nil || isNil(o.DataSub) {
+	if o == nil || IsNil(o.DataSub) {
 		var ret DataNotification
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NdccfDataCollectionProfile) GetDataSub() DataNotification {
 // GetDataSubOk returns a tuple with the DataSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetDataSubOk() (*DataNotification, bool) {
-	if o == nil || isNil(o.DataSub) {
+	if o == nil || IsNil(o.DataSub) {
 		return nil, false
 	}
 	return o.DataSub, true
@@ -100,7 +100,7 @@ func (o *NdccfDataCollectionProfile) GetDataSubOk() (*DataNotification, bool) {
 
 // HasDataSub returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasDataSub() bool {
-	if o != nil && !isNil(o.DataSub) {
+	if o != nil && !IsNil(o.DataSub) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *NdccfDataCollectionProfile) SetDataSub(v DataNotification) {
 
 // GetNwdafId returns the NwdafId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetNwdafId() string {
-	if o == nil || isNil(o.NwdafId) {
+	if o == nil || IsNil(o.NwdafId) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafId() string {
 // GetNwdafIdOk returns a tuple with the NwdafId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetNwdafIdOk() (*string, bool) {
-	if o == nil || isNil(o.NwdafId) {
+	if o == nil || IsNil(o.NwdafId) {
 		return nil, false
 	}
 	return o.NwdafId, true
@@ -132,7 +132,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafIdOk() (*string, bool) {
 
 // HasNwdafId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasNwdafId() bool {
-	if o != nil && !isNil(o.NwdafId) {
+	if o != nil && !IsNil(o.NwdafId) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *NdccfDataCollectionProfile) SetNwdafId(v string) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetNwdafSetId() string {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -164,7 +164,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasNwdafSetId() bool {
-	if o != nil && !isNil(o.NwdafSetId) {
+	if o != nil && !IsNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *NdccfDataCollectionProfile) SetNwdafSetId(v string) {
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetAdrfId() string {
-	if o == nil || isNil(o.AdrfId) {
+	if o == nil || IsNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetAdrfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AdrfId) {
+	if o == nil || IsNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -196,7 +196,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasAdrfId() bool {
-	if o != nil && !isNil(o.AdrfId) {
+	if o != nil && !IsNil(o.AdrfId) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *NdccfDataCollectionProfile) SetAdrfId(v string) {
 
 // GetAdrfSetId returns the AdrfSetId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetAdrfSetId() string {
-	if o == nil || isNil(o.AdrfSetId) {
+	if o == nil || IsNil(o.AdrfSetId) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfSetId() string {
 // GetAdrfSetIdOk returns a tuple with the AdrfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetAdrfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.AdrfSetId) {
+	if o == nil || IsNil(o.AdrfSetId) {
 		return nil, false
 	}
 	return o.AdrfSetId, true
@@ -228,7 +228,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfSetIdOk() (*string, bool) {
 
 // HasAdrfSetId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasAdrfSetId() bool {
-	if o != nil && !isNil(o.AdrfSetId) {
+	if o != nil && !IsNil(o.AdrfSetId) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *NdccfDataCollectionProfile) SetAdrfSetId(v string) {
 }
 
 func (o NdccfDataCollectionProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -250,22 +250,22 @@ func (o NdccfDataCollectionProfile) MarshalJSON() ([]byte, error) {
 
 func (o NdccfDataCollectionProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnaSub) {
+	if !IsNil(o.AnaSub) {
 		toSerialize["anaSub"] = o.AnaSub
 	}
-	if !isNil(o.DataSub) {
+	if !IsNil(o.DataSub) {
 		toSerialize["dataSub"] = o.DataSub
 	}
-	if !isNil(o.NwdafId) {
+	if !IsNil(o.NwdafId) {
 		toSerialize["nwdafId"] = o.NwdafId
 	}
-	if !isNil(o.NwdafSetId) {
+	if !IsNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
-	if !isNil(o.AdrfId) {
+	if !IsNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !isNil(o.AdrfSetId) {
+	if !IsNil(o.AdrfSetId) {
 		toSerialize["adrfSetId"] = o.AdrfSetId
 	}
 	return toSerialize, nil
@@ -306,5 +306,3 @@ func (v *NullableNdccfDataCollectionProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

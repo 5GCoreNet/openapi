@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -21,13 +21,13 @@ var _ MappedNullable = &PdnConnectionInformation{}
 type PdnConnectionInformation struct {
 	Status PdnConnectionStatus `json:"status"`
 	// Identify the APN, it is depending on the SCEF local configuration whether or not this attribute is sent to the SCS/AS.
-	Apn *string `json:"apn,omitempty"`
-	PdnType PdnType `json:"pdnType"`
+	Apn          *string              `json:"apn,omitempty"`
+	PdnType      PdnType              `json:"pdnType"`
 	InterfaceInd *InterfaceIndication `json:"interfaceInd,omitempty"`
 	// string identifying a Ipv4 address formatted in the \"dotted decimal\" notation as defined in IETF RFC 1166.
-	Ipv4Addr *string `json:"ipv4Addr,omitempty"`
+	Ipv4Addr  *string  `json:"ipv4Addr,omitempty"`
 	Ipv6Addrs []string `json:"ipv6Addrs,omitempty"`
-	MacAddrs []string `json:"macAddrs,omitempty"`
+	MacAddrs  []string `json:"macAddrs,omitempty"`
 }
 
 // NewPdnConnectionInformation instantiates a new PdnConnectionInformation object
@@ -75,7 +75,7 @@ func (o *PdnConnectionInformation) SetStatus(v PdnConnectionStatus) {
 
 // GetApn returns the Apn field value if set, zero value otherwise.
 func (o *PdnConnectionInformation) GetApn() string {
-	if o == nil || isNil(o.Apn) {
+	if o == nil || IsNil(o.Apn) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PdnConnectionInformation) GetApn() string {
 // GetApnOk returns a tuple with the Apn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectionInformation) GetApnOk() (*string, bool) {
-	if o == nil || isNil(o.Apn) {
+	if o == nil || IsNil(o.Apn) {
 		return nil, false
 	}
 	return o.Apn, true
@@ -93,7 +93,7 @@ func (o *PdnConnectionInformation) GetApnOk() (*string, bool) {
 
 // HasApn returns a boolean if a field has been set.
 func (o *PdnConnectionInformation) HasApn() bool {
-	if o != nil && !isNil(o.Apn) {
+	if o != nil && !IsNil(o.Apn) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *PdnConnectionInformation) SetPdnType(v PdnType) {
 
 // GetInterfaceInd returns the InterfaceInd field value if set, zero value otherwise.
 func (o *PdnConnectionInformation) GetInterfaceInd() InterfaceIndication {
-	if o == nil || isNil(o.InterfaceInd) {
+	if o == nil || IsNil(o.InterfaceInd) {
 		var ret InterfaceIndication
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *PdnConnectionInformation) GetInterfaceInd() InterfaceIndication {
 // GetInterfaceIndOk returns a tuple with the InterfaceInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectionInformation) GetInterfaceIndOk() (*InterfaceIndication, bool) {
-	if o == nil || isNil(o.InterfaceInd) {
+	if o == nil || IsNil(o.InterfaceInd) {
 		return nil, false
 	}
 	return o.InterfaceInd, true
@@ -149,7 +149,7 @@ func (o *PdnConnectionInformation) GetInterfaceIndOk() (*InterfaceIndication, bo
 
 // HasInterfaceInd returns a boolean if a field has been set.
 func (o *PdnConnectionInformation) HasInterfaceInd() bool {
-	if o != nil && !isNil(o.InterfaceInd) {
+	if o != nil && !IsNil(o.InterfaceInd) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *PdnConnectionInformation) SetInterfaceInd(v InterfaceIndication) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *PdnConnectionInformation) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *PdnConnectionInformation) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectionInformation) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -181,7 +181,7 @@ func (o *PdnConnectionInformation) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *PdnConnectionInformation) HasIpv4Addr() bool {
-	if o != nil && !isNil(o.Ipv4Addr) {
+	if o != nil && !IsNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *PdnConnectionInformation) SetIpv4Addr(v string) {
 
 // GetIpv6Addrs returns the Ipv6Addrs field value if set, zero value otherwise.
 func (o *PdnConnectionInformation) GetIpv6Addrs() []string {
-	if o == nil || isNil(o.Ipv6Addrs) {
+	if o == nil || IsNil(o.Ipv6Addrs) {
 		var ret []string
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *PdnConnectionInformation) GetIpv6Addrs() []string {
 // GetIpv6AddrsOk returns a tuple with the Ipv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectionInformation) GetIpv6AddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.Ipv6Addrs) {
+	if o == nil || IsNil(o.Ipv6Addrs) {
 		return nil, false
 	}
 	return o.Ipv6Addrs, true
@@ -213,7 +213,7 @@ func (o *PdnConnectionInformation) GetIpv6AddrsOk() ([]string, bool) {
 
 // HasIpv6Addrs returns a boolean if a field has been set.
 func (o *PdnConnectionInformation) HasIpv6Addrs() bool {
-	if o != nil && !isNil(o.Ipv6Addrs) {
+	if o != nil && !IsNil(o.Ipv6Addrs) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *PdnConnectionInformation) SetIpv6Addrs(v []string) {
 
 // GetMacAddrs returns the MacAddrs field value if set, zero value otherwise.
 func (o *PdnConnectionInformation) GetMacAddrs() []string {
-	if o == nil || isNil(o.MacAddrs) {
+	if o == nil || IsNil(o.MacAddrs) {
 		var ret []string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *PdnConnectionInformation) GetMacAddrs() []string {
 // GetMacAddrsOk returns a tuple with the MacAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectionInformation) GetMacAddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.MacAddrs) {
+	if o == nil || IsNil(o.MacAddrs) {
 		return nil, false
 	}
 	return o.MacAddrs, true
@@ -245,7 +245,7 @@ func (o *PdnConnectionInformation) GetMacAddrsOk() ([]string, bool) {
 
 // HasMacAddrs returns a boolean if a field has been set.
 func (o *PdnConnectionInformation) HasMacAddrs() bool {
-	if o != nil && !isNil(o.MacAddrs) {
+	if o != nil && !IsNil(o.MacAddrs) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *PdnConnectionInformation) SetMacAddrs(v []string) {
 }
 
 func (o PdnConnectionInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,20 +268,20 @@ func (o PdnConnectionInformation) MarshalJSON() ([]byte, error) {
 func (o PdnConnectionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["status"] = o.Status
-	if !isNil(o.Apn) {
+	if !IsNil(o.Apn) {
 		toSerialize["apn"] = o.Apn
 	}
 	toSerialize["pdnType"] = o.PdnType
-	if !isNil(o.InterfaceInd) {
+	if !IsNil(o.InterfaceInd) {
 		toSerialize["interfaceInd"] = o.InterfaceInd
 	}
-	if !isNil(o.Ipv4Addr) {
+	if !IsNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !isNil(o.Ipv6Addrs) {
+	if !IsNil(o.Ipv6Addrs) {
 		toSerialize["ipv6Addrs"] = o.Ipv6Addrs
 	}
-	if !isNil(o.MacAddrs) {
+	if !IsNil(o.MacAddrs) {
 		toSerialize["macAddrs"] = o.MacAddrs
 	}
 	return toSerialize, nil
@@ -322,5 +322,3 @@ func (v *NullablePdnConnectionInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

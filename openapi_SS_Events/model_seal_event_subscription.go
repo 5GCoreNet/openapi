@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -22,15 +22,15 @@ type SEALEventSubscription struct {
 	// String identifying the subscriber of the event.
 	SubscriberId string `json:"subscriberId"`
 	// Subscribed events.
-	EventSubs []EventSubscription `json:"eventSubs"`
-	EventReq ReportingInformation `json:"eventReq"`
+	EventSubs []EventSubscription  `json:"eventSubs"`
+	EventReq  ReportingInformation `json:"eventReq"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination string `json:"notificationDestination"`
-	// Set to true by Subscriber to request the SEAL server to send a test notification. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	EventDetails []SEALEventDetail `json:"eventDetails,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by Subscriber to request the SEAL server to send a test notification. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	EventDetails            []SEALEventDetail   `json:"eventDetails,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -153,7 +153,7 @@ func (o *SEALEventSubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *SEALEventSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -171,7 +171,7 @@ func (o *SEALEventSubscription) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *SEALEventSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *SEALEventSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -203,7 +203,7 @@ func (o *SEALEventSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, 
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *SEALEventSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetEventDetails returns the EventDetails field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetEventDetails() []SEALEventDetail {
-	if o == nil || isNil(o.EventDetails) {
+	if o == nil || IsNil(o.EventDetails) {
 		var ret []SEALEventDetail
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *SEALEventSubscription) GetEventDetails() []SEALEventDetail {
 // GetEventDetailsOk returns a tuple with the EventDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetEventDetailsOk() ([]SEALEventDetail, bool) {
-	if o == nil || isNil(o.EventDetails) {
+	if o == nil || IsNil(o.EventDetails) {
 		return nil, false
 	}
 	return o.EventDetails, true
@@ -235,7 +235,7 @@ func (o *SEALEventSubscription) GetEventDetailsOk() ([]SEALEventDetail, bool) {
 
 // HasEventDetails returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasEventDetails() bool {
-	if o != nil && !isNil(o.EventDetails) {
+	if o != nil && !IsNil(o.EventDetails) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *SEALEventSubscription) SetEventDetails(v []SEALEventDetail) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *SEALEventSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -267,7 +267,7 @@ func (o *SEALEventSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *SEALEventSubscription) SetSuppFeat(v string) {
 }
 
 func (o SEALEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -293,16 +293,16 @@ func (o SEALEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventSubs"] = o.EventSubs
 	toSerialize["eventReq"] = o.EventReq
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.EventDetails) {
+	if !IsNil(o.EventDetails) {
 		toSerialize["eventDetails"] = o.EventDetails
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -343,5 +343,3 @@ func (v *NullableSEALEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

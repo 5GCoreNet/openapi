@@ -1,7 +1,7 @@
 /*
 M1_EdgeResourcesProvisioning
 
-5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &EASRequirements{}
 
 // EASRequirements Requirements of an EAS.
 type EASRequirements struct {
-	EasProviderIds []string `json:"easProviderIds"`
-	EasType string `json:"easType"`
-	EasFeatures []string `json:"easFeatures"`
-	ServiceKpi *EASServiceKPI `json:"serviceKpi,omitempty"`
-	ServiceArea *GeographicalServiceArea `json:"serviceArea,omitempty"`
+	EasProviderIds              []string                     `json:"easProviderIds"`
+	EasType                     string                       `json:"easType"`
+	EasFeatures                 []string                     `json:"easFeatures"`
+	ServiceKpi                  *EASServiceKPI               `json:"serviceKpi,omitempty"`
+	ServiceArea                 *GeographicalServiceArea     `json:"serviceArea,omitempty"`
 	ServiceAvailabilitySchedule []ScheduledCommunicationTime `json:"serviceAvailabilitySchedule"`
-	ServiceContinuityScenarios []ACRScenario `json:"serviceContinuityScenarios"`
-	ServiceContinuitySupport []ACRScenario `json:"serviceContinuitySupport,omitempty"`
+	ServiceContinuityScenarios  []ACRScenario                `json:"serviceContinuityScenarios"`
+	ServiceContinuitySupport    []ACRScenario                `json:"serviceContinuitySupport,omitempty"`
 }
 
 // NewEASRequirements instantiates a new EASRequirements object
@@ -125,7 +125,7 @@ func (o *EASRequirements) SetEasFeatures(v []string) {
 
 // GetServiceKpi returns the ServiceKpi field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceKpi() EASServiceKPI {
-	if o == nil || isNil(o.ServiceKpi) {
+	if o == nil || IsNil(o.ServiceKpi) {
 		var ret EASServiceKPI
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *EASRequirements) GetServiceKpi() EASServiceKPI {
 // GetServiceKpiOk returns a tuple with the ServiceKpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceKpiOk() (*EASServiceKPI, bool) {
-	if o == nil || isNil(o.ServiceKpi) {
+	if o == nil || IsNil(o.ServiceKpi) {
 		return nil, false
 	}
 	return o.ServiceKpi, true
@@ -143,7 +143,7 @@ func (o *EASRequirements) GetServiceKpiOk() (*EASServiceKPI, bool) {
 
 // HasServiceKpi returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceKpi() bool {
-	if o != nil && !isNil(o.ServiceKpi) {
+	if o != nil && !IsNil(o.ServiceKpi) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *EASRequirements) SetServiceKpi(v EASServiceKPI) {
 
 // GetServiceArea returns the ServiceArea field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceArea() GeographicalServiceArea {
-	if o == nil || isNil(o.ServiceArea) {
+	if o == nil || IsNil(o.ServiceArea) {
 		var ret GeographicalServiceArea
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *EASRequirements) GetServiceArea() GeographicalServiceArea {
 // GetServiceAreaOk returns a tuple with the ServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceAreaOk() (*GeographicalServiceArea, bool) {
-	if o == nil || isNil(o.ServiceArea) {
+	if o == nil || IsNil(o.ServiceArea) {
 		return nil, false
 	}
 	return o.ServiceArea, true
@@ -175,7 +175,7 @@ func (o *EASRequirements) GetServiceAreaOk() (*GeographicalServiceArea, bool) {
 
 // HasServiceArea returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceArea() bool {
-	if o != nil && !isNil(o.ServiceArea) {
+	if o != nil && !IsNil(o.ServiceArea) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *EASRequirements) SetServiceContinuityScenarios(v []ACRScenario) {
 
 // GetServiceContinuitySupport returns the ServiceContinuitySupport field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceContinuitySupport() []ACRScenario {
-	if o == nil || isNil(o.ServiceContinuitySupport) {
+	if o == nil || IsNil(o.ServiceContinuitySupport) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *EASRequirements) GetServiceContinuitySupport() []ACRScenario {
 // GetServiceContinuitySupportOk returns a tuple with the ServiceContinuitySupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceContinuitySupportOk() ([]ACRScenario, bool) {
-	if o == nil || isNil(o.ServiceContinuitySupport) {
+	if o == nil || IsNil(o.ServiceContinuitySupport) {
 		return nil, false
 	}
 	return o.ServiceContinuitySupport, true
@@ -255,7 +255,7 @@ func (o *EASRequirements) GetServiceContinuitySupportOk() ([]ACRScenario, bool) 
 
 // HasServiceContinuitySupport returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceContinuitySupport() bool {
-	if o != nil && !isNil(o.ServiceContinuitySupport) {
+	if o != nil && !IsNil(o.ServiceContinuitySupport) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *EASRequirements) SetServiceContinuitySupport(v []ACRScenario) {
 }
 
 func (o EASRequirements) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,15 +280,15 @@ func (o EASRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize["easProviderIds"] = o.EasProviderIds
 	toSerialize["easType"] = o.EasType
 	toSerialize["easFeatures"] = o.EasFeatures
-	if !isNil(o.ServiceKpi) {
+	if !IsNil(o.ServiceKpi) {
 		toSerialize["serviceKpi"] = o.ServiceKpi
 	}
-	if !isNil(o.ServiceArea) {
+	if !IsNil(o.ServiceArea) {
 		toSerialize["serviceArea"] = o.ServiceArea
 	}
 	toSerialize["serviceAvailabilitySchedule"] = o.ServiceAvailabilitySchedule
 	toSerialize["serviceContinuityScenarios"] = o.ServiceContinuityScenarios
-	if !isNil(o.ServiceContinuitySupport) {
+	if !IsNil(o.ServiceContinuitySupport) {
 		toSerialize["serviceContinuitySupport"] = o.ServiceContinuitySupport
 	}
 	return toSerialize, nil
@@ -329,5 +329,3 @@ func (v *NullableEASRequirements) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

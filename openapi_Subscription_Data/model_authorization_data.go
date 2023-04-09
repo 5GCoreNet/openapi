@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &AuthorizationData{}
 
 // AuthorizationData NIDD Authorization Information
 type AuthorizationData struct {
-	AuthorizationData []UserIdentifier `json:"authorizationData"`
-	AllowedDnnList []AccessAndMobilitySubscriptionDataSubscribedDnnListInner `json:"allowedDnnList,omitempty"`
-	AllowedSnssaiList []Snssai `json:"allowedSnssaiList,omitempty"`
-	AllowedMtcProviders []MtcProvider `json:"allowedMtcProviders,omitempty"`
+	AuthorizationData   []UserIdentifier                                          `json:"authorizationData"`
+	AllowedDnnList      []AccessAndMobilitySubscriptionDataSubscribedDnnListInner `json:"allowedDnnList,omitempty"`
+	AllowedSnssaiList   []Snssai                                                  `json:"allowedSnssaiList,omitempty"`
+	AllowedMtcProviders []MtcProvider                                             `json:"allowedMtcProviders,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidityTime *time.Time `json:"validityTime,omitempty"`
 }
@@ -72,7 +72,7 @@ func (o *AuthorizationData) SetAuthorizationData(v []UserIdentifier) {
 
 // GetAllowedDnnList returns the AllowedDnnList field value if set, zero value otherwise.
 func (o *AuthorizationData) GetAllowedDnnList() []AccessAndMobilitySubscriptionDataSubscribedDnnListInner {
-	if o == nil || isNil(o.AllowedDnnList) {
+	if o == nil || IsNil(o.AllowedDnnList) {
 		var ret []AccessAndMobilitySubscriptionDataSubscribedDnnListInner
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AuthorizationData) GetAllowedDnnList() []AccessAndMobilitySubscriptionD
 // GetAllowedDnnListOk returns a tuple with the AllowedDnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationData) GetAllowedDnnListOk() ([]AccessAndMobilitySubscriptionDataSubscribedDnnListInner, bool) {
-	if o == nil || isNil(o.AllowedDnnList) {
+	if o == nil || IsNil(o.AllowedDnnList) {
 		return nil, false
 	}
 	return o.AllowedDnnList, true
@@ -90,7 +90,7 @@ func (o *AuthorizationData) GetAllowedDnnListOk() ([]AccessAndMobilitySubscripti
 
 // HasAllowedDnnList returns a boolean if a field has been set.
 func (o *AuthorizationData) HasAllowedDnnList() bool {
-	if o != nil && !isNil(o.AllowedDnnList) {
+	if o != nil && !IsNil(o.AllowedDnnList) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AuthorizationData) SetAllowedDnnList(v []AccessAndMobilitySubscriptionD
 
 // GetAllowedSnssaiList returns the AllowedSnssaiList field value if set, zero value otherwise.
 func (o *AuthorizationData) GetAllowedSnssaiList() []Snssai {
-	if o == nil || isNil(o.AllowedSnssaiList) {
+	if o == nil || IsNil(o.AllowedSnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AuthorizationData) GetAllowedSnssaiList() []Snssai {
 // GetAllowedSnssaiListOk returns a tuple with the AllowedSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationData) GetAllowedSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.AllowedSnssaiList) {
+	if o == nil || IsNil(o.AllowedSnssaiList) {
 		return nil, false
 	}
 	return o.AllowedSnssaiList, true
@@ -122,7 +122,7 @@ func (o *AuthorizationData) GetAllowedSnssaiListOk() ([]Snssai, bool) {
 
 // HasAllowedSnssaiList returns a boolean if a field has been set.
 func (o *AuthorizationData) HasAllowedSnssaiList() bool {
-	if o != nil && !isNil(o.AllowedSnssaiList) {
+	if o != nil && !IsNil(o.AllowedSnssaiList) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AuthorizationData) SetAllowedSnssaiList(v []Snssai) {
 
 // GetAllowedMtcProviders returns the AllowedMtcProviders field value if set, zero value otherwise.
 func (o *AuthorizationData) GetAllowedMtcProviders() []MtcProvider {
-	if o == nil || isNil(o.AllowedMtcProviders) {
+	if o == nil || IsNil(o.AllowedMtcProviders) {
 		var ret []MtcProvider
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AuthorizationData) GetAllowedMtcProviders() []MtcProvider {
 // GetAllowedMtcProvidersOk returns a tuple with the AllowedMtcProviders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationData) GetAllowedMtcProvidersOk() ([]MtcProvider, bool) {
-	if o == nil || isNil(o.AllowedMtcProviders) {
+	if o == nil || IsNil(o.AllowedMtcProviders) {
 		return nil, false
 	}
 	return o.AllowedMtcProviders, true
@@ -154,7 +154,7 @@ func (o *AuthorizationData) GetAllowedMtcProvidersOk() ([]MtcProvider, bool) {
 
 // HasAllowedMtcProviders returns a boolean if a field has been set.
 func (o *AuthorizationData) HasAllowedMtcProviders() bool {
-	if o != nil && !isNil(o.AllowedMtcProviders) {
+	if o != nil && !IsNil(o.AllowedMtcProviders) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *AuthorizationData) SetAllowedMtcProviders(v []MtcProvider) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *AuthorizationData) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *AuthorizationData) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationData) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -186,7 +186,7 @@ func (o *AuthorizationData) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *AuthorizationData) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *AuthorizationData) SetValidityTime(v time.Time) {
 }
 
 func (o AuthorizationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,16 +209,16 @@ func (o AuthorizationData) MarshalJSON() ([]byte, error) {
 func (o AuthorizationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authorizationData"] = o.AuthorizationData
-	if !isNil(o.AllowedDnnList) {
+	if !IsNil(o.AllowedDnnList) {
 		toSerialize["allowedDnnList"] = o.AllowedDnnList
 	}
-	if !isNil(o.AllowedSnssaiList) {
+	if !IsNil(o.AllowedSnssaiList) {
 		toSerialize["allowedSnssaiList"] = o.AllowedSnssaiList
 	}
-	if !isNil(o.AllowedMtcProviders) {
+	if !IsNil(o.AllowedMtcProviders) {
 		toSerialize["allowedMtcProviders"] = o.AllowedMtcProviders
 	}
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
 	return toSerialize, nil
@@ -259,5 +259,3 @@ func (v *NullableAuthorizationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

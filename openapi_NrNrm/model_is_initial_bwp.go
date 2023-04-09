@@ -21,8 +21,8 @@ type IsInitialBwp string
 // List of IsInitialBwp
 const (
 	INITIAL IsInitialBwp = "INITIAL"
-	OTHER IsInitialBwp = "OTHER"
-	SUL IsInitialBwp = "SUL"
+	OTHER   IsInitialBwp = "OTHER"
+	SUL     IsInitialBwp = "SUL"
 )
 
 // All allowed values of IsInitialBwp enum
@@ -110,4 +110,3 @@ func (v *NullableIsInitialBwp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

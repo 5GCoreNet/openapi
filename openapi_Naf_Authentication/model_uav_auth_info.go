@@ -1,7 +1,7 @@
 /*
 Naf_Authentication
 
-AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,20 +19,20 @@ var _ MappedNullable = &UAVAuthInfo{}
 
 // UAVAuthInfo UAV auth data
 type UAVAuthInfo struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi           string `json:"gpsi"`
 	ServiceLevelId string `json:"serviceLevelId"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifyUri *string `json:"notifyUri,omitempty"`
+	NotifyUri    *string `json:"notifyUri,omitempty"`
 	NotifyCorrId *string `json:"notifyCorrId,omitempty"`
-	IpAddr *IpAddr `json:"ipAddr,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
+	IpAddr       *IpAddr `json:"ipAddr,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
 	Pei *string `json:"pei,omitempty"`
 	// Deprecated
-	AuthMsg *string `json:"authMsg,omitempty"`
+	AuthMsg       *string         `json:"authMsg,omitempty"`
 	AuthContainer []AuthContainer `json:"authContainer,omitempty"`
-	UavLocInfo *LocationArea5G `json:"uavLocInfo,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	UavLocInfo    *LocationArea5G `json:"uavLocInfo,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *UAVAuthInfo) SetServiceLevelId(v string) {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetNotifyUri() string {
-	if o == nil || isNil(o.NotifyUri) {
+	if o == nil || IsNil(o.NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *UAVAuthInfo) GetNotifyUri() string {
 // GetNotifyUriOk returns a tuple with the NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetNotifyUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyUri) {
+	if o == nil || IsNil(o.NotifyUri) {
 		return nil, false
 	}
 	return o.NotifyUri, true
@@ -123,7 +123,7 @@ func (o *UAVAuthInfo) GetNotifyUriOk() (*string, bool) {
 
 // HasNotifyUri returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasNotifyUri() bool {
-	if o != nil && !isNil(o.NotifyUri) {
+	if o != nil && !IsNil(o.NotifyUri) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *UAVAuthInfo) SetNotifyUri(v string) {
 
 // GetNotifyCorrId returns the NotifyCorrId field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetNotifyCorrId() string {
-	if o == nil || isNil(o.NotifyCorrId) {
+	if o == nil || IsNil(o.NotifyCorrId) {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *UAVAuthInfo) GetNotifyCorrId() string {
 // GetNotifyCorrIdOk returns a tuple with the NotifyCorrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetNotifyCorrIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrId) {
+	if o == nil || IsNil(o.NotifyCorrId) {
 		return nil, false
 	}
 	return o.NotifyCorrId, true
@@ -155,7 +155,7 @@ func (o *UAVAuthInfo) GetNotifyCorrIdOk() (*string, bool) {
 
 // HasNotifyCorrId returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasNotifyCorrId() bool {
-	if o != nil && !isNil(o.NotifyCorrId) {
+	if o != nil && !IsNil(o.NotifyCorrId) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *UAVAuthInfo) SetNotifyCorrId(v string) {
 
 // GetIpAddr returns the IpAddr field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetIpAddr() IpAddr {
-	if o == nil || isNil(o.IpAddr) {
+	if o == nil || IsNil(o.IpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *UAVAuthInfo) GetIpAddr() IpAddr {
 // GetIpAddrOk returns a tuple with the IpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetIpAddrOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.IpAddr) {
+	if o == nil || IsNil(o.IpAddr) {
 		return nil, false
 	}
 	return o.IpAddr, true
@@ -187,7 +187,7 @@ func (o *UAVAuthInfo) GetIpAddrOk() (*IpAddr, bool) {
 
 // HasIpAddr returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasIpAddr() bool {
-	if o != nil && !isNil(o.IpAddr) {
+	if o != nil && !IsNil(o.IpAddr) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *UAVAuthInfo) SetIpAddr(v IpAddr) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *UAVAuthInfo) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -219,7 +219,7 @@ func (o *UAVAuthInfo) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *UAVAuthInfo) SetPei(v string) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthInfo) GetAuthMsg() string {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *UAVAuthInfo) GetAuthMsg() string {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthInfo) GetAuthMsgOk() (*string, bool) {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -253,7 +253,7 @@ func (o *UAVAuthInfo) GetAuthMsgOk() (*string, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthMsg() bool {
-	if o != nil && !isNil(o.AuthMsg) {
+	if o != nil && !IsNil(o.AuthMsg) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *UAVAuthInfo) SetAuthMsg(v string) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetAuthContainer() []AuthContainer {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *UAVAuthInfo) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -286,7 +286,7 @@ func (o *UAVAuthInfo) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthContainer() bool {
-	if o != nil && !isNil(o.AuthContainer) {
+	if o != nil && !IsNil(o.AuthContainer) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *UAVAuthInfo) SetAuthContainer(v []AuthContainer) {
 
 // GetUavLocInfo returns the UavLocInfo field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetUavLocInfo() LocationArea5G {
-	if o == nil || isNil(o.UavLocInfo) {
+	if o == nil || IsNil(o.UavLocInfo) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *UAVAuthInfo) GetUavLocInfo() LocationArea5G {
 // GetUavLocInfoOk returns a tuple with the UavLocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetUavLocInfoOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.UavLocInfo) {
+	if o == nil || IsNil(o.UavLocInfo) {
 		return nil, false
 	}
 	return o.UavLocInfo, true
@@ -318,7 +318,7 @@ func (o *UAVAuthInfo) GetUavLocInfoOk() (*LocationArea5G, bool) {
 
 // HasUavLocInfo returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasUavLocInfo() bool {
-	if o != nil && !isNil(o.UavLocInfo) {
+	if o != nil && !IsNil(o.UavLocInfo) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *UAVAuthInfo) SetUavLocInfo(v LocationArea5G) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *UAVAuthInfo) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -350,7 +350,7 @@ func (o *UAVAuthInfo) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *UAVAuthInfo) SetSuppFeat(v string) {
 }
 
 func (o UAVAuthInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,28 +374,28 @@ func (o UAVAuthInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["serviceLevelId"] = o.ServiceLevelId
-	if !isNil(o.NotifyUri) {
+	if !IsNil(o.NotifyUri) {
 		toSerialize["notifyUri"] = o.NotifyUri
 	}
-	if !isNil(o.NotifyCorrId) {
+	if !IsNil(o.NotifyCorrId) {
 		toSerialize["notifyCorrId"] = o.NotifyCorrId
 	}
-	if !isNil(o.IpAddr) {
+	if !IsNil(o.IpAddr) {
 		toSerialize["ipAddr"] = o.IpAddr
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.AuthMsg) {
+	if !IsNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !isNil(o.AuthContainer) {
+	if !IsNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
-	if !isNil(o.UavLocInfo) {
+	if !IsNil(o.UavLocInfo) {
 		toSerialize["uavLocInfo"] = o.UavLocInfo
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -436,5 +436,3 @@ func (v *NullableUAVAuthInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

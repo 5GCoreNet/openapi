@@ -19,13 +19,13 @@ var _ MappedNullable = &NotifyAckStateChangedAllOf{}
 
 // NotifyAckStateChangedAllOf struct for NotifyAckStateChangedAllOf
 type NotifyAckStateChangedAllOf struct {
-	AlarmId string `json:"alarmId"`
-	AlarmType AlarmType `json:"alarmType"`
-	ProbableCause ProbableCause `json:"probableCause"`
+	AlarmId           string            `json:"alarmId"`
+	AlarmType         AlarmType         `json:"alarmType"`
+	ProbableCause     ProbableCause     `json:"probableCause"`
 	PerceivedSeverity PerceivedSeverity `json:"perceivedSeverity"`
-	AckState AckState `json:"ackState"`
-	AckUserId string `json:"ackUserId"`
-	AckSystemId *string `json:"ackSystemId,omitempty"`
+	AckState          AckState          `json:"ackState"`
+	AckUserId         string            `json:"ackUserId"`
+	AckSystemId       *string           `json:"ackSystemId,omitempty"`
 }
 
 // NewNotifyAckStateChangedAllOf instantiates a new NotifyAckStateChangedAllOf object
@@ -197,7 +197,7 @@ func (o *NotifyAckStateChangedAllOf) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *NotifyAckStateChangedAllOf) GetAckSystemId() string {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *NotifyAckStateChangedAllOf) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAckStateChangedAllOf) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || isNil(o.AckSystemId) {
+	if o == nil || IsNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -215,7 +215,7 @@ func (o *NotifyAckStateChangedAllOf) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *NotifyAckStateChangedAllOf) HasAckSystemId() bool {
-	if o != nil && !isNil(o.AckSystemId) {
+	if o != nil && !IsNil(o.AckSystemId) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *NotifyAckStateChangedAllOf) SetAckSystemId(v string) {
 }
 
 func (o NotifyAckStateChangedAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,7 +243,7 @@ func (o NotifyAckStateChangedAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity
 	toSerialize["ackState"] = o.AckState
 	toSerialize["ackUserId"] = o.AckUserId
-	if !isNil(o.AckSystemId) {
+	if !IsNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
 	return toSerialize, nil
@@ -284,5 +284,3 @@ func (v *NullableNotifyAckStateChangedAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

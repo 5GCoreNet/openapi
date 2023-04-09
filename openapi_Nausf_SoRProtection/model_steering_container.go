@@ -1,7 +1,7 @@
 /*
 Nausf_SoRProtection Service
 
-AUSF SoR Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF SoR Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // SteeringContainer - Contains the information sent to UE.
 type SteeringContainer struct {
 	ArrayOfSteeringInfo *[]SteeringInfo
-	String *string
+	String              *string
 }
 
 // []SteeringInfoAsSteeringContainer is a convenience function that returns []SteeringInfo wrapped in SteeringContainer
@@ -34,7 +34,6 @@ func StringAsSteeringContainer(v *string) SteeringContainer {
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SteeringContainer) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src SteeringContainer) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SteeringContainer) GetActualInstance() (interface{}) {
+func (obj *SteeringContainer) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableSteeringContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

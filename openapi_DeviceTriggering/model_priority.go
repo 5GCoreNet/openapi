@@ -1,7 +1,7 @@
 /*
 3gpp-device-triggering
 
-API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Priority Possible values are - NO_PRIORITY: This value indicates that the device trigger has no priority. - PRIORITY: This value indicates that the device trigger has priority. 
+// Priority Possible values are - NO_PRIORITY: This value indicates that the device trigger has no priority. - PRIORITY: This value indicates that the device trigger has priority.
 type Priority struct {
-	PriorityAnyOf *PriorityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Priority) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PriorityAnyOf
-	err = json.Unmarshal(data, &dst.PriorityAnyOf);
-	if err == nil {
-		jsonPriorityAnyOf, _ := json.Marshal(dst.PriorityAnyOf)
-		if string(jsonPriorityAnyOf) == "{}" { // empty struct
-			dst.PriorityAnyOf = nil
-		} else {
-			return nil // data stored in dst.PriorityAnyOf, return on the first match
-		}
-	} else {
-		dst.PriorityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Priority) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Priority) MarshalJSON() ([]byte, error) {
-	if src.PriorityAnyOf != nil {
-		return json.Marshal(&src.PriorityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePriority) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

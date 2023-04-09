@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AMFGroupSubscriptionInfoDocumentApiService AMFGroupSubscriptionInfoDocumentApi service
 type AMFGroupSubscriptionInfoDocumentApiService service
 
 type ApiCreateAmfGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *AMFGroupSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
+	ctx                 context.Context
+	ApiService          *AMFGroupSubscriptionInfoDocumentApiService
+	ueGroupId           string
+	subsId              string
 	amfSubscriptionInfo *[]AmfSubscriptionInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateAmfGroupSubscriptionsRequest) Execute() ([]AmfSubscriptionInfo,
 /*
 CreateAmfGroupSubscriptions Create AmfSubscriptions for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiCreateAmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiCreateAmfGroupSubscriptionsRequest
 */
 func (a *AMFGroupSubscriptionInfoDocumentApiService) CreateAmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiCreateAmfGroupSubscriptionsRequest {
 	return ApiCreateAmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return []AmfSubscriptionInfo
+//
+//	@return []AmfSubscriptionInfo
 func (a *AMFGroupSubscriptionInfoDocumentApiService) CreateAmfGroupSubscriptionsExecute(r ApiCreateAmfGroupSubscriptionsRequest) ([]AmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AMFGroupSubscriptionInfoDocumentApiService.CreateAmfGroupSubscriptions")
@@ -115,9 +115,9 @@ func (a *AMFGroupSubscriptionInfoDocumentApiService) CreateAmfGroupSubscriptions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

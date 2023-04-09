@@ -87,7 +87,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [5GsUserStateAnyOf](docs/5GsUserStateAnyOf.md)
  - [AccessTokenErr](docs/AccessTokenErr.md)
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [AccessType](docs/AccessType.md)
@@ -108,7 +107,6 @@ Class | Method | HTTP request | Description
  - [Model5GSrvccInfo](docs/Model5GSrvccInfo.md)
  - [Model5GsUserState](docs/Model5GsUserState.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [Ncgi](docs/Ncgi.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
@@ -126,11 +124,9 @@ Class | Method | HTTP request | Description
  - [PolygonAllOf](docs/PolygonAllOf.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RatType](docs/RatType.md)
- - [RatTypeAnyOf](docs/RatTypeAnyOf.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [Snssai](docs/Snssai.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
- - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [UeContextInfo](docs/UeContextInfo.md)
  - [UeInfo](docs/UeInfo.md)

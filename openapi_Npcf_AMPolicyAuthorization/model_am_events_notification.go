@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AmEventsNotification{}
 // AmEventsNotification Describes the notification about the events occurred within an Individual Application AM Context resource.
 type AmEventsNotification struct {
 	// Contains the AM Policy Events Subscription resource identifier related to the event notification.
-	AppAmContextId *string `json:"appAmContextId,omitempty"`
-	RepEvents []AmEventNotification `json:"repEvents"`
+	AppAmContextId *string               `json:"appAmContextId,omitempty"`
+	RepEvents      []AmEventNotification `json:"repEvents"`
 }
 
 // NewAmEventsNotification instantiates a new AmEventsNotification object
@@ -44,7 +44,7 @@ func NewAmEventsNotificationWithDefaults() *AmEventsNotification {
 
 // GetAppAmContextId returns the AppAmContextId field value if set, zero value otherwise.
 func (o *AmEventsNotification) GetAppAmContextId() string {
-	if o == nil || isNil(o.AppAmContextId) {
+	if o == nil || IsNil(o.AppAmContextId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AmEventsNotification) GetAppAmContextId() string {
 // GetAppAmContextIdOk returns a tuple with the AppAmContextId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsNotification) GetAppAmContextIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppAmContextId) {
+	if o == nil || IsNil(o.AppAmContextId) {
 		return nil, false
 	}
 	return o.AppAmContextId, true
@@ -62,7 +62,7 @@ func (o *AmEventsNotification) GetAppAmContextIdOk() (*string, bool) {
 
 // HasAppAmContextId returns a boolean if a field has been set.
 func (o *AmEventsNotification) HasAppAmContextId() bool {
-	if o != nil && !isNil(o.AppAmContextId) {
+	if o != nil && !IsNil(o.AppAmContextId) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *AmEventsNotification) SetRepEvents(v []AmEventNotification) {
 }
 
 func (o AmEventsNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o AmEventsNotification) MarshalJSON() ([]byte, error) {
 
 func (o AmEventsNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppAmContextId) {
+	if !IsNil(o.AppAmContextId) {
 		toSerialize["appAmContextId"] = o.AppAmContextId
 	}
 	toSerialize["repEvents"] = o.RepEvents
@@ -150,5 +150,3 @@ func (v *NullableAmEventsNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

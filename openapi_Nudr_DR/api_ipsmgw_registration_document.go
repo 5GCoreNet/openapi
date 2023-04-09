@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IPSMGWRegistrationDocumentApiService IPSMGWRegistrationDocumentApi service
 type IPSMGWRegistrationDocumentApiService service
 
 type ApiCreateIpSmGwContextRequest struct {
-	ctx context.Context
-	ApiService *IPSMGWRegistrationDocumentApiService
-	ueId string
+	ctx                context.Context
+	ApiService         *IPSMGWRegistrationDocumentApiService
+	ueId               string
 	ipSmGwRegistration *IpSmGwRegistration
 }
 
@@ -42,24 +41,24 @@ func (r ApiCreateIpSmGwContextRequest) Execute() (*http.Response, error) {
 /*
 CreateIpSmGwContext Create the IP-SM-GW context data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateIpSmGwContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateIpSmGwContextRequest
 */
 func (a *IPSMGWRegistrationDocumentApiService) CreateIpSmGwContext(ctx context.Context, ueId string) ApiCreateIpSmGwContextRequest {
 	return ApiCreateIpSmGwContextRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *IPSMGWRegistrationDocumentApiService) CreateIpSmGwContextExecute(r ApiCreateIpSmGwContextRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IPSMGWRegistrationDocumentApiService.CreateIpSmGwContext")
@@ -106,9 +105,9 @@ func (a *IPSMGWRegistrationDocumentApiService) CreateIpSmGwContextExecute(r ApiC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -125,9 +124,9 @@ func (a *IPSMGWRegistrationDocumentApiService) CreateIpSmGwContextExecute(r ApiC
 }
 
 type ApiDeleteIpSmGwContextRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IPSMGWRegistrationDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiDeleteIpSmGwContextRequest) Execute() (*http.Response, error) {
@@ -137,24 +136,24 @@ func (r ApiDeleteIpSmGwContextRequest) Execute() (*http.Response, error) {
 /*
 DeleteIpSmGwContext To remove the IP-SM-GW context data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiDeleteIpSmGwContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiDeleteIpSmGwContextRequest
 */
 func (a *IPSMGWRegistrationDocumentApiService) DeleteIpSmGwContext(ctx context.Context, ueId string) ApiDeleteIpSmGwContextRequest {
 	return ApiDeleteIpSmGwContextRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *IPSMGWRegistrationDocumentApiService) DeleteIpSmGwContextExecute(r ApiDeleteIpSmGwContextRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IPSMGWRegistrationDocumentApiService.DeleteIpSmGwContext")
@@ -196,9 +195,9 @@ func (a *IPSMGWRegistrationDocumentApiService) DeleteIpSmGwContextExecute(r ApiD
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -215,10 +214,10 @@ func (a *IPSMGWRegistrationDocumentApiService) DeleteIpSmGwContextExecute(r ApiD
 }
 
 type ApiModifyIpSmGwContextRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IPSMGWRegistrationDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ueId       string
+	patchItem  *[]PatchItem
 }
 
 func (r ApiModifyIpSmGwContextRequest) PatchItem(patchItem []PatchItem) ApiModifyIpSmGwContextRequest {
@@ -233,24 +232,24 @@ func (r ApiModifyIpSmGwContextRequest) Execute() (*http.Response, error) {
 /*
 ModifyIpSmGwContext Modify the IP-SM-GW context data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiModifyIpSmGwContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiModifyIpSmGwContextRequest
 */
 func (a *IPSMGWRegistrationDocumentApiService) ModifyIpSmGwContext(ctx context.Context, ueId string) ApiModifyIpSmGwContextRequest {
 	return ApiModifyIpSmGwContextRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *IPSMGWRegistrationDocumentApiService) ModifyIpSmGwContextExecute(r ApiModifyIpSmGwContextRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IPSMGWRegistrationDocumentApiService.ModifyIpSmGwContext")
@@ -300,9 +299,9 @@ func (a *IPSMGWRegistrationDocumentApiService) ModifyIpSmGwContextExecute(r ApiM
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -319,8 +318,8 @@ func (a *IPSMGWRegistrationDocumentApiService) ModifyIpSmGwContextExecute(r ApiM
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -330,8 +329,8 @@ func (a *IPSMGWRegistrationDocumentApiService) ModifyIpSmGwContextExecute(r ApiM
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -341,10 +340,10 @@ func (a *IPSMGWRegistrationDocumentApiService) ModifyIpSmGwContextExecute(r ApiM
 }
 
 type ApiQueryIpSmGwContextRequest struct {
-	ctx context.Context
-	ApiService *IPSMGWRegistrationDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *IPSMGWRegistrationDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -367,26 +366,27 @@ func (r ApiQueryIpSmGwContextRequest) Execute() (*IpSmGwRegistration, *http.Resp
 /*
 QueryIpSmGwContext Retrieves the IP-SM-GW context data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryIpSmGwContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryIpSmGwContextRequest
 */
 func (a *IPSMGWRegistrationDocumentApiService) QueryIpSmGwContext(ctx context.Context, ueId string) ApiQueryIpSmGwContextRequest {
 	return ApiQueryIpSmGwContextRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return IpSmGwRegistration
+//
+//	@return IpSmGwRegistration
 func (a *IPSMGWRegistrationDocumentApiService) QueryIpSmGwContextExecute(r ApiQueryIpSmGwContextRequest) (*IpSmGwRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *IpSmGwRegistration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *IpSmGwRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IPSMGWRegistrationDocumentApiService.QueryIpSmGwContext")
@@ -402,10 +402,10 @@ func (a *IPSMGWRegistrationDocumentApiService) QueryIpSmGwContextExecute(r ApiQu
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -434,9 +434,9 @@ func (a *IPSMGWRegistrationDocumentApiService) QueryIpSmGwContextExecute(r ApiQu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

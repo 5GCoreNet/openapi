@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -21,41 +21,41 @@ var _ MappedNullable = &PDUSessionInformation{}
 // PDUSessionInformation struct for PDUSessionInformation
 type PDUSessionInformation struct {
 	NetworkSlicingInfo *NetworkSlicingInfo `json:"networkSlicingInfo,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionID int32 `json:"pduSessionID"`
-	PduType *PduSessionType `json:"pduType,omitempty"`
-	SscMode *SscMode `json:"sscMode,omitempty"`
-	HPlmnId *PlmnId `json:"hPlmnId,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionID             int32                     `json:"pduSessionID"`
+	PduType                  *PduSessionType           `json:"pduType,omitempty"`
+	SscMode                  *SscMode                  `json:"sscMode,omitempty"`
+	HPlmnId                  *PlmnId                   `json:"hPlmnId,omitempty"`
 	ServingNetworkFunctionID *ServingNetworkFunctionID `json:"servingNetworkFunctionID,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	MAPDUNon3GPPRATType *RatType `json:"mAPDUNon3GPPRATType,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	DnnId string `json:"dnnId"`
-	DnnSelectionMode *DnnSelectionMode `json:"dnnSelectionMode,omitempty"`
-	ChargingCharacteristics *string `json:"chargingCharacteristics,omitempty"`
+	RatType                  *RatType                  `json:"ratType,omitempty"`
+	MAPDUNon3GPPRATType      *RatType                  `json:"mAPDUNon3GPPRATType,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	DnnId                                string                                `json:"dnnId"`
+	DnnSelectionMode                     *DnnSelectionMode                     `json:"dnnSelectionMode,omitempty"`
+	ChargingCharacteristics              *string                               `json:"chargingCharacteristics,omitempty"`
 	ChargingCharacteristicsSelectionMode *ChargingCharacteristicsSelectionMode `json:"chargingCharacteristicsSelectionMode,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	StartTime *time.Time `json:"startTime,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	StopTime *time.Time `json:"stopTime,omitempty"`
-	Var3gppPSDataOffStatus *Model3GPPPSDataOffStatus `json:"3gppPSDataOffStatus,omitempty"`
-	SessionStopIndicator *bool `json:"sessionStopIndicator,omitempty"`
-	PduAddress *PDUAddress `json:"pduAddress,omitempty"`
-	Diagnostics *int32 `json:"diagnostics,omitempty"`
-	AuthorizedQoSInformation *AuthorizedDefaultQos `json:"authorizedQoSInformation,omitempty"`
-	SubscribedQoSInformation *SubscribedDefaultQos `json:"subscribedQoSInformation,omitempty"`
-	AuthorizedSessionAMBR *Ambr `json:"authorizedSessionAMBR,omitempty"`
-	SubscribedSessionAMBR *Ambr `json:"subscribedSessionAMBR,omitempty"`
-	ServingCNPlmnId *PlmnId `json:"servingCNPlmnId,omitempty"`
-	MAPDUSessionInformation *MAPDUSessionInformation `json:"mAPDUSessionInformation,omitempty"`
-	EnhancedDiagnostics []RanNasRelCause `json:"enhancedDiagnostics,omitempty"`
+	StopTime                  *time.Time                 `json:"stopTime,omitempty"`
+	Var3gppPSDataOffStatus    *Model3GPPPSDataOffStatus  `json:"3gppPSDataOffStatus,omitempty"`
+	SessionStopIndicator      *bool                      `json:"sessionStopIndicator,omitempty"`
+	PduAddress                *PDUAddress                `json:"pduAddress,omitempty"`
+	Diagnostics               *int32                     `json:"diagnostics,omitempty"`
+	AuthorizedQoSInformation  *AuthorizedDefaultQos      `json:"authorizedQoSInformation,omitempty"`
+	SubscribedQoSInformation  *SubscribedDefaultQos      `json:"subscribedQoSInformation,omitempty"`
+	AuthorizedSessionAMBR     *Ambr                      `json:"authorizedSessionAMBR,omitempty"`
+	SubscribedSessionAMBR     *Ambr                      `json:"subscribedSessionAMBR,omitempty"`
+	ServingCNPlmnId           *PlmnId                    `json:"servingCNPlmnId,omitempty"`
+	MAPDUSessionInformation   *MAPDUSessionInformation   `json:"mAPDUSessionInformation,omitempty"`
+	EnhancedDiagnostics       []RanNasRelCause           `json:"enhancedDiagnostics,omitempty"`
 	RedundantTransmissionType *RedundantTransmissionType `json:"redundantTransmissionType,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	PDUSessionPairID *int32 `json:"pDUSessionPairID,omitempty"`
-	CpCIoTOptimisationIndicator *bool `json:"cpCIoTOptimisationIndicator,omitempty"`
-	Var5GSControlPlaneOnlyIndicator *bool `json:"5GSControlPlaneOnlyIndicator,omitempty"`
-	SmallDataRateControlIndicator *bool `json:"smallDataRateControlIndicator,omitempty"`
-	Var5GLANTypeService *Model5GLANTypeService `json:"5GLANTypeService,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	PDUSessionPairID                *int32                 `json:"pDUSessionPairID,omitempty"`
+	CpCIoTOptimisationIndicator     *bool                  `json:"cpCIoTOptimisationIndicator,omitempty"`
+	Var5GSControlPlaneOnlyIndicator *bool                  `json:"5GSControlPlaneOnlyIndicator,omitempty"`
+	SmallDataRateControlIndicator   *bool                  `json:"smallDataRateControlIndicator,omitempty"`
+	Var5GLANTypeService             *Model5GLANTypeService `json:"5GLANTypeService,omitempty"`
 }
 
 // NewPDUSessionInformation instantiates a new PDUSessionInformation object
@@ -79,7 +79,7 @@ func NewPDUSessionInformationWithDefaults() *PDUSessionInformation {
 
 // GetNetworkSlicingInfo returns the NetworkSlicingInfo field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetNetworkSlicingInfo() NetworkSlicingInfo {
-	if o == nil || isNil(o.NetworkSlicingInfo) {
+	if o == nil || IsNil(o.NetworkSlicingInfo) {
 		var ret NetworkSlicingInfo
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PDUSessionInformation) GetNetworkSlicingInfo() NetworkSlicingInfo {
 // GetNetworkSlicingInfoOk returns a tuple with the NetworkSlicingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetNetworkSlicingInfoOk() (*NetworkSlicingInfo, bool) {
-	if o == nil || isNil(o.NetworkSlicingInfo) {
+	if o == nil || IsNil(o.NetworkSlicingInfo) {
 		return nil, false
 	}
 	return o.NetworkSlicingInfo, true
@@ -97,7 +97,7 @@ func (o *PDUSessionInformation) GetNetworkSlicingInfoOk() (*NetworkSlicingInfo, 
 
 // HasNetworkSlicingInfo returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasNetworkSlicingInfo() bool {
-	if o != nil && !isNil(o.NetworkSlicingInfo) {
+	if o != nil && !IsNil(o.NetworkSlicingInfo) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *PDUSessionInformation) SetPduSessionID(v int32) {
 
 // GetPduType returns the PduType field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetPduType() PduSessionType {
-	if o == nil || isNil(o.PduType) {
+	if o == nil || IsNil(o.PduType) {
 		var ret PduSessionType
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *PDUSessionInformation) GetPduType() PduSessionType {
 // GetPduTypeOk returns a tuple with the PduType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetPduTypeOk() (*PduSessionType, bool) {
-	if o == nil || isNil(o.PduType) {
+	if o == nil || IsNil(o.PduType) {
 		return nil, false
 	}
 	return o.PduType, true
@@ -153,7 +153,7 @@ func (o *PDUSessionInformation) GetPduTypeOk() (*PduSessionType, bool) {
 
 // HasPduType returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasPduType() bool {
-	if o != nil && !isNil(o.PduType) {
+	if o != nil && !IsNil(o.PduType) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *PDUSessionInformation) SetPduType(v PduSessionType) {
 
 // GetSscMode returns the SscMode field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetSscMode() SscMode {
-	if o == nil || isNil(o.SscMode) {
+	if o == nil || IsNil(o.SscMode) {
 		var ret SscMode
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *PDUSessionInformation) GetSscMode() SscMode {
 // GetSscModeOk returns a tuple with the SscMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetSscModeOk() (*SscMode, bool) {
-	if o == nil || isNil(o.SscMode) {
+	if o == nil || IsNil(o.SscMode) {
 		return nil, false
 	}
 	return o.SscMode, true
@@ -185,7 +185,7 @@ func (o *PDUSessionInformation) GetSscModeOk() (*SscMode, bool) {
 
 // HasSscMode returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasSscMode() bool {
-	if o != nil && !isNil(o.SscMode) {
+	if o != nil && !IsNil(o.SscMode) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *PDUSessionInformation) SetSscMode(v SscMode) {
 
 // GetHPlmnId returns the HPlmnId field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetHPlmnId() PlmnId {
-	if o == nil || isNil(o.HPlmnId) {
+	if o == nil || IsNil(o.HPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *PDUSessionInformation) GetHPlmnId() PlmnId {
 // GetHPlmnIdOk returns a tuple with the HPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetHPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.HPlmnId) {
+	if o == nil || IsNil(o.HPlmnId) {
 		return nil, false
 	}
 	return o.HPlmnId, true
@@ -217,7 +217,7 @@ func (o *PDUSessionInformation) GetHPlmnIdOk() (*PlmnId, bool) {
 
 // HasHPlmnId returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasHPlmnId() bool {
-	if o != nil && !isNil(o.HPlmnId) {
+	if o != nil && !IsNil(o.HPlmnId) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *PDUSessionInformation) SetHPlmnId(v PlmnId) {
 
 // GetServingNetworkFunctionID returns the ServingNetworkFunctionID field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetServingNetworkFunctionID() ServingNetworkFunctionID {
-	if o == nil || isNil(o.ServingNetworkFunctionID) {
+	if o == nil || IsNil(o.ServingNetworkFunctionID) {
 		var ret ServingNetworkFunctionID
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *PDUSessionInformation) GetServingNetworkFunctionID() ServingNetworkFunc
 // GetServingNetworkFunctionIDOk returns a tuple with the ServingNetworkFunctionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetServingNetworkFunctionIDOk() (*ServingNetworkFunctionID, bool) {
-	if o == nil || isNil(o.ServingNetworkFunctionID) {
+	if o == nil || IsNil(o.ServingNetworkFunctionID) {
 		return nil, false
 	}
 	return o.ServingNetworkFunctionID, true
@@ -249,7 +249,7 @@ func (o *PDUSessionInformation) GetServingNetworkFunctionIDOk() (*ServingNetwork
 
 // HasServingNetworkFunctionID returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasServingNetworkFunctionID() bool {
-	if o != nil && !isNil(o.ServingNetworkFunctionID) {
+	if o != nil && !IsNil(o.ServingNetworkFunctionID) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *PDUSessionInformation) SetServingNetworkFunctionID(v ServingNetworkFunc
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *PDUSessionInformation) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -281,7 +281,7 @@ func (o *PDUSessionInformation) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *PDUSessionInformation) SetRatType(v RatType) {
 
 // GetMAPDUNon3GPPRATType returns the MAPDUNon3GPPRATType field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetMAPDUNon3GPPRATType() RatType {
-	if o == nil || isNil(o.MAPDUNon3GPPRATType) {
+	if o == nil || IsNil(o.MAPDUNon3GPPRATType) {
 		var ret RatType
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *PDUSessionInformation) GetMAPDUNon3GPPRATType() RatType {
 // GetMAPDUNon3GPPRATTypeOk returns a tuple with the MAPDUNon3GPPRATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetMAPDUNon3GPPRATTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.MAPDUNon3GPPRATType) {
+	if o == nil || IsNil(o.MAPDUNon3GPPRATType) {
 		return nil, false
 	}
 	return o.MAPDUNon3GPPRATType, true
@@ -313,7 +313,7 @@ func (o *PDUSessionInformation) GetMAPDUNon3GPPRATTypeOk() (*RatType, bool) {
 
 // HasMAPDUNon3GPPRATType returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasMAPDUNon3GPPRATType() bool {
-	if o != nil && !isNil(o.MAPDUNon3GPPRATType) {
+	if o != nil && !IsNil(o.MAPDUNon3GPPRATType) {
 		return true
 	}
 
@@ -351,7 +351,7 @@ func (o *PDUSessionInformation) SetDnnId(v string) {
 
 // GetDnnSelectionMode returns the DnnSelectionMode field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetDnnSelectionMode() DnnSelectionMode {
-	if o == nil || isNil(o.DnnSelectionMode) {
+	if o == nil || IsNil(o.DnnSelectionMode) {
 		var ret DnnSelectionMode
 		return ret
 	}
@@ -361,7 +361,7 @@ func (o *PDUSessionInformation) GetDnnSelectionMode() DnnSelectionMode {
 // GetDnnSelectionModeOk returns a tuple with the DnnSelectionMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetDnnSelectionModeOk() (*DnnSelectionMode, bool) {
-	if o == nil || isNil(o.DnnSelectionMode) {
+	if o == nil || IsNil(o.DnnSelectionMode) {
 		return nil, false
 	}
 	return o.DnnSelectionMode, true
@@ -369,7 +369,7 @@ func (o *PDUSessionInformation) GetDnnSelectionModeOk() (*DnnSelectionMode, bool
 
 // HasDnnSelectionMode returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasDnnSelectionMode() bool {
-	if o != nil && !isNil(o.DnnSelectionMode) {
+	if o != nil && !IsNil(o.DnnSelectionMode) {
 		return true
 	}
 
@@ -383,7 +383,7 @@ func (o *PDUSessionInformation) SetDnnSelectionMode(v DnnSelectionMode) {
 
 // GetChargingCharacteristics returns the ChargingCharacteristics field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetChargingCharacteristics() string {
-	if o == nil || isNil(o.ChargingCharacteristics) {
+	if o == nil || IsNil(o.ChargingCharacteristics) {
 		var ret string
 		return ret
 	}
@@ -393,7 +393,7 @@ func (o *PDUSessionInformation) GetChargingCharacteristics() string {
 // GetChargingCharacteristicsOk returns a tuple with the ChargingCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetChargingCharacteristicsOk() (*string, bool) {
-	if o == nil || isNil(o.ChargingCharacteristics) {
+	if o == nil || IsNil(o.ChargingCharacteristics) {
 		return nil, false
 	}
 	return o.ChargingCharacteristics, true
@@ -401,7 +401,7 @@ func (o *PDUSessionInformation) GetChargingCharacteristicsOk() (*string, bool) {
 
 // HasChargingCharacteristics returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasChargingCharacteristics() bool {
-	if o != nil && !isNil(o.ChargingCharacteristics) {
+	if o != nil && !IsNil(o.ChargingCharacteristics) {
 		return true
 	}
 
@@ -415,7 +415,7 @@ func (o *PDUSessionInformation) SetChargingCharacteristics(v string) {
 
 // GetChargingCharacteristicsSelectionMode returns the ChargingCharacteristicsSelectionMode field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetChargingCharacteristicsSelectionMode() ChargingCharacteristicsSelectionMode {
-	if o == nil || isNil(o.ChargingCharacteristicsSelectionMode) {
+	if o == nil || IsNil(o.ChargingCharacteristicsSelectionMode) {
 		var ret ChargingCharacteristicsSelectionMode
 		return ret
 	}
@@ -425,7 +425,7 @@ func (o *PDUSessionInformation) GetChargingCharacteristicsSelectionMode() Chargi
 // GetChargingCharacteristicsSelectionModeOk returns a tuple with the ChargingCharacteristicsSelectionMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetChargingCharacteristicsSelectionModeOk() (*ChargingCharacteristicsSelectionMode, bool) {
-	if o == nil || isNil(o.ChargingCharacteristicsSelectionMode) {
+	if o == nil || IsNil(o.ChargingCharacteristicsSelectionMode) {
 		return nil, false
 	}
 	return o.ChargingCharacteristicsSelectionMode, true
@@ -433,7 +433,7 @@ func (o *PDUSessionInformation) GetChargingCharacteristicsSelectionModeOk() (*Ch
 
 // HasChargingCharacteristicsSelectionMode returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasChargingCharacteristicsSelectionMode() bool {
-	if o != nil && !isNil(o.ChargingCharacteristicsSelectionMode) {
+	if o != nil && !IsNil(o.ChargingCharacteristicsSelectionMode) {
 		return true
 	}
 
@@ -447,7 +447,7 @@ func (o *PDUSessionInformation) SetChargingCharacteristicsSelectionMode(v Chargi
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -457,7 +457,7 @@ func (o *PDUSessionInformation) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -465,7 +465,7 @@ func (o *PDUSessionInformation) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -479,7 +479,7 @@ func (o *PDUSessionInformation) SetStartTime(v time.Time) {
 
 // GetStopTime returns the StopTime field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetStopTime() time.Time {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		var ret time.Time
 		return ret
 	}
@@ -489,7 +489,7 @@ func (o *PDUSessionInformation) GetStopTime() time.Time {
 // GetStopTimeOk returns a tuple with the StopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetStopTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StopTime) {
+	if o == nil || IsNil(o.StopTime) {
 		return nil, false
 	}
 	return o.StopTime, true
@@ -497,7 +497,7 @@ func (o *PDUSessionInformation) GetStopTimeOk() (*time.Time, bool) {
 
 // HasStopTime returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasStopTime() bool {
-	if o != nil && !isNil(o.StopTime) {
+	if o != nil && !IsNil(o.StopTime) {
 		return true
 	}
 
@@ -511,7 +511,7 @@ func (o *PDUSessionInformation) SetStopTime(v time.Time) {
 
 // GetVar3gppPSDataOffStatus returns the Var3gppPSDataOffStatus field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOffStatus {
-	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
 		var ret Model3GPPPSDataOffStatus
 		return ret
 	}
@@ -521,7 +521,7 @@ func (o *PDUSessionInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOffSt
 // GetVar3gppPSDataOffStatusOk returns a tuple with the Var3gppPSDataOffStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDataOffStatus, bool) {
-	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
 		return nil, false
 	}
 	return o.Var3gppPSDataOffStatus, true
@@ -529,7 +529,7 @@ func (o *PDUSessionInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDataO
 
 // HasVar3gppPSDataOffStatus returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasVar3gppPSDataOffStatus() bool {
-	if o != nil && !isNil(o.Var3gppPSDataOffStatus) {
+	if o != nil && !IsNil(o.Var3gppPSDataOffStatus) {
 		return true
 	}
 
@@ -543,7 +543,7 @@ func (o *PDUSessionInformation) SetVar3gppPSDataOffStatus(v Model3GPPPSDataOffSt
 
 // GetSessionStopIndicator returns the SessionStopIndicator field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetSessionStopIndicator() bool {
-	if o == nil || isNil(o.SessionStopIndicator) {
+	if o == nil || IsNil(o.SessionStopIndicator) {
 		var ret bool
 		return ret
 	}
@@ -553,7 +553,7 @@ func (o *PDUSessionInformation) GetSessionStopIndicator() bool {
 // GetSessionStopIndicatorOk returns a tuple with the SessionStopIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetSessionStopIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.SessionStopIndicator) {
+	if o == nil || IsNil(o.SessionStopIndicator) {
 		return nil, false
 	}
 	return o.SessionStopIndicator, true
@@ -561,7 +561,7 @@ func (o *PDUSessionInformation) GetSessionStopIndicatorOk() (*bool, bool) {
 
 // HasSessionStopIndicator returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasSessionStopIndicator() bool {
-	if o != nil && !isNil(o.SessionStopIndicator) {
+	if o != nil && !IsNil(o.SessionStopIndicator) {
 		return true
 	}
 
@@ -575,7 +575,7 @@ func (o *PDUSessionInformation) SetSessionStopIndicator(v bool) {
 
 // GetPduAddress returns the PduAddress field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetPduAddress() PDUAddress {
-	if o == nil || isNil(o.PduAddress) {
+	if o == nil || IsNil(o.PduAddress) {
 		var ret PDUAddress
 		return ret
 	}
@@ -585,7 +585,7 @@ func (o *PDUSessionInformation) GetPduAddress() PDUAddress {
 // GetPduAddressOk returns a tuple with the PduAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetPduAddressOk() (*PDUAddress, bool) {
-	if o == nil || isNil(o.PduAddress) {
+	if o == nil || IsNil(o.PduAddress) {
 		return nil, false
 	}
 	return o.PduAddress, true
@@ -593,7 +593,7 @@ func (o *PDUSessionInformation) GetPduAddressOk() (*PDUAddress, bool) {
 
 // HasPduAddress returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasPduAddress() bool {
-	if o != nil && !isNil(o.PduAddress) {
+	if o != nil && !IsNil(o.PduAddress) {
 		return true
 	}
 
@@ -607,7 +607,7 @@ func (o *PDUSessionInformation) SetPduAddress(v PDUAddress) {
 
 // GetDiagnostics returns the Diagnostics field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetDiagnostics() int32 {
-	if o == nil || isNil(o.Diagnostics) {
+	if o == nil || IsNil(o.Diagnostics) {
 		var ret int32
 		return ret
 	}
@@ -617,7 +617,7 @@ func (o *PDUSessionInformation) GetDiagnostics() int32 {
 // GetDiagnosticsOk returns a tuple with the Diagnostics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetDiagnosticsOk() (*int32, bool) {
-	if o == nil || isNil(o.Diagnostics) {
+	if o == nil || IsNil(o.Diagnostics) {
 		return nil, false
 	}
 	return o.Diagnostics, true
@@ -625,7 +625,7 @@ func (o *PDUSessionInformation) GetDiagnosticsOk() (*int32, bool) {
 
 // HasDiagnostics returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasDiagnostics() bool {
-	if o != nil && !isNil(o.Diagnostics) {
+	if o != nil && !IsNil(o.Diagnostics) {
 		return true
 	}
 
@@ -639,7 +639,7 @@ func (o *PDUSessionInformation) SetDiagnostics(v int32) {
 
 // GetAuthorizedQoSInformation returns the AuthorizedQoSInformation field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetAuthorizedQoSInformation() AuthorizedDefaultQos {
-	if o == nil || isNil(o.AuthorizedQoSInformation) {
+	if o == nil || IsNil(o.AuthorizedQoSInformation) {
 		var ret AuthorizedDefaultQos
 		return ret
 	}
@@ -649,7 +649,7 @@ func (o *PDUSessionInformation) GetAuthorizedQoSInformation() AuthorizedDefaultQ
 // GetAuthorizedQoSInformationOk returns a tuple with the AuthorizedQoSInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetAuthorizedQoSInformationOk() (*AuthorizedDefaultQos, bool) {
-	if o == nil || isNil(o.AuthorizedQoSInformation) {
+	if o == nil || IsNil(o.AuthorizedQoSInformation) {
 		return nil, false
 	}
 	return o.AuthorizedQoSInformation, true
@@ -657,7 +657,7 @@ func (o *PDUSessionInformation) GetAuthorizedQoSInformationOk() (*AuthorizedDefa
 
 // HasAuthorizedQoSInformation returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasAuthorizedQoSInformation() bool {
-	if o != nil && !isNil(o.AuthorizedQoSInformation) {
+	if o != nil && !IsNil(o.AuthorizedQoSInformation) {
 		return true
 	}
 
@@ -671,7 +671,7 @@ func (o *PDUSessionInformation) SetAuthorizedQoSInformation(v AuthorizedDefaultQ
 
 // GetSubscribedQoSInformation returns the SubscribedQoSInformation field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetSubscribedQoSInformation() SubscribedDefaultQos {
-	if o == nil || isNil(o.SubscribedQoSInformation) {
+	if o == nil || IsNil(o.SubscribedQoSInformation) {
 		var ret SubscribedDefaultQos
 		return ret
 	}
@@ -681,7 +681,7 @@ func (o *PDUSessionInformation) GetSubscribedQoSInformation() SubscribedDefaultQ
 // GetSubscribedQoSInformationOk returns a tuple with the SubscribedQoSInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetSubscribedQoSInformationOk() (*SubscribedDefaultQos, bool) {
-	if o == nil || isNil(o.SubscribedQoSInformation) {
+	if o == nil || IsNil(o.SubscribedQoSInformation) {
 		return nil, false
 	}
 	return o.SubscribedQoSInformation, true
@@ -689,7 +689,7 @@ func (o *PDUSessionInformation) GetSubscribedQoSInformationOk() (*SubscribedDefa
 
 // HasSubscribedQoSInformation returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasSubscribedQoSInformation() bool {
-	if o != nil && !isNil(o.SubscribedQoSInformation) {
+	if o != nil && !IsNil(o.SubscribedQoSInformation) {
 		return true
 	}
 
@@ -703,7 +703,7 @@ func (o *PDUSessionInformation) SetSubscribedQoSInformation(v SubscribedDefaultQ
 
 // GetAuthorizedSessionAMBR returns the AuthorizedSessionAMBR field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetAuthorizedSessionAMBR() Ambr {
-	if o == nil || isNil(o.AuthorizedSessionAMBR) {
+	if o == nil || IsNil(o.AuthorizedSessionAMBR) {
 		var ret Ambr
 		return ret
 	}
@@ -713,7 +713,7 @@ func (o *PDUSessionInformation) GetAuthorizedSessionAMBR() Ambr {
 // GetAuthorizedSessionAMBROk returns a tuple with the AuthorizedSessionAMBR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetAuthorizedSessionAMBROk() (*Ambr, bool) {
-	if o == nil || isNil(o.AuthorizedSessionAMBR) {
+	if o == nil || IsNil(o.AuthorizedSessionAMBR) {
 		return nil, false
 	}
 	return o.AuthorizedSessionAMBR, true
@@ -721,7 +721,7 @@ func (o *PDUSessionInformation) GetAuthorizedSessionAMBROk() (*Ambr, bool) {
 
 // HasAuthorizedSessionAMBR returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasAuthorizedSessionAMBR() bool {
-	if o != nil && !isNil(o.AuthorizedSessionAMBR) {
+	if o != nil && !IsNil(o.AuthorizedSessionAMBR) {
 		return true
 	}
 
@@ -735,7 +735,7 @@ func (o *PDUSessionInformation) SetAuthorizedSessionAMBR(v Ambr) {
 
 // GetSubscribedSessionAMBR returns the SubscribedSessionAMBR field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetSubscribedSessionAMBR() Ambr {
-	if o == nil || isNil(o.SubscribedSessionAMBR) {
+	if o == nil || IsNil(o.SubscribedSessionAMBR) {
 		var ret Ambr
 		return ret
 	}
@@ -745,7 +745,7 @@ func (o *PDUSessionInformation) GetSubscribedSessionAMBR() Ambr {
 // GetSubscribedSessionAMBROk returns a tuple with the SubscribedSessionAMBR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetSubscribedSessionAMBROk() (*Ambr, bool) {
-	if o == nil || isNil(o.SubscribedSessionAMBR) {
+	if o == nil || IsNil(o.SubscribedSessionAMBR) {
 		return nil, false
 	}
 	return o.SubscribedSessionAMBR, true
@@ -753,7 +753,7 @@ func (o *PDUSessionInformation) GetSubscribedSessionAMBROk() (*Ambr, bool) {
 
 // HasSubscribedSessionAMBR returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasSubscribedSessionAMBR() bool {
-	if o != nil && !isNil(o.SubscribedSessionAMBR) {
+	if o != nil && !IsNil(o.SubscribedSessionAMBR) {
 		return true
 	}
 
@@ -767,7 +767,7 @@ func (o *PDUSessionInformation) SetSubscribedSessionAMBR(v Ambr) {
 
 // GetServingCNPlmnId returns the ServingCNPlmnId field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetServingCNPlmnId() PlmnId {
-	if o == nil || isNil(o.ServingCNPlmnId) {
+	if o == nil || IsNil(o.ServingCNPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -777,7 +777,7 @@ func (o *PDUSessionInformation) GetServingCNPlmnId() PlmnId {
 // GetServingCNPlmnIdOk returns a tuple with the ServingCNPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetServingCNPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.ServingCNPlmnId) {
+	if o == nil || IsNil(o.ServingCNPlmnId) {
 		return nil, false
 	}
 	return o.ServingCNPlmnId, true
@@ -785,7 +785,7 @@ func (o *PDUSessionInformation) GetServingCNPlmnIdOk() (*PlmnId, bool) {
 
 // HasServingCNPlmnId returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasServingCNPlmnId() bool {
-	if o != nil && !isNil(o.ServingCNPlmnId) {
+	if o != nil && !IsNil(o.ServingCNPlmnId) {
 		return true
 	}
 
@@ -799,7 +799,7 @@ func (o *PDUSessionInformation) SetServingCNPlmnId(v PlmnId) {
 
 // GetMAPDUSessionInformation returns the MAPDUSessionInformation field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetMAPDUSessionInformation() MAPDUSessionInformation {
-	if o == nil || isNil(o.MAPDUSessionInformation) {
+	if o == nil || IsNil(o.MAPDUSessionInformation) {
 		var ret MAPDUSessionInformation
 		return ret
 	}
@@ -809,7 +809,7 @@ func (o *PDUSessionInformation) GetMAPDUSessionInformation() MAPDUSessionInforma
 // GetMAPDUSessionInformationOk returns a tuple with the MAPDUSessionInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetMAPDUSessionInformationOk() (*MAPDUSessionInformation, bool) {
-	if o == nil || isNil(o.MAPDUSessionInformation) {
+	if o == nil || IsNil(o.MAPDUSessionInformation) {
 		return nil, false
 	}
 	return o.MAPDUSessionInformation, true
@@ -817,7 +817,7 @@ func (o *PDUSessionInformation) GetMAPDUSessionInformationOk() (*MAPDUSessionInf
 
 // HasMAPDUSessionInformation returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasMAPDUSessionInformation() bool {
-	if o != nil && !isNil(o.MAPDUSessionInformation) {
+	if o != nil && !IsNil(o.MAPDUSessionInformation) {
 		return true
 	}
 
@@ -831,7 +831,7 @@ func (o *PDUSessionInformation) SetMAPDUSessionInformation(v MAPDUSessionInforma
 
 // GetEnhancedDiagnostics returns the EnhancedDiagnostics field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetEnhancedDiagnostics() []RanNasRelCause {
-	if o == nil || isNil(o.EnhancedDiagnostics) {
+	if o == nil || IsNil(o.EnhancedDiagnostics) {
 		var ret []RanNasRelCause
 		return ret
 	}
@@ -841,7 +841,7 @@ func (o *PDUSessionInformation) GetEnhancedDiagnostics() []RanNasRelCause {
 // GetEnhancedDiagnosticsOk returns a tuple with the EnhancedDiagnostics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetEnhancedDiagnosticsOk() ([]RanNasRelCause, bool) {
-	if o == nil || isNil(o.EnhancedDiagnostics) {
+	if o == nil || IsNil(o.EnhancedDiagnostics) {
 		return nil, false
 	}
 	return o.EnhancedDiagnostics, true
@@ -849,7 +849,7 @@ func (o *PDUSessionInformation) GetEnhancedDiagnosticsOk() ([]RanNasRelCause, bo
 
 // HasEnhancedDiagnostics returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasEnhancedDiagnostics() bool {
-	if o != nil && !isNil(o.EnhancedDiagnostics) {
+	if o != nil && !IsNil(o.EnhancedDiagnostics) {
 		return true
 	}
 
@@ -863,7 +863,7 @@ func (o *PDUSessionInformation) SetEnhancedDiagnostics(v []RanNasRelCause) {
 
 // GetRedundantTransmissionType returns the RedundantTransmissionType field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetRedundantTransmissionType() RedundantTransmissionType {
-	if o == nil || isNil(o.RedundantTransmissionType) {
+	if o == nil || IsNil(o.RedundantTransmissionType) {
 		var ret RedundantTransmissionType
 		return ret
 	}
@@ -873,7 +873,7 @@ func (o *PDUSessionInformation) GetRedundantTransmissionType() RedundantTransmis
 // GetRedundantTransmissionTypeOk returns a tuple with the RedundantTransmissionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetRedundantTransmissionTypeOk() (*RedundantTransmissionType, bool) {
-	if o == nil || isNil(o.RedundantTransmissionType) {
+	if o == nil || IsNil(o.RedundantTransmissionType) {
 		return nil, false
 	}
 	return o.RedundantTransmissionType, true
@@ -881,7 +881,7 @@ func (o *PDUSessionInformation) GetRedundantTransmissionTypeOk() (*RedundantTran
 
 // HasRedundantTransmissionType returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasRedundantTransmissionType() bool {
-	if o != nil && !isNil(o.RedundantTransmissionType) {
+	if o != nil && !IsNil(o.RedundantTransmissionType) {
 		return true
 	}
 
@@ -895,7 +895,7 @@ func (o *PDUSessionInformation) SetRedundantTransmissionType(v RedundantTransmis
 
 // GetPDUSessionPairID returns the PDUSessionPairID field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetPDUSessionPairID() int32 {
-	if o == nil || isNil(o.PDUSessionPairID) {
+	if o == nil || IsNil(o.PDUSessionPairID) {
 		var ret int32
 		return ret
 	}
@@ -905,7 +905,7 @@ func (o *PDUSessionInformation) GetPDUSessionPairID() int32 {
 // GetPDUSessionPairIDOk returns a tuple with the PDUSessionPairID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetPDUSessionPairIDOk() (*int32, bool) {
-	if o == nil || isNil(o.PDUSessionPairID) {
+	if o == nil || IsNil(o.PDUSessionPairID) {
 		return nil, false
 	}
 	return o.PDUSessionPairID, true
@@ -913,7 +913,7 @@ func (o *PDUSessionInformation) GetPDUSessionPairIDOk() (*int32, bool) {
 
 // HasPDUSessionPairID returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasPDUSessionPairID() bool {
-	if o != nil && !isNil(o.PDUSessionPairID) {
+	if o != nil && !IsNil(o.PDUSessionPairID) {
 		return true
 	}
 
@@ -927,7 +927,7 @@ func (o *PDUSessionInformation) SetPDUSessionPairID(v int32) {
 
 // GetCpCIoTOptimisationIndicator returns the CpCIoTOptimisationIndicator field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetCpCIoTOptimisationIndicator() bool {
-	if o == nil || isNil(o.CpCIoTOptimisationIndicator) {
+	if o == nil || IsNil(o.CpCIoTOptimisationIndicator) {
 		var ret bool
 		return ret
 	}
@@ -937,7 +937,7 @@ func (o *PDUSessionInformation) GetCpCIoTOptimisationIndicator() bool {
 // GetCpCIoTOptimisationIndicatorOk returns a tuple with the CpCIoTOptimisationIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetCpCIoTOptimisationIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.CpCIoTOptimisationIndicator) {
+	if o == nil || IsNil(o.CpCIoTOptimisationIndicator) {
 		return nil, false
 	}
 	return o.CpCIoTOptimisationIndicator, true
@@ -945,7 +945,7 @@ func (o *PDUSessionInformation) GetCpCIoTOptimisationIndicatorOk() (*bool, bool)
 
 // HasCpCIoTOptimisationIndicator returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasCpCIoTOptimisationIndicator() bool {
-	if o != nil && !isNil(o.CpCIoTOptimisationIndicator) {
+	if o != nil && !IsNil(o.CpCIoTOptimisationIndicator) {
 		return true
 	}
 
@@ -959,7 +959,7 @@ func (o *PDUSessionInformation) SetCpCIoTOptimisationIndicator(v bool) {
 
 // GetVar5GSControlPlaneOnlyIndicator returns the Var5GSControlPlaneOnlyIndicator field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetVar5GSControlPlaneOnlyIndicator() bool {
-	if o == nil || isNil(o.Var5GSControlPlaneOnlyIndicator) {
+	if o == nil || IsNil(o.Var5GSControlPlaneOnlyIndicator) {
 		var ret bool
 		return ret
 	}
@@ -969,7 +969,7 @@ func (o *PDUSessionInformation) GetVar5GSControlPlaneOnlyIndicator() bool {
 // GetVar5GSControlPlaneOnlyIndicatorOk returns a tuple with the Var5GSControlPlaneOnlyIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetVar5GSControlPlaneOnlyIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.Var5GSControlPlaneOnlyIndicator) {
+	if o == nil || IsNil(o.Var5GSControlPlaneOnlyIndicator) {
 		return nil, false
 	}
 	return o.Var5GSControlPlaneOnlyIndicator, true
@@ -977,7 +977,7 @@ func (o *PDUSessionInformation) GetVar5GSControlPlaneOnlyIndicatorOk() (*bool, b
 
 // HasVar5GSControlPlaneOnlyIndicator returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasVar5GSControlPlaneOnlyIndicator() bool {
-	if o != nil && !isNil(o.Var5GSControlPlaneOnlyIndicator) {
+	if o != nil && !IsNil(o.Var5GSControlPlaneOnlyIndicator) {
 		return true
 	}
 
@@ -991,7 +991,7 @@ func (o *PDUSessionInformation) SetVar5GSControlPlaneOnlyIndicator(v bool) {
 
 // GetSmallDataRateControlIndicator returns the SmallDataRateControlIndicator field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetSmallDataRateControlIndicator() bool {
-	if o == nil || isNil(o.SmallDataRateControlIndicator) {
+	if o == nil || IsNil(o.SmallDataRateControlIndicator) {
 		var ret bool
 		return ret
 	}
@@ -1001,7 +1001,7 @@ func (o *PDUSessionInformation) GetSmallDataRateControlIndicator() bool {
 // GetSmallDataRateControlIndicatorOk returns a tuple with the SmallDataRateControlIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetSmallDataRateControlIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.SmallDataRateControlIndicator) {
+	if o == nil || IsNil(o.SmallDataRateControlIndicator) {
 		return nil, false
 	}
 	return o.SmallDataRateControlIndicator, true
@@ -1009,7 +1009,7 @@ func (o *PDUSessionInformation) GetSmallDataRateControlIndicatorOk() (*bool, boo
 
 // HasSmallDataRateControlIndicator returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasSmallDataRateControlIndicator() bool {
-	if o != nil && !isNil(o.SmallDataRateControlIndicator) {
+	if o != nil && !IsNil(o.SmallDataRateControlIndicator) {
 		return true
 	}
 
@@ -1023,7 +1023,7 @@ func (o *PDUSessionInformation) SetSmallDataRateControlIndicator(v bool) {
 
 // GetVar5GLANTypeService returns the Var5GLANTypeService field value if set, zero value otherwise.
 func (o *PDUSessionInformation) GetVar5GLANTypeService() Model5GLANTypeService {
-	if o == nil || isNil(o.Var5GLANTypeService) {
+	if o == nil || IsNil(o.Var5GLANTypeService) {
 		var ret Model5GLANTypeService
 		return ret
 	}
@@ -1033,7 +1033,7 @@ func (o *PDUSessionInformation) GetVar5GLANTypeService() Model5GLANTypeService {
 // GetVar5GLANTypeServiceOk returns a tuple with the Var5GLANTypeService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionInformation) GetVar5GLANTypeServiceOk() (*Model5GLANTypeService, bool) {
-	if o == nil || isNil(o.Var5GLANTypeService) {
+	if o == nil || IsNil(o.Var5GLANTypeService) {
 		return nil, false
 	}
 	return o.Var5GLANTypeService, true
@@ -1041,7 +1041,7 @@ func (o *PDUSessionInformation) GetVar5GLANTypeServiceOk() (*Model5GLANTypeServi
 
 // HasVar5GLANTypeService returns a boolean if a field has been set.
 func (o *PDUSessionInformation) HasVar5GLANTypeService() bool {
-	if o != nil && !isNil(o.Var5GLANTypeService) {
+	if o != nil && !IsNil(o.Var5GLANTypeService) {
 		return true
 	}
 
@@ -1054,7 +1054,7 @@ func (o *PDUSessionInformation) SetVar5GLANTypeService(v Model5GLANTypeService) 
 }
 
 func (o PDUSessionInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1063,93 +1063,93 @@ func (o PDUSessionInformation) MarshalJSON() ([]byte, error) {
 
 func (o PDUSessionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NetworkSlicingInfo) {
+	if !IsNil(o.NetworkSlicingInfo) {
 		toSerialize["networkSlicingInfo"] = o.NetworkSlicingInfo
 	}
 	toSerialize["pduSessionID"] = o.PduSessionID
-	if !isNil(o.PduType) {
+	if !IsNil(o.PduType) {
 		toSerialize["pduType"] = o.PduType
 	}
-	if !isNil(o.SscMode) {
+	if !IsNil(o.SscMode) {
 		toSerialize["sscMode"] = o.SscMode
 	}
-	if !isNil(o.HPlmnId) {
+	if !IsNil(o.HPlmnId) {
 		toSerialize["hPlmnId"] = o.HPlmnId
 	}
-	if !isNil(o.ServingNetworkFunctionID) {
+	if !IsNil(o.ServingNetworkFunctionID) {
 		toSerialize["servingNetworkFunctionID"] = o.ServingNetworkFunctionID
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.MAPDUNon3GPPRATType) {
+	if !IsNil(o.MAPDUNon3GPPRATType) {
 		toSerialize["mAPDUNon3GPPRATType"] = o.MAPDUNon3GPPRATType
 	}
 	toSerialize["dnnId"] = o.DnnId
-	if !isNil(o.DnnSelectionMode) {
+	if !IsNil(o.DnnSelectionMode) {
 		toSerialize["dnnSelectionMode"] = o.DnnSelectionMode
 	}
-	if !isNil(o.ChargingCharacteristics) {
+	if !IsNil(o.ChargingCharacteristics) {
 		toSerialize["chargingCharacteristics"] = o.ChargingCharacteristics
 	}
-	if !isNil(o.ChargingCharacteristicsSelectionMode) {
+	if !IsNil(o.ChargingCharacteristicsSelectionMode) {
 		toSerialize["chargingCharacteristicsSelectionMode"] = o.ChargingCharacteristicsSelectionMode
 	}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !isNil(o.StopTime) {
+	if !IsNil(o.StopTime) {
 		toSerialize["stopTime"] = o.StopTime
 	}
-	if !isNil(o.Var3gppPSDataOffStatus) {
+	if !IsNil(o.Var3gppPSDataOffStatus) {
 		toSerialize["3gppPSDataOffStatus"] = o.Var3gppPSDataOffStatus
 	}
-	if !isNil(o.SessionStopIndicator) {
+	if !IsNil(o.SessionStopIndicator) {
 		toSerialize["sessionStopIndicator"] = o.SessionStopIndicator
 	}
-	if !isNil(o.PduAddress) {
+	if !IsNil(o.PduAddress) {
 		toSerialize["pduAddress"] = o.PduAddress
 	}
-	if !isNil(o.Diagnostics) {
+	if !IsNil(o.Diagnostics) {
 		toSerialize["diagnostics"] = o.Diagnostics
 	}
-	if !isNil(o.AuthorizedQoSInformation) {
+	if !IsNil(o.AuthorizedQoSInformation) {
 		toSerialize["authorizedQoSInformation"] = o.AuthorizedQoSInformation
 	}
-	if !isNil(o.SubscribedQoSInformation) {
+	if !IsNil(o.SubscribedQoSInformation) {
 		toSerialize["subscribedQoSInformation"] = o.SubscribedQoSInformation
 	}
-	if !isNil(o.AuthorizedSessionAMBR) {
+	if !IsNil(o.AuthorizedSessionAMBR) {
 		toSerialize["authorizedSessionAMBR"] = o.AuthorizedSessionAMBR
 	}
-	if !isNil(o.SubscribedSessionAMBR) {
+	if !IsNil(o.SubscribedSessionAMBR) {
 		toSerialize["subscribedSessionAMBR"] = o.SubscribedSessionAMBR
 	}
-	if !isNil(o.ServingCNPlmnId) {
+	if !IsNil(o.ServingCNPlmnId) {
 		toSerialize["servingCNPlmnId"] = o.ServingCNPlmnId
 	}
-	if !isNil(o.MAPDUSessionInformation) {
+	if !IsNil(o.MAPDUSessionInformation) {
 		toSerialize["mAPDUSessionInformation"] = o.MAPDUSessionInformation
 	}
-	if !isNil(o.EnhancedDiagnostics) {
+	if !IsNil(o.EnhancedDiagnostics) {
 		toSerialize["enhancedDiagnostics"] = o.EnhancedDiagnostics
 	}
-	if !isNil(o.RedundantTransmissionType) {
+	if !IsNil(o.RedundantTransmissionType) {
 		toSerialize["redundantTransmissionType"] = o.RedundantTransmissionType
 	}
-	if !isNil(o.PDUSessionPairID) {
+	if !IsNil(o.PDUSessionPairID) {
 		toSerialize["pDUSessionPairID"] = o.PDUSessionPairID
 	}
-	if !isNil(o.CpCIoTOptimisationIndicator) {
+	if !IsNil(o.CpCIoTOptimisationIndicator) {
 		toSerialize["cpCIoTOptimisationIndicator"] = o.CpCIoTOptimisationIndicator
 	}
-	if !isNil(o.Var5GSControlPlaneOnlyIndicator) {
+	if !IsNil(o.Var5GSControlPlaneOnlyIndicator) {
 		toSerialize["5GSControlPlaneOnlyIndicator"] = o.Var5GSControlPlaneOnlyIndicator
 	}
-	if !isNil(o.SmallDataRateControlIndicator) {
+	if !IsNil(o.SmallDataRateControlIndicator) {
 		toSerialize["smallDataRateControlIndicator"] = o.SmallDataRateControlIndicator
 	}
-	if !isNil(o.Var5GLANTypeService) {
+	if !IsNil(o.Var5GLANTypeService) {
 		toSerialize["5GLANTypeService"] = o.Var5GLANTypeService
 	}
 	return toSerialize, nil
@@ -1190,5 +1190,3 @@ func (v *NullablePDUSessionInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

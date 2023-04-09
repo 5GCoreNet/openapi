@@ -19,35 +19,35 @@ var _ MappedNullable = &TopSliceSubnetProfile{}
 
 // TopSliceSubnetProfile struct for TopSliceSubnetProfile
 type TopSliceSubnetProfile struct {
-	DLLatency *int32 `json:"dLLatency,omitempty"`
-	ULLatency *int32 `json:"uLLatency,omitempty"`
-	MaxNumberofUEs *int32 `json:"maxNumberofUEs,omitempty"`
-	DLThptPerSliceSubnet *XLThpt `json:"dLThptPerSliceSubnet,omitempty"`
-	DLThptPerUE *XLThpt `json:"dLThptPerUE,omitempty"`
-	ULThptPerSliceSubnet *XLThpt `json:"uLThptPerSliceSubnet,omitempty"`
-	ULThptPerUE *XLThpt `json:"uLThptPerUE,omitempty"`
-	DLMaxPktSize *int32 `json:"dLMaxPktSize,omitempty"`
-	ULMaxPktSize *int32 `json:"uLMaxPktSize,omitempty"`
-	MaxNumberOfPDUSessions *int32 `json:"maxNumberOfPDUSessions,omitempty"`
-	NROperatingBands *string `json:"nROperatingBands,omitempty"`
-	SliceSimultaneousUse *SliceSimultaneousUse `json:"sliceSimultaneousUse,omitempty"`
-	EnergyEfficiency *EnergyEfficiency `json:"energyEfficiency,omitempty"`
-	Synchronicity *Synchronicity `json:"synchronicity,omitempty"`
-	DelayTolerance *DelayTolerance `json:"delayTolerance,omitempty"`
-	Positioning *Positioning `json:"positioning,omitempty"`
-	TermDensity *TermDensity `json:"termDensity,omitempty"`
-	ActivityFactor *int32 `json:"activityFactor,omitempty"`
-	CoverageAreaTAList []int32 `json:"coverageAreaTAList,omitempty"`
-	ResourceSharingLevel *SharingLevel `json:"resourceSharingLevel,omitempty"`
-	UEMobilityLevel *MobilityLevel `json:"uEMobilityLevel,omitempty"`
-	UESpeed *int32 `json:"uESpeed,omitempty"`
-	Reliability *float32 `json:"reliability,omitempty"`
-	SST *int32 `json:"sST,omitempty"`
-	DLDeterministicComm *DeterministicComm `json:"dLDeterministicComm,omitempty"`
-	ULDeterministicComm *DeterministicComm `json:"uLDeterministicComm,omitempty"`
-	SurvivalTime *float32 `json:"survivalTime,omitempty"`
-	NssaaSupport *NSSAASupport `json:"nssaaSupport,omitempty"`
-	N6Protection *N6Protection `json:"n6Protection,omitempty"`
+	DLLatency              *int32                `json:"dLLatency,omitempty"`
+	ULLatency              *int32                `json:"uLLatency,omitempty"`
+	MaxNumberofUEs         *int32                `json:"maxNumberofUEs,omitempty"`
+	DLThptPerSliceSubnet   *XLThpt               `json:"dLThptPerSliceSubnet,omitempty"`
+	DLThptPerUE            *XLThpt               `json:"dLThptPerUE,omitempty"`
+	ULThptPerSliceSubnet   *XLThpt               `json:"uLThptPerSliceSubnet,omitempty"`
+	ULThptPerUE            *XLThpt               `json:"uLThptPerUE,omitempty"`
+	DLMaxPktSize           *int32                `json:"dLMaxPktSize,omitempty"`
+	ULMaxPktSize           *int32                `json:"uLMaxPktSize,omitempty"`
+	MaxNumberOfPDUSessions *int32                `json:"maxNumberOfPDUSessions,omitempty"`
+	NROperatingBands       *string               `json:"nROperatingBands,omitempty"`
+	SliceSimultaneousUse   *SliceSimultaneousUse `json:"sliceSimultaneousUse,omitempty"`
+	EnergyEfficiency       *EnergyEfficiency     `json:"energyEfficiency,omitempty"`
+	Synchronicity          *Synchronicity        `json:"synchronicity,omitempty"`
+	DelayTolerance         *DelayTolerance       `json:"delayTolerance,omitempty"`
+	Positioning            *Positioning          `json:"positioning,omitempty"`
+	TermDensity            *TermDensity          `json:"termDensity,omitempty"`
+	ActivityFactor         *int32                `json:"activityFactor,omitempty"`
+	CoverageAreaTAList     []int32               `json:"coverageAreaTAList,omitempty"`
+	ResourceSharingLevel   *SharingLevel         `json:"resourceSharingLevel,omitempty"`
+	UEMobilityLevel        *MobilityLevel        `json:"uEMobilityLevel,omitempty"`
+	UESpeed                *int32                `json:"uESpeed,omitempty"`
+	Reliability            *float32              `json:"reliability,omitempty"`
+	SST                    *int32                `json:"sST,omitempty"`
+	DLDeterministicComm    *DeterministicComm    `json:"dLDeterministicComm,omitempty"`
+	ULDeterministicComm    *DeterministicComm    `json:"uLDeterministicComm,omitempty"`
+	SurvivalTime           *float32              `json:"survivalTime,omitempty"`
+	NssaaSupport           *NSSAASupport         `json:"nssaaSupport,omitempty"`
+	N6Protection           *N6Protection         `json:"n6Protection,omitempty"`
 }
 
 // NewTopSliceSubnetProfile instantiates a new TopSliceSubnetProfile object
@@ -69,7 +69,7 @@ func NewTopSliceSubnetProfileWithDefaults() *TopSliceSubnetProfile {
 
 // GetDLLatency returns the DLLatency field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetDLLatency() int32 {
-	if o == nil || isNil(o.DLLatency) {
+	if o == nil || IsNil(o.DLLatency) {
 		var ret int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *TopSliceSubnetProfile) GetDLLatency() int32 {
 // GetDLLatencyOk returns a tuple with the DLLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetDLLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.DLLatency) {
+	if o == nil || IsNil(o.DLLatency) {
 		return nil, false
 	}
 	return o.DLLatency, true
@@ -87,7 +87,7 @@ func (o *TopSliceSubnetProfile) GetDLLatencyOk() (*int32, bool) {
 
 // HasDLLatency returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasDLLatency() bool {
-	if o != nil && !isNil(o.DLLatency) {
+	if o != nil && !IsNil(o.DLLatency) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *TopSliceSubnetProfile) SetDLLatency(v int32) {
 
 // GetULLatency returns the ULLatency field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetULLatency() int32 {
-	if o == nil || isNil(o.ULLatency) {
+	if o == nil || IsNil(o.ULLatency) {
 		var ret int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *TopSliceSubnetProfile) GetULLatency() int32 {
 // GetULLatencyOk returns a tuple with the ULLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetULLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.ULLatency) {
+	if o == nil || IsNil(o.ULLatency) {
 		return nil, false
 	}
 	return o.ULLatency, true
@@ -119,7 +119,7 @@ func (o *TopSliceSubnetProfile) GetULLatencyOk() (*int32, bool) {
 
 // HasULLatency returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasULLatency() bool {
-	if o != nil && !isNil(o.ULLatency) {
+	if o != nil && !IsNil(o.ULLatency) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *TopSliceSubnetProfile) SetULLatency(v int32) {
 
 // GetMaxNumberofUEs returns the MaxNumberofUEs field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetMaxNumberofUEs() int32 {
-	if o == nil || isNil(o.MaxNumberofUEs) {
+	if o == nil || IsNil(o.MaxNumberofUEs) {
 		var ret int32
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *TopSliceSubnetProfile) GetMaxNumberofUEs() int32 {
 // GetMaxNumberofUEsOk returns a tuple with the MaxNumberofUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetMaxNumberofUEsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumberofUEs) {
+	if o == nil || IsNil(o.MaxNumberofUEs) {
 		return nil, false
 	}
 	return o.MaxNumberofUEs, true
@@ -151,7 +151,7 @@ func (o *TopSliceSubnetProfile) GetMaxNumberofUEsOk() (*int32, bool) {
 
 // HasMaxNumberofUEs returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasMaxNumberofUEs() bool {
-	if o != nil && !isNil(o.MaxNumberofUEs) {
+	if o != nil && !IsNil(o.MaxNumberofUEs) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *TopSliceSubnetProfile) SetMaxNumberofUEs(v int32) {
 
 // GetDLThptPerSliceSubnet returns the DLThptPerSliceSubnet field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetDLThptPerSliceSubnet() XLThpt {
-	if o == nil || isNil(o.DLThptPerSliceSubnet) {
+	if o == nil || IsNil(o.DLThptPerSliceSubnet) {
 		var ret XLThpt
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *TopSliceSubnetProfile) GetDLThptPerSliceSubnet() XLThpt {
 // GetDLThptPerSliceSubnetOk returns a tuple with the DLThptPerSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetDLThptPerSliceSubnetOk() (*XLThpt, bool) {
-	if o == nil || isNil(o.DLThptPerSliceSubnet) {
+	if o == nil || IsNil(o.DLThptPerSliceSubnet) {
 		return nil, false
 	}
 	return o.DLThptPerSliceSubnet, true
@@ -183,7 +183,7 @@ func (o *TopSliceSubnetProfile) GetDLThptPerSliceSubnetOk() (*XLThpt, bool) {
 
 // HasDLThptPerSliceSubnet returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasDLThptPerSliceSubnet() bool {
-	if o != nil && !isNil(o.DLThptPerSliceSubnet) {
+	if o != nil && !IsNil(o.DLThptPerSliceSubnet) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *TopSliceSubnetProfile) SetDLThptPerSliceSubnet(v XLThpt) {
 
 // GetDLThptPerUE returns the DLThptPerUE field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetDLThptPerUE() XLThpt {
-	if o == nil || isNil(o.DLThptPerUE) {
+	if o == nil || IsNil(o.DLThptPerUE) {
 		var ret XLThpt
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *TopSliceSubnetProfile) GetDLThptPerUE() XLThpt {
 // GetDLThptPerUEOk returns a tuple with the DLThptPerUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetDLThptPerUEOk() (*XLThpt, bool) {
-	if o == nil || isNil(o.DLThptPerUE) {
+	if o == nil || IsNil(o.DLThptPerUE) {
 		return nil, false
 	}
 	return o.DLThptPerUE, true
@@ -215,7 +215,7 @@ func (o *TopSliceSubnetProfile) GetDLThptPerUEOk() (*XLThpt, bool) {
 
 // HasDLThptPerUE returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasDLThptPerUE() bool {
-	if o != nil && !isNil(o.DLThptPerUE) {
+	if o != nil && !IsNil(o.DLThptPerUE) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *TopSliceSubnetProfile) SetDLThptPerUE(v XLThpt) {
 
 // GetULThptPerSliceSubnet returns the ULThptPerSliceSubnet field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetULThptPerSliceSubnet() XLThpt {
-	if o == nil || isNil(o.ULThptPerSliceSubnet) {
+	if o == nil || IsNil(o.ULThptPerSliceSubnet) {
 		var ret XLThpt
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *TopSliceSubnetProfile) GetULThptPerSliceSubnet() XLThpt {
 // GetULThptPerSliceSubnetOk returns a tuple with the ULThptPerSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetULThptPerSliceSubnetOk() (*XLThpt, bool) {
-	if o == nil || isNil(o.ULThptPerSliceSubnet) {
+	if o == nil || IsNil(o.ULThptPerSliceSubnet) {
 		return nil, false
 	}
 	return o.ULThptPerSliceSubnet, true
@@ -247,7 +247,7 @@ func (o *TopSliceSubnetProfile) GetULThptPerSliceSubnetOk() (*XLThpt, bool) {
 
 // HasULThptPerSliceSubnet returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasULThptPerSliceSubnet() bool {
-	if o != nil && !isNil(o.ULThptPerSliceSubnet) {
+	if o != nil && !IsNil(o.ULThptPerSliceSubnet) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *TopSliceSubnetProfile) SetULThptPerSliceSubnet(v XLThpt) {
 
 // GetULThptPerUE returns the ULThptPerUE field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetULThptPerUE() XLThpt {
-	if o == nil || isNil(o.ULThptPerUE) {
+	if o == nil || IsNil(o.ULThptPerUE) {
 		var ret XLThpt
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *TopSliceSubnetProfile) GetULThptPerUE() XLThpt {
 // GetULThptPerUEOk returns a tuple with the ULThptPerUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetULThptPerUEOk() (*XLThpt, bool) {
-	if o == nil || isNil(o.ULThptPerUE) {
+	if o == nil || IsNil(o.ULThptPerUE) {
 		return nil, false
 	}
 	return o.ULThptPerUE, true
@@ -279,7 +279,7 @@ func (o *TopSliceSubnetProfile) GetULThptPerUEOk() (*XLThpt, bool) {
 
 // HasULThptPerUE returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasULThptPerUE() bool {
-	if o != nil && !isNil(o.ULThptPerUE) {
+	if o != nil && !IsNil(o.ULThptPerUE) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *TopSliceSubnetProfile) SetULThptPerUE(v XLThpt) {
 
 // GetDLMaxPktSize returns the DLMaxPktSize field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetDLMaxPktSize() int32 {
-	if o == nil || isNil(o.DLMaxPktSize) {
+	if o == nil || IsNil(o.DLMaxPktSize) {
 		var ret int32
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *TopSliceSubnetProfile) GetDLMaxPktSize() int32 {
 // GetDLMaxPktSizeOk returns a tuple with the DLMaxPktSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetDLMaxPktSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.DLMaxPktSize) {
+	if o == nil || IsNil(o.DLMaxPktSize) {
 		return nil, false
 	}
 	return o.DLMaxPktSize, true
@@ -311,7 +311,7 @@ func (o *TopSliceSubnetProfile) GetDLMaxPktSizeOk() (*int32, bool) {
 
 // HasDLMaxPktSize returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasDLMaxPktSize() bool {
-	if o != nil && !isNil(o.DLMaxPktSize) {
+	if o != nil && !IsNil(o.DLMaxPktSize) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *TopSliceSubnetProfile) SetDLMaxPktSize(v int32) {
 
 // GetULMaxPktSize returns the ULMaxPktSize field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetULMaxPktSize() int32 {
-	if o == nil || isNil(o.ULMaxPktSize) {
+	if o == nil || IsNil(o.ULMaxPktSize) {
 		var ret int32
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *TopSliceSubnetProfile) GetULMaxPktSize() int32 {
 // GetULMaxPktSizeOk returns a tuple with the ULMaxPktSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetULMaxPktSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.ULMaxPktSize) {
+	if o == nil || IsNil(o.ULMaxPktSize) {
 		return nil, false
 	}
 	return o.ULMaxPktSize, true
@@ -343,7 +343,7 @@ func (o *TopSliceSubnetProfile) GetULMaxPktSizeOk() (*int32, bool) {
 
 // HasULMaxPktSize returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasULMaxPktSize() bool {
-	if o != nil && !isNil(o.ULMaxPktSize) {
+	if o != nil && !IsNil(o.ULMaxPktSize) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *TopSliceSubnetProfile) SetULMaxPktSize(v int32) {
 
 // GetMaxNumberOfPDUSessions returns the MaxNumberOfPDUSessions field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetMaxNumberOfPDUSessions() int32 {
-	if o == nil || isNil(o.MaxNumberOfPDUSessions) {
+	if o == nil || IsNil(o.MaxNumberOfPDUSessions) {
 		var ret int32
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *TopSliceSubnetProfile) GetMaxNumberOfPDUSessions() int32 {
 // GetMaxNumberOfPDUSessionsOk returns a tuple with the MaxNumberOfPDUSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetMaxNumberOfPDUSessionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumberOfPDUSessions) {
+	if o == nil || IsNil(o.MaxNumberOfPDUSessions) {
 		return nil, false
 	}
 	return o.MaxNumberOfPDUSessions, true
@@ -375,7 +375,7 @@ func (o *TopSliceSubnetProfile) GetMaxNumberOfPDUSessionsOk() (*int32, bool) {
 
 // HasMaxNumberOfPDUSessions returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasMaxNumberOfPDUSessions() bool {
-	if o != nil && !isNil(o.MaxNumberOfPDUSessions) {
+	if o != nil && !IsNil(o.MaxNumberOfPDUSessions) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *TopSliceSubnetProfile) SetMaxNumberOfPDUSessions(v int32) {
 
 // GetNROperatingBands returns the NROperatingBands field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetNROperatingBands() string {
-	if o == nil || isNil(o.NROperatingBands) {
+	if o == nil || IsNil(o.NROperatingBands) {
 		var ret string
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *TopSliceSubnetProfile) GetNROperatingBands() string {
 // GetNROperatingBandsOk returns a tuple with the NROperatingBands field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetNROperatingBandsOk() (*string, bool) {
-	if o == nil || isNil(o.NROperatingBands) {
+	if o == nil || IsNil(o.NROperatingBands) {
 		return nil, false
 	}
 	return o.NROperatingBands, true
@@ -407,7 +407,7 @@ func (o *TopSliceSubnetProfile) GetNROperatingBandsOk() (*string, bool) {
 
 // HasNROperatingBands returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasNROperatingBands() bool {
-	if o != nil && !isNil(o.NROperatingBands) {
+	if o != nil && !IsNil(o.NROperatingBands) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *TopSliceSubnetProfile) SetNROperatingBands(v string) {
 
 // GetSliceSimultaneousUse returns the SliceSimultaneousUse field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetSliceSimultaneousUse() SliceSimultaneousUse {
-	if o == nil || isNil(o.SliceSimultaneousUse) {
+	if o == nil || IsNil(o.SliceSimultaneousUse) {
 		var ret SliceSimultaneousUse
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *TopSliceSubnetProfile) GetSliceSimultaneousUse() SliceSimultaneousUse {
 // GetSliceSimultaneousUseOk returns a tuple with the SliceSimultaneousUse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetSliceSimultaneousUseOk() (*SliceSimultaneousUse, bool) {
-	if o == nil || isNil(o.SliceSimultaneousUse) {
+	if o == nil || IsNil(o.SliceSimultaneousUse) {
 		return nil, false
 	}
 	return o.SliceSimultaneousUse, true
@@ -439,7 +439,7 @@ func (o *TopSliceSubnetProfile) GetSliceSimultaneousUseOk() (*SliceSimultaneousU
 
 // HasSliceSimultaneousUse returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasSliceSimultaneousUse() bool {
-	if o != nil && !isNil(o.SliceSimultaneousUse) {
+	if o != nil && !IsNil(o.SliceSimultaneousUse) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *TopSliceSubnetProfile) SetSliceSimultaneousUse(v SliceSimultaneousUse) 
 
 // GetEnergyEfficiency returns the EnergyEfficiency field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetEnergyEfficiency() EnergyEfficiency {
-	if o == nil || isNil(o.EnergyEfficiency) {
+	if o == nil || IsNil(o.EnergyEfficiency) {
 		var ret EnergyEfficiency
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *TopSliceSubnetProfile) GetEnergyEfficiency() EnergyEfficiency {
 // GetEnergyEfficiencyOk returns a tuple with the EnergyEfficiency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetEnergyEfficiencyOk() (*EnergyEfficiency, bool) {
-	if o == nil || isNil(o.EnergyEfficiency) {
+	if o == nil || IsNil(o.EnergyEfficiency) {
 		return nil, false
 	}
 	return o.EnergyEfficiency, true
@@ -471,7 +471,7 @@ func (o *TopSliceSubnetProfile) GetEnergyEfficiencyOk() (*EnergyEfficiency, bool
 
 // HasEnergyEfficiency returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasEnergyEfficiency() bool {
-	if o != nil && !isNil(o.EnergyEfficiency) {
+	if o != nil && !IsNil(o.EnergyEfficiency) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *TopSliceSubnetProfile) SetEnergyEfficiency(v EnergyEfficiency) {
 
 // GetSynchronicity returns the Synchronicity field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetSynchronicity() Synchronicity {
-	if o == nil || isNil(o.Synchronicity) {
+	if o == nil || IsNil(o.Synchronicity) {
 		var ret Synchronicity
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *TopSliceSubnetProfile) GetSynchronicity() Synchronicity {
 // GetSynchronicityOk returns a tuple with the Synchronicity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetSynchronicityOk() (*Synchronicity, bool) {
-	if o == nil || isNil(o.Synchronicity) {
+	if o == nil || IsNil(o.Synchronicity) {
 		return nil, false
 	}
 	return o.Synchronicity, true
@@ -503,7 +503,7 @@ func (o *TopSliceSubnetProfile) GetSynchronicityOk() (*Synchronicity, bool) {
 
 // HasSynchronicity returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasSynchronicity() bool {
-	if o != nil && !isNil(o.Synchronicity) {
+	if o != nil && !IsNil(o.Synchronicity) {
 		return true
 	}
 
@@ -517,7 +517,7 @@ func (o *TopSliceSubnetProfile) SetSynchronicity(v Synchronicity) {
 
 // GetDelayTolerance returns the DelayTolerance field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetDelayTolerance() DelayTolerance {
-	if o == nil || isNil(o.DelayTolerance) {
+	if o == nil || IsNil(o.DelayTolerance) {
 		var ret DelayTolerance
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *TopSliceSubnetProfile) GetDelayTolerance() DelayTolerance {
 // GetDelayToleranceOk returns a tuple with the DelayTolerance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetDelayToleranceOk() (*DelayTolerance, bool) {
-	if o == nil || isNil(o.DelayTolerance) {
+	if o == nil || IsNil(o.DelayTolerance) {
 		return nil, false
 	}
 	return o.DelayTolerance, true
@@ -535,7 +535,7 @@ func (o *TopSliceSubnetProfile) GetDelayToleranceOk() (*DelayTolerance, bool) {
 
 // HasDelayTolerance returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasDelayTolerance() bool {
-	if o != nil && !isNil(o.DelayTolerance) {
+	if o != nil && !IsNil(o.DelayTolerance) {
 		return true
 	}
 
@@ -549,7 +549,7 @@ func (o *TopSliceSubnetProfile) SetDelayTolerance(v DelayTolerance) {
 
 // GetPositioning returns the Positioning field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetPositioning() Positioning {
-	if o == nil || isNil(o.Positioning) {
+	if o == nil || IsNil(o.Positioning) {
 		var ret Positioning
 		return ret
 	}
@@ -559,7 +559,7 @@ func (o *TopSliceSubnetProfile) GetPositioning() Positioning {
 // GetPositioningOk returns a tuple with the Positioning field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetPositioningOk() (*Positioning, bool) {
-	if o == nil || isNil(o.Positioning) {
+	if o == nil || IsNil(o.Positioning) {
 		return nil, false
 	}
 	return o.Positioning, true
@@ -567,7 +567,7 @@ func (o *TopSliceSubnetProfile) GetPositioningOk() (*Positioning, bool) {
 
 // HasPositioning returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasPositioning() bool {
-	if o != nil && !isNil(o.Positioning) {
+	if o != nil && !IsNil(o.Positioning) {
 		return true
 	}
 
@@ -581,7 +581,7 @@ func (o *TopSliceSubnetProfile) SetPositioning(v Positioning) {
 
 // GetTermDensity returns the TermDensity field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetTermDensity() TermDensity {
-	if o == nil || isNil(o.TermDensity) {
+	if o == nil || IsNil(o.TermDensity) {
 		var ret TermDensity
 		return ret
 	}
@@ -591,7 +591,7 @@ func (o *TopSliceSubnetProfile) GetTermDensity() TermDensity {
 // GetTermDensityOk returns a tuple with the TermDensity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetTermDensityOk() (*TermDensity, bool) {
-	if o == nil || isNil(o.TermDensity) {
+	if o == nil || IsNil(o.TermDensity) {
 		return nil, false
 	}
 	return o.TermDensity, true
@@ -599,7 +599,7 @@ func (o *TopSliceSubnetProfile) GetTermDensityOk() (*TermDensity, bool) {
 
 // HasTermDensity returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasTermDensity() bool {
-	if o != nil && !isNil(o.TermDensity) {
+	if o != nil && !IsNil(o.TermDensity) {
 		return true
 	}
 
@@ -613,7 +613,7 @@ func (o *TopSliceSubnetProfile) SetTermDensity(v TermDensity) {
 
 // GetActivityFactor returns the ActivityFactor field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetActivityFactor() int32 {
-	if o == nil || isNil(o.ActivityFactor) {
+	if o == nil || IsNil(o.ActivityFactor) {
 		var ret int32
 		return ret
 	}
@@ -623,7 +623,7 @@ func (o *TopSliceSubnetProfile) GetActivityFactor() int32 {
 // GetActivityFactorOk returns a tuple with the ActivityFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetActivityFactorOk() (*int32, bool) {
-	if o == nil || isNil(o.ActivityFactor) {
+	if o == nil || IsNil(o.ActivityFactor) {
 		return nil, false
 	}
 	return o.ActivityFactor, true
@@ -631,7 +631,7 @@ func (o *TopSliceSubnetProfile) GetActivityFactorOk() (*int32, bool) {
 
 // HasActivityFactor returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasActivityFactor() bool {
-	if o != nil && !isNil(o.ActivityFactor) {
+	if o != nil && !IsNil(o.ActivityFactor) {
 		return true
 	}
 
@@ -645,7 +645,7 @@ func (o *TopSliceSubnetProfile) SetActivityFactor(v int32) {
 
 // GetCoverageAreaTAList returns the CoverageAreaTAList field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetCoverageAreaTAList() []int32 {
-	if o == nil || isNil(o.CoverageAreaTAList) {
+	if o == nil || IsNil(o.CoverageAreaTAList) {
 		var ret []int32
 		return ret
 	}
@@ -655,7 +655,7 @@ func (o *TopSliceSubnetProfile) GetCoverageAreaTAList() []int32 {
 // GetCoverageAreaTAListOk returns a tuple with the CoverageAreaTAList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetCoverageAreaTAListOk() ([]int32, bool) {
-	if o == nil || isNil(o.CoverageAreaTAList) {
+	if o == nil || IsNil(o.CoverageAreaTAList) {
 		return nil, false
 	}
 	return o.CoverageAreaTAList, true
@@ -663,7 +663,7 @@ func (o *TopSliceSubnetProfile) GetCoverageAreaTAListOk() ([]int32, bool) {
 
 // HasCoverageAreaTAList returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasCoverageAreaTAList() bool {
-	if o != nil && !isNil(o.CoverageAreaTAList) {
+	if o != nil && !IsNil(o.CoverageAreaTAList) {
 		return true
 	}
 
@@ -677,7 +677,7 @@ func (o *TopSliceSubnetProfile) SetCoverageAreaTAList(v []int32) {
 
 // GetResourceSharingLevel returns the ResourceSharingLevel field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetResourceSharingLevel() SharingLevel {
-	if o == nil || isNil(o.ResourceSharingLevel) {
+	if o == nil || IsNil(o.ResourceSharingLevel) {
 		var ret SharingLevel
 		return ret
 	}
@@ -687,7 +687,7 @@ func (o *TopSliceSubnetProfile) GetResourceSharingLevel() SharingLevel {
 // GetResourceSharingLevelOk returns a tuple with the ResourceSharingLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetResourceSharingLevelOk() (*SharingLevel, bool) {
-	if o == nil || isNil(o.ResourceSharingLevel) {
+	if o == nil || IsNil(o.ResourceSharingLevel) {
 		return nil, false
 	}
 	return o.ResourceSharingLevel, true
@@ -695,7 +695,7 @@ func (o *TopSliceSubnetProfile) GetResourceSharingLevelOk() (*SharingLevel, bool
 
 // HasResourceSharingLevel returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasResourceSharingLevel() bool {
-	if o != nil && !isNil(o.ResourceSharingLevel) {
+	if o != nil && !IsNil(o.ResourceSharingLevel) {
 		return true
 	}
 
@@ -709,7 +709,7 @@ func (o *TopSliceSubnetProfile) SetResourceSharingLevel(v SharingLevel) {
 
 // GetUEMobilityLevel returns the UEMobilityLevel field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetUEMobilityLevel() MobilityLevel {
-	if o == nil || isNil(o.UEMobilityLevel) {
+	if o == nil || IsNil(o.UEMobilityLevel) {
 		var ret MobilityLevel
 		return ret
 	}
@@ -719,7 +719,7 @@ func (o *TopSliceSubnetProfile) GetUEMobilityLevel() MobilityLevel {
 // GetUEMobilityLevelOk returns a tuple with the UEMobilityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetUEMobilityLevelOk() (*MobilityLevel, bool) {
-	if o == nil || isNil(o.UEMobilityLevel) {
+	if o == nil || IsNil(o.UEMobilityLevel) {
 		return nil, false
 	}
 	return o.UEMobilityLevel, true
@@ -727,7 +727,7 @@ func (o *TopSliceSubnetProfile) GetUEMobilityLevelOk() (*MobilityLevel, bool) {
 
 // HasUEMobilityLevel returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasUEMobilityLevel() bool {
-	if o != nil && !isNil(o.UEMobilityLevel) {
+	if o != nil && !IsNil(o.UEMobilityLevel) {
 		return true
 	}
 
@@ -741,7 +741,7 @@ func (o *TopSliceSubnetProfile) SetUEMobilityLevel(v MobilityLevel) {
 
 // GetUESpeed returns the UESpeed field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetUESpeed() int32 {
-	if o == nil || isNil(o.UESpeed) {
+	if o == nil || IsNil(o.UESpeed) {
 		var ret int32
 		return ret
 	}
@@ -751,7 +751,7 @@ func (o *TopSliceSubnetProfile) GetUESpeed() int32 {
 // GetUESpeedOk returns a tuple with the UESpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetUESpeedOk() (*int32, bool) {
-	if o == nil || isNil(o.UESpeed) {
+	if o == nil || IsNil(o.UESpeed) {
 		return nil, false
 	}
 	return o.UESpeed, true
@@ -759,7 +759,7 @@ func (o *TopSliceSubnetProfile) GetUESpeedOk() (*int32, bool) {
 
 // HasUESpeed returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasUESpeed() bool {
-	if o != nil && !isNil(o.UESpeed) {
+	if o != nil && !IsNil(o.UESpeed) {
 		return true
 	}
 
@@ -773,7 +773,7 @@ func (o *TopSliceSubnetProfile) SetUESpeed(v int32) {
 
 // GetReliability returns the Reliability field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetReliability() float32 {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		var ret float32
 		return ret
 	}
@@ -783,7 +783,7 @@ func (o *TopSliceSubnetProfile) GetReliability() float32 {
 // GetReliabilityOk returns a tuple with the Reliability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetReliabilityOk() (*float32, bool) {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		return nil, false
 	}
 	return o.Reliability, true
@@ -791,7 +791,7 @@ func (o *TopSliceSubnetProfile) GetReliabilityOk() (*float32, bool) {
 
 // HasReliability returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasReliability() bool {
-	if o != nil && !isNil(o.Reliability) {
+	if o != nil && !IsNil(o.Reliability) {
 		return true
 	}
 
@@ -805,7 +805,7 @@ func (o *TopSliceSubnetProfile) SetReliability(v float32) {
 
 // GetSST returns the SST field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetSST() int32 {
-	if o == nil || isNil(o.SST) {
+	if o == nil || IsNil(o.SST) {
 		var ret int32
 		return ret
 	}
@@ -815,7 +815,7 @@ func (o *TopSliceSubnetProfile) GetSST() int32 {
 // GetSSTOk returns a tuple with the SST field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetSSTOk() (*int32, bool) {
-	if o == nil || isNil(o.SST) {
+	if o == nil || IsNil(o.SST) {
 		return nil, false
 	}
 	return o.SST, true
@@ -823,7 +823,7 @@ func (o *TopSliceSubnetProfile) GetSSTOk() (*int32, bool) {
 
 // HasSST returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasSST() bool {
-	if o != nil && !isNil(o.SST) {
+	if o != nil && !IsNil(o.SST) {
 		return true
 	}
 
@@ -837,7 +837,7 @@ func (o *TopSliceSubnetProfile) SetSST(v int32) {
 
 // GetDLDeterministicComm returns the DLDeterministicComm field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetDLDeterministicComm() DeterministicComm {
-	if o == nil || isNil(o.DLDeterministicComm) {
+	if o == nil || IsNil(o.DLDeterministicComm) {
 		var ret DeterministicComm
 		return ret
 	}
@@ -847,7 +847,7 @@ func (o *TopSliceSubnetProfile) GetDLDeterministicComm() DeterministicComm {
 // GetDLDeterministicCommOk returns a tuple with the DLDeterministicComm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetDLDeterministicCommOk() (*DeterministicComm, bool) {
-	if o == nil || isNil(o.DLDeterministicComm) {
+	if o == nil || IsNil(o.DLDeterministicComm) {
 		return nil, false
 	}
 	return o.DLDeterministicComm, true
@@ -855,7 +855,7 @@ func (o *TopSliceSubnetProfile) GetDLDeterministicCommOk() (*DeterministicComm, 
 
 // HasDLDeterministicComm returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasDLDeterministicComm() bool {
-	if o != nil && !isNil(o.DLDeterministicComm) {
+	if o != nil && !IsNil(o.DLDeterministicComm) {
 		return true
 	}
 
@@ -869,7 +869,7 @@ func (o *TopSliceSubnetProfile) SetDLDeterministicComm(v DeterministicComm) {
 
 // GetULDeterministicComm returns the ULDeterministicComm field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetULDeterministicComm() DeterministicComm {
-	if o == nil || isNil(o.ULDeterministicComm) {
+	if o == nil || IsNil(o.ULDeterministicComm) {
 		var ret DeterministicComm
 		return ret
 	}
@@ -879,7 +879,7 @@ func (o *TopSliceSubnetProfile) GetULDeterministicComm() DeterministicComm {
 // GetULDeterministicCommOk returns a tuple with the ULDeterministicComm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetULDeterministicCommOk() (*DeterministicComm, bool) {
-	if o == nil || isNil(o.ULDeterministicComm) {
+	if o == nil || IsNil(o.ULDeterministicComm) {
 		return nil, false
 	}
 	return o.ULDeterministicComm, true
@@ -887,7 +887,7 @@ func (o *TopSliceSubnetProfile) GetULDeterministicCommOk() (*DeterministicComm, 
 
 // HasULDeterministicComm returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasULDeterministicComm() bool {
-	if o != nil && !isNil(o.ULDeterministicComm) {
+	if o != nil && !IsNil(o.ULDeterministicComm) {
 		return true
 	}
 
@@ -901,7 +901,7 @@ func (o *TopSliceSubnetProfile) SetULDeterministicComm(v DeterministicComm) {
 
 // GetSurvivalTime returns the SurvivalTime field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetSurvivalTime() float32 {
-	if o == nil || isNil(o.SurvivalTime) {
+	if o == nil || IsNil(o.SurvivalTime) {
 		var ret float32
 		return ret
 	}
@@ -911,7 +911,7 @@ func (o *TopSliceSubnetProfile) GetSurvivalTime() float32 {
 // GetSurvivalTimeOk returns a tuple with the SurvivalTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetSurvivalTimeOk() (*float32, bool) {
-	if o == nil || isNil(o.SurvivalTime) {
+	if o == nil || IsNil(o.SurvivalTime) {
 		return nil, false
 	}
 	return o.SurvivalTime, true
@@ -919,7 +919,7 @@ func (o *TopSliceSubnetProfile) GetSurvivalTimeOk() (*float32, bool) {
 
 // HasSurvivalTime returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasSurvivalTime() bool {
-	if o != nil && !isNil(o.SurvivalTime) {
+	if o != nil && !IsNil(o.SurvivalTime) {
 		return true
 	}
 
@@ -933,7 +933,7 @@ func (o *TopSliceSubnetProfile) SetSurvivalTime(v float32) {
 
 // GetNssaaSupport returns the NssaaSupport field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetNssaaSupport() NSSAASupport {
-	if o == nil || isNil(o.NssaaSupport) {
+	if o == nil || IsNil(o.NssaaSupport) {
 		var ret NSSAASupport
 		return ret
 	}
@@ -943,7 +943,7 @@ func (o *TopSliceSubnetProfile) GetNssaaSupport() NSSAASupport {
 // GetNssaaSupportOk returns a tuple with the NssaaSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetNssaaSupportOk() (*NSSAASupport, bool) {
-	if o == nil || isNil(o.NssaaSupport) {
+	if o == nil || IsNil(o.NssaaSupport) {
 		return nil, false
 	}
 	return o.NssaaSupport, true
@@ -951,7 +951,7 @@ func (o *TopSliceSubnetProfile) GetNssaaSupportOk() (*NSSAASupport, bool) {
 
 // HasNssaaSupport returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasNssaaSupport() bool {
-	if o != nil && !isNil(o.NssaaSupport) {
+	if o != nil && !IsNil(o.NssaaSupport) {
 		return true
 	}
 
@@ -965,7 +965,7 @@ func (o *TopSliceSubnetProfile) SetNssaaSupport(v NSSAASupport) {
 
 // GetN6Protection returns the N6Protection field value if set, zero value otherwise.
 func (o *TopSliceSubnetProfile) GetN6Protection() N6Protection {
-	if o == nil || isNil(o.N6Protection) {
+	if o == nil || IsNil(o.N6Protection) {
 		var ret N6Protection
 		return ret
 	}
@@ -975,7 +975,7 @@ func (o *TopSliceSubnetProfile) GetN6Protection() N6Protection {
 // GetN6ProtectionOk returns a tuple with the N6Protection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopSliceSubnetProfile) GetN6ProtectionOk() (*N6Protection, bool) {
-	if o == nil || isNil(o.N6Protection) {
+	if o == nil || IsNil(o.N6Protection) {
 		return nil, false
 	}
 	return o.N6Protection, true
@@ -983,7 +983,7 @@ func (o *TopSliceSubnetProfile) GetN6ProtectionOk() (*N6Protection, bool) {
 
 // HasN6Protection returns a boolean if a field has been set.
 func (o *TopSliceSubnetProfile) HasN6Protection() bool {
-	if o != nil && !isNil(o.N6Protection) {
+	if o != nil && !IsNil(o.N6Protection) {
 		return true
 	}
 
@@ -996,7 +996,7 @@ func (o *TopSliceSubnetProfile) SetN6Protection(v N6Protection) {
 }
 
 func (o TopSliceSubnetProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1005,91 +1005,91 @@ func (o TopSliceSubnetProfile) MarshalJSON() ([]byte, error) {
 
 func (o TopSliceSubnetProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DLLatency) {
+	if !IsNil(o.DLLatency) {
 		toSerialize["dLLatency"] = o.DLLatency
 	}
-	if !isNil(o.ULLatency) {
+	if !IsNil(o.ULLatency) {
 		toSerialize["uLLatency"] = o.ULLatency
 	}
-	if !isNil(o.MaxNumberofUEs) {
+	if !IsNil(o.MaxNumberofUEs) {
 		toSerialize["maxNumberofUEs"] = o.MaxNumberofUEs
 	}
-	if !isNil(o.DLThptPerSliceSubnet) {
+	if !IsNil(o.DLThptPerSliceSubnet) {
 		toSerialize["dLThptPerSliceSubnet"] = o.DLThptPerSliceSubnet
 	}
-	if !isNil(o.DLThptPerUE) {
+	if !IsNil(o.DLThptPerUE) {
 		toSerialize["dLThptPerUE"] = o.DLThptPerUE
 	}
-	if !isNil(o.ULThptPerSliceSubnet) {
+	if !IsNil(o.ULThptPerSliceSubnet) {
 		toSerialize["uLThptPerSliceSubnet"] = o.ULThptPerSliceSubnet
 	}
-	if !isNil(o.ULThptPerUE) {
+	if !IsNil(o.ULThptPerUE) {
 		toSerialize["uLThptPerUE"] = o.ULThptPerUE
 	}
-	if !isNil(o.DLMaxPktSize) {
+	if !IsNil(o.DLMaxPktSize) {
 		toSerialize["dLMaxPktSize"] = o.DLMaxPktSize
 	}
-	if !isNil(o.ULMaxPktSize) {
+	if !IsNil(o.ULMaxPktSize) {
 		toSerialize["uLMaxPktSize"] = o.ULMaxPktSize
 	}
-	if !isNil(o.MaxNumberOfPDUSessions) {
+	if !IsNil(o.MaxNumberOfPDUSessions) {
 		toSerialize["maxNumberOfPDUSessions"] = o.MaxNumberOfPDUSessions
 	}
-	if !isNil(o.NROperatingBands) {
+	if !IsNil(o.NROperatingBands) {
 		toSerialize["nROperatingBands"] = o.NROperatingBands
 	}
-	if !isNil(o.SliceSimultaneousUse) {
+	if !IsNil(o.SliceSimultaneousUse) {
 		toSerialize["sliceSimultaneousUse"] = o.SliceSimultaneousUse
 	}
-	if !isNil(o.EnergyEfficiency) {
+	if !IsNil(o.EnergyEfficiency) {
 		toSerialize["energyEfficiency"] = o.EnergyEfficiency
 	}
-	if !isNil(o.Synchronicity) {
+	if !IsNil(o.Synchronicity) {
 		toSerialize["synchronicity"] = o.Synchronicity
 	}
-	if !isNil(o.DelayTolerance) {
+	if !IsNil(o.DelayTolerance) {
 		toSerialize["delayTolerance"] = o.DelayTolerance
 	}
-	if !isNil(o.Positioning) {
+	if !IsNil(o.Positioning) {
 		toSerialize["positioning"] = o.Positioning
 	}
-	if !isNil(o.TermDensity) {
+	if !IsNil(o.TermDensity) {
 		toSerialize["termDensity"] = o.TermDensity
 	}
-	if !isNil(o.ActivityFactor) {
+	if !IsNil(o.ActivityFactor) {
 		toSerialize["activityFactor"] = o.ActivityFactor
 	}
-	if !isNil(o.CoverageAreaTAList) {
+	if !IsNil(o.CoverageAreaTAList) {
 		toSerialize["coverageAreaTAList"] = o.CoverageAreaTAList
 	}
-	if !isNil(o.ResourceSharingLevel) {
+	if !IsNil(o.ResourceSharingLevel) {
 		toSerialize["resourceSharingLevel"] = o.ResourceSharingLevel
 	}
-	if !isNil(o.UEMobilityLevel) {
+	if !IsNil(o.UEMobilityLevel) {
 		toSerialize["uEMobilityLevel"] = o.UEMobilityLevel
 	}
-	if !isNil(o.UESpeed) {
+	if !IsNil(o.UESpeed) {
 		toSerialize["uESpeed"] = o.UESpeed
 	}
-	if !isNil(o.Reliability) {
+	if !IsNil(o.Reliability) {
 		toSerialize["reliability"] = o.Reliability
 	}
-	if !isNil(o.SST) {
+	if !IsNil(o.SST) {
 		toSerialize["sST"] = o.SST
 	}
-	if !isNil(o.DLDeterministicComm) {
+	if !IsNil(o.DLDeterministicComm) {
 		toSerialize["dLDeterministicComm"] = o.DLDeterministicComm
 	}
-	if !isNil(o.ULDeterministicComm) {
+	if !IsNil(o.ULDeterministicComm) {
 		toSerialize["uLDeterministicComm"] = o.ULDeterministicComm
 	}
-	if !isNil(o.SurvivalTime) {
+	if !IsNil(o.SurvivalTime) {
 		toSerialize["survivalTime"] = o.SurvivalTime
 	}
-	if !isNil(o.NssaaSupport) {
+	if !IsNil(o.NssaaSupport) {
 		toSerialize["nssaaSupport"] = o.NssaaSupport
 	}
-	if !isNil(o.N6Protection) {
+	if !IsNil(o.N6Protection) {
 		toSerialize["n6Protection"] = o.N6Protection
 	}
 	return toSerialize, nil
@@ -1130,5 +1130,3 @@ func (v *NullableTopSliceSubnetProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -965,7 +965,16 @@ components:
       type: object
     DeliveryResult:
       anyOf:
-      - $ref: '#/components/schemas/DeliveryResult_anyOf'
+      - enum:
+        - SUCCESS
+        - UNKNOWN
+        - FAILURE
+        - TRIGGERED
+        - EXPIRED
+        - UNCONFIRMED
+        - REPLACED
+        - TERMINATE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -974,7 +983,10 @@ components:
       readOnly: true
     Priority:
       anyOf:
-      - $ref: '#/components/schemas/Priority_anyOf'
+      - enum:
+        - NO_PRIORITY
+        - PRIORITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1097,24 +1109,6 @@ components:
             requested.
           type: boolean
       type: object
-    DeliveryResult_anyOf:
-      enum:
-      - SUCCESS
-      - UNKNOWN
-      - FAILURE
-      - TRIGGERED
-      - EXPIRED
-      - UNCONFIRMED
-      - REPLACED
-      - TERMINATE
-      type: string
-      example: null
-    Priority_anyOf:
-      enum:
-      - NO_PRIORITY
-      - PRIORITY
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

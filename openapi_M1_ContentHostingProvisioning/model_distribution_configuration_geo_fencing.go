@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &DistributionConfigurationGeoFencing{}
 // DistributionConfigurationGeoFencing struct for DistributionConfigurationGeoFencing
 type DistributionConfigurationGeoFencing struct {
 	// String providing an URI formatted according to RFC 3986.
-	LocatorType string `json:"locatorType"`
-	Locators []string `json:"locators"`
+	LocatorType string   `json:"locatorType"`
+	Locators    []string `json:"locators"`
 }
 
 // NewDistributionConfigurationGeoFencing instantiates a new DistributionConfigurationGeoFencing object
@@ -92,7 +92,7 @@ func (o *DistributionConfigurationGeoFencing) SetLocators(v []string) {
 }
 
 func (o DistributionConfigurationGeoFencing) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableDistributionConfigurationGeoFencing) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

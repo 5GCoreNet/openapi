@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,23 +17,23 @@ import (
 // checks if the BdtReqData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BdtReqData{}
 
-// BdtReqData Contains service requirements for creation a new Individual BDT policy resource. 
+// BdtReqData Contains service requirements for creation a new Individual BDT policy resource.
 type BdtReqData struct {
 	// Contains an identity of an application service provider.
-	AspId string `json:"aspId"`
+	AspId      string     `json:"aspId"`
 	DesTimeInt TimeWindow `json:"desTimeInt"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn *string `json:"dnn,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InterGroupId *string `json:"interGroupId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri *string `json:"notifUri,omitempty"`
+	NotifUri   *string          `json:"notifUri,omitempty"`
 	NwAreaInfo *NetworkAreaInfo `json:"nwAreaInfo,omitempty"`
 	// Indicates a number of UEs.
-	NumOfUes int32 `json:"numOfUes"`
+	NumOfUes int32          `json:"numOfUes"`
 	VolPerUe UsageThreshold `json:"volPerUe"`
-	Snssai *Snssai `json:"snssai,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	Snssai   *Snssai        `json:"snssai,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 	// Identify a traffic descriptor as defined in Figure 5.2.2 of 3GPP TS 24.526, octets v+5 to w.
 	TrafficDes *string `json:"trafficDes,omitempty"`
@@ -116,7 +116,7 @@ func (o *BdtReqData) SetDesTimeInt(v TimeWindow) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *BdtReqData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *BdtReqData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -134,7 +134,7 @@ func (o *BdtReqData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *BdtReqData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *BdtReqData) SetDnn(v string) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *BdtReqData) GetInterGroupId() string {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *BdtReqData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -166,7 +166,7 @@ func (o *BdtReqData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *BdtReqData) HasInterGroupId() bool {
-	if o != nil && !isNil(o.InterGroupId) {
+	if o != nil && !IsNil(o.InterGroupId) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *BdtReqData) SetInterGroupId(v string) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *BdtReqData) GetNotifUri() string {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *BdtReqData) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -198,7 +198,7 @@ func (o *BdtReqData) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *BdtReqData) HasNotifUri() bool {
-	if o != nil && !isNil(o.NotifUri) {
+	if o != nil && !IsNil(o.NotifUri) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *BdtReqData) SetNotifUri(v string) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *BdtReqData) GetNwAreaInfo() NetworkAreaInfo {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *BdtReqData) GetNwAreaInfo() NetworkAreaInfo {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NwAreaInfo) {
+	if o == nil || IsNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -230,7 +230,7 @@ func (o *BdtReqData) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *BdtReqData) HasNwAreaInfo() bool {
-	if o != nil && !isNil(o.NwAreaInfo) {
+	if o != nil && !IsNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *BdtReqData) SetVolPerUe(v UsageThreshold) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *BdtReqData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *BdtReqData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -310,7 +310,7 @@ func (o *BdtReqData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *BdtReqData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *BdtReqData) SetSnssai(v Snssai) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BdtReqData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *BdtReqData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -342,7 +342,7 @@ func (o *BdtReqData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BdtReqData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -356,7 +356,7 @@ func (o *BdtReqData) SetSuppFeat(v string) {
 
 // GetTrafficDes returns the TrafficDes field value if set, zero value otherwise.
 func (o *BdtReqData) GetTrafficDes() string {
-	if o == nil || isNil(o.TrafficDes) {
+	if o == nil || IsNil(o.TrafficDes) {
 		var ret string
 		return ret
 	}
@@ -366,7 +366,7 @@ func (o *BdtReqData) GetTrafficDes() string {
 // GetTrafficDesOk returns a tuple with the TrafficDes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetTrafficDesOk() (*string, bool) {
-	if o == nil || isNil(o.TrafficDes) {
+	if o == nil || IsNil(o.TrafficDes) {
 		return nil, false
 	}
 	return o.TrafficDes, true
@@ -374,7 +374,7 @@ func (o *BdtReqData) GetTrafficDesOk() (*string, bool) {
 
 // HasTrafficDes returns a boolean if a field has been set.
 func (o *BdtReqData) HasTrafficDes() bool {
-	if o != nil && !isNil(o.TrafficDes) {
+	if o != nil && !IsNil(o.TrafficDes) {
 		return true
 	}
 
@@ -388,7 +388,7 @@ func (o *BdtReqData) SetTrafficDes(v string) {
 
 // GetWarnNotifReq returns the WarnNotifReq field value if set, zero value otherwise.
 func (o *BdtReqData) GetWarnNotifReq() bool {
-	if o == nil || isNil(o.WarnNotifReq) {
+	if o == nil || IsNil(o.WarnNotifReq) {
 		var ret bool
 		return ret
 	}
@@ -398,7 +398,7 @@ func (o *BdtReqData) GetWarnNotifReq() bool {
 // GetWarnNotifReqOk returns a tuple with the WarnNotifReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetWarnNotifReqOk() (*bool, bool) {
-	if o == nil || isNil(o.WarnNotifReq) {
+	if o == nil || IsNil(o.WarnNotifReq) {
 		return nil, false
 	}
 	return o.WarnNotifReq, true
@@ -406,7 +406,7 @@ func (o *BdtReqData) GetWarnNotifReqOk() (*bool, bool) {
 
 // HasWarnNotifReq returns a boolean if a field has been set.
 func (o *BdtReqData) HasWarnNotifReq() bool {
-	if o != nil && !isNil(o.WarnNotifReq) {
+	if o != nil && !IsNil(o.WarnNotifReq) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *BdtReqData) SetWarnNotifReq(v bool) {
 }
 
 func (o BdtReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -430,30 +430,30 @@ func (o BdtReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aspId"] = o.AspId
 	toSerialize["desTimeInt"] = o.DesTimeInt
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.InterGroupId) {
+	if !IsNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
-	if !isNil(o.NotifUri) {
+	if !IsNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !isNil(o.NwAreaInfo) {
+	if !IsNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
 	toSerialize["numOfUes"] = o.NumOfUes
 	toSerialize["volPerUe"] = o.VolPerUe
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.TrafficDes) {
+	if !IsNil(o.TrafficDes) {
 		toSerialize["trafficDes"] = o.TrafficDes
 	}
-	if !isNil(o.WarnNotifReq) {
+	if !IsNil(o.WarnNotifReq) {
 		toSerialize["warnNotifReq"] = o.WarnNotifReq
 	}
 	return toSerialize, nil
@@ -494,5 +494,3 @@ func (v *NullableBdtReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

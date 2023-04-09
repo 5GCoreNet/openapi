@@ -19,28 +19,28 @@ var _ MappedNullable = &ManagedElementSingle1AllOf1{}
 
 // ManagedElementSingle1AllOf1 struct for ManagedElementSingle1AllOf1
 type ManagedElementSingle1AllOf1 struct {
-	AmfFunction []AmfFunctionSingle `json:"AmfFunction,omitempty"`
-	SmfFunction []SmfFunctionSingle `json:"SmfFunction,omitempty"`
-	UpfFunction []UpfFunctionSingle `json:"UpfFunction,omitempty"`
-	N3iwfFunction []N3iwfFunctionSingle `json:"N3iwfFunction,omitempty"`
-	PcfFunction []PcfFunctionSingle `json:"PcfFunction,omitempty"`
-	AusfFunction []AusfFunctionSingle `json:"AusfFunction,omitempty"`
-	UdmFunction []UdmFunctionSingle `json:"UdmFunction,omitempty"`
-	UdrFunction []UdrFunctionSingle `json:"UdrFunction,omitempty"`
-	UdsfFunction []UdsfFunctionSingle `json:"UdsfFunction,omitempty"`
-	NrfFunction []NrfFunctionSingle `json:"NrfFunction,omitempty"`
-	NssfFunction []NssfFunctionSingle `json:"NssfFunction,omitempty"`
-	SmsfFunction []SmsfFunctionSingle `json:"SmsfFunction,omitempty"`
-	LmfFunction []LmfFunctionSingle `json:"LmfFunction,omitempty"`
-	NgeirFunction []NgeirFunctionSingle `json:"NgeirFunction,omitempty"`
-	SeppFunction []SeppFunctionSingle `json:"SeppFunction,omitempty"`
-	NwdafFunction []NwdafFunctionSingle `json:"NwdafFunction,omitempty"`
-	ScpFunction []ScpFunctionSingle `json:"ScpFunction,omitempty"`
-	NefFunction []NefFunctionSingle `json:"NefFunction,omitempty"`
+	AmfFunction        []AmfFunctionSingle        `json:"AmfFunction,omitempty"`
+	SmfFunction        []SmfFunctionSingle        `json:"SmfFunction,omitempty"`
+	UpfFunction        []UpfFunctionSingle        `json:"UpfFunction,omitempty"`
+	N3iwfFunction      []N3iwfFunctionSingle      `json:"N3iwfFunction,omitempty"`
+	PcfFunction        []PcfFunctionSingle        `json:"PcfFunction,omitempty"`
+	AusfFunction       []AusfFunctionSingle       `json:"AusfFunction,omitempty"`
+	UdmFunction        []UdmFunctionSingle        `json:"UdmFunction,omitempty"`
+	UdrFunction        []UdrFunctionSingle        `json:"UdrFunction,omitempty"`
+	UdsfFunction       []UdsfFunctionSingle       `json:"UdsfFunction,omitempty"`
+	NrfFunction        []NrfFunctionSingle        `json:"NrfFunction,omitempty"`
+	NssfFunction       []NssfFunctionSingle       `json:"NssfFunction,omitempty"`
+	SmsfFunction       []SmsfFunctionSingle       `json:"SmsfFunction,omitempty"`
+	LmfFunction        []LmfFunctionSingle        `json:"LmfFunction,omitempty"`
+	NgeirFunction      []NgeirFunctionSingle      `json:"NgeirFunction,omitempty"`
+	SeppFunction       []SeppFunctionSingle       `json:"SeppFunction,omitempty"`
+	NwdafFunction      []NwdafFunctionSingle      `json:"NwdafFunction,omitempty"`
+	ScpFunction        []ScpFunctionSingle        `json:"ScpFunction,omitempty"`
+	NefFunction        []NefFunctionSingle        `json:"NefFunction,omitempty"`
 	Configurable5QISet []Configurable5QISetSingle `json:"Configurable5QISet,omitempty"`
-	Dynamic5QISet []Dynamic5QISetSingle `json:"Dynamic5QISet,omitempty"`
-	EcmConnectionInfo []EcmConnectionInfoSingle `json:"EcmConnectionInfo,omitempty"`
-	EASDFFunction []EASDFFunctionSingle `json:"EASDFFunction,omitempty"`
+	Dynamic5QISet      []Dynamic5QISetSingle      `json:"Dynamic5QISet,omitempty"`
+	EcmConnectionInfo  []EcmConnectionInfoSingle  `json:"EcmConnectionInfo,omitempty"`
+	EASDFFunction      []EASDFFunctionSingle      `json:"EASDFFunction,omitempty"`
 }
 
 // NewManagedElementSingle1AllOf1 instantiates a new ManagedElementSingle1AllOf1 object
@@ -62,7 +62,7 @@ func NewManagedElementSingle1AllOf1WithDefaults() *ManagedElementSingle1AllOf1 {
 
 // GetAmfFunction returns the AmfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetAmfFunction() []AmfFunctionSingle {
-	if o == nil || isNil(o.AmfFunction) {
+	if o == nil || IsNil(o.AmfFunction) {
 		var ret []AmfFunctionSingle
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *ManagedElementSingle1AllOf1) GetAmfFunction() []AmfFunctionSingle {
 // GetAmfFunctionOk returns a tuple with the AmfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetAmfFunctionOk() ([]AmfFunctionSingle, bool) {
-	if o == nil || isNil(o.AmfFunction) {
+	if o == nil || IsNil(o.AmfFunction) {
 		return nil, false
 	}
 	return o.AmfFunction, true
@@ -80,7 +80,7 @@ func (o *ManagedElementSingle1AllOf1) GetAmfFunctionOk() ([]AmfFunctionSingle, b
 
 // HasAmfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasAmfFunction() bool {
-	if o != nil && !isNil(o.AmfFunction) {
+	if o != nil && !IsNil(o.AmfFunction) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *ManagedElementSingle1AllOf1) SetAmfFunction(v []AmfFunctionSingle) {
 
 // GetSmfFunction returns the SmfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetSmfFunction() []SmfFunctionSingle {
-	if o == nil || isNil(o.SmfFunction) {
+	if o == nil || IsNil(o.SmfFunction) {
 		var ret []SmfFunctionSingle
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *ManagedElementSingle1AllOf1) GetSmfFunction() []SmfFunctionSingle {
 // GetSmfFunctionOk returns a tuple with the SmfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetSmfFunctionOk() ([]SmfFunctionSingle, bool) {
-	if o == nil || isNil(o.SmfFunction) {
+	if o == nil || IsNil(o.SmfFunction) {
 		return nil, false
 	}
 	return o.SmfFunction, true
@@ -112,7 +112,7 @@ func (o *ManagedElementSingle1AllOf1) GetSmfFunctionOk() ([]SmfFunctionSingle, b
 
 // HasSmfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasSmfFunction() bool {
-	if o != nil && !isNil(o.SmfFunction) {
+	if o != nil && !IsNil(o.SmfFunction) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *ManagedElementSingle1AllOf1) SetSmfFunction(v []SmfFunctionSingle) {
 
 // GetUpfFunction returns the UpfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetUpfFunction() []UpfFunctionSingle {
-	if o == nil || isNil(o.UpfFunction) {
+	if o == nil || IsNil(o.UpfFunction) {
 		var ret []UpfFunctionSingle
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *ManagedElementSingle1AllOf1) GetUpfFunction() []UpfFunctionSingle {
 // GetUpfFunctionOk returns a tuple with the UpfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetUpfFunctionOk() ([]UpfFunctionSingle, bool) {
-	if o == nil || isNil(o.UpfFunction) {
+	if o == nil || IsNil(o.UpfFunction) {
 		return nil, false
 	}
 	return o.UpfFunction, true
@@ -144,7 +144,7 @@ func (o *ManagedElementSingle1AllOf1) GetUpfFunctionOk() ([]UpfFunctionSingle, b
 
 // HasUpfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasUpfFunction() bool {
-	if o != nil && !isNil(o.UpfFunction) {
+	if o != nil && !IsNil(o.UpfFunction) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *ManagedElementSingle1AllOf1) SetUpfFunction(v []UpfFunctionSingle) {
 
 // GetN3iwfFunction returns the N3iwfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetN3iwfFunction() []N3iwfFunctionSingle {
-	if o == nil || isNil(o.N3iwfFunction) {
+	if o == nil || IsNil(o.N3iwfFunction) {
 		var ret []N3iwfFunctionSingle
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *ManagedElementSingle1AllOf1) GetN3iwfFunction() []N3iwfFunctionSingle {
 // GetN3iwfFunctionOk returns a tuple with the N3iwfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetN3iwfFunctionOk() ([]N3iwfFunctionSingle, bool) {
-	if o == nil || isNil(o.N3iwfFunction) {
+	if o == nil || IsNil(o.N3iwfFunction) {
 		return nil, false
 	}
 	return o.N3iwfFunction, true
@@ -176,7 +176,7 @@ func (o *ManagedElementSingle1AllOf1) GetN3iwfFunctionOk() ([]N3iwfFunctionSingl
 
 // HasN3iwfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasN3iwfFunction() bool {
-	if o != nil && !isNil(o.N3iwfFunction) {
+	if o != nil && !IsNil(o.N3iwfFunction) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *ManagedElementSingle1AllOf1) SetN3iwfFunction(v []N3iwfFunctionSingle) 
 
 // GetPcfFunction returns the PcfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetPcfFunction() []PcfFunctionSingle {
-	if o == nil || isNil(o.PcfFunction) {
+	if o == nil || IsNil(o.PcfFunction) {
 		var ret []PcfFunctionSingle
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *ManagedElementSingle1AllOf1) GetPcfFunction() []PcfFunctionSingle {
 // GetPcfFunctionOk returns a tuple with the PcfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetPcfFunctionOk() ([]PcfFunctionSingle, bool) {
-	if o == nil || isNil(o.PcfFunction) {
+	if o == nil || IsNil(o.PcfFunction) {
 		return nil, false
 	}
 	return o.PcfFunction, true
@@ -208,7 +208,7 @@ func (o *ManagedElementSingle1AllOf1) GetPcfFunctionOk() ([]PcfFunctionSingle, b
 
 // HasPcfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasPcfFunction() bool {
-	if o != nil && !isNil(o.PcfFunction) {
+	if o != nil && !IsNil(o.PcfFunction) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *ManagedElementSingle1AllOf1) SetPcfFunction(v []PcfFunctionSingle) {
 
 // GetAusfFunction returns the AusfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetAusfFunction() []AusfFunctionSingle {
-	if o == nil || isNil(o.AusfFunction) {
+	if o == nil || IsNil(o.AusfFunction) {
 		var ret []AusfFunctionSingle
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *ManagedElementSingle1AllOf1) GetAusfFunction() []AusfFunctionSingle {
 // GetAusfFunctionOk returns a tuple with the AusfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetAusfFunctionOk() ([]AusfFunctionSingle, bool) {
-	if o == nil || isNil(o.AusfFunction) {
+	if o == nil || IsNil(o.AusfFunction) {
 		return nil, false
 	}
 	return o.AusfFunction, true
@@ -240,7 +240,7 @@ func (o *ManagedElementSingle1AllOf1) GetAusfFunctionOk() ([]AusfFunctionSingle,
 
 // HasAusfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasAusfFunction() bool {
-	if o != nil && !isNil(o.AusfFunction) {
+	if o != nil && !IsNil(o.AusfFunction) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *ManagedElementSingle1AllOf1) SetAusfFunction(v []AusfFunctionSingle) {
 
 // GetUdmFunction returns the UdmFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetUdmFunction() []UdmFunctionSingle {
-	if o == nil || isNil(o.UdmFunction) {
+	if o == nil || IsNil(o.UdmFunction) {
 		var ret []UdmFunctionSingle
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *ManagedElementSingle1AllOf1) GetUdmFunction() []UdmFunctionSingle {
 // GetUdmFunctionOk returns a tuple with the UdmFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetUdmFunctionOk() ([]UdmFunctionSingle, bool) {
-	if o == nil || isNil(o.UdmFunction) {
+	if o == nil || IsNil(o.UdmFunction) {
 		return nil, false
 	}
 	return o.UdmFunction, true
@@ -272,7 +272,7 @@ func (o *ManagedElementSingle1AllOf1) GetUdmFunctionOk() ([]UdmFunctionSingle, b
 
 // HasUdmFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasUdmFunction() bool {
-	if o != nil && !isNil(o.UdmFunction) {
+	if o != nil && !IsNil(o.UdmFunction) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *ManagedElementSingle1AllOf1) SetUdmFunction(v []UdmFunctionSingle) {
 
 // GetUdrFunction returns the UdrFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetUdrFunction() []UdrFunctionSingle {
-	if o == nil || isNil(o.UdrFunction) {
+	if o == nil || IsNil(o.UdrFunction) {
 		var ret []UdrFunctionSingle
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *ManagedElementSingle1AllOf1) GetUdrFunction() []UdrFunctionSingle {
 // GetUdrFunctionOk returns a tuple with the UdrFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetUdrFunctionOk() ([]UdrFunctionSingle, bool) {
-	if o == nil || isNil(o.UdrFunction) {
+	if o == nil || IsNil(o.UdrFunction) {
 		return nil, false
 	}
 	return o.UdrFunction, true
@@ -304,7 +304,7 @@ func (o *ManagedElementSingle1AllOf1) GetUdrFunctionOk() ([]UdrFunctionSingle, b
 
 // HasUdrFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasUdrFunction() bool {
-	if o != nil && !isNil(o.UdrFunction) {
+	if o != nil && !IsNil(o.UdrFunction) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *ManagedElementSingle1AllOf1) SetUdrFunction(v []UdrFunctionSingle) {
 
 // GetUdsfFunction returns the UdsfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetUdsfFunction() []UdsfFunctionSingle {
-	if o == nil || isNil(o.UdsfFunction) {
+	if o == nil || IsNil(o.UdsfFunction) {
 		var ret []UdsfFunctionSingle
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *ManagedElementSingle1AllOf1) GetUdsfFunction() []UdsfFunctionSingle {
 // GetUdsfFunctionOk returns a tuple with the UdsfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetUdsfFunctionOk() ([]UdsfFunctionSingle, bool) {
-	if o == nil || isNil(o.UdsfFunction) {
+	if o == nil || IsNil(o.UdsfFunction) {
 		return nil, false
 	}
 	return o.UdsfFunction, true
@@ -336,7 +336,7 @@ func (o *ManagedElementSingle1AllOf1) GetUdsfFunctionOk() ([]UdsfFunctionSingle,
 
 // HasUdsfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasUdsfFunction() bool {
-	if o != nil && !isNil(o.UdsfFunction) {
+	if o != nil && !IsNil(o.UdsfFunction) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *ManagedElementSingle1AllOf1) SetUdsfFunction(v []UdsfFunctionSingle) {
 
 // GetNrfFunction returns the NrfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetNrfFunction() []NrfFunctionSingle {
-	if o == nil || isNil(o.NrfFunction) {
+	if o == nil || IsNil(o.NrfFunction) {
 		var ret []NrfFunctionSingle
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *ManagedElementSingle1AllOf1) GetNrfFunction() []NrfFunctionSingle {
 // GetNrfFunctionOk returns a tuple with the NrfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetNrfFunctionOk() ([]NrfFunctionSingle, bool) {
-	if o == nil || isNil(o.NrfFunction) {
+	if o == nil || IsNil(o.NrfFunction) {
 		return nil, false
 	}
 	return o.NrfFunction, true
@@ -368,7 +368,7 @@ func (o *ManagedElementSingle1AllOf1) GetNrfFunctionOk() ([]NrfFunctionSingle, b
 
 // HasNrfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasNrfFunction() bool {
-	if o != nil && !isNil(o.NrfFunction) {
+	if o != nil && !IsNil(o.NrfFunction) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *ManagedElementSingle1AllOf1) SetNrfFunction(v []NrfFunctionSingle) {
 
 // GetNssfFunction returns the NssfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetNssfFunction() []NssfFunctionSingle {
-	if o == nil || isNil(o.NssfFunction) {
+	if o == nil || IsNil(o.NssfFunction) {
 		var ret []NssfFunctionSingle
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *ManagedElementSingle1AllOf1) GetNssfFunction() []NssfFunctionSingle {
 // GetNssfFunctionOk returns a tuple with the NssfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetNssfFunctionOk() ([]NssfFunctionSingle, bool) {
-	if o == nil || isNil(o.NssfFunction) {
+	if o == nil || IsNil(o.NssfFunction) {
 		return nil, false
 	}
 	return o.NssfFunction, true
@@ -400,7 +400,7 @@ func (o *ManagedElementSingle1AllOf1) GetNssfFunctionOk() ([]NssfFunctionSingle,
 
 // HasNssfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasNssfFunction() bool {
-	if o != nil && !isNil(o.NssfFunction) {
+	if o != nil && !IsNil(o.NssfFunction) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *ManagedElementSingle1AllOf1) SetNssfFunction(v []NssfFunctionSingle) {
 
 // GetSmsfFunction returns the SmsfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetSmsfFunction() []SmsfFunctionSingle {
-	if o == nil || isNil(o.SmsfFunction) {
+	if o == nil || IsNil(o.SmsfFunction) {
 		var ret []SmsfFunctionSingle
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *ManagedElementSingle1AllOf1) GetSmsfFunction() []SmsfFunctionSingle {
 // GetSmsfFunctionOk returns a tuple with the SmsfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetSmsfFunctionOk() ([]SmsfFunctionSingle, bool) {
-	if o == nil || isNil(o.SmsfFunction) {
+	if o == nil || IsNil(o.SmsfFunction) {
 		return nil, false
 	}
 	return o.SmsfFunction, true
@@ -432,7 +432,7 @@ func (o *ManagedElementSingle1AllOf1) GetSmsfFunctionOk() ([]SmsfFunctionSingle,
 
 // HasSmsfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasSmsfFunction() bool {
-	if o != nil && !isNil(o.SmsfFunction) {
+	if o != nil && !IsNil(o.SmsfFunction) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *ManagedElementSingle1AllOf1) SetSmsfFunction(v []SmsfFunctionSingle) {
 
 // GetLmfFunction returns the LmfFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetLmfFunction() []LmfFunctionSingle {
-	if o == nil || isNil(o.LmfFunction) {
+	if o == nil || IsNil(o.LmfFunction) {
 		var ret []LmfFunctionSingle
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *ManagedElementSingle1AllOf1) GetLmfFunction() []LmfFunctionSingle {
 // GetLmfFunctionOk returns a tuple with the LmfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetLmfFunctionOk() ([]LmfFunctionSingle, bool) {
-	if o == nil || isNil(o.LmfFunction) {
+	if o == nil || IsNil(o.LmfFunction) {
 		return nil, false
 	}
 	return o.LmfFunction, true
@@ -464,7 +464,7 @@ func (o *ManagedElementSingle1AllOf1) GetLmfFunctionOk() ([]LmfFunctionSingle, b
 
 // HasLmfFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasLmfFunction() bool {
-	if o != nil && !isNil(o.LmfFunction) {
+	if o != nil && !IsNil(o.LmfFunction) {
 		return true
 	}
 
@@ -478,7 +478,7 @@ func (o *ManagedElementSingle1AllOf1) SetLmfFunction(v []LmfFunctionSingle) {
 
 // GetNgeirFunction returns the NgeirFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetNgeirFunction() []NgeirFunctionSingle {
-	if o == nil || isNil(o.NgeirFunction) {
+	if o == nil || IsNil(o.NgeirFunction) {
 		var ret []NgeirFunctionSingle
 		return ret
 	}
@@ -488,7 +488,7 @@ func (o *ManagedElementSingle1AllOf1) GetNgeirFunction() []NgeirFunctionSingle {
 // GetNgeirFunctionOk returns a tuple with the NgeirFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetNgeirFunctionOk() ([]NgeirFunctionSingle, bool) {
-	if o == nil || isNil(o.NgeirFunction) {
+	if o == nil || IsNil(o.NgeirFunction) {
 		return nil, false
 	}
 	return o.NgeirFunction, true
@@ -496,7 +496,7 @@ func (o *ManagedElementSingle1AllOf1) GetNgeirFunctionOk() ([]NgeirFunctionSingl
 
 // HasNgeirFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasNgeirFunction() bool {
-	if o != nil && !isNil(o.NgeirFunction) {
+	if o != nil && !IsNil(o.NgeirFunction) {
 		return true
 	}
 
@@ -510,7 +510,7 @@ func (o *ManagedElementSingle1AllOf1) SetNgeirFunction(v []NgeirFunctionSingle) 
 
 // GetSeppFunction returns the SeppFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetSeppFunction() []SeppFunctionSingle {
-	if o == nil || isNil(o.SeppFunction) {
+	if o == nil || IsNil(o.SeppFunction) {
 		var ret []SeppFunctionSingle
 		return ret
 	}
@@ -520,7 +520,7 @@ func (o *ManagedElementSingle1AllOf1) GetSeppFunction() []SeppFunctionSingle {
 // GetSeppFunctionOk returns a tuple with the SeppFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetSeppFunctionOk() ([]SeppFunctionSingle, bool) {
-	if o == nil || isNil(o.SeppFunction) {
+	if o == nil || IsNil(o.SeppFunction) {
 		return nil, false
 	}
 	return o.SeppFunction, true
@@ -528,7 +528,7 @@ func (o *ManagedElementSingle1AllOf1) GetSeppFunctionOk() ([]SeppFunctionSingle,
 
 // HasSeppFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasSeppFunction() bool {
-	if o != nil && !isNil(o.SeppFunction) {
+	if o != nil && !IsNil(o.SeppFunction) {
 		return true
 	}
 
@@ -542,7 +542,7 @@ func (o *ManagedElementSingle1AllOf1) SetSeppFunction(v []SeppFunctionSingle) {
 
 // GetNwdafFunction returns the NwdafFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetNwdafFunction() []NwdafFunctionSingle {
-	if o == nil || isNil(o.NwdafFunction) {
+	if o == nil || IsNil(o.NwdafFunction) {
 		var ret []NwdafFunctionSingle
 		return ret
 	}
@@ -552,7 +552,7 @@ func (o *ManagedElementSingle1AllOf1) GetNwdafFunction() []NwdafFunctionSingle {
 // GetNwdafFunctionOk returns a tuple with the NwdafFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetNwdafFunctionOk() ([]NwdafFunctionSingle, bool) {
-	if o == nil || isNil(o.NwdafFunction) {
+	if o == nil || IsNil(o.NwdafFunction) {
 		return nil, false
 	}
 	return o.NwdafFunction, true
@@ -560,7 +560,7 @@ func (o *ManagedElementSingle1AllOf1) GetNwdafFunctionOk() ([]NwdafFunctionSingl
 
 // HasNwdafFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasNwdafFunction() bool {
-	if o != nil && !isNil(o.NwdafFunction) {
+	if o != nil && !IsNil(o.NwdafFunction) {
 		return true
 	}
 
@@ -574,7 +574,7 @@ func (o *ManagedElementSingle1AllOf1) SetNwdafFunction(v []NwdafFunctionSingle) 
 
 // GetScpFunction returns the ScpFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetScpFunction() []ScpFunctionSingle {
-	if o == nil || isNil(o.ScpFunction) {
+	if o == nil || IsNil(o.ScpFunction) {
 		var ret []ScpFunctionSingle
 		return ret
 	}
@@ -584,7 +584,7 @@ func (o *ManagedElementSingle1AllOf1) GetScpFunction() []ScpFunctionSingle {
 // GetScpFunctionOk returns a tuple with the ScpFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetScpFunctionOk() ([]ScpFunctionSingle, bool) {
-	if o == nil || isNil(o.ScpFunction) {
+	if o == nil || IsNil(o.ScpFunction) {
 		return nil, false
 	}
 	return o.ScpFunction, true
@@ -592,7 +592,7 @@ func (o *ManagedElementSingle1AllOf1) GetScpFunctionOk() ([]ScpFunctionSingle, b
 
 // HasScpFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasScpFunction() bool {
-	if o != nil && !isNil(o.ScpFunction) {
+	if o != nil && !IsNil(o.ScpFunction) {
 		return true
 	}
 
@@ -606,7 +606,7 @@ func (o *ManagedElementSingle1AllOf1) SetScpFunction(v []ScpFunctionSingle) {
 
 // GetNefFunction returns the NefFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetNefFunction() []NefFunctionSingle {
-	if o == nil || isNil(o.NefFunction) {
+	if o == nil || IsNil(o.NefFunction) {
 		var ret []NefFunctionSingle
 		return ret
 	}
@@ -616,7 +616,7 @@ func (o *ManagedElementSingle1AllOf1) GetNefFunction() []NefFunctionSingle {
 // GetNefFunctionOk returns a tuple with the NefFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetNefFunctionOk() ([]NefFunctionSingle, bool) {
-	if o == nil || isNil(o.NefFunction) {
+	if o == nil || IsNil(o.NefFunction) {
 		return nil, false
 	}
 	return o.NefFunction, true
@@ -624,7 +624,7 @@ func (o *ManagedElementSingle1AllOf1) GetNefFunctionOk() ([]NefFunctionSingle, b
 
 // HasNefFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasNefFunction() bool {
-	if o != nil && !isNil(o.NefFunction) {
+	if o != nil && !IsNil(o.NefFunction) {
 		return true
 	}
 
@@ -638,7 +638,7 @@ func (o *ManagedElementSingle1AllOf1) SetNefFunction(v []NefFunctionSingle) {
 
 // GetConfigurable5QISet returns the Configurable5QISet field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetConfigurable5QISet() []Configurable5QISetSingle {
-	if o == nil || isNil(o.Configurable5QISet) {
+	if o == nil || IsNil(o.Configurable5QISet) {
 		var ret []Configurable5QISetSingle
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *ManagedElementSingle1AllOf1) GetConfigurable5QISet() []Configurable5QIS
 // GetConfigurable5QISetOk returns a tuple with the Configurable5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetConfigurable5QISetOk() ([]Configurable5QISetSingle, bool) {
-	if o == nil || isNil(o.Configurable5QISet) {
+	if o == nil || IsNil(o.Configurable5QISet) {
 		return nil, false
 	}
 	return o.Configurable5QISet, true
@@ -656,7 +656,7 @@ func (o *ManagedElementSingle1AllOf1) GetConfigurable5QISetOk() ([]Configurable5
 
 // HasConfigurable5QISet returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasConfigurable5QISet() bool {
-	if o != nil && !isNil(o.Configurable5QISet) {
+	if o != nil && !IsNil(o.Configurable5QISet) {
 		return true
 	}
 
@@ -670,7 +670,7 @@ func (o *ManagedElementSingle1AllOf1) SetConfigurable5QISet(v []Configurable5QIS
 
 // GetDynamic5QISet returns the Dynamic5QISet field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
-	if o == nil || isNil(o.Dynamic5QISet) {
+	if o == nil || IsNil(o.Dynamic5QISet) {
 		var ret []Dynamic5QISetSingle
 		return ret
 	}
@@ -680,7 +680,7 @@ func (o *ManagedElementSingle1AllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
 // GetDynamic5QISetOk returns a tuple with the Dynamic5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle, bool) {
-	if o == nil || isNil(o.Dynamic5QISet) {
+	if o == nil || IsNil(o.Dynamic5QISet) {
 		return nil, false
 	}
 	return o.Dynamic5QISet, true
@@ -688,7 +688,7 @@ func (o *ManagedElementSingle1AllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingl
 
 // HasDynamic5QISet returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasDynamic5QISet() bool {
-	if o != nil && !isNil(o.Dynamic5QISet) {
+	if o != nil && !IsNil(o.Dynamic5QISet) {
 		return true
 	}
 
@@ -702,7 +702,7 @@ func (o *ManagedElementSingle1AllOf1) SetDynamic5QISet(v []Dynamic5QISetSingle) 
 
 // GetEcmConnectionInfo returns the EcmConnectionInfo field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetEcmConnectionInfo() []EcmConnectionInfoSingle {
-	if o == nil || isNil(o.EcmConnectionInfo) {
+	if o == nil || IsNil(o.EcmConnectionInfo) {
 		var ret []EcmConnectionInfoSingle
 		return ret
 	}
@@ -712,7 +712,7 @@ func (o *ManagedElementSingle1AllOf1) GetEcmConnectionInfo() []EcmConnectionInfo
 // GetEcmConnectionInfoOk returns a tuple with the EcmConnectionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetEcmConnectionInfoOk() ([]EcmConnectionInfoSingle, bool) {
-	if o == nil || isNil(o.EcmConnectionInfo) {
+	if o == nil || IsNil(o.EcmConnectionInfo) {
 		return nil, false
 	}
 	return o.EcmConnectionInfo, true
@@ -720,7 +720,7 @@ func (o *ManagedElementSingle1AllOf1) GetEcmConnectionInfoOk() ([]EcmConnectionI
 
 // HasEcmConnectionInfo returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasEcmConnectionInfo() bool {
-	if o != nil && !isNil(o.EcmConnectionInfo) {
+	if o != nil && !IsNil(o.EcmConnectionInfo) {
 		return true
 	}
 
@@ -734,7 +734,7 @@ func (o *ManagedElementSingle1AllOf1) SetEcmConnectionInfo(v []EcmConnectionInfo
 
 // GetEASDFFunction returns the EASDFFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle1AllOf1) GetEASDFFunction() []EASDFFunctionSingle {
-	if o == nil || isNil(o.EASDFFunction) {
+	if o == nil || IsNil(o.EASDFFunction) {
 		var ret []EASDFFunctionSingle
 		return ret
 	}
@@ -744,7 +744,7 @@ func (o *ManagedElementSingle1AllOf1) GetEASDFFunction() []EASDFFunctionSingle {
 // GetEASDFFunctionOk returns a tuple with the EASDFFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle1AllOf1) GetEASDFFunctionOk() ([]EASDFFunctionSingle, bool) {
-	if o == nil || isNil(o.EASDFFunction) {
+	if o == nil || IsNil(o.EASDFFunction) {
 		return nil, false
 	}
 	return o.EASDFFunction, true
@@ -752,7 +752,7 @@ func (o *ManagedElementSingle1AllOf1) GetEASDFFunctionOk() ([]EASDFFunctionSingl
 
 // HasEASDFFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf1) HasEASDFFunction() bool {
-	if o != nil && !isNil(o.EASDFFunction) {
+	if o != nil && !IsNil(o.EASDFFunction) {
 		return true
 	}
 
@@ -765,7 +765,7 @@ func (o *ManagedElementSingle1AllOf1) SetEASDFFunction(v []EASDFFunctionSingle) 
 }
 
 func (o ManagedElementSingle1AllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -774,70 +774,70 @@ func (o ManagedElementSingle1AllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingle1AllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AmfFunction) {
+	if !IsNil(o.AmfFunction) {
 		toSerialize["AmfFunction"] = o.AmfFunction
 	}
-	if !isNil(o.SmfFunction) {
+	if !IsNil(o.SmfFunction) {
 		toSerialize["SmfFunction"] = o.SmfFunction
 	}
-	if !isNil(o.UpfFunction) {
+	if !IsNil(o.UpfFunction) {
 		toSerialize["UpfFunction"] = o.UpfFunction
 	}
-	if !isNil(o.N3iwfFunction) {
+	if !IsNil(o.N3iwfFunction) {
 		toSerialize["N3iwfFunction"] = o.N3iwfFunction
 	}
-	if !isNil(o.PcfFunction) {
+	if !IsNil(o.PcfFunction) {
 		toSerialize["PcfFunction"] = o.PcfFunction
 	}
-	if !isNil(o.AusfFunction) {
+	if !IsNil(o.AusfFunction) {
 		toSerialize["AusfFunction"] = o.AusfFunction
 	}
-	if !isNil(o.UdmFunction) {
+	if !IsNil(o.UdmFunction) {
 		toSerialize["UdmFunction"] = o.UdmFunction
 	}
-	if !isNil(o.UdrFunction) {
+	if !IsNil(o.UdrFunction) {
 		toSerialize["UdrFunction"] = o.UdrFunction
 	}
-	if !isNil(o.UdsfFunction) {
+	if !IsNil(o.UdsfFunction) {
 		toSerialize["UdsfFunction"] = o.UdsfFunction
 	}
-	if !isNil(o.NrfFunction) {
+	if !IsNil(o.NrfFunction) {
 		toSerialize["NrfFunction"] = o.NrfFunction
 	}
-	if !isNil(o.NssfFunction) {
+	if !IsNil(o.NssfFunction) {
 		toSerialize["NssfFunction"] = o.NssfFunction
 	}
-	if !isNil(o.SmsfFunction) {
+	if !IsNil(o.SmsfFunction) {
 		toSerialize["SmsfFunction"] = o.SmsfFunction
 	}
-	if !isNil(o.LmfFunction) {
+	if !IsNil(o.LmfFunction) {
 		toSerialize["LmfFunction"] = o.LmfFunction
 	}
-	if !isNil(o.NgeirFunction) {
+	if !IsNil(o.NgeirFunction) {
 		toSerialize["NgeirFunction"] = o.NgeirFunction
 	}
-	if !isNil(o.SeppFunction) {
+	if !IsNil(o.SeppFunction) {
 		toSerialize["SeppFunction"] = o.SeppFunction
 	}
-	if !isNil(o.NwdafFunction) {
+	if !IsNil(o.NwdafFunction) {
 		toSerialize["NwdafFunction"] = o.NwdafFunction
 	}
-	if !isNil(o.ScpFunction) {
+	if !IsNil(o.ScpFunction) {
 		toSerialize["ScpFunction"] = o.ScpFunction
 	}
-	if !isNil(o.NefFunction) {
+	if !IsNil(o.NefFunction) {
 		toSerialize["NefFunction"] = o.NefFunction
 	}
-	if !isNil(o.Configurable5QISet) {
+	if !IsNil(o.Configurable5QISet) {
 		toSerialize["Configurable5QISet"] = o.Configurable5QISet
 	}
-	if !isNil(o.Dynamic5QISet) {
+	if !IsNil(o.Dynamic5QISet) {
 		toSerialize["Dynamic5QISet"] = o.Dynamic5QISet
 	}
-	if !isNil(o.EcmConnectionInfo) {
+	if !IsNil(o.EcmConnectionInfo) {
 		toSerialize["EcmConnectionInfo"] = o.EcmConnectionInfo
 	}
-	if !isNil(o.EASDFFunction) {
+	if !IsNil(o.EASDFFunction) {
 		toSerialize["EASDFFunction"] = o.EASDFFunction
 	}
 	return toSerialize, nil
@@ -878,5 +878,3 @@ func (v *NullableManagedElementSingle1AllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

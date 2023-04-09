@@ -19,8 +19,8 @@ var _ MappedNullable = &MnsInfoSingle{}
 
 // MnsInfoSingle struct for MnsInfoSingle
 type MnsInfoSingle struct {
-	MnsLabel *string `json:"mnsLabel,omitempty"`
-	MnsType *string `json:"mnsType,omitempty"`
+	MnsLabel   *string `json:"mnsLabel,omitempty"`
+	MnsType    *string `json:"mnsType,omitempty"`
 	MnsVersion *string `json:"mnsVersion,omitempty"`
 	MnsAddress *string `json:"mnsAddress,omitempty"`
 	// List of the managed object instances that can be accessed using the MnS. If a complete SubNetwork can be accessed using the MnS, this attribute may contain the DN of the SubNetwork instead of the DNs of the individual managed entities within the SubNetwork.
@@ -46,7 +46,7 @@ func NewMnsInfoSingleWithDefaults() *MnsInfoSingle {
 
 // GetMnsLabel returns the MnsLabel field value if set, zero value otherwise.
 func (o *MnsInfoSingle) GetMnsLabel() string {
-	if o == nil || isNil(o.MnsLabel) {
+	if o == nil || IsNil(o.MnsLabel) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MnsInfoSingle) GetMnsLabel() string {
 // GetMnsLabelOk returns a tuple with the MnsLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsInfoSingle) GetMnsLabelOk() (*string, bool) {
-	if o == nil || isNil(o.MnsLabel) {
+	if o == nil || IsNil(o.MnsLabel) {
 		return nil, false
 	}
 	return o.MnsLabel, true
@@ -64,7 +64,7 @@ func (o *MnsInfoSingle) GetMnsLabelOk() (*string, bool) {
 
 // HasMnsLabel returns a boolean if a field has been set.
 func (o *MnsInfoSingle) HasMnsLabel() bool {
-	if o != nil && !isNil(o.MnsLabel) {
+	if o != nil && !IsNil(o.MnsLabel) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MnsInfoSingle) SetMnsLabel(v string) {
 
 // GetMnsType returns the MnsType field value if set, zero value otherwise.
 func (o *MnsInfoSingle) GetMnsType() string {
-	if o == nil || isNil(o.MnsType) {
+	if o == nil || IsNil(o.MnsType) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MnsInfoSingle) GetMnsType() string {
 // GetMnsTypeOk returns a tuple with the MnsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsInfoSingle) GetMnsTypeOk() (*string, bool) {
-	if o == nil || isNil(o.MnsType) {
+	if o == nil || IsNil(o.MnsType) {
 		return nil, false
 	}
 	return o.MnsType, true
@@ -96,7 +96,7 @@ func (o *MnsInfoSingle) GetMnsTypeOk() (*string, bool) {
 
 // HasMnsType returns a boolean if a field has been set.
 func (o *MnsInfoSingle) HasMnsType() bool {
-	if o != nil && !isNil(o.MnsType) {
+	if o != nil && !IsNil(o.MnsType) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MnsInfoSingle) SetMnsType(v string) {
 
 // GetMnsVersion returns the MnsVersion field value if set, zero value otherwise.
 func (o *MnsInfoSingle) GetMnsVersion() string {
-	if o == nil || isNil(o.MnsVersion) {
+	if o == nil || IsNil(o.MnsVersion) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MnsInfoSingle) GetMnsVersion() string {
 // GetMnsVersionOk returns a tuple with the MnsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsInfoSingle) GetMnsVersionOk() (*string, bool) {
-	if o == nil || isNil(o.MnsVersion) {
+	if o == nil || IsNil(o.MnsVersion) {
 		return nil, false
 	}
 	return o.MnsVersion, true
@@ -128,7 +128,7 @@ func (o *MnsInfoSingle) GetMnsVersionOk() (*string, bool) {
 
 // HasMnsVersion returns a boolean if a field has been set.
 func (o *MnsInfoSingle) HasMnsVersion() bool {
-	if o != nil && !isNil(o.MnsVersion) {
+	if o != nil && !IsNil(o.MnsVersion) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MnsInfoSingle) SetMnsVersion(v string) {
 
 // GetMnsAddress returns the MnsAddress field value if set, zero value otherwise.
 func (o *MnsInfoSingle) GetMnsAddress() string {
-	if o == nil || isNil(o.MnsAddress) {
+	if o == nil || IsNil(o.MnsAddress) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MnsInfoSingle) GetMnsAddress() string {
 // GetMnsAddressOk returns a tuple with the MnsAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsInfoSingle) GetMnsAddressOk() (*string, bool) {
-	if o == nil || isNil(o.MnsAddress) {
+	if o == nil || IsNil(o.MnsAddress) {
 		return nil, false
 	}
 	return o.MnsAddress, true
@@ -160,7 +160,7 @@ func (o *MnsInfoSingle) GetMnsAddressOk() (*string, bool) {
 
 // HasMnsAddress returns a boolean if a field has been set.
 func (o *MnsInfoSingle) HasMnsAddress() bool {
-	if o != nil && !isNil(o.MnsAddress) {
+	if o != nil && !IsNil(o.MnsAddress) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *MnsInfoSingle) SetMnsAddress(v string) {
 
 // GetMnsScope returns the MnsScope field value if set, zero value otherwise.
 func (o *MnsInfoSingle) GetMnsScope() []string {
-	if o == nil || isNil(o.MnsScope) {
+	if o == nil || IsNil(o.MnsScope) {
 		var ret []string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MnsInfoSingle) GetMnsScope() []string {
 // GetMnsScopeOk returns a tuple with the MnsScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnsInfoSingle) GetMnsScopeOk() ([]string, bool) {
-	if o == nil || isNil(o.MnsScope) {
+	if o == nil || IsNil(o.MnsScope) {
 		return nil, false
 	}
 	return o.MnsScope, true
@@ -192,7 +192,7 @@ func (o *MnsInfoSingle) GetMnsScopeOk() ([]string, bool) {
 
 // HasMnsScope returns a boolean if a field has been set.
 func (o *MnsInfoSingle) HasMnsScope() bool {
-	if o != nil && !isNil(o.MnsScope) {
+	if o != nil && !IsNil(o.MnsScope) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *MnsInfoSingle) SetMnsScope(v []string) {
 }
 
 func (o MnsInfoSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o MnsInfoSingle) MarshalJSON() ([]byte, error) {
 
 func (o MnsInfoSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MnsLabel) {
+	if !IsNil(o.MnsLabel) {
 		toSerialize["mnsLabel"] = o.MnsLabel
 	}
-	if !isNil(o.MnsType) {
+	if !IsNil(o.MnsType) {
 		toSerialize["mnsType"] = o.MnsType
 	}
-	if !isNil(o.MnsVersion) {
+	if !IsNil(o.MnsVersion) {
 		toSerialize["mnsVersion"] = o.MnsVersion
 	}
-	if !isNil(o.MnsAddress) {
+	if !IsNil(o.MnsAddress) {
 		toSerialize["mnsAddress"] = o.MnsAddress
 	}
-	if !isNil(o.MnsScope) {
+	if !IsNil(o.MnsScope) {
 		toSerialize["mnsScope"] = o.MnsScope
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullableMnsInfoSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

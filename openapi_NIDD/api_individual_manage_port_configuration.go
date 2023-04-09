@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,22 +13,21 @@ package openapi_NIDD
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualManagePortConfigurationApiService IndividualManagePortConfigurationApi service
 type IndividualManagePortConfigurationApiService service
 
 type ApiDeleteIndManagePortConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualManagePortConfigurationApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *IndividualManagePortConfigurationApiService
+	scsAsId         string
 	configurationId string
-	portId string
+	portId          string
 }
 
 func (r ApiDeleteIndManagePortConfigurationRequest) Execute() (*http.Response, error) {
@@ -38,28 +37,28 @@ func (r ApiDeleteIndManagePortConfigurationRequest) Execute() (*http.Response, e
 /*
 DeleteIndManagePortConfiguration Delete an Individual ManagePort Configuration resource to release port numbers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @param portId The UE port number.
- @return ApiDeleteIndManagePortConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@param portId The UE port number.
+	@return ApiDeleteIndManagePortConfigurationRequest
 */
 func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfiguration(ctx context.Context, scsAsId string, configurationId string, portId string) ApiDeleteIndManagePortConfigurationRequest {
 	return ApiDeleteIndManagePortConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
-		portId: portId,
+		portId:          portId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigurationExecute(r ApiDeleteIndManagePortConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualManagePortConfigurationApiService.DeleteIndManagePortConfiguration")
@@ -103,9 +102,9 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -122,8 +121,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -133,8 +132,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -144,8 +143,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +154,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -166,8 +165,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -177,8 +176,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -188,8 +187,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -199,8 +198,8 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -210,11 +209,11 @@ func (a *IndividualManagePortConfigurationApiService) DeleteIndManagePortConfigu
 }
 
 type ApiFetchIndManagePortConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualManagePortConfigurationApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *IndividualManagePortConfigurationApiService
+	scsAsId         string
 	configurationId string
-	portId string
+	portId          string
 }
 
 func (r ApiFetchIndManagePortConfigurationRequest) Execute() (*ManagePort, *http.Response, error) {
@@ -224,30 +223,31 @@ func (r ApiFetchIndManagePortConfigurationRequest) Execute() (*ManagePort, *http
 /*
 FetchIndManagePortConfiguration Read an Individual ManagePort Configuration resource to query port numbers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @param portId The UE port number.
- @return ApiFetchIndManagePortConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@param portId The UE port number.
+	@return ApiFetchIndManagePortConfigurationRequest
 */
 func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfiguration(ctx context.Context, scsAsId string, configurationId string, portId string) ApiFetchIndManagePortConfigurationRequest {
 	return ApiFetchIndManagePortConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
-		portId: portId,
+		portId:          portId,
 	}
 }
 
 // Execute executes the request
-//  @return ManagePort
+//
+//	@return ManagePort
 func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigurationExecute(r ApiFetchIndManagePortConfigurationRequest) (*ManagePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ManagePort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ManagePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualManagePortConfigurationApiService.FetchIndManagePortConfiguration")
@@ -291,9 +291,9 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,8 +310,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -321,8 +321,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -332,8 +332,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -343,8 +343,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -354,8 +354,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -365,8 +365,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -376,8 +376,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -387,8 +387,8 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -407,12 +407,12 @@ func (a *IndividualManagePortConfigurationApiService) FetchIndManagePortConfigur
 }
 
 type ApiUpdateIndManagePortConfigurationRequest struct {
-	ctx context.Context
-	ApiService *IndividualManagePortConfigurationApiService
-	scsAsId string
+	ctx             context.Context
+	ApiService      *IndividualManagePortConfigurationApiService
+	scsAsId         string
 	configurationId string
-	portId string
-	managePort *ManagePort
+	portId          string
+	managePort      *ManagePort
 }
 
 // Contains information to be applied to the individual ManagePort configuration.
@@ -428,30 +428,31 @@ func (r ApiUpdateIndManagePortConfigurationRequest) Execute() (*ManagePort, *htt
 /*
 UpdateIndManagePortConfiguration Create a new Individual ManagePort Configuration resource to reserve port numbers.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId String identifying the SCS/AS.
- @param configurationId String identifying the individual NIDD configuration resource in the SCEF.
- @param portId The UE port number.
- @return ApiUpdateIndManagePortConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId String identifying the SCS/AS.
+	@param configurationId String identifying the individual NIDD configuration resource in the SCEF.
+	@param portId The UE port number.
+	@return ApiUpdateIndManagePortConfigurationRequest
 */
 func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfiguration(ctx context.Context, scsAsId string, configurationId string, portId string) ApiUpdateIndManagePortConfigurationRequest {
 	return ApiUpdateIndManagePortConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:      a,
+		ctx:             ctx,
+		scsAsId:         scsAsId,
 		configurationId: configurationId,
-		portId: portId,
+		portId:          portId,
 	}
 }
 
 // Execute executes the request
-//  @return ManagePort
+//
+//	@return ManagePort
 func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigurationExecute(r ApiUpdateIndManagePortConfigurationRequest) (*ManagePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ManagePort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ManagePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualManagePortConfigurationApiService.UpdateIndManagePortConfiguration")
@@ -500,9 +501,9 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -519,8 +520,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -530,8 +531,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -541,8 +542,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -552,8 +553,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -563,8 +564,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -574,8 +575,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -585,8 +586,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -596,8 +597,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -607,8 +608,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -618,8 +619,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -629,8 +630,8 @@ func (a *IndividualManagePortConfigurationApiService) UpdateIndManagePortConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

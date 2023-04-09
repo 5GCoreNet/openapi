@@ -11288,7 +11288,7 @@ paths:
                   application/json:
                     schema:
                       items:
-                        $ref: '#/components/schemas/_application_data_influenceData_subs_to_notify_get_request_inner'
+                        $ref: '#/components/schemas/_application_data_influenceData_subs_to_notify_post_request_inner'
                       minItems: 1
                       type: array
                 required: true
@@ -13696,7 +13696,13 @@ components:
       type: object
     AuthMethod:
       anyOf:
-      - $ref: '#/components/schemas/AuthMethod_anyOf'
+      - enum:
+        - 5G_AKA
+        - EAP_AKA_PRIME
+        - EAP_TLS
+        - EAP_TTLS
+        - NONE
+        type: string
       - type: string
       description: Contains the Authentication Method.
     SequenceNumber:
@@ -13729,7 +13735,11 @@ components:
       type: object
     SqnScheme:
       anyOf:
-      - $ref: '#/components/schemas/SqnScheme_anyOf'
+      - enum:
+        - GENERAL
+        - NON_TIME_BASED
+        - TIME_BASED
+        type: string
       - type: string
       description: Scheme for generation of Sequence Numbers.
     Sign:
@@ -13784,7 +13794,14 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - $ref: '#/components/schemas/PatchOperation_anyOf'
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
       - type: string
       description: Operations as defined in IETF RFC 6902.
     ProblemDetails:
@@ -13958,7 +13975,13 @@ components:
       type: boolean
     AuthType:
       anyOf:
-      - $ref: '#/components/schemas/AuthType_anyOf'
+      - enum:
+        - 5G_AKA
+        - EAP_AKA_PRIME
+        - EAP_TLS
+        - NONE
+        - EAP_TTLS
+        type: string
       - type: string
     ServingNetworkName:
       pattern: "^(5G:mnc[0-9]{3}[.]mcc[0-9]{3}[.]3gppnetwork[.]org(:[A-F0-9]{11})?)|5G:NSWO$"
@@ -16011,7 +16034,10 @@ components:
       $ref: '#/components/schemas/Bytes'
     SorUpdateIndicator:
       anyOf:
-      - $ref: '#/components/schemas/SorUpdateIndicator_anyOf'
+      - enum:
+        - INITIAL_REGISTRATION
+        - EMERGENCY_REGISTRATION
+        type: string
       - type: string
     UpuInfo:
       example:
@@ -16075,7 +16101,10 @@ components:
       type: boolean
     MdtUserConsent:
       anyOf:
-      - $ref: '#/components/schemas/MdtUserConsent_anyOf'
+      - enum:
+        - CONSENT_NOT_GIVEN
+        - CONSENT_GIVEN
+        type: string
       - type: string
     CagData:
       example:
@@ -16484,7 +16513,12 @@ components:
       type: object
     OperationMode:
       anyOf:
-      - $ref: '#/components/schemas/OperationMode_anyOf'
+      - enum:
+        - WB_S1
+        - NB_S1
+        - WB_N1
+        - NB_N1
+        type: string
       - type: string
     PlmnRestriction:
       example:
@@ -16595,7 +16629,10 @@ components:
       type: object
     AerialUeIndication:
       anyOf:
-      - $ref: '#/components/schemas/AerialUeIndication_anyOf'
+      - enum:
+        - AERIAL_UE_ALLOWED
+        - AERIAL_UE_NOT_ALLOWED
+        type: string
       - type: string
       description: |
         Indicates the Aerial service for the UE is allowed or not allowed, possible values are - AERIAL_UE_ALLOWED: Aerial service for the UE is allowed. - AERIAL_UE_NOT_ALLOWED: Aerial service for the UE is not allowed.
@@ -16968,7 +17005,11 @@ components:
       type: object
     PduSessionContinuityInd:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionContinuityInd_anyOf'
+      - enum:
+        - MAINTAIN_PDUSESSION
+        - RECONNECT_PDUSESSION
+        - RELEASE_PDUSESSION
+        type: string
       - type: string
     NiddInformation:
       properties:
@@ -17197,7 +17238,10 @@ components:
       type: object
     LocationPrivacyInd:
       anyOf:
-      - $ref: '#/components/schemas/LocationPrivacyInd_anyOf'
+      - enum:
+        - LOCATION_DISALLOWED
+        - LOCATION_ALLOWED
+        type: string
       - type: string
     ValidTimePeriod:
       example:
@@ -17348,11 +17392,20 @@ components:
       type: object
     PrivacyCheckRelatedAction:
       anyOf:
-      - $ref: '#/components/schemas/PrivacyCheckRelatedAction_anyOf'
+      - enum:
+        - LOCATION_NOT_ALLOWED
+        - LOCATION_ALLOWED_WITH_NOTIFICATION
+        - LOCATION_ALLOWED_WITHOUT_NOTIFICATION
+        - LOCATION_ALLOWED_WITHOUT_RESPONSE
+        - LOCATION_RESTRICTED_WITHOUT_RESPONSE
+        type: string
       - type: string
     CodeWordInd:
       anyOf:
-      - $ref: '#/components/schemas/CodeWordInd_anyOf'
+      - enum:
+        - CODEWORD_CHECK_IN_UE
+        - CODEWORD_CHECK_IN_GMLC
+        type: string
       - type: string
     CodeWord:
       type: string
@@ -17554,7 +17607,13 @@ components:
       type: object
     LcsClientClass:
       anyOf:
-      - $ref: '#/components/schemas/LcsClientClass_anyOf'
+      - enum:
+        - BROADCAST_SERVICE
+        - OM_IN_HPLMN
+        - OM_IN_VPLMN
+        - ANONYMOUS_LOCATION_SERVICE
+        - SPECIFIC_SERVICE
+        type: string
       - type: string
     LcsClientId:
       type: string
@@ -17578,7 +17637,11 @@ components:
       type: object
     LcsMoServiceClass:
       anyOf:
-      - $ref: '#/components/schemas/LcsMoServiceClass_anyOf'
+      - enum:
+        - BASIC_SELF_LOCATION
+        - AUTONOMOUS_SELF_LOCATION
+        - TRANSFER_TO_THIRD_PARTY
+        type: string
       - type: string
     LcsBroadcastAssistanceTypesData:
       example:
@@ -17676,7 +17739,19 @@ components:
       type: object
     ProseDirectAllowed:
       anyOf:
-      - $ref: '#/components/schemas/ProseDirectAllowed_anyOf'
+      - enum:
+        - ANNOUNCE
+        - MONITOR
+        - RESTRICTD_ANNOUNCE
+        - RESTRICTD_MONITOR
+        - DISCOVERER
+        - DISCOVEREE
+        - BROADCAST
+        - GROUPCAST
+        - UNICAST
+        - LAYER2_RELAY
+        - LAYER3_RELAY
+        type: string
       - type: string
       description: Indicates the 5G ProSe Direct services that can be authorised to
         use in the given PLMN for the UE.
@@ -17842,7 +17917,25 @@ components:
       uniqueItems: true
     DataSetName:
       anyOf:
-      - $ref: '#/components/schemas/DataSetName_anyOf'
+      - enum:
+        - AM
+        - SMF_SEL
+        - SMS_SUB
+        - SM
+        - TRACE
+        - SMS_MNG
+        - LCS_PRIVACY
+        - LCS_MO
+        - LCS_BCA
+        - V2X
+        - PROSE
+        - ODB
+        - EE_PROF
+        - PP_PROF
+        - NIDD_AUTH
+        - USER_CONSENT
+        - MBS
+        type: string
       - type: string
       description: The name of data set.
     Dnn:
@@ -18831,7 +18924,11 @@ components:
       type: boolean
     ImsVoPs:
       anyOf:
-      - $ref: '#/components/schemas/ImsVoPs_anyOf'
+      - enum:
+        - HOMOGENEOUS_SUPPORT
+        - HOMOGENEOUS_NON_SUPPORT
+        - NON_HOMOGENEOUS_OR_UNKNOWN
+        type: string
       - type: string
     DualRegistrationFlag:
       type: boolean
@@ -18903,7 +19000,11 @@ components:
       type: object
     UeReachableInd:
       anyOf:
-      - $ref: '#/components/schemas/UeReachableInd_anyOf'
+      - enum:
+        - REACHABLE
+        - NOT_REACHABLE
+        - UNKNOWN
+        type: string
       - type: string
       description: UE Reachable Indication
     AmfNon3GppAccessRegistration:
@@ -19435,7 +19536,10 @@ components:
       type: object
     UserConsent:
       anyOf:
-      - $ref: '#/components/schemas/MdtUserConsent_anyOf'
+      - enum:
+        - CONSENT_NOT_GIVEN
+        - CONSENT_GIVEN
+        type: string
       - type: string
     ContextInfo:
       example:
@@ -19722,7 +19826,28 @@ components:
       type: object
     EventType:
       anyOf:
-      - $ref: '#/components/schemas/EventType_anyOf'
+      - enum:
+        - LOSS_OF_CONNECTIVITY
+        - UE_REACHABILITY_FOR_DATA
+        - UE_REACHABILITY_FOR_SMS
+        - LOCATION_REPORTING
+        - CHANGE_OF_SUPI_PEI_ASSOCIATION
+        - ROAMING_STATUS
+        - COMMUNICATION_FAILURE
+        - AVAILABILITY_AFTER_DDN_FAILURE
+        - CN_TYPE_CHANGE
+        - DL_DATA_DELIVERY_STATUS
+        - PDN_CONNECTIVITY_STATUS
+        - UE_CONNECTION_MANAGEMENT_STATE
+        - ACCESS_TYPE_REPORT
+        - REGISTRATION_STATE_REPORT
+        - CONNECTIVITY_STATE_REPORT
+        - TYPE_ALLOCATION_CODE_REPORT
+        - FREQUENT_MOBILITY_REGISTRATION_REPORT
+        - PDU_SES_REL
+        - PDU_SES_EST
+        - UE_MEMORY_AVAILABLE_FOR_SMS
+        type: string
       - type: string
     LocationReportingConfiguration:
       example:
@@ -19744,11 +19869,21 @@ components:
       type: object
     LocationAccuracy:
       anyOf:
-      - $ref: '#/components/schemas/LocationAccuracy_anyOf'
+      - enum:
+        - CELL_LEVEL
+        - RAN_NODE_LEVEL
+        - TA_LEVEL
+        - N3IWF_LEVEL
+        - UE_IP
+        - UE_PORT
+        type: string
       - type: string
     AssociationType:
       anyOf:
-      - $ref: '#/components/schemas/AssociationType_anyOf'
+      - enum:
+        - IMEI_CHANGE
+        - IMEISV_CHANGE
+        type: string
       - type: string
     DatalinkReportingConfiguration:
       example:
@@ -19805,7 +19940,10 @@ components:
       type: object
     ReachabilityForSmsConfiguration:
       anyOf:
-      - $ref: '#/components/schemas/ReachabilityForSmsConfiguration_anyOf'
+      - enum:
+        - REACHABILITY_FOR_SMS_OVER_NAS
+        - REACHABILITY_FOR_SMS_OVER_IP
+        type: string
       - type: string
     ReachabilityForDataConfiguration:
       example:
@@ -19822,7 +19960,10 @@ components:
       type: object
     ReachabilityForDataReportConfig:
       anyOf:
-      - $ref: '#/components/schemas/ReachabilityForDataReportConfig_anyOf'
+      - enum:
+        - DIRECT_REPORT
+        - INDIRECT_REPORT
+        type: string
       - type: string
     ReportingOptions:
       example:
@@ -19859,7 +20000,10 @@ components:
       type: object
     EventReportMode:
       anyOf:
-      - $ref: '#/components/schemas/EventReportMode_anyOf'
+      - enum:
+        - PERIODIC
+        - ON_EVENT_DETECTION
+        type: string
       - type: string
     MaxNumOfReports:
       type: integer
@@ -20314,7 +20458,9 @@ components:
       type: object
     RegistrationReason:
       anyOf:
-      - $ref: '#/components/schemas/RegistrationReason_anyOf'
+      - enum:
+        - SMF_CONTEXT_TRANSFERRED
+        type: string
       - type: string
     IpSmGwRegistration:
       anyOf:
@@ -20390,7 +20536,19 @@ components:
       uniqueItems: true
     ContextDataSetName:
       anyOf:
-      - $ref: '#/components/schemas/ContextDataSetName_anyOf'
+      - enum:
+        - AMF_3GPP
+        - AMF_NON_3GPP
+        - SDM_SUBSCRIPTIONS
+        - EE_SUBSCRIPTIONS
+        - SMSF_3GPP
+        - SMSF_NON_3GPP
+        - SUBS_TO_NOTIFY
+        - SMF_REG
+        - IP_SM_GW
+        - ROAMING_INFO
+        - PEI_INFO
+        type: string
       - type: string
     PduSessionId:
       description: "Unsigned integer identifying a PDU session, within the range 0\
@@ -22028,6 +22186,7 @@ components:
         hssSubscriptionInfo:
           $ref: '#/components/schemas/HssSubscriptionInfo'
       type: object
+      x-parent: true
     AmfSubscriptionInfo:
       description: Information the UDR stores and retrieves related to active subscriptions
         at the AMF(s).
@@ -26580,7 +26739,12 @@ components:
       type: object
     SharedDataTreatmentInstruction:
       anyOf:
-      - $ref: '#/components/schemas/SharedDataTreatmentInstruction_anyOf'
+      - enum:
+        - USE_IF_NO_CLASH
+        - OVERWRITE
+        - MAX
+        - MIN
+        type: string
       - type: string
     SessionManagementSubscriptionData_1:
       example:
@@ -27780,7 +27944,14 @@ components:
       type: object
     TraceDepth:
       anyOf:
-      - $ref: '#/components/schemas/TraceDepth_anyOf'
+      - enum:
+        - MINIMUM
+        - MEDIUM
+        - MAXIMUM
+        - MINIMUM_WO_VENDOR_EXTENSION
+        - MEDIUM_WO_VENDOR_EXTENSION
+        - MAXIMUM_WO_VENDOR_EXTENSION
+        type: string
       - type: string
       description: |
         The enumeration TraceDepth defines how detailed information should be recorded in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.1-1
@@ -27861,7 +28032,10 @@ components:
       type: object
     RoamingOdb:
       anyOf:
-      - $ref: '#/components/schemas/RoamingOdb_anyOf'
+      - enum:
+        - OUTSIDE_HOME_PLMN
+        - OUTSIDE_HOME_PLMN_COUNTRY
+        type: string
       - type: string
       description: |
         The enumeration RoamingOdb defines the Barring of Roaming as. See 3GPP TS 23.015 for further description. It shall comply with the provisions defined in table 5.7.3.1-1.
@@ -27870,7 +28044,9 @@ components:
       type: string
     ServiceType:
       anyOf:
-      - $ref: '#/components/schemas/ServiceType_anyOf'
+      - enum:
+        - AF_GUIDANCE_FOR_URSP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -28724,7 +28900,12 @@ components:
       $ref: '#/components/schemas/UcSubscriptionData'
     UcPurpose:
       anyOf:
-      - $ref: '#/components/schemas/UcPurpose_anyOf'
+      - enum:
+        - ANALYTICS
+        - MODEL_TRAINING
+        - NW_CAP_EXPOSURE
+        - EDGEAPP_UE_LOCATION
+        type: string
       - type: string
       description: Indicates the purpose of the user consent.
     PolicyDataForIndividualUe:
@@ -30251,7 +30432,10 @@ components:
       type: object
     UsageMonLevel:
       anyOf:
-      - $ref: '#/components/schemas/UsageMonLevel_anyOf'
+      - enum:
+        - SESSION_LEVEL
+        - SERVICE_LEVEL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -30275,7 +30459,13 @@ components:
       type: object
     Periodicity:
       anyOf:
-      - $ref: '#/components/schemas/Periodicity_anyOf'
+      - enum:
+        - YEARLY
+        - MONTHLY
+        - WEEKLY
+        - DAILY
+        - HOURLY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -30444,7 +30634,13 @@ components:
       type: object
     PolicyDataSubset:
       anyOf:
-      - $ref: '#/components/schemas/PolicyDataSubset_anyOf'
+      - enum:
+        - AM_POLICY_DATA
+        - SM_POLICY_DATA
+        - UE_POLICY_DATA
+        - UM_DATA
+        - OPERATOR_SPECIFIC_DATA
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -30683,7 +30879,10 @@ components:
       type: object
     BdtPolicyStatus:
       anyOf:
-      - $ref: '#/components/schemas/BdtPolicyStatus_anyOf'
+      - enum:
+        - INVALID
+        - VALID
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -33801,7 +34000,11 @@ components:
       type: object
     AccessRightStatus:
       anyOf:
-      - $ref: '#/components/schemas/AccessRightStatus_anyOf'
+      - enum:
+        - FULLY_ALLOWED
+        - PREVIEW_ALLOWED
+        - NO_ALLOWED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -34833,7 +35036,13 @@ components:
       type: object
     DataInd:
       anyOf:
-      - $ref: '#/components/schemas/DataInd_anyOf'
+      - enum:
+        - PFD
+        - IPTV
+        - BDT
+        - SVC_PARAM
+        - AM
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -35975,7 +36184,10 @@ components:
       type: object
     PduSessionStatus:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionStatus_anyOf'
+      - enum:
+        - ACTIVE
+        - RELEASED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -36568,7 +36780,28 @@ components:
       type: string
     RatType:
       anyOf:
-      - $ref: '#/components/schemas/RatType_anyOf'
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
       - type: string
       description: Indicates the radio access used.
     Area:
@@ -36672,7 +36905,10 @@ components:
       type: object
     RestrictionType:
       anyOf:
-      - $ref: '#/components/schemas/RestrictionType_anyOf'
+      - enum:
+        - ALLOWED_AREAS
+        - NOT_ALLOWED_AREAS
+        type: string
       - type: string
       description: It contains the restriction type ALLOWED_AREAS or NOT_ALLOWED_AREAS.
     Uinteger:
@@ -36681,7 +36917,10 @@ components:
       type: integer
     CoreNetworkType:
       anyOf:
-      - $ref: '#/components/schemas/CoreNetworkType_anyOf'
+      - enum:
+        - 5GC
+        - EPC
+        type: string
       - type: string
       description: It contains the Core Network type 5GC or EPC.
     AccessType:
@@ -36705,13 +36944,7 @@ components:
       type: integer
     OdbPacketServices:
       anyOf:
-      - anyOf:
-        - enum:
-          - ALL_PACKET_SERVICES
-          - ROAMER_ACCESS_HPLMN_AP
-          - ROAMER_ACCESS_VPLMN_AP
-          type: string
-        - type: string
+      - $ref: '#/components/schemas/OdbPacketServices_anyOf'
       - $ref: '#/components/schemas/NullValue'
       description: |
         The enumeration OdbPacketServices defines the Barring of Packet Oriented Services. See 3GPP TS 23.015 for further description. It shall comply with the provisions defined in table 5.7.3.2-1
@@ -36939,13 +37172,24 @@ components:
       type: object
     JobType:
       anyOf:
-      - $ref: '#/components/schemas/JobType_anyOf'
+      - enum:
+        - IMMEDIATE_MDT_ONLY
+        - LOGGED_MDT_ONLY
+        - TRACE_ONLY
+        - IMMEDIATE_MDT_AND_TRACE
+        - RLF_REPORTS_ONLY
+        - RCEF_REPORTS_ONLY
+        - LOGGED_MBSFN_MDT
+        type: string
       - type: string
       description: |
         The enumeration JobType defines Job Type in the trace. See 3GPP TS 32.422 for further  description of the values. It shall comply with the provisions defined in table 5.6.3.3-1.
     ReportTypeMdt:
       anyOf:
-      - $ref: '#/components/schemas/ReportTypeMdt_anyOf'
+      - enum:
+        - PERIODICAL
+        - EVENT_TRIGGED
+        type: string
       - type: string
       description: |
         The enumeration ReportTypeMdt defines Report Type for logged MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.4-1.
@@ -37027,97 +37271,236 @@ components:
       type: object
     MeasurementLteForMdt:
       anyOf:
-      - $ref: '#/components/schemas/MeasurementLteForMdt_anyOf'
+      - enum:
+        - M1
+        - M2
+        - M3
+        - M4_DL
+        - M4_UL
+        - M5_DL
+        - M5_UL
+        - M6_DL
+        - M6_UL
+        - M7_DL
+        - M7_UL
+        - M8
+        - M9
+        type: string
       - type: string
       description: |
         The enumeration MeasurementLteForMdt defines Measurements used for MDT in LTE in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.5-1.
     MeasurementNrForMdt:
       anyOf:
-      - $ref: '#/components/schemas/MeasurementLteForMdt_anyOf'
+      - enum:
+        - M1
+        - M2
+        - M3
+        - M4_DL
+        - M4_UL
+        - M5_DL
+        - M5_UL
+        - M6_DL
+        - M6_UL
+        - M7_DL
+        - M7_UL
+        - M8
+        - M9
+        type: string
       - type: string
       description: |
         The enumeration MeasurementNrForMdt defines Measurements used for MDT in NR in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.6-1.
     SensorMeasurement:
       anyOf:
-      - $ref: '#/components/schemas/SensorMeasurement_anyOf'
+      - enum:
+        - BAROMETRIC_PRESSURE
+        - UE_SPEED
+        - UE_ORIENTATION
+        type: string
       - type: string
       description: |
         The enumeration SensorMeasurement defines sensor measurement type for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.7-1.
     ReportingTrigger:
       anyOf:
-      - $ref: '#/components/schemas/ReportingTrigger_anyOf'
+      - enum:
+        - PERIODICAL
+        - EVENT_A2
+        - EVENT_A2_PERIODIC
+        - ALL_RRM_EVENT_TRIGGERS
+        type: string
       - type: string
       description: |
         The enumeration ReportingTrigger defines Reporting Triggers for MDT in the trace. See 3GPP TS 32.42] for further  description of the values. It shall comply with the provisions defined in table 5.6.3.8-1.
     ReportIntervalMdt:
       anyOf:
-      - $ref: '#/components/schemas/ReportIntervalMdt_anyOf'
+      - enum:
+        - "120"
+        - "240"
+        - "480"
+        - "640"
+        - "1024"
+        - "2048"
+        - "5120"
+        - "10240"
+        - "60000"
+        - "360000"
+        - "720000"
+        - "1800000"
+        - "3600000"
+        type: string
       - type: string
       description: |
         The enumeration ReportIntervalMdt defines Report Interval for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.9-1.
     ReportIntervalNrMdt:
       anyOf:
-      - $ref: '#/components/schemas/ReportIntervalNrMdt_anyOf'
+      - enum:
+        - "120"
+        - "240"
+        - "480"
+        - "640"
+        - "1024"
+        - "2048"
+        - "5120"
+        - "10240"
+        - "20480"
+        - "40960"
+        - "60000"
+        - "360000"
+        - "720000"
+        - "1800000"
+        - "3600000"
+        type: string
       - type: string
       description: |
         The enumeration ReportIntervalNrMdt defines Report Interval in NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.17-1.
     ReportAmountMdt:
       anyOf:
-      - $ref: '#/components/schemas/ReportAmountMdt_anyOf'
+      - enum:
+        - "1"
+        - "2"
+        - "4"
+        - "8"
+        - "16"
+        - "32"
+        - "64"
+        - infinity
+        type: string
       - type: string
       description: |
         The enumeration ReportAmountMdt defines Report Amount for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.10-1.
     EventForMdt:
       anyOf:
-      - $ref: '#/components/schemas/EventForMdt_anyOf'
+      - enum:
+        - OUT_OF_COVERAG
+        - A2_EVENT
+        type: string
       - type: string
       description: |
         The enumeration EventForMdt defines events triggered measurement for logged MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.11-1
     LoggingIntervalMdt:
       anyOf:
-      - $ref: '#/components/schemas/LoggingIntervalMdt_anyOf'
+      - enum:
+        - "128"
+        - "256"
+        - "512"
+        - "1024"
+        - "2048"
+        - "3072"
+        - "4096"
+        - "6144"
+        type: string
       - type: string
       description: |
         The enumeration LoggingIntervalMdt defines Logging Interval for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.12-1.
     LoggingIntervalNrMdt:
       anyOf:
-      - $ref: '#/components/schemas/LoggingIntervalNrMdt_anyOf'
+      - enum:
+        - "128"
+        - "256"
+        - "512"
+        - "1024"
+        - "2048"
+        - "3072"
+        - "4096"
+        - "6144"
+        - "320"
+        - "640"
+        - infinity
+        type: string
       - type: string
       description: |
         The enumeration LoggingIntervalNrMdt defines Logging Interval in NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.18-1.
     LoggingDurationMdt:
       anyOf:
-      - $ref: '#/components/schemas/LoggingDurationMdt_anyOf'
+      - enum:
+        - "600"
+        - "1200"
+        - "2400"
+        - "3600"
+        - "5400"
+        - "7200"
+        type: string
       - type: string
       description: |
         The enumeration LoggingIntervalMdt defines Logging Interval for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.12-1.
     LoggingDurationNrMdt:
       anyOf:
-      - $ref: '#/components/schemas/LoggingDurationMdt_anyOf'
+      - enum:
+        - "600"
+        - "1200"
+        - "2400"
+        - "3600"
+        - "5400"
+        - "7200"
+        type: string
       - type: string
       description: |
         The enumeration LoggingDurationMdt defines Logging Duration in NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.20-1.
     PositioningMethodMdt:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMethodMdt_anyOf'
+      - enum:
+        - GNSS
+        - E_CELL_ID
+        type: string
       - type: string
       description: |
         The enumeration LoggingDurationMdt defines Logging Duration for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.13-1.
     CollectionPeriodRmmLteMdt:
       anyOf:
-      - $ref: '#/components/schemas/CollectionPeriodRmmLteMdt_anyOf'
+      - enum:
+        - "1024"
+        - "1280"
+        - "2048"
+        - "2560"
+        - "5120"
+        - "10240"
+        - "60000"
+        type: string
       - type: string
       description: |
         The enumeration CollectionPeriodRmmLteMdt defines Collection period for RRM measurements LTE for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.15-1.
     CollectionPeriodRmmNrMdt:
       anyOf:
-      - $ref: '#/components/schemas/CollectionPeriodRmmNrMdt_anyOf'
+      - enum:
+        - "1024"
+        - "2048"
+        - "5120"
+        - "10240"
+        - "60000"
+        type: string
       - type: string
       description: |
         The enumeration CollectionPeriodRmmNrMdt defines Collection period for RRM measurements NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.19-1
     MeasurementPeriodLteMdt:
       anyOf:
-      - $ref: '#/components/schemas/CollectionPeriodRmmLteMdt_anyOf'
+      - enum:
+        - "1024"
+        - "1280"
+        - "2048"
+        - "2560"
+        - "5120"
+        - "10240"
+        - "60000"
+        type: string
       - type: string
       description: |
         The enumeration MeasurementPeriodLteMdt defines Measurement period LTE for MDT in the trace.  See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.16-1.
@@ -37394,7 +37777,19 @@ components:
       type: object
     AccessTech:
       anyOf:
-      - $ref: '#/components/schemas/AccessTech_anyOf'
+      - enum:
+        - NR
+        - EUTRAN_IN_WBS1_MODE_AND_NBS1_MODE
+        - EUTRAN_IN_NBS1_MODE_ONLY
+        - EUTRAN_IN_WBS1_MODE_ONLY
+        - UTRAN
+        - GSM_AND_ECGSM_IoT
+        - GSM_WITHOUT_ECGSM_IoT
+        - ECGSM_IoT_ONLY
+        - CDMA_1xRTT
+        - CDMA_HRPD
+        - GSM_COMPACT
+        type: string
       - type: string
       description: Represents the access technology
     UpuData_1:
@@ -37437,7 +37832,10 @@ components:
       type: string
     StationaryIndication:
       anyOf:
-      - $ref: '#/components/schemas/StationaryIndication_anyOf'
+      - enum:
+        - STATIONARY
+        - MOBILE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -37490,7 +37888,11 @@ components:
       type: string
     ScheduledCommunicationType:
       anyOf:
-      - $ref: '#/components/schemas/ScheduledCommunicationType_anyOf'
+      - enum:
+        - DOWNLINK_ONLY
+        - UPLINK_ONLY
+        - BIDIRECTIONAL
+        type: string
       - type: string
       description: |
         Possible values are:
@@ -37499,7 +37901,13 @@ components:
         -BIDIRECTIONA: Bi-directional
     TrafficProfile:
       anyOf:
-      - $ref: '#/components/schemas/TrafficProfile_anyOf'
+      - enum:
+        - SINGLE_TRANS_UL
+        - SINGLE_TRANS_DL
+        - DUAL_TRANS_UL_FIRST
+        - DUAL_TRANS_DL_FIRST
+        - MULTI_TRANS
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -37594,13 +38002,19 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
+      - enum:
+        - NOT_PREEMPT
+        - MAY_PREEMPT
+        type: string
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
+      - enum:
+        - NOT_PREEMPTABLE
+        - PREEMPTABLE
+        type: string
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -37625,14 +38039,22 @@ components:
       type: object
     UpIntegrity:
       anyOf:
-      - $ref: '#/components/schemas/UpIntegrity_anyOf'
+      - enum:
+        - REQUIRED
+        - PREFERRED
+        - NOT_NEEDED
+        type: string
       - type: string
       description: "indicates whether UP integrity protection is required, preferred\
         \ or not needed for all the traffic on the PDU Session. It shall comply with\
         \ the provisions defined in  table 5.4.3.4-1. \n"
     UpConfidentiality:
       anyOf:
-      - $ref: '#/components/schemas/UpIntegrity_anyOf'
+      - enum:
+        - REQUIRED
+        - PREFERRED
+        - NOT_NEEDED
+        type: string
       - type: string
       description: |
         indicates whether UP confidentiality protection is required, preferred or not needed for all the traffic on the PDU Session. It shall comply with the provisions defined in table 5.4.3.5-1.
@@ -37665,13 +38087,23 @@ components:
       type: object
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
     SscMode:
       anyOf:
-      - $ref: '#/components/schemas/SscMode_anyOf'
+      - enum:
+        - SSC_MODE_1
+        - SSC_MODE_2
+        - SSC_MODE_3
+        type: string
       - type: string
       description: "represents the service and session continuity mode It shall comply\
         \ with the provisions defined in table 5.4.3.6-1. \n"
@@ -37723,9 +38155,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -37925,7 +38368,10 @@ components:
       type: object
     UeAuth:
       anyOf:
-      - $ref: '#/components/schemas/UeAuth_anyOf'
+      - enum:
+        - AUTHORIZED
+        - NOT_AUTHORIZED
+        type: string
       - type: string
       description: |
         Possible values are:
@@ -38004,7 +38450,127 @@ components:
       type: string
     ServiceName:
       anyOf:
-      - $ref: '#/components/schemas/ServiceName_anyOf'
+      - enum:
+        - nnrf-nfm
+        - nnrf-disc
+        - nnrf-oauth2
+        - nudm-sdm
+        - nudm-uecm
+        - nudm-ueau
+        - nudm-ee
+        - nudm-pp
+        - nudm-niddau
+        - nudm-mt
+        - nudm-ssau
+        - nudm-rsds
+        - namf-comm
+        - namf-evts
+        - namf-mt
+        - namf-loc
+        - namf-mbs-comm
+        - namf-mbs-bc
+        - nsmf-pdusession
+        - nsmf-event-exposure
+        - nsmf-nidd
+        - nausf-auth
+        - nausf-sorprotection
+        - nausf-upuprotection
+        - nnef-pfdmanagement
+        - nnef-smcontext
+        - nnef-eventexposure
+        - nnef-eas-deployment-info
+        - 3gpp-cp-parameter-provisioning
+        - 3gpp-device-triggering
+        - 3gpp-bdt
+        - 3gpp-traffic-influence
+        - 3gpp-chargeable-party
+        - 3gpp-as-session-with-qos
+        - 3gpp-msisdn-less-mo-sms
+        - 3gpp-service-parameter
+        - 3gpp-monitoring-event
+        - 3gpp-nidd-configuration-trigger
+        - 3gpp-nidd
+        - 3gpp-analyticsexposure
+        - 3gpp-racs-parameter-provisioning
+        - 3gpp-ecr-control
+        - 3gpp-applying-bdt-policy
+        - 3gpp-mo-lcs-notify
+        - 3gpp-time-sync
+        - 3gpp-am-influence
+        - 3gpp-am-policyauthorization
+        - 3gpp-akma
+        - 3gpp-eas-deployment
+        - 3gpp-iptvconfiguration
+        - 3gpp-mbs-tmgi
+        - 3gpp-mbs-session
+        - 3gpp-authentication
+        - 3gpp-asti
+        - npcf-am-policy-control
+        - npcf-smpolicycontrol
+        - npcf-policyauthorization
+        - npcf-bdtpolicycontrol
+        - npcf-eventexposure
+        - npcf-ue-policy-control
+        - npcf-am-policyauthorization
+        - nsmsf-sms
+        - nnssf-nsselection
+        - nnssf-nssaiavailability
+        - nudr-dr
+        - nudr-group-id-map
+        - nlmf-loc
+        - n5g-eir-eic
+        - nbsf-management
+        - nchf-spendinglimitcontrol
+        - nchf-convergedcharging
+        - nchf-offlineonlycharging
+        - nnwdaf-eventssubscription
+        - nnwdaf-analyticsinfo
+        - nnwdaf-datamanagement
+        - nnwdaf-mlmodelprovision
+        - ngmlc-loc
+        - nucmf-provisioning
+        - nucmf-uecapabilitymanagement
+        - nhss-sdm
+        - nhss-uecm
+        - nhss-ueau
+        - nhss-ee
+        - nhss-ims-sdm
+        - nhss-ims-uecm
+        - nhss-ims-ueau
+        - nhss-gba-sdm
+        - nhss-gba-ueau
+        - nsepp-telescopic
+        - nsoraf-sor
+        - nspaf-secured-packet
+        - nudsf-dr
+        - nudsf-timer
+        - nnssaaf-nssaa
+        - nnssaaf-aiw
+        - naanf-akma
+        - n5gddnmf-discovery
+        - nmfaf-3dadm
+        - nmfaf-3cadm
+        - neasdf-dnscontext
+        - neasdf-baselinednspattern
+        - ndccf-dm
+        - ndccf-cm
+        - nnsacf-nsac
+        - nnsacf-slice-ee
+        - nmbsmf-tmgi
+        - nmbsmf-mbssession
+        - nadrf-dm
+        - nbsp-gba
+        - ntsctsf-time-sync
+        - ntsctsf-qos-tscai
+        - ntsctsf-asti
+        - npkmf-keyreq
+        - nmnpf-npstatus
+        - niwmsc-smservice
+        - nmbsf-mbsuserserv
+        - nmbsf-mbsuserdataing
+        - nmbstf-distsession
+        - npanf-prosekey
+        type: string
       - type: string
       description: Service names known to NRF
     Guami:
@@ -38235,7 +38801,11 @@ components:
       type: object
     DlDataDeliveryStatus:
       anyOf:
-      - $ref: '#/components/schemas/DlDataDeliveryStatus_anyOf'
+      - enum:
+        - BUFFERED
+        - TRANSMITTED
+        - DISCARDED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -38257,7 +38827,11 @@ components:
       type: integer
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -38933,6 +39507,7 @@ components:
       - callbackReference
       - monitoringConfigurations
       type: object
+      x-parent: true
     MonitoringConfiguration_1:
       properties:
         eventType:
@@ -39061,7 +39636,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     AuthorizationInfo:
@@ -40101,7 +40733,12 @@ components:
       type: object
     ChangeType:
       anyOf:
-      - $ref: '#/components/schemas/ChangeType_anyOf'
+      - enum:
+        - ADD
+        - MOVE
+        - REMOVE
+        - REPLACE
+        type: string
       - type: string
       description: Indicates the type of change to be performed.
     Uint16:
@@ -40830,7 +41467,12 @@ components:
       type: object
     PresenceState:
       anyOf:
-      - $ref: '#/components/schemas/PresenceState_anyOf'
+      - enum:
+        - IN_AREA
+        - OUT_OF_AREA
+        - UNKNOWN
+        - INACTIVE
+        type: string
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -41469,7 +42111,9 @@ components:
       type: object
     SubscribedEvent:
       anyOf:
-      - $ref: '#/components/schemas/SubscribedEvent_anyOf'
+      - enum:
+        - UP_PATH_CHANGE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -41478,7 +42122,11 @@ components:
         - UP_PATH_CHANGE: The AF requests to be notified when the UP path changes for the PDU session.
     DnaiChangeType:
       anyOf:
-      - $ref: '#/components/schemas/DnaiChangeType_anyOf'
+      - enum:
+        - EARLY
+        - EARLY_LATE
+        - LATE
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode  content defined in the present\
           \ version of this API. \n"
@@ -41862,7 +42510,12 @@ components:
       type: object
     ConnectionCapabilities:
       anyOf:
-      - $ref: '#/components/schemas/ConnectionCapabilities_anyOf'
+      - enum:
+        - IMS
+        - MMS
+        - SUPL
+        - INTERNET
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -41994,7 +42647,10 @@ components:
       type: object
     Event:
       anyOf:
-      - $ref: '#/components/schemas/Event_anyOf'
+      - enum:
+        - SUCCESS_UE_POL_DEL_SP
+        - UNSUCCESS_UE_POL_DEL_SP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -42019,7 +42675,9 @@ components:
       type: object
     AmInfluEvent:
       anyOf:
-      - $ref: '#/components/schemas/AmInfluEvent_anyOf'
+      - enum:
+        - SERVICE_AREA_COVRG_OUTCOME
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -42497,7 +43155,10 @@ components:
       type: object
     TransportProtocol:
       anyOf:
-      - $ref: '#/components/schemas/TransportProtocol_anyOf'
+      - enum:
+        - UDP
+        - TCP
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -42567,7 +43228,10 @@ components:
       type: object
     LineType:
       anyOf:
-      - $ref: '#/components/schemas/LineType_anyOf'
+      - enum:
+        - DSL
+        - PON
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -42849,7 +43513,10 @@ components:
       type: object
     RmState:
       anyOf:
-      - $ref: '#/components/schemas/RmState_anyOf'
+      - enum:
+        - REGISTERED
+        - DEREGISTERED
+        type: string
       - type: string
       description: Describes the registration management state of a UE
     CmInfo:
@@ -42869,17 +43536,29 @@ components:
       type: object
     CmState:
       anyOf:
-      - $ref: '#/components/schemas/CmState_anyOf'
+      - enum:
+        - IDLE
+        - CONNECTED
+        type: string
       - type: string
       description: Describes the connection management state of a UE
     UeReachability:
       anyOf:
-      - $ref: '#/components/schemas/UeReachability_anyOf'
+      - enum:
+        - UNREACHABLE
+        - REACHABLE
+        - REGULATORY_ONLY
+        type: string
       - type: string
       description: Describes the reachability of the UE
     SmsSupport:
       anyOf:
-      - $ref: '#/components/schemas/SmsSupport_anyOf'
+      - enum:
+        - 3GPP
+        - NON_3GPP
+        - BOTH
+        - NONE
+        type: string
       - type: string
       description: Indicates the supported SMS delivery of a UE
     PlmnIdNid_1:
@@ -43242,7 +43921,12 @@ components:
       type: string
     DomainNameProtocol:
       anyOf:
-      - $ref: '#/components/schemas/DomainNameProtocol_anyOf'
+      - enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -43250,7 +43934,12 @@ components:
         Possible values are - DNS_QNAME: Identifies the DNS protocol and the question name in DNS query. - TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message. - TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message. - TLS_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -43342,247 +44031,14 @@ components:
       - $ref: '#/components/schemas/ExtGroupId'
       - pattern: ^anyUE$
         type: string
-    _application_data_influenceData_subs_to_notify_get_request_inner:
+    _application_data_influenceData_subs_to_notify_post_request_inner:
       oneOf:
       - $ref: '#/components/schemas/TrafficInfluData'
       - $ref: '#/components/schemas/TrafficInfluDataNotif'
-    AuthMethod_anyOf:
-      enum:
-      - 5G_AKA
-      - EAP_AKA_PRIME
-      - EAP_TLS
-      - EAP_TTLS
-      - NONE
-      type: string
-      example: null
-    SqnScheme_anyOf:
-      enum:
-      - GENERAL
-      - NON_TIME_BASED
-      - TIME_BASED
-      type: string
-      example: null
-    PatchOperation_anyOf:
-      enum:
-      - add
-      - copy
-      - move
-      - remove
-      - replace
-      - test
-      type: string
-      example: null
-    AuthType_anyOf:
-      enum:
-      - 5G_AKA
-      - EAP_AKA_PRIME
-      - EAP_TLS
-      - NONE
-      - EAP_TTLS
-      type: string
-      example: null
     AccessAndMobilitySubscriptionData_subscribedDnnList_inner:
       anyOf:
       - $ref: '#/components/schemas/Dnn'
       - $ref: '#/components/schemas/WildcardDnn'
-    SorUpdateIndicator_anyOf:
-      enum:
-      - INITIAL_REGISTRATION
-      - EMERGENCY_REGISTRATION
-      type: string
-      example: null
-    MdtUserConsent_anyOf:
-      enum:
-      - CONSENT_NOT_GIVEN
-      - CONSENT_GIVEN
-      type: string
-      example: null
-    OperationMode_anyOf:
-      enum:
-      - WB_S1
-      - NB_S1
-      - WB_N1
-      - NB_N1
-      type: string
-      example: null
-    AerialUeIndication_anyOf:
-      enum:
-      - AERIAL_UE_ALLOWED
-      - AERIAL_UE_NOT_ALLOWED
-      type: string
-      example: null
-    PduSessionContinuityInd_anyOf:
-      enum:
-      - MAINTAIN_PDUSESSION
-      - RECONNECT_PDUSESSION
-      - RELEASE_PDUSESSION
-      type: string
-      example: null
-    LocationPrivacyInd_anyOf:
-      enum:
-      - LOCATION_DISALLOWED
-      - LOCATION_ALLOWED
-      type: string
-      example: null
-    PrivacyCheckRelatedAction_anyOf:
-      enum:
-      - LOCATION_NOT_ALLOWED
-      - LOCATION_ALLOWED_WITH_NOTIFICATION
-      - LOCATION_ALLOWED_WITHOUT_NOTIFICATION
-      - LOCATION_ALLOWED_WITHOUT_RESPONSE
-      - LOCATION_RESTRICTED_WITHOUT_RESPONSE
-      type: string
-      example: null
-    CodeWordInd_anyOf:
-      enum:
-      - CODEWORD_CHECK_IN_UE
-      - CODEWORD_CHECK_IN_GMLC
-      type: string
-      example: null
-    LcsClientClass_anyOf:
-      enum:
-      - BROADCAST_SERVICE
-      - OM_IN_HPLMN
-      - OM_IN_VPLMN
-      - ANONYMOUS_LOCATION_SERVICE
-      - SPECIFIC_SERVICE
-      type: string
-      example: null
-    LcsMoServiceClass_anyOf:
-      enum:
-      - BASIC_SELF_LOCATION
-      - AUTONOMOUS_SELF_LOCATION
-      - TRANSFER_TO_THIRD_PARTY
-      type: string
-      example: null
-    ProseDirectAllowed_anyOf:
-      enum:
-      - ANNOUNCE
-      - MONITOR
-      - RESTRICTD_ANNOUNCE
-      - RESTRICTD_MONITOR
-      - DISCOVERER
-      - DISCOVEREE
-      - BROADCAST
-      - GROUPCAST
-      - UNICAST
-      - LAYER2_RELAY
-      - LAYER3_RELAY
-      type: string
-      example: null
-    DataSetName_anyOf:
-      enum:
-      - AM
-      - SMF_SEL
-      - SMS_SUB
-      - SM
-      - TRACE
-      - SMS_MNG
-      - LCS_PRIVACY
-      - LCS_MO
-      - LCS_BCA
-      - V2X
-      - PROSE
-      - ODB
-      - EE_PROF
-      - PP_PROF
-      - NIDD_AUTH
-      - USER_CONSENT
-      - MBS
-      type: string
-      example: null
-    ImsVoPs_anyOf:
-      enum:
-      - HOMOGENEOUS_SUPPORT
-      - HOMOGENEOUS_NON_SUPPORT
-      - NON_HOMOGENEOUS_OR_UNKNOWN
-      type: string
-      example: null
-    UeReachableInd_anyOf:
-      enum:
-      - REACHABLE
-      - NOT_REACHABLE
-      - UNKNOWN
-      type: string
-      example: null
-    EventType_anyOf:
-      enum:
-      - LOSS_OF_CONNECTIVITY
-      - UE_REACHABILITY_FOR_DATA
-      - UE_REACHABILITY_FOR_SMS
-      - LOCATION_REPORTING
-      - CHANGE_OF_SUPI_PEI_ASSOCIATION
-      - ROAMING_STATUS
-      - COMMUNICATION_FAILURE
-      - AVAILABILITY_AFTER_DDN_FAILURE
-      - CN_TYPE_CHANGE
-      - DL_DATA_DELIVERY_STATUS
-      - PDN_CONNECTIVITY_STATUS
-      - UE_CONNECTION_MANAGEMENT_STATE
-      - ACCESS_TYPE_REPORT
-      - REGISTRATION_STATE_REPORT
-      - CONNECTIVITY_STATE_REPORT
-      - TYPE_ALLOCATION_CODE_REPORT
-      - FREQUENT_MOBILITY_REGISTRATION_REPORT
-      - PDU_SES_REL
-      - PDU_SES_EST
-      - UE_MEMORY_AVAILABLE_FOR_SMS
-      type: string
-      example: null
-    LocationAccuracy_anyOf:
-      enum:
-      - CELL_LEVEL
-      - RAN_NODE_LEVEL
-      - TA_LEVEL
-      - N3IWF_LEVEL
-      - UE_IP
-      - UE_PORT
-      type: string
-      example: null
-    AssociationType_anyOf:
-      enum:
-      - IMEI_CHANGE
-      - IMEISV_CHANGE
-      type: string
-      example: null
-    ReachabilityForSmsConfiguration_anyOf:
-      enum:
-      - REACHABILITY_FOR_SMS_OVER_NAS
-      - REACHABILITY_FOR_SMS_OVER_IP
-      type: string
-      example: null
-    ReachabilityForDataReportConfig_anyOf:
-      enum:
-      - DIRECT_REPORT
-      - INDIRECT_REPORT
-      type: string
-      example: null
-    EventReportMode_anyOf:
-      enum:
-      - PERIODIC
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    RegistrationReason_anyOf:
-      enum:
-      - SMF_CONTEXT_TRANSFERRED
-      type: string
-      example: null
-    ContextDataSetName_anyOf:
-      enum:
-      - AMF_3GPP
-      - AMF_NON_3GPP
-      - SDM_SUBSCRIPTIONS
-      - EE_SUBSCRIPTIONS
-      - SMSF_3GPP
-      - SMSF_NON_3GPP
-      - SUBS_TO_NOTIFY
-      - SMF_REG
-      - IP_SM_GW
-      - ROAMING_INFO
-      - PEI_INFO
-      type: string
-      example: null
     OperatorSpecificDataContainer_value:
       oneOf:
       - type: string
@@ -43591,369 +44047,14 @@ components:
       - type: boolean
       - type: object
       - type: array
-    SharedDataTreatmentInstruction_anyOf:
-      enum:
-      - USE_IF_NO_CLASH
-      - OVERWRITE
-      - MAX
-      - MIN
-      type: string
-      example: null
-    TraceDepth_anyOf:
-      enum:
-      - MINIMUM
-      - MEDIUM
-      - MAXIMUM
-      - MINIMUM_WO_VENDOR_EXTENSION
-      - MEDIUM_WO_VENDOR_EXTENSION
-      - MAXIMUM_WO_VENDOR_EXTENSION
-      type: string
-      example: null
-    RoamingOdb_anyOf:
-      enum:
-      - OUTSIDE_HOME_PLMN
-      - OUTSIDE_HOME_PLMN_COUNTRY
-      type: string
-      example: null
-    ServiceType_anyOf:
-      enum:
-      - AF_GUIDANCE_FOR_URSP
-      type: string
-      example: null
-    UcPurpose_anyOf:
-      enum:
-      - ANALYTICS
-      - MODEL_TRAINING
-      - NW_CAP_EXPOSURE
-      - EDGEAPP_UE_LOCATION
-      type: string
-      example: null
-    UsageMonLevel_anyOf:
-      enum:
-      - SESSION_LEVEL
-      - SERVICE_LEVEL
-      type: string
-      example: null
-    Periodicity_anyOf:
-      enum:
-      - YEARLY
-      - MONTHLY
-      - WEEKLY
-      - DAILY
-      - HOURLY
-      type: string
-      example: null
-    PolicyDataSubset_anyOf:
-      enum:
-      - AM_POLICY_DATA
-      - SM_POLICY_DATA
-      - UE_POLICY_DATA
-      - UM_DATA
-      - OPERATOR_SPECIFIC_DATA
-      type: string
-      example: null
-    BdtPolicyStatus_anyOf:
-      enum:
-      - INVALID
-      - VALID
-      type: string
-      example: null
-    AccessRightStatus_anyOf:
-      enum:
-      - FULLY_ALLOWED
-      - PREVIEW_ALLOWED
-      - NO_ALLOWED
-      type: string
-      example: null
-    DataInd_anyOf:
-      enum:
-      - PFD
-      - IPTV
-      - BDT
-      - SVC_PARAM
-      - AM
-      type: string
-      example: null
-    PduSessionStatus_anyOf:
-      enum:
-      - ACTIVE
-      - RELEASED
-      type: string
-      example: null
-    RatType_anyOf:
-      enum:
-      - NR
-      - EUTRA
-      - WLAN
-      - VIRTUAL
-      - NBIOT
-      - WIRELINE
-      - WIRELINE_CABLE
-      - WIRELINE_BBF
-      - LTE-M
-      - NR_U
-      - EUTRA_U
-      - TRUSTED_N3GA
-      - TRUSTED_WLAN
-      - UTRA
-      - GERA
-      - NR_LEO
-      - NR_MEO
-      - NR_GEO
-      - NR_OTHER_SAT
-      - NR_REDCAP
-      type: string
-      example: null
-    RestrictionType_anyOf:
-      enum:
-      - ALLOWED_AREAS
-      - NOT_ALLOWED_AREAS
-      type: string
-      example: null
-    CoreNetworkType_anyOf:
-      enum:
-      - 5GC
-      - EPC
-      type: string
-      example: null
-    JobType_anyOf:
-      enum:
-      - IMMEDIATE_MDT_ONLY
-      - LOGGED_MDT_ONLY
-      - TRACE_ONLY
-      - IMMEDIATE_MDT_AND_TRACE
-      - RLF_REPORTS_ONLY
-      - RCEF_REPORTS_ONLY
-      - LOGGED_MBSFN_MDT
-      type: string
-      example: null
-    ReportTypeMdt_anyOf:
-      enum:
-      - PERIODICAL
-      - EVENT_TRIGGED
-      type: string
-      example: null
-    MeasurementLteForMdt_anyOf:
-      enum:
-      - M1
-      - M2
-      - M3
-      - M4_DL
-      - M4_UL
-      - M5_DL
-      - M5_UL
-      - M6_DL
-      - M6_UL
-      - M7_DL
-      - M7_UL
-      - M8
-      - M9
-      type: string
-      example: null
-    SensorMeasurement_anyOf:
-      enum:
-      - BAROMETRIC_PRESSURE
-      - UE_SPEED
-      - UE_ORIENTATION
-      type: string
-      example: null
-    ReportingTrigger_anyOf:
-      enum:
-      - PERIODICAL
-      - EVENT_A2
-      - EVENT_A2_PERIODIC
-      - ALL_RRM_EVENT_TRIGGERS
-      type: string
-      example: null
-    ReportIntervalMdt_anyOf:
-      enum:
-      - "120"
-      - "240"
-      - "480"
-      - "640"
-      - "1024"
-      - "2048"
-      - "5120"
-      - "10240"
-      - "60000"
-      - "360000"
-      - "720000"
-      - "1800000"
-      - "3600000"
-      type: string
-      example: null
-    ReportIntervalNrMdt_anyOf:
-      enum:
-      - "120"
-      - "240"
-      - "480"
-      - "640"
-      - "1024"
-      - "2048"
-      - "5120"
-      - "10240"
-      - "20480"
-      - "40960"
-      - "60000"
-      - "360000"
-      - "720000"
-      - "1800000"
-      - "3600000"
-      type: string
-      example: null
-    ReportAmountMdt_anyOf:
-      enum:
-      - "1"
-      - "2"
-      - "4"
-      - "8"
-      - "16"
-      - "32"
-      - "64"
-      - infinity
-      type: string
-      example: null
-    EventForMdt_anyOf:
-      enum:
-      - OUT_OF_COVERAG
-      - A2_EVENT
-      type: string
-      example: null
-    LoggingIntervalMdt_anyOf:
-      enum:
-      - "128"
-      - "256"
-      - "512"
-      - "1024"
-      - "2048"
-      - "3072"
-      - "4096"
-      - "6144"
-      type: string
-      example: null
-    LoggingIntervalNrMdt_anyOf:
-      enum:
-      - "128"
-      - "256"
-      - "512"
-      - "1024"
-      - "2048"
-      - "3072"
-      - "4096"
-      - "6144"
-      - "320"
-      - "640"
-      - infinity
-      type: string
-      example: null
-    LoggingDurationMdt_anyOf:
-      enum:
-      - "600"
-      - "1200"
-      - "2400"
-      - "3600"
-      - "5400"
-      - "7200"
-      type: string
-      example: null
-    PositioningMethodMdt_anyOf:
-      enum:
-      - GNSS
-      - E_CELL_ID
-      type: string
-      example: null
-    CollectionPeriodRmmLteMdt_anyOf:
-      enum:
-      - "1024"
-      - "1280"
-      - "2048"
-      - "2560"
-      - "5120"
-      - "10240"
-      - "60000"
-      type: string
-      example: null
-    CollectionPeriodRmmNrMdt_anyOf:
-      enum:
-      - "1024"
-      - "2048"
-      - "5120"
-      - "10240"
-      - "60000"
-      type: string
-      example: null
-    AccessTech_anyOf:
-      enum:
-      - NR
-      - EUTRAN_IN_WBS1_MODE_AND_NBS1_MODE
-      - EUTRAN_IN_NBS1_MODE_ONLY
-      - EUTRAN_IN_WBS1_MODE_ONLY
-      - UTRAN
-      - GSM_AND_ECGSM_IoT
-      - GSM_WITHOUT_ECGSM_IoT
-      - ECGSM_IoT_ONLY
-      - CDMA_1xRTT
-      - CDMA_HRPD
-      - GSM_COMPACT
-      type: string
-      example: null
-    StationaryIndication_anyOf:
-      enum:
-      - STATIONARY
-      - MOBILE
-      type: string
-      example: null
-    ScheduledCommunicationType_anyOf:
-      enum:
-      - DOWNLINK_ONLY
-      - UPLINK_ONLY
-      - BIDIRECTIONAL
-      type: string
-      example: null
-    TrafficProfile_anyOf:
-      enum:
-      - SINGLE_TRANS_UL
-      - SINGLE_TRANS_DL
-      - DUAL_TRANS_UL_FIRST
-      - DUAL_TRANS_DL_FIRST
-      - MULTI_TRANS
-      type: string
-      example: null
-    PreemptionCapability_anyOf:
-      enum:
-      - NOT_PREEMPT
-      - MAY_PREEMPT
-      type: string
-      example: null
-    PreemptionVulnerability_anyOf:
-      enum:
-      - NOT_PREEMPTABLE
-      - PREEMPTABLE
-      type: string
-      example: null
-    UpIntegrity_anyOf:
-      enum:
-      - REQUIRED
-      - PREFERRED
-      - NOT_NEEDED
-      type: string
-      example: null
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
-    SscMode_anyOf:
-      enum:
-      - SSC_MODE_1
-      - SSC_MODE_2
-      - SSC_MODE_3
-      type: string
-      example: null
+    OdbPacketServices_anyOf:
+      anyOf:
+      - enum:
+        - ALL_PACKET_SERVICES
+        - ROAMER_ACCESS_HPLMN_AP
+        - ROAMER_ACCESS_VPLMN_AP
+        type: string
+      - type: string
     Point_allOf:
       properties:
         point:
@@ -43961,19 +44062,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -44142,311 +44230,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    UeAuth_anyOf:
-      enum:
-      - AUTHORIZED
-      - NOT_AUTHORIZED
-      type: string
-      example: null
-    ServiceName_anyOf:
-      enum:
-      - nnrf-nfm
-      - nnrf-disc
-      - nnrf-oauth2
-      - nudm-sdm
-      - nudm-uecm
-      - nudm-ueau
-      - nudm-ee
-      - nudm-pp
-      - nudm-niddau
-      - nudm-mt
-      - nudm-ssau
-      - nudm-rsds
-      - namf-comm
-      - namf-evts
-      - namf-mt
-      - namf-loc
-      - namf-mbs-comm
-      - namf-mbs-bc
-      - nsmf-pdusession
-      - nsmf-event-exposure
-      - nsmf-nidd
-      - nausf-auth
-      - nausf-sorprotection
-      - nausf-upuprotection
-      - nnef-pfdmanagement
-      - nnef-smcontext
-      - nnef-eventexposure
-      - nnef-eas-deployment-info
-      - 3gpp-cp-parameter-provisioning
-      - 3gpp-device-triggering
-      - 3gpp-bdt
-      - 3gpp-traffic-influence
-      - 3gpp-chargeable-party
-      - 3gpp-as-session-with-qos
-      - 3gpp-msisdn-less-mo-sms
-      - 3gpp-service-parameter
-      - 3gpp-monitoring-event
-      - 3gpp-nidd-configuration-trigger
-      - 3gpp-nidd
-      - 3gpp-analyticsexposure
-      - 3gpp-racs-parameter-provisioning
-      - 3gpp-ecr-control
-      - 3gpp-applying-bdt-policy
-      - 3gpp-mo-lcs-notify
-      - 3gpp-time-sync
-      - 3gpp-am-influence
-      - 3gpp-am-policyauthorization
-      - 3gpp-akma
-      - 3gpp-eas-deployment
-      - 3gpp-iptvconfiguration
-      - 3gpp-mbs-tmgi
-      - 3gpp-mbs-session
-      - 3gpp-authentication
-      - 3gpp-asti
-      - npcf-am-policy-control
-      - npcf-smpolicycontrol
-      - npcf-policyauthorization
-      - npcf-bdtpolicycontrol
-      - npcf-eventexposure
-      - npcf-ue-policy-control
-      - npcf-am-policyauthorization
-      - nsmsf-sms
-      - nnssf-nsselection
-      - nnssf-nssaiavailability
-      - nudr-dr
-      - nudr-group-id-map
-      - nlmf-loc
-      - n5g-eir-eic
-      - nbsf-management
-      - nchf-spendinglimitcontrol
-      - nchf-convergedcharging
-      - nchf-offlineonlycharging
-      - nnwdaf-eventssubscription
-      - nnwdaf-analyticsinfo
-      - nnwdaf-datamanagement
-      - nnwdaf-mlmodelprovision
-      - ngmlc-loc
-      - nucmf-provisioning
-      - nucmf-uecapabilitymanagement
-      - nhss-sdm
-      - nhss-uecm
-      - nhss-ueau
-      - nhss-ee
-      - nhss-ims-sdm
-      - nhss-ims-uecm
-      - nhss-ims-ueau
-      - nhss-gba-sdm
-      - nhss-gba-ueau
-      - nsepp-telescopic
-      - nsoraf-sor
-      - nspaf-secured-packet
-      - nudsf-dr
-      - nudsf-timer
-      - nnssaaf-nssaa
-      - nnssaaf-aiw
-      - naanf-akma
-      - n5gddnmf-discovery
-      - nmfaf-3dadm
-      - nmfaf-3cadm
-      - neasdf-dnscontext
-      - neasdf-baselinednspattern
-      - ndccf-dm
-      - ndccf-cm
-      - nnsacf-nsac
-      - nnsacf-slice-ee
-      - nmbsmf-tmgi
-      - nmbsmf-mbssession
-      - nadrf-dm
-      - nbsp-gba
-      - ntsctsf-time-sync
-      - ntsctsf-qos-tscai
-      - ntsctsf-asti
-      - npkmf-keyreq
-      - nmnpf-npstatus
-      - niwmsc-smservice
-      - nmbsf-mbsuserserv
-      - nmbsf-mbsuserdataing
-      - nmbstf-distsession
-      - npanf-prosekey
-      type: string
-      example: null
-    DlDataDeliveryStatus_anyOf:
-      enum:
-      - BUFFERED
-      - TRANSMITTED
-      - DISCARDED
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
-    ChangeType_anyOf:
-      enum:
-      - ADD
-      - MOVE
-      - REMOVE
-      - REPLACE
-      type: string
-      example: null
-    PresenceState_anyOf:
-      enum:
-      - IN_AREA
-      - OUT_OF_AREA
-      - UNKNOWN
-      - INACTIVE
-      type: string
-      example: null
-    SubscribedEvent_anyOf:
-      enum:
-      - UP_PATH_CHANGE
-      type: string
-      example: null
-    DnaiChangeType_anyOf:
-      enum:
-      - EARLY
-      - EARLY_LATE
-      - LATE
-      type: string
-      example: null
-    ConnectionCapabilities_anyOf:
-      enum:
-      - IMS
-      - MMS
-      - SUPL
-      - INTERNET
-      type: string
-      example: null
-    Event_anyOf:
-      enum:
-      - SUCCESS_UE_POL_DEL_SP
-      - UNSUCCESS_UE_POL_DEL_SP
-      type: string
-      example: null
-    AmInfluEvent_anyOf:
-      enum:
-      - SERVICE_AREA_COVRG_OUTCOME
-      type: string
-      example: null
-    TransportProtocol_anyOf:
-      enum:
-      - UDP
-      - TCP
-      type: string
-      example: null
-    LineType_anyOf:
-      enum:
-      - DSL
-      - PON
-      type: string
-      example: null
-    RmState_anyOf:
-      enum:
-      - REGISTERED
-      - DEREGISTERED
-      type: string
-      example: null
-    CmState_anyOf:
-      enum:
-      - IDLE
-      - CONNECTED
-      type: string
-      example: null
-    UeReachability_anyOf:
-      enum:
-      - UNREACHABLE
-      - REACHABLE
-      - REGULATORY_ONLY
-      type: string
-      example: null
-    SmsSupport_anyOf:
-      enum:
-      - 3GPP
-      - NON_3GPP
-      - BOTH
-      - NONE
-      type: string
-      example: null
-    DomainNameProtocol_anyOf:
-      enum:
-      - DNS_QNAME
-      - TLS_SNI
-      - TLS_SAN
-      - TSL_SCN
-      type: string
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

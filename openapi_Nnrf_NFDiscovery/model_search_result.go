@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,19 +19,19 @@ var _ MappedNullable = &SearchResult{}
 
 // SearchResult Contains the list of NF Profiles returned in a Discovery response
 type SearchResult struct {
-	ValidityPeriod *int32 `json:"validityPeriod,omitempty"`
-	NfInstances []NFProfile `json:"nfInstances"`
+	ValidityPeriod      *int32      `json:"validityPeriod,omitempty"`
+	NfInstances         []NFProfile `json:"nfInstances"`
 	CompleteNfInstances []NFProfile `json:"completeNfInstances,omitempty"`
-	SearchId *string `json:"searchId,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	NumNfInstComplete *int32 `json:"numNfInstComplete,omitempty"`
-	PreferredSearch *PreferredSearch `json:"preferredSearch,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	SearchId            *string     `json:"searchId,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	NumNfInstComplete *int32           `json:"numNfInstComplete,omitempty"`
+	PreferredSearch   *PreferredSearch `json:"preferredSearch,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	NrfSupportedFeatures *string `json:"nrfSupportedFeatures,omitempty"`
 	// List of matching NF instances. The key of the map is the NF instance ID.
-	NfInstanceList *map[string]NfInstanceInfo `json:"nfInstanceList,omitempty"`
-	AlteredPriorityInd *bool `json:"alteredPriorityInd,omitempty"`
-	NoProfileMatchInfo *NoProfileMatchInfo `json:"noProfileMatchInfo,omitempty"`
+	NfInstanceList     *map[string]NfInstanceInfo `json:"nfInstanceList,omitempty"`
+	AlteredPriorityInd *bool                      `json:"alteredPriorityInd,omitempty"`
+	NoProfileMatchInfo *NoProfileMatchInfo        `json:"noProfileMatchInfo,omitempty"`
 }
 
 // NewSearchResult instantiates a new SearchResult object
@@ -54,7 +54,7 @@ func NewSearchResultWithDefaults() *SearchResult {
 
 // GetValidityPeriod returns the ValidityPeriod field value if set, zero value otherwise.
 func (o *SearchResult) GetValidityPeriod() int32 {
-	if o == nil || isNil(o.ValidityPeriod) {
+	if o == nil || IsNil(o.ValidityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *SearchResult) GetValidityPeriod() int32 {
 // GetValidityPeriodOk returns a tuple with the ValidityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetValidityPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.ValidityPeriod) {
+	if o == nil || IsNil(o.ValidityPeriod) {
 		return nil, false
 	}
 	return o.ValidityPeriod, true
@@ -72,7 +72,7 @@ func (o *SearchResult) GetValidityPeriodOk() (*int32, bool) {
 
 // HasValidityPeriod returns a boolean if a field has been set.
 func (o *SearchResult) HasValidityPeriod() bool {
-	if o != nil && !isNil(o.ValidityPeriod) {
+	if o != nil && !IsNil(o.ValidityPeriod) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SearchResult) SetNfInstances(v []NFProfile) {
 
 // GetCompleteNfInstances returns the CompleteNfInstances field value if set, zero value otherwise.
 func (o *SearchResult) GetCompleteNfInstances() []NFProfile {
-	if o == nil || isNil(o.CompleteNfInstances) {
+	if o == nil || IsNil(o.CompleteNfInstances) {
 		var ret []NFProfile
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SearchResult) GetCompleteNfInstances() []NFProfile {
 // GetCompleteNfInstancesOk returns a tuple with the CompleteNfInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetCompleteNfInstancesOk() ([]NFProfile, bool) {
-	if o == nil || isNil(o.CompleteNfInstances) {
+	if o == nil || IsNil(o.CompleteNfInstances) {
 		return nil, false
 	}
 	return o.CompleteNfInstances, true
@@ -128,7 +128,7 @@ func (o *SearchResult) GetCompleteNfInstancesOk() ([]NFProfile, bool) {
 
 // HasCompleteNfInstances returns a boolean if a field has been set.
 func (o *SearchResult) HasCompleteNfInstances() bool {
-	if o != nil && !isNil(o.CompleteNfInstances) {
+	if o != nil && !IsNil(o.CompleteNfInstances) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SearchResult) SetCompleteNfInstances(v []NFProfile) {
 
 // GetSearchId returns the SearchId field value if set, zero value otherwise.
 func (o *SearchResult) GetSearchId() string {
-	if o == nil || isNil(o.SearchId) {
+	if o == nil || IsNil(o.SearchId) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SearchResult) GetSearchId() string {
 // GetSearchIdOk returns a tuple with the SearchId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetSearchIdOk() (*string, bool) {
-	if o == nil || isNil(o.SearchId) {
+	if o == nil || IsNil(o.SearchId) {
 		return nil, false
 	}
 	return o.SearchId, true
@@ -160,7 +160,7 @@ func (o *SearchResult) GetSearchIdOk() (*string, bool) {
 
 // HasSearchId returns a boolean if a field has been set.
 func (o *SearchResult) HasSearchId() bool {
-	if o != nil && !isNil(o.SearchId) {
+	if o != nil && !IsNil(o.SearchId) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *SearchResult) SetSearchId(v string) {
 
 // GetNumNfInstComplete returns the NumNfInstComplete field value if set, zero value otherwise.
 func (o *SearchResult) GetNumNfInstComplete() int32 {
-	if o == nil || isNil(o.NumNfInstComplete) {
+	if o == nil || IsNil(o.NumNfInstComplete) {
 		var ret int32
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *SearchResult) GetNumNfInstComplete() int32 {
 // GetNumNfInstCompleteOk returns a tuple with the NumNfInstComplete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetNumNfInstCompleteOk() (*int32, bool) {
-	if o == nil || isNil(o.NumNfInstComplete) {
+	if o == nil || IsNil(o.NumNfInstComplete) {
 		return nil, false
 	}
 	return o.NumNfInstComplete, true
@@ -192,7 +192,7 @@ func (o *SearchResult) GetNumNfInstCompleteOk() (*int32, bool) {
 
 // HasNumNfInstComplete returns a boolean if a field has been set.
 func (o *SearchResult) HasNumNfInstComplete() bool {
-	if o != nil && !isNil(o.NumNfInstComplete) {
+	if o != nil && !IsNil(o.NumNfInstComplete) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *SearchResult) SetNumNfInstComplete(v int32) {
 
 // GetPreferredSearch returns the PreferredSearch field value if set, zero value otherwise.
 func (o *SearchResult) GetPreferredSearch() PreferredSearch {
-	if o == nil || isNil(o.PreferredSearch) {
+	if o == nil || IsNil(o.PreferredSearch) {
 		var ret PreferredSearch
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *SearchResult) GetPreferredSearch() PreferredSearch {
 // GetPreferredSearchOk returns a tuple with the PreferredSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetPreferredSearchOk() (*PreferredSearch, bool) {
-	if o == nil || isNil(o.PreferredSearch) {
+	if o == nil || IsNil(o.PreferredSearch) {
 		return nil, false
 	}
 	return o.PreferredSearch, true
@@ -224,7 +224,7 @@ func (o *SearchResult) GetPreferredSearchOk() (*PreferredSearch, bool) {
 
 // HasPreferredSearch returns a boolean if a field has been set.
 func (o *SearchResult) HasPreferredSearch() bool {
-	if o != nil && !isNil(o.PreferredSearch) {
+	if o != nil && !IsNil(o.PreferredSearch) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *SearchResult) SetPreferredSearch(v PreferredSearch) {
 
 // GetNrfSupportedFeatures returns the NrfSupportedFeatures field value if set, zero value otherwise.
 func (o *SearchResult) GetNrfSupportedFeatures() string {
-	if o == nil || isNil(o.NrfSupportedFeatures) {
+	if o == nil || IsNil(o.NrfSupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *SearchResult) GetNrfSupportedFeatures() string {
 // GetNrfSupportedFeaturesOk returns a tuple with the NrfSupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetNrfSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.NrfSupportedFeatures) {
+	if o == nil || IsNil(o.NrfSupportedFeatures) {
 		return nil, false
 	}
 	return o.NrfSupportedFeatures, true
@@ -256,7 +256,7 @@ func (o *SearchResult) GetNrfSupportedFeaturesOk() (*string, bool) {
 
 // HasNrfSupportedFeatures returns a boolean if a field has been set.
 func (o *SearchResult) HasNrfSupportedFeatures() bool {
-	if o != nil && !isNil(o.NrfSupportedFeatures) {
+	if o != nil && !IsNil(o.NrfSupportedFeatures) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *SearchResult) SetNrfSupportedFeatures(v string) {
 
 // GetNfInstanceList returns the NfInstanceList field value if set, zero value otherwise.
 func (o *SearchResult) GetNfInstanceList() map[string]NfInstanceInfo {
-	if o == nil || isNil(o.NfInstanceList) {
+	if o == nil || IsNil(o.NfInstanceList) {
 		var ret map[string]NfInstanceInfo
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *SearchResult) GetNfInstanceList() map[string]NfInstanceInfo {
 // GetNfInstanceListOk returns a tuple with the NfInstanceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetNfInstanceListOk() (*map[string]NfInstanceInfo, bool) {
-	if o == nil || isNil(o.NfInstanceList) {
+	if o == nil || IsNil(o.NfInstanceList) {
 		return nil, false
 	}
 	return o.NfInstanceList, true
@@ -288,7 +288,7 @@ func (o *SearchResult) GetNfInstanceListOk() (*map[string]NfInstanceInfo, bool) 
 
 // HasNfInstanceList returns a boolean if a field has been set.
 func (o *SearchResult) HasNfInstanceList() bool {
-	if o != nil && !isNil(o.NfInstanceList) {
+	if o != nil && !IsNil(o.NfInstanceList) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *SearchResult) SetNfInstanceList(v map[string]NfInstanceInfo) {
 
 // GetAlteredPriorityInd returns the AlteredPriorityInd field value if set, zero value otherwise.
 func (o *SearchResult) GetAlteredPriorityInd() bool {
-	if o == nil || isNil(o.AlteredPriorityInd) {
+	if o == nil || IsNil(o.AlteredPriorityInd) {
 		var ret bool
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *SearchResult) GetAlteredPriorityInd() bool {
 // GetAlteredPriorityIndOk returns a tuple with the AlteredPriorityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetAlteredPriorityIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AlteredPriorityInd) {
+	if o == nil || IsNil(o.AlteredPriorityInd) {
 		return nil, false
 	}
 	return o.AlteredPriorityInd, true
@@ -320,7 +320,7 @@ func (o *SearchResult) GetAlteredPriorityIndOk() (*bool, bool) {
 
 // HasAlteredPriorityInd returns a boolean if a field has been set.
 func (o *SearchResult) HasAlteredPriorityInd() bool {
-	if o != nil && !isNil(o.AlteredPriorityInd) {
+	if o != nil && !IsNil(o.AlteredPriorityInd) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *SearchResult) SetAlteredPriorityInd(v bool) {
 
 // GetNoProfileMatchInfo returns the NoProfileMatchInfo field value if set, zero value otherwise.
 func (o *SearchResult) GetNoProfileMatchInfo() NoProfileMatchInfo {
-	if o == nil || isNil(o.NoProfileMatchInfo) {
+	if o == nil || IsNil(o.NoProfileMatchInfo) {
 		var ret NoProfileMatchInfo
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *SearchResult) GetNoProfileMatchInfo() NoProfileMatchInfo {
 // GetNoProfileMatchInfoOk returns a tuple with the NoProfileMatchInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchResult) GetNoProfileMatchInfoOk() (*NoProfileMatchInfo, bool) {
-	if o == nil || isNil(o.NoProfileMatchInfo) {
+	if o == nil || IsNil(o.NoProfileMatchInfo) {
 		return nil, false
 	}
 	return o.NoProfileMatchInfo, true
@@ -352,7 +352,7 @@ func (o *SearchResult) GetNoProfileMatchInfoOk() (*NoProfileMatchInfo, bool) {
 
 // HasNoProfileMatchInfo returns a boolean if a field has been set.
 func (o *SearchResult) HasNoProfileMatchInfo() bool {
-	if o != nil && !isNil(o.NoProfileMatchInfo) {
+	if o != nil && !IsNil(o.NoProfileMatchInfo) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *SearchResult) SetNoProfileMatchInfo(v NoProfileMatchInfo) {
 }
 
 func (o SearchResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,32 +374,32 @@ func (o SearchResult) MarshalJSON() ([]byte, error) {
 
 func (o SearchResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ValidityPeriod) {
+	if !IsNil(o.ValidityPeriod) {
 		toSerialize["validityPeriod"] = o.ValidityPeriod
 	}
 	toSerialize["nfInstances"] = o.NfInstances
-	if !isNil(o.CompleteNfInstances) {
+	if !IsNil(o.CompleteNfInstances) {
 		toSerialize["completeNfInstances"] = o.CompleteNfInstances
 	}
-	if !isNil(o.SearchId) {
+	if !IsNil(o.SearchId) {
 		toSerialize["searchId"] = o.SearchId
 	}
-	if !isNil(o.NumNfInstComplete) {
+	if !IsNil(o.NumNfInstComplete) {
 		toSerialize["numNfInstComplete"] = o.NumNfInstComplete
 	}
-	if !isNil(o.PreferredSearch) {
+	if !IsNil(o.PreferredSearch) {
 		toSerialize["preferredSearch"] = o.PreferredSearch
 	}
-	if !isNil(o.NrfSupportedFeatures) {
+	if !IsNil(o.NrfSupportedFeatures) {
 		toSerialize["nrfSupportedFeatures"] = o.NrfSupportedFeatures
 	}
-	if !isNil(o.NfInstanceList) {
+	if !IsNil(o.NfInstanceList) {
 		toSerialize["nfInstanceList"] = o.NfInstanceList
 	}
-	if !isNil(o.AlteredPriorityInd) {
+	if !IsNil(o.AlteredPriorityInd) {
 		toSerialize["alteredPriorityInd"] = o.AlteredPriorityInd
 	}
-	if !isNil(o.NoProfileMatchInfo) {
+	if !IsNil(o.NoProfileMatchInfo) {
 		toSerialize["noProfileMatchInfo"] = o.NoProfileMatchInfo
 	}
 	return toSerialize, nil
@@ -440,5 +440,3 @@ func (v *NullableSearchResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

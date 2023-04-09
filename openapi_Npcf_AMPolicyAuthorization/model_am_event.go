@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AmEvent Possible values are: - SAC_CH: Service Area Coverage Change - PDUID_CH: The PDUID assigned to a UE for the UE ProSe Policies changed 
+// AmEvent Possible values are: - SAC_CH: Service Area Coverage Change - PDUID_CH: The PDUID assigned to a UE for the UE ProSe Policies changed
 type AmEvent struct {
-	AmEventAnyOf *AmEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AmEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AmEventAnyOf
-	err = json.Unmarshal(data, &dst.AmEventAnyOf);
-	if err == nil {
-		jsonAmEventAnyOf, _ := json.Marshal(dst.AmEventAnyOf)
-		if string(jsonAmEventAnyOf) == "{}" { // empty struct
-			dst.AmEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.AmEventAnyOf, return on the first match
-		}
-	} else {
-		dst.AmEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AmEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AmEvent) MarshalJSON() ([]byte, error) {
-	if src.AmEventAnyOf != nil {
-		return json.Marshal(&src.AmEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAmEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

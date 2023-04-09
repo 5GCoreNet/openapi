@@ -879,7 +879,12 @@ components:
       type: object
     RacsFailureCode:
       anyOf:
-      - $ref: '#/components/schemas/RacsFailureCode_anyOf'
+      - enum:
+        - MALFUNCTION
+        - RESOURCE_LIMITATION
+        - RACS_ID_DUPLICATED
+        - OTHER_REASON
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -954,14 +959,6 @@ components:
         Type Allocation Code (TAC) of the UE, comprising the initial eight-digit portion of the 15-digit IMEI and 16-digit IMEISV codes. See clause 6.2 of 3GPP TS 23.003.
       pattern: "^[0-9]{8}$"
       type: string
-    RacsFailureCode_anyOf:
-      enum:
-      - MALFUNCTION
-      - RESOURCE_LIMITATION
-      - RACS_ID_DUPLICATED
-      - OTHER_REASON
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

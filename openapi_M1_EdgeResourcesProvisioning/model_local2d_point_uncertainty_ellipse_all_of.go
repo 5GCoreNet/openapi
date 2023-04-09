@@ -1,7 +1,7 @@
 /*
 M1_EdgeResourcesProvisioning
 
-5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &Local2dPointUncertaintyEllipseAllOf{}
 
 // Local2dPointUncertaintyEllipseAllOf struct for Local2dPointUncertaintyEllipseAllOf
 type Local2dPointUncertaintyEllipseAllOf struct {
-	LocalOrigin LocalOrigin `json:"localOrigin"`
-	Point RelativeCartesianLocation `json:"point"`
-	UncertaintyEllipse UncertaintyEllipse `json:"uncertaintyEllipse"`
+	LocalOrigin        LocalOrigin               `json:"localOrigin"`
+	Point              RelativeCartesianLocation `json:"point"`
+	UncertaintyEllipse UncertaintyEllipse        `json:"uncertaintyEllipse"`
 	// Indicates value of confidence.
 	Confidence int32 `json:"confidence"`
 }
@@ -144,7 +144,7 @@ func (o *Local2dPointUncertaintyEllipseAllOf) SetConfidence(v int32) {
 }
 
 func (o Local2dPointUncertaintyEllipseAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableLocal2dPointUncertaintyEllipseAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

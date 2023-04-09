@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,18 +20,18 @@ var _ MappedNullable = &NrLocation{}
 
 // NrLocation Contains the NR user location.
 type NrLocation struct {
-	Tai Tai `json:"tai"`
-	Ncgi Ncgi `json:"ncgi"`
+	Tai        Tai   `json:"tai"`
+	Ncgi       Ncgi  `json:"ncgi"`
 	IgnoreNcgi *bool `json:"ignoreNcgi,omitempty"`
-	// The value represents the elapsed time in minutes since the last network contact of the mobile station. Value \"0\" indicates that the location information was obtained after a successful paging procedure for Active Location Retrieval when the UE is in idle mode or after a successful  NG-RAN location reporting procedure with the eNB when the UE is in connected mode. Any other value than \"0\" indicates that the location information is the last known one. See 3GPP TS 29.002 clause 17.7.8. 
+	// The value represents the elapsed time in minutes since the last network contact of the mobile station. Value \"0\" indicates that the location information was obtained after a successful paging procedure for Active Location Retrieval when the UE is in idle mode or after a successful  NG-RAN location reporting procedure with the eNB when the UE is in connected mode. Any other value than \"0\" indicates that the location information is the last known one. See 3GPP TS 29.002 clause 17.7.8.
 	AgeOfLocationInformation *int32 `json:"ageOfLocationInformation,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	UeLocationTimestamp *time.Time `json:"ueLocationTimestamp,omitempty"`
-	// Refer to geographical Information. See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used. 
+	// Refer to geographical Information. See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
 	GeographicalInformation *string `json:"geographicalInformation,omitempty"`
-	// Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) [24] clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used. 
-	GeodeticInformation *string `json:"geodeticInformation,omitempty"`
-	GlobalGnbId *GlobalRanNodeId `json:"globalGnbId,omitempty"`
+	// Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) [24] clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+	GeodeticInformation *string          `json:"geodeticInformation,omitempty"`
+	GlobalGnbId         *GlobalRanNodeId `json:"globalGnbId,omitempty"`
 }
 
 // NewNrLocation instantiates a new NrLocation object
@@ -107,7 +107,7 @@ func (o *NrLocation) SetNcgi(v Ncgi) {
 
 // GetIgnoreNcgi returns the IgnoreNcgi field value if set, zero value otherwise.
 func (o *NrLocation) GetIgnoreNcgi() bool {
-	if o == nil || isNil(o.IgnoreNcgi) {
+	if o == nil || IsNil(o.IgnoreNcgi) {
 		var ret bool
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NrLocation) GetIgnoreNcgi() bool {
 // GetIgnoreNcgiOk returns a tuple with the IgnoreNcgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetIgnoreNcgiOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreNcgi) {
+	if o == nil || IsNil(o.IgnoreNcgi) {
 		return nil, false
 	}
 	return o.IgnoreNcgi, true
@@ -125,7 +125,7 @@ func (o *NrLocation) GetIgnoreNcgiOk() (*bool, bool) {
 
 // HasIgnoreNcgi returns a boolean if a field has been set.
 func (o *NrLocation) HasIgnoreNcgi() bool {
-	if o != nil && !isNil(o.IgnoreNcgi) {
+	if o != nil && !IsNil(o.IgnoreNcgi) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *NrLocation) SetIgnoreNcgi(v bool) {
 
 // GetAgeOfLocationInformation returns the AgeOfLocationInformation field value if set, zero value otherwise.
 func (o *NrLocation) GetAgeOfLocationInformation() int32 {
-	if o == nil || isNil(o.AgeOfLocationInformation) {
+	if o == nil || IsNil(o.AgeOfLocationInformation) {
 		var ret int32
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *NrLocation) GetAgeOfLocationInformation() int32 {
 // GetAgeOfLocationInformationOk returns a tuple with the AgeOfLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetAgeOfLocationInformationOk() (*int32, bool) {
-	if o == nil || isNil(o.AgeOfLocationInformation) {
+	if o == nil || IsNil(o.AgeOfLocationInformation) {
 		return nil, false
 	}
 	return o.AgeOfLocationInformation, true
@@ -157,7 +157,7 @@ func (o *NrLocation) GetAgeOfLocationInformationOk() (*int32, bool) {
 
 // HasAgeOfLocationInformation returns a boolean if a field has been set.
 func (o *NrLocation) HasAgeOfLocationInformation() bool {
-	if o != nil && !isNil(o.AgeOfLocationInformation) {
+	if o != nil && !IsNil(o.AgeOfLocationInformation) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NrLocation) SetAgeOfLocationInformation(v int32) {
 
 // GetUeLocationTimestamp returns the UeLocationTimestamp field value if set, zero value otherwise.
 func (o *NrLocation) GetUeLocationTimestamp() time.Time {
-	if o == nil || isNil(o.UeLocationTimestamp) {
+	if o == nil || IsNil(o.UeLocationTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *NrLocation) GetUeLocationTimestamp() time.Time {
 // GetUeLocationTimestampOk returns a tuple with the UeLocationTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetUeLocationTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.UeLocationTimestamp) {
+	if o == nil || IsNil(o.UeLocationTimestamp) {
 		return nil, false
 	}
 	return o.UeLocationTimestamp, true
@@ -189,7 +189,7 @@ func (o *NrLocation) GetUeLocationTimestampOk() (*time.Time, bool) {
 
 // HasUeLocationTimestamp returns a boolean if a field has been set.
 func (o *NrLocation) HasUeLocationTimestamp() bool {
-	if o != nil && !isNil(o.UeLocationTimestamp) {
+	if o != nil && !IsNil(o.UeLocationTimestamp) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *NrLocation) SetUeLocationTimestamp(v time.Time) {
 
 // GetGeographicalInformation returns the GeographicalInformation field value if set, zero value otherwise.
 func (o *NrLocation) GetGeographicalInformation() string {
-	if o == nil || isNil(o.GeographicalInformation) {
+	if o == nil || IsNil(o.GeographicalInformation) {
 		var ret string
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *NrLocation) GetGeographicalInformation() string {
 // GetGeographicalInformationOk returns a tuple with the GeographicalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetGeographicalInformationOk() (*string, bool) {
-	if o == nil || isNil(o.GeographicalInformation) {
+	if o == nil || IsNil(o.GeographicalInformation) {
 		return nil, false
 	}
 	return o.GeographicalInformation, true
@@ -221,7 +221,7 @@ func (o *NrLocation) GetGeographicalInformationOk() (*string, bool) {
 
 // HasGeographicalInformation returns a boolean if a field has been set.
 func (o *NrLocation) HasGeographicalInformation() bool {
-	if o != nil && !isNil(o.GeographicalInformation) {
+	if o != nil && !IsNil(o.GeographicalInformation) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *NrLocation) SetGeographicalInformation(v string) {
 
 // GetGeodeticInformation returns the GeodeticInformation field value if set, zero value otherwise.
 func (o *NrLocation) GetGeodeticInformation() string {
-	if o == nil || isNil(o.GeodeticInformation) {
+	if o == nil || IsNil(o.GeodeticInformation) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *NrLocation) GetGeodeticInformation() string {
 // GetGeodeticInformationOk returns a tuple with the GeodeticInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetGeodeticInformationOk() (*string, bool) {
-	if o == nil || isNil(o.GeodeticInformation) {
+	if o == nil || IsNil(o.GeodeticInformation) {
 		return nil, false
 	}
 	return o.GeodeticInformation, true
@@ -253,7 +253,7 @@ func (o *NrLocation) GetGeodeticInformationOk() (*string, bool) {
 
 // HasGeodeticInformation returns a boolean if a field has been set.
 func (o *NrLocation) HasGeodeticInformation() bool {
-	if o != nil && !isNil(o.GeodeticInformation) {
+	if o != nil && !IsNil(o.GeodeticInformation) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *NrLocation) SetGeodeticInformation(v string) {
 
 // GetGlobalGnbId returns the GlobalGnbId field value if set, zero value otherwise.
 func (o *NrLocation) GetGlobalGnbId() GlobalRanNodeId {
-	if o == nil || isNil(o.GlobalGnbId) {
+	if o == nil || IsNil(o.GlobalGnbId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *NrLocation) GetGlobalGnbId() GlobalRanNodeId {
 // GetGlobalGnbIdOk returns a tuple with the GlobalGnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetGlobalGnbIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.GlobalGnbId) {
+	if o == nil || IsNil(o.GlobalGnbId) {
 		return nil, false
 	}
 	return o.GlobalGnbId, true
@@ -285,7 +285,7 @@ func (o *NrLocation) GetGlobalGnbIdOk() (*GlobalRanNodeId, bool) {
 
 // HasGlobalGnbId returns a boolean if a field has been set.
 func (o *NrLocation) HasGlobalGnbId() bool {
-	if o != nil && !isNil(o.GlobalGnbId) {
+	if o != nil && !IsNil(o.GlobalGnbId) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *NrLocation) SetGlobalGnbId(v GlobalRanNodeId) {
 }
 
 func (o NrLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -309,22 +309,22 @@ func (o NrLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tai"] = o.Tai
 	toSerialize["ncgi"] = o.Ncgi
-	if !isNil(o.IgnoreNcgi) {
+	if !IsNil(o.IgnoreNcgi) {
 		toSerialize["ignoreNcgi"] = o.IgnoreNcgi
 	}
-	if !isNil(o.AgeOfLocationInformation) {
+	if !IsNil(o.AgeOfLocationInformation) {
 		toSerialize["ageOfLocationInformation"] = o.AgeOfLocationInformation
 	}
-	if !isNil(o.UeLocationTimestamp) {
+	if !IsNil(o.UeLocationTimestamp) {
 		toSerialize["ueLocationTimestamp"] = o.UeLocationTimestamp
 	}
-	if !isNil(o.GeographicalInformation) {
+	if !IsNil(o.GeographicalInformation) {
 		toSerialize["geographicalInformation"] = o.GeographicalInformation
 	}
-	if !isNil(o.GeodeticInformation) {
+	if !IsNil(o.GeodeticInformation) {
 		toSerialize["geodeticInformation"] = o.GeodeticInformation
 	}
-	if !isNil(o.GlobalGnbId) {
+	if !IsNil(o.GlobalGnbId) {
 		toSerialize["globalGnbId"] = o.GlobalGnbId
 	}
 	return toSerialize, nil
@@ -365,5 +365,3 @@ func (v *NullableNrLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

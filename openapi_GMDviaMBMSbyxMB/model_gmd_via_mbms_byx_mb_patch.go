@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyxMB
 
-API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -50,7 +50,7 @@ func NewGMDViaMBMSByxMBPatchWithDefaults() *GMDViaMBMSByxMBPatch {
 
 // GetMbmsLocArea returns the MbmsLocArea field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMBPatch) GetMbmsLocArea() MbmsLocArea {
-	if o == nil || isNil(o.MbmsLocArea) {
+	if o == nil || IsNil(o.MbmsLocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *GMDViaMBMSByxMBPatch) GetMbmsLocArea() MbmsLocArea {
 // GetMbmsLocAreaOk returns a tuple with the MbmsLocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMBPatch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || isNil(o.MbmsLocArea) {
+	if o == nil || IsNil(o.MbmsLocArea) {
 		return nil, false
 	}
 	return o.MbmsLocArea, true
@@ -68,7 +68,7 @@ func (o *GMDViaMBMSByxMBPatch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasMbmsLocArea returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMBPatch) HasMbmsLocArea() bool {
-	if o != nil && !isNil(o.MbmsLocArea) {
+	if o != nil && !IsNil(o.MbmsLocArea) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *GMDViaMBMSByxMBPatch) SetMbmsLocArea(v MbmsLocArea) {
 
 // GetMessageDeliveryStartTime returns the MessageDeliveryStartTime field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStartTime() time.Time {
-	if o == nil || isNil(o.MessageDeliveryStartTime) {
+	if o == nil || IsNil(o.MessageDeliveryStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStartTime() time.Time {
 // GetMessageDeliveryStartTimeOk returns a tuple with the MessageDeliveryStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MessageDeliveryStartTime) {
+	if o == nil || IsNil(o.MessageDeliveryStartTime) {
 		return nil, false
 	}
 	return o.MessageDeliveryStartTime, true
@@ -100,7 +100,7 @@ func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStartTimeOk() (*time.Time, bool
 
 // HasMessageDeliveryStartTime returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMBPatch) HasMessageDeliveryStartTime() bool {
-	if o != nil && !isNil(o.MessageDeliveryStartTime) {
+	if o != nil && !IsNil(o.MessageDeliveryStartTime) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *GMDViaMBMSByxMBPatch) SetMessageDeliveryStartTime(v time.Time) {
 
 // GetMessageDeliveryStopTime returns the MessageDeliveryStopTime field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStopTime() time.Time {
-	if o == nil || isNil(o.MessageDeliveryStopTime) {
+	if o == nil || IsNil(o.MessageDeliveryStopTime) {
 		var ret time.Time
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStopTime() time.Time {
 // GetMessageDeliveryStopTimeOk returns a tuple with the MessageDeliveryStopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStopTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MessageDeliveryStopTime) {
+	if o == nil || IsNil(o.MessageDeliveryStopTime) {
 		return nil, false
 	}
 	return o.MessageDeliveryStopTime, true
@@ -132,7 +132,7 @@ func (o *GMDViaMBMSByxMBPatch) GetMessageDeliveryStopTimeOk() (*time.Time, bool)
 
 // HasMessageDeliveryStopTime returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMBPatch) HasMessageDeliveryStopTime() bool {
-	if o != nil && !isNil(o.MessageDeliveryStopTime) {
+	if o != nil && !IsNil(o.MessageDeliveryStopTime) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *GMDViaMBMSByxMBPatch) SetMessageDeliveryStopTime(v time.Time) {
 
 // GetGroupMessagePayload returns the GroupMessagePayload field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMBPatch) GetGroupMessagePayload() string {
-	if o == nil || isNil(o.GroupMessagePayload) {
+	if o == nil || IsNil(o.GroupMessagePayload) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *GMDViaMBMSByxMBPatch) GetGroupMessagePayload() string {
 // GetGroupMessagePayloadOk returns a tuple with the GroupMessagePayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMBPatch) GetGroupMessagePayloadOk() (*string, bool) {
-	if o == nil || isNil(o.GroupMessagePayload) {
+	if o == nil || IsNil(o.GroupMessagePayload) {
 		return nil, false
 	}
 	return o.GroupMessagePayload, true
@@ -164,7 +164,7 @@ func (o *GMDViaMBMSByxMBPatch) GetGroupMessagePayloadOk() (*string, bool) {
 
 // HasGroupMessagePayload returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMBPatch) HasGroupMessagePayload() bool {
-	if o != nil && !isNil(o.GroupMessagePayload) {
+	if o != nil && !IsNil(o.GroupMessagePayload) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *GMDViaMBMSByxMBPatch) SetGroupMessagePayload(v string) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMBPatch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *GMDViaMBMSByxMBPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMBPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -196,7 +196,7 @@ func (o *GMDViaMBMSByxMBPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMBPatch) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *GMDViaMBMSByxMBPatch) SetNotificationDestination(v string) {
 }
 
 func (o GMDViaMBMSByxMBPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,19 +218,19 @@ func (o GMDViaMBMSByxMBPatch) MarshalJSON() ([]byte, error) {
 
 func (o GMDViaMBMSByxMBPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbmsLocArea) {
+	if !IsNil(o.MbmsLocArea) {
 		toSerialize["mbmsLocArea"] = o.MbmsLocArea
 	}
-	if !isNil(o.MessageDeliveryStartTime) {
+	if !IsNil(o.MessageDeliveryStartTime) {
 		toSerialize["messageDeliveryStartTime"] = o.MessageDeliveryStartTime
 	}
-	if !isNil(o.MessageDeliveryStopTime) {
+	if !IsNil(o.MessageDeliveryStopTime) {
 		toSerialize["messageDeliveryStopTime"] = o.MessageDeliveryStopTime
 	}
-	if !isNil(o.GroupMessagePayload) {
+	if !IsNil(o.GroupMessagePayload) {
 		toSerialize["groupMessagePayload"] = o.GroupMessagePayload
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil
@@ -271,5 +271,3 @@ func (v *NullableGMDViaMBMSByxMBPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

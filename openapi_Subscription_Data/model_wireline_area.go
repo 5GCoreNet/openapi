@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,10 +17,10 @@ import (
 // checks if the WirelineArea type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WirelineArea{}
 
-// WirelineArea One and only one of the \"globLineIds\", \"hfcNIds\", \"areaCodeB\" and \"areaCodeC\" attributes shall be included in a WirelineArea data structure 
+// WirelineArea One and only one of the \"globLineIds\", \"hfcNIds\", \"areaCodeB\" and \"areaCodeC\" attributes shall be included in a WirelineArea data structure
 type WirelineArea struct {
 	GlobalLineIds []string `json:"globalLineIds,omitempty"`
-	HfcNIds []string `json:"hfcNIds,omitempty"`
+	HfcNIds       []string `json:"hfcNIds,omitempty"`
 	// Values are operator specific.
 	AreaCodeB *string `json:"areaCodeB,omitempty"`
 	// Values are operator specific.
@@ -46,7 +46,7 @@ func NewWirelineAreaWithDefaults() *WirelineArea {
 
 // GetGlobalLineIds returns the GlobalLineIds field value if set, zero value otherwise.
 func (o *WirelineArea) GetGlobalLineIds() []string {
-	if o == nil || isNil(o.GlobalLineIds) {
+	if o == nil || IsNil(o.GlobalLineIds) {
 		var ret []string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *WirelineArea) GetGlobalLineIds() []string {
 // GetGlobalLineIdsOk returns a tuple with the GlobalLineIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea) GetGlobalLineIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.GlobalLineIds) {
+	if o == nil || IsNil(o.GlobalLineIds) {
 		return nil, false
 	}
 	return o.GlobalLineIds, true
@@ -64,7 +64,7 @@ func (o *WirelineArea) GetGlobalLineIdsOk() ([]string, bool) {
 
 // HasGlobalLineIds returns a boolean if a field has been set.
 func (o *WirelineArea) HasGlobalLineIds() bool {
-	if o != nil && !isNil(o.GlobalLineIds) {
+	if o != nil && !IsNil(o.GlobalLineIds) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *WirelineArea) SetGlobalLineIds(v []string) {
 
 // GetHfcNIds returns the HfcNIds field value if set, zero value otherwise.
 func (o *WirelineArea) GetHfcNIds() []string {
-	if o == nil || isNil(o.HfcNIds) {
+	if o == nil || IsNil(o.HfcNIds) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *WirelineArea) GetHfcNIds() []string {
 // GetHfcNIdsOk returns a tuple with the HfcNIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea) GetHfcNIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.HfcNIds) {
+	if o == nil || IsNil(o.HfcNIds) {
 		return nil, false
 	}
 	return o.HfcNIds, true
@@ -96,7 +96,7 @@ func (o *WirelineArea) GetHfcNIdsOk() ([]string, bool) {
 
 // HasHfcNIds returns a boolean if a field has been set.
 func (o *WirelineArea) HasHfcNIds() bool {
-	if o != nil && !isNil(o.HfcNIds) {
+	if o != nil && !IsNil(o.HfcNIds) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *WirelineArea) SetHfcNIds(v []string) {
 
 // GetAreaCodeB returns the AreaCodeB field value if set, zero value otherwise.
 func (o *WirelineArea) GetAreaCodeB() string {
-	if o == nil || isNil(o.AreaCodeB) {
+	if o == nil || IsNil(o.AreaCodeB) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *WirelineArea) GetAreaCodeB() string {
 // GetAreaCodeBOk returns a tuple with the AreaCodeB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea) GetAreaCodeBOk() (*string, bool) {
-	if o == nil || isNil(o.AreaCodeB) {
+	if o == nil || IsNil(o.AreaCodeB) {
 		return nil, false
 	}
 	return o.AreaCodeB, true
@@ -128,7 +128,7 @@ func (o *WirelineArea) GetAreaCodeBOk() (*string, bool) {
 
 // HasAreaCodeB returns a boolean if a field has been set.
 func (o *WirelineArea) HasAreaCodeB() bool {
-	if o != nil && !isNil(o.AreaCodeB) {
+	if o != nil && !IsNil(o.AreaCodeB) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *WirelineArea) SetAreaCodeB(v string) {
 
 // GetAreaCodeC returns the AreaCodeC field value if set, zero value otherwise.
 func (o *WirelineArea) GetAreaCodeC() string {
-	if o == nil || isNil(o.AreaCodeC) {
+	if o == nil || IsNil(o.AreaCodeC) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *WirelineArea) GetAreaCodeC() string {
 // GetAreaCodeCOk returns a tuple with the AreaCodeC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea) GetAreaCodeCOk() (*string, bool) {
-	if o == nil || isNil(o.AreaCodeC) {
+	if o == nil || IsNil(o.AreaCodeC) {
 		return nil, false
 	}
 	return o.AreaCodeC, true
@@ -160,7 +160,7 @@ func (o *WirelineArea) GetAreaCodeCOk() (*string, bool) {
 
 // HasAreaCodeC returns a boolean if a field has been set.
 func (o *WirelineArea) HasAreaCodeC() bool {
-	if o != nil && !isNil(o.AreaCodeC) {
+	if o != nil && !IsNil(o.AreaCodeC) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *WirelineArea) SetAreaCodeC(v string) {
 }
 
 func (o WirelineArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o WirelineArea) MarshalJSON() ([]byte, error) {
 
 func (o WirelineArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GlobalLineIds) {
+	if !IsNil(o.GlobalLineIds) {
 		toSerialize["globalLineIds"] = o.GlobalLineIds
 	}
-	if !isNil(o.HfcNIds) {
+	if !IsNil(o.HfcNIds) {
 		toSerialize["hfcNIds"] = o.HfcNIds
 	}
-	if !isNil(o.AreaCodeB) {
+	if !IsNil(o.AreaCodeB) {
 		toSerialize["areaCodeB"] = o.AreaCodeB
 	}
-	if !isNil(o.AreaCodeC) {
+	if !IsNil(o.AreaCodeC) {
 		toSerialize["areaCodeC"] = o.AreaCodeC
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableWirelineArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

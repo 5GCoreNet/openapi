@@ -1,7 +1,7 @@
 /*
 M5_MetricsReporting
 
-5GMS AF M5 Metrics Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Metrics Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,22 +13,21 @@ package openapi_M5_MetricsReporting
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiSubmitMetricsReportRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                             context.Context
+	ApiService                      *DefaultApiService
+	provisioningSessionId           string
 	metricsReportingConfigurationId string
-	body *string
+	body                            *string
 }
 
 // A Metrics Report
@@ -44,16 +43,16 @@ func (r ApiSubmitMetricsReportRequest) Execute() (*http.Response, error) {
 /*
 SubmitMetricsReport Submit a Metrics Report
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param metricsReportingConfigurationId The resource identifier of a Metrics Configuration in the specified Provisioning Session.
- @return ApiSubmitMetricsReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param metricsReportingConfigurationId The resource identifier of a Metrics Configuration in the specified Provisioning Session.
+	@return ApiSubmitMetricsReportRequest
 */
 func (a *DefaultApiService) SubmitMetricsReport(ctx context.Context, provisioningSessionId string, metricsReportingConfigurationId string) ApiSubmitMetricsReportRequest {
 	return ApiSubmitMetricsReportRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                      a,
+		ctx:                             ctx,
+		provisioningSessionId:           provisioningSessionId,
 		metricsReportingConfigurationId: metricsReportingConfigurationId,
 	}
 }
@@ -61,9 +60,9 @@ func (a *DefaultApiService) SubmitMetricsReport(ctx context.Context, provisionin
 // Execute executes the request
 func (a *DefaultApiService) SubmitMetricsReportExecute(r ApiSubmitMetricsReportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.SubmitMetricsReport")
@@ -111,9 +110,9 @@ func (a *DefaultApiService) SubmitMetricsReportExecute(r ApiSubmitMetricsReportR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

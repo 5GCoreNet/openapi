@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &UEAuthenticationCtx{}
 
 // UEAuthenticationCtx Contains the information related to the resource generated to handle the UE authentication. It contains at least the UE id, Serving Network, the Authentication Method and related EAP information or related 5G-AKA information.
 type UEAuthenticationCtx struct {
-	AuthType AuthType `json:"authType"`
+	AuthType      AuthType                      `json:"authType"`
 	Var5gAuthData UEAuthenticationCtx5gAuthData `json:"5gAuthData"`
 	// A map(list of key-value pairs) where member serves as key
-	Links map[string]LinksValueSchema `json:"_links"`
-	ServingNetworkName *string `json:"servingNetworkName,omitempty"`
+	Links              map[string]LinksValueSchema `json:"_links"`
+	ServingNetworkName *string                     `json:"servingNetworkName,omitempty"`
 }
 
 // NewUEAuthenticationCtx instantiates a new UEAuthenticationCtx object
@@ -120,7 +120,7 @@ func (o *UEAuthenticationCtx) SetLinks(v map[string]LinksValueSchema) {
 
 // GetServingNetworkName returns the ServingNetworkName field value if set, zero value otherwise.
 func (o *UEAuthenticationCtx) GetServingNetworkName() string {
-	if o == nil || isNil(o.ServingNetworkName) {
+	if o == nil || IsNil(o.ServingNetworkName) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *UEAuthenticationCtx) GetServingNetworkName() string {
 // GetServingNetworkNameOk returns a tuple with the ServingNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEAuthenticationCtx) GetServingNetworkNameOk() (*string, bool) {
-	if o == nil || isNil(o.ServingNetworkName) {
+	if o == nil || IsNil(o.ServingNetworkName) {
 		return nil, false
 	}
 	return o.ServingNetworkName, true
@@ -138,7 +138,7 @@ func (o *UEAuthenticationCtx) GetServingNetworkNameOk() (*string, bool) {
 
 // HasServingNetworkName returns a boolean if a field has been set.
 func (o *UEAuthenticationCtx) HasServingNetworkName() bool {
-	if o != nil && !isNil(o.ServingNetworkName) {
+	if o != nil && !IsNil(o.ServingNetworkName) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *UEAuthenticationCtx) SetServingNetworkName(v string) {
 }
 
 func (o UEAuthenticationCtx) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o UEAuthenticationCtx) ToMap() (map[string]interface{}, error) {
 	toSerialize["authType"] = o.AuthType
 	toSerialize["5gAuthData"] = o.Var5gAuthData
 	toSerialize["_links"] = o.Links
-	if !isNil(o.ServingNetworkName) {
+	if !IsNil(o.ServingNetworkName) {
 		toSerialize["servingNetworkName"] = o.ServingNetworkName
 	}
 	return toSerialize, nil
@@ -204,5 +204,3 @@ func (v *NullableUEAuthenticationCtx) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M5_ServiceAccessInformation
 
-5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -17,28 +17,14 @@ import (
 
 // SdfMethod struct for SdfMethod
 type SdfMethod struct {
-	SdfMethodAnyOf *SdfMethodAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SdfMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SdfMethodAnyOf
-	err = json.Unmarshal(data, &dst.SdfMethodAnyOf);
-	if err == nil {
-		jsonSdfMethodAnyOf, _ := json.Marshal(dst.SdfMethodAnyOf)
-		if string(jsonSdfMethodAnyOf) == "{}" { // empty struct
-			dst.SdfMethodAnyOf = nil
-		} else {
-			return nil // data stored in dst.SdfMethodAnyOf, return on the first match
-		}
-	} else {
-		dst.SdfMethodAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SdfMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SdfMethod) MarshalJSON() ([]byte, error) {
-	if src.SdfMethodAnyOf != nil {
-		return json.Marshal(&src.SdfMethodAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSdfMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,7 +19,7 @@ var _ MappedNullable = &AusfFunctionSingleAllOf{}
 
 // AusfFunctionSingleAllOf struct for AusfFunctionSingleAllOf
 type AusfFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *AusfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewAusfFunctionSingleAllOf instantiates a new AusfFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewAusfFunctionSingleAllOfWithDefaults() *AusfFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *AusfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *AusfFunctionSingleAllOf) GetAttributes() AusfFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret AusfFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *AusfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AusfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *AusfFunctionSingleAllOf) GetAttributesOk() (*AusfFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *AusfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool)
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AusfFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *AusfFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given AusfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *AusfFunctionSingleAllOf) SetAttributes(v AusfFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o AusfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AusfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AusfFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAusfFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

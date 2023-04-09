@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// QosMonitoringReq QoS monitoring request. Possible values are   - UL   - DL   - BOTH   - NONE 
+// QosMonitoringReq QoS monitoring request. Possible values are   - UL   - DL   - BOTH   - NONE
 type QosMonitoringReq struct {
-	QosMonitoringReqAnyOf *QosMonitoringReqAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *QosMonitoringReq) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into QosMonitoringReqAnyOf
-	err = json.Unmarshal(data, &dst.QosMonitoringReqAnyOf);
-	if err == nil {
-		jsonQosMonitoringReqAnyOf, _ := json.Marshal(dst.QosMonitoringReqAnyOf)
-		if string(jsonQosMonitoringReqAnyOf) == "{}" { // empty struct
-			dst.QosMonitoringReqAnyOf = nil
-		} else {
-			return nil // data stored in dst.QosMonitoringReqAnyOf, return on the first match
-		}
-	} else {
-		dst.QosMonitoringReqAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *QosMonitoringReq) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *QosMonitoringReq) MarshalJSON() ([]byte, error) {
-	if src.QosMonitoringReqAnyOf != nil {
-		return json.Marshal(&src.QosMonitoringReqAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableQosMonitoringReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

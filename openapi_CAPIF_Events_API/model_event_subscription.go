@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,14 +22,14 @@ type EventSubscription struct {
 	// Subscribed events
 	Events []CAPIFEvent `json:"events"`
 	// Subscribed event filters
-	EventFilters []CAPIFEventFilter `json:"eventFilters,omitempty"`
-	EventReq *ReportingInformation `json:"eventReq,omitempty"`
+	EventFilters []CAPIFEventFilter    `json:"eventFilters,omitempty"`
+	EventReq     *ReportingInformation `json:"eventReq,omitempty"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination string `json:"notificationDestination"`
-	// Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -78,7 +78,7 @@ func (o *EventSubscription) SetEvents(v []CAPIFEvent) {
 
 // GetEventFilters returns the EventFilters field value if set, zero value otherwise.
 func (o *EventSubscription) GetEventFilters() []CAPIFEventFilter {
-	if o == nil || isNil(o.EventFilters) {
+	if o == nil || IsNil(o.EventFilters) {
 		var ret []CAPIFEventFilter
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *EventSubscription) GetEventFilters() []CAPIFEventFilter {
 // GetEventFiltersOk returns a tuple with the EventFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetEventFiltersOk() ([]CAPIFEventFilter, bool) {
-	if o == nil || isNil(o.EventFilters) {
+	if o == nil || IsNil(o.EventFilters) {
 		return nil, false
 	}
 	return o.EventFilters, true
@@ -96,7 +96,7 @@ func (o *EventSubscription) GetEventFiltersOk() ([]CAPIFEventFilter, bool) {
 
 // HasEventFilters returns a boolean if a field has been set.
 func (o *EventSubscription) HasEventFilters() bool {
-	if o != nil && !isNil(o.EventFilters) {
+	if o != nil && !IsNil(o.EventFilters) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *EventSubscription) SetEventFilters(v []CAPIFEventFilter) {
 
 // GetEventReq returns the EventReq field value if set, zero value otherwise.
 func (o *EventSubscription) GetEventReq() ReportingInformation {
-	if o == nil || isNil(o.EventReq) {
+	if o == nil || IsNil(o.EventReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *EventSubscription) GetEventReq() ReportingInformation {
 // GetEventReqOk returns a tuple with the EventReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetEventReqOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.EventReq) {
+	if o == nil || IsNil(o.EventReq) {
 		return nil, false
 	}
 	return o.EventReq, true
@@ -128,7 +128,7 @@ func (o *EventSubscription) GetEventReqOk() (*ReportingInformation, bool) {
 
 // HasEventReq returns a boolean if a field has been set.
 func (o *EventSubscription) HasEventReq() bool {
-	if o != nil && !isNil(o.EventReq) {
+	if o != nil && !IsNil(o.EventReq) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *EventSubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *EventSubscription) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *EventSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -184,7 +184,7 @@ func (o *EventSubscription) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *EventSubscription) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *EventSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *EventSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *EventSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -216,7 +216,7 @@ func (o *EventSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *EventSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *EventSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EventSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *EventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -248,7 +248,7 @@ func (o *EventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *EventSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o EventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,20 +271,20 @@ func (o EventSubscription) MarshalJSON() ([]byte, error) {
 func (o EventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["events"] = o.Events
-	if !isNil(o.EventFilters) {
+	if !IsNil(o.EventFilters) {
 		toSerialize["eventFilters"] = o.EventFilters
 	}
-	if !isNil(o.EventReq) {
+	if !IsNil(o.EventReq) {
 		toSerialize["eventReq"] = o.EventReq
 	}
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -325,5 +325,3 @@ func (v *NullableEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

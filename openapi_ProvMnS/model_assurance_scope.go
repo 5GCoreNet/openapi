@@ -41,7 +41,7 @@ func NewAssuranceScopeWithDefaults() *AssuranceScope {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *AssuranceScope) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AssuranceScope) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceScope) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -59,7 +59,7 @@ func (o *AssuranceScope) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *AssuranceScope) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AssuranceScope) SetTaiList(v []Tai) {
 }
 
 func (o AssuranceScope) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AssuranceScope) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceScope) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAssuranceScope) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

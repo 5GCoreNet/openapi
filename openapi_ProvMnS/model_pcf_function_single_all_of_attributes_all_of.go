@@ -19,23 +19,23 @@ var _ MappedNullable = &PcfFunctionSingleAllOfAttributesAllOf{}
 
 // PcfFunctionSingleAllOfAttributesAllOf struct for PcfFunctionSingleAllOfAttributesAllOf
 type PcfFunctionSingleAllOfAttributesAllOf struct {
-	PLMNInfoList []PlmnInfo `json:"pLMNInfoList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
-	GroupId *string `json:"groupId,omitempty"`
-	DnnList []string `json:"dnnList,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	RxDiamHost *string `json:"rxDiamHost,omitempty"`
-	RxDiamRealm *string `json:"rxDiamRealm,omitempty"`
-	V2xSupportInd *bool `json:"v2xSupportInd,omitempty"`
-	ProseSupportInd *bool `json:"proseSupportInd,omitempty"`
-	ProseCapability *ProseCapability `json:"proseCapability,omitempty"`
-	V2xCapability *V2xCapability `json:"v2xCapability,omitempty"`
-	Configurable5QISetRef *string `json:"configurable5QISetRef,omitempty"`
-	Dynamic5QISetRef *string `json:"dynamic5QISetRef,omitempty"`
-	SupportedBMOList []string `json:"supportedBMOList,omitempty"`
+	PLMNInfoList          []PlmnInfo        `json:"pLMNInfoList,omitempty"`
+	SBIFqdn               *string           `json:"sBIFqdn,omitempty"`
+	ManagedNFProfile      *ManagedNFProfile `json:"managedNFProfile,omitempty"`
+	CommModelList         []CommModel       `json:"commModelList,omitempty"`
+	GroupId               *string           `json:"groupId,omitempty"`
+	DnnList               []string          `json:"dnnList,omitempty"`
+	SupiRanges            []SupiRange       `json:"supiRanges,omitempty"`
+	GpsiRanges            []IdentityRange   `json:"gpsiRanges,omitempty"`
+	RxDiamHost            *string           `json:"rxDiamHost,omitempty"`
+	RxDiamRealm           *string           `json:"rxDiamRealm,omitempty"`
+	V2xSupportInd         *bool             `json:"v2xSupportInd,omitempty"`
+	ProseSupportInd       *bool             `json:"proseSupportInd,omitempty"`
+	ProseCapability       *ProseCapability  `json:"proseCapability,omitempty"`
+	V2xCapability         *V2xCapability    `json:"v2xCapability,omitempty"`
+	Configurable5QISetRef *string           `json:"configurable5QISetRef,omitempty"`
+	Dynamic5QISetRef      *string           `json:"dynamic5QISetRef,omitempty"`
+	SupportedBMOList      []string          `json:"supportedBMOList,omitempty"`
 }
 
 // NewPcfFunctionSingleAllOfAttributesAllOf instantiates a new PcfFunctionSingleAllOfAttributesAllOf object
@@ -600,7 +600,7 @@ func (o *PcfFunctionSingleAllOfAttributesAllOf) SetSupportedBMOList(v []string) 
 }
 
 func (o PcfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -698,5 +698,3 @@ func (v *NullablePcfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

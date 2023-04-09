@@ -2233,7 +2233,14 @@ components:
       type: object
     FailureCode:
       anyOf:
-      - $ref: '#/components/schemas/FailureCode_anyOf'
+      - enum:
+        - MALFUNCTION
+        - RESOURCE_LIMITATION
+        - SHORT_DELAY
+        - APP_ID_DUPLICATED
+        - PARTIAL_FAILURE
+        - OTHER_REASON
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2241,7 +2248,12 @@ components:
         Possible values are - MALFUNCTION: This value indicates that something functions wrongly in PFD provisioning or the PFD provisioning does not function at all. - RESOURCE_LIMITATION: This value indicates there is resource limitation for PFD storage. - SHORT_DELAY: This value indicates that the allowed delay is too short and PFD(s) are not stored. - APP_ID_DUPLICATED: The received external application identifier(s) are already provisioned. - PARTIAL_FAILURE: The PFD(s) are not provisioned to all PCEFs/TDFs/SMFs. - OTHER_REASON: Other reason unspecified.
     DomainNameProtocol:
       anyOf:
-      - $ref: '#/components/schemas/DomainNameProtocol_anyOf'
+      - enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2665,9 +2677,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -3370,24 +3393,6 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
-    FailureCode_anyOf:
-      enum:
-      - MALFUNCTION
-      - RESOURCE_LIMITATION
-      - SHORT_DELAY
-      - APP_ID_DUPLICATED
-      - PARTIAL_FAILURE
-      - OTHER_REASON
-      type: string
-      example: null
-    DomainNameProtocol_anyOf:
-      enum:
-      - DNS_QNAME
-      - TLS_SNI
-      - TLS_SAN
-      - TSL_SCN
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -3395,19 +3400,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

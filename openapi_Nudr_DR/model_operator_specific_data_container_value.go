@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,12 +17,12 @@ import (
 
 // OperatorSpecificDataContainerValue - struct for OperatorSpecificDataContainerValue
 type OperatorSpecificDataContainerValue struct {
-	Array *Array
-	Bool *bool
-	Float32 *float32
-	Int32 *int32
+	Array          *Array
+	Bool           *bool
+	Float32        *float32
+	Int32          *int32
 	MapOfInterface *map[string]interface{}
-	String *string
+	String         *string
 }
 
 // ArrayAsOperatorSpecificDataContainerValue is a convenience function that returns Array wrapped in OperatorSpecificDataContainerValue
@@ -66,7 +66,6 @@ func StringAsOperatorSpecificDataContainerValue(v *string) OperatorSpecificDataC
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OperatorSpecificDataContainerValue) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src OperatorSpecificDataContainerValue) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OperatorSpecificDataContainerValue) GetActualInstance() (interface{}) {
+func (obj *OperatorSpecificDataContainerValue) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableOperatorSpecificDataContainerValue) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -24,11 +24,11 @@ type QosSustainabilityExposure struct {
 	// string with format \"date-time\" as defined in OpenAPI.
 	StartTs time.Time `json:"startTs"`
 	// string with format \"date-time\" as defined in OpenAPI.
-	EndTs time.Time `json:"endTs"`
+	EndTs         time.Time               `json:"endTs"`
 	QosFlowRetThd *RetainabilityThreshold `json:"qosFlowRetThd,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	RanUeThrouThd *string `json:"ranUeThrouThd,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	Snssai        *Snssai `json:"snssai,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Confidence *int32 `json:"confidence,omitempty"`
 }
@@ -127,7 +127,7 @@ func (o *QosSustainabilityExposure) SetEndTs(v time.Time) {
 
 // GetQosFlowRetThd returns the QosFlowRetThd field value if set, zero value otherwise.
 func (o *QosSustainabilityExposure) GetQosFlowRetThd() RetainabilityThreshold {
-	if o == nil || isNil(o.QosFlowRetThd) {
+	if o == nil || IsNil(o.QosFlowRetThd) {
 		var ret RetainabilityThreshold
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *QosSustainabilityExposure) GetQosFlowRetThd() RetainabilityThreshold {
 // GetQosFlowRetThdOk returns a tuple with the QosFlowRetThd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosSustainabilityExposure) GetQosFlowRetThdOk() (*RetainabilityThreshold, bool) {
-	if o == nil || isNil(o.QosFlowRetThd) {
+	if o == nil || IsNil(o.QosFlowRetThd) {
 		return nil, false
 	}
 	return o.QosFlowRetThd, true
@@ -145,7 +145,7 @@ func (o *QosSustainabilityExposure) GetQosFlowRetThdOk() (*RetainabilityThreshol
 
 // HasQosFlowRetThd returns a boolean if a field has been set.
 func (o *QosSustainabilityExposure) HasQosFlowRetThd() bool {
-	if o != nil && !isNil(o.QosFlowRetThd) {
+	if o != nil && !IsNil(o.QosFlowRetThd) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *QosSustainabilityExposure) SetQosFlowRetThd(v RetainabilityThreshold) {
 
 // GetRanUeThrouThd returns the RanUeThrouThd field value if set, zero value otherwise.
 func (o *QosSustainabilityExposure) GetRanUeThrouThd() string {
-	if o == nil || isNil(o.RanUeThrouThd) {
+	if o == nil || IsNil(o.RanUeThrouThd) {
 		var ret string
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *QosSustainabilityExposure) GetRanUeThrouThd() string {
 // GetRanUeThrouThdOk returns a tuple with the RanUeThrouThd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosSustainabilityExposure) GetRanUeThrouThdOk() (*string, bool) {
-	if o == nil || isNil(o.RanUeThrouThd) {
+	if o == nil || IsNil(o.RanUeThrouThd) {
 		return nil, false
 	}
 	return o.RanUeThrouThd, true
@@ -177,7 +177,7 @@ func (o *QosSustainabilityExposure) GetRanUeThrouThdOk() (*string, bool) {
 
 // HasRanUeThrouThd returns a boolean if a field has been set.
 func (o *QosSustainabilityExposure) HasRanUeThrouThd() bool {
-	if o != nil && !isNil(o.RanUeThrouThd) {
+	if o != nil && !IsNil(o.RanUeThrouThd) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *QosSustainabilityExposure) SetRanUeThrouThd(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *QosSustainabilityExposure) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *QosSustainabilityExposure) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosSustainabilityExposure) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -209,7 +209,7 @@ func (o *QosSustainabilityExposure) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *QosSustainabilityExposure) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *QosSustainabilityExposure) SetSnssai(v Snssai) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *QosSustainabilityExposure) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -233,7 +233,7 @@ func (o *QosSustainabilityExposure) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosSustainabilityExposure) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -241,7 +241,7 @@ func (o *QosSustainabilityExposure) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *QosSustainabilityExposure) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *QosSustainabilityExposure) SetConfidence(v int32) {
 }
 
 func (o QosSustainabilityExposure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,16 +266,16 @@ func (o QosSustainabilityExposure) ToMap() (map[string]interface{}, error) {
 	toSerialize["locArea"] = o.LocArea
 	toSerialize["startTs"] = o.StartTs
 	toSerialize["endTs"] = o.EndTs
-	if !isNil(o.QosFlowRetThd) {
+	if !IsNil(o.QosFlowRetThd) {
 		toSerialize["qosFlowRetThd"] = o.QosFlowRetThd
 	}
-	if !isNil(o.RanUeThrouThd) {
+	if !IsNil(o.RanUeThrouThd) {
 		toSerialize["ranUeThrouThd"] = o.RanUeThrouThd
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil
@@ -316,5 +316,3 @@ func (v *NullableQosSustainabilityExposure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

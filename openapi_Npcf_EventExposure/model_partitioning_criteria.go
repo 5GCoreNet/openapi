@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// PartitioningCriteria Possible values are: - \"TAC\": Type Allocation Code - \"SUBPLMN\": Subscriber PLMN ID - \"GEOAREA\": Geographical area, i.e. list(s) of TAI(s) - \"SNSSAI\": S-NSSAI - \"DNN\": DNN 
+// PartitioningCriteria Possible values are: - \"TAC\": Type Allocation Code - \"SUBPLMN\": Subscriber PLMN ID - \"GEOAREA\": Geographical area, i.e. list(s) of TAI(s) - \"SNSSAI\": S-NSSAI - \"DNN\": DNN
 type PartitioningCriteria struct {
-	PartitioningCriteriaAnyOf *PartitioningCriteriaAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PartitioningCriteria) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PartitioningCriteriaAnyOf
-	err = json.Unmarshal(data, &dst.PartitioningCriteriaAnyOf);
-	if err == nil {
-		jsonPartitioningCriteriaAnyOf, _ := json.Marshal(dst.PartitioningCriteriaAnyOf)
-		if string(jsonPartitioningCriteriaAnyOf) == "{}" { // empty struct
-			dst.PartitioningCriteriaAnyOf = nil
-		} else {
-			return nil // data stored in dst.PartitioningCriteriaAnyOf, return on the first match
-		}
-	} else {
-		dst.PartitioningCriteriaAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PartitioningCriteria) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PartitioningCriteria) MarshalJSON() ([]byte, error) {
-	if src.PartitioningCriteriaAnyOf != nil {
-		return json.Marshal(&src.PartitioningCriteriaAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePartitioningCriteria) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -42,7 +42,7 @@ func NewEdgeDataNetworkSingleAllOf1WithDefaults() *EdgeDataNetworkSingleAllOf1 {
 
 // GetEASFunction returns the EASFunction field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingleAllOf1) GetEASFunction() []EASFunctionSingle {
-	if o == nil || isNil(o.EASFunction) {
+	if o == nil || IsNil(o.EASFunction) {
 		var ret []EASFunctionSingle
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EdgeDataNetworkSingleAllOf1) GetEASFunction() []EASFunctionSingle {
 // GetEASFunctionOk returns a tuple with the EASFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingleAllOf1) GetEASFunctionOk() ([]EASFunctionSingle, bool) {
-	if o == nil || isNil(o.EASFunction) {
+	if o == nil || IsNil(o.EASFunction) {
 		return nil, false
 	}
 	return o.EASFunction, true
@@ -60,7 +60,7 @@ func (o *EdgeDataNetworkSingleAllOf1) GetEASFunctionOk() ([]EASFunctionSingle, b
 
 // HasEASFunction returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingleAllOf1) HasEASFunction() bool {
-	if o != nil && !isNil(o.EASFunction) {
+	if o != nil && !IsNil(o.EASFunction) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EdgeDataNetworkSingleAllOf1) SetEASFunction(v []EASFunctionSingle) {
 
 // GetEESFunction returns the EESFunction field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingleAllOf1) GetEESFunction() []EESFunctionSingle {
-	if o == nil || isNil(o.EESFunction) {
+	if o == nil || IsNil(o.EESFunction) {
 		var ret []EESFunctionSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EdgeDataNetworkSingleAllOf1) GetEESFunction() []EESFunctionSingle {
 // GetEESFunctionOk returns a tuple with the EESFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingleAllOf1) GetEESFunctionOk() ([]EESFunctionSingle, bool) {
-	if o == nil || isNil(o.EESFunction) {
+	if o == nil || IsNil(o.EESFunction) {
 		return nil, false
 	}
 	return o.EESFunction, true
@@ -92,7 +92,7 @@ func (o *EdgeDataNetworkSingleAllOf1) GetEESFunctionOk() ([]EESFunctionSingle, b
 
 // HasEESFunction returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingleAllOf1) HasEESFunction() bool {
-	if o != nil && !isNil(o.EESFunction) {
+	if o != nil && !IsNil(o.EESFunction) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EdgeDataNetworkSingleAllOf1) SetEESFunction(v []EESFunctionSingle) {
 }
 
 func (o EdgeDataNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o EdgeDataNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o EdgeDataNetworkSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EASFunction) {
+	if !IsNil(o.EASFunction) {
 		toSerialize["EASFunction"] = o.EASFunction
 	}
-	if !isNil(o.EESFunction) {
+	if !IsNil(o.EESFunction) {
 		toSerialize["EESFunction"] = o.EESFunction
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableEdgeDataNetworkSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

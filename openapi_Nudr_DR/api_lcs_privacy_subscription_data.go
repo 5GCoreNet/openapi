@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,24 +13,23 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // LCSPrivacySubscriptionDataApiService LCSPrivacySubscriptionDataApi service
 type LCSPrivacySubscriptionDataApiService service
 
 type ApiQueryLcsPrivacyDataRequest struct {
-	ctx context.Context
-	ApiService *LCSPrivacySubscriptionDataApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *LCSPrivacySubscriptionDataApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // attributes to be retrieved
@@ -64,26 +63,27 @@ func (r ApiQueryLcsPrivacyDataRequest) Execute() (*LcsPrivacyData, *http.Respons
 /*
 QueryLcsPrivacyData Retrieves the LCS Privacy subscription data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryLcsPrivacyDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryLcsPrivacyDataRequest
 */
 func (a *LCSPrivacySubscriptionDataApiService) QueryLcsPrivacyData(ctx context.Context, ueId string) ApiQueryLcsPrivacyDataRequest {
 	return ApiQueryLcsPrivacyDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return LcsPrivacyData
+//
+//	@return LcsPrivacyData
 func (a *LCSPrivacySubscriptionDataApiService) QueryLcsPrivacyDataExecute(r ApiQueryLcsPrivacyDataRequest) (*LcsPrivacyData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LcsPrivacyData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LcsPrivacyData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LCSPrivacySubscriptionDataApiService.QueryLcsPrivacyData")
@@ -99,10 +99,10 @@ func (a *LCSPrivacySubscriptionDataApiService) QueryLcsPrivacyDataExecute(r ApiQ
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -122,10 +122,10 @@ func (a *LCSPrivacySubscriptionDataApiService) QueryLcsPrivacyDataExecute(r ApiQ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -137,9 +137,9 @@ func (a *LCSPrivacySubscriptionDataApiService) QueryLcsPrivacyDataExecute(r ApiQ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

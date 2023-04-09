@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &MoExpDataCounter{}
 
 // MoExpDataCounter Contain the MO Exception Data Counter.
 type MoExpDataCounter struct {
-	// Unsigned integer identifying the MO Exception Data Counter, as specified in clause 5.31.14.3 of 3GPP TS 23.501. 
+	// Unsigned integer identifying the MO Exception Data Counter, as specified in clause 5.31.14.3 of 3GPP TS 23.501.
 	Counter int32 `json:"counter"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeStamp *time.Time `json:"timeStamp,omitempty"`
@@ -70,7 +70,7 @@ func (o *MoExpDataCounter) SetCounter(v int32) {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *MoExpDataCounter) GetTimeStamp() time.Time {
-	if o == nil || isNil(o.TimeStamp) {
+	if o == nil || IsNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *MoExpDataCounter) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoExpDataCounter) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeStamp) {
+	if o == nil || IsNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -88,7 +88,7 @@ func (o *MoExpDataCounter) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *MoExpDataCounter) HasTimeStamp() bool {
-	if o != nil && !isNil(o.TimeStamp) {
+	if o != nil && !IsNil(o.TimeStamp) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *MoExpDataCounter) SetTimeStamp(v time.Time) {
 }
 
 func (o MoExpDataCounter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -111,7 +111,7 @@ func (o MoExpDataCounter) MarshalJSON() ([]byte, error) {
 func (o MoExpDataCounter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["counter"] = o.Counter
-	if !isNil(o.TimeStamp) {
+	if !IsNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
 	return toSerialize, nil
@@ -152,5 +152,3 @@ func (v *NullableMoExpDataCounter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

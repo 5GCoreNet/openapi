@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the RedundantTransmissionExpInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RedundantTransmissionExpInfo{}
 
-// RedundantTransmissionExpInfo The redundant transmission experience related information. When subscribed event is  \"RED_TRANS_EXP\", the \"redTransInfos\" attribute shall be included. 
+// RedundantTransmissionExpInfo The redundant transmission experience related information. When subscribed event is  \"RED_TRANS_EXP\", the \"redTransInfos\" attribute shall be included.
 type RedundantTransmissionExpInfo struct {
 	SpatialValidCon *NetworkAreaInfo `json:"spatialValidCon,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn          *string                         `json:"dnn,omitempty"`
 	RedTransExps []RedundantTransmissionExpPerTS `json:"redTransExps"`
 }
 
@@ -45,7 +45,7 @@ func NewRedundantTransmissionExpInfoWithDefaults() *RedundantTransmissionExpInfo
 
 // GetSpatialValidCon returns the SpatialValidCon field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpInfo) GetSpatialValidCon() NetworkAreaInfo {
-	if o == nil || isNil(o.SpatialValidCon) {
+	if o == nil || IsNil(o.SpatialValidCon) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *RedundantTransmissionExpInfo) GetSpatialValidCon() NetworkAreaInfo {
 // GetSpatialValidConOk returns a tuple with the SpatialValidCon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpInfo) GetSpatialValidConOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.SpatialValidCon) {
+	if o == nil || IsNil(o.SpatialValidCon) {
 		return nil, false
 	}
 	return o.SpatialValidCon, true
@@ -63,7 +63,7 @@ func (o *RedundantTransmissionExpInfo) GetSpatialValidConOk() (*NetworkAreaInfo,
 
 // HasSpatialValidCon returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpInfo) HasSpatialValidCon() bool {
-	if o != nil && !isNil(o.SpatialValidCon) {
+	if o != nil && !IsNil(o.SpatialValidCon) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *RedundantTransmissionExpInfo) SetSpatialValidCon(v NetworkAreaInfo) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpInfo) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *RedundantTransmissionExpInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpInfo) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -95,7 +95,7 @@ func (o *RedundantTransmissionExpInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpInfo) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *RedundantTransmissionExpInfo) SetRedTransExps(v []RedundantTransmission
 }
 
 func (o RedundantTransmissionExpInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o RedundantTransmissionExpInfo) MarshalJSON() ([]byte, error) {
 
 func (o RedundantTransmissionExpInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SpatialValidCon) {
+	if !IsNil(o.SpatialValidCon) {
 		toSerialize["spatialValidCon"] = o.SpatialValidCon
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	toSerialize["redTransExps"] = o.RedTransExps
@@ -186,5 +186,3 @@ func (v *NullableRedundantTransmissionExpInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

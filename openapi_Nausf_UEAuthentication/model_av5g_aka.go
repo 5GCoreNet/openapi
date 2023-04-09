@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,7 +22,7 @@ type Av5gAka struct {
 	Rand string `json:"rand"`
 	// Contains the HXRES*.
 	HxresStar string `json:"hxresStar"`
-	Autn string `json:"autn"`
+	Autn      string `json:"autn"`
 }
 
 // NewAv5gAka instantiates a new Av5gAka object
@@ -118,7 +118,7 @@ func (o *Av5gAka) SetAutn(v string) {
 }
 
 func (o Av5gAka) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +168,3 @@ func (v *NullableAv5gAka) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

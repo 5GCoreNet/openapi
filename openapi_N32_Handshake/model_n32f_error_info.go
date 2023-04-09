@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &N32fErrorInfo{}
 
 // N32fErrorInfo N32-f error information
 type N32fErrorInfo struct {
-	N32fMessageId string `json:"n32fMessageId"`
-	N32fErrorType N32fErrorType `json:"n32fErrorType"`
-	N32fContextId *string `json:"n32fContextId,omitempty"`
+	N32fMessageId          string                   `json:"n32fMessageId"`
+	N32fErrorType          N32fErrorType            `json:"n32fErrorType"`
+	N32fContextId          *string                  `json:"n32fContextId,omitempty"`
 	FailedModificationList []FailedModificationInfo `json:"failedModificationList,omitempty"`
-	ErrorDetailsList []N32fErrorDetail `json:"errorDetailsList,omitempty"`
+	ErrorDetailsList       []N32fErrorDetail        `json:"errorDetailsList,omitempty"`
 }
 
 // NewN32fErrorInfo instantiates a new N32fErrorInfo object
@@ -95,7 +95,7 @@ func (o *N32fErrorInfo) SetN32fErrorType(v N32fErrorType) {
 
 // GetN32fContextId returns the N32fContextId field value if set, zero value otherwise.
 func (o *N32fErrorInfo) GetN32fContextId() string {
-	if o == nil || isNil(o.N32fContextId) {
+	if o == nil || IsNil(o.N32fContextId) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *N32fErrorInfo) GetN32fContextId() string {
 // GetN32fContextIdOk returns a tuple with the N32fContextId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fErrorInfo) GetN32fContextIdOk() (*string, bool) {
-	if o == nil || isNil(o.N32fContextId) {
+	if o == nil || IsNil(o.N32fContextId) {
 		return nil, false
 	}
 	return o.N32fContextId, true
@@ -113,7 +113,7 @@ func (o *N32fErrorInfo) GetN32fContextIdOk() (*string, bool) {
 
 // HasN32fContextId returns a boolean if a field has been set.
 func (o *N32fErrorInfo) HasN32fContextId() bool {
-	if o != nil && !isNil(o.N32fContextId) {
+	if o != nil && !IsNil(o.N32fContextId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *N32fErrorInfo) SetN32fContextId(v string) {
 
 // GetFailedModificationList returns the FailedModificationList field value if set, zero value otherwise.
 func (o *N32fErrorInfo) GetFailedModificationList() []FailedModificationInfo {
-	if o == nil || isNil(o.FailedModificationList) {
+	if o == nil || IsNil(o.FailedModificationList) {
 		var ret []FailedModificationInfo
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *N32fErrorInfo) GetFailedModificationList() []FailedModificationInfo {
 // GetFailedModificationListOk returns a tuple with the FailedModificationList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fErrorInfo) GetFailedModificationListOk() ([]FailedModificationInfo, bool) {
-	if o == nil || isNil(o.FailedModificationList) {
+	if o == nil || IsNil(o.FailedModificationList) {
 		return nil, false
 	}
 	return o.FailedModificationList, true
@@ -145,7 +145,7 @@ func (o *N32fErrorInfo) GetFailedModificationListOk() ([]FailedModificationInfo,
 
 // HasFailedModificationList returns a boolean if a field has been set.
 func (o *N32fErrorInfo) HasFailedModificationList() bool {
-	if o != nil && !isNil(o.FailedModificationList) {
+	if o != nil && !IsNil(o.FailedModificationList) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *N32fErrorInfo) SetFailedModificationList(v []FailedModificationInfo) {
 
 // GetErrorDetailsList returns the ErrorDetailsList field value if set, zero value otherwise.
 func (o *N32fErrorInfo) GetErrorDetailsList() []N32fErrorDetail {
-	if o == nil || isNil(o.ErrorDetailsList) {
+	if o == nil || IsNil(o.ErrorDetailsList) {
 		var ret []N32fErrorDetail
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *N32fErrorInfo) GetErrorDetailsList() []N32fErrorDetail {
 // GetErrorDetailsListOk returns a tuple with the ErrorDetailsList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fErrorInfo) GetErrorDetailsListOk() ([]N32fErrorDetail, bool) {
-	if o == nil || isNil(o.ErrorDetailsList) {
+	if o == nil || IsNil(o.ErrorDetailsList) {
 		return nil, false
 	}
 	return o.ErrorDetailsList, true
@@ -177,7 +177,7 @@ func (o *N32fErrorInfo) GetErrorDetailsListOk() ([]N32fErrorDetail, bool) {
 
 // HasErrorDetailsList returns a boolean if a field has been set.
 func (o *N32fErrorInfo) HasErrorDetailsList() bool {
-	if o != nil && !isNil(o.ErrorDetailsList) {
+	if o != nil && !IsNil(o.ErrorDetailsList) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *N32fErrorInfo) SetErrorDetailsList(v []N32fErrorDetail) {
 }
 
 func (o N32fErrorInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -201,13 +201,13 @@ func (o N32fErrorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n32fMessageId"] = o.N32fMessageId
 	toSerialize["n32fErrorType"] = o.N32fErrorType
-	if !isNil(o.N32fContextId) {
+	if !IsNil(o.N32fContextId) {
 		toSerialize["n32fContextId"] = o.N32fContextId
 	}
-	if !isNil(o.FailedModificationList) {
+	if !IsNil(o.FailedModificationList) {
 		toSerialize["failedModificationList"] = o.FailedModificationList
 	}
-	if !isNil(o.ErrorDetailsList) {
+	if !IsNil(o.ErrorDetailsList) {
 		toSerialize["errorDetailsList"] = o.ErrorDetailsList
 	}
 	return toSerialize, nil
@@ -248,5 +248,3 @@ func (v *NullableN32fErrorInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

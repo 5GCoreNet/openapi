@@ -1,7 +1,7 @@
 /*
 Nnef_EventExposure
 
-NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -24,7 +24,7 @@ type MediaStreamingAccessRecordAllOfResponseMessage struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Size int32 `json:"size"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	BodySize int32 `json:"bodySize"`
+	BodySize    int32   `json:"bodySize"`
 	ContentType *string `json:"contentType,omitempty"`
 }
 
@@ -122,7 +122,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) SetBodySize(v int32) {
 
 // GetContentType returns the ContentType field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentType() string {
-	if o == nil || isNil(o.ContentType) {
+	if o == nil || IsNil(o.ContentType) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentType() string
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ContentType) {
+	if o == nil || IsNil(o.ContentType) {
 		return nil, false
 	}
 	return o.ContentType, true
@@ -140,7 +140,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentTypeOk() (*st
 
 // HasContentType returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfResponseMessage) HasContentType() bool {
-	if o != nil && !isNil(o.ContentType) {
+	if o != nil && !IsNil(o.ContentType) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) SetContentType(v string
 }
 
 func (o MediaStreamingAccessRecordAllOfResponseMessage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -165,7 +165,7 @@ func (o MediaStreamingAccessRecordAllOfResponseMessage) ToMap() (map[string]inte
 	toSerialize["responseCode"] = o.ResponseCode
 	toSerialize["size"] = o.Size
 	toSerialize["bodySize"] = o.BodySize
-	if !isNil(o.ContentType) {
+	if !IsNil(o.ContentType) {
 		toSerialize["contentType"] = o.ContentType
 	}
 	return toSerialize, nil
@@ -206,5 +206,3 @@ func (v *NullableMediaStreamingAccessRecordAllOfResponseMessage) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

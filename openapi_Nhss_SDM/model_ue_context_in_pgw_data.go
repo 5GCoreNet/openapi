@@ -1,7 +1,7 @@
 /*
 Nhss_SDM
 
-HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Subscriber Data Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -22,8 +22,8 @@ var _ MappedNullable = &UeContextInPgwData{}
 type UeContextInPgwData struct {
 	PgwInfo []PgwInfo `json:"pgwInfo,omitempty"`
 	// Fully Qualified Domain Name
-	EmergencyFqdn *string `json:"emergencyFqdn,omitempty"`
-	EmergencyPlmnId *PlmnId `json:"emergencyPlmnId,omitempty"`
+	EmergencyFqdn   *string    `json:"emergencyFqdn,omitempty"`
+	EmergencyPlmnId *PlmnId    `json:"emergencyPlmnId,omitempty"`
 	EmergencyIpAddr *IpAddress `json:"emergencyIpAddr,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	EmergencyRegistrationTime *time.Time `json:"emergencyRegistrationTime,omitempty"`
@@ -48,7 +48,7 @@ func NewUeContextInPgwDataWithDefaults() *UeContextInPgwData {
 
 // GetPgwInfo returns the PgwInfo field value if set, zero value otherwise.
 func (o *UeContextInPgwData) GetPgwInfo() []PgwInfo {
-	if o == nil || isNil(o.PgwInfo) {
+	if o == nil || IsNil(o.PgwInfo) {
 		var ret []PgwInfo
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *UeContextInPgwData) GetPgwInfo() []PgwInfo {
 // GetPgwInfoOk returns a tuple with the PgwInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInPgwData) GetPgwInfoOk() ([]PgwInfo, bool) {
-	if o == nil || isNil(o.PgwInfo) {
+	if o == nil || IsNil(o.PgwInfo) {
 		return nil, false
 	}
 	return o.PgwInfo, true
@@ -66,7 +66,7 @@ func (o *UeContextInPgwData) GetPgwInfoOk() ([]PgwInfo, bool) {
 
 // HasPgwInfo returns a boolean if a field has been set.
 func (o *UeContextInPgwData) HasPgwInfo() bool {
-	if o != nil && !isNil(o.PgwInfo) {
+	if o != nil && !IsNil(o.PgwInfo) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *UeContextInPgwData) SetPgwInfo(v []PgwInfo) {
 
 // GetEmergencyFqdn returns the EmergencyFqdn field value if set, zero value otherwise.
 func (o *UeContextInPgwData) GetEmergencyFqdn() string {
-	if o == nil || isNil(o.EmergencyFqdn) {
+	if o == nil || IsNil(o.EmergencyFqdn) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *UeContextInPgwData) GetEmergencyFqdn() string {
 // GetEmergencyFqdnOk returns a tuple with the EmergencyFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInPgwData) GetEmergencyFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.EmergencyFqdn) {
+	if o == nil || IsNil(o.EmergencyFqdn) {
 		return nil, false
 	}
 	return o.EmergencyFqdn, true
@@ -98,7 +98,7 @@ func (o *UeContextInPgwData) GetEmergencyFqdnOk() (*string, bool) {
 
 // HasEmergencyFqdn returns a boolean if a field has been set.
 func (o *UeContextInPgwData) HasEmergencyFqdn() bool {
-	if o != nil && !isNil(o.EmergencyFqdn) {
+	if o != nil && !IsNil(o.EmergencyFqdn) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *UeContextInPgwData) SetEmergencyFqdn(v string) {
 
 // GetEmergencyPlmnId returns the EmergencyPlmnId field value if set, zero value otherwise.
 func (o *UeContextInPgwData) GetEmergencyPlmnId() PlmnId {
-	if o == nil || isNil(o.EmergencyPlmnId) {
+	if o == nil || IsNil(o.EmergencyPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *UeContextInPgwData) GetEmergencyPlmnId() PlmnId {
 // GetEmergencyPlmnIdOk returns a tuple with the EmergencyPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInPgwData) GetEmergencyPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.EmergencyPlmnId) {
+	if o == nil || IsNil(o.EmergencyPlmnId) {
 		return nil, false
 	}
 	return o.EmergencyPlmnId, true
@@ -130,7 +130,7 @@ func (o *UeContextInPgwData) GetEmergencyPlmnIdOk() (*PlmnId, bool) {
 
 // HasEmergencyPlmnId returns a boolean if a field has been set.
 func (o *UeContextInPgwData) HasEmergencyPlmnId() bool {
-	if o != nil && !isNil(o.EmergencyPlmnId) {
+	if o != nil && !IsNil(o.EmergencyPlmnId) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *UeContextInPgwData) SetEmergencyPlmnId(v PlmnId) {
 
 // GetEmergencyIpAddr returns the EmergencyIpAddr field value if set, zero value otherwise.
 func (o *UeContextInPgwData) GetEmergencyIpAddr() IpAddress {
-	if o == nil || isNil(o.EmergencyIpAddr) {
+	if o == nil || IsNil(o.EmergencyIpAddr) {
 		var ret IpAddress
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *UeContextInPgwData) GetEmergencyIpAddr() IpAddress {
 // GetEmergencyIpAddrOk returns a tuple with the EmergencyIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInPgwData) GetEmergencyIpAddrOk() (*IpAddress, bool) {
-	if o == nil || isNil(o.EmergencyIpAddr) {
+	if o == nil || IsNil(o.EmergencyIpAddr) {
 		return nil, false
 	}
 	return o.EmergencyIpAddr, true
@@ -162,7 +162,7 @@ func (o *UeContextInPgwData) GetEmergencyIpAddrOk() (*IpAddress, bool) {
 
 // HasEmergencyIpAddr returns a boolean if a field has been set.
 func (o *UeContextInPgwData) HasEmergencyIpAddr() bool {
-	if o != nil && !isNil(o.EmergencyIpAddr) {
+	if o != nil && !IsNil(o.EmergencyIpAddr) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *UeContextInPgwData) SetEmergencyIpAddr(v IpAddress) {
 
 // GetEmergencyRegistrationTime returns the EmergencyRegistrationTime field value if set, zero value otherwise.
 func (o *UeContextInPgwData) GetEmergencyRegistrationTime() time.Time {
-	if o == nil || isNil(o.EmergencyRegistrationTime) {
+	if o == nil || IsNil(o.EmergencyRegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *UeContextInPgwData) GetEmergencyRegistrationTime() time.Time {
 // GetEmergencyRegistrationTimeOk returns a tuple with the EmergencyRegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInPgwData) GetEmergencyRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EmergencyRegistrationTime) {
+	if o == nil || IsNil(o.EmergencyRegistrationTime) {
 		return nil, false
 	}
 	return o.EmergencyRegistrationTime, true
@@ -194,7 +194,7 @@ func (o *UeContextInPgwData) GetEmergencyRegistrationTimeOk() (*time.Time, bool)
 
 // HasEmergencyRegistrationTime returns a boolean if a field has been set.
 func (o *UeContextInPgwData) HasEmergencyRegistrationTime() bool {
-	if o != nil && !isNil(o.EmergencyRegistrationTime) {
+	if o != nil && !IsNil(o.EmergencyRegistrationTime) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *UeContextInPgwData) SetEmergencyRegistrationTime(v time.Time) {
 }
 
 func (o UeContextInPgwData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,19 +216,19 @@ func (o UeContextInPgwData) MarshalJSON() ([]byte, error) {
 
 func (o UeContextInPgwData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PgwInfo) {
+	if !IsNil(o.PgwInfo) {
 		toSerialize["pgwInfo"] = o.PgwInfo
 	}
-	if !isNil(o.EmergencyFqdn) {
+	if !IsNil(o.EmergencyFqdn) {
 		toSerialize["emergencyFqdn"] = o.EmergencyFqdn
 	}
-	if !isNil(o.EmergencyPlmnId) {
+	if !IsNil(o.EmergencyPlmnId) {
 		toSerialize["emergencyPlmnId"] = o.EmergencyPlmnId
 	}
-	if !isNil(o.EmergencyIpAddr) {
+	if !IsNil(o.EmergencyIpAddr) {
 		toSerialize["emergencyIpAddr"] = o.EmergencyIpAddr
 	}
-	if !isNil(o.EmergencyRegistrationTime) {
+	if !IsNil(o.EmergencyRegistrationTime) {
 		toSerialize["emergencyRegistrationTime"] = o.EmergencyRegistrationTime
 	}
 	return toSerialize, nil
@@ -269,5 +269,3 @@ func (v *NullableUeContextInPgwData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

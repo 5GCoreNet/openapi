@@ -1,7 +1,7 @@
 /*
 NSSF NSSAI Availability
 
-NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NssfEventNotification{}
 
 // NssfEventNotification This contains the notification for created event subscription
 type NssfEventNotification struct {
-	SubscriptionId string `json:"subscriptionId"`
+	SubscriptionId                  string                            `json:"subscriptionId"`
 	AuthorizedNssaiAvailabilityData []AuthorizedNssaiAvailabilityData `json:"authorizedNssaiAvailabilityData"`
 }
 
@@ -91,7 +91,7 @@ func (o *NssfEventNotification) SetAuthorizedNssaiAvailabilityData(v []Authorize
 }
 
 func (o NssfEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableNssfEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

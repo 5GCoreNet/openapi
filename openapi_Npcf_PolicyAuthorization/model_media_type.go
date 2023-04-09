@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // MediaType Indicates the media type of a media component.
 type MediaType struct {
-	MediaTypeAnyOf *MediaTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MediaType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MediaTypeAnyOf
-	err = json.Unmarshal(data, &dst.MediaTypeAnyOf);
-	if err == nil {
-		jsonMediaTypeAnyOf, _ := json.Marshal(dst.MediaTypeAnyOf)
-		if string(jsonMediaTypeAnyOf) == "{}" { // empty struct
-			dst.MediaTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.MediaTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.MediaTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MediaType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MediaType) MarshalJSON() ([]byte, error) {
-	if src.MediaTypeAnyOf != nil {
-		return json.Marshal(&src.MediaTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMediaType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,9 +21,9 @@ var _ MappedNullable = &PpSubsRegTimer{}
 // PpSubsRegTimer struct for PpSubsRegTimer
 type PpSubsRegTimer struct {
 	// indicating a time in seconds.
-	SubsRegTimer int32 `json:"subsRegTimer"`
+	SubsRegTimer int32  `json:"subsRegTimer"`
 	AfInstanceId string `json:"afInstanceId"`
-	ReferenceId int32 `json:"referenceId"`
+	ReferenceId  int32  `json:"referenceId"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidityTime *time.Time `json:"validityTime,omitempty"`
 	// String uniquely identifying MTC provider information.
@@ -124,7 +124,7 @@ func (o *PpSubsRegTimer) SetReferenceId(v int32) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *PpSubsRegTimer) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *PpSubsRegTimer) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpSubsRegTimer) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -142,7 +142,7 @@ func (o *PpSubsRegTimer) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *PpSubsRegTimer) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *PpSubsRegTimer) SetValidityTime(v time.Time) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *PpSubsRegTimer) GetMtcProviderInformation() string {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *PpSubsRegTimer) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpSubsRegTimer) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -174,7 +174,7 @@ func (o *PpSubsRegTimer) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *PpSubsRegTimer) HasMtcProviderInformation() bool {
-	if o != nil && !isNil(o.MtcProviderInformation) {
+	if o != nil && !IsNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *PpSubsRegTimer) SetMtcProviderInformation(v string) {
 }
 
 func (o PpSubsRegTimer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -199,10 +199,10 @@ func (o PpSubsRegTimer) ToMap() (map[string]interface{}, error) {
 	toSerialize["subsRegTimer"] = o.SubsRegTimer
 	toSerialize["afInstanceId"] = o.AfInstanceId
 	toSerialize["referenceId"] = o.ReferenceId
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !isNil(o.MtcProviderInformation) {
+	if !IsNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil
@@ -243,5 +243,3 @@ func (v *NullablePpSubsRegTimer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

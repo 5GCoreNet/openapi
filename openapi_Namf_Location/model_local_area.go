@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // LocalArea - Local area specified by different shape
 type LocalArea struct {
-	Local2dPointUncertaintyEllipse *Local2dPointUncertaintyEllipse
+	Local2dPointUncertaintyEllipse   *Local2dPointUncertaintyEllipse
 	Local3dPointUncertaintyEllipsoid *Local3dPointUncertaintyEllipsoid
 }
 
@@ -34,7 +34,6 @@ func Local3dPointUncertaintyEllipsoidAsLocalArea(v *Local3dPointUncertaintyEllip
 		Local3dPointUncertaintyEllipsoid: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LocalArea) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src LocalArea) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LocalArea) GetActualInstance() (interface{}) {
+func (obj *LocalArea) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableLocalArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,7 +18,7 @@ import (
 // HostAddr - struct for HostAddr
 type HostAddr struct {
 	Ipv6Addr *Ipv6Addr
-	String *string
+	String   *string
 }
 
 // Ipv6AddrAsHostAddr is a convenience function that returns Ipv6Addr wrapped in HostAddr
@@ -34,7 +34,6 @@ func StringAsHostAddr(v *string) HostAddr {
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HostAddr) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src HostAddr) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HostAddr) GetActualInstance() (interface{}) {
+func (obj *HostAddr) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableHostAddr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

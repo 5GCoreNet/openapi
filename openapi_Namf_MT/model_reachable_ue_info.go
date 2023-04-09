@@ -1,7 +1,7 @@
 /*
 Namf_MT
 
-AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ReachableUeInfo{}
 
 // ReachableUeInfo Contains the reachable UE Information
 type ReachableUeInfo struct {
-	UeList []string `json:"ueList"`
+	UeList       []string      `json:"ueList"`
 	UserLocation *UserLocation `json:"userLocation,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *ReachableUeInfo) SetUeList(v []string) {
 
 // GetUserLocation returns the UserLocation field value if set, zero value otherwise.
 func (o *ReachableUeInfo) GetUserLocation() UserLocation {
-	if o == nil || isNil(o.UserLocation) {
+	if o == nil || IsNil(o.UserLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ReachableUeInfo) GetUserLocation() UserLocation {
 // GetUserLocationOk returns a tuple with the UserLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachableUeInfo) GetUserLocationOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLocation) {
+	if o == nil || IsNil(o.UserLocation) {
 		return nil, false
 	}
 	return o.UserLocation, true
@@ -85,7 +85,7 @@ func (o *ReachableUeInfo) GetUserLocationOk() (*UserLocation, bool) {
 
 // HasUserLocation returns a boolean if a field has been set.
 func (o *ReachableUeInfo) HasUserLocation() bool {
-	if o != nil && !isNil(o.UserLocation) {
+	if o != nil && !IsNil(o.UserLocation) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ReachableUeInfo) SetUserLocation(v UserLocation) {
 }
 
 func (o ReachableUeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ReachableUeInfo) MarshalJSON() ([]byte, error) {
 func (o ReachableUeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueList"] = o.UeList
-	if !isNil(o.UserLocation) {
+	if !IsNil(o.UserLocation) {
 		toSerialize["userLocation"] = o.UserLocation
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableReachableUeInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

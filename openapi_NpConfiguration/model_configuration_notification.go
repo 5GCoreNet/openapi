@@ -1,7 +1,7 @@
 /*
 3gpp-network-parameter-configuration
 
-API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -22,8 +22,8 @@ type ConfigurationNotification struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Configuration string `json:"configuration"`
 	// The grouping configuration result notification provided by the SCEF.
-	ConfigResults []ConfigResult `json:"configResults,omitempty"`
-	AppliedParam *AppliedParameterConfiguration `json:"appliedParam,omitempty"`
+	ConfigResults []ConfigResult                 `json:"configResults,omitempty"`
+	AppliedParam  *AppliedParameterConfiguration `json:"appliedParam,omitempty"`
 }
 
 // NewConfigurationNotification instantiates a new ConfigurationNotification object
@@ -70,7 +70,7 @@ func (o *ConfigurationNotification) SetConfiguration(v string) {
 
 // GetConfigResults returns the ConfigResults field value if set, zero value otherwise.
 func (o *ConfigurationNotification) GetConfigResults() []ConfigResult {
-	if o == nil || isNil(o.ConfigResults) {
+	if o == nil || IsNil(o.ConfigResults) {
 		var ret []ConfigResult
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ConfigurationNotification) GetConfigResults() []ConfigResult {
 // GetConfigResultsOk returns a tuple with the ConfigResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigurationNotification) GetConfigResultsOk() ([]ConfigResult, bool) {
-	if o == nil || isNil(o.ConfigResults) {
+	if o == nil || IsNil(o.ConfigResults) {
 		return nil, false
 	}
 	return o.ConfigResults, true
@@ -88,7 +88,7 @@ func (o *ConfigurationNotification) GetConfigResultsOk() ([]ConfigResult, bool) 
 
 // HasConfigResults returns a boolean if a field has been set.
 func (o *ConfigurationNotification) HasConfigResults() bool {
-	if o != nil && !isNil(o.ConfigResults) {
+	if o != nil && !IsNil(o.ConfigResults) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *ConfigurationNotification) SetConfigResults(v []ConfigResult) {
 
 // GetAppliedParam returns the AppliedParam field value if set, zero value otherwise.
 func (o *ConfigurationNotification) GetAppliedParam() AppliedParameterConfiguration {
-	if o == nil || isNil(o.AppliedParam) {
+	if o == nil || IsNil(o.AppliedParam) {
 		var ret AppliedParameterConfiguration
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *ConfigurationNotification) GetAppliedParam() AppliedParameterConfigurat
 // GetAppliedParamOk returns a tuple with the AppliedParam field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigurationNotification) GetAppliedParamOk() (*AppliedParameterConfiguration, bool) {
-	if o == nil || isNil(o.AppliedParam) {
+	if o == nil || IsNil(o.AppliedParam) {
 		return nil, false
 	}
 	return o.AppliedParam, true
@@ -120,7 +120,7 @@ func (o *ConfigurationNotification) GetAppliedParamOk() (*AppliedParameterConfig
 
 // HasAppliedParam returns a boolean if a field has been set.
 func (o *ConfigurationNotification) HasAppliedParam() bool {
-	if o != nil && !isNil(o.AppliedParam) {
+	if o != nil && !IsNil(o.AppliedParam) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ConfigurationNotification) SetAppliedParam(v AppliedParameterConfigurat
 }
 
 func (o ConfigurationNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o ConfigurationNotification) MarshalJSON() ([]byte, error) {
 func (o ConfigurationNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["configuration"] = o.Configuration
-	if !isNil(o.ConfigResults) {
+	if !IsNil(o.ConfigResults) {
 		toSerialize["configResults"] = o.ConfigResults
 	}
-	if !isNil(o.AppliedParam) {
+	if !IsNil(o.AppliedParam) {
 		toSerialize["appliedParam"] = o.AppliedParam
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableConfigurationNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

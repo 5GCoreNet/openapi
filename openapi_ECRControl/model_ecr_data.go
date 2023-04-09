@@ -1,7 +1,7 @@
 /*
 3gpp-ecr-control
 
-API for enhanced converage restriction control.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for enhanced converage restriction control.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &ECRData{}
 
 // ECRData Represents the current visited PLMN (if any) and the current settings of enhanced coverage restriction.
 type ECRData struct {
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures string `json:"supportedFeatures"`
-	VisitedPlmnId *PlmnId `json:"visitedPlmnId,omitempty"`
-	EcrDataWbs []PlmnEcRestrictionDataWb `json:"ecrDataWbs,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures string                    `json:"supportedFeatures"`
+	VisitedPlmnId     *PlmnId                   `json:"visitedPlmnId,omitempty"`
+	EcrDataWbs        []PlmnEcRestrictionDataWb `json:"ecrDataWbs,omitempty"`
 	// Indicates a complete list (and possibly empty) of serving PLMNs where Enhanced Coverage shall be restricted.
 	RestrictedPlmnIds []PlmnId `json:"restrictedPlmnIds,omitempty"`
 	// Indicates a complete list (and possibly empty) of serving PLMNs where Enhanced Coverage shall be allowed.
@@ -73,7 +73,7 @@ func (o *ECRData) SetSupportedFeatures(v string) {
 
 // GetVisitedPlmnId returns the VisitedPlmnId field value if set, zero value otherwise.
 func (o *ECRData) GetVisitedPlmnId() PlmnId {
-	if o == nil || isNil(o.VisitedPlmnId) {
+	if o == nil || IsNil(o.VisitedPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ECRData) GetVisitedPlmnId() PlmnId {
 // GetVisitedPlmnIdOk returns a tuple with the VisitedPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetVisitedPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.VisitedPlmnId) {
+	if o == nil || IsNil(o.VisitedPlmnId) {
 		return nil, false
 	}
 	return o.VisitedPlmnId, true
@@ -91,7 +91,7 @@ func (o *ECRData) GetVisitedPlmnIdOk() (*PlmnId, bool) {
 
 // HasVisitedPlmnId returns a boolean if a field has been set.
 func (o *ECRData) HasVisitedPlmnId() bool {
-	if o != nil && !isNil(o.VisitedPlmnId) {
+	if o != nil && !IsNil(o.VisitedPlmnId) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ECRData) SetVisitedPlmnId(v PlmnId) {
 
 // GetEcrDataWbs returns the EcrDataWbs field value if set, zero value otherwise.
 func (o *ECRData) GetEcrDataWbs() []PlmnEcRestrictionDataWb {
-	if o == nil || isNil(o.EcrDataWbs) {
+	if o == nil || IsNil(o.EcrDataWbs) {
 		var ret []PlmnEcRestrictionDataWb
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ECRData) GetEcrDataWbs() []PlmnEcRestrictionDataWb {
 // GetEcrDataWbsOk returns a tuple with the EcrDataWbs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetEcrDataWbsOk() ([]PlmnEcRestrictionDataWb, bool) {
-	if o == nil || isNil(o.EcrDataWbs) {
+	if o == nil || IsNil(o.EcrDataWbs) {
 		return nil, false
 	}
 	return o.EcrDataWbs, true
@@ -123,7 +123,7 @@ func (o *ECRData) GetEcrDataWbsOk() ([]PlmnEcRestrictionDataWb, bool) {
 
 // HasEcrDataWbs returns a boolean if a field has been set.
 func (o *ECRData) HasEcrDataWbs() bool {
-	if o != nil && !isNil(o.EcrDataWbs) {
+	if o != nil && !IsNil(o.EcrDataWbs) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *ECRData) SetEcrDataWbs(v []PlmnEcRestrictionDataWb) {
 
 // GetRestrictedPlmnIds returns the RestrictedPlmnIds field value if set, zero value otherwise.
 func (o *ECRData) GetRestrictedPlmnIds() []PlmnId {
-	if o == nil || isNil(o.RestrictedPlmnIds) {
+	if o == nil || IsNil(o.RestrictedPlmnIds) {
 		var ret []PlmnId
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ECRData) GetRestrictedPlmnIds() []PlmnId {
 // GetRestrictedPlmnIdsOk returns a tuple with the RestrictedPlmnIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetRestrictedPlmnIdsOk() ([]PlmnId, bool) {
-	if o == nil || isNil(o.RestrictedPlmnIds) {
+	if o == nil || IsNil(o.RestrictedPlmnIds) {
 		return nil, false
 	}
 	return o.RestrictedPlmnIds, true
@@ -155,7 +155,7 @@ func (o *ECRData) GetRestrictedPlmnIdsOk() ([]PlmnId, bool) {
 
 // HasRestrictedPlmnIds returns a boolean if a field has been set.
 func (o *ECRData) HasRestrictedPlmnIds() bool {
-	if o != nil && !isNil(o.RestrictedPlmnIds) {
+	if o != nil && !IsNil(o.RestrictedPlmnIds) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *ECRData) SetRestrictedPlmnIds(v []PlmnId) {
 
 // GetAllowedPlmnIds returns the AllowedPlmnIds field value if set, zero value otherwise.
 func (o *ECRData) GetAllowedPlmnIds() []PlmnId {
-	if o == nil || isNil(o.AllowedPlmnIds) {
+	if o == nil || IsNil(o.AllowedPlmnIds) {
 		var ret []PlmnId
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *ECRData) GetAllowedPlmnIds() []PlmnId {
 // GetAllowedPlmnIdsOk returns a tuple with the AllowedPlmnIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetAllowedPlmnIdsOk() ([]PlmnId, bool) {
-	if o == nil || isNil(o.AllowedPlmnIds) {
+	if o == nil || IsNil(o.AllowedPlmnIds) {
 		return nil, false
 	}
 	return o.AllowedPlmnIds, true
@@ -187,7 +187,7 @@ func (o *ECRData) GetAllowedPlmnIdsOk() ([]PlmnId, bool) {
 
 // HasAllowedPlmnIds returns a boolean if a field has been set.
 func (o *ECRData) HasAllowedPlmnIds() bool {
-	if o != nil && !isNil(o.AllowedPlmnIds) {
+	if o != nil && !IsNil(o.AllowedPlmnIds) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *ECRData) SetAllowedPlmnIds(v []PlmnId) {
 }
 
 func (o ECRData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -210,16 +210,16 @@ func (o ECRData) MarshalJSON() ([]byte, error) {
 func (o ECRData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supportedFeatures"] = o.SupportedFeatures
-	if !isNil(o.VisitedPlmnId) {
+	if !IsNil(o.VisitedPlmnId) {
 		toSerialize["visitedPlmnId"] = o.VisitedPlmnId
 	}
-	if !isNil(o.EcrDataWbs) {
+	if !IsNil(o.EcrDataWbs) {
 		toSerialize["ecrDataWbs"] = o.EcrDataWbs
 	}
-	if !isNil(o.RestrictedPlmnIds) {
+	if !IsNil(o.RestrictedPlmnIds) {
 		toSerialize["restrictedPlmnIds"] = o.RestrictedPlmnIds
 	}
-	if !isNil(o.AllowedPlmnIds) {
+	if !IsNil(o.AllowedPlmnIds) {
 		toSerialize["allowedPlmnIds"] = o.AllowedPlmnIds
 	}
 	return toSerialize, nil
@@ -260,5 +260,3 @@ func (v *NullableECRData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

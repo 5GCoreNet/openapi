@@ -1,7 +1,7 @@
 /*
 MSGG_L3GDelivery
 
-API for MSGG L3G Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGG L3G Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AddressType Possible values are: - UE: The address type is UE. - AS: The address type is AS. - GROUP: The address type is GROUP. - BC: The address type is BC. - TOPIC: The address type is TOPIC. 
+// AddressType Possible values are: - UE: The address type is UE. - AS: The address type is AS. - GROUP: The address type is GROUP. - BC: The address type is BC. - TOPIC: The address type is TOPIC.
 type AddressType struct {
-	AddressTypeAnyOf *AddressTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddressType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AddressTypeAnyOf
-	err = json.Unmarshal(data, &dst.AddressTypeAnyOf);
-	if err == nil {
-		jsonAddressTypeAnyOf, _ := json.Marshal(dst.AddressTypeAnyOf)
-		if string(jsonAddressTypeAnyOf) == "{}" { // empty struct
-			dst.AddressTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AddressTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AddressTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AddressType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AddressType) MarshalJSON() ([]byte, error) {
-	if src.AddressTypeAnyOf != nil {
-		return json.Marshal(&src.AddressTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAddressType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

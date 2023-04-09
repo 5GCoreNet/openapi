@@ -1,15 +1,11 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
 api_network_slice_adaptation_request.go
 client.go
 configuration.go
-docs/InvalidParam.md
-docs/NetworkSliceAdaptationRequestApi.md
-docs/NwSliceAdptInfo.md
-docs/ProblemDetails.md
-docs/Snssai.md
 git_push.sh
 go.mod
 go.sum
@@ -18,5 +14,4 @@ model_nw_slice_adpt_info.go
 model_problem_details.go
 model_snssai.go
 response.go
-test/api_network_slice_adaptation_request_test.go
 utils.go

@@ -1,7 +1,7 @@
 /*
 Nmbstf-distsession
 
-MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBSTF Distribution Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &StatusSubscribeRspData{}
 
 // StatusSubscribeRspData Data within StatusSubscribe Response
 type StatusSubscribeRspData struct {
-	Subscription DistSessionSubscription `json:"subscription"`
-	ReportList *DistSessionEventReportList `json:"reportList,omitempty"`
+	Subscription DistSessionSubscription     `json:"subscription"`
+	ReportList   *DistSessionEventReportList `json:"reportList,omitempty"`
 }
 
 // NewStatusSubscribeRspData instantiates a new StatusSubscribeRspData object
@@ -67,7 +67,7 @@ func (o *StatusSubscribeRspData) SetSubscription(v DistSessionSubscription) {
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *StatusSubscribeRspData) GetReportList() DistSessionEventReportList {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		var ret DistSessionEventReportList
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *StatusSubscribeRspData) GetReportList() DistSessionEventReportList {
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusSubscribeRspData) GetReportListOk() (*DistSessionEventReportList, bool) {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -85,7 +85,7 @@ func (o *StatusSubscribeRspData) GetReportListOk() (*DistSessionEventReportList,
 
 // HasReportList returns a boolean if a field has been set.
 func (o *StatusSubscribeRspData) HasReportList() bool {
-	if o != nil && !isNil(o.ReportList) {
+	if o != nil && !IsNil(o.ReportList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *StatusSubscribeRspData) SetReportList(v DistSessionEventReportList) {
 }
 
 func (o StatusSubscribeRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o StatusSubscribeRspData) MarshalJSON() ([]byte, error) {
 func (o StatusSubscribeRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !isNil(o.ReportList) {
+	if !IsNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableStatusSubscribeRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

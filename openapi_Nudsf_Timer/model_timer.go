@@ -1,7 +1,7 @@
 /*
 Nudsf_Timer
 
-Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -52,7 +52,7 @@ func NewTimerWithDefaults() *Timer {
 
 // GetTimerId returns the TimerId field value if set, zero value otherwise.
 func (o *Timer) GetTimerId() string {
-	if o == nil || isNil(o.TimerId) {
+	if o == nil || IsNil(o.TimerId) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *Timer) GetTimerId() string {
 // GetTimerIdOk returns a tuple with the TimerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetTimerIdOk() (*string, bool) {
-	if o == nil || isNil(o.TimerId) {
+	if o == nil || IsNil(o.TimerId) {
 		return nil, false
 	}
 	return o.TimerId, true
@@ -70,7 +70,7 @@ func (o *Timer) GetTimerIdOk() (*string, bool) {
 
 // HasTimerId returns a boolean if a field has been set.
 func (o *Timer) HasTimerId() bool {
-	if o != nil && !isNil(o.TimerId) {
+	if o != nil && !IsNil(o.TimerId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *Timer) SetExpires(v time.Time) {
 
 // GetMetaTags returns the MetaTags field value if set, zero value otherwise.
 func (o *Timer) GetMetaTags() map[string][]string {
-	if o == nil || isNil(o.MetaTags) {
+	if o == nil || IsNil(o.MetaTags) {
 		var ret map[string][]string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *Timer) GetMetaTags() map[string][]string {
 // GetMetaTagsOk returns a tuple with the MetaTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetMetaTagsOk() (*map[string][]string, bool) {
-	if o == nil || isNil(o.MetaTags) {
+	if o == nil || IsNil(o.MetaTags) {
 		return nil, false
 	}
 	return o.MetaTags, true
@@ -126,7 +126,7 @@ func (o *Timer) GetMetaTagsOk() (*map[string][]string, bool) {
 
 // HasMetaTags returns a boolean if a field has been set.
 func (o *Timer) HasMetaTags() bool {
-	if o != nil && !isNil(o.MetaTags) {
+	if o != nil && !IsNil(o.MetaTags) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *Timer) SetMetaTags(v map[string][]string) {
 
 // GetCallbackReference returns the CallbackReference field value if set, zero value otherwise.
 func (o *Timer) GetCallbackReference() string {
-	if o == nil || isNil(o.CallbackReference) {
+	if o == nil || IsNil(o.CallbackReference) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *Timer) GetCallbackReference() string {
 // GetCallbackReferenceOk returns a tuple with the CallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetCallbackReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.CallbackReference) {
+	if o == nil || IsNil(o.CallbackReference) {
 		return nil, false
 	}
 	return o.CallbackReference, true
@@ -158,7 +158,7 @@ func (o *Timer) GetCallbackReferenceOk() (*string, bool) {
 
 // HasCallbackReference returns a boolean if a field has been set.
 func (o *Timer) HasCallbackReference() bool {
-	if o != nil && !isNil(o.CallbackReference) {
+	if o != nil && !IsNil(o.CallbackReference) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *Timer) SetCallbackReference(v string) {
 
 // GetDeleteAfter returns the DeleteAfter field value if set, zero value otherwise.
 func (o *Timer) GetDeleteAfter() int32 {
-	if o == nil || isNil(o.DeleteAfter) {
+	if o == nil || IsNil(o.DeleteAfter) {
 		var ret int32
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *Timer) GetDeleteAfter() int32 {
 // GetDeleteAfterOk returns a tuple with the DeleteAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetDeleteAfterOk() (*int32, bool) {
-	if o == nil || isNil(o.DeleteAfter) {
+	if o == nil || IsNil(o.DeleteAfter) {
 		return nil, false
 	}
 	return o.DeleteAfter, true
@@ -190,7 +190,7 @@ func (o *Timer) GetDeleteAfterOk() (*int32, bool) {
 
 // HasDeleteAfter returns a boolean if a field has been set.
 func (o *Timer) HasDeleteAfter() bool {
-	if o != nil && !isNil(o.DeleteAfter) {
+	if o != nil && !IsNil(o.DeleteAfter) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *Timer) SetDeleteAfter(v int32) {
 }
 
 func (o Timer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -212,17 +212,17 @@ func (o Timer) MarshalJSON() ([]byte, error) {
 
 func (o Timer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TimerId) {
+	if !IsNil(o.TimerId) {
 		toSerialize["timerId"] = o.TimerId
 	}
 	toSerialize["expires"] = o.Expires
-	if !isNil(o.MetaTags) {
+	if !IsNil(o.MetaTags) {
 		toSerialize["metaTags"] = o.MetaTags
 	}
-	if !isNil(o.CallbackReference) {
+	if !IsNil(o.CallbackReference) {
 		toSerialize["callbackReference"] = o.CallbackReference
 	}
-	if !isNil(o.DeleteAfter) {
+	if !IsNil(o.DeleteAfter) {
 		toSerialize["deleteAfter"] = o.DeleteAfter
 	}
 	return toSerialize, nil
@@ -263,5 +263,3 @@ func (v *NullableTimer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

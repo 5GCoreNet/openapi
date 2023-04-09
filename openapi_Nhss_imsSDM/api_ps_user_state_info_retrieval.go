@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // PSUserStateInfoRetrievalApiService PSUserStateInfoRetrievalApi service
 type PSUserStateInfoRetrievalApiService service
 
 type ApiGetPsUserStateInfoRequest struct {
-	ctx context.Context
-	ApiService *PSUserStateInfoRetrievalApiService
-	imsUeId string
-	requestedNodes *[]RequestedNode
+	ctx             context.Context
+	ApiService      *PSUserStateInfoRetrievalApiService
+	imsUeId         string
+	requestedNodes  *[]RequestedNode
 	privateIdentity *string
 }
 
@@ -50,26 +49,27 @@ func (r ApiGetPsUserStateInfoRequest) Execute() (*PsUserState, *http.Response, e
 /*
 GetPsUserStateInfo Retrieve the user state information in PS domain
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imsUeId IMS Identity
- @return ApiGetPsUserStateInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imsUeId IMS Identity
+	@return ApiGetPsUserStateInfoRequest
 */
 func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfo(ctx context.Context, imsUeId string) ApiGetPsUserStateInfoRequest {
 	return ApiGetPsUserStateInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		imsUeId: imsUeId,
+		ctx:        ctx,
+		imsUeId:    imsUeId,
 	}
 }
 
 // Execute executes the request
-//  @return PsUserState
+//
+//	@return PsUserState
 func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetPsUserStateInfoRequest) (*PsUserState, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PsUserState
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PsUserState
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PSUserStateInfoRetrievalApiService.GetPsUserStateInfo")
@@ -85,10 +85,10 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 	localVarFormParams := url.Values{}
 
 	if r.requestedNodes != nil {
-		parameterAddToQuery(localVarQueryParams, "requested-nodes", r.requestedNodes, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "requested-nodes", r.requestedNodes, "csv")
 	}
 	if r.privateIdentity != nil {
-		parameterAddToQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -117,9 +117,9 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,8 +136,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -147,8 +147,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -158,8 +158,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -169,8 +169,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -180,8 +180,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -191,8 +191,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -202,8 +202,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -213,8 +213,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -224,8 +224,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -235,8 +235,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 504 {
@@ -246,8 +246,8 @@ func (a *PSUserStateInfoRetrievalApiService) GetPsUserStateInfoExecute(r ApiGetP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // GpsiType Type of GPSI (MSISDN or External-ID)
 type GpsiType struct {
-	GpsiTypeAnyOf *GpsiTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GpsiType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into GpsiTypeAnyOf
-	err = json.Unmarshal(data, &dst.GpsiTypeAnyOf);
-	if err == nil {
-		jsonGpsiTypeAnyOf, _ := json.Marshal(dst.GpsiTypeAnyOf)
-		if string(jsonGpsiTypeAnyOf) == "{}" { // empty struct
-			dst.GpsiTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.GpsiTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.GpsiTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *GpsiType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *GpsiType) MarshalJSON() ([]byte, error) {
-	if src.GpsiTypeAnyOf != nil {
-		return json.Marshal(&src.GpsiTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableGpsiType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

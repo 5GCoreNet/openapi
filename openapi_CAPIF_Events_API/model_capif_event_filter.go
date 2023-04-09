@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -46,7 +46,7 @@ func NewCAPIFEventFilterWithDefaults() *CAPIFEventFilter {
 
 // GetApiIds returns the ApiIds field value if set, zero value otherwise.
 func (o *CAPIFEventFilter) GetApiIds() []string {
-	if o == nil || isNil(o.ApiIds) {
+	if o == nil || IsNil(o.ApiIds) {
 		var ret []string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *CAPIFEventFilter) GetApiIds() []string {
 // GetApiIdsOk returns a tuple with the ApiIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventFilter) GetApiIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ApiIds) {
+	if o == nil || IsNil(o.ApiIds) {
 		return nil, false
 	}
 	return o.ApiIds, true
@@ -64,7 +64,7 @@ func (o *CAPIFEventFilter) GetApiIdsOk() ([]string, bool) {
 
 // HasApiIds returns a boolean if a field has been set.
 func (o *CAPIFEventFilter) HasApiIds() bool {
-	if o != nil && !isNil(o.ApiIds) {
+	if o != nil && !IsNil(o.ApiIds) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *CAPIFEventFilter) SetApiIds(v []string) {
 
 // GetApiInvokerIds returns the ApiInvokerIds field value if set, zero value otherwise.
 func (o *CAPIFEventFilter) GetApiInvokerIds() []string {
-	if o == nil || isNil(o.ApiInvokerIds) {
+	if o == nil || IsNil(o.ApiInvokerIds) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *CAPIFEventFilter) GetApiInvokerIds() []string {
 // GetApiInvokerIdsOk returns a tuple with the ApiInvokerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventFilter) GetApiInvokerIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ApiInvokerIds) {
+	if o == nil || IsNil(o.ApiInvokerIds) {
 		return nil, false
 	}
 	return o.ApiInvokerIds, true
@@ -96,7 +96,7 @@ func (o *CAPIFEventFilter) GetApiInvokerIdsOk() ([]string, bool) {
 
 // HasApiInvokerIds returns a boolean if a field has been set.
 func (o *CAPIFEventFilter) HasApiInvokerIds() bool {
-	if o != nil && !isNil(o.ApiInvokerIds) {
+	if o != nil && !IsNil(o.ApiInvokerIds) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *CAPIFEventFilter) SetApiInvokerIds(v []string) {
 
 // GetAefIds returns the AefIds field value if set, zero value otherwise.
 func (o *CAPIFEventFilter) GetAefIds() []string {
-	if o == nil || isNil(o.AefIds) {
+	if o == nil || IsNil(o.AefIds) {
 		var ret []string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *CAPIFEventFilter) GetAefIds() []string {
 // GetAefIdsOk returns a tuple with the AefIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventFilter) GetAefIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AefIds) {
+	if o == nil || IsNil(o.AefIds) {
 		return nil, false
 	}
 	return o.AefIds, true
@@ -128,7 +128,7 @@ func (o *CAPIFEventFilter) GetAefIdsOk() ([]string, bool) {
 
 // HasAefIds returns a boolean if a field has been set.
 func (o *CAPIFEventFilter) HasAefIds() bool {
-	if o != nil && !isNil(o.AefIds) {
+	if o != nil && !IsNil(o.AefIds) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *CAPIFEventFilter) SetAefIds(v []string) {
 }
 
 func (o CAPIFEventFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o CAPIFEventFilter) MarshalJSON() ([]byte, error) {
 
 func (o CAPIFEventFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiIds) {
+	if !IsNil(o.ApiIds) {
 		toSerialize["apiIds"] = o.ApiIds
 	}
-	if !isNil(o.ApiInvokerIds) {
+	if !IsNil(o.ApiInvokerIds) {
 		toSerialize["apiInvokerIds"] = o.ApiInvokerIds
 	}
-	if !isNil(o.AefIds) {
+	if !IsNil(o.AefIds) {
 		toSerialize["aefIds"] = o.AefIds
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableCAPIFEventFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

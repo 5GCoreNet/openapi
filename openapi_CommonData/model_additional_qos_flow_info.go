@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,30 +15,30 @@ import (
 	"fmt"
 )
 
-// AdditionalQosFlowInfo The enumeration AdditionalQosFlowInfo provides additional QoS flow information (see clause  9.3.1.12 3GPP TS 38.413 [11]). It shall comply with the provisions defined in table 5.5.3.12-1. 
+// AdditionalQosFlowInfo The enumeration AdditionalQosFlowInfo provides additional QoS flow information (see clause  9.3.1.12 3GPP TS 38.413 [11]). It shall comply with the provisions defined in table 5.5.3.12-1.
 type AdditionalQosFlowInfo struct {
-	AnyOfstringstring *AnyOfstringstring
-	NullValue *NullValue
+	AdditionalQosFlowInfoAnyOf *AdditionalQosFlowInfoAnyOf
+	NullValue                  *NullValue
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AdditionalQosFlowInfo) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AnyOfstringstring
-	err = json.Unmarshal(data, &dst.AnyOfstringstring);
+	// try to unmarshal JSON data into AdditionalQosFlowInfoAnyOf
+	err = json.Unmarshal(data, &dst.AdditionalQosFlowInfoAnyOf)
 	if err == nil {
-		jsonAnyOfstringstring, _ := json.Marshal(dst.AnyOfstringstring)
-		if string(jsonAnyOfstringstring) == "{}" { // empty struct
-			dst.AnyOfstringstring = nil
+		jsonAdditionalQosFlowInfoAnyOf, _ := json.Marshal(dst.AdditionalQosFlowInfoAnyOf)
+		if string(jsonAdditionalQosFlowInfoAnyOf) == "{}" { // empty struct
+			dst.AdditionalQosFlowInfoAnyOf = nil
 		} else {
-			return nil // data stored in dst.AnyOfstringstring, return on the first match
+			return nil // data stored in dst.AdditionalQosFlowInfoAnyOf, return on the first match
 		}
 	} else {
-		dst.AnyOfstringstring = nil
+		dst.AdditionalQosFlowInfoAnyOf = nil
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -55,8 +55,8 @@ func (dst *AdditionalQosFlowInfo) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AdditionalQosFlowInfo) MarshalJSON() ([]byte, error) {
-	if src.AnyOfstringstring != nil {
-		return json.Marshal(&src.AnyOfstringstring)
+	if src.AdditionalQosFlowInfoAnyOf != nil {
+		return json.Marshal(&src.AdditionalQosFlowInfoAnyOf)
 	}
 
 	if src.NullValue != nil {
@@ -101,5 +101,3 @@ func (v *NullableAdditionalQosFlowInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

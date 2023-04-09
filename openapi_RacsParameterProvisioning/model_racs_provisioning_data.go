@@ -1,7 +1,7 @@
 /*
 3gpp-racs-parameter-provisioning
 
-API for provisioning UE radio capability parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning UE radio capability parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &RacsProvisioningData{}
 type RacsProvisioningData struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	Self *string `json:"self,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 	// Identifies the configuration related to manufacturer specific UE radio capability. Each element uniquely identifies an RACS configuration for an RACS ID and is identified in the map via the RACS ID as key. The response shall include successfully provisioned RACS data.
 	RacsConfigs map[string]RacsConfiguration `json:"racsConfigs"`
@@ -49,7 +49,7 @@ func NewRacsProvisioningDataWithDefaults() *RacsProvisioningData {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *RacsProvisioningData) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *RacsProvisioningData) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningData) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -67,7 +67,7 @@ func (o *RacsProvisioningData) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *RacsProvisioningData) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *RacsProvisioningData) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *RacsProvisioningData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *RacsProvisioningData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -99,7 +99,7 @@ func (o *RacsProvisioningData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *RacsProvisioningData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *RacsProvisioningData) SetRacsConfigs(v map[string]RacsConfiguration) {
 
 // GetRacsReports returns the RacsReports field value if set, zero value otherwise.
 func (o *RacsProvisioningData) GetRacsReports() map[string]RacsFailureReport {
-	if o == nil || isNil(o.RacsReports) {
+	if o == nil || IsNil(o.RacsReports) {
 		var ret map[string]RacsFailureReport
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *RacsProvisioningData) GetRacsReports() map[string]RacsFailureReport {
 // GetRacsReportsOk returns a tuple with the RacsReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningData) GetRacsReportsOk() (*map[string]RacsFailureReport, bool) {
-	if o == nil || isNil(o.RacsReports) {
+	if o == nil || IsNil(o.RacsReports) {
 		return nil, false
 	}
 	return o.RacsReports, true
@@ -155,7 +155,7 @@ func (o *RacsProvisioningData) GetRacsReportsOk() (*map[string]RacsFailureReport
 
 // HasRacsReports returns a boolean if a field has been set.
 func (o *RacsProvisioningData) HasRacsReports() bool {
-	if o != nil && !isNil(o.RacsReports) {
+	if o != nil && !IsNil(o.RacsReports) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *RacsProvisioningData) SetRacsReports(v map[string]RacsFailureReport) {
 }
 
 func (o RacsProvisioningData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -177,16 +177,14 @@ func (o RacsProvisioningData) MarshalJSON() ([]byte, error) {
 
 func (o RacsProvisioningData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["racsConfigs"] = o.RacsConfigs
-	if !isNil(o.RacsReports) {
-		toSerialize["racsReports"] = o.RacsReports
-	}
+	// skip: racsReports is readOnly
 	return toSerialize, nil
 }
 
@@ -225,5 +223,3 @@ func (v *NullableRacsProvisioningData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

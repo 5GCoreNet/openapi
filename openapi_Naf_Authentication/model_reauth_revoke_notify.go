@@ -1,7 +1,7 @@
 /*
 Naf_Authentication
 
-AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AF Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &ReauthRevokeNotify{}
 
 // ReauthRevokeNotify UAV related notification
 type ReauthRevokeNotify struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
-	ServiceLevelId string `json:"serviceLevelId"`
-	NotifyCorrId *string `json:"notifyCorrId,omitempty"`
-	AuthContainer []AuthContainer `json:"authContainer,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi           string          `json:"gpsi"`
+	ServiceLevelId string          `json:"serviceLevelId"`
+	NotifyCorrId   *string         `json:"notifyCorrId,omitempty"`
+	AuthContainer  []AuthContainer `json:"authContainer,omitempty"`
 	// Deprecated
-	AuthMsg *string `json:"authMsg,omitempty"`
+	AuthMsg    *string    `json:"authMsg,omitempty"`
 	NotifyType NotifyType `json:"notifyType"`
-	IpAddr *IpAddr `json:"ipAddr,omitempty"`
+	IpAddr     *IpAddr    `json:"ipAddr,omitempty"`
 }
 
 // NewReauthRevokeNotify instantiates a new ReauthRevokeNotify object
@@ -100,7 +100,7 @@ func (o *ReauthRevokeNotify) SetServiceLevelId(v string) {
 
 // GetNotifyCorrId returns the NotifyCorrId field value if set, zero value otherwise.
 func (o *ReauthRevokeNotify) GetNotifyCorrId() string {
-	if o == nil || isNil(o.NotifyCorrId) {
+	if o == nil || IsNil(o.NotifyCorrId) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ReauthRevokeNotify) GetNotifyCorrId() string {
 // GetNotifyCorrIdOk returns a tuple with the NotifyCorrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthRevokeNotify) GetNotifyCorrIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrId) {
+	if o == nil || IsNil(o.NotifyCorrId) {
 		return nil, false
 	}
 	return o.NotifyCorrId, true
@@ -118,7 +118,7 @@ func (o *ReauthRevokeNotify) GetNotifyCorrIdOk() (*string, bool) {
 
 // HasNotifyCorrId returns a boolean if a field has been set.
 func (o *ReauthRevokeNotify) HasNotifyCorrId() bool {
-	if o != nil && !isNil(o.NotifyCorrId) {
+	if o != nil && !IsNil(o.NotifyCorrId) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *ReauthRevokeNotify) SetNotifyCorrId(v string) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *ReauthRevokeNotify) GetAuthContainer() []AuthContainer {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *ReauthRevokeNotify) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthRevokeNotify) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -150,7 +150,7 @@ func (o *ReauthRevokeNotify) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *ReauthRevokeNotify) HasAuthContainer() bool {
-	if o != nil && !isNil(o.AuthContainer) {
+	if o != nil && !IsNil(o.AuthContainer) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *ReauthRevokeNotify) SetAuthContainer(v []AuthContainer) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *ReauthRevokeNotify) GetAuthMsg() string {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *ReauthRevokeNotify) GetAuthMsg() string {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *ReauthRevokeNotify) GetAuthMsgOk() (*string, bool) {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -184,7 +184,7 @@ func (o *ReauthRevokeNotify) GetAuthMsgOk() (*string, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *ReauthRevokeNotify) HasAuthMsg() bool {
-	if o != nil && !isNil(o.AuthMsg) {
+	if o != nil && !IsNil(o.AuthMsg) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *ReauthRevokeNotify) SetNotifyType(v NotifyType) {
 
 // GetIpAddr returns the IpAddr field value if set, zero value otherwise.
 func (o *ReauthRevokeNotify) GetIpAddr() IpAddr {
-	if o == nil || isNil(o.IpAddr) {
+	if o == nil || IsNil(o.IpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -233,7 +233,7 @@ func (o *ReauthRevokeNotify) GetIpAddr() IpAddr {
 // GetIpAddrOk returns a tuple with the IpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthRevokeNotify) GetIpAddrOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.IpAddr) {
+	if o == nil || IsNil(o.IpAddr) {
 		return nil, false
 	}
 	return o.IpAddr, true
@@ -241,7 +241,7 @@ func (o *ReauthRevokeNotify) GetIpAddrOk() (*IpAddr, bool) {
 
 // HasIpAddr returns a boolean if a field has been set.
 func (o *ReauthRevokeNotify) HasIpAddr() bool {
-	if o != nil && !isNil(o.IpAddr) {
+	if o != nil && !IsNil(o.IpAddr) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *ReauthRevokeNotify) SetIpAddr(v IpAddr) {
 }
 
 func (o ReauthRevokeNotify) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -265,17 +265,17 @@ func (o ReauthRevokeNotify) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["serviceLevelId"] = o.ServiceLevelId
-	if !isNil(o.NotifyCorrId) {
+	if !IsNil(o.NotifyCorrId) {
 		toSerialize["notifyCorrId"] = o.NotifyCorrId
 	}
-	if !isNil(o.AuthContainer) {
+	if !IsNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
-	if !isNil(o.AuthMsg) {
+	if !IsNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
 	toSerialize["notifyType"] = o.NotifyType
-	if !isNil(o.IpAddr) {
+	if !IsNil(o.IpAddr) {
 		toSerialize["ipAddr"] = o.IpAddr
 	}
 	return toSerialize, nil
@@ -316,5 +316,3 @@ func (v *NullableReauthRevokeNotify) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

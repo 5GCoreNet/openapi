@@ -395,15 +395,7 @@ components:
     Resource:
       oneOf:
       - $ref: '#/components/schemas/Resource_oneOf'
-      - anyOf:
-        - $ref: '#/components/schemas/resources-genericNrm'
-        - $ref: '#/components/schemas/resources-nrNrm'
-        - $ref: '#/components/schemas/resources-5gcNrm'
-        - $ref: '#/components/schemas/resources-sliceNrm'
-        - $ref: '#/components/schemas/resources-coslaNrm'
-        - $ref: '#/components/schemas/resources-intentNrm'
-        - $ref: '#/components/schemas/resources-mdaNrm'
-        - $ref: '#/components/schemas/resources-AiMlNrm'
+      - $ref: '#/components/schemas/Resource_oneOf_1'
     Scope:
       properties:
         scopeType:
@@ -540,6 +532,7 @@ components:
       required:
       - id
       type: object
+      x-parent: true
     MnsAgent-Multiple:
       items:
         $ref: '#/components/schemas/MnsAgent-Single'
@@ -2270,6 +2263,7 @@ components:
             $ref: '#/components/schemas/RrmPolicyMember'
           type: array
       type: object
+      x-parent: true
     ResourceType:
       enum:
       - PRB
@@ -3107,6 +3101,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/Top'
       - $ref: '#/components/schemas/CCOParameters_Attr_allOf'
+      x-parent: true
     ParameterRange:
       properties:
         maxValue:
@@ -4627,7 +4622,11 @@ components:
       type: object
     IpReachability:
       anyOf:
-      - $ref: '#/components/schemas/IpReachability_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        type: string
       - type: string
       description: Indicates the type(s) of IP addresses reachable via an SCP
     ScpCapability:
@@ -4685,7 +4684,21 @@ components:
       type: object
     AfEvent:
       anyOf:
-      - $ref: '#/components/schemas/AfEvent_anyOf'
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -6719,6 +6732,7 @@ components:
       - notificationType
       - systemDN
       type: object
+      x-parent: true
     NotificationType:
       oneOf:
       - $ref: '#/components/schemas/AlarmNotificationTypes'
@@ -6965,15 +6979,7 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - anyOf:
-        - enum:
-          - PROBABLE_CAUSE_001
-          - PROBABLE_CAUSE_002
-          - PROBABLE_CAUSE_003
-          - PROBABLE_CAUSE_004
-          - PROBABLE_CAUSE_005
-          type: string
-        - type: string
+      - $ref: '#/components/schemas/ProbableCause_oneOf'
       - type: integer
     SpecificProblem:
       oneOf:
@@ -7057,6 +7063,7 @@ components:
             type: string
           type: array
       type: object
+      x-parent: true
     SupportedPerfMetricGroup:
       properties:
         performanceMetrics:
@@ -7129,6 +7136,7 @@ components:
         MnsRegistry:
           $ref: '#/components/schemas/MnsRegistry-Single'
       type: object
+      x-parent: true
     ManagementNode-Multiple:
       items:
         $ref: '#/components/schemas/ManagementNode-Single'
@@ -7194,6 +7202,7 @@ components:
             type: string
           type: array
       type: object
+      x-parent: true
     ManagedElement-ncO:
       properties:
         MnsAgent:
@@ -7227,6 +7236,7 @@ components:
             $ref: '#/components/schemas/Files-Single'
           type: array
       type: object
+      x-parent: true
     ManagedFunction-Attr:
       properties:
         userLabel:
@@ -7250,6 +7260,7 @@ components:
             type: string
           type: array
       type: object
+      x-parent: true
     VnfParameter:
       properties:
         vnfInstanceId:
@@ -7306,6 +7317,7 @@ components:
             $ref: '#/components/schemas/TraceJob-Single'
           type: array
       type: object
+      x-parent: true
     ManagedNFService-Multiple:
       items:
         $ref: '#/components/schemas/ManagedNFService-Single'
@@ -7321,6 +7333,7 @@ components:
             $ref: '#/components/schemas/SupportedPerfMetricGroup'
           type: array
       type: object
+      x-parent: true
     ServingLocation:
       properties:
         geographicalLocation:
@@ -7402,7 +7415,12 @@ components:
         This data type is defined in the same way as the "FlowDirection" data type, with the only  difference that it allows null value.
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7431,7 +7449,10 @@ components:
       type: integer
     AfSigProtocol:
       anyOf:
-      - $ref: '#/components/schemas/AfSigProtocol_anyOf'
+      - enum:
+        - NO_INFORMATION
+        - SIP
+        type: string
       - $ref: '#/components/schemas/NullValue'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
@@ -7528,13 +7549,19 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
+      - enum:
+        - NOT_PREEMPT
+        - MAY_PREEMPT
+        type: string
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
+      - enum:
+        - NOT_PREEMPTABLE
+        - PREEMPTABLE
+        type: string
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -7554,7 +7581,13 @@ components:
       type: integer
     FlowStatus:
       anyOf:
-      - $ref: '#/components/schemas/FlowStatus_anyOf'
+      - enum:
+        - ENABLED-UPLINK
+        - ENABLED-DOWNLINK
+        - ENABLED
+        - DISABLED
+        - REMOVED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7574,7 +7607,12 @@ components:
       type: object
     RedirectAddressType:
       anyOf:
-      - $ref: '#/components/schemas/RedirectAddressType_anyOf'
+      - enum:
+        - IPV4_ADDR
+        - IPV6_ADDR
+        - URL
+        - SIP_URI
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7668,7 +7706,10 @@ components:
       type: object
     SteeringFunctionality:
       anyOf:
-      - $ref: '#/components/schemas/SteeringFunctionality_anyOf'
+      - enum:
+        - MPTCP
+        - ATSSS_LL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7678,7 +7719,10 @@ components:
         \ support traffic \n  steering, switching and splitting.\n"
     MulticastAccessControl:
       anyOf:
-      - $ref: '#/components/schemas/MulticastAccessControl_anyOf'
+      - enum:
+        - ALLOWED
+        - NOT_ALLOWED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7686,7 +7730,12 @@ components:
         Indicates whether the service data flow, corresponding to the service data flow template, is  allowed or not allowed.
     SteerModeValue:
       anyOf:
-      - $ref: '#/components/schemas/SteerModeValue_anyOf'
+      - enum:
+        - ACTIVE_STANDBY
+        - LOAD_BALANCING
+        - SMALLEST_DELAY
+        - PRIORITY_BASED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7715,7 +7764,9 @@ components:
       type: string
     TransportProtocol:
       anyOf:
-      - $ref: '#/components/schemas/TransportProtocol_anyOf'
+      - enum:
+        - TCP
+        type: string
       - type: string
     PlmnId_1:
       properties:
@@ -7758,7 +7809,23 @@ components:
       type: string
     EventId:
       anyOf:
-      - $ref: '#/components/schemas/EventId_anyOf'
+      - enum:
+        - LOAD_LEVEL_INFORMATION
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - SM_CONGESTION
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - DN_PERFORMANCE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -7781,7 +7848,23 @@ components:
         - DN_PERFORMANCE: Represents the analytics of DN performance.
     NwdafEvent:
       anyOf:
-      - $ref: '#/components/schemas/NwdafEvent_anyOf'
+      - enum:
+        - SLICE_LOAD_LEVEL
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - DN_PERFORMANCE
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - SM_CONGESTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -7875,6 +7958,7 @@ components:
       required:
       - sst
       type: object
+      x-parent: true
     SnssaiExtension:
       description: |
         Extensions to the Snssai data type, sdRanges and wildcardSd shall not be present simultaneously
@@ -7897,6 +7981,7 @@ components:
           - true
           type: boolean
       type: object
+      x-parent: true
     SdRange:
       description: A range of SDs (Slice Differentiators)
       properties:
@@ -7981,6 +8066,7 @@ components:
       required:
       - id
       type: object
+      x-parent: true
     AlarmNotificationTypes:
       enum:
       - notifyNewAlarm
@@ -8071,7 +8157,28 @@ components:
       type: string
     RatType:
       anyOf:
-      - $ref: '#/components/schemas/RatType_anyOf'
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
       - type: string
       description: Indicates the radio access used.
     DateTime_1:
@@ -8083,7 +8190,11 @@ components:
       type: string
     DnaiChangeType:
       anyOf:
-      - $ref: '#/components/schemas/DnaiChangeType_anyOf'
+      - enum:
+        - EARLY
+        - EARLY_LATE
+        - LATE
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode  content defined in the present\
           \ version of this API. \n"
@@ -8098,6 +8209,10 @@ components:
       pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
       type: string
     Resource_oneOf:
+      additionalProperties:
+        items:
+          type: object
+        type: array
       properties:
         id:
           type: string
@@ -8110,7 +8225,16 @@ components:
       required:
       - id
       type: object
-      example: null
+    Resource_oneOf_1:
+      anyOf:
+      - $ref: '#/components/schemas/resources-genericNrm'
+      - $ref: '#/components/schemas/resources-nrNrm'
+      - $ref: '#/components/schemas/resources-5gcNrm'
+      - $ref: '#/components/schemas/resources-sliceNrm'
+      - $ref: '#/components/schemas/resources-coslaNrm'
+      - $ref: '#/components/schemas/resources-intentNrm'
+      - $ref: '#/components/schemas/resources-mdaNrm'
+      - $ref: '#/components/schemas/resources-AiMlNrm'
     NotifyMoiCreation_allOf:
       properties:
         correlatedNotifications:
@@ -8299,7 +8423,6 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
-      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -8307,13 +8430,11 @@ components:
         fileLocation:
           type: string
       type: object
-      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
-      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -8596,7 +8717,6 @@ components:
             $ref: '#/components/schemas/SubNetwork-Single'
           type: array
       type: object
-      example: null
     MnS_oneOf_1:
       properties:
         ManagedElement:
@@ -8604,7 +8724,6 @@ components:
             $ref: '#/components/schemas/ManagedElement-Single'
           type: array
       type: object
-      example: null
     SubNetwork_Single_allOf:
       properties:
         attributes:
@@ -8711,23 +8830,32 @@ components:
           type: array
       type: object
       example: null
+    GnbDuFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbDuId:
+          maximum: 68719476735
+          minimum: 0
+          type: number
+        gnbDuName:
+          maxLength: 150
+          type: string
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        rimRSReportConf:
+          $ref: '#/components/schemas/RimRSReportConf'
+      type: object
+    GnbDuFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/GnbDuFunction_Single_allOf_attributes_allOf'
     GnbDuFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              gnbDuId:
-                $ref: '#/components/schemas/GnbDuId'
-              gnbDuName:
-                $ref: '#/components/schemas/GnbName'
-              gnbId:
-                $ref: '#/components/schemas/GnbId'
-              gnbIdLength:
-                $ref: '#/components/schemas/GnbIdLength'
-              rimRSReportConf:
-                $ref: '#/components/schemas/RimRSReportConf'
-            type: object
+          $ref: '#/components/schemas/GnbDuFunction_Single_allOf_attributes'
       type: object
       example: null
     GnbDuFunction_Single_allOf_1:
@@ -8766,101 +8894,117 @@ components:
           type: array
       type: object
       example: null
+    RRMPolicyRatio_Single_allOf_attributes_allOf:
+      properties:
+        rRMPolicyMaxRatio:
+          type: integer
+        rRMPolicyMinRatio:
+          type: integer
+        rRMPolicyDedicatedRatio:
+          type: integer
+      type: object
+    RRMPolicyRatio_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/RrmPolicy_-Attr'
+      - $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf_attributes_allOf'
     RRMPolicyRatio_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/RrmPolicy_-Attr'
-          - properties:
-              rRMPolicyMaxRatio:
-                type: integer
-              rRMPolicyMinRatio:
-                type: integer
-              rRMPolicyDedicatedRatio:
-                type: integer
-            type: object
+          $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf_attributes'
       type: object
       example: null
+    NrCellDu_Single_allOf_attributes_allOf:
+      properties:
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        cellLocalId:
+          type: integer
+        cellState:
+          $ref: '#/components/schemas/CellState'
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        npnIdentityList:
+          items:
+            $ref: '#/components/schemas/NpnIdentity'
+          type: array
+        nrPci:
+          maximum: 503
+          type: integer
+        nrTac:
+          maximum: 16777215
+          type: integer
+        arfcnDL:
+          type: integer
+        arfcnUL:
+          type: integer
+        arfcnSUL:
+          type: integer
+        bSChannelBwDL:
+          type: integer
+        bSChannelBwUL:
+          type: integer
+        bSChannelBwSUL:
+          type: integer
+        ssbFrequency:
+          maximum: 3279165
+          minimum: 0
+          type: integer
+        ssbPeriodicity:
+          $ref: '#/components/schemas/SsbPeriodicity'
+        ssbSubCarrierSpacing:
+          $ref: '#/components/schemas/SsbSubCarrierSpacing'
+        ssbOffset:
+          maximum: 159
+          minimum: 0
+          type: integer
+        ssbDuration:
+          $ref: '#/components/schemas/SsbDuration'
+        nrSectorCarrierRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        bwpRef:
+          description: Condition is BWP sets are not supported
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        bwpSetRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        rimRSMonitoringStartTime:
+          type: string
+        rimRSMonitoringStopTime:
+          type: string
+        rimRSMonitoringWindowDuration:
+          type: integer
+        rimRSMonitoringWindowStartingOffset:
+          type: integer
+        rimRSMonitoringWindowPeriodicity:
+          type: integer
+        rimRSMonitoringOccasionInterval:
+          type: integer
+        rimRSMonitoringOccasionStartingOffset:
+          type: integer
+        nRFrequencyRef:
+          type: string
+        victimSetRef:
+          type: string
+        aggressorSetRef:
+          type: string
+      type: object
+    NrCellDu_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrCellDu_Single_allOf_attributes_allOf'
     NrCellDu_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              administrativeState:
-                $ref: '#/components/schemas/AdministrativeState'
-              operationalState:
-                $ref: '#/components/schemas/OperationalState'
-              cellLocalId:
-                type: integer
-              cellState:
-                $ref: '#/components/schemas/CellState'
-              plmnInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              npnIdentityList:
-                $ref: '#/components/schemas/NpnIdentityList'
-              nrPci:
-                $ref: '#/components/schemas/NrPci'
-              nrTac:
-                $ref: '#/components/schemas/NrTac'
-              arfcnDL:
-                type: integer
-              arfcnUL:
-                type: integer
-              arfcnSUL:
-                type: integer
-              bSChannelBwDL:
-                type: integer
-              bSChannelBwUL:
-                type: integer
-              bSChannelBwSUL:
-                type: integer
-              ssbFrequency:
-                maximum: 3279165
-                minimum: 0
-                type: integer
-              ssbPeriodicity:
-                $ref: '#/components/schemas/SsbPeriodicity'
-              ssbSubCarrierSpacing:
-                $ref: '#/components/schemas/SsbSubCarrierSpacing'
-              ssbOffset:
-                maximum: 159
-                minimum: 0
-                type: integer
-              ssbDuration:
-                $ref: '#/components/schemas/SsbDuration'
-              nrSectorCarrierRef:
-                items:
-                  $ref: '#/components/schemas/Dn'
-                type: array
-              bwpRef:
-                description: Condition is BWP sets are not supported
-                items:
-                  $ref: '#/components/schemas/Dn'
-                type: array
-              bwpSetRef:
-                $ref: '#/components/schemas/DnList'
-              rimRSMonitoringStartTime:
-                type: string
-              rimRSMonitoringStopTime:
-                type: string
-              rimRSMonitoringWindowDuration:
-                type: integer
-              rimRSMonitoringWindowStartingOffset:
-                type: integer
-              rimRSMonitoringWindowPeriodicity:
-                type: integer
-              rimRSMonitoringOccasionInterval:
-                type: integer
-              rimRSMonitoringOccasionStartingOffset:
-                type: integer
-              nRFrequencyRef:
-                $ref: '#/components/schemas/Dn'
-              victimSetRef:
-                $ref: '#/components/schemas/Dn'
-              aggressorSetRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/NrCellDu_Single_allOf_attributes'
       type: object
       example: null
     NrCellDu_Single_allOf_1:
@@ -8924,48 +9068,56 @@ components:
           type: integer
       type: object
       example: null
+    Bwp_Single_allOf_attributes_allOf:
+      properties:
+        bwpContext:
+          $ref: '#/components/schemas/BwpContext'
+        isInitialBwp:
+          $ref: '#/components/schemas/IsInitialBwp'
+        subCarrierSpacing:
+          type: integer
+        cyclicPrefix:
+          $ref: '#/components/schemas/CyclicPrefix'
+        startRB:
+          type: integer
+        numberOfRBs:
+          type: integer
+      type: object
+    Bwp_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/Bwp_Single_allOf_attributes_allOf'
     Bwp_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              bwpContext:
-                $ref: '#/components/schemas/BwpContext'
-              isInitialBwp:
-                $ref: '#/components/schemas/IsInitialBwp'
-              subCarrierSpacing:
-                type: integer
-              cyclicPrefix:
-                $ref: '#/components/schemas/CyclicPrefix'
-              startRB:
-                type: integer
-              numberOfRBs:
-                type: integer
-            type: object
+          $ref: '#/components/schemas/Bwp_Single_allOf_attributes'
       type: object
       example: null
+    NrSectorCarrier_Single_allOf_attributes_allOf:
+      properties:
+        txDirection:
+          $ref: '#/components/schemas/TxDirection'
+        configuredMaxTxPower:
+          type: integer
+        arfcnDL:
+          type: integer
+        arfcnUL:
+          type: integer
+        bSChannelBwDL:
+          type: integer
+        bSChannelBwUL:
+          type: integer
+        sectorEquipmentFunctionRef:
+          type: string
+      type: object
+    NrSectorCarrier_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_attributes_allOf'
     NrSectorCarrier_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              txDirection:
-                $ref: '#/components/schemas/TxDirection'
-              configuredMaxTxPower:
-                type: integer
-              arfcnDL:
-                type: integer
-              arfcnUL:
-                type: integer
-              bSChannelBwDL:
-                type: integer
-              bSChannelBwUL:
-                type: integer
-              sectorEquipmentFunctionRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_attributes'
       type: object
       example: null
     NrSectorCarrier_Single_allOf_1:
@@ -8974,18 +9126,27 @@ components:
           $ref: '#/components/schemas/CommonBeamformingFunction-Single'
       type: object
       example: null
+    CommonBeamformingFunction_Single_allOf_attributes_allOf:
+      properties:
+        coverageShape:
+          maximum: 65535
+          type: integer
+        digitalAzimuth:
+          maximum: 1800
+          minimum: -1800
+          type: integer
+        digitalTilt:
+          maximum: 900
+          minimum: -900
+          type: integer
+      type: object
+    CommonBeamformingFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_attributes_allOf'
     CommonBeamformingFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              coverageShape:
-                $ref: '#/components/schemas/CoverageShape'
-              digitalAzimuth:
-                $ref: '#/components/schemas/DigitalAzimuth'
-              digitalTilt:
-                $ref: '#/components/schemas/DigitalTilt'
-            type: object
+          $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_attributes'
       type: object
       example: null
     CommonBeamformingFunction_Single_allOf_1:
@@ -8996,62 +9157,76 @@ components:
           type: array
       type: object
       example: null
+    Beam_Single_allOf_attributes_allOf:
+      properties:
+        beamIndex:
+          type: integer
+        beamType:
+          enum:
+          - SSB-BEAM
+          type: string
+        beamAzimuth:
+          maximum: 1800
+          minimum: -1800
+          type: integer
+        beamTilt:
+          maximum: 900
+          minimum: -900
+          type: integer
+        beamHorizWidth:
+          maximum: 3599
+          minimum: 0
+          type: integer
+        beamVertWidth:
+          maximum: 1800
+          minimum: 0
+          type: integer
+      type: object
+    Beam_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/Beam_Single_allOf_attributes_allOf'
     Beam_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              beamIndex:
-                type: integer
-              beamType:
-                enum:
-                - SSB-BEAM
-                type: string
-              beamAzimuth:
-                maximum: 1800
-                minimum: -1800
-                type: integer
-              beamTilt:
-                maximum: 900
-                minimum: -900
-                type: integer
-              beamHorizWidth:
-                maximum: 3599
-                minimum: 0
-                type: integer
-              beamVertWidth:
-                maximum: 1800
-                minimum: 0
-                type: integer
-            type: object
+          $ref: '#/components/schemas/Beam_Single_allOf_attributes'
       type: object
       example: null
+    EP_F1C_Single_allOf_attributes_allOf:
+      properties:
+        localAddress:
+          $ref: '#/components/schemas/LocalAddress'
+        remoteAddress:
+          $ref: '#/components/schemas/RemoteAddress'
+      type: object
+    EP_F1C_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/EP_RP-Attr'
+      - $ref: '#/components/schemas/EP_F1C_Single_allOf_attributes_allOf'
     EP_F1C_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/EP_RP-Attr'
-          - properties:
-              localAddress:
-                $ref: '#/components/schemas/LocalAddress'
-              remoteAddress:
-                $ref: '#/components/schemas/RemoteAddress'
-            type: object
+          $ref: '#/components/schemas/EP_F1C_Single_allOf_attributes'
       type: object
       example: null
+    EP_F1U_Single_allOf_attributes_allOf:
+      properties:
+        localAddress:
+          $ref: '#/components/schemas/LocalAddress'
+        remoteAddress:
+          $ref: '#/components/schemas/RemoteAddress'
+        epTransportRefs:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+    EP_F1U_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/EP_RP-Attr'
+      - $ref: '#/components/schemas/EP_F1U_Single_allOf_attributes_allOf'
     EP_F1U_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/EP_RP-Attr'
-          - properties:
-              localAddress:
-                $ref: '#/components/schemas/LocalAddress'
-              remoteAddress:
-                $ref: '#/components/schemas/RemoteAddress'
-              epTransportRefs:
-                $ref: '#/components/schemas/DnList'
-            type: object
+          $ref: '#/components/schemas/EP_F1U_Single_allOf_attributes'
       type: object
       example: null
     OperatorDu_Single_allOf:
@@ -9082,25 +9257,35 @@ components:
           type: array
       type: object
       example: null
+    GnbCuUpFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        gnbCuUpId:
+          maximum: 68719476735
+          minimum: 0
+          type: number
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        configurable5QISetRef:
+          type: string
+        dynamic5QISetRef:
+          type: string
+      type: object
+    GnbCuUpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_attributes_allOf'
     GnbCuUpFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              gnbId:
-                $ref: '#/components/schemas/GnbId'
-              gnbIdLength:
-                $ref: '#/components/schemas/GnbIdLength'
-              gnbCuUpId:
-                $ref: '#/components/schemas/GnbCuUpId'
-              plmnInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              configurable5QISetRef:
-                $ref: '#/components/schemas/Dn'
-              dynamic5QISetRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_attributes'
       type: object
       example: null
     GnbCuUpFunction_Single_allOf_1:
@@ -9133,45 +9318,66 @@ components:
           type: array
       type: object
       example: null
+    GnbCuCpFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        gnbCuName:
+          maxLength: 150
+          type: string
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        x2BlockList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        xnBlockList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        x2AllowList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        xnAllowList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        x2HOBlockList:
+          items:
+            $ref: '#/components/schemas/GEnbId'
+          type: array
+        xnHOBlackList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        mappingSetIDBackhaulAddress:
+          $ref: '#/components/schemas/MappingSetIDBackhaulAddress'
+        tceMappingInfoList:
+          items:
+            $ref: '#/components/schemas/TceMappingInfo'
+          type: array
+        configurable5QISetRef:
+          type: string
+        dynamic5QISetRef:
+          type: string
+        dCHOControl:
+          type: boolean
+        dDAPSHOControl:
+          type: boolean
+      type: object
+    GnbCuCpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_attributes_allOf'
     GnbCuCpFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              gnbId:
-                $ref: '#/components/schemas/GnbId'
-              gnbIdLength:
-                $ref: '#/components/schemas/GnbIdLength'
-              gnbCuName:
-                $ref: '#/components/schemas/GnbName'
-              plmnId:
-                $ref: '#/components/schemas/PlmnId'
-              x2BlockList:
-                $ref: '#/components/schemas/GGnbIdList'
-              xnBlockList:
-                $ref: '#/components/schemas/GGnbIdList'
-              x2AllowList:
-                $ref: '#/components/schemas/GGnbIdList'
-              xnAllowList:
-                $ref: '#/components/schemas/GGnbIdList'
-              x2HOBlockList:
-                $ref: '#/components/schemas/GEnbIdList'
-              xnHOBlackList:
-                $ref: '#/components/schemas/GGnbIdList'
-              mappingSetIDBackhaulAddress:
-                $ref: '#/components/schemas/MappingSetIDBackhaulAddress'
-              tceMappingInfoList:
-                $ref: '#/components/schemas/TceMappingInfoList'
-              configurable5QISetRef:
-                $ref: '#/components/schemas/Dn'
-              dynamic5QISetRef:
-                $ref: '#/components/schemas/Dn'
-              dCHOControl:
-                type: boolean
-              dDAPSHOControl:
-                type: boolean
-            type: object
+          $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_attributes'
       type: object
       example: null
     GnbCuCpFunction_Single_allOf_1:
@@ -9218,19 +9424,25 @@ components:
       oneOf:
       - $ref: '#/components/schemas/Ipv4Addr'
       - $ref: '#/components/schemas/Ipv6Addr'
+    NrCellCu_Single_allOf_attributes_allOf:
+      properties:
+        cellLocalId:
+          type: integer
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        nRFrequencyRef:
+          type: string
+      type: object
+    NrCellCu_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrCellCu_Single_allOf_attributes_allOf'
     NrCellCu_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              cellLocalId:
-                type: integer
-              plmnInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              nRFrequencyRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/NrCellCu_Single_allOf_attributes'
       type: object
       example: null
     NrCellCu_Single_allOf_1:
@@ -9295,15 +9507,19 @@ components:
           $ref: '#/components/schemas/NRCellRelation_Single_allOf_attributes'
       type: object
       example: null
+    EUtranCellRelation_Single_allOf_attributes_allOf:
+      properties:
+        adjacentEUtranCellRef:
+          type: string
+      type: object
+    EUtranCellRelation_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/EUtranCellRelation_Single_allOf_attributes_allOf'
     EUtranCellRelation_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              adjacentEUtranCellRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/EUtranCellRelation_Single_allOf_attributes'
       type: object
       example: null
     NRFreqRelation_Single_allOf_attributes:
@@ -9604,19 +9820,25 @@ components:
           $ref: '#/components/schemas/NRFrequency_Single_allOf_attributes'
       type: object
       example: null
+    ExternalGnbCuCpFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+      type: object
+    ExternalGnbCuCpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_attributes_allOf'
     ExternalGnbCuCpFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              gnbId:
-                $ref: '#/components/schemas/GnbId'
-              gnbIdLength:
-                $ref: '#/components/schemas/GnbIdLength'
-              plmnId:
-                $ref: '#/components/schemas/PlmnId'
-            type: object
+          $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_attributes'
       type: object
       example: null
     ExternalGnbCuCpFunction_Single_allOf_1:
@@ -9639,32 +9861,43 @@ components:
           type: array
       type: object
       example: null
+    ExternalNrCellCu_Single_allOf_attributes_allOf:
+      properties:
+        cellLocalId:
+          type: integer
+        nrPci:
+          maximum: 503
+          type: integer
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        nRFrequencyRef:
+          type: string
+      type: object
+    ExternalNrCellCu_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf_attributes_allOf'
     ExternalNrCellCu_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              cellLocalId:
-                type: integer
-              nrPci:
-                $ref: '#/components/schemas/NrPci'
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              nRFrequencyRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf_attributes'
       type: object
       example: null
+    ExternalENBFunction_Single_allOf_attributes_allOf:
+      properties:
+        eNBId:
+          type: integer
+      type: object
+    ExternalENBFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_attributes_allOf'
     ExternalENBFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              eNBId:
-                type: integer
-            type: object
+          $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_attributes'
       type: object
       example: null
     ExternalENBFunction_Single_allOf_1:
@@ -9675,15 +9908,19 @@ components:
           type: array
       type: object
       example: null
+    ExternalEUTranCell_Single_allOf_attributes_allOf:
+      properties:
+        EUtranFrequencyRef:
+          type: string
+      type: object
+    ExternalEUTranCell_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf_attributes_allOf'
     ExternalEUTranCell_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              EUtranFrequencyRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf_attributes'
       type: object
       example: null
     EUtranFrequency_Single_allOf_attributes:
@@ -9783,17 +10020,23 @@ components:
           $ref: '#/components/schemas/CCOParameters_Attr_allOf_attributes'
       type: object
       example: null
+    ExternalGnbDuFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+      type: object
+    ExternalGnbDuFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_attributes_allOf'
     ExternalGnbDuFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              gnbId:
-                $ref: '#/components/schemas/GnbId'
-              gnbIdLength:
-                $ref: '#/components/schemas/GnbIdLength'
-            type: object
+          $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_attributes'
       type: object
       example: null
     ExternalGnbDuFunction_Single_allOf_1:
@@ -9824,11 +10067,13 @@ components:
           type: array
       type: object
       example: null
+    SubNetwork_Single_1_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/SubNetwork-Attr'
     SubNetwork_Single_1_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/SubNetwork-Attr'
+          $ref: '#/components/schemas/SubNetwork_Single_1_allOf_attributes'
       type: object
       example: null
     SubNetwork_Single_1_allOf_1:
@@ -9875,78 +10120,124 @@ components:
           type: array
       type: object
       example: null
+    ExternalAmfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        amfIdentifier:
+          $ref: '#/components/schemas/AmfIdentifier'
+      type: object
+    ExternalAmfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalAmfFunction_Single_allOf_attributes_allOf'
     ExternalAmfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              amfIdentifier:
-                $ref: '#/components/schemas/AmfIdentifier'
-            type: object
+          $ref: '#/components/schemas/ExternalAmfFunction_Single_allOf_attributes'
       type: object
       example: null
+    ExternalNrfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+      type: object
+    ExternalNrfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalNrfFunction_Single_allOf_attributes_allOf'
     ExternalNrfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-            type: object
+          $ref: '#/components/schemas/ExternalNrfFunction_Single_allOf_attributes'
       type: object
       example: null
+    AmfSet_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        nRTACList:
+          items:
+            $ref: '#/components/schemas/NrTac'
+          type: array
+        amfSetId:
+          description: AmfSetId is defined in TS 23.003
+          maximum: 1023
+          type: string
+        snssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        aMFRegionRef:
+          type: string
+        aMFSetMemberList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+    AmfSet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/AmfSet_Single_allOf_attributes_allOf'
     AmfSet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              nRTACList:
-                $ref: '#/components/schemas/TACList'
-              amfSetId:
-                $ref: '#/components/schemas/AmfSetId'
-              snssaiList:
-                $ref: '#/components/schemas/SnssaiList'
-              aMFRegionRef:
-                $ref: '#/components/schemas/Dn'
-              aMFSetMemberList:
-                $ref: '#/components/schemas/DnList'
-            type: object
+          $ref: '#/components/schemas/AmfSet_Single_allOf_attributes'
       type: object
       example: null
+    AmfRegion_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        nRTACList:
+          items:
+            $ref: '#/components/schemas/NrTac'
+          type: array
+        amfRegionId:
+          description: AmfRegionId is defined in TS 23.003
+          maximum: 255
+          type: integer
+        snssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        aMFSetListRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+    AmfRegion_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/AmfRegion_Single_allOf_attributes_allOf'
     AmfRegion_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              nRTACList:
-                $ref: '#/components/schemas/TACList'
-              amfRegionId:
-                $ref: '#/components/schemas/AmfRegionId'
-              snssaiList:
-                $ref: '#/components/schemas/SnssaiList'
-              aMFSetListRef:
-                $ref: '#/components/schemas/DnList'
-            type: object
+          $ref: '#/components/schemas/AmfRegion_Single_allOf_attributes'
       type: object
       example: null
+    Configurable5QISet_Single_allOf_attributes_allOf:
+      properties:
+        configurable5QIs:
+          items:
+            $ref: '#/components/schemas/FiveQICharacteristics-Single'
+          type: array
+      type: object
+    Configurable5QISet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/Configurable5QISet_Single_allOf_attributes_allOf'
     Configurable5QISet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              configurable5QIs:
-                $ref: '#/components/schemas/FiveQICharacteristics-Multiple'
-            type: object
+          $ref: '#/components/schemas/Configurable5QISet_Single_allOf_attributes'
       type: object
       example: null
     FiveQICharacteristics_Single_allOf:
@@ -9970,53 +10261,67 @@ components:
           type: integer
       type: object
       example: null
+    Dynamic5QISet_Single_allOf_attributes_allOf:
+      properties:
+        dynamic5QIs:
+          items:
+            $ref: '#/components/schemas/FiveQICharacteristics-Single'
+          type: array
+      type: object
+    Dynamic5QISet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/Dynamic5QISet_Single_allOf_attributes_allOf'
     Dynamic5QISet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              dynamic5QIs:
-                $ref: '#/components/schemas/FiveQICharacteristics-Multiple'
-            type: object
+          $ref: '#/components/schemas/Dynamic5QISet_Single_allOf_attributes'
       type: object
       example: null
+    EcmConnectionInfo_Single_allOf_attributes_allOf:
+      properties:
+        eASServiceArea:
+          $ref: '#/components/schemas/ServingLocation'
+        eESServiceArea:
+          $ref: '#/components/schemas/ServingLocation'
+        eDNServiceArea:
+          $ref: '#/components/schemas/ServingLocation'
+        eASIpAddress:
+          type: string
+        eESIpAddress:
+          type: string
+        eCSIpAddress:
+          type: string
+        ednIdentifier:
+          type: string
+        ecmConnectionType:
+          enum:
+          - USERPLANE
+          - CONTROLPLANE
+          - BOTH
+          type: string
+        "5GCNfConnEcmInfoList":
+          items:
+            $ref: '#/components/schemas/5GCNfConnEcmInfo'
+          type: array
+        uPFConnectionInfo:
+          $ref: '#/components/schemas/UPFConnectionInfo'
+      type: object
+    EcmConnectionInfo_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/EcmConnectionInfo_Single_allOf_attributes_allOf'
     EcmConnectionInfo_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              eASServiceArea:
-                $ref: '#/components/schemas/ServingLocation'
-              eESServiceArea:
-                $ref: '#/components/schemas/ServingLocation'
-              eDNServiceArea:
-                $ref: '#/components/schemas/ServingLocation'
-              eASIpAddress:
-                type: string
-              eESIpAddress:
-                type: string
-              eCSIpAddress:
-                type: string
-              ednIdentifier:
-                type: string
-              ecmConnectionType:
-                enum:
-                - USERPLANE
-                - CONTROLPLANE
-                - BOTH
-                type: string
-              "5GCNfConnEcmInfoList":
-                $ref: '#/components/schemas/5GCNfConnEcmInfoList'
-              uPFConnectionInfo:
-                $ref: '#/components/schemas/UPFConnectionInfo'
-            type: object
+          $ref: '#/components/schemas/EcmConnectionInfo_Single_allOf_attributes'
       type: object
       example: null
+    ManagedElement_Single_1_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedElement-Attr'
     ManagedElement_Single_1_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedElement-Attr'
+          $ref: '#/components/schemas/ManagedElement_Single_1_allOf_attributes'
       type: object
       example: null
     ManagedElement_Single_1_allOf_1:
@@ -10111,49 +10416,61 @@ components:
           type: array
       type: object
       example: null
+    AmfFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        amfIdentifier:
+          $ref: '#/components/schemas/AmfIdentifier'
+        sBIFqdn:
+          type: string
+        interPlmnFQDN:
+          type: string
+        taiList:
+          items:
+            $ref: '#/components/schemas/Tai'
+          type: array
+        taiRangeList:
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          type: array
+        weightFactor:
+          type: integer
+        cNSIIdList:
+          items:
+            $ref: '#/components/schemas/CNSIId'
+          type: array
+        gUAMIdList:
+          items:
+            $ref: '#/components/schemas/GUAMInfo'
+          type: array
+        backupInfoAmfFailure:
+          items:
+            $ref: '#/components/schemas/GUAMInfo'
+          type: array
+        backupInfoAmfRemoval:
+          items:
+            $ref: '#/components/schemas/GUAMInfo'
+          type: array
+        amfSetRef:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    AmfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/AmfFunction_Single_allOf_attributes_allOf'
     AmfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              amfIdentifier:
-                $ref: '#/components/schemas/AmfIdentifier'
-              sBIFqdn:
-                type: string
-              interPlmnFQDN:
-                type: string
-              taiList:
-                $ref: '#/components/schemas/TaiList'
-              taiRangeList:
-                items:
-                  $ref: '#/components/schemas/TaiRange'
-                type: array
-              weightFactor:
-                $ref: '#/components/schemas/WeightFactor'
-              cNSIIdList:
-                $ref: '#/components/schemas/CNSIIdList'
-              gUAMIdList:
-                items:
-                  $ref: '#/components/schemas/GUAMInfo'
-                type: array
-              backupInfoAmfFailure:
-                items:
-                  $ref: '#/components/schemas/GUAMInfo'
-                type: array
-              backupInfoAmfRemoval:
-                items:
-                  $ref: '#/components/schemas/GUAMInfo'
-                type: array
-              amfSetRef:
-                $ref: '#/components/schemas/Dn'
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/AmfFunction_Single_allOf_attributes'
       type: object
       example: null
     AmfFunction_Single_allOf_1:
@@ -10208,55 +10525,69 @@ components:
           type: array
       type: object
       example: null
+    SmfFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        nRTACList:
+          items:
+            $ref: '#/components/schemas/NrTac'
+          type: array
+        sBIFqdn:
+          type: string
+        sNssaiSmfInfoList:
+          items:
+            $ref: '#/components/schemas/SNssaiSmfInfoItem'
+          type: array
+        taiList:
+          items:
+            $ref: '#/components/schemas/Tai'
+          type: array
+        taiRangeList:
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          type: array
+        pwgFqdn:
+          type: string
+        pgwAddrList:
+          items:
+            $ref: '#/components/schemas/IpAddr_1'
+          type: array
+        accessType:
+          $ref: '#/components/schemas/AccessType'
+        priority:
+          type: integer
+        cNSIIdList:
+          items:
+            $ref: '#/components/schemas/CNSIId'
+          type: array
+        vsmfSupportInd:
+          type: boolean
+        pwgFqdnList:
+          items:
+            type: string
+          type: array
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+        configurable5QISetRef:
+          type: string
+        dynamic5QISetRef:
+          type: string
+      type: object
+    SmfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/SmfFunction_Single_allOf_attributes_allOf'
     SmfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              nRTACList:
-                $ref: '#/components/schemas/TACList'
-              sBIFqdn:
-                type: string
-              sNssaiSmfInfoList:
-                items:
-                  $ref: '#/components/schemas/SNssaiSmfInfoItem'
-                type: array
-              taiList:
-                $ref: '#/components/schemas/TaiList'
-              taiRangeList:
-                items:
-                  $ref: '#/components/schemas/TaiRange'
-                type: array
-              pwgFqdn:
-                type: string
-              pgwAddrList:
-                items:
-                  $ref: '#/components/schemas/IpAddr_1'
-                type: array
-              accessType:
-                $ref: '#/components/schemas/AccessType'
-              priority:
-                type: integer
-              cNSIIdList:
-                $ref: '#/components/schemas/CNSIIdList'
-              vsmfSupportInd:
-                type: boolean
-              pwgFqdnList:
-                items:
-                  type: string
-                type: array
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-              configurable5QISetRef:
-                $ref: '#/components/schemas/Dn'
-              dynamic5QISetRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/SmfFunction_Single_allOf_attributes'
       type: object
       example: null
     SmfFunction_Single_allOf_1:
@@ -10295,159 +10626,189 @@ components:
           $ref: '#/components/schemas/PredefinedPccRuleSet-Single'
       type: object
       example: null
+    FiveQiDscpMappingSet_Single_allOf_attributes_allOf:
+      properties:
+        FiveQiDscpMappingList:
+          items:
+            $ref: '#/components/schemas/FiveQiDscpMapping'
+          type: array
+      type: object
+    FiveQiDscpMappingSet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/FiveQiDscpMappingSet_Single_allOf_attributes_allOf'
     FiveQiDscpMappingSet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              FiveQiDscpMappingList:
-                items:
-                  $ref: '#/components/schemas/FiveQiDscpMapping'
-                type: array
-            type: object
+          $ref: '#/components/schemas/FiveQiDscpMappingSet_Single_allOf_attributes'
       type: object
       example: null
+    GtpUPathQoSMonitoringControl_Single_allOf_attributes_allOf:
+      properties:
+        gtpUPathQoSMonitoringState:
+          enum:
+          - ENABLED
+          - DISABLED
+          type: string
+        gtpUPathMonitoredSNSSAIs:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        monitoredDSCPs:
+          items:
+            maximum: 255
+            minimum: 0
+            type: integer
+          type: array
+        isEventTriggeredGtpUPathMonitoringSupported:
+          type: boolean
+        isPeriodicGtpUMonitoringSupported:
+          type: boolean
+        isImmediateGtpUMonitoringSupported:
+          type: boolean
+        gtpUPathDelayThresholds:
+          $ref: '#/components/schemas/GtpUPathDelayThresholdsType'
+        gtpUPathMinimumWaitTime:
+          type: integer
+        gtpUPathMeasurementPeriod:
+          type: integer
+      type: object
+    GtpUPathQoSMonitoringControl_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/GtpUPathQoSMonitoringControl_Single_allOf_attributes_allOf'
     GtpUPathQoSMonitoringControl_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              gtpUPathQoSMonitoringState:
-                enum:
-                - ENABLED
-                - DISABLED
-                type: string
-              gtpUPathMonitoredSNSSAIs:
-                items:
-                  $ref: '#/components/schemas/Snssai'
-                type: array
-              monitoredDSCPs:
-                items:
-                  maximum: 255
-                  minimum: 0
-                  type: integer
-                type: array
-              isEventTriggeredGtpUPathMonitoringSupported:
-                type: boolean
-              isPeriodicGtpUMonitoringSupported:
-                type: boolean
-              isImmediateGtpUMonitoringSupported:
-                type: boolean
-              gtpUPathDelayThresholds:
-                $ref: '#/components/schemas/GtpUPathDelayThresholdsType'
-              gtpUPathMinimumWaitTime:
-                type: integer
-              gtpUPathMeasurementPeriod:
-                type: integer
-            type: object
+          $ref: '#/components/schemas/GtpUPathQoSMonitoringControl_Single_allOf_attributes'
       type: object
       example: null
+    QFQoSMonitoringControl_Single_allOf_attributes_allOf:
+      properties:
+        qFQoSMonitoringState:
+          enum:
+          - ENABLED
+          - DISABLED
+          type: string
+        qFMonitoredSNSSAIs:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        qFMonitored5QIs:
+          items:
+            maximum: 255
+            minimum: 0
+            type: integer
+          type: array
+        isEventTriggeredQFMonitoringSupported:
+          type: boolean
+        isPeriodicQFMonitoringSupported:
+          type: boolean
+        isSessionReleasedQFMonitoringSupported:
+          type: boolean
+        qFPacketDelayThresholds:
+          $ref: '#/components/schemas/QFPacketDelayThresholdsType'
+        qFMinimumWaitTime:
+          type: integer
+        qFMeasurementPeriod:
+          type: integer
+      type: object
+    QFQoSMonitoringControl_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/QFQoSMonitoringControl_Single_allOf_attributes_allOf'
     QFQoSMonitoringControl_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              qFQoSMonitoringState:
-                enum:
-                - ENABLED
-                - DISABLED
-                type: string
-              qFMonitoredSNSSAIs:
-                items:
-                  $ref: '#/components/schemas/Snssai'
-                type: array
-              qFMonitored5QIs:
-                items:
-                  maximum: 255
-                  minimum: 0
-                  type: integer
-                type: array
-              isEventTriggeredQFMonitoringSupported:
-                type: boolean
-              isPeriodicQFMonitoringSupported:
-                type: boolean
-              isSessionReleasedQFMonitoringSupported:
-                type: boolean
-              qFPacketDelayThresholds:
-                $ref: '#/components/schemas/QFPacketDelayThresholdsType'
-              qFMinimumWaitTime:
-                type: integer
-              qFMeasurementPeriod:
-                type: integer
-            type: object
+          $ref: '#/components/schemas/QFQoSMonitoringControl_Single_allOf_attributes'
       type: object
       example: null
+    PredefinedPccRuleSet_Single_allOf_attributes_allOf:
+      properties:
+        predefinedPccRules:
+          items:
+            $ref: '#/components/schemas/PccRule'
+          type: array
+      type: object
+    PredefinedPccRuleSet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/PredefinedPccRuleSet_Single_allOf_attributes_allOf'
     PredefinedPccRuleSet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              predefinedPccRules:
-                items:
-                  $ref: '#/components/schemas/PccRule'
-                type: array
-            type: object
+          $ref: '#/components/schemas/PredefinedPccRuleSet_Single_allOf_attributes'
       type: object
       example: null
+    UpfFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        nRTACList:
+          items:
+            $ref: '#/components/schemas/NrTac'
+          type: array
+        cNSIIdList:
+          items:
+            $ref: '#/components/schemas/CNSIId'
+          type: array
+        smfServingArea:
+          type: string
+        interfaceUpfInfoList:
+          items:
+            $ref: '#/components/schemas/InterfaceUpfInfoItem'
+          type: array
+        iwkEpsInd:
+          type: boolean
+        pduSessionTypes:
+          enum:
+          - IPV4
+          - IPV6
+          - IPV4V6
+          - UNSTRUCTURED
+          - ETHERNET
+          type: string
+        atsssCapability:
+          $ref: '#/components/schemas/AtsssCapability'
+        ueIpAddrInd:
+          type: boolean
+        taiList:
+          items:
+            $ref: '#/components/schemas/Tai'
+          type: array
+        taiRangeList:
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          type: array
+        wAgfInfo:
+          $ref: '#/components/schemas/IpInterface'
+        tngfInfo:
+          $ref: '#/components/schemas/IpInterface'
+        twifInfo:
+          $ref: '#/components/schemas/IpInterface'
+        priority:
+          type: integer
+        redundantGtpu:
+          type: boolean
+        ipups:
+          type: boolean
+        dataForwarding:
+          type: boolean
+        supportedPfcpFeatures:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        supportedBMOList:
+          items:
+            type: string
+          type: array
+      type: object
+    UpfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/UpfFunction_Single_allOf_attributes_allOf'
     UpfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              nRTACList:
-                $ref: '#/components/schemas/TACList'
-              cNSIIdList:
-                $ref: '#/components/schemas/CNSIIdList'
-              smfServingArea:
-                type: string
-              interfaceUpfInfoList:
-                items:
-                  $ref: '#/components/schemas/InterfaceUpfInfoItem'
-                type: array
-              iwkEpsInd:
-                type: boolean
-              pduSessionTypes:
-                enum:
-                - IPV4
-                - IPV6
-                - IPV4V6
-                - UNSTRUCTURED
-                - ETHERNET
-                type: string
-              atsssCapability:
-                $ref: '#/components/schemas/AtsssCapability'
-              ueIpAddrInd:
-                type: boolean
-              taiList:
-                $ref: '#/components/schemas/TaiList'
-              taiRangeList:
-                items:
-                  $ref: '#/components/schemas/TaiRange'
-                type: array
-              wAgfInfo:
-                $ref: '#/components/schemas/IpInterface'
-              tngfInfo:
-                $ref: '#/components/schemas/IpInterface'
-              twifInfo:
-                $ref: '#/components/schemas/IpInterface'
-              priority:
-                type: integer
-              redundantGtpu:
-                type: boolean
-              ipups:
-                type: boolean
-              dataForwarding:
-                type: boolean
-              supportedPfcpFeatures:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              supportedBMOList:
-                $ref: '#/components/schemas/SupportedBMOList'
-            type: object
+          $ref: '#/components/schemas/UpfFunction_Single_allOf_attributes'
       type: object
       example: null
     UpfFunction_Single_allOf_1:
@@ -10474,17 +10835,25 @@ components:
           type: array
       type: object
       example: null
+    N3iwfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    N3iwfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/N3iwfFunction_Single_allOf_attributes_allOf'
     N3iwfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/N3iwfFunction_Single_allOf_attributes'
       type: object
       example: null
     N3iwfFunction_Single_allOf_1:
@@ -10499,49 +10868,63 @@ components:
           type: array
       type: object
       example: null
+    PcfFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+        groupId:
+          type: string
+        dnnList:
+          items:
+            type: string
+          type: array
+        supiRanges:
+          items:
+            $ref: '#/components/schemas/SupiRange'
+          type: array
+        gpsiRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          type: array
+        rxDiamHost:
+          type: string
+        rxDiamRealm:
+          type: string
+        v2xSupportInd:
+          type: boolean
+        proseSupportInd:
+          type: boolean
+        proseCapability:
+          $ref: '#/components/schemas/ProseCapability'
+        v2xCapability:
+          $ref: '#/components/schemas/V2xCapability'
+        configurable5QISetRef:
+          type: string
+        dynamic5QISetRef:
+          type: string
+        supportedBMOList:
+          items:
+            type: string
+          type: array
+      type: object
+    PcfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/PcfFunction_Single_allOf_attributes_allOf'
     PcfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-              groupId:
-                type: string
-              dnnList:
-                items:
-                  type: string
-                type: array
-              supiRanges:
-                $ref: '#/components/schemas/SupiRangeList'
-              gpsiRanges:
-                $ref: '#/components/schemas/IdentityRangeList'
-              rxDiamHost:
-                type: string
-              rxDiamRealm:
-                type: string
-              v2xSupportInd:
-                type: boolean
-              proseSupportInd:
-                type: boolean
-              proseCapability:
-                $ref: '#/components/schemas/ProseCapability'
-              v2xCapability:
-                $ref: '#/components/schemas/V2xCapability'
-              configurable5QISetRef:
-                $ref: '#/components/schemas/Dn'
-              dynamic5QISetRef:
-                $ref: '#/components/schemas/Dn'
-              supportedBMOList:
-                $ref: '#/components/schemas/SupportedBMOList'
-            type: object
+          $ref: '#/components/schemas/PcfFunction_Single_allOf_attributes'
       type: object
       example: null
     PcfFunction_Single_allOf_1:
@@ -10570,23 +10953,31 @@ components:
           $ref: '#/components/schemas/PredefinedPccRuleSet-Single'
       type: object
       example: null
+    AusfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+        ausfInfo:
+          $ref: '#/components/schemas/AusfInfo'
+      type: object
+    AusfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/AusfFunction_Single_allOf_attributes_allOf'
     AusfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-              ausfInfo:
-                $ref: '#/components/schemas/AusfInfo'
-            type: object
+          $ref: '#/components/schemas/AusfFunction_Single_allOf_attributes'
       type: object
       example: null
     AusfFunction_Single_allOf_1:
@@ -10601,39 +10992,59 @@ components:
           type: array
       type: object
       example: null
+    UdmFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+        eCSAddrConfigInfo:
+          items:
+            type: string
+          type: array
+        groupId:
+          type: string
+        supiRanges:
+          items:
+            $ref: '#/components/schemas/SupiRange'
+          type: array
+        gpsiRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          type: array
+        externalGroupIdentifiersRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          type: array
+        routingIndicators:
+          items:
+            type: string
+          type: array
+        internalGroupIdentifiersRanges:
+          items:
+            $ref: '#/components/schemas/InternalGroupIdRange'
+          type: array
+        suciInfos:
+          items:
+            $ref: '#/components/schemas/SuciInfo'
+          type: array
+      type: object
+    UdmFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/UdmFunction_Single_allOf_attributes_allOf'
     UdmFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-              eCSAddrConfigInfo:
-                $ref: '#/components/schemas/ECSAddrConfigInfo'
-              groupId:
-                type: string
-              supiRanges:
-                $ref: '#/components/schemas/SupiRangeList'
-              gpsiRanges:
-                $ref: '#/components/schemas/IdentityRangeList'
-              externalGroupIdentifiersRanges:
-                $ref: '#/components/schemas/IdentityRangeList'
-              routingIndicators:
-                items:
-                  type: string
-                type: array
-              internalGroupIdentifiersRanges:
-                $ref: '#/components/schemas/InternalGroupIdRangeList'
-              suciInfos:
-                $ref: '#/components/schemas/SuciInfoList'
-            type: object
+          $ref: '#/components/schemas/UdmFunction_Single_allOf_attributes'
       type: object
       example: null
     UdmFunction_Single_allOf_1:
@@ -10652,67 +11063,102 @@ components:
           type: array
       type: object
       example: null
+    UdrFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        groupId:
+          type: string
+        supiRanges:
+          items:
+            $ref: '#/components/schemas/SupiRange'
+          type: array
+        gpsiRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          type: array
+        externalGroupIdentifiersRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          type: array
+        supportedDataSets:
+          items:
+            $ref: '#/components/schemas/SupportedDataSet'
+          type: array
+        sharedDataIdRanges:
+          items:
+            $ref: '#/components/schemas/SharedDataIdRange'
+          type: array
+      type: object
+    UdrFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/UdrFunction_Single_allOf_attributes_allOf'
     UdrFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              groupId:
-                type: string
-              supiRanges:
-                $ref: '#/components/schemas/SupiRangeList'
-              gpsiRanges:
-                $ref: '#/components/schemas/IdentityRangeList'
-              externalGroupIdentifiersRanges:
-                $ref: '#/components/schemas/IdentityRangeList'
-              supportedDataSets:
-                $ref: '#/components/schemas/SupportedDataSetList'
-              sharedDataIdRanges:
-                $ref: '#/components/schemas/SharedDataIdRangeList'
-            type: object
+          $ref: '#/components/schemas/UdrFunction_Single_allOf_attributes'
       type: object
       example: null
+    UdsfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        udsfInfo:
+          $ref: '#/components/schemas/UdsfInfo'
+      type: object
+    UdsfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/UdsfFunction_Single_allOf_attributes_allOf'
     UdsfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              udsfInfo:
-                $ref: '#/components/schemas/UdsfInfo'
-            type: object
+          $ref: '#/components/schemas/UdsfFunction_Single_allOf_attributes'
       type: object
       example: null
+    NrfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        sBIFqdn:
+          type: string
+        cNSIIdList:
+          items:
+            $ref: '#/components/schemas/CNSIId'
+          type: array
+        nFProfileList:
+          description: List of NF profile
+          items:
+            $ref: '#/components/schemas/NFProfile'
+          type: array
+        snssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+      type: object
+    NrfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrfFunction_Single_allOf_attributes_allOf'
     NrfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              sBIFqdn:
-                type: string
-              cNSIIdList:
-                $ref: '#/components/schemas/CNSIIdList'
-              nFProfileList:
-                $ref: '#/components/schemas/NFProfileList'
-              snssaiList:
-                $ref: '#/components/schemas/SnssaiList'
-            type: object
+          $ref: '#/components/schemas/NrfFunction_Single_allOf_attributes'
       type: object
       example: null
     NrfFunction_Single_allOf_1:
@@ -10723,23 +11169,36 @@ components:
           type: array
       type: object
       example: null
+    NssfFunction_Single_allOf_attributes_allOf:
+      properties:
+        pLMNInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        sBIFqdn:
+          type: string
+        cNSIIdList:
+          items:
+            $ref: '#/components/schemas/CNSIId'
+          type: array
+        nFProfileList:
+          description: List of NF profile
+          items:
+            $ref: '#/components/schemas/NFProfile'
+          type: array
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    NssfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NssfFunction_Single_allOf_attributes_allOf'
     NssfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              pLMNInfoList:
-                $ref: '#/components/schemas/PlmnInfoList'
-              sBIFqdn:
-                type: string
-              cNSIIdList:
-                $ref: '#/components/schemas/CNSIIdList'
-              nFProfileList:
-                $ref: '#/components/schemas/NFProfileList'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/NssfFunction_Single_allOf_attributes'
       type: object
       example: null
     NssfFunction_Single_allOf_1:
@@ -10754,21 +11213,29 @@ components:
           type: array
       type: object
       example: null
+    SmsfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    SmsfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/SmsfFunction_Single_allOf_attributes_allOf'
     SmsfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/SmsfFunction_Single_allOf_attributes'
       type: object
       example: null
     SmsfFunction_Single_allOf_1:
@@ -10787,19 +11254,27 @@ components:
           type: array
       type: object
       example: null
+    LmfFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    LmfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/LmfFunction_Single_allOf_attributes_allOf'
     LmfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/LmfFunction_Single_allOf_attributes'
       type: object
       example: null
     LmfFunction_Single_allOf_1:
@@ -10810,23 +11285,33 @@ components:
           type: array
       type: object
       example: null
+    NgeirFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        sBIFqdn:
+          type: string
+        snssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    NgeirFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NgeirFunction_Single_allOf_attributes_allOf'
     NgeirFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              sBIFqdn:
-                type: string
-              snssaiList:
-                $ref: '#/components/schemas/SnssaiList'
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/NgeirFunction_Single_allOf_attributes'
       type: object
       example: null
     NgeirFunction_Single_allOf_1:
@@ -10837,23 +11322,27 @@ components:
           type: array
       type: object
       example: null
+    SeppFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        sEPPType:
+          $ref: '#/components/schemas/SEPPType'
+        sEPPId:
+          type: integer
+        fqdn:
+          type: string
+        seppInfo:
+          $ref: '#/components/schemas/SeppInfo'
+      type: object
+    SeppFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/SeppFunction_Single_allOf_attributes_allOf'
     SeppFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnId:
-                $ref: '#/components/schemas/PlmnId'
-              sEPPType:
-                $ref: '#/components/schemas/SEPPType'
-              sEPPId:
-                type: integer
-              fqdn:
-                $ref: '#/components/schemas/Fqdn'
-              seppInfo:
-                $ref: '#/components/schemas/SeppInfo'
-            type: object
+          $ref: '#/components/schemas/SeppFunction_Single_allOf_attributes'
       type: object
       example: null
     SeppFunction_Single_allOf_1:
@@ -10864,133 +11353,158 @@ components:
           type: array
       type: object
       example: null
+    EP_N32_Single_allOf_attributes_allOf:
+      properties:
+        remotePlmnId:
+          $ref: '#/components/schemas/PlmnId'
+        remoteSeppAddress:
+          $ref: '#/components/schemas/HostAddr'
+        remoteSeppId:
+          type: integer
+        n32cParas:
+          type: string
+        n32fPolicy:
+          type: string
+        withIPX:
+          type: boolean
+      type: object
+    EP_N32_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/EP_RP-Attr'
+      - $ref: '#/components/schemas/EP_N32_Single_allOf_attributes_allOf'
     EP_N32_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/EP_RP-Attr'
-          - properties:
-              remotePlmnId:
-                $ref: '#/components/schemas/PlmnId'
-              remoteSeppAddress:
-                $ref: '#/components/schemas/HostAddr'
-              remoteSeppId:
-                type: integer
-              n32cParas:
-                type: string
-              n32fPolicy:
-                type: string
-              withIPX:
-                type: boolean
-            type: object
+          $ref: '#/components/schemas/EP_N32_Single_allOf_attributes'
       type: object
       example: null
+    NwdafFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        sBIFqdn:
+          type: string
+        snssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+        networkSliceInfoList:
+          items:
+            $ref: '#/components/schemas/NetworkSliceInfo'
+          type: array
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        nwdafInfo:
+          $ref: '#/components/schemas/NwdafInfo'
+      type: object
+    NwdafFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NwdafFunction_Single_allOf_attributes_allOf'
     NwdafFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnIdList:
-                $ref: '#/components/schemas/PlmnIdList'
-              sBIFqdn:
-                type: string
-              snssaiList:
-                $ref: '#/components/schemas/SnssaiList'
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-              networkSliceInfoList:
-                $ref: '#/components/schemas/NetworkSliceInfoList'
-              administrativeState:
-                $ref: '#/components/schemas/AdministrativeState'
-              nwdafInfo:
-                $ref: '#/components/schemas/NwdafInfo'
-            type: object
+          $ref: '#/components/schemas/NwdafFunction_Single_allOf_attributes'
       type: object
       example: null
+    ScpFunction_Single_allOf_attributes_allOf:
+      properties:
+        supportedFuncList:
+          items:
+            $ref: '#/components/schemas/SupportedFunc'
+          type: array
+        address:
+          $ref: '#/components/schemas/HostAddr'
+        scpInfo:
+          $ref: '#/components/schemas/ScpInfo'
+      type: object
+    ScpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ScpFunction_Single_allOf_attributes_allOf'
     ScpFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              supportedFuncList:
-                $ref: '#/components/schemas/SupportedFuncList'
-              address:
-                $ref: '#/components/schemas/HostAddr'
-              scpInfo:
-                $ref: '#/components/schemas/ScpInfo'
-            type: object
+          $ref: '#/components/schemas/ScpFunction_Single_allOf_attributes'
       type: object
       example: null
-    IpReachability_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      type: string
-      example: null
+    NefFunction_Single_allOf_attributes_allOf:
+      properties:
+        sBIFqdn:
+          type: string
+        snssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          type: array
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        capabilityList:
+          items:
+            type: string
+          type: array
+        isCAPIFSup:
+          type: boolean
+        taiList:
+          items:
+            $ref: '#/components/schemas/Tai'
+          type: array
+        taiRangeList:
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          type: array
+        dnai:
+          type: string
+        nefId:
+          type: string
+        pfdData:
+          $ref: '#/components/schemas/PfdData'
+        afEeData:
+          $ref: '#/components/schemas/AfEventExposureData'
+        gpsiRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          minItems: 1
+          type: array
+        externalGroupIdentifiersRanges:
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          minItems: 1
+          type: array
+        servedFqdnList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        dnaiList:
+          items:
+            $ref: '#/components/schemas/Dnai'
+          minItems: 1
+          type: array
+        unTrustAfInfoList:
+          items:
+            $ref: '#/components/schemas/UnTrustAfInfo'
+          minItems: 1
+          type: array
+        uasNfFunctionalityInd:
+          default: false
+          type: boolean
+      type: object
+    NefFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NefFunction_Single_allOf_attributes_allOf'
     NefFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              sBIFqdn:
-                type: string
-              snssaiList:
-                $ref: '#/components/schemas/SnssaiList'
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              capabilityList:
-                $ref: '#/components/schemas/CapabilityList'
-              isCAPIFSup:
-                type: boolean
-              taiList:
-                $ref: '#/components/schemas/TaiList'
-              taiRangeList:
-                items:
-                  $ref: '#/components/schemas/TaiRange'
-                type: array
-              dnai:
-                type: string
-              nefId:
-                type: string
-              pfdData:
-                $ref: '#/components/schemas/PfdData'
-              afEeData:
-                $ref: '#/components/schemas/AfEventExposureData'
-              gpsiRanges:
-                items:
-                  $ref: '#/components/schemas/IdentityRange'
-                minItems: 1
-                type: array
-              externalGroupIdentifiersRanges:
-                items:
-                  $ref: '#/components/schemas/IdentityRange'
-                minItems: 1
-                type: array
-              servedFqdnList:
-                items:
-                  type: string
-                minItems: 1
-                type: array
-              dnaiList:
-                items:
-                  $ref: '#/components/schemas/Dnai'
-                minItems: 1
-                type: array
-              unTrustAfInfoList:
-                items:
-                  $ref: '#/components/schemas/UnTrustAfInfo'
-                minItems: 1
-                type: array
-              uasNfFunctionalityInd:
-                default: false
-                type: boolean
-            type: object
+          $ref: '#/components/schemas/NefFunction_Single_allOf_attributes'
       type: object
       example: null
     NefFunction_Single_allOf_1:
@@ -11001,42 +11515,29 @@ components:
           type: array
       type: object
       example: null
-    AfEvent_anyOf:
-      enum:
-      - SVC_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMM
-      - EXCEPTIONS
-      - USER_DATA_CONGESTION
-      - PERF_DATA
-      - DISPERSION
-      - COLLECTIVE_BEHAVIOUR
-      - MS_QOE_METRICS
-      - MS_CONSUMPTION
-      - MS_NET_ASSIST_INVOCATION
-      - MS_DYN_POLICY_INVOCATION
-      - MS_ACCESS_ACTIVITY
-      type: string
-      example: null
     DnnInfoItem_dnn:
       anyOf:
       - $ref: '#/components/schemas/Dnn'
       - $ref: '#/components/schemas/WildcardDnn'
+    EASDFFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        serverAddr:
+          type: string
+      type: object
+    EASDFFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/EASDFFunction_Single_allOf_attributes_allOf'
     EASDFFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnId:
-                $ref: '#/components/schemas/PlmnId'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              serverAddr:
-                type: string
-            type: object
+          $ref: '#/components/schemas/EASDFFunction_Single_allOf_attributes'
       type: object
       example: null
     EASDFFunction_Single_allOf_1:
@@ -11047,21 +11548,25 @@ components:
           type: array
       type: object
       example: null
+    NsacfFunction_Single_allOf_attributes_allOf:
+      properties:
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        nsacfInfoSnssai:
+          items:
+            $ref: '#/components/schemas/NsacfInfoSnssai'
+          type: array
+        nsacfInfo:
+          $ref: '#/components/schemas/NsacfInfo'
+      type: object
+    NsacfFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NsacfFunction_Single_allOf_attributes_allOf'
     NsacfFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              nsacfInfoSnssai:
-                items:
-                  $ref: '#/components/schemas/NsacfInfoSnssai'
-                type: array
-              nsacfInfo:
-                $ref: '#/components/schemas/NsacfInfo'
-            type: object
+          $ref: '#/components/schemas/NsacfFunction_Single_allOf_attributes'
       type: object
       example: null
     NsacfFunction_Single_allOf_1:
@@ -11072,21 +11577,27 @@ components:
           type: array
       type: object
       example: null
+    DDNMFFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        sBIFqdn:
+          type: string
+        managedNFProfile:
+          $ref: '#/components/schemas/ManagedNFProfile'
+        commModelList:
+          items:
+            $ref: '#/components/schemas/CommModel'
+          type: array
+      type: object
+    DDNMFFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/DDNMFFunction_Single_allOf_attributes_allOf'
     DDNMFFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnId:
-                $ref: '#/components/schemas/PlmnId'
-              sBIFqdn:
-                type: string
-              managedNFProfile:
-                $ref: '#/components/schemas/ManagedNFProfile'
-              commModelList:
-                $ref: '#/components/schemas/CommModelList'
-            type: object
+          $ref: '#/components/schemas/DDNMFFunction_Single_allOf_attributes'
       type: object
       example: null
     DDNMFFunction_Single_allOf_1:
@@ -11109,19 +11620,23 @@ components:
           type: array
       type: object
       example: null
+    ExternalSeppFunction_Single_allOf_attributes_allOf:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        sEPPId:
+          type: integer
+        fqdn:
+          type: string
+      type: object
+    ExternalSeppFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalSeppFunction_Single_allOf_attributes_allOf'
     ExternalSeppFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              plmnId:
-                $ref: '#/components/schemas/PlmnId'
-              sEPPId:
-                type: integer
-              fqdn:
-                $ref: '#/components/schemas/Fqdn'
-            type: object
+          $ref: '#/components/schemas/ExternalSeppFunction_Single_allOf_attributes'
       type: object
       example: null
     SubNetwork_Single_2_allOf:
@@ -11152,50 +11667,68 @@ components:
           type: array
       type: object
       example: null
+    NetworkSlice_Single_allOf_attributes_allOf:
+      properties:
+        networkSliceSubnetRef:
+          type: string
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        serviceProfileList:
+          items:
+            $ref: '#/components/schemas/ServiceProfile'
+          type: array
+      type: object
+    NetworkSlice_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/NetworkSlice_Single_allOf_attributes_allOf'
     NetworkSlice_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              networkSliceSubnetRef:
-                $ref: '#/components/schemas/Dn'
-              operationalState:
-                $ref: '#/components/schemas/OperationalState'
-              administrativeState:
-                $ref: '#/components/schemas/AdministrativeState'
-              serviceProfileList:
-                $ref: '#/components/schemas/ServiceProfileList'
-            type: object
+          $ref: '#/components/schemas/NetworkSlice_Single_allOf_attributes'
       type: object
       example: null
+    NetworkSliceSubnet_Single_allOf_attributes_allOf:
+      properties:
+        managedFunctionRefList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        networkSliceSubnetRefList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        nsInfo:
+          $ref: '#/components/schemas/NsInfo'
+        sliceProfileList:
+          items:
+            $ref: '#/components/schemas/SliceProfile'
+          type: array
+        epTransportRefList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        priorityLabel:
+          type: integer
+        networkSliceSubnetType:
+          enum:
+          - TOP_SLICESUBNET
+          - RAN_SLICESUBNET
+          - CN_SLICESUBNET
+          type: string
+      type: object
+    NetworkSliceSubnet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/NetworkSliceSubnet_Single_allOf_attributes_allOf'
     NetworkSliceSubnet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              managedFunctionRefList:
-                $ref: '#/components/schemas/DnList'
-              networkSliceSubnetRefList:
-                $ref: '#/components/schemas/DnList'
-              operationalState:
-                $ref: '#/components/schemas/OperationalState'
-              administrativeState:
-                $ref: '#/components/schemas/AdministrativeState'
-              nsInfo:
-                $ref: '#/components/schemas/NsInfo'
-              sliceProfileList:
-                $ref: '#/components/schemas/SliceProfileList'
-              epTransportRefList:
-                $ref: '#/components/schemas/DnList'
-              priorityLabel:
-                type: integer
-              networkSliceSubnetType:
-                enum:
-                - TOP_SLICESUBNET
-                - RAN_SLICESUBNET
-                - CN_SLICESUBNET
-                type: string
-            type: object
+          $ref: '#/components/schemas/NetworkSliceSubnet_Single_allOf_attributes'
       type: object
       example: null
     EP_Transport_Single_allOf_attributes:
@@ -11314,32 +11847,44 @@ components:
           type: array
       type: object
       example: null
+    AssuranceGoal_Single_allOf_attributes_allOf:
+      properties:
+        observationTime:
+          type: integer
+        assuranceTargetList:
+          items:
+            $ref: '#/components/schemas/AssuranceTarget'
+          type: array
+        assuranceScope:
+          $ref: '#/components/schemas/AssuranceScope'
+        serviceProfileId:
+          type: string
+        sliceProfileId:
+          type: string
+      type: object
+    AssuranceGoal_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/AssuranceGoal_Single_allOf_attributes_allOf'
     AssuranceGoal_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              observationTime:
-                $ref: '#/components/schemas/ObservationTime'
-              assuranceTargetList:
-                $ref: '#/components/schemas/AssuranceTargetList'
-              assuranceScope:
-                $ref: '#/components/schemas/AssuranceScope'
-              serviceProfileId:
-                type: string
-              sliceProfileId:
-                type: string
-            type: object
+          $ref: '#/components/schemas/AssuranceGoal_Single_allOf_attributes'
       type: object
       example: null
+    AssuranceReport_Single_allOf_attributes_allOf:
+      properties:
+        assuranceGoalStatusList:
+          items:
+            $ref: '#/components/schemas/AssuranceGoalStatus'
+          type: array
+      type: object
+    AssuranceReport_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/AssuranceReport_Single_allOf_attributes_allOf'
     AssuranceReport_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              assuranceGoalStatusList:
-                $ref: '#/components/schemas/AssuranceGoalStatusList'
-            type: object
+          $ref: '#/components/schemas/AssuranceReport_Single_allOf_attributes'
       type: object
       example: null
     SubNetwork_Single_3_allOf:
@@ -11362,17 +11907,19 @@ components:
           type: array
       type: object
       example: null
+    Intent_Single_allOf_intentExpectations_inner:
+      oneOf:
+      - $ref: '#/components/schemas/IntentExpectation'
+      - $ref: '#/components/schemas/RadioNetworkExpectation'
+      - $ref: '#/components/schemas/ServiceSupportExpectation'
+      type: object
     Intent_Single_allOf:
       properties:
         userLabel:
           type: string
         intentExpectations:
           items:
-            oneOf:
-            - $ref: '#/components/schemas/IntentExpectation'
-            - $ref: '#/components/schemas/RadioNetworkExpectation'
-            - $ref: '#/components/schemas/ServiceSupportExpectation'
-            type: object
+            $ref: '#/components/schemas/Intent_Single_allOf_intentExpectations_inner'
           type: array
         intentContexts:
           items:
@@ -11447,15 +11994,21 @@ components:
           type: array
       type: object
       example: null
+    MDAFunction_Single_allOf_attributes_allOf:
+      properties:
+        supportedMDACapabilities:
+          items:
+            type: string
+          type: array
+      type: object
+    MDAFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/MDAFunction_Single_allOf_attributes_allOf'
     MDAFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              supportedMDACapabilities:
-                $ref: '#/components/schemas/MDATypes'
-            type: object
+          $ref: '#/components/schemas/MDAFunction_Single_allOf_attributes'
       type: object
       example: null
     MDAFunction_Single_allOf_1:
@@ -11466,24 +12019,32 @@ components:
           type: array
       type: object
       example: null
+    MDARequest_Single_allOf_attributes_allOf:
+      properties:
+        requestedMDAOutputs:
+          items:
+            $ref: '#/components/schemas/MDAOutputPerMDAType'
+          type: array
+        reportingMethod:
+          $ref: '#/components/schemas/ReportingMethod'
+        reportingTarget:
+          type: string
+        analyticsScope:
+          $ref: '#/components/schemas/AnalyticsScopeType'
+        startTime:
+          format: date-time
+          type: string
+        stopTime:
+          format: date-time
+          type: string
+      type: object
+    MDARequest_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MDARequest_Single_allOf_attributes_allOf'
     MDARequest_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              requestedMDAOutputs:
-                $ref: '#/components/schemas/MDAOutputs'
-              reportingMethod:
-                $ref: '#/components/schemas/ReportingMethod'
-              reportingTarget:
-                $ref: '#/components/schemas/ReportingTarget'
-              analyticsScope:
-                $ref: '#/components/schemas/AnalyticsScopeType'
-              startTime:
-                $ref: '#/components/schemas/DateTime'
-              stopTime:
-                $ref: '#/components/schemas/DateTime'
-            type: object
+          $ref: '#/components/schemas/MDARequest_Single_allOf_attributes'
       type: object
       example: null
     AnalyticsSchedule_oneOf:
@@ -11493,13 +12054,11 @@ components:
             $ref: '#/components/schemas/TimeWindow_2'
           type: array
       type: object
-      example: null
     AnalyticsSchedule_oneOf_1:
       properties:
         granularityPeriod:
           type: integer
       type: object
-      example: null
     AnalyticsScopeType_oneOf:
       properties:
         managedEntitiesScope:
@@ -11507,23 +12066,25 @@ components:
             $ref: '#/components/schemas/Dn'
           type: array
       type: object
-      example: null
     AnalyticsScopeType_oneOf_1:
       properties:
         areaScope:
           $ref: '#/components/schemas/GeoArea'
       type: object
-      example: null
+    MDAReport_allOf_attributes_allOf:
+      properties:
+        mDAReportID:
+          type: string
+        mDAOutputs:
+          $ref: '#/components/schemas/MDAOutputs_1'
+      type: object
+    MDAReport_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MDAReport_allOf_attributes_allOf'
     MDAReport_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              mDAReportID:
-                type: string
-              mDAOutputs:
-                $ref: '#/components/schemas/MDAOutputs_1'
-            type: object
+          $ref: '#/components/schemas/MDAReport_allOf_attributes'
       type: object
       example: null
     ManagedElement_Single_3_allOf:
@@ -11550,15 +12111,21 @@ components:
           type: array
       type: object
       example: null
+    MLTrainingFunction_Single_allOf_attributes_allOf:
+      properties:
+        mLEntityList:
+          items:
+            $ref: '#/components/schemas/MLEntity'
+          type: array
+      type: object
+    MLTrainingFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/MLTrainingFunction_Single_allOf_attributes_allOf'
     MLTrainingFunction_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/ManagedFunction-Attr'
-          - properties:
-              mLEntityList:
-                $ref: '#/components/schemas/MLEntityList'
-            type: object
+          $ref: '#/components/schemas/MLTrainingFunction_Single_allOf_attributes'
       type: object
       example: null
     MLTrainingFunction_Single_allOf_1:
@@ -11577,81 +12144,98 @@ components:
           type: array
       type: object
       example: null
+    MLTrainingRequest_Single_allOf_attributes_allOf:
+      properties:
+        mLEntityId:
+          type: string
+        candidateTraingDataSource:
+          items:
+            type: string
+          type: array
+        traingDataQualityScore:
+          format: float
+          type: number
+        trainingRequestSource:
+          type: string
+        requestStatus:
+          $ref: '#/components/schemas/RequestStatus'
+        expectedRuntimeContext:
+          format: date-time
+          type: string
+        performanceRequirements:
+          items:
+            $ref: '#/components/schemas/ModelPerformance'
+          type: array
+        cancelRequest:
+          type: boolean
+        suspendRequest:
+          type: boolean
+      type: object
+    MLTrainingRequest_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MLTrainingRequest_Single_allOf_attributes_allOf'
     MLTrainingRequest_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              mLEntityId:
-                type: string
-              candidateTraingDataSource:
-                items:
-                  type: string
-                type: array
-              traingDataQualityScore:
-                format: float
-                type: number
-              trainingRequestSource:
-                type: string
-              requestStatus:
-                $ref: '#/components/schemas/RequestStatus'
-              expectedRuntimeContext:
-                $ref: '#/components/schemas/DateTime'
-              performanceRequirements:
-                $ref: '#/components/schemas/PerformanceRequirements'
-              cancelRequest:
-                type: boolean
-              suspendRequest:
-                type: boolean
-            type: object
+          $ref: '#/components/schemas/MLTrainingRequest_Single_allOf_attributes'
       type: object
       example: null
+    MLTrainingProcess_Single_allOf_attributes_allOf:
+      properties:
+        mLTrainingProcessId:
+          type: string
+        priority:
+          type: integer
+        terminationConditions:
+          type: string
+        progressStatus:
+          $ref: '#/components/schemas/TrainingProcessMonitor'
+        cancelProcess:
+          type: boolean
+        suspendProcess:
+          type: boolean
+        trainingRequestRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        trainingReportRef:
+          type: string
+      type: object
+    MLTrainingProcess_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MLTrainingProcess_Single_allOf_attributes_allOf'
     MLTrainingProcess_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              mLTrainingProcessId:
-                type: string
-              priority:
-                type: integer
-              terminationConditions:
-                type: string
-              progressStatus:
-                $ref: '#/components/schemas/TrainingProcessMonitor'
-              cancelProcess:
-                type: boolean
-              suspendProcess:
-                type: boolean
-              trainingRequestRef:
-                $ref: '#/components/schemas/DnList'
-              trainingReportRef:
-                $ref: '#/components/schemas/Dn'
-            type: object
+          $ref: '#/components/schemas/MLTrainingProcess_Single_allOf_attributes'
       type: object
       example: null
+    MLTrainingReport_Single_allOf_attributes_allOf:
+      properties:
+        mLEntityId:
+          type: string
+        areConsumerTrainingDataUsed:
+          type: boolean
+        usedConsumerTrainingData:
+          items:
+            type: string
+          type: array
+        confidenceIndication:
+          type: integer
+        modelPerformanceTraining:
+          items:
+            $ref: '#/components/schemas/ModelPerformance'
+          type: array
+        areNewTrainingDataUsed:
+          type: boolean
+      type: object
+    MLTrainingReport_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MLTrainingReport_Single_allOf_attributes_allOf'
     MLTrainingReport_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              mLEntityId:
-                type: string
-              areConsumerTrainingDataUsed:
-                type: boolean
-              usedConsumerTrainingData:
-                items:
-                  type: string
-                type: array
-              confidenceIndication:
-                type: integer
-              modelPerformanceTraining:
-                items:
-                  $ref: '#/components/schemas/ModelPerformance'
-                type: array
-              areNewTrainingDataUsed:
-                type: boolean
-            type: object
+          $ref: '#/components/schemas/MLTrainingReport_Single_allOf_attributes'
       type: object
       example: null
     ManagedElement_Single_4_allOf:
@@ -11662,152 +12246,23 @@ components:
           type: array
       type: object
       example: null
+    ProbableCause_oneOf:
+      anyOf:
+      - enum:
+        - PROBABLE_CAUSE_001
+        - PROBABLE_CAUSE_002
+        - PROBABLE_CAUSE_003
+        - PROBABLE_CAUSE_004
+        - PROBABLE_CAUSE_005
+        type: string
+      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
-      example: null
-    AfSigProtocol_anyOf:
-      enum:
-      - NO_INFORMATION
-      - SIP
-      type: string
-      example: null
-    PreemptionCapability_anyOf:
-      enum:
-      - NOT_PREEMPT
-      - MAY_PREEMPT
-      type: string
-      example: null
-    PreemptionVulnerability_anyOf:
-      enum:
-      - NOT_PREEMPTABLE
-      - PREEMPTABLE
-      type: string
-      example: null
-    FlowStatus_anyOf:
-      enum:
-      - ENABLED-UPLINK
-      - ENABLED-DOWNLINK
-      - ENABLED
-      - DISABLED
-      - REMOVED
-      type: string
-      example: null
-    RedirectAddressType_anyOf:
-      enum:
-      - IPV4_ADDR
-      - IPV6_ADDR
-      - URL
-      - SIP_URI
-      type: string
-      example: null
-    SteeringFunctionality_anyOf:
-      enum:
-      - MPTCP
-      - ATSSS_LL
-      type: string
-      example: null
-    MulticastAccessControl_anyOf:
-      enum:
-      - ALLOWED
-      - NOT_ALLOWED
-      type: string
-      example: null
-    SteerModeValue_anyOf:
-      enum:
-      - ACTIVE_STANDBY
-      - LOAD_BALANCING
-      - SMALLEST_DELAY
-      - PRIORITY_BASED
-      type: string
-      example: null
-    TransportProtocol_anyOf:
-      enum:
-      - TCP
-      type: string
-      example: null
-    EventId_anyOf:
-      enum:
-      - LOAD_LEVEL_INFORMATION
-      - NETWORK_PERFORMANCE
-      - NF_LOAD
-      - SERVICE_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMMUNICATION
-      - QOS_SUSTAINABILITY
-      - ABNORMAL_BEHAVIOUR
-      - USER_DATA_CONGESTION
-      - NSI_LOAD_LEVEL
-      - SM_CONGESTION
-      - DISPERSION
-      - RED_TRANS_EXP
-      - WLAN_PERFORMANCE
-      - DN_PERFORMANCE
-      type: string
-      example: null
-    NwdafEvent_anyOf:
-      enum:
-      - SLICE_LOAD_LEVEL
-      - NETWORK_PERFORMANCE
-      - NF_LOAD
-      - SERVICE_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMMUNICATION
-      - QOS_SUSTAINABILITY
-      - ABNORMAL_BEHAVIOUR
-      - USER_DATA_CONGESTION
-      - NSI_LOAD_LEVEL
-      - DN_PERFORMANCE
-      - DISPERSION
-      - RED_TRANS_EXP
-      - WLAN_PERFORMANCE
-      - SM_CONGESTION
-      type: string
-      example: null
-    RatType_anyOf:
-      enum:
-      - NR
-      - EUTRA
-      - WLAN
-      - VIRTUAL
-      - NBIOT
-      - WIRELINE
-      - WIRELINE_CABLE
-      - WIRELINE_BBF
-      - LTE-M
-      - NR_U
-      - EUTRA_U
-      - TRUSTED_N3GA
-      - TRUSTED_WLAN
-      - UTRA
-      - GERA
-      - NR_LEO
-      - NR_MEO
-      - NR_GEO
-      - NR_OTHER_SAT
-      - NR_REDCAP
-      type: string
-      example: null
-    DnaiChangeType_anyOf:
-      enum:
-      - EARLY
-      - EARLY_LATE
-      - LATE
-      type: string
-      example: null

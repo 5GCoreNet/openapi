@@ -42,7 +42,7 @@ func NewSnpnInfoWithDefaults() *SnpnInfo {
 
 // GetSnpnId returns the SnpnId field value if set, zero value otherwise.
 func (o *SnpnInfo) GetSnpnId() SnpnId {
-	if o == nil || isNil(o.SnpnId) {
+	if o == nil || IsNil(o.SnpnId) {
 		var ret SnpnId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SnpnInfo) GetSnpnId() SnpnId {
 // GetSnpnIdOk returns a tuple with the SnpnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnpnInfo) GetSnpnIdOk() (*SnpnId, bool) {
-	if o == nil || isNil(o.SnpnId) {
+	if o == nil || IsNil(o.SnpnId) {
 		return nil, false
 	}
 	return o.SnpnId, true
@@ -60,7 +60,7 @@ func (o *SnpnInfo) GetSnpnIdOk() (*SnpnId, bool) {
 
 // HasSnpnId returns a boolean if a field has been set.
 func (o *SnpnInfo) HasSnpnId() bool {
-	if o != nil && !isNil(o.SnpnId) {
+	if o != nil && !IsNil(o.SnpnId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SnpnInfo) SetSnpnId(v SnpnId) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *SnpnInfo) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SnpnInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnpnInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -92,7 +92,7 @@ func (o *SnpnInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *SnpnInfo) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SnpnInfo) SetSnssai(v Snssai) {
 }
 
 func (o SnpnInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SnpnInfo) MarshalJSON() ([]byte, error) {
 
 func (o SnpnInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SnpnId) {
+	if !IsNil(o.SnpnId) {
 		toSerialize["snpnId"] = o.SnpnId
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSnpnInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

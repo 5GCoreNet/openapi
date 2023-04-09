@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the BdtReqDataPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BdtReqDataPatch{}
 
-// BdtReqDataPatch A JSON Merge Patch body schema containing modification instruction to be performed on the bdtReqData attribute of the BdtPolicy data structure to indicate whether the BDT warning notification is enabled or disabled. Modifies warnNotifReq from BdtReqData data structure. 
+// BdtReqDataPatch A JSON Merge Patch body schema containing modification instruction to be performed on the bdtReqData attribute of the BdtPolicy data structure to indicate whether the BDT warning notification is enabled or disabled. Modifies warnNotifReq from BdtReqData data structure.
 type BdtReqDataPatch struct {
 	// Indicates whether the BDT warning notification is enabled or disabled.
 	WarnNotifReq *bool `json:"warnNotifReq,omitempty"`
@@ -42,7 +42,7 @@ func NewBdtReqDataPatchWithDefaults() *BdtReqDataPatch {
 
 // GetWarnNotifReq returns the WarnNotifReq field value if set, zero value otherwise.
 func (o *BdtReqDataPatch) GetWarnNotifReq() bool {
-	if o == nil || isNil(o.WarnNotifReq) {
+	if o == nil || IsNil(o.WarnNotifReq) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *BdtReqDataPatch) GetWarnNotifReq() bool {
 // GetWarnNotifReqOk returns a tuple with the WarnNotifReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqDataPatch) GetWarnNotifReqOk() (*bool, bool) {
-	if o == nil || isNil(o.WarnNotifReq) {
+	if o == nil || IsNil(o.WarnNotifReq) {
 		return nil, false
 	}
 	return o.WarnNotifReq, true
@@ -60,7 +60,7 @@ func (o *BdtReqDataPatch) GetWarnNotifReqOk() (*bool, bool) {
 
 // HasWarnNotifReq returns a boolean if a field has been set.
 func (o *BdtReqDataPatch) HasWarnNotifReq() bool {
-	if o != nil && !isNil(o.WarnNotifReq) {
+	if o != nil && !IsNil(o.WarnNotifReq) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *BdtReqDataPatch) SetWarnNotifReq(v bool) {
 }
 
 func (o BdtReqDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o BdtReqDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o BdtReqDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.WarnNotifReq) {
+	if !IsNil(o.WarnNotifReq) {
 		toSerialize["warnNotifReq"] = o.WarnNotifReq
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableBdtReqDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

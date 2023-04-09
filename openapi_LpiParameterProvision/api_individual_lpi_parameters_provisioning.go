@@ -1,7 +1,7 @@
 /*
 3gpp-lpi-pp
 
-API for Location Privacy Indication Parameters Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Location Privacy Indication Parameters Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.2
 */
@@ -13,20 +13,19 @@ package openapi_LpiParameterProvision
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualLPIParametersProvisioningApiService IndividualLPIParametersProvisioningApi service
 type IndividualLPIParametersProvisioningApiService service
 
 type ApiDeleteAnResourceRequest struct {
-	ctx context.Context
-	ApiService *IndividualLPIParametersProvisioningApiService
-	afId string
+	ctx              context.Context
+	ApiService       *IndividualLPIParametersProvisioningApiService
+	afId             string
 	provisionedLpiId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiDeleteAnResourceRequest) Execute() (*http.Response, error) {
 /*
 DeleteAnResource Deletes an already existing LPI Parameters Provisioning resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param provisionedLpiId Identifier of the provisioned LPI parameter resource
- @return ApiDeleteAnResourceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param provisionedLpiId Identifier of the provisioned LPI parameter resource
+	@return ApiDeleteAnResourceRequest
 */
 func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResource(ctx context.Context, afId string, provisionedLpiId string) ApiDeleteAnResourceRequest {
 	return ApiDeleteAnResourceRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:       a,
+		ctx:              ctx,
+		afId:             afId,
 		provisionedLpiId: provisionedLpiId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResource(ctx con
 // Execute executes the request
 func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(r ApiDeleteAnResourceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLPIParametersProvisioningApiService.DeleteAnResource")
@@ -99,9 +98,9 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,10 +194,10 @@ func (a *IndividualLPIParametersProvisioningApiService) DeleteAnResourceExecute(
 }
 
 type ApiFullyUpdateAnResourceRequest struct {
-	ctx context.Context
-	ApiService *IndividualLPIParametersProvisioningApiService
-	afId string
-	provisionedLpiId string
+	ctx                    context.Context
+	ApiService             *IndividualLPIParametersProvisioningApiService
+	afId                   string
+	provisionedLpiId       string
 	lpiParametersProvision *LpiParametersProvision
 }
 
@@ -215,28 +214,29 @@ func (r ApiFullyUpdateAnResourceRequest) Execute() (*LpiParametersProvision, *ht
 /*
 FullyUpdateAnResource Fully updates/replaces an existing LPI Parameters Provisioning resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param provisionedLpiId Identifier of the provisioned LPI parameter resource
- @return ApiFullyUpdateAnResourceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param provisionedLpiId Identifier of the provisioned LPI parameter resource
+	@return ApiFullyUpdateAnResourceRequest
 */
 func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResource(ctx context.Context, afId string, provisionedLpiId string) ApiFullyUpdateAnResourceRequest {
 	return ApiFullyUpdateAnResourceRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:       a,
+		ctx:              ctx,
+		afId:             afId,
 		provisionedLpiId: provisionedLpiId,
 	}
 }
 
 // Execute executes the request
-//  @return LpiParametersProvision
+//
+//	@return LpiParametersProvision
 func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExecute(r ApiFullyUpdateAnResourceRequest) (*LpiParametersProvision, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LpiParametersProvision
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LpiParametersProvision
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLPIParametersProvisioningApiService.FullyUpdateAnResource")
@@ -284,9 +284,9 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -303,8 +303,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -314,8 +314,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -325,8 +325,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -336,8 +336,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -347,8 +347,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -358,8 +358,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -369,8 +369,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -422,10 +422,10 @@ func (a *IndividualLPIParametersProvisioningApiService) FullyUpdateAnResourceExe
 }
 
 type ApiPartialUpdateAnResourceRequest struct {
-	ctx context.Context
-	ApiService *IndividualLPIParametersProvisioningApiService
-	afId string
-	provisionedLpiId string
+	ctx                         context.Context
+	ApiService                  *IndividualLPIParametersProvisioningApiService
+	afId                        string
+	provisionedLpiId            string
 	lpiParametersProvisionPatch *LpiParametersProvisionPatch
 }
 
@@ -442,28 +442,29 @@ func (r ApiPartialUpdateAnResourceRequest) Execute() (*LpiParametersProvision, *
 /*
 PartialUpdateAnResource Partially modifies an existing LPI Parameters Provisioning resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param provisionedLpiId Identifier of the provisioned LPI parameter resource
- @return ApiPartialUpdateAnResourceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param provisionedLpiId Identifier of the provisioned LPI parameter resource
+	@return ApiPartialUpdateAnResourceRequest
 */
 func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResource(ctx context.Context, afId string, provisionedLpiId string) ApiPartialUpdateAnResourceRequest {
 	return ApiPartialUpdateAnResourceRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:       a,
+		ctx:              ctx,
+		afId:             afId,
 		provisionedLpiId: provisionedLpiId,
 	}
 }
 
 // Execute executes the request
-//  @return LpiParametersProvision
+//
+//	@return LpiParametersProvision
 func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceExecute(r ApiPartialUpdateAnResourceRequest) (*LpiParametersProvision, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LpiParametersProvision
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LpiParametersProvision
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLPIParametersProvisioningApiService.PartialUpdateAnResource")
@@ -511,9 +512,9 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -530,8 +531,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -541,8 +542,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -552,8 +553,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -563,8 +564,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -574,8 +575,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -585,8 +586,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -596,8 +597,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -607,8 +608,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -618,8 +619,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -629,8 +630,8 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -649,9 +650,9 @@ func (a *IndividualLPIParametersProvisioningApiService) PartialUpdateAnResourceE
 }
 
 type ApiReadAnResourceRequest struct {
-	ctx context.Context
-	ApiService *IndividualLPIParametersProvisioningApiService
-	afId string
+	ctx              context.Context
+	ApiService       *IndividualLPIParametersProvisioningApiService
+	afId             string
 	provisionedLpiId string
 }
 
@@ -662,28 +663,29 @@ func (r ApiReadAnResourceRequest) Execute() (*LpiParametersProvision, *http.Resp
 /*
 ReadAnResource read an active LPI Parameters Provisioning resource for the AF and the provisioned LPI Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF
- @param provisionedLpiId Identifier of the provisioned LPI parameter resource
- @return ApiReadAnResourceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF
+	@param provisionedLpiId Identifier of the provisioned LPI parameter resource
+	@return ApiReadAnResourceRequest
 */
 func (a *IndividualLPIParametersProvisioningApiService) ReadAnResource(ctx context.Context, afId string, provisionedLpiId string) ApiReadAnResourceRequest {
 	return ApiReadAnResourceRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:       a,
+		ctx:              ctx,
+		afId:             afId,
 		provisionedLpiId: provisionedLpiId,
 	}
 }
 
 // Execute executes the request
-//  @return LpiParametersProvision
+//
+//	@return LpiParametersProvision
 func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r ApiReadAnResourceRequest) (*LpiParametersProvision, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LpiParametersProvision
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LpiParametersProvision
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualLPIParametersProvisioningApiService.ReadAnResource")
@@ -726,9 +728,9 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -745,8 +747,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -756,8 +758,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -767,8 +769,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -778,8 +780,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -789,8 +791,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -800,8 +802,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -811,8 +813,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -822,8 +824,8 @@ func (a *IndividualLPIParametersProvisioningApiService) ReadAnResourceExecute(r 
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

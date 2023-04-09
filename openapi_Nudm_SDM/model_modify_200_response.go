@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // Modify200Response - struct for Modify200Response
 type Modify200Response struct {
-	PatchResult *PatchResult
+	PatchResult     *PatchResult
 	SdmSubscription *SdmSubscription
 }
 
@@ -34,7 +34,6 @@ func SdmSubscriptionAsModify200Response(v *SdmSubscription) Modify200Response {
 		SdmSubscription: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *Modify200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src Modify200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *Modify200Response) GetActualInstance() (interface{}) {
+func (obj *Modify200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableModify200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

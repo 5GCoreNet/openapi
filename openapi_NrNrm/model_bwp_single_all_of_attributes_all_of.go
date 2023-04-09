@@ -19,12 +19,12 @@ var _ MappedNullable = &BwpSingleAllOfAttributesAllOf{}
 
 // BwpSingleAllOfAttributesAllOf struct for BwpSingleAllOfAttributesAllOf
 type BwpSingleAllOfAttributesAllOf struct {
-	BwpContext *BwpContext `json:"bwpContext,omitempty"`
-	IsInitialBwp *IsInitialBwp `json:"isInitialBwp,omitempty"`
-	SubCarrierSpacing *int32 `json:"subCarrierSpacing,omitempty"`
-	CyclicPrefix *CyclicPrefix `json:"cyclicPrefix,omitempty"`
-	StartRB *int32 `json:"startRB,omitempty"`
-	NumberOfRBs *int32 `json:"numberOfRBs,omitempty"`
+	BwpContext        *BwpContext   `json:"bwpContext,omitempty"`
+	IsInitialBwp      *IsInitialBwp `json:"isInitialBwp,omitempty"`
+	SubCarrierSpacing *int32        `json:"subCarrierSpacing,omitempty"`
+	CyclicPrefix      *CyclicPrefix `json:"cyclicPrefix,omitempty"`
+	StartRB           *int32        `json:"startRB,omitempty"`
+	NumberOfRBs       *int32        `json:"numberOfRBs,omitempty"`
 }
 
 // NewBwpSingleAllOfAttributesAllOf instantiates a new BwpSingleAllOfAttributesAllOf object
@@ -237,7 +237,7 @@ func (o *BwpSingleAllOfAttributesAllOf) SetNumberOfRBs(v int32) {
 }
 
 func (o BwpSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableBwpSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

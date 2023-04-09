@@ -19,12 +19,8 @@ var _ MappedNullable = &NotifyAlarmListRebuilt{}
 
 // NotifyAlarmListRebuilt struct for NotifyAlarmListRebuilt
 type NotifyAlarmListRebuilt struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	Reason string `json:"reason"`
+	NotificationHeader
+	Reason                        string                         `json:"reason"`
 	AlarmListAlignmentRequirement *AlarmListAlignmentRequirement `json:"alarmListAlignmentRequirement,omitempty"`
 }
 
@@ -32,7 +28,7 @@ type NotifyAlarmListRebuilt struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyAlarmListRebuilt(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, reason string) *NotifyAlarmListRebuilt {
+func NewNotifyAlarmListRebuilt(reason string, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyAlarmListRebuilt {
 	this := NotifyAlarmListRebuilt{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -49,126 +45,6 @@ func NewNotifyAlarmListRebuilt(href string, notificationId int32, notificationTy
 func NewNotifyAlarmListRebuiltWithDefaults() *NotifyAlarmListRebuilt {
 	this := NotifyAlarmListRebuilt{}
 	return &this
-}
-
-// GetHref returns the Href field value
-func (o *NotifyAlarmListRebuilt) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAlarmListRebuilt) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyAlarmListRebuilt) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyAlarmListRebuilt) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAlarmListRebuilt) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyAlarmListRebuilt) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyAlarmListRebuilt) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAlarmListRebuilt) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyAlarmListRebuilt) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyAlarmListRebuilt) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAlarmListRebuilt) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyAlarmListRebuilt) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyAlarmListRebuilt) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyAlarmListRebuilt) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyAlarmListRebuilt) SetSystemDN(v string) {
-	o.SystemDN = v
 }
 
 // GetReason returns the Reason field value
@@ -197,7 +73,7 @@ func (o *NotifyAlarmListRebuilt) SetReason(v string) {
 
 // GetAlarmListAlignmentRequirement returns the AlarmListAlignmentRequirement field value if set, zero value otherwise.
 func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirement() AlarmListAlignmentRequirement {
-	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
 		var ret AlarmListAlignmentRequirement
 		return ret
 	}
@@ -207,7 +83,7 @@ func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirement() AlarmListAli
 // GetAlarmListAlignmentRequirementOk returns a tuple with the AlarmListAlignmentRequirement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirementOk() (*AlarmListAlignmentRequirement, bool) {
-	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
 		return nil, false
 	}
 	return o.AlarmListAlignmentRequirement, true
@@ -215,7 +91,7 @@ func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirementOk() (*AlarmLis
 
 // HasAlarmListAlignmentRequirement returns a boolean if a field has been set.
 func (o *NotifyAlarmListRebuilt) HasAlarmListAlignmentRequirement() bool {
-	if o != nil && !isNil(o.AlarmListAlignmentRequirement) {
+	if o != nil && !IsNil(o.AlarmListAlignmentRequirement) {
 		return true
 	}
 
@@ -228,7 +104,7 @@ func (o *NotifyAlarmListRebuilt) SetAlarmListAlignmentRequirement(v AlarmListAli
 }
 
 func (o NotifyAlarmListRebuilt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -237,13 +113,16 @@ func (o NotifyAlarmListRebuilt) MarshalJSON() ([]byte, error) {
 
 func (o NotifyAlarmListRebuilt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
 	toSerialize["reason"] = o.Reason
-	if !isNil(o.AlarmListAlignmentRequirement) {
+	if !IsNil(o.AlarmListAlignmentRequirement) {
 		toSerialize["alarmListAlignmentRequirement"] = o.AlarmListAlignmentRequirement
 	}
 	return toSerialize, nil
@@ -284,5 +163,3 @@ func (v *NullableNotifyAlarmListRebuilt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the TerminationNotification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TerminationNotification{}
 
-// TerminationNotification Represents a request to terminate a policy association that the PCF provides in a notification. 
+// TerminationNotification Represents a request to terminate a policy association that the PCF provides in a notification.
 type TerminationNotification struct {
 	// String providing an URI formatted according to RFC 3986.
-	ResourceUri string `json:"resourceUri"`
-	Cause PolicyAssociationReleaseCause `json:"cause"`
+	ResourceUri string                        `json:"resourceUri"`
+	Cause       PolicyAssociationReleaseCause `json:"cause"`
 }
 
 // NewTerminationNotification instantiates a new TerminationNotification object
@@ -92,7 +92,7 @@ func (o *TerminationNotification) SetCause(v PolicyAssociationReleaseCause) {
 }
 
 func (o TerminationNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableTerminationNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

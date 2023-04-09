@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &StatusSubscribeRspData{}
 
 // StatusSubscribeRspData Data within StatusSubscribe Response
 type StatusSubscribeRspData struct {
-	Subscription MbsSessionSubscription `json:"subscription"`
-	EventList *MbsSessionEventReportList `json:"eventList,omitempty"`
+	Subscription MbsSessionSubscription     `json:"subscription"`
+	EventList    *MbsSessionEventReportList `json:"eventList,omitempty"`
 }
 
 // NewStatusSubscribeRspData instantiates a new StatusSubscribeRspData object
@@ -67,7 +67,7 @@ func (o *StatusSubscribeRspData) SetSubscription(v MbsSessionSubscription) {
 
 // GetEventList returns the EventList field value if set, zero value otherwise.
 func (o *StatusSubscribeRspData) GetEventList() MbsSessionEventReportList {
-	if o == nil || isNil(o.EventList) {
+	if o == nil || IsNil(o.EventList) {
 		var ret MbsSessionEventReportList
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *StatusSubscribeRspData) GetEventList() MbsSessionEventReportList {
 // GetEventListOk returns a tuple with the EventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusSubscribeRspData) GetEventListOk() (*MbsSessionEventReportList, bool) {
-	if o == nil || isNil(o.EventList) {
+	if o == nil || IsNil(o.EventList) {
 		return nil, false
 	}
 	return o.EventList, true
@@ -85,7 +85,7 @@ func (o *StatusSubscribeRspData) GetEventListOk() (*MbsSessionEventReportList, b
 
 // HasEventList returns a boolean if a field has been set.
 func (o *StatusSubscribeRspData) HasEventList() bool {
-	if o != nil && !isNil(o.EventList) {
+	if o != nil && !IsNil(o.EventList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *StatusSubscribeRspData) SetEventList(v MbsSessionEventReportList) {
 }
 
 func (o StatusSubscribeRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o StatusSubscribeRspData) MarshalJSON() ([]byte, error) {
 func (o StatusSubscribeRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !isNil(o.EventList) {
+	if !IsNil(o.EventList) {
 		toSerialize["eventList"] = o.EventList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableStatusSubscribeRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

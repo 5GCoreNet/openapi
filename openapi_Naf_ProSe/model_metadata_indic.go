@@ -1,7 +1,7 @@
 /*
 Naf_ProSe API
 
-Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MetadataIndic Possible values are: - NO_METADATA: This value may be used to indicate that there is no metadata associated with the target RPAUID. This is the default value applicable if this IE is not supplied. - METADATA_UPDATE_DISALLOWED: This value shall be used to indicate that there exists metadata associated with the target RPAUID, but the metadata is not allowed to be updated. - METADATA_UPDATE_ALLOWED: This value shall be used to indicate that there exists metadata associated with the target RPAUID, and the metadata is allowed to be updated. 
+// MetadataIndic Possible values are: - NO_METADATA: This value may be used to indicate that there is no metadata associated with the target RPAUID. This is the default value applicable if this IE is not supplied. - METADATA_UPDATE_DISALLOWED: This value shall be used to indicate that there exists metadata associated with the target RPAUID, but the metadata is not allowed to be updated. - METADATA_UPDATE_ALLOWED: This value shall be used to indicate that there exists metadata associated with the target RPAUID, and the metadata is allowed to be updated.
 type MetadataIndic struct {
-	MetadataIndicAnyOf *MetadataIndicAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MetadataIndic) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MetadataIndicAnyOf
-	err = json.Unmarshal(data, &dst.MetadataIndicAnyOf);
-	if err == nil {
-		jsonMetadataIndicAnyOf, _ := json.Marshal(dst.MetadataIndicAnyOf)
-		if string(jsonMetadataIndicAnyOf) == "{}" { // empty struct
-			dst.MetadataIndicAnyOf = nil
-		} else {
-			return nil // data stored in dst.MetadataIndicAnyOf, return on the first match
-		}
-	} else {
-		dst.MetadataIndicAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MetadataIndic) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MetadataIndic) MarshalJSON() ([]byte, error) {
-	if src.MetadataIndicAnyOf != nil {
-		return json.Marshal(&src.MetadataIndicAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMetadataIndic) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

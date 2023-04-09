@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,23 +20,23 @@ var _ MappedNullable = &SmsfRegistration{}
 
 // SmsfRegistration struct for SmsfRegistration
 type SmsfRegistration struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SmsfInstanceId string `json:"smsfInstanceId"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	SmsfSetId *string `json:"smsfSetId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	PlmnId PlmnId `json:"plmnId"`
-	SmsfMAPAddress *string `json:"smsfMAPAddress,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures   *string                     `json:"supportedFeatures,omitempty"`
+	PlmnId              PlmnId                      `json:"plmnId"`
+	SmsfMAPAddress      *string                     `json:"smsfMAPAddress,omitempty"`
 	SmsfDiameterAddress *NetworkNodeDiameterAddress `json:"smsfDiameterAddress,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	RegistrationTime *time.Time `json:"registrationTime,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
+	RegistrationTime *time.Time   `json:"registrationTime,omitempty"`
+	ContextInfo      *ContextInfo `json:"contextInfo,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	DataRestorationCallbackUri *string `json:"dataRestorationCallbackUri,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
-	SmsfSbiSupInd *bool `json:"smsfSbiSupInd,omitempty"`
-	UdrRestartInd *bool `json:"udrRestartInd,omitempty"`
+	DataRestorationCallbackUri *string  `json:"dataRestorationCallbackUri,omitempty"`
+	ResetIds                   []string `json:"resetIds,omitempty"`
+	SmsfSbiSupInd              *bool    `json:"smsfSbiSupInd,omitempty"`
+	UdrRestartInd              *bool    `json:"udrRestartInd,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	LastSynchronizationTime *time.Time `json:"lastSynchronizationTime,omitempty"`
 }
@@ -94,7 +94,7 @@ func (o *SmsfRegistration) SetSmsfInstanceId(v string) {
 
 // GetSmsfSetId returns the SmsfSetId field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfSetId() string {
-	if o == nil || isNil(o.SmsfSetId) {
+	if o == nil || IsNil(o.SmsfSetId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *SmsfRegistration) GetSmsfSetId() string {
 // GetSmsfSetIdOk returns a tuple with the SmsfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmsfSetId) {
+	if o == nil || IsNil(o.SmsfSetId) {
 		return nil, false
 	}
 	return o.SmsfSetId, true
@@ -112,7 +112,7 @@ func (o *SmsfRegistration) GetSmsfSetIdOk() (*string, bool) {
 
 // HasSmsfSetId returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfSetId() bool {
-	if o != nil && !isNil(o.SmsfSetId) {
+	if o != nil && !IsNil(o.SmsfSetId) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *SmsfRegistration) SetSmsfSetId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *SmsfRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -144,7 +144,7 @@ func (o *SmsfRegistration) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *SmsfRegistration) SetPlmnId(v PlmnId) {
 
 // GetSmsfMAPAddress returns the SmsfMAPAddress field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfMAPAddress() string {
-	if o == nil || isNil(o.SmsfMAPAddress) {
+	if o == nil || IsNil(o.SmsfMAPAddress) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *SmsfRegistration) GetSmsfMAPAddress() string {
 // GetSmsfMAPAddressOk returns a tuple with the SmsfMAPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfMAPAddressOk() (*string, bool) {
-	if o == nil || isNil(o.SmsfMAPAddress) {
+	if o == nil || IsNil(o.SmsfMAPAddress) {
 		return nil, false
 	}
 	return o.SmsfMAPAddress, true
@@ -200,7 +200,7 @@ func (o *SmsfRegistration) GetSmsfMAPAddressOk() (*string, bool) {
 
 // HasSmsfMAPAddress returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfMAPAddress() bool {
-	if o != nil && !isNil(o.SmsfMAPAddress) {
+	if o != nil && !IsNil(o.SmsfMAPAddress) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *SmsfRegistration) SetSmsfMAPAddress(v string) {
 
 // GetSmsfDiameterAddress returns the SmsfDiameterAddress field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfDiameterAddress() NetworkNodeDiameterAddress {
-	if o == nil || isNil(o.SmsfDiameterAddress) {
+	if o == nil || IsNil(o.SmsfDiameterAddress) {
 		var ret NetworkNodeDiameterAddress
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *SmsfRegistration) GetSmsfDiameterAddress() NetworkNodeDiameterAddress {
 // GetSmsfDiameterAddressOk returns a tuple with the SmsfDiameterAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfDiameterAddressOk() (*NetworkNodeDiameterAddress, bool) {
-	if o == nil || isNil(o.SmsfDiameterAddress) {
+	if o == nil || IsNil(o.SmsfDiameterAddress) {
 		return nil, false
 	}
 	return o.SmsfDiameterAddress, true
@@ -232,7 +232,7 @@ func (o *SmsfRegistration) GetSmsfDiameterAddressOk() (*NetworkNodeDiameterAddre
 
 // HasSmsfDiameterAddress returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfDiameterAddress() bool {
-	if o != nil && !isNil(o.SmsfDiameterAddress) {
+	if o != nil && !IsNil(o.SmsfDiameterAddress) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *SmsfRegistration) SetSmsfDiameterAddress(v NetworkNodeDiameterAddress) 
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetRegistrationTime() time.Time {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *SmsfRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -264,7 +264,7 @@ func (o *SmsfRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasRegistrationTime() bool {
-	if o != nil && !isNil(o.RegistrationTime) {
+	if o != nil && !IsNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *SmsfRegistration) SetRegistrationTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *SmsfRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -296,7 +296,7 @@ func (o *SmsfRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *SmsfRegistration) SetContextInfo(v ContextInfo) {
 
 // GetDataRestorationCallbackUri returns the DataRestorationCallbackUri field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetDataRestorationCallbackUri() string {
-	if o == nil || isNil(o.DataRestorationCallbackUri) {
+	if o == nil || IsNil(o.DataRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *SmsfRegistration) GetDataRestorationCallbackUri() string {
 // GetDataRestorationCallbackUriOk returns a tuple with the DataRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.DataRestorationCallbackUri) {
+	if o == nil || IsNil(o.DataRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.DataRestorationCallbackUri, true
@@ -328,7 +328,7 @@ func (o *SmsfRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
 
 // HasDataRestorationCallbackUri returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasDataRestorationCallbackUri() bool {
-	if o != nil && !isNil(o.DataRestorationCallbackUri) {
+	if o != nil && !IsNil(o.DataRestorationCallbackUri) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *SmsfRegistration) SetDataRestorationCallbackUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *SmsfRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -360,7 +360,7 @@ func (o *SmsfRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *SmsfRegistration) SetResetIds(v []string) {
 
 // GetSmsfSbiSupInd returns the SmsfSbiSupInd field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfSbiSupInd() bool {
-	if o == nil || isNil(o.SmsfSbiSupInd) {
+	if o == nil || IsNil(o.SmsfSbiSupInd) {
 		var ret bool
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *SmsfRegistration) GetSmsfSbiSupInd() bool {
 // GetSmsfSbiSupIndOk returns a tuple with the SmsfSbiSupInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfSbiSupIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SmsfSbiSupInd) {
+	if o == nil || IsNil(o.SmsfSbiSupInd) {
 		return nil, false
 	}
 	return o.SmsfSbiSupInd, true
@@ -392,7 +392,7 @@ func (o *SmsfRegistration) GetSmsfSbiSupIndOk() (*bool, bool) {
 
 // HasSmsfSbiSupInd returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfSbiSupInd() bool {
-	if o != nil && !isNil(o.SmsfSbiSupInd) {
+	if o != nil && !IsNil(o.SmsfSbiSupInd) {
 		return true
 	}
 
@@ -406,7 +406,7 @@ func (o *SmsfRegistration) SetSmsfSbiSupInd(v bool) {
 
 // GetUdrRestartInd returns the UdrRestartInd field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetUdrRestartInd() bool {
-	if o == nil || isNil(o.UdrRestartInd) {
+	if o == nil || IsNil(o.UdrRestartInd) {
 		var ret bool
 		return ret
 	}
@@ -416,7 +416,7 @@ func (o *SmsfRegistration) GetUdrRestartInd() bool {
 // GetUdrRestartIndOk returns a tuple with the UdrRestartInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetUdrRestartIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UdrRestartInd) {
+	if o == nil || IsNil(o.UdrRestartInd) {
 		return nil, false
 	}
 	return o.UdrRestartInd, true
@@ -424,7 +424,7 @@ func (o *SmsfRegistration) GetUdrRestartIndOk() (*bool, bool) {
 
 // HasUdrRestartInd returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasUdrRestartInd() bool {
-	if o != nil && !isNil(o.UdrRestartInd) {
+	if o != nil && !IsNil(o.UdrRestartInd) {
 		return true
 	}
 
@@ -438,7 +438,7 @@ func (o *SmsfRegistration) SetUdrRestartInd(v bool) {
 
 // GetLastSynchronizationTime returns the LastSynchronizationTime field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetLastSynchronizationTime() time.Time {
-	if o == nil || isNil(o.LastSynchronizationTime) {
+	if o == nil || IsNil(o.LastSynchronizationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -448,7 +448,7 @@ func (o *SmsfRegistration) GetLastSynchronizationTime() time.Time {
 // GetLastSynchronizationTimeOk returns a tuple with the LastSynchronizationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastSynchronizationTime) {
+	if o == nil || IsNil(o.LastSynchronizationTime) {
 		return nil, false
 	}
 	return o.LastSynchronizationTime, true
@@ -456,7 +456,7 @@ func (o *SmsfRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
 
 // HasLastSynchronizationTime returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasLastSynchronizationTime() bool {
-	if o != nil && !isNil(o.LastSynchronizationTime) {
+	if o != nil && !IsNil(o.LastSynchronizationTime) {
 		return true
 	}
 
@@ -469,7 +469,7 @@ func (o *SmsfRegistration) SetLastSynchronizationTime(v time.Time) {
 }
 
 func (o SmsfRegistration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -479,38 +479,38 @@ func (o SmsfRegistration) MarshalJSON() ([]byte, error) {
 func (o SmsfRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsfInstanceId"] = o.SmsfInstanceId
-	if !isNil(o.SmsfSetId) {
+	if !IsNil(o.SmsfSetId) {
 		toSerialize["smsfSetId"] = o.SmsfSetId
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.SmsfMAPAddress) {
+	if !IsNil(o.SmsfMAPAddress) {
 		toSerialize["smsfMAPAddress"] = o.SmsfMAPAddress
 	}
-	if !isNil(o.SmsfDiameterAddress) {
+	if !IsNil(o.SmsfDiameterAddress) {
 		toSerialize["smsfDiameterAddress"] = o.SmsfDiameterAddress
 	}
-	if !isNil(o.RegistrationTime) {
+	if !IsNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !isNil(o.DataRestorationCallbackUri) {
+	if !IsNil(o.DataRestorationCallbackUri) {
 		toSerialize["dataRestorationCallbackUri"] = o.DataRestorationCallbackUri
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !isNil(o.SmsfSbiSupInd) {
+	if !IsNil(o.SmsfSbiSupInd) {
 		toSerialize["smsfSbiSupInd"] = o.SmsfSbiSupInd
 	}
-	if !isNil(o.UdrRestartInd) {
+	if !IsNil(o.UdrRestartInd) {
 		toSerialize["udrRestartInd"] = o.UdrRestartInd
 	}
-	if !isNil(o.LastSynchronizationTime) {
+	if !IsNil(o.LastSynchronizationTime) {
 		toSerialize["lastSynchronizationTime"] = o.LastSynchronizationTime
 	}
 	return toSerialize, nil
@@ -551,5 +551,3 @@ func (v *NullableSmsfRegistration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

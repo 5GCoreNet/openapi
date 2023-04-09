@@ -1,7 +1,7 @@
 /*
 M5_ServiceAccessInformation
 
-5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Service Access Information API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &M5EASRelocationRequirements{}
 // M5EASRelocationRequirements Relocation requirements of an EAS.
 type M5EASRelocationRequirements struct {
 	Tolerance EASRelocationTolerance `json:"tolerance"`
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property. 
+	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property.
 	MaxInterruptionDuration NullableInt32 `json:"maxInterruptionDuration,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *M5EASRelocationRequirements) SetTolerance(v EASRelocationTolerance) {
 
 // GetMaxInterruptionDuration returns the MaxInterruptionDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *M5EASRelocationRequirements) GetMaxInterruptionDuration() int32 {
-	if o == nil || isNil(o.MaxInterruptionDuration.Get()) {
+	if o == nil || IsNil(o.MaxInterruptionDuration.Get()) {
 		var ret int32
 		return ret
 	}
@@ -98,6 +98,7 @@ func (o *M5EASRelocationRequirements) HasMaxInterruptionDuration() bool {
 func (o *M5EASRelocationRequirements) SetMaxInterruptionDuration(v int32) {
 	o.MaxInterruptionDuration.Set(&v)
 }
+
 // SetMaxInterruptionDurationNil sets the value for MaxInterruptionDuration to be an explicit nil
 func (o *M5EASRelocationRequirements) SetMaxInterruptionDurationNil() {
 	o.MaxInterruptionDuration.Set(nil)
@@ -109,7 +110,7 @@ func (o *M5EASRelocationRequirements) UnsetMaxInterruptionDuration() {
 }
 
 func (o M5EASRelocationRequirements) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -160,5 +161,3 @@ func (v *NullableM5EASRelocationRequirements) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

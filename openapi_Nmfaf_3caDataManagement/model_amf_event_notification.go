@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &AmfEventNotification{}
 
 // AmfEventNotification Data within a AMF Event Notification request
 type AmfEventNotification struct {
-	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
-	SubsChangeNotifyCorrelationId *string `json:"subsChangeNotifyCorrelationId,omitempty"`
-	ReportList []AmfEventReport `json:"reportList,omitempty"`
-	EventSubsSyncInfo *AmfEventSubsSyncInfo `json:"eventSubsSyncInfo,omitempty"`
+	NotifyCorrelationId           *string               `json:"notifyCorrelationId,omitempty"`
+	SubsChangeNotifyCorrelationId *string               `json:"subsChangeNotifyCorrelationId,omitempty"`
+	ReportList                    []AmfEventReport      `json:"reportList,omitempty"`
+	EventSubsSyncInfo             *AmfEventSubsSyncInfo `json:"eventSubsSyncInfo,omitempty"`
 }
 
 // NewAmfEventNotification instantiates a new AmfEventNotification object
@@ -44,7 +44,7 @@ func NewAmfEventNotificationWithDefaults() *AmfEventNotification {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *AmfEventNotification) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AmfEventNotification) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventNotification) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -62,7 +62,7 @@ func (o *AmfEventNotification) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *AmfEventNotification) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AmfEventNotification) SetNotifyCorrelationId(v string) {
 
 // GetSubsChangeNotifyCorrelationId returns the SubsChangeNotifyCorrelationId field value if set, zero value otherwise.
 func (o *AmfEventNotification) GetSubsChangeNotifyCorrelationId() string {
-	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AmfEventNotification) GetSubsChangeNotifyCorrelationId() string {
 // GetSubsChangeNotifyCorrelationIdOk returns a tuple with the SubsChangeNotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventNotification) GetSubsChangeNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
 		return nil, false
 	}
 	return o.SubsChangeNotifyCorrelationId, true
@@ -94,7 +94,7 @@ func (o *AmfEventNotification) GetSubsChangeNotifyCorrelationIdOk() (*string, bo
 
 // HasSubsChangeNotifyCorrelationId returns a boolean if a field has been set.
 func (o *AmfEventNotification) HasSubsChangeNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.SubsChangeNotifyCorrelationId) {
+	if o != nil && !IsNil(o.SubsChangeNotifyCorrelationId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AmfEventNotification) SetSubsChangeNotifyCorrelationId(v string) {
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *AmfEventNotification) GetReportList() []AmfEventReport {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		var ret []AmfEventReport
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AmfEventNotification) GetReportList() []AmfEventReport {
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventNotification) GetReportListOk() ([]AmfEventReport, bool) {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -126,7 +126,7 @@ func (o *AmfEventNotification) GetReportListOk() ([]AmfEventReport, bool) {
 
 // HasReportList returns a boolean if a field has been set.
 func (o *AmfEventNotification) HasReportList() bool {
-	if o != nil && !isNil(o.ReportList) {
+	if o != nil && !IsNil(o.ReportList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AmfEventNotification) SetReportList(v []AmfEventReport) {
 
 // GetEventSubsSyncInfo returns the EventSubsSyncInfo field value if set, zero value otherwise.
 func (o *AmfEventNotification) GetEventSubsSyncInfo() AmfEventSubsSyncInfo {
-	if o == nil || isNil(o.EventSubsSyncInfo) {
+	if o == nil || IsNil(o.EventSubsSyncInfo) {
 		var ret AmfEventSubsSyncInfo
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AmfEventNotification) GetEventSubsSyncInfo() AmfEventSubsSyncInfo {
 // GetEventSubsSyncInfoOk returns a tuple with the EventSubsSyncInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventNotification) GetEventSubsSyncInfoOk() (*AmfEventSubsSyncInfo, bool) {
-	if o == nil || isNil(o.EventSubsSyncInfo) {
+	if o == nil || IsNil(o.EventSubsSyncInfo) {
 		return nil, false
 	}
 	return o.EventSubsSyncInfo, true
@@ -158,7 +158,7 @@ func (o *AmfEventNotification) GetEventSubsSyncInfoOk() (*AmfEventSubsSyncInfo, 
 
 // HasEventSubsSyncInfo returns a boolean if a field has been set.
 func (o *AmfEventNotification) HasEventSubsSyncInfo() bool {
-	if o != nil && !isNil(o.EventSubsSyncInfo) {
+	if o != nil && !IsNil(o.EventSubsSyncInfo) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *AmfEventNotification) SetEventSubsSyncInfo(v AmfEventSubsSyncInfo) {
 }
 
 func (o AmfEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o AmfEventNotification) MarshalJSON() ([]byte, error) {
 
 func (o AmfEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !isNil(o.SubsChangeNotifyCorrelationId) {
+	if !IsNil(o.SubsChangeNotifyCorrelationId) {
 		toSerialize["subsChangeNotifyCorrelationId"] = o.SubsChangeNotifyCorrelationId
 	}
-	if !isNil(o.ReportList) {
+	if !IsNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
-	if !isNil(o.EventSubsSyncInfo) {
+	if !IsNil(o.EventSubsSyncInfo) {
 		toSerialize["eventSubsSyncInfo"] = o.EventSubsSyncInfo
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableAmfEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

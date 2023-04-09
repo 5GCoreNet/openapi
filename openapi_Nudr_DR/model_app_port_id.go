@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -44,7 +44,7 @@ func NewAppPortIdWithDefaults() *AppPortId {
 
 // GetDestinationPort returns the DestinationPort field value if set, zero value otherwise.
 func (o *AppPortId) GetDestinationPort() int32 {
-	if o == nil || isNil(o.DestinationPort) {
+	if o == nil || IsNil(o.DestinationPort) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AppPortId) GetDestinationPort() int32 {
 // GetDestinationPortOk returns a tuple with the DestinationPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppPortId) GetDestinationPortOk() (*int32, bool) {
-	if o == nil || isNil(o.DestinationPort) {
+	if o == nil || IsNil(o.DestinationPort) {
 		return nil, false
 	}
 	return o.DestinationPort, true
@@ -62,7 +62,7 @@ func (o *AppPortId) GetDestinationPortOk() (*int32, bool) {
 
 // HasDestinationPort returns a boolean if a field has been set.
 func (o *AppPortId) HasDestinationPort() bool {
-	if o != nil && !isNil(o.DestinationPort) {
+	if o != nil && !IsNil(o.DestinationPort) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AppPortId) SetDestinationPort(v int32) {
 
 // GetOriginatorPort returns the OriginatorPort field value if set, zero value otherwise.
 func (o *AppPortId) GetOriginatorPort() int32 {
-	if o == nil || isNil(o.OriginatorPort) {
+	if o == nil || IsNil(o.OriginatorPort) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AppPortId) GetOriginatorPort() int32 {
 // GetOriginatorPortOk returns a tuple with the OriginatorPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppPortId) GetOriginatorPortOk() (*int32, bool) {
-	if o == nil || isNil(o.OriginatorPort) {
+	if o == nil || IsNil(o.OriginatorPort) {
 		return nil, false
 	}
 	return o.OriginatorPort, true
@@ -94,7 +94,7 @@ func (o *AppPortId) GetOriginatorPortOk() (*int32, bool) {
 
 // HasOriginatorPort returns a boolean if a field has been set.
 func (o *AppPortId) HasOriginatorPort() bool {
-	if o != nil && !isNil(o.OriginatorPort) {
+	if o != nil && !IsNil(o.OriginatorPort) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AppPortId) SetOriginatorPort(v int32) {
 }
 
 func (o AppPortId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o AppPortId) MarshalJSON() ([]byte, error) {
 
 func (o AppPortId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DestinationPort) {
+	if !IsNil(o.DestinationPort) {
 		toSerialize["destinationPort"] = o.DestinationPort
 	}
-	if !isNil(o.OriginatorPort) {
+	if !IsNil(o.OriginatorPort) {
 		toSerialize["originatorPort"] = o.OriginatorPort
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableAppPortId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

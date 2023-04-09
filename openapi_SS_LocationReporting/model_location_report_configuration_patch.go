@@ -1,7 +1,7 @@
 /*
 SS_LocationReporting
 
-API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -24,8 +24,8 @@ type LocationReportConfigurationPatch struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	MonDur *time.Time `json:"monDur,omitempty"`
 	// indicating a time in seconds.
-	RepPeriod *int32 `json:"repPeriod,omitempty"`
-	Accuracy *Accuracy `json:"accuracy,omitempty"`
+	RepPeriod *int32    `json:"repPeriod,omitempty"`
+	Accuracy  *Accuracy `json:"accuracy,omitempty"`
 }
 
 // NewLocationReportConfigurationPatch instantiates a new LocationReportConfigurationPatch object
@@ -47,7 +47,7 @@ func NewLocationReportConfigurationPatchWithDefaults() *LocationReportConfigurat
 
 // GetValTgtUe returns the ValTgtUe field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetValTgtUe() ValTargetUe {
-	if o == nil || isNil(o.ValTgtUe) {
+	if o == nil || IsNil(o.ValTgtUe) {
 		var ret ValTargetUe
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *LocationReportConfigurationPatch) GetValTgtUe() ValTargetUe {
 // GetValTgtUeOk returns a tuple with the ValTgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetValTgtUeOk() (*ValTargetUe, bool) {
-	if o == nil || isNil(o.ValTgtUe) {
+	if o == nil || IsNil(o.ValTgtUe) {
 		return nil, false
 	}
 	return o.ValTgtUe, true
@@ -65,7 +65,7 @@ func (o *LocationReportConfigurationPatch) GetValTgtUeOk() (*ValTargetUe, bool) 
 
 // HasValTgtUe returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasValTgtUe() bool {
-	if o != nil && !isNil(o.ValTgtUe) {
+	if o != nil && !IsNil(o.ValTgtUe) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *LocationReportConfigurationPatch) SetValTgtUe(v ValTargetUe) {
 
 // GetMonDur returns the MonDur field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetMonDur() time.Time {
-	if o == nil || isNil(o.MonDur) {
+	if o == nil || IsNil(o.MonDur) {
 		var ret time.Time
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *LocationReportConfigurationPatch) GetMonDur() time.Time {
 // GetMonDurOk returns a tuple with the MonDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetMonDurOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MonDur) {
+	if o == nil || IsNil(o.MonDur) {
 		return nil, false
 	}
 	return o.MonDur, true
@@ -97,7 +97,7 @@ func (o *LocationReportConfigurationPatch) GetMonDurOk() (*time.Time, bool) {
 
 // HasMonDur returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasMonDur() bool {
-	if o != nil && !isNil(o.MonDur) {
+	if o != nil && !IsNil(o.MonDur) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *LocationReportConfigurationPatch) SetMonDur(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetRepPeriod() int32 {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *LocationReportConfigurationPatch) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -129,7 +129,7 @@ func (o *LocationReportConfigurationPatch) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasRepPeriod() bool {
-	if o != nil && !isNil(o.RepPeriod) {
+	if o != nil && !IsNil(o.RepPeriod) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *LocationReportConfigurationPatch) SetRepPeriod(v int32) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetAccuracy() Accuracy {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret Accuracy
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *LocationReportConfigurationPatch) GetAccuracy() Accuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetAccuracyOk() (*Accuracy, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -161,7 +161,7 @@ func (o *LocationReportConfigurationPatch) GetAccuracyOk() (*Accuracy, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *LocationReportConfigurationPatch) SetAccuracy(v Accuracy) {
 }
 
 func (o LocationReportConfigurationPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,16 +183,16 @@ func (o LocationReportConfigurationPatch) MarshalJSON() ([]byte, error) {
 
 func (o LocationReportConfigurationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ValTgtUe) {
+	if !IsNil(o.ValTgtUe) {
 		toSerialize["valTgtUe"] = o.ValTgtUe
 	}
-	if !isNil(o.MonDur) {
+	if !IsNil(o.MonDur) {
 		toSerialize["monDur"] = o.MonDur
 	}
-	if !isNil(o.RepPeriod) {
+	if !IsNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil
@@ -233,5 +233,3 @@ func (v *NullableLocationReportConfigurationPatch) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

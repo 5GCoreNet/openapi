@@ -1,7 +1,7 @@
 /*
 Ntsctsf_ASTI Service API
 
-TSCTSF  Access Stratum time distribution configuration Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF  Access Stratum time distribution configuration Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// ActiveUe - Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget. 
+// ActiveUe - Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
 type ActiveUe struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsActiveUe(v *interface{}) ActiveUe {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ActiveUe) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src ActiveUe) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ActiveUe) GetActualInstance() (interface{}) {
+func (obj *ActiveUe) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableActiveUe) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

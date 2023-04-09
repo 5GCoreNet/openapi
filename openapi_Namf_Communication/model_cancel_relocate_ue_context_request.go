@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &CancelRelocateUEContextRequest{}
 
 // CancelRelocateUEContextRequest struct for CancelRelocateUEContextRequest
 type CancelRelocateUEContextRequest struct {
-	JsonData *UeContextCancelRelocateData `json:"jsonData,omitempty"`
-	BinaryDataGtpcMessage *os.File `json:"binaryDataGtpcMessage,omitempty"`
+	JsonData              *UeContextCancelRelocateData `json:"jsonData,omitempty"`
+	BinaryDataGtpcMessage **os.File                    `json:"binaryDataGtpcMessage,omitempty"`
 }
 
 // NewCancelRelocateUEContextRequest instantiates a new CancelRelocateUEContextRequest object
@@ -43,7 +43,7 @@ func NewCancelRelocateUEContextRequestWithDefaults() *CancelRelocateUEContextReq
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *CancelRelocateUEContextRequest) GetJsonData() UeContextCancelRelocateData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret UeContextCancelRelocateData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *CancelRelocateUEContextRequest) GetJsonData() UeContextCancelRelocateDa
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelRelocateUEContextRequest) GetJsonDataOk() (*UeContextCancelRelocateData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *CancelRelocateUEContextRequest) GetJsonDataOk() (*UeContextCancelReloca
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *CancelRelocateUEContextRequest) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *CancelRelocateUEContextRequest) SetJsonData(v UeContextCancelRelocateDa
 }
 
 // GetBinaryDataGtpcMessage returns the BinaryDataGtpcMessage field value if set, zero value otherwise.
-func (o *CancelRelocateUEContextRequest) GetBinaryDataGtpcMessage() os.File {
-	if o == nil || isNil(o.BinaryDataGtpcMessage) {
-		var ret os.File
+func (o *CancelRelocateUEContextRequest) GetBinaryDataGtpcMessage() *os.File {
+	if o == nil || IsNil(o.BinaryDataGtpcMessage) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryDataGtpcMessage
@@ -84,8 +84,8 @@ func (o *CancelRelocateUEContextRequest) GetBinaryDataGtpcMessage() os.File {
 
 // GetBinaryDataGtpcMessageOk returns a tuple with the BinaryDataGtpcMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CancelRelocateUEContextRequest) GetBinaryDataGtpcMessageOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryDataGtpcMessage) {
+func (o *CancelRelocateUEContextRequest) GetBinaryDataGtpcMessageOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryDataGtpcMessage) {
 		return nil, false
 	}
 	return o.BinaryDataGtpcMessage, true
@@ -93,20 +93,20 @@ func (o *CancelRelocateUEContextRequest) GetBinaryDataGtpcMessageOk() (*os.File,
 
 // HasBinaryDataGtpcMessage returns a boolean if a field has been set.
 func (o *CancelRelocateUEContextRequest) HasBinaryDataGtpcMessage() bool {
-	if o != nil && !isNil(o.BinaryDataGtpcMessage) {
+	if o != nil && !IsNil(o.BinaryDataGtpcMessage) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataGtpcMessage gets a reference to the given os.File and assigns it to the BinaryDataGtpcMessage field.
-func (o *CancelRelocateUEContextRequest) SetBinaryDataGtpcMessage(v os.File) {
+// SetBinaryDataGtpcMessage gets a reference to the given *os.File and assigns it to the BinaryDataGtpcMessage field.
+func (o *CancelRelocateUEContextRequest) SetBinaryDataGtpcMessage(v *os.File) {
 	o.BinaryDataGtpcMessage = &v
 }
 
 func (o CancelRelocateUEContextRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o CancelRelocateUEContextRequest) MarshalJSON() ([]byte, error) {
 
 func (o CancelRelocateUEContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryDataGtpcMessage) {
+	if !IsNil(o.BinaryDataGtpcMessage) {
 		toSerialize["binaryDataGtpcMessage"] = o.BinaryDataGtpcMessage
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableCancelRelocateUEContextRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

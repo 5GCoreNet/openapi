@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,18 +20,18 @@ var _ MappedNullable = &NfLoadLevelInformation{}
 // NfLoadLevelInformation Represents load level information of a given NF instance.
 type NfLoadLevelInformation struct {
 	NfType *NFType `json:"nfType,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfInstanceId *string `json:"nfInstanceId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	NfSetId *string `json:"nfSetId,omitempty"`
-	NfStatus *NfStatus `json:"nfStatus,omitempty"`
-	NfCpuUsage *int32 `json:"nfCpuUsage,omitempty"`
-	NfMemoryUsage *int32 `json:"nfMemoryUsage,omitempty"`
-	NfStorageUsage *int32 `json:"nfStorageUsage,omitempty"`
-	NfLoadLevelAverage *int32 `json:"nfLoadLevelAverage,omitempty"`
-	NfLoadLevelpeak *int32 `json:"nfLoadLevelpeak,omitempty"`
-	NfLoadAvgInAoi *int32 `json:"nfLoadAvgInAoi,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	NfSetId            *string   `json:"nfSetId,omitempty"`
+	NfStatus           *NfStatus `json:"nfStatus,omitempty"`
+	NfCpuUsage         *int32    `json:"nfCpuUsage,omitempty"`
+	NfMemoryUsage      *int32    `json:"nfMemoryUsage,omitempty"`
+	NfStorageUsage     *int32    `json:"nfStorageUsage,omitempty"`
+	NfLoadLevelAverage *int32    `json:"nfLoadLevelAverage,omitempty"`
+	NfLoadLevelpeak    *int32    `json:"nfLoadLevelpeak,omitempty"`
+	NfLoadAvgInAoi     *int32    `json:"nfLoadAvgInAoi,omitempty"`
+	Snssai             *Snssai   `json:"snssai,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Confidence *int32 `json:"confidence,omitempty"`
 }
@@ -55,7 +55,7 @@ func NewNfLoadLevelInformationWithDefaults() *NfLoadLevelInformation {
 
 // GetNfType returns the NfType field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfType() NFType {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		var ret NFType
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *NfLoadLevelInformation) GetNfType() NFType {
 // GetNfTypeOk returns a tuple with the NfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		return nil, false
 	}
 	return o.NfType, true
@@ -73,7 +73,7 @@ func (o *NfLoadLevelInformation) GetNfTypeOk() (*NFType, bool) {
 
 // HasNfType returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfType() bool {
-	if o != nil && !isNil(o.NfType) {
+	if o != nil && !IsNil(o.NfType) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *NfLoadLevelInformation) SetNfType(v NFType) {
 
 // GetNfInstanceId returns the NfInstanceId field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfInstanceId() string {
-	if o == nil || isNil(o.NfInstanceId) {
+	if o == nil || IsNil(o.NfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *NfLoadLevelInformation) GetNfInstanceId() string {
 // GetNfInstanceIdOk returns a tuple with the NfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfInstanceId) {
+	if o == nil || IsNil(o.NfInstanceId) {
 		return nil, false
 	}
 	return o.NfInstanceId, true
@@ -105,7 +105,7 @@ func (o *NfLoadLevelInformation) GetNfInstanceIdOk() (*string, bool) {
 
 // HasNfInstanceId returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfInstanceId() bool {
-	if o != nil && !isNil(o.NfInstanceId) {
+	if o != nil && !IsNil(o.NfInstanceId) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *NfLoadLevelInformation) SetNfInstanceId(v string) {
 
 // GetNfSetId returns the NfSetId field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfSetId() string {
-	if o == nil || isNil(o.NfSetId) {
+	if o == nil || IsNil(o.NfSetId) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *NfLoadLevelInformation) GetNfSetId() string {
 // GetNfSetIdOk returns a tuple with the NfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfSetId) {
+	if o == nil || IsNil(o.NfSetId) {
 		return nil, false
 	}
 	return o.NfSetId, true
@@ -137,7 +137,7 @@ func (o *NfLoadLevelInformation) GetNfSetIdOk() (*string, bool) {
 
 // HasNfSetId returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfSetId() bool {
-	if o != nil && !isNil(o.NfSetId) {
+	if o != nil && !IsNil(o.NfSetId) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *NfLoadLevelInformation) SetNfSetId(v string) {
 
 // GetNfStatus returns the NfStatus field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfStatus() NfStatus {
-	if o == nil || isNil(o.NfStatus) {
+	if o == nil || IsNil(o.NfStatus) {
 		var ret NfStatus
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *NfLoadLevelInformation) GetNfStatus() NfStatus {
 // GetNfStatusOk returns a tuple with the NfStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfStatusOk() (*NfStatus, bool) {
-	if o == nil || isNil(o.NfStatus) {
+	if o == nil || IsNil(o.NfStatus) {
 		return nil, false
 	}
 	return o.NfStatus, true
@@ -169,7 +169,7 @@ func (o *NfLoadLevelInformation) GetNfStatusOk() (*NfStatus, bool) {
 
 // HasNfStatus returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfStatus() bool {
-	if o != nil && !isNil(o.NfStatus) {
+	if o != nil && !IsNil(o.NfStatus) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *NfLoadLevelInformation) SetNfStatus(v NfStatus) {
 
 // GetNfCpuUsage returns the NfCpuUsage field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfCpuUsage() int32 {
-	if o == nil || isNil(o.NfCpuUsage) {
+	if o == nil || IsNil(o.NfCpuUsage) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *NfLoadLevelInformation) GetNfCpuUsage() int32 {
 // GetNfCpuUsageOk returns a tuple with the NfCpuUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfCpuUsageOk() (*int32, bool) {
-	if o == nil || isNil(o.NfCpuUsage) {
+	if o == nil || IsNil(o.NfCpuUsage) {
 		return nil, false
 	}
 	return o.NfCpuUsage, true
@@ -201,7 +201,7 @@ func (o *NfLoadLevelInformation) GetNfCpuUsageOk() (*int32, bool) {
 
 // HasNfCpuUsage returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfCpuUsage() bool {
-	if o != nil && !isNil(o.NfCpuUsage) {
+	if o != nil && !IsNil(o.NfCpuUsage) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *NfLoadLevelInformation) SetNfCpuUsage(v int32) {
 
 // GetNfMemoryUsage returns the NfMemoryUsage field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfMemoryUsage() int32 {
-	if o == nil || isNil(o.NfMemoryUsage) {
+	if o == nil || IsNil(o.NfMemoryUsage) {
 		var ret int32
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *NfLoadLevelInformation) GetNfMemoryUsage() int32 {
 // GetNfMemoryUsageOk returns a tuple with the NfMemoryUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfMemoryUsageOk() (*int32, bool) {
-	if o == nil || isNil(o.NfMemoryUsage) {
+	if o == nil || IsNil(o.NfMemoryUsage) {
 		return nil, false
 	}
 	return o.NfMemoryUsage, true
@@ -233,7 +233,7 @@ func (o *NfLoadLevelInformation) GetNfMemoryUsageOk() (*int32, bool) {
 
 // HasNfMemoryUsage returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfMemoryUsage() bool {
-	if o != nil && !isNil(o.NfMemoryUsage) {
+	if o != nil && !IsNil(o.NfMemoryUsage) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *NfLoadLevelInformation) SetNfMemoryUsage(v int32) {
 
 // GetNfStorageUsage returns the NfStorageUsage field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfStorageUsage() int32 {
-	if o == nil || isNil(o.NfStorageUsage) {
+	if o == nil || IsNil(o.NfStorageUsage) {
 		var ret int32
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *NfLoadLevelInformation) GetNfStorageUsage() int32 {
 // GetNfStorageUsageOk returns a tuple with the NfStorageUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfStorageUsageOk() (*int32, bool) {
-	if o == nil || isNil(o.NfStorageUsage) {
+	if o == nil || IsNil(o.NfStorageUsage) {
 		return nil, false
 	}
 	return o.NfStorageUsage, true
@@ -265,7 +265,7 @@ func (o *NfLoadLevelInformation) GetNfStorageUsageOk() (*int32, bool) {
 
 // HasNfStorageUsage returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfStorageUsage() bool {
-	if o != nil && !isNil(o.NfStorageUsage) {
+	if o != nil && !IsNil(o.NfStorageUsage) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *NfLoadLevelInformation) SetNfStorageUsage(v int32) {
 
 // GetNfLoadLevelAverage returns the NfLoadLevelAverage field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfLoadLevelAverage() int32 {
-	if o == nil || isNil(o.NfLoadLevelAverage) {
+	if o == nil || IsNil(o.NfLoadLevelAverage) {
 		var ret int32
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *NfLoadLevelInformation) GetNfLoadLevelAverage() int32 {
 // GetNfLoadLevelAverageOk returns a tuple with the NfLoadLevelAverage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfLoadLevelAverageOk() (*int32, bool) {
-	if o == nil || isNil(o.NfLoadLevelAverage) {
+	if o == nil || IsNil(o.NfLoadLevelAverage) {
 		return nil, false
 	}
 	return o.NfLoadLevelAverage, true
@@ -297,7 +297,7 @@ func (o *NfLoadLevelInformation) GetNfLoadLevelAverageOk() (*int32, bool) {
 
 // HasNfLoadLevelAverage returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfLoadLevelAverage() bool {
-	if o != nil && !isNil(o.NfLoadLevelAverage) {
+	if o != nil && !IsNil(o.NfLoadLevelAverage) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *NfLoadLevelInformation) SetNfLoadLevelAverage(v int32) {
 
 // GetNfLoadLevelpeak returns the NfLoadLevelpeak field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfLoadLevelpeak() int32 {
-	if o == nil || isNil(o.NfLoadLevelpeak) {
+	if o == nil || IsNil(o.NfLoadLevelpeak) {
 		var ret int32
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *NfLoadLevelInformation) GetNfLoadLevelpeak() int32 {
 // GetNfLoadLevelpeakOk returns a tuple with the NfLoadLevelpeak field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfLoadLevelpeakOk() (*int32, bool) {
-	if o == nil || isNil(o.NfLoadLevelpeak) {
+	if o == nil || IsNil(o.NfLoadLevelpeak) {
 		return nil, false
 	}
 	return o.NfLoadLevelpeak, true
@@ -329,7 +329,7 @@ func (o *NfLoadLevelInformation) GetNfLoadLevelpeakOk() (*int32, bool) {
 
 // HasNfLoadLevelpeak returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfLoadLevelpeak() bool {
-	if o != nil && !isNil(o.NfLoadLevelpeak) {
+	if o != nil && !IsNil(o.NfLoadLevelpeak) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *NfLoadLevelInformation) SetNfLoadLevelpeak(v int32) {
 
 // GetNfLoadAvgInAoi returns the NfLoadAvgInAoi field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetNfLoadAvgInAoi() int32 {
-	if o == nil || isNil(o.NfLoadAvgInAoi) {
+	if o == nil || IsNil(o.NfLoadAvgInAoi) {
 		var ret int32
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *NfLoadLevelInformation) GetNfLoadAvgInAoi() int32 {
 // GetNfLoadAvgInAoiOk returns a tuple with the NfLoadAvgInAoi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetNfLoadAvgInAoiOk() (*int32, bool) {
-	if o == nil || isNil(o.NfLoadAvgInAoi) {
+	if o == nil || IsNil(o.NfLoadAvgInAoi) {
 		return nil, false
 	}
 	return o.NfLoadAvgInAoi, true
@@ -361,7 +361,7 @@ func (o *NfLoadLevelInformation) GetNfLoadAvgInAoiOk() (*int32, bool) {
 
 // HasNfLoadAvgInAoi returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasNfLoadAvgInAoi() bool {
-	if o != nil && !isNil(o.NfLoadAvgInAoi) {
+	if o != nil && !IsNil(o.NfLoadAvgInAoi) {
 		return true
 	}
 
@@ -375,7 +375,7 @@ func (o *NfLoadLevelInformation) SetNfLoadAvgInAoi(v int32) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -385,7 +385,7 @@ func (o *NfLoadLevelInformation) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -393,7 +393,7 @@ func (o *NfLoadLevelInformation) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -407,7 +407,7 @@ func (o *NfLoadLevelInformation) SetSnssai(v Snssai) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *NfLoadLevelInformation) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *NfLoadLevelInformation) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfLoadLevelInformation) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -425,7 +425,7 @@ func (o *NfLoadLevelInformation) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *NfLoadLevelInformation) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -438,7 +438,7 @@ func (o *NfLoadLevelInformation) SetConfidence(v int32) {
 }
 
 func (o NfLoadLevelInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -447,40 +447,40 @@ func (o NfLoadLevelInformation) MarshalJSON() ([]byte, error) {
 
 func (o NfLoadLevelInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NfType) {
+	if !IsNil(o.NfType) {
 		toSerialize["nfType"] = o.NfType
 	}
-	if !isNil(o.NfInstanceId) {
+	if !IsNil(o.NfInstanceId) {
 		toSerialize["nfInstanceId"] = o.NfInstanceId
 	}
-	if !isNil(o.NfSetId) {
+	if !IsNil(o.NfSetId) {
 		toSerialize["nfSetId"] = o.NfSetId
 	}
-	if !isNil(o.NfStatus) {
+	if !IsNil(o.NfStatus) {
 		toSerialize["nfStatus"] = o.NfStatus
 	}
-	if !isNil(o.NfCpuUsage) {
+	if !IsNil(o.NfCpuUsage) {
 		toSerialize["nfCpuUsage"] = o.NfCpuUsage
 	}
-	if !isNil(o.NfMemoryUsage) {
+	if !IsNil(o.NfMemoryUsage) {
 		toSerialize["nfMemoryUsage"] = o.NfMemoryUsage
 	}
-	if !isNil(o.NfStorageUsage) {
+	if !IsNil(o.NfStorageUsage) {
 		toSerialize["nfStorageUsage"] = o.NfStorageUsage
 	}
-	if !isNil(o.NfLoadLevelAverage) {
+	if !IsNil(o.NfLoadLevelAverage) {
 		toSerialize["nfLoadLevelAverage"] = o.NfLoadLevelAverage
 	}
-	if !isNil(o.NfLoadLevelpeak) {
+	if !IsNil(o.NfLoadLevelpeak) {
 		toSerialize["nfLoadLevelpeak"] = o.NfLoadLevelpeak
 	}
-	if !isNil(o.NfLoadAvgInAoi) {
+	if !IsNil(o.NfLoadAvgInAoi) {
 		toSerialize["nfLoadAvgInAoi"] = o.NfLoadAvgInAoi
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil
@@ -521,5 +521,3 @@ func (v *NullableNfLoadLevelInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

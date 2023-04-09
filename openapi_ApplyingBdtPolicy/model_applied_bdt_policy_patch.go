@@ -1,7 +1,7 @@
 /*
 3gpp-applying-bdt-policy
 
-API for applying BDT policy   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for applying BDT policy   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the AppliedBdtPolicyPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AppliedBdtPolicyPatch{}
 
-// AppliedBdtPolicyPatch Represents the parameters to request the modification of a subscription to applied BDT policy. 
+// AppliedBdtPolicyPatch Represents the parameters to request the modification of a subscription to applied BDT policy.
 type AppliedBdtPolicyPatch struct {
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
 	BdtRefId string `json:"bdtRefId"`
@@ -66,7 +66,7 @@ func (o *AppliedBdtPolicyPatch) SetBdtRefId(v string) {
 }
 
 func (o AppliedBdtPolicyPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullableAppliedBdtPolicyPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

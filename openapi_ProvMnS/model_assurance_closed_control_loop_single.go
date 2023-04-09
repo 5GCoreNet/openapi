@@ -19,12 +19,9 @@ var _ MappedNullable = &AssuranceClosedControlLoopSingle{}
 
 // AssuranceClosedControlLoopSingle struct for AssuranceClosedControlLoopSingle
 type AssuranceClosedControlLoopSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *AssuranceClosedControlLoopSingleAllOfAttributes `json:"attributes,omitempty"`
-	AssuranceGoal []AssuranceGoalSingle `json:"AssuranceGoal,omitempty"`
+	Top
+	Attributes    *AssuranceClosedControlLoopSingleAllOfAttributes `json:"attributes,omitempty"`
+	AssuranceGoal []AssuranceGoalSingle                            `json:"AssuranceGoal,omitempty"`
 }
 
 // NewAssuranceClosedControlLoopSingle instantiates a new AssuranceClosedControlLoopSingle object
@@ -45,131 +42,9 @@ func NewAssuranceClosedControlLoopSingleWithDefaults() *AssuranceClosedControlLo
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *AssuranceClosedControlLoopSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AssuranceClosedControlLoopSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *AssuranceClosedControlLoopSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *AssuranceClosedControlLoopSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AssuranceClosedControlLoopSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *AssuranceClosedControlLoopSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *AssuranceClosedControlLoopSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *AssuranceClosedControlLoopSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AssuranceClosedControlLoopSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *AssuranceClosedControlLoopSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *AssuranceClosedControlLoopSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *AssuranceClosedControlLoopSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AssuranceClosedControlLoopSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *AssuranceClosedControlLoopSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *AssuranceClosedControlLoopSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingle) GetAttributes() AssuranceClosedControlLoopSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret AssuranceClosedControlLoopSingleAllOfAttributes
 		return ret
 	}
@@ -179,7 +54,7 @@ func (o *AssuranceClosedControlLoopSingle) GetAttributes() AssuranceClosedContro
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingle) GetAttributesOk() (*AssuranceClosedControlLoopSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -187,7 +62,7 @@ func (o *AssuranceClosedControlLoopSingle) GetAttributesOk() (*AssuranceClosedCo
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -201,7 +76,7 @@ func (o *AssuranceClosedControlLoopSingle) SetAttributes(v AssuranceClosedContro
 
 // GetAssuranceGoal returns the AssuranceGoal field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingle) GetAssuranceGoal() []AssuranceGoalSingle {
-	if o == nil || isNil(o.AssuranceGoal) {
+	if o == nil || IsNil(o.AssuranceGoal) {
 		var ret []AssuranceGoalSingle
 		return ret
 	}
@@ -211,7 +86,7 @@ func (o *AssuranceClosedControlLoopSingle) GetAssuranceGoal() []AssuranceGoalSin
 // GetAssuranceGoalOk returns a tuple with the AssuranceGoal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingle) GetAssuranceGoalOk() ([]AssuranceGoalSingle, bool) {
-	if o == nil || isNil(o.AssuranceGoal) {
+	if o == nil || IsNil(o.AssuranceGoal) {
 		return nil, false
 	}
 	return o.AssuranceGoal, true
@@ -219,7 +94,7 @@ func (o *AssuranceClosedControlLoopSingle) GetAssuranceGoalOk() ([]AssuranceGoal
 
 // HasAssuranceGoal returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingle) HasAssuranceGoal() bool {
-	if o != nil && !isNil(o.AssuranceGoal) {
+	if o != nil && !IsNil(o.AssuranceGoal) {
 		return true
 	}
 
@@ -232,7 +107,7 @@ func (o *AssuranceClosedControlLoopSingle) SetAssuranceGoal(v []AssuranceGoalSin
 }
 
 func (o AssuranceClosedControlLoopSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,20 +116,18 @@ func (o AssuranceClosedControlLoopSingle) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceClosedControlLoopSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.AssuranceGoal) {
+	if !IsNil(o.AssuranceGoal) {
 		toSerialize["AssuranceGoal"] = o.AssuranceGoal
 	}
 	return toSerialize, nil
@@ -295,5 +168,3 @@ func (v *NullableAssuranceClosedControlLoopSingle) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 EES Application Client Information_API
 
-API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Application Client Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,7 +22,7 @@ type ACInformation struct {
 	// List of profile information of ACs.
 	AcProfs []ACProfile `json:"acProfs"`
 	// List of UE identifiers hosting the AC.
-	UeIds []string `json:"ueIds,omitempty"`
+	UeIds     []string        `json:"ueIds,omitempty"`
 	UeLocInfs *LocationArea5G `json:"ueLocInfs,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *ACInformation) SetAcProfs(v []ACProfile) {
 
 // GetUeIds returns the UeIds field value if set, zero value otherwise.
 func (o *ACInformation) GetUeIds() []string {
-	if o == nil || isNil(o.UeIds) {
+	if o == nil || IsNil(o.UeIds) {
 		var ret []string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ACInformation) GetUeIds() []string {
 // GetUeIdsOk returns a tuple with the UeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInformation) GetUeIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.UeIds) {
+	if o == nil || IsNil(o.UeIds) {
 		return nil, false
 	}
 	return o.UeIds, true
@@ -88,7 +88,7 @@ func (o *ACInformation) GetUeIdsOk() ([]string, bool) {
 
 // HasUeIds returns a boolean if a field has been set.
 func (o *ACInformation) HasUeIds() bool {
-	if o != nil && !isNil(o.UeIds) {
+	if o != nil && !IsNil(o.UeIds) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *ACInformation) SetUeIds(v []string) {
 
 // GetUeLocInfs returns the UeLocInfs field value if set, zero value otherwise.
 func (o *ACInformation) GetUeLocInfs() LocationArea5G {
-	if o == nil || isNil(o.UeLocInfs) {
+	if o == nil || IsNil(o.UeLocInfs) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *ACInformation) GetUeLocInfs() LocationArea5G {
 // GetUeLocInfsOk returns a tuple with the UeLocInfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInformation) GetUeLocInfsOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.UeLocInfs) {
+	if o == nil || IsNil(o.UeLocInfs) {
 		return nil, false
 	}
 	return o.UeLocInfs, true
@@ -120,7 +120,7 @@ func (o *ACInformation) GetUeLocInfsOk() (*LocationArea5G, bool) {
 
 // HasUeLocInfs returns a boolean if a field has been set.
 func (o *ACInformation) HasUeLocInfs() bool {
-	if o != nil && !isNil(o.UeLocInfs) {
+	if o != nil && !IsNil(o.UeLocInfs) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ACInformation) SetUeLocInfs(v LocationArea5G) {
 }
 
 func (o ACInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o ACInformation) MarshalJSON() ([]byte, error) {
 func (o ACInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["acProfs"] = o.AcProfs
-	if !isNil(o.UeIds) {
+	if !IsNil(o.UeIds) {
 		toSerialize["ueIds"] = o.UeIds
 	}
-	if !isNil(o.UeLocInfs) {
+	if !IsNil(o.UeLocInfs) {
 		toSerialize["ueLocInfs"] = o.UeLocInfs
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableACInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

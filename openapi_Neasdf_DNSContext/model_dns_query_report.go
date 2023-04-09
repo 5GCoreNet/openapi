@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewDnsQueryReportWithDefaults() *DnsQueryReport {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *DnsQueryReport) GetFqdn() string {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DnsQueryReport) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsQueryReport) GetFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -60,7 +60,7 @@ func (o *DnsQueryReport) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *DnsQueryReport) HasFqdn() bool {
-	if o != nil && !isNil(o.Fqdn) {
+	if o != nil && !IsNil(o.Fqdn) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *DnsQueryReport) SetFqdn(v string) {
 }
 
 func (o DnsQueryReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o DnsQueryReport) MarshalJSON() ([]byte, error) {
 
 func (o DnsQueryReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Fqdn) {
+	if !IsNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableDnsQueryReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

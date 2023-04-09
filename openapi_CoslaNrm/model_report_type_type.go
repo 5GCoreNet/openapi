@@ -20,7 +20,7 @@ type ReportTypeType string
 
 // List of reportType-Type
 const (
-	PERIODICAL ReportTypeType = "PERIODICAL"
+	PERIODICAL      ReportTypeType = "PERIODICAL"
 	EVENT_TRIGGERED ReportTypeType = "EVENT_TRIGGERED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableReportTypeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

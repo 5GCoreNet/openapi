@@ -1,7 +1,7 @@
 /*
 Nhss_imsUEAU
 
-Nhss UE Authentication Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Authentication Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SipDigestQop Quality of Protection for the SIP Digest authentication scheme
 type SipDigestQop struct {
-	SipDigestQopAnyOf *SipDigestQopAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SipDigestQop) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SipDigestQopAnyOf
-	err = json.Unmarshal(data, &dst.SipDigestQopAnyOf);
-	if err == nil {
-		jsonSipDigestQopAnyOf, _ := json.Marshal(dst.SipDigestQopAnyOf)
-		if string(jsonSipDigestQopAnyOf) == "{}" { // empty struct
-			dst.SipDigestQopAnyOf = nil
-		} else {
-			return nil // data stored in dst.SipDigestQopAnyOf, return on the first match
-		}
-	} else {
-		dst.SipDigestQopAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SipDigestQop) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SipDigestQop) MarshalJSON() ([]byte, error) {
-	if src.SipDigestQopAnyOf != nil {
-		return json.Marshal(&src.SipDigestQopAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSipDigestQop) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // UeLocationServiceInd Specifies location service types requested by UE.
 type UeLocationServiceInd struct {
-	UeLocationServiceIndAnyOf *UeLocationServiceIndAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UeLocationServiceInd) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into UeLocationServiceIndAnyOf
-	err = json.Unmarshal(data, &dst.UeLocationServiceIndAnyOf);
-	if err == nil {
-		jsonUeLocationServiceIndAnyOf, _ := json.Marshal(dst.UeLocationServiceIndAnyOf)
-		if string(jsonUeLocationServiceIndAnyOf) == "{}" { // empty struct
-			dst.UeLocationServiceIndAnyOf = nil
-		} else {
-			return nil // data stored in dst.UeLocationServiceIndAnyOf, return on the first match
-		}
-	} else {
-		dst.UeLocationServiceIndAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *UeLocationServiceInd) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UeLocationServiceInd) MarshalJSON() ([]byte, error) {
-	if src.UeLocationServiceIndAnyOf != nil {
-		return json.Marshal(&src.UeLocationServiceIndAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableUeLocationServiceInd) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

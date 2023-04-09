@@ -294,7 +294,10 @@ components:
       type: string
     Protocol:
       anyOf:
-      - $ref: '#/components/schemas/Protocol_anyOf'
+      - enum:
+        - HTTP_1_1
+        - HTTP_2
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -304,7 +307,13 @@ components:
         - HTTP_2: HTTP version 2
     Operation:
       anyOf:
-      - $ref: '#/components/schemas/Operation_anyOf'
+      - enum:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -369,7 +378,11 @@ components:
       type: object
     SecurityMethod:
       anyOf:
-      - $ref: '#/components/schemas/SecurityMethod_anyOf'
+      - enum:
+        - PSK
+        - PKI
+        - OAUTH
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -645,25 +658,3 @@ components:
       maximum: 65535
       minimum: 0
       type: integer
-    Protocol_anyOf:
-      enum:
-      - HTTP_1_1
-      - HTTP_2
-      type: string
-      example: null
-    Operation_anyOf:
-      enum:
-      - GET
-      - POST
-      - PUT
-      - PATCH
-      - DELETE
-      type: string
-      example: null
-    SecurityMethod_anyOf:
-      enum:
-      - PSK
-      - PKI
-      - OAUTH
-      type: string
-      example: null

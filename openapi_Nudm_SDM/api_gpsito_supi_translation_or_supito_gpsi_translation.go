@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,28 +13,27 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // GPSIToSUPITranslationOrSUPIToGPSITranslationApiService GPSIToSUPITranslationOrSUPIToGPSITranslationApi service
 type GPSIToSUPITranslationOrSUPIToGPSITranslationApiService service
 
 type ApiGetSupiOrGpsiRequest struct {
-	ctx context.Context
-	ApiService *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService
-	ueId string
+	ctx               context.Context
+	ApiService        *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService
+	ueId              string
 	supportedFeatures *string
-	afId *string
-	appPortId *AppPortId
-	afServiceId *string
-	mtcProviderInfo *string
+	afId              *string
+	appPortId         *AppPortId
+	afServiceId       *string
+	mtcProviderInfo   *string
 	requestedGpsiType *GpsiType
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // Supported Features
@@ -92,26 +91,27 @@ func (r ApiGetSupiOrGpsiRequest) Execute() (*IdTranslationResult, *http.Response
 /*
 GetSupiOrGpsi retrieve a UE's SUPI or GPSI
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @return ApiGetSupiOrGpsiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@return ApiGetSupiOrGpsiRequest
 */
 func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsi(ctx context.Context, ueId string) ApiGetSupiOrGpsiRequest {
 	return ApiGetSupiOrGpsiRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return IdTranslationResult
+//
+//	@return IdTranslationResult
 func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiExecute(r ApiGetSupiOrGpsiRequest) (*IdTranslationResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *IdTranslationResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *IdTranslationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GPSIToSUPITranslationOrSUPIToGPSITranslationApiService.GetSupiOrGpsi")
@@ -127,22 +127,22 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.afId != nil {
-		parameterAddToQuery(localVarQueryParams, "af-id", r.afId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "af-id", r.afId, "")
 	}
 	if r.appPortId != nil {
-		parameterAddToQuery(localVarQueryParams, "app-port-id", r.appPortId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "app-port-id", r.appPortId, "")
 	}
 	if r.afServiceId != nil {
-		parameterAddToQuery(localVarQueryParams, "af-service-id", r.afServiceId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "af-service-id", r.afServiceId, "")
 	}
 	if r.mtcProviderInfo != nil {
-		parameterAddToQuery(localVarQueryParams, "mtc-provider-info", r.mtcProviderInfo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mtc-provider-info", r.mtcProviderInfo, "")
 	}
 	if r.requestedGpsiType != nil {
-		parameterAddToQuery(localVarQueryParams, "requested-gpsi-type", r.requestedGpsiType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "requested-gpsi-type", r.requestedGpsiType, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -162,10 +162,10 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -177,9 +177,9 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -196,8 +196,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -207,8 +207,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -218,8 +218,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -229,8 +229,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -240,8 +240,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -251,8 +251,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -262,8 +262,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -273,8 +273,8 @@ func (a *GPSIToSUPITranslationOrSUPIToGPSITranslationApiService) GetSupiOrGpsiEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

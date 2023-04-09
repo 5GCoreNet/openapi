@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &PgwInfo{}
 
 // PgwInfo struct for PgwInfo
 type PgwInfo struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn string `json:"dnn"`
 	// Fully Qualified Domain Name
-	PgwFqdn string `json:"pgwFqdn"`
+	PgwFqdn   string     `json:"pgwFqdn"`
 	PgwIpAddr *IpAddress `json:"pgwIpAddr,omitempty"`
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	EpdgInd *bool `json:"epdgInd,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	PlmnId    *PlmnId    `json:"plmnId,omitempty"`
+	EpdgInd   *bool      `json:"epdgInd,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	RegistrationTime *time.Time `json:"registrationTime,omitempty"`
@@ -106,7 +106,7 @@ func (o *PgwInfo) SetPgwFqdn(v string) {
 
 // GetPgwIpAddr returns the PgwIpAddr field value if set, zero value otherwise.
 func (o *PgwInfo) GetPgwIpAddr() IpAddress {
-	if o == nil || isNil(o.PgwIpAddr) {
+	if o == nil || IsNil(o.PgwIpAddr) {
 		var ret IpAddress
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *PgwInfo) GetPgwIpAddr() IpAddress {
 // GetPgwIpAddrOk returns a tuple with the PgwIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetPgwIpAddrOk() (*IpAddress, bool) {
-	if o == nil || isNil(o.PgwIpAddr) {
+	if o == nil || IsNil(o.PgwIpAddr) {
 		return nil, false
 	}
 	return o.PgwIpAddr, true
@@ -124,7 +124,7 @@ func (o *PgwInfo) GetPgwIpAddrOk() (*IpAddress, bool) {
 
 // HasPgwIpAddr returns a boolean if a field has been set.
 func (o *PgwInfo) HasPgwIpAddr() bool {
-	if o != nil && !isNil(o.PgwIpAddr) {
+	if o != nil && !IsNil(o.PgwIpAddr) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *PgwInfo) SetPgwIpAddr(v IpAddress) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *PgwInfo) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *PgwInfo) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -156,7 +156,7 @@ func (o *PgwInfo) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *PgwInfo) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *PgwInfo) SetPlmnId(v PlmnId) {
 
 // GetEpdgInd returns the EpdgInd field value if set, zero value otherwise.
 func (o *PgwInfo) GetEpdgInd() bool {
-	if o == nil || isNil(o.EpdgInd) {
+	if o == nil || IsNil(o.EpdgInd) {
 		var ret bool
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *PgwInfo) GetEpdgInd() bool {
 // GetEpdgIndOk returns a tuple with the EpdgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetEpdgIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EpdgInd) {
+	if o == nil || IsNil(o.EpdgInd) {
 		return nil, false
 	}
 	return o.EpdgInd, true
@@ -188,7 +188,7 @@ func (o *PgwInfo) GetEpdgIndOk() (*bool, bool) {
 
 // HasEpdgInd returns a boolean if a field has been set.
 func (o *PgwInfo) HasEpdgInd() bool {
-	if o != nil && !isNil(o.EpdgInd) {
+	if o != nil && !IsNil(o.EpdgInd) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *PgwInfo) SetEpdgInd(v bool) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PgwInfo) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *PgwInfo) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -220,7 +220,7 @@ func (o *PgwInfo) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PgwInfo) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *PgwInfo) SetPcfId(v string) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *PgwInfo) GetRegistrationTime() time.Time {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *PgwInfo) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -252,7 +252,7 @@ func (o *PgwInfo) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *PgwInfo) HasRegistrationTime() bool {
-	if o != nil && !isNil(o.RegistrationTime) {
+	if o != nil && !IsNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *PgwInfo) SetRegistrationTime(v time.Time) {
 }
 
 func (o PgwInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -276,19 +276,19 @@ func (o PgwInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["pgwFqdn"] = o.PgwFqdn
-	if !isNil(o.PgwIpAddr) {
+	if !IsNil(o.PgwIpAddr) {
 		toSerialize["pgwIpAddr"] = o.PgwIpAddr
 	}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.EpdgInd) {
+	if !IsNil(o.EpdgInd) {
 		toSerialize["epdgInd"] = o.EpdgInd
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.RegistrationTime) {
+	if !IsNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
 	return toSerialize, nil
@@ -329,5 +329,3 @@ func (v *NullablePgwInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

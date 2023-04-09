@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -24,7 +24,7 @@ type HorizontalWithVerticalVelocity struct {
 	// Indicates value of angle.
 	Bearing int32 `json:"bearing"`
 	// Indicates value of vertical speed.
-	VSpeed float32 `json:"vSpeed"`
+	VSpeed     float32           `json:"vSpeed"`
 	VDirection VerticalDirection `json:"vDirection"`
 }
 
@@ -146,7 +146,7 @@ func (o *HorizontalWithVerticalVelocity) SetVDirection(v VerticalDirection) {
 }
 
 func (o HorizontalWithVerticalVelocity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -197,5 +197,3 @@ func (v *NullableHorizontalWithVerticalVelocity) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

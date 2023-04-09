@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SteerModeValue Indicates the steering mode value determined by the PCF.
 type SteerModeValue struct {
-	SteerModeValueAnyOf *SteerModeValueAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SteerModeValue) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SteerModeValueAnyOf
-	err = json.Unmarshal(data, &dst.SteerModeValueAnyOf);
-	if err == nil {
-		jsonSteerModeValueAnyOf, _ := json.Marshal(dst.SteerModeValueAnyOf)
-		if string(jsonSteerModeValueAnyOf) == "{}" { // empty struct
-			dst.SteerModeValueAnyOf = nil
-		} else {
-			return nil // data stored in dst.SteerModeValueAnyOf, return on the first match
-		}
-	} else {
-		dst.SteerModeValueAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SteerModeValue) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SteerModeValue) MarshalJSON() ([]byte, error) {
-	if src.SteerModeValueAnyOf != nil {
-		return json.Marshal(&src.SteerModeValueAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSteerModeValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

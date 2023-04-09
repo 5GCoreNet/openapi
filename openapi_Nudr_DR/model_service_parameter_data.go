@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,23 +21,23 @@ var _ MappedNullable = &ServiceParameterData{}
 type ServiceParameterData struct {
 	// Identifies an application.
 	AppId *string `json:"appId,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InterGroupId *string `json:"interGroupId,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
 	// string identifying a Ipv4 address formatted in the \"dotted decimal\" notation as defined in IETF RFC 1166.
 	UeIpv4 *string `json:"ueIpv4,omitempty"`
 	// string identifying a Ipv6 address formatted according to clause 4 in IETF RFC 5952. The mixed Ipv4 Ipv6 notation according to clause 5 of IETF RFC 5952 shall not be used.
 	UeIpv6 *string `json:"ueIpv6,omitempty"`
-	// String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042. 
-	UeMac *string `json:"ueMac,omitempty"`
-	AnyUeInd *bool `json:"anyUeInd,omitempty"`
-	// Represents configuration parameters for V2X communications over PC5 reference point. 
+	// String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+	UeMac    *string `json:"ueMac,omitempty"`
+	AnyUeInd *bool   `json:"anyUeInd,omitempty"`
+	// Represents configuration parameters for V2X communications over PC5 reference point.
 	ParamOverPc5 *string `json:"paramOverPc5,omitempty"`
-	// Represents configuration parameters for V2X communications over Uu reference point. 
+	// Represents configuration parameters for V2X communications over Uu reference point.
 	ParamOverUu *string `json:"paramOverUu,omitempty"`
 	// Represents the service parameters for 5G ProSe direct discovery.
 	ParamForProSeDd *string `json:"paramForProSeDd,omitempty"`
@@ -51,15 +51,15 @@ type ServiceParameterData struct {
 	UrspGuidance []UrspRuleRequest `json:"urspGuidance,omitempty"`
 	// Contains the outcome of the UE Policy Delivery.
 	DeliveryEvents []Event `json:"deliveryEvents,omitempty"`
-	// Contains the Notification Correlation Id allocated by the NEF for the notification of UE Policy delivery outcome. 
+	// Contains the Notification Correlation Id allocated by the NEF for the notification of UE Policy delivery outcome.
 	PolicDelivNotifCorreId *string `json:"policDelivNotifCorreId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	PolicDelivNotifUri *string `json:"policDelivNotifUri,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	ResUri *string `json:"resUri,omitempty"`
-	Headers []string `json:"headers,omitempty"`
+	ResUri   *string  `json:"resUri,omitempty"`
+	Headers  []string `json:"headers,omitempty"`
 	ResetIds []string `json:"resetIds,omitempty"`
 }
 
@@ -82,7 +82,7 @@ func NewServiceParameterDataWithDefaults() *ServiceParameterData {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *ServiceParameterData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -100,7 +100,7 @@ func (o *ServiceParameterData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *ServiceParameterData) SetAppId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *ServiceParameterData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -132,7 +132,7 @@ func (o *ServiceParameterData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *ServiceParameterData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *ServiceParameterData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -164,7 +164,7 @@ func (o *ServiceParameterData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *ServiceParameterData) SetSnssai(v Snssai) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetInterGroupId() string {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *ServiceParameterData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.InterGroupId) {
+	if o == nil || IsNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -196,7 +196,7 @@ func (o *ServiceParameterData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasInterGroupId() bool {
-	if o != nil && !isNil(o.InterGroupId) {
+	if o != nil && !IsNil(o.InterGroupId) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *ServiceParameterData) SetInterGroupId(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *ServiceParameterData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -228,7 +228,7 @@ func (o *ServiceParameterData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *ServiceParameterData) SetSupi(v string) {
 
 // GetUeIpv4 returns the UeIpv4 field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUeIpv4() string {
-	if o == nil || isNil(o.UeIpv4) {
+	if o == nil || IsNil(o.UeIpv4) {
 		var ret string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *ServiceParameterData) GetUeIpv4() string {
 // GetUeIpv4Ok returns a tuple with the UeIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUeIpv4Ok() (*string, bool) {
-	if o == nil || isNil(o.UeIpv4) {
+	if o == nil || IsNil(o.UeIpv4) {
 		return nil, false
 	}
 	return o.UeIpv4, true
@@ -260,7 +260,7 @@ func (o *ServiceParameterData) GetUeIpv4Ok() (*string, bool) {
 
 // HasUeIpv4 returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUeIpv4() bool {
-	if o != nil && !isNil(o.UeIpv4) {
+	if o != nil && !IsNil(o.UeIpv4) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *ServiceParameterData) SetUeIpv4(v string) {
 
 // GetUeIpv6 returns the UeIpv6 field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUeIpv6() string {
-	if o == nil || isNil(o.UeIpv6) {
+	if o == nil || IsNil(o.UeIpv6) {
 		var ret string
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *ServiceParameterData) GetUeIpv6() string {
 // GetUeIpv6Ok returns a tuple with the UeIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUeIpv6Ok() (*string, bool) {
-	if o == nil || isNil(o.UeIpv6) {
+	if o == nil || IsNil(o.UeIpv6) {
 		return nil, false
 	}
 	return o.UeIpv6, true
@@ -292,7 +292,7 @@ func (o *ServiceParameterData) GetUeIpv6Ok() (*string, bool) {
 
 // HasUeIpv6 returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUeIpv6() bool {
-	if o != nil && !isNil(o.UeIpv6) {
+	if o != nil && !IsNil(o.UeIpv6) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *ServiceParameterData) SetUeIpv6(v string) {
 
 // GetUeMac returns the UeMac field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUeMac() string {
-	if o == nil || isNil(o.UeMac) {
+	if o == nil || IsNil(o.UeMac) {
 		var ret string
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *ServiceParameterData) GetUeMac() string {
 // GetUeMacOk returns a tuple with the UeMac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUeMacOk() (*string, bool) {
-	if o == nil || isNil(o.UeMac) {
+	if o == nil || IsNil(o.UeMac) {
 		return nil, false
 	}
 	return o.UeMac, true
@@ -324,7 +324,7 @@ func (o *ServiceParameterData) GetUeMacOk() (*string, bool) {
 
 // HasUeMac returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUeMac() bool {
-	if o != nil && !isNil(o.UeMac) {
+	if o != nil && !IsNil(o.UeMac) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *ServiceParameterData) SetUeMac(v string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetAnyUeInd() bool {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *ServiceParameterData) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AnyUeInd) {
+	if o == nil || IsNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -356,7 +356,7 @@ func (o *ServiceParameterData) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasAnyUeInd() bool {
-	if o != nil && !isNil(o.AnyUeInd) {
+	if o != nil && !IsNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -370,7 +370,7 @@ func (o *ServiceParameterData) SetAnyUeInd(v bool) {
 
 // GetParamOverPc5 returns the ParamOverPc5 field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamOverPc5() string {
-	if o == nil || isNil(o.ParamOverPc5) {
+	if o == nil || IsNil(o.ParamOverPc5) {
 		var ret string
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *ServiceParameterData) GetParamOverPc5() string {
 // GetParamOverPc5Ok returns a tuple with the ParamOverPc5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamOverPc5Ok() (*string, bool) {
-	if o == nil || isNil(o.ParamOverPc5) {
+	if o == nil || IsNil(o.ParamOverPc5) {
 		return nil, false
 	}
 	return o.ParamOverPc5, true
@@ -388,7 +388,7 @@ func (o *ServiceParameterData) GetParamOverPc5Ok() (*string, bool) {
 
 // HasParamOverPc5 returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamOverPc5() bool {
-	if o != nil && !isNil(o.ParamOverPc5) {
+	if o != nil && !IsNil(o.ParamOverPc5) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *ServiceParameterData) SetParamOverPc5(v string) {
 
 // GetParamOverUu returns the ParamOverUu field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamOverUu() string {
-	if o == nil || isNil(o.ParamOverUu) {
+	if o == nil || IsNil(o.ParamOverUu) {
 		var ret string
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *ServiceParameterData) GetParamOverUu() string {
 // GetParamOverUuOk returns a tuple with the ParamOverUu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamOverUuOk() (*string, bool) {
-	if o == nil || isNil(o.ParamOverUu) {
+	if o == nil || IsNil(o.ParamOverUu) {
 		return nil, false
 	}
 	return o.ParamOverUu, true
@@ -420,7 +420,7 @@ func (o *ServiceParameterData) GetParamOverUuOk() (*string, bool) {
 
 // HasParamOverUu returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamOverUu() bool {
-	if o != nil && !isNil(o.ParamOverUu) {
+	if o != nil && !IsNil(o.ParamOverUu) {
 		return true
 	}
 
@@ -434,7 +434,7 @@ func (o *ServiceParameterData) SetParamOverUu(v string) {
 
 // GetParamForProSeDd returns the ParamForProSeDd field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeDd() string {
-	if o == nil || isNil(o.ParamForProSeDd) {
+	if o == nil || IsNil(o.ParamForProSeDd) {
 		var ret string
 		return ret
 	}
@@ -444,7 +444,7 @@ func (o *ServiceParameterData) GetParamForProSeDd() string {
 // GetParamForProSeDdOk returns a tuple with the ParamForProSeDd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeDdOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeDd) {
+	if o == nil || IsNil(o.ParamForProSeDd) {
 		return nil, false
 	}
 	return o.ParamForProSeDd, true
@@ -452,7 +452,7 @@ func (o *ServiceParameterData) GetParamForProSeDdOk() (*string, bool) {
 
 // HasParamForProSeDd returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeDd() bool {
-	if o != nil && !isNil(o.ParamForProSeDd) {
+	if o != nil && !IsNil(o.ParamForProSeDd) {
 		return true
 	}
 
@@ -466,7 +466,7 @@ func (o *ServiceParameterData) SetParamForProSeDd(v string) {
 
 // GetParamForProSeDc returns the ParamForProSeDc field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeDc() string {
-	if o == nil || isNil(o.ParamForProSeDc) {
+	if o == nil || IsNil(o.ParamForProSeDc) {
 		var ret string
 		return ret
 	}
@@ -476,7 +476,7 @@ func (o *ServiceParameterData) GetParamForProSeDc() string {
 // GetParamForProSeDcOk returns a tuple with the ParamForProSeDc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeDcOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeDc) {
+	if o == nil || IsNil(o.ParamForProSeDc) {
 		return nil, false
 	}
 	return o.ParamForProSeDc, true
@@ -484,7 +484,7 @@ func (o *ServiceParameterData) GetParamForProSeDcOk() (*string, bool) {
 
 // HasParamForProSeDc returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeDc() bool {
-	if o != nil && !isNil(o.ParamForProSeDc) {
+	if o != nil && !IsNil(o.ParamForProSeDc) {
 		return true
 	}
 
@@ -498,7 +498,7 @@ func (o *ServiceParameterData) SetParamForProSeDc(v string) {
 
 // GetParamForProSeU2NRelUe returns the ParamForProSeU2NRelUe field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeU2NRelUe() string {
-	if o == nil || isNil(o.ParamForProSeU2NRelUe) {
+	if o == nil || IsNil(o.ParamForProSeU2NRelUe) {
 		var ret string
 		return ret
 	}
@@ -508,7 +508,7 @@ func (o *ServiceParameterData) GetParamForProSeU2NRelUe() string {
 // GetParamForProSeU2NRelUeOk returns a tuple with the ParamForProSeU2NRelUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeU2NRelUeOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeU2NRelUe) {
+	if o == nil || IsNil(o.ParamForProSeU2NRelUe) {
 		return nil, false
 	}
 	return o.ParamForProSeU2NRelUe, true
@@ -516,7 +516,7 @@ func (o *ServiceParameterData) GetParamForProSeU2NRelUeOk() (*string, bool) {
 
 // HasParamForProSeU2NRelUe returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeU2NRelUe() bool {
-	if o != nil && !isNil(o.ParamForProSeU2NRelUe) {
+	if o != nil && !IsNil(o.ParamForProSeU2NRelUe) {
 		return true
 	}
 
@@ -530,7 +530,7 @@ func (o *ServiceParameterData) SetParamForProSeU2NRelUe(v string) {
 
 // GetParamForProSeRemUe returns the ParamForProSeRemUe field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeRemUe() string {
-	if o == nil || isNil(o.ParamForProSeRemUe) {
+	if o == nil || IsNil(o.ParamForProSeRemUe) {
 		var ret string
 		return ret
 	}
@@ -540,7 +540,7 @@ func (o *ServiceParameterData) GetParamForProSeRemUe() string {
 // GetParamForProSeRemUeOk returns a tuple with the ParamForProSeRemUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeRemUeOk() (*string, bool) {
-	if o == nil || isNil(o.ParamForProSeRemUe) {
+	if o == nil || IsNil(o.ParamForProSeRemUe) {
 		return nil, false
 	}
 	return o.ParamForProSeRemUe, true
@@ -548,7 +548,7 @@ func (o *ServiceParameterData) GetParamForProSeRemUeOk() (*string, bool) {
 
 // HasParamForProSeRemUe returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeRemUe() bool {
-	if o != nil && !isNil(o.ParamForProSeRemUe) {
+	if o != nil && !IsNil(o.ParamForProSeRemUe) {
 		return true
 	}
 
@@ -562,7 +562,7 @@ func (o *ServiceParameterData) SetParamForProSeRemUe(v string) {
 
 // GetUrspGuidance returns the UrspGuidance field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUrspGuidance() []UrspRuleRequest {
-	if o == nil || isNil(o.UrspGuidance) {
+	if o == nil || IsNil(o.UrspGuidance) {
 		var ret []UrspRuleRequest
 		return ret
 	}
@@ -572,7 +572,7 @@ func (o *ServiceParameterData) GetUrspGuidance() []UrspRuleRequest {
 // GetUrspGuidanceOk returns a tuple with the UrspGuidance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUrspGuidanceOk() ([]UrspRuleRequest, bool) {
-	if o == nil || isNil(o.UrspGuidance) {
+	if o == nil || IsNil(o.UrspGuidance) {
 		return nil, false
 	}
 	return o.UrspGuidance, true
@@ -580,7 +580,7 @@ func (o *ServiceParameterData) GetUrspGuidanceOk() ([]UrspRuleRequest, bool) {
 
 // HasUrspGuidance returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUrspGuidance() bool {
-	if o != nil && !isNil(o.UrspGuidance) {
+	if o != nil && !IsNil(o.UrspGuidance) {
 		return true
 	}
 
@@ -594,7 +594,7 @@ func (o *ServiceParameterData) SetUrspGuidance(v []UrspRuleRequest) {
 
 // GetDeliveryEvents returns the DeliveryEvents field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetDeliveryEvents() []Event {
-	if o == nil || isNil(o.DeliveryEvents) {
+	if o == nil || IsNil(o.DeliveryEvents) {
 		var ret []Event
 		return ret
 	}
@@ -604,7 +604,7 @@ func (o *ServiceParameterData) GetDeliveryEvents() []Event {
 // GetDeliveryEventsOk returns a tuple with the DeliveryEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetDeliveryEventsOk() ([]Event, bool) {
-	if o == nil || isNil(o.DeliveryEvents) {
+	if o == nil || IsNil(o.DeliveryEvents) {
 		return nil, false
 	}
 	return o.DeliveryEvents, true
@@ -612,7 +612,7 @@ func (o *ServiceParameterData) GetDeliveryEventsOk() ([]Event, bool) {
 
 // HasDeliveryEvents returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasDeliveryEvents() bool {
-	if o != nil && !isNil(o.DeliveryEvents) {
+	if o != nil && !IsNil(o.DeliveryEvents) {
 		return true
 	}
 
@@ -626,7 +626,7 @@ func (o *ServiceParameterData) SetDeliveryEvents(v []Event) {
 
 // GetPolicDelivNotifCorreId returns the PolicDelivNotifCorreId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetPolicDelivNotifCorreId() string {
-	if o == nil || isNil(o.PolicDelivNotifCorreId) {
+	if o == nil || IsNil(o.PolicDelivNotifCorreId) {
 		var ret string
 		return ret
 	}
@@ -636,7 +636,7 @@ func (o *ServiceParameterData) GetPolicDelivNotifCorreId() string {
 // GetPolicDelivNotifCorreIdOk returns a tuple with the PolicDelivNotifCorreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetPolicDelivNotifCorreIdOk() (*string, bool) {
-	if o == nil || isNil(o.PolicDelivNotifCorreId) {
+	if o == nil || IsNil(o.PolicDelivNotifCorreId) {
 		return nil, false
 	}
 	return o.PolicDelivNotifCorreId, true
@@ -644,7 +644,7 @@ func (o *ServiceParameterData) GetPolicDelivNotifCorreIdOk() (*string, bool) {
 
 // HasPolicDelivNotifCorreId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasPolicDelivNotifCorreId() bool {
-	if o != nil && !isNil(o.PolicDelivNotifCorreId) {
+	if o != nil && !IsNil(o.PolicDelivNotifCorreId) {
 		return true
 	}
 
@@ -658,7 +658,7 @@ func (o *ServiceParameterData) SetPolicDelivNotifCorreId(v string) {
 
 // GetPolicDelivNotifUri returns the PolicDelivNotifUri field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetPolicDelivNotifUri() string {
-	if o == nil || isNil(o.PolicDelivNotifUri) {
+	if o == nil || IsNil(o.PolicDelivNotifUri) {
 		var ret string
 		return ret
 	}
@@ -668,7 +668,7 @@ func (o *ServiceParameterData) GetPolicDelivNotifUri() string {
 // GetPolicDelivNotifUriOk returns a tuple with the PolicDelivNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetPolicDelivNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.PolicDelivNotifUri) {
+	if o == nil || IsNil(o.PolicDelivNotifUri) {
 		return nil, false
 	}
 	return o.PolicDelivNotifUri, true
@@ -676,7 +676,7 @@ func (o *ServiceParameterData) GetPolicDelivNotifUriOk() (*string, bool) {
 
 // HasPolicDelivNotifUri returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasPolicDelivNotifUri() bool {
-	if o != nil && !isNil(o.PolicDelivNotifUri) {
+	if o != nil && !IsNil(o.PolicDelivNotifUri) {
 		return true
 	}
 
@@ -690,7 +690,7 @@ func (o *ServiceParameterData) SetPolicDelivNotifUri(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -700,7 +700,7 @@ func (o *ServiceParameterData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -708,7 +708,7 @@ func (o *ServiceParameterData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -722,7 +722,7 @@ func (o *ServiceParameterData) SetSuppFeat(v string) {
 
 // GetResUri returns the ResUri field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetResUri() string {
-	if o == nil || isNil(o.ResUri) {
+	if o == nil || IsNil(o.ResUri) {
 		var ret string
 		return ret
 	}
@@ -732,7 +732,7 @@ func (o *ServiceParameterData) GetResUri() string {
 // GetResUriOk returns a tuple with the ResUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetResUriOk() (*string, bool) {
-	if o == nil || isNil(o.ResUri) {
+	if o == nil || IsNil(o.ResUri) {
 		return nil, false
 	}
 	return o.ResUri, true
@@ -740,7 +740,7 @@ func (o *ServiceParameterData) GetResUriOk() (*string, bool) {
 
 // HasResUri returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasResUri() bool {
-	if o != nil && !isNil(o.ResUri) {
+	if o != nil && !IsNil(o.ResUri) {
 		return true
 	}
 
@@ -754,7 +754,7 @@ func (o *ServiceParameterData) SetResUri(v string) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetHeaders() []string {
-	if o == nil || isNil(o.Headers) {
+	if o == nil || IsNil(o.Headers) {
 		var ret []string
 		return ret
 	}
@@ -764,7 +764,7 @@ func (o *ServiceParameterData) GetHeaders() []string {
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetHeadersOk() ([]string, bool) {
-	if o == nil || isNil(o.Headers) {
+	if o == nil || IsNil(o.Headers) {
 		return nil, false
 	}
 	return o.Headers, true
@@ -772,7 +772,7 @@ func (o *ServiceParameterData) GetHeadersOk() ([]string, bool) {
 
 // HasHeaders returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasHeaders() bool {
-	if o != nil && !isNil(o.Headers) {
+	if o != nil && !IsNil(o.Headers) {
 		return true
 	}
 
@@ -786,7 +786,7 @@ func (o *ServiceParameterData) SetHeaders(v []string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -796,7 +796,7 @@ func (o *ServiceParameterData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -804,7 +804,7 @@ func (o *ServiceParameterData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -817,7 +817,7 @@ func (o *ServiceParameterData) SetResetIds(v []string) {
 }
 
 func (o ServiceParameterData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -826,73 +826,73 @@ func (o ServiceParameterData) MarshalJSON() ([]byte, error) {
 
 func (o ServiceParameterData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.InterGroupId) {
+	if !IsNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.UeIpv4) {
+	if !IsNil(o.UeIpv4) {
 		toSerialize["ueIpv4"] = o.UeIpv4
 	}
-	if !isNil(o.UeIpv6) {
+	if !IsNil(o.UeIpv6) {
 		toSerialize["ueIpv6"] = o.UeIpv6
 	}
-	if !isNil(o.UeMac) {
+	if !IsNil(o.UeMac) {
 		toSerialize["ueMac"] = o.UeMac
 	}
-	if !isNil(o.AnyUeInd) {
+	if !IsNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !isNil(o.ParamOverPc5) {
+	if !IsNil(o.ParamOverPc5) {
 		toSerialize["paramOverPc5"] = o.ParamOverPc5
 	}
-	if !isNil(o.ParamOverUu) {
+	if !IsNil(o.ParamOverUu) {
 		toSerialize["paramOverUu"] = o.ParamOverUu
 	}
-	if !isNil(o.ParamForProSeDd) {
+	if !IsNil(o.ParamForProSeDd) {
 		toSerialize["paramForProSeDd"] = o.ParamForProSeDd
 	}
-	if !isNil(o.ParamForProSeDc) {
+	if !IsNil(o.ParamForProSeDc) {
 		toSerialize["paramForProSeDc"] = o.ParamForProSeDc
 	}
-	if !isNil(o.ParamForProSeU2NRelUe) {
+	if !IsNil(o.ParamForProSeU2NRelUe) {
 		toSerialize["paramForProSeU2NRelUe"] = o.ParamForProSeU2NRelUe
 	}
-	if !isNil(o.ParamForProSeRemUe) {
+	if !IsNil(o.ParamForProSeRemUe) {
 		toSerialize["paramForProSeRemUe"] = o.ParamForProSeRemUe
 	}
-	if !isNil(o.UrspGuidance) {
+	if !IsNil(o.UrspGuidance) {
 		toSerialize["urspGuidance"] = o.UrspGuidance
 	}
-	if !isNil(o.DeliveryEvents) {
+	if !IsNil(o.DeliveryEvents) {
 		toSerialize["deliveryEvents"] = o.DeliveryEvents
 	}
-	if !isNil(o.PolicDelivNotifCorreId) {
+	if !IsNil(o.PolicDelivNotifCorreId) {
 		toSerialize["policDelivNotifCorreId"] = o.PolicDelivNotifCorreId
 	}
-	if !isNil(o.PolicDelivNotifUri) {
+	if !IsNil(o.PolicDelivNotifUri) {
 		toSerialize["policDelivNotifUri"] = o.PolicDelivNotifUri
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.ResUri) {
+	if !IsNil(o.ResUri) {
 		toSerialize["resUri"] = o.ResUri
 	}
-	if !isNil(o.Headers) {
+	if !IsNil(o.Headers) {
 		toSerialize["headers"] = o.Headers
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -933,5 +933,3 @@ func (v *NullableServiceParameterData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

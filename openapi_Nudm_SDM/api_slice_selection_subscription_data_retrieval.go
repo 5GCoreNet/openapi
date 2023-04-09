@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,25 +13,24 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SliceSelectionSubscriptionDataRetrievalApiService SliceSelectionSubscriptionDataRetrievalApi service
 type SliceSelectionSubscriptionDataRetrievalApiService service
 
 type ApiGetNSSAIRequest struct {
-	ctx context.Context
-	ApiService *SliceSelectionSubscriptionDataRetrievalApiService
-	supi string
-	supportedFeatures *string
-	plmnId *PlmnId
+	ctx                context.Context
+	ApiService         *SliceSelectionSubscriptionDataRetrievalApiService
+	supi               string
+	supportedFeatures  *string
+	plmnId             *PlmnId
 	disasterRoamingInd *bool
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch        *string
+	ifModifiedSince    *string
 }
 
 // Supported Features
@@ -71,26 +70,27 @@ func (r ApiGetNSSAIRequest) Execute() (*Nssai, *http.Response, error) {
 /*
 GetNSSAI retrieve a UE's subscribed NSSAI
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Identifier of the UE
- @return ApiGetNSSAIRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Identifier of the UE
+	@return ApiGetNSSAIRequest
 */
 func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAI(ctx context.Context, supi string) ApiGetNSSAIRequest {
 	return ApiGetNSSAIRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
-//  @return Nssai
+//
+//	@return Nssai
 func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r ApiGetNSSAIRequest) (*Nssai, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Nssai
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Nssai
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SliceSelectionSubscriptionDataRetrievalApiService.GetNSSAI")
@@ -106,13 +106,13 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.plmnId != nil {
-		parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	}
 	if r.disasterRoamingInd != nil {
-		parameterAddToQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,10 +132,10 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -147,9 +147,9 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -166,8 +166,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -177,8 +177,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -188,8 +188,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -199,8 +199,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -210,8 +210,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -221,8 +221,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -232,8 +232,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -243,8 +243,8 @@ func (a *SliceSelectionSubscriptionDataRetrievalApiService) GetNSSAIExecute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

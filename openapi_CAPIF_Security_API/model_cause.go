@@ -1,7 +1,7 @@
 /*
 CAPIF_Security_API
 
-API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for CAPIF security management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Cause Possible values are: - OVERLIMIT_USAGE:      The revocation of the authorization of the API invoker is due to the overlimit      usage of the service API - UNEXPECTED_REASON:      The revocation of the authorization of the API invoker is due to unexpected reason. 
+// Cause Possible values are: - OVERLIMIT_USAGE:      The revocation of the authorization of the API invoker is due to the overlimit      usage of the service API - UNEXPECTED_REASON:      The revocation of the authorization of the API invoker is due to unexpected reason.
 type Cause struct {
-	CauseAnyOf *CauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Cause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CauseAnyOf
-	err = json.Unmarshal(data, &dst.CauseAnyOf);
-	if err == nil {
-		jsonCauseAnyOf, _ := json.Marshal(dst.CauseAnyOf)
-		if string(jsonCauseAnyOf) == "{}" { // empty struct
-			dst.CauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.CauseAnyOf, return on the first match
-		}
-	} else {
-		dst.CauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Cause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Cause) MarshalJSON() ([]byte, error) {
-	if src.CauseAnyOf != nil {
-		return json.Marshal(&src.CauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

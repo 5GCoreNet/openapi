@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -17,28 +17,14 @@ import (
 
 // DataAggregationFunctionType The type of data aggregation function.
 type DataAggregationFunctionType struct {
-	DataAggregationFunctionTypeAnyOf *DataAggregationFunctionTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DataAggregationFunctionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DataAggregationFunctionTypeAnyOf
-	err = json.Unmarshal(data, &dst.DataAggregationFunctionTypeAnyOf);
-	if err == nil {
-		jsonDataAggregationFunctionTypeAnyOf, _ := json.Marshal(dst.DataAggregationFunctionTypeAnyOf)
-		if string(jsonDataAggregationFunctionTypeAnyOf) == "{}" { // empty struct
-			dst.DataAggregationFunctionTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.DataAggregationFunctionTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.DataAggregationFunctionTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DataAggregationFunctionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DataAggregationFunctionType) MarshalJSON() ([]byte, error) {
-	if src.DataAggregationFunctionTypeAnyOf != nil {
-		return json.Marshal(&src.DataAggregationFunctionTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDataAggregationFunctionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

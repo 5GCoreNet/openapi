@@ -1,7 +1,7 @@
 /*
 CAPIF_Discover_Service_API
 
-API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,38 +13,37 @@ package openapi_CAPIF_Discover_Service_API
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiAllServiceAPIsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	apiInvokerId *string
-	apiName *string
-	apiVersion *string
-	commType *CommunicationType
-	protocol *Protocol
-	aefId *string
-	dataFormat *DataFormat
-	apiCat *string
-	preferredAefLoc *AefLocation
-	supportedFeatures *string
+	ctx                  context.Context
+	ApiService           *DefaultApiService
+	apiInvokerId         *string
+	apiName              *string
+	apiVersion           *string
+	commType             *CommunicationType
+	protocol             *Protocol
+	aefId                *string
+	dataFormat           *DataFormat
+	apiCat               *string
+	preferredAefLoc      *AefLocation
+	supportedFeatures    *string
 	apiSupportedFeatures *string
 }
 
-// String identifying the API invoker assigned by the CAPIF core function. It also represents the CCF identifier in the CAPIF-6/6e interface. 
+// String identifying the API invoker assigned by the CAPIF core function. It also represents the CCF identifier in the CAPIF-6/6e interface.
 func (r ApiAllServiceAPIsGetRequest) ApiInvokerId(apiInvokerId string) ApiAllServiceAPIsGetRequest {
 	r.apiInvokerId = &apiInvokerId
 	return r
 }
 
-// API name, it is set as {apiName} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122. 
+// API name, it is set as {apiName} part of the URI structure as defined in clause 5.2.4 of 3GPP TS 29.122.
 func (r ApiAllServiceAPIsGetRequest) ApiName(apiName string) ApiAllServiceAPIsGetRequest {
 	r.apiName = &apiName
 	return r
@@ -98,7 +97,7 @@ func (r ApiAllServiceAPIsGetRequest) SupportedFeatures(supportedFeatures string)
 	return r
 }
 
-// Features supported by the discovered service API indicated by api-name parameter. This may only be present if api-name query parameter is present. 
+// Features supported by the discovered service API indicated by api-name parameter. This may only be present if api-name query parameter is present.
 func (r ApiAllServiceAPIsGetRequest) ApiSupportedFeatures(apiSupportedFeatures string) ApiAllServiceAPIsGetRequest {
 	r.apiSupportedFeatures = &apiSupportedFeatures
 	return r
@@ -113,25 +112,25 @@ AllServiceAPIsGet Method for AllServiceAPIsGet
 
 Discover published service APIs and retrieve a collection of APIs according to certain filter criteria.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAllServiceAPIsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAllServiceAPIsGetRequest
 */
 func (a *DefaultApiService) AllServiceAPIsGet(ctx context.Context) ApiAllServiceAPIsGetRequest {
 	return ApiAllServiceAPIsGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DiscoveredAPIs
+//
+//	@return DiscoveredAPIs
 func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetRequest) (*DiscoveredAPIs, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DiscoveredAPIs
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DiscoveredAPIs
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.AllServiceAPIsGet")
@@ -148,36 +147,36 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 		return localVarReturnValue, nil, reportError("apiInvokerId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
 	if r.apiName != nil {
-		parameterAddToQuery(localVarQueryParams, "api-name", r.apiName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-name", r.apiName, "")
 	}
 	if r.apiVersion != nil {
-		parameterAddToQuery(localVarQueryParams, "api-version", r.apiVersion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-version", r.apiVersion, "")
 	}
 	if r.commType != nil {
-		parameterAddToQuery(localVarQueryParams, "comm-type", r.commType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "comm-type", r.commType, "")
 	}
 	if r.protocol != nil {
-		parameterAddToQuery(localVarQueryParams, "protocol", r.protocol, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", r.protocol, "")
 	}
 	if r.aefId != nil {
-		parameterAddToQuery(localVarQueryParams, "aef-id", r.aefId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "aef-id", r.aefId, "")
 	}
 	if r.dataFormat != nil {
-		parameterAddToQuery(localVarQueryParams, "data-format", r.dataFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "data-format", r.dataFormat, "")
 	}
 	if r.apiCat != nil {
-		parameterAddToQuery(localVarQueryParams, "api-cat", r.apiCat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-cat", r.apiCat, "")
 	}
 	if r.preferredAefLoc != nil {
-		parameterAddToQuery(localVarQueryParams, "preferred-aef-loc", r.preferredAefLoc, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-aef-loc", r.preferredAefLoc, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.apiSupportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "api-supported-features", r.apiSupportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "api-supported-features", r.apiSupportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -206,9 +205,9 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -225,8 +224,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -236,8 +235,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -247,8 +246,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -258,8 +257,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -269,8 +268,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -280,8 +279,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -291,8 +290,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -302,8 +301,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -313,8 +312,8 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

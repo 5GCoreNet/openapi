@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MbsPcrt Possible values are: - MBS_SESSION_UPDATE: Indicates the MBS Session Update policy control request trigger. 
+// MbsPcrt Possible values are: - MBS_SESSION_UPDATE: Indicates the MBS Session Update policy control request trigger.
 type MbsPcrt struct {
-	MbsPcrtAnyOf *MbsPcrtAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsPcrt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MbsPcrtAnyOf
-	err = json.Unmarshal(data, &dst.MbsPcrtAnyOf);
-	if err == nil {
-		jsonMbsPcrtAnyOf, _ := json.Marshal(dst.MbsPcrtAnyOf)
-		if string(jsonMbsPcrtAnyOf) == "{}" { // empty struct
-			dst.MbsPcrtAnyOf = nil
-		} else {
-			return nil // data stored in dst.MbsPcrtAnyOf, return on the first match
-		}
-	} else {
-		dst.MbsPcrtAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MbsPcrt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsPcrt) MarshalJSON() ([]byte, error) {
-	if src.MbsPcrtAnyOf != nil {
-		return json.Marshal(&src.MbsPcrtAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMbsPcrt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

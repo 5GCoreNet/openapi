@@ -19,10 +19,10 @@ var _ MappedNullable = &ThresholdInfo{}
 
 // ThresholdInfo struct for ThresholdInfo
 type ThresholdInfo struct {
-	MonitoredMDAOutputIE *string `json:"monitoredMDAOutputIE,omitempty"`
-	ThresholdDirection *string `json:"thresholdDirection,omitempty"`
-	ThresholdValue *ThresholdInfoThresholdValue `json:"thresholdValue,omitempty"`
-	Hysteresis *ThresholdInfoHysteresis `json:"hysteresis,omitempty"`
+	MonitoredMDAOutputIE *string                      `json:"monitoredMDAOutputIE,omitempty"`
+	ThresholdDirection   *string                      `json:"thresholdDirection,omitempty"`
+	ThresholdValue       *ThresholdInfoThresholdValue `json:"thresholdValue,omitempty"`
+	Hysteresis           *ThresholdInfoHysteresis     `json:"hysteresis,omitempty"`
 }
 
 // NewThresholdInfo instantiates a new ThresholdInfo object
@@ -44,7 +44,7 @@ func NewThresholdInfoWithDefaults() *ThresholdInfo {
 
 // GetMonitoredMDAOutputIE returns the MonitoredMDAOutputIE field value if set, zero value otherwise.
 func (o *ThresholdInfo) GetMonitoredMDAOutputIE() string {
-	if o == nil || isNil(o.MonitoredMDAOutputIE) {
+	if o == nil || IsNil(o.MonitoredMDAOutputIE) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ThresholdInfo) GetMonitoredMDAOutputIE() string {
 // GetMonitoredMDAOutputIEOk returns a tuple with the MonitoredMDAOutputIE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo) GetMonitoredMDAOutputIEOk() (*string, bool) {
-	if o == nil || isNil(o.MonitoredMDAOutputIE) {
+	if o == nil || IsNil(o.MonitoredMDAOutputIE) {
 		return nil, false
 	}
 	return o.MonitoredMDAOutputIE, true
@@ -62,7 +62,7 @@ func (o *ThresholdInfo) GetMonitoredMDAOutputIEOk() (*string, bool) {
 
 // HasMonitoredMDAOutputIE returns a boolean if a field has been set.
 func (o *ThresholdInfo) HasMonitoredMDAOutputIE() bool {
-	if o != nil && !isNil(o.MonitoredMDAOutputIE) {
+	if o != nil && !IsNil(o.MonitoredMDAOutputIE) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ThresholdInfo) SetMonitoredMDAOutputIE(v string) {
 
 // GetThresholdDirection returns the ThresholdDirection field value if set, zero value otherwise.
 func (o *ThresholdInfo) GetThresholdDirection() string {
-	if o == nil || isNil(o.ThresholdDirection) {
+	if o == nil || IsNil(o.ThresholdDirection) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ThresholdInfo) GetThresholdDirection() string {
 // GetThresholdDirectionOk returns a tuple with the ThresholdDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo) GetThresholdDirectionOk() (*string, bool) {
-	if o == nil || isNil(o.ThresholdDirection) {
+	if o == nil || IsNil(o.ThresholdDirection) {
 		return nil, false
 	}
 	return o.ThresholdDirection, true
@@ -94,7 +94,7 @@ func (o *ThresholdInfo) GetThresholdDirectionOk() (*string, bool) {
 
 // HasThresholdDirection returns a boolean if a field has been set.
 func (o *ThresholdInfo) HasThresholdDirection() bool {
-	if o != nil && !isNil(o.ThresholdDirection) {
+	if o != nil && !IsNil(o.ThresholdDirection) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ThresholdInfo) SetThresholdDirection(v string) {
 
 // GetThresholdValue returns the ThresholdValue field value if set, zero value otherwise.
 func (o *ThresholdInfo) GetThresholdValue() ThresholdInfoThresholdValue {
-	if o == nil || isNil(o.ThresholdValue) {
+	if o == nil || IsNil(o.ThresholdValue) {
 		var ret ThresholdInfoThresholdValue
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ThresholdInfo) GetThresholdValue() ThresholdInfoThresholdValue {
 // GetThresholdValueOk returns a tuple with the ThresholdValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo) GetThresholdValueOk() (*ThresholdInfoThresholdValue, bool) {
-	if o == nil || isNil(o.ThresholdValue) {
+	if o == nil || IsNil(o.ThresholdValue) {
 		return nil, false
 	}
 	return o.ThresholdValue, true
@@ -126,7 +126,7 @@ func (o *ThresholdInfo) GetThresholdValueOk() (*ThresholdInfoThresholdValue, boo
 
 // HasThresholdValue returns a boolean if a field has been set.
 func (o *ThresholdInfo) HasThresholdValue() bool {
-	if o != nil && !isNil(o.ThresholdValue) {
+	if o != nil && !IsNil(o.ThresholdValue) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ThresholdInfo) SetThresholdValue(v ThresholdInfoThresholdValue) {
 
 // GetHysteresis returns the Hysteresis field value if set, zero value otherwise.
 func (o *ThresholdInfo) GetHysteresis() ThresholdInfoHysteresis {
-	if o == nil || isNil(o.Hysteresis) {
+	if o == nil || IsNil(o.Hysteresis) {
 		var ret ThresholdInfoHysteresis
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ThresholdInfo) GetHysteresis() ThresholdInfoHysteresis {
 // GetHysteresisOk returns a tuple with the Hysteresis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo) GetHysteresisOk() (*ThresholdInfoHysteresis, bool) {
-	if o == nil || isNil(o.Hysteresis) {
+	if o == nil || IsNil(o.Hysteresis) {
 		return nil, false
 	}
 	return o.Hysteresis, true
@@ -158,7 +158,7 @@ func (o *ThresholdInfo) GetHysteresisOk() (*ThresholdInfoHysteresis, bool) {
 
 // HasHysteresis returns a boolean if a field has been set.
 func (o *ThresholdInfo) HasHysteresis() bool {
-	if o != nil && !isNil(o.Hysteresis) {
+	if o != nil && !IsNil(o.Hysteresis) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *ThresholdInfo) SetHysteresis(v ThresholdInfoHysteresis) {
 }
 
 func (o ThresholdInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o ThresholdInfo) MarshalJSON() ([]byte, error) {
 
 func (o ThresholdInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MonitoredMDAOutputIE) {
+	if !IsNil(o.MonitoredMDAOutputIE) {
 		toSerialize["monitoredMDAOutputIE"] = o.MonitoredMDAOutputIE
 	}
-	if !isNil(o.ThresholdDirection) {
+	if !IsNil(o.ThresholdDirection) {
 		toSerialize["thresholdDirection"] = o.ThresholdDirection
 	}
-	if !isNil(o.ThresholdValue) {
+	if !IsNil(o.ThresholdValue) {
 		toSerialize["thresholdValue"] = o.ThresholdValue
 	}
-	if !isNil(o.Hysteresis) {
+	if !IsNil(o.Hysteresis) {
 		toSerialize["hysteresis"] = o.Hysteresis
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableThresholdInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

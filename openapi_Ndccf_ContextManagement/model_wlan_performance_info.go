@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &WlanPerformanceInfo{}
 
 // WlanPerformanceInfo The WLAN performance related information.
 type WlanPerformanceInfo struct {
-	NetworkArea *NetworkAreaInfo `json:"networkArea,omitempty"`
+	NetworkArea      *NetworkAreaInfo             `json:"networkArea,omitempty"`
 	WlanPerSsidInfos []WlanPerSsIdPerformanceInfo `json:"wlanPerSsidInfos"`
 }
 
@@ -43,7 +43,7 @@ func NewWlanPerformanceInfoWithDefaults() *WlanPerformanceInfo {
 
 // GetNetworkArea returns the NetworkArea field value if set, zero value otherwise.
 func (o *WlanPerformanceInfo) GetNetworkArea() NetworkAreaInfo {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *WlanPerformanceInfo) GetNetworkArea() NetworkAreaInfo {
 // GetNetworkAreaOk returns a tuple with the NetworkArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WlanPerformanceInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		return nil, false
 	}
 	return o.NetworkArea, true
@@ -61,7 +61,7 @@ func (o *WlanPerformanceInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasNetworkArea returns a boolean if a field has been set.
 func (o *WlanPerformanceInfo) HasNetworkArea() bool {
-	if o != nil && !isNil(o.NetworkArea) {
+	if o != nil && !IsNil(o.NetworkArea) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *WlanPerformanceInfo) SetWlanPerSsidInfos(v []WlanPerSsIdPerformanceInfo
 }
 
 func (o WlanPerformanceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -107,7 +107,7 @@ func (o WlanPerformanceInfo) MarshalJSON() ([]byte, error) {
 
 func (o WlanPerformanceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NetworkArea) {
+	if !IsNil(o.NetworkArea) {
 		toSerialize["networkArea"] = o.NetworkArea
 	}
 	toSerialize["wlanPerSsidInfos"] = o.WlanPerSsidInfos
@@ -149,5 +149,3 @@ func (v *NullableWlanPerformanceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

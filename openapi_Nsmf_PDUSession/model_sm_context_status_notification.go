@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,25 +19,25 @@ var _ MappedNullable = &SmContextStatusNotification{}
 
 // SmContextStatusNotification Data within Notify SM Context Status Request
 type SmContextStatusNotification struct {
-	StatusInfo StatusInfo `json:"statusInfo"`
-	SmallDataRateStatus *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
-	ApnRateStatus *ApnRateStatus `json:"apnRateStatus,omitempty"`
-	DdnFailureStatus *bool `json:"ddnFailureStatus,omitempty"`
-	NotifyCorrelationIdsForddnFailure []string `json:"notifyCorrelationIdsForddnFailure,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	StatusInfo                        StatusInfo           `json:"statusInfo"`
+	SmallDataRateStatus               *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
+	ApnRateStatus                     *ApnRateStatus       `json:"apnRateStatus,omitempty"`
+	DdnFailureStatus                  *bool                `json:"ddnFailureStatus,omitempty"`
+	NotifyCorrelationIdsForddnFailure []string             `json:"notifyCorrelationIdsForddnFailure,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NewIntermediateSmfId *string `json:"newIntermediateSmfId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NewSmfId *string `json:"newSmfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	NewSmfSetId *string `json:"newSmfSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	OldSmfId *string `json:"oldSmfId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	OldSmContextRef *string `json:"oldSmContextRef,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	AltAnchorSmfUri *string `json:"altAnchorSmfUri,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AltAnchorSmfId *string `json:"altAnchorSmfId,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AltAnchorSmfId *string         `json:"altAnchorSmfId,omitempty"`
 	TargetDnaiInfo *TargetDnaiInfo `json:"targetDnaiInfo,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	OldPduSessionRef *string `json:"oldPduSessionRef,omitempty"`
@@ -93,7 +93,7 @@ func (o *SmContextStatusNotification) SetStatusInfo(v StatusInfo) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStat
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -111,7 +111,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRate
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasSmallDataRateStatus() bool {
-	if o != nil && !isNil(o.SmallDataRateStatus) {
+	if o != nil && !IsNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *SmContextStatusNotification) SetSmallDataRateStatus(v SmallDataRateStat
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -143,7 +143,7 @@ func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasApnRateStatus() bool {
-	if o != nil && !isNil(o.ApnRateStatus) {
+	if o != nil && !IsNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *SmContextStatusNotification) SetApnRateStatus(v ApnRateStatus) {
 
 // GetDdnFailureStatus returns the DdnFailureStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetDdnFailureStatus() bool {
-	if o == nil || isNil(o.DdnFailureStatus) {
+	if o == nil || IsNil(o.DdnFailureStatus) {
 		var ret bool
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *SmContextStatusNotification) GetDdnFailureStatus() bool {
 // GetDdnFailureStatusOk returns a tuple with the DdnFailureStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetDdnFailureStatusOk() (*bool, bool) {
-	if o == nil || isNil(o.DdnFailureStatus) {
+	if o == nil || IsNil(o.DdnFailureStatus) {
 		return nil, false
 	}
 	return o.DdnFailureStatus, true
@@ -175,7 +175,7 @@ func (o *SmContextStatusNotification) GetDdnFailureStatusOk() (*bool, bool) {
 
 // HasDdnFailureStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasDdnFailureStatus() bool {
-	if o != nil && !isNil(o.DdnFailureStatus) {
+	if o != nil && !IsNil(o.DdnFailureStatus) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *SmContextStatusNotification) SetDdnFailureStatus(v bool) {
 
 // GetNotifyCorrelationIdsForddnFailure returns the NotifyCorrelationIdsForddnFailure field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailure() []string {
-	if o == nil || isNil(o.NotifyCorrelationIdsForddnFailure) {
+	if o == nil || IsNil(o.NotifyCorrelationIdsForddnFailure) {
 		var ret []string
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailure() []s
 // GetNotifyCorrelationIdsForddnFailureOk returns a tuple with the NotifyCorrelationIdsForddnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailureOk() ([]string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationIdsForddnFailure) {
+	if o == nil || IsNil(o.NotifyCorrelationIdsForddnFailure) {
 		return nil, false
 	}
 	return o.NotifyCorrelationIdsForddnFailure, true
@@ -207,7 +207,7 @@ func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailureOk() (
 
 // HasNotifyCorrelationIdsForddnFailure returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNotifyCorrelationIdsForddnFailure() bool {
-	if o != nil && !isNil(o.NotifyCorrelationIdsForddnFailure) {
+	if o != nil && !IsNil(o.NotifyCorrelationIdsForddnFailure) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *SmContextStatusNotification) SetNotifyCorrelationIdsForddnFailure(v []s
 
 // GetNewIntermediateSmfId returns the NewIntermediateSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNewIntermediateSmfId() string {
-	if o == nil || isNil(o.NewIntermediateSmfId) {
+	if o == nil || IsNil(o.NewIntermediateSmfId) {
 		var ret string
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *SmContextStatusNotification) GetNewIntermediateSmfId() string {
 // GetNewIntermediateSmfIdOk returns a tuple with the NewIntermediateSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNewIntermediateSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NewIntermediateSmfId) {
+	if o == nil || IsNil(o.NewIntermediateSmfId) {
 		return nil, false
 	}
 	return o.NewIntermediateSmfId, true
@@ -239,7 +239,7 @@ func (o *SmContextStatusNotification) GetNewIntermediateSmfIdOk() (*string, bool
 
 // HasNewIntermediateSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNewIntermediateSmfId() bool {
-	if o != nil && !isNil(o.NewIntermediateSmfId) {
+	if o != nil && !IsNil(o.NewIntermediateSmfId) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *SmContextStatusNotification) SetNewIntermediateSmfId(v string) {
 
 // GetNewSmfId returns the NewSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNewSmfId() string {
-	if o == nil || isNil(o.NewSmfId) {
+	if o == nil || IsNil(o.NewSmfId) {
 		var ret string
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *SmContextStatusNotification) GetNewSmfId() string {
 // GetNewSmfIdOk returns a tuple with the NewSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNewSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NewSmfId) {
+	if o == nil || IsNil(o.NewSmfId) {
 		return nil, false
 	}
 	return o.NewSmfId, true
@@ -271,7 +271,7 @@ func (o *SmContextStatusNotification) GetNewSmfIdOk() (*string, bool) {
 
 // HasNewSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNewSmfId() bool {
-	if o != nil && !isNil(o.NewSmfId) {
+	if o != nil && !IsNil(o.NewSmfId) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *SmContextStatusNotification) SetNewSmfId(v string) {
 
 // GetNewSmfSetId returns the NewSmfSetId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNewSmfSetId() string {
-	if o == nil || isNil(o.NewSmfSetId) {
+	if o == nil || IsNil(o.NewSmfSetId) {
 		var ret string
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *SmContextStatusNotification) GetNewSmfSetId() string {
 // GetNewSmfSetIdOk returns a tuple with the NewSmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNewSmfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NewSmfSetId) {
+	if o == nil || IsNil(o.NewSmfSetId) {
 		return nil, false
 	}
 	return o.NewSmfSetId, true
@@ -303,7 +303,7 @@ func (o *SmContextStatusNotification) GetNewSmfSetIdOk() (*string, bool) {
 
 // HasNewSmfSetId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNewSmfSetId() bool {
-	if o != nil && !isNil(o.NewSmfSetId) {
+	if o != nil && !IsNil(o.NewSmfSetId) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *SmContextStatusNotification) SetNewSmfSetId(v string) {
 
 // GetOldSmfId returns the OldSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetOldSmfId() string {
-	if o == nil || isNil(o.OldSmfId) {
+	if o == nil || IsNil(o.OldSmfId) {
 		var ret string
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *SmContextStatusNotification) GetOldSmfId() string {
 // GetOldSmfIdOk returns a tuple with the OldSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetOldSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.OldSmfId) {
+	if o == nil || IsNil(o.OldSmfId) {
 		return nil, false
 	}
 	return o.OldSmfId, true
@@ -335,7 +335,7 @@ func (o *SmContextStatusNotification) GetOldSmfIdOk() (*string, bool) {
 
 // HasOldSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasOldSmfId() bool {
-	if o != nil && !isNil(o.OldSmfId) {
+	if o != nil && !IsNil(o.OldSmfId) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *SmContextStatusNotification) SetOldSmfId(v string) {
 
 // GetOldSmContextRef returns the OldSmContextRef field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetOldSmContextRef() string {
-	if o == nil || isNil(o.OldSmContextRef) {
+	if o == nil || IsNil(o.OldSmContextRef) {
 		var ret string
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *SmContextStatusNotification) GetOldSmContextRef() string {
 // GetOldSmContextRefOk returns a tuple with the OldSmContextRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetOldSmContextRefOk() (*string, bool) {
-	if o == nil || isNil(o.OldSmContextRef) {
+	if o == nil || IsNil(o.OldSmContextRef) {
 		return nil, false
 	}
 	return o.OldSmContextRef, true
@@ -367,7 +367,7 @@ func (o *SmContextStatusNotification) GetOldSmContextRefOk() (*string, bool) {
 
 // HasOldSmContextRef returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasOldSmContextRef() bool {
-	if o != nil && !isNil(o.OldSmContextRef) {
+	if o != nil && !IsNil(o.OldSmContextRef) {
 		return true
 	}
 
@@ -381,7 +381,7 @@ func (o *SmContextStatusNotification) SetOldSmContextRef(v string) {
 
 // GetAltAnchorSmfUri returns the AltAnchorSmfUri field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetAltAnchorSmfUri() string {
-	if o == nil || isNil(o.AltAnchorSmfUri) {
+	if o == nil || IsNil(o.AltAnchorSmfUri) {
 		var ret string
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfUri() string {
 // GetAltAnchorSmfUriOk returns a tuple with the AltAnchorSmfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetAltAnchorSmfUriOk() (*string, bool) {
-	if o == nil || isNil(o.AltAnchorSmfUri) {
+	if o == nil || IsNil(o.AltAnchorSmfUri) {
 		return nil, false
 	}
 	return o.AltAnchorSmfUri, true
@@ -399,7 +399,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfUriOk() (*string, bool) {
 
 // HasAltAnchorSmfUri returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasAltAnchorSmfUri() bool {
-	if o != nil && !isNil(o.AltAnchorSmfUri) {
+	if o != nil && !IsNil(o.AltAnchorSmfUri) {
 		return true
 	}
 
@@ -413,7 +413,7 @@ func (o *SmContextStatusNotification) SetAltAnchorSmfUri(v string) {
 
 // GetAltAnchorSmfId returns the AltAnchorSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetAltAnchorSmfId() string {
-	if o == nil || isNil(o.AltAnchorSmfId) {
+	if o == nil || IsNil(o.AltAnchorSmfId) {
 		var ret string
 		return ret
 	}
@@ -423,7 +423,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfId() string {
 // GetAltAnchorSmfIdOk returns a tuple with the AltAnchorSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetAltAnchorSmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AltAnchorSmfId) {
+	if o == nil || IsNil(o.AltAnchorSmfId) {
 		return nil, false
 	}
 	return o.AltAnchorSmfId, true
@@ -431,7 +431,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfIdOk() (*string, bool) {
 
 // HasAltAnchorSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasAltAnchorSmfId() bool {
-	if o != nil && !isNil(o.AltAnchorSmfId) {
+	if o != nil && !IsNil(o.AltAnchorSmfId) {
 		return true
 	}
 
@@ -445,7 +445,7 @@ func (o *SmContextStatusNotification) SetAltAnchorSmfId(v string) {
 
 // GetTargetDnaiInfo returns the TargetDnaiInfo field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetTargetDnaiInfo() TargetDnaiInfo {
-	if o == nil || isNil(o.TargetDnaiInfo) {
+	if o == nil || IsNil(o.TargetDnaiInfo) {
 		var ret TargetDnaiInfo
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *SmContextStatusNotification) GetTargetDnaiInfo() TargetDnaiInfo {
 // GetTargetDnaiInfoOk returns a tuple with the TargetDnaiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetTargetDnaiInfoOk() (*TargetDnaiInfo, bool) {
-	if o == nil || isNil(o.TargetDnaiInfo) {
+	if o == nil || IsNil(o.TargetDnaiInfo) {
 		return nil, false
 	}
 	return o.TargetDnaiInfo, true
@@ -463,7 +463,7 @@ func (o *SmContextStatusNotification) GetTargetDnaiInfoOk() (*TargetDnaiInfo, bo
 
 // HasTargetDnaiInfo returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasTargetDnaiInfo() bool {
-	if o != nil && !isNil(o.TargetDnaiInfo) {
+	if o != nil && !IsNil(o.TargetDnaiInfo) {
 		return true
 	}
 
@@ -477,7 +477,7 @@ func (o *SmContextStatusNotification) SetTargetDnaiInfo(v TargetDnaiInfo) {
 
 // GetOldPduSessionRef returns the OldPduSessionRef field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetOldPduSessionRef() string {
-	if o == nil || isNil(o.OldPduSessionRef) {
+	if o == nil || IsNil(o.OldPduSessionRef) {
 		var ret string
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *SmContextStatusNotification) GetOldPduSessionRef() string {
 // GetOldPduSessionRefOk returns a tuple with the OldPduSessionRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetOldPduSessionRefOk() (*string, bool) {
-	if o == nil || isNil(o.OldPduSessionRef) {
+	if o == nil || IsNil(o.OldPduSessionRef) {
 		return nil, false
 	}
 	return o.OldPduSessionRef, true
@@ -495,7 +495,7 @@ func (o *SmContextStatusNotification) GetOldPduSessionRefOk() (*string, bool) {
 
 // HasOldPduSessionRef returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasOldPduSessionRef() bool {
-	if o != nil && !isNil(o.OldPduSessionRef) {
+	if o != nil && !IsNil(o.OldPduSessionRef) {
 		return true
 	}
 
@@ -509,7 +509,7 @@ func (o *SmContextStatusNotification) SetOldPduSessionRef(v string) {
 
 // GetInterPlmnApiRoot returns the InterPlmnApiRoot field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetInterPlmnApiRoot() string {
-	if o == nil || isNil(o.InterPlmnApiRoot) {
+	if o == nil || IsNil(o.InterPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -519,7 +519,7 @@ func (o *SmContextStatusNotification) GetInterPlmnApiRoot() string {
 // GetInterPlmnApiRootOk returns a tuple with the InterPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetInterPlmnApiRootOk() (*string, bool) {
-	if o == nil || isNil(o.InterPlmnApiRoot) {
+	if o == nil || IsNil(o.InterPlmnApiRoot) {
 		return nil, false
 	}
 	return o.InterPlmnApiRoot, true
@@ -527,7 +527,7 @@ func (o *SmContextStatusNotification) GetInterPlmnApiRootOk() (*string, bool) {
 
 // HasInterPlmnApiRoot returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasInterPlmnApiRoot() bool {
-	if o != nil && !isNil(o.InterPlmnApiRoot) {
+	if o != nil && !IsNil(o.InterPlmnApiRoot) {
 		return true
 	}
 
@@ -540,7 +540,7 @@ func (o *SmContextStatusNotification) SetInterPlmnApiRoot(v string) {
 }
 
 func (o SmContextStatusNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -550,46 +550,46 @@ func (o SmContextStatusNotification) MarshalJSON() ([]byte, error) {
 func (o SmContextStatusNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusInfo"] = o.StatusInfo
-	if !isNil(o.SmallDataRateStatus) {
+	if !IsNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !isNil(o.ApnRateStatus) {
+	if !IsNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
-	if !isNil(o.DdnFailureStatus) {
+	if !IsNil(o.DdnFailureStatus) {
 		toSerialize["ddnFailureStatus"] = o.DdnFailureStatus
 	}
-	if !isNil(o.NotifyCorrelationIdsForddnFailure) {
+	if !IsNil(o.NotifyCorrelationIdsForddnFailure) {
 		toSerialize["notifyCorrelationIdsForddnFailure"] = o.NotifyCorrelationIdsForddnFailure
 	}
-	if !isNil(o.NewIntermediateSmfId) {
+	if !IsNil(o.NewIntermediateSmfId) {
 		toSerialize["newIntermediateSmfId"] = o.NewIntermediateSmfId
 	}
-	if !isNil(o.NewSmfId) {
+	if !IsNil(o.NewSmfId) {
 		toSerialize["newSmfId"] = o.NewSmfId
 	}
-	if !isNil(o.NewSmfSetId) {
+	if !IsNil(o.NewSmfSetId) {
 		toSerialize["newSmfSetId"] = o.NewSmfSetId
 	}
-	if !isNil(o.OldSmfId) {
+	if !IsNil(o.OldSmfId) {
 		toSerialize["oldSmfId"] = o.OldSmfId
 	}
-	if !isNil(o.OldSmContextRef) {
+	if !IsNil(o.OldSmContextRef) {
 		toSerialize["oldSmContextRef"] = o.OldSmContextRef
 	}
-	if !isNil(o.AltAnchorSmfUri) {
+	if !IsNil(o.AltAnchorSmfUri) {
 		toSerialize["altAnchorSmfUri"] = o.AltAnchorSmfUri
 	}
-	if !isNil(o.AltAnchorSmfId) {
+	if !IsNil(o.AltAnchorSmfId) {
 		toSerialize["altAnchorSmfId"] = o.AltAnchorSmfId
 	}
-	if !isNil(o.TargetDnaiInfo) {
+	if !IsNil(o.TargetDnaiInfo) {
 		toSerialize["targetDnaiInfo"] = o.TargetDnaiInfo
 	}
-	if !isNil(o.OldPduSessionRef) {
+	if !IsNil(o.OldPduSessionRef) {
 		toSerialize["oldPduSessionRef"] = o.OldPduSessionRef
 	}
-	if !isNil(o.InterPlmnApiRoot) {
+	if !IsNil(o.InterPlmnApiRoot) {
 		toSerialize["interPlmnApiRoot"] = o.InterPlmnApiRoot
 	}
 	return toSerialize, nil
@@ -630,5 +630,3 @@ func (v *NullableSmContextStatusNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

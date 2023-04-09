@@ -21,7 +21,7 @@ var _ MappedNullable = &TimeWindow{}
 // TimeWindow struct for TimeWindow
 type TimeWindow struct {
 	MDAOutputStartTime *time.Time `json:"mDAOutputStartTime,omitempty"`
-	MDAOutputEndTime *time.Time `json:"mDAOutputEndTime,omitempty"`
+	MDAOutputEndTime   *time.Time `json:"mDAOutputEndTime,omitempty"`
 }
 
 // NewTimeWindow instantiates a new TimeWindow object
@@ -43,7 +43,7 @@ func NewTimeWindowWithDefaults() *TimeWindow {
 
 // GetMDAOutputStartTime returns the MDAOutputStartTime field value if set, zero value otherwise.
 func (o *TimeWindow) GetMDAOutputStartTime() time.Time {
-	if o == nil || isNil(o.MDAOutputStartTime) {
+	if o == nil || IsNil(o.MDAOutputStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TimeWindow) GetMDAOutputStartTime() time.Time {
 // GetMDAOutputStartTimeOk returns a tuple with the MDAOutputStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow) GetMDAOutputStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MDAOutputStartTime) {
+	if o == nil || IsNil(o.MDAOutputStartTime) {
 		return nil, false
 	}
 	return o.MDAOutputStartTime, true
@@ -61,7 +61,7 @@ func (o *TimeWindow) GetMDAOutputStartTimeOk() (*time.Time, bool) {
 
 // HasMDAOutputStartTime returns a boolean if a field has been set.
 func (o *TimeWindow) HasMDAOutputStartTime() bool {
-	if o != nil && !isNil(o.MDAOutputStartTime) {
+	if o != nil && !IsNil(o.MDAOutputStartTime) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TimeWindow) SetMDAOutputStartTime(v time.Time) {
 
 // GetMDAOutputEndTime returns the MDAOutputEndTime field value if set, zero value otherwise.
 func (o *TimeWindow) GetMDAOutputEndTime() time.Time {
-	if o == nil || isNil(o.MDAOutputEndTime) {
+	if o == nil || IsNil(o.MDAOutputEndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TimeWindow) GetMDAOutputEndTime() time.Time {
 // GetMDAOutputEndTimeOk returns a tuple with the MDAOutputEndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow) GetMDAOutputEndTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MDAOutputEndTime) {
+	if o == nil || IsNil(o.MDAOutputEndTime) {
 		return nil, false
 	}
 	return o.MDAOutputEndTime, true
@@ -93,7 +93,7 @@ func (o *TimeWindow) GetMDAOutputEndTimeOk() (*time.Time, bool) {
 
 // HasMDAOutputEndTime returns a boolean if a field has been set.
 func (o *TimeWindow) HasMDAOutputEndTime() bool {
-	if o != nil && !isNil(o.MDAOutputEndTime) {
+	if o != nil && !IsNil(o.MDAOutputEndTime) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *TimeWindow) SetMDAOutputEndTime(v time.Time) {
 }
 
 func (o TimeWindow) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o TimeWindow) MarshalJSON() ([]byte, error) {
 
 func (o TimeWindow) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MDAOutputStartTime) {
+	if !IsNil(o.MDAOutputStartTime) {
 		toSerialize["mDAOutputStartTime"] = o.MDAOutputStartTime
 	}
-	if !isNil(o.MDAOutputEndTime) {
+	if !IsNil(o.MDAOutputEndTime) {
 		toSerialize["mDAOutputEndTime"] = o.MDAOutputEndTime
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableTimeWindow) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -71,7 +71,7 @@ func (o *QosFlowReleaseRequestItem) SetQfi(v int32) {
 
 // GetQosRules returns the QosRules field value if set, zero value otherwise.
 func (o *QosFlowReleaseRequestItem) GetQosRules() string {
-	if o == nil || isNil(o.QosRules) {
+	if o == nil || IsNil(o.QosRules) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *QosFlowReleaseRequestItem) GetQosRules() string {
 // GetQosRulesOk returns a tuple with the QosRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowReleaseRequestItem) GetQosRulesOk() (*string, bool) {
-	if o == nil || isNil(o.QosRules) {
+	if o == nil || IsNil(o.QosRules) {
 		return nil, false
 	}
 	return o.QosRules, true
@@ -89,7 +89,7 @@ func (o *QosFlowReleaseRequestItem) GetQosRulesOk() (*string, bool) {
 
 // HasQosRules returns a boolean if a field has been set.
 func (o *QosFlowReleaseRequestItem) HasQosRules() bool {
-	if o != nil && !isNil(o.QosRules) {
+	if o != nil && !IsNil(o.QosRules) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *QosFlowReleaseRequestItem) SetQosRules(v string) {
 
 // GetQosFlowDescription returns the QosFlowDescription field value if set, zero value otherwise.
 func (o *QosFlowReleaseRequestItem) GetQosFlowDescription() string {
-	if o == nil || isNil(o.QosFlowDescription) {
+	if o == nil || IsNil(o.QosFlowDescription) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *QosFlowReleaseRequestItem) GetQosFlowDescription() string {
 // GetQosFlowDescriptionOk returns a tuple with the QosFlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowReleaseRequestItem) GetQosFlowDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.QosFlowDescription) {
+	if o == nil || IsNil(o.QosFlowDescription) {
 		return nil, false
 	}
 	return o.QosFlowDescription, true
@@ -121,7 +121,7 @@ func (o *QosFlowReleaseRequestItem) GetQosFlowDescriptionOk() (*string, bool) {
 
 // HasQosFlowDescription returns a boolean if a field has been set.
 func (o *QosFlowReleaseRequestItem) HasQosFlowDescription() bool {
-	if o != nil && !isNil(o.QosFlowDescription) {
+	if o != nil && !IsNil(o.QosFlowDescription) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *QosFlowReleaseRequestItem) SetQosFlowDescription(v string) {
 }
 
 func (o QosFlowReleaseRequestItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o QosFlowReleaseRequestItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowReleaseRequestItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !isNil(o.QosRules) {
+	if !IsNil(o.QosRules) {
 		toSerialize["qosRules"] = o.QosRules
 	}
-	if !isNil(o.QosFlowDescription) {
+	if !IsNil(o.QosFlowDescription) {
 		toSerialize["qosFlowDescription"] = o.QosFlowDescription
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableQosFlowReleaseRequestItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

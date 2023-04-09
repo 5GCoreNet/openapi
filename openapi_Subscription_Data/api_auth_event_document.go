@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AuthEventDocumentApiService AuthEventDocumentApi service
 type AuthEventDocumentApiService service
 
 type ApiDeleteAuthenticationStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthEventDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiDeleteAuthenticationStatusRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteAuthenticationStatusRequest) Execute() (*http.Response, error) 
 /*
 DeleteAuthenticationStatus To remove the Authentication Status of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiDeleteAuthenticationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiDeleteAuthenticationStatusRequest
 */
 func (a *AuthEventDocumentApiService) DeleteAuthenticationStatus(ctx context.Context, ueId string) ApiDeleteAuthenticationStatusRequest {
 	return ApiDeleteAuthenticationStatusRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthEventDocumentApiService) DeleteAuthenticationStatusExecute(r ApiDeleteAuthenticationStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthEventDocumentApiService.DeleteAuthenticationStatus")
@@ -95,9 +94,9 @@ func (a *AuthEventDocumentApiService) DeleteAuthenticationStatusExecute(r ApiDel
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,10 +113,10 @@ func (a *AuthEventDocumentApiService) DeleteAuthenticationStatusExecute(r ApiDel
 }
 
 type ApiQueryAuthenticationStatusRequest struct {
-	ctx context.Context
-	ApiService *AuthEventDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *AuthEventDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -140,26 +139,27 @@ func (r ApiQueryAuthenticationStatusRequest) Execute() (*AuthEvent, *http.Respon
 /*
 QueryAuthenticationStatus Retrieves the Authentication Status of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryAuthenticationStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryAuthenticationStatusRequest
 */
 func (a *AuthEventDocumentApiService) QueryAuthenticationStatus(ctx context.Context, ueId string) ApiQueryAuthenticationStatusRequest {
 	return ApiQueryAuthenticationStatusRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return AuthEvent
+//
+//	@return AuthEvent
 func (a *AuthEventDocumentApiService) QueryAuthenticationStatusExecute(r ApiQueryAuthenticationStatusRequest) (*AuthEvent, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthEvent
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthEvent
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthEventDocumentApiService.QueryAuthenticationStatus")
@@ -175,10 +175,10 @@ func (a *AuthEventDocumentApiService) QueryAuthenticationStatusExecute(r ApiQuer
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -207,9 +207,9 @@ func (a *AuthEventDocumentApiService) QueryAuthenticationStatusExecute(r ApiQuer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

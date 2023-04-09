@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &ServiceExperienceInfoPerApp{}
 // ServiceExperienceInfoPerApp Contains service experience information associated with an application.
 type ServiceExperienceInfoPerApp struct {
 	// String providing an application identifier.
-	AppId *string `json:"appId,omitempty"`
-	AppServerIns *AddrFqdn `json:"appServerIns,omitempty"`
+	AppId          *string                        `json:"appId,omitempty"`
+	AppServerIns   *AddrFqdn                      `json:"appServerIns,omitempty"`
 	SvcExpPerFlows []ServiceExperienceInfoPerFlow `json:"svcExpPerFlows"`
-	Gpsis []string `json:"gpsis,omitempty"`
-	Supis []string `json:"supis,omitempty"`
+	Gpsis          []string                       `json:"gpsis,omitempty"`
+	Supis          []string                       `json:"supis,omitempty"`
 }
 
 // NewServiceExperienceInfoPerApp instantiates a new ServiceExperienceInfoPerApp object
@@ -47,7 +47,7 @@ func NewServiceExperienceInfoPerAppWithDefaults() *ServiceExperienceInfoPerApp {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerApp) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ServiceExperienceInfoPerApp) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerApp) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -65,7 +65,7 @@ func (o *ServiceExperienceInfoPerApp) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerApp) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *ServiceExperienceInfoPerApp) SetAppId(v string) {
 
 // GetAppServerIns returns the AppServerIns field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerApp) GetAppServerIns() AddrFqdn {
-	if o == nil || isNil(o.AppServerIns) {
+	if o == nil || IsNil(o.AppServerIns) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *ServiceExperienceInfoPerApp) GetAppServerIns() AddrFqdn {
 // GetAppServerInsOk returns a tuple with the AppServerIns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerApp) GetAppServerInsOk() (*AddrFqdn, bool) {
-	if o == nil || isNil(o.AppServerIns) {
+	if o == nil || IsNil(o.AppServerIns) {
 		return nil, false
 	}
 	return o.AppServerIns, true
@@ -97,7 +97,7 @@ func (o *ServiceExperienceInfoPerApp) GetAppServerInsOk() (*AddrFqdn, bool) {
 
 // HasAppServerIns returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerApp) HasAppServerIns() bool {
-	if o != nil && !isNil(o.AppServerIns) {
+	if o != nil && !IsNil(o.AppServerIns) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ServiceExperienceInfoPerApp) SetSvcExpPerFlows(v []ServiceExperienceInf
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerApp) GetGpsis() []string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ServiceExperienceInfoPerApp) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerApp) GetGpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -153,7 +153,7 @@ func (o *ServiceExperienceInfoPerApp) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerApp) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *ServiceExperienceInfoPerApp) SetGpsis(v []string) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerApp) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *ServiceExperienceInfoPerApp) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerApp) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -185,7 +185,7 @@ func (o *ServiceExperienceInfoPerApp) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerApp) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *ServiceExperienceInfoPerApp) SetSupis(v []string) {
 }
 
 func (o ServiceExperienceInfoPerApp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,17 +207,17 @@ func (o ServiceExperienceInfoPerApp) MarshalJSON() ([]byte, error) {
 
 func (o ServiceExperienceInfoPerApp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.AppServerIns) {
+	if !IsNil(o.AppServerIns) {
 		toSerialize["appServerIns"] = o.AppServerIns
 	}
 	toSerialize["svcExpPerFlows"] = o.SvcExpPerFlows
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableServiceExperienceInfoPerApp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &RetrievedData{}
 // RetrievedData Data within Retrieve Response
 type RetrievedData struct {
 	SmallDataRateStatus *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
-	AfCoordinationInfo *AfCoordinationInfo `json:"afCoordinationInfo,omitempty"`
+	AfCoordinationInfo  *AfCoordinationInfo  `json:"afCoordinationInfo,omitempty"`
 }
 
 // NewRetrievedData instantiates a new RetrievedData object
@@ -42,7 +42,7 @@ func NewRetrievedDataWithDefaults() *RetrievedData {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *RetrievedData) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RetrievedData) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetrievedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -60,7 +60,7 @@ func (o *RetrievedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) 
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *RetrievedData) HasSmallDataRateStatus() bool {
-	if o != nil && !isNil(o.SmallDataRateStatus) {
+	if o != nil && !IsNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RetrievedData) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetAfCoordinationInfo returns the AfCoordinationInfo field value if set, zero value otherwise.
 func (o *RetrievedData) GetAfCoordinationInfo() AfCoordinationInfo {
-	if o == nil || isNil(o.AfCoordinationInfo) {
+	if o == nil || IsNil(o.AfCoordinationInfo) {
 		var ret AfCoordinationInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RetrievedData) GetAfCoordinationInfo() AfCoordinationInfo {
 // GetAfCoordinationInfoOk returns a tuple with the AfCoordinationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetrievedData) GetAfCoordinationInfoOk() (*AfCoordinationInfo, bool) {
-	if o == nil || isNil(o.AfCoordinationInfo) {
+	if o == nil || IsNil(o.AfCoordinationInfo) {
 		return nil, false
 	}
 	return o.AfCoordinationInfo, true
@@ -92,7 +92,7 @@ func (o *RetrievedData) GetAfCoordinationInfoOk() (*AfCoordinationInfo, bool) {
 
 // HasAfCoordinationInfo returns a boolean if a field has been set.
 func (o *RetrievedData) HasAfCoordinationInfo() bool {
-	if o != nil && !isNil(o.AfCoordinationInfo) {
+	if o != nil && !IsNil(o.AfCoordinationInfo) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RetrievedData) SetAfCoordinationInfo(v AfCoordinationInfo) {
 }
 
 func (o RetrievedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RetrievedData) MarshalJSON() ([]byte, error) {
 
 func (o RetrievedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SmallDataRateStatus) {
+	if !IsNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !isNil(o.AfCoordinationInfo) {
+	if !IsNil(o.AfCoordinationInfo) {
 		toSerialize["afCoordinationInfo"] = o.AfCoordinationInfo
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRetrievedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

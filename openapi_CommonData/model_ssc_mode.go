@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SscMode represents the service and session continuity mode It shall comply with the provisions defined in table 5.4.3.6-1.  
+// SscMode represents the service and session continuity mode It shall comply with the provisions defined in table 5.4.3.6-1.
 type SscMode struct {
-	SscModeAnyOf *SscModeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SscMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SscModeAnyOf
-	err = json.Unmarshal(data, &dst.SscModeAnyOf);
-	if err == nil {
-		jsonSscModeAnyOf, _ := json.Marshal(dst.SscModeAnyOf)
-		if string(jsonSscModeAnyOf) == "{}" { // empty struct
-			dst.SscModeAnyOf = nil
-		} else {
-			return nil // data stored in dst.SscModeAnyOf, return on the first match
-		}
-	} else {
-		dst.SscModeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SscMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SscMode) MarshalJSON() ([]byte, error) {
-	if src.SscModeAnyOf != nil {
-		return json.Marshal(&src.SscModeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSscMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

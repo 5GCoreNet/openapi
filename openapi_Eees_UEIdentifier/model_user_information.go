@@ -1,7 +1,7 @@
 /*
 EES UE Identifier Service
 
-EES UE Identifier Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES UE Identifier Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the UserInformation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UserInformation{}
 
-// UserInformation Represents information about the User or the UE, that used by EES to use 3GPP CN capability  to retrieve the EAS specific UE identifier. 
+// UserInformation Represents information about the User or the UE, that used by EES to use 3GPP CN capability  to retrieve the EAS specific UE identifier.
 type UserInformation struct {
-	// The application identifier of the EAS, e.g. URI, FQDN, requesting the UE Identifier  information 
+	// The application identifier of the EAS, e.g. URI, FQDN, requesting the UE Identifier  information
 	EasId string `json:"easId"`
 	// Identifier of the ASP that provides the EAS.
 	EasProviderId *string `json:"easProviderId,omitempty"`
-	IpAddr IpAddr `json:"ipAddr"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	IpAddr        IpAddr  `json:"ipAddr"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -73,7 +73,7 @@ func (o *UserInformation) SetEasId(v string) {
 
 // GetEasProviderId returns the EasProviderId field value if set, zero value otherwise.
 func (o *UserInformation) GetEasProviderId() string {
-	if o == nil || isNil(o.EasProviderId) {
+	if o == nil || IsNil(o.EasProviderId) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *UserInformation) GetEasProviderId() string {
 // GetEasProviderIdOk returns a tuple with the EasProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetEasProviderIdOk() (*string, bool) {
-	if o == nil || isNil(o.EasProviderId) {
+	if o == nil || IsNil(o.EasProviderId) {
 		return nil, false
 	}
 	return o.EasProviderId, true
@@ -91,7 +91,7 @@ func (o *UserInformation) GetEasProviderIdOk() (*string, bool) {
 
 // HasEasProviderId returns a boolean if a field has been set.
 func (o *UserInformation) HasEasProviderId() bool {
-	if o != nil && !isNil(o.EasProviderId) {
+	if o != nil && !IsNil(o.EasProviderId) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *UserInformation) SetIpAddr(v IpAddr) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UserInformation) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *UserInformation) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -147,7 +147,7 @@ func (o *UserInformation) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UserInformation) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *UserInformation) SetSuppFeat(v string) {
 }
 
 func (o UserInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,11 +170,11 @@ func (o UserInformation) MarshalJSON() ([]byte, error) {
 func (o UserInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
-	if !isNil(o.EasProviderId) {
+	if !IsNil(o.EasProviderId) {
 		toSerialize["easProviderId"] = o.EasProviderId
 	}
 	toSerialize["ipAddr"] = o.IpAddr
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -215,5 +215,3 @@ func (v *NullableUserInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

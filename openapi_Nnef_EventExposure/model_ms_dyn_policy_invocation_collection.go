@@ -1,7 +1,7 @@
 /*
 Nnef_EventExposure
 
-NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the MsDynPolicyInvocationCollection type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MsDynPolicyInvocationCollection{}
 
-// MsDynPolicyInvocationCollection Contains the Media Streaming Dynamic Policy invocation collected for an UE Application via AF. 
+// MsDynPolicyInvocationCollection Contains the Media Streaming Dynamic Policy invocation collected for an UE Application via AF.
 type MsDynPolicyInvocationCollection struct {
 	MsDynPlyInvocs []DynamicPolicy `json:"msDynPlyInvocs"`
 }
@@ -65,7 +65,7 @@ func (o *MsDynPolicyInvocationCollection) SetMsDynPlyInvocs(v []DynamicPolicy) {
 }
 
 func (o MsDynPolicyInvocationCollection) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullableMsDynPolicyInvocationCollection) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

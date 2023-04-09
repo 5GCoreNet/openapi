@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &SmPolicyData{}
 
 // SmPolicyData Contains the SM policy data for a given subscriber.
 type SmPolicyData struct {
-	// Contains Session Management Policy data per S-NSSAI for all the SNSSAIs of the subscriber. The key of the map is the S-NSSAI. 
+	// Contains Session Management Policy data per S-NSSAI for all the SNSSAIs of the subscriber. The key of the map is the S-NSSAI.
 	SmPolicySnssaiData map[string]SmPolicySnssaiData `json:"smPolicySnssaiData"`
-	// Contains a list of usage monitoring profiles associated with the subscriber. The limit identifier is used as the key of the map. 
+	// Contains a list of usage monitoring profiles associated with the subscriber. The limit identifier is used as the key of the map.
 	UmDataLimits *map[string]UsageMonDataLimit `json:"umDataLimits,omitempty"`
-	// Contains the remaining allowed usage data associated with the subscriber. The limit identifier is used as the key of the map. 
+	// Contains the remaining allowed usage data associated with the subscriber. The limit identifier is used as the key of the map.
 	UmData *map[string]UsageMonData `json:"umData,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SuppFeat *string `json:"suppFeat,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SuppFeat *string  `json:"suppFeat,omitempty"`
 	ResetIds []string `json:"resetIds,omitempty"`
 }
 
@@ -74,7 +74,7 @@ func (o *SmPolicyData) SetSmPolicySnssaiData(v map[string]SmPolicySnssaiData) {
 
 // GetUmDataLimits returns the UmDataLimits field value if set, zero value otherwise.
 func (o *SmPolicyData) GetUmDataLimits() map[string]UsageMonDataLimit {
-	if o == nil || isNil(o.UmDataLimits) {
+	if o == nil || IsNil(o.UmDataLimits) {
 		var ret map[string]UsageMonDataLimit
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SmPolicyData) GetUmDataLimits() map[string]UsageMonDataLimit {
 // GetUmDataLimitsOk returns a tuple with the UmDataLimits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetUmDataLimitsOk() (*map[string]UsageMonDataLimit, bool) {
-	if o == nil || isNil(o.UmDataLimits) {
+	if o == nil || IsNil(o.UmDataLimits) {
 		return nil, false
 	}
 	return o.UmDataLimits, true
@@ -92,7 +92,7 @@ func (o *SmPolicyData) GetUmDataLimitsOk() (*map[string]UsageMonDataLimit, bool)
 
 // HasUmDataLimits returns a boolean if a field has been set.
 func (o *SmPolicyData) HasUmDataLimits() bool {
-	if o != nil && !isNil(o.UmDataLimits) {
+	if o != nil && !IsNil(o.UmDataLimits) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *SmPolicyData) SetUmDataLimits(v map[string]UsageMonDataLimit) {
 
 // GetUmData returns the UmData field value if set, zero value otherwise.
 func (o *SmPolicyData) GetUmData() map[string]UsageMonData {
-	if o == nil || isNil(o.UmData) {
+	if o == nil || IsNil(o.UmData) {
 		var ret map[string]UsageMonData
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *SmPolicyData) GetUmData() map[string]UsageMonData {
 // GetUmDataOk returns a tuple with the UmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetUmDataOk() (*map[string]UsageMonData, bool) {
-	if o == nil || isNil(o.UmData) {
+	if o == nil || IsNil(o.UmData) {
 		return nil, false
 	}
 	return o.UmData, true
@@ -124,7 +124,7 @@ func (o *SmPolicyData) GetUmDataOk() (*map[string]UsageMonData, bool) {
 
 // HasUmData returns a boolean if a field has been set.
 func (o *SmPolicyData) HasUmData() bool {
-	if o != nil && !isNil(o.UmData) {
+	if o != nil && !IsNil(o.UmData) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SmPolicyData) SetUmData(v map[string]UsageMonData) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SmPolicyData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *SmPolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -156,7 +156,7 @@ func (o *SmPolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SmPolicyData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *SmPolicyData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SmPolicyData) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *SmPolicyData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -188,7 +188,7 @@ func (o *SmPolicyData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SmPolicyData) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *SmPolicyData) SetResetIds(v []string) {
 }
 
 func (o SmPolicyData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -211,16 +211,16 @@ func (o SmPolicyData) MarshalJSON() ([]byte, error) {
 func (o SmPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smPolicySnssaiData"] = o.SmPolicySnssaiData
-	if !isNil(o.UmDataLimits) {
+	if !IsNil(o.UmDataLimits) {
 		toSerialize["umDataLimits"] = o.UmDataLimits
 	}
-	if !isNil(o.UmData) {
+	if !IsNil(o.UmData) {
 		toSerialize["umData"] = o.UmData
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -261,5 +261,3 @@ func (v *NullableSmPolicyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

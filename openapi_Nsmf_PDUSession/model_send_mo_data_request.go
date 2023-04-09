@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &SendMoDataRequest{}
 
 // SendMoDataRequest struct for SendMoDataRequest
 type SendMoDataRequest struct {
-	JsonData *SendMoDataReqData `json:"jsonData,omitempty"`
-	BinaryMoData *os.File `json:"binaryMoData,omitempty"`
+	JsonData     *SendMoDataReqData `json:"jsonData,omitempty"`
+	BinaryMoData **os.File          `json:"binaryMoData,omitempty"`
 }
 
 // NewSendMoDataRequest instantiates a new SendMoDataRequest object
@@ -43,7 +43,7 @@ func NewSendMoDataRequestWithDefaults() *SendMoDataRequest {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *SendMoDataRequest) GetJsonData() SendMoDataReqData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret SendMoDataReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SendMoDataRequest) GetJsonData() SendMoDataReqData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SendMoDataRequest) GetJsonDataOk() (*SendMoDataReqData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *SendMoDataRequest) GetJsonDataOk() (*SendMoDataReqData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *SendMoDataRequest) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *SendMoDataRequest) SetJsonData(v SendMoDataReqData) {
 }
 
 // GetBinaryMoData returns the BinaryMoData field value if set, zero value otherwise.
-func (o *SendMoDataRequest) GetBinaryMoData() os.File {
-	if o == nil || isNil(o.BinaryMoData) {
-		var ret os.File
+func (o *SendMoDataRequest) GetBinaryMoData() *os.File {
+	if o == nil || IsNil(o.BinaryMoData) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryMoData
@@ -84,8 +84,8 @@ func (o *SendMoDataRequest) GetBinaryMoData() os.File {
 
 // GetBinaryMoDataOk returns a tuple with the BinaryMoData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SendMoDataRequest) GetBinaryMoDataOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryMoData) {
+func (o *SendMoDataRequest) GetBinaryMoDataOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryMoData) {
 		return nil, false
 	}
 	return o.BinaryMoData, true
@@ -93,20 +93,20 @@ func (o *SendMoDataRequest) GetBinaryMoDataOk() (*os.File, bool) {
 
 // HasBinaryMoData returns a boolean if a field has been set.
 func (o *SendMoDataRequest) HasBinaryMoData() bool {
-	if o != nil && !isNil(o.BinaryMoData) {
+	if o != nil && !IsNil(o.BinaryMoData) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryMoData gets a reference to the given os.File and assigns it to the BinaryMoData field.
-func (o *SendMoDataRequest) SetBinaryMoData(v os.File) {
+// SetBinaryMoData gets a reference to the given *os.File and assigns it to the BinaryMoData field.
+func (o *SendMoDataRequest) SetBinaryMoData(v *os.File) {
 	o.BinaryMoData = &v
 }
 
 func (o SendMoDataRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o SendMoDataRequest) MarshalJSON() ([]byte, error) {
 
 func (o SendMoDataRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryMoData) {
+	if !IsNil(o.BinaryMoData) {
 		toSerialize["binaryMoData"] = o.BinaryMoData
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableSendMoDataRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

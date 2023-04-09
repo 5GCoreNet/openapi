@@ -1,7 +1,7 @@
 /*
 Nudm_NIDDAU
 
-Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &NiddAuthUpdateInfo{}
 // NiddAuthUpdateInfo Represents NIDD authorization update information.
 type NiddAuthUpdateInfo struct {
 	AuthorizationData AuthorizationData `json:"authorizationData"`
-	InvalidityInd *bool `json:"invalidityInd,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	InvalidityInd     *bool             `json:"invalidityInd,omitempty"`
+	Snssai            *Snssai           `json:"snssai,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn       *string    `json:"dnn,omitempty"`
 	NiddCause *NiddCause `json:"niddCause,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *NiddAuthUpdateInfo) SetAuthorizationData(v AuthorizationData) {
 
 // GetInvalidityInd returns the InvalidityInd field value if set, zero value otherwise.
 func (o *NiddAuthUpdateInfo) GetInvalidityInd() bool {
-	if o == nil || isNil(o.InvalidityInd) {
+	if o == nil || IsNil(o.InvalidityInd) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *NiddAuthUpdateInfo) GetInvalidityInd() bool {
 // GetInvalidityIndOk returns a tuple with the InvalidityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddAuthUpdateInfo) GetInvalidityIndOk() (*bool, bool) {
-	if o == nil || isNil(o.InvalidityInd) {
+	if o == nil || IsNil(o.InvalidityInd) {
 		return nil, false
 	}
 	return o.InvalidityInd, true
@@ -89,7 +89,7 @@ func (o *NiddAuthUpdateInfo) GetInvalidityIndOk() (*bool, bool) {
 
 // HasInvalidityInd returns a boolean if a field has been set.
 func (o *NiddAuthUpdateInfo) HasInvalidityInd() bool {
-	if o != nil && !isNil(o.InvalidityInd) {
+	if o != nil && !IsNil(o.InvalidityInd) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *NiddAuthUpdateInfo) SetInvalidityInd(v bool) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *NiddAuthUpdateInfo) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *NiddAuthUpdateInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddAuthUpdateInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -121,7 +121,7 @@ func (o *NiddAuthUpdateInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *NiddAuthUpdateInfo) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *NiddAuthUpdateInfo) SetSnssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *NiddAuthUpdateInfo) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *NiddAuthUpdateInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddAuthUpdateInfo) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -153,7 +153,7 @@ func (o *NiddAuthUpdateInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *NiddAuthUpdateInfo) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *NiddAuthUpdateInfo) SetDnn(v string) {
 
 // GetNiddCause returns the NiddCause field value if set, zero value otherwise.
 func (o *NiddAuthUpdateInfo) GetNiddCause() NiddCause {
-	if o == nil || isNil(o.NiddCause) {
+	if o == nil || IsNil(o.NiddCause) {
 		var ret NiddCause
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *NiddAuthUpdateInfo) GetNiddCause() NiddCause {
 // GetNiddCauseOk returns a tuple with the NiddCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddAuthUpdateInfo) GetNiddCauseOk() (*NiddCause, bool) {
-	if o == nil || isNil(o.NiddCause) {
+	if o == nil || IsNil(o.NiddCause) {
 		return nil, false
 	}
 	return o.NiddCause, true
@@ -185,7 +185,7 @@ func (o *NiddAuthUpdateInfo) GetNiddCauseOk() (*NiddCause, bool) {
 
 // HasNiddCause returns a boolean if a field has been set.
 func (o *NiddAuthUpdateInfo) HasNiddCause() bool {
-	if o != nil && !isNil(o.NiddCause) {
+	if o != nil && !IsNil(o.NiddCause) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *NiddAuthUpdateInfo) SetNiddCause(v NiddCause) {
 }
 
 func (o NiddAuthUpdateInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,16 +208,16 @@ func (o NiddAuthUpdateInfo) MarshalJSON() ([]byte, error) {
 func (o NiddAuthUpdateInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authorizationData"] = o.AuthorizationData
-	if !isNil(o.InvalidityInd) {
+	if !IsNil(o.InvalidityInd) {
 		toSerialize["invalidityInd"] = o.InvalidityInd
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.NiddCause) {
+	if !IsNil(o.NiddCause) {
 		toSerialize["niddCause"] = o.NiddCause
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableNiddAuthUpdateInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

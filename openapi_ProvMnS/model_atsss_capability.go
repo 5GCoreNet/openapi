@@ -19,8 +19,8 @@ var _ MappedNullable = &AtsssCapability{}
 
 // AtsssCapability struct for AtsssCapability
 type AtsssCapability struct {
-	AtsssLL *bool `json:"atsssLL,omitempty"`
-	Mptcp *bool `json:"mptcp,omitempty"`
+	AtsssLL       *bool `json:"atsssLL,omitempty"`
+	Mptcp         *bool `json:"mptcp,omitempty"`
 	RttWithoutPmf *bool `json:"rttWithoutPmf,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewAtsssCapabilityWithDefaults() *AtsssCapability {
 
 // GetAtsssLL returns the AtsssLL field value if set, zero value otherwise.
 func (o *AtsssCapability) GetAtsssLL() bool {
-	if o == nil || isNil(o.AtsssLL) {
+	if o == nil || IsNil(o.AtsssLL) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AtsssCapability) GetAtsssLL() bool {
 // GetAtsssLLOk returns a tuple with the AtsssLL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AtsssCapability) GetAtsssLLOk() (*bool, bool) {
-	if o == nil || isNil(o.AtsssLL) {
+	if o == nil || IsNil(o.AtsssLL) {
 		return nil, false
 	}
 	return o.AtsssLL, true
@@ -61,7 +61,7 @@ func (o *AtsssCapability) GetAtsssLLOk() (*bool, bool) {
 
 // HasAtsssLL returns a boolean if a field has been set.
 func (o *AtsssCapability) HasAtsssLL() bool {
-	if o != nil && !isNil(o.AtsssLL) {
+	if o != nil && !IsNil(o.AtsssLL) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AtsssCapability) SetAtsssLL(v bool) {
 
 // GetMptcp returns the Mptcp field value if set, zero value otherwise.
 func (o *AtsssCapability) GetMptcp() bool {
-	if o == nil || isNil(o.Mptcp) {
+	if o == nil || IsNil(o.Mptcp) {
 		var ret bool
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AtsssCapability) GetMptcp() bool {
 // GetMptcpOk returns a tuple with the Mptcp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AtsssCapability) GetMptcpOk() (*bool, bool) {
-	if o == nil || isNil(o.Mptcp) {
+	if o == nil || IsNil(o.Mptcp) {
 		return nil, false
 	}
 	return o.Mptcp, true
@@ -93,7 +93,7 @@ func (o *AtsssCapability) GetMptcpOk() (*bool, bool) {
 
 // HasMptcp returns a boolean if a field has been set.
 func (o *AtsssCapability) HasMptcp() bool {
-	if o != nil && !isNil(o.Mptcp) {
+	if o != nil && !IsNil(o.Mptcp) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AtsssCapability) SetMptcp(v bool) {
 
 // GetRttWithoutPmf returns the RttWithoutPmf field value if set, zero value otherwise.
 func (o *AtsssCapability) GetRttWithoutPmf() bool {
-	if o == nil || isNil(o.RttWithoutPmf) {
+	if o == nil || IsNil(o.RttWithoutPmf) {
 		var ret bool
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AtsssCapability) GetRttWithoutPmf() bool {
 // GetRttWithoutPmfOk returns a tuple with the RttWithoutPmf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AtsssCapability) GetRttWithoutPmfOk() (*bool, bool) {
-	if o == nil || isNil(o.RttWithoutPmf) {
+	if o == nil || IsNil(o.RttWithoutPmf) {
 		return nil, false
 	}
 	return o.RttWithoutPmf, true
@@ -125,7 +125,7 @@ func (o *AtsssCapability) GetRttWithoutPmfOk() (*bool, bool) {
 
 // HasRttWithoutPmf returns a boolean if a field has been set.
 func (o *AtsssCapability) HasRttWithoutPmf() bool {
-	if o != nil && !isNil(o.RttWithoutPmf) {
+	if o != nil && !IsNil(o.RttWithoutPmf) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AtsssCapability) SetRttWithoutPmf(v bool) {
 }
 
 func (o AtsssCapability) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o AtsssCapability) MarshalJSON() ([]byte, error) {
 
 func (o AtsssCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AtsssLL) {
+	if !IsNil(o.AtsssLL) {
 		toSerialize["atsssLL"] = o.AtsssLL
 	}
-	if !isNil(o.Mptcp) {
+	if !IsNil(o.Mptcp) {
 		toSerialize["mptcp"] = o.Mptcp
 	}
-	if !isNil(o.RttWithoutPmf) {
+	if !IsNil(o.RttWithoutPmf) {
 		toSerialize["rttWithoutPmf"] = o.RttWithoutPmf
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableAtsssCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NRF OAuth2
 
-NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &AccessTokenRsp{}
 
 // AccessTokenRsp Contains information related to the access token response
 type AccessTokenRsp struct {
-	// JWS Compact Serialized representation of JWS signed JSON object (AccessTokenClaims) 
-	AccessToken string `json:"access_token"`
-	TokenType string `json:"token_type"`
-	ExpiresIn *int32 `json:"expires_in,omitempty"`
-	Scope *string `json:"scope,omitempty"`
+	// JWS Compact Serialized representation of JWS signed JSON object (AccessTokenClaims)
+	AccessToken string  `json:"access_token"`
+	TokenType   string  `json:"token_type"`
+	ExpiresIn   *int32  `json:"expires_in,omitempty"`
+	Scope       *string `json:"scope,omitempty"`
 }
 
 // NewAccessTokenRsp instantiates a new AccessTokenRsp object
@@ -95,7 +95,7 @@ func (o *AccessTokenRsp) SetTokenType(v string) {
 
 // GetExpiresIn returns the ExpiresIn field value if set, zero value otherwise.
 func (o *AccessTokenRsp) GetExpiresIn() int32 {
-	if o == nil || isNil(o.ExpiresIn) {
+	if o == nil || IsNil(o.ExpiresIn) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *AccessTokenRsp) GetExpiresIn() int32 {
 // GetExpiresInOk returns a tuple with the ExpiresIn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenRsp) GetExpiresInOk() (*int32, bool) {
-	if o == nil || isNil(o.ExpiresIn) {
+	if o == nil || IsNil(o.ExpiresIn) {
 		return nil, false
 	}
 	return o.ExpiresIn, true
@@ -113,7 +113,7 @@ func (o *AccessTokenRsp) GetExpiresInOk() (*int32, bool) {
 
 // HasExpiresIn returns a boolean if a field has been set.
 func (o *AccessTokenRsp) HasExpiresIn() bool {
-	if o != nil && !isNil(o.ExpiresIn) {
+	if o != nil && !IsNil(o.ExpiresIn) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *AccessTokenRsp) SetExpiresIn(v int32) {
 
 // GetScope returns the Scope field value if set, zero value otherwise.
 func (o *AccessTokenRsp) GetScope() string {
-	if o == nil || isNil(o.Scope) {
+	if o == nil || IsNil(o.Scope) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *AccessTokenRsp) GetScope() string {
 // GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenRsp) GetScopeOk() (*string, bool) {
-	if o == nil || isNil(o.Scope) {
+	if o == nil || IsNil(o.Scope) {
 		return nil, false
 	}
 	return o.Scope, true
@@ -145,7 +145,7 @@ func (o *AccessTokenRsp) GetScopeOk() (*string, bool) {
 
 // HasScope returns a boolean if a field has been set.
 func (o *AccessTokenRsp) HasScope() bool {
-	if o != nil && !isNil(o.Scope) {
+	if o != nil && !IsNil(o.Scope) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *AccessTokenRsp) SetScope(v string) {
 }
 
 func (o AccessTokenRsp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o AccessTokenRsp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["access_token"] = o.AccessToken
 	toSerialize["token_type"] = o.TokenType
-	if !isNil(o.ExpiresIn) {
+	if !IsNil(o.ExpiresIn) {
 		toSerialize["expires_in"] = o.ExpiresIn
 	}
-	if !isNil(o.Scope) {
+	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableAccessTokenRsp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

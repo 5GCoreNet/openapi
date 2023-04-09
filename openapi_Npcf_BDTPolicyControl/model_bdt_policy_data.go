@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -25,7 +25,7 @@ type BdtPolicyData struct {
 	TransfPolicies []TransferPolicy `json:"transfPolicies"`
 	// Contains an identity of the selected transfer policy.
 	SelTransPolicyId *int32 `json:"selTransPolicyId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -98,7 +98,7 @@ func (o *BdtPolicyData) SetTransfPolicies(v []TransferPolicy) {
 
 // GetSelTransPolicyId returns the SelTransPolicyId field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetSelTransPolicyId() int32 {
-	if o == nil || isNil(o.SelTransPolicyId) {
+	if o == nil || IsNil(o.SelTransPolicyId) {
 		var ret int32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *BdtPolicyData) GetSelTransPolicyId() int32 {
 // GetSelTransPolicyIdOk returns a tuple with the SelTransPolicyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetSelTransPolicyIdOk() (*int32, bool) {
-	if o == nil || isNil(o.SelTransPolicyId) {
+	if o == nil || IsNil(o.SelTransPolicyId) {
 		return nil, false
 	}
 	return o.SelTransPolicyId, true
@@ -116,7 +116,7 @@ func (o *BdtPolicyData) GetSelTransPolicyIdOk() (*int32, bool) {
 
 // HasSelTransPolicyId returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasSelTransPolicyId() bool {
-	if o != nil && !isNil(o.SelTransPolicyId) {
+	if o != nil && !IsNil(o.SelTransPolicyId) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *BdtPolicyData) SetSelTransPolicyId(v int32) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *BdtPolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -148,7 +148,7 @@ func (o *BdtPolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *BdtPolicyData) SetSuppFeat(v string) {
 }
 
 func (o BdtPolicyData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,10 +172,10 @@ func (o BdtPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bdtRefId"] = o.BdtRefId
 	toSerialize["transfPolicies"] = o.TransfPolicies
-	if !isNil(o.SelTransPolicyId) {
+	if !IsNil(o.SelTransPolicyId) {
 		toSerialize["selTransPolicyId"] = o.SelTransPolicyId
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -216,5 +216,3 @@ func (v *NullableBdtPolicyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

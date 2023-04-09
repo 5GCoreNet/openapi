@@ -17,7 +17,7 @@ import (
 
 // ThresholdLevelInd - struct for ThresholdLevelInd
 type ThresholdLevelInd struct {
-	ThresholdLevelIndOneOf *ThresholdLevelIndOneOf
+	ThresholdLevelIndOneOf  *ThresholdLevelIndOneOf
 	ThresholdLevelIndOneOf1 *ThresholdLevelIndOneOf1
 }
 
@@ -34,7 +34,6 @@ func ThresholdLevelIndOneOf1AsThresholdLevelInd(v *ThresholdLevelIndOneOf1) Thre
 		ThresholdLevelIndOneOf1: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ThresholdLevelInd) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ThresholdLevelInd) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ThresholdLevelInd) GetActualInstance() (interface{}) {
+func (obj *ThresholdLevelInd) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableThresholdLevelInd) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

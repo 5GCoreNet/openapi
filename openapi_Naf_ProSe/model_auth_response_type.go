@@ -1,7 +1,7 @@
 /*
 Naf_ProSe API
 
-Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AuthResponseType Possible values are: - OPEN_DISCOVERY_EXTENSION_ANNOUNCE_ACK: Indicates that the Authorization Response Type is open discovery with application-controlled extension/announce ack. - RESTRICTED_DISCOVERY_ANNOUNCE_ACK: Indicates that the Authorization Response Type is restricted discovery/announce ack. - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE_ACK: Indicates that the Authorization Response Type is restricted discovery with application-controlled extension/announce ack. - OPEN_DISCOVERY_EXTENSION_MONITOR_ACK: Indicates that the Authorization Response Type is open discovery with application-controlled extension/monitor ack. - RESTRICTED_DISCOVERY_MONITOR_ACK: Indicates that the Authorization Response Type is restricted discovery/monitor ack. - RESTRICTED_DISCOVERY_EXTENSION_MONITOR_ACK: Indicates that the Authorization Response Type is restricted discovery with application-controlled extension/monitor ack. - RESTRICTED_DISCOVERY_PERMISSION_ACK: Indicates that the Authorization Response Type is restricted discovery/permission ack. - RESTRICTED_DISCOVERY_RESPONSE_ACK: Indicates that the Authorization Response Type is restricted discovery/response ack. - RESTRICTED_DISCOVERY_QUERY_ACK: Indicates that the Authorization Response Type is restricted discovery/query ack. - RESTRICTED_DISCOVERY_MATCH_ACK: Indicates that the Authorization Response Type is restricted discovery/match ack. 
+// AuthResponseType Possible values are: - OPEN_DISCOVERY_EXTENSION_ANNOUNCE_ACK: Indicates that the Authorization Response Type is open discovery with application-controlled extension/announce ack. - RESTRICTED_DISCOVERY_ANNOUNCE_ACK: Indicates that the Authorization Response Type is restricted discovery/announce ack. - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE_ACK: Indicates that the Authorization Response Type is restricted discovery with application-controlled extension/announce ack. - OPEN_DISCOVERY_EXTENSION_MONITOR_ACK: Indicates that the Authorization Response Type is open discovery with application-controlled extension/monitor ack. - RESTRICTED_DISCOVERY_MONITOR_ACK: Indicates that the Authorization Response Type is restricted discovery/monitor ack. - RESTRICTED_DISCOVERY_EXTENSION_MONITOR_ACK: Indicates that the Authorization Response Type is restricted discovery with application-controlled extension/monitor ack. - RESTRICTED_DISCOVERY_PERMISSION_ACK: Indicates that the Authorization Response Type is restricted discovery/permission ack. - RESTRICTED_DISCOVERY_RESPONSE_ACK: Indicates that the Authorization Response Type is restricted discovery/response ack. - RESTRICTED_DISCOVERY_QUERY_ACK: Indicates that the Authorization Response Type is restricted discovery/query ack. - RESTRICTED_DISCOVERY_MATCH_ACK: Indicates that the Authorization Response Type is restricted discovery/match ack.
 type AuthResponseType struct {
-	AuthResponseTypeAnyOf *AuthResponseTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AuthResponseType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AuthResponseTypeAnyOf
-	err = json.Unmarshal(data, &dst.AuthResponseTypeAnyOf);
-	if err == nil {
-		jsonAuthResponseTypeAnyOf, _ := json.Marshal(dst.AuthResponseTypeAnyOf)
-		if string(jsonAuthResponseTypeAnyOf) == "{}" { // empty struct
-			dst.AuthResponseTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AuthResponseTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AuthResponseTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AuthResponseType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AuthResponseType) MarshalJSON() ([]byte, error) {
-	if src.AuthResponseTypeAnyOf != nil {
-		return json.Marshal(&src.AuthResponseTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAuthResponseType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

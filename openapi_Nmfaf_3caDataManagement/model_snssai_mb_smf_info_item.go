@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SnssaiMbSmfInfoItem{}
 
 // SnssaiMbSmfInfoItem Parameters supported by an MB-SMF for a given S-NSSAI
 type SnssaiMbSmfInfoItem struct {
-	SNssai ExtSnssai `json:"sNssai"`
+	SNssai      ExtSnssai          `json:"sNssai"`
 	DnnInfoList []DnnMbSmfInfoItem `json:"dnnInfoList"`
 }
 
@@ -91,7 +91,7 @@ func (o *SnssaiMbSmfInfoItem) SetDnnInfoList(v []DnnMbSmfInfoItem) {
 }
 
 func (o SnssaiMbSmfInfoItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSnssaiMbSmfInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 VAE_DynamicGroup
 
-VAE_Dynamic_Group Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+VAE_Dynamic_Group Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_VAE_DynamicGroup
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualGroupConfigurationDocumentApiService IndividualGroupConfigurationDocumentApi service
 type IndividualGroupConfigurationDocumentApiService service
 
 type ApiDeleteGroupConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualGroupConfigurationDocumentApiService
-	configId string
+	configId   string
 }
 
 func (r ApiDeleteGroupConfigurationRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteGroupConfigurationRequest) Execute() (*http.Response, error) {
 /*
 DeleteGroupConfiguration VAE Group Configuration resource delete service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId Unique ID of the group configuration to be deleted.
- @return ApiDeleteGroupConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param configId Unique ID of the group configuration to be deleted.
+	@return ApiDeleteGroupConfigurationRequest
 */
 func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguration(ctx context.Context, configId string) ApiDeleteGroupConfigurationRequest {
 	return ApiDeleteGroupConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		configId: configId,
+		ctx:        ctx,
+		configId:   configId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfigurationExecute(r ApiDeleteGroupConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualGroupConfigurationDocumentApiService.DeleteGroupConfiguration")
@@ -95,9 +94,9 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -191,9 +190,9 @@ func (a *IndividualGroupConfigurationDocumentApiService) DeleteGroupConfiguratio
 }
 
 type ApiReadDynamicGroupConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualGroupConfigurationDocumentApiService
-	configId string
+	configId   string
 }
 
 func (r ApiReadDynamicGroupConfigurationRequest) Execute() (*GroupConfigurationData, *http.Response, error) {
@@ -203,26 +202,27 @@ func (r ApiReadDynamicGroupConfigurationRequest) Execute() (*GroupConfigurationD
 /*
 ReadDynamicGroupConfiguration VAE Group Configuration resource read service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configId Identifier of an group configuration resource.
- @return ApiReadDynamicGroupConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param configId Identifier of an group configuration resource.
+	@return ApiReadDynamicGroupConfigurationRequest
 */
 func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfiguration(ctx context.Context, configId string) ApiReadDynamicGroupConfigurationRequest {
 	return ApiReadDynamicGroupConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		configId: configId,
+		ctx:        ctx,
+		configId:   configId,
 	}
 }
 
 // Execute executes the request
-//  @return GroupConfigurationData
+//
+//	@return GroupConfigurationData
 func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigurationExecute(r ApiReadDynamicGroupConfigurationRequest) (*GroupConfigurationData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GroupConfigurationData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GroupConfigurationData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualGroupConfigurationDocumentApiService.ReadDynamicGroupConfiguration")
@@ -264,9 +264,9 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -283,8 +283,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -294,8 +294,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -305,8 +305,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -316,8 +316,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -327,8 +327,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -338,8 +338,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -349,8 +349,8 @@ func (a *IndividualGroupConfigurationDocumentApiService) ReadDynamicGroupConfigu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

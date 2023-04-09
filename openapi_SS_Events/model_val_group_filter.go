@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &VALGroupFilter{}
 type VALGroupFilter struct {
 	// Identity of the VAL service
 	ValSvcId *string `json:"valSvcId,omitempty"`
-	// VAL group identifiers that event subscriber wants to know in the interested event. 
+	// VAL group identifiers that event subscriber wants to know in the interested event.
 	ValGrpIds []string `json:"valGrpIds"`
 }
 
@@ -45,7 +45,7 @@ func NewVALGroupFilterWithDefaults() *VALGroupFilter {
 
 // GetValSvcId returns the ValSvcId field value if set, zero value otherwise.
 func (o *VALGroupFilter) GetValSvcId() string {
-	if o == nil || isNil(o.ValSvcId) {
+	if o == nil || IsNil(o.ValSvcId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *VALGroupFilter) GetValSvcId() string {
 // GetValSvcIdOk returns a tuple with the ValSvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupFilter) GetValSvcIdOk() (*string, bool) {
-	if o == nil || isNil(o.ValSvcId) {
+	if o == nil || IsNil(o.ValSvcId) {
 		return nil, false
 	}
 	return o.ValSvcId, true
@@ -63,7 +63,7 @@ func (o *VALGroupFilter) GetValSvcIdOk() (*string, bool) {
 
 // HasValSvcId returns a boolean if a field has been set.
 func (o *VALGroupFilter) HasValSvcId() bool {
-	if o != nil && !isNil(o.ValSvcId) {
+	if o != nil && !IsNil(o.ValSvcId) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *VALGroupFilter) SetValGrpIds(v []string) {
 }
 
 func (o VALGroupFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o VALGroupFilter) MarshalJSON() ([]byte, error) {
 
 func (o VALGroupFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ValSvcId) {
+	if !IsNil(o.ValSvcId) {
 		toSerialize["valSvcId"] = o.ValSvcId
 	}
 	toSerialize["valGrpIds"] = o.ValGrpIds
@@ -151,5 +151,3 @@ func (v *NullableVALGroupFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

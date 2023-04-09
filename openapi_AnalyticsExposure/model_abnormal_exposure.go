@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -22,14 +22,14 @@ type AbnormalExposure struct {
 	Gpsis []string `json:"gpsis,omitempty"`
 	// String providing an application identifier.
 	AppId *string `json:"appId,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
-	Excep Exception `json:"excep"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string   `json:"dnn,omitempty"`
+	Snssai *Snssai   `json:"snssai,omitempty"`
+	Excep  Exception `json:"excep"`
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
 	Ratio *int32 `json:"ratio,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	Confidence *int32 `json:"confidence,omitempty"`
+	Confidence   *int32                 `json:"confidence,omitempty"`
 	AddtMeasInfo *AdditionalMeasurement `json:"addtMeasInfo,omitempty"`
 }
 
@@ -53,7 +53,7 @@ func NewAbnormalExposureWithDefaults() *AbnormalExposure {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetGpsis() []string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *AbnormalExposure) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetGpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -71,7 +71,7 @@ func (o *AbnormalExposure) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *AbnormalExposure) SetGpsis(v []string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *AbnormalExposure) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -103,7 +103,7 @@ func (o *AbnormalExposure) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *AbnormalExposure) SetAppId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *AbnormalExposure) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -135,7 +135,7 @@ func (o *AbnormalExposure) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *AbnormalExposure) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *AbnormalExposure) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -167,7 +167,7 @@ func (o *AbnormalExposure) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *AbnormalExposure) SetExcep(v Exception) {
 
 // GetRatio returns the Ratio field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetRatio() int32 {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		var ret int32
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *AbnormalExposure) GetRatio() int32 {
 // GetRatioOk returns a tuple with the Ratio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		return nil, false
 	}
 	return o.Ratio, true
@@ -223,7 +223,7 @@ func (o *AbnormalExposure) GetRatioOk() (*int32, bool) {
 
 // HasRatio returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasRatio() bool {
-	if o != nil && !isNil(o.Ratio) {
+	if o != nil && !IsNil(o.Ratio) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *AbnormalExposure) SetRatio(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *AbnormalExposure) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -255,7 +255,7 @@ func (o *AbnormalExposure) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *AbnormalExposure) SetConfidence(v int32) {
 
 // GetAddtMeasInfo returns the AddtMeasInfo field value if set, zero value otherwise.
 func (o *AbnormalExposure) GetAddtMeasInfo() AdditionalMeasurement {
-	if o == nil || isNil(o.AddtMeasInfo) {
+	if o == nil || IsNil(o.AddtMeasInfo) {
 		var ret AdditionalMeasurement
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *AbnormalExposure) GetAddtMeasInfo() AdditionalMeasurement {
 // GetAddtMeasInfoOk returns a tuple with the AddtMeasInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalExposure) GetAddtMeasInfoOk() (*AdditionalMeasurement, bool) {
-	if o == nil || isNil(o.AddtMeasInfo) {
+	if o == nil || IsNil(o.AddtMeasInfo) {
 		return nil, false
 	}
 	return o.AddtMeasInfo, true
@@ -287,7 +287,7 @@ func (o *AbnormalExposure) GetAddtMeasInfoOk() (*AdditionalMeasurement, bool) {
 
 // HasAddtMeasInfo returns a boolean if a field has been set.
 func (o *AbnormalExposure) HasAddtMeasInfo() bool {
-	if o != nil && !isNil(o.AddtMeasInfo) {
+	if o != nil && !IsNil(o.AddtMeasInfo) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *AbnormalExposure) SetAddtMeasInfo(v AdditionalMeasurement) {
 }
 
 func (o AbnormalExposure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -309,26 +309,26 @@ func (o AbnormalExposure) MarshalJSON() ([]byte, error) {
 
 func (o AbnormalExposure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["excep"] = o.Excep
-	if !isNil(o.Ratio) {
+	if !IsNil(o.Ratio) {
 		toSerialize["ratio"] = o.Ratio
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
-	if !isNil(o.AddtMeasInfo) {
+	if !IsNil(o.AddtMeasInfo) {
 		toSerialize["addtMeasInfo"] = o.AddtMeasInfo
 	}
 	return toSerialize, nil
@@ -369,5 +369,3 @@ func (v *NullableAbnormalExposure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

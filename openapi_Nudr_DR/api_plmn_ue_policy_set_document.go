@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // PlmnUePolicySetDocumentApiService PlmnUePolicySetDocumentApi service
 type PlmnUePolicySetDocumentApiService service
 
 type ApiReadPlmnUePolicySetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PlmnUePolicySetDocumentApiService
-	plmnId string
+	plmnId     string
 }
 
 func (r ApiReadPlmnUePolicySetRequest) Execute() (*UePolicySet, *http.Response, error) {
@@ -36,26 +35,27 @@ func (r ApiReadPlmnUePolicySetRequest) Execute() (*UePolicySet, *http.Response, 
 /*
 ReadPlmnUePolicySet Retrieve the UE policy set data for an H-PLMN
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param plmnId
- @return ApiReadPlmnUePolicySetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param plmnId
+	@return ApiReadPlmnUePolicySetRequest
 */
 func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySet(ctx context.Context, plmnId string) ApiReadPlmnUePolicySetRequest {
 	return ApiReadPlmnUePolicySetRequest{
 		ApiService: a,
-		ctx: ctx,
-		plmnId: plmnId,
+		ctx:        ctx,
+		plmnId:     plmnId,
 	}
 }
 
 // Execute executes the request
-//  @return UePolicySet
+//
+//	@return UePolicySet
 func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiReadPlmnUePolicySetRequest) (*UePolicySet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UePolicySet
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UePolicySet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlmnUePolicySetDocumentApiService.ReadPlmnUePolicySet")
@@ -97,9 +97,9 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -116,8 +116,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +127,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +138,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +149,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -160,8 +160,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -171,8 +171,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -182,8 +182,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -193,8 +193,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -204,8 +204,8 @@ func (a *PlmnUePolicySetDocumentApiService) ReadPlmnUePolicySetExecute(r ApiRead
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

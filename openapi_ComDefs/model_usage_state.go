@@ -20,9 +20,9 @@ type UsageState string
 
 // List of UsageState
 const (
-	IDEL UsageState = "IDEL"
+	IDEL   UsageState = "IDEL"
 	ACTIVE UsageState = "ACTIVE"
-	BUSY UsageState = "BUSY"
+	BUSY   UsageState = "BUSY"
 )
 
 // All allowed values of UsageState enum
@@ -110,4 +110,3 @@ func (v *NullableUsageState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

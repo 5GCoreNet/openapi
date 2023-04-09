@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,26 +13,25 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApi service
 type QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService service
 
 type ApiGetNiddAuDataRequest struct {
-	ctx context.Context
-	ApiService *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService
-	ueId string
-	singleNssai *Snssai
-	dnn *string
+	ctx                    context.Context
+	ApiService             *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService
+	ueId                   string
+	singleNssai            *Snssai
+	dnn                    *string
 	mtcProviderInformation *string
-	afId *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	afId                   *string
+	ifNoneMatch            *string
+	ifModifiedSince        *string
 }
 
 // single NSSAI
@@ -78,26 +77,27 @@ func (r ApiGetNiddAuDataRequest) Execute() (*AuthorizationData, *http.Response, 
 /*
 GetNiddAuData Retrieve NIDD Authorization Data GPSI or External Group identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE ID
- @return ApiGetNiddAuDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE ID
+	@return ApiGetNiddAuDataRequest
 */
 func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService) GetNiddAuData(ctx context.Context, ueId string) ApiGetNiddAuDataRequest {
 	return ApiGetNiddAuDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return AuthorizationData
+//
+//	@return AuthorizationData
 func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService) GetNiddAuDataExecute(r ApiGetNiddAuDataRequest) (*AuthorizationData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthorizationData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthorizationData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiService.GetNiddAuData")
@@ -121,11 +121,11 @@ func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiServi
 		return localVarReturnValue, nil, reportError("mtcProviderInformation is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
-	parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
-	parameterAddToQuery(localVarQueryParams, "mtc-provider-information", r.mtcProviderInformation, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "mtc-provider-information", r.mtcProviderInformation, "")
 	if r.afId != nil {
-		parameterAddToQuery(localVarQueryParams, "af-id", r.afId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "af-id", r.afId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,10 +145,10 @@ func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiServi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -160,9 +160,9 @@ func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiServi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -179,8 +179,8 @@ func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -190,8 +190,8 @@ func (a *QueryNIDDAuthorizationDataGPSIOrExternalGroupIdentifierDocumentApiServi
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

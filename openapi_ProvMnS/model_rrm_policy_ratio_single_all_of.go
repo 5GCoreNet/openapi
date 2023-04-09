@@ -19,7 +19,7 @@ var _ MappedNullable = &RRMPolicyRatioSingleAllOf{}
 
 // RRMPolicyRatioSingleAllOf struct for RRMPolicyRatioSingleAllOf
 type RRMPolicyRatioSingleAllOf struct {
-	Attributes *RrmPolicyAttr `json:"attributes,omitempty"`
+	Attributes *RRMPolicyRatioSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewRRMPolicyRatioSingleAllOf instantiates a new RRMPolicyRatioSingleAllOf object
@@ -40,9 +40,9 @@ func NewRRMPolicyRatioSingleAllOfWithDefaults() *RRMPolicyRatioSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *RRMPolicyRatioSingleAllOf) GetAttributes() RrmPolicyAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret RrmPolicyAttr
+func (o *RRMPolicyRatioSingleAllOf) GetAttributes() RRMPolicyRatioSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret RRMPolicyRatioSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *RRMPolicyRatioSingleAllOf) GetAttributes() RrmPolicyAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RRMPolicyRatioSingleAllOf) GetAttributesOk() (*RrmPolicyAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *RRMPolicyRatioSingleAllOf) GetAttributesOk() (*RRMPolicyRatioSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *RRMPolicyRatioSingleAllOf) GetAttributesOk() (*RrmPolicyAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *RRMPolicyRatioSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given RrmPolicyAttr and assigns it to the Attributes field.
-func (o *RRMPolicyRatioSingleAllOf) SetAttributes(v RrmPolicyAttr) {
+// SetAttributes gets a reference to the given RRMPolicyRatioSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *RRMPolicyRatioSingleAllOf) SetAttributes(v RRMPolicyRatioSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o RRMPolicyRatioSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o RRMPolicyRatioSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o RRMPolicyRatioSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableRRMPolicyRatioSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

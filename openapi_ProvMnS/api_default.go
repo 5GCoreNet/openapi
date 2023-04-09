@@ -13,21 +13,20 @@ package openapi_ProvMnS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiClassNameidDeleteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	className string
-	id string
+	className  string
+	id         string
 }
 
 func (r ApiClassNameidDeleteRequest) Execute() (*http.Response, error) {
@@ -39,26 +38,26 @@ ClassNameidDelete Deletes one resource
 
 With HTTP DELETE one resource is deleted. The resources to be deleted is identified with the target URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param className
- @param id
- @return ApiClassNameidDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param className
+	@param id
+	@return ApiClassNameidDeleteRequest
 */
 func (a *DefaultApiService) ClassNameidDelete(ctx context.Context, className string, id string) ApiClassNameidDeleteRequest {
 	return ApiClassNameidDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		className: className,
-		id: id,
+		ctx:        ctx,
+		className:  className,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) ClassNameidDeleteExecute(r ApiClassNameidDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ClassNameidDelete")
@@ -101,9 +100,9 @@ func (a *DefaultApiService) ClassNameidDeleteExecute(r ApiClassNameidDeleteReque
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -113,14 +112,14 @@ func (a *DefaultApiService) ClassNameidDeleteExecute(r ApiClassNameidDeleteReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -128,14 +127,14 @@ func (a *DefaultApiService) ClassNameidDeleteExecute(r ApiClassNameidDeleteReque
 }
 
 type ApiClassNameidGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	className string
-	id string
+	className  string
+	id         string
 	attributes *[]string
-	scope *Scope
-	filter *string
-	fields *[]string
+	scope      *Scope
+	filter     *string
+	fields     *[]string
 }
 
 // This parameter specifies the attributes of the scoped resources that are returned.
@@ -171,28 +170,29 @@ ClassNameidGet Reads one or multiple resources
 
 With HTTP GET resources are read. The resources to be retrieved are identified with the target URI. The attributes and fields parameter of the query components allow to select the resource properties to be returned.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param className
- @param id
- @return ApiClassNameidGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param className
+	@param id
+	@return ApiClassNameidGetRequest
 */
 func (a *DefaultApiService) ClassNameidGet(ctx context.Context, className string, id string) ApiClassNameidGetRequest {
 	return ApiClassNameidGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		className: className,
-		id: id,
+		ctx:        ctx,
+		className:  className,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Resource
+//
+//	@return Resource
 func (a *DefaultApiService) ClassNameidGetExecute(r ApiClassNameidGetRequest) (*Resource, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Resource
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Resource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ClassNameidGet")
@@ -212,14 +212,14 @@ func (a *DefaultApiService) ClassNameidGetExecute(r ApiClassNameidGetRequest) (*
 	}
 
 	if r.scope != nil {
-		parameterAddToQuery(localVarQueryParams, "scope", r.scope, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "scope", r.scope, "")
 	}
 	if r.filter != nil {
-		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	}
-	parameterAddToQuery(localVarQueryParams, "attributes", r.attributes, "csv")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "attributes", r.attributes, "csv")
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -248,9 +248,9 @@ func (a *DefaultApiService) ClassNameidGetExecute(r ApiClassNameidGetRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -260,14 +260,14 @@ func (a *DefaultApiService) ClassNameidGetExecute(r ApiClassNameidGetRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -284,11 +284,11 @@ func (a *DefaultApiService) ClassNameidGetExecute(r ApiClassNameidGetRequest) (*
 }
 
 type ApiClassNameidPatchRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	className string
-	id string
-	resource *Resource
+	className  string
+	id         string
+	resource   *Resource
 }
 
 // The request body describes changes to be made to the target resources. The following patch media types are available   - \&quot;application/merge-patch+json\&quot; (RFC 7396)   - \&quot;application/3gpp-merge-patch+json\&quot; (TS 32.158)   - \&quot;application/json-patch+json\&quot; (RFC 6902)   - \&quot;application/3gpp-json-patch+json\&quot; (TS 32.158)
@@ -306,28 +306,29 @@ ClassNameidPatch Patches one or multiple resources
 
 With HTTP PATCH resources are created, updated or deleted. The resources to be modified are identified with the target URI (base resource) and the patch document included in the request message body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param className
- @param id
- @return ApiClassNameidPatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param className
+	@param id
+	@return ApiClassNameidPatchRequest
 */
 func (a *DefaultApiService) ClassNameidPatch(ctx context.Context, className string, id string) ApiClassNameidPatchRequest {
 	return ApiClassNameidPatchRequest{
 		ApiService: a,
-		ctx: ctx,
-		className: className,
-		id: id,
+		ctx:        ctx,
+		className:  className,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Resource
+//
+//	@return Resource
 func (a *DefaultApiService) ClassNameidPatchExecute(r ApiClassNameidPatchRequest) (*Resource, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Resource
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Resource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ClassNameidPatch")
@@ -375,9 +376,9 @@ func (a *DefaultApiService) ClassNameidPatchExecute(r ApiClassNameidPatchRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -387,14 +388,14 @@ func (a *DefaultApiService) ClassNameidPatchExecute(r ApiClassNameidPatchRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -411,11 +412,11 @@ func (a *DefaultApiService) ClassNameidPatchExecute(r ApiClassNameidPatchRequest
 }
 
 type ApiClassNameidPutRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultApiService
-	className string
-	id string
-	resource *Resource
+	className  string
+	id         string
+	resource   *Resource
 }
 
 func (r ApiClassNameidPutRequest) Resource(resource Resource) ApiClassNameidPutRequest {
@@ -432,28 +433,29 @@ ClassNameidPut Replaces a complete single resource or creates it if it does not 
 
 With HTTP PUT a complete resource is replaced or created if it does not exist. The target resource is identified by the target URI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param className
- @param id
- @return ApiClassNameidPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param className
+	@param id
+	@return ApiClassNameidPutRequest
 */
 func (a *DefaultApiService) ClassNameidPut(ctx context.Context, className string, id string) ApiClassNameidPutRequest {
 	return ApiClassNameidPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		className: className,
-		id: id,
+		ctx:        ctx,
+		className:  className,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Resource
+//
+//	@return Resource
 func (a *DefaultApiService) ClassNameidPutExecute(r ApiClassNameidPutRequest) (*Resource, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Resource
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Resource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ClassNameidPut")
@@ -501,9 +503,9 @@ func (a *DefaultApiService) ClassNameidPutExecute(r ApiClassNameidPutRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -513,14 +515,14 @@ func (a *DefaultApiService) ClassNameidPutExecute(r ApiClassNameidPutRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ErrorResponse
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewTrunkGroupIDWithDefaults() *TrunkGroupID {
 
 // GetIncomingTrunkGroupID returns the IncomingTrunkGroupID field value if set, zero value otherwise.
 func (o *TrunkGroupID) GetIncomingTrunkGroupID() string {
-	if o == nil || isNil(o.IncomingTrunkGroupID) {
+	if o == nil || IsNil(o.IncomingTrunkGroupID) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TrunkGroupID) GetIncomingTrunkGroupID() string {
 // GetIncomingTrunkGroupIDOk returns a tuple with the IncomingTrunkGroupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrunkGroupID) GetIncomingTrunkGroupIDOk() (*string, bool) {
-	if o == nil || isNil(o.IncomingTrunkGroupID) {
+	if o == nil || IsNil(o.IncomingTrunkGroupID) {
 		return nil, false
 	}
 	return o.IncomingTrunkGroupID, true
@@ -60,7 +60,7 @@ func (o *TrunkGroupID) GetIncomingTrunkGroupIDOk() (*string, bool) {
 
 // HasIncomingTrunkGroupID returns a boolean if a field has been set.
 func (o *TrunkGroupID) HasIncomingTrunkGroupID() bool {
-	if o != nil && !isNil(o.IncomingTrunkGroupID) {
+	if o != nil && !IsNil(o.IncomingTrunkGroupID) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TrunkGroupID) SetIncomingTrunkGroupID(v string) {
 
 // GetOutgoingTrunkGroupID returns the OutgoingTrunkGroupID field value if set, zero value otherwise.
 func (o *TrunkGroupID) GetOutgoingTrunkGroupID() string {
-	if o == nil || isNil(o.OutgoingTrunkGroupID) {
+	if o == nil || IsNil(o.OutgoingTrunkGroupID) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TrunkGroupID) GetOutgoingTrunkGroupID() string {
 // GetOutgoingTrunkGroupIDOk returns a tuple with the OutgoingTrunkGroupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrunkGroupID) GetOutgoingTrunkGroupIDOk() (*string, bool) {
-	if o == nil || isNil(o.OutgoingTrunkGroupID) {
+	if o == nil || IsNil(o.OutgoingTrunkGroupID) {
 		return nil, false
 	}
 	return o.OutgoingTrunkGroupID, true
@@ -92,7 +92,7 @@ func (o *TrunkGroupID) GetOutgoingTrunkGroupIDOk() (*string, bool) {
 
 // HasOutgoingTrunkGroupID returns a boolean if a field has been set.
 func (o *TrunkGroupID) HasOutgoingTrunkGroupID() bool {
-	if o != nil && !isNil(o.OutgoingTrunkGroupID) {
+	if o != nil && !IsNil(o.OutgoingTrunkGroupID) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *TrunkGroupID) SetOutgoingTrunkGroupID(v string) {
 }
 
 func (o TrunkGroupID) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o TrunkGroupID) MarshalJSON() ([]byte, error) {
 
 func (o TrunkGroupID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IncomingTrunkGroupID) {
+	if !IsNil(o.IncomingTrunkGroupID) {
 		toSerialize["incomingTrunkGroupID"] = o.IncomingTrunkGroupID
 	}
-	if !isNil(o.OutgoingTrunkGroupID) {
+	if !IsNil(o.OutgoingTrunkGroupID) {
 		toSerialize["outgoingTrunkGroupID"] = o.OutgoingTrunkGroupID
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableTrunkGroupID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

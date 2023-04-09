@@ -19,8 +19,8 @@ var _ MappedNullable = &InternalGroupIdRange{}
 
 // InternalGroupIdRange struct for InternalGroupIdRange
 type InternalGroupIdRange struct {
-	Start *string `json:"start,omitempty"`
-	End *string `json:"end,omitempty"`
+	Start   *string `json:"start,omitempty"`
+	End     *string `json:"end,omitempty"`
 	Pattern *string `json:"pattern,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewInternalGroupIdRangeWithDefaults() *InternalGroupIdRange {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *InternalGroupIdRange) GetStart() string {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *InternalGroupIdRange) GetStart() string {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InternalGroupIdRange) GetStartOk() (*string, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -61,7 +61,7 @@ func (o *InternalGroupIdRange) GetStartOk() (*string, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *InternalGroupIdRange) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *InternalGroupIdRange) SetStart(v string) {
 
 // GetEnd returns the End field value if set, zero value otherwise.
 func (o *InternalGroupIdRange) GetEnd() string {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *InternalGroupIdRange) GetEnd() string {
 // GetEndOk returns a tuple with the End field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InternalGroupIdRange) GetEndOk() (*string, bool) {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		return nil, false
 	}
 	return o.End, true
@@ -93,7 +93,7 @@ func (o *InternalGroupIdRange) GetEndOk() (*string, bool) {
 
 // HasEnd returns a boolean if a field has been set.
 func (o *InternalGroupIdRange) HasEnd() bool {
-	if o != nil && !isNil(o.End) {
+	if o != nil && !IsNil(o.End) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *InternalGroupIdRange) SetEnd(v string) {
 
 // GetPattern returns the Pattern field value if set, zero value otherwise.
 func (o *InternalGroupIdRange) GetPattern() string {
-	if o == nil || isNil(o.Pattern) {
+	if o == nil || IsNil(o.Pattern) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *InternalGroupIdRange) GetPattern() string {
 // GetPatternOk returns a tuple with the Pattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InternalGroupIdRange) GetPatternOk() (*string, bool) {
-	if o == nil || isNil(o.Pattern) {
+	if o == nil || IsNil(o.Pattern) {
 		return nil, false
 	}
 	return o.Pattern, true
@@ -125,7 +125,7 @@ func (o *InternalGroupIdRange) GetPatternOk() (*string, bool) {
 
 // HasPattern returns a boolean if a field has been set.
 func (o *InternalGroupIdRange) HasPattern() bool {
-	if o != nil && !isNil(o.Pattern) {
+	if o != nil && !IsNil(o.Pattern) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *InternalGroupIdRange) SetPattern(v string) {
 }
 
 func (o InternalGroupIdRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o InternalGroupIdRange) MarshalJSON() ([]byte, error) {
 
 func (o InternalGroupIdRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.End) {
+	if !IsNil(o.End) {
 		toSerialize["end"] = o.End
 	}
-	if !isNil(o.Pattern) {
+	if !IsNil(o.Pattern) {
 		toSerialize["pattern"] = o.Pattern
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableInternalGroupIdRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

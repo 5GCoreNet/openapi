@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,19 +19,19 @@ var _ MappedNullable = &SEALEventDetail{}
 
 // SEALEventDetail Represents the SEAL event details.
 type SEALEventDetail struct {
-	EventId SEALEvent `json:"eventId"`
+	EventId SEALEvent       `json:"eventId"`
 	LmInfos []LMInformation `json:"lmInfos,omitempty"`
-	// The VAL groups documents with modified membership and configuration information. 
+	// The VAL groups documents with modified membership and configuration information.
 	ValGroupDocuments []VALGroupDocument `json:"valGroupDocuments,omitempty"`
 	// Updated profile information associated with VAL Users or VAL UEs.
 	ProfileDocs []ProfileDoc `json:"profileDocs,omitempty"`
-	// The message filter information for various member VAL User or UEs of the VAL group. 
+	// The message filter information for various member VAL User or UEs of the VAL group.
 	MsgFltrs []MessageFilter `json:"msgFltrs,omitempty"`
 	// The events reports with details of the events related to the VAL UE(s).
 	MonRep []MonitorEventsReport `json:"monRep,omitempty"`
-	// The location deviation information for the interested VAL User ID or UE IDs in a given location. 
-	LocAdhr []LocationDevMonReport `json:"locAdhr,omitempty"`
-	TempGroupInfo *TempGroupInfo `json:"tempGroupInfo,omitempty"`
+	// The location deviation information for the interested VAL User ID or UE IDs in a given location.
+	LocAdhr       []LocationDevMonReport `json:"locAdhr,omitempty"`
+	TempGroupInfo *TempGroupInfo         `json:"tempGroupInfo,omitempty"`
 	// The location area monitoring of the given area of interest.
 	LocAreaMonRep []LocationAreaMonReport `json:"locAreaMonRep,omitempty"`
 }
@@ -80,7 +80,7 @@ func (o *SEALEventDetail) SetEventId(v SEALEvent) {
 
 // GetLmInfos returns the LmInfos field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetLmInfos() []LMInformation {
-	if o == nil || isNil(o.LmInfos) {
+	if o == nil || IsNil(o.LmInfos) {
 		var ret []LMInformation
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *SEALEventDetail) GetLmInfos() []LMInformation {
 // GetLmInfosOk returns a tuple with the LmInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetLmInfosOk() ([]LMInformation, bool) {
-	if o == nil || isNil(o.LmInfos) {
+	if o == nil || IsNil(o.LmInfos) {
 		return nil, false
 	}
 	return o.LmInfos, true
@@ -98,7 +98,7 @@ func (o *SEALEventDetail) GetLmInfosOk() ([]LMInformation, bool) {
 
 // HasLmInfos returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasLmInfos() bool {
-	if o != nil && !isNil(o.LmInfos) {
+	if o != nil && !IsNil(o.LmInfos) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *SEALEventDetail) SetLmInfos(v []LMInformation) {
 
 // GetValGroupDocuments returns the ValGroupDocuments field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetValGroupDocuments() []VALGroupDocument {
-	if o == nil || isNil(o.ValGroupDocuments) {
+	if o == nil || IsNil(o.ValGroupDocuments) {
 		var ret []VALGroupDocument
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *SEALEventDetail) GetValGroupDocuments() []VALGroupDocument {
 // GetValGroupDocumentsOk returns a tuple with the ValGroupDocuments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetValGroupDocumentsOk() ([]VALGroupDocument, bool) {
-	if o == nil || isNil(o.ValGroupDocuments) {
+	if o == nil || IsNil(o.ValGroupDocuments) {
 		return nil, false
 	}
 	return o.ValGroupDocuments, true
@@ -130,7 +130,7 @@ func (o *SEALEventDetail) GetValGroupDocumentsOk() ([]VALGroupDocument, bool) {
 
 // HasValGroupDocuments returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasValGroupDocuments() bool {
-	if o != nil && !isNil(o.ValGroupDocuments) {
+	if o != nil && !IsNil(o.ValGroupDocuments) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *SEALEventDetail) SetValGroupDocuments(v []VALGroupDocument) {
 
 // GetProfileDocs returns the ProfileDocs field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetProfileDocs() []ProfileDoc {
-	if o == nil || isNil(o.ProfileDocs) {
+	if o == nil || IsNil(o.ProfileDocs) {
 		var ret []ProfileDoc
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *SEALEventDetail) GetProfileDocs() []ProfileDoc {
 // GetProfileDocsOk returns a tuple with the ProfileDocs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetProfileDocsOk() ([]ProfileDoc, bool) {
-	if o == nil || isNil(o.ProfileDocs) {
+	if o == nil || IsNil(o.ProfileDocs) {
 		return nil, false
 	}
 	return o.ProfileDocs, true
@@ -162,7 +162,7 @@ func (o *SEALEventDetail) GetProfileDocsOk() ([]ProfileDoc, bool) {
 
 // HasProfileDocs returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasProfileDocs() bool {
-	if o != nil && !isNil(o.ProfileDocs) {
+	if o != nil && !IsNil(o.ProfileDocs) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *SEALEventDetail) SetProfileDocs(v []ProfileDoc) {
 
 // GetMsgFltrs returns the MsgFltrs field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetMsgFltrs() []MessageFilter {
-	if o == nil || isNil(o.MsgFltrs) {
+	if o == nil || IsNil(o.MsgFltrs) {
 		var ret []MessageFilter
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *SEALEventDetail) GetMsgFltrs() []MessageFilter {
 // GetMsgFltrsOk returns a tuple with the MsgFltrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetMsgFltrsOk() ([]MessageFilter, bool) {
-	if o == nil || isNil(o.MsgFltrs) {
+	if o == nil || IsNil(o.MsgFltrs) {
 		return nil, false
 	}
 	return o.MsgFltrs, true
@@ -194,7 +194,7 @@ func (o *SEALEventDetail) GetMsgFltrsOk() ([]MessageFilter, bool) {
 
 // HasMsgFltrs returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasMsgFltrs() bool {
-	if o != nil && !isNil(o.MsgFltrs) {
+	if o != nil && !IsNil(o.MsgFltrs) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *SEALEventDetail) SetMsgFltrs(v []MessageFilter) {
 
 // GetMonRep returns the MonRep field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetMonRep() []MonitorEventsReport {
-	if o == nil || isNil(o.MonRep) {
+	if o == nil || IsNil(o.MonRep) {
 		var ret []MonitorEventsReport
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *SEALEventDetail) GetMonRep() []MonitorEventsReport {
 // GetMonRepOk returns a tuple with the MonRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetMonRepOk() ([]MonitorEventsReport, bool) {
-	if o == nil || isNil(o.MonRep) {
+	if o == nil || IsNil(o.MonRep) {
 		return nil, false
 	}
 	return o.MonRep, true
@@ -226,7 +226,7 @@ func (o *SEALEventDetail) GetMonRepOk() ([]MonitorEventsReport, bool) {
 
 // HasMonRep returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasMonRep() bool {
-	if o != nil && !isNil(o.MonRep) {
+	if o != nil && !IsNil(o.MonRep) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *SEALEventDetail) SetMonRep(v []MonitorEventsReport) {
 
 // GetLocAdhr returns the LocAdhr field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetLocAdhr() []LocationDevMonReport {
-	if o == nil || isNil(o.LocAdhr) {
+	if o == nil || IsNil(o.LocAdhr) {
 		var ret []LocationDevMonReport
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *SEALEventDetail) GetLocAdhr() []LocationDevMonReport {
 // GetLocAdhrOk returns a tuple with the LocAdhr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetLocAdhrOk() ([]LocationDevMonReport, bool) {
-	if o == nil || isNil(o.LocAdhr) {
+	if o == nil || IsNil(o.LocAdhr) {
 		return nil, false
 	}
 	return o.LocAdhr, true
@@ -258,7 +258,7 @@ func (o *SEALEventDetail) GetLocAdhrOk() ([]LocationDevMonReport, bool) {
 
 // HasLocAdhr returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasLocAdhr() bool {
-	if o != nil && !isNil(o.LocAdhr) {
+	if o != nil && !IsNil(o.LocAdhr) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *SEALEventDetail) SetLocAdhr(v []LocationDevMonReport) {
 
 // GetTempGroupInfo returns the TempGroupInfo field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetTempGroupInfo() TempGroupInfo {
-	if o == nil || isNil(o.TempGroupInfo) {
+	if o == nil || IsNil(o.TempGroupInfo) {
 		var ret TempGroupInfo
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *SEALEventDetail) GetTempGroupInfo() TempGroupInfo {
 // GetTempGroupInfoOk returns a tuple with the TempGroupInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetTempGroupInfoOk() (*TempGroupInfo, bool) {
-	if o == nil || isNil(o.TempGroupInfo) {
+	if o == nil || IsNil(o.TempGroupInfo) {
 		return nil, false
 	}
 	return o.TempGroupInfo, true
@@ -290,7 +290,7 @@ func (o *SEALEventDetail) GetTempGroupInfoOk() (*TempGroupInfo, bool) {
 
 // HasTempGroupInfo returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasTempGroupInfo() bool {
-	if o != nil && !isNil(o.TempGroupInfo) {
+	if o != nil && !IsNil(o.TempGroupInfo) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *SEALEventDetail) SetTempGroupInfo(v TempGroupInfo) {
 
 // GetLocAreaMonRep returns the LocAreaMonRep field value if set, zero value otherwise.
 func (o *SEALEventDetail) GetLocAreaMonRep() []LocationAreaMonReport {
-	if o == nil || isNil(o.LocAreaMonRep) {
+	if o == nil || IsNil(o.LocAreaMonRep) {
 		var ret []LocationAreaMonReport
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *SEALEventDetail) GetLocAreaMonRep() []LocationAreaMonReport {
 // GetLocAreaMonRepOk returns a tuple with the LocAreaMonRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventDetail) GetLocAreaMonRepOk() ([]LocationAreaMonReport, bool) {
-	if o == nil || isNil(o.LocAreaMonRep) {
+	if o == nil || IsNil(o.LocAreaMonRep) {
 		return nil, false
 	}
 	return o.LocAreaMonRep, true
@@ -322,7 +322,7 @@ func (o *SEALEventDetail) GetLocAreaMonRepOk() ([]LocationAreaMonReport, bool) {
 
 // HasLocAreaMonRep returns a boolean if a field has been set.
 func (o *SEALEventDetail) HasLocAreaMonRep() bool {
-	if o != nil && !isNil(o.LocAreaMonRep) {
+	if o != nil && !IsNil(o.LocAreaMonRep) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *SEALEventDetail) SetLocAreaMonRep(v []LocationAreaMonReport) {
 }
 
 func (o SEALEventDetail) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -345,28 +345,28 @@ func (o SEALEventDetail) MarshalJSON() ([]byte, error) {
 func (o SEALEventDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventId"] = o.EventId
-	if !isNil(o.LmInfos) {
+	if !IsNil(o.LmInfos) {
 		toSerialize["lmInfos"] = o.LmInfos
 	}
-	if !isNil(o.ValGroupDocuments) {
+	if !IsNil(o.ValGroupDocuments) {
 		toSerialize["valGroupDocuments"] = o.ValGroupDocuments
 	}
-	if !isNil(o.ProfileDocs) {
+	if !IsNil(o.ProfileDocs) {
 		toSerialize["profileDocs"] = o.ProfileDocs
 	}
-	if !isNil(o.MsgFltrs) {
+	if !IsNil(o.MsgFltrs) {
 		toSerialize["msgFltrs"] = o.MsgFltrs
 	}
-	if !isNil(o.MonRep) {
+	if !IsNil(o.MonRep) {
 		toSerialize["monRep"] = o.MonRep
 	}
-	if !isNil(o.LocAdhr) {
+	if !IsNil(o.LocAdhr) {
 		toSerialize["locAdhr"] = o.LocAdhr
 	}
-	if !isNil(o.TempGroupInfo) {
+	if !IsNil(o.TempGroupInfo) {
 		toSerialize["tempGroupInfo"] = o.TempGroupInfo
 	}
-	if !isNil(o.LocAreaMonRep) {
+	if !IsNil(o.LocAreaMonRep) {
 		toSerialize["locAreaMonRep"] = o.LocAreaMonRep
 	}
 	return toSerialize, nil
@@ -407,5 +407,3 @@ func (v *NullableSEALEventDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

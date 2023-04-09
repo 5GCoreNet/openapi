@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,15 +19,15 @@ import (
 type ReportingConditionThreshold struct {
 	Float32 *float32
 	Float64 *float64
-	Int32 *int32
-	Int64 *int64
+	Int32   *int32
+	Int64   *int64
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingConditionThreshold) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into float32
-	err = json.Unmarshal(data, &dst.Float32);
+	err = json.Unmarshal(data, &dst.Float32)
 	if err == nil {
 		jsonFloat32, _ := json.Marshal(dst.Float32)
 		if string(jsonFloat32) == "{}" { // empty struct
@@ -40,7 +40,7 @@ func (dst *ReportingConditionThreshold) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into float64
-	err = json.Unmarshal(data, &dst.Float64);
+	err = json.Unmarshal(data, &dst.Float64)
 	if err == nil {
 		jsonFloat64, _ := json.Marshal(dst.Float64)
 		if string(jsonFloat64) == "{}" { // empty struct
@@ -53,7 +53,7 @@ func (dst *ReportingConditionThreshold) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into int32
-	err = json.Unmarshal(data, &dst.Int32);
+	err = json.Unmarshal(data, &dst.Int32)
 	if err == nil {
 		jsonInt32, _ := json.Marshal(dst.Int32)
 		if string(jsonInt32) == "{}" { // empty struct
@@ -66,7 +66,7 @@ func (dst *ReportingConditionThreshold) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into int64
-	err = json.Unmarshal(data, &dst.Int64);
+	err = json.Unmarshal(data, &dst.Int64)
 	if err == nil {
 		jsonInt64, _ := json.Marshal(dst.Int64)
 		if string(jsonInt64) == "{}" { // empty struct
@@ -137,5 +137,3 @@ func (v *NullableReportingConditionThreshold) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

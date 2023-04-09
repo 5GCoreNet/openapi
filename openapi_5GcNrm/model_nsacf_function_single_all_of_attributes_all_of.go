@@ -20,8 +20,8 @@ var _ MappedNullable = &NsacfFunctionSingleAllOfAttributesAllOf{}
 // NsacfFunctionSingleAllOfAttributesAllOf struct for NsacfFunctionSingleAllOfAttributesAllOf
 type NsacfFunctionSingleAllOfAttributesAllOf struct {
 	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	NsacfInfoSnssai []NsacfInfoSnssai `json:"nsacfInfoSnssai,omitempty"`
-	NsacfInfo *NsacfInfo `json:"nsacfInfo,omitempty"`
+	NsacfInfoSnssai  []NsacfInfoSnssai `json:"nsacfInfoSnssai,omitempty"`
+	NsacfInfo        *NsacfInfo        `json:"nsacfInfo,omitempty"`
 }
 
 // NewNsacfFunctionSingleAllOfAttributesAllOf instantiates a new NsacfFunctionSingleAllOfAttributesAllOf object
@@ -138,7 +138,7 @@ func (o *NsacfFunctionSingleAllOfAttributesAllOf) SetNsacfInfo(v NsacfInfo) {
 }
 
 func (o NsacfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableNsacfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

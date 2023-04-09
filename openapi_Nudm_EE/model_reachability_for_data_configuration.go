@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -68,7 +68,7 @@ func (o *ReachabilityForDataConfiguration) SetReportCfg(v ReachabilityForDataRep
 
 // GetMinInterval returns the MinInterval field value if set, zero value otherwise.
 func (o *ReachabilityForDataConfiguration) GetMinInterval() int32 {
-	if o == nil || isNil(o.MinInterval) {
+	if o == nil || IsNil(o.MinInterval) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ReachabilityForDataConfiguration) GetMinInterval() int32 {
 // GetMinIntervalOk returns a tuple with the MinInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityForDataConfiguration) GetMinIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.MinInterval) {
+	if o == nil || IsNil(o.MinInterval) {
 		return nil, false
 	}
 	return o.MinInterval, true
@@ -86,7 +86,7 @@ func (o *ReachabilityForDataConfiguration) GetMinIntervalOk() (*int32, bool) {
 
 // HasMinInterval returns a boolean if a field has been set.
 func (o *ReachabilityForDataConfiguration) HasMinInterval() bool {
-	if o != nil && !isNil(o.MinInterval) {
+	if o != nil && !IsNil(o.MinInterval) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *ReachabilityForDataConfiguration) SetMinInterval(v int32) {
 }
 
 func (o ReachabilityForDataConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o ReachabilityForDataConfiguration) MarshalJSON() ([]byte, error) {
 func (o ReachabilityForDataConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reportCfg"] = o.ReportCfg
-	if !isNil(o.MinInterval) {
+	if !IsNil(o.MinInterval) {
 		toSerialize["minInterval"] = o.MinInterval
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableReachabilityForDataConfiguration) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

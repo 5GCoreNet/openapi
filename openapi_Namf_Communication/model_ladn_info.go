@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &LadnInfo{}
 
 // LadnInfo LADN Information
 type LadnInfo struct {
-	Ladn string `json:"ladn"`
+	Ladn     string         `json:"ladn"`
 	Presence *PresenceState `json:"presence,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *LadnInfo) SetLadn(v string) {
 
 // GetPresence returns the Presence field value if set, zero value otherwise.
 func (o *LadnInfo) GetPresence() PresenceState {
-	if o == nil || isNil(o.Presence) {
+	if o == nil || IsNil(o.Presence) {
 		var ret PresenceState
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LadnInfo) GetPresence() PresenceState {
 // GetPresenceOk returns a tuple with the Presence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LadnInfo) GetPresenceOk() (*PresenceState, bool) {
-	if o == nil || isNil(o.Presence) {
+	if o == nil || IsNil(o.Presence) {
 		return nil, false
 	}
 	return o.Presence, true
@@ -85,7 +85,7 @@ func (o *LadnInfo) GetPresenceOk() (*PresenceState, bool) {
 
 // HasPresence returns a boolean if a field has been set.
 func (o *LadnInfo) HasPresence() bool {
-	if o != nil && !isNil(o.Presence) {
+	if o != nil && !IsNil(o.Presence) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *LadnInfo) SetPresence(v PresenceState) {
 }
 
 func (o LadnInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o LadnInfo) MarshalJSON() ([]byte, error) {
 func (o LadnInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ladn"] = o.Ladn
-	if !isNil(o.Presence) {
+	if !IsNil(o.Presence) {
 		toSerialize["presence"] = o.Presence
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableLadnInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

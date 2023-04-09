@@ -20,9 +20,9 @@ var _ MappedNullable = &RedirectInformation{}
 // RedirectInformation Contains the redirect information.
 type RedirectInformation struct {
 	// Indicates the redirect is enable.
-	RedirectEnabled *bool `json:"redirectEnabled,omitempty"`
+	RedirectEnabled     *bool                `json:"redirectEnabled,omitempty"`
 	RedirectAddressType *RedirectAddressType `json:"redirectAddressType,omitempty"`
-	// Indicates the address of the redirect server. If \"redirectAddressType\" attribute indicates the IPV4_ADDR, the encoding is the same as the Ipv4Addr data type defined in 3GPP TS 29.571.If \"redirectAddressType\" attribute indicates the IPV6_ADDR, the encoding is the same as the Ipv6Addr data type defined in 3GPP TS 29.571.If \"redirectAddressType\" attribute indicates the URL or SIP_URI, the encoding is the same as the Uri data type defined in 3GPP TS 29.571. 
+	// Indicates the address of the redirect server. If \"redirectAddressType\" attribute indicates the IPV4_ADDR, the encoding is the same as the Ipv4Addr data type defined in 3GPP TS 29.571.If \"redirectAddressType\" attribute indicates the IPV6_ADDR, the encoding is the same as the Ipv6Addr data type defined in 3GPP TS 29.571.If \"redirectAddressType\" attribute indicates the URL or SIP_URI, the encoding is the same as the Uri data type defined in 3GPP TS 29.571.
 	RedirectServerAddress *string `json:"redirectServerAddress,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewRedirectInformationWithDefaults() *RedirectInformation {
 
 // GetRedirectEnabled returns the RedirectEnabled field value if set, zero value otherwise.
 func (o *RedirectInformation) GetRedirectEnabled() bool {
-	if o == nil || isNil(o.RedirectEnabled) {
+	if o == nil || IsNil(o.RedirectEnabled) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *RedirectInformation) GetRedirectEnabled() bool {
 // GetRedirectEnabledOk returns a tuple with the RedirectEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedirectInformation) GetRedirectEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.RedirectEnabled) {
+	if o == nil || IsNil(o.RedirectEnabled) {
 		return nil, false
 	}
 	return o.RedirectEnabled, true
@@ -63,7 +63,7 @@ func (o *RedirectInformation) GetRedirectEnabledOk() (*bool, bool) {
 
 // HasRedirectEnabled returns a boolean if a field has been set.
 func (o *RedirectInformation) HasRedirectEnabled() bool {
-	if o != nil && !isNil(o.RedirectEnabled) {
+	if o != nil && !IsNil(o.RedirectEnabled) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *RedirectInformation) SetRedirectEnabled(v bool) {
 
 // GetRedirectAddressType returns the RedirectAddressType field value if set, zero value otherwise.
 func (o *RedirectInformation) GetRedirectAddressType() RedirectAddressType {
-	if o == nil || isNil(o.RedirectAddressType) {
+	if o == nil || IsNil(o.RedirectAddressType) {
 		var ret RedirectAddressType
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *RedirectInformation) GetRedirectAddressType() RedirectAddressType {
 // GetRedirectAddressTypeOk returns a tuple with the RedirectAddressType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedirectInformation) GetRedirectAddressTypeOk() (*RedirectAddressType, bool) {
-	if o == nil || isNil(o.RedirectAddressType) {
+	if o == nil || IsNil(o.RedirectAddressType) {
 		return nil, false
 	}
 	return o.RedirectAddressType, true
@@ -95,7 +95,7 @@ func (o *RedirectInformation) GetRedirectAddressTypeOk() (*RedirectAddressType, 
 
 // HasRedirectAddressType returns a boolean if a field has been set.
 func (o *RedirectInformation) HasRedirectAddressType() bool {
-	if o != nil && !isNil(o.RedirectAddressType) {
+	if o != nil && !IsNil(o.RedirectAddressType) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *RedirectInformation) SetRedirectAddressType(v RedirectAddressType) {
 
 // GetRedirectServerAddress returns the RedirectServerAddress field value if set, zero value otherwise.
 func (o *RedirectInformation) GetRedirectServerAddress() string {
-	if o == nil || isNil(o.RedirectServerAddress) {
+	if o == nil || IsNil(o.RedirectServerAddress) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *RedirectInformation) GetRedirectServerAddress() string {
 // GetRedirectServerAddressOk returns a tuple with the RedirectServerAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedirectInformation) GetRedirectServerAddressOk() (*string, bool) {
-	if o == nil || isNil(o.RedirectServerAddress) {
+	if o == nil || IsNil(o.RedirectServerAddress) {
 		return nil, false
 	}
 	return o.RedirectServerAddress, true
@@ -127,7 +127,7 @@ func (o *RedirectInformation) GetRedirectServerAddressOk() (*string, bool) {
 
 // HasRedirectServerAddress returns a boolean if a field has been set.
 func (o *RedirectInformation) HasRedirectServerAddress() bool {
-	if o != nil && !isNil(o.RedirectServerAddress) {
+	if o != nil && !IsNil(o.RedirectServerAddress) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *RedirectInformation) SetRedirectServerAddress(v string) {
 }
 
 func (o RedirectInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o RedirectInformation) MarshalJSON() ([]byte, error) {
 
 func (o RedirectInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RedirectEnabled) {
+	if !IsNil(o.RedirectEnabled) {
 		toSerialize["redirectEnabled"] = o.RedirectEnabled
 	}
-	if !isNil(o.RedirectAddressType) {
+	if !IsNil(o.RedirectAddressType) {
 		toSerialize["redirectAddressType"] = o.RedirectAddressType
 	}
-	if !isNil(o.RedirectServerAddress) {
+	if !IsNil(o.RedirectServerAddress) {
 		toSerialize["redirectServerAddress"] = o.RedirectServerAddress
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableRedirectInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nucmf_UECapabilityManagement
 
-Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &DicEntryData{}
 // DicEntryData A dictionary entry for a UE radio capability ID in the UCMF
 type DicEntryData struct {
 	DicEntryId *int32 `json:"dicEntryId,omitempty"`
-	// Type Allocation Code (TAC) of the UE, comprising the initial eight-digit portion of the 15-digit IMEI and 16-digit IMEISV codes. See clause 6.2 of 3GPP TS 23.003. 
+	// Type Allocation Code (TAC) of the UE, comprising the initial eight-digit portion of the 15-digit IMEI and 16-digit IMEISV codes. See clause 6.2 of 3GPP TS 23.003.
 	TypeAllocationCode string `json:"typeAllocationCode"`
 	// string with format 'bytes' as defined in OpenAPI
 	PlmnAssiUeRadioCapId *string `json:"plmnAssiUeRadioCapId,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
-	ManAssiUeRadioCapId *string `json:"manAssiUeRadioCapId,omitempty"`
-	UeRadioCapability5GS *RefToBinaryData `json:"ueRadioCapability5GS,omitempty"`
-	UeRadioCapabilityEPS *RefToBinaryData `json:"ueRadioCapabilityEPS,omitempty"`
+	ManAssiUeRadioCapId    *string          `json:"manAssiUeRadioCapId,omitempty"`
+	UeRadioCapability5GS   *RefToBinaryData `json:"ueRadioCapability5GS,omitempty"`
+	UeRadioCapabilityEPS   *RefToBinaryData `json:"ueRadioCapabilityEPS,omitempty"`
 	UeRadioCap5GSForPaging *RefToBinaryData `json:"ueRadioCap5GSForPaging,omitempty"`
 	UeRadioCapEPSForPaging *RefToBinaryData `json:"ueRadioCapEPSForPaging,omitempty"`
 }
@@ -52,7 +52,7 @@ func NewDicEntryDataWithDefaults() *DicEntryData {
 
 // GetDicEntryId returns the DicEntryId field value if set, zero value otherwise.
 func (o *DicEntryData) GetDicEntryId() int32 {
-	if o == nil || isNil(o.DicEntryId) {
+	if o == nil || IsNil(o.DicEntryId) {
 		var ret int32
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *DicEntryData) GetDicEntryId() int32 {
 // GetDicEntryIdOk returns a tuple with the DicEntryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetDicEntryIdOk() (*int32, bool) {
-	if o == nil || isNil(o.DicEntryId) {
+	if o == nil || IsNil(o.DicEntryId) {
 		return nil, false
 	}
 	return o.DicEntryId, true
@@ -70,7 +70,7 @@ func (o *DicEntryData) GetDicEntryIdOk() (*int32, bool) {
 
 // HasDicEntryId returns a boolean if a field has been set.
 func (o *DicEntryData) HasDicEntryId() bool {
-	if o != nil && !isNil(o.DicEntryId) {
+	if o != nil && !IsNil(o.DicEntryId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *DicEntryData) SetTypeAllocationCode(v string) {
 
 // GetPlmnAssiUeRadioCapId returns the PlmnAssiUeRadioCapId field value if set, zero value otherwise.
 func (o *DicEntryData) GetPlmnAssiUeRadioCapId() string {
-	if o == nil || isNil(o.PlmnAssiUeRadioCapId) {
+	if o == nil || IsNil(o.PlmnAssiUeRadioCapId) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *DicEntryData) GetPlmnAssiUeRadioCapId() string {
 // GetPlmnAssiUeRadioCapIdOk returns a tuple with the PlmnAssiUeRadioCapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetPlmnAssiUeRadioCapIdOk() (*string, bool) {
-	if o == nil || isNil(o.PlmnAssiUeRadioCapId) {
+	if o == nil || IsNil(o.PlmnAssiUeRadioCapId) {
 		return nil, false
 	}
 	return o.PlmnAssiUeRadioCapId, true
@@ -126,7 +126,7 @@ func (o *DicEntryData) GetPlmnAssiUeRadioCapIdOk() (*string, bool) {
 
 // HasPlmnAssiUeRadioCapId returns a boolean if a field has been set.
 func (o *DicEntryData) HasPlmnAssiUeRadioCapId() bool {
-	if o != nil && !isNil(o.PlmnAssiUeRadioCapId) {
+	if o != nil && !IsNil(o.PlmnAssiUeRadioCapId) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *DicEntryData) SetPlmnAssiUeRadioCapId(v string) {
 
 // GetManAssiUeRadioCapId returns the ManAssiUeRadioCapId field value if set, zero value otherwise.
 func (o *DicEntryData) GetManAssiUeRadioCapId() string {
-	if o == nil || isNil(o.ManAssiUeRadioCapId) {
+	if o == nil || IsNil(o.ManAssiUeRadioCapId) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *DicEntryData) GetManAssiUeRadioCapId() string {
 // GetManAssiUeRadioCapIdOk returns a tuple with the ManAssiUeRadioCapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetManAssiUeRadioCapIdOk() (*string, bool) {
-	if o == nil || isNil(o.ManAssiUeRadioCapId) {
+	if o == nil || IsNil(o.ManAssiUeRadioCapId) {
 		return nil, false
 	}
 	return o.ManAssiUeRadioCapId, true
@@ -158,7 +158,7 @@ func (o *DicEntryData) GetManAssiUeRadioCapIdOk() (*string, bool) {
 
 // HasManAssiUeRadioCapId returns a boolean if a field has been set.
 func (o *DicEntryData) HasManAssiUeRadioCapId() bool {
-	if o != nil && !isNil(o.ManAssiUeRadioCapId) {
+	if o != nil && !IsNil(o.ManAssiUeRadioCapId) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *DicEntryData) SetManAssiUeRadioCapId(v string) {
 
 // GetUeRadioCapability5GS returns the UeRadioCapability5GS field value if set, zero value otherwise.
 func (o *DicEntryData) GetUeRadioCapability5GS() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCapability5GS) {
+	if o == nil || IsNil(o.UeRadioCapability5GS) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *DicEntryData) GetUeRadioCapability5GS() RefToBinaryData {
 // GetUeRadioCapability5GSOk returns a tuple with the UeRadioCapability5GS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetUeRadioCapability5GSOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCapability5GS) {
+	if o == nil || IsNil(o.UeRadioCapability5GS) {
 		return nil, false
 	}
 	return o.UeRadioCapability5GS, true
@@ -190,7 +190,7 @@ func (o *DicEntryData) GetUeRadioCapability5GSOk() (*RefToBinaryData, bool) {
 
 // HasUeRadioCapability5GS returns a boolean if a field has been set.
 func (o *DicEntryData) HasUeRadioCapability5GS() bool {
-	if o != nil && !isNil(o.UeRadioCapability5GS) {
+	if o != nil && !IsNil(o.UeRadioCapability5GS) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *DicEntryData) SetUeRadioCapability5GS(v RefToBinaryData) {
 
 // GetUeRadioCapabilityEPS returns the UeRadioCapabilityEPS field value if set, zero value otherwise.
 func (o *DicEntryData) GetUeRadioCapabilityEPS() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCapabilityEPS) {
+	if o == nil || IsNil(o.UeRadioCapabilityEPS) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *DicEntryData) GetUeRadioCapabilityEPS() RefToBinaryData {
 // GetUeRadioCapabilityEPSOk returns a tuple with the UeRadioCapabilityEPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetUeRadioCapabilityEPSOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCapabilityEPS) {
+	if o == nil || IsNil(o.UeRadioCapabilityEPS) {
 		return nil, false
 	}
 	return o.UeRadioCapabilityEPS, true
@@ -222,7 +222,7 @@ func (o *DicEntryData) GetUeRadioCapabilityEPSOk() (*RefToBinaryData, bool) {
 
 // HasUeRadioCapabilityEPS returns a boolean if a field has been set.
 func (o *DicEntryData) HasUeRadioCapabilityEPS() bool {
-	if o != nil && !isNil(o.UeRadioCapabilityEPS) {
+	if o != nil && !IsNil(o.UeRadioCapabilityEPS) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *DicEntryData) SetUeRadioCapabilityEPS(v RefToBinaryData) {
 
 // GetUeRadioCap5GSForPaging returns the UeRadioCap5GSForPaging field value if set, zero value otherwise.
 func (o *DicEntryData) GetUeRadioCap5GSForPaging() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCap5GSForPaging) {
+	if o == nil || IsNil(o.UeRadioCap5GSForPaging) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *DicEntryData) GetUeRadioCap5GSForPaging() RefToBinaryData {
 // GetUeRadioCap5GSForPagingOk returns a tuple with the UeRadioCap5GSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetUeRadioCap5GSForPagingOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCap5GSForPaging) {
+	if o == nil || IsNil(o.UeRadioCap5GSForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCap5GSForPaging, true
@@ -254,7 +254,7 @@ func (o *DicEntryData) GetUeRadioCap5GSForPagingOk() (*RefToBinaryData, bool) {
 
 // HasUeRadioCap5GSForPaging returns a boolean if a field has been set.
 func (o *DicEntryData) HasUeRadioCap5GSForPaging() bool {
-	if o != nil && !isNil(o.UeRadioCap5GSForPaging) {
+	if o != nil && !IsNil(o.UeRadioCap5GSForPaging) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *DicEntryData) SetUeRadioCap5GSForPaging(v RefToBinaryData) {
 
 // GetUeRadioCapEPSForPaging returns the UeRadioCapEPSForPaging field value if set, zero value otherwise.
 func (o *DicEntryData) GetUeRadioCapEPSForPaging() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCapEPSForPaging) {
+	if o == nil || IsNil(o.UeRadioCapEPSForPaging) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *DicEntryData) GetUeRadioCapEPSForPaging() RefToBinaryData {
 // GetUeRadioCapEPSForPagingOk returns a tuple with the UeRadioCapEPSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryData) GetUeRadioCapEPSForPagingOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCapEPSForPaging) {
+	if o == nil || IsNil(o.UeRadioCapEPSForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCapEPSForPaging, true
@@ -286,7 +286,7 @@ func (o *DicEntryData) GetUeRadioCapEPSForPagingOk() (*RefToBinaryData, bool) {
 
 // HasUeRadioCapEPSForPaging returns a boolean if a field has been set.
 func (o *DicEntryData) HasUeRadioCapEPSForPaging() bool {
-	if o != nil && !isNil(o.UeRadioCapEPSForPaging) {
+	if o != nil && !IsNil(o.UeRadioCapEPSForPaging) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *DicEntryData) SetUeRadioCapEPSForPaging(v RefToBinaryData) {
 }
 
 func (o DicEntryData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -308,26 +308,26 @@ func (o DicEntryData) MarshalJSON() ([]byte, error) {
 
 func (o DicEntryData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DicEntryId) {
+	if !IsNil(o.DicEntryId) {
 		toSerialize["dicEntryId"] = o.DicEntryId
 	}
 	toSerialize["typeAllocationCode"] = o.TypeAllocationCode
-	if !isNil(o.PlmnAssiUeRadioCapId) {
+	if !IsNil(o.PlmnAssiUeRadioCapId) {
 		toSerialize["plmnAssiUeRadioCapId"] = o.PlmnAssiUeRadioCapId
 	}
-	if !isNil(o.ManAssiUeRadioCapId) {
+	if !IsNil(o.ManAssiUeRadioCapId) {
 		toSerialize["manAssiUeRadioCapId"] = o.ManAssiUeRadioCapId
 	}
-	if !isNil(o.UeRadioCapability5GS) {
+	if !IsNil(o.UeRadioCapability5GS) {
 		toSerialize["ueRadioCapability5GS"] = o.UeRadioCapability5GS
 	}
-	if !isNil(o.UeRadioCapabilityEPS) {
+	if !IsNil(o.UeRadioCapabilityEPS) {
 		toSerialize["ueRadioCapabilityEPS"] = o.UeRadioCapabilityEPS
 	}
-	if !isNil(o.UeRadioCap5GSForPaging) {
+	if !IsNil(o.UeRadioCap5GSForPaging) {
 		toSerialize["ueRadioCap5GSForPaging"] = o.UeRadioCap5GSForPaging
 	}
-	if !isNil(o.UeRadioCapEPSForPaging) {
+	if !IsNil(o.UeRadioCapEPSForPaging) {
 		toSerialize["ueRadioCapEPSForPaging"] = o.UeRadioCapEPSForPaging
 	}
 	return toSerialize, nil
@@ -368,5 +368,3 @@ func (v *NullableDicEntryData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

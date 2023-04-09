@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,30 +20,30 @@ var _ MappedNullable = &LocContextData{}
 
 // LocContextData Information within Transfer Location Context Request.
 type LocContextData struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AmfId string `json:"amfId"`
-	LocationQoS *LocationQoS `json:"locationQoS,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AmfId              string               `json:"amfId"`
+	LocationQoS        *LocationQoS         `json:"locationQoS,omitempty"`
 	SupportedGADShapes []SupportedGADShapes `json:"supportedGADShapes,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi *string `json:"gpsi,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi    *string `json:"gpsi,omitempty"`
 	LdrType LdrType `json:"ldrType"`
 	// String providing an URI formatted according to RFC 3986.
 	HgmlcCallBackURI string `json:"hgmlcCallBackURI"`
 	// LDR Reference.
-	LdrReference string `json:"ldrReference"`
-	PeriodicEventInfo *PeriodicEventInfo `json:"periodicEventInfo,omitempty"`
-	AreaEventInfo *AreaEventInfo `json:"areaEventInfo,omitempty"`
-	MotionEventInfo *MotionEventInfo `json:"motionEventInfo,omitempty"`
-	EventReportMessage EventReportMessage `json:"eventReportMessage"`
+	LdrReference         string                `json:"ldrReference"`
+	PeriodicEventInfo    *PeriodicEventInfo    `json:"periodicEventInfo,omitempty"`
+	AreaEventInfo        *AreaEventInfo        `json:"areaEventInfo,omitempty"`
+	MotionEventInfo      *MotionEventInfo      `json:"motionEventInfo,omitempty"`
+	EventReportMessage   EventReportMessage    `json:"eventReportMessage"`
 	EventReportingStatus *EventReportingStatus `json:"eventReportingStatus,omitempty"`
-	UeLocationInfo *UELocationInfo `json:"ueLocationInfo,omitempty"`
-	CIoT5GSOptimisation *bool `json:"cIoT5GSOptimisation,omitempty"`
-	Ecgi *Ecgi `json:"ecgi,omitempty"`
-	Ncgi *Ncgi `json:"ncgi,omitempty"`
-	Guami *Guami `json:"guami,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	UeLocationInfo       *UELocationInfo       `json:"ueLocationInfo,omitempty"`
+	CIoT5GSOptimisation  *bool                 `json:"cIoT5GSOptimisation,omitempty"`
+	Ecgi                 *Ecgi                 `json:"ecgi,omitempty"`
+	Ncgi                 *Ncgi                 `json:"ncgi,omitempty"`
+	Guami                *Guami                `json:"guami,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 	// Positioning capabilities supported by the UE. A string encoding the \"ProvideCapabilities-r9-IEs\" IE as specified in clause 6.3 of 3GPP TS 37.355 (start from octet 1).
 	UePositioningCap *string `json:"uePositioningCap,omitempty"`
@@ -103,7 +103,7 @@ func (o *LocContextData) SetAmfId(v string) {
 
 // GetLocationQoS returns the LocationQoS field value if set, zero value otherwise.
 func (o *LocContextData) GetLocationQoS() LocationQoS {
-	if o == nil || isNil(o.LocationQoS) {
+	if o == nil || IsNil(o.LocationQoS) {
 		var ret LocationQoS
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *LocContextData) GetLocationQoS() LocationQoS {
 // GetLocationQoSOk returns a tuple with the LocationQoS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetLocationQoSOk() (*LocationQoS, bool) {
-	if o == nil || isNil(o.LocationQoS) {
+	if o == nil || IsNil(o.LocationQoS) {
 		return nil, false
 	}
 	return o.LocationQoS, true
@@ -121,7 +121,7 @@ func (o *LocContextData) GetLocationQoSOk() (*LocationQoS, bool) {
 
 // HasLocationQoS returns a boolean if a field has been set.
 func (o *LocContextData) HasLocationQoS() bool {
-	if o != nil && !isNil(o.LocationQoS) {
+	if o != nil && !IsNil(o.LocationQoS) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *LocContextData) SetLocationQoS(v LocationQoS) {
 
 // GetSupportedGADShapes returns the SupportedGADShapes field value if set, zero value otherwise.
 func (o *LocContextData) GetSupportedGADShapes() []SupportedGADShapes {
-	if o == nil || isNil(o.SupportedGADShapes) {
+	if o == nil || IsNil(o.SupportedGADShapes) {
 		var ret []SupportedGADShapes
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *LocContextData) GetSupportedGADShapes() []SupportedGADShapes {
 // GetSupportedGADShapesOk returns a tuple with the SupportedGADShapes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetSupportedGADShapesOk() ([]SupportedGADShapes, bool) {
-	if o == nil || isNil(o.SupportedGADShapes) {
+	if o == nil || IsNil(o.SupportedGADShapes) {
 		return nil, false
 	}
 	return o.SupportedGADShapes, true
@@ -153,7 +153,7 @@ func (o *LocContextData) GetSupportedGADShapesOk() ([]SupportedGADShapes, bool) 
 
 // HasSupportedGADShapes returns a boolean if a field has been set.
 func (o *LocContextData) HasSupportedGADShapes() bool {
-	if o != nil && !isNil(o.SupportedGADShapes) {
+	if o != nil && !IsNil(o.SupportedGADShapes) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *LocContextData) SetSupportedGADShapes(v []SupportedGADShapes) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *LocContextData) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *LocContextData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -185,7 +185,7 @@ func (o *LocContextData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *LocContextData) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *LocContextData) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *LocContextData) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *LocContextData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -217,7 +217,7 @@ func (o *LocContextData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *LocContextData) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *LocContextData) SetLdrReference(v string) {
 
 // GetPeriodicEventInfo returns the PeriodicEventInfo field value if set, zero value otherwise.
 func (o *LocContextData) GetPeriodicEventInfo() PeriodicEventInfo {
-	if o == nil || isNil(o.PeriodicEventInfo) {
+	if o == nil || IsNil(o.PeriodicEventInfo) {
 		var ret PeriodicEventInfo
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *LocContextData) GetPeriodicEventInfo() PeriodicEventInfo {
 // GetPeriodicEventInfoOk returns a tuple with the PeriodicEventInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetPeriodicEventInfoOk() (*PeriodicEventInfo, bool) {
-	if o == nil || isNil(o.PeriodicEventInfo) {
+	if o == nil || IsNil(o.PeriodicEventInfo) {
 		return nil, false
 	}
 	return o.PeriodicEventInfo, true
@@ -321,7 +321,7 @@ func (o *LocContextData) GetPeriodicEventInfoOk() (*PeriodicEventInfo, bool) {
 
 // HasPeriodicEventInfo returns a boolean if a field has been set.
 func (o *LocContextData) HasPeriodicEventInfo() bool {
-	if o != nil && !isNil(o.PeriodicEventInfo) {
+	if o != nil && !IsNil(o.PeriodicEventInfo) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *LocContextData) SetPeriodicEventInfo(v PeriodicEventInfo) {
 
 // GetAreaEventInfo returns the AreaEventInfo field value if set, zero value otherwise.
 func (o *LocContextData) GetAreaEventInfo() AreaEventInfo {
-	if o == nil || isNil(o.AreaEventInfo) {
+	if o == nil || IsNil(o.AreaEventInfo) {
 		var ret AreaEventInfo
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *LocContextData) GetAreaEventInfo() AreaEventInfo {
 // GetAreaEventInfoOk returns a tuple with the AreaEventInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetAreaEventInfoOk() (*AreaEventInfo, bool) {
-	if o == nil || isNil(o.AreaEventInfo) {
+	if o == nil || IsNil(o.AreaEventInfo) {
 		return nil, false
 	}
 	return o.AreaEventInfo, true
@@ -353,7 +353,7 @@ func (o *LocContextData) GetAreaEventInfoOk() (*AreaEventInfo, bool) {
 
 // HasAreaEventInfo returns a boolean if a field has been set.
 func (o *LocContextData) HasAreaEventInfo() bool {
-	if o != nil && !isNil(o.AreaEventInfo) {
+	if o != nil && !IsNil(o.AreaEventInfo) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *LocContextData) SetAreaEventInfo(v AreaEventInfo) {
 
 // GetMotionEventInfo returns the MotionEventInfo field value if set, zero value otherwise.
 func (o *LocContextData) GetMotionEventInfo() MotionEventInfo {
-	if o == nil || isNil(o.MotionEventInfo) {
+	if o == nil || IsNil(o.MotionEventInfo) {
 		var ret MotionEventInfo
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *LocContextData) GetMotionEventInfo() MotionEventInfo {
 // GetMotionEventInfoOk returns a tuple with the MotionEventInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetMotionEventInfoOk() (*MotionEventInfo, bool) {
-	if o == nil || isNil(o.MotionEventInfo) {
+	if o == nil || IsNil(o.MotionEventInfo) {
 		return nil, false
 	}
 	return o.MotionEventInfo, true
@@ -385,7 +385,7 @@ func (o *LocContextData) GetMotionEventInfoOk() (*MotionEventInfo, bool) {
 
 // HasMotionEventInfo returns a boolean if a field has been set.
 func (o *LocContextData) HasMotionEventInfo() bool {
-	if o != nil && !isNil(o.MotionEventInfo) {
+	if o != nil && !IsNil(o.MotionEventInfo) {
 		return true
 	}
 
@@ -423,7 +423,7 @@ func (o *LocContextData) SetEventReportMessage(v EventReportMessage) {
 
 // GetEventReportingStatus returns the EventReportingStatus field value if set, zero value otherwise.
 func (o *LocContextData) GetEventReportingStatus() EventReportingStatus {
-	if o == nil || isNil(o.EventReportingStatus) {
+	if o == nil || IsNil(o.EventReportingStatus) {
 		var ret EventReportingStatus
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *LocContextData) GetEventReportingStatus() EventReportingStatus {
 // GetEventReportingStatusOk returns a tuple with the EventReportingStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetEventReportingStatusOk() (*EventReportingStatus, bool) {
-	if o == nil || isNil(o.EventReportingStatus) {
+	if o == nil || IsNil(o.EventReportingStatus) {
 		return nil, false
 	}
 	return o.EventReportingStatus, true
@@ -441,7 +441,7 @@ func (o *LocContextData) GetEventReportingStatusOk() (*EventReportingStatus, boo
 
 // HasEventReportingStatus returns a boolean if a field has been set.
 func (o *LocContextData) HasEventReportingStatus() bool {
-	if o != nil && !isNil(o.EventReportingStatus) {
+	if o != nil && !IsNil(o.EventReportingStatus) {
 		return true
 	}
 
@@ -455,7 +455,7 @@ func (o *LocContextData) SetEventReportingStatus(v EventReportingStatus) {
 
 // GetUeLocationInfo returns the UeLocationInfo field value if set, zero value otherwise.
 func (o *LocContextData) GetUeLocationInfo() UELocationInfo {
-	if o == nil || isNil(o.UeLocationInfo) {
+	if o == nil || IsNil(o.UeLocationInfo) {
 		var ret UELocationInfo
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *LocContextData) GetUeLocationInfo() UELocationInfo {
 // GetUeLocationInfoOk returns a tuple with the UeLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetUeLocationInfoOk() (*UELocationInfo, bool) {
-	if o == nil || isNil(o.UeLocationInfo) {
+	if o == nil || IsNil(o.UeLocationInfo) {
 		return nil, false
 	}
 	return o.UeLocationInfo, true
@@ -473,7 +473,7 @@ func (o *LocContextData) GetUeLocationInfoOk() (*UELocationInfo, bool) {
 
 // HasUeLocationInfo returns a boolean if a field has been set.
 func (o *LocContextData) HasUeLocationInfo() bool {
-	if o != nil && !isNil(o.UeLocationInfo) {
+	if o != nil && !IsNil(o.UeLocationInfo) {
 		return true
 	}
 
@@ -487,7 +487,7 @@ func (o *LocContextData) SetUeLocationInfo(v UELocationInfo) {
 
 // GetCIoT5GSOptimisation returns the CIoT5GSOptimisation field value if set, zero value otherwise.
 func (o *LocContextData) GetCIoT5GSOptimisation() bool {
-	if o == nil || isNil(o.CIoT5GSOptimisation) {
+	if o == nil || IsNil(o.CIoT5GSOptimisation) {
 		var ret bool
 		return ret
 	}
@@ -497,7 +497,7 @@ func (o *LocContextData) GetCIoT5GSOptimisation() bool {
 // GetCIoT5GSOptimisationOk returns a tuple with the CIoT5GSOptimisation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetCIoT5GSOptimisationOk() (*bool, bool) {
-	if o == nil || isNil(o.CIoT5GSOptimisation) {
+	if o == nil || IsNil(o.CIoT5GSOptimisation) {
 		return nil, false
 	}
 	return o.CIoT5GSOptimisation, true
@@ -505,7 +505,7 @@ func (o *LocContextData) GetCIoT5GSOptimisationOk() (*bool, bool) {
 
 // HasCIoT5GSOptimisation returns a boolean if a field has been set.
 func (o *LocContextData) HasCIoT5GSOptimisation() bool {
-	if o != nil && !isNil(o.CIoT5GSOptimisation) {
+	if o != nil && !IsNil(o.CIoT5GSOptimisation) {
 		return true
 	}
 
@@ -519,7 +519,7 @@ func (o *LocContextData) SetCIoT5GSOptimisation(v bool) {
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *LocContextData) GetEcgi() Ecgi {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -529,7 +529,7 @@ func (o *LocContextData) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -537,7 +537,7 @@ func (o *LocContextData) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *LocContextData) HasEcgi() bool {
-	if o != nil && !isNil(o.Ecgi) {
+	if o != nil && !IsNil(o.Ecgi) {
 		return true
 	}
 
@@ -551,7 +551,7 @@ func (o *LocContextData) SetEcgi(v Ecgi) {
 
 // GetNcgi returns the Ncgi field value if set, zero value otherwise.
 func (o *LocContextData) GetNcgi() Ncgi {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -561,7 +561,7 @@ func (o *LocContextData) GetNcgi() Ncgi {
 // GetNcgiOk returns a tuple with the Ncgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetNcgiOk() (*Ncgi, bool) {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		return nil, false
 	}
 	return o.Ncgi, true
@@ -569,7 +569,7 @@ func (o *LocContextData) GetNcgiOk() (*Ncgi, bool) {
 
 // HasNcgi returns a boolean if a field has been set.
 func (o *LocContextData) HasNcgi() bool {
-	if o != nil && !isNil(o.Ncgi) {
+	if o != nil && !IsNil(o.Ncgi) {
 		return true
 	}
 
@@ -583,7 +583,7 @@ func (o *LocContextData) SetNcgi(v Ncgi) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *LocContextData) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *LocContextData) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -601,7 +601,7 @@ func (o *LocContextData) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *LocContextData) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -615,7 +615,7 @@ func (o *LocContextData) SetGuami(v Guami) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *LocContextData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -625,7 +625,7 @@ func (o *LocContextData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -633,7 +633,7 @@ func (o *LocContextData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *LocContextData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -647,7 +647,7 @@ func (o *LocContextData) SetSupportedFeatures(v string) {
 
 // GetUePositioningCap returns the UePositioningCap field value if set, zero value otherwise.
 func (o *LocContextData) GetUePositioningCap() string {
-	if o == nil || isNil(o.UePositioningCap) {
+	if o == nil || IsNil(o.UePositioningCap) {
 		var ret string
 		return ret
 	}
@@ -657,7 +657,7 @@ func (o *LocContextData) GetUePositioningCap() string {
 // GetUePositioningCapOk returns a tuple with the UePositioningCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetUePositioningCapOk() (*string, bool) {
-	if o == nil || isNil(o.UePositioningCap) {
+	if o == nil || IsNil(o.UePositioningCap) {
 		return nil, false
 	}
 	return o.UePositioningCap, true
@@ -665,7 +665,7 @@ func (o *LocContextData) GetUePositioningCapOk() (*string, bool) {
 
 // HasUePositioningCap returns a boolean if a field has been set.
 func (o *LocContextData) HasUePositioningCap() bool {
-	if o != nil && !isNil(o.UePositioningCap) {
+	if o != nil && !IsNil(o.UePositioningCap) {
 		return true
 	}
 
@@ -679,7 +679,7 @@ func (o *LocContextData) SetUePositioningCap(v string) {
 
 // GetScheduledLocTime returns the ScheduledLocTime field value if set, zero value otherwise.
 func (o *LocContextData) GetScheduledLocTime() time.Time {
-	if o == nil || isNil(o.ScheduledLocTime) {
+	if o == nil || IsNil(o.ScheduledLocTime) {
 		var ret time.Time
 		return ret
 	}
@@ -689,7 +689,7 @@ func (o *LocContextData) GetScheduledLocTime() time.Time {
 // GetScheduledLocTimeOk returns a tuple with the ScheduledLocTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocContextData) GetScheduledLocTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ScheduledLocTime) {
+	if o == nil || IsNil(o.ScheduledLocTime) {
 		return nil, false
 	}
 	return o.ScheduledLocTime, true
@@ -697,7 +697,7 @@ func (o *LocContextData) GetScheduledLocTimeOk() (*time.Time, bool) {
 
 // HasScheduledLocTime returns a boolean if a field has been set.
 func (o *LocContextData) HasScheduledLocTime() bool {
-	if o != nil && !isNil(o.ScheduledLocTime) {
+	if o != nil && !IsNil(o.ScheduledLocTime) {
 		return true
 	}
 
@@ -710,7 +710,7 @@ func (o *LocContextData) SetScheduledLocTime(v time.Time) {
 }
 
 func (o LocContextData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -720,56 +720,56 @@ func (o LocContextData) MarshalJSON() ([]byte, error) {
 func (o LocContextData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfId"] = o.AmfId
-	if !isNil(o.LocationQoS) {
+	if !IsNil(o.LocationQoS) {
 		toSerialize["locationQoS"] = o.LocationQoS
 	}
-	if !isNil(o.SupportedGADShapes) {
+	if !IsNil(o.SupportedGADShapes) {
 		toSerialize["supportedGADShapes"] = o.SupportedGADShapes
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["ldrType"] = o.LdrType
 	toSerialize["hgmlcCallBackURI"] = o.HgmlcCallBackURI
 	toSerialize["ldrReference"] = o.LdrReference
-	if !isNil(o.PeriodicEventInfo) {
+	if !IsNil(o.PeriodicEventInfo) {
 		toSerialize["periodicEventInfo"] = o.PeriodicEventInfo
 	}
-	if !isNil(o.AreaEventInfo) {
+	if !IsNil(o.AreaEventInfo) {
 		toSerialize["areaEventInfo"] = o.AreaEventInfo
 	}
-	if !isNil(o.MotionEventInfo) {
+	if !IsNil(o.MotionEventInfo) {
 		toSerialize["motionEventInfo"] = o.MotionEventInfo
 	}
 	toSerialize["eventReportMessage"] = o.EventReportMessage
-	if !isNil(o.EventReportingStatus) {
+	if !IsNil(o.EventReportingStatus) {
 		toSerialize["eventReportingStatus"] = o.EventReportingStatus
 	}
-	if !isNil(o.UeLocationInfo) {
+	if !IsNil(o.UeLocationInfo) {
 		toSerialize["ueLocationInfo"] = o.UeLocationInfo
 	}
-	if !isNil(o.CIoT5GSOptimisation) {
+	if !IsNil(o.CIoT5GSOptimisation) {
 		toSerialize["cIoT5GSOptimisation"] = o.CIoT5GSOptimisation
 	}
-	if !isNil(o.Ecgi) {
+	if !IsNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
-	if !isNil(o.Ncgi) {
+	if !IsNil(o.Ncgi) {
 		toSerialize["ncgi"] = o.Ncgi
 	}
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.UePositioningCap) {
+	if !IsNil(o.UePositioningCap) {
 		toSerialize["uePositioningCap"] = o.UePositioningCap
 	}
-	if !isNil(o.ScheduledLocTime) {
+	if !IsNil(o.ScheduledLocTime) {
 		toSerialize["scheduledLocTime"] = o.ScheduledLocTime
 	}
 	return toSerialize, nil
@@ -810,5 +810,3 @@ func (v *NullableLocContextData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

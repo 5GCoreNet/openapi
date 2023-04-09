@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -24,8 +24,8 @@ type IpSmGwAddress struct {
 	// Fully Qualified Domain Name
 	IpSmGwDiaUri *string `json:"ipSmGwDiaUri,omitempty"`
 	// Fully Qualified Domain Name
-	IpSmGwDiaRealm *string `json:"ipSmGwDiaRealm,omitempty"`
-	IpSmGwSbiSupInd *bool `json:"ipSmGwSbiSupInd,omitempty"`
+	IpSmGwDiaRealm  *string `json:"ipSmGwDiaRealm,omitempty"`
+	IpSmGwSbiSupInd *bool   `json:"ipSmGwSbiSupInd,omitempty"`
 }
 
 // NewIpSmGwAddress instantiates a new IpSmGwAddress object
@@ -76,7 +76,7 @@ func (o *IpSmGwAddress) SetIpSmGwNumber(v string) {
 
 // GetIpSmGwDiaUri returns the IpSmGwDiaUri field value if set, zero value otherwise.
 func (o *IpSmGwAddress) GetIpSmGwDiaUri() string {
-	if o == nil || isNil(o.IpSmGwDiaUri) {
+	if o == nil || IsNil(o.IpSmGwDiaUri) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *IpSmGwAddress) GetIpSmGwDiaUri() string {
 // GetIpSmGwDiaUriOk returns a tuple with the IpSmGwDiaUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwAddress) GetIpSmGwDiaUriOk() (*string, bool) {
-	if o == nil || isNil(o.IpSmGwDiaUri) {
+	if o == nil || IsNil(o.IpSmGwDiaUri) {
 		return nil, false
 	}
 	return o.IpSmGwDiaUri, true
@@ -94,7 +94,7 @@ func (o *IpSmGwAddress) GetIpSmGwDiaUriOk() (*string, bool) {
 
 // HasIpSmGwDiaUri returns a boolean if a field has been set.
 func (o *IpSmGwAddress) HasIpSmGwDiaUri() bool {
-	if o != nil && !isNil(o.IpSmGwDiaUri) {
+	if o != nil && !IsNil(o.IpSmGwDiaUri) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *IpSmGwAddress) SetIpSmGwDiaUri(v string) {
 
 // GetIpSmGwDiaRealm returns the IpSmGwDiaRealm field value if set, zero value otherwise.
 func (o *IpSmGwAddress) GetIpSmGwDiaRealm() string {
-	if o == nil || isNil(o.IpSmGwDiaRealm) {
+	if o == nil || IsNil(o.IpSmGwDiaRealm) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *IpSmGwAddress) GetIpSmGwDiaRealm() string {
 // GetIpSmGwDiaRealmOk returns a tuple with the IpSmGwDiaRealm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwAddress) GetIpSmGwDiaRealmOk() (*string, bool) {
-	if o == nil || isNil(o.IpSmGwDiaRealm) {
+	if o == nil || IsNil(o.IpSmGwDiaRealm) {
 		return nil, false
 	}
 	return o.IpSmGwDiaRealm, true
@@ -126,7 +126,7 @@ func (o *IpSmGwAddress) GetIpSmGwDiaRealmOk() (*string, bool) {
 
 // HasIpSmGwDiaRealm returns a boolean if a field has been set.
 func (o *IpSmGwAddress) HasIpSmGwDiaRealm() bool {
-	if o != nil && !isNil(o.IpSmGwDiaRealm) {
+	if o != nil && !IsNil(o.IpSmGwDiaRealm) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *IpSmGwAddress) SetIpSmGwDiaRealm(v string) {
 
 // GetIpSmGwSbiSupInd returns the IpSmGwSbiSupInd field value if set, zero value otherwise.
 func (o *IpSmGwAddress) GetIpSmGwSbiSupInd() bool {
-	if o == nil || isNil(o.IpSmGwSbiSupInd) {
+	if o == nil || IsNil(o.IpSmGwSbiSupInd) {
 		var ret bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *IpSmGwAddress) GetIpSmGwSbiSupInd() bool {
 // GetIpSmGwSbiSupIndOk returns a tuple with the IpSmGwSbiSupInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwAddress) GetIpSmGwSbiSupIndOk() (*bool, bool) {
-	if o == nil || isNil(o.IpSmGwSbiSupInd) {
+	if o == nil || IsNil(o.IpSmGwSbiSupInd) {
 		return nil, false
 	}
 	return o.IpSmGwSbiSupInd, true
@@ -158,7 +158,7 @@ func (o *IpSmGwAddress) GetIpSmGwSbiSupIndOk() (*bool, bool) {
 
 // HasIpSmGwSbiSupInd returns a boolean if a field has been set.
 func (o *IpSmGwAddress) HasIpSmGwSbiSupInd() bool {
-	if o != nil && !isNil(o.IpSmGwSbiSupInd) {
+	if o != nil && !IsNil(o.IpSmGwSbiSupInd) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *IpSmGwAddress) SetIpSmGwSbiSupInd(v bool) {
 }
 
 func (o IpSmGwAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,13 +181,13 @@ func (o IpSmGwAddress) MarshalJSON() ([]byte, error) {
 func (o IpSmGwAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ipSmGwNumber"] = o.IpSmGwNumber
-	if !isNil(o.IpSmGwDiaUri) {
+	if !IsNil(o.IpSmGwDiaUri) {
 		toSerialize["ipSmGwDiaUri"] = o.IpSmGwDiaUri
 	}
-	if !isNil(o.IpSmGwDiaRealm) {
+	if !IsNil(o.IpSmGwDiaRealm) {
 		toSerialize["ipSmGwDiaRealm"] = o.IpSmGwDiaRealm
 	}
-	if !isNil(o.IpSmGwSbiSupInd) {
+	if !IsNil(o.IpSmGwSbiSupInd) {
 		toSerialize["ipSmGwSbiSupInd"] = o.IpSmGwSbiSupInd
 	}
 	return toSerialize, nil
@@ -228,5 +228,3 @@ func (v *NullableIpSmGwAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,7 +19,7 @@ var _ MappedNullable = &ExternalAmfFunctionSingleAllOf{}
 
 // ExternalAmfFunctionSingleAllOf struct for ExternalAmfFunctionSingleAllOf
 type ExternalAmfFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *ExternalAmfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewExternalAmfFunctionSingleAllOf instantiates a new ExternalAmfFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewExternalAmfFunctionSingleAllOfWithDefaults() *ExternalAmfFunctionSingleA
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ExternalAmfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *ExternalAmfFunctionSingleAllOf) GetAttributes() ExternalAmfFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret ExternalAmfFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *ExternalAmfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalAmfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *ExternalAmfFunctionSingleAllOf) GetAttributesOk() (*ExternalAmfFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *ExternalAmfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ExternalAmfFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *ExternalAmfFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given ExternalAmfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *ExternalAmfFunctionSingleAllOf) SetAttributes(v ExternalAmfFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o ExternalAmfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ExternalAmfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ExternalAmfFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableExternalAmfFunctionSingleAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

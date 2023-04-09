@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewAccessControlPolicyListWithDefaults() *AccessControlPolicyList {
 
 // GetApiInvokerPolicies returns the ApiInvokerPolicies field value if set, zero value otherwise.
 func (o *AccessControlPolicyList) GetApiInvokerPolicies() []ApiInvokerPolicy {
-	if o == nil || isNil(o.ApiInvokerPolicies) {
+	if o == nil || IsNil(o.ApiInvokerPolicies) {
 		var ret []ApiInvokerPolicy
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AccessControlPolicyList) GetApiInvokerPolicies() []ApiInvokerPolicy {
 // GetApiInvokerPoliciesOk returns a tuple with the ApiInvokerPolicies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessControlPolicyList) GetApiInvokerPoliciesOk() ([]ApiInvokerPolicy, bool) {
-	if o == nil || isNil(o.ApiInvokerPolicies) {
+	if o == nil || IsNil(o.ApiInvokerPolicies) {
 		return nil, false
 	}
 	return o.ApiInvokerPolicies, true
@@ -60,7 +60,7 @@ func (o *AccessControlPolicyList) GetApiInvokerPoliciesOk() ([]ApiInvokerPolicy,
 
 // HasApiInvokerPolicies returns a boolean if a field has been set.
 func (o *AccessControlPolicyList) HasApiInvokerPolicies() bool {
-	if o != nil && !isNil(o.ApiInvokerPolicies) {
+	if o != nil && !IsNil(o.ApiInvokerPolicies) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *AccessControlPolicyList) SetApiInvokerPolicies(v []ApiInvokerPolicy) {
 }
 
 func (o AccessControlPolicyList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o AccessControlPolicyList) MarshalJSON() ([]byte, error) {
 
 func (o AccessControlPolicyList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiInvokerPolicies) {
+	if !IsNil(o.ApiInvokerPolicies) {
 		toSerialize["apiInvokerPolicies"] = o.ApiInvokerPolicies
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableAccessControlPolicyList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

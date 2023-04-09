@@ -20,9 +20,9 @@ type CollectionPeriodRrmUmtsType string
 
 // List of collectionPeriodRrmUmts-Type
 const (
-	_100MS CollectionPeriodRrmUmtsType = "100ms"
-	_250MS CollectionPeriodRrmUmtsType = "250ms"
-	_500MS CollectionPeriodRrmUmtsType = "500ms"
+	_100MS  CollectionPeriodRrmUmtsType = "100ms"
+	_250MS  CollectionPeriodRrmUmtsType = "250ms"
+	_500MS  CollectionPeriodRrmUmtsType = "500ms"
 	_1000MS CollectionPeriodRrmUmtsType = "1000ms"
 	_2000MS CollectionPeriodRrmUmtsType = "2000ms"
 	_3000MS CollectionPeriodRrmUmtsType = "3000ms"
@@ -120,4 +120,3 @@ func (v *NullableCollectionPeriodRrmUmtsType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

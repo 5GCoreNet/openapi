@@ -1,7 +1,7 @@
 /*
 AMInfluence
 
-AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,20 +13,19 @@ package openapi_AMInfluence
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualAMInfluenceSubscriptionApiService IndividualAMInfluenceSubscriptionApi service
 type IndividualAMInfluenceSubscriptionApiService service
 
 type ApiAfIdSubscriptionsSubscriptionIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *IndividualAMInfluenceSubscriptionApiService
-	afId string
+	ctx            context.Context
+	ApiService     *IndividualAMInfluenceSubscriptionApiService
+	afId           string
 	subscriptionId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiAfIdSubscriptionsSubscriptionIdDeleteRequest) Execute() (*http.Respon
 /*
 AfIdSubscriptionsSubscriptionIdDelete Delete an existing subscription.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF.
- @param subscriptionId Identifier of the subscription resource.
- @return ApiAfIdSubscriptionsSubscriptionIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF.
+	@param subscriptionId Identifier of the subscription resource.
+	@return ApiAfIdSubscriptionsSubscriptionIdDeleteRequest
 */
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdDelete(ctx context.Context, afId string, subscriptionId string) ApiAfIdSubscriptionsSubscriptionIdDeleteRequest {
 	return ApiAfIdSubscriptionsSubscriptionIdDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 // Execute executes the request
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdDeleteExecute(r ApiAfIdSubscriptionsSubscriptionIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMInfluenceSubscriptionApiService.AfIdSubscriptionsSubscriptionIdDelete")
@@ -99,9 +98,9 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -129,8 +128,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -140,8 +139,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +150,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -162,8 +161,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -173,8 +172,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -184,8 +183,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -195,9 +194,9 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 }
 
 type ApiAfIdSubscriptionsSubscriptionIdGetRequest struct {
-	ctx context.Context
-	ApiService *IndividualAMInfluenceSubscriptionApiService
-	afId string
+	ctx            context.Context
+	ApiService     *IndividualAMInfluenceSubscriptionApiService
+	afId           string
 	subscriptionId string
 }
 
@@ -208,28 +207,29 @@ func (r ApiAfIdSubscriptionsSubscriptionIdGetRequest) Execute() (*AmInfluSub, *h
 /*
 AfIdSubscriptionsSubscriptionIdGet Read an active subscription identified by the subscriptionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF.
- @param subscriptionId Identifier of the subscription resource.
- @return ApiAfIdSubscriptionsSubscriptionIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF.
+	@param subscriptionId Identifier of the subscription resource.
+	@return ApiAfIdSubscriptionsSubscriptionIdGetRequest
 */
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdGet(ctx context.Context, afId string, subscriptionId string) ApiAfIdSubscriptionsSubscriptionIdGetRequest {
 	return ApiAfIdSubscriptionsSubscriptionIdGetRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AmInfluSub
+//
+//	@return AmInfluSub
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdGetExecute(r ApiAfIdSubscriptionsSubscriptionIdGetRequest) (*AmInfluSub, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AmInfluSub
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AmInfluSub
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMInfluenceSubscriptionApiService.AfIdSubscriptionsSubscriptionIdGet")
@@ -272,9 +272,9 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -291,8 +291,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -302,8 +302,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -313,8 +313,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -324,8 +324,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -335,8 +335,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -346,8 +346,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -357,8 +357,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -368,8 +368,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -388,10 +388,10 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 }
 
 type ApiAfIdSubscriptionsSubscriptionIdPatchRequest struct {
-	ctx context.Context
-	ApiService *IndividualAMInfluenceSubscriptionApiService
-	afId string
-	subscriptionId string
+	ctx             context.Context
+	ApiService      *IndividualAMInfluenceSubscriptionApiService
+	afId            string
+	subscriptionId  string
 	amInfluSubPatch *AmInfluSubPatch
 }
 
@@ -407,28 +407,29 @@ func (r ApiAfIdSubscriptionsSubscriptionIdPatchRequest) Execute() (*AmInfluSub, 
 /*
 AfIdSubscriptionsSubscriptionIdPatch Update/Replace an existing subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF.
- @param subscriptionId Identifier of the subscription resource.
- @return ApiAfIdSubscriptionsSubscriptionIdPatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF.
+	@param subscriptionId Identifier of the subscription resource.
+	@return ApiAfIdSubscriptionsSubscriptionIdPatchRequest
 */
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdPatch(ctx context.Context, afId string, subscriptionId string) ApiAfIdSubscriptionsSubscriptionIdPatchRequest {
 	return ApiAfIdSubscriptionsSubscriptionIdPatchRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AmInfluSub
+//
+//	@return AmInfluSub
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdPatchExecute(r ApiAfIdSubscriptionsSubscriptionIdPatchRequest) (*AmInfluSub, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AmInfluSub
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AmInfluSub
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMInfluenceSubscriptionApiService.AfIdSubscriptionsSubscriptionIdPatch")
@@ -476,9 +477,9 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -495,8 +496,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -506,8 +507,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -517,8 +518,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -528,8 +529,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -539,8 +540,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -550,8 +551,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -561,8 +562,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -572,8 +573,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -583,8 +584,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -594,8 +595,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -614,11 +615,11 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 }
 
 type ApiAfIdSubscriptionsSubscriptionIdPutRequest struct {
-	ctx context.Context
-	ApiService *IndividualAMInfluenceSubscriptionApiService
-	afId string
+	ctx            context.Context
+	ApiService     *IndividualAMInfluenceSubscriptionApiService
+	afId           string
 	subscriptionId string
-	amInfluSub *AmInfluSub
+	amInfluSub     *AmInfluSub
 }
 
 // Parameters to update/replace the existing subscription.
@@ -634,28 +635,29 @@ func (r ApiAfIdSubscriptionsSubscriptionIdPutRequest) Execute() (*AmInfluSub, *h
 /*
 AfIdSubscriptionsSubscriptionIdPut Update/Replace an existing subscription resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param afId Identifier of the AF.
- @param subscriptionId Identifier of the subscription resource.
- @return ApiAfIdSubscriptionsSubscriptionIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param afId Identifier of the AF.
+	@param subscriptionId Identifier of the subscription resource.
+	@return ApiAfIdSubscriptionsSubscriptionIdPutRequest
 */
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdPut(ctx context.Context, afId string, subscriptionId string) ApiAfIdSubscriptionsSubscriptionIdPutRequest {
 	return ApiAfIdSubscriptionsSubscriptionIdPutRequest{
-		ApiService: a,
-		ctx: ctx,
-		afId: afId,
+		ApiService:     a,
+		ctx:            ctx,
+		afId:           afId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return AmInfluSub
+//
+//	@return AmInfluSub
 func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscriptionIdPutExecute(r ApiAfIdSubscriptionsSubscriptionIdPutRequest) (*AmInfluSub, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AmInfluSub
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AmInfluSub
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualAMInfluenceSubscriptionApiService.AfIdSubscriptionsSubscriptionIdPut")
@@ -703,9 +705,9 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -722,8 +724,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -733,8 +735,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -744,8 +746,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -755,8 +757,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -766,8 +768,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -777,8 +779,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -788,8 +790,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -799,8 +801,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -810,8 +812,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -821,8 +823,8 @@ func (a *IndividualAMInfluenceSubscriptionApiService) AfIdSubscriptionsSubscript
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

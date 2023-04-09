@@ -1,7 +1,7 @@
 /*
 3gpp-service-parameter
 
-API for AF service paramter   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF service paramter   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// AfNotification Notifications upon AF Service Parameter Authorization Update e.g. to revoke the authorization, and/or AF subscribed event notification of the outcome related to the invocation of service parameter provisioning. 
+// AfNotification Notifications upon AF Service Parameter Authorization Update e.g. to revoke the authorization, and/or AF subscribed event notification of the outcome related to the invocation of service parameter provisioning.
 type AfNotification struct {
 	Interface *interface{}
 }
@@ -24,7 +24,7 @@ type AfNotification struct {
 func (dst *AfNotification) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.Interface);
+	err = json.Unmarshal(data, &dst.Interface)
 	if err == nil {
 		jsonInterface, _ := json.Marshal(dst.Interface)
 		if string(jsonInterface) == "{}" { // empty struct
@@ -83,5 +83,3 @@ func (v *NullableAfNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

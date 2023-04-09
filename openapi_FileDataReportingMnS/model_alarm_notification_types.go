@@ -20,15 +20,15 @@ type AlarmNotificationTypes string
 
 // List of AlarmNotificationTypes
 const (
-	NOTIFY_NEW_ALARM AlarmNotificationTypes = "notifyNewAlarm"
-	NOTIFY_CHANGED_ALARM AlarmNotificationTypes = "notifyChangedAlarm"
-	NOTIFY_CHANGED_ALARM_GENERAL AlarmNotificationTypes = "notifyChangedAlarmGeneral"
-	NOTIFY_ACK_STATE_CHANGED AlarmNotificationTypes = "notifyAckStateChanged"
+	NOTIFY_NEW_ALARM                       AlarmNotificationTypes = "notifyNewAlarm"
+	NOTIFY_CHANGED_ALARM                   AlarmNotificationTypes = "notifyChangedAlarm"
+	NOTIFY_CHANGED_ALARM_GENERAL           AlarmNotificationTypes = "notifyChangedAlarmGeneral"
+	NOTIFY_ACK_STATE_CHANGED               AlarmNotificationTypes = "notifyAckStateChanged"
 	NOTIFY_CORRELATED_NOTIFICATION_CHANGED AlarmNotificationTypes = "notifyCorrelatedNotificationChanged"
-	NOTIFY_COMMENTS AlarmNotificationTypes = "notifyComments"
-	NOTIFY_CLEARED_ALARM AlarmNotificationTypes = "notifyClearedAlarm"
-	NOTIFY_ALARM_LIST_REBUILT AlarmNotificationTypes = "notifyAlarmListRebuilt"
-	NOTIFY_POTENTIAL_FAULTY_ALARM_LIST AlarmNotificationTypes = "notifyPotentialFaultyAlarmList"
+	NOTIFY_COMMENTS                        AlarmNotificationTypes = "notifyComments"
+	NOTIFY_CLEARED_ALARM                   AlarmNotificationTypes = "notifyClearedAlarm"
+	NOTIFY_ALARM_LIST_REBUILT              AlarmNotificationTypes = "notifyAlarmListRebuilt"
+	NOTIFY_POTENTIAL_FAULTY_ALARM_LIST     AlarmNotificationTypes = "notifyPotentialFaultyAlarmList"
 )
 
 // All allowed values of AlarmNotificationTypes enum
@@ -122,4 +122,3 @@ func (v *NullableAlarmNotificationTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

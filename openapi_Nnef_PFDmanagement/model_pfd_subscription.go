@@ -1,7 +1,7 @@
 /*
 Nnef_PFDmanagement Service API
 
-Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Packet Flow Description Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,7 +22,7 @@ type PfdSubscription struct {
 	ApplicationIds []string `json:"applicationIds,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	NotifyUri string `json:"notifyUri"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures string `json:"supportedFeatures"`
 }
 
@@ -47,7 +47,7 @@ func NewPfdSubscriptionWithDefaults() *PfdSubscription {
 
 // GetApplicationIds returns the ApplicationIds field value if set, zero value otherwise.
 func (o *PfdSubscription) GetApplicationIds() []string {
-	if o == nil || isNil(o.ApplicationIds) {
+	if o == nil || IsNil(o.ApplicationIds) {
 		var ret []string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PfdSubscription) GetApplicationIds() []string {
 // GetApplicationIdsOk returns a tuple with the ApplicationIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdSubscription) GetApplicationIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ApplicationIds) {
+	if o == nil || IsNil(o.ApplicationIds) {
 		return nil, false
 	}
 	return o.ApplicationIds, true
@@ -65,7 +65,7 @@ func (o *PfdSubscription) GetApplicationIdsOk() ([]string, bool) {
 
 // HasApplicationIds returns a boolean if a field has been set.
 func (o *PfdSubscription) HasApplicationIds() bool {
-	if o != nil && !isNil(o.ApplicationIds) {
+	if o != nil && !IsNil(o.ApplicationIds) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *PfdSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o PfdSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o PfdSubscription) MarshalJSON() ([]byte, error) {
 
 func (o PfdSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApplicationIds) {
+	if !IsNil(o.ApplicationIds) {
 		toSerialize["applicationIds"] = o.ApplicationIds
 	}
 	toSerialize["notifyUri"] = o.NotifyUri
@@ -178,5 +178,3 @@ func (v *NullablePfdSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

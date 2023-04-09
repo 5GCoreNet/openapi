@@ -1,7 +1,7 @@
 /*
 Eees_EASDiscovery
 
-API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &EasDiscoveryReq{}
 // EasDiscoveryReq ECS service provisioning request information.
 type EasDiscoveryReq struct {
 	RequestorId RequestorId `json:"requestorId"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	UeId *string `json:"ueId,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	UeId               *string             `json:"ueId,omitempty"`
 	EasDiscoveryFilter *EasDiscoveryFilter `json:"easDiscoveryFilter,omitempty"`
 	// Indicates if the EEC supports service continuity or not, also indicates which ACR scenarios are supported by the EEC.
 	EecSvcContinuity []ACRScenario `json:"eecSvcContinuity,omitempty"`
@@ -29,7 +29,7 @@ type EasDiscoveryReq struct {
 	EesSvcContinuity []ACRScenario `json:"eesSvcContinuity,omitempty"`
 	// Indicates if the EEC supports service continuity or not, also indicates which ACR scenarios are supported by the EEC.
 	EasSvcContinuity []ACRScenario `json:"easSvcContinuity,omitempty"`
-	LocInf *LocationInfo `json:"locInf,omitempty"`
+	LocInf           *LocationInfo `json:"locInf,omitempty"`
 	// DNAI (Data network access identifier), see clause 5.6.7 of 3GPP TS 23.501.
 	EasTDnai *string `json:"easTDnai,omitempty"`
 }
@@ -78,7 +78,7 @@ func (o *EasDiscoveryReq) SetRequestorId(v RequestorId) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *EasDiscoveryReq) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -96,7 +96,7 @@ func (o *EasDiscoveryReq) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *EasDiscoveryReq) SetUeId(v string) {
 
 // GetEasDiscoveryFilter returns the EasDiscoveryFilter field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetEasDiscoveryFilter() EasDiscoveryFilter {
-	if o == nil || isNil(o.EasDiscoveryFilter) {
+	if o == nil || IsNil(o.EasDiscoveryFilter) {
 		var ret EasDiscoveryFilter
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *EasDiscoveryReq) GetEasDiscoveryFilter() EasDiscoveryFilter {
 // GetEasDiscoveryFilterOk returns a tuple with the EasDiscoveryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetEasDiscoveryFilterOk() (*EasDiscoveryFilter, bool) {
-	if o == nil || isNil(o.EasDiscoveryFilter) {
+	if o == nil || IsNil(o.EasDiscoveryFilter) {
 		return nil, false
 	}
 	return o.EasDiscoveryFilter, true
@@ -128,7 +128,7 @@ func (o *EasDiscoveryReq) GetEasDiscoveryFilterOk() (*EasDiscoveryFilter, bool) 
 
 // HasEasDiscoveryFilter returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasEasDiscoveryFilter() bool {
-	if o != nil && !isNil(o.EasDiscoveryFilter) {
+	if o != nil && !IsNil(o.EasDiscoveryFilter) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *EasDiscoveryReq) SetEasDiscoveryFilter(v EasDiscoveryFilter) {
 
 // GetEecSvcContinuity returns the EecSvcContinuity field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetEecSvcContinuity() []ACRScenario {
-	if o == nil || isNil(o.EecSvcContinuity) {
+	if o == nil || IsNil(o.EecSvcContinuity) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *EasDiscoveryReq) GetEecSvcContinuity() []ACRScenario {
 // GetEecSvcContinuityOk returns a tuple with the EecSvcContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetEecSvcContinuityOk() ([]ACRScenario, bool) {
-	if o == nil || isNil(o.EecSvcContinuity) {
+	if o == nil || IsNil(o.EecSvcContinuity) {
 		return nil, false
 	}
 	return o.EecSvcContinuity, true
@@ -160,7 +160,7 @@ func (o *EasDiscoveryReq) GetEecSvcContinuityOk() ([]ACRScenario, bool) {
 
 // HasEecSvcContinuity returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasEecSvcContinuity() bool {
-	if o != nil && !isNil(o.EecSvcContinuity) {
+	if o != nil && !IsNil(o.EecSvcContinuity) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *EasDiscoveryReq) SetEecSvcContinuity(v []ACRScenario) {
 
 // GetEesSvcContinuity returns the EesSvcContinuity field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetEesSvcContinuity() []ACRScenario {
-	if o == nil || isNil(o.EesSvcContinuity) {
+	if o == nil || IsNil(o.EesSvcContinuity) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *EasDiscoveryReq) GetEesSvcContinuity() []ACRScenario {
 // GetEesSvcContinuityOk returns a tuple with the EesSvcContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetEesSvcContinuityOk() ([]ACRScenario, bool) {
-	if o == nil || isNil(o.EesSvcContinuity) {
+	if o == nil || IsNil(o.EesSvcContinuity) {
 		return nil, false
 	}
 	return o.EesSvcContinuity, true
@@ -192,7 +192,7 @@ func (o *EasDiscoveryReq) GetEesSvcContinuityOk() ([]ACRScenario, bool) {
 
 // HasEesSvcContinuity returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasEesSvcContinuity() bool {
-	if o != nil && !isNil(o.EesSvcContinuity) {
+	if o != nil && !IsNil(o.EesSvcContinuity) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *EasDiscoveryReq) SetEesSvcContinuity(v []ACRScenario) {
 
 // GetEasSvcContinuity returns the EasSvcContinuity field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetEasSvcContinuity() []ACRScenario {
-	if o == nil || isNil(o.EasSvcContinuity) {
+	if o == nil || IsNil(o.EasSvcContinuity) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *EasDiscoveryReq) GetEasSvcContinuity() []ACRScenario {
 // GetEasSvcContinuityOk returns a tuple with the EasSvcContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetEasSvcContinuityOk() ([]ACRScenario, bool) {
-	if o == nil || isNil(o.EasSvcContinuity) {
+	if o == nil || IsNil(o.EasSvcContinuity) {
 		return nil, false
 	}
 	return o.EasSvcContinuity, true
@@ -224,7 +224,7 @@ func (o *EasDiscoveryReq) GetEasSvcContinuityOk() ([]ACRScenario, bool) {
 
 // HasEasSvcContinuity returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasEasSvcContinuity() bool {
-	if o != nil && !isNil(o.EasSvcContinuity) {
+	if o != nil && !IsNil(o.EasSvcContinuity) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *EasDiscoveryReq) SetEasSvcContinuity(v []ACRScenario) {
 
 // GetLocInf returns the LocInf field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetLocInf() LocationInfo {
-	if o == nil || isNil(o.LocInf) {
+	if o == nil || IsNil(o.LocInf) {
 		var ret LocationInfo
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *EasDiscoveryReq) GetLocInf() LocationInfo {
 // GetLocInfOk returns a tuple with the LocInf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetLocInfOk() (*LocationInfo, bool) {
-	if o == nil || isNil(o.LocInf) {
+	if o == nil || IsNil(o.LocInf) {
 		return nil, false
 	}
 	return o.LocInf, true
@@ -256,7 +256,7 @@ func (o *EasDiscoveryReq) GetLocInfOk() (*LocationInfo, bool) {
 
 // HasLocInf returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasLocInf() bool {
-	if o != nil && !isNil(o.LocInf) {
+	if o != nil && !IsNil(o.LocInf) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *EasDiscoveryReq) SetLocInf(v LocationInfo) {
 
 // GetEasTDnai returns the EasTDnai field value if set, zero value otherwise.
 func (o *EasDiscoveryReq) GetEasTDnai() string {
-	if o == nil || isNil(o.EasTDnai) {
+	if o == nil || IsNil(o.EasTDnai) {
 		var ret string
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *EasDiscoveryReq) GetEasTDnai() string {
 // GetEasTDnaiOk returns a tuple with the EasTDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryReq) GetEasTDnaiOk() (*string, bool) {
-	if o == nil || isNil(o.EasTDnai) {
+	if o == nil || IsNil(o.EasTDnai) {
 		return nil, false
 	}
 	return o.EasTDnai, true
@@ -288,7 +288,7 @@ func (o *EasDiscoveryReq) GetEasTDnaiOk() (*string, bool) {
 
 // HasEasTDnai returns a boolean if a field has been set.
 func (o *EasDiscoveryReq) HasEasTDnai() bool {
-	if o != nil && !isNil(o.EasTDnai) {
+	if o != nil && !IsNil(o.EasTDnai) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *EasDiscoveryReq) SetEasTDnai(v string) {
 }
 
 func (o EasDiscoveryReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,25 +311,25 @@ func (o EasDiscoveryReq) MarshalJSON() ([]byte, error) {
 func (o EasDiscoveryReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["requestorId"] = o.RequestorId
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.EasDiscoveryFilter) {
+	if !IsNil(o.EasDiscoveryFilter) {
 		toSerialize["easDiscoveryFilter"] = o.EasDiscoveryFilter
 	}
-	if !isNil(o.EecSvcContinuity) {
+	if !IsNil(o.EecSvcContinuity) {
 		toSerialize["eecSvcContinuity"] = o.EecSvcContinuity
 	}
-	if !isNil(o.EesSvcContinuity) {
+	if !IsNil(o.EesSvcContinuity) {
 		toSerialize["eesSvcContinuity"] = o.EesSvcContinuity
 	}
-	if !isNil(o.EasSvcContinuity) {
+	if !IsNil(o.EasSvcContinuity) {
 		toSerialize["easSvcContinuity"] = o.EasSvcContinuity
 	}
-	if !isNil(o.LocInf) {
+	if !IsNil(o.LocInf) {
 		toSerialize["locInf"] = o.LocInf
 	}
-	if !isNil(o.EasTDnai) {
+	if !IsNil(o.EasTDnai) {
 		toSerialize["easTDnai"] = o.EasTDnai
 	}
 	return toSerialize, nil
@@ -370,5 +370,3 @@ func (v *NullableEasDiscoveryReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

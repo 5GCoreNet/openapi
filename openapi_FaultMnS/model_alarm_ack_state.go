@@ -20,12 +20,12 @@ type AlarmAckState string
 
 // List of AlarmAckState
 const (
-	ALARMS AlarmAckState = "ALL_ALARMS"
-	ACTIVE_ALARMS AlarmAckState = "ALL_ACTIVE_ALARMS"
-	ACTIVE_AND_ACKNOWLEDGED_ALARMS AlarmAckState = "ALL_ACTIVE_AND_ACKNOWLEDGED_ALARMS"
-	ACTIVE_AND_UNACKNOWLEDGED_ALARMS AlarmAckState = "ALL_ACTIVE_AND_UNACKNOWLEDGED_ALARMS"
+	ALARMS                            AlarmAckState = "ALL_ALARMS"
+	ACTIVE_ALARMS                     AlarmAckState = "ALL_ACTIVE_ALARMS"
+	ACTIVE_AND_ACKNOWLEDGED_ALARMS    AlarmAckState = "ALL_ACTIVE_AND_ACKNOWLEDGED_ALARMS"
+	ACTIVE_AND_UNACKNOWLEDGED_ALARMS  AlarmAckState = "ALL_ACTIVE_AND_UNACKNOWLEDGED_ALARMS"
 	CLEARED_AND_UNACKNOWLEDGED_ALARMS AlarmAckState = "ALL_CLEARED_AND_UNACKNOWLEDGED_ALARMS"
-	UNACKNOWLEDGED_ALARMS AlarmAckState = "ALL_UNACKNOWLEDGED_ALARMS"
+	UNACKNOWLEDGED_ALARMS             AlarmAckState = "ALL_UNACKNOWLEDGED_ALARMS"
 )
 
 // All allowed values of AlarmAckState enum
@@ -116,4 +116,3 @@ func (v *NullableAlarmAckState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,17 +20,17 @@ var _ MappedNullable = &PcscfInfo{}
 // PcscfInfo Information of a P-CSCF NF Instance
 type PcscfInfo struct {
 	AccessType []AccessType `json:"accessType,omitempty"`
-	DnnList []string `json:"dnnList,omitempty"`
+	DnnList    []string     `json:"dnnList,omitempty"`
 	// Fully Qualified Domain Name
-	GmFqdn *string `json:"gmFqdn,omitempty"`
-	GmIpv4Addresses []string `json:"gmIpv4Addresses,omitempty"`
+	GmFqdn          *string    `json:"gmFqdn,omitempty"`
+	GmIpv4Addresses []string   `json:"gmIpv4Addresses,omitempty"`
 	GmIpv6Addresses []Ipv6Addr `json:"gmIpv6Addresses,omitempty"`
 	// Fully Qualified Domain Name
-	MwFqdn *string `json:"mwFqdn,omitempty"`
-	MwIpv4Addresses []string `json:"mwIpv4Addresses,omitempty"`
-	MwIpv6Addresses []Ipv6Addr `json:"mwIpv6Addresses,omitempty"`
+	MwFqdn                  *string            `json:"mwFqdn,omitempty"`
+	MwIpv4Addresses         []string           `json:"mwIpv4Addresses,omitempty"`
+	MwIpv6Addresses         []Ipv6Addr         `json:"mwIpv6Addresses,omitempty"`
 	ServedIpv4AddressRanges []Ipv4AddressRange `json:"servedIpv4AddressRanges,omitempty"`
-	ServedIpv6PrefixRanges []Ipv6PrefixRange `json:"servedIpv6PrefixRanges,omitempty"`
+	ServedIpv6PrefixRanges  []Ipv6PrefixRange  `json:"servedIpv6PrefixRanges,omitempty"`
 }
 
 // NewPcscfInfo instantiates a new PcscfInfo object
@@ -52,7 +52,7 @@ func NewPcscfInfoWithDefaults() *PcscfInfo {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *PcscfInfo) GetAccessType() []AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret []AccessType
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *PcscfInfo) GetAccessType() []AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetAccessTypeOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -70,7 +70,7 @@ func (o *PcscfInfo) GetAccessTypeOk() ([]AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *PcscfInfo) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *PcscfInfo) SetAccessType(v []AccessType) {
 
 // GetDnnList returns the DnnList field value if set, zero value otherwise.
 func (o *PcscfInfo) GetDnnList() []string {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		var ret []string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *PcscfInfo) GetDnnList() []string {
 // GetDnnListOk returns a tuple with the DnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetDnnListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		return nil, false
 	}
 	return o.DnnList, true
@@ -102,7 +102,7 @@ func (o *PcscfInfo) GetDnnListOk() ([]string, bool) {
 
 // HasDnnList returns a boolean if a field has been set.
 func (o *PcscfInfo) HasDnnList() bool {
-	if o != nil && !isNil(o.DnnList) {
+	if o != nil && !IsNil(o.DnnList) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *PcscfInfo) SetDnnList(v []string) {
 
 // GetGmFqdn returns the GmFqdn field value if set, zero value otherwise.
 func (o *PcscfInfo) GetGmFqdn() string {
-	if o == nil || isNil(o.GmFqdn) {
+	if o == nil || IsNil(o.GmFqdn) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *PcscfInfo) GetGmFqdn() string {
 // GetGmFqdnOk returns a tuple with the GmFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetGmFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.GmFqdn) {
+	if o == nil || IsNil(o.GmFqdn) {
 		return nil, false
 	}
 	return o.GmFqdn, true
@@ -134,7 +134,7 @@ func (o *PcscfInfo) GetGmFqdnOk() (*string, bool) {
 
 // HasGmFqdn returns a boolean if a field has been set.
 func (o *PcscfInfo) HasGmFqdn() bool {
-	if o != nil && !isNil(o.GmFqdn) {
+	if o != nil && !IsNil(o.GmFqdn) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *PcscfInfo) SetGmFqdn(v string) {
 
 // GetGmIpv4Addresses returns the GmIpv4Addresses field value if set, zero value otherwise.
 func (o *PcscfInfo) GetGmIpv4Addresses() []string {
-	if o == nil || isNil(o.GmIpv4Addresses) {
+	if o == nil || IsNil(o.GmIpv4Addresses) {
 		var ret []string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *PcscfInfo) GetGmIpv4Addresses() []string {
 // GetGmIpv4AddressesOk returns a tuple with the GmIpv4Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetGmIpv4AddressesOk() ([]string, bool) {
-	if o == nil || isNil(o.GmIpv4Addresses) {
+	if o == nil || IsNil(o.GmIpv4Addresses) {
 		return nil, false
 	}
 	return o.GmIpv4Addresses, true
@@ -166,7 +166,7 @@ func (o *PcscfInfo) GetGmIpv4AddressesOk() ([]string, bool) {
 
 // HasGmIpv4Addresses returns a boolean if a field has been set.
 func (o *PcscfInfo) HasGmIpv4Addresses() bool {
-	if o != nil && !isNil(o.GmIpv4Addresses) {
+	if o != nil && !IsNil(o.GmIpv4Addresses) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *PcscfInfo) SetGmIpv4Addresses(v []string) {
 
 // GetGmIpv6Addresses returns the GmIpv6Addresses field value if set, zero value otherwise.
 func (o *PcscfInfo) GetGmIpv6Addresses() []Ipv6Addr {
-	if o == nil || isNil(o.GmIpv6Addresses) {
+	if o == nil || IsNil(o.GmIpv6Addresses) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *PcscfInfo) GetGmIpv6Addresses() []Ipv6Addr {
 // GetGmIpv6AddressesOk returns a tuple with the GmIpv6Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetGmIpv6AddressesOk() ([]Ipv6Addr, bool) {
-	if o == nil || isNil(o.GmIpv6Addresses) {
+	if o == nil || IsNil(o.GmIpv6Addresses) {
 		return nil, false
 	}
 	return o.GmIpv6Addresses, true
@@ -198,7 +198,7 @@ func (o *PcscfInfo) GetGmIpv6AddressesOk() ([]Ipv6Addr, bool) {
 
 // HasGmIpv6Addresses returns a boolean if a field has been set.
 func (o *PcscfInfo) HasGmIpv6Addresses() bool {
-	if o != nil && !isNil(o.GmIpv6Addresses) {
+	if o != nil && !IsNil(o.GmIpv6Addresses) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *PcscfInfo) SetGmIpv6Addresses(v []Ipv6Addr) {
 
 // GetMwFqdn returns the MwFqdn field value if set, zero value otherwise.
 func (o *PcscfInfo) GetMwFqdn() string {
-	if o == nil || isNil(o.MwFqdn) {
+	if o == nil || IsNil(o.MwFqdn) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *PcscfInfo) GetMwFqdn() string {
 // GetMwFqdnOk returns a tuple with the MwFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetMwFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.MwFqdn) {
+	if o == nil || IsNil(o.MwFqdn) {
 		return nil, false
 	}
 	return o.MwFqdn, true
@@ -230,7 +230,7 @@ func (o *PcscfInfo) GetMwFqdnOk() (*string, bool) {
 
 // HasMwFqdn returns a boolean if a field has been set.
 func (o *PcscfInfo) HasMwFqdn() bool {
-	if o != nil && !isNil(o.MwFqdn) {
+	if o != nil && !IsNil(o.MwFqdn) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *PcscfInfo) SetMwFqdn(v string) {
 
 // GetMwIpv4Addresses returns the MwIpv4Addresses field value if set, zero value otherwise.
 func (o *PcscfInfo) GetMwIpv4Addresses() []string {
-	if o == nil || isNil(o.MwIpv4Addresses) {
+	if o == nil || IsNil(o.MwIpv4Addresses) {
 		var ret []string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *PcscfInfo) GetMwIpv4Addresses() []string {
 // GetMwIpv4AddressesOk returns a tuple with the MwIpv4Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetMwIpv4AddressesOk() ([]string, bool) {
-	if o == nil || isNil(o.MwIpv4Addresses) {
+	if o == nil || IsNil(o.MwIpv4Addresses) {
 		return nil, false
 	}
 	return o.MwIpv4Addresses, true
@@ -262,7 +262,7 @@ func (o *PcscfInfo) GetMwIpv4AddressesOk() ([]string, bool) {
 
 // HasMwIpv4Addresses returns a boolean if a field has been set.
 func (o *PcscfInfo) HasMwIpv4Addresses() bool {
-	if o != nil && !isNil(o.MwIpv4Addresses) {
+	if o != nil && !IsNil(o.MwIpv4Addresses) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *PcscfInfo) SetMwIpv4Addresses(v []string) {
 
 // GetMwIpv6Addresses returns the MwIpv6Addresses field value if set, zero value otherwise.
 func (o *PcscfInfo) GetMwIpv6Addresses() []Ipv6Addr {
-	if o == nil || isNil(o.MwIpv6Addresses) {
+	if o == nil || IsNil(o.MwIpv6Addresses) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *PcscfInfo) GetMwIpv6Addresses() []Ipv6Addr {
 // GetMwIpv6AddressesOk returns a tuple with the MwIpv6Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetMwIpv6AddressesOk() ([]Ipv6Addr, bool) {
-	if o == nil || isNil(o.MwIpv6Addresses) {
+	if o == nil || IsNil(o.MwIpv6Addresses) {
 		return nil, false
 	}
 	return o.MwIpv6Addresses, true
@@ -294,7 +294,7 @@ func (o *PcscfInfo) GetMwIpv6AddressesOk() ([]Ipv6Addr, bool) {
 
 // HasMwIpv6Addresses returns a boolean if a field has been set.
 func (o *PcscfInfo) HasMwIpv6Addresses() bool {
-	if o != nil && !isNil(o.MwIpv6Addresses) {
+	if o != nil && !IsNil(o.MwIpv6Addresses) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *PcscfInfo) SetMwIpv6Addresses(v []Ipv6Addr) {
 
 // GetServedIpv4AddressRanges returns the ServedIpv4AddressRanges field value if set, zero value otherwise.
 func (o *PcscfInfo) GetServedIpv4AddressRanges() []Ipv4AddressRange {
-	if o == nil || isNil(o.ServedIpv4AddressRanges) {
+	if o == nil || IsNil(o.ServedIpv4AddressRanges) {
 		var ret []Ipv4AddressRange
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *PcscfInfo) GetServedIpv4AddressRanges() []Ipv4AddressRange {
 // GetServedIpv4AddressRangesOk returns a tuple with the ServedIpv4AddressRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetServedIpv4AddressRangesOk() ([]Ipv4AddressRange, bool) {
-	if o == nil || isNil(o.ServedIpv4AddressRanges) {
+	if o == nil || IsNil(o.ServedIpv4AddressRanges) {
 		return nil, false
 	}
 	return o.ServedIpv4AddressRanges, true
@@ -326,7 +326,7 @@ func (o *PcscfInfo) GetServedIpv4AddressRangesOk() ([]Ipv4AddressRange, bool) {
 
 // HasServedIpv4AddressRanges returns a boolean if a field has been set.
 func (o *PcscfInfo) HasServedIpv4AddressRanges() bool {
-	if o != nil && !isNil(o.ServedIpv4AddressRanges) {
+	if o != nil && !IsNil(o.ServedIpv4AddressRanges) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *PcscfInfo) SetServedIpv4AddressRanges(v []Ipv4AddressRange) {
 
 // GetServedIpv6PrefixRanges returns the ServedIpv6PrefixRanges field value if set, zero value otherwise.
 func (o *PcscfInfo) GetServedIpv6PrefixRanges() []Ipv6PrefixRange {
-	if o == nil || isNil(o.ServedIpv6PrefixRanges) {
+	if o == nil || IsNil(o.ServedIpv6PrefixRanges) {
 		var ret []Ipv6PrefixRange
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *PcscfInfo) GetServedIpv6PrefixRanges() []Ipv6PrefixRange {
 // GetServedIpv6PrefixRangesOk returns a tuple with the ServedIpv6PrefixRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcscfInfo) GetServedIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
-	if o == nil || isNil(o.ServedIpv6PrefixRanges) {
+	if o == nil || IsNil(o.ServedIpv6PrefixRanges) {
 		return nil, false
 	}
 	return o.ServedIpv6PrefixRanges, true
@@ -358,7 +358,7 @@ func (o *PcscfInfo) GetServedIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
 
 // HasServedIpv6PrefixRanges returns a boolean if a field has been set.
 func (o *PcscfInfo) HasServedIpv6PrefixRanges() bool {
-	if o != nil && !isNil(o.ServedIpv6PrefixRanges) {
+	if o != nil && !IsNil(o.ServedIpv6PrefixRanges) {
 		return true
 	}
 
@@ -371,7 +371,7 @@ func (o *PcscfInfo) SetServedIpv6PrefixRanges(v []Ipv6PrefixRange) {
 }
 
 func (o PcscfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -380,34 +380,34 @@ func (o PcscfInfo) MarshalJSON() ([]byte, error) {
 
 func (o PcscfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.DnnList) {
+	if !IsNil(o.DnnList) {
 		toSerialize["dnnList"] = o.DnnList
 	}
-	if !isNil(o.GmFqdn) {
+	if !IsNil(o.GmFqdn) {
 		toSerialize["gmFqdn"] = o.GmFqdn
 	}
-	if !isNil(o.GmIpv4Addresses) {
+	if !IsNil(o.GmIpv4Addresses) {
 		toSerialize["gmIpv4Addresses"] = o.GmIpv4Addresses
 	}
-	if !isNil(o.GmIpv6Addresses) {
+	if !IsNil(o.GmIpv6Addresses) {
 		toSerialize["gmIpv6Addresses"] = o.GmIpv6Addresses
 	}
-	if !isNil(o.MwFqdn) {
+	if !IsNil(o.MwFqdn) {
 		toSerialize["mwFqdn"] = o.MwFqdn
 	}
-	if !isNil(o.MwIpv4Addresses) {
+	if !IsNil(o.MwIpv4Addresses) {
 		toSerialize["mwIpv4Addresses"] = o.MwIpv4Addresses
 	}
-	if !isNil(o.MwIpv6Addresses) {
+	if !IsNil(o.MwIpv6Addresses) {
 		toSerialize["mwIpv6Addresses"] = o.MwIpv6Addresses
 	}
-	if !isNil(o.ServedIpv4AddressRanges) {
+	if !IsNil(o.ServedIpv4AddressRanges) {
 		toSerialize["servedIpv4AddressRanges"] = o.ServedIpv4AddressRanges
 	}
-	if !isNil(o.ServedIpv6PrefixRanges) {
+	if !IsNil(o.ServedIpv6PrefixRanges) {
 		toSerialize["servedIpv6PrefixRanges"] = o.ServedIpv6PrefixRanges
 	}
 	return toSerialize, nil
@@ -448,5 +448,3 @@ func (v *NullablePcscfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

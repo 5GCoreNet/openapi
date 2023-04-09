@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &TransferMtDataIsmfRequest{}
 
 // TransferMtDataIsmfRequest struct for TransferMtDataIsmfRequest
 type TransferMtDataIsmfRequest struct {
-	JsonData *TransferMtDataReqData `json:"jsonData,omitempty"`
-	BinaryMtData **os.File `json:"binaryMtData,omitempty"`
+	JsonData     *TransferMtDataReqData `json:"jsonData,omitempty"`
+	BinaryMtData **os.File              `json:"binaryMtData,omitempty"`
 }
 
 // NewTransferMtDataIsmfRequest instantiates a new TransferMtDataIsmfRequest object
@@ -106,7 +106,7 @@ func (o *TransferMtDataIsmfRequest) SetBinaryMtData(v *os.File) {
 }
 
 func (o TransferMtDataIsmfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,5 +159,3 @@ func (v *NullableTransferMtDataIsmfRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

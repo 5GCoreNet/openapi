@@ -1,7 +1,7 @@
 /*
 3gpp-chargeable-party
 
-API for Chargeable Party management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Chargeable Party management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -13,20 +13,19 @@ package openapi_ChargeableParty
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualChargeablePartyResourceOperationApiService IndividualChargeablePartyResourceOperationApi service
 type IndividualChargeablePartyResourceOperationApiService service
 
 type ApiDeleteChargeablePartyTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualChargeablePartyResourceOperationApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualChargeablePartyResourceOperationApiService
+	scsAsId       string
 	transactionId string
 }
 
@@ -37,28 +36,29 @@ func (r ApiDeleteChargeablePartyTransactionRequest) Execute() (*NotificationData
 /*
 DeleteChargeablePartyTransaction Deletes a chargeable party resource for a given SCS/AS and a transcation Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param transactionId Identifier of transaction
- @return ApiDeleteChargeablePartyTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param transactionId Identifier of transaction
+	@return ApiDeleteChargeablePartyTransactionRequest
 */
 func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeablePartyTransaction(ctx context.Context, scsAsId string, transactionId string) ApiDeleteChargeablePartyTransactionRequest {
 	return ApiDeleteChargeablePartyTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationData
+//
+//	@return NotificationData
 func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeablePartyTransactionExecute(r ApiDeleteChargeablePartyTransactionRequest) (*NotificationData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationData
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualChargeablePartyResourceOperationApiService.DeleteChargeablePartyTransaction")
@@ -101,9 +101,9 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -120,8 +120,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -131,8 +131,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -142,8 +142,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -153,8 +153,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -164,8 +164,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -175,8 +175,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -186,8 +186,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -206,9 +206,9 @@ func (a *IndividualChargeablePartyResourceOperationApiService) DeleteChargeableP
 }
 
 type ApiFetchIndChargeablePartyTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualChargeablePartyResourceOperationApiService
-	scsAsId string
+	ctx           context.Context
+	ApiService    *IndividualChargeablePartyResourceOperationApiService
+	scsAsId       string
 	transactionId string
 }
 
@@ -219,28 +219,29 @@ func (r ApiFetchIndChargeablePartyTransactionRequest) Execute() (*ChargeablePart
 /*
 FetchIndChargeablePartyTransaction Read a chargeable party resource for a given SCS/AS and a transaction Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param transactionId Identifier of transaction
- @return ApiFetchIndChargeablePartyTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param transactionId Identifier of transaction
+	@return ApiFetchIndChargeablePartyTransactionRequest
 */
 func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeablePartyTransaction(ctx context.Context, scsAsId string, transactionId string) ApiFetchIndChargeablePartyTransactionRequest {
 	return ApiFetchIndChargeablePartyTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return ChargeableParty
+//
+//	@return ChargeableParty
 func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeablePartyTransactionExecute(r ApiFetchIndChargeablePartyTransactionRequest) (*ChargeableParty, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChargeableParty
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChargeableParty
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualChargeablePartyResourceOperationApiService.FetchIndChargeablePartyTransaction")
@@ -283,9 +284,9 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -302,8 +303,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -313,8 +314,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -324,8 +325,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -335,8 +336,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -346,8 +347,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -357,8 +358,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -368,8 +369,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -379,8 +380,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -399,10 +400,10 @@ func (a *IndividualChargeablePartyResourceOperationApiService) FetchIndChargeabl
 }
 
 type ApiUpdateChargeablePartyTransactionRequest struct {
-	ctx context.Context
-	ApiService *IndividualChargeablePartyResourceOperationApiService
-	scsAsId string
-	transactionId string
+	ctx                  context.Context
+	ApiService           *IndividualChargeablePartyResourceOperationApiService
+	scsAsId              string
+	transactionId        string
 	chargeablePartyPatch *ChargeablePartyPatch
 }
 
@@ -419,28 +420,29 @@ func (r ApiUpdateChargeablePartyTransactionRequest) Execute() (*ChargeableParty,
 /*
 UpdateChargeablePartyTransaction Updates a existing chargeable party resource for a given SCS/AS and transaction Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param transactionId Identifier of transaction
- @return ApiUpdateChargeablePartyTransactionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param transactionId Identifier of transaction
+	@return ApiUpdateChargeablePartyTransactionRequest
 */
 func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeablePartyTransaction(ctx context.Context, scsAsId string, transactionId string) ApiUpdateChargeablePartyTransactionRequest {
 	return ApiUpdateChargeablePartyTransactionRequest{
-		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
+		ApiService:    a,
+		ctx:           ctx,
+		scsAsId:       scsAsId,
 		transactionId: transactionId,
 	}
 }
 
 // Execute executes the request
-//  @return ChargeableParty
+//
+//	@return ChargeableParty
 func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeablePartyTransactionExecute(r ApiUpdateChargeablePartyTransactionRequest) (*ChargeableParty, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChargeableParty
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChargeableParty
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualChargeablePartyResourceOperationApiService.UpdateChargeablePartyTransaction")
@@ -488,9 +490,9 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -507,8 +509,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -518,8 +520,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -529,8 +531,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -540,8 +542,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -551,8 +553,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -562,8 +564,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -573,8 +575,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -584,8 +586,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -595,8 +597,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -606,8 +608,8 @@ func (a *IndividualChargeablePartyResourceOperationApiService) UpdateChargeableP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

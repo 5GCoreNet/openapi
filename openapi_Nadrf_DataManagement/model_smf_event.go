@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SmfEvent Possible values are: - AC_TY_CH: Access Type Change - UP_PATH_CH: UP Path Change - PDU_SES_REL: PDU Session Release - PLMN_CH: PLMN Change - UE_IP_CH: UE IP address change - RAT_TY_CH: RAT Type Change - DDDS: Downlink data delivery status - COMM_FAIL: Communication Failure - PDU_SES_EST: PDU Session Establishment - QFI_ALLOC: QFI allocation - QOS_MON: QoS Monitoring - SMCC_EXP: SM congestion control experience for PDU Session - DISPERSION: Session Management transaction dispersion - RED_TRANS_EXP: Redundant transmission experience for PDU Session - WLAN_INFO: WLAN information on PDU session for which Access Type is NON_3GPP_ACCESS and   RAT Type is TRUSTED_WLAN - UPF_INFO: The UPF information, including the UPF ID/address/FQDN information. - UP_STATUS_INFO: The User Plane status information. 
+// SmfEvent Possible values are: - AC_TY_CH: Access Type Change - UP_PATH_CH: UP Path Change - PDU_SES_REL: PDU Session Release - PLMN_CH: PLMN Change - UE_IP_CH: UE IP address change - RAT_TY_CH: RAT Type Change - DDDS: Downlink data delivery status - COMM_FAIL: Communication Failure - PDU_SES_EST: PDU Session Establishment - QFI_ALLOC: QFI allocation - QOS_MON: QoS Monitoring - SMCC_EXP: SM congestion control experience for PDU Session - DISPERSION: Session Management transaction dispersion - RED_TRANS_EXP: Redundant transmission experience for PDU Session - WLAN_INFO: WLAN information on PDU session for which Access Type is NON_3GPP_ACCESS and   RAT Type is TRUSTED_WLAN - UPF_INFO: The UPF information, including the UPF ID/address/FQDN information. - UP_STATUS_INFO: The User Plane status information.
 type SmfEvent struct {
-	SmfEventAnyOf *SmfEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmfEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SmfEventAnyOf
-	err = json.Unmarshal(data, &dst.SmfEventAnyOf);
-	if err == nil {
-		jsonSmfEventAnyOf, _ := json.Marshal(dst.SmfEventAnyOf)
-		if string(jsonSmfEventAnyOf) == "{}" { // empty struct
-			dst.SmfEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.SmfEventAnyOf, return on the first match
-		}
-	} else {
-		dst.SmfEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SmfEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmfEvent) MarshalJSON() ([]byte, error) {
-	if src.SmfEventAnyOf != nil {
-		return json.Marshal(&src.SmfEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSmfEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the AvailabilityNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AvailabilityNotif{}
 
-// AvailabilityNotif Represents the availability information of user plane path management events monitoring via the 3GPP 5GC network. 
+// AvailabilityNotif Represents the availability information of user plane path management events monitoring via the 3GPP 5GC network.
 type AvailabilityNotif struct {
 	AvailabilityStatus AvailabilityStatus `json:"availabilityStatus"`
 }
@@ -65,7 +65,7 @@ func (o *AvailabilityNotif) SetAvailabilityStatus(v AvailabilityStatus) {
 }
 
 func (o AvailabilityNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullableAvailabilityNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

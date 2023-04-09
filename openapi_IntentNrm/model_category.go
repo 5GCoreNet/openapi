@@ -20,7 +20,7 @@ type Category string
 
 // List of Category
 const (
-	CHARACTER Category = "CHARACTER"
+	CHARACTER   Category = "CHARACTER"
 	SCALABILITY Category = "SCALABILITY"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableCategory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

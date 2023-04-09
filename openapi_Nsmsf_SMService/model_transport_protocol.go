@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// TransportProtocol Possible values are: - UDP: User Datagram Protocol. - TCP: Transmission Control Protocol.  
+// TransportProtocol Possible values are: - UDP: User Datagram Protocol. - TCP: Transmission Control Protocol.
 type TransportProtocol struct {
-	TransportProtocolAnyOf *TransportProtocolAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TransportProtocol) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into TransportProtocolAnyOf
-	err = json.Unmarshal(data, &dst.TransportProtocolAnyOf);
-	if err == nil {
-		jsonTransportProtocolAnyOf, _ := json.Marshal(dst.TransportProtocolAnyOf)
-		if string(jsonTransportProtocolAnyOf) == "{}" { // empty struct
-			dst.TransportProtocolAnyOf = nil
-		} else {
-			return nil // data stored in dst.TransportProtocolAnyOf, return on the first match
-		}
-	} else {
-		dst.TransportProtocolAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *TransportProtocol) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TransportProtocol) MarshalJSON() ([]byte, error) {
-	if src.TransportProtocolAnyOf != nil {
-		return json.Marshal(&src.TransportProtocolAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableTransportProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

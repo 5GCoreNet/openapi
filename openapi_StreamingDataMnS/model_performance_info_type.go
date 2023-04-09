@@ -22,7 +22,7 @@ type PerformanceInfoType struct {
 	MeasObjDn MeasObjDnType `json:"measObjDn"`
 	// an ordered list of performance metric names (see clause 4.4.1 of 3GPP TS 28.622[11]) whose values are to be reported by the Performance Data Stream Units (see Annex C of TS 28.550 [42]) via this stream. Performance metrics include measurement and KPI
 	PerformanceMetrics []string `json:"performanceMetrics"`
-	JobId *string `json:"jobId,omitempty"`
+	JobId              *string  `json:"jobId,omitempty"`
 }
 
 // NewPerformanceInfoType instantiates a new PerformanceInfoType object
@@ -94,7 +94,7 @@ func (o *PerformanceInfoType) SetPerformanceMetrics(v []string) {
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *PerformanceInfoType) GetJobId() string {
-	if o == nil || isNil(o.JobId) {
+	if o == nil || IsNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *PerformanceInfoType) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceInfoType) GetJobIdOk() (*string, bool) {
-	if o == nil || isNil(o.JobId) {
+	if o == nil || IsNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -112,7 +112,7 @@ func (o *PerformanceInfoType) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *PerformanceInfoType) HasJobId() bool {
-	if o != nil && !isNil(o.JobId) {
+	if o != nil && !IsNil(o.JobId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *PerformanceInfoType) SetJobId(v string) {
 }
 
 func (o PerformanceInfoType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o PerformanceInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["measObjDn"] = o.MeasObjDn
 	toSerialize["performanceMetrics"] = o.PerformanceMetrics
-	if !isNil(o.JobId) {
+	if !IsNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullablePerformanceInfoType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

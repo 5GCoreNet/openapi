@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -6,20 +7,6 @@ api_prose_key_retrieval.go
 api_prosekey_registration.go
 client.go
 configuration.go
-docs/AccessTokenErr.md
-docs/AccessTokenReq.md
-docs/InvalidParam.md
-docs/NFType.md
-docs/NFTypeAnyOf.md
-docs/PlmnId.md
-docs/PlmnIdNid.md
-docs/ProblemDetails.md
-docs/ProseContextInfo.md
-docs/ProseKeyRequest.md
-docs/ProseKeyResponse.md
-docs/ProseKeyRetrievalApi.md
-docs/ProsekeyRegistrationApi.md
-docs/Snssai.md
 git_push.sh
 go.mod
 go.sum
@@ -27,7 +14,6 @@ model_access_token_err.go
 model_access_token_req.go
 model_invalid_param.go
 model_nf_type.go
-model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
@@ -36,6 +22,4 @@ model_prose_key_request.go
 model_prose_key_response.go
 model_snssai.go
 response.go
-test/api_prose_key_retrieval_test.go
-test/api_prosekey_registration_test.go
 utils.go

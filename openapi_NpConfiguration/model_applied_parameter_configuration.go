@@ -1,7 +1,7 @@
 /*
 3gpp-network-parameter-configuration
 
-API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -50,7 +50,7 @@ func NewAppliedParameterConfigurationWithDefaults() *AppliedParameterConfigurati
 
 // GetExternalIds returns the ExternalIds field value if set, zero value otherwise.
 func (o *AppliedParameterConfiguration) GetExternalIds() []string {
-	if o == nil || isNil(o.ExternalIds) {
+	if o == nil || IsNil(o.ExternalIds) {
 		var ret []string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *AppliedParameterConfiguration) GetExternalIds() []string {
 // GetExternalIdsOk returns a tuple with the ExternalIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppliedParameterConfiguration) GetExternalIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ExternalIds) {
+	if o == nil || IsNil(o.ExternalIds) {
 		return nil, false
 	}
 	return o.ExternalIds, true
@@ -68,7 +68,7 @@ func (o *AppliedParameterConfiguration) GetExternalIdsOk() ([]string, bool) {
 
 // HasExternalIds returns a boolean if a field has been set.
 func (o *AppliedParameterConfiguration) HasExternalIds() bool {
-	if o != nil && !isNil(o.ExternalIds) {
+	if o != nil && !IsNil(o.ExternalIds) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *AppliedParameterConfiguration) SetExternalIds(v []string) {
 
 // GetMsisdns returns the Msisdns field value if set, zero value otherwise.
 func (o *AppliedParameterConfiguration) GetMsisdns() []string {
-	if o == nil || isNil(o.Msisdns) {
+	if o == nil || IsNil(o.Msisdns) {
 		var ret []string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *AppliedParameterConfiguration) GetMsisdns() []string {
 // GetMsisdnsOk returns a tuple with the Msisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppliedParameterConfiguration) GetMsisdnsOk() ([]string, bool) {
-	if o == nil || isNil(o.Msisdns) {
+	if o == nil || IsNil(o.Msisdns) {
 		return nil, false
 	}
 	return o.Msisdns, true
@@ -100,7 +100,7 @@ func (o *AppliedParameterConfiguration) GetMsisdnsOk() ([]string, bool) {
 
 // HasMsisdns returns a boolean if a field has been set.
 func (o *AppliedParameterConfiguration) HasMsisdns() bool {
-	if o != nil && !isNil(o.Msisdns) {
+	if o != nil && !IsNil(o.Msisdns) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *AppliedParameterConfiguration) SetMsisdns(v []string) {
 
 // GetMaximumLatency returns the MaximumLatency field value if set, zero value otherwise.
 func (o *AppliedParameterConfiguration) GetMaximumLatency() int32 {
-	if o == nil || isNil(o.MaximumLatency) {
+	if o == nil || IsNil(o.MaximumLatency) {
 		var ret int32
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *AppliedParameterConfiguration) GetMaximumLatency() int32 {
 // GetMaximumLatencyOk returns a tuple with the MaximumLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppliedParameterConfiguration) GetMaximumLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumLatency) {
+	if o == nil || IsNil(o.MaximumLatency) {
 		return nil, false
 	}
 	return o.MaximumLatency, true
@@ -132,7 +132,7 @@ func (o *AppliedParameterConfiguration) GetMaximumLatencyOk() (*int32, bool) {
 
 // HasMaximumLatency returns a boolean if a field has been set.
 func (o *AppliedParameterConfiguration) HasMaximumLatency() bool {
-	if o != nil && !isNil(o.MaximumLatency) {
+	if o != nil && !IsNil(o.MaximumLatency) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *AppliedParameterConfiguration) SetMaximumLatency(v int32) {
 
 // GetMaximumResponseTime returns the MaximumResponseTime field value if set, zero value otherwise.
 func (o *AppliedParameterConfiguration) GetMaximumResponseTime() int32 {
-	if o == nil || isNil(o.MaximumResponseTime) {
+	if o == nil || IsNil(o.MaximumResponseTime) {
 		var ret int32
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *AppliedParameterConfiguration) GetMaximumResponseTime() int32 {
 // GetMaximumResponseTimeOk returns a tuple with the MaximumResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppliedParameterConfiguration) GetMaximumResponseTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumResponseTime) {
+	if o == nil || IsNil(o.MaximumResponseTime) {
 		return nil, false
 	}
 	return o.MaximumResponseTime, true
@@ -164,7 +164,7 @@ func (o *AppliedParameterConfiguration) GetMaximumResponseTimeOk() (*int32, bool
 
 // HasMaximumResponseTime returns a boolean if a field has been set.
 func (o *AppliedParameterConfiguration) HasMaximumResponseTime() bool {
-	if o != nil && !isNil(o.MaximumResponseTime) {
+	if o != nil && !IsNil(o.MaximumResponseTime) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *AppliedParameterConfiguration) SetMaximumResponseTime(v int32) {
 
 // GetMaximumDetectionTime returns the MaximumDetectionTime field value if set, zero value otherwise.
 func (o *AppliedParameterConfiguration) GetMaximumDetectionTime() int32 {
-	if o == nil || isNil(o.MaximumDetectionTime) {
+	if o == nil || IsNil(o.MaximumDetectionTime) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *AppliedParameterConfiguration) GetMaximumDetectionTime() int32 {
 // GetMaximumDetectionTimeOk returns a tuple with the MaximumDetectionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppliedParameterConfiguration) GetMaximumDetectionTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumDetectionTime) {
+	if o == nil || IsNil(o.MaximumDetectionTime) {
 		return nil, false
 	}
 	return o.MaximumDetectionTime, true
@@ -196,7 +196,7 @@ func (o *AppliedParameterConfiguration) GetMaximumDetectionTimeOk() (*int32, boo
 
 // HasMaximumDetectionTime returns a boolean if a field has been set.
 func (o *AppliedParameterConfiguration) HasMaximumDetectionTime() bool {
-	if o != nil && !isNil(o.MaximumDetectionTime) {
+	if o != nil && !IsNil(o.MaximumDetectionTime) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *AppliedParameterConfiguration) SetMaximumDetectionTime(v int32) {
 }
 
 func (o AppliedParameterConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,19 +218,19 @@ func (o AppliedParameterConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o AppliedParameterConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExternalIds) {
+	if !IsNil(o.ExternalIds) {
 		toSerialize["externalIds"] = o.ExternalIds
 	}
-	if !isNil(o.Msisdns) {
+	if !IsNil(o.Msisdns) {
 		toSerialize["msisdns"] = o.Msisdns
 	}
-	if !isNil(o.MaximumLatency) {
+	if !IsNil(o.MaximumLatency) {
 		toSerialize["maximumLatency"] = o.MaximumLatency
 	}
-	if !isNil(o.MaximumResponseTime) {
+	if !IsNil(o.MaximumResponseTime) {
 		toSerialize["maximumResponseTime"] = o.MaximumResponseTime
 	}
-	if !isNil(o.MaximumDetectionTime) {
+	if !IsNil(o.MaximumDetectionTime) {
 		toSerialize["maximumDetectionTime"] = o.MaximumDetectionTime
 	}
 	return toSerialize, nil
@@ -271,5 +271,3 @@ func (v *NullableAppliedParameterConfiguration) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

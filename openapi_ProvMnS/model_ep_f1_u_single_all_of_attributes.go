@@ -19,12 +19,10 @@ var _ MappedNullable = &EPF1USingleAllOfAttributes{}
 
 // EPF1USingleAllOfAttributes struct for EPF1USingleAllOfAttributes
 type EPF1USingleAllOfAttributes struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	FarEndEntity *string `json:"farEndEntity,omitempty"`
-	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	LocalAddress *LocalAddress `json:"localAddress,omitempty"`
-	RemoteAddress *RemoteAddress `json:"remoteAddress,omitempty"`
-	EpTransportRefs []string `json:"epTransportRefs,omitempty"`
+	EPRPAttr
+	LocalAddress    *LocalAddress  `json:"localAddress,omitempty"`
+	RemoteAddress   *RemoteAddress `json:"remoteAddress,omitempty"`
+	EpTransportRefs []string       `json:"epTransportRefs,omitempty"`
 }
 
 // NewEPF1USingleAllOfAttributes instantiates a new EPF1USingleAllOfAttributes object
@@ -42,102 +40,6 @@ func NewEPF1USingleAllOfAttributes() *EPF1USingleAllOfAttributes {
 func NewEPF1USingleAllOfAttributesWithDefaults() *EPF1USingleAllOfAttributes {
 	this := EPF1USingleAllOfAttributes{}
 	return &this
-}
-
-// GetUserLabel returns the UserLabel field value if set, zero value otherwise.
-func (o *EPF1USingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
-		var ret string
-		return ret
-	}
-	return *o.UserLabel
-}
-
-// GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPF1USingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
-		return nil, false
-	}
-	return o.UserLabel, true
-}
-
-// HasUserLabel returns a boolean if a field has been set.
-func (o *EPF1USingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserLabel gets a reference to the given string and assigns it to the UserLabel field.
-func (o *EPF1USingleAllOfAttributes) SetUserLabel(v string) {
-	o.UserLabel = &v
-}
-
-// GetFarEndEntity returns the FarEndEntity field value if set, zero value otherwise.
-func (o *EPF1USingleAllOfAttributes) GetFarEndEntity() string {
-	if o == nil || IsNil(o.FarEndEntity) {
-		var ret string
-		return ret
-	}
-	return *o.FarEndEntity
-}
-
-// GetFarEndEntityOk returns a tuple with the FarEndEntity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPF1USingleAllOfAttributes) GetFarEndEntityOk() (*string, bool) {
-	if o == nil || IsNil(o.FarEndEntity) {
-		return nil, false
-	}
-	return o.FarEndEntity, true
-}
-
-// HasFarEndEntity returns a boolean if a field has been set.
-func (o *EPF1USingleAllOfAttributes) HasFarEndEntity() bool {
-	if o != nil && !IsNil(o.FarEndEntity) {
-		return true
-	}
-
-	return false
-}
-
-// SetFarEndEntity gets a reference to the given string and assigns it to the FarEndEntity field.
-func (o *EPF1USingleAllOfAttributes) SetFarEndEntity(v string) {
-	o.FarEndEntity = &v
-}
-
-// GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
-func (o *EPF1USingleAllOfAttributes) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		var ret []SupportedPerfMetricGroup
-		return ret
-	}
-	return o.SupportedPerfMetricGroups
-}
-
-// GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPF1USingleAllOfAttributes) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		return nil, false
-	}
-	return o.SupportedPerfMetricGroups, true
-}
-
-// HasSupportedPerfMetricGroups returns a boolean if a field has been set.
-func (o *EPF1USingleAllOfAttributes) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedPerfMetricGroups gets a reference to the given []SupportedPerfMetricGroup and assigns it to the SupportedPerfMetricGroups field.
-func (o *EPF1USingleAllOfAttributes) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGroup) {
-	o.SupportedPerfMetricGroups = v
 }
 
 // GetLocalAddress returns the LocalAddress field value if set, zero value otherwise.
@@ -237,7 +139,7 @@ func (o *EPF1USingleAllOfAttributes) SetEpTransportRefs(v []string) {
 }
 
 func (o EPF1USingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,14 +148,13 @@ func (o EPF1USingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o EPF1USingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
-		toSerialize["userLabel"] = o.UserLabel
+	serializedEPRPAttr, errEPRPAttr := json.Marshal(o.EPRPAttr)
+	if errEPRPAttr != nil {
+		return map[string]interface{}{}, errEPRPAttr
 	}
-	if !IsNil(o.FarEndEntity) {
-		toSerialize["farEndEntity"] = o.FarEndEntity
-	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
-		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
+	errEPRPAttr = json.Unmarshal([]byte(serializedEPRPAttr), &toSerialize)
+	if errEPRPAttr != nil {
+		return map[string]interface{}{}, errEPRPAttr
 	}
 	if !IsNil(o.LocalAddress) {
 		toSerialize["localAddress"] = o.LocalAddress
@@ -302,5 +203,3 @@ func (v *NullableEPF1USingleAllOfAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

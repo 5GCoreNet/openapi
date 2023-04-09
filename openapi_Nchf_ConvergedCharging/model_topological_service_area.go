@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &TopologicalServiceArea{}
 
 // TopologicalServiceArea struct for TopologicalServiceArea
 type TopologicalServiceArea struct {
-	CellIdList []int32 `json:"cellIdList,omitempty"`
-	TrackingAreaIdList []Tai1 `json:"trackingAreaIdList,omitempty"`
-	ServingPLMN *PlmnId1 `json:"servingPLMN,omitempty"`
+	CellIdList         []int32  `json:"cellIdList,omitempty"`
+	TrackingAreaIdList []Tai1   `json:"trackingAreaIdList,omitempty"`
+	ServingPLMN        *PlmnId1 `json:"servingPLMN,omitempty"`
 }
 
 // NewTopologicalServiceArea instantiates a new TopologicalServiceArea object
@@ -43,7 +43,7 @@ func NewTopologicalServiceAreaWithDefaults() *TopologicalServiceArea {
 
 // GetCellIdList returns the CellIdList field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetCellIdList() []int32 {
-	if o == nil || isNil(o.CellIdList) {
+	if o == nil || IsNil(o.CellIdList) {
 		var ret []int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TopologicalServiceArea) GetCellIdList() []int32 {
 // GetCellIdListOk returns a tuple with the CellIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetCellIdListOk() ([]int32, bool) {
-	if o == nil || isNil(o.CellIdList) {
+	if o == nil || IsNil(o.CellIdList) {
 		return nil, false
 	}
 	return o.CellIdList, true
@@ -61,7 +61,7 @@ func (o *TopologicalServiceArea) GetCellIdListOk() ([]int32, bool) {
 
 // HasCellIdList returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasCellIdList() bool {
-	if o != nil && !isNil(o.CellIdList) {
+	if o != nil && !IsNil(o.CellIdList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TopologicalServiceArea) SetCellIdList(v []int32) {
 
 // GetTrackingAreaIdList returns the TrackingAreaIdList field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetTrackingAreaIdList() []Tai1 {
-	if o == nil || isNil(o.TrackingAreaIdList) {
+	if o == nil || IsNil(o.TrackingAreaIdList) {
 		var ret []Tai1
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TopologicalServiceArea) GetTrackingAreaIdList() []Tai1 {
 // GetTrackingAreaIdListOk returns a tuple with the TrackingAreaIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetTrackingAreaIdListOk() ([]Tai1, bool) {
-	if o == nil || isNil(o.TrackingAreaIdList) {
+	if o == nil || IsNil(o.TrackingAreaIdList) {
 		return nil, false
 	}
 	return o.TrackingAreaIdList, true
@@ -93,7 +93,7 @@ func (o *TopologicalServiceArea) GetTrackingAreaIdListOk() ([]Tai1, bool) {
 
 // HasTrackingAreaIdList returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasTrackingAreaIdList() bool {
-	if o != nil && !isNil(o.TrackingAreaIdList) {
+	if o != nil && !IsNil(o.TrackingAreaIdList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *TopologicalServiceArea) SetTrackingAreaIdList(v []Tai1) {
 
 // GetServingPLMN returns the ServingPLMN field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetServingPLMN() PlmnId1 {
-	if o == nil || isNil(o.ServingPLMN) {
+	if o == nil || IsNil(o.ServingPLMN) {
 		var ret PlmnId1
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *TopologicalServiceArea) GetServingPLMN() PlmnId1 {
 // GetServingPLMNOk returns a tuple with the ServingPLMN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetServingPLMNOk() (*PlmnId1, bool) {
-	if o == nil || isNil(o.ServingPLMN) {
+	if o == nil || IsNil(o.ServingPLMN) {
 		return nil, false
 	}
 	return o.ServingPLMN, true
@@ -125,7 +125,7 @@ func (o *TopologicalServiceArea) GetServingPLMNOk() (*PlmnId1, bool) {
 
 // HasServingPLMN returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasServingPLMN() bool {
-	if o != nil && !isNil(o.ServingPLMN) {
+	if o != nil && !IsNil(o.ServingPLMN) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *TopologicalServiceArea) SetServingPLMN(v PlmnId1) {
 }
 
 func (o TopologicalServiceArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o TopologicalServiceArea) MarshalJSON() ([]byte, error) {
 
 func (o TopologicalServiceArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CellIdList) {
+	if !IsNil(o.CellIdList) {
 		toSerialize["cellIdList"] = o.CellIdList
 	}
-	if !isNil(o.TrackingAreaIdList) {
+	if !IsNil(o.TrackingAreaIdList) {
 		toSerialize["trackingAreaIdList"] = o.TrackingAreaIdList
 	}
-	if !isNil(o.ServingPLMN) {
+	if !IsNil(o.ServingPLMN) {
 		toSerialize["servingPLMN"] = o.ServingPLMN
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableTopologicalServiceArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

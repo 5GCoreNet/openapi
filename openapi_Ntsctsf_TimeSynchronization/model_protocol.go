@@ -1,7 +1,7 @@
 /*
 Ntsctsf_TimeSynchronization Service API
 
-TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Protocol Possible values are: - ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported. - IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported. - IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported. 
+// Protocol Possible values are: - ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported. - IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported. - IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.
 type Protocol struct {
-	ProtocolAnyOf *ProtocolAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Protocol) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ProtocolAnyOf
-	err = json.Unmarshal(data, &dst.ProtocolAnyOf);
-	if err == nil {
-		jsonProtocolAnyOf, _ := json.Marshal(dst.ProtocolAnyOf)
-		if string(jsonProtocolAnyOf) == "{}" { // empty struct
-			dst.ProtocolAnyOf = nil
-		} else {
-			return nil // data stored in dst.ProtocolAnyOf, return on the first match
-		}
-	} else {
-		dst.ProtocolAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Protocol) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Protocol) MarshalJSON() ([]byte, error) {
-	if src.ProtocolAnyOf != nil {
-		return json.Marshal(&src.ProtocolAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

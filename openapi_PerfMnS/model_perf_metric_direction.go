@@ -20,7 +20,7 @@ type PerfMetricDirection string
 
 // List of PerfMetricDirection
 const (
-	UP PerfMetricDirection = "UP"
+	UP   PerfMetricDirection = "UP"
 	DOWN PerfMetricDirection = "DOWN"
 )
 
@@ -108,4 +108,3 @@ func (v *NullablePerfMetricDirection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

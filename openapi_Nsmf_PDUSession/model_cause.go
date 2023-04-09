@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Cause Cause information. Possible values are - REL_DUE_TO_HO - EPS_FALLBACK - REL_DUE_TO_UP_SEC - DNN_CONGESTION - S_NSSAI_CONGESTION - REL_DUE_TO_REACTIVATION - 5G_AN_NOT_RESPONDING - REL_DUE_TO_SLICE_NOT_AVAILABLE - REL_DUE_TO_DUPLICATE_SESSION_ID - PDU_SESSION_STATUS_MISMATCH - HO_FAILURE - INSUFFICIENT_UP_RESOURCES - PDU_SESSION_HANDED_OVER - PDU_SESSION_RESUMED - CN_ASSISTED_RAN_PARAMETER_TUNING - ISMF_CONTEXT_TRANSFER - SMF_CONTEXT_TRANSFER - REL_DUE_TO_PS_TO_CS_HO - REL_DUE_TO_SUBSCRIPTION_CHANGE - HO_CANCEL - REL_DUE_TO_SLICE_NOT_AUTHORIZED - PDU_SESSION_HAND_OVER_FAILURE - DDN_FAILURE_STATUS - REL_DUE_TO_CP_ONLY_NOT_APPLICABLE - NOT_SUPPORTED_WITH_ISMF - CHANGED_ANCHOR_SMF - CHANGED_INTERMEDIATE_SMF - TARGET_DNAI_NOTIFICATION - REL_DUE_TO_VPLMN_QOS_FAILURE - REL_DUE_TO_SMF_NOT_SUPPORT_PSETR - REL_DUE_TO_SNPN_SNPN_MOBILITY - REL_DUE_TO_NO_HR_AGREEMENT - REL_DUE_TO_UNSPECIFIED_REASON 
+// Cause Cause information. Possible values are - REL_DUE_TO_HO - EPS_FALLBACK - REL_DUE_TO_UP_SEC - DNN_CONGESTION - S_NSSAI_CONGESTION - REL_DUE_TO_REACTIVATION - 5G_AN_NOT_RESPONDING - REL_DUE_TO_SLICE_NOT_AVAILABLE - REL_DUE_TO_DUPLICATE_SESSION_ID - PDU_SESSION_STATUS_MISMATCH - HO_FAILURE - INSUFFICIENT_UP_RESOURCES - PDU_SESSION_HANDED_OVER - PDU_SESSION_RESUMED - CN_ASSISTED_RAN_PARAMETER_TUNING - ISMF_CONTEXT_TRANSFER - SMF_CONTEXT_TRANSFER - REL_DUE_TO_PS_TO_CS_HO - REL_DUE_TO_SUBSCRIPTION_CHANGE - HO_CANCEL - REL_DUE_TO_SLICE_NOT_AUTHORIZED - PDU_SESSION_HAND_OVER_FAILURE - DDN_FAILURE_STATUS - REL_DUE_TO_CP_ONLY_NOT_APPLICABLE - NOT_SUPPORTED_WITH_ISMF - CHANGED_ANCHOR_SMF - CHANGED_INTERMEDIATE_SMF - TARGET_DNAI_NOTIFICATION - REL_DUE_TO_VPLMN_QOS_FAILURE - REL_DUE_TO_SMF_NOT_SUPPORT_PSETR - REL_DUE_TO_SNPN_SNPN_MOBILITY - REL_DUE_TO_NO_HR_AGREEMENT - REL_DUE_TO_UNSPECIFIED_REASON
 type Cause struct {
-	CauseAnyOf *CauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Cause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CauseAnyOf
-	err = json.Unmarshal(data, &dst.CauseAnyOf);
-	if err == nil {
-		jsonCauseAnyOf, _ := json.Marshal(dst.CauseAnyOf)
-		if string(jsonCauseAnyOf) == "{}" { // empty struct
-			dst.CauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.CauseAnyOf, return on the first match
-		}
-	} else {
-		dst.CauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Cause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Cause) MarshalJSON() ([]byte, error) {
-	if src.CauseAnyOf != nil {
-		return json.Marshal(&src.CauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

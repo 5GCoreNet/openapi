@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &PcfBindingPatch{}
 
 // PcfBindingPatch Identifies an Individual PCF binding used in an HTTP Patch method.
 type PcfBindingPatch struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166 with the OpenAPI defined 'nullable: true' property. 
-	Ipv4Addr NullableString `json:"ipv4Addr,omitempty"`
-	IpDomain NullableString `json:"ipDomain,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166 with the OpenAPI defined 'nullable: true' property.
+	Ipv4Addr   NullableString       `json:"ipv4Addr,omitempty"`
+	IpDomain   NullableString       `json:"ipDomain,omitempty"`
 	Ipv6Prefix NullableIpv6PrefixRm `json:"ipv6Prefix,omitempty"`
 	// The additional IPv6 Address Prefixes of the served UE.
 	AddIpv6Prefixes []Ipv6Prefix `json:"addIpv6Prefixes,omitempty"`
-	// \"String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042 with the OpenAPI 'nullable: true' property.\" 
+	// \"String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042 with the OpenAPI 'nullable: true' property.\"
 	MacAddr48 NullableString `json:"macAddr48,omitempty"`
 	// The additional MAC Addresses of the served UE.
 	AddMacAddrs []string `json:"addMacAddrs,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
 	// Fully Qualified Domain Name
 	PcfFqdn *string `json:"pcfFqdn,omitempty"`
@@ -60,7 +60,7 @@ func NewPcfBindingPatchWithDefaults() *PcfBindingPatch {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PcfBindingPatch) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr.Get()) {
+	if o == nil || IsNil(o.Ipv4Addr.Get()) {
 		var ret string
 		return ret
 	}
@@ -90,6 +90,7 @@ func (o *PcfBindingPatch) HasIpv4Addr() bool {
 func (o *PcfBindingPatch) SetIpv4Addr(v string) {
 	o.Ipv4Addr.Set(&v)
 }
+
 // SetIpv4AddrNil sets the value for Ipv4Addr to be an explicit nil
 func (o *PcfBindingPatch) SetIpv4AddrNil() {
 	o.Ipv4Addr.Set(nil)
@@ -102,7 +103,7 @@ func (o *PcfBindingPatch) UnsetIpv4Addr() {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PcfBindingPatch) GetIpDomain() string {
-	if o == nil || isNil(o.IpDomain.Get()) {
+	if o == nil || IsNil(o.IpDomain.Get()) {
 		var ret string
 		return ret
 	}
@@ -132,6 +133,7 @@ func (o *PcfBindingPatch) HasIpDomain() bool {
 func (o *PcfBindingPatch) SetIpDomain(v string) {
 	o.IpDomain.Set(&v)
 }
+
 // SetIpDomainNil sets the value for IpDomain to be an explicit nil
 func (o *PcfBindingPatch) SetIpDomainNil() {
 	o.IpDomain.Set(nil)
@@ -144,7 +146,7 @@ func (o *PcfBindingPatch) UnsetIpDomain() {
 
 // GetIpv6Prefix returns the Ipv6Prefix field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PcfBindingPatch) GetIpv6Prefix() Ipv6PrefixRm {
-	if o == nil || isNil(o.Ipv6Prefix.Get()) {
+	if o == nil || IsNil(o.Ipv6Prefix.Get()) {
 		var ret Ipv6PrefixRm
 		return ret
 	}
@@ -174,6 +176,7 @@ func (o *PcfBindingPatch) HasIpv6Prefix() bool {
 func (o *PcfBindingPatch) SetIpv6Prefix(v Ipv6PrefixRm) {
 	o.Ipv6Prefix.Set(&v)
 }
+
 // SetIpv6PrefixNil sets the value for Ipv6Prefix to be an explicit nil
 func (o *PcfBindingPatch) SetIpv6PrefixNil() {
 	o.Ipv6Prefix.Set(nil)
@@ -197,7 +200,7 @@ func (o *PcfBindingPatch) GetAddIpv6Prefixes() []Ipv6Prefix {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PcfBindingPatch) GetAddIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
-	if o == nil || isNil(o.AddIpv6Prefixes) {
+	if o == nil || IsNil(o.AddIpv6Prefixes) {
 		return nil, false
 	}
 	return o.AddIpv6Prefixes, true
@@ -205,7 +208,7 @@ func (o *PcfBindingPatch) GetAddIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
 
 // HasAddIpv6Prefixes returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasAddIpv6Prefixes() bool {
-	if o != nil && isNil(o.AddIpv6Prefixes) {
+	if o != nil && IsNil(o.AddIpv6Prefixes) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *PcfBindingPatch) SetAddIpv6Prefixes(v []Ipv6Prefix) {
 
 // GetMacAddr48 returns the MacAddr48 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PcfBindingPatch) GetMacAddr48() string {
-	if o == nil || isNil(o.MacAddr48.Get()) {
+	if o == nil || IsNil(o.MacAddr48.Get()) {
 		var ret string
 		return ret
 	}
@@ -249,6 +252,7 @@ func (o *PcfBindingPatch) HasMacAddr48() bool {
 func (o *PcfBindingPatch) SetMacAddr48(v string) {
 	o.MacAddr48.Set(&v)
 }
+
 // SetMacAddr48Nil sets the value for MacAddr48 to be an explicit nil
 func (o *PcfBindingPatch) SetMacAddr48Nil() {
 	o.MacAddr48.Set(nil)
@@ -272,7 +276,7 @@ func (o *PcfBindingPatch) GetAddMacAddrs() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PcfBindingPatch) GetAddMacAddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.AddMacAddrs) {
+	if o == nil || IsNil(o.AddMacAddrs) {
 		return nil, false
 	}
 	return o.AddMacAddrs, true
@@ -280,7 +284,7 @@ func (o *PcfBindingPatch) GetAddMacAddrsOk() ([]string, bool) {
 
 // HasAddMacAddrs returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasAddMacAddrs() bool {
-	if o != nil && isNil(o.AddMacAddrs) {
+	if o != nil && IsNil(o.AddMacAddrs) {
 		return true
 	}
 
@@ -294,7 +298,7 @@ func (o *PcfBindingPatch) SetAddMacAddrs(v []string) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfBindingPatch) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -304,7 +308,7 @@ func (o *PcfBindingPatch) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBindingPatch) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -312,7 +316,7 @@ func (o *PcfBindingPatch) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -326,7 +330,7 @@ func (o *PcfBindingPatch) SetPcfId(v string) {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *PcfBindingPatch) GetPcfFqdn() string {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -336,7 +340,7 @@ func (o *PcfBindingPatch) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBindingPatch) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -344,7 +348,7 @@ func (o *PcfBindingPatch) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasPcfFqdn() bool {
-	if o != nil && !isNil(o.PcfFqdn) {
+	if o != nil && !IsNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -358,7 +362,7 @@ func (o *PcfBindingPatch) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *PcfBindingPatch) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -368,7 +372,7 @@ func (o *PcfBindingPatch) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBindingPatch) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -376,7 +380,7 @@ func (o *PcfBindingPatch) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasPcfIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfIpEndPoints) {
+	if o != nil && !IsNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -390,7 +394,7 @@ func (o *PcfBindingPatch) SetPcfIpEndPoints(v []IpEndPoint) {
 
 // GetPcfDiamHost returns the PcfDiamHost field value if set, zero value otherwise.
 func (o *PcfBindingPatch) GetPcfDiamHost() string {
-	if o == nil || isNil(o.PcfDiamHost) {
+	if o == nil || IsNil(o.PcfDiamHost) {
 		var ret string
 		return ret
 	}
@@ -400,7 +404,7 @@ func (o *PcfBindingPatch) GetPcfDiamHost() string {
 // GetPcfDiamHostOk returns a tuple with the PcfDiamHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBindingPatch) GetPcfDiamHostOk() (*string, bool) {
-	if o == nil || isNil(o.PcfDiamHost) {
+	if o == nil || IsNil(o.PcfDiamHost) {
 		return nil, false
 	}
 	return o.PcfDiamHost, true
@@ -408,7 +412,7 @@ func (o *PcfBindingPatch) GetPcfDiamHostOk() (*string, bool) {
 
 // HasPcfDiamHost returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasPcfDiamHost() bool {
-	if o != nil && !isNil(o.PcfDiamHost) {
+	if o != nil && !IsNil(o.PcfDiamHost) {
 		return true
 	}
 
@@ -422,7 +426,7 @@ func (o *PcfBindingPatch) SetPcfDiamHost(v string) {
 
 // GetPcfDiamRealm returns the PcfDiamRealm field value if set, zero value otherwise.
 func (o *PcfBindingPatch) GetPcfDiamRealm() string {
-	if o == nil || isNil(o.PcfDiamRealm) {
+	if o == nil || IsNil(o.PcfDiamRealm) {
 		var ret string
 		return ret
 	}
@@ -432,7 +436,7 @@ func (o *PcfBindingPatch) GetPcfDiamRealm() string {
 // GetPcfDiamRealmOk returns a tuple with the PcfDiamRealm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfBindingPatch) GetPcfDiamRealmOk() (*string, bool) {
-	if o == nil || isNil(o.PcfDiamRealm) {
+	if o == nil || IsNil(o.PcfDiamRealm) {
 		return nil, false
 	}
 	return o.PcfDiamRealm, true
@@ -440,7 +444,7 @@ func (o *PcfBindingPatch) GetPcfDiamRealmOk() (*string, bool) {
 
 // HasPcfDiamRealm returns a boolean if a field has been set.
 func (o *PcfBindingPatch) HasPcfDiamRealm() bool {
-	if o != nil && !isNil(o.PcfDiamRealm) {
+	if o != nil && !IsNil(o.PcfDiamRealm) {
 		return true
 	}
 
@@ -453,7 +457,7 @@ func (o *PcfBindingPatch) SetPcfDiamRealm(v string) {
 }
 
 func (o PcfBindingPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -480,19 +484,19 @@ func (o PcfBindingPatch) ToMap() (map[string]interface{}, error) {
 	if o.AddMacAddrs != nil {
 		toSerialize["addMacAddrs"] = o.AddMacAddrs
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.PcfFqdn) {
+	if !IsNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !isNil(o.PcfIpEndPoints) {
+	if !IsNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
-	if !isNil(o.PcfDiamHost) {
+	if !IsNil(o.PcfDiamHost) {
 		toSerialize["pcfDiamHost"] = o.PcfDiamHost
 	}
-	if !isNil(o.PcfDiamRealm) {
+	if !IsNil(o.PcfDiamRealm) {
 		toSerialize["pcfDiamRealm"] = o.PcfDiamRealm
 	}
 	return toSerialize, nil
@@ -533,5 +537,3 @@ func (v *NullablePcfBindingPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

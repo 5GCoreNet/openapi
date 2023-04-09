@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &N1N2MessageTransferError{}
 
 // N1N2MessageTransferError Data within a N1/N2 Message Transfer Error response
 type N1N2MessageTransferError struct {
-	Error ProblemDetails `json:"error"`
+	Error   ProblemDetails        `json:"error"`
 	ErrInfo *N1N2MsgTxfrErrDetail `json:"errInfo,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *N1N2MessageTransferError) SetError(v ProblemDetails) {
 
 // GetErrInfo returns the ErrInfo field value if set, zero value otherwise.
 func (o *N1N2MessageTransferError) GetErrInfo() N1N2MsgTxfrErrDetail {
-	if o == nil || isNil(o.ErrInfo) {
+	if o == nil || IsNil(o.ErrInfo) {
 		var ret N1N2MsgTxfrErrDetail
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *N1N2MessageTransferError) GetErrInfo() N1N2MsgTxfrErrDetail {
 // GetErrInfoOk returns a tuple with the ErrInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferError) GetErrInfoOk() (*N1N2MsgTxfrErrDetail, bool) {
-	if o == nil || isNil(o.ErrInfo) {
+	if o == nil || IsNil(o.ErrInfo) {
 		return nil, false
 	}
 	return o.ErrInfo, true
@@ -85,7 +85,7 @@ func (o *N1N2MessageTransferError) GetErrInfoOk() (*N1N2MsgTxfrErrDetail, bool) 
 
 // HasErrInfo returns a boolean if a field has been set.
 func (o *N1N2MessageTransferError) HasErrInfo() bool {
-	if o != nil && !isNil(o.ErrInfo) {
+	if o != nil && !IsNil(o.ErrInfo) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *N1N2MessageTransferError) SetErrInfo(v N1N2MsgTxfrErrDetail) {
 }
 
 func (o N1N2MessageTransferError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o N1N2MessageTransferError) MarshalJSON() ([]byte, error) {
 func (o N1N2MessageTransferError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !isNil(o.ErrInfo) {
+	if !IsNil(o.ErrInfo) {
 		toSerialize["errInfo"] = o.ErrInfo
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableN1N2MessageTransferError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

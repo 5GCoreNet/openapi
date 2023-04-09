@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &BackupAmfInfo{}
 type BackupAmfInfo struct {
 	// Fully Qualified Domain Name
 	BackupAmf string `json:"backupAmf"`
-	// If present, this IE shall contain the list of GUAMI(s) (supported by the AMF) for which the backupAmf IE applies. 
+	// If present, this IE shall contain the list of GUAMI(s) (supported by the AMF) for which the backupAmf IE applies.
 	GuamiList []Guami `json:"guamiList,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *BackupAmfInfo) SetBackupAmf(v string) {
 
 // GetGuamiList returns the GuamiList field value if set, zero value otherwise.
 func (o *BackupAmfInfo) GetGuamiList() []Guami {
-	if o == nil || isNil(o.GuamiList) {
+	if o == nil || IsNil(o.GuamiList) {
 		var ret []Guami
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *BackupAmfInfo) GetGuamiList() []Guami {
 // GetGuamiListOk returns a tuple with the GuamiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackupAmfInfo) GetGuamiListOk() ([]Guami, bool) {
-	if o == nil || isNil(o.GuamiList) {
+	if o == nil || IsNil(o.GuamiList) {
 		return nil, false
 	}
 	return o.GuamiList, true
@@ -87,7 +87,7 @@ func (o *BackupAmfInfo) GetGuamiListOk() ([]Guami, bool) {
 
 // HasGuamiList returns a boolean if a field has been set.
 func (o *BackupAmfInfo) HasGuamiList() bool {
-	if o != nil && !isNil(o.GuamiList) {
+	if o != nil && !IsNil(o.GuamiList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *BackupAmfInfo) SetGuamiList(v []Guami) {
 }
 
 func (o BackupAmfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o BackupAmfInfo) MarshalJSON() ([]byte, error) {
 func (o BackupAmfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["backupAmf"] = o.BackupAmf
-	if !isNil(o.GuamiList) {
+	if !IsNil(o.GuamiList) {
 		toSerialize["guamiList"] = o.GuamiList
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableBackupAmfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

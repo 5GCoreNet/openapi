@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,23 +21,23 @@ var _ MappedNullable = &QosMonitoringData{}
 type QosMonitoringData struct {
 	// Univocally identifies the QoS monitoring policy data within a PDU session.
 	QmId string `json:"qmId"`
-	// indicates the UL packet delay, DL packet delay and/or round trip packet delay between the UE and the UPF is to be monitored when the QoS Monitoring for URLLC is enabled for the service data flow. 
+	// indicates the UL packet delay, DL packet delay and/or round trip packet delay between the UE and the UPF is to be monitored when the QoS Monitoring for URLLC is enabled for the service data flow.
 	ReqQosMonParams []RequestedQosMonitoringParameter `json:"reqQosMonParams"`
-	RepFreqs []ReportingFrequency `json:"repFreqs"`
+	RepFreqs        []ReportingFrequency              `json:"repFreqs"`
 	// Indicates the period of time in units of miliiseconds for DL packet delay.
 	RepThreshDl NullableInt32 `json:"repThreshDl,omitempty"`
 	// Indicates the period of time in units of miliiseconds for UL packet delay.
 	RepThreshUl NullableInt32 `json:"repThreshUl,omitempty"`
-	// Indicates the period of time in units of miliiseconds for round trip packet delay. 
+	// Indicates the period of time in units of miliiseconds for round trip packet delay.
 	RepThreshRp NullableInt32 `json:"repThreshRp,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	WaitTime NullableInt32 `json:"waitTime,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	RepPeriod NullableInt32 `json:"repPeriod,omitempty"`
-	// String providing an URI formatted according to RFC 3986 with the OpenAPI 'nullable: true' property. 
-	NotifyUri NullableString `json:"notifyUri,omitempty"`
+	// String providing an URI formatted according to RFC 3986 with the OpenAPI 'nullable: true' property.
+	NotifyUri     NullableString `json:"notifyUri,omitempty"`
 	NotifyCorreId NullableString `json:"notifyCorreId,omitempty"`
-	// Indicates that the direct event notification sent by UPF to the Local NEF or AF is  requested if it is included and set to true. 
+	// Indicates that the direct event notification sent by UPF to the Local NEF or AF is  requested if it is included and set to true.
 	DirectNotifInd *bool `json:"directNotifInd,omitempty"`
 }
 
@@ -135,7 +135,7 @@ func (o *QosMonitoringData) SetRepFreqs(v []ReportingFrequency) {
 
 // GetRepThreshDl returns the RepThreshDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepThreshDl() int32 {
-	if o == nil || isNil(o.RepThreshDl.Get()) {
+	if o == nil || IsNil(o.RepThreshDl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -165,6 +165,7 @@ func (o *QosMonitoringData) HasRepThreshDl() bool {
 func (o *QosMonitoringData) SetRepThreshDl(v int32) {
 	o.RepThreshDl.Set(&v)
 }
+
 // SetRepThreshDlNil sets the value for RepThreshDl to be an explicit nil
 func (o *QosMonitoringData) SetRepThreshDlNil() {
 	o.RepThreshDl.Set(nil)
@@ -177,7 +178,7 @@ func (o *QosMonitoringData) UnsetRepThreshDl() {
 
 // GetRepThreshUl returns the RepThreshUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepThreshUl() int32 {
-	if o == nil || isNil(o.RepThreshUl.Get()) {
+	if o == nil || IsNil(o.RepThreshUl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -207,6 +208,7 @@ func (o *QosMonitoringData) HasRepThreshUl() bool {
 func (o *QosMonitoringData) SetRepThreshUl(v int32) {
 	o.RepThreshUl.Set(&v)
 }
+
 // SetRepThreshUlNil sets the value for RepThreshUl to be an explicit nil
 func (o *QosMonitoringData) SetRepThreshUlNil() {
 	o.RepThreshUl.Set(nil)
@@ -219,7 +221,7 @@ func (o *QosMonitoringData) UnsetRepThreshUl() {
 
 // GetRepThreshRp returns the RepThreshRp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepThreshRp() int32 {
-	if o == nil || isNil(o.RepThreshRp.Get()) {
+	if o == nil || IsNil(o.RepThreshRp.Get()) {
 		var ret int32
 		return ret
 	}
@@ -249,6 +251,7 @@ func (o *QosMonitoringData) HasRepThreshRp() bool {
 func (o *QosMonitoringData) SetRepThreshRp(v int32) {
 	o.RepThreshRp.Set(&v)
 }
+
 // SetRepThreshRpNil sets the value for RepThreshRp to be an explicit nil
 func (o *QosMonitoringData) SetRepThreshRpNil() {
 	o.RepThreshRp.Set(nil)
@@ -261,7 +264,7 @@ func (o *QosMonitoringData) UnsetRepThreshRp() {
 
 // GetWaitTime returns the WaitTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetWaitTime() int32 {
-	if o == nil || isNil(o.WaitTime.Get()) {
+	if o == nil || IsNil(o.WaitTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -291,6 +294,7 @@ func (o *QosMonitoringData) HasWaitTime() bool {
 func (o *QosMonitoringData) SetWaitTime(v int32) {
 	o.WaitTime.Set(&v)
 }
+
 // SetWaitTimeNil sets the value for WaitTime to be an explicit nil
 func (o *QosMonitoringData) SetWaitTimeNil() {
 	o.WaitTime.Set(nil)
@@ -303,7 +307,7 @@ func (o *QosMonitoringData) UnsetWaitTime() {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepPeriod() int32 {
-	if o == nil || isNil(o.RepPeriod.Get()) {
+	if o == nil || IsNil(o.RepPeriod.Get()) {
 		var ret int32
 		return ret
 	}
@@ -333,6 +337,7 @@ func (o *QosMonitoringData) HasRepPeriod() bool {
 func (o *QosMonitoringData) SetRepPeriod(v int32) {
 	o.RepPeriod.Set(&v)
 }
+
 // SetRepPeriodNil sets the value for RepPeriod to be an explicit nil
 func (o *QosMonitoringData) SetRepPeriodNil() {
 	o.RepPeriod.Set(nil)
@@ -345,7 +350,7 @@ func (o *QosMonitoringData) UnsetRepPeriod() {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetNotifyUri() string {
-	if o == nil || isNil(o.NotifyUri.Get()) {
+	if o == nil || IsNil(o.NotifyUri.Get()) {
 		var ret string
 		return ret
 	}
@@ -375,6 +380,7 @@ func (o *QosMonitoringData) HasNotifyUri() bool {
 func (o *QosMonitoringData) SetNotifyUri(v string) {
 	o.NotifyUri.Set(&v)
 }
+
 // SetNotifyUriNil sets the value for NotifyUri to be an explicit nil
 func (o *QosMonitoringData) SetNotifyUriNil() {
 	o.NotifyUri.Set(nil)
@@ -387,7 +393,7 @@ func (o *QosMonitoringData) UnsetNotifyUri() {
 
 // GetNotifyCorreId returns the NotifyCorreId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetNotifyCorreId() string {
-	if o == nil || isNil(o.NotifyCorreId.Get()) {
+	if o == nil || IsNil(o.NotifyCorreId.Get()) {
 		var ret string
 		return ret
 	}
@@ -417,6 +423,7 @@ func (o *QosMonitoringData) HasNotifyCorreId() bool {
 func (o *QosMonitoringData) SetNotifyCorreId(v string) {
 	o.NotifyCorreId.Set(&v)
 }
+
 // SetNotifyCorreIdNil sets the value for NotifyCorreId to be an explicit nil
 func (o *QosMonitoringData) SetNotifyCorreIdNil() {
 	o.NotifyCorreId.Set(nil)
@@ -429,7 +436,7 @@ func (o *QosMonitoringData) UnsetNotifyCorreId() {
 
 // GetDirectNotifInd returns the DirectNotifInd field value if set, zero value otherwise.
 func (o *QosMonitoringData) GetDirectNotifInd() bool {
-	if o == nil || isNil(o.DirectNotifInd) {
+	if o == nil || IsNil(o.DirectNotifInd) {
 		var ret bool
 		return ret
 	}
@@ -439,7 +446,7 @@ func (o *QosMonitoringData) GetDirectNotifInd() bool {
 // GetDirectNotifIndOk returns a tuple with the DirectNotifInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringData) GetDirectNotifIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DirectNotifInd) {
+	if o == nil || IsNil(o.DirectNotifInd) {
 		return nil, false
 	}
 	return o.DirectNotifInd, true
@@ -447,7 +454,7 @@ func (o *QosMonitoringData) GetDirectNotifIndOk() (*bool, bool) {
 
 // HasDirectNotifInd returns a boolean if a field has been set.
 func (o *QosMonitoringData) HasDirectNotifInd() bool {
-	if o != nil && !isNil(o.DirectNotifInd) {
+	if o != nil && !IsNil(o.DirectNotifInd) {
 		return true
 	}
 
@@ -460,7 +467,7 @@ func (o *QosMonitoringData) SetDirectNotifInd(v bool) {
 }
 
 func (o QosMonitoringData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -493,7 +500,7 @@ func (o QosMonitoringData) ToMap() (map[string]interface{}, error) {
 	if o.NotifyCorreId.IsSet() {
 		toSerialize["notifyCorreId"] = o.NotifyCorreId.Get()
 	}
-	if !isNil(o.DirectNotifInd) {
+	if !IsNil(o.DirectNotifInd) {
 		toSerialize["directNotifInd"] = o.DirectNotifInd
 	}
 	return toSerialize, nil
@@ -534,5 +541,3 @@ func (v *NullableQosMonitoringData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

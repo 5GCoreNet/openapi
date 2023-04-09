@@ -17,7 +17,7 @@ import (
 // checks if the Ipv6Prefix1 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Ipv6Prefix1{}
 
-// Ipv6Prefix1 String identifying an IPv6 address prefix formatted according to clause 4 of RFC 5952. IPv6Prefix data type may contain an individual /128 IPv6 address. 
+// Ipv6Prefix1 String identifying an IPv6 address prefix formatted according to clause 4 of RFC 5952. IPv6Prefix data type may contain an individual /128 IPv6 address.
 type Ipv6Prefix1 struct {
 }
 
@@ -39,7 +39,7 @@ func NewIpv6Prefix1WithDefaults() *Ipv6Prefix1 {
 }
 
 func (o Ipv6Prefix1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -86,5 +86,3 @@ func (v *NullableIpv6Prefix1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

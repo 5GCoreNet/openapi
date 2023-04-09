@@ -18,7 +18,7 @@ import (
 // AlarmsAlarmIdPatchRequest - struct for AlarmsAlarmIdPatchRequest
 type AlarmsAlarmIdPatchRequest struct {
 	MergePatchAcknowledgeAlarm *MergePatchAcknowledgeAlarm
-	MergePatchClearAlarm *MergePatchClearAlarm
+	MergePatchClearAlarm       *MergePatchClearAlarm
 }
 
 // MergePatchAcknowledgeAlarmAsAlarmsAlarmIdPatchRequest is a convenience function that returns MergePatchAcknowledgeAlarm wrapped in AlarmsAlarmIdPatchRequest
@@ -34,7 +34,6 @@ func MergePatchClearAlarmAsAlarmsAlarmIdPatchRequest(v *MergePatchClearAlarm) Al
 		MergePatchClearAlarm: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AlarmsAlarmIdPatchRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AlarmsAlarmIdPatchRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AlarmsAlarmIdPatchRequest) GetActualInstance() (interface{}) {
+func (obj *AlarmsAlarmIdPatchRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAlarmsAlarmIdPatchRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

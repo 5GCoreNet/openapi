@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &RefToBinaryData{}
 
 // RefToBinaryData This parameter provides information about the referenced binary body data.
 type RefToBinaryData struct {
-	// This IE shall contain the value of the Content-ID header of the referenced binary body part. 
+	// This IE shall contain the value of the Content-ID header of the referenced binary body part.
 	ContentId string `json:"contentId"`
 }
 
@@ -66,7 +66,7 @@ func (o *RefToBinaryData) SetContentId(v string) {
 }
 
 func (o RefToBinaryData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullableRefToBinaryData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

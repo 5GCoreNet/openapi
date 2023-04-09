@@ -19,12 +19,12 @@ var _ MappedNullable = &MLEntity{}
 
 // MLEntity struct for MLEntity
 type MLEntity struct {
-	MLEntityId *string `json:"mLEntityId,omitempty"`
-	InferenceType *string `json:"inferenceType,omitempty"`
-	MLEntityVersion *string `json:"mLEntityVersion,omitempty"`
+	MLEntityId             *string    `json:"mLEntityId,omitempty"`
+	InferenceType          *string    `json:"inferenceType,omitempty"`
+	MLEntityVersion        *string    `json:"mLEntityVersion,omitempty"`
 	ExpectedRunTimeContext *MLContext `json:"expectedRunTimeContext,omitempty"`
-	TrainingContext *MLContext `json:"trainingContext,omitempty"`
-	RunTimeContext *MLContext `json:"runTimeContext,omitempty"`
+	TrainingContext        *MLContext `json:"trainingContext,omitempty"`
+	RunTimeContext         *MLContext `json:"runTimeContext,omitempty"`
 }
 
 // NewMLEntity instantiates a new MLEntity object
@@ -46,7 +46,7 @@ func NewMLEntityWithDefaults() *MLEntity {
 
 // GetMLEntityId returns the MLEntityId field value if set, zero value otherwise.
 func (o *MLEntity) GetMLEntityId() string {
-	if o == nil || isNil(o.MLEntityId) {
+	if o == nil || IsNil(o.MLEntityId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MLEntity) GetMLEntityId() string {
 // GetMLEntityIdOk returns a tuple with the MLEntityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEntity) GetMLEntityIdOk() (*string, bool) {
-	if o == nil || isNil(o.MLEntityId) {
+	if o == nil || IsNil(o.MLEntityId) {
 		return nil, false
 	}
 	return o.MLEntityId, true
@@ -64,7 +64,7 @@ func (o *MLEntity) GetMLEntityIdOk() (*string, bool) {
 
 // HasMLEntityId returns a boolean if a field has been set.
 func (o *MLEntity) HasMLEntityId() bool {
-	if o != nil && !isNil(o.MLEntityId) {
+	if o != nil && !IsNil(o.MLEntityId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MLEntity) SetMLEntityId(v string) {
 
 // GetInferenceType returns the InferenceType field value if set, zero value otherwise.
 func (o *MLEntity) GetInferenceType() string {
-	if o == nil || isNil(o.InferenceType) {
+	if o == nil || IsNil(o.InferenceType) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MLEntity) GetInferenceType() string {
 // GetInferenceTypeOk returns a tuple with the InferenceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEntity) GetInferenceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.InferenceType) {
+	if o == nil || IsNil(o.InferenceType) {
 		return nil, false
 	}
 	return o.InferenceType, true
@@ -96,7 +96,7 @@ func (o *MLEntity) GetInferenceTypeOk() (*string, bool) {
 
 // HasInferenceType returns a boolean if a field has been set.
 func (o *MLEntity) HasInferenceType() bool {
-	if o != nil && !isNil(o.InferenceType) {
+	if o != nil && !IsNil(o.InferenceType) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MLEntity) SetInferenceType(v string) {
 
 // GetMLEntityVersion returns the MLEntityVersion field value if set, zero value otherwise.
 func (o *MLEntity) GetMLEntityVersion() string {
-	if o == nil || isNil(o.MLEntityVersion) {
+	if o == nil || IsNil(o.MLEntityVersion) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MLEntity) GetMLEntityVersion() string {
 // GetMLEntityVersionOk returns a tuple with the MLEntityVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEntity) GetMLEntityVersionOk() (*string, bool) {
-	if o == nil || isNil(o.MLEntityVersion) {
+	if o == nil || IsNil(o.MLEntityVersion) {
 		return nil, false
 	}
 	return o.MLEntityVersion, true
@@ -128,7 +128,7 @@ func (o *MLEntity) GetMLEntityVersionOk() (*string, bool) {
 
 // HasMLEntityVersion returns a boolean if a field has been set.
 func (o *MLEntity) HasMLEntityVersion() bool {
-	if o != nil && !isNil(o.MLEntityVersion) {
+	if o != nil && !IsNil(o.MLEntityVersion) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MLEntity) SetMLEntityVersion(v string) {
 
 // GetExpectedRunTimeContext returns the ExpectedRunTimeContext field value if set, zero value otherwise.
 func (o *MLEntity) GetExpectedRunTimeContext() MLContext {
-	if o == nil || isNil(o.ExpectedRunTimeContext) {
+	if o == nil || IsNil(o.ExpectedRunTimeContext) {
 		var ret MLContext
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MLEntity) GetExpectedRunTimeContext() MLContext {
 // GetExpectedRunTimeContextOk returns a tuple with the ExpectedRunTimeContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEntity) GetExpectedRunTimeContextOk() (*MLContext, bool) {
-	if o == nil || isNil(o.ExpectedRunTimeContext) {
+	if o == nil || IsNil(o.ExpectedRunTimeContext) {
 		return nil, false
 	}
 	return o.ExpectedRunTimeContext, true
@@ -160,7 +160,7 @@ func (o *MLEntity) GetExpectedRunTimeContextOk() (*MLContext, bool) {
 
 // HasExpectedRunTimeContext returns a boolean if a field has been set.
 func (o *MLEntity) HasExpectedRunTimeContext() bool {
-	if o != nil && !isNil(o.ExpectedRunTimeContext) {
+	if o != nil && !IsNil(o.ExpectedRunTimeContext) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *MLEntity) SetExpectedRunTimeContext(v MLContext) {
 
 // GetTrainingContext returns the TrainingContext field value if set, zero value otherwise.
 func (o *MLEntity) GetTrainingContext() MLContext {
-	if o == nil || isNil(o.TrainingContext) {
+	if o == nil || IsNil(o.TrainingContext) {
 		var ret MLContext
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MLEntity) GetTrainingContext() MLContext {
 // GetTrainingContextOk returns a tuple with the TrainingContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEntity) GetTrainingContextOk() (*MLContext, bool) {
-	if o == nil || isNil(o.TrainingContext) {
+	if o == nil || IsNil(o.TrainingContext) {
 		return nil, false
 	}
 	return o.TrainingContext, true
@@ -192,7 +192,7 @@ func (o *MLEntity) GetTrainingContextOk() (*MLContext, bool) {
 
 // HasTrainingContext returns a boolean if a field has been set.
 func (o *MLEntity) HasTrainingContext() bool {
-	if o != nil && !isNil(o.TrainingContext) {
+	if o != nil && !IsNil(o.TrainingContext) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *MLEntity) SetTrainingContext(v MLContext) {
 
 // GetRunTimeContext returns the RunTimeContext field value if set, zero value otherwise.
 func (o *MLEntity) GetRunTimeContext() MLContext {
-	if o == nil || isNil(o.RunTimeContext) {
+	if o == nil || IsNil(o.RunTimeContext) {
 		var ret MLContext
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *MLEntity) GetRunTimeContext() MLContext {
 // GetRunTimeContextOk returns a tuple with the RunTimeContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEntity) GetRunTimeContextOk() (*MLContext, bool) {
-	if o == nil || isNil(o.RunTimeContext) {
+	if o == nil || IsNil(o.RunTimeContext) {
 		return nil, false
 	}
 	return o.RunTimeContext, true
@@ -224,7 +224,7 @@ func (o *MLEntity) GetRunTimeContextOk() (*MLContext, bool) {
 
 // HasRunTimeContext returns a boolean if a field has been set.
 func (o *MLEntity) HasRunTimeContext() bool {
-	if o != nil && !isNil(o.RunTimeContext) {
+	if o != nil && !IsNil(o.RunTimeContext) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *MLEntity) SetRunTimeContext(v MLContext) {
 }
 
 func (o MLEntity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,22 +246,22 @@ func (o MLEntity) MarshalJSON() ([]byte, error) {
 
 func (o MLEntity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MLEntityId) {
+	if !IsNil(o.MLEntityId) {
 		toSerialize["mLEntityId"] = o.MLEntityId
 	}
-	if !isNil(o.InferenceType) {
+	if !IsNil(o.InferenceType) {
 		toSerialize["inferenceType"] = o.InferenceType
 	}
-	if !isNil(o.MLEntityVersion) {
+	if !IsNil(o.MLEntityVersion) {
 		toSerialize["mLEntityVersion"] = o.MLEntityVersion
 	}
-	if !isNil(o.ExpectedRunTimeContext) {
+	if !IsNil(o.ExpectedRunTimeContext) {
 		toSerialize["expectedRunTimeContext"] = o.ExpectedRunTimeContext
 	}
-	if !isNil(o.TrainingContext) {
+	if !IsNil(o.TrainingContext) {
 		toSerialize["trainingContext"] = o.TrainingContext
 	}
-	if !isNil(o.RunTimeContext) {
+	if !IsNil(o.RunTimeContext) {
 		toSerialize["runTimeContext"] = o.RunTimeContext
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableMLEntity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

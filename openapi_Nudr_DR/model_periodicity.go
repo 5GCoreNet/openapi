@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // Periodicity Represents the time period.
 type Periodicity struct {
-	PeriodicityAnyOf *PeriodicityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Periodicity) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PeriodicityAnyOf
-	err = json.Unmarshal(data, &dst.PeriodicityAnyOf);
-	if err == nil {
-		jsonPeriodicityAnyOf, _ := json.Marshal(dst.PeriodicityAnyOf)
-		if string(jsonPeriodicityAnyOf) == "{}" { // empty struct
-			dst.PeriodicityAnyOf = nil
-		} else {
-			return nil // data stored in dst.PeriodicityAnyOf, return on the first match
-		}
-	} else {
-		dst.PeriodicityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Periodicity) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Periodicity) MarshalJSON() ([]byte, error) {
-	if src.PeriodicityAnyOf != nil {
-		return json.Marshal(&src.PeriodicityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePeriodicity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

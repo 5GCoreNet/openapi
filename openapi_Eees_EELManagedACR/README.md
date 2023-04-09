@@ -90,9 +90,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ACRScenario](docs/ACRScenario.md)
- - [ACRScenarioAnyOf](docs/ACRScenarioAnyOf.md)
  - [ACTResult](docs/ACTResult.md)
- - [ACTResultAnyOf](docs/ACTResultAnyOf.md)
  - [ACTStatusNotif](docs/ACTStatusNotif.md)
  - [ACTStatusSubsc](docs/ACTStatusSubsc.md)
  - [CivicAddress](docs/CivicAddress.md)
@@ -132,7 +130,6 @@ Class | Method | HTTP request | Description
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
- - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [TimeWindow](docs/TimeWindow.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)

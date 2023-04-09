@@ -19,15 +19,15 @@ var _ MappedNullable = &NRCellRelationSingleAllOfAttributes{}
 
 // NRCellRelationSingleAllOfAttributes struct for NRCellRelationSingleAllOfAttributes
 type NRCellRelationSingleAllOfAttributes struct {
-	NRTCI *int32 `json:"nRTCI,omitempty"`
+	NRTCI                *int32                `json:"nRTCI,omitempty"`
 	CellIndividualOffset *CellIndividualOffset `json:"cellIndividualOffset,omitempty"`
-	AdjacentNRCellRef *string `json:"adjacentNRCellRef,omitempty"`
-	NRFreqRelationRef *string `json:"nRFreqRelationRef,omitempty"`
-	IsRemoveAllowed *bool `json:"isRemoveAllowed,omitempty"`
-	IsHOAllowed *bool `json:"isHOAllowed,omitempty"`
-	IsESCoveredBy *IsESCoveredBy `json:"isESCoveredBy,omitempty"`
-	IsENDCAllowed *bool `json:"isENDCAllowed,omitempty"`
-	IsMLBAllowed *bool `json:"isMLBAllowed,omitempty"`
+	AdjacentNRCellRef    *string               `json:"adjacentNRCellRef,omitempty"`
+	NRFreqRelationRef    *string               `json:"nRFreqRelationRef,omitempty"`
+	IsRemoveAllowed      *bool                 `json:"isRemoveAllowed,omitempty"`
+	IsHOAllowed          *bool                 `json:"isHOAllowed,omitempty"`
+	IsESCoveredBy        *IsESCoveredBy        `json:"isESCoveredBy,omitempty"`
+	IsENDCAllowed        *bool                 `json:"isENDCAllowed,omitempty"`
+	IsMLBAllowed         *bool                 `json:"isMLBAllowed,omitempty"`
 }
 
 // NewNRCellRelationSingleAllOfAttributes instantiates a new NRCellRelationSingleAllOfAttributes object
@@ -49,7 +49,7 @@ func NewNRCellRelationSingleAllOfAttributesWithDefaults() *NRCellRelationSingleA
 
 // GetNRTCI returns the NRTCI field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetNRTCI() int32 {
-	if o == nil || isNil(o.NRTCI) {
+	if o == nil || IsNil(o.NRTCI) {
 		var ret int32
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetNRTCI() int32 {
 // GetNRTCIOk returns a tuple with the NRTCI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetNRTCIOk() (*int32, bool) {
-	if o == nil || isNil(o.NRTCI) {
+	if o == nil || IsNil(o.NRTCI) {
 		return nil, false
 	}
 	return o.NRTCI, true
@@ -67,7 +67,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetNRTCIOk() (*int32, bool) {
 
 // HasNRTCI returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasNRTCI() bool {
-	if o != nil && !isNil(o.NRTCI) {
+	if o != nil && !IsNil(o.NRTCI) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetNRTCI(v int32) {
 
 // GetCellIndividualOffset returns the CellIndividualOffset field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetCellIndividualOffset() CellIndividualOffset {
-	if o == nil || isNil(o.CellIndividualOffset) {
+	if o == nil || IsNil(o.CellIndividualOffset) {
 		var ret CellIndividualOffset
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetCellIndividualOffset() CellIndi
 // GetCellIndividualOffsetOk returns a tuple with the CellIndividualOffset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetCellIndividualOffsetOk() (*CellIndividualOffset, bool) {
-	if o == nil || isNil(o.CellIndividualOffset) {
+	if o == nil || IsNil(o.CellIndividualOffset) {
 		return nil, false
 	}
 	return o.CellIndividualOffset, true
@@ -99,7 +99,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetCellIndividualOffsetOk() (*Cell
 
 // HasCellIndividualOffset returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasCellIndividualOffset() bool {
-	if o != nil && !isNil(o.CellIndividualOffset) {
+	if o != nil && !IsNil(o.CellIndividualOffset) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetCellIndividualOffset(v CellIndi
 
 // GetAdjacentNRCellRef returns the AdjacentNRCellRef field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetAdjacentNRCellRef() string {
-	if o == nil || isNil(o.AdjacentNRCellRef) {
+	if o == nil || IsNil(o.AdjacentNRCellRef) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetAdjacentNRCellRef() string {
 // GetAdjacentNRCellRefOk returns a tuple with the AdjacentNRCellRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetAdjacentNRCellRefOk() (*string, bool) {
-	if o == nil || isNil(o.AdjacentNRCellRef) {
+	if o == nil || IsNil(o.AdjacentNRCellRef) {
 		return nil, false
 	}
 	return o.AdjacentNRCellRef, true
@@ -131,7 +131,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetAdjacentNRCellRefOk() (*string,
 
 // HasAdjacentNRCellRef returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasAdjacentNRCellRef() bool {
-	if o != nil && !isNil(o.AdjacentNRCellRef) {
+	if o != nil && !IsNil(o.AdjacentNRCellRef) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetAdjacentNRCellRef(v string) {
 
 // GetNRFreqRelationRef returns the NRFreqRelationRef field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetNRFreqRelationRef() string {
-	if o == nil || isNil(o.NRFreqRelationRef) {
+	if o == nil || IsNil(o.NRFreqRelationRef) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetNRFreqRelationRef() string {
 // GetNRFreqRelationRefOk returns a tuple with the NRFreqRelationRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetNRFreqRelationRefOk() (*string, bool) {
-	if o == nil || isNil(o.NRFreqRelationRef) {
+	if o == nil || IsNil(o.NRFreqRelationRef) {
 		return nil, false
 	}
 	return o.NRFreqRelationRef, true
@@ -163,7 +163,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetNRFreqRelationRefOk() (*string,
 
 // HasNRFreqRelationRef returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasNRFreqRelationRef() bool {
-	if o != nil && !isNil(o.NRFreqRelationRef) {
+	if o != nil && !IsNil(o.NRFreqRelationRef) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetNRFreqRelationRef(v string) {
 
 // GetIsRemoveAllowed returns the IsRemoveAllowed field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsRemoveAllowed() bool {
-	if o == nil || isNil(o.IsRemoveAllowed) {
+	if o == nil || IsNil(o.IsRemoveAllowed) {
 		var ret bool
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsRemoveAllowed() bool {
 // GetIsRemoveAllowedOk returns a tuple with the IsRemoveAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsRemoveAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsRemoveAllowed) {
+	if o == nil || IsNil(o.IsRemoveAllowed) {
 		return nil, false
 	}
 	return o.IsRemoveAllowed, true
@@ -195,7 +195,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsRemoveAllowedOk() (*bool, boo
 
 // HasIsRemoveAllowed returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasIsRemoveAllowed() bool {
-	if o != nil && !isNil(o.IsRemoveAllowed) {
+	if o != nil && !IsNil(o.IsRemoveAllowed) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetIsRemoveAllowed(v bool) {
 
 // GetIsHOAllowed returns the IsHOAllowed field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsHOAllowed() bool {
-	if o == nil || isNil(o.IsHOAllowed) {
+	if o == nil || IsNil(o.IsHOAllowed) {
 		var ret bool
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsHOAllowed() bool {
 // GetIsHOAllowedOk returns a tuple with the IsHOAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsHOAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsHOAllowed) {
+	if o == nil || IsNil(o.IsHOAllowed) {
 		return nil, false
 	}
 	return o.IsHOAllowed, true
@@ -227,7 +227,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsHOAllowedOk() (*bool, bool) {
 
 // HasIsHOAllowed returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasIsHOAllowed() bool {
-	if o != nil && !isNil(o.IsHOAllowed) {
+	if o != nil && !IsNil(o.IsHOAllowed) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetIsHOAllowed(v bool) {
 
 // GetIsESCoveredBy returns the IsESCoveredBy field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsESCoveredBy() IsESCoveredBy {
-	if o == nil || isNil(o.IsESCoveredBy) {
+	if o == nil || IsNil(o.IsESCoveredBy) {
 		var ret IsESCoveredBy
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsESCoveredBy() IsESCoveredBy {
 // GetIsESCoveredByOk returns a tuple with the IsESCoveredBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsESCoveredByOk() (*IsESCoveredBy, bool) {
-	if o == nil || isNil(o.IsESCoveredBy) {
+	if o == nil || IsNil(o.IsESCoveredBy) {
 		return nil, false
 	}
 	return o.IsESCoveredBy, true
@@ -259,7 +259,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsESCoveredByOk() (*IsESCovered
 
 // HasIsESCoveredBy returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasIsESCoveredBy() bool {
-	if o != nil && !isNil(o.IsESCoveredBy) {
+	if o != nil && !IsNil(o.IsESCoveredBy) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetIsESCoveredBy(v IsESCoveredBy) 
 
 // GetIsENDCAllowed returns the IsENDCAllowed field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsENDCAllowed() bool {
-	if o == nil || isNil(o.IsENDCAllowed) {
+	if o == nil || IsNil(o.IsENDCAllowed) {
 		var ret bool
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsENDCAllowed() bool {
 // GetIsENDCAllowedOk returns a tuple with the IsENDCAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsENDCAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsENDCAllowed) {
+	if o == nil || IsNil(o.IsENDCAllowed) {
 		return nil, false
 	}
 	return o.IsENDCAllowed, true
@@ -291,7 +291,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsENDCAllowedOk() (*bool, bool)
 
 // HasIsENDCAllowed returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasIsENDCAllowed() bool {
-	if o != nil && !isNil(o.IsENDCAllowed) {
+	if o != nil && !IsNil(o.IsENDCAllowed) {
 		return true
 	}
 
@@ -305,7 +305,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetIsENDCAllowed(v bool) {
 
 // GetIsMLBAllowed returns the IsMLBAllowed field value if set, zero value otherwise.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsMLBAllowed() bool {
-	if o == nil || isNil(o.IsMLBAllowed) {
+	if o == nil || IsNil(o.IsMLBAllowed) {
 		var ret bool
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsMLBAllowed() bool {
 // GetIsMLBAllowedOk returns a tuple with the IsMLBAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRCellRelationSingleAllOfAttributes) GetIsMLBAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsMLBAllowed) {
+	if o == nil || IsNil(o.IsMLBAllowed) {
 		return nil, false
 	}
 	return o.IsMLBAllowed, true
@@ -323,7 +323,7 @@ func (o *NRCellRelationSingleAllOfAttributes) GetIsMLBAllowedOk() (*bool, bool) 
 
 // HasIsMLBAllowed returns a boolean if a field has been set.
 func (o *NRCellRelationSingleAllOfAttributes) HasIsMLBAllowed() bool {
-	if o != nil && !isNil(o.IsMLBAllowed) {
+	if o != nil && !IsNil(o.IsMLBAllowed) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *NRCellRelationSingleAllOfAttributes) SetIsMLBAllowed(v bool) {
 }
 
 func (o NRCellRelationSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -345,31 +345,31 @@ func (o NRCellRelationSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o NRCellRelationSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NRTCI) {
+	if !IsNil(o.NRTCI) {
 		toSerialize["nRTCI"] = o.NRTCI
 	}
-	if !isNil(o.CellIndividualOffset) {
+	if !IsNil(o.CellIndividualOffset) {
 		toSerialize["cellIndividualOffset"] = o.CellIndividualOffset
 	}
-	if !isNil(o.AdjacentNRCellRef) {
+	if !IsNil(o.AdjacentNRCellRef) {
 		toSerialize["adjacentNRCellRef"] = o.AdjacentNRCellRef
 	}
-	if !isNil(o.NRFreqRelationRef) {
+	if !IsNil(o.NRFreqRelationRef) {
 		toSerialize["nRFreqRelationRef"] = o.NRFreqRelationRef
 	}
-	if !isNil(o.IsRemoveAllowed) {
+	if !IsNil(o.IsRemoveAllowed) {
 		toSerialize["isRemoveAllowed"] = o.IsRemoveAllowed
 	}
-	if !isNil(o.IsHOAllowed) {
+	if !IsNil(o.IsHOAllowed) {
 		toSerialize["isHOAllowed"] = o.IsHOAllowed
 	}
-	if !isNil(o.IsESCoveredBy) {
+	if !IsNil(o.IsESCoveredBy) {
 		toSerialize["isESCoveredBy"] = o.IsESCoveredBy
 	}
-	if !isNil(o.IsENDCAllowed) {
+	if !IsNil(o.IsENDCAllowed) {
 		toSerialize["isENDCAllowed"] = o.IsENDCAllowed
 	}
-	if !isNil(o.IsMLBAllowed) {
+	if !IsNil(o.IsMLBAllowed) {
 		toSerialize["isMLBAllowed"] = o.IsMLBAllowed
 	}
 	return toSerialize, nil
@@ -410,5 +410,3 @@ func (v *NullableNRCellRelationSingleAllOfAttributes) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Rsn Redundancy Sequence Number. Possible values are   - V1   - V2   - NONE 
+// Rsn Redundancy Sequence Number. Possible values are   - V1   - V2   - NONE
 type Rsn struct {
-	RsnAnyOf *RsnAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Rsn) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RsnAnyOf
-	err = json.Unmarshal(data, &dst.RsnAnyOf);
-	if err == nil {
-		jsonRsnAnyOf, _ := json.Marshal(dst.RsnAnyOf)
-		if string(jsonRsnAnyOf) == "{}" { // empty struct
-			dst.RsnAnyOf = nil
-		} else {
-			return nil // data stored in dst.RsnAnyOf, return on the first match
-		}
-	} else {
-		dst.RsnAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Rsn) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Rsn) MarshalJSON() ([]byte, error) {
-	if src.RsnAnyOf != nil {
-		return json.Marshal(&src.RsnAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRsn) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

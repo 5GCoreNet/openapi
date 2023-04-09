@@ -1,7 +1,7 @@
 /*
 M1_ContentProtocolsDiscovery
 
-5GMS AF M1 Content Protocols Discovery API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Protocols Discovery API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &ContentProtocols{}
 // ContentProtocols A representation of the Content Protocols resource.
 type ContentProtocols struct {
 	DownlinkIngestProtocols []ContentProtocolDescriptor `json:"downlinkIngestProtocols,omitempty"`
-	UplinkEgestProtocols []ContentProtocolDescriptor `json:"uplinkEgestProtocols,omitempty"`
-	GeoFencingLocatorTypes []string `json:"geoFencingLocatorTypes,omitempty"`
+	UplinkEgestProtocols    []ContentProtocolDescriptor `json:"uplinkEgestProtocols,omitempty"`
+	GeoFencingLocatorTypes  []string                    `json:"geoFencingLocatorTypes,omitempty"`
 }
 
 // NewContentProtocols instantiates a new ContentProtocols object
@@ -43,7 +43,7 @@ func NewContentProtocolsWithDefaults() *ContentProtocols {
 
 // GetDownlinkIngestProtocols returns the DownlinkIngestProtocols field value if set, zero value otherwise.
 func (o *ContentProtocols) GetDownlinkIngestProtocols() []ContentProtocolDescriptor {
-	if o == nil || isNil(o.DownlinkIngestProtocols) {
+	if o == nil || IsNil(o.DownlinkIngestProtocols) {
 		var ret []ContentProtocolDescriptor
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ContentProtocols) GetDownlinkIngestProtocols() []ContentProtocolDescrip
 // GetDownlinkIngestProtocolsOk returns a tuple with the DownlinkIngestProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContentProtocols) GetDownlinkIngestProtocolsOk() ([]ContentProtocolDescriptor, bool) {
-	if o == nil || isNil(o.DownlinkIngestProtocols) {
+	if o == nil || IsNil(o.DownlinkIngestProtocols) {
 		return nil, false
 	}
 	return o.DownlinkIngestProtocols, true
@@ -61,7 +61,7 @@ func (o *ContentProtocols) GetDownlinkIngestProtocolsOk() ([]ContentProtocolDesc
 
 // HasDownlinkIngestProtocols returns a boolean if a field has been set.
 func (o *ContentProtocols) HasDownlinkIngestProtocols() bool {
-	if o != nil && !isNil(o.DownlinkIngestProtocols) {
+	if o != nil && !IsNil(o.DownlinkIngestProtocols) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ContentProtocols) SetDownlinkIngestProtocols(v []ContentProtocolDescrip
 
 // GetUplinkEgestProtocols returns the UplinkEgestProtocols field value if set, zero value otherwise.
 func (o *ContentProtocols) GetUplinkEgestProtocols() []ContentProtocolDescriptor {
-	if o == nil || isNil(o.UplinkEgestProtocols) {
+	if o == nil || IsNil(o.UplinkEgestProtocols) {
 		var ret []ContentProtocolDescriptor
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ContentProtocols) GetUplinkEgestProtocols() []ContentProtocolDescriptor
 // GetUplinkEgestProtocolsOk returns a tuple with the UplinkEgestProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContentProtocols) GetUplinkEgestProtocolsOk() ([]ContentProtocolDescriptor, bool) {
-	if o == nil || isNil(o.UplinkEgestProtocols) {
+	if o == nil || IsNil(o.UplinkEgestProtocols) {
 		return nil, false
 	}
 	return o.UplinkEgestProtocols, true
@@ -93,7 +93,7 @@ func (o *ContentProtocols) GetUplinkEgestProtocolsOk() ([]ContentProtocolDescrip
 
 // HasUplinkEgestProtocols returns a boolean if a field has been set.
 func (o *ContentProtocols) HasUplinkEgestProtocols() bool {
-	if o != nil && !isNil(o.UplinkEgestProtocols) {
+	if o != nil && !IsNil(o.UplinkEgestProtocols) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ContentProtocols) SetUplinkEgestProtocols(v []ContentProtocolDescriptor
 
 // GetGeoFencingLocatorTypes returns the GeoFencingLocatorTypes field value if set, zero value otherwise.
 func (o *ContentProtocols) GetGeoFencingLocatorTypes() []string {
-	if o == nil || isNil(o.GeoFencingLocatorTypes) {
+	if o == nil || IsNil(o.GeoFencingLocatorTypes) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ContentProtocols) GetGeoFencingLocatorTypes() []string {
 // GetGeoFencingLocatorTypesOk returns a tuple with the GeoFencingLocatorTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContentProtocols) GetGeoFencingLocatorTypesOk() ([]string, bool) {
-	if o == nil || isNil(o.GeoFencingLocatorTypes) {
+	if o == nil || IsNil(o.GeoFencingLocatorTypes) {
 		return nil, false
 	}
 	return o.GeoFencingLocatorTypes, true
@@ -125,7 +125,7 @@ func (o *ContentProtocols) GetGeoFencingLocatorTypesOk() ([]string, bool) {
 
 // HasGeoFencingLocatorTypes returns a boolean if a field has been set.
 func (o *ContentProtocols) HasGeoFencingLocatorTypes() bool {
-	if o != nil && !isNil(o.GeoFencingLocatorTypes) {
+	if o != nil && !IsNil(o.GeoFencingLocatorTypes) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ContentProtocols) SetGeoFencingLocatorTypes(v []string) {
 }
 
 func (o ContentProtocols) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ContentProtocols) MarshalJSON() ([]byte, error) {
 
 func (o ContentProtocols) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DownlinkIngestProtocols) {
+	if !IsNil(o.DownlinkIngestProtocols) {
 		toSerialize["downlinkIngestProtocols"] = o.DownlinkIngestProtocols
 	}
-	if !isNil(o.UplinkEgestProtocols) {
+	if !IsNil(o.UplinkEgestProtocols) {
 		toSerialize["uplinkEgestProtocols"] = o.UplinkEgestProtocols
 	}
-	if !isNil(o.GeoFencingLocatorTypes) {
+	if !IsNil(o.GeoFencingLocatorTypes) {
 		toSerialize["geoFencingLocatorTypes"] = o.GeoFencingLocatorTypes
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableContentProtocols) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

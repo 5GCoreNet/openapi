@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &PduACRequestInfo{}
 
 // PduACRequestInfo struct for PduACRequestInfo
 type PduACRequestInfo struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi string `json:"supi"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi   string     `json:"supi"`
 	AnType AccessType `json:"anType"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionId int32 `json:"pduSessionId"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionId     int32              `json:"pduSessionId"`
 	AcuOperationList []AcuOperationItem `json:"acuOperationList"`
-	AdditionalAnType *AccessType `json:"additionalAnType,omitempty"`
+	AdditionalAnType *AccessType        `json:"additionalAnType,omitempty"`
 }
 
 // NewPduACRequestInfo instantiates a new PduACRequestInfo object
@@ -147,7 +147,7 @@ func (o *PduACRequestInfo) SetAcuOperationList(v []AcuOperationItem) {
 
 // GetAdditionalAnType returns the AdditionalAnType field value if set, zero value otherwise.
 func (o *PduACRequestInfo) GetAdditionalAnType() AccessType {
-	if o == nil || isNil(o.AdditionalAnType) {
+	if o == nil || IsNil(o.AdditionalAnType) {
 		var ret AccessType
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *PduACRequestInfo) GetAdditionalAnType() AccessType {
 // GetAdditionalAnTypeOk returns a tuple with the AdditionalAnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduACRequestInfo) GetAdditionalAnTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AdditionalAnType) {
+	if o == nil || IsNil(o.AdditionalAnType) {
 		return nil, false
 	}
 	return o.AdditionalAnType, true
@@ -165,7 +165,7 @@ func (o *PduACRequestInfo) GetAdditionalAnTypeOk() (*AccessType, bool) {
 
 // HasAdditionalAnType returns a boolean if a field has been set.
 func (o *PduACRequestInfo) HasAdditionalAnType() bool {
-	if o != nil && !isNil(o.AdditionalAnType) {
+	if o != nil && !IsNil(o.AdditionalAnType) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *PduACRequestInfo) SetAdditionalAnType(v AccessType) {
 }
 
 func (o PduACRequestInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -191,7 +191,7 @@ func (o PduACRequestInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["anType"] = o.AnType
 	toSerialize["pduSessionId"] = o.PduSessionId
 	toSerialize["acuOperationList"] = o.AcuOperationList
-	if !isNil(o.AdditionalAnType) {
+	if !IsNil(o.AdditionalAnType) {
 		toSerialize["additionalAnType"] = o.AdditionalAnType
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullablePduACRequestInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

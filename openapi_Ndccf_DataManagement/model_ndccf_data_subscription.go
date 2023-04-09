@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -23,22 +23,22 @@ type NdccfDataSubscription struct {
 	// String providing an URI formatted according to RFC 3986.
 	DataNotifUri string `json:"dataNotifUri"`
 	// Notification correlation identifier.
-	DataNotifCorrId string `json:"dataNotifCorrId"`
-	FormatInstruct *FormattingInstruction `json:"formatInstruct,omitempty"`
+	DataNotifCorrId string                 `json:"dataNotifCorrId"`
+	FormatInstruct  *FormattingInstruction `json:"formatInstruct,omitempty"`
 	// Processing instructions to be used for sending event notifications.
 	ProcInstructs []ProcessingInstruction `json:"procInstructs,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	TargetNfId *string `json:"targetNfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	TargetNfSetId *string `json:"targetNfSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AdrfId *string `json:"adrfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	ArdfSetId *string `json:"ardfSetId,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	ArdfSetId  *string     `json:"ardfSetId,omitempty"`
 	TimePeriod *TimeWindow `json:"timePeriod,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
-	// The purposes of data collection. This attribute may only be provided if user consent  is required depending on local policy and regulations and the consumer has not checked user consent. 
+	// The purposes of data collection. This attribute may only be provided if user consent  is required depending on local policy and regulations and the consumer has not checked user consent.
 	DataCollectPurposes []DataCollectionPurpose `json:"dataCollectPurposes,omitempty"`
 	// Indication that the NF service consumer has already checked the user consent.
 	CheckedConsentInd *bool `json:"checkedConsentInd,omitempty"`
@@ -138,7 +138,7 @@ func (o *NdccfDataSubscription) SetDataNotifCorrId(v string) {
 
 // GetFormatInstruct returns the FormatInstruct field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetFormatInstruct() FormattingInstruction {
-	if o == nil || isNil(o.FormatInstruct) {
+	if o == nil || IsNil(o.FormatInstruct) {
 		var ret FormattingInstruction
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *NdccfDataSubscription) GetFormatInstruct() FormattingInstruction {
 // GetFormatInstructOk returns a tuple with the FormatInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetFormatInstructOk() (*FormattingInstruction, bool) {
-	if o == nil || isNil(o.FormatInstruct) {
+	if o == nil || IsNil(o.FormatInstruct) {
 		return nil, false
 	}
 	return o.FormatInstruct, true
@@ -156,7 +156,7 @@ func (o *NdccfDataSubscription) GetFormatInstructOk() (*FormattingInstruction, b
 
 // HasFormatInstruct returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasFormatInstruct() bool {
-	if o != nil && !isNil(o.FormatInstruct) {
+	if o != nil && !IsNil(o.FormatInstruct) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *NdccfDataSubscription) SetFormatInstruct(v FormattingInstruction) {
 
 // GetProcInstructs returns the ProcInstructs field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetProcInstructs() []ProcessingInstruction {
-	if o == nil || isNil(o.ProcInstructs) {
+	if o == nil || IsNil(o.ProcInstructs) {
 		var ret []ProcessingInstruction
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *NdccfDataSubscription) GetProcInstructs() []ProcessingInstruction {
 // GetProcInstructsOk returns a tuple with the ProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetProcInstructsOk() ([]ProcessingInstruction, bool) {
-	if o == nil || isNil(o.ProcInstructs) {
+	if o == nil || IsNil(o.ProcInstructs) {
 		return nil, false
 	}
 	return o.ProcInstructs, true
@@ -188,7 +188,7 @@ func (o *NdccfDataSubscription) GetProcInstructsOk() ([]ProcessingInstruction, b
 
 // HasProcInstructs returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasProcInstructs() bool {
-	if o != nil && !isNil(o.ProcInstructs) {
+	if o != nil && !IsNil(o.ProcInstructs) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *NdccfDataSubscription) SetProcInstructs(v []ProcessingInstruction) {
 
 // GetTargetNfId returns the TargetNfId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetTargetNfId() string {
-	if o == nil || isNil(o.TargetNfId) {
+	if o == nil || IsNil(o.TargetNfId) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *NdccfDataSubscription) GetTargetNfId() string {
 // GetTargetNfIdOk returns a tuple with the TargetNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetTargetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfId) {
+	if o == nil || IsNil(o.TargetNfId) {
 		return nil, false
 	}
 	return o.TargetNfId, true
@@ -220,7 +220,7 @@ func (o *NdccfDataSubscription) GetTargetNfIdOk() (*string, bool) {
 
 // HasTargetNfId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasTargetNfId() bool {
-	if o != nil && !isNil(o.TargetNfId) {
+	if o != nil && !IsNil(o.TargetNfId) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *NdccfDataSubscription) SetTargetNfId(v string) {
 
 // GetTargetNfSetId returns the TargetNfSetId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetTargetNfSetId() string {
-	if o == nil || isNil(o.TargetNfSetId) {
+	if o == nil || IsNil(o.TargetNfSetId) {
 		var ret string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *NdccfDataSubscription) GetTargetNfSetId() string {
 // GetTargetNfSetIdOk returns a tuple with the TargetNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetTargetNfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfSetId) {
+	if o == nil || IsNil(o.TargetNfSetId) {
 		return nil, false
 	}
 	return o.TargetNfSetId, true
@@ -252,7 +252,7 @@ func (o *NdccfDataSubscription) GetTargetNfSetIdOk() (*string, bool) {
 
 // HasTargetNfSetId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasTargetNfSetId() bool {
-	if o != nil && !isNil(o.TargetNfSetId) {
+	if o != nil && !IsNil(o.TargetNfSetId) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *NdccfDataSubscription) SetTargetNfSetId(v string) {
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetAdrfId() string {
-	if o == nil || isNil(o.AdrfId) {
+	if o == nil || IsNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *NdccfDataSubscription) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetAdrfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AdrfId) {
+	if o == nil || IsNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -284,7 +284,7 @@ func (o *NdccfDataSubscription) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasAdrfId() bool {
-	if o != nil && !isNil(o.AdrfId) {
+	if o != nil && !IsNil(o.AdrfId) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *NdccfDataSubscription) SetAdrfId(v string) {
 
 // GetArdfSetId returns the ArdfSetId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetArdfSetId() string {
-	if o == nil || isNil(o.ArdfSetId) {
+	if o == nil || IsNil(o.ArdfSetId) {
 		var ret string
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *NdccfDataSubscription) GetArdfSetId() string {
 // GetArdfSetIdOk returns a tuple with the ArdfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetArdfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.ArdfSetId) {
+	if o == nil || IsNil(o.ArdfSetId) {
 		return nil, false
 	}
 	return o.ArdfSetId, true
@@ -316,7 +316,7 @@ func (o *NdccfDataSubscription) GetArdfSetIdOk() (*string, bool) {
 
 // HasArdfSetId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasArdfSetId() bool {
-	if o != nil && !isNil(o.ArdfSetId) {
+	if o != nil && !IsNil(o.ArdfSetId) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *NdccfDataSubscription) SetArdfSetId(v string) {
 
 // GetTimePeriod returns the TimePeriod field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetTimePeriod() TimeWindow {
-	if o == nil || isNil(o.TimePeriod) {
+	if o == nil || IsNil(o.TimePeriod) {
 		var ret TimeWindow
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *NdccfDataSubscription) GetTimePeriod() TimeWindow {
 // GetTimePeriodOk returns a tuple with the TimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetTimePeriodOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.TimePeriod) {
+	if o == nil || IsNil(o.TimePeriod) {
 		return nil, false
 	}
 	return o.TimePeriod, true
@@ -348,7 +348,7 @@ func (o *NdccfDataSubscription) GetTimePeriodOk() (*TimeWindow, bool) {
 
 // HasTimePeriod returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasTimePeriod() bool {
-	if o != nil && !isNil(o.TimePeriod) {
+	if o != nil && !IsNil(o.TimePeriod) {
 		return true
 	}
 
@@ -362,7 +362,7 @@ func (o *NdccfDataSubscription) SetTimePeriod(v TimeWindow) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -372,7 +372,7 @@ func (o *NdccfDataSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -380,7 +380,7 @@ func (o *NdccfDataSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -394,7 +394,7 @@ func (o *NdccfDataSubscription) SetSuppFeat(v string) {
 
 // GetDataCollectPurposes returns the DataCollectPurposes field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetDataCollectPurposes() []DataCollectionPurpose {
-	if o == nil || isNil(o.DataCollectPurposes) {
+	if o == nil || IsNil(o.DataCollectPurposes) {
 		var ret []DataCollectionPurpose
 		return ret
 	}
@@ -404,7 +404,7 @@ func (o *NdccfDataSubscription) GetDataCollectPurposes() []DataCollectionPurpose
 // GetDataCollectPurposesOk returns a tuple with the DataCollectPurposes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetDataCollectPurposesOk() ([]DataCollectionPurpose, bool) {
-	if o == nil || isNil(o.DataCollectPurposes) {
+	if o == nil || IsNil(o.DataCollectPurposes) {
 		return nil, false
 	}
 	return o.DataCollectPurposes, true
@@ -412,7 +412,7 @@ func (o *NdccfDataSubscription) GetDataCollectPurposesOk() ([]DataCollectionPurp
 
 // HasDataCollectPurposes returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasDataCollectPurposes() bool {
-	if o != nil && !isNil(o.DataCollectPurposes) {
+	if o != nil && !IsNil(o.DataCollectPurposes) {
 		return true
 	}
 
@@ -426,7 +426,7 @@ func (o *NdccfDataSubscription) SetDataCollectPurposes(v []DataCollectionPurpose
 
 // GetCheckedConsentInd returns the CheckedConsentInd field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetCheckedConsentInd() bool {
-	if o == nil || isNil(o.CheckedConsentInd) {
+	if o == nil || IsNil(o.CheckedConsentInd) {
 		var ret bool
 		return ret
 	}
@@ -436,7 +436,7 @@ func (o *NdccfDataSubscription) GetCheckedConsentInd() bool {
 // GetCheckedConsentIndOk returns a tuple with the CheckedConsentInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetCheckedConsentIndOk() (*bool, bool) {
-	if o == nil || isNil(o.CheckedConsentInd) {
+	if o == nil || IsNil(o.CheckedConsentInd) {
 		return nil, false
 	}
 	return o.CheckedConsentInd, true
@@ -444,7 +444,7 @@ func (o *NdccfDataSubscription) GetCheckedConsentIndOk() (*bool, bool) {
 
 // HasCheckedConsentInd returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasCheckedConsentInd() bool {
-	if o != nil && !isNil(o.CheckedConsentInd) {
+	if o != nil && !IsNil(o.CheckedConsentInd) {
 		return true
 	}
 
@@ -457,7 +457,7 @@ func (o *NdccfDataSubscription) SetCheckedConsentInd(v bool) {
 }
 
 func (o NdccfDataSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -469,34 +469,34 @@ func (o NdccfDataSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["dataSub"] = o.DataSub
 	toSerialize["dataNotifUri"] = o.DataNotifUri
 	toSerialize["dataNotifCorrId"] = o.DataNotifCorrId
-	if !isNil(o.FormatInstruct) {
+	if !IsNil(o.FormatInstruct) {
 		toSerialize["formatInstruct"] = o.FormatInstruct
 	}
-	if !isNil(o.ProcInstructs) {
+	if !IsNil(o.ProcInstructs) {
 		toSerialize["procInstructs"] = o.ProcInstructs
 	}
-	if !isNil(o.TargetNfId) {
+	if !IsNil(o.TargetNfId) {
 		toSerialize["targetNfId"] = o.TargetNfId
 	}
-	if !isNil(o.TargetNfSetId) {
+	if !IsNil(o.TargetNfSetId) {
 		toSerialize["targetNfSetId"] = o.TargetNfSetId
 	}
-	if !isNil(o.AdrfId) {
+	if !IsNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !isNil(o.ArdfSetId) {
+	if !IsNil(o.ArdfSetId) {
 		toSerialize["ardfSetId"] = o.ArdfSetId
 	}
-	if !isNil(o.TimePeriod) {
+	if !IsNil(o.TimePeriod) {
 		toSerialize["timePeriod"] = o.TimePeriod
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.DataCollectPurposes) {
+	if !IsNil(o.DataCollectPurposes) {
 		toSerialize["dataCollectPurposes"] = o.DataCollectPurposes
 	}
-	if !isNil(o.CheckedConsentInd) {
+	if !IsNil(o.CheckedConsentInd) {
 		toSerialize["checkedConsentInd"] = o.CheckedConsentInd
 	}
 	return toSerialize, nil
@@ -537,5 +537,3 @@ func (v *NullableNdccfDataSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

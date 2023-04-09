@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// NrmEvent Possible values are: - UP_DELIVERY_MODE: User Plane delivery mode. 
+// NrmEvent Possible values are: - UP_DELIVERY_MODE: User Plane delivery mode.
 type NrmEvent struct {
-	NrmEventAnyOf *NrmEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NrmEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NrmEventAnyOf
-	err = json.Unmarshal(data, &dst.NrmEventAnyOf);
-	if err == nil {
-		jsonNrmEventAnyOf, _ := json.Marshal(dst.NrmEventAnyOf)
-		if string(jsonNrmEventAnyOf) == "{}" { // empty struct
-			dst.NrmEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.NrmEventAnyOf, return on the first match
-		}
-	} else {
-		dst.NrmEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NrmEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NrmEvent) MarshalJSON() ([]byte, error) {
-	if src.NrmEventAnyOf != nil {
-		return json.Marshal(&src.NrmEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNrmEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

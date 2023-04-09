@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,7 +17,7 @@ import (
 
 // ModifysubscriptionDataSubscription200Response - struct for ModifysubscriptionDataSubscription200Response
 type ModifysubscriptionDataSubscription200Response struct {
-	PatchResult *PatchResult
+	PatchResult                   *PatchResult
 	SubscriptionDataSubscriptions *SubscriptionDataSubscriptions
 }
 
@@ -34,7 +34,6 @@ func SubscriptionDataSubscriptionsAsModifysubscriptionDataSubscription200Respons
 		SubscriptionDataSubscriptions: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ModifysubscriptionDataSubscription200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ModifysubscriptionDataSubscription200Response) MarshalJSON() ([]byte, 
 }
 
 // Get the actual instance
-func (obj *ModifysubscriptionDataSubscription200Response) GetActualInstance() (interface{}) {
+func (obj *ModifysubscriptionDataSubscription200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableModifysubscriptionDataSubscription200Response) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

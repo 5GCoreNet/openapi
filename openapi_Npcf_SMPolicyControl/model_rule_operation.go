@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// RuleOperation Possible values are - CREATE_PCC_RULE: Indicates to create a new PCC rule to reserve the resource requested by  the UE.  - DELETE_PCC_RULE: Indicates to delete a PCC rule corresponding to reserve the resource  requested by the UE. - MODIFY_PCC_RULE_AND_ADD_PACKET_FILTERS: Indicates to modify the PCC rule by adding new  packet filter(s). - MODIFY_ PCC_RULE_AND_REPLACE_PACKET_FILTERS: Indicates to modify the PCC rule by replacing  the existing packet filter(s). - MODIFY_ PCC_RULE_AND_DELETE_PACKET_FILTERS: Indicates to modify the PCC rule by deleting  the existing packet filter(s). - MODIFY_PCC_RULE_WITHOUT_MODIFY_PACKET_FILTERS: Indicates to modify the PCC rule by  modifying the QoS of the PCC rule. 
+// RuleOperation Possible values are - CREATE_PCC_RULE: Indicates to create a new PCC rule to reserve the resource requested by  the UE.  - DELETE_PCC_RULE: Indicates to delete a PCC rule corresponding to reserve the resource  requested by the UE. - MODIFY_PCC_RULE_AND_ADD_PACKET_FILTERS: Indicates to modify the PCC rule by adding new  packet filter(s). - MODIFY_ PCC_RULE_AND_REPLACE_PACKET_FILTERS: Indicates to modify the PCC rule by replacing  the existing packet filter(s). - MODIFY_ PCC_RULE_AND_DELETE_PACKET_FILTERS: Indicates to modify the PCC rule by deleting  the existing packet filter(s). - MODIFY_PCC_RULE_WITHOUT_MODIFY_PACKET_FILTERS: Indicates to modify the PCC rule by  modifying the QoS of the PCC rule.
 type RuleOperation struct {
-	RuleOperationAnyOf *RuleOperationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RuleOperation) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RuleOperationAnyOf
-	err = json.Unmarshal(data, &dst.RuleOperationAnyOf);
-	if err == nil {
-		jsonRuleOperationAnyOf, _ := json.Marshal(dst.RuleOperationAnyOf)
-		if string(jsonRuleOperationAnyOf) == "{}" { // empty struct
-			dst.RuleOperationAnyOf = nil
-		} else {
-			return nil // data stored in dst.RuleOperationAnyOf, return on the first match
-		}
-	} else {
-		dst.RuleOperationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RuleOperation) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RuleOperation) MarshalJSON() ([]byte, error) {
-	if src.RuleOperationAnyOf != nil {
-		return json.Marshal(&src.RuleOperationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRuleOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

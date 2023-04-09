@@ -1,7 +1,7 @@
 /*
 Nipsmgw_SMService Service API
 
-IP-SM-GW SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+IP-SM-GW SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the SmsDeliveryData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SmsDeliveryData{}
 
-// SmsDeliveryData Information within response message invoking MtForwardSm service operation, for delivering MT SMS Delivery Report. 
+// SmsDeliveryData Information within response message invoking MtForwardSm service operation, for delivering MT SMS Delivery Report.
 type SmsDeliveryData struct {
 	SmsPayload RefToBinaryData `json:"smsPayload"`
 }
@@ -65,7 +65,7 @@ func (o *SmsDeliveryData) SetSmsPayload(v RefToBinaryData) {
 }
 
 func (o SmsDeliveryData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullableSmsDeliveryData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

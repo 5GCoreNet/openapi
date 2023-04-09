@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudm_UECM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMSFDeregistrationForNon3GPPAccessApiService SMSFDeregistrationForNon3GPPAccessApi service
 type SMSFDeregistrationForNon3GPPAccessApiService service
 
 type ApiNon3GppSmsfDeregistrationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SMSFDeregistrationForNon3GPPAccessApiService
-	ueId string
-	smsfSetId *string
-	ifMatch *string
+	ueId       string
+	smsfSetId  *string
+	ifMatch    *string
 }
 
 func (r ApiNon3GppSmsfDeregistrationRequest) SmsfSetId(smsfSetId string) ApiNon3GppSmsfDeregistrationRequest {
@@ -49,24 +48,24 @@ func (r ApiNon3GppSmsfDeregistrationRequest) Execute() (*http.Response, error) {
 /*
 Non3GppSmsfDeregistration delete SMSF registration for non 3GPP access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @return ApiNon3GppSmsfDeregistrationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@return ApiNon3GppSmsfDeregistrationRequest
 */
 func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration(ctx context.Context, ueId string) ApiNon3GppSmsfDeregistrationRequest {
 	return ApiNon3GppSmsfDeregistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistrationExecute(r ApiNon3GppSmsfDeregistrationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMSFDeregistrationForNon3GPPAccessApiService.Non3GppSmsfDeregistration")
@@ -82,7 +81,7 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 	localVarFormParams := url.Values{}
 
 	if r.smsfSetId != nil {
-		parameterAddToQuery(localVarQueryParams, "smsf-set-id", r.smsfSetId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "smsf-set-id", r.smsfSetId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -102,7 +101,7 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -114,9 +113,9 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -133,8 +132,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -144,8 +143,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -155,8 +154,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -166,8 +165,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -177,8 +176,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -188,8 +187,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -199,8 +198,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -210,8 +209,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -221,8 +220,8 @@ func (a *SMSFDeregistrationForNon3GPPAccessApiService) Non3GppSmsfDeregistration
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

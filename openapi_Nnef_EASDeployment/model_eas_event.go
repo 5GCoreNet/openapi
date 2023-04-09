@@ -1,7 +1,7 @@
 /*
 Nnef_EASDeployment
 
-NEF EAS Deployment service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF EAS Deployment service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// EasEvent Possible values are - EAS_INFO_CHG: Indicates that the EAS Deployment Information is changed. 
+// EasEvent Possible values are - EAS_INFO_CHG: Indicates that the EAS Deployment Information is changed.
 type EasEvent struct {
-	EasEventAnyOf *EasEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EasEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EasEventAnyOf
-	err = json.Unmarshal(data, &dst.EasEventAnyOf);
-	if err == nil {
-		jsonEasEventAnyOf, _ := json.Marshal(dst.EasEventAnyOf)
-		if string(jsonEasEventAnyOf) == "{}" { // empty struct
-			dst.EasEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.EasEventAnyOf, return on the first match
-		}
-	} else {
-		dst.EasEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EasEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EasEvent) MarshalJSON() ([]byte, error) {
-	if src.EasEventAnyOf != nil {
-		return json.Marshal(&src.EasEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEasEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

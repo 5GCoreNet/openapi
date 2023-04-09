@@ -1,7 +1,7 @@
 /*
 3gpp-5glan-pp
 
-API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 5G LAN Parameter Provision.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the Model5GLanParametersProvisionPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Model5GLanParametersProvisionPatch{}
 
-// Model5GLanParametersProvisionPatch Represents the 5G LAN parameters to request the modification of a subscription to provision parameters. 
+// Model5GLanParametersProvisionPatch Represents the 5G LAN parameters to request the modification of a subscription to provision parameters.
 type Model5GLanParametersProvisionPatch struct {
 	Var5gLanParamsPatch *Model5GLanParametersPatch `json:"5gLanParamsPatch,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewModel5GLanParametersProvisionPatchWithDefaults() *Model5GLanParametersPr
 
 // GetVar5gLanParamsPatch returns the Var5gLanParamsPatch field value if set, zero value otherwise.
 func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatch() Model5GLanParametersPatch {
-	if o == nil || isNil(o.Var5gLanParamsPatch) {
+	if o == nil || IsNil(o.Var5gLanParamsPatch) {
 		var ret Model5GLanParametersPatch
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatch() Model5GLan
 // GetVar5gLanParamsPatchOk returns a tuple with the Var5gLanParamsPatch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatchOk() (*Model5GLanParametersPatch, bool) {
-	if o == nil || isNil(o.Var5gLanParamsPatch) {
+	if o == nil || IsNil(o.Var5gLanParamsPatch) {
 		return nil, false
 	}
 	return o.Var5gLanParamsPatch, true
@@ -59,7 +59,7 @@ func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatchOk() (*Model5
 
 // HasVar5gLanParamsPatch returns a boolean if a field has been set.
 func (o *Model5GLanParametersProvisionPatch) HasVar5gLanParamsPatch() bool {
-	if o != nil && !isNil(o.Var5gLanParamsPatch) {
+	if o != nil && !IsNil(o.Var5gLanParamsPatch) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *Model5GLanParametersProvisionPatch) SetVar5gLanParamsPatch(v Model5GLan
 }
 
 func (o Model5GLanParametersProvisionPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o Model5GLanParametersProvisionPatch) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLanParametersProvisionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Var5gLanParamsPatch) {
+	if !IsNil(o.Var5gLanParamsPatch) {
 		toSerialize["5gLanParamsPatch"] = o.Var5gLanParamsPatch
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableModel5GLanParametersProvisionPatch) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

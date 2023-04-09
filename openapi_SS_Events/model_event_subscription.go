@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &EventSubscription{}
 // EventSubscription Represents the subscription to a single SEAL event.
 type EventSubscription struct {
 	EventId SEALEvent `json:"eventId"`
-	// Each element of the array represents the VAL group identifier(s) of a VAL service that the subscriber wants to know in the interested event. 
+	// Each element of the array represents the VAL group identifier(s) of a VAL service that the subscriber wants to know in the interested event.
 	ValGroups []VALGroupFilter `json:"valGroups,omitempty"`
-	// Each element of the array represents the VAL User / UE IDs of a VAL service that the event subscriber wants to know in the interested event. 
+	// Each element of the array represents the VAL User / UE IDs of a VAL service that the event subscriber wants to know in the interested event.
 	Identities []IdentityFilter `json:"identities,omitempty"`
-	// List of event monitoring details that the subscriber wishes to mmonitor the VAL UEs, VAL group and/or VAL service. 
+	// List of event monitoring details that the subscriber wishes to mmonitor the VAL UEs, VAL group and/or VAL service.
 	MonFltr []MonitorFilter `json:"monFltr,omitempty"`
-	// Represents the list of VAL User / UE IDs and the area of interest information which the subscriber wishes to monitor the location deviation of VAL User / UEs. 
+	// Represents the list of VAL User / UE IDs and the area of interest information which the subscriber wishes to monitor the location deviation of VAL User / UEs.
 	AreaInt []MonitorLocationInterestFilter `json:"areaInt,omitempty"`
-	// Each element represents the location area monitoring details to monitor the VA UEs moving in and out of the provided location area. 
+	// Each element represents the location area monitoring details to monitor the VA UEs moving in and out of the provided location area.
 	LocAreaMon []MonLocAreaInterestFltr `json:"locAreaMon,omitempty"`
 }
 
@@ -76,7 +76,7 @@ func (o *EventSubscription) SetEventId(v SEALEvent) {
 
 // GetValGroups returns the ValGroups field value if set, zero value otherwise.
 func (o *EventSubscription) GetValGroups() []VALGroupFilter {
-	if o == nil || isNil(o.ValGroups) {
+	if o == nil || IsNil(o.ValGroups) {
 		var ret []VALGroupFilter
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EventSubscription) GetValGroups() []VALGroupFilter {
 // GetValGroupsOk returns a tuple with the ValGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetValGroupsOk() ([]VALGroupFilter, bool) {
-	if o == nil || isNil(o.ValGroups) {
+	if o == nil || IsNil(o.ValGroups) {
 		return nil, false
 	}
 	return o.ValGroups, true
@@ -94,7 +94,7 @@ func (o *EventSubscription) GetValGroupsOk() ([]VALGroupFilter, bool) {
 
 // HasValGroups returns a boolean if a field has been set.
 func (o *EventSubscription) HasValGroups() bool {
-	if o != nil && !isNil(o.ValGroups) {
+	if o != nil && !IsNil(o.ValGroups) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EventSubscription) SetValGroups(v []VALGroupFilter) {
 
 // GetIdentities returns the Identities field value if set, zero value otherwise.
 func (o *EventSubscription) GetIdentities() []IdentityFilter {
-	if o == nil || isNil(o.Identities) {
+	if o == nil || IsNil(o.Identities) {
 		var ret []IdentityFilter
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EventSubscription) GetIdentities() []IdentityFilter {
 // GetIdentitiesOk returns a tuple with the Identities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetIdentitiesOk() ([]IdentityFilter, bool) {
-	if o == nil || isNil(o.Identities) {
+	if o == nil || IsNil(o.Identities) {
 		return nil, false
 	}
 	return o.Identities, true
@@ -126,7 +126,7 @@ func (o *EventSubscription) GetIdentitiesOk() ([]IdentityFilter, bool) {
 
 // HasIdentities returns a boolean if a field has been set.
 func (o *EventSubscription) HasIdentities() bool {
-	if o != nil && !isNil(o.Identities) {
+	if o != nil && !IsNil(o.Identities) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EventSubscription) SetIdentities(v []IdentityFilter) {
 
 // GetMonFltr returns the MonFltr field value if set, zero value otherwise.
 func (o *EventSubscription) GetMonFltr() []MonitorFilter {
-	if o == nil || isNil(o.MonFltr) {
+	if o == nil || IsNil(o.MonFltr) {
 		var ret []MonitorFilter
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EventSubscription) GetMonFltr() []MonitorFilter {
 // GetMonFltrOk returns a tuple with the MonFltr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetMonFltrOk() ([]MonitorFilter, bool) {
-	if o == nil || isNil(o.MonFltr) {
+	if o == nil || IsNil(o.MonFltr) {
 		return nil, false
 	}
 	return o.MonFltr, true
@@ -158,7 +158,7 @@ func (o *EventSubscription) GetMonFltrOk() ([]MonitorFilter, bool) {
 
 // HasMonFltr returns a boolean if a field has been set.
 func (o *EventSubscription) HasMonFltr() bool {
-	if o != nil && !isNil(o.MonFltr) {
+	if o != nil && !IsNil(o.MonFltr) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *EventSubscription) SetMonFltr(v []MonitorFilter) {
 
 // GetAreaInt returns the AreaInt field value if set, zero value otherwise.
 func (o *EventSubscription) GetAreaInt() []MonitorLocationInterestFilter {
-	if o == nil || isNil(o.AreaInt) {
+	if o == nil || IsNil(o.AreaInt) {
 		var ret []MonitorLocationInterestFilter
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *EventSubscription) GetAreaInt() []MonitorLocationInterestFilter {
 // GetAreaIntOk returns a tuple with the AreaInt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetAreaIntOk() ([]MonitorLocationInterestFilter, bool) {
-	if o == nil || isNil(o.AreaInt) {
+	if o == nil || IsNil(o.AreaInt) {
 		return nil, false
 	}
 	return o.AreaInt, true
@@ -190,7 +190,7 @@ func (o *EventSubscription) GetAreaIntOk() ([]MonitorLocationInterestFilter, boo
 
 // HasAreaInt returns a boolean if a field has been set.
 func (o *EventSubscription) HasAreaInt() bool {
-	if o != nil && !isNil(o.AreaInt) {
+	if o != nil && !IsNil(o.AreaInt) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *EventSubscription) SetAreaInt(v []MonitorLocationInterestFilter) {
 
 // GetLocAreaMon returns the LocAreaMon field value if set, zero value otherwise.
 func (o *EventSubscription) GetLocAreaMon() []MonLocAreaInterestFltr {
-	if o == nil || isNil(o.LocAreaMon) {
+	if o == nil || IsNil(o.LocAreaMon) {
 		var ret []MonLocAreaInterestFltr
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *EventSubscription) GetLocAreaMon() []MonLocAreaInterestFltr {
 // GetLocAreaMonOk returns a tuple with the LocAreaMon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetLocAreaMonOk() ([]MonLocAreaInterestFltr, bool) {
-	if o == nil || isNil(o.LocAreaMon) {
+	if o == nil || IsNil(o.LocAreaMon) {
 		return nil, false
 	}
 	return o.LocAreaMon, true
@@ -222,7 +222,7 @@ func (o *EventSubscription) GetLocAreaMonOk() ([]MonLocAreaInterestFltr, bool) {
 
 // HasLocAreaMon returns a boolean if a field has been set.
 func (o *EventSubscription) HasLocAreaMon() bool {
-	if o != nil && !isNil(o.LocAreaMon) {
+	if o != nil && !IsNil(o.LocAreaMon) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *EventSubscription) SetLocAreaMon(v []MonLocAreaInterestFltr) {
 }
 
 func (o EventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -245,19 +245,19 @@ func (o EventSubscription) MarshalJSON() ([]byte, error) {
 func (o EventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventId"] = o.EventId
-	if !isNil(o.ValGroups) {
+	if !IsNil(o.ValGroups) {
 		toSerialize["valGroups"] = o.ValGroups
 	}
-	if !isNil(o.Identities) {
+	if !IsNil(o.Identities) {
 		toSerialize["identities"] = o.Identities
 	}
-	if !isNil(o.MonFltr) {
+	if !IsNil(o.MonFltr) {
 		toSerialize["monFltr"] = o.MonFltr
 	}
-	if !isNil(o.AreaInt) {
+	if !IsNil(o.AreaInt) {
 		toSerialize["areaInt"] = o.AreaInt
 	}
-	if !isNil(o.LocAreaMon) {
+	if !IsNil(o.LocAreaMon) {
 		toSerialize["locAreaMon"] = o.LocAreaMon
 	}
 	return toSerialize, nil
@@ -298,5 +298,3 @@ func (v *NullableEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

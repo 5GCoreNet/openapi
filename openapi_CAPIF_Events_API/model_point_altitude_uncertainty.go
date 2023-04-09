@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,7 +22,7 @@ type PointAltitudeUncertainty struct {
 	GADShape
 	Point GeographicalCoordinates `json:"point"`
 	// Indicates value of altitude.
-	Altitude float64 `json:"altitude"`
+	Altitude           float64            `json:"altitude"`
 	UncertaintyEllipse UncertaintyEllipse `json:"uncertaintyEllipse"`
 	// Indicates value of uncertainty.
 	UncertaintyAltitude float32 `json:"uncertaintyAltitude"`
@@ -174,7 +174,7 @@ func (o *PointAltitudeUncertainty) SetConfidence(v int32) {
 }
 
 func (o PointAltitudeUncertainty) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -234,5 +234,3 @@ func (v *NullablePointAltitudeUncertainty) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

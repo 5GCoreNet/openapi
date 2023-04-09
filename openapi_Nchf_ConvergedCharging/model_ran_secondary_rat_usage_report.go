@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &RANSecondaryRATUsageReport{}
 
 // RANSecondaryRATUsageReport struct for RANSecondaryRATUsageReport
 type RANSecondaryRATUsageReport struct {
-	RANSecondaryRATType *RatType `json:"rANSecondaryRATType,omitempty"`
+	RANSecondaryRATType  *RatType              `json:"rANSecondaryRATType,omitempty"`
 	QosFlowsUsageReports []QosFlowsUsageReport `json:"qosFlowsUsageReports,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewRANSecondaryRATUsageReportWithDefaults() *RANSecondaryRATUsageReport {
 
 // GetRANSecondaryRATType returns the RANSecondaryRATType field value if set, zero value otherwise.
 func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATType() RatType {
-	if o == nil || isNil(o.RANSecondaryRATType) {
+	if o == nil || IsNil(o.RANSecondaryRATType) {
 		var ret RatType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATType() RatType {
 // GetRANSecondaryRATTypeOk returns a tuple with the RANSecondaryRATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RANSecondaryRATType) {
+	if o == nil || IsNil(o.RANSecondaryRATType) {
 		return nil, false
 	}
 	return o.RANSecondaryRATType, true
@@ -60,7 +60,7 @@ func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATTypeOk() (*RatType, bool)
 
 // HasRANSecondaryRATType returns a boolean if a field has been set.
 func (o *RANSecondaryRATUsageReport) HasRANSecondaryRATType() bool {
-	if o != nil && !isNil(o.RANSecondaryRATType) {
+	if o != nil && !IsNil(o.RANSecondaryRATType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RANSecondaryRATUsageReport) SetRANSecondaryRATType(v RatType) {
 
 // GetQosFlowsUsageReports returns the QosFlowsUsageReports field value if set, zero value otherwise.
 func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReports() []QosFlowsUsageReport {
-	if o == nil || isNil(o.QosFlowsUsageReports) {
+	if o == nil || IsNil(o.QosFlowsUsageReports) {
 		var ret []QosFlowsUsageReport
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReports() []QosFlowsUsageRe
 // GetQosFlowsUsageReportsOk returns a tuple with the QosFlowsUsageReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReportsOk() ([]QosFlowsUsageReport, bool) {
-	if o == nil || isNil(o.QosFlowsUsageReports) {
+	if o == nil || IsNil(o.QosFlowsUsageReports) {
 		return nil, false
 	}
 	return o.QosFlowsUsageReports, true
@@ -92,7 +92,7 @@ func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReportsOk() ([]QosFlowsUsag
 
 // HasQosFlowsUsageReports returns a boolean if a field has been set.
 func (o *RANSecondaryRATUsageReport) HasQosFlowsUsageReports() bool {
-	if o != nil && !isNil(o.QosFlowsUsageReports) {
+	if o != nil && !IsNil(o.QosFlowsUsageReports) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RANSecondaryRATUsageReport) SetQosFlowsUsageReports(v []QosFlowsUsageRe
 }
 
 func (o RANSecondaryRATUsageReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RANSecondaryRATUsageReport) MarshalJSON() ([]byte, error) {
 
 func (o RANSecondaryRATUsageReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RANSecondaryRATType) {
+	if !IsNil(o.RANSecondaryRATType) {
 		toSerialize["rANSecondaryRATType"] = o.RANSecondaryRATType
 	}
-	if !isNil(o.QosFlowsUsageReports) {
+	if !IsNil(o.QosFlowsUsageReports) {
 		toSerialize["qosFlowsUsageReports"] = o.QosFlowsUsageReports
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRANSecondaryRATUsageReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

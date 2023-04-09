@@ -41,7 +41,7 @@ func NewMnSOneOf1WithDefaults() *MnSOneOf1 {
 
 // GetManagedElement returns the ManagedElement field value if set, zero value otherwise.
 func (o *MnSOneOf1) GetManagedElement() []ManagedElementSingle {
-	if o == nil || isNil(o.ManagedElement) {
+	if o == nil || IsNil(o.ManagedElement) {
 		var ret []ManagedElementSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MnSOneOf1) GetManagedElement() []ManagedElementSingle {
 // GetManagedElementOk returns a tuple with the ManagedElement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MnSOneOf1) GetManagedElementOk() ([]ManagedElementSingle, bool) {
-	if o == nil || isNil(o.ManagedElement) {
+	if o == nil || IsNil(o.ManagedElement) {
 		return nil, false
 	}
 	return o.ManagedElement, true
@@ -59,7 +59,7 @@ func (o *MnSOneOf1) GetManagedElementOk() ([]ManagedElementSingle, bool) {
 
 // HasManagedElement returns a boolean if a field has been set.
 func (o *MnSOneOf1) HasManagedElement() bool {
-	if o != nil && !isNil(o.ManagedElement) {
+	if o != nil && !IsNil(o.ManagedElement) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MnSOneOf1) SetManagedElement(v []ManagedElementSingle) {
 }
 
 func (o MnSOneOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MnSOneOf1) MarshalJSON() ([]byte, error) {
 
 func (o MnSOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ManagedElement) {
+	if !IsNil(o.ManagedElement) {
 		toSerialize["ManagedElement"] = o.ManagedElement
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMnSOneOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

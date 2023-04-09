@@ -1,7 +1,7 @@
 /*
 Nsmf_EventExposure
 
-Session Management Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &PduSessionInformation{}
 
 // PduSessionInformation Represents the PDU session related information.
 type PduSessionInformation struct {
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessId *int32 `json:"pduSessId,omitempty"`
-	SessInfo *PduSessionInfo `json:"sessInfo,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessId *int32          `json:"pduSessId,omitempty"`
+	SessInfo  *PduSessionInfo `json:"sessInfo,omitempty"`
 }
 
 // NewPduSessionInformation instantiates a new PduSessionInformation object
@@ -43,7 +43,7 @@ func NewPduSessionInformationWithDefaults() *PduSessionInformation {
 
 // GetPduSessId returns the PduSessId field value if set, zero value otherwise.
 func (o *PduSessionInformation) GetPduSessId() int32 {
-	if o == nil || isNil(o.PduSessId) {
+	if o == nil || IsNil(o.PduSessId) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *PduSessionInformation) GetPduSessId() int32 {
 // GetPduSessIdOk returns a tuple with the PduSessId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionInformation) GetPduSessIdOk() (*int32, bool) {
-	if o == nil || isNil(o.PduSessId) {
+	if o == nil || IsNil(o.PduSessId) {
 		return nil, false
 	}
 	return o.PduSessId, true
@@ -61,7 +61,7 @@ func (o *PduSessionInformation) GetPduSessIdOk() (*int32, bool) {
 
 // HasPduSessId returns a boolean if a field has been set.
 func (o *PduSessionInformation) HasPduSessId() bool {
-	if o != nil && !isNil(o.PduSessId) {
+	if o != nil && !IsNil(o.PduSessId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *PduSessionInformation) SetPduSessId(v int32) {
 
 // GetSessInfo returns the SessInfo field value if set, zero value otherwise.
 func (o *PduSessionInformation) GetSessInfo() PduSessionInfo {
-	if o == nil || isNil(o.SessInfo) {
+	if o == nil || IsNil(o.SessInfo) {
 		var ret PduSessionInfo
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PduSessionInformation) GetSessInfo() PduSessionInfo {
 // GetSessInfoOk returns a tuple with the SessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionInformation) GetSessInfoOk() (*PduSessionInfo, bool) {
-	if o == nil || isNil(o.SessInfo) {
+	if o == nil || IsNil(o.SessInfo) {
 		return nil, false
 	}
 	return o.SessInfo, true
@@ -93,7 +93,7 @@ func (o *PduSessionInformation) GetSessInfoOk() (*PduSessionInfo, bool) {
 
 // HasSessInfo returns a boolean if a field has been set.
 func (o *PduSessionInformation) HasSessInfo() bool {
-	if o != nil && !isNil(o.SessInfo) {
+	if o != nil && !IsNil(o.SessInfo) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *PduSessionInformation) SetSessInfo(v PduSessionInfo) {
 }
 
 func (o PduSessionInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o PduSessionInformation) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PduSessId) {
+	if !IsNil(o.PduSessId) {
 		toSerialize["pduSessId"] = o.PduSessId
 	}
-	if !isNil(o.SessInfo) {
+	if !IsNil(o.SessInfo) {
 		toSerialize["sessInfo"] = o.SessInfo
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullablePduSessionInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

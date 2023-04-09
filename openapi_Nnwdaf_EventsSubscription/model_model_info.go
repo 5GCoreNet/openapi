@@ -1,7 +1,7 @@
 /*
 Nnwdaf_EventsSubscription
 
-Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_EventsSubscription Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &ModelInfo{}
 
 // ModelInfo Contains information about an ML model.
 type ModelInfo struct {
-	AnalyticsId NwdafEvent `json:"analyticsId"`
+	AnalyticsId  NwdafEvent    `json:"analyticsId"`
 	MlModelInfos []MLModelInfo `json:"mlModelInfos"`
 }
 
@@ -91,7 +91,7 @@ func (o *ModelInfo) SetMlModelInfos(v []MLModelInfo) {
 }
 
 func (o ModelInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableModelInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

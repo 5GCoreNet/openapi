@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -21,16 +21,16 @@ var _ MappedNullable = &PpDataEntry{}
 // PpDataEntry struct for PpDataEntry
 type PpDataEntry struct {
 	CommunicationCharacteristics NullableCommunicationCharacteristicsAF `json:"communicationCharacteristics,omitempty"`
-	ReferenceId *int32 `json:"referenceId,omitempty"`
+	ReferenceId                  *int32                                 `json:"referenceId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidityTime *time.Time `json:"validityTime,omitempty"`
 	// String uniquely identifying MTC provider information.
 	MtcProviderInformation *string `json:"mtcProviderInformation,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	EcsAddrConfigInfo NullableEcsAddrConfigInfo `json:"ecsAddrConfigInfo,omitempty"`
-	AdditionalEcsAddrConfigInfos []EcsAddrConfigInfo `json:"additionalEcsAddrConfigInfos,omitempty"`
-	EcRestriction NullableEcRestriction `json:"ecRestriction,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures            *string                   `json:"supportedFeatures,omitempty"`
+	EcsAddrConfigInfo            NullableEcsAddrConfigInfo `json:"ecsAddrConfigInfo,omitempty"`
+	AdditionalEcsAddrConfigInfos []EcsAddrConfigInfo       `json:"additionalEcsAddrConfigInfos,omitempty"`
+	EcRestriction                NullableEcRestriction     `json:"ecRestriction,omitempty"`
 }
 
 // NewPpDataEntry instantiates a new PpDataEntry object
@@ -52,7 +52,7 @@ func NewPpDataEntryWithDefaults() *PpDataEntry {
 
 // GetCommunicationCharacteristics returns the CommunicationCharacteristics field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpDataEntry) GetCommunicationCharacteristics() CommunicationCharacteristicsAF {
-	if o == nil || isNil(o.CommunicationCharacteristics.Get()) {
+	if o == nil || IsNil(o.CommunicationCharacteristics.Get()) {
 		var ret CommunicationCharacteristicsAF
 		return ret
 	}
@@ -82,6 +82,7 @@ func (o *PpDataEntry) HasCommunicationCharacteristics() bool {
 func (o *PpDataEntry) SetCommunicationCharacteristics(v CommunicationCharacteristicsAF) {
 	o.CommunicationCharacteristics.Set(&v)
 }
+
 // SetCommunicationCharacteristicsNil sets the value for CommunicationCharacteristics to be an explicit nil
 func (o *PpDataEntry) SetCommunicationCharacteristicsNil() {
 	o.CommunicationCharacteristics.Set(nil)
@@ -94,7 +95,7 @@ func (o *PpDataEntry) UnsetCommunicationCharacteristics() {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *PpDataEntry) GetReferenceId() int32 {
-	if o == nil || isNil(o.ReferenceId) {
+	if o == nil || IsNil(o.ReferenceId) {
 		var ret int32
 		return ret
 	}
@@ -104,7 +105,7 @@ func (o *PpDataEntry) GetReferenceId() int32 {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetReferenceIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ReferenceId) {
+	if o == nil || IsNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -112,7 +113,7 @@ func (o *PpDataEntry) GetReferenceIdOk() (*int32, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *PpDataEntry) HasReferenceId() bool {
-	if o != nil && !isNil(o.ReferenceId) {
+	if o != nil && !IsNil(o.ReferenceId) {
 		return true
 	}
 
@@ -126,7 +127,7 @@ func (o *PpDataEntry) SetReferenceId(v int32) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *PpDataEntry) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -136,7 +137,7 @@ func (o *PpDataEntry) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -144,7 +145,7 @@ func (o *PpDataEntry) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *PpDataEntry) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -158,7 +159,7 @@ func (o *PpDataEntry) SetValidityTime(v time.Time) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *PpDataEntry) GetMtcProviderInformation() string {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -168,7 +169,7 @@ func (o *PpDataEntry) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -176,7 +177,7 @@ func (o *PpDataEntry) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *PpDataEntry) HasMtcProviderInformation() bool {
-	if o != nil && !isNil(o.MtcProviderInformation) {
+	if o != nil && !IsNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -190,7 +191,7 @@ func (o *PpDataEntry) SetMtcProviderInformation(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PpDataEntry) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -200,7 +201,7 @@ func (o *PpDataEntry) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -208,7 +209,7 @@ func (o *PpDataEntry) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PpDataEntry) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -222,7 +223,7 @@ func (o *PpDataEntry) SetSupportedFeatures(v string) {
 
 // GetEcsAddrConfigInfo returns the EcsAddrConfigInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpDataEntry) GetEcsAddrConfigInfo() EcsAddrConfigInfo {
-	if o == nil || isNil(o.EcsAddrConfigInfo.Get()) {
+	if o == nil || IsNil(o.EcsAddrConfigInfo.Get()) {
 		var ret EcsAddrConfigInfo
 		return ret
 	}
@@ -252,6 +253,7 @@ func (o *PpDataEntry) HasEcsAddrConfigInfo() bool {
 func (o *PpDataEntry) SetEcsAddrConfigInfo(v EcsAddrConfigInfo) {
 	o.EcsAddrConfigInfo.Set(&v)
 }
+
 // SetEcsAddrConfigInfoNil sets the value for EcsAddrConfigInfo to be an explicit nil
 func (o *PpDataEntry) SetEcsAddrConfigInfoNil() {
 	o.EcsAddrConfigInfo.Set(nil)
@@ -264,7 +266,7 @@ func (o *PpDataEntry) UnsetEcsAddrConfigInfo() {
 
 // GetAdditionalEcsAddrConfigInfos returns the AdditionalEcsAddrConfigInfos field value if set, zero value otherwise.
 func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfos() []EcsAddrConfigInfo {
-	if o == nil || isNil(o.AdditionalEcsAddrConfigInfos) {
+	if o == nil || IsNil(o.AdditionalEcsAddrConfigInfos) {
 		var ret []EcsAddrConfigInfo
 		return ret
 	}
@@ -274,7 +276,7 @@ func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfos() []EcsAddrConfigInfo {
 // GetAdditionalEcsAddrConfigInfosOk returns a tuple with the AdditionalEcsAddrConfigInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfosOk() ([]EcsAddrConfigInfo, bool) {
-	if o == nil || isNil(o.AdditionalEcsAddrConfigInfos) {
+	if o == nil || IsNil(o.AdditionalEcsAddrConfigInfos) {
 		return nil, false
 	}
 	return o.AdditionalEcsAddrConfigInfos, true
@@ -282,7 +284,7 @@ func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfosOk() ([]EcsAddrConfigInfo, 
 
 // HasAdditionalEcsAddrConfigInfos returns a boolean if a field has been set.
 func (o *PpDataEntry) HasAdditionalEcsAddrConfigInfos() bool {
-	if o != nil && !isNil(o.AdditionalEcsAddrConfigInfos) {
+	if o != nil && !IsNil(o.AdditionalEcsAddrConfigInfos) {
 		return true
 	}
 
@@ -296,7 +298,7 @@ func (o *PpDataEntry) SetAdditionalEcsAddrConfigInfos(v []EcsAddrConfigInfo) {
 
 // GetEcRestriction returns the EcRestriction field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpDataEntry) GetEcRestriction() EcRestriction {
-	if o == nil || isNil(o.EcRestriction.Get()) {
+	if o == nil || IsNil(o.EcRestriction.Get()) {
 		var ret EcRestriction
 		return ret
 	}
@@ -326,6 +328,7 @@ func (o *PpDataEntry) HasEcRestriction() bool {
 func (o *PpDataEntry) SetEcRestriction(v EcRestriction) {
 	o.EcRestriction.Set(&v)
 }
+
 // SetEcRestrictionNil sets the value for EcRestriction to be an explicit nil
 func (o *PpDataEntry) SetEcRestrictionNil() {
 	o.EcRestriction.Set(nil)
@@ -337,7 +340,7 @@ func (o *PpDataEntry) UnsetEcRestriction() {
 }
 
 func (o PpDataEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -349,22 +352,22 @@ func (o PpDataEntry) ToMap() (map[string]interface{}, error) {
 	if o.CommunicationCharacteristics.IsSet() {
 		toSerialize["communicationCharacteristics"] = o.CommunicationCharacteristics.Get()
 	}
-	if !isNil(o.ReferenceId) {
+	if !IsNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !isNil(o.MtcProviderInformation) {
+	if !IsNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	if o.EcsAddrConfigInfo.IsSet() {
 		toSerialize["ecsAddrConfigInfo"] = o.EcsAddrConfigInfo.Get()
 	}
-	if !isNil(o.AdditionalEcsAddrConfigInfos) {
+	if !IsNil(o.AdditionalEcsAddrConfigInfos) {
 		toSerialize["additionalEcsAddrConfigInfos"] = o.AdditionalEcsAddrConfigInfos
 	}
 	if o.EcRestriction.IsSet() {
@@ -408,5 +411,3 @@ func (v *NullablePpDataEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

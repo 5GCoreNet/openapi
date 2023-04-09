@@ -1,7 +1,7 @@
 /*
 Nnef_Authentication
 
-NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &AuthNotification{}
 
 // AuthNotification UAV related notification
 type AuthNotification struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi string `json:"gpsi"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi           string `json:"gpsi"`
 	ServiceLevelId string `json:"serviceLevelId"`
-	NotifyCorrId string `json:"notifyCorrId"`
+	NotifyCorrId   string `json:"notifyCorrId"`
 	// Deprecated
-	AuthMsg *UAVAuthInfoAuthMsg `json:"authMsg,omitempty"`
-	AuthContainer []AuthContainer `json:"authContainer,omitempty"`
-	NotifType NotifType `json:"notifType"`
+	AuthMsg       *UAVAuthInfoAuthMsg `json:"authMsg,omitempty"`
+	AuthContainer []AuthContainer     `json:"authContainer,omitempty"`
+	NotifType     NotifType           `json:"notifType"`
 }
 
 // NewAuthNotification instantiates a new AuthNotification object
@@ -125,7 +125,7 @@ func (o *AuthNotification) SetNotifyCorrId(v string) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *AuthNotification) GetAuthMsg() UAVAuthInfoAuthMsg {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		var ret UAVAuthInfoAuthMsg
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *AuthNotification) GetAuthMsg() UAVAuthInfoAuthMsg {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *AuthNotification) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
-	if o == nil || isNil(o.AuthMsg) {
+	if o == nil || IsNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -144,7 +144,7 @@ func (o *AuthNotification) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *AuthNotification) HasAuthMsg() bool {
-	if o != nil && !isNil(o.AuthMsg) {
+	if o != nil && !IsNil(o.AuthMsg) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *AuthNotification) SetAuthMsg(v UAVAuthInfoAuthMsg) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *AuthNotification) GetAuthContainer() []AuthContainer {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *AuthNotification) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthNotification) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || isNil(o.AuthContainer) {
+	if o == nil || IsNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -177,7 +177,7 @@ func (o *AuthNotification) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *AuthNotification) HasAuthContainer() bool {
-	if o != nil && !isNil(o.AuthContainer) {
+	if o != nil && !IsNil(o.AuthContainer) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *AuthNotification) SetNotifType(v NotifType) {
 }
 
 func (o AuthNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -226,10 +226,10 @@ func (o AuthNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["serviceLevelId"] = o.ServiceLevelId
 	toSerialize["notifyCorrId"] = o.NotifyCorrId
-	if !isNil(o.AuthMsg) {
+	if !IsNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !isNil(o.AuthContainer) {
+	if !IsNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
 	toSerialize["notifType"] = o.NotifType
@@ -271,5 +271,3 @@ func (v *NullableAuthNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

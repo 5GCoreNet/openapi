@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // CoreNetworkType It contains the Core Network type 5GC or EPC.
 type CoreNetworkType struct {
-	CoreNetworkTypeAnyOf *CoreNetworkTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CoreNetworkType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into CoreNetworkTypeAnyOf
-	err = json.Unmarshal(data, &dst.CoreNetworkTypeAnyOf);
-	if err == nil {
-		jsonCoreNetworkTypeAnyOf, _ := json.Marshal(dst.CoreNetworkTypeAnyOf)
-		if string(jsonCoreNetworkTypeAnyOf) == "{}" { // empty struct
-			dst.CoreNetworkTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.CoreNetworkTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.CoreNetworkTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *CoreNetworkType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CoreNetworkType) MarshalJSON() ([]byte, error) {
-	if src.CoreNetworkTypeAnyOf != nil {
-		return json.Marshal(&src.CoreNetworkTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableCoreNetworkType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

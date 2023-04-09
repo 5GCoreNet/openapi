@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &UnrelatedClass{}
 
 // UnrelatedClass struct for UnrelatedClass
 type UnrelatedClass struct {
-	DefaultUnrelatedClass DefaultUnrelatedClass `json:"defaultUnrelatedClass"`
-	ExternalUnrelatedClass *ExternalUnrelatedClass `json:"externalUnrelatedClass,omitempty"`
+	DefaultUnrelatedClass       DefaultUnrelatedClass       `json:"defaultUnrelatedClass"`
+	ExternalUnrelatedClass      *ExternalUnrelatedClass     `json:"externalUnrelatedClass,omitempty"`
 	ServiceTypeUnrelatedClasses []ServiceTypeUnrelatedClass `json:"serviceTypeUnrelatedClasses,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *UnrelatedClass) SetDefaultUnrelatedClass(v DefaultUnrelatedClass) {
 
 // GetExternalUnrelatedClass returns the ExternalUnrelatedClass field value if set, zero value otherwise.
 func (o *UnrelatedClass) GetExternalUnrelatedClass() ExternalUnrelatedClass {
-	if o == nil || isNil(o.ExternalUnrelatedClass) {
+	if o == nil || IsNil(o.ExternalUnrelatedClass) {
 		var ret ExternalUnrelatedClass
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UnrelatedClass) GetExternalUnrelatedClass() ExternalUnrelatedClass {
 // GetExternalUnrelatedClassOk returns a tuple with the ExternalUnrelatedClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnrelatedClass) GetExternalUnrelatedClassOk() (*ExternalUnrelatedClass, bool) {
-	if o == nil || isNil(o.ExternalUnrelatedClass) {
+	if o == nil || IsNil(o.ExternalUnrelatedClass) {
 		return nil, false
 	}
 	return o.ExternalUnrelatedClass, true
@@ -86,7 +86,7 @@ func (o *UnrelatedClass) GetExternalUnrelatedClassOk() (*ExternalUnrelatedClass,
 
 // HasExternalUnrelatedClass returns a boolean if a field has been set.
 func (o *UnrelatedClass) HasExternalUnrelatedClass() bool {
-	if o != nil && !isNil(o.ExternalUnrelatedClass) {
+	if o != nil && !IsNil(o.ExternalUnrelatedClass) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *UnrelatedClass) SetExternalUnrelatedClass(v ExternalUnrelatedClass) {
 
 // GetServiceTypeUnrelatedClasses returns the ServiceTypeUnrelatedClasses field value if set, zero value otherwise.
 func (o *UnrelatedClass) GetServiceTypeUnrelatedClasses() []ServiceTypeUnrelatedClass {
-	if o == nil || isNil(o.ServiceTypeUnrelatedClasses) {
+	if o == nil || IsNil(o.ServiceTypeUnrelatedClasses) {
 		var ret []ServiceTypeUnrelatedClass
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *UnrelatedClass) GetServiceTypeUnrelatedClasses() []ServiceTypeUnrelated
 // GetServiceTypeUnrelatedClassesOk returns a tuple with the ServiceTypeUnrelatedClasses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnrelatedClass) GetServiceTypeUnrelatedClassesOk() ([]ServiceTypeUnrelatedClass, bool) {
-	if o == nil || isNil(o.ServiceTypeUnrelatedClasses) {
+	if o == nil || IsNil(o.ServiceTypeUnrelatedClasses) {
 		return nil, false
 	}
 	return o.ServiceTypeUnrelatedClasses, true
@@ -118,7 +118,7 @@ func (o *UnrelatedClass) GetServiceTypeUnrelatedClassesOk() ([]ServiceTypeUnrela
 
 // HasServiceTypeUnrelatedClasses returns a boolean if a field has been set.
 func (o *UnrelatedClass) HasServiceTypeUnrelatedClasses() bool {
-	if o != nil && !isNil(o.ServiceTypeUnrelatedClasses) {
+	if o != nil && !IsNil(o.ServiceTypeUnrelatedClasses) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *UnrelatedClass) SetServiceTypeUnrelatedClasses(v []ServiceTypeUnrelated
 }
 
 func (o UnrelatedClass) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o UnrelatedClass) MarshalJSON() ([]byte, error) {
 func (o UnrelatedClass) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["defaultUnrelatedClass"] = o.DefaultUnrelatedClass
-	if !isNil(o.ExternalUnrelatedClass) {
+	if !IsNil(o.ExternalUnrelatedClass) {
 		toSerialize["externalUnrelatedClass"] = o.ExternalUnrelatedClass
 	}
-	if !isNil(o.ServiceTypeUnrelatedClasses) {
+	if !IsNil(o.ServiceTypeUnrelatedClasses) {
 		toSerialize["serviceTypeUnrelatedClasses"] = o.ServiceTypeUnrelatedClasses
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableUnrelatedClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

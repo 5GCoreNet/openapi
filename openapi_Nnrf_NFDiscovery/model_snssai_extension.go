@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,11 +17,11 @@ import (
 // checks if the SnssaiExtension type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SnssaiExtension{}
 
-// SnssaiExtension Extensions to the Snssai data type, sdRanges and wildcardSd shall not be present simultaneously 
+// SnssaiExtension Extensions to the Snssai data type, sdRanges and wildcardSd shall not be present simultaneously
 type SnssaiExtension struct {
-	// When present, it shall contain the range(s) of Slice Differentiator values supported for the Slice/Service Type value indicated in the sst attribute of the Snssai data type 
+	// When present, it shall contain the range(s) of Slice Differentiator values supported for the Slice/Service Type value indicated in the sst attribute of the Snssai data type
 	SdRanges []SdRange `json:"sdRanges,omitempty"`
-	// When present, it shall be set to true, to indicate that all SD values are supported for the Slice/Service Type value indicated in the sst attribute of the Snssai data type. 
+	// When present, it shall be set to true, to indicate that all SD values are supported for the Slice/Service Type value indicated in the sst attribute of the Snssai data type.
 	WildcardSd *bool `json:"wildcardSd,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewSnssaiExtensionWithDefaults() *SnssaiExtension {
 
 // GetSdRanges returns the SdRanges field value if set, zero value otherwise.
 func (o *SnssaiExtension) GetSdRanges() []SdRange {
-	if o == nil || isNil(o.SdRanges) {
+	if o == nil || IsNil(o.SdRanges) {
 		var ret []SdRange
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SnssaiExtension) GetSdRanges() []SdRange {
 // GetSdRangesOk returns a tuple with the SdRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiExtension) GetSdRangesOk() ([]SdRange, bool) {
-	if o == nil || isNil(o.SdRanges) {
+	if o == nil || IsNil(o.SdRanges) {
 		return nil, false
 	}
 	return o.SdRanges, true
@@ -62,7 +62,7 @@ func (o *SnssaiExtension) GetSdRangesOk() ([]SdRange, bool) {
 
 // HasSdRanges returns a boolean if a field has been set.
 func (o *SnssaiExtension) HasSdRanges() bool {
-	if o != nil && !isNil(o.SdRanges) {
+	if o != nil && !IsNil(o.SdRanges) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SnssaiExtension) SetSdRanges(v []SdRange) {
 
 // GetWildcardSd returns the WildcardSd field value if set, zero value otherwise.
 func (o *SnssaiExtension) GetWildcardSd() bool {
-	if o == nil || isNil(o.WildcardSd) {
+	if o == nil || IsNil(o.WildcardSd) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SnssaiExtension) GetWildcardSd() bool {
 // GetWildcardSdOk returns a tuple with the WildcardSd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiExtension) GetWildcardSdOk() (*bool, bool) {
-	if o == nil || isNil(o.WildcardSd) {
+	if o == nil || IsNil(o.WildcardSd) {
 		return nil, false
 	}
 	return o.WildcardSd, true
@@ -94,7 +94,7 @@ func (o *SnssaiExtension) GetWildcardSdOk() (*bool, bool) {
 
 // HasWildcardSd returns a boolean if a field has been set.
 func (o *SnssaiExtension) HasWildcardSd() bool {
-	if o != nil && !isNil(o.WildcardSd) {
+	if o != nil && !IsNil(o.WildcardSd) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SnssaiExtension) SetWildcardSd(v bool) {
 }
 
 func (o SnssaiExtension) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o SnssaiExtension) MarshalJSON() ([]byte, error) {
 
 func (o SnssaiExtension) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SdRanges) {
+	if !IsNil(o.SdRanges) {
 		toSerialize["sdRanges"] = o.SdRanges
 	}
-	if !isNil(o.WildcardSd) {
+	if !IsNil(o.WildcardSd) {
 		toSerialize["wildcardSd"] = o.WildcardSd
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableSnssaiExtension) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

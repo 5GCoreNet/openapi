@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -43,7 +43,7 @@ func NewValidityConditionsWithDefaults() *ValidityConditions {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *ValidityConditions) GetLocArea() LocationArea5G {
-	if o == nil || isNil(o.LocArea) {
+	if o == nil || IsNil(o.LocArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ValidityConditions) GetLocArea() LocationArea5G {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidityConditions) GetLocAreaOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.LocArea) {
+	if o == nil || IsNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -61,7 +61,7 @@ func (o *ValidityConditions) GetLocAreaOk() (*LocationArea5G, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *ValidityConditions) HasLocArea() bool {
-	if o != nil && !isNil(o.LocArea) {
+	if o != nil && !IsNil(o.LocArea) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ValidityConditions) SetLocArea(v LocationArea5G) {
 
 // GetTmWdws returns the TmWdws field value if set, zero value otherwise.
 func (o *ValidityConditions) GetTmWdws() []TimeWindow {
-	if o == nil || isNil(o.TmWdws) {
+	if o == nil || IsNil(o.TmWdws) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ValidityConditions) GetTmWdws() []TimeWindow {
 // GetTmWdwsOk returns a tuple with the TmWdws field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidityConditions) GetTmWdwsOk() ([]TimeWindow, bool) {
-	if o == nil || isNil(o.TmWdws) {
+	if o == nil || IsNil(o.TmWdws) {
 		return nil, false
 	}
 	return o.TmWdws, true
@@ -93,7 +93,7 @@ func (o *ValidityConditions) GetTmWdwsOk() ([]TimeWindow, bool) {
 
 // HasTmWdws returns a boolean if a field has been set.
 func (o *ValidityConditions) HasTmWdws() bool {
-	if o != nil && !isNil(o.TmWdws) {
+	if o != nil && !IsNil(o.TmWdws) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *ValidityConditions) SetTmWdws(v []TimeWindow) {
 }
 
 func (o ValidityConditions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o ValidityConditions) MarshalJSON() ([]byte, error) {
 
 func (o ValidityConditions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LocArea) {
+	if !IsNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !isNil(o.TmWdws) {
+	if !IsNil(o.TmWdws) {
 		toSerialize["tmWdws"] = o.TmWdws
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableValidityConditions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

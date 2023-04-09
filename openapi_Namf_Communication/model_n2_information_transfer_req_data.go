@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &N2InformationTransferReqData{}
 
 // N2InformationTransferReqData Data within a N2 Information Transfer request containing the N2 information requested to be transferred to 5G AN
 type N2InformationTransferReqData struct {
-	TaiList []Tai `json:"taiList,omitempty"`
-	RatSelector *RatSelector `json:"ratSelector,omitempty"`
+	TaiList           []Tai             `json:"taiList,omitempty"`
+	RatSelector       *RatSelector      `json:"ratSelector,omitempty"`
 	GlobalRanNodeList []GlobalRanNodeId `json:"globalRanNodeList,omitempty"`
-	N2Information N2InfoContainer `json:"n2Information"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	N2Information     N2InfoContainer   `json:"n2Information"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -47,7 +47,7 @@ func NewN2InformationTransferReqDataWithDefaults() *N2InformationTransferReqData
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetTaiList() []Tai {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *N2InformationTransferReqData) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TaiList) {
+	if o == nil || IsNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -65,7 +65,7 @@ func (o *N2InformationTransferReqData) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasTaiList() bool {
-	if o != nil && !isNil(o.TaiList) {
+	if o != nil && !IsNil(o.TaiList) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *N2InformationTransferReqData) SetTaiList(v []Tai) {
 
 // GetRatSelector returns the RatSelector field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetRatSelector() RatSelector {
-	if o == nil || isNil(o.RatSelector) {
+	if o == nil || IsNil(o.RatSelector) {
 		var ret RatSelector
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *N2InformationTransferReqData) GetRatSelector() RatSelector {
 // GetRatSelectorOk returns a tuple with the RatSelector field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetRatSelectorOk() (*RatSelector, bool) {
-	if o == nil || isNil(o.RatSelector) {
+	if o == nil || IsNil(o.RatSelector) {
 		return nil, false
 	}
 	return o.RatSelector, true
@@ -97,7 +97,7 @@ func (o *N2InformationTransferReqData) GetRatSelectorOk() (*RatSelector, bool) {
 
 // HasRatSelector returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasRatSelector() bool {
-	if o != nil && !isNil(o.RatSelector) {
+	if o != nil && !IsNil(o.RatSelector) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *N2InformationTransferReqData) SetRatSelector(v RatSelector) {
 
 // GetGlobalRanNodeList returns the GlobalRanNodeList field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetGlobalRanNodeList() []GlobalRanNodeId {
-	if o == nil || isNil(o.GlobalRanNodeList) {
+	if o == nil || IsNil(o.GlobalRanNodeList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *N2InformationTransferReqData) GetGlobalRanNodeList() []GlobalRanNodeId 
 // GetGlobalRanNodeListOk returns a tuple with the GlobalRanNodeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetGlobalRanNodeListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.GlobalRanNodeList) {
+	if o == nil || IsNil(o.GlobalRanNodeList) {
 		return nil, false
 	}
 	return o.GlobalRanNodeList, true
@@ -129,7 +129,7 @@ func (o *N2InformationTransferReqData) GetGlobalRanNodeListOk() ([]GlobalRanNode
 
 // HasGlobalRanNodeList returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasGlobalRanNodeList() bool {
-	if o != nil && !isNil(o.GlobalRanNodeList) {
+	if o != nil && !IsNil(o.GlobalRanNodeList) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *N2InformationTransferReqData) SetN2Information(v N2InfoContainer) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *N2InformationTransferReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -185,7 +185,7 @@ func (o *N2InformationTransferReqData) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *N2InformationTransferReqData) SetSupportedFeatures(v string) {
 }
 
 func (o N2InformationTransferReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,17 +207,17 @@ func (o N2InformationTransferReqData) MarshalJSON() ([]byte, error) {
 
 func (o N2InformationTransferReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TaiList) {
+	if !IsNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !isNil(o.RatSelector) {
+	if !IsNil(o.RatSelector) {
 		toSerialize["ratSelector"] = o.RatSelector
 	}
-	if !isNil(o.GlobalRanNodeList) {
+	if !IsNil(o.GlobalRanNodeList) {
 		toSerialize["globalRanNodeList"] = o.GlobalRanNodeList
 	}
 	toSerialize["n2Information"] = o.N2Information
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableN2InformationTransferReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

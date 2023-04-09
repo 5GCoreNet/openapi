@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,16 +17,16 @@ import (
 // checks if the RouteSelectionParameterSet type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RouteSelectionParameterSet{}
 
-// RouteSelectionParameterSet Contains parameters that can be used to guide the Route Selection Descriptors of the URSP. 
+// RouteSelectionParameterSet Contains parameters that can be used to guide the Route Selection Descriptors of the URSP.
 type RouteSelectionParameterSet struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Precedence *int32 `json:"precedence,omitempty"`
-	// Indicates where the route selection parameters apply. It may correspond to a geographical area, for example using a geographic shape that is known to the AF and is configured by the operator to correspond to a list of or TAIs. 
+	// Indicates where the route selection parameters apply. It may correspond to a geographical area, for example using a geographic shape that is known to the AF and is configured by the operator to correspond to a list of or TAIs.
 	SpatialValidityAreas []GeographicalArea `json:"spatialValidityAreas,omitempty"`
-	// Indicates the TAIs in which the route selection parameters apply. This attribute is  applicable only within the 5GC and it shall not be included in the request messages of  untrusted AFs for URSP guidance. 
+	// Indicates the TAIs in which the route selection parameters apply. This attribute is  applicable only within the 5GC and it shall not be included in the request messages of  untrusted AFs for URSP guidance.
 	SpatialValidityTais []Tai `json:"spatialValidityTais,omitempty"`
 }
 
@@ -49,7 +49,7 @@ func NewRouteSelectionParameterSetWithDefaults() *RouteSelectionParameterSet {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *RouteSelectionParameterSet) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -67,7 +67,7 @@ func (o *RouteSelectionParameterSet) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *RouteSelectionParameterSet) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *RouteSelectionParameterSet) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -99,7 +99,7 @@ func (o *RouteSelectionParameterSet) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *RouteSelectionParameterSet) SetSnssai(v Snssai) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetPrecedence() int32 {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *RouteSelectionParameterSet) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Precedence) {
+	if o == nil || IsNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -131,7 +131,7 @@ func (o *RouteSelectionParameterSet) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasPrecedence() bool {
-	if o != nil && !isNil(o.Precedence) {
+	if o != nil && !IsNil(o.Precedence) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *RouteSelectionParameterSet) SetPrecedence(v int32) {
 
 // GetSpatialValidityAreas returns the SpatialValidityAreas field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetSpatialValidityAreas() []GeographicalArea {
-	if o == nil || isNil(o.SpatialValidityAreas) {
+	if o == nil || IsNil(o.SpatialValidityAreas) {
 		var ret []GeographicalArea
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityAreas() []GeographicalAre
 // GetSpatialValidityAreasOk returns a tuple with the SpatialValidityAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetSpatialValidityAreasOk() ([]GeographicalArea, bool) {
-	if o == nil || isNil(o.SpatialValidityAreas) {
+	if o == nil || IsNil(o.SpatialValidityAreas) {
 		return nil, false
 	}
 	return o.SpatialValidityAreas, true
@@ -163,7 +163,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityAreasOk() ([]Geographical
 
 // HasSpatialValidityAreas returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasSpatialValidityAreas() bool {
-	if o != nil && !isNil(o.SpatialValidityAreas) {
+	if o != nil && !IsNil(o.SpatialValidityAreas) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *RouteSelectionParameterSet) SetSpatialValidityAreas(v []GeographicalAre
 
 // GetSpatialValidityTais returns the SpatialValidityTais field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetSpatialValidityTais() []Tai {
-	if o == nil || isNil(o.SpatialValidityTais) {
+	if o == nil || IsNil(o.SpatialValidityTais) {
 		var ret []Tai
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityTais() []Tai {
 // GetSpatialValidityTaisOk returns a tuple with the SpatialValidityTais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetSpatialValidityTaisOk() ([]Tai, bool) {
-	if o == nil || isNil(o.SpatialValidityTais) {
+	if o == nil || IsNil(o.SpatialValidityTais) {
 		return nil, false
 	}
 	return o.SpatialValidityTais, true
@@ -195,7 +195,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityTaisOk() ([]Tai, bool) {
 
 // HasSpatialValidityTais returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasSpatialValidityTais() bool {
-	if o != nil && !isNil(o.SpatialValidityTais) {
+	if o != nil && !IsNil(o.SpatialValidityTais) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *RouteSelectionParameterSet) SetSpatialValidityTais(v []Tai) {
 }
 
 func (o RouteSelectionParameterSet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,19 +217,19 @@ func (o RouteSelectionParameterSet) MarshalJSON() ([]byte, error) {
 
 func (o RouteSelectionParameterSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.Precedence) {
+	if !IsNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
-	if !isNil(o.SpatialValidityAreas) {
+	if !IsNil(o.SpatialValidityAreas) {
 		toSerialize["spatialValidityAreas"] = o.SpatialValidityAreas
 	}
-	if !isNil(o.SpatialValidityTais) {
+	if !IsNil(o.SpatialValidityTais) {
 		toSerialize["spatialValidityTais"] = o.SpatialValidityTais
 	}
 	return toSerialize, nil
@@ -270,5 +270,3 @@ func (v *NullableRouteSelectionParameterSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

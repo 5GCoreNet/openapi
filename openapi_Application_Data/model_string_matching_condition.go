@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &StringMatchingCondition{}
 
 // StringMatchingCondition A String with Matching Operator
 type StringMatchingCondition struct {
-	MatchingString *string `json:"matchingString,omitempty"`
+	MatchingString   *string          `json:"matchingString,omitempty"`
 	MatchingOperator MatchingOperator `json:"matchingOperator"`
 }
 
@@ -43,7 +43,7 @@ func NewStringMatchingConditionWithDefaults() *StringMatchingCondition {
 
 // GetMatchingString returns the MatchingString field value if set, zero value otherwise.
 func (o *StringMatchingCondition) GetMatchingString() string {
-	if o == nil || isNil(o.MatchingString) {
+	if o == nil || IsNil(o.MatchingString) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *StringMatchingCondition) GetMatchingString() string {
 // GetMatchingStringOk returns a tuple with the MatchingString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringMatchingCondition) GetMatchingStringOk() (*string, bool) {
-	if o == nil || isNil(o.MatchingString) {
+	if o == nil || IsNil(o.MatchingString) {
 		return nil, false
 	}
 	return o.MatchingString, true
@@ -61,7 +61,7 @@ func (o *StringMatchingCondition) GetMatchingStringOk() (*string, bool) {
 
 // HasMatchingString returns a boolean if a field has been set.
 func (o *StringMatchingCondition) HasMatchingString() bool {
-	if o != nil && !isNil(o.MatchingString) {
+	if o != nil && !IsNil(o.MatchingString) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *StringMatchingCondition) SetMatchingOperator(v MatchingOperator) {
 }
 
 func (o StringMatchingCondition) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -107,7 +107,7 @@ func (o StringMatchingCondition) MarshalJSON() ([]byte, error) {
 
 func (o StringMatchingCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MatchingString) {
+	if !IsNil(o.MatchingString) {
 		toSerialize["matchingString"] = o.MatchingString
 	}
 	toSerialize["matchingOperator"] = o.MatchingOperator
@@ -149,5 +149,3 @@ func (v *NullableStringMatchingCondition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

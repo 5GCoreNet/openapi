@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SnssaiTsctsfInfoItem{}
 
 // SnssaiTsctsfInfoItem Set of parameters supported by TSCTSF for a given S-NSSAI
 type SnssaiTsctsfInfoItem struct {
-	SNssai ExtSnssai `json:"sNssai"`
+	SNssai      ExtSnssai           `json:"sNssai"`
 	DnnInfoList []DnnTsctsfInfoItem `json:"dnnInfoList"`
 }
 
@@ -91,7 +91,7 @@ func (o *SnssaiTsctsfInfoItem) SetDnnInfoList(v []DnnTsctsfInfoItem) {
 }
 
 func (o SnssaiTsctsfInfoItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableSnssaiTsctsfInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

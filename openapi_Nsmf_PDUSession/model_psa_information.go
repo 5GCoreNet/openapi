@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &PsaInformation{}
 
 // PsaInformation PSA Information
 type PsaInformation struct {
-	PsaInd *PsaIndication `json:"psaInd,omitempty"`
-	DnaiList []string `json:"dnaiList,omitempty"`
-	UeIpv6Prefix *Ipv6Prefix `json:"ueIpv6Prefix,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	PsaInd       *PsaIndication `json:"psaInd,omitempty"`
+	DnaiList     []string       `json:"dnaiList,omitempty"`
+	UeIpv6Prefix *Ipv6Prefix    `json:"ueIpv6Prefix,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PsaUpfId *string `json:"psaUpfId,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewPsaInformationWithDefaults() *PsaInformation {
 
 // GetPsaInd returns the PsaInd field value if set, zero value otherwise.
 func (o *PsaInformation) GetPsaInd() PsaIndication {
-	if o == nil || isNil(o.PsaInd) {
+	if o == nil || IsNil(o.PsaInd) {
 		var ret PsaIndication
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *PsaInformation) GetPsaInd() PsaIndication {
 // GetPsaIndOk returns a tuple with the PsaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetPsaIndOk() (*PsaIndication, bool) {
-	if o == nil || isNil(o.PsaInd) {
+	if o == nil || IsNil(o.PsaInd) {
 		return nil, false
 	}
 	return o.PsaInd, true
@@ -63,7 +63,7 @@ func (o *PsaInformation) GetPsaIndOk() (*PsaIndication, bool) {
 
 // HasPsaInd returns a boolean if a field has been set.
 func (o *PsaInformation) HasPsaInd() bool {
-	if o != nil && !isNil(o.PsaInd) {
+	if o != nil && !IsNil(o.PsaInd) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *PsaInformation) SetPsaInd(v PsaIndication) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *PsaInformation) GetDnaiList() []string {
-	if o == nil || isNil(o.DnaiList) {
+	if o == nil || IsNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PsaInformation) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetDnaiListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnaiList) {
+	if o == nil || IsNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -95,7 +95,7 @@ func (o *PsaInformation) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *PsaInformation) HasDnaiList() bool {
-	if o != nil && !isNil(o.DnaiList) {
+	if o != nil && !IsNil(o.DnaiList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *PsaInformation) SetDnaiList(v []string) {
 
 // GetUeIpv6Prefix returns the UeIpv6Prefix field value if set, zero value otherwise.
 func (o *PsaInformation) GetUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || isNil(o.UeIpv6Prefix) {
+	if o == nil || IsNil(o.UeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PsaInformation) GetUeIpv6Prefix() Ipv6Prefix {
 // GetUeIpv6PrefixOk returns a tuple with the UeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.UeIpv6Prefix) {
+	if o == nil || IsNil(o.UeIpv6Prefix) {
 		return nil, false
 	}
 	return o.UeIpv6Prefix, true
@@ -127,7 +127,7 @@ func (o *PsaInformation) GetUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasUeIpv6Prefix returns a boolean if a field has been set.
 func (o *PsaInformation) HasUeIpv6Prefix() bool {
-	if o != nil && !isNil(o.UeIpv6Prefix) {
+	if o != nil && !IsNil(o.UeIpv6Prefix) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PsaInformation) SetUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetPsaUpfId returns the PsaUpfId field value if set, zero value otherwise.
 func (o *PsaInformation) GetPsaUpfId() string {
-	if o == nil || isNil(o.PsaUpfId) {
+	if o == nil || IsNil(o.PsaUpfId) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PsaInformation) GetPsaUpfId() string {
 // GetPsaUpfIdOk returns a tuple with the PsaUpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetPsaUpfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PsaUpfId) {
+	if o == nil || IsNil(o.PsaUpfId) {
 		return nil, false
 	}
 	return o.PsaUpfId, true
@@ -159,7 +159,7 @@ func (o *PsaInformation) GetPsaUpfIdOk() (*string, bool) {
 
 // HasPsaUpfId returns a boolean if a field has been set.
 func (o *PsaInformation) HasPsaUpfId() bool {
-	if o != nil && !isNil(o.PsaUpfId) {
+	if o != nil && !IsNil(o.PsaUpfId) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *PsaInformation) SetPsaUpfId(v string) {
 }
 
 func (o PsaInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o PsaInformation) MarshalJSON() ([]byte, error) {
 
 func (o PsaInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PsaInd) {
+	if !IsNil(o.PsaInd) {
 		toSerialize["psaInd"] = o.PsaInd
 	}
-	if !isNil(o.DnaiList) {
+	if !IsNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
-	if !isNil(o.UeIpv6Prefix) {
+	if !IsNil(o.UeIpv6Prefix) {
 		toSerialize["ueIpv6Prefix"] = o.UeIpv6Prefix
 	}
-	if !isNil(o.PsaUpfId) {
+	if !IsNil(o.PsaUpfId) {
 		toSerialize["psaUpfId"] = o.PsaUpfId
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullablePsaInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

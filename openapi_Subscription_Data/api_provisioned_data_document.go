@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ProvisionedDataDocumentApiService ProvisionedDataDocumentApi service
 type ProvisionedDataDocumentApiService service
 
 type ApiQueryProvisionedDataRequest struct {
-	ctx context.Context
-	ApiService *ProvisionedDataDocumentApiService
-	ueId string
+	ctx           context.Context
+	ApiService    *ProvisionedDataDocumentApiService
+	ueId          string
 	servingPlmnId string
-	datasetNames *[]DataSetName
+	datasetNames  *[]DataSetName
 }
 
 // List of dataset names
@@ -44,28 +43,29 @@ func (r ApiQueryProvisionedDataRequest) Execute() (*ProvisionedDataSets, *http.R
 /*
 QueryProvisionedData Retrieve multiple provisioned data sets of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param servingPlmnId PLMN ID
- @return ApiQueryProvisionedDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param servingPlmnId PLMN ID
+	@return ApiQueryProvisionedDataRequest
 */
 func (a *ProvisionedDataDocumentApiService) QueryProvisionedData(ctx context.Context, ueId string, servingPlmnId string) ApiQueryProvisionedDataRequest {
 	return ApiQueryProvisionedDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:    a,
+		ctx:           ctx,
+		ueId:          ueId,
 		servingPlmnId: servingPlmnId,
 	}
 }
 
 // Execute executes the request
-//  @return ProvisionedDataSets
+//
+//	@return ProvisionedDataSets
 func (a *ProvisionedDataDocumentApiService) QueryProvisionedDataExecute(r ApiQueryProvisionedDataRequest) (*ProvisionedDataSets, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProvisionedDataSets
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProvisionedDataSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisionedDataDocumentApiService.QueryProvisionedData")
@@ -82,7 +82,7 @@ func (a *ProvisionedDataDocumentApiService) QueryProvisionedDataExecute(r ApiQue
 	localVarFormParams := url.Values{}
 
 	if r.datasetNames != nil {
-		parameterAddToQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -111,9 +111,9 @@ func (a *ProvisionedDataDocumentApiService) QueryProvisionedDataExecute(r ApiQue
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

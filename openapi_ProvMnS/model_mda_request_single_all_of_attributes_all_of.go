@@ -21,11 +21,11 @@ var _ MappedNullable = &MDARequestSingleAllOfAttributesAllOf{}
 // MDARequestSingleAllOfAttributesAllOf struct for MDARequestSingleAllOfAttributesAllOf
 type MDARequestSingleAllOfAttributesAllOf struct {
 	RequestedMDAOutputs []MDAOutputPerMDAType `json:"requestedMDAOutputs,omitempty"`
-	ReportingMethod *ReportingMethod `json:"reportingMethod,omitempty"`
-	ReportingTarget *string `json:"reportingTarget,omitempty"`
-	AnalyticsScope *AnalyticsScopeType `json:"analyticsScope,omitempty"`
-	StartTime *time.Time `json:"startTime,omitempty"`
-	StopTime *time.Time `json:"stopTime,omitempty"`
+	ReportingMethod     *ReportingMethod      `json:"reportingMethod,omitempty"`
+	ReportingTarget     *string               `json:"reportingTarget,omitempty"`
+	AnalyticsScope      *AnalyticsScopeType   `json:"analyticsScope,omitempty"`
+	StartTime           *time.Time            `json:"startTime,omitempty"`
+	StopTime            *time.Time            `json:"stopTime,omitempty"`
 }
 
 // NewMDARequestSingleAllOfAttributesAllOf instantiates a new MDARequestSingleAllOfAttributesAllOf object
@@ -238,7 +238,7 @@ func (o *MDARequestSingleAllOfAttributesAllOf) SetStopTime(v time.Time) {
 }
 
 func (o MDARequestSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -303,5 +303,3 @@ func (v *NullableMDARequestSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

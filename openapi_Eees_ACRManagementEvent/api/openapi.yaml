@@ -2345,7 +2345,12 @@ components:
       type: object
     AcrMgntEvent:
       anyOf:
-      - $ref: '#/components/schemas/AcrMgntEvent_anyOf'
+      - enum:
+        - UP_PATH_CHG
+        - ACR_MONITORING
+        - ACR_FACILITATION
+        - ACT_START_STOP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2357,7 +2362,10 @@ components:
         - ACT_START_STOP: ACT start/stop event.
     AcrMgntEventFilter:
       anyOf:
-      - $ref: '#/components/schemas/AcrMgntEventFilter_anyOf'
+      - enum:
+        - INTRA_EDN_MOBILITY
+        - INTER_EDN_MOBILITY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2367,7 +2375,10 @@ components:
         - INTER_EDN_MOBILITY: Indicates that the ACR Management Event filter is inter-EDN mobility.
     ActStatus:
       anyOf:
-      - $ref: '#/components/schemas/ActStatus_anyOf'
+      - enum:
+        - ACT_START
+        - ACT_STOP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2377,7 +2388,10 @@ components:
         - ACT_STOP: Indicates ACT stop.
     AcrMgntEventFailureCode:
       anyOf:
-      - $ref: '#/components/schemas/AcrMgntEventFailureCode_anyOf'
+      - enum:
+        - 3GPP_UP_PATH_CHANGE_MON_NOT_AVAILABLE
+        - OTHER_REASONS
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2390,7 +2404,10 @@ components:
         \ This value is applicable for all events.\n"
     AvailabilityStatus:
       anyOf:
-      - $ref: '#/components/schemas/AvailabilityStatus_anyOf'
+      - enum:
+        - AVAILABLE
+        - NOT_AVAILABLE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2530,7 +2547,11 @@ components:
       type: string
     DnaiChangeType:
       anyOf:
-      - $ref: '#/components/schemas/DnaiChangeType_anyOf'
+      - enum:
+        - EARLY
+        - EARLY_LATE
+        - LATE
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode  content defined in the present\
           \ version of this API. \n"
@@ -2908,7 +2929,11 @@ components:
       type: string
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2928,7 +2953,13 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2941,7 +2972,11 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -3128,7 +3163,14 @@ components:
       type: object
     ACRScenario:
       anyOf:
-      - $ref: '#/components/schemas/ACRScenario_anyOf'
+      - enum:
+        - EEC_INITIATED
+        - EEC_EXECUTED_VIA_SOURCE_EES
+        - EEC_EXECUTED_VIA_TARGET_EES
+        - SOURCE_EAS_DECIDED
+        - SOURCE_EES_EXECUTED
+        - EEL_MANAGED_ACR
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -3187,9 +3229,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -3892,78 +3945,6 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
-    AcrMgntEvent_anyOf:
-      enum:
-      - UP_PATH_CHG
-      - ACR_MONITORING
-      - ACR_FACILITATION
-      - ACT_START_STOP
-      type: string
-      example: null
-    AcrMgntEventFilter_anyOf:
-      enum:
-      - INTRA_EDN_MOBILITY
-      - INTER_EDN_MOBILITY
-      type: string
-      example: null
-    ActStatus_anyOf:
-      enum:
-      - ACT_START
-      - ACT_STOP
-      type: string
-      example: null
-    AcrMgntEventFailureCode_anyOf:
-      enum:
-      - 3GPP_UP_PATH_CHANGE_MON_NOT_AVAILABLE
-      - OTHER_REASONS
-      type: string
-      example: null
-    AvailabilityStatus_anyOf:
-      enum:
-      - AVAILABLE
-      - NOT_AVAILABLE
-      type: string
-      example: null
-    DnaiChangeType_anyOf:
-      enum:
-      - EARLY
-      - EARLY_LATE
-      - LATE
-      type: string
-      example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    PartitioningCriteria_anyOf:
-      enum:
-      - TAC
-      - SUBPLMN
-      - GEOAREA
-      - SNSSAI
-      - DNN
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
-    ACRScenario_anyOf:
-      enum:
-      - EEC_INITIATED
-      - EEC_EXECUTED_VIA_SOURCE_EES
-      - EEC_EXECUTED_VIA_TARGET_EES
-      - SOURCE_EAS_DECIDED
-      - SOURCE_EES_EXECUTED
-      - EEL_MANAGED_ACR
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -3971,19 +3952,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

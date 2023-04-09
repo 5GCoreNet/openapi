@@ -43,7 +43,7 @@ func NewPlmnIdNidWithDefaults() *PlmnIdNid {
 
 // GetMcc returns the Mcc field value if set, zero value otherwise.
 func (o *PlmnIdNid) GetMcc() string {
-	if o == nil || isNil(o.Mcc) {
+	if o == nil || IsNil(o.Mcc) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *PlmnIdNid) GetMcc() string {
 // GetMccOk returns a tuple with the Mcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnIdNid) GetMccOk() (*string, bool) {
-	if o == nil || isNil(o.Mcc) {
+	if o == nil || IsNil(o.Mcc) {
 		return nil, false
 	}
 	return o.Mcc, true
@@ -61,7 +61,7 @@ func (o *PlmnIdNid) GetMccOk() (*string, bool) {
 
 // HasMcc returns a boolean if a field has been set.
 func (o *PlmnIdNid) HasMcc() bool {
-	if o != nil && !isNil(o.Mcc) {
+	if o != nil && !IsNil(o.Mcc) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *PlmnIdNid) SetMcc(v string) {
 
 // GetMnc returns the Mnc field value if set, zero value otherwise.
 func (o *PlmnIdNid) GetMnc() string {
-	if o == nil || isNil(o.Mnc) {
+	if o == nil || IsNil(o.Mnc) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PlmnIdNid) GetMnc() string {
 // GetMncOk returns a tuple with the Mnc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnIdNid) GetMncOk() (*string, bool) {
-	if o == nil || isNil(o.Mnc) {
+	if o == nil || IsNil(o.Mnc) {
 		return nil, false
 	}
 	return o.Mnc, true
@@ -93,7 +93,7 @@ func (o *PlmnIdNid) GetMncOk() (*string, bool) {
 
 // HasMnc returns a boolean if a field has been set.
 func (o *PlmnIdNid) HasMnc() bool {
-	if o != nil && !isNil(o.Mnc) {
+	if o != nil && !IsNil(o.Mnc) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *PlmnIdNid) SetMnc(v string) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *PlmnIdNid) GetNid() string {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *PlmnIdNid) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnIdNid) GetNidOk() (*string, bool) {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -125,7 +125,7 @@ func (o *PlmnIdNid) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *PlmnIdNid) HasNid() bool {
-	if o != nil && !isNil(o.Nid) {
+	if o != nil && !IsNil(o.Nid) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *PlmnIdNid) SetNid(v string) {
 }
 
 func (o PlmnIdNid) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o PlmnIdNid) MarshalJSON() ([]byte, error) {
 
 func (o PlmnIdNid) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Mcc) {
+	if !IsNil(o.Mcc) {
 		toSerialize["mcc"] = o.Mcc
 	}
-	if !isNil(o.Mnc) {
+	if !IsNil(o.Mnc) {
 		toSerialize["mnc"] = o.Mnc
 	}
-	if !isNil(o.Nid) {
+	if !IsNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullablePlmnIdNid) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

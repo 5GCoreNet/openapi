@@ -1,7 +1,7 @@
 /*
 VAE_PC5ProvisioningRequirement
 
-API for VAE_PC5ProvisioningRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE_PC5ProvisioningRequirement   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_VAE_PC5ProvisioningRequirement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService IndividualPC5ProvisioningRequirementSubscriptionDocumentApi service
 type IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService service
 
 type ApiDeletePC5ProvisioningRequirementSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeletePC5ProvisioningRequirementSubscriptionRequest) Execute() (*http
 /*
 DeletePC5ProvisioningRequirementSubscription VAE PC5 Provisioning Requirement Subscription resource delete service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Unique ID of the PC5 Provisioning Requirement Subscription to be deleted
- @return ApiDeletePC5ProvisioningRequirementSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Unique ID of the PC5 Provisioning Requirement Subscription to be deleted
+	@return ApiDeletePC5ProvisioningRequirementSubscriptionRequest
 */
 func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) DeletePC5ProvisioningRequirementSubscription(ctx context.Context, subscriptionId string) ApiDeletePC5ProvisioningRequirementSubscriptionRequest {
 	return ApiDeletePC5ProvisioningRequirementSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -51,9 +50,9 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 // Execute executes the request
 func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) DeletePC5ProvisioningRequirementSubscriptionExecute(r ApiDeletePC5ProvisioningRequirementSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService.DeletePC5ProvisioningRequirementSubscription")
@@ -95,9 +94,9 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -125,8 +124,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -136,8 +135,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -147,8 +146,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -158,8 +157,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -169,8 +168,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -180,8 +179,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -191,8 +190,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Del
 }
 
 type ApiReadPC5ProvisioningRequirementSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -203,26 +202,27 @@ func (r ApiReadPC5ProvisioningRequirementSubscriptionRequest) Execute() (*Provis
 /*
 ReadPC5ProvisioningRequirementSubscription VAE PC5 Provisioning Requirement Subscription resource read service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Identifier of an PC5 Provisioning Requirement Subscription resource
- @return ApiReadPC5ProvisioningRequirementSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Identifier of an PC5 Provisioning Requirement Subscription resource
+	@return ApiReadPC5ProvisioningRequirementSubscriptionRequest
 */
 func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) ReadPC5ProvisioningRequirementSubscription(ctx context.Context, subscriptionId string) ApiReadPC5ProvisioningRequirementSubscriptionRequest {
 	return ApiReadPC5ProvisioningRequirementSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return ProvisioningRequirement
+//
+//	@return ProvisioningRequirement
 func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) ReadPC5ProvisioningRequirementSubscriptionExecute(r ApiReadPC5ProvisioningRequirementSubscriptionRequest) (*ProvisioningRequirement, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProvisioningRequirement
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ProvisioningRequirement
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService.ReadPC5ProvisioningRequirementSubscription")
@@ -264,9 +264,9 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -283,8 +283,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -294,8 +294,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -305,8 +305,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -316,8 +316,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -327,8 +327,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -338,8 +338,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -349,8 +349,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -360,8 +360,8 @@ func (a *IndividualPC5ProvisioningRequirementSubscriptionDocumentApiService) Rea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &HssSubscriptionItem{}
 
 // HssSubscriptionItem Contains info about a single HSS event subscription
 type HssSubscriptionItem struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	HssInstanceId string `json:"hssInstanceId"`
 	// String providing an URI formatted according to RFC 3986.
-	SubscriptionId string `json:"subscriptionId"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
+	SubscriptionId string       `json:"subscriptionId"`
+	ContextInfo    *ContextInfo `json:"contextInfo,omitempty"`
 }
 
 // NewHssSubscriptionItem instantiates a new HssSubscriptionItem object
@@ -95,7 +95,7 @@ func (o *HssSubscriptionItem) SetSubscriptionId(v string) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *HssSubscriptionItem) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *HssSubscriptionItem) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssSubscriptionItem) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -113,7 +113,7 @@ func (o *HssSubscriptionItem) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *HssSubscriptionItem) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *HssSubscriptionItem) SetContextInfo(v ContextInfo) {
 }
 
 func (o HssSubscriptionItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o HssSubscriptionItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["hssInstanceId"] = o.HssInstanceId
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableHssSubscriptionItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

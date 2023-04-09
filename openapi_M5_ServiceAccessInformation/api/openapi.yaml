@@ -492,7 +492,10 @@ components:
       type: string
     ProvisioningSessionType:
       anyOf:
-      - $ref: '#/components/schemas/ProvisioningSessionType_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -505,7 +508,13 @@ components:
       type: number
     SdfMethod:
       anyOf:
-      - $ref: '#/components/schemas/SdfMethod_anyOf'
+      - enum:
+        - 5_TUPLE
+        - 2_TUPLE
+        - TYPE_OF_SERVICE_MARKING
+        - FLOW_LABEL
+        - DOMAIN_NAME
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -885,7 +894,11 @@ components:
       type: object
     EASRelocationTolerance:
       anyOf:
-      - $ref: '#/components/schemas/EASRelocationTolerance_anyOf'
+      - enum:
+        - RELOCATION_UNAWARE
+        - RELOCATION_TOLERANT
+        - RELOCATION_INTOLERANT
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1105,9 +1118,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2279,28 +2303,6 @@ components:
       required:
       - easDiscoveryTemplate
       type: object
-    ProvisioningSessionType_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      type: string
-      example: null
-    SdfMethod_anyOf:
-      enum:
-      - 5_TUPLE
-      - 2_TUPLE
-      - TYPE_OF_SERVICE_MARKING
-      - FLOW_LABEL
-      - DOMAIN_NAME
-      type: string
-      example: null
-    EASRelocationTolerance_anyOf:
-      enum:
-      - RELOCATION_UNAWARE
-      - RELOCATION_TOLERANT
-      - RELOCATION_INTOLERANT
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -2308,19 +2310,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

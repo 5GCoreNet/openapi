@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &PlmnEcInfo1{}
 
 // PlmnEcInfo1 struct for PlmnEcInfo1
 type PlmnEcInfo1 struct {
-	PlmnId PlmnId1 `json:"plmnId"`
+	PlmnId              PlmnId1              `json:"plmnId"`
 	EcRestrictionDataWb *EcRestrictionDataWb `json:"ecRestrictionDataWb,omitempty"`
-	EcRestrictionDataNb *bool `json:"ecRestrictionDataNb,omitempty"`
+	EcRestrictionDataNb *bool                `json:"ecRestrictionDataNb,omitempty"`
 }
 
 // NewPlmnEcInfo1 instantiates a new PlmnEcInfo1 object
@@ -72,7 +72,7 @@ func (o *PlmnEcInfo1) SetPlmnId(v PlmnId1) {
 
 // GetEcRestrictionDataWb returns the EcRestrictionDataWb field value if set, zero value otherwise.
 func (o *PlmnEcInfo1) GetEcRestrictionDataWb() EcRestrictionDataWb {
-	if o == nil || isNil(o.EcRestrictionDataWb) {
+	if o == nil || IsNil(o.EcRestrictionDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataWb() EcRestrictionDataWb {
 // GetEcRestrictionDataWbOk returns a tuple with the EcRestrictionDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcInfo1) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || isNil(o.EcRestrictionDataWb) {
+	if o == nil || IsNil(o.EcRestrictionDataWb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataWb, true
@@ -90,7 +90,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
 
 // HasEcRestrictionDataWb returns a boolean if a field has been set.
 func (o *PlmnEcInfo1) HasEcRestrictionDataWb() bool {
-	if o != nil && !isNil(o.EcRestrictionDataWb) {
+	if o != nil && !IsNil(o.EcRestrictionDataWb) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *PlmnEcInfo1) SetEcRestrictionDataWb(v EcRestrictionDataWb) {
 
 // GetEcRestrictionDataNb returns the EcRestrictionDataNb field value if set, zero value otherwise.
 func (o *PlmnEcInfo1) GetEcRestrictionDataNb() bool {
-	if o == nil || isNil(o.EcRestrictionDataNb) {
+	if o == nil || IsNil(o.EcRestrictionDataNb) {
 		var ret bool
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataNb() bool {
 // GetEcRestrictionDataNbOk returns a tuple with the EcRestrictionDataNb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcInfo1) GetEcRestrictionDataNbOk() (*bool, bool) {
-	if o == nil || isNil(o.EcRestrictionDataNb) {
+	if o == nil || IsNil(o.EcRestrictionDataNb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataNb, true
@@ -122,7 +122,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataNbOk() (*bool, bool) {
 
 // HasEcRestrictionDataNb returns a boolean if a field has been set.
 func (o *PlmnEcInfo1) HasEcRestrictionDataNb() bool {
-	if o != nil && !isNil(o.EcRestrictionDataNb) {
+	if o != nil && !IsNil(o.EcRestrictionDataNb) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *PlmnEcInfo1) SetEcRestrictionDataNb(v bool) {
 }
 
 func (o PlmnEcInfo1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -145,10 +145,10 @@ func (o PlmnEcInfo1) MarshalJSON() ([]byte, error) {
 func (o PlmnEcInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.EcRestrictionDataWb) {
+	if !IsNil(o.EcRestrictionDataWb) {
 		toSerialize["ecRestrictionDataWb"] = o.EcRestrictionDataWb
 	}
-	if !isNil(o.EcRestrictionDataNb) {
+	if !IsNil(o.EcRestrictionDataNb) {
 		toSerialize["ecRestrictionDataNb"] = o.EcRestrictionDataNb
 	}
 	return toSerialize, nil
@@ -189,5 +189,3 @@ func (v *NullablePlmnEcInfo1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

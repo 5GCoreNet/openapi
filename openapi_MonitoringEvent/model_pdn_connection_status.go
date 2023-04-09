@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// PdnConnectionStatus Possible values are - CREATED: The PDN connection is created. - RELEASED: The PDN connection is released. 
+// PdnConnectionStatus Possible values are - CREATED: The PDN connection is created. - RELEASED: The PDN connection is released.
 type PdnConnectionStatus struct {
-	PdnConnectionStatusAnyOf *PdnConnectionStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PdnConnectionStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PdnConnectionStatusAnyOf
-	err = json.Unmarshal(data, &dst.PdnConnectionStatusAnyOf);
-	if err == nil {
-		jsonPdnConnectionStatusAnyOf, _ := json.Marshal(dst.PdnConnectionStatusAnyOf)
-		if string(jsonPdnConnectionStatusAnyOf) == "{}" { // empty struct
-			dst.PdnConnectionStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.PdnConnectionStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.PdnConnectionStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PdnConnectionStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PdnConnectionStatus) MarshalJSON() ([]byte, error) {
-	if src.PdnConnectionStatusAnyOf != nil {
-		return json.Marshal(&src.PdnConnectionStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePdnConnectionStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

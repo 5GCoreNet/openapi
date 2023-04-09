@@ -20,8 +20,8 @@ var _ MappedNullable = &ScpFunctionSingleAllOfAttributesAllOf{}
 // ScpFunctionSingleAllOfAttributesAllOf struct for ScpFunctionSingleAllOfAttributesAllOf
 type ScpFunctionSingleAllOfAttributesAllOf struct {
 	SupportedFuncList []SupportedFunc `json:"supportedFuncList,omitempty"`
-	Address *HostAddr `json:"address,omitempty"`
-	ScpInfo *ScpInfo `json:"scpInfo,omitempty"`
+	Address           *HostAddr       `json:"address,omitempty"`
+	ScpInfo           *ScpInfo        `json:"scpInfo,omitempty"`
 }
 
 // NewScpFunctionSingleAllOfAttributesAllOf instantiates a new ScpFunctionSingleAllOfAttributesAllOf object
@@ -138,7 +138,7 @@ func (o *ScpFunctionSingleAllOfAttributesAllOf) SetScpInfo(v ScpInfo) {
 }
 
 func (o ScpFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableScpFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

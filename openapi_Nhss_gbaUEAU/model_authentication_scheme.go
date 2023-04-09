@@ -1,7 +1,7 @@
 /*
 Nhss_gbaUEAU
 
-Nhss UE Authentication Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Authentication Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AuthenticationScheme Authentication scheme to be used in the authentication request message
 type AuthenticationScheme struct {
-	AuthenticationSchemeAnyOf *AuthenticationSchemeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AuthenticationScheme) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AuthenticationSchemeAnyOf
-	err = json.Unmarshal(data, &dst.AuthenticationSchemeAnyOf);
-	if err == nil {
-		jsonAuthenticationSchemeAnyOf, _ := json.Marshal(dst.AuthenticationSchemeAnyOf)
-		if string(jsonAuthenticationSchemeAnyOf) == "{}" { // empty struct
-			dst.AuthenticationSchemeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AuthenticationSchemeAnyOf, return on the first match
-		}
-	} else {
-		dst.AuthenticationSchemeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AuthenticationScheme) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AuthenticationScheme) MarshalJSON() ([]byte, error) {
-	if src.AuthenticationSchemeAnyOf != nil {
-		return json.Marshal(&src.AuthenticationSchemeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAuthenticationScheme) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,12 +17,12 @@ import (
 // checks if the PlmnIdNid1 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PlmnIdNid1{}
 
-// PlmnIdNid1 Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN. 
+// PlmnIdNid1 Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
 type PlmnIdNid1 struct {
-	// Mobile Country Code part of the PLMN, comprising 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.  
+	// Mobile Country Code part of the PLMN, comprising 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.
 	Mcc string `json:"mcc"`
 	// Mobile Network Code part of the PLMN, comprising 2 or 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.
-	Mnc string `json:"mnc"`
+	Mnc string  `json:"mnc"`
 	Nid *string `json:"nid,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *PlmnIdNid1) SetMnc(v string) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *PlmnIdNid1) GetNid() string {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *PlmnIdNid1) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnIdNid1) GetNidOk() (*string, bool) {
-	if o == nil || isNil(o.Nid) {
+	if o == nil || IsNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -113,7 +113,7 @@ func (o *PlmnIdNid1) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *PlmnIdNid1) HasNid() bool {
-	if o != nil && !isNil(o.Nid) {
+	if o != nil && !IsNil(o.Nid) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *PlmnIdNid1) SetNid(v string) {
 }
 
 func (o PlmnIdNid1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o PlmnIdNid1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mcc"] = o.Mcc
 	toSerialize["mnc"] = o.Mnc
-	if !isNil(o.Nid) {
+	if !IsNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullablePlmnIdNid1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

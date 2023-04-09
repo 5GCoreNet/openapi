@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReportingProvisioning
 
-Data Collection AF: Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &DataReportingConfiguration{}
 // DataReportingConfiguration A Data Reporting Configuration subresource.
 type DataReportingConfiguration struct {
 	// String chosen by the 5GMS AF to serve as an identifier in a resource URI.
-	DataReportingConfigurationId string `json:"dataReportingConfigurationId"`
-	DataCollectionClientType DataCollectionClientType `json:"dataCollectionClientType"`
+	DataReportingConfigurationId string                   `json:"dataReportingConfigurationId"`
+	DataCollectionClientType     DataCollectionClientType `json:"dataCollectionClientType"`
 	// Uniform Resource Locator, comforming with the URI Generic Syntax specified in IETF RFC 3986.
-	AuthorizationURL *string `json:"authorizationURL,omitempty"`
+	AuthorizationURL   *string             `json:"authorizationURL,omitempty"`
 	DataAccessProfiles []DataAccessProfile `json:"dataAccessProfiles"`
 }
 
@@ -97,7 +97,7 @@ func (o *DataReportingConfiguration) SetDataCollectionClientType(v DataCollectio
 
 // GetAuthorizationURL returns the AuthorizationURL field value if set, zero value otherwise.
 func (o *DataReportingConfiguration) GetAuthorizationURL() string {
-	if o == nil || isNil(o.AuthorizationURL) {
+	if o == nil || IsNil(o.AuthorizationURL) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *DataReportingConfiguration) GetAuthorizationURL() string {
 // GetAuthorizationURLOk returns a tuple with the AuthorizationURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingConfiguration) GetAuthorizationURLOk() (*string, bool) {
-	if o == nil || isNil(o.AuthorizationURL) {
+	if o == nil || IsNil(o.AuthorizationURL) {
 		return nil, false
 	}
 	return o.AuthorizationURL, true
@@ -115,7 +115,7 @@ func (o *DataReportingConfiguration) GetAuthorizationURLOk() (*string, bool) {
 
 // HasAuthorizationURL returns a boolean if a field has been set.
 func (o *DataReportingConfiguration) HasAuthorizationURL() bool {
-	if o != nil && !isNil(o.AuthorizationURL) {
+	if o != nil && !IsNil(o.AuthorizationURL) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *DataReportingConfiguration) SetDataAccessProfiles(v []DataAccessProfile
 }
 
 func (o DataReportingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o DataReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dataReportingConfigurationId"] = o.DataReportingConfigurationId
 	toSerialize["dataCollectionClientType"] = o.DataCollectionClientType
-	if !isNil(o.AuthorizationURL) {
+	if !IsNil(o.AuthorizationURL) {
 		toSerialize["authorizationURL"] = o.AuthorizationURL
 	}
 	toSerialize["dataAccessProfiles"] = o.DataAccessProfiles
@@ -205,5 +205,3 @@ func (v *NullableDataReportingConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

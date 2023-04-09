@@ -1,7 +1,7 @@
 /*
 NSSF NSSAI Availability
 
-NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -21,18 +21,18 @@ var _ MappedNullable = &NssfEventSubscriptionCreateData{}
 // NssfEventSubscriptionCreateData This contains the information for event subscription
 type NssfEventSubscriptionCreateData struct {
 	// String providing an URI formatted according to RFC 3986.
-	NfNssaiAvailabilityUri string `json:"nfNssaiAvailabilityUri"`
-	TaiList []Tai `json:"taiList"`
-	Event NssfEventType `json:"event"`
+	NfNssaiAvailabilityUri string        `json:"nfNssaiAvailabilityUri"`
+	TaiList                []Tai         `json:"taiList"`
+	Event                  NssfEventType `json:"event"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Expiry *time.Time `json:"expiry,omitempty"`
-	AmfSetId *string `json:"amfSetId,omitempty"`
+	Expiry       *time.Time `json:"expiry,omitempty"`
+	AmfSetId     *string    `json:"amfSetId,omitempty"`
 	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	AmfId *string `json:"amfId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	AllAmfSetTaiInd *bool `json:"allAmfSetTaiInd,omitempty"`
+	AllAmfSetTaiInd   *bool   `json:"allAmfSetTaiInd,omitempty"`
 }
 
 // NewNssfEventSubscriptionCreateData instantiates a new NssfEventSubscriptionCreateData object
@@ -133,7 +133,7 @@ func (o *NssfEventSubscriptionCreateData) SetEvent(v NssfEventType) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *NssfEventSubscriptionCreateData) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -151,7 +151,7 @@ func (o *NssfEventSubscriptionCreateData) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *NssfEventSubscriptionCreateData) SetExpiry(v time.Time) {
 
 // GetAmfSetId returns the AmfSetId field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetAmfSetId() string {
-	if o == nil || isNil(o.AmfSetId) {
+	if o == nil || IsNil(o.AmfSetId) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfSetId() string {
 // GetAmfSetIdOk returns a tuple with the AmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetAmfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfSetId) {
+	if o == nil || IsNil(o.AmfSetId) {
 		return nil, false
 	}
 	return o.AmfSetId, true
@@ -183,7 +183,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfSetIdOk() (*string, bool) {
 
 // HasAmfSetId returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasAmfSetId() bool {
-	if o != nil && !isNil(o.AmfSetId) {
+	if o != nil && !IsNil(o.AmfSetId) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *NssfEventSubscriptionCreateData) SetAmfSetId(v string) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetTaiRangeList() []TaiRange {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *NssfEventSubscriptionCreateData) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || isNil(o.TaiRangeList) {
+	if o == nil || IsNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -215,7 +215,7 @@ func (o *NssfEventSubscriptionCreateData) GetTaiRangeListOk() ([]TaiRange, bool)
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasTaiRangeList() bool {
-	if o != nil && !isNil(o.TaiRangeList) {
+	if o != nil && !IsNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *NssfEventSubscriptionCreateData) SetTaiRangeList(v []TaiRange) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetAmfId() string {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetAmfIdOk() (*string, bool) {
-	if o == nil || isNil(o.AmfId) {
+	if o == nil || IsNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -247,7 +247,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasAmfId() bool {
-	if o != nil && !isNil(o.AmfId) {
+	if o != nil && !IsNil(o.AmfId) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *NssfEventSubscriptionCreateData) SetAmfId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *NssfEventSubscriptionCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -279,7 +279,7 @@ func (o *NssfEventSubscriptionCreateData) GetSupportedFeaturesOk() (*string, boo
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *NssfEventSubscriptionCreateData) SetSupportedFeatures(v string) {
 
 // GetAllAmfSetTaiInd returns the AllAmfSetTaiInd field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiInd() bool {
-	if o == nil || isNil(o.AllAmfSetTaiInd) {
+	if o == nil || IsNil(o.AllAmfSetTaiInd) {
 		var ret bool
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiInd() bool {
 // GetAllAmfSetTaiIndOk returns a tuple with the AllAmfSetTaiInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AllAmfSetTaiInd) {
+	if o == nil || IsNil(o.AllAmfSetTaiInd) {
 		return nil, false
 	}
 	return o.AllAmfSetTaiInd, true
@@ -311,7 +311,7 @@ func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiIndOk() (*bool, bool) {
 
 // HasAllAmfSetTaiInd returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasAllAmfSetTaiInd() bool {
-	if o != nil && !isNil(o.AllAmfSetTaiInd) {
+	if o != nil && !IsNil(o.AllAmfSetTaiInd) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *NssfEventSubscriptionCreateData) SetAllAmfSetTaiInd(v bool) {
 }
 
 func (o NssfEventSubscriptionCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -336,22 +336,22 @@ func (o NssfEventSubscriptionCreateData) ToMap() (map[string]interface{}, error)
 	toSerialize["nfNssaiAvailabilityUri"] = o.NfNssaiAvailabilityUri
 	toSerialize["taiList"] = o.TaiList
 	toSerialize["event"] = o.Event
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.AmfSetId) {
+	if !IsNil(o.AmfSetId) {
 		toSerialize["amfSetId"] = o.AmfSetId
 	}
-	if !isNil(o.TaiRangeList) {
+	if !IsNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !isNil(o.AmfId) {
+	if !IsNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.AllAmfSetTaiInd) {
+	if !IsNil(o.AllAmfSetTaiInd) {
 		toSerialize["allAmfSetTaiInd"] = o.AllAmfSetTaiInd
 	}
 	return toSerialize, nil
@@ -392,5 +392,3 @@ func (v *NullableNssfEventSubscriptionCreateData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

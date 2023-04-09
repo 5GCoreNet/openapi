@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SEALEvent Possible values are: - LM_LOCATION_INFO_CHANGE: Events related to the location information of VAL Users or VAL UEs from the Location Management Server. - GM_GROUP_INFO_CHANGE: Events related to the modification of VAL group membership and configuration information from the Group Management Server. - CM_USER_PROFILE_CHANGE: Events related to update of user profile information from the Configuration Management Server. - GM_GROUP_CREATE: Events related to creation of new VAL groups from the Group Mananagement Server. - NRM_MONITOR_UE_USER_EVENTS: Monitoring and analytic events related to VAL UEs, users or VAL group, from the Network Resource Management Server. - LM_LOCATION_DEVIATION_MONITOR: Events from Location Management server, related to the deviation of the VAL User(s) / UE(s) location from an area of interest. - GM_TEMP_GROUP_FORMATION: Events related to the formation of new temporary VAL groups from the Group Management Server. - LM_LOCATION_AREA_MONITOR: Events from Location Management server, related to the list of UEs moving in or moving out of the specific location. 
+// SEALEvent Possible values are: - LM_LOCATION_INFO_CHANGE: Events related to the location information of VAL Users or VAL UEs from the Location Management Server. - GM_GROUP_INFO_CHANGE: Events related to the modification of VAL group membership and configuration information from the Group Management Server. - CM_USER_PROFILE_CHANGE: Events related to update of user profile information from the Configuration Management Server. - GM_GROUP_CREATE: Events related to creation of new VAL groups from the Group Mananagement Server. - NRM_MONITOR_UE_USER_EVENTS: Monitoring and analytic events related to VAL UEs, users or VAL group, from the Network Resource Management Server. - LM_LOCATION_DEVIATION_MONITOR: Events from Location Management server, related to the deviation of the VAL User(s) / UE(s) location from an area of interest. - GM_TEMP_GROUP_FORMATION: Events related to the formation of new temporary VAL groups from the Group Management Server. - LM_LOCATION_AREA_MONITOR: Events from Location Management server, related to the list of UEs moving in or moving out of the specific location.
 type SEALEvent struct {
-	SEALEventAnyOf *SEALEventAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SEALEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SEALEventAnyOf
-	err = json.Unmarshal(data, &dst.SEALEventAnyOf);
-	if err == nil {
-		jsonSEALEventAnyOf, _ := json.Marshal(dst.SEALEventAnyOf)
-		if string(jsonSEALEventAnyOf) == "{}" { // empty struct
-			dst.SEALEventAnyOf = nil
-		} else {
-			return nil // data stored in dst.SEALEventAnyOf, return on the first match
-		}
-	} else {
-		dst.SEALEventAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SEALEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SEALEvent) MarshalJSON() ([]byte, error) {
-	if src.SEALEventAnyOf != nil {
-		return json.Marshal(&src.SEALEventAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSEALEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

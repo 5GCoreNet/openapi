@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,19 +20,19 @@ var _ MappedNullable = &LocationData{}
 
 // LocationData Information within Determine Location Response.
 type LocationData struct {
-	LocationEstimate GeographicArea `json:"locationEstimate"`
+	LocationEstimate            GeographicArea               `json:"locationEstimate"`
 	AccuracyFulfilmentIndicator *AccuracyFulfilmentIndicator `json:"accuracyFulfilmentIndicator,omitempty"`
 	// Indicates value of the age of the location estimate.
 	AgeOfLocationEstimate *int32 `json:"ageOfLocationEstimate,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimestampOfLocationEstimate *time.Time `json:"timestampOfLocationEstimate,omitempty"`
-	VelocityEstimate *VelocityEstimate `json:"velocityEstimate,omitempty"`
-	CivicAddress *CivicAddress `json:"civicAddress,omitempty"`
-	LocalLocationEstimate *LocalArea `json:"localLocationEstimate,omitempty"`
-	PositioningDataList []PositioningMethodAndUsage `json:"positioningDataList,omitempty"`
-	GnssPositioningDataList []GnssPositioningMethodAndUsage `json:"gnssPositioningDataList,omitempty"`
-	Ecgi *Ecgi `json:"ecgi,omitempty"`
-	Ncgi *Ncgi `json:"ncgi,omitempty"`
+	TimestampOfLocationEstimate *time.Time                      `json:"timestampOfLocationEstimate,omitempty"`
+	VelocityEstimate            *VelocityEstimate               `json:"velocityEstimate,omitempty"`
+	CivicAddress                *CivicAddress                   `json:"civicAddress,omitempty"`
+	LocalLocationEstimate       *LocalArea                      `json:"localLocationEstimate,omitempty"`
+	PositioningDataList         []PositioningMethodAndUsage     `json:"positioningDataList,omitempty"`
+	GnssPositioningDataList     []GnssPositioningMethodAndUsage `json:"gnssPositioningDataList,omitempty"`
+	Ecgi                        *Ecgi                           `json:"ecgi,omitempty"`
+	Ncgi                        *Ncgi                           `json:"ncgi,omitempty"`
 	// Indicates value of altitude.
 	Altitude *float64 `json:"altitude,omitempty"`
 	// Specifies the measured uncompensated atmospheric pressure.
@@ -40,11 +40,11 @@ type LocationData struct {
 	// LMF identification.
 	ServingLMFIdentification *string `json:"servingLMFIdentification,omitempty"`
 	// Positioning capabilities supported by the UE. A string encoding the \"ProvideCapabilities-r9-IEs\" IE as specified in clause 6.3 of 3GPP TS 37.355 (start from octet 1).
-	UePositioningCap *string `json:"uePositioningCap,omitempty"`
-	UeAreaInd *UeAreaIndication `json:"ueAreaInd,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	AchievedQos *MinorLocationQoS `json:"achievedQos,omitempty"`
+	UePositioningCap *string           `json:"uePositioningCap,omitempty"`
+	UeAreaInd        *UeAreaIndication `json:"ueAreaInd,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string           `json:"supportedFeatures,omitempty"`
+	AchievedQos       *MinorLocationQoS `json:"achievedQos,omitempty"`
 }
 
 // NewLocationData instantiates a new LocationData object
@@ -91,7 +91,7 @@ func (o *LocationData) SetLocationEstimate(v GeographicArea) {
 
 // GetAccuracyFulfilmentIndicator returns the AccuracyFulfilmentIndicator field value if set, zero value otherwise.
 func (o *LocationData) GetAccuracyFulfilmentIndicator() AccuracyFulfilmentIndicator {
-	if o == nil || isNil(o.AccuracyFulfilmentIndicator) {
+	if o == nil || IsNil(o.AccuracyFulfilmentIndicator) {
 		var ret AccuracyFulfilmentIndicator
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *LocationData) GetAccuracyFulfilmentIndicator() AccuracyFulfilmentIndica
 // GetAccuracyFulfilmentIndicatorOk returns a tuple with the AccuracyFulfilmentIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetAccuracyFulfilmentIndicatorOk() (*AccuracyFulfilmentIndicator, bool) {
-	if o == nil || isNil(o.AccuracyFulfilmentIndicator) {
+	if o == nil || IsNil(o.AccuracyFulfilmentIndicator) {
 		return nil, false
 	}
 	return o.AccuracyFulfilmentIndicator, true
@@ -109,7 +109,7 @@ func (o *LocationData) GetAccuracyFulfilmentIndicatorOk() (*AccuracyFulfilmentIn
 
 // HasAccuracyFulfilmentIndicator returns a boolean if a field has been set.
 func (o *LocationData) HasAccuracyFulfilmentIndicator() bool {
-	if o != nil && !isNil(o.AccuracyFulfilmentIndicator) {
+	if o != nil && !IsNil(o.AccuracyFulfilmentIndicator) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *LocationData) SetAccuracyFulfilmentIndicator(v AccuracyFulfilmentIndica
 
 // GetAgeOfLocationEstimate returns the AgeOfLocationEstimate field value if set, zero value otherwise.
 func (o *LocationData) GetAgeOfLocationEstimate() int32 {
-	if o == nil || isNil(o.AgeOfLocationEstimate) {
+	if o == nil || IsNil(o.AgeOfLocationEstimate) {
 		var ret int32
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *LocationData) GetAgeOfLocationEstimate() int32 {
 // GetAgeOfLocationEstimateOk returns a tuple with the AgeOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetAgeOfLocationEstimateOk() (*int32, bool) {
-	if o == nil || isNil(o.AgeOfLocationEstimate) {
+	if o == nil || IsNil(o.AgeOfLocationEstimate) {
 		return nil, false
 	}
 	return o.AgeOfLocationEstimate, true
@@ -141,7 +141,7 @@ func (o *LocationData) GetAgeOfLocationEstimateOk() (*int32, bool) {
 
 // HasAgeOfLocationEstimate returns a boolean if a field has been set.
 func (o *LocationData) HasAgeOfLocationEstimate() bool {
-	if o != nil && !isNil(o.AgeOfLocationEstimate) {
+	if o != nil && !IsNil(o.AgeOfLocationEstimate) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *LocationData) SetAgeOfLocationEstimate(v int32) {
 
 // GetTimestampOfLocationEstimate returns the TimestampOfLocationEstimate field value if set, zero value otherwise.
 func (o *LocationData) GetTimestampOfLocationEstimate() time.Time {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		var ret time.Time
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *LocationData) GetTimestampOfLocationEstimate() time.Time {
 // GetTimestampOfLocationEstimateOk returns a tuple with the TimestampOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimestampOfLocationEstimate) {
+	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
 		return nil, false
 	}
 	return o.TimestampOfLocationEstimate, true
@@ -173,7 +173,7 @@ func (o *LocationData) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
 
 // HasTimestampOfLocationEstimate returns a boolean if a field has been set.
 func (o *LocationData) HasTimestampOfLocationEstimate() bool {
-	if o != nil && !isNil(o.TimestampOfLocationEstimate) {
+	if o != nil && !IsNil(o.TimestampOfLocationEstimate) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *LocationData) SetTimestampOfLocationEstimate(v time.Time) {
 
 // GetVelocityEstimate returns the VelocityEstimate field value if set, zero value otherwise.
 func (o *LocationData) GetVelocityEstimate() VelocityEstimate {
-	if o == nil || isNil(o.VelocityEstimate) {
+	if o == nil || IsNil(o.VelocityEstimate) {
 		var ret VelocityEstimate
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *LocationData) GetVelocityEstimate() VelocityEstimate {
 // GetVelocityEstimateOk returns a tuple with the VelocityEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetVelocityEstimateOk() (*VelocityEstimate, bool) {
-	if o == nil || isNil(o.VelocityEstimate) {
+	if o == nil || IsNil(o.VelocityEstimate) {
 		return nil, false
 	}
 	return o.VelocityEstimate, true
@@ -205,7 +205,7 @@ func (o *LocationData) GetVelocityEstimateOk() (*VelocityEstimate, bool) {
 
 // HasVelocityEstimate returns a boolean if a field has been set.
 func (o *LocationData) HasVelocityEstimate() bool {
-	if o != nil && !isNil(o.VelocityEstimate) {
+	if o != nil && !IsNil(o.VelocityEstimate) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *LocationData) SetVelocityEstimate(v VelocityEstimate) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *LocationData) GetCivicAddress() CivicAddress {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *LocationData) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -237,7 +237,7 @@ func (o *LocationData) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *LocationData) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *LocationData) SetCivicAddress(v CivicAddress) {
 
 // GetLocalLocationEstimate returns the LocalLocationEstimate field value if set, zero value otherwise.
 func (o *LocationData) GetLocalLocationEstimate() LocalArea {
-	if o == nil || isNil(o.LocalLocationEstimate) {
+	if o == nil || IsNil(o.LocalLocationEstimate) {
 		var ret LocalArea
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *LocationData) GetLocalLocationEstimate() LocalArea {
 // GetLocalLocationEstimateOk returns a tuple with the LocalLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetLocalLocationEstimateOk() (*LocalArea, bool) {
-	if o == nil || isNil(o.LocalLocationEstimate) {
+	if o == nil || IsNil(o.LocalLocationEstimate) {
 		return nil, false
 	}
 	return o.LocalLocationEstimate, true
@@ -269,7 +269,7 @@ func (o *LocationData) GetLocalLocationEstimateOk() (*LocalArea, bool) {
 
 // HasLocalLocationEstimate returns a boolean if a field has been set.
 func (o *LocationData) HasLocalLocationEstimate() bool {
-	if o != nil && !isNil(o.LocalLocationEstimate) {
+	if o != nil && !IsNil(o.LocalLocationEstimate) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *LocationData) SetLocalLocationEstimate(v LocalArea) {
 
 // GetPositioningDataList returns the PositioningDataList field value if set, zero value otherwise.
 func (o *LocationData) GetPositioningDataList() []PositioningMethodAndUsage {
-	if o == nil || isNil(o.PositioningDataList) {
+	if o == nil || IsNil(o.PositioningDataList) {
 		var ret []PositioningMethodAndUsage
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *LocationData) GetPositioningDataList() []PositioningMethodAndUsage {
 // GetPositioningDataListOk returns a tuple with the PositioningDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetPositioningDataListOk() ([]PositioningMethodAndUsage, bool) {
-	if o == nil || isNil(o.PositioningDataList) {
+	if o == nil || IsNil(o.PositioningDataList) {
 		return nil, false
 	}
 	return o.PositioningDataList, true
@@ -301,7 +301,7 @@ func (o *LocationData) GetPositioningDataListOk() ([]PositioningMethodAndUsage, 
 
 // HasPositioningDataList returns a boolean if a field has been set.
 func (o *LocationData) HasPositioningDataList() bool {
-	if o != nil && !isNil(o.PositioningDataList) {
+	if o != nil && !IsNil(o.PositioningDataList) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *LocationData) SetPositioningDataList(v []PositioningMethodAndUsage) {
 
 // GetGnssPositioningDataList returns the GnssPositioningDataList field value if set, zero value otherwise.
 func (o *LocationData) GetGnssPositioningDataList() []GnssPositioningMethodAndUsage {
-	if o == nil || isNil(o.GnssPositioningDataList) {
+	if o == nil || IsNil(o.GnssPositioningDataList) {
 		var ret []GnssPositioningMethodAndUsage
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *LocationData) GetGnssPositioningDataList() []GnssPositioningMethodAndUs
 // GetGnssPositioningDataListOk returns a tuple with the GnssPositioningDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetGnssPositioningDataListOk() ([]GnssPositioningMethodAndUsage, bool) {
-	if o == nil || isNil(o.GnssPositioningDataList) {
+	if o == nil || IsNil(o.GnssPositioningDataList) {
 		return nil, false
 	}
 	return o.GnssPositioningDataList, true
@@ -333,7 +333,7 @@ func (o *LocationData) GetGnssPositioningDataListOk() ([]GnssPositioningMethodAn
 
 // HasGnssPositioningDataList returns a boolean if a field has been set.
 func (o *LocationData) HasGnssPositioningDataList() bool {
-	if o != nil && !isNil(o.GnssPositioningDataList) {
+	if o != nil && !IsNil(o.GnssPositioningDataList) {
 		return true
 	}
 
@@ -347,7 +347,7 @@ func (o *LocationData) SetGnssPositioningDataList(v []GnssPositioningMethodAndUs
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *LocationData) GetEcgi() Ecgi {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *LocationData) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -365,7 +365,7 @@ func (o *LocationData) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *LocationData) HasEcgi() bool {
-	if o != nil && !isNil(o.Ecgi) {
+	if o != nil && !IsNil(o.Ecgi) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *LocationData) SetEcgi(v Ecgi) {
 
 // GetNcgi returns the Ncgi field value if set, zero value otherwise.
 func (o *LocationData) GetNcgi() Ncgi {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *LocationData) GetNcgi() Ncgi {
 // GetNcgiOk returns a tuple with the Ncgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetNcgiOk() (*Ncgi, bool) {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		return nil, false
 	}
 	return o.Ncgi, true
@@ -397,7 +397,7 @@ func (o *LocationData) GetNcgiOk() (*Ncgi, bool) {
 
 // HasNcgi returns a boolean if a field has been set.
 func (o *LocationData) HasNcgi() bool {
-	if o != nil && !isNil(o.Ncgi) {
+	if o != nil && !IsNil(o.Ncgi) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *LocationData) SetNcgi(v Ncgi) {
 
 // GetAltitude returns the Altitude field value if set, zero value otherwise.
 func (o *LocationData) GetAltitude() float64 {
-	if o == nil || isNil(o.Altitude) {
+	if o == nil || IsNil(o.Altitude) {
 		var ret float64
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *LocationData) GetAltitude() float64 {
 // GetAltitudeOk returns a tuple with the Altitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetAltitudeOk() (*float64, bool) {
-	if o == nil || isNil(o.Altitude) {
+	if o == nil || IsNil(o.Altitude) {
 		return nil, false
 	}
 	return o.Altitude, true
@@ -429,7 +429,7 @@ func (o *LocationData) GetAltitudeOk() (*float64, bool) {
 
 // HasAltitude returns a boolean if a field has been set.
 func (o *LocationData) HasAltitude() bool {
-	if o != nil && !isNil(o.Altitude) {
+	if o != nil && !IsNil(o.Altitude) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *LocationData) SetAltitude(v float64) {
 
 // GetBarometricPressure returns the BarometricPressure field value if set, zero value otherwise.
 func (o *LocationData) GetBarometricPressure() int32 {
-	if o == nil || isNil(o.BarometricPressure) {
+	if o == nil || IsNil(o.BarometricPressure) {
 		var ret int32
 		return ret
 	}
@@ -453,7 +453,7 @@ func (o *LocationData) GetBarometricPressure() int32 {
 // GetBarometricPressureOk returns a tuple with the BarometricPressure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetBarometricPressureOk() (*int32, bool) {
-	if o == nil || isNil(o.BarometricPressure) {
+	if o == nil || IsNil(o.BarometricPressure) {
 		return nil, false
 	}
 	return o.BarometricPressure, true
@@ -461,7 +461,7 @@ func (o *LocationData) GetBarometricPressureOk() (*int32, bool) {
 
 // HasBarometricPressure returns a boolean if a field has been set.
 func (o *LocationData) HasBarometricPressure() bool {
-	if o != nil && !isNil(o.BarometricPressure) {
+	if o != nil && !IsNil(o.BarometricPressure) {
 		return true
 	}
 
@@ -475,7 +475,7 @@ func (o *LocationData) SetBarometricPressure(v int32) {
 
 // GetServingLMFIdentification returns the ServingLMFIdentification field value if set, zero value otherwise.
 func (o *LocationData) GetServingLMFIdentification() string {
-	if o == nil || isNil(o.ServingLMFIdentification) {
+	if o == nil || IsNil(o.ServingLMFIdentification) {
 		var ret string
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *LocationData) GetServingLMFIdentification() string {
 // GetServingLMFIdentificationOk returns a tuple with the ServingLMFIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetServingLMFIdentificationOk() (*string, bool) {
-	if o == nil || isNil(o.ServingLMFIdentification) {
+	if o == nil || IsNil(o.ServingLMFIdentification) {
 		return nil, false
 	}
 	return o.ServingLMFIdentification, true
@@ -493,7 +493,7 @@ func (o *LocationData) GetServingLMFIdentificationOk() (*string, bool) {
 
 // HasServingLMFIdentification returns a boolean if a field has been set.
 func (o *LocationData) HasServingLMFIdentification() bool {
-	if o != nil && !isNil(o.ServingLMFIdentification) {
+	if o != nil && !IsNil(o.ServingLMFIdentification) {
 		return true
 	}
 
@@ -507,7 +507,7 @@ func (o *LocationData) SetServingLMFIdentification(v string) {
 
 // GetUePositioningCap returns the UePositioningCap field value if set, zero value otherwise.
 func (o *LocationData) GetUePositioningCap() string {
-	if o == nil || isNil(o.UePositioningCap) {
+	if o == nil || IsNil(o.UePositioningCap) {
 		var ret string
 		return ret
 	}
@@ -517,7 +517,7 @@ func (o *LocationData) GetUePositioningCap() string {
 // GetUePositioningCapOk returns a tuple with the UePositioningCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetUePositioningCapOk() (*string, bool) {
-	if o == nil || isNil(o.UePositioningCap) {
+	if o == nil || IsNil(o.UePositioningCap) {
 		return nil, false
 	}
 	return o.UePositioningCap, true
@@ -525,7 +525,7 @@ func (o *LocationData) GetUePositioningCapOk() (*string, bool) {
 
 // HasUePositioningCap returns a boolean if a field has been set.
 func (o *LocationData) HasUePositioningCap() bool {
-	if o != nil && !isNil(o.UePositioningCap) {
+	if o != nil && !IsNil(o.UePositioningCap) {
 		return true
 	}
 
@@ -539,7 +539,7 @@ func (o *LocationData) SetUePositioningCap(v string) {
 
 // GetUeAreaInd returns the UeAreaInd field value if set, zero value otherwise.
 func (o *LocationData) GetUeAreaInd() UeAreaIndication {
-	if o == nil || isNil(o.UeAreaInd) {
+	if o == nil || IsNil(o.UeAreaInd) {
 		var ret UeAreaIndication
 		return ret
 	}
@@ -549,7 +549,7 @@ func (o *LocationData) GetUeAreaInd() UeAreaIndication {
 // GetUeAreaIndOk returns a tuple with the UeAreaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetUeAreaIndOk() (*UeAreaIndication, bool) {
-	if o == nil || isNil(o.UeAreaInd) {
+	if o == nil || IsNil(o.UeAreaInd) {
 		return nil, false
 	}
 	return o.UeAreaInd, true
@@ -557,7 +557,7 @@ func (o *LocationData) GetUeAreaIndOk() (*UeAreaIndication, bool) {
 
 // HasUeAreaInd returns a boolean if a field has been set.
 func (o *LocationData) HasUeAreaInd() bool {
-	if o != nil && !isNil(o.UeAreaInd) {
+	if o != nil && !IsNil(o.UeAreaInd) {
 		return true
 	}
 
@@ -571,7 +571,7 @@ func (o *LocationData) SetUeAreaInd(v UeAreaIndication) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *LocationData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -581,7 +581,7 @@ func (o *LocationData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -589,7 +589,7 @@ func (o *LocationData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *LocationData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -603,7 +603,7 @@ func (o *LocationData) SetSupportedFeatures(v string) {
 
 // GetAchievedQos returns the AchievedQos field value if set, zero value otherwise.
 func (o *LocationData) GetAchievedQos() MinorLocationQoS {
-	if o == nil || isNil(o.AchievedQos) {
+	if o == nil || IsNil(o.AchievedQos) {
 		var ret MinorLocationQoS
 		return ret
 	}
@@ -613,7 +613,7 @@ func (o *LocationData) GetAchievedQos() MinorLocationQoS {
 // GetAchievedQosOk returns a tuple with the AchievedQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationData) GetAchievedQosOk() (*MinorLocationQoS, bool) {
-	if o == nil || isNil(o.AchievedQos) {
+	if o == nil || IsNil(o.AchievedQos) {
 		return nil, false
 	}
 	return o.AchievedQos, true
@@ -621,7 +621,7 @@ func (o *LocationData) GetAchievedQosOk() (*MinorLocationQoS, bool) {
 
 // HasAchievedQos returns a boolean if a field has been set.
 func (o *LocationData) HasAchievedQos() bool {
-	if o != nil && !isNil(o.AchievedQos) {
+	if o != nil && !IsNil(o.AchievedQos) {
 		return true
 	}
 
@@ -634,7 +634,7 @@ func (o *LocationData) SetAchievedQos(v MinorLocationQoS) {
 }
 
 func (o LocationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -644,55 +644,55 @@ func (o LocationData) MarshalJSON() ([]byte, error) {
 func (o LocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locationEstimate"] = o.LocationEstimate
-	if !isNil(o.AccuracyFulfilmentIndicator) {
+	if !IsNil(o.AccuracyFulfilmentIndicator) {
 		toSerialize["accuracyFulfilmentIndicator"] = o.AccuracyFulfilmentIndicator
 	}
-	if !isNil(o.AgeOfLocationEstimate) {
+	if !IsNil(o.AgeOfLocationEstimate) {
 		toSerialize["ageOfLocationEstimate"] = o.AgeOfLocationEstimate
 	}
-	if !isNil(o.TimestampOfLocationEstimate) {
+	if !IsNil(o.TimestampOfLocationEstimate) {
 		toSerialize["timestampOfLocationEstimate"] = o.TimestampOfLocationEstimate
 	}
-	if !isNil(o.VelocityEstimate) {
+	if !IsNil(o.VelocityEstimate) {
 		toSerialize["velocityEstimate"] = o.VelocityEstimate
 	}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
-	if !isNil(o.LocalLocationEstimate) {
+	if !IsNil(o.LocalLocationEstimate) {
 		toSerialize["localLocationEstimate"] = o.LocalLocationEstimate
 	}
-	if !isNil(o.PositioningDataList) {
+	if !IsNil(o.PositioningDataList) {
 		toSerialize["positioningDataList"] = o.PositioningDataList
 	}
-	if !isNil(o.GnssPositioningDataList) {
+	if !IsNil(o.GnssPositioningDataList) {
 		toSerialize["gnssPositioningDataList"] = o.GnssPositioningDataList
 	}
-	if !isNil(o.Ecgi) {
+	if !IsNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
-	if !isNil(o.Ncgi) {
+	if !IsNil(o.Ncgi) {
 		toSerialize["ncgi"] = o.Ncgi
 	}
-	if !isNil(o.Altitude) {
+	if !IsNil(o.Altitude) {
 		toSerialize["altitude"] = o.Altitude
 	}
-	if !isNil(o.BarometricPressure) {
+	if !IsNil(o.BarometricPressure) {
 		toSerialize["barometricPressure"] = o.BarometricPressure
 	}
-	if !isNil(o.ServingLMFIdentification) {
+	if !IsNil(o.ServingLMFIdentification) {
 		toSerialize["servingLMFIdentification"] = o.ServingLMFIdentification
 	}
-	if !isNil(o.UePositioningCap) {
+	if !IsNil(o.UePositioningCap) {
 		toSerialize["uePositioningCap"] = o.UePositioningCap
 	}
-	if !isNil(o.UeAreaInd) {
+	if !IsNil(o.UeAreaInd) {
 		toSerialize["ueAreaInd"] = o.UeAreaInd
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.AchievedQos) {
+	if !IsNil(o.AchievedQos) {
 		toSerialize["achievedQos"] = o.AchievedQos
 	}
 	return toSerialize, nil
@@ -733,5 +733,3 @@ func (v *NullableLocationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

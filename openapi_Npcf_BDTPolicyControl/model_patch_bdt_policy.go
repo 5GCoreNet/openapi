@@ -1,7 +1,7 @@
 /*
 Npcf_BDTPolicyControl Service API
 
-PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF BDT Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the PatchBdtPolicy type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PatchBdtPolicy{}
 
-// PatchBdtPolicy Describes the updates in authorization data of an Individual BDT Policy created by the PCF. 
+// PatchBdtPolicy Describes the updates in authorization data of an Individual BDT Policy created by the PCF.
 type PatchBdtPolicy struct {
 	BdtPolData *BdtPolicyDataPatch `json:"bdtPolData,omitempty"`
-	BdtReqData *BdtReqDataPatch `json:"bdtReqData,omitempty"`
+	BdtReqData *BdtReqDataPatch    `json:"bdtReqData,omitempty"`
 }
 
 // NewPatchBdtPolicy instantiates a new PatchBdtPolicy object
@@ -42,7 +42,7 @@ func NewPatchBdtPolicyWithDefaults() *PatchBdtPolicy {
 
 // GetBdtPolData returns the BdtPolData field value if set, zero value otherwise.
 func (o *PatchBdtPolicy) GetBdtPolData() BdtPolicyDataPatch {
-	if o == nil || isNil(o.BdtPolData) {
+	if o == nil || IsNil(o.BdtPolData) {
 		var ret BdtPolicyDataPatch
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PatchBdtPolicy) GetBdtPolData() BdtPolicyDataPatch {
 // GetBdtPolDataOk returns a tuple with the BdtPolData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchBdtPolicy) GetBdtPolDataOk() (*BdtPolicyDataPatch, bool) {
-	if o == nil || isNil(o.BdtPolData) {
+	if o == nil || IsNil(o.BdtPolData) {
 		return nil, false
 	}
 	return o.BdtPolData, true
@@ -60,7 +60,7 @@ func (o *PatchBdtPolicy) GetBdtPolDataOk() (*BdtPolicyDataPatch, bool) {
 
 // HasBdtPolData returns a boolean if a field has been set.
 func (o *PatchBdtPolicy) HasBdtPolData() bool {
-	if o != nil && !isNil(o.BdtPolData) {
+	if o != nil && !IsNil(o.BdtPolData) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PatchBdtPolicy) SetBdtPolData(v BdtPolicyDataPatch) {
 
 // GetBdtReqData returns the BdtReqData field value if set, zero value otherwise.
 func (o *PatchBdtPolicy) GetBdtReqData() BdtReqDataPatch {
-	if o == nil || isNil(o.BdtReqData) {
+	if o == nil || IsNil(o.BdtReqData) {
 		var ret BdtReqDataPatch
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PatchBdtPolicy) GetBdtReqData() BdtReqDataPatch {
 // GetBdtReqDataOk returns a tuple with the BdtReqData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchBdtPolicy) GetBdtReqDataOk() (*BdtReqDataPatch, bool) {
-	if o == nil || isNil(o.BdtReqData) {
+	if o == nil || IsNil(o.BdtReqData) {
 		return nil, false
 	}
 	return o.BdtReqData, true
@@ -92,7 +92,7 @@ func (o *PatchBdtPolicy) GetBdtReqDataOk() (*BdtReqDataPatch, bool) {
 
 // HasBdtReqData returns a boolean if a field has been set.
 func (o *PatchBdtPolicy) HasBdtReqData() bool {
-	if o != nil && !isNil(o.BdtReqData) {
+	if o != nil && !IsNil(o.BdtReqData) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *PatchBdtPolicy) SetBdtReqData(v BdtReqDataPatch) {
 }
 
 func (o PatchBdtPolicy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o PatchBdtPolicy) MarshalJSON() ([]byte, error) {
 
 func (o PatchBdtPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.BdtPolData) {
+	if !IsNil(o.BdtPolData) {
 		toSerialize["bdtPolData"] = o.BdtPolData
 	}
-	if !isNil(o.BdtReqData) {
+	if !IsNil(o.BdtReqData) {
 		toSerialize["bdtReqData"] = o.BdtReqData
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullablePatchBdtPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

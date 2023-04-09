@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// ImsiRange - A range of IMSIs (subscriber identities), either based on a numeric range, or based on regular-expression matching 
+// ImsiRange - A range of IMSIs (subscriber identities), either based on a numeric range, or based on regular-expression matching
 type ImsiRange struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsImsiRange(v *interface{}) ImsiRange {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ImsiRange) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src ImsiRange) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ImsiRange) GetActualInstance() (interface{}) {
+func (obj *ImsiRange) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableImsiRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

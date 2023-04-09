@@ -1,7 +1,7 @@
 /*
 Namf_MBSCommunication
 
-AMF Communication Service for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service for MBS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,9 +21,9 @@ var _ MappedNullable = &Notification{}
 type Notification struct {
 	MbsSessionId MbsSessionId `json:"mbsSessionId"`
 	// Integer where the allowed values correspond to the value range of an unsigned 16-bit integer.
-	AreaSessionId *int32 `json:"areaSessionId,omitempty"`
-	FailureList []RanFailure `json:"failureList"`
-	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
+	AreaSessionId       *int32       `json:"areaSessionId,omitempty"`
+	FailureList         []RanFailure `json:"failureList"`
+	NotifyCorrelationId *string      `json:"notifyCorrelationId,omitempty"`
 }
 
 // NewNotification instantiates a new Notification object
@@ -71,7 +71,7 @@ func (o *Notification) SetMbsSessionId(v MbsSessionId) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *Notification) GetAreaSessionId() int32 {
-	if o == nil || isNil(o.AreaSessionId) {
+	if o == nil || IsNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *Notification) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AreaSessionId) {
+	if o == nil || IsNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -89,7 +89,7 @@ func (o *Notification) GetAreaSessionIdOk() (*int32, bool) {
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *Notification) HasAreaSessionId() bool {
-	if o != nil && !isNil(o.AreaSessionId) {
+	if o != nil && !IsNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *Notification) SetFailureList(v []RanFailure) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *Notification) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *Notification) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -145,7 +145,7 @@ func (o *Notification) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *Notification) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *Notification) SetNotifyCorrelationId(v string) {
 }
 
 func (o Notification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,11 +168,11 @@ func (o Notification) MarshalJSON() ([]byte, error) {
 func (o Notification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !isNil(o.AreaSessionId) {
+	if !IsNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
 	toSerialize["failureList"] = o.FailureList
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

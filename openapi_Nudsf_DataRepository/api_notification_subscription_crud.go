@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,26 +13,25 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NotificationSubscriptionCRUDApiService NotificationSubscriptionCRUDApi service
 type NotificationSubscriptionCRUDApiService service
 
 type ApiCreateAndUpdateNotificationSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *NotificationSubscriptionCRUDApiService
-	realmId string
-	storageId string
-	subscriptionId string
+	ctx                      context.Context
+	ApiService               *NotificationSubscriptionCRUDApiService
+	realmId                  string
+	storageId                string
+	subscriptionId           string
 	notificationSubscription *NotificationSubscription
-	supportedFeatures *string
-	ifNoneMatch *string
-	ifMatch *string
+	supportedFeatures        *string
+	ifNoneMatch              *string
+	ifMatch                  *string
 }
 
 func (r ApiCreateAndUpdateNotificationSubscriptionRequest) NotificationSubscription(notificationSubscription NotificationSubscription) ApiCreateAndUpdateNotificationSubscriptionRequest {
@@ -65,30 +64,31 @@ func (r ApiCreateAndUpdateNotificationSubscriptionRequest) Execute() (*Notificat
 /*
 CreateAndUpdateNotificationSubscription NotificationSubscription Create/Update
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param subscriptionId Identifier of the NotificationSubscription
- @return ApiCreateAndUpdateNotificationSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param subscriptionId Identifier of the NotificationSubscription
+	@return ApiCreateAndUpdateNotificationSubscriptionRequest
 */
 func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubscription(ctx context.Context, realmId string, storageId string, subscriptionId string) ApiCreateAndUpdateNotificationSubscriptionRequest {
 	return ApiCreateAndUpdateNotificationSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ApiService:     a,
+		ctx:            ctx,
+		realmId:        realmId,
+		storageId:      storageId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationSubscription
+//
+//	@return NotificationSubscription
 func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubscriptionExecute(r ApiCreateAndUpdateNotificationSubscriptionRequest) (*NotificationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationSubscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationSubscriptionCRUDApiService.CreateAndUpdateNotificationSubscription")
@@ -109,7 +109,7 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -129,10 +129,10 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.notificationSubscription
@@ -146,9 +146,9 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -165,8 +165,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -176,8 +176,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -187,8 +187,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -198,8 +198,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -209,8 +209,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -220,8 +220,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -231,8 +231,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -242,8 +242,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -253,8 +253,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -264,8 +264,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -275,8 +275,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -286,8 +286,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -297,8 +297,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -308,8 +308,8 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -319,18 +319,18 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v ProblemDetails
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+		var v ProblemDetails
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -347,14 +347,14 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 }
 
 type ApiDeleteNotificationSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *NotificationSubscriptionCRUDApiService
-	realmId string
-	storageId string
-	subscriptionId string
-	clientId *ClientId
-	getPrevious *bool
-	ifMatch *string
+	ctx               context.Context
+	ApiService        *NotificationSubscriptionCRUDApiService
+	realmId           string
+	storageId         string
+	subscriptionId    string
+	clientId          *ClientId
+	getPrevious       *bool
+	ifMatch           *string
 	supportedFeatures *string
 }
 
@@ -391,30 +391,31 @@ DeleteNotificationSubscription Delete a Notification Subscription of the storage
 
 delete a single subscriptions of the storage
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param subscriptionId Identifier of the NotificationSubscription
- @return ApiDeleteNotificationSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param subscriptionId Identifier of the NotificationSubscription
+	@return ApiDeleteNotificationSubscriptionRequest
 */
 func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscription(ctx context.Context, realmId string, storageId string, subscriptionId string) ApiDeleteNotificationSubscriptionRequest {
 	return ApiDeleteNotificationSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ApiService:     a,
+		ctx:            ctx,
+		realmId:        realmId,
+		storageId:      storageId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return []NotificationSubscription
+//
+//	@return []NotificationSubscription
 func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionExecute(r ApiDeleteNotificationSubscriptionRequest) ([]NotificationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []NotificationSubscription
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []NotificationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationSubscriptionCRUDApiService.DeleteNotificationSubscription")
@@ -434,12 +435,12 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 		return localVarReturnValue, nil, reportError("clientId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "client-id", r.clientId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "client-id", r.clientId, "")
 	if r.getPrevious != nil {
-		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -459,7 +460,7 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -471,9 +472,9 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -490,8 +491,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -501,8 +502,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -512,8 +513,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -523,8 +524,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -534,8 +535,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -545,8 +546,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -556,8 +557,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -567,8 +568,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -578,8 +579,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -589,8 +590,8 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -609,14 +610,14 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 }
 
 type ApiGetNotificationSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *NotificationSubscriptionCRUDApiService
-	realmId string
-	storageId string
-	subscriptionId string
+	ctx               context.Context
+	ApiService        *NotificationSubscriptionCRUDApiService
+	realmId           string
+	storageId         string
+	subscriptionId    string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // Features required to be supported by the target NF
@@ -646,30 +647,31 @@ GetNotificationSubscription Notification subscription retrieval
 
 retrieve a single notification subscription of the storage
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param subscriptionId Identifier of the NotificationSubscription
- @return ApiGetNotificationSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param subscriptionId Identifier of the NotificationSubscription
+	@return ApiGetNotificationSubscriptionRequest
 */
 func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscription(ctx context.Context, realmId string, storageId string, subscriptionId string) ApiGetNotificationSubscriptionRequest {
 	return ApiGetNotificationSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ApiService:     a,
+		ctx:            ctx,
+		realmId:        realmId,
+		storageId:      storageId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return NotificationSubscription
+//
+//	@return NotificationSubscription
 func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExecute(r ApiGetNotificationSubscriptionRequest) (*NotificationSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NotificationSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NotificationSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationSubscriptionCRUDApiService.GetNotificationSubscription")
@@ -687,7 +689,7 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -707,10 +709,10 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -722,9 +724,9 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -741,8 +743,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -752,8 +754,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -763,8 +765,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -774,8 +776,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -785,8 +787,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -796,8 +798,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -807,8 +809,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -818,8 +820,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -829,8 +831,8 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -849,13 +851,13 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 }
 
 type ApiUpdateNotificationSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *NotificationSubscriptionCRUDApiService
-	realmId string
-	storageId string
-	subscriptionId string
-	patchItem *[]PatchItem
-	ifMatch *string
+	ctx               context.Context
+	ApiService        *NotificationSubscriptionCRUDApiService
+	realmId           string
+	storageId         string
+	subscriptionId    string
+	patchItem         *[]PatchItem
+	ifMatch           *string
 	supportedFeatures *string
 }
 
@@ -886,30 +888,31 @@ UpdateNotificationSubscription NotificationSubscription update
 
 update a specific NotificationSubscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @param subscriptionId Identifier of the NotificationSubscription
- @return ApiUpdateNotificationSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@param subscriptionId Identifier of the NotificationSubscription
+	@return ApiUpdateNotificationSubscriptionRequest
 */
 func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscription(ctx context.Context, realmId string, storageId string, subscriptionId string) ApiUpdateNotificationSubscriptionRequest {
 	return ApiUpdateNotificationSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ApiService:     a,
+		ctx:            ctx,
+		realmId:        realmId,
+		storageId:      storageId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionExecute(r ApiUpdateNotificationSubscriptionRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationSubscriptionCRUDApiService.UpdateNotificationSubscription")
@@ -933,7 +936,7 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -953,7 +956,7 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -967,9 +970,9 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -986,8 +989,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -997,8 +1000,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1008,8 +1011,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1019,8 +1022,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1030,8 +1033,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 408 {
@@ -1041,8 +1044,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1052,8 +1055,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1063,8 +1066,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1074,8 +1077,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1085,8 +1088,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1096,8 +1099,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1107,8 +1110,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1118,8 +1121,8 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

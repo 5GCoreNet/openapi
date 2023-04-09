@@ -1,7 +1,7 @@
 /*
 GBA BSF Nbsp_GBA Service
 
-GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &Uss{}
 
 // Uss User Security Settings for a given GAA Service
 type Uss struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	GsId int32 `json:"gsId"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	GsType int32 `json:"gsType"`
-	UeIds []UeIdsItem `json:"ueIds"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	GsType int32       `json:"gsType"`
+	UeIds  []UeIdsItem `json:"ueIds"`
 	// Character string representing a NAF Group
-	NafGroup *string `json:"nafGroup,omitempty"`
-	Flags []FlagsItem `json:"flags,omitempty"`
-	KeyChoice *KeyChoice `json:"keyChoice,omitempty"`
+	NafGroup  *string     `json:"nafGroup,omitempty"`
+	Flags     []FlagsItem `json:"flags,omitempty"`
+	KeyChoice *KeyChoice  `json:"keyChoice,omitempty"`
 }
 
 // NewUss instantiates a new Uss object
@@ -124,7 +124,7 @@ func (o *Uss) SetUeIds(v []UeIdsItem) {
 
 // GetNafGroup returns the NafGroup field value if set, zero value otherwise.
 func (o *Uss) GetNafGroup() string {
-	if o == nil || isNil(o.NafGroup) {
+	if o == nil || IsNil(o.NafGroup) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *Uss) GetNafGroup() string {
 // GetNafGroupOk returns a tuple with the NafGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Uss) GetNafGroupOk() (*string, bool) {
-	if o == nil || isNil(o.NafGroup) {
+	if o == nil || IsNil(o.NafGroup) {
 		return nil, false
 	}
 	return o.NafGroup, true
@@ -142,7 +142,7 @@ func (o *Uss) GetNafGroupOk() (*string, bool) {
 
 // HasNafGroup returns a boolean if a field has been set.
 func (o *Uss) HasNafGroup() bool {
-	if o != nil && !isNil(o.NafGroup) {
+	if o != nil && !IsNil(o.NafGroup) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *Uss) SetNafGroup(v string) {
 
 // GetFlags returns the Flags field value if set, zero value otherwise.
 func (o *Uss) GetFlags() []FlagsItem {
-	if o == nil || isNil(o.Flags) {
+	if o == nil || IsNil(o.Flags) {
 		var ret []FlagsItem
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *Uss) GetFlags() []FlagsItem {
 // GetFlagsOk returns a tuple with the Flags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Uss) GetFlagsOk() ([]FlagsItem, bool) {
-	if o == nil || isNil(o.Flags) {
+	if o == nil || IsNil(o.Flags) {
 		return nil, false
 	}
 	return o.Flags, true
@@ -174,7 +174,7 @@ func (o *Uss) GetFlagsOk() ([]FlagsItem, bool) {
 
 // HasFlags returns a boolean if a field has been set.
 func (o *Uss) HasFlags() bool {
-	if o != nil && !isNil(o.Flags) {
+	if o != nil && !IsNil(o.Flags) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *Uss) SetFlags(v []FlagsItem) {
 
 // GetKeyChoice returns the KeyChoice field value if set, zero value otherwise.
 func (o *Uss) GetKeyChoice() KeyChoice {
-	if o == nil || isNil(o.KeyChoice) {
+	if o == nil || IsNil(o.KeyChoice) {
 		var ret KeyChoice
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *Uss) GetKeyChoice() KeyChoice {
 // GetKeyChoiceOk returns a tuple with the KeyChoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Uss) GetKeyChoiceOk() (*KeyChoice, bool) {
-	if o == nil || isNil(o.KeyChoice) {
+	if o == nil || IsNil(o.KeyChoice) {
 		return nil, false
 	}
 	return o.KeyChoice, true
@@ -206,7 +206,7 @@ func (o *Uss) GetKeyChoiceOk() (*KeyChoice, bool) {
 
 // HasKeyChoice returns a boolean if a field has been set.
 func (o *Uss) HasKeyChoice() bool {
-	if o != nil && !isNil(o.KeyChoice) {
+	if o != nil && !IsNil(o.KeyChoice) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *Uss) SetKeyChoice(v KeyChoice) {
 }
 
 func (o Uss) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -231,13 +231,13 @@ func (o Uss) ToMap() (map[string]interface{}, error) {
 	toSerialize["gsId"] = o.GsId
 	toSerialize["gsType"] = o.GsType
 	toSerialize["ueIds"] = o.UeIds
-	if !isNil(o.NafGroup) {
+	if !IsNil(o.NafGroup) {
 		toSerialize["nafGroup"] = o.NafGroup
 	}
-	if !isNil(o.Flags) {
+	if !IsNil(o.Flags) {
 		toSerialize["flags"] = o.Flags
 	}
-	if !isNil(o.KeyChoice) {
+	if !IsNil(o.KeyChoice) {
 		toSerialize["keyChoice"] = o.KeyChoice
 	}
 	return toSerialize, nil
@@ -278,5 +278,3 @@ func (v *NullableUss) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

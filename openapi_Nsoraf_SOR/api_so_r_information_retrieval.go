@@ -1,7 +1,7 @@
 /*
 Nsoraf_SOR
 
-Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Nsoraf Steering Of Roaming Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nsoraf_SOR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SoRInformationRetrievalApiService SoRInformationRetrievalApi service
 type SoRInformationRetrievalApiService service
 
 type ApiGetSorInformationRequest struct {
-	ctx context.Context
-	ApiService *SoRInformationRetrievalApiService
-	supi string
-	plmnId *PlmnIdNid
+	ctx               context.Context
+	ApiService        *SoRInformationRetrievalApiService
+	supi              string
+	plmnId            *PlmnIdNid
 	supportedFeatures *string
-	accessType *AccessType
+	accessType        *AccessType
 }
 
 // serving PLMN ID or SNPN ID
@@ -57,26 +56,27 @@ func (r ApiGetSorInformationRequest) Execute() (*SorInformation, *http.Response,
 /*
 GetSorInformation retrieve the steering of roaming information for a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Identifier of the UE
- @return ApiGetSorInformationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Identifier of the UE
+	@return ApiGetSorInformationRequest
 */
 func (a *SoRInformationRetrievalApiService) GetSorInformation(ctx context.Context, supi string) ApiGetSorInformationRequest {
 	return ApiGetSorInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
-//  @return SorInformation
+//
+//	@return SorInformation
 func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSorInformationRequest) (*SorInformation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SorInformation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SorInformation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoRInformationRetrievalApiService.GetSorInformation")
@@ -95,11 +95,11 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
-	parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	if r.accessType != nil {
-		parameterAddToQuery(localVarQueryParams, "access-type", r.accessType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "access-type", r.accessType, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -128,9 +128,9 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -147,8 +147,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -158,8 +158,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -169,8 +169,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -180,8 +180,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -191,8 +191,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -202,8 +202,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -213,8 +213,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -224,8 +224,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -235,8 +235,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -246,8 +246,8 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

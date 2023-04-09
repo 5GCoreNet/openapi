@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &BdtDataPatch{}
 
 // BdtDataPatch Contains the modified background data transfer data.
 type BdtDataPatch struct {
-	TransPolicy *TransferPolicy `json:"transPolicy,omitempty"`
-	BdtpStatus *BdtPolicyStatus `json:"bdtpStatus,omitempty"`
+	TransPolicy *TransferPolicy  `json:"transPolicy,omitempty"`
+	BdtpStatus  *BdtPolicyStatus `json:"bdtpStatus,omitempty"`
 }
 
 // NewBdtDataPatch instantiates a new BdtDataPatch object
@@ -42,7 +42,7 @@ func NewBdtDataPatchWithDefaults() *BdtDataPatch {
 
 // GetTransPolicy returns the TransPolicy field value if set, zero value otherwise.
 func (o *BdtDataPatch) GetTransPolicy() TransferPolicy {
-	if o == nil || isNil(o.TransPolicy) {
+	if o == nil || IsNil(o.TransPolicy) {
 		var ret TransferPolicy
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *BdtDataPatch) GetTransPolicy() TransferPolicy {
 // GetTransPolicyOk returns a tuple with the TransPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtDataPatch) GetTransPolicyOk() (*TransferPolicy, bool) {
-	if o == nil || isNil(o.TransPolicy) {
+	if o == nil || IsNil(o.TransPolicy) {
 		return nil, false
 	}
 	return o.TransPolicy, true
@@ -60,7 +60,7 @@ func (o *BdtDataPatch) GetTransPolicyOk() (*TransferPolicy, bool) {
 
 // HasTransPolicy returns a boolean if a field has been set.
 func (o *BdtDataPatch) HasTransPolicy() bool {
-	if o != nil && !isNil(o.TransPolicy) {
+	if o != nil && !IsNil(o.TransPolicy) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *BdtDataPatch) SetTransPolicy(v TransferPolicy) {
 
 // GetBdtpStatus returns the BdtpStatus field value if set, zero value otherwise.
 func (o *BdtDataPatch) GetBdtpStatus() BdtPolicyStatus {
-	if o == nil || isNil(o.BdtpStatus) {
+	if o == nil || IsNil(o.BdtpStatus) {
 		var ret BdtPolicyStatus
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *BdtDataPatch) GetBdtpStatus() BdtPolicyStatus {
 // GetBdtpStatusOk returns a tuple with the BdtpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtDataPatch) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
-	if o == nil || isNil(o.BdtpStatus) {
+	if o == nil || IsNil(o.BdtpStatus) {
 		return nil, false
 	}
 	return o.BdtpStatus, true
@@ -92,7 +92,7 @@ func (o *BdtDataPatch) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
 
 // HasBdtpStatus returns a boolean if a field has been set.
 func (o *BdtDataPatch) HasBdtpStatus() bool {
-	if o != nil && !isNil(o.BdtpStatus) {
+	if o != nil && !IsNil(o.BdtpStatus) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *BdtDataPatch) SetBdtpStatus(v BdtPolicyStatus) {
 }
 
 func (o BdtDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o BdtDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o BdtDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TransPolicy) {
+	if !IsNil(o.TransPolicy) {
 		toSerialize["transPolicy"] = o.TransPolicy
 	}
-	if !isNil(o.BdtpStatus) {
+	if !IsNil(o.BdtpStatus) {
 		toSerialize["bdtpStatus"] = o.BdtpStatus
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableBdtDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

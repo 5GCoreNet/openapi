@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -68,7 +68,7 @@ func (o *MonLocAreaInterestFltr) SetLocInfoCri(v LocationInfoCriteria) {
 
 // GetTrigEvnts returns the TrigEvnts field value if set, zero value otherwise.
 func (o *MonLocAreaInterestFltr) GetTrigEvnts() []MonLocTriggerEvent {
-	if o == nil || isNil(o.TrigEvnts) {
+	if o == nil || IsNil(o.TrigEvnts) {
 		var ret []MonLocTriggerEvent
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MonLocAreaInterestFltr) GetTrigEvnts() []MonLocTriggerEvent {
 // GetTrigEvntsOk returns a tuple with the TrigEvnts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonLocAreaInterestFltr) GetTrigEvntsOk() ([]MonLocTriggerEvent, bool) {
-	if o == nil || isNil(o.TrigEvnts) {
+	if o == nil || IsNil(o.TrigEvnts) {
 		return nil, false
 	}
 	return o.TrigEvnts, true
@@ -86,7 +86,7 @@ func (o *MonLocAreaInterestFltr) GetTrigEvntsOk() ([]MonLocTriggerEvent, bool) {
 
 // HasTrigEvnts returns a boolean if a field has been set.
 func (o *MonLocAreaInterestFltr) HasTrigEvnts() bool {
-	if o != nil && !isNil(o.TrigEvnts) {
+	if o != nil && !IsNil(o.TrigEvnts) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *MonLocAreaInterestFltr) SetTrigEvnts(v []MonLocTriggerEvent) {
 }
 
 func (o MonLocAreaInterestFltr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o MonLocAreaInterestFltr) MarshalJSON() ([]byte, error) {
 func (o MonLocAreaInterestFltr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locInfoCri"] = o.LocInfoCri
-	if !isNil(o.TrigEvnts) {
+	if !IsNil(o.TrigEvnts) {
 		toSerialize["trigEvnts"] = o.TrigEvnts
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableMonLocAreaInterestFltr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -35,7 +35,6 @@ func StringAsHost(v *string) Host {
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *Host) UnmarshalJSON(data []byte) error {
 	var err error
@@ -93,7 +92,7 @@ func (src Host) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *Host) GetActualInstance() (interface{}) {
+func (obj *Host) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

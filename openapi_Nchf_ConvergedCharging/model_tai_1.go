@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Tai1{}
 // Tai1 struct for Tai1
 type Tai1 struct {
 	PlmnId *PlmnId1 `json:"plmnId,omitempty"`
-	NrTac *int32 `json:"nrTac,omitempty"`
+	NrTac  *int32   `json:"nrTac,omitempty"`
 }
 
 // NewTai1 instantiates a new Tai1 object
@@ -42,7 +42,7 @@ func NewTai1WithDefaults() *Tai1 {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *Tai1) GetPlmnId() PlmnId1 {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId1
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Tai1) GetPlmnId() PlmnId1 {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetPlmnIdOk() (*PlmnId1, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -60,7 +60,7 @@ func (o *Tai1) GetPlmnIdOk() (*PlmnId1, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *Tai1) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Tai1) SetPlmnId(v PlmnId1) {
 
 // GetNrTac returns the NrTac field value if set, zero value otherwise.
 func (o *Tai1) GetNrTac() int32 {
-	if o == nil || isNil(o.NrTac) {
+	if o == nil || IsNil(o.NrTac) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Tai1) GetNrTac() int32 {
 // GetNrTacOk returns a tuple with the NrTac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetNrTacOk() (*int32, bool) {
-	if o == nil || isNil(o.NrTac) {
+	if o == nil || IsNil(o.NrTac) {
 		return nil, false
 	}
 	return o.NrTac, true
@@ -92,7 +92,7 @@ func (o *Tai1) GetNrTacOk() (*int32, bool) {
 
 // HasNrTac returns a boolean if a field has been set.
 func (o *Tai1) HasNrTac() bool {
-	if o != nil && !isNil(o.NrTac) {
+	if o != nil && !IsNil(o.NrTac) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Tai1) SetNrTac(v int32) {
 }
 
 func (o Tai1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o Tai1) MarshalJSON() ([]byte, error) {
 
 func (o Tai1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.NrTac) {
+	if !IsNil(o.NrTac) {
 		toSerialize["nrTac"] = o.NrTac
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableTai1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

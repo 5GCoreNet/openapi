@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DnaiChangeType Possible values are: - EARLY: Early notification of UP path reconfiguration. - EARLY_LATE: Early and late notification of UP path reconfiguration. This value shall   only be present in the subscription to the DNAI change event. - LATE: Late notification of UP path reconfiguration.  
+// DnaiChangeType Possible values are: - EARLY: Early notification of UP path reconfiguration. - EARLY_LATE: Early and late notification of UP path reconfiguration. This value shall   only be present in the subscription to the DNAI change event. - LATE: Late notification of UP path reconfiguration.
 type DnaiChangeType struct {
-	DnaiChangeTypeAnyOf *DnaiChangeTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DnaiChangeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DnaiChangeTypeAnyOf
-	err = json.Unmarshal(data, &dst.DnaiChangeTypeAnyOf);
-	if err == nil {
-		jsonDnaiChangeTypeAnyOf, _ := json.Marshal(dst.DnaiChangeTypeAnyOf)
-		if string(jsonDnaiChangeTypeAnyOf) == "{}" { // empty struct
-			dst.DnaiChangeTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.DnaiChangeTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.DnaiChangeTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DnaiChangeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DnaiChangeType) MarshalJSON() ([]byte, error) {
-	if src.DnaiChangeTypeAnyOf != nil {
-		return json.Marshal(&src.DnaiChangeTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDnaiChangeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

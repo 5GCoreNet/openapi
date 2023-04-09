@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the MBSDistSessionAnmt type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MBSDistSessionAnmt{}
 
-// MBSDistSessionAnmt Represents the set of MBS Distribution Session Announcements currently associated with this  MBS User Service Announcement. 
+// MBSDistSessionAnmt Represents the set of MBS Distribution Session Announcements currently associated with this  MBS User Service Announcement.
 type MBSDistSessionAnmt struct {
 	MbsSessionId *MbsSessionId `json:"mbsSessionId,omitempty"`
 	// MBS Frequency Selection Area Identifier
-	MbsFSAId *string `json:"mbsFSAId,omitempty"`
-	DistrMethod DistributionMethod `json:"distrMethod"`
+	MbsFSAId        *string                 `json:"mbsFSAId,omitempty"`
+	DistrMethod     DistributionMethod      `json:"distrMethod"`
 	ObjDistrAnnInfo *ObjectDistMethAnmtInfo `json:"objDistrAnnInfo,omitempty"`
-	SesDesInfo []string `json:"sesDesInfo"`
+	SesDesInfo      []string                `json:"sesDesInfo"`
 }
 
 // NewMBSDistSessionAnmt instantiates a new MBSDistSessionAnmt object
@@ -48,7 +48,7 @@ func NewMBSDistSessionAnmtWithDefaults() *MBSDistSessionAnmt {
 
 // GetMbsSessionId returns the MbsSessionId field value if set, zero value otherwise.
 func (o *MBSDistSessionAnmt) GetMbsSessionId() MbsSessionId {
-	if o == nil || isNil(o.MbsSessionId) {
+	if o == nil || IsNil(o.MbsSessionId) {
 		var ret MbsSessionId
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *MBSDistSessionAnmt) GetMbsSessionId() MbsSessionId {
 // GetMbsSessionIdOk returns a tuple with the MbsSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistSessionAnmt) GetMbsSessionIdOk() (*MbsSessionId, bool) {
-	if o == nil || isNil(o.MbsSessionId) {
+	if o == nil || IsNil(o.MbsSessionId) {
 		return nil, false
 	}
 	return o.MbsSessionId, true
@@ -66,7 +66,7 @@ func (o *MBSDistSessionAnmt) GetMbsSessionIdOk() (*MbsSessionId, bool) {
 
 // HasMbsSessionId returns a boolean if a field has been set.
 func (o *MBSDistSessionAnmt) HasMbsSessionId() bool {
-	if o != nil && !isNil(o.MbsSessionId) {
+	if o != nil && !IsNil(o.MbsSessionId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *MBSDistSessionAnmt) SetMbsSessionId(v MbsSessionId) {
 
 // GetMbsFSAId returns the MbsFSAId field value if set, zero value otherwise.
 func (o *MBSDistSessionAnmt) GetMbsFSAId() string {
-	if o == nil || isNil(o.MbsFSAId) {
+	if o == nil || IsNil(o.MbsFSAId) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *MBSDistSessionAnmt) GetMbsFSAId() string {
 // GetMbsFSAIdOk returns a tuple with the MbsFSAId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistSessionAnmt) GetMbsFSAIdOk() (*string, bool) {
-	if o == nil || isNil(o.MbsFSAId) {
+	if o == nil || IsNil(o.MbsFSAId) {
 		return nil, false
 	}
 	return o.MbsFSAId, true
@@ -98,7 +98,7 @@ func (o *MBSDistSessionAnmt) GetMbsFSAIdOk() (*string, bool) {
 
 // HasMbsFSAId returns a boolean if a field has been set.
 func (o *MBSDistSessionAnmt) HasMbsFSAId() bool {
-	if o != nil && !isNil(o.MbsFSAId) {
+	if o != nil && !IsNil(o.MbsFSAId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *MBSDistSessionAnmt) SetDistrMethod(v DistributionMethod) {
 
 // GetObjDistrAnnInfo returns the ObjDistrAnnInfo field value if set, zero value otherwise.
 func (o *MBSDistSessionAnmt) GetObjDistrAnnInfo() ObjectDistMethAnmtInfo {
-	if o == nil || isNil(o.ObjDistrAnnInfo) {
+	if o == nil || IsNil(o.ObjDistrAnnInfo) {
 		var ret ObjectDistMethAnmtInfo
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *MBSDistSessionAnmt) GetObjDistrAnnInfo() ObjectDistMethAnmtInfo {
 // GetObjDistrAnnInfoOk returns a tuple with the ObjDistrAnnInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistSessionAnmt) GetObjDistrAnnInfoOk() (*ObjectDistMethAnmtInfo, bool) {
-	if o == nil || isNil(o.ObjDistrAnnInfo) {
+	if o == nil || IsNil(o.ObjDistrAnnInfo) {
 		return nil, false
 	}
 	return o.ObjDistrAnnInfo, true
@@ -154,7 +154,7 @@ func (o *MBSDistSessionAnmt) GetObjDistrAnnInfoOk() (*ObjectDistMethAnmtInfo, bo
 
 // HasObjDistrAnnInfo returns a boolean if a field has been set.
 func (o *MBSDistSessionAnmt) HasObjDistrAnnInfo() bool {
-	if o != nil && !isNil(o.ObjDistrAnnInfo) {
+	if o != nil && !IsNil(o.ObjDistrAnnInfo) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *MBSDistSessionAnmt) SetSesDesInfo(v []string) {
 }
 
 func (o MBSDistSessionAnmt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -200,14 +200,14 @@ func (o MBSDistSessionAnmt) MarshalJSON() ([]byte, error) {
 
 func (o MBSDistSessionAnmt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsSessionId) {
+	if !IsNil(o.MbsSessionId) {
 		toSerialize["mbsSessionId"] = o.MbsSessionId
 	}
-	if !isNil(o.MbsFSAId) {
+	if !IsNil(o.MbsFSAId) {
 		toSerialize["mbsFSAId"] = o.MbsFSAId
 	}
 	toSerialize["distrMethod"] = o.DistrMethod
-	if !isNil(o.ObjDistrAnnInfo) {
+	if !IsNil(o.ObjDistrAnnInfo) {
 		toSerialize["objDistrAnnInfo"] = o.ObjDistrAnnInfo
 	}
 	toSerialize["sesDesInfo"] = o.SesDesInfo
@@ -249,5 +249,3 @@ func (v *NullableMBSDistSessionAnmt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// FailureCode Possible values are - UNAVAILABLE_ML_MODEL: Indicates the requested ML model for the event is unavailable. 
+// FailureCode Possible values are - UNAVAILABLE_ML_MODEL: Indicates the requested ML model for the event is unavailable.
 type FailureCode struct {
-	FailureCodeAnyOf *FailureCodeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *FailureCode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into FailureCodeAnyOf
-	err = json.Unmarshal(data, &dst.FailureCodeAnyOf);
-	if err == nil {
-		jsonFailureCodeAnyOf, _ := json.Marshal(dst.FailureCodeAnyOf)
-		if string(jsonFailureCodeAnyOf) == "{}" { // empty struct
-			dst.FailureCodeAnyOf = nil
-		} else {
-			return nil // data stored in dst.FailureCodeAnyOf, return on the first match
-		}
-	} else {
-		dst.FailureCodeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *FailureCode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *FailureCode) MarshalJSON() ([]byte, error) {
-	if src.FailureCodeAnyOf != nil {
-		return json.Marshal(&src.FailureCodeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableFailureCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

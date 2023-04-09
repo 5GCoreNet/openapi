@@ -1,7 +1,7 @@
 /*
 EES UE Location Information_API
 
-API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the ConsentRevocNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ConsentRevocNotif{}
 
-// ConsentRevocNotif Represents the user consent revocation information conveyed in a user consent revocation notification. 
+// ConsentRevocNotif Represents the user consent revocation information conveyed in a user consent revocation notification.
 type ConsentRevocNotif struct {
-	// Contains the identifier of the subscription to which the notification is related. 
-	SubscriptionId string `json:"subscriptionId"`
+	// Contains the identifier of the subscription to which the notification is related.
+	SubscriptionId  string           `json:"subscriptionId"`
 	ConsentsRevoked []ConsentRevoked `json:"consentsRevoked"`
 }
 
@@ -92,7 +92,7 @@ func (o *ConsentRevocNotif) SetConsentsRevoked(v []ConsentRevoked) {
 }
 
 func (o ConsentRevocNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableConsentRevocNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

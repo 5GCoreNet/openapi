@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Provider_Management_API
 
-API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_CAPIF_API_Provider_Management_API
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiRegistrationsPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                         context.Context
+	ApiService                  *DefaultApiService
 	aPIProviderEnrolmentDetails *APIProviderEnrolmentDetails
 }
 
@@ -43,24 +42,25 @@ RegistrationsPost Method for RegistrationsPost
 
 Registers a new API Provider domain with API provider domain functions profiles.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRegistrationsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRegistrationsPostRequest
 */
 func (a *DefaultApiService) RegistrationsPost(ctx context.Context) ApiRegistrationsPostRequest {
 	return ApiRegistrationsPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return APIProviderEnrolmentDetails
+//
+//	@return APIProviderEnrolmentDetails
 func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostRequest) (*APIProviderEnrolmentDetails, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *APIProviderEnrolmentDetails
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *APIProviderEnrolmentDetails
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RegistrationsPost")
@@ -106,9 +106,9 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -125,8 +125,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -136,8 +136,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -147,8 +147,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -158,8 +158,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -169,8 +169,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -180,8 +180,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -191,8 +191,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -202,8 +202,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -213,8 +213,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -224,8 +224,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -244,8 +244,8 @@ func (a *DefaultApiService) RegistrationsPostExecute(r ApiRegistrationsPostReque
 }
 
 type ApiRegistrationsRegistrationIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx            context.Context
+	ApiService     *DefaultApiService
 	registrationId string
 }
 
@@ -258,14 +258,14 @@ RegistrationsRegistrationIdDelete Method for RegistrationsRegistrationIdDelete
 
 Deregisters API provider domain by deleting API provider domain and functions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param registrationId String identifying an registered API provider domain resource.
- @return ApiRegistrationsRegistrationIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param registrationId String identifying an registered API provider domain resource.
+	@return ApiRegistrationsRegistrationIdDeleteRequest
 */
 func (a *DefaultApiService) RegistrationsRegistrationIdDelete(ctx context.Context, registrationId string) ApiRegistrationsRegistrationIdDeleteRequest {
 	return ApiRegistrationsRegistrationIdDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		registrationId: registrationId,
 	}
 }
@@ -273,9 +273,9 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDelete(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegistrationsRegistrationIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RegistrationsRegistrationIdDelete")
@@ -317,9 +317,9 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -336,8 +336,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -347,8 +347,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -358,8 +358,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -369,8 +369,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -380,8 +380,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -391,8 +391,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -402,8 +402,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -413,13 +413,13 @@ func (a *DefaultApiService) RegistrationsRegistrationIdDeleteExecute(r ApiRegist
 }
 
 type ApiRegistrationsRegistrationIdPutRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	registrationId string
+	ctx                         context.Context
+	ApiService                  *DefaultApiService
+	registrationId              string
 	aPIProviderEnrolmentDetails *APIProviderEnrolmentDetails
 }
 
-// Representation of the API provider domain registration details to be updated in CAPIF core function. 
+// Representation of the API provider domain registration details to be updated in CAPIF core function.
 func (r ApiRegistrationsRegistrationIdPutRequest) APIProviderEnrolmentDetails(aPIProviderEnrolmentDetails APIProviderEnrolmentDetails) ApiRegistrationsRegistrationIdPutRequest {
 	r.aPIProviderEnrolmentDetails = &aPIProviderEnrolmentDetails
 	return r
@@ -434,26 +434,27 @@ RegistrationsRegistrationIdPut Method for RegistrationsRegistrationIdPut
 
 Updates an API provider domain's registration details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param registrationId String identifying an registered API provider domain resource.
- @return ApiRegistrationsRegistrationIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param registrationId String identifying an registered API provider domain resource.
+	@return ApiRegistrationsRegistrationIdPutRequest
 */
 func (a *DefaultApiService) RegistrationsRegistrationIdPut(ctx context.Context, registrationId string) ApiRegistrationsRegistrationIdPutRequest {
 	return ApiRegistrationsRegistrationIdPutRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		registrationId: registrationId,
 	}
 }
 
 // Execute executes the request
-//  @return APIProviderEnrolmentDetails
+//
+//	@return APIProviderEnrolmentDetails
 func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrationsRegistrationIdPutRequest) (*APIProviderEnrolmentDetails, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *APIProviderEnrolmentDetails
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *APIProviderEnrolmentDetails
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RegistrationsRegistrationIdPut")
@@ -500,9 +501,9 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -519,8 +520,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -530,8 +531,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -541,8 +542,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -552,8 +553,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -563,8 +564,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -574,8 +575,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -585,8 +586,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -596,8 +597,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -607,8 +608,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -618,8 +619,8 @@ func (a *DefaultApiService) RegistrationsRegistrationIdPutExecute(r ApiRegistrat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

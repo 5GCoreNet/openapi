@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,17 +15,17 @@ import (
 	"fmt"
 )
 
-// EutraLocationRm This data type is defined in the same way as the 'EutraLocation' data type, but with the OpenAPI 'nullable: true' property.  
+// EutraLocationRm This data type is defined in the same way as the 'EutraLocation' data type, but with the OpenAPI 'nullable: true' property.
 type EutraLocationRm struct {
 	EutraLocation *EutraLocation
-	NullValue *NullValue
+	NullValue     *NullValue
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EutraLocationRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into EutraLocation
-	err = json.Unmarshal(data, &dst.EutraLocation);
+	err = json.Unmarshal(data, &dst.EutraLocation)
 	if err == nil {
 		jsonEutraLocation, _ := json.Marshal(dst.EutraLocation)
 		if string(jsonEutraLocation) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *EutraLocationRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableEutraLocationRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

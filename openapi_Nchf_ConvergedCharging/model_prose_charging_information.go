@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,43 +20,43 @@ var _ MappedNullable = &ProseChargingInformation{}
 
 // ProseChargingInformation struct for ProseChargingInformation
 type ProseChargingInformation struct {
-	AnnouncingPlmnID *PlmnId `json:"announcingPlmnID,omitempty"`
-	AnnouncingUeHplmnIdentifier *PlmnId `json:"announcingUeHplmnIdentifier,omitempty"`
-	AnnouncingUeVplmnIdentifier *PlmnId `json:"announcingUeVplmnIdentifier,omitempty"`
-	MonitoringUeHplmnIdentifier *PlmnId `json:"monitoringUeHplmnIdentifier,omitempty"`
-	MonitoringUeVplmnIdentifier *PlmnId `json:"monitoringUeVplmnIdentifier,omitempty"`
-	DiscovererUeHplmnIdentifier *PlmnId `json:"discovererUeHplmnIdentifier,omitempty"`
-	DiscovererUeVplmnIdentifier *PlmnId `json:"discovererUeVplmnIdentifier,omitempty"`
-	DiscovereeUeHplmnIdentifier *PlmnId `json:"discovereeUeHplmnIdentifier,omitempty"`
-	DiscovereeUeVplmnIdentifier *PlmnId `json:"discovereeUeVplmnIdentifier,omitempty"`
-	MonitoredPlmnIdentifier *PlmnId `json:"monitoredPlmnIdentifier,omitempty"`
-	ProseApplicationID *string `json:"proseApplicationID,omitempty"`
-	ApplicationId *string `json:"ApplicationId,omitempty"`
-	ApplicationSpecificDataList []string `json:"applicationSpecificDataList,omitempty"`
-	ProseFunctionality *ProseFunctionality `json:"proseFunctionality,omitempty"`
-	ProseEventType *ProseEventType `json:"proseEventType,omitempty"`
-	DirectDiscoveryModel *DirectDiscoveryModel `json:"directDiscoveryModel,omitempty"`
-	ValidityPeriod *int32 `json:"validityPeriod,omitempty"`
-	RoleOfUE *RoleOfUE `json:"roleOfUE,omitempty"`
+	AnnouncingPlmnID            *PlmnId               `json:"announcingPlmnID,omitempty"`
+	AnnouncingUeHplmnIdentifier *PlmnId               `json:"announcingUeHplmnIdentifier,omitempty"`
+	AnnouncingUeVplmnIdentifier *PlmnId               `json:"announcingUeVplmnIdentifier,omitempty"`
+	MonitoringUeHplmnIdentifier *PlmnId               `json:"monitoringUeHplmnIdentifier,omitempty"`
+	MonitoringUeVplmnIdentifier *PlmnId               `json:"monitoringUeVplmnIdentifier,omitempty"`
+	DiscovererUeHplmnIdentifier *PlmnId               `json:"discovererUeHplmnIdentifier,omitempty"`
+	DiscovererUeVplmnIdentifier *PlmnId               `json:"discovererUeVplmnIdentifier,omitempty"`
+	DiscovereeUeHplmnIdentifier *PlmnId               `json:"discovereeUeHplmnIdentifier,omitempty"`
+	DiscovereeUeVplmnIdentifier *PlmnId               `json:"discovereeUeVplmnIdentifier,omitempty"`
+	MonitoredPlmnIdentifier     *PlmnId               `json:"monitoredPlmnIdentifier,omitempty"`
+	ProseApplicationID          *string               `json:"proseApplicationID,omitempty"`
+	ApplicationId               *string               `json:"ApplicationId,omitempty"`
+	ApplicationSpecificDataList []string              `json:"applicationSpecificDataList,omitempty"`
+	ProseFunctionality          *ProseFunctionality   `json:"proseFunctionality,omitempty"`
+	ProseEventType              *ProseEventType       `json:"proseEventType,omitempty"`
+	DirectDiscoveryModel        *DirectDiscoveryModel `json:"directDiscoveryModel,omitempty"`
+	ValidityPeriod              *int32                `json:"validityPeriod,omitempty"`
+	RoleOfUE                    *RoleOfUE             `json:"roleOfUE,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ProseRequestTimestamp *time.Time `json:"proseRequestTimestamp,omitempty"`
-	PC3ProtocolCause *int32 `json:"pC3ProtocolCause,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	MonitoringUEIdentifier *string `json:"monitoringUEIdentifier,omitempty"`
-	RequestedPLMNIdentifier *PlmnId `json:"requestedPLMNIdentifier,omitempty"`
-	TimeWindow *int32 `json:"timeWindow,omitempty"`
-	RangeClass *RangeClass `json:"rangeClass,omitempty"`
-	ProximityAlertIndication *bool `json:"proximityAlertIndication,omitempty"`
+	PC3ProtocolCause      *int32     `json:"pC3ProtocolCause,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	MonitoringUEIdentifier   *string     `json:"monitoringUEIdentifier,omitempty"`
+	RequestedPLMNIdentifier  *PlmnId     `json:"requestedPLMNIdentifier,omitempty"`
+	TimeWindow               *int32      `json:"timeWindow,omitempty"`
+	RangeClass               *RangeClass `json:"rangeClass,omitempty"`
+	ProximityAlertIndication *bool       `json:"proximityAlertIndication,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ProximityAlertTimestamp *time.Time `json:"proximityAlertTimestamp,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	ProximityCancellationTimestamp *time.Time `json:"proximityCancellationTimestamp,omitempty"`
-	RelayIPAddress *IpAddr `json:"relayIPAddress,omitempty"`
-	ProseUEToNetworkRelayUEID *string `json:"proseUEToNetworkRelayUEID,omitempty"`
-	ProseDestinationLayer2ID *string `json:"proseDestinationLayer2ID,omitempty"`
-	PFIContainerInformation []PFIContainerInformation `json:"pFIContainerInformation,omitempty"`
-	TransmissionDataContainer []PC5DataContainer `json:"transmissionDataContainer,omitempty"`
-	ReceptionDataContainer []PC5DataContainer `json:"receptionDataContainer,omitempty"`
+	ProximityCancellationTimestamp *time.Time                `json:"proximityCancellationTimestamp,omitempty"`
+	RelayIPAddress                 *IpAddr                   `json:"relayIPAddress,omitempty"`
+	ProseUEToNetworkRelayUEID      *string                   `json:"proseUEToNetworkRelayUEID,omitempty"`
+	ProseDestinationLayer2ID       *string                   `json:"proseDestinationLayer2ID,omitempty"`
+	PFIContainerInformation        []PFIContainerInformation `json:"pFIContainerInformation,omitempty"`
+	TransmissionDataContainer      []PC5DataContainer        `json:"transmissionDataContainer,omitempty"`
+	ReceptionDataContainer         []PC5DataContainer        `json:"receptionDataContainer,omitempty"`
 }
 
 // NewProseChargingInformation instantiates a new ProseChargingInformation object
@@ -78,7 +78,7 @@ func NewProseChargingInformationWithDefaults() *ProseChargingInformation {
 
 // GetAnnouncingPlmnID returns the AnnouncingPlmnID field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetAnnouncingPlmnID() PlmnId {
-	if o == nil || isNil(o.AnnouncingPlmnID) {
+	if o == nil || IsNil(o.AnnouncingPlmnID) {
 		var ret PlmnId
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ProseChargingInformation) GetAnnouncingPlmnID() PlmnId {
 // GetAnnouncingPlmnIDOk returns a tuple with the AnnouncingPlmnID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetAnnouncingPlmnIDOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.AnnouncingPlmnID) {
+	if o == nil || IsNil(o.AnnouncingPlmnID) {
 		return nil, false
 	}
 	return o.AnnouncingPlmnID, true
@@ -96,7 +96,7 @@ func (o *ProseChargingInformation) GetAnnouncingPlmnIDOk() (*PlmnId, bool) {
 
 // HasAnnouncingPlmnID returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasAnnouncingPlmnID() bool {
-	if o != nil && !isNil(o.AnnouncingPlmnID) {
+	if o != nil && !IsNil(o.AnnouncingPlmnID) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ProseChargingInformation) SetAnnouncingPlmnID(v PlmnId) {
 
 // GetAnnouncingUeHplmnIdentifier returns the AnnouncingUeHplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetAnnouncingUeHplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.AnnouncingUeHplmnIdentifier) {
+	if o == nil || IsNil(o.AnnouncingUeHplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ProseChargingInformation) GetAnnouncingUeHplmnIdentifier() PlmnId {
 // GetAnnouncingUeHplmnIdentifierOk returns a tuple with the AnnouncingUeHplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetAnnouncingUeHplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.AnnouncingUeHplmnIdentifier) {
+	if o == nil || IsNil(o.AnnouncingUeHplmnIdentifier) {
 		return nil, false
 	}
 	return o.AnnouncingUeHplmnIdentifier, true
@@ -128,7 +128,7 @@ func (o *ProseChargingInformation) GetAnnouncingUeHplmnIdentifierOk() (*PlmnId, 
 
 // HasAnnouncingUeHplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasAnnouncingUeHplmnIdentifier() bool {
-	if o != nil && !isNil(o.AnnouncingUeHplmnIdentifier) {
+	if o != nil && !IsNil(o.AnnouncingUeHplmnIdentifier) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ProseChargingInformation) SetAnnouncingUeHplmnIdentifier(v PlmnId) {
 
 // GetAnnouncingUeVplmnIdentifier returns the AnnouncingUeVplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetAnnouncingUeVplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.AnnouncingUeVplmnIdentifier) {
+	if o == nil || IsNil(o.AnnouncingUeVplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ProseChargingInformation) GetAnnouncingUeVplmnIdentifier() PlmnId {
 // GetAnnouncingUeVplmnIdentifierOk returns a tuple with the AnnouncingUeVplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetAnnouncingUeVplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.AnnouncingUeVplmnIdentifier) {
+	if o == nil || IsNil(o.AnnouncingUeVplmnIdentifier) {
 		return nil, false
 	}
 	return o.AnnouncingUeVplmnIdentifier, true
@@ -160,7 +160,7 @@ func (o *ProseChargingInformation) GetAnnouncingUeVplmnIdentifierOk() (*PlmnId, 
 
 // HasAnnouncingUeVplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasAnnouncingUeVplmnIdentifier() bool {
-	if o != nil && !isNil(o.AnnouncingUeVplmnIdentifier) {
+	if o != nil && !IsNil(o.AnnouncingUeVplmnIdentifier) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ProseChargingInformation) SetAnnouncingUeVplmnIdentifier(v PlmnId) {
 
 // GetMonitoringUeHplmnIdentifier returns the MonitoringUeHplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetMonitoringUeHplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.MonitoringUeHplmnIdentifier) {
+	if o == nil || IsNil(o.MonitoringUeHplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ProseChargingInformation) GetMonitoringUeHplmnIdentifier() PlmnId {
 // GetMonitoringUeHplmnIdentifierOk returns a tuple with the MonitoringUeHplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetMonitoringUeHplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.MonitoringUeHplmnIdentifier) {
+	if o == nil || IsNil(o.MonitoringUeHplmnIdentifier) {
 		return nil, false
 	}
 	return o.MonitoringUeHplmnIdentifier, true
@@ -192,7 +192,7 @@ func (o *ProseChargingInformation) GetMonitoringUeHplmnIdentifierOk() (*PlmnId, 
 
 // HasMonitoringUeHplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasMonitoringUeHplmnIdentifier() bool {
-	if o != nil && !isNil(o.MonitoringUeHplmnIdentifier) {
+	if o != nil && !IsNil(o.MonitoringUeHplmnIdentifier) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *ProseChargingInformation) SetMonitoringUeHplmnIdentifier(v PlmnId) {
 
 // GetMonitoringUeVplmnIdentifier returns the MonitoringUeVplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetMonitoringUeVplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.MonitoringUeVplmnIdentifier) {
+	if o == nil || IsNil(o.MonitoringUeVplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *ProseChargingInformation) GetMonitoringUeVplmnIdentifier() PlmnId {
 // GetMonitoringUeVplmnIdentifierOk returns a tuple with the MonitoringUeVplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetMonitoringUeVplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.MonitoringUeVplmnIdentifier) {
+	if o == nil || IsNil(o.MonitoringUeVplmnIdentifier) {
 		return nil, false
 	}
 	return o.MonitoringUeVplmnIdentifier, true
@@ -224,7 +224,7 @@ func (o *ProseChargingInformation) GetMonitoringUeVplmnIdentifierOk() (*PlmnId, 
 
 // HasMonitoringUeVplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasMonitoringUeVplmnIdentifier() bool {
-	if o != nil && !isNil(o.MonitoringUeVplmnIdentifier) {
+	if o != nil && !IsNil(o.MonitoringUeVplmnIdentifier) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *ProseChargingInformation) SetMonitoringUeVplmnIdentifier(v PlmnId) {
 
 // GetDiscovererUeHplmnIdentifier returns the DiscovererUeHplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetDiscovererUeHplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.DiscovererUeHplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovererUeHplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *ProseChargingInformation) GetDiscovererUeHplmnIdentifier() PlmnId {
 // GetDiscovererUeHplmnIdentifierOk returns a tuple with the DiscovererUeHplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetDiscovererUeHplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.DiscovererUeHplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovererUeHplmnIdentifier) {
 		return nil, false
 	}
 	return o.DiscovererUeHplmnIdentifier, true
@@ -256,7 +256,7 @@ func (o *ProseChargingInformation) GetDiscovererUeHplmnIdentifierOk() (*PlmnId, 
 
 // HasDiscovererUeHplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasDiscovererUeHplmnIdentifier() bool {
-	if o != nil && !isNil(o.DiscovererUeHplmnIdentifier) {
+	if o != nil && !IsNil(o.DiscovererUeHplmnIdentifier) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *ProseChargingInformation) SetDiscovererUeHplmnIdentifier(v PlmnId) {
 
 // GetDiscovererUeVplmnIdentifier returns the DiscovererUeVplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetDiscovererUeVplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.DiscovererUeVplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovererUeVplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *ProseChargingInformation) GetDiscovererUeVplmnIdentifier() PlmnId {
 // GetDiscovererUeVplmnIdentifierOk returns a tuple with the DiscovererUeVplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetDiscovererUeVplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.DiscovererUeVplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovererUeVplmnIdentifier) {
 		return nil, false
 	}
 	return o.DiscovererUeVplmnIdentifier, true
@@ -288,7 +288,7 @@ func (o *ProseChargingInformation) GetDiscovererUeVplmnIdentifierOk() (*PlmnId, 
 
 // HasDiscovererUeVplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasDiscovererUeVplmnIdentifier() bool {
-	if o != nil && !isNil(o.DiscovererUeVplmnIdentifier) {
+	if o != nil && !IsNil(o.DiscovererUeVplmnIdentifier) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *ProseChargingInformation) SetDiscovererUeVplmnIdentifier(v PlmnId) {
 
 // GetDiscovereeUeHplmnIdentifier returns the DiscovereeUeHplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetDiscovereeUeHplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.DiscovereeUeHplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovereeUeHplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *ProseChargingInformation) GetDiscovereeUeHplmnIdentifier() PlmnId {
 // GetDiscovereeUeHplmnIdentifierOk returns a tuple with the DiscovereeUeHplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetDiscovereeUeHplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.DiscovereeUeHplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovereeUeHplmnIdentifier) {
 		return nil, false
 	}
 	return o.DiscovereeUeHplmnIdentifier, true
@@ -320,7 +320,7 @@ func (o *ProseChargingInformation) GetDiscovereeUeHplmnIdentifierOk() (*PlmnId, 
 
 // HasDiscovereeUeHplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasDiscovereeUeHplmnIdentifier() bool {
-	if o != nil && !isNil(o.DiscovereeUeHplmnIdentifier) {
+	if o != nil && !IsNil(o.DiscovereeUeHplmnIdentifier) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *ProseChargingInformation) SetDiscovereeUeHplmnIdentifier(v PlmnId) {
 
 // GetDiscovereeUeVplmnIdentifier returns the DiscovereeUeVplmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetDiscovereeUeVplmnIdentifier() PlmnId {
-	if o == nil || isNil(o.DiscovereeUeVplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovereeUeVplmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *ProseChargingInformation) GetDiscovereeUeVplmnIdentifier() PlmnId {
 // GetDiscovereeUeVplmnIdentifierOk returns a tuple with the DiscovereeUeVplmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetDiscovereeUeVplmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.DiscovereeUeVplmnIdentifier) {
+	if o == nil || IsNil(o.DiscovereeUeVplmnIdentifier) {
 		return nil, false
 	}
 	return o.DiscovereeUeVplmnIdentifier, true
@@ -352,7 +352,7 @@ func (o *ProseChargingInformation) GetDiscovereeUeVplmnIdentifierOk() (*PlmnId, 
 
 // HasDiscovereeUeVplmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasDiscovereeUeVplmnIdentifier() bool {
-	if o != nil && !isNil(o.DiscovereeUeVplmnIdentifier) {
+	if o != nil && !IsNil(o.DiscovereeUeVplmnIdentifier) {
 		return true
 	}
 
@@ -366,7 +366,7 @@ func (o *ProseChargingInformation) SetDiscovereeUeVplmnIdentifier(v PlmnId) {
 
 // GetMonitoredPlmnIdentifier returns the MonitoredPlmnIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetMonitoredPlmnIdentifier() PlmnId {
-	if o == nil || isNil(o.MonitoredPlmnIdentifier) {
+	if o == nil || IsNil(o.MonitoredPlmnIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *ProseChargingInformation) GetMonitoredPlmnIdentifier() PlmnId {
 // GetMonitoredPlmnIdentifierOk returns a tuple with the MonitoredPlmnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetMonitoredPlmnIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.MonitoredPlmnIdentifier) {
+	if o == nil || IsNil(o.MonitoredPlmnIdentifier) {
 		return nil, false
 	}
 	return o.MonitoredPlmnIdentifier, true
@@ -384,7 +384,7 @@ func (o *ProseChargingInformation) GetMonitoredPlmnIdentifierOk() (*PlmnId, bool
 
 // HasMonitoredPlmnIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasMonitoredPlmnIdentifier() bool {
-	if o != nil && !isNil(o.MonitoredPlmnIdentifier) {
+	if o != nil && !IsNil(o.MonitoredPlmnIdentifier) {
 		return true
 	}
 
@@ -398,7 +398,7 @@ func (o *ProseChargingInformation) SetMonitoredPlmnIdentifier(v PlmnId) {
 
 // GetProseApplicationID returns the ProseApplicationID field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProseApplicationID() string {
-	if o == nil || isNil(o.ProseApplicationID) {
+	if o == nil || IsNil(o.ProseApplicationID) {
 		var ret string
 		return ret
 	}
@@ -408,7 +408,7 @@ func (o *ProseChargingInformation) GetProseApplicationID() string {
 // GetProseApplicationIDOk returns a tuple with the ProseApplicationID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProseApplicationIDOk() (*string, bool) {
-	if o == nil || isNil(o.ProseApplicationID) {
+	if o == nil || IsNil(o.ProseApplicationID) {
 		return nil, false
 	}
 	return o.ProseApplicationID, true
@@ -416,7 +416,7 @@ func (o *ProseChargingInformation) GetProseApplicationIDOk() (*string, bool) {
 
 // HasProseApplicationID returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProseApplicationID() bool {
-	if o != nil && !isNil(o.ProseApplicationID) {
+	if o != nil && !IsNil(o.ProseApplicationID) {
 		return true
 	}
 
@@ -430,7 +430,7 @@ func (o *ProseChargingInformation) SetProseApplicationID(v string) {
 
 // GetApplicationId returns the ApplicationId field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetApplicationId() string {
-	if o == nil || isNil(o.ApplicationId) {
+	if o == nil || IsNil(o.ApplicationId) {
 		var ret string
 		return ret
 	}
@@ -440,7 +440,7 @@ func (o *ProseChargingInformation) GetApplicationId() string {
 // GetApplicationIdOk returns a tuple with the ApplicationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetApplicationIdOk() (*string, bool) {
-	if o == nil || isNil(o.ApplicationId) {
+	if o == nil || IsNil(o.ApplicationId) {
 		return nil, false
 	}
 	return o.ApplicationId, true
@@ -448,7 +448,7 @@ func (o *ProseChargingInformation) GetApplicationIdOk() (*string, bool) {
 
 // HasApplicationId returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasApplicationId() bool {
-	if o != nil && !isNil(o.ApplicationId) {
+	if o != nil && !IsNil(o.ApplicationId) {
 		return true
 	}
 
@@ -462,7 +462,7 @@ func (o *ProseChargingInformation) SetApplicationId(v string) {
 
 // GetApplicationSpecificDataList returns the ApplicationSpecificDataList field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetApplicationSpecificDataList() []string {
-	if o == nil || isNil(o.ApplicationSpecificDataList) {
+	if o == nil || IsNil(o.ApplicationSpecificDataList) {
 		var ret []string
 		return ret
 	}
@@ -472,7 +472,7 @@ func (o *ProseChargingInformation) GetApplicationSpecificDataList() []string {
 // GetApplicationSpecificDataListOk returns a tuple with the ApplicationSpecificDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetApplicationSpecificDataListOk() ([]string, bool) {
-	if o == nil || isNil(o.ApplicationSpecificDataList) {
+	if o == nil || IsNil(o.ApplicationSpecificDataList) {
 		return nil, false
 	}
 	return o.ApplicationSpecificDataList, true
@@ -480,7 +480,7 @@ func (o *ProseChargingInformation) GetApplicationSpecificDataListOk() ([]string,
 
 // HasApplicationSpecificDataList returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasApplicationSpecificDataList() bool {
-	if o != nil && !isNil(o.ApplicationSpecificDataList) {
+	if o != nil && !IsNil(o.ApplicationSpecificDataList) {
 		return true
 	}
 
@@ -494,7 +494,7 @@ func (o *ProseChargingInformation) SetApplicationSpecificDataList(v []string) {
 
 // GetProseFunctionality returns the ProseFunctionality field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProseFunctionality() ProseFunctionality {
-	if o == nil || isNil(o.ProseFunctionality) {
+	if o == nil || IsNil(o.ProseFunctionality) {
 		var ret ProseFunctionality
 		return ret
 	}
@@ -504,7 +504,7 @@ func (o *ProseChargingInformation) GetProseFunctionality() ProseFunctionality {
 // GetProseFunctionalityOk returns a tuple with the ProseFunctionality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProseFunctionalityOk() (*ProseFunctionality, bool) {
-	if o == nil || isNil(o.ProseFunctionality) {
+	if o == nil || IsNil(o.ProseFunctionality) {
 		return nil, false
 	}
 	return o.ProseFunctionality, true
@@ -512,7 +512,7 @@ func (o *ProseChargingInformation) GetProseFunctionalityOk() (*ProseFunctionalit
 
 // HasProseFunctionality returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProseFunctionality() bool {
-	if o != nil && !isNil(o.ProseFunctionality) {
+	if o != nil && !IsNil(o.ProseFunctionality) {
 		return true
 	}
 
@@ -526,7 +526,7 @@ func (o *ProseChargingInformation) SetProseFunctionality(v ProseFunctionality) {
 
 // GetProseEventType returns the ProseEventType field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProseEventType() ProseEventType {
-	if o == nil || isNil(o.ProseEventType) {
+	if o == nil || IsNil(o.ProseEventType) {
 		var ret ProseEventType
 		return ret
 	}
@@ -536,7 +536,7 @@ func (o *ProseChargingInformation) GetProseEventType() ProseEventType {
 // GetProseEventTypeOk returns a tuple with the ProseEventType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProseEventTypeOk() (*ProseEventType, bool) {
-	if o == nil || isNil(o.ProseEventType) {
+	if o == nil || IsNil(o.ProseEventType) {
 		return nil, false
 	}
 	return o.ProseEventType, true
@@ -544,7 +544,7 @@ func (o *ProseChargingInformation) GetProseEventTypeOk() (*ProseEventType, bool)
 
 // HasProseEventType returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProseEventType() bool {
-	if o != nil && !isNil(o.ProseEventType) {
+	if o != nil && !IsNil(o.ProseEventType) {
 		return true
 	}
 
@@ -558,7 +558,7 @@ func (o *ProseChargingInformation) SetProseEventType(v ProseEventType) {
 
 // GetDirectDiscoveryModel returns the DirectDiscoveryModel field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetDirectDiscoveryModel() DirectDiscoveryModel {
-	if o == nil || isNil(o.DirectDiscoveryModel) {
+	if o == nil || IsNil(o.DirectDiscoveryModel) {
 		var ret DirectDiscoveryModel
 		return ret
 	}
@@ -568,7 +568,7 @@ func (o *ProseChargingInformation) GetDirectDiscoveryModel() DirectDiscoveryMode
 // GetDirectDiscoveryModelOk returns a tuple with the DirectDiscoveryModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetDirectDiscoveryModelOk() (*DirectDiscoveryModel, bool) {
-	if o == nil || isNil(o.DirectDiscoveryModel) {
+	if o == nil || IsNil(o.DirectDiscoveryModel) {
 		return nil, false
 	}
 	return o.DirectDiscoveryModel, true
@@ -576,7 +576,7 @@ func (o *ProseChargingInformation) GetDirectDiscoveryModelOk() (*DirectDiscovery
 
 // HasDirectDiscoveryModel returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasDirectDiscoveryModel() bool {
-	if o != nil && !isNil(o.DirectDiscoveryModel) {
+	if o != nil && !IsNil(o.DirectDiscoveryModel) {
 		return true
 	}
 
@@ -590,7 +590,7 @@ func (o *ProseChargingInformation) SetDirectDiscoveryModel(v DirectDiscoveryMode
 
 // GetValidityPeriod returns the ValidityPeriod field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetValidityPeriod() int32 {
-	if o == nil || isNil(o.ValidityPeriod) {
+	if o == nil || IsNil(o.ValidityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -600,7 +600,7 @@ func (o *ProseChargingInformation) GetValidityPeriod() int32 {
 // GetValidityPeriodOk returns a tuple with the ValidityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetValidityPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.ValidityPeriod) {
+	if o == nil || IsNil(o.ValidityPeriod) {
 		return nil, false
 	}
 	return o.ValidityPeriod, true
@@ -608,7 +608,7 @@ func (o *ProseChargingInformation) GetValidityPeriodOk() (*int32, bool) {
 
 // HasValidityPeriod returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasValidityPeriod() bool {
-	if o != nil && !isNil(o.ValidityPeriod) {
+	if o != nil && !IsNil(o.ValidityPeriod) {
 		return true
 	}
 
@@ -622,7 +622,7 @@ func (o *ProseChargingInformation) SetValidityPeriod(v int32) {
 
 // GetRoleOfUE returns the RoleOfUE field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetRoleOfUE() RoleOfUE {
-	if o == nil || isNil(o.RoleOfUE) {
+	if o == nil || IsNil(o.RoleOfUE) {
 		var ret RoleOfUE
 		return ret
 	}
@@ -632,7 +632,7 @@ func (o *ProseChargingInformation) GetRoleOfUE() RoleOfUE {
 // GetRoleOfUEOk returns a tuple with the RoleOfUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetRoleOfUEOk() (*RoleOfUE, bool) {
-	if o == nil || isNil(o.RoleOfUE) {
+	if o == nil || IsNil(o.RoleOfUE) {
 		return nil, false
 	}
 	return o.RoleOfUE, true
@@ -640,7 +640,7 @@ func (o *ProseChargingInformation) GetRoleOfUEOk() (*RoleOfUE, bool) {
 
 // HasRoleOfUE returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasRoleOfUE() bool {
-	if o != nil && !isNil(o.RoleOfUE) {
+	if o != nil && !IsNil(o.RoleOfUE) {
 		return true
 	}
 
@@ -654,7 +654,7 @@ func (o *ProseChargingInformation) SetRoleOfUE(v RoleOfUE) {
 
 // GetProseRequestTimestamp returns the ProseRequestTimestamp field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProseRequestTimestamp() time.Time {
-	if o == nil || isNil(o.ProseRequestTimestamp) {
+	if o == nil || IsNil(o.ProseRequestTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -664,7 +664,7 @@ func (o *ProseChargingInformation) GetProseRequestTimestamp() time.Time {
 // GetProseRequestTimestampOk returns a tuple with the ProseRequestTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProseRequestTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ProseRequestTimestamp) {
+	if o == nil || IsNil(o.ProseRequestTimestamp) {
 		return nil, false
 	}
 	return o.ProseRequestTimestamp, true
@@ -672,7 +672,7 @@ func (o *ProseChargingInformation) GetProseRequestTimestampOk() (*time.Time, boo
 
 // HasProseRequestTimestamp returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProseRequestTimestamp() bool {
-	if o != nil && !isNil(o.ProseRequestTimestamp) {
+	if o != nil && !IsNil(o.ProseRequestTimestamp) {
 		return true
 	}
 
@@ -686,7 +686,7 @@ func (o *ProseChargingInformation) SetProseRequestTimestamp(v time.Time) {
 
 // GetPC3ProtocolCause returns the PC3ProtocolCause field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetPC3ProtocolCause() int32 {
-	if o == nil || isNil(o.PC3ProtocolCause) {
+	if o == nil || IsNil(o.PC3ProtocolCause) {
 		var ret int32
 		return ret
 	}
@@ -696,7 +696,7 @@ func (o *ProseChargingInformation) GetPC3ProtocolCause() int32 {
 // GetPC3ProtocolCauseOk returns a tuple with the PC3ProtocolCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetPC3ProtocolCauseOk() (*int32, bool) {
-	if o == nil || isNil(o.PC3ProtocolCause) {
+	if o == nil || IsNil(o.PC3ProtocolCause) {
 		return nil, false
 	}
 	return o.PC3ProtocolCause, true
@@ -704,7 +704,7 @@ func (o *ProseChargingInformation) GetPC3ProtocolCauseOk() (*int32, bool) {
 
 // HasPC3ProtocolCause returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasPC3ProtocolCause() bool {
-	if o != nil && !isNil(o.PC3ProtocolCause) {
+	if o != nil && !IsNil(o.PC3ProtocolCause) {
 		return true
 	}
 
@@ -718,7 +718,7 @@ func (o *ProseChargingInformation) SetPC3ProtocolCause(v int32) {
 
 // GetMonitoringUEIdentifier returns the MonitoringUEIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetMonitoringUEIdentifier() string {
-	if o == nil || isNil(o.MonitoringUEIdentifier) {
+	if o == nil || IsNil(o.MonitoringUEIdentifier) {
 		var ret string
 		return ret
 	}
@@ -728,7 +728,7 @@ func (o *ProseChargingInformation) GetMonitoringUEIdentifier() string {
 // GetMonitoringUEIdentifierOk returns a tuple with the MonitoringUEIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetMonitoringUEIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.MonitoringUEIdentifier) {
+	if o == nil || IsNil(o.MonitoringUEIdentifier) {
 		return nil, false
 	}
 	return o.MonitoringUEIdentifier, true
@@ -736,7 +736,7 @@ func (o *ProseChargingInformation) GetMonitoringUEIdentifierOk() (*string, bool)
 
 // HasMonitoringUEIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasMonitoringUEIdentifier() bool {
-	if o != nil && !isNil(o.MonitoringUEIdentifier) {
+	if o != nil && !IsNil(o.MonitoringUEIdentifier) {
 		return true
 	}
 
@@ -750,7 +750,7 @@ func (o *ProseChargingInformation) SetMonitoringUEIdentifier(v string) {
 
 // GetRequestedPLMNIdentifier returns the RequestedPLMNIdentifier field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetRequestedPLMNIdentifier() PlmnId {
-	if o == nil || isNil(o.RequestedPLMNIdentifier) {
+	if o == nil || IsNil(o.RequestedPLMNIdentifier) {
 		var ret PlmnId
 		return ret
 	}
@@ -760,7 +760,7 @@ func (o *ProseChargingInformation) GetRequestedPLMNIdentifier() PlmnId {
 // GetRequestedPLMNIdentifierOk returns a tuple with the RequestedPLMNIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetRequestedPLMNIdentifierOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.RequestedPLMNIdentifier) {
+	if o == nil || IsNil(o.RequestedPLMNIdentifier) {
 		return nil, false
 	}
 	return o.RequestedPLMNIdentifier, true
@@ -768,7 +768,7 @@ func (o *ProseChargingInformation) GetRequestedPLMNIdentifierOk() (*PlmnId, bool
 
 // HasRequestedPLMNIdentifier returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasRequestedPLMNIdentifier() bool {
-	if o != nil && !isNil(o.RequestedPLMNIdentifier) {
+	if o != nil && !IsNil(o.RequestedPLMNIdentifier) {
 		return true
 	}
 
@@ -782,7 +782,7 @@ func (o *ProseChargingInformation) SetRequestedPLMNIdentifier(v PlmnId) {
 
 // GetTimeWindow returns the TimeWindow field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetTimeWindow() int32 {
-	if o == nil || isNil(o.TimeWindow) {
+	if o == nil || IsNil(o.TimeWindow) {
 		var ret int32
 		return ret
 	}
@@ -792,7 +792,7 @@ func (o *ProseChargingInformation) GetTimeWindow() int32 {
 // GetTimeWindowOk returns a tuple with the TimeWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetTimeWindowOk() (*int32, bool) {
-	if o == nil || isNil(o.TimeWindow) {
+	if o == nil || IsNil(o.TimeWindow) {
 		return nil, false
 	}
 	return o.TimeWindow, true
@@ -800,7 +800,7 @@ func (o *ProseChargingInformation) GetTimeWindowOk() (*int32, bool) {
 
 // HasTimeWindow returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasTimeWindow() bool {
-	if o != nil && !isNil(o.TimeWindow) {
+	if o != nil && !IsNil(o.TimeWindow) {
 		return true
 	}
 
@@ -814,7 +814,7 @@ func (o *ProseChargingInformation) SetTimeWindow(v int32) {
 
 // GetRangeClass returns the RangeClass field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetRangeClass() RangeClass {
-	if o == nil || isNil(o.RangeClass) {
+	if o == nil || IsNil(o.RangeClass) {
 		var ret RangeClass
 		return ret
 	}
@@ -824,7 +824,7 @@ func (o *ProseChargingInformation) GetRangeClass() RangeClass {
 // GetRangeClassOk returns a tuple with the RangeClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetRangeClassOk() (*RangeClass, bool) {
-	if o == nil || isNil(o.RangeClass) {
+	if o == nil || IsNil(o.RangeClass) {
 		return nil, false
 	}
 	return o.RangeClass, true
@@ -832,7 +832,7 @@ func (o *ProseChargingInformation) GetRangeClassOk() (*RangeClass, bool) {
 
 // HasRangeClass returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasRangeClass() bool {
-	if o != nil && !isNil(o.RangeClass) {
+	if o != nil && !IsNil(o.RangeClass) {
 		return true
 	}
 
@@ -846,7 +846,7 @@ func (o *ProseChargingInformation) SetRangeClass(v RangeClass) {
 
 // GetProximityAlertIndication returns the ProximityAlertIndication field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProximityAlertIndication() bool {
-	if o == nil || isNil(o.ProximityAlertIndication) {
+	if o == nil || IsNil(o.ProximityAlertIndication) {
 		var ret bool
 		return ret
 	}
@@ -856,7 +856,7 @@ func (o *ProseChargingInformation) GetProximityAlertIndication() bool {
 // GetProximityAlertIndicationOk returns a tuple with the ProximityAlertIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProximityAlertIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.ProximityAlertIndication) {
+	if o == nil || IsNil(o.ProximityAlertIndication) {
 		return nil, false
 	}
 	return o.ProximityAlertIndication, true
@@ -864,7 +864,7 @@ func (o *ProseChargingInformation) GetProximityAlertIndicationOk() (*bool, bool)
 
 // HasProximityAlertIndication returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProximityAlertIndication() bool {
-	if o != nil && !isNil(o.ProximityAlertIndication) {
+	if o != nil && !IsNil(o.ProximityAlertIndication) {
 		return true
 	}
 
@@ -878,7 +878,7 @@ func (o *ProseChargingInformation) SetProximityAlertIndication(v bool) {
 
 // GetProximityAlertTimestamp returns the ProximityAlertTimestamp field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProximityAlertTimestamp() time.Time {
-	if o == nil || isNil(o.ProximityAlertTimestamp) {
+	if o == nil || IsNil(o.ProximityAlertTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -888,7 +888,7 @@ func (o *ProseChargingInformation) GetProximityAlertTimestamp() time.Time {
 // GetProximityAlertTimestampOk returns a tuple with the ProximityAlertTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProximityAlertTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ProximityAlertTimestamp) {
+	if o == nil || IsNil(o.ProximityAlertTimestamp) {
 		return nil, false
 	}
 	return o.ProximityAlertTimestamp, true
@@ -896,7 +896,7 @@ func (o *ProseChargingInformation) GetProximityAlertTimestampOk() (*time.Time, b
 
 // HasProximityAlertTimestamp returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProximityAlertTimestamp() bool {
-	if o != nil && !isNil(o.ProximityAlertTimestamp) {
+	if o != nil && !IsNil(o.ProximityAlertTimestamp) {
 		return true
 	}
 
@@ -910,7 +910,7 @@ func (o *ProseChargingInformation) SetProximityAlertTimestamp(v time.Time) {
 
 // GetProximityCancellationTimestamp returns the ProximityCancellationTimestamp field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProximityCancellationTimestamp() time.Time {
-	if o == nil || isNil(o.ProximityCancellationTimestamp) {
+	if o == nil || IsNil(o.ProximityCancellationTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -920,7 +920,7 @@ func (o *ProseChargingInformation) GetProximityCancellationTimestamp() time.Time
 // GetProximityCancellationTimestampOk returns a tuple with the ProximityCancellationTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProximityCancellationTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ProximityCancellationTimestamp) {
+	if o == nil || IsNil(o.ProximityCancellationTimestamp) {
 		return nil, false
 	}
 	return o.ProximityCancellationTimestamp, true
@@ -928,7 +928,7 @@ func (o *ProseChargingInformation) GetProximityCancellationTimestampOk() (*time.
 
 // HasProximityCancellationTimestamp returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProximityCancellationTimestamp() bool {
-	if o != nil && !isNil(o.ProximityCancellationTimestamp) {
+	if o != nil && !IsNil(o.ProximityCancellationTimestamp) {
 		return true
 	}
 
@@ -942,7 +942,7 @@ func (o *ProseChargingInformation) SetProximityCancellationTimestamp(v time.Time
 
 // GetRelayIPAddress returns the RelayIPAddress field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetRelayIPAddress() IpAddr {
-	if o == nil || isNil(o.RelayIPAddress) {
+	if o == nil || IsNil(o.RelayIPAddress) {
 		var ret IpAddr
 		return ret
 	}
@@ -952,7 +952,7 @@ func (o *ProseChargingInformation) GetRelayIPAddress() IpAddr {
 // GetRelayIPAddressOk returns a tuple with the RelayIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetRelayIPAddressOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.RelayIPAddress) {
+	if o == nil || IsNil(o.RelayIPAddress) {
 		return nil, false
 	}
 	return o.RelayIPAddress, true
@@ -960,7 +960,7 @@ func (o *ProseChargingInformation) GetRelayIPAddressOk() (*IpAddr, bool) {
 
 // HasRelayIPAddress returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasRelayIPAddress() bool {
-	if o != nil && !isNil(o.RelayIPAddress) {
+	if o != nil && !IsNil(o.RelayIPAddress) {
 		return true
 	}
 
@@ -974,7 +974,7 @@ func (o *ProseChargingInformation) SetRelayIPAddress(v IpAddr) {
 
 // GetProseUEToNetworkRelayUEID returns the ProseUEToNetworkRelayUEID field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProseUEToNetworkRelayUEID() string {
-	if o == nil || isNil(o.ProseUEToNetworkRelayUEID) {
+	if o == nil || IsNil(o.ProseUEToNetworkRelayUEID) {
 		var ret string
 		return ret
 	}
@@ -984,7 +984,7 @@ func (o *ProseChargingInformation) GetProseUEToNetworkRelayUEID() string {
 // GetProseUEToNetworkRelayUEIDOk returns a tuple with the ProseUEToNetworkRelayUEID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProseUEToNetworkRelayUEIDOk() (*string, bool) {
-	if o == nil || isNil(o.ProseUEToNetworkRelayUEID) {
+	if o == nil || IsNil(o.ProseUEToNetworkRelayUEID) {
 		return nil, false
 	}
 	return o.ProseUEToNetworkRelayUEID, true
@@ -992,7 +992,7 @@ func (o *ProseChargingInformation) GetProseUEToNetworkRelayUEIDOk() (*string, bo
 
 // HasProseUEToNetworkRelayUEID returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProseUEToNetworkRelayUEID() bool {
-	if o != nil && !isNil(o.ProseUEToNetworkRelayUEID) {
+	if o != nil && !IsNil(o.ProseUEToNetworkRelayUEID) {
 		return true
 	}
 
@@ -1006,7 +1006,7 @@ func (o *ProseChargingInformation) SetProseUEToNetworkRelayUEID(v string) {
 
 // GetProseDestinationLayer2ID returns the ProseDestinationLayer2ID field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetProseDestinationLayer2ID() string {
-	if o == nil || isNil(o.ProseDestinationLayer2ID) {
+	if o == nil || IsNil(o.ProseDestinationLayer2ID) {
 		var ret string
 		return ret
 	}
@@ -1016,7 +1016,7 @@ func (o *ProseChargingInformation) GetProseDestinationLayer2ID() string {
 // GetProseDestinationLayer2IDOk returns a tuple with the ProseDestinationLayer2ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetProseDestinationLayer2IDOk() (*string, bool) {
-	if o == nil || isNil(o.ProseDestinationLayer2ID) {
+	if o == nil || IsNil(o.ProseDestinationLayer2ID) {
 		return nil, false
 	}
 	return o.ProseDestinationLayer2ID, true
@@ -1024,7 +1024,7 @@ func (o *ProseChargingInformation) GetProseDestinationLayer2IDOk() (*string, boo
 
 // HasProseDestinationLayer2ID returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasProseDestinationLayer2ID() bool {
-	if o != nil && !isNil(o.ProseDestinationLayer2ID) {
+	if o != nil && !IsNil(o.ProseDestinationLayer2ID) {
 		return true
 	}
 
@@ -1038,7 +1038,7 @@ func (o *ProseChargingInformation) SetProseDestinationLayer2ID(v string) {
 
 // GetPFIContainerInformation returns the PFIContainerInformation field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetPFIContainerInformation() []PFIContainerInformation {
-	if o == nil || isNil(o.PFIContainerInformation) {
+	if o == nil || IsNil(o.PFIContainerInformation) {
 		var ret []PFIContainerInformation
 		return ret
 	}
@@ -1048,7 +1048,7 @@ func (o *ProseChargingInformation) GetPFIContainerInformation() []PFIContainerIn
 // GetPFIContainerInformationOk returns a tuple with the PFIContainerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetPFIContainerInformationOk() ([]PFIContainerInformation, bool) {
-	if o == nil || isNil(o.PFIContainerInformation) {
+	if o == nil || IsNil(o.PFIContainerInformation) {
 		return nil, false
 	}
 	return o.PFIContainerInformation, true
@@ -1056,7 +1056,7 @@ func (o *ProseChargingInformation) GetPFIContainerInformationOk() ([]PFIContaine
 
 // HasPFIContainerInformation returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasPFIContainerInformation() bool {
-	if o != nil && !isNil(o.PFIContainerInformation) {
+	if o != nil && !IsNil(o.PFIContainerInformation) {
 		return true
 	}
 
@@ -1070,7 +1070,7 @@ func (o *ProseChargingInformation) SetPFIContainerInformation(v []PFIContainerIn
 
 // GetTransmissionDataContainer returns the TransmissionDataContainer field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetTransmissionDataContainer() []PC5DataContainer {
-	if o == nil || isNil(o.TransmissionDataContainer) {
+	if o == nil || IsNil(o.TransmissionDataContainer) {
 		var ret []PC5DataContainer
 		return ret
 	}
@@ -1080,7 +1080,7 @@ func (o *ProseChargingInformation) GetTransmissionDataContainer() []PC5DataConta
 // GetTransmissionDataContainerOk returns a tuple with the TransmissionDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetTransmissionDataContainerOk() ([]PC5DataContainer, bool) {
-	if o == nil || isNil(o.TransmissionDataContainer) {
+	if o == nil || IsNil(o.TransmissionDataContainer) {
 		return nil, false
 	}
 	return o.TransmissionDataContainer, true
@@ -1088,7 +1088,7 @@ func (o *ProseChargingInformation) GetTransmissionDataContainerOk() ([]PC5DataCo
 
 // HasTransmissionDataContainer returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasTransmissionDataContainer() bool {
-	if o != nil && !isNil(o.TransmissionDataContainer) {
+	if o != nil && !IsNil(o.TransmissionDataContainer) {
 		return true
 	}
 
@@ -1102,7 +1102,7 @@ func (o *ProseChargingInformation) SetTransmissionDataContainer(v []PC5DataConta
 
 // GetReceptionDataContainer returns the ReceptionDataContainer field value if set, zero value otherwise.
 func (o *ProseChargingInformation) GetReceptionDataContainer() []PC5DataContainer {
-	if o == nil || isNil(o.ReceptionDataContainer) {
+	if o == nil || IsNil(o.ReceptionDataContainer) {
 		var ret []PC5DataContainer
 		return ret
 	}
@@ -1112,7 +1112,7 @@ func (o *ProseChargingInformation) GetReceptionDataContainer() []PC5DataContaine
 // GetReceptionDataContainerOk returns a tuple with the ReceptionDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseChargingInformation) GetReceptionDataContainerOk() ([]PC5DataContainer, bool) {
-	if o == nil || isNil(o.ReceptionDataContainer) {
+	if o == nil || IsNil(o.ReceptionDataContainer) {
 		return nil, false
 	}
 	return o.ReceptionDataContainer, true
@@ -1120,7 +1120,7 @@ func (o *ProseChargingInformation) GetReceptionDataContainerOk() ([]PC5DataConta
 
 // HasReceptionDataContainer returns a boolean if a field has been set.
 func (o *ProseChargingInformation) HasReceptionDataContainer() bool {
-	if o != nil && !isNil(o.ReceptionDataContainer) {
+	if o != nil && !IsNil(o.ReceptionDataContainer) {
 		return true
 	}
 
@@ -1133,7 +1133,7 @@ func (o *ProseChargingInformation) SetReceptionDataContainer(v []PC5DataContaine
 }
 
 func (o ProseChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1142,103 +1142,103 @@ func (o ProseChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o ProseChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AnnouncingPlmnID) {
+	if !IsNil(o.AnnouncingPlmnID) {
 		toSerialize["announcingPlmnID"] = o.AnnouncingPlmnID
 	}
-	if !isNil(o.AnnouncingUeHplmnIdentifier) {
+	if !IsNil(o.AnnouncingUeHplmnIdentifier) {
 		toSerialize["announcingUeHplmnIdentifier"] = o.AnnouncingUeHplmnIdentifier
 	}
-	if !isNil(o.AnnouncingUeVplmnIdentifier) {
+	if !IsNil(o.AnnouncingUeVplmnIdentifier) {
 		toSerialize["announcingUeVplmnIdentifier"] = o.AnnouncingUeVplmnIdentifier
 	}
-	if !isNil(o.MonitoringUeHplmnIdentifier) {
+	if !IsNil(o.MonitoringUeHplmnIdentifier) {
 		toSerialize["monitoringUeHplmnIdentifier"] = o.MonitoringUeHplmnIdentifier
 	}
-	if !isNil(o.MonitoringUeVplmnIdentifier) {
+	if !IsNil(o.MonitoringUeVplmnIdentifier) {
 		toSerialize["monitoringUeVplmnIdentifier"] = o.MonitoringUeVplmnIdentifier
 	}
-	if !isNil(o.DiscovererUeHplmnIdentifier) {
+	if !IsNil(o.DiscovererUeHplmnIdentifier) {
 		toSerialize["discovererUeHplmnIdentifier"] = o.DiscovererUeHplmnIdentifier
 	}
-	if !isNil(o.DiscovererUeVplmnIdentifier) {
+	if !IsNil(o.DiscovererUeVplmnIdentifier) {
 		toSerialize["discovererUeVplmnIdentifier"] = o.DiscovererUeVplmnIdentifier
 	}
-	if !isNil(o.DiscovereeUeHplmnIdentifier) {
+	if !IsNil(o.DiscovereeUeHplmnIdentifier) {
 		toSerialize["discovereeUeHplmnIdentifier"] = o.DiscovereeUeHplmnIdentifier
 	}
-	if !isNil(o.DiscovereeUeVplmnIdentifier) {
+	if !IsNil(o.DiscovereeUeVplmnIdentifier) {
 		toSerialize["discovereeUeVplmnIdentifier"] = o.DiscovereeUeVplmnIdentifier
 	}
-	if !isNil(o.MonitoredPlmnIdentifier) {
+	if !IsNil(o.MonitoredPlmnIdentifier) {
 		toSerialize["monitoredPlmnIdentifier"] = o.MonitoredPlmnIdentifier
 	}
-	if !isNil(o.ProseApplicationID) {
+	if !IsNil(o.ProseApplicationID) {
 		toSerialize["proseApplicationID"] = o.ProseApplicationID
 	}
-	if !isNil(o.ApplicationId) {
+	if !IsNil(o.ApplicationId) {
 		toSerialize["ApplicationId"] = o.ApplicationId
 	}
-	if !isNil(o.ApplicationSpecificDataList) {
+	if !IsNil(o.ApplicationSpecificDataList) {
 		toSerialize["applicationSpecificDataList"] = o.ApplicationSpecificDataList
 	}
-	if !isNil(o.ProseFunctionality) {
+	if !IsNil(o.ProseFunctionality) {
 		toSerialize["proseFunctionality"] = o.ProseFunctionality
 	}
-	if !isNil(o.ProseEventType) {
+	if !IsNil(o.ProseEventType) {
 		toSerialize["proseEventType"] = o.ProseEventType
 	}
-	if !isNil(o.DirectDiscoveryModel) {
+	if !IsNil(o.DirectDiscoveryModel) {
 		toSerialize["directDiscoveryModel"] = o.DirectDiscoveryModel
 	}
-	if !isNil(o.ValidityPeriod) {
+	if !IsNil(o.ValidityPeriod) {
 		toSerialize["validityPeriod"] = o.ValidityPeriod
 	}
-	if !isNil(o.RoleOfUE) {
+	if !IsNil(o.RoleOfUE) {
 		toSerialize["roleOfUE"] = o.RoleOfUE
 	}
-	if !isNil(o.ProseRequestTimestamp) {
+	if !IsNil(o.ProseRequestTimestamp) {
 		toSerialize["proseRequestTimestamp"] = o.ProseRequestTimestamp
 	}
-	if !isNil(o.PC3ProtocolCause) {
+	if !IsNil(o.PC3ProtocolCause) {
 		toSerialize["pC3ProtocolCause"] = o.PC3ProtocolCause
 	}
-	if !isNil(o.MonitoringUEIdentifier) {
+	if !IsNil(o.MonitoringUEIdentifier) {
 		toSerialize["monitoringUEIdentifier"] = o.MonitoringUEIdentifier
 	}
-	if !isNil(o.RequestedPLMNIdentifier) {
+	if !IsNil(o.RequestedPLMNIdentifier) {
 		toSerialize["requestedPLMNIdentifier"] = o.RequestedPLMNIdentifier
 	}
-	if !isNil(o.TimeWindow) {
+	if !IsNil(o.TimeWindow) {
 		toSerialize["timeWindow"] = o.TimeWindow
 	}
-	if !isNil(o.RangeClass) {
+	if !IsNil(o.RangeClass) {
 		toSerialize["rangeClass"] = o.RangeClass
 	}
-	if !isNil(o.ProximityAlertIndication) {
+	if !IsNil(o.ProximityAlertIndication) {
 		toSerialize["proximityAlertIndication"] = o.ProximityAlertIndication
 	}
-	if !isNil(o.ProximityAlertTimestamp) {
+	if !IsNil(o.ProximityAlertTimestamp) {
 		toSerialize["proximityAlertTimestamp"] = o.ProximityAlertTimestamp
 	}
-	if !isNil(o.ProximityCancellationTimestamp) {
+	if !IsNil(o.ProximityCancellationTimestamp) {
 		toSerialize["proximityCancellationTimestamp"] = o.ProximityCancellationTimestamp
 	}
-	if !isNil(o.RelayIPAddress) {
+	if !IsNil(o.RelayIPAddress) {
 		toSerialize["relayIPAddress"] = o.RelayIPAddress
 	}
-	if !isNil(o.ProseUEToNetworkRelayUEID) {
+	if !IsNil(o.ProseUEToNetworkRelayUEID) {
 		toSerialize["proseUEToNetworkRelayUEID"] = o.ProseUEToNetworkRelayUEID
 	}
-	if !isNil(o.ProseDestinationLayer2ID) {
+	if !IsNil(o.ProseDestinationLayer2ID) {
 		toSerialize["proseDestinationLayer2ID"] = o.ProseDestinationLayer2ID
 	}
-	if !isNil(o.PFIContainerInformation) {
+	if !IsNil(o.PFIContainerInformation) {
 		toSerialize["pFIContainerInformation"] = o.PFIContainerInformation
 	}
-	if !isNil(o.TransmissionDataContainer) {
+	if !IsNil(o.TransmissionDataContainer) {
 		toSerialize["transmissionDataContainer"] = o.TransmissionDataContainer
 	}
-	if !isNil(o.ReceptionDataContainer) {
+	if !IsNil(o.ReceptionDataContainer) {
 		toSerialize["receptionDataContainer"] = o.ReceptionDataContainer
 	}
 	return toSerialize, nil
@@ -1279,5 +1279,3 @@ func (v *NullableProseChargingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

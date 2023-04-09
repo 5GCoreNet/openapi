@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &HeaderSipRequest{}
 
 // HeaderSipRequest Contains a header (and optionally value of the header) in the SIP request
 type HeaderSipRequest struct {
-	Header string `json:"header"`
+	Header  string  `json:"header"`
 	Content *string `json:"content,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *HeaderSipRequest) SetHeader(v string) {
 
 // GetContent returns the Content field value if set, zero value otherwise.
 func (o *HeaderSipRequest) GetContent() string {
-	if o == nil || isNil(o.Content) {
+	if o == nil || IsNil(o.Content) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *HeaderSipRequest) GetContent() string {
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HeaderSipRequest) GetContentOk() (*string, bool) {
-	if o == nil || isNil(o.Content) {
+	if o == nil || IsNil(o.Content) {
 		return nil, false
 	}
 	return o.Content, true
@@ -85,7 +85,7 @@ func (o *HeaderSipRequest) GetContentOk() (*string, bool) {
 
 // HasContent returns a boolean if a field has been set.
 func (o *HeaderSipRequest) HasContent() bool {
-	if o != nil && !isNil(o.Content) {
+	if o != nil && !IsNil(o.Content) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *HeaderSipRequest) SetContent(v string) {
 }
 
 func (o HeaderSipRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o HeaderSipRequest) MarshalJSON() ([]byte, error) {
 func (o HeaderSipRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["header"] = o.Header
-	if !isNil(o.Content) {
+	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableHeaderSipRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

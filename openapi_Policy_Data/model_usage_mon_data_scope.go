@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,10 +17,10 @@ import (
 // checks if the UsageMonDataScope type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UsageMonDataScope{}
 
-// UsageMonDataScope Contains a SNSSAI and DNN combinations to which the UsageMonData instance belongs to. 
+// UsageMonDataScope Contains a SNSSAI and DNN combinations to which the UsageMonData instance belongs to.
 type UsageMonDataScope struct {
-	Snssai Snssai `json:"snssai"`
-	Dnn []string `json:"dnn,omitempty"`
+	Snssai Snssai   `json:"snssai"`
+	Dnn    []string `json:"dnn,omitempty"`
 }
 
 // NewUsageMonDataScope instantiates a new UsageMonDataScope object
@@ -67,7 +67,7 @@ func (o *UsageMonDataScope) SetSnssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *UsageMonDataScope) GetDnn() []string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *UsageMonDataScope) GetDnn() []string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataScope) GetDnnOk() ([]string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -85,7 +85,7 @@ func (o *UsageMonDataScope) GetDnnOk() ([]string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *UsageMonDataScope) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *UsageMonDataScope) SetDnn(v []string) {
 }
 
 func (o UsageMonDataScope) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o UsageMonDataScope) MarshalJSON() ([]byte, error) {
 func (o UsageMonDataScope) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableUsageMonDataScope) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

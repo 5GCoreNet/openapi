@@ -19,14 +19,10 @@ var _ MappedNullable = &NotifyMoiAttributeValueChanges{}
 
 // NotifyMoiAttributeValueChanges struct for NotifyMoiAttributeValueChanges
 type NotifyMoiAttributeValueChanges struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
+	NotificationHeader
 	CorrelatedNotifications []CorrelatedNotification `json:"correlatedNotifications,omitempty"`
-	AdditionalText *string `json:"additionalText,omitempty"`
-	SourceIndicator *SourceIndicator `json:"sourceIndicator,omitempty"`
+	AdditionalText          *string                  `json:"additionalText,omitempty"`
+	SourceIndicator         *SourceIndicator         `json:"sourceIndicator,omitempty"`
 	// The first array item contains the attribute name value pairs with the new values, and the second array item the attribute name value pairs with the optional old values.
 	AttributeListValueChanges []map[string]interface{} `json:"attributeListValueChanges"`
 }
@@ -35,7 +31,7 @@ type NotifyMoiAttributeValueChanges struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyMoiAttributeValueChanges(href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string, attributeListValueChanges []map[string]interface{}) *NotifyMoiAttributeValueChanges {
+func NewNotifyMoiAttributeValueChanges(attributeListValueChanges []map[string]interface{}, href string, notificationId int32, notificationType NotificationType, eventTime time.Time, systemDN string) *NotifyMoiAttributeValueChanges {
 	this := NotifyMoiAttributeValueChanges{}
 	this.Href = href
 	this.NotificationId = notificationId
@@ -54,129 +50,9 @@ func NewNotifyMoiAttributeValueChangesWithDefaults() *NotifyMoiAttributeValueCha
 	return &this
 }
 
-// GetHref returns the Href field value
-func (o *NotifyMoiAttributeValueChanges) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiAttributeValueChanges) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyMoiAttributeValueChanges) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyMoiAttributeValueChanges) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiAttributeValueChanges) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyMoiAttributeValueChanges) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyMoiAttributeValueChanges) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiAttributeValueChanges) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyMoiAttributeValueChanges) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyMoiAttributeValueChanges) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiAttributeValueChanges) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyMoiAttributeValueChanges) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyMoiAttributeValueChanges) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyMoiAttributeValueChanges) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyMoiAttributeValueChanges) SetSystemDN(v string) {
-	o.SystemDN = v
-}
-
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || isNil(o.CorrelatedNotifications) {
+	if o == nil || IsNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -186,7 +62,7 @@ func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotifications() []Correlat
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || isNil(o.CorrelatedNotifications) {
+	if o == nil || IsNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -194,7 +70,7 @@ func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotificationsOk() ([]Corre
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChanges) HasCorrelatedNotifications() bool {
-	if o != nil && !isNil(o.CorrelatedNotifications) {
+	if o != nil && !IsNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -208,7 +84,7 @@ func (o *NotifyMoiAttributeValueChanges) SetCorrelatedNotifications(v []Correlat
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChanges) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -218,7 +94,7 @@ func (o *NotifyMoiAttributeValueChanges) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChanges) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -226,7 +102,7 @@ func (o *NotifyMoiAttributeValueChanges) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChanges) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -240,7 +116,7 @@ func (o *NotifyMoiAttributeValueChanges) SetAdditionalText(v string) {
 
 // GetSourceIndicator returns the SourceIndicator field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChanges) GetSourceIndicator() SourceIndicator {
-	if o == nil || isNil(o.SourceIndicator) {
+	if o == nil || IsNil(o.SourceIndicator) {
 		var ret SourceIndicator
 		return ret
 	}
@@ -250,7 +126,7 @@ func (o *NotifyMoiAttributeValueChanges) GetSourceIndicator() SourceIndicator {
 // GetSourceIndicatorOk returns a tuple with the SourceIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChanges) GetSourceIndicatorOk() (*SourceIndicator, bool) {
-	if o == nil || isNil(o.SourceIndicator) {
+	if o == nil || IsNil(o.SourceIndicator) {
 		return nil, false
 	}
 	return o.SourceIndicator, true
@@ -258,7 +134,7 @@ func (o *NotifyMoiAttributeValueChanges) GetSourceIndicatorOk() (*SourceIndicato
 
 // HasSourceIndicator returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChanges) HasSourceIndicator() bool {
-	if o != nil && !isNil(o.SourceIndicator) {
+	if o != nil && !IsNil(o.SourceIndicator) {
 		return true
 	}
 
@@ -295,7 +171,7 @@ func (o *NotifyMoiAttributeValueChanges) SetAttributeListValueChanges(v []map[st
 }
 
 func (o NotifyMoiAttributeValueChanges) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,18 +180,21 @@ func (o NotifyMoiAttributeValueChanges) MarshalJSON() ([]byte, error) {
 
 func (o NotifyMoiAttributeValueChanges) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
-	if !isNil(o.CorrelatedNotifications) {
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	if !IsNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !isNil(o.AdditionalText) {
+	if !IsNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !isNil(o.SourceIndicator) {
+	if !IsNil(o.SourceIndicator) {
 		toSerialize["sourceIndicator"] = o.SourceIndicator
 	}
 	toSerialize["attributeListValueChanges"] = o.AttributeListValueChanges
@@ -357,5 +236,3 @@ func (v *NullableNotifyMoiAttributeValueChanges) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

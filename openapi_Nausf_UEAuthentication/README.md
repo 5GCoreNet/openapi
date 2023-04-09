@@ -99,7 +99,6 @@ Class | Method | HTTP request | Description
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [AuthResult](docs/AuthResult.md)
  - [AuthType](docs/AuthType.md)
- - [AuthTypeAnyOf](docs/AuthTypeAnyOf.md)
  - [AuthenticationInfo](docs/AuthenticationInfo.md)
  - [Av5gAka](docs/Av5gAka.md)
  - [ConfirmationData](docs/ConfirmationData.md)
@@ -112,7 +111,6 @@ Class | Method | HTTP request | Description
  - [Link](docs/Link.md)
  - [LinksValueSchema](docs/LinksValueSchema.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProSeAuthData](docs/ProSeAuthData.md)
@@ -129,7 +127,6 @@ Class | Method | HTTP request | Description
  - [Snssai](docs/Snssai.md)
  - [TraceData](docs/TraceData.md)
  - [TraceDepth](docs/TraceDepth.md)
- - [TraceDepthAnyOf](docs/TraceDepthAnyOf.md)
  - [UEAuthenticationCtx](docs/UEAuthenticationCtx.md)
  - [UEAuthenticationCtx5gAuthData](docs/UEAuthenticationCtx5gAuthData.md)
 

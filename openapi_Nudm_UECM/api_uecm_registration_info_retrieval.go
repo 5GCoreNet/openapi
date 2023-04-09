@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,24 +13,23 @@ package openapi_Nudm_UECM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // UECMRegistrationInfoRetrievalApiService UECMRegistrationInfoRetrievalApi service
 type UECMRegistrationInfoRetrievalApiService service
 
 type ApiGetRegistrationsRequest struct {
-	ctx context.Context
-	ApiService *UECMRegistrationInfoRetrievalApiService
-	ueId string
+	ctx                      context.Context
+	ApiService               *UECMRegistrationInfoRetrievalApiService
+	ueId                     string
 	registrationDatasetNames *[]RegistrationDataSetName
-	supportedFeatures *string
-	singleNssai *Snssai
-	dnn *string
+	supportedFeatures        *string
+	singleNssai              *Snssai
+	dnn                      *string
 }
 
 // List of UECM registration dataset names
@@ -61,26 +60,27 @@ func (r ApiGetRegistrationsRequest) Execute() (*RegistrationDataSets, *http.Resp
 /*
 GetRegistrations retrieve UE registration data sets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @return ApiGetRegistrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@return ApiGetRegistrationsRequest
 */
 func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrations(ctx context.Context, ueId string) ApiGetRegistrationsRequest {
 	return ApiGetRegistrationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return RegistrationDataSets
+//
+//	@return RegistrationDataSets
 func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiGetRegistrationsRequest) (*RegistrationDataSets, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RegistrationDataSets
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RegistrationDataSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UECMRegistrationInfoRetrievalApiService.GetRegistrations")
@@ -102,14 +102,14 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
-	parameterAddToQuery(localVarQueryParams, "registration-dataset-names", r.registrationDatasetNames, "csv")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "registration-dataset-names", r.registrationDatasetNames, "csv")
 	if r.singleNssai != nil {
-		parameterAddToQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
 	}
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -138,9 +138,9 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -157,8 +157,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -168,8 +168,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -179,8 +179,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -190,8 +190,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -201,8 +201,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -212,8 +212,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -223,8 +223,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -234,8 +234,8 @@ func (a *UECMRegistrationInfoRetrievalApiService) GetRegistrationsExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

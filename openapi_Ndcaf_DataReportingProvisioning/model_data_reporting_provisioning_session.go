@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReportingProvisioning
 
-Data Collection AF: Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Provisioning Sessions API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -26,8 +26,8 @@ type DataReportingProvisioningSession struct {
 	// String providing an application identifier.
 	ExternalApplicationId string `json:"externalApplicationId"`
 	// String providing an application identifier.
-	InternalApplicationId *string `json:"internalApplicationId,omitempty"`
-	EventId AfEvent `json:"eventId"`
+	InternalApplicationId         *string  `json:"internalApplicationId,omitempty"`
+	EventId                       AfEvent  `json:"eventId"`
 	DataReportingConfigurationIds []string `json:"dataReportingConfigurationIds"`
 }
 
@@ -127,7 +127,7 @@ func (o *DataReportingProvisioningSession) SetExternalApplicationId(v string) {
 
 // GetInternalApplicationId returns the InternalApplicationId field value if set, zero value otherwise.
 func (o *DataReportingProvisioningSession) GetInternalApplicationId() string {
-	if o == nil || isNil(o.InternalApplicationId) {
+	if o == nil || IsNil(o.InternalApplicationId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *DataReportingProvisioningSession) GetInternalApplicationId() string {
 // GetInternalApplicationIdOk returns a tuple with the InternalApplicationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingProvisioningSession) GetInternalApplicationIdOk() (*string, bool) {
-	if o == nil || isNil(o.InternalApplicationId) {
+	if o == nil || IsNil(o.InternalApplicationId) {
 		return nil, false
 	}
 	return o.InternalApplicationId, true
@@ -145,7 +145,7 @@ func (o *DataReportingProvisioningSession) GetInternalApplicationIdOk() (*string
 
 // HasInternalApplicationId returns a boolean if a field has been set.
 func (o *DataReportingProvisioningSession) HasInternalApplicationId() bool {
-	if o != nil && !isNil(o.InternalApplicationId) {
+	if o != nil && !IsNil(o.InternalApplicationId) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *DataReportingProvisioningSession) SetDataReportingConfigurationIds(v []
 }
 
 func (o DataReportingProvisioningSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,7 +218,7 @@ func (o DataReportingProvisioningSession) ToMap() (map[string]interface{}, error
 	toSerialize["provisioningSessionId"] = o.ProvisioningSessionId
 	toSerialize["aspId"] = o.AspId
 	toSerialize["externalApplicationId"] = o.ExternalApplicationId
-	if !isNil(o.InternalApplicationId) {
+	if !IsNil(o.InternalApplicationId) {
 		toSerialize["internalApplicationId"] = o.InternalApplicationId
 	}
 	toSerialize["eventId"] = o.EventId
@@ -261,5 +261,3 @@ func (v *NullableDataReportingProvisioningSession) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

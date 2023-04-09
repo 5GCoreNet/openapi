@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &VariablePart{}
 
 // VariablePart struct for VariablePart
 type VariablePart struct {
-	VariablePartType VariablePartType `json:"variablePartType"`
-	VariablePartValue []string `json:"variablePartValue"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	VariablePartType  VariablePartType `json:"variablePartType"`
+	VariablePartValue []string         `json:"variablePartValue"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	VariablePartOrder *int32 `json:"variablePartOrder,omitempty"`
 }
 
@@ -94,7 +94,7 @@ func (o *VariablePart) SetVariablePartValue(v []string) {
 
 // GetVariablePartOrder returns the VariablePartOrder field value if set, zero value otherwise.
 func (o *VariablePart) GetVariablePartOrder() int32 {
-	if o == nil || isNil(o.VariablePartOrder) {
+	if o == nil || IsNil(o.VariablePartOrder) {
 		var ret int32
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *VariablePart) GetVariablePartOrder() int32 {
 // GetVariablePartOrderOk returns a tuple with the VariablePartOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VariablePart) GetVariablePartOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.VariablePartOrder) {
+	if o == nil || IsNil(o.VariablePartOrder) {
 		return nil, false
 	}
 	return o.VariablePartOrder, true
@@ -112,7 +112,7 @@ func (o *VariablePart) GetVariablePartOrderOk() (*int32, bool) {
 
 // HasVariablePartOrder returns a boolean if a field has been set.
 func (o *VariablePart) HasVariablePartOrder() bool {
-	if o != nil && !isNil(o.VariablePartOrder) {
+	if o != nil && !IsNil(o.VariablePartOrder) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *VariablePart) SetVariablePartOrder(v int32) {
 }
 
 func (o VariablePart) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o VariablePart) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["variablePartType"] = o.VariablePartType
 	toSerialize["variablePartValue"] = o.VariablePartValue
-	if !isNil(o.VariablePartOrder) {
+	if !IsNil(o.VariablePartOrder) {
 		toSerialize["variablePartOrder"] = o.VariablePartOrder
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableVariablePart) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

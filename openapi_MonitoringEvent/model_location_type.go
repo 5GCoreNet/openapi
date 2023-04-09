@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LocationType Possible values are - CURRENT_LOCATION: The SCS/AS requests to be notified for current location - LAST_KNOWN_LOCATION: The SCS/AS requests to be notified for last known location - CURRENT_OR_LAST_KNOWN_LOCATION: The AF requests the current or last known location - INITIAL_LOCATION: The AF requests the initial location 
+// LocationType Possible values are - CURRENT_LOCATION: The SCS/AS requests to be notified for current location - LAST_KNOWN_LOCATION: The SCS/AS requests to be notified for last known location - CURRENT_OR_LAST_KNOWN_LOCATION: The AF requests the current or last known location - INITIAL_LOCATION: The AF requests the initial location
 type LocationType struct {
-	LocationTypeAnyOf *LocationTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocationTypeAnyOf
-	err = json.Unmarshal(data, &dst.LocationTypeAnyOf);
-	if err == nil {
-		jsonLocationTypeAnyOf, _ := json.Marshal(dst.LocationTypeAnyOf)
-		if string(jsonLocationTypeAnyOf) == "{}" { // empty struct
-			dst.LocationTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocationTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.LocationTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocationType) MarshalJSON() ([]byte, error) {
-	if src.LocationTypeAnyOf != nil {
-		return json.Marshal(&src.LocationTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

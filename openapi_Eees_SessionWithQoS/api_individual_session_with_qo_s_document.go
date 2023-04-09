@@ -1,7 +1,7 @@
 /*
 EES Session with QoS API
 
-API for EES Session with Qos service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Session with Qos service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Eees_SessionWithQoS
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualSessionWithQoSDocumentApiService IndividualSessionWithQoSDocumentApi service
 type IndividualSessionWithQoSDocumentApiService service
 
 type ApiDeleteIndSessionWithQoSRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualSessionWithQoSDocumentApiService
-	sessionId string
+	sessionId  string
 }
 
 func (r ApiDeleteIndSessionWithQoSRequest) Execute() (*http.Response, error) {
@@ -38,24 +37,24 @@ DeleteIndSessionWithQoS Delete an Individual Session with QoS resource
 
 Remove an Individual Session with QoS resource identified by a sessionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId session Id.
- @return ApiDeleteIndSessionWithQoSRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId session Id.
+	@return ApiDeleteIndSessionWithQoSRequest
 */
 func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoS(ctx context.Context, sessionId string) ApiDeleteIndSessionWithQoSRequest {
 	return ApiDeleteIndSessionWithQoSRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExecute(r ApiDeleteIndSessionWithQoSRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSessionWithQoSDocumentApiService.DeleteIndSessionWithQoS")
@@ -97,9 +96,9 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -116,8 +115,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +126,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +137,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +148,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -160,8 +159,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -171,8 +170,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -182,8 +181,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -193,13 +192,13 @@ func (a *IndividualSessionWithQoSDocumentApiService) DeleteIndSessionWithQoSExec
 }
 
 type ApiModifyIndSessionWithQoSRequest struct {
-	ctx context.Context
-	ApiService *IndividualSessionWithQoSDocumentApiService
-	sessionId string
+	ctx                 context.Context
+	ApiService          *IndividualSessionWithQoSDocumentApiService
+	sessionId           string
 	sessionWithQoSPatch *SessionWithQoSPatch
 }
 
-// Partial update an existing Individual Session with QoS resource identified by a sessionId. 
+// Partial update an existing Individual Session with QoS resource identified by a sessionId.
 func (r ApiModifyIndSessionWithQoSRequest) SessionWithQoSPatch(sessionWithQoSPatch SessionWithQoSPatch) ApiModifyIndSessionWithQoSRequest {
 	r.sessionWithQoSPatch = &sessionWithQoSPatch
 	return r
@@ -212,26 +211,27 @@ func (r ApiModifyIndSessionWithQoSRequest) Execute() (*SessionWithQoS, *http.Res
 /*
 ModifyIndSessionWithQoS Modify an Individual Session with QoS resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId session Id.
- @return ApiModifyIndSessionWithQoSRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId session Id.
+	@return ApiModifyIndSessionWithQoSRequest
 */
 func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoS(ctx context.Context, sessionId string) ApiModifyIndSessionWithQoSRequest {
 	return ApiModifyIndSessionWithQoSRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return SessionWithQoS
+//
+//	@return SessionWithQoS
 func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExecute(r ApiModifyIndSessionWithQoSRequest) (*SessionWithQoS, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SessionWithQoS
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SessionWithQoS
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSessionWithQoSDocumentApiService.ModifyIndSessionWithQoS")
@@ -278,9 +278,9 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -297,8 +297,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -308,8 +308,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -319,8 +319,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -330,8 +330,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -341,8 +341,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -352,8 +352,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -363,8 +363,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -374,8 +374,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -385,8 +385,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -396,8 +396,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -416,9 +416,9 @@ func (a *IndividualSessionWithQoSDocumentApiService) ModifyIndSessionWithQoSExec
 }
 
 type ApiReadIndSessionWithQoSRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualSessionWithQoSDocumentApiService
-	sessionId string
+	sessionId  string
 }
 
 func (r ApiReadIndSessionWithQoSRequest) Execute() (*SessionWithQoS, *http.Response, error) {
@@ -430,26 +430,27 @@ ReadIndSessionWithQoS Read Individual Session with QoS resource
 
 Read a subscription resource for a sessionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Session Id.
- @return ApiReadIndSessionWithQoSRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Session Id.
+	@return ApiReadIndSessionWithQoSRequest
 */
 func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoS(ctx context.Context, sessionId string) ApiReadIndSessionWithQoSRequest {
 	return ApiReadIndSessionWithQoSRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return SessionWithQoS
+//
+//	@return SessionWithQoS
 func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecute(r ApiReadIndSessionWithQoSRequest) (*SessionWithQoS, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SessionWithQoS
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SessionWithQoS
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSessionWithQoSDocumentApiService.ReadIndSessionWithQoS")
@@ -491,9 +492,9 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -510,8 +511,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -521,8 +522,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -532,8 +533,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -543,8 +544,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -554,8 +555,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -565,8 +566,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -576,8 +577,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -587,8 +588,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -607,9 +608,9 @@ func (a *IndividualSessionWithQoSDocumentApiService) ReadIndSessionWithQoSExecut
 }
 
 type ApiUpdateIndSessionWithQoSRequest struct {
-	ctx context.Context
-	ApiService *IndividualSessionWithQoSDocumentApiService
-	sessionId string
+	ctx            context.Context
+	ApiService     *IndividualSessionWithQoSDocumentApiService
+	sessionId      string
 	sessionWithQoS *SessionWithQoS
 }
 
@@ -627,27 +628,27 @@ UpdateIndSessionWithQoS Update an Individual Session with QoS resource
 
 Fully replace an existing Individual Session with QoS resource identified by a sessionId.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Session Id.
- @return ApiUpdateIndSessionWithQoSRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Session Id.
+	@return ApiUpdateIndSessionWithQoSRequest
 */
 func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoS(ctx context.Context, sessionId string) ApiUpdateIndSessionWithQoSRequest {
 	return ApiUpdateIndSessionWithQoSRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return SessionWithQoS
+//
+//	@return SessionWithQoS
 func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExecute(r ApiUpdateIndSessionWithQoSRequest) (*SessionWithQoS, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SessionWithQoS
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SessionWithQoS
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualSessionWithQoSDocumentApiService.UpdateIndSessionWithQoS")
@@ -694,9 +695,9 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -713,8 +714,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -724,8 +725,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -735,8 +736,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -746,8 +747,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -757,8 +758,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -768,8 +769,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -779,8 +780,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -790,8 +791,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -801,8 +802,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -812,8 +813,8 @@ func (a *IndividualSessionWithQoSDocumentApiService) UpdateIndSessionWithQoSExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

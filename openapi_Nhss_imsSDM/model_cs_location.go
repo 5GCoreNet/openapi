@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &CsLocation{}
 
 // CsLocation Location data in CS domain
 type CsLocation struct {
-	MscNumber string `json:"mscNumber"`
-	VlrNumber string `json:"vlrNumber"`
-	PlmnId PlmnId `json:"plmnId"`
-	VlrLocation *GeraLocation `json:"vlrLocation,omitempty"`
+	MscNumber      string          `json:"mscNumber"`
+	VlrNumber      string          `json:"vlrNumber"`
+	PlmnId         PlmnId          `json:"plmnId"`
+	VlrLocation    *GeraLocation   `json:"vlrLocation,omitempty"`
 	CsgInformation *CsgInformation `json:"csgInformation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	TimeZone *string `json:"timeZone,omitempty"`
-	EUtranCgi *Ecgi `json:"eUtranCgi,omitempty"`
-	Tai *Tai `json:"tai,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	TimeZone  *string `json:"timeZone,omitempty"`
+	EUtranCgi *Ecgi   `json:"eUtranCgi,omitempty"`
+	Tai       *Tai    `json:"tai,omitempty"`
 }
 
 // NewCsLocation instantiates a new CsLocation object
@@ -124,7 +124,7 @@ func (o *CsLocation) SetPlmnId(v PlmnId) {
 
 // GetVlrLocation returns the VlrLocation field value if set, zero value otherwise.
 func (o *CsLocation) GetVlrLocation() GeraLocation {
-	if o == nil || isNil(o.VlrLocation) {
+	if o == nil || IsNil(o.VlrLocation) {
 		var ret GeraLocation
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *CsLocation) GetVlrLocation() GeraLocation {
 // GetVlrLocationOk returns a tuple with the VlrLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsLocation) GetVlrLocationOk() (*GeraLocation, bool) {
-	if o == nil || isNil(o.VlrLocation) {
+	if o == nil || IsNil(o.VlrLocation) {
 		return nil, false
 	}
 	return o.VlrLocation, true
@@ -142,7 +142,7 @@ func (o *CsLocation) GetVlrLocationOk() (*GeraLocation, bool) {
 
 // HasVlrLocation returns a boolean if a field has been set.
 func (o *CsLocation) HasVlrLocation() bool {
-	if o != nil && !isNil(o.VlrLocation) {
+	if o != nil && !IsNil(o.VlrLocation) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *CsLocation) SetVlrLocation(v GeraLocation) {
 
 // GetCsgInformation returns the CsgInformation field value if set, zero value otherwise.
 func (o *CsLocation) GetCsgInformation() CsgInformation {
-	if o == nil || isNil(o.CsgInformation) {
+	if o == nil || IsNil(o.CsgInformation) {
 		var ret CsgInformation
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *CsLocation) GetCsgInformation() CsgInformation {
 // GetCsgInformationOk returns a tuple with the CsgInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsLocation) GetCsgInformationOk() (*CsgInformation, bool) {
-	if o == nil || isNil(o.CsgInformation) {
+	if o == nil || IsNil(o.CsgInformation) {
 		return nil, false
 	}
 	return o.CsgInformation, true
@@ -174,7 +174,7 @@ func (o *CsLocation) GetCsgInformationOk() (*CsgInformation, bool) {
 
 // HasCsgInformation returns a boolean if a field has been set.
 func (o *CsLocation) HasCsgInformation() bool {
-	if o != nil && !isNil(o.CsgInformation) {
+	if o != nil && !IsNil(o.CsgInformation) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *CsLocation) SetCsgInformation(v CsgInformation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *CsLocation) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *CsLocation) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsLocation) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -206,7 +206,7 @@ func (o *CsLocation) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *CsLocation) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *CsLocation) SetTimeZone(v string) {
 
 // GetEUtranCgi returns the EUtranCgi field value if set, zero value otherwise.
 func (o *CsLocation) GetEUtranCgi() Ecgi {
-	if o == nil || isNil(o.EUtranCgi) {
+	if o == nil || IsNil(o.EUtranCgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *CsLocation) GetEUtranCgi() Ecgi {
 // GetEUtranCgiOk returns a tuple with the EUtranCgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsLocation) GetEUtranCgiOk() (*Ecgi, bool) {
-	if o == nil || isNil(o.EUtranCgi) {
+	if o == nil || IsNil(o.EUtranCgi) {
 		return nil, false
 	}
 	return o.EUtranCgi, true
@@ -238,7 +238,7 @@ func (o *CsLocation) GetEUtranCgiOk() (*Ecgi, bool) {
 
 // HasEUtranCgi returns a boolean if a field has been set.
 func (o *CsLocation) HasEUtranCgi() bool {
-	if o != nil && !isNil(o.EUtranCgi) {
+	if o != nil && !IsNil(o.EUtranCgi) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *CsLocation) SetEUtranCgi(v Ecgi) {
 
 // GetTai returns the Tai field value if set, zero value otherwise.
 func (o *CsLocation) GetTai() Tai {
-	if o == nil || isNil(o.Tai) {
+	if o == nil || IsNil(o.Tai) {
 		var ret Tai
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *CsLocation) GetTai() Tai {
 // GetTaiOk returns a tuple with the Tai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsLocation) GetTaiOk() (*Tai, bool) {
-	if o == nil || isNil(o.Tai) {
+	if o == nil || IsNil(o.Tai) {
 		return nil, false
 	}
 	return o.Tai, true
@@ -270,7 +270,7 @@ func (o *CsLocation) GetTaiOk() (*Tai, bool) {
 
 // HasTai returns a boolean if a field has been set.
 func (o *CsLocation) HasTai() bool {
-	if o != nil && !isNil(o.Tai) {
+	if o != nil && !IsNil(o.Tai) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *CsLocation) SetTai(v Tai) {
 }
 
 func (o CsLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -295,19 +295,19 @@ func (o CsLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize["mscNumber"] = o.MscNumber
 	toSerialize["vlrNumber"] = o.VlrNumber
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.VlrLocation) {
+	if !IsNil(o.VlrLocation) {
 		toSerialize["vlrLocation"] = o.VlrLocation
 	}
-	if !isNil(o.CsgInformation) {
+	if !IsNil(o.CsgInformation) {
 		toSerialize["csgInformation"] = o.CsgInformation
 	}
-	if !isNil(o.TimeZone) {
+	if !IsNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !isNil(o.EUtranCgi) {
+	if !IsNil(o.EUtranCgi) {
 		toSerialize["eUtranCgi"] = o.EUtranCgi
 	}
-	if !isNil(o.Tai) {
+	if !IsNil(o.Tai) {
 		toSerialize["tai"] = o.Tai
 	}
 	return toSerialize, nil
@@ -348,5 +348,3 @@ func (v *NullableCsLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

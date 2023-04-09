@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &CagInfo1{}
 
 // CagInfo1 struct for CagInfo1
 type CagInfo1 struct {
-	AllowedCagList []string `json:"allowedCagList"`
-	CagOnlyIndicator *bool `json:"cagOnlyIndicator,omitempty"`
+	AllowedCagList   []string `json:"allowedCagList"`
+	CagOnlyIndicator *bool    `json:"cagOnlyIndicator,omitempty"`
 }
 
 // NewCagInfo1 instantiates a new CagInfo1 object
@@ -67,7 +67,7 @@ func (o *CagInfo1) SetAllowedCagList(v []string) {
 
 // GetCagOnlyIndicator returns the CagOnlyIndicator field value if set, zero value otherwise.
 func (o *CagInfo1) GetCagOnlyIndicator() bool {
-	if o == nil || isNil(o.CagOnlyIndicator) {
+	if o == nil || IsNil(o.CagOnlyIndicator) {
 		var ret bool
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CagInfo1) GetCagOnlyIndicator() bool {
 // GetCagOnlyIndicatorOk returns a tuple with the CagOnlyIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CagInfo1) GetCagOnlyIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.CagOnlyIndicator) {
+	if o == nil || IsNil(o.CagOnlyIndicator) {
 		return nil, false
 	}
 	return o.CagOnlyIndicator, true
@@ -85,7 +85,7 @@ func (o *CagInfo1) GetCagOnlyIndicatorOk() (*bool, bool) {
 
 // HasCagOnlyIndicator returns a boolean if a field has been set.
 func (o *CagInfo1) HasCagOnlyIndicator() bool {
-	if o != nil && !isNil(o.CagOnlyIndicator) {
+	if o != nil && !IsNil(o.CagOnlyIndicator) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *CagInfo1) SetCagOnlyIndicator(v bool) {
 }
 
 func (o CagInfo1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o CagInfo1) MarshalJSON() ([]byte, error) {
 func (o CagInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allowedCagList"] = o.AllowedCagList
-	if !isNil(o.CagOnlyIndicator) {
+	if !IsNil(o.CagOnlyIndicator) {
 		toSerialize["cagOnlyIndicator"] = o.CagOnlyIndicator
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableCagInfo1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

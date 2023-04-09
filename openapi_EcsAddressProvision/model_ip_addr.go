@@ -1,7 +1,7 @@
 /*
 3gpp-ecs-address-provision
 
-API for ECS Address Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for ECS Address Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsIpAddr(v *interface{}) IpAddr {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IpAddr) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src IpAddr) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IpAddr) GetActualInstance() (interface{}) {
+func (obj *IpAddr) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableIpAddr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

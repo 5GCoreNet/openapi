@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,30 +20,30 @@ var _ MappedNullable = &N1N2MessageTransferReqData{}
 // N1N2MessageTransferReqData Data within a N1/N2 message transfer request
 type N1N2MessageTransferReqData struct {
 	N1MessageContainer *N1MessageContainer `json:"n1MessageContainer,omitempty"`
-	N2InfoContainer *N2InfoContainer `json:"n2InfoContainer,omitempty"`
-	MtData *RefToBinaryData `json:"mtData,omitempty"`
-	SkipInd *bool `json:"skipInd,omitempty"`
-	LastMsgIndication *bool `json:"lastMsgIndication,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
+	N2InfoContainer    *N2InfoContainer    `json:"n2InfoContainer,omitempty"`
+	MtData             *RefToBinaryData    `json:"mtData,omitempty"`
+	SkipInd            *bool               `json:"skipInd,omitempty"`
+	LastMsgIndication  *bool               `json:"lastMsgIndication,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
 	PduSessionId *int32 `json:"pduSessionId,omitempty"`
 	// LCS Correlation ID.
 	LcsCorrelationId *string `json:"lcsCorrelationId,omitempty"`
 	// Paging Policy Indicator
 	Ppi *int32 `json:"ppi,omitempty"`
-	Arp *Arp `json:"arp,omitempty"`
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	Arp *Arp   `json:"arp,omitempty"`
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi *int32 `json:"5qi,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	N1n2FailureTxfNotifURI *string `json:"n1n2FailureTxfNotifURI,omitempty"`
-	SmfReallocationInd *bool `json:"smfReallocationInd,omitempty"`
-	AreaOfValidity *AreaOfValidity `json:"areaOfValidity,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	OldGuami *Guami `json:"oldGuami,omitempty"`
-	MaAcceptedInd *bool `json:"maAcceptedInd,omitempty"`
-	ExtBufSupport *bool `json:"extBufSupport,omitempty"`
-	TargetAccess *AccessType `json:"targetAccess,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	N1n2FailureTxfNotifURI *string         `json:"n1n2FailureTxfNotifURI,omitempty"`
+	SmfReallocationInd     *bool           `json:"smfReallocationInd,omitempty"`
+	AreaOfValidity         *AreaOfValidity `json:"areaOfValidity,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string     `json:"supportedFeatures,omitempty"`
+	OldGuami          *Guami      `json:"oldGuami,omitempty"`
+	MaAcceptedInd     *bool       `json:"maAcceptedInd,omitempty"`
+	ExtBufSupport     *bool       `json:"extBufSupport,omitempty"`
+	TargetAccess      *AccessType `json:"targetAccess,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfId *string `json:"nfId,omitempty"`
 }
 
@@ -82,7 +82,7 @@ func NewN1N2MessageTransferReqDataWithDefaults() *N1N2MessageTransferReqData {
 
 // GetN1MessageContainer returns the N1MessageContainer field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetN1MessageContainer() N1MessageContainer {
-	if o == nil || isNil(o.N1MessageContainer) {
+	if o == nil || IsNil(o.N1MessageContainer) {
 		var ret N1MessageContainer
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *N1N2MessageTransferReqData) GetN1MessageContainer() N1MessageContainer 
 // GetN1MessageContainerOk returns a tuple with the N1MessageContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetN1MessageContainerOk() (*N1MessageContainer, bool) {
-	if o == nil || isNil(o.N1MessageContainer) {
+	if o == nil || IsNil(o.N1MessageContainer) {
 		return nil, false
 	}
 	return o.N1MessageContainer, true
@@ -100,7 +100,7 @@ func (o *N1N2MessageTransferReqData) GetN1MessageContainerOk() (*N1MessageContai
 
 // HasN1MessageContainer returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasN1MessageContainer() bool {
-	if o != nil && !isNil(o.N1MessageContainer) {
+	if o != nil && !IsNil(o.N1MessageContainer) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *N1N2MessageTransferReqData) SetN1MessageContainer(v N1MessageContainer)
 
 // GetN2InfoContainer returns the N2InfoContainer field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetN2InfoContainer() N2InfoContainer {
-	if o == nil || isNil(o.N2InfoContainer) {
+	if o == nil || IsNil(o.N2InfoContainer) {
 		var ret N2InfoContainer
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *N1N2MessageTransferReqData) GetN2InfoContainer() N2InfoContainer {
 // GetN2InfoContainerOk returns a tuple with the N2InfoContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetN2InfoContainerOk() (*N2InfoContainer, bool) {
-	if o == nil || isNil(o.N2InfoContainer) {
+	if o == nil || IsNil(o.N2InfoContainer) {
 		return nil, false
 	}
 	return o.N2InfoContainer, true
@@ -132,7 +132,7 @@ func (o *N1N2MessageTransferReqData) GetN2InfoContainerOk() (*N2InfoContainer, b
 
 // HasN2InfoContainer returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasN2InfoContainer() bool {
-	if o != nil && !isNil(o.N2InfoContainer) {
+	if o != nil && !IsNil(o.N2InfoContainer) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *N1N2MessageTransferReqData) SetN2InfoContainer(v N2InfoContainer) {
 
 // GetMtData returns the MtData field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetMtData() RefToBinaryData {
-	if o == nil || isNil(o.MtData) {
+	if o == nil || IsNil(o.MtData) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *N1N2MessageTransferReqData) GetMtData() RefToBinaryData {
 // GetMtDataOk returns a tuple with the MtData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetMtDataOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.MtData) {
+	if o == nil || IsNil(o.MtData) {
 		return nil, false
 	}
 	return o.MtData, true
@@ -164,7 +164,7 @@ func (o *N1N2MessageTransferReqData) GetMtDataOk() (*RefToBinaryData, bool) {
 
 // HasMtData returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasMtData() bool {
-	if o != nil && !isNil(o.MtData) {
+	if o != nil && !IsNil(o.MtData) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *N1N2MessageTransferReqData) SetMtData(v RefToBinaryData) {
 
 // GetSkipInd returns the SkipInd field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetSkipInd() bool {
-	if o == nil || isNil(o.SkipInd) {
+	if o == nil || IsNil(o.SkipInd) {
 		var ret bool
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *N1N2MessageTransferReqData) GetSkipInd() bool {
 // GetSkipIndOk returns a tuple with the SkipInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetSkipIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipInd) {
+	if o == nil || IsNil(o.SkipInd) {
 		return nil, false
 	}
 	return o.SkipInd, true
@@ -196,7 +196,7 @@ func (o *N1N2MessageTransferReqData) GetSkipIndOk() (*bool, bool) {
 
 // HasSkipInd returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasSkipInd() bool {
-	if o != nil && !isNil(o.SkipInd) {
+	if o != nil && !IsNil(o.SkipInd) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *N1N2MessageTransferReqData) SetSkipInd(v bool) {
 
 // GetLastMsgIndication returns the LastMsgIndication field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetLastMsgIndication() bool {
-	if o == nil || isNil(o.LastMsgIndication) {
+	if o == nil || IsNil(o.LastMsgIndication) {
 		var ret bool
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *N1N2MessageTransferReqData) GetLastMsgIndication() bool {
 // GetLastMsgIndicationOk returns a tuple with the LastMsgIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetLastMsgIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.LastMsgIndication) {
+	if o == nil || IsNil(o.LastMsgIndication) {
 		return nil, false
 	}
 	return o.LastMsgIndication, true
@@ -228,7 +228,7 @@ func (o *N1N2MessageTransferReqData) GetLastMsgIndicationOk() (*bool, bool) {
 
 // HasLastMsgIndication returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasLastMsgIndication() bool {
-	if o != nil && !isNil(o.LastMsgIndication) {
+	if o != nil && !IsNil(o.LastMsgIndication) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *N1N2MessageTransferReqData) SetLastMsgIndication(v bool) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetPduSessionId() int32 {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *N1N2MessageTransferReqData) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -260,7 +260,7 @@ func (o *N1N2MessageTransferReqData) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasPduSessionId() bool {
-	if o != nil && !isNil(o.PduSessionId) {
+	if o != nil && !IsNil(o.PduSessionId) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *N1N2MessageTransferReqData) SetPduSessionId(v int32) {
 
 // GetLcsCorrelationId returns the LcsCorrelationId field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetLcsCorrelationId() string {
-	if o == nil || isNil(o.LcsCorrelationId) {
+	if o == nil || IsNil(o.LcsCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *N1N2MessageTransferReqData) GetLcsCorrelationId() string {
 // GetLcsCorrelationIdOk returns a tuple with the LcsCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetLcsCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.LcsCorrelationId) {
+	if o == nil || IsNil(o.LcsCorrelationId) {
 		return nil, false
 	}
 	return o.LcsCorrelationId, true
@@ -292,7 +292,7 @@ func (o *N1N2MessageTransferReqData) GetLcsCorrelationIdOk() (*string, bool) {
 
 // HasLcsCorrelationId returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasLcsCorrelationId() bool {
-	if o != nil && !isNil(o.LcsCorrelationId) {
+	if o != nil && !IsNil(o.LcsCorrelationId) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *N1N2MessageTransferReqData) SetLcsCorrelationId(v string) {
 
 // GetPpi returns the Ppi field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetPpi() int32 {
-	if o == nil || isNil(o.Ppi) {
+	if o == nil || IsNil(o.Ppi) {
 		var ret int32
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *N1N2MessageTransferReqData) GetPpi() int32 {
 // GetPpiOk returns a tuple with the Ppi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetPpiOk() (*int32, bool) {
-	if o == nil || isNil(o.Ppi) {
+	if o == nil || IsNil(o.Ppi) {
 		return nil, false
 	}
 	return o.Ppi, true
@@ -324,7 +324,7 @@ func (o *N1N2MessageTransferReqData) GetPpiOk() (*int32, bool) {
 
 // HasPpi returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasPpi() bool {
-	if o != nil && !isNil(o.Ppi) {
+	if o != nil && !IsNil(o.Ppi) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *N1N2MessageTransferReqData) SetPpi(v int32) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetArp() Arp {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *N1N2MessageTransferReqData) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -356,7 +356,7 @@ func (o *N1N2MessageTransferReqData) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasArp() bool {
-	if o != nil && !isNil(o.Arp) {
+	if o != nil && !IsNil(o.Arp) {
 		return true
 	}
 
@@ -370,7 +370,7 @@ func (o *N1N2MessageTransferReqData) SetArp(v Arp) {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetVar5qi() int32 {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *N1N2MessageTransferReqData) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetVar5qiOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5qi) {
+	if o == nil || IsNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -388,7 +388,7 @@ func (o *N1N2MessageTransferReqData) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasVar5qi() bool {
-	if o != nil && !isNil(o.Var5qi) {
+	if o != nil && !IsNil(o.Var5qi) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *N1N2MessageTransferReqData) SetVar5qi(v int32) {
 
 // GetN1n2FailureTxfNotifURI returns the N1n2FailureTxfNotifURI field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetN1n2FailureTxfNotifURI() string {
-	if o == nil || isNil(o.N1n2FailureTxfNotifURI) {
+	if o == nil || IsNil(o.N1n2FailureTxfNotifURI) {
 		var ret string
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *N1N2MessageTransferReqData) GetN1n2FailureTxfNotifURI() string {
 // GetN1n2FailureTxfNotifURIOk returns a tuple with the N1n2FailureTxfNotifURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetN1n2FailureTxfNotifURIOk() (*string, bool) {
-	if o == nil || isNil(o.N1n2FailureTxfNotifURI) {
+	if o == nil || IsNil(o.N1n2FailureTxfNotifURI) {
 		return nil, false
 	}
 	return o.N1n2FailureTxfNotifURI, true
@@ -420,7 +420,7 @@ func (o *N1N2MessageTransferReqData) GetN1n2FailureTxfNotifURIOk() (*string, boo
 
 // HasN1n2FailureTxfNotifURI returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasN1n2FailureTxfNotifURI() bool {
-	if o != nil && !isNil(o.N1n2FailureTxfNotifURI) {
+	if o != nil && !IsNil(o.N1n2FailureTxfNotifURI) {
 		return true
 	}
 
@@ -434,7 +434,7 @@ func (o *N1N2MessageTransferReqData) SetN1n2FailureTxfNotifURI(v string) {
 
 // GetSmfReallocationInd returns the SmfReallocationInd field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetSmfReallocationInd() bool {
-	if o == nil || isNil(o.SmfReallocationInd) {
+	if o == nil || IsNil(o.SmfReallocationInd) {
 		var ret bool
 		return ret
 	}
@@ -444,7 +444,7 @@ func (o *N1N2MessageTransferReqData) GetSmfReallocationInd() bool {
 // GetSmfReallocationIndOk returns a tuple with the SmfReallocationInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetSmfReallocationIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SmfReallocationInd) {
+	if o == nil || IsNil(o.SmfReallocationInd) {
 		return nil, false
 	}
 	return o.SmfReallocationInd, true
@@ -452,7 +452,7 @@ func (o *N1N2MessageTransferReqData) GetSmfReallocationIndOk() (*bool, bool) {
 
 // HasSmfReallocationInd returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasSmfReallocationInd() bool {
-	if o != nil && !isNil(o.SmfReallocationInd) {
+	if o != nil && !IsNil(o.SmfReallocationInd) {
 		return true
 	}
 
@@ -466,7 +466,7 @@ func (o *N1N2MessageTransferReqData) SetSmfReallocationInd(v bool) {
 
 // GetAreaOfValidity returns the AreaOfValidity field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetAreaOfValidity() AreaOfValidity {
-	if o == nil || isNil(o.AreaOfValidity) {
+	if o == nil || IsNil(o.AreaOfValidity) {
 		var ret AreaOfValidity
 		return ret
 	}
@@ -476,7 +476,7 @@ func (o *N1N2MessageTransferReqData) GetAreaOfValidity() AreaOfValidity {
 // GetAreaOfValidityOk returns a tuple with the AreaOfValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetAreaOfValidityOk() (*AreaOfValidity, bool) {
-	if o == nil || isNil(o.AreaOfValidity) {
+	if o == nil || IsNil(o.AreaOfValidity) {
 		return nil, false
 	}
 	return o.AreaOfValidity, true
@@ -484,7 +484,7 @@ func (o *N1N2MessageTransferReqData) GetAreaOfValidityOk() (*AreaOfValidity, boo
 
 // HasAreaOfValidity returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasAreaOfValidity() bool {
-	if o != nil && !isNil(o.AreaOfValidity) {
+	if o != nil && !IsNil(o.AreaOfValidity) {
 		return true
 	}
 
@@ -498,7 +498,7 @@ func (o *N1N2MessageTransferReqData) SetAreaOfValidity(v AreaOfValidity) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -508,7 +508,7 @@ func (o *N1N2MessageTransferReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -516,7 +516,7 @@ func (o *N1N2MessageTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -530,7 +530,7 @@ func (o *N1N2MessageTransferReqData) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetOldGuami() Guami {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -540,7 +540,7 @@ func (o *N1N2MessageTransferReqData) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -548,7 +548,7 @@ func (o *N1N2MessageTransferReqData) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasOldGuami() bool {
-	if o != nil && !isNil(o.OldGuami) {
+	if o != nil && !IsNil(o.OldGuami) {
 		return true
 	}
 
@@ -562,7 +562,7 @@ func (o *N1N2MessageTransferReqData) SetOldGuami(v Guami) {
 
 // GetMaAcceptedInd returns the MaAcceptedInd field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetMaAcceptedInd() bool {
-	if o == nil || isNil(o.MaAcceptedInd) {
+	if o == nil || IsNil(o.MaAcceptedInd) {
 		var ret bool
 		return ret
 	}
@@ -572,7 +572,7 @@ func (o *N1N2MessageTransferReqData) GetMaAcceptedInd() bool {
 // GetMaAcceptedIndOk returns a tuple with the MaAcceptedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetMaAcceptedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.MaAcceptedInd) {
+	if o == nil || IsNil(o.MaAcceptedInd) {
 		return nil, false
 	}
 	return o.MaAcceptedInd, true
@@ -580,7 +580,7 @@ func (o *N1N2MessageTransferReqData) GetMaAcceptedIndOk() (*bool, bool) {
 
 // HasMaAcceptedInd returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasMaAcceptedInd() bool {
-	if o != nil && !isNil(o.MaAcceptedInd) {
+	if o != nil && !IsNil(o.MaAcceptedInd) {
 		return true
 	}
 
@@ -594,7 +594,7 @@ func (o *N1N2MessageTransferReqData) SetMaAcceptedInd(v bool) {
 
 // GetExtBufSupport returns the ExtBufSupport field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetExtBufSupport() bool {
-	if o == nil || isNil(o.ExtBufSupport) {
+	if o == nil || IsNil(o.ExtBufSupport) {
 		var ret bool
 		return ret
 	}
@@ -604,7 +604,7 @@ func (o *N1N2MessageTransferReqData) GetExtBufSupport() bool {
 // GetExtBufSupportOk returns a tuple with the ExtBufSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetExtBufSupportOk() (*bool, bool) {
-	if o == nil || isNil(o.ExtBufSupport) {
+	if o == nil || IsNil(o.ExtBufSupport) {
 		return nil, false
 	}
 	return o.ExtBufSupport, true
@@ -612,7 +612,7 @@ func (o *N1N2MessageTransferReqData) GetExtBufSupportOk() (*bool, bool) {
 
 // HasExtBufSupport returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasExtBufSupport() bool {
-	if o != nil && !isNil(o.ExtBufSupport) {
+	if o != nil && !IsNil(o.ExtBufSupport) {
 		return true
 	}
 
@@ -626,7 +626,7 @@ func (o *N1N2MessageTransferReqData) SetExtBufSupport(v bool) {
 
 // GetTargetAccess returns the TargetAccess field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetTargetAccess() AccessType {
-	if o == nil || isNil(o.TargetAccess) {
+	if o == nil || IsNil(o.TargetAccess) {
 		var ret AccessType
 		return ret
 	}
@@ -636,7 +636,7 @@ func (o *N1N2MessageTransferReqData) GetTargetAccess() AccessType {
 // GetTargetAccessOk returns a tuple with the TargetAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetTargetAccessOk() (*AccessType, bool) {
-	if o == nil || isNil(o.TargetAccess) {
+	if o == nil || IsNil(o.TargetAccess) {
 		return nil, false
 	}
 	return o.TargetAccess, true
@@ -644,7 +644,7 @@ func (o *N1N2MessageTransferReqData) GetTargetAccessOk() (*AccessType, bool) {
 
 // HasTargetAccess returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasTargetAccess() bool {
-	if o != nil && !isNil(o.TargetAccess) {
+	if o != nil && !IsNil(o.TargetAccess) {
 		return true
 	}
 
@@ -658,7 +658,7 @@ func (o *N1N2MessageTransferReqData) SetTargetAccess(v AccessType) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *N1N2MessageTransferReqData) GetNfId() string {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -668,7 +668,7 @@ func (o *N1N2MessageTransferReqData) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferReqData) GetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -676,7 +676,7 @@ func (o *N1N2MessageTransferReqData) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *N1N2MessageTransferReqData) HasNfId() bool {
-	if o != nil && !isNil(o.NfId) {
+	if o != nil && !IsNil(o.NfId) {
 		return true
 	}
 
@@ -689,7 +689,7 @@ func (o *N1N2MessageTransferReqData) SetNfId(v string) {
 }
 
 func (o N1N2MessageTransferReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -698,61 +698,61 @@ func (o N1N2MessageTransferReqData) MarshalJSON() ([]byte, error) {
 
 func (o N1N2MessageTransferReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.N1MessageContainer) {
+	if !IsNil(o.N1MessageContainer) {
 		toSerialize["n1MessageContainer"] = o.N1MessageContainer
 	}
-	if !isNil(o.N2InfoContainer) {
+	if !IsNil(o.N2InfoContainer) {
 		toSerialize["n2InfoContainer"] = o.N2InfoContainer
 	}
-	if !isNil(o.MtData) {
+	if !IsNil(o.MtData) {
 		toSerialize["mtData"] = o.MtData
 	}
-	if !isNil(o.SkipInd) {
+	if !IsNil(o.SkipInd) {
 		toSerialize["skipInd"] = o.SkipInd
 	}
-	if !isNil(o.LastMsgIndication) {
+	if !IsNil(o.LastMsgIndication) {
 		toSerialize["lastMsgIndication"] = o.LastMsgIndication
 	}
-	if !isNil(o.PduSessionId) {
+	if !IsNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
-	if !isNil(o.LcsCorrelationId) {
+	if !IsNil(o.LcsCorrelationId) {
 		toSerialize["lcsCorrelationId"] = o.LcsCorrelationId
 	}
-	if !isNil(o.Ppi) {
+	if !IsNil(o.Ppi) {
 		toSerialize["ppi"] = o.Ppi
 	}
-	if !isNil(o.Arp) {
+	if !IsNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !isNil(o.Var5qi) {
+	if !IsNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !isNil(o.N1n2FailureTxfNotifURI) {
+	if !IsNil(o.N1n2FailureTxfNotifURI) {
 		toSerialize["n1n2FailureTxfNotifURI"] = o.N1n2FailureTxfNotifURI
 	}
-	if !isNil(o.SmfReallocationInd) {
+	if !IsNil(o.SmfReallocationInd) {
 		toSerialize["smfReallocationInd"] = o.SmfReallocationInd
 	}
-	if !isNil(o.AreaOfValidity) {
+	if !IsNil(o.AreaOfValidity) {
 		toSerialize["areaOfValidity"] = o.AreaOfValidity
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.OldGuami) {
+	if !IsNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
-	if !isNil(o.MaAcceptedInd) {
+	if !IsNil(o.MaAcceptedInd) {
 		toSerialize["maAcceptedInd"] = o.MaAcceptedInd
 	}
-	if !isNil(o.ExtBufSupport) {
+	if !IsNil(o.ExtBufSupport) {
 		toSerialize["extBufSupport"] = o.ExtBufSupport
 	}
-	if !isNil(o.TargetAccess) {
+	if !IsNil(o.TargetAccess) {
 		toSerialize["targetAccess"] = o.TargetAccess
 	}
-	if !isNil(o.NfId) {
+	if !IsNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
 	return toSerialize, nil
@@ -793,5 +793,3 @@ func (v *NullableN1N2MessageTransferReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

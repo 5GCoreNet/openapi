@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,21 +19,21 @@ var _ MappedNullable = &N2InformationNotification{}
 
 // N2InformationNotification Data within a N2 information notification request
 type N2InformationNotification struct {
-	N2NotifySubscriptionId string `json:"n2NotifySubscriptionId"`
-	N2InfoContainer *N2InfoContainer `json:"n2InfoContainer,omitempty"`
-	ToReleaseSessionList []int32 `json:"toReleaseSessionList,omitempty"`
+	N2NotifySubscriptionId string           `json:"n2NotifySubscriptionId"`
+	N2InfoContainer        *N2InfoContainer `json:"n2InfoContainer,omitempty"`
+	ToReleaseSessionList   []int32          `json:"toReleaseSessionList,omitempty"`
 	// LCS Correlation ID.
-	LcsCorrelationId *string `json:"lcsCorrelationId,omitempty"`
-	NotifyReason *N2InfoNotifyReason `json:"notifyReason,omitempty"`
-	SmfChangeInfoList []SmfChangeInfo `json:"smfChangeInfoList,omitempty"`
-	RanNodeId *GlobalRanNodeId `json:"ranNodeId,omitempty"`
+	LcsCorrelationId  *string             `json:"lcsCorrelationId,omitempty"`
+	NotifyReason      *N2InfoNotifyReason `json:"notifyReason,omitempty"`
+	SmfChangeInfoList []SmfChangeInfo     `json:"smfChangeInfoList,omitempty"`
+	RanNodeId         *GlobalRanNodeId    `json:"ranNodeId,omitempty"`
 	// Fully Qualified Domain Name
 	InitialAmfName *string `json:"initialAmfName,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	AnN2IPv4Addr *string `json:"anN2IPv4Addr,omitempty"`
-	AnN2IPv6Addr *Ipv6Addr `json:"anN2IPv6Addr,omitempty"`
-	Guami *Guami `json:"guami,omitempty"`
-	NotifySourceNgRan *bool `json:"notifySourceNgRan,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	AnN2IPv4Addr      *string   `json:"anN2IPv4Addr,omitempty"`
+	AnN2IPv6Addr      *Ipv6Addr `json:"anN2IPv6Addr,omitempty"`
+	Guami             *Guami    `json:"guami,omitempty"`
+	NotifySourceNgRan *bool     `json:"notifySourceNgRan,omitempty"`
 }
 
 // NewN2InformationNotification instantiates a new N2InformationNotification object
@@ -84,7 +84,7 @@ func (o *N2InformationNotification) SetN2NotifySubscriptionId(v string) {
 
 // GetN2InfoContainer returns the N2InfoContainer field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetN2InfoContainer() N2InfoContainer {
-	if o == nil || isNil(o.N2InfoContainer) {
+	if o == nil || IsNil(o.N2InfoContainer) {
 		var ret N2InfoContainer
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *N2InformationNotification) GetN2InfoContainer() N2InfoContainer {
 // GetN2InfoContainerOk returns a tuple with the N2InfoContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetN2InfoContainerOk() (*N2InfoContainer, bool) {
-	if o == nil || isNil(o.N2InfoContainer) {
+	if o == nil || IsNil(o.N2InfoContainer) {
 		return nil, false
 	}
 	return o.N2InfoContainer, true
@@ -102,7 +102,7 @@ func (o *N2InformationNotification) GetN2InfoContainerOk() (*N2InfoContainer, bo
 
 // HasN2InfoContainer returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasN2InfoContainer() bool {
-	if o != nil && !isNil(o.N2InfoContainer) {
+	if o != nil && !IsNil(o.N2InfoContainer) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *N2InformationNotification) SetN2InfoContainer(v N2InfoContainer) {
 
 // GetToReleaseSessionList returns the ToReleaseSessionList field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetToReleaseSessionList() []int32 {
-	if o == nil || isNil(o.ToReleaseSessionList) {
+	if o == nil || IsNil(o.ToReleaseSessionList) {
 		var ret []int32
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *N2InformationNotification) GetToReleaseSessionList() []int32 {
 // GetToReleaseSessionListOk returns a tuple with the ToReleaseSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetToReleaseSessionListOk() ([]int32, bool) {
-	if o == nil || isNil(o.ToReleaseSessionList) {
+	if o == nil || IsNil(o.ToReleaseSessionList) {
 		return nil, false
 	}
 	return o.ToReleaseSessionList, true
@@ -134,7 +134,7 @@ func (o *N2InformationNotification) GetToReleaseSessionListOk() ([]int32, bool) 
 
 // HasToReleaseSessionList returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasToReleaseSessionList() bool {
-	if o != nil && !isNil(o.ToReleaseSessionList) {
+	if o != nil && !IsNil(o.ToReleaseSessionList) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *N2InformationNotification) SetToReleaseSessionList(v []int32) {
 
 // GetLcsCorrelationId returns the LcsCorrelationId field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetLcsCorrelationId() string {
-	if o == nil || isNil(o.LcsCorrelationId) {
+	if o == nil || IsNil(o.LcsCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *N2InformationNotification) GetLcsCorrelationId() string {
 // GetLcsCorrelationIdOk returns a tuple with the LcsCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetLcsCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.LcsCorrelationId) {
+	if o == nil || IsNil(o.LcsCorrelationId) {
 		return nil, false
 	}
 	return o.LcsCorrelationId, true
@@ -166,7 +166,7 @@ func (o *N2InformationNotification) GetLcsCorrelationIdOk() (*string, bool) {
 
 // HasLcsCorrelationId returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasLcsCorrelationId() bool {
-	if o != nil && !isNil(o.LcsCorrelationId) {
+	if o != nil && !IsNil(o.LcsCorrelationId) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *N2InformationNotification) SetLcsCorrelationId(v string) {
 
 // GetNotifyReason returns the NotifyReason field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetNotifyReason() N2InfoNotifyReason {
-	if o == nil || isNil(o.NotifyReason) {
+	if o == nil || IsNil(o.NotifyReason) {
 		var ret N2InfoNotifyReason
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *N2InformationNotification) GetNotifyReason() N2InfoNotifyReason {
 // GetNotifyReasonOk returns a tuple with the NotifyReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetNotifyReasonOk() (*N2InfoNotifyReason, bool) {
-	if o == nil || isNil(o.NotifyReason) {
+	if o == nil || IsNil(o.NotifyReason) {
 		return nil, false
 	}
 	return o.NotifyReason, true
@@ -198,7 +198,7 @@ func (o *N2InformationNotification) GetNotifyReasonOk() (*N2InfoNotifyReason, bo
 
 // HasNotifyReason returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasNotifyReason() bool {
-	if o != nil && !isNil(o.NotifyReason) {
+	if o != nil && !IsNil(o.NotifyReason) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *N2InformationNotification) SetNotifyReason(v N2InfoNotifyReason) {
 
 // GetSmfChangeInfoList returns the SmfChangeInfoList field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetSmfChangeInfoList() []SmfChangeInfo {
-	if o == nil || isNil(o.SmfChangeInfoList) {
+	if o == nil || IsNil(o.SmfChangeInfoList) {
 		var ret []SmfChangeInfo
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *N2InformationNotification) GetSmfChangeInfoList() []SmfChangeInfo {
 // GetSmfChangeInfoListOk returns a tuple with the SmfChangeInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetSmfChangeInfoListOk() ([]SmfChangeInfo, bool) {
-	if o == nil || isNil(o.SmfChangeInfoList) {
+	if o == nil || IsNil(o.SmfChangeInfoList) {
 		return nil, false
 	}
 	return o.SmfChangeInfoList, true
@@ -230,7 +230,7 @@ func (o *N2InformationNotification) GetSmfChangeInfoListOk() ([]SmfChangeInfo, b
 
 // HasSmfChangeInfoList returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasSmfChangeInfoList() bool {
-	if o != nil && !isNil(o.SmfChangeInfoList) {
+	if o != nil && !IsNil(o.SmfChangeInfoList) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *N2InformationNotification) SetSmfChangeInfoList(v []SmfChangeInfo) {
 
 // GetRanNodeId returns the RanNodeId field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetRanNodeId() GlobalRanNodeId {
-	if o == nil || isNil(o.RanNodeId) {
+	if o == nil || IsNil(o.RanNodeId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *N2InformationNotification) GetRanNodeId() GlobalRanNodeId {
 // GetRanNodeIdOk returns a tuple with the RanNodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetRanNodeIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.RanNodeId) {
+	if o == nil || IsNil(o.RanNodeId) {
 		return nil, false
 	}
 	return o.RanNodeId, true
@@ -262,7 +262,7 @@ func (o *N2InformationNotification) GetRanNodeIdOk() (*GlobalRanNodeId, bool) {
 
 // HasRanNodeId returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasRanNodeId() bool {
-	if o != nil && !isNil(o.RanNodeId) {
+	if o != nil && !IsNil(o.RanNodeId) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *N2InformationNotification) SetRanNodeId(v GlobalRanNodeId) {
 
 // GetInitialAmfName returns the InitialAmfName field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetInitialAmfName() string {
-	if o == nil || isNil(o.InitialAmfName) {
+	if o == nil || IsNil(o.InitialAmfName) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *N2InformationNotification) GetInitialAmfName() string {
 // GetInitialAmfNameOk returns a tuple with the InitialAmfName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetInitialAmfNameOk() (*string, bool) {
-	if o == nil || isNil(o.InitialAmfName) {
+	if o == nil || IsNil(o.InitialAmfName) {
 		return nil, false
 	}
 	return o.InitialAmfName, true
@@ -294,7 +294,7 @@ func (o *N2InformationNotification) GetInitialAmfNameOk() (*string, bool) {
 
 // HasInitialAmfName returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasInitialAmfName() bool {
-	if o != nil && !isNil(o.InitialAmfName) {
+	if o != nil && !IsNil(o.InitialAmfName) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *N2InformationNotification) SetInitialAmfName(v string) {
 
 // GetAnN2IPv4Addr returns the AnN2IPv4Addr field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetAnN2IPv4Addr() string {
-	if o == nil || isNil(o.AnN2IPv4Addr) {
+	if o == nil || IsNil(o.AnN2IPv4Addr) {
 		var ret string
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *N2InformationNotification) GetAnN2IPv4Addr() string {
 // GetAnN2IPv4AddrOk returns a tuple with the AnN2IPv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetAnN2IPv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.AnN2IPv4Addr) {
+	if o == nil || IsNil(o.AnN2IPv4Addr) {
 		return nil, false
 	}
 	return o.AnN2IPv4Addr, true
@@ -326,7 +326,7 @@ func (o *N2InformationNotification) GetAnN2IPv4AddrOk() (*string, bool) {
 
 // HasAnN2IPv4Addr returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasAnN2IPv4Addr() bool {
-	if o != nil && !isNil(o.AnN2IPv4Addr) {
+	if o != nil && !IsNil(o.AnN2IPv4Addr) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *N2InformationNotification) SetAnN2IPv4Addr(v string) {
 
 // GetAnN2IPv6Addr returns the AnN2IPv6Addr field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetAnN2IPv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.AnN2IPv6Addr) {
+	if o == nil || IsNil(o.AnN2IPv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *N2InformationNotification) GetAnN2IPv6Addr() Ipv6Addr {
 // GetAnN2IPv6AddrOk returns a tuple with the AnN2IPv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetAnN2IPv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.AnN2IPv6Addr) {
+	if o == nil || IsNil(o.AnN2IPv6Addr) {
 		return nil, false
 	}
 	return o.AnN2IPv6Addr, true
@@ -358,7 +358,7 @@ func (o *N2InformationNotification) GetAnN2IPv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasAnN2IPv6Addr returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasAnN2IPv6Addr() bool {
-	if o != nil && !isNil(o.AnN2IPv6Addr) {
+	if o != nil && !IsNil(o.AnN2IPv6Addr) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *N2InformationNotification) SetAnN2IPv6Addr(v Ipv6Addr) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *N2InformationNotification) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -390,7 +390,7 @@ func (o *N2InformationNotification) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -404,7 +404,7 @@ func (o *N2InformationNotification) SetGuami(v Guami) {
 
 // GetNotifySourceNgRan returns the NotifySourceNgRan field value if set, zero value otherwise.
 func (o *N2InformationNotification) GetNotifySourceNgRan() bool {
-	if o == nil || isNil(o.NotifySourceNgRan) {
+	if o == nil || IsNil(o.NotifySourceNgRan) {
 		var ret bool
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *N2InformationNotification) GetNotifySourceNgRan() bool {
 // GetNotifySourceNgRanOk returns a tuple with the NotifySourceNgRan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationNotification) GetNotifySourceNgRanOk() (*bool, bool) {
-	if o == nil || isNil(o.NotifySourceNgRan) {
+	if o == nil || IsNil(o.NotifySourceNgRan) {
 		return nil, false
 	}
 	return o.NotifySourceNgRan, true
@@ -422,7 +422,7 @@ func (o *N2InformationNotification) GetNotifySourceNgRanOk() (*bool, bool) {
 
 // HasNotifySourceNgRan returns a boolean if a field has been set.
 func (o *N2InformationNotification) HasNotifySourceNgRan() bool {
-	if o != nil && !isNil(o.NotifySourceNgRan) {
+	if o != nil && !IsNil(o.NotifySourceNgRan) {
 		return true
 	}
 
@@ -435,7 +435,7 @@ func (o *N2InformationNotification) SetNotifySourceNgRan(v bool) {
 }
 
 func (o N2InformationNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -445,37 +445,37 @@ func (o N2InformationNotification) MarshalJSON() ([]byte, error) {
 func (o N2InformationNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n2NotifySubscriptionId"] = o.N2NotifySubscriptionId
-	if !isNil(o.N2InfoContainer) {
+	if !IsNil(o.N2InfoContainer) {
 		toSerialize["n2InfoContainer"] = o.N2InfoContainer
 	}
-	if !isNil(o.ToReleaseSessionList) {
+	if !IsNil(o.ToReleaseSessionList) {
 		toSerialize["toReleaseSessionList"] = o.ToReleaseSessionList
 	}
-	if !isNil(o.LcsCorrelationId) {
+	if !IsNil(o.LcsCorrelationId) {
 		toSerialize["lcsCorrelationId"] = o.LcsCorrelationId
 	}
-	if !isNil(o.NotifyReason) {
+	if !IsNil(o.NotifyReason) {
 		toSerialize["notifyReason"] = o.NotifyReason
 	}
-	if !isNil(o.SmfChangeInfoList) {
+	if !IsNil(o.SmfChangeInfoList) {
 		toSerialize["smfChangeInfoList"] = o.SmfChangeInfoList
 	}
-	if !isNil(o.RanNodeId) {
+	if !IsNil(o.RanNodeId) {
 		toSerialize["ranNodeId"] = o.RanNodeId
 	}
-	if !isNil(o.InitialAmfName) {
+	if !IsNil(o.InitialAmfName) {
 		toSerialize["initialAmfName"] = o.InitialAmfName
 	}
-	if !isNil(o.AnN2IPv4Addr) {
+	if !IsNil(o.AnN2IPv4Addr) {
 		toSerialize["anN2IPv4Addr"] = o.AnN2IPv4Addr
 	}
-	if !isNil(o.AnN2IPv6Addr) {
+	if !IsNil(o.AnN2IPv6Addr) {
 		toSerialize["anN2IPv6Addr"] = o.AnN2IPv6Addr
 	}
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !isNil(o.NotifySourceNgRan) {
+	if !IsNil(o.NotifySourceNgRan) {
 		toSerialize["notifySourceNgRan"] = o.NotifySourceNgRan
 	}
 	return toSerialize, nil
@@ -516,5 +516,3 @@ func (v *NullableN2InformationNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &PduSession{}
 
 // PduSession struct for PduSession
 type PduSession struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Dnn string `json:"dnn"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	SmfInstanceId string `json:"smfInstanceId"`
-	PlmnId PlmnId `json:"plmnId"`
-	SingleNssai *Snssai `json:"singleNssai,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	SmfInstanceId string  `json:"smfInstanceId"`
+	PlmnId        PlmnId  `json:"plmnId"`
+	SingleNssai   *Snssai `json:"singleNssai,omitempty"`
 }
 
 // NewPduSession instantiates a new PduSession object
@@ -121,7 +121,7 @@ func (o *PduSession) SetPlmnId(v PlmnId) {
 
 // GetSingleNssai returns the SingleNssai field value if set, zero value otherwise.
 func (o *PduSession) GetSingleNssai() Snssai {
-	if o == nil || isNil(o.SingleNssai) {
+	if o == nil || IsNil(o.SingleNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *PduSession) GetSingleNssai() Snssai {
 // GetSingleNssaiOk returns a tuple with the SingleNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSession) GetSingleNssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SingleNssai) {
+	if o == nil || IsNil(o.SingleNssai) {
 		return nil, false
 	}
 	return o.SingleNssai, true
@@ -139,7 +139,7 @@ func (o *PduSession) GetSingleNssaiOk() (*Snssai, bool) {
 
 // HasSingleNssai returns a boolean if a field has been set.
 func (o *PduSession) HasSingleNssai() bool {
-	if o != nil && !isNil(o.SingleNssai) {
+	if o != nil && !IsNil(o.SingleNssai) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *PduSession) SetSingleNssai(v Snssai) {
 }
 
 func (o PduSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -164,7 +164,7 @@ func (o PduSession) ToMap() (map[string]interface{}, error) {
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["smfInstanceId"] = o.SmfInstanceId
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.SingleNssai) {
+	if !IsNil(o.SingleNssai) {
 		toSerialize["singleNssai"] = o.SingleNssai
 	}
 	return toSerialize, nil
@@ -205,5 +205,3 @@ func (v *NullablePduSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

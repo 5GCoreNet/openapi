@@ -1,7 +1,7 @@
 /*
 M1_ContentProtocolsDiscovery
 
-5GMS AF M1 Content Protocols Discovery API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Protocols Discovery API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -69,7 +69,7 @@ func (o *ContentProtocolDescriptor) SetTermIdentifier(v string) {
 
 // GetDescriptionLocator returns the DescriptionLocator field value if set, zero value otherwise.
 func (o *ContentProtocolDescriptor) GetDescriptionLocator() string {
-	if o == nil || isNil(o.DescriptionLocator) {
+	if o == nil || IsNil(o.DescriptionLocator) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ContentProtocolDescriptor) GetDescriptionLocator() string {
 // GetDescriptionLocatorOk returns a tuple with the DescriptionLocator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContentProtocolDescriptor) GetDescriptionLocatorOk() (*string, bool) {
-	if o == nil || isNil(o.DescriptionLocator) {
+	if o == nil || IsNil(o.DescriptionLocator) {
 		return nil, false
 	}
 	return o.DescriptionLocator, true
@@ -87,7 +87,7 @@ func (o *ContentProtocolDescriptor) GetDescriptionLocatorOk() (*string, bool) {
 
 // HasDescriptionLocator returns a boolean if a field has been set.
 func (o *ContentProtocolDescriptor) HasDescriptionLocator() bool {
-	if o != nil && !isNil(o.DescriptionLocator) {
+	if o != nil && !IsNil(o.DescriptionLocator) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ContentProtocolDescriptor) SetDescriptionLocator(v string) {
 }
 
 func (o ContentProtocolDescriptor) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o ContentProtocolDescriptor) MarshalJSON() ([]byte, error) {
 func (o ContentProtocolDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["termIdentifier"] = o.TermIdentifier
-	if !isNil(o.DescriptionLocator) {
+	if !IsNil(o.DescriptionLocator) {
 		toSerialize["descriptionLocator"] = o.DescriptionLocator
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableContentProtocolDescriptor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

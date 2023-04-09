@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMFRegistrationDocumentApiService SMFRegistrationDocumentApi service
 type SMFRegistrationDocumentApiService service
 
 type ApiCreateOrUpdateSmfRegistrationRequest struct {
-	ctx context.Context
-	ApiService *SMFRegistrationDocumentApiService
-	ueId string
-	pduSessionId int32
+	ctx             context.Context
+	ApiService      *SMFRegistrationDocumentApiService
+	ueId            string
+	pduSessionId    int32
 	smfRegistration *SmfRegistration
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateOrUpdateSmfRegistrationRequest) Execute() (*SmfRegistration, *h
 /*
 CreateOrUpdateSmfRegistration To create an individual SMF context data of a UE in the UDR
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiCreateOrUpdateSmfRegistrationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiCreateOrUpdateSmfRegistrationRequest
 */
 func (a *SMFRegistrationDocumentApiService) CreateOrUpdateSmfRegistration(ctx context.Context, ueId string, pduSessionId int32) ApiCreateOrUpdateSmfRegistrationRequest {
 	return ApiCreateOrUpdateSmfRegistrationRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfRegistration
+//
+//	@return SmfRegistration
 func (a *SMFRegistrationDocumentApiService) CreateOrUpdateSmfRegistrationExecute(r ApiCreateOrUpdateSmfRegistrationRequest) (*SmfRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfRegistration
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFRegistrationDocumentApiService.CreateOrUpdateSmfRegistration")
@@ -118,9 +118,9 @@ func (a *SMFRegistrationDocumentApiService) CreateOrUpdateSmfRegistrationExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -146,9 +146,9 @@ func (a *SMFRegistrationDocumentApiService) CreateOrUpdateSmfRegistrationExecute
 }
 
 type ApiDeleteSmfRegistrationRequest struct {
-	ctx context.Context
-	ApiService *SMFRegistrationDocumentApiService
-	ueId string
+	ctx          context.Context
+	ApiService   *SMFRegistrationDocumentApiService
+	ueId         string
 	pduSessionId int32
 }
 
@@ -159,16 +159,16 @@ func (r ApiDeleteSmfRegistrationRequest) Execute() (*http.Response, error) {
 /*
 DeleteSmfRegistration To remove an individual SMF context data of a UE the UDR
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiDeleteSmfRegistrationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiDeleteSmfRegistrationRequest
 */
 func (a *SMFRegistrationDocumentApiService) DeleteSmfRegistration(ctx context.Context, ueId string, pduSessionId int32) ApiDeleteSmfRegistrationRequest {
 	return ApiDeleteSmfRegistrationRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
@@ -176,9 +176,9 @@ func (a *SMFRegistrationDocumentApiService) DeleteSmfRegistration(ctx context.Co
 // Execute executes the request
 func (a *SMFRegistrationDocumentApiService) DeleteSmfRegistrationExecute(r ApiDeleteSmfRegistrationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFRegistrationDocumentApiService.DeleteSmfRegistration")
@@ -227,9 +227,9 @@ func (a *SMFRegistrationDocumentApiService) DeleteSmfRegistrationExecute(r ApiDe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -246,11 +246,11 @@ func (a *SMFRegistrationDocumentApiService) DeleteSmfRegistrationExecute(r ApiDe
 }
 
 type ApiQuerySmfRegistrationRequest struct {
-	ctx context.Context
-	ApiService *SMFRegistrationDocumentApiService
-	ueId string
-	pduSessionId int32
-	fields *[]string
+	ctx               context.Context
+	ApiService        *SMFRegistrationDocumentApiService
+	ueId              string
+	pduSessionId      int32
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -273,28 +273,29 @@ func (r ApiQuerySmfRegistrationRequest) Execute() (*SmfRegistration, *http.Respo
 /*
 QuerySmfRegistration Retrieves the individual SMF registration of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiQuerySmfRegistrationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiQuerySmfRegistrationRequest
 */
 func (a *SMFRegistrationDocumentApiService) QuerySmfRegistration(ctx context.Context, ueId string, pduSessionId int32) ApiQuerySmfRegistrationRequest {
 	return ApiQuerySmfRegistrationRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfRegistration
+//
+//	@return SmfRegistration
 func (a *SMFRegistrationDocumentApiService) QuerySmfRegistrationExecute(r ApiQuerySmfRegistrationRequest) (*SmfRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfRegistration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFRegistrationDocumentApiService.QuerySmfRegistration")
@@ -317,10 +318,10 @@ func (a *SMFRegistrationDocumentApiService) QuerySmfRegistrationExecute(r ApiQue
 	}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -349,9 +350,9 @@ func (a *SMFRegistrationDocumentApiService) QuerySmfRegistrationExecute(r ApiQue
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -377,11 +378,11 @@ func (a *SMFRegistrationDocumentApiService) QuerySmfRegistrationExecute(r ApiQue
 }
 
 type ApiUpdateSmfContextRequest struct {
-	ctx context.Context
-	ApiService *SMFRegistrationDocumentApiService
-	ueId string
-	pduSessionId int32
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *SMFRegistrationDocumentApiService
+	ueId              string
+	pduSessionId      int32
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -403,28 +404,29 @@ func (r ApiUpdateSmfContextRequest) Execute() (*PatchResult, *http.Response, err
 /*
 UpdateSmfContext To modify the SMF context data of a UE in the UDR
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param pduSessionId PDU session id
- @return ApiUpdateSmfContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param pduSessionId PDU session id
+	@return ApiUpdateSmfContextRequest
 */
 func (a *SMFRegistrationDocumentApiService) UpdateSmfContext(ctx context.Context, ueId string, pduSessionId int32) ApiUpdateSmfContextRequest {
 	return ApiUpdateSmfContextRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *SMFRegistrationDocumentApiService) UpdateSmfContextExecute(r ApiUpdateSmfContextRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFRegistrationDocumentApiService.UpdateSmfContext")
@@ -450,7 +452,7 @@ func (a *SMFRegistrationDocumentApiService) UpdateSmfContextExecute(r ApiUpdateS
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -481,9 +483,9 @@ func (a *SMFRegistrationDocumentApiService) UpdateSmfContextExecute(r ApiUpdateS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -500,8 +502,8 @@ func (a *SMFRegistrationDocumentApiService) UpdateSmfContextExecute(r ApiUpdateS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

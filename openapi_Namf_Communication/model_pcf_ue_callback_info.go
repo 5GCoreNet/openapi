@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the PcfUeCallbackInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PcfUeCallbackInfo{}
 
-// PcfUeCallbackInfo Contains the PCF for the UE information necessary for the PCF for the PDU session to send  SM Policy Association Establishment and Termination events. 
+// PcfUeCallbackInfo Contains the PCF for the UE information necessary for the PCF for the PDU session to send  SM Policy Association Establishment and Termination events.
 type PcfUeCallbackInfo struct {
 	// String providing an URI formatted according to RFC 3986.
-	CallbackUri string `json:"callbackUri"`
+	CallbackUri string  `json:"callbackUri"`
 	BindingInfo *string `json:"bindingInfo,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *PcfUeCallbackInfo) SetCallbackUri(v string) {
 
 // GetBindingInfo returns the BindingInfo field value if set, zero value otherwise.
 func (o *PcfUeCallbackInfo) GetBindingInfo() string {
-	if o == nil || isNil(o.BindingInfo) {
+	if o == nil || IsNil(o.BindingInfo) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *PcfUeCallbackInfo) GetBindingInfo() string {
 // GetBindingInfoOk returns a tuple with the BindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfUeCallbackInfo) GetBindingInfoOk() (*string, bool) {
-	if o == nil || isNil(o.BindingInfo) {
+	if o == nil || IsNil(o.BindingInfo) {
 		return nil, false
 	}
 	return o.BindingInfo, true
@@ -86,7 +86,7 @@ func (o *PcfUeCallbackInfo) GetBindingInfoOk() (*string, bool) {
 
 // HasBindingInfo returns a boolean if a field has been set.
 func (o *PcfUeCallbackInfo) HasBindingInfo() bool {
-	if o != nil && !isNil(o.BindingInfo) {
+	if o != nil && !IsNil(o.BindingInfo) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *PcfUeCallbackInfo) SetBindingInfo(v string) {
 }
 
 func (o PcfUeCallbackInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o PcfUeCallbackInfo) MarshalJSON() ([]byte, error) {
 func (o PcfUeCallbackInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["callbackUri"] = o.CallbackUri
-	if !isNil(o.BindingInfo) {
+	if !IsNil(o.BindingInfo) {
 		toSerialize["bindingInfo"] = o.BindingInfo
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullablePcfUeCallbackInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

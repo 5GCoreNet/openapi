@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -26,7 +26,7 @@ type ErrorReport struct {
 	SessRuleReports []SessionRuleReport `json:"sessRuleReports,omitempty"`
 	// Used to report failure of the policy decision and/or condition data.
 	PolDecFailureReports []PolicyDecisionFailureCode `json:"polDecFailureReports,omitempty"`
-	// Indicates the invalid parameters for the reported type(s) of the failed policy decision  and/or condition data. 
+	// Indicates the invalid parameters for the reported type(s) of the failed policy decision  and/or condition data.
 	InvalidPolicyDecs []InvalidParam `json:"invalidPolicyDecs,omitempty"`
 }
 
@@ -49,7 +49,7 @@ func NewErrorReportWithDefaults() *ErrorReport {
 
 // GetError returns the Error field value if set, zero value otherwise.
 func (o *ErrorReport) GetError() ProblemDetails {
-	if o == nil || isNil(o.Error) {
+	if o == nil || IsNil(o.Error) {
 		var ret ProblemDetails
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *ErrorReport) GetError() ProblemDetails {
 // GetErrorOk returns a tuple with the Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ErrorReport) GetErrorOk() (*ProblemDetails, bool) {
-	if o == nil || isNil(o.Error) {
+	if o == nil || IsNil(o.Error) {
 		return nil, false
 	}
 	return o.Error, true
@@ -67,7 +67,7 @@ func (o *ErrorReport) GetErrorOk() (*ProblemDetails, bool) {
 
 // HasError returns a boolean if a field has been set.
 func (o *ErrorReport) HasError() bool {
-	if o != nil && !isNil(o.Error) {
+	if o != nil && !IsNil(o.Error) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *ErrorReport) SetError(v ProblemDetails) {
 
 // GetRuleReports returns the RuleReports field value if set, zero value otherwise.
 func (o *ErrorReport) GetRuleReports() []RuleReport {
-	if o == nil || isNil(o.RuleReports) {
+	if o == nil || IsNil(o.RuleReports) {
 		var ret []RuleReport
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ErrorReport) GetRuleReports() []RuleReport {
 // GetRuleReportsOk returns a tuple with the RuleReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ErrorReport) GetRuleReportsOk() ([]RuleReport, bool) {
-	if o == nil || isNil(o.RuleReports) {
+	if o == nil || IsNil(o.RuleReports) {
 		return nil, false
 	}
 	return o.RuleReports, true
@@ -99,7 +99,7 @@ func (o *ErrorReport) GetRuleReportsOk() ([]RuleReport, bool) {
 
 // HasRuleReports returns a boolean if a field has been set.
 func (o *ErrorReport) HasRuleReports() bool {
-	if o != nil && !isNil(o.RuleReports) {
+	if o != nil && !IsNil(o.RuleReports) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *ErrorReport) SetRuleReports(v []RuleReport) {
 
 // GetSessRuleReports returns the SessRuleReports field value if set, zero value otherwise.
 func (o *ErrorReport) GetSessRuleReports() []SessionRuleReport {
-	if o == nil || isNil(o.SessRuleReports) {
+	if o == nil || IsNil(o.SessRuleReports) {
 		var ret []SessionRuleReport
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *ErrorReport) GetSessRuleReports() []SessionRuleReport {
 // GetSessRuleReportsOk returns a tuple with the SessRuleReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ErrorReport) GetSessRuleReportsOk() ([]SessionRuleReport, bool) {
-	if o == nil || isNil(o.SessRuleReports) {
+	if o == nil || IsNil(o.SessRuleReports) {
 		return nil, false
 	}
 	return o.SessRuleReports, true
@@ -131,7 +131,7 @@ func (o *ErrorReport) GetSessRuleReportsOk() ([]SessionRuleReport, bool) {
 
 // HasSessRuleReports returns a boolean if a field has been set.
 func (o *ErrorReport) HasSessRuleReports() bool {
-	if o != nil && !isNil(o.SessRuleReports) {
+	if o != nil && !IsNil(o.SessRuleReports) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *ErrorReport) SetSessRuleReports(v []SessionRuleReport) {
 
 // GetPolDecFailureReports returns the PolDecFailureReports field value if set, zero value otherwise.
 func (o *ErrorReport) GetPolDecFailureReports() []PolicyDecisionFailureCode {
-	if o == nil || isNil(o.PolDecFailureReports) {
+	if o == nil || IsNil(o.PolDecFailureReports) {
 		var ret []PolicyDecisionFailureCode
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *ErrorReport) GetPolDecFailureReports() []PolicyDecisionFailureCode {
 // GetPolDecFailureReportsOk returns a tuple with the PolDecFailureReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ErrorReport) GetPolDecFailureReportsOk() ([]PolicyDecisionFailureCode, bool) {
-	if o == nil || isNil(o.PolDecFailureReports) {
+	if o == nil || IsNil(o.PolDecFailureReports) {
 		return nil, false
 	}
 	return o.PolDecFailureReports, true
@@ -163,7 +163,7 @@ func (o *ErrorReport) GetPolDecFailureReportsOk() ([]PolicyDecisionFailureCode, 
 
 // HasPolDecFailureReports returns a boolean if a field has been set.
 func (o *ErrorReport) HasPolDecFailureReports() bool {
-	if o != nil && !isNil(o.PolDecFailureReports) {
+	if o != nil && !IsNil(o.PolDecFailureReports) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *ErrorReport) SetPolDecFailureReports(v []PolicyDecisionFailureCode) {
 
 // GetInvalidPolicyDecs returns the InvalidPolicyDecs field value if set, zero value otherwise.
 func (o *ErrorReport) GetInvalidPolicyDecs() []InvalidParam {
-	if o == nil || isNil(o.InvalidPolicyDecs) {
+	if o == nil || IsNil(o.InvalidPolicyDecs) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *ErrorReport) GetInvalidPolicyDecs() []InvalidParam {
 // GetInvalidPolicyDecsOk returns a tuple with the InvalidPolicyDecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ErrorReport) GetInvalidPolicyDecsOk() ([]InvalidParam, bool) {
-	if o == nil || isNil(o.InvalidPolicyDecs) {
+	if o == nil || IsNil(o.InvalidPolicyDecs) {
 		return nil, false
 	}
 	return o.InvalidPolicyDecs, true
@@ -195,7 +195,7 @@ func (o *ErrorReport) GetInvalidPolicyDecsOk() ([]InvalidParam, bool) {
 
 // HasInvalidPolicyDecs returns a boolean if a field has been set.
 func (o *ErrorReport) HasInvalidPolicyDecs() bool {
-	if o != nil && !isNil(o.InvalidPolicyDecs) {
+	if o != nil && !IsNil(o.InvalidPolicyDecs) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ErrorReport) SetInvalidPolicyDecs(v []InvalidParam) {
 }
 
 func (o ErrorReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,19 +217,19 @@ func (o ErrorReport) MarshalJSON() ([]byte, error) {
 
 func (o ErrorReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Error) {
+	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
-	if !isNil(o.RuleReports) {
+	if !IsNil(o.RuleReports) {
 		toSerialize["ruleReports"] = o.RuleReports
 	}
-	if !isNil(o.SessRuleReports) {
+	if !IsNil(o.SessRuleReports) {
 		toSerialize["sessRuleReports"] = o.SessRuleReports
 	}
-	if !isNil(o.PolDecFailureReports) {
+	if !IsNil(o.PolDecFailureReports) {
 		toSerialize["polDecFailureReports"] = o.PolDecFailureReports
 	}
-	if !isNil(o.InvalidPolicyDecs) {
+	if !IsNil(o.InvalidPolicyDecs) {
 		toSerialize["invalidPolicyDecs"] = o.InvalidPolicyDecs
 	}
 	return toSerialize, nil
@@ -270,5 +270,3 @@ func (v *NullableErrorReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

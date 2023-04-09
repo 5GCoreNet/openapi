@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -18,7 +18,7 @@ import (
 // C2ServiceArea - Represents a C2 service area.
 type C2ServiceArea struct {
 	AnyOfAnyTypeAnyType *AnyOfAnyTypeAnyType
-	Interface *interface{}
+	Interface           *interface{}
 }
 
 // AnyOfAnyTypeAnyTypeAsC2ServiceArea is a convenience function that returns AnyOfAnyTypeAnyType wrapped in C2ServiceArea
@@ -34,7 +34,6 @@ func InterfaceAsC2ServiceArea(v *interface{}) C2ServiceArea {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *C2ServiceArea) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src C2ServiceArea) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *C2ServiceArea) GetActualInstance() (interface{}) {
+func (obj *C2ServiceArea) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableC2ServiceArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

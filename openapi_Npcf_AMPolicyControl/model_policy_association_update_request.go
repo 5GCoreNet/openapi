@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the PolicyAssociationUpdateRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PolicyAssociationUpdateRequest{}
 
-// PolicyAssociationUpdateRequest Represents information that the NF service consumer provides when requesting the update of a policy association. 
+// PolicyAssociationUpdateRequest Represents information that the NF service consumer provides when requesting the update of a policy association.
 type PolicyAssociationUpdateRequest struct {
 	// String providing an URI formatted according to RFC 3986.
 	NotificationUri *string `json:"notificationUri,omitempty"`
@@ -28,32 +28,32 @@ type PolicyAssociationUpdateRequest struct {
 	// Alternate or backup FQDN(s) where to send Notifications.
 	AltNotifFqdns []string `json:"altNotifFqdns,omitempty"`
 	// Request Triggers that the NF service consumer observes.
-	Triggers []RequestTrigger `json:"triggers,omitempty"`
-	ServAreaRes *ServiceAreaRestriction `json:"servAreaRes,omitempty"`
+	Triggers      []RequestTrigger                `json:"triggers,omitempty"`
+	ServAreaRes   *ServiceAreaRestriction         `json:"servAreaRes,omitempty"`
 	WlServAreaRes *WirelineServiceAreaRestriction `json:"wlServAreaRes,omitempty"`
-	// Unsigned integer representing the \"Subscriber Profile ID for RAT/Frequency Priority\"  as specified in 3GPP TS 36.413. 
-	Rfsp *int32 `json:"rfsp,omitempty"`
+	// Unsigned integer representing the \"Subscriber Profile ID for RAT/Frequency Priority\"  as specified in 3GPP TS 36.413.
+	Rfsp       *int32                   `json:"rfsp,omitempty"`
 	SmfSelInfo NullableSmfSelectionData `json:"smfSelInfo,omitempty"`
-	UeAmbr *Ambr `json:"ueAmbr,omitempty"`
-	// The subscribed UE-Slice-MBR for each subscribed S-NSSAI of the home PLMN mapping to a S-NSSAI of the serving PLMN Shall be provided for the \"UE_SLICE_MBR_CH\" policy control request trigger. 
+	UeAmbr     *Ambr                    `json:"ueAmbr,omitempty"`
+	// The subscribed UE-Slice-MBR for each subscribed S-NSSAI of the home PLMN mapping to a S-NSSAI of the serving PLMN Shall be provided for the \"UE_SLICE_MBR_CH\" policy control request trigger.
 	UeSliceMbrs []UeSliceMbr `json:"ueSliceMbrs,omitempty"`
-	// Contains the UE presence status for tracking area for which changes of the UE presence occurred. The praId attribute within the PresenceInfo data type is the key of the map. 
+	// Contains the UE presence status for tracking area for which changes of the UE presence occurred. The praId attribute within the PresenceInfo data type is the key of the map.
 	PraStatuses *map[string]PresenceInfo `json:"praStatuses,omitempty"`
-	UserLoc *UserLocation `json:"userLoc,omitempty"`
+	UserLoc     *UserLocation            `json:"userLoc,omitempty"`
 	// array of allowed S-NSSAIs for the 3GPP access.
 	AllowedSnssais []Snssai `json:"allowedSnssais,omitempty"`
 	// array of target S-NSSAIs.
 	TargetSnssais []Snssai `json:"targetSnssais,omitempty"`
-	// mapping of each S-NSSAI of the Allowed NSSAI to the corresponding S-NSSAI of the HPLMN.  
+	// mapping of each S-NSSAI of the Allowed NSSAI to the corresponding S-NSSAI of the HPLMN.
 	MappingSnssais []MappingOfSnssai `json:"mappingSnssais,omitempty"`
-	AccessTypes []AccessType `json:"accessTypes,omitempty"`
-	RatTypes []RatType `json:"ratTypes,omitempty"`
+	AccessTypes    []AccessType      `json:"accessTypes,omitempty"`
+	RatTypes       []RatType         `json:"ratTypes,omitempty"`
 	// array of allowed S-NSSAIs for the Non-3GPP access.
-	N3gAllowedSnssais []Snssai `json:"n3gAllowedSnssais,omitempty"`
-	TraceReq NullableTraceData `json:"traceReq,omitempty"`
-	Guami *Guami `json:"guami,omitempty"`
-	NwdafDatas []NwdafData `json:"nwdafDatas,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	N3gAllowedSnssais []Snssai          `json:"n3gAllowedSnssais,omitempty"`
+	TraceReq          NullableTraceData `json:"traceReq,omitempty"`
+	Guami             *Guami            `json:"guami,omitempty"`
+	NwdafDatas        []NwdafData       `json:"nwdafDatas,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -76,7 +76,7 @@ func NewPolicyAssociationUpdateRequestWithDefaults() *PolicyAssociationUpdateReq
 
 // GetNotificationUri returns the NotificationUri field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetNotificationUri() string {
-	if o == nil || isNil(o.NotificationUri) {
+	if o == nil || IsNil(o.NotificationUri) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *PolicyAssociationUpdateRequest) GetNotificationUri() string {
 // GetNotificationUriOk returns a tuple with the NotificationUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetNotificationUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationUri) {
+	if o == nil || IsNil(o.NotificationUri) {
 		return nil, false
 	}
 	return o.NotificationUri, true
@@ -94,7 +94,7 @@ func (o *PolicyAssociationUpdateRequest) GetNotificationUriOk() (*string, bool) 
 
 // HasNotificationUri returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasNotificationUri() bool {
-	if o != nil && !isNil(o.NotificationUri) {
+	if o != nil && !IsNil(o.NotificationUri) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *PolicyAssociationUpdateRequest) SetNotificationUri(v string) {
 
 // GetAltNotifIpv4Addrs returns the AltNotifIpv4Addrs field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv4Addrs() []string {
-	if o == nil || isNil(o.AltNotifIpv4Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv4Addrs() []string {
 // GetAltNotifIpv4AddrsOk returns a tuple with the AltNotifIpv4Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv4AddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.AltNotifIpv4Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv4Addrs, true
@@ -126,7 +126,7 @@ func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv4AddrsOk() ([]string, boo
 
 // HasAltNotifIpv4Addrs returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasAltNotifIpv4Addrs() bool {
-	if o != nil && !isNil(o.AltNotifIpv4Addrs) {
+	if o != nil && !IsNil(o.AltNotifIpv4Addrs) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *PolicyAssociationUpdateRequest) SetAltNotifIpv4Addrs(v []string) {
 
 // GetAltNotifIpv6Addrs returns the AltNotifIpv6Addrs field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv6Addrs() []Ipv6Addr {
-	if o == nil || isNil(o.AltNotifIpv6Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv6Addrs() []Ipv6Addr {
 // GetAltNotifIpv6AddrsOk returns a tuple with the AltNotifIpv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || isNil(o.AltNotifIpv6Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv6Addrs, true
@@ -158,7 +158,7 @@ func (o *PolicyAssociationUpdateRequest) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, b
 
 // HasAltNotifIpv6Addrs returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasAltNotifIpv6Addrs() bool {
-	if o != nil && !isNil(o.AltNotifIpv6Addrs) {
+	if o != nil && !IsNil(o.AltNotifIpv6Addrs) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *PolicyAssociationUpdateRequest) SetAltNotifIpv6Addrs(v []Ipv6Addr) {
 
 // GetAltNotifFqdns returns the AltNotifFqdns field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetAltNotifFqdns() []string {
-	if o == nil || isNil(o.AltNotifFqdns) {
+	if o == nil || IsNil(o.AltNotifFqdns) {
 		var ret []string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *PolicyAssociationUpdateRequest) GetAltNotifFqdns() []string {
 // GetAltNotifFqdnsOk returns a tuple with the AltNotifFqdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetAltNotifFqdnsOk() ([]string, bool) {
-	if o == nil || isNil(o.AltNotifFqdns) {
+	if o == nil || IsNil(o.AltNotifFqdns) {
 		return nil, false
 	}
 	return o.AltNotifFqdns, true
@@ -190,7 +190,7 @@ func (o *PolicyAssociationUpdateRequest) GetAltNotifFqdnsOk() ([]string, bool) {
 
 // HasAltNotifFqdns returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasAltNotifFqdns() bool {
-	if o != nil && !isNil(o.AltNotifFqdns) {
+	if o != nil && !IsNil(o.AltNotifFqdns) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *PolicyAssociationUpdateRequest) SetAltNotifFqdns(v []string) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetTriggers() []RequestTrigger {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		var ret []RequestTrigger
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *PolicyAssociationUpdateRequest) GetTriggers() []RequestTrigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetTriggersOk() ([]RequestTrigger, bool) {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -222,7 +222,7 @@ func (o *PolicyAssociationUpdateRequest) GetTriggersOk() ([]RequestTrigger, bool
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasTriggers() bool {
-	if o != nil && !isNil(o.Triggers) {
+	if o != nil && !IsNil(o.Triggers) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *PolicyAssociationUpdateRequest) SetTriggers(v []RequestTrigger) {
 
 // GetServAreaRes returns the ServAreaRes field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetServAreaRes() ServiceAreaRestriction {
-	if o == nil || isNil(o.ServAreaRes) {
+	if o == nil || IsNil(o.ServAreaRes) {
 		var ret ServiceAreaRestriction
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *PolicyAssociationUpdateRequest) GetServAreaRes() ServiceAreaRestriction
 // GetServAreaResOk returns a tuple with the ServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetServAreaResOk() (*ServiceAreaRestriction, bool) {
-	if o == nil || isNil(o.ServAreaRes) {
+	if o == nil || IsNil(o.ServAreaRes) {
 		return nil, false
 	}
 	return o.ServAreaRes, true
@@ -254,7 +254,7 @@ func (o *PolicyAssociationUpdateRequest) GetServAreaResOk() (*ServiceAreaRestric
 
 // HasServAreaRes returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasServAreaRes() bool {
-	if o != nil && !isNil(o.ServAreaRes) {
+	if o != nil && !IsNil(o.ServAreaRes) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *PolicyAssociationUpdateRequest) SetServAreaRes(v ServiceAreaRestriction
 
 // GetWlServAreaRes returns the WlServAreaRes field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetWlServAreaRes() WirelineServiceAreaRestriction {
-	if o == nil || isNil(o.WlServAreaRes) {
+	if o == nil || IsNil(o.WlServAreaRes) {
 		var ret WirelineServiceAreaRestriction
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *PolicyAssociationUpdateRequest) GetWlServAreaRes() WirelineServiceAreaR
 // GetWlServAreaResOk returns a tuple with the WlServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetWlServAreaResOk() (*WirelineServiceAreaRestriction, bool) {
-	if o == nil || isNil(o.WlServAreaRes) {
+	if o == nil || IsNil(o.WlServAreaRes) {
 		return nil, false
 	}
 	return o.WlServAreaRes, true
@@ -286,7 +286,7 @@ func (o *PolicyAssociationUpdateRequest) GetWlServAreaResOk() (*WirelineServiceA
 
 // HasWlServAreaRes returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasWlServAreaRes() bool {
-	if o != nil && !isNil(o.WlServAreaRes) {
+	if o != nil && !IsNil(o.WlServAreaRes) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *PolicyAssociationUpdateRequest) SetWlServAreaRes(v WirelineServiceAreaR
 
 // GetRfsp returns the Rfsp field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetRfsp() int32 {
-	if o == nil || isNil(o.Rfsp) {
+	if o == nil || IsNil(o.Rfsp) {
 		var ret int32
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *PolicyAssociationUpdateRequest) GetRfsp() int32 {
 // GetRfspOk returns a tuple with the Rfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetRfspOk() (*int32, bool) {
-	if o == nil || isNil(o.Rfsp) {
+	if o == nil || IsNil(o.Rfsp) {
 		return nil, false
 	}
 	return o.Rfsp, true
@@ -318,7 +318,7 @@ func (o *PolicyAssociationUpdateRequest) GetRfspOk() (*int32, bool) {
 
 // HasRfsp returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasRfsp() bool {
-	if o != nil && !isNil(o.Rfsp) {
+	if o != nil && !IsNil(o.Rfsp) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *PolicyAssociationUpdateRequest) SetRfsp(v int32) {
 
 // GetSmfSelInfo returns the SmfSelInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAssociationUpdateRequest) GetSmfSelInfo() SmfSelectionData {
-	if o == nil || isNil(o.SmfSelInfo.Get()) {
+	if o == nil || IsNil(o.SmfSelInfo.Get()) {
 		var ret SmfSelectionData
 		return ret
 	}
@@ -362,6 +362,7 @@ func (o *PolicyAssociationUpdateRequest) HasSmfSelInfo() bool {
 func (o *PolicyAssociationUpdateRequest) SetSmfSelInfo(v SmfSelectionData) {
 	o.SmfSelInfo.Set(&v)
 }
+
 // SetSmfSelInfoNil sets the value for SmfSelInfo to be an explicit nil
 func (o *PolicyAssociationUpdateRequest) SetSmfSelInfoNil() {
 	o.SmfSelInfo.Set(nil)
@@ -374,7 +375,7 @@ func (o *PolicyAssociationUpdateRequest) UnsetSmfSelInfo() {
 
 // GetUeAmbr returns the UeAmbr field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetUeAmbr() Ambr {
-	if o == nil || isNil(o.UeAmbr) {
+	if o == nil || IsNil(o.UeAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -384,7 +385,7 @@ func (o *PolicyAssociationUpdateRequest) GetUeAmbr() Ambr {
 // GetUeAmbrOk returns a tuple with the UeAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetUeAmbrOk() (*Ambr, bool) {
-	if o == nil || isNil(o.UeAmbr) {
+	if o == nil || IsNil(o.UeAmbr) {
 		return nil, false
 	}
 	return o.UeAmbr, true
@@ -392,7 +393,7 @@ func (o *PolicyAssociationUpdateRequest) GetUeAmbrOk() (*Ambr, bool) {
 
 // HasUeAmbr returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasUeAmbr() bool {
-	if o != nil && !isNil(o.UeAmbr) {
+	if o != nil && !IsNil(o.UeAmbr) {
 		return true
 	}
 
@@ -406,7 +407,7 @@ func (o *PolicyAssociationUpdateRequest) SetUeAmbr(v Ambr) {
 
 // GetUeSliceMbrs returns the UeSliceMbrs field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetUeSliceMbrs() []UeSliceMbr {
-	if o == nil || isNil(o.UeSliceMbrs) {
+	if o == nil || IsNil(o.UeSliceMbrs) {
 		var ret []UeSliceMbr
 		return ret
 	}
@@ -416,7 +417,7 @@ func (o *PolicyAssociationUpdateRequest) GetUeSliceMbrs() []UeSliceMbr {
 // GetUeSliceMbrsOk returns a tuple with the UeSliceMbrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
-	if o == nil || isNil(o.UeSliceMbrs) {
+	if o == nil || IsNil(o.UeSliceMbrs) {
 		return nil, false
 	}
 	return o.UeSliceMbrs, true
@@ -424,7 +425,7 @@ func (o *PolicyAssociationUpdateRequest) GetUeSliceMbrsOk() ([]UeSliceMbr, bool)
 
 // HasUeSliceMbrs returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasUeSliceMbrs() bool {
-	if o != nil && !isNil(o.UeSliceMbrs) {
+	if o != nil && !IsNil(o.UeSliceMbrs) {
 		return true
 	}
 
@@ -438,7 +439,7 @@ func (o *PolicyAssociationUpdateRequest) SetUeSliceMbrs(v []UeSliceMbr) {
 
 // GetPraStatuses returns the PraStatuses field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetPraStatuses() map[string]PresenceInfo {
-	if o == nil || isNil(o.PraStatuses) {
+	if o == nil || IsNil(o.PraStatuses) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -448,7 +449,7 @@ func (o *PolicyAssociationUpdateRequest) GetPraStatuses() map[string]PresenceInf
 // GetPraStatusesOk returns a tuple with the PraStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetPraStatusesOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || isNil(o.PraStatuses) {
+	if o == nil || IsNil(o.PraStatuses) {
 		return nil, false
 	}
 	return o.PraStatuses, true
@@ -456,7 +457,7 @@ func (o *PolicyAssociationUpdateRequest) GetPraStatusesOk() (*map[string]Presenc
 
 // HasPraStatuses returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasPraStatuses() bool {
-	if o != nil && !isNil(o.PraStatuses) {
+	if o != nil && !IsNil(o.PraStatuses) {
 		return true
 	}
 
@@ -470,7 +471,7 @@ func (o *PolicyAssociationUpdateRequest) SetPraStatuses(v map[string]PresenceInf
 
 // GetUserLoc returns the UserLoc field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetUserLoc() UserLocation {
-	if o == nil || isNil(o.UserLoc) {
+	if o == nil || IsNil(o.UserLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -480,7 +481,7 @@ func (o *PolicyAssociationUpdateRequest) GetUserLoc() UserLocation {
 // GetUserLocOk returns a tuple with the UserLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetUserLocOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLoc) {
+	if o == nil || IsNil(o.UserLoc) {
 		return nil, false
 	}
 	return o.UserLoc, true
@@ -488,7 +489,7 @@ func (o *PolicyAssociationUpdateRequest) GetUserLocOk() (*UserLocation, bool) {
 
 // HasUserLoc returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasUserLoc() bool {
-	if o != nil && !isNil(o.UserLoc) {
+	if o != nil && !IsNil(o.UserLoc) {
 		return true
 	}
 
@@ -502,7 +503,7 @@ func (o *PolicyAssociationUpdateRequest) SetUserLoc(v UserLocation) {
 
 // GetAllowedSnssais returns the AllowedSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetAllowedSnssais() []Snssai {
-	if o == nil || isNil(o.AllowedSnssais) {
+	if o == nil || IsNil(o.AllowedSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -512,7 +513,7 @@ func (o *PolicyAssociationUpdateRequest) GetAllowedSnssais() []Snssai {
 // GetAllowedSnssaisOk returns a tuple with the AllowedSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetAllowedSnssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.AllowedSnssais) {
+	if o == nil || IsNil(o.AllowedSnssais) {
 		return nil, false
 	}
 	return o.AllowedSnssais, true
@@ -520,7 +521,7 @@ func (o *PolicyAssociationUpdateRequest) GetAllowedSnssaisOk() ([]Snssai, bool) 
 
 // HasAllowedSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasAllowedSnssais() bool {
-	if o != nil && !isNil(o.AllowedSnssais) {
+	if o != nil && !IsNil(o.AllowedSnssais) {
 		return true
 	}
 
@@ -534,7 +535,7 @@ func (o *PolicyAssociationUpdateRequest) SetAllowedSnssais(v []Snssai) {
 
 // GetTargetSnssais returns the TargetSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetTargetSnssais() []Snssai {
-	if o == nil || isNil(o.TargetSnssais) {
+	if o == nil || IsNil(o.TargetSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -544,7 +545,7 @@ func (o *PolicyAssociationUpdateRequest) GetTargetSnssais() []Snssai {
 // GetTargetSnssaisOk returns a tuple with the TargetSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetTargetSnssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.TargetSnssais) {
+	if o == nil || IsNil(o.TargetSnssais) {
 		return nil, false
 	}
 	return o.TargetSnssais, true
@@ -552,7 +553,7 @@ func (o *PolicyAssociationUpdateRequest) GetTargetSnssaisOk() ([]Snssai, bool) {
 
 // HasTargetSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasTargetSnssais() bool {
-	if o != nil && !isNil(o.TargetSnssais) {
+	if o != nil && !IsNil(o.TargetSnssais) {
 		return true
 	}
 
@@ -566,7 +567,7 @@ func (o *PolicyAssociationUpdateRequest) SetTargetSnssais(v []Snssai) {
 
 // GetMappingSnssais returns the MappingSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetMappingSnssais() []MappingOfSnssai {
-	if o == nil || isNil(o.MappingSnssais) {
+	if o == nil || IsNil(o.MappingSnssais) {
 		var ret []MappingOfSnssai
 		return ret
 	}
@@ -576,7 +577,7 @@ func (o *PolicyAssociationUpdateRequest) GetMappingSnssais() []MappingOfSnssai {
 // GetMappingSnssaisOk returns a tuple with the MappingSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetMappingSnssaisOk() ([]MappingOfSnssai, bool) {
-	if o == nil || isNil(o.MappingSnssais) {
+	if o == nil || IsNil(o.MappingSnssais) {
 		return nil, false
 	}
 	return o.MappingSnssais, true
@@ -584,7 +585,7 @@ func (o *PolicyAssociationUpdateRequest) GetMappingSnssaisOk() ([]MappingOfSnssa
 
 // HasMappingSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasMappingSnssais() bool {
-	if o != nil && !isNil(o.MappingSnssais) {
+	if o != nil && !IsNil(o.MappingSnssais) {
 		return true
 	}
 
@@ -598,7 +599,7 @@ func (o *PolicyAssociationUpdateRequest) SetMappingSnssais(v []MappingOfSnssai) 
 
 // GetAccessTypes returns the AccessTypes field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetAccessTypes() []AccessType {
-	if o == nil || isNil(o.AccessTypes) {
+	if o == nil || IsNil(o.AccessTypes) {
 		var ret []AccessType
 		return ret
 	}
@@ -608,7 +609,7 @@ func (o *PolicyAssociationUpdateRequest) GetAccessTypes() []AccessType {
 // GetAccessTypesOk returns a tuple with the AccessTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetAccessTypesOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessTypes) {
+	if o == nil || IsNil(o.AccessTypes) {
 		return nil, false
 	}
 	return o.AccessTypes, true
@@ -616,7 +617,7 @@ func (o *PolicyAssociationUpdateRequest) GetAccessTypesOk() ([]AccessType, bool)
 
 // HasAccessTypes returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasAccessTypes() bool {
-	if o != nil && !isNil(o.AccessTypes) {
+	if o != nil && !IsNil(o.AccessTypes) {
 		return true
 	}
 
@@ -630,7 +631,7 @@ func (o *PolicyAssociationUpdateRequest) SetAccessTypes(v []AccessType) {
 
 // GetRatTypes returns the RatTypes field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetRatTypes() []RatType {
-	if o == nil || isNil(o.RatTypes) {
+	if o == nil || IsNil(o.RatTypes) {
 		var ret []RatType
 		return ret
 	}
@@ -640,7 +641,7 @@ func (o *PolicyAssociationUpdateRequest) GetRatTypes() []RatType {
 // GetRatTypesOk returns a tuple with the RatTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetRatTypesOk() ([]RatType, bool) {
-	if o == nil || isNil(o.RatTypes) {
+	if o == nil || IsNil(o.RatTypes) {
 		return nil, false
 	}
 	return o.RatTypes, true
@@ -648,7 +649,7 @@ func (o *PolicyAssociationUpdateRequest) GetRatTypesOk() ([]RatType, bool) {
 
 // HasRatTypes returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasRatTypes() bool {
-	if o != nil && !isNil(o.RatTypes) {
+	if o != nil && !IsNil(o.RatTypes) {
 		return true
 	}
 
@@ -662,7 +663,7 @@ func (o *PolicyAssociationUpdateRequest) SetRatTypes(v []RatType) {
 
 // GetN3gAllowedSnssais returns the N3gAllowedSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetN3gAllowedSnssais() []Snssai {
-	if o == nil || isNil(o.N3gAllowedSnssais) {
+	if o == nil || IsNil(o.N3gAllowedSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -672,7 +673,7 @@ func (o *PolicyAssociationUpdateRequest) GetN3gAllowedSnssais() []Snssai {
 // GetN3gAllowedSnssaisOk returns a tuple with the N3gAllowedSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetN3gAllowedSnssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.N3gAllowedSnssais) {
+	if o == nil || IsNil(o.N3gAllowedSnssais) {
 		return nil, false
 	}
 	return o.N3gAllowedSnssais, true
@@ -680,7 +681,7 @@ func (o *PolicyAssociationUpdateRequest) GetN3gAllowedSnssaisOk() ([]Snssai, boo
 
 // HasN3gAllowedSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasN3gAllowedSnssais() bool {
-	if o != nil && !isNil(o.N3gAllowedSnssais) {
+	if o != nil && !IsNil(o.N3gAllowedSnssais) {
 		return true
 	}
 
@@ -694,7 +695,7 @@ func (o *PolicyAssociationUpdateRequest) SetN3gAllowedSnssais(v []Snssai) {
 
 // GetTraceReq returns the TraceReq field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAssociationUpdateRequest) GetTraceReq() TraceData {
-	if o == nil || isNil(o.TraceReq.Get()) {
+	if o == nil || IsNil(o.TraceReq.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -724,6 +725,7 @@ func (o *PolicyAssociationUpdateRequest) HasTraceReq() bool {
 func (o *PolicyAssociationUpdateRequest) SetTraceReq(v TraceData) {
 	o.TraceReq.Set(&v)
 }
+
 // SetTraceReqNil sets the value for TraceReq to be an explicit nil
 func (o *PolicyAssociationUpdateRequest) SetTraceReqNil() {
 	o.TraceReq.Set(nil)
@@ -736,7 +738,7 @@ func (o *PolicyAssociationUpdateRequest) UnsetTraceReq() {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -746,7 +748,7 @@ func (o *PolicyAssociationUpdateRequest) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -754,7 +756,7 @@ func (o *PolicyAssociationUpdateRequest) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -779,7 +781,7 @@ func (o *PolicyAssociationUpdateRequest) GetNwdafDatas() []NwdafData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyAssociationUpdateRequest) GetNwdafDatasOk() ([]NwdafData, bool) {
-	if o == nil || isNil(o.NwdafDatas) {
+	if o == nil || IsNil(o.NwdafDatas) {
 		return nil, false
 	}
 	return o.NwdafDatas, true
@@ -787,7 +789,7 @@ func (o *PolicyAssociationUpdateRequest) GetNwdafDatasOk() ([]NwdafData, bool) {
 
 // HasNwdafDatas returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasNwdafDatas() bool {
-	if o != nil && isNil(o.NwdafDatas) {
+	if o != nil && IsNil(o.NwdafDatas) {
 		return true
 	}
 
@@ -801,7 +803,7 @@ func (o *PolicyAssociationUpdateRequest) SetNwdafDatas(v []NwdafData) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PolicyAssociationUpdateRequest) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -811,7 +813,7 @@ func (o *PolicyAssociationUpdateRequest) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationUpdateRequest) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -819,7 +821,7 @@ func (o *PolicyAssociationUpdateRequest) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PolicyAssociationUpdateRequest) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -832,7 +834,7 @@ func (o *PolicyAssociationUpdateRequest) SetSuppFeat(v string) {
 }
 
 func (o PolicyAssociationUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -841,73 +843,73 @@ func (o PolicyAssociationUpdateRequest) MarshalJSON() ([]byte, error) {
 
 func (o PolicyAssociationUpdateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NotificationUri) {
+	if !IsNil(o.NotificationUri) {
 		toSerialize["notificationUri"] = o.NotificationUri
 	}
-	if !isNil(o.AltNotifIpv4Addrs) {
+	if !IsNil(o.AltNotifIpv4Addrs) {
 		toSerialize["altNotifIpv4Addrs"] = o.AltNotifIpv4Addrs
 	}
-	if !isNil(o.AltNotifIpv6Addrs) {
+	if !IsNil(o.AltNotifIpv6Addrs) {
 		toSerialize["altNotifIpv6Addrs"] = o.AltNotifIpv6Addrs
 	}
-	if !isNil(o.AltNotifFqdns) {
+	if !IsNil(o.AltNotifFqdns) {
 		toSerialize["altNotifFqdns"] = o.AltNotifFqdns
 	}
-	if !isNil(o.Triggers) {
+	if !IsNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !isNil(o.ServAreaRes) {
+	if !IsNil(o.ServAreaRes) {
 		toSerialize["servAreaRes"] = o.ServAreaRes
 	}
-	if !isNil(o.WlServAreaRes) {
+	if !IsNil(o.WlServAreaRes) {
 		toSerialize["wlServAreaRes"] = o.WlServAreaRes
 	}
-	if !isNil(o.Rfsp) {
+	if !IsNil(o.Rfsp) {
 		toSerialize["rfsp"] = o.Rfsp
 	}
 	if o.SmfSelInfo.IsSet() {
 		toSerialize["smfSelInfo"] = o.SmfSelInfo.Get()
 	}
-	if !isNil(o.UeAmbr) {
+	if !IsNil(o.UeAmbr) {
 		toSerialize["ueAmbr"] = o.UeAmbr
 	}
-	if !isNil(o.UeSliceMbrs) {
+	if !IsNil(o.UeSliceMbrs) {
 		toSerialize["ueSliceMbrs"] = o.UeSliceMbrs
 	}
-	if !isNil(o.PraStatuses) {
+	if !IsNil(o.PraStatuses) {
 		toSerialize["praStatuses"] = o.PraStatuses
 	}
-	if !isNil(o.UserLoc) {
+	if !IsNil(o.UserLoc) {
 		toSerialize["userLoc"] = o.UserLoc
 	}
-	if !isNil(o.AllowedSnssais) {
+	if !IsNil(o.AllowedSnssais) {
 		toSerialize["allowedSnssais"] = o.AllowedSnssais
 	}
-	if !isNil(o.TargetSnssais) {
+	if !IsNil(o.TargetSnssais) {
 		toSerialize["targetSnssais"] = o.TargetSnssais
 	}
-	if !isNil(o.MappingSnssais) {
+	if !IsNil(o.MappingSnssais) {
 		toSerialize["mappingSnssais"] = o.MappingSnssais
 	}
-	if !isNil(o.AccessTypes) {
+	if !IsNil(o.AccessTypes) {
 		toSerialize["accessTypes"] = o.AccessTypes
 	}
-	if !isNil(o.RatTypes) {
+	if !IsNil(o.RatTypes) {
 		toSerialize["ratTypes"] = o.RatTypes
 	}
-	if !isNil(o.N3gAllowedSnssais) {
+	if !IsNil(o.N3gAllowedSnssais) {
 		toSerialize["n3gAllowedSnssais"] = o.N3gAllowedSnssais
 	}
 	if o.TraceReq.IsSet() {
 		toSerialize["traceReq"] = o.TraceReq.Get()
 	}
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
 	if o.NwdafDatas != nil {
 		toSerialize["nwdafDatas"] = o.NwdafDatas
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -948,5 +950,3 @@ func (v *NullablePolicyAssociationUpdateRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

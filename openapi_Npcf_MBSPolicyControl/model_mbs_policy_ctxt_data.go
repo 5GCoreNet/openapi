@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the MbsPolicyCtxtData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsPolicyCtxtData{}
 
-// MbsPolicyCtxtData Contains the parameters used to request the creation of an MBS Policy Association. 
+// MbsPolicyCtxtData Contains the parameters used to request the creation of an MBS Policy Association.
 type MbsPolicyCtxtData struct {
 	MbsSessionId MbsSessionId `json:"mbsSessionId"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn         *string         `json:"dnn,omitempty"`
+	Snssai      *Snssai         `json:"snssai,omitempty"`
 	MbsServInfo *MbsServiceInfo `json:"mbsServInfo,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -72,7 +72,7 @@ func (o *MbsPolicyCtxtData) SetMbsSessionId(v MbsSessionId) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *MbsPolicyCtxtData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -90,7 +90,7 @@ func (o *MbsPolicyCtxtData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *MbsPolicyCtxtData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *MbsPolicyCtxtData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -122,7 +122,7 @@ func (o *MbsPolicyCtxtData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *MbsPolicyCtxtData) SetSnssai(v Snssai) {
 
 // GetMbsServInfo returns the MbsServInfo field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetMbsServInfo() MbsServiceInfo {
-	if o == nil || isNil(o.MbsServInfo) {
+	if o == nil || IsNil(o.MbsServInfo) {
 		var ret MbsServiceInfo
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *MbsPolicyCtxtData) GetMbsServInfo() MbsServiceInfo {
 // GetMbsServInfoOk returns a tuple with the MbsServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
-	if o == nil || isNil(o.MbsServInfo) {
+	if o == nil || IsNil(o.MbsServInfo) {
 		return nil, false
 	}
 	return o.MbsServInfo, true
@@ -154,7 +154,7 @@ func (o *MbsPolicyCtxtData) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
 
 // HasMbsServInfo returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasMbsServInfo() bool {
-	if o != nil && !isNil(o.MbsServInfo) {
+	if o != nil && !IsNil(o.MbsServInfo) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *MbsPolicyCtxtData) SetMbsServInfo(v MbsServiceInfo) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *MbsPolicyCtxtData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -186,7 +186,7 @@ func (o *MbsPolicyCtxtData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *MbsPolicyCtxtData) SetSuppFeat(v string) {
 }
 
 func (o MbsPolicyCtxtData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,16 +209,16 @@ func (o MbsPolicyCtxtData) MarshalJSON() ([]byte, error) {
 func (o MbsPolicyCtxtData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.MbsServInfo) {
+	if !IsNil(o.MbsServInfo) {
 		toSerialize["mbsServInfo"] = o.MbsServInfo
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -259,5 +259,3 @@ func (v *NullableMbsPolicyCtxtData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

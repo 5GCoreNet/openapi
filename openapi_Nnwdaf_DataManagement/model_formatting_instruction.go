@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &FormattingInstruction{}
 
 // FormattingInstruction Contains data or analytics formatting instructions.
 type FormattingInstruction struct {
-	// Indicates that notifications shall be buffered until the NF service consumer requests their delivery. 
-	ConsTrigNotif *bool `json:"consTrigNotif,omitempty"`
+	// Indicates that notifications shall be buffered until the NF service consumer requests their delivery.
+	ConsTrigNotif    *bool             `json:"consTrigNotif,omitempty"`
 	ReportingOptions *ReportingOptions `json:"reportingOptions,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewFormattingInstructionWithDefaults() *FormattingInstruction {
 
 // GetConsTrigNotif returns the ConsTrigNotif field value if set, zero value otherwise.
 func (o *FormattingInstruction) GetConsTrigNotif() bool {
-	if o == nil || isNil(o.ConsTrigNotif) {
+	if o == nil || IsNil(o.ConsTrigNotif) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *FormattingInstruction) GetConsTrigNotif() bool {
 // GetConsTrigNotifOk returns a tuple with the ConsTrigNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FormattingInstruction) GetConsTrigNotifOk() (*bool, bool) {
-	if o == nil || isNil(o.ConsTrigNotif) {
+	if o == nil || IsNil(o.ConsTrigNotif) {
 		return nil, false
 	}
 	return o.ConsTrigNotif, true
@@ -61,7 +61,7 @@ func (o *FormattingInstruction) GetConsTrigNotifOk() (*bool, bool) {
 
 // HasConsTrigNotif returns a boolean if a field has been set.
 func (o *FormattingInstruction) HasConsTrigNotif() bool {
-	if o != nil && !isNil(o.ConsTrigNotif) {
+	if o != nil && !IsNil(o.ConsTrigNotif) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *FormattingInstruction) SetConsTrigNotif(v bool) {
 
 // GetReportingOptions returns the ReportingOptions field value if set, zero value otherwise.
 func (o *FormattingInstruction) GetReportingOptions() ReportingOptions {
-	if o == nil || isNil(o.ReportingOptions) {
+	if o == nil || IsNil(o.ReportingOptions) {
 		var ret ReportingOptions
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *FormattingInstruction) GetReportingOptions() ReportingOptions {
 // GetReportingOptionsOk returns a tuple with the ReportingOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FormattingInstruction) GetReportingOptionsOk() (*ReportingOptions, bool) {
-	if o == nil || isNil(o.ReportingOptions) {
+	if o == nil || IsNil(o.ReportingOptions) {
 		return nil, false
 	}
 	return o.ReportingOptions, true
@@ -93,7 +93,7 @@ func (o *FormattingInstruction) GetReportingOptionsOk() (*ReportingOptions, bool
 
 // HasReportingOptions returns a boolean if a field has been set.
 func (o *FormattingInstruction) HasReportingOptions() bool {
-	if o != nil && !isNil(o.ReportingOptions) {
+	if o != nil && !IsNil(o.ReportingOptions) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *FormattingInstruction) SetReportingOptions(v ReportingOptions) {
 }
 
 func (o FormattingInstruction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o FormattingInstruction) MarshalJSON() ([]byte, error) {
 
 func (o FormattingInstruction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ConsTrigNotif) {
+	if !IsNil(o.ConsTrigNotif) {
 		toSerialize["consTrigNotif"] = o.ConsTrigNotif
 	}
-	if !isNil(o.ReportingOptions) {
+	if !IsNil(o.ReportingOptions) {
 		toSerialize["reportingOptions"] = o.ReportingOptions
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableFormattingInstruction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

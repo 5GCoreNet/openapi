@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &NSMChargingInformation{}
 
 // NSMChargingInformation struct for NSMChargingInformation
 type NSMChargingInformation struct {
-	ManagementOperation ManagementOperation `json:"managementOperation"`
-	IdNetworkSliceInstance *string `json:"idNetworkSliceInstance,omitempty"`
+	ManagementOperation                     ManagementOperation                 `json:"managementOperation"`
+	IdNetworkSliceInstance                  *string                             `json:"idNetworkSliceInstance,omitempty"`
 	ListOfserviceProfileChargingInformation []ServiceProfileChargingInformation `json:"listOfserviceProfileChargingInformation,omitempty"`
-	ManagementOperationStatus *ManagementOperationStatus `json:"managementOperationStatus,omitempty"`
+	ManagementOperationStatus               *ManagementOperationStatus          `json:"managementOperationStatus,omitempty"`
 }
 
 // NewNSMChargingInformation instantiates a new NSMChargingInformation object
@@ -69,7 +69,7 @@ func (o *NSMChargingInformation) SetManagementOperation(v ManagementOperation) {
 
 // GetIdNetworkSliceInstance returns the IdNetworkSliceInstance field value if set, zero value otherwise.
 func (o *NSMChargingInformation) GetIdNetworkSliceInstance() string {
-	if o == nil || isNil(o.IdNetworkSliceInstance) {
+	if o == nil || IsNil(o.IdNetworkSliceInstance) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NSMChargingInformation) GetIdNetworkSliceInstance() string {
 // GetIdNetworkSliceInstanceOk returns a tuple with the IdNetworkSliceInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSMChargingInformation) GetIdNetworkSliceInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.IdNetworkSliceInstance) {
+	if o == nil || IsNil(o.IdNetworkSliceInstance) {
 		return nil, false
 	}
 	return o.IdNetworkSliceInstance, true
@@ -87,7 +87,7 @@ func (o *NSMChargingInformation) GetIdNetworkSliceInstanceOk() (*string, bool) {
 
 // HasIdNetworkSliceInstance returns a boolean if a field has been set.
 func (o *NSMChargingInformation) HasIdNetworkSliceInstance() bool {
-	if o != nil && !isNil(o.IdNetworkSliceInstance) {
+	if o != nil && !IsNil(o.IdNetworkSliceInstance) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *NSMChargingInformation) SetIdNetworkSliceInstance(v string) {
 
 // GetListOfserviceProfileChargingInformation returns the ListOfserviceProfileChargingInformation field value if set, zero value otherwise.
 func (o *NSMChargingInformation) GetListOfserviceProfileChargingInformation() []ServiceProfileChargingInformation {
-	if o == nil || isNil(o.ListOfserviceProfileChargingInformation) {
+	if o == nil || IsNil(o.ListOfserviceProfileChargingInformation) {
 		var ret []ServiceProfileChargingInformation
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NSMChargingInformation) GetListOfserviceProfileChargingInformation() []
 // GetListOfserviceProfileChargingInformationOk returns a tuple with the ListOfserviceProfileChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSMChargingInformation) GetListOfserviceProfileChargingInformationOk() ([]ServiceProfileChargingInformation, bool) {
-	if o == nil || isNil(o.ListOfserviceProfileChargingInformation) {
+	if o == nil || IsNil(o.ListOfserviceProfileChargingInformation) {
 		return nil, false
 	}
 	return o.ListOfserviceProfileChargingInformation, true
@@ -119,7 +119,7 @@ func (o *NSMChargingInformation) GetListOfserviceProfileChargingInformationOk() 
 
 // HasListOfserviceProfileChargingInformation returns a boolean if a field has been set.
 func (o *NSMChargingInformation) HasListOfserviceProfileChargingInformation() bool {
-	if o != nil && !isNil(o.ListOfserviceProfileChargingInformation) {
+	if o != nil && !IsNil(o.ListOfserviceProfileChargingInformation) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *NSMChargingInformation) SetListOfserviceProfileChargingInformation(v []
 
 // GetManagementOperationStatus returns the ManagementOperationStatus field value if set, zero value otherwise.
 func (o *NSMChargingInformation) GetManagementOperationStatus() ManagementOperationStatus {
-	if o == nil || isNil(o.ManagementOperationStatus) {
+	if o == nil || IsNil(o.ManagementOperationStatus) {
 		var ret ManagementOperationStatus
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *NSMChargingInformation) GetManagementOperationStatus() ManagementOperat
 // GetManagementOperationStatusOk returns a tuple with the ManagementOperationStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NSMChargingInformation) GetManagementOperationStatusOk() (*ManagementOperationStatus, bool) {
-	if o == nil || isNil(o.ManagementOperationStatus) {
+	if o == nil || IsNil(o.ManagementOperationStatus) {
 		return nil, false
 	}
 	return o.ManagementOperationStatus, true
@@ -151,7 +151,7 @@ func (o *NSMChargingInformation) GetManagementOperationStatusOk() (*ManagementOp
 
 // HasManagementOperationStatus returns a boolean if a field has been set.
 func (o *NSMChargingInformation) HasManagementOperationStatus() bool {
-	if o != nil && !isNil(o.ManagementOperationStatus) {
+	if o != nil && !IsNil(o.ManagementOperationStatus) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *NSMChargingInformation) SetManagementOperationStatus(v ManagementOperat
 }
 
 func (o NSMChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,13 +174,13 @@ func (o NSMChargingInformation) MarshalJSON() ([]byte, error) {
 func (o NSMChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["managementOperation"] = o.ManagementOperation
-	if !isNil(o.IdNetworkSliceInstance) {
+	if !IsNil(o.IdNetworkSliceInstance) {
 		toSerialize["idNetworkSliceInstance"] = o.IdNetworkSliceInstance
 	}
-	if !isNil(o.ListOfserviceProfileChargingInformation) {
+	if !IsNil(o.ListOfserviceProfileChargingInformation) {
 		toSerialize["listOfserviceProfileChargingInformation"] = o.ListOfserviceProfileChargingInformation
 	}
-	if !isNil(o.ManagementOperationStatus) {
+	if !IsNil(o.ManagementOperationStatus) {
 		toSerialize["managementOperationStatus"] = o.ManagementOperationStatus
 	}
 	return toSerialize, nil
@@ -221,5 +221,3 @@ func (v *NullableNSMChargingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

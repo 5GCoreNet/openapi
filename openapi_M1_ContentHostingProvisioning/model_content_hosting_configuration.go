@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &ContentHostingConfiguration{}
 type ContentHostingConfiguration struct {
 	Name string `json:"name"`
 	// Uniform Resource Locator, comforming with the URI Generic Syntax specified in IETF RFC 3986.
-	EntryPointPath *string `json:"entryPointPath,omitempty"`
-	IngestConfiguration IngestConfiguration `json:"ingestConfiguration"`
+	EntryPointPath             *string                     `json:"entryPointPath,omitempty"`
+	IngestConfiguration        IngestConfiguration         `json:"ingestConfiguration"`
 	DistributionConfigurations []DistributionConfiguration `json:"distributionConfigurations"`
 }
 
@@ -72,7 +72,7 @@ func (o *ContentHostingConfiguration) SetName(v string) {
 
 // GetEntryPointPath returns the EntryPointPath field value if set, zero value otherwise.
 func (o *ContentHostingConfiguration) GetEntryPointPath() string {
-	if o == nil || isNil(o.EntryPointPath) {
+	if o == nil || IsNil(o.EntryPointPath) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ContentHostingConfiguration) GetEntryPointPath() string {
 // GetEntryPointPathOk returns a tuple with the EntryPointPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContentHostingConfiguration) GetEntryPointPathOk() (*string, bool) {
-	if o == nil || isNil(o.EntryPointPath) {
+	if o == nil || IsNil(o.EntryPointPath) {
 		return nil, false
 	}
 	return o.EntryPointPath, true
@@ -90,7 +90,7 @@ func (o *ContentHostingConfiguration) GetEntryPointPathOk() (*string, bool) {
 
 // HasEntryPointPath returns a boolean if a field has been set.
 func (o *ContentHostingConfiguration) HasEntryPointPath() bool {
-	if o != nil && !isNil(o.EntryPointPath) {
+	if o != nil && !IsNil(o.EntryPointPath) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ContentHostingConfiguration) SetDistributionConfigurations(v []Distribu
 }
 
 func (o ContentHostingConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -161,7 +161,7 @@ func (o ContentHostingConfiguration) MarshalJSON() ([]byte, error) {
 func (o ContentHostingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !isNil(o.EntryPointPath) {
+	if !IsNil(o.EntryPointPath) {
 		toSerialize["entryPointPath"] = o.EntryPointPath
 	}
 	toSerialize["ingestConfiguration"] = o.IngestConfiguration
@@ -204,5 +204,3 @@ func (v *NullableContentHostingConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

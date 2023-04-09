@@ -1,7 +1,7 @@
 /*
 Nnef_SMContext
 
-Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &SmallDataRateControl{}
 
 // SmallDataRateControl Configuration of Small Data Rate Control for the SM Context.
 type SmallDataRateControl struct {
-	TimeUnit SmallDataRateControlTimeUnit `json:"timeUnit"`
-	MaxPacketRateUl *int32 `json:"maxPacketRateUl,omitempty"`
-	MaxPacketRateDl *int32 `json:"maxPacketRateDl,omitempty"`
-	MaxAdditionalPacketRateUl *int32 `json:"maxAdditionalPacketRateUl,omitempty"`
-	MaxAdditionalPacketRateDl *int32 `json:"maxAdditionalPacketRateDl,omitempty"`
+	TimeUnit                  SmallDataRateControlTimeUnit `json:"timeUnit"`
+	MaxPacketRateUl           *int32                       `json:"maxPacketRateUl,omitempty"`
+	MaxPacketRateDl           *int32                       `json:"maxPacketRateDl,omitempty"`
+	MaxAdditionalPacketRateUl *int32                       `json:"maxAdditionalPacketRateUl,omitempty"`
+	MaxAdditionalPacketRateDl *int32                       `json:"maxAdditionalPacketRateDl,omitempty"`
 }
 
 // NewSmallDataRateControl instantiates a new SmallDataRateControl object
@@ -70,7 +70,7 @@ func (o *SmallDataRateControl) SetTimeUnit(v SmallDataRateControlTimeUnit) {
 
 // GetMaxPacketRateUl returns the MaxPacketRateUl field value if set, zero value otherwise.
 func (o *SmallDataRateControl) GetMaxPacketRateUl() int32 {
-	if o == nil || isNil(o.MaxPacketRateUl) {
+	if o == nil || IsNil(o.MaxPacketRateUl) {
 		var ret int32
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *SmallDataRateControl) GetMaxPacketRateUl() int32 {
 // GetMaxPacketRateUlOk returns a tuple with the MaxPacketRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmallDataRateControl) GetMaxPacketRateUlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPacketRateUl) {
+	if o == nil || IsNil(o.MaxPacketRateUl) {
 		return nil, false
 	}
 	return o.MaxPacketRateUl, true
@@ -88,7 +88,7 @@ func (o *SmallDataRateControl) GetMaxPacketRateUlOk() (*int32, bool) {
 
 // HasMaxPacketRateUl returns a boolean if a field has been set.
 func (o *SmallDataRateControl) HasMaxPacketRateUl() bool {
-	if o != nil && !isNil(o.MaxPacketRateUl) {
+	if o != nil && !IsNil(o.MaxPacketRateUl) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *SmallDataRateControl) SetMaxPacketRateUl(v int32) {
 
 // GetMaxPacketRateDl returns the MaxPacketRateDl field value if set, zero value otherwise.
 func (o *SmallDataRateControl) GetMaxPacketRateDl() int32 {
-	if o == nil || isNil(o.MaxPacketRateDl) {
+	if o == nil || IsNil(o.MaxPacketRateDl) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *SmallDataRateControl) GetMaxPacketRateDl() int32 {
 // GetMaxPacketRateDlOk returns a tuple with the MaxPacketRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmallDataRateControl) GetMaxPacketRateDlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPacketRateDl) {
+	if o == nil || IsNil(o.MaxPacketRateDl) {
 		return nil, false
 	}
 	return o.MaxPacketRateDl, true
@@ -120,7 +120,7 @@ func (o *SmallDataRateControl) GetMaxPacketRateDlOk() (*int32, bool) {
 
 // HasMaxPacketRateDl returns a boolean if a field has been set.
 func (o *SmallDataRateControl) HasMaxPacketRateDl() bool {
-	if o != nil && !isNil(o.MaxPacketRateDl) {
+	if o != nil && !IsNil(o.MaxPacketRateDl) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *SmallDataRateControl) SetMaxPacketRateDl(v int32) {
 
 // GetMaxAdditionalPacketRateUl returns the MaxAdditionalPacketRateUl field value if set, zero value otherwise.
 func (o *SmallDataRateControl) GetMaxAdditionalPacketRateUl() int32 {
-	if o == nil || isNil(o.MaxAdditionalPacketRateUl) {
+	if o == nil || IsNil(o.MaxAdditionalPacketRateUl) {
 		var ret int32
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *SmallDataRateControl) GetMaxAdditionalPacketRateUl() int32 {
 // GetMaxAdditionalPacketRateUlOk returns a tuple with the MaxAdditionalPacketRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmallDataRateControl) GetMaxAdditionalPacketRateUlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxAdditionalPacketRateUl) {
+	if o == nil || IsNil(o.MaxAdditionalPacketRateUl) {
 		return nil, false
 	}
 	return o.MaxAdditionalPacketRateUl, true
@@ -152,7 +152,7 @@ func (o *SmallDataRateControl) GetMaxAdditionalPacketRateUlOk() (*int32, bool) {
 
 // HasMaxAdditionalPacketRateUl returns a boolean if a field has been set.
 func (o *SmallDataRateControl) HasMaxAdditionalPacketRateUl() bool {
-	if o != nil && !isNil(o.MaxAdditionalPacketRateUl) {
+	if o != nil && !IsNil(o.MaxAdditionalPacketRateUl) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *SmallDataRateControl) SetMaxAdditionalPacketRateUl(v int32) {
 
 // GetMaxAdditionalPacketRateDl returns the MaxAdditionalPacketRateDl field value if set, zero value otherwise.
 func (o *SmallDataRateControl) GetMaxAdditionalPacketRateDl() int32 {
-	if o == nil || isNil(o.MaxAdditionalPacketRateDl) {
+	if o == nil || IsNil(o.MaxAdditionalPacketRateDl) {
 		var ret int32
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *SmallDataRateControl) GetMaxAdditionalPacketRateDl() int32 {
 // GetMaxAdditionalPacketRateDlOk returns a tuple with the MaxAdditionalPacketRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmallDataRateControl) GetMaxAdditionalPacketRateDlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxAdditionalPacketRateDl) {
+	if o == nil || IsNil(o.MaxAdditionalPacketRateDl) {
 		return nil, false
 	}
 	return o.MaxAdditionalPacketRateDl, true
@@ -184,7 +184,7 @@ func (o *SmallDataRateControl) GetMaxAdditionalPacketRateDlOk() (*int32, bool) {
 
 // HasMaxAdditionalPacketRateDl returns a boolean if a field has been set.
 func (o *SmallDataRateControl) HasMaxAdditionalPacketRateDl() bool {
-	if o != nil && !isNil(o.MaxAdditionalPacketRateDl) {
+	if o != nil && !IsNil(o.MaxAdditionalPacketRateDl) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *SmallDataRateControl) SetMaxAdditionalPacketRateDl(v int32) {
 }
 
 func (o SmallDataRateControl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,16 +207,16 @@ func (o SmallDataRateControl) MarshalJSON() ([]byte, error) {
 func (o SmallDataRateControl) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["timeUnit"] = o.TimeUnit
-	if !isNil(o.MaxPacketRateUl) {
+	if !IsNil(o.MaxPacketRateUl) {
 		toSerialize["maxPacketRateUl"] = o.MaxPacketRateUl
 	}
-	if !isNil(o.MaxPacketRateDl) {
+	if !IsNil(o.MaxPacketRateDl) {
 		toSerialize["maxPacketRateDl"] = o.MaxPacketRateDl
 	}
-	if !isNil(o.MaxAdditionalPacketRateUl) {
+	if !IsNil(o.MaxAdditionalPacketRateUl) {
 		toSerialize["maxAdditionalPacketRateUl"] = o.MaxAdditionalPacketRateUl
 	}
-	if !isNil(o.MaxAdditionalPacketRateDl) {
+	if !IsNil(o.MaxAdditionalPacketRateDl) {
 		toSerialize["maxAdditionalPacketRateDl"] = o.MaxAdditionalPacketRateDl
 	}
 	return toSerialize, nil
@@ -257,5 +257,3 @@ func (v *NullableSmallDataRateControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

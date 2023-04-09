@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,11 +17,11 @@ import (
 // checks if the TwapId type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TwapId{}
 
-// TwapId Contain the TWAP Identifier as defined in clause 4.2.8.5.3 of 3GPP TS 23.501 or the WLAN location information as defined in clause 4.5.7.2.8 of 3GPP TS 23.402. 
+// TwapId Contain the TWAP Identifier as defined in clause 4.2.8.5.3 of 3GPP TS 23.501 or the WLAN location information as defined in clause 4.5.7.2.8 of 3GPP TS 23.402.
 type TwapId struct {
-	// This IE shall contain the SSID of the access point to which the UE is attached, that is received over NGAP, see IEEE Std 802.11-2012.  
+	// This IE shall contain the SSID of the access point to which the UE is attached, that is received over NGAP, see IEEE Std 802.11-2012.
 	SsId string `json:"ssId"`
-	// When present, it shall contain the BSSID of the access point to which the UE is attached, for trusted WLAN access, see IEEE Std 802.11-2012.  
+	// When present, it shall contain the BSSID of the access point to which the UE is attached, for trusted WLAN access, see IEEE Std 802.11-2012.
 	BssId *string `json:"bssId,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
 	CivicAddress *string `json:"civicAddress,omitempty"`
@@ -71,7 +71,7 @@ func (o *TwapId) SetSsId(v string) {
 
 // GetBssId returns the BssId field value if set, zero value otherwise.
 func (o *TwapId) GetBssId() string {
-	if o == nil || isNil(o.BssId) {
+	if o == nil || IsNil(o.BssId) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *TwapId) GetBssId() string {
 // GetBssIdOk returns a tuple with the BssId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwapId) GetBssIdOk() (*string, bool) {
-	if o == nil || isNil(o.BssId) {
+	if o == nil || IsNil(o.BssId) {
 		return nil, false
 	}
 	return o.BssId, true
@@ -89,7 +89,7 @@ func (o *TwapId) GetBssIdOk() (*string, bool) {
 
 // HasBssId returns a boolean if a field has been set.
 func (o *TwapId) HasBssId() bool {
-	if o != nil && !isNil(o.BssId) {
+	if o != nil && !IsNil(o.BssId) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *TwapId) SetBssId(v string) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *TwapId) GetCivicAddress() string {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *TwapId) GetCivicAddress() string {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwapId) GetCivicAddressOk() (*string, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -121,7 +121,7 @@ func (o *TwapId) GetCivicAddressOk() (*string, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *TwapId) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *TwapId) SetCivicAddress(v string) {
 }
 
 func (o TwapId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o TwapId) MarshalJSON() ([]byte, error) {
 func (o TwapId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ssId"] = o.SsId
-	if !isNil(o.BssId) {
+	if !IsNil(o.BssId) {
 		toSerialize["bssId"] = o.BssId
 	}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableTwapId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -69,7 +69,7 @@ func (o *AfEventNotification) SetEvent(v AfEvent) {
 
 // GetFlows returns the Flows field value if set, zero value otherwise.
 func (o *AfEventNotification) GetFlows() []Flows {
-	if o == nil || isNil(o.Flows) {
+	if o == nil || IsNil(o.Flows) {
 		var ret []Flows
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AfEventNotification) GetFlows() []Flows {
 // GetFlowsOk returns a tuple with the Flows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventNotification) GetFlowsOk() ([]Flows, bool) {
-	if o == nil || isNil(o.Flows) {
+	if o == nil || IsNil(o.Flows) {
 		return nil, false
 	}
 	return o.Flows, true
@@ -87,7 +87,7 @@ func (o *AfEventNotification) GetFlowsOk() ([]Flows, bool) {
 
 // HasFlows returns a boolean if a field has been set.
 func (o *AfEventNotification) HasFlows() bool {
-	if o != nil && !isNil(o.Flows) {
+	if o != nil && !IsNil(o.Flows) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AfEventNotification) SetFlows(v []Flows) {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *AfEventNotification) GetRetryAfter() int32 {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AfEventNotification) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventNotification) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -119,7 +119,7 @@ func (o *AfEventNotification) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *AfEventNotification) HasRetryAfter() bool {
-	if o != nil && !isNil(o.RetryAfter) {
+	if o != nil && !IsNil(o.RetryAfter) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *AfEventNotification) SetRetryAfter(v int32) {
 }
 
 func (o AfEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o AfEventNotification) MarshalJSON() ([]byte, error) {
 func (o AfEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.Flows) {
+	if !IsNil(o.Flows) {
 		toSerialize["flows"] = o.Flows
 	}
-	if !isNil(o.RetryAfter) {
+	if !IsNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableAfEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

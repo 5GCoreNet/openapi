@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &Pc5FlowBitRates{}
 
 // Pc5FlowBitRates it shall represent the PC5 Flow Bit Rates
 type Pc5FlowBitRates struct {
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbr *string `json:"guaFbr,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxFbr *string `json:"maxFbr,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewPc5FlowBitRatesWithDefaults() *Pc5FlowBitRates {
 
 // GetGuaFbr returns the GuaFbr field value if set, zero value otherwise.
 func (o *Pc5FlowBitRates) GetGuaFbr() string {
-	if o == nil || isNil(o.GuaFbr) {
+	if o == nil || IsNil(o.GuaFbr) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Pc5FlowBitRates) GetGuaFbr() string {
 // GetGuaFbrOk returns a tuple with the GuaFbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5FlowBitRates) GetGuaFbrOk() (*string, bool) {
-	if o == nil || isNil(o.GuaFbr) {
+	if o == nil || IsNil(o.GuaFbr) {
 		return nil, false
 	}
 	return o.GuaFbr, true
@@ -62,7 +62,7 @@ func (o *Pc5FlowBitRates) GetGuaFbrOk() (*string, bool) {
 
 // HasGuaFbr returns a boolean if a field has been set.
 func (o *Pc5FlowBitRates) HasGuaFbr() bool {
-	if o != nil && !isNil(o.GuaFbr) {
+	if o != nil && !IsNil(o.GuaFbr) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Pc5FlowBitRates) SetGuaFbr(v string) {
 
 // GetMaxFbr returns the MaxFbr field value if set, zero value otherwise.
 func (o *Pc5FlowBitRates) GetMaxFbr() string {
-	if o == nil || isNil(o.MaxFbr) {
+	if o == nil || IsNil(o.MaxFbr) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Pc5FlowBitRates) GetMaxFbr() string {
 // GetMaxFbrOk returns a tuple with the MaxFbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5FlowBitRates) GetMaxFbrOk() (*string, bool) {
-	if o == nil || isNil(o.MaxFbr) {
+	if o == nil || IsNil(o.MaxFbr) {
 		return nil, false
 	}
 	return o.MaxFbr, true
@@ -94,7 +94,7 @@ func (o *Pc5FlowBitRates) GetMaxFbrOk() (*string, bool) {
 
 // HasMaxFbr returns a boolean if a field has been set.
 func (o *Pc5FlowBitRates) HasMaxFbr() bool {
-	if o != nil && !isNil(o.MaxFbr) {
+	if o != nil && !IsNil(o.MaxFbr) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Pc5FlowBitRates) SetMaxFbr(v string) {
 }
 
 func (o Pc5FlowBitRates) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o Pc5FlowBitRates) MarshalJSON() ([]byte, error) {
 
 func (o Pc5FlowBitRates) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GuaFbr) {
+	if !IsNil(o.GuaFbr) {
 		toSerialize["guaFbr"] = o.GuaFbr
 	}
-	if !isNil(o.MaxFbr) {
+	if !IsNil(o.MaxFbr) {
 		toSerialize["maxFbr"] = o.MaxFbr
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullablePc5FlowBitRates) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

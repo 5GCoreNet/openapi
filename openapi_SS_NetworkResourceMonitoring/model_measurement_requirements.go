@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceMonitoring
 
-API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,8 +22,8 @@ type MeasurementRequirements struct {
 	// Indicates the required the QoS measurement data types.
 	MeasDataTypes []MeasurementDataType `json:"measDataTypes"`
 	// Unsigned integer indicating Averaging Window (see clause 5.7.3.6 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
-	MeasAggrGranWnd *int32 `json:"measAggrGranWnd,omitempty"`
-	MeasPeriod *MeasurementPeriod `json:"measPeriod,omitempty"`
+	MeasAggrGranWnd *int32             `json:"measAggrGranWnd,omitempty"`
+	MeasPeriod      *MeasurementPeriod `json:"measPeriod,omitempty"`
 }
 
 // NewMeasurementRequirements instantiates a new MeasurementRequirements object
@@ -74,7 +74,7 @@ func (o *MeasurementRequirements) SetMeasDataTypes(v []MeasurementDataType) {
 
 // GetMeasAggrGranWnd returns the MeasAggrGranWnd field value if set, zero value otherwise.
 func (o *MeasurementRequirements) GetMeasAggrGranWnd() int32 {
-	if o == nil || isNil(o.MeasAggrGranWnd) {
+	if o == nil || IsNil(o.MeasAggrGranWnd) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MeasurementRequirements) GetMeasAggrGranWnd() int32 {
 // GetMeasAggrGranWndOk returns a tuple with the MeasAggrGranWnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasurementRequirements) GetMeasAggrGranWndOk() (*int32, bool) {
-	if o == nil || isNil(o.MeasAggrGranWnd) {
+	if o == nil || IsNil(o.MeasAggrGranWnd) {
 		return nil, false
 	}
 	return o.MeasAggrGranWnd, true
@@ -92,7 +92,7 @@ func (o *MeasurementRequirements) GetMeasAggrGranWndOk() (*int32, bool) {
 
 // HasMeasAggrGranWnd returns a boolean if a field has been set.
 func (o *MeasurementRequirements) HasMeasAggrGranWnd() bool {
-	if o != nil && !isNil(o.MeasAggrGranWnd) {
+	if o != nil && !IsNil(o.MeasAggrGranWnd) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *MeasurementRequirements) SetMeasAggrGranWnd(v int32) {
 
 // GetMeasPeriod returns the MeasPeriod field value if set, zero value otherwise.
 func (o *MeasurementRequirements) GetMeasPeriod() MeasurementPeriod {
-	if o == nil || isNil(o.MeasPeriod) {
+	if o == nil || IsNil(o.MeasPeriod) {
 		var ret MeasurementPeriod
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *MeasurementRequirements) GetMeasPeriod() MeasurementPeriod {
 // GetMeasPeriodOk returns a tuple with the MeasPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasurementRequirements) GetMeasPeriodOk() (*MeasurementPeriod, bool) {
-	if o == nil || isNil(o.MeasPeriod) {
+	if o == nil || IsNil(o.MeasPeriod) {
 		return nil, false
 	}
 	return o.MeasPeriod, true
@@ -124,7 +124,7 @@ func (o *MeasurementRequirements) GetMeasPeriodOk() (*MeasurementPeriod, bool) {
 
 // HasMeasPeriod returns a boolean if a field has been set.
 func (o *MeasurementRequirements) HasMeasPeriod() bool {
-	if o != nil && !isNil(o.MeasPeriod) {
+	if o != nil && !IsNil(o.MeasPeriod) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *MeasurementRequirements) SetMeasPeriod(v MeasurementPeriod) {
 }
 
 func (o MeasurementRequirements) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,10 +147,10 @@ func (o MeasurementRequirements) MarshalJSON() ([]byte, error) {
 func (o MeasurementRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["measDataTypes"] = o.MeasDataTypes
-	if !isNil(o.MeasAggrGranWnd) {
+	if !IsNil(o.MeasAggrGranWnd) {
 		toSerialize["measAggrGranWnd"] = o.MeasAggrGranWnd
 	}
-	if !isNil(o.MeasPeriod) {
+	if !IsNil(o.MeasPeriod) {
 		toSerialize["measPeriod"] = o.MeasPeriod
 	}
 	return toSerialize, nil
@@ -191,5 +191,3 @@ func (v *NullableMeasurementRequirements) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

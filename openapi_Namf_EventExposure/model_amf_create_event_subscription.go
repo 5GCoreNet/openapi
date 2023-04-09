@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &AmfCreateEventSubscription{}
 // AmfCreateEventSubscription Data within a create AMF event subscription request
 type AmfCreateEventSubscription struct {
 	Subscription AmfEventSubscription `json:"subscription"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	OldGuami *Guami `json:"oldGuami,omitempty"`
+	OldGuami          *Guami  `json:"oldGuami,omitempty"`
 }
 
 // NewAmfCreateEventSubscription instantiates a new AmfCreateEventSubscription object
@@ -69,7 +69,7 @@ func (o *AmfCreateEventSubscription) SetSubscription(v AmfEventSubscription) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmfCreateEventSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AmfCreateEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreateEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -87,7 +87,7 @@ func (o *AmfCreateEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmfCreateEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AmfCreateEventSubscription) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *AmfCreateEventSubscription) GetOldGuami() Guami {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AmfCreateEventSubscription) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreateEventSubscription) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -119,7 +119,7 @@ func (o *AmfCreateEventSubscription) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *AmfCreateEventSubscription) HasOldGuami() bool {
-	if o != nil && !isNil(o.OldGuami) {
+	if o != nil && !IsNil(o.OldGuami) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *AmfCreateEventSubscription) SetOldGuami(v Guami) {
 }
 
 func (o AmfCreateEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o AmfCreateEventSubscription) MarshalJSON() ([]byte, error) {
 func (o AmfCreateEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.OldGuami) {
+	if !IsNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableAmfCreateEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

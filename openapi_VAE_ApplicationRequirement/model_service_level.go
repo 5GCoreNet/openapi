@@ -1,7 +1,7 @@
 /*
 VAE_ApplicationRequirement
 
-API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ServiceLevel Indicates a service level for application service.
 type ServiceLevel struct {
-	ServiceLevelAnyOf *ServiceLevelAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ServiceLevel) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ServiceLevelAnyOf
-	err = json.Unmarshal(data, &dst.ServiceLevelAnyOf);
-	if err == nil {
-		jsonServiceLevelAnyOf, _ := json.Marshal(dst.ServiceLevelAnyOf)
-		if string(jsonServiceLevelAnyOf) == "{}" { // empty struct
-			dst.ServiceLevelAnyOf = nil
-		} else {
-			return nil // data stored in dst.ServiceLevelAnyOf, return on the first match
-		}
-	} else {
-		dst.ServiceLevelAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ServiceLevel) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ServiceLevel) MarshalJSON() ([]byte, error) {
-	if src.ServiceLevelAnyOf != nil {
-		return json.Marshal(&src.ServiceLevelAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableServiceLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

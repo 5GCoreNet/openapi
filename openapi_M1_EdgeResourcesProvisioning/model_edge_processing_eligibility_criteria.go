@@ -1,7 +1,7 @@
 /*
 M1_EdgeResourcesProvisioning
 
-5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Edge Resources Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &EdgeProcessingEligibilityCriteria{}
 // EdgeProcessingEligibilityCriteria struct for EdgeProcessingEligibilityCriteria
 type EdgeProcessingEligibilityCriteria struct {
 	ServiceDataFlowDescriptions []ServiceDataFlowDescription `json:"serviceDataFlowDescriptions"`
-	UeLocations []LocationArea5G `json:"ueLocations"`
-	TimeWindows []TimeWindow `json:"timeWindows"`
-	AppRequest bool `json:"appRequest"`
+	UeLocations                 []LocationArea5G             `json:"ueLocations"`
+	TimeWindows                 []TimeWindow                 `json:"timeWindows"`
+	AppRequest                  bool                         `json:"appRequest"`
 }
 
 // NewEdgeProcessingEligibilityCriteria instantiates a new EdgeProcessingEligibilityCriteria object
@@ -143,7 +143,7 @@ func (o *EdgeProcessingEligibilityCriteria) SetAppRequest(v bool) {
 }
 
 func (o EdgeProcessingEligibilityCriteria) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableEdgeProcessingEligibilityCriteria) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

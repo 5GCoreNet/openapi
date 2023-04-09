@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &Ipv4AddressRange{}
 
 // Ipv4AddressRange Range of IPv4 addresses
 type Ipv4AddressRange struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
 	Start *string `json:"start,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
 	End *string `json:"end,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewIpv4AddressRangeWithDefaults() *Ipv4AddressRange {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *Ipv4AddressRange) GetStart() string {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Ipv4AddressRange) GetStart() string {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ipv4AddressRange) GetStartOk() (*string, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -62,7 +62,7 @@ func (o *Ipv4AddressRange) GetStartOk() (*string, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *Ipv4AddressRange) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Ipv4AddressRange) SetStart(v string) {
 
 // GetEnd returns the End field value if set, zero value otherwise.
 func (o *Ipv4AddressRange) GetEnd() string {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Ipv4AddressRange) GetEnd() string {
 // GetEndOk returns a tuple with the End field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ipv4AddressRange) GetEndOk() (*string, bool) {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		return nil, false
 	}
 	return o.End, true
@@ -94,7 +94,7 @@ func (o *Ipv4AddressRange) GetEndOk() (*string, bool) {
 
 // HasEnd returns a boolean if a field has been set.
 func (o *Ipv4AddressRange) HasEnd() bool {
-	if o != nil && !isNil(o.End) {
+	if o != nil && !IsNil(o.End) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Ipv4AddressRange) SetEnd(v string) {
 }
 
 func (o Ipv4AddressRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o Ipv4AddressRange) MarshalJSON() ([]byte, error) {
 
 func (o Ipv4AddressRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.End) {
+	if !IsNil(o.End) {
 		toSerialize["end"] = o.End
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableIpv4AddressRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

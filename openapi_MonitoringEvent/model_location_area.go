@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -52,7 +52,7 @@ func NewLocationAreaWithDefaults() *LocationArea {
 
 // GetCellIds returns the CellIds field value if set, zero value otherwise.
 func (o *LocationArea) GetCellIds() []string {
-	if o == nil || isNil(o.CellIds) {
+	if o == nil || IsNil(o.CellIds) {
 		var ret []string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *LocationArea) GetCellIds() []string {
 // GetCellIdsOk returns a tuple with the CellIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetCellIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.CellIds) {
+	if o == nil || IsNil(o.CellIds) {
 		return nil, false
 	}
 	return o.CellIds, true
@@ -70,7 +70,7 @@ func (o *LocationArea) GetCellIdsOk() ([]string, bool) {
 
 // HasCellIds returns a boolean if a field has been set.
 func (o *LocationArea) HasCellIds() bool {
-	if o != nil && !isNil(o.CellIds) {
+	if o != nil && !IsNil(o.CellIds) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *LocationArea) SetCellIds(v []string) {
 
 // GetEnodeBIds returns the EnodeBIds field value if set, zero value otherwise.
 func (o *LocationArea) GetEnodeBIds() []string {
-	if o == nil || isNil(o.EnodeBIds) {
+	if o == nil || IsNil(o.EnodeBIds) {
 		var ret []string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *LocationArea) GetEnodeBIds() []string {
 // GetEnodeBIdsOk returns a tuple with the EnodeBIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetEnodeBIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.EnodeBIds) {
+	if o == nil || IsNil(o.EnodeBIds) {
 		return nil, false
 	}
 	return o.EnodeBIds, true
@@ -102,7 +102,7 @@ func (o *LocationArea) GetEnodeBIdsOk() ([]string, bool) {
 
 // HasEnodeBIds returns a boolean if a field has been set.
 func (o *LocationArea) HasEnodeBIds() bool {
-	if o != nil && !isNil(o.EnodeBIds) {
+	if o != nil && !IsNil(o.EnodeBIds) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *LocationArea) SetEnodeBIds(v []string) {
 
 // GetRoutingAreaIds returns the RoutingAreaIds field value if set, zero value otherwise.
 func (o *LocationArea) GetRoutingAreaIds() []string {
-	if o == nil || isNil(o.RoutingAreaIds) {
+	if o == nil || IsNil(o.RoutingAreaIds) {
 		var ret []string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *LocationArea) GetRoutingAreaIds() []string {
 // GetRoutingAreaIdsOk returns a tuple with the RoutingAreaIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetRoutingAreaIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.RoutingAreaIds) {
+	if o == nil || IsNil(o.RoutingAreaIds) {
 		return nil, false
 	}
 	return o.RoutingAreaIds, true
@@ -134,7 +134,7 @@ func (o *LocationArea) GetRoutingAreaIdsOk() ([]string, bool) {
 
 // HasRoutingAreaIds returns a boolean if a field has been set.
 func (o *LocationArea) HasRoutingAreaIds() bool {
-	if o != nil && !isNil(o.RoutingAreaIds) {
+	if o != nil && !IsNil(o.RoutingAreaIds) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *LocationArea) SetRoutingAreaIds(v []string) {
 
 // GetTrackingAreaIds returns the TrackingAreaIds field value if set, zero value otherwise.
 func (o *LocationArea) GetTrackingAreaIds() []string {
-	if o == nil || isNil(o.TrackingAreaIds) {
+	if o == nil || IsNil(o.TrackingAreaIds) {
 		var ret []string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *LocationArea) GetTrackingAreaIds() []string {
 // GetTrackingAreaIdsOk returns a tuple with the TrackingAreaIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetTrackingAreaIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.TrackingAreaIds) {
+	if o == nil || IsNil(o.TrackingAreaIds) {
 		return nil, false
 	}
 	return o.TrackingAreaIds, true
@@ -166,7 +166,7 @@ func (o *LocationArea) GetTrackingAreaIdsOk() ([]string, bool) {
 
 // HasTrackingAreaIds returns a boolean if a field has been set.
 func (o *LocationArea) HasTrackingAreaIds() bool {
-	if o != nil && !isNil(o.TrackingAreaIds) {
+	if o != nil && !IsNil(o.TrackingAreaIds) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *LocationArea) SetTrackingAreaIds(v []string) {
 
 // GetGeographicAreas returns the GeographicAreas field value if set, zero value otherwise.
 func (o *LocationArea) GetGeographicAreas() []GeographicArea {
-	if o == nil || isNil(o.GeographicAreas) {
+	if o == nil || IsNil(o.GeographicAreas) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *LocationArea) GetGeographicAreas() []GeographicArea {
 // GetGeographicAreasOk returns a tuple with the GeographicAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetGeographicAreasOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.GeographicAreas) {
+	if o == nil || IsNil(o.GeographicAreas) {
 		return nil, false
 	}
 	return o.GeographicAreas, true
@@ -198,7 +198,7 @@ func (o *LocationArea) GetGeographicAreasOk() ([]GeographicArea, bool) {
 
 // HasGeographicAreas returns a boolean if a field has been set.
 func (o *LocationArea) HasGeographicAreas() bool {
-	if o != nil && !isNil(o.GeographicAreas) {
+	if o != nil && !IsNil(o.GeographicAreas) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *LocationArea) SetGeographicAreas(v []GeographicArea) {
 
 // GetCivicAddresses returns the CivicAddresses field value if set, zero value otherwise.
 func (o *LocationArea) GetCivicAddresses() []CivicAddress {
-	if o == nil || isNil(o.CivicAddresses) {
+	if o == nil || IsNil(o.CivicAddresses) {
 		var ret []CivicAddress
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *LocationArea) GetCivicAddresses() []CivicAddress {
 // GetCivicAddressesOk returns a tuple with the CivicAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetCivicAddressesOk() ([]CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddresses) {
+	if o == nil || IsNil(o.CivicAddresses) {
 		return nil, false
 	}
 	return o.CivicAddresses, true
@@ -230,7 +230,7 @@ func (o *LocationArea) GetCivicAddressesOk() ([]CivicAddress, bool) {
 
 // HasCivicAddresses returns a boolean if a field has been set.
 func (o *LocationArea) HasCivicAddresses() bool {
-	if o != nil && !isNil(o.CivicAddresses) {
+	if o != nil && !IsNil(o.CivicAddresses) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *LocationArea) SetCivicAddresses(v []CivicAddress) {
 }
 
 func (o LocationArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -252,22 +252,22 @@ func (o LocationArea) MarshalJSON() ([]byte, error) {
 
 func (o LocationArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CellIds) {
+	if !IsNil(o.CellIds) {
 		toSerialize["cellIds"] = o.CellIds
 	}
-	if !isNil(o.EnodeBIds) {
+	if !IsNil(o.EnodeBIds) {
 		toSerialize["enodeBIds"] = o.EnodeBIds
 	}
-	if !isNil(o.RoutingAreaIds) {
+	if !IsNil(o.RoutingAreaIds) {
 		toSerialize["routingAreaIds"] = o.RoutingAreaIds
 	}
-	if !isNil(o.TrackingAreaIds) {
+	if !IsNil(o.TrackingAreaIds) {
 		toSerialize["trackingAreaIds"] = o.TrackingAreaIds
 	}
-	if !isNil(o.GeographicAreas) {
+	if !IsNil(o.GeographicAreas) {
 		toSerialize["geographicAreas"] = o.GeographicAreas
 	}
-	if !isNil(o.CivicAddresses) {
+	if !IsNil(o.CivicAddresses) {
 		toSerialize["civicAddresses"] = o.CivicAddresses
 	}
 	return toSerialize, nil
@@ -308,5 +308,3 @@ func (v *NullableLocationArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

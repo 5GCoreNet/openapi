@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,9 +21,9 @@ var _ MappedNullable = &AmfCreatedEventSubscription{}
 type AmfCreatedEventSubscription struct {
 	Subscription AmfEventSubscription `json:"subscription"`
 	// String providing an URI formatted according to RFC 3986.
-	SubscriptionId string `json:"subscriptionId"`
-	ReportList []AmfEventReport `json:"reportList,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	SubscriptionId string           `json:"subscriptionId"`
+	ReportList     []AmfEventReport `json:"reportList,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *AmfCreatedEventSubscription) SetSubscriptionId(v string) {
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *AmfCreatedEventSubscription) GetReportList() []AmfEventReport {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		var ret []AmfEventReport
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AmfCreatedEventSubscription) GetReportList() []AmfEventReport {
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool) {
-	if o == nil || isNil(o.ReportList) {
+	if o == nil || IsNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -114,7 +114,7 @@ func (o *AmfCreatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool)
 
 // HasReportList returns a boolean if a field has been set.
 func (o *AmfCreatedEventSubscription) HasReportList() bool {
-	if o != nil && !isNil(o.ReportList) {
+	if o != nil && !IsNil(o.ReportList) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmfCreatedEventSubscription) SetReportList(v []AmfEventReport) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmfCreatedEventSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AmfCreatedEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreatedEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -146,7 +146,7 @@ func (o *AmfCreatedEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmfCreatedEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *AmfCreatedEventSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o AmfCreatedEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o AmfCreatedEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !isNil(o.ReportList) {
+	if !IsNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableAmfCreatedEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

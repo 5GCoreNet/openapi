@@ -1,7 +1,7 @@
 /*
 MSGS_MSGDelivery
 
-API for MSGG MSGin5G Server Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGG MSGin5G Server Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -19,16 +19,16 @@ var _ MappedNullable = &UEMessageDelivery{}
 
 // UEMessageDelivery Contains the UE message delivery data
 type UEMessageDelivery struct {
-	OriAddr Address `json:"oriAddr"`
-	DestAddr Address `json:"destAddr"`
-	AppId *string `json:"appId,omitempty"`
-	MsgId string `json:"msgId"`
-	SecCred *string `json:"secCred,omitempty"`
-	DelivStReqInd *bool `json:"delivStReqInd,omitempty"`
-	Payload *string `json:"payload,omitempty"`
-	SegInd *bool `json:"segInd,omitempty"`
-	SegParams *MessageSegmentParameters `json:"segParams,omitempty"`
-	StoAndFwInd bool `json:"stoAndFwInd"`
+	OriAddr        Address                    `json:"oriAddr"`
+	DestAddr       Address                    `json:"destAddr"`
+	AppId          *string                    `json:"appId,omitempty"`
+	MsgId          string                     `json:"msgId"`
+	SecCred        *string                    `json:"secCred,omitempty"`
+	DelivStReqInd  *bool                      `json:"delivStReqInd,omitempty"`
+	Payload        *string                    `json:"payload,omitempty"`
+	SegInd         *bool                      `json:"segInd,omitempty"`
+	SegParams      *MessageSegmentParameters  `json:"segParams,omitempty"`
+	StoAndFwInd    bool                       `json:"stoAndFwInd"`
 	StoAndFwParams *StoreAndForwardParameters `json:"stoAndFwParams,omitempty"`
 }
 
@@ -103,7 +103,7 @@ func (o *UEMessageDelivery) SetDestAddr(v Address) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *UEMessageDelivery) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -121,7 +121,7 @@ func (o *UEMessageDelivery) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *UEMessageDelivery) SetMsgId(v string) {
 
 // GetSecCred returns the SecCred field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetSecCred() string {
-	if o == nil || isNil(o.SecCred) {
+	if o == nil || IsNil(o.SecCred) {
 		var ret string
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *UEMessageDelivery) GetSecCred() string {
 // GetSecCredOk returns a tuple with the SecCred field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetSecCredOk() (*string, bool) {
-	if o == nil || isNil(o.SecCred) {
+	if o == nil || IsNil(o.SecCred) {
 		return nil, false
 	}
 	return o.SecCred, true
@@ -177,7 +177,7 @@ func (o *UEMessageDelivery) GetSecCredOk() (*string, bool) {
 
 // HasSecCred returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasSecCred() bool {
-	if o != nil && !isNil(o.SecCred) {
+	if o != nil && !IsNil(o.SecCred) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *UEMessageDelivery) SetSecCred(v string) {
 
 // GetDelivStReqInd returns the DelivStReqInd field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetDelivStReqInd() bool {
-	if o == nil || isNil(o.DelivStReqInd) {
+	if o == nil || IsNil(o.DelivStReqInd) {
 		var ret bool
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *UEMessageDelivery) GetDelivStReqInd() bool {
 // GetDelivStReqIndOk returns a tuple with the DelivStReqInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetDelivStReqIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DelivStReqInd) {
+	if o == nil || IsNil(o.DelivStReqInd) {
 		return nil, false
 	}
 	return o.DelivStReqInd, true
@@ -209,7 +209,7 @@ func (o *UEMessageDelivery) GetDelivStReqIndOk() (*bool, bool) {
 
 // HasDelivStReqInd returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasDelivStReqInd() bool {
-	if o != nil && !isNil(o.DelivStReqInd) {
+	if o != nil && !IsNil(o.DelivStReqInd) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *UEMessageDelivery) SetDelivStReqInd(v bool) {
 
 // GetPayload returns the Payload field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetPayload() string {
-	if o == nil || isNil(o.Payload) {
+	if o == nil || IsNil(o.Payload) {
 		var ret string
 		return ret
 	}
@@ -233,7 +233,7 @@ func (o *UEMessageDelivery) GetPayload() string {
 // GetPayloadOk returns a tuple with the Payload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetPayloadOk() (*string, bool) {
-	if o == nil || isNil(o.Payload) {
+	if o == nil || IsNil(o.Payload) {
 		return nil, false
 	}
 	return o.Payload, true
@@ -241,7 +241,7 @@ func (o *UEMessageDelivery) GetPayloadOk() (*string, bool) {
 
 // HasPayload returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasPayload() bool {
-	if o != nil && !isNil(o.Payload) {
+	if o != nil && !IsNil(o.Payload) {
 		return true
 	}
 
@@ -255,7 +255,7 @@ func (o *UEMessageDelivery) SetPayload(v string) {
 
 // GetSegInd returns the SegInd field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetSegInd() bool {
-	if o == nil || isNil(o.SegInd) {
+	if o == nil || IsNil(o.SegInd) {
 		var ret bool
 		return ret
 	}
@@ -265,7 +265,7 @@ func (o *UEMessageDelivery) GetSegInd() bool {
 // GetSegIndOk returns a tuple with the SegInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetSegIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SegInd) {
+	if o == nil || IsNil(o.SegInd) {
 		return nil, false
 	}
 	return o.SegInd, true
@@ -273,7 +273,7 @@ func (o *UEMessageDelivery) GetSegIndOk() (*bool, bool) {
 
 // HasSegInd returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasSegInd() bool {
-	if o != nil && !isNil(o.SegInd) {
+	if o != nil && !IsNil(o.SegInd) {
 		return true
 	}
 
@@ -287,7 +287,7 @@ func (o *UEMessageDelivery) SetSegInd(v bool) {
 
 // GetSegParams returns the SegParams field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetSegParams() MessageSegmentParameters {
-	if o == nil || isNil(o.SegParams) {
+	if o == nil || IsNil(o.SegParams) {
 		var ret MessageSegmentParameters
 		return ret
 	}
@@ -297,7 +297,7 @@ func (o *UEMessageDelivery) GetSegParams() MessageSegmentParameters {
 // GetSegParamsOk returns a tuple with the SegParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetSegParamsOk() (*MessageSegmentParameters, bool) {
-	if o == nil || isNil(o.SegParams) {
+	if o == nil || IsNil(o.SegParams) {
 		return nil, false
 	}
 	return o.SegParams, true
@@ -305,7 +305,7 @@ func (o *UEMessageDelivery) GetSegParamsOk() (*MessageSegmentParameters, bool) {
 
 // HasSegParams returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasSegParams() bool {
-	if o != nil && !isNil(o.SegParams) {
+	if o != nil && !IsNil(o.SegParams) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *UEMessageDelivery) SetStoAndFwInd(v bool) {
 
 // GetStoAndFwParams returns the StoAndFwParams field value if set, zero value otherwise.
 func (o *UEMessageDelivery) GetStoAndFwParams() StoreAndForwardParameters {
-	if o == nil || isNil(o.StoAndFwParams) {
+	if o == nil || IsNil(o.StoAndFwParams) {
 		var ret StoreAndForwardParameters
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *UEMessageDelivery) GetStoAndFwParams() StoreAndForwardParameters {
 // GetStoAndFwParamsOk returns a tuple with the StoAndFwParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEMessageDelivery) GetStoAndFwParamsOk() (*StoreAndForwardParameters, bool) {
-	if o == nil || isNil(o.StoAndFwParams) {
+	if o == nil || IsNil(o.StoAndFwParams) {
 		return nil, false
 	}
 	return o.StoAndFwParams, true
@@ -361,7 +361,7 @@ func (o *UEMessageDelivery) GetStoAndFwParamsOk() (*StoreAndForwardParameters, b
 
 // HasStoAndFwParams returns a boolean if a field has been set.
 func (o *UEMessageDelivery) HasStoAndFwParams() bool {
-	if o != nil && !isNil(o.StoAndFwParams) {
+	if o != nil && !IsNil(o.StoAndFwParams) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *UEMessageDelivery) SetStoAndFwParams(v StoreAndForwardParameters) {
 }
 
 func (o UEMessageDelivery) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -385,27 +385,27 @@ func (o UEMessageDelivery) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["oriAddr"] = o.OriAddr
 	toSerialize["destAddr"] = o.DestAddr
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
 	toSerialize["msgId"] = o.MsgId
-	if !isNil(o.SecCred) {
+	if !IsNil(o.SecCred) {
 		toSerialize["secCred"] = o.SecCred
 	}
-	if !isNil(o.DelivStReqInd) {
+	if !IsNil(o.DelivStReqInd) {
 		toSerialize["delivStReqInd"] = o.DelivStReqInd
 	}
-	if !isNil(o.Payload) {
+	if !IsNil(o.Payload) {
 		toSerialize["payload"] = o.Payload
 	}
-	if !isNil(o.SegInd) {
+	if !IsNil(o.SegInd) {
 		toSerialize["segInd"] = o.SegInd
 	}
-	if !isNil(o.SegParams) {
+	if !IsNil(o.SegParams) {
 		toSerialize["segParams"] = o.SegParams
 	}
 	toSerialize["stoAndFwInd"] = o.StoAndFwInd
-	if !isNil(o.StoAndFwParams) {
+	if !IsNil(o.StoAndFwParams) {
 		toSerialize["stoAndFwParams"] = o.StoAndFwParams
 	}
 	return toSerialize, nil
@@ -446,5 +446,3 @@ func (v *NullableUEMessageDelivery) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,30 +20,30 @@ var _ MappedNullable = &RegistrationContextContainer{}
 // RegistrationContextContainer Registration Context Container used to send the UE context information, N1 message from UE, AN address etc during Registration with AMF re-allocation procedure
 type RegistrationContextContainer struct {
 	UeContext UeContext `json:"ueContext"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	LocalTimeZone *string `json:"localTimeZone,omitempty"`
-	AnType AccessType `json:"anType"`
-	AnN2ApId int32 `json:"anN2ApId"`
-	RanNodeId GlobalRanNodeId `json:"ranNodeId"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	LocalTimeZone *string         `json:"localTimeZone,omitempty"`
+	AnType        AccessType      `json:"anType"`
+	AnN2ApId      int32           `json:"anN2ApId"`
+	RanNodeId     GlobalRanNodeId `json:"ranNodeId"`
 	// Fully Qualified Domain Name
-	InitialAmfName string `json:"initialAmfName"`
-	UserLocation UserLocation `json:"userLocation"`
-	RrcEstCause *string `json:"rrcEstCause,omitempty"`
-	UeContextRequest *bool `json:"ueContextRequest,omitempty"`
-	InitialAmfN2ApId *int32 `json:"initialAmfN2ApId,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	AnN2IPv4Addr *string `json:"anN2IPv4Addr,omitempty"`
-	AnN2IPv6Addr *Ipv6Addr `json:"anN2IPv6Addr,omitempty"`
-	AllowedNssai *AllowedNssai `json:"allowedNssai,omitempty"`
-	ConfiguredNssai []ConfiguredSnssai `json:"configuredNssai,omitempty"`
-	RejectedNssaiInPlmn []Snssai `json:"rejectedNssaiInPlmn,omitempty"`
-	RejectedNssaiInTa []Snssai `json:"rejectedNssaiInTa,omitempty"`
-	SelectedPlmnId *PlmnId `json:"selectedPlmnId,omitempty"`
-	IabNodeInd *bool `json:"iabNodeInd,omitempty"`
-	CeModeBInd *CeModeBInd `json:"ceModeBInd,omitempty"`
-	LteMInd *LteMInd `json:"lteMInd,omitempty"`
-	AuthenticatedInd *bool `json:"authenticatedInd,omitempty"`
-	NpnAccessInfo *NpnAccessInfo `json:"npnAccessInfo,omitempty"`
+	InitialAmfName   string       `json:"initialAmfName"`
+	UserLocation     UserLocation `json:"userLocation"`
+	RrcEstCause      *string      `json:"rrcEstCause,omitempty"`
+	UeContextRequest *bool        `json:"ueContextRequest,omitempty"`
+	InitialAmfN2ApId *int32       `json:"initialAmfN2ApId,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	AnN2IPv4Addr        *string            `json:"anN2IPv4Addr,omitempty"`
+	AnN2IPv6Addr        *Ipv6Addr          `json:"anN2IPv6Addr,omitempty"`
+	AllowedNssai        *AllowedNssai      `json:"allowedNssai,omitempty"`
+	ConfiguredNssai     []ConfiguredSnssai `json:"configuredNssai,omitempty"`
+	RejectedNssaiInPlmn []Snssai           `json:"rejectedNssaiInPlmn,omitempty"`
+	RejectedNssaiInTa   []Snssai           `json:"rejectedNssaiInTa,omitempty"`
+	SelectedPlmnId      *PlmnId            `json:"selectedPlmnId,omitempty"`
+	IabNodeInd          *bool              `json:"iabNodeInd,omitempty"`
+	CeModeBInd          *CeModeBInd        `json:"ceModeBInd,omitempty"`
+	LteMInd             *LteMInd           `json:"lteMInd,omitempty"`
+	AuthenticatedInd    *bool              `json:"authenticatedInd,omitempty"`
+	NpnAccessInfo       *NpnAccessInfo     `json:"npnAccessInfo,omitempty"`
 }
 
 // NewRegistrationContextContainer instantiates a new RegistrationContextContainer object
@@ -107,7 +107,7 @@ func (o *RegistrationContextContainer) SetUeContext(v UeContext) {
 
 // GetLocalTimeZone returns the LocalTimeZone field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetLocalTimeZone() string {
-	if o == nil || isNil(o.LocalTimeZone) {
+	if o == nil || IsNil(o.LocalTimeZone) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RegistrationContextContainer) GetLocalTimeZone() string {
 // GetLocalTimeZoneOk returns a tuple with the LocalTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetLocalTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.LocalTimeZone) {
+	if o == nil || IsNil(o.LocalTimeZone) {
 		return nil, false
 	}
 	return o.LocalTimeZone, true
@@ -125,7 +125,7 @@ func (o *RegistrationContextContainer) GetLocalTimeZoneOk() (*string, bool) {
 
 // HasLocalTimeZone returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasLocalTimeZone() bool {
-	if o != nil && !isNil(o.LocalTimeZone) {
+	if o != nil && !IsNil(o.LocalTimeZone) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *RegistrationContextContainer) SetUserLocation(v UserLocation) {
 
 // GetRrcEstCause returns the RrcEstCause field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetRrcEstCause() string {
-	if o == nil || isNil(o.RrcEstCause) {
+	if o == nil || IsNil(o.RrcEstCause) {
 		var ret string
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *RegistrationContextContainer) GetRrcEstCause() string {
 // GetRrcEstCauseOk returns a tuple with the RrcEstCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetRrcEstCauseOk() (*string, bool) {
-	if o == nil || isNil(o.RrcEstCause) {
+	if o == nil || IsNil(o.RrcEstCause) {
 		return nil, false
 	}
 	return o.RrcEstCause, true
@@ -277,7 +277,7 @@ func (o *RegistrationContextContainer) GetRrcEstCauseOk() (*string, bool) {
 
 // HasRrcEstCause returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasRrcEstCause() bool {
-	if o != nil && !isNil(o.RrcEstCause) {
+	if o != nil && !IsNil(o.RrcEstCause) {
 		return true
 	}
 
@@ -291,7 +291,7 @@ func (o *RegistrationContextContainer) SetRrcEstCause(v string) {
 
 // GetUeContextRequest returns the UeContextRequest field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetUeContextRequest() bool {
-	if o == nil || isNil(o.UeContextRequest) {
+	if o == nil || IsNil(o.UeContextRequest) {
 		var ret bool
 		return ret
 	}
@@ -301,7 +301,7 @@ func (o *RegistrationContextContainer) GetUeContextRequest() bool {
 // GetUeContextRequestOk returns a tuple with the UeContextRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetUeContextRequestOk() (*bool, bool) {
-	if o == nil || isNil(o.UeContextRequest) {
+	if o == nil || IsNil(o.UeContextRequest) {
 		return nil, false
 	}
 	return o.UeContextRequest, true
@@ -309,7 +309,7 @@ func (o *RegistrationContextContainer) GetUeContextRequestOk() (*bool, bool) {
 
 // HasUeContextRequest returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasUeContextRequest() bool {
-	if o != nil && !isNil(o.UeContextRequest) {
+	if o != nil && !IsNil(o.UeContextRequest) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *RegistrationContextContainer) SetUeContextRequest(v bool) {
 
 // GetInitialAmfN2ApId returns the InitialAmfN2ApId field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetInitialAmfN2ApId() int32 {
-	if o == nil || isNil(o.InitialAmfN2ApId) {
+	if o == nil || IsNil(o.InitialAmfN2ApId) {
 		var ret int32
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *RegistrationContextContainer) GetInitialAmfN2ApId() int32 {
 // GetInitialAmfN2ApIdOk returns a tuple with the InitialAmfN2ApId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetInitialAmfN2ApIdOk() (*int32, bool) {
-	if o == nil || isNil(o.InitialAmfN2ApId) {
+	if o == nil || IsNil(o.InitialAmfN2ApId) {
 		return nil, false
 	}
 	return o.InitialAmfN2ApId, true
@@ -341,7 +341,7 @@ func (o *RegistrationContextContainer) GetInitialAmfN2ApIdOk() (*int32, bool) {
 
 // HasInitialAmfN2ApId returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasInitialAmfN2ApId() bool {
-	if o != nil && !isNil(o.InitialAmfN2ApId) {
+	if o != nil && !IsNil(o.InitialAmfN2ApId) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *RegistrationContextContainer) SetInitialAmfN2ApId(v int32) {
 
 // GetAnN2IPv4Addr returns the AnN2IPv4Addr field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetAnN2IPv4Addr() string {
-	if o == nil || isNil(o.AnN2IPv4Addr) {
+	if o == nil || IsNil(o.AnN2IPv4Addr) {
 		var ret string
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *RegistrationContextContainer) GetAnN2IPv4Addr() string {
 // GetAnN2IPv4AddrOk returns a tuple with the AnN2IPv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetAnN2IPv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.AnN2IPv4Addr) {
+	if o == nil || IsNil(o.AnN2IPv4Addr) {
 		return nil, false
 	}
 	return o.AnN2IPv4Addr, true
@@ -373,7 +373,7 @@ func (o *RegistrationContextContainer) GetAnN2IPv4AddrOk() (*string, bool) {
 
 // HasAnN2IPv4Addr returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasAnN2IPv4Addr() bool {
-	if o != nil && !isNil(o.AnN2IPv4Addr) {
+	if o != nil && !IsNil(o.AnN2IPv4Addr) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *RegistrationContextContainer) SetAnN2IPv4Addr(v string) {
 
 // GetAnN2IPv6Addr returns the AnN2IPv6Addr field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetAnN2IPv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.AnN2IPv6Addr) {
+	if o == nil || IsNil(o.AnN2IPv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *RegistrationContextContainer) GetAnN2IPv6Addr() Ipv6Addr {
 // GetAnN2IPv6AddrOk returns a tuple with the AnN2IPv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetAnN2IPv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.AnN2IPv6Addr) {
+	if o == nil || IsNil(o.AnN2IPv6Addr) {
 		return nil, false
 	}
 	return o.AnN2IPv6Addr, true
@@ -405,7 +405,7 @@ func (o *RegistrationContextContainer) GetAnN2IPv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasAnN2IPv6Addr returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasAnN2IPv6Addr() bool {
-	if o != nil && !isNil(o.AnN2IPv6Addr) {
+	if o != nil && !IsNil(o.AnN2IPv6Addr) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *RegistrationContextContainer) SetAnN2IPv6Addr(v Ipv6Addr) {
 
 // GetAllowedNssai returns the AllowedNssai field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetAllowedNssai() AllowedNssai {
-	if o == nil || isNil(o.AllowedNssai) {
+	if o == nil || IsNil(o.AllowedNssai) {
 		var ret AllowedNssai
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *RegistrationContextContainer) GetAllowedNssai() AllowedNssai {
 // GetAllowedNssaiOk returns a tuple with the AllowedNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetAllowedNssaiOk() (*AllowedNssai, bool) {
-	if o == nil || isNil(o.AllowedNssai) {
+	if o == nil || IsNil(o.AllowedNssai) {
 		return nil, false
 	}
 	return o.AllowedNssai, true
@@ -437,7 +437,7 @@ func (o *RegistrationContextContainer) GetAllowedNssaiOk() (*AllowedNssai, bool)
 
 // HasAllowedNssai returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasAllowedNssai() bool {
-	if o != nil && !isNil(o.AllowedNssai) {
+	if o != nil && !IsNil(o.AllowedNssai) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *RegistrationContextContainer) SetAllowedNssai(v AllowedNssai) {
 
 // GetConfiguredNssai returns the ConfiguredNssai field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetConfiguredNssai() []ConfiguredSnssai {
-	if o == nil || isNil(o.ConfiguredNssai) {
+	if o == nil || IsNil(o.ConfiguredNssai) {
 		var ret []ConfiguredSnssai
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *RegistrationContextContainer) GetConfiguredNssai() []ConfiguredSnssai {
 // GetConfiguredNssaiOk returns a tuple with the ConfiguredNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetConfiguredNssaiOk() ([]ConfiguredSnssai, bool) {
-	if o == nil || isNil(o.ConfiguredNssai) {
+	if o == nil || IsNil(o.ConfiguredNssai) {
 		return nil, false
 	}
 	return o.ConfiguredNssai, true
@@ -469,7 +469,7 @@ func (o *RegistrationContextContainer) GetConfiguredNssaiOk() ([]ConfiguredSnssa
 
 // HasConfiguredNssai returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasConfiguredNssai() bool {
-	if o != nil && !isNil(o.ConfiguredNssai) {
+	if o != nil && !IsNil(o.ConfiguredNssai) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *RegistrationContextContainer) SetConfiguredNssai(v []ConfiguredSnssai) 
 
 // GetRejectedNssaiInPlmn returns the RejectedNssaiInPlmn field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetRejectedNssaiInPlmn() []Snssai {
-	if o == nil || isNil(o.RejectedNssaiInPlmn) {
+	if o == nil || IsNil(o.RejectedNssaiInPlmn) {
 		var ret []Snssai
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *RegistrationContextContainer) GetRejectedNssaiInPlmn() []Snssai {
 // GetRejectedNssaiInPlmnOk returns a tuple with the RejectedNssaiInPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetRejectedNssaiInPlmnOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.RejectedNssaiInPlmn) {
+	if o == nil || IsNil(o.RejectedNssaiInPlmn) {
 		return nil, false
 	}
 	return o.RejectedNssaiInPlmn, true
@@ -501,7 +501,7 @@ func (o *RegistrationContextContainer) GetRejectedNssaiInPlmnOk() ([]Snssai, boo
 
 // HasRejectedNssaiInPlmn returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasRejectedNssaiInPlmn() bool {
-	if o != nil && !isNil(o.RejectedNssaiInPlmn) {
+	if o != nil && !IsNil(o.RejectedNssaiInPlmn) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *RegistrationContextContainer) SetRejectedNssaiInPlmn(v []Snssai) {
 
 // GetRejectedNssaiInTa returns the RejectedNssaiInTa field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetRejectedNssaiInTa() []Snssai {
-	if o == nil || isNil(o.RejectedNssaiInTa) {
+	if o == nil || IsNil(o.RejectedNssaiInTa) {
 		var ret []Snssai
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *RegistrationContextContainer) GetRejectedNssaiInTa() []Snssai {
 // GetRejectedNssaiInTaOk returns a tuple with the RejectedNssaiInTa field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetRejectedNssaiInTaOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.RejectedNssaiInTa) {
+	if o == nil || IsNil(o.RejectedNssaiInTa) {
 		return nil, false
 	}
 	return o.RejectedNssaiInTa, true
@@ -533,7 +533,7 @@ func (o *RegistrationContextContainer) GetRejectedNssaiInTaOk() ([]Snssai, bool)
 
 // HasRejectedNssaiInTa returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasRejectedNssaiInTa() bool {
-	if o != nil && !isNil(o.RejectedNssaiInTa) {
+	if o != nil && !IsNil(o.RejectedNssaiInTa) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *RegistrationContextContainer) SetRejectedNssaiInTa(v []Snssai) {
 
 // GetSelectedPlmnId returns the SelectedPlmnId field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetSelectedPlmnId() PlmnId {
-	if o == nil || isNil(o.SelectedPlmnId) {
+	if o == nil || IsNil(o.SelectedPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *RegistrationContextContainer) GetSelectedPlmnId() PlmnId {
 // GetSelectedPlmnIdOk returns a tuple with the SelectedPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetSelectedPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.SelectedPlmnId) {
+	if o == nil || IsNil(o.SelectedPlmnId) {
 		return nil, false
 	}
 	return o.SelectedPlmnId, true
@@ -565,7 +565,7 @@ func (o *RegistrationContextContainer) GetSelectedPlmnIdOk() (*PlmnId, bool) {
 
 // HasSelectedPlmnId returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasSelectedPlmnId() bool {
-	if o != nil && !isNil(o.SelectedPlmnId) {
+	if o != nil && !IsNil(o.SelectedPlmnId) {
 		return true
 	}
 
@@ -579,7 +579,7 @@ func (o *RegistrationContextContainer) SetSelectedPlmnId(v PlmnId) {
 
 // GetIabNodeInd returns the IabNodeInd field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetIabNodeInd() bool {
-	if o == nil || isNil(o.IabNodeInd) {
+	if o == nil || IsNil(o.IabNodeInd) {
 		var ret bool
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *RegistrationContextContainer) GetIabNodeInd() bool {
 // GetIabNodeIndOk returns a tuple with the IabNodeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetIabNodeIndOk() (*bool, bool) {
-	if o == nil || isNil(o.IabNodeInd) {
+	if o == nil || IsNil(o.IabNodeInd) {
 		return nil, false
 	}
 	return o.IabNodeInd, true
@@ -597,7 +597,7 @@ func (o *RegistrationContextContainer) GetIabNodeIndOk() (*bool, bool) {
 
 // HasIabNodeInd returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasIabNodeInd() bool {
-	if o != nil && !isNil(o.IabNodeInd) {
+	if o != nil && !IsNil(o.IabNodeInd) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o *RegistrationContextContainer) SetIabNodeInd(v bool) {
 
 // GetCeModeBInd returns the CeModeBInd field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetCeModeBInd() CeModeBInd {
-	if o == nil || isNil(o.CeModeBInd) {
+	if o == nil || IsNil(o.CeModeBInd) {
 		var ret CeModeBInd
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *RegistrationContextContainer) GetCeModeBInd() CeModeBInd {
 // GetCeModeBIndOk returns a tuple with the CeModeBInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetCeModeBIndOk() (*CeModeBInd, bool) {
-	if o == nil || isNil(o.CeModeBInd) {
+	if o == nil || IsNil(o.CeModeBInd) {
 		return nil, false
 	}
 	return o.CeModeBInd, true
@@ -629,7 +629,7 @@ func (o *RegistrationContextContainer) GetCeModeBIndOk() (*CeModeBInd, bool) {
 
 // HasCeModeBInd returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasCeModeBInd() bool {
-	if o != nil && !isNil(o.CeModeBInd) {
+	if o != nil && !IsNil(o.CeModeBInd) {
 		return true
 	}
 
@@ -643,7 +643,7 @@ func (o *RegistrationContextContainer) SetCeModeBInd(v CeModeBInd) {
 
 // GetLteMInd returns the LteMInd field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetLteMInd() LteMInd {
-	if o == nil || isNil(o.LteMInd) {
+	if o == nil || IsNil(o.LteMInd) {
 		var ret LteMInd
 		return ret
 	}
@@ -653,7 +653,7 @@ func (o *RegistrationContextContainer) GetLteMInd() LteMInd {
 // GetLteMIndOk returns a tuple with the LteMInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetLteMIndOk() (*LteMInd, bool) {
-	if o == nil || isNil(o.LteMInd) {
+	if o == nil || IsNil(o.LteMInd) {
 		return nil, false
 	}
 	return o.LteMInd, true
@@ -661,7 +661,7 @@ func (o *RegistrationContextContainer) GetLteMIndOk() (*LteMInd, bool) {
 
 // HasLteMInd returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasLteMInd() bool {
-	if o != nil && !isNil(o.LteMInd) {
+	if o != nil && !IsNil(o.LteMInd) {
 		return true
 	}
 
@@ -675,7 +675,7 @@ func (o *RegistrationContextContainer) SetLteMInd(v LteMInd) {
 
 // GetAuthenticatedInd returns the AuthenticatedInd field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetAuthenticatedInd() bool {
-	if o == nil || isNil(o.AuthenticatedInd) {
+	if o == nil || IsNil(o.AuthenticatedInd) {
 		var ret bool
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *RegistrationContextContainer) GetAuthenticatedInd() bool {
 // GetAuthenticatedIndOk returns a tuple with the AuthenticatedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetAuthenticatedIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AuthenticatedInd) {
+	if o == nil || IsNil(o.AuthenticatedInd) {
 		return nil, false
 	}
 	return o.AuthenticatedInd, true
@@ -693,7 +693,7 @@ func (o *RegistrationContextContainer) GetAuthenticatedIndOk() (*bool, bool) {
 
 // HasAuthenticatedInd returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasAuthenticatedInd() bool {
-	if o != nil && !isNil(o.AuthenticatedInd) {
+	if o != nil && !IsNil(o.AuthenticatedInd) {
 		return true
 	}
 
@@ -707,7 +707,7 @@ func (o *RegistrationContextContainer) SetAuthenticatedInd(v bool) {
 
 // GetNpnAccessInfo returns the NpnAccessInfo field value if set, zero value otherwise.
 func (o *RegistrationContextContainer) GetNpnAccessInfo() NpnAccessInfo {
-	if o == nil || isNil(o.NpnAccessInfo) {
+	if o == nil || IsNil(o.NpnAccessInfo) {
 		var ret NpnAccessInfo
 		return ret
 	}
@@ -717,7 +717,7 @@ func (o *RegistrationContextContainer) GetNpnAccessInfo() NpnAccessInfo {
 // GetNpnAccessInfoOk returns a tuple with the NpnAccessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationContextContainer) GetNpnAccessInfoOk() (*NpnAccessInfo, bool) {
-	if o == nil || isNil(o.NpnAccessInfo) {
+	if o == nil || IsNil(o.NpnAccessInfo) {
 		return nil, false
 	}
 	return o.NpnAccessInfo, true
@@ -725,7 +725,7 @@ func (o *RegistrationContextContainer) GetNpnAccessInfoOk() (*NpnAccessInfo, boo
 
 // HasNpnAccessInfo returns a boolean if a field has been set.
 func (o *RegistrationContextContainer) HasNpnAccessInfo() bool {
-	if o != nil && !isNil(o.NpnAccessInfo) {
+	if o != nil && !IsNil(o.NpnAccessInfo) {
 		return true
 	}
 
@@ -738,7 +738,7 @@ func (o *RegistrationContextContainer) SetNpnAccessInfo(v NpnAccessInfo) {
 }
 
 func (o RegistrationContextContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -748,7 +748,7 @@ func (o RegistrationContextContainer) MarshalJSON() ([]byte, error) {
 func (o RegistrationContextContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueContext"] = o.UeContext
-	if !isNil(o.LocalTimeZone) {
+	if !IsNil(o.LocalTimeZone) {
 		toSerialize["localTimeZone"] = o.LocalTimeZone
 	}
 	toSerialize["anType"] = o.AnType
@@ -756,49 +756,49 @@ func (o RegistrationContextContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize["ranNodeId"] = o.RanNodeId
 	toSerialize["initialAmfName"] = o.InitialAmfName
 	toSerialize["userLocation"] = o.UserLocation
-	if !isNil(o.RrcEstCause) {
+	if !IsNil(o.RrcEstCause) {
 		toSerialize["rrcEstCause"] = o.RrcEstCause
 	}
-	if !isNil(o.UeContextRequest) {
+	if !IsNil(o.UeContextRequest) {
 		toSerialize["ueContextRequest"] = o.UeContextRequest
 	}
-	if !isNil(o.InitialAmfN2ApId) {
+	if !IsNil(o.InitialAmfN2ApId) {
 		toSerialize["initialAmfN2ApId"] = o.InitialAmfN2ApId
 	}
-	if !isNil(o.AnN2IPv4Addr) {
+	if !IsNil(o.AnN2IPv4Addr) {
 		toSerialize["anN2IPv4Addr"] = o.AnN2IPv4Addr
 	}
-	if !isNil(o.AnN2IPv6Addr) {
+	if !IsNil(o.AnN2IPv6Addr) {
 		toSerialize["anN2IPv6Addr"] = o.AnN2IPv6Addr
 	}
-	if !isNil(o.AllowedNssai) {
+	if !IsNil(o.AllowedNssai) {
 		toSerialize["allowedNssai"] = o.AllowedNssai
 	}
-	if !isNil(o.ConfiguredNssai) {
+	if !IsNil(o.ConfiguredNssai) {
 		toSerialize["configuredNssai"] = o.ConfiguredNssai
 	}
-	if !isNil(o.RejectedNssaiInPlmn) {
+	if !IsNil(o.RejectedNssaiInPlmn) {
 		toSerialize["rejectedNssaiInPlmn"] = o.RejectedNssaiInPlmn
 	}
-	if !isNil(o.RejectedNssaiInTa) {
+	if !IsNil(o.RejectedNssaiInTa) {
 		toSerialize["rejectedNssaiInTa"] = o.RejectedNssaiInTa
 	}
-	if !isNil(o.SelectedPlmnId) {
+	if !IsNil(o.SelectedPlmnId) {
 		toSerialize["selectedPlmnId"] = o.SelectedPlmnId
 	}
-	if !isNil(o.IabNodeInd) {
+	if !IsNil(o.IabNodeInd) {
 		toSerialize["iabNodeInd"] = o.IabNodeInd
 	}
-	if !isNil(o.CeModeBInd) {
+	if !IsNil(o.CeModeBInd) {
 		toSerialize["ceModeBInd"] = o.CeModeBInd
 	}
-	if !isNil(o.LteMInd) {
+	if !IsNil(o.LteMInd) {
 		toSerialize["lteMInd"] = o.LteMInd
 	}
-	if !isNil(o.AuthenticatedInd) {
+	if !IsNil(o.AuthenticatedInd) {
 		toSerialize["authenticatedInd"] = o.AuthenticatedInd
 	}
-	if !isNil(o.NpnAccessInfo) {
+	if !IsNil(o.NpnAccessInfo) {
 		toSerialize["npnAccessInfo"] = o.NpnAccessInfo
 	}
 	return toSerialize, nil
@@ -839,5 +839,3 @@ func (v *NullableRegistrationContextContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

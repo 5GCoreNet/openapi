@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// RequestedRuleDataType Possible values are: - CH_ID: Indicates that the requested rule data is the charging identifier.  - MS_TIME_ZONE: Indicates that the requested access network info type is the UE's timezone. - USER_LOC_INFO: Indicates that the requested access network info type is the UE's location. - RES_RELEASE: Indicates that the requested rule data is the result of the release of  resource. - SUCC_RES_ALLO: Indicates that the requested rule data is the successful resource  allocation. - EPS_FALLBACK: Indicates that the requested rule data is the report of QoS flow rejection  due to EPS fallback. 
+// RequestedRuleDataType Possible values are: - CH_ID: Indicates that the requested rule data is the charging identifier.  - MS_TIME_ZONE: Indicates that the requested access network info type is the UE's timezone. - USER_LOC_INFO: Indicates that the requested access network info type is the UE's location. - RES_RELEASE: Indicates that the requested rule data is the result of the release of  resource. - SUCC_RES_ALLO: Indicates that the requested rule data is the successful resource  allocation. - EPS_FALLBACK: Indicates that the requested rule data is the report of QoS flow rejection  due to EPS fallback.
 type RequestedRuleDataType struct {
-	RequestedRuleDataTypeAnyOf *RequestedRuleDataTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RequestedRuleDataType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RequestedRuleDataTypeAnyOf
-	err = json.Unmarshal(data, &dst.RequestedRuleDataTypeAnyOf);
-	if err == nil {
-		jsonRequestedRuleDataTypeAnyOf, _ := json.Marshal(dst.RequestedRuleDataTypeAnyOf)
-		if string(jsonRequestedRuleDataTypeAnyOf) == "{}" { // empty struct
-			dst.RequestedRuleDataTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.RequestedRuleDataTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.RequestedRuleDataTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RequestedRuleDataType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RequestedRuleDataType) MarshalJSON() ([]byte, error) {
-	if src.RequestedRuleDataTypeAnyOf != nil {
-		return json.Marshal(&src.RequestedRuleDataTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRequestedRuleDataType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

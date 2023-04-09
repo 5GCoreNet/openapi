@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AmEventsSubscData{}
 // AmEventsSubscData It represents the AM Policy Events Subscription subresource and identifies the events the application subscribes to.
 type AmEventsSubscData struct {
 	// String providing an URI formatted according to RFC 3986.
-	EventNotifUri string `json:"eventNotifUri"`
-	Events []AmEventData `json:"events,omitempty"`
+	EventNotifUri string        `json:"eventNotifUri"`
+	Events        []AmEventData `json:"events,omitempty"`
 }
 
 // NewAmEventsSubscData instantiates a new AmEventsSubscData object
@@ -68,7 +68,7 @@ func (o *AmEventsSubscData) SetEventNotifUri(v string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *AmEventsSubscData) GetEvents() []AmEventData {
-	if o == nil || isNil(o.Events) {
+	if o == nil || IsNil(o.Events) {
 		var ret []AmEventData
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AmEventsSubscData) GetEvents() []AmEventData {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsSubscData) GetEventsOk() ([]AmEventData, bool) {
-	if o == nil || isNil(o.Events) {
+	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -86,7 +86,7 @@ func (o *AmEventsSubscData) GetEventsOk() ([]AmEventData, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *AmEventsSubscData) HasEvents() bool {
-	if o != nil && !isNil(o.Events) {
+	if o != nil && !IsNil(o.Events) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *AmEventsSubscData) SetEvents(v []AmEventData) {
 }
 
 func (o AmEventsSubscData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o AmEventsSubscData) MarshalJSON() ([]byte, error) {
 func (o AmEventsSubscData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventNotifUri"] = o.EventNotifUri
-	if !isNil(o.Events) {
+	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableAmEventsSubscData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &GbrQosFlowInformation{}
 
 // GbrQosFlowInformation GBR MBS QoS flow information
 type GbrQosFlowInformation struct {
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxFbrDl string `json:"maxFbrDl"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbrDl string `json:"guaFbrDl"`
-	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent. 
+	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
 	MaxPacketLossRateDl *int32 `json:"maxPacketLossRateDl,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *GbrQosFlowInformation) SetGuaFbrDl(v string) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateDl) {
+	if o == nil || IsNil(o.MaxPacketLossRateDl) {
 		var ret int32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
 // GetMaxPacketLossRateDlOk returns a tuple with the MaxPacketLossRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPacketLossRateDl) {
+	if o == nil || IsNil(o.MaxPacketLossRateDl) {
 		return nil, false
 	}
 	return o.MaxPacketLossRateDl, true
@@ -114,7 +114,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
 
 // HasMaxPacketLossRateDl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasMaxPacketLossRateDl() bool {
-	if o != nil && !isNil(o.MaxPacketLossRateDl) {
+	if o != nil && !IsNil(o.MaxPacketLossRateDl) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *GbrQosFlowInformation) SetMaxPacketLossRateDl(v int32) {
 }
 
 func (o GbrQosFlowInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o GbrQosFlowInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["maxFbrDl"] = o.MaxFbrDl
 	toSerialize["guaFbrDl"] = o.GuaFbrDl
-	if !isNil(o.MaxPacketLossRateDl) {
+	if !IsNil(o.MaxPacketLossRateDl) {
 		toSerialize["maxPacketLossRateDl"] = o.MaxPacketLossRateDl
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableGbrQosFlowInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

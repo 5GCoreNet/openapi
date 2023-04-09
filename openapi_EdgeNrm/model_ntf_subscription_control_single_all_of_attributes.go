@@ -19,9 +19,9 @@ var _ MappedNullable = &NtfSubscriptionControlSingleAllOfAttributes{}
 
 // NtfSubscriptionControlSingleAllOfAttributes struct for NtfSubscriptionControlSingleAllOfAttributes
 type NtfSubscriptionControlSingleAllOfAttributes struct {
-	NotificationRecipientAddress *string `json:"notificationRecipientAddress,omitempty"`
-	NotificationTypes []NotificationType `json:"notificationTypes,omitempty"`
-	Scope *Scope `json:"scope,omitempty"`
+	NotificationRecipientAddress *string            `json:"notificationRecipientAddress,omitempty"`
+	NotificationTypes            []NotificationType `json:"notificationTypes,omitempty"`
+	Scope                        *Scope             `json:"scope,omitempty"`
 	// The filter format shall be compliant to XPath 1.0.
 	NotificationFilter *string `json:"notificationFilter,omitempty"`
 }
@@ -45,7 +45,7 @@ func NewNtfSubscriptionControlSingleAllOfAttributesWithDefaults() *NtfSubscripti
 
 // GetNotificationRecipientAddress returns the NotificationRecipientAddress field value if set, zero value otherwise.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationRecipientAddress() string {
-	if o == nil || isNil(o.NotificationRecipientAddress) {
+	if o == nil || IsNil(o.NotificationRecipientAddress) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationRecipientAd
 // GetNotificationRecipientAddressOk returns a tuple with the NotificationRecipientAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationRecipientAddressOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationRecipientAddress) {
+	if o == nil || IsNil(o.NotificationRecipientAddress) {
 		return nil, false
 	}
 	return o.NotificationRecipientAddress, true
@@ -63,7 +63,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationRecipientAd
 
 // HasNotificationRecipientAddress returns a boolean if a field has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) HasNotificationRecipientAddress() bool {
-	if o != nil && !isNil(o.NotificationRecipientAddress) {
+	if o != nil && !IsNil(o.NotificationRecipientAddress) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) SetNotificationRecipientAd
 
 // GetNotificationTypes returns the NotificationTypes field value if set, zero value otherwise.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationTypes() []NotificationType {
-	if o == nil || isNil(o.NotificationTypes) {
+	if o == nil || IsNil(o.NotificationTypes) {
 		var ret []NotificationType
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationTypes() []N
 // GetNotificationTypesOk returns a tuple with the NotificationTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationTypesOk() ([]NotificationType, bool) {
-	if o == nil || isNil(o.NotificationTypes) {
+	if o == nil || IsNil(o.NotificationTypes) {
 		return nil, false
 	}
 	return o.NotificationTypes, true
@@ -95,7 +95,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationTypesOk() (
 
 // HasNotificationTypes returns a boolean if a field has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) HasNotificationTypes() bool {
-	if o != nil && !isNil(o.NotificationTypes) {
+	if o != nil && !IsNil(o.NotificationTypes) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) SetNotificationTypes(v []N
 
 // GetScope returns the Scope field value if set, zero value otherwise.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetScope() Scope {
-	if o == nil || isNil(o.Scope) {
+	if o == nil || IsNil(o.Scope) {
 		var ret Scope
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetScope() Scope {
 // GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetScopeOk() (*Scope, bool) {
-	if o == nil || isNil(o.Scope) {
+	if o == nil || IsNil(o.Scope) {
 		return nil, false
 	}
 	return o.Scope, true
@@ -127,7 +127,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetScopeOk() (*Scope, bool
 
 // HasScope returns a boolean if a field has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) HasScope() bool {
-	if o != nil && !isNil(o.Scope) {
+	if o != nil && !IsNil(o.Scope) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) SetScope(v Scope) {
 
 // GetNotificationFilter returns the NotificationFilter field value if set, zero value otherwise.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationFilter() string {
-	if o == nil || isNil(o.NotificationFilter) {
+	if o == nil || IsNil(o.NotificationFilter) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationFilter() st
 // GetNotificationFilterOk returns a tuple with the NotificationFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationFilterOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationFilter) {
+	if o == nil || IsNil(o.NotificationFilter) {
 		return nil, false
 	}
 	return o.NotificationFilter, true
@@ -159,7 +159,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) GetNotificationFilterOk() 
 
 // HasNotificationFilter returns a boolean if a field has been set.
 func (o *NtfSubscriptionControlSingleAllOfAttributes) HasNotificationFilter() bool {
-	if o != nil && !isNil(o.NotificationFilter) {
+	if o != nil && !IsNil(o.NotificationFilter) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *NtfSubscriptionControlSingleAllOfAttributes) SetNotificationFilter(v st
 }
 
 func (o NtfSubscriptionControlSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o NtfSubscriptionControlSingleAllOfAttributes) MarshalJSON() ([]byte, erro
 
 func (o NtfSubscriptionControlSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NotificationRecipientAddress) {
+	if !IsNil(o.NotificationRecipientAddress) {
 		toSerialize["notificationRecipientAddress"] = o.NotificationRecipientAddress
 	}
-	if !isNil(o.NotificationTypes) {
+	if !IsNil(o.NotificationTypes) {
 		toSerialize["notificationTypes"] = o.NotificationTypes
 	}
-	if !isNil(o.Scope) {
+	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
-	if !isNil(o.NotificationFilter) {
+	if !IsNil(o.NotificationFilter) {
 		toSerialize["notificationFilter"] = o.NotificationFilter
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableNtfSubscriptionControlSingleAllOfAttributes) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

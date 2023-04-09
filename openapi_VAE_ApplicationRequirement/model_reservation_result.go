@@ -1,7 +1,7 @@
 /*
 VAE_ApplicationRequirement
 
-API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Application Requirement Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ReservationResult Represents the result of the network resource adaptation corresponding to the V2X  application requirement. 
+// ReservationResult Represents the result of the network resource adaptation corresponding to the V2X  application requirement.
 type ReservationResult struct {
-	ReservationResultAnyOf *ReservationResultAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReservationResult) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReservationResultAnyOf
-	err = json.Unmarshal(data, &dst.ReservationResultAnyOf);
-	if err == nil {
-		jsonReservationResultAnyOf, _ := json.Marshal(dst.ReservationResultAnyOf)
-		if string(jsonReservationResultAnyOf) == "{}" { // empty struct
-			dst.ReservationResultAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReservationResultAnyOf, return on the first match
-		}
-	} else {
-		dst.ReservationResultAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReservationResult) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReservationResult) MarshalJSON() ([]byte, error) {
-	if src.ReservationResultAnyOf != nil {
-		return json.Marshal(&src.ReservationResultAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReservationResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

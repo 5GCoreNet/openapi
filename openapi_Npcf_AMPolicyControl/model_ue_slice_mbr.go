@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &UeSliceMbr{}
 // UeSliceMbr Contains a UE-Slice-MBR and the related information.
 type UeSliceMbr struct {
 	// Contains the MBR for uplink and the MBR for downlink.
-	SliceMbr map[string]SliceMbr `json:"sliceMbr"`
-	ServingSnssai Snssai `json:"servingSnssai"`
-	MappedHomeSnssai *Snssai `json:"mappedHomeSnssai,omitempty"`
+	SliceMbr         map[string]SliceMbr `json:"sliceMbr"`
+	ServingSnssai    Snssai              `json:"servingSnssai"`
+	MappedHomeSnssai *Snssai             `json:"mappedHomeSnssai,omitempty"`
 }
 
 // NewUeSliceMbr instantiates a new UeSliceMbr object
@@ -94,7 +94,7 @@ func (o *UeSliceMbr) SetServingSnssai(v Snssai) {
 
 // GetMappedHomeSnssai returns the MappedHomeSnssai field value if set, zero value otherwise.
 func (o *UeSliceMbr) GetMappedHomeSnssai() Snssai {
-	if o == nil || isNil(o.MappedHomeSnssai) {
+	if o == nil || IsNil(o.MappedHomeSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *UeSliceMbr) GetMappedHomeSnssai() Snssai {
 // GetMappedHomeSnssaiOk returns a tuple with the MappedHomeSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSliceMbr) GetMappedHomeSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.MappedHomeSnssai) {
+	if o == nil || IsNil(o.MappedHomeSnssai) {
 		return nil, false
 	}
 	return o.MappedHomeSnssai, true
@@ -112,7 +112,7 @@ func (o *UeSliceMbr) GetMappedHomeSnssaiOk() (*Snssai, bool) {
 
 // HasMappedHomeSnssai returns a boolean if a field has been set.
 func (o *UeSliceMbr) HasMappedHomeSnssai() bool {
-	if o != nil && !isNil(o.MappedHomeSnssai) {
+	if o != nil && !IsNil(o.MappedHomeSnssai) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *UeSliceMbr) SetMappedHomeSnssai(v Snssai) {
 }
 
 func (o UeSliceMbr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o UeSliceMbr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sliceMbr"] = o.SliceMbr
 	toSerialize["servingSnssai"] = o.ServingSnssai
-	if !isNil(o.MappedHomeSnssai) {
+	if !IsNil(o.MappedHomeSnssai) {
 		toSerialize["mappedHomeSnssai"] = o.MappedHomeSnssai
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableUeSliceMbr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

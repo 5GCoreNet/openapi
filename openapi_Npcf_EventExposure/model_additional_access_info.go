@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the AdditionalAccessInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AdditionalAccessInfo{}
 
-// AdditionalAccessInfo Indicates the combination of additional Access Type and RAT Type for a MA PDU session. 
+// AdditionalAccessInfo Indicates the combination of additional Access Type and RAT Type for a MA PDU session.
 type AdditionalAccessInfo struct {
 	AccessType AccessType `json:"accessType"`
-	RatType *RatType `json:"ratType,omitempty"`
+	RatType    *RatType   `json:"ratType,omitempty"`
 }
 
 // NewAdditionalAccessInfo instantiates a new AdditionalAccessInfo object
@@ -67,7 +67,7 @@ func (o *AdditionalAccessInfo) SetAccessType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *AdditionalAccessInfo) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *AdditionalAccessInfo) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalAccessInfo) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -85,7 +85,7 @@ func (o *AdditionalAccessInfo) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *AdditionalAccessInfo) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *AdditionalAccessInfo) SetRatType(v RatType) {
 }
 
 func (o AdditionalAccessInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o AdditionalAccessInfo) MarshalJSON() ([]byte, error) {
 func (o AdditionalAccessInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["accessType"] = o.AccessType
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableAdditionalAccessInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

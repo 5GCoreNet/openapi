@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // NodeType struct for NodeType
 type NodeType struct {
-	NodeTypeAnyOf *NodeTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NodeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NodeTypeAnyOf
-	err = json.Unmarshal(data, &dst.NodeTypeAnyOf);
-	if err == nil {
-		jsonNodeTypeAnyOf, _ := json.Marshal(dst.NodeTypeAnyOf)
-		if string(jsonNodeTypeAnyOf) == "{}" { // empty struct
-			dst.NodeTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.NodeTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.NodeTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NodeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NodeType) MarshalJSON() ([]byte, error) {
-	if src.NodeTypeAnyOf != nil {
-		return json.Marshal(&src.NodeTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNodeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

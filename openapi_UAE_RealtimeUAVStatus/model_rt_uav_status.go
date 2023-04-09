@@ -1,7 +1,7 @@
 /*
 UAE Server Real-time UAV Status Service
 
-UAE Server Real-time UAV Status Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server Real-time UAV Status Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &RTUavStatus{}
 
 // RTUavStatus Represents real-time UAV status information.
 type RTUavStatus struct {
-	UavId *UavId `json:"uavId,omitempty"`
+	UavId            *UavId            `json:"uavId,omitempty"`
 	UavNetConnStatus *UavNetConnStatus `json:"uavNetConnStatus,omitempty"`
-	UavLocInfo *LocationInfo `json:"uavLocInfo,omitempty"`
+	UavLocInfo       *LocationInfo     `json:"uavLocInfo,omitempty"`
 }
 
 // NewRTUavStatus instantiates a new RTUavStatus object
@@ -43,7 +43,7 @@ func NewRTUavStatusWithDefaults() *RTUavStatus {
 
 // GetUavId returns the UavId field value if set, zero value otherwise.
 func (o *RTUavStatus) GetUavId() UavId {
-	if o == nil || isNil(o.UavId) {
+	if o == nil || IsNil(o.UavId) {
 		var ret UavId
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RTUavStatus) GetUavId() UavId {
 // GetUavIdOk returns a tuple with the UavId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RTUavStatus) GetUavIdOk() (*UavId, bool) {
-	if o == nil || isNil(o.UavId) {
+	if o == nil || IsNil(o.UavId) {
 		return nil, false
 	}
 	return o.UavId, true
@@ -61,7 +61,7 @@ func (o *RTUavStatus) GetUavIdOk() (*UavId, bool) {
 
 // HasUavId returns a boolean if a field has been set.
 func (o *RTUavStatus) HasUavId() bool {
-	if o != nil && !isNil(o.UavId) {
+	if o != nil && !IsNil(o.UavId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RTUavStatus) SetUavId(v UavId) {
 
 // GetUavNetConnStatus returns the UavNetConnStatus field value if set, zero value otherwise.
 func (o *RTUavStatus) GetUavNetConnStatus() UavNetConnStatus {
-	if o == nil || isNil(o.UavNetConnStatus) {
+	if o == nil || IsNil(o.UavNetConnStatus) {
 		var ret UavNetConnStatus
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RTUavStatus) GetUavNetConnStatus() UavNetConnStatus {
 // GetUavNetConnStatusOk returns a tuple with the UavNetConnStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RTUavStatus) GetUavNetConnStatusOk() (*UavNetConnStatus, bool) {
-	if o == nil || isNil(o.UavNetConnStatus) {
+	if o == nil || IsNil(o.UavNetConnStatus) {
 		return nil, false
 	}
 	return o.UavNetConnStatus, true
@@ -93,7 +93,7 @@ func (o *RTUavStatus) GetUavNetConnStatusOk() (*UavNetConnStatus, bool) {
 
 // HasUavNetConnStatus returns a boolean if a field has been set.
 func (o *RTUavStatus) HasUavNetConnStatus() bool {
-	if o != nil && !isNil(o.UavNetConnStatus) {
+	if o != nil && !IsNil(o.UavNetConnStatus) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RTUavStatus) SetUavNetConnStatus(v UavNetConnStatus) {
 
 // GetUavLocInfo returns the UavLocInfo field value if set, zero value otherwise.
 func (o *RTUavStatus) GetUavLocInfo() LocationInfo {
-	if o == nil || isNil(o.UavLocInfo) {
+	if o == nil || IsNil(o.UavLocInfo) {
 		var ret LocationInfo
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RTUavStatus) GetUavLocInfo() LocationInfo {
 // GetUavLocInfoOk returns a tuple with the UavLocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RTUavStatus) GetUavLocInfoOk() (*LocationInfo, bool) {
-	if o == nil || isNil(o.UavLocInfo) {
+	if o == nil || IsNil(o.UavLocInfo) {
 		return nil, false
 	}
 	return o.UavLocInfo, true
@@ -125,7 +125,7 @@ func (o *RTUavStatus) GetUavLocInfoOk() (*LocationInfo, bool) {
 
 // HasUavLocInfo returns a boolean if a field has been set.
 func (o *RTUavStatus) HasUavLocInfo() bool {
-	if o != nil && !isNil(o.UavLocInfo) {
+	if o != nil && !IsNil(o.UavLocInfo) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *RTUavStatus) SetUavLocInfo(v LocationInfo) {
 }
 
 func (o RTUavStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o RTUavStatus) MarshalJSON() ([]byte, error) {
 
 func (o RTUavStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UavId) {
+	if !IsNil(o.UavId) {
 		toSerialize["uavId"] = o.UavId
 	}
-	if !isNil(o.UavNetConnStatus) {
+	if !IsNil(o.UavNetConnStatus) {
 		toSerialize["uavNetConnStatus"] = o.UavNetConnStatus
 	}
-	if !isNil(o.UavLocInfo) {
+	if !IsNil(o.UavLocInfo) {
 		toSerialize["uavLocInfo"] = o.UavLocInfo
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableRTUavStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

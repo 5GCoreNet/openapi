@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &AvEapAkaPrime{}
 
 // AvEapAkaPrime struct for AvEapAkaPrime
 type AvEapAkaPrime struct {
-	AvType AvType `json:"avType"`
-	Rand string `json:"rand"`
-	Xres string `json:"xres"`
-	Autn string `json:"autn"`
+	AvType  AvType `json:"avType"`
+	Rand    string `json:"rand"`
+	Xres    string `json:"xres"`
+	Autn    string `json:"autn"`
 	CkPrime string `json:"ckPrime"`
 	IkPrime string `json:"ikPrime"`
 }
@@ -195,7 +195,7 @@ func (o *AvEapAkaPrime) SetIkPrime(v string) {
 }
 
 func (o AvEapAkaPrime) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -248,5 +248,3 @@ func (v *NullableAvEapAkaPrime) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,12 +17,12 @@ import (
 // checks if the EcsServerAddr type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &EcsServerAddr{}
 
-// EcsServerAddr Contains the Edge Configuration Server Address Configuration Information as defined in clause 5.2.3.6.1 of 3GPP TS 23.502. 
+// EcsServerAddr Contains the Edge Configuration Server Address Configuration Information as defined in clause 5.2.3.6.1 of 3GPP TS 23.502.
 type EcsServerAddr struct {
-	EcsFqdnList []string `json:"ecsFqdnList,omitempty"`
+	EcsFqdnList      []string `json:"ecsFqdnList,omitempty"`
 	EcsIpAddressList []IpAddr `json:"ecsIpAddressList,omitempty"`
-	EcsUriList []string `json:"ecsUriList,omitempty"`
-	EcsProviderId *string `json:"ecsProviderId,omitempty"`
+	EcsUriList       []string `json:"ecsUriList,omitempty"`
+	EcsProviderId    *string  `json:"ecsProviderId,omitempty"`
 }
 
 // NewEcsServerAddr instantiates a new EcsServerAddr object
@@ -44,7 +44,7 @@ func NewEcsServerAddrWithDefaults() *EcsServerAddr {
 
 // GetEcsFqdnList returns the EcsFqdnList field value if set, zero value otherwise.
 func (o *EcsServerAddr) GetEcsFqdnList() []string {
-	if o == nil || isNil(o.EcsFqdnList) {
+	if o == nil || IsNil(o.EcsFqdnList) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EcsServerAddr) GetEcsFqdnList() []string {
 // GetEcsFqdnListOk returns a tuple with the EcsFqdnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsServerAddr) GetEcsFqdnListOk() ([]string, bool) {
-	if o == nil || isNil(o.EcsFqdnList) {
+	if o == nil || IsNil(o.EcsFqdnList) {
 		return nil, false
 	}
 	return o.EcsFqdnList, true
@@ -62,7 +62,7 @@ func (o *EcsServerAddr) GetEcsFqdnListOk() ([]string, bool) {
 
 // HasEcsFqdnList returns a boolean if a field has been set.
 func (o *EcsServerAddr) HasEcsFqdnList() bool {
-	if o != nil && !isNil(o.EcsFqdnList) {
+	if o != nil && !IsNil(o.EcsFqdnList) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EcsServerAddr) SetEcsFqdnList(v []string) {
 
 // GetEcsIpAddressList returns the EcsIpAddressList field value if set, zero value otherwise.
 func (o *EcsServerAddr) GetEcsIpAddressList() []IpAddr {
-	if o == nil || isNil(o.EcsIpAddressList) {
+	if o == nil || IsNil(o.EcsIpAddressList) {
 		var ret []IpAddr
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EcsServerAddr) GetEcsIpAddressList() []IpAddr {
 // GetEcsIpAddressListOk returns a tuple with the EcsIpAddressList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsServerAddr) GetEcsIpAddressListOk() ([]IpAddr, bool) {
-	if o == nil || isNil(o.EcsIpAddressList) {
+	if o == nil || IsNil(o.EcsIpAddressList) {
 		return nil, false
 	}
 	return o.EcsIpAddressList, true
@@ -94,7 +94,7 @@ func (o *EcsServerAddr) GetEcsIpAddressListOk() ([]IpAddr, bool) {
 
 // HasEcsIpAddressList returns a boolean if a field has been set.
 func (o *EcsServerAddr) HasEcsIpAddressList() bool {
-	if o != nil && !isNil(o.EcsIpAddressList) {
+	if o != nil && !IsNil(o.EcsIpAddressList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EcsServerAddr) SetEcsIpAddressList(v []IpAddr) {
 
 // GetEcsUriList returns the EcsUriList field value if set, zero value otherwise.
 func (o *EcsServerAddr) GetEcsUriList() []string {
-	if o == nil || isNil(o.EcsUriList) {
+	if o == nil || IsNil(o.EcsUriList) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EcsServerAddr) GetEcsUriList() []string {
 // GetEcsUriListOk returns a tuple with the EcsUriList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsServerAddr) GetEcsUriListOk() ([]string, bool) {
-	if o == nil || isNil(o.EcsUriList) {
+	if o == nil || IsNil(o.EcsUriList) {
 		return nil, false
 	}
 	return o.EcsUriList, true
@@ -126,7 +126,7 @@ func (o *EcsServerAddr) GetEcsUriListOk() ([]string, bool) {
 
 // HasEcsUriList returns a boolean if a field has been set.
 func (o *EcsServerAddr) HasEcsUriList() bool {
-	if o != nil && !isNil(o.EcsUriList) {
+	if o != nil && !IsNil(o.EcsUriList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EcsServerAddr) SetEcsUriList(v []string) {
 
 // GetEcsProviderId returns the EcsProviderId field value if set, zero value otherwise.
 func (o *EcsServerAddr) GetEcsProviderId() string {
-	if o == nil || isNil(o.EcsProviderId) {
+	if o == nil || IsNil(o.EcsProviderId) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EcsServerAddr) GetEcsProviderId() string {
 // GetEcsProviderIdOk returns a tuple with the EcsProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsServerAddr) GetEcsProviderIdOk() (*string, bool) {
-	if o == nil || isNil(o.EcsProviderId) {
+	if o == nil || IsNil(o.EcsProviderId) {
 		return nil, false
 	}
 	return o.EcsProviderId, true
@@ -158,7 +158,7 @@ func (o *EcsServerAddr) GetEcsProviderIdOk() (*string, bool) {
 
 // HasEcsProviderId returns a boolean if a field has been set.
 func (o *EcsServerAddr) HasEcsProviderId() bool {
-	if o != nil && !isNil(o.EcsProviderId) {
+	if o != nil && !IsNil(o.EcsProviderId) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *EcsServerAddr) SetEcsProviderId(v string) {
 }
 
 func (o EcsServerAddr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o EcsServerAddr) MarshalJSON() ([]byte, error) {
 
 func (o EcsServerAddr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EcsFqdnList) {
+	if !IsNil(o.EcsFqdnList) {
 		toSerialize["ecsFqdnList"] = o.EcsFqdnList
 	}
-	if !isNil(o.EcsIpAddressList) {
+	if !IsNil(o.EcsIpAddressList) {
 		toSerialize["ecsIpAddressList"] = o.EcsIpAddressList
 	}
-	if !isNil(o.EcsUriList) {
+	if !IsNil(o.EcsUriList) {
 		toSerialize["ecsUriList"] = o.EcsUriList
 	}
-	if !isNil(o.EcsProviderId) {
+	if !IsNil(o.EcsProviderId) {
 		toSerialize["ecsProviderId"] = o.EcsProviderId
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableEcsServerAddr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

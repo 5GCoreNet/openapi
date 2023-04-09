@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -6,19 +7,6 @@ api_mbstmgi_deallocation.go
 api_tmgi_allocation_or_timer_expiry_refresh.go
 client.go
 configuration.go
-docs/ExpiryNotif.md
-docs/InvalidParam.md
-docs/MBSTMGIDeallocationApi.md
-docs/PlmnId.md
-docs/ProblemDetails.md
-docs/TMGIAllocationOrTimerExpiryRefreshApi.md
-docs/Tmgi.md
-docs/TmgiAllocRequest.md
-docs/TmgiAllocResponse.md
-docs/TmgiAllocate.md
-docs/TmgiAllocated.md
-docs/TmgiDeallocRequest.md
-docs/WebsockNotifConfig.md
 git_push.sh
 go.mod
 go.sum
@@ -34,6 +22,4 @@ model_tmgi_allocated.go
 model_tmgi_dealloc_request.go
 model_websock_notif_config.go
 response.go
-test/api_mbstmgi_deallocation_test.go
-test/api_tmgi_allocation_or_timer_expiry_refresh_test.go
 utils.go

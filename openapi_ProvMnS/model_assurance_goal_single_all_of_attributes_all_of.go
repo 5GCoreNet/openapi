@@ -19,11 +19,11 @@ var _ MappedNullable = &AssuranceGoalSingleAllOfAttributesAllOf{}
 
 // AssuranceGoalSingleAllOfAttributesAllOf struct for AssuranceGoalSingleAllOfAttributesAllOf
 type AssuranceGoalSingleAllOfAttributesAllOf struct {
-	ObservationTime *int32 `json:"observationTime,omitempty"`
+	ObservationTime     *int32            `json:"observationTime,omitempty"`
 	AssuranceTargetList []AssuranceTarget `json:"assuranceTargetList,omitempty"`
-	AssuranceScope *AssuranceScope `json:"assuranceScope,omitempty"`
-	ServiceProfileId *string `json:"serviceProfileId,omitempty"`
-	SliceProfileId *string `json:"sliceProfileId,omitempty"`
+	AssuranceScope      *AssuranceScope   `json:"assuranceScope,omitempty"`
+	ServiceProfileId    *string           `json:"serviceProfileId,omitempty"`
+	SliceProfileId      *string           `json:"sliceProfileId,omitempty"`
 }
 
 // NewAssuranceGoalSingleAllOfAttributesAllOf instantiates a new AssuranceGoalSingleAllOfAttributesAllOf object
@@ -204,7 +204,7 @@ func (o *AssuranceGoalSingleAllOfAttributesAllOf) SetSliceProfileId(v string) {
 }
 
 func (o AssuranceGoalSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,5 +266,3 @@ func (v *NullableAssuranceGoalSingleAllOfAttributesAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

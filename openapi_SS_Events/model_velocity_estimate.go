@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,9 +17,9 @@ import (
 
 // VelocityEstimate - Velocity estimate.
 type VelocityEstimate struct {
-	HorizontalVelocity *HorizontalVelocity
-	HorizontalVelocityWithUncertainty *HorizontalVelocityWithUncertainty
-	HorizontalWithVerticalVelocity *HorizontalWithVerticalVelocity
+	HorizontalVelocity                           *HorizontalVelocity
+	HorizontalVelocityWithUncertainty            *HorizontalVelocityWithUncertainty
+	HorizontalWithVerticalVelocity               *HorizontalWithVerticalVelocity
 	HorizontalWithVerticalVelocityAndUncertainty *HorizontalWithVerticalVelocityAndUncertainty
 }
 
@@ -50,7 +50,6 @@ func HorizontalWithVerticalVelocityAndUncertaintyAsVelocityEstimate(v *Horizonta
 		HorizontalWithVerticalVelocityAndUncertainty: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VelocityEstimate) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src VelocityEstimate) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VelocityEstimate) GetActualInstance() (interface{}) {
+func (obj *VelocityEstimate) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableVelocityEstimate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

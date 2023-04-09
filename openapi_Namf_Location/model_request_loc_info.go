@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &RequestLocInfo{}
 
 // RequestLocInfo Data within Provide Location Information Request
 type RequestLocInfo struct {
-	Req5gsLoc *bool `json:"req5gsLoc,omitempty"`
+	Req5gsLoc     *bool `json:"req5gsLoc,omitempty"`
 	ReqCurrentLoc *bool `json:"reqCurrentLoc,omitempty"`
-	ReqRatType *bool `json:"reqRatType,omitempty"`
-	ReqTimeZone *bool `json:"reqTimeZone,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	ReqRatType    *bool `json:"reqRatType,omitempty"`
+	ReqTimeZone   *bool `json:"reqTimeZone,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -62,7 +62,7 @@ func NewRequestLocInfoWithDefaults() *RequestLocInfo {
 
 // GetReq5gsLoc returns the Req5gsLoc field value if set, zero value otherwise.
 func (o *RequestLocInfo) GetReq5gsLoc() bool {
-	if o == nil || isNil(o.Req5gsLoc) {
+	if o == nil || IsNil(o.Req5gsLoc) {
 		var ret bool
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *RequestLocInfo) GetReq5gsLoc() bool {
 // GetReq5gsLocOk returns a tuple with the Req5gsLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLocInfo) GetReq5gsLocOk() (*bool, bool) {
-	if o == nil || isNil(o.Req5gsLoc) {
+	if o == nil || IsNil(o.Req5gsLoc) {
 		return nil, false
 	}
 	return o.Req5gsLoc, true
@@ -80,7 +80,7 @@ func (o *RequestLocInfo) GetReq5gsLocOk() (*bool, bool) {
 
 // HasReq5gsLoc returns a boolean if a field has been set.
 func (o *RequestLocInfo) HasReq5gsLoc() bool {
-	if o != nil && !isNil(o.Req5gsLoc) {
+	if o != nil && !IsNil(o.Req5gsLoc) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *RequestLocInfo) SetReq5gsLoc(v bool) {
 
 // GetReqCurrentLoc returns the ReqCurrentLoc field value if set, zero value otherwise.
 func (o *RequestLocInfo) GetReqCurrentLoc() bool {
-	if o == nil || isNil(o.ReqCurrentLoc) {
+	if o == nil || IsNil(o.ReqCurrentLoc) {
 		var ret bool
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *RequestLocInfo) GetReqCurrentLoc() bool {
 // GetReqCurrentLocOk returns a tuple with the ReqCurrentLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLocInfo) GetReqCurrentLocOk() (*bool, bool) {
-	if o == nil || isNil(o.ReqCurrentLoc) {
+	if o == nil || IsNil(o.ReqCurrentLoc) {
 		return nil, false
 	}
 	return o.ReqCurrentLoc, true
@@ -112,7 +112,7 @@ func (o *RequestLocInfo) GetReqCurrentLocOk() (*bool, bool) {
 
 // HasReqCurrentLoc returns a boolean if a field has been set.
 func (o *RequestLocInfo) HasReqCurrentLoc() bool {
-	if o != nil && !isNil(o.ReqCurrentLoc) {
+	if o != nil && !IsNil(o.ReqCurrentLoc) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *RequestLocInfo) SetReqCurrentLoc(v bool) {
 
 // GetReqRatType returns the ReqRatType field value if set, zero value otherwise.
 func (o *RequestLocInfo) GetReqRatType() bool {
-	if o == nil || isNil(o.ReqRatType) {
+	if o == nil || IsNil(o.ReqRatType) {
 		var ret bool
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *RequestLocInfo) GetReqRatType() bool {
 // GetReqRatTypeOk returns a tuple with the ReqRatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLocInfo) GetReqRatTypeOk() (*bool, bool) {
-	if o == nil || isNil(o.ReqRatType) {
+	if o == nil || IsNil(o.ReqRatType) {
 		return nil, false
 	}
 	return o.ReqRatType, true
@@ -144,7 +144,7 @@ func (o *RequestLocInfo) GetReqRatTypeOk() (*bool, bool) {
 
 // HasReqRatType returns a boolean if a field has been set.
 func (o *RequestLocInfo) HasReqRatType() bool {
-	if o != nil && !isNil(o.ReqRatType) {
+	if o != nil && !IsNil(o.ReqRatType) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *RequestLocInfo) SetReqRatType(v bool) {
 
 // GetReqTimeZone returns the ReqTimeZone field value if set, zero value otherwise.
 func (o *RequestLocInfo) GetReqTimeZone() bool {
-	if o == nil || isNil(o.ReqTimeZone) {
+	if o == nil || IsNil(o.ReqTimeZone) {
 		var ret bool
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *RequestLocInfo) GetReqTimeZone() bool {
 // GetReqTimeZoneOk returns a tuple with the ReqTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLocInfo) GetReqTimeZoneOk() (*bool, bool) {
-	if o == nil || isNil(o.ReqTimeZone) {
+	if o == nil || IsNil(o.ReqTimeZone) {
 		return nil, false
 	}
 	return o.ReqTimeZone, true
@@ -176,7 +176,7 @@ func (o *RequestLocInfo) GetReqTimeZoneOk() (*bool, bool) {
 
 // HasReqTimeZone returns a boolean if a field has been set.
 func (o *RequestLocInfo) HasReqTimeZone() bool {
-	if o != nil && !isNil(o.ReqTimeZone) {
+	if o != nil && !IsNil(o.ReqTimeZone) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *RequestLocInfo) SetReqTimeZone(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *RequestLocInfo) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *RequestLocInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLocInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -208,7 +208,7 @@ func (o *RequestLocInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *RequestLocInfo) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *RequestLocInfo) SetSupportedFeatures(v string) {
 }
 
 func (o RequestLocInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,19 +230,19 @@ func (o RequestLocInfo) MarshalJSON() ([]byte, error) {
 
 func (o RequestLocInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Req5gsLoc) {
+	if !IsNil(o.Req5gsLoc) {
 		toSerialize["req5gsLoc"] = o.Req5gsLoc
 	}
-	if !isNil(o.ReqCurrentLoc) {
+	if !IsNil(o.ReqCurrentLoc) {
 		toSerialize["reqCurrentLoc"] = o.ReqCurrentLoc
 	}
-	if !isNil(o.ReqRatType) {
+	if !IsNil(o.ReqRatType) {
 		toSerialize["reqRatType"] = o.ReqRatType
 	}
-	if !isNil(o.ReqTimeZone) {
+	if !IsNil(o.ReqTimeZone) {
 		toSerialize["reqTimeZone"] = o.ReqTimeZone
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -283,5 +283,3 @@ func (v *NullableRequestLocInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

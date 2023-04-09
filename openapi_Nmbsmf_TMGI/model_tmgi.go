@@ -1,7 +1,7 @@
 /*
 Nmbsmf_TMGI
 
-MB-SMF TMGI Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF TMGI Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &Tmgi{}
 type Tmgi struct {
 	// MBS Service ID
 	MbsServiceId string `json:"mbsServiceId"`
-	PlmnId PlmnId `json:"plmnId"`
+	PlmnId       PlmnId `json:"plmnId"`
 }
 
 // NewTmgi instantiates a new Tmgi object
@@ -92,7 +92,7 @@ func (o *Tmgi) SetPlmnId(v PlmnId) {
 }
 
 func (o Tmgi) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableTmgi) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

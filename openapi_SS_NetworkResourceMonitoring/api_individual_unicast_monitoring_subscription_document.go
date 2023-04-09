@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceMonitoring
 
-API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Network Resource Monitoring.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_SS_NetworkResourceMonitoring
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualUnicastMonitoringSubscriptionDocumentApiService IndividualUnicastMonitoringSubscriptionDocumentApi service
 type IndividualUnicastMonitoringSubscriptionDocumentApiService service
 
 type ApiModifyUnicastMonitoringRequest struct {
-	ctx context.Context
-	ApiService *IndividualUnicastMonitoringSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                         context.Context
+	ApiService                  *IndividualUnicastMonitoringSubscriptionDocumentApiService
+	subscriptionId              string
 	monitoringSubscriptionPatch *MonitoringSubscriptionPatch
 }
 
@@ -40,28 +39,29 @@ func (r ApiModifyUnicastMonitoringRequest) Execute() (*MonitoringSubscription, *
 }
 
 /*
-ModifyUnicastMonitoring Modify an individual unicast monitoring subscription identified by the subscriptionId. 
+ModifyUnicastMonitoring Modify an individual unicast monitoring subscription identified by the subscriptionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource. 
- @return ApiModifyUnicastMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource.
+	@return ApiModifyUnicastMonitoringRequest
 */
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicastMonitoring(ctx context.Context, subscriptionId string) ApiModifyUnicastMonitoringRequest {
 	return ApiModifyUnicastMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return MonitoringSubscription
+//
+//	@return MonitoringSubscription
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicastMonitoringExecute(r ApiModifyUnicastMonitoringRequest) (*MonitoringSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MonitoringSubscription
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MonitoringSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUnicastMonitoringSubscriptionDocumentApiService.ModifyUnicastMonitoring")
@@ -108,9 +108,9 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -127,8 +127,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -138,8 +138,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -149,8 +149,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -160,8 +160,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -171,8 +171,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -182,8 +182,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -193,8 +193,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -204,8 +204,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -215,8 +215,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -226,8 +226,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -246,8 +246,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ModifyUnicas
 }
 
 type ApiReadUnicastMonitoringSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *IndividualUnicastMonitoringSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualUnicastMonitoringSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -258,26 +258,27 @@ func (r ApiReadUnicastMonitoringSubscriptionRequest) Execute() (*MonitoringSubsc
 /*
 ReadUnicastMonitoringSubscription Read an existing individual unicast monitoring subscription resource according to the subscriptionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource. 
- @return ApiReadUnicastMonitoringSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource.
+	@return ApiReadUnicastMonitoringSubscriptionRequest
 */
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastMonitoringSubscription(ctx context.Context, subscriptionId string) ApiReadUnicastMonitoringSubscriptionRequest {
 	return ApiReadUnicastMonitoringSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return MonitoringSubscription
+//
+//	@return MonitoringSubscription
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastMonitoringSubscriptionExecute(r ApiReadUnicastMonitoringSubscriptionRequest) (*MonitoringSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MonitoringSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MonitoringSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUnicastMonitoringSubscriptionDocumentApiService.ReadUnicastMonitoringSubscription")
@@ -319,9 +320,9 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -338,8 +339,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -349,8 +350,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -360,8 +361,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -371,8 +372,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -382,8 +383,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -393,8 +394,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -404,8 +405,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -415,8 +416,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -426,8 +427,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -437,8 +438,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -457,8 +458,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) ReadUnicastM
 }
 
 type ApiUnsubscribeUnicastMonitoringRequest struct {
-	ctx context.Context
-	ApiService *IndividualUnicastMonitoringSubscriptionDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualUnicastMonitoringSubscriptionDocumentApiService
 	subscriptionId string
 }
 
@@ -469,14 +470,14 @@ func (r ApiUnsubscribeUnicastMonitoringRequest) Execute() (*http.Response, error
 /*
 UnsubscribeUnicastMonitoring Remove an existing individual unicast monitoring subscription resource according to the subscriptionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource. 
- @return ApiUnsubscribeUnicastMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource.
+	@return ApiUnsubscribeUnicastMonitoringRequest
 */
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeUnicastMonitoring(ctx context.Context, subscriptionId string) ApiUnsubscribeUnicastMonitoringRequest {
 	return ApiUnsubscribeUnicastMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -484,9 +485,9 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 // Execute executes the request
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeUnicastMonitoringExecute(r ApiUnsubscribeUnicastMonitoringRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUnicastMonitoringSubscriptionDocumentApiService.UnsubscribeUnicastMonitoring")
@@ -528,9 +529,9 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -547,8 +548,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -558,8 +559,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -569,8 +570,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -580,8 +581,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -591,8 +592,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -602,8 +603,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -613,8 +614,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -624,9 +625,9 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UnsubscribeU
 }
 
 type ApiUpdateUnicastMonitoringRequest struct {
-	ctx context.Context
-	ApiService *IndividualUnicastMonitoringSubscriptionDocumentApiService
-	subscriptionId string
+	ctx                    context.Context
+	ApiService             *IndividualUnicastMonitoringSubscriptionDocumentApiService
+	subscriptionId         string
 	monitoringSubscription *MonitoringSubscription
 }
 
@@ -641,28 +642,29 @@ func (r ApiUpdateUnicastMonitoringRequest) Execute() (*MonitoringSubscription, *
 }
 
 /*
-UpdateUnicastMonitoring Update an individual unicast monitoring subscription identified by the subscriptionId. 
+UpdateUnicastMonitoring Update an individual unicast monitoring subscription identified by the subscriptionId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource. 
- @return ApiUpdateUnicastMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId Represents the identifier of an individual unicast monitoring subscription resource.
+	@return ApiUpdateUnicastMonitoringRequest
 */
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicastMonitoring(ctx context.Context, subscriptionId string) ApiUpdateUnicastMonitoringRequest {
 	return ApiUpdateUnicastMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return MonitoringSubscription
+//
+//	@return MonitoringSubscription
 func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicastMonitoringExecute(r ApiUpdateUnicastMonitoringRequest) (*MonitoringSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MonitoringSubscription
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MonitoringSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUnicastMonitoringSubscriptionDocumentApiService.UpdateUnicastMonitoring")
@@ -709,9 +711,9 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -728,8 +730,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -739,8 +741,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -750,8 +752,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -761,8 +763,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -772,8 +774,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -783,8 +785,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -794,8 +796,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -805,8 +807,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -816,8 +818,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -827,8 +829,8 @@ func (a *IndividualUnicastMonitoringSubscriptionDocumentApiService) UpdateUnicas
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

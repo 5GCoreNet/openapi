@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -12,7 +12,6 @@ package openapi_Application_Data
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -27,7 +26,6 @@ func InterfaceAsTrafficInfluSub(v *interface{}) TrafficInfluSub {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TrafficInfluSub) UnmarshalJSON(data []byte) error {
@@ -68,7 +66,7 @@ func (src TrafficInfluSub) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TrafficInfluSub) GetActualInstance() (interface{}) {
+func (obj *TrafficInfluSub) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -115,5 +113,3 @@ func (v *NullableTrafficInfluSub) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

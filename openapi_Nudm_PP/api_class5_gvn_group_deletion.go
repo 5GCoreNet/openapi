@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudm_PP
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // Class5GVNGroupDeletionApiService Class5GVNGroupDeletionApi service
 type Class5GVNGroupDeletionApiService service
 
 type ApiDelete5GVNGroupRequest struct {
-	ctx context.Context
-	ApiService *Class5GVNGroupDeletionApiService
-	extGroupId string
+	ctx             context.Context
+	ApiService      *Class5GVNGroupDeletionApiService
+	extGroupId      string
 	mtcProviderInfo *string
-	afId *string
+	afId            *string
 }
 
 // MTC Provider Information that originated the service operation
@@ -50,14 +49,14 @@ func (r ApiDelete5GVNGroupRequest) Execute() (*http.Response, error) {
 /*
 Delete5GVNGroup delete a 5G VN Group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param extGroupId External Identifier of the Group
- @return ApiDelete5GVNGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param extGroupId External Identifier of the Group
+	@return ApiDelete5GVNGroupRequest
 */
 func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroup(ctx context.Context, extGroupId string) ApiDelete5GVNGroupRequest {
 	return ApiDelete5GVNGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		extGroupId: extGroupId,
 	}
 }
@@ -65,9 +64,9 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroup(ctx context.Context, 
 // Execute executes the request
 func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GVNGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class5GVNGroupDeletionApiService.Delete5GVNGroup")
@@ -83,10 +82,10 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 	localVarFormParams := url.Values{}
 
 	if r.mtcProviderInfo != nil {
-		parameterAddToQuery(localVarQueryParams, "mtc-provider-info", r.mtcProviderInfo, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mtc-provider-info", r.mtcProviderInfo, "")
 	}
 	if r.afId != nil {
-		parameterAddToQuery(localVarQueryParams, "af-id", r.afId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "af-id", r.afId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -115,9 +114,9 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -134,8 +133,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -145,8 +144,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -156,8 +155,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -167,8 +166,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -178,8 +177,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -189,8 +188,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -200,8 +199,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -211,8 +210,8 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

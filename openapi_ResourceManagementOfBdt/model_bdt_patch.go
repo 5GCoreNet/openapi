@@ -1,7 +1,7 @@
 /*
 3gpp-bdt
 
-API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for BDT resouce management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &BdtPatch{}
 type BdtPatch struct {
 	// Identity of the selected background data transfer policy.
 	SelectedPolicy int32 `json:"selectedPolicy"`
-	// Indicates whether the BDT warning notification is enabled (true) or not (false). 
+	// Indicates whether the BDT warning notification is enabled (true) or not (false).
 	WarnNotifEnabled *bool `json:"warnNotifEnabled,omitempty"`
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
 	NotificationDestination *string `json:"notificationDestination,omitempty"`
@@ -71,7 +71,7 @@ func (o *BdtPatch) SetSelectedPolicy(v int32) {
 
 // GetWarnNotifEnabled returns the WarnNotifEnabled field value if set, zero value otherwise.
 func (o *BdtPatch) GetWarnNotifEnabled() bool {
-	if o == nil || isNil(o.WarnNotifEnabled) {
+	if o == nil || IsNil(o.WarnNotifEnabled) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *BdtPatch) GetWarnNotifEnabled() bool {
 // GetWarnNotifEnabledOk returns a tuple with the WarnNotifEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPatch) GetWarnNotifEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.WarnNotifEnabled) {
+	if o == nil || IsNil(o.WarnNotifEnabled) {
 		return nil, false
 	}
 	return o.WarnNotifEnabled, true
@@ -89,7 +89,7 @@ func (o *BdtPatch) GetWarnNotifEnabledOk() (*bool, bool) {
 
 // HasWarnNotifEnabled returns a boolean if a field has been set.
 func (o *BdtPatch) HasWarnNotifEnabled() bool {
-	if o != nil && !isNil(o.WarnNotifEnabled) {
+	if o != nil && !IsNil(o.WarnNotifEnabled) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *BdtPatch) SetWarnNotifEnabled(v bool) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *BdtPatch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *BdtPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -121,7 +121,7 @@ func (o *BdtPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *BdtPatch) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *BdtPatch) SetNotificationDestination(v string) {
 }
 
 func (o BdtPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o BdtPatch) MarshalJSON() ([]byte, error) {
 func (o BdtPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["selectedPolicy"] = o.SelectedPolicy
-	if !isNil(o.WarnNotifEnabled) {
+	if !IsNil(o.WarnNotifEnabled) {
 		toSerialize["warnNotifEnabled"] = o.WarnNotifEnabled
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableBdtPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

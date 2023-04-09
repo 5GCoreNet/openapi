@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -45,7 +45,7 @@ func NewCommunicationCharacteristicsAFWithDefaults() *CommunicationCharacteristi
 
 // GetPpDlPacketCount returns the PpDlPacketCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristicsAF) GetPpDlPacketCount() int32 {
-	if o == nil || isNil(o.PpDlPacketCount.Get()) {
+	if o == nil || IsNil(o.PpDlPacketCount.Get()) {
 		var ret int32
 		return ret
 	}
@@ -75,6 +75,7 @@ func (o *CommunicationCharacteristicsAF) HasPpDlPacketCount() bool {
 func (o *CommunicationCharacteristicsAF) SetPpDlPacketCount(v int32) {
 	o.PpDlPacketCount.Set(&v)
 }
+
 // SetPpDlPacketCountNil sets the value for PpDlPacketCount to be an explicit nil
 func (o *CommunicationCharacteristicsAF) SetPpDlPacketCountNil() {
 	o.PpDlPacketCount.Set(nil)
@@ -87,7 +88,7 @@ func (o *CommunicationCharacteristicsAF) UnsetPpDlPacketCount() {
 
 // GetMaximumResponseTime returns the MaximumResponseTime field value if set, zero value otherwise.
 func (o *CommunicationCharacteristicsAF) GetMaximumResponseTime() int32 {
-	if o == nil || isNil(o.MaximumResponseTime) {
+	if o == nil || IsNil(o.MaximumResponseTime) {
 		var ret int32
 		return ret
 	}
@@ -97,7 +98,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumResponseTime() int32 {
 // GetMaximumResponseTimeOk returns a tuple with the MaximumResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationCharacteristicsAF) GetMaximumResponseTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumResponseTime) {
+	if o == nil || IsNil(o.MaximumResponseTime) {
 		return nil, false
 	}
 	return o.MaximumResponseTime, true
@@ -105,7 +106,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumResponseTimeOk() (*int32, boo
 
 // HasMaximumResponseTime returns a boolean if a field has been set.
 func (o *CommunicationCharacteristicsAF) HasMaximumResponseTime() bool {
-	if o != nil && !isNil(o.MaximumResponseTime) {
+	if o != nil && !IsNil(o.MaximumResponseTime) {
 		return true
 	}
 
@@ -119,7 +120,7 @@ func (o *CommunicationCharacteristicsAF) SetMaximumResponseTime(v int32) {
 
 // GetMaximumLatency returns the MaximumLatency field value if set, zero value otherwise.
 func (o *CommunicationCharacteristicsAF) GetMaximumLatency() int32 {
-	if o == nil || isNil(o.MaximumLatency) {
+	if o == nil || IsNil(o.MaximumLatency) {
 		var ret int32
 		return ret
 	}
@@ -129,7 +130,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumLatency() int32 {
 // GetMaximumLatencyOk returns a tuple with the MaximumLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationCharacteristicsAF) GetMaximumLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumLatency) {
+	if o == nil || IsNil(o.MaximumLatency) {
 		return nil, false
 	}
 	return o.MaximumLatency, true
@@ -137,7 +138,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumLatencyOk() (*int32, bool) {
 
 // HasMaximumLatency returns a boolean if a field has been set.
 func (o *CommunicationCharacteristicsAF) HasMaximumLatency() bool {
-	if o != nil && !isNil(o.MaximumLatency) {
+	if o != nil && !IsNil(o.MaximumLatency) {
 		return true
 	}
 
@@ -150,7 +151,7 @@ func (o *CommunicationCharacteristicsAF) SetMaximumLatency(v int32) {
 }
 
 func (o CommunicationCharacteristicsAF) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,10 +163,10 @@ func (o CommunicationCharacteristicsAF) ToMap() (map[string]interface{}, error) 
 	if o.PpDlPacketCount.IsSet() {
 		toSerialize["ppDlPacketCount"] = o.PpDlPacketCount.Get()
 	}
-	if !isNil(o.MaximumResponseTime) {
+	if !IsNil(o.MaximumResponseTime) {
 		toSerialize["maximumResponseTime"] = o.MaximumResponseTime
 	}
-	if !isNil(o.MaximumLatency) {
+	if !IsNil(o.MaximumLatency) {
 		toSerialize["maximumLatency"] = o.MaximumLatency
 	}
 	return toSerialize, nil
@@ -206,5 +207,3 @@ func (v *NullableCommunicationCharacteristicsAF) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

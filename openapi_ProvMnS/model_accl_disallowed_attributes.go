@@ -19,8 +19,8 @@ var _ MappedNullable = &ACCLDisallowedAttributes{}
 
 // ACCLDisallowedAttributes struct for ACCLDisallowedAttributes
 type ACCLDisallowedAttributes struct {
-	ManagedEntityIdentifier *string `json:"managedEntityIdentifier,omitempty"`
-	AttributeNameList []string `json:"attributeNameList,omitempty"`
+	ManagedEntityIdentifier *string  `json:"managedEntityIdentifier,omitempty"`
+	AttributeNameList       []string `json:"attributeNameList,omitempty"`
 }
 
 // NewACCLDisallowedAttributes instantiates a new ACCLDisallowedAttributes object
@@ -42,7 +42,7 @@ func NewACCLDisallowedAttributesWithDefaults() *ACCLDisallowedAttributes {
 
 // GetManagedEntityIdentifier returns the ManagedEntityIdentifier field value if set, zero value otherwise.
 func (o *ACCLDisallowedAttributes) GetManagedEntityIdentifier() string {
-	if o == nil || isNil(o.ManagedEntityIdentifier) {
+	if o == nil || IsNil(o.ManagedEntityIdentifier) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ACCLDisallowedAttributes) GetManagedEntityIdentifier() string {
 // GetManagedEntityIdentifierOk returns a tuple with the ManagedEntityIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACCLDisallowedAttributes) GetManagedEntityIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.ManagedEntityIdentifier) {
+	if o == nil || IsNil(o.ManagedEntityIdentifier) {
 		return nil, false
 	}
 	return o.ManagedEntityIdentifier, true
@@ -60,7 +60,7 @@ func (o *ACCLDisallowedAttributes) GetManagedEntityIdentifierOk() (*string, bool
 
 // HasManagedEntityIdentifier returns a boolean if a field has been set.
 func (o *ACCLDisallowedAttributes) HasManagedEntityIdentifier() bool {
-	if o != nil && !isNil(o.ManagedEntityIdentifier) {
+	if o != nil && !IsNil(o.ManagedEntityIdentifier) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ACCLDisallowedAttributes) SetManagedEntityIdentifier(v string) {
 
 // GetAttributeNameList returns the AttributeNameList field value if set, zero value otherwise.
 func (o *ACCLDisallowedAttributes) GetAttributeNameList() []string {
-	if o == nil || isNil(o.AttributeNameList) {
+	if o == nil || IsNil(o.AttributeNameList) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ACCLDisallowedAttributes) GetAttributeNameList() []string {
 // GetAttributeNameListOk returns a tuple with the AttributeNameList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACCLDisallowedAttributes) GetAttributeNameListOk() ([]string, bool) {
-	if o == nil || isNil(o.AttributeNameList) {
+	if o == nil || IsNil(o.AttributeNameList) {
 		return nil, false
 	}
 	return o.AttributeNameList, true
@@ -92,7 +92,7 @@ func (o *ACCLDisallowedAttributes) GetAttributeNameListOk() ([]string, bool) {
 
 // HasAttributeNameList returns a boolean if a field has been set.
 func (o *ACCLDisallowedAttributes) HasAttributeNameList() bool {
-	if o != nil && !isNil(o.AttributeNameList) {
+	if o != nil && !IsNil(o.AttributeNameList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ACCLDisallowedAttributes) SetAttributeNameList(v []string) {
 }
 
 func (o ACCLDisallowedAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ACCLDisallowedAttributes) MarshalJSON() ([]byte, error) {
 
 func (o ACCLDisallowedAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ManagedEntityIdentifier) {
+	if !IsNil(o.ManagedEntityIdentifier) {
 		toSerialize["managedEntityIdentifier"] = o.ManagedEntityIdentifier
 	}
-	if !isNil(o.AttributeNameList) {
+	if !IsNil(o.AttributeNameList) {
 		toSerialize["attributeNameList"] = o.AttributeNameList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableACCLDisallowedAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &EasDeployInfoData{}
 // EasDeployInfoData Represents the EAS Deployment Information to be reported.
 type EasDeployInfoData struct {
 	AppId *string `json:"appId,omitempty"`
-	// list of DNS server identifier (consisting of IP address and port) and/or IP address(s)  of the EAS in the local DN for each DNAI. The key of map is the DNAI. 
+	// list of DNS server identifier (consisting of IP address and port) and/or IP address(s)  of the EAS in the local DN for each DNAI. The key of map is the DNAI.
 	DnaiInfos *map[string]DnaiInformation `json:"dnaiInfos,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn             *string                   `json:"dnn,omitempty"`
 	FqdnPatternList []FqdnPatternMatchingRule `json:"fqdnPatternList"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InternalGroupId *string `json:"internalGroupId,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	Snssai          *Snssai `json:"snssai,omitempty"`
 }
 
 // NewEasDeployInfoData instantiates a new EasDeployInfoData object
@@ -50,7 +50,7 @@ func NewEasDeployInfoDataWithDefaults() *EasDeployInfoData {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *EasDeployInfoData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -68,7 +68,7 @@ func (o *EasDeployInfoData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *EasDeployInfoData) SetAppId(v string) {
 
 // GetDnaiInfos returns the DnaiInfos field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetDnaiInfos() map[string]DnaiInformation {
-	if o == nil || isNil(o.DnaiInfos) {
+	if o == nil || IsNil(o.DnaiInfos) {
 		var ret map[string]DnaiInformation
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *EasDeployInfoData) GetDnaiInfos() map[string]DnaiInformation {
 // GetDnaiInfosOk returns a tuple with the DnaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetDnaiInfosOk() (*map[string]DnaiInformation, bool) {
-	if o == nil || isNil(o.DnaiInfos) {
+	if o == nil || IsNil(o.DnaiInfos) {
 		return nil, false
 	}
 	return o.DnaiInfos, true
@@ -100,7 +100,7 @@ func (o *EasDeployInfoData) GetDnaiInfosOk() (*map[string]DnaiInformation, bool)
 
 // HasDnaiInfos returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasDnaiInfos() bool {
-	if o != nil && !isNil(o.DnaiInfos) {
+	if o != nil && !IsNil(o.DnaiInfos) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *EasDeployInfoData) SetDnaiInfos(v map[string]DnaiInformation) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *EasDeployInfoData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -132,7 +132,7 @@ func (o *EasDeployInfoData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *EasDeployInfoData) SetFqdnPatternList(v []FqdnPatternMatchingRule) {
 
 // GetInternalGroupId returns the InternalGroupId field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetInternalGroupId() string {
-	if o == nil || isNil(o.InternalGroupId) {
+	if o == nil || IsNil(o.InternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *EasDeployInfoData) GetInternalGroupId() string {
 // GetInternalGroupIdOk returns a tuple with the InternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetInternalGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.InternalGroupId) {
+	if o == nil || IsNil(o.InternalGroupId) {
 		return nil, false
 	}
 	return o.InternalGroupId, true
@@ -188,7 +188,7 @@ func (o *EasDeployInfoData) GetInternalGroupIdOk() (*string, bool) {
 
 // HasInternalGroupId returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasInternalGroupId() bool {
-	if o != nil && !isNil(o.InternalGroupId) {
+	if o != nil && !IsNil(o.InternalGroupId) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *EasDeployInfoData) SetInternalGroupId(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *EasDeployInfoData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -220,7 +220,7 @@ func (o *EasDeployInfoData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *EasDeployInfoData) SetSnssai(v Snssai) {
 }
 
 func (o EasDeployInfoData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -242,20 +242,20 @@ func (o EasDeployInfoData) MarshalJSON() ([]byte, error) {
 
 func (o EasDeployInfoData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.DnaiInfos) {
+	if !IsNil(o.DnaiInfos) {
 		toSerialize["dnaiInfos"] = o.DnaiInfos
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	toSerialize["fqdnPatternList"] = o.FqdnPatternList
-	if !isNil(o.InternalGroupId) {
+	if !IsNil(o.InternalGroupId) {
 		toSerialize["internalGroupId"] = o.InternalGroupId
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil
@@ -296,5 +296,3 @@ func (v *NullableEasDeployInfoData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

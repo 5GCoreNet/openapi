@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Provider_Management_API
 
-API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ApiProviderFuncRole Possible values are: - AEF: API provider function is API Exposing Function. - APF: API provider function is API Publishing Function. - AMF: API Provider function is API Management Function. 
+// ApiProviderFuncRole Possible values are: - AEF: API provider function is API Exposing Function. - APF: API provider function is API Publishing Function. - AMF: API Provider function is API Management Function.
 type ApiProviderFuncRole struct {
-	ApiProviderFuncRoleAnyOf *ApiProviderFuncRoleAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ApiProviderFuncRole) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ApiProviderFuncRoleAnyOf
-	err = json.Unmarshal(data, &dst.ApiProviderFuncRoleAnyOf);
-	if err == nil {
-		jsonApiProviderFuncRoleAnyOf, _ := json.Marshal(dst.ApiProviderFuncRoleAnyOf)
-		if string(jsonApiProviderFuncRoleAnyOf) == "{}" { // empty struct
-			dst.ApiProviderFuncRoleAnyOf = nil
-		} else {
-			return nil // data stored in dst.ApiProviderFuncRoleAnyOf, return on the first match
-		}
-	} else {
-		dst.ApiProviderFuncRoleAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ApiProviderFuncRole) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ApiProviderFuncRole) MarshalJSON() ([]byte, error) {
-	if src.ApiProviderFuncRoleAnyOf != nil {
-		return json.Marshal(&src.ApiProviderFuncRoleAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableApiProviderFuncRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

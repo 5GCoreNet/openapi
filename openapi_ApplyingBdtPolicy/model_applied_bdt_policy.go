@@ -1,7 +1,7 @@
 /*
 3gpp-applying-bdt-policy
 
-API for applying BDT policy   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for applying BDT policy   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsAppliedBdtPolicy(v *interface{}) AppliedBdtPolicy {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AppliedBdtPolicy) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src AppliedBdtPolicy) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AppliedBdtPolicy) GetActualInstance() (interface{}) {
+func (obj *AppliedBdtPolicy) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableAppliedBdtPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

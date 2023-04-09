@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // GnssId Global Navigation Satellite System (GNSS) ID.
 type GnssId struct {
-	GnssIdAnyOf *GnssIdAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GnssId) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into GnssIdAnyOf
-	err = json.Unmarshal(data, &dst.GnssIdAnyOf);
-	if err == nil {
-		jsonGnssIdAnyOf, _ := json.Marshal(dst.GnssIdAnyOf)
-		if string(jsonGnssIdAnyOf) == "{}" { // empty struct
-			dst.GnssIdAnyOf = nil
-		} else {
-			return nil // data stored in dst.GnssIdAnyOf, return on the first match
-		}
-	} else {
-		dst.GnssIdAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *GnssId) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *GnssId) MarshalJSON() ([]byte, error) {
-	if src.GnssIdAnyOf != nil {
-		return json.Marshal(&src.GnssIdAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableGnssId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

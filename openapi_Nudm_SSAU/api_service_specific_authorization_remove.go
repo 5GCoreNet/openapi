@@ -1,7 +1,7 @@
 /*
 Nudm_SSAU
 
-Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudm_SSAU
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ServiceSpecificAuthorizationRemoveApiService ServiceSpecificAuthorizationRemoveApi service
 type ServiceSpecificAuthorizationRemoveApiService service
 
 type ApiServiceSpecificAuthorizationRemovalRequest struct {
-	ctx context.Context
-	ApiService *ServiceSpecificAuthorizationRemoveApiService
-	ueIdentity string
-	serviceType ServiceType
+	ctx                                    context.Context
+	ApiService                             *ServiceSpecificAuthorizationRemoveApiService
+	ueIdentity                             string
+	serviceType                            ServiceType
 	serviceSpecificAuthorizationRemoveData *ServiceSpecificAuthorizationRemoveData
 }
 
@@ -43,16 +42,16 @@ func (r ApiServiceSpecificAuthorizationRemovalRequest) Execute() (*http.Response
 /*
 ServiceSpecificAuthorizationRemoval Remove the authorization of specific service's configuration.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueIdentity Represents the scope of the UE for which the Service Specific configuration authorization to be removed. Contains the GPSI of the user or the external group ID.
- @param serviceType Represents the specific service for which the Service Specific configuration authorization to be removed.
- @return ApiServiceSpecificAuthorizationRemovalRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueIdentity Represents the scope of the UE for which the Service Specific configuration authorization to be removed. Contains the GPSI of the user or the external group ID.
+	@param serviceType Represents the specific service for which the Service Specific configuration authorization to be removed.
+	@return ApiServiceSpecificAuthorizationRemovalRequest
 */
 func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizationRemoval(ctx context.Context, ueIdentity string, serviceType ServiceType) ApiServiceSpecificAuthorizationRemovalRequest {
 	return ApiServiceSpecificAuthorizationRemovalRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueIdentity: ueIdentity,
+		ApiService:  a,
+		ctx:         ctx,
+		ueIdentity:  ueIdentity,
 		serviceType: serviceType,
 	}
 }
@@ -60,9 +59,9 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 // Execute executes the request
 func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizationRemovalExecute(r ApiServiceSpecificAuthorizationRemovalRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSpecificAuthorizationRemoveApiService.ServiceSpecificAuthorizationRemoval")
@@ -110,9 +109,9 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -129,8 +128,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -140,8 +139,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -151,8 +150,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -162,8 +161,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -173,8 +172,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -184,8 +183,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -195,8 +194,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -206,8 +205,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -217,8 +216,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -228,8 +227,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -239,8 +238,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -250,8 +249,8 @@ func (a *ServiceSpecificAuthorizationRemoveApiService) ServiceSpecificAuthorizat
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

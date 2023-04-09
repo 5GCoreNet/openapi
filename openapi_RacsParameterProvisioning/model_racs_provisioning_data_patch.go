@@ -1,7 +1,7 @@
 /*
 3gpp-racs-parameter-provisioning
 
-API for provisioning UE radio capability parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning UE radio capability parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -42,7 +42,7 @@ func NewRacsProvisioningDataPatchWithDefaults() *RacsProvisioningDataPatch {
 
 // GetRacsConfigs returns the RacsConfigs field value if set, zero value otherwise.
 func (o *RacsProvisioningDataPatch) GetRacsConfigs() map[string]RacsConfigurationRm {
-	if o == nil || isNil(o.RacsConfigs) {
+	if o == nil || IsNil(o.RacsConfigs) {
 		var ret map[string]RacsConfigurationRm
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RacsProvisioningDataPatch) GetRacsConfigs() map[string]RacsConfiguratio
 // GetRacsConfigsOk returns a tuple with the RacsConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningDataPatch) GetRacsConfigsOk() (*map[string]RacsConfigurationRm, bool) {
-	if o == nil || isNil(o.RacsConfigs) {
+	if o == nil || IsNil(o.RacsConfigs) {
 		return nil, false
 	}
 	return o.RacsConfigs, true
@@ -60,7 +60,7 @@ func (o *RacsProvisioningDataPatch) GetRacsConfigsOk() (*map[string]RacsConfigur
 
 // HasRacsConfigs returns a boolean if a field has been set.
 func (o *RacsProvisioningDataPatch) HasRacsConfigs() bool {
-	if o != nil && !isNil(o.RacsConfigs) {
+	if o != nil && !IsNil(o.RacsConfigs) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *RacsProvisioningDataPatch) SetRacsConfigs(v map[string]RacsConfiguratio
 }
 
 func (o RacsProvisioningDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o RacsProvisioningDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o RacsProvisioningDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RacsConfigs) {
+	if !IsNil(o.RacsConfigs) {
 		toSerialize["racsConfigs"] = o.RacsConfigs
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableRacsProvisioningDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

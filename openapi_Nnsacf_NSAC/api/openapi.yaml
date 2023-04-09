@@ -752,7 +752,10 @@ components:
       type: object
     EACMode:
       anyOf:
-      - $ref: '#/components/schemas/EACMode_anyOf'
+      - enum:
+        - ACTIVE
+        - DEACTIVE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -760,7 +763,11 @@ components:
         EAC mode. Possible values are - ACTIVE - DEACTIVE
     AcuFlag:
       anyOf:
-      - $ref: '#/components/schemas/AcuFlag_anyOf'
+      - enum:
+        - INCREASE
+        - DECREASE
+        - UPDATE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -768,7 +775,15 @@ components:
         Update Flag of ACU operation. Possible values are - INCREASE - DECREASE - UPDATE
     AcuFailureReason:
       anyOf:
-      - $ref: '#/components/schemas/AcuFailureReason_anyOf'
+      - enum:
+        - SLICE_NOT_FOUND
+        - EXCEED_MAX_UE_NUM
+        - EXCEED_MAX_UE_NUM_3GPP
+        - EXCEED_MAX_UE_NUM_N3GPP
+        - EXCEED_MAX_PDU_NUM
+        - EXCEED_MAX_PDU_NUM_3GPP
+        - EXCEED_MAX_PDU_NUM_N3GPP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -872,7 +887,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     Supi:
@@ -1147,90 +1219,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    EACMode_anyOf:
-      enum:
-      - ACTIVE
-      - DEACTIVE
-      type: string
-      example: null
-    AcuFlag_anyOf:
-      enum:
-      - INCREASE
-      - DECREASE
-      - UPDATE
-      type: string
-      example: null
-    AcuFailureReason_anyOf:
-      enum:
-      - SLICE_NOT_FOUND
-      - EXCEED_MAX_UE_NUM
-      - EXCEED_MAX_UE_NUM_3GPP
-      - EXCEED_MAX_UE_NUM_N3GPP
-      - EXCEED_MAX_PDU_NUM
-      - EXCEED_MAX_PDU_NUM_3GPP
-      - EXCEED_MAX_PDU_NUM_N3GPP
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

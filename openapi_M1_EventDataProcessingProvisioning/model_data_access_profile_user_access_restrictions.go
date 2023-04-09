@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &DataAccessProfileUserAccessRestrictions{}
 
 // DataAccessProfileUserAccessRestrictions struct for DataAccessProfileUserAccessRestrictions
 type DataAccessProfileUserAccessRestrictions struct {
-	GroupIds []string `json:"groupIds"`
-	UserIds []DataAccessProfileUserAccessRestrictionsUserIdsInner `json:"userIds"`
-	AggregationFunctions []DataAggregationFunctionType `json:"aggregationFunctions"`
+	GroupIds             []string                                              `json:"groupIds"`
+	UserIds              []DataAccessProfileUserAccessRestrictionsUserIdsInner `json:"userIds"`
+	AggregationFunctions []DataAggregationFunctionType                         `json:"aggregationFunctions"`
 }
 
 // NewDataAccessProfileUserAccessRestrictions instantiates a new DataAccessProfileUserAccessRestrictions object
@@ -117,7 +117,7 @@ func (o *DataAccessProfileUserAccessRestrictions) SetAggregationFunctions(v []Da
 }
 
 func (o DataAccessProfileUserAccessRestrictions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableDataAccessProfileUserAccessRestrictions) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

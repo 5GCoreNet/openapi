@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &Model5GVnGroupConfiguration{}
 // Model5GVnGroupConfiguration struct for Model5GVnGroupConfiguration
 type Model5GVnGroupConfiguration struct {
 	Var5gVnGroupData *Model5GVnGroupData `json:"5gVnGroupData,omitempty"`
-	Members []string `json:"members,omitempty"`
-	ReferenceId *int32 `json:"referenceId,omitempty"`
-	AfInstanceId *string `json:"afInstanceId,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	Members          []string            `json:"members,omitempty"`
+	ReferenceId      *int32              `json:"referenceId,omitempty"`
+	AfInstanceId     *string             `json:"afInstanceId,omitempty"`
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	InternalGroupIdentifier *string `json:"internalGroupIdentifier,omitempty"`
 	// String uniquely identifying MTC provider information.
 	MtcProviderInformation *string `json:"mtcProviderInformation,omitempty"`
@@ -48,7 +48,7 @@ func NewModel5GVnGroupConfigurationWithDefaults() *Model5GVnGroupConfiguration {
 
 // GetVar5gVnGroupData returns the Var5gVnGroupData field value if set, zero value otherwise.
 func (o *Model5GVnGroupConfiguration) GetVar5gVnGroupData() Model5GVnGroupData {
-	if o == nil || isNil(o.Var5gVnGroupData) {
+	if o == nil || IsNil(o.Var5gVnGroupData) {
 		var ret Model5GVnGroupData
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *Model5GVnGroupConfiguration) GetVar5gVnGroupData() Model5GVnGroupData {
 // GetVar5gVnGroupDataOk returns a tuple with the Var5gVnGroupData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupConfiguration) GetVar5gVnGroupDataOk() (*Model5GVnGroupData, bool) {
-	if o == nil || isNil(o.Var5gVnGroupData) {
+	if o == nil || IsNil(o.Var5gVnGroupData) {
 		return nil, false
 	}
 	return o.Var5gVnGroupData, true
@@ -66,7 +66,7 @@ func (o *Model5GVnGroupConfiguration) GetVar5gVnGroupDataOk() (*Model5GVnGroupDa
 
 // HasVar5gVnGroupData returns a boolean if a field has been set.
 func (o *Model5GVnGroupConfiguration) HasVar5gVnGroupData() bool {
-	if o != nil && !isNil(o.Var5gVnGroupData) {
+	if o != nil && !IsNil(o.Var5gVnGroupData) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *Model5GVnGroupConfiguration) SetVar5gVnGroupData(v Model5GVnGroupData) 
 
 // GetMembers returns the Members field value if set, zero value otherwise.
 func (o *Model5GVnGroupConfiguration) GetMembers() []string {
-	if o == nil || isNil(o.Members) {
+	if o == nil || IsNil(o.Members) {
 		var ret []string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *Model5GVnGroupConfiguration) GetMembers() []string {
 // GetMembersOk returns a tuple with the Members field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupConfiguration) GetMembersOk() ([]string, bool) {
-	if o == nil || isNil(o.Members) {
+	if o == nil || IsNil(o.Members) {
 		return nil, false
 	}
 	return o.Members, true
@@ -98,7 +98,7 @@ func (o *Model5GVnGroupConfiguration) GetMembersOk() ([]string, bool) {
 
 // HasMembers returns a boolean if a field has been set.
 func (o *Model5GVnGroupConfiguration) HasMembers() bool {
-	if o != nil && !isNil(o.Members) {
+	if o != nil && !IsNil(o.Members) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *Model5GVnGroupConfiguration) SetMembers(v []string) {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *Model5GVnGroupConfiguration) GetReferenceId() int32 {
-	if o == nil || isNil(o.ReferenceId) {
+	if o == nil || IsNil(o.ReferenceId) {
 		var ret int32
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *Model5GVnGroupConfiguration) GetReferenceId() int32 {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupConfiguration) GetReferenceIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ReferenceId) {
+	if o == nil || IsNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -130,7 +130,7 @@ func (o *Model5GVnGroupConfiguration) GetReferenceIdOk() (*int32, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *Model5GVnGroupConfiguration) HasReferenceId() bool {
-	if o != nil && !isNil(o.ReferenceId) {
+	if o != nil && !IsNil(o.ReferenceId) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *Model5GVnGroupConfiguration) SetReferenceId(v int32) {
 
 // GetAfInstanceId returns the AfInstanceId field value if set, zero value otherwise.
 func (o *Model5GVnGroupConfiguration) GetAfInstanceId() string {
-	if o == nil || isNil(o.AfInstanceId) {
+	if o == nil || IsNil(o.AfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *Model5GVnGroupConfiguration) GetAfInstanceId() string {
 // GetAfInstanceIdOk returns a tuple with the AfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupConfiguration) GetAfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfInstanceId) {
+	if o == nil || IsNil(o.AfInstanceId) {
 		return nil, false
 	}
 	return o.AfInstanceId, true
@@ -162,7 +162,7 @@ func (o *Model5GVnGroupConfiguration) GetAfInstanceIdOk() (*string, bool) {
 
 // HasAfInstanceId returns a boolean if a field has been set.
 func (o *Model5GVnGroupConfiguration) HasAfInstanceId() bool {
-	if o != nil && !isNil(o.AfInstanceId) {
+	if o != nil && !IsNil(o.AfInstanceId) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *Model5GVnGroupConfiguration) SetAfInstanceId(v string) {
 
 // GetInternalGroupIdentifier returns the InternalGroupIdentifier field value if set, zero value otherwise.
 func (o *Model5GVnGroupConfiguration) GetInternalGroupIdentifier() string {
-	if o == nil || isNil(o.InternalGroupIdentifier) {
+	if o == nil || IsNil(o.InternalGroupIdentifier) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *Model5GVnGroupConfiguration) GetInternalGroupIdentifier() string {
 // GetInternalGroupIdentifierOk returns a tuple with the InternalGroupIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupConfiguration) GetInternalGroupIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.InternalGroupIdentifier) {
+	if o == nil || IsNil(o.InternalGroupIdentifier) {
 		return nil, false
 	}
 	return o.InternalGroupIdentifier, true
@@ -194,7 +194,7 @@ func (o *Model5GVnGroupConfiguration) GetInternalGroupIdentifierOk() (*string, b
 
 // HasInternalGroupIdentifier returns a boolean if a field has been set.
 func (o *Model5GVnGroupConfiguration) HasInternalGroupIdentifier() bool {
-	if o != nil && !isNil(o.InternalGroupIdentifier) {
+	if o != nil && !IsNil(o.InternalGroupIdentifier) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *Model5GVnGroupConfiguration) SetInternalGroupIdentifier(v string) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *Model5GVnGroupConfiguration) GetMtcProviderInformation() string {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *Model5GVnGroupConfiguration) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupConfiguration) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -226,7 +226,7 @@ func (o *Model5GVnGroupConfiguration) GetMtcProviderInformationOk() (*string, bo
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *Model5GVnGroupConfiguration) HasMtcProviderInformation() bool {
-	if o != nil && !isNil(o.MtcProviderInformation) {
+	if o != nil && !IsNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *Model5GVnGroupConfiguration) SetMtcProviderInformation(v string) {
 }
 
 func (o Model5GVnGroupConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -248,22 +248,22 @@ func (o Model5GVnGroupConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o Model5GVnGroupConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Var5gVnGroupData) {
+	if !IsNil(o.Var5gVnGroupData) {
 		toSerialize["5gVnGroupData"] = o.Var5gVnGroupData
 	}
-	if !isNil(o.Members) {
+	if !IsNil(o.Members) {
 		toSerialize["members"] = o.Members
 	}
-	if !isNil(o.ReferenceId) {
+	if !IsNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
-	if !isNil(o.AfInstanceId) {
+	if !IsNil(o.AfInstanceId) {
 		toSerialize["afInstanceId"] = o.AfInstanceId
 	}
-	if !isNil(o.InternalGroupIdentifier) {
+	if !IsNil(o.InternalGroupIdentifier) {
 		toSerialize["internalGroupIdentifier"] = o.InternalGroupIdentifier
 	}
-	if !isNil(o.MtcProviderInformation) {
+	if !IsNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil
@@ -304,5 +304,3 @@ func (v *NullableModel5GVnGroupConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NSSF NS Selection
 
-NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the AllowedNssai type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AllowedNssai{}
 
-// AllowedNssai Contains an array of allowed S-NSSAI that constitute the allowed NSSAI information for the authorized network slice information 
+// AllowedNssai Contains an array of allowed S-NSSAI that constitute the allowed NSSAI information for the authorized network slice information
 type AllowedNssai struct {
 	AllowedSnssaiList []AllowedSnssai `json:"allowedSnssaiList"`
-	AccessType AccessType `json:"accessType"`
+	AccessType        AccessType      `json:"accessType"`
 }
 
 // NewAllowedNssai instantiates a new AllowedNssai object
@@ -91,7 +91,7 @@ func (o *AllowedNssai) SetAccessType(v AccessType) {
 }
 
 func (o AllowedNssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableAllowedNssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

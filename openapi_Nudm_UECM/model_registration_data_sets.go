@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &RegistrationDataSets{}
 
 // RegistrationDataSets struct for RegistrationDataSets
 type RegistrationDataSets struct {
-	Amf3Gpp *Amf3GppAccessRegistration `json:"amf3Gpp,omitempty"`
-	AmfNon3Gpp *AmfNon3GppAccessRegistration `json:"amfNon3Gpp,omitempty"`
-	SmfRegistration *SmfRegistrationInfo `json:"smfRegistration,omitempty"`
-	Smsf3Gpp *SmsfRegistration `json:"smsf3Gpp,omitempty"`
-	SmsfNon3Gpp *SmsfRegistration `json:"smsfNon3Gpp,omitempty"`
-	IpSmGw *IpSmGwRegistration `json:"ipSmGw,omitempty"`
-	NwdafRegistration *NwdafRegistrationInfo `json:"nwdafRegistration,omitempty"`
+	Amf3Gpp           *Amf3GppAccessRegistration    `json:"amf3Gpp,omitempty"`
+	AmfNon3Gpp        *AmfNon3GppAccessRegistration `json:"amfNon3Gpp,omitempty"`
+	SmfRegistration   *SmfRegistrationInfo          `json:"smfRegistration,omitempty"`
+	Smsf3Gpp          *SmsfRegistration             `json:"smsf3Gpp,omitempty"`
+	SmsfNon3Gpp       *SmsfRegistration             `json:"smsfNon3Gpp,omitempty"`
+	IpSmGw            *IpSmGwRegistration           `json:"ipSmGw,omitempty"`
+	NwdafRegistration *NwdafRegistrationInfo        `json:"nwdafRegistration,omitempty"`
 }
 
 // NewRegistrationDataSets instantiates a new RegistrationDataSets object
@@ -47,7 +47,7 @@ func NewRegistrationDataSetsWithDefaults() *RegistrationDataSets {
 
 // GetAmf3Gpp returns the Amf3Gpp field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetAmf3Gpp() Amf3GppAccessRegistration {
-	if o == nil || isNil(o.Amf3Gpp) {
+	if o == nil || IsNil(o.Amf3Gpp) {
 		var ret Amf3GppAccessRegistration
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *RegistrationDataSets) GetAmf3Gpp() Amf3GppAccessRegistration {
 // GetAmf3GppOk returns a tuple with the Amf3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetAmf3GppOk() (*Amf3GppAccessRegistration, bool) {
-	if o == nil || isNil(o.Amf3Gpp) {
+	if o == nil || IsNil(o.Amf3Gpp) {
 		return nil, false
 	}
 	return o.Amf3Gpp, true
@@ -65,7 +65,7 @@ func (o *RegistrationDataSets) GetAmf3GppOk() (*Amf3GppAccessRegistration, bool)
 
 // HasAmf3Gpp returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasAmf3Gpp() bool {
-	if o != nil && !isNil(o.Amf3Gpp) {
+	if o != nil && !IsNil(o.Amf3Gpp) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *RegistrationDataSets) SetAmf3Gpp(v Amf3GppAccessRegistration) {
 
 // GetAmfNon3Gpp returns the AmfNon3Gpp field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetAmfNon3Gpp() AmfNon3GppAccessRegistration {
-	if o == nil || isNil(o.AmfNon3Gpp) {
+	if o == nil || IsNil(o.AmfNon3Gpp) {
 		var ret AmfNon3GppAccessRegistration
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *RegistrationDataSets) GetAmfNon3Gpp() AmfNon3GppAccessRegistration {
 // GetAmfNon3GppOk returns a tuple with the AmfNon3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetAmfNon3GppOk() (*AmfNon3GppAccessRegistration, bool) {
-	if o == nil || isNil(o.AmfNon3Gpp) {
+	if o == nil || IsNil(o.AmfNon3Gpp) {
 		return nil, false
 	}
 	return o.AmfNon3Gpp, true
@@ -97,7 +97,7 @@ func (o *RegistrationDataSets) GetAmfNon3GppOk() (*AmfNon3GppAccessRegistration,
 
 // HasAmfNon3Gpp returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasAmfNon3Gpp() bool {
-	if o != nil && !isNil(o.AmfNon3Gpp) {
+	if o != nil && !IsNil(o.AmfNon3Gpp) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *RegistrationDataSets) SetAmfNon3Gpp(v AmfNon3GppAccessRegistration) {
 
 // GetSmfRegistration returns the SmfRegistration field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetSmfRegistration() SmfRegistrationInfo {
-	if o == nil || isNil(o.SmfRegistration) {
+	if o == nil || IsNil(o.SmfRegistration) {
 		var ret SmfRegistrationInfo
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *RegistrationDataSets) GetSmfRegistration() SmfRegistrationInfo {
 // GetSmfRegistrationOk returns a tuple with the SmfRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetSmfRegistrationOk() (*SmfRegistrationInfo, bool) {
-	if o == nil || isNil(o.SmfRegistration) {
+	if o == nil || IsNil(o.SmfRegistration) {
 		return nil, false
 	}
 	return o.SmfRegistration, true
@@ -129,7 +129,7 @@ func (o *RegistrationDataSets) GetSmfRegistrationOk() (*SmfRegistrationInfo, boo
 
 // HasSmfRegistration returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasSmfRegistration() bool {
-	if o != nil && !isNil(o.SmfRegistration) {
+	if o != nil && !IsNil(o.SmfRegistration) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *RegistrationDataSets) SetSmfRegistration(v SmfRegistrationInfo) {
 
 // GetSmsf3Gpp returns the Smsf3Gpp field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetSmsf3Gpp() SmsfRegistration {
-	if o == nil || isNil(o.Smsf3Gpp) {
+	if o == nil || IsNil(o.Smsf3Gpp) {
 		var ret SmsfRegistration
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *RegistrationDataSets) GetSmsf3Gpp() SmsfRegistration {
 // GetSmsf3GppOk returns a tuple with the Smsf3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetSmsf3GppOk() (*SmsfRegistration, bool) {
-	if o == nil || isNil(o.Smsf3Gpp) {
+	if o == nil || IsNil(o.Smsf3Gpp) {
 		return nil, false
 	}
 	return o.Smsf3Gpp, true
@@ -161,7 +161,7 @@ func (o *RegistrationDataSets) GetSmsf3GppOk() (*SmsfRegistration, bool) {
 
 // HasSmsf3Gpp returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasSmsf3Gpp() bool {
-	if o != nil && !isNil(o.Smsf3Gpp) {
+	if o != nil && !IsNil(o.Smsf3Gpp) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *RegistrationDataSets) SetSmsf3Gpp(v SmsfRegistration) {
 
 // GetSmsfNon3Gpp returns the SmsfNon3Gpp field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetSmsfNon3Gpp() SmsfRegistration {
-	if o == nil || isNil(o.SmsfNon3Gpp) {
+	if o == nil || IsNil(o.SmsfNon3Gpp) {
 		var ret SmsfRegistration
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *RegistrationDataSets) GetSmsfNon3Gpp() SmsfRegistration {
 // GetSmsfNon3GppOk returns a tuple with the SmsfNon3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetSmsfNon3GppOk() (*SmsfRegistration, bool) {
-	if o == nil || isNil(o.SmsfNon3Gpp) {
+	if o == nil || IsNil(o.SmsfNon3Gpp) {
 		return nil, false
 	}
 	return o.SmsfNon3Gpp, true
@@ -193,7 +193,7 @@ func (o *RegistrationDataSets) GetSmsfNon3GppOk() (*SmsfRegistration, bool) {
 
 // HasSmsfNon3Gpp returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasSmsfNon3Gpp() bool {
-	if o != nil && !isNil(o.SmsfNon3Gpp) {
+	if o != nil && !IsNil(o.SmsfNon3Gpp) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *RegistrationDataSets) SetSmsfNon3Gpp(v SmsfRegistration) {
 
 // GetIpSmGw returns the IpSmGw field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetIpSmGw() IpSmGwRegistration {
-	if o == nil || isNil(o.IpSmGw) {
+	if o == nil || IsNil(o.IpSmGw) {
 		var ret IpSmGwRegistration
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *RegistrationDataSets) GetIpSmGw() IpSmGwRegistration {
 // GetIpSmGwOk returns a tuple with the IpSmGw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetIpSmGwOk() (*IpSmGwRegistration, bool) {
-	if o == nil || isNil(o.IpSmGw) {
+	if o == nil || IsNil(o.IpSmGw) {
 		return nil, false
 	}
 	return o.IpSmGw, true
@@ -225,7 +225,7 @@ func (o *RegistrationDataSets) GetIpSmGwOk() (*IpSmGwRegistration, bool) {
 
 // HasIpSmGw returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasIpSmGw() bool {
-	if o != nil && !isNil(o.IpSmGw) {
+	if o != nil && !IsNil(o.IpSmGw) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *RegistrationDataSets) SetIpSmGw(v IpSmGwRegistration) {
 
 // GetNwdafRegistration returns the NwdafRegistration field value if set, zero value otherwise.
 func (o *RegistrationDataSets) GetNwdafRegistration() NwdafRegistrationInfo {
-	if o == nil || isNil(o.NwdafRegistration) {
+	if o == nil || IsNil(o.NwdafRegistration) {
 		var ret NwdafRegistrationInfo
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *RegistrationDataSets) GetNwdafRegistration() NwdafRegistrationInfo {
 // GetNwdafRegistrationOk returns a tuple with the NwdafRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationDataSets) GetNwdafRegistrationOk() (*NwdafRegistrationInfo, bool) {
-	if o == nil || isNil(o.NwdafRegistration) {
+	if o == nil || IsNil(o.NwdafRegistration) {
 		return nil, false
 	}
 	return o.NwdafRegistration, true
@@ -257,7 +257,7 @@ func (o *RegistrationDataSets) GetNwdafRegistrationOk() (*NwdafRegistrationInfo,
 
 // HasNwdafRegistration returns a boolean if a field has been set.
 func (o *RegistrationDataSets) HasNwdafRegistration() bool {
-	if o != nil && !isNil(o.NwdafRegistration) {
+	if o != nil && !IsNil(o.NwdafRegistration) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *RegistrationDataSets) SetNwdafRegistration(v NwdafRegistrationInfo) {
 }
 
 func (o RegistrationDataSets) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,25 +279,25 @@ func (o RegistrationDataSets) MarshalJSON() ([]byte, error) {
 
 func (o RegistrationDataSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Amf3Gpp) {
+	if !IsNil(o.Amf3Gpp) {
 		toSerialize["amf3Gpp"] = o.Amf3Gpp
 	}
-	if !isNil(o.AmfNon3Gpp) {
+	if !IsNil(o.AmfNon3Gpp) {
 		toSerialize["amfNon3Gpp"] = o.AmfNon3Gpp
 	}
-	if !isNil(o.SmfRegistration) {
+	if !IsNil(o.SmfRegistration) {
 		toSerialize["smfRegistration"] = o.SmfRegistration
 	}
-	if !isNil(o.Smsf3Gpp) {
+	if !IsNil(o.Smsf3Gpp) {
 		toSerialize["smsf3Gpp"] = o.Smsf3Gpp
 	}
-	if !isNil(o.SmsfNon3Gpp) {
+	if !IsNil(o.SmsfNon3Gpp) {
 		toSerialize["smsfNon3Gpp"] = o.SmsfNon3Gpp
 	}
-	if !isNil(o.IpSmGw) {
+	if !IsNil(o.IpSmGw) {
 		toSerialize["ipSmGw"] = o.IpSmGw
 	}
-	if !isNil(o.NwdafRegistration) {
+	if !IsNil(o.NwdafRegistration) {
 		toSerialize["nwdafRegistration"] = o.NwdafRegistration
 	}
 	return toSerialize, nil
@@ -338,5 +338,3 @@ func (v *NullableRegistrationDataSets) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

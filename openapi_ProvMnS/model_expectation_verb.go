@@ -21,7 +21,7 @@ type ExpectationVerb string
 // List of ExpectationVerb
 const (
 	DELIVER ExpectationVerb = "DELIVER"
-	ENSURE ExpectationVerb = "ENSURE"
+	ENSURE  ExpectationVerb = "ENSURE"
 )
 
 // All allowed values of ExpectationVerb enum
@@ -108,4 +108,3 @@ func (v *NullableExpectationVerb) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // TriggerCategory struct for TriggerCategory
 type TriggerCategory struct {
-	TriggerCategoryAnyOf *TriggerCategoryAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TriggerCategory) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into TriggerCategoryAnyOf
-	err = json.Unmarshal(data, &dst.TriggerCategoryAnyOf);
-	if err == nil {
-		jsonTriggerCategoryAnyOf, _ := json.Marshal(dst.TriggerCategoryAnyOf)
-		if string(jsonTriggerCategoryAnyOf) == "{}" { // empty struct
-			dst.TriggerCategoryAnyOf = nil
-		} else {
-			return nil // data stored in dst.TriggerCategoryAnyOf, return on the first match
-		}
-	} else {
-		dst.TriggerCategoryAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *TriggerCategory) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TriggerCategory) MarshalJSON() ([]byte, error) {
-	if src.TriggerCategoryAnyOf != nil {
-		return json.Marshal(&src.TriggerCategoryAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableTriggerCategory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

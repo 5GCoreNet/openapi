@@ -20,9 +20,9 @@ type CellState string
 
 // List of CellState
 const (
-	IDLE CellState = "IDLE"
+	IDLE     CellState = "IDLE"
 	INACTIVE CellState = "INACTIVE"
-	ACTIVE CellState = "ACTIVE"
+	ACTIVE   CellState = "ACTIVE"
 )
 
 // All allowed values of CellState enum
@@ -110,4 +110,3 @@ func (v *NullableCellState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

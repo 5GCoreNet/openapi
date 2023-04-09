@@ -41,7 +41,7 @@ func NewReportingCtrlOneOfWithDefaults() *ReportingCtrlOneOf {
 
 // GetFileReportingPeriod returns the FileReportingPeriod field value if set, zero value otherwise.
 func (o *ReportingCtrlOneOf) GetFileReportingPeriod() int32 {
-	if o == nil || isNil(o.FileReportingPeriod) {
+	if o == nil || IsNil(o.FileReportingPeriod) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ReportingCtrlOneOf) GetFileReportingPeriod() int32 {
 // GetFileReportingPeriodOk returns a tuple with the FileReportingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCtrlOneOf) GetFileReportingPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.FileReportingPeriod) {
+	if o == nil || IsNil(o.FileReportingPeriod) {
 		return nil, false
 	}
 	return o.FileReportingPeriod, true
@@ -59,7 +59,7 @@ func (o *ReportingCtrlOneOf) GetFileReportingPeriodOk() (*int32, bool) {
 
 // HasFileReportingPeriod returns a boolean if a field has been set.
 func (o *ReportingCtrlOneOf) HasFileReportingPeriod() bool {
-	if o != nil && !isNil(o.FileReportingPeriod) {
+	if o != nil && !IsNil(o.FileReportingPeriod) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ReportingCtrlOneOf) SetFileReportingPeriod(v int32) {
 }
 
 func (o ReportingCtrlOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ReportingCtrlOneOf) MarshalJSON() ([]byte, error) {
 
 func (o ReportingCtrlOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FileReportingPeriod) {
+	if !IsNil(o.FileReportingPeriod) {
 		toSerialize["fileReportingPeriod"] = o.FileReportingPeriod
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableReportingCtrlOneOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

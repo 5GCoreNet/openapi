@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -23,13 +23,13 @@ type ChargingInformation struct {
 	PrimaryChfAddress string `json:"primaryChfAddress"`
 	// String providing an URI formatted according to RFC 3986.
 	SecondaryChfAddress *string `json:"secondaryChfAddress,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	PrimaryChfSetId *string `json:"primaryChfSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PrimaryChfInstanceId *string `json:"primaryChfInstanceId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	SecondaryChfSetId *string `json:"secondaryChfSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SecondaryChfInstanceId *string `json:"secondaryChfInstanceId,omitempty"`
 }
 
@@ -77,7 +77,7 @@ func (o *ChargingInformation) SetPrimaryChfAddress(v string) {
 
 // GetSecondaryChfAddress returns the SecondaryChfAddress field value if set, zero value otherwise.
 func (o *ChargingInformation) GetSecondaryChfAddress() string {
-	if o == nil || isNil(o.SecondaryChfAddress) {
+	if o == nil || IsNil(o.SecondaryChfAddress) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ChargingInformation) GetSecondaryChfAddress() string {
 // GetSecondaryChfAddressOk returns a tuple with the SecondaryChfAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetSecondaryChfAddressOk() (*string, bool) {
-	if o == nil || isNil(o.SecondaryChfAddress) {
+	if o == nil || IsNil(o.SecondaryChfAddress) {
 		return nil, false
 	}
 	return o.SecondaryChfAddress, true
@@ -95,7 +95,7 @@ func (o *ChargingInformation) GetSecondaryChfAddressOk() (*string, bool) {
 
 // HasSecondaryChfAddress returns a boolean if a field has been set.
 func (o *ChargingInformation) HasSecondaryChfAddress() bool {
-	if o != nil && !isNil(o.SecondaryChfAddress) {
+	if o != nil && !IsNil(o.SecondaryChfAddress) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ChargingInformation) SetSecondaryChfAddress(v string) {
 
 // GetPrimaryChfSetId returns the PrimaryChfSetId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetPrimaryChfSetId() string {
-	if o == nil || isNil(o.PrimaryChfSetId) {
+	if o == nil || IsNil(o.PrimaryChfSetId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ChargingInformation) GetPrimaryChfSetId() string {
 // GetPrimaryChfSetIdOk returns a tuple with the PrimaryChfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetPrimaryChfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.PrimaryChfSetId) {
+	if o == nil || IsNil(o.PrimaryChfSetId) {
 		return nil, false
 	}
 	return o.PrimaryChfSetId, true
@@ -127,7 +127,7 @@ func (o *ChargingInformation) GetPrimaryChfSetIdOk() (*string, bool) {
 
 // HasPrimaryChfSetId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasPrimaryChfSetId() bool {
-	if o != nil && !isNil(o.PrimaryChfSetId) {
+	if o != nil && !IsNil(o.PrimaryChfSetId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ChargingInformation) SetPrimaryChfSetId(v string) {
 
 // GetPrimaryChfInstanceId returns the PrimaryChfInstanceId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetPrimaryChfInstanceId() string {
-	if o == nil || isNil(o.PrimaryChfInstanceId) {
+	if o == nil || IsNil(o.PrimaryChfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ChargingInformation) GetPrimaryChfInstanceId() string {
 // GetPrimaryChfInstanceIdOk returns a tuple with the PrimaryChfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetPrimaryChfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.PrimaryChfInstanceId) {
+	if o == nil || IsNil(o.PrimaryChfInstanceId) {
 		return nil, false
 	}
 	return o.PrimaryChfInstanceId, true
@@ -159,7 +159,7 @@ func (o *ChargingInformation) GetPrimaryChfInstanceIdOk() (*string, bool) {
 
 // HasPrimaryChfInstanceId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasPrimaryChfInstanceId() bool {
-	if o != nil && !isNil(o.PrimaryChfInstanceId) {
+	if o != nil && !IsNil(o.PrimaryChfInstanceId) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ChargingInformation) SetPrimaryChfInstanceId(v string) {
 
 // GetSecondaryChfSetId returns the SecondaryChfSetId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetSecondaryChfSetId() string {
-	if o == nil || isNil(o.SecondaryChfSetId) {
+	if o == nil || IsNil(o.SecondaryChfSetId) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ChargingInformation) GetSecondaryChfSetId() string {
 // GetSecondaryChfSetIdOk returns a tuple with the SecondaryChfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetSecondaryChfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.SecondaryChfSetId) {
+	if o == nil || IsNil(o.SecondaryChfSetId) {
 		return nil, false
 	}
 	return o.SecondaryChfSetId, true
@@ -191,7 +191,7 @@ func (o *ChargingInformation) GetSecondaryChfSetIdOk() (*string, bool) {
 
 // HasSecondaryChfSetId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasSecondaryChfSetId() bool {
-	if o != nil && !isNil(o.SecondaryChfSetId) {
+	if o != nil && !IsNil(o.SecondaryChfSetId) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *ChargingInformation) SetSecondaryChfSetId(v string) {
 
 // GetSecondaryChfInstanceId returns the SecondaryChfInstanceId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetSecondaryChfInstanceId() string {
-	if o == nil || isNil(o.SecondaryChfInstanceId) {
+	if o == nil || IsNil(o.SecondaryChfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *ChargingInformation) GetSecondaryChfInstanceId() string {
 // GetSecondaryChfInstanceIdOk returns a tuple with the SecondaryChfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetSecondaryChfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.SecondaryChfInstanceId) {
+	if o == nil || IsNil(o.SecondaryChfInstanceId) {
 		return nil, false
 	}
 	return o.SecondaryChfInstanceId, true
@@ -223,7 +223,7 @@ func (o *ChargingInformation) GetSecondaryChfInstanceIdOk() (*string, bool) {
 
 // HasSecondaryChfInstanceId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasSecondaryChfInstanceId() bool {
-	if o != nil && !isNil(o.SecondaryChfInstanceId) {
+	if o != nil && !IsNil(o.SecondaryChfInstanceId) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *ChargingInformation) SetSecondaryChfInstanceId(v string) {
 }
 
 func (o ChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,19 +246,19 @@ func (o ChargingInformation) MarshalJSON() ([]byte, error) {
 func (o ChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["primaryChfAddress"] = o.PrimaryChfAddress
-	if !isNil(o.SecondaryChfAddress) {
+	if !IsNil(o.SecondaryChfAddress) {
 		toSerialize["secondaryChfAddress"] = o.SecondaryChfAddress
 	}
-	if !isNil(o.PrimaryChfSetId) {
+	if !IsNil(o.PrimaryChfSetId) {
 		toSerialize["primaryChfSetId"] = o.PrimaryChfSetId
 	}
-	if !isNil(o.PrimaryChfInstanceId) {
+	if !IsNil(o.PrimaryChfInstanceId) {
 		toSerialize["primaryChfInstanceId"] = o.PrimaryChfInstanceId
 	}
-	if !isNil(o.SecondaryChfSetId) {
+	if !IsNil(o.SecondaryChfSetId) {
 		toSerialize["secondaryChfSetId"] = o.SecondaryChfSetId
 	}
-	if !isNil(o.SecondaryChfInstanceId) {
+	if !IsNil(o.SecondaryChfInstanceId) {
 		toSerialize["secondaryChfInstanceId"] = o.SecondaryChfInstanceId
 	}
 	return toSerialize, nil
@@ -299,5 +299,3 @@ func (v *NullableChargingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

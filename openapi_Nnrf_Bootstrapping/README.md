@@ -92,14 +92,12 @@ Class | Method | HTTP request | Description
  - [Link](docs/Link.md)
  - [LinksValueSchema](docs/LinksValueSchema.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RedirectResponse](docs/RedirectResponse.md)
  - [Snssai](docs/Snssai.md)
  - [Status](docs/Status.md)
- - [StatusAnyOf](docs/StatusAnyOf.md)
 
 
 ## Documentation For Authorization

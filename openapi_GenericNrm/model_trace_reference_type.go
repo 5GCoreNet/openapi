@@ -19,8 +19,8 @@ var _ MappedNullable = &TraceReferenceType{}
 
 // TraceReferenceType The Trace Reference parameter shall be globally unique, therefore the Trace Reference shall compose as follows - MCC+MNC+Trace ID, where the MCC and MNC are coming with the Trace activation request from the management system to identify one PLMN containing the management system, and Trace ID is a 3 byte Octet String. See 3GPP TS 32.422 clause 5.6 for additional details.
 type TraceReferenceType struct {
-	Mcc string `json:"mcc"`
-	Mnc string `json:"mnc"`
+	Mcc     string `json:"mcc"`
+	Mnc     string `json:"mnc"`
 	TraceId string `json:"traceId"`
 }
 
@@ -117,7 +117,7 @@ func (o *TraceReferenceType) SetTraceId(v string) {
 }
 
 func (o TraceReferenceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableTraceReferenceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

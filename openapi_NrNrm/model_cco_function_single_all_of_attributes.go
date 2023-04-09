@@ -19,9 +19,9 @@ var _ MappedNullable = &CCOFunctionSingleAllOfAttributes{}
 
 // CCOFunctionSingleAllOfAttributes struct for CCOFunctionSingleAllOfAttributes
 type CCOFunctionSingleAllOfAttributes struct {
-	CCOControl *bool `json:"cCOControl,omitempty"`
-	CCOWeakCoverageParameters *CCOWeakCoverageParametersSingle `json:"cCOWeakCoverageParameters,omitempty"`
-	CCOPilotPollutionParameters *CCOPilotPollutionParametersSingle `json:"cCOPilotPollutionParameters,omitempty"`
+	CCOControl                           *bool                                 `json:"cCOControl,omitempty"`
+	CCOWeakCoverageParameters            *CCOWeakCoverageParametersSingle      `json:"cCOWeakCoverageParameters,omitempty"`
+	CCOPilotPollutionParameters          *CCOPilotPollutionParametersSingle    `json:"cCOPilotPollutionParameters,omitempty"`
 	CCOOvershootCoverageParametersSingle *CCOOvershootCoverageParametersSingle `json:"cCOOvershootCoverageParameters-Single,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewCCOFunctionSingleAllOfAttributesWithDefaults() *CCOFunctionSingleAllOfAt
 
 // GetCCOControl returns the CCOControl field value if set, zero value otherwise.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOControl() bool {
-	if o == nil || isNil(o.CCOControl) {
+	if o == nil || IsNil(o.CCOControl) {
 		var ret bool
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOControl() bool {
 // GetCCOControlOk returns a tuple with the CCOControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOControlOk() (*bool, bool) {
-	if o == nil || isNil(o.CCOControl) {
+	if o == nil || IsNil(o.CCOControl) {
 		return nil, false
 	}
 	return o.CCOControl, true
@@ -62,7 +62,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOControlOk() (*bool, bool) {
 
 // HasCCOControl returns a boolean if a field has been set.
 func (o *CCOFunctionSingleAllOfAttributes) HasCCOControl() bool {
-	if o != nil && !isNil(o.CCOControl) {
+	if o != nil && !IsNil(o.CCOControl) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *CCOFunctionSingleAllOfAttributes) SetCCOControl(v bool) {
 
 // GetCCOWeakCoverageParameters returns the CCOWeakCoverageParameters field value if set, zero value otherwise.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOWeakCoverageParameters() CCOWeakCoverageParametersSingle {
-	if o == nil || isNil(o.CCOWeakCoverageParameters) {
+	if o == nil || IsNil(o.CCOWeakCoverageParameters) {
 		var ret CCOWeakCoverageParametersSingle
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOWeakCoverageParameters() CCOWea
 // GetCCOWeakCoverageParametersOk returns a tuple with the CCOWeakCoverageParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOWeakCoverageParametersOk() (*CCOWeakCoverageParametersSingle, bool) {
-	if o == nil || isNil(o.CCOWeakCoverageParameters) {
+	if o == nil || IsNil(o.CCOWeakCoverageParameters) {
 		return nil, false
 	}
 	return o.CCOWeakCoverageParameters, true
@@ -94,7 +94,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOWeakCoverageParametersOk() (*CC
 
 // HasCCOWeakCoverageParameters returns a boolean if a field has been set.
 func (o *CCOFunctionSingleAllOfAttributes) HasCCOWeakCoverageParameters() bool {
-	if o != nil && !isNil(o.CCOWeakCoverageParameters) {
+	if o != nil && !IsNil(o.CCOWeakCoverageParameters) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *CCOFunctionSingleAllOfAttributes) SetCCOWeakCoverageParameters(v CCOWea
 
 // GetCCOPilotPollutionParameters returns the CCOPilotPollutionParameters field value if set, zero value otherwise.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOPilotPollutionParameters() CCOPilotPollutionParametersSingle {
-	if o == nil || isNil(o.CCOPilotPollutionParameters) {
+	if o == nil || IsNil(o.CCOPilotPollutionParameters) {
 		var ret CCOPilotPollutionParametersSingle
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOPilotPollutionParameters() CCOP
 // GetCCOPilotPollutionParametersOk returns a tuple with the CCOPilotPollutionParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOPilotPollutionParametersOk() (*CCOPilotPollutionParametersSingle, bool) {
-	if o == nil || isNil(o.CCOPilotPollutionParameters) {
+	if o == nil || IsNil(o.CCOPilotPollutionParameters) {
 		return nil, false
 	}
 	return o.CCOPilotPollutionParameters, true
@@ -126,7 +126,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOPilotPollutionParametersOk() (*
 
 // HasCCOPilotPollutionParameters returns a boolean if a field has been set.
 func (o *CCOFunctionSingleAllOfAttributes) HasCCOPilotPollutionParameters() bool {
-	if o != nil && !isNil(o.CCOPilotPollutionParameters) {
+	if o != nil && !IsNil(o.CCOPilotPollutionParameters) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *CCOFunctionSingleAllOfAttributes) SetCCOPilotPollutionParameters(v CCOP
 
 // GetCCOOvershootCoverageParametersSingle returns the CCOOvershootCoverageParametersSingle field value if set, zero value otherwise.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOOvershootCoverageParametersSingle() CCOOvershootCoverageParametersSingle {
-	if o == nil || isNil(o.CCOOvershootCoverageParametersSingle) {
+	if o == nil || IsNil(o.CCOOvershootCoverageParametersSingle) {
 		var ret CCOOvershootCoverageParametersSingle
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOOvershootCoverageParametersSing
 // GetCCOOvershootCoverageParametersSingleOk returns a tuple with the CCOOvershootCoverageParametersSingle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOFunctionSingleAllOfAttributes) GetCCOOvershootCoverageParametersSingleOk() (*CCOOvershootCoverageParametersSingle, bool) {
-	if o == nil || isNil(o.CCOOvershootCoverageParametersSingle) {
+	if o == nil || IsNil(o.CCOOvershootCoverageParametersSingle) {
 		return nil, false
 	}
 	return o.CCOOvershootCoverageParametersSingle, true
@@ -158,7 +158,7 @@ func (o *CCOFunctionSingleAllOfAttributes) GetCCOOvershootCoverageParametersSing
 
 // HasCCOOvershootCoverageParametersSingle returns a boolean if a field has been set.
 func (o *CCOFunctionSingleAllOfAttributes) HasCCOOvershootCoverageParametersSingle() bool {
-	if o != nil && !isNil(o.CCOOvershootCoverageParametersSingle) {
+	if o != nil && !IsNil(o.CCOOvershootCoverageParametersSingle) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *CCOFunctionSingleAllOfAttributes) SetCCOOvershootCoverageParametersSing
 }
 
 func (o CCOFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o CCOFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o CCOFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CCOControl) {
+	if !IsNil(o.CCOControl) {
 		toSerialize["cCOControl"] = o.CCOControl
 	}
-	if !isNil(o.CCOWeakCoverageParameters) {
+	if !IsNil(o.CCOWeakCoverageParameters) {
 		toSerialize["cCOWeakCoverageParameters"] = o.CCOWeakCoverageParameters
 	}
-	if !isNil(o.CCOPilotPollutionParameters) {
+	if !IsNil(o.CCOPilotPollutionParameters) {
 		toSerialize["cCOPilotPollutionParameters"] = o.CCOPilotPollutionParameters
 	}
-	if !isNil(o.CCOOvershootCoverageParametersSingle) {
+	if !IsNil(o.CCOOvershootCoverageParametersSingle) {
 		toSerialize["cCOOvershootCoverageParameters-Single"] = o.CCOOvershootCoverageParametersSingle
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableCCOFunctionSingleAllOfAttributes) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

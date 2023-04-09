@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -47,7 +47,7 @@ func NewRanNasRelCauseWithDefaults() *RanNasRelCause {
 
 // GetNgApCause returns the NgApCause field value if set, zero value otherwise.
 func (o *RanNasRelCause) GetNgApCause() NgApCause {
-	if o == nil || isNil(o.NgApCause) {
+	if o == nil || IsNil(o.NgApCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *RanNasRelCause) GetNgApCause() NgApCause {
 // GetNgApCauseOk returns a tuple with the NgApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RanNasRelCause) GetNgApCauseOk() (*NgApCause, bool) {
-	if o == nil || isNil(o.NgApCause) {
+	if o == nil || IsNil(o.NgApCause) {
 		return nil, false
 	}
 	return o.NgApCause, true
@@ -65,7 +65,7 @@ func (o *RanNasRelCause) GetNgApCauseOk() (*NgApCause, bool) {
 
 // HasNgApCause returns a boolean if a field has been set.
 func (o *RanNasRelCause) HasNgApCause() bool {
-	if o != nil && !isNil(o.NgApCause) {
+	if o != nil && !IsNil(o.NgApCause) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *RanNasRelCause) SetNgApCause(v NgApCause) {
 
 // GetVar5gMmCause returns the Var5gMmCause field value if set, zero value otherwise.
 func (o *RanNasRelCause) GetVar5gMmCause() int32 {
-	if o == nil || isNil(o.Var5gMmCause) {
+	if o == nil || IsNil(o.Var5gMmCause) {
 		var ret int32
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *RanNasRelCause) GetVar5gMmCause() int32 {
 // GetVar5gMmCauseOk returns a tuple with the Var5gMmCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RanNasRelCause) GetVar5gMmCauseOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5gMmCause) {
+	if o == nil || IsNil(o.Var5gMmCause) {
 		return nil, false
 	}
 	return o.Var5gMmCause, true
@@ -97,7 +97,7 @@ func (o *RanNasRelCause) GetVar5gMmCauseOk() (*int32, bool) {
 
 // HasVar5gMmCause returns a boolean if a field has been set.
 func (o *RanNasRelCause) HasVar5gMmCause() bool {
-	if o != nil && !isNil(o.Var5gMmCause) {
+	if o != nil && !IsNil(o.Var5gMmCause) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *RanNasRelCause) SetVar5gMmCause(v int32) {
 
 // GetVar5gSmCause returns the Var5gSmCause field value if set, zero value otherwise.
 func (o *RanNasRelCause) GetVar5gSmCause() int32 {
-	if o == nil || isNil(o.Var5gSmCause) {
+	if o == nil || IsNil(o.Var5gSmCause) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *RanNasRelCause) GetVar5gSmCause() int32 {
 // GetVar5gSmCauseOk returns a tuple with the Var5gSmCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RanNasRelCause) GetVar5gSmCauseOk() (*int32, bool) {
-	if o == nil || isNil(o.Var5gSmCause) {
+	if o == nil || IsNil(o.Var5gSmCause) {
 		return nil, false
 	}
 	return o.Var5gSmCause, true
@@ -129,7 +129,7 @@ func (o *RanNasRelCause) GetVar5gSmCauseOk() (*int32, bool) {
 
 // HasVar5gSmCause returns a boolean if a field has been set.
 func (o *RanNasRelCause) HasVar5gSmCause() bool {
-	if o != nil && !isNil(o.Var5gSmCause) {
+	if o != nil && !IsNil(o.Var5gSmCause) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *RanNasRelCause) SetVar5gSmCause(v int32) {
 
 // GetEpsCause returns the EpsCause field value if set, zero value otherwise.
 func (o *RanNasRelCause) GetEpsCause() string {
-	if o == nil || isNil(o.EpsCause) {
+	if o == nil || IsNil(o.EpsCause) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *RanNasRelCause) GetEpsCause() string {
 // GetEpsCauseOk returns a tuple with the EpsCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RanNasRelCause) GetEpsCauseOk() (*string, bool) {
-	if o == nil || isNil(o.EpsCause) {
+	if o == nil || IsNil(o.EpsCause) {
 		return nil, false
 	}
 	return o.EpsCause, true
@@ -161,7 +161,7 @@ func (o *RanNasRelCause) GetEpsCauseOk() (*string, bool) {
 
 // HasEpsCause returns a boolean if a field has been set.
 func (o *RanNasRelCause) HasEpsCause() bool {
-	if o != nil && !isNil(o.EpsCause) {
+	if o != nil && !IsNil(o.EpsCause) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *RanNasRelCause) SetEpsCause(v string) {
 }
 
 func (o RanNasRelCause) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,16 +183,16 @@ func (o RanNasRelCause) MarshalJSON() ([]byte, error) {
 
 func (o RanNasRelCause) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NgApCause) {
+	if !IsNil(o.NgApCause) {
 		toSerialize["ngApCause"] = o.NgApCause
 	}
-	if !isNil(o.Var5gMmCause) {
+	if !IsNil(o.Var5gMmCause) {
 		toSerialize["5gMmCause"] = o.Var5gMmCause
 	}
-	if !isNil(o.Var5gSmCause) {
+	if !IsNil(o.Var5gSmCause) {
 		toSerialize["5gSmCause"] = o.Var5gSmCause
 	}
-	if !isNil(o.EpsCause) {
+	if !IsNil(o.EpsCause) {
 		toSerialize["epsCause"] = o.EpsCause
 	}
 	return toSerialize, nil
@@ -233,5 +233,3 @@ func (v *NullableRanNasRelCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

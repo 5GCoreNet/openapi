@@ -1314,7 +1314,13 @@ components:
       type: string
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -1358,9 +1364,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1647,12 +1664,31 @@ components:
       type: object
     PositioningMethod:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMethod_anyOf'
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
       - type: string
       description: Indicates supported positioning methods.
     AccuracyFulfilmentIndicator:
       anyOf:
-      - $ref: '#/components/schemas/AccuracyFulfilmentIndicator_anyOf'
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
       - type: string
       description: Indicates fulfilment of requested accuracy.
     VelocityEstimate:
@@ -1801,7 +1837,14 @@ components:
       type: object
     LdrType:
       anyOf:
-      - $ref: '#/components/schemas/LdrType_anyOf'
+      - enum:
+        - UE_AVAILABLE
+        - PERIODIC
+        - ENTERING_INTO_AREA
+        - LEAVING_FROM_AREA
+        - BEING_INSIDE_AREA
+        - MOTION
+        type: string
       - type: string
       description: Indicates LDR types.
     MinorLocationQoS:
@@ -2244,15 +2287,6 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -2260,19 +2294,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -2441,41 +2462,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    PositioningMethod_anyOf:
-      enum:
-      - CELLID
-      - ECID
-      - OTDOA
-      - BAROMETRIC_PRESSURE
-      - WLAN
-      - BLUETOOTH
-      - MBS
-      - MOTION_SENSOR
-      - DL_TDOA
-      - DL_AOD
-      - MULTI-RTT
-      - NR_ECID
-      - UL_TDOA
-      - UL_AOA
-      - NETWORK_SPECIFIC
-      type: string
-      example: null
-    AccuracyFulfilmentIndicator_anyOf:
-      enum:
-      - REQUESTED_ACCURACY_FULFILLED
-      - REQUESTED_ACCURACY_NOT_FULFILLED
-      type: string
-      example: null
-    LdrType_anyOf:
-      enum:
-      - UE_AVAILABLE
-      - PERIODIC
-      - ENTERING_INTO_AREA
-      - LEAVING_FROM_AREA
-      - BEING_INSIDE_AREA
-      - MOTION
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

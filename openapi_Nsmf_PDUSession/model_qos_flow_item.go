@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &QosFlowItem{}
 // QosFlowItem Individual QoS flow
 type QosFlowItem struct {
 	// Unsigned integer identifying a QoS flow, within the range 0 to 63.
-	Qfi int32 `json:"qfi"`
-	Cause *Cause `json:"cause,omitempty"`
-	CurrentQosProfileIndex *int32 `json:"currentQosProfileIndex,omitempty"`
-	NullQoSProfileIndex *bool `json:"nullQoSProfileIndex,omitempty"`
-	NgApCause *NgApCause `json:"ngApCause,omitempty"`
+	Qfi                    int32      `json:"qfi"`
+	Cause                  *Cause     `json:"cause,omitempty"`
+	CurrentQosProfileIndex *int32     `json:"currentQosProfileIndex,omitempty"`
+	NullQoSProfileIndex    *bool      `json:"nullQoSProfileIndex,omitempty"`
+	NgApCause              *NgApCause `json:"ngApCause,omitempty"`
 }
 
 // NewQosFlowItem instantiates a new QosFlowItem object
@@ -71,7 +71,7 @@ func (o *QosFlowItem) SetQfi(v int32) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *QosFlowItem) GetCause() Cause {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *QosFlowItem) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetCauseOk() (*Cause, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -89,7 +89,7 @@ func (o *QosFlowItem) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *QosFlowItem) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *QosFlowItem) SetCause(v Cause) {
 
 // GetCurrentQosProfileIndex returns the CurrentQosProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowItem) GetCurrentQosProfileIndex() int32 {
-	if o == nil || isNil(o.CurrentQosProfileIndex) {
+	if o == nil || IsNil(o.CurrentQosProfileIndex) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *QosFlowItem) GetCurrentQosProfileIndex() int32 {
 // GetCurrentQosProfileIndexOk returns a tuple with the CurrentQosProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.CurrentQosProfileIndex) {
+	if o == nil || IsNil(o.CurrentQosProfileIndex) {
 		return nil, false
 	}
 	return o.CurrentQosProfileIndex, true
@@ -121,7 +121,7 @@ func (o *QosFlowItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
 
 // HasCurrentQosProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowItem) HasCurrentQosProfileIndex() bool {
-	if o != nil && !isNil(o.CurrentQosProfileIndex) {
+	if o != nil && !IsNil(o.CurrentQosProfileIndex) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *QosFlowItem) SetCurrentQosProfileIndex(v int32) {
 
 // GetNullQoSProfileIndex returns the NullQoSProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowItem) GetNullQoSProfileIndex() bool {
-	if o == nil || isNil(o.NullQoSProfileIndex) {
+	if o == nil || IsNil(o.NullQoSProfileIndex) {
 		var ret bool
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *QosFlowItem) GetNullQoSProfileIndex() bool {
 // GetNullQoSProfileIndexOk returns a tuple with the NullQoSProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetNullQoSProfileIndexOk() (*bool, bool) {
-	if o == nil || isNil(o.NullQoSProfileIndex) {
+	if o == nil || IsNil(o.NullQoSProfileIndex) {
 		return nil, false
 	}
 	return o.NullQoSProfileIndex, true
@@ -153,7 +153,7 @@ func (o *QosFlowItem) GetNullQoSProfileIndexOk() (*bool, bool) {
 
 // HasNullQoSProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowItem) HasNullQoSProfileIndex() bool {
-	if o != nil && !isNil(o.NullQoSProfileIndex) {
+	if o != nil && !IsNil(o.NullQoSProfileIndex) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *QosFlowItem) SetNullQoSProfileIndex(v bool) {
 
 // GetNgApCause returns the NgApCause field value if set, zero value otherwise.
 func (o *QosFlowItem) GetNgApCause() NgApCause {
-	if o == nil || isNil(o.NgApCause) {
+	if o == nil || IsNil(o.NgApCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *QosFlowItem) GetNgApCause() NgApCause {
 // GetNgApCauseOk returns a tuple with the NgApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetNgApCauseOk() (*NgApCause, bool) {
-	if o == nil || isNil(o.NgApCause) {
+	if o == nil || IsNil(o.NgApCause) {
 		return nil, false
 	}
 	return o.NgApCause, true
@@ -185,7 +185,7 @@ func (o *QosFlowItem) GetNgApCauseOk() (*NgApCause, bool) {
 
 // HasNgApCause returns a boolean if a field has been set.
 func (o *QosFlowItem) HasNgApCause() bool {
-	if o != nil && !isNil(o.NgApCause) {
+	if o != nil && !IsNil(o.NgApCause) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *QosFlowItem) SetNgApCause(v NgApCause) {
 }
 
 func (o QosFlowItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,16 +208,16 @@ func (o QosFlowItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !isNil(o.CurrentQosProfileIndex) {
+	if !IsNil(o.CurrentQosProfileIndex) {
 		toSerialize["currentQosProfileIndex"] = o.CurrentQosProfileIndex
 	}
-	if !isNil(o.NullQoSProfileIndex) {
+	if !IsNil(o.NullQoSProfileIndex) {
 		toSerialize["nullQoSProfileIndex"] = o.NullQoSProfileIndex
 	}
-	if !isNil(o.NgApCause) {
+	if !IsNil(o.NgApCause) {
 		toSerialize["ngApCause"] = o.NgApCause
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableQosFlowItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

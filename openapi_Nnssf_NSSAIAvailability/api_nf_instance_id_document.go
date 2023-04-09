@@ -1,7 +1,7 @@
 /*
 NSSF NSSAI Availability
 
-NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,20 +13,19 @@ package openapi_Nnssf_NSSAIAvailability
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NFInstanceIDDocumentApiService NFInstanceIDDocumentApi service
 type NFInstanceIDDocumentApiService service
 
 type ApiNSSAIAvailabilityDeleteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *NFInstanceIDDocumentApiService
-	nfId string
+	nfId       string
 }
 
 func (r ApiNSSAIAvailabilityDeleteRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiNSSAIAvailabilityDeleteRequest) Execute() (*http.Response, error) {
 /*
 NSSAIAvailabilityDelete Deletes an already existing S-NSSAIs per TA provided by the NF service consumer (e.g AMF)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfId Identifier of the NF service consumer instance
- @return ApiNSSAIAvailabilityDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfId Identifier of the NF service consumer instance
+	@return ApiNSSAIAvailabilityDeleteRequest
 */
 func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Context, nfId string) ApiNSSAIAvailabilityDeleteRequest {
 	return ApiNSSAIAvailabilityDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		nfId: nfId,
+		ctx:        ctx,
+		nfId:       nfId,
 	}
 }
 
 // Execute executes the request
 func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSSAIAvailabilityDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.NSSAIAvailabilityDelete")
@@ -95,9 +94,9 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,12 +223,12 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDeleteExecute(r ApiNSS
 }
 
 type ApiNSSAIAvailabilityPatchRequest struct {
-	ctx context.Context
-	ApiService *NFInstanceIDDocumentApiService
-	nfId string
-	patchItem *[]PatchItem
+	ctx             context.Context
+	ApiService      *NFInstanceIDDocumentApiService
+	nfId            string
+	patchItem       *[]PatchItem
 	contentEncoding *string
-	acceptEncoding *string
+	acceptEncoding  *string
 }
 
 // JSON Patch instructions to update at the NSSF, the S-NSSAIs supported per TA
@@ -257,26 +256,27 @@ func (r ApiNSSAIAvailabilityPatchRequest) Execute() (*AuthorizedNssaiAvailabilit
 /*
 NSSAIAvailabilityPatch Updates an already existing S-NSSAIs per TA provided by the NF service consumer (e.g AMF)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfId Identifier of the NF service consumer instance
- @return ApiNSSAIAvailabilityPatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfId Identifier of the NF service consumer instance
+	@return ApiNSSAIAvailabilityPatchRequest
 */
 func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Context, nfId string) ApiNSSAIAvailabilityPatchRequest {
 	return ApiNSSAIAvailabilityPatchRequest{
 		ApiService: a,
-		ctx: ctx,
-		nfId: nfId,
+		ctx:        ctx,
+		nfId:       nfId,
 	}
 }
 
 // Execute executes the request
-//  @return AuthorizedNssaiAvailabilityInfo
+//
+//	@return AuthorizedNssaiAvailabilityInfo
 func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSAIAvailabilityPatchRequest) (*AuthorizedNssaiAvailabilityInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthorizedNssaiAvailabilityInfo
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthorizedNssaiAvailabilityInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.NSSAIAvailabilityPatch")
@@ -315,10 +315,10 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -332,9 +332,9 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,8 +351,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -362,8 +362,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -373,8 +373,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -384,8 +384,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -395,8 +395,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -406,8 +406,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -417,8 +417,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -428,8 +428,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -439,8 +439,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -450,8 +450,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -461,8 +461,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -472,8 +472,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -483,8 +483,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -503,12 +503,12 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatchExecute(r ApiNSSA
 }
 
 type ApiNSSAIAvailabilityPutRequest struct {
-	ctx context.Context
-	ApiService *NFInstanceIDDocumentApiService
-	nfId string
+	ctx                   context.Context
+	ApiService            *NFInstanceIDDocumentApiService
+	nfId                  string
 	nssaiAvailabilityInfo *NssaiAvailabilityInfo
-	contentEncoding *string
-	acceptEncoding *string
+	contentEncoding       *string
+	acceptEncoding        *string
 }
 
 // Parameters to update/replace at the NSSF, the S-NSSAIs supported per TA
@@ -536,26 +536,27 @@ func (r ApiNSSAIAvailabilityPutRequest) Execute() (*AuthorizedNssaiAvailabilityI
 /*
 NSSAIAvailabilityPut Updates/replaces the NSSF with the S-NSSAIs the NF service consumer (e.g AMF)supports per TA
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfId Identifier of the NF service consumer instance
- @return ApiNSSAIAvailabilityPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfId Identifier of the NF service consumer instance
+	@return ApiNSSAIAvailabilityPutRequest
 */
 func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Context, nfId string) ApiNSSAIAvailabilityPutRequest {
 	return ApiNSSAIAvailabilityPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		nfId: nfId,
+		ctx:        ctx,
+		nfId:       nfId,
 	}
 }
 
 // Execute executes the request
-//  @return AuthorizedNssaiAvailabilityInfo
+//
+//	@return AuthorizedNssaiAvailabilityInfo
 func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIAvailabilityPutRequest) (*AuthorizedNssaiAvailabilityInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthorizedNssaiAvailabilityInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthorizedNssaiAvailabilityInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.NSSAIAvailabilityPut")
@@ -591,10 +592,10 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.nssaiAvailabilityInfo
@@ -608,9 +609,9 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -627,8 +628,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -638,8 +639,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -649,8 +650,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -660,8 +661,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -671,8 +672,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -682,8 +683,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -693,8 +694,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -704,8 +705,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -715,8 +716,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -726,8 +727,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -737,8 +738,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -748,8 +749,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -759,8 +760,8 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPutExecute(r ApiNSSAIA
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

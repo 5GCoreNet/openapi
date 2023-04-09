@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -18,7 +18,7 @@ import (
 // ApiSignature - API URI of the service operation
 type ApiSignature struct {
 	CallbackName *CallbackName
-	String *string
+	String       *string
 }
 
 // CallbackNameAsApiSignature is a convenience function that returns CallbackName wrapped in ApiSignature
@@ -34,7 +34,6 @@ func StringAsApiSignature(v *string) ApiSignature {
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApiSignature) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ApiSignature) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApiSignature) GetActualInstance() (interface{}) {
+func (obj *ApiSignature) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableApiSignature) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

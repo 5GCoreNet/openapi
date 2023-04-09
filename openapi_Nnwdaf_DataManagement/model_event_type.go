@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // EventType struct for EventType
 type EventType struct {
-	EventTypeAnyOf *EventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EventTypeAnyOf
-	err = json.Unmarshal(data, &dst.EventTypeAnyOf);
-	if err == nil {
-		jsonEventTypeAnyOf, _ := json.Marshal(dst.EventTypeAnyOf)
-		if string(jsonEventTypeAnyOf) == "{}" { // empty struct
-			dst.EventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.EventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.EventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EventType) MarshalJSON() ([]byte, error) {
-	if src.EventTypeAnyOf != nil {
-		return json.Marshal(&src.EventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

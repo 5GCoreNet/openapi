@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyxMB
 
-API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by xMB   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -50,7 +50,7 @@ func NewMbmsLocAreaWithDefaults() *MbmsLocArea {
 
 // GetCellId returns the CellId field value if set, zero value otherwise.
 func (o *MbmsLocArea) GetCellId() []string {
-	if o == nil || isNil(o.CellId) {
+	if o == nil || IsNil(o.CellId) {
 		var ret []string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *MbmsLocArea) GetCellId() []string {
 // GetCellIdOk returns a tuple with the CellId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbmsLocArea) GetCellIdOk() ([]string, bool) {
-	if o == nil || isNil(o.CellId) {
+	if o == nil || IsNil(o.CellId) {
 		return nil, false
 	}
 	return o.CellId, true
@@ -68,7 +68,7 @@ func (o *MbmsLocArea) GetCellIdOk() ([]string, bool) {
 
 // HasCellId returns a boolean if a field has been set.
 func (o *MbmsLocArea) HasCellId() bool {
-	if o != nil && !isNil(o.CellId) {
+	if o != nil && !IsNil(o.CellId) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *MbmsLocArea) SetCellId(v []string) {
 
 // GetEnodeBId returns the EnodeBId field value if set, zero value otherwise.
 func (o *MbmsLocArea) GetEnodeBId() []string {
-	if o == nil || isNil(o.EnodeBId) {
+	if o == nil || IsNil(o.EnodeBId) {
 		var ret []string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *MbmsLocArea) GetEnodeBId() []string {
 // GetEnodeBIdOk returns a tuple with the EnodeBId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbmsLocArea) GetEnodeBIdOk() ([]string, bool) {
-	if o == nil || isNil(o.EnodeBId) {
+	if o == nil || IsNil(o.EnodeBId) {
 		return nil, false
 	}
 	return o.EnodeBId, true
@@ -100,7 +100,7 @@ func (o *MbmsLocArea) GetEnodeBIdOk() ([]string, bool) {
 
 // HasEnodeBId returns a boolean if a field has been set.
 func (o *MbmsLocArea) HasEnodeBId() bool {
-	if o != nil && !isNil(o.EnodeBId) {
+	if o != nil && !IsNil(o.EnodeBId) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *MbmsLocArea) SetEnodeBId(v []string) {
 
 // GetGeographicArea returns the GeographicArea field value if set, zero value otherwise.
 func (o *MbmsLocArea) GetGeographicArea() []GeographicArea {
-	if o == nil || isNil(o.GeographicArea) {
+	if o == nil || IsNil(o.GeographicArea) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *MbmsLocArea) GetGeographicArea() []GeographicArea {
 // GetGeographicAreaOk returns a tuple with the GeographicArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbmsLocArea) GetGeographicAreaOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.GeographicArea) {
+	if o == nil || IsNil(o.GeographicArea) {
 		return nil, false
 	}
 	return o.GeographicArea, true
@@ -132,7 +132,7 @@ func (o *MbmsLocArea) GetGeographicAreaOk() ([]GeographicArea, bool) {
 
 // HasGeographicArea returns a boolean if a field has been set.
 func (o *MbmsLocArea) HasGeographicArea() bool {
-	if o != nil && !isNil(o.GeographicArea) {
+	if o != nil && !IsNil(o.GeographicArea) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *MbmsLocArea) SetGeographicArea(v []GeographicArea) {
 
 // GetMbmsServiceAreaId returns the MbmsServiceAreaId field value if set, zero value otherwise.
 func (o *MbmsLocArea) GetMbmsServiceAreaId() []string {
-	if o == nil || isNil(o.MbmsServiceAreaId) {
+	if o == nil || IsNil(o.MbmsServiceAreaId) {
 		var ret []string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *MbmsLocArea) GetMbmsServiceAreaId() []string {
 // GetMbmsServiceAreaIdOk returns a tuple with the MbmsServiceAreaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbmsLocArea) GetMbmsServiceAreaIdOk() ([]string, bool) {
-	if o == nil || isNil(o.MbmsServiceAreaId) {
+	if o == nil || IsNil(o.MbmsServiceAreaId) {
 		return nil, false
 	}
 	return o.MbmsServiceAreaId, true
@@ -164,7 +164,7 @@ func (o *MbmsLocArea) GetMbmsServiceAreaIdOk() ([]string, bool) {
 
 // HasMbmsServiceAreaId returns a boolean if a field has been set.
 func (o *MbmsLocArea) HasMbmsServiceAreaId() bool {
-	if o != nil && !isNil(o.MbmsServiceAreaId) {
+	if o != nil && !IsNil(o.MbmsServiceAreaId) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *MbmsLocArea) SetMbmsServiceAreaId(v []string) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *MbmsLocArea) GetCivicAddress() []CivicAddress {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		var ret []CivicAddress
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *MbmsLocArea) GetCivicAddress() []CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbmsLocArea) GetCivicAddressOk() ([]CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddress) {
+	if o == nil || IsNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -196,7 +196,7 @@ func (o *MbmsLocArea) GetCivicAddressOk() ([]CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *MbmsLocArea) HasCivicAddress() bool {
-	if o != nil && !isNil(o.CivicAddress) {
+	if o != nil && !IsNil(o.CivicAddress) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *MbmsLocArea) SetCivicAddress(v []CivicAddress) {
 }
 
 func (o MbmsLocArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,19 +218,19 @@ func (o MbmsLocArea) MarshalJSON() ([]byte, error) {
 
 func (o MbmsLocArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CellId) {
+	if !IsNil(o.CellId) {
 		toSerialize["cellId"] = o.CellId
 	}
-	if !isNil(o.EnodeBId) {
+	if !IsNil(o.EnodeBId) {
 		toSerialize["enodeBId"] = o.EnodeBId
 	}
-	if !isNil(o.GeographicArea) {
+	if !IsNil(o.GeographicArea) {
 		toSerialize["geographicArea"] = o.GeographicArea
 	}
-	if !isNil(o.MbmsServiceAreaId) {
+	if !IsNil(o.MbmsServiceAreaId) {
 		toSerialize["mbmsServiceAreaId"] = o.MbmsServiceAreaId
 	}
-	if !isNil(o.CivicAddress) {
+	if !IsNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	return toSerialize, nil
@@ -271,5 +271,3 @@ func (v *NullableMbmsLocArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

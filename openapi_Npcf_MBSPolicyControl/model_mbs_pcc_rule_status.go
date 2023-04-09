@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MbsPccRuleStatus Possible values are: - ACTIVE: Indicates that the MBS PCC rule(s) are successfully installed. - INACTIVE: Indicates that the MBS PCC rule(s) are removed. 
+// MbsPccRuleStatus Possible values are: - ACTIVE: Indicates that the MBS PCC rule(s) are successfully installed. - INACTIVE: Indicates that the MBS PCC rule(s) are removed.
 type MbsPccRuleStatus struct {
-	MbsPccRuleStatusAnyOf *MbsPccRuleStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsPccRuleStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MbsPccRuleStatusAnyOf
-	err = json.Unmarshal(data, &dst.MbsPccRuleStatusAnyOf);
-	if err == nil {
-		jsonMbsPccRuleStatusAnyOf, _ := json.Marshal(dst.MbsPccRuleStatusAnyOf)
-		if string(jsonMbsPccRuleStatusAnyOf) == "{}" { // empty struct
-			dst.MbsPccRuleStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.MbsPccRuleStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.MbsPccRuleStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MbsPccRuleStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsPccRuleStatus) MarshalJSON() ([]byte, error) {
-	if src.MbsPccRuleStatusAnyOf != nil {
-		return json.Marshal(&src.MbsPccRuleStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMbsPccRuleStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

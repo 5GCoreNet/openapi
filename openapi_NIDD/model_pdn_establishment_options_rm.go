@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -17,7 +17,7 @@ import (
 
 // PdnEstablishmentOptionsRm Represents the same information as the PdnEstablishmentOptions data type with the difference that it allows also the null value.
 type PdnEstablishmentOptionsRm struct {
-	NullValue *NullValue
+	NullValue               *NullValue
 	PdnEstablishmentOptions *PdnEstablishmentOptions
 }
 
@@ -25,7 +25,7 @@ type PdnEstablishmentOptionsRm struct {
 func (dst *PdnEstablishmentOptionsRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *PdnEstablishmentOptionsRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into PdnEstablishmentOptions
-	err = json.Unmarshal(data, &dst.PdnEstablishmentOptions);
+	err = json.Unmarshal(data, &dst.PdnEstablishmentOptions)
 	if err == nil {
 		jsonPdnEstablishmentOptions, _ := json.Marshal(dst.PdnEstablishmentOptions)
 		if string(jsonPdnEstablishmentOptions) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullablePdnEstablishmentOptionsRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

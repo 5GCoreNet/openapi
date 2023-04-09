@@ -19,7 +19,7 @@ var _ MappedNullable = &NssfFunctionSingleAllOf{}
 
 // NssfFunctionSingleAllOf struct for NssfFunctionSingleAllOf
 type NssfFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *NssfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewNssfFunctionSingleAllOf instantiates a new NssfFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewNssfFunctionSingleAllOfWithDefaults() *NssfFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NssfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *NssfFunctionSingleAllOf) GetAttributes() NssfFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret NssfFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *NssfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NssfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *NssfFunctionSingleAllOf) GetAttributesOk() (*NssfFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *NssfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool)
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NssfFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *NssfFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given NssfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *NssfFunctionSingleAllOf) SetAttributes(v NssfFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o NssfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o NssfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NssfFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableNssfFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

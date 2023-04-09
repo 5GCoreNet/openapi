@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the MbsReport type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsReport{}
 
-// MbsReport Contains information about the MBS Policy Decision level failure(s) and/or the MBS PCC rule level failure(s). 
+// MbsReport Contains information about the MBS Policy Decision level failure(s) and/or the MBS PCC rule level failure(s).
 type MbsReport struct {
-	MbsPccRuleIds []string `json:"mbsPccRuleIds,omitempty"`
+	MbsPccRuleIds    []string          `json:"mbsPccRuleIds,omitempty"`
 	MbsPccRuleStatus *MbsPccRuleStatus `json:"mbsPccRuleStatus,omitempty"`
-	FailureCode *MbsFailureCode `json:"failureCode,omitempty"`
+	FailureCode      *MbsFailureCode   `json:"failureCode,omitempty"`
 }
 
 // NewMbsReport instantiates a new MbsReport object
@@ -43,7 +43,7 @@ func NewMbsReportWithDefaults() *MbsReport {
 
 // GetMbsPccRuleIds returns the MbsPccRuleIds field value if set, zero value otherwise.
 func (o *MbsReport) GetMbsPccRuleIds() []string {
-	if o == nil || isNil(o.MbsPccRuleIds) {
+	if o == nil || IsNil(o.MbsPccRuleIds) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MbsReport) GetMbsPccRuleIds() []string {
 // GetMbsPccRuleIdsOk returns a tuple with the MbsPccRuleIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsReport) GetMbsPccRuleIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.MbsPccRuleIds) {
+	if o == nil || IsNil(o.MbsPccRuleIds) {
 		return nil, false
 	}
 	return o.MbsPccRuleIds, true
@@ -61,7 +61,7 @@ func (o *MbsReport) GetMbsPccRuleIdsOk() ([]string, bool) {
 
 // HasMbsPccRuleIds returns a boolean if a field has been set.
 func (o *MbsReport) HasMbsPccRuleIds() bool {
-	if o != nil && !isNil(o.MbsPccRuleIds) {
+	if o != nil && !IsNil(o.MbsPccRuleIds) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MbsReport) SetMbsPccRuleIds(v []string) {
 
 // GetMbsPccRuleStatus returns the MbsPccRuleStatus field value if set, zero value otherwise.
 func (o *MbsReport) GetMbsPccRuleStatus() MbsPccRuleStatus {
-	if o == nil || isNil(o.MbsPccRuleStatus) {
+	if o == nil || IsNil(o.MbsPccRuleStatus) {
 		var ret MbsPccRuleStatus
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MbsReport) GetMbsPccRuleStatus() MbsPccRuleStatus {
 // GetMbsPccRuleStatusOk returns a tuple with the MbsPccRuleStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsReport) GetMbsPccRuleStatusOk() (*MbsPccRuleStatus, bool) {
-	if o == nil || isNil(o.MbsPccRuleStatus) {
+	if o == nil || IsNil(o.MbsPccRuleStatus) {
 		return nil, false
 	}
 	return o.MbsPccRuleStatus, true
@@ -93,7 +93,7 @@ func (o *MbsReport) GetMbsPccRuleStatusOk() (*MbsPccRuleStatus, bool) {
 
 // HasMbsPccRuleStatus returns a boolean if a field has been set.
 func (o *MbsReport) HasMbsPccRuleStatus() bool {
-	if o != nil && !isNil(o.MbsPccRuleStatus) {
+	if o != nil && !IsNil(o.MbsPccRuleStatus) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MbsReport) SetMbsPccRuleStatus(v MbsPccRuleStatus) {
 
 // GetFailureCode returns the FailureCode field value if set, zero value otherwise.
 func (o *MbsReport) GetFailureCode() MbsFailureCode {
-	if o == nil || isNil(o.FailureCode) {
+	if o == nil || IsNil(o.FailureCode) {
 		var ret MbsFailureCode
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MbsReport) GetFailureCode() MbsFailureCode {
 // GetFailureCodeOk returns a tuple with the FailureCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsReport) GetFailureCodeOk() (*MbsFailureCode, bool) {
-	if o == nil || isNil(o.FailureCode) {
+	if o == nil || IsNil(o.FailureCode) {
 		return nil, false
 	}
 	return o.FailureCode, true
@@ -125,7 +125,7 @@ func (o *MbsReport) GetFailureCodeOk() (*MbsFailureCode, bool) {
 
 // HasFailureCode returns a boolean if a field has been set.
 func (o *MbsReport) HasFailureCode() bool {
-	if o != nil && !isNil(o.FailureCode) {
+	if o != nil && !IsNil(o.FailureCode) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *MbsReport) SetFailureCode(v MbsFailureCode) {
 }
 
 func (o MbsReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o MbsReport) MarshalJSON() ([]byte, error) {
 
 func (o MbsReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsPccRuleIds) {
+	if !IsNil(o.MbsPccRuleIds) {
 		toSerialize["mbsPccRuleIds"] = o.MbsPccRuleIds
 	}
-	if !isNil(o.MbsPccRuleStatus) {
+	if !IsNil(o.MbsPccRuleStatus) {
 		toSerialize["mbsPccRuleStatus"] = o.MbsPccRuleStatus
 	}
-	if !isNil(o.FailureCode) {
+	if !IsNil(o.FailureCode) {
 		toSerialize["failureCode"] = o.FailureCode
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableMbsReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

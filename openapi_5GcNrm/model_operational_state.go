@@ -20,7 +20,7 @@ type OperationalState string
 
 // List of OperationalState
 const (
-	ENABLED OperationalState = "ENABLED"
+	ENABLED  OperationalState = "ENABLED"
 	DISABLED OperationalState = "DISABLED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableOperationalState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

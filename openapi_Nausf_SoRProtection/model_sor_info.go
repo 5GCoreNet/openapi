@@ -1,7 +1,7 @@
 /*
 Nausf_SoRProtection Service
 
-AUSF SoR Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF SoR Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -26,7 +26,7 @@ type SorInfo struct {
 	SorHeader *string `json:"sorHeader,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
 	SorTransparentInfo *string `json:"sorTransparentInfo,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func NewSorInfoWithDefaults() *SorInfo {
 
 // GetSteeringContainer returns the SteeringContainer field value if set, zero value otherwise.
 func (o *SorInfo) GetSteeringContainer() SteeringContainer {
-	if o == nil || isNil(o.SteeringContainer) {
+	if o == nil || IsNil(o.SteeringContainer) {
 		var ret SteeringContainer
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *SorInfo) GetSteeringContainer() SteeringContainer {
 // GetSteeringContainerOk returns a tuple with the SteeringContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSteeringContainerOk() (*SteeringContainer, bool) {
-	if o == nil || isNil(o.SteeringContainer) {
+	if o == nil || IsNil(o.SteeringContainer) {
 		return nil, false
 	}
 	return o.SteeringContainer, true
@@ -68,7 +68,7 @@ func (o *SorInfo) GetSteeringContainerOk() (*SteeringContainer, bool) {
 
 // HasSteeringContainer returns a boolean if a field has been set.
 func (o *SorInfo) HasSteeringContainer() bool {
-	if o != nil && !isNil(o.SteeringContainer) {
+	if o != nil && !IsNil(o.SteeringContainer) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *SorInfo) SetAckInd(v bool) {
 
 // GetSorHeader returns the SorHeader field value if set, zero value otherwise.
 func (o *SorInfo) GetSorHeader() string {
-	if o == nil || isNil(o.SorHeader) {
+	if o == nil || IsNil(o.SorHeader) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *SorInfo) GetSorHeader() string {
 // GetSorHeaderOk returns a tuple with the SorHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.SorHeader) {
+	if o == nil || IsNil(o.SorHeader) {
 		return nil, false
 	}
 	return o.SorHeader, true
@@ -124,7 +124,7 @@ func (o *SorInfo) GetSorHeaderOk() (*string, bool) {
 
 // HasSorHeader returns a boolean if a field has been set.
 func (o *SorInfo) HasSorHeader() bool {
-	if o != nil && !isNil(o.SorHeader) {
+	if o != nil && !IsNil(o.SorHeader) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SorInfo) SetSorHeader(v string) {
 
 // GetSorTransparentInfo returns the SorTransparentInfo field value if set, zero value otherwise.
 func (o *SorInfo) GetSorTransparentInfo() string {
-	if o == nil || isNil(o.SorTransparentInfo) {
+	if o == nil || IsNil(o.SorTransparentInfo) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *SorInfo) GetSorTransparentInfo() string {
 // GetSorTransparentInfoOk returns a tuple with the SorTransparentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorTransparentInfoOk() (*string, bool) {
-	if o == nil || isNil(o.SorTransparentInfo) {
+	if o == nil || IsNil(o.SorTransparentInfo) {
 		return nil, false
 	}
 	return o.SorTransparentInfo, true
@@ -156,7 +156,7 @@ func (o *SorInfo) GetSorTransparentInfoOk() (*string, bool) {
 
 // HasSorTransparentInfo returns a boolean if a field has been set.
 func (o *SorInfo) HasSorTransparentInfo() bool {
-	if o != nil && !isNil(o.SorTransparentInfo) {
+	if o != nil && !IsNil(o.SorTransparentInfo) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *SorInfo) SetSorTransparentInfo(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SorInfo) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *SorInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -188,7 +188,7 @@ func (o *SorInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SorInfo) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *SorInfo) SetSupportedFeatures(v string) {
 }
 
 func (o SorInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -210,17 +210,17 @@ func (o SorInfo) MarshalJSON() ([]byte, error) {
 
 func (o SorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SteeringContainer) {
+	if !IsNil(o.SteeringContainer) {
 		toSerialize["steeringContainer"] = o.SteeringContainer
 	}
 	toSerialize["ackInd"] = o.AckInd
-	if !isNil(o.SorHeader) {
+	if !IsNil(o.SorHeader) {
 		toSerialize["sorHeader"] = o.SorHeader
 	}
-	if !isNil(o.SorTransparentInfo) {
+	if !IsNil(o.SorTransparentInfo) {
 		toSerialize["sorTransparentInfo"] = o.SorTransparentInfo
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -261,5 +261,3 @@ func (v *NullableSorInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

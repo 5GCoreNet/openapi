@@ -1,7 +1,7 @@
 /*
 VAE_SessionOrientedService
 
-API for VAE_SessionOrientedService   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE_SessionOrientedService   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,12 +17,12 @@ import (
 // checks if the Notification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Notification{}
 
-// Notification Represents the result of the establishment or update of the session-oriented service. 
+// Notification Represents the result of the establishment or update of the session-oriented service.
 type Notification struct {
 	// String providing an URI formatted according to RFC 3986.
 	ResourceUri string `json:"resourceUri"`
-	Action Action `json:"action"`
-	Result Result `json:"result"`
+	Action      Action `json:"action"`
+	Result      Result `json:"result"`
 }
 
 // NewNotification instantiates a new Notification object
@@ -118,7 +118,7 @@ func (o *Notification) SetResult(v Result) {
 }
 
 func (o Notification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +168,3 @@ func (v *NullableNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

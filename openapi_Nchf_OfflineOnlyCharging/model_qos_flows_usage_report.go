@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -26,9 +26,9 @@ type QosFlowsUsageReport struct {
 	StartTimestamp *time.Time `json:"startTimestamp,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	EndTimestamp *time.Time `json:"endTimestamp,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	UplinkVolume *int32 `json:"uplinkVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	DownlinkVolume *int32 `json:"downlinkVolume,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func NewQosFlowsUsageReportWithDefaults() *QosFlowsUsageReport {
 
 // GetQFI returns the QFI field value if set, zero value otherwise.
 func (o *QosFlowsUsageReport) GetQFI() int32 {
-	if o == nil || isNil(o.QFI) {
+	if o == nil || IsNil(o.QFI) {
 		var ret int32
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *QosFlowsUsageReport) GetQFI() int32 {
 // GetQFIOk returns a tuple with the QFI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowsUsageReport) GetQFIOk() (*int32, bool) {
-	if o == nil || isNil(o.QFI) {
+	if o == nil || IsNil(o.QFI) {
 		return nil, false
 	}
 	return o.QFI, true
@@ -69,7 +69,7 @@ func (o *QosFlowsUsageReport) GetQFIOk() (*int32, bool) {
 
 // HasQFI returns a boolean if a field has been set.
 func (o *QosFlowsUsageReport) HasQFI() bool {
-	if o != nil && !isNil(o.QFI) {
+	if o != nil && !IsNil(o.QFI) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *QosFlowsUsageReport) SetQFI(v int32) {
 
 // GetStartTimestamp returns the StartTimestamp field value if set, zero value otherwise.
 func (o *QosFlowsUsageReport) GetStartTimestamp() time.Time {
-	if o == nil || isNil(o.StartTimestamp) {
+	if o == nil || IsNil(o.StartTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *QosFlowsUsageReport) GetStartTimestamp() time.Time {
 // GetStartTimestampOk returns a tuple with the StartTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowsUsageReport) GetStartTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTimestamp) {
+	if o == nil || IsNil(o.StartTimestamp) {
 		return nil, false
 	}
 	return o.StartTimestamp, true
@@ -101,7 +101,7 @@ func (o *QosFlowsUsageReport) GetStartTimestampOk() (*time.Time, bool) {
 
 // HasStartTimestamp returns a boolean if a field has been set.
 func (o *QosFlowsUsageReport) HasStartTimestamp() bool {
-	if o != nil && !isNil(o.StartTimestamp) {
+	if o != nil && !IsNil(o.StartTimestamp) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *QosFlowsUsageReport) SetStartTimestamp(v time.Time) {
 
 // GetEndTimestamp returns the EndTimestamp field value if set, zero value otherwise.
 func (o *QosFlowsUsageReport) GetEndTimestamp() time.Time {
-	if o == nil || isNil(o.EndTimestamp) {
+	if o == nil || IsNil(o.EndTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *QosFlowsUsageReport) GetEndTimestamp() time.Time {
 // GetEndTimestampOk returns a tuple with the EndTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowsUsageReport) GetEndTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EndTimestamp) {
+	if o == nil || IsNil(o.EndTimestamp) {
 		return nil, false
 	}
 	return o.EndTimestamp, true
@@ -133,7 +133,7 @@ func (o *QosFlowsUsageReport) GetEndTimestampOk() (*time.Time, bool) {
 
 // HasEndTimestamp returns a boolean if a field has been set.
 func (o *QosFlowsUsageReport) HasEndTimestamp() bool {
-	if o != nil && !isNil(o.EndTimestamp) {
+	if o != nil && !IsNil(o.EndTimestamp) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *QosFlowsUsageReport) SetEndTimestamp(v time.Time) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *QosFlowsUsageReport) GetUplinkVolume() int32 {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *QosFlowsUsageReport) GetUplinkVolume() int32 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowsUsageReport) GetUplinkVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -165,7 +165,7 @@ func (o *QosFlowsUsageReport) GetUplinkVolumeOk() (*int32, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *QosFlowsUsageReport) HasUplinkVolume() bool {
-	if o != nil && !isNil(o.UplinkVolume) {
+	if o != nil && !IsNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *QosFlowsUsageReport) SetUplinkVolume(v int32) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *QosFlowsUsageReport) GetDownlinkVolume() int32 {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *QosFlowsUsageReport) GetDownlinkVolume() int32 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowsUsageReport) GetDownlinkVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -197,7 +197,7 @@ func (o *QosFlowsUsageReport) GetDownlinkVolumeOk() (*int32, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *QosFlowsUsageReport) HasDownlinkVolume() bool {
-	if o != nil && !isNil(o.DownlinkVolume) {
+	if o != nil && !IsNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *QosFlowsUsageReport) SetDownlinkVolume(v int32) {
 }
 
 func (o QosFlowsUsageReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -219,19 +219,19 @@ func (o QosFlowsUsageReport) MarshalJSON() ([]byte, error) {
 
 func (o QosFlowsUsageReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.QFI) {
+	if !IsNil(o.QFI) {
 		toSerialize["qFI"] = o.QFI
 	}
-	if !isNil(o.StartTimestamp) {
+	if !IsNil(o.StartTimestamp) {
 		toSerialize["startTimestamp"] = o.StartTimestamp
 	}
-	if !isNil(o.EndTimestamp) {
+	if !IsNil(o.EndTimestamp) {
 		toSerialize["endTimestamp"] = o.EndTimestamp
 	}
-	if !isNil(o.UplinkVolume) {
+	if !IsNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !isNil(o.DownlinkVolume) {
+	if !IsNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
 	return toSerialize, nil
@@ -272,5 +272,3 @@ func (v *NullableQosFlowsUsageReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

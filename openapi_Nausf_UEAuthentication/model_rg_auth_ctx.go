@@ -1,7 +1,7 @@
 /*
 AUSF API
 
-AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &RgAuthCtx{}
 // RgAuthCtx Contains the UE id (i.e. SUPI) and the authentication indication.
 type RgAuthCtx struct {
 	AuthResult AuthResult `json:"authResult"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
-	Supi *string `json:"supi,omitempty"`
-	AuthInd *bool `json:"authInd,omitempty"`
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
+	Supi    *string `json:"supi,omitempty"`
+	AuthInd *bool   `json:"authInd,omitempty"`
 }
 
 // NewRgAuthCtx instantiates a new RgAuthCtx object
@@ -73,7 +73,7 @@ func (o *RgAuthCtx) SetAuthResult(v AuthResult) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *RgAuthCtx) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *RgAuthCtx) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RgAuthCtx) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -91,7 +91,7 @@ func (o *RgAuthCtx) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *RgAuthCtx) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RgAuthCtx) SetSupi(v string) {
 
 // GetAuthInd returns the AuthInd field value if set, zero value otherwise.
 func (o *RgAuthCtx) GetAuthInd() bool {
-	if o == nil || isNil(o.AuthInd) {
+	if o == nil || IsNil(o.AuthInd) {
 		var ret bool
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *RgAuthCtx) GetAuthInd() bool {
 // GetAuthIndOk returns a tuple with the AuthInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RgAuthCtx) GetAuthIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AuthInd) {
+	if o == nil || IsNil(o.AuthInd) {
 		return nil, false
 	}
 	return o.AuthInd, true
@@ -123,7 +123,7 @@ func (o *RgAuthCtx) GetAuthIndOk() (*bool, bool) {
 
 // HasAuthInd returns a boolean if a field has been set.
 func (o *RgAuthCtx) HasAuthInd() bool {
-	if o != nil && !isNil(o.AuthInd) {
+	if o != nil && !IsNil(o.AuthInd) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *RgAuthCtx) SetAuthInd(v bool) {
 }
 
 func (o RgAuthCtx) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -146,10 +146,10 @@ func (o RgAuthCtx) MarshalJSON() ([]byte, error) {
 func (o RgAuthCtx) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authResult"] = o.AuthResult
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.AuthInd) {
+	if !IsNil(o.AuthInd) {
 		toSerialize["authInd"] = o.AuthInd
 	}
 	return toSerialize, nil
@@ -190,5 +190,3 @@ func (v *NullableRgAuthCtx) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TargetDnaiInfo{}
 // TargetDnaiInfo Target DNAI Information
 type TargetDnaiInfo struct {
 	// DNAI (Data network access identifier), see clause 5.6.7 of 3GPP TS 23.501.
-	TargetDnai *string `json:"targetDnai,omitempty"`
+	TargetDnai       *string          `json:"targetDnai,omitempty"`
 	SmfSelectionType SmfSelectionType `json:"smfSelectionType"`
 }
 
@@ -44,7 +44,7 @@ func NewTargetDnaiInfoWithDefaults() *TargetDnaiInfo {
 
 // GetTargetDnai returns the TargetDnai field value if set, zero value otherwise.
 func (o *TargetDnaiInfo) GetTargetDnai() string {
-	if o == nil || isNil(o.TargetDnai) {
+	if o == nil || IsNil(o.TargetDnai) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *TargetDnaiInfo) GetTargetDnai() string {
 // GetTargetDnaiOk returns a tuple with the TargetDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetDnaiInfo) GetTargetDnaiOk() (*string, bool) {
-	if o == nil || isNil(o.TargetDnai) {
+	if o == nil || IsNil(o.TargetDnai) {
 		return nil, false
 	}
 	return o.TargetDnai, true
@@ -62,7 +62,7 @@ func (o *TargetDnaiInfo) GetTargetDnaiOk() (*string, bool) {
 
 // HasTargetDnai returns a boolean if a field has been set.
 func (o *TargetDnaiInfo) HasTargetDnai() bool {
-	if o != nil && !isNil(o.TargetDnai) {
+	if o != nil && !IsNil(o.TargetDnai) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *TargetDnaiInfo) SetSmfSelectionType(v SmfSelectionType) {
 }
 
 func (o TargetDnaiInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o TargetDnaiInfo) MarshalJSON() ([]byte, error) {
 
 func (o TargetDnaiInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetDnai) {
+	if !IsNil(o.TargetDnai) {
 		toSerialize["targetDnai"] = o.TargetDnai
 	}
 	toSerialize["smfSelectionType"] = o.SmfSelectionType
@@ -150,5 +150,3 @@ func (v *NullableTargetDnaiInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

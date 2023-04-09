@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PtwParameters1{}
 // PtwParameters1 struct for PtwParameters1
 type PtwParameters1 struct {
 	OperationMode OperationMode `json:"operationMode"`
-	PtwValue string `json:"ptwValue"`
+	PtwValue      string        `json:"ptwValue"`
 }
 
 // NewPtwParameters1 instantiates a new PtwParameters1 object
@@ -91,7 +91,7 @@ func (o *PtwParameters1) SetPtwValue(v string) {
 }
 
 func (o PtwParameters1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullablePtwParameters1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,11 +17,11 @@ import (
 
 // NotificationType - struct for NotificationType
 type NotificationType struct {
-	AlarmNotificationTypes *AlarmNotificationTypes
-	CmNotificationTypes *CmNotificationTypes
-	FileNotificationTypes *FileNotificationTypes
+	AlarmNotificationTypes     *AlarmNotificationTypes
+	CmNotificationTypes        *CmNotificationTypes
+	FileNotificationTypes      *FileNotificationTypes
 	HeartbeatNotificationTypes *HeartbeatNotificationTypes
-	PerfNotificationTypes *PerfNotificationTypes
+	PerfNotificationTypes      *PerfNotificationTypes
 }
 
 // AlarmNotificationTypesAsNotificationType is a convenience function that returns AlarmNotificationTypes wrapped in NotificationType
@@ -58,7 +58,6 @@ func PerfNotificationTypesAsNotificationType(v *PerfNotificationTypes) Notificat
 		PerfNotificationTypes: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NotificationType) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src NotificationType) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NotificationType) GetActualInstance() (interface{}) {
+func (obj *NotificationType) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableNotificationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewOdbDataWithDefaults() *OdbData {
 
 // GetRoamingOdb returns the RoamingOdb field value if set, zero value otherwise.
 func (o *OdbData) GetRoamingOdb() RoamingOdb {
-	if o == nil || isNil(o.RoamingOdb) {
+	if o == nil || IsNil(o.RoamingOdb) {
 		var ret RoamingOdb
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *OdbData) GetRoamingOdb() RoamingOdb {
 // GetRoamingOdbOk returns a tuple with the RoamingOdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OdbData) GetRoamingOdbOk() (*RoamingOdb, bool) {
-	if o == nil || isNil(o.RoamingOdb) {
+	if o == nil || IsNil(o.RoamingOdb) {
 		return nil, false
 	}
 	return o.RoamingOdb, true
@@ -59,7 +59,7 @@ func (o *OdbData) GetRoamingOdbOk() (*RoamingOdb, bool) {
 
 // HasRoamingOdb returns a boolean if a field has been set.
 func (o *OdbData) HasRoamingOdb() bool {
-	if o != nil && !isNil(o.RoamingOdb) {
+	if o != nil && !IsNil(o.RoamingOdb) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *OdbData) SetRoamingOdb(v RoamingOdb) {
 }
 
 func (o OdbData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o OdbData) MarshalJSON() ([]byte, error) {
 
 func (o OdbData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RoamingOdb) {
+	if !IsNil(o.RoamingOdb) {
 		toSerialize["roamingOdb"] = o.RoamingOdb
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableOdbData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

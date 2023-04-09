@@ -87,7 +87,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccuracyFulfilmentIndicator](docs/AccuracyFulfilmentIndicator.md)
- - [AccuracyFulfilmentIndicatorAnyOf](docs/AccuracyFulfilmentIndicatorAnyOf.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [EllipsoidArc](docs/EllipsoidArc.md)
  - [EllipsoidArcAllOf](docs/EllipsoidArcAllOf.md)
@@ -101,7 +100,6 @@ Class | Method | HTTP request | Description
  - [InvalidParam](docs/InvalidParam.md)
  - [LMInformation](docs/LMInformation.md)
  - [LdrType](docs/LdrType.md)
- - [LdrTypeAnyOf](docs/LdrTypeAnyOf.md)
  - [Local2dPointUncertaintyEllipse](docs/Local2dPointUncertaintyEllipse.md)
  - [Local2dPointUncertaintyEllipseAllOf](docs/Local2dPointUncertaintyEllipseAllOf.md)
  - [Local3dPointUncertaintyEllipsoid](docs/Local3dPointUncertaintyEllipsoid.md)
@@ -122,11 +120,9 @@ Class | Method | HTTP request | Description
  - [Polygon](docs/Polygon.md)
  - [PolygonAllOf](docs/PolygonAllOf.md)
  - [PositioningMethod](docs/PositioningMethod.md)
- - [PositioningMethodAnyOf](docs/PositioningMethodAnyOf.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
- - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)
  - [ValTargetUe](docs/ValTargetUe.md)

@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UserPlaneNotification{}
 // UserPlaneNotification Represents a notification on User Plane events.
 type UserPlaneNotification struct {
 	// String providing an URI formatted according to RFC 3986.
-	NotifId string `json:"notifId"`
+	NotifId     string                 `json:"notifId"`
 	EventNotifs []NrmEventNotification `json:"eventNotifs"`
 }
 
@@ -92,7 +92,7 @@ func (o *UserPlaneNotification) SetEventNotifs(v []NrmEventNotification) {
 }
 
 func (o UserPlaneNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableUserPlaneNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

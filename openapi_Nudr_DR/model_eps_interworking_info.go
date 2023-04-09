@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewEpsInterworkingInfoWithDefaults() *EpsInterworkingInfo {
 
 // GetEpsIwkPgws returns the EpsIwkPgws field value if set, zero value otherwise.
 func (o *EpsInterworkingInfo) GetEpsIwkPgws() map[string]EpsIwkPgw {
-	if o == nil || isNil(o.EpsIwkPgws) {
+	if o == nil || IsNil(o.EpsIwkPgws) {
 		var ret map[string]EpsIwkPgw
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EpsInterworkingInfo) GetEpsIwkPgws() map[string]EpsIwkPgw {
 // GetEpsIwkPgwsOk returns a tuple with the EpsIwkPgws field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpsInterworkingInfo) GetEpsIwkPgwsOk() (*map[string]EpsIwkPgw, bool) {
-	if o == nil || isNil(o.EpsIwkPgws) {
+	if o == nil || IsNil(o.EpsIwkPgws) {
 		return nil, false
 	}
 	return o.EpsIwkPgws, true
@@ -60,7 +60,7 @@ func (o *EpsInterworkingInfo) GetEpsIwkPgwsOk() (*map[string]EpsIwkPgw, bool) {
 
 // HasEpsIwkPgws returns a boolean if a field has been set.
 func (o *EpsInterworkingInfo) HasEpsIwkPgws() bool {
-	if o != nil && !isNil(o.EpsIwkPgws) {
+	if o != nil && !IsNil(o.EpsIwkPgws) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *EpsInterworkingInfo) SetEpsIwkPgws(v map[string]EpsIwkPgw) {
 }
 
 func (o EpsInterworkingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o EpsInterworkingInfo) MarshalJSON() ([]byte, error) {
 
 func (o EpsInterworkingInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EpsIwkPgws) {
+	if !IsNil(o.EpsIwkPgws) {
 		toSerialize["epsIwkPgws"] = o.EpsIwkPgws
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableEpsInterworkingInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

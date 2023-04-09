@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// IdentityRange - A range of GPSIs (subscriber identities), either based on a numeric range, or based on regular-expression matching 
+// IdentityRange - A range of GPSIs (subscriber identities), either based on a numeric range, or based on regular-expression matching
 type IdentityRange struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsIdentityRange(v *interface{}) IdentityRange {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IdentityRange) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src IdentityRange) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IdentityRange) GetActualInstance() (interface{}) {
+func (obj *IdentityRange) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableIdentityRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

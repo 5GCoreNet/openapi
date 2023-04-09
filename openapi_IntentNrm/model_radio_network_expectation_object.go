@@ -19,8 +19,8 @@ var _ MappedNullable = &RadioNetworkExpectationObject{}
 
 // RadioNetworkExpectationObject This data type is the \"ExpectationObject\" data type with specialisations for RadioNetworkExpectation
 type RadioNetworkExpectationObject struct {
-	ObjectType *string `json:"objectType,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
+	ObjectType     *string                                            `json:"objectType,omitempty"`
+	ObjectInstance *string                                            `json:"objectInstance,omitempty"`
 	ObjectContexts []RadioNetworkExpectationObjectObjectContextsInner `json:"objectContexts,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewRadioNetworkExpectationObjectWithDefaults() *RadioNetworkExpectationObje
 
 // GetObjectType returns the ObjectType field value if set, zero value otherwise.
 func (o *RadioNetworkExpectationObject) GetObjectType() string {
-	if o == nil || isNil(o.ObjectType) {
+	if o == nil || IsNil(o.ObjectType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RadioNetworkExpectationObject) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectationObject) GetObjectTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectType) {
+	if o == nil || IsNil(o.ObjectType) {
 		return nil, false
 	}
 	return o.ObjectType, true
@@ -61,7 +61,7 @@ func (o *RadioNetworkExpectationObject) GetObjectTypeOk() (*string, bool) {
 
 // HasObjectType returns a boolean if a field has been set.
 func (o *RadioNetworkExpectationObject) HasObjectType() bool {
-	if o != nil && !isNil(o.ObjectType) {
+	if o != nil && !IsNil(o.ObjectType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RadioNetworkExpectationObject) SetObjectType(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *RadioNetworkExpectationObject) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RadioNetworkExpectationObject) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectationObject) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
+	if o == nil || IsNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -93,7 +93,7 @@ func (o *RadioNetworkExpectationObject) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *RadioNetworkExpectationObject) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
+	if o != nil && !IsNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RadioNetworkExpectationObject) SetObjectInstance(v string) {
 
 // GetObjectContexts returns the ObjectContexts field value if set, zero value otherwise.
 func (o *RadioNetworkExpectationObject) GetObjectContexts() []RadioNetworkExpectationObjectObjectContextsInner {
-	if o == nil || isNil(o.ObjectContexts) {
+	if o == nil || IsNil(o.ObjectContexts) {
 		var ret []RadioNetworkExpectationObjectObjectContextsInner
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RadioNetworkExpectationObject) GetObjectContexts() []RadioNetworkExpect
 // GetObjectContextsOk returns a tuple with the ObjectContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectationObject) GetObjectContextsOk() ([]RadioNetworkExpectationObjectObjectContextsInner, bool) {
-	if o == nil || isNil(o.ObjectContexts) {
+	if o == nil || IsNil(o.ObjectContexts) {
 		return nil, false
 	}
 	return o.ObjectContexts, true
@@ -125,7 +125,7 @@ func (o *RadioNetworkExpectationObject) GetObjectContextsOk() ([]RadioNetworkExp
 
 // HasObjectContexts returns a boolean if a field has been set.
 func (o *RadioNetworkExpectationObject) HasObjectContexts() bool {
-	if o != nil && !isNil(o.ObjectContexts) {
+	if o != nil && !IsNil(o.ObjectContexts) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *RadioNetworkExpectationObject) SetObjectContexts(v []RadioNetworkExpect
 }
 
 func (o RadioNetworkExpectationObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o RadioNetworkExpectationObject) MarshalJSON() ([]byte, error) {
 
 func (o RadioNetworkExpectationObject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ObjectType) {
+	if !IsNil(o.ObjectType) {
 		toSerialize["objectType"] = o.ObjectType
 	}
-	if !isNil(o.ObjectInstance) {
+	if !IsNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !isNil(o.ObjectContexts) {
+	if !IsNil(o.ObjectContexts) {
 		toSerialize["objectContexts"] = o.ObjectContexts
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableRadioNetworkExpectationObject) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

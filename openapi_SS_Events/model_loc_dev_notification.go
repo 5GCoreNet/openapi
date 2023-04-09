@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LocDevNotification Possible values are: - NOTIFY_MISMATCH_LOCATION: This value indicates that the location information of the VAL UE(s) from the SEAL LM client and the core network are not matching. - NOTIFY_ABSENCE: This value indicates that the current location information of the VAL UE(s)is deviating from the VAL server's area of interest. - NOTIFY_PRESENCE: This value indicates that the current location information of the VAL UE(s) is within the VAL server's area of interest. 
+// LocDevNotification Possible values are: - NOTIFY_MISMATCH_LOCATION: This value indicates that the location information of the VAL UE(s) from the SEAL LM client and the core network are not matching. - NOTIFY_ABSENCE: This value indicates that the current location information of the VAL UE(s)is deviating from the VAL server's area of interest. - NOTIFY_PRESENCE: This value indicates that the current location information of the VAL UE(s) is within the VAL server's area of interest.
 type LocDevNotification struct {
-	LocDevNotificationAnyOf *LocDevNotificationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocDevNotification) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocDevNotificationAnyOf
-	err = json.Unmarshal(data, &dst.LocDevNotificationAnyOf);
-	if err == nil {
-		jsonLocDevNotificationAnyOf, _ := json.Marshal(dst.LocDevNotificationAnyOf)
-		if string(jsonLocDevNotificationAnyOf) == "{}" { // empty struct
-			dst.LocDevNotificationAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocDevNotificationAnyOf, return on the first match
-		}
-	} else {
-		dst.LocDevNotificationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocDevNotification) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocDevNotification) MarshalJSON() ([]byte, error) {
-	if src.LocDevNotificationAnyOf != nil {
-		return json.Marshal(&src.LocDevNotificationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocDevNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_MT
 
-AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewAdditionInfoEnableUeReachabilityWithDefaults() *AdditionInfoEnableUeReac
 
 // GetMaxWaitingTime returns the MaxWaitingTime field value if set, zero value otherwise.
 func (o *AdditionInfoEnableUeReachability) GetMaxWaitingTime() int32 {
-	if o == nil || isNil(o.MaxWaitingTime) {
+	if o == nil || IsNil(o.MaxWaitingTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AdditionInfoEnableUeReachability) GetMaxWaitingTime() int32 {
 // GetMaxWaitingTimeOk returns a tuple with the MaxWaitingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionInfoEnableUeReachability) GetMaxWaitingTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxWaitingTime) {
+	if o == nil || IsNil(o.MaxWaitingTime) {
 		return nil, false
 	}
 	return o.MaxWaitingTime, true
@@ -60,7 +60,7 @@ func (o *AdditionInfoEnableUeReachability) GetMaxWaitingTimeOk() (*int32, bool) 
 
 // HasMaxWaitingTime returns a boolean if a field has been set.
 func (o *AdditionInfoEnableUeReachability) HasMaxWaitingTime() bool {
-	if o != nil && !isNil(o.MaxWaitingTime) {
+	if o != nil && !IsNil(o.MaxWaitingTime) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *AdditionInfoEnableUeReachability) SetMaxWaitingTime(v int32) {
 }
 
 func (o AdditionInfoEnableUeReachability) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o AdditionInfoEnableUeReachability) MarshalJSON() ([]byte, error) {
 
 func (o AdditionInfoEnableUeReachability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MaxWaitingTime) {
+	if !IsNil(o.MaxWaitingTime) {
 		toSerialize["maxWaitingTime"] = o.MaxWaitingTime
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableAdditionInfoEnableUeReachability) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

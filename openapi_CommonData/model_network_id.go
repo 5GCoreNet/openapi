@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &NetworkId{}
 type NetworkId struct {
 	// Mobile Network Code part of the PLMN, comprising 2 or 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.
 	Mnc *string `json:"mnc,omitempty"`
-	// Mobile Country Code part of the PLMN, comprising 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.  
+	// Mobile Country Code part of the PLMN, comprising 3 digits, as defined in clause 9.3.3.5 of 3GPP TS 38.413.
 	Mcc *string `json:"mcc,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewNetworkIdWithDefaults() *NetworkId {
 
 // GetMnc returns the Mnc field value if set, zero value otherwise.
 func (o *NetworkId) GetMnc() string {
-	if o == nil || isNil(o.Mnc) {
+	if o == nil || IsNil(o.Mnc) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *NetworkId) GetMnc() string {
 // GetMncOk returns a tuple with the Mnc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkId) GetMncOk() (*string, bool) {
-	if o == nil || isNil(o.Mnc) {
+	if o == nil || IsNil(o.Mnc) {
 		return nil, false
 	}
 	return o.Mnc, true
@@ -62,7 +62,7 @@ func (o *NetworkId) GetMncOk() (*string, bool) {
 
 // HasMnc returns a boolean if a field has been set.
 func (o *NetworkId) HasMnc() bool {
-	if o != nil && !isNil(o.Mnc) {
+	if o != nil && !IsNil(o.Mnc) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *NetworkId) SetMnc(v string) {
 
 // GetMcc returns the Mcc field value if set, zero value otherwise.
 func (o *NetworkId) GetMcc() string {
-	if o == nil || isNil(o.Mcc) {
+	if o == nil || IsNil(o.Mcc) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NetworkId) GetMcc() string {
 // GetMccOk returns a tuple with the Mcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkId) GetMccOk() (*string, bool) {
-	if o == nil || isNil(o.Mcc) {
+	if o == nil || IsNil(o.Mcc) {
 		return nil, false
 	}
 	return o.Mcc, true
@@ -94,7 +94,7 @@ func (o *NetworkId) GetMccOk() (*string, bool) {
 
 // HasMcc returns a boolean if a field has been set.
 func (o *NetworkId) HasMcc() bool {
-	if o != nil && !isNil(o.Mcc) {
+	if o != nil && !IsNil(o.Mcc) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NetworkId) SetMcc(v string) {
 }
 
 func (o NetworkId) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o NetworkId) MarshalJSON() ([]byte, error) {
 
 func (o NetworkId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Mnc) {
+	if !IsNil(o.Mnc) {
 		toSerialize["mnc"] = o.Mnc
 	}
-	if !isNil(o.Mcc) {
+	if !IsNil(o.Mcc) {
 		toSerialize["mcc"] = o.Mcc
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableNetworkId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

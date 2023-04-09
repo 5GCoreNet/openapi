@@ -1,7 +1,7 @@
 /*
 EES UE Location Information_API
 
-API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES UE Location Information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UeLocationInfo{}
 // UeLocationInfo Represents a UE location information.
 type UeLocationInfo struct {
 	Loc LocationArea5G `json:"loc"`
-	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.  
+	// Unsigned integer indicating Sampling Ratio (see clauses 4.15.1 of 3GPP TS 23.502), expressed in percent.
 	Ratio *int32 `json:"ratio,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Confidence *int32 `json:"confidence,omitempty"`
@@ -70,7 +70,7 @@ func (o *UeLocationInfo) SetLoc(v LocationArea5G) {
 
 // GetRatio returns the Ratio field value if set, zero value otherwise.
 func (o *UeLocationInfo) GetRatio() int32 {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		var ret int32
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *UeLocationInfo) GetRatio() int32 {
 // GetRatioOk returns a tuple with the Ratio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeLocationInfo) GetRatioOk() (*int32, bool) {
-	if o == nil || isNil(o.Ratio) {
+	if o == nil || IsNil(o.Ratio) {
 		return nil, false
 	}
 	return o.Ratio, true
@@ -88,7 +88,7 @@ func (o *UeLocationInfo) GetRatioOk() (*int32, bool) {
 
 // HasRatio returns a boolean if a field has been set.
 func (o *UeLocationInfo) HasRatio() bool {
-	if o != nil && !isNil(o.Ratio) {
+	if o != nil && !IsNil(o.Ratio) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *UeLocationInfo) SetRatio(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *UeLocationInfo) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *UeLocationInfo) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeLocationInfo) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -120,7 +120,7 @@ func (o *UeLocationInfo) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *UeLocationInfo) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *UeLocationInfo) SetConfidence(v int32) {
 }
 
 func (o UeLocationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o UeLocationInfo) MarshalJSON() ([]byte, error) {
 func (o UeLocationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["loc"] = o.Loc
-	if !isNil(o.Ratio) {
+	if !IsNil(o.Ratio) {
 		toSerialize["ratio"] = o.Ratio
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableUeLocationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

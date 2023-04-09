@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,14 +21,14 @@ var _ MappedNullable = &LcsBroadcastAssistanceTypesData{}
 // LcsBroadcastAssistanceTypesData struct for LcsBroadcastAssistanceTypesData
 type LcsBroadcastAssistanceTypesData struct {
 	// string with format 'binary' as defined in OpenAPI.
-	LocationAssistanceType os.File `json:"locationAssistanceType"`
+	LocationAssistanceType *os.File `json:"locationAssistanceType"`
 }
 
 // NewLcsBroadcastAssistanceTypesData instantiates a new LcsBroadcastAssistanceTypesData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLcsBroadcastAssistanceTypesData(locationAssistanceType os.File) *LcsBroadcastAssistanceTypesData {
+func NewLcsBroadcastAssistanceTypesData(locationAssistanceType *os.File) *LcsBroadcastAssistanceTypesData {
 	this := LcsBroadcastAssistanceTypesData{}
 	this.LocationAssistanceType = locationAssistanceType
 	return &this
@@ -43,9 +43,9 @@ func NewLcsBroadcastAssistanceTypesDataWithDefaults() *LcsBroadcastAssistanceTyp
 }
 
 // GetLocationAssistanceType returns the LocationAssistanceType field value
-func (o *LcsBroadcastAssistanceTypesData) GetLocationAssistanceType() os.File {
+func (o *LcsBroadcastAssistanceTypesData) GetLocationAssistanceType() *os.File {
 	if o == nil {
-		var ret os.File
+		var ret *os.File
 		return ret
 	}
 
@@ -54,7 +54,7 @@ func (o *LcsBroadcastAssistanceTypesData) GetLocationAssistanceType() os.File {
 
 // GetLocationAssistanceTypeOk returns a tuple with the LocationAssistanceType field value
 // and a boolean to check if the value has been set.
-func (o *LcsBroadcastAssistanceTypesData) GetLocationAssistanceTypeOk() (*os.File, bool) {
+func (o *LcsBroadcastAssistanceTypesData) GetLocationAssistanceTypeOk() (**os.File, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -62,12 +62,12 @@ func (o *LcsBroadcastAssistanceTypesData) GetLocationAssistanceTypeOk() (*os.Fil
 }
 
 // SetLocationAssistanceType sets field value
-func (o *LcsBroadcastAssistanceTypesData) SetLocationAssistanceType(v os.File) {
+func (o *LcsBroadcastAssistanceTypesData) SetLocationAssistanceType(v *os.File) {
 	o.LocationAssistanceType = v
 }
 
 func (o LcsBroadcastAssistanceTypesData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,5 +115,3 @@ func (v *NullableLcsBroadcastAssistanceTypesData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

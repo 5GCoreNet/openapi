@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -95,7 +95,7 @@ func (o *N1N2MsgTxfrFailureNotification) SetN1n2MsgDataUri(v string) {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrFailureNotification) GetRetryAfter() int32 {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *N1N2MsgTxfrFailureNotification) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrFailureNotification) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -113,7 +113,7 @@ func (o *N1N2MsgTxfrFailureNotification) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrFailureNotification) HasRetryAfter() bool {
-	if o != nil && !isNil(o.RetryAfter) {
+	if o != nil && !IsNil(o.RetryAfter) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *N1N2MsgTxfrFailureNotification) SetRetryAfter(v int32) {
 }
 
 func (o N1N2MsgTxfrFailureNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o N1N2MsgTxfrFailureNotification) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["cause"] = o.Cause
 	toSerialize["n1n2MsgDataUri"] = o.N1n2MsgDataUri
-	if !isNil(o.RetryAfter) {
+	if !IsNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableN1N2MsgTxfrFailureNotification) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

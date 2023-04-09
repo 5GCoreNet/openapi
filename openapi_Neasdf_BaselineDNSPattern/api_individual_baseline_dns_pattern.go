@@ -1,7 +1,7 @@
 /*
 Neasdf_BaselineDNSPattern
 
-EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF Baseline DNS Pattern Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Neasdf_BaselineDNSPattern
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualBaselineDNSPatternApiService IndividualBaselineDNSPatternApi service
 type IndividualBaselineDNSPatternApiService service
 
 type ApiCreateOrReplaceBaseDnsPatternRequest struct {
-	ctx context.Context
-	ApiService *IndividualBaselineDNSPatternApiService
-	smfId VarNfId
+	ctx                           context.Context
+	ApiService                    *IndividualBaselineDNSPatternApiService
+	smfId                         VarNfId
 	smfImplementationSegmentPaths string
-	baseDnsPatternCreateData *BaseDnsPatternCreateData
-	contentEncoding *string
+	baseDnsPatternCreateData      *BaseDnsPatternCreateData
+	contentEncoding               *string
 }
 
 func (r ApiCreateOrReplaceBaseDnsPatternRequest) BaseDnsPatternCreateData(baseDnsPatternCreateData BaseDnsPatternCreateData) ApiCreateOrReplaceBaseDnsPatternRequest {
@@ -50,28 +49,29 @@ func (r ApiCreateOrReplaceBaseDnsPatternRequest) Execute() (*BaseDnsPatternCreat
 /*
 CreateOrReplaceBaseDnsPattern Creates or Updates the Baseline DNS Pattern (complete replacement)
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smfId SMF or SMF set identifier or Set Id part in SMF set identifier
- @param smfImplementationSegmentPaths SMF Implementation Dependent Segment Paths
- @return ApiCreateOrReplaceBaseDnsPatternRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smfId SMF or SMF set identifier or Set Id part in SMF set identifier
+	@param smfImplementationSegmentPaths SMF Implementation Dependent Segment Paths
+	@return ApiCreateOrReplaceBaseDnsPatternRequest
 */
 func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPattern(ctx context.Context, smfId VarNfId, smfImplementationSegmentPaths string) ApiCreateOrReplaceBaseDnsPatternRequest {
 	return ApiCreateOrReplaceBaseDnsPatternRequest{
-		ApiService: a,
-		ctx: ctx,
-		smfId: smfId,
+		ApiService:                    a,
+		ctx:                           ctx,
+		smfId:                         smfId,
 		smfImplementationSegmentPaths: smfImplementationSegmentPaths,
 	}
 }
 
 // Execute executes the request
-//  @return BaseDnsPatternCreatedData
+//
+//	@return BaseDnsPatternCreatedData
 func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternExecute(r ApiCreateOrReplaceBaseDnsPatternRequest) (*BaseDnsPatternCreatedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *BaseDnsPatternCreatedData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BaseDnsPatternCreatedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualBaselineDNSPatternApiService.CreateOrReplaceBaseDnsPattern")
@@ -108,7 +108,7 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.baseDnsPatternCreateData
@@ -122,9 +122,9 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -141,8 +141,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -152,8 +152,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -163,8 +163,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -174,8 +174,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -185,8 +185,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -196,8 +196,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -207,8 +207,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -218,8 +218,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -229,8 +229,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -240,8 +240,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -251,8 +251,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -262,8 +262,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -273,8 +273,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -284,8 +284,8 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -304,9 +304,9 @@ func (a *IndividualBaselineDNSPatternApiService) CreateOrReplaceBaseDnsPatternEx
 }
 
 type ApiDeleteBaseDnsPatternRequest struct {
-	ctx context.Context
-	ApiService *IndividualBaselineDNSPatternApiService
-	smfId VarNfId
+	ctx                           context.Context
+	ApiService                    *IndividualBaselineDNSPatternApiService
+	smfId                         VarNfId
 	smfImplementationSegmentPaths string
 }
 
@@ -317,16 +317,16 @@ func (r ApiDeleteBaseDnsPatternRequest) Execute() (*http.Response, error) {
 /*
 DeleteBaseDnsPattern Deletes a Baseline DNS Pattern
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smfId SMF or SMF set identifier or Set Id part in SMF set identifier
- @param smfImplementationSegmentPaths SMF Implementation Dependent Segment Paths
- @return ApiDeleteBaseDnsPatternRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smfId SMF or SMF set identifier or Set Id part in SMF set identifier
+	@param smfImplementationSegmentPaths SMF Implementation Dependent Segment Paths
+	@return ApiDeleteBaseDnsPatternRequest
 */
 func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPattern(ctx context.Context, smfId VarNfId, smfImplementationSegmentPaths string) ApiDeleteBaseDnsPatternRequest {
 	return ApiDeleteBaseDnsPatternRequest{
-		ApiService: a,
-		ctx: ctx,
-		smfId: smfId,
+		ApiService:                    a,
+		ctx:                           ctx,
+		smfId:                         smfId,
 		smfImplementationSegmentPaths: smfImplementationSegmentPaths,
 	}
 }
@@ -334,9 +334,9 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPattern(ctx contex
 // Execute executes the request
 func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r ApiDeleteBaseDnsPatternRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualBaselineDNSPatternApiService.DeleteBaseDnsPattern")
@@ -379,9 +379,9 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -398,8 +398,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -409,8 +409,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -420,8 +420,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -431,8 +431,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -442,8 +442,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -453,8 +453,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -464,8 +464,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -475,8 +475,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -486,8 +486,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -497,8 +497,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -508,8 +508,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -519,8 +519,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -530,8 +530,8 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -541,12 +541,12 @@ func (a *IndividualBaselineDNSPatternApiService) DeleteBaseDnsPatternExecute(r A
 }
 
 type ApiUpdateBaseDNSPatternRequest struct {
-	ctx context.Context
-	ApiService *IndividualBaselineDNSPatternApiService
-	smfId VarNfId
+	ctx                           context.Context
+	ApiService                    *IndividualBaselineDNSPatternApiService
+	smfId                         VarNfId
 	smfImplementationSegmentPaths string
-	patchItem *[]PatchItem
-	contentEncoding *string
+	patchItem                     *[]PatchItem
+	contentEncoding               *string
 }
 
 func (r ApiUpdateBaseDNSPatternRequest) PatchItem(patchItem []PatchItem) ApiUpdateBaseDNSPatternRequest {
@@ -567,28 +567,29 @@ func (r ApiUpdateBaseDNSPatternRequest) Execute() (*PatchResult, *http.Response,
 /*
 UpdateBaseDNSPattern Updates the Baseline DNS Pattern
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param smfId SMF or SMF set identifier or Set Id part in SMF set identifier
- @param smfImplementationSegmentPaths SMF Implementation Dependent Segment Paths
- @return ApiUpdateBaseDNSPatternRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param smfId SMF or SMF set identifier or Set Id part in SMF set identifier
+	@param smfImplementationSegmentPaths SMF Implementation Dependent Segment Paths
+	@return ApiUpdateBaseDNSPatternRequest
 */
 func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPattern(ctx context.Context, smfId VarNfId, smfImplementationSegmentPaths string) ApiUpdateBaseDNSPatternRequest {
 	return ApiUpdateBaseDNSPatternRequest{
-		ApiService: a,
-		ctx: ctx,
-		smfId: smfId,
+		ApiService:                    a,
+		ctx:                           ctx,
+		smfId:                         smfId,
 		smfImplementationSegmentPaths: smfImplementationSegmentPaths,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r ApiUpdateBaseDNSPatternRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualBaselineDNSPatternApiService.UpdateBaseDNSPattern")
@@ -625,7 +626,7 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -639,9 +640,9 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -658,8 +659,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -669,8 +670,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -680,8 +681,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -691,8 +692,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -702,8 +703,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -713,8 +714,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -724,8 +725,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -735,8 +736,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -746,8 +747,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -757,8 +758,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -768,8 +769,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -779,8 +780,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -790,8 +791,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -801,8 +802,8 @@ func (a *IndividualBaselineDNSPatternApiService) UpdateBaseDNSPatternExecute(r A
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

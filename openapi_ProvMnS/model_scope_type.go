@@ -20,10 +20,10 @@ type ScopeType string
 
 // List of ScopeType
 const (
-	ONLY ScopeType = "BASE_ONLY"
+	ONLY      ScopeType = "BASE_ONLY"
 	NTH_LEVEL ScopeType = "BASE_NTH_LEVEL"
-	SUBTREE ScopeType = "BASE_SUBTREE"
-	ALL ScopeType = "BASE_ALL"
+	SUBTREE   ScopeType = "BASE_SUBTREE"
+	ALL       ScopeType = "BASE_ALL"
 )
 
 // All allowed values of ScopeType enum
@@ -112,4 +112,3 @@ func (v *NullableScopeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

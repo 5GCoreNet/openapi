@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -17,17 +17,17 @@ import (
 // checks if the TrafficSpecInformation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TrafficSpecInformation{}
 
-// TrafficSpecInformation The traffic classe supported by the DS-TTs and available end-to-end latency value and Priority Code Point (PCP) value. 
+// TrafficSpecInformation The traffic classe supported by the DS-TTs and available end-to-end latency value and Priority Code Point (PCP) value.
 type TrafficSpecInformation struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	PcpValue int32 `json:"pcpValue"`
 	// Unsigned integer identifying a period of time in units of seconds.
 	MaxFramInt int32 `json:"maxFramInt"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	MaxFramSize int32 `json:"maxFramSize"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	MaxIntFrames int32 `json:"maxIntFrames"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	MaxLatency int32 `json:"maxLatency"`
 }
 
@@ -174,7 +174,7 @@ func (o *TrafficSpecInformation) SetMaxLatency(v int32) {
 }
 
 func (o TrafficSpecInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -226,5 +226,3 @@ func (v *NullableTrafficSpecInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

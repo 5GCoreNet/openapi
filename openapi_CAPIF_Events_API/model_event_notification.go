@@ -1,7 +1,7 @@
 /*
 CAPIF_Events_API
 
-API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for event subscription management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &EventNotification{}
 
 // EventNotification Represents an individual CAPIF Event notification.
 type EventNotification struct {
-	// Identifier of the subscription resource to which the notification is related – CAPIF resource identifier 
-	SubscriptionId string `json:"subscriptionId"`
-	Events CAPIFEvent `json:"events"`
-	EventDetail *CAPIFEventDetail `json:"eventDetail,omitempty"`
+	// Identifier of the subscription resource to which the notification is related – CAPIF resource identifier
+	SubscriptionId string            `json:"subscriptionId"`
+	Events         CAPIFEvent        `json:"events"`
+	EventDetail    *CAPIFEventDetail `json:"eventDetail,omitempty"`
 }
 
 // NewEventNotification instantiates a new EventNotification object
@@ -94,7 +94,7 @@ func (o *EventNotification) SetEvents(v CAPIFEvent) {
 
 // GetEventDetail returns the EventDetail field value if set, zero value otherwise.
 func (o *EventNotification) GetEventDetail() CAPIFEventDetail {
-	if o == nil || isNil(o.EventDetail) {
+	if o == nil || IsNil(o.EventDetail) {
 		var ret CAPIFEventDetail
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *EventNotification) GetEventDetail() CAPIFEventDetail {
 // GetEventDetailOk returns a tuple with the EventDetail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetEventDetailOk() (*CAPIFEventDetail, bool) {
-	if o == nil || isNil(o.EventDetail) {
+	if o == nil || IsNil(o.EventDetail) {
 		return nil, false
 	}
 	return o.EventDetail, true
@@ -112,7 +112,7 @@ func (o *EventNotification) GetEventDetailOk() (*CAPIFEventDetail, bool) {
 
 // HasEventDetail returns a boolean if a field has been set.
 func (o *EventNotification) HasEventDetail() bool {
-	if o != nil && !isNil(o.EventDetail) {
+	if o != nil && !IsNil(o.EventDetail) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *EventNotification) SetEventDetail(v CAPIFEventDetail) {
 }
 
 func (o EventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscriptionId"] = o.SubscriptionId
 	toSerialize["events"] = o.Events
-	if !isNil(o.EventDetail) {
+	if !IsNil(o.EventDetail) {
 		toSerialize["eventDetail"] = o.EventDetail
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

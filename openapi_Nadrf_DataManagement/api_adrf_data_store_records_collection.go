@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,18 +13,17 @@ package openapi_Nadrf_DataManagement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // ADRFDataStoreRecordsCollectionApiService ADRFDataStoreRecordsCollectionApi service
 type ADRFDataStoreRecordsCollectionApiService service
 
 type ApiCreateADRFDataStoreRecordRequest struct {
-	ctx context.Context
-	ApiService *ADRFDataStoreRecordsCollectionApiService
+	ctx                  context.Context
+	ApiService           *ADRFDataStoreRecordsCollectionApiService
 	nadrfDataStoreRecord *NadrfDataStoreRecord
 }
 
@@ -41,24 +40,25 @@ func (r ApiCreateADRFDataStoreRecordRequest) Execute() (*NadrfDataStoreRecord, *
 /*
 CreateADRFDataStoreRecord Creates a new Individual Data Store Record resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateADRFDataStoreRecordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateADRFDataStoreRecordRequest
 */
 func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecord(ctx context.Context) ApiCreateADRFDataStoreRecordRequest {
 	return ApiCreateADRFDataStoreRecordRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return NadrfDataStoreRecord
+//
+//	@return NadrfDataStoreRecord
 func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExecute(r ApiCreateADRFDataStoreRecordRequest) (*NadrfDataStoreRecord, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NadrfDataStoreRecord
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NadrfDataStoreRecord
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ADRFDataStoreRecordsCollectionApiService.CreateADRFDataStoreRecord")
@@ -104,9 +104,9 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -123,8 +123,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -134,8 +134,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -145,8 +145,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -156,8 +156,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -167,8 +167,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -178,8 +178,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -189,8 +189,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -200,8 +200,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -211,8 +211,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -222,8 +222,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -233,8 +233,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -253,9 +253,9 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 }
 
 type ApiGetAdrfDataStoreRecordsRequest struct {
-	ctx context.Context
-	ApiService *ADRFDataStoreRecordsCollectionApiService
-	storeTransId *string
+	ctx                 context.Context
+	ApiService          *ADRFDataStoreRecordsCollectionApiService
+	storeTransId        *string
 	fetchCorrelationIds *[]string
 }
 
@@ -278,24 +278,25 @@ func (r ApiGetAdrfDataStoreRecordsRequest) Execute() (*NadrfDataStoreRecord, *ht
 /*
 GetAdrfDataStoreRecords Retrieves existing Individual ADRF Data Store Records.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAdrfDataStoreRecordsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAdrfDataStoreRecordsRequest
 */
 func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecords(ctx context.Context) ApiGetAdrfDataStoreRecordsRequest {
 	return ApiGetAdrfDataStoreRecordsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return NadrfDataStoreRecord
+//
+//	@return NadrfDataStoreRecord
 func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecute(r ApiGetAdrfDataStoreRecordsRequest) (*NadrfDataStoreRecord, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NadrfDataStoreRecord
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NadrfDataStoreRecord
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ADRFDataStoreRecordsCollectionApiService.GetAdrfDataStoreRecords")
@@ -310,10 +311,10 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 	localVarFormParams := url.Values{}
 
 	if r.storeTransId != nil {
-		parameterAddToQuery(localVarQueryParams, "store-trans-id", r.storeTransId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "store-trans-id", r.storeTransId, "")
 	}
 	if r.fetchCorrelationIds != nil {
-		parameterAddToQuery(localVarQueryParams, "fetch-correlation-ids", r.fetchCorrelationIds, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fetch-correlation-ids", r.fetchCorrelationIds, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -342,9 +343,9 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -361,8 +362,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -372,8 +373,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -383,8 +384,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -394,8 +395,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -405,8 +406,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -416,8 +417,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -427,8 +428,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -438,8 +439,8 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 M1_PolicyTemplatesProvisioning
 
-5GMS AF M1 Policy Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Policy Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,16 +20,16 @@ var _ MappedNullable = &M1QoSSpecification{}
 // M1QoSSpecification struct for M1QoSSpecification
 type M1QoSSpecification struct {
 	QosReference *string `json:"qosReference,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxBtrUl *string `json:"maxBtrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxBtrDl *string `json:"maxBtrDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxAuthBtrUl *string `json:"maxAuthBtrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	MaxAuthBtrDl *string `json:"maxAuthBtrDl,omitempty"`
-	DefPacketLossRateDl *int32 `json:"defPacketLossRateDl,omitempty"`
-	DefPacketLossRateUl *int32 `json:"defPacketLossRateUl,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	MaxAuthBtrDl        *string `json:"maxAuthBtrDl,omitempty"`
+	DefPacketLossRateDl *int32  `json:"defPacketLossRateDl,omitempty"`
+	DefPacketLossRateUl *int32  `json:"defPacketLossRateUl,omitempty"`
 }
 
 // NewM1QoSSpecification instantiates a new M1QoSSpecification object
@@ -51,7 +51,7 @@ func NewM1QoSSpecificationWithDefaults() *M1QoSSpecification {
 
 // GetQosReference returns the QosReference field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetQosReference() string {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *M1QoSSpecification) GetQosReference() string {
 // GetQosReferenceOk returns a tuple with the QosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetQosReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		return nil, false
 	}
 	return o.QosReference, true
@@ -69,7 +69,7 @@ func (o *M1QoSSpecification) GetQosReferenceOk() (*string, bool) {
 
 // HasQosReference returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasQosReference() bool {
-	if o != nil && !isNil(o.QosReference) {
+	if o != nil && !IsNil(o.QosReference) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *M1QoSSpecification) SetQosReference(v string) {
 
 // GetMaxBtrUl returns the MaxBtrUl field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetMaxBtrUl() string {
-	if o == nil || isNil(o.MaxBtrUl) {
+	if o == nil || IsNil(o.MaxBtrUl) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *M1QoSSpecification) GetMaxBtrUl() string {
 // GetMaxBtrUlOk returns a tuple with the MaxBtrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetMaxBtrUlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxBtrUl) {
+	if o == nil || IsNil(o.MaxBtrUl) {
 		return nil, false
 	}
 	return o.MaxBtrUl, true
@@ -101,7 +101,7 @@ func (o *M1QoSSpecification) GetMaxBtrUlOk() (*string, bool) {
 
 // HasMaxBtrUl returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasMaxBtrUl() bool {
-	if o != nil && !isNil(o.MaxBtrUl) {
+	if o != nil && !IsNil(o.MaxBtrUl) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *M1QoSSpecification) SetMaxBtrUl(v string) {
 
 // GetMaxBtrDl returns the MaxBtrDl field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetMaxBtrDl() string {
-	if o == nil || isNil(o.MaxBtrDl) {
+	if o == nil || IsNil(o.MaxBtrDl) {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *M1QoSSpecification) GetMaxBtrDl() string {
 // GetMaxBtrDlOk returns a tuple with the MaxBtrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetMaxBtrDlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxBtrDl) {
+	if o == nil || IsNil(o.MaxBtrDl) {
 		return nil, false
 	}
 	return o.MaxBtrDl, true
@@ -133,7 +133,7 @@ func (o *M1QoSSpecification) GetMaxBtrDlOk() (*string, bool) {
 
 // HasMaxBtrDl returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasMaxBtrDl() bool {
-	if o != nil && !isNil(o.MaxBtrDl) {
+	if o != nil && !IsNil(o.MaxBtrDl) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *M1QoSSpecification) SetMaxBtrDl(v string) {
 
 // GetMaxAuthBtrUl returns the MaxAuthBtrUl field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetMaxAuthBtrUl() string {
-	if o == nil || isNil(o.MaxAuthBtrUl) {
+	if o == nil || IsNil(o.MaxAuthBtrUl) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *M1QoSSpecification) GetMaxAuthBtrUl() string {
 // GetMaxAuthBtrUlOk returns a tuple with the MaxAuthBtrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetMaxAuthBtrUlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxAuthBtrUl) {
+	if o == nil || IsNil(o.MaxAuthBtrUl) {
 		return nil, false
 	}
 	return o.MaxAuthBtrUl, true
@@ -165,7 +165,7 @@ func (o *M1QoSSpecification) GetMaxAuthBtrUlOk() (*string, bool) {
 
 // HasMaxAuthBtrUl returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasMaxAuthBtrUl() bool {
-	if o != nil && !isNil(o.MaxAuthBtrUl) {
+	if o != nil && !IsNil(o.MaxAuthBtrUl) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *M1QoSSpecification) SetMaxAuthBtrUl(v string) {
 
 // GetMaxAuthBtrDl returns the MaxAuthBtrDl field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetMaxAuthBtrDl() string {
-	if o == nil || isNil(o.MaxAuthBtrDl) {
+	if o == nil || IsNil(o.MaxAuthBtrDl) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *M1QoSSpecification) GetMaxAuthBtrDl() string {
 // GetMaxAuthBtrDlOk returns a tuple with the MaxAuthBtrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetMaxAuthBtrDlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxAuthBtrDl) {
+	if o == nil || IsNil(o.MaxAuthBtrDl) {
 		return nil, false
 	}
 	return o.MaxAuthBtrDl, true
@@ -197,7 +197,7 @@ func (o *M1QoSSpecification) GetMaxAuthBtrDlOk() (*string, bool) {
 
 // HasMaxAuthBtrDl returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasMaxAuthBtrDl() bool {
-	if o != nil && !isNil(o.MaxAuthBtrDl) {
+	if o != nil && !IsNil(o.MaxAuthBtrDl) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *M1QoSSpecification) SetMaxAuthBtrDl(v string) {
 
 // GetDefPacketLossRateDl returns the DefPacketLossRateDl field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetDefPacketLossRateDl() int32 {
-	if o == nil || isNil(o.DefPacketLossRateDl) {
+	if o == nil || IsNil(o.DefPacketLossRateDl) {
 		var ret int32
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *M1QoSSpecification) GetDefPacketLossRateDl() int32 {
 // GetDefPacketLossRateDlOk returns a tuple with the DefPacketLossRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetDefPacketLossRateDlOk() (*int32, bool) {
-	if o == nil || isNil(o.DefPacketLossRateDl) {
+	if o == nil || IsNil(o.DefPacketLossRateDl) {
 		return nil, false
 	}
 	return o.DefPacketLossRateDl, true
@@ -229,7 +229,7 @@ func (o *M1QoSSpecification) GetDefPacketLossRateDlOk() (*int32, bool) {
 
 // HasDefPacketLossRateDl returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasDefPacketLossRateDl() bool {
-	if o != nil && !isNil(o.DefPacketLossRateDl) {
+	if o != nil && !IsNil(o.DefPacketLossRateDl) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *M1QoSSpecification) SetDefPacketLossRateDl(v int32) {
 
 // GetDefPacketLossRateUl returns the DefPacketLossRateUl field value if set, zero value otherwise.
 func (o *M1QoSSpecification) GetDefPacketLossRateUl() int32 {
-	if o == nil || isNil(o.DefPacketLossRateUl) {
+	if o == nil || IsNil(o.DefPacketLossRateUl) {
 		var ret int32
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *M1QoSSpecification) GetDefPacketLossRateUl() int32 {
 // GetDefPacketLossRateUlOk returns a tuple with the DefPacketLossRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M1QoSSpecification) GetDefPacketLossRateUlOk() (*int32, bool) {
-	if o == nil || isNil(o.DefPacketLossRateUl) {
+	if o == nil || IsNil(o.DefPacketLossRateUl) {
 		return nil, false
 	}
 	return o.DefPacketLossRateUl, true
@@ -261,7 +261,7 @@ func (o *M1QoSSpecification) GetDefPacketLossRateUlOk() (*int32, bool) {
 
 // HasDefPacketLossRateUl returns a boolean if a field has been set.
 func (o *M1QoSSpecification) HasDefPacketLossRateUl() bool {
-	if o != nil && !isNil(o.DefPacketLossRateUl) {
+	if o != nil && !IsNil(o.DefPacketLossRateUl) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *M1QoSSpecification) SetDefPacketLossRateUl(v int32) {
 }
 
 func (o M1QoSSpecification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -283,25 +283,25 @@ func (o M1QoSSpecification) MarshalJSON() ([]byte, error) {
 
 func (o M1QoSSpecification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.QosReference) {
+	if !IsNil(o.QosReference) {
 		toSerialize["qosReference"] = o.QosReference
 	}
-	if !isNil(o.MaxBtrUl) {
+	if !IsNil(o.MaxBtrUl) {
 		toSerialize["maxBtrUl"] = o.MaxBtrUl
 	}
-	if !isNil(o.MaxBtrDl) {
+	if !IsNil(o.MaxBtrDl) {
 		toSerialize["maxBtrDl"] = o.MaxBtrDl
 	}
-	if !isNil(o.MaxAuthBtrUl) {
+	if !IsNil(o.MaxAuthBtrUl) {
 		toSerialize["maxAuthBtrUl"] = o.MaxAuthBtrUl
 	}
-	if !isNil(o.MaxAuthBtrDl) {
+	if !IsNil(o.MaxAuthBtrDl) {
 		toSerialize["maxAuthBtrDl"] = o.MaxAuthBtrDl
 	}
-	if !isNil(o.DefPacketLossRateDl) {
+	if !IsNil(o.DefPacketLossRateDl) {
 		toSerialize["defPacketLossRateDl"] = o.DefPacketLossRateDl
 	}
-	if !isNil(o.DefPacketLossRateUl) {
+	if !IsNil(o.DefPacketLossRateUl) {
 		toSerialize["defPacketLossRateUl"] = o.DefPacketLossRateUl
 	}
 	return toSerialize, nil
@@ -342,5 +342,3 @@ func (v *NullableM1QoSSpecification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

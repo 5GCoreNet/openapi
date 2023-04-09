@@ -17,11 +17,11 @@ import (
 // checks if the MaxNumberofUEsTarget type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxNumberofUEsTarget{}
 
-// MaxNumberofUEsTarget This data type is the \"ExpectationTarget\" data type with specialisations for MaxNumberofUEsTarget     
+// MaxNumberofUEsTarget This data type is the \"ExpectationTarget\" data type with specialisations for MaxNumberofUEsTarget
 type MaxNumberofUEsTarget struct {
-	TargetAttribute *string `json:"targetAttribute,omitempty"`
-	TargetCondition *string `json:"targetCondition,omitempty"`
-	TargetValueRange *int32 `json:"targetValueRange,omitempty"`
+	TargetAttribute  *string `json:"targetAttribute,omitempty"`
+	TargetCondition  *string `json:"targetCondition,omitempty"`
+	TargetValueRange *int32  `json:"targetValueRange,omitempty"`
 }
 
 // NewMaxNumberofUEsTarget instantiates a new MaxNumberofUEsTarget object
@@ -43,7 +43,7 @@ func NewMaxNumberofUEsTargetWithDefaults() *MaxNumberofUEsTarget {
 
 // GetTargetAttribute returns the TargetAttribute field value if set, zero value otherwise.
 func (o *MaxNumberofUEsTarget) GetTargetAttribute() string {
-	if o == nil || isNil(o.TargetAttribute) {
+	if o == nil || IsNil(o.TargetAttribute) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MaxNumberofUEsTarget) GetTargetAttribute() string {
 // GetTargetAttributeOk returns a tuple with the TargetAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxNumberofUEsTarget) GetTargetAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.TargetAttribute) {
+	if o == nil || IsNil(o.TargetAttribute) {
 		return nil, false
 	}
 	return o.TargetAttribute, true
@@ -61,7 +61,7 @@ func (o *MaxNumberofUEsTarget) GetTargetAttributeOk() (*string, bool) {
 
 // HasTargetAttribute returns a boolean if a field has been set.
 func (o *MaxNumberofUEsTarget) HasTargetAttribute() bool {
-	if o != nil && !isNil(o.TargetAttribute) {
+	if o != nil && !IsNil(o.TargetAttribute) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MaxNumberofUEsTarget) SetTargetAttribute(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *MaxNumberofUEsTarget) GetTargetCondition() string {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MaxNumberofUEsTarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxNumberofUEsTarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || isNil(o.TargetCondition) {
+	if o == nil || IsNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -93,7 +93,7 @@ func (o *MaxNumberofUEsTarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *MaxNumberofUEsTarget) HasTargetCondition() bool {
-	if o != nil && !isNil(o.TargetCondition) {
+	if o != nil && !IsNil(o.TargetCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MaxNumberofUEsTarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *MaxNumberofUEsTarget) GetTargetValueRange() int32 {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MaxNumberofUEsTarget) GetTargetValueRange() int32 {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxNumberofUEsTarget) GetTargetValueRangeOk() (*int32, bool) {
-	if o == nil || isNil(o.TargetValueRange) {
+	if o == nil || IsNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -125,7 +125,7 @@ func (o *MaxNumberofUEsTarget) GetTargetValueRangeOk() (*int32, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *MaxNumberofUEsTarget) HasTargetValueRange() bool {
-	if o != nil && !isNil(o.TargetValueRange) {
+	if o != nil && !IsNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *MaxNumberofUEsTarget) SetTargetValueRange(v int32) {
 }
 
 func (o MaxNumberofUEsTarget) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o MaxNumberofUEsTarget) MarshalJSON() ([]byte, error) {
 
 func (o MaxNumberofUEsTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TargetAttribute) {
+	if !IsNil(o.TargetAttribute) {
 		toSerialize["targetAttribute"] = o.TargetAttribute
 	}
-	if !isNil(o.TargetCondition) {
+	if !IsNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !isNil(o.TargetValueRange) {
+	if !IsNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableMaxNumberofUEsTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

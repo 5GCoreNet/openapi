@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &Nssai{}
 
 // Nssai struct for Nssai
 type Nssai struct {
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures   *string  `json:"supportedFeatures,omitempty"`
 	DefaultSingleNssais []Snssai `json:"defaultSingleNssais"`
-	SingleNssais []Snssai `json:"singleNssais,omitempty"`
+	SingleNssais        []Snssai `json:"singleNssais,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ProvisioningTime *time.Time `json:"provisioningTime,omitempty"`
 	// A map(list of key-value pairs) where singleNssai serves as key of AdditionalSnssaiData
 	AdditionalSnssaiData *map[string]AdditionalSnssaiData `json:"additionalSnssaiData,omitempty"`
-	SuppressNssrgInd *bool `json:"suppressNssrgInd,omitempty"`
+	SuppressNssrgInd     *bool                            `json:"suppressNssrgInd,omitempty"`
 }
 
 // NewNssai instantiates a new Nssai object
@@ -51,7 +51,7 @@ func NewNssaiWithDefaults() *Nssai {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *Nssai) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *Nssai) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -69,7 +69,7 @@ func (o *Nssai) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *Nssai) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Nssai) SetDefaultSingleNssais(v []Snssai) {
 
 // GetSingleNssais returns the SingleNssais field value if set, zero value otherwise.
 func (o *Nssai) GetSingleNssais() []Snssai {
-	if o == nil || isNil(o.SingleNssais) {
+	if o == nil || IsNil(o.SingleNssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Nssai) GetSingleNssais() []Snssai {
 // GetSingleNssaisOk returns a tuple with the SingleNssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai) GetSingleNssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SingleNssais) {
+	if o == nil || IsNil(o.SingleNssais) {
 		return nil, false
 	}
 	return o.SingleNssais, true
@@ -125,7 +125,7 @@ func (o *Nssai) GetSingleNssaisOk() ([]Snssai, bool) {
 
 // HasSingleNssais returns a boolean if a field has been set.
 func (o *Nssai) HasSingleNssais() bool {
-	if o != nil && !isNil(o.SingleNssais) {
+	if o != nil && !IsNil(o.SingleNssais) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *Nssai) SetSingleNssais(v []Snssai) {
 
 // GetProvisioningTime returns the ProvisioningTime field value if set, zero value otherwise.
 func (o *Nssai) GetProvisioningTime() time.Time {
-	if o == nil || isNil(o.ProvisioningTime) {
+	if o == nil || IsNil(o.ProvisioningTime) {
 		var ret time.Time
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *Nssai) GetProvisioningTime() time.Time {
 // GetProvisioningTimeOk returns a tuple with the ProvisioningTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai) GetProvisioningTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ProvisioningTime) {
+	if o == nil || IsNil(o.ProvisioningTime) {
 		return nil, false
 	}
 	return o.ProvisioningTime, true
@@ -157,7 +157,7 @@ func (o *Nssai) GetProvisioningTimeOk() (*time.Time, bool) {
 
 // HasProvisioningTime returns a boolean if a field has been set.
 func (o *Nssai) HasProvisioningTime() bool {
-	if o != nil && !isNil(o.ProvisioningTime) {
+	if o != nil && !IsNil(o.ProvisioningTime) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *Nssai) SetProvisioningTime(v time.Time) {
 
 // GetAdditionalSnssaiData returns the AdditionalSnssaiData field value if set, zero value otherwise.
 func (o *Nssai) GetAdditionalSnssaiData() map[string]AdditionalSnssaiData {
-	if o == nil || isNil(o.AdditionalSnssaiData) {
+	if o == nil || IsNil(o.AdditionalSnssaiData) {
 		var ret map[string]AdditionalSnssaiData
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *Nssai) GetAdditionalSnssaiData() map[string]AdditionalSnssaiData {
 // GetAdditionalSnssaiDataOk returns a tuple with the AdditionalSnssaiData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai) GetAdditionalSnssaiDataOk() (*map[string]AdditionalSnssaiData, bool) {
-	if o == nil || isNil(o.AdditionalSnssaiData) {
+	if o == nil || IsNil(o.AdditionalSnssaiData) {
 		return nil, false
 	}
 	return o.AdditionalSnssaiData, true
@@ -189,7 +189,7 @@ func (o *Nssai) GetAdditionalSnssaiDataOk() (*map[string]AdditionalSnssaiData, b
 
 // HasAdditionalSnssaiData returns a boolean if a field has been set.
 func (o *Nssai) HasAdditionalSnssaiData() bool {
-	if o != nil && !isNil(o.AdditionalSnssaiData) {
+	if o != nil && !IsNil(o.AdditionalSnssaiData) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *Nssai) SetAdditionalSnssaiData(v map[string]AdditionalSnssaiData) {
 
 // GetSuppressNssrgInd returns the SuppressNssrgInd field value if set, zero value otherwise.
 func (o *Nssai) GetSuppressNssrgInd() bool {
-	if o == nil || isNil(o.SuppressNssrgInd) {
+	if o == nil || IsNil(o.SuppressNssrgInd) {
 		var ret bool
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *Nssai) GetSuppressNssrgInd() bool {
 // GetSuppressNssrgIndOk returns a tuple with the SuppressNssrgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai) GetSuppressNssrgIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressNssrgInd) {
+	if o == nil || IsNil(o.SuppressNssrgInd) {
 		return nil, false
 	}
 	return o.SuppressNssrgInd, true
@@ -221,7 +221,7 @@ func (o *Nssai) GetSuppressNssrgIndOk() (*bool, bool) {
 
 // HasSuppressNssrgInd returns a boolean if a field has been set.
 func (o *Nssai) HasSuppressNssrgInd() bool {
-	if o != nil && !isNil(o.SuppressNssrgInd) {
+	if o != nil && !IsNil(o.SuppressNssrgInd) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *Nssai) SetSuppressNssrgInd(v bool) {
 }
 
 func (o Nssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,20 +243,20 @@ func (o Nssai) MarshalJSON() ([]byte, error) {
 
 func (o Nssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["defaultSingleNssais"] = o.DefaultSingleNssais
-	if !isNil(o.SingleNssais) {
+	if !IsNil(o.SingleNssais) {
 		toSerialize["singleNssais"] = o.SingleNssais
 	}
-	if !isNil(o.ProvisioningTime) {
+	if !IsNil(o.ProvisioningTime) {
 		toSerialize["provisioningTime"] = o.ProvisioningTime
 	}
-	if !isNil(o.AdditionalSnssaiData) {
+	if !IsNil(o.AdditionalSnssaiData) {
 		toSerialize["additionalSnssaiData"] = o.AdditionalSnssaiData
 	}
-	if !isNil(o.SuppressNssrgInd) {
+	if !IsNil(o.SuppressNssrgInd) {
 		toSerialize["suppressNssrgInd"] = o.SuppressNssrgInd
 	}
 	return toSerialize, nil
@@ -297,5 +297,3 @@ func (v *NullableNssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // UpdateNwdafRegistration200Response - struct for UpdateNwdafRegistration200Response
 type UpdateNwdafRegistration200Response struct {
 	NwdafRegistration *NwdafRegistration
-	PatchResult *PatchResult
+	PatchResult       *PatchResult
 }
 
 // NwdafRegistrationAsUpdateNwdafRegistration200Response is a convenience function that returns NwdafRegistration wrapped in UpdateNwdafRegistration200Response
@@ -34,7 +34,6 @@ func PatchResultAsUpdateNwdafRegistration200Response(v *PatchResult) UpdateNwdaf
 		PatchResult: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateNwdafRegistration200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src UpdateNwdafRegistration200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateNwdafRegistration200Response) GetActualInstance() (interface{}) {
+func (obj *UpdateNwdafRegistration200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableUpdateNwdafRegistration200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

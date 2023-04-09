@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -18,7 +18,7 @@ import (
 // PduSessionInformation - Represents PDU session identification information.
 type PduSessionInformation struct {
 	AnyOfAnyTypeAnyType *AnyOfAnyTypeAnyType
-	Interface *interface{}
+	Interface           *interface{}
 }
 
 // AnyOfAnyTypeAnyTypeAsPduSessionInformation is a convenience function that returns AnyOfAnyTypeAnyType wrapped in PduSessionInformation
@@ -34,7 +34,6 @@ func InterfaceAsPduSessionInformation(v *interface{}) PduSessionInformation {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PduSessionInformation) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src PduSessionInformation) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PduSessionInformation) GetActualInstance() (interface{}) {
+func (obj *PduSessionInformation) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullablePduSessionInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

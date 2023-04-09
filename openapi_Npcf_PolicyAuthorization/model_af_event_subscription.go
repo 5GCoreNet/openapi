@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &AfEventSubscription{}
 
 // AfEventSubscription Describes the event information delivered in the subscription.
 type AfEventSubscription struct {
-	Event AfEvent `json:"event"`
+	Event       AfEvent        `json:"event"`
 	NotifMethod *AfNotifMethod `json:"notifMethod,omitempty"`
 	// indicating a time in seconds.
 	RepPeriod *int32 `json:"repPeriod,omitempty"`
@@ -71,7 +71,7 @@ func (o *AfEventSubscription) SetEvent(v AfEvent) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *AfEventSubscription) GetNotifMethod() AfNotifMethod {
-	if o == nil || isNil(o.NotifMethod) {
+	if o == nil || IsNil(o.NotifMethod) {
 		var ret AfNotifMethod
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AfEventSubscription) GetNotifMethod() AfNotifMethod {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventSubscription) GetNotifMethodOk() (*AfNotifMethod, bool) {
-	if o == nil || isNil(o.NotifMethod) {
+	if o == nil || IsNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -89,7 +89,7 @@ func (o *AfEventSubscription) GetNotifMethodOk() (*AfNotifMethod, bool) {
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *AfEventSubscription) HasNotifMethod() bool {
-	if o != nil && !isNil(o.NotifMethod) {
+	if o != nil && !IsNil(o.NotifMethod) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *AfEventSubscription) SetNotifMethod(v AfNotifMethod) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *AfEventSubscription) GetRepPeriod() int32 {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AfEventSubscription) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventSubscription) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -121,7 +121,7 @@ func (o *AfEventSubscription) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *AfEventSubscription) HasRepPeriod() bool {
-	if o != nil && !isNil(o.RepPeriod) {
+	if o != nil && !IsNil(o.RepPeriod) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *AfEventSubscription) SetRepPeriod(v int32) {
 
 // GetWaitTime returns the WaitTime field value if set, zero value otherwise.
 func (o *AfEventSubscription) GetWaitTime() int32 {
-	if o == nil || isNil(o.WaitTime) {
+	if o == nil || IsNil(o.WaitTime) {
 		var ret int32
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *AfEventSubscription) GetWaitTime() int32 {
 // GetWaitTimeOk returns a tuple with the WaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventSubscription) GetWaitTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.WaitTime) {
+	if o == nil || IsNil(o.WaitTime) {
 		return nil, false
 	}
 	return o.WaitTime, true
@@ -153,7 +153,7 @@ func (o *AfEventSubscription) GetWaitTimeOk() (*int32, bool) {
 
 // HasWaitTime returns a boolean if a field has been set.
 func (o *AfEventSubscription) HasWaitTime() bool {
-	if o != nil && !isNil(o.WaitTime) {
+	if o != nil && !IsNil(o.WaitTime) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *AfEventSubscription) SetWaitTime(v int32) {
 }
 
 func (o AfEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o AfEventSubscription) MarshalJSON() ([]byte, error) {
 func (o AfEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.NotifMethod) {
+	if !IsNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !isNil(o.RepPeriod) {
+	if !IsNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !isNil(o.WaitTime) {
+	if !IsNil(o.WaitTime) {
 		toSerialize["waitTime"] = o.WaitTime
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableAfEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

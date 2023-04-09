@@ -1,7 +1,7 @@
 /*
 3gpp-pfd-management
 
-API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for PFD management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DomainNameProtocol Possible values are - DNS_QNAME: Identifies the DNS protocol and the question name in DNS query. - TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message. - TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message. - TLS_SCN: Identifies the Subject Common Name in TLS ServerCertificate message. 
+// DomainNameProtocol Possible values are - DNS_QNAME: Identifies the DNS protocol and the question name in DNS query. - TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message. - TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message. - TLS_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.
 type DomainNameProtocol struct {
-	DomainNameProtocolAnyOf *DomainNameProtocolAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DomainNameProtocol) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DomainNameProtocolAnyOf
-	err = json.Unmarshal(data, &dst.DomainNameProtocolAnyOf);
-	if err == nil {
-		jsonDomainNameProtocolAnyOf, _ := json.Marshal(dst.DomainNameProtocolAnyOf)
-		if string(jsonDomainNameProtocolAnyOf) == "{}" { // empty struct
-			dst.DomainNameProtocolAnyOf = nil
-		} else {
-			return nil // data stored in dst.DomainNameProtocolAnyOf, return on the first match
-		}
-	} else {
-		dst.DomainNameProtocolAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DomainNameProtocol) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DomainNameProtocol) MarshalJSON() ([]byte, error) {
-	if src.DomainNameProtocolAnyOf != nil {
-		return json.Marshal(&src.DomainNameProtocolAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDomainNameProtocol) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

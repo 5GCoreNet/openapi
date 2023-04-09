@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -48,7 +48,7 @@ func NewUsageThresholdWithDefaults() *UsageThreshold {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *UsageThreshold) GetDuration() int32 {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret int32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *UsageThreshold) GetDuration() int32 {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageThreshold) GetDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -66,7 +66,7 @@ func (o *UsageThreshold) GetDurationOk() (*int32, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *UsageThreshold) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *UsageThreshold) SetDuration(v int32) {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise.
 func (o *UsageThreshold) GetTotalVolume() int64 {
-	if o == nil || isNil(o.TotalVolume) {
+	if o == nil || IsNil(o.TotalVolume) {
 		var ret int64
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *UsageThreshold) GetTotalVolume() int64 {
 // GetTotalVolumeOk returns a tuple with the TotalVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageThreshold) GetTotalVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.TotalVolume) {
+	if o == nil || IsNil(o.TotalVolume) {
 		return nil, false
 	}
 	return o.TotalVolume, true
@@ -98,7 +98,7 @@ func (o *UsageThreshold) GetTotalVolumeOk() (*int64, bool) {
 
 // HasTotalVolume returns a boolean if a field has been set.
 func (o *UsageThreshold) HasTotalVolume() bool {
-	if o != nil && !isNil(o.TotalVolume) {
+	if o != nil && !IsNil(o.TotalVolume) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *UsageThreshold) SetTotalVolume(v int64) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *UsageThreshold) GetDownlinkVolume() int64 {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *UsageThreshold) GetDownlinkVolume() int64 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageThreshold) GetDownlinkVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -130,7 +130,7 @@ func (o *UsageThreshold) GetDownlinkVolumeOk() (*int64, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *UsageThreshold) HasDownlinkVolume() bool {
-	if o != nil && !isNil(o.DownlinkVolume) {
+	if o != nil && !IsNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *UsageThreshold) SetDownlinkVolume(v int64) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *UsageThreshold) GetUplinkVolume() int64 {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *UsageThreshold) GetUplinkVolume() int64 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageThreshold) GetUplinkVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -162,7 +162,7 @@ func (o *UsageThreshold) GetUplinkVolumeOk() (*int64, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *UsageThreshold) HasUplinkVolume() bool {
-	if o != nil && !isNil(o.UplinkVolume) {
+	if o != nil && !IsNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *UsageThreshold) SetUplinkVolume(v int64) {
 }
 
 func (o UsageThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,16 +184,16 @@ func (o UsageThreshold) MarshalJSON() ([]byte, error) {
 
 func (o UsageThreshold) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !isNil(o.TotalVolume) {
+	if !IsNil(o.TotalVolume) {
 		toSerialize["totalVolume"] = o.TotalVolume
 	}
-	if !isNil(o.DownlinkVolume) {
+	if !IsNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
-	if !isNil(o.UplinkVolume) {
+	if !IsNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
 	return toSerialize, nil
@@ -234,5 +234,3 @@ func (v *NullableUsageThreshold) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

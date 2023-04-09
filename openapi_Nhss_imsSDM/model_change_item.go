@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,12 +20,12 @@ var _ MappedNullable = &ChangeItem{}
 // ChangeItem It contains data which need to be changed.
 type ChangeItem struct {
 	Op ChangeType `json:"op"`
-	// contains a JSON pointer value (as defined in IETF RFC 6901) that references a target  location within the resource on which the change has been applied. 
+	// contains a JSON pointer value (as defined in IETF RFC 6901) that references a target  location within the resource on which the change has been applied.
 	Path string `json:"path"`
-	// indicates the path of the source JSON element (according to JSON Pointer syntax)  being moved or copied to the location indicated by the \"path\" attribute. It shall  be present if the \"op\" attribute is of value \"MOVE\". 
-	From *string `json:"from,omitempty"`
+	// indicates the path of the source JSON element (according to JSON Pointer syntax)  being moved or copied to the location indicated by the \"path\" attribute. It shall  be present if the \"op\" attribute is of value \"MOVE\".
+	From      *string     `json:"from,omitempty"`
 	OrigValue interface{} `json:"origValue,omitempty"`
-	NewValue interface{} `json:"newValue,omitempty"`
+	NewValue  interface{} `json:"newValue,omitempty"`
 }
 
 // NewChangeItem instantiates a new ChangeItem object
@@ -97,7 +97,7 @@ func (o *ChangeItem) SetPath(v string) {
 
 // GetFrom returns the From field value if set, zero value otherwise.
 func (o *ChangeItem) GetFrom() string {
-	if o == nil || isNil(o.From) {
+	if o == nil || IsNil(o.From) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *ChangeItem) GetFrom() string {
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeItem) GetFromOk() (*string, bool) {
-	if o == nil || isNil(o.From) {
+	if o == nil || IsNil(o.From) {
 		return nil, false
 	}
 	return o.From, true
@@ -115,7 +115,7 @@ func (o *ChangeItem) GetFromOk() (*string, bool) {
 
 // HasFrom returns a boolean if a field has been set.
 func (o *ChangeItem) HasFrom() bool {
-	if o != nil && !isNil(o.From) {
+	if o != nil && !IsNil(o.From) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ChangeItem) GetOrigValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ChangeItem) GetOrigValueOk() (*interface{}, bool) {
-	if o == nil || isNil(o.OrigValue) {
+	if o == nil || IsNil(o.OrigValue) {
 		return nil, false
 	}
 	return &o.OrigValue, true
@@ -148,7 +148,7 @@ func (o *ChangeItem) GetOrigValueOk() (*interface{}, bool) {
 
 // HasOrigValue returns a boolean if a field has been set.
 func (o *ChangeItem) HasOrigValue() bool {
-	if o != nil && isNil(o.OrigValue) {
+	if o != nil && IsNil(o.OrigValue) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ChangeItem) GetNewValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ChangeItem) GetNewValueOk() (*interface{}, bool) {
-	if o == nil || isNil(o.NewValue) {
+	if o == nil || IsNil(o.NewValue) {
 		return nil, false
 	}
 	return &o.NewValue, true
@@ -181,7 +181,7 @@ func (o *ChangeItem) GetNewValueOk() (*interface{}, bool) {
 
 // HasNewValue returns a boolean if a field has been set.
 func (o *ChangeItem) HasNewValue() bool {
-	if o != nil && isNil(o.NewValue) {
+	if o != nil && IsNil(o.NewValue) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *ChangeItem) SetNewValue(v interface{}) {
 }
 
 func (o ChangeItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -205,7 +205,7 @@ func (o ChangeItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
-	if !isNil(o.From) {
+	if !IsNil(o.From) {
 		toSerialize["from"] = o.From
 	}
 	if o.OrigValue != nil {
@@ -252,5 +252,3 @@ func (v *NullableChangeItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,7 +19,7 @@ var _ MappedNullable = &TraceTargetType{}
 
 // TraceTargetType Trace target conveying both the type and value of the target ID. For additional details see 3GPP TS 32.422
 type TraceTargetType struct {
-	TargetIdType string `json:"TargetIdType"`
+	TargetIdType  string `json:"TargetIdType"`
 	TargetIdValue string `json:"TargetIdValue"`
 }
 
@@ -91,7 +91,7 @@ func (o *TraceTargetType) SetTargetIdValue(v string) {
 }
 
 func (o TraceTargetType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableTraceTargetType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// RequestDirection Represents the direction of the request in combination with the registration status of the user as evaluated in the S-CSCF 
+// RequestDirection Represents the direction of the request in combination with the registration status of the user as evaluated in the S-CSCF
 type RequestDirection struct {
-	RequestDirectionAnyOf *RequestDirectionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RequestDirection) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RequestDirectionAnyOf
-	err = json.Unmarshal(data, &dst.RequestDirectionAnyOf);
-	if err == nil {
-		jsonRequestDirectionAnyOf, _ := json.Marshal(dst.RequestDirectionAnyOf)
-		if string(jsonRequestDirectionAnyOf) == "{}" { // empty struct
-			dst.RequestDirectionAnyOf = nil
-		} else {
-			return nil // data stored in dst.RequestDirectionAnyOf, return on the first match
-		}
-	} else {
-		dst.RequestDirectionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RequestDirection) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RequestDirection) MarshalJSON() ([]byte, error) {
-	if src.RequestDirectionAnyOf != nil {
-		return json.Marshal(&src.RequestDirectionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRequestDirection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

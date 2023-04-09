@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -43,7 +43,7 @@ func NewCmInfoReportWithDefaults() *CmInfoReport {
 
 // GetOldCmInfoList returns the OldCmInfoList field value if set, zero value otherwise.
 func (o *CmInfoReport) GetOldCmInfoList() []CmInfo {
-	if o == nil || isNil(o.OldCmInfoList) {
+	if o == nil || IsNil(o.OldCmInfoList) {
 		var ret []CmInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *CmInfoReport) GetOldCmInfoList() []CmInfo {
 // GetOldCmInfoListOk returns a tuple with the OldCmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CmInfoReport) GetOldCmInfoListOk() ([]CmInfo, bool) {
-	if o == nil || isNil(o.OldCmInfoList) {
+	if o == nil || IsNil(o.OldCmInfoList) {
 		return nil, false
 	}
 	return o.OldCmInfoList, true
@@ -61,7 +61,7 @@ func (o *CmInfoReport) GetOldCmInfoListOk() ([]CmInfo, bool) {
 
 // HasOldCmInfoList returns a boolean if a field has been set.
 func (o *CmInfoReport) HasOldCmInfoList() bool {
-	if o != nil && !isNil(o.OldCmInfoList) {
+	if o != nil && !IsNil(o.OldCmInfoList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *CmInfoReport) SetNewCmInfoList(v []CmInfo) {
 }
 
 func (o CmInfoReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -107,7 +107,7 @@ func (o CmInfoReport) MarshalJSON() ([]byte, error) {
 
 func (o CmInfoReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.OldCmInfoList) {
+	if !IsNil(o.OldCmInfoList) {
 		toSerialize["oldCmInfoList"] = o.OldCmInfoList
 	}
 	toSerialize["newCmInfoList"] = o.NewCmInfoList
@@ -149,5 +149,3 @@ func (v *NullableCmInfoReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

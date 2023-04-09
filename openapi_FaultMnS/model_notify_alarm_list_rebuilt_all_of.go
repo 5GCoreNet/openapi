@@ -19,7 +19,7 @@ var _ MappedNullable = &NotifyAlarmListRebuiltAllOf{}
 
 // NotifyAlarmListRebuiltAllOf struct for NotifyAlarmListRebuiltAllOf
 type NotifyAlarmListRebuiltAllOf struct {
-	Reason string `json:"reason"`
+	Reason                        string                         `json:"reason"`
 	AlarmListAlignmentRequirement *AlarmListAlignmentRequirement `json:"alarmListAlignmentRequirement,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *NotifyAlarmListRebuiltAllOf) SetReason(v string) {
 
 // GetAlarmListAlignmentRequirement returns the AlarmListAlignmentRequirement field value if set, zero value otherwise.
 func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirement() AlarmListAlignmentRequirement {
-	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
 		var ret AlarmListAlignmentRequirement
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirement() AlarmLi
 // GetAlarmListAlignmentRequirementOk returns a tuple with the AlarmListAlignmentRequirement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirementOk() (*AlarmListAlignmentRequirement, bool) {
-	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
 		return nil, false
 	}
 	return o.AlarmListAlignmentRequirement, true
@@ -85,7 +85,7 @@ func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirementOk() (*Ala
 
 // HasAlarmListAlignmentRequirement returns a boolean if a field has been set.
 func (o *NotifyAlarmListRebuiltAllOf) HasAlarmListAlignmentRequirement() bool {
-	if o != nil && !isNil(o.AlarmListAlignmentRequirement) {
+	if o != nil && !IsNil(o.AlarmListAlignmentRequirement) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *NotifyAlarmListRebuiltAllOf) SetAlarmListAlignmentRequirement(v AlarmLi
 }
 
 func (o NotifyAlarmListRebuiltAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o NotifyAlarmListRebuiltAllOf) MarshalJSON() ([]byte, error) {
 func (o NotifyAlarmListRebuiltAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reason"] = o.Reason
-	if !isNil(o.AlarmListAlignmentRequirement) {
+	if !IsNil(o.AlarmListAlignmentRequirement) {
 		toSerialize["alarmListAlignmentRequirement"] = o.AlarmListAlignmentRequirement
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableNotifyAlarmListRebuiltAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

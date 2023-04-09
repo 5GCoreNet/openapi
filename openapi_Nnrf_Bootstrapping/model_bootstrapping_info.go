@@ -1,7 +1,7 @@
 /*
 NRF Bootstrapping
 
-NRF Bootstrapping.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF Bootstrapping.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &BootstrappingInfo{}
 // BootstrappingInfo Information returned by NRF in the bootstrapping response message
 type BootstrappingInfo struct {
 	Status *Status `json:"status,omitempty"`
-	// Map of link objects where the keys are the link relations defined in 3GPP TS 29.510 clause 6.4.6.3.3 
+	// Map of link objects where the keys are the link relations defined in 3GPP TS 29.510 clause 6.4.6.3.3
 	Links map[string]LinksValueSchema `json:"_links"`
-	// Map of features supported by the NRF, where the keys are the NRF services as defined in 3GPP TS 29.510 clause 6.1.6.3.11 
+	// Map of features supported by the NRF, where the keys are the NRF services as defined in 3GPP TS 29.510 clause 6.1.6.3.11
 	NrfFeatures *map[string]string `json:"nrfFeatures,omitempty"`
-	// Map indicating whether the NRF requires Oauth2-based authorization for accessing its services. The key of the map shall be the name of an NRF service, e.g. \"nnrf-nfm\" or \"nnrf-disc\" 
+	// Map indicating whether the NRF requires Oauth2-based authorization for accessing its services. The key of the map shall be the name of an NRF service, e.g. \"nnrf-nfm\" or \"nnrf-disc\"
 	Oauth2Required *map[string]bool `json:"oauth2Required,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	NrfSetId *string `json:"nrfSetId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NrfInstanceId *string `json:"nrfInstanceId,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func NewBootstrappingInfoWithDefaults() *BootstrappingInfo {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetStatus() Status {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret Status
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *BootstrappingInfo) GetStatus() Status {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetStatusOk() (*Status, bool) {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -70,7 +70,7 @@ func (o *BootstrappingInfo) GetStatusOk() (*Status, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *BootstrappingInfo) SetLinks(v map[string]LinksValueSchema) {
 
 // GetNrfFeatures returns the NrfFeatures field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetNrfFeatures() map[string]string {
-	if o == nil || isNil(o.NrfFeatures) {
+	if o == nil || IsNil(o.NrfFeatures) {
 		var ret map[string]string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *BootstrappingInfo) GetNrfFeatures() map[string]string {
 // GetNrfFeaturesOk returns a tuple with the NrfFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetNrfFeaturesOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.NrfFeatures) {
+	if o == nil || IsNil(o.NrfFeatures) {
 		return nil, false
 	}
 	return o.NrfFeatures, true
@@ -126,7 +126,7 @@ func (o *BootstrappingInfo) GetNrfFeaturesOk() (*map[string]string, bool) {
 
 // HasNrfFeatures returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasNrfFeatures() bool {
-	if o != nil && !isNil(o.NrfFeatures) {
+	if o != nil && !IsNil(o.NrfFeatures) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *BootstrappingInfo) SetNrfFeatures(v map[string]string) {
 
 // GetOauth2Required returns the Oauth2Required field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetOauth2Required() map[string]bool {
-	if o == nil || isNil(o.Oauth2Required) {
+	if o == nil || IsNil(o.Oauth2Required) {
 		var ret map[string]bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *BootstrappingInfo) GetOauth2Required() map[string]bool {
 // GetOauth2RequiredOk returns a tuple with the Oauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetOauth2RequiredOk() (*map[string]bool, bool) {
-	if o == nil || isNil(o.Oauth2Required) {
+	if o == nil || IsNil(o.Oauth2Required) {
 		return nil, false
 	}
 	return o.Oauth2Required, true
@@ -158,7 +158,7 @@ func (o *BootstrappingInfo) GetOauth2RequiredOk() (*map[string]bool, bool) {
 
 // HasOauth2Required returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasOauth2Required() bool {
-	if o != nil && !isNil(o.Oauth2Required) {
+	if o != nil && !IsNil(o.Oauth2Required) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *BootstrappingInfo) SetOauth2Required(v map[string]bool) {
 
 // GetNrfSetId returns the NrfSetId field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetNrfSetId() string {
-	if o == nil || isNil(o.NrfSetId) {
+	if o == nil || IsNil(o.NrfSetId) {
 		var ret string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *BootstrappingInfo) GetNrfSetId() string {
 // GetNrfSetIdOk returns a tuple with the NrfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetNrfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NrfSetId) {
+	if o == nil || IsNil(o.NrfSetId) {
 		return nil, false
 	}
 	return o.NrfSetId, true
@@ -190,7 +190,7 @@ func (o *BootstrappingInfo) GetNrfSetIdOk() (*string, bool) {
 
 // HasNrfSetId returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasNrfSetId() bool {
-	if o != nil && !isNil(o.NrfSetId) {
+	if o != nil && !IsNil(o.NrfSetId) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *BootstrappingInfo) SetNrfSetId(v string) {
 
 // GetNrfInstanceId returns the NrfInstanceId field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetNrfInstanceId() string {
-	if o == nil || isNil(o.NrfInstanceId) {
+	if o == nil || IsNil(o.NrfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *BootstrappingInfo) GetNrfInstanceId() string {
 // GetNrfInstanceIdOk returns a tuple with the NrfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetNrfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.NrfInstanceId) {
+	if o == nil || IsNil(o.NrfInstanceId) {
 		return nil, false
 	}
 	return o.NrfInstanceId, true
@@ -222,7 +222,7 @@ func (o *BootstrappingInfo) GetNrfInstanceIdOk() (*string, bool) {
 
 // HasNrfInstanceId returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasNrfInstanceId() bool {
-	if o != nil && !isNil(o.NrfInstanceId) {
+	if o != nil && !IsNil(o.NrfInstanceId) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *BootstrappingInfo) SetNrfInstanceId(v string) {
 }
 
 func (o BootstrappingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,20 +244,20 @@ func (o BootstrappingInfo) MarshalJSON() ([]byte, error) {
 
 func (o BootstrappingInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	toSerialize["_links"] = o.Links
-	if !isNil(o.NrfFeatures) {
+	if !IsNil(o.NrfFeatures) {
 		toSerialize["nrfFeatures"] = o.NrfFeatures
 	}
-	if !isNil(o.Oauth2Required) {
+	if !IsNil(o.Oauth2Required) {
 		toSerialize["oauth2Required"] = o.Oauth2Required
 	}
-	if !isNil(o.NrfSetId) {
+	if !IsNil(o.NrfSetId) {
 		toSerialize["nrfSetId"] = o.NrfSetId
 	}
-	if !isNil(o.NrfInstanceId) {
+	if !IsNil(o.NrfInstanceId) {
 		toSerialize["nrfInstanceId"] = o.NrfInstanceId
 	}
 	return toSerialize, nil
@@ -298,5 +298,3 @@ func (v *NullableBootstrappingInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &AdditionalEeSubsInfo{}
 // AdditionalEeSubsInfo struct for AdditionalEeSubsInfo
 type AdditionalEeSubsInfo struct {
 	AmfSubscriptionInfoList []AmfSubscriptionInfo `json:"amfSubscriptionInfoList,omitempty"`
-	SmfSubscriptionInfo *SmfSubscriptionInfo `json:"smfSubscriptionInfo,omitempty"`
-	HssSubscriptionInfo *HssSubscriptionInfo `json:"hssSubscriptionInfo,omitempty"`
+	SmfSubscriptionInfo     *SmfSubscriptionInfo  `json:"smfSubscriptionInfo,omitempty"`
+	HssSubscriptionInfo     *HssSubscriptionInfo  `json:"hssSubscriptionInfo,omitempty"`
 }
 
 // NewAdditionalEeSubsInfo instantiates a new AdditionalEeSubsInfo object
@@ -43,7 +43,7 @@ func NewAdditionalEeSubsInfoWithDefaults() *AdditionalEeSubsInfo {
 
 // GetAmfSubscriptionInfoList returns the AmfSubscriptionInfoList field value if set, zero value otherwise.
 func (o *AdditionalEeSubsInfo) GetAmfSubscriptionInfoList() []AmfSubscriptionInfo {
-	if o == nil || isNil(o.AmfSubscriptionInfoList) {
+	if o == nil || IsNil(o.AmfSubscriptionInfoList) {
 		var ret []AmfSubscriptionInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AdditionalEeSubsInfo) GetAmfSubscriptionInfoList() []AmfSubscriptionInf
 // GetAmfSubscriptionInfoListOk returns a tuple with the AmfSubscriptionInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalEeSubsInfo) GetAmfSubscriptionInfoListOk() ([]AmfSubscriptionInfo, bool) {
-	if o == nil || isNil(o.AmfSubscriptionInfoList) {
+	if o == nil || IsNil(o.AmfSubscriptionInfoList) {
 		return nil, false
 	}
 	return o.AmfSubscriptionInfoList, true
@@ -61,7 +61,7 @@ func (o *AdditionalEeSubsInfo) GetAmfSubscriptionInfoListOk() ([]AmfSubscription
 
 // HasAmfSubscriptionInfoList returns a boolean if a field has been set.
 func (o *AdditionalEeSubsInfo) HasAmfSubscriptionInfoList() bool {
-	if o != nil && !isNil(o.AmfSubscriptionInfoList) {
+	if o != nil && !IsNil(o.AmfSubscriptionInfoList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AdditionalEeSubsInfo) SetAmfSubscriptionInfoList(v []AmfSubscriptionInf
 
 // GetSmfSubscriptionInfo returns the SmfSubscriptionInfo field value if set, zero value otherwise.
 func (o *AdditionalEeSubsInfo) GetSmfSubscriptionInfo() SmfSubscriptionInfo {
-	if o == nil || isNil(o.SmfSubscriptionInfo) {
+	if o == nil || IsNil(o.SmfSubscriptionInfo) {
 		var ret SmfSubscriptionInfo
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AdditionalEeSubsInfo) GetSmfSubscriptionInfo() SmfSubscriptionInfo {
 // GetSmfSubscriptionInfoOk returns a tuple with the SmfSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalEeSubsInfo) GetSmfSubscriptionInfoOk() (*SmfSubscriptionInfo, bool) {
-	if o == nil || isNil(o.SmfSubscriptionInfo) {
+	if o == nil || IsNil(o.SmfSubscriptionInfo) {
 		return nil, false
 	}
 	return o.SmfSubscriptionInfo, true
@@ -93,7 +93,7 @@ func (o *AdditionalEeSubsInfo) GetSmfSubscriptionInfoOk() (*SmfSubscriptionInfo,
 
 // HasSmfSubscriptionInfo returns a boolean if a field has been set.
 func (o *AdditionalEeSubsInfo) HasSmfSubscriptionInfo() bool {
-	if o != nil && !isNil(o.SmfSubscriptionInfo) {
+	if o != nil && !IsNil(o.SmfSubscriptionInfo) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AdditionalEeSubsInfo) SetSmfSubscriptionInfo(v SmfSubscriptionInfo) {
 
 // GetHssSubscriptionInfo returns the HssSubscriptionInfo field value if set, zero value otherwise.
 func (o *AdditionalEeSubsInfo) GetHssSubscriptionInfo() HssSubscriptionInfo {
-	if o == nil || isNil(o.HssSubscriptionInfo) {
+	if o == nil || IsNil(o.HssSubscriptionInfo) {
 		var ret HssSubscriptionInfo
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AdditionalEeSubsInfo) GetHssSubscriptionInfo() HssSubscriptionInfo {
 // GetHssSubscriptionInfoOk returns a tuple with the HssSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalEeSubsInfo) GetHssSubscriptionInfoOk() (*HssSubscriptionInfo, bool) {
-	if o == nil || isNil(o.HssSubscriptionInfo) {
+	if o == nil || IsNil(o.HssSubscriptionInfo) {
 		return nil, false
 	}
 	return o.HssSubscriptionInfo, true
@@ -125,7 +125,7 @@ func (o *AdditionalEeSubsInfo) GetHssSubscriptionInfoOk() (*HssSubscriptionInfo,
 
 // HasHssSubscriptionInfo returns a boolean if a field has been set.
 func (o *AdditionalEeSubsInfo) HasHssSubscriptionInfo() bool {
-	if o != nil && !isNil(o.HssSubscriptionInfo) {
+	if o != nil && !IsNil(o.HssSubscriptionInfo) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AdditionalEeSubsInfo) SetHssSubscriptionInfo(v HssSubscriptionInfo) {
 }
 
 func (o AdditionalEeSubsInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o AdditionalEeSubsInfo) MarshalJSON() ([]byte, error) {
 
 func (o AdditionalEeSubsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AmfSubscriptionInfoList) {
+	if !IsNil(o.AmfSubscriptionInfoList) {
 		toSerialize["amfSubscriptionInfoList"] = o.AmfSubscriptionInfoList
 	}
-	if !isNil(o.SmfSubscriptionInfo) {
+	if !IsNil(o.SmfSubscriptionInfo) {
 		toSerialize["smfSubscriptionInfo"] = o.SmfSubscriptionInfo
 	}
-	if !isNil(o.HssSubscriptionInfo) {
+	if !IsNil(o.HssSubscriptionInfo) {
 		toSerialize["hssSubscriptionInfo"] = o.HssSubscriptionInfo
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableAdditionalEeSubsInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

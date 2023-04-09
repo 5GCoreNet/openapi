@@ -1,7 +1,7 @@
 /*
 Nudsf_Timer
 
-Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,24 +13,23 @@ package openapi_Nudsf_Timer
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // TimersDeleteApiService TimersDeleteApi service
 type TimersDeleteApiService service
 
 type ApiDeleteTimersRequest struct {
-	ctx context.Context
-	ApiService *TimersDeleteApiService
-	realmId string
-	storageId string
+	ctx               context.Context
+	ApiService        *TimersDeleteApiService
+	realmId           string
+	storageId         string
 	supportedFeatures *string
-	filter *SearchExpression
-	expiredFilter *NullValue
+	filter            *SearchExpression
+	expiredFilter     *NullValue
 }
 
 // Features required to be supported by the target NF
@@ -58,28 +57,29 @@ func (r ApiDeleteTimersRequest) Execute() (*TimerIdList, *http.Response, error) 
 /*
 DeleteTimers Delete one or multiple timers based on filter
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier(name) of the Realm
- @param storageId Identifier of the Storage
- @return ApiDeleteTimersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier(name) of the Realm
+	@param storageId Identifier of the Storage
+	@return ApiDeleteTimersRequest
 */
 func (a *TimersDeleteApiService) DeleteTimers(ctx context.Context, realmId string, storageId string) ApiDeleteTimersRequest {
 	return ApiDeleteTimersRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
 	}
 }
 
 // Execute executes the request
-//  @return TimerIdList
+//
+//	@return TimerIdList
 func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (*TimerIdList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimerIdList
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimerIdList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimersDeleteApiService.DeleteTimers")
@@ -96,13 +96,13 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.filter != nil {
-		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	if r.expiredFilter != nil {
-		parameterAddToQuery(localVarQueryParams, "expired-filter", r.expiredFilter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "expired-filter", r.expiredFilter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -131,9 +131,9 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -150,8 +150,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -161,8 +161,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -172,8 +172,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -183,8 +183,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -194,8 +194,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -205,8 +205,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -216,8 +216,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -227,8 +227,8 @@ func (a *TimersDeleteApiService) DeleteTimersExecute(r ApiDeleteTimersRequest) (
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

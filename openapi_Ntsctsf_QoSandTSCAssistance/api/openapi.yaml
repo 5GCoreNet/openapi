@@ -1836,7 +1836,14 @@ components:
       type: object
     TscEvent:
       anyOf:
-      - $ref: '#/components/schemas/TscEvent_anyOf'
+      - enum:
+        - FAILED_RESOURCES_ALLOCATION
+        - QOS_MONITORING
+        - QOS_GUARANTEED
+        - QOS_NOT_GUARANTEED
+        - SUCCESSFUL_RESOURCES_ALLOCATION
+        - USAGE_REPORT
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1936,7 +1943,14 @@ components:
       type: object
     TerminationCause:
       anyOf:
-      - $ref: '#/components/schemas/TerminationCause_anyOf'
+      - enum:
+        - ALL_SDF_DEACTIVATION
+        - PDU_SESSION_TERMINATION
+        - PS_TO_CS_HO
+        - INSUFFICIENT_SERVER_RESOURCES
+        - INSUFFICIENT_QOS_FLOW_RESOURCES
+        - SPONSORED_DATA_CONNECTIVITY_DISALLOWED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2258,7 +2272,10 @@ components:
       type: string
     SponsoringStatus:
       anyOf:
-      - $ref: '#/components/schemas/SponsoringStatus_anyOf'
+      - enum:
+        - SPONSOR_DISABLED
+        - SPONSOR_ENABLED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2684,7 +2701,12 @@ components:
       type: object
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2786,14 +2808,22 @@ components:
       type: integer
     RequestedQosMonitoringParameter:
       anyOf:
-      - $ref: '#/components/schemas/RequestedQosMonitoringParameter_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - ROUND_TRIP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the requested QoS monitoring parameters to be measured.
     ReportingFrequency:
       anyOf:
-      - $ref: '#/components/schemas/ReportingFrequency_anyOf'
+      - enum:
+        - EVENT_TRIGGERED
+        - PERIODIC
+        - SESSION_RELEASE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2814,7 +2844,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -2908,114 +2995,6 @@ components:
       description: string with format 'date-time' as defined in OpenAPI.
       format: date-time
       type: string
-    TscEvent_anyOf:
-      enum:
-      - FAILED_RESOURCES_ALLOCATION
-      - QOS_MONITORING
-      - QOS_GUARANTEED
-      - QOS_NOT_GUARANTEED
-      - SUCCESSFUL_RESOURCES_ALLOCATION
-      - USAGE_REPORT
-      type: string
-      example: null
-    TerminationCause_anyOf:
-      enum:
-      - ALL_SDF_DEACTIVATION
-      - PDU_SESSION_TERMINATION
-      - PS_TO_CS_HO
-      - INSUFFICIENT_SERVER_RESOURCES
-      - INSUFFICIENT_QOS_FLOW_RESOURCES
-      - SPONSORED_DATA_CONNECTIVITY_DISALLOWED
-      type: string
-      example: null
-    SponsoringStatus_anyOf:
-      enum:
-      - SPONSOR_DISABLED
-      - SPONSOR_ENABLED
-      type: string
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
-      example: null
-    RequestedQosMonitoringParameter_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - ROUND_TRIP
-      type: string
-      example: null
-    ReportingFrequency_anyOf:
-      enum:
-      - EVENT_TRIGGERED
-      - PERIODIC
-      - SESSION_RELEASE
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

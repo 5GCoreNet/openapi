@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &CsgInformation{}
 
 // CsgInformation Information about a Closed Subscriber Group (CSG)
 type CsgInformation struct {
-	CsgId string `json:"csgId"`
+	CsgId      string  `json:"csgId"`
 	AccessMode *string `json:"accessMode,omitempty"`
-	CMi *bool `json:"cMi,omitempty"`
+	CMi        *bool   `json:"cMi,omitempty"`
 }
 
 // NewCsgInformation instantiates a new CsgInformation object
@@ -68,7 +68,7 @@ func (o *CsgInformation) SetCsgId(v string) {
 
 // GetAccessMode returns the AccessMode field value if set, zero value otherwise.
 func (o *CsgInformation) GetAccessMode() string {
-	if o == nil || isNil(o.AccessMode) {
+	if o == nil || IsNil(o.AccessMode) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *CsgInformation) GetAccessMode() string {
 // GetAccessModeOk returns a tuple with the AccessMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsgInformation) GetAccessModeOk() (*string, bool) {
-	if o == nil || isNil(o.AccessMode) {
+	if o == nil || IsNil(o.AccessMode) {
 		return nil, false
 	}
 	return o.AccessMode, true
@@ -86,7 +86,7 @@ func (o *CsgInformation) GetAccessModeOk() (*string, bool) {
 
 // HasAccessMode returns a boolean if a field has been set.
 func (o *CsgInformation) HasAccessMode() bool {
-	if o != nil && !isNil(o.AccessMode) {
+	if o != nil && !IsNil(o.AccessMode) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *CsgInformation) SetAccessMode(v string) {
 
 // GetCMi returns the CMi field value if set, zero value otherwise.
 func (o *CsgInformation) GetCMi() bool {
-	if o == nil || isNil(o.CMi) {
+	if o == nil || IsNil(o.CMi) {
 		var ret bool
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *CsgInformation) GetCMi() bool {
 // GetCMiOk returns a tuple with the CMi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsgInformation) GetCMiOk() (*bool, bool) {
-	if o == nil || isNil(o.CMi) {
+	if o == nil || IsNil(o.CMi) {
 		return nil, false
 	}
 	return o.CMi, true
@@ -118,7 +118,7 @@ func (o *CsgInformation) GetCMiOk() (*bool, bool) {
 
 // HasCMi returns a boolean if a field has been set.
 func (o *CsgInformation) HasCMi() bool {
-	if o != nil && !isNil(o.CMi) {
+	if o != nil && !IsNil(o.CMi) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *CsgInformation) SetCMi(v bool) {
 }
 
 func (o CsgInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o CsgInformation) MarshalJSON() ([]byte, error) {
 func (o CsgInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["csgId"] = o.CsgId
-	if !isNil(o.AccessMode) {
+	if !IsNil(o.AccessMode) {
 		toSerialize["accessMode"] = o.AccessMode
 	}
-	if !isNil(o.CMi) {
+	if !IsNil(o.CMi) {
 		toSerialize["cMi"] = o.CMi
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableCsgInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

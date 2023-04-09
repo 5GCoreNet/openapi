@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,16 +19,16 @@ var _ MappedNullable = &SDPMediaComponent{}
 
 // SDPMediaComponent struct for SDPMediaComponent
 type SDPMediaComponent struct {
-	SDPMediaName *string `json:"sDPMediaName,omitempty"`
-	SDPMediaDescription []string `json:"SDPMediaDescription,omitempty"`
-	LocalGWInsertedIndication *bool `json:"localGWInsertedIndication,omitempty"`
-	IpRealmDefaultIndication *bool `json:"ipRealmDefaultIndication,omitempty"`
-	TranscoderInsertedIndication *bool `json:"transcoderInsertedIndication,omitempty"`
-	MediaInitiatorFlag *MediaInitiatorFlag `json:"mediaInitiatorFlag,omitempty"`
-	MediaInitiatorParty *string `json:"mediaInitiatorParty,omitempty"`
-	ThreeGPPChargingId *string `json:"threeGPPChargingId,omitempty"`
-	AccessNetworkChargingIdentifierValue *string `json:"accessNetworkChargingIdentifierValue,omitempty"`
-	SDPType *SDPType `json:"sDPType,omitempty"`
+	SDPMediaName                         *string             `json:"sDPMediaName,omitempty"`
+	SDPMediaDescription                  []string            `json:"SDPMediaDescription,omitempty"`
+	LocalGWInsertedIndication            *bool               `json:"localGWInsertedIndication,omitempty"`
+	IpRealmDefaultIndication             *bool               `json:"ipRealmDefaultIndication,omitempty"`
+	TranscoderInsertedIndication         *bool               `json:"transcoderInsertedIndication,omitempty"`
+	MediaInitiatorFlag                   *MediaInitiatorFlag `json:"mediaInitiatorFlag,omitempty"`
+	MediaInitiatorParty                  *string             `json:"mediaInitiatorParty,omitempty"`
+	ThreeGPPChargingId                   *string             `json:"threeGPPChargingId,omitempty"`
+	AccessNetworkChargingIdentifierValue *string             `json:"accessNetworkChargingIdentifierValue,omitempty"`
+	SDPType                              *SDPType            `json:"sDPType,omitempty"`
 }
 
 // NewSDPMediaComponent instantiates a new SDPMediaComponent object
@@ -50,7 +50,7 @@ func NewSDPMediaComponentWithDefaults() *SDPMediaComponent {
 
 // GetSDPMediaName returns the SDPMediaName field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetSDPMediaName() string {
-	if o == nil || isNil(o.SDPMediaName) {
+	if o == nil || IsNil(o.SDPMediaName) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *SDPMediaComponent) GetSDPMediaName() string {
 // GetSDPMediaNameOk returns a tuple with the SDPMediaName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetSDPMediaNameOk() (*string, bool) {
-	if o == nil || isNil(o.SDPMediaName) {
+	if o == nil || IsNil(o.SDPMediaName) {
 		return nil, false
 	}
 	return o.SDPMediaName, true
@@ -68,7 +68,7 @@ func (o *SDPMediaComponent) GetSDPMediaNameOk() (*string, bool) {
 
 // HasSDPMediaName returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasSDPMediaName() bool {
-	if o != nil && !isNil(o.SDPMediaName) {
+	if o != nil && !IsNil(o.SDPMediaName) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *SDPMediaComponent) SetSDPMediaName(v string) {
 
 // GetSDPMediaDescription returns the SDPMediaDescription field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetSDPMediaDescription() []string {
-	if o == nil || isNil(o.SDPMediaDescription) {
+	if o == nil || IsNil(o.SDPMediaDescription) {
 		var ret []string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *SDPMediaComponent) GetSDPMediaDescription() []string {
 // GetSDPMediaDescriptionOk returns a tuple with the SDPMediaDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetSDPMediaDescriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.SDPMediaDescription) {
+	if o == nil || IsNil(o.SDPMediaDescription) {
 		return nil, false
 	}
 	return o.SDPMediaDescription, true
@@ -100,7 +100,7 @@ func (o *SDPMediaComponent) GetSDPMediaDescriptionOk() ([]string, bool) {
 
 // HasSDPMediaDescription returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasSDPMediaDescription() bool {
-	if o != nil && !isNil(o.SDPMediaDescription) {
+	if o != nil && !IsNil(o.SDPMediaDescription) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *SDPMediaComponent) SetSDPMediaDescription(v []string) {
 
 // GetLocalGWInsertedIndication returns the LocalGWInsertedIndication field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetLocalGWInsertedIndication() bool {
-	if o == nil || isNil(o.LocalGWInsertedIndication) {
+	if o == nil || IsNil(o.LocalGWInsertedIndication) {
 		var ret bool
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SDPMediaComponent) GetLocalGWInsertedIndication() bool {
 // GetLocalGWInsertedIndicationOk returns a tuple with the LocalGWInsertedIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetLocalGWInsertedIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.LocalGWInsertedIndication) {
+	if o == nil || IsNil(o.LocalGWInsertedIndication) {
 		return nil, false
 	}
 	return o.LocalGWInsertedIndication, true
@@ -132,7 +132,7 @@ func (o *SDPMediaComponent) GetLocalGWInsertedIndicationOk() (*bool, bool) {
 
 // HasLocalGWInsertedIndication returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasLocalGWInsertedIndication() bool {
-	if o != nil && !isNil(o.LocalGWInsertedIndication) {
+	if o != nil && !IsNil(o.LocalGWInsertedIndication) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SDPMediaComponent) SetLocalGWInsertedIndication(v bool) {
 
 // GetIpRealmDefaultIndication returns the IpRealmDefaultIndication field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetIpRealmDefaultIndication() bool {
-	if o == nil || isNil(o.IpRealmDefaultIndication) {
+	if o == nil || IsNil(o.IpRealmDefaultIndication) {
 		var ret bool
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SDPMediaComponent) GetIpRealmDefaultIndication() bool {
 // GetIpRealmDefaultIndicationOk returns a tuple with the IpRealmDefaultIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetIpRealmDefaultIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.IpRealmDefaultIndication) {
+	if o == nil || IsNil(o.IpRealmDefaultIndication) {
 		return nil, false
 	}
 	return o.IpRealmDefaultIndication, true
@@ -164,7 +164,7 @@ func (o *SDPMediaComponent) GetIpRealmDefaultIndicationOk() (*bool, bool) {
 
 // HasIpRealmDefaultIndication returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasIpRealmDefaultIndication() bool {
-	if o != nil && !isNil(o.IpRealmDefaultIndication) {
+	if o != nil && !IsNil(o.IpRealmDefaultIndication) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SDPMediaComponent) SetIpRealmDefaultIndication(v bool) {
 
 // GetTranscoderInsertedIndication returns the TranscoderInsertedIndication field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetTranscoderInsertedIndication() bool {
-	if o == nil || isNil(o.TranscoderInsertedIndication) {
+	if o == nil || IsNil(o.TranscoderInsertedIndication) {
 		var ret bool
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *SDPMediaComponent) GetTranscoderInsertedIndication() bool {
 // GetTranscoderInsertedIndicationOk returns a tuple with the TranscoderInsertedIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetTranscoderInsertedIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.TranscoderInsertedIndication) {
+	if o == nil || IsNil(o.TranscoderInsertedIndication) {
 		return nil, false
 	}
 	return o.TranscoderInsertedIndication, true
@@ -196,7 +196,7 @@ func (o *SDPMediaComponent) GetTranscoderInsertedIndicationOk() (*bool, bool) {
 
 // HasTranscoderInsertedIndication returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasTranscoderInsertedIndication() bool {
-	if o != nil && !isNil(o.TranscoderInsertedIndication) {
+	if o != nil && !IsNil(o.TranscoderInsertedIndication) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *SDPMediaComponent) SetTranscoderInsertedIndication(v bool) {
 
 // GetMediaInitiatorFlag returns the MediaInitiatorFlag field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetMediaInitiatorFlag() MediaInitiatorFlag {
-	if o == nil || isNil(o.MediaInitiatorFlag) {
+	if o == nil || IsNil(o.MediaInitiatorFlag) {
 		var ret MediaInitiatorFlag
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *SDPMediaComponent) GetMediaInitiatorFlag() MediaInitiatorFlag {
 // GetMediaInitiatorFlagOk returns a tuple with the MediaInitiatorFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetMediaInitiatorFlagOk() (*MediaInitiatorFlag, bool) {
-	if o == nil || isNil(o.MediaInitiatorFlag) {
+	if o == nil || IsNil(o.MediaInitiatorFlag) {
 		return nil, false
 	}
 	return o.MediaInitiatorFlag, true
@@ -228,7 +228,7 @@ func (o *SDPMediaComponent) GetMediaInitiatorFlagOk() (*MediaInitiatorFlag, bool
 
 // HasMediaInitiatorFlag returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasMediaInitiatorFlag() bool {
-	if o != nil && !isNil(o.MediaInitiatorFlag) {
+	if o != nil && !IsNil(o.MediaInitiatorFlag) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *SDPMediaComponent) SetMediaInitiatorFlag(v MediaInitiatorFlag) {
 
 // GetMediaInitiatorParty returns the MediaInitiatorParty field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetMediaInitiatorParty() string {
-	if o == nil || isNil(o.MediaInitiatorParty) {
+	if o == nil || IsNil(o.MediaInitiatorParty) {
 		var ret string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *SDPMediaComponent) GetMediaInitiatorParty() string {
 // GetMediaInitiatorPartyOk returns a tuple with the MediaInitiatorParty field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetMediaInitiatorPartyOk() (*string, bool) {
-	if o == nil || isNil(o.MediaInitiatorParty) {
+	if o == nil || IsNil(o.MediaInitiatorParty) {
 		return nil, false
 	}
 	return o.MediaInitiatorParty, true
@@ -260,7 +260,7 @@ func (o *SDPMediaComponent) GetMediaInitiatorPartyOk() (*string, bool) {
 
 // HasMediaInitiatorParty returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasMediaInitiatorParty() bool {
-	if o != nil && !isNil(o.MediaInitiatorParty) {
+	if o != nil && !IsNil(o.MediaInitiatorParty) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *SDPMediaComponent) SetMediaInitiatorParty(v string) {
 
 // GetThreeGPPChargingId returns the ThreeGPPChargingId field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetThreeGPPChargingId() string {
-	if o == nil || isNil(o.ThreeGPPChargingId) {
+	if o == nil || IsNil(o.ThreeGPPChargingId) {
 		var ret string
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *SDPMediaComponent) GetThreeGPPChargingId() string {
 // GetThreeGPPChargingIdOk returns a tuple with the ThreeGPPChargingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetThreeGPPChargingIdOk() (*string, bool) {
-	if o == nil || isNil(o.ThreeGPPChargingId) {
+	if o == nil || IsNil(o.ThreeGPPChargingId) {
 		return nil, false
 	}
 	return o.ThreeGPPChargingId, true
@@ -292,7 +292,7 @@ func (o *SDPMediaComponent) GetThreeGPPChargingIdOk() (*string, bool) {
 
 // HasThreeGPPChargingId returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasThreeGPPChargingId() bool {
-	if o != nil && !isNil(o.ThreeGPPChargingId) {
+	if o != nil && !IsNil(o.ThreeGPPChargingId) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *SDPMediaComponent) SetThreeGPPChargingId(v string) {
 
 // GetAccessNetworkChargingIdentifierValue returns the AccessNetworkChargingIdentifierValue field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetAccessNetworkChargingIdentifierValue() string {
-	if o == nil || isNil(o.AccessNetworkChargingIdentifierValue) {
+	if o == nil || IsNil(o.AccessNetworkChargingIdentifierValue) {
 		var ret string
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *SDPMediaComponent) GetAccessNetworkChargingIdentifierValue() string {
 // GetAccessNetworkChargingIdentifierValueOk returns a tuple with the AccessNetworkChargingIdentifierValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetAccessNetworkChargingIdentifierValueOk() (*string, bool) {
-	if o == nil || isNil(o.AccessNetworkChargingIdentifierValue) {
+	if o == nil || IsNil(o.AccessNetworkChargingIdentifierValue) {
 		return nil, false
 	}
 	return o.AccessNetworkChargingIdentifierValue, true
@@ -324,7 +324,7 @@ func (o *SDPMediaComponent) GetAccessNetworkChargingIdentifierValueOk() (*string
 
 // HasAccessNetworkChargingIdentifierValue returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasAccessNetworkChargingIdentifierValue() bool {
-	if o != nil && !isNil(o.AccessNetworkChargingIdentifierValue) {
+	if o != nil && !IsNil(o.AccessNetworkChargingIdentifierValue) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *SDPMediaComponent) SetAccessNetworkChargingIdentifierValue(v string) {
 
 // GetSDPType returns the SDPType field value if set, zero value otherwise.
 func (o *SDPMediaComponent) GetSDPType() SDPType {
-	if o == nil || isNil(o.SDPType) {
+	if o == nil || IsNil(o.SDPType) {
 		var ret SDPType
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *SDPMediaComponent) GetSDPType() SDPType {
 // GetSDPTypeOk returns a tuple with the SDPType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPMediaComponent) GetSDPTypeOk() (*SDPType, bool) {
-	if o == nil || isNil(o.SDPType) {
+	if o == nil || IsNil(o.SDPType) {
 		return nil, false
 	}
 	return o.SDPType, true
@@ -356,7 +356,7 @@ func (o *SDPMediaComponent) GetSDPTypeOk() (*SDPType, bool) {
 
 // HasSDPType returns a boolean if a field has been set.
 func (o *SDPMediaComponent) HasSDPType() bool {
-	if o != nil && !isNil(o.SDPType) {
+	if o != nil && !IsNil(o.SDPType) {
 		return true
 	}
 
@@ -369,7 +369,7 @@ func (o *SDPMediaComponent) SetSDPType(v SDPType) {
 }
 
 func (o SDPMediaComponent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,34 +378,34 @@ func (o SDPMediaComponent) MarshalJSON() ([]byte, error) {
 
 func (o SDPMediaComponent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SDPMediaName) {
+	if !IsNil(o.SDPMediaName) {
 		toSerialize["sDPMediaName"] = o.SDPMediaName
 	}
-	if !isNil(o.SDPMediaDescription) {
+	if !IsNil(o.SDPMediaDescription) {
 		toSerialize["SDPMediaDescription"] = o.SDPMediaDescription
 	}
-	if !isNil(o.LocalGWInsertedIndication) {
+	if !IsNil(o.LocalGWInsertedIndication) {
 		toSerialize["localGWInsertedIndication"] = o.LocalGWInsertedIndication
 	}
-	if !isNil(o.IpRealmDefaultIndication) {
+	if !IsNil(o.IpRealmDefaultIndication) {
 		toSerialize["ipRealmDefaultIndication"] = o.IpRealmDefaultIndication
 	}
-	if !isNil(o.TranscoderInsertedIndication) {
+	if !IsNil(o.TranscoderInsertedIndication) {
 		toSerialize["transcoderInsertedIndication"] = o.TranscoderInsertedIndication
 	}
-	if !isNil(o.MediaInitiatorFlag) {
+	if !IsNil(o.MediaInitiatorFlag) {
 		toSerialize["mediaInitiatorFlag"] = o.MediaInitiatorFlag
 	}
-	if !isNil(o.MediaInitiatorParty) {
+	if !IsNil(o.MediaInitiatorParty) {
 		toSerialize["mediaInitiatorParty"] = o.MediaInitiatorParty
 	}
-	if !isNil(o.ThreeGPPChargingId) {
+	if !IsNil(o.ThreeGPPChargingId) {
 		toSerialize["threeGPPChargingId"] = o.ThreeGPPChargingId
 	}
-	if !isNil(o.AccessNetworkChargingIdentifierValue) {
+	if !IsNil(o.AccessNetworkChargingIdentifierValue) {
 		toSerialize["accessNetworkChargingIdentifierValue"] = o.AccessNetworkChargingIdentifierValue
 	}
-	if !isNil(o.SDPType) {
+	if !IsNil(o.SDPType) {
 		toSerialize["sDPType"] = o.SDPType
 	}
 	return toSerialize, nil
@@ -446,5 +446,3 @@ func (v *NullableSDPMediaComponent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

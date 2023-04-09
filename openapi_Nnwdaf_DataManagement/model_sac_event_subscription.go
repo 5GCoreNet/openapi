@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -23,13 +23,13 @@ type SACEventSubscription struct {
 	Event SACEvent `json:"event"`
 	// String providing an URI formatted according to RFC 3986.
 	EventNotifyUri string `json:"eventNotifyUri"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfId string `json:"nfId"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfId                string  `json:"nfId"`
 	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
-	MaxReports *int32 `json:"maxReports,omitempty"`
+	MaxReports          *int32  `json:"maxReports,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -127,7 +127,7 @@ func (o *SACEventSubscription) SetNfId(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *SACEventSubscription) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -145,7 +145,7 @@ func (o *SACEventSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *SACEventSubscription) SetNotifyCorrelationId(v string) {
 
 // GetMaxReports returns the MaxReports field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetMaxReports() int32 {
-	if o == nil || isNil(o.MaxReports) {
+	if o == nil || IsNil(o.MaxReports) {
 		var ret int32
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *SACEventSubscription) GetMaxReports() int32 {
 // GetMaxReportsOk returns a tuple with the MaxReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetMaxReportsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxReports) {
+	if o == nil || IsNil(o.MaxReports) {
 		return nil, false
 	}
 	return o.MaxReports, true
@@ -177,7 +177,7 @@ func (o *SACEventSubscription) GetMaxReportsOk() (*int32, bool) {
 
 // HasMaxReports returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasMaxReports() bool {
-	if o != nil && !isNil(o.MaxReports) {
+	if o != nil && !IsNil(o.MaxReports) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *SACEventSubscription) SetMaxReports(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *SACEventSubscription) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -209,7 +209,7 @@ func (o *SACEventSubscription) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *SACEventSubscription) SetExpiry(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -233,7 +233,7 @@ func (o *SACEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -241,7 +241,7 @@ func (o *SACEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *SACEventSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o SACEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,16 +266,16 @@ func (o SACEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["event"] = o.Event
 	toSerialize["eventNotifyUri"] = o.EventNotifyUri
 	toSerialize["nfId"] = o.NfId
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !isNil(o.MaxReports) {
+	if !IsNil(o.MaxReports) {
 		toSerialize["maxReports"] = o.MaxReports
 	}
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -316,5 +316,3 @@ func (v *NullableSACEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// InstanceType Possible values are: - BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588. - E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588. - P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588. - P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS. 
+// InstanceType Possible values are: - BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588. - E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588. - P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588. - P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.
 type InstanceType struct {
-	InstanceTypeAnyOf *InstanceTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *InstanceType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InstanceTypeAnyOf
-	err = json.Unmarshal(data, &dst.InstanceTypeAnyOf);
-	if err == nil {
-		jsonInstanceTypeAnyOf, _ := json.Marshal(dst.InstanceTypeAnyOf)
-		if string(jsonInstanceTypeAnyOf) == "{}" { // empty struct
-			dst.InstanceTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.InstanceTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.InstanceTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *InstanceType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *InstanceType) MarshalJSON() ([]byte, error) {
-	if src.InstanceTypeAnyOf != nil {
-		return json.Marshal(&src.InstanceTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableInstanceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

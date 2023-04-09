@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &RegistrationLocationInfo{}
 
 // RegistrationLocationInfo struct for RegistrationLocationInfo
 type RegistrationLocationInfo struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AmfInstanceId string `json:"amfInstanceId"`
-	Guami *Guami `json:"guami,omitempty"`
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	VgmlcAddress *VgmlcAddress `json:"vgmlcAddress,omitempty"`
-	AccessTypeList []AccessType `json:"accessTypeList"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AmfInstanceId  string        `json:"amfInstanceId"`
+	Guami          *Guami        `json:"guami,omitempty"`
+	PlmnId         *PlmnId       `json:"plmnId,omitempty"`
+	VgmlcAddress   *VgmlcAddress `json:"vgmlcAddress,omitempty"`
+	AccessTypeList []AccessType  `json:"accessTypeList"`
 }
 
 // NewRegistrationLocationInfo instantiates a new RegistrationLocationInfo object
@@ -72,7 +72,7 @@ func (o *RegistrationLocationInfo) SetAmfInstanceId(v string) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *RegistrationLocationInfo) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *RegistrationLocationInfo) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationLocationInfo) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -90,7 +90,7 @@ func (o *RegistrationLocationInfo) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *RegistrationLocationInfo) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *RegistrationLocationInfo) SetGuami(v Guami) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *RegistrationLocationInfo) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *RegistrationLocationInfo) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationLocationInfo) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -122,7 +122,7 @@ func (o *RegistrationLocationInfo) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *RegistrationLocationInfo) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *RegistrationLocationInfo) SetPlmnId(v PlmnId) {
 
 // GetVgmlcAddress returns the VgmlcAddress field value if set, zero value otherwise.
 func (o *RegistrationLocationInfo) GetVgmlcAddress() VgmlcAddress {
-	if o == nil || isNil(o.VgmlcAddress) {
+	if o == nil || IsNil(o.VgmlcAddress) {
 		var ret VgmlcAddress
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *RegistrationLocationInfo) GetVgmlcAddress() VgmlcAddress {
 // GetVgmlcAddressOk returns a tuple with the VgmlcAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationLocationInfo) GetVgmlcAddressOk() (*VgmlcAddress, bool) {
-	if o == nil || isNil(o.VgmlcAddress) {
+	if o == nil || IsNil(o.VgmlcAddress) {
 		return nil, false
 	}
 	return o.VgmlcAddress, true
@@ -154,7 +154,7 @@ func (o *RegistrationLocationInfo) GetVgmlcAddressOk() (*VgmlcAddress, bool) {
 
 // HasVgmlcAddress returns a boolean if a field has been set.
 func (o *RegistrationLocationInfo) HasVgmlcAddress() bool {
-	if o != nil && !isNil(o.VgmlcAddress) {
+	if o != nil && !IsNil(o.VgmlcAddress) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *RegistrationLocationInfo) SetAccessTypeList(v []AccessType) {
 }
 
 func (o RegistrationLocationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -201,13 +201,13 @@ func (o RegistrationLocationInfo) MarshalJSON() ([]byte, error) {
 func (o RegistrationLocationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfInstanceId"] = o.AmfInstanceId
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.VgmlcAddress) {
+	if !IsNil(o.VgmlcAddress) {
 		toSerialize["vgmlcAddress"] = o.VgmlcAddress
 	}
 	toSerialize["accessTypeList"] = o.AccessTypeList
@@ -249,5 +249,3 @@ func (v *NullableRegistrationLocationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

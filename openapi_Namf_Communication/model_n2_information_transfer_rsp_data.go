@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &N2InformationTransferRspData{}
 
 // N2InformationTransferRspData Data within a successful response to the N2 Information Transfer request to transfer N2 Information to the AN
 type N2InformationTransferRspData struct {
-	Result N2InformationTransferResult `json:"result"`
-	PwsRspData *PWSResponseData `json:"pwsRspData,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	Result     N2InformationTransferResult `json:"result"`
+	PwsRspData *PWSResponseData            `json:"pwsRspData,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *N2InformationTransferRspData) SetResult(v N2InformationTransferResult) 
 
 // GetPwsRspData returns the PwsRspData field value if set, zero value otherwise.
 func (o *N2InformationTransferRspData) GetPwsRspData() PWSResponseData {
-	if o == nil || isNil(o.PwsRspData) {
+	if o == nil || IsNil(o.PwsRspData) {
 		var ret PWSResponseData
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *N2InformationTransferRspData) GetPwsRspData() PWSResponseData {
 // GetPwsRspDataOk returns a tuple with the PwsRspData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferRspData) GetPwsRspDataOk() (*PWSResponseData, bool) {
-	if o == nil || isNil(o.PwsRspData) {
+	if o == nil || IsNil(o.PwsRspData) {
 		return nil, false
 	}
 	return o.PwsRspData, true
@@ -87,7 +87,7 @@ func (o *N2InformationTransferRspData) GetPwsRspDataOk() (*PWSResponseData, bool
 
 // HasPwsRspData returns a boolean if a field has been set.
 func (o *N2InformationTransferRspData) HasPwsRspData() bool {
-	if o != nil && !isNil(o.PwsRspData) {
+	if o != nil && !IsNil(o.PwsRspData) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *N2InformationTransferRspData) SetPwsRspData(v PWSResponseData) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *N2InformationTransferRspData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *N2InformationTransferRspData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferRspData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -119,7 +119,7 @@ func (o *N2InformationTransferRspData) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *N2InformationTransferRspData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *N2InformationTransferRspData) SetSupportedFeatures(v string) {
 }
 
 func (o N2InformationTransferRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o N2InformationTransferRspData) MarshalJSON() ([]byte, error) {
 func (o N2InformationTransferRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["result"] = o.Result
-	if !isNil(o.PwsRspData) {
+	if !IsNil(o.PwsRspData) {
 		toSerialize["pwsRspData"] = o.PwsRspData
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableN2InformationTransferRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

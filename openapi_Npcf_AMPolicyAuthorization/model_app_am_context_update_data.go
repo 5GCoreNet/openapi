@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &AppAmContextUpdateData{}
 // AppAmContextUpdateData Describes the modifications to an Individual Application AM resource.
 type AppAmContextUpdateData struct {
 	// String providing an URI formatted according to RFC 3986.
-	TermNotifUri *string `json:"termNotifUri,omitempty"`
-	EvSubsc NullableAmEventsSubscDataRm `json:"evSubsc,omitempty"`
+	TermNotifUri *string                     `json:"termNotifUri,omitempty"`
+	EvSubsc      NullableAmEventsSubscDataRm `json:"evSubsc,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	Expiry NullableInt32 `json:"expiry,omitempty"`
 	// Indicates whether high throughput is desired for the indicated UE traffic.
 	HighThruInd NullableBool `json:"highThruInd,omitempty"`
 	// Identifies a list of Tracking Areas per serving network where service is allowed.
-	CovReq []ServiceAreaCoverageInfo `json:"covReq,omitempty"`
+	CovReq         []ServiceAreaCoverageInfo       `json:"covReq,omitempty"`
 	AsTimeDisParam NullableAsTimeDistributionParam `json:"asTimeDisParam,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func NewAppAmContextUpdateDataWithDefaults() *AppAmContextUpdateData {
 
 // GetTermNotifUri returns the TermNotifUri field value if set, zero value otherwise.
 func (o *AppAmContextUpdateData) GetTermNotifUri() string {
-	if o == nil || isNil(o.TermNotifUri) {
+	if o == nil || IsNil(o.TermNotifUri) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *AppAmContextUpdateData) GetTermNotifUri() string {
 // GetTermNotifUriOk returns a tuple with the TermNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextUpdateData) GetTermNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.TermNotifUri) {
+	if o == nil || IsNil(o.TermNotifUri) {
 		return nil, false
 	}
 	return o.TermNotifUri, true
@@ -68,7 +68,7 @@ func (o *AppAmContextUpdateData) GetTermNotifUriOk() (*string, bool) {
 
 // HasTermNotifUri returns a boolean if a field has been set.
 func (o *AppAmContextUpdateData) HasTermNotifUri() bool {
-	if o != nil && !isNil(o.TermNotifUri) {
+	if o != nil && !IsNil(o.TermNotifUri) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *AppAmContextUpdateData) SetTermNotifUri(v string) {
 
 // GetEvSubsc returns the EvSubsc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetEvSubsc() AmEventsSubscDataRm {
-	if o == nil || isNil(o.EvSubsc.Get()) {
+	if o == nil || IsNil(o.EvSubsc.Get()) {
 		var ret AmEventsSubscDataRm
 		return ret
 	}
@@ -112,6 +112,7 @@ func (o *AppAmContextUpdateData) HasEvSubsc() bool {
 func (o *AppAmContextUpdateData) SetEvSubsc(v AmEventsSubscDataRm) {
 	o.EvSubsc.Set(&v)
 }
+
 // SetEvSubscNil sets the value for EvSubsc to be an explicit nil
 func (o *AppAmContextUpdateData) SetEvSubscNil() {
 	o.EvSubsc.Set(nil)
@@ -124,7 +125,7 @@ func (o *AppAmContextUpdateData) UnsetEvSubsc() {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetExpiry() int32 {
-	if o == nil || isNil(o.Expiry.Get()) {
+	if o == nil || IsNil(o.Expiry.Get()) {
 		var ret int32
 		return ret
 	}
@@ -154,6 +155,7 @@ func (o *AppAmContextUpdateData) HasExpiry() bool {
 func (o *AppAmContextUpdateData) SetExpiry(v int32) {
 	o.Expiry.Set(&v)
 }
+
 // SetExpiryNil sets the value for Expiry to be an explicit nil
 func (o *AppAmContextUpdateData) SetExpiryNil() {
 	o.Expiry.Set(nil)
@@ -166,7 +168,7 @@ func (o *AppAmContextUpdateData) UnsetExpiry() {
 
 // GetHighThruInd returns the HighThruInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetHighThruInd() bool {
-	if o == nil || isNil(o.HighThruInd.Get()) {
+	if o == nil || IsNil(o.HighThruInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -196,6 +198,7 @@ func (o *AppAmContextUpdateData) HasHighThruInd() bool {
 func (o *AppAmContextUpdateData) SetHighThruInd(v bool) {
 	o.HighThruInd.Set(&v)
 }
+
 // SetHighThruIndNil sets the value for HighThruInd to be an explicit nil
 func (o *AppAmContextUpdateData) SetHighThruIndNil() {
 	o.HighThruInd.Set(nil)
@@ -219,7 +222,7 @@ func (o *AppAmContextUpdateData) GetCovReq() []ServiceAreaCoverageInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AppAmContextUpdateData) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool) {
-	if o == nil || isNil(o.CovReq) {
+	if o == nil || IsNil(o.CovReq) {
 		return nil, false
 	}
 	return o.CovReq, true
@@ -227,7 +230,7 @@ func (o *AppAmContextUpdateData) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool)
 
 // HasCovReq returns a boolean if a field has been set.
 func (o *AppAmContextUpdateData) HasCovReq() bool {
-	if o != nil && isNil(o.CovReq) {
+	if o != nil && IsNil(o.CovReq) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *AppAmContextUpdateData) SetCovReq(v []ServiceAreaCoverageInfo) {
 
 // GetAsTimeDisParam returns the AsTimeDisParam field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetAsTimeDisParam() AsTimeDistributionParam {
-	if o == nil || isNil(o.AsTimeDisParam.Get()) {
+	if o == nil || IsNil(o.AsTimeDisParam.Get()) {
 		var ret AsTimeDistributionParam
 		return ret
 	}
@@ -271,6 +274,7 @@ func (o *AppAmContextUpdateData) HasAsTimeDisParam() bool {
 func (o *AppAmContextUpdateData) SetAsTimeDisParam(v AsTimeDistributionParam) {
 	o.AsTimeDisParam.Set(&v)
 }
+
 // SetAsTimeDisParamNil sets the value for AsTimeDisParam to be an explicit nil
 func (o *AppAmContextUpdateData) SetAsTimeDisParamNil() {
 	o.AsTimeDisParam.Set(nil)
@@ -282,7 +286,7 @@ func (o *AppAmContextUpdateData) UnsetAsTimeDisParam() {
 }
 
 func (o AppAmContextUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -291,7 +295,7 @@ func (o AppAmContextUpdateData) MarshalJSON() ([]byte, error) {
 
 func (o AppAmContextUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TermNotifUri) {
+	if !IsNil(o.TermNotifUri) {
 		toSerialize["termNotifUri"] = o.TermNotifUri
 	}
 	if o.EvSubsc.IsSet() {
@@ -347,5 +351,3 @@ func (v *NullableAppAmContextUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

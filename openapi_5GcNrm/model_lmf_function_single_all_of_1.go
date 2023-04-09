@@ -41,7 +41,7 @@ func NewLmfFunctionSingleAllOf1WithDefaults() *LmfFunctionSingleAllOf1 {
 
 // GetEP_NLS returns the EP_NLS field value if set, zero value otherwise.
 func (o *LmfFunctionSingleAllOf1) GetEP_NLS() []EPNLSSingle {
-	if o == nil || isNil(o.EP_NLS) {
+	if o == nil || IsNil(o.EP_NLS) {
 		var ret []EPNLSSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *LmfFunctionSingleAllOf1) GetEP_NLS() []EPNLSSingle {
 // GetEP_NLSOk returns a tuple with the EP_NLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfFunctionSingleAllOf1) GetEP_NLSOk() ([]EPNLSSingle, bool) {
-	if o == nil || isNil(o.EP_NLS) {
+	if o == nil || IsNil(o.EP_NLS) {
 		return nil, false
 	}
 	return o.EP_NLS, true
@@ -59,7 +59,7 @@ func (o *LmfFunctionSingleAllOf1) GetEP_NLSOk() ([]EPNLSSingle, bool) {
 
 // HasEP_NLS returns a boolean if a field has been set.
 func (o *LmfFunctionSingleAllOf1) HasEP_NLS() bool {
-	if o != nil && !isNil(o.EP_NLS) {
+	if o != nil && !IsNil(o.EP_NLS) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *LmfFunctionSingleAllOf1) SetEP_NLS(v []EPNLSSingle) {
 }
 
 func (o LmfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o LmfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o LmfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EP_NLS) {
+	if !IsNil(o.EP_NLS) {
 		toSerialize["EP_NLS"] = o.EP_NLS
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableLmfFunctionSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

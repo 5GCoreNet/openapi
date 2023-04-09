@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -95,7 +95,7 @@ func (o *ReferenceUEDetail) SetProxRange(v int32) {
 
 // GetProxRangeFrac returns the ProxRangeFrac field value if set, zero value otherwise.
 func (o *ReferenceUEDetail) GetProxRangeFrac() float32 {
-	if o == nil || isNil(o.ProxRangeFrac) {
+	if o == nil || IsNil(o.ProxRangeFrac) {
 		var ret float32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ReferenceUEDetail) GetProxRangeFrac() float32 {
 // GetProxRangeFracOk returns a tuple with the ProxRangeFrac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReferenceUEDetail) GetProxRangeFracOk() (*float32, bool) {
-	if o == nil || isNil(o.ProxRangeFrac) {
+	if o == nil || IsNil(o.ProxRangeFrac) {
 		return nil, false
 	}
 	return o.ProxRangeFrac, true
@@ -113,7 +113,7 @@ func (o *ReferenceUEDetail) GetProxRangeFracOk() (*float32, bool) {
 
 // HasProxRangeFrac returns a boolean if a field has been set.
 func (o *ReferenceUEDetail) HasProxRangeFrac() bool {
-	if o != nil && !isNil(o.ProxRangeFrac) {
+	if o != nil && !IsNil(o.ProxRangeFrac) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *ReferenceUEDetail) SetProxRangeFrac(v float32) {
 }
 
 func (o ReferenceUEDetail) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o ReferenceUEDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valTgtUe"] = o.ValTgtUe
 	toSerialize["proxRange"] = o.ProxRange
-	if !isNil(o.ProxRangeFrac) {
+	if !IsNil(o.ProxRangeFrac) {
 		toSerialize["proxRangeFrac"] = o.ProxRangeFrac
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableReferenceUEDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NoProfileMatchInfo{}
 
 // NoProfileMatchInfo Provides the reason for not finding NF matching the search criteria
 type NoProfileMatchInfo struct {
-	Reason NoProfileMatchReason `json:"reason"`
+	Reason                    NoProfileMatchReason    `json:"reason"`
 	QueryParamCombinationList []QueryParamCombination `json:"queryParamCombinationList,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *NoProfileMatchInfo) SetReason(v NoProfileMatchReason) {
 
 // GetQueryParamCombinationList returns the QueryParamCombinationList field value if set, zero value otherwise.
 func (o *NoProfileMatchInfo) GetQueryParamCombinationList() []QueryParamCombination {
-	if o == nil || isNil(o.QueryParamCombinationList) {
+	if o == nil || IsNil(o.QueryParamCombinationList) {
 		var ret []QueryParamCombination
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NoProfileMatchInfo) GetQueryParamCombinationList() []QueryParamCombinat
 // GetQueryParamCombinationListOk returns a tuple with the QueryParamCombinationList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NoProfileMatchInfo) GetQueryParamCombinationListOk() ([]QueryParamCombination, bool) {
-	if o == nil || isNil(o.QueryParamCombinationList) {
+	if o == nil || IsNil(o.QueryParamCombinationList) {
 		return nil, false
 	}
 	return o.QueryParamCombinationList, true
@@ -85,7 +85,7 @@ func (o *NoProfileMatchInfo) GetQueryParamCombinationListOk() ([]QueryParamCombi
 
 // HasQueryParamCombinationList returns a boolean if a field has been set.
 func (o *NoProfileMatchInfo) HasQueryParamCombinationList() bool {
-	if o != nil && !isNil(o.QueryParamCombinationList) {
+	if o != nil && !IsNil(o.QueryParamCombinationList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *NoProfileMatchInfo) SetQueryParamCombinationList(v []QueryParamCombinat
 }
 
 func (o NoProfileMatchInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o NoProfileMatchInfo) MarshalJSON() ([]byte, error) {
 func (o NoProfileMatchInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reason"] = o.Reason
-	if !isNil(o.QueryParamCombinationList) {
+	if !IsNil(o.QueryParamCombinationList) {
 		toSerialize["queryParamCombinationList"] = o.QueryParamCombinationList
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableNoProfileMatchInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

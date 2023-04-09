@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,9 +21,9 @@ var _ MappedNullable = &EpsIwkPgw{}
 type EpsIwkPgw struct {
 	// Fully Qualified Domain Name
 	PgwFqdn string `json:"pgwFqdn"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	SmfInstanceId string `json:"smfInstanceId"`
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	SmfInstanceId string  `json:"smfInstanceId"`
+	PlmnId        *PlmnId `json:"plmnId,omitempty"`
 }
 
 // NewEpsIwkPgw instantiates a new EpsIwkPgw object
@@ -95,7 +95,7 @@ func (o *EpsIwkPgw) SetSmfInstanceId(v string) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *EpsIwkPgw) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *EpsIwkPgw) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpsIwkPgw) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -113,7 +113,7 @@ func (o *EpsIwkPgw) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *EpsIwkPgw) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *EpsIwkPgw) SetPlmnId(v PlmnId) {
 }
 
 func (o EpsIwkPgw) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o EpsIwkPgw) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pgwFqdn"] = o.PgwFqdn
 	toSerialize["smfInstanceId"] = o.SmfInstanceId
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableEpsIwkPgw) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

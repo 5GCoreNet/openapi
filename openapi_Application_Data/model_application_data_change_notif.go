@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &ApplicationDataChangeNotif{}
 
 // ApplicationDataChangeNotif Contains changed application data for which notification was requested.
 type ApplicationDataChangeNotif struct {
-	IptvConfigData *IptvConfigData `json:"iptvConfigData,omitempty"`
-	PfdData *PfdChangeNotification `json:"pfdData,omitempty"`
-	BdtPolicyData *BdtPolicyData `json:"bdtPolicyData,omitempty"`
+	IptvConfigData *IptvConfigData        `json:"iptvConfigData,omitempty"`
+	PfdData        *PfdChangeNotification `json:"pfdData,omitempty"`
+	BdtPolicyData  *BdtPolicyData         `json:"bdtPolicyData,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	ResUri string `json:"resUri"`
+	ResUri       string                `json:"resUri"`
 	SerParamData *ServiceParameterData `json:"serParamData,omitempty"`
-	AmInfluData *AmInfluData `json:"amInfluData,omitempty"`
+	AmInfluData  *AmInfluData          `json:"amInfluData,omitempty"`
 }
 
 // NewApplicationDataChangeNotif instantiates a new ApplicationDataChangeNotif object
@@ -48,7 +48,7 @@ func NewApplicationDataChangeNotifWithDefaults() *ApplicationDataChangeNotif {
 
 // GetIptvConfigData returns the IptvConfigData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetIptvConfigData() IptvConfigData {
-	if o == nil || isNil(o.IptvConfigData) {
+	if o == nil || IsNil(o.IptvConfigData) {
 		var ret IptvConfigData
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ApplicationDataChangeNotif) GetIptvConfigData() IptvConfigData {
 // GetIptvConfigDataOk returns a tuple with the IptvConfigData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetIptvConfigDataOk() (*IptvConfigData, bool) {
-	if o == nil || isNil(o.IptvConfigData) {
+	if o == nil || IsNil(o.IptvConfigData) {
 		return nil, false
 	}
 	return o.IptvConfigData, true
@@ -66,7 +66,7 @@ func (o *ApplicationDataChangeNotif) GetIptvConfigDataOk() (*IptvConfigData, boo
 
 // HasIptvConfigData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasIptvConfigData() bool {
-	if o != nil && !isNil(o.IptvConfigData) {
+	if o != nil && !IsNil(o.IptvConfigData) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ApplicationDataChangeNotif) SetIptvConfigData(v IptvConfigData) {
 
 // GetPfdData returns the PfdData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetPfdData() PfdChangeNotification {
-	if o == nil || isNil(o.PfdData) {
+	if o == nil || IsNil(o.PfdData) {
 		var ret PfdChangeNotification
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ApplicationDataChangeNotif) GetPfdData() PfdChangeNotification {
 // GetPfdDataOk returns a tuple with the PfdData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetPfdDataOk() (*PfdChangeNotification, bool) {
-	if o == nil || isNil(o.PfdData) {
+	if o == nil || IsNil(o.PfdData) {
 		return nil, false
 	}
 	return o.PfdData, true
@@ -98,7 +98,7 @@ func (o *ApplicationDataChangeNotif) GetPfdDataOk() (*PfdChangeNotification, boo
 
 // HasPfdData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasPfdData() bool {
-	if o != nil && !isNil(o.PfdData) {
+	if o != nil && !IsNil(o.PfdData) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ApplicationDataChangeNotif) SetPfdData(v PfdChangeNotification) {
 
 // GetBdtPolicyData returns the BdtPolicyData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetBdtPolicyData() BdtPolicyData {
-	if o == nil || isNil(o.BdtPolicyData) {
+	if o == nil || IsNil(o.BdtPolicyData) {
 		var ret BdtPolicyData
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ApplicationDataChangeNotif) GetBdtPolicyData() BdtPolicyData {
 // GetBdtPolicyDataOk returns a tuple with the BdtPolicyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetBdtPolicyDataOk() (*BdtPolicyData, bool) {
-	if o == nil || isNil(o.BdtPolicyData) {
+	if o == nil || IsNil(o.BdtPolicyData) {
 		return nil, false
 	}
 	return o.BdtPolicyData, true
@@ -130,7 +130,7 @@ func (o *ApplicationDataChangeNotif) GetBdtPolicyDataOk() (*BdtPolicyData, bool)
 
 // HasBdtPolicyData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasBdtPolicyData() bool {
-	if o != nil && !isNil(o.BdtPolicyData) {
+	if o != nil && !IsNil(o.BdtPolicyData) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *ApplicationDataChangeNotif) SetResUri(v string) {
 
 // GetSerParamData returns the SerParamData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetSerParamData() ServiceParameterData {
-	if o == nil || isNil(o.SerParamData) {
+	if o == nil || IsNil(o.SerParamData) {
 		var ret ServiceParameterData
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *ApplicationDataChangeNotif) GetSerParamData() ServiceParameterData {
 // GetSerParamDataOk returns a tuple with the SerParamData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetSerParamDataOk() (*ServiceParameterData, bool) {
-	if o == nil || isNil(o.SerParamData) {
+	if o == nil || IsNil(o.SerParamData) {
 		return nil, false
 	}
 	return o.SerParamData, true
@@ -186,7 +186,7 @@ func (o *ApplicationDataChangeNotif) GetSerParamDataOk() (*ServiceParameterData,
 
 // HasSerParamData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasSerParamData() bool {
-	if o != nil && !isNil(o.SerParamData) {
+	if o != nil && !IsNil(o.SerParamData) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *ApplicationDataChangeNotif) SetSerParamData(v ServiceParameterData) {
 
 // GetAmInfluData returns the AmInfluData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetAmInfluData() AmInfluData {
-	if o == nil || isNil(o.AmInfluData) {
+	if o == nil || IsNil(o.AmInfluData) {
 		var ret AmInfluData
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *ApplicationDataChangeNotif) GetAmInfluData() AmInfluData {
 // GetAmInfluDataOk returns a tuple with the AmInfluData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetAmInfluDataOk() (*AmInfluData, bool) {
-	if o == nil || isNil(o.AmInfluData) {
+	if o == nil || IsNil(o.AmInfluData) {
 		return nil, false
 	}
 	return o.AmInfluData, true
@@ -218,7 +218,7 @@ func (o *ApplicationDataChangeNotif) GetAmInfluDataOk() (*AmInfluData, bool) {
 
 // HasAmInfluData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasAmInfluData() bool {
-	if o != nil && !isNil(o.AmInfluData) {
+	if o != nil && !IsNil(o.AmInfluData) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *ApplicationDataChangeNotif) SetAmInfluData(v AmInfluData) {
 }
 
 func (o ApplicationDataChangeNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,20 +240,20 @@ func (o ApplicationDataChangeNotif) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationDataChangeNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IptvConfigData) {
+	if !IsNil(o.IptvConfigData) {
 		toSerialize["iptvConfigData"] = o.IptvConfigData
 	}
-	if !isNil(o.PfdData) {
+	if !IsNil(o.PfdData) {
 		toSerialize["pfdData"] = o.PfdData
 	}
-	if !isNil(o.BdtPolicyData) {
+	if !IsNil(o.BdtPolicyData) {
 		toSerialize["bdtPolicyData"] = o.BdtPolicyData
 	}
 	toSerialize["resUri"] = o.ResUri
-	if !isNil(o.SerParamData) {
+	if !IsNil(o.SerParamData) {
 		toSerialize["serParamData"] = o.SerParamData
 	}
-	if !isNil(o.AmInfluData) {
+	if !IsNil(o.AmInfluData) {
 		toSerialize["amInfluData"] = o.AmInfluData
 	}
 	return toSerialize, nil
@@ -294,5 +294,3 @@ func (v *NullableApplicationDataChangeNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

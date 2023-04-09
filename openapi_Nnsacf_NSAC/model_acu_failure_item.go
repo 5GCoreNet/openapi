@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &AcuFailureItem{}
 
 // AcuFailureItem struct for AcuFailureItem
 type AcuFailureItem struct {
-	Snssai Snssai `json:"snssai"`
+	Snssai Snssai            `json:"snssai"`
 	Reason *AcuFailureReason `json:"reason,omitempty"`
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
+	PlmnId *PlmnId           `json:"plmnId,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
 	PduSessionId *int32 `json:"pduSessionId,omitempty"`
 }
 
@@ -70,7 +70,7 @@ func (o *AcuFailureItem) SetSnssai(v Snssai) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *AcuFailureItem) GetReason() AcuFailureReason {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret AcuFailureReason
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *AcuFailureItem) GetReason() AcuFailureReason {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuFailureItem) GetReasonOk() (*AcuFailureReason, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -88,7 +88,7 @@ func (o *AcuFailureItem) GetReasonOk() (*AcuFailureReason, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *AcuFailureItem) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *AcuFailureItem) SetReason(v AcuFailureReason) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *AcuFailureItem) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *AcuFailureItem) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuFailureItem) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -120,7 +120,7 @@ func (o *AcuFailureItem) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *AcuFailureItem) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *AcuFailureItem) SetPlmnId(v PlmnId) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *AcuFailureItem) GetPduSessionId() int32 {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *AcuFailureItem) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuFailureItem) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.PduSessionId) {
+	if o == nil || IsNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -152,7 +152,7 @@ func (o *AcuFailureItem) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *AcuFailureItem) HasPduSessionId() bool {
-	if o != nil && !isNil(o.PduSessionId) {
+	if o != nil && !IsNil(o.PduSessionId) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *AcuFailureItem) SetPduSessionId(v int32) {
 }
 
 func (o AcuFailureItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,13 +175,13 @@ func (o AcuFailureItem) MarshalJSON() ([]byte, error) {
 func (o AcuFailureItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.PduSessionId) {
+	if !IsNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
 	return toSerialize, nil
@@ -222,5 +222,3 @@ func (v *NullableAcuFailureItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

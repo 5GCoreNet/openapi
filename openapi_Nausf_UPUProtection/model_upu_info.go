@@ -1,7 +1,7 @@
 /*
 Nausf_UPUProtection Service
 
-AUSF UPU Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UPU Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -24,7 +24,7 @@ type UpuInfo struct {
 	UpuHeader *string `json:"upuHeader,omitempty"`
 	// Contains the indication of whether the acknowledgement from UE is needed.
 	UpuAckInd bool `json:"upuAckInd"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
 	UpuTransparentInfo *string `json:"upuTransparentInfo,omitempty"`
@@ -75,7 +75,7 @@ func (o *UpuInfo) SetUpuDataList(v []UpuData) {
 
 // GetUpuHeader returns the UpuHeader field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuHeader() string {
-	if o == nil || isNil(o.UpuHeader) {
+	if o == nil || IsNil(o.UpuHeader) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UpuInfo) GetUpuHeader() string {
 // GetUpuHeaderOk returns a tuple with the UpuHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.UpuHeader) {
+	if o == nil || IsNil(o.UpuHeader) {
 		return nil, false
 	}
 	return o.UpuHeader, true
@@ -93,7 +93,7 @@ func (o *UpuInfo) GetUpuHeaderOk() (*string, bool) {
 
 // HasUpuHeader returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuHeader() bool {
-	if o != nil && !isNil(o.UpuHeader) {
+	if o != nil && !IsNil(o.UpuHeader) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *UpuInfo) SetUpuAckInd(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UpuInfo) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *UpuInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -149,7 +149,7 @@ func (o *UpuInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UpuInfo) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *UpuInfo) SetSupportedFeatures(v string) {
 
 // GetUpuTransparentInfo returns the UpuTransparentInfo field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuTransparentInfo() string {
-	if o == nil || isNil(o.UpuTransparentInfo) {
+	if o == nil || IsNil(o.UpuTransparentInfo) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *UpuInfo) GetUpuTransparentInfo() string {
 // GetUpuTransparentInfoOk returns a tuple with the UpuTransparentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuTransparentInfoOk() (*string, bool) {
-	if o == nil || isNil(o.UpuTransparentInfo) {
+	if o == nil || IsNil(o.UpuTransparentInfo) {
 		return nil, false
 	}
 	return o.UpuTransparentInfo, true
@@ -181,7 +181,7 @@ func (o *UpuInfo) GetUpuTransparentInfoOk() (*string, bool) {
 
 // HasUpuTransparentInfo returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuTransparentInfo() bool {
-	if o != nil && !isNil(o.UpuTransparentInfo) {
+	if o != nil && !IsNil(o.UpuTransparentInfo) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *UpuInfo) SetUpuTransparentInfo(v string) {
 }
 
 func (o UpuInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,14 +204,14 @@ func (o UpuInfo) MarshalJSON() ([]byte, error) {
 func (o UpuInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upuDataList"] = o.UpuDataList
-	if !isNil(o.UpuHeader) {
+	if !IsNil(o.UpuHeader) {
 		toSerialize["upuHeader"] = o.UpuHeader
 	}
 	toSerialize["upuAckInd"] = o.UpuAckInd
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.UpuTransparentInfo) {
+	if !IsNil(o.UpuTransparentInfo) {
 		toSerialize["upuTransparentInfo"] = o.UpuTransparentInfo
 	}
 	return toSerialize, nil
@@ -252,5 +252,3 @@ func (v *NullableUpuInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

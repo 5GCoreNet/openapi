@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // CAGUpdateAckDocumentApiService CAGUpdateAckDocumentApi service
 type CAGUpdateAckDocumentApiService service
 
 type ApiCreateCagUpdateAckRequest struct {
-	ctx context.Context
-	ApiService *CAGUpdateAckDocumentApiService
-	ueId string
-	cagAckData *CagAckData
+	ctx               context.Context
+	ApiService        *CAGUpdateAckDocumentApiService
+	ueId              string
+	cagAckData        *CagAckData
 	supportedFeatures *string
 }
 
@@ -49,24 +48,24 @@ func (r ApiCreateCagUpdateAckRequest) Execute() (*http.Response, error) {
 /*
 CreateCagUpdateAck To store the CAG update acknowledgement information of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateCagUpdateAckRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateCagUpdateAckRequest
 */
 func (a *CAGUpdateAckDocumentApiService) CreateCagUpdateAck(ctx context.Context, ueId string) ApiCreateCagUpdateAckRequest {
 	return ApiCreateCagUpdateAckRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *CAGUpdateAckDocumentApiService) CreateCagUpdateAckExecute(r ApiCreateCagUpdateAckRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CAGUpdateAckDocumentApiService.CreateCagUpdateAck")
@@ -85,7 +84,7 @@ func (a *CAGUpdateAckDocumentApiService) CreateCagUpdateAckExecute(r ApiCreateCa
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -116,9 +115,9 @@ func (a *CAGUpdateAckDocumentApiService) CreateCagUpdateAckExecute(r ApiCreateCa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

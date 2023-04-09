@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,23 +17,23 @@ import (
 // checks if the NsiLoadLevelInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NsiLoadLevelInfo{}
 
-// NsiLoadLevelInfo Represents the network slice and optionally the associated network slice instance and the  load level information. 
+// NsiLoadLevelInfo Represents the network slice and optionally the associated network slice instance and the  load level information.
 type NsiLoadLevelInfo struct {
-	// Load level information of the network slice and the optionally associated network slice  instance. 
-	LoadLevelInformation int32 `json:"loadLevelInformation"`
-	Snssai Snssai `json:"snssai"`
+	// Load level information of the network slice and the optionally associated network slice  instance.
+	LoadLevelInformation int32  `json:"loadLevelInformation"`
+	Snssai               Snssai `json:"snssai"`
 	// Contains the Identifier of the selected Network Slice instance
-	NsiId *string `json:"nsiId,omitempty"`
+	NsiId    *string        `json:"nsiId,omitempty"`
 	ResUsage *ResourceUsage `json:"resUsage,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	NumOfExceedLoadLevelThr *int32 `json:"numOfExceedLoadLevelThr,omitempty"`
-	ExceedLoadLevelThrInd *bool `json:"exceedLoadLevelThrInd,omitempty"`
-	NetworkArea *NetworkAreaInfo `json:"networkArea,omitempty"`
-	TimePeriod *TimeWindow `json:"timePeriod,omitempty"`
-	// Each element indicates the time elapsed between times each threshold is met or exceeded or crossed. The start time and end time are the exact time stamps of the resource usage threshold is reached or exceeded. May be present if the \"listOfAnaSubsets\" attribute is  provided and the maximum number of instances shall not exceed the value provided in the  \"numOfExceedLoadLevelThr\" attribute. 
-	ResUsgThrCrossTimePeriod []TimeWindow `json:"resUsgThrCrossTimePeriod,omitempty"`
-	NumOfUes *NumberAverage `json:"numOfUes,omitempty"`
-	NumOfPduSess *NumberAverage `json:"numOfPduSess,omitempty"`
+	NumOfExceedLoadLevelThr *int32           `json:"numOfExceedLoadLevelThr,omitempty"`
+	ExceedLoadLevelThrInd   *bool            `json:"exceedLoadLevelThrInd,omitempty"`
+	NetworkArea             *NetworkAreaInfo `json:"networkArea,omitempty"`
+	TimePeriod              *TimeWindow      `json:"timePeriod,omitempty"`
+	// Each element indicates the time elapsed between times each threshold is met or exceeded or crossed. The start time and end time are the exact time stamps of the resource usage threshold is reached or exceeded. May be present if the \"listOfAnaSubsets\" attribute is  provided and the maximum number of instances shall not exceed the value provided in the  \"numOfExceedLoadLevelThr\" attribute.
+	ResUsgThrCrossTimePeriod []TimeWindow   `json:"resUsgThrCrossTimePeriod,omitempty"`
+	NumOfUes                 *NumberAverage `json:"numOfUes,omitempty"`
+	NumOfPduSess             *NumberAverage `json:"numOfPduSess,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	Confidence *int32 `json:"confidence,omitempty"`
 }
@@ -107,7 +107,7 @@ func (o *NsiLoadLevelInfo) SetSnssai(v Snssai) {
 
 // GetNsiId returns the NsiId field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetNsiId() string {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NsiLoadLevelInfo) GetNsiId() string {
 // GetNsiIdOk returns a tuple with the NsiId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetNsiIdOk() (*string, bool) {
-	if o == nil || isNil(o.NsiId) {
+	if o == nil || IsNil(o.NsiId) {
 		return nil, false
 	}
 	return o.NsiId, true
@@ -125,7 +125,7 @@ func (o *NsiLoadLevelInfo) GetNsiIdOk() (*string, bool) {
 
 // HasNsiId returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasNsiId() bool {
-	if o != nil && !isNil(o.NsiId) {
+	if o != nil && !IsNil(o.NsiId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *NsiLoadLevelInfo) SetNsiId(v string) {
 
 // GetResUsage returns the ResUsage field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetResUsage() ResourceUsage {
-	if o == nil || isNil(o.ResUsage) {
+	if o == nil || IsNil(o.ResUsage) {
 		var ret ResourceUsage
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *NsiLoadLevelInfo) GetResUsage() ResourceUsage {
 // GetResUsageOk returns a tuple with the ResUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetResUsageOk() (*ResourceUsage, bool) {
-	if o == nil || isNil(o.ResUsage) {
+	if o == nil || IsNil(o.ResUsage) {
 		return nil, false
 	}
 	return o.ResUsage, true
@@ -157,7 +157,7 @@ func (o *NsiLoadLevelInfo) GetResUsageOk() (*ResourceUsage, bool) {
 
 // HasResUsage returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasResUsage() bool {
-	if o != nil && !isNil(o.ResUsage) {
+	if o != nil && !IsNil(o.ResUsage) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NsiLoadLevelInfo) SetResUsage(v ResourceUsage) {
 
 // GetNumOfExceedLoadLevelThr returns the NumOfExceedLoadLevelThr field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetNumOfExceedLoadLevelThr() int32 {
-	if o == nil || isNil(o.NumOfExceedLoadLevelThr) {
+	if o == nil || IsNil(o.NumOfExceedLoadLevelThr) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *NsiLoadLevelInfo) GetNumOfExceedLoadLevelThr() int32 {
 // GetNumOfExceedLoadLevelThrOk returns a tuple with the NumOfExceedLoadLevelThr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetNumOfExceedLoadLevelThrOk() (*int32, bool) {
-	if o == nil || isNil(o.NumOfExceedLoadLevelThr) {
+	if o == nil || IsNil(o.NumOfExceedLoadLevelThr) {
 		return nil, false
 	}
 	return o.NumOfExceedLoadLevelThr, true
@@ -189,7 +189,7 @@ func (o *NsiLoadLevelInfo) GetNumOfExceedLoadLevelThrOk() (*int32, bool) {
 
 // HasNumOfExceedLoadLevelThr returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasNumOfExceedLoadLevelThr() bool {
-	if o != nil && !isNil(o.NumOfExceedLoadLevelThr) {
+	if o != nil && !IsNil(o.NumOfExceedLoadLevelThr) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *NsiLoadLevelInfo) SetNumOfExceedLoadLevelThr(v int32) {
 
 // GetExceedLoadLevelThrInd returns the ExceedLoadLevelThrInd field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetExceedLoadLevelThrInd() bool {
-	if o == nil || isNil(o.ExceedLoadLevelThrInd) {
+	if o == nil || IsNil(o.ExceedLoadLevelThrInd) {
 		var ret bool
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *NsiLoadLevelInfo) GetExceedLoadLevelThrInd() bool {
 // GetExceedLoadLevelThrIndOk returns a tuple with the ExceedLoadLevelThrInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetExceedLoadLevelThrIndOk() (*bool, bool) {
-	if o == nil || isNil(o.ExceedLoadLevelThrInd) {
+	if o == nil || IsNil(o.ExceedLoadLevelThrInd) {
 		return nil, false
 	}
 	return o.ExceedLoadLevelThrInd, true
@@ -221,7 +221,7 @@ func (o *NsiLoadLevelInfo) GetExceedLoadLevelThrIndOk() (*bool, bool) {
 
 // HasExceedLoadLevelThrInd returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasExceedLoadLevelThrInd() bool {
-	if o != nil && !isNil(o.ExceedLoadLevelThrInd) {
+	if o != nil && !IsNil(o.ExceedLoadLevelThrInd) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *NsiLoadLevelInfo) SetExceedLoadLevelThrInd(v bool) {
 
 // GetNetworkArea returns the NetworkArea field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetNetworkArea() NetworkAreaInfo {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *NsiLoadLevelInfo) GetNetworkArea() NetworkAreaInfo {
 // GetNetworkAreaOk returns a tuple with the NetworkArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || isNil(o.NetworkArea) {
+	if o == nil || IsNil(o.NetworkArea) {
 		return nil, false
 	}
 	return o.NetworkArea, true
@@ -253,7 +253,7 @@ func (o *NsiLoadLevelInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasNetworkArea returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasNetworkArea() bool {
-	if o != nil && !isNil(o.NetworkArea) {
+	if o != nil && !IsNil(o.NetworkArea) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *NsiLoadLevelInfo) SetNetworkArea(v NetworkAreaInfo) {
 
 // GetTimePeriod returns the TimePeriod field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetTimePeriod() TimeWindow {
-	if o == nil || isNil(o.TimePeriod) {
+	if o == nil || IsNil(o.TimePeriod) {
 		var ret TimeWindow
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *NsiLoadLevelInfo) GetTimePeriod() TimeWindow {
 // GetTimePeriodOk returns a tuple with the TimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetTimePeriodOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.TimePeriod) {
+	if o == nil || IsNil(o.TimePeriod) {
 		return nil, false
 	}
 	return o.TimePeriod, true
@@ -285,7 +285,7 @@ func (o *NsiLoadLevelInfo) GetTimePeriodOk() (*TimeWindow, bool) {
 
 // HasTimePeriod returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasTimePeriod() bool {
-	if o != nil && !isNil(o.TimePeriod) {
+	if o != nil && !IsNil(o.TimePeriod) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *NsiLoadLevelInfo) SetTimePeriod(v TimeWindow) {
 
 // GetResUsgThrCrossTimePeriod returns the ResUsgThrCrossTimePeriod field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetResUsgThrCrossTimePeriod() []TimeWindow {
-	if o == nil || isNil(o.ResUsgThrCrossTimePeriod) {
+	if o == nil || IsNil(o.ResUsgThrCrossTimePeriod) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *NsiLoadLevelInfo) GetResUsgThrCrossTimePeriod() []TimeWindow {
 // GetResUsgThrCrossTimePeriodOk returns a tuple with the ResUsgThrCrossTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetResUsgThrCrossTimePeriodOk() ([]TimeWindow, bool) {
-	if o == nil || isNil(o.ResUsgThrCrossTimePeriod) {
+	if o == nil || IsNil(o.ResUsgThrCrossTimePeriod) {
 		return nil, false
 	}
 	return o.ResUsgThrCrossTimePeriod, true
@@ -317,7 +317,7 @@ func (o *NsiLoadLevelInfo) GetResUsgThrCrossTimePeriodOk() ([]TimeWindow, bool) 
 
 // HasResUsgThrCrossTimePeriod returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasResUsgThrCrossTimePeriod() bool {
-	if o != nil && !isNil(o.ResUsgThrCrossTimePeriod) {
+	if o != nil && !IsNil(o.ResUsgThrCrossTimePeriod) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *NsiLoadLevelInfo) SetResUsgThrCrossTimePeriod(v []TimeWindow) {
 
 // GetNumOfUes returns the NumOfUes field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetNumOfUes() NumberAverage {
-	if o == nil || isNil(o.NumOfUes) {
+	if o == nil || IsNil(o.NumOfUes) {
 		var ret NumberAverage
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *NsiLoadLevelInfo) GetNumOfUes() NumberAverage {
 // GetNumOfUesOk returns a tuple with the NumOfUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetNumOfUesOk() (*NumberAverage, bool) {
-	if o == nil || isNil(o.NumOfUes) {
+	if o == nil || IsNil(o.NumOfUes) {
 		return nil, false
 	}
 	return o.NumOfUes, true
@@ -349,7 +349,7 @@ func (o *NsiLoadLevelInfo) GetNumOfUesOk() (*NumberAverage, bool) {
 
 // HasNumOfUes returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasNumOfUes() bool {
-	if o != nil && !isNil(o.NumOfUes) {
+	if o != nil && !IsNil(o.NumOfUes) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *NsiLoadLevelInfo) SetNumOfUes(v NumberAverage) {
 
 // GetNumOfPduSess returns the NumOfPduSess field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetNumOfPduSess() NumberAverage {
-	if o == nil || isNil(o.NumOfPduSess) {
+	if o == nil || IsNil(o.NumOfPduSess) {
 		var ret NumberAverage
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *NsiLoadLevelInfo) GetNumOfPduSess() NumberAverage {
 // GetNumOfPduSessOk returns a tuple with the NumOfPduSess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetNumOfPduSessOk() (*NumberAverage, bool) {
-	if o == nil || isNil(o.NumOfPduSess) {
+	if o == nil || IsNil(o.NumOfPduSess) {
 		return nil, false
 	}
 	return o.NumOfPduSess, true
@@ -381,7 +381,7 @@ func (o *NsiLoadLevelInfo) GetNumOfPduSessOk() (*NumberAverage, bool) {
 
 // HasNumOfPduSess returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasNumOfPduSess() bool {
-	if o != nil && !isNil(o.NumOfPduSess) {
+	if o != nil && !IsNil(o.NumOfPduSess) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *NsiLoadLevelInfo) SetNumOfPduSess(v NumberAverage) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *NsiLoadLevelInfo) GetConfidence() int32 {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *NsiLoadLevelInfo) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiLoadLevelInfo) GetConfidenceOk() (*int32, bool) {
-	if o == nil || isNil(o.Confidence) {
+	if o == nil || IsNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -413,7 +413,7 @@ func (o *NsiLoadLevelInfo) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *NsiLoadLevelInfo) HasConfidence() bool {
-	if o != nil && !isNil(o.Confidence) {
+	if o != nil && !IsNil(o.Confidence) {
 		return true
 	}
 
@@ -426,7 +426,7 @@ func (o *NsiLoadLevelInfo) SetConfidence(v int32) {
 }
 
 func (o NsiLoadLevelInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -437,34 +437,34 @@ func (o NsiLoadLevelInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["loadLevelInformation"] = o.LoadLevelInformation
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.NsiId) {
+	if !IsNil(o.NsiId) {
 		toSerialize["nsiId"] = o.NsiId
 	}
-	if !isNil(o.ResUsage) {
+	if !IsNil(o.ResUsage) {
 		toSerialize["resUsage"] = o.ResUsage
 	}
-	if !isNil(o.NumOfExceedLoadLevelThr) {
+	if !IsNil(o.NumOfExceedLoadLevelThr) {
 		toSerialize["numOfExceedLoadLevelThr"] = o.NumOfExceedLoadLevelThr
 	}
-	if !isNil(o.ExceedLoadLevelThrInd) {
+	if !IsNil(o.ExceedLoadLevelThrInd) {
 		toSerialize["exceedLoadLevelThrInd"] = o.ExceedLoadLevelThrInd
 	}
-	if !isNil(o.NetworkArea) {
+	if !IsNil(o.NetworkArea) {
 		toSerialize["networkArea"] = o.NetworkArea
 	}
-	if !isNil(o.TimePeriod) {
+	if !IsNil(o.TimePeriod) {
 		toSerialize["timePeriod"] = o.TimePeriod
 	}
-	if !isNil(o.ResUsgThrCrossTimePeriod) {
+	if !IsNil(o.ResUsgThrCrossTimePeriod) {
 		toSerialize["resUsgThrCrossTimePeriod"] = o.ResUsgThrCrossTimePeriod
 	}
-	if !isNil(o.NumOfUes) {
+	if !IsNil(o.NumOfUes) {
 		toSerialize["numOfUes"] = o.NumOfUes
 	}
-	if !isNil(o.NumOfPduSess) {
+	if !IsNil(o.NumOfPduSess) {
 		toSerialize["numOfPduSess"] = o.NumOfPduSess
 	}
-	if !isNil(o.Confidence) {
+	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil
@@ -505,5 +505,3 @@ func (v *NullableNsiLoadLevelInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

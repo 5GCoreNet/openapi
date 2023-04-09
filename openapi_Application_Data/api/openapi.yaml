@@ -1024,7 +1024,7 @@ paths:
                   application/json:
                     schema:
                       items:
-                        $ref: '#/components/schemas/_application_data_influenceData_subs_to_notify_get_request_inner'
+                        $ref: '#/components/schemas/_application_data_influenceData_subs_to_notify_post_request_inner'
                       minItems: 1
                       type: array
                 required: true
@@ -6809,7 +6809,13 @@ components:
       type: object
     DataInd:
       anyOf:
-      - $ref: '#/components/schemas/DataInd_anyOf'
+      - enum:
+        - PFD
+        - IPTV
+        - BDT
+        - SVC_PARAM
+        - AM
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -6995,7 +7001,11 @@ components:
       type: object
     AccessRightStatus:
       anyOf:
-      - $ref: '#/components/schemas/AccessRightStatus_anyOf'
+      - enum:
+        - FULLY_ALLOWED
+        - PREVIEW_ALLOWED
+        - NO_ALLOWED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -7361,7 +7371,9 @@ components:
       type: object
     SubscribedEvent:
       anyOf:
-      - $ref: '#/components/schemas/SubscribedEvent_anyOf'
+      - enum:
+        - UP_PATH_CHANGE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -7370,7 +7382,11 @@ components:
         - UP_PATH_CHANGE: The AF requests to be notified when the UP path changes for the PDU session.
     DnaiChangeType:
       anyOf:
-      - $ref: '#/components/schemas/DnaiChangeType_anyOf'
+      - enum:
+        - EARLY
+        - EARLY_LATE
+        - LATE
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode  content defined in the present\
           \ version of this API. \n"
@@ -7808,7 +7824,12 @@ components:
       type: object
     ConnectionCapabilities:
       anyOf:
-      - $ref: '#/components/schemas/ConnectionCapabilities_anyOf'
+      - enum:
+        - IMS
+        - MMS
+        - SUPL
+        - INTERNET
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7940,7 +7961,10 @@ components:
       type: object
     Event:
       anyOf:
-      - $ref: '#/components/schemas/Event_anyOf'
+      - enum:
+        - SUCCESS_UE_POL_DEL_SP
+        - UNSUCCESS_UE_POL_DEL_SP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -7950,7 +7974,9 @@ components:
         \ invocation of AF\n   provisioned Service Parameters.\n"
     AmInfluEvent:
       anyOf:
-      - $ref: '#/components/schemas/AmInfluEvent_anyOf'
+      - enum:
+        - SERVICE_AREA_COVRG_OUTCOME
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -8271,12 +8297,26 @@ components:
       type: object
     MatchingOperator:
       anyOf:
-      - $ref: '#/components/schemas/MatchingOperator_anyOf'
+      - enum:
+        - FULL_MATCH
+        - MATCH_ALL
+        - STARTS_WITH
+        - NOT_START_WITH
+        - ENDS_WITH
+        - NOT_END_WITH
+        - CONTAINS
+        - NOT_CONTAIN
+        type: string
       - type: string
       description: the matching operation.
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -8618,7 +8658,12 @@ components:
       type: string
     DomainNameProtocol:
       anyOf:
-      - $ref: '#/components/schemas/DomainNameProtocol_anyOf'
+      - enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -8728,7 +8773,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     NfSetId:
@@ -8941,9 +9043,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -9125,145 +9238,10 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
-    _application_data_influenceData_subs_to_notify_get_request_inner:
+    _application_data_influenceData_subs_to_notify_post_request_inner:
       oneOf:
       - $ref: '#/components/schemas/TrafficInfluData'
       - $ref: '#/components/schemas/TrafficInfluDataNotif'
-    DataInd_anyOf:
-      enum:
-      - PFD
-      - IPTV
-      - BDT
-      - SVC_PARAM
-      - AM
-      type: string
-      example: null
-    AccessRightStatus_anyOf:
-      enum:
-      - FULLY_ALLOWED
-      - PREVIEW_ALLOWED
-      - NO_ALLOWED
-      type: string
-      example: null
-    SubscribedEvent_anyOf:
-      enum:
-      - UP_PATH_CHANGE
-      type: string
-      example: null
-    DnaiChangeType_anyOf:
-      enum:
-      - EARLY
-      - EARLY_LATE
-      - LATE
-      type: string
-      example: null
-    ConnectionCapabilities_anyOf:
-      enum:
-      - IMS
-      - MMS
-      - SUPL
-      - INTERNET
-      type: string
-      example: null
-    Event_anyOf:
-      enum:
-      - SUCCESS_UE_POL_DEL_SP
-      - UNSUCCESS_UE_POL_DEL_SP
-      type: string
-      example: null
-    AmInfluEvent_anyOf:
-      enum:
-      - SERVICE_AREA_COVRG_OUTCOME
-      type: string
-      example: null
-    MatchingOperator_anyOf:
-      enum:
-      - FULL_MATCH
-      - MATCH_ALL
-      - STARTS_WITH
-      - NOT_START_WITH
-      - ENDS_WITH
-      - NOT_END_WITH
-      - CONTAINS
-      - NOT_CONTAIN
-      type: string
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
-      example: null
-    DomainNameProtocol_anyOf:
-      enum:
-      - DNS_QNAME
-      - TLS_SNI
-      - TLS_SAN
-      - TSL_SCN
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -9271,19 +9249,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

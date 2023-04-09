@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // RetrievalOfSharedDataApiService RetrievalOfSharedDataApi service
 type RetrievalOfSharedDataApiService service
 
 type ApiGetSharedDataRequest struct {
-	ctx context.Context
-	ApiService *RetrievalOfSharedDataApiService
-	sharedDataIds *[]string
+	ctx               context.Context
+	ApiService        *RetrievalOfSharedDataApiService
+	sharedDataIds     *[]string
 	supportedFeatures *string
 }
 
@@ -48,24 +47,25 @@ func (r ApiGetSharedDataRequest) Execute() ([]SharedData, *http.Response, error)
 /*
 GetSharedData retrieve shared data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSharedDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSharedDataRequest
 */
 func (a *RetrievalOfSharedDataApiService) GetSharedData(ctx context.Context) ApiGetSharedDataRequest {
 	return ApiGetSharedDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SharedData
+//
+//	@return []SharedData
 func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDataRequest) ([]SharedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SharedData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SharedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetrievalOfSharedDataApiService.GetSharedData")
@@ -85,9 +85,9 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 		return localVarReturnValue, nil, reportError("sharedDataIds must have at least 1 elements")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "shared-data-ids", r.sharedDataIds, "csv")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "shared-data-ids", r.sharedDataIds, "csv")
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -116,9 +116,9 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -135,8 +135,8 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -146,8 +146,8 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -157,8 +157,8 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -168,8 +168,8 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

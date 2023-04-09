@@ -1,7 +1,7 @@
 /*
 CAPIF_Discover_Service_API
 
-API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -74,7 +74,7 @@ func (o *Version) SetApiVersion(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *Version) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Version) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Version) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -92,7 +92,7 @@ func (o *Version) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *Version) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *Version) SetExpiry(v time.Time) {
 
 // GetResources returns the Resources field value if set, zero value otherwise.
 func (o *Version) GetResources() []Resource {
-	if o == nil || isNil(o.Resources) {
+	if o == nil || IsNil(o.Resources) {
 		var ret []Resource
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *Version) GetResources() []Resource {
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Version) GetResourcesOk() ([]Resource, bool) {
-	if o == nil || isNil(o.Resources) {
+	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
 	return o.Resources, true
@@ -124,7 +124,7 @@ func (o *Version) GetResourcesOk() ([]Resource, bool) {
 
 // HasResources returns a boolean if a field has been set.
 func (o *Version) HasResources() bool {
-	if o != nil && !isNil(o.Resources) {
+	if o != nil && !IsNil(o.Resources) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *Version) SetResources(v []Resource) {
 
 // GetCustOperations returns the CustOperations field value if set, zero value otherwise.
 func (o *Version) GetCustOperations() []CustomOperation {
-	if o == nil || isNil(o.CustOperations) {
+	if o == nil || IsNil(o.CustOperations) {
 		var ret []CustomOperation
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *Version) GetCustOperations() []CustomOperation {
 // GetCustOperationsOk returns a tuple with the CustOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Version) GetCustOperationsOk() ([]CustomOperation, bool) {
-	if o == nil || isNil(o.CustOperations) {
+	if o == nil || IsNil(o.CustOperations) {
 		return nil, false
 	}
 	return o.CustOperations, true
@@ -156,7 +156,7 @@ func (o *Version) GetCustOperationsOk() ([]CustomOperation, bool) {
 
 // HasCustOperations returns a boolean if a field has been set.
 func (o *Version) HasCustOperations() bool {
-	if o != nil && !isNil(o.CustOperations) {
+	if o != nil && !IsNil(o.CustOperations) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *Version) SetCustOperations(v []CustomOperation) {
 }
 
 func (o Version) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -179,13 +179,13 @@ func (o Version) MarshalJSON() ([]byte, error) {
 func (o Version) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiVersion"] = o.ApiVersion
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.Resources) {
+	if !IsNil(o.Resources) {
 		toSerialize["resources"] = o.Resources
 	}
-	if !isNil(o.CustOperations) {
+	if !IsNil(o.CustOperations) {
 		toSerialize["custOperations"] = o.CustOperations
 	}
 	return toSerialize, nil
@@ -226,5 +226,3 @@ func (v *NullableVersion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

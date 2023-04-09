@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the MBSUserDataIngStatNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MBSUserDataIngStatNotif{}
 
-// MBSUserDataIngStatNotif Represents an MBS User Data Ingest Session Status Notification. 
+// MBSUserDataIngStatNotif Represents an MBS User Data Ingest Session Status Notification.
 type MBSUserDataIngStatNotif struct {
-	MbsIngSessionId string `json:"mbsIngSessionId"`
-	EventNotifs []EventNotification `json:"eventNotifs"`
+	MbsIngSessionId string              `json:"mbsIngSessionId"`
+	EventNotifs     []EventNotification `json:"eventNotifs"`
 }
 
 // NewMBSUserDataIngStatNotif instantiates a new MBSUserDataIngStatNotif object
@@ -91,7 +91,7 @@ func (o *MBSUserDataIngStatNotif) SetEventNotifs(v []EventNotification) {
 }
 
 func (o MBSUserDataIngStatNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableMBSUserDataIngStatNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

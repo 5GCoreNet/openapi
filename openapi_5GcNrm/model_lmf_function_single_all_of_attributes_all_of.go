@@ -19,9 +19,9 @@ var _ MappedNullable = &LmfFunctionSingleAllOfAttributesAllOf{}
 
 // LmfFunctionSingleAllOfAttributesAllOf struct for LmfFunctionSingleAllOfAttributesAllOf
 type LmfFunctionSingleAllOfAttributesAllOf struct {
-	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
+	PlmnIdList       []PlmnId          `json:"plmnIdList,omitempty"`
 	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
+	CommModelList    []CommModel       `json:"commModelList,omitempty"`
 }
 
 // NewLmfFunctionSingleAllOfAttributesAllOf instantiates a new LmfFunctionSingleAllOfAttributesAllOf object
@@ -138,7 +138,7 @@ func (o *LmfFunctionSingleAllOfAttributesAllOf) SetCommModelList(v []CommModel) 
 }
 
 func (o LmfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableLmfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

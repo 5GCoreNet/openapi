@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AmPolicyData{}
 
 // AmPolicyData Contains the AM policy data for a given subscriber.
 type AmPolicyData struct {
-	// Contains Presence reporting area information. The praId attribute within the PresenceInfo data type is the key of the map. 
-	PraInfos *map[string]PresenceInfo `json:"praInfos,omitempty"`
-	SubscCats []string `json:"subscCats,omitempty"`
+	// Contains Presence reporting area information. The praId attribute within the PresenceInfo data type is the key of the map.
+	PraInfos  *map[string]PresenceInfo `json:"praInfos,omitempty"`
+	SubscCats []string                 `json:"subscCats,omitempty"`
 }
 
 // NewAmPolicyData instantiates a new AmPolicyData object
@@ -43,7 +43,7 @@ func NewAmPolicyDataWithDefaults() *AmPolicyData {
 
 // GetPraInfos returns the PraInfos field value if set, zero value otherwise.
 func (o *AmPolicyData) GetPraInfos() map[string]PresenceInfo {
-	if o == nil || isNil(o.PraInfos) {
+	if o == nil || IsNil(o.PraInfos) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AmPolicyData) GetPraInfos() map[string]PresenceInfo {
 // GetPraInfosOk returns a tuple with the PraInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmPolicyData) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || isNil(o.PraInfos) {
+	if o == nil || IsNil(o.PraInfos) {
 		return nil, false
 	}
 	return o.PraInfos, true
@@ -61,7 +61,7 @@ func (o *AmPolicyData) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
 
 // HasPraInfos returns a boolean if a field has been set.
 func (o *AmPolicyData) HasPraInfos() bool {
-	if o != nil && !isNil(o.PraInfos) {
+	if o != nil && !IsNil(o.PraInfos) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AmPolicyData) SetPraInfos(v map[string]PresenceInfo) {
 
 // GetSubscCats returns the SubscCats field value if set, zero value otherwise.
 func (o *AmPolicyData) GetSubscCats() []string {
-	if o == nil || isNil(o.SubscCats) {
+	if o == nil || IsNil(o.SubscCats) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AmPolicyData) GetSubscCats() []string {
 // GetSubscCatsOk returns a tuple with the SubscCats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmPolicyData) GetSubscCatsOk() ([]string, bool) {
-	if o == nil || isNil(o.SubscCats) {
+	if o == nil || IsNil(o.SubscCats) {
 		return nil, false
 	}
 	return o.SubscCats, true
@@ -93,7 +93,7 @@ func (o *AmPolicyData) GetSubscCatsOk() ([]string, bool) {
 
 // HasSubscCats returns a boolean if a field has been set.
 func (o *AmPolicyData) HasSubscCats() bool {
-	if o != nil && !isNil(o.SubscCats) {
+	if o != nil && !IsNil(o.SubscCats) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AmPolicyData) SetSubscCats(v []string) {
 }
 
 func (o AmPolicyData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o AmPolicyData) MarshalJSON() ([]byte, error) {
 
 func (o AmPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PraInfos) {
+	if !IsNil(o.PraInfos) {
 		toSerialize["praInfos"] = o.PraInfos
 	}
-	if !isNil(o.SubscCats) {
+	if !IsNil(o.SubscCats) {
 		toSerialize["subscCats"] = o.SubscCats
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableAmPolicyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

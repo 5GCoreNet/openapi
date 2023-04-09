@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &ReportItem{}
 
 // ReportItem indicates performed modivications.
 type ReportItem struct {
-	// Contains a JSON pointer value (as defined in IETF RFC 6901) that references a  location of a resource to which the modification is subject. 
+	// Contains a JSON pointer value (as defined in IETF RFC 6901) that references a  location of a resource to which the modification is subject.
 	Path string `json:"path"`
-	// A human-readable reason providing details on the reported modification failure.  The reason string should identify the operation that failed using the operation's  array index to assist in correlation of the invalid parameter with the failed  operation, e.g. \"Replacement value invalid for attribute (failed operation index= 4)\". 
+	// A human-readable reason providing details on the reported modification failure.  The reason string should identify the operation that failed using the operation's  array index to assist in correlation of the invalid parameter with the failed  operation, e.g. \"Replacement value invalid for attribute (failed operation index= 4)\".
 	Reason *string `json:"reason,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *ReportItem) SetPath(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *ReportItem) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReportItem) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportItem) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -87,7 +87,7 @@ func (o *ReportItem) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *ReportItem) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ReportItem) SetReason(v string) {
 }
 
 func (o ReportItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o ReportItem) MarshalJSON() ([]byte, error) {
 func (o ReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["path"] = o.Path
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableReportItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

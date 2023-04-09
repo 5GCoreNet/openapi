@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMSF3GPPRegistrationDocumentApiService SMSF3GPPRegistrationDocumentApi service
 type SMSF3GPPRegistrationDocumentApiService service
 
 type ApiCreateSmsfContext3gppRequest struct {
-	ctx context.Context
-	ApiService *SMSF3GPPRegistrationDocumentApiService
-	ueId string
+	ctx              context.Context
+	ApiService       *SMSF3GPPRegistrationDocumentApiService
+	ueId             string
 	smsfRegistration *SmsfRegistration
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateSmsfContext3gppRequest) Execute() (*SmsfRegistration, *http.Res
 /*
 CreateSmsfContext3gpp Create the SMSF context data of a UE via 3GPP access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateSmsfContext3gppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateSmsfContext3gppRequest
 */
 func (a *SMSF3GPPRegistrationDocumentApiService) CreateSmsfContext3gpp(ctx context.Context, ueId string) ApiCreateSmsfContext3gppRequest {
 	return ApiCreateSmsfContext3gppRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return SmsfRegistration
+//
+//	@return SmsfRegistration
 func (a *SMSF3GPPRegistrationDocumentApiService) CreateSmsfContext3gppExecute(r ApiCreateSmsfContext3gppRequest) (*SmsfRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmsfRegistration
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmsfRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMSF3GPPRegistrationDocumentApiService.CreateSmsfContext3gpp")
@@ -108,9 +108,9 @@ func (a *SMSF3GPPRegistrationDocumentApiService) CreateSmsfContext3gppExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,9 +136,9 @@ func (a *SMSF3GPPRegistrationDocumentApiService) CreateSmsfContext3gppExecute(r 
 }
 
 type ApiDeleteSmsfContext3gppRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SMSF3GPPRegistrationDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiDeleteSmsfContext3gppRequest) Execute() (*http.Response, error) {
@@ -148,24 +148,24 @@ func (r ApiDeleteSmsfContext3gppRequest) Execute() (*http.Response, error) {
 /*
 DeleteSmsfContext3gpp To remove the SMSF context data of a UE via 3GPP access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiDeleteSmsfContext3gppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiDeleteSmsfContext3gppRequest
 */
 func (a *SMSF3GPPRegistrationDocumentApiService) DeleteSmsfContext3gpp(ctx context.Context, ueId string) ApiDeleteSmsfContext3gppRequest {
 	return ApiDeleteSmsfContext3gppRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *SMSF3GPPRegistrationDocumentApiService) DeleteSmsfContext3gppExecute(r ApiDeleteSmsfContext3gppRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMSF3GPPRegistrationDocumentApiService.DeleteSmsfContext3gpp")
@@ -207,9 +207,9 @@ func (a *SMSF3GPPRegistrationDocumentApiService) DeleteSmsfContext3gppExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -226,10 +226,10 @@ func (a *SMSF3GPPRegistrationDocumentApiService) DeleteSmsfContext3gppExecute(r 
 }
 
 type ApiQuerySmsfContext3gppRequest struct {
-	ctx context.Context
-	ApiService *SMSF3GPPRegistrationDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *SMSF3GPPRegistrationDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -252,26 +252,27 @@ func (r ApiQuerySmsfContext3gppRequest) Execute() (*SmsfRegistration, *http.Resp
 /*
 QuerySmsfContext3gpp Retrieves the SMSF context data of a UE using 3gpp access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQuerySmsfContext3gppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQuerySmsfContext3gppRequest
 */
 func (a *SMSF3GPPRegistrationDocumentApiService) QuerySmsfContext3gpp(ctx context.Context, ueId string) ApiQuerySmsfContext3gppRequest {
 	return ApiQuerySmsfContext3gppRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return SmsfRegistration
+//
+//	@return SmsfRegistration
 func (a *SMSF3GPPRegistrationDocumentApiService) QuerySmsfContext3gppExecute(r ApiQuerySmsfContext3gppRequest) (*SmsfRegistration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmsfRegistration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmsfRegistration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMSF3GPPRegistrationDocumentApiService.QuerySmsfContext3gpp")
@@ -287,10 +288,10 @@ func (a *SMSF3GPPRegistrationDocumentApiService) QuerySmsfContext3gppExecute(r A
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -319,9 +320,9 @@ func (a *SMSF3GPPRegistrationDocumentApiService) QuerySmsfContext3gppExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 SEPP Telescopic FQDN Mapping API
 
-SEPP Telescopic FQDN Mapping Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SEPP Telescopic FQDN Mapping Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_SeppTelescopicFqdnMapping
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // TelescopicMappingDocumentApiService TelescopicMappingDocumentApi service
 type TelescopicMappingDocumentApiService service
 
 type ApiGetTelescopicMappingRequest struct {
-	ctx context.Context
-	ApiService *TelescopicMappingDocumentApiService
-	foreignFqdn *string
+	ctx             context.Context
+	ApiService      *TelescopicMappingDocumentApiService
+	foreignFqdn     *string
 	telescopicLabel *string
 }
 
@@ -48,24 +47,25 @@ func (r ApiGetTelescopicMappingRequest) Execute() (*TelescopicMapping, *http.Res
 /*
 GetTelescopicMapping Maps an FQDN to/from a telescopic FQDN
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTelescopicMappingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTelescopicMappingRequest
 */
 func (a *TelescopicMappingDocumentApiService) GetTelescopicMapping(ctx context.Context) ApiGetTelescopicMappingRequest {
 	return ApiGetTelescopicMappingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TelescopicMapping
+//
+//	@return TelescopicMapping
 func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiGetTelescopicMappingRequest) (*TelescopicMapping, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TelescopicMapping
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TelescopicMapping
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TelescopicMappingDocumentApiService.GetTelescopicMapping")
@@ -80,10 +80,10 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 	localVarFormParams := url.Values{}
 
 	if r.foreignFqdn != nil {
-		parameterAddToQuery(localVarQueryParams, "foreign-fqdn", r.foreignFqdn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "foreign-fqdn", r.foreignFqdn, "")
 	}
 	if r.telescopicLabel != nil {
-		parameterAddToQuery(localVarQueryParams, "telescopic-label", r.telescopicLabel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "telescopic-label", r.telescopicLabel, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -112,9 +112,9 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -131,8 +131,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -142,8 +142,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -153,8 +153,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -164,8 +164,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -175,8 +175,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -186,8 +186,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -197,8 +197,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -208,8 +208,8 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

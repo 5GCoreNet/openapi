@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SDMSubscriptionDocumentApiService SDMSubscriptionDocumentApi service
 type SDMSubscriptionDocumentApiService service
 
 type ApiModifysdmSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *SDMSubscriptionDocumentApiService
-	ueId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *SDMSubscriptionDocumentApiService
+	ueId              string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -50,28 +49,29 @@ func (r ApiModifysdmSubscriptionRequest) Execute() (*PatchResult, *http.Response
 /*
 ModifysdmSubscription Modify an individual sdm subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @param subsId
- @return ApiModifysdmSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@param subsId
+	@return ApiModifysdmSubscriptionRequest
 */
 func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscription(ctx context.Context, ueId string, subsId string) ApiModifysdmSubscriptionRequest {
 	return ApiModifysdmSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscriptionExecute(r ApiModifysdmSubscriptionRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDMSubscriptionDocumentApiService.ModifysdmSubscription")
@@ -94,7 +94,7 @@ func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscriptionExecute(r ApiMo
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -125,9 +125,9 @@ func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscriptionExecute(r ApiMo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -144,8 +144,8 @@ func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscriptionExecute(r ApiMo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +155,8 @@ func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscriptionExecute(r ApiMo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -175,10 +175,10 @@ func (a *SDMSubscriptionDocumentApiService) ModifysdmSubscriptionExecute(r ApiMo
 }
 
 type ApiQuerysdmSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SDMSubscriptionDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiQuerysdmSubscriptionRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -188,28 +188,29 @@ func (r ApiQuerysdmSubscriptionRequest) Execute() (map[string]interface{}, *http
 /*
 QuerysdmSubscription Retrieves a individual sdmSubscription identified by subsId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId Unique ID of the subscription to retrieve
- @return ApiQuerysdmSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId Unique ID of the subscription to retrieve
+	@return ApiQuerysdmSubscriptionRequest
 */
 func (a *SDMSubscriptionDocumentApiService) QuerysdmSubscription(ctx context.Context, ueId string, subsId string) ApiQuerysdmSubscriptionRequest {
 	return ApiQuerysdmSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *SDMSubscriptionDocumentApiService) QuerysdmSubscriptionExecute(r ApiQuerysdmSubscriptionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDMSubscriptionDocumentApiService.QuerysdmSubscription")
@@ -252,9 +253,9 @@ func (a *SDMSubscriptionDocumentApiService) QuerysdmSubscriptionExecute(r ApiQue
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -280,10 +281,10 @@ func (a *SDMSubscriptionDocumentApiService) QuerysdmSubscriptionExecute(r ApiQue
 }
 
 type ApiRemovesdmSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SDMSubscriptionDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiRemovesdmSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -293,26 +294,26 @@ func (r ApiRemovesdmSubscriptionsRequest) Execute() (*http.Response, error) {
 /*
 RemovesdmSubscriptions Deletes a sdmsubscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId Unique ID of the subscription to remove
- @return ApiRemovesdmSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId Unique ID of the subscription to remove
+	@return ApiRemovesdmSubscriptionsRequest
 */
 func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptions(ctx context.Context, ueId string, subsId string) ApiRemovesdmSubscriptionsRequest {
 	return ApiRemovesdmSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptionsExecute(r ApiRemovesdmSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDMSubscriptionDocumentApiService.RemovesdmSubscriptions")
@@ -355,9 +356,9 @@ func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptionsExecute(r ApiR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -374,8 +375,8 @@ func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptionsExecute(r ApiR
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -385,10 +386,10 @@ func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptionsExecute(r ApiR
 }
 
 type ApiUpdatesdmsubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *SDMSubscriptionDocumentApiService
-	ueId string
-	subsId string
+	ctx             context.Context
+	ApiService      *SDMSubscriptionDocumentApiService
+	ueId            string
+	subsId          string
 	sdmSubscription *SdmSubscription
 }
 
@@ -404,26 +405,26 @@ func (r ApiUpdatesdmsubscriptionsRequest) Execute() (*http.Response, error) {
 /*
 Updatesdmsubscriptions Update an individual sdm subscriptions of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiUpdatesdmsubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiUpdatesdmsubscriptionsRequest
 */
 func (a *SDMSubscriptionDocumentApiService) Updatesdmsubscriptions(ctx context.Context, ueId string, subsId string) ApiUpdatesdmsubscriptionsRequest {
 	return ApiUpdatesdmsubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *SDMSubscriptionDocumentApiService) UpdatesdmsubscriptionsExecute(r ApiUpdatesdmsubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDMSubscriptionDocumentApiService.Updatesdmsubscriptions")
@@ -471,9 +472,9 @@ func (a *SDMSubscriptionDocumentApiService) UpdatesdmsubscriptionsExecute(r ApiU
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -490,8 +491,8 @@ func (a *SDMSubscriptionDocumentApiService) UpdatesdmsubscriptionsExecute(r ApiU
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

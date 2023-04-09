@@ -1,7 +1,7 @@
 /*
 Nnsacf_NSAC
 
-Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnsacf_NSAC Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PduACRequestData{}
 // PduACRequestData struct for PduACRequestData
 type PduACRequestData struct {
 	PduACRequestInfo []PduACRequestInfo `json:"pduACRequestInfo"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfId *string `json:"nfId,omitempty"`
 	// Fully Qualified Domain Name
 	PgwFqdn *string `json:"pgwFqdn,omitempty"`
@@ -70,7 +70,7 @@ func (o *PduACRequestData) SetPduACRequestInfo(v []PduACRequestInfo) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *PduACRequestData) GetNfId() string {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *PduACRequestData) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduACRequestData) GetNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NfId) {
+	if o == nil || IsNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -88,7 +88,7 @@ func (o *PduACRequestData) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *PduACRequestData) HasNfId() bool {
-	if o != nil && !isNil(o.NfId) {
+	if o != nil && !IsNil(o.NfId) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *PduACRequestData) SetNfId(v string) {
 
 // GetPgwFqdn returns the PgwFqdn field value if set, zero value otherwise.
 func (o *PduACRequestData) GetPgwFqdn() string {
-	if o == nil || isNil(o.PgwFqdn) {
+	if o == nil || IsNil(o.PgwFqdn) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *PduACRequestData) GetPgwFqdn() string {
 // GetPgwFqdnOk returns a tuple with the PgwFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduACRequestData) GetPgwFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PgwFqdn) {
+	if o == nil || IsNil(o.PgwFqdn) {
 		return nil, false
 	}
 	return o.PgwFqdn, true
@@ -120,7 +120,7 @@ func (o *PduACRequestData) GetPgwFqdnOk() (*string, bool) {
 
 // HasPgwFqdn returns a boolean if a field has been set.
 func (o *PduACRequestData) HasPgwFqdn() bool {
-	if o != nil && !isNil(o.PgwFqdn) {
+	if o != nil && !IsNil(o.PgwFqdn) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *PduACRequestData) SetPgwFqdn(v string) {
 }
 
 func (o PduACRequestData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o PduACRequestData) MarshalJSON() ([]byte, error) {
 func (o PduACRequestData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduACRequestInfo"] = o.PduACRequestInfo
-	if !isNil(o.NfId) {
+	if !IsNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !isNil(o.PgwFqdn) {
+	if !IsNil(o.PgwFqdn) {
 		toSerialize["pgwFqdn"] = o.PgwFqdn
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullablePduACRequestData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &AccessTransferInformation{}
 
 // AccessTransferInformation struct for AccessTransferInformation
 type AccessTransferInformation struct {
-	AccessTransferType *AccessTransferType `json:"accessTransferType,omitempty"`
-	AccessNetworkInformation []string `json:"accessNetworkInformation,omitempty"`
-	CellularNetworkInformation *string `json:"cellularNetworkInformation,omitempty"`
-	InterUETransfer *UETransferType `json:"interUETransfer,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	UserEquipmentInfo *string `json:"userEquipmentInfo,omitempty"`
-	InstanceId *string `json:"instanceId,omitempty"`
-	RelatedIMSChargingIdentifier *string `json:"relatedIMSChargingIdentifier,omitempty"`
+	AccessTransferType         *AccessTransferType `json:"accessTransferType,omitempty"`
+	AccessNetworkInformation   []string            `json:"accessNetworkInformation,omitempty"`
+	CellularNetworkInformation *string             `json:"cellularNetworkInformation,omitempty"`
+	InterUETransfer            *UETransferType     `json:"interUETransfer,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	UserEquipmentInfo                *string     `json:"userEquipmentInfo,omitempty"`
+	InstanceId                       *string     `json:"instanceId,omitempty"`
+	RelatedIMSChargingIdentifier     *string     `json:"relatedIMSChargingIdentifier,omitempty"`
 	RelatedIMSChargingIdentifierNode *IMSAddress `json:"relatedIMSChargingIdentifierNode,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ChangeTime *time.Time `json:"changeTime,omitempty"`
@@ -52,7 +52,7 @@ func NewAccessTransferInformationWithDefaults() *AccessTransferInformation {
 
 // GetAccessTransferType returns the AccessTransferType field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetAccessTransferType() AccessTransferType {
-	if o == nil || isNil(o.AccessTransferType) {
+	if o == nil || IsNil(o.AccessTransferType) {
 		var ret AccessTransferType
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *AccessTransferInformation) GetAccessTransferType() AccessTransferType {
 // GetAccessTransferTypeOk returns a tuple with the AccessTransferType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetAccessTransferTypeOk() (*AccessTransferType, bool) {
-	if o == nil || isNil(o.AccessTransferType) {
+	if o == nil || IsNil(o.AccessTransferType) {
 		return nil, false
 	}
 	return o.AccessTransferType, true
@@ -70,7 +70,7 @@ func (o *AccessTransferInformation) GetAccessTransferTypeOk() (*AccessTransferTy
 
 // HasAccessTransferType returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasAccessTransferType() bool {
-	if o != nil && !isNil(o.AccessTransferType) {
+	if o != nil && !IsNil(o.AccessTransferType) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *AccessTransferInformation) SetAccessTransferType(v AccessTransferType) 
 
 // GetAccessNetworkInformation returns the AccessNetworkInformation field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetAccessNetworkInformation() []string {
-	if o == nil || isNil(o.AccessNetworkInformation) {
+	if o == nil || IsNil(o.AccessNetworkInformation) {
 		var ret []string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *AccessTransferInformation) GetAccessNetworkInformation() []string {
 // GetAccessNetworkInformationOk returns a tuple with the AccessNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetAccessNetworkInformationOk() ([]string, bool) {
-	if o == nil || isNil(o.AccessNetworkInformation) {
+	if o == nil || IsNil(o.AccessNetworkInformation) {
 		return nil, false
 	}
 	return o.AccessNetworkInformation, true
@@ -102,7 +102,7 @@ func (o *AccessTransferInformation) GetAccessNetworkInformationOk() ([]string, b
 
 // HasAccessNetworkInformation returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasAccessNetworkInformation() bool {
-	if o != nil && !isNil(o.AccessNetworkInformation) {
+	if o != nil && !IsNil(o.AccessNetworkInformation) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *AccessTransferInformation) SetAccessNetworkInformation(v []string) {
 
 // GetCellularNetworkInformation returns the CellularNetworkInformation field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetCellularNetworkInformation() string {
-	if o == nil || isNil(o.CellularNetworkInformation) {
+	if o == nil || IsNil(o.CellularNetworkInformation) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *AccessTransferInformation) GetCellularNetworkInformation() string {
 // GetCellularNetworkInformationOk returns a tuple with the CellularNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetCellularNetworkInformationOk() (*string, bool) {
-	if o == nil || isNil(o.CellularNetworkInformation) {
+	if o == nil || IsNil(o.CellularNetworkInformation) {
 		return nil, false
 	}
 	return o.CellularNetworkInformation, true
@@ -134,7 +134,7 @@ func (o *AccessTransferInformation) GetCellularNetworkInformationOk() (*string, 
 
 // HasCellularNetworkInformation returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasCellularNetworkInformation() bool {
-	if o != nil && !isNil(o.CellularNetworkInformation) {
+	if o != nil && !IsNil(o.CellularNetworkInformation) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *AccessTransferInformation) SetCellularNetworkInformation(v string) {
 
 // GetInterUETransfer returns the InterUETransfer field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetInterUETransfer() UETransferType {
-	if o == nil || isNil(o.InterUETransfer) {
+	if o == nil || IsNil(o.InterUETransfer) {
 		var ret UETransferType
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *AccessTransferInformation) GetInterUETransfer() UETransferType {
 // GetInterUETransferOk returns a tuple with the InterUETransfer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetInterUETransferOk() (*UETransferType, bool) {
-	if o == nil || isNil(o.InterUETransfer) {
+	if o == nil || IsNil(o.InterUETransfer) {
 		return nil, false
 	}
 	return o.InterUETransfer, true
@@ -166,7 +166,7 @@ func (o *AccessTransferInformation) GetInterUETransferOk() (*UETransferType, boo
 
 // HasInterUETransfer returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasInterUETransfer() bool {
-	if o != nil && !isNil(o.InterUETransfer) {
+	if o != nil && !IsNil(o.InterUETransfer) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *AccessTransferInformation) SetInterUETransfer(v UETransferType) {
 
 // GetUserEquipmentInfo returns the UserEquipmentInfo field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetUserEquipmentInfo() string {
-	if o == nil || isNil(o.UserEquipmentInfo) {
+	if o == nil || IsNil(o.UserEquipmentInfo) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *AccessTransferInformation) GetUserEquipmentInfo() string {
 // GetUserEquipmentInfoOk returns a tuple with the UserEquipmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetUserEquipmentInfoOk() (*string, bool) {
-	if o == nil || isNil(o.UserEquipmentInfo) {
+	if o == nil || IsNil(o.UserEquipmentInfo) {
 		return nil, false
 	}
 	return o.UserEquipmentInfo, true
@@ -198,7 +198,7 @@ func (o *AccessTransferInformation) GetUserEquipmentInfoOk() (*string, bool) {
 
 // HasUserEquipmentInfo returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasUserEquipmentInfo() bool {
-	if o != nil && !isNil(o.UserEquipmentInfo) {
+	if o != nil && !IsNil(o.UserEquipmentInfo) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *AccessTransferInformation) SetUserEquipmentInfo(v string) {
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetInstanceId() string {
-	if o == nil || isNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *AccessTransferInformation) GetInstanceId() string {
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId) {
 		return nil, false
 	}
 	return o.InstanceId, true
@@ -230,7 +230,7 @@ func (o *AccessTransferInformation) GetInstanceIdOk() (*string, bool) {
 
 // HasInstanceId returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasInstanceId() bool {
-	if o != nil && !isNil(o.InstanceId) {
+	if o != nil && !IsNil(o.InstanceId) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *AccessTransferInformation) SetInstanceId(v string) {
 
 // GetRelatedIMSChargingIdentifier returns the RelatedIMSChargingIdentifier field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifier() string {
-	if o == nil || isNil(o.RelatedIMSChargingIdentifier) {
+	if o == nil || IsNil(o.RelatedIMSChargingIdentifier) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifier() string {
 // GetRelatedIMSChargingIdentifierOk returns a tuple with the RelatedIMSChargingIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.RelatedIMSChargingIdentifier) {
+	if o == nil || IsNil(o.RelatedIMSChargingIdentifier) {
 		return nil, false
 	}
 	return o.RelatedIMSChargingIdentifier, true
@@ -262,7 +262,7 @@ func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifierOk() (*string
 
 // HasRelatedIMSChargingIdentifier returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasRelatedIMSChargingIdentifier() bool {
-	if o != nil && !isNil(o.RelatedIMSChargingIdentifier) {
+	if o != nil && !IsNil(o.RelatedIMSChargingIdentifier) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *AccessTransferInformation) SetRelatedIMSChargingIdentifier(v string) {
 
 // GetRelatedIMSChargingIdentifierNode returns the RelatedIMSChargingIdentifierNode field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifierNode() IMSAddress {
-	if o == nil || isNil(o.RelatedIMSChargingIdentifierNode) {
+	if o == nil || IsNil(o.RelatedIMSChargingIdentifierNode) {
 		var ret IMSAddress
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifierNode() IMSAdd
 // GetRelatedIMSChargingIdentifierNodeOk returns a tuple with the RelatedIMSChargingIdentifierNode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifierNodeOk() (*IMSAddress, bool) {
-	if o == nil || isNil(o.RelatedIMSChargingIdentifierNode) {
+	if o == nil || IsNil(o.RelatedIMSChargingIdentifierNode) {
 		return nil, false
 	}
 	return o.RelatedIMSChargingIdentifierNode, true
@@ -294,7 +294,7 @@ func (o *AccessTransferInformation) GetRelatedIMSChargingIdentifierNodeOk() (*IM
 
 // HasRelatedIMSChargingIdentifierNode returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasRelatedIMSChargingIdentifierNode() bool {
-	if o != nil && !isNil(o.RelatedIMSChargingIdentifierNode) {
+	if o != nil && !IsNil(o.RelatedIMSChargingIdentifierNode) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *AccessTransferInformation) SetRelatedIMSChargingIdentifierNode(v IMSAdd
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *AccessTransferInformation) GetChangeTime() time.Time {
-	if o == nil || isNil(o.ChangeTime) {
+	if o == nil || IsNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *AccessTransferInformation) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTransferInformation) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ChangeTime) {
+	if o == nil || IsNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -326,7 +326,7 @@ func (o *AccessTransferInformation) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *AccessTransferInformation) HasChangeTime() bool {
-	if o != nil && !isNil(o.ChangeTime) {
+	if o != nil && !IsNil(o.ChangeTime) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *AccessTransferInformation) SetChangeTime(v time.Time) {
 }
 
 func (o AccessTransferInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,31 +348,31 @@ func (o AccessTransferInformation) MarshalJSON() ([]byte, error) {
 
 func (o AccessTransferInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccessTransferType) {
+	if !IsNil(o.AccessTransferType) {
 		toSerialize["accessTransferType"] = o.AccessTransferType
 	}
-	if !isNil(o.AccessNetworkInformation) {
+	if !IsNil(o.AccessNetworkInformation) {
 		toSerialize["accessNetworkInformation"] = o.AccessNetworkInformation
 	}
-	if !isNil(o.CellularNetworkInformation) {
+	if !IsNil(o.CellularNetworkInformation) {
 		toSerialize["cellularNetworkInformation"] = o.CellularNetworkInformation
 	}
-	if !isNil(o.InterUETransfer) {
+	if !IsNil(o.InterUETransfer) {
 		toSerialize["interUETransfer"] = o.InterUETransfer
 	}
-	if !isNil(o.UserEquipmentInfo) {
+	if !IsNil(o.UserEquipmentInfo) {
 		toSerialize["userEquipmentInfo"] = o.UserEquipmentInfo
 	}
-	if !isNil(o.InstanceId) {
+	if !IsNil(o.InstanceId) {
 		toSerialize["instanceId"] = o.InstanceId
 	}
-	if !isNil(o.RelatedIMSChargingIdentifier) {
+	if !IsNil(o.RelatedIMSChargingIdentifier) {
 		toSerialize["relatedIMSChargingIdentifier"] = o.RelatedIMSChargingIdentifier
 	}
-	if !isNil(o.RelatedIMSChargingIdentifierNode) {
+	if !IsNil(o.RelatedIMSChargingIdentifierNode) {
 		toSerialize["relatedIMSChargingIdentifierNode"] = o.RelatedIMSChargingIdentifierNode
 	}
-	if !isNil(o.ChangeTime) {
+	if !IsNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
 	return toSerialize, nil
@@ -413,5 +413,3 @@ func (v *NullableAccessTransferInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

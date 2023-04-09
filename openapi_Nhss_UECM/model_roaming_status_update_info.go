@@ -1,7 +1,7 @@
 /*
 Nhss_UECM
 
-HSS UE Context Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS UE Context Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the RoamingStatusUpdateInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RoamingStatusUpdateInfo{}
 
-// RoamingStatusUpdateInfo It represents the request body of the Roaming Status Update request sent by UDM to HSS, and contains the IMSI of the UE and the new PLMN-ID 
+// RoamingStatusUpdateInfo It represents the request body of the Roaming Status Update request sent by UDM to HSS, and contains the IMSI of the UE and the new PLMN-ID
 type RoamingStatusUpdateInfo struct {
-	Imsi string `json:"imsi"`
+	Imsi   string `json:"imsi"`
 	PlmnId PlmnId `json:"plmnId"`
 }
 
@@ -91,7 +91,7 @@ func (o *RoamingStatusUpdateInfo) SetPlmnId(v PlmnId) {
 }
 
 func (o RoamingStatusUpdateInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableRoamingStatusUpdateInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

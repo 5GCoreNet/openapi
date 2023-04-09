@@ -1,7 +1,7 @@
 /*
 EES EAS Registration_API
 
-API for EAS Registration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EAS Registration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// PermissionLevel Possible values are: - TRIAL: Level of service permission supported is TRIAL. - GOLD: Level of service permission supported is GOLD. - SILVER: Level of service permission supported is SILVER. - OTHER: Any other level of service permissions supported. 
+// PermissionLevel Possible values are: - TRIAL: Level of service permission supported is TRIAL. - GOLD: Level of service permission supported is GOLD. - SILVER: Level of service permission supported is SILVER. - OTHER: Any other level of service permissions supported.
 type PermissionLevel struct {
-	PermissionLevelAnyOf *PermissionLevelAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PermissionLevel) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PermissionLevelAnyOf
-	err = json.Unmarshal(data, &dst.PermissionLevelAnyOf);
-	if err == nil {
-		jsonPermissionLevelAnyOf, _ := json.Marshal(dst.PermissionLevelAnyOf)
-		if string(jsonPermissionLevelAnyOf) == "{}" { // empty struct
-			dst.PermissionLevelAnyOf = nil
-		} else {
-			return nil // data stored in dst.PermissionLevelAnyOf, return on the first match
-		}
-	} else {
-		dst.PermissionLevelAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PermissionLevel) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PermissionLevel) MarshalJSON() ([]byte, error) {
-	if src.PermissionLevelAnyOf != nil {
-		return json.Marshal(&src.PermissionLevelAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePermissionLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

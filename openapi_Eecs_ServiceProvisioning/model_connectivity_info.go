@@ -1,7 +1,7 @@
 /*
 Eecs_ServiceProvisioning
 
-API for ECS Service Provisioning. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ECS Service Provisioning. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -43,7 +43,7 @@ func NewConnectivityInfoWithDefaults() *ConnectivityInfo {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *ConnectivityInfo) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ConnectivityInfo) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectivityInfo) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -61,7 +61,7 @@ func (o *ConnectivityInfo) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *ConnectivityInfo) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ConnectivityInfo) SetPlmnId(v PlmnId) {
 
 // GetSsId returns the SsId field value if set, zero value otherwise.
 func (o *ConnectivityInfo) GetSsId() string {
-	if o == nil || isNil(o.SsId) {
+	if o == nil || IsNil(o.SsId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ConnectivityInfo) GetSsId() string {
 // GetSsIdOk returns a tuple with the SsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectivityInfo) GetSsIdOk() (*string, bool) {
-	if o == nil || isNil(o.SsId) {
+	if o == nil || IsNil(o.SsId) {
 		return nil, false
 	}
 	return o.SsId, true
@@ -93,7 +93,7 @@ func (o *ConnectivityInfo) GetSsIdOk() (*string, bool) {
 
 // HasSsId returns a boolean if a field has been set.
 func (o *ConnectivityInfo) HasSsId() bool {
-	if o != nil && !isNil(o.SsId) {
+	if o != nil && !IsNil(o.SsId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *ConnectivityInfo) SetSsId(v string) {
 }
 
 func (o ConnectivityInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o ConnectivityInfo) MarshalJSON() ([]byte, error) {
 
 func (o ConnectivityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.SsId) {
+	if !IsNil(o.SsId) {
 		toSerialize["ssId"] = o.SsId
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableConnectivityInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

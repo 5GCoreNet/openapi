@@ -1,7 +1,7 @@
 /*
 Nnwdaf_MLModelProvision
 
-Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_MLModelProvision API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &MLEventSubscription{}
 
 // MLEventSubscription Represents a subscription to a single event.
 type MLEventSubscription struct {
-	MLEvent NwdafEvent `json:"mLEvent"`
-	MLEventFilter EventFilter `json:"mLEventFilter"`
-	TgtUe *TargetUeInformation `json:"tgtUe,omitempty"`
-	MLTargetPeriod *TimeWindow `json:"mLTargetPeriod,omitempty"`
+	MLEvent        NwdafEvent           `json:"mLEvent"`
+	MLEventFilter  EventFilter          `json:"mLEventFilter"`
+	TgtUe          *TargetUeInformation `json:"tgtUe,omitempty"`
+	MLTargetPeriod *TimeWindow          `json:"mLTargetPeriod,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ExpiryTime *time.Time `json:"expiryTime,omitempty"`
 }
@@ -97,7 +97,7 @@ func (o *MLEventSubscription) SetMLEventFilter(v EventFilter) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *MLEventSubscription) GetTgtUe() TargetUeInformation {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		var ret TargetUeInformation
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *MLEventSubscription) GetTgtUe() TargetUeInformation {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEventSubscription) GetTgtUeOk() (*TargetUeInformation, bool) {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -115,7 +115,7 @@ func (o *MLEventSubscription) GetTgtUeOk() (*TargetUeInformation, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *MLEventSubscription) HasTgtUe() bool {
-	if o != nil && !isNil(o.TgtUe) {
+	if o != nil && !IsNil(o.TgtUe) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *MLEventSubscription) SetTgtUe(v TargetUeInformation) {
 
 // GetMLTargetPeriod returns the MLTargetPeriod field value if set, zero value otherwise.
 func (o *MLEventSubscription) GetMLTargetPeriod() TimeWindow {
-	if o == nil || isNil(o.MLTargetPeriod) {
+	if o == nil || IsNil(o.MLTargetPeriod) {
 		var ret TimeWindow
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *MLEventSubscription) GetMLTargetPeriod() TimeWindow {
 // GetMLTargetPeriodOk returns a tuple with the MLTargetPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEventSubscription) GetMLTargetPeriodOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.MLTargetPeriod) {
+	if o == nil || IsNil(o.MLTargetPeriod) {
 		return nil, false
 	}
 	return o.MLTargetPeriod, true
@@ -147,7 +147,7 @@ func (o *MLEventSubscription) GetMLTargetPeriodOk() (*TimeWindow, bool) {
 
 // HasMLTargetPeriod returns a boolean if a field has been set.
 func (o *MLEventSubscription) HasMLTargetPeriod() bool {
-	if o != nil && !isNil(o.MLTargetPeriod) {
+	if o != nil && !IsNil(o.MLTargetPeriod) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *MLEventSubscription) SetMLTargetPeriod(v TimeWindow) {
 
 // GetExpiryTime returns the ExpiryTime field value if set, zero value otherwise.
 func (o *MLEventSubscription) GetExpiryTime() time.Time {
-	if o == nil || isNil(o.ExpiryTime) {
+	if o == nil || IsNil(o.ExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *MLEventSubscription) GetExpiryTime() time.Time {
 // GetExpiryTimeOk returns a tuple with the ExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLEventSubscription) GetExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExpiryTime) {
+	if o == nil || IsNil(o.ExpiryTime) {
 		return nil, false
 	}
 	return o.ExpiryTime, true
@@ -179,7 +179,7 @@ func (o *MLEventSubscription) GetExpiryTimeOk() (*time.Time, bool) {
 
 // HasExpiryTime returns a boolean if a field has been set.
 func (o *MLEventSubscription) HasExpiryTime() bool {
-	if o != nil && !isNil(o.ExpiryTime) {
+	if o != nil && !IsNil(o.ExpiryTime) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *MLEventSubscription) SetExpiryTime(v time.Time) {
 }
 
 func (o MLEventSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,13 +203,13 @@ func (o MLEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mLEvent"] = o.MLEvent
 	toSerialize["mLEventFilter"] = o.MLEventFilter
-	if !isNil(o.TgtUe) {
+	if !IsNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
-	if !isNil(o.MLTargetPeriod) {
+	if !IsNil(o.MLTargetPeriod) {
 		toSerialize["mLTargetPeriod"] = o.MLTargetPeriod
 	}
-	if !isNil(o.ExpiryTime) {
+	if !IsNil(o.ExpiryTime) {
 		toSerialize["expiryTime"] = o.ExpiryTime
 	}
 	return toSerialize, nil
@@ -250,5 +250,3 @@ func (v *NullableMLEventSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

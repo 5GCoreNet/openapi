@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -45,7 +45,7 @@ func NewObjectScheduleInnerDeliveryInfoInnerWithDefaults() *ObjectScheduleInnerD
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStart() time.Time {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStart() time.Time {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStartOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -63,7 +63,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStartOk() (*time.Time, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) SetStart(v time.Time) {
 
 // GetStop returns the Stop field value if set, zero value otherwise.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStop() time.Time {
-	if o == nil || isNil(o.Stop) {
+	if o == nil || IsNil(o.Stop) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStop() time.Time {
 // GetStopOk returns a tuple with the Stop field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStopOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Stop) {
+	if o == nil || IsNil(o.Stop) {
 		return nil, false
 	}
 	return o.Stop, true
@@ -95,7 +95,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStopOk() (*time.Time, bool) {
 
 // HasStop returns a boolean if a field has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) HasStop() bool {
-	if o != nil && !isNil(o.Stop) {
+	if o != nil && !IsNil(o.Stop) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) SetStop(v time.Time) {
 }
 
 func (o ObjectScheduleInnerDeliveryInfoInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,10 +117,10 @@ func (o ObjectScheduleInnerDeliveryInfoInner) MarshalJSON() ([]byte, error) {
 
 func (o ObjectScheduleInnerDeliveryInfoInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.Stop) {
+	if !IsNil(o.Stop) {
 		toSerialize["stop"] = o.Stop
 	}
 	return toSerialize, nil
@@ -161,5 +161,3 @@ func (v *NullableObjectScheduleInnerDeliveryInfoInner) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Location
 
-AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LcsServiceAuth Possible values are: - \"LOCATION_ALLOWED_WITH_NOTIFICATION\": Location allowed with notification - \"LOCATION_ALLOWED_WITHOUT_NOTIFICATION\": Location allowed without notification - \"LOCATION_ALLOWED_WITHOUT_RESPONSE\": Location with notification and privacy    verification; location allowed if no response - \"LOCATION_RESTRICTED_WITHOUT_RESPONSE\": Location with notification and privacy   verification; location restricted if no response - \"NOTIFICATION_ONLY\": Notification only - \"NOTIFICATION_AND_VERIFICATION_ONLY\": Notification and privacy verification only 
+// LcsServiceAuth Possible values are: - \"LOCATION_ALLOWED_WITH_NOTIFICATION\": Location allowed with notification - \"LOCATION_ALLOWED_WITHOUT_NOTIFICATION\": Location allowed without notification - \"LOCATION_ALLOWED_WITHOUT_RESPONSE\": Location with notification and privacy    verification; location allowed if no response - \"LOCATION_RESTRICTED_WITHOUT_RESPONSE\": Location with notification and privacy   verification; location restricted if no response - \"NOTIFICATION_ONLY\": Notification only - \"NOTIFICATION_AND_VERIFICATION_ONLY\": Notification and privacy verification only
 type LcsServiceAuth struct {
-	LcsServiceAuthAnyOf *LcsServiceAuthAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LcsServiceAuth) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LcsServiceAuthAnyOf
-	err = json.Unmarshal(data, &dst.LcsServiceAuthAnyOf);
-	if err == nil {
-		jsonLcsServiceAuthAnyOf, _ := json.Marshal(dst.LcsServiceAuthAnyOf)
-		if string(jsonLcsServiceAuthAnyOf) == "{}" { // empty struct
-			dst.LcsServiceAuthAnyOf = nil
-		} else {
-			return nil // data stored in dst.LcsServiceAuthAnyOf, return on the first match
-		}
-	} else {
-		dst.LcsServiceAuthAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LcsServiceAuth) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LcsServiceAuth) MarshalJSON() ([]byte, error) {
-	if src.LcsServiceAuthAnyOf != nil {
-		return json.Marshal(&src.LcsServiceAuthAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLcsServiceAuth) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

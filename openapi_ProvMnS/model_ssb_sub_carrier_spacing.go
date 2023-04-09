@@ -20,8 +20,8 @@ type SsbSubCarrierSpacing int32
 
 // List of SsbSubCarrierSpacing
 const (
-	_15 SsbSubCarrierSpacing = 15
-	_30 SsbSubCarrierSpacing = 30
+	_15  SsbSubCarrierSpacing = 15
+	_30  SsbSubCarrierSpacing = 30
 	_120 SsbSubCarrierSpacing = 120
 	_240 SsbSubCarrierSpacing = 240
 )
@@ -112,4 +112,3 @@ func (v *NullableSsbSubCarrierSpacing) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

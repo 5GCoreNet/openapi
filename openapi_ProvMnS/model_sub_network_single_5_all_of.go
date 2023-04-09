@@ -19,10 +19,10 @@ var _ MappedNullable = &SubNetworkSingle5AllOf{}
 
 // SubNetworkSingle5AllOf struct for SubNetworkSingle5AllOf
 type SubNetworkSingle5AllOf struct {
-	SubNetwork []SubNetworkSingle `json:"SubNetwork,omitempty"`
+	SubNetwork     []SubNetworkSingle     `json:"SubNetwork,omitempty"`
 	ManagedElement []ManagedElementSingle `json:"ManagedElement,omitempty"`
-	MDAFunction []MDAFunctionSingle `json:"MDAFunction,omitempty"`
-	MDAReport []MDAReport `json:"MDAReport,omitempty"`
+	MDAFunction    []MDAFunctionSingle    `json:"MDAFunction,omitempty"`
+	MDAReport      []MDAReport            `json:"MDAReport,omitempty"`
 }
 
 // NewSubNetworkSingle5AllOf instantiates a new SubNetworkSingle5AllOf object
@@ -44,7 +44,7 @@ func NewSubNetworkSingle5AllOfWithDefaults() *SubNetworkSingle5AllOf {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingle5AllOf) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SubNetworkSingle5AllOf) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle5AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -62,7 +62,7 @@ func (o *SubNetworkSingle5AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingle5AllOf) HasSubNetwork() bool {
-	if o != nil && !isNil(o.SubNetwork) {
+	if o != nil && !IsNil(o.SubNetwork) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SubNetworkSingle5AllOf) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetManagedElement returns the ManagedElement field value if set, zero value otherwise.
 func (o *SubNetworkSingle5AllOf) GetManagedElement() []ManagedElementSingle {
-	if o == nil || isNil(o.ManagedElement) {
+	if o == nil || IsNil(o.ManagedElement) {
 		var ret []ManagedElementSingle
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SubNetworkSingle5AllOf) GetManagedElement() []ManagedElementSingle {
 // GetManagedElementOk returns a tuple with the ManagedElement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle5AllOf) GetManagedElementOk() ([]ManagedElementSingle, bool) {
-	if o == nil || isNil(o.ManagedElement) {
+	if o == nil || IsNil(o.ManagedElement) {
 		return nil, false
 	}
 	return o.ManagedElement, true
@@ -94,7 +94,7 @@ func (o *SubNetworkSingle5AllOf) GetManagedElementOk() ([]ManagedElementSingle, 
 
 // HasManagedElement returns a boolean if a field has been set.
 func (o *SubNetworkSingle5AllOf) HasManagedElement() bool {
-	if o != nil && !isNil(o.ManagedElement) {
+	if o != nil && !IsNil(o.ManagedElement) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SubNetworkSingle5AllOf) SetManagedElement(v []ManagedElementSingle) {
 
 // GetMDAFunction returns the MDAFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingle5AllOf) GetMDAFunction() []MDAFunctionSingle {
-	if o == nil || isNil(o.MDAFunction) {
+	if o == nil || IsNil(o.MDAFunction) {
 		var ret []MDAFunctionSingle
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SubNetworkSingle5AllOf) GetMDAFunction() []MDAFunctionSingle {
 // GetMDAFunctionOk returns a tuple with the MDAFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle5AllOf) GetMDAFunctionOk() ([]MDAFunctionSingle, bool) {
-	if o == nil || isNil(o.MDAFunction) {
+	if o == nil || IsNil(o.MDAFunction) {
 		return nil, false
 	}
 	return o.MDAFunction, true
@@ -126,7 +126,7 @@ func (o *SubNetworkSingle5AllOf) GetMDAFunctionOk() ([]MDAFunctionSingle, bool) 
 
 // HasMDAFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingle5AllOf) HasMDAFunction() bool {
-	if o != nil && !isNil(o.MDAFunction) {
+	if o != nil && !IsNil(o.MDAFunction) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *SubNetworkSingle5AllOf) SetMDAFunction(v []MDAFunctionSingle) {
 
 // GetMDAReport returns the MDAReport field value if set, zero value otherwise.
 func (o *SubNetworkSingle5AllOf) GetMDAReport() []MDAReport {
-	if o == nil || isNil(o.MDAReport) {
+	if o == nil || IsNil(o.MDAReport) {
 		var ret []MDAReport
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SubNetworkSingle5AllOf) GetMDAReport() []MDAReport {
 // GetMDAReportOk returns a tuple with the MDAReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle5AllOf) GetMDAReportOk() ([]MDAReport, bool) {
-	if o == nil || isNil(o.MDAReport) {
+	if o == nil || IsNil(o.MDAReport) {
 		return nil, false
 	}
 	return o.MDAReport, true
@@ -158,7 +158,7 @@ func (o *SubNetworkSingle5AllOf) GetMDAReportOk() ([]MDAReport, bool) {
 
 // HasMDAReport returns a boolean if a field has been set.
 func (o *SubNetworkSingle5AllOf) HasMDAReport() bool {
-	if o != nil && !isNil(o.MDAReport) {
+	if o != nil && !IsNil(o.MDAReport) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *SubNetworkSingle5AllOf) SetMDAReport(v []MDAReport) {
 }
 
 func (o SubNetworkSingle5AllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o SubNetworkSingle5AllOf) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle5AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubNetwork) {
+	if !IsNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !isNil(o.ManagedElement) {
+	if !IsNil(o.ManagedElement) {
 		toSerialize["ManagedElement"] = o.ManagedElement
 	}
-	if !isNil(o.MDAFunction) {
+	if !IsNil(o.MDAFunction) {
 		toSerialize["MDAFunction"] = o.MDAFunction
 	}
-	if !isNil(o.MDAReport) {
+	if !IsNil(o.MDAReport) {
 		toSerialize["MDAReport"] = o.MDAReport
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableSubNetworkSingle5AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

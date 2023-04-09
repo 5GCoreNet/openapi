@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Provider_Management_API
 
-API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &APIProviderFunctionDetails{}
 
 // APIProviderFunctionDetails Represents an API provider domain function's details.
 type APIProviderFunctionDetails struct {
-	// API provider domain functionID assigned by the CAPIF core function to the API provider domain function while registering/updating the API provider domain. Shall not be present in the HTTP POST request from the API management function to the CAPIF core function, to register itself. Shall be present in all other HTTP requests and responses. 
-	ApiProvFuncId *string `json:"apiProvFuncId,omitempty"`
-	RegInfo RegistrationInformation `json:"regInfo"`
-	ApiProvFuncRole ApiProviderFuncRole `json:"apiProvFuncRole"`
-	// Generic information related to the API provider domain function such as details of the API provider applications. 
+	// API provider domain functionID assigned by the CAPIF core function to the API provider domain function while registering/updating the API provider domain. Shall not be present in the HTTP POST request from the API management function to the CAPIF core function, to register itself. Shall be present in all other HTTP requests and responses.
+	ApiProvFuncId   *string                 `json:"apiProvFuncId,omitempty"`
+	RegInfo         RegistrationInformation `json:"regInfo"`
+	ApiProvFuncRole ApiProviderFuncRole     `json:"apiProvFuncRole"`
+	// Generic information related to the API provider domain function such as details of the API provider applications.
 	ApiProvFuncInfo *string `json:"apiProvFuncInfo,omitempty"`
 }
 
@@ -48,7 +48,7 @@ func NewAPIProviderFunctionDetailsWithDefaults() *APIProviderFunctionDetails {
 
 // GetApiProvFuncId returns the ApiProvFuncId field value if set, zero value otherwise.
 func (o *APIProviderFunctionDetails) GetApiProvFuncId() string {
-	if o == nil || isNil(o.ApiProvFuncId) {
+	if o == nil || IsNil(o.ApiProvFuncId) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncId() string {
 // GetApiProvFuncIdOk returns a tuple with the ApiProvFuncId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderFunctionDetails) GetApiProvFuncIdOk() (*string, bool) {
-	if o == nil || isNil(o.ApiProvFuncId) {
+	if o == nil || IsNil(o.ApiProvFuncId) {
 		return nil, false
 	}
 	return o.ApiProvFuncId, true
@@ -66,7 +66,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncIdOk() (*string, bool) {
 
 // HasApiProvFuncId returns a boolean if a field has been set.
 func (o *APIProviderFunctionDetails) HasApiProvFuncId() bool {
-	if o != nil && !isNil(o.ApiProvFuncId) {
+	if o != nil && !IsNil(o.ApiProvFuncId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *APIProviderFunctionDetails) SetApiProvFuncRole(v ApiProviderFuncRole) {
 
 // GetApiProvFuncInfo returns the ApiProvFuncInfo field value if set, zero value otherwise.
 func (o *APIProviderFunctionDetails) GetApiProvFuncInfo() string {
-	if o == nil || isNil(o.ApiProvFuncInfo) {
+	if o == nil || IsNil(o.ApiProvFuncInfo) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncInfo() string {
 // GetApiProvFuncInfoOk returns a tuple with the ApiProvFuncInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderFunctionDetails) GetApiProvFuncInfoOk() (*string, bool) {
-	if o == nil || isNil(o.ApiProvFuncInfo) {
+	if o == nil || IsNil(o.ApiProvFuncInfo) {
 		return nil, false
 	}
 	return o.ApiProvFuncInfo, true
@@ -146,7 +146,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncInfoOk() (*string, bool) {
 
 // HasApiProvFuncInfo returns a boolean if a field has been set.
 func (o *APIProviderFunctionDetails) HasApiProvFuncInfo() bool {
-	if o != nil && !isNil(o.ApiProvFuncInfo) {
+	if o != nil && !IsNil(o.ApiProvFuncInfo) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *APIProviderFunctionDetails) SetApiProvFuncInfo(v string) {
 }
 
 func (o APIProviderFunctionDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,12 +168,12 @@ func (o APIProviderFunctionDetails) MarshalJSON() ([]byte, error) {
 
 func (o APIProviderFunctionDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiProvFuncId) {
+	if !IsNil(o.ApiProvFuncId) {
 		toSerialize["apiProvFuncId"] = o.ApiProvFuncId
 	}
 	toSerialize["regInfo"] = o.RegInfo
 	toSerialize["apiProvFuncRole"] = o.ApiProvFuncRole
-	if !isNil(o.ApiProvFuncInfo) {
+	if !IsNil(o.ApiProvFuncInfo) {
 		toSerialize["apiProvFuncInfo"] = o.ApiProvFuncInfo
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableAPIProviderFunctionDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

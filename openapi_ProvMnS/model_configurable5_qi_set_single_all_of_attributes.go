@@ -72,7 +72,7 @@ func (o *Configurable5QISetSingleAllOfAttributes) SetConfigurable5QIs(v []FiveQI
 }
 
 func (o Configurable5QISetSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -122,5 +122,3 @@ func (v *NullableConfigurable5QISetSingleAllOfAttributes) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

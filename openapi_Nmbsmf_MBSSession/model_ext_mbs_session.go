@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,8 +19,9 @@ var _ MappedNullable = &ExtMbsSession{}
 
 // ExtMbsSession MbsSession common data type with MB-SMF API specific extensions
 type ExtMbsSession struct {
+	MbsSession
 	MbsSecurityContext *MbsSecurityContext `json:"mbsSecurityContext,omitempty"`
-	ContactPcfInd *bool `json:"contactPcfInd,omitempty"`
+	ContactPcfInd      *bool               `json:"contactPcfInd,omitempty"`
 }
 
 // NewExtMbsSession instantiates a new ExtMbsSession object
@@ -46,7 +47,7 @@ func NewExtMbsSessionWithDefaults() *ExtMbsSession {
 
 // GetMbsSecurityContext returns the MbsSecurityContext field value if set, zero value otherwise.
 func (o *ExtMbsSession) GetMbsSecurityContext() MbsSecurityContext {
-	if o == nil || isNil(o.MbsSecurityContext) {
+	if o == nil || IsNil(o.MbsSecurityContext) {
 		var ret MbsSecurityContext
 		return ret
 	}
@@ -56,7 +57,7 @@ func (o *ExtMbsSession) GetMbsSecurityContext() MbsSecurityContext {
 // GetMbsSecurityContextOk returns a tuple with the MbsSecurityContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtMbsSession) GetMbsSecurityContextOk() (*MbsSecurityContext, bool) {
-	if o == nil || isNil(o.MbsSecurityContext) {
+	if o == nil || IsNil(o.MbsSecurityContext) {
 		return nil, false
 	}
 	return o.MbsSecurityContext, true
@@ -64,7 +65,7 @@ func (o *ExtMbsSession) GetMbsSecurityContextOk() (*MbsSecurityContext, bool) {
 
 // HasMbsSecurityContext returns a boolean if a field has been set.
 func (o *ExtMbsSession) HasMbsSecurityContext() bool {
-	if o != nil && !isNil(o.MbsSecurityContext) {
+	if o != nil && !IsNil(o.MbsSecurityContext) {
 		return true
 	}
 
@@ -78,7 +79,7 @@ func (o *ExtMbsSession) SetMbsSecurityContext(v MbsSecurityContext) {
 
 // GetContactPcfInd returns the ContactPcfInd field value if set, zero value otherwise.
 func (o *ExtMbsSession) GetContactPcfInd() bool {
-	if o == nil || isNil(o.ContactPcfInd) {
+	if o == nil || IsNil(o.ContactPcfInd) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +89,7 @@ func (o *ExtMbsSession) GetContactPcfInd() bool {
 // GetContactPcfIndOk returns a tuple with the ContactPcfInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtMbsSession) GetContactPcfIndOk() (*bool, bool) {
-	if o == nil || isNil(o.ContactPcfInd) {
+	if o == nil || IsNil(o.ContactPcfInd) {
 		return nil, false
 	}
 	return o.ContactPcfInd, true
@@ -96,7 +97,7 @@ func (o *ExtMbsSession) GetContactPcfIndOk() (*bool, bool) {
 
 // HasContactPcfInd returns a boolean if a field has been set.
 func (o *ExtMbsSession) HasContactPcfInd() bool {
-	if o != nil && !isNil(o.ContactPcfInd) {
+	if o != nil && !IsNil(o.ContactPcfInd) {
 		return true
 	}
 
@@ -109,7 +110,7 @@ func (o *ExtMbsSession) SetContactPcfInd(v bool) {
 }
 
 func (o ExtMbsSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -118,10 +119,18 @@ func (o ExtMbsSession) MarshalJSON() ([]byte, error) {
 
 func (o ExtMbsSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsSecurityContext) {
+	serializedMbsSession, errMbsSession := json.Marshal(o.MbsSession)
+	if errMbsSession != nil {
+		return map[string]interface{}{}, errMbsSession
+	}
+	errMbsSession = json.Unmarshal([]byte(serializedMbsSession), &toSerialize)
+	if errMbsSession != nil {
+		return map[string]interface{}{}, errMbsSession
+	}
+	if !IsNil(o.MbsSecurityContext) {
 		toSerialize["mbsSecurityContext"] = o.MbsSecurityContext
 	}
-	if !isNil(o.ContactPcfInd) {
+	if !IsNil(o.ContactPcfInd) {
 		toSerialize["contactPcfInd"] = o.ContactPcfInd
 	}
 	return toSerialize, nil
@@ -162,5 +171,3 @@ func (v *NullableExtMbsSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

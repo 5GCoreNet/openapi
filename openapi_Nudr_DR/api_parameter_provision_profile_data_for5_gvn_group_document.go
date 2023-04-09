@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // ParameterProvisionProfileDataFor5GVNGroupDocumentApiService ParameterProvisionProfileDataFor5GVNGroupDocumentApi service
 type ParameterProvisionProfileDataFor5GVNGroupDocumentApiService service
 
 type ApiQuery5GVNGroupPPDataRequest struct {
-	ctx context.Context
-	ApiService *ParameterProvisionProfileDataFor5GVNGroupDocumentApiService
-	extGroupIds *[]string
+	ctx               context.Context
+	ApiService        *ParameterProvisionProfileDataFor5GVNGroupDocumentApiService
+	extGroupIds       *[]string
 	supportedFeatures *string
 }
 
@@ -48,24 +47,25 @@ func (r ApiQuery5GVNGroupPPDataRequest) Execute() (*Pp5gVnGroupProfileData, *htt
 /*
 Query5GVNGroupPPData Retrieves the parameter provision profile data for 5G VN Group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiQuery5GVNGroupPPDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiQuery5GVNGroupPPDataRequest
 */
 func (a *ParameterProvisionProfileDataFor5GVNGroupDocumentApiService) Query5GVNGroupPPData(ctx context.Context) ApiQuery5GVNGroupPPDataRequest {
 	return ApiQuery5GVNGroupPPDataRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Pp5gVnGroupProfileData
+//
+//	@return Pp5gVnGroupProfileData
 func (a *ParameterProvisionProfileDataFor5GVNGroupDocumentApiService) Query5GVNGroupPPDataExecute(r ApiQuery5GVNGroupPPDataRequest) (*Pp5gVnGroupProfileData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Pp5gVnGroupProfileData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Pp5gVnGroupProfileData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParameterProvisionProfileDataFor5GVNGroupDocumentApiService.Query5GVNGroupPPData")
@@ -80,10 +80,10 @@ func (a *ParameterProvisionProfileDataFor5GVNGroupDocumentApiService) Query5GVNG
 	localVarFormParams := url.Values{}
 
 	if r.extGroupIds != nil {
-		parameterAddToQuery(localVarQueryParams, "ext-group-ids", r.extGroupIds, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ext-group-ids", r.extGroupIds, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -112,9 +112,9 @@ func (a *ParameterProvisionProfileDataFor5GVNGroupDocumentApiService) Query5GVNG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

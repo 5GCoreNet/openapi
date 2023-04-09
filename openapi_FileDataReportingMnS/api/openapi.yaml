@@ -263,6 +263,7 @@ components:
       - notificationType
       - systemDN
       type: object
+      x-parent: true
     NotificationId:
       type: integer
     NotificationType:

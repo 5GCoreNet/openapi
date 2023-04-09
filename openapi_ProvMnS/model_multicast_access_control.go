@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// MulticastAccessControl Indicates whether the service data flow, corresponding to the service data flow template, is  allowed or not allowed. 
+// MulticastAccessControl Indicates whether the service data flow, corresponding to the service data flow template, is  allowed or not allowed.
 type MulticastAccessControl struct {
-	MulticastAccessControlAnyOf *MulticastAccessControlAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MulticastAccessControl) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MulticastAccessControlAnyOf
-	err = json.Unmarshal(data, &dst.MulticastAccessControlAnyOf);
-	if err == nil {
-		jsonMulticastAccessControlAnyOf, _ := json.Marshal(dst.MulticastAccessControlAnyOf)
-		if string(jsonMulticastAccessControlAnyOf) == "{}" { // empty struct
-			dst.MulticastAccessControlAnyOf = nil
-		} else {
-			return nil // data stored in dst.MulticastAccessControlAnyOf, return on the first match
-		}
-	} else {
-		dst.MulticastAccessControlAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MulticastAccessControl) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MulticastAccessControl) MarshalJSON() ([]byte, error) {
-	if src.MulticastAccessControlAnyOf != nil {
-		return json.Marshal(&src.MulticastAccessControlAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMulticastAccessControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

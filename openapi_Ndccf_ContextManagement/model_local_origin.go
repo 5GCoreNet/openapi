@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &LocalOrigin{}
 
 // LocalOrigin Indicates a Local origin in a reference system
 type LocalOrigin struct {
-	CoordinateId *string `json:"coordinateId,omitempty"`
-	Point *GeographicalCoordinates `json:"point,omitempty"`
+	CoordinateId *string                  `json:"coordinateId,omitempty"`
+	Point        *GeographicalCoordinates `json:"point,omitempty"`
 }
 
 // NewLocalOrigin instantiates a new LocalOrigin object
@@ -42,7 +42,7 @@ func NewLocalOriginWithDefaults() *LocalOrigin {
 
 // GetCoordinateId returns the CoordinateId field value if set, zero value otherwise.
 func (o *LocalOrigin) GetCoordinateId() string {
-	if o == nil || isNil(o.CoordinateId) {
+	if o == nil || IsNil(o.CoordinateId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LocalOrigin) GetCoordinateId() string {
 // GetCoordinateIdOk returns a tuple with the CoordinateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalOrigin) GetCoordinateIdOk() (*string, bool) {
-	if o == nil || isNil(o.CoordinateId) {
+	if o == nil || IsNil(o.CoordinateId) {
 		return nil, false
 	}
 	return o.CoordinateId, true
@@ -60,7 +60,7 @@ func (o *LocalOrigin) GetCoordinateIdOk() (*string, bool) {
 
 // HasCoordinateId returns a boolean if a field has been set.
 func (o *LocalOrigin) HasCoordinateId() bool {
-	if o != nil && !isNil(o.CoordinateId) {
+	if o != nil && !IsNil(o.CoordinateId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *LocalOrigin) SetCoordinateId(v string) {
 
 // GetPoint returns the Point field value if set, zero value otherwise.
 func (o *LocalOrigin) GetPoint() GeographicalCoordinates {
-	if o == nil || isNil(o.Point) {
+	if o == nil || IsNil(o.Point) {
 		var ret GeographicalCoordinates
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *LocalOrigin) GetPoint() GeographicalCoordinates {
 // GetPointOk returns a tuple with the Point field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalOrigin) GetPointOk() (*GeographicalCoordinates, bool) {
-	if o == nil || isNil(o.Point) {
+	if o == nil || IsNil(o.Point) {
 		return nil, false
 	}
 	return o.Point, true
@@ -92,7 +92,7 @@ func (o *LocalOrigin) GetPointOk() (*GeographicalCoordinates, bool) {
 
 // HasPoint returns a boolean if a field has been set.
 func (o *LocalOrigin) HasPoint() bool {
-	if o != nil && !isNil(o.Point) {
+	if o != nil && !IsNil(o.Point) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *LocalOrigin) SetPoint(v GeographicalCoordinates) {
 }
 
 func (o LocalOrigin) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o LocalOrigin) MarshalJSON() ([]byte, error) {
 
 func (o LocalOrigin) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CoordinateId) {
+	if !IsNil(o.CoordinateId) {
 		toSerialize["coordinateId"] = o.CoordinateId
 	}
-	if !isNil(o.Point) {
+	if !IsNil(o.Point) {
 		toSerialize["point"] = o.Point
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableLocalOrigin) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

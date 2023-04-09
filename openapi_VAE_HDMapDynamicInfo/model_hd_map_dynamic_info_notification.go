@@ -1,7 +1,7 @@
 /*
 VAE_HDMapDynamicInfo
 
-API for VAE HDMapDynamicInfo Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE HDMapDynamicInfo Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the HdMapDynamicInfoNotification type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &HdMapDynamicInfoNotification{}
 
-// HdMapDynamicInfoNotification Represents a notificaton of HD map dynamic info corresponding to the subscription. 
+// HdMapDynamicInfoNotification Represents a notificaton of HD map dynamic info corresponding to the subscription.
 type HdMapDynamicInfoNotification struct {
 	// String providing an URI formatted according to RFC 3986.
 	ResourceUri string `json:"resourceUri"`
@@ -93,7 +93,7 @@ func (o *HdMapDynamicInfoNotification) SetNearbyUeInfo(v []NearbyUeInfo) {
 }
 
 func (o HdMapDynamicInfoNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableHdMapDynamicInfoNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

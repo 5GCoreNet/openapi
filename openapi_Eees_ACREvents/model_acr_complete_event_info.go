@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ACRCompleteEventInfo{}
 // ACRCompleteEventInfo Indicates the completed ACR result and target EAS endpoint info.
 type ACRCompleteEventInfo struct {
 	// Indicates whether the ACR is successful or failure.
-	AcrRes bool `json:"acrRes"`
+	AcrRes       bool     `json:"acrRes"`
 	TEasEndpoint EndPoint `json:"tEasEndpoint"`
 	// Indicates the cause information for the failure.
 	FailReason *string `json:"failReason,omitempty"`
@@ -95,7 +95,7 @@ func (o *ACRCompleteEventInfo) SetTEasEndpoint(v EndPoint) {
 
 // GetFailReason returns the FailReason field value if set, zero value otherwise.
 func (o *ACRCompleteEventInfo) GetFailReason() string {
-	if o == nil || isNil(o.FailReason) {
+	if o == nil || IsNil(o.FailReason) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ACRCompleteEventInfo) GetFailReason() string {
 // GetFailReasonOk returns a tuple with the FailReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRCompleteEventInfo) GetFailReasonOk() (*string, bool) {
-	if o == nil || isNil(o.FailReason) {
+	if o == nil || IsNil(o.FailReason) {
 		return nil, false
 	}
 	return o.FailReason, true
@@ -113,7 +113,7 @@ func (o *ACRCompleteEventInfo) GetFailReasonOk() (*string, bool) {
 
 // HasFailReason returns a boolean if a field has been set.
 func (o *ACRCompleteEventInfo) HasFailReason() bool {
-	if o != nil && !isNil(o.FailReason) {
+	if o != nil && !IsNil(o.FailReason) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *ACRCompleteEventInfo) SetFailReason(v string) {
 }
 
 func (o ACRCompleteEventInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o ACRCompleteEventInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["acrRes"] = o.AcrRes
 	toSerialize["tEasEndpoint"] = o.TEasEndpoint
-	if !isNil(o.FailReason) {
+	if !IsNil(o.FailReason) {
 		toSerialize["failReason"] = o.FailReason
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableACRCompleteEventInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

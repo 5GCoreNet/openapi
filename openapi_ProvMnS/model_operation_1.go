@@ -19,8 +19,8 @@ var _ MappedNullable = &Operation1{}
 
 // Operation1 struct for Operation1
 type Operation1 struct {
-	Name *string `json:"name,omitempty"`
-	AllowedNFTypes *NFType `json:"allowedNFTypes,omitempty"`
+	Name               *string             `json:"name,omitempty"`
+	AllowedNFTypes     *NFType             `json:"allowedNFTypes,omitempty"`
 	OperationSemantics *OperationSemantics `json:"operationSemantics,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewOperation1WithDefaults() *Operation1 {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Operation1) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *Operation1) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Operation1) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -61,7 +61,7 @@ func (o *Operation1) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *Operation1) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *Operation1) SetName(v string) {
 
 // GetAllowedNFTypes returns the AllowedNFTypes field value if set, zero value otherwise.
 func (o *Operation1) GetAllowedNFTypes() NFType {
-	if o == nil || isNil(o.AllowedNFTypes) {
+	if o == nil || IsNil(o.AllowedNFTypes) {
 		var ret NFType
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *Operation1) GetAllowedNFTypes() NFType {
 // GetAllowedNFTypesOk returns a tuple with the AllowedNFTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Operation1) GetAllowedNFTypesOk() (*NFType, bool) {
-	if o == nil || isNil(o.AllowedNFTypes) {
+	if o == nil || IsNil(o.AllowedNFTypes) {
 		return nil, false
 	}
 	return o.AllowedNFTypes, true
@@ -93,7 +93,7 @@ func (o *Operation1) GetAllowedNFTypesOk() (*NFType, bool) {
 
 // HasAllowedNFTypes returns a boolean if a field has been set.
 func (o *Operation1) HasAllowedNFTypes() bool {
-	if o != nil && !isNil(o.AllowedNFTypes) {
+	if o != nil && !IsNil(o.AllowedNFTypes) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Operation1) SetAllowedNFTypes(v NFType) {
 
 // GetOperationSemantics returns the OperationSemantics field value if set, zero value otherwise.
 func (o *Operation1) GetOperationSemantics() OperationSemantics {
-	if o == nil || isNil(o.OperationSemantics) {
+	if o == nil || IsNil(o.OperationSemantics) {
 		var ret OperationSemantics
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Operation1) GetOperationSemantics() OperationSemantics {
 // GetOperationSemanticsOk returns a tuple with the OperationSemantics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Operation1) GetOperationSemanticsOk() (*OperationSemantics, bool) {
-	if o == nil || isNil(o.OperationSemantics) {
+	if o == nil || IsNil(o.OperationSemantics) {
 		return nil, false
 	}
 	return o.OperationSemantics, true
@@ -125,7 +125,7 @@ func (o *Operation1) GetOperationSemanticsOk() (*OperationSemantics, bool) {
 
 // HasOperationSemantics returns a boolean if a field has been set.
 func (o *Operation1) HasOperationSemantics() bool {
-	if o != nil && !isNil(o.OperationSemantics) {
+	if o != nil && !IsNil(o.OperationSemantics) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *Operation1) SetOperationSemantics(v OperationSemantics) {
 }
 
 func (o Operation1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o Operation1) MarshalJSON() ([]byte, error) {
 
 func (o Operation1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.AllowedNFTypes) {
+	if !IsNil(o.AllowedNFTypes) {
 		toSerialize["allowedNFTypes"] = o.AllowedNFTypes
 	}
-	if !isNil(o.OperationSemantics) {
+	if !IsNil(o.OperationSemantics) {
 		toSerialize["operationSemantics"] = o.OperationSemantics
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableOperation1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

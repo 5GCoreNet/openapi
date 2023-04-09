@@ -1,7 +1,7 @@
 /*
 Nausf_UPUProtection Service
 
-AUSF UPU Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AUSF UPU Protection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -96,7 +96,7 @@ func (o *UpuSecurityInfo) SetCounterUpu(v string) {
 
 // GetUpuXmacIue returns the UpuXmacIue field value if set, zero value otherwise.
 func (o *UpuSecurityInfo) GetUpuXmacIue() string {
-	if o == nil || isNil(o.UpuXmacIue) {
+	if o == nil || IsNil(o.UpuXmacIue) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UpuSecurityInfo) GetUpuXmacIue() string {
 // GetUpuXmacIueOk returns a tuple with the UpuXmacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuSecurityInfo) GetUpuXmacIueOk() (*string, bool) {
-	if o == nil || isNil(o.UpuXmacIue) {
+	if o == nil || IsNil(o.UpuXmacIue) {
 		return nil, false
 	}
 	return o.UpuXmacIue, true
@@ -114,7 +114,7 @@ func (o *UpuSecurityInfo) GetUpuXmacIueOk() (*string, bool) {
 
 // HasUpuXmacIue returns a boolean if a field has been set.
 func (o *UpuSecurityInfo) HasUpuXmacIue() bool {
-	if o != nil && !isNil(o.UpuXmacIue) {
+	if o != nil && !IsNil(o.UpuXmacIue) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *UpuSecurityInfo) SetUpuXmacIue(v string) {
 }
 
 func (o UpuSecurityInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o UpuSecurityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upuMacIausf"] = o.UpuMacIausf
 	toSerialize["counterUpu"] = o.CounterUpu
-	if !isNil(o.UpuXmacIue) {
+	if !IsNil(o.UpuXmacIue) {
 		toSerialize["upuXmacIue"] = o.UpuXmacIue
 	}
 	return toSerialize, nil
@@ -179,5 +179,3 @@ func (v *NullableUpuSecurityInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

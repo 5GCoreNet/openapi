@@ -1,7 +1,7 @@
 /*
 3gpp-ueid
 
-API for UE ID service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for UE ID service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -26,7 +26,6 @@ func InterfaceAsUeIdReq(v *interface{}) UeIdReq {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UeIdReq) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src UeIdReq) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UeIdReq) GetActualInstance() (interface{}) {
+func (obj *UeIdReq) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableUeIdReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

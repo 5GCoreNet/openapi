@@ -1,7 +1,7 @@
 /*
 3gpp-cp-parameter-provisioning
 
-API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for provisioning communication pattern parameters.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -44,7 +44,7 @@ func NewUmtLocationArea5GAllOfWithDefaults() *UmtLocationArea5GAllOf {
 
 // GetUmtTime returns the UmtTime field value if set, zero value otherwise.
 func (o *UmtLocationArea5GAllOf) GetUmtTime() string {
-	if o == nil || isNil(o.UmtTime) {
+	if o == nil || IsNil(o.UmtTime) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtTime() string {
 // GetUmtTimeOk returns a tuple with the UmtTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UmtLocationArea5GAllOf) GetUmtTimeOk() (*string, bool) {
-	if o == nil || isNil(o.UmtTime) {
+	if o == nil || IsNil(o.UmtTime) {
 		return nil, false
 	}
 	return o.UmtTime, true
@@ -62,7 +62,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtTimeOk() (*string, bool) {
 
 // HasUmtTime returns a boolean if a field has been set.
 func (o *UmtLocationArea5GAllOf) HasUmtTime() bool {
-	if o != nil && !isNil(o.UmtTime) {
+	if o != nil && !IsNil(o.UmtTime) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *UmtLocationArea5GAllOf) SetUmtTime(v string) {
 
 // GetUmtDuration returns the UmtDuration field value if set, zero value otherwise.
 func (o *UmtLocationArea5GAllOf) GetUmtDuration() int32 {
-	if o == nil || isNil(o.UmtDuration) {
+	if o == nil || IsNil(o.UmtDuration) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtDuration() int32 {
 // GetUmtDurationOk returns a tuple with the UmtDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UmtLocationArea5GAllOf) GetUmtDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.UmtDuration) {
+	if o == nil || IsNil(o.UmtDuration) {
 		return nil, false
 	}
 	return o.UmtDuration, true
@@ -94,7 +94,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtDurationOk() (*int32, bool) {
 
 // HasUmtDuration returns a boolean if a field has been set.
 func (o *UmtLocationArea5GAllOf) HasUmtDuration() bool {
-	if o != nil && !isNil(o.UmtDuration) {
+	if o != nil && !IsNil(o.UmtDuration) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *UmtLocationArea5GAllOf) SetUmtDuration(v int32) {
 }
 
 func (o UmtLocationArea5GAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o UmtLocationArea5GAllOf) MarshalJSON() ([]byte, error) {
 
 func (o UmtLocationArea5GAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UmtTime) {
+	if !IsNil(o.UmtTime) {
 		toSerialize["umtTime"] = o.UmtTime
 	}
-	if !isNil(o.UmtDuration) {
+	if !IsNil(o.UmtDuration) {
 		toSerialize["umtDuration"] = o.UmtDuration
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableUmtLocationArea5GAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

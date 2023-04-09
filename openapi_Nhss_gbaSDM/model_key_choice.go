@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // KeyChoice Type of key (ME-based or UICC-based) that the NAF shall use
 type KeyChoice struct {
-	KeyChoiceAnyOf *KeyChoiceAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *KeyChoice) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into KeyChoiceAnyOf
-	err = json.Unmarshal(data, &dst.KeyChoiceAnyOf);
-	if err == nil {
-		jsonKeyChoiceAnyOf, _ := json.Marshal(dst.KeyChoiceAnyOf)
-		if string(jsonKeyChoiceAnyOf) == "{}" { // empty struct
-			dst.KeyChoiceAnyOf = nil
-		} else {
-			return nil // data stored in dst.KeyChoiceAnyOf, return on the first match
-		}
-	} else {
-		dst.KeyChoiceAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *KeyChoice) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *KeyChoice) MarshalJSON() ([]byte, error) {
-	if src.KeyChoiceAnyOf != nil {
-		return json.Marshal(&src.KeyChoiceAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableKeyChoice) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

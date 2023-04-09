@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // NFServiceStatus Status of a given NF Service Instance of an NF Instance stored in NRF
 type NFServiceStatus struct {
-	NFServiceStatusAnyOf *NFServiceStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NFServiceStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NFServiceStatusAnyOf
-	err = json.Unmarshal(data, &dst.NFServiceStatusAnyOf);
-	if err == nil {
-		jsonNFServiceStatusAnyOf, _ := json.Marshal(dst.NFServiceStatusAnyOf)
-		if string(jsonNFServiceStatusAnyOf) == "{}" { // empty struct
-			dst.NFServiceStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.NFServiceStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.NFServiceStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NFServiceStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NFServiceStatus) MarshalJSON() ([]byte, error) {
-	if src.NFServiceStatusAnyOf != nil {
-		return json.Marshal(&src.NFServiceStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNFServiceStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

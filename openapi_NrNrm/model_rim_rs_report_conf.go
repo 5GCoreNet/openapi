@@ -19,10 +19,10 @@ var _ MappedNullable = &RimRSReportConf{}
 
 // RimRSReportConf struct for RimRSReportConf
 type RimRSReportConf struct {
-	ReportIndicator *string `json:"reportIndicator,omitempty"`
-	ReportInterval *int32 `json:"reportInterval,omitempty"`
-	NrofRIMRSReportInfo *int32 `json:"nrofRIMRSReportInfo,omitempty"`
-	MaxPropagationDelay *int32 `json:"maxPropagationDelay,omitempty"`
+	ReportIndicator     *string           `json:"reportIndicator,omitempty"`
+	ReportInterval      *int32            `json:"reportInterval,omitempty"`
+	NrofRIMRSReportInfo *int32            `json:"nrofRIMRSReportInfo,omitempty"`
+	MaxPropagationDelay *int32            `json:"maxPropagationDelay,omitempty"`
 	RimRSReportInfoList []RimRSReportInfo `json:"rimRSReportInfoList,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewRimRSReportConfWithDefaults() *RimRSReportConf {
 
 // GetReportIndicator returns the ReportIndicator field value if set, zero value otherwise.
 func (o *RimRSReportConf) GetReportIndicator() string {
-	if o == nil || isNil(o.ReportIndicator) {
+	if o == nil || IsNil(o.ReportIndicator) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *RimRSReportConf) GetReportIndicator() string {
 // GetReportIndicatorOk returns a tuple with the ReportIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportConf) GetReportIndicatorOk() (*string, bool) {
-	if o == nil || isNil(o.ReportIndicator) {
+	if o == nil || IsNil(o.ReportIndicator) {
 		return nil, false
 	}
 	return o.ReportIndicator, true
@@ -63,7 +63,7 @@ func (o *RimRSReportConf) GetReportIndicatorOk() (*string, bool) {
 
 // HasReportIndicator returns a boolean if a field has been set.
 func (o *RimRSReportConf) HasReportIndicator() bool {
-	if o != nil && !isNil(o.ReportIndicator) {
+	if o != nil && !IsNil(o.ReportIndicator) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *RimRSReportConf) SetReportIndicator(v string) {
 
 // GetReportInterval returns the ReportInterval field value if set, zero value otherwise.
 func (o *RimRSReportConf) GetReportInterval() int32 {
-	if o == nil || isNil(o.ReportInterval) {
+	if o == nil || IsNil(o.ReportInterval) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *RimRSReportConf) GetReportInterval() int32 {
 // GetReportIntervalOk returns a tuple with the ReportInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportConf) GetReportIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.ReportInterval) {
+	if o == nil || IsNil(o.ReportInterval) {
 		return nil, false
 	}
 	return o.ReportInterval, true
@@ -95,7 +95,7 @@ func (o *RimRSReportConf) GetReportIntervalOk() (*int32, bool) {
 
 // HasReportInterval returns a boolean if a field has been set.
 func (o *RimRSReportConf) HasReportInterval() bool {
-	if o != nil && !isNil(o.ReportInterval) {
+	if o != nil && !IsNil(o.ReportInterval) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *RimRSReportConf) SetReportInterval(v int32) {
 
 // GetNrofRIMRSReportInfo returns the NrofRIMRSReportInfo field value if set, zero value otherwise.
 func (o *RimRSReportConf) GetNrofRIMRSReportInfo() int32 {
-	if o == nil || isNil(o.NrofRIMRSReportInfo) {
+	if o == nil || IsNil(o.NrofRIMRSReportInfo) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *RimRSReportConf) GetNrofRIMRSReportInfo() int32 {
 // GetNrofRIMRSReportInfoOk returns a tuple with the NrofRIMRSReportInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportConf) GetNrofRIMRSReportInfoOk() (*int32, bool) {
-	if o == nil || isNil(o.NrofRIMRSReportInfo) {
+	if o == nil || IsNil(o.NrofRIMRSReportInfo) {
 		return nil, false
 	}
 	return o.NrofRIMRSReportInfo, true
@@ -127,7 +127,7 @@ func (o *RimRSReportConf) GetNrofRIMRSReportInfoOk() (*int32, bool) {
 
 // HasNrofRIMRSReportInfo returns a boolean if a field has been set.
 func (o *RimRSReportConf) HasNrofRIMRSReportInfo() bool {
-	if o != nil && !isNil(o.NrofRIMRSReportInfo) {
+	if o != nil && !IsNil(o.NrofRIMRSReportInfo) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *RimRSReportConf) SetNrofRIMRSReportInfo(v int32) {
 
 // GetMaxPropagationDelay returns the MaxPropagationDelay field value if set, zero value otherwise.
 func (o *RimRSReportConf) GetMaxPropagationDelay() int32 {
-	if o == nil || isNil(o.MaxPropagationDelay) {
+	if o == nil || IsNil(o.MaxPropagationDelay) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *RimRSReportConf) GetMaxPropagationDelay() int32 {
 // GetMaxPropagationDelayOk returns a tuple with the MaxPropagationDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportConf) GetMaxPropagationDelayOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPropagationDelay) {
+	if o == nil || IsNil(o.MaxPropagationDelay) {
 		return nil, false
 	}
 	return o.MaxPropagationDelay, true
@@ -159,7 +159,7 @@ func (o *RimRSReportConf) GetMaxPropagationDelayOk() (*int32, bool) {
 
 // HasMaxPropagationDelay returns a boolean if a field has been set.
 func (o *RimRSReportConf) HasMaxPropagationDelay() bool {
-	if o != nil && !isNil(o.MaxPropagationDelay) {
+	if o != nil && !IsNil(o.MaxPropagationDelay) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *RimRSReportConf) SetMaxPropagationDelay(v int32) {
 
 // GetRimRSReportInfoList returns the RimRSReportInfoList field value if set, zero value otherwise.
 func (o *RimRSReportConf) GetRimRSReportInfoList() []RimRSReportInfo {
-	if o == nil || isNil(o.RimRSReportInfoList) {
+	if o == nil || IsNil(o.RimRSReportInfoList) {
 		var ret []RimRSReportInfo
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *RimRSReportConf) GetRimRSReportInfoList() []RimRSReportInfo {
 // GetRimRSReportInfoListOk returns a tuple with the RimRSReportInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportConf) GetRimRSReportInfoListOk() ([]RimRSReportInfo, bool) {
-	if o == nil || isNil(o.RimRSReportInfoList) {
+	if o == nil || IsNil(o.RimRSReportInfoList) {
 		return nil, false
 	}
 	return o.RimRSReportInfoList, true
@@ -191,7 +191,7 @@ func (o *RimRSReportConf) GetRimRSReportInfoListOk() ([]RimRSReportInfo, bool) {
 
 // HasRimRSReportInfoList returns a boolean if a field has been set.
 func (o *RimRSReportConf) HasRimRSReportInfoList() bool {
-	if o != nil && !isNil(o.RimRSReportInfoList) {
+	if o != nil && !IsNil(o.RimRSReportInfoList) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *RimRSReportConf) SetRimRSReportInfoList(v []RimRSReportInfo) {
 }
 
 func (o RimRSReportConf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -213,19 +213,19 @@ func (o RimRSReportConf) MarshalJSON() ([]byte, error) {
 
 func (o RimRSReportConf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ReportIndicator) {
+	if !IsNil(o.ReportIndicator) {
 		toSerialize["reportIndicator"] = o.ReportIndicator
 	}
-	if !isNil(o.ReportInterval) {
+	if !IsNil(o.ReportInterval) {
 		toSerialize["reportInterval"] = o.ReportInterval
 	}
-	if !isNil(o.NrofRIMRSReportInfo) {
+	if !IsNil(o.NrofRIMRSReportInfo) {
 		toSerialize["nrofRIMRSReportInfo"] = o.NrofRIMRSReportInfo
 	}
-	if !isNil(o.MaxPropagationDelay) {
+	if !IsNil(o.MaxPropagationDelay) {
 		toSerialize["maxPropagationDelay"] = o.MaxPropagationDelay
 	}
-	if !isNil(o.RimRSReportInfoList) {
+	if !IsNil(o.RimRSReportInfoList) {
 		toSerialize["rimRSReportInfoList"] = o.RimRSReportInfoList
 	}
 	return toSerialize, nil
@@ -266,5 +266,3 @@ func (v *NullableRimRSReportConf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

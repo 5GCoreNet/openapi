@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the NwdafData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NwdafData{}
 
-// NwdafData Indicates the list of Analytic ID(s) per NWDAF instance ID used for the PDU Session consumed  by the SMF. 
+// NwdafData Indicates the list of Analytic ID(s) per NWDAF instance ID used for the PDU Session consumed  by the SMF.
 type NwdafData struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NwdafInstanceId string `json:"nwdafInstanceId"`
-	NwdafEvents []NwdafEvent `json:"nwdafEvents,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NwdafInstanceId string       `json:"nwdafInstanceId"`
+	NwdafEvents     []NwdafEvent `json:"nwdafEvents,omitempty"`
 }
 
 // NewNwdafData instantiates a new NwdafData object
@@ -68,7 +68,7 @@ func (o *NwdafData) SetNwdafInstanceId(v string) {
 
 // GetNwdafEvents returns the NwdafEvents field value if set, zero value otherwise.
 func (o *NwdafData) GetNwdafEvents() []NwdafEvent {
-	if o == nil || isNil(o.NwdafEvents) {
+	if o == nil || IsNil(o.NwdafEvents) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *NwdafData) GetNwdafEvents() []NwdafEvent {
 // GetNwdafEventsOk returns a tuple with the NwdafEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafData) GetNwdafEventsOk() ([]NwdafEvent, bool) {
-	if o == nil || isNil(o.NwdafEvents) {
+	if o == nil || IsNil(o.NwdafEvents) {
 		return nil, false
 	}
 	return o.NwdafEvents, true
@@ -86,7 +86,7 @@ func (o *NwdafData) GetNwdafEventsOk() ([]NwdafEvent, bool) {
 
 // HasNwdafEvents returns a boolean if a field has been set.
 func (o *NwdafData) HasNwdafEvents() bool {
-	if o != nil && !isNil(o.NwdafEvents) {
+	if o != nil && !IsNil(o.NwdafEvents) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *NwdafData) SetNwdafEvents(v []NwdafEvent) {
 }
 
 func (o NwdafData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o NwdafData) MarshalJSON() ([]byte, error) {
 func (o NwdafData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwdafInstanceId"] = o.NwdafInstanceId
-	if !isNil(o.NwdafEvents) {
+	if !IsNil(o.NwdafEvents) {
 		toSerialize["nwdafEvents"] = o.NwdafEvents
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableNwdafData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

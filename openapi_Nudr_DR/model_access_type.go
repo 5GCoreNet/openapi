@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ type AccessType string
 
 // List of AccessType
 const (
-	_3_GPP_ACCESS AccessType = "3GPP_ACCESS"
+	_3_GPP_ACCESS    AccessType = "3GPP_ACCESS"
 	NON_3_GPP_ACCESS AccessType = "NON_3GPP_ACCESS"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableAccessType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nhss_gbaSDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // GBASDMSubscriptionDocumentApiService GBASDMSubscriptionDocumentApi service
 type GBASDMSubscriptionDocumentApiService service
 
 type ApiGbaSdmSubsModifyRequest struct {
-	ctx context.Context
-	ApiService *GBASDMSubscriptionDocumentApiService
-	ueId UeId
-	subscriptionId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *GBASDMSubscriptionDocumentApiService
+	ueId              UeId
+	subscriptionId    string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -50,28 +49,29 @@ func (r ApiGbaSdmSubsModifyRequest) Execute() (*PatchResult, *http.Response, err
 /*
 GbaSdmSubsModify Modify the subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE Identity
- @param subscriptionId Id of the Subscription
- @return ApiGbaSdmSubsModifyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE Identity
+	@param subscriptionId Id of the Subscription
+	@return ApiGbaSdmSubsModifyRequest
 */
 func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModify(ctx context.Context, ueId UeId, subscriptionId string) ApiGbaSdmSubsModifyRequest {
 	return ApiGbaSdmSubsModifyRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:     a,
+		ctx:            ctx,
+		ueId:           ueId,
 		subscriptionId: subscriptionId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaSdmSubsModifyRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GBASDMSubscriptionDocumentApiService.GbaSdmSubsModify")
@@ -94,7 +94,7 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -125,9 +125,9 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -144,8 +144,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -155,8 +155,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -166,8 +166,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -177,8 +177,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -188,8 +188,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -199,8 +199,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -210,8 +210,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -221,8 +221,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -232,8 +232,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -243,8 +243,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -254,8 +254,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -265,8 +265,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -276,8 +276,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -296,9 +296,9 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmSubsModifyExecute(r ApiGbaS
 }
 
 type ApiGbaSdmUnsubscribeRequest struct {
-	ctx context.Context
-	ApiService *GBASDMSubscriptionDocumentApiService
-	ueId UeId
+	ctx            context.Context
+	ApiService     *GBASDMSubscriptionDocumentApiService
+	ueId           UeId
 	subscriptionId string
 }
 
@@ -309,16 +309,16 @@ func (r ApiGbaSdmUnsubscribeRequest) Execute() (*http.Response, error) {
 /*
 GbaSdmUnsubscribe Unsubscribe from notifications
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE Identity
- @param subscriptionId Id of the Subscription
- @return ApiGbaSdmUnsubscribeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE Identity
+	@param subscriptionId Id of the Subscription
+	@return ApiGbaSdmUnsubscribeRequest
 */
 func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribe(ctx context.Context, ueId UeId, subscriptionId string) ApiGbaSdmUnsubscribeRequest {
 	return ApiGbaSdmUnsubscribeRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:     a,
+		ctx:            ctx,
+		ueId:           ueId,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -326,9 +326,9 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribe(ctx context.Con
 // Execute executes the request
 func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGbaSdmUnsubscribeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GBASDMSubscriptionDocumentApiService.GbaSdmUnsubscribe")
@@ -371,9 +371,9 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -390,8 +390,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -401,8 +401,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -412,8 +412,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -423,8 +423,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -434,8 +434,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -445,8 +445,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -456,8 +456,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -467,8 +467,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -478,8 +478,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -489,8 +489,8 @@ func (a *GBASDMSubscriptionDocumentApiService) GbaSdmUnsubscribeExecute(r ApiGba
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

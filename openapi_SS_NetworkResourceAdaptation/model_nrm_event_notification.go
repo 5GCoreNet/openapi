@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -22,9 +22,9 @@ var _ MappedNullable = &NrmEventNotification{}
 type NrmEventNotification struct {
 	Event NrmEvent `json:"event"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Ts time.Time `json:"ts"`
+	Ts           time.Time     `json:"ts"`
 	DeliveryMode *DeliveryMode `json:"deliveryMode,omitempty"`
-	StreamIds []string `json:"streamIds,omitempty"`
+	StreamIds    []string      `json:"streamIds,omitempty"`
 }
 
 // NewNrmEventNotification instantiates a new NrmEventNotification object
@@ -96,7 +96,7 @@ func (o *NrmEventNotification) SetTs(v time.Time) {
 
 // GetDeliveryMode returns the DeliveryMode field value if set, zero value otherwise.
 func (o *NrmEventNotification) GetDeliveryMode() DeliveryMode {
-	if o == nil || isNil(o.DeliveryMode) {
+	if o == nil || IsNil(o.DeliveryMode) {
 		var ret DeliveryMode
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NrmEventNotification) GetDeliveryMode() DeliveryMode {
 // GetDeliveryModeOk returns a tuple with the DeliveryMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrmEventNotification) GetDeliveryModeOk() (*DeliveryMode, bool) {
-	if o == nil || isNil(o.DeliveryMode) {
+	if o == nil || IsNil(o.DeliveryMode) {
 		return nil, false
 	}
 	return o.DeliveryMode, true
@@ -114,7 +114,7 @@ func (o *NrmEventNotification) GetDeliveryModeOk() (*DeliveryMode, bool) {
 
 // HasDeliveryMode returns a boolean if a field has been set.
 func (o *NrmEventNotification) HasDeliveryMode() bool {
-	if o != nil && !isNil(o.DeliveryMode) {
+	if o != nil && !IsNil(o.DeliveryMode) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *NrmEventNotification) SetDeliveryMode(v DeliveryMode) {
 
 // GetStreamIds returns the StreamIds field value if set, zero value otherwise.
 func (o *NrmEventNotification) GetStreamIds() []string {
-	if o == nil || isNil(o.StreamIds) {
+	if o == nil || IsNil(o.StreamIds) {
 		var ret []string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *NrmEventNotification) GetStreamIds() []string {
 // GetStreamIdsOk returns a tuple with the StreamIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrmEventNotification) GetStreamIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.StreamIds) {
+	if o == nil || IsNil(o.StreamIds) {
 		return nil, false
 	}
 	return o.StreamIds, true
@@ -146,7 +146,7 @@ func (o *NrmEventNotification) GetStreamIdsOk() ([]string, bool) {
 
 // HasStreamIds returns a boolean if a field has been set.
 func (o *NrmEventNotification) HasStreamIds() bool {
-	if o != nil && !isNil(o.StreamIds) {
+	if o != nil && !IsNil(o.StreamIds) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *NrmEventNotification) SetStreamIds(v []string) {
 }
 
 func (o NrmEventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,10 +170,10 @@ func (o NrmEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
 	toSerialize["ts"] = o.Ts
-	if !isNil(o.DeliveryMode) {
+	if !IsNil(o.DeliveryMode) {
 		toSerialize["deliveryMode"] = o.DeliveryMode
 	}
-	if !isNil(o.StreamIds) {
+	if !IsNil(o.StreamIds) {
 		toSerialize["streamIds"] = o.StreamIds
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableNrmEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

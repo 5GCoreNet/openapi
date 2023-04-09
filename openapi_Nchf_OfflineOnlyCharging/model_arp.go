@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &Arp{}
 
 // Arp Contains Allocation and Retention Priority information.
 type Arp struct {
-	// nullable true shall not be used for this attribute. Unsigned integer indicating the ARP Priority Level (see clause 5.7.2.2 of 3GPP TS 23.501, within the range 1 to 15.Values are ordered in decreasing order of priority, i.e. with 1 as the highest priority and 15 as the lowest priority.  
-	PriorityLevel NullableInt32 `json:"priorityLevel"`
-	PreemptCap PreemptionCapability `json:"preemptCap"`
-	PreemptVuln PreemptionVulnerability `json:"preemptVuln"`
+	// nullable true shall not be used for this attribute. Unsigned integer indicating the ARP Priority Level (see clause 5.7.2.2 of 3GPP TS 23.501, within the range 1 to 15.Values are ordered in decreasing order of priority, i.e. with 1 as the highest priority and 15 as the lowest priority.
+	PriorityLevel NullableInt32           `json:"priorityLevel"`
+	PreemptCap    PreemptionCapability    `json:"preemptCap"`
+	PreemptVuln   PreemptionVulnerability `json:"preemptVuln"`
 }
 
 // NewArp instantiates a new Arp object
@@ -120,7 +120,7 @@ func (o *Arp) SetPreemptVuln(v PreemptionVulnerability) {
 }
 
 func (o Arp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,5 +170,3 @@ func (v *NullableArp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

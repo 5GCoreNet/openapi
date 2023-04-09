@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// QosFlowUsage Possible values are - GENERAL: Indicate no specific QoS flow usage information is available.  - IMS_SIG: Indicate that the QoS flow is used for IMS signalling only. 
+// QosFlowUsage Possible values are - GENERAL: Indicate no specific QoS flow usage information is available.  - IMS_SIG: Indicate that the QoS flow is used for IMS signalling only.
 type QosFlowUsage struct {
-	QosFlowUsageAnyOf *QosFlowUsageAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *QosFlowUsage) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into QosFlowUsageAnyOf
-	err = json.Unmarshal(data, &dst.QosFlowUsageAnyOf);
-	if err == nil {
-		jsonQosFlowUsageAnyOf, _ := json.Marshal(dst.QosFlowUsageAnyOf)
-		if string(jsonQosFlowUsageAnyOf) == "{}" { // empty struct
-			dst.QosFlowUsageAnyOf = nil
-		} else {
-			return nil // data stored in dst.QosFlowUsageAnyOf, return on the first match
-		}
-	} else {
-		dst.QosFlowUsageAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *QosFlowUsage) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *QosFlowUsage) MarshalJSON() ([]byte, error) {
-	if src.QosFlowUsageAnyOf != nil {
-		return json.Marshal(&src.QosFlowUsageAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableQosFlowUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

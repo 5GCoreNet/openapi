@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the BdtPolicyDataPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BdtPolicyDataPatch{}
 
-// BdtPolicyDataPatch Represents modification instructions to be performed on the applied BDT policy data. 
+// BdtPolicyDataPatch Represents modification instructions to be performed on the applied BDT policy data.
 type BdtPolicyDataPatch struct {
 	// string identifying a BDT Reference ID as defined in clause 5.3.3 of 3GPP TS 29.154.
 	BdtRefId string `json:"bdtRefId"`
@@ -66,7 +66,7 @@ func (o *BdtPolicyDataPatch) SetBdtRefId(v string) {
 }
 
 func (o BdtPolicyDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullableBdtPolicyDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

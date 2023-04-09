@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,28 +17,14 @@ import (
 
 // SqnScheme Scheme for generation of Sequence Numbers.
 type SqnScheme struct {
-	SqnSchemeAnyOf *SqnSchemeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SqnScheme) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SqnSchemeAnyOf
-	err = json.Unmarshal(data, &dst.SqnSchemeAnyOf);
-	if err == nil {
-		jsonSqnSchemeAnyOf, _ := json.Marshal(dst.SqnSchemeAnyOf)
-		if string(jsonSqnSchemeAnyOf) == "{}" { // empty struct
-			dst.SqnSchemeAnyOf = nil
-		} else {
-			return nil // data stored in dst.SqnSchemeAnyOf, return on the first match
-		}
-	} else {
-		dst.SqnSchemeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SqnScheme) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SqnScheme) MarshalJSON() ([]byte, error) {
-	if src.SqnSchemeAnyOf != nil {
-		return json.Marshal(&src.SqnSchemeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSqnScheme) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

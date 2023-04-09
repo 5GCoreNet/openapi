@@ -1,7 +1,7 @@
 /*
 M1_ContentPreparationTemplatesProvisioning
 
-5GMS AF M1 Content Preparation Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Preparation Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,21 +13,20 @@ package openapi_M1_ContentPreparationTemplatesProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateContentPreparationTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	body *string
+	body                  *string
 }
 
 // A Content Preparation Template of any type
@@ -43,14 +42,14 @@ func (r ApiCreateContentPreparationTemplateRequest) Execute() (*http.Response, e
 /*
 CreateContentPreparationTemplate Create (and optionally upload) a new Content Preparation Template for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiCreateContentPreparationTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiCreateContentPreparationTemplateRequest
 */
 func (a *DefaultApiService) CreateContentPreparationTemplate(ctx context.Context, provisioningSessionId string) ApiCreateContentPreparationTemplateRequest {
 	return ApiCreateContentPreparationTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) CreateContentPreparationTemplate(ctx context.Context
 // Execute executes the request
 func (a *DefaultApiService) CreateContentPreparationTemplateExecute(r ApiCreateContentPreparationTemplateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateContentPreparationTemplate")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) CreateContentPreparationTemplateExecute(r ApiCreateC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,9 +125,9 @@ func (a *DefaultApiService) CreateContentPreparationTemplateExecute(r ApiCreateC
 }
 
 type ApiDestroyContentPreparationTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	contentPreparationTemplateId string
 }
 
@@ -139,16 +138,16 @@ func (r ApiDestroyContentPreparationTemplateRequest) Execute() (*http.Response, 
 /*
 DestroyContentPreparationTemplate Destroy the specified Content Preparation Template of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
- @return ApiDestroyContentPreparationTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
+	@return ApiDestroyContentPreparationTemplateRequest
 */
 func (a *DefaultApiService) DestroyContentPreparationTemplate(ctx context.Context, provisioningSessionId string, contentPreparationTemplateId string) ApiDestroyContentPreparationTemplateRequest {
 	return ApiDestroyContentPreparationTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		contentPreparationTemplateId: contentPreparationTemplateId,
 	}
 }
@@ -156,9 +155,9 @@ func (a *DefaultApiService) DestroyContentPreparationTemplate(ctx context.Contex
 // Execute executes the request
 func (a *DefaultApiService) DestroyContentPreparationTemplateExecute(r ApiDestroyContentPreparationTemplateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyContentPreparationTemplate")
@@ -201,9 +200,9 @@ func (a *DefaultApiService) DestroyContentPreparationTemplateExecute(r ApiDestro
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -220,11 +219,11 @@ func (a *DefaultApiService) DestroyContentPreparationTemplateExecute(r ApiDestro
 }
 
 type ApiPatchContentPreparationTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	contentPreparationTemplateId string
-	body *string
+	body                         *string
 }
 
 // A Content Preparation Template patch of any type
@@ -240,28 +239,29 @@ func (r ApiPatchContentPreparationTemplateRequest) Execute() (string, *http.Resp
 /*
 PatchContentPreparationTemplate Patch the specified Content Preparation Template for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
- @return ApiPatchContentPreparationTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
+	@return ApiPatchContentPreparationTemplateRequest
 */
 func (a *DefaultApiService) PatchContentPreparationTemplate(ctx context.Context, provisioningSessionId string, contentPreparationTemplateId string) ApiPatchContentPreparationTemplateRequest {
 	return ApiPatchContentPreparationTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		contentPreparationTemplateId: contentPreparationTemplateId,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *DefaultApiService) PatchContentPreparationTemplateExecute(r ApiPatchContentPreparationTemplateRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchContentPreparationTemplate")
@@ -309,9 +309,9 @@ func (a *DefaultApiService) PatchContentPreparationTemplateExecute(r ApiPatchCon
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -337,9 +337,9 @@ func (a *DefaultApiService) PatchContentPreparationTemplateExecute(r ApiPatchCon
 }
 
 type ApiRetrieveContentPreparationTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	contentPreparationTemplateId string
 }
 
@@ -350,28 +350,29 @@ func (r ApiRetrieveContentPreparationTemplateRequest) Execute() (string, *http.R
 /*
 RetrieveContentPreparationTemplate Retrieve the specified Content Preparation Template of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
- @return ApiRetrieveContentPreparationTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
+	@return ApiRetrieveContentPreparationTemplateRequest
 */
 func (a *DefaultApiService) RetrieveContentPreparationTemplate(ctx context.Context, provisioningSessionId string, contentPreparationTemplateId string) ApiRetrieveContentPreparationTemplateRequest {
 	return ApiRetrieveContentPreparationTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		contentPreparationTemplateId: contentPreparationTemplateId,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *DefaultApiService) RetrieveContentPreparationTemplateExecute(r ApiRetrieveContentPreparationTemplateRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveContentPreparationTemplate")
@@ -414,9 +415,9 @@ func (a *DefaultApiService) RetrieveContentPreparationTemplateExecute(r ApiRetri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -442,11 +443,11 @@ func (a *DefaultApiService) RetrieveContentPreparationTemplateExecute(r ApiRetri
 }
 
 type ApiUpdateContentPreparationTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                          context.Context
+	ApiService                   *DefaultApiService
+	provisioningSessionId        string
 	contentPreparationTemplateId string
-	body *string
+	body                         *string
 }
 
 // A Content Preparation Template of any type
@@ -462,16 +463,16 @@ func (r ApiUpdateContentPreparationTemplateRequest) Execute() (*http.Response, e
 /*
 UpdateContentPreparationTemplate Update the specified Content Preparation Template for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
- @return ApiUpdateContentPreparationTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param contentPreparationTemplateId The resource identifier of an existing Content Preparation Template.
+	@return ApiUpdateContentPreparationTemplateRequest
 */
 func (a *DefaultApiService) UpdateContentPreparationTemplate(ctx context.Context, provisioningSessionId string, contentPreparationTemplateId string) ApiUpdateContentPreparationTemplateRequest {
 	return ApiUpdateContentPreparationTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                   a,
+		ctx:                          ctx,
+		provisioningSessionId:        provisioningSessionId,
 		contentPreparationTemplateId: contentPreparationTemplateId,
 	}
 }
@@ -479,9 +480,9 @@ func (a *DefaultApiService) UpdateContentPreparationTemplate(ctx context.Context
 // Execute executes the request
 func (a *DefaultApiService) UpdateContentPreparationTemplateExecute(r ApiUpdateContentPreparationTemplateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateContentPreparationTemplate")
@@ -529,9 +530,9 @@ func (a *DefaultApiService) UpdateContentPreparationTemplateExecute(r ApiUpdateC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

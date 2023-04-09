@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,21 +13,20 @@ package openapi_Nnrf_NFDiscovery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // SCPDomainRoutingInformationSubscriptionsCollectionApiService SCPDomainRoutingInformationSubscriptionsCollectionApi service
 type SCPDomainRoutingInformationSubscriptionsCollectionApiService service
 
 type ApiScpDomainRoutingInfoSubscribeRequest struct {
-	ctx context.Context
-	ApiService *SCPDomainRoutingInformationSubscriptionsCollectionApiService
+	ctx                              context.Context
+	ApiService                       *SCPDomainRoutingInformationSubscriptionsCollectionApiService
 	scpDomainRoutingInfoSubscription *ScpDomainRoutingInfoSubscription
-	contentEncoding *string
-	acceptEncoding *string
+	contentEncoding                  *string
+	acceptEncoding                   *string
 }
 
 func (r ApiScpDomainRoutingInfoSubscribeRequest) ScpDomainRoutingInfoSubscription(scpDomainRoutingInfoSubscription ScpDomainRoutingInfoSubscription) ApiScpDomainRoutingInfoSubscribeRequest {
@@ -54,24 +53,25 @@ func (r ApiScpDomainRoutingInfoSubscribeRequest) Execute() (*ScpDomainRoutingInf
 /*
 ScpDomainRoutingInfoSubscribe Create a new subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiScpDomainRoutingInfoSubscribeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiScpDomainRoutingInfoSubscribeRequest
 */
 func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomainRoutingInfoSubscribe(ctx context.Context) ApiScpDomainRoutingInfoSubscribeRequest {
 	return ApiScpDomainRoutingInfoSubscribeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ScpDomainRoutingInfoSubscription
+//
+//	@return ScpDomainRoutingInfoSubscription
 func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomainRoutingInfoSubscribeExecute(r ApiScpDomainRoutingInfoSubscribeRequest) (*ScpDomainRoutingInfoSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ScpDomainRoutingInfoSubscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ScpDomainRoutingInfoSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SCPDomainRoutingInformationSubscriptionsCollectionApiService.ScpDomainRoutingInfoSubscribe")
@@ -106,10 +106,10 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.scpDomainRoutingInfoSubscription
@@ -123,9 +123,9 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -142,8 +142,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -153,8 +153,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -164,8 +164,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -175,8 +175,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -186,8 +186,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -197,8 +197,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -208,8 +208,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -219,8 +219,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -230,8 +230,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -241,8 +241,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -252,8 +252,8 @@ func (a *SCPDomainRoutingInformationSubscriptionsCollectionApiService) ScpDomain
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

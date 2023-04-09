@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &Flows{}
 // Flows Identifies the flows.
 type Flows struct {
 	ContVers []int32 `json:"contVers,omitempty"`
-	FNums []int32 `json:"fNums,omitempty"`
-	MedCompN int32 `json:"medCompN"`
+	FNums    []int32 `json:"fNums,omitempty"`
+	MedCompN int32   `json:"medCompN"`
 }
 
 // NewFlows instantiates a new Flows object
@@ -44,7 +44,7 @@ func NewFlowsWithDefaults() *Flows {
 
 // GetContVers returns the ContVers field value if set, zero value otherwise.
 func (o *Flows) GetContVers() []int32 {
-	if o == nil || isNil(o.ContVers) {
+	if o == nil || IsNil(o.ContVers) {
 		var ret []int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Flows) GetContVers() []int32 {
 // GetContVersOk returns a tuple with the ContVers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Flows) GetContVersOk() ([]int32, bool) {
-	if o == nil || isNil(o.ContVers) {
+	if o == nil || IsNil(o.ContVers) {
 		return nil, false
 	}
 	return o.ContVers, true
@@ -62,7 +62,7 @@ func (o *Flows) GetContVersOk() ([]int32, bool) {
 
 // HasContVers returns a boolean if a field has been set.
 func (o *Flows) HasContVers() bool {
-	if o != nil && !isNil(o.ContVers) {
+	if o != nil && !IsNil(o.ContVers) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Flows) SetContVers(v []int32) {
 
 // GetFNums returns the FNums field value if set, zero value otherwise.
 func (o *Flows) GetFNums() []int32 {
-	if o == nil || isNil(o.FNums) {
+	if o == nil || IsNil(o.FNums) {
 		var ret []int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Flows) GetFNums() []int32 {
 // GetFNumsOk returns a tuple with the FNums field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Flows) GetFNumsOk() ([]int32, bool) {
-	if o == nil || isNil(o.FNums) {
+	if o == nil || IsNil(o.FNums) {
 		return nil, false
 	}
 	return o.FNums, true
@@ -94,7 +94,7 @@ func (o *Flows) GetFNumsOk() ([]int32, bool) {
 
 // HasFNums returns a boolean if a field has been set.
 func (o *Flows) HasFNums() bool {
-	if o != nil && !isNil(o.FNums) {
+	if o != nil && !IsNil(o.FNums) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *Flows) SetMedCompN(v int32) {
 }
 
 func (o Flows) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,10 +140,10 @@ func (o Flows) MarshalJSON() ([]byte, error) {
 
 func (o Flows) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ContVers) {
+	if !IsNil(o.ContVers) {
 		toSerialize["contVers"] = o.ContVers
 	}
-	if !isNil(o.FNums) {
+	if !IsNil(o.FNums) {
 		toSerialize["fNums"] = o.FNums
 	}
 	toSerialize["medCompN"] = o.MedCompN
@@ -185,5 +185,3 @@ func (v *NullableFlows) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

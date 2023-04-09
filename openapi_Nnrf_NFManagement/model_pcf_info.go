@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,18 +20,18 @@ var _ MappedNullable = &PcfInfo{}
 // PcfInfo Information of a PCF NF Instance
 type PcfInfo struct {
 	// Identifier of a group of NFs.
-	GroupId *string `json:"groupId,omitempty"`
-	DnnList []string `json:"dnnList,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
+	GroupId    *string         `json:"groupId,omitempty"`
+	DnnList    []string        `json:"dnnList,omitempty"`
+	SupiRanges []SupiRange     `json:"supiRanges,omitempty"`
 	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
 	// Fully Qualified Domain Name
 	RxDiamHost *string `json:"rxDiamHost,omitempty"`
 	// Fully Qualified Domain Name
-	RxDiamRealm *string `json:"rxDiamRealm,omitempty"`
-	V2xSupportInd *bool `json:"v2xSupportInd,omitempty"`
-	ProseSupportInd *bool `json:"proseSupportInd,omitempty"`
+	RxDiamRealm     *string          `json:"rxDiamRealm,omitempty"`
+	V2xSupportInd   *bool            `json:"v2xSupportInd,omitempty"`
+	ProseSupportInd *bool            `json:"proseSupportInd,omitempty"`
 	ProseCapability *ProSeCapability `json:"proseCapability,omitempty"`
-	V2xCapability *V2xCapability `json:"v2xCapability,omitempty"`
+	V2xCapability   *V2xCapability   `json:"v2xCapability,omitempty"`
 }
 
 // NewPcfInfo instantiates a new PcfInfo object
@@ -61,7 +61,7 @@ func NewPcfInfoWithDefaults() *PcfInfo {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *PcfInfo) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -71,7 +71,7 @@ func (o *PcfInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -79,7 +79,7 @@ func (o *PcfInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *PcfInfo) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -93,7 +93,7 @@ func (o *PcfInfo) SetGroupId(v string) {
 
 // GetDnnList returns the DnnList field value if set, zero value otherwise.
 func (o *PcfInfo) GetDnnList() []string {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		var ret []string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *PcfInfo) GetDnnList() []string {
 // GetDnnListOk returns a tuple with the DnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetDnnListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		return nil, false
 	}
 	return o.DnnList, true
@@ -111,7 +111,7 @@ func (o *PcfInfo) GetDnnListOk() ([]string, bool) {
 
 // HasDnnList returns a boolean if a field has been set.
 func (o *PcfInfo) HasDnnList() bool {
-	if o != nil && !isNil(o.DnnList) {
+	if o != nil && !IsNil(o.DnnList) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *PcfInfo) SetDnnList(v []string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *PcfInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *PcfInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -143,7 +143,7 @@ func (o *PcfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *PcfInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *PcfInfo) SetSupiRanges(v []SupiRange) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *PcfInfo) GetGpsiRanges() []IdentityRange {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *PcfInfo) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRanges) {
+	if o == nil || IsNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -175,7 +175,7 @@ func (o *PcfInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *PcfInfo) HasGpsiRanges() bool {
-	if o != nil && !isNil(o.GpsiRanges) {
+	if o != nil && !IsNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *PcfInfo) SetGpsiRanges(v []IdentityRange) {
 
 // GetRxDiamHost returns the RxDiamHost field value if set, zero value otherwise.
 func (o *PcfInfo) GetRxDiamHost() string {
-	if o == nil || isNil(o.RxDiamHost) {
+	if o == nil || IsNil(o.RxDiamHost) {
 		var ret string
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *PcfInfo) GetRxDiamHost() string {
 // GetRxDiamHostOk returns a tuple with the RxDiamHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetRxDiamHostOk() (*string, bool) {
-	if o == nil || isNil(o.RxDiamHost) {
+	if o == nil || IsNil(o.RxDiamHost) {
 		return nil, false
 	}
 	return o.RxDiamHost, true
@@ -207,7 +207,7 @@ func (o *PcfInfo) GetRxDiamHostOk() (*string, bool) {
 
 // HasRxDiamHost returns a boolean if a field has been set.
 func (o *PcfInfo) HasRxDiamHost() bool {
-	if o != nil && !isNil(o.RxDiamHost) {
+	if o != nil && !IsNil(o.RxDiamHost) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *PcfInfo) SetRxDiamHost(v string) {
 
 // GetRxDiamRealm returns the RxDiamRealm field value if set, zero value otherwise.
 func (o *PcfInfo) GetRxDiamRealm() string {
-	if o == nil || isNil(o.RxDiamRealm) {
+	if o == nil || IsNil(o.RxDiamRealm) {
 		var ret string
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *PcfInfo) GetRxDiamRealm() string {
 // GetRxDiamRealmOk returns a tuple with the RxDiamRealm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetRxDiamRealmOk() (*string, bool) {
-	if o == nil || isNil(o.RxDiamRealm) {
+	if o == nil || IsNil(o.RxDiamRealm) {
 		return nil, false
 	}
 	return o.RxDiamRealm, true
@@ -239,7 +239,7 @@ func (o *PcfInfo) GetRxDiamRealmOk() (*string, bool) {
 
 // HasRxDiamRealm returns a boolean if a field has been set.
 func (o *PcfInfo) HasRxDiamRealm() bool {
-	if o != nil && !isNil(o.RxDiamRealm) {
+	if o != nil && !IsNil(o.RxDiamRealm) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *PcfInfo) SetRxDiamRealm(v string) {
 
 // GetV2xSupportInd returns the V2xSupportInd field value if set, zero value otherwise.
 func (o *PcfInfo) GetV2xSupportInd() bool {
-	if o == nil || isNil(o.V2xSupportInd) {
+	if o == nil || IsNil(o.V2xSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *PcfInfo) GetV2xSupportInd() bool {
 // GetV2xSupportIndOk returns a tuple with the V2xSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetV2xSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.V2xSupportInd) {
+	if o == nil || IsNil(o.V2xSupportInd) {
 		return nil, false
 	}
 	return o.V2xSupportInd, true
@@ -271,7 +271,7 @@ func (o *PcfInfo) GetV2xSupportIndOk() (*bool, bool) {
 
 // HasV2xSupportInd returns a boolean if a field has been set.
 func (o *PcfInfo) HasV2xSupportInd() bool {
-	if o != nil && !isNil(o.V2xSupportInd) {
+	if o != nil && !IsNil(o.V2xSupportInd) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *PcfInfo) SetV2xSupportInd(v bool) {
 
 // GetProseSupportInd returns the ProseSupportInd field value if set, zero value otherwise.
 func (o *PcfInfo) GetProseSupportInd() bool {
-	if o == nil || isNil(o.ProseSupportInd) {
+	if o == nil || IsNil(o.ProseSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *PcfInfo) GetProseSupportInd() bool {
 // GetProseSupportIndOk returns a tuple with the ProseSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetProseSupportIndOk() (*bool, bool) {
-	if o == nil || isNil(o.ProseSupportInd) {
+	if o == nil || IsNil(o.ProseSupportInd) {
 		return nil, false
 	}
 	return o.ProseSupportInd, true
@@ -303,7 +303,7 @@ func (o *PcfInfo) GetProseSupportIndOk() (*bool, bool) {
 
 // HasProseSupportInd returns a boolean if a field has been set.
 func (o *PcfInfo) HasProseSupportInd() bool {
-	if o != nil && !isNil(o.ProseSupportInd) {
+	if o != nil && !IsNil(o.ProseSupportInd) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *PcfInfo) SetProseSupportInd(v bool) {
 
 // GetProseCapability returns the ProseCapability field value if set, zero value otherwise.
 func (o *PcfInfo) GetProseCapability() ProSeCapability {
-	if o == nil || isNil(o.ProseCapability) {
+	if o == nil || IsNil(o.ProseCapability) {
 		var ret ProSeCapability
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *PcfInfo) GetProseCapability() ProSeCapability {
 // GetProseCapabilityOk returns a tuple with the ProseCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetProseCapabilityOk() (*ProSeCapability, bool) {
-	if o == nil || isNil(o.ProseCapability) {
+	if o == nil || IsNil(o.ProseCapability) {
 		return nil, false
 	}
 	return o.ProseCapability, true
@@ -335,7 +335,7 @@ func (o *PcfInfo) GetProseCapabilityOk() (*ProSeCapability, bool) {
 
 // HasProseCapability returns a boolean if a field has been set.
 func (o *PcfInfo) HasProseCapability() bool {
-	if o != nil && !isNil(o.ProseCapability) {
+	if o != nil && !IsNil(o.ProseCapability) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *PcfInfo) SetProseCapability(v ProSeCapability) {
 
 // GetV2xCapability returns the V2xCapability field value if set, zero value otherwise.
 func (o *PcfInfo) GetV2xCapability() V2xCapability {
-	if o == nil || isNil(o.V2xCapability) {
+	if o == nil || IsNil(o.V2xCapability) {
 		var ret V2xCapability
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *PcfInfo) GetV2xCapability() V2xCapability {
 // GetV2xCapabilityOk returns a tuple with the V2xCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfInfo) GetV2xCapabilityOk() (*V2xCapability, bool) {
-	if o == nil || isNil(o.V2xCapability) {
+	if o == nil || IsNil(o.V2xCapability) {
 		return nil, false
 	}
 	return o.V2xCapability, true
@@ -367,7 +367,7 @@ func (o *PcfInfo) GetV2xCapabilityOk() (*V2xCapability, bool) {
 
 // HasV2xCapability returns a boolean if a field has been set.
 func (o *PcfInfo) HasV2xCapability() bool {
-	if o != nil && !isNil(o.V2xCapability) {
+	if o != nil && !IsNil(o.V2xCapability) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *PcfInfo) SetV2xCapability(v V2xCapability) {
 }
 
 func (o PcfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -389,34 +389,34 @@ func (o PcfInfo) MarshalJSON() ([]byte, error) {
 
 func (o PcfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.DnnList) {
+	if !IsNil(o.DnnList) {
 		toSerialize["dnnList"] = o.DnnList
 	}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.GpsiRanges) {
+	if !IsNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !isNil(o.RxDiamHost) {
+	if !IsNil(o.RxDiamHost) {
 		toSerialize["rxDiamHost"] = o.RxDiamHost
 	}
-	if !isNil(o.RxDiamRealm) {
+	if !IsNil(o.RxDiamRealm) {
 		toSerialize["rxDiamRealm"] = o.RxDiamRealm
 	}
-	if !isNil(o.V2xSupportInd) {
+	if !IsNil(o.V2xSupportInd) {
 		toSerialize["v2xSupportInd"] = o.V2xSupportInd
 	}
-	if !isNil(o.ProseSupportInd) {
+	if !IsNil(o.ProseSupportInd) {
 		toSerialize["proseSupportInd"] = o.ProseSupportInd
 	}
-	if !isNil(o.ProseCapability) {
+	if !IsNil(o.ProseCapability) {
 		toSerialize["proseCapability"] = o.ProseCapability
 	}
-	if !isNil(o.V2xCapability) {
+	if !IsNil(o.V2xCapability) {
 		toSerialize["v2xCapability"] = o.V2xCapability
 	}
 	return toSerialize, nil
@@ -457,5 +457,3 @@ func (v *NullablePcfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

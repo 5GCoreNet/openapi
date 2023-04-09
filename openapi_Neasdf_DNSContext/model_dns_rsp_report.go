@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &DnsRspReport{}
 // DnsRspReport DNS Response Event Report
 type DnsRspReport struct {
 	// Fully Qualified Domain Name
-	Fqdn *string `json:"fqdn,omitempty"`
-	EasIpv4Addresses []string `json:"easIpv4Addresses,omitempty"`
+	Fqdn             *string    `json:"fqdn,omitempty"`
+	EasIpv4Addresses []string   `json:"easIpv4Addresses,omitempty"`
 	EasIpv6Addresses []Ipv6Addr `json:"easIpv6Addresses,omitempty"`
-	EcsOption *EcsOption `json:"ecsOption,omitempty"`
+	EcsOption        *EcsOption `json:"ecsOption,omitempty"`
 }
 
 // NewDnsRspReport instantiates a new DnsRspReport object
@@ -45,7 +45,7 @@ func NewDnsRspReportWithDefaults() *DnsRspReport {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *DnsRspReport) GetFqdn() string {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *DnsRspReport) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspReport) GetFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.Fqdn) {
+	if o == nil || IsNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -63,7 +63,7 @@ func (o *DnsRspReport) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *DnsRspReport) HasFqdn() bool {
-	if o != nil && !isNil(o.Fqdn) {
+	if o != nil && !IsNil(o.Fqdn) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *DnsRspReport) SetFqdn(v string) {
 
 // GetEasIpv4Addresses returns the EasIpv4Addresses field value if set, zero value otherwise.
 func (o *DnsRspReport) GetEasIpv4Addresses() []string {
-	if o == nil || isNil(o.EasIpv4Addresses) {
+	if o == nil || IsNil(o.EasIpv4Addresses) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DnsRspReport) GetEasIpv4Addresses() []string {
 // GetEasIpv4AddressesOk returns a tuple with the EasIpv4Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspReport) GetEasIpv4AddressesOk() ([]string, bool) {
-	if o == nil || isNil(o.EasIpv4Addresses) {
+	if o == nil || IsNil(o.EasIpv4Addresses) {
 		return nil, false
 	}
 	return o.EasIpv4Addresses, true
@@ -95,7 +95,7 @@ func (o *DnsRspReport) GetEasIpv4AddressesOk() ([]string, bool) {
 
 // HasEasIpv4Addresses returns a boolean if a field has been set.
 func (o *DnsRspReport) HasEasIpv4Addresses() bool {
-	if o != nil && !isNil(o.EasIpv4Addresses) {
+	if o != nil && !IsNil(o.EasIpv4Addresses) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DnsRspReport) SetEasIpv4Addresses(v []string) {
 
 // GetEasIpv6Addresses returns the EasIpv6Addresses field value if set, zero value otherwise.
 func (o *DnsRspReport) GetEasIpv6Addresses() []Ipv6Addr {
-	if o == nil || isNil(o.EasIpv6Addresses) {
+	if o == nil || IsNil(o.EasIpv6Addresses) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *DnsRspReport) GetEasIpv6Addresses() []Ipv6Addr {
 // GetEasIpv6AddressesOk returns a tuple with the EasIpv6Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspReport) GetEasIpv6AddressesOk() ([]Ipv6Addr, bool) {
-	if o == nil || isNil(o.EasIpv6Addresses) {
+	if o == nil || IsNil(o.EasIpv6Addresses) {
 		return nil, false
 	}
 	return o.EasIpv6Addresses, true
@@ -127,7 +127,7 @@ func (o *DnsRspReport) GetEasIpv6AddressesOk() ([]Ipv6Addr, bool) {
 
 // HasEasIpv6Addresses returns a boolean if a field has been set.
 func (o *DnsRspReport) HasEasIpv6Addresses() bool {
-	if o != nil && !isNil(o.EasIpv6Addresses) {
+	if o != nil && !IsNil(o.EasIpv6Addresses) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *DnsRspReport) SetEasIpv6Addresses(v []Ipv6Addr) {
 
 // GetEcsOption returns the EcsOption field value if set, zero value otherwise.
 func (o *DnsRspReport) GetEcsOption() EcsOption {
-	if o == nil || isNil(o.EcsOption) {
+	if o == nil || IsNil(o.EcsOption) {
 		var ret EcsOption
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DnsRspReport) GetEcsOption() EcsOption {
 // GetEcsOptionOk returns a tuple with the EcsOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsRspReport) GetEcsOptionOk() (*EcsOption, bool) {
-	if o == nil || isNil(o.EcsOption) {
+	if o == nil || IsNil(o.EcsOption) {
 		return nil, false
 	}
 	return o.EcsOption, true
@@ -159,7 +159,7 @@ func (o *DnsRspReport) GetEcsOptionOk() (*EcsOption, bool) {
 
 // HasEcsOption returns a boolean if a field has been set.
 func (o *DnsRspReport) HasEcsOption() bool {
-	if o != nil && !isNil(o.EcsOption) {
+	if o != nil && !IsNil(o.EcsOption) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *DnsRspReport) SetEcsOption(v EcsOption) {
 }
 
 func (o DnsRspReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o DnsRspReport) MarshalJSON() ([]byte, error) {
 
 func (o DnsRspReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Fqdn) {
+	if !IsNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if !isNil(o.EasIpv4Addresses) {
+	if !IsNil(o.EasIpv4Addresses) {
 		toSerialize["easIpv4Addresses"] = o.EasIpv4Addresses
 	}
-	if !isNil(o.EasIpv6Addresses) {
+	if !IsNil(o.EasIpv6Addresses) {
 		toSerialize["easIpv6Addresses"] = o.EasIpv6Addresses
 	}
-	if !isNil(o.EcsOption) {
+	if !IsNil(o.EcsOption) {
 		toSerialize["ecsOption"] = o.EcsOption
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableDnsRspReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_UEAU
 
-UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM UE Authentication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &ProSeAuthenticationInfoResult{}
 
 // ProSeAuthenticationInfoResult struct for ProSeAuthenticationInfoResult
 type ProSeAuthenticationInfoResult struct {
-	AuthType AuthType `json:"authType"`
+	AuthType                   AuthType                    `json:"authType"`
 	ProseAuthenticationVectors *ProSeAuthenticationVectors `json:"proseAuthenticationVectors,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi *string `json:"supi,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *ProSeAuthenticationInfoResult) SetAuthType(v AuthType) {
 
 // GetProseAuthenticationVectors returns the ProseAuthenticationVectors field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectors() ProSeAuthenticationVectors {
-	if o == nil || isNil(o.ProseAuthenticationVectors) {
+	if o == nil || IsNil(o.ProseAuthenticationVectors) {
 		var ret ProSeAuthenticationVectors
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectors() ProSeAut
 // GetProseAuthenticationVectorsOk returns a tuple with the ProseAuthenticationVectors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectorsOk() (*ProSeAuthenticationVectors, bool) {
-	if o == nil || isNil(o.ProseAuthenticationVectors) {
+	if o == nil || IsNil(o.ProseAuthenticationVectors) {
 		return nil, false
 	}
 	return o.ProseAuthenticationVectors, true
@@ -89,7 +89,7 @@ func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectorsOk() (*ProS
 
 // HasProseAuthenticationVectors returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfoResult) HasProseAuthenticationVectors() bool {
-	if o != nil && !isNil(o.ProseAuthenticationVectors) {
+	if o != nil && !IsNil(o.ProseAuthenticationVectors) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ProSeAuthenticationInfoResult) SetProseAuthenticationVectors(v ProSeAut
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfoResult) GetSupi() string {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfoResult) GetSupiOk() (*string, bool) {
-	if o == nil || isNil(o.Supi) {
+	if o == nil || IsNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -121,7 +121,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfoResult) HasSupi() bool {
-	if o != nil && !isNil(o.Supi) {
+	if o != nil && !IsNil(o.Supi) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ProSeAuthenticationInfoResult) SetSupi(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfoResult) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -153,7 +153,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool)
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfoResult) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *ProSeAuthenticationInfoResult) SetSupportedFeatures(v string) {
 }
 
 func (o ProSeAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -176,13 +176,13 @@ func (o ProSeAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 func (o ProSeAuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authType"] = o.AuthType
-	if !isNil(o.ProseAuthenticationVectors) {
+	if !IsNil(o.ProseAuthenticationVectors) {
 		toSerialize["proseAuthenticationVectors"] = o.ProseAuthenticationVectors
 	}
-	if !isNil(o.Supi) {
+	if !IsNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -223,5 +223,3 @@ func (v *NullableProSeAuthenticationInfoResult) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

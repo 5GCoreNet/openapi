@@ -1,7 +1,7 @@
 /*
 CAPIF_Discover_Service_API
 
-API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for discovering service APIs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the DiscoveredAPIs type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DiscoveredAPIs{}
 
-// DiscoveredAPIs Represents a list of APIs currently registered in the CAPIF core function and satisfying a number of filter criteria provided by the API consumer. 
+// DiscoveredAPIs Represents a list of APIs currently registered in the CAPIF core function and satisfying a number of filter criteria provided by the API consumer.
 type DiscoveredAPIs struct {
-	// Description of the service API as published by the service. Each service API description shall include AEF profiles matching the filter criteria. 
+	// Description of the service API as published by the service. Each service API description shall include AEF profiles matching the filter criteria.
 	ServiceAPIDescriptions []ServiceAPIDescription `json:"serviceAPIDescriptions,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewDiscoveredAPIsWithDefaults() *DiscoveredAPIs {
 
 // GetServiceAPIDescriptions returns the ServiceAPIDescriptions field value if set, zero value otherwise.
 func (o *DiscoveredAPIs) GetServiceAPIDescriptions() []ServiceAPIDescription {
-	if o == nil || isNil(o.ServiceAPIDescriptions) {
+	if o == nil || IsNil(o.ServiceAPIDescriptions) {
 		var ret []ServiceAPIDescription
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DiscoveredAPIs) GetServiceAPIDescriptions() []ServiceAPIDescription {
 // GetServiceAPIDescriptionsOk returns a tuple with the ServiceAPIDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiscoveredAPIs) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription, bool) {
-	if o == nil || isNil(o.ServiceAPIDescriptions) {
+	if o == nil || IsNil(o.ServiceAPIDescriptions) {
 		return nil, false
 	}
 	return o.ServiceAPIDescriptions, true
@@ -60,7 +60,7 @@ func (o *DiscoveredAPIs) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription,
 
 // HasServiceAPIDescriptions returns a boolean if a field has been set.
 func (o *DiscoveredAPIs) HasServiceAPIDescriptions() bool {
-	if o != nil && !isNil(o.ServiceAPIDescriptions) {
+	if o != nil && !IsNil(o.ServiceAPIDescriptions) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *DiscoveredAPIs) SetServiceAPIDescriptions(v []ServiceAPIDescription) {
 }
 
 func (o DiscoveredAPIs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o DiscoveredAPIs) MarshalJSON() ([]byte, error) {
 
 func (o DiscoveredAPIs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceAPIDescriptions) {
+	if !IsNil(o.ServiceAPIDescriptions) {
 		toSerialize["serviceAPIDescriptions"] = o.ServiceAPIDescriptions
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableDiscoveredAPIs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

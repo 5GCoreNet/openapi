@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NefEventSubs{}
 
 // NefEventSubs Represents an event to be subscribed and the related event filter information.
 type NefEventSubs struct {
-	Event NefEvent `json:"event"`
+	Event       NefEvent        `json:"event"`
 	EventFilter *NefEventFilter `json:"eventFilter,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *NefEventSubs) SetEvent(v NefEvent) {
 
 // GetEventFilter returns the EventFilter field value if set, zero value otherwise.
 func (o *NefEventSubs) GetEventFilter() NefEventFilter {
-	if o == nil || isNil(o.EventFilter) {
+	if o == nil || IsNil(o.EventFilter) {
 		var ret NefEventFilter
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NefEventSubs) GetEventFilter() NefEventFilter {
 // GetEventFilterOk returns a tuple with the EventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventSubs) GetEventFilterOk() (*NefEventFilter, bool) {
-	if o == nil || isNil(o.EventFilter) {
+	if o == nil || IsNil(o.EventFilter) {
 		return nil, false
 	}
 	return o.EventFilter, true
@@ -85,7 +85,7 @@ func (o *NefEventSubs) GetEventFilterOk() (*NefEventFilter, bool) {
 
 // HasEventFilter returns a boolean if a field has been set.
 func (o *NefEventSubs) HasEventFilter() bool {
-	if o != nil && !isNil(o.EventFilter) {
+	if o != nil && !IsNil(o.EventFilter) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *NefEventSubs) SetEventFilter(v NefEventFilter) {
 }
 
 func (o NefEventSubs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o NefEventSubs) MarshalJSON() ([]byte, error) {
 func (o NefEventSubs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.EventFilter) {
+	if !IsNil(o.EventFilter) {
 		toSerialize["eventFilter"] = o.EventFilter
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableNefEventSubs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

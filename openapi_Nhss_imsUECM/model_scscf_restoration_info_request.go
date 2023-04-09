@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewScscfRestorationInfoRequestWithDefaults() *ScscfRestorationInfoRequest {
 
 // GetScscfRestorationInfoRequest returns the ScscfRestorationInfoRequest field value if set, zero value otherwise.
 func (o *ScscfRestorationInfoRequest) GetScscfRestorationInfoRequest() ScscfRestorationInfo {
-	if o == nil || isNil(o.ScscfRestorationInfoRequest) {
+	if o == nil || IsNil(o.ScscfRestorationInfoRequest) {
 		var ret ScscfRestorationInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ScscfRestorationInfoRequest) GetScscfRestorationInfoRequest() ScscfRest
 // GetScscfRestorationInfoRequestOk returns a tuple with the ScscfRestorationInfoRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRestorationInfoRequest) GetScscfRestorationInfoRequestOk() (*ScscfRestorationInfo, bool) {
-	if o == nil || isNil(o.ScscfRestorationInfoRequest) {
+	if o == nil || IsNil(o.ScscfRestorationInfoRequest) {
 		return nil, false
 	}
 	return o.ScscfRestorationInfoRequest, true
@@ -59,7 +59,7 @@ func (o *ScscfRestorationInfoRequest) GetScscfRestorationInfoRequestOk() (*Scscf
 
 // HasScscfRestorationInfoRequest returns a boolean if a field has been set.
 func (o *ScscfRestorationInfoRequest) HasScscfRestorationInfoRequest() bool {
-	if o != nil && !isNil(o.ScscfRestorationInfoRequest) {
+	if o != nil && !IsNil(o.ScscfRestorationInfoRequest) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ScscfRestorationInfoRequest) SetScscfRestorationInfoRequest(v ScscfRest
 }
 
 func (o ScscfRestorationInfoRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ScscfRestorationInfoRequest) MarshalJSON() ([]byte, error) {
 
 func (o ScscfRestorationInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ScscfRestorationInfoRequest) {
+	if !IsNil(o.ScscfRestorationInfoRequest) {
 		toSerialize["scscfRestorationInfoRequest"] = o.ScscfRestorationInfoRequest
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableScscfRestorationInfoRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

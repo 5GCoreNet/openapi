@@ -20,11 +20,11 @@ type SsbPeriodicity int32
 
 // List of SsbPeriodicity
 const (
-	_5 SsbPeriodicity = 5
-	_10 SsbPeriodicity = 10
-	_20 SsbPeriodicity = 20
-	_40 SsbPeriodicity = 40
-	_80 SsbPeriodicity = 80
+	_5   SsbPeriodicity = 5
+	_10  SsbPeriodicity = 10
+	_20  SsbPeriodicity = 20
+	_40  SsbPeriodicity = 40
+	_80  SsbPeriodicity = 80
 	_160 SsbPeriodicity = 160
 )
 
@@ -116,4 +116,3 @@ func (v *NullableSsbPeriodicity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 3gpp-eas-deployment
 
-API for AF provisioned EAS Deployment.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF provisioned EAS Deployment.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -41,7 +41,7 @@ func NewStringMatchingRuleWithDefaults() *StringMatchingRule {
 
 // GetStringMatchingConditions returns the StringMatchingConditions field value if set, zero value otherwise.
 func (o *StringMatchingRule) GetStringMatchingConditions() []StringMatchingCondition {
-	if o == nil || isNil(o.StringMatchingConditions) {
+	if o == nil || IsNil(o.StringMatchingConditions) {
 		var ret []StringMatchingCondition
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *StringMatchingRule) GetStringMatchingConditions() []StringMatchingCondi
 // GetStringMatchingConditionsOk returns a tuple with the StringMatchingConditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringMatchingRule) GetStringMatchingConditionsOk() ([]StringMatchingCondition, bool) {
-	if o == nil || isNil(o.StringMatchingConditions) {
+	if o == nil || IsNil(o.StringMatchingConditions) {
 		return nil, false
 	}
 	return o.StringMatchingConditions, true
@@ -59,7 +59,7 @@ func (o *StringMatchingRule) GetStringMatchingConditionsOk() ([]StringMatchingCo
 
 // HasStringMatchingConditions returns a boolean if a field has been set.
 func (o *StringMatchingRule) HasStringMatchingConditions() bool {
-	if o != nil && !isNil(o.StringMatchingConditions) {
+	if o != nil && !IsNil(o.StringMatchingConditions) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *StringMatchingRule) SetStringMatchingConditions(v []StringMatchingCondi
 }
 
 func (o StringMatchingRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o StringMatchingRule) MarshalJSON() ([]byte, error) {
 
 func (o StringMatchingRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.StringMatchingConditions) {
+	if !IsNil(o.StringMatchingConditions) {
 		toSerialize["stringMatchingConditions"] = o.StringMatchingConditions
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableStringMatchingRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

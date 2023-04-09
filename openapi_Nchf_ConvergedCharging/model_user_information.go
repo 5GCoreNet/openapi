@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &UserInformation{}
 
 // UserInformation struct for UserInformation
 type UserInformation struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	ServedGPSI *string `json:"servedGPSI,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	ServedPEI *string `json:"servedPEI,omitempty"`
-	UnauthenticatedFlag *bool `json:"unauthenticatedFlag,omitempty"`
-	RoamerInOut *RoamerInOut `json:"roamerInOut,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	ServedPEI           *string      `json:"servedPEI,omitempty"`
+	UnauthenticatedFlag *bool        `json:"unauthenticatedFlag,omitempty"`
+	RoamerInOut         *RoamerInOut `json:"roamerInOut,omitempty"`
 }
 
 // NewUserInformation instantiates a new UserInformation object
@@ -46,7 +46,7 @@ func NewUserInformationWithDefaults() *UserInformation {
 
 // GetServedGPSI returns the ServedGPSI field value if set, zero value otherwise.
 func (o *UserInformation) GetServedGPSI() string {
-	if o == nil || isNil(o.ServedGPSI) {
+	if o == nil || IsNil(o.ServedGPSI) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *UserInformation) GetServedGPSI() string {
 // GetServedGPSIOk returns a tuple with the ServedGPSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetServedGPSIOk() (*string, bool) {
-	if o == nil || isNil(o.ServedGPSI) {
+	if o == nil || IsNil(o.ServedGPSI) {
 		return nil, false
 	}
 	return o.ServedGPSI, true
@@ -64,7 +64,7 @@ func (o *UserInformation) GetServedGPSIOk() (*string, bool) {
 
 // HasServedGPSI returns a boolean if a field has been set.
 func (o *UserInformation) HasServedGPSI() bool {
-	if o != nil && !isNil(o.ServedGPSI) {
+	if o != nil && !IsNil(o.ServedGPSI) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *UserInformation) SetServedGPSI(v string) {
 
 // GetServedPEI returns the ServedPEI field value if set, zero value otherwise.
 func (o *UserInformation) GetServedPEI() string {
-	if o == nil || isNil(o.ServedPEI) {
+	if o == nil || IsNil(o.ServedPEI) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *UserInformation) GetServedPEI() string {
 // GetServedPEIOk returns a tuple with the ServedPEI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetServedPEIOk() (*string, bool) {
-	if o == nil || isNil(o.ServedPEI) {
+	if o == nil || IsNil(o.ServedPEI) {
 		return nil, false
 	}
 	return o.ServedPEI, true
@@ -96,7 +96,7 @@ func (o *UserInformation) GetServedPEIOk() (*string, bool) {
 
 // HasServedPEI returns a boolean if a field has been set.
 func (o *UserInformation) HasServedPEI() bool {
-	if o != nil && !isNil(o.ServedPEI) {
+	if o != nil && !IsNil(o.ServedPEI) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *UserInformation) SetServedPEI(v string) {
 
 // GetUnauthenticatedFlag returns the UnauthenticatedFlag field value if set, zero value otherwise.
 func (o *UserInformation) GetUnauthenticatedFlag() bool {
-	if o == nil || isNil(o.UnauthenticatedFlag) {
+	if o == nil || IsNil(o.UnauthenticatedFlag) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *UserInformation) GetUnauthenticatedFlag() bool {
 // GetUnauthenticatedFlagOk returns a tuple with the UnauthenticatedFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetUnauthenticatedFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.UnauthenticatedFlag) {
+	if o == nil || IsNil(o.UnauthenticatedFlag) {
 		return nil, false
 	}
 	return o.UnauthenticatedFlag, true
@@ -128,7 +128,7 @@ func (o *UserInformation) GetUnauthenticatedFlagOk() (*bool, bool) {
 
 // HasUnauthenticatedFlag returns a boolean if a field has been set.
 func (o *UserInformation) HasUnauthenticatedFlag() bool {
-	if o != nil && !isNil(o.UnauthenticatedFlag) {
+	if o != nil && !IsNil(o.UnauthenticatedFlag) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *UserInformation) SetUnauthenticatedFlag(v bool) {
 
 // GetRoamerInOut returns the RoamerInOut field value if set, zero value otherwise.
 func (o *UserInformation) GetRoamerInOut() RoamerInOut {
-	if o == nil || isNil(o.RoamerInOut) {
+	if o == nil || IsNil(o.RoamerInOut) {
 		var ret RoamerInOut
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *UserInformation) GetRoamerInOut() RoamerInOut {
 // GetRoamerInOutOk returns a tuple with the RoamerInOut field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetRoamerInOutOk() (*RoamerInOut, bool) {
-	if o == nil || isNil(o.RoamerInOut) {
+	if o == nil || IsNil(o.RoamerInOut) {
 		return nil, false
 	}
 	return o.RoamerInOut, true
@@ -160,7 +160,7 @@ func (o *UserInformation) GetRoamerInOutOk() (*RoamerInOut, bool) {
 
 // HasRoamerInOut returns a boolean if a field has been set.
 func (o *UserInformation) HasRoamerInOut() bool {
-	if o != nil && !isNil(o.RoamerInOut) {
+	if o != nil && !IsNil(o.RoamerInOut) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *UserInformation) SetRoamerInOut(v RoamerInOut) {
 }
 
 func (o UserInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o UserInformation) MarshalJSON() ([]byte, error) {
 
 func (o UserInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServedGPSI) {
+	if !IsNil(o.ServedGPSI) {
 		toSerialize["servedGPSI"] = o.ServedGPSI
 	}
-	if !isNil(o.ServedPEI) {
+	if !IsNil(o.ServedPEI) {
 		toSerialize["servedPEI"] = o.ServedPEI
 	}
-	if !isNil(o.UnauthenticatedFlag) {
+	if !IsNil(o.UnauthenticatedFlag) {
 		toSerialize["unauthenticatedFlag"] = o.UnauthenticatedFlag
 	}
-	if !isNil(o.RoamerInOut) {
+	if !IsNil(o.RoamerInOut) {
 		toSerialize["roamerInOut"] = o.RoamerInOut
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableUserInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

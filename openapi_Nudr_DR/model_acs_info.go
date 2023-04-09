@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &AcsInfo{}
 type AcsInfo struct {
 	// String providing an URI formatted according to RFC 3986.
 	AcsUrl *string `json:"acsUrl,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	AcsIpv4Addr *string `json:"acsIpv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	AcsIpv4Addr *string   `json:"acsIpv4Addr,omitempty"`
 	AcsIpv6Addr *Ipv6Addr `json:"acsIpv6Addr,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewAcsInfoWithDefaults() *AcsInfo {
 
 // GetAcsUrl returns the AcsUrl field value if set, zero value otherwise.
 func (o *AcsInfo) GetAcsUrl() string {
-	if o == nil || isNil(o.AcsUrl) {
+	if o == nil || IsNil(o.AcsUrl) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AcsInfo) GetAcsUrl() string {
 // GetAcsUrlOk returns a tuple with the AcsUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcsInfo) GetAcsUrlOk() (*string, bool) {
-	if o == nil || isNil(o.AcsUrl) {
+	if o == nil || IsNil(o.AcsUrl) {
 		return nil, false
 	}
 	return o.AcsUrl, true
@@ -63,7 +63,7 @@ func (o *AcsInfo) GetAcsUrlOk() (*string, bool) {
 
 // HasAcsUrl returns a boolean if a field has been set.
 func (o *AcsInfo) HasAcsUrl() bool {
-	if o != nil && !isNil(o.AcsUrl) {
+	if o != nil && !IsNil(o.AcsUrl) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AcsInfo) SetAcsUrl(v string) {
 
 // GetAcsIpv4Addr returns the AcsIpv4Addr field value if set, zero value otherwise.
 func (o *AcsInfo) GetAcsIpv4Addr() string {
-	if o == nil || isNil(o.AcsIpv4Addr) {
+	if o == nil || IsNil(o.AcsIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AcsInfo) GetAcsIpv4Addr() string {
 // GetAcsIpv4AddrOk returns a tuple with the AcsIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcsInfo) GetAcsIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.AcsIpv4Addr) {
+	if o == nil || IsNil(o.AcsIpv4Addr) {
 		return nil, false
 	}
 	return o.AcsIpv4Addr, true
@@ -95,7 +95,7 @@ func (o *AcsInfo) GetAcsIpv4AddrOk() (*string, bool) {
 
 // HasAcsIpv4Addr returns a boolean if a field has been set.
 func (o *AcsInfo) HasAcsIpv4Addr() bool {
-	if o != nil && !isNil(o.AcsIpv4Addr) {
+	if o != nil && !IsNil(o.AcsIpv4Addr) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AcsInfo) SetAcsIpv4Addr(v string) {
 
 // GetAcsIpv6Addr returns the AcsIpv6Addr field value if set, zero value otherwise.
 func (o *AcsInfo) GetAcsIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.AcsIpv6Addr) {
+	if o == nil || IsNil(o.AcsIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AcsInfo) GetAcsIpv6Addr() Ipv6Addr {
 // GetAcsIpv6AddrOk returns a tuple with the AcsIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcsInfo) GetAcsIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.AcsIpv6Addr) {
+	if o == nil || IsNil(o.AcsIpv6Addr) {
 		return nil, false
 	}
 	return o.AcsIpv6Addr, true
@@ -127,7 +127,7 @@ func (o *AcsInfo) GetAcsIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasAcsIpv6Addr returns a boolean if a field has been set.
 func (o *AcsInfo) HasAcsIpv6Addr() bool {
-	if o != nil && !isNil(o.AcsIpv6Addr) {
+	if o != nil && !IsNil(o.AcsIpv6Addr) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AcsInfo) SetAcsIpv6Addr(v Ipv6Addr) {
 }
 
 func (o AcsInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o AcsInfo) MarshalJSON() ([]byte, error) {
 
 func (o AcsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AcsUrl) {
+	if !IsNil(o.AcsUrl) {
 		toSerialize["acsUrl"] = o.AcsUrl
 	}
-	if !isNil(o.AcsIpv4Addr) {
+	if !IsNil(o.AcsIpv4Addr) {
 		toSerialize["acsIpv4Addr"] = o.AcsIpv4Addr
 	}
-	if !isNil(o.AcsIpv6Addr) {
+	if !IsNil(o.AcsIpv6Addr) {
 		toSerialize["acsIpv6Addr"] = o.AcsIpv6Addr
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableAcsInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

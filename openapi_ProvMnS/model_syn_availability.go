@@ -20,8 +20,8 @@ type SynAvailability string
 
 // List of SynAvailability
 const (
-	NOT_SUPPORTED SynAvailability = "NOT SUPPORTED"
-	BETWEEN_BS_AND_UE SynAvailability = "BETWEEN BS AND UE"
+	NOT_SUPPORTED                SynAvailability = "NOT SUPPORTED"
+	BETWEEN_BS_AND_UE            SynAvailability = "BETWEEN BS AND UE"
 	BETWEEN_BS_AND_UE__UE_AND_UE SynAvailability = "BETWEEN BS AND UE & UE AND UE"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableSynAvailability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

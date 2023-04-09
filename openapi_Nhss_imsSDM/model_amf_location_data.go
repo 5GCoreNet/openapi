@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &AmfLocationData{}
 
 // AmfLocationData Location information as retrieved from the AMF serving node
 type AmfLocationData struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	AmfAddress string `json:"amfAddress"`
-	PlmnId PlmnId `json:"plmnId"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	AmfAddress  string      `json:"amfAddress"`
+	PlmnId      PlmnId      `json:"plmnId"`
 	AmfLocation *NrLocation `json:"amfLocation,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SmsfAddress *string `json:"smsfAddress,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	TimeZone *string `json:"timeZone,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	TimeZone *string  `json:"timeZone,omitempty"`
+	RatType  *RatType `json:"ratType,omitempty"`
 }
 
 // NewAmfLocationData instantiates a new AmfLocationData object
@@ -99,7 +99,7 @@ func (o *AmfLocationData) SetPlmnId(v PlmnId) {
 
 // GetAmfLocation returns the AmfLocation field value if set, zero value otherwise.
 func (o *AmfLocationData) GetAmfLocation() NrLocation {
-	if o == nil || isNil(o.AmfLocation) {
+	if o == nil || IsNil(o.AmfLocation) {
 		var ret NrLocation
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *AmfLocationData) GetAmfLocation() NrLocation {
 // GetAmfLocationOk returns a tuple with the AmfLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetAmfLocationOk() (*NrLocation, bool) {
-	if o == nil || isNil(o.AmfLocation) {
+	if o == nil || IsNil(o.AmfLocation) {
 		return nil, false
 	}
 	return o.AmfLocation, true
@@ -117,7 +117,7 @@ func (o *AmfLocationData) GetAmfLocationOk() (*NrLocation, bool) {
 
 // HasAmfLocation returns a boolean if a field has been set.
 func (o *AmfLocationData) HasAmfLocation() bool {
-	if o != nil && !isNil(o.AmfLocation) {
+	if o != nil && !IsNil(o.AmfLocation) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AmfLocationData) SetAmfLocation(v NrLocation) {
 
 // GetSmsfAddress returns the SmsfAddress field value if set, zero value otherwise.
 func (o *AmfLocationData) GetSmsfAddress() string {
-	if o == nil || isNil(o.SmsfAddress) {
+	if o == nil || IsNil(o.SmsfAddress) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *AmfLocationData) GetSmsfAddress() string {
 // GetSmsfAddressOk returns a tuple with the SmsfAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetSmsfAddressOk() (*string, bool) {
-	if o == nil || isNil(o.SmsfAddress) {
+	if o == nil || IsNil(o.SmsfAddress) {
 		return nil, false
 	}
 	return o.SmsfAddress, true
@@ -149,7 +149,7 @@ func (o *AmfLocationData) GetSmsfAddressOk() (*string, bool) {
 
 // HasSmsfAddress returns a boolean if a field has been set.
 func (o *AmfLocationData) HasSmsfAddress() bool {
-	if o != nil && !isNil(o.SmsfAddress) {
+	if o != nil && !IsNil(o.SmsfAddress) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *AmfLocationData) SetSmsfAddress(v string) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *AmfLocationData) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *AmfLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -181,7 +181,7 @@ func (o *AmfLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *AmfLocationData) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *AmfLocationData) SetTimeZone(v string) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *AmfLocationData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *AmfLocationData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -213,7 +213,7 @@ func (o *AmfLocationData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *AmfLocationData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *AmfLocationData) SetRatType(v RatType) {
 }
 
 func (o AmfLocationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -237,16 +237,16 @@ func (o AmfLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfAddress"] = o.AmfAddress
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.AmfLocation) {
+	if !IsNil(o.AmfLocation) {
 		toSerialize["amfLocation"] = o.AmfLocation
 	}
-	if !isNil(o.SmsfAddress) {
+	if !IsNil(o.SmsfAddress) {
 		toSerialize["smsfAddress"] = o.SmsfAddress
 	}
-	if !isNil(o.TimeZone) {
+	if !IsNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil
@@ -287,5 +287,3 @@ func (v *NullableAmfLocationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

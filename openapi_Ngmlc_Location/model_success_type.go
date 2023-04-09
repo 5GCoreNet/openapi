@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // SuccessType Success Type to indicate full or partial success
 type SuccessType struct {
-	SuccessTypeAnyOf *SuccessTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SuccessType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SuccessTypeAnyOf
-	err = json.Unmarshal(data, &dst.SuccessTypeAnyOf);
-	if err == nil {
-		jsonSuccessTypeAnyOf, _ := json.Marshal(dst.SuccessTypeAnyOf)
-		if string(jsonSuccessTypeAnyOf) == "{}" { // empty struct
-			dst.SuccessTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.SuccessTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.SuccessTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SuccessType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SuccessType) MarshalJSON() ([]byte, error) {
-	if src.SuccessTypeAnyOf != nil {
-		return json.Marshal(&src.SuccessTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSuccessType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

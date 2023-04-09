@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the MbsErrorReport type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsErrorReport{}
 
-// MbsErrorReport Represents the reporting of MBS Policy decision level failure(s) and/or MBS PCC rule level failure(s). 
+// MbsErrorReport Represents the reporting of MBS Policy decision level failure(s) and/or MBS PCC rule level failure(s).
 type MbsErrorReport struct {
 	MbsReports []MbsReport `json:"mbsReports,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewMbsErrorReportWithDefaults() *MbsErrorReport {
 
 // GetMbsReports returns the MbsReports field value if set, zero value otherwise.
 func (o *MbsErrorReport) GetMbsReports() []MbsReport {
-	if o == nil || isNil(o.MbsReports) {
+	if o == nil || IsNil(o.MbsReports) {
 		var ret []MbsReport
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MbsErrorReport) GetMbsReports() []MbsReport {
 // GetMbsReportsOk returns a tuple with the MbsReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsErrorReport) GetMbsReportsOk() ([]MbsReport, bool) {
-	if o == nil || isNil(o.MbsReports) {
+	if o == nil || IsNil(o.MbsReports) {
 		return nil, false
 	}
 	return o.MbsReports, true
@@ -59,7 +59,7 @@ func (o *MbsErrorReport) GetMbsReportsOk() ([]MbsReport, bool) {
 
 // HasMbsReports returns a boolean if a field has been set.
 func (o *MbsErrorReport) HasMbsReports() bool {
-	if o != nil && !isNil(o.MbsReports) {
+	if o != nil && !IsNil(o.MbsReports) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MbsErrorReport) SetMbsReports(v []MbsReport) {
 }
 
 func (o MbsErrorReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MbsErrorReport) MarshalJSON() ([]byte, error) {
 
 func (o MbsErrorReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsReports) {
+	if !IsNil(o.MbsReports) {
 		toSerialize["mbsReports"] = o.MbsReports
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMbsErrorReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

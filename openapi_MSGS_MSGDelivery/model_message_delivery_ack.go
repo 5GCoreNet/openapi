@@ -1,7 +1,7 @@
 /*
 MSGS_MSGDelivery
 
-API for MSGG MSGin5G Server Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGG MSGin5G Server Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &MessageDeliveryAck{}
 
 // MessageDeliveryAck Contains the message delivery ack data
 type MessageDeliveryAck struct {
-	OriAddr Address `json:"oriAddr"`
-	MsgId string `json:"msgId"`
-	Status *DeliveryStatus `json:"status,omitempty"`
-	FailureCause *string `json:"failureCause,omitempty"`
+	OriAddr      Address         `json:"oriAddr"`
+	MsgId        string          `json:"msgId"`
+	Status       *DeliveryStatus `json:"status,omitempty"`
+	FailureCause *string         `json:"failureCause,omitempty"`
 }
 
 // NewMessageDeliveryAck instantiates a new MessageDeliveryAck object
@@ -94,7 +94,7 @@ func (o *MessageDeliveryAck) SetMsgId(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *MessageDeliveryAck) GetStatus() DeliveryStatus {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret DeliveryStatus
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *MessageDeliveryAck) GetStatus() DeliveryStatus {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageDeliveryAck) GetStatusOk() (*DeliveryStatus, bool) {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -112,7 +112,7 @@ func (o *MessageDeliveryAck) GetStatusOk() (*DeliveryStatus, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *MessageDeliveryAck) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *MessageDeliveryAck) SetStatus(v DeliveryStatus) {
 
 // GetFailureCause returns the FailureCause field value if set, zero value otherwise.
 func (o *MessageDeliveryAck) GetFailureCause() string {
-	if o == nil || isNil(o.FailureCause) {
+	if o == nil || IsNil(o.FailureCause) {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *MessageDeliveryAck) GetFailureCause() string {
 // GetFailureCauseOk returns a tuple with the FailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageDeliveryAck) GetFailureCauseOk() (*string, bool) {
-	if o == nil || isNil(o.FailureCause) {
+	if o == nil || IsNil(o.FailureCause) {
 		return nil, false
 	}
 	return o.FailureCause, true
@@ -144,7 +144,7 @@ func (o *MessageDeliveryAck) GetFailureCauseOk() (*string, bool) {
 
 // HasFailureCause returns a boolean if a field has been set.
 func (o *MessageDeliveryAck) HasFailureCause() bool {
-	if o != nil && !isNil(o.FailureCause) {
+	if o != nil && !IsNil(o.FailureCause) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *MessageDeliveryAck) SetFailureCause(v string) {
 }
 
 func (o MessageDeliveryAck) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,10 +168,10 @@ func (o MessageDeliveryAck) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["oriAddr"] = o.OriAddr
 	toSerialize["msgId"] = o.MsgId
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !isNil(o.FailureCause) {
+	if !IsNil(o.FailureCause) {
 		toSerialize["failureCause"] = o.FailureCause
 	}
 	return toSerialize, nil
@@ -212,5 +212,3 @@ func (v *NullableMessageDeliveryAck) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

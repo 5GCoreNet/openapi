@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &ApnRateStatus{}
 
 // ApnRateStatus Contains the APN rate control status e.g. of the AMF.
 type ApnRateStatus struct {
-	// When present, it shall contain the number of packets the UE is allowed to send uplink in the given time unit for the given APN (all PDN connections of the UE to this APN see clause 4.7.7.3 in 3GPP TS 23.401. 
+	// When present, it shall contain the number of packets the UE is allowed to send uplink in the given time unit for the given APN (all PDN connections of the UE to this APN see clause 4.7.7.3 in 3GPP TS 23.401.
 	RemainPacketsUl *int32 `json:"remainPacketsUl,omitempty"`
-	// When present, it shall contain the number of packets the UE is allowed to send uplink in the given time unit for the given APN (all PDN connections of the UE to this APN see clause 4.7.7.3 in 3GPP TS 23.401. 
+	// When present, it shall contain the number of packets the UE is allowed to send uplink in the given time unit for the given APN (all PDN connections of the UE to this APN see clause 4.7.7.3 in 3GPP TS 23.401.
 	RemainPacketsDl *int32 `json:"remainPacketsDl,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ValidityTime *time.Time `json:"validityTime,omitempty"`
-	// When present, it shall indicate the number of additional exception reports the UE is allowed to send uplink in the given time unit for the given APN (all PDN connections of the UE to this APN, see clause 4.7.7.3 in 3GPP TS 23.401. 
+	// When present, it shall indicate the number of additional exception reports the UE is allowed to send uplink in the given time unit for the given APN (all PDN connections of the UE to this APN, see clause 4.7.7.3 in 3GPP TS 23.401.
 	RemainExReportsUl *int32 `json:"remainExReportsUl,omitempty"`
-	// When present, it shall indicate the number of additional exception reports the AF is allowed to send downlink in the  given time unit for the given APN (all PDN connections of the UE to this APN, see clause 4.7.7.3 in 3GPP TS 23.401. 
+	// When present, it shall indicate the number of additional exception reports the AF is allowed to send downlink in the  given time unit for the given APN (all PDN connections of the UE to this APN, see clause 4.7.7.3 in 3GPP TS 23.401.
 	RemainExReportsDl *int32 `json:"remainExReportsDl,omitempty"`
 }
 
@@ -51,7 +51,7 @@ func NewApnRateStatusWithDefaults() *ApnRateStatus {
 
 // GetRemainPacketsUl returns the RemainPacketsUl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainPacketsUl() int32 {
-	if o == nil || isNil(o.RemainPacketsUl) {
+	if o == nil || IsNil(o.RemainPacketsUl) {
 		var ret int32
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *ApnRateStatus) GetRemainPacketsUl() int32 {
 // GetRemainPacketsUlOk returns a tuple with the RemainPacketsUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainPacketsUlOk() (*int32, bool) {
-	if o == nil || isNil(o.RemainPacketsUl) {
+	if o == nil || IsNil(o.RemainPacketsUl) {
 		return nil, false
 	}
 	return o.RemainPacketsUl, true
@@ -69,7 +69,7 @@ func (o *ApnRateStatus) GetRemainPacketsUlOk() (*int32, bool) {
 
 // HasRemainPacketsUl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainPacketsUl() bool {
-	if o != nil && !isNil(o.RemainPacketsUl) {
+	if o != nil && !IsNil(o.RemainPacketsUl) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *ApnRateStatus) SetRemainPacketsUl(v int32) {
 
 // GetRemainPacketsDl returns the RemainPacketsDl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainPacketsDl() int32 {
-	if o == nil || isNil(o.RemainPacketsDl) {
+	if o == nil || IsNil(o.RemainPacketsDl) {
 		var ret int32
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *ApnRateStatus) GetRemainPacketsDl() int32 {
 // GetRemainPacketsDlOk returns a tuple with the RemainPacketsDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainPacketsDlOk() (*int32, bool) {
-	if o == nil || isNil(o.RemainPacketsDl) {
+	if o == nil || IsNil(o.RemainPacketsDl) {
 		return nil, false
 	}
 	return o.RemainPacketsDl, true
@@ -101,7 +101,7 @@ func (o *ApnRateStatus) GetRemainPacketsDlOk() (*int32, bool) {
 
 // HasRemainPacketsDl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainPacketsDl() bool {
-	if o != nil && !isNil(o.RemainPacketsDl) {
+	if o != nil && !IsNil(o.RemainPacketsDl) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *ApnRateStatus) SetRemainPacketsDl(v int32) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetValidityTime() time.Time {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *ApnRateStatus) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ValidityTime) {
+	if o == nil || IsNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -133,7 +133,7 @@ func (o *ApnRateStatus) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasValidityTime() bool {
-	if o != nil && !isNil(o.ValidityTime) {
+	if o != nil && !IsNil(o.ValidityTime) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *ApnRateStatus) SetValidityTime(v time.Time) {
 
 // GetRemainExReportsUl returns the RemainExReportsUl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainExReportsUl() int32 {
-	if o == nil || isNil(o.RemainExReportsUl) {
+	if o == nil || IsNil(o.RemainExReportsUl) {
 		var ret int32
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *ApnRateStatus) GetRemainExReportsUl() int32 {
 // GetRemainExReportsUlOk returns a tuple with the RemainExReportsUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainExReportsUlOk() (*int32, bool) {
-	if o == nil || isNil(o.RemainExReportsUl) {
+	if o == nil || IsNil(o.RemainExReportsUl) {
 		return nil, false
 	}
 	return o.RemainExReportsUl, true
@@ -165,7 +165,7 @@ func (o *ApnRateStatus) GetRemainExReportsUlOk() (*int32, bool) {
 
 // HasRemainExReportsUl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainExReportsUl() bool {
-	if o != nil && !isNil(o.RemainExReportsUl) {
+	if o != nil && !IsNil(o.RemainExReportsUl) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *ApnRateStatus) SetRemainExReportsUl(v int32) {
 
 // GetRemainExReportsDl returns the RemainExReportsDl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainExReportsDl() int32 {
-	if o == nil || isNil(o.RemainExReportsDl) {
+	if o == nil || IsNil(o.RemainExReportsDl) {
 		var ret int32
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *ApnRateStatus) GetRemainExReportsDl() int32 {
 // GetRemainExReportsDlOk returns a tuple with the RemainExReportsDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainExReportsDlOk() (*int32, bool) {
-	if o == nil || isNil(o.RemainExReportsDl) {
+	if o == nil || IsNil(o.RemainExReportsDl) {
 		return nil, false
 	}
 	return o.RemainExReportsDl, true
@@ -197,7 +197,7 @@ func (o *ApnRateStatus) GetRemainExReportsDlOk() (*int32, bool) {
 
 // HasRemainExReportsDl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainExReportsDl() bool {
-	if o != nil && !isNil(o.RemainExReportsDl) {
+	if o != nil && !IsNil(o.RemainExReportsDl) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *ApnRateStatus) SetRemainExReportsDl(v int32) {
 }
 
 func (o ApnRateStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -219,19 +219,19 @@ func (o ApnRateStatus) MarshalJSON() ([]byte, error) {
 
 func (o ApnRateStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RemainPacketsUl) {
+	if !IsNil(o.RemainPacketsUl) {
 		toSerialize["remainPacketsUl"] = o.RemainPacketsUl
 	}
-	if !isNil(o.RemainPacketsDl) {
+	if !IsNil(o.RemainPacketsDl) {
 		toSerialize["remainPacketsDl"] = o.RemainPacketsDl
 	}
-	if !isNil(o.ValidityTime) {
+	if !IsNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !isNil(o.RemainExReportsUl) {
+	if !IsNil(o.RemainExReportsUl) {
 		toSerialize["remainExReportsUl"] = o.RemainExReportsUl
 	}
-	if !isNil(o.RemainExReportsDl) {
+	if !IsNil(o.RemainExReportsDl) {
 		toSerialize["remainExReportsDl"] = o.RemainExReportsDl
 	}
 	return toSerialize, nil
@@ -272,5 +272,3 @@ func (v *NullableApnRateStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

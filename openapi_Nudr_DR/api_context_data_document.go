@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ContextDataDocumentApiService ContextDataDocumentApi service
 type ContextDataDocumentApiService service
 
 type ApiQueryContextDataRequest struct {
-	ctx context.Context
-	ApiService *ContextDataDocumentApiService
-	ueId string
+	ctx                 context.Context
+	ApiService          *ContextDataDocumentApiService
+	ueId                string
 	contextDatasetNames *[]ContextDataSetName
 }
 
@@ -43,26 +42,27 @@ func (r ApiQueryContextDataRequest) Execute() (*ContextDataSets, *http.Response,
 /*
 QueryContextData Retrieve multiple context data sets of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryContextDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryContextDataRequest
 */
 func (a *ContextDataDocumentApiService) QueryContextData(ctx context.Context, ueId string) ApiQueryContextDataRequest {
 	return ApiQueryContextDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return ContextDataSets
+//
+//	@return ContextDataSets
 func (a *ContextDataDocumentApiService) QueryContextDataExecute(r ApiQueryContextDataRequest) (*ContextDataSets, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContextDataSets
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContextDataSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContextDataDocumentApiService.QueryContextData")
@@ -83,7 +83,7 @@ func (a *ContextDataDocumentApiService) QueryContextDataExecute(r ApiQueryContex
 		return localVarReturnValue, nil, reportError("contextDatasetNames must have at least 2 elements")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "context-dataset-names", r.contextDatasetNames, "csv")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "context-dataset-names", r.contextDatasetNames, "csv")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -111,9 +111,9 @@ func (a *ContextDataDocumentApiService) QueryContextDataExecute(r ApiQueryContex
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

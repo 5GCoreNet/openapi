@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -45,7 +45,7 @@ func NewSDPTimeStampsWithDefaults() *SDPTimeStamps {
 
 // GetSDPOfferTimestamp returns the SDPOfferTimestamp field value if set, zero value otherwise.
 func (o *SDPTimeStamps) GetSDPOfferTimestamp() time.Time {
-	if o == nil || isNil(o.SDPOfferTimestamp) {
+	if o == nil || IsNil(o.SDPOfferTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *SDPTimeStamps) GetSDPOfferTimestamp() time.Time {
 // GetSDPOfferTimestampOk returns a tuple with the SDPOfferTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPTimeStamps) GetSDPOfferTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.SDPOfferTimestamp) {
+	if o == nil || IsNil(o.SDPOfferTimestamp) {
 		return nil, false
 	}
 	return o.SDPOfferTimestamp, true
@@ -63,7 +63,7 @@ func (o *SDPTimeStamps) GetSDPOfferTimestampOk() (*time.Time, bool) {
 
 // HasSDPOfferTimestamp returns a boolean if a field has been set.
 func (o *SDPTimeStamps) HasSDPOfferTimestamp() bool {
-	if o != nil && !isNil(o.SDPOfferTimestamp) {
+	if o != nil && !IsNil(o.SDPOfferTimestamp) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SDPTimeStamps) SetSDPOfferTimestamp(v time.Time) {
 
 // GetSDPAnswerTimestamp returns the SDPAnswerTimestamp field value if set, zero value otherwise.
 func (o *SDPTimeStamps) GetSDPAnswerTimestamp() time.Time {
-	if o == nil || isNil(o.SDPAnswerTimestamp) {
+	if o == nil || IsNil(o.SDPAnswerTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SDPTimeStamps) GetSDPAnswerTimestamp() time.Time {
 // GetSDPAnswerTimestampOk returns a tuple with the SDPAnswerTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SDPTimeStamps) GetSDPAnswerTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.SDPAnswerTimestamp) {
+	if o == nil || IsNil(o.SDPAnswerTimestamp) {
 		return nil, false
 	}
 	return o.SDPAnswerTimestamp, true
@@ -95,7 +95,7 @@ func (o *SDPTimeStamps) GetSDPAnswerTimestampOk() (*time.Time, bool) {
 
 // HasSDPAnswerTimestamp returns a boolean if a field has been set.
 func (o *SDPTimeStamps) HasSDPAnswerTimestamp() bool {
-	if o != nil && !isNil(o.SDPAnswerTimestamp) {
+	if o != nil && !IsNil(o.SDPAnswerTimestamp) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SDPTimeStamps) SetSDPAnswerTimestamp(v time.Time) {
 }
 
 func (o SDPTimeStamps) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,10 +117,10 @@ func (o SDPTimeStamps) MarshalJSON() ([]byte, error) {
 
 func (o SDPTimeStamps) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SDPOfferTimestamp) {
+	if !IsNil(o.SDPOfferTimestamp) {
 		toSerialize["sDPOfferTimestamp"] = o.SDPOfferTimestamp
 	}
-	if !isNil(o.SDPAnswerTimestamp) {
+	if !IsNil(o.SDPAnswerTimestamp) {
 		toSerialize["sDPAnswerTimestamp"] = o.SDPAnswerTimestamp
 	}
 	return toSerialize, nil
@@ -161,5 +161,3 @@ func (v *NullableSDPTimeStamps) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

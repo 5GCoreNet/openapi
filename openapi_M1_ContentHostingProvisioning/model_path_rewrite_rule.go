@@ -1,7 +1,7 @@
 /*
 M1_ContentHostingProvisioning
 
-5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Hosting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.1.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &PathRewriteRule{}
 // PathRewriteRule A rule to manipulate URL paths.
 type PathRewriteRule struct {
 	RequestPathPattern string `json:"requestPathPattern"`
-	MappedPath string `json:"mappedPath"`
+	MappedPath         string `json:"mappedPath"`
 }
 
 // NewPathRewriteRule instantiates a new PathRewriteRule object
@@ -91,7 +91,7 @@ func (o *PathRewriteRule) SetMappedPath(v string) {
 }
 
 func (o PathRewriteRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullablePathRewriteRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

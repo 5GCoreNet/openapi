@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -44,7 +44,7 @@ func NewMonitorEventsWithDefaults() *MonitorEvents {
 
 // GetCnEvnts returns the CnEvnts field value if set, zero value otherwise.
 func (o *MonitorEvents) GetCnEvnts() []MonitoringType {
-	if o == nil || isNil(o.CnEvnts) {
+	if o == nil || IsNil(o.CnEvnts) {
 		var ret []MonitoringType
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MonitorEvents) GetCnEvnts() []MonitoringType {
 // GetCnEvntsOk returns a tuple with the CnEvnts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorEvents) GetCnEvntsOk() ([]MonitoringType, bool) {
-	if o == nil || isNil(o.CnEvnts) {
+	if o == nil || IsNil(o.CnEvnts) {
 		return nil, false
 	}
 	return o.CnEvnts, true
@@ -62,7 +62,7 @@ func (o *MonitorEvents) GetCnEvntsOk() ([]MonitoringType, bool) {
 
 // HasCnEvnts returns a boolean if a field has been set.
 func (o *MonitorEvents) HasCnEvnts() bool {
-	if o != nil && !isNil(o.CnEvnts) {
+	if o != nil && !IsNil(o.CnEvnts) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MonitorEvents) SetCnEvnts(v []MonitoringType) {
 
 // GetAnlEvnts returns the AnlEvnts field value if set, zero value otherwise.
 func (o *MonitorEvents) GetAnlEvnts() []AnalyticsEvent {
-	if o == nil || isNil(o.AnlEvnts) {
+	if o == nil || IsNil(o.AnlEvnts) {
 		var ret []AnalyticsEvent
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MonitorEvents) GetAnlEvnts() []AnalyticsEvent {
 // GetAnlEvntsOk returns a tuple with the AnlEvnts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorEvents) GetAnlEvntsOk() ([]AnalyticsEvent, bool) {
-	if o == nil || isNil(o.AnlEvnts) {
+	if o == nil || IsNil(o.AnlEvnts) {
 		return nil, false
 	}
 	return o.AnlEvnts, true
@@ -94,7 +94,7 @@ func (o *MonitorEvents) GetAnlEvntsOk() ([]AnalyticsEvent, bool) {
 
 // HasAnlEvnts returns a boolean if a field has been set.
 func (o *MonitorEvents) HasAnlEvnts() bool {
-	if o != nil && !isNil(o.AnlEvnts) {
+	if o != nil && !IsNil(o.AnlEvnts) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MonitorEvents) SetAnlEvnts(v []AnalyticsEvent) {
 }
 
 func (o MonitorEvents) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o MonitorEvents) MarshalJSON() ([]byte, error) {
 
 func (o MonitorEvents) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CnEvnts) {
+	if !IsNil(o.CnEvnts) {
 		toSerialize["cnEvnts"] = o.CnEvnts
 	}
-	if !isNil(o.AnlEvnts) {
+	if !IsNil(o.AnlEvnts) {
 		toSerialize["anlEvnts"] = o.AnlEvnts
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableMonitorEvents) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

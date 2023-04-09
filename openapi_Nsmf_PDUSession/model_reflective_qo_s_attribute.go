@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ReflectiveQoSAttribute The enumeration ReflectiveQosAttribute indicates whether certain traffic of the QoS flow may be subject to Reflective QoS (see clause 5.7.2.3 of 3GPP TS 23.501). It shall comply with the provisions defined in table 5.5.3.3-1.  
+// ReflectiveQoSAttribute The enumeration ReflectiveQosAttribute indicates whether certain traffic of the QoS flow may be subject to Reflective QoS (see clause 5.7.2.3 of 3GPP TS 23.501). It shall comply with the provisions defined in table 5.5.3.3-1.
 type ReflectiveQoSAttribute struct {
-	ReflectiveQoSAttributeAnyOf *ReflectiveQoSAttributeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReflectiveQoSAttribute) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReflectiveQoSAttributeAnyOf
-	err = json.Unmarshal(data, &dst.ReflectiveQoSAttributeAnyOf);
-	if err == nil {
-		jsonReflectiveQoSAttributeAnyOf, _ := json.Marshal(dst.ReflectiveQoSAttributeAnyOf)
-		if string(jsonReflectiveQoSAttributeAnyOf) == "{}" { // empty struct
-			dst.ReflectiveQoSAttributeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReflectiveQoSAttributeAnyOf, return on the first match
-		}
-	} else {
-		dst.ReflectiveQoSAttributeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReflectiveQoSAttribute) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReflectiveQoSAttribute) MarshalJSON() ([]byte, error) {
-	if src.ReflectiveQoSAttributeAnyOf != nil {
-		return json.Marshal(&src.ReflectiveQoSAttributeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReflectiveQoSAttribute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 3gpp-mbs-session
 
-API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS Session Management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -21,8 +21,8 @@ var _ MappedNullable = &MbsSessAuthData{}
 type MbsSessAuthData struct {
 	// string containing a local identifier followed by \"@\" and a domain identifier. Both the local identifier and the domain identifier shall be encoded as strings that do not contain any \"@\" characters. See Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
 	ExtGroupId string `json:"extGroupId"`
-	// Represents the list of the GPSI(s) of the member UE(s) constituting the multicast MBS group. Any value of type can be used as a key of the map. 
-	GpsisList *map[string]string `json:"gpsisList,omitempty"`
+	// Represents the list of the GPSI(s) of the member UE(s) constituting the multicast MBS group. Any value of type can be used as a key of the map.
+	GpsisList        *map[string]string                 `json:"gpsisList,omitempty"`
 	MbsSessionIdList NullableModel5MbsAuthorizationInfo `json:"mbsSessionIdList"`
 }
 
@@ -71,7 +71,7 @@ func (o *MbsSessAuthData) SetExtGroupId(v string) {
 
 // GetGpsisList returns the GpsisList field value if set, zero value otherwise.
 func (o *MbsSessAuthData) GetGpsisList() map[string]string {
-	if o == nil || isNil(o.GpsisList) {
+	if o == nil || IsNil(o.GpsisList) {
 		var ret map[string]string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *MbsSessAuthData) GetGpsisList() map[string]string {
 // GetGpsisListOk returns a tuple with the GpsisList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessAuthData) GetGpsisListOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.GpsisList) {
+	if o == nil || IsNil(o.GpsisList) {
 		return nil, false
 	}
 	return o.GpsisList, true
@@ -89,7 +89,7 @@ func (o *MbsSessAuthData) GetGpsisListOk() (*map[string]string, bool) {
 
 // HasGpsisList returns a boolean if a field has been set.
 func (o *MbsSessAuthData) HasGpsisList() bool {
-	if o != nil && !isNil(o.GpsisList) {
+	if o != nil && !IsNil(o.GpsisList) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *MbsSessAuthData) SetMbsSessionIdList(v Model5MbsAuthorizationInfo) {
 }
 
 func (o MbsSessAuthData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -138,7 +138,7 @@ func (o MbsSessAuthData) MarshalJSON() ([]byte, error) {
 func (o MbsSessAuthData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["extGroupId"] = o.ExtGroupId
-	if !isNil(o.GpsisList) {
+	if !IsNil(o.GpsisList) {
 		toSerialize["gpsisList"] = o.GpsisList
 	}
 	toSerialize["mbsSessionIdList"] = o.MbsSessionIdList.Get()
@@ -180,5 +180,3 @@ func (v *NullableMbsSessAuthData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

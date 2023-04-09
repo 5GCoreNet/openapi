@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AsTimeResource Possible values are: - ATOMIC_CLOCK: Indicates atomic clock is supported. - GNSS: Indicates Global Navigation Satellite System is supported. - TERRESTRIAL_RADIO: Indicates terrestrial radio is supported. - SERIAL_TIME_CODE: Indicates serial time code is supported. - PTP: Indicates PTP is supported. - NTP: Indicates NTP is supported. - HAND_SET: Indicates hand set is supported. - INTERNAL_OSCILLATOR: Indicates internal oscillator is supported. - OTHER: Indicates other source of time is supported. 
+// AsTimeResource Possible values are: - ATOMIC_CLOCK: Indicates atomic clock is supported. - GNSS: Indicates Global Navigation Satellite System is supported. - TERRESTRIAL_RADIO: Indicates terrestrial radio is supported. - SERIAL_TIME_CODE: Indicates serial time code is supported. - PTP: Indicates PTP is supported. - NTP: Indicates NTP is supported. - HAND_SET: Indicates hand set is supported. - INTERNAL_OSCILLATOR: Indicates internal oscillator is supported. - OTHER: Indicates other source of time is supported.
 type AsTimeResource struct {
-	AsTimeResourceAnyOf *AsTimeResourceAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AsTimeResource) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AsTimeResourceAnyOf
-	err = json.Unmarshal(data, &dst.AsTimeResourceAnyOf);
-	if err == nil {
-		jsonAsTimeResourceAnyOf, _ := json.Marshal(dst.AsTimeResourceAnyOf)
-		if string(jsonAsTimeResourceAnyOf) == "{}" { // empty struct
-			dst.AsTimeResourceAnyOf = nil
-		} else {
-			return nil // data stored in dst.AsTimeResourceAnyOf, return on the first match
-		}
-	} else {
-		dst.AsTimeResourceAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AsTimeResource) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AsTimeResource) MarshalJSON() ([]byte, error) {
-	if src.AsTimeResourceAnyOf != nil {
-		return json.Marshal(&src.AsTimeResourceAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAsTimeResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

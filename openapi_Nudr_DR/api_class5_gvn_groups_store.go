@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // Class5GVNGroupsStoreApiService Class5GVNGroupsStoreApi service
 type Class5GVNGroupsStoreApiService service
 
 type ApiQuery5GVnGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *Class5GVNGroupsStoreApiService
-	gpsis *[]string
+	gpsis      *[]string
 }
 
 // List of GPSIs
@@ -41,24 +40,25 @@ func (r ApiQuery5GVnGroupRequest) Execute() (*map[string]Model5GVnGroupConfigura
 /*
 Query5GVnGroup Retrieves the data of a 5G VN Group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiQuery5GVnGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiQuery5GVnGroupRequest
 */
 func (a *Class5GVNGroupsStoreApiService) Query5GVnGroup(ctx context.Context) ApiQuery5GVnGroupRequest {
 	return ApiQuery5GVnGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]Model5GVnGroupConfiguration
+//
+//	@return map[string]Model5GVnGroupConfiguration
 func (a *Class5GVNGroupsStoreApiService) Query5GVnGroupExecute(r ApiQuery5GVnGroupRequest) (*map[string]Model5GVnGroupConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *map[string]Model5GVnGroupConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *map[string]Model5GVnGroupConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Class5GVNGroupsStoreApiService.Query5GVnGroup")
@@ -73,7 +73,7 @@ func (a *Class5GVNGroupsStoreApiService) Query5GVnGroupExecute(r ApiQuery5GVnGro
 	localVarFormParams := url.Values{}
 
 	if r.gpsis != nil {
-		parameterAddToQuery(localVarQueryParams, "gpsis", r.gpsis, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "gpsis", r.gpsis, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -102,9 +102,9 @@ func (a *Class5GVNGroupsStoreApiService) Query5GVnGroupExecute(r ApiQuery5GVnGro
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

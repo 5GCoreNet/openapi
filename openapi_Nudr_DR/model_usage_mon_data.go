@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,14 +21,14 @@ var _ MappedNullable = &UsageMonData{}
 // UsageMonData Contains remain allowed usage data for a subscriber.
 type UsageMonData struct {
 	LimitId string `json:"limitId"`
-	// Identifies the SNSSAI and DNN combinations for remain allowed usage data for a subscriber. The S-NSSAI is the key of the map. 
-	Scopes *map[string]UsageMonDataScope `json:"scopes,omitempty"`
-	UmLevel *UsageMonLevel `json:"umLevel,omitempty"`
-	AllowedUsage *UsageThreshold `json:"allowedUsage,omitempty"`
+	// Identifies the SNSSAI and DNN combinations for remain allowed usage data for a subscriber. The S-NSSAI is the key of the map.
+	Scopes       *map[string]UsageMonDataScope `json:"scopes,omitempty"`
+	UmLevel      *UsageMonLevel                `json:"umLevel,omitempty"`
+	AllowedUsage *UsageThreshold               `json:"allowedUsage,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ResetTime *time.Time `json:"resetTime,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SuppFeat *string `json:"suppFeat,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SuppFeat *string  `json:"suppFeat,omitempty"`
 	ResetIds []string `json:"resetIds,omitempty"`
 }
 
@@ -76,7 +76,7 @@ func (o *UsageMonData) SetLimitId(v string) {
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
 func (o *UsageMonData) GetScopes() map[string]UsageMonDataScope {
-	if o == nil || isNil(o.Scopes) {
+	if o == nil || IsNil(o.Scopes) {
 		var ret map[string]UsageMonDataScope
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UsageMonData) GetScopes() map[string]UsageMonDataScope {
 // GetScopesOk returns a tuple with the Scopes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetScopesOk() (*map[string]UsageMonDataScope, bool) {
-	if o == nil || isNil(o.Scopes) {
+	if o == nil || IsNil(o.Scopes) {
 		return nil, false
 	}
 	return o.Scopes, true
@@ -94,7 +94,7 @@ func (o *UsageMonData) GetScopesOk() (*map[string]UsageMonDataScope, bool) {
 
 // HasScopes returns a boolean if a field has been set.
 func (o *UsageMonData) HasScopes() bool {
-	if o != nil && !isNil(o.Scopes) {
+	if o != nil && !IsNil(o.Scopes) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *UsageMonData) SetScopes(v map[string]UsageMonDataScope) {
 
 // GetUmLevel returns the UmLevel field value if set, zero value otherwise.
 func (o *UsageMonData) GetUmLevel() UsageMonLevel {
-	if o == nil || isNil(o.UmLevel) {
+	if o == nil || IsNil(o.UmLevel) {
 		var ret UsageMonLevel
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UsageMonData) GetUmLevel() UsageMonLevel {
 // GetUmLevelOk returns a tuple with the UmLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetUmLevelOk() (*UsageMonLevel, bool) {
-	if o == nil || isNil(o.UmLevel) {
+	if o == nil || IsNil(o.UmLevel) {
 		return nil, false
 	}
 	return o.UmLevel, true
@@ -126,7 +126,7 @@ func (o *UsageMonData) GetUmLevelOk() (*UsageMonLevel, bool) {
 
 // HasUmLevel returns a boolean if a field has been set.
 func (o *UsageMonData) HasUmLevel() bool {
-	if o != nil && !isNil(o.UmLevel) {
+	if o != nil && !IsNil(o.UmLevel) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UsageMonData) SetUmLevel(v UsageMonLevel) {
 
 // GetAllowedUsage returns the AllowedUsage field value if set, zero value otherwise.
 func (o *UsageMonData) GetAllowedUsage() UsageThreshold {
-	if o == nil || isNil(o.AllowedUsage) {
+	if o == nil || IsNil(o.AllowedUsage) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *UsageMonData) GetAllowedUsage() UsageThreshold {
 // GetAllowedUsageOk returns a tuple with the AllowedUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetAllowedUsageOk() (*UsageThreshold, bool) {
-	if o == nil || isNil(o.AllowedUsage) {
+	if o == nil || IsNil(o.AllowedUsage) {
 		return nil, false
 	}
 	return o.AllowedUsage, true
@@ -158,7 +158,7 @@ func (o *UsageMonData) GetAllowedUsageOk() (*UsageThreshold, bool) {
 
 // HasAllowedUsage returns a boolean if a field has been set.
 func (o *UsageMonData) HasAllowedUsage() bool {
-	if o != nil && !isNil(o.AllowedUsage) {
+	if o != nil && !IsNil(o.AllowedUsage) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *UsageMonData) SetAllowedUsage(v UsageThreshold) {
 
 // GetResetTime returns the ResetTime field value if set, zero value otherwise.
 func (o *UsageMonData) GetResetTime() time.Time {
-	if o == nil || isNil(o.ResetTime) {
+	if o == nil || IsNil(o.ResetTime) {
 		var ret time.Time
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *UsageMonData) GetResetTime() time.Time {
 // GetResetTimeOk returns a tuple with the ResetTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetResetTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ResetTime) {
+	if o == nil || IsNil(o.ResetTime) {
 		return nil, false
 	}
 	return o.ResetTime, true
@@ -190,7 +190,7 @@ func (o *UsageMonData) GetResetTimeOk() (*time.Time, bool) {
 
 // HasResetTime returns a boolean if a field has been set.
 func (o *UsageMonData) HasResetTime() bool {
-	if o != nil && !isNil(o.ResetTime) {
+	if o != nil && !IsNil(o.ResetTime) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *UsageMonData) SetResetTime(v time.Time) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UsageMonData) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *UsageMonData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -222,7 +222,7 @@ func (o *UsageMonData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UsageMonData) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *UsageMonData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *UsageMonData) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *UsageMonData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -254,7 +254,7 @@ func (o *UsageMonData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *UsageMonData) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *UsageMonData) SetResetIds(v []string) {
 }
 
 func (o UsageMonData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -277,22 +277,22 @@ func (o UsageMonData) MarshalJSON() ([]byte, error) {
 func (o UsageMonData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["limitId"] = o.LimitId
-	if !isNil(o.Scopes) {
+	if !IsNil(o.Scopes) {
 		toSerialize["scopes"] = o.Scopes
 	}
-	if !isNil(o.UmLevel) {
+	if !IsNil(o.UmLevel) {
 		toSerialize["umLevel"] = o.UmLevel
 	}
-	if !isNil(o.AllowedUsage) {
+	if !IsNil(o.AllowedUsage) {
 		toSerialize["allowedUsage"] = o.AllowedUsage
 	}
-	if !isNil(o.ResetTime) {
+	if !IsNil(o.ResetTime) {
 		toSerialize["resetTime"] = o.ResetTime
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -333,5 +333,3 @@ func (v *NullableUsageMonData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

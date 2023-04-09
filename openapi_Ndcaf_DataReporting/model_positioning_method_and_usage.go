@@ -1,7 +1,7 @@
 /*
 Ndcaf_DataReporting
 
-Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Data Collection AF: Data Collection and Reporting Configuration API and Data Reporting API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &PositioningMethodAndUsage{}
 
 // PositioningMethodAndUsage Indicates the usage of a positioning method.
 type PositioningMethodAndUsage struct {
-	Method PositioningMethod `json:"method"`
-	Mode PositioningMode `json:"mode"`
-	Usage Usage `json:"usage"`
-	MethodCode *int32 `json:"methodCode,omitempty"`
+	Method     PositioningMethod `json:"method"`
+	Mode       PositioningMode   `json:"mode"`
+	Usage      Usage             `json:"usage"`
+	MethodCode *int32            `json:"methodCode,omitempty"`
 }
 
 // NewPositioningMethodAndUsage instantiates a new PositioningMethodAndUsage object
@@ -119,7 +119,7 @@ func (o *PositioningMethodAndUsage) SetUsage(v Usage) {
 
 // GetMethodCode returns the MethodCode field value if set, zero value otherwise.
 func (o *PositioningMethodAndUsage) GetMethodCode() int32 {
-	if o == nil || isNil(o.MethodCode) {
+	if o == nil || IsNil(o.MethodCode) {
 		var ret int32
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PositioningMethodAndUsage) GetMethodCode() int32 {
 // GetMethodCodeOk returns a tuple with the MethodCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PositioningMethodAndUsage) GetMethodCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.MethodCode) {
+	if o == nil || IsNil(o.MethodCode) {
 		return nil, false
 	}
 	return o.MethodCode, true
@@ -137,7 +137,7 @@ func (o *PositioningMethodAndUsage) GetMethodCodeOk() (*int32, bool) {
 
 // HasMethodCode returns a boolean if a field has been set.
 func (o *PositioningMethodAndUsage) HasMethodCode() bool {
-	if o != nil && !isNil(o.MethodCode) {
+	if o != nil && !IsNil(o.MethodCode) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *PositioningMethodAndUsage) SetMethodCode(v int32) {
 }
 
 func (o PositioningMethodAndUsage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -162,7 +162,7 @@ func (o PositioningMethodAndUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize["method"] = o.Method
 	toSerialize["mode"] = o.Mode
 	toSerialize["usage"] = o.Usage
-	if !isNil(o.MethodCode) {
+	if !IsNil(o.MethodCode) {
 		toSerialize["methodCode"] = o.MethodCode
 	}
 	return toSerialize, nil
@@ -203,5 +203,3 @@ func (v *NullablePositioningMethodAndUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

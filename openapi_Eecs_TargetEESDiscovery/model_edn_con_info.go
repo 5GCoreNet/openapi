@@ -1,7 +1,7 @@
 /*
 ECS Target EES Discovery API
 
-API for Target EES Discovery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Target EES Discovery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &EDNConInfo{}
 
 // EDNConInfo Represents an EDN connection information .
 type EDNConInfo struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
-	Snssai *Snssai `json:"snssai,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn            *string         `json:"dnn,omitempty"`
+	Snssai         *Snssai         `json:"snssai,omitempty"`
 	EdnTopoSrvArea *LocationArea5G `json:"ednTopoSrvArea,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewEDNConInfoWithDefaults() *EDNConInfo {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *EDNConInfo) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EDNConInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConInfo) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -62,7 +62,7 @@ func (o *EDNConInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *EDNConInfo) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EDNConInfo) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *EDNConInfo) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EDNConInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -94,7 +94,7 @@ func (o *EDNConInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *EDNConInfo) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EDNConInfo) SetSnssai(v Snssai) {
 
 // GetEdnTopoSrvArea returns the EdnTopoSrvArea field value if set, zero value otherwise.
 func (o *EDNConInfo) GetEdnTopoSrvArea() LocationArea5G {
-	if o == nil || isNil(o.EdnTopoSrvArea) {
+	if o == nil || IsNil(o.EdnTopoSrvArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EDNConInfo) GetEdnTopoSrvArea() LocationArea5G {
 // GetEdnTopoSrvAreaOk returns a tuple with the EdnTopoSrvArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConInfo) GetEdnTopoSrvAreaOk() (*LocationArea5G, bool) {
-	if o == nil || isNil(o.EdnTopoSrvArea) {
+	if o == nil || IsNil(o.EdnTopoSrvArea) {
 		return nil, false
 	}
 	return o.EdnTopoSrvArea, true
@@ -126,7 +126,7 @@ func (o *EDNConInfo) GetEdnTopoSrvAreaOk() (*LocationArea5G, bool) {
 
 // HasEdnTopoSrvArea returns a boolean if a field has been set.
 func (o *EDNConInfo) HasEdnTopoSrvArea() bool {
-	if o != nil && !isNil(o.EdnTopoSrvArea) {
+	if o != nil && !IsNil(o.EdnTopoSrvArea) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *EDNConInfo) SetEdnTopoSrvArea(v LocationArea5G) {
 }
 
 func (o EDNConInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o EDNConInfo) MarshalJSON() ([]byte, error) {
 
 func (o EDNConInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.EdnTopoSrvArea) {
+	if !IsNil(o.EdnTopoSrvArea) {
 		toSerialize["ednTopoSrvArea"] = o.EdnTopoSrvArea
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableEDNConInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

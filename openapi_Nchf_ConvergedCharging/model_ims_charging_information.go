@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,66 +20,66 @@ var _ MappedNullable = &IMSChargingInformation{}
 
 // IMSChargingInformation struct for IMSChargingInformation
 type IMSChargingInformation struct {
-	EventType *SIPEventType `json:"eventType,omitempty"`
+	EventType            *SIPEventType         `json:"eventType,omitempty"`
 	IMSNodeFunctionality *IMSNodeFunctionality `json:"iMSNodeFunctionality,omitempty"`
-	RoleOfNode *RoleOfIMSNode `json:"roleOfNode,omitempty"`
-	UserInformation *UserInformation `json:"userInformation,omitempty"`
-	UserLocationInfo *UserLocation `json:"userLocationInfo,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	UeTimeZone *string `json:"ueTimeZone,omitempty"`
-	Var3gppPSDataOffStatus *Model3GPPPSDataOffStatus `json:"3gppPSDataOffStatus,omitempty"`
-	IsupCause *ISUPCause `json:"isupCause,omitempty"`
-	ControlPlaneAddress *IMSAddress `json:"controlPlaneAddress,omitempty"`
-	VlrNumber *string `json:"vlrNumber,omitempty"`
-	MscAddress *string `json:"mscAddress,omitempty"`
-	UserSessionID *string `json:"userSessionID,omitempty"`
-	OutgoingSessionID *string `json:"outgoingSessionID,omitempty"`
-	SessionPriority *IMSSessionPriority `json:"sessionPriority,omitempty"`
-	CallingPartyAddresses []string `json:"callingPartyAddresses,omitempty"`
-	CalledPartyAddress *string `json:"calledPartyAddress,omitempty"`
-	NumberPortabilityRoutinginformation *string `json:"numberPortabilityRoutinginformation,omitempty"`
-	CarrierSelectRoutingInformation *string `json:"carrierSelectRoutingInformation,omitempty"`
-	AlternateChargedPartyAddress *string `json:"alternateChargedPartyAddress,omitempty"`
-	RequestedPartyAddress []string `json:"requestedPartyAddress,omitempty"`
-	CalledAssertedIdentities []string `json:"calledAssertedIdentities,omitempty"`
-	CalledIdentityChanges []CalledIdentityChange `json:"calledIdentityChanges,omitempty"`
-	AssociatedURI []string `json:"associatedURI,omitempty"`
+	RoleOfNode           *RoleOfIMSNode        `json:"roleOfNode,omitempty"`
+	UserInformation      *UserInformation      `json:"userInformation,omitempty"`
+	UserLocationInfo     *UserLocation         `json:"userLocationInfo,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	UeTimeZone                          *string                   `json:"ueTimeZone,omitempty"`
+	Var3gppPSDataOffStatus              *Model3GPPPSDataOffStatus `json:"3gppPSDataOffStatus,omitempty"`
+	IsupCause                           *ISUPCause                `json:"isupCause,omitempty"`
+	ControlPlaneAddress                 *IMSAddress               `json:"controlPlaneAddress,omitempty"`
+	VlrNumber                           *string                   `json:"vlrNumber,omitempty"`
+	MscAddress                          *string                   `json:"mscAddress,omitempty"`
+	UserSessionID                       *string                   `json:"userSessionID,omitempty"`
+	OutgoingSessionID                   *string                   `json:"outgoingSessionID,omitempty"`
+	SessionPriority                     *IMSSessionPriority       `json:"sessionPriority,omitempty"`
+	CallingPartyAddresses               []string                  `json:"callingPartyAddresses,omitempty"`
+	CalledPartyAddress                  *string                   `json:"calledPartyAddress,omitempty"`
+	NumberPortabilityRoutinginformation *string                   `json:"numberPortabilityRoutinginformation,omitempty"`
+	CarrierSelectRoutingInformation     *string                   `json:"carrierSelectRoutingInformation,omitempty"`
+	AlternateChargedPartyAddress        *string                   `json:"alternateChargedPartyAddress,omitempty"`
+	RequestedPartyAddress               []string                  `json:"requestedPartyAddress,omitempty"`
+	CalledAssertedIdentities            []string                  `json:"calledAssertedIdentities,omitempty"`
+	CalledIdentityChanges               []CalledIdentityChange    `json:"calledIdentityChanges,omitempty"`
+	AssociatedURI                       []string                  `json:"associatedURI,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeStamps *time.Time `json:"timeStamps,omitempty"`
-	ApplicationServerInformation []string `json:"applicationServerInformation,omitempty"`
-	InterOperatorIdentifier []InterOperatorIdentifier `json:"interOperatorIdentifier,omitempty"`
-	ImsChargingIdentifier *string `json:"imsChargingIdentifier,omitempty"`
-	RelatedICID *string `json:"relatedICID,omitempty"`
-	RelatedICIDGenerationNode *string `json:"relatedICIDGenerationNode,omitempty"`
-	TransitIOIList []string `json:"transitIOIList,omitempty"`
-	EarlyMediaDescription []EarlyMediaDescription `json:"earlyMediaDescription,omitempty"`
-	SdpSessionDescription []string `json:"sdpSessionDescription,omitempty"`
-	SdpMediaComponent []SDPMediaComponent `json:"sdpMediaComponent,omitempty"`
-	ServedPartyIPAddress *IMSAddress `json:"servedPartyIPAddress,omitempty"`
-	ServerCapabilities *ServerCapabilities `json:"serverCapabilities,omitempty"`
-	TrunkGroupID *TrunkGroupID `json:"trunkGroupID,omitempty"`
-	BearerService *string `json:"bearerService,omitempty"`
-	ImsServiceId *string `json:"imsServiceId,omitempty"`
-	MessageBodies []MessageBody `json:"messageBodies,omitempty"`
-	AccessNetworkInformation []string `json:"accessNetworkInformation,omitempty"`
-	AdditionalAccessNetworkInformation *string `json:"additionalAccessNetworkInformation,omitempty"`
-	CellularNetworkInformation *string `json:"cellularNetworkInformation,omitempty"`
-	AccessTransferInformation []AccessTransferInformation `json:"accessTransferInformation,omitempty"`
-	AccessNetworkInfoChange []AccessNetworkInfoChange `json:"accessNetworkInfoChange,omitempty"`
-	ImsCommunicationServiceID *string `json:"imsCommunicationServiceID,omitempty"`
-	ImsApplicationReferenceID *string `json:"imsApplicationReferenceID,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	CauseCode *int32 `json:"causeCode,omitempty"`
-	ReasonHeader []string `json:"reasonHeader,omitempty"`
-	InitialIMSChargingIdentifier *string `json:"initialIMSChargingIdentifier,omitempty"`
-	NniInformation []NNIInformation `json:"nniInformation,omitempty"`
-	FromAddress *string `json:"fromAddress,omitempty"`
-	ImsEmergencyIndication *bool `json:"imsEmergencyIndication,omitempty"`
-	ImsVisitedNetworkIdentifier *string `json:"imsVisitedNetworkIdentifier,omitempty"`
-	SipRouteHeaderReceived *string `json:"sipRouteHeaderReceived,omitempty"`
-	SipRouteHeaderTransmitted *string `json:"sipRouteHeaderTransmitted,omitempty"`
-	TadIdentifier *TADIdentifier `json:"tadIdentifier,omitempty"`
-	FeIdentifierList *string `json:"feIdentifierList,omitempty"`
+	TimeStamps                         *time.Time                  `json:"timeStamps,omitempty"`
+	ApplicationServerInformation       []string                    `json:"applicationServerInformation,omitempty"`
+	InterOperatorIdentifier            []InterOperatorIdentifier   `json:"interOperatorIdentifier,omitempty"`
+	ImsChargingIdentifier              *string                     `json:"imsChargingIdentifier,omitempty"`
+	RelatedICID                        *string                     `json:"relatedICID,omitempty"`
+	RelatedICIDGenerationNode          *string                     `json:"relatedICIDGenerationNode,omitempty"`
+	TransitIOIList                     []string                    `json:"transitIOIList,omitempty"`
+	EarlyMediaDescription              []EarlyMediaDescription     `json:"earlyMediaDescription,omitempty"`
+	SdpSessionDescription              []string                    `json:"sdpSessionDescription,omitempty"`
+	SdpMediaComponent                  []SDPMediaComponent         `json:"sdpMediaComponent,omitempty"`
+	ServedPartyIPAddress               *IMSAddress                 `json:"servedPartyIPAddress,omitempty"`
+	ServerCapabilities                 *ServerCapabilities         `json:"serverCapabilities,omitempty"`
+	TrunkGroupID                       *TrunkGroupID               `json:"trunkGroupID,omitempty"`
+	BearerService                      *string                     `json:"bearerService,omitempty"`
+	ImsServiceId                       *string                     `json:"imsServiceId,omitempty"`
+	MessageBodies                      []MessageBody               `json:"messageBodies,omitempty"`
+	AccessNetworkInformation           []string                    `json:"accessNetworkInformation,omitempty"`
+	AdditionalAccessNetworkInformation *string                     `json:"additionalAccessNetworkInformation,omitempty"`
+	CellularNetworkInformation         *string                     `json:"cellularNetworkInformation,omitempty"`
+	AccessTransferInformation          []AccessTransferInformation `json:"accessTransferInformation,omitempty"`
+	AccessNetworkInfoChange            []AccessNetworkInfoChange   `json:"accessNetworkInfoChange,omitempty"`
+	ImsCommunicationServiceID          *string                     `json:"imsCommunicationServiceID,omitempty"`
+	ImsApplicationReferenceID          *string                     `json:"imsApplicationReferenceID,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	CauseCode                    *int32           `json:"causeCode,omitempty"`
+	ReasonHeader                 []string         `json:"reasonHeader,omitempty"`
+	InitialIMSChargingIdentifier *string          `json:"initialIMSChargingIdentifier,omitempty"`
+	NniInformation               []NNIInformation `json:"nniInformation,omitempty"`
+	FromAddress                  *string          `json:"fromAddress,omitempty"`
+	ImsEmergencyIndication       *bool            `json:"imsEmergencyIndication,omitempty"`
+	ImsVisitedNetworkIdentifier  *string          `json:"imsVisitedNetworkIdentifier,omitempty"`
+	SipRouteHeaderReceived       *string          `json:"sipRouteHeaderReceived,omitempty"`
+	SipRouteHeaderTransmitted    *string          `json:"sipRouteHeaderTransmitted,omitempty"`
+	TadIdentifier                *TADIdentifier   `json:"tadIdentifier,omitempty"`
+	FeIdentifierList             *string          `json:"feIdentifierList,omitempty"`
 }
 
 // NewIMSChargingInformation instantiates a new IMSChargingInformation object
@@ -101,7 +101,7 @@ func NewIMSChargingInformationWithDefaults() *IMSChargingInformation {
 
 // GetEventType returns the EventType field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetEventType() SIPEventType {
-	if o == nil || isNil(o.EventType) {
+	if o == nil || IsNil(o.EventType) {
 		var ret SIPEventType
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *IMSChargingInformation) GetEventType() SIPEventType {
 // GetEventTypeOk returns a tuple with the EventType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetEventTypeOk() (*SIPEventType, bool) {
-	if o == nil || isNil(o.EventType) {
+	if o == nil || IsNil(o.EventType) {
 		return nil, false
 	}
 	return o.EventType, true
@@ -119,7 +119,7 @@ func (o *IMSChargingInformation) GetEventTypeOk() (*SIPEventType, bool) {
 
 // HasEventType returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasEventType() bool {
-	if o != nil && !isNil(o.EventType) {
+	if o != nil && !IsNil(o.EventType) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *IMSChargingInformation) SetEventType(v SIPEventType) {
 
 // GetIMSNodeFunctionality returns the IMSNodeFunctionality field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetIMSNodeFunctionality() IMSNodeFunctionality {
-	if o == nil || isNil(o.IMSNodeFunctionality) {
+	if o == nil || IsNil(o.IMSNodeFunctionality) {
 		var ret IMSNodeFunctionality
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *IMSChargingInformation) GetIMSNodeFunctionality() IMSNodeFunctionality 
 // GetIMSNodeFunctionalityOk returns a tuple with the IMSNodeFunctionality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetIMSNodeFunctionalityOk() (*IMSNodeFunctionality, bool) {
-	if o == nil || isNil(o.IMSNodeFunctionality) {
+	if o == nil || IsNil(o.IMSNodeFunctionality) {
 		return nil, false
 	}
 	return o.IMSNodeFunctionality, true
@@ -151,7 +151,7 @@ func (o *IMSChargingInformation) GetIMSNodeFunctionalityOk() (*IMSNodeFunctional
 
 // HasIMSNodeFunctionality returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasIMSNodeFunctionality() bool {
-	if o != nil && !isNil(o.IMSNodeFunctionality) {
+	if o != nil && !IsNil(o.IMSNodeFunctionality) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *IMSChargingInformation) SetIMSNodeFunctionality(v IMSNodeFunctionality)
 
 // GetRoleOfNode returns the RoleOfNode field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetRoleOfNode() RoleOfIMSNode {
-	if o == nil || isNil(o.RoleOfNode) {
+	if o == nil || IsNil(o.RoleOfNode) {
 		var ret RoleOfIMSNode
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *IMSChargingInformation) GetRoleOfNode() RoleOfIMSNode {
 // GetRoleOfNodeOk returns a tuple with the RoleOfNode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetRoleOfNodeOk() (*RoleOfIMSNode, bool) {
-	if o == nil || isNil(o.RoleOfNode) {
+	if o == nil || IsNil(o.RoleOfNode) {
 		return nil, false
 	}
 	return o.RoleOfNode, true
@@ -183,7 +183,7 @@ func (o *IMSChargingInformation) GetRoleOfNodeOk() (*RoleOfIMSNode, bool) {
 
 // HasRoleOfNode returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasRoleOfNode() bool {
-	if o != nil && !isNil(o.RoleOfNode) {
+	if o != nil && !IsNil(o.RoleOfNode) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *IMSChargingInformation) SetRoleOfNode(v RoleOfIMSNode) {
 
 // GetUserInformation returns the UserInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetUserInformation() UserInformation {
-	if o == nil || isNil(o.UserInformation) {
+	if o == nil || IsNil(o.UserInformation) {
 		var ret UserInformation
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *IMSChargingInformation) GetUserInformation() UserInformation {
 // GetUserInformationOk returns a tuple with the UserInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetUserInformationOk() (*UserInformation, bool) {
-	if o == nil || isNil(o.UserInformation) {
+	if o == nil || IsNil(o.UserInformation) {
 		return nil, false
 	}
 	return o.UserInformation, true
@@ -215,7 +215,7 @@ func (o *IMSChargingInformation) GetUserInformationOk() (*UserInformation, bool)
 
 // HasUserInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasUserInformation() bool {
-	if o != nil && !isNil(o.UserInformation) {
+	if o != nil && !IsNil(o.UserInformation) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *IMSChargingInformation) SetUserInformation(v UserInformation) {
 
 // GetUserLocationInfo returns the UserLocationInfo field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetUserLocationInfo() UserLocation {
-	if o == nil || isNil(o.UserLocationInfo) {
+	if o == nil || IsNil(o.UserLocationInfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *IMSChargingInformation) GetUserLocationInfo() UserLocation {
 // GetUserLocationInfoOk returns a tuple with the UserLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetUserLocationInfoOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLocationInfo) {
+	if o == nil || IsNil(o.UserLocationInfo) {
 		return nil, false
 	}
 	return o.UserLocationInfo, true
@@ -247,7 +247,7 @@ func (o *IMSChargingInformation) GetUserLocationInfoOk() (*UserLocation, bool) {
 
 // HasUserLocationInfo returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasUserLocationInfo() bool {
-	if o != nil && !isNil(o.UserLocationInfo) {
+	if o != nil && !IsNil(o.UserLocationInfo) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *IMSChargingInformation) SetUserLocationInfo(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetUeTimeZone() string {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *IMSChargingInformation) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -279,7 +279,7 @@ func (o *IMSChargingInformation) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasUeTimeZone() bool {
-	if o != nil && !isNil(o.UeTimeZone) {
+	if o != nil && !IsNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *IMSChargingInformation) SetUeTimeZone(v string) {
 
 // GetVar3gppPSDataOffStatus returns the Var3gppPSDataOffStatus field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOffStatus {
-	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
 		var ret Model3GPPPSDataOffStatus
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *IMSChargingInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOffS
 // GetVar3gppPSDataOffStatusOk returns a tuple with the Var3gppPSDataOffStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDataOffStatus, bool) {
-	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
 		return nil, false
 	}
 	return o.Var3gppPSDataOffStatus, true
@@ -311,7 +311,7 @@ func (o *IMSChargingInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSData
 
 // HasVar3gppPSDataOffStatus returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasVar3gppPSDataOffStatus() bool {
-	if o != nil && !isNil(o.Var3gppPSDataOffStatus) {
+	if o != nil && !IsNil(o.Var3gppPSDataOffStatus) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *IMSChargingInformation) SetVar3gppPSDataOffStatus(v Model3GPPPSDataOffS
 
 // GetIsupCause returns the IsupCause field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetIsupCause() ISUPCause {
-	if o == nil || isNil(o.IsupCause) {
+	if o == nil || IsNil(o.IsupCause) {
 		var ret ISUPCause
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *IMSChargingInformation) GetIsupCause() ISUPCause {
 // GetIsupCauseOk returns a tuple with the IsupCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetIsupCauseOk() (*ISUPCause, bool) {
-	if o == nil || isNil(o.IsupCause) {
+	if o == nil || IsNil(o.IsupCause) {
 		return nil, false
 	}
 	return o.IsupCause, true
@@ -343,7 +343,7 @@ func (o *IMSChargingInformation) GetIsupCauseOk() (*ISUPCause, bool) {
 
 // HasIsupCause returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasIsupCause() bool {
-	if o != nil && !isNil(o.IsupCause) {
+	if o != nil && !IsNil(o.IsupCause) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *IMSChargingInformation) SetIsupCause(v ISUPCause) {
 
 // GetControlPlaneAddress returns the ControlPlaneAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetControlPlaneAddress() IMSAddress {
-	if o == nil || isNil(o.ControlPlaneAddress) {
+	if o == nil || IsNil(o.ControlPlaneAddress) {
 		var ret IMSAddress
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *IMSChargingInformation) GetControlPlaneAddress() IMSAddress {
 // GetControlPlaneAddressOk returns a tuple with the ControlPlaneAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetControlPlaneAddressOk() (*IMSAddress, bool) {
-	if o == nil || isNil(o.ControlPlaneAddress) {
+	if o == nil || IsNil(o.ControlPlaneAddress) {
 		return nil, false
 	}
 	return o.ControlPlaneAddress, true
@@ -375,7 +375,7 @@ func (o *IMSChargingInformation) GetControlPlaneAddressOk() (*IMSAddress, bool) 
 
 // HasControlPlaneAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasControlPlaneAddress() bool {
-	if o != nil && !isNil(o.ControlPlaneAddress) {
+	if o != nil && !IsNil(o.ControlPlaneAddress) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *IMSChargingInformation) SetControlPlaneAddress(v IMSAddress) {
 
 // GetVlrNumber returns the VlrNumber field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetVlrNumber() string {
-	if o == nil || isNil(o.VlrNumber) {
+	if o == nil || IsNil(o.VlrNumber) {
 		var ret string
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *IMSChargingInformation) GetVlrNumber() string {
 // GetVlrNumberOk returns a tuple with the VlrNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetVlrNumberOk() (*string, bool) {
-	if o == nil || isNil(o.VlrNumber) {
+	if o == nil || IsNil(o.VlrNumber) {
 		return nil, false
 	}
 	return o.VlrNumber, true
@@ -407,7 +407,7 @@ func (o *IMSChargingInformation) GetVlrNumberOk() (*string, bool) {
 
 // HasVlrNumber returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasVlrNumber() bool {
-	if o != nil && !isNil(o.VlrNumber) {
+	if o != nil && !IsNil(o.VlrNumber) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *IMSChargingInformation) SetVlrNumber(v string) {
 
 // GetMscAddress returns the MscAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetMscAddress() string {
-	if o == nil || isNil(o.MscAddress) {
+	if o == nil || IsNil(o.MscAddress) {
 		var ret string
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *IMSChargingInformation) GetMscAddress() string {
 // GetMscAddressOk returns a tuple with the MscAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetMscAddressOk() (*string, bool) {
-	if o == nil || isNil(o.MscAddress) {
+	if o == nil || IsNil(o.MscAddress) {
 		return nil, false
 	}
 	return o.MscAddress, true
@@ -439,7 +439,7 @@ func (o *IMSChargingInformation) GetMscAddressOk() (*string, bool) {
 
 // HasMscAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasMscAddress() bool {
-	if o != nil && !isNil(o.MscAddress) {
+	if o != nil && !IsNil(o.MscAddress) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *IMSChargingInformation) SetMscAddress(v string) {
 
 // GetUserSessionID returns the UserSessionID field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetUserSessionID() string {
-	if o == nil || isNil(o.UserSessionID) {
+	if o == nil || IsNil(o.UserSessionID) {
 		var ret string
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *IMSChargingInformation) GetUserSessionID() string {
 // GetUserSessionIDOk returns a tuple with the UserSessionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetUserSessionIDOk() (*string, bool) {
-	if o == nil || isNil(o.UserSessionID) {
+	if o == nil || IsNil(o.UserSessionID) {
 		return nil, false
 	}
 	return o.UserSessionID, true
@@ -471,7 +471,7 @@ func (o *IMSChargingInformation) GetUserSessionIDOk() (*string, bool) {
 
 // HasUserSessionID returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasUserSessionID() bool {
-	if o != nil && !isNil(o.UserSessionID) {
+	if o != nil && !IsNil(o.UserSessionID) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *IMSChargingInformation) SetUserSessionID(v string) {
 
 // GetOutgoingSessionID returns the OutgoingSessionID field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetOutgoingSessionID() string {
-	if o == nil || isNil(o.OutgoingSessionID) {
+	if o == nil || IsNil(o.OutgoingSessionID) {
 		var ret string
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *IMSChargingInformation) GetOutgoingSessionID() string {
 // GetOutgoingSessionIDOk returns a tuple with the OutgoingSessionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetOutgoingSessionIDOk() (*string, bool) {
-	if o == nil || isNil(o.OutgoingSessionID) {
+	if o == nil || IsNil(o.OutgoingSessionID) {
 		return nil, false
 	}
 	return o.OutgoingSessionID, true
@@ -503,7 +503,7 @@ func (o *IMSChargingInformation) GetOutgoingSessionIDOk() (*string, bool) {
 
 // HasOutgoingSessionID returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasOutgoingSessionID() bool {
-	if o != nil && !isNil(o.OutgoingSessionID) {
+	if o != nil && !IsNil(o.OutgoingSessionID) {
 		return true
 	}
 
@@ -517,7 +517,7 @@ func (o *IMSChargingInformation) SetOutgoingSessionID(v string) {
 
 // GetSessionPriority returns the SessionPriority field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetSessionPriority() IMSSessionPriority {
-	if o == nil || isNil(o.SessionPriority) {
+	if o == nil || IsNil(o.SessionPriority) {
 		var ret IMSSessionPriority
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *IMSChargingInformation) GetSessionPriority() IMSSessionPriority {
 // GetSessionPriorityOk returns a tuple with the SessionPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetSessionPriorityOk() (*IMSSessionPriority, bool) {
-	if o == nil || isNil(o.SessionPriority) {
+	if o == nil || IsNil(o.SessionPriority) {
 		return nil, false
 	}
 	return o.SessionPriority, true
@@ -535,7 +535,7 @@ func (o *IMSChargingInformation) GetSessionPriorityOk() (*IMSSessionPriority, bo
 
 // HasSessionPriority returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasSessionPriority() bool {
-	if o != nil && !isNil(o.SessionPriority) {
+	if o != nil && !IsNil(o.SessionPriority) {
 		return true
 	}
 
@@ -549,7 +549,7 @@ func (o *IMSChargingInformation) SetSessionPriority(v IMSSessionPriority) {
 
 // GetCallingPartyAddresses returns the CallingPartyAddresses field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCallingPartyAddresses() []string {
-	if o == nil || isNil(o.CallingPartyAddresses) {
+	if o == nil || IsNil(o.CallingPartyAddresses) {
 		var ret []string
 		return ret
 	}
@@ -559,7 +559,7 @@ func (o *IMSChargingInformation) GetCallingPartyAddresses() []string {
 // GetCallingPartyAddressesOk returns a tuple with the CallingPartyAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCallingPartyAddressesOk() ([]string, bool) {
-	if o == nil || isNil(o.CallingPartyAddresses) {
+	if o == nil || IsNil(o.CallingPartyAddresses) {
 		return nil, false
 	}
 	return o.CallingPartyAddresses, true
@@ -567,7 +567,7 @@ func (o *IMSChargingInformation) GetCallingPartyAddressesOk() ([]string, bool) {
 
 // HasCallingPartyAddresses returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCallingPartyAddresses() bool {
-	if o != nil && !isNil(o.CallingPartyAddresses) {
+	if o != nil && !IsNil(o.CallingPartyAddresses) {
 		return true
 	}
 
@@ -581,7 +581,7 @@ func (o *IMSChargingInformation) SetCallingPartyAddresses(v []string) {
 
 // GetCalledPartyAddress returns the CalledPartyAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCalledPartyAddress() string {
-	if o == nil || isNil(o.CalledPartyAddress) {
+	if o == nil || IsNil(o.CalledPartyAddress) {
 		var ret string
 		return ret
 	}
@@ -591,7 +591,7 @@ func (o *IMSChargingInformation) GetCalledPartyAddress() string {
 // GetCalledPartyAddressOk returns a tuple with the CalledPartyAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCalledPartyAddressOk() (*string, bool) {
-	if o == nil || isNil(o.CalledPartyAddress) {
+	if o == nil || IsNil(o.CalledPartyAddress) {
 		return nil, false
 	}
 	return o.CalledPartyAddress, true
@@ -599,7 +599,7 @@ func (o *IMSChargingInformation) GetCalledPartyAddressOk() (*string, bool) {
 
 // HasCalledPartyAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCalledPartyAddress() bool {
-	if o != nil && !isNil(o.CalledPartyAddress) {
+	if o != nil && !IsNil(o.CalledPartyAddress) {
 		return true
 	}
 
@@ -613,7 +613,7 @@ func (o *IMSChargingInformation) SetCalledPartyAddress(v string) {
 
 // GetNumberPortabilityRoutinginformation returns the NumberPortabilityRoutinginformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetNumberPortabilityRoutinginformation() string {
-	if o == nil || isNil(o.NumberPortabilityRoutinginformation) {
+	if o == nil || IsNil(o.NumberPortabilityRoutinginformation) {
 		var ret string
 		return ret
 	}
@@ -623,7 +623,7 @@ func (o *IMSChargingInformation) GetNumberPortabilityRoutinginformation() string
 // GetNumberPortabilityRoutinginformationOk returns a tuple with the NumberPortabilityRoutinginformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetNumberPortabilityRoutinginformationOk() (*string, bool) {
-	if o == nil || isNil(o.NumberPortabilityRoutinginformation) {
+	if o == nil || IsNil(o.NumberPortabilityRoutinginformation) {
 		return nil, false
 	}
 	return o.NumberPortabilityRoutinginformation, true
@@ -631,7 +631,7 @@ func (o *IMSChargingInformation) GetNumberPortabilityRoutinginformationOk() (*st
 
 // HasNumberPortabilityRoutinginformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasNumberPortabilityRoutinginformation() bool {
-	if o != nil && !isNil(o.NumberPortabilityRoutinginformation) {
+	if o != nil && !IsNil(o.NumberPortabilityRoutinginformation) {
 		return true
 	}
 
@@ -645,7 +645,7 @@ func (o *IMSChargingInformation) SetNumberPortabilityRoutinginformation(v string
 
 // GetCarrierSelectRoutingInformation returns the CarrierSelectRoutingInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCarrierSelectRoutingInformation() string {
-	if o == nil || isNil(o.CarrierSelectRoutingInformation) {
+	if o == nil || IsNil(o.CarrierSelectRoutingInformation) {
 		var ret string
 		return ret
 	}
@@ -655,7 +655,7 @@ func (o *IMSChargingInformation) GetCarrierSelectRoutingInformation() string {
 // GetCarrierSelectRoutingInformationOk returns a tuple with the CarrierSelectRoutingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCarrierSelectRoutingInformationOk() (*string, bool) {
-	if o == nil || isNil(o.CarrierSelectRoutingInformation) {
+	if o == nil || IsNil(o.CarrierSelectRoutingInformation) {
 		return nil, false
 	}
 	return o.CarrierSelectRoutingInformation, true
@@ -663,7 +663,7 @@ func (o *IMSChargingInformation) GetCarrierSelectRoutingInformationOk() (*string
 
 // HasCarrierSelectRoutingInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCarrierSelectRoutingInformation() bool {
-	if o != nil && !isNil(o.CarrierSelectRoutingInformation) {
+	if o != nil && !IsNil(o.CarrierSelectRoutingInformation) {
 		return true
 	}
 
@@ -677,7 +677,7 @@ func (o *IMSChargingInformation) SetCarrierSelectRoutingInformation(v string) {
 
 // GetAlternateChargedPartyAddress returns the AlternateChargedPartyAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetAlternateChargedPartyAddress() string {
-	if o == nil || isNil(o.AlternateChargedPartyAddress) {
+	if o == nil || IsNil(o.AlternateChargedPartyAddress) {
 		var ret string
 		return ret
 	}
@@ -687,7 +687,7 @@ func (o *IMSChargingInformation) GetAlternateChargedPartyAddress() string {
 // GetAlternateChargedPartyAddressOk returns a tuple with the AlternateChargedPartyAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetAlternateChargedPartyAddressOk() (*string, bool) {
-	if o == nil || isNil(o.AlternateChargedPartyAddress) {
+	if o == nil || IsNil(o.AlternateChargedPartyAddress) {
 		return nil, false
 	}
 	return o.AlternateChargedPartyAddress, true
@@ -695,7 +695,7 @@ func (o *IMSChargingInformation) GetAlternateChargedPartyAddressOk() (*string, b
 
 // HasAlternateChargedPartyAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasAlternateChargedPartyAddress() bool {
-	if o != nil && !isNil(o.AlternateChargedPartyAddress) {
+	if o != nil && !IsNil(o.AlternateChargedPartyAddress) {
 		return true
 	}
 
@@ -709,7 +709,7 @@ func (o *IMSChargingInformation) SetAlternateChargedPartyAddress(v string) {
 
 // GetRequestedPartyAddress returns the RequestedPartyAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetRequestedPartyAddress() []string {
-	if o == nil || isNil(o.RequestedPartyAddress) {
+	if o == nil || IsNil(o.RequestedPartyAddress) {
 		var ret []string
 		return ret
 	}
@@ -719,7 +719,7 @@ func (o *IMSChargingInformation) GetRequestedPartyAddress() []string {
 // GetRequestedPartyAddressOk returns a tuple with the RequestedPartyAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetRequestedPartyAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.RequestedPartyAddress) {
+	if o == nil || IsNil(o.RequestedPartyAddress) {
 		return nil, false
 	}
 	return o.RequestedPartyAddress, true
@@ -727,7 +727,7 @@ func (o *IMSChargingInformation) GetRequestedPartyAddressOk() ([]string, bool) {
 
 // HasRequestedPartyAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasRequestedPartyAddress() bool {
-	if o != nil && !isNil(o.RequestedPartyAddress) {
+	if o != nil && !IsNil(o.RequestedPartyAddress) {
 		return true
 	}
 
@@ -741,7 +741,7 @@ func (o *IMSChargingInformation) SetRequestedPartyAddress(v []string) {
 
 // GetCalledAssertedIdentities returns the CalledAssertedIdentities field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCalledAssertedIdentities() []string {
-	if o == nil || isNil(o.CalledAssertedIdentities) {
+	if o == nil || IsNil(o.CalledAssertedIdentities) {
 		var ret []string
 		return ret
 	}
@@ -751,7 +751,7 @@ func (o *IMSChargingInformation) GetCalledAssertedIdentities() []string {
 // GetCalledAssertedIdentitiesOk returns a tuple with the CalledAssertedIdentities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCalledAssertedIdentitiesOk() ([]string, bool) {
-	if o == nil || isNil(o.CalledAssertedIdentities) {
+	if o == nil || IsNil(o.CalledAssertedIdentities) {
 		return nil, false
 	}
 	return o.CalledAssertedIdentities, true
@@ -759,7 +759,7 @@ func (o *IMSChargingInformation) GetCalledAssertedIdentitiesOk() ([]string, bool
 
 // HasCalledAssertedIdentities returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCalledAssertedIdentities() bool {
-	if o != nil && !isNil(o.CalledAssertedIdentities) {
+	if o != nil && !IsNil(o.CalledAssertedIdentities) {
 		return true
 	}
 
@@ -773,7 +773,7 @@ func (o *IMSChargingInformation) SetCalledAssertedIdentities(v []string) {
 
 // GetCalledIdentityChanges returns the CalledIdentityChanges field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCalledIdentityChanges() []CalledIdentityChange {
-	if o == nil || isNil(o.CalledIdentityChanges) {
+	if o == nil || IsNil(o.CalledIdentityChanges) {
 		var ret []CalledIdentityChange
 		return ret
 	}
@@ -783,7 +783,7 @@ func (o *IMSChargingInformation) GetCalledIdentityChanges() []CalledIdentityChan
 // GetCalledIdentityChangesOk returns a tuple with the CalledIdentityChanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCalledIdentityChangesOk() ([]CalledIdentityChange, bool) {
-	if o == nil || isNil(o.CalledIdentityChanges) {
+	if o == nil || IsNil(o.CalledIdentityChanges) {
 		return nil, false
 	}
 	return o.CalledIdentityChanges, true
@@ -791,7 +791,7 @@ func (o *IMSChargingInformation) GetCalledIdentityChangesOk() ([]CalledIdentityC
 
 // HasCalledIdentityChanges returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCalledIdentityChanges() bool {
-	if o != nil && !isNil(o.CalledIdentityChanges) {
+	if o != nil && !IsNil(o.CalledIdentityChanges) {
 		return true
 	}
 
@@ -805,7 +805,7 @@ func (o *IMSChargingInformation) SetCalledIdentityChanges(v []CalledIdentityChan
 
 // GetAssociatedURI returns the AssociatedURI field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetAssociatedURI() []string {
-	if o == nil || isNil(o.AssociatedURI) {
+	if o == nil || IsNil(o.AssociatedURI) {
 		var ret []string
 		return ret
 	}
@@ -815,7 +815,7 @@ func (o *IMSChargingInformation) GetAssociatedURI() []string {
 // GetAssociatedURIOk returns a tuple with the AssociatedURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetAssociatedURIOk() ([]string, bool) {
-	if o == nil || isNil(o.AssociatedURI) {
+	if o == nil || IsNil(o.AssociatedURI) {
 		return nil, false
 	}
 	return o.AssociatedURI, true
@@ -823,7 +823,7 @@ func (o *IMSChargingInformation) GetAssociatedURIOk() ([]string, bool) {
 
 // HasAssociatedURI returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasAssociatedURI() bool {
-	if o != nil && !isNil(o.AssociatedURI) {
+	if o != nil && !IsNil(o.AssociatedURI) {
 		return true
 	}
 
@@ -837,7 +837,7 @@ func (o *IMSChargingInformation) SetAssociatedURI(v []string) {
 
 // GetTimeStamps returns the TimeStamps field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetTimeStamps() time.Time {
-	if o == nil || isNil(o.TimeStamps) {
+	if o == nil || IsNil(o.TimeStamps) {
 		var ret time.Time
 		return ret
 	}
@@ -847,7 +847,7 @@ func (o *IMSChargingInformation) GetTimeStamps() time.Time {
 // GetTimeStampsOk returns a tuple with the TimeStamps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetTimeStampsOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TimeStamps) {
+	if o == nil || IsNil(o.TimeStamps) {
 		return nil, false
 	}
 	return o.TimeStamps, true
@@ -855,7 +855,7 @@ func (o *IMSChargingInformation) GetTimeStampsOk() (*time.Time, bool) {
 
 // HasTimeStamps returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasTimeStamps() bool {
-	if o != nil && !isNil(o.TimeStamps) {
+	if o != nil && !IsNil(o.TimeStamps) {
 		return true
 	}
 
@@ -869,7 +869,7 @@ func (o *IMSChargingInformation) SetTimeStamps(v time.Time) {
 
 // GetApplicationServerInformation returns the ApplicationServerInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetApplicationServerInformation() []string {
-	if o == nil || isNil(o.ApplicationServerInformation) {
+	if o == nil || IsNil(o.ApplicationServerInformation) {
 		var ret []string
 		return ret
 	}
@@ -879,7 +879,7 @@ func (o *IMSChargingInformation) GetApplicationServerInformation() []string {
 // GetApplicationServerInformationOk returns a tuple with the ApplicationServerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetApplicationServerInformationOk() ([]string, bool) {
-	if o == nil || isNil(o.ApplicationServerInformation) {
+	if o == nil || IsNil(o.ApplicationServerInformation) {
 		return nil, false
 	}
 	return o.ApplicationServerInformation, true
@@ -887,7 +887,7 @@ func (o *IMSChargingInformation) GetApplicationServerInformationOk() ([]string, 
 
 // HasApplicationServerInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasApplicationServerInformation() bool {
-	if o != nil && !isNil(o.ApplicationServerInformation) {
+	if o != nil && !IsNil(o.ApplicationServerInformation) {
 		return true
 	}
 
@@ -901,7 +901,7 @@ func (o *IMSChargingInformation) SetApplicationServerInformation(v []string) {
 
 // GetInterOperatorIdentifier returns the InterOperatorIdentifier field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetInterOperatorIdentifier() []InterOperatorIdentifier {
-	if o == nil || isNil(o.InterOperatorIdentifier) {
+	if o == nil || IsNil(o.InterOperatorIdentifier) {
 		var ret []InterOperatorIdentifier
 		return ret
 	}
@@ -911,7 +911,7 @@ func (o *IMSChargingInformation) GetInterOperatorIdentifier() []InterOperatorIde
 // GetInterOperatorIdentifierOk returns a tuple with the InterOperatorIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetInterOperatorIdentifierOk() ([]InterOperatorIdentifier, bool) {
-	if o == nil || isNil(o.InterOperatorIdentifier) {
+	if o == nil || IsNil(o.InterOperatorIdentifier) {
 		return nil, false
 	}
 	return o.InterOperatorIdentifier, true
@@ -919,7 +919,7 @@ func (o *IMSChargingInformation) GetInterOperatorIdentifierOk() ([]InterOperator
 
 // HasInterOperatorIdentifier returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasInterOperatorIdentifier() bool {
-	if o != nil && !isNil(o.InterOperatorIdentifier) {
+	if o != nil && !IsNil(o.InterOperatorIdentifier) {
 		return true
 	}
 
@@ -933,7 +933,7 @@ func (o *IMSChargingInformation) SetInterOperatorIdentifier(v []InterOperatorIde
 
 // GetImsChargingIdentifier returns the ImsChargingIdentifier field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetImsChargingIdentifier() string {
-	if o == nil || isNil(o.ImsChargingIdentifier) {
+	if o == nil || IsNil(o.ImsChargingIdentifier) {
 		var ret string
 		return ret
 	}
@@ -943,7 +943,7 @@ func (o *IMSChargingInformation) GetImsChargingIdentifier() string {
 // GetImsChargingIdentifierOk returns a tuple with the ImsChargingIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetImsChargingIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.ImsChargingIdentifier) {
+	if o == nil || IsNil(o.ImsChargingIdentifier) {
 		return nil, false
 	}
 	return o.ImsChargingIdentifier, true
@@ -951,7 +951,7 @@ func (o *IMSChargingInformation) GetImsChargingIdentifierOk() (*string, bool) {
 
 // HasImsChargingIdentifier returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasImsChargingIdentifier() bool {
-	if o != nil && !isNil(o.ImsChargingIdentifier) {
+	if o != nil && !IsNil(o.ImsChargingIdentifier) {
 		return true
 	}
 
@@ -965,7 +965,7 @@ func (o *IMSChargingInformation) SetImsChargingIdentifier(v string) {
 
 // GetRelatedICID returns the RelatedICID field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetRelatedICID() string {
-	if o == nil || isNil(o.RelatedICID) {
+	if o == nil || IsNil(o.RelatedICID) {
 		var ret string
 		return ret
 	}
@@ -975,7 +975,7 @@ func (o *IMSChargingInformation) GetRelatedICID() string {
 // GetRelatedICIDOk returns a tuple with the RelatedICID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetRelatedICIDOk() (*string, bool) {
-	if o == nil || isNil(o.RelatedICID) {
+	if o == nil || IsNil(o.RelatedICID) {
 		return nil, false
 	}
 	return o.RelatedICID, true
@@ -983,7 +983,7 @@ func (o *IMSChargingInformation) GetRelatedICIDOk() (*string, bool) {
 
 // HasRelatedICID returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasRelatedICID() bool {
-	if o != nil && !isNil(o.RelatedICID) {
+	if o != nil && !IsNil(o.RelatedICID) {
 		return true
 	}
 
@@ -997,7 +997,7 @@ func (o *IMSChargingInformation) SetRelatedICID(v string) {
 
 // GetRelatedICIDGenerationNode returns the RelatedICIDGenerationNode field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetRelatedICIDGenerationNode() string {
-	if o == nil || isNil(o.RelatedICIDGenerationNode) {
+	if o == nil || IsNil(o.RelatedICIDGenerationNode) {
 		var ret string
 		return ret
 	}
@@ -1007,7 +1007,7 @@ func (o *IMSChargingInformation) GetRelatedICIDGenerationNode() string {
 // GetRelatedICIDGenerationNodeOk returns a tuple with the RelatedICIDGenerationNode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetRelatedICIDGenerationNodeOk() (*string, bool) {
-	if o == nil || isNil(o.RelatedICIDGenerationNode) {
+	if o == nil || IsNil(o.RelatedICIDGenerationNode) {
 		return nil, false
 	}
 	return o.RelatedICIDGenerationNode, true
@@ -1015,7 +1015,7 @@ func (o *IMSChargingInformation) GetRelatedICIDGenerationNodeOk() (*string, bool
 
 // HasRelatedICIDGenerationNode returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasRelatedICIDGenerationNode() bool {
-	if o != nil && !isNil(o.RelatedICIDGenerationNode) {
+	if o != nil && !IsNil(o.RelatedICIDGenerationNode) {
 		return true
 	}
 
@@ -1029,7 +1029,7 @@ func (o *IMSChargingInformation) SetRelatedICIDGenerationNode(v string) {
 
 // GetTransitIOIList returns the TransitIOIList field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetTransitIOIList() []string {
-	if o == nil || isNil(o.TransitIOIList) {
+	if o == nil || IsNil(o.TransitIOIList) {
 		var ret []string
 		return ret
 	}
@@ -1039,7 +1039,7 @@ func (o *IMSChargingInformation) GetTransitIOIList() []string {
 // GetTransitIOIListOk returns a tuple with the TransitIOIList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetTransitIOIListOk() ([]string, bool) {
-	if o == nil || isNil(o.TransitIOIList) {
+	if o == nil || IsNil(o.TransitIOIList) {
 		return nil, false
 	}
 	return o.TransitIOIList, true
@@ -1047,7 +1047,7 @@ func (o *IMSChargingInformation) GetTransitIOIListOk() ([]string, bool) {
 
 // HasTransitIOIList returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasTransitIOIList() bool {
-	if o != nil && !isNil(o.TransitIOIList) {
+	if o != nil && !IsNil(o.TransitIOIList) {
 		return true
 	}
 
@@ -1061,7 +1061,7 @@ func (o *IMSChargingInformation) SetTransitIOIList(v []string) {
 
 // GetEarlyMediaDescription returns the EarlyMediaDescription field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetEarlyMediaDescription() []EarlyMediaDescription {
-	if o == nil || isNil(o.EarlyMediaDescription) {
+	if o == nil || IsNil(o.EarlyMediaDescription) {
 		var ret []EarlyMediaDescription
 		return ret
 	}
@@ -1071,7 +1071,7 @@ func (o *IMSChargingInformation) GetEarlyMediaDescription() []EarlyMediaDescript
 // GetEarlyMediaDescriptionOk returns a tuple with the EarlyMediaDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetEarlyMediaDescriptionOk() ([]EarlyMediaDescription, bool) {
-	if o == nil || isNil(o.EarlyMediaDescription) {
+	if o == nil || IsNil(o.EarlyMediaDescription) {
 		return nil, false
 	}
 	return o.EarlyMediaDescription, true
@@ -1079,7 +1079,7 @@ func (o *IMSChargingInformation) GetEarlyMediaDescriptionOk() ([]EarlyMediaDescr
 
 // HasEarlyMediaDescription returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasEarlyMediaDescription() bool {
-	if o != nil && !isNil(o.EarlyMediaDescription) {
+	if o != nil && !IsNil(o.EarlyMediaDescription) {
 		return true
 	}
 
@@ -1093,7 +1093,7 @@ func (o *IMSChargingInformation) SetEarlyMediaDescription(v []EarlyMediaDescript
 
 // GetSdpSessionDescription returns the SdpSessionDescription field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetSdpSessionDescription() []string {
-	if o == nil || isNil(o.SdpSessionDescription) {
+	if o == nil || IsNil(o.SdpSessionDescription) {
 		var ret []string
 		return ret
 	}
@@ -1103,7 +1103,7 @@ func (o *IMSChargingInformation) GetSdpSessionDescription() []string {
 // GetSdpSessionDescriptionOk returns a tuple with the SdpSessionDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetSdpSessionDescriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.SdpSessionDescription) {
+	if o == nil || IsNil(o.SdpSessionDescription) {
 		return nil, false
 	}
 	return o.SdpSessionDescription, true
@@ -1111,7 +1111,7 @@ func (o *IMSChargingInformation) GetSdpSessionDescriptionOk() ([]string, bool) {
 
 // HasSdpSessionDescription returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasSdpSessionDescription() bool {
-	if o != nil && !isNil(o.SdpSessionDescription) {
+	if o != nil && !IsNil(o.SdpSessionDescription) {
 		return true
 	}
 
@@ -1125,7 +1125,7 @@ func (o *IMSChargingInformation) SetSdpSessionDescription(v []string) {
 
 // GetSdpMediaComponent returns the SdpMediaComponent field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetSdpMediaComponent() []SDPMediaComponent {
-	if o == nil || isNil(o.SdpMediaComponent) {
+	if o == nil || IsNil(o.SdpMediaComponent) {
 		var ret []SDPMediaComponent
 		return ret
 	}
@@ -1135,7 +1135,7 @@ func (o *IMSChargingInformation) GetSdpMediaComponent() []SDPMediaComponent {
 // GetSdpMediaComponentOk returns a tuple with the SdpMediaComponent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetSdpMediaComponentOk() ([]SDPMediaComponent, bool) {
-	if o == nil || isNil(o.SdpMediaComponent) {
+	if o == nil || IsNil(o.SdpMediaComponent) {
 		return nil, false
 	}
 	return o.SdpMediaComponent, true
@@ -1143,7 +1143,7 @@ func (o *IMSChargingInformation) GetSdpMediaComponentOk() ([]SDPMediaComponent, 
 
 // HasSdpMediaComponent returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasSdpMediaComponent() bool {
-	if o != nil && !isNil(o.SdpMediaComponent) {
+	if o != nil && !IsNil(o.SdpMediaComponent) {
 		return true
 	}
 
@@ -1157,7 +1157,7 @@ func (o *IMSChargingInformation) SetSdpMediaComponent(v []SDPMediaComponent) {
 
 // GetServedPartyIPAddress returns the ServedPartyIPAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetServedPartyIPAddress() IMSAddress {
-	if o == nil || isNil(o.ServedPartyIPAddress) {
+	if o == nil || IsNil(o.ServedPartyIPAddress) {
 		var ret IMSAddress
 		return ret
 	}
@@ -1167,7 +1167,7 @@ func (o *IMSChargingInformation) GetServedPartyIPAddress() IMSAddress {
 // GetServedPartyIPAddressOk returns a tuple with the ServedPartyIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetServedPartyIPAddressOk() (*IMSAddress, bool) {
-	if o == nil || isNil(o.ServedPartyIPAddress) {
+	if o == nil || IsNil(o.ServedPartyIPAddress) {
 		return nil, false
 	}
 	return o.ServedPartyIPAddress, true
@@ -1175,7 +1175,7 @@ func (o *IMSChargingInformation) GetServedPartyIPAddressOk() (*IMSAddress, bool)
 
 // HasServedPartyIPAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasServedPartyIPAddress() bool {
-	if o != nil && !isNil(o.ServedPartyIPAddress) {
+	if o != nil && !IsNil(o.ServedPartyIPAddress) {
 		return true
 	}
 
@@ -1189,7 +1189,7 @@ func (o *IMSChargingInformation) SetServedPartyIPAddress(v IMSAddress) {
 
 // GetServerCapabilities returns the ServerCapabilities field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetServerCapabilities() ServerCapabilities {
-	if o == nil || isNil(o.ServerCapabilities) {
+	if o == nil || IsNil(o.ServerCapabilities) {
 		var ret ServerCapabilities
 		return ret
 	}
@@ -1199,7 +1199,7 @@ func (o *IMSChargingInformation) GetServerCapabilities() ServerCapabilities {
 // GetServerCapabilitiesOk returns a tuple with the ServerCapabilities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetServerCapabilitiesOk() (*ServerCapabilities, bool) {
-	if o == nil || isNil(o.ServerCapabilities) {
+	if o == nil || IsNil(o.ServerCapabilities) {
 		return nil, false
 	}
 	return o.ServerCapabilities, true
@@ -1207,7 +1207,7 @@ func (o *IMSChargingInformation) GetServerCapabilitiesOk() (*ServerCapabilities,
 
 // HasServerCapabilities returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasServerCapabilities() bool {
-	if o != nil && !isNil(o.ServerCapabilities) {
+	if o != nil && !IsNil(o.ServerCapabilities) {
 		return true
 	}
 
@@ -1221,7 +1221,7 @@ func (o *IMSChargingInformation) SetServerCapabilities(v ServerCapabilities) {
 
 // GetTrunkGroupID returns the TrunkGroupID field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetTrunkGroupID() TrunkGroupID {
-	if o == nil || isNil(o.TrunkGroupID) {
+	if o == nil || IsNil(o.TrunkGroupID) {
 		var ret TrunkGroupID
 		return ret
 	}
@@ -1231,7 +1231,7 @@ func (o *IMSChargingInformation) GetTrunkGroupID() TrunkGroupID {
 // GetTrunkGroupIDOk returns a tuple with the TrunkGroupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetTrunkGroupIDOk() (*TrunkGroupID, bool) {
-	if o == nil || isNil(o.TrunkGroupID) {
+	if o == nil || IsNil(o.TrunkGroupID) {
 		return nil, false
 	}
 	return o.TrunkGroupID, true
@@ -1239,7 +1239,7 @@ func (o *IMSChargingInformation) GetTrunkGroupIDOk() (*TrunkGroupID, bool) {
 
 // HasTrunkGroupID returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasTrunkGroupID() bool {
-	if o != nil && !isNil(o.TrunkGroupID) {
+	if o != nil && !IsNil(o.TrunkGroupID) {
 		return true
 	}
 
@@ -1253,7 +1253,7 @@ func (o *IMSChargingInformation) SetTrunkGroupID(v TrunkGroupID) {
 
 // GetBearerService returns the BearerService field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetBearerService() string {
-	if o == nil || isNil(o.BearerService) {
+	if o == nil || IsNil(o.BearerService) {
 		var ret string
 		return ret
 	}
@@ -1263,7 +1263,7 @@ func (o *IMSChargingInformation) GetBearerService() string {
 // GetBearerServiceOk returns a tuple with the BearerService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetBearerServiceOk() (*string, bool) {
-	if o == nil || isNil(o.BearerService) {
+	if o == nil || IsNil(o.BearerService) {
 		return nil, false
 	}
 	return o.BearerService, true
@@ -1271,7 +1271,7 @@ func (o *IMSChargingInformation) GetBearerServiceOk() (*string, bool) {
 
 // HasBearerService returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasBearerService() bool {
-	if o != nil && !isNil(o.BearerService) {
+	if o != nil && !IsNil(o.BearerService) {
 		return true
 	}
 
@@ -1285,7 +1285,7 @@ func (o *IMSChargingInformation) SetBearerService(v string) {
 
 // GetImsServiceId returns the ImsServiceId field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetImsServiceId() string {
-	if o == nil || isNil(o.ImsServiceId) {
+	if o == nil || IsNil(o.ImsServiceId) {
 		var ret string
 		return ret
 	}
@@ -1295,7 +1295,7 @@ func (o *IMSChargingInformation) GetImsServiceId() string {
 // GetImsServiceIdOk returns a tuple with the ImsServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetImsServiceIdOk() (*string, bool) {
-	if o == nil || isNil(o.ImsServiceId) {
+	if o == nil || IsNil(o.ImsServiceId) {
 		return nil, false
 	}
 	return o.ImsServiceId, true
@@ -1303,7 +1303,7 @@ func (o *IMSChargingInformation) GetImsServiceIdOk() (*string, bool) {
 
 // HasImsServiceId returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasImsServiceId() bool {
-	if o != nil && !isNil(o.ImsServiceId) {
+	if o != nil && !IsNil(o.ImsServiceId) {
 		return true
 	}
 
@@ -1317,7 +1317,7 @@ func (o *IMSChargingInformation) SetImsServiceId(v string) {
 
 // GetMessageBodies returns the MessageBodies field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetMessageBodies() []MessageBody {
-	if o == nil || isNil(o.MessageBodies) {
+	if o == nil || IsNil(o.MessageBodies) {
 		var ret []MessageBody
 		return ret
 	}
@@ -1327,7 +1327,7 @@ func (o *IMSChargingInformation) GetMessageBodies() []MessageBody {
 // GetMessageBodiesOk returns a tuple with the MessageBodies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetMessageBodiesOk() ([]MessageBody, bool) {
-	if o == nil || isNil(o.MessageBodies) {
+	if o == nil || IsNil(o.MessageBodies) {
 		return nil, false
 	}
 	return o.MessageBodies, true
@@ -1335,7 +1335,7 @@ func (o *IMSChargingInformation) GetMessageBodiesOk() ([]MessageBody, bool) {
 
 // HasMessageBodies returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasMessageBodies() bool {
-	if o != nil && !isNil(o.MessageBodies) {
+	if o != nil && !IsNil(o.MessageBodies) {
 		return true
 	}
 
@@ -1349,7 +1349,7 @@ func (o *IMSChargingInformation) SetMessageBodies(v []MessageBody) {
 
 // GetAccessNetworkInformation returns the AccessNetworkInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetAccessNetworkInformation() []string {
-	if o == nil || isNil(o.AccessNetworkInformation) {
+	if o == nil || IsNil(o.AccessNetworkInformation) {
 		var ret []string
 		return ret
 	}
@@ -1359,7 +1359,7 @@ func (o *IMSChargingInformation) GetAccessNetworkInformation() []string {
 // GetAccessNetworkInformationOk returns a tuple with the AccessNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetAccessNetworkInformationOk() ([]string, bool) {
-	if o == nil || isNil(o.AccessNetworkInformation) {
+	if o == nil || IsNil(o.AccessNetworkInformation) {
 		return nil, false
 	}
 	return o.AccessNetworkInformation, true
@@ -1367,7 +1367,7 @@ func (o *IMSChargingInformation) GetAccessNetworkInformationOk() ([]string, bool
 
 // HasAccessNetworkInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasAccessNetworkInformation() bool {
-	if o != nil && !isNil(o.AccessNetworkInformation) {
+	if o != nil && !IsNil(o.AccessNetworkInformation) {
 		return true
 	}
 
@@ -1381,7 +1381,7 @@ func (o *IMSChargingInformation) SetAccessNetworkInformation(v []string) {
 
 // GetAdditionalAccessNetworkInformation returns the AdditionalAccessNetworkInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetAdditionalAccessNetworkInformation() string {
-	if o == nil || isNil(o.AdditionalAccessNetworkInformation) {
+	if o == nil || IsNil(o.AdditionalAccessNetworkInformation) {
 		var ret string
 		return ret
 	}
@@ -1391,7 +1391,7 @@ func (o *IMSChargingInformation) GetAdditionalAccessNetworkInformation() string 
 // GetAdditionalAccessNetworkInformationOk returns a tuple with the AdditionalAccessNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetAdditionalAccessNetworkInformationOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalAccessNetworkInformation) {
+	if o == nil || IsNil(o.AdditionalAccessNetworkInformation) {
 		return nil, false
 	}
 	return o.AdditionalAccessNetworkInformation, true
@@ -1399,7 +1399,7 @@ func (o *IMSChargingInformation) GetAdditionalAccessNetworkInformationOk() (*str
 
 // HasAdditionalAccessNetworkInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasAdditionalAccessNetworkInformation() bool {
-	if o != nil && !isNil(o.AdditionalAccessNetworkInformation) {
+	if o != nil && !IsNil(o.AdditionalAccessNetworkInformation) {
 		return true
 	}
 
@@ -1413,7 +1413,7 @@ func (o *IMSChargingInformation) SetAdditionalAccessNetworkInformation(v string)
 
 // GetCellularNetworkInformation returns the CellularNetworkInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCellularNetworkInformation() string {
-	if o == nil || isNil(o.CellularNetworkInformation) {
+	if o == nil || IsNil(o.CellularNetworkInformation) {
 		var ret string
 		return ret
 	}
@@ -1423,7 +1423,7 @@ func (o *IMSChargingInformation) GetCellularNetworkInformation() string {
 // GetCellularNetworkInformationOk returns a tuple with the CellularNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCellularNetworkInformationOk() (*string, bool) {
-	if o == nil || isNil(o.CellularNetworkInformation) {
+	if o == nil || IsNil(o.CellularNetworkInformation) {
 		return nil, false
 	}
 	return o.CellularNetworkInformation, true
@@ -1431,7 +1431,7 @@ func (o *IMSChargingInformation) GetCellularNetworkInformationOk() (*string, boo
 
 // HasCellularNetworkInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCellularNetworkInformation() bool {
-	if o != nil && !isNil(o.CellularNetworkInformation) {
+	if o != nil && !IsNil(o.CellularNetworkInformation) {
 		return true
 	}
 
@@ -1445,7 +1445,7 @@ func (o *IMSChargingInformation) SetCellularNetworkInformation(v string) {
 
 // GetAccessTransferInformation returns the AccessTransferInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetAccessTransferInformation() []AccessTransferInformation {
-	if o == nil || isNil(o.AccessTransferInformation) {
+	if o == nil || IsNil(o.AccessTransferInformation) {
 		var ret []AccessTransferInformation
 		return ret
 	}
@@ -1455,7 +1455,7 @@ func (o *IMSChargingInformation) GetAccessTransferInformation() []AccessTransfer
 // GetAccessTransferInformationOk returns a tuple with the AccessTransferInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetAccessTransferInformationOk() ([]AccessTransferInformation, bool) {
-	if o == nil || isNil(o.AccessTransferInformation) {
+	if o == nil || IsNil(o.AccessTransferInformation) {
 		return nil, false
 	}
 	return o.AccessTransferInformation, true
@@ -1463,7 +1463,7 @@ func (o *IMSChargingInformation) GetAccessTransferInformationOk() ([]AccessTrans
 
 // HasAccessTransferInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasAccessTransferInformation() bool {
-	if o != nil && !isNil(o.AccessTransferInformation) {
+	if o != nil && !IsNil(o.AccessTransferInformation) {
 		return true
 	}
 
@@ -1477,7 +1477,7 @@ func (o *IMSChargingInformation) SetAccessTransferInformation(v []AccessTransfer
 
 // GetAccessNetworkInfoChange returns the AccessNetworkInfoChange field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetAccessNetworkInfoChange() []AccessNetworkInfoChange {
-	if o == nil || isNil(o.AccessNetworkInfoChange) {
+	if o == nil || IsNil(o.AccessNetworkInfoChange) {
 		var ret []AccessNetworkInfoChange
 		return ret
 	}
@@ -1487,7 +1487,7 @@ func (o *IMSChargingInformation) GetAccessNetworkInfoChange() []AccessNetworkInf
 // GetAccessNetworkInfoChangeOk returns a tuple with the AccessNetworkInfoChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetAccessNetworkInfoChangeOk() ([]AccessNetworkInfoChange, bool) {
-	if o == nil || isNil(o.AccessNetworkInfoChange) {
+	if o == nil || IsNil(o.AccessNetworkInfoChange) {
 		return nil, false
 	}
 	return o.AccessNetworkInfoChange, true
@@ -1495,7 +1495,7 @@ func (o *IMSChargingInformation) GetAccessNetworkInfoChangeOk() ([]AccessNetwork
 
 // HasAccessNetworkInfoChange returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasAccessNetworkInfoChange() bool {
-	if o != nil && !isNil(o.AccessNetworkInfoChange) {
+	if o != nil && !IsNil(o.AccessNetworkInfoChange) {
 		return true
 	}
 
@@ -1509,7 +1509,7 @@ func (o *IMSChargingInformation) SetAccessNetworkInfoChange(v []AccessNetworkInf
 
 // GetImsCommunicationServiceID returns the ImsCommunicationServiceID field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetImsCommunicationServiceID() string {
-	if o == nil || isNil(o.ImsCommunicationServiceID) {
+	if o == nil || IsNil(o.ImsCommunicationServiceID) {
 		var ret string
 		return ret
 	}
@@ -1519,7 +1519,7 @@ func (o *IMSChargingInformation) GetImsCommunicationServiceID() string {
 // GetImsCommunicationServiceIDOk returns a tuple with the ImsCommunicationServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetImsCommunicationServiceIDOk() (*string, bool) {
-	if o == nil || isNil(o.ImsCommunicationServiceID) {
+	if o == nil || IsNil(o.ImsCommunicationServiceID) {
 		return nil, false
 	}
 	return o.ImsCommunicationServiceID, true
@@ -1527,7 +1527,7 @@ func (o *IMSChargingInformation) GetImsCommunicationServiceIDOk() (*string, bool
 
 // HasImsCommunicationServiceID returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasImsCommunicationServiceID() bool {
-	if o != nil && !isNil(o.ImsCommunicationServiceID) {
+	if o != nil && !IsNil(o.ImsCommunicationServiceID) {
 		return true
 	}
 
@@ -1541,7 +1541,7 @@ func (o *IMSChargingInformation) SetImsCommunicationServiceID(v string) {
 
 // GetImsApplicationReferenceID returns the ImsApplicationReferenceID field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetImsApplicationReferenceID() string {
-	if o == nil || isNil(o.ImsApplicationReferenceID) {
+	if o == nil || IsNil(o.ImsApplicationReferenceID) {
 		var ret string
 		return ret
 	}
@@ -1551,7 +1551,7 @@ func (o *IMSChargingInformation) GetImsApplicationReferenceID() string {
 // GetImsApplicationReferenceIDOk returns a tuple with the ImsApplicationReferenceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetImsApplicationReferenceIDOk() (*string, bool) {
-	if o == nil || isNil(o.ImsApplicationReferenceID) {
+	if o == nil || IsNil(o.ImsApplicationReferenceID) {
 		return nil, false
 	}
 	return o.ImsApplicationReferenceID, true
@@ -1559,7 +1559,7 @@ func (o *IMSChargingInformation) GetImsApplicationReferenceIDOk() (*string, bool
 
 // HasImsApplicationReferenceID returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasImsApplicationReferenceID() bool {
-	if o != nil && !isNil(o.ImsApplicationReferenceID) {
+	if o != nil && !IsNil(o.ImsApplicationReferenceID) {
 		return true
 	}
 
@@ -1573,7 +1573,7 @@ func (o *IMSChargingInformation) SetImsApplicationReferenceID(v string) {
 
 // GetCauseCode returns the CauseCode field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetCauseCode() int32 {
-	if o == nil || isNil(o.CauseCode) {
+	if o == nil || IsNil(o.CauseCode) {
 		var ret int32
 		return ret
 	}
@@ -1583,7 +1583,7 @@ func (o *IMSChargingInformation) GetCauseCode() int32 {
 // GetCauseCodeOk returns a tuple with the CauseCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetCauseCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.CauseCode) {
+	if o == nil || IsNil(o.CauseCode) {
 		return nil, false
 	}
 	return o.CauseCode, true
@@ -1591,7 +1591,7 @@ func (o *IMSChargingInformation) GetCauseCodeOk() (*int32, bool) {
 
 // HasCauseCode returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasCauseCode() bool {
-	if o != nil && !isNil(o.CauseCode) {
+	if o != nil && !IsNil(o.CauseCode) {
 		return true
 	}
 
@@ -1605,7 +1605,7 @@ func (o *IMSChargingInformation) SetCauseCode(v int32) {
 
 // GetReasonHeader returns the ReasonHeader field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetReasonHeader() []string {
-	if o == nil || isNil(o.ReasonHeader) {
+	if o == nil || IsNil(o.ReasonHeader) {
 		var ret []string
 		return ret
 	}
@@ -1615,7 +1615,7 @@ func (o *IMSChargingInformation) GetReasonHeader() []string {
 // GetReasonHeaderOk returns a tuple with the ReasonHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetReasonHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ReasonHeader) {
+	if o == nil || IsNil(o.ReasonHeader) {
 		return nil, false
 	}
 	return o.ReasonHeader, true
@@ -1623,7 +1623,7 @@ func (o *IMSChargingInformation) GetReasonHeaderOk() ([]string, bool) {
 
 // HasReasonHeader returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasReasonHeader() bool {
-	if o != nil && !isNil(o.ReasonHeader) {
+	if o != nil && !IsNil(o.ReasonHeader) {
 		return true
 	}
 
@@ -1637,7 +1637,7 @@ func (o *IMSChargingInformation) SetReasonHeader(v []string) {
 
 // GetInitialIMSChargingIdentifier returns the InitialIMSChargingIdentifier field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetInitialIMSChargingIdentifier() string {
-	if o == nil || isNil(o.InitialIMSChargingIdentifier) {
+	if o == nil || IsNil(o.InitialIMSChargingIdentifier) {
 		var ret string
 		return ret
 	}
@@ -1647,7 +1647,7 @@ func (o *IMSChargingInformation) GetInitialIMSChargingIdentifier() string {
 // GetInitialIMSChargingIdentifierOk returns a tuple with the InitialIMSChargingIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetInitialIMSChargingIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.InitialIMSChargingIdentifier) {
+	if o == nil || IsNil(o.InitialIMSChargingIdentifier) {
 		return nil, false
 	}
 	return o.InitialIMSChargingIdentifier, true
@@ -1655,7 +1655,7 @@ func (o *IMSChargingInformation) GetInitialIMSChargingIdentifierOk() (*string, b
 
 // HasInitialIMSChargingIdentifier returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasInitialIMSChargingIdentifier() bool {
-	if o != nil && !isNil(o.InitialIMSChargingIdentifier) {
+	if o != nil && !IsNil(o.InitialIMSChargingIdentifier) {
 		return true
 	}
 
@@ -1669,7 +1669,7 @@ func (o *IMSChargingInformation) SetInitialIMSChargingIdentifier(v string) {
 
 // GetNniInformation returns the NniInformation field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetNniInformation() []NNIInformation {
-	if o == nil || isNil(o.NniInformation) {
+	if o == nil || IsNil(o.NniInformation) {
 		var ret []NNIInformation
 		return ret
 	}
@@ -1679,7 +1679,7 @@ func (o *IMSChargingInformation) GetNniInformation() []NNIInformation {
 // GetNniInformationOk returns a tuple with the NniInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetNniInformationOk() ([]NNIInformation, bool) {
-	if o == nil || isNil(o.NniInformation) {
+	if o == nil || IsNil(o.NniInformation) {
 		return nil, false
 	}
 	return o.NniInformation, true
@@ -1687,7 +1687,7 @@ func (o *IMSChargingInformation) GetNniInformationOk() ([]NNIInformation, bool) 
 
 // HasNniInformation returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasNniInformation() bool {
-	if o != nil && !isNil(o.NniInformation) {
+	if o != nil && !IsNil(o.NniInformation) {
 		return true
 	}
 
@@ -1701,7 +1701,7 @@ func (o *IMSChargingInformation) SetNniInformation(v []NNIInformation) {
 
 // GetFromAddress returns the FromAddress field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetFromAddress() string {
-	if o == nil || isNil(o.FromAddress) {
+	if o == nil || IsNil(o.FromAddress) {
 		var ret string
 		return ret
 	}
@@ -1711,7 +1711,7 @@ func (o *IMSChargingInformation) GetFromAddress() string {
 // GetFromAddressOk returns a tuple with the FromAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetFromAddressOk() (*string, bool) {
-	if o == nil || isNil(o.FromAddress) {
+	if o == nil || IsNil(o.FromAddress) {
 		return nil, false
 	}
 	return o.FromAddress, true
@@ -1719,7 +1719,7 @@ func (o *IMSChargingInformation) GetFromAddressOk() (*string, bool) {
 
 // HasFromAddress returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasFromAddress() bool {
-	if o != nil && !isNil(o.FromAddress) {
+	if o != nil && !IsNil(o.FromAddress) {
 		return true
 	}
 
@@ -1733,7 +1733,7 @@ func (o *IMSChargingInformation) SetFromAddress(v string) {
 
 // GetImsEmergencyIndication returns the ImsEmergencyIndication field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetImsEmergencyIndication() bool {
-	if o == nil || isNil(o.ImsEmergencyIndication) {
+	if o == nil || IsNil(o.ImsEmergencyIndication) {
 		var ret bool
 		return ret
 	}
@@ -1743,7 +1743,7 @@ func (o *IMSChargingInformation) GetImsEmergencyIndication() bool {
 // GetImsEmergencyIndicationOk returns a tuple with the ImsEmergencyIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetImsEmergencyIndicationOk() (*bool, bool) {
-	if o == nil || isNil(o.ImsEmergencyIndication) {
+	if o == nil || IsNil(o.ImsEmergencyIndication) {
 		return nil, false
 	}
 	return o.ImsEmergencyIndication, true
@@ -1751,7 +1751,7 @@ func (o *IMSChargingInformation) GetImsEmergencyIndicationOk() (*bool, bool) {
 
 // HasImsEmergencyIndication returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasImsEmergencyIndication() bool {
-	if o != nil && !isNil(o.ImsEmergencyIndication) {
+	if o != nil && !IsNil(o.ImsEmergencyIndication) {
 		return true
 	}
 
@@ -1765,7 +1765,7 @@ func (o *IMSChargingInformation) SetImsEmergencyIndication(v bool) {
 
 // GetImsVisitedNetworkIdentifier returns the ImsVisitedNetworkIdentifier field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetImsVisitedNetworkIdentifier() string {
-	if o == nil || isNil(o.ImsVisitedNetworkIdentifier) {
+	if o == nil || IsNil(o.ImsVisitedNetworkIdentifier) {
 		var ret string
 		return ret
 	}
@@ -1775,7 +1775,7 @@ func (o *IMSChargingInformation) GetImsVisitedNetworkIdentifier() string {
 // GetImsVisitedNetworkIdentifierOk returns a tuple with the ImsVisitedNetworkIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetImsVisitedNetworkIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.ImsVisitedNetworkIdentifier) {
+	if o == nil || IsNil(o.ImsVisitedNetworkIdentifier) {
 		return nil, false
 	}
 	return o.ImsVisitedNetworkIdentifier, true
@@ -1783,7 +1783,7 @@ func (o *IMSChargingInformation) GetImsVisitedNetworkIdentifierOk() (*string, bo
 
 // HasImsVisitedNetworkIdentifier returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasImsVisitedNetworkIdentifier() bool {
-	if o != nil && !isNil(o.ImsVisitedNetworkIdentifier) {
+	if o != nil && !IsNil(o.ImsVisitedNetworkIdentifier) {
 		return true
 	}
 
@@ -1797,7 +1797,7 @@ func (o *IMSChargingInformation) SetImsVisitedNetworkIdentifier(v string) {
 
 // GetSipRouteHeaderReceived returns the SipRouteHeaderReceived field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetSipRouteHeaderReceived() string {
-	if o == nil || isNil(o.SipRouteHeaderReceived) {
+	if o == nil || IsNil(o.SipRouteHeaderReceived) {
 		var ret string
 		return ret
 	}
@@ -1807,7 +1807,7 @@ func (o *IMSChargingInformation) GetSipRouteHeaderReceived() string {
 // GetSipRouteHeaderReceivedOk returns a tuple with the SipRouteHeaderReceived field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetSipRouteHeaderReceivedOk() (*string, bool) {
-	if o == nil || isNil(o.SipRouteHeaderReceived) {
+	if o == nil || IsNil(o.SipRouteHeaderReceived) {
 		return nil, false
 	}
 	return o.SipRouteHeaderReceived, true
@@ -1815,7 +1815,7 @@ func (o *IMSChargingInformation) GetSipRouteHeaderReceivedOk() (*string, bool) {
 
 // HasSipRouteHeaderReceived returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasSipRouteHeaderReceived() bool {
-	if o != nil && !isNil(o.SipRouteHeaderReceived) {
+	if o != nil && !IsNil(o.SipRouteHeaderReceived) {
 		return true
 	}
 
@@ -1829,7 +1829,7 @@ func (o *IMSChargingInformation) SetSipRouteHeaderReceived(v string) {
 
 // GetSipRouteHeaderTransmitted returns the SipRouteHeaderTransmitted field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetSipRouteHeaderTransmitted() string {
-	if o == nil || isNil(o.SipRouteHeaderTransmitted) {
+	if o == nil || IsNil(o.SipRouteHeaderTransmitted) {
 		var ret string
 		return ret
 	}
@@ -1839,7 +1839,7 @@ func (o *IMSChargingInformation) GetSipRouteHeaderTransmitted() string {
 // GetSipRouteHeaderTransmittedOk returns a tuple with the SipRouteHeaderTransmitted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetSipRouteHeaderTransmittedOk() (*string, bool) {
-	if o == nil || isNil(o.SipRouteHeaderTransmitted) {
+	if o == nil || IsNil(o.SipRouteHeaderTransmitted) {
 		return nil, false
 	}
 	return o.SipRouteHeaderTransmitted, true
@@ -1847,7 +1847,7 @@ func (o *IMSChargingInformation) GetSipRouteHeaderTransmittedOk() (*string, bool
 
 // HasSipRouteHeaderTransmitted returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasSipRouteHeaderTransmitted() bool {
-	if o != nil && !isNil(o.SipRouteHeaderTransmitted) {
+	if o != nil && !IsNil(o.SipRouteHeaderTransmitted) {
 		return true
 	}
 
@@ -1861,7 +1861,7 @@ func (o *IMSChargingInformation) SetSipRouteHeaderTransmitted(v string) {
 
 // GetTadIdentifier returns the TadIdentifier field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetTadIdentifier() TADIdentifier {
-	if o == nil || isNil(o.TadIdentifier) {
+	if o == nil || IsNil(o.TadIdentifier) {
 		var ret TADIdentifier
 		return ret
 	}
@@ -1871,7 +1871,7 @@ func (o *IMSChargingInformation) GetTadIdentifier() TADIdentifier {
 // GetTadIdentifierOk returns a tuple with the TadIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetTadIdentifierOk() (*TADIdentifier, bool) {
-	if o == nil || isNil(o.TadIdentifier) {
+	if o == nil || IsNil(o.TadIdentifier) {
 		return nil, false
 	}
 	return o.TadIdentifier, true
@@ -1879,7 +1879,7 @@ func (o *IMSChargingInformation) GetTadIdentifierOk() (*TADIdentifier, bool) {
 
 // HasTadIdentifier returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasTadIdentifier() bool {
-	if o != nil && !isNil(o.TadIdentifier) {
+	if o != nil && !IsNil(o.TadIdentifier) {
 		return true
 	}
 
@@ -1893,7 +1893,7 @@ func (o *IMSChargingInformation) SetTadIdentifier(v TADIdentifier) {
 
 // GetFeIdentifierList returns the FeIdentifierList field value if set, zero value otherwise.
 func (o *IMSChargingInformation) GetFeIdentifierList() string {
-	if o == nil || isNil(o.FeIdentifierList) {
+	if o == nil || IsNil(o.FeIdentifierList) {
 		var ret string
 		return ret
 	}
@@ -1903,7 +1903,7 @@ func (o *IMSChargingInformation) GetFeIdentifierList() string {
 // GetFeIdentifierListOk returns a tuple with the FeIdentifierList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IMSChargingInformation) GetFeIdentifierListOk() (*string, bool) {
-	if o == nil || isNil(o.FeIdentifierList) {
+	if o == nil || IsNil(o.FeIdentifierList) {
 		return nil, false
 	}
 	return o.FeIdentifierList, true
@@ -1911,7 +1911,7 @@ func (o *IMSChargingInformation) GetFeIdentifierListOk() (*string, bool) {
 
 // HasFeIdentifierList returns a boolean if a field has been set.
 func (o *IMSChargingInformation) HasFeIdentifierList() bool {
-	if o != nil && !isNil(o.FeIdentifierList) {
+	if o != nil && !IsNil(o.FeIdentifierList) {
 		return true
 	}
 
@@ -1924,7 +1924,7 @@ func (o *IMSChargingInformation) SetFeIdentifierList(v string) {
 }
 
 func (o IMSChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1933,175 +1933,175 @@ func (o IMSChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o IMSChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EventType) {
+	if !IsNil(o.EventType) {
 		toSerialize["eventType"] = o.EventType
 	}
-	if !isNil(o.IMSNodeFunctionality) {
+	if !IsNil(o.IMSNodeFunctionality) {
 		toSerialize["iMSNodeFunctionality"] = o.IMSNodeFunctionality
 	}
-	if !isNil(o.RoleOfNode) {
+	if !IsNil(o.RoleOfNode) {
 		toSerialize["roleOfNode"] = o.RoleOfNode
 	}
-	if !isNil(o.UserInformation) {
+	if !IsNil(o.UserInformation) {
 		toSerialize["userInformation"] = o.UserInformation
 	}
-	if !isNil(o.UserLocationInfo) {
+	if !IsNil(o.UserLocationInfo) {
 		toSerialize["userLocationInfo"] = o.UserLocationInfo
 	}
-	if !isNil(o.UeTimeZone) {
+	if !IsNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !isNil(o.Var3gppPSDataOffStatus) {
+	if !IsNil(o.Var3gppPSDataOffStatus) {
 		toSerialize["3gppPSDataOffStatus"] = o.Var3gppPSDataOffStatus
 	}
-	if !isNil(o.IsupCause) {
+	if !IsNil(o.IsupCause) {
 		toSerialize["isupCause"] = o.IsupCause
 	}
-	if !isNil(o.ControlPlaneAddress) {
+	if !IsNil(o.ControlPlaneAddress) {
 		toSerialize["controlPlaneAddress"] = o.ControlPlaneAddress
 	}
-	if !isNil(o.VlrNumber) {
+	if !IsNil(o.VlrNumber) {
 		toSerialize["vlrNumber"] = o.VlrNumber
 	}
-	if !isNil(o.MscAddress) {
+	if !IsNil(o.MscAddress) {
 		toSerialize["mscAddress"] = o.MscAddress
 	}
-	if !isNil(o.UserSessionID) {
+	if !IsNil(o.UserSessionID) {
 		toSerialize["userSessionID"] = o.UserSessionID
 	}
-	if !isNil(o.OutgoingSessionID) {
+	if !IsNil(o.OutgoingSessionID) {
 		toSerialize["outgoingSessionID"] = o.OutgoingSessionID
 	}
-	if !isNil(o.SessionPriority) {
+	if !IsNil(o.SessionPriority) {
 		toSerialize["sessionPriority"] = o.SessionPriority
 	}
-	if !isNil(o.CallingPartyAddresses) {
+	if !IsNil(o.CallingPartyAddresses) {
 		toSerialize["callingPartyAddresses"] = o.CallingPartyAddresses
 	}
-	if !isNil(o.CalledPartyAddress) {
+	if !IsNil(o.CalledPartyAddress) {
 		toSerialize["calledPartyAddress"] = o.CalledPartyAddress
 	}
-	if !isNil(o.NumberPortabilityRoutinginformation) {
+	if !IsNil(o.NumberPortabilityRoutinginformation) {
 		toSerialize["numberPortabilityRoutinginformation"] = o.NumberPortabilityRoutinginformation
 	}
-	if !isNil(o.CarrierSelectRoutingInformation) {
+	if !IsNil(o.CarrierSelectRoutingInformation) {
 		toSerialize["carrierSelectRoutingInformation"] = o.CarrierSelectRoutingInformation
 	}
-	if !isNil(o.AlternateChargedPartyAddress) {
+	if !IsNil(o.AlternateChargedPartyAddress) {
 		toSerialize["alternateChargedPartyAddress"] = o.AlternateChargedPartyAddress
 	}
-	if !isNil(o.RequestedPartyAddress) {
+	if !IsNil(o.RequestedPartyAddress) {
 		toSerialize["requestedPartyAddress"] = o.RequestedPartyAddress
 	}
-	if !isNil(o.CalledAssertedIdentities) {
+	if !IsNil(o.CalledAssertedIdentities) {
 		toSerialize["calledAssertedIdentities"] = o.CalledAssertedIdentities
 	}
-	if !isNil(o.CalledIdentityChanges) {
+	if !IsNil(o.CalledIdentityChanges) {
 		toSerialize["calledIdentityChanges"] = o.CalledIdentityChanges
 	}
-	if !isNil(o.AssociatedURI) {
+	if !IsNil(o.AssociatedURI) {
 		toSerialize["associatedURI"] = o.AssociatedURI
 	}
-	if !isNil(o.TimeStamps) {
+	if !IsNil(o.TimeStamps) {
 		toSerialize["timeStamps"] = o.TimeStamps
 	}
-	if !isNil(o.ApplicationServerInformation) {
+	if !IsNil(o.ApplicationServerInformation) {
 		toSerialize["applicationServerInformation"] = o.ApplicationServerInformation
 	}
-	if !isNil(o.InterOperatorIdentifier) {
+	if !IsNil(o.InterOperatorIdentifier) {
 		toSerialize["interOperatorIdentifier"] = o.InterOperatorIdentifier
 	}
-	if !isNil(o.ImsChargingIdentifier) {
+	if !IsNil(o.ImsChargingIdentifier) {
 		toSerialize["imsChargingIdentifier"] = o.ImsChargingIdentifier
 	}
-	if !isNil(o.RelatedICID) {
+	if !IsNil(o.RelatedICID) {
 		toSerialize["relatedICID"] = o.RelatedICID
 	}
-	if !isNil(o.RelatedICIDGenerationNode) {
+	if !IsNil(o.RelatedICIDGenerationNode) {
 		toSerialize["relatedICIDGenerationNode"] = o.RelatedICIDGenerationNode
 	}
-	if !isNil(o.TransitIOIList) {
+	if !IsNil(o.TransitIOIList) {
 		toSerialize["transitIOIList"] = o.TransitIOIList
 	}
-	if !isNil(o.EarlyMediaDescription) {
+	if !IsNil(o.EarlyMediaDescription) {
 		toSerialize["earlyMediaDescription"] = o.EarlyMediaDescription
 	}
-	if !isNil(o.SdpSessionDescription) {
+	if !IsNil(o.SdpSessionDescription) {
 		toSerialize["sdpSessionDescription"] = o.SdpSessionDescription
 	}
-	if !isNil(o.SdpMediaComponent) {
+	if !IsNil(o.SdpMediaComponent) {
 		toSerialize["sdpMediaComponent"] = o.SdpMediaComponent
 	}
-	if !isNil(o.ServedPartyIPAddress) {
+	if !IsNil(o.ServedPartyIPAddress) {
 		toSerialize["servedPartyIPAddress"] = o.ServedPartyIPAddress
 	}
-	if !isNil(o.ServerCapabilities) {
+	if !IsNil(o.ServerCapabilities) {
 		toSerialize["serverCapabilities"] = o.ServerCapabilities
 	}
-	if !isNil(o.TrunkGroupID) {
+	if !IsNil(o.TrunkGroupID) {
 		toSerialize["trunkGroupID"] = o.TrunkGroupID
 	}
-	if !isNil(o.BearerService) {
+	if !IsNil(o.BearerService) {
 		toSerialize["bearerService"] = o.BearerService
 	}
-	if !isNil(o.ImsServiceId) {
+	if !IsNil(o.ImsServiceId) {
 		toSerialize["imsServiceId"] = o.ImsServiceId
 	}
-	if !isNil(o.MessageBodies) {
+	if !IsNil(o.MessageBodies) {
 		toSerialize["messageBodies"] = o.MessageBodies
 	}
-	if !isNil(o.AccessNetworkInformation) {
+	if !IsNil(o.AccessNetworkInformation) {
 		toSerialize["accessNetworkInformation"] = o.AccessNetworkInformation
 	}
-	if !isNil(o.AdditionalAccessNetworkInformation) {
+	if !IsNil(o.AdditionalAccessNetworkInformation) {
 		toSerialize["additionalAccessNetworkInformation"] = o.AdditionalAccessNetworkInformation
 	}
-	if !isNil(o.CellularNetworkInformation) {
+	if !IsNil(o.CellularNetworkInformation) {
 		toSerialize["cellularNetworkInformation"] = o.CellularNetworkInformation
 	}
-	if !isNil(o.AccessTransferInformation) {
+	if !IsNil(o.AccessTransferInformation) {
 		toSerialize["accessTransferInformation"] = o.AccessTransferInformation
 	}
-	if !isNil(o.AccessNetworkInfoChange) {
+	if !IsNil(o.AccessNetworkInfoChange) {
 		toSerialize["accessNetworkInfoChange"] = o.AccessNetworkInfoChange
 	}
-	if !isNil(o.ImsCommunicationServiceID) {
+	if !IsNil(o.ImsCommunicationServiceID) {
 		toSerialize["imsCommunicationServiceID"] = o.ImsCommunicationServiceID
 	}
-	if !isNil(o.ImsApplicationReferenceID) {
+	if !IsNil(o.ImsApplicationReferenceID) {
 		toSerialize["imsApplicationReferenceID"] = o.ImsApplicationReferenceID
 	}
-	if !isNil(o.CauseCode) {
+	if !IsNil(o.CauseCode) {
 		toSerialize["causeCode"] = o.CauseCode
 	}
-	if !isNil(o.ReasonHeader) {
+	if !IsNil(o.ReasonHeader) {
 		toSerialize["reasonHeader"] = o.ReasonHeader
 	}
-	if !isNil(o.InitialIMSChargingIdentifier) {
+	if !IsNil(o.InitialIMSChargingIdentifier) {
 		toSerialize["initialIMSChargingIdentifier"] = o.InitialIMSChargingIdentifier
 	}
-	if !isNil(o.NniInformation) {
+	if !IsNil(o.NniInformation) {
 		toSerialize["nniInformation"] = o.NniInformation
 	}
-	if !isNil(o.FromAddress) {
+	if !IsNil(o.FromAddress) {
 		toSerialize["fromAddress"] = o.FromAddress
 	}
-	if !isNil(o.ImsEmergencyIndication) {
+	if !IsNil(o.ImsEmergencyIndication) {
 		toSerialize["imsEmergencyIndication"] = o.ImsEmergencyIndication
 	}
-	if !isNil(o.ImsVisitedNetworkIdentifier) {
+	if !IsNil(o.ImsVisitedNetworkIdentifier) {
 		toSerialize["imsVisitedNetworkIdentifier"] = o.ImsVisitedNetworkIdentifier
 	}
-	if !isNil(o.SipRouteHeaderReceived) {
+	if !IsNil(o.SipRouteHeaderReceived) {
 		toSerialize["sipRouteHeaderReceived"] = o.SipRouteHeaderReceived
 	}
-	if !isNil(o.SipRouteHeaderTransmitted) {
+	if !IsNil(o.SipRouteHeaderTransmitted) {
 		toSerialize["sipRouteHeaderTransmitted"] = o.SipRouteHeaderTransmitted
 	}
-	if !isNil(o.TadIdentifier) {
+	if !IsNil(o.TadIdentifier) {
 		toSerialize["tadIdentifier"] = o.TadIdentifier
 	}
-	if !isNil(o.FeIdentifierList) {
+	if !IsNil(o.FeIdentifierList) {
 		toSerialize["feIdentifierList"] = o.FeIdentifierList
 	}
 	return toSerialize, nil
@@ -2142,5 +2142,3 @@ func (v *NullableIMSChargingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

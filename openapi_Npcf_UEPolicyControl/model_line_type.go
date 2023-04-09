@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LineType Possible values are: - DSL: Identifies a DSL line - PON: Identifies a PON line 
+// LineType Possible values are: - DSL: Identifies a DSL line - PON: Identifies a PON line
 type LineType struct {
-	LineTypeAnyOf *LineTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LineType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LineTypeAnyOf
-	err = json.Unmarshal(data, &dst.LineTypeAnyOf);
-	if err == nil {
-		jsonLineTypeAnyOf, _ := json.Marshal(dst.LineTypeAnyOf)
-		if string(jsonLineTypeAnyOf) == "{}" { // empty struct
-			dst.LineTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.LineTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.LineTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LineType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LineType) MarshalJSON() ([]byte, error) {
-	if src.LineTypeAnyOf != nil {
-		return json.Marshal(&src.LineTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLineType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

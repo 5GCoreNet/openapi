@@ -1,7 +1,7 @@
 /*
 EES ACR Status Update Service
 
-EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EES ACR Status Update Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ACRDataStatus{}
 // ACRDataStatus Represents the ACR status information.
 type ACRDataStatus struct {
 	E3SubscsStatus E3SubscsStatus `json:"e3SubscsStatus"`
-	E3SubscIds []string `json:"e3SubscIds,omitempty"`
+	E3SubscIds     []string       `json:"e3SubscIds,omitempty"`
 }
 
 // NewACRDataStatus instantiates a new ACRDataStatus object
@@ -67,7 +67,7 @@ func (o *ACRDataStatus) SetE3SubscsStatus(v E3SubscsStatus) {
 
 // GetE3SubscIds returns the E3SubscIds field value if set, zero value otherwise.
 func (o *ACRDataStatus) GetE3SubscIds() []string {
-	if o == nil || isNil(o.E3SubscIds) {
+	if o == nil || IsNil(o.E3SubscIds) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ACRDataStatus) GetE3SubscIds() []string {
 // GetE3SubscIdsOk returns a tuple with the E3SubscIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRDataStatus) GetE3SubscIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.E3SubscIds) {
+	if o == nil || IsNil(o.E3SubscIds) {
 		return nil, false
 	}
 	return o.E3SubscIds, true
@@ -85,7 +85,7 @@ func (o *ACRDataStatus) GetE3SubscIdsOk() ([]string, bool) {
 
 // HasE3SubscIds returns a boolean if a field has been set.
 func (o *ACRDataStatus) HasE3SubscIds() bool {
-	if o != nil && !isNil(o.E3SubscIds) {
+	if o != nil && !IsNil(o.E3SubscIds) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *ACRDataStatus) SetE3SubscIds(v []string) {
 }
 
 func (o ACRDataStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o ACRDataStatus) MarshalJSON() ([]byte, error) {
 func (o ACRDataStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["e3SubscsStatus"] = o.E3SubscsStatus
-	if !isNil(o.E3SubscIds) {
+	if !IsNil(o.E3SubscIds) {
 		toSerialize["e3SubscIds"] = o.E3SubscIds
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableACRDataStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

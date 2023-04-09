@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &IpMulticastAddressInfo{}
 
 // IpMulticastAddressInfo Contains the IP multicast addressing information.
 type IpMulticastAddressInfo struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
 	SrcIpv4Addr *string `json:"srcIpv4Addr,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4MulAddr *string `json:"ipv4MulAddr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4MulAddr *string   `json:"ipv4MulAddr,omitempty"`
 	SrcIpv6Addr *Ipv6Addr `json:"srcIpv6Addr,omitempty"`
 	Ipv6MulAddr *Ipv6Addr `json:"ipv6MulAddr,omitempty"`
 }
@@ -46,7 +46,7 @@ func NewIpMulticastAddressInfoWithDefaults() *IpMulticastAddressInfo {
 
 // GetSrcIpv4Addr returns the SrcIpv4Addr field value if set, zero value otherwise.
 func (o *IpMulticastAddressInfo) GetSrcIpv4Addr() string {
-	if o == nil || isNil(o.SrcIpv4Addr) {
+	if o == nil || IsNil(o.SrcIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *IpMulticastAddressInfo) GetSrcIpv4Addr() string {
 // GetSrcIpv4AddrOk returns a tuple with the SrcIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpMulticastAddressInfo) GetSrcIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.SrcIpv4Addr) {
+	if o == nil || IsNil(o.SrcIpv4Addr) {
 		return nil, false
 	}
 	return o.SrcIpv4Addr, true
@@ -64,7 +64,7 @@ func (o *IpMulticastAddressInfo) GetSrcIpv4AddrOk() (*string, bool) {
 
 // HasSrcIpv4Addr returns a boolean if a field has been set.
 func (o *IpMulticastAddressInfo) HasSrcIpv4Addr() bool {
-	if o != nil && !isNil(o.SrcIpv4Addr) {
+	if o != nil && !IsNil(o.SrcIpv4Addr) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *IpMulticastAddressInfo) SetSrcIpv4Addr(v string) {
 
 // GetIpv4MulAddr returns the Ipv4MulAddr field value if set, zero value otherwise.
 func (o *IpMulticastAddressInfo) GetIpv4MulAddr() string {
-	if o == nil || isNil(o.Ipv4MulAddr) {
+	if o == nil || IsNil(o.Ipv4MulAddr) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *IpMulticastAddressInfo) GetIpv4MulAddr() string {
 // GetIpv4MulAddrOk returns a tuple with the Ipv4MulAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpMulticastAddressInfo) GetIpv4MulAddrOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4MulAddr) {
+	if o == nil || IsNil(o.Ipv4MulAddr) {
 		return nil, false
 	}
 	return o.Ipv4MulAddr, true
@@ -96,7 +96,7 @@ func (o *IpMulticastAddressInfo) GetIpv4MulAddrOk() (*string, bool) {
 
 // HasIpv4MulAddr returns a boolean if a field has been set.
 func (o *IpMulticastAddressInfo) HasIpv4MulAddr() bool {
-	if o != nil && !isNil(o.Ipv4MulAddr) {
+	if o != nil && !IsNil(o.Ipv4MulAddr) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *IpMulticastAddressInfo) SetIpv4MulAddr(v string) {
 
 // GetSrcIpv6Addr returns the SrcIpv6Addr field value if set, zero value otherwise.
 func (o *IpMulticastAddressInfo) GetSrcIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.SrcIpv6Addr) {
+	if o == nil || IsNil(o.SrcIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *IpMulticastAddressInfo) GetSrcIpv6Addr() Ipv6Addr {
 // GetSrcIpv6AddrOk returns a tuple with the SrcIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpMulticastAddressInfo) GetSrcIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.SrcIpv6Addr) {
+	if o == nil || IsNil(o.SrcIpv6Addr) {
 		return nil, false
 	}
 	return o.SrcIpv6Addr, true
@@ -128,7 +128,7 @@ func (o *IpMulticastAddressInfo) GetSrcIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasSrcIpv6Addr returns a boolean if a field has been set.
 func (o *IpMulticastAddressInfo) HasSrcIpv6Addr() bool {
-	if o != nil && !isNil(o.SrcIpv6Addr) {
+	if o != nil && !IsNil(o.SrcIpv6Addr) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *IpMulticastAddressInfo) SetSrcIpv6Addr(v Ipv6Addr) {
 
 // GetIpv6MulAddr returns the Ipv6MulAddr field value if set, zero value otherwise.
 func (o *IpMulticastAddressInfo) GetIpv6MulAddr() Ipv6Addr {
-	if o == nil || isNil(o.Ipv6MulAddr) {
+	if o == nil || IsNil(o.Ipv6MulAddr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *IpMulticastAddressInfo) GetIpv6MulAddr() Ipv6Addr {
 // GetIpv6MulAddrOk returns a tuple with the Ipv6MulAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpMulticastAddressInfo) GetIpv6MulAddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.Ipv6MulAddr) {
+	if o == nil || IsNil(o.Ipv6MulAddr) {
 		return nil, false
 	}
 	return o.Ipv6MulAddr, true
@@ -160,7 +160,7 @@ func (o *IpMulticastAddressInfo) GetIpv6MulAddrOk() (*Ipv6Addr, bool) {
 
 // HasIpv6MulAddr returns a boolean if a field has been set.
 func (o *IpMulticastAddressInfo) HasIpv6MulAddr() bool {
-	if o != nil && !isNil(o.Ipv6MulAddr) {
+	if o != nil && !IsNil(o.Ipv6MulAddr) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *IpMulticastAddressInfo) SetIpv6MulAddr(v Ipv6Addr) {
 }
 
 func (o IpMulticastAddressInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,16 +182,16 @@ func (o IpMulticastAddressInfo) MarshalJSON() ([]byte, error) {
 
 func (o IpMulticastAddressInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SrcIpv4Addr) {
+	if !IsNil(o.SrcIpv4Addr) {
 		toSerialize["srcIpv4Addr"] = o.SrcIpv4Addr
 	}
-	if !isNil(o.Ipv4MulAddr) {
+	if !IsNil(o.Ipv4MulAddr) {
 		toSerialize["ipv4MulAddr"] = o.Ipv4MulAddr
 	}
-	if !isNil(o.SrcIpv6Addr) {
+	if !IsNil(o.SrcIpv6Addr) {
 		toSerialize["srcIpv6Addr"] = o.SrcIpv6Addr
 	}
-	if !isNil(o.Ipv6MulAddr) {
+	if !IsNil(o.Ipv6MulAddr) {
 		toSerialize["ipv6MulAddr"] = o.Ipv6MulAddr
 	}
 	return toSerialize, nil
@@ -232,5 +232,3 @@ func (v *NullableIpMulticastAddressInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

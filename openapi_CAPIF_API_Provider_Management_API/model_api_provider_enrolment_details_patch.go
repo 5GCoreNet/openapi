@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Provider_Management_API
 
-API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API provider domain functions management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the APIProviderEnrolmentDetailsPatch type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &APIProviderEnrolmentDetailsPatch{}
 
-// APIProviderEnrolmentDetailsPatch Represents a list of modifications for the API provider domain's enrolment details. 
+// APIProviderEnrolmentDetailsPatch Represents a list of modifications for the API provider domain's enrolment details.
 type APIProviderEnrolmentDetailsPatch struct {
-	// A list of individual API provider domain functions details. When included by the API management function in the HTTP request message, it lists the API provider domain functions that the API management function intends to register/update in registration or update registration procedure.  
+	// A list of individual API provider domain functions details. When included by the API management function in the HTTP request message, it lists the API provider domain functions that the API management function intends to register/update in registration or update registration procedure.
 	ApiProvFuncs []APIProviderFunctionDetails `json:"apiProvFuncs,omitempty"`
-	// Generic information related to the API provider domain such as details of the API provider applications. 
+	// Generic information related to the API provider domain such as details of the API provider applications.
 	ApiProvDomInfo *string `json:"apiProvDomInfo,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewAPIProviderEnrolmentDetailsPatchWithDefaults() *APIProviderEnrolmentDeta
 
 // GetApiProvFuncs returns the ApiProvFuncs field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncs() []APIProviderFunctionDetails {
-	if o == nil || isNil(o.ApiProvFuncs) {
+	if o == nil || IsNil(o.ApiProvFuncs) {
 		var ret []APIProviderFunctionDetails
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncs() []APIProviderFuncti
 // GetApiProvFuncsOk returns a tuple with the ApiProvFuncs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncsOk() ([]APIProviderFunctionDetails, bool) {
-	if o == nil || isNil(o.ApiProvFuncs) {
+	if o == nil || IsNil(o.ApiProvFuncs) {
 		return nil, false
 	}
 	return o.ApiProvFuncs, true
@@ -62,7 +62,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncsOk() ([]APIProviderFun
 
 // HasApiProvFuncs returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetailsPatch) HasApiProvFuncs() bool {
-	if o != nil && !isNil(o.ApiProvFuncs) {
+	if o != nil && !IsNil(o.ApiProvFuncs) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *APIProviderEnrolmentDetailsPatch) SetApiProvFuncs(v []APIProviderFuncti
 
 // GetApiProvDomInfo returns the ApiProvDomInfo field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfo() string {
-	if o == nil || isNil(o.ApiProvDomInfo) {
+	if o == nil || IsNil(o.ApiProvDomInfo) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfo() string {
 // GetApiProvDomInfoOk returns a tuple with the ApiProvDomInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfoOk() (*string, bool) {
-	if o == nil || isNil(o.ApiProvDomInfo) {
+	if o == nil || IsNil(o.ApiProvDomInfo) {
 		return nil, false
 	}
 	return o.ApiProvDomInfo, true
@@ -94,7 +94,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfoOk() (*string, bool)
 
 // HasApiProvDomInfo returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetailsPatch) HasApiProvDomInfo() bool {
-	if o != nil && !isNil(o.ApiProvDomInfo) {
+	if o != nil && !IsNil(o.ApiProvDomInfo) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *APIProviderEnrolmentDetailsPatch) SetApiProvDomInfo(v string) {
 }
 
 func (o APIProviderEnrolmentDetailsPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o APIProviderEnrolmentDetailsPatch) MarshalJSON() ([]byte, error) {
 
 func (o APIProviderEnrolmentDetailsPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ApiProvFuncs) {
+	if !IsNil(o.ApiProvFuncs) {
 		toSerialize["apiProvFuncs"] = o.ApiProvFuncs
 	}
-	if !isNil(o.ApiProvDomInfo) {
+	if !IsNil(o.ApiProvDomInfo) {
 		toSerialize["apiProvDomInfo"] = o.ApiProvDomInfo
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableAPIProviderEnrolmentDetailsPatch) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

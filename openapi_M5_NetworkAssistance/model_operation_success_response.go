@@ -1,7 +1,7 @@
 /*
 M5_NetworkAssistance
 
-5GMS AF M5 Network Assistance API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M5 Network Assistance API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &OperationSuccessResponse{}
 
 // OperationSuccessResponse struct for OperationSuccessResponse
 type OperationSuccessResponse struct {
-	Success bool `json:"success"`
-	Reason *string `json:"reason,omitempty"`
+	Success bool    `json:"success"`
+	Reason  *string `json:"reason,omitempty"`
 }
 
 // NewOperationSuccessResponse instantiates a new OperationSuccessResponse object
@@ -67,7 +67,7 @@ func (o *OperationSuccessResponse) SetSuccess(v bool) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *OperationSuccessResponse) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *OperationSuccessResponse) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperationSuccessResponse) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -85,7 +85,7 @@ func (o *OperationSuccessResponse) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *OperationSuccessResponse) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *OperationSuccessResponse) SetReason(v string) {
 }
 
 func (o OperationSuccessResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o OperationSuccessResponse) MarshalJSON() ([]byte, error) {
 func (o OperationSuccessResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["success"] = o.Success
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableOperationSuccessResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nnef_SMContext
 
-Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMContext Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &DeliverRequest{}
 
 // DeliverRequest struct for DeliverRequest
 type DeliverRequest struct {
-	JsonData *DeliverReqData `json:"jsonData,omitempty"`
-	BinaryMoData *os.File `json:"binaryMoData,omitempty"`
+	JsonData     *DeliverReqData `json:"jsonData,omitempty"`
+	BinaryMoData **os.File       `json:"binaryMoData,omitempty"`
 }
 
 // NewDeliverRequest instantiates a new DeliverRequest object
@@ -43,7 +43,7 @@ func NewDeliverRequestWithDefaults() *DeliverRequest {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *DeliverRequest) GetJsonData() DeliverReqData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret DeliverReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DeliverRequest) GetJsonData() DeliverReqData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeliverRequest) GetJsonDataOk() (*DeliverReqData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *DeliverRequest) GetJsonDataOk() (*DeliverReqData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *DeliverRequest) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *DeliverRequest) SetJsonData(v DeliverReqData) {
 }
 
 // GetBinaryMoData returns the BinaryMoData field value if set, zero value otherwise.
-func (o *DeliverRequest) GetBinaryMoData() os.File {
-	if o == nil || isNil(o.BinaryMoData) {
-		var ret os.File
+func (o *DeliverRequest) GetBinaryMoData() *os.File {
+	if o == nil || IsNil(o.BinaryMoData) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryMoData
@@ -84,8 +84,8 @@ func (o *DeliverRequest) GetBinaryMoData() os.File {
 
 // GetBinaryMoDataOk returns a tuple with the BinaryMoData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeliverRequest) GetBinaryMoDataOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryMoData) {
+func (o *DeliverRequest) GetBinaryMoDataOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryMoData) {
 		return nil, false
 	}
 	return o.BinaryMoData, true
@@ -93,20 +93,20 @@ func (o *DeliverRequest) GetBinaryMoDataOk() (*os.File, bool) {
 
 // HasBinaryMoData returns a boolean if a field has been set.
 func (o *DeliverRequest) HasBinaryMoData() bool {
-	if o != nil && !isNil(o.BinaryMoData) {
+	if o != nil && !IsNil(o.BinaryMoData) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryMoData gets a reference to the given os.File and assigns it to the BinaryMoData field.
-func (o *DeliverRequest) SetBinaryMoData(v os.File) {
+// SetBinaryMoData gets a reference to the given *os.File and assigns it to the BinaryMoData field.
+func (o *DeliverRequest) SetBinaryMoData(v *os.File) {
 	o.BinaryMoData = &v
 }
 
 func (o DeliverRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o DeliverRequest) MarshalJSON() ([]byte, error) {
 
 func (o DeliverRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryMoData) {
+	if !IsNil(o.BinaryMoData) {
 		toSerialize["binaryMoData"] = o.BinaryMoData
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableDeliverRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

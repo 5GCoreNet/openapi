@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -42,7 +42,7 @@ func NewTransferMtDataAddInfoWithDefaults() *TransferMtDataAddInfo {
 
 // GetMaxWaitingTime returns the MaxWaitingTime field value if set, zero value otherwise.
 func (o *TransferMtDataAddInfo) GetMaxWaitingTime() int32 {
-	if o == nil || isNil(o.MaxWaitingTime) {
+	if o == nil || IsNil(o.MaxWaitingTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TransferMtDataAddInfo) GetMaxWaitingTime() int32 {
 // GetMaxWaitingTimeOk returns a tuple with the MaxWaitingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferMtDataAddInfo) GetMaxWaitingTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxWaitingTime) {
+	if o == nil || IsNil(o.MaxWaitingTime) {
 		return nil, false
 	}
 	return o.MaxWaitingTime, true
@@ -60,7 +60,7 @@ func (o *TransferMtDataAddInfo) GetMaxWaitingTimeOk() (*int32, bool) {
 
 // HasMaxWaitingTime returns a boolean if a field has been set.
 func (o *TransferMtDataAddInfo) HasMaxWaitingTime() bool {
-	if o != nil && !isNil(o.MaxWaitingTime) {
+	if o != nil && !IsNil(o.MaxWaitingTime) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *TransferMtDataAddInfo) SetMaxWaitingTime(v int32) {
 }
 
 func (o TransferMtDataAddInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o TransferMtDataAddInfo) MarshalJSON() ([]byte, error) {
 
 func (o TransferMtDataAddInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MaxWaitingTime) {
+	if !IsNil(o.MaxWaitingTime) {
 		toSerialize["maxWaitingTime"] = o.MaxWaitingTime
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableTransferMtDataAddInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

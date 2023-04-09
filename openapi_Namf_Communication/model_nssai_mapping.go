@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NssaiMapping{}
 // NssaiMapping Represents the mapping between a S-NSSAI in serving PLMN to a S-NSSAI in home PLMN
 type NssaiMapping struct {
 	MappedSnssai Snssai `json:"mappedSnssai"`
-	HSnssai Snssai `json:"hSnssai"`
+	HSnssai      Snssai `json:"hSnssai"`
 }
 
 // NewNssaiMapping instantiates a new NssaiMapping object
@@ -91,7 +91,7 @@ func (o *NssaiMapping) SetHSnssai(v Snssai) {
 }
 
 func (o NssaiMapping) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableNssaiMapping) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Namf_Communication
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // IndividualUeContextDocumentApiService IndividualUeContextDocumentApi service
 type IndividualUeContextDocumentApiService service
 
 type ApiCancelRelocateUEContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
-	jsonData *UeContextCancelRelocateData
+	ctx                   context.Context
+	ApiService            *IndividualUeContextDocumentApiService
+	ueContextId           string
+	jsonData              *UeContextCancelRelocateData
 	binaryDataGtpcMessage *os.File
 }
 
@@ -37,8 +36,8 @@ func (r ApiCancelRelocateUEContextRequest) JsonData(jsonData UeContextCancelRelo
 	return r
 }
 
-func (r ApiCancelRelocateUEContextRequest) BinaryDataGtpcMessage(binaryDataGtpcMessage os.File) ApiCancelRelocateUEContextRequest {
-	r.binaryDataGtpcMessage = &binaryDataGtpcMessage
+func (r ApiCancelRelocateUEContextRequest) BinaryDataGtpcMessage(binaryDataGtpcMessage *os.File) ApiCancelRelocateUEContextRequest {
+	r.binaryDataGtpcMessage = binaryDataGtpcMessage
 	return r
 }
 
@@ -49,14 +48,14 @@ func (r ApiCancelRelocateUEContextRequest) Execute() (*http.Response, error) {
 /*
 CancelRelocateUEContext Namf_Communication CancelRelocateUEContext service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiCancelRelocateUEContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiCancelRelocateUEContextRequest
 */
 func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContext(ctx context.Context, ueContextId string) ApiCancelRelocateUEContextRequest {
 	return ApiCancelRelocateUEContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
@@ -64,9 +63,9 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContext(ctx cont
 // Execute executes the request
 func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r ApiCancelRelocateUEContextRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.CancelRelocateUEContext")
@@ -106,22 +105,21 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryDataGtpcMessageLocalVarFormFileName string
-	var binaryDataGtpcMessageLocalVarFileName     string
-	var binaryDataGtpcMessageLocalVarFileBytes    []byte
+	var binaryDataGtpcMessageLocalVarFileName string
+	var binaryDataGtpcMessageLocalVarFileBytes []byte
 
 	binaryDataGtpcMessageLocalVarFormFileName = "binaryDataGtpcMessage"
 
-	var binaryDataGtpcMessageLocalVarFile *os.File
-	if r.binaryDataGtpcMessage != nil {
-		binaryDataGtpcMessageLocalVarFile = r.binaryDataGtpcMessage
-	}
+	binaryDataGtpcMessageLocalVarFile := r.binaryDataGtpcMessage
+
 	if binaryDataGtpcMessageLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataGtpcMessageLocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataGtpcMessageLocalVarFile)
+
 		binaryDataGtpcMessageLocalVarFileBytes = fbs
 		binaryDataGtpcMessageLocalVarFileName = binaryDataGtpcMessageLocalVarFile.Name()
 		binaryDataGtpcMessageLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataGtpcMessageLocalVarFileBytes, fileName: binaryDataGtpcMessageLocalVarFileName, formFileName: binaryDataGtpcMessageLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataGtpcMessageLocalVarFileBytes, fileName: binaryDataGtpcMessageLocalVarFileName, formFileName: binaryDataGtpcMessageLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -132,9 +130,9 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -151,8 +149,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -162,8 +160,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -173,8 +171,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -184,8 +182,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -195,8 +193,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -206,8 +204,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -217,8 +215,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -228,8 +226,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -239,8 +237,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -250,8 +248,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -261,8 +259,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -272,8 +270,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -283,8 +281,8 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -294,20 +292,20 @@ func (a *IndividualUeContextDocumentApiService) CancelRelocateUEContextExecute(r
 }
 
 type ApiCreateUEContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
-	jsonData *UeContextCreateData
-	binaryDataN2Information *os.File
-	binaryDataN2InformationExt1 *os.File
-	binaryDataN2InformationExt2 *os.File
-	binaryDataN2InformationExt3 *os.File
-	binaryDataN2InformationExt4 *os.File
-	binaryDataN2InformationExt5 *os.File
-	binaryDataN2InformationExt6 *os.File
-	binaryDataN2InformationExt7 *os.File
-	binaryDataN2InformationExt8 *os.File
-	binaryDataN2InformationExt9 *os.File
+	ctx                          context.Context
+	ApiService                   *IndividualUeContextDocumentApiService
+	ueContextId                  string
+	jsonData                     *UeContextCreateData
+	binaryDataN2Information      *os.File
+	binaryDataN2InformationExt1  *os.File
+	binaryDataN2InformationExt2  *os.File
+	binaryDataN2InformationExt3  *os.File
+	binaryDataN2InformationExt4  *os.File
+	binaryDataN2InformationExt5  *os.File
+	binaryDataN2InformationExt6  *os.File
+	binaryDataN2InformationExt7  *os.File
+	binaryDataN2InformationExt8  *os.File
+	binaryDataN2InformationExt9  *os.File
 	binaryDataN2InformationExt10 *os.File
 	binaryDataN2InformationExt11 *os.File
 	binaryDataN2InformationExt12 *os.File
@@ -323,93 +321,93 @@ func (r ApiCreateUEContextRequest) JsonData(jsonData UeContextCreateData) ApiCre
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2Information(binaryDataN2Information os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2Information = &binaryDataN2Information
+func (r ApiCreateUEContextRequest) BinaryDataN2Information(binaryDataN2Information *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2Information = binaryDataN2Information
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt1(binaryDataN2InformationExt1 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt1 = &binaryDataN2InformationExt1
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt1(binaryDataN2InformationExt1 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt1 = binaryDataN2InformationExt1
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt2(binaryDataN2InformationExt2 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt2 = &binaryDataN2InformationExt2
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt2(binaryDataN2InformationExt2 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt2 = binaryDataN2InformationExt2
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt3(binaryDataN2InformationExt3 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt3 = &binaryDataN2InformationExt3
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt3(binaryDataN2InformationExt3 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt3 = binaryDataN2InformationExt3
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt4(binaryDataN2InformationExt4 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt4 = &binaryDataN2InformationExt4
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt4(binaryDataN2InformationExt4 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt4 = binaryDataN2InformationExt4
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt5(binaryDataN2InformationExt5 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt5 = &binaryDataN2InformationExt5
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt5(binaryDataN2InformationExt5 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt5 = binaryDataN2InformationExt5
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt6(binaryDataN2InformationExt6 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt6 = &binaryDataN2InformationExt6
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt6(binaryDataN2InformationExt6 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt6 = binaryDataN2InformationExt6
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt7(binaryDataN2InformationExt7 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt7 = &binaryDataN2InformationExt7
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt7(binaryDataN2InformationExt7 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt7 = binaryDataN2InformationExt7
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt8(binaryDataN2InformationExt8 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt8 = &binaryDataN2InformationExt8
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt8(binaryDataN2InformationExt8 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt8 = binaryDataN2InformationExt8
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt9(binaryDataN2InformationExt9 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt9 = &binaryDataN2InformationExt9
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt9(binaryDataN2InformationExt9 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt9 = binaryDataN2InformationExt9
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt10(binaryDataN2InformationExt10 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt10 = &binaryDataN2InformationExt10
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt10(binaryDataN2InformationExt10 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt10 = binaryDataN2InformationExt10
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt11(binaryDataN2InformationExt11 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt11 = &binaryDataN2InformationExt11
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt11(binaryDataN2InformationExt11 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt11 = binaryDataN2InformationExt11
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt12(binaryDataN2InformationExt12 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt12 = &binaryDataN2InformationExt12
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt12(binaryDataN2InformationExt12 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt12 = binaryDataN2InformationExt12
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt13(binaryDataN2InformationExt13 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt13 = &binaryDataN2InformationExt13
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt13(binaryDataN2InformationExt13 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt13 = binaryDataN2InformationExt13
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt14(binaryDataN2InformationExt14 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt14 = &binaryDataN2InformationExt14
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt14(binaryDataN2InformationExt14 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt14 = binaryDataN2InformationExt14
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt15(binaryDataN2InformationExt15 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt15 = &binaryDataN2InformationExt15
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt15(binaryDataN2InformationExt15 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt15 = binaryDataN2InformationExt15
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt16(binaryDataN2InformationExt16 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt16 = &binaryDataN2InformationExt16
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt16(binaryDataN2InformationExt16 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt16 = binaryDataN2InformationExt16
 	return r
 }
 
-func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt17(binaryDataN2InformationExt17 os.File) ApiCreateUEContextRequest {
-	r.binaryDataN2InformationExt17 = &binaryDataN2InformationExt17
+func (r ApiCreateUEContextRequest) BinaryDataN2InformationExt17(binaryDataN2InformationExt17 *os.File) ApiCreateUEContextRequest {
+	r.binaryDataN2InformationExt17 = binaryDataN2InformationExt17
 	return r
 }
 
@@ -420,26 +418,27 @@ func (r ApiCreateUEContextRequest) Execute() (*UeContextCreatedData, *http.Respo
 /*
 CreateUEContext Namf_Communication CreateUEContext service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiCreateUEContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiCreateUEContextRequest
 */
 func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Context, ueContextId string) ApiCreateUEContextRequest {
 	return ApiCreateUEContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
 
 // Execute executes the request
-//  @return UeContextCreatedData
+//
+//	@return UeContextCreatedData
 func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCreateUEContextRequest) (*UeContextCreatedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UeContextCreatedData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UeContextCreatedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.CreateUEContext")
@@ -479,311 +478,293 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryDataN2InformationLocalVarFormFileName string
-	var binaryDataN2InformationLocalVarFileName     string
-	var binaryDataN2InformationLocalVarFileBytes    []byte
+	var binaryDataN2InformationLocalVarFileName string
+	var binaryDataN2InformationLocalVarFileBytes []byte
 
 	binaryDataN2InformationLocalVarFormFileName = "binaryDataN2Information"
 
-	var binaryDataN2InformationLocalVarFile *os.File
-	if r.binaryDataN2Information != nil {
-		binaryDataN2InformationLocalVarFile = r.binaryDataN2Information
-	}
+	binaryDataN2InformationLocalVarFile := r.binaryDataN2Information
+
 	if binaryDataN2InformationLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationLocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationLocalVarFile)
+
 		binaryDataN2InformationLocalVarFileBytes = fbs
 		binaryDataN2InformationLocalVarFileName = binaryDataN2InformationLocalVarFile.Name()
 		binaryDataN2InformationLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	var binaryDataN2InformationExt1LocalVarFormFileName string
-	var binaryDataN2InformationExt1LocalVarFileName     string
-	var binaryDataN2InformationExt1LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt1LocalVarFileName string
+	var binaryDataN2InformationExt1LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt1LocalVarFormFileName = "binaryDataN2InformationExt1"
 
-	var binaryDataN2InformationExt1LocalVarFile *os.File
-	if r.binaryDataN2InformationExt1 != nil {
-		binaryDataN2InformationExt1LocalVarFile = r.binaryDataN2InformationExt1
-	}
+	binaryDataN2InformationExt1LocalVarFile := r.binaryDataN2InformationExt1
+
 	if binaryDataN2InformationExt1LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt1LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt1LocalVarFile)
+
 		binaryDataN2InformationExt1LocalVarFileBytes = fbs
 		binaryDataN2InformationExt1LocalVarFileName = binaryDataN2InformationExt1LocalVarFile.Name()
 		binaryDataN2InformationExt1LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt1LocalVarFileBytes, fileName: binaryDataN2InformationExt1LocalVarFileName, formFileName: binaryDataN2InformationExt1LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt1LocalVarFileBytes, fileName: binaryDataN2InformationExt1LocalVarFileName, formFileName: binaryDataN2InformationExt1LocalVarFormFileName})
 	var binaryDataN2InformationExt2LocalVarFormFileName string
-	var binaryDataN2InformationExt2LocalVarFileName     string
-	var binaryDataN2InformationExt2LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt2LocalVarFileName string
+	var binaryDataN2InformationExt2LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt2LocalVarFormFileName = "binaryDataN2InformationExt2"
 
-	var binaryDataN2InformationExt2LocalVarFile *os.File
-	if r.binaryDataN2InformationExt2 != nil {
-		binaryDataN2InformationExt2LocalVarFile = r.binaryDataN2InformationExt2
-	}
+	binaryDataN2InformationExt2LocalVarFile := r.binaryDataN2InformationExt2
+
 	if binaryDataN2InformationExt2LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt2LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt2LocalVarFile)
+
 		binaryDataN2InformationExt2LocalVarFileBytes = fbs
 		binaryDataN2InformationExt2LocalVarFileName = binaryDataN2InformationExt2LocalVarFile.Name()
 		binaryDataN2InformationExt2LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt2LocalVarFileBytes, fileName: binaryDataN2InformationExt2LocalVarFileName, formFileName: binaryDataN2InformationExt2LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt2LocalVarFileBytes, fileName: binaryDataN2InformationExt2LocalVarFileName, formFileName: binaryDataN2InformationExt2LocalVarFormFileName})
 	var binaryDataN2InformationExt3LocalVarFormFileName string
-	var binaryDataN2InformationExt3LocalVarFileName     string
-	var binaryDataN2InformationExt3LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt3LocalVarFileName string
+	var binaryDataN2InformationExt3LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt3LocalVarFormFileName = "binaryDataN2InformationExt3"
 
-	var binaryDataN2InformationExt3LocalVarFile *os.File
-	if r.binaryDataN2InformationExt3 != nil {
-		binaryDataN2InformationExt3LocalVarFile = r.binaryDataN2InformationExt3
-	}
+	binaryDataN2InformationExt3LocalVarFile := r.binaryDataN2InformationExt3
+
 	if binaryDataN2InformationExt3LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt3LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt3LocalVarFile)
+
 		binaryDataN2InformationExt3LocalVarFileBytes = fbs
 		binaryDataN2InformationExt3LocalVarFileName = binaryDataN2InformationExt3LocalVarFile.Name()
 		binaryDataN2InformationExt3LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt3LocalVarFileBytes, fileName: binaryDataN2InformationExt3LocalVarFileName, formFileName: binaryDataN2InformationExt3LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt3LocalVarFileBytes, fileName: binaryDataN2InformationExt3LocalVarFileName, formFileName: binaryDataN2InformationExt3LocalVarFormFileName})
 	var binaryDataN2InformationExt4LocalVarFormFileName string
-	var binaryDataN2InformationExt4LocalVarFileName     string
-	var binaryDataN2InformationExt4LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt4LocalVarFileName string
+	var binaryDataN2InformationExt4LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt4LocalVarFormFileName = "binaryDataN2InformationExt4"
 
-	var binaryDataN2InformationExt4LocalVarFile *os.File
-	if r.binaryDataN2InformationExt4 != nil {
-		binaryDataN2InformationExt4LocalVarFile = r.binaryDataN2InformationExt4
-	}
+	binaryDataN2InformationExt4LocalVarFile := r.binaryDataN2InformationExt4
+
 	if binaryDataN2InformationExt4LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt4LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt4LocalVarFile)
+
 		binaryDataN2InformationExt4LocalVarFileBytes = fbs
 		binaryDataN2InformationExt4LocalVarFileName = binaryDataN2InformationExt4LocalVarFile.Name()
 		binaryDataN2InformationExt4LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt4LocalVarFileBytes, fileName: binaryDataN2InformationExt4LocalVarFileName, formFileName: binaryDataN2InformationExt4LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt4LocalVarFileBytes, fileName: binaryDataN2InformationExt4LocalVarFileName, formFileName: binaryDataN2InformationExt4LocalVarFormFileName})
 	var binaryDataN2InformationExt5LocalVarFormFileName string
-	var binaryDataN2InformationExt5LocalVarFileName     string
-	var binaryDataN2InformationExt5LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt5LocalVarFileName string
+	var binaryDataN2InformationExt5LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt5LocalVarFormFileName = "binaryDataN2InformationExt5"
 
-	var binaryDataN2InformationExt5LocalVarFile *os.File
-	if r.binaryDataN2InformationExt5 != nil {
-		binaryDataN2InformationExt5LocalVarFile = r.binaryDataN2InformationExt5
-	}
+	binaryDataN2InformationExt5LocalVarFile := r.binaryDataN2InformationExt5
+
 	if binaryDataN2InformationExt5LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt5LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt5LocalVarFile)
+
 		binaryDataN2InformationExt5LocalVarFileBytes = fbs
 		binaryDataN2InformationExt5LocalVarFileName = binaryDataN2InformationExt5LocalVarFile.Name()
 		binaryDataN2InformationExt5LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt5LocalVarFileBytes, fileName: binaryDataN2InformationExt5LocalVarFileName, formFileName: binaryDataN2InformationExt5LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt5LocalVarFileBytes, fileName: binaryDataN2InformationExt5LocalVarFileName, formFileName: binaryDataN2InformationExt5LocalVarFormFileName})
 	var binaryDataN2InformationExt6LocalVarFormFileName string
-	var binaryDataN2InformationExt6LocalVarFileName     string
-	var binaryDataN2InformationExt6LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt6LocalVarFileName string
+	var binaryDataN2InformationExt6LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt6LocalVarFormFileName = "binaryDataN2InformationExt6"
 
-	var binaryDataN2InformationExt6LocalVarFile *os.File
-	if r.binaryDataN2InformationExt6 != nil {
-		binaryDataN2InformationExt6LocalVarFile = r.binaryDataN2InformationExt6
-	}
+	binaryDataN2InformationExt6LocalVarFile := r.binaryDataN2InformationExt6
+
 	if binaryDataN2InformationExt6LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt6LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt6LocalVarFile)
+
 		binaryDataN2InformationExt6LocalVarFileBytes = fbs
 		binaryDataN2InformationExt6LocalVarFileName = binaryDataN2InformationExt6LocalVarFile.Name()
 		binaryDataN2InformationExt6LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt6LocalVarFileBytes, fileName: binaryDataN2InformationExt6LocalVarFileName, formFileName: binaryDataN2InformationExt6LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt6LocalVarFileBytes, fileName: binaryDataN2InformationExt6LocalVarFileName, formFileName: binaryDataN2InformationExt6LocalVarFormFileName})
 	var binaryDataN2InformationExt7LocalVarFormFileName string
-	var binaryDataN2InformationExt7LocalVarFileName     string
-	var binaryDataN2InformationExt7LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt7LocalVarFileName string
+	var binaryDataN2InformationExt7LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt7LocalVarFormFileName = "binaryDataN2InformationExt7"
 
-	var binaryDataN2InformationExt7LocalVarFile *os.File
-	if r.binaryDataN2InformationExt7 != nil {
-		binaryDataN2InformationExt7LocalVarFile = r.binaryDataN2InformationExt7
-	}
+	binaryDataN2InformationExt7LocalVarFile := r.binaryDataN2InformationExt7
+
 	if binaryDataN2InformationExt7LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt7LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt7LocalVarFile)
+
 		binaryDataN2InformationExt7LocalVarFileBytes = fbs
 		binaryDataN2InformationExt7LocalVarFileName = binaryDataN2InformationExt7LocalVarFile.Name()
 		binaryDataN2InformationExt7LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt7LocalVarFileBytes, fileName: binaryDataN2InformationExt7LocalVarFileName, formFileName: binaryDataN2InformationExt7LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt7LocalVarFileBytes, fileName: binaryDataN2InformationExt7LocalVarFileName, formFileName: binaryDataN2InformationExt7LocalVarFormFileName})
 	var binaryDataN2InformationExt8LocalVarFormFileName string
-	var binaryDataN2InformationExt8LocalVarFileName     string
-	var binaryDataN2InformationExt8LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt8LocalVarFileName string
+	var binaryDataN2InformationExt8LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt8LocalVarFormFileName = "binaryDataN2InformationExt8"
 
-	var binaryDataN2InformationExt8LocalVarFile *os.File
-	if r.binaryDataN2InformationExt8 != nil {
-		binaryDataN2InformationExt8LocalVarFile = r.binaryDataN2InformationExt8
-	}
+	binaryDataN2InformationExt8LocalVarFile := r.binaryDataN2InformationExt8
+
 	if binaryDataN2InformationExt8LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt8LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt8LocalVarFile)
+
 		binaryDataN2InformationExt8LocalVarFileBytes = fbs
 		binaryDataN2InformationExt8LocalVarFileName = binaryDataN2InformationExt8LocalVarFile.Name()
 		binaryDataN2InformationExt8LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt8LocalVarFileBytes, fileName: binaryDataN2InformationExt8LocalVarFileName, formFileName: binaryDataN2InformationExt8LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt8LocalVarFileBytes, fileName: binaryDataN2InformationExt8LocalVarFileName, formFileName: binaryDataN2InformationExt8LocalVarFormFileName})
 	var binaryDataN2InformationExt9LocalVarFormFileName string
-	var binaryDataN2InformationExt9LocalVarFileName     string
-	var binaryDataN2InformationExt9LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt9LocalVarFileName string
+	var binaryDataN2InformationExt9LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt9LocalVarFormFileName = "binaryDataN2InformationExt9"
 
-	var binaryDataN2InformationExt9LocalVarFile *os.File
-	if r.binaryDataN2InformationExt9 != nil {
-		binaryDataN2InformationExt9LocalVarFile = r.binaryDataN2InformationExt9
-	}
+	binaryDataN2InformationExt9LocalVarFile := r.binaryDataN2InformationExt9
+
 	if binaryDataN2InformationExt9LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt9LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt9LocalVarFile)
+
 		binaryDataN2InformationExt9LocalVarFileBytes = fbs
 		binaryDataN2InformationExt9LocalVarFileName = binaryDataN2InformationExt9LocalVarFile.Name()
 		binaryDataN2InformationExt9LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt9LocalVarFileBytes, fileName: binaryDataN2InformationExt9LocalVarFileName, formFileName: binaryDataN2InformationExt9LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt9LocalVarFileBytes, fileName: binaryDataN2InformationExt9LocalVarFileName, formFileName: binaryDataN2InformationExt9LocalVarFormFileName})
 	var binaryDataN2InformationExt10LocalVarFormFileName string
-	var binaryDataN2InformationExt10LocalVarFileName     string
-	var binaryDataN2InformationExt10LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt10LocalVarFileName string
+	var binaryDataN2InformationExt10LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt10LocalVarFormFileName = "binaryDataN2InformationExt10"
 
-	var binaryDataN2InformationExt10LocalVarFile *os.File
-	if r.binaryDataN2InformationExt10 != nil {
-		binaryDataN2InformationExt10LocalVarFile = r.binaryDataN2InformationExt10
-	}
+	binaryDataN2InformationExt10LocalVarFile := r.binaryDataN2InformationExt10
+
 	if binaryDataN2InformationExt10LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt10LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt10LocalVarFile)
+
 		binaryDataN2InformationExt10LocalVarFileBytes = fbs
 		binaryDataN2InformationExt10LocalVarFileName = binaryDataN2InformationExt10LocalVarFile.Name()
 		binaryDataN2InformationExt10LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt10LocalVarFileBytes, fileName: binaryDataN2InformationExt10LocalVarFileName, formFileName: binaryDataN2InformationExt10LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt10LocalVarFileBytes, fileName: binaryDataN2InformationExt10LocalVarFileName, formFileName: binaryDataN2InformationExt10LocalVarFormFileName})
 	var binaryDataN2InformationExt11LocalVarFormFileName string
-	var binaryDataN2InformationExt11LocalVarFileName     string
-	var binaryDataN2InformationExt11LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt11LocalVarFileName string
+	var binaryDataN2InformationExt11LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt11LocalVarFormFileName = "binaryDataN2InformationExt11"
 
-	var binaryDataN2InformationExt11LocalVarFile *os.File
-	if r.binaryDataN2InformationExt11 != nil {
-		binaryDataN2InformationExt11LocalVarFile = r.binaryDataN2InformationExt11
-	}
+	binaryDataN2InformationExt11LocalVarFile := r.binaryDataN2InformationExt11
+
 	if binaryDataN2InformationExt11LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt11LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt11LocalVarFile)
+
 		binaryDataN2InformationExt11LocalVarFileBytes = fbs
 		binaryDataN2InformationExt11LocalVarFileName = binaryDataN2InformationExt11LocalVarFile.Name()
 		binaryDataN2InformationExt11LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt11LocalVarFileBytes, fileName: binaryDataN2InformationExt11LocalVarFileName, formFileName: binaryDataN2InformationExt11LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt11LocalVarFileBytes, fileName: binaryDataN2InformationExt11LocalVarFileName, formFileName: binaryDataN2InformationExt11LocalVarFormFileName})
 	var binaryDataN2InformationExt12LocalVarFormFileName string
-	var binaryDataN2InformationExt12LocalVarFileName     string
-	var binaryDataN2InformationExt12LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt12LocalVarFileName string
+	var binaryDataN2InformationExt12LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt12LocalVarFormFileName = "binaryDataN2InformationExt12"
 
-	var binaryDataN2InformationExt12LocalVarFile *os.File
-	if r.binaryDataN2InformationExt12 != nil {
-		binaryDataN2InformationExt12LocalVarFile = r.binaryDataN2InformationExt12
-	}
+	binaryDataN2InformationExt12LocalVarFile := r.binaryDataN2InformationExt12
+
 	if binaryDataN2InformationExt12LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt12LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt12LocalVarFile)
+
 		binaryDataN2InformationExt12LocalVarFileBytes = fbs
 		binaryDataN2InformationExt12LocalVarFileName = binaryDataN2InformationExt12LocalVarFile.Name()
 		binaryDataN2InformationExt12LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt12LocalVarFileBytes, fileName: binaryDataN2InformationExt12LocalVarFileName, formFileName: binaryDataN2InformationExt12LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt12LocalVarFileBytes, fileName: binaryDataN2InformationExt12LocalVarFileName, formFileName: binaryDataN2InformationExt12LocalVarFormFileName})
 	var binaryDataN2InformationExt13LocalVarFormFileName string
-	var binaryDataN2InformationExt13LocalVarFileName     string
-	var binaryDataN2InformationExt13LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt13LocalVarFileName string
+	var binaryDataN2InformationExt13LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt13LocalVarFormFileName = "binaryDataN2InformationExt13"
 
-	var binaryDataN2InformationExt13LocalVarFile *os.File
-	if r.binaryDataN2InformationExt13 != nil {
-		binaryDataN2InformationExt13LocalVarFile = r.binaryDataN2InformationExt13
-	}
+	binaryDataN2InformationExt13LocalVarFile := r.binaryDataN2InformationExt13
+
 	if binaryDataN2InformationExt13LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt13LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt13LocalVarFile)
+
 		binaryDataN2InformationExt13LocalVarFileBytes = fbs
 		binaryDataN2InformationExt13LocalVarFileName = binaryDataN2InformationExt13LocalVarFile.Name()
 		binaryDataN2InformationExt13LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt13LocalVarFileBytes, fileName: binaryDataN2InformationExt13LocalVarFileName, formFileName: binaryDataN2InformationExt13LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt13LocalVarFileBytes, fileName: binaryDataN2InformationExt13LocalVarFileName, formFileName: binaryDataN2InformationExt13LocalVarFormFileName})
 	var binaryDataN2InformationExt14LocalVarFormFileName string
-	var binaryDataN2InformationExt14LocalVarFileName     string
-	var binaryDataN2InformationExt14LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt14LocalVarFileName string
+	var binaryDataN2InformationExt14LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt14LocalVarFormFileName = "binaryDataN2InformationExt14"
 
-	var binaryDataN2InformationExt14LocalVarFile *os.File
-	if r.binaryDataN2InformationExt14 != nil {
-		binaryDataN2InformationExt14LocalVarFile = r.binaryDataN2InformationExt14
-	}
+	binaryDataN2InformationExt14LocalVarFile := r.binaryDataN2InformationExt14
+
 	if binaryDataN2InformationExt14LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt14LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt14LocalVarFile)
+
 		binaryDataN2InformationExt14LocalVarFileBytes = fbs
 		binaryDataN2InformationExt14LocalVarFileName = binaryDataN2InformationExt14LocalVarFile.Name()
 		binaryDataN2InformationExt14LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt14LocalVarFileBytes, fileName: binaryDataN2InformationExt14LocalVarFileName, formFileName: binaryDataN2InformationExt14LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt14LocalVarFileBytes, fileName: binaryDataN2InformationExt14LocalVarFileName, formFileName: binaryDataN2InformationExt14LocalVarFormFileName})
 	var binaryDataN2InformationExt15LocalVarFormFileName string
-	var binaryDataN2InformationExt15LocalVarFileName     string
-	var binaryDataN2InformationExt15LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt15LocalVarFileName string
+	var binaryDataN2InformationExt15LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt15LocalVarFormFileName = "binaryDataN2InformationExt15"
 
-	var binaryDataN2InformationExt15LocalVarFile *os.File
-	if r.binaryDataN2InformationExt15 != nil {
-		binaryDataN2InformationExt15LocalVarFile = r.binaryDataN2InformationExt15
-	}
+	binaryDataN2InformationExt15LocalVarFile := r.binaryDataN2InformationExt15
+
 	if binaryDataN2InformationExt15LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt15LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt15LocalVarFile)
+
 		binaryDataN2InformationExt15LocalVarFileBytes = fbs
 		binaryDataN2InformationExt15LocalVarFileName = binaryDataN2InformationExt15LocalVarFile.Name()
 		binaryDataN2InformationExt15LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt15LocalVarFileBytes, fileName: binaryDataN2InformationExt15LocalVarFileName, formFileName: binaryDataN2InformationExt15LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt15LocalVarFileBytes, fileName: binaryDataN2InformationExt15LocalVarFileName, formFileName: binaryDataN2InformationExt15LocalVarFormFileName})
 	var binaryDataN2InformationExt16LocalVarFormFileName string
-	var binaryDataN2InformationExt16LocalVarFileName     string
-	var binaryDataN2InformationExt16LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt16LocalVarFileName string
+	var binaryDataN2InformationExt16LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt16LocalVarFormFileName = "binaryDataN2InformationExt16"
 
-	var binaryDataN2InformationExt16LocalVarFile *os.File
-	if r.binaryDataN2InformationExt16 != nil {
-		binaryDataN2InformationExt16LocalVarFile = r.binaryDataN2InformationExt16
-	}
+	binaryDataN2InformationExt16LocalVarFile := r.binaryDataN2InformationExt16
+
 	if binaryDataN2InformationExt16LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt16LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt16LocalVarFile)
+
 		binaryDataN2InformationExt16LocalVarFileBytes = fbs
 		binaryDataN2InformationExt16LocalVarFileName = binaryDataN2InformationExt16LocalVarFile.Name()
 		binaryDataN2InformationExt16LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt16LocalVarFileBytes, fileName: binaryDataN2InformationExt16LocalVarFileName, formFileName: binaryDataN2InformationExt16LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt16LocalVarFileBytes, fileName: binaryDataN2InformationExt16LocalVarFileName, formFileName: binaryDataN2InformationExt16LocalVarFormFileName})
 	var binaryDataN2InformationExt17LocalVarFormFileName string
-	var binaryDataN2InformationExt17LocalVarFileName     string
-	var binaryDataN2InformationExt17LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt17LocalVarFileName string
+	var binaryDataN2InformationExt17LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt17LocalVarFormFileName = "binaryDataN2InformationExt17"
 
-	var binaryDataN2InformationExt17LocalVarFile *os.File
-	if r.binaryDataN2InformationExt17 != nil {
-		binaryDataN2InformationExt17LocalVarFile = r.binaryDataN2InformationExt17
-	}
+	binaryDataN2InformationExt17LocalVarFile := r.binaryDataN2InformationExt17
+
 	if binaryDataN2InformationExt17LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt17LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt17LocalVarFile)
+
 		binaryDataN2InformationExt17LocalVarFileBytes = fbs
 		binaryDataN2InformationExt17LocalVarFileName = binaryDataN2InformationExt17LocalVarFile.Name()
 		binaryDataN2InformationExt17LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt17LocalVarFileBytes, fileName: binaryDataN2InformationExt17LocalVarFileName, formFileName: binaryDataN2InformationExt17LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt17LocalVarFileBytes, fileName: binaryDataN2InformationExt17LocalVarFileName, formFileName: binaryDataN2InformationExt17LocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -794,9 +775,9 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -813,8 +794,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -824,8 +805,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -835,8 +816,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -846,8 +827,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -857,8 +838,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -868,8 +849,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -879,8 +860,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -890,8 +871,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -901,8 +882,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -912,8 +893,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -923,8 +904,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -934,8 +915,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -945,8 +926,8 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -965,9 +946,9 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContextExecute(r ApiCrea
 }
 
 type ApiEBIAssignmentRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
+	ctx           context.Context
+	ApiService    *IndividualUeContextDocumentApiService
+	ueContextId   string
 	assignEbiData *AssignEbiData
 }
 
@@ -983,26 +964,27 @@ func (r ApiEBIAssignmentRequest) Execute() (*AssignedEbiData, *http.Response, er
 /*
 EBIAssignment Namf_Communication EBI Assignment service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiEBIAssignmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiEBIAssignmentRequest
 */
 func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Context, ueContextId string) ApiEBIAssignmentRequest {
 	return ApiEBIAssignmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
 
 // Execute executes the request
-//  @return AssignedEbiData
+//
+//	@return AssignedEbiData
 func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAssignmentRequest) (*AssignedEbiData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AssignedEbiData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AssignedEbiData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.EBIAssignment")
@@ -1049,9 +1031,9 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1068,8 +1050,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -1079,8 +1061,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -1090,8 +1072,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1101,8 +1083,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1112,8 +1094,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1123,8 +1105,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -1134,8 +1116,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1145,8 +1127,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1156,8 +1138,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1167,8 +1149,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1178,8 +1160,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1189,8 +1171,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1200,8 +1182,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1211,8 +1193,8 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1231,9 +1213,9 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignmentExecute(r ApiEBIAss
 }
 
 type ApiRegistrationStatusUpdateRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
+	ctx                      context.Context
+	ApiService               *IndividualUeContextDocumentApiService
+	ueContextId              string
 	ueRegStatusUpdateReqData *UeRegStatusUpdateReqData
 }
 
@@ -1249,26 +1231,27 @@ func (r ApiRegistrationStatusUpdateRequest) Execute() (*UeRegStatusUpdateRspData
 /*
 RegistrationStatusUpdate Namf_Communication RegistrationStatusUpdate service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiRegistrationStatusUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiRegistrationStatusUpdateRequest
 */
 func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx context.Context, ueContextId string) ApiRegistrationStatusUpdateRequest {
 	return ApiRegistrationStatusUpdateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
 
 // Execute executes the request
-//  @return UeRegStatusUpdateRspData
+//
+//	@return UeRegStatusUpdateRspData
 func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(r ApiRegistrationStatusUpdateRequest) (*UeRegStatusUpdateRspData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UeRegStatusUpdateRspData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UeRegStatusUpdateRspData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.RegistrationStatusUpdate")
@@ -1315,9 +1298,9 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1334,8 +1317,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -1345,8 +1328,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -1356,8 +1339,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1367,8 +1350,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1378,8 +1361,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1389,8 +1372,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1400,8 +1383,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1411,8 +1394,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1422,8 +1405,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1433,8 +1416,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1444,8 +1427,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1455,8 +1438,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1466,8 +1449,8 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1486,9 +1469,9 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdateExecute(
 }
 
 type ApiReleaseUEContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
+	ctx              context.Context
+	ApiService       *IndividualUeContextDocumentApiService
+	ueContextId      string
 	uEContextRelease *UEContextRelease
 }
 
@@ -1504,14 +1487,14 @@ func (r ApiReleaseUEContextRequest) Execute() (*http.Response, error) {
 /*
 ReleaseUEContext Namf_Communication ReleaseUEContext service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiReleaseUEContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiReleaseUEContextRequest
 */
 func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Context, ueContextId string) ApiReleaseUEContextRequest {
 	return ApiReleaseUEContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
@@ -1519,9 +1502,9 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 // Execute executes the request
 func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiReleaseUEContextRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.ReleaseUEContext")
@@ -1568,9 +1551,9 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1587,8 +1570,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -1598,8 +1581,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -1609,8 +1592,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -1620,8 +1603,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -1631,8 +1614,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -1642,8 +1625,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -1653,8 +1636,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -1664,8 +1647,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -1675,8 +1658,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1686,8 +1669,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1697,8 +1680,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -1708,8 +1691,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1719,8 +1702,8 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -1730,28 +1713,28 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContextExecute(r ApiRel
 }
 
 type ApiRelocateUEContextRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
-	jsonData *UeContextRelocateData
+	ctx                                context.Context
+	ApiService                         *IndividualUeContextDocumentApiService
+	ueContextId                        string
+	jsonData                           *UeContextRelocateData
 	binaryDataForwardRelocationRequest *os.File
-	binaryDataN2Information *os.File
-	binaryDataN2InformationExt1 *os.File
-	binaryDataN2InformationExt2 *os.File
-	binaryDataN2InformationExt3 *os.File
-	binaryDataN2InformationExt4 *os.File
-	binaryDataN2InformationExt5 *os.File
-	binaryDataN2InformationExt6 *os.File
-	binaryDataN2InformationExt7 *os.File
-	binaryDataN2InformationExt8 *os.File
-	binaryDataN2InformationExt9 *os.File
-	binaryDataN2InformationExt10 *os.File
-	binaryDataN2InformationExt11 *os.File
-	binaryDataN2InformationExt12 *os.File
-	binaryDataN2InformationExt13 *os.File
-	binaryDataN2InformationExt14 *os.File
-	binaryDataN2InformationExt15 *os.File
-	binaryDataN2InformationExt16 *os.File
+	binaryDataN2Information            *os.File
+	binaryDataN2InformationExt1        *os.File
+	binaryDataN2InformationExt2        *os.File
+	binaryDataN2InformationExt3        *os.File
+	binaryDataN2InformationExt4        *os.File
+	binaryDataN2InformationExt5        *os.File
+	binaryDataN2InformationExt6        *os.File
+	binaryDataN2InformationExt7        *os.File
+	binaryDataN2InformationExt8        *os.File
+	binaryDataN2InformationExt9        *os.File
+	binaryDataN2InformationExt10       *os.File
+	binaryDataN2InformationExt11       *os.File
+	binaryDataN2InformationExt12       *os.File
+	binaryDataN2InformationExt13       *os.File
+	binaryDataN2InformationExt14       *os.File
+	binaryDataN2InformationExt15       *os.File
+	binaryDataN2InformationExt16       *os.File
 }
 
 func (r ApiRelocateUEContextRequest) JsonData(jsonData UeContextRelocateData) ApiRelocateUEContextRequest {
@@ -1759,93 +1742,93 @@ func (r ApiRelocateUEContextRequest) JsonData(jsonData UeContextRelocateData) Ap
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataForwardRelocationRequest(binaryDataForwardRelocationRequest os.File) ApiRelocateUEContextRequest {
-	r.binaryDataForwardRelocationRequest = &binaryDataForwardRelocationRequest
+func (r ApiRelocateUEContextRequest) BinaryDataForwardRelocationRequest(binaryDataForwardRelocationRequest *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataForwardRelocationRequest = binaryDataForwardRelocationRequest
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2Information(binaryDataN2Information os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2Information = &binaryDataN2Information
+func (r ApiRelocateUEContextRequest) BinaryDataN2Information(binaryDataN2Information *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2Information = binaryDataN2Information
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt1(binaryDataN2InformationExt1 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt1 = &binaryDataN2InformationExt1
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt1(binaryDataN2InformationExt1 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt1 = binaryDataN2InformationExt1
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt2(binaryDataN2InformationExt2 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt2 = &binaryDataN2InformationExt2
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt2(binaryDataN2InformationExt2 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt2 = binaryDataN2InformationExt2
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt3(binaryDataN2InformationExt3 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt3 = &binaryDataN2InformationExt3
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt3(binaryDataN2InformationExt3 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt3 = binaryDataN2InformationExt3
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt4(binaryDataN2InformationExt4 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt4 = &binaryDataN2InformationExt4
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt4(binaryDataN2InformationExt4 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt4 = binaryDataN2InformationExt4
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt5(binaryDataN2InformationExt5 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt5 = &binaryDataN2InformationExt5
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt5(binaryDataN2InformationExt5 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt5 = binaryDataN2InformationExt5
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt6(binaryDataN2InformationExt6 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt6 = &binaryDataN2InformationExt6
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt6(binaryDataN2InformationExt6 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt6 = binaryDataN2InformationExt6
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt7(binaryDataN2InformationExt7 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt7 = &binaryDataN2InformationExt7
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt7(binaryDataN2InformationExt7 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt7 = binaryDataN2InformationExt7
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt8(binaryDataN2InformationExt8 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt8 = &binaryDataN2InformationExt8
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt8(binaryDataN2InformationExt8 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt8 = binaryDataN2InformationExt8
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt9(binaryDataN2InformationExt9 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt9 = &binaryDataN2InformationExt9
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt9(binaryDataN2InformationExt9 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt9 = binaryDataN2InformationExt9
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt10(binaryDataN2InformationExt10 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt10 = &binaryDataN2InformationExt10
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt10(binaryDataN2InformationExt10 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt10 = binaryDataN2InformationExt10
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt11(binaryDataN2InformationExt11 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt11 = &binaryDataN2InformationExt11
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt11(binaryDataN2InformationExt11 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt11 = binaryDataN2InformationExt11
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt12(binaryDataN2InformationExt12 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt12 = &binaryDataN2InformationExt12
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt12(binaryDataN2InformationExt12 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt12 = binaryDataN2InformationExt12
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt13(binaryDataN2InformationExt13 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt13 = &binaryDataN2InformationExt13
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt13(binaryDataN2InformationExt13 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt13 = binaryDataN2InformationExt13
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt14(binaryDataN2InformationExt14 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt14 = &binaryDataN2InformationExt14
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt14(binaryDataN2InformationExt14 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt14 = binaryDataN2InformationExt14
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt15(binaryDataN2InformationExt15 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt15 = &binaryDataN2InformationExt15
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt15(binaryDataN2InformationExt15 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt15 = binaryDataN2InformationExt15
 	return r
 }
 
-func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt16(binaryDataN2InformationExt16 os.File) ApiRelocateUEContextRequest {
-	r.binaryDataN2InformationExt16 = &binaryDataN2InformationExt16
+func (r ApiRelocateUEContextRequest) BinaryDataN2InformationExt16(binaryDataN2InformationExt16 *os.File) ApiRelocateUEContextRequest {
+	r.binaryDataN2InformationExt16 = binaryDataN2InformationExt16
 	return r
 }
 
@@ -1856,26 +1839,27 @@ func (r ApiRelocateUEContextRequest) Execute() (*UeContextRelocatedData, *http.R
 /*
 RelocateUEContext Namf_Communication RelocateUEContext service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiRelocateUEContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiRelocateUEContextRequest
 */
 func (a *IndividualUeContextDocumentApiService) RelocateUEContext(ctx context.Context, ueContextId string) ApiRelocateUEContextRequest {
 	return ApiRelocateUEContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
 
 // Execute executes the request
-//  @return UeContextRelocatedData
+//
+//	@return UeContextRelocatedData
 func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRelocateUEContextRequest) (*UeContextRelocatedData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UeContextRelocatedData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UeContextRelocatedData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.RelocateUEContext")
@@ -1915,311 +1899,293 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 		localVarFormParams.Add("jsonData", paramJson)
 	}
 	var binaryDataForwardRelocationRequestLocalVarFormFileName string
-	var binaryDataForwardRelocationRequestLocalVarFileName     string
-	var binaryDataForwardRelocationRequestLocalVarFileBytes    []byte
+	var binaryDataForwardRelocationRequestLocalVarFileName string
+	var binaryDataForwardRelocationRequestLocalVarFileBytes []byte
 
 	binaryDataForwardRelocationRequestLocalVarFormFileName = "binaryDataForwardRelocationRequest"
 
-	var binaryDataForwardRelocationRequestLocalVarFile *os.File
-	if r.binaryDataForwardRelocationRequest != nil {
-		binaryDataForwardRelocationRequestLocalVarFile = r.binaryDataForwardRelocationRequest
-	}
+	binaryDataForwardRelocationRequestLocalVarFile := r.binaryDataForwardRelocationRequest
+
 	if binaryDataForwardRelocationRequestLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataForwardRelocationRequestLocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataForwardRelocationRequestLocalVarFile)
+
 		binaryDataForwardRelocationRequestLocalVarFileBytes = fbs
 		binaryDataForwardRelocationRequestLocalVarFileName = binaryDataForwardRelocationRequestLocalVarFile.Name()
 		binaryDataForwardRelocationRequestLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataForwardRelocationRequestLocalVarFileBytes, fileName: binaryDataForwardRelocationRequestLocalVarFileName, formFileName: binaryDataForwardRelocationRequestLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataForwardRelocationRequestLocalVarFileBytes, fileName: binaryDataForwardRelocationRequestLocalVarFileName, formFileName: binaryDataForwardRelocationRequestLocalVarFormFileName})
 	var binaryDataN2InformationLocalVarFormFileName string
-	var binaryDataN2InformationLocalVarFileName     string
-	var binaryDataN2InformationLocalVarFileBytes    []byte
+	var binaryDataN2InformationLocalVarFileName string
+	var binaryDataN2InformationLocalVarFileBytes []byte
 
 	binaryDataN2InformationLocalVarFormFileName = "binaryDataN2Information"
 
-	var binaryDataN2InformationLocalVarFile *os.File
-	if r.binaryDataN2Information != nil {
-		binaryDataN2InformationLocalVarFile = r.binaryDataN2Information
-	}
+	binaryDataN2InformationLocalVarFile := r.binaryDataN2Information
+
 	if binaryDataN2InformationLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationLocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationLocalVarFile)
+
 		binaryDataN2InformationLocalVarFileBytes = fbs
 		binaryDataN2InformationLocalVarFileName = binaryDataN2InformationLocalVarFile.Name()
 		binaryDataN2InformationLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	var binaryDataN2InformationExt1LocalVarFormFileName string
-	var binaryDataN2InformationExt1LocalVarFileName     string
-	var binaryDataN2InformationExt1LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt1LocalVarFileName string
+	var binaryDataN2InformationExt1LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt1LocalVarFormFileName = "binaryDataN2InformationExt1"
 
-	var binaryDataN2InformationExt1LocalVarFile *os.File
-	if r.binaryDataN2InformationExt1 != nil {
-		binaryDataN2InformationExt1LocalVarFile = r.binaryDataN2InformationExt1
-	}
+	binaryDataN2InformationExt1LocalVarFile := r.binaryDataN2InformationExt1
+
 	if binaryDataN2InformationExt1LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt1LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt1LocalVarFile)
+
 		binaryDataN2InformationExt1LocalVarFileBytes = fbs
 		binaryDataN2InformationExt1LocalVarFileName = binaryDataN2InformationExt1LocalVarFile.Name()
 		binaryDataN2InformationExt1LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt1LocalVarFileBytes, fileName: binaryDataN2InformationExt1LocalVarFileName, formFileName: binaryDataN2InformationExt1LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt1LocalVarFileBytes, fileName: binaryDataN2InformationExt1LocalVarFileName, formFileName: binaryDataN2InformationExt1LocalVarFormFileName})
 	var binaryDataN2InformationExt2LocalVarFormFileName string
-	var binaryDataN2InformationExt2LocalVarFileName     string
-	var binaryDataN2InformationExt2LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt2LocalVarFileName string
+	var binaryDataN2InformationExt2LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt2LocalVarFormFileName = "binaryDataN2InformationExt2"
 
-	var binaryDataN2InformationExt2LocalVarFile *os.File
-	if r.binaryDataN2InformationExt2 != nil {
-		binaryDataN2InformationExt2LocalVarFile = r.binaryDataN2InformationExt2
-	}
+	binaryDataN2InformationExt2LocalVarFile := r.binaryDataN2InformationExt2
+
 	if binaryDataN2InformationExt2LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt2LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt2LocalVarFile)
+
 		binaryDataN2InformationExt2LocalVarFileBytes = fbs
 		binaryDataN2InformationExt2LocalVarFileName = binaryDataN2InformationExt2LocalVarFile.Name()
 		binaryDataN2InformationExt2LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt2LocalVarFileBytes, fileName: binaryDataN2InformationExt2LocalVarFileName, formFileName: binaryDataN2InformationExt2LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt2LocalVarFileBytes, fileName: binaryDataN2InformationExt2LocalVarFileName, formFileName: binaryDataN2InformationExt2LocalVarFormFileName})
 	var binaryDataN2InformationExt3LocalVarFormFileName string
-	var binaryDataN2InformationExt3LocalVarFileName     string
-	var binaryDataN2InformationExt3LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt3LocalVarFileName string
+	var binaryDataN2InformationExt3LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt3LocalVarFormFileName = "binaryDataN2InformationExt3"
 
-	var binaryDataN2InformationExt3LocalVarFile *os.File
-	if r.binaryDataN2InformationExt3 != nil {
-		binaryDataN2InformationExt3LocalVarFile = r.binaryDataN2InformationExt3
-	}
+	binaryDataN2InformationExt3LocalVarFile := r.binaryDataN2InformationExt3
+
 	if binaryDataN2InformationExt3LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt3LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt3LocalVarFile)
+
 		binaryDataN2InformationExt3LocalVarFileBytes = fbs
 		binaryDataN2InformationExt3LocalVarFileName = binaryDataN2InformationExt3LocalVarFile.Name()
 		binaryDataN2InformationExt3LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt3LocalVarFileBytes, fileName: binaryDataN2InformationExt3LocalVarFileName, formFileName: binaryDataN2InformationExt3LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt3LocalVarFileBytes, fileName: binaryDataN2InformationExt3LocalVarFileName, formFileName: binaryDataN2InformationExt3LocalVarFormFileName})
 	var binaryDataN2InformationExt4LocalVarFormFileName string
-	var binaryDataN2InformationExt4LocalVarFileName     string
-	var binaryDataN2InformationExt4LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt4LocalVarFileName string
+	var binaryDataN2InformationExt4LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt4LocalVarFormFileName = "binaryDataN2InformationExt4"
 
-	var binaryDataN2InformationExt4LocalVarFile *os.File
-	if r.binaryDataN2InformationExt4 != nil {
-		binaryDataN2InformationExt4LocalVarFile = r.binaryDataN2InformationExt4
-	}
+	binaryDataN2InformationExt4LocalVarFile := r.binaryDataN2InformationExt4
+
 	if binaryDataN2InformationExt4LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt4LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt4LocalVarFile)
+
 		binaryDataN2InformationExt4LocalVarFileBytes = fbs
 		binaryDataN2InformationExt4LocalVarFileName = binaryDataN2InformationExt4LocalVarFile.Name()
 		binaryDataN2InformationExt4LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt4LocalVarFileBytes, fileName: binaryDataN2InformationExt4LocalVarFileName, formFileName: binaryDataN2InformationExt4LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt4LocalVarFileBytes, fileName: binaryDataN2InformationExt4LocalVarFileName, formFileName: binaryDataN2InformationExt4LocalVarFormFileName})
 	var binaryDataN2InformationExt5LocalVarFormFileName string
-	var binaryDataN2InformationExt5LocalVarFileName     string
-	var binaryDataN2InformationExt5LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt5LocalVarFileName string
+	var binaryDataN2InformationExt5LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt5LocalVarFormFileName = "binaryDataN2InformationExt5"
 
-	var binaryDataN2InformationExt5LocalVarFile *os.File
-	if r.binaryDataN2InformationExt5 != nil {
-		binaryDataN2InformationExt5LocalVarFile = r.binaryDataN2InformationExt5
-	}
+	binaryDataN2InformationExt5LocalVarFile := r.binaryDataN2InformationExt5
+
 	if binaryDataN2InformationExt5LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt5LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt5LocalVarFile)
+
 		binaryDataN2InformationExt5LocalVarFileBytes = fbs
 		binaryDataN2InformationExt5LocalVarFileName = binaryDataN2InformationExt5LocalVarFile.Name()
 		binaryDataN2InformationExt5LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt5LocalVarFileBytes, fileName: binaryDataN2InformationExt5LocalVarFileName, formFileName: binaryDataN2InformationExt5LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt5LocalVarFileBytes, fileName: binaryDataN2InformationExt5LocalVarFileName, formFileName: binaryDataN2InformationExt5LocalVarFormFileName})
 	var binaryDataN2InformationExt6LocalVarFormFileName string
-	var binaryDataN2InformationExt6LocalVarFileName     string
-	var binaryDataN2InformationExt6LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt6LocalVarFileName string
+	var binaryDataN2InformationExt6LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt6LocalVarFormFileName = "binaryDataN2InformationExt6"
 
-	var binaryDataN2InformationExt6LocalVarFile *os.File
-	if r.binaryDataN2InformationExt6 != nil {
-		binaryDataN2InformationExt6LocalVarFile = r.binaryDataN2InformationExt6
-	}
+	binaryDataN2InformationExt6LocalVarFile := r.binaryDataN2InformationExt6
+
 	if binaryDataN2InformationExt6LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt6LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt6LocalVarFile)
+
 		binaryDataN2InformationExt6LocalVarFileBytes = fbs
 		binaryDataN2InformationExt6LocalVarFileName = binaryDataN2InformationExt6LocalVarFile.Name()
 		binaryDataN2InformationExt6LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt6LocalVarFileBytes, fileName: binaryDataN2InformationExt6LocalVarFileName, formFileName: binaryDataN2InformationExt6LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt6LocalVarFileBytes, fileName: binaryDataN2InformationExt6LocalVarFileName, formFileName: binaryDataN2InformationExt6LocalVarFormFileName})
 	var binaryDataN2InformationExt7LocalVarFormFileName string
-	var binaryDataN2InformationExt7LocalVarFileName     string
-	var binaryDataN2InformationExt7LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt7LocalVarFileName string
+	var binaryDataN2InformationExt7LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt7LocalVarFormFileName = "binaryDataN2InformationExt7"
 
-	var binaryDataN2InformationExt7LocalVarFile *os.File
-	if r.binaryDataN2InformationExt7 != nil {
-		binaryDataN2InformationExt7LocalVarFile = r.binaryDataN2InformationExt7
-	}
+	binaryDataN2InformationExt7LocalVarFile := r.binaryDataN2InformationExt7
+
 	if binaryDataN2InformationExt7LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt7LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt7LocalVarFile)
+
 		binaryDataN2InformationExt7LocalVarFileBytes = fbs
 		binaryDataN2InformationExt7LocalVarFileName = binaryDataN2InformationExt7LocalVarFile.Name()
 		binaryDataN2InformationExt7LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt7LocalVarFileBytes, fileName: binaryDataN2InformationExt7LocalVarFileName, formFileName: binaryDataN2InformationExt7LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt7LocalVarFileBytes, fileName: binaryDataN2InformationExt7LocalVarFileName, formFileName: binaryDataN2InformationExt7LocalVarFormFileName})
 	var binaryDataN2InformationExt8LocalVarFormFileName string
-	var binaryDataN2InformationExt8LocalVarFileName     string
-	var binaryDataN2InformationExt8LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt8LocalVarFileName string
+	var binaryDataN2InformationExt8LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt8LocalVarFormFileName = "binaryDataN2InformationExt8"
 
-	var binaryDataN2InformationExt8LocalVarFile *os.File
-	if r.binaryDataN2InformationExt8 != nil {
-		binaryDataN2InformationExt8LocalVarFile = r.binaryDataN2InformationExt8
-	}
+	binaryDataN2InformationExt8LocalVarFile := r.binaryDataN2InformationExt8
+
 	if binaryDataN2InformationExt8LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt8LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt8LocalVarFile)
+
 		binaryDataN2InformationExt8LocalVarFileBytes = fbs
 		binaryDataN2InformationExt8LocalVarFileName = binaryDataN2InformationExt8LocalVarFile.Name()
 		binaryDataN2InformationExt8LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt8LocalVarFileBytes, fileName: binaryDataN2InformationExt8LocalVarFileName, formFileName: binaryDataN2InformationExt8LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt8LocalVarFileBytes, fileName: binaryDataN2InformationExt8LocalVarFileName, formFileName: binaryDataN2InformationExt8LocalVarFormFileName})
 	var binaryDataN2InformationExt9LocalVarFormFileName string
-	var binaryDataN2InformationExt9LocalVarFileName     string
-	var binaryDataN2InformationExt9LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt9LocalVarFileName string
+	var binaryDataN2InformationExt9LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt9LocalVarFormFileName = "binaryDataN2InformationExt9"
 
-	var binaryDataN2InformationExt9LocalVarFile *os.File
-	if r.binaryDataN2InformationExt9 != nil {
-		binaryDataN2InformationExt9LocalVarFile = r.binaryDataN2InformationExt9
-	}
+	binaryDataN2InformationExt9LocalVarFile := r.binaryDataN2InformationExt9
+
 	if binaryDataN2InformationExt9LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt9LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt9LocalVarFile)
+
 		binaryDataN2InformationExt9LocalVarFileBytes = fbs
 		binaryDataN2InformationExt9LocalVarFileName = binaryDataN2InformationExt9LocalVarFile.Name()
 		binaryDataN2InformationExt9LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt9LocalVarFileBytes, fileName: binaryDataN2InformationExt9LocalVarFileName, formFileName: binaryDataN2InformationExt9LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt9LocalVarFileBytes, fileName: binaryDataN2InformationExt9LocalVarFileName, formFileName: binaryDataN2InformationExt9LocalVarFormFileName})
 	var binaryDataN2InformationExt10LocalVarFormFileName string
-	var binaryDataN2InformationExt10LocalVarFileName     string
-	var binaryDataN2InformationExt10LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt10LocalVarFileName string
+	var binaryDataN2InformationExt10LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt10LocalVarFormFileName = "binaryDataN2InformationExt10"
 
-	var binaryDataN2InformationExt10LocalVarFile *os.File
-	if r.binaryDataN2InformationExt10 != nil {
-		binaryDataN2InformationExt10LocalVarFile = r.binaryDataN2InformationExt10
-	}
+	binaryDataN2InformationExt10LocalVarFile := r.binaryDataN2InformationExt10
+
 	if binaryDataN2InformationExt10LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt10LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt10LocalVarFile)
+
 		binaryDataN2InformationExt10LocalVarFileBytes = fbs
 		binaryDataN2InformationExt10LocalVarFileName = binaryDataN2InformationExt10LocalVarFile.Name()
 		binaryDataN2InformationExt10LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt10LocalVarFileBytes, fileName: binaryDataN2InformationExt10LocalVarFileName, formFileName: binaryDataN2InformationExt10LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt10LocalVarFileBytes, fileName: binaryDataN2InformationExt10LocalVarFileName, formFileName: binaryDataN2InformationExt10LocalVarFormFileName})
 	var binaryDataN2InformationExt11LocalVarFormFileName string
-	var binaryDataN2InformationExt11LocalVarFileName     string
-	var binaryDataN2InformationExt11LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt11LocalVarFileName string
+	var binaryDataN2InformationExt11LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt11LocalVarFormFileName = "binaryDataN2InformationExt11"
 
-	var binaryDataN2InformationExt11LocalVarFile *os.File
-	if r.binaryDataN2InformationExt11 != nil {
-		binaryDataN2InformationExt11LocalVarFile = r.binaryDataN2InformationExt11
-	}
+	binaryDataN2InformationExt11LocalVarFile := r.binaryDataN2InformationExt11
+
 	if binaryDataN2InformationExt11LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt11LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt11LocalVarFile)
+
 		binaryDataN2InformationExt11LocalVarFileBytes = fbs
 		binaryDataN2InformationExt11LocalVarFileName = binaryDataN2InformationExt11LocalVarFile.Name()
 		binaryDataN2InformationExt11LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt11LocalVarFileBytes, fileName: binaryDataN2InformationExt11LocalVarFileName, formFileName: binaryDataN2InformationExt11LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt11LocalVarFileBytes, fileName: binaryDataN2InformationExt11LocalVarFileName, formFileName: binaryDataN2InformationExt11LocalVarFormFileName})
 	var binaryDataN2InformationExt12LocalVarFormFileName string
-	var binaryDataN2InformationExt12LocalVarFileName     string
-	var binaryDataN2InformationExt12LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt12LocalVarFileName string
+	var binaryDataN2InformationExt12LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt12LocalVarFormFileName = "binaryDataN2InformationExt12"
 
-	var binaryDataN2InformationExt12LocalVarFile *os.File
-	if r.binaryDataN2InformationExt12 != nil {
-		binaryDataN2InformationExt12LocalVarFile = r.binaryDataN2InformationExt12
-	}
+	binaryDataN2InformationExt12LocalVarFile := r.binaryDataN2InformationExt12
+
 	if binaryDataN2InformationExt12LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt12LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt12LocalVarFile)
+
 		binaryDataN2InformationExt12LocalVarFileBytes = fbs
 		binaryDataN2InformationExt12LocalVarFileName = binaryDataN2InformationExt12LocalVarFile.Name()
 		binaryDataN2InformationExt12LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt12LocalVarFileBytes, fileName: binaryDataN2InformationExt12LocalVarFileName, formFileName: binaryDataN2InformationExt12LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt12LocalVarFileBytes, fileName: binaryDataN2InformationExt12LocalVarFileName, formFileName: binaryDataN2InformationExt12LocalVarFormFileName})
 	var binaryDataN2InformationExt13LocalVarFormFileName string
-	var binaryDataN2InformationExt13LocalVarFileName     string
-	var binaryDataN2InformationExt13LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt13LocalVarFileName string
+	var binaryDataN2InformationExt13LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt13LocalVarFormFileName = "binaryDataN2InformationExt13"
 
-	var binaryDataN2InformationExt13LocalVarFile *os.File
-	if r.binaryDataN2InformationExt13 != nil {
-		binaryDataN2InformationExt13LocalVarFile = r.binaryDataN2InformationExt13
-	}
+	binaryDataN2InformationExt13LocalVarFile := r.binaryDataN2InformationExt13
+
 	if binaryDataN2InformationExt13LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt13LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt13LocalVarFile)
+
 		binaryDataN2InformationExt13LocalVarFileBytes = fbs
 		binaryDataN2InformationExt13LocalVarFileName = binaryDataN2InformationExt13LocalVarFile.Name()
 		binaryDataN2InformationExt13LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt13LocalVarFileBytes, fileName: binaryDataN2InformationExt13LocalVarFileName, formFileName: binaryDataN2InformationExt13LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt13LocalVarFileBytes, fileName: binaryDataN2InformationExt13LocalVarFileName, formFileName: binaryDataN2InformationExt13LocalVarFormFileName})
 	var binaryDataN2InformationExt14LocalVarFormFileName string
-	var binaryDataN2InformationExt14LocalVarFileName     string
-	var binaryDataN2InformationExt14LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt14LocalVarFileName string
+	var binaryDataN2InformationExt14LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt14LocalVarFormFileName = "binaryDataN2InformationExt14"
 
-	var binaryDataN2InformationExt14LocalVarFile *os.File
-	if r.binaryDataN2InformationExt14 != nil {
-		binaryDataN2InformationExt14LocalVarFile = r.binaryDataN2InformationExt14
-	}
+	binaryDataN2InformationExt14LocalVarFile := r.binaryDataN2InformationExt14
+
 	if binaryDataN2InformationExt14LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt14LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt14LocalVarFile)
+
 		binaryDataN2InformationExt14LocalVarFileBytes = fbs
 		binaryDataN2InformationExt14LocalVarFileName = binaryDataN2InformationExt14LocalVarFile.Name()
 		binaryDataN2InformationExt14LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt14LocalVarFileBytes, fileName: binaryDataN2InformationExt14LocalVarFileName, formFileName: binaryDataN2InformationExt14LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt14LocalVarFileBytes, fileName: binaryDataN2InformationExt14LocalVarFileName, formFileName: binaryDataN2InformationExt14LocalVarFormFileName})
 	var binaryDataN2InformationExt15LocalVarFormFileName string
-	var binaryDataN2InformationExt15LocalVarFileName     string
-	var binaryDataN2InformationExt15LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt15LocalVarFileName string
+	var binaryDataN2InformationExt15LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt15LocalVarFormFileName = "binaryDataN2InformationExt15"
 
-	var binaryDataN2InformationExt15LocalVarFile *os.File
-	if r.binaryDataN2InformationExt15 != nil {
-		binaryDataN2InformationExt15LocalVarFile = r.binaryDataN2InformationExt15
-	}
+	binaryDataN2InformationExt15LocalVarFile := r.binaryDataN2InformationExt15
+
 	if binaryDataN2InformationExt15LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt15LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt15LocalVarFile)
+
 		binaryDataN2InformationExt15LocalVarFileBytes = fbs
 		binaryDataN2InformationExt15LocalVarFileName = binaryDataN2InformationExt15LocalVarFile.Name()
 		binaryDataN2InformationExt15LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt15LocalVarFileBytes, fileName: binaryDataN2InformationExt15LocalVarFileName, formFileName: binaryDataN2InformationExt15LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt15LocalVarFileBytes, fileName: binaryDataN2InformationExt15LocalVarFileName, formFileName: binaryDataN2InformationExt15LocalVarFormFileName})
 	var binaryDataN2InformationExt16LocalVarFormFileName string
-	var binaryDataN2InformationExt16LocalVarFileName     string
-	var binaryDataN2InformationExt16LocalVarFileBytes    []byte
+	var binaryDataN2InformationExt16LocalVarFileName string
+	var binaryDataN2InformationExt16LocalVarFileBytes []byte
 
 	binaryDataN2InformationExt16LocalVarFormFileName = "binaryDataN2InformationExt16"
 
-	var binaryDataN2InformationExt16LocalVarFile *os.File
-	if r.binaryDataN2InformationExt16 != nil {
-		binaryDataN2InformationExt16LocalVarFile = r.binaryDataN2InformationExt16
-	}
+	binaryDataN2InformationExt16LocalVarFile := r.binaryDataN2InformationExt16
+
 	if binaryDataN2InformationExt16LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(binaryDataN2InformationExt16LocalVarFile)
+		fbs, _ := io.ReadAll(binaryDataN2InformationExt16LocalVarFile)
+
 		binaryDataN2InformationExt16LocalVarFileBytes = fbs
 		binaryDataN2InformationExt16LocalVarFileName = binaryDataN2InformationExt16LocalVarFile.Name()
 		binaryDataN2InformationExt16LocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt16LocalVarFileBytes, fileName: binaryDataN2InformationExt16LocalVarFileName, formFileName: binaryDataN2InformationExt16LocalVarFormFileName})
 	}
-	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationExt16LocalVarFileBytes, fileName: binaryDataN2InformationExt16LocalVarFileName, formFileName: binaryDataN2InformationExt16LocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2230,9 +2196,9 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -2249,8 +2215,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -2260,8 +2226,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -2271,8 +2237,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2282,8 +2248,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2293,8 +2259,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -2304,8 +2270,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -2315,8 +2281,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -2326,8 +2292,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -2337,8 +2303,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -2348,8 +2314,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -2359,8 +2325,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -2370,8 +2336,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -2381,8 +2347,8 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2401,9 +2367,9 @@ func (a *IndividualUeContextDocumentApiService) RelocateUEContextExecute(r ApiRe
 }
 
 type ApiUEContextTransferRequest struct {
-	ctx context.Context
-	ApiService *IndividualUeContextDocumentApiService
-	ueContextId string
+	ctx                      context.Context
+	ApiService               *IndividualUeContextDocumentApiService
+	ueContextId              string
 	ueContextTransferReqData *UeContextTransferReqData
 }
 
@@ -2419,26 +2385,27 @@ func (r ApiUEContextTransferRequest) Execute() (*UeContextTransferRspData, *http
 /*
 UEContextTransfer Namf_Communication UEContextTransfer service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueContextId UE Context Identifier
- @return ApiUEContextTransferRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueContextId UE Context Identifier
+	@return ApiUEContextTransferRequest
 */
 func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Context, ueContextId string) ApiUEContextTransferRequest {
 	return ApiUEContextTransferRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		ueContextId: ueContextId,
 	}
 }
 
 // Execute executes the request
-//  @return UeContextTransferRspData
+//
+//	@return UeContextTransferRspData
 func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUEContextTransferRequest) (*UeContextTransferRspData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UeContextTransferRspData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UeContextTransferRspData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualUeContextDocumentApiService.UEContextTransfer")
@@ -2485,9 +2452,9 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -2504,8 +2471,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -2515,8 +2482,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -2526,8 +2493,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -2537,8 +2504,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -2548,8 +2515,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -2559,8 +2526,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -2570,8 +2537,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -2581,8 +2548,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -2592,8 +2559,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -2603,8 +2570,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -2614,8 +2581,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -2625,8 +2592,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -2636,8 +2603,8 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransferExecute(r ApiUE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

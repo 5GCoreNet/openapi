@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMFEventSubscriptionInfoDocumentApiService SMFEventSubscriptionInfoDocumentApi service
 type SMFEventSubscriptionInfoDocumentApiService service
 
 type ApiCreateSMFSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ctx                 context.Context
+	ApiService          *SMFEventSubscriptionInfoDocumentApiService
+	ueId                string
+	subsId              string
 	smfSubscriptionInfo *SmfSubscriptionInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateSMFSubscriptionsRequest) Execute() (*SmfSubscriptionInfo, *http
 /*
 CreateSMFSubscriptions Create SMF Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiCreateSMFSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiCreateSMFSubscriptionsRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) CreateSMFSubscriptions(ctx context.Context, ueId string, subsId string) ApiCreateSMFSubscriptionsRequest {
 	return ApiCreateSMFSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfSubscriptionInfo
+//
+//	@return SmfSubscriptionInfo
 func (a *SMFEventSubscriptionInfoDocumentApiService) CreateSMFSubscriptionsExecute(r ApiCreateSMFSubscriptionsRequest) (*SmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.CreateSMFSubscriptions")
@@ -112,9 +112,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) CreateSMFSubscriptionsExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -140,10 +140,10 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) CreateSMFSubscriptionsExecu
 }
 
 type ApiGetSmfGroupSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
+	ueGroupId  string
+	subsId     string
 }
 
 func (r ApiGetSmfGroupSubscriptionsRequest) Execute() (*SmfSubscriptionInfo, *http.Response, error) {
@@ -153,28 +153,29 @@ func (r ApiGetSmfGroupSubscriptionsRequest) Execute() (*SmfSubscriptionInfo, *ht
 /*
 GetSmfGroupSubscriptions Retrieve SMF Subscription Info for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiGetSmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiGetSmfGroupSubscriptionsRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiGetSmfGroupSubscriptionsRequest {
 	return ApiGetSmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfSubscriptionInfo
+//
+//	@return SmfSubscriptionInfo
 func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfGroupSubscriptionsExecute(r ApiGetSmfGroupSubscriptionsRequest) (*SmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.GetSmfGroupSubscriptions")
@@ -217,9 +218,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfGroupSubscriptionsExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -245,10 +246,10 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfGroupSubscriptionsExe
 }
 
 type ApiGetSmfSubscriptionInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiGetSmfSubscriptionInfoRequest) Execute() (*SmfSubscriptionInfo, *http.Response, error) {
@@ -258,28 +259,29 @@ func (r ApiGetSmfSubscriptionInfoRequest) Execute() (*SmfSubscriptionInfo, *http
 /*
 GetSmfSubscriptionInfo Retrieve SMF Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiGetSmfSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiGetSmfSubscriptionInfoRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiGetSmfSubscriptionInfoRequest {
 	return ApiGetSmfSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfSubscriptionInfo
+//
+//	@return SmfSubscriptionInfo
 func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfSubscriptionInfoExecute(r ApiGetSmfSubscriptionInfoRequest) (*SmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.GetSmfSubscriptionInfo")
@@ -322,9 +324,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfSubscriptionInfoExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -350,11 +352,11 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) GetSmfSubscriptionInfoExecu
 }
 
 type ApiModifySmfGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *SMFEventSubscriptionInfoDocumentApiService
+	ueGroupId         string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -376,28 +378,29 @@ func (r ApiModifySmfGroupSubscriptionsRequest) Execute() (*PatchResult, *http.Re
 /*
 ModifySmfGroupSubscriptions Modify SMF Subscription Info for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiModifySmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiModifySmfGroupSubscriptionsRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiModifySmfGroupSubscriptionsRequest {
 	return ApiModifySmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfGroupSubscriptionsExecute(r ApiModifySmfGroupSubscriptionsRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.ModifySmfGroupSubscriptions")
@@ -417,7 +420,7 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfGroupSubscriptions
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -448,9 +451,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfGroupSubscriptions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -467,8 +470,8 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfGroupSubscriptions
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -487,11 +490,11 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfGroupSubscriptions
 }
 
 type ApiModifySmfSubscriptionInfoRequest struct {
-	ctx context.Context
-	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *SMFEventSubscriptionInfoDocumentApiService
+	ueId              string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -513,28 +516,29 @@ func (r ApiModifySmfSubscriptionInfoRequest) Execute() (*PatchResult, *http.Resp
 /*
 ModifySmfSubscriptionInfo Modify SMF Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiModifySmfSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiModifySmfSubscriptionInfoRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiModifySmfSubscriptionInfoRequest {
 	return ApiModifySmfSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfSubscriptionInfoExecute(r ApiModifySmfSubscriptionInfoRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.ModifySmfSubscriptionInfo")
@@ -554,7 +558,7 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfSubscriptionInfoEx
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -585,9 +589,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfSubscriptionInfoEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -604,8 +608,8 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfSubscriptionInfoEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -624,10 +628,10 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) ModifySmfSubscriptionInfoEx
 }
 
 type ApiRemoveSmfGroupSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
+	ueGroupId  string
+	subsId     string
 }
 
 func (r ApiRemoveSmfGroupSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -637,26 +641,26 @@ func (r ApiRemoveSmfGroupSubscriptionsRequest) Execute() (*http.Response, error)
 /*
 RemoveSmfGroupSubscriptions Delete SMF Subscription Info for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiRemoveSmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiRemoveSmfGroupSubscriptionsRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiRemoveSmfGroupSubscriptionsRequest {
 	return ApiRemoveSmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfGroupSubscriptionsExecute(r ApiRemoveSmfGroupSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.RemoveSmfGroupSubscriptions")
@@ -699,9 +703,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfGroupSubscriptions
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -718,10 +722,10 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfGroupSubscriptions
 }
 
 type ApiRemoveSmfSubscriptionsInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SMFEventSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiRemoveSmfSubscriptionsInfoRequest) Execute() (*http.Response, error) {
@@ -731,26 +735,26 @@ func (r ApiRemoveSmfSubscriptionsInfoRequest) Execute() (*http.Response, error) 
 /*
 RemoveSmfSubscriptionsInfo Delete SMF Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiRemoveSmfSubscriptionsInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiRemoveSmfSubscriptionsInfoRequest
 */
 func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfSubscriptionsInfo(ctx context.Context, ueId string, subsId string) ApiRemoveSmfSubscriptionsInfoRequest {
 	return ApiRemoveSmfSubscriptionsInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfSubscriptionsInfoExecute(r ApiRemoveSmfSubscriptionsInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventSubscriptionInfoDocumentApiService.RemoveSmfSubscriptionsInfo")
@@ -793,9 +797,9 @@ func (a *SMFEventSubscriptionInfoDocumentApiService) RemoveSmfSubscriptionsInfoE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

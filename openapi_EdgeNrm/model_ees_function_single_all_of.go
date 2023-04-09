@@ -19,7 +19,7 @@ var _ MappedNullable = &EESFunctionSingleAllOf{}
 
 // EESFunctionSingleAllOf struct for EESFunctionSingleAllOf
 type EESFunctionSingleAllOf struct {
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
+	Attributes *EESFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
 }
 
 // NewEESFunctionSingleAllOf instantiates a new EESFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewEESFunctionSingleAllOfWithDefaults() *EESFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *EESFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *EESFunctionSingleAllOf) GetAttributes() EESFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret EESFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *EESFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EESFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *EESFunctionSingleAllOf) GetAttributesOk() (*EESFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,20 +59,20 @@ func (o *EESFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) 
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EESFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *EESFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given EESFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *EESFunctionSingleAllOf) SetAttributes(v EESFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 func (o EESFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o EESFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o EESFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableEESFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,8 +21,8 @@ type MeasurementQuantityType string
 // List of measurementQuantity-Type
 const (
 	CPICH_EC_NO MeasurementQuantityType = "CPICH_EcNo"
-	CPICH_RSCP MeasurementQuantityType = "CPICH_RSCP"
-	PATH_LOSS MeasurementQuantityType = "PathLoss"
+	CPICH_RSCP  MeasurementQuantityType = "CPICH_RSCP"
+	PATH_LOSS   MeasurementQuantityType = "PathLoss"
 )
 
 // All allowed values of MeasurementQuantityType enum
@@ -110,4 +110,3 @@ func (v *NullableMeasurementQuantityType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

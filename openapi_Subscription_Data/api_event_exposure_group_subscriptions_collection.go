@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // EventExposureGroupSubscriptionsCollectionApiService EventExposureGroupSubscriptionsCollectionApi service
 type EventExposureGroupSubscriptionsCollectionApiService service
 
 type ApiCreateEeGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *EventExposureGroupSubscriptionsCollectionApiService
-	ueGroupId string
+	ctx            context.Context
+	ApiService     *EventExposureGroupSubscriptionsCollectionApiService
+	ueGroupId      string
 	eeSubscription *EeSubscription
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateEeGroupSubscriptionsRequest) Execute() (*EeSubscription, *http.
 /*
 CreateEeGroupSubscriptions Create individual EE subscription for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId Group of UEs or any UE
- @return ApiCreateEeGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId Group of UEs or any UE
+	@return ApiCreateEeGroupSubscriptionsRequest
 */
 func (a *EventExposureGroupSubscriptionsCollectionApiService) CreateEeGroupSubscriptions(ctx context.Context, ueGroupId string) ApiCreateEeGroupSubscriptionsRequest {
 	return ApiCreateEeGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
 	}
 }
 
 // Execute executes the request
-//  @return EeSubscription
+//
+//	@return EeSubscription
 func (a *EventExposureGroupSubscriptionsCollectionApiService) CreateEeGroupSubscriptionsExecute(r ApiCreateEeGroupSubscriptionsRequest) (*EeSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EeSubscription
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EeSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureGroupSubscriptionsCollectionApiService.CreateEeGroupSubscriptions")
@@ -108,9 +108,9 @@ func (a *EventExposureGroupSubscriptionsCollectionApiService) CreateEeGroupSubsc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,9 +136,9 @@ func (a *EventExposureGroupSubscriptionsCollectionApiService) CreateEeGroupSubsc
 }
 
 type ApiQueryEeGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *EventExposureGroupSubscriptionsCollectionApiService
-	ueGroupId string
+	ctx               context.Context
+	ApiService        *EventExposureGroupSubscriptionsCollectionApiService
+	ueGroupId         string
 	supportedFeatures *string
 }
 
@@ -155,26 +155,27 @@ func (r ApiQueryEeGroupSubscriptionsRequest) Execute() ([]EeSubscription, *http.
 /*
 QueryEeGroupSubscriptions Retrieves the ee subscriptions of a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId Group of UEs or any UE
- @return ApiQueryEeGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId Group of UEs or any UE
+	@return ApiQueryEeGroupSubscriptionsRequest
 */
 func (a *EventExposureGroupSubscriptionsCollectionApiService) QueryEeGroupSubscriptions(ctx context.Context, ueGroupId string) ApiQueryEeGroupSubscriptionsRequest {
 	return ApiQueryEeGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
 	}
 }
 
 // Execute executes the request
-//  @return []EeSubscription
+//
+//	@return []EeSubscription
 func (a *EventExposureGroupSubscriptionsCollectionApiService) QueryEeGroupSubscriptionsExecute(r ApiQueryEeGroupSubscriptionsRequest) ([]EeSubscription, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []EeSubscription
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EeSubscription
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureGroupSubscriptionsCollectionApiService.QueryEeGroupSubscriptions")
@@ -190,7 +191,7 @@ func (a *EventExposureGroupSubscriptionsCollectionApiService) QueryEeGroupSubscr
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -219,9 +220,9 @@ func (a *EventExposureGroupSubscriptionsCollectionApiService) QueryEeGroupSubscr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

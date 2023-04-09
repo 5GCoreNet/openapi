@@ -1,7 +1,7 @@
 /*
 ECS EES Registration_API
 
-API for EES Registration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Registration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -48,7 +48,7 @@ func NewTopologicalServiceAreaWithDefaults() *TopologicalServiceArea {
 
 // GetEcgis returns the Ecgis field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetEcgis() []Ecgi {
-	if o == nil || isNil(o.Ecgis) {
+	if o == nil || IsNil(o.Ecgis) {
 		var ret []Ecgi
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *TopologicalServiceArea) GetEcgis() []Ecgi {
 // GetEcgisOk returns a tuple with the Ecgis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetEcgisOk() ([]Ecgi, bool) {
-	if o == nil || isNil(o.Ecgis) {
+	if o == nil || IsNil(o.Ecgis) {
 		return nil, false
 	}
 	return o.Ecgis, true
@@ -66,7 +66,7 @@ func (o *TopologicalServiceArea) GetEcgisOk() ([]Ecgi, bool) {
 
 // HasEcgis returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasEcgis() bool {
-	if o != nil && !isNil(o.Ecgis) {
+	if o != nil && !IsNil(o.Ecgis) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *TopologicalServiceArea) SetEcgis(v []Ecgi) {
 
 // GetNcgis returns the Ncgis field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetNcgis() []Ncgi {
-	if o == nil || isNil(o.Ncgis) {
+	if o == nil || IsNil(o.Ncgis) {
 		var ret []Ncgi
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *TopologicalServiceArea) GetNcgis() []Ncgi {
 // GetNcgisOk returns a tuple with the Ncgis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetNcgisOk() ([]Ncgi, bool) {
-	if o == nil || isNil(o.Ncgis) {
+	if o == nil || IsNil(o.Ncgis) {
 		return nil, false
 	}
 	return o.Ncgis, true
@@ -98,7 +98,7 @@ func (o *TopologicalServiceArea) GetNcgisOk() ([]Ncgi, bool) {
 
 // HasNcgis returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasNcgis() bool {
-	if o != nil && !isNil(o.Ncgis) {
+	if o != nil && !IsNil(o.Ncgis) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *TopologicalServiceArea) SetNcgis(v []Ncgi) {
 
 // GetTais returns the Tais field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetTais() []Tai {
-	if o == nil || isNil(o.Tais) {
+	if o == nil || IsNil(o.Tais) {
 		var ret []Tai
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *TopologicalServiceArea) GetTais() []Tai {
 // GetTaisOk returns a tuple with the Tais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetTaisOk() ([]Tai, bool) {
-	if o == nil || isNil(o.Tais) {
+	if o == nil || IsNil(o.Tais) {
 		return nil, false
 	}
 	return o.Tais, true
@@ -130,7 +130,7 @@ func (o *TopologicalServiceArea) GetTaisOk() ([]Tai, bool) {
 
 // HasTais returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasTais() bool {
-	if o != nil && !isNil(o.Tais) {
+	if o != nil && !IsNil(o.Tais) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *TopologicalServiceArea) SetTais(v []Tai) {
 
 // GetPlmnIds returns the PlmnIds field value if set, zero value otherwise.
 func (o *TopologicalServiceArea) GetPlmnIds() []PlmnId1 {
-	if o == nil || isNil(o.PlmnIds) {
+	if o == nil || IsNil(o.PlmnIds) {
 		var ret []PlmnId1
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *TopologicalServiceArea) GetPlmnIds() []PlmnId1 {
 // GetPlmnIdsOk returns a tuple with the PlmnIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopologicalServiceArea) GetPlmnIdsOk() ([]PlmnId1, bool) {
-	if o == nil || isNil(o.PlmnIds) {
+	if o == nil || IsNil(o.PlmnIds) {
 		return nil, false
 	}
 	return o.PlmnIds, true
@@ -162,7 +162,7 @@ func (o *TopologicalServiceArea) GetPlmnIdsOk() ([]PlmnId1, bool) {
 
 // HasPlmnIds returns a boolean if a field has been set.
 func (o *TopologicalServiceArea) HasPlmnIds() bool {
-	if o != nil && !isNil(o.PlmnIds) {
+	if o != nil && !IsNil(o.PlmnIds) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *TopologicalServiceArea) SetPlmnIds(v []PlmnId1) {
 }
 
 func (o TopologicalServiceArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,16 +184,16 @@ func (o TopologicalServiceArea) MarshalJSON() ([]byte, error) {
 
 func (o TopologicalServiceArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ecgis) {
+	if !IsNil(o.Ecgis) {
 		toSerialize["ecgis"] = o.Ecgis
 	}
-	if !isNil(o.Ncgis) {
+	if !IsNil(o.Ncgis) {
 		toSerialize["ncgis"] = o.Ncgis
 	}
-	if !isNil(o.Tais) {
+	if !IsNil(o.Tais) {
 		toSerialize["tais"] = o.Tais
 	}
-	if !isNil(o.PlmnIds) {
+	if !IsNil(o.PlmnIds) {
 		toSerialize["plmnIds"] = o.PlmnIds
 	}
 	return toSerialize, nil
@@ -234,5 +234,3 @@ func (v *NullableTopologicalServiceArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

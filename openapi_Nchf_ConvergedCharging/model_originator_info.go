@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &OriginatorInfo{}
 
 // OriginatorInfo struct for OriginatorInfo
 type OriginatorInfo struct {
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	OriginatorSUPI *string `json:"originatorSUPI,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	OriginatorGPSI *string `json:"originatorGPSI,omitempty"`
-	OriginatorOtherAddress *SMAddressInfo `json:"originatorOtherAddress,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	OriginatorGPSI            *string        `json:"originatorGPSI,omitempty"`
+	OriginatorOtherAddress    *SMAddressInfo `json:"originatorOtherAddress,omitempty"`
 	OriginatorReceivedAddress *SMAddressInfo `json:"originatorReceivedAddress,omitempty"`
-	OriginatorSCCPAddress *string `json:"originatorSCCPAddress,omitempty"`
-	SMOriginatorInterface *SMInterface `json:"sMOriginatorInterface,omitempty"`
-	SMOriginatorProtocolId *string `json:"sMOriginatorProtocolId,omitempty"`
+	OriginatorSCCPAddress     *string        `json:"originatorSCCPAddress,omitempty"`
+	SMOriginatorInterface     *SMInterface   `json:"sMOriginatorInterface,omitempty"`
+	SMOriginatorProtocolId    *string        `json:"sMOriginatorProtocolId,omitempty"`
 }
 
 // NewOriginatorInfo instantiates a new OriginatorInfo object
@@ -49,7 +49,7 @@ func NewOriginatorInfoWithDefaults() *OriginatorInfo {
 
 // GetOriginatorSUPI returns the OriginatorSUPI field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetOriginatorSUPI() string {
-	if o == nil || isNil(o.OriginatorSUPI) {
+	if o == nil || IsNil(o.OriginatorSUPI) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *OriginatorInfo) GetOriginatorSUPI() string {
 // GetOriginatorSUPIOk returns a tuple with the OriginatorSUPI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetOriginatorSUPIOk() (*string, bool) {
-	if o == nil || isNil(o.OriginatorSUPI) {
+	if o == nil || IsNil(o.OriginatorSUPI) {
 		return nil, false
 	}
 	return o.OriginatorSUPI, true
@@ -67,7 +67,7 @@ func (o *OriginatorInfo) GetOriginatorSUPIOk() (*string, bool) {
 
 // HasOriginatorSUPI returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasOriginatorSUPI() bool {
-	if o != nil && !isNil(o.OriginatorSUPI) {
+	if o != nil && !IsNil(o.OriginatorSUPI) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *OriginatorInfo) SetOriginatorSUPI(v string) {
 
 // GetOriginatorGPSI returns the OriginatorGPSI field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetOriginatorGPSI() string {
-	if o == nil || isNil(o.OriginatorGPSI) {
+	if o == nil || IsNil(o.OriginatorGPSI) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *OriginatorInfo) GetOriginatorGPSI() string {
 // GetOriginatorGPSIOk returns a tuple with the OriginatorGPSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetOriginatorGPSIOk() (*string, bool) {
-	if o == nil || isNil(o.OriginatorGPSI) {
+	if o == nil || IsNil(o.OriginatorGPSI) {
 		return nil, false
 	}
 	return o.OriginatorGPSI, true
@@ -99,7 +99,7 @@ func (o *OriginatorInfo) GetOriginatorGPSIOk() (*string, bool) {
 
 // HasOriginatorGPSI returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasOriginatorGPSI() bool {
-	if o != nil && !isNil(o.OriginatorGPSI) {
+	if o != nil && !IsNil(o.OriginatorGPSI) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *OriginatorInfo) SetOriginatorGPSI(v string) {
 
 // GetOriginatorOtherAddress returns the OriginatorOtherAddress field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetOriginatorOtherAddress() SMAddressInfo {
-	if o == nil || isNil(o.OriginatorOtherAddress) {
+	if o == nil || IsNil(o.OriginatorOtherAddress) {
 		var ret SMAddressInfo
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *OriginatorInfo) GetOriginatorOtherAddress() SMAddressInfo {
 // GetOriginatorOtherAddressOk returns a tuple with the OriginatorOtherAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetOriginatorOtherAddressOk() (*SMAddressInfo, bool) {
-	if o == nil || isNil(o.OriginatorOtherAddress) {
+	if o == nil || IsNil(o.OriginatorOtherAddress) {
 		return nil, false
 	}
 	return o.OriginatorOtherAddress, true
@@ -131,7 +131,7 @@ func (o *OriginatorInfo) GetOriginatorOtherAddressOk() (*SMAddressInfo, bool) {
 
 // HasOriginatorOtherAddress returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasOriginatorOtherAddress() bool {
-	if o != nil && !isNil(o.OriginatorOtherAddress) {
+	if o != nil && !IsNil(o.OriginatorOtherAddress) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *OriginatorInfo) SetOriginatorOtherAddress(v SMAddressInfo) {
 
 // GetOriginatorReceivedAddress returns the OriginatorReceivedAddress field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetOriginatorReceivedAddress() SMAddressInfo {
-	if o == nil || isNil(o.OriginatorReceivedAddress) {
+	if o == nil || IsNil(o.OriginatorReceivedAddress) {
 		var ret SMAddressInfo
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *OriginatorInfo) GetOriginatorReceivedAddress() SMAddressInfo {
 // GetOriginatorReceivedAddressOk returns a tuple with the OriginatorReceivedAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetOriginatorReceivedAddressOk() (*SMAddressInfo, bool) {
-	if o == nil || isNil(o.OriginatorReceivedAddress) {
+	if o == nil || IsNil(o.OriginatorReceivedAddress) {
 		return nil, false
 	}
 	return o.OriginatorReceivedAddress, true
@@ -163,7 +163,7 @@ func (o *OriginatorInfo) GetOriginatorReceivedAddressOk() (*SMAddressInfo, bool)
 
 // HasOriginatorReceivedAddress returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasOriginatorReceivedAddress() bool {
-	if o != nil && !isNil(o.OriginatorReceivedAddress) {
+	if o != nil && !IsNil(o.OriginatorReceivedAddress) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *OriginatorInfo) SetOriginatorReceivedAddress(v SMAddressInfo) {
 
 // GetOriginatorSCCPAddress returns the OriginatorSCCPAddress field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetOriginatorSCCPAddress() string {
-	if o == nil || isNil(o.OriginatorSCCPAddress) {
+	if o == nil || IsNil(o.OriginatorSCCPAddress) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *OriginatorInfo) GetOriginatorSCCPAddress() string {
 // GetOriginatorSCCPAddressOk returns a tuple with the OriginatorSCCPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetOriginatorSCCPAddressOk() (*string, bool) {
-	if o == nil || isNil(o.OriginatorSCCPAddress) {
+	if o == nil || IsNil(o.OriginatorSCCPAddress) {
 		return nil, false
 	}
 	return o.OriginatorSCCPAddress, true
@@ -195,7 +195,7 @@ func (o *OriginatorInfo) GetOriginatorSCCPAddressOk() (*string, bool) {
 
 // HasOriginatorSCCPAddress returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasOriginatorSCCPAddress() bool {
-	if o != nil && !isNil(o.OriginatorSCCPAddress) {
+	if o != nil && !IsNil(o.OriginatorSCCPAddress) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *OriginatorInfo) SetOriginatorSCCPAddress(v string) {
 
 // GetSMOriginatorInterface returns the SMOriginatorInterface field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetSMOriginatorInterface() SMInterface {
-	if o == nil || isNil(o.SMOriginatorInterface) {
+	if o == nil || IsNil(o.SMOriginatorInterface) {
 		var ret SMInterface
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *OriginatorInfo) GetSMOriginatorInterface() SMInterface {
 // GetSMOriginatorInterfaceOk returns a tuple with the SMOriginatorInterface field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetSMOriginatorInterfaceOk() (*SMInterface, bool) {
-	if o == nil || isNil(o.SMOriginatorInterface) {
+	if o == nil || IsNil(o.SMOriginatorInterface) {
 		return nil, false
 	}
 	return o.SMOriginatorInterface, true
@@ -227,7 +227,7 @@ func (o *OriginatorInfo) GetSMOriginatorInterfaceOk() (*SMInterface, bool) {
 
 // HasSMOriginatorInterface returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasSMOriginatorInterface() bool {
-	if o != nil && !isNil(o.SMOriginatorInterface) {
+	if o != nil && !IsNil(o.SMOriginatorInterface) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *OriginatorInfo) SetSMOriginatorInterface(v SMInterface) {
 
 // GetSMOriginatorProtocolId returns the SMOriginatorProtocolId field value if set, zero value otherwise.
 func (o *OriginatorInfo) GetSMOriginatorProtocolId() string {
-	if o == nil || isNil(o.SMOriginatorProtocolId) {
+	if o == nil || IsNil(o.SMOriginatorProtocolId) {
 		var ret string
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *OriginatorInfo) GetSMOriginatorProtocolId() string {
 // GetSMOriginatorProtocolIdOk returns a tuple with the SMOriginatorProtocolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OriginatorInfo) GetSMOriginatorProtocolIdOk() (*string, bool) {
-	if o == nil || isNil(o.SMOriginatorProtocolId) {
+	if o == nil || IsNil(o.SMOriginatorProtocolId) {
 		return nil, false
 	}
 	return o.SMOriginatorProtocolId, true
@@ -259,7 +259,7 @@ func (o *OriginatorInfo) GetSMOriginatorProtocolIdOk() (*string, bool) {
 
 // HasSMOriginatorProtocolId returns a boolean if a field has been set.
 func (o *OriginatorInfo) HasSMOriginatorProtocolId() bool {
-	if o != nil && !isNil(o.SMOriginatorProtocolId) {
+	if o != nil && !IsNil(o.SMOriginatorProtocolId) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *OriginatorInfo) SetSMOriginatorProtocolId(v string) {
 }
 
 func (o OriginatorInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -281,25 +281,25 @@ func (o OriginatorInfo) MarshalJSON() ([]byte, error) {
 
 func (o OriginatorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.OriginatorSUPI) {
+	if !IsNil(o.OriginatorSUPI) {
 		toSerialize["originatorSUPI"] = o.OriginatorSUPI
 	}
-	if !isNil(o.OriginatorGPSI) {
+	if !IsNil(o.OriginatorGPSI) {
 		toSerialize["originatorGPSI"] = o.OriginatorGPSI
 	}
-	if !isNil(o.OriginatorOtherAddress) {
+	if !IsNil(o.OriginatorOtherAddress) {
 		toSerialize["originatorOtherAddress"] = o.OriginatorOtherAddress
 	}
-	if !isNil(o.OriginatorReceivedAddress) {
+	if !IsNil(o.OriginatorReceivedAddress) {
 		toSerialize["originatorReceivedAddress"] = o.OriginatorReceivedAddress
 	}
-	if !isNil(o.OriginatorSCCPAddress) {
+	if !IsNil(o.OriginatorSCCPAddress) {
 		toSerialize["originatorSCCPAddress"] = o.OriginatorSCCPAddress
 	}
-	if !isNil(o.SMOriginatorInterface) {
+	if !IsNil(o.SMOriginatorInterface) {
 		toSerialize["sMOriginatorInterface"] = o.SMOriginatorInterface
 	}
-	if !isNil(o.SMOriginatorProtocolId) {
+	if !IsNil(o.SMOriginatorProtocolId) {
 		toSerialize["sMOriginatorProtocolId"] = o.SMOriginatorProtocolId
 	}
 	return toSerialize, nil
@@ -340,5 +340,3 @@ func (v *NullableOriginatorInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

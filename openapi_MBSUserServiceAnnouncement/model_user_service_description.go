@@ -1,7 +1,7 @@
 /*
 MBS User Service Announcement Element units’ definition
 
-MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MBS User Service Announcement Element units. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &UserServiceDescription{}
 
 // UserServiceDescription struct for UserServiceDescription
 type UserServiceDescription struct {
-	Name []string `json:"name,omitempty"`
-	ServiceLanguage []string `json:"serviceLanguage,omitempty"`
-	ServiceId string `json:"serviceId"`
-	DistributionSessionDescription *DistributionSessionDescription `json:"distributionSessionDescription,omitempty"`
-	AppServiceDescription *AppServiceDescription `json:"appServiceDescription,omitempty"`
-	ScheduleDescription []ServiceSchedule `json:"scheduleDescription,omitempty"`
-	AvailabilityInfo []AvailabilityInformationBinding `json:"availabilityInfo,omitempty"`
+	Name                           []string                         `json:"name,omitempty"`
+	ServiceLanguage                []string                         `json:"serviceLanguage,omitempty"`
+	ServiceId                      string                           `json:"serviceId"`
+	DistributionSessionDescription *DistributionSessionDescription  `json:"distributionSessionDescription,omitempty"`
+	AppServiceDescription          *AppServiceDescription           `json:"appServiceDescription,omitempty"`
+	ScheduleDescription            []ServiceSchedule                `json:"scheduleDescription,omitempty"`
+	AvailabilityInfo               []AvailabilityInformationBinding `json:"availabilityInfo,omitempty"`
 }
 
 // NewUserServiceDescription instantiates a new UserServiceDescription object
@@ -48,7 +48,7 @@ func NewUserServiceDescriptionWithDefaults() *UserServiceDescription {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *UserServiceDescription) GetName() []string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret []string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *UserServiceDescription) GetName() []string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserServiceDescription) GetNameOk() ([]string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -66,7 +66,7 @@ func (o *UserServiceDescription) GetNameOk() ([]string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *UserServiceDescription) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *UserServiceDescription) SetName(v []string) {
 
 // GetServiceLanguage returns the ServiceLanguage field value if set, zero value otherwise.
 func (o *UserServiceDescription) GetServiceLanguage() []string {
-	if o == nil || isNil(o.ServiceLanguage) {
+	if o == nil || IsNil(o.ServiceLanguage) {
 		var ret []string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *UserServiceDescription) GetServiceLanguage() []string {
 // GetServiceLanguageOk returns a tuple with the ServiceLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserServiceDescription) GetServiceLanguageOk() ([]string, bool) {
-	if o == nil || isNil(o.ServiceLanguage) {
+	if o == nil || IsNil(o.ServiceLanguage) {
 		return nil, false
 	}
 	return o.ServiceLanguage, true
@@ -98,7 +98,7 @@ func (o *UserServiceDescription) GetServiceLanguageOk() ([]string, bool) {
 
 // HasServiceLanguage returns a boolean if a field has been set.
 func (o *UserServiceDescription) HasServiceLanguage() bool {
-	if o != nil && !isNil(o.ServiceLanguage) {
+	if o != nil && !IsNil(o.ServiceLanguage) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *UserServiceDescription) SetServiceId(v string) {
 
 // GetDistributionSessionDescription returns the DistributionSessionDescription field value if set, zero value otherwise.
 func (o *UserServiceDescription) GetDistributionSessionDescription() DistributionSessionDescription {
-	if o == nil || isNil(o.DistributionSessionDescription) {
+	if o == nil || IsNil(o.DistributionSessionDescription) {
 		var ret DistributionSessionDescription
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *UserServiceDescription) GetDistributionSessionDescription() Distributio
 // GetDistributionSessionDescriptionOk returns a tuple with the DistributionSessionDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserServiceDescription) GetDistributionSessionDescriptionOk() (*DistributionSessionDescription, bool) {
-	if o == nil || isNil(o.DistributionSessionDescription) {
+	if o == nil || IsNil(o.DistributionSessionDescription) {
 		return nil, false
 	}
 	return o.DistributionSessionDescription, true
@@ -154,7 +154,7 @@ func (o *UserServiceDescription) GetDistributionSessionDescriptionOk() (*Distrib
 
 // HasDistributionSessionDescription returns a boolean if a field has been set.
 func (o *UserServiceDescription) HasDistributionSessionDescription() bool {
-	if o != nil && !isNil(o.DistributionSessionDescription) {
+	if o != nil && !IsNil(o.DistributionSessionDescription) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *UserServiceDescription) SetDistributionSessionDescription(v Distributio
 
 // GetAppServiceDescription returns the AppServiceDescription field value if set, zero value otherwise.
 func (o *UserServiceDescription) GetAppServiceDescription() AppServiceDescription {
-	if o == nil || isNil(o.AppServiceDescription) {
+	if o == nil || IsNil(o.AppServiceDescription) {
 		var ret AppServiceDescription
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *UserServiceDescription) GetAppServiceDescription() AppServiceDescriptio
 // GetAppServiceDescriptionOk returns a tuple with the AppServiceDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserServiceDescription) GetAppServiceDescriptionOk() (*AppServiceDescription, bool) {
-	if o == nil || isNil(o.AppServiceDescription) {
+	if o == nil || IsNil(o.AppServiceDescription) {
 		return nil, false
 	}
 	return o.AppServiceDescription, true
@@ -186,7 +186,7 @@ func (o *UserServiceDescription) GetAppServiceDescriptionOk() (*AppServiceDescri
 
 // HasAppServiceDescription returns a boolean if a field has been set.
 func (o *UserServiceDescription) HasAppServiceDescription() bool {
-	if o != nil && !isNil(o.AppServiceDescription) {
+	if o != nil && !IsNil(o.AppServiceDescription) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *UserServiceDescription) SetAppServiceDescription(v AppServiceDescriptio
 
 // GetScheduleDescription returns the ScheduleDescription field value if set, zero value otherwise.
 func (o *UserServiceDescription) GetScheduleDescription() []ServiceSchedule {
-	if o == nil || isNil(o.ScheduleDescription) {
+	if o == nil || IsNil(o.ScheduleDescription) {
 		var ret []ServiceSchedule
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *UserServiceDescription) GetScheduleDescription() []ServiceSchedule {
 // GetScheduleDescriptionOk returns a tuple with the ScheduleDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserServiceDescription) GetScheduleDescriptionOk() ([]ServiceSchedule, bool) {
-	if o == nil || isNil(o.ScheduleDescription) {
+	if o == nil || IsNil(o.ScheduleDescription) {
 		return nil, false
 	}
 	return o.ScheduleDescription, true
@@ -218,7 +218,7 @@ func (o *UserServiceDescription) GetScheduleDescriptionOk() ([]ServiceSchedule, 
 
 // HasScheduleDescription returns a boolean if a field has been set.
 func (o *UserServiceDescription) HasScheduleDescription() bool {
-	if o != nil && !isNil(o.ScheduleDescription) {
+	if o != nil && !IsNil(o.ScheduleDescription) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *UserServiceDescription) SetScheduleDescription(v []ServiceSchedule) {
 
 // GetAvailabilityInfo returns the AvailabilityInfo field value if set, zero value otherwise.
 func (o *UserServiceDescription) GetAvailabilityInfo() []AvailabilityInformationBinding {
-	if o == nil || isNil(o.AvailabilityInfo) {
+	if o == nil || IsNil(o.AvailabilityInfo) {
 		var ret []AvailabilityInformationBinding
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *UserServiceDescription) GetAvailabilityInfo() []AvailabilityInformation
 // GetAvailabilityInfoOk returns a tuple with the AvailabilityInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserServiceDescription) GetAvailabilityInfoOk() ([]AvailabilityInformationBinding, bool) {
-	if o == nil || isNil(o.AvailabilityInfo) {
+	if o == nil || IsNil(o.AvailabilityInfo) {
 		return nil, false
 	}
 	return o.AvailabilityInfo, true
@@ -250,7 +250,7 @@ func (o *UserServiceDescription) GetAvailabilityInfoOk() ([]AvailabilityInformat
 
 // HasAvailabilityInfo returns a boolean if a field has been set.
 func (o *UserServiceDescription) HasAvailabilityInfo() bool {
-	if o != nil && !isNil(o.AvailabilityInfo) {
+	if o != nil && !IsNil(o.AvailabilityInfo) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *UserServiceDescription) SetAvailabilityInfo(v []AvailabilityInformation
 }
 
 func (o UserServiceDescription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -272,23 +272,23 @@ func (o UserServiceDescription) MarshalJSON() ([]byte, error) {
 
 func (o UserServiceDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.ServiceLanguage) {
+	if !IsNil(o.ServiceLanguage) {
 		toSerialize["serviceLanguage"] = o.ServiceLanguage
 	}
 	toSerialize["serviceId"] = o.ServiceId
-	if !isNil(o.DistributionSessionDescription) {
+	if !IsNil(o.DistributionSessionDescription) {
 		toSerialize["distributionSessionDescription"] = o.DistributionSessionDescription
 	}
-	if !isNil(o.AppServiceDescription) {
+	if !IsNil(o.AppServiceDescription) {
 		toSerialize["appServiceDescription"] = o.AppServiceDescription
 	}
-	if !isNil(o.ScheduleDescription) {
+	if !IsNil(o.ScheduleDescription) {
 		toSerialize["scheduleDescription"] = o.ScheduleDescription
 	}
-	if !isNil(o.AvailabilityInfo) {
+	if !IsNil(o.AvailabilityInfo) {
 		toSerialize["availabilityInfo"] = o.AvailabilityInfo
 	}
 	return toSerialize, nil
@@ -329,5 +329,3 @@ func (v *NullableUserServiceDescription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

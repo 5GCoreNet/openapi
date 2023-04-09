@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &MonitoringReport{}
 
 // MonitoringReport struct for MonitoringReport
 type MonitoringReport struct {
-	ReferenceId int32 `json:"referenceId"`
-	EventType EventType `json:"eventType"`
-	Report *Report `json:"report,omitempty"`
+	ReferenceId              int32                     `json:"referenceId"`
+	EventType                EventType                 `json:"eventType"`
+	Report                   *Report                   `json:"report,omitempty"`
 	ReachabilityForSmsReport *ReachabilityForSmsReport `json:"reachabilityForSmsReport,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	TimeStamp time.Time `json:"timeStamp"`
+	TimeStamp          time.Time           `json:"timeStamp"`
 	ReachabilityReport *ReachabilityReport `json:"reachabilityReport,omitempty"`
 }
 
@@ -101,7 +101,7 @@ func (o *MonitoringReport) SetEventType(v EventType) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReport() Report {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		var ret Report
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MonitoringReport) GetReport() Report {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReportOk() (*Report, bool) {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -119,7 +119,7 @@ func (o *MonitoringReport) GetReportOk() (*Report, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReport() bool {
-	if o != nil && !isNil(o.Report) {
+	if o != nil && !IsNil(o.Report) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *MonitoringReport) SetReport(v Report) {
 
 // GetReachabilityForSmsReport returns the ReachabilityForSmsReport field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReachabilityForSmsReport() ReachabilityForSmsReport {
-	if o == nil || isNil(o.ReachabilityForSmsReport) {
+	if o == nil || IsNil(o.ReachabilityForSmsReport) {
 		var ret ReachabilityForSmsReport
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *MonitoringReport) GetReachabilityForSmsReport() ReachabilityForSmsRepor
 // GetReachabilityForSmsReportOk returns a tuple with the ReachabilityForSmsReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReachabilityForSmsReportOk() (*ReachabilityForSmsReport, bool) {
-	if o == nil || isNil(o.ReachabilityForSmsReport) {
+	if o == nil || IsNil(o.ReachabilityForSmsReport) {
 		return nil, false
 	}
 	return o.ReachabilityForSmsReport, true
@@ -151,7 +151,7 @@ func (o *MonitoringReport) GetReachabilityForSmsReportOk() (*ReachabilityForSmsR
 
 // HasReachabilityForSmsReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReachabilityForSmsReport() bool {
-	if o != nil && !isNil(o.ReachabilityForSmsReport) {
+	if o != nil && !IsNil(o.ReachabilityForSmsReport) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *MonitoringReport) SetReachabilityForSmsReport(v ReachabilityForSmsRepor
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *MonitoringReport) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *MonitoringReport) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -183,7 +183,7 @@ func (o *MonitoringReport) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *MonitoringReport) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *MonitoringReport) SetTimeStamp(v time.Time) {
 
 // GetReachabilityReport returns the ReachabilityReport field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReachabilityReport() ReachabilityReport {
-	if o == nil || isNil(o.ReachabilityReport) {
+	if o == nil || IsNil(o.ReachabilityReport) {
 		var ret ReachabilityReport
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *MonitoringReport) GetReachabilityReport() ReachabilityReport {
 // GetReachabilityReportOk returns a tuple with the ReachabilityReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReachabilityReportOk() (*ReachabilityReport, bool) {
-	if o == nil || isNil(o.ReachabilityReport) {
+	if o == nil || IsNil(o.ReachabilityReport) {
 		return nil, false
 	}
 	return o.ReachabilityReport, true
@@ -239,7 +239,7 @@ func (o *MonitoringReport) GetReachabilityReportOk() (*ReachabilityReport, bool)
 
 // HasReachabilityReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReachabilityReport() bool {
-	if o != nil && !isNil(o.ReachabilityReport) {
+	if o != nil && !IsNil(o.ReachabilityReport) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *MonitoringReport) SetReachabilityReport(v ReachabilityReport) {
 }
 
 func (o MonitoringReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -263,17 +263,17 @@ func (o MonitoringReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["referenceId"] = o.ReferenceId
 	toSerialize["eventType"] = o.EventType
-	if !isNil(o.Report) {
+	if !IsNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
-	if !isNil(o.ReachabilityForSmsReport) {
+	if !IsNil(o.ReachabilityForSmsReport) {
 		toSerialize["reachabilityForSmsReport"] = o.ReachabilityForSmsReport
 	}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !isNil(o.ReachabilityReport) {
+	if !IsNil(o.ReachabilityReport) {
 		toSerialize["reachabilityReport"] = o.ReachabilityReport
 	}
 	return toSerialize, nil
@@ -314,5 +314,3 @@ func (v *NullableMonitoringReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

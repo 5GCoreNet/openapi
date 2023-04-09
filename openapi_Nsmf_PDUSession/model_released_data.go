@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &ReleasedData{}
 // ReleasedData Data within Release Response
 type ReleasedData struct {
 	SmallDataRateStatus *SmallDataRateStatus `json:"smallDataRateStatus,omitempty"`
-	ApnRateStatus *ApnRateStatus `json:"apnRateStatus,omitempty"`
-	N4Info *N4Information `json:"n4Info,omitempty"`
-	N4InfoExt1 *N4Information `json:"n4InfoExt1,omitempty"`
-	N4InfoExt2 *N4Information `json:"n4InfoExt2,omitempty"`
+	ApnRateStatus       *ApnRateStatus       `json:"apnRateStatus,omitempty"`
+	N4Info              *N4Information       `json:"n4Info,omitempty"`
+	N4InfoExt1          *N4Information       `json:"n4InfoExt1,omitempty"`
+	N4InfoExt2          *N4Information       `json:"n4InfoExt2,omitempty"`
 }
 
 // NewReleasedData instantiates a new ReleasedData object
@@ -45,7 +45,7 @@ func NewReleasedDataWithDefaults() *ReleasedData {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *ReleasedData) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ReleasedData) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleasedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || isNil(o.SmallDataRateStatus) {
+	if o == nil || IsNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -63,7 +63,7 @@ func (o *ReleasedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *ReleasedData) HasSmallDataRateStatus() bool {
-	if o != nil && !isNil(o.SmallDataRateStatus) {
+	if o != nil && !IsNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ReleasedData) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *ReleasedData) GetApnRateStatus() ApnRateStatus {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ReleasedData) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleasedData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || isNil(o.ApnRateStatus) {
+	if o == nil || IsNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -95,7 +95,7 @@ func (o *ReleasedData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *ReleasedData) HasApnRateStatus() bool {
-	if o != nil && !isNil(o.ApnRateStatus) {
+	if o != nil && !IsNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ReleasedData) SetApnRateStatus(v ApnRateStatus) {
 
 // GetN4Info returns the N4Info field value if set, zero value otherwise.
 func (o *ReleasedData) GetN4Info() N4Information {
-	if o == nil || isNil(o.N4Info) {
+	if o == nil || IsNil(o.N4Info) {
 		var ret N4Information
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ReleasedData) GetN4Info() N4Information {
 // GetN4InfoOk returns a tuple with the N4Info field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleasedData) GetN4InfoOk() (*N4Information, bool) {
-	if o == nil || isNil(o.N4Info) {
+	if o == nil || IsNil(o.N4Info) {
 		return nil, false
 	}
 	return o.N4Info, true
@@ -127,7 +127,7 @@ func (o *ReleasedData) GetN4InfoOk() (*N4Information, bool) {
 
 // HasN4Info returns a boolean if a field has been set.
 func (o *ReleasedData) HasN4Info() bool {
-	if o != nil && !isNil(o.N4Info) {
+	if o != nil && !IsNil(o.N4Info) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ReleasedData) SetN4Info(v N4Information) {
 
 // GetN4InfoExt1 returns the N4InfoExt1 field value if set, zero value otherwise.
 func (o *ReleasedData) GetN4InfoExt1() N4Information {
-	if o == nil || isNil(o.N4InfoExt1) {
+	if o == nil || IsNil(o.N4InfoExt1) {
 		var ret N4Information
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ReleasedData) GetN4InfoExt1() N4Information {
 // GetN4InfoExt1Ok returns a tuple with the N4InfoExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleasedData) GetN4InfoExt1Ok() (*N4Information, bool) {
-	if o == nil || isNil(o.N4InfoExt1) {
+	if o == nil || IsNil(o.N4InfoExt1) {
 		return nil, false
 	}
 	return o.N4InfoExt1, true
@@ -159,7 +159,7 @@ func (o *ReleasedData) GetN4InfoExt1Ok() (*N4Information, bool) {
 
 // HasN4InfoExt1 returns a boolean if a field has been set.
 func (o *ReleasedData) HasN4InfoExt1() bool {
-	if o != nil && !isNil(o.N4InfoExt1) {
+	if o != nil && !IsNil(o.N4InfoExt1) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ReleasedData) SetN4InfoExt1(v N4Information) {
 
 // GetN4InfoExt2 returns the N4InfoExt2 field value if set, zero value otherwise.
 func (o *ReleasedData) GetN4InfoExt2() N4Information {
-	if o == nil || isNil(o.N4InfoExt2) {
+	if o == nil || IsNil(o.N4InfoExt2) {
 		var ret N4Information
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ReleasedData) GetN4InfoExt2() N4Information {
 // GetN4InfoExt2Ok returns a tuple with the N4InfoExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleasedData) GetN4InfoExt2Ok() (*N4Information, bool) {
-	if o == nil || isNil(o.N4InfoExt2) {
+	if o == nil || IsNil(o.N4InfoExt2) {
 		return nil, false
 	}
 	return o.N4InfoExt2, true
@@ -191,7 +191,7 @@ func (o *ReleasedData) GetN4InfoExt2Ok() (*N4Information, bool) {
 
 // HasN4InfoExt2 returns a boolean if a field has been set.
 func (o *ReleasedData) HasN4InfoExt2() bool {
-	if o != nil && !isNil(o.N4InfoExt2) {
+	if o != nil && !IsNil(o.N4InfoExt2) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *ReleasedData) SetN4InfoExt2(v N4Information) {
 }
 
 func (o ReleasedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -213,19 +213,19 @@ func (o ReleasedData) MarshalJSON() ([]byte, error) {
 
 func (o ReleasedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SmallDataRateStatus) {
+	if !IsNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !isNil(o.ApnRateStatus) {
+	if !IsNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
-	if !isNil(o.N4Info) {
+	if !IsNil(o.N4Info) {
 		toSerialize["n4Info"] = o.N4Info
 	}
-	if !isNil(o.N4InfoExt1) {
+	if !IsNil(o.N4InfoExt1) {
 		toSerialize["n4InfoExt1"] = o.N4InfoExt1
 	}
-	if !isNil(o.N4InfoExt2) {
+	if !IsNil(o.N4InfoExt2) {
 		toSerialize["n4InfoExt2"] = o.N4InfoExt2
 	}
 	return toSerialize, nil
@@ -266,5 +266,3 @@ func (v *NullableReleasedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

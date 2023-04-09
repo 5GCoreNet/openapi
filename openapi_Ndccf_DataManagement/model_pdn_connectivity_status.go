@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // PdnConnectivityStatus struct for PdnConnectivityStatus
 type PdnConnectivityStatus struct {
-	PdnConnectivityStatusAnyOf *PdnConnectivityStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PdnConnectivityStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PdnConnectivityStatusAnyOf
-	err = json.Unmarshal(data, &dst.PdnConnectivityStatusAnyOf);
-	if err == nil {
-		jsonPdnConnectivityStatusAnyOf, _ := json.Marshal(dst.PdnConnectivityStatusAnyOf)
-		if string(jsonPdnConnectivityStatusAnyOf) == "{}" { // empty struct
-			dst.PdnConnectivityStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.PdnConnectivityStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.PdnConnectivityStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PdnConnectivityStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PdnConnectivityStatus) MarshalJSON() ([]byte, error) {
-	if src.PdnConnectivityStatusAnyOf != nil {
-		return json.Marshal(&src.PdnConnectivityStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePdnConnectivityStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

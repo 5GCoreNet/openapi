@@ -20,7 +20,7 @@ var _ MappedNullable = &V2XCommModels{}
 // V2XCommModels struct for V2XCommModels
 type V2XCommModels struct {
 	ServAttrCom *ServAttrCom `json:"servAttrCom,omitempty"`
-	V2XMode *Support `json:"v2XMode,omitempty"`
+	V2XMode     *Support     `json:"v2XMode,omitempty"`
 }
 
 // NewV2XCommModels instantiates a new V2XCommModels object
@@ -42,7 +42,7 @@ func NewV2XCommModelsWithDefaults() *V2XCommModels {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *V2XCommModels) GetServAttrCom() ServAttrCom {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *V2XCommModels) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2XCommModels) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *V2XCommModels) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *V2XCommModels) HasServAttrCom() bool {
-	if o != nil && !isNil(o.ServAttrCom) {
+	if o != nil && !IsNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *V2XCommModels) SetServAttrCom(v ServAttrCom) {
 
 // GetV2XMode returns the V2XMode field value if set, zero value otherwise.
 func (o *V2XCommModels) GetV2XMode() Support {
-	if o == nil || isNil(o.V2XMode) {
+	if o == nil || IsNil(o.V2XMode) {
 		var ret Support
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *V2XCommModels) GetV2XMode() Support {
 // GetV2XModeOk returns a tuple with the V2XMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2XCommModels) GetV2XModeOk() (*Support, bool) {
-	if o == nil || isNil(o.V2XMode) {
+	if o == nil || IsNil(o.V2XMode) {
 		return nil, false
 	}
 	return o.V2XMode, true
@@ -92,7 +92,7 @@ func (o *V2XCommModels) GetV2XModeOk() (*Support, bool) {
 
 // HasV2XMode returns a boolean if a field has been set.
 func (o *V2XCommModels) HasV2XMode() bool {
-	if o != nil && !isNil(o.V2XMode) {
+	if o != nil && !IsNil(o.V2XMode) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *V2XCommModels) SetV2XMode(v Support) {
 }
 
 func (o V2XCommModels) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o V2XCommModels) MarshalJSON() ([]byte, error) {
 
 func (o V2XCommModels) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServAttrCom) {
+	if !IsNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !isNil(o.V2XMode) {
+	if !IsNil(o.V2XMode) {
 		toSerialize["v2XMode"] = o.V2XMode
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableV2XCommModels) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

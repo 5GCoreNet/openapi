@@ -19,13 +19,13 @@ var _ MappedNullable = &NrSectorCarrierSingleAllOfAttributesAllOf{}
 
 // NrSectorCarrierSingleAllOfAttributesAllOf struct for NrSectorCarrierSingleAllOfAttributesAllOf
 type NrSectorCarrierSingleAllOfAttributesAllOf struct {
-	TxDirection *TxDirection `json:"txDirection,omitempty"`
-	ConfiguredMaxTxPower *int32 `json:"configuredMaxTxPower,omitempty"`
-	ArfcnDL *int32 `json:"arfcnDL,omitempty"`
-	ArfcnUL *int32 `json:"arfcnUL,omitempty"`
-	BSChannelBwDL *int32 `json:"bSChannelBwDL,omitempty"`
-	BSChannelBwUL *int32 `json:"bSChannelBwUL,omitempty"`
-	SectorEquipmentFunctionRef *string `json:"sectorEquipmentFunctionRef,omitempty"`
+	TxDirection                *TxDirection `json:"txDirection,omitempty"`
+	ConfiguredMaxTxPower       *int32       `json:"configuredMaxTxPower,omitempty"`
+	ArfcnDL                    *int32       `json:"arfcnDL,omitempty"`
+	ArfcnUL                    *int32       `json:"arfcnUL,omitempty"`
+	BSChannelBwDL              *int32       `json:"bSChannelBwDL,omitempty"`
+	BSChannelBwUL              *int32       `json:"bSChannelBwUL,omitempty"`
+	SectorEquipmentFunctionRef *string      `json:"sectorEquipmentFunctionRef,omitempty"`
 }
 
 // NewNrSectorCarrierSingleAllOfAttributesAllOf instantiates a new NrSectorCarrierSingleAllOfAttributesAllOf object
@@ -270,7 +270,7 @@ func (o *NrSectorCarrierSingleAllOfAttributesAllOf) SetSectorEquipmentFunctionRe
 }
 
 func (o NrSectorCarrierSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -338,5 +338,3 @@ func (v *NullableNrSectorCarrierSingleAllOfAttributesAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

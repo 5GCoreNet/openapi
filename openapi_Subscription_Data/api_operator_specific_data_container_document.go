@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // OperatorSpecificDataContainerDocumentApiService OperatorSpecificDataContainerDocumentApi service
 type OperatorSpecificDataContainerDocumentApiService service
 
 type ApiCreateOperSpecDataRequest struct {
-	ctx context.Context
-	ApiService *OperatorSpecificDataContainerDocumentApiService
-	ueId string
-	requestBody *map[string]OperatorSpecificDataContainer
+	ctx               context.Context
+	ApiService        *OperatorSpecificDataContainerDocumentApiService
+	ueId              string
+	requestBody       *map[string]OperatorSpecificDataContainer
 	supportedFeatures *string
 }
 
@@ -49,26 +48,27 @@ func (r ApiCreateOperSpecDataRequest) Execute() (*map[string]OperatorSpecificDat
 /*
 CreateOperSpecData To create an operator-specific data resource of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateOperSpecDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateOperSpecDataRequest
 */
 func (a *OperatorSpecificDataContainerDocumentApiService) CreateOperSpecData(ctx context.Context, ueId string) ApiCreateOperSpecDataRequest {
 	return ApiCreateOperSpecDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]OperatorSpecificDataContainer
+//
+//	@return map[string]OperatorSpecificDataContainer
 func (a *OperatorSpecificDataContainerDocumentApiService) CreateOperSpecDataExecute(r ApiCreateOperSpecDataRequest) (*map[string]OperatorSpecificDataContainer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *map[string]OperatorSpecificDataContainer
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *map[string]OperatorSpecificDataContainer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperatorSpecificDataContainerDocumentApiService.CreateOperSpecData")
@@ -87,7 +87,7 @@ func (a *OperatorSpecificDataContainerDocumentApiService) CreateOperSpecDataExec
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -118,9 +118,9 @@ func (a *OperatorSpecificDataContainerDocumentApiService) CreateOperSpecDataExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -137,8 +137,8 @@ func (a *OperatorSpecificDataContainerDocumentApiService) CreateOperSpecDataExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -157,9 +157,9 @@ func (a *OperatorSpecificDataContainerDocumentApiService) CreateOperSpecDataExec
 }
 
 type ApiDeleteOperSpecDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OperatorSpecificDataContainerDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiDeleteOperSpecDataRequest) Execute() (*http.Response, error) {
@@ -169,24 +169,24 @@ func (r ApiDeleteOperSpecDataRequest) Execute() (*http.Response, error) {
 /*
 DeleteOperSpecData To remove an operator-specific data resource of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiDeleteOperSpecDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiDeleteOperSpecDataRequest
 */
 func (a *OperatorSpecificDataContainerDocumentApiService) DeleteOperSpecData(ctx context.Context, ueId string) ApiDeleteOperSpecDataRequest {
 	return ApiDeleteOperSpecDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *OperatorSpecificDataContainerDocumentApiService) DeleteOperSpecDataExecute(r ApiDeleteOperSpecDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperatorSpecificDataContainerDocumentApiService.DeleteOperSpecData")
@@ -228,9 +228,9 @@ func (a *OperatorSpecificDataContainerDocumentApiService) DeleteOperSpecDataExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -247,8 +247,8 @@ func (a *OperatorSpecificDataContainerDocumentApiService) DeleteOperSpecDataExec
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -258,10 +258,10 @@ func (a *OperatorSpecificDataContainerDocumentApiService) DeleteOperSpecDataExec
 }
 
 type ApiModifyOperSpecDataRequest struct {
-	ctx context.Context
-	ApiService *OperatorSpecificDataContainerDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *OperatorSpecificDataContainerDocumentApiService
+	ueId              string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -283,26 +283,27 @@ func (r ApiModifyOperSpecDataRequest) Execute() (*PatchResult, *http.Response, e
 /*
 ModifyOperSpecData To modify operator specific data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiModifyOperSpecDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiModifyOperSpecDataRequest
 */
 func (a *OperatorSpecificDataContainerDocumentApiService) ModifyOperSpecData(ctx context.Context, ueId string) ApiModifyOperSpecDataRequest {
 	return ApiModifyOperSpecDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *OperatorSpecificDataContainerDocumentApiService) ModifyOperSpecDataExecute(r ApiModifyOperSpecDataRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperatorSpecificDataContainerDocumentApiService.ModifyOperSpecData")
@@ -321,7 +322,7 @@ func (a *OperatorSpecificDataContainerDocumentApiService) ModifyOperSpecDataExec
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -352,9 +353,9 @@ func (a *OperatorSpecificDataContainerDocumentApiService) ModifyOperSpecDataExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -371,8 +372,8 @@ func (a *OperatorSpecificDataContainerDocumentApiService) ModifyOperSpecDataExec
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -391,13 +392,13 @@ func (a *OperatorSpecificDataContainerDocumentApiService) ModifyOperSpecDataExec
 }
 
 type ApiQueryOperSpecDataRequest struct {
-	ctx context.Context
-	ApiService *OperatorSpecificDataContainerDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *OperatorSpecificDataContainerDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch       *string
+	ifModifiedSince   *string
 }
 
 // attributes to be retrieved
@@ -431,26 +432,27 @@ func (r ApiQueryOperSpecDataRequest) Execute() (*map[string]OperatorSpecificData
 /*
 QueryOperSpecData Retrieves the operator specific data of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryOperSpecDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryOperSpecDataRequest
 */
 func (a *OperatorSpecificDataContainerDocumentApiService) QueryOperSpecData(ctx context.Context, ueId string) ApiQueryOperSpecDataRequest {
 	return ApiQueryOperSpecDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]OperatorSpecificDataContainer
+//
+//	@return map[string]OperatorSpecificDataContainer
 func (a *OperatorSpecificDataContainerDocumentApiService) QueryOperSpecDataExecute(r ApiQueryOperSpecDataRequest) (*map[string]OperatorSpecificDataContainer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *map[string]OperatorSpecificDataContainer
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *map[string]OperatorSpecificDataContainer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperatorSpecificDataContainerDocumentApiService.QueryOperSpecData")
@@ -466,10 +468,10 @@ func (a *OperatorSpecificDataContainerDocumentApiService) QueryOperSpecDataExecu
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -489,10 +491,10 @@ func (a *OperatorSpecificDataContainerDocumentApiService) QueryOperSpecDataExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -504,9 +506,9 @@ func (a *OperatorSpecificDataContainerDocumentApiService) QueryOperSpecDataExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

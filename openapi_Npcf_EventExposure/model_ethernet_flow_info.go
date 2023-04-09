@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &EthernetFlowInfo{}
 
 // EthernetFlowInfo Identifies an UL/DL ethernet flow.
 type EthernetFlowInfo struct {
-	EthFlows []EthFlowDescription `json:"ethFlows,omitempty"`
-	FlowNumber int32 `json:"flowNumber"`
+	EthFlows   []EthFlowDescription `json:"ethFlows,omitempty"`
+	FlowNumber int32                `json:"flowNumber"`
 }
 
 // NewEthernetFlowInfo instantiates a new EthernetFlowInfo object
@@ -43,7 +43,7 @@ func NewEthernetFlowInfoWithDefaults() *EthernetFlowInfo {
 
 // GetEthFlows returns the EthFlows field value if set, zero value otherwise.
 func (o *EthernetFlowInfo) GetEthFlows() []EthFlowDescription {
-	if o == nil || isNil(o.EthFlows) {
+	if o == nil || IsNil(o.EthFlows) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EthernetFlowInfo) GetEthFlows() []EthFlowDescription {
 // GetEthFlowsOk returns a tuple with the EthFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthernetFlowInfo) GetEthFlowsOk() ([]EthFlowDescription, bool) {
-	if o == nil || isNil(o.EthFlows) {
+	if o == nil || IsNil(o.EthFlows) {
 		return nil, false
 	}
 	return o.EthFlows, true
@@ -61,7 +61,7 @@ func (o *EthernetFlowInfo) GetEthFlowsOk() ([]EthFlowDescription, bool) {
 
 // HasEthFlows returns a boolean if a field has been set.
 func (o *EthernetFlowInfo) HasEthFlows() bool {
-	if o != nil && !isNil(o.EthFlows) {
+	if o != nil && !IsNil(o.EthFlows) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *EthernetFlowInfo) SetFlowNumber(v int32) {
 }
 
 func (o EthernetFlowInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -107,7 +107,7 @@ func (o EthernetFlowInfo) MarshalJSON() ([]byte, error) {
 
 func (o EthernetFlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EthFlows) {
+	if !IsNil(o.EthFlows) {
 		toSerialize["ethFlows"] = o.EthFlows
 	}
 	toSerialize["flowNumber"] = o.FlowNumber
@@ -149,5 +149,3 @@ func (v *NullableEthernetFlowInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

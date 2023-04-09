@@ -20,9 +20,9 @@ type CollectionPeriodM6LteType string
 
 // List of collectionPeriodM6Lte-Type
 const (
-	_1024MS CollectionPeriodM6LteType = "1024ms"
-	_2048MS CollectionPeriodM6LteType = "2048ms"
-	_5120MS CollectionPeriodM6LteType = "5120ms"
+	_1024MS  CollectionPeriodM6LteType = "1024ms"
+	_2048MS  CollectionPeriodM6LteType = "2048ms"
+	_5120MS  CollectionPeriodM6LteType = "5120ms"
 	_10240MS CollectionPeriodM6LteType = "10240ms"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableCollectionPeriodM6LteType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

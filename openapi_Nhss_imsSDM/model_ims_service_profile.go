@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the ImsServiceProfile type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ImsServiceProfile{}
 
-// ImsServiceProfile IMS Service Profile of the UE, containing the list of Public Identifiers and optionally a list of IFCs 
+// ImsServiceProfile IMS Service Profile of the UE, containing the list of Public Identifiers and optionally a list of IFCs
 type ImsServiceProfile struct {
-	PublicIdentifierList []PublicIdentifier `json:"publicIdentifierList"`
-	Ifcs *Ifcs `json:"ifcs,omitempty"`
+	PublicIdentifierList   []PublicIdentifier               `json:"publicIdentifierList"`
+	Ifcs                   *Ifcs                            `json:"ifcs,omitempty"`
 	CnServiceAuthorization *CoreNetworkServiceAuthorization `json:"cnServiceAuthorization,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *ImsServiceProfile) SetPublicIdentifierList(v []PublicIdentifier) {
 
 // GetIfcs returns the Ifcs field value if set, zero value otherwise.
 func (o *ImsServiceProfile) GetIfcs() Ifcs {
-	if o == nil || isNil(o.Ifcs) {
+	if o == nil || IsNil(o.Ifcs) {
 		var ret Ifcs
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ImsServiceProfile) GetIfcs() Ifcs {
 // GetIfcsOk returns a tuple with the Ifcs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsServiceProfile) GetIfcsOk() (*Ifcs, bool) {
-	if o == nil || isNil(o.Ifcs) {
+	if o == nil || IsNil(o.Ifcs) {
 		return nil, false
 	}
 	return o.Ifcs, true
@@ -86,7 +86,7 @@ func (o *ImsServiceProfile) GetIfcsOk() (*Ifcs, bool) {
 
 // HasIfcs returns a boolean if a field has been set.
 func (o *ImsServiceProfile) HasIfcs() bool {
-	if o != nil && !isNil(o.Ifcs) {
+	if o != nil && !IsNil(o.Ifcs) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ImsServiceProfile) SetIfcs(v Ifcs) {
 
 // GetCnServiceAuthorization returns the CnServiceAuthorization field value if set, zero value otherwise.
 func (o *ImsServiceProfile) GetCnServiceAuthorization() CoreNetworkServiceAuthorization {
-	if o == nil || isNil(o.CnServiceAuthorization) {
+	if o == nil || IsNil(o.CnServiceAuthorization) {
 		var ret CoreNetworkServiceAuthorization
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ImsServiceProfile) GetCnServiceAuthorization() CoreNetworkServiceAuthor
 // GetCnServiceAuthorizationOk returns a tuple with the CnServiceAuthorization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsServiceProfile) GetCnServiceAuthorizationOk() (*CoreNetworkServiceAuthorization, bool) {
-	if o == nil || isNil(o.CnServiceAuthorization) {
+	if o == nil || IsNil(o.CnServiceAuthorization) {
 		return nil, false
 	}
 	return o.CnServiceAuthorization, true
@@ -118,7 +118,7 @@ func (o *ImsServiceProfile) GetCnServiceAuthorizationOk() (*CoreNetworkServiceAu
 
 // HasCnServiceAuthorization returns a boolean if a field has been set.
 func (o *ImsServiceProfile) HasCnServiceAuthorization() bool {
-	if o != nil && !isNil(o.CnServiceAuthorization) {
+	if o != nil && !IsNil(o.CnServiceAuthorization) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *ImsServiceProfile) SetCnServiceAuthorization(v CoreNetworkServiceAuthor
 }
 
 func (o ImsServiceProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o ImsServiceProfile) MarshalJSON() ([]byte, error) {
 func (o ImsServiceProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["publicIdentifierList"] = o.PublicIdentifierList
-	if !isNil(o.Ifcs) {
+	if !IsNil(o.Ifcs) {
 		toSerialize["ifcs"] = o.Ifcs
 	}
-	if !isNil(o.CnServiceAuthorization) {
+	if !IsNil(o.CnServiceAuthorization) {
 		toSerialize["cnServiceAuthorization"] = o.CnServiceAuthorization
 	}
 	return toSerialize, nil
@@ -185,5 +185,3 @@ func (v *NullableImsServiceProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

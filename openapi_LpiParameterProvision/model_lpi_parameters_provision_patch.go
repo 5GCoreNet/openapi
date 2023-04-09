@@ -1,7 +1,7 @@
 /*
 3gpp-lpi-pp
 
-API for Location Privacy Indication Parameters Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Location Privacy Indication Parameters Provisioning.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.2
 */
@@ -43,7 +43,7 @@ func NewLpiParametersProvisionPatchWithDefaults() *LpiParametersProvisionPatch {
 
 // GetLpi returns the Lpi field value if set, zero value otherwise.
 func (o *LpiParametersProvisionPatch) GetLpi() Lpi {
-	if o == nil || isNil(o.Lpi) {
+	if o == nil || IsNil(o.Lpi) {
 		var ret Lpi
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *LpiParametersProvisionPatch) GetLpi() Lpi {
 // GetLpiOk returns a tuple with the Lpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvisionPatch) GetLpiOk() (*Lpi, bool) {
-	if o == nil || isNil(o.Lpi) {
+	if o == nil || IsNil(o.Lpi) {
 		return nil, false
 	}
 	return o.Lpi, true
@@ -61,7 +61,7 @@ func (o *LpiParametersProvisionPatch) GetLpiOk() (*Lpi, bool) {
 
 // HasLpi returns a boolean if a field has been set.
 func (o *LpiParametersProvisionPatch) HasLpi() bool {
-	if o != nil && !isNil(o.Lpi) {
+	if o != nil && !IsNil(o.Lpi) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *LpiParametersProvisionPatch) SetLpi(v Lpi) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *LpiParametersProvisionPatch) GetMtcProviderId() string {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LpiParametersProvisionPatch) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvisionPatch) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderId) {
+	if o == nil || IsNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -93,7 +93,7 @@ func (o *LpiParametersProvisionPatch) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *LpiParametersProvisionPatch) HasMtcProviderId() bool {
-	if o != nil && !isNil(o.MtcProviderId) {
+	if o != nil && !IsNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *LpiParametersProvisionPatch) SetMtcProviderId(v string) {
 }
 
 func (o LpiParametersProvisionPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o LpiParametersProvisionPatch) MarshalJSON() ([]byte, error) {
 
 func (o LpiParametersProvisionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Lpi) {
+	if !IsNil(o.Lpi) {
 		toSerialize["lpi"] = o.Lpi
 	}
-	if !isNil(o.MtcProviderId) {
+	if !IsNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableLpiParametersProvisionPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 M1_PolicyTemplatesProvisioning
 
-5GMS AF M1 Policy Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Policy Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,21 +13,20 @@ package openapi_M1_PolicyTemplatesProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreatePolicyTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	policyTemplate *PolicyTemplate
+	policyTemplate        *PolicyTemplate
 }
 
 // A JSON representation of a Policy Template
@@ -43,14 +42,14 @@ func (r ApiCreatePolicyTemplateRequest) Execute() (*http.Response, error) {
 /*
 CreatePolicyTemplate Create (and optionally upload) a new Policy Template
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiCreatePolicyTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiCreatePolicyTemplateRequest
 */
 func (a *DefaultApiService) CreatePolicyTemplate(ctx context.Context, provisioningSessionId string) ApiCreatePolicyTemplateRequest {
 	return ApiCreatePolicyTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) CreatePolicyTemplate(ctx context.Context, provisioni
 // Execute executes the request
 func (a *DefaultApiService) CreatePolicyTemplateExecute(r ApiCreatePolicyTemplateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreatePolicyTemplate")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) CreatePolicyTemplateExecute(r ApiCreatePolicyTemplat
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,10 +125,10 @@ func (a *DefaultApiService) CreatePolicyTemplateExecute(r ApiCreatePolicyTemplat
 }
 
 type ApiDestroyPolicyTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	policyTemplateId string
+	policyTemplateId      string
 }
 
 func (r ApiDestroyPolicyTemplateRequest) Execute() (*http.Response, error) {
@@ -139,26 +138,26 @@ func (r ApiDestroyPolicyTemplateRequest) Execute() (*http.Response, error) {
 /*
 DestroyPolicyTemplate Method for DestroyPolicyTemplate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId A unique identifier of the Provisioning Session.
- @param policyTemplateId A resource identifier of a Policy Template.
- @return ApiDestroyPolicyTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId A unique identifier of the Provisioning Session.
+	@param policyTemplateId A resource identifier of a Policy Template.
+	@return ApiDestroyPolicyTemplateRequest
 */
 func (a *DefaultApiService) DestroyPolicyTemplate(ctx context.Context, provisioningSessionId string, policyTemplateId string) ApiDestroyPolicyTemplateRequest {
 	return ApiDestroyPolicyTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
-		policyTemplateId: policyTemplateId,
+		policyTemplateId:      policyTemplateId,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) DestroyPolicyTemplateExecute(r ApiDestroyPolicyTemplateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyPolicyTemplate")
@@ -201,9 +200,9 @@ func (a *DefaultApiService) DestroyPolicyTemplateExecute(r ApiDestroyPolicyTempl
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -220,11 +219,11 @@ func (a *DefaultApiService) DestroyPolicyTemplateExecute(r ApiDestroyPolicyTempl
 }
 
 type ApiPatchPolicyTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	policyTemplateId string
-	policyTemplate *PolicyTemplate
+	policyTemplateId      string
+	policyTemplate        *PolicyTemplate
 }
 
 // A JSON representation of a Policy Template
@@ -240,28 +239,29 @@ func (r ApiPatchPolicyTemplateRequest) Execute() (*PolicyTemplate, *http.Respons
 /*
 PatchPolicyTemplate Patch the Policy Template for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId A unique identifier of the Provisioning Session.
- @param policyTemplateId A resource identifier of a Policy Template.
- @return ApiPatchPolicyTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId A unique identifier of the Provisioning Session.
+	@param policyTemplateId A resource identifier of a Policy Template.
+	@return ApiPatchPolicyTemplateRequest
 */
 func (a *DefaultApiService) PatchPolicyTemplate(ctx context.Context, provisioningSessionId string, policyTemplateId string) ApiPatchPolicyTemplateRequest {
 	return ApiPatchPolicyTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
-		policyTemplateId: policyTemplateId,
+		policyTemplateId:      policyTemplateId,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyTemplate
+//
+//	@return PolicyTemplate
 func (a *DefaultApiService) PatchPolicyTemplateExecute(r ApiPatchPolicyTemplateRequest) (*PolicyTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchPolicyTemplate")
@@ -309,9 +309,9 @@ func (a *DefaultApiService) PatchPolicyTemplateExecute(r ApiPatchPolicyTemplateR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -337,10 +337,10 @@ func (a *DefaultApiService) PatchPolicyTemplateExecute(r ApiPatchPolicyTemplateR
 }
 
 type ApiRetrievePolicyTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	policyTemplateId string
+	policyTemplateId      string
 }
 
 func (r ApiRetrievePolicyTemplateRequest) Execute() (*PolicyTemplate, *http.Response, error) {
@@ -350,28 +350,29 @@ func (r ApiRetrievePolicyTemplateRequest) Execute() (*PolicyTemplate, *http.Resp
 /*
 RetrievePolicyTemplate Retrieve a representation of an existing Policy Template in the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId A unique identifier of the Provisioning Session.
- @param policyTemplateId A resource identifier of a Policy Template.
- @return ApiRetrievePolicyTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId A unique identifier of the Provisioning Session.
+	@param policyTemplateId A resource identifier of a Policy Template.
+	@return ApiRetrievePolicyTemplateRequest
 */
 func (a *DefaultApiService) RetrievePolicyTemplate(ctx context.Context, provisioningSessionId string, policyTemplateId string) ApiRetrievePolicyTemplateRequest {
 	return ApiRetrievePolicyTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
-		policyTemplateId: policyTemplateId,
+		policyTemplateId:      policyTemplateId,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyTemplate
+//
+//	@return PolicyTemplate
 func (a *DefaultApiService) RetrievePolicyTemplateExecute(r ApiRetrievePolicyTemplateRequest) (*PolicyTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrievePolicyTemplate")
@@ -414,9 +415,9 @@ func (a *DefaultApiService) RetrievePolicyTemplateExecute(r ApiRetrievePolicyTem
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -442,11 +443,11 @@ func (a *DefaultApiService) RetrievePolicyTemplateExecute(r ApiRetrievePolicyTem
 }
 
 type ApiUpdatePolicyTemplateRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
-	policyTemplateId string
-	policyTemplate *PolicyTemplate
+	policyTemplateId      string
+	policyTemplate        *PolicyTemplate
 }
 
 // A JSON representation of a Policy Template
@@ -462,26 +463,26 @@ func (r ApiUpdatePolicyTemplateRequest) Execute() (*http.Response, error) {
 /*
 UpdatePolicyTemplate Update a Policy Template for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId A unique identifier of the Provisioning Session.
- @param policyTemplateId A resource identifier of a Policy Template.
- @return ApiUpdatePolicyTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId A unique identifier of the Provisioning Session.
+	@param policyTemplateId A resource identifier of a Policy Template.
+	@return ApiUpdatePolicyTemplateRequest
 */
 func (a *DefaultApiService) UpdatePolicyTemplate(ctx context.Context, provisioningSessionId string, policyTemplateId string) ApiUpdatePolicyTemplateRequest {
 	return ApiUpdatePolicyTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
-		policyTemplateId: policyTemplateId,
+		policyTemplateId:      policyTemplateId,
 	}
 }
 
 // Execute executes the request
 func (a *DefaultApiService) UpdatePolicyTemplateExecute(r ApiUpdatePolicyTemplateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdatePolicyTemplate")
@@ -529,9 +530,9 @@ func (a *DefaultApiService) UpdatePolicyTemplateExecute(r ApiUpdatePolicyTemplat
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

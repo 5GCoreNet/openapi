@@ -1,7 +1,7 @@
 /*
 3gpp-asti
 
-API for ASTI.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for ASTI.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -17,9 +17,9 @@ import (
 // checks if the ActiveUe type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ActiveUe{}
 
-// ActiveUe Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget. 
+// ActiveUe Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
 type ActiveUe struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	Gpsi *string `json:"gpsi,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	TimeSyncErrBdgt *int32 `json:"timeSyncErrBdgt,omitempty"`
@@ -44,7 +44,7 @@ func NewActiveUeWithDefaults() *ActiveUe {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ActiveUe) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ActiveUe) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActiveUe) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -62,7 +62,7 @@ func (o *ActiveUe) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ActiveUe) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ActiveUe) SetGpsi(v string) {
 
 // GetTimeSyncErrBdgt returns the TimeSyncErrBdgt field value if set, zero value otherwise.
 func (o *ActiveUe) GetTimeSyncErrBdgt() int32 {
-	if o == nil || isNil(o.TimeSyncErrBdgt) {
+	if o == nil || IsNil(o.TimeSyncErrBdgt) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ActiveUe) GetTimeSyncErrBdgt() int32 {
 // GetTimeSyncErrBdgtOk returns a tuple with the TimeSyncErrBdgt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActiveUe) GetTimeSyncErrBdgtOk() (*int32, bool) {
-	if o == nil || isNil(o.TimeSyncErrBdgt) {
+	if o == nil || IsNil(o.TimeSyncErrBdgt) {
 		return nil, false
 	}
 	return o.TimeSyncErrBdgt, true
@@ -94,7 +94,7 @@ func (o *ActiveUe) GetTimeSyncErrBdgtOk() (*int32, bool) {
 
 // HasTimeSyncErrBdgt returns a boolean if a field has been set.
 func (o *ActiveUe) HasTimeSyncErrBdgt() bool {
-	if o != nil && !isNil(o.TimeSyncErrBdgt) {
+	if o != nil && !IsNil(o.TimeSyncErrBdgt) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ActiveUe) SetTimeSyncErrBdgt(v int32) {
 }
 
 func (o ActiveUe) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o ActiveUe) MarshalJSON() ([]byte, error) {
 
 func (o ActiveUe) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.TimeSyncErrBdgt) {
+	if !IsNil(o.TimeSyncErrBdgt) {
 		toSerialize["timeSyncErrBdgt"] = o.TimeSyncErrBdgt
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableActiveUe) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

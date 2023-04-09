@@ -1,7 +1,7 @@
 /*
 NSSF NS Selection
 
-NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF Network Slice Selection Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SliceInfoForPDUSession{}
 
 // SliceInfoForPDUSession Contains the slice information requested during PDU Session establishment procedure
 type SliceInfoForPDUSession struct {
-	SNssai Snssai `json:"sNssai"`
+	SNssai            Snssai            `json:"sNssai"`
 	RoamingIndication RoamingIndication `json:"roamingIndication"`
-	HomeSnssai *Snssai `json:"homeSnssai,omitempty"`
+	HomeSnssai        *Snssai           `json:"homeSnssai,omitempty"`
 }
 
 // NewSliceInfoForPDUSession instantiates a new SliceInfoForPDUSession object
@@ -93,7 +93,7 @@ func (o *SliceInfoForPDUSession) SetRoamingIndication(v RoamingIndication) {
 
 // GetHomeSnssai returns the HomeSnssai field value if set, zero value otherwise.
 func (o *SliceInfoForPDUSession) GetHomeSnssai() Snssai {
-	if o == nil || isNil(o.HomeSnssai) {
+	if o == nil || IsNil(o.HomeSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *SliceInfoForPDUSession) GetHomeSnssai() Snssai {
 // GetHomeSnssaiOk returns a tuple with the HomeSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForPDUSession) GetHomeSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.HomeSnssai) {
+	if o == nil || IsNil(o.HomeSnssai) {
 		return nil, false
 	}
 	return o.HomeSnssai, true
@@ -111,7 +111,7 @@ func (o *SliceInfoForPDUSession) GetHomeSnssaiOk() (*Snssai, bool) {
 
 // HasHomeSnssai returns a boolean if a field has been set.
 func (o *SliceInfoForPDUSession) HasHomeSnssai() bool {
-	if o != nil && !isNil(o.HomeSnssai) {
+	if o != nil && !IsNil(o.HomeSnssai) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *SliceInfoForPDUSession) SetHomeSnssai(v Snssai) {
 }
 
 func (o SliceInfoForPDUSession) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -135,7 +135,7 @@ func (o SliceInfoForPDUSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssai"] = o.SNssai
 	toSerialize["roamingIndication"] = o.RoamingIndication
-	if !isNil(o.HomeSnssai) {
+	if !IsNil(o.HomeSnssai) {
 		toSerialize["homeSnssai"] = o.HomeSnssai
 	}
 	return toSerialize, nil
@@ -176,5 +176,3 @@ func (v *NullableSliceInfoForPDUSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

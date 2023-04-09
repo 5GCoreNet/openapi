@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the MsConsumptionCollection type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MsConsumptionCollection{}
 
-// MsConsumptionCollection Contains the Media Streaming Consumption information collected for an UE Application via AF. 
+// MsConsumptionCollection Contains the Media Streaming Consumption information collected for an UE Application via AF.
 type MsConsumptionCollection struct {
 	MsConsumps []string `json:"msConsumps"`
 }
@@ -65,7 +65,7 @@ func (o *MsConsumptionCollection) SetMsConsumps(v []string) {
 }
 
 func (o MsConsumptionCollection) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullableMsConsumptionCollection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

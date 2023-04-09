@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// RestrictionTypeRm It contains the restriction type ALLOWED_AREAS or NOT_ALLOWED_AREAS but with the OpenAPI 'nullable: true' property.  
+// RestrictionTypeRm It contains the restriction type ALLOWED_AREAS or NOT_ALLOWED_AREAS but with the OpenAPI 'nullable: true' property.
 type RestrictionTypeRm struct {
-	NullValue *NullValue
+	NullValue       *NullValue
 	RestrictionType *RestrictionType
 }
 
@@ -25,7 +25,7 @@ type RestrictionTypeRm struct {
 func (dst *RestrictionTypeRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *RestrictionTypeRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into RestrictionType
-	err = json.Unmarshal(data, &dst.RestrictionType);
+	err = json.Unmarshal(data, &dst.RestrictionType)
 	if err == nil {
 		jsonRestrictionType, _ := json.Marshal(dst.RestrictionType)
 		if string(jsonRestrictionType) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableRestrictionTypeRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

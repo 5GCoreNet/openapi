@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AcrMgntEventFailureCode Possible values are: - 3GPP_UP_PATH_CHANGE_MON_NOT_AVAILABLE: Indicates that the ACR Management Event   Subscription failed because user plane path management event notifications from the 3GPP   network is NOT available. This value is only applicable for the \"UP_PATH_CHG\",    \"ACR_MONITORING\" and \"ACR_FACILITATION\" events. - OTHER_REASONS: Indicates that the ACR Management Event Subscription failed for other    reasons. This value is applicable for all events. 
+// AcrMgntEventFailureCode Possible values are: - 3GPP_UP_PATH_CHANGE_MON_NOT_AVAILABLE: Indicates that the ACR Management Event   Subscription failed because user plane path management event notifications from the 3GPP   network is NOT available. This value is only applicable for the \"UP_PATH_CHG\",    \"ACR_MONITORING\" and \"ACR_FACILITATION\" events. - OTHER_REASONS: Indicates that the ACR Management Event Subscription failed for other    reasons. This value is applicable for all events.
 type AcrMgntEventFailureCode struct {
-	AcrMgntEventFailureCodeAnyOf *AcrMgntEventFailureCodeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AcrMgntEventFailureCode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AcrMgntEventFailureCodeAnyOf
-	err = json.Unmarshal(data, &dst.AcrMgntEventFailureCodeAnyOf);
-	if err == nil {
-		jsonAcrMgntEventFailureCodeAnyOf, _ := json.Marshal(dst.AcrMgntEventFailureCodeAnyOf)
-		if string(jsonAcrMgntEventFailureCodeAnyOf) == "{}" { // empty struct
-			dst.AcrMgntEventFailureCodeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AcrMgntEventFailureCodeAnyOf, return on the first match
-		}
-	} else {
-		dst.AcrMgntEventFailureCodeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AcrMgntEventFailureCode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AcrMgntEventFailureCode) MarshalJSON() ([]byte, error) {
-	if src.AcrMgntEventFailureCodeAnyOf != nil {
-		return json.Marshal(&src.AcrMgntEventFailureCodeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAcrMgntEventFailureCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

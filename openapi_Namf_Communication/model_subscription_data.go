@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &SubscriptionData{}
 // SubscriptionData Data within an AMF Status Change Subscription request and response
 type SubscriptionData struct {
 	// String providing an URI formatted according to RFC 3986.
-	AmfStatusUri string `json:"amfStatusUri"`
-	GuamiList []Guami `json:"guamiList,omitempty"`
+	AmfStatusUri string  `json:"amfStatusUri"`
+	GuamiList    []Guami `json:"guamiList,omitempty"`
 }
 
 // NewSubscriptionData instantiates a new SubscriptionData object
@@ -68,7 +68,7 @@ func (o *SubscriptionData) SetAmfStatusUri(v string) {
 
 // GetGuamiList returns the GuamiList field value if set, zero value otherwise.
 func (o *SubscriptionData) GetGuamiList() []Guami {
-	if o == nil || isNil(o.GuamiList) {
+	if o == nil || IsNil(o.GuamiList) {
 		var ret []Guami
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SubscriptionData) GetGuamiList() []Guami {
 // GetGuamiListOk returns a tuple with the GuamiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetGuamiListOk() ([]Guami, bool) {
-	if o == nil || isNil(o.GuamiList) {
+	if o == nil || IsNil(o.GuamiList) {
 		return nil, false
 	}
 	return o.GuamiList, true
@@ -86,7 +86,7 @@ func (o *SubscriptionData) GetGuamiListOk() ([]Guami, bool) {
 
 // HasGuamiList returns a boolean if a field has been set.
 func (o *SubscriptionData) HasGuamiList() bool {
-	if o != nil && !isNil(o.GuamiList) {
+	if o != nil && !IsNil(o.GuamiList) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *SubscriptionData) SetGuamiList(v []Guami) {
 }
 
 func (o SubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o SubscriptionData) MarshalJSON() ([]byte, error) {
 func (o SubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfStatusUri"] = o.AmfStatusUri
-	if !isNil(o.GuamiList) {
+	if !IsNil(o.GuamiList) {
 		toSerialize["guamiList"] = o.GuamiList
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -23,7 +23,7 @@ type ACREventsSubscriptionPatch struct {
 	// string with format \"date-time\" as defined in OpenAPI.
 	ExpTime *time.Time `json:"expTime,omitempty"`
 	// The list of application identifiers of the EASs.
-	EasIds []string `json:"easIds,omitempty"`
+	EasIds   []string     `json:"easIds,omitempty"`
 	EventIds *ACREventIDs `json:"eventIds,omitempty"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination *string `json:"notificationDestination,omitempty"`
@@ -48,7 +48,7 @@ func NewACREventsSubscriptionPatchWithDefaults() *ACREventsSubscriptionPatch {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ACREventsSubscriptionPatch) GetExpTime() time.Time {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ACREventsSubscriptionPatch) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ExpTime) {
+	if o == nil || IsNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -66,7 +66,7 @@ func (o *ACREventsSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ACREventsSubscriptionPatch) HasExpTime() bool {
-	if o != nil && !isNil(o.ExpTime) {
+	if o != nil && !IsNil(o.ExpTime) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ACREventsSubscriptionPatch) SetExpTime(v time.Time) {
 
 // GetEasIds returns the EasIds field value if set, zero value otherwise.
 func (o *ACREventsSubscriptionPatch) GetEasIds() []string {
-	if o == nil || isNil(o.EasIds) {
+	if o == nil || IsNil(o.EasIds) {
 		var ret []string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ACREventsSubscriptionPatch) GetEasIds() []string {
 // GetEasIdsOk returns a tuple with the EasIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscriptionPatch) GetEasIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.EasIds) {
+	if o == nil || IsNil(o.EasIds) {
 		return nil, false
 	}
 	return o.EasIds, true
@@ -98,7 +98,7 @@ func (o *ACREventsSubscriptionPatch) GetEasIdsOk() ([]string, bool) {
 
 // HasEasIds returns a boolean if a field has been set.
 func (o *ACREventsSubscriptionPatch) HasEasIds() bool {
-	if o != nil && !isNil(o.EasIds) {
+	if o != nil && !IsNil(o.EasIds) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ACREventsSubscriptionPatch) SetEasIds(v []string) {
 
 // GetEventIds returns the EventIds field value if set, zero value otherwise.
 func (o *ACREventsSubscriptionPatch) GetEventIds() ACREventIDs {
-	if o == nil || isNil(o.EventIds) {
+	if o == nil || IsNil(o.EventIds) {
 		var ret ACREventIDs
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ACREventsSubscriptionPatch) GetEventIds() ACREventIDs {
 // GetEventIdsOk returns a tuple with the EventIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscriptionPatch) GetEventIdsOk() (*ACREventIDs, bool) {
-	if o == nil || isNil(o.EventIds) {
+	if o == nil || IsNil(o.EventIds) {
 		return nil, false
 	}
 	return o.EventIds, true
@@ -130,7 +130,7 @@ func (o *ACREventsSubscriptionPatch) GetEventIdsOk() (*ACREventIDs, bool) {
 
 // HasEventIds returns a boolean if a field has been set.
 func (o *ACREventsSubscriptionPatch) HasEventIds() bool {
-	if o != nil && !isNil(o.EventIds) {
+	if o != nil && !IsNil(o.EventIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ACREventsSubscriptionPatch) SetEventIds(v ACREventIDs) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ACREventsSubscriptionPatch) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ACREventsSubscriptionPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACREventsSubscriptionPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -162,7 +162,7 @@ func (o *ACREventsSubscriptionPatch) GetNotificationDestinationOk() (*string, bo
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ACREventsSubscriptionPatch) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *ACREventsSubscriptionPatch) SetNotificationDestination(v string) {
 }
 
 func (o ACREventsSubscriptionPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,16 +184,16 @@ func (o ACREventsSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o ACREventsSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ExpTime) {
+	if !IsNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !isNil(o.EasIds) {
+	if !IsNil(o.EasIds) {
 		toSerialize["easIds"] = o.EasIds
 	}
-	if !isNil(o.EventIds) {
+	if !IsNil(o.EventIds) {
 		toSerialize["eventIds"] = o.EventIds
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil
@@ -234,5 +234,3 @@ func (v *NullableACREventsSubscriptionPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

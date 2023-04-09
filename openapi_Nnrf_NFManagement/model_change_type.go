@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,28 +17,14 @@ import (
 
 // ChangeType Indicates the type of change to be performed.
 type ChangeType struct {
-	ChangeTypeAnyOf *ChangeTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ChangeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ChangeTypeAnyOf
-	err = json.Unmarshal(data, &dst.ChangeTypeAnyOf);
-	if err == nil {
-		jsonChangeTypeAnyOf, _ := json.Marshal(dst.ChangeTypeAnyOf)
-		if string(jsonChangeTypeAnyOf) == "{}" { // empty struct
-			dst.ChangeTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ChangeTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ChangeTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ChangeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ChangeType) MarshalJSON() ([]byte, error) {
-	if src.ChangeTypeAnyOf != nil {
-		return json.Marshal(&src.ChangeTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableChangeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

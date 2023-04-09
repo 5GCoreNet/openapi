@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &SnssaiDnnCombination{}
 
 // SnssaiDnnCombination Represents a combination of S-NSSAI and DNN(s).
 type SnssaiDnnCombination struct {
-	Snssai *Snssai `json:"snssai,omitempty"`
-	Dnns []string `json:"dnns,omitempty"`
+	Snssai *Snssai  `json:"snssai,omitempty"`
+	Dnns   []string `json:"dnns,omitempty"`
 }
 
 // NewSnssaiDnnCombination instantiates a new SnssaiDnnCombination object
@@ -42,7 +42,7 @@ func NewSnssaiDnnCombinationWithDefaults() *SnssaiDnnCombination {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *SnssaiDnnCombination) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SnssaiDnnCombination) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiDnnCombination) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -60,7 +60,7 @@ func (o *SnssaiDnnCombination) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *SnssaiDnnCombination) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SnssaiDnnCombination) SetSnssai(v Snssai) {
 
 // GetDnns returns the Dnns field value if set, zero value otherwise.
 func (o *SnssaiDnnCombination) GetDnns() []string {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SnssaiDnnCombination) GetDnns() []string {
 // GetDnnsOk returns a tuple with the Dnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiDnnCombination) GetDnnsOk() ([]string, bool) {
-	if o == nil || isNil(o.Dnns) {
+	if o == nil || IsNil(o.Dnns) {
 		return nil, false
 	}
 	return o.Dnns, true
@@ -92,7 +92,7 @@ func (o *SnssaiDnnCombination) GetDnnsOk() ([]string, bool) {
 
 // HasDnns returns a boolean if a field has been set.
 func (o *SnssaiDnnCombination) HasDnns() bool {
-	if o != nil && !isNil(o.Dnns) {
+	if o != nil && !IsNil(o.Dnns) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SnssaiDnnCombination) SetDnns(v []string) {
 }
 
 func (o SnssaiDnnCombination) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SnssaiDnnCombination) MarshalJSON() ([]byte, error) {
 
 func (o SnssaiDnnCombination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.Dnns) {
+	if !IsNil(o.Dnns) {
 		toSerialize["dnns"] = o.Dnns
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSnssaiDnnCombination) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

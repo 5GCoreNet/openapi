@@ -1,7 +1,7 @@
 /*
 Npcf_EventExposure
 
-PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,19 +19,19 @@ var _ MappedNullable = &PcEventExposureSubsc{}
 
 // PcEventExposureSubsc Represents an Individual Policy Events Subscription resource.
 type PcEventExposureSubsc struct {
-	EventSubs []PcEvent `json:"eventSubs"`
+	EventSubs     []PcEvent             `json:"eventSubs"`
 	EventsRepInfo *ReportingInformation `json:"eventsRepInfo,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
-	GroupId *string `json:"groupId,omitempty"`
-	FilterDnns []string `json:"filterDnns,omitempty"`
-	FilterSnssais []Snssai `json:"filterSnssais,omitempty"`
-	SnssaiDnns []SnssaiDnnCombination `json:"snssaiDnns,omitempty"`
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
+	GroupId        *string                 `json:"groupId,omitempty"`
+	FilterDnns     []string                `json:"filterDnns,omitempty"`
+	FilterSnssais  []Snssai                `json:"filterSnssais,omitempty"`
+	SnssaiDnns     []SnssaiDnnCombination  `json:"snssaiDnns,omitempty"`
 	FilterServices []ServiceIdentification `json:"filterServices,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
-	NotifId string `json:"notifId"`
+	NotifUri    string                `json:"notifUri"`
+	NotifId     string                `json:"notifId"`
 	EventNotifs []PcEventNotification `json:"eventNotifs,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -81,7 +81,7 @@ func (o *PcEventExposureSubsc) SetEventSubs(v []PcEvent) {
 
 // GetEventsRepInfo returns the EventsRepInfo field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetEventsRepInfo() ReportingInformation {
-	if o == nil || isNil(o.EventsRepInfo) {
+	if o == nil || IsNil(o.EventsRepInfo) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *PcEventExposureSubsc) GetEventsRepInfo() ReportingInformation {
 // GetEventsRepInfoOk returns a tuple with the EventsRepInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetEventsRepInfoOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.EventsRepInfo) {
+	if o == nil || IsNil(o.EventsRepInfo) {
 		return nil, false
 	}
 	return o.EventsRepInfo, true
@@ -99,7 +99,7 @@ func (o *PcEventExposureSubsc) GetEventsRepInfoOk() (*ReportingInformation, bool
 
 // HasEventsRepInfo returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasEventsRepInfo() bool {
-	if o != nil && !isNil(o.EventsRepInfo) {
+	if o != nil && !IsNil(o.EventsRepInfo) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *PcEventExposureSubsc) SetEventsRepInfo(v ReportingInformation) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *PcEventExposureSubsc) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -131,7 +131,7 @@ func (o *PcEventExposureSubsc) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *PcEventExposureSubsc) SetGroupId(v string) {
 
 // GetFilterDnns returns the FilterDnns field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetFilterDnns() []string {
-	if o == nil || isNil(o.FilterDnns) {
+	if o == nil || IsNil(o.FilterDnns) {
 		var ret []string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *PcEventExposureSubsc) GetFilterDnns() []string {
 // GetFilterDnnsOk returns a tuple with the FilterDnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetFilterDnnsOk() ([]string, bool) {
-	if o == nil || isNil(o.FilterDnns) {
+	if o == nil || IsNil(o.FilterDnns) {
 		return nil, false
 	}
 	return o.FilterDnns, true
@@ -163,7 +163,7 @@ func (o *PcEventExposureSubsc) GetFilterDnnsOk() ([]string, bool) {
 
 // HasFilterDnns returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasFilterDnns() bool {
-	if o != nil && !isNil(o.FilterDnns) {
+	if o != nil && !IsNil(o.FilterDnns) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *PcEventExposureSubsc) SetFilterDnns(v []string) {
 
 // GetFilterSnssais returns the FilterSnssais field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetFilterSnssais() []Snssai {
-	if o == nil || isNil(o.FilterSnssais) {
+	if o == nil || IsNil(o.FilterSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *PcEventExposureSubsc) GetFilterSnssais() []Snssai {
 // GetFilterSnssaisOk returns a tuple with the FilterSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetFilterSnssaisOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.FilterSnssais) {
+	if o == nil || IsNil(o.FilterSnssais) {
 		return nil, false
 	}
 	return o.FilterSnssais, true
@@ -195,7 +195,7 @@ func (o *PcEventExposureSubsc) GetFilterSnssaisOk() ([]Snssai, bool) {
 
 // HasFilterSnssais returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasFilterSnssais() bool {
-	if o != nil && !isNil(o.FilterSnssais) {
+	if o != nil && !IsNil(o.FilterSnssais) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *PcEventExposureSubsc) SetFilterSnssais(v []Snssai) {
 
 // GetSnssaiDnns returns the SnssaiDnns field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetSnssaiDnns() []SnssaiDnnCombination {
-	if o == nil || isNil(o.SnssaiDnns) {
+	if o == nil || IsNil(o.SnssaiDnns) {
 		var ret []SnssaiDnnCombination
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *PcEventExposureSubsc) GetSnssaiDnns() []SnssaiDnnCombination {
 // GetSnssaiDnnsOk returns a tuple with the SnssaiDnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetSnssaiDnnsOk() ([]SnssaiDnnCombination, bool) {
-	if o == nil || isNil(o.SnssaiDnns) {
+	if o == nil || IsNil(o.SnssaiDnns) {
 		return nil, false
 	}
 	return o.SnssaiDnns, true
@@ -227,7 +227,7 @@ func (o *PcEventExposureSubsc) GetSnssaiDnnsOk() ([]SnssaiDnnCombination, bool) 
 
 // HasSnssaiDnns returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasSnssaiDnns() bool {
-	if o != nil && !isNil(o.SnssaiDnns) {
+	if o != nil && !IsNil(o.SnssaiDnns) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *PcEventExposureSubsc) SetSnssaiDnns(v []SnssaiDnnCombination) {
 
 // GetFilterServices returns the FilterServices field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetFilterServices() []ServiceIdentification {
-	if o == nil || isNil(o.FilterServices) {
+	if o == nil || IsNil(o.FilterServices) {
 		var ret []ServiceIdentification
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *PcEventExposureSubsc) GetFilterServices() []ServiceIdentification {
 // GetFilterServicesOk returns a tuple with the FilterServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetFilterServicesOk() ([]ServiceIdentification, bool) {
-	if o == nil || isNil(o.FilterServices) {
+	if o == nil || IsNil(o.FilterServices) {
 		return nil, false
 	}
 	return o.FilterServices, true
@@ -259,7 +259,7 @@ func (o *PcEventExposureSubsc) GetFilterServicesOk() ([]ServiceIdentification, b
 
 // HasFilterServices returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasFilterServices() bool {
-	if o != nil && !isNil(o.FilterServices) {
+	if o != nil && !IsNil(o.FilterServices) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *PcEventExposureSubsc) SetNotifId(v string) {
 
 // GetEventNotifs returns the EventNotifs field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetEventNotifs() []PcEventNotification {
-	if o == nil || isNil(o.EventNotifs) {
+	if o == nil || IsNil(o.EventNotifs) {
 		var ret []PcEventNotification
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *PcEventExposureSubsc) GetEventNotifs() []PcEventNotification {
 // GetEventNotifsOk returns a tuple with the EventNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetEventNotifsOk() ([]PcEventNotification, bool) {
-	if o == nil || isNil(o.EventNotifs) {
+	if o == nil || IsNil(o.EventNotifs) {
 		return nil, false
 	}
 	return o.EventNotifs, true
@@ -339,7 +339,7 @@ func (o *PcEventExposureSubsc) GetEventNotifsOk() ([]PcEventNotification, bool) 
 
 // HasEventNotifs returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasEventNotifs() bool {
-	if o != nil && !isNil(o.EventNotifs) {
+	if o != nil && !IsNil(o.EventNotifs) {
 		return true
 	}
 
@@ -353,7 +353,7 @@ func (o *PcEventExposureSubsc) SetEventNotifs(v []PcEventNotification) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PcEventExposureSubsc) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -363,7 +363,7 @@ func (o *PcEventExposureSubsc) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventExposureSubsc) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -371,7 +371,7 @@ func (o *PcEventExposureSubsc) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PcEventExposureSubsc) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -384,7 +384,7 @@ func (o *PcEventExposureSubsc) SetSuppFeat(v string) {
 }
 
 func (o PcEventExposureSubsc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -394,30 +394,30 @@ func (o PcEventExposureSubsc) MarshalJSON() ([]byte, error) {
 func (o PcEventExposureSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventSubs"] = o.EventSubs
-	if !isNil(o.EventsRepInfo) {
+	if !IsNil(o.EventsRepInfo) {
 		toSerialize["eventsRepInfo"] = o.EventsRepInfo
 	}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.FilterDnns) {
+	if !IsNil(o.FilterDnns) {
 		toSerialize["filterDnns"] = o.FilterDnns
 	}
-	if !isNil(o.FilterSnssais) {
+	if !IsNil(o.FilterSnssais) {
 		toSerialize["filterSnssais"] = o.FilterSnssais
 	}
-	if !isNil(o.SnssaiDnns) {
+	if !IsNil(o.SnssaiDnns) {
 		toSerialize["snssaiDnns"] = o.SnssaiDnns
 	}
-	if !isNil(o.FilterServices) {
+	if !IsNil(o.FilterServices) {
 		toSerialize["filterServices"] = o.FilterServices
 	}
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["notifId"] = o.NotifId
-	if !isNil(o.EventNotifs) {
+	if !IsNil(o.EventNotifs) {
 		toSerialize["eventNotifs"] = o.EventNotifs
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -458,5 +458,3 @@ func (v *NullablePcEventExposureSubsc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

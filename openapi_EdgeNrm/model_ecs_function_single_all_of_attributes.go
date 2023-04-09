@@ -19,20 +19,15 @@ var _ MappedNullable = &ECSFunctionSingleAllOfAttributes{}
 
 // ECSFunctionSingleAllOfAttributes struct for ECSFunctionSingleAllOfAttributes
 type ECSFunctionSingleAllOfAttributes struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	VnfParametersList []VnfParameter `json:"vnfParametersList,omitempty"`
-	PeeParametersList []PeeParameter `json:"peeParametersList,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
-	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	SupportedTraceMetrics []string `json:"supportedTraceMetrics,omitempty"`
-	ECSAddress *string `json:"eCSAddress,omitempty"`
-	ProviderIdentifier *string `json:"providerIdentifier,omitempty"`
-	EdgeDataNetworkRef []string `json:"edgeDataNetworkRef,omitempty"`
-	EESFuncitonRef []string `json:"eESFuncitonRef,omitempty"`
-	SoftwareImageInfo *SoftwareImageInfo `json:"softwareImageInfo,omitempty"`
-	TrackingAreaIdList []Tai `json:"trackingAreaIdList,omitempty"`
-	GeographicalLocation *GeoLoc `json:"geographicalLocation,omitempty"`
-	Mcc *string `json:"mcc,omitempty"`
+	ManagedFunctionAttr
+	ECSAddress           *string            `json:"eCSAddress,omitempty"`
+	ProviderIdentifier   *string            `json:"providerIdentifier,omitempty"`
+	EdgeDataNetworkRef   []string           `json:"edgeDataNetworkRef,omitempty"`
+	EESFuncitonRef       []string           `json:"eESFuncitonRef,omitempty"`
+	SoftwareImageInfo    *SoftwareImageInfo `json:"softwareImageInfo,omitempty"`
+	TrackingAreaIdList   []Tai              `json:"trackingAreaIdList,omitempty"`
+	GeographicalLocation *GeoLoc            `json:"geographicalLocation,omitempty"`
+	Mcc                  *string            `json:"mcc,omitempty"`
 }
 
 // NewECSFunctionSingleAllOfAttributes instantiates a new ECSFunctionSingleAllOfAttributes object
@@ -50,198 +45,6 @@ func NewECSFunctionSingleAllOfAttributes() *ECSFunctionSingleAllOfAttributes {
 func NewECSFunctionSingleAllOfAttributesWithDefaults() *ECSFunctionSingleAllOfAttributes {
 	this := ECSFunctionSingleAllOfAttributes{}
 	return &this
-}
-
-// GetUserLabel returns the UserLabel field value if set, zero value otherwise.
-func (o *ECSFunctionSingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
-		var ret string
-		return ret
-	}
-	return *o.UserLabel
-}
-
-// GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ECSFunctionSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
-		return nil, false
-	}
-	return o.UserLabel, true
-}
-
-// HasUserLabel returns a boolean if a field has been set.
-func (o *ECSFunctionSingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserLabel gets a reference to the given string and assigns it to the UserLabel field.
-func (o *ECSFunctionSingleAllOfAttributes) SetUserLabel(v string) {
-	o.UserLabel = &v
-}
-
-// GetVnfParametersList returns the VnfParametersList field value if set, zero value otherwise.
-func (o *ECSFunctionSingleAllOfAttributes) GetVnfParametersList() []VnfParameter {
-	if o == nil || IsNil(o.VnfParametersList) {
-		var ret []VnfParameter
-		return ret
-	}
-	return o.VnfParametersList
-}
-
-// GetVnfParametersListOk returns a tuple with the VnfParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ECSFunctionSingleAllOfAttributes) GetVnfParametersListOk() ([]VnfParameter, bool) {
-	if o == nil || IsNil(o.VnfParametersList) {
-		return nil, false
-	}
-	return o.VnfParametersList, true
-}
-
-// HasVnfParametersList returns a boolean if a field has been set.
-func (o *ECSFunctionSingleAllOfAttributes) HasVnfParametersList() bool {
-	if o != nil && !IsNil(o.VnfParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetVnfParametersList gets a reference to the given []VnfParameter and assigns it to the VnfParametersList field.
-func (o *ECSFunctionSingleAllOfAttributes) SetVnfParametersList(v []VnfParameter) {
-	o.VnfParametersList = v
-}
-
-// GetPeeParametersList returns the PeeParametersList field value if set, zero value otherwise.
-func (o *ECSFunctionSingleAllOfAttributes) GetPeeParametersList() []PeeParameter {
-	if o == nil || IsNil(o.PeeParametersList) {
-		var ret []PeeParameter
-		return ret
-	}
-	return o.PeeParametersList
-}
-
-// GetPeeParametersListOk returns a tuple with the PeeParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ECSFunctionSingleAllOfAttributes) GetPeeParametersListOk() ([]PeeParameter, bool) {
-	if o == nil || IsNil(o.PeeParametersList) {
-		return nil, false
-	}
-	return o.PeeParametersList, true
-}
-
-// HasPeeParametersList returns a boolean if a field has been set.
-func (o *ECSFunctionSingleAllOfAttributes) HasPeeParametersList() bool {
-	if o != nil && !IsNil(o.PeeParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetPeeParametersList gets a reference to the given []PeeParameter and assigns it to the PeeParametersList field.
-func (o *ECSFunctionSingleAllOfAttributes) SetPeeParametersList(v []PeeParameter) {
-	o.PeeParametersList = v
-}
-
-// GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
-func (o *ECSFunctionSingleAllOfAttributes) GetPriorityLabel() int32 {
-	if o == nil || IsNil(o.PriorityLabel) {
-		var ret int32
-		return ret
-	}
-	return *o.PriorityLabel
-}
-
-// GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ECSFunctionSingleAllOfAttributes) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLabel) {
-		return nil, false
-	}
-	return o.PriorityLabel, true
-}
-
-// HasPriorityLabel returns a boolean if a field has been set.
-func (o *ECSFunctionSingleAllOfAttributes) HasPriorityLabel() bool {
-	if o != nil && !IsNil(o.PriorityLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetPriorityLabel gets a reference to the given int32 and assigns it to the PriorityLabel field.
-func (o *ECSFunctionSingleAllOfAttributes) SetPriorityLabel(v int32) {
-	o.PriorityLabel = &v
-}
-
-// GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
-func (o *ECSFunctionSingleAllOfAttributes) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		var ret []SupportedPerfMetricGroup
-		return ret
-	}
-	return o.SupportedPerfMetricGroups
-}
-
-// GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ECSFunctionSingleAllOfAttributes) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		return nil, false
-	}
-	return o.SupportedPerfMetricGroups, true
-}
-
-// HasSupportedPerfMetricGroups returns a boolean if a field has been set.
-func (o *ECSFunctionSingleAllOfAttributes) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedPerfMetricGroups gets a reference to the given []SupportedPerfMetricGroup and assigns it to the SupportedPerfMetricGroups field.
-func (o *ECSFunctionSingleAllOfAttributes) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGroup) {
-	o.SupportedPerfMetricGroups = v
-}
-
-// GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
-func (o *ECSFunctionSingleAllOfAttributes) GetSupportedTraceMetrics() []string {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		var ret []string
-		return ret
-	}
-	return o.SupportedTraceMetrics
-}
-
-// GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ECSFunctionSingleAllOfAttributes) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		return nil, false
-	}
-	return o.SupportedTraceMetrics, true
-}
-
-// HasSupportedTraceMetrics returns a boolean if a field has been set.
-func (o *ECSFunctionSingleAllOfAttributes) HasSupportedTraceMetrics() bool {
-	if o != nil && !IsNil(o.SupportedTraceMetrics) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedTraceMetrics gets a reference to the given []string and assigns it to the SupportedTraceMetrics field.
-func (o *ECSFunctionSingleAllOfAttributes) SetSupportedTraceMetrics(v []string) {
-	o.SupportedTraceMetrics = v
 }
 
 // GetECSAddress returns the ECSAddress field value if set, zero value otherwise.
@@ -501,7 +304,7 @@ func (o *ECSFunctionSingleAllOfAttributes) SetMcc(v string) {
 }
 
 func (o ECSFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -510,23 +313,13 @@ func (o ECSFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o ECSFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
-		toSerialize["userLabel"] = o.UserLabel
+	serializedManagedFunctionAttr, errManagedFunctionAttr := json.Marshal(o.ManagedFunctionAttr)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
-	if !IsNil(o.VnfParametersList) {
-		toSerialize["vnfParametersList"] = o.VnfParametersList
-	}
-	if !IsNil(o.PeeParametersList) {
-		toSerialize["peeParametersList"] = o.PeeParametersList
-	}
-	if !IsNil(o.PriorityLabel) {
-		toSerialize["priorityLabel"] = o.PriorityLabel
-	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
-		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
-	}
-	if !IsNil(o.SupportedTraceMetrics) {
-		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
+	errManagedFunctionAttr = json.Unmarshal([]byte(serializedManagedFunctionAttr), &toSerialize)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
 	if !IsNil(o.ECSAddress) {
 		toSerialize["eCSAddress"] = o.ECSAddress
@@ -590,5 +383,3 @@ func (v *NullableECSFunctionSingleAllOfAttributes) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

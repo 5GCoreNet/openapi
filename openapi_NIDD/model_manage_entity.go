@@ -1,7 +1,7 @@
 /*
 3gpp-nidd
 
-API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for non IP data delivery.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ManageEntity Possible values are - UE: Representing the UE. - AS: Representing the Application Server. 
+// ManageEntity Possible values are - UE: Representing the UE. - AS: Representing the Application Server.
 type ManageEntity struct {
-	ManageEntityAnyOf *ManageEntityAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ManageEntity) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ManageEntityAnyOf
-	err = json.Unmarshal(data, &dst.ManageEntityAnyOf);
-	if err == nil {
-		jsonManageEntityAnyOf, _ := json.Marshal(dst.ManageEntityAnyOf)
-		if string(jsonManageEntityAnyOf) == "{}" { // empty struct
-			dst.ManageEntityAnyOf = nil
-		} else {
-			return nil // data stored in dst.ManageEntityAnyOf, return on the first match
-		}
-	} else {
-		dst.ManageEntityAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ManageEntity) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ManageEntity) MarshalJSON() ([]byte, error) {
-	if src.ManageEntityAnyOf != nil {
-		return json.Marshal(&src.ManageEntityAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableManageEntity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

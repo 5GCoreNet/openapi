@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SmPolicyDataPatch{}
 
 // SmPolicyDataPatch Contains the SM policy data for a given subscriber.
 type SmPolicyDataPatch struct {
-	// Contains the remaining allowed usage data associated with the subscriber. The value of the limit identifier is used as the key of the map. 
+	// Contains the remaining allowed usage data associated with the subscriber. The value of the limit identifier is used as the key of the map.
 	UmData map[string]UsageMonData `json:"umData,omitempty"`
-	// Modifiable Session Management Policy data per S-NSSAI for all the SNSSAIs of the subscriber. The key of the map is the S-NSSAI. 
+	// Modifiable Session Management Policy data per S-NSSAI for all the SNSSAIs of the subscriber. The key of the map is the S-NSSAI.
 	SmPolicySnssaiData *map[string]SmPolicySnssaiDataPatch `json:"smPolicySnssaiData,omitempty"`
 }
 
@@ -55,7 +55,7 @@ func (o *SmPolicyDataPatch) GetUmData() map[string]UsageMonData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDataPatch) GetUmDataOk() (*map[string]UsageMonData, bool) {
-	if o == nil || isNil(o.UmData) {
+	if o == nil || IsNil(o.UmData) {
 		return nil, false
 	}
 	return &o.UmData, true
@@ -63,7 +63,7 @@ func (o *SmPolicyDataPatch) GetUmDataOk() (*map[string]UsageMonData, bool) {
 
 // HasUmData returns a boolean if a field has been set.
 func (o *SmPolicyDataPatch) HasUmData() bool {
-	if o != nil && isNil(o.UmData) {
+	if o != nil && IsNil(o.UmData) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SmPolicyDataPatch) SetUmData(v map[string]UsageMonData) {
 
 // GetSmPolicySnssaiData returns the SmPolicySnssaiData field value if set, zero value otherwise.
 func (o *SmPolicyDataPatch) GetSmPolicySnssaiData() map[string]SmPolicySnssaiDataPatch {
-	if o == nil || isNil(o.SmPolicySnssaiData) {
+	if o == nil || IsNil(o.SmPolicySnssaiData) {
 		var ret map[string]SmPolicySnssaiDataPatch
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SmPolicyDataPatch) GetSmPolicySnssaiData() map[string]SmPolicySnssaiDat
 // GetSmPolicySnssaiDataOk returns a tuple with the SmPolicySnssaiData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDataPatch) GetSmPolicySnssaiDataOk() (*map[string]SmPolicySnssaiDataPatch, bool) {
-	if o == nil || isNil(o.SmPolicySnssaiData) {
+	if o == nil || IsNil(o.SmPolicySnssaiData) {
 		return nil, false
 	}
 	return o.SmPolicySnssaiData, true
@@ -95,7 +95,7 @@ func (o *SmPolicyDataPatch) GetSmPolicySnssaiDataOk() (*map[string]SmPolicySnssa
 
 // HasSmPolicySnssaiData returns a boolean if a field has been set.
 func (o *SmPolicyDataPatch) HasSmPolicySnssaiData() bool {
-	if o != nil && !isNil(o.SmPolicySnssaiData) {
+	if o != nil && !IsNil(o.SmPolicySnssaiData) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SmPolicyDataPatch) SetSmPolicySnssaiData(v map[string]SmPolicySnssaiDat
 }
 
 func (o SmPolicyDataPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -120,7 +120,7 @@ func (o SmPolicyDataPatch) ToMap() (map[string]interface{}, error) {
 	if o.UmData != nil {
 		toSerialize["umData"] = o.UmData
 	}
-	if !isNil(o.SmPolicySnssaiData) {
+	if !IsNil(o.SmPolicySnssaiData) {
 		toSerialize["smPolicySnssaiData"] = o.SmPolicySnssaiData
 	}
 	return toSerialize, nil
@@ -161,5 +161,3 @@ func (v *NullableSmPolicyDataPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

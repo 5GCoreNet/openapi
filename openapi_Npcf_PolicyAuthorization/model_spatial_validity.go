@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SpatialValidity{}
 
 // SpatialValidity Describes explicitly the route to an Application location.
 type SpatialValidity struct {
-	// Defines the presence information provisioned by the AF. The praId attribute within the PresenceInfo data type is the key of the map. 
+	// Defines the presence information provisioned by the AF. The praId attribute within the PresenceInfo data type is the key of the map.
 	PresenceInfoList map[string]PresenceInfo `json:"presenceInfoList"`
 }
 
@@ -66,7 +66,7 @@ func (o *SpatialValidity) SetPresenceInfoList(v map[string]PresenceInfo) {
 }
 
 func (o SpatialValidity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullableSpatialValidity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

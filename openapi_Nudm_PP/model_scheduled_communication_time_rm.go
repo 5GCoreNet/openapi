@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// ScheduledCommunicationTimeRm This data type is defined in the same way as the 'ScheduledCommunicationTime' data type, but with the OpenAPI 'nullable: true' property. 
+// ScheduledCommunicationTimeRm This data type is defined in the same way as the 'ScheduledCommunicationTime' data type, but with the OpenAPI 'nullable: true' property.
 type ScheduledCommunicationTimeRm struct {
-	NullValue *NullValue
+	NullValue                  *NullValue
 	ScheduledCommunicationTime *ScheduledCommunicationTime
 }
 
@@ -25,7 +25,7 @@ type ScheduledCommunicationTimeRm struct {
 func (dst *ScheduledCommunicationTimeRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *ScheduledCommunicationTimeRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ScheduledCommunicationTime
-	err = json.Unmarshal(data, &dst.ScheduledCommunicationTime);
+	err = json.Unmarshal(data, &dst.ScheduledCommunicationTime)
 	if err == nil {
 		jsonScheduledCommunicationTime, _ := json.Marshal(dst.ScheduledCommunicationTime)
 		if string(jsonScheduledCommunicationTime) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableScheduledCommunicationTimeRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

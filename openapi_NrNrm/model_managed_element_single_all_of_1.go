@@ -19,18 +19,18 @@ var _ MappedNullable = &ManagedElementSingleAllOf1{}
 
 // ManagedElementSingleAllOf1 struct for ManagedElementSingleAllOf1
 type ManagedElementSingleAllOf1 struct {
-	GnbDuFunction []GnbDuFunctionSingle `json:"GnbDuFunction,omitempty"`
-	GnbCuUpFunction []GnbCuUpFunctionSingle `json:"GnbCuUpFunction,omitempty"`
-	GnbCuCpFunction []GnbCuCpFunctionSingle `json:"GnbCuCpFunction,omitempty"`
-	DESManagementFunction *DESManagementFunctionSingle `json:"DESManagementFunction,omitempty"`
+	GnbDuFunction             []GnbDuFunctionSingle            `json:"GnbDuFunction,omitempty"`
+	GnbCuUpFunction           []GnbCuUpFunctionSingle          `json:"GnbCuUpFunction,omitempty"`
+	GnbCuCpFunction           []GnbCuCpFunctionSingle          `json:"GnbCuCpFunction,omitempty"`
+	DESManagementFunction     *DESManagementFunctionSingle     `json:"DESManagementFunction,omitempty"`
 	DRACHOptimizationFunction *DRACHOptimizationFunctionSingle `json:"DRACHOptimizationFunction,omitempty"`
-	DMROFunction *DMROFunctionSingle `json:"DMROFunction,omitempty"`
-	DLBOFunction *DLBOFunctionSingle `json:"DLBOFunction,omitempty"`
+	DMROFunction              *DMROFunctionSingle              `json:"DMROFunction,omitempty"`
+	DLBOFunction              *DLBOFunctionSingle              `json:"DLBOFunction,omitempty"`
 	DPCIConfigurationFunction *DPCIConfigurationFunctionSingle `json:"DPCIConfigurationFunction,omitempty"`
 	CPCIConfigurationFunction *CPCIConfigurationFunctionSingle `json:"CPCIConfigurationFunction,omitempty"`
-	CESManagementFunction *CESManagementFunctionSingle `json:"CESManagementFunction,omitempty"`
-	Configurable5QISet []Configurable5QISetSingle `json:"Configurable5QISet,omitempty"`
-	Dynamic5QISet []Dynamic5QISetSingle `json:"Dynamic5QISet,omitempty"`
+	CESManagementFunction     *CESManagementFunctionSingle     `json:"CESManagementFunction,omitempty"`
+	Configurable5QISet        []Configurable5QISetSingle       `json:"Configurable5QISet,omitempty"`
+	Dynamic5QISet             []Dynamic5QISetSingle            `json:"Dynamic5QISet,omitempty"`
 }
 
 // NewManagedElementSingleAllOf1 instantiates a new ManagedElementSingleAllOf1 object
@@ -52,7 +52,7 @@ func NewManagedElementSingleAllOf1WithDefaults() *ManagedElementSingleAllOf1 {
 
 // GetGnbDuFunction returns the GnbDuFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetGnbDuFunction() []GnbDuFunctionSingle {
-	if o == nil || isNil(o.GnbDuFunction) {
+	if o == nil || IsNil(o.GnbDuFunction) {
 		var ret []GnbDuFunctionSingle
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ManagedElementSingleAllOf1) GetGnbDuFunction() []GnbDuFunctionSingle {
 // GetGnbDuFunctionOk returns a tuple with the GnbDuFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetGnbDuFunctionOk() ([]GnbDuFunctionSingle, bool) {
-	if o == nil || isNil(o.GnbDuFunction) {
+	if o == nil || IsNil(o.GnbDuFunction) {
 		return nil, false
 	}
 	return o.GnbDuFunction, true
@@ -70,7 +70,7 @@ func (o *ManagedElementSingleAllOf1) GetGnbDuFunctionOk() ([]GnbDuFunctionSingle
 
 // HasGnbDuFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasGnbDuFunction() bool {
-	if o != nil && !isNil(o.GnbDuFunction) {
+	if o != nil && !IsNil(o.GnbDuFunction) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *ManagedElementSingleAllOf1) SetGnbDuFunction(v []GnbDuFunctionSingle) {
 
 // GetGnbCuUpFunction returns the GnbCuUpFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetGnbCuUpFunction() []GnbCuUpFunctionSingle {
-	if o == nil || isNil(o.GnbCuUpFunction) {
+	if o == nil || IsNil(o.GnbCuUpFunction) {
 		var ret []GnbCuUpFunctionSingle
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ManagedElementSingleAllOf1) GetGnbCuUpFunction() []GnbCuUpFunctionSingl
 // GetGnbCuUpFunctionOk returns a tuple with the GnbCuUpFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetGnbCuUpFunctionOk() ([]GnbCuUpFunctionSingle, bool) {
-	if o == nil || isNil(o.GnbCuUpFunction) {
+	if o == nil || IsNil(o.GnbCuUpFunction) {
 		return nil, false
 	}
 	return o.GnbCuUpFunction, true
@@ -102,7 +102,7 @@ func (o *ManagedElementSingleAllOf1) GetGnbCuUpFunctionOk() ([]GnbCuUpFunctionSi
 
 // HasGnbCuUpFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasGnbCuUpFunction() bool {
-	if o != nil && !isNil(o.GnbCuUpFunction) {
+	if o != nil && !IsNil(o.GnbCuUpFunction) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *ManagedElementSingleAllOf1) SetGnbCuUpFunction(v []GnbCuUpFunctionSingl
 
 // GetGnbCuCpFunction returns the GnbCuCpFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetGnbCuCpFunction() []GnbCuCpFunctionSingle {
-	if o == nil || isNil(o.GnbCuCpFunction) {
+	if o == nil || IsNil(o.GnbCuCpFunction) {
 		var ret []GnbCuCpFunctionSingle
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ManagedElementSingleAllOf1) GetGnbCuCpFunction() []GnbCuCpFunctionSingl
 // GetGnbCuCpFunctionOk returns a tuple with the GnbCuCpFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetGnbCuCpFunctionOk() ([]GnbCuCpFunctionSingle, bool) {
-	if o == nil || isNil(o.GnbCuCpFunction) {
+	if o == nil || IsNil(o.GnbCuCpFunction) {
 		return nil, false
 	}
 	return o.GnbCuCpFunction, true
@@ -134,7 +134,7 @@ func (o *ManagedElementSingleAllOf1) GetGnbCuCpFunctionOk() ([]GnbCuCpFunctionSi
 
 // HasGnbCuCpFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasGnbCuCpFunction() bool {
-	if o != nil && !isNil(o.GnbCuCpFunction) {
+	if o != nil && !IsNil(o.GnbCuCpFunction) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *ManagedElementSingleAllOf1) SetGnbCuCpFunction(v []GnbCuCpFunctionSingl
 
 // GetDESManagementFunction returns the DESManagementFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetDESManagementFunction() DESManagementFunctionSingle {
-	if o == nil || isNil(o.DESManagementFunction) {
+	if o == nil || IsNil(o.DESManagementFunction) {
 		var ret DESManagementFunctionSingle
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ManagedElementSingleAllOf1) GetDESManagementFunction() DESManagementFun
 // GetDESManagementFunctionOk returns a tuple with the DESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetDESManagementFunctionOk() (*DESManagementFunctionSingle, bool) {
-	if o == nil || isNil(o.DESManagementFunction) {
+	if o == nil || IsNil(o.DESManagementFunction) {
 		return nil, false
 	}
 	return o.DESManagementFunction, true
@@ -166,7 +166,7 @@ func (o *ManagedElementSingleAllOf1) GetDESManagementFunctionOk() (*DESManagemen
 
 // HasDESManagementFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasDESManagementFunction() bool {
-	if o != nil && !isNil(o.DESManagementFunction) {
+	if o != nil && !IsNil(o.DESManagementFunction) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *ManagedElementSingleAllOf1) SetDESManagementFunction(v DESManagementFun
 
 // GetDRACHOptimizationFunction returns the DRACHOptimizationFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimizationFunctionSingle {
-	if o == nil || isNil(o.DRACHOptimizationFunction) {
+	if o == nil || IsNil(o.DRACHOptimizationFunction) {
 		var ret DRACHOptimizationFunctionSingle
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *ManagedElementSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimiz
 // GetDRACHOptimizationFunctionOk returns a tuple with the DRACHOptimizationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOptimizationFunctionSingle, bool) {
-	if o == nil || isNil(o.DRACHOptimizationFunction) {
+	if o == nil || IsNil(o.DRACHOptimizationFunction) {
 		return nil, false
 	}
 	return o.DRACHOptimizationFunction, true
@@ -198,7 +198,7 @@ func (o *ManagedElementSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOpt
 
 // HasDRACHOptimizationFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasDRACHOptimizationFunction() bool {
-	if o != nil && !isNil(o.DRACHOptimizationFunction) {
+	if o != nil && !IsNil(o.DRACHOptimizationFunction) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *ManagedElementSingleAllOf1) SetDRACHOptimizationFunction(v DRACHOptimiz
 
 // GetDMROFunction returns the DMROFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetDMROFunction() DMROFunctionSingle {
-	if o == nil || isNil(o.DMROFunction) {
+	if o == nil || IsNil(o.DMROFunction) {
 		var ret DMROFunctionSingle
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *ManagedElementSingleAllOf1) GetDMROFunction() DMROFunctionSingle {
 // GetDMROFunctionOk returns a tuple with the DMROFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetDMROFunctionOk() (*DMROFunctionSingle, bool) {
-	if o == nil || isNil(o.DMROFunction) {
+	if o == nil || IsNil(o.DMROFunction) {
 		return nil, false
 	}
 	return o.DMROFunction, true
@@ -230,7 +230,7 @@ func (o *ManagedElementSingleAllOf1) GetDMROFunctionOk() (*DMROFunctionSingle, b
 
 // HasDMROFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasDMROFunction() bool {
-	if o != nil && !isNil(o.DMROFunction) {
+	if o != nil && !IsNil(o.DMROFunction) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *ManagedElementSingleAllOf1) SetDMROFunction(v DMROFunctionSingle) {
 
 // GetDLBOFunction returns the DLBOFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetDLBOFunction() DLBOFunctionSingle {
-	if o == nil || isNil(o.DLBOFunction) {
+	if o == nil || IsNil(o.DLBOFunction) {
 		var ret DLBOFunctionSingle
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *ManagedElementSingleAllOf1) GetDLBOFunction() DLBOFunctionSingle {
 // GetDLBOFunctionOk returns a tuple with the DLBOFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetDLBOFunctionOk() (*DLBOFunctionSingle, bool) {
-	if o == nil || isNil(o.DLBOFunction) {
+	if o == nil || IsNil(o.DLBOFunction) {
 		return nil, false
 	}
 	return o.DLBOFunction, true
@@ -262,7 +262,7 @@ func (o *ManagedElementSingleAllOf1) GetDLBOFunctionOk() (*DLBOFunctionSingle, b
 
 // HasDLBOFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasDLBOFunction() bool {
-	if o != nil && !isNil(o.DLBOFunction) {
+	if o != nil && !IsNil(o.DLBOFunction) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *ManagedElementSingleAllOf1) SetDLBOFunction(v DLBOFunctionSingle) {
 
 // GetDPCIConfigurationFunction returns the DPCIConfigurationFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetDPCIConfigurationFunction() DPCIConfigurationFunctionSingle {
-	if o == nil || isNil(o.DPCIConfigurationFunction) {
+	if o == nil || IsNil(o.DPCIConfigurationFunction) {
 		var ret DPCIConfigurationFunctionSingle
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *ManagedElementSingleAllOf1) GetDPCIConfigurationFunction() DPCIConfigur
 // GetDPCIConfigurationFunctionOk returns a tuple with the DPCIConfigurationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetDPCIConfigurationFunctionOk() (*DPCIConfigurationFunctionSingle, bool) {
-	if o == nil || isNil(o.DPCIConfigurationFunction) {
+	if o == nil || IsNil(o.DPCIConfigurationFunction) {
 		return nil, false
 	}
 	return o.DPCIConfigurationFunction, true
@@ -294,7 +294,7 @@ func (o *ManagedElementSingleAllOf1) GetDPCIConfigurationFunctionOk() (*DPCIConf
 
 // HasDPCIConfigurationFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasDPCIConfigurationFunction() bool {
-	if o != nil && !isNil(o.DPCIConfigurationFunction) {
+	if o != nil && !IsNil(o.DPCIConfigurationFunction) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *ManagedElementSingleAllOf1) SetDPCIConfigurationFunction(v DPCIConfigur
 
 // GetCPCIConfigurationFunction returns the CPCIConfigurationFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetCPCIConfigurationFunction() CPCIConfigurationFunctionSingle {
-	if o == nil || isNil(o.CPCIConfigurationFunction) {
+	if o == nil || IsNil(o.CPCIConfigurationFunction) {
 		var ret CPCIConfigurationFunctionSingle
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *ManagedElementSingleAllOf1) GetCPCIConfigurationFunction() CPCIConfigur
 // GetCPCIConfigurationFunctionOk returns a tuple with the CPCIConfigurationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetCPCIConfigurationFunctionOk() (*CPCIConfigurationFunctionSingle, bool) {
-	if o == nil || isNil(o.CPCIConfigurationFunction) {
+	if o == nil || IsNil(o.CPCIConfigurationFunction) {
 		return nil, false
 	}
 	return o.CPCIConfigurationFunction, true
@@ -326,7 +326,7 @@ func (o *ManagedElementSingleAllOf1) GetCPCIConfigurationFunctionOk() (*CPCIConf
 
 // HasCPCIConfigurationFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasCPCIConfigurationFunction() bool {
-	if o != nil && !isNil(o.CPCIConfigurationFunction) {
+	if o != nil && !IsNil(o.CPCIConfigurationFunction) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *ManagedElementSingleAllOf1) SetCPCIConfigurationFunction(v CPCIConfigur
 
 // GetCESManagementFunction returns the CESManagementFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetCESManagementFunction() CESManagementFunctionSingle {
-	if o == nil || isNil(o.CESManagementFunction) {
+	if o == nil || IsNil(o.CESManagementFunction) {
 		var ret CESManagementFunctionSingle
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *ManagedElementSingleAllOf1) GetCESManagementFunction() CESManagementFun
 // GetCESManagementFunctionOk returns a tuple with the CESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetCESManagementFunctionOk() (*CESManagementFunctionSingle, bool) {
-	if o == nil || isNil(o.CESManagementFunction) {
+	if o == nil || IsNil(o.CESManagementFunction) {
 		return nil, false
 	}
 	return o.CESManagementFunction, true
@@ -358,7 +358,7 @@ func (o *ManagedElementSingleAllOf1) GetCESManagementFunctionOk() (*CESManagemen
 
 // HasCESManagementFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasCESManagementFunction() bool {
-	if o != nil && !isNil(o.CESManagementFunction) {
+	if o != nil && !IsNil(o.CESManagementFunction) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *ManagedElementSingleAllOf1) SetCESManagementFunction(v CESManagementFun
 
 // GetConfigurable5QISet returns the Configurable5QISet field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetConfigurable5QISet() []Configurable5QISetSingle {
-	if o == nil || isNil(o.Configurable5QISet) {
+	if o == nil || IsNil(o.Configurable5QISet) {
 		var ret []Configurable5QISetSingle
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *ManagedElementSingleAllOf1) GetConfigurable5QISet() []Configurable5QISe
 // GetConfigurable5QISetOk returns a tuple with the Configurable5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetConfigurable5QISetOk() ([]Configurable5QISetSingle, bool) {
-	if o == nil || isNil(o.Configurable5QISet) {
+	if o == nil || IsNil(o.Configurable5QISet) {
 		return nil, false
 	}
 	return o.Configurable5QISet, true
@@ -390,7 +390,7 @@ func (o *ManagedElementSingleAllOf1) GetConfigurable5QISetOk() ([]Configurable5Q
 
 // HasConfigurable5QISet returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasConfigurable5QISet() bool {
-	if o != nil && !isNil(o.Configurable5QISet) {
+	if o != nil && !IsNil(o.Configurable5QISet) {
 		return true
 	}
 
@@ -404,7 +404,7 @@ func (o *ManagedElementSingleAllOf1) SetConfigurable5QISet(v []Configurable5QISe
 
 // GetDynamic5QISet returns the Dynamic5QISet field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
-	if o == nil || isNil(o.Dynamic5QISet) {
+	if o == nil || IsNil(o.Dynamic5QISet) {
 		var ret []Dynamic5QISetSingle
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *ManagedElementSingleAllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
 // GetDynamic5QISetOk returns a tuple with the Dynamic5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle, bool) {
-	if o == nil || isNil(o.Dynamic5QISet) {
+	if o == nil || IsNil(o.Dynamic5QISet) {
 		return nil, false
 	}
 	return o.Dynamic5QISet, true
@@ -422,7 +422,7 @@ func (o *ManagedElementSingleAllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle
 
 // HasDynamic5QISet returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasDynamic5QISet() bool {
-	if o != nil && !isNil(o.Dynamic5QISet) {
+	if o != nil && !IsNil(o.Dynamic5QISet) {
 		return true
 	}
 
@@ -435,7 +435,7 @@ func (o *ManagedElementSingleAllOf1) SetDynamic5QISet(v []Dynamic5QISetSingle) {
 }
 
 func (o ManagedElementSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -444,40 +444,40 @@ func (o ManagedElementSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GnbDuFunction) {
+	if !IsNil(o.GnbDuFunction) {
 		toSerialize["GnbDuFunction"] = o.GnbDuFunction
 	}
-	if !isNil(o.GnbCuUpFunction) {
+	if !IsNil(o.GnbCuUpFunction) {
 		toSerialize["GnbCuUpFunction"] = o.GnbCuUpFunction
 	}
-	if !isNil(o.GnbCuCpFunction) {
+	if !IsNil(o.GnbCuCpFunction) {
 		toSerialize["GnbCuCpFunction"] = o.GnbCuCpFunction
 	}
-	if !isNil(o.DESManagementFunction) {
+	if !IsNil(o.DESManagementFunction) {
 		toSerialize["DESManagementFunction"] = o.DESManagementFunction
 	}
-	if !isNil(o.DRACHOptimizationFunction) {
+	if !IsNil(o.DRACHOptimizationFunction) {
 		toSerialize["DRACHOptimizationFunction"] = o.DRACHOptimizationFunction
 	}
-	if !isNil(o.DMROFunction) {
+	if !IsNil(o.DMROFunction) {
 		toSerialize["DMROFunction"] = o.DMROFunction
 	}
-	if !isNil(o.DLBOFunction) {
+	if !IsNil(o.DLBOFunction) {
 		toSerialize["DLBOFunction"] = o.DLBOFunction
 	}
-	if !isNil(o.DPCIConfigurationFunction) {
+	if !IsNil(o.DPCIConfigurationFunction) {
 		toSerialize["DPCIConfigurationFunction"] = o.DPCIConfigurationFunction
 	}
-	if !isNil(o.CPCIConfigurationFunction) {
+	if !IsNil(o.CPCIConfigurationFunction) {
 		toSerialize["CPCIConfigurationFunction"] = o.CPCIConfigurationFunction
 	}
-	if !isNil(o.CESManagementFunction) {
+	if !IsNil(o.CESManagementFunction) {
 		toSerialize["CESManagementFunction"] = o.CESManagementFunction
 	}
-	if !isNil(o.Configurable5QISet) {
+	if !IsNil(o.Configurable5QISet) {
 		toSerialize["Configurable5QISet"] = o.Configurable5QISet
 	}
-	if !isNil(o.Dynamic5QISet) {
+	if !IsNil(o.Dynamic5QISet) {
 		toSerialize["Dynamic5QISet"] = o.Dynamic5QISet
 	}
 	return toSerialize, nil
@@ -518,5 +518,3 @@ func (v *NullableManagedElementSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

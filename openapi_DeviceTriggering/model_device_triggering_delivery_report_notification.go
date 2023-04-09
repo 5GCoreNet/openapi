@@ -1,7 +1,7 @@
 /*
 3gpp-device-triggering
 
-API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for device trigger.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &DeviceTriggeringDeliveryReportNotification{}
 // DeviceTriggeringDeliveryReportNotification Represents a device triggering delivery report notification.
 type DeviceTriggeringDeliveryReportNotification struct {
 	// string formatted according to IETF RFC 3986 identifying a referenced resource.
-	Transaction string `json:"transaction"`
-	Result DeliveryResult `json:"result"`
+	Transaction string         `json:"transaction"`
+	Result      DeliveryResult `json:"result"`
 }
 
 // NewDeviceTriggeringDeliveryReportNotification instantiates a new DeviceTriggeringDeliveryReportNotification object
@@ -92,7 +92,7 @@ func (o *DeviceTriggeringDeliveryReportNotification) SetResult(v DeliveryResult)
 }
 
 func (o DeviceTriggeringDeliveryReportNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableDeviceTriggeringDeliveryReportNotification) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

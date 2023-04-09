@@ -1,7 +1,7 @@
 /*
 Nucmf_Provisioning
 
-UCMF_Provisioning Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UCMF_Provisioning Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// RacsFailureCode Possible values are - MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or the RACS provisioning does not function at all. - RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data storage. - RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned. - OTHER_REASON: Other reason unspecified. 
+// RacsFailureCode Possible values are - MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or the RACS provisioning does not function at all. - RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data storage. - RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned. - OTHER_REASON: Other reason unspecified.
 type RacsFailureCode struct {
-	RacsFailureCodeAnyOf *RacsFailureCodeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RacsFailureCode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RacsFailureCodeAnyOf
-	err = json.Unmarshal(data, &dst.RacsFailureCodeAnyOf);
-	if err == nil {
-		jsonRacsFailureCodeAnyOf, _ := json.Marshal(dst.RacsFailureCodeAnyOf)
-		if string(jsonRacsFailureCodeAnyOf) == "{}" { // empty struct
-			dst.RacsFailureCodeAnyOf = nil
-		} else {
-			return nil // data stored in dst.RacsFailureCodeAnyOf, return on the first match
-		}
-	} else {
-		dst.RacsFailureCodeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RacsFailureCode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RacsFailureCode) MarshalJSON() ([]byte, error) {
-	if src.RacsFailureCodeAnyOf != nil {
-		return json.Marshal(&src.RacsFailureCodeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRacsFailureCode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

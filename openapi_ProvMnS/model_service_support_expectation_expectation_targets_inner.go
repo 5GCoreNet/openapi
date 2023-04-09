@@ -18,13 +18,13 @@ import (
 // ServiceSupportExpectationExpectationTargetsInner - struct for ServiceSupportExpectationExpectationTargetsInner
 type ServiceSupportExpectationExpectationTargetsInner struct {
 	ActivityFactorTarget *ActivityFactorTarget
-	DLLatencyTarget *DLLatencyTarget
-	DLThptPerUETarget *DLThptPerUETarget
-	ExpectationTarget *ExpectationTarget
+	DLLatencyTarget      *DLLatencyTarget
+	DLThptPerUETarget    *DLThptPerUETarget
+	ExpectationTarget    *ExpectationTarget
 	MaxNumberofUEsTarget *MaxNumberofUEsTarget
-	UESpeedTarget *UESpeedTarget
-	ULLatencyTarget *ULLatencyTarget
-	ULThptPerUETarget *ULThptPerUETarget
+	UESpeedTarget        *UESpeedTarget
+	ULLatencyTarget      *ULLatencyTarget
+	ULThptPerUETarget    *ULThptPerUETarget
 }
 
 // ActivityFactorTargetAsServiceSupportExpectationExpectationTargetsInner is a convenience function that returns ActivityFactorTarget wrapped in ServiceSupportExpectationExpectationTargetsInner
@@ -82,7 +82,6 @@ func ULThptPerUETargetAsServiceSupportExpectationExpectationTargetsInner(v *ULTh
 		ULThptPerUETarget: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServiceSupportExpectationExpectationTargetsInner) UnmarshalJSON(data []byte) error {
@@ -249,7 +248,7 @@ func (src ServiceSupportExpectationExpectationTargetsInner) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *ServiceSupportExpectationExpectationTargetsInner) GetActualInstance() (interface{}) {
+func (obj *ServiceSupportExpectationExpectationTargetsInner) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -324,5 +323,3 @@ func (v *NullableServiceSupportExpectationExpectationTargetsInner) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

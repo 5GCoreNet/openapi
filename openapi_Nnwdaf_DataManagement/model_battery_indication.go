@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the BatteryIndication type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BatteryIndication{}
 
-// BatteryIndication Parameters \"replaceableInd\" and \"rechargeableInd\" are only included if the value of Parameter \"batteryInd\" is true. 
+// BatteryIndication Parameters \"replaceableInd\" and \"rechargeableInd\" are only included if the value of Parameter \"batteryInd\" is true.
 type BatteryIndication struct {
-	// This IE shall indicate whether the UE is battery powered or not. true: the UE is battery powered; false or absent: the UE is not battery powered 
+	// This IE shall indicate whether the UE is battery powered or not. true: the UE is battery powered; false or absent: the UE is not battery powered
 	BatteryInd *bool `json:"batteryInd,omitempty"`
-	// This IE shall indicate whether the battery of the UE is replaceable or not. true: the battery of the UE is replaceable; false or absent: the battery of the UE is not replaceable. 
+	// This IE shall indicate whether the battery of the UE is replaceable or not. true: the battery of the UE is replaceable; false or absent: the battery of the UE is not replaceable.
 	ReplaceableInd *bool `json:"replaceableInd,omitempty"`
-	// This IE shall indicate whether the battery of the UE is rechargeable or not. true: the battery of UE is rechargeable; false or absent: the battery of the UE is not rechargeable. 
+	// This IE shall indicate whether the battery of the UE is rechargeable or not. true: the battery of UE is rechargeable; false or absent: the battery of the UE is not rechargeable.
 	RechargeableInd *bool `json:"rechargeableInd,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewBatteryIndicationWithDefaults() *BatteryIndication {
 
 // GetBatteryInd returns the BatteryInd field value if set, zero value otherwise.
 func (o *BatteryIndication) GetBatteryInd() bool {
-	if o == nil || isNil(o.BatteryInd) {
+	if o == nil || IsNil(o.BatteryInd) {
 		var ret bool
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *BatteryIndication) GetBatteryInd() bool {
 // GetBatteryIndOk returns a tuple with the BatteryInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BatteryIndication) GetBatteryIndOk() (*bool, bool) {
-	if o == nil || isNil(o.BatteryInd) {
+	if o == nil || IsNil(o.BatteryInd) {
 		return nil, false
 	}
 	return o.BatteryInd, true
@@ -64,7 +64,7 @@ func (o *BatteryIndication) GetBatteryIndOk() (*bool, bool) {
 
 // HasBatteryInd returns a boolean if a field has been set.
 func (o *BatteryIndication) HasBatteryInd() bool {
-	if o != nil && !isNil(o.BatteryInd) {
+	if o != nil && !IsNil(o.BatteryInd) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *BatteryIndication) SetBatteryInd(v bool) {
 
 // GetReplaceableInd returns the ReplaceableInd field value if set, zero value otherwise.
 func (o *BatteryIndication) GetReplaceableInd() bool {
-	if o == nil || isNil(o.ReplaceableInd) {
+	if o == nil || IsNil(o.ReplaceableInd) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *BatteryIndication) GetReplaceableInd() bool {
 // GetReplaceableIndOk returns a tuple with the ReplaceableInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BatteryIndication) GetReplaceableIndOk() (*bool, bool) {
-	if o == nil || isNil(o.ReplaceableInd) {
+	if o == nil || IsNil(o.ReplaceableInd) {
 		return nil, false
 	}
 	return o.ReplaceableInd, true
@@ -96,7 +96,7 @@ func (o *BatteryIndication) GetReplaceableIndOk() (*bool, bool) {
 
 // HasReplaceableInd returns a boolean if a field has been set.
 func (o *BatteryIndication) HasReplaceableInd() bool {
-	if o != nil && !isNil(o.ReplaceableInd) {
+	if o != nil && !IsNil(o.ReplaceableInd) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *BatteryIndication) SetReplaceableInd(v bool) {
 
 // GetRechargeableInd returns the RechargeableInd field value if set, zero value otherwise.
 func (o *BatteryIndication) GetRechargeableInd() bool {
-	if o == nil || isNil(o.RechargeableInd) {
+	if o == nil || IsNil(o.RechargeableInd) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *BatteryIndication) GetRechargeableInd() bool {
 // GetRechargeableIndOk returns a tuple with the RechargeableInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BatteryIndication) GetRechargeableIndOk() (*bool, bool) {
-	if o == nil || isNil(o.RechargeableInd) {
+	if o == nil || IsNil(o.RechargeableInd) {
 		return nil, false
 	}
 	return o.RechargeableInd, true
@@ -128,7 +128,7 @@ func (o *BatteryIndication) GetRechargeableIndOk() (*bool, bool) {
 
 // HasRechargeableInd returns a boolean if a field has been set.
 func (o *BatteryIndication) HasRechargeableInd() bool {
-	if o != nil && !isNil(o.RechargeableInd) {
+	if o != nil && !IsNil(o.RechargeableInd) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *BatteryIndication) SetRechargeableInd(v bool) {
 }
 
 func (o BatteryIndication) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o BatteryIndication) MarshalJSON() ([]byte, error) {
 
 func (o BatteryIndication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.BatteryInd) {
+	if !IsNil(o.BatteryInd) {
 		toSerialize["batteryInd"] = o.BatteryInd
 	}
-	if !isNil(o.ReplaceableInd) {
+	if !IsNil(o.ReplaceableInd) {
 		toSerialize["replaceableInd"] = o.ReplaceableInd
 	}
-	if !isNil(o.RechargeableInd) {
+	if !IsNil(o.RechargeableInd) {
 		toSerialize["rechargeableInd"] = o.RechargeableInd
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableBatteryIndication) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

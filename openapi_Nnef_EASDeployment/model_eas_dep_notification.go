@@ -1,7 +1,7 @@
 /*
 Nnef_EASDeployment
 
-NEF EAS Deployment service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF EAS Deployment service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &EasDepNotification{}
 // EasDepNotification Represents the EAS Deployment Notifcation.
 type EasDepNotification struct {
 	EasDepInfo EasDeployInfoData `json:"easDepInfo"`
-	EventId EasEvent `json:"eventId"`
+	EventId    EasEvent          `json:"eventId"`
 }
 
 // NewEasDepNotification instantiates a new EasDepNotification object
@@ -91,7 +91,7 @@ func (o *EasDepNotification) SetEventId(v EasEvent) {
 }
 
 func (o EasDepNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableEasDepNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

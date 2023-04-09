@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the Ipv6AddrRm type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Ipv6AddrRm{}
 
-// Ipv6AddrRm String identifying an IPv6 address formatted according to clause 4 of RFC5952 with the OpenAPI 'nullable: true' property. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used. 
+// Ipv6AddrRm String identifying an IPv6 address formatted according to clause 4 of RFC5952 with the OpenAPI 'nullable: true' property. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
 type Ipv6AddrRm struct {
 }
 
@@ -39,7 +39,7 @@ func NewIpv6AddrRmWithDefaults() *Ipv6AddrRm {
 }
 
 func (o Ipv6AddrRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -86,5 +86,3 @@ func (v *NullableIpv6AddrRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

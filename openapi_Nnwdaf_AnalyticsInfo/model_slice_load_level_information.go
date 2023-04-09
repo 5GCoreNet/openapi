@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SliceLoadLevelInformation{}
 
 // SliceLoadLevelInformation Contains load level information applicable for one or several slices.
 type SliceLoadLevelInformation struct {
-	// Load level information of the network slice and the optionally associated network slice  instance. 
+	// Load level information of the network slice and the optionally associated network slice  instance.
 	LoadLevelInformation int32 `json:"loadLevelInformation"`
 	// Identification(s) of network slice to which the subscription applies.
 	Snssais []Snssai `json:"snssais"`
@@ -93,7 +93,7 @@ func (o *SliceLoadLevelInformation) SetSnssais(v []Snssai) {
 }
 
 func (o SliceLoadLevelInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableSliceLoadLevelInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

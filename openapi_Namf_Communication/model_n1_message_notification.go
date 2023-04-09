@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,17 +19,17 @@ var _ MappedNullable = &N1MessageNotification{}
 
 // N1MessageNotification Data within a N1 message notification request
 type N1MessageNotification struct {
-	N1NotifySubscriptionId *string `json:"n1NotifySubscriptionId,omitempty"`
-	N1MessageContainer N1MessageContainer `json:"n1MessageContainer"`
+	N1NotifySubscriptionId *string            `json:"n1NotifySubscriptionId,omitempty"`
+	N1MessageContainer     N1MessageContainer `json:"n1MessageContainer"`
 	// LCS Correlation ID.
-	LcsCorrelationId *string `json:"lcsCorrelationId,omitempty"`
+	LcsCorrelationId          *string                       `json:"lcsCorrelationId,omitempty"`
 	RegistrationCtxtContainer *RegistrationContextContainer `json:"registrationCtxtContainer,omitempty"`
 	// LMF identification.
 	NewLmfIdentification *string `json:"newLmfIdentification,omitempty"`
-	Guami *Guami `json:"guami,omitempty"`
-	CIoT5GSOptimisation *bool `json:"cIoT5GSOptimisation,omitempty"`
-	Ecgi *Ecgi `json:"ecgi,omitempty"`
-	Ncgi *Ncgi `json:"ncgi,omitempty"`
+	Guami                *Guami  `json:"guami,omitempty"`
+	CIoT5GSOptimisation  *bool   `json:"cIoT5GSOptimisation,omitempty"`
+	Ecgi                 *Ecgi   `json:"ecgi,omitempty"`
+	Ncgi                 *Ncgi   `json:"ncgi,omitempty"`
 }
 
 // NewN1MessageNotification instantiates a new N1MessageNotification object
@@ -56,7 +56,7 @@ func NewN1MessageNotificationWithDefaults() *N1MessageNotification {
 
 // GetN1NotifySubscriptionId returns the N1NotifySubscriptionId field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetN1NotifySubscriptionId() string {
-	if o == nil || isNil(o.N1NotifySubscriptionId) {
+	if o == nil || IsNil(o.N1NotifySubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *N1MessageNotification) GetN1NotifySubscriptionId() string {
 // GetN1NotifySubscriptionIdOk returns a tuple with the N1NotifySubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetN1NotifySubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.N1NotifySubscriptionId) {
+	if o == nil || IsNil(o.N1NotifySubscriptionId) {
 		return nil, false
 	}
 	return o.N1NotifySubscriptionId, true
@@ -74,7 +74,7 @@ func (o *N1MessageNotification) GetN1NotifySubscriptionIdOk() (*string, bool) {
 
 // HasN1NotifySubscriptionId returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasN1NotifySubscriptionId() bool {
-	if o != nil && !isNil(o.N1NotifySubscriptionId) {
+	if o != nil && !IsNil(o.N1NotifySubscriptionId) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *N1MessageNotification) SetN1MessageContainer(v N1MessageContainer) {
 
 // GetLcsCorrelationId returns the LcsCorrelationId field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetLcsCorrelationId() string {
-	if o == nil || isNil(o.LcsCorrelationId) {
+	if o == nil || IsNil(o.LcsCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *N1MessageNotification) GetLcsCorrelationId() string {
 // GetLcsCorrelationIdOk returns a tuple with the LcsCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetLcsCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.LcsCorrelationId) {
+	if o == nil || IsNil(o.LcsCorrelationId) {
 		return nil, false
 	}
 	return o.LcsCorrelationId, true
@@ -130,7 +130,7 @@ func (o *N1MessageNotification) GetLcsCorrelationIdOk() (*string, bool) {
 
 // HasLcsCorrelationId returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasLcsCorrelationId() bool {
-	if o != nil && !isNil(o.LcsCorrelationId) {
+	if o != nil && !IsNil(o.LcsCorrelationId) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *N1MessageNotification) SetLcsCorrelationId(v string) {
 
 // GetRegistrationCtxtContainer returns the RegistrationCtxtContainer field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetRegistrationCtxtContainer() RegistrationContextContainer {
-	if o == nil || isNil(o.RegistrationCtxtContainer) {
+	if o == nil || IsNil(o.RegistrationCtxtContainer) {
 		var ret RegistrationContextContainer
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *N1MessageNotification) GetRegistrationCtxtContainer() RegistrationConte
 // GetRegistrationCtxtContainerOk returns a tuple with the RegistrationCtxtContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetRegistrationCtxtContainerOk() (*RegistrationContextContainer, bool) {
-	if o == nil || isNil(o.RegistrationCtxtContainer) {
+	if o == nil || IsNil(o.RegistrationCtxtContainer) {
 		return nil, false
 	}
 	return o.RegistrationCtxtContainer, true
@@ -162,7 +162,7 @@ func (o *N1MessageNotification) GetRegistrationCtxtContainerOk() (*RegistrationC
 
 // HasRegistrationCtxtContainer returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasRegistrationCtxtContainer() bool {
-	if o != nil && !isNil(o.RegistrationCtxtContainer) {
+	if o != nil && !IsNil(o.RegistrationCtxtContainer) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *N1MessageNotification) SetRegistrationCtxtContainer(v RegistrationConte
 
 // GetNewLmfIdentification returns the NewLmfIdentification field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetNewLmfIdentification() string {
-	if o == nil || isNil(o.NewLmfIdentification) {
+	if o == nil || IsNil(o.NewLmfIdentification) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *N1MessageNotification) GetNewLmfIdentification() string {
 // GetNewLmfIdentificationOk returns a tuple with the NewLmfIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetNewLmfIdentificationOk() (*string, bool) {
-	if o == nil || isNil(o.NewLmfIdentification) {
+	if o == nil || IsNil(o.NewLmfIdentification) {
 		return nil, false
 	}
 	return o.NewLmfIdentification, true
@@ -194,7 +194,7 @@ func (o *N1MessageNotification) GetNewLmfIdentificationOk() (*string, bool) {
 
 // HasNewLmfIdentification returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasNewLmfIdentification() bool {
-	if o != nil && !isNil(o.NewLmfIdentification) {
+	if o != nil && !IsNil(o.NewLmfIdentification) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *N1MessageNotification) SetNewLmfIdentification(v string) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *N1MessageNotification) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -226,7 +226,7 @@ func (o *N1MessageNotification) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *N1MessageNotification) SetGuami(v Guami) {
 
 // GetCIoT5GSOptimisation returns the CIoT5GSOptimisation field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetCIoT5GSOptimisation() bool {
-	if o == nil || isNil(o.CIoT5GSOptimisation) {
+	if o == nil || IsNil(o.CIoT5GSOptimisation) {
 		var ret bool
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *N1MessageNotification) GetCIoT5GSOptimisation() bool {
 // GetCIoT5GSOptimisationOk returns a tuple with the CIoT5GSOptimisation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetCIoT5GSOptimisationOk() (*bool, bool) {
-	if o == nil || isNil(o.CIoT5GSOptimisation) {
+	if o == nil || IsNil(o.CIoT5GSOptimisation) {
 		return nil, false
 	}
 	return o.CIoT5GSOptimisation, true
@@ -258,7 +258,7 @@ func (o *N1MessageNotification) GetCIoT5GSOptimisationOk() (*bool, bool) {
 
 // HasCIoT5GSOptimisation returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasCIoT5GSOptimisation() bool {
-	if o != nil && !isNil(o.CIoT5GSOptimisation) {
+	if o != nil && !IsNil(o.CIoT5GSOptimisation) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *N1MessageNotification) SetCIoT5GSOptimisation(v bool) {
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetEcgi() Ecgi {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *N1MessageNotification) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -290,7 +290,7 @@ func (o *N1MessageNotification) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasEcgi() bool {
-	if o != nil && !isNil(o.Ecgi) {
+	if o != nil && !IsNil(o.Ecgi) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *N1MessageNotification) SetEcgi(v Ecgi) {
 
 // GetNcgi returns the Ncgi field value if set, zero value otherwise.
 func (o *N1MessageNotification) GetNcgi() Ncgi {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *N1MessageNotification) GetNcgi() Ncgi {
 // GetNcgiOk returns a tuple with the Ncgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageNotification) GetNcgiOk() (*Ncgi, bool) {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		return nil, false
 	}
 	return o.Ncgi, true
@@ -322,7 +322,7 @@ func (o *N1MessageNotification) GetNcgiOk() (*Ncgi, bool) {
 
 // HasNcgi returns a boolean if a field has been set.
 func (o *N1MessageNotification) HasNcgi() bool {
-	if o != nil && !isNil(o.Ncgi) {
+	if o != nil && !IsNil(o.Ncgi) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *N1MessageNotification) SetNcgi(v Ncgi) {
 }
 
 func (o N1MessageNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -344,29 +344,29 @@ func (o N1MessageNotification) MarshalJSON() ([]byte, error) {
 
 func (o N1MessageNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.N1NotifySubscriptionId) {
+	if !IsNil(o.N1NotifySubscriptionId) {
 		toSerialize["n1NotifySubscriptionId"] = o.N1NotifySubscriptionId
 	}
 	toSerialize["n1MessageContainer"] = o.N1MessageContainer
-	if !isNil(o.LcsCorrelationId) {
+	if !IsNil(o.LcsCorrelationId) {
 		toSerialize["lcsCorrelationId"] = o.LcsCorrelationId
 	}
-	if !isNil(o.RegistrationCtxtContainer) {
+	if !IsNil(o.RegistrationCtxtContainer) {
 		toSerialize["registrationCtxtContainer"] = o.RegistrationCtxtContainer
 	}
-	if !isNil(o.NewLmfIdentification) {
+	if !IsNil(o.NewLmfIdentification) {
 		toSerialize["newLmfIdentification"] = o.NewLmfIdentification
 	}
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !isNil(o.CIoT5GSOptimisation) {
+	if !IsNil(o.CIoT5GSOptimisation) {
 		toSerialize["cIoT5GSOptimisation"] = o.CIoT5GSOptimisation
 	}
-	if !isNil(o.Ecgi) {
+	if !IsNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
-	if !isNil(o.Ncgi) {
+	if !IsNil(o.Ncgi) {
 		toSerialize["ncgi"] = o.Ncgi
 	}
 	return toSerialize, nil
@@ -407,5 +407,3 @@ func (v *NullableN1MessageNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

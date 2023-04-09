@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &RequestedQos{}
 
 // RequestedQos Contains the QoS information requested by the UE.
 type RequestedQos struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi int32 `json:"5qi"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GbrUl *string `json:"gbrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GbrDl *string `json:"gbrDl,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *RequestedQos) SetVar5qi(v int32) {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise.
 func (o *RequestedQos) GetGbrUl() string {
-	if o == nil || isNil(o.GbrUl) {
+	if o == nil || IsNil(o.GbrUl) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *RequestedQos) GetGbrUl() string {
 // GetGbrUlOk returns a tuple with the GbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedQos) GetGbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.GbrUl) {
+	if o == nil || IsNil(o.GbrUl) {
 		return nil, false
 	}
 	return o.GbrUl, true
@@ -89,7 +89,7 @@ func (o *RequestedQos) GetGbrUlOk() (*string, bool) {
 
 // HasGbrUl returns a boolean if a field has been set.
 func (o *RequestedQos) HasGbrUl() bool {
-	if o != nil && !isNil(o.GbrUl) {
+	if o != nil && !IsNil(o.GbrUl) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *RequestedQos) SetGbrUl(v string) {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise.
 func (o *RequestedQos) GetGbrDl() string {
-	if o == nil || isNil(o.GbrDl) {
+	if o == nil || IsNil(o.GbrDl) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *RequestedQos) GetGbrDl() string {
 // GetGbrDlOk returns a tuple with the GbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedQos) GetGbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.GbrDl) {
+	if o == nil || IsNil(o.GbrDl) {
 		return nil, false
 	}
 	return o.GbrDl, true
@@ -121,7 +121,7 @@ func (o *RequestedQos) GetGbrDlOk() (*string, bool) {
 
 // HasGbrDl returns a boolean if a field has been set.
 func (o *RequestedQos) HasGbrDl() bool {
-	if o != nil && !isNil(o.GbrDl) {
+	if o != nil && !IsNil(o.GbrDl) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *RequestedQos) SetGbrDl(v string) {
 }
 
 func (o RequestedQos) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o RequestedQos) MarshalJSON() ([]byte, error) {
 func (o RequestedQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
-	if !isNil(o.GbrUl) {
+	if !IsNil(o.GbrUl) {
 		toSerialize["gbrUl"] = o.GbrUl
 	}
-	if !isNil(o.GbrDl) {
+	if !IsNil(o.GbrDl) {
 		toSerialize["gbrDl"] = o.GbrDl
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableRequestedQos) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

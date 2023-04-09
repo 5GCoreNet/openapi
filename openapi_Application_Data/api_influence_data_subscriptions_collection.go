@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,18 +13,17 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // InfluenceDataSubscriptionsCollectionApiService InfluenceDataSubscriptionsCollectionApi service
 type InfluenceDataSubscriptionsCollectionApiService service
 
 type ApiCreateIndividualInfluenceDataSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *InfluenceDataSubscriptionsCollectionApiService
+	ctx             context.Context
+	ApiService      *InfluenceDataSubscriptionsCollectionApiService
 	trafficInfluSub *TrafficInfluSub
 }
 
@@ -40,24 +39,25 @@ func (r ApiCreateIndividualInfluenceDataSubscriptionRequest) Execute() (*Traffic
 /*
 CreateIndividualInfluenceDataSubscription Create a new Individual Influence Data Subscription resource
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateIndividualInfluenceDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateIndividualInfluenceDataSubscriptionRequest
 */
 func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluenceDataSubscription(ctx context.Context) ApiCreateIndividualInfluenceDataSubscriptionRequest {
 	return ApiCreateIndividualInfluenceDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TrafficInfluSub
+//
+//	@return TrafficInfluSub
 func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluenceDataSubscriptionExecute(r ApiCreateIndividualInfluenceDataSubscriptionRequest) (*TrafficInfluSub, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TrafficInfluSub
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TrafficInfluSub
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfluenceDataSubscriptionsCollectionApiService.CreateIndividualInfluenceDataSubscription")
@@ -103,9 +103,9 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -122,8 +122,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -133,8 +133,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -144,8 +144,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +155,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -166,8 +166,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -177,8 +177,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -188,8 +188,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -199,8 +199,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -210,8 +210,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -221,8 +221,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -232,8 +232,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -252,12 +252,12 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 }
 
 type ApiReadInfluenceDataSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *InfluenceDataSubscriptionsCollectionApiService
-	dnn *string
-	snssai *Snssai
+	ctx             context.Context
+	ApiService      *InfluenceDataSubscriptionsCollectionApiService
+	dnn             *string
+	snssai          *Snssai
 	internalGroupId *string
-	supi *string
+	supi            *string
 }
 
 // Identifies a DNN.
@@ -291,24 +291,25 @@ func (r ApiReadInfluenceDataSubscriptionsRequest) Execute() ([]TrafficInfluSub, 
 /*
 ReadInfluenceDataSubscriptions Read Influence Data Subscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReadInfluenceDataSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReadInfluenceDataSubscriptionsRequest
 */
 func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscriptions(ctx context.Context) ApiReadInfluenceDataSubscriptionsRequest {
 	return ApiReadInfluenceDataSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TrafficInfluSub
+//
+//	@return []TrafficInfluSub
 func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscriptionsExecute(r ApiReadInfluenceDataSubscriptionsRequest) ([]TrafficInfluSub, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TrafficInfluSub
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TrafficInfluSub
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InfluenceDataSubscriptionsCollectionApiService.ReadInfluenceDataSubscriptions")
@@ -323,16 +324,16 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 	localVarFormParams := url.Values{}
 
 	if r.dnn != nil {
-		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.snssai != nil {
-		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.internalGroupId != nil {
-		parameterAddToQuery(localVarQueryParams, "internal-Group-Id", r.internalGroupId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-Group-Id", r.internalGroupId, "")
 	}
 	if r.supi != nil {
-		parameterAddToQuery(localVarQueryParams, "supi", r.supi, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supi", r.supi, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -361,9 +362,9 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -380,8 +381,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -391,8 +392,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -402,8 +403,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -413,8 +414,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 414 {
@@ -424,8 +425,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -435,8 +436,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -446,8 +447,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -457,8 +458,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -468,8 +469,8 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

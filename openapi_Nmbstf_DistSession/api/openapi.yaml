@@ -1362,15 +1362,19 @@ components:
         objAcquisitionIdPush:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         objIngestBaseUrl:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         objDistributionBaseUrl:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         objRepairBaseUrl:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
       required:
       - objAcquisitionMethod
       - objDistributionOperatingMode
@@ -1611,6 +1615,7 @@ components:
       - destIpAddr
       - portNumber
       type: object
+      x-parent: true
     MbStfIngestAddr:
       description: MBSTF Ingest Addresses
       example:
@@ -1646,34 +1651,58 @@ components:
       - portNumber
       - ssm
       type: object
+      x-parent: true
     DistSessionState:
       anyOf:
-      - $ref: '#/components/schemas/DistSessionState_anyOf'
+      - enum:
+        - INACTIVE
+        - ESTABLISHED
+        - ACTIVE
+        - DEACTIVATING
+        type: string
       - type: string
       description: Current State of MBS distribution session
     ObjDistributionOperatingMode:
       anyOf:
-      - $ref: '#/components/schemas/ObjDistributionOperatingMode_anyOf'
+      - enum:
+        - SINGLE
+        - COLLECTION
+        - CAROUSEL
+        - STREAMING
+        type: string
       - type: string
       description: Mode of data ingestion for Object distribution method
     ObjAcquisitionMethod:
       anyOf:
-      - $ref: '#/components/schemas/ObjAcquisitionMethod_anyOf'
+      - enum:
+        - PULL
+        - PUSH
+        type: string
       - type: string
       description: Object Acquisition Method
     PktDistributionOperatingMode:
       anyOf:
-      - $ref: '#/components/schemas/PktDistributionOperatingMode_anyOf'
+      - enum:
+        - PACKET_PROXY
+        - PACKET_FORWARD_ONLY
+        type: string
       - type: string
       description: Mode of data ingestion for Packet distribution method
     DistSessionEventType:
       anyOf:
-      - $ref: '#/components/schemas/DistSessionEventType_anyOf'
+      - enum:
+        - DATA_INGEST_FAILURE
+        - SESSION_DEACTIVATED
+        - SESSION_ACTIVATED
+        type: string
       - type: string
       description: Status Event Type
     PktIngestMethod:
       anyOf:
-      - $ref: '#/components/schemas/PktIngestMethod_anyOf'
+      - enum:
+        - MULTICAST
+        - UNICAST
+        type: string
       - type: string
       description: Packet Ingest Method
     RedirectResponse:
@@ -1685,19 +1714,23 @@ components:
         targetScp:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         targetSepp:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
       type: object
     Uri:
       description: String providing an URI formatted according to RFC 3986.
       type: string
+      x-parent: true
     ProblemDetails:
       description: Provides additional information in an error response.
       properties:
         type:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         title:
           type: string
         status:
@@ -1709,6 +1742,7 @@ components:
         instance:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         cause:
           description: |
             A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
@@ -1791,7 +1825,14 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - $ref: '#/components/schemas/PatchOperation_anyOf'
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
       - type: string
       description: Operations as defined in IETF RFC 6902.
     TunnelAddress:
@@ -1818,6 +1859,7 @@ components:
       required:
       - portNumber
       type: object
+      x-parent: true
     Ipv4Addr:
       description: |
         String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
@@ -1841,11 +1883,13 @@ components:
         String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
       pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
       type: string
+      x-parent: true
     PacketDelBudget:
       description: |
         Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
       minimum: 1
       type: integer
+      x-parent: true
     FECConfig:
       description: Represents FEC configuration information.
       example:
@@ -1860,6 +1904,7 @@ components:
         fecScheme:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         fecOverHead:
           type: integer
         additionalParams:
@@ -1958,6 +2003,7 @@ components:
         \ as described in IETF RFC 4122. \n"
       format: uuid
       type: string
+      x-parent: true
     IpAddr:
       description: Contains an IP adresse.
       oneOf:
@@ -2032,6 +2078,7 @@ components:
             \ 4, as described in IETF RFC 4122. \n"
           format: uuid
           type: string
+          x-parent: true
         nfType:
           $ref: '#/components/schemas/NFType'
         targetNfType:
@@ -2045,6 +2092,7 @@ components:
             \ 4, as described in IETF RFC 4122. \n"
           format: uuid
           type: string
+          x-parent: true
         requesterPlmn:
           $ref: '#/components/schemas/PlmnId'
         requesterPlmnList:
@@ -2115,12 +2163,14 @@ components:
         hnrfAccessTokenUri:
           description: String providing an URI formatted according to RFC 3986.
           type: string
+          x-parent: true
         sourceNfInstanceId:
           description: "String uniquely identifying a NF instance. The format of the\
             \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
             \ 4, as described in IETF RFC 4122. \n"
           format: uuid
           type: string
+          x-parent: true
       required:
       - grant_type
       - nfInstanceId
@@ -2128,7 +2178,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -2248,117 +2355,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/ExtSsm'
       writeOnly: true
-    DistSessionState_anyOf:
-      enum:
-      - INACTIVE
-      - ESTABLISHED
-      - ACTIVE
-      - DEACTIVATING
-      type: string
-      example: null
-    ObjDistributionOperatingMode_anyOf:
-      enum:
-      - SINGLE
-      - COLLECTION
-      - CAROUSEL
-      - STREAMING
-      type: string
-      example: null
-    ObjAcquisitionMethod_anyOf:
-      enum:
-      - PULL
-      - PUSH
-      type: string
-      example: null
-    PktDistributionOperatingMode_anyOf:
-      enum:
-      - PACKET_PROXY
-      - PACKET_FORWARD_ONLY
-      type: string
-      example: null
-    DistSessionEventType_anyOf:
-      enum:
-      - DATA_INGEST_FAILURE
-      - SESSION_DEACTIVATED
-      - SESSION_ACTIVATED
-      type: string
-      example: null
-    PktIngestMethod_anyOf:
-      enum:
-      - MULTICAST
-      - UNICAST
-      type: string
-      example: null
-    PatchOperation_anyOf:
-      enum:
-      - add
-      - copy
-      - move
-      - remove
-      - replace
-      - test
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

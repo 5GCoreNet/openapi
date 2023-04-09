@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,13 +17,13 @@ import (
 // checks if the C2CommModeSwitchNotif type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &C2CommModeSwitchNotif{}
 
-// C2CommModeSwitchNotif Represents information on the targeted C2 Communication Mode switching for a UAS (i.e. pair of UAV and UAV-C). 
+// C2CommModeSwitchNotif Represents information on the targeted C2 Communication Mode switching for a UAS (i.e. pair of UAV and UAV-C).
 type C2CommModeSwitchNotif struct {
 	// string providing an URI formatted according to IETF RFC 3986.
-	UaeServerId string `json:"uaeServerId"`
-	UasId UasId `json:"uasId"`
+	UaeServerId          string              `json:"uaeServerId"`
+	UasId                UasId               `json:"uasId"`
 	C2CommModeSwitchType C2CommModeSwitching `json:"c2CommModeSwitchType"`
-	SwitchingCause *C2SwitchingCause `json:"switchingCause,omitempty"`
+	SwitchingCause       *C2SwitchingCause   `json:"switchingCause,omitempty"`
 }
 
 // NewC2CommModeSwitchNotif instantiates a new C2CommModeSwitchNotif object
@@ -120,7 +120,7 @@ func (o *C2CommModeSwitchNotif) SetC2CommModeSwitchType(v C2CommModeSwitching) {
 
 // GetSwitchingCause returns the SwitchingCause field value if set, zero value otherwise.
 func (o *C2CommModeSwitchNotif) GetSwitchingCause() C2SwitchingCause {
-	if o == nil || isNil(o.SwitchingCause) {
+	if o == nil || IsNil(o.SwitchingCause) {
 		var ret C2SwitchingCause
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *C2CommModeSwitchNotif) GetSwitchingCause() C2SwitchingCause {
 // GetSwitchingCauseOk returns a tuple with the SwitchingCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2CommModeSwitchNotif) GetSwitchingCauseOk() (*C2SwitchingCause, bool) {
-	if o == nil || isNil(o.SwitchingCause) {
+	if o == nil || IsNil(o.SwitchingCause) {
 		return nil, false
 	}
 	return o.SwitchingCause, true
@@ -138,7 +138,7 @@ func (o *C2CommModeSwitchNotif) GetSwitchingCauseOk() (*C2SwitchingCause, bool) 
 
 // HasSwitchingCause returns a boolean if a field has been set.
 func (o *C2CommModeSwitchNotif) HasSwitchingCause() bool {
-	if o != nil && !isNil(o.SwitchingCause) {
+	if o != nil && !IsNil(o.SwitchingCause) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *C2CommModeSwitchNotif) SetSwitchingCause(v C2SwitchingCause) {
 }
 
 func (o C2CommModeSwitchNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -163,7 +163,7 @@ func (o C2CommModeSwitchNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize["uaeServerId"] = o.UaeServerId
 	toSerialize["uasId"] = o.UasId
 	toSerialize["c2CommModeSwitchType"] = o.C2CommModeSwitchType
-	if !isNil(o.SwitchingCause) {
+	if !IsNil(o.SwitchingCause) {
 		toSerialize["switchingCause"] = o.SwitchingCause
 	}
 	return toSerialize, nil
@@ -204,5 +204,3 @@ func (v *NullableC2CommModeSwitchNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

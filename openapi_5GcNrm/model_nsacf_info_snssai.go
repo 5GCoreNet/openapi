@@ -19,15 +19,15 @@ var _ MappedNullable = &NsacfInfoSnssai{}
 
 // NsacfInfoSnssai struct for NsacfInfoSnssai
 type NsacfInfoSnssai struct {
-	SnssaiInfo *SnssaiInfo `json:"SnssaiInfo,omitempty"`
-	IsSubjectToNsac *bool `json:"isSubjectToNsac,omitempty"`
-	MaxNumberofUEs *int32 `json:"maxNumberofUEs,omitempty"`
-	EACMode *string `json:"eACMode,omitempty"`
-	ActiveEacThreshhold *int32 `json:"activeEacThreshhold,omitempty"`
-	DeactiveEacThreshhold *int32 `json:"deactiveEacThreshhold,omitempty"`
-	NumberofUEs *int32 `json:"numberofUEs,omitempty"`
-	UEIdList []string `json:"uEIdList,omitempty"`
-	MaxNumberofPDUSessions *int32 `json:"maxNumberofPDUSessions,omitempty"`
+	SnssaiInfo             *SnssaiInfo `json:"SnssaiInfo,omitempty"`
+	IsSubjectToNsac        *bool       `json:"isSubjectToNsac,omitempty"`
+	MaxNumberofUEs         *int32      `json:"maxNumberofUEs,omitempty"`
+	EACMode                *string     `json:"eACMode,omitempty"`
+	ActiveEacThreshhold    *int32      `json:"activeEacThreshhold,omitempty"`
+	DeactiveEacThreshhold  *int32      `json:"deactiveEacThreshhold,omitempty"`
+	NumberofUEs            *int32      `json:"numberofUEs,omitempty"`
+	UEIdList               []string    `json:"uEIdList,omitempty"`
+	MaxNumberofPDUSessions *int32      `json:"maxNumberofPDUSessions,omitempty"`
 }
 
 // NewNsacfInfoSnssai instantiates a new NsacfInfoSnssai object
@@ -49,7 +49,7 @@ func NewNsacfInfoSnssaiWithDefaults() *NsacfInfoSnssai {
 
 // GetSnssaiInfo returns the SnssaiInfo field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetSnssaiInfo() SnssaiInfo {
-	if o == nil || isNil(o.SnssaiInfo) {
+	if o == nil || IsNil(o.SnssaiInfo) {
 		var ret SnssaiInfo
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *NsacfInfoSnssai) GetSnssaiInfo() SnssaiInfo {
 // GetSnssaiInfoOk returns a tuple with the SnssaiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetSnssaiInfoOk() (*SnssaiInfo, bool) {
-	if o == nil || isNil(o.SnssaiInfo) {
+	if o == nil || IsNil(o.SnssaiInfo) {
 		return nil, false
 	}
 	return o.SnssaiInfo, true
@@ -67,7 +67,7 @@ func (o *NsacfInfoSnssai) GetSnssaiInfoOk() (*SnssaiInfo, bool) {
 
 // HasSnssaiInfo returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasSnssaiInfo() bool {
-	if o != nil && !isNil(o.SnssaiInfo) {
+	if o != nil && !IsNil(o.SnssaiInfo) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *NsacfInfoSnssai) SetSnssaiInfo(v SnssaiInfo) {
 
 // GetIsSubjectToNsac returns the IsSubjectToNsac field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetIsSubjectToNsac() bool {
-	if o == nil || isNil(o.IsSubjectToNsac) {
+	if o == nil || IsNil(o.IsSubjectToNsac) {
 		var ret bool
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *NsacfInfoSnssai) GetIsSubjectToNsac() bool {
 // GetIsSubjectToNsacOk returns a tuple with the IsSubjectToNsac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetIsSubjectToNsacOk() (*bool, bool) {
-	if o == nil || isNil(o.IsSubjectToNsac) {
+	if o == nil || IsNil(o.IsSubjectToNsac) {
 		return nil, false
 	}
 	return o.IsSubjectToNsac, true
@@ -99,7 +99,7 @@ func (o *NsacfInfoSnssai) GetIsSubjectToNsacOk() (*bool, bool) {
 
 // HasIsSubjectToNsac returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasIsSubjectToNsac() bool {
-	if o != nil && !isNil(o.IsSubjectToNsac) {
+	if o != nil && !IsNil(o.IsSubjectToNsac) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *NsacfInfoSnssai) SetIsSubjectToNsac(v bool) {
 
 // GetMaxNumberofUEs returns the MaxNumberofUEs field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetMaxNumberofUEs() int32 {
-	if o == nil || isNil(o.MaxNumberofUEs) {
+	if o == nil || IsNil(o.MaxNumberofUEs) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *NsacfInfoSnssai) GetMaxNumberofUEs() int32 {
 // GetMaxNumberofUEsOk returns a tuple with the MaxNumberofUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetMaxNumberofUEsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumberofUEs) {
+	if o == nil || IsNil(o.MaxNumberofUEs) {
 		return nil, false
 	}
 	return o.MaxNumberofUEs, true
@@ -131,7 +131,7 @@ func (o *NsacfInfoSnssai) GetMaxNumberofUEsOk() (*int32, bool) {
 
 // HasMaxNumberofUEs returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasMaxNumberofUEs() bool {
-	if o != nil && !isNil(o.MaxNumberofUEs) {
+	if o != nil && !IsNil(o.MaxNumberofUEs) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *NsacfInfoSnssai) SetMaxNumberofUEs(v int32) {
 
 // GetEACMode returns the EACMode field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetEACMode() string {
-	if o == nil || isNil(o.EACMode) {
+	if o == nil || IsNil(o.EACMode) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *NsacfInfoSnssai) GetEACMode() string {
 // GetEACModeOk returns a tuple with the EACMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetEACModeOk() (*string, bool) {
-	if o == nil || isNil(o.EACMode) {
+	if o == nil || IsNil(o.EACMode) {
 		return nil, false
 	}
 	return o.EACMode, true
@@ -163,7 +163,7 @@ func (o *NsacfInfoSnssai) GetEACModeOk() (*string, bool) {
 
 // HasEACMode returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasEACMode() bool {
-	if o != nil && !isNil(o.EACMode) {
+	if o != nil && !IsNil(o.EACMode) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *NsacfInfoSnssai) SetEACMode(v string) {
 
 // GetActiveEacThreshhold returns the ActiveEacThreshhold field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetActiveEacThreshhold() int32 {
-	if o == nil || isNil(o.ActiveEacThreshhold) {
+	if o == nil || IsNil(o.ActiveEacThreshhold) {
 		var ret int32
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *NsacfInfoSnssai) GetActiveEacThreshhold() int32 {
 // GetActiveEacThreshholdOk returns a tuple with the ActiveEacThreshhold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetActiveEacThreshholdOk() (*int32, bool) {
-	if o == nil || isNil(o.ActiveEacThreshhold) {
+	if o == nil || IsNil(o.ActiveEacThreshhold) {
 		return nil, false
 	}
 	return o.ActiveEacThreshhold, true
@@ -195,7 +195,7 @@ func (o *NsacfInfoSnssai) GetActiveEacThreshholdOk() (*int32, bool) {
 
 // HasActiveEacThreshhold returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasActiveEacThreshhold() bool {
-	if o != nil && !isNil(o.ActiveEacThreshhold) {
+	if o != nil && !IsNil(o.ActiveEacThreshhold) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *NsacfInfoSnssai) SetActiveEacThreshhold(v int32) {
 
 // GetDeactiveEacThreshhold returns the DeactiveEacThreshhold field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetDeactiveEacThreshhold() int32 {
-	if o == nil || isNil(o.DeactiveEacThreshhold) {
+	if o == nil || IsNil(o.DeactiveEacThreshhold) {
 		var ret int32
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *NsacfInfoSnssai) GetDeactiveEacThreshhold() int32 {
 // GetDeactiveEacThreshholdOk returns a tuple with the DeactiveEacThreshhold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetDeactiveEacThreshholdOk() (*int32, bool) {
-	if o == nil || isNil(o.DeactiveEacThreshhold) {
+	if o == nil || IsNil(o.DeactiveEacThreshhold) {
 		return nil, false
 	}
 	return o.DeactiveEacThreshhold, true
@@ -227,7 +227,7 @@ func (o *NsacfInfoSnssai) GetDeactiveEacThreshholdOk() (*int32, bool) {
 
 // HasDeactiveEacThreshhold returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasDeactiveEacThreshhold() bool {
-	if o != nil && !isNil(o.DeactiveEacThreshhold) {
+	if o != nil && !IsNil(o.DeactiveEacThreshhold) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *NsacfInfoSnssai) SetDeactiveEacThreshhold(v int32) {
 
 // GetNumberofUEs returns the NumberofUEs field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetNumberofUEs() int32 {
-	if o == nil || isNil(o.NumberofUEs) {
+	if o == nil || IsNil(o.NumberofUEs) {
 		var ret int32
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *NsacfInfoSnssai) GetNumberofUEs() int32 {
 // GetNumberofUEsOk returns a tuple with the NumberofUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetNumberofUEsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberofUEs) {
+	if o == nil || IsNil(o.NumberofUEs) {
 		return nil, false
 	}
 	return o.NumberofUEs, true
@@ -259,7 +259,7 @@ func (o *NsacfInfoSnssai) GetNumberofUEsOk() (*int32, bool) {
 
 // HasNumberofUEs returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasNumberofUEs() bool {
-	if o != nil && !isNil(o.NumberofUEs) {
+	if o != nil && !IsNil(o.NumberofUEs) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *NsacfInfoSnssai) SetNumberofUEs(v int32) {
 
 // GetUEIdList returns the UEIdList field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetUEIdList() []string {
-	if o == nil || isNil(o.UEIdList) {
+	if o == nil || IsNil(o.UEIdList) {
 		var ret []string
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *NsacfInfoSnssai) GetUEIdList() []string {
 // GetUEIdListOk returns a tuple with the UEIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetUEIdListOk() ([]string, bool) {
-	if o == nil || isNil(o.UEIdList) {
+	if o == nil || IsNil(o.UEIdList) {
 		return nil, false
 	}
 	return o.UEIdList, true
@@ -291,7 +291,7 @@ func (o *NsacfInfoSnssai) GetUEIdListOk() ([]string, bool) {
 
 // HasUEIdList returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasUEIdList() bool {
-	if o != nil && !isNil(o.UEIdList) {
+	if o != nil && !IsNil(o.UEIdList) {
 		return true
 	}
 
@@ -305,7 +305,7 @@ func (o *NsacfInfoSnssai) SetUEIdList(v []string) {
 
 // GetMaxNumberofPDUSessions returns the MaxNumberofPDUSessions field value if set, zero value otherwise.
 func (o *NsacfInfoSnssai) GetMaxNumberofPDUSessions() int32 {
-	if o == nil || isNil(o.MaxNumberofPDUSessions) {
+	if o == nil || IsNil(o.MaxNumberofPDUSessions) {
 		var ret int32
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *NsacfInfoSnssai) GetMaxNumberofPDUSessions() int32 {
 // GetMaxNumberofPDUSessionsOk returns a tuple with the MaxNumberofPDUSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfInfoSnssai) GetMaxNumberofPDUSessionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumberofPDUSessions) {
+	if o == nil || IsNil(o.MaxNumberofPDUSessions) {
 		return nil, false
 	}
 	return o.MaxNumberofPDUSessions, true
@@ -323,7 +323,7 @@ func (o *NsacfInfoSnssai) GetMaxNumberofPDUSessionsOk() (*int32, bool) {
 
 // HasMaxNumberofPDUSessions returns a boolean if a field has been set.
 func (o *NsacfInfoSnssai) HasMaxNumberofPDUSessions() bool {
-	if o != nil && !isNil(o.MaxNumberofPDUSessions) {
+	if o != nil && !IsNil(o.MaxNumberofPDUSessions) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *NsacfInfoSnssai) SetMaxNumberofPDUSessions(v int32) {
 }
 
 func (o NsacfInfoSnssai) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -345,31 +345,31 @@ func (o NsacfInfoSnssai) MarshalJSON() ([]byte, error) {
 
 func (o NsacfInfoSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SnssaiInfo) {
+	if !IsNil(o.SnssaiInfo) {
 		toSerialize["SnssaiInfo"] = o.SnssaiInfo
 	}
-	if !isNil(o.IsSubjectToNsac) {
+	if !IsNil(o.IsSubjectToNsac) {
 		toSerialize["isSubjectToNsac"] = o.IsSubjectToNsac
 	}
-	if !isNil(o.MaxNumberofUEs) {
+	if !IsNil(o.MaxNumberofUEs) {
 		toSerialize["maxNumberofUEs"] = o.MaxNumberofUEs
 	}
-	if !isNil(o.EACMode) {
+	if !IsNil(o.EACMode) {
 		toSerialize["eACMode"] = o.EACMode
 	}
-	if !isNil(o.ActiveEacThreshhold) {
+	if !IsNil(o.ActiveEacThreshhold) {
 		toSerialize["activeEacThreshhold"] = o.ActiveEacThreshhold
 	}
-	if !isNil(o.DeactiveEacThreshhold) {
+	if !IsNil(o.DeactiveEacThreshhold) {
 		toSerialize["deactiveEacThreshhold"] = o.DeactiveEacThreshhold
 	}
-	if !isNil(o.NumberofUEs) {
+	if !IsNil(o.NumberofUEs) {
 		toSerialize["numberofUEs"] = o.NumberofUEs
 	}
-	if !isNil(o.UEIdList) {
+	if !IsNil(o.UEIdList) {
 		toSerialize["uEIdList"] = o.UEIdList
 	}
-	if !isNil(o.MaxNumberofPDUSessions) {
+	if !IsNil(o.MaxNumberofPDUSessions) {
 		toSerialize["maxNumberofPDUSessions"] = o.MaxNumberofPDUSessions
 	}
 	return toSerialize, nil
@@ -410,5 +410,3 @@ func (v *NullableNsacfInfoSnssai) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

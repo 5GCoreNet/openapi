@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -46,7 +46,7 @@ func NewSvcExperienceWithDefaults() *SvcExperience {
 
 // GetMos returns the Mos field value if set, zero value otherwise.
 func (o *SvcExperience) GetMos() float32 {
-	if o == nil || isNil(o.Mos) {
+	if o == nil || IsNil(o.Mos) {
 		var ret float32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SvcExperience) GetMos() float32 {
 // GetMosOk returns a tuple with the Mos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SvcExperience) GetMosOk() (*float32, bool) {
-	if o == nil || isNil(o.Mos) {
+	if o == nil || IsNil(o.Mos) {
 		return nil, false
 	}
 	return o.Mos, true
@@ -64,7 +64,7 @@ func (o *SvcExperience) GetMosOk() (*float32, bool) {
 
 // HasMos returns a boolean if a field has been set.
 func (o *SvcExperience) HasMos() bool {
-	if o != nil && !isNil(o.Mos) {
+	if o != nil && !IsNil(o.Mos) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SvcExperience) SetMos(v float32) {
 
 // GetUpperRange returns the UpperRange field value if set, zero value otherwise.
 func (o *SvcExperience) GetUpperRange() float32 {
-	if o == nil || isNil(o.UpperRange) {
+	if o == nil || IsNil(o.UpperRange) {
 		var ret float32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SvcExperience) GetUpperRange() float32 {
 // GetUpperRangeOk returns a tuple with the UpperRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SvcExperience) GetUpperRangeOk() (*float32, bool) {
-	if o == nil || isNil(o.UpperRange) {
+	if o == nil || IsNil(o.UpperRange) {
 		return nil, false
 	}
 	return o.UpperRange, true
@@ -96,7 +96,7 @@ func (o *SvcExperience) GetUpperRangeOk() (*float32, bool) {
 
 // HasUpperRange returns a boolean if a field has been set.
 func (o *SvcExperience) HasUpperRange() bool {
-	if o != nil && !isNil(o.UpperRange) {
+	if o != nil && !IsNil(o.UpperRange) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SvcExperience) SetUpperRange(v float32) {
 
 // GetLowerRange returns the LowerRange field value if set, zero value otherwise.
 func (o *SvcExperience) GetLowerRange() float32 {
-	if o == nil || isNil(o.LowerRange) {
+	if o == nil || IsNil(o.LowerRange) {
 		var ret float32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SvcExperience) GetLowerRange() float32 {
 // GetLowerRangeOk returns a tuple with the LowerRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SvcExperience) GetLowerRangeOk() (*float32, bool) {
-	if o == nil || isNil(o.LowerRange) {
+	if o == nil || IsNil(o.LowerRange) {
 		return nil, false
 	}
 	return o.LowerRange, true
@@ -128,7 +128,7 @@ func (o *SvcExperience) GetLowerRangeOk() (*float32, bool) {
 
 // HasLowerRange returns a boolean if a field has been set.
 func (o *SvcExperience) HasLowerRange() bool {
-	if o != nil && !isNil(o.LowerRange) {
+	if o != nil && !IsNil(o.LowerRange) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *SvcExperience) SetLowerRange(v float32) {
 }
 
 func (o SvcExperience) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o SvcExperience) MarshalJSON() ([]byte, error) {
 
 func (o SvcExperience) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Mos) {
+	if !IsNil(o.Mos) {
 		toSerialize["mos"] = o.Mos
 	}
-	if !isNil(o.UpperRange) {
+	if !IsNil(o.UpperRange) {
 		toSerialize["upperRange"] = o.UpperRange
 	}
-	if !isNil(o.LowerRange) {
+	if !IsNil(o.LowerRange) {
 		toSerialize["lowerRange"] = o.LowerRange
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableSvcExperience) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,14 +21,14 @@ var _ MappedNullable = &EventsSubscReqData{}
 type EventsSubscReqData struct {
 	Events []AfEventSubscription `json:"events"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri *string `json:"notifUri,omitempty"`
+	NotifUri        *string                           `json:"notifUri,omitempty"`
 	ReqQosMonParams []RequestedQosMonitoringParameter `json:"reqQosMonParams,omitempty"`
-	QosMon *QosMonitoringInformation `json:"qosMon,omitempty"`
-	ReqAnis []RequiredAccessInfo `json:"reqAnis,omitempty"`
-	UsgThres *UsageThreshold `json:"usgThres,omitempty"`
-	NotifCorreId *string `json:"notifCorreId,omitempty"`
-	AfAppIds []string `json:"afAppIds,omitempty"`
-	DirectNotifInd *bool `json:"directNotifInd,omitempty"`
+	QosMon          *QosMonitoringInformation         `json:"qosMon,omitempty"`
+	ReqAnis         []RequiredAccessInfo              `json:"reqAnis,omitempty"`
+	UsgThres        *UsageThreshold                   `json:"usgThres,omitempty"`
+	NotifCorreId    *string                           `json:"notifCorreId,omitempty"`
+	AfAppIds        []string                          `json:"afAppIds,omitempty"`
+	DirectNotifInd  *bool                             `json:"directNotifInd,omitempty"`
 }
 
 // NewEventsSubscReqData instantiates a new EventsSubscReqData object
@@ -75,7 +75,7 @@ func (o *EventsSubscReqData) SetEvents(v []AfEventSubscription) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetNotifUri() string {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EventsSubscReqData) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetNotifUriOk() (*string, bool) {
-	if o == nil || isNil(o.NotifUri) {
+	if o == nil || IsNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -93,7 +93,7 @@ func (o *EventsSubscReqData) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasNotifUri() bool {
-	if o != nil && !isNil(o.NotifUri) {
+	if o != nil && !IsNil(o.NotifUri) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EventsSubscReqData) SetNotifUri(v string) {
 
 // GetReqQosMonParams returns the ReqQosMonParams field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetReqQosMonParams() []RequestedQosMonitoringParameter {
-	if o == nil || isNil(o.ReqQosMonParams) {
+	if o == nil || IsNil(o.ReqQosMonParams) {
 		var ret []RequestedQosMonitoringParameter
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *EventsSubscReqData) GetReqQosMonParams() []RequestedQosMonitoringParame
 // GetReqQosMonParamsOk returns a tuple with the ReqQosMonParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetReqQosMonParamsOk() ([]RequestedQosMonitoringParameter, bool) {
-	if o == nil || isNil(o.ReqQosMonParams) {
+	if o == nil || IsNil(o.ReqQosMonParams) {
 		return nil, false
 	}
 	return o.ReqQosMonParams, true
@@ -125,7 +125,7 @@ func (o *EventsSubscReqData) GetReqQosMonParamsOk() ([]RequestedQosMonitoringPar
 
 // HasReqQosMonParams returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasReqQosMonParams() bool {
-	if o != nil && !isNil(o.ReqQosMonParams) {
+	if o != nil && !IsNil(o.ReqQosMonParams) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *EventsSubscReqData) SetReqQosMonParams(v []RequestedQosMonitoringParame
 
 // GetQosMon returns the QosMon field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetQosMon() QosMonitoringInformation {
-	if o == nil || isNil(o.QosMon) {
+	if o == nil || IsNil(o.QosMon) {
 		var ret QosMonitoringInformation
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *EventsSubscReqData) GetQosMon() QosMonitoringInformation {
 // GetQosMonOk returns a tuple with the QosMon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetQosMonOk() (*QosMonitoringInformation, bool) {
-	if o == nil || isNil(o.QosMon) {
+	if o == nil || IsNil(o.QosMon) {
 		return nil, false
 	}
 	return o.QosMon, true
@@ -157,7 +157,7 @@ func (o *EventsSubscReqData) GetQosMonOk() (*QosMonitoringInformation, bool) {
 
 // HasQosMon returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasQosMon() bool {
-	if o != nil && !isNil(o.QosMon) {
+	if o != nil && !IsNil(o.QosMon) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *EventsSubscReqData) SetQosMon(v QosMonitoringInformation) {
 
 // GetReqAnis returns the ReqAnis field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetReqAnis() []RequiredAccessInfo {
-	if o == nil || isNil(o.ReqAnis) {
+	if o == nil || IsNil(o.ReqAnis) {
 		var ret []RequiredAccessInfo
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *EventsSubscReqData) GetReqAnis() []RequiredAccessInfo {
 // GetReqAnisOk returns a tuple with the ReqAnis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetReqAnisOk() ([]RequiredAccessInfo, bool) {
-	if o == nil || isNil(o.ReqAnis) {
+	if o == nil || IsNil(o.ReqAnis) {
 		return nil, false
 	}
 	return o.ReqAnis, true
@@ -189,7 +189,7 @@ func (o *EventsSubscReqData) GetReqAnisOk() ([]RequiredAccessInfo, bool) {
 
 // HasReqAnis returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasReqAnis() bool {
-	if o != nil && !isNil(o.ReqAnis) {
+	if o != nil && !IsNil(o.ReqAnis) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *EventsSubscReqData) SetReqAnis(v []RequiredAccessInfo) {
 
 // GetUsgThres returns the UsgThres field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetUsgThres() UsageThreshold {
-	if o == nil || isNil(o.UsgThres) {
+	if o == nil || IsNil(o.UsgThres) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *EventsSubscReqData) GetUsgThres() UsageThreshold {
 // GetUsgThresOk returns a tuple with the UsgThres field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetUsgThresOk() (*UsageThreshold, bool) {
-	if o == nil || isNil(o.UsgThres) {
+	if o == nil || IsNil(o.UsgThres) {
 		return nil, false
 	}
 	return o.UsgThres, true
@@ -221,7 +221,7 @@ func (o *EventsSubscReqData) GetUsgThresOk() (*UsageThreshold, bool) {
 
 // HasUsgThres returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasUsgThres() bool {
-	if o != nil && !isNil(o.UsgThres) {
+	if o != nil && !IsNil(o.UsgThres) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *EventsSubscReqData) SetUsgThres(v UsageThreshold) {
 
 // GetNotifCorreId returns the NotifCorreId field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetNotifCorreId() string {
-	if o == nil || isNil(o.NotifCorreId) {
+	if o == nil || IsNil(o.NotifCorreId) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *EventsSubscReqData) GetNotifCorreId() string {
 // GetNotifCorreIdOk returns a tuple with the NotifCorreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetNotifCorreIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifCorreId) {
+	if o == nil || IsNil(o.NotifCorreId) {
 		return nil, false
 	}
 	return o.NotifCorreId, true
@@ -253,7 +253,7 @@ func (o *EventsSubscReqData) GetNotifCorreIdOk() (*string, bool) {
 
 // HasNotifCorreId returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasNotifCorreId() bool {
-	if o != nil && !isNil(o.NotifCorreId) {
+	if o != nil && !IsNil(o.NotifCorreId) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *EventsSubscReqData) SetNotifCorreId(v string) {
 
 // GetAfAppIds returns the AfAppIds field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetAfAppIds() []string {
-	if o == nil || isNil(o.AfAppIds) {
+	if o == nil || IsNil(o.AfAppIds) {
 		var ret []string
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *EventsSubscReqData) GetAfAppIds() []string {
 // GetAfAppIdsOk returns a tuple with the AfAppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetAfAppIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.AfAppIds) {
+	if o == nil || IsNil(o.AfAppIds) {
 		return nil, false
 	}
 	return o.AfAppIds, true
@@ -285,7 +285,7 @@ func (o *EventsSubscReqData) GetAfAppIdsOk() ([]string, bool) {
 
 // HasAfAppIds returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasAfAppIds() bool {
-	if o != nil && !isNil(o.AfAppIds) {
+	if o != nil && !IsNil(o.AfAppIds) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *EventsSubscReqData) SetAfAppIds(v []string) {
 
 // GetDirectNotifInd returns the DirectNotifInd field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetDirectNotifInd() bool {
-	if o == nil || isNil(o.DirectNotifInd) {
+	if o == nil || IsNil(o.DirectNotifInd) {
 		var ret bool
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *EventsSubscReqData) GetDirectNotifInd() bool {
 // GetDirectNotifIndOk returns a tuple with the DirectNotifInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetDirectNotifIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DirectNotifInd) {
+	if o == nil || IsNil(o.DirectNotifInd) {
 		return nil, false
 	}
 	return o.DirectNotifInd, true
@@ -317,7 +317,7 @@ func (o *EventsSubscReqData) GetDirectNotifIndOk() (*bool, bool) {
 
 // HasDirectNotifInd returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasDirectNotifInd() bool {
-	if o != nil && !isNil(o.DirectNotifInd) {
+	if o != nil && !IsNil(o.DirectNotifInd) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *EventsSubscReqData) SetDirectNotifInd(v bool) {
 }
 
 func (o EventsSubscReqData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -340,28 +340,28 @@ func (o EventsSubscReqData) MarshalJSON() ([]byte, error) {
 func (o EventsSubscReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["events"] = o.Events
-	if !isNil(o.NotifUri) {
+	if !IsNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !isNil(o.ReqQosMonParams) {
+	if !IsNil(o.ReqQosMonParams) {
 		toSerialize["reqQosMonParams"] = o.ReqQosMonParams
 	}
-	if !isNil(o.QosMon) {
+	if !IsNil(o.QosMon) {
 		toSerialize["qosMon"] = o.QosMon
 	}
-	if !isNil(o.ReqAnis) {
+	if !IsNil(o.ReqAnis) {
 		toSerialize["reqAnis"] = o.ReqAnis
 	}
-	if !isNil(o.UsgThres) {
+	if !IsNil(o.UsgThres) {
 		toSerialize["usgThres"] = o.UsgThres
 	}
-	if !isNil(o.NotifCorreId) {
+	if !IsNil(o.NotifCorreId) {
 		toSerialize["notifCorreId"] = o.NotifCorreId
 	}
-	if !isNil(o.AfAppIds) {
+	if !IsNil(o.AfAppIds) {
 		toSerialize["afAppIds"] = o.AfAppIds
 	}
-	if !isNil(o.DirectNotifInd) {
+	if !IsNil(o.DirectNotifInd) {
 		toSerialize["directNotifInd"] = o.DirectNotifInd
 	}
 	return toSerialize, nil
@@ -402,5 +402,3 @@ func (v *NullableEventsSubscReqData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

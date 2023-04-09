@@ -1,7 +1,7 @@
 /*
 CAPIF_Routing_Info_API
 
-API for Routing information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Routing information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutingRule{}
 type RoutingRule struct {
 	Ipv4AddrRanges []Ipv4AddressRange `json:"ipv4AddrRanges,omitempty"`
 	Ipv6AddrRanges []Ipv6AddressRange `json:"ipv6AddrRanges,omitempty"`
-	AefProfile AefProfile `json:"aefProfile"`
+	AefProfile     AefProfile         `json:"aefProfile"`
 }
 
 // NewRoutingRule instantiates a new RoutingRule object
@@ -44,7 +44,7 @@ func NewRoutingRuleWithDefaults() *RoutingRule {
 
 // GetIpv4AddrRanges returns the Ipv4AddrRanges field value if set, zero value otherwise.
 func (o *RoutingRule) GetIpv4AddrRanges() []Ipv4AddressRange {
-	if o == nil || isNil(o.Ipv4AddrRanges) {
+	if o == nil || IsNil(o.Ipv4AddrRanges) {
 		var ret []Ipv4AddressRange
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *RoutingRule) GetIpv4AddrRanges() []Ipv4AddressRange {
 // GetIpv4AddrRangesOk returns a tuple with the Ipv4AddrRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingRule) GetIpv4AddrRangesOk() ([]Ipv4AddressRange, bool) {
-	if o == nil || isNil(o.Ipv4AddrRanges) {
+	if o == nil || IsNil(o.Ipv4AddrRanges) {
 		return nil, false
 	}
 	return o.Ipv4AddrRanges, true
@@ -62,7 +62,7 @@ func (o *RoutingRule) GetIpv4AddrRangesOk() ([]Ipv4AddressRange, bool) {
 
 // HasIpv4AddrRanges returns a boolean if a field has been set.
 func (o *RoutingRule) HasIpv4AddrRanges() bool {
-	if o != nil && !isNil(o.Ipv4AddrRanges) {
+	if o != nil && !IsNil(o.Ipv4AddrRanges) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *RoutingRule) SetIpv4AddrRanges(v []Ipv4AddressRange) {
 
 // GetIpv6AddrRanges returns the Ipv6AddrRanges field value if set, zero value otherwise.
 func (o *RoutingRule) GetIpv6AddrRanges() []Ipv6AddressRange {
-	if o == nil || isNil(o.Ipv6AddrRanges) {
+	if o == nil || IsNil(o.Ipv6AddrRanges) {
 		var ret []Ipv6AddressRange
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *RoutingRule) GetIpv6AddrRanges() []Ipv6AddressRange {
 // GetIpv6AddrRangesOk returns a tuple with the Ipv6AddrRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingRule) GetIpv6AddrRangesOk() ([]Ipv6AddressRange, bool) {
-	if o == nil || isNil(o.Ipv6AddrRanges) {
+	if o == nil || IsNil(o.Ipv6AddrRanges) {
 		return nil, false
 	}
 	return o.Ipv6AddrRanges, true
@@ -94,7 +94,7 @@ func (o *RoutingRule) GetIpv6AddrRangesOk() ([]Ipv6AddressRange, bool) {
 
 // HasIpv6AddrRanges returns a boolean if a field has been set.
 func (o *RoutingRule) HasIpv6AddrRanges() bool {
-	if o != nil && !isNil(o.Ipv6AddrRanges) {
+	if o != nil && !IsNil(o.Ipv6AddrRanges) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *RoutingRule) SetAefProfile(v AefProfile) {
 }
 
 func (o RoutingRule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,10 +140,10 @@ func (o RoutingRule) MarshalJSON() ([]byte, error) {
 
 func (o RoutingRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ipv4AddrRanges) {
+	if !IsNil(o.Ipv4AddrRanges) {
 		toSerialize["ipv4AddrRanges"] = o.Ipv4AddrRanges
 	}
-	if !isNil(o.Ipv6AddrRanges) {
+	if !IsNil(o.Ipv6AddrRanges) {
 		toSerialize["ipv6AddrRanges"] = o.Ipv6AddrRanges
 	}
 	toSerialize["aefProfile"] = o.AefProfile
@@ -185,5 +185,3 @@ func (v *NullableRoutingRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

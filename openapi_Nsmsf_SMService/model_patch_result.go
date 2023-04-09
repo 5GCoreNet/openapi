@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &PatchResult{}
 
 // PatchResult The execution report result on failed modification.
 type PatchResult struct {
-	// The execution report contains an array of report items. Each report item indicates one  failed modification. 
+	// The execution report contains an array of report items. Each report item indicates one  failed modification.
 	Report []ReportItem `json:"report"`
 }
 
@@ -66,7 +66,7 @@ func (o *PatchResult) SetReport(v []ReportItem) {
 }
 
 func (o PatchResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,5 +114,3 @@ func (v *NullablePatchResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

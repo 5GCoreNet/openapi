@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// LocalityType Type of locality description. An operator may define custom locality type values other  than those listed in this enumeration.  
+// LocalityType Type of locality description. An operator may define custom locality type values other  than those listed in this enumeration.
 type LocalityType struct {
-	LocalityTypeAnyOf *LocalityTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocalityType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocalityTypeAnyOf
-	err = json.Unmarshal(data, &dst.LocalityTypeAnyOf);
-	if err == nil {
-		jsonLocalityTypeAnyOf, _ := json.Marshal(dst.LocalityTypeAnyOf)
-		if string(jsonLocalityTypeAnyOf) == "{}" { // empty struct
-			dst.LocalityTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocalityTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.LocalityTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocalityType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocalityType) MarshalJSON() ([]byte, error) {
-	if src.LocalityTypeAnyOf != nil {
-		return json.Marshal(&src.LocalityTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocalityType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

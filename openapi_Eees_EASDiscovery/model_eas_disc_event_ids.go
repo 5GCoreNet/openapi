@@ -1,7 +1,7 @@
 /*
 Eees_EASDiscovery
 
-API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// EASDiscEventIDs Possible values are - EAS_AVAILABILITY_CHANGE: Represents the EAS availability change event. - EAS_DYNAMIC_INFO_CHANGE: Represents the EAS dynamic information change event. 
+// EASDiscEventIDs Possible values are - EAS_AVAILABILITY_CHANGE: Represents the EAS availability change event. - EAS_DYNAMIC_INFO_CHANGE: Represents the EAS dynamic information change event.
 type EASDiscEventIDs struct {
-	EASDiscEventIDsAnyOf *EASDiscEventIDsAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EASDiscEventIDs) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into EASDiscEventIDsAnyOf
-	err = json.Unmarshal(data, &dst.EASDiscEventIDsAnyOf);
-	if err == nil {
-		jsonEASDiscEventIDsAnyOf, _ := json.Marshal(dst.EASDiscEventIDsAnyOf)
-		if string(jsonEASDiscEventIDsAnyOf) == "{}" { // empty struct
-			dst.EASDiscEventIDsAnyOf = nil
-		} else {
-			return nil // data stored in dst.EASDiscEventIDsAnyOf, return on the first match
-		}
-	} else {
-		dst.EASDiscEventIDsAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *EASDiscEventIDs) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EASDiscEventIDs) MarshalJSON() ([]byte, error) {
-	if src.EASDiscEventIDsAnyOf != nil {
-		return json.Marshal(&src.EASDiscEventIDsAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableEASDiscEventIDs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &MoveInOutUEDetails{}
 
 // MoveInOutUEDetails List of UEs moved in and out.
 type MoveInOutUEDetails struct {
-	// List of identities of VAL UEs who moved in to given location area since previous notification. 
+	// List of identities of VAL UEs who moved in to given location area since previous notification.
 	MoveInUEs []ValTargetUe `json:"moveInUEs,omitempty"`
-	// List of identities of VAL UEs who moved out of the given location area since previous notification. 
+	// List of identities of VAL UEs who moved out of the given location area since previous notification.
 	MoveOutUEs []ValTargetUe `json:"moveOutUEs,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewMoveInOutUEDetailsWithDefaults() *MoveInOutUEDetails {
 
 // GetMoveInUEs returns the MoveInUEs field value if set, zero value otherwise.
 func (o *MoveInOutUEDetails) GetMoveInUEs() []ValTargetUe {
-	if o == nil || isNil(o.MoveInUEs) {
+	if o == nil || IsNil(o.MoveInUEs) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MoveInOutUEDetails) GetMoveInUEs() []ValTargetUe {
 // GetMoveInUEsOk returns a tuple with the MoveInUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoveInOutUEDetails) GetMoveInUEsOk() ([]ValTargetUe, bool) {
-	if o == nil || isNil(o.MoveInUEs) {
+	if o == nil || IsNil(o.MoveInUEs) {
 		return nil, false
 	}
 	return o.MoveInUEs, true
@@ -62,7 +62,7 @@ func (o *MoveInOutUEDetails) GetMoveInUEsOk() ([]ValTargetUe, bool) {
 
 // HasMoveInUEs returns a boolean if a field has been set.
 func (o *MoveInOutUEDetails) HasMoveInUEs() bool {
-	if o != nil && !isNil(o.MoveInUEs) {
+	if o != nil && !IsNil(o.MoveInUEs) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MoveInOutUEDetails) SetMoveInUEs(v []ValTargetUe) {
 
 // GetMoveOutUEs returns the MoveOutUEs field value if set, zero value otherwise.
 func (o *MoveInOutUEDetails) GetMoveOutUEs() []ValTargetUe {
-	if o == nil || isNil(o.MoveOutUEs) {
+	if o == nil || IsNil(o.MoveOutUEs) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MoveInOutUEDetails) GetMoveOutUEs() []ValTargetUe {
 // GetMoveOutUEsOk returns a tuple with the MoveOutUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoveInOutUEDetails) GetMoveOutUEsOk() ([]ValTargetUe, bool) {
-	if o == nil || isNil(o.MoveOutUEs) {
+	if o == nil || IsNil(o.MoveOutUEs) {
 		return nil, false
 	}
 	return o.MoveOutUEs, true
@@ -94,7 +94,7 @@ func (o *MoveInOutUEDetails) GetMoveOutUEsOk() ([]ValTargetUe, bool) {
 
 // HasMoveOutUEs returns a boolean if a field has been set.
 func (o *MoveInOutUEDetails) HasMoveOutUEs() bool {
-	if o != nil && !isNil(o.MoveOutUEs) {
+	if o != nil && !IsNil(o.MoveOutUEs) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MoveInOutUEDetails) SetMoveOutUEs(v []ValTargetUe) {
 }
 
 func (o MoveInOutUEDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o MoveInOutUEDetails) MarshalJSON() ([]byte, error) {
 
 func (o MoveInOutUEDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MoveInUEs) {
+	if !IsNil(o.MoveInUEs) {
 		toSerialize["moveInUEs"] = o.MoveInUEs
 	}
-	if !isNil(o.MoveOutUEs) {
+	if !IsNil(o.MoveOutUEs) {
 		toSerialize["moveOutUEs"] = o.MoveOutUEs
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableMoveInOutUEDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

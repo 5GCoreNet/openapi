@@ -1,7 +1,7 @@
 /*
 SS_GroupManagement
 
-API for SEAL Group management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Group management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -13,18 +13,17 @@ package openapi_SS_GroupManagement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualVALGroupDocumentDocumentApiService IndividualVALGroupDocumentDocumentApi service
 type IndividualVALGroupDocumentDocumentApiService service
 
 type ApiDeleteIndValGroupDocRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualVALGroupDocumentDocumentApiService
 	groupDocId string
 }
@@ -38,14 +37,14 @@ DeleteIndValGroupDoc Method for DeleteIndValGroupDoc
 
 Deletes a VAL Group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupDocId String identifying an individual VAL group document resource.
- @return ApiDeleteIndValGroupDocRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupDocId String identifying an individual VAL group document resource.
+	@return ApiDeleteIndValGroupDocRequest
 */
 func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDoc(ctx context.Context, groupDocId string) ApiDeleteIndValGroupDocRequest {
 	return ApiDeleteIndValGroupDocRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		groupDocId: groupDocId,
 	}
 }
@@ -53,9 +52,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDoc(ctx 
 // Execute executes the request
 func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecute(r ApiDeleteIndValGroupDocRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualVALGroupDocumentDocumentApiService.DeleteIndValGroupDoc")
@@ -97,9 +96,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -116,8 +115,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -127,8 +126,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -138,8 +137,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -149,8 +148,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -160,8 +159,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -171,8 +170,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -182,8 +181,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -193,9 +192,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 }
 
 type ApiModifyIndValGroupDocRequest struct {
-	ctx context.Context
-	ApiService *IndividualVALGroupDocumentDocumentApiService
-	groupDocId string
+	ctx                   context.Context
+	ApiService            *IndividualVALGroupDocumentDocumentApiService
+	groupDocId            string
 	vALGroupDocumentPatch *VALGroupDocumentPatch
 }
 
@@ -213,26 +212,27 @@ ModifyIndValGroupDoc Method for ModifyIndValGroupDoc
 
 Modify an existing VAL Group document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupDocId Identifier of an individual VAL group document.
- @return ApiModifyIndValGroupDocRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupDocId Identifier of an individual VAL group document.
+	@return ApiModifyIndValGroupDocRequest
 */
 func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDoc(ctx context.Context, groupDocId string) ApiModifyIndValGroupDocRequest {
 	return ApiModifyIndValGroupDocRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		groupDocId: groupDocId,
 	}
 }
 
 // Execute executes the request
-//  @return VALGroupDocument
+//
+//	@return VALGroupDocument
 func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecute(r ApiModifyIndValGroupDocRequest) (*VALGroupDocument, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VALGroupDocument
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VALGroupDocument
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualVALGroupDocumentDocumentApiService.ModifyIndValGroupDoc")
@@ -279,9 +279,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -298,8 +298,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -309,8 +309,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -320,8 +320,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -331,8 +331,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -342,8 +342,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -353,8 +353,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -364,8 +364,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -375,8 +375,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -386,8 +386,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -397,8 +397,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -417,20 +417,20 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 }
 
 type ApiRetrieveIndValGroupDocRequest struct {
-	ctx context.Context
-	ApiService *IndividualVALGroupDocumentDocumentApiService
-	groupDocId string
-	groupMembers *bool
+	ctx                context.Context
+	ApiService         *IndividualVALGroupDocumentDocumentApiService
+	groupDocId         string
+	groupMembers       *bool
 	groupConfiguration *bool
 }
 
-// When set to true indicates the group management server to send the members list information of the VAL group. 
+// When set to true indicates the group management server to send the members list information of the VAL group.
 func (r ApiRetrieveIndValGroupDocRequest) GroupMembers(groupMembers bool) ApiRetrieveIndValGroupDocRequest {
 	r.groupMembers = &groupMembers
 	return r
 }
 
-// When set to true indicates the group management server to send the group configuration information of the VAL group. 
+// When set to true indicates the group management server to send the group configuration information of the VAL group.
 func (r ApiRetrieveIndValGroupDocRequest) GroupConfiguration(groupConfiguration bool) ApiRetrieveIndValGroupDocRequest {
 	r.groupConfiguration = &groupConfiguration
 	return r
@@ -445,26 +445,27 @@ RetrieveIndValGroupDoc Method for RetrieveIndValGroupDoc
 
 Retrieves VAL group information satisfying filter criteria.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupDocId String identifying an individual VAL group document resource.
- @return ApiRetrieveIndValGroupDocRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupDocId String identifying an individual VAL group document resource.
+	@return ApiRetrieveIndValGroupDocRequest
 */
 func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDoc(ctx context.Context, groupDocId string) ApiRetrieveIndValGroupDocRequest {
 	return ApiRetrieveIndValGroupDocRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		groupDocId: groupDocId,
 	}
 }
 
 // Execute executes the request
-//  @return VALGroupDocument
+//
+//	@return VALGroupDocument
 func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExecute(r ApiRetrieveIndValGroupDocRequest) (*VALGroupDocument, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VALGroupDocument
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VALGroupDocument
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualVALGroupDocumentDocumentApiService.RetrieveIndValGroupDoc")
@@ -480,10 +481,10 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 	localVarFormParams := url.Values{}
 
 	if r.groupMembers != nil {
-		parameterAddToQuery(localVarQueryParams, "group-members", r.groupMembers, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group-members", r.groupMembers, "")
 	}
 	if r.groupConfiguration != nil {
-		parameterAddToQuery(localVarQueryParams, "group-configuration", r.groupConfiguration, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group-configuration", r.groupConfiguration, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -512,9 +513,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -531,8 +532,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -542,8 +543,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -553,8 +554,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -564,8 +565,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -575,8 +576,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -586,8 +587,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -597,8 +598,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -608,8 +609,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -628,9 +629,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 }
 
 type ApiUpdateIndValGroupDocRequest struct {
-	ctx context.Context
-	ApiService *IndividualVALGroupDocumentDocumentApiService
-	groupDocId string
+	ctx              context.Context
+	ApiService       *IndividualVALGroupDocumentDocumentApiService
+	groupDocId       string
 	vALGroupDocument *VALGroupDocument
 }
 
@@ -649,26 +650,27 @@ UpdateIndValGroupDoc Method for UpdateIndValGroupDoc
 
 Updates an individual VAL group document.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupDocId String identifying an individual VAL group document resource
- @return ApiUpdateIndValGroupDocRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupDocId String identifying an individual VAL group document resource
+	@return ApiUpdateIndValGroupDocRequest
 */
 func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDoc(ctx context.Context, groupDocId string) ApiUpdateIndValGroupDocRequest {
 	return ApiUpdateIndValGroupDocRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		groupDocId: groupDocId,
 	}
 }
 
 // Execute executes the request
-//  @return VALGroupDocument
+//
+//	@return VALGroupDocument
 func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecute(r ApiUpdateIndValGroupDocRequest) (*VALGroupDocument, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VALGroupDocument
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VALGroupDocument
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualVALGroupDocumentDocumentApiService.UpdateIndValGroupDoc")
@@ -715,9 +717,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -734,8 +736,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -745,8 +747,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -756,8 +758,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -767,8 +769,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -778,8 +780,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -789,8 +791,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -800,8 +802,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -811,8 +813,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -822,8 +824,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -833,8 +835,8 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

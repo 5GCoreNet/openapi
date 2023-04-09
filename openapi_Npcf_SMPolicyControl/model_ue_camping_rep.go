@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,16 +17,16 @@ import (
 // checks if the UeCampingRep type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UeCampingRep{}
 
-// UeCampingRep Contains the current applicable values corresponding to the policy control request triggers. 
+// UeCampingRep Contains the current applicable values corresponding to the policy control request triggers.
 type UeCampingRep struct {
-	AccessType *AccessType `json:"accessType,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	ServNfId *ServingNfIdentity `json:"servNfId,omitempty"`
-	ServingNetwork *PlmnIdNid `json:"servingNetwork,omitempty"`
-	UserLocationInfo *UserLocation `json:"userLocationInfo,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	UeTimeZone *string `json:"ueTimeZone,omitempty"`
-	NetLocAccSupp *NetLocAccessSupport `json:"netLocAccSupp,omitempty"`
+	AccessType       *AccessType        `json:"accessType,omitempty"`
+	RatType          *RatType           `json:"ratType,omitempty"`
+	ServNfId         *ServingNfIdentity `json:"servNfId,omitempty"`
+	ServingNetwork   *PlmnIdNid         `json:"servingNetwork,omitempty"`
+	UserLocationInfo *UserLocation      `json:"userLocationInfo,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	UeTimeZone          *string                    `json:"ueTimeZone,omitempty"`
+	NetLocAccSupp       *NetLocAccessSupport       `json:"netLocAccSupp,omitempty"`
 	SatBackhaulCategory *SatelliteBackhaulCategory `json:"satBackhaulCategory,omitempty"`
 }
 
@@ -49,7 +49,7 @@ func NewUeCampingRepWithDefaults() *UeCampingRep {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *UeCampingRep) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *UeCampingRep) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -67,7 +67,7 @@ func (o *UeCampingRep) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *UeCampingRep) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *UeCampingRep) SetAccessType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *UeCampingRep) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *UeCampingRep) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -99,7 +99,7 @@ func (o *UeCampingRep) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *UeCampingRep) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *UeCampingRep) SetRatType(v RatType) {
 
 // GetServNfId returns the ServNfId field value if set, zero value otherwise.
 func (o *UeCampingRep) GetServNfId() ServingNfIdentity {
-	if o == nil || isNil(o.ServNfId) {
+	if o == nil || IsNil(o.ServNfId) {
 		var ret ServingNfIdentity
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *UeCampingRep) GetServNfId() ServingNfIdentity {
 // GetServNfIdOk returns a tuple with the ServNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetServNfIdOk() (*ServingNfIdentity, bool) {
-	if o == nil || isNil(o.ServNfId) {
+	if o == nil || IsNil(o.ServNfId) {
 		return nil, false
 	}
 	return o.ServNfId, true
@@ -131,7 +131,7 @@ func (o *UeCampingRep) GetServNfIdOk() (*ServingNfIdentity, bool) {
 
 // HasServNfId returns a boolean if a field has been set.
 func (o *UeCampingRep) HasServNfId() bool {
-	if o != nil && !isNil(o.ServNfId) {
+	if o != nil && !IsNil(o.ServNfId) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *UeCampingRep) SetServNfId(v ServingNfIdentity) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *UeCampingRep) GetServingNetwork() PlmnIdNid {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *UeCampingRep) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -163,7 +163,7 @@ func (o *UeCampingRep) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *UeCampingRep) HasServingNetwork() bool {
-	if o != nil && !isNil(o.ServingNetwork) {
+	if o != nil && !IsNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *UeCampingRep) SetServingNetwork(v PlmnIdNid) {
 
 // GetUserLocationInfo returns the UserLocationInfo field value if set, zero value otherwise.
 func (o *UeCampingRep) GetUserLocationInfo() UserLocation {
-	if o == nil || isNil(o.UserLocationInfo) {
+	if o == nil || IsNil(o.UserLocationInfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *UeCampingRep) GetUserLocationInfo() UserLocation {
 // GetUserLocationInfoOk returns a tuple with the UserLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetUserLocationInfoOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLocationInfo) {
+	if o == nil || IsNil(o.UserLocationInfo) {
 		return nil, false
 	}
 	return o.UserLocationInfo, true
@@ -195,7 +195,7 @@ func (o *UeCampingRep) GetUserLocationInfoOk() (*UserLocation, bool) {
 
 // HasUserLocationInfo returns a boolean if a field has been set.
 func (o *UeCampingRep) HasUserLocationInfo() bool {
-	if o != nil && !isNil(o.UserLocationInfo) {
+	if o != nil && !IsNil(o.UserLocationInfo) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *UeCampingRep) SetUserLocationInfo(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *UeCampingRep) GetUeTimeZone() string {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *UeCampingRep) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.UeTimeZone) {
+	if o == nil || IsNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -227,7 +227,7 @@ func (o *UeCampingRep) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *UeCampingRep) HasUeTimeZone() bool {
-	if o != nil && !isNil(o.UeTimeZone) {
+	if o != nil && !IsNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *UeCampingRep) SetUeTimeZone(v string) {
 
 // GetNetLocAccSupp returns the NetLocAccSupp field value if set, zero value otherwise.
 func (o *UeCampingRep) GetNetLocAccSupp() NetLocAccessSupport {
-	if o == nil || isNil(o.NetLocAccSupp) {
+	if o == nil || IsNil(o.NetLocAccSupp) {
 		var ret NetLocAccessSupport
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *UeCampingRep) GetNetLocAccSupp() NetLocAccessSupport {
 // GetNetLocAccSuppOk returns a tuple with the NetLocAccSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetNetLocAccSuppOk() (*NetLocAccessSupport, bool) {
-	if o == nil || isNil(o.NetLocAccSupp) {
+	if o == nil || IsNil(o.NetLocAccSupp) {
 		return nil, false
 	}
 	return o.NetLocAccSupp, true
@@ -259,7 +259,7 @@ func (o *UeCampingRep) GetNetLocAccSuppOk() (*NetLocAccessSupport, bool) {
 
 // HasNetLocAccSupp returns a boolean if a field has been set.
 func (o *UeCampingRep) HasNetLocAccSupp() bool {
-	if o != nil && !isNil(o.NetLocAccSupp) {
+	if o != nil && !IsNil(o.NetLocAccSupp) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *UeCampingRep) SetNetLocAccSupp(v NetLocAccessSupport) {
 
 // GetSatBackhaulCategory returns the SatBackhaulCategory field value if set, zero value otherwise.
 func (o *UeCampingRep) GetSatBackhaulCategory() SatelliteBackhaulCategory {
-	if o == nil || isNil(o.SatBackhaulCategory) {
+	if o == nil || IsNil(o.SatBackhaulCategory) {
 		var ret SatelliteBackhaulCategory
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *UeCampingRep) GetSatBackhaulCategory() SatelliteBackhaulCategory {
 // GetSatBackhaulCategoryOk returns a tuple with the SatBackhaulCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCampingRep) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCategory, bool) {
-	if o == nil || isNil(o.SatBackhaulCategory) {
+	if o == nil || IsNil(o.SatBackhaulCategory) {
 		return nil, false
 	}
 	return o.SatBackhaulCategory, true
@@ -291,7 +291,7 @@ func (o *UeCampingRep) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCategory, b
 
 // HasSatBackhaulCategory returns a boolean if a field has been set.
 func (o *UeCampingRep) HasSatBackhaulCategory() bool {
-	if o != nil && !isNil(o.SatBackhaulCategory) {
+	if o != nil && !IsNil(o.SatBackhaulCategory) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *UeCampingRep) SetSatBackhaulCategory(v SatelliteBackhaulCategory) {
 }
 
 func (o UeCampingRep) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -313,28 +313,28 @@ func (o UeCampingRep) MarshalJSON() ([]byte, error) {
 
 func (o UeCampingRep) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.ServNfId) {
+	if !IsNil(o.ServNfId) {
 		toSerialize["servNfId"] = o.ServNfId
 	}
-	if !isNil(o.ServingNetwork) {
+	if !IsNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
-	if !isNil(o.UserLocationInfo) {
+	if !IsNil(o.UserLocationInfo) {
 		toSerialize["userLocationInfo"] = o.UserLocationInfo
 	}
-	if !isNil(o.UeTimeZone) {
+	if !IsNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !isNil(o.NetLocAccSupp) {
+	if !IsNil(o.NetLocAccSupp) {
 		toSerialize["netLocAccSupp"] = o.NetLocAccSupp
 	}
-	if !isNil(o.SatBackhaulCategory) {
+	if !IsNil(o.SatBackhaulCategory) {
 		toSerialize["satBackhaulCategory"] = o.SatBackhaulCategory
 	}
 	return toSerialize, nil
@@ -375,5 +375,3 @@ func (v *NullableUeCampingRep) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

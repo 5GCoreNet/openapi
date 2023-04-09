@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for Application Data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &MulticastAccessControl{}
 
 // MulticastAccessControl Represents multicast address access control information.
 type MulticastAccessControl struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	SrcIpv4Addr *string `json:"srcIpv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	SrcIpv4Addr *string   `json:"srcIpv4Addr,omitempty"`
 	SrcIpv6Addr *Ipv6Addr `json:"srcIpv6Addr,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	MulticastV4Addr *string `json:"multicastV4Addr,omitempty"`
-	MulticastV6Addr *Ipv6Addr `json:"multicastV6Addr,omitempty"`
-	AccStatus AccessRightStatus `json:"accStatus"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	MulticastV4Addr *string           `json:"multicastV4Addr,omitempty"`
+	MulticastV6Addr *Ipv6Addr         `json:"multicastV6Addr,omitempty"`
+	AccStatus       AccessRightStatus `json:"accStatus"`
 }
 
 // NewMulticastAccessControl instantiates a new MulticastAccessControl object
@@ -48,7 +48,7 @@ func NewMulticastAccessControlWithDefaults() *MulticastAccessControl {
 
 // GetSrcIpv4Addr returns the SrcIpv4Addr field value if set, zero value otherwise.
 func (o *MulticastAccessControl) GetSrcIpv4Addr() string {
-	if o == nil || isNil(o.SrcIpv4Addr) {
+	if o == nil || IsNil(o.SrcIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *MulticastAccessControl) GetSrcIpv4Addr() string {
 // GetSrcIpv4AddrOk returns a tuple with the SrcIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastAccessControl) GetSrcIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.SrcIpv4Addr) {
+	if o == nil || IsNil(o.SrcIpv4Addr) {
 		return nil, false
 	}
 	return o.SrcIpv4Addr, true
@@ -66,7 +66,7 @@ func (o *MulticastAccessControl) GetSrcIpv4AddrOk() (*string, bool) {
 
 // HasSrcIpv4Addr returns a boolean if a field has been set.
 func (o *MulticastAccessControl) HasSrcIpv4Addr() bool {
-	if o != nil && !isNil(o.SrcIpv4Addr) {
+	if o != nil && !IsNil(o.SrcIpv4Addr) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *MulticastAccessControl) SetSrcIpv4Addr(v string) {
 
 // GetSrcIpv6Addr returns the SrcIpv6Addr field value if set, zero value otherwise.
 func (o *MulticastAccessControl) GetSrcIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.SrcIpv6Addr) {
+	if o == nil || IsNil(o.SrcIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *MulticastAccessControl) GetSrcIpv6Addr() Ipv6Addr {
 // GetSrcIpv6AddrOk returns a tuple with the SrcIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastAccessControl) GetSrcIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.SrcIpv6Addr) {
+	if o == nil || IsNil(o.SrcIpv6Addr) {
 		return nil, false
 	}
 	return o.SrcIpv6Addr, true
@@ -98,7 +98,7 @@ func (o *MulticastAccessControl) GetSrcIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasSrcIpv6Addr returns a boolean if a field has been set.
 func (o *MulticastAccessControl) HasSrcIpv6Addr() bool {
-	if o != nil && !isNil(o.SrcIpv6Addr) {
+	if o != nil && !IsNil(o.SrcIpv6Addr) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *MulticastAccessControl) SetSrcIpv6Addr(v Ipv6Addr) {
 
 // GetMulticastV4Addr returns the MulticastV4Addr field value if set, zero value otherwise.
 func (o *MulticastAccessControl) GetMulticastV4Addr() string {
-	if o == nil || isNil(o.MulticastV4Addr) {
+	if o == nil || IsNil(o.MulticastV4Addr) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *MulticastAccessControl) GetMulticastV4Addr() string {
 // GetMulticastV4AddrOk returns a tuple with the MulticastV4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastAccessControl) GetMulticastV4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.MulticastV4Addr) {
+	if o == nil || IsNil(o.MulticastV4Addr) {
 		return nil, false
 	}
 	return o.MulticastV4Addr, true
@@ -130,7 +130,7 @@ func (o *MulticastAccessControl) GetMulticastV4AddrOk() (*string, bool) {
 
 // HasMulticastV4Addr returns a boolean if a field has been set.
 func (o *MulticastAccessControl) HasMulticastV4Addr() bool {
-	if o != nil && !isNil(o.MulticastV4Addr) {
+	if o != nil && !IsNil(o.MulticastV4Addr) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *MulticastAccessControl) SetMulticastV4Addr(v string) {
 
 // GetMulticastV6Addr returns the MulticastV6Addr field value if set, zero value otherwise.
 func (o *MulticastAccessControl) GetMulticastV6Addr() Ipv6Addr {
-	if o == nil || isNil(o.MulticastV6Addr) {
+	if o == nil || IsNil(o.MulticastV6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *MulticastAccessControl) GetMulticastV6Addr() Ipv6Addr {
 // GetMulticastV6AddrOk returns a tuple with the MulticastV6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastAccessControl) GetMulticastV6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.MulticastV6Addr) {
+	if o == nil || IsNil(o.MulticastV6Addr) {
 		return nil, false
 	}
 	return o.MulticastV6Addr, true
@@ -162,7 +162,7 @@ func (o *MulticastAccessControl) GetMulticastV6AddrOk() (*Ipv6Addr, bool) {
 
 // HasMulticastV6Addr returns a boolean if a field has been set.
 func (o *MulticastAccessControl) HasMulticastV6Addr() bool {
-	if o != nil && !isNil(o.MulticastV6Addr) {
+	if o != nil && !IsNil(o.MulticastV6Addr) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *MulticastAccessControl) SetAccStatus(v AccessRightStatus) {
 }
 
 func (o MulticastAccessControl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,16 +208,16 @@ func (o MulticastAccessControl) MarshalJSON() ([]byte, error) {
 
 func (o MulticastAccessControl) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SrcIpv4Addr) {
+	if !IsNil(o.SrcIpv4Addr) {
 		toSerialize["srcIpv4Addr"] = o.SrcIpv4Addr
 	}
-	if !isNil(o.SrcIpv6Addr) {
+	if !IsNil(o.SrcIpv6Addr) {
 		toSerialize["srcIpv6Addr"] = o.SrcIpv6Addr
 	}
-	if !isNil(o.MulticastV4Addr) {
+	if !IsNil(o.MulticastV4Addr) {
 		toSerialize["multicastV4Addr"] = o.MulticastV4Addr
 	}
-	if !isNil(o.MulticastV6Addr) {
+	if !IsNil(o.MulticastV6Addr) {
 		toSerialize["multicastV6Addr"] = o.MulticastV6Addr
 	}
 	toSerialize["accStatus"] = o.AccStatus
@@ -259,5 +259,3 @@ func (v *NullableMulticastAccessControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

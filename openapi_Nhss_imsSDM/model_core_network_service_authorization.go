@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the CoreNetworkServiceAuthorization type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CoreNetworkServiceAuthorization{}
 
-// CoreNetworkServiceAuthorization Core Network Service Authorization 
+// CoreNetworkServiceAuthorization Core Network Service Authorization
 type CoreNetworkServiceAuthorization struct {
 	SubscribedMediaProfileId *int32 `json:"subscribedMediaProfileId,omitempty"`
 }
@@ -41,7 +41,7 @@ func NewCoreNetworkServiceAuthorizationWithDefaults() *CoreNetworkServiceAuthori
 
 // GetSubscribedMediaProfileId returns the SubscribedMediaProfileId field value if set, zero value otherwise.
 func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileId() int32 {
-	if o == nil || isNil(o.SubscribedMediaProfileId) {
+	if o == nil || IsNil(o.SubscribedMediaProfileId) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileId() int32 {
 // GetSubscribedMediaProfileIdOk returns a tuple with the SubscribedMediaProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.SubscribedMediaProfileId) {
+	if o == nil || IsNil(o.SubscribedMediaProfileId) {
 		return nil, false
 	}
 	return o.SubscribedMediaProfileId, true
@@ -59,7 +59,7 @@ func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileIdOk() (*int3
 
 // HasSubscribedMediaProfileId returns a boolean if a field has been set.
 func (o *CoreNetworkServiceAuthorization) HasSubscribedMediaProfileId() bool {
-	if o != nil && !isNil(o.SubscribedMediaProfileId) {
+	if o != nil && !IsNil(o.SubscribedMediaProfileId) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *CoreNetworkServiceAuthorization) SetSubscribedMediaProfileId(v int32) {
 }
 
 func (o CoreNetworkServiceAuthorization) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o CoreNetworkServiceAuthorization) MarshalJSON() ([]byte, error) {
 
 func (o CoreNetworkServiceAuthorization) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubscribedMediaProfileId) {
+	if !IsNil(o.SubscribedMediaProfileId) {
 		toSerialize["subscribedMediaProfileId"] = o.SubscribedMediaProfileId
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableCoreNetworkServiceAuthorization) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

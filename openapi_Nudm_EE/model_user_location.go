@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the UserLocation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UserLocation{}
 
-// UserLocation At least one of eutraLocation, nrLocation and n3gaLocation shall be present. Several of them may be present. 
+// UserLocation At least one of eutraLocation, nrLocation and n3gaLocation shall be present. Several of them may be present.
 type UserLocation struct {
 	EutraLocation *EutraLocation `json:"eutraLocation,omitempty"`
-	NrLocation *NrLocation `json:"nrLocation,omitempty"`
-	N3gaLocation *N3gaLocation `json:"n3gaLocation,omitempty"`
-	UtraLocation *UtraLocation `json:"utraLocation,omitempty"`
-	GeraLocation *GeraLocation `json:"geraLocation,omitempty"`
+	NrLocation    *NrLocation    `json:"nrLocation,omitempty"`
+	N3gaLocation  *N3gaLocation  `json:"n3gaLocation,omitempty"`
+	UtraLocation  *UtraLocation  `json:"utraLocation,omitempty"`
+	GeraLocation  *GeraLocation  `json:"geraLocation,omitempty"`
 }
 
 // NewUserLocation instantiates a new UserLocation object
@@ -45,7 +45,7 @@ func NewUserLocationWithDefaults() *UserLocation {
 
 // GetEutraLocation returns the EutraLocation field value if set, zero value otherwise.
 func (o *UserLocation) GetEutraLocation() EutraLocation {
-	if o == nil || isNil(o.EutraLocation) {
+	if o == nil || IsNil(o.EutraLocation) {
 		var ret EutraLocation
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UserLocation) GetEutraLocation() EutraLocation {
 // GetEutraLocationOk returns a tuple with the EutraLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserLocation) GetEutraLocationOk() (*EutraLocation, bool) {
-	if o == nil || isNil(o.EutraLocation) {
+	if o == nil || IsNil(o.EutraLocation) {
 		return nil, false
 	}
 	return o.EutraLocation, true
@@ -63,7 +63,7 @@ func (o *UserLocation) GetEutraLocationOk() (*EutraLocation, bool) {
 
 // HasEutraLocation returns a boolean if a field has been set.
 func (o *UserLocation) HasEutraLocation() bool {
-	if o != nil && !isNil(o.EutraLocation) {
+	if o != nil && !IsNil(o.EutraLocation) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UserLocation) SetEutraLocation(v EutraLocation) {
 
 // GetNrLocation returns the NrLocation field value if set, zero value otherwise.
 func (o *UserLocation) GetNrLocation() NrLocation {
-	if o == nil || isNil(o.NrLocation) {
+	if o == nil || IsNil(o.NrLocation) {
 		var ret NrLocation
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UserLocation) GetNrLocation() NrLocation {
 // GetNrLocationOk returns a tuple with the NrLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserLocation) GetNrLocationOk() (*NrLocation, bool) {
-	if o == nil || isNil(o.NrLocation) {
+	if o == nil || IsNil(o.NrLocation) {
 		return nil, false
 	}
 	return o.NrLocation, true
@@ -95,7 +95,7 @@ func (o *UserLocation) GetNrLocationOk() (*NrLocation, bool) {
 
 // HasNrLocation returns a boolean if a field has been set.
 func (o *UserLocation) HasNrLocation() bool {
-	if o != nil && !isNil(o.NrLocation) {
+	if o != nil && !IsNil(o.NrLocation) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UserLocation) SetNrLocation(v NrLocation) {
 
 // GetN3gaLocation returns the N3gaLocation field value if set, zero value otherwise.
 func (o *UserLocation) GetN3gaLocation() N3gaLocation {
-	if o == nil || isNil(o.N3gaLocation) {
+	if o == nil || IsNil(o.N3gaLocation) {
 		var ret N3gaLocation
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UserLocation) GetN3gaLocation() N3gaLocation {
 // GetN3gaLocationOk returns a tuple with the N3gaLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserLocation) GetN3gaLocationOk() (*N3gaLocation, bool) {
-	if o == nil || isNil(o.N3gaLocation) {
+	if o == nil || IsNil(o.N3gaLocation) {
 		return nil, false
 	}
 	return o.N3gaLocation, true
@@ -127,7 +127,7 @@ func (o *UserLocation) GetN3gaLocationOk() (*N3gaLocation, bool) {
 
 // HasN3gaLocation returns a boolean if a field has been set.
 func (o *UserLocation) HasN3gaLocation() bool {
-	if o != nil && !isNil(o.N3gaLocation) {
+	if o != nil && !IsNil(o.N3gaLocation) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *UserLocation) SetN3gaLocation(v N3gaLocation) {
 
 // GetUtraLocation returns the UtraLocation field value if set, zero value otherwise.
 func (o *UserLocation) GetUtraLocation() UtraLocation {
-	if o == nil || isNil(o.UtraLocation) {
+	if o == nil || IsNil(o.UtraLocation) {
 		var ret UtraLocation
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *UserLocation) GetUtraLocation() UtraLocation {
 // GetUtraLocationOk returns a tuple with the UtraLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserLocation) GetUtraLocationOk() (*UtraLocation, bool) {
-	if o == nil || isNil(o.UtraLocation) {
+	if o == nil || IsNil(o.UtraLocation) {
 		return nil, false
 	}
 	return o.UtraLocation, true
@@ -159,7 +159,7 @@ func (o *UserLocation) GetUtraLocationOk() (*UtraLocation, bool) {
 
 // HasUtraLocation returns a boolean if a field has been set.
 func (o *UserLocation) HasUtraLocation() bool {
-	if o != nil && !isNil(o.UtraLocation) {
+	if o != nil && !IsNil(o.UtraLocation) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *UserLocation) SetUtraLocation(v UtraLocation) {
 
 // GetGeraLocation returns the GeraLocation field value if set, zero value otherwise.
 func (o *UserLocation) GetGeraLocation() GeraLocation {
-	if o == nil || isNil(o.GeraLocation) {
+	if o == nil || IsNil(o.GeraLocation) {
 		var ret GeraLocation
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *UserLocation) GetGeraLocation() GeraLocation {
 // GetGeraLocationOk returns a tuple with the GeraLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserLocation) GetGeraLocationOk() (*GeraLocation, bool) {
-	if o == nil || isNil(o.GeraLocation) {
+	if o == nil || IsNil(o.GeraLocation) {
 		return nil, false
 	}
 	return o.GeraLocation, true
@@ -191,7 +191,7 @@ func (o *UserLocation) GetGeraLocationOk() (*GeraLocation, bool) {
 
 // HasGeraLocation returns a boolean if a field has been set.
 func (o *UserLocation) HasGeraLocation() bool {
-	if o != nil && !isNil(o.GeraLocation) {
+	if o != nil && !IsNil(o.GeraLocation) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *UserLocation) SetGeraLocation(v GeraLocation) {
 }
 
 func (o UserLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -213,19 +213,19 @@ func (o UserLocation) MarshalJSON() ([]byte, error) {
 
 func (o UserLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EutraLocation) {
+	if !IsNil(o.EutraLocation) {
 		toSerialize["eutraLocation"] = o.EutraLocation
 	}
-	if !isNil(o.NrLocation) {
+	if !IsNil(o.NrLocation) {
 		toSerialize["nrLocation"] = o.NrLocation
 	}
-	if !isNil(o.N3gaLocation) {
+	if !IsNil(o.N3gaLocation) {
 		toSerialize["n3gaLocation"] = o.N3gaLocation
 	}
-	if !isNil(o.UtraLocation) {
+	if !IsNil(o.UtraLocation) {
 		toSerialize["utraLocation"] = o.UtraLocation
 	}
-	if !isNil(o.GeraLocation) {
+	if !IsNil(o.GeraLocation) {
 		toSerialize["geraLocation"] = o.GeraLocation
 	}
 	return toSerialize, nil
@@ -266,5 +266,3 @@ func (v *NullableUserLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

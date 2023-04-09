@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // EventExposureGroupSubscriptionDocumentApiService EventExposureGroupSubscriptionDocumentApi service
 type EventExposureGroupSubscriptionDocumentApiService service
 
 type ApiModifyEeGroupSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *EventExposureGroupSubscriptionDocumentApiService
-	ueGroupId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *EventExposureGroupSubscriptionDocumentApiService
+	ueGroupId         string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -50,28 +49,29 @@ func (r ApiModifyEeGroupSubscriptionRequest) Execute() (*PatchResult, *http.Resp
 /*
 ModifyEeGroupSubscription Modify an individual ee subscription for a group of a UEs
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiModifyEeGroupSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiModifyEeGroupSubscriptionRequest
 */
 func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscription(ctx context.Context, ueGroupId string, subsId string) ApiModifyEeGroupSubscriptionRequest {
 	return ApiModifyEeGroupSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscriptionExecute(r ApiModifyEeGroupSubscriptionRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureGroupSubscriptionDocumentApiService.ModifyEeGroupSubscription")
@@ -94,7 +94,7 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscrip
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -125,9 +125,9 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscrip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -144,8 +144,8 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -155,8 +155,8 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscrip
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -175,10 +175,10 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) ModifyEeGroupSubscrip
 }
 
 type ApiQueryEeGroupSubscriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventExposureGroupSubscriptionDocumentApiService
-	ueGroupId string
-	subsId string
+	ueGroupId  string
+	subsId     string
 }
 
 func (r ApiQueryEeGroupSubscriptionRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -188,28 +188,29 @@ func (r ApiQueryEeGroupSubscriptionRequest) Execute() (map[string]interface{}, *
 /*
 QueryEeGroupSubscription Retrieve a individual eeSubscription for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId Unique ID of the subscription to remove
- @return ApiQueryEeGroupSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId Unique ID of the subscription to remove
+	@return ApiQueryEeGroupSubscriptionRequest
 */
 func (a *EventExposureGroupSubscriptionDocumentApiService) QueryEeGroupSubscription(ctx context.Context, ueGroupId string, subsId string) ApiQueryEeGroupSubscriptionRequest {
 	return ApiQueryEeGroupSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *EventExposureGroupSubscriptionDocumentApiService) QueryEeGroupSubscriptionExecute(r ApiQueryEeGroupSubscriptionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureGroupSubscriptionDocumentApiService.QueryEeGroupSubscription")
@@ -252,9 +253,9 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) QueryEeGroupSubscript
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -280,10 +281,10 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) QueryEeGroupSubscript
 }
 
 type ApiRemoveEeGroupSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventExposureGroupSubscriptionDocumentApiService
-	ueGroupId string
-	subsId string
+	ueGroupId  string
+	subsId     string
 }
 
 func (r ApiRemoveEeGroupSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -293,26 +294,26 @@ func (r ApiRemoveEeGroupSubscriptionsRequest) Execute() (*http.Response, error) 
 /*
 RemoveEeGroupSubscriptions Deletes a eeSubscription for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId Unique ID of the subscription to remove
- @return ApiRemoveEeGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId Unique ID of the subscription to remove
+	@return ApiRemoveEeGroupSubscriptionsRequest
 */
 func (a *EventExposureGroupSubscriptionDocumentApiService) RemoveEeGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiRemoveEeGroupSubscriptionsRequest {
 	return ApiRemoveEeGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *EventExposureGroupSubscriptionDocumentApiService) RemoveEeGroupSubscriptionsExecute(r ApiRemoveEeGroupSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureGroupSubscriptionDocumentApiService.RemoveEeGroupSubscriptions")
@@ -355,9 +356,9 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) RemoveEeGroupSubscrip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -374,10 +375,10 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) RemoveEeGroupSubscrip
 }
 
 type ApiUpdateEeGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *EventExposureGroupSubscriptionDocumentApiService
-	ueGroupId string
-	subsId string
+	ctx            context.Context
+	ApiService     *EventExposureGroupSubscriptionDocumentApiService
+	ueGroupId      string
+	subsId         string
 	eeSubscription *EeSubscription
 }
 
@@ -393,26 +394,26 @@ func (r ApiUpdateEeGroupSubscriptionsRequest) Execute() (*http.Response, error) 
 /*
 UpdateEeGroupSubscriptions Update an individual ee subscription of a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiUpdateEeGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiUpdateEeGroupSubscriptionsRequest
 */
 func (a *EventExposureGroupSubscriptionDocumentApiService) UpdateEeGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiUpdateEeGroupSubscriptionsRequest {
 	return ApiUpdateEeGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *EventExposureGroupSubscriptionDocumentApiService) UpdateEeGroupSubscriptionsExecute(r ApiUpdateEeGroupSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventExposureGroupSubscriptionDocumentApiService.UpdateEeGroupSubscriptions")
@@ -460,9 +461,9 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) UpdateEeGroupSubscrip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -479,8 +480,8 @@ func (a *EventExposureGroupSubscriptionDocumentApiService) UpdateEeGroupSubscrip
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

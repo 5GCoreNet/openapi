@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -22,16 +22,16 @@ var _ MappedNullable = &PcfMbsBinding{}
 type PcfMbsBinding struct {
 	MbsSessionId MbsSessionId `json:"mbsSessionId"`
 	// Fully Qualified Domain Name
-	PcfFqdn *string `json:"pcfFqdn,omitempty"`
+	PcfFqdn        *string      `json:"pcfFqdn,omitempty"`
 	PcfIpEndPoints []IpEndPoint `json:"pcfIpEndPoints,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	PcfSetId *string `json:"pcfSetId,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	PcfSetId  *string       `json:"pcfSetId,omitempty"`
 	BindLevel *BindingLevel `json:"bindLevel,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	RecoveryTime *time.Time `json:"recoveryTime,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -79,7 +79,7 @@ func (o *PcfMbsBinding) SetMbsSessionId(v MbsSessionId) {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetPcfFqdn() string {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PcfMbsBinding) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -97,7 +97,7 @@ func (o *PcfMbsBinding) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasPcfFqdn() bool {
-	if o != nil && !isNil(o.PcfFqdn) {
+	if o != nil && !IsNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *PcfMbsBinding) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PcfMbsBinding) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -129,7 +129,7 @@ func (o *PcfMbsBinding) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasPcfIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfIpEndPoints) {
+	if o != nil && !IsNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PcfMbsBinding) SetPcfIpEndPoints(v []IpEndPoint) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PcfMbsBinding) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -161,7 +161,7 @@ func (o *PcfMbsBinding) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *PcfMbsBinding) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetPcfSetId() string {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *PcfMbsBinding) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -193,7 +193,7 @@ func (o *PcfMbsBinding) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasPcfSetId() bool {
-	if o != nil && !isNil(o.PcfSetId) {
+	if o != nil && !IsNil(o.PcfSetId) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *PcfMbsBinding) SetPcfSetId(v string) {
 
 // GetBindLevel returns the BindLevel field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetBindLevel() BindingLevel {
-	if o == nil || isNil(o.BindLevel) {
+	if o == nil || IsNil(o.BindLevel) {
 		var ret BindingLevel
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *PcfMbsBinding) GetBindLevel() BindingLevel {
 // GetBindLevelOk returns a tuple with the BindLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetBindLevelOk() (*BindingLevel, bool) {
-	if o == nil || isNil(o.BindLevel) {
+	if o == nil || IsNil(o.BindLevel) {
 		return nil, false
 	}
 	return o.BindLevel, true
@@ -225,7 +225,7 @@ func (o *PcfMbsBinding) GetBindLevelOk() (*BindingLevel, bool) {
 
 // HasBindLevel returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasBindLevel() bool {
-	if o != nil && !isNil(o.BindLevel) {
+	if o != nil && !IsNil(o.BindLevel) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *PcfMbsBinding) SetBindLevel(v BindingLevel) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetRecoveryTime() time.Time {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *PcfMbsBinding) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RecoveryTime) {
+	if o == nil || IsNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -257,7 +257,7 @@ func (o *PcfMbsBinding) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasRecoveryTime() bool {
-	if o != nil && !isNil(o.RecoveryTime) {
+	if o != nil && !IsNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *PcfMbsBinding) SetRecoveryTime(v time.Time) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PcfMbsBinding) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *PcfMbsBinding) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfMbsBinding) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -289,7 +289,7 @@ func (o *PcfMbsBinding) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PcfMbsBinding) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *PcfMbsBinding) SetSuppFeat(v string) {
 }
 
 func (o PcfMbsBinding) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,25 +312,25 @@ func (o PcfMbsBinding) MarshalJSON() ([]byte, error) {
 func (o PcfMbsBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !isNil(o.PcfFqdn) {
+	if !IsNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !isNil(o.PcfIpEndPoints) {
+	if !IsNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.PcfSetId) {
+	if !IsNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !isNil(o.BindLevel) {
+	if !IsNil(o.BindLevel) {
 		toSerialize["bindLevel"] = o.BindLevel
 	}
-	if !isNil(o.RecoveryTime) {
+	if !IsNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -371,5 +371,3 @@ func (v *NullablePcfMbsBinding) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

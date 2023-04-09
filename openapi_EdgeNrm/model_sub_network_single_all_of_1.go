@@ -19,8 +19,8 @@ var _ MappedNullable = &SubNetworkSingleAllOf1{}
 
 // SubNetworkSingleAllOf1 struct for SubNetworkSingleAllOf1
 type SubNetworkSingleAllOf1 struct {
-	Subnetwork []SubNetworkSingle `json:"Subnetwork,omitempty"`
-	ECSFunction []ECSFunctionSingle `json:"ECSFunction,omitempty"`
+	Subnetwork      []SubNetworkSingle      `json:"Subnetwork,omitempty"`
+	ECSFunction     []ECSFunctionSingle     `json:"ECSFunction,omitempty"`
 	EdgeDataNetwork []EdgeDataNetworkSingle `json:"EdgeDataNetwork,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewSubNetworkSingleAllOf1WithDefaults() *SubNetworkSingleAllOf1 {
 
 // GetSubnetwork returns the Subnetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetSubnetwork() []SubNetworkSingle {
-	if o == nil || isNil(o.Subnetwork) {
+	if o == nil || IsNil(o.Subnetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SubNetworkSingleAllOf1) GetSubnetwork() []SubNetworkSingle {
 // GetSubnetworkOk returns a tuple with the Subnetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetSubnetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || isNil(o.Subnetwork) {
+	if o == nil || IsNil(o.Subnetwork) {
 		return nil, false
 	}
 	return o.Subnetwork, true
@@ -61,7 +61,7 @@ func (o *SubNetworkSingleAllOf1) GetSubnetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubnetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasSubnetwork() bool {
-	if o != nil && !isNil(o.Subnetwork) {
+	if o != nil && !IsNil(o.Subnetwork) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SubNetworkSingleAllOf1) SetSubnetwork(v []SubNetworkSingle) {
 
 // GetECSFunction returns the ECSFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetECSFunction() []ECSFunctionSingle {
-	if o == nil || isNil(o.ECSFunction) {
+	if o == nil || IsNil(o.ECSFunction) {
 		var ret []ECSFunctionSingle
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SubNetworkSingleAllOf1) GetECSFunction() []ECSFunctionSingle {
 // GetECSFunctionOk returns a tuple with the ECSFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetECSFunctionOk() ([]ECSFunctionSingle, bool) {
-	if o == nil || isNil(o.ECSFunction) {
+	if o == nil || IsNil(o.ECSFunction) {
 		return nil, false
 	}
 	return o.ECSFunction, true
@@ -93,7 +93,7 @@ func (o *SubNetworkSingleAllOf1) GetECSFunctionOk() ([]ECSFunctionSingle, bool) 
 
 // HasECSFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasECSFunction() bool {
-	if o != nil && !isNil(o.ECSFunction) {
+	if o != nil && !IsNil(o.ECSFunction) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SubNetworkSingleAllOf1) SetECSFunction(v []ECSFunctionSingle) {
 
 // GetEdgeDataNetwork returns the EdgeDataNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetEdgeDataNetwork() []EdgeDataNetworkSingle {
-	if o == nil || isNil(o.EdgeDataNetwork) {
+	if o == nil || IsNil(o.EdgeDataNetwork) {
 		var ret []EdgeDataNetworkSingle
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SubNetworkSingleAllOf1) GetEdgeDataNetwork() []EdgeDataNetworkSingle {
 // GetEdgeDataNetworkOk returns a tuple with the EdgeDataNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetEdgeDataNetworkOk() ([]EdgeDataNetworkSingle, bool) {
-	if o == nil || isNil(o.EdgeDataNetwork) {
+	if o == nil || IsNil(o.EdgeDataNetwork) {
 		return nil, false
 	}
 	return o.EdgeDataNetwork, true
@@ -125,7 +125,7 @@ func (o *SubNetworkSingleAllOf1) GetEdgeDataNetworkOk() ([]EdgeDataNetworkSingle
 
 // HasEdgeDataNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasEdgeDataNetwork() bool {
-	if o != nil && !isNil(o.EdgeDataNetwork) {
+	if o != nil && !IsNil(o.EdgeDataNetwork) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SubNetworkSingleAllOf1) SetEdgeDataNetwork(v []EdgeDataNetworkSingle) {
 }
 
 func (o SubNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o SubNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Subnetwork) {
+	if !IsNil(o.Subnetwork) {
 		toSerialize["Subnetwork"] = o.Subnetwork
 	}
-	if !isNil(o.ECSFunction) {
+	if !IsNil(o.ECSFunction) {
 		toSerialize["ECSFunction"] = o.ECSFunction
 	}
-	if !isNil(o.EdgeDataNetwork) {
+	if !IsNil(o.EdgeDataNetwork) {
 		toSerialize["EdgeDataNetwork"] = o.EdgeDataNetwork
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableSubNetworkSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

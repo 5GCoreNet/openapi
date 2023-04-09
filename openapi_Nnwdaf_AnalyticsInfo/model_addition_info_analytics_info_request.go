@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -42,7 +42,7 @@ func NewAdditionInfoAnalyticsInfoRequestWithDefaults() *AdditionInfoAnalyticsInf
 
 // GetRvWaitTime returns the RvWaitTime field value if set, zero value otherwise.
 func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTime() int32 {
-	if o == nil || isNil(o.RvWaitTime) {
+	if o == nil || IsNil(o.RvWaitTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTime() int32 {
 // GetRvWaitTimeOk returns a tuple with the RvWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.RvWaitTime) {
+	if o == nil || IsNil(o.RvWaitTime) {
 		return nil, false
 	}
 	return o.RvWaitTime, true
@@ -60,7 +60,7 @@ func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTimeOk() (*int32, bool) {
 
 // HasRvWaitTime returns a boolean if a field has been set.
 func (o *AdditionInfoAnalyticsInfoRequest) HasRvWaitTime() bool {
-	if o != nil && !isNil(o.RvWaitTime) {
+	if o != nil && !IsNil(o.RvWaitTime) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *AdditionInfoAnalyticsInfoRequest) SetRvWaitTime(v int32) {
 }
 
 func (o AdditionInfoAnalyticsInfoRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o AdditionInfoAnalyticsInfoRequest) MarshalJSON() ([]byte, error) {
 
 func (o AdditionInfoAnalyticsInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RvWaitTime) {
+	if !IsNil(o.RvWaitTime) {
 		toSerialize["rvWaitTime"] = o.RvWaitTime
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullableAdditionInfoAnalyticsInfoRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

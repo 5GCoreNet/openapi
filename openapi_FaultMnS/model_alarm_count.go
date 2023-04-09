@@ -19,12 +19,12 @@ var _ MappedNullable = &AlarmCount{}
 
 // AlarmCount struct for AlarmCount
 type AlarmCount struct {
-	CriticalCount int32 `json:"criticalCount"`
-	MajorCount int32 `json:"majorCount"`
-	MinorCount int32 `json:"minorCount"`
-	WarningCount int32 `json:"warningCount"`
+	CriticalCount      int32 `json:"criticalCount"`
+	MajorCount         int32 `json:"majorCount"`
+	MinorCount         int32 `json:"minorCount"`
+	WarningCount       int32 `json:"warningCount"`
 	IndeterminateCount int32 `json:"indeterminateCount"`
-	ClearedCount int32 `json:"clearedCount"`
+	ClearedCount       int32 `json:"clearedCount"`
 }
 
 // NewAlarmCount instantiates a new AlarmCount object
@@ -195,7 +195,7 @@ func (o *AlarmCount) SetClearedCount(v int32) {
 }
 
 func (o AlarmCount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -248,5 +248,3 @@ func (v *NullableAlarmCount) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 AMInfluence
 
-AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMInfluence API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &AmInfluEventNotif{}
 
 // AmInfluEventNotif Represents an AM influence event notification.
 type AmInfluEventNotif struct {
-	AfTransId string `json:"afTransId"`
-	Event AmInfluEvent `json:"event"`
+	AfTransId string       `json:"afTransId"`
+	Event     AmInfluEvent `json:"event"`
 	// Identifies geographic areas of the user where the request is applicable.
 	GeoAreas []GeographicalArea `json:"geoAreas,omitempty"`
 }
@@ -94,7 +94,7 @@ func (o *AmInfluEventNotif) SetEvent(v AmInfluEvent) {
 
 // GetGeoAreas returns the GeoAreas field value if set, zero value otherwise.
 func (o *AmInfluEventNotif) GetGeoAreas() []GeographicalArea {
-	if o == nil || isNil(o.GeoAreas) {
+	if o == nil || IsNil(o.GeoAreas) {
 		var ret []GeographicalArea
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *AmInfluEventNotif) GetGeoAreas() []GeographicalArea {
 // GetGeoAreasOk returns a tuple with the GeoAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluEventNotif) GetGeoAreasOk() ([]GeographicalArea, bool) {
-	if o == nil || isNil(o.GeoAreas) {
+	if o == nil || IsNil(o.GeoAreas) {
 		return nil, false
 	}
 	return o.GeoAreas, true
@@ -112,7 +112,7 @@ func (o *AmInfluEventNotif) GetGeoAreasOk() ([]GeographicalArea, bool) {
 
 // HasGeoAreas returns a boolean if a field has been set.
 func (o *AmInfluEventNotif) HasGeoAreas() bool {
-	if o != nil && !isNil(o.GeoAreas) {
+	if o != nil && !IsNil(o.GeoAreas) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *AmInfluEventNotif) SetGeoAreas(v []GeographicalArea) {
 }
 
 func (o AmInfluEventNotif) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o AmInfluEventNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afTransId"] = o.AfTransId
 	toSerialize["event"] = o.Event
-	if !isNil(o.GeoAreas) {
+	if !IsNil(o.GeoAreas) {
 		toSerialize["geoAreas"] = o.GeoAreas
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableAmInfluEventNotif) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

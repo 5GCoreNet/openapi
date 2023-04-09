@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &RecordNotification{}
 // RecordNotification Definition of a notification on a record
 type RecordNotification struct {
 	Descriptor NotificationDescription `json:"descriptor"`
-	Meta RecordMeta `json:"meta"`
+	Meta       RecordMeta              `json:"meta"`
 	// list of opaque Block's in this Record
 	Blocks []interface{} `json:"blocks,omitempty"`
 }
@@ -94,7 +94,7 @@ func (o *RecordNotification) SetMeta(v RecordMeta) {
 
 // GetBlocks returns the Blocks field value if set, zero value otherwise.
 func (o *RecordNotification) GetBlocks() []interface{} {
-	if o == nil || isNil(o.Blocks) {
+	if o == nil || IsNil(o.Blocks) {
 		var ret []interface{}
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *RecordNotification) GetBlocks() []interface{} {
 // GetBlocksOk returns a tuple with the Blocks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordNotification) GetBlocksOk() ([]interface{}, bool) {
-	if o == nil || isNil(o.Blocks) {
+	if o == nil || IsNil(o.Blocks) {
 		return nil, false
 	}
 	return o.Blocks, true
@@ -112,7 +112,7 @@ func (o *RecordNotification) GetBlocksOk() ([]interface{}, bool) {
 
 // HasBlocks returns a boolean if a field has been set.
 func (o *RecordNotification) HasBlocks() bool {
-	if o != nil && !isNil(o.Blocks) {
+	if o != nil && !IsNil(o.Blocks) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *RecordNotification) SetBlocks(v []interface{}) {
 }
 
 func (o RecordNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o RecordNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["descriptor"] = o.Descriptor
 	toSerialize["meta"] = o.Meta
-	if !isNil(o.Blocks) {
+	if !IsNil(o.Blocks) {
 		toSerialize["blocks"] = o.Blocks
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableRecordNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

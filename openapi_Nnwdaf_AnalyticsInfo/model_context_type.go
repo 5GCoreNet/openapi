@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ContextType Possible values are: - PENDING_ANALYTICS: Represents context information that relates to pending output analytics. - HISTORICAL_ANALYTICS: Represents context information that relates to historical output analytics. - AGGR_SUBS: Represents context information about the analytics subscriptions that an NWDAF has with other NWDAFs that collectively serve an analytics subscription. - DATA: Represents context information about historical data that is available. - AGGR_INFO: Represents context information that is related to aggregation of analytics from multiple NWDAF subscriptions. - ML_MODELS: Represents context information about used ML models. 
+// ContextType Possible values are: - PENDING_ANALYTICS: Represents context information that relates to pending output analytics. - HISTORICAL_ANALYTICS: Represents context information that relates to historical output analytics. - AGGR_SUBS: Represents context information about the analytics subscriptions that an NWDAF has with other NWDAFs that collectively serve an analytics subscription. - DATA: Represents context information about historical data that is available. - AGGR_INFO: Represents context information that is related to aggregation of analytics from multiple NWDAF subscriptions. - ML_MODELS: Represents context information about used ML models.
 type ContextType struct {
-	ContextTypeAnyOf *ContextTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ContextType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ContextTypeAnyOf
-	err = json.Unmarshal(data, &dst.ContextTypeAnyOf);
-	if err == nil {
-		jsonContextTypeAnyOf, _ := json.Marshal(dst.ContextTypeAnyOf)
-		if string(jsonContextTypeAnyOf) == "{}" { // empty struct
-			dst.ContextTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ContextTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ContextTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ContextType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ContextType) MarshalJSON() ([]byte, error) {
-	if src.ContextTypeAnyOf != nil {
-		return json.Marshal(&src.ContextTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableContextType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

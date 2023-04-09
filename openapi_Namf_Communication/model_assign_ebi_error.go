@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &AssignEbiError{}
 
 // AssignEbiError Data within a failure response to the EBI assignment request
 type AssignEbiError struct {
-	Error ProblemDetails `json:"error"`
+	Error          ProblemDetails  `json:"error"`
 	FailureDetails AssignEbiFailed `json:"failureDetails"`
 }
 
@@ -91,7 +91,7 @@ func (o *AssignEbiError) SetFailureDetails(v AssignEbiFailed) {
 }
 
 func (o AssignEbiError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableAssignEbiError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

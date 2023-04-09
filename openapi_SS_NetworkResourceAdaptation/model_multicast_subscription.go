@@ -1,7 +1,7 @@
 /*
 SS_NetworkResourceAdaptation
 
-SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SS Network Resource Adaptation Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -20,27 +20,27 @@ var _ MappedNullable = &MulticastSubscription{}
 
 // MulticastSubscription Represents a multicast subscription.
 type MulticastSubscription struct {
-	ValGroupId string `json:"valGroupId"`
-	AnncMode ServiceAnnoucementMode `json:"anncMode"`
-	MultiQosReq string `json:"multiQosReq"`
-	LocArea *MbmsLocArea `json:"locArea,omitempty"`
+	ValGroupId  string                 `json:"valGroupId"`
+	AnncMode    ServiceAnnoucementMode `json:"anncMode"`
+	MultiQosReq string                 `json:"multiQosReq"`
+	LocArea     *MbmsLocArea           `json:"locArea,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Duration *time.Time `json:"duration,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	Tmgi *int32 `json:"tmgi,omitempty"`
-	LocalMbmsInfo *LocalMbmsInfo `json:"localMbmsInfo,omitempty"`
-	LocalMbmsActInd *bool `json:"localMbmsActInd,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	Tmgi            *int32         `json:"tmgi,omitempty"`
+	LocalMbmsInfo   *LocalMbmsInfo `json:"localMbmsInfo,omitempty"`
+	LocalMbmsActInd *bool          `json:"localMbmsActInd,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
-	ReqTestNotif *bool `json:"reqTestNotif,omitempty"`
-	WsNotifCfg *WebsockNotifConfig `json:"wsNotifCfg,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	NotifUri     string              `json:"notifUri"`
+	ReqTestNotif *bool               `json:"reqTestNotif,omitempty"`
+	WsNotifCfg   *WebsockNotifConfig `json:"wsNotifCfg,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	UpIpv4Addr *string `json:"upIpv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	UpIpv4Addr *string   `json:"upIpv4Addr,omitempty"`
 	UpIpv6Addr *Ipv6Addr `json:"upIpv6Addr,omitempty"`
 	// Unsigned integer with valid values between 0 and 65535.
-	UpPortNum *int32 `json:"upPortNum,omitempty"`
+	UpPortNum  *int32  `json:"upPortNum,omitempty"`
 	RadioFreqs []int32 `json:"radioFreqs,omitempty"`
 }
 
@@ -139,7 +139,7 @@ func (o *MulticastSubscription) SetMultiQosReq(v string) {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetLocArea() MbmsLocArea {
-	if o == nil || isNil(o.LocArea) {
+	if o == nil || IsNil(o.LocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *MulticastSubscription) GetLocArea() MbmsLocArea {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || isNil(o.LocArea) {
+	if o == nil || IsNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -157,7 +157,7 @@ func (o *MulticastSubscription) GetLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasLocArea() bool {
-	if o != nil && !isNil(o.LocArea) {
+	if o != nil && !IsNil(o.LocArea) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *MulticastSubscription) SetLocArea(v MbmsLocArea) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetDuration() time.Time {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *MulticastSubscription) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetDurationOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -189,7 +189,7 @@ func (o *MulticastSubscription) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *MulticastSubscription) SetDuration(v time.Time) {
 
 // GetTmgi returns the Tmgi field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetTmgi() int32 {
-	if o == nil || isNil(o.Tmgi) {
+	if o == nil || IsNil(o.Tmgi) {
 		var ret int32
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *MulticastSubscription) GetTmgi() int32 {
 // GetTmgiOk returns a tuple with the Tmgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetTmgiOk() (*int32, bool) {
-	if o == nil || isNil(o.Tmgi) {
+	if o == nil || IsNil(o.Tmgi) {
 		return nil, false
 	}
 	return o.Tmgi, true
@@ -221,7 +221,7 @@ func (o *MulticastSubscription) GetTmgiOk() (*int32, bool) {
 
 // HasTmgi returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasTmgi() bool {
-	if o != nil && !isNil(o.Tmgi) {
+	if o != nil && !IsNil(o.Tmgi) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *MulticastSubscription) SetTmgi(v int32) {
 
 // GetLocalMbmsInfo returns the LocalMbmsInfo field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetLocalMbmsInfo() LocalMbmsInfo {
-	if o == nil || isNil(o.LocalMbmsInfo) {
+	if o == nil || IsNil(o.LocalMbmsInfo) {
 		var ret LocalMbmsInfo
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *MulticastSubscription) GetLocalMbmsInfo() LocalMbmsInfo {
 // GetLocalMbmsInfoOk returns a tuple with the LocalMbmsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetLocalMbmsInfoOk() (*LocalMbmsInfo, bool) {
-	if o == nil || isNil(o.LocalMbmsInfo) {
+	if o == nil || IsNil(o.LocalMbmsInfo) {
 		return nil, false
 	}
 	return o.LocalMbmsInfo, true
@@ -253,7 +253,7 @@ func (o *MulticastSubscription) GetLocalMbmsInfoOk() (*LocalMbmsInfo, bool) {
 
 // HasLocalMbmsInfo returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasLocalMbmsInfo() bool {
-	if o != nil && !isNil(o.LocalMbmsInfo) {
+	if o != nil && !IsNil(o.LocalMbmsInfo) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *MulticastSubscription) SetLocalMbmsInfo(v LocalMbmsInfo) {
 
 // GetLocalMbmsActInd returns the LocalMbmsActInd field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetLocalMbmsActInd() bool {
-	if o == nil || isNil(o.LocalMbmsActInd) {
+	if o == nil || IsNil(o.LocalMbmsActInd) {
 		var ret bool
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *MulticastSubscription) GetLocalMbmsActInd() bool {
 // GetLocalMbmsActIndOk returns a tuple with the LocalMbmsActInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetLocalMbmsActIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LocalMbmsActInd) {
+	if o == nil || IsNil(o.LocalMbmsActInd) {
 		return nil, false
 	}
 	return o.LocalMbmsActInd, true
@@ -285,7 +285,7 @@ func (o *MulticastSubscription) GetLocalMbmsActIndOk() (*bool, bool) {
 
 // HasLocalMbmsActInd returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasLocalMbmsActInd() bool {
-	if o != nil && !isNil(o.LocalMbmsActInd) {
+	if o != nil && !IsNil(o.LocalMbmsActInd) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *MulticastSubscription) SetNotifUri(v string) {
 
 // GetReqTestNotif returns the ReqTestNotif field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetReqTestNotif() bool {
-	if o == nil || isNil(o.ReqTestNotif) {
+	if o == nil || IsNil(o.ReqTestNotif) {
 		var ret bool
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *MulticastSubscription) GetReqTestNotif() bool {
 // GetReqTestNotifOk returns a tuple with the ReqTestNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetReqTestNotifOk() (*bool, bool) {
-	if o == nil || isNil(o.ReqTestNotif) {
+	if o == nil || IsNil(o.ReqTestNotif) {
 		return nil, false
 	}
 	return o.ReqTestNotif, true
@@ -341,7 +341,7 @@ func (o *MulticastSubscription) GetReqTestNotifOk() (*bool, bool) {
 
 // HasReqTestNotif returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasReqTestNotif() bool {
-	if o != nil && !isNil(o.ReqTestNotif) {
+	if o != nil && !IsNil(o.ReqTestNotif) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *MulticastSubscription) SetReqTestNotif(v bool) {
 
 // GetWsNotifCfg returns the WsNotifCfg field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetWsNotifCfg() WebsockNotifConfig {
-	if o == nil || isNil(o.WsNotifCfg) {
+	if o == nil || IsNil(o.WsNotifCfg) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *MulticastSubscription) GetWsNotifCfg() WebsockNotifConfig {
 // GetWsNotifCfgOk returns a tuple with the WsNotifCfg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetWsNotifCfgOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WsNotifCfg) {
+	if o == nil || IsNil(o.WsNotifCfg) {
 		return nil, false
 	}
 	return o.WsNotifCfg, true
@@ -373,7 +373,7 @@ func (o *MulticastSubscription) GetWsNotifCfgOk() (*WebsockNotifConfig, bool) {
 
 // HasWsNotifCfg returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasWsNotifCfg() bool {
-	if o != nil && !isNil(o.WsNotifCfg) {
+	if o != nil && !IsNil(o.WsNotifCfg) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *MulticastSubscription) SetWsNotifCfg(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *MulticastSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -405,7 +405,7 @@ func (o *MulticastSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *MulticastSubscription) SetSuppFeat(v string) {
 
 // GetUpIpv4Addr returns the UpIpv4Addr field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetUpIpv4Addr() string {
-	if o == nil || isNil(o.UpIpv4Addr) {
+	if o == nil || IsNil(o.UpIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *MulticastSubscription) GetUpIpv4Addr() string {
 // GetUpIpv4AddrOk returns a tuple with the UpIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetUpIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.UpIpv4Addr) {
+	if o == nil || IsNil(o.UpIpv4Addr) {
 		return nil, false
 	}
 	return o.UpIpv4Addr, true
@@ -437,7 +437,7 @@ func (o *MulticastSubscription) GetUpIpv4AddrOk() (*string, bool) {
 
 // HasUpIpv4Addr returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasUpIpv4Addr() bool {
-	if o != nil && !isNil(o.UpIpv4Addr) {
+	if o != nil && !IsNil(o.UpIpv4Addr) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *MulticastSubscription) SetUpIpv4Addr(v string) {
 
 // GetUpIpv6Addr returns the UpIpv6Addr field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetUpIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.UpIpv6Addr) {
+	if o == nil || IsNil(o.UpIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *MulticastSubscription) GetUpIpv6Addr() Ipv6Addr {
 // GetUpIpv6AddrOk returns a tuple with the UpIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetUpIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.UpIpv6Addr) {
+	if o == nil || IsNil(o.UpIpv6Addr) {
 		return nil, false
 	}
 	return o.UpIpv6Addr, true
@@ -469,7 +469,7 @@ func (o *MulticastSubscription) GetUpIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasUpIpv6Addr returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasUpIpv6Addr() bool {
-	if o != nil && !isNil(o.UpIpv6Addr) {
+	if o != nil && !IsNil(o.UpIpv6Addr) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *MulticastSubscription) SetUpIpv6Addr(v Ipv6Addr) {
 
 // GetUpPortNum returns the UpPortNum field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetUpPortNum() int32 {
-	if o == nil || isNil(o.UpPortNum) {
+	if o == nil || IsNil(o.UpPortNum) {
 		var ret int32
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *MulticastSubscription) GetUpPortNum() int32 {
 // GetUpPortNumOk returns a tuple with the UpPortNum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetUpPortNumOk() (*int32, bool) {
-	if o == nil || isNil(o.UpPortNum) {
+	if o == nil || IsNil(o.UpPortNum) {
 		return nil, false
 	}
 	return o.UpPortNum, true
@@ -501,7 +501,7 @@ func (o *MulticastSubscription) GetUpPortNumOk() (*int32, bool) {
 
 // HasUpPortNum returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasUpPortNum() bool {
-	if o != nil && !isNil(o.UpPortNum) {
+	if o != nil && !IsNil(o.UpPortNum) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *MulticastSubscription) SetUpPortNum(v int32) {
 
 // GetRadioFreqs returns the RadioFreqs field value if set, zero value otherwise.
 func (o *MulticastSubscription) GetRadioFreqs() []int32 {
-	if o == nil || isNil(o.RadioFreqs) {
+	if o == nil || IsNil(o.RadioFreqs) {
 		var ret []int32
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *MulticastSubscription) GetRadioFreqs() []int32 {
 // GetRadioFreqsOk returns a tuple with the RadioFreqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastSubscription) GetRadioFreqsOk() ([]int32, bool) {
-	if o == nil || isNil(o.RadioFreqs) {
+	if o == nil || IsNil(o.RadioFreqs) {
 		return nil, false
 	}
 	return o.RadioFreqs, true
@@ -533,7 +533,7 @@ func (o *MulticastSubscription) GetRadioFreqsOk() ([]int32, bool) {
 
 // HasRadioFreqs returns a boolean if a field has been set.
 func (o *MulticastSubscription) HasRadioFreqs() bool {
-	if o != nil && !isNil(o.RadioFreqs) {
+	if o != nil && !IsNil(o.RadioFreqs) {
 		return true
 	}
 
@@ -546,7 +546,7 @@ func (o *MulticastSubscription) SetRadioFreqs(v []int32) {
 }
 
 func (o MulticastSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -558,41 +558,41 @@ func (o MulticastSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["valGroupId"] = o.ValGroupId
 	toSerialize["anncMode"] = o.AnncMode
 	toSerialize["multiQosReq"] = o.MultiQosReq
-	if !isNil(o.LocArea) {
+	if !IsNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !isNil(o.Tmgi) {
+	if !IsNil(o.Tmgi) {
 		toSerialize["tmgi"] = o.Tmgi
 	}
-	if !isNil(o.LocalMbmsInfo) {
+	if !IsNil(o.LocalMbmsInfo) {
 		toSerialize["localMbmsInfo"] = o.LocalMbmsInfo
 	}
-	if !isNil(o.LocalMbmsActInd) {
+	if !IsNil(o.LocalMbmsActInd) {
 		toSerialize["localMbmsActInd"] = o.LocalMbmsActInd
 	}
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.ReqTestNotif) {
+	if !IsNil(o.ReqTestNotif) {
 		toSerialize["reqTestNotif"] = o.ReqTestNotif
 	}
-	if !isNil(o.WsNotifCfg) {
+	if !IsNil(o.WsNotifCfg) {
 		toSerialize["wsNotifCfg"] = o.WsNotifCfg
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.UpIpv4Addr) {
+	if !IsNil(o.UpIpv4Addr) {
 		toSerialize["upIpv4Addr"] = o.UpIpv4Addr
 	}
-	if !isNil(o.UpIpv6Addr) {
+	if !IsNil(o.UpIpv6Addr) {
 		toSerialize["upIpv6Addr"] = o.UpIpv6Addr
 	}
-	if !isNil(o.UpPortNum) {
+	if !IsNil(o.UpPortNum) {
 		toSerialize["upPortNum"] = o.UpPortNum
 	}
-	if !isNil(o.RadioFreqs) {
+	if !IsNil(o.RadioFreqs) {
 		toSerialize["radioFreqs"] = o.RadioFreqs
 	}
 	return toSerialize, nil
@@ -633,5 +633,3 @@ func (v *NullableMulticastSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

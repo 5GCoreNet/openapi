@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -6,14 +7,6 @@ api_acs_configuration_subscriptions.go
 api_individual_acs_configuration_subscription.go
 client.go
 configuration.go
-docs/ACSConfigurationSubscriptionsApi.md
-docs/AcsConfigurationData.md
-docs/AcsConfigurationDataPatch.md
-docs/AcsInfo.md
-docs/IndividualACSConfigurationSubscriptionApi.md
-docs/InvalidParam.md
-docs/Ipv6Addr.md
-docs/ProblemDetails.md
 git_push.sh
 go.mod
 go.sum
@@ -24,6 +17,4 @@ model_invalid_param.go
 model_ipv6_addr.go
 model_problem_details.go
 response.go
-test/api_acs_configuration_subscriptions_test.go
-test/api_individual_acs_configuration_subscription_test.go
 utils.go

@@ -18,10 +18,10 @@ import (
 // AreaOfInterest - struct for AreaOfInterest
 type AreaOfInterest struct {
 	GeoAreaToCellMapping *GeoAreaToCellMapping
-	ArrayOfEutraCellId *[]EutraCellId
-	ArrayOfNrCellId *[]NrCellId
-	ArrayOfTai *[]Tai
-	ArrayOfUtraCellId *[]UtraCellId
+	ArrayOfEutraCellId   *[]EutraCellId
+	ArrayOfNrCellId      *[]NrCellId
+	ArrayOfTai           *[]Tai
+	ArrayOfUtraCellId    *[]UtraCellId
 }
 
 // GeoAreaToCellMappingAsAreaOfInterest is a convenience function that returns GeoAreaToCellMapping wrapped in AreaOfInterest
@@ -58,7 +58,6 @@ func ArrayOfUtraCellIdAsAreaOfInterest(v *[]UtraCellId) AreaOfInterest {
 		ArrayOfUtraCellId: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AreaOfInterest) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src AreaOfInterest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AreaOfInterest) GetActualInstance() (interface{}) {
+func (obj *AreaOfInterest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableAreaOfInterest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

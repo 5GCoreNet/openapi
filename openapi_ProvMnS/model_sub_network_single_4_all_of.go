@@ -20,7 +20,7 @@ var _ MappedNullable = &SubNetworkSingle4AllOf{}
 // SubNetworkSingle4AllOf struct for SubNetworkSingle4AllOf
 type SubNetworkSingle4AllOf struct {
 	SubNetwork []SubNetworkSingle `json:"SubNetwork,omitempty"`
-	Intent []IntentSingle `json:"Intent,omitempty"`
+	Intent     []IntentSingle     `json:"Intent,omitempty"`
 }
 
 // NewSubNetworkSingle4AllOf instantiates a new SubNetworkSingle4AllOf object
@@ -42,7 +42,7 @@ func NewSubNetworkSingle4AllOfWithDefaults() *SubNetworkSingle4AllOf {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingle4AllOf) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SubNetworkSingle4AllOf) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle4AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -60,7 +60,7 @@ func (o *SubNetworkSingle4AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingle4AllOf) HasSubNetwork() bool {
-	if o != nil && !isNil(o.SubNetwork) {
+	if o != nil && !IsNil(o.SubNetwork) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SubNetworkSingle4AllOf) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetIntent returns the Intent field value if set, zero value otherwise.
 func (o *SubNetworkSingle4AllOf) GetIntent() []IntentSingle {
-	if o == nil || isNil(o.Intent) {
+	if o == nil || IsNil(o.Intent) {
 		var ret []IntentSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SubNetworkSingle4AllOf) GetIntent() []IntentSingle {
 // GetIntentOk returns a tuple with the Intent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle4AllOf) GetIntentOk() ([]IntentSingle, bool) {
-	if o == nil || isNil(o.Intent) {
+	if o == nil || IsNil(o.Intent) {
 		return nil, false
 	}
 	return o.Intent, true
@@ -92,7 +92,7 @@ func (o *SubNetworkSingle4AllOf) GetIntentOk() ([]IntentSingle, bool) {
 
 // HasIntent returns a boolean if a field has been set.
 func (o *SubNetworkSingle4AllOf) HasIntent() bool {
-	if o != nil && !isNil(o.Intent) {
+	if o != nil && !IsNil(o.Intent) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SubNetworkSingle4AllOf) SetIntent(v []IntentSingle) {
 }
 
 func (o SubNetworkSingle4AllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SubNetworkSingle4AllOf) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle4AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubNetwork) {
+	if !IsNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !isNil(o.Intent) {
+	if !IsNil(o.Intent) {
 		toSerialize["Intent"] = o.Intent
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSubNetworkSingle4AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

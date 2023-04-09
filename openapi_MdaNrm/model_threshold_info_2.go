@@ -20,10 +20,10 @@ var _ MappedNullable = &ThresholdInfo2{}
 
 // ThresholdInfo2 struct for ThresholdInfo2
 type ThresholdInfo2 struct {
-	ObservedMeasurement string `json:"observedMeasurement"`
-	ObservedValue float32 `json:"observedValue"`
-	ThresholdLevel *ThresholdLevelInd `json:"thresholdLevel,omitempty"`
-	ArmTime *time.Time `json:"armTime,omitempty"`
+	ObservedMeasurement string             `json:"observedMeasurement"`
+	ObservedValue       float32            `json:"observedValue"`
+	ThresholdLevel      *ThresholdLevelInd `json:"thresholdLevel,omitempty"`
+	ArmTime             *time.Time         `json:"armTime,omitempty"`
 }
 
 // NewThresholdInfo2 instantiates a new ThresholdInfo2 object
@@ -95,7 +95,7 @@ func (o *ThresholdInfo2) SetObservedValue(v float32) {
 
 // GetThresholdLevel returns the ThresholdLevel field value if set, zero value otherwise.
 func (o *ThresholdInfo2) GetThresholdLevel() ThresholdLevelInd {
-	if o == nil || isNil(o.ThresholdLevel) {
+	if o == nil || IsNil(o.ThresholdLevel) {
 		var ret ThresholdLevelInd
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ThresholdInfo2) GetThresholdLevel() ThresholdLevelInd {
 // GetThresholdLevelOk returns a tuple with the ThresholdLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo2) GetThresholdLevelOk() (*ThresholdLevelInd, bool) {
-	if o == nil || isNil(o.ThresholdLevel) {
+	if o == nil || IsNil(o.ThresholdLevel) {
 		return nil, false
 	}
 	return o.ThresholdLevel, true
@@ -113,7 +113,7 @@ func (o *ThresholdInfo2) GetThresholdLevelOk() (*ThresholdLevelInd, bool) {
 
 // HasThresholdLevel returns a boolean if a field has been set.
 func (o *ThresholdInfo2) HasThresholdLevel() bool {
-	if o != nil && !isNil(o.ThresholdLevel) {
+	if o != nil && !IsNil(o.ThresholdLevel) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *ThresholdInfo2) SetThresholdLevel(v ThresholdLevelInd) {
 
 // GetArmTime returns the ArmTime field value if set, zero value otherwise.
 func (o *ThresholdInfo2) GetArmTime() time.Time {
-	if o == nil || isNil(o.ArmTime) {
+	if o == nil || IsNil(o.ArmTime) {
 		var ret time.Time
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *ThresholdInfo2) GetArmTime() time.Time {
 // GetArmTimeOk returns a tuple with the ArmTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo2) GetArmTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ArmTime) {
+	if o == nil || IsNil(o.ArmTime) {
 		return nil, false
 	}
 	return o.ArmTime, true
@@ -145,7 +145,7 @@ func (o *ThresholdInfo2) GetArmTimeOk() (*time.Time, bool) {
 
 // HasArmTime returns a boolean if a field has been set.
 func (o *ThresholdInfo2) HasArmTime() bool {
-	if o != nil && !isNil(o.ArmTime) {
+	if o != nil && !IsNil(o.ArmTime) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *ThresholdInfo2) SetArmTime(v time.Time) {
 }
 
 func (o ThresholdInfo2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o ThresholdInfo2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["observedMeasurement"] = o.ObservedMeasurement
 	toSerialize["observedValue"] = o.ObservedValue
-	if !isNil(o.ThresholdLevel) {
+	if !IsNil(o.ThresholdLevel) {
 		toSerialize["thresholdLevel"] = o.ThresholdLevel
 	}
-	if !isNil(o.ArmTime) {
+	if !IsNil(o.ArmTime) {
 		toSerialize["armTime"] = o.ArmTime
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableThresholdInfo2) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

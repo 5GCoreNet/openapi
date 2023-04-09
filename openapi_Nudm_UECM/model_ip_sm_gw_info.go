@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &IpSmGwInfo{}
 // IpSmGwInfo Contains the IP-SM-GW Information
 type IpSmGwInfo struct {
 	IpSmGwRegistration *IpSmGwRegistration `json:"ipSmGwRegistration,omitempty"`
-	IpSmGwGuidance *IpSmGwGuidance `json:"ipSmGwGuidance,omitempty"`
+	IpSmGwGuidance     *IpSmGwGuidance     `json:"ipSmGwGuidance,omitempty"`
 }
 
 // NewIpSmGwInfo instantiates a new IpSmGwInfo object
@@ -42,7 +42,7 @@ func NewIpSmGwInfoWithDefaults() *IpSmGwInfo {
 
 // GetIpSmGwRegistration returns the IpSmGwRegistration field value if set, zero value otherwise.
 func (o *IpSmGwInfo) GetIpSmGwRegistration() IpSmGwRegistration {
-	if o == nil || isNil(o.IpSmGwRegistration) {
+	if o == nil || IsNil(o.IpSmGwRegistration) {
 		var ret IpSmGwRegistration
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *IpSmGwInfo) GetIpSmGwRegistration() IpSmGwRegistration {
 // GetIpSmGwRegistrationOk returns a tuple with the IpSmGwRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwInfo) GetIpSmGwRegistrationOk() (*IpSmGwRegistration, bool) {
-	if o == nil || isNil(o.IpSmGwRegistration) {
+	if o == nil || IsNil(o.IpSmGwRegistration) {
 		return nil, false
 	}
 	return o.IpSmGwRegistration, true
@@ -60,7 +60,7 @@ func (o *IpSmGwInfo) GetIpSmGwRegistrationOk() (*IpSmGwRegistration, bool) {
 
 // HasIpSmGwRegistration returns a boolean if a field has been set.
 func (o *IpSmGwInfo) HasIpSmGwRegistration() bool {
-	if o != nil && !isNil(o.IpSmGwRegistration) {
+	if o != nil && !IsNil(o.IpSmGwRegistration) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *IpSmGwInfo) SetIpSmGwRegistration(v IpSmGwRegistration) {
 
 // GetIpSmGwGuidance returns the IpSmGwGuidance field value if set, zero value otherwise.
 func (o *IpSmGwInfo) GetIpSmGwGuidance() IpSmGwGuidance {
-	if o == nil || isNil(o.IpSmGwGuidance) {
+	if o == nil || IsNil(o.IpSmGwGuidance) {
 		var ret IpSmGwGuidance
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *IpSmGwInfo) GetIpSmGwGuidance() IpSmGwGuidance {
 // GetIpSmGwGuidanceOk returns a tuple with the IpSmGwGuidance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwInfo) GetIpSmGwGuidanceOk() (*IpSmGwGuidance, bool) {
-	if o == nil || isNil(o.IpSmGwGuidance) {
+	if o == nil || IsNil(o.IpSmGwGuidance) {
 		return nil, false
 	}
 	return o.IpSmGwGuidance, true
@@ -92,7 +92,7 @@ func (o *IpSmGwInfo) GetIpSmGwGuidanceOk() (*IpSmGwGuidance, bool) {
 
 // HasIpSmGwGuidance returns a boolean if a field has been set.
 func (o *IpSmGwInfo) HasIpSmGwGuidance() bool {
-	if o != nil && !isNil(o.IpSmGwGuidance) {
+	if o != nil && !IsNil(o.IpSmGwGuidance) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *IpSmGwInfo) SetIpSmGwGuidance(v IpSmGwGuidance) {
 }
 
 func (o IpSmGwInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o IpSmGwInfo) MarshalJSON() ([]byte, error) {
 
 func (o IpSmGwInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IpSmGwRegistration) {
+	if !IsNil(o.IpSmGwRegistration) {
 		toSerialize["ipSmGwRegistration"] = o.IpSmGwRegistration
 	}
-	if !isNil(o.IpSmGwGuidance) {
+	if !IsNil(o.IpSmGwGuidance) {
 		toSerialize["ipSmGwGuidance"] = o.IpSmGwGuidance
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableIpSmGwInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

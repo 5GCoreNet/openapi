@@ -19,18 +19,14 @@ var _ MappedNullable = &NotifyThresholdCrossing{}
 
 // NotifyThresholdCrossing struct for NotifyThresholdCrossing
 type NotifyThresholdCrossing struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	ObservedPerfMetricName *string `json:"observedPerfMetricName,omitempty"`
-	ObservedPerfMetricValue *PerfMetricValue `json:"observedPerfMetricValue,omitempty"`
+	NotificationHeader
+	ObservedPerfMetricName      *string              `json:"observedPerfMetricName,omitempty"`
+	ObservedPerfMetricValue     *PerfMetricValue     `json:"observedPerfMetricValue,omitempty"`
 	ObservedPerfMetricDirection *PerfMetricDirection `json:"observedPerfMetricDirection,omitempty"`
-	ThresholdValue *PerfMetricValue `json:"thresholdValue,omitempty"`
-	Hysteresis *PerfMetricValue `json:"hysteresis,omitempty"`
-	MonitorGranularityPeriod *int32 `json:"monitorGranularityPeriod,omitempty"`
-	AdditionalText *string `json:"additionalText,omitempty"`
+	ThresholdValue              *PerfMetricValue     `json:"thresholdValue,omitempty"`
+	Hysteresis                  *PerfMetricValue     `json:"hysteresis,omitempty"`
+	MonitorGranularityPeriod    *int32               `json:"monitorGranularityPeriod,omitempty"`
+	AdditionalText              *string              `json:"additionalText,omitempty"`
 }
 
 // NewNotifyThresholdCrossing instantiates a new NotifyThresholdCrossing object
@@ -55,129 +51,9 @@ func NewNotifyThresholdCrossingWithDefaults() *NotifyThresholdCrossing {
 	return &this
 }
 
-// GetHref returns the Href field value
-func (o *NotifyThresholdCrossing) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyThresholdCrossing) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyThresholdCrossing) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyThresholdCrossing) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyThresholdCrossing) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyThresholdCrossing) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyThresholdCrossing) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyThresholdCrossing) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyThresholdCrossing) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyThresholdCrossing) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyThresholdCrossing) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyThresholdCrossing) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyThresholdCrossing) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyThresholdCrossing) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyThresholdCrossing) SetSystemDN(v string) {
-	o.SystemDN = v
-}
-
 // GetObservedPerfMetricName returns the ObservedPerfMetricName field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricName() string {
-	if o == nil || isNil(o.ObservedPerfMetricName) {
+	if o == nil || IsNil(o.ObservedPerfMetricName) {
 		var ret string
 		return ret
 	}
@@ -187,7 +63,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricName() string {
 // GetObservedPerfMetricNameOk returns a tuple with the ObservedPerfMetricName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricNameOk() (*string, bool) {
-	if o == nil || isNil(o.ObservedPerfMetricName) {
+	if o == nil || IsNil(o.ObservedPerfMetricName) {
 		return nil, false
 	}
 	return o.ObservedPerfMetricName, true
@@ -195,7 +71,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricNameOk() (*string, bool) 
 
 // HasObservedPerfMetricName returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasObservedPerfMetricName() bool {
-	if o != nil && !isNil(o.ObservedPerfMetricName) {
+	if o != nil && !IsNil(o.ObservedPerfMetricName) {
 		return true
 	}
 
@@ -209,7 +85,7 @@ func (o *NotifyThresholdCrossing) SetObservedPerfMetricName(v string) {
 
 // GetObservedPerfMetricValue returns the ObservedPerfMetricValue field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricValue() PerfMetricValue {
-	if o == nil || isNil(o.ObservedPerfMetricValue) {
+	if o == nil || IsNil(o.ObservedPerfMetricValue) {
 		var ret PerfMetricValue
 		return ret
 	}
@@ -219,7 +95,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricValue() PerfMetricValue {
 // GetObservedPerfMetricValueOk returns a tuple with the ObservedPerfMetricValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricValueOk() (*PerfMetricValue, bool) {
-	if o == nil || isNil(o.ObservedPerfMetricValue) {
+	if o == nil || IsNil(o.ObservedPerfMetricValue) {
 		return nil, false
 	}
 	return o.ObservedPerfMetricValue, true
@@ -227,7 +103,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricValueOk() (*PerfMetricVal
 
 // HasObservedPerfMetricValue returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasObservedPerfMetricValue() bool {
-	if o != nil && !isNil(o.ObservedPerfMetricValue) {
+	if o != nil && !IsNil(o.ObservedPerfMetricValue) {
 		return true
 	}
 
@@ -241,7 +117,7 @@ func (o *NotifyThresholdCrossing) SetObservedPerfMetricValue(v PerfMetricValue) 
 
 // GetObservedPerfMetricDirection returns the ObservedPerfMetricDirection field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirection() PerfMetricDirection {
-	if o == nil || isNil(o.ObservedPerfMetricDirection) {
+	if o == nil || IsNil(o.ObservedPerfMetricDirection) {
 		var ret PerfMetricDirection
 		return ret
 	}
@@ -251,7 +127,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirection() PerfMetricDir
 // GetObservedPerfMetricDirectionOk returns a tuple with the ObservedPerfMetricDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirectionOk() (*PerfMetricDirection, bool) {
-	if o == nil || isNil(o.ObservedPerfMetricDirection) {
+	if o == nil || IsNil(o.ObservedPerfMetricDirection) {
 		return nil, false
 	}
 	return o.ObservedPerfMetricDirection, true
@@ -259,7 +135,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirectionOk() (*PerfMetri
 
 // HasObservedPerfMetricDirection returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasObservedPerfMetricDirection() bool {
-	if o != nil && !isNil(o.ObservedPerfMetricDirection) {
+	if o != nil && !IsNil(o.ObservedPerfMetricDirection) {
 		return true
 	}
 
@@ -273,7 +149,7 @@ func (o *NotifyThresholdCrossing) SetObservedPerfMetricDirection(v PerfMetricDir
 
 // GetThresholdValue returns the ThresholdValue field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetThresholdValue() PerfMetricValue {
-	if o == nil || isNil(o.ThresholdValue) {
+	if o == nil || IsNil(o.ThresholdValue) {
 		var ret PerfMetricValue
 		return ret
 	}
@@ -283,7 +159,7 @@ func (o *NotifyThresholdCrossing) GetThresholdValue() PerfMetricValue {
 // GetThresholdValueOk returns a tuple with the ThresholdValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetThresholdValueOk() (*PerfMetricValue, bool) {
-	if o == nil || isNil(o.ThresholdValue) {
+	if o == nil || IsNil(o.ThresholdValue) {
 		return nil, false
 	}
 	return o.ThresholdValue, true
@@ -291,7 +167,7 @@ func (o *NotifyThresholdCrossing) GetThresholdValueOk() (*PerfMetricValue, bool)
 
 // HasThresholdValue returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasThresholdValue() bool {
-	if o != nil && !isNil(o.ThresholdValue) {
+	if o != nil && !IsNil(o.ThresholdValue) {
 		return true
 	}
 
@@ -305,7 +181,7 @@ func (o *NotifyThresholdCrossing) SetThresholdValue(v PerfMetricValue) {
 
 // GetHysteresis returns the Hysteresis field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetHysteresis() PerfMetricValue {
-	if o == nil || isNil(o.Hysteresis) {
+	if o == nil || IsNil(o.Hysteresis) {
 		var ret PerfMetricValue
 		return ret
 	}
@@ -315,7 +191,7 @@ func (o *NotifyThresholdCrossing) GetHysteresis() PerfMetricValue {
 // GetHysteresisOk returns a tuple with the Hysteresis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetHysteresisOk() (*PerfMetricValue, bool) {
-	if o == nil || isNil(o.Hysteresis) {
+	if o == nil || IsNil(o.Hysteresis) {
 		return nil, false
 	}
 	return o.Hysteresis, true
@@ -323,7 +199,7 @@ func (o *NotifyThresholdCrossing) GetHysteresisOk() (*PerfMetricValue, bool) {
 
 // HasHysteresis returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasHysteresis() bool {
-	if o != nil && !isNil(o.Hysteresis) {
+	if o != nil && !IsNil(o.Hysteresis) {
 		return true
 	}
 
@@ -337,7 +213,7 @@ func (o *NotifyThresholdCrossing) SetHysteresis(v PerfMetricValue) {
 
 // GetMonitorGranularityPeriod returns the MonitorGranularityPeriod field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriod() int32 {
-	if o == nil || isNil(o.MonitorGranularityPeriod) {
+	if o == nil || IsNil(o.MonitorGranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -347,7 +223,7 @@ func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriod() int32 {
 // GetMonitorGranularityPeriodOk returns a tuple with the MonitorGranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.MonitorGranularityPeriod) {
+	if o == nil || IsNil(o.MonitorGranularityPeriod) {
 		return nil, false
 	}
 	return o.MonitorGranularityPeriod, true
@@ -355,7 +231,7 @@ func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriodOk() (*int32, bool)
 
 // HasMonitorGranularityPeriod returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasMonitorGranularityPeriod() bool {
-	if o != nil && !isNil(o.MonitorGranularityPeriod) {
+	if o != nil && !IsNil(o.MonitorGranularityPeriod) {
 		return true
 	}
 
@@ -369,7 +245,7 @@ func (o *NotifyThresholdCrossing) SetMonitorGranularityPeriod(v int32) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -379,7 +255,7 @@ func (o *NotifyThresholdCrossing) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -387,7 +263,7 @@ func (o *NotifyThresholdCrossing) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -400,7 +276,7 @@ func (o *NotifyThresholdCrossing) SetAdditionalText(v string) {
 }
 
 func (o NotifyThresholdCrossing) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -409,30 +285,33 @@ func (o NotifyThresholdCrossing) MarshalJSON() ([]byte, error) {
 
 func (o NotifyThresholdCrossing) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
-	if !isNil(o.ObservedPerfMetricName) {
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	if !IsNil(o.ObservedPerfMetricName) {
 		toSerialize["observedPerfMetricName"] = o.ObservedPerfMetricName
 	}
-	if !isNil(o.ObservedPerfMetricValue) {
+	if !IsNil(o.ObservedPerfMetricValue) {
 		toSerialize["observedPerfMetricValue"] = o.ObservedPerfMetricValue
 	}
-	if !isNil(o.ObservedPerfMetricDirection) {
+	if !IsNil(o.ObservedPerfMetricDirection) {
 		toSerialize["observedPerfMetricDirection"] = o.ObservedPerfMetricDirection
 	}
-	if !isNil(o.ThresholdValue) {
+	if !IsNil(o.ThresholdValue) {
 		toSerialize["thresholdValue"] = o.ThresholdValue
 	}
-	if !isNil(o.Hysteresis) {
+	if !IsNil(o.Hysteresis) {
 		toSerialize["hysteresis"] = o.Hysteresis
 	}
-	if !isNil(o.MonitorGranularityPeriod) {
+	if !IsNil(o.MonitorGranularityPeriod) {
 		toSerialize["monitorGranularityPeriod"] = o.MonitorGranularityPeriod
 	}
-	if !isNil(o.AdditionalText) {
+	if !IsNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil
@@ -473,5 +352,3 @@ func (v *NullableNotifyThresholdCrossing) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

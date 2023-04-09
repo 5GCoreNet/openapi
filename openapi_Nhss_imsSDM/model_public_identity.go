@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,13 +17,13 @@ import (
 // checks if the PublicIdentity type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PublicIdentity{}
 
-// PublicIdentity IMS Public Identity and related data (Alias Group Id, IRS default indication, Identity Type) 
+// PublicIdentity IMS Public Identity and related data (Alias Group Id, IRS default indication, Identity Type)
 type PublicIdentity struct {
 	// String containing an IMS Public Identity in SIP URI format or TEL URI format
-	ImsPublicId string `json:"imsPublicId"`
+	ImsPublicId  string       `json:"imsPublicId"`
 	IdentityType IdentityType `json:"identityType"`
-	IrsIsDefault *bool `json:"irsIsDefault,omitempty"`
-	AliasGroupId *string `json:"aliasGroupId,omitempty"`
+	IrsIsDefault *bool        `json:"irsIsDefault,omitempty"`
+	AliasGroupId *string      `json:"aliasGroupId,omitempty"`
 }
 
 // NewPublicIdentity instantiates a new PublicIdentity object
@@ -95,7 +95,7 @@ func (o *PublicIdentity) SetIdentityType(v IdentityType) {
 
 // GetIrsIsDefault returns the IrsIsDefault field value if set, zero value otherwise.
 func (o *PublicIdentity) GetIrsIsDefault() bool {
-	if o == nil || isNil(o.IrsIsDefault) {
+	if o == nil || IsNil(o.IrsIsDefault) {
 		var ret bool
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *PublicIdentity) GetIrsIsDefault() bool {
 // GetIrsIsDefaultOk returns a tuple with the IrsIsDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentity) GetIrsIsDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.IrsIsDefault) {
+	if o == nil || IsNil(o.IrsIsDefault) {
 		return nil, false
 	}
 	return o.IrsIsDefault, true
@@ -113,7 +113,7 @@ func (o *PublicIdentity) GetIrsIsDefaultOk() (*bool, bool) {
 
 // HasIrsIsDefault returns a boolean if a field has been set.
 func (o *PublicIdentity) HasIrsIsDefault() bool {
-	if o != nil && !isNil(o.IrsIsDefault) {
+	if o != nil && !IsNil(o.IrsIsDefault) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *PublicIdentity) SetIrsIsDefault(v bool) {
 
 // GetAliasGroupId returns the AliasGroupId field value if set, zero value otherwise.
 func (o *PublicIdentity) GetAliasGroupId() string {
-	if o == nil || isNil(o.AliasGroupId) {
+	if o == nil || IsNil(o.AliasGroupId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *PublicIdentity) GetAliasGroupId() string {
 // GetAliasGroupIdOk returns a tuple with the AliasGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentity) GetAliasGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.AliasGroupId) {
+	if o == nil || IsNil(o.AliasGroupId) {
 		return nil, false
 	}
 	return o.AliasGroupId, true
@@ -145,7 +145,7 @@ func (o *PublicIdentity) GetAliasGroupIdOk() (*string, bool) {
 
 // HasAliasGroupId returns a boolean if a field has been set.
 func (o *PublicIdentity) HasAliasGroupId() bool {
-	if o != nil && !isNil(o.AliasGroupId) {
+	if o != nil && !IsNil(o.AliasGroupId) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *PublicIdentity) SetAliasGroupId(v string) {
 }
 
 func (o PublicIdentity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o PublicIdentity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["imsPublicId"] = o.ImsPublicId
 	toSerialize["identityType"] = o.IdentityType
-	if !isNil(o.IrsIsDefault) {
+	if !IsNil(o.IrsIsDefault) {
 		toSerialize["irsIsDefault"] = o.IrsIsDefault
 	}
-	if !isNil(o.AliasGroupId) {
+	if !IsNil(o.AliasGroupId) {
 		toSerialize["aliasGroupId"] = o.AliasGroupId
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullablePublicIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

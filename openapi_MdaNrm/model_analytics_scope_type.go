@@ -17,7 +17,7 @@ import (
 
 // AnalyticsScopeType - struct for AnalyticsScopeType
 type AnalyticsScopeType struct {
-	AnalyticsScopeTypeOneOf *AnalyticsScopeTypeOneOf
+	AnalyticsScopeTypeOneOf  *AnalyticsScopeTypeOneOf
 	AnalyticsScopeTypeOneOf1 *AnalyticsScopeTypeOneOf1
 }
 
@@ -34,7 +34,6 @@ func AnalyticsScopeTypeOneOf1AsAnalyticsScopeType(v *AnalyticsScopeTypeOneOf1) A
 		AnalyticsScopeTypeOneOf1: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AnalyticsScopeType) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AnalyticsScopeType) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AnalyticsScopeType) GetActualInstance() (interface{}) {
+func (obj *AnalyticsScopeType) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAnalyticsScopeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

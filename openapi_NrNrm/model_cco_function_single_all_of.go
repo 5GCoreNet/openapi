@@ -41,7 +41,7 @@ func NewCCOFunctionSingleAllOfWithDefaults() *CCOFunctionSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *CCOFunctionSingleAllOf) GetAttributes() CCOFunctionSingleAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret CCOFunctionSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CCOFunctionSingleAllOf) GetAttributes() CCOFunctionSingleAllOfAttribute
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CCOFunctionSingleAllOf) GetAttributesOk() (*CCOFunctionSingleAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *CCOFunctionSingleAllOf) GetAttributesOk() (*CCOFunctionSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *CCOFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *CCOFunctionSingleAllOf) SetAttributes(v CCOFunctionSingleAllOfAttribute
 }
 
 func (o CCOFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o CCOFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o CCOFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableCCOFunctionSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

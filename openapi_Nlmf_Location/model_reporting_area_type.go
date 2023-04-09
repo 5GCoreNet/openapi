@@ -1,7 +1,7 @@
 /*
 LMF Location
 
-LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+LMF Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ReportingAreaType Indicates type of event reporting area.
 type ReportingAreaType struct {
-	ReportingAreaTypeAnyOf *ReportingAreaTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingAreaType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReportingAreaTypeAnyOf
-	err = json.Unmarshal(data, &dst.ReportingAreaTypeAnyOf);
-	if err == nil {
-		jsonReportingAreaTypeAnyOf, _ := json.Marshal(dst.ReportingAreaTypeAnyOf)
-		if string(jsonReportingAreaTypeAnyOf) == "{}" { // empty struct
-			dst.ReportingAreaTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReportingAreaTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ReportingAreaTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReportingAreaType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportingAreaType) MarshalJSON() ([]byte, error) {
-	if src.ReportingAreaTypeAnyOf != nil {
-		return json.Marshal(&src.ReportingAreaTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReportingAreaType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

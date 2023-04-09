@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyAuthorization API
 
-MBS Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,17 +15,17 @@ import (
 	"fmt"
 )
 
-// MbsMediaCompRm This data type is defined in the same way as the MbsMediaComp data type, but with the OpenAPI nullable property set to true. 
+// MbsMediaCompRm This data type is defined in the same way as the MbsMediaComp data type, but with the OpenAPI nullable property set to true.
 type MbsMediaCompRm struct {
 	MbsMediaComp *MbsMediaComp
-	NullValue *NullValue
+	NullValue    *NullValue
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsMediaCompRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into MbsMediaComp
-	err = json.Unmarshal(data, &dst.MbsMediaComp);
+	err = json.Unmarshal(data, &dst.MbsMediaComp)
 	if err == nil {
 		jsonMbsMediaComp, _ := json.Marshal(dst.MbsMediaComp)
 		if string(jsonMbsMediaComp) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *MbsMediaCompRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableMbsMediaCompRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

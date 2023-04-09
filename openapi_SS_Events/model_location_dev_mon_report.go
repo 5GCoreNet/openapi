@@ -1,7 +1,7 @@
 /*
 SS_Events
 
-API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Events management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &LocationDevMonReport{}
 // LocationDevMonReport Location deviation monitoring report.
 type LocationDevMonReport struct {
 	// List of VAL Users or UE IDs for which report is related to.
-	TgtUes []ValTargetUe `json:"tgtUes"`
-	LocInfo LocationInfo `json:"locInfo"`
+	TgtUes    []ValTargetUe      `json:"tgtUes"`
+	LocInfo   LocationInfo       `json:"locInfo"`
 	NotifType LocDevNotification `json:"notifType"`
 }
 
@@ -118,7 +118,7 @@ func (o *LocationDevMonReport) SetNotifType(v LocDevNotification) {
 }
 
 func (o LocationDevMonReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,5 +168,3 @@ func (v *NullableLocationDevMonReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

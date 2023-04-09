@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ContextStatusEventType Context Status Event Type
 type ContextStatusEventType struct {
-	ContextStatusEventTypeAnyOf *ContextStatusEventTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ContextStatusEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ContextStatusEventTypeAnyOf
-	err = json.Unmarshal(data, &dst.ContextStatusEventTypeAnyOf);
-	if err == nil {
-		jsonContextStatusEventTypeAnyOf, _ := json.Marshal(dst.ContextStatusEventTypeAnyOf)
-		if string(jsonContextStatusEventTypeAnyOf) == "{}" { // empty struct
-			dst.ContextStatusEventTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ContextStatusEventTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ContextStatusEventTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ContextStatusEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ContextStatusEventType) MarshalJSON() ([]byte, error) {
-	if src.ContextStatusEventTypeAnyOf != nil {
-		return json.Marshal(&src.ContextStatusEventTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableContextStatusEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

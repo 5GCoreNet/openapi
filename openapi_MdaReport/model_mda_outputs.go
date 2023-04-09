@@ -19,9 +19,9 @@ var _ MappedNullable = &MDAOutputs{}
 
 // MDAOutputs struct for MDAOutputs
 type MDAOutputs struct {
-	MDAType *string `json:"mDAType,omitempty"`
+	MDAType       *string          `json:"mDAType,omitempty"`
 	MdaOutputList []MDAOutputEntry `json:"mdaOutputList,omitempty"`
-	MDARequestRef *string `json:"mDARequestRef,omitempty"`
+	MDARequestRef *string          `json:"mDARequestRef,omitempty"`
 }
 
 // NewMDAOutputs instantiates a new MDAOutputs object
@@ -43,7 +43,7 @@ func NewMDAOutputsWithDefaults() *MDAOutputs {
 
 // GetMDAType returns the MDAType field value if set, zero value otherwise.
 func (o *MDAOutputs) GetMDAType() string {
-	if o == nil || isNil(o.MDAType) {
+	if o == nil || IsNil(o.MDAType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MDAOutputs) GetMDAType() string {
 // GetMDATypeOk returns a tuple with the MDAType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputs) GetMDATypeOk() (*string, bool) {
-	if o == nil || isNil(o.MDAType) {
+	if o == nil || IsNil(o.MDAType) {
 		return nil, false
 	}
 	return o.MDAType, true
@@ -61,7 +61,7 @@ func (o *MDAOutputs) GetMDATypeOk() (*string, bool) {
 
 // HasMDAType returns a boolean if a field has been set.
 func (o *MDAOutputs) HasMDAType() bool {
-	if o != nil && !isNil(o.MDAType) {
+	if o != nil && !IsNil(o.MDAType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MDAOutputs) SetMDAType(v string) {
 
 // GetMdaOutputList returns the MdaOutputList field value if set, zero value otherwise.
 func (o *MDAOutputs) GetMdaOutputList() []MDAOutputEntry {
-	if o == nil || isNil(o.MdaOutputList) {
+	if o == nil || IsNil(o.MdaOutputList) {
 		var ret []MDAOutputEntry
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MDAOutputs) GetMdaOutputList() []MDAOutputEntry {
 // GetMdaOutputListOk returns a tuple with the MdaOutputList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputs) GetMdaOutputListOk() ([]MDAOutputEntry, bool) {
-	if o == nil || isNil(o.MdaOutputList) {
+	if o == nil || IsNil(o.MdaOutputList) {
 		return nil, false
 	}
 	return o.MdaOutputList, true
@@ -93,7 +93,7 @@ func (o *MDAOutputs) GetMdaOutputListOk() ([]MDAOutputEntry, bool) {
 
 // HasMdaOutputList returns a boolean if a field has been set.
 func (o *MDAOutputs) HasMdaOutputList() bool {
-	if o != nil && !isNil(o.MdaOutputList) {
+	if o != nil && !IsNil(o.MdaOutputList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MDAOutputs) SetMdaOutputList(v []MDAOutputEntry) {
 
 // GetMDARequestRef returns the MDARequestRef field value if set, zero value otherwise.
 func (o *MDAOutputs) GetMDARequestRef() string {
-	if o == nil || isNil(o.MDARequestRef) {
+	if o == nil || IsNil(o.MDARequestRef) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MDAOutputs) GetMDARequestRef() string {
 // GetMDARequestRefOk returns a tuple with the MDARequestRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputs) GetMDARequestRefOk() (*string, bool) {
-	if o == nil || isNil(o.MDARequestRef) {
+	if o == nil || IsNil(o.MDARequestRef) {
 		return nil, false
 	}
 	return o.MDARequestRef, true
@@ -125,7 +125,7 @@ func (o *MDAOutputs) GetMDARequestRefOk() (*string, bool) {
 
 // HasMDARequestRef returns a boolean if a field has been set.
 func (o *MDAOutputs) HasMDARequestRef() bool {
-	if o != nil && !isNil(o.MDARequestRef) {
+	if o != nil && !IsNil(o.MDARequestRef) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *MDAOutputs) SetMDARequestRef(v string) {
 }
 
 func (o MDAOutputs) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o MDAOutputs) MarshalJSON() ([]byte, error) {
 
 func (o MDAOutputs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MDAType) {
+	if !IsNil(o.MDAType) {
 		toSerialize["mDAType"] = o.MDAType
 	}
-	if !isNil(o.MdaOutputList) {
+	if !IsNil(o.MdaOutputList) {
 		toSerialize["mdaOutputList"] = o.MdaOutputList
 	}
-	if !isNil(o.MDARequestRef) {
+	if !IsNil(o.MDARequestRef) {
 		toSerialize["mDARequestRef"] = o.MDARequestRef
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableMDAOutputs) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

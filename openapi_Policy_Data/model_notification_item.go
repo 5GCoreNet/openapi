@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,10 +17,10 @@ import (
 // checks if the NotificationItem type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NotificationItem{}
 
-// NotificationItem Identifies a data change notification when the change occurs in a fragment (subset of resource data) of a given resource. 
+// NotificationItem Identifies a data change notification when the change occurs in a fragment (subset of resource data) of a given resource.
 type NotificationItem struct {
 	// String providing an URI formatted according to RFC 3986.
-	ResourceId string `json:"resourceId"`
+	ResourceId string        `json:"resourceId"`
 	NotifItems []UpdatedItem `json:"notifItems"`
 }
 
@@ -92,7 +92,7 @@ func (o *NotificationItem) SetNotifItems(v []UpdatedItem) {
 }
 
 func (o NotificationItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableNotificationItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,23 +19,23 @@ var _ MappedNullable = &SmfFunctionSingleAllOfAttributesAllOf{}
 
 // SmfFunctionSingleAllOfAttributesAllOf struct for SmfFunctionSingleAllOfAttributesAllOf
 type SmfFunctionSingleAllOfAttributesAllOf struct {
-	PLMNInfoList []PlmnInfo `json:"pLMNInfoList,omitempty"`
-	NRTACList []int32 `json:"nRTACList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	SNssaiSmfInfoList []SNssaiSmfInfoItem `json:"sNssaiSmfInfoList,omitempty"`
-	TaiList []Tai `json:"taiList,omitempty"`
-	TaiRangeList []TaiRange `json:"taiRangeList,omitempty"`
-	PwgFqdn *string `json:"pwgFqdn,omitempty"`
-	PgwAddrList []IpAddr `json:"pgwAddrList,omitempty"`
-	AccessType *AccessType `json:"accessType,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	CNSIIdList []string `json:"cNSIIdList,omitempty"`
-	VsmfSupportInd *bool `json:"vsmfSupportInd,omitempty"`
-	PwgFqdnList []string `json:"pwgFqdnList,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
-	Configurable5QISetRef *string `json:"configurable5QISetRef,omitempty"`
-	Dynamic5QISetRef *string `json:"dynamic5QISetRef,omitempty"`
+	PLMNInfoList          []PlmnInfo          `json:"pLMNInfoList,omitempty"`
+	NRTACList             []int32             `json:"nRTACList,omitempty"`
+	SBIFqdn               *string             `json:"sBIFqdn,omitempty"`
+	SNssaiSmfInfoList     []SNssaiSmfInfoItem `json:"sNssaiSmfInfoList,omitempty"`
+	TaiList               []Tai               `json:"taiList,omitempty"`
+	TaiRangeList          []TaiRange          `json:"taiRangeList,omitempty"`
+	PwgFqdn               *string             `json:"pwgFqdn,omitempty"`
+	PgwAddrList           []IpAddr            `json:"pgwAddrList,omitempty"`
+	AccessType            *AccessType         `json:"accessType,omitempty"`
+	Priority              *int32              `json:"priority,omitempty"`
+	CNSIIdList            []string            `json:"cNSIIdList,omitempty"`
+	VsmfSupportInd        *bool               `json:"vsmfSupportInd,omitempty"`
+	PwgFqdnList           []string            `json:"pwgFqdnList,omitempty"`
+	ManagedNFProfile      *ManagedNFProfile   `json:"managedNFProfile,omitempty"`
+	CommModelList         []CommModel         `json:"commModelList,omitempty"`
+	Configurable5QISetRef *string             `json:"configurable5QISetRef,omitempty"`
+	Dynamic5QISetRef      *string             `json:"dynamic5QISetRef,omitempty"`
 }
 
 // NewSmfFunctionSingleAllOfAttributesAllOf instantiates a new SmfFunctionSingleAllOfAttributesAllOf object
@@ -600,7 +600,7 @@ func (o *SmfFunctionSingleAllOfAttributesAllOf) SetDynamic5QISetRef(v string) {
 }
 
 func (o SmfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -698,5 +698,3 @@ func (v *NullableSmfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

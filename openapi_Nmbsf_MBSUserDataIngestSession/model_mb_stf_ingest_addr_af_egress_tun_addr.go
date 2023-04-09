@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,6 +19,7 @@ var _ MappedNullable = &MbStfIngestAddrAfEgressTunAddr{}
 
 // MbStfIngestAddrAfEgressTunAddr struct for MbStfIngestAddrAfEgressTunAddr
 type MbStfIngestAddrAfEgressTunAddr struct {
+	TunnelAddress
 }
 
 // NewMbStfIngestAddrAfEgressTunAddr instantiates a new MbStfIngestAddrAfEgressTunAddr object
@@ -39,7 +40,7 @@ func NewMbStfIngestAddrAfEgressTunAddrWithDefaults() *MbStfIngestAddrAfEgressTun
 }
 
 func (o MbStfIngestAddrAfEgressTunAddr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -48,6 +49,14 @@ func (o MbStfIngestAddrAfEgressTunAddr) MarshalJSON() ([]byte, error) {
 
 func (o MbStfIngestAddrAfEgressTunAddr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	serializedTunnelAddress, errTunnelAddress := json.Marshal(o.TunnelAddress)
+	if errTunnelAddress != nil {
+		return map[string]interface{}{}, errTunnelAddress
+	}
+	errTunnelAddress = json.Unmarshal([]byte(serializedTunnelAddress), &toSerialize)
+	if errTunnelAddress != nil {
+		return map[string]interface{}{}, errTunnelAddress
+	}
 	return toSerialize, nil
 }
 
@@ -86,5 +95,3 @@ func (v *NullableMbStfIngestAddrAfEgressTunAddr) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

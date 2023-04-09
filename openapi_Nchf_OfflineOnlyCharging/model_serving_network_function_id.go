@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ServingNetworkFunctionID{}
 // ServingNetworkFunctionID struct for ServingNetworkFunctionID
 type ServingNetworkFunctionID struct {
 	ServingNetworkFunctionInformation NFIdentification `json:"servingNetworkFunctionInformation"`
-	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).  
+	// String identifying the AMF ID composed of AMF Region ID (8 bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters (i.e., 24 bits).
 	AMFId *string `json:"aMFId,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *ServingNetworkFunctionID) SetServingNetworkFunctionInformation(v NFIden
 
 // GetAMFId returns the AMFId field value if set, zero value otherwise.
 func (o *ServingNetworkFunctionID) GetAMFId() string {
-	if o == nil || isNil(o.AMFId) {
+	if o == nil || IsNil(o.AMFId) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ServingNetworkFunctionID) GetAMFId() string {
 // GetAMFIdOk returns a tuple with the AMFId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingNetworkFunctionID) GetAMFIdOk() (*string, bool) {
-	if o == nil || isNil(o.AMFId) {
+	if o == nil || IsNil(o.AMFId) {
 		return nil, false
 	}
 	return o.AMFId, true
@@ -86,7 +86,7 @@ func (o *ServingNetworkFunctionID) GetAMFIdOk() (*string, bool) {
 
 // HasAMFId returns a boolean if a field has been set.
 func (o *ServingNetworkFunctionID) HasAMFId() bool {
-	if o != nil && !isNil(o.AMFId) {
+	if o != nil && !IsNil(o.AMFId) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *ServingNetworkFunctionID) SetAMFId(v string) {
 }
 
 func (o ServingNetworkFunctionID) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o ServingNetworkFunctionID) MarshalJSON() ([]byte, error) {
 func (o ServingNetworkFunctionID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["servingNetworkFunctionInformation"] = o.ServingNetworkFunctionInformation
-	if !isNil(o.AMFId) {
+	if !IsNil(o.AMFId) {
 		toSerialize["aMFId"] = o.AMFId
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableServingNetworkFunctionID) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

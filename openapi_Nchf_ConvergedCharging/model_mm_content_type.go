@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &MMContentType{}
 
 // MMContentType struct for MMContentType
 type MMContentType struct {
-	TypeNumber *string `json:"typeNumber,omitempty"`
+	TypeNumber  *string `json:"typeNumber,omitempty"`
 	AddtypeInfo *string `json:"addtypeInfo,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	ContentSize *int32 `json:"contentSize,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	ContentSize      *int32             `json:"contentSize,omitempty"`
 	MmAddContentInfo []MMAddContentInfo `json:"mmAddContentInfo,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewMMContentTypeWithDefaults() *MMContentType {
 
 // GetTypeNumber returns the TypeNumber field value if set, zero value otherwise.
 func (o *MMContentType) GetTypeNumber() string {
-	if o == nil || isNil(o.TypeNumber) {
+	if o == nil || IsNil(o.TypeNumber) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *MMContentType) GetTypeNumber() string {
 // GetTypeNumberOk returns a tuple with the TypeNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMContentType) GetTypeNumberOk() (*string, bool) {
-	if o == nil || isNil(o.TypeNumber) {
+	if o == nil || IsNil(o.TypeNumber) {
 		return nil, false
 	}
 	return o.TypeNumber, true
@@ -63,7 +63,7 @@ func (o *MMContentType) GetTypeNumberOk() (*string, bool) {
 
 // HasTypeNumber returns a boolean if a field has been set.
 func (o *MMContentType) HasTypeNumber() bool {
-	if o != nil && !isNil(o.TypeNumber) {
+	if o != nil && !IsNil(o.TypeNumber) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *MMContentType) SetTypeNumber(v string) {
 
 // GetAddtypeInfo returns the AddtypeInfo field value if set, zero value otherwise.
 func (o *MMContentType) GetAddtypeInfo() string {
-	if o == nil || isNil(o.AddtypeInfo) {
+	if o == nil || IsNil(o.AddtypeInfo) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *MMContentType) GetAddtypeInfo() string {
 // GetAddtypeInfoOk returns a tuple with the AddtypeInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMContentType) GetAddtypeInfoOk() (*string, bool) {
-	if o == nil || isNil(o.AddtypeInfo) {
+	if o == nil || IsNil(o.AddtypeInfo) {
 		return nil, false
 	}
 	return o.AddtypeInfo, true
@@ -95,7 +95,7 @@ func (o *MMContentType) GetAddtypeInfoOk() (*string, bool) {
 
 // HasAddtypeInfo returns a boolean if a field has been set.
 func (o *MMContentType) HasAddtypeInfo() bool {
-	if o != nil && !isNil(o.AddtypeInfo) {
+	if o != nil && !IsNil(o.AddtypeInfo) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MMContentType) SetAddtypeInfo(v string) {
 
 // GetContentSize returns the ContentSize field value if set, zero value otherwise.
 func (o *MMContentType) GetContentSize() int32 {
-	if o == nil || isNil(o.ContentSize) {
+	if o == nil || IsNil(o.ContentSize) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *MMContentType) GetContentSize() int32 {
 // GetContentSizeOk returns a tuple with the ContentSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMContentType) GetContentSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.ContentSize) {
+	if o == nil || IsNil(o.ContentSize) {
 		return nil, false
 	}
 	return o.ContentSize, true
@@ -127,7 +127,7 @@ func (o *MMContentType) GetContentSizeOk() (*int32, bool) {
 
 // HasContentSize returns a boolean if a field has been set.
 func (o *MMContentType) HasContentSize() bool {
-	if o != nil && !isNil(o.ContentSize) {
+	if o != nil && !IsNil(o.ContentSize) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *MMContentType) SetContentSize(v int32) {
 
 // GetMmAddContentInfo returns the MmAddContentInfo field value if set, zero value otherwise.
 func (o *MMContentType) GetMmAddContentInfo() []MMAddContentInfo {
-	if o == nil || isNil(o.MmAddContentInfo) {
+	if o == nil || IsNil(o.MmAddContentInfo) {
 		var ret []MMAddContentInfo
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *MMContentType) GetMmAddContentInfo() []MMAddContentInfo {
 // GetMmAddContentInfoOk returns a tuple with the MmAddContentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMContentType) GetMmAddContentInfoOk() ([]MMAddContentInfo, bool) {
-	if o == nil || isNil(o.MmAddContentInfo) {
+	if o == nil || IsNil(o.MmAddContentInfo) {
 		return nil, false
 	}
 	return o.MmAddContentInfo, true
@@ -159,7 +159,7 @@ func (o *MMContentType) GetMmAddContentInfoOk() ([]MMAddContentInfo, bool) {
 
 // HasMmAddContentInfo returns a boolean if a field has been set.
 func (o *MMContentType) HasMmAddContentInfo() bool {
-	if o != nil && !isNil(o.MmAddContentInfo) {
+	if o != nil && !IsNil(o.MmAddContentInfo) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *MMContentType) SetMmAddContentInfo(v []MMAddContentInfo) {
 }
 
 func (o MMContentType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -181,16 +181,16 @@ func (o MMContentType) MarshalJSON() ([]byte, error) {
 
 func (o MMContentType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TypeNumber) {
+	if !IsNil(o.TypeNumber) {
 		toSerialize["typeNumber"] = o.TypeNumber
 	}
-	if !isNil(o.AddtypeInfo) {
+	if !IsNil(o.AddtypeInfo) {
 		toSerialize["addtypeInfo"] = o.AddtypeInfo
 	}
-	if !isNil(o.ContentSize) {
+	if !IsNil(o.ContentSize) {
 		toSerialize["contentSize"] = o.ContentSize
 	}
-	if !isNil(o.MmAddContentInfo) {
+	if !IsNil(o.MmAddContentInfo) {
 		toSerialize["mmAddContentInfo"] = o.MmAddContentInfo
 	}
 	return toSerialize, nil
@@ -231,5 +231,3 @@ func (v *NullableMMContentType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

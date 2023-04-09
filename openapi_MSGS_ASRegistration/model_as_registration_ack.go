@@ -1,7 +1,7 @@
 /*
 MSGS_ASRegistration
 
-API for MSGS AS Registration Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGS AS Registration Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ASRegistrationAck{}
 
 // ASRegistrationAck AS registration response data
 type ASRegistrationAck struct {
-	AsSvcId string `json:"asSvcId"`
-	Result ProblemDetails `json:"result"`
+	AsSvcId string         `json:"asSvcId"`
+	Result  ProblemDetails `json:"result"`
 }
 
 // NewASRegistrationAck instantiates a new ASRegistrationAck object
@@ -91,7 +91,7 @@ func (o *ASRegistrationAck) SetResult(v ProblemDetails) {
 }
 
 func (o ASRegistrationAck) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableASRegistrationAck) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

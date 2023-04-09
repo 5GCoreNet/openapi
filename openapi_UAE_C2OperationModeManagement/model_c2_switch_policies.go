@@ -1,7 +1,7 @@
 /*
 UAE Server C2 Operation Mode Management Service
 
-UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UAE Server C2 Operation Mode Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &C2SwitchPolicies{}
 // C2SwitchPolicies Represents the C2 operation mode switching policies.
 type C2SwitchPolicies struct {
 	DirectC2LinkQualityThrlds *C2LinkQualityThrlds `json:"directC2LinkQualityThrlds,omitempty"`
-	UuC2LinkQualityThrlds *C2LinkQualityThrlds `json:"uuC2LinkQualityThrlds,omitempty"`
+	UuC2LinkQualityThrlds     *C2LinkQualityThrlds `json:"uuC2LinkQualityThrlds,omitempty"`
 }
 
 // NewC2SwitchPolicies instantiates a new C2SwitchPolicies object
@@ -42,7 +42,7 @@ func NewC2SwitchPoliciesWithDefaults() *C2SwitchPolicies {
 
 // GetDirectC2LinkQualityThrlds returns the DirectC2LinkQualityThrlds field value if set, zero value otherwise.
 func (o *C2SwitchPolicies) GetDirectC2LinkQualityThrlds() C2LinkQualityThrlds {
-	if o == nil || isNil(o.DirectC2LinkQualityThrlds) {
+	if o == nil || IsNil(o.DirectC2LinkQualityThrlds) {
 		var ret C2LinkQualityThrlds
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *C2SwitchPolicies) GetDirectC2LinkQualityThrlds() C2LinkQualityThrlds {
 // GetDirectC2LinkQualityThrldsOk returns a tuple with the DirectC2LinkQualityThrlds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2SwitchPolicies) GetDirectC2LinkQualityThrldsOk() (*C2LinkQualityThrlds, bool) {
-	if o == nil || isNil(o.DirectC2LinkQualityThrlds) {
+	if o == nil || IsNil(o.DirectC2LinkQualityThrlds) {
 		return nil, false
 	}
 	return o.DirectC2LinkQualityThrlds, true
@@ -60,7 +60,7 @@ func (o *C2SwitchPolicies) GetDirectC2LinkQualityThrldsOk() (*C2LinkQualityThrld
 
 // HasDirectC2LinkQualityThrlds returns a boolean if a field has been set.
 func (o *C2SwitchPolicies) HasDirectC2LinkQualityThrlds() bool {
-	if o != nil && !isNil(o.DirectC2LinkQualityThrlds) {
+	if o != nil && !IsNil(o.DirectC2LinkQualityThrlds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *C2SwitchPolicies) SetDirectC2LinkQualityThrlds(v C2LinkQualityThrlds) {
 
 // GetUuC2LinkQualityThrlds returns the UuC2LinkQualityThrlds field value if set, zero value otherwise.
 func (o *C2SwitchPolicies) GetUuC2LinkQualityThrlds() C2LinkQualityThrlds {
-	if o == nil || isNil(o.UuC2LinkQualityThrlds) {
+	if o == nil || IsNil(o.UuC2LinkQualityThrlds) {
 		var ret C2LinkQualityThrlds
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *C2SwitchPolicies) GetUuC2LinkQualityThrlds() C2LinkQualityThrlds {
 // GetUuC2LinkQualityThrldsOk returns a tuple with the UuC2LinkQualityThrlds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2SwitchPolicies) GetUuC2LinkQualityThrldsOk() (*C2LinkQualityThrlds, bool) {
-	if o == nil || isNil(o.UuC2LinkQualityThrlds) {
+	if o == nil || IsNil(o.UuC2LinkQualityThrlds) {
 		return nil, false
 	}
 	return o.UuC2LinkQualityThrlds, true
@@ -92,7 +92,7 @@ func (o *C2SwitchPolicies) GetUuC2LinkQualityThrldsOk() (*C2LinkQualityThrlds, b
 
 // HasUuC2LinkQualityThrlds returns a boolean if a field has been set.
 func (o *C2SwitchPolicies) HasUuC2LinkQualityThrlds() bool {
-	if o != nil && !isNil(o.UuC2LinkQualityThrlds) {
+	if o != nil && !IsNil(o.UuC2LinkQualityThrlds) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *C2SwitchPolicies) SetUuC2LinkQualityThrlds(v C2LinkQualityThrlds) {
 }
 
 func (o C2SwitchPolicies) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o C2SwitchPolicies) MarshalJSON() ([]byte, error) {
 
 func (o C2SwitchPolicies) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DirectC2LinkQualityThrlds) {
+	if !IsNil(o.DirectC2LinkQualityThrlds) {
 		toSerialize["directC2LinkQualityThrlds"] = o.DirectC2LinkQualityThrlds
 	}
-	if !isNil(o.UuC2LinkQualityThrlds) {
+	if !IsNil(o.UuC2LinkQualityThrlds) {
 		toSerialize["uuC2LinkQualityThrlds"] = o.UuC2LinkQualityThrlds
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableC2SwitchPolicies) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

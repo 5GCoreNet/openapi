@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &AmfNon3GppAccessRegistrationModification{}
 
 // AmfNon3GppAccessRegistrationModification struct for AmfNon3GppAccessRegistrationModification
 type AmfNon3GppAccessRegistrationModification struct {
-	Guami Guami `json:"guami"`
+	Guami     Guami `json:"guami"`
 	PurgeFlag *bool `json:"purgeFlag,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
-	ImsVoPs *ImsVoPs `json:"imsVoPs,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei           *string         `json:"pei,omitempty"`
+	ImsVoPs       *ImsVoPs        `json:"imsVoPs,omitempty"`
 	BackupAmfInfo []BackupAmfInfo `json:"backupAmfInfo,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *AmfNon3GppAccessRegistrationModification) SetGuami(v Guami) {
 
 // GetPurgeFlag returns the PurgeFlag field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistrationModification) GetPurgeFlag() bool {
-	if o == nil || isNil(o.PurgeFlag) {
+	if o == nil || IsNil(o.PurgeFlag) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetPurgeFlag() bool {
 // GetPurgeFlagOk returns a tuple with the PurgeFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistrationModification) GetPurgeFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.PurgeFlag) {
+	if o == nil || IsNil(o.PurgeFlag) {
 		return nil, false
 	}
 	return o.PurgeFlag, true
@@ -89,7 +89,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetPurgeFlagOk() (*bool, bool
 
 // HasPurgeFlag returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistrationModification) HasPurgeFlag() bool {
-	if o != nil && !isNil(o.PurgeFlag) {
+	if o != nil && !IsNil(o.PurgeFlag) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *AmfNon3GppAccessRegistrationModification) SetPurgeFlag(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistrationModification) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistrationModification) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -121,7 +121,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistrationModification) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *AmfNon3GppAccessRegistrationModification) SetPei(v string) {
 
 // GetImsVoPs returns the ImsVoPs field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistrationModification) GetImsVoPs() ImsVoPs {
-	if o == nil || isNil(o.ImsVoPs) {
+	if o == nil || IsNil(o.ImsVoPs) {
 		var ret ImsVoPs
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetImsVoPs() ImsVoPs {
 // GetImsVoPsOk returns a tuple with the ImsVoPs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistrationModification) GetImsVoPsOk() (*ImsVoPs, bool) {
-	if o == nil || isNil(o.ImsVoPs) {
+	if o == nil || IsNil(o.ImsVoPs) {
 		return nil, false
 	}
 	return o.ImsVoPs, true
@@ -153,7 +153,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetImsVoPsOk() (*ImsVoPs, boo
 
 // HasImsVoPs returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistrationModification) HasImsVoPs() bool {
-	if o != nil && !isNil(o.ImsVoPs) {
+	if o != nil && !IsNil(o.ImsVoPs) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *AmfNon3GppAccessRegistrationModification) SetImsVoPs(v ImsVoPs) {
 
 // GetBackupAmfInfo returns the BackupAmfInfo field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistrationModification) GetBackupAmfInfo() []BackupAmfInfo {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		var ret []BackupAmfInfo
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetBackupAmfInfo() []BackupAm
 // GetBackupAmfInfoOk returns a tuple with the BackupAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistrationModification) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
-	if o == nil || isNil(o.BackupAmfInfo) {
+	if o == nil || IsNil(o.BackupAmfInfo) {
 		return nil, false
 	}
 	return o.BackupAmfInfo, true
@@ -185,7 +185,7 @@ func (o *AmfNon3GppAccessRegistrationModification) GetBackupAmfInfoOk() ([]Backu
 
 // HasBackupAmfInfo returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistrationModification) HasBackupAmfInfo() bool {
-	if o != nil && !isNil(o.BackupAmfInfo) {
+	if o != nil && !IsNil(o.BackupAmfInfo) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *AmfNon3GppAccessRegistrationModification) SetBackupAmfInfo(v []BackupAm
 }
 
 func (o AmfNon3GppAccessRegistrationModification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,16 +208,16 @@ func (o AmfNon3GppAccessRegistrationModification) MarshalJSON() ([]byte, error) 
 func (o AmfNon3GppAccessRegistrationModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["guami"] = o.Guami
-	if !isNil(o.PurgeFlag) {
+	if !IsNil(o.PurgeFlag) {
 		toSerialize["purgeFlag"] = o.PurgeFlag
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.ImsVoPs) {
+	if !IsNil(o.ImsVoPs) {
 		toSerialize["imsVoPs"] = o.ImsVoPs
 	}
-	if !isNil(o.BackupAmfInfo) {
+	if !IsNil(o.BackupAmfInfo) {
 		toSerialize["backupAmfInfo"] = o.BackupAmfInfo
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableAmfNon3GppAccessRegistrationModification) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

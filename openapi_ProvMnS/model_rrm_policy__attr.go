@@ -19,7 +19,7 @@ var _ MappedNullable = &RrmPolicyAttr{}
 
 // RrmPolicyAttr struct for RrmPolicyAttr
 type RrmPolicyAttr struct {
-	ResourceType *ResourceType `json:"resourceType,omitempty"`
+	ResourceType        *ResourceType     `json:"resourceType,omitempty"`
 	RRMPolicyMemberList []RrmPolicyMember `json:"rRMPolicyMemberList,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewRrmPolicyAttrWithDefaults() *RrmPolicyAttr {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *RrmPolicyAttr) GetResourceType() ResourceType {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret ResourceType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RrmPolicyAttr) GetResourceType() ResourceType {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RrmPolicyAttr) GetResourceTypeOk() (*ResourceType, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -60,7 +60,7 @@ func (o *RrmPolicyAttr) GetResourceTypeOk() (*ResourceType, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *RrmPolicyAttr) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RrmPolicyAttr) SetResourceType(v ResourceType) {
 
 // GetRRMPolicyMemberList returns the RRMPolicyMemberList field value if set, zero value otherwise.
 func (o *RrmPolicyAttr) GetRRMPolicyMemberList() []RrmPolicyMember {
-	if o == nil || isNil(o.RRMPolicyMemberList) {
+	if o == nil || IsNil(o.RRMPolicyMemberList) {
 		var ret []RrmPolicyMember
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RrmPolicyAttr) GetRRMPolicyMemberList() []RrmPolicyMember {
 // GetRRMPolicyMemberListOk returns a tuple with the RRMPolicyMemberList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RrmPolicyAttr) GetRRMPolicyMemberListOk() ([]RrmPolicyMember, bool) {
-	if o == nil || isNil(o.RRMPolicyMemberList) {
+	if o == nil || IsNil(o.RRMPolicyMemberList) {
 		return nil, false
 	}
 	return o.RRMPolicyMemberList, true
@@ -92,7 +92,7 @@ func (o *RrmPolicyAttr) GetRRMPolicyMemberListOk() ([]RrmPolicyMember, bool) {
 
 // HasRRMPolicyMemberList returns a boolean if a field has been set.
 func (o *RrmPolicyAttr) HasRRMPolicyMemberList() bool {
-	if o != nil && !isNil(o.RRMPolicyMemberList) {
+	if o != nil && !IsNil(o.RRMPolicyMemberList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RrmPolicyAttr) SetRRMPolicyMemberList(v []RrmPolicyMember) {
 }
 
 func (o RrmPolicyAttr) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o RrmPolicyAttr) MarshalJSON() ([]byte, error) {
 
 func (o RrmPolicyAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ResourceType) {
+	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !isNil(o.RRMPolicyMemberList) {
+	if !IsNil(o.RRMPolicyMemberList) {
 		toSerialize["rRMPolicyMemberList"] = o.RRMPolicyMemberList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableRrmPolicyAttr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_PP
 
-Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Parameter Provision Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &EcRestriction{}
 
 // EcRestriction struct for EcRestriction
 type EcRestriction struct {
-	AfInstanceId string `json:"afInstanceId"`
-	ReferenceId int32 `json:"referenceId"`
-	PlmnEcInfos []PlmnEcInfo `json:"plmnEcInfos,omitempty"`
+	AfInstanceId string       `json:"afInstanceId"`
+	ReferenceId  int32        `json:"referenceId"`
+	PlmnEcInfos  []PlmnEcInfo `json:"plmnEcInfos,omitempty"`
 	// String uniquely identifying MTC provider information.
 	MtcProviderInformation *string `json:"mtcProviderInformation,omitempty"`
 }
@@ -95,7 +95,7 @@ func (o *EcRestriction) SetReferenceId(v int32) {
 
 // GetPlmnEcInfos returns the PlmnEcInfos field value if set, zero value otherwise.
 func (o *EcRestriction) GetPlmnEcInfos() []PlmnEcInfo {
-	if o == nil || isNil(o.PlmnEcInfos) {
+	if o == nil || IsNil(o.PlmnEcInfos) {
 		var ret []PlmnEcInfo
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *EcRestriction) GetPlmnEcInfos() []PlmnEcInfo {
 // GetPlmnEcInfosOk returns a tuple with the PlmnEcInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcRestriction) GetPlmnEcInfosOk() ([]PlmnEcInfo, bool) {
-	if o == nil || isNil(o.PlmnEcInfos) {
+	if o == nil || IsNil(o.PlmnEcInfos) {
 		return nil, false
 	}
 	return o.PlmnEcInfos, true
@@ -113,7 +113,7 @@ func (o *EcRestriction) GetPlmnEcInfosOk() ([]PlmnEcInfo, bool) {
 
 // HasPlmnEcInfos returns a boolean if a field has been set.
 func (o *EcRestriction) HasPlmnEcInfos() bool {
-	if o != nil && !isNil(o.PlmnEcInfos) {
+	if o != nil && !IsNil(o.PlmnEcInfos) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *EcRestriction) SetPlmnEcInfos(v []PlmnEcInfo) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *EcRestriction) GetMtcProviderInformation() string {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *EcRestriction) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcRestriction) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || isNil(o.MtcProviderInformation) {
+	if o == nil || IsNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -145,7 +145,7 @@ func (o *EcRestriction) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *EcRestriction) HasMtcProviderInformation() bool {
-	if o != nil && !isNil(o.MtcProviderInformation) {
+	if o != nil && !IsNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *EcRestriction) SetMtcProviderInformation(v string) {
 }
 
 func (o EcRestriction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,10 +169,10 @@ func (o EcRestriction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afInstanceId"] = o.AfInstanceId
 	toSerialize["referenceId"] = o.ReferenceId
-	if !isNil(o.PlmnEcInfos) {
+	if !IsNil(o.PlmnEcInfos) {
 		toSerialize["plmnEcInfos"] = o.PlmnEcInfos
 	}
-	if !isNil(o.MtcProviderInformation) {
+	if !IsNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil
@@ -213,5 +213,3 @@ func (v *NullableEcRestriction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

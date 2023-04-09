@@ -20,9 +20,9 @@ var _ MappedNullable = &NodeFilter{}
 // NodeFilter struct for NodeFilter
 type NodeFilter struct {
 	AreaOfInterest *AreaOfInterest `json:"areaOfInterest,omitempty"`
-	NetworkDomain *string `json:"networkDomain,omitempty"`
-	CpUpType *string `json:"cpUpType,omitempty"`
-	Sst *int32 `json:"sst,omitempty"`
+	NetworkDomain  *string         `json:"networkDomain,omitempty"`
+	CpUpType       *string         `json:"cpUpType,omitempty"`
+	Sst            *int32          `json:"sst,omitempty"`
 }
 
 // NewNodeFilter instantiates a new NodeFilter object
@@ -44,7 +44,7 @@ func NewNodeFilterWithDefaults() *NodeFilter {
 
 // GetAreaOfInterest returns the AreaOfInterest field value if set, zero value otherwise.
 func (o *NodeFilter) GetAreaOfInterest() AreaOfInterest {
-	if o == nil || isNil(o.AreaOfInterest) {
+	if o == nil || IsNil(o.AreaOfInterest) {
 		var ret AreaOfInterest
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *NodeFilter) GetAreaOfInterest() AreaOfInterest {
 // GetAreaOfInterestOk returns a tuple with the AreaOfInterest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NodeFilter) GetAreaOfInterestOk() (*AreaOfInterest, bool) {
-	if o == nil || isNil(o.AreaOfInterest) {
+	if o == nil || IsNil(o.AreaOfInterest) {
 		return nil, false
 	}
 	return o.AreaOfInterest, true
@@ -62,7 +62,7 @@ func (o *NodeFilter) GetAreaOfInterestOk() (*AreaOfInterest, bool) {
 
 // HasAreaOfInterest returns a boolean if a field has been set.
 func (o *NodeFilter) HasAreaOfInterest() bool {
-	if o != nil && !isNil(o.AreaOfInterest) {
+	if o != nil && !IsNil(o.AreaOfInterest) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *NodeFilter) SetAreaOfInterest(v AreaOfInterest) {
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
 func (o *NodeFilter) GetNetworkDomain() string {
-	if o == nil || isNil(o.NetworkDomain) {
+	if o == nil || IsNil(o.NetworkDomain) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NodeFilter) GetNetworkDomain() string {
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NodeFilter) GetNetworkDomainOk() (*string, bool) {
-	if o == nil || isNil(o.NetworkDomain) {
+	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
 	return o.NetworkDomain, true
@@ -94,7 +94,7 @@ func (o *NodeFilter) GetNetworkDomainOk() (*string, bool) {
 
 // HasNetworkDomain returns a boolean if a field has been set.
 func (o *NodeFilter) HasNetworkDomain() bool {
-	if o != nil && !isNil(o.NetworkDomain) {
+	if o != nil && !IsNil(o.NetworkDomain) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *NodeFilter) SetNetworkDomain(v string) {
 
 // GetCpUpType returns the CpUpType field value if set, zero value otherwise.
 func (o *NodeFilter) GetCpUpType() string {
-	if o == nil || isNil(o.CpUpType) {
+	if o == nil || IsNil(o.CpUpType) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *NodeFilter) GetCpUpType() string {
 // GetCpUpTypeOk returns a tuple with the CpUpType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NodeFilter) GetCpUpTypeOk() (*string, bool) {
-	if o == nil || isNil(o.CpUpType) {
+	if o == nil || IsNil(o.CpUpType) {
 		return nil, false
 	}
 	return o.CpUpType, true
@@ -126,7 +126,7 @@ func (o *NodeFilter) GetCpUpTypeOk() (*string, bool) {
 
 // HasCpUpType returns a boolean if a field has been set.
 func (o *NodeFilter) HasCpUpType() bool {
-	if o != nil && !isNil(o.CpUpType) {
+	if o != nil && !IsNil(o.CpUpType) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *NodeFilter) SetCpUpType(v string) {
 
 // GetSst returns the Sst field value if set, zero value otherwise.
 func (o *NodeFilter) GetSst() int32 {
-	if o == nil || isNil(o.Sst) {
+	if o == nil || IsNil(o.Sst) {
 		var ret int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *NodeFilter) GetSst() int32 {
 // GetSstOk returns a tuple with the Sst field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NodeFilter) GetSstOk() (*int32, bool) {
-	if o == nil || isNil(o.Sst) {
+	if o == nil || IsNil(o.Sst) {
 		return nil, false
 	}
 	return o.Sst, true
@@ -158,7 +158,7 @@ func (o *NodeFilter) GetSstOk() (*int32, bool) {
 
 // HasSst returns a boolean if a field has been set.
 func (o *NodeFilter) HasSst() bool {
-	if o != nil && !isNil(o.Sst) {
+	if o != nil && !IsNil(o.Sst) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NodeFilter) SetSst(v int32) {
 }
 
 func (o NodeFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o NodeFilter) MarshalJSON() ([]byte, error) {
 
 func (o NodeFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AreaOfInterest) {
+	if !IsNil(o.AreaOfInterest) {
 		toSerialize["areaOfInterest"] = o.AreaOfInterest
 	}
-	if !isNil(o.NetworkDomain) {
+	if !IsNil(o.NetworkDomain) {
 		toSerialize["networkDomain"] = o.NetworkDomain
 	}
-	if !isNil(o.CpUpType) {
+	if !IsNil(o.CpUpType) {
 		toSerialize["cpUpType"] = o.CpUpType
 	}
-	if !isNil(o.Sst) {
+	if !IsNil(o.Sst) {
 		toSerialize["sst"] = o.Sst
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableNodeFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

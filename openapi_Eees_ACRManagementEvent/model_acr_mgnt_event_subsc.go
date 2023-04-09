@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &AcrMgntEventSubsc{}
 
 // AcrMgntEventSubsc Represents an ACR Management Event Subscription.
 type AcrMgntEventSubsc struct {
-	Event AcrMgntEvent `json:"event"`
-	EventFilter *AcrMgntEventFilter `json:"eventFilter,omitempty"`
-	EvtReq *ReportingInformation `json:"evtReq,omitempty"`
-	TgtUeId *TargetUeIdentification `json:"tgtUeId,omitempty"`
-	DnaiChgType *DnaiChangeType `json:"dnaiChgType,omitempty"`
-	// Identifies whether EAS acknowledgement of UP path change event notifications is to be expected. Set to \"true\" if the EAS acknowledgement is expected. Default value is \"false\". This attribute may be provided only if the \"event\" attribute is set to \"UP_PATH_CHG\". 
+	Event       AcrMgntEvent            `json:"event"`
+	EventFilter *AcrMgntEventFilter     `json:"eventFilter,omitempty"`
+	EvtReq      *ReportingInformation   `json:"evtReq,omitempty"`
+	TgtUeId     *TargetUeIdentification `json:"tgtUeId,omitempty"`
+	DnaiChgType *DnaiChangeType         `json:"dnaiChgType,omitempty"`
+	// Identifies whether EAS acknowledgement of UP path change event notifications is to be expected. Set to \"true\" if the EAS acknowledgement is expected. Default value is \"false\". This attribute may be provided only if the \"event\" attribute is set to \"UP_PATH_CHG\".
 	EasAckInd *bool `json:"easAckInd,omitempty"`
 	// A list of EAS characteristics.
 	EasChars []EasCharacteristics `json:"easChars,omitempty"`
@@ -74,7 +74,7 @@ func (o *AcrMgntEventSubsc) SetEvent(v AcrMgntEvent) {
 
 // GetEventFilter returns the EventFilter field value if set, zero value otherwise.
 func (o *AcrMgntEventSubsc) GetEventFilter() AcrMgntEventFilter {
-	if o == nil || isNil(o.EventFilter) {
+	if o == nil || IsNil(o.EventFilter) {
 		var ret AcrMgntEventFilter
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AcrMgntEventSubsc) GetEventFilter() AcrMgntEventFilter {
 // GetEventFilterOk returns a tuple with the EventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventSubsc) GetEventFilterOk() (*AcrMgntEventFilter, bool) {
-	if o == nil || isNil(o.EventFilter) {
+	if o == nil || IsNil(o.EventFilter) {
 		return nil, false
 	}
 	return o.EventFilter, true
@@ -92,7 +92,7 @@ func (o *AcrMgntEventSubsc) GetEventFilterOk() (*AcrMgntEventFilter, bool) {
 
 // HasEventFilter returns a boolean if a field has been set.
 func (o *AcrMgntEventSubsc) HasEventFilter() bool {
-	if o != nil && !isNil(o.EventFilter) {
+	if o != nil && !IsNil(o.EventFilter) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AcrMgntEventSubsc) SetEventFilter(v AcrMgntEventFilter) {
 
 // GetEvtReq returns the EvtReq field value if set, zero value otherwise.
 func (o *AcrMgntEventSubsc) GetEvtReq() ReportingInformation {
-	if o == nil || isNil(o.EvtReq) {
+	if o == nil || IsNil(o.EvtReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *AcrMgntEventSubsc) GetEvtReq() ReportingInformation {
 // GetEvtReqOk returns a tuple with the EvtReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventSubsc) GetEvtReqOk() (*ReportingInformation, bool) {
-	if o == nil || isNil(o.EvtReq) {
+	if o == nil || IsNil(o.EvtReq) {
 		return nil, false
 	}
 	return o.EvtReq, true
@@ -124,7 +124,7 @@ func (o *AcrMgntEventSubsc) GetEvtReqOk() (*ReportingInformation, bool) {
 
 // HasEvtReq returns a boolean if a field has been set.
 func (o *AcrMgntEventSubsc) HasEvtReq() bool {
-	if o != nil && !isNil(o.EvtReq) {
+	if o != nil && !IsNil(o.EvtReq) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AcrMgntEventSubsc) SetEvtReq(v ReportingInformation) {
 
 // GetTgtUeId returns the TgtUeId field value if set, zero value otherwise.
 func (o *AcrMgntEventSubsc) GetTgtUeId() TargetUeIdentification {
-	if o == nil || isNil(o.TgtUeId) {
+	if o == nil || IsNil(o.TgtUeId) {
 		var ret TargetUeIdentification
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *AcrMgntEventSubsc) GetTgtUeId() TargetUeIdentification {
 // GetTgtUeIdOk returns a tuple with the TgtUeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventSubsc) GetTgtUeIdOk() (*TargetUeIdentification, bool) {
-	if o == nil || isNil(o.TgtUeId) {
+	if o == nil || IsNil(o.TgtUeId) {
 		return nil, false
 	}
 	return o.TgtUeId, true
@@ -156,7 +156,7 @@ func (o *AcrMgntEventSubsc) GetTgtUeIdOk() (*TargetUeIdentification, bool) {
 
 // HasTgtUeId returns a boolean if a field has been set.
 func (o *AcrMgntEventSubsc) HasTgtUeId() bool {
-	if o != nil && !isNil(o.TgtUeId) {
+	if o != nil && !IsNil(o.TgtUeId) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *AcrMgntEventSubsc) SetTgtUeId(v TargetUeIdentification) {
 
 // GetDnaiChgType returns the DnaiChgType field value if set, zero value otherwise.
 func (o *AcrMgntEventSubsc) GetDnaiChgType() DnaiChangeType {
-	if o == nil || isNil(o.DnaiChgType) {
+	if o == nil || IsNil(o.DnaiChgType) {
 		var ret DnaiChangeType
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *AcrMgntEventSubsc) GetDnaiChgType() DnaiChangeType {
 // GetDnaiChgTypeOk returns a tuple with the DnaiChgType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventSubsc) GetDnaiChgTypeOk() (*DnaiChangeType, bool) {
-	if o == nil || isNil(o.DnaiChgType) {
+	if o == nil || IsNil(o.DnaiChgType) {
 		return nil, false
 	}
 	return o.DnaiChgType, true
@@ -188,7 +188,7 @@ func (o *AcrMgntEventSubsc) GetDnaiChgTypeOk() (*DnaiChangeType, bool) {
 
 // HasDnaiChgType returns a boolean if a field has been set.
 func (o *AcrMgntEventSubsc) HasDnaiChgType() bool {
-	if o != nil && !isNil(o.DnaiChgType) {
+	if o != nil && !IsNil(o.DnaiChgType) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *AcrMgntEventSubsc) SetDnaiChgType(v DnaiChangeType) {
 
 // GetEasAckInd returns the EasAckInd field value if set, zero value otherwise.
 func (o *AcrMgntEventSubsc) GetEasAckInd() bool {
-	if o == nil || isNil(o.EasAckInd) {
+	if o == nil || IsNil(o.EasAckInd) {
 		var ret bool
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *AcrMgntEventSubsc) GetEasAckInd() bool {
 // GetEasAckIndOk returns a tuple with the EasAckInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventSubsc) GetEasAckIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EasAckInd) {
+	if o == nil || IsNil(o.EasAckInd) {
 		return nil, false
 	}
 	return o.EasAckInd, true
@@ -220,7 +220,7 @@ func (o *AcrMgntEventSubsc) GetEasAckIndOk() (*bool, bool) {
 
 // HasEasAckInd returns a boolean if a field has been set.
 func (o *AcrMgntEventSubsc) HasEasAckInd() bool {
-	if o != nil && !isNil(o.EasAckInd) {
+	if o != nil && !IsNil(o.EasAckInd) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *AcrMgntEventSubsc) SetEasAckInd(v bool) {
 
 // GetEasChars returns the EasChars field value if set, zero value otherwise.
 func (o *AcrMgntEventSubsc) GetEasChars() []EasCharacteristics {
-	if o == nil || isNil(o.EasChars) {
+	if o == nil || IsNil(o.EasChars) {
 		var ret []EasCharacteristics
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *AcrMgntEventSubsc) GetEasChars() []EasCharacteristics {
 // GetEasCharsOk returns a tuple with the EasChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventSubsc) GetEasCharsOk() ([]EasCharacteristics, bool) {
-	if o == nil || isNil(o.EasChars) {
+	if o == nil || IsNil(o.EasChars) {
 		return nil, false
 	}
 	return o.EasChars, true
@@ -252,7 +252,7 @@ func (o *AcrMgntEventSubsc) GetEasCharsOk() ([]EasCharacteristics, bool) {
 
 // HasEasChars returns a boolean if a field has been set.
 func (o *AcrMgntEventSubsc) HasEasChars() bool {
-	if o != nil && !isNil(o.EasChars) {
+	if o != nil && !IsNil(o.EasChars) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *AcrMgntEventSubsc) SetEasChars(v []EasCharacteristics) {
 }
 
 func (o AcrMgntEventSubsc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,22 +275,22 @@ func (o AcrMgntEventSubsc) MarshalJSON() ([]byte, error) {
 func (o AcrMgntEventSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.EventFilter) {
+	if !IsNil(o.EventFilter) {
 		toSerialize["eventFilter"] = o.EventFilter
 	}
-	if !isNil(o.EvtReq) {
+	if !IsNil(o.EvtReq) {
 		toSerialize["evtReq"] = o.EvtReq
 	}
-	if !isNil(o.TgtUeId) {
+	if !IsNil(o.TgtUeId) {
 		toSerialize["tgtUeId"] = o.TgtUeId
 	}
-	if !isNil(o.DnaiChgType) {
+	if !IsNil(o.DnaiChgType) {
 		toSerialize["dnaiChgType"] = o.DnaiChgType
 	}
-	if !isNil(o.EasAckInd) {
+	if !IsNil(o.EasAckInd) {
 		toSerialize["easAckInd"] = o.EasAckInd
 	}
-	if !isNil(o.EasChars) {
+	if !IsNil(o.EasChars) {
 		toSerialize["easChars"] = o.EasChars
 	}
 	return toSerialize, nil
@@ -331,5 +331,3 @@ func (v *NullableAcrMgntEventSubsc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

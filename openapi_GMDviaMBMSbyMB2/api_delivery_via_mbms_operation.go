@@ -1,7 +1,7 @@
 /*
 GMDviaMBMSbyMB2
 
-API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Group Message Delivery via MBMS by MB2   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -13,21 +13,20 @@ package openapi_GMDviaMBMSbyMB2
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DeliveryViaMBMSOperationApiService DeliveryViaMBMSOperationApi service
 type DeliveryViaMBMSOperationApiService service
 
 type ApiCreateGMDViaMBMSByMB2Request struct {
-	ctx context.Context
-	ApiService *DeliveryViaMBMSOperationApiService
-	scsAsId string
-	tmgi string
+	ctx             context.Context
+	ApiService      *DeliveryViaMBMSOperationApiService
+	scsAsId         string
+	tmgi            string
 	gMDViaMBMSByMb2 *GMDViaMBMSByMb2
 }
 
@@ -44,28 +43,29 @@ func (r ApiCreateGMDViaMBMSByMB2Request) Execute() (*GMDViaMBMSByMb2, *http.Resp
 /*
 CreateGMDViaMBMSByMB2 Creates a new delivery via MBMS for a given SCS/AS and a TMGI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param tmgi TMGI
- @return ApiCreateGMDViaMBMSByMB2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param tmgi TMGI
+	@return ApiCreateGMDViaMBMSByMB2Request
 */
 func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2(ctx context.Context, scsAsId string, tmgi string) ApiCreateGMDViaMBMSByMB2Request {
 	return ApiCreateGMDViaMBMSByMB2Request{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		tmgi: tmgi,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		tmgi:       tmgi,
 	}
 }
 
 // Execute executes the request
-//  @return GMDViaMBMSByMb2
+//
+//	@return GMDViaMBMSByMb2
 func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiCreateGMDViaMBMSByMB2Request) (*GMDViaMBMSByMb2, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GMDViaMBMSByMb2
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GMDViaMBMSByMb2
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryViaMBMSOperationApiService.CreateGMDViaMBMSByMB2")
@@ -113,9 +113,9 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -132,8 +132,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -143,8 +143,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -154,8 +154,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -165,8 +165,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -176,8 +176,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -187,8 +187,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -198,8 +198,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -209,8 +209,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -220,8 +220,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -231,8 +231,8 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -251,10 +251,10 @@ func (a *DeliveryViaMBMSOperationApiService) CreateGMDViaMBMSByMB2Execute(r ApiC
 }
 
 type ApiFecthAllGMDViaMBMSByMB2Request struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DeliveryViaMBMSOperationApiService
-	scsAsId string
-	tmgi string
+	scsAsId    string
+	tmgi       string
 }
 
 func (r ApiFecthAllGMDViaMBMSByMB2Request) Execute() (*GMDViaMBMSByMb2, *http.Response, error) {
@@ -264,28 +264,29 @@ func (r ApiFecthAllGMDViaMBMSByMB2Request) Execute() (*GMDViaMBMSByMb2, *http.Re
 /*
 FecthAllGMDViaMBMSByMB2 Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scsAsId Identifier of SCS/AS
- @param tmgi TMGI
- @return ApiFecthAllGMDViaMBMSByMB2Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scsAsId Identifier of SCS/AS
+	@param tmgi TMGI
+	@return ApiFecthAllGMDViaMBMSByMB2Request
 */
 func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2(ctx context.Context, scsAsId string, tmgi string) ApiFecthAllGMDViaMBMSByMB2Request {
 	return ApiFecthAllGMDViaMBMSByMB2Request{
 		ApiService: a,
-		ctx: ctx,
-		scsAsId: scsAsId,
-		tmgi: tmgi,
+		ctx:        ctx,
+		scsAsId:    scsAsId,
+		tmgi:       tmgi,
 	}
 }
 
 // Execute executes the request
-//  @return GMDViaMBMSByMb2
+//
+//	@return GMDViaMBMSByMb2
 func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r ApiFecthAllGMDViaMBMSByMB2Request) (*GMDViaMBMSByMb2, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GMDViaMBMSByMb2
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GMDViaMBMSByMb2
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryViaMBMSOperationApiService.FecthAllGMDViaMBMSByMB2")
@@ -328,9 +329,9 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -347,8 +348,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -358,8 +359,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -369,8 +370,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -380,8 +381,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -391,8 +392,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -402,8 +403,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -413,8 +414,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -424,8 +425,8 @@ func (a *DeliveryViaMBMSOperationApiService) FecthAllGMDViaMBMSByMB2Execute(r Ap
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

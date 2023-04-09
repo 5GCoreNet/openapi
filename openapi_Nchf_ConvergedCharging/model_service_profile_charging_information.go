@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,22 +19,22 @@ var _ MappedNullable = &ServiceProfileChargingInformation{}
 
 // ServiceProfileChargingInformation struct for ServiceProfileChargingInformation
 type ServiceProfileChargingInformation struct {
-	ServiceProfileIdentifier *string `json:"serviceProfileIdentifier,omitempty"`
-	SNSSAIList []Snssai `json:"sNSSAIList,omitempty"`
-	Latency *int32 `json:"latency,omitempty"`
-	Availability *float32 `json:"availability,omitempty"`
-	Jitter *int32 `json:"jitter,omitempty"`
-	Reliability *string `json:"reliability,omitempty"`
-	MaxNumberofUEs *int32 `json:"maxNumberofUEs,omitempty"`
-	CoverageArea *string `json:"coverageArea,omitempty"`
-	DLThptPerSlice *Throughput `json:"dLThptPerSlice,omitempty"`
-	DLThptPerUE *Throughput `json:"dLThptPerUE,omitempty"`
-	ULThptPerSlice *Throughput `json:"uLThptPerSlice,omitempty"`
-	ULThptPerUE *Throughput `json:"uLThptPerUE,omitempty"`
-	MaxNumberofPDUsessions *int32 `json:"maxNumberofPDUsessions,omitempty"`
-	KPIMonitoringList *string `json:"kPIMonitoringList,omitempty"`
-	SupportedAccessTechnology *int32 `json:"supportedAccessTechnology,omitempty"`
-	AddServiceProfileInfo *string `json:"addServiceProfileInfo,omitempty"`
+	ServiceProfileIdentifier  *string     `json:"serviceProfileIdentifier,omitempty"`
+	SNSSAIList                []Snssai    `json:"sNSSAIList,omitempty"`
+	Latency                   *int32      `json:"latency,omitempty"`
+	Availability              *float32    `json:"availability,omitempty"`
+	Jitter                    *int32      `json:"jitter,omitempty"`
+	Reliability               *string     `json:"reliability,omitempty"`
+	MaxNumberofUEs            *int32      `json:"maxNumberofUEs,omitempty"`
+	CoverageArea              *string     `json:"coverageArea,omitempty"`
+	DLThptPerSlice            *Throughput `json:"dLThptPerSlice,omitempty"`
+	DLThptPerUE               *Throughput `json:"dLThptPerUE,omitempty"`
+	ULThptPerSlice            *Throughput `json:"uLThptPerSlice,omitempty"`
+	ULThptPerUE               *Throughput `json:"uLThptPerUE,omitempty"`
+	MaxNumberofPDUsessions    *int32      `json:"maxNumberofPDUsessions,omitempty"`
+	KPIMonitoringList         *string     `json:"kPIMonitoringList,omitempty"`
+	SupportedAccessTechnology *int32      `json:"supportedAccessTechnology,omitempty"`
+	AddServiceProfileInfo     *string     `json:"addServiceProfileInfo,omitempty"`
 }
 
 // NewServiceProfileChargingInformation instantiates a new ServiceProfileChargingInformation object
@@ -56,7 +56,7 @@ func NewServiceProfileChargingInformationWithDefaults() *ServiceProfileChargingI
 
 // GetServiceProfileIdentifier returns the ServiceProfileIdentifier field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetServiceProfileIdentifier() string {
-	if o == nil || isNil(o.ServiceProfileIdentifier) {
+	if o == nil || IsNil(o.ServiceProfileIdentifier) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ServiceProfileChargingInformation) GetServiceProfileIdentifier() string
 // GetServiceProfileIdentifierOk returns a tuple with the ServiceProfileIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetServiceProfileIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.ServiceProfileIdentifier) {
+	if o == nil || IsNil(o.ServiceProfileIdentifier) {
 		return nil, false
 	}
 	return o.ServiceProfileIdentifier, true
@@ -74,7 +74,7 @@ func (o *ServiceProfileChargingInformation) GetServiceProfileIdentifierOk() (*st
 
 // HasServiceProfileIdentifier returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasServiceProfileIdentifier() bool {
-	if o != nil && !isNil(o.ServiceProfileIdentifier) {
+	if o != nil && !IsNil(o.ServiceProfileIdentifier) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ServiceProfileChargingInformation) SetServiceProfileIdentifier(v string
 
 // GetSNSSAIList returns the SNSSAIList field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetSNSSAIList() []Snssai {
-	if o == nil || isNil(o.SNSSAIList) {
+	if o == nil || IsNil(o.SNSSAIList) {
 		var ret []Snssai
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ServiceProfileChargingInformation) GetSNSSAIList() []Snssai {
 // GetSNSSAIListOk returns a tuple with the SNSSAIList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetSNSSAIListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SNSSAIList) {
+	if o == nil || IsNil(o.SNSSAIList) {
 		return nil, false
 	}
 	return o.SNSSAIList, true
@@ -106,7 +106,7 @@ func (o *ServiceProfileChargingInformation) GetSNSSAIListOk() ([]Snssai, bool) {
 
 // HasSNSSAIList returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasSNSSAIList() bool {
-	if o != nil && !isNil(o.SNSSAIList) {
+	if o != nil && !IsNil(o.SNSSAIList) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ServiceProfileChargingInformation) SetSNSSAIList(v []Snssai) {
 
 // GetLatency returns the Latency field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetLatency() int32 {
-	if o == nil || isNil(o.Latency) {
+	if o == nil || IsNil(o.Latency) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ServiceProfileChargingInformation) GetLatency() int32 {
 // GetLatencyOk returns a tuple with the Latency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetLatencyOk() (*int32, bool) {
-	if o == nil || isNil(o.Latency) {
+	if o == nil || IsNil(o.Latency) {
 		return nil, false
 	}
 	return o.Latency, true
@@ -138,7 +138,7 @@ func (o *ServiceProfileChargingInformation) GetLatencyOk() (*int32, bool) {
 
 // HasLatency returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasLatency() bool {
-	if o != nil && !isNil(o.Latency) {
+	if o != nil && !IsNil(o.Latency) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ServiceProfileChargingInformation) SetLatency(v int32) {
 
 // GetAvailability returns the Availability field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetAvailability() float32 {
-	if o == nil || isNil(o.Availability) {
+	if o == nil || IsNil(o.Availability) {
 		var ret float32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ServiceProfileChargingInformation) GetAvailability() float32 {
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetAvailabilityOk() (*float32, bool) {
-	if o == nil || isNil(o.Availability) {
+	if o == nil || IsNil(o.Availability) {
 		return nil, false
 	}
 	return o.Availability, true
@@ -170,7 +170,7 @@ func (o *ServiceProfileChargingInformation) GetAvailabilityOk() (*float32, bool)
 
 // HasAvailability returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasAvailability() bool {
-	if o != nil && !isNil(o.Availability) {
+	if o != nil && !IsNil(o.Availability) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ServiceProfileChargingInformation) SetAvailability(v float32) {
 
 // GetJitter returns the Jitter field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetJitter() int32 {
-	if o == nil || isNil(o.Jitter) {
+	if o == nil || IsNil(o.Jitter) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ServiceProfileChargingInformation) GetJitter() int32 {
 // GetJitterOk returns a tuple with the Jitter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetJitterOk() (*int32, bool) {
-	if o == nil || isNil(o.Jitter) {
+	if o == nil || IsNil(o.Jitter) {
 		return nil, false
 	}
 	return o.Jitter, true
@@ -202,7 +202,7 @@ func (o *ServiceProfileChargingInformation) GetJitterOk() (*int32, bool) {
 
 // HasJitter returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasJitter() bool {
-	if o != nil && !isNil(o.Jitter) {
+	if o != nil && !IsNil(o.Jitter) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ServiceProfileChargingInformation) SetJitter(v int32) {
 
 // GetReliability returns the Reliability field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetReliability() string {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ServiceProfileChargingInformation) GetReliability() string {
 // GetReliabilityOk returns a tuple with the Reliability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetReliabilityOk() (*string, bool) {
-	if o == nil || isNil(o.Reliability) {
+	if o == nil || IsNil(o.Reliability) {
 		return nil, false
 	}
 	return o.Reliability, true
@@ -234,7 +234,7 @@ func (o *ServiceProfileChargingInformation) GetReliabilityOk() (*string, bool) {
 
 // HasReliability returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasReliability() bool {
-	if o != nil && !isNil(o.Reliability) {
+	if o != nil && !IsNil(o.Reliability) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ServiceProfileChargingInformation) SetReliability(v string) {
 
 // GetMaxNumberofUEs returns the MaxNumberofUEs field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetMaxNumberofUEs() int32 {
-	if o == nil || isNil(o.MaxNumberofUEs) {
+	if o == nil || IsNil(o.MaxNumberofUEs) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ServiceProfileChargingInformation) GetMaxNumberofUEs() int32 {
 // GetMaxNumberofUEsOk returns a tuple with the MaxNumberofUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetMaxNumberofUEsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumberofUEs) {
+	if o == nil || IsNil(o.MaxNumberofUEs) {
 		return nil, false
 	}
 	return o.MaxNumberofUEs, true
@@ -266,7 +266,7 @@ func (o *ServiceProfileChargingInformation) GetMaxNumberofUEsOk() (*int32, bool)
 
 // HasMaxNumberofUEs returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasMaxNumberofUEs() bool {
-	if o != nil && !isNil(o.MaxNumberofUEs) {
+	if o != nil && !IsNil(o.MaxNumberofUEs) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ServiceProfileChargingInformation) SetMaxNumberofUEs(v int32) {
 
 // GetCoverageArea returns the CoverageArea field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetCoverageArea() string {
-	if o == nil || isNil(o.CoverageArea) {
+	if o == nil || IsNil(o.CoverageArea) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ServiceProfileChargingInformation) GetCoverageArea() string {
 // GetCoverageAreaOk returns a tuple with the CoverageArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetCoverageAreaOk() (*string, bool) {
-	if o == nil || isNil(o.CoverageArea) {
+	if o == nil || IsNil(o.CoverageArea) {
 		return nil, false
 	}
 	return o.CoverageArea, true
@@ -298,7 +298,7 @@ func (o *ServiceProfileChargingInformation) GetCoverageAreaOk() (*string, bool) 
 
 // HasCoverageArea returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasCoverageArea() bool {
-	if o != nil && !isNil(o.CoverageArea) {
+	if o != nil && !IsNil(o.CoverageArea) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *ServiceProfileChargingInformation) SetCoverageArea(v string) {
 
 // GetDLThptPerSlice returns the DLThptPerSlice field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetDLThptPerSlice() Throughput {
-	if o == nil || isNil(o.DLThptPerSlice) {
+	if o == nil || IsNil(o.DLThptPerSlice) {
 		var ret Throughput
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *ServiceProfileChargingInformation) GetDLThptPerSlice() Throughput {
 // GetDLThptPerSliceOk returns a tuple with the DLThptPerSlice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetDLThptPerSliceOk() (*Throughput, bool) {
-	if o == nil || isNil(o.DLThptPerSlice) {
+	if o == nil || IsNil(o.DLThptPerSlice) {
 		return nil, false
 	}
 	return o.DLThptPerSlice, true
@@ -330,7 +330,7 @@ func (o *ServiceProfileChargingInformation) GetDLThptPerSliceOk() (*Throughput, 
 
 // HasDLThptPerSlice returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasDLThptPerSlice() bool {
-	if o != nil && !isNil(o.DLThptPerSlice) {
+	if o != nil && !IsNil(o.DLThptPerSlice) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *ServiceProfileChargingInformation) SetDLThptPerSlice(v Throughput) {
 
 // GetDLThptPerUE returns the DLThptPerUE field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetDLThptPerUE() Throughput {
-	if o == nil || isNil(o.DLThptPerUE) {
+	if o == nil || IsNil(o.DLThptPerUE) {
 		var ret Throughput
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *ServiceProfileChargingInformation) GetDLThptPerUE() Throughput {
 // GetDLThptPerUEOk returns a tuple with the DLThptPerUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetDLThptPerUEOk() (*Throughput, bool) {
-	if o == nil || isNil(o.DLThptPerUE) {
+	if o == nil || IsNil(o.DLThptPerUE) {
 		return nil, false
 	}
 	return o.DLThptPerUE, true
@@ -362,7 +362,7 @@ func (o *ServiceProfileChargingInformation) GetDLThptPerUEOk() (*Throughput, boo
 
 // HasDLThptPerUE returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasDLThptPerUE() bool {
-	if o != nil && !isNil(o.DLThptPerUE) {
+	if o != nil && !IsNil(o.DLThptPerUE) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *ServiceProfileChargingInformation) SetDLThptPerUE(v Throughput) {
 
 // GetULThptPerSlice returns the ULThptPerSlice field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetULThptPerSlice() Throughput {
-	if o == nil || isNil(o.ULThptPerSlice) {
+	if o == nil || IsNil(o.ULThptPerSlice) {
 		var ret Throughput
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *ServiceProfileChargingInformation) GetULThptPerSlice() Throughput {
 // GetULThptPerSliceOk returns a tuple with the ULThptPerSlice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetULThptPerSliceOk() (*Throughput, bool) {
-	if o == nil || isNil(o.ULThptPerSlice) {
+	if o == nil || IsNil(o.ULThptPerSlice) {
 		return nil, false
 	}
 	return o.ULThptPerSlice, true
@@ -394,7 +394,7 @@ func (o *ServiceProfileChargingInformation) GetULThptPerSliceOk() (*Throughput, 
 
 // HasULThptPerSlice returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasULThptPerSlice() bool {
-	if o != nil && !isNil(o.ULThptPerSlice) {
+	if o != nil && !IsNil(o.ULThptPerSlice) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *ServiceProfileChargingInformation) SetULThptPerSlice(v Throughput) {
 
 // GetULThptPerUE returns the ULThptPerUE field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetULThptPerUE() Throughput {
-	if o == nil || isNil(o.ULThptPerUE) {
+	if o == nil || IsNil(o.ULThptPerUE) {
 		var ret Throughput
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *ServiceProfileChargingInformation) GetULThptPerUE() Throughput {
 // GetULThptPerUEOk returns a tuple with the ULThptPerUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetULThptPerUEOk() (*Throughput, bool) {
-	if o == nil || isNil(o.ULThptPerUE) {
+	if o == nil || IsNil(o.ULThptPerUE) {
 		return nil, false
 	}
 	return o.ULThptPerUE, true
@@ -426,7 +426,7 @@ func (o *ServiceProfileChargingInformation) GetULThptPerUEOk() (*Throughput, boo
 
 // HasULThptPerUE returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasULThptPerUE() bool {
-	if o != nil && !isNil(o.ULThptPerUE) {
+	if o != nil && !IsNil(o.ULThptPerUE) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *ServiceProfileChargingInformation) SetULThptPerUE(v Throughput) {
 
 // GetMaxNumberofPDUsessions returns the MaxNumberofPDUsessions field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetMaxNumberofPDUsessions() int32 {
-	if o == nil || isNil(o.MaxNumberofPDUsessions) {
+	if o == nil || IsNil(o.MaxNumberofPDUsessions) {
 		var ret int32
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *ServiceProfileChargingInformation) GetMaxNumberofPDUsessions() int32 {
 // GetMaxNumberofPDUsessionsOk returns a tuple with the MaxNumberofPDUsessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetMaxNumberofPDUsessionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxNumberofPDUsessions) {
+	if o == nil || IsNil(o.MaxNumberofPDUsessions) {
 		return nil, false
 	}
 	return o.MaxNumberofPDUsessions, true
@@ -458,7 +458,7 @@ func (o *ServiceProfileChargingInformation) GetMaxNumberofPDUsessionsOk() (*int3
 
 // HasMaxNumberofPDUsessions returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasMaxNumberofPDUsessions() bool {
-	if o != nil && !isNil(o.MaxNumberofPDUsessions) {
+	if o != nil && !IsNil(o.MaxNumberofPDUsessions) {
 		return true
 	}
 
@@ -472,7 +472,7 @@ func (o *ServiceProfileChargingInformation) SetMaxNumberofPDUsessions(v int32) {
 
 // GetKPIMonitoringList returns the KPIMonitoringList field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetKPIMonitoringList() string {
-	if o == nil || isNil(o.KPIMonitoringList) {
+	if o == nil || IsNil(o.KPIMonitoringList) {
 		var ret string
 		return ret
 	}
@@ -482,7 +482,7 @@ func (o *ServiceProfileChargingInformation) GetKPIMonitoringList() string {
 // GetKPIMonitoringListOk returns a tuple with the KPIMonitoringList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetKPIMonitoringListOk() (*string, bool) {
-	if o == nil || isNil(o.KPIMonitoringList) {
+	if o == nil || IsNil(o.KPIMonitoringList) {
 		return nil, false
 	}
 	return o.KPIMonitoringList, true
@@ -490,7 +490,7 @@ func (o *ServiceProfileChargingInformation) GetKPIMonitoringListOk() (*string, b
 
 // HasKPIMonitoringList returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasKPIMonitoringList() bool {
-	if o != nil && !isNil(o.KPIMonitoringList) {
+	if o != nil && !IsNil(o.KPIMonitoringList) {
 		return true
 	}
 
@@ -504,7 +504,7 @@ func (o *ServiceProfileChargingInformation) SetKPIMonitoringList(v string) {
 
 // GetSupportedAccessTechnology returns the SupportedAccessTechnology field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetSupportedAccessTechnology() int32 {
-	if o == nil || isNil(o.SupportedAccessTechnology) {
+	if o == nil || IsNil(o.SupportedAccessTechnology) {
 		var ret int32
 		return ret
 	}
@@ -514,7 +514,7 @@ func (o *ServiceProfileChargingInformation) GetSupportedAccessTechnology() int32
 // GetSupportedAccessTechnologyOk returns a tuple with the SupportedAccessTechnology field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetSupportedAccessTechnologyOk() (*int32, bool) {
-	if o == nil || isNil(o.SupportedAccessTechnology) {
+	if o == nil || IsNil(o.SupportedAccessTechnology) {
 		return nil, false
 	}
 	return o.SupportedAccessTechnology, true
@@ -522,7 +522,7 @@ func (o *ServiceProfileChargingInformation) GetSupportedAccessTechnologyOk() (*i
 
 // HasSupportedAccessTechnology returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasSupportedAccessTechnology() bool {
-	if o != nil && !isNil(o.SupportedAccessTechnology) {
+	if o != nil && !IsNil(o.SupportedAccessTechnology) {
 		return true
 	}
 
@@ -536,7 +536,7 @@ func (o *ServiceProfileChargingInformation) SetSupportedAccessTechnology(v int32
 
 // GetAddServiceProfileInfo returns the AddServiceProfileInfo field value if set, zero value otherwise.
 func (o *ServiceProfileChargingInformation) GetAddServiceProfileInfo() string {
-	if o == nil || isNil(o.AddServiceProfileInfo) {
+	if o == nil || IsNil(o.AddServiceProfileInfo) {
 		var ret string
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *ServiceProfileChargingInformation) GetAddServiceProfileInfo() string {
 // GetAddServiceProfileInfoOk returns a tuple with the AddServiceProfileInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceProfileChargingInformation) GetAddServiceProfileInfoOk() (*string, bool) {
-	if o == nil || isNil(o.AddServiceProfileInfo) {
+	if o == nil || IsNil(o.AddServiceProfileInfo) {
 		return nil, false
 	}
 	return o.AddServiceProfileInfo, true
@@ -554,7 +554,7 @@ func (o *ServiceProfileChargingInformation) GetAddServiceProfileInfoOk() (*strin
 
 // HasAddServiceProfileInfo returns a boolean if a field has been set.
 func (o *ServiceProfileChargingInformation) HasAddServiceProfileInfo() bool {
-	if o != nil && !isNil(o.AddServiceProfileInfo) {
+	if o != nil && !IsNil(o.AddServiceProfileInfo) {
 		return true
 	}
 
@@ -567,7 +567,7 @@ func (o *ServiceProfileChargingInformation) SetAddServiceProfileInfo(v string) {
 }
 
 func (o ServiceProfileChargingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -576,52 +576,52 @@ func (o ServiceProfileChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o ServiceProfileChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceProfileIdentifier) {
+	if !IsNil(o.ServiceProfileIdentifier) {
 		toSerialize["serviceProfileIdentifier"] = o.ServiceProfileIdentifier
 	}
-	if !isNil(o.SNSSAIList) {
+	if !IsNil(o.SNSSAIList) {
 		toSerialize["sNSSAIList"] = o.SNSSAIList
 	}
-	if !isNil(o.Latency) {
+	if !IsNil(o.Latency) {
 		toSerialize["latency"] = o.Latency
 	}
-	if !isNil(o.Availability) {
+	if !IsNil(o.Availability) {
 		toSerialize["availability"] = o.Availability
 	}
-	if !isNil(o.Jitter) {
+	if !IsNil(o.Jitter) {
 		toSerialize["jitter"] = o.Jitter
 	}
-	if !isNil(o.Reliability) {
+	if !IsNil(o.Reliability) {
 		toSerialize["reliability"] = o.Reliability
 	}
-	if !isNil(o.MaxNumberofUEs) {
+	if !IsNil(o.MaxNumberofUEs) {
 		toSerialize["maxNumberofUEs"] = o.MaxNumberofUEs
 	}
-	if !isNil(o.CoverageArea) {
+	if !IsNil(o.CoverageArea) {
 		toSerialize["coverageArea"] = o.CoverageArea
 	}
-	if !isNil(o.DLThptPerSlice) {
+	if !IsNil(o.DLThptPerSlice) {
 		toSerialize["dLThptPerSlice"] = o.DLThptPerSlice
 	}
-	if !isNil(o.DLThptPerUE) {
+	if !IsNil(o.DLThptPerUE) {
 		toSerialize["dLThptPerUE"] = o.DLThptPerUE
 	}
-	if !isNil(o.ULThptPerSlice) {
+	if !IsNil(o.ULThptPerSlice) {
 		toSerialize["uLThptPerSlice"] = o.ULThptPerSlice
 	}
-	if !isNil(o.ULThptPerUE) {
+	if !IsNil(o.ULThptPerUE) {
 		toSerialize["uLThptPerUE"] = o.ULThptPerUE
 	}
-	if !isNil(o.MaxNumberofPDUsessions) {
+	if !IsNil(o.MaxNumberofPDUsessions) {
 		toSerialize["maxNumberofPDUsessions"] = o.MaxNumberofPDUsessions
 	}
-	if !isNil(o.KPIMonitoringList) {
+	if !IsNil(o.KPIMonitoringList) {
 		toSerialize["kPIMonitoringList"] = o.KPIMonitoringList
 	}
-	if !isNil(o.SupportedAccessTechnology) {
+	if !IsNil(o.SupportedAccessTechnology) {
 		toSerialize["supportedAccessTechnology"] = o.SupportedAccessTechnology
 	}
-	if !isNil(o.AddServiceProfileInfo) {
+	if !IsNil(o.AddServiceProfileInfo) {
 		toSerialize["addServiceProfileInfo"] = o.AddServiceProfileInfo
 	}
 	return toSerialize, nil
@@ -662,5 +662,3 @@ func (v *NullableServiceProfileChargingInformation) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

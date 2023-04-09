@@ -88,13 +88,11 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessTech](docs/AccessTech.md)
- - [AccessTechAnyOf](docs/AccessTechAnyOf.md)
  - [AccessTokenErr](docs/AccessTokenErr.md)
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [AccessType](docs/AccessType.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
- - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
@@ -102,7 +100,6 @@ Class | Method | HTTP request | Description
  - [Snssai](docs/Snssai.md)
  - [SorAckInfo](docs/SorAckInfo.md)
  - [SorAckStatus](docs/SorAckStatus.md)
- - [SorAckStatusAnyOf](docs/SorAckStatusAnyOf.md)
  - [SorInformation](docs/SorInformation.md)
  - [SteeringContainer](docs/SteeringContainer.md)
  - [SteeringInfo](docs/SteeringInfo.md)

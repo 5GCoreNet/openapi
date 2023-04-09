@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,22 +19,22 @@ var _ MappedNullable = &TscQosRequirement{}
 
 // TscQosRequirement Represents QoS requirements for time sensitive communication.
 type TscQosRequirement struct {
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ReqGbrDl *string `json:"reqGbrDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ReqGbrUl *string `json:"reqGbrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ReqMbrDl *string `json:"reqMbrDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	ReqMbrUl *string `json:"reqMbrUl,omitempty"`
-	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.  
+	// Unsigned integer indicating Maximum Data Burst Volume (see clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes.
 	MaxTscBurstSize *int32 `json:"maxTscBurstSize,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	Req5Gsdelay *int32 `json:"req5Gsdelay,omitempty"`
 	// Represents the priority level of TSC Flows.
 	Priority *int32 `json:"priority,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	TscaiTimeDom *int32 `json:"tscaiTimeDom,omitempty"`
+	TscaiTimeDom *int32                      `json:"tscaiTimeDom,omitempty"`
 	TscaiInputDl NullableTscaiInputContainer `json:"tscaiInputDl,omitempty"`
 	TscaiInputUl NullableTscaiInputContainer `json:"tscaiInputUl,omitempty"`
 }
@@ -58,7 +58,7 @@ func NewTscQosRequirementWithDefaults() *TscQosRequirement {
 
 // GetReqGbrDl returns the ReqGbrDl field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetReqGbrDl() string {
-	if o == nil || isNil(o.ReqGbrDl) {
+	if o == nil || IsNil(o.ReqGbrDl) {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *TscQosRequirement) GetReqGbrDl() string {
 // GetReqGbrDlOk returns a tuple with the ReqGbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetReqGbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.ReqGbrDl) {
+	if o == nil || IsNil(o.ReqGbrDl) {
 		return nil, false
 	}
 	return o.ReqGbrDl, true
@@ -76,7 +76,7 @@ func (o *TscQosRequirement) GetReqGbrDlOk() (*string, bool) {
 
 // HasReqGbrDl returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasReqGbrDl() bool {
-	if o != nil && !isNil(o.ReqGbrDl) {
+	if o != nil && !IsNil(o.ReqGbrDl) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *TscQosRequirement) SetReqGbrDl(v string) {
 
 // GetReqGbrUl returns the ReqGbrUl field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetReqGbrUl() string {
-	if o == nil || isNil(o.ReqGbrUl) {
+	if o == nil || IsNil(o.ReqGbrUl) {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *TscQosRequirement) GetReqGbrUl() string {
 // GetReqGbrUlOk returns a tuple with the ReqGbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetReqGbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.ReqGbrUl) {
+	if o == nil || IsNil(o.ReqGbrUl) {
 		return nil, false
 	}
 	return o.ReqGbrUl, true
@@ -108,7 +108,7 @@ func (o *TscQosRequirement) GetReqGbrUlOk() (*string, bool) {
 
 // HasReqGbrUl returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasReqGbrUl() bool {
-	if o != nil && !isNil(o.ReqGbrUl) {
+	if o != nil && !IsNil(o.ReqGbrUl) {
 		return true
 	}
 
@@ -122,7 +122,7 @@ func (o *TscQosRequirement) SetReqGbrUl(v string) {
 
 // GetReqMbrDl returns the ReqMbrDl field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetReqMbrDl() string {
-	if o == nil || isNil(o.ReqMbrDl) {
+	if o == nil || IsNil(o.ReqMbrDl) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *TscQosRequirement) GetReqMbrDl() string {
 // GetReqMbrDlOk returns a tuple with the ReqMbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetReqMbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.ReqMbrDl) {
+	if o == nil || IsNil(o.ReqMbrDl) {
 		return nil, false
 	}
 	return o.ReqMbrDl, true
@@ -140,7 +140,7 @@ func (o *TscQosRequirement) GetReqMbrDlOk() (*string, bool) {
 
 // HasReqMbrDl returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasReqMbrDl() bool {
-	if o != nil && !isNil(o.ReqMbrDl) {
+	if o != nil && !IsNil(o.ReqMbrDl) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *TscQosRequirement) SetReqMbrDl(v string) {
 
 // GetReqMbrUl returns the ReqMbrUl field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetReqMbrUl() string {
-	if o == nil || isNil(o.ReqMbrUl) {
+	if o == nil || IsNil(o.ReqMbrUl) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *TscQosRequirement) GetReqMbrUl() string {
 // GetReqMbrUlOk returns a tuple with the ReqMbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetReqMbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.ReqMbrUl) {
+	if o == nil || IsNil(o.ReqMbrUl) {
 		return nil, false
 	}
 	return o.ReqMbrUl, true
@@ -172,7 +172,7 @@ func (o *TscQosRequirement) GetReqMbrUlOk() (*string, bool) {
 
 // HasReqMbrUl returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasReqMbrUl() bool {
-	if o != nil && !isNil(o.ReqMbrUl) {
+	if o != nil && !IsNil(o.ReqMbrUl) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *TscQosRequirement) SetReqMbrUl(v string) {
 
 // GetMaxTscBurstSize returns the MaxTscBurstSize field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetMaxTscBurstSize() int32 {
-	if o == nil || isNil(o.MaxTscBurstSize) {
+	if o == nil || IsNil(o.MaxTscBurstSize) {
 		var ret int32
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *TscQosRequirement) GetMaxTscBurstSize() int32 {
 // GetMaxTscBurstSizeOk returns a tuple with the MaxTscBurstSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetMaxTscBurstSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxTscBurstSize) {
+	if o == nil || IsNil(o.MaxTscBurstSize) {
 		return nil, false
 	}
 	return o.MaxTscBurstSize, true
@@ -204,7 +204,7 @@ func (o *TscQosRequirement) GetMaxTscBurstSizeOk() (*int32, bool) {
 
 // HasMaxTscBurstSize returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasMaxTscBurstSize() bool {
-	if o != nil && !isNil(o.MaxTscBurstSize) {
+	if o != nil && !IsNil(o.MaxTscBurstSize) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *TscQosRequirement) SetMaxTscBurstSize(v int32) {
 
 // GetReq5Gsdelay returns the Req5Gsdelay field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetReq5Gsdelay() int32 {
-	if o == nil || isNil(o.Req5Gsdelay) {
+	if o == nil || IsNil(o.Req5Gsdelay) {
 		var ret int32
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *TscQosRequirement) GetReq5Gsdelay() int32 {
 // GetReq5GsdelayOk returns a tuple with the Req5Gsdelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetReq5GsdelayOk() (*int32, bool) {
-	if o == nil || isNil(o.Req5Gsdelay) {
+	if o == nil || IsNil(o.Req5Gsdelay) {
 		return nil, false
 	}
 	return o.Req5Gsdelay, true
@@ -236,7 +236,7 @@ func (o *TscQosRequirement) GetReq5GsdelayOk() (*int32, bool) {
 
 // HasReq5Gsdelay returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasReq5Gsdelay() bool {
-	if o != nil && !isNil(o.Req5Gsdelay) {
+	if o != nil && !IsNil(o.Req5Gsdelay) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *TscQosRequirement) SetReq5Gsdelay(v int32) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetPriority() int32 {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *TscQosRequirement) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetPriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -268,7 +268,7 @@ func (o *TscQosRequirement) GetPriorityOk() (*int32, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -282,7 +282,7 @@ func (o *TscQosRequirement) SetPriority(v int32) {
 
 // GetTscaiTimeDom returns the TscaiTimeDom field value if set, zero value otherwise.
 func (o *TscQosRequirement) GetTscaiTimeDom() int32 {
-	if o == nil || isNil(o.TscaiTimeDom) {
+	if o == nil || IsNil(o.TscaiTimeDom) {
 		var ret int32
 		return ret
 	}
@@ -292,7 +292,7 @@ func (o *TscQosRequirement) GetTscaiTimeDom() int32 {
 // GetTscaiTimeDomOk returns a tuple with the TscaiTimeDom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TscQosRequirement) GetTscaiTimeDomOk() (*int32, bool) {
-	if o == nil || isNil(o.TscaiTimeDom) {
+	if o == nil || IsNil(o.TscaiTimeDom) {
 		return nil, false
 	}
 	return o.TscaiTimeDom, true
@@ -300,7 +300,7 @@ func (o *TscQosRequirement) GetTscaiTimeDomOk() (*int32, bool) {
 
 // HasTscaiTimeDom returns a boolean if a field has been set.
 func (o *TscQosRequirement) HasTscaiTimeDom() bool {
-	if o != nil && !isNil(o.TscaiTimeDom) {
+	if o != nil && !IsNil(o.TscaiTimeDom) {
 		return true
 	}
 
@@ -314,7 +314,7 @@ func (o *TscQosRequirement) SetTscaiTimeDom(v int32) {
 
 // GetTscaiInputDl returns the TscaiInputDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirement) GetTscaiInputDl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputDl.Get()) {
+	if o == nil || IsNil(o.TscaiInputDl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -344,6 +344,7 @@ func (o *TscQosRequirement) HasTscaiInputDl() bool {
 func (o *TscQosRequirement) SetTscaiInputDl(v TscaiInputContainer) {
 	o.TscaiInputDl.Set(&v)
 }
+
 // SetTscaiInputDlNil sets the value for TscaiInputDl to be an explicit nil
 func (o *TscQosRequirement) SetTscaiInputDlNil() {
 	o.TscaiInputDl.Set(nil)
@@ -356,7 +357,7 @@ func (o *TscQosRequirement) UnsetTscaiInputDl() {
 
 // GetTscaiInputUl returns the TscaiInputUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirement) GetTscaiInputUl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputUl.Get()) {
+	if o == nil || IsNil(o.TscaiInputUl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -386,6 +387,7 @@ func (o *TscQosRequirement) HasTscaiInputUl() bool {
 func (o *TscQosRequirement) SetTscaiInputUl(v TscaiInputContainer) {
 	o.TscaiInputUl.Set(&v)
 }
+
 // SetTscaiInputUlNil sets the value for TscaiInputUl to be an explicit nil
 func (o *TscQosRequirement) SetTscaiInputUlNil() {
 	o.TscaiInputUl.Set(nil)
@@ -397,7 +399,7 @@ func (o *TscQosRequirement) UnsetTscaiInputUl() {
 }
 
 func (o TscQosRequirement) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -406,28 +408,28 @@ func (o TscQosRequirement) MarshalJSON() ([]byte, error) {
 
 func (o TscQosRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ReqGbrDl) {
+	if !IsNil(o.ReqGbrDl) {
 		toSerialize["reqGbrDl"] = o.ReqGbrDl
 	}
-	if !isNil(o.ReqGbrUl) {
+	if !IsNil(o.ReqGbrUl) {
 		toSerialize["reqGbrUl"] = o.ReqGbrUl
 	}
-	if !isNil(o.ReqMbrDl) {
+	if !IsNil(o.ReqMbrDl) {
 		toSerialize["reqMbrDl"] = o.ReqMbrDl
 	}
-	if !isNil(o.ReqMbrUl) {
+	if !IsNil(o.ReqMbrUl) {
 		toSerialize["reqMbrUl"] = o.ReqMbrUl
 	}
-	if !isNil(o.MaxTscBurstSize) {
+	if !IsNil(o.MaxTscBurstSize) {
 		toSerialize["maxTscBurstSize"] = o.MaxTscBurstSize
 	}
-	if !isNil(o.Req5Gsdelay) {
+	if !IsNil(o.Req5Gsdelay) {
 		toSerialize["req5Gsdelay"] = o.Req5Gsdelay
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.TscaiTimeDom) {
+	if !IsNil(o.TscaiTimeDom) {
 		toSerialize["tscaiTimeDom"] = o.TscaiTimeDom
 	}
 	if o.TscaiInputDl.IsSet() {
@@ -474,5 +476,3 @@ func (v *NullableTscQosRequirement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,15 +20,15 @@ var _ MappedNullable = &MLTrainingRequestSingleAllOfAttributesAllOf{}
 
 // MLTrainingRequestSingleAllOfAttributesAllOf struct for MLTrainingRequestSingleAllOfAttributesAllOf
 type MLTrainingRequestSingleAllOfAttributesAllOf struct {
-	MLEntityId *string `json:"mLEntityId,omitempty"`
-	CandidateTraingDataSource []string `json:"candidateTraingDataSource,omitempty"`
-	TraingDataQualityScore *float32 `json:"traingDataQualityScore,omitempty"`
-	TrainingRequestSource *string `json:"trainingRequestSource,omitempty"`
-	RequestStatus *RequestStatus `json:"requestStatus,omitempty"`
-	ExpectedRuntimeContext *time.Time `json:"expectedRuntimeContext,omitempty"`
-	PerformanceRequirements []ModelPerformance `json:"performanceRequirements,omitempty"`
-	CancelRequest *bool `json:"cancelRequest,omitempty"`
-	SuspendRequest *bool `json:"suspendRequest,omitempty"`
+	MLEntityId                *string            `json:"mLEntityId,omitempty"`
+	CandidateTraingDataSource []string           `json:"candidateTraingDataSource,omitempty"`
+	TraingDataQualityScore    *float32           `json:"traingDataQualityScore,omitempty"`
+	TrainingRequestSource     *string            `json:"trainingRequestSource,omitempty"`
+	RequestStatus             *RequestStatus     `json:"requestStatus,omitempty"`
+	ExpectedRuntimeContext    *time.Time         `json:"expectedRuntimeContext,omitempty"`
+	PerformanceRequirements   []ModelPerformance `json:"performanceRequirements,omitempty"`
+	CancelRequest             *bool              `json:"cancelRequest,omitempty"`
+	SuspendRequest            *bool              `json:"suspendRequest,omitempty"`
 }
 
 // NewMLTrainingRequestSingleAllOfAttributesAllOf instantiates a new MLTrainingRequestSingleAllOfAttributesAllOf object
@@ -337,7 +337,7 @@ func (o *MLTrainingRequestSingleAllOfAttributesAllOf) SetSuspendRequest(v bool) 
 }
 
 func (o MLTrainingRequestSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -411,5 +411,3 @@ func (v *NullableMLTrainingRequestSingleAllOfAttributesAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

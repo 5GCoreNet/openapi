@@ -20,7 +20,7 @@ var _ MappedNullable = &FiveQiDscpMapping{}
 // FiveQiDscpMapping struct for FiveQiDscpMapping
 type FiveQiDscpMapping struct {
 	FiveQIValues []int32 `json:"fiveQIValues,omitempty"`
-	Dscp *int32 `json:"dscp,omitempty"`
+	Dscp         *int32  `json:"dscp,omitempty"`
 }
 
 // NewFiveQiDscpMapping instantiates a new FiveQiDscpMapping object
@@ -42,7 +42,7 @@ func NewFiveQiDscpMappingWithDefaults() *FiveQiDscpMapping {
 
 // GetFiveQIValues returns the FiveQIValues field value if set, zero value otherwise.
 func (o *FiveQiDscpMapping) GetFiveQIValues() []int32 {
-	if o == nil || isNil(o.FiveQIValues) {
+	if o == nil || IsNil(o.FiveQIValues) {
 		var ret []int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *FiveQiDscpMapping) GetFiveQIValues() []int32 {
 // GetFiveQIValuesOk returns a tuple with the FiveQIValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQiDscpMapping) GetFiveQIValuesOk() ([]int32, bool) {
-	if o == nil || isNil(o.FiveQIValues) {
+	if o == nil || IsNil(o.FiveQIValues) {
 		return nil, false
 	}
 	return o.FiveQIValues, true
@@ -60,7 +60,7 @@ func (o *FiveQiDscpMapping) GetFiveQIValuesOk() ([]int32, bool) {
 
 // HasFiveQIValues returns a boolean if a field has been set.
 func (o *FiveQiDscpMapping) HasFiveQIValues() bool {
-	if o != nil && !isNil(o.FiveQIValues) {
+	if o != nil && !IsNil(o.FiveQIValues) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *FiveQiDscpMapping) SetFiveQIValues(v []int32) {
 
 // GetDscp returns the Dscp field value if set, zero value otherwise.
 func (o *FiveQiDscpMapping) GetDscp() int32 {
-	if o == nil || isNil(o.Dscp) {
+	if o == nil || IsNil(o.Dscp) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *FiveQiDscpMapping) GetDscp() int32 {
 // GetDscpOk returns a tuple with the Dscp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQiDscpMapping) GetDscpOk() (*int32, bool) {
-	if o == nil || isNil(o.Dscp) {
+	if o == nil || IsNil(o.Dscp) {
 		return nil, false
 	}
 	return o.Dscp, true
@@ -92,7 +92,7 @@ func (o *FiveQiDscpMapping) GetDscpOk() (*int32, bool) {
 
 // HasDscp returns a boolean if a field has been set.
 func (o *FiveQiDscpMapping) HasDscp() bool {
-	if o != nil && !isNil(o.Dscp) {
+	if o != nil && !IsNil(o.Dscp) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *FiveQiDscpMapping) SetDscp(v int32) {
 }
 
 func (o FiveQiDscpMapping) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o FiveQiDscpMapping) MarshalJSON() ([]byte, error) {
 
 func (o FiveQiDscpMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FiveQIValues) {
+	if !IsNil(o.FiveQIValues) {
 		toSerialize["fiveQIValues"] = o.FiveQIValues
 	}
-	if !isNil(o.Dscp) {
+	if !IsNil(o.Dscp) {
 		toSerialize["dscp"] = o.Dscp
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableFiveQiDscpMapping) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,8 +19,8 @@ var _ MappedNullable = &QFPacketDelayThresholdsType{}
 
 // QFPacketDelayThresholdsType struct for QFPacketDelayThresholdsType
 type QFPacketDelayThresholdsType struct {
-	ThresholdDl *int32 `json:"thresholdDl,omitempty"`
-	ThresholdUl *int32 `json:"thresholdUl,omitempty"`
+	ThresholdDl  *int32 `json:"thresholdDl,omitempty"`
+	ThresholdUl  *int32 `json:"thresholdUl,omitempty"`
 	ThresholdRtt *int32 `json:"thresholdRtt,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewQFPacketDelayThresholdsTypeWithDefaults() *QFPacketDelayThresholdsType {
 
 // GetThresholdDl returns the ThresholdDl field value if set, zero value otherwise.
 func (o *QFPacketDelayThresholdsType) GetThresholdDl() int32 {
-	if o == nil || isNil(o.ThresholdDl) {
+	if o == nil || IsNil(o.ThresholdDl) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *QFPacketDelayThresholdsType) GetThresholdDl() int32 {
 // GetThresholdDlOk returns a tuple with the ThresholdDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFPacketDelayThresholdsType) GetThresholdDlOk() (*int32, bool) {
-	if o == nil || isNil(o.ThresholdDl) {
+	if o == nil || IsNil(o.ThresholdDl) {
 		return nil, false
 	}
 	return o.ThresholdDl, true
@@ -61,7 +61,7 @@ func (o *QFPacketDelayThresholdsType) GetThresholdDlOk() (*int32, bool) {
 
 // HasThresholdDl returns a boolean if a field has been set.
 func (o *QFPacketDelayThresholdsType) HasThresholdDl() bool {
-	if o != nil && !isNil(o.ThresholdDl) {
+	if o != nil && !IsNil(o.ThresholdDl) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *QFPacketDelayThresholdsType) SetThresholdDl(v int32) {
 
 // GetThresholdUl returns the ThresholdUl field value if set, zero value otherwise.
 func (o *QFPacketDelayThresholdsType) GetThresholdUl() int32 {
-	if o == nil || isNil(o.ThresholdUl) {
+	if o == nil || IsNil(o.ThresholdUl) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *QFPacketDelayThresholdsType) GetThresholdUl() int32 {
 // GetThresholdUlOk returns a tuple with the ThresholdUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFPacketDelayThresholdsType) GetThresholdUlOk() (*int32, bool) {
-	if o == nil || isNil(o.ThresholdUl) {
+	if o == nil || IsNil(o.ThresholdUl) {
 		return nil, false
 	}
 	return o.ThresholdUl, true
@@ -93,7 +93,7 @@ func (o *QFPacketDelayThresholdsType) GetThresholdUlOk() (*int32, bool) {
 
 // HasThresholdUl returns a boolean if a field has been set.
 func (o *QFPacketDelayThresholdsType) HasThresholdUl() bool {
-	if o != nil && !isNil(o.ThresholdUl) {
+	if o != nil && !IsNil(o.ThresholdUl) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *QFPacketDelayThresholdsType) SetThresholdUl(v int32) {
 
 // GetThresholdRtt returns the ThresholdRtt field value if set, zero value otherwise.
 func (o *QFPacketDelayThresholdsType) GetThresholdRtt() int32 {
-	if o == nil || isNil(o.ThresholdRtt) {
+	if o == nil || IsNil(o.ThresholdRtt) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *QFPacketDelayThresholdsType) GetThresholdRtt() int32 {
 // GetThresholdRttOk returns a tuple with the ThresholdRtt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QFPacketDelayThresholdsType) GetThresholdRttOk() (*int32, bool) {
-	if o == nil || isNil(o.ThresholdRtt) {
+	if o == nil || IsNil(o.ThresholdRtt) {
 		return nil, false
 	}
 	return o.ThresholdRtt, true
@@ -125,7 +125,7 @@ func (o *QFPacketDelayThresholdsType) GetThresholdRttOk() (*int32, bool) {
 
 // HasThresholdRtt returns a boolean if a field has been set.
 func (o *QFPacketDelayThresholdsType) HasThresholdRtt() bool {
-	if o != nil && !isNil(o.ThresholdRtt) {
+	if o != nil && !IsNil(o.ThresholdRtt) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *QFPacketDelayThresholdsType) SetThresholdRtt(v int32) {
 }
 
 func (o QFPacketDelayThresholdsType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o QFPacketDelayThresholdsType) MarshalJSON() ([]byte, error) {
 
 func (o QFPacketDelayThresholdsType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ThresholdDl) {
+	if !IsNil(o.ThresholdDl) {
 		toSerialize["thresholdDl"] = o.ThresholdDl
 	}
-	if !isNil(o.ThresholdUl) {
+	if !IsNil(o.ThresholdUl) {
 		toSerialize["thresholdUl"] = o.ThresholdUl
 	}
-	if !isNil(o.ThresholdRtt) {
+	if !IsNil(o.ThresholdRtt) {
 		toSerialize["thresholdRtt"] = o.ThresholdRtt
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableQFPacketDelayThresholdsType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

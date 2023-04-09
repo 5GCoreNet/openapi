@@ -41,7 +41,7 @@ func NewFailedConnectionResponseTypeWithDefaults() *FailedConnectionResponseType
 
 // GetError returns the Error field value if set, zero value otherwise.
 func (o *FailedConnectionResponseType) GetError() []FailedConnectionResponseTypeErrorInner {
-	if o == nil || isNil(o.Error) {
+	if o == nil || IsNil(o.Error) {
 		var ret []FailedConnectionResponseTypeErrorInner
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *FailedConnectionResponseType) GetError() []FailedConnectionResponseType
 // GetErrorOk returns a tuple with the Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailedConnectionResponseType) GetErrorOk() ([]FailedConnectionResponseTypeErrorInner, bool) {
-	if o == nil || isNil(o.Error) {
+	if o == nil || IsNil(o.Error) {
 		return nil, false
 	}
 	return o.Error, true
@@ -59,7 +59,7 @@ func (o *FailedConnectionResponseType) GetErrorOk() ([]FailedConnectionResponseT
 
 // HasError returns a boolean if a field has been set.
 func (o *FailedConnectionResponseType) HasError() bool {
-	if o != nil && !isNil(o.Error) {
+	if o != nil && !IsNil(o.Error) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *FailedConnectionResponseType) SetError(v []FailedConnectionResponseType
 }
 
 func (o FailedConnectionResponseType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o FailedConnectionResponseType) MarshalJSON() ([]byte, error) {
 
 func (o FailedConnectionResponseType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Error) {
+	if !IsNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableFailedConnectionResponseType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Ndccf_ContextManagement
 
-DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &UnTrustAfInfo{}
 
 // UnTrustAfInfo Information of a untrusted AF Instance
 type UnTrustAfInfo struct {
-	AfId string `json:"afId"`
+	AfId           string           `json:"afId"`
 	SNssaiInfoList []SnssaiInfoItem `json:"sNssaiInfoList,omitempty"`
-	MappingInd *bool `json:"mappingInd,omitempty"`
+	MappingInd     *bool            `json:"mappingInd,omitempty"`
 }
 
 // NewUnTrustAfInfo instantiates a new UnTrustAfInfo object
@@ -72,7 +72,7 @@ func (o *UnTrustAfInfo) SetAfId(v string) {
 
 // GetSNssaiInfoList returns the SNssaiInfoList field value if set, zero value otherwise.
 func (o *UnTrustAfInfo) GetSNssaiInfoList() []SnssaiInfoItem {
-	if o == nil || isNil(o.SNssaiInfoList) {
+	if o == nil || IsNil(o.SNssaiInfoList) {
 		var ret []SnssaiInfoItem
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *UnTrustAfInfo) GetSNssaiInfoList() []SnssaiInfoItem {
 // GetSNssaiInfoListOk returns a tuple with the SNssaiInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnTrustAfInfo) GetSNssaiInfoListOk() ([]SnssaiInfoItem, bool) {
-	if o == nil || isNil(o.SNssaiInfoList) {
+	if o == nil || IsNil(o.SNssaiInfoList) {
 		return nil, false
 	}
 	return o.SNssaiInfoList, true
@@ -90,7 +90,7 @@ func (o *UnTrustAfInfo) GetSNssaiInfoListOk() ([]SnssaiInfoItem, bool) {
 
 // HasSNssaiInfoList returns a boolean if a field has been set.
 func (o *UnTrustAfInfo) HasSNssaiInfoList() bool {
-	if o != nil && !isNil(o.SNssaiInfoList) {
+	if o != nil && !IsNil(o.SNssaiInfoList) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *UnTrustAfInfo) SetSNssaiInfoList(v []SnssaiInfoItem) {
 
 // GetMappingInd returns the MappingInd field value if set, zero value otherwise.
 func (o *UnTrustAfInfo) GetMappingInd() bool {
-	if o == nil || isNil(o.MappingInd) {
+	if o == nil || IsNil(o.MappingInd) {
 		var ret bool
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *UnTrustAfInfo) GetMappingInd() bool {
 // GetMappingIndOk returns a tuple with the MappingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnTrustAfInfo) GetMappingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.MappingInd) {
+	if o == nil || IsNil(o.MappingInd) {
 		return nil, false
 	}
 	return o.MappingInd, true
@@ -122,7 +122,7 @@ func (o *UnTrustAfInfo) GetMappingIndOk() (*bool, bool) {
 
 // HasMappingInd returns a boolean if a field has been set.
 func (o *UnTrustAfInfo) HasMappingInd() bool {
-	if o != nil && !isNil(o.MappingInd) {
+	if o != nil && !IsNil(o.MappingInd) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *UnTrustAfInfo) SetMappingInd(v bool) {
 }
 
 func (o UnTrustAfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -145,10 +145,10 @@ func (o UnTrustAfInfo) MarshalJSON() ([]byte, error) {
 func (o UnTrustAfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afId"] = o.AfId
-	if !isNil(o.SNssaiInfoList) {
+	if !IsNil(o.SNssaiInfoList) {
 		toSerialize["sNssaiInfoList"] = o.SNssaiInfoList
 	}
-	if !isNil(o.MappingInd) {
+	if !IsNil(o.MappingInd) {
 		toSerialize["mappingInd"] = o.MappingInd
 	}
 	return toSerialize, nil
@@ -189,5 +189,3 @@ func (v *NullableUnTrustAfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

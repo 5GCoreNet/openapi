@@ -1,7 +1,7 @@
 /*
 Nhss_gbaSDM
 
-Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for GBA.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,12 +18,12 @@ import (
 // checks if the GbaSdmSubscription type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &GbaSdmSubscription{}
 
-// GbaSdmSubscription Information about a subscription created in the HSS, so the consumer (e.g. BSF) can be notified when there are changes on the monitored data 
+// GbaSdmSubscription Information about a subscription created in the HSS, so the consumer (e.g. BSF) can be notified when there are changes on the monitored data
 type GbaSdmSubscription struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NfInstanceId string `json:"nfInstanceId"`
 	// String providing an URI formatted according to RFC 3986.
-	CallbackReference string `json:"callbackReference"`
+	CallbackReference     string   `json:"callbackReference"`
 	MonitoredResourceUris []string `json:"monitoredResourceUris"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Expires *time.Time `json:"expires,omitempty"`
@@ -123,7 +123,7 @@ func (o *GbaSdmSubscription) SetMonitoredResourceUris(v []string) {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *GbaSdmSubscription) GetExpires() time.Time {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *GbaSdmSubscription) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaSdmSubscription) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -141,7 +141,7 @@ func (o *GbaSdmSubscription) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *GbaSdmSubscription) HasExpires() bool {
-	if o != nil && !isNil(o.Expires) {
+	if o != nil && !IsNil(o.Expires) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *GbaSdmSubscription) SetExpires(v time.Time) {
 }
 
 func (o GbaSdmSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -166,7 +166,7 @@ func (o GbaSdmSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["nfInstanceId"] = o.NfInstanceId
 	toSerialize["callbackReference"] = o.CallbackReference
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !isNil(o.Expires) {
+	if !IsNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
 	return toSerialize, nil
@@ -207,5 +207,3 @@ func (v *NullableGbaSdmSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

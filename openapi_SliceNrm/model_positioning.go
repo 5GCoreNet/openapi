@@ -19,10 +19,10 @@ var _ MappedNullable = &Positioning{}
 
 // Positioning struct for Positioning
 type Positioning struct {
-	ServAttrCom *ServAttrCom `json:"servAttrCom,omitempty"`
-	Availability []string `json:"availability,omitempty"`
+	ServAttrCom         *ServAttrCom         `json:"servAttrCom,omitempty"`
+	Availability        []string             `json:"availability,omitempty"`
 	Predictionfrequency *Predictionfrequency `json:"predictionfrequency,omitempty"`
-	Accuracy *float32 `json:"accuracy,omitempty"`
+	Accuracy            *float32             `json:"accuracy,omitempty"`
 }
 
 // NewPositioning instantiates a new Positioning object
@@ -44,7 +44,7 @@ func NewPositioningWithDefaults() *Positioning {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *Positioning) GetServAttrCom() ServAttrCom {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Positioning) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Positioning) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -62,7 +62,7 @@ func (o *Positioning) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *Positioning) HasServAttrCom() bool {
-	if o != nil && !isNil(o.ServAttrCom) {
+	if o != nil && !IsNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Positioning) SetServAttrCom(v ServAttrCom) {
 
 // GetAvailability returns the Availability field value if set, zero value otherwise.
 func (o *Positioning) GetAvailability() []string {
-	if o == nil || isNil(o.Availability) {
+	if o == nil || IsNil(o.Availability) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Positioning) GetAvailability() []string {
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Positioning) GetAvailabilityOk() ([]string, bool) {
-	if o == nil || isNil(o.Availability) {
+	if o == nil || IsNil(o.Availability) {
 		return nil, false
 	}
 	return o.Availability, true
@@ -94,7 +94,7 @@ func (o *Positioning) GetAvailabilityOk() ([]string, bool) {
 
 // HasAvailability returns a boolean if a field has been set.
 func (o *Positioning) HasAvailability() bool {
-	if o != nil && !isNil(o.Availability) {
+	if o != nil && !IsNil(o.Availability) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *Positioning) SetAvailability(v []string) {
 
 // GetPredictionfrequency returns the Predictionfrequency field value if set, zero value otherwise.
 func (o *Positioning) GetPredictionfrequency() Predictionfrequency {
-	if o == nil || isNil(o.Predictionfrequency) {
+	if o == nil || IsNil(o.Predictionfrequency) {
 		var ret Predictionfrequency
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *Positioning) GetPredictionfrequency() Predictionfrequency {
 // GetPredictionfrequencyOk returns a tuple with the Predictionfrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Positioning) GetPredictionfrequencyOk() (*Predictionfrequency, bool) {
-	if o == nil || isNil(o.Predictionfrequency) {
+	if o == nil || IsNil(o.Predictionfrequency) {
 		return nil, false
 	}
 	return o.Predictionfrequency, true
@@ -126,7 +126,7 @@ func (o *Positioning) GetPredictionfrequencyOk() (*Predictionfrequency, bool) {
 
 // HasPredictionfrequency returns a boolean if a field has been set.
 func (o *Positioning) HasPredictionfrequency() bool {
-	if o != nil && !isNil(o.Predictionfrequency) {
+	if o != nil && !IsNil(o.Predictionfrequency) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *Positioning) SetPredictionfrequency(v Predictionfrequency) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *Positioning) GetAccuracy() float32 {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret float32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *Positioning) GetAccuracy() float32 {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Positioning) GetAccuracyOk() (*float32, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -158,7 +158,7 @@ func (o *Positioning) GetAccuracyOk() (*float32, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *Positioning) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *Positioning) SetAccuracy(v float32) {
 }
 
 func (o Positioning) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o Positioning) MarshalJSON() ([]byte, error) {
 
 func (o Positioning) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServAttrCom) {
+	if !IsNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !isNil(o.Availability) {
+	if !IsNil(o.Availability) {
 		toSerialize["availability"] = o.Availability
 	}
-	if !isNil(o.Predictionfrequency) {
+	if !IsNil(o.Predictionfrequency) {
 		toSerialize["predictionfrequency"] = o.Predictionfrequency
 	}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullablePositioning) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

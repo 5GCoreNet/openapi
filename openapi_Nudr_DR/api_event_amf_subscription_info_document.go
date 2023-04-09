@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // EventAMFSubscriptionInfoDocumentApiService EventAMFSubscriptionInfoDocumentApi service
 type EventAMFSubscriptionInfoDocumentApiService service
 
 type ApiRemoveAmfGroupSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventAMFSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
+	ueGroupId  string
+	subsId     string
 }
 
 func (r ApiRemoveAmfGroupSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -37,26 +36,26 @@ func (r ApiRemoveAmfGroupSubscriptionsRequest) Execute() (*http.Response, error)
 /*
 RemoveAmfGroupSubscriptions Deletes AMF Subscription Info for an eeSubscription for a group of UEs or any UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiRemoveAmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiRemoveAmfGroupSubscriptionsRequest
 */
 func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiRemoveAmfGroupSubscriptionsRequest {
 	return ApiRemoveAmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfGroupSubscriptionsExecute(r ApiRemoveAmfGroupSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventAMFSubscriptionInfoDocumentApiService.RemoveAmfGroupSubscriptions")
@@ -99,9 +98,9 @@ func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfGroupSubscriptions
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,10 +117,10 @@ func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfGroupSubscriptions
 }
 
 type ApiRemoveAmfSubscriptionsInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventAMFSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiRemoveAmfSubscriptionsInfoRequest) Execute() (*http.Response, error) {
@@ -131,26 +130,26 @@ func (r ApiRemoveAmfSubscriptionsInfoRequest) Execute() (*http.Response, error) 
 /*
 RemoveAmfSubscriptionsInfo Deletes AMF Subscription Info for an eeSubscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiRemoveAmfSubscriptionsInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiRemoveAmfSubscriptionsInfoRequest
 */
 func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfSubscriptionsInfo(ctx context.Context, ueId string, subsId string) ApiRemoveAmfSubscriptionsInfoRequest {
 	return ApiRemoveAmfSubscriptionsInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfSubscriptionsInfoExecute(r ApiRemoveAmfSubscriptionsInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventAMFSubscriptionInfoDocumentApiService.RemoveAmfSubscriptionsInfo")
@@ -193,9 +192,9 @@ func (a *EventAMFSubscriptionInfoDocumentApiService) RemoveAmfSubscriptionsInfoE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

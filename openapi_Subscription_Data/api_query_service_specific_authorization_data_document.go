@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,27 +13,26 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // QueryServiceSpecificAuthorizationDataDocumentApiService QueryServiceSpecificAuthorizationDataDocumentApi service
 type QueryServiceSpecificAuthorizationDataDocumentApiService service
 
 type ApiGetSSAuDataRequest struct {
-	ctx context.Context
-	ApiService *QueryServiceSpecificAuthorizationDataDocumentApiService
-	ueId string
-	serviceType ServiceType
-	singleNssai *VarSnssai
-	dnn *string
+	ctx                    context.Context
+	ApiService             *QueryServiceSpecificAuthorizationDataDocumentApiService
+	ueId                   string
+	serviceType            ServiceType
+	singleNssai            *VarSnssai
+	dnn                    *string
 	mtcProviderInformation *string
-	afId *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	afId                   *string
+	ifNoneMatch            *string
+	ifModifiedSince        *string
 }
 
 // single NSSAI
@@ -79,28 +78,29 @@ func (r ApiGetSSAuDataRequest) Execute() (*AuthorizationData, *http.Response, er
 /*
 GetSSAuData Retrieve ServiceSpecific Authorization Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE ID
- @param serviceType Service Type
- @return ApiGetSSAuDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE ID
+	@param serviceType Service Type
+	@return ApiGetSSAuDataRequest
 */
 func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuData(ctx context.Context, ueId string, serviceType ServiceType) ApiGetSSAuDataRequest {
 	return ApiGetSSAuDataRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:  a,
+		ctx:         ctx,
+		ueId:        ueId,
 		serviceType: serviceType,
 	}
 }
 
 // Execute executes the request
-//  @return AuthorizationData
+//
+//	@return AuthorizationData
 func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuDataExecute(r ApiGetSSAuDataRequest) (*AuthorizationData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AuthorizationData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AuthorizationData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueryServiceSpecificAuthorizationDataDocumentApiService.GetSSAuData")
@@ -122,13 +122,13 @@ func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuDataExe
 		return localVarReturnValue, nil, reportError("dnn is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
-	parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "single-nssai", r.singleNssai, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
 	if r.mtcProviderInformation != nil {
-		parameterAddToQuery(localVarQueryParams, "mtc-provider-information", r.mtcProviderInformation, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mtc-provider-information", r.mtcProviderInformation, "")
 	}
 	if r.afId != nil {
-		parameterAddToQuery(localVarQueryParams, "af-id", r.afId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "af-id", r.afId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -148,10 +148,10 @@ func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuDataExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -163,9 +163,9 @@ func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuDataExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -182,8 +182,8 @@ func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -193,8 +193,8 @@ func (a *QueryServiceSpecificAuthorizationDataDocumentApiService) GetSSAuDataExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

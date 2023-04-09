@@ -19,22 +19,22 @@ var _ MappedNullable = &GnbCuCpFunctionSingleAllOfAttributesAllOf{}
 
 // GnbCuCpFunctionSingleAllOfAttributesAllOf struct for GnbCuCpFunctionSingleAllOfAttributesAllOf
 type GnbCuCpFunctionSingleAllOfAttributesAllOf struct {
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
-	GnbCuName *string `json:"gnbCuName,omitempty"`
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	X2BlockList []string `json:"x2BlockList,omitempty"`
-	XnBlockList []string `json:"xnBlockList,omitempty"`
-	X2AllowList []string `json:"x2AllowList,omitempty"`
-	XnAllowList []string `json:"xnAllowList,omitempty"`
-	X2HOBlockList []string `json:"x2HOBlockList,omitempty"`
-	XnHOBlackList []string `json:"xnHOBlackList,omitempty"`
+	GnbId                       *string                      `json:"gnbId,omitempty"`
+	GnbIdLength                 *int32                       `json:"gnbIdLength,omitempty"`
+	GnbCuName                   *string                      `json:"gnbCuName,omitempty"`
+	PlmnId                      *PlmnId                      `json:"plmnId,omitempty"`
+	X2BlockList                 []string                     `json:"x2BlockList,omitempty"`
+	XnBlockList                 []string                     `json:"xnBlockList,omitempty"`
+	X2AllowList                 []string                     `json:"x2AllowList,omitempty"`
+	XnAllowList                 []string                     `json:"xnAllowList,omitempty"`
+	X2HOBlockList               []string                     `json:"x2HOBlockList,omitempty"`
+	XnHOBlackList               []string                     `json:"xnHOBlackList,omitempty"`
 	MappingSetIDBackhaulAddress *MappingSetIDBackhaulAddress `json:"mappingSetIDBackhaulAddress,omitempty"`
-	TceMappingInfoList []TceMappingInfo `json:"tceMappingInfoList,omitempty"`
-	Configurable5QISetRef *string `json:"configurable5QISetRef,omitempty"`
-	Dynamic5QISetRef *string `json:"dynamic5QISetRef,omitempty"`
-	DCHOControl *bool `json:"dCHOControl,omitempty"`
-	DDAPSHOControl *bool `json:"dDAPSHOControl,omitempty"`
+	TceMappingInfoList          []TceMappingInfo             `json:"tceMappingInfoList,omitempty"`
+	Configurable5QISetRef       *string                      `json:"configurable5QISetRef,omitempty"`
+	Dynamic5QISetRef            *string                      `json:"dynamic5QISetRef,omitempty"`
+	DCHOControl                 *bool                        `json:"dCHOControl,omitempty"`
+	DDAPSHOControl              *bool                        `json:"dDAPSHOControl,omitempty"`
 }
 
 // NewGnbCuCpFunctionSingleAllOfAttributesAllOf instantiates a new GnbCuCpFunctionSingleAllOfAttributesAllOf object
@@ -567,7 +567,7 @@ func (o *GnbCuCpFunctionSingleAllOfAttributesAllOf) SetDDAPSHOControl(v bool) {
 }
 
 func (o GnbCuCpFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -662,5 +662,3 @@ func (v *NullableGnbCuCpFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

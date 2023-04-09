@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &UeContextInSmfDataSubFilter1{}
 
 // UeContextInSmfDataSubFilter1 UE Context In Smf Data Subscription Filter.
 type UeContextInSmfDataSubFilter1 struct {
-	DnnList []string `json:"dnnList,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	EmergencyInd *bool `json:"emergencyInd,omitempty"`
+	DnnList      []string `json:"dnnList,omitempty"`
+	SnssaiList   []Snssai `json:"snssaiList,omitempty"`
+	EmergencyInd *bool    `json:"emergencyInd,omitempty"`
 }
 
 // NewUeContextInSmfDataSubFilter1 instantiates a new UeContextInSmfDataSubFilter1 object
@@ -47,7 +47,7 @@ func NewUeContextInSmfDataSubFilter1WithDefaults() *UeContextInSmfDataSubFilter1
 
 // GetDnnList returns the DnnList field value if set, zero value otherwise.
 func (o *UeContextInSmfDataSubFilter1) GetDnnList() []string {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		var ret []string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *UeContextInSmfDataSubFilter1) GetDnnList() []string {
 // GetDnnListOk returns a tuple with the DnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmfDataSubFilter1) GetDnnListOk() ([]string, bool) {
-	if o == nil || isNil(o.DnnList) {
+	if o == nil || IsNil(o.DnnList) {
 		return nil, false
 	}
 	return o.DnnList, true
@@ -65,7 +65,7 @@ func (o *UeContextInSmfDataSubFilter1) GetDnnListOk() ([]string, bool) {
 
 // HasDnnList returns a boolean if a field has been set.
 func (o *UeContextInSmfDataSubFilter1) HasDnnList() bool {
-	if o != nil && !isNil(o.DnnList) {
+	if o != nil && !IsNil(o.DnnList) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *UeContextInSmfDataSubFilter1) SetDnnList(v []string) {
 
 // GetSnssaiList returns the SnssaiList field value if set, zero value otherwise.
 func (o *UeContextInSmfDataSubFilter1) GetSnssaiList() []Snssai {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *UeContextInSmfDataSubFilter1) GetSnssaiList() []Snssai {
 // GetSnssaiListOk returns a tuple with the SnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmfDataSubFilter1) GetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.SnssaiList) {
+	if o == nil || IsNil(o.SnssaiList) {
 		return nil, false
 	}
 	return o.SnssaiList, true
@@ -97,7 +97,7 @@ func (o *UeContextInSmfDataSubFilter1) GetSnssaiListOk() ([]Snssai, bool) {
 
 // HasSnssaiList returns a boolean if a field has been set.
 func (o *UeContextInSmfDataSubFilter1) HasSnssaiList() bool {
-	if o != nil && !isNil(o.SnssaiList) {
+	if o != nil && !IsNil(o.SnssaiList) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *UeContextInSmfDataSubFilter1) SetSnssaiList(v []Snssai) {
 
 // GetEmergencyInd returns the EmergencyInd field value if set, zero value otherwise.
 func (o *UeContextInSmfDataSubFilter1) GetEmergencyInd() bool {
-	if o == nil || isNil(o.EmergencyInd) {
+	if o == nil || IsNil(o.EmergencyInd) {
 		var ret bool
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *UeContextInSmfDataSubFilter1) GetEmergencyInd() bool {
 // GetEmergencyIndOk returns a tuple with the EmergencyInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmfDataSubFilter1) GetEmergencyIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EmergencyInd) {
+	if o == nil || IsNil(o.EmergencyInd) {
 		return nil, false
 	}
 	return o.EmergencyInd, true
@@ -129,7 +129,7 @@ func (o *UeContextInSmfDataSubFilter1) GetEmergencyIndOk() (*bool, bool) {
 
 // HasEmergencyInd returns a boolean if a field has been set.
 func (o *UeContextInSmfDataSubFilter1) HasEmergencyInd() bool {
-	if o != nil && !isNil(o.EmergencyInd) {
+	if o != nil && !IsNil(o.EmergencyInd) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *UeContextInSmfDataSubFilter1) SetEmergencyInd(v bool) {
 }
 
 func (o UeContextInSmfDataSubFilter1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -151,13 +151,13 @@ func (o UeContextInSmfDataSubFilter1) MarshalJSON() ([]byte, error) {
 
 func (o UeContextInSmfDataSubFilter1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DnnList) {
+	if !IsNil(o.DnnList) {
 		toSerialize["dnnList"] = o.DnnList
 	}
-	if !isNil(o.SnssaiList) {
+	if !IsNil(o.SnssaiList) {
 		toSerialize["snssaiList"] = o.SnssaiList
 	}
-	if !isNil(o.EmergencyInd) {
+	if !IsNil(o.EmergencyInd) {
 		toSerialize["emergencyInd"] = o.EmergencyInd
 	}
 	return toSerialize, nil
@@ -198,5 +198,3 @@ func (v *NullableUeContextInSmfDataSubFilter1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

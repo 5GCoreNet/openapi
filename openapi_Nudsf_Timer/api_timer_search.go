@@ -1,7 +1,7 @@
 /*
 Nudsf_Timer
 
-Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,23 +13,22 @@ package openapi_Nudsf_Timer
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // TimerSearchApiService TimerSearchApi service
 type TimerSearchApiService service
 
 type ApiSearchTimerRequest struct {
-	ctx context.Context
-	ApiService *TimerSearchApiService
-	realmId string
-	storageId string
-	filter *SearchExpression
-	expiredFilter *NullValue
+	ctx               context.Context
+	ApiService        *TimerSearchApiService
+	realmId           string
+	storageId         string
+	filter            *SearchExpression
+	expiredFilter     *NullValue
 	supportedFeatures *string
 }
 
@@ -60,28 +59,29 @@ SearchTimer Timers search with get
 
 Retrieve one or multiple TimerIDs based on filter
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realmId Identifier of the Realm
- @param storageId Identifier of the Storage
- @return ApiSearchTimerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realmId Identifier of the Realm
+	@param storageId Identifier of the Storage
+	@return ApiSearchTimerRequest
 */
 func (a *TimerSearchApiService) SearchTimer(ctx context.Context, realmId string, storageId string) ApiSearchTimerRequest {
 	return ApiSearchTimerRequest{
 		ApiService: a,
-		ctx: ctx,
-		realmId: realmId,
-		storageId: storageId,
+		ctx:        ctx,
+		realmId:    realmId,
+		storageId:  storageId,
 	}
 }
 
 // Execute executes the request
-//  @return TimerIdList
+//
+//	@return TimerIdList
 func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*TimerIdList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TimerIdList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TimerIdList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimerSearchApiService.SearchTimer")
@@ -98,13 +98,13 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 	localVarFormParams := url.Values{}
 
 	if r.filter != nil {
-		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	if r.expiredFilter != nil {
-		parameterAddToQuery(localVarQueryParams, "expired-filter", r.expiredFilter, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "expired-filter", r.expiredFilter, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -133,9 +133,9 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -152,8 +152,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -163,8 +163,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -174,8 +174,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -185,8 +185,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -196,8 +196,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -207,8 +207,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -218,8 +218,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -229,8 +229,8 @@ func (a *TimerSearchApiService) SearchTimerExecute(r ApiSearchTimerRequest) (*Ti
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

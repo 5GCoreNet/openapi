@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &ScpDomainRoutingInfoNotification{}
 // ScpDomainRoutingInfoNotification SCP Domain Routing Information Notification
 type ScpDomainRoutingInfoNotification struct {
 	RoutingInfo ScpDomainRoutingInformation `json:"routingInfo"`
-	LocalInd *bool `json:"localInd,omitempty"`
+	LocalInd    *bool                       `json:"localInd,omitempty"`
 }
 
 // NewScpDomainRoutingInfoNotification instantiates a new ScpDomainRoutingInfoNotification object
@@ -71,7 +71,7 @@ func (o *ScpDomainRoutingInfoNotification) SetRoutingInfo(v ScpDomainRoutingInfo
 
 // GetLocalInd returns the LocalInd field value if set, zero value otherwise.
 func (o *ScpDomainRoutingInfoNotification) GetLocalInd() bool {
-	if o == nil || isNil(o.LocalInd) {
+	if o == nil || IsNil(o.LocalInd) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ScpDomainRoutingInfoNotification) GetLocalInd() bool {
 // GetLocalIndOk returns a tuple with the LocalInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainRoutingInfoNotification) GetLocalIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LocalInd) {
+	if o == nil || IsNil(o.LocalInd) {
 		return nil, false
 	}
 	return o.LocalInd, true
@@ -89,7 +89,7 @@ func (o *ScpDomainRoutingInfoNotification) GetLocalIndOk() (*bool, bool) {
 
 // HasLocalInd returns a boolean if a field has been set.
 func (o *ScpDomainRoutingInfoNotification) HasLocalInd() bool {
-	if o != nil && !isNil(o.LocalInd) {
+	if o != nil && !IsNil(o.LocalInd) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *ScpDomainRoutingInfoNotification) SetLocalInd(v bool) {
 }
 
 func (o ScpDomainRoutingInfoNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -112,7 +112,7 @@ func (o ScpDomainRoutingInfoNotification) MarshalJSON() ([]byte, error) {
 func (o ScpDomainRoutingInfoNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["routingInfo"] = o.RoutingInfo
-	if !isNil(o.LocalInd) {
+	if !IsNil(o.LocalInd) {
 		toSerialize["localInd"] = o.LocalInd
 	}
 	return toSerialize, nil
@@ -153,5 +153,3 @@ func (v *NullableScpDomainRoutingInfoNotification) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

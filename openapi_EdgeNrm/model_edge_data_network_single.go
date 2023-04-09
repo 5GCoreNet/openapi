@@ -19,14 +19,11 @@ var _ MappedNullable = &EdgeDataNetworkSingle{}
 
 // EdgeDataNetworkSingle struct for EdgeDataNetworkSingle
 type EdgeDataNetworkSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	EdnIdentifier *string `json:"ednIdentifier,omitempty"`
-	EDNConnectionInfo *EDNConnectionInfo `json:"eDNConnectionInfo,omitempty"`
-	EASFunction []EASFunctionSingle `json:"EASFunction,omitempty"`
-	EESFunction []EESFunctionSingle `json:"EESFunction,omitempty"`
+	Top
+	EdnIdentifier     *string             `json:"ednIdentifier,omitempty"`
+	EDNConnectionInfo *EDNConnectionInfo  `json:"eDNConnectionInfo,omitempty"`
+	EASFunction       []EASFunctionSingle `json:"EASFunction,omitempty"`
+	EESFunction       []EESFunctionSingle `json:"EESFunction,omitempty"`
 }
 
 // NewEdgeDataNetworkSingle instantiates a new EdgeDataNetworkSingle object
@@ -47,131 +44,9 @@ func NewEdgeDataNetworkSingleWithDefaults() *EdgeDataNetworkSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *EdgeDataNetworkSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EdgeDataNetworkSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *EdgeDataNetworkSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *EdgeDataNetworkSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EdgeDataNetworkSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *EdgeDataNetworkSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *EdgeDataNetworkSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *EdgeDataNetworkSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EdgeDataNetworkSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *EdgeDataNetworkSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *EdgeDataNetworkSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *EdgeDataNetworkSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EdgeDataNetworkSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *EdgeDataNetworkSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *EdgeDataNetworkSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetEdnIdentifier returns the EdnIdentifier field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingle) GetEdnIdentifier() string {
-	if o == nil || isNil(o.EdnIdentifier) {
+	if o == nil || IsNil(o.EdnIdentifier) {
 		var ret string
 		return ret
 	}
@@ -181,7 +56,7 @@ func (o *EdgeDataNetworkSingle) GetEdnIdentifier() string {
 // GetEdnIdentifierOk returns a tuple with the EdnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingle) GetEdnIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.EdnIdentifier) {
+	if o == nil || IsNil(o.EdnIdentifier) {
 		return nil, false
 	}
 	return o.EdnIdentifier, true
@@ -189,7 +64,7 @@ func (o *EdgeDataNetworkSingle) GetEdnIdentifierOk() (*string, bool) {
 
 // HasEdnIdentifier returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingle) HasEdnIdentifier() bool {
-	if o != nil && !isNil(o.EdnIdentifier) {
+	if o != nil && !IsNil(o.EdnIdentifier) {
 		return true
 	}
 
@@ -203,7 +78,7 @@ func (o *EdgeDataNetworkSingle) SetEdnIdentifier(v string) {
 
 // GetEDNConnectionInfo returns the EDNConnectionInfo field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingle) GetEDNConnectionInfo() EDNConnectionInfo {
-	if o == nil || isNil(o.EDNConnectionInfo) {
+	if o == nil || IsNil(o.EDNConnectionInfo) {
 		var ret EDNConnectionInfo
 		return ret
 	}
@@ -213,7 +88,7 @@ func (o *EdgeDataNetworkSingle) GetEDNConnectionInfo() EDNConnectionInfo {
 // GetEDNConnectionInfoOk returns a tuple with the EDNConnectionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingle) GetEDNConnectionInfoOk() (*EDNConnectionInfo, bool) {
-	if o == nil || isNil(o.EDNConnectionInfo) {
+	if o == nil || IsNil(o.EDNConnectionInfo) {
 		return nil, false
 	}
 	return o.EDNConnectionInfo, true
@@ -221,7 +96,7 @@ func (o *EdgeDataNetworkSingle) GetEDNConnectionInfoOk() (*EDNConnectionInfo, bo
 
 // HasEDNConnectionInfo returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingle) HasEDNConnectionInfo() bool {
-	if o != nil && !isNil(o.EDNConnectionInfo) {
+	if o != nil && !IsNil(o.EDNConnectionInfo) {
 		return true
 	}
 
@@ -235,7 +110,7 @@ func (o *EdgeDataNetworkSingle) SetEDNConnectionInfo(v EDNConnectionInfo) {
 
 // GetEASFunction returns the EASFunction field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingle) GetEASFunction() []EASFunctionSingle {
-	if o == nil || isNil(o.EASFunction) {
+	if o == nil || IsNil(o.EASFunction) {
 		var ret []EASFunctionSingle
 		return ret
 	}
@@ -245,7 +120,7 @@ func (o *EdgeDataNetworkSingle) GetEASFunction() []EASFunctionSingle {
 // GetEASFunctionOk returns a tuple with the EASFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingle) GetEASFunctionOk() ([]EASFunctionSingle, bool) {
-	if o == nil || isNil(o.EASFunction) {
+	if o == nil || IsNil(o.EASFunction) {
 		return nil, false
 	}
 	return o.EASFunction, true
@@ -253,7 +128,7 @@ func (o *EdgeDataNetworkSingle) GetEASFunctionOk() ([]EASFunctionSingle, bool) {
 
 // HasEASFunction returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingle) HasEASFunction() bool {
-	if o != nil && !isNil(o.EASFunction) {
+	if o != nil && !IsNil(o.EASFunction) {
 		return true
 	}
 
@@ -267,7 +142,7 @@ func (o *EdgeDataNetworkSingle) SetEASFunction(v []EASFunctionSingle) {
 
 // GetEESFunction returns the EESFunction field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingle) GetEESFunction() []EESFunctionSingle {
-	if o == nil || isNil(o.EESFunction) {
+	if o == nil || IsNil(o.EESFunction) {
 		var ret []EESFunctionSingle
 		return ret
 	}
@@ -277,7 +152,7 @@ func (o *EdgeDataNetworkSingle) GetEESFunction() []EESFunctionSingle {
 // GetEESFunctionOk returns a tuple with the EESFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingle) GetEESFunctionOk() ([]EESFunctionSingle, bool) {
-	if o == nil || isNil(o.EESFunction) {
+	if o == nil || IsNil(o.EESFunction) {
 		return nil, false
 	}
 	return o.EESFunction, true
@@ -285,7 +160,7 @@ func (o *EdgeDataNetworkSingle) GetEESFunctionOk() ([]EESFunctionSingle, bool) {
 
 // HasEESFunction returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingle) HasEESFunction() bool {
-	if o != nil && !isNil(o.EESFunction) {
+	if o != nil && !IsNil(o.EESFunction) {
 		return true
 	}
 
@@ -298,7 +173,7 @@ func (o *EdgeDataNetworkSingle) SetEESFunction(v []EESFunctionSingle) {
 }
 
 func (o EdgeDataNetworkSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,26 +182,24 @@ func (o EdgeDataNetworkSingle) MarshalJSON() ([]byte, error) {
 
 func (o EdgeDataNetworkSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.EdnIdentifier) {
+	if !IsNil(o.EdnIdentifier) {
 		toSerialize["ednIdentifier"] = o.EdnIdentifier
 	}
-	if !isNil(o.EDNConnectionInfo) {
+	if !IsNil(o.EDNConnectionInfo) {
 		toSerialize["eDNConnectionInfo"] = o.EDNConnectionInfo
 	}
-	if !isNil(o.EASFunction) {
+	if !IsNil(o.EASFunction) {
 		toSerialize["EASFunction"] = o.EASFunction
 	}
-	if !isNil(o.EESFunction) {
+	if !IsNil(o.EESFunction) {
 		toSerialize["EESFunction"] = o.EESFunction
 	}
 	return toSerialize, nil
@@ -367,5 +240,3 @@ func (v *NullableEdgeDataNetworkSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

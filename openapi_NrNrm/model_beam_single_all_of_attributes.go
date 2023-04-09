@@ -19,12 +19,12 @@ var _ MappedNullable = &BeamSingleAllOfAttributes{}
 
 // BeamSingleAllOfAttributes struct for BeamSingleAllOfAttributes
 type BeamSingleAllOfAttributes struct {
-	BeamIndex *int32 `json:"beamIndex,omitempty"`
-	BeamType *string `json:"beamType,omitempty"`
-	BeamAzimuth *int32 `json:"beamAzimuth,omitempty"`
-	BeamTilt *int32 `json:"beamTilt,omitempty"`
-	BeamHorizWidth *int32 `json:"beamHorizWidth,omitempty"`
-	BeamVertWidth *int32 `json:"beamVertWidth,omitempty"`
+	BeamIndex      *int32  `json:"beamIndex,omitempty"`
+	BeamType       *string `json:"beamType,omitempty"`
+	BeamAzimuth    *int32  `json:"beamAzimuth,omitempty"`
+	BeamTilt       *int32  `json:"beamTilt,omitempty"`
+	BeamHorizWidth *int32  `json:"beamHorizWidth,omitempty"`
+	BeamVertWidth  *int32  `json:"beamVertWidth,omitempty"`
 }
 
 // NewBeamSingleAllOfAttributes instantiates a new BeamSingleAllOfAttributes object
@@ -237,7 +237,7 @@ func (o *BeamSingleAllOfAttributes) SetBeamVertWidth(v int32) {
 }
 
 func (o BeamSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableBeamSingleAllOfAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

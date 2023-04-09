@@ -19,11 +19,11 @@ var _ MappedNullable = &NgeirFunctionSingleAllOfAttributesAllOf{}
 
 // NgeirFunctionSingleAllOfAttributesAllOf struct for NgeirFunctionSingleAllOfAttributesAllOf
 type NgeirFunctionSingleAllOfAttributesAllOf struct {
-	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
+	PlmnIdList       []PlmnId          `json:"plmnIdList,omitempty"`
+	SBIFqdn          *string           `json:"sBIFqdn,omitempty"`
+	SnssaiList       []Snssai          `json:"snssaiList,omitempty"`
 	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
+	CommModelList    []CommModel       `json:"commModelList,omitempty"`
 }
 
 // NewNgeirFunctionSingleAllOfAttributesAllOf instantiates a new NgeirFunctionSingleAllOfAttributesAllOf object
@@ -204,7 +204,7 @@ func (o *NgeirFunctionSingleAllOfAttributesAllOf) SetCommModelList(v []CommModel
 }
 
 func (o NgeirFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,5 +266,3 @@ func (v *NullableNgeirFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

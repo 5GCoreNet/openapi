@@ -19,12 +19,12 @@ var _ MappedNullable = &SubNetworkSingle2AllOf{}
 
 // SubNetworkSingle2AllOf struct for SubNetworkSingle2AllOf
 type SubNetworkSingle2AllOf struct {
-	SubNetwork []SubNetworkSingle `json:"SubNetwork,omitempty"`
-	NetworkSlice []NetworkSliceSingle `json:"NetworkSlice,omitempty"`
-	NetworkSliceSubnet []NetworkSliceSubnetSingle `json:"NetworkSliceSubnet,omitempty"`
-	EPTransport []EPTransportSingle `json:"EP_Transport,omitempty"`
+	SubNetwork                             []SubNetworkSingle                             `json:"SubNetwork,omitempty"`
+	NetworkSlice                           []NetworkSliceSingle                           `json:"NetworkSlice,omitempty"`
+	NetworkSliceSubnet                     []NetworkSliceSubnetSingle                     `json:"NetworkSliceSubnet,omitempty"`
+	EPTransport                            []EPTransportSingle                            `json:"EP_Transport,omitempty"`
 	NetworkSliceSubnetProviderCapabilities []NetworkSliceSubnetProviderCapabilitiesSingle `json:"NetworkSliceSubnetProviderCapabilities,omitempty"`
-	FeasibilityCheckAndReservationJob []FeasibilityCheckAndReservationJobSingle `json:"FeasibilityCheckAndReservationJob,omitempty"`
+	FeasibilityCheckAndReservationJob      []FeasibilityCheckAndReservationJobSingle      `json:"FeasibilityCheckAndReservationJob,omitempty"`
 }
 
 // NewSubNetworkSingle2AllOf instantiates a new SubNetworkSingle2AllOf object
@@ -46,7 +46,7 @@ func NewSubNetworkSingle2AllOfWithDefaults() *SubNetworkSingle2AllOf {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingle2AllOf) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SubNetworkSingle2AllOf) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle2AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || isNil(o.SubNetwork) {
+	if o == nil || IsNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -64,7 +64,7 @@ func (o *SubNetworkSingle2AllOf) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingle2AllOf) HasSubNetwork() bool {
-	if o != nil && !isNil(o.SubNetwork) {
+	if o != nil && !IsNil(o.SubNetwork) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SubNetworkSingle2AllOf) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetNetworkSlice returns the NetworkSlice field value if set, zero value otherwise.
 func (o *SubNetworkSingle2AllOf) GetNetworkSlice() []NetworkSliceSingle {
-	if o == nil || isNil(o.NetworkSlice) {
+	if o == nil || IsNil(o.NetworkSlice) {
 		var ret []NetworkSliceSingle
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SubNetworkSingle2AllOf) GetNetworkSlice() []NetworkSliceSingle {
 // GetNetworkSliceOk returns a tuple with the NetworkSlice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle2AllOf) GetNetworkSliceOk() ([]NetworkSliceSingle, bool) {
-	if o == nil || isNil(o.NetworkSlice) {
+	if o == nil || IsNil(o.NetworkSlice) {
 		return nil, false
 	}
 	return o.NetworkSlice, true
@@ -96,7 +96,7 @@ func (o *SubNetworkSingle2AllOf) GetNetworkSliceOk() ([]NetworkSliceSingle, bool
 
 // HasNetworkSlice returns a boolean if a field has been set.
 func (o *SubNetworkSingle2AllOf) HasNetworkSlice() bool {
-	if o != nil && !isNil(o.NetworkSlice) {
+	if o != nil && !IsNil(o.NetworkSlice) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SubNetworkSingle2AllOf) SetNetworkSlice(v []NetworkSliceSingle) {
 
 // GetNetworkSliceSubnet returns the NetworkSliceSubnet field value if set, zero value otherwise.
 func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnet() []NetworkSliceSubnetSingle {
-	if o == nil || isNil(o.NetworkSliceSubnet) {
+	if o == nil || IsNil(o.NetworkSliceSubnet) {
 		var ret []NetworkSliceSubnetSingle
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnet() []NetworkSliceSubnetSin
 // GetNetworkSliceSubnetOk returns a tuple with the NetworkSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnetOk() ([]NetworkSliceSubnetSingle, bool) {
-	if o == nil || isNil(o.NetworkSliceSubnet) {
+	if o == nil || IsNil(o.NetworkSliceSubnet) {
 		return nil, false
 	}
 	return o.NetworkSliceSubnet, true
@@ -128,7 +128,7 @@ func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnetOk() ([]NetworkSliceSubnet
 
 // HasNetworkSliceSubnet returns a boolean if a field has been set.
 func (o *SubNetworkSingle2AllOf) HasNetworkSliceSubnet() bool {
-	if o != nil && !isNil(o.NetworkSliceSubnet) {
+	if o != nil && !IsNil(o.NetworkSliceSubnet) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SubNetworkSingle2AllOf) SetNetworkSliceSubnet(v []NetworkSliceSubnetSin
 
 // GetEPTransport returns the EPTransport field value if set, zero value otherwise.
 func (o *SubNetworkSingle2AllOf) GetEPTransport() []EPTransportSingle {
-	if o == nil || isNil(o.EPTransport) {
+	if o == nil || IsNil(o.EPTransport) {
 		var ret []EPTransportSingle
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SubNetworkSingle2AllOf) GetEPTransport() []EPTransportSingle {
 // GetEPTransportOk returns a tuple with the EPTransport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle2AllOf) GetEPTransportOk() ([]EPTransportSingle, bool) {
-	if o == nil || isNil(o.EPTransport) {
+	if o == nil || IsNil(o.EPTransport) {
 		return nil, false
 	}
 	return o.EPTransport, true
@@ -160,7 +160,7 @@ func (o *SubNetworkSingle2AllOf) GetEPTransportOk() ([]EPTransportSingle, bool) 
 
 // HasEPTransport returns a boolean if a field has been set.
 func (o *SubNetworkSingle2AllOf) HasEPTransport() bool {
-	if o != nil && !isNil(o.EPTransport) {
+	if o != nil && !IsNil(o.EPTransport) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *SubNetworkSingle2AllOf) SetEPTransport(v []EPTransportSingle) {
 
 // GetNetworkSliceSubnetProviderCapabilities returns the NetworkSliceSubnetProviderCapabilities field value if set, zero value otherwise.
 func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnetProviderCapabilities() []NetworkSliceSubnetProviderCapabilitiesSingle {
-	if o == nil || isNil(o.NetworkSliceSubnetProviderCapabilities) {
+	if o == nil || IsNil(o.NetworkSliceSubnetProviderCapabilities) {
 		var ret []NetworkSliceSubnetProviderCapabilitiesSingle
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnetProviderCapabilities() []N
 // GetNetworkSliceSubnetProviderCapabilitiesOk returns a tuple with the NetworkSliceSubnetProviderCapabilities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnetProviderCapabilitiesOk() ([]NetworkSliceSubnetProviderCapabilitiesSingle, bool) {
-	if o == nil || isNil(o.NetworkSliceSubnetProviderCapabilities) {
+	if o == nil || IsNil(o.NetworkSliceSubnetProviderCapabilities) {
 		return nil, false
 	}
 	return o.NetworkSliceSubnetProviderCapabilities, true
@@ -192,7 +192,7 @@ func (o *SubNetworkSingle2AllOf) GetNetworkSliceSubnetProviderCapabilitiesOk() (
 
 // HasNetworkSliceSubnetProviderCapabilities returns a boolean if a field has been set.
 func (o *SubNetworkSingle2AllOf) HasNetworkSliceSubnetProviderCapabilities() bool {
-	if o != nil && !isNil(o.NetworkSliceSubnetProviderCapabilities) {
+	if o != nil && !IsNil(o.NetworkSliceSubnetProviderCapabilities) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *SubNetworkSingle2AllOf) SetNetworkSliceSubnetProviderCapabilities(v []N
 
 // GetFeasibilityCheckAndReservationJob returns the FeasibilityCheckAndReservationJob field value if set, zero value otherwise.
 func (o *SubNetworkSingle2AllOf) GetFeasibilityCheckAndReservationJob() []FeasibilityCheckAndReservationJobSingle {
-	if o == nil || isNil(o.FeasibilityCheckAndReservationJob) {
+	if o == nil || IsNil(o.FeasibilityCheckAndReservationJob) {
 		var ret []FeasibilityCheckAndReservationJobSingle
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *SubNetworkSingle2AllOf) GetFeasibilityCheckAndReservationJob() []Feasib
 // GetFeasibilityCheckAndReservationJobOk returns a tuple with the FeasibilityCheckAndReservationJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle2AllOf) GetFeasibilityCheckAndReservationJobOk() ([]FeasibilityCheckAndReservationJobSingle, bool) {
-	if o == nil || isNil(o.FeasibilityCheckAndReservationJob) {
+	if o == nil || IsNil(o.FeasibilityCheckAndReservationJob) {
 		return nil, false
 	}
 	return o.FeasibilityCheckAndReservationJob, true
@@ -224,7 +224,7 @@ func (o *SubNetworkSingle2AllOf) GetFeasibilityCheckAndReservationJobOk() ([]Fea
 
 // HasFeasibilityCheckAndReservationJob returns a boolean if a field has been set.
 func (o *SubNetworkSingle2AllOf) HasFeasibilityCheckAndReservationJob() bool {
-	if o != nil && !isNil(o.FeasibilityCheckAndReservationJob) {
+	if o != nil && !IsNil(o.FeasibilityCheckAndReservationJob) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *SubNetworkSingle2AllOf) SetFeasibilityCheckAndReservationJob(v []Feasib
 }
 
 func (o SubNetworkSingle2AllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,22 +246,22 @@ func (o SubNetworkSingle2AllOf) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle2AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SubNetwork) {
+	if !IsNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !isNil(o.NetworkSlice) {
+	if !IsNil(o.NetworkSlice) {
 		toSerialize["NetworkSlice"] = o.NetworkSlice
 	}
-	if !isNil(o.NetworkSliceSubnet) {
+	if !IsNil(o.NetworkSliceSubnet) {
 		toSerialize["NetworkSliceSubnet"] = o.NetworkSliceSubnet
 	}
-	if !isNil(o.EPTransport) {
+	if !IsNil(o.EPTransport) {
 		toSerialize["EP_Transport"] = o.EPTransport
 	}
-	if !isNil(o.NetworkSliceSubnetProviderCapabilities) {
+	if !IsNil(o.NetworkSliceSubnetProviderCapabilities) {
 		toSerialize["NetworkSliceSubnetProviderCapabilities"] = o.NetworkSliceSubnetProviderCapabilities
 	}
-	if !isNil(o.FeasibilityCheckAndReservationJob) {
+	if !IsNil(o.FeasibilityCheckAndReservationJob) {
 		toSerialize["FeasibilityCheckAndReservationJob"] = o.FeasibilityCheckAndReservationJob
 	}
 	return toSerialize, nil
@@ -302,5 +302,3 @@ func (v *NullableSubNetworkSingle2AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

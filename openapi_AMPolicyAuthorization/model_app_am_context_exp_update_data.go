@@ -1,7 +1,7 @@
 /*
 3gpp-am-policyauthorization
 
-API for AM policy authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AM policy authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -17,11 +17,11 @@ import (
 // checks if the AppAmContextExpUpdateData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AppAmContextExpUpdateData{}
 
-// AppAmContextExpUpdateData Contains the modification(s) to be applied to the Individual application AM context exposure resource. 
+// AppAmContextExpUpdateData Contains the modification(s) to be applied to the Individual application AM context exposure resource.
 type AppAmContextExpUpdateData struct {
-	EvSubscs NullableAmEventsSubscDataRm `json:"evSubscs,omitempty"`
-	HighThruInd *bool `json:"highThruInd,omitempty"`
-	CovReqs []GeographicalArea `json:"covReqs,omitempty"`
+	EvSubscs    NullableAmEventsSubscDataRm `json:"evSubscs,omitempty"`
+	HighThruInd *bool                       `json:"highThruInd,omitempty"`
+	CovReqs     []GeographicalArea          `json:"covReqs,omitempty"`
 	// Unsigned integer identifying a period of time in units of seconds.
 	PolicyDuration *int32 `json:"policyDuration,omitempty"`
 }
@@ -45,7 +45,7 @@ func NewAppAmContextExpUpdateDataWithDefaults() *AppAmContextExpUpdateData {
 
 // GetEvSubscs returns the EvSubscs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextExpUpdateData) GetEvSubscs() AmEventsSubscDataRm {
-	if o == nil || isNil(o.EvSubscs.Get()) {
+	if o == nil || IsNil(o.EvSubscs.Get()) {
 		var ret AmEventsSubscDataRm
 		return ret
 	}
@@ -75,6 +75,7 @@ func (o *AppAmContextExpUpdateData) HasEvSubscs() bool {
 func (o *AppAmContextExpUpdateData) SetEvSubscs(v AmEventsSubscDataRm) {
 	o.EvSubscs.Set(&v)
 }
+
 // SetEvSubscsNil sets the value for EvSubscs to be an explicit nil
 func (o *AppAmContextExpUpdateData) SetEvSubscsNil() {
 	o.EvSubscs.Set(nil)
@@ -87,7 +88,7 @@ func (o *AppAmContextExpUpdateData) UnsetEvSubscs() {
 
 // GetHighThruInd returns the HighThruInd field value if set, zero value otherwise.
 func (o *AppAmContextExpUpdateData) GetHighThruInd() bool {
-	if o == nil || isNil(o.HighThruInd) {
+	if o == nil || IsNil(o.HighThruInd) {
 		var ret bool
 		return ret
 	}
@@ -97,7 +98,7 @@ func (o *AppAmContextExpUpdateData) GetHighThruInd() bool {
 // GetHighThruIndOk returns a tuple with the HighThruInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextExpUpdateData) GetHighThruIndOk() (*bool, bool) {
-	if o == nil || isNil(o.HighThruInd) {
+	if o == nil || IsNil(o.HighThruInd) {
 		return nil, false
 	}
 	return o.HighThruInd, true
@@ -105,7 +106,7 @@ func (o *AppAmContextExpUpdateData) GetHighThruIndOk() (*bool, bool) {
 
 // HasHighThruInd returns a boolean if a field has been set.
 func (o *AppAmContextExpUpdateData) HasHighThruInd() bool {
-	if o != nil && !isNil(o.HighThruInd) {
+	if o != nil && !IsNil(o.HighThruInd) {
 		return true
 	}
 
@@ -119,7 +120,7 @@ func (o *AppAmContextExpUpdateData) SetHighThruInd(v bool) {
 
 // GetCovReqs returns the CovReqs field value if set, zero value otherwise.
 func (o *AppAmContextExpUpdateData) GetCovReqs() []GeographicalArea {
-	if o == nil || isNil(o.CovReqs) {
+	if o == nil || IsNil(o.CovReqs) {
 		var ret []GeographicalArea
 		return ret
 	}
@@ -129,7 +130,7 @@ func (o *AppAmContextExpUpdateData) GetCovReqs() []GeographicalArea {
 // GetCovReqsOk returns a tuple with the CovReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextExpUpdateData) GetCovReqsOk() ([]GeographicalArea, bool) {
-	if o == nil || isNil(o.CovReqs) {
+	if o == nil || IsNil(o.CovReqs) {
 		return nil, false
 	}
 	return o.CovReqs, true
@@ -137,7 +138,7 @@ func (o *AppAmContextExpUpdateData) GetCovReqsOk() ([]GeographicalArea, bool) {
 
 // HasCovReqs returns a boolean if a field has been set.
 func (o *AppAmContextExpUpdateData) HasCovReqs() bool {
-	if o != nil && !isNil(o.CovReqs) {
+	if o != nil && !IsNil(o.CovReqs) {
 		return true
 	}
 
@@ -151,7 +152,7 @@ func (o *AppAmContextExpUpdateData) SetCovReqs(v []GeographicalArea) {
 
 // GetPolicyDuration returns the PolicyDuration field value if set, zero value otherwise.
 func (o *AppAmContextExpUpdateData) GetPolicyDuration() int32 {
-	if o == nil || isNil(o.PolicyDuration) {
+	if o == nil || IsNil(o.PolicyDuration) {
 		var ret int32
 		return ret
 	}
@@ -161,7 +162,7 @@ func (o *AppAmContextExpUpdateData) GetPolicyDuration() int32 {
 // GetPolicyDurationOk returns a tuple with the PolicyDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextExpUpdateData) GetPolicyDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.PolicyDuration) {
+	if o == nil || IsNil(o.PolicyDuration) {
 		return nil, false
 	}
 	return o.PolicyDuration, true
@@ -169,7 +170,7 @@ func (o *AppAmContextExpUpdateData) GetPolicyDurationOk() (*int32, bool) {
 
 // HasPolicyDuration returns a boolean if a field has been set.
 func (o *AppAmContextExpUpdateData) HasPolicyDuration() bool {
-	if o != nil && !isNil(o.PolicyDuration) {
+	if o != nil && !IsNil(o.PolicyDuration) {
 		return true
 	}
 
@@ -182,7 +183,7 @@ func (o *AppAmContextExpUpdateData) SetPolicyDuration(v int32) {
 }
 
 func (o AppAmContextExpUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,13 +195,13 @@ func (o AppAmContextExpUpdateData) ToMap() (map[string]interface{}, error) {
 	if o.EvSubscs.IsSet() {
 		toSerialize["evSubscs"] = o.EvSubscs.Get()
 	}
-	if !isNil(o.HighThruInd) {
+	if !IsNil(o.HighThruInd) {
 		toSerialize["highThruInd"] = o.HighThruInd
 	}
-	if !isNil(o.CovReqs) {
+	if !IsNil(o.CovReqs) {
 		toSerialize["covReqs"] = o.CovReqs
 	}
-	if !isNil(o.PolicyDuration) {
+	if !IsNil(o.PolicyDuration) {
 		toSerialize["policyDuration"] = o.PolicyDuration
 	}
 	return toSerialize, nil
@@ -241,5 +242,3 @@ func (v *NullableAppAmContextExpUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

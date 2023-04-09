@@ -1,7 +1,7 @@
 /*
 Namf_EventExposure
 
-AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &UeInAreaFilter{}
 
 // UeInAreaFilter Additional filters for UE in Area Report event
 type UeInAreaFilter struct {
-	UeType *UeType `json:"ueType,omitempty"`
-	AerialSrvDnnInd *bool `json:"aerialSrvDnnInd,omitempty"`
+	UeType          *UeType `json:"ueType,omitempty"`
+	AerialSrvDnnInd *bool   `json:"aerialSrvDnnInd,omitempty"`
 }
 
 // NewUeInAreaFilter instantiates a new UeInAreaFilter object
@@ -46,7 +46,7 @@ func NewUeInAreaFilterWithDefaults() *UeInAreaFilter {
 
 // GetUeType returns the UeType field value if set, zero value otherwise.
 func (o *UeInAreaFilter) GetUeType() UeType {
-	if o == nil || isNil(o.UeType) {
+	if o == nil || IsNil(o.UeType) {
 		var ret UeType
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *UeInAreaFilter) GetUeType() UeType {
 // GetUeTypeOk returns a tuple with the UeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInAreaFilter) GetUeTypeOk() (*UeType, bool) {
-	if o == nil || isNil(o.UeType) {
+	if o == nil || IsNil(o.UeType) {
 		return nil, false
 	}
 	return o.UeType, true
@@ -64,7 +64,7 @@ func (o *UeInAreaFilter) GetUeTypeOk() (*UeType, bool) {
 
 // HasUeType returns a boolean if a field has been set.
 func (o *UeInAreaFilter) HasUeType() bool {
-	if o != nil && !isNil(o.UeType) {
+	if o != nil && !IsNil(o.UeType) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *UeInAreaFilter) SetUeType(v UeType) {
 
 // GetAerialSrvDnnInd returns the AerialSrvDnnInd field value if set, zero value otherwise.
 func (o *UeInAreaFilter) GetAerialSrvDnnInd() bool {
-	if o == nil || isNil(o.AerialSrvDnnInd) {
+	if o == nil || IsNil(o.AerialSrvDnnInd) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *UeInAreaFilter) GetAerialSrvDnnInd() bool {
 // GetAerialSrvDnnIndOk returns a tuple with the AerialSrvDnnInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInAreaFilter) GetAerialSrvDnnIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AerialSrvDnnInd) {
+	if o == nil || IsNil(o.AerialSrvDnnInd) {
 		return nil, false
 	}
 	return o.AerialSrvDnnInd, true
@@ -96,7 +96,7 @@ func (o *UeInAreaFilter) GetAerialSrvDnnIndOk() (*bool, bool) {
 
 // HasAerialSrvDnnInd returns a boolean if a field has been set.
 func (o *UeInAreaFilter) HasAerialSrvDnnInd() bool {
-	if o != nil && !isNil(o.AerialSrvDnnInd) {
+	if o != nil && !IsNil(o.AerialSrvDnnInd) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UeInAreaFilter) SetAerialSrvDnnInd(v bool) {
 }
 
 func (o UeInAreaFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -118,10 +118,10 @@ func (o UeInAreaFilter) MarshalJSON() ([]byte, error) {
 
 func (o UeInAreaFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UeType) {
+	if !IsNil(o.UeType) {
 		toSerialize["ueType"] = o.UeType
 	}
-	if !isNil(o.AerialSrvDnnInd) {
+	if !IsNil(o.AerialSrvDnnInd) {
 		toSerialize["aerialSrvDnnInd"] = o.AerialSrvDnnInd
 	}
 	return toSerialize, nil
@@ -162,5 +162,3 @@ func (v *NullableUeInAreaFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,8 +19,8 @@ var _ MappedNullable = &NRTACRange{}
 
 // NRTACRange struct for NRTACRange
 type NRTACRange struct {
-	NRTACstart *string `json:"nRTACstart,omitempty"`
-	NRTACend *string `json:"nRTACend,omitempty"`
+	NRTACstart   *string `json:"nRTACstart,omitempty"`
+	NRTACend     *string `json:"nRTACend,omitempty"`
 	NRTACpattern *string `json:"nRTACpattern,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewNRTACRangeWithDefaults() *NRTACRange {
 
 // GetNRTACstart returns the NRTACstart field value if set, zero value otherwise.
 func (o *NRTACRange) GetNRTACstart() string {
-	if o == nil || isNil(o.NRTACstart) {
+	if o == nil || IsNil(o.NRTACstart) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *NRTACRange) GetNRTACstart() string {
 // GetNRTACstartOk returns a tuple with the NRTACstart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRTACRange) GetNRTACstartOk() (*string, bool) {
-	if o == nil || isNil(o.NRTACstart) {
+	if o == nil || IsNil(o.NRTACstart) {
 		return nil, false
 	}
 	return o.NRTACstart, true
@@ -61,7 +61,7 @@ func (o *NRTACRange) GetNRTACstartOk() (*string, bool) {
 
 // HasNRTACstart returns a boolean if a field has been set.
 func (o *NRTACRange) HasNRTACstart() bool {
-	if o != nil && !isNil(o.NRTACstart) {
+	if o != nil && !IsNil(o.NRTACstart) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *NRTACRange) SetNRTACstart(v string) {
 
 // GetNRTACend returns the NRTACend field value if set, zero value otherwise.
 func (o *NRTACRange) GetNRTACend() string {
-	if o == nil || isNil(o.NRTACend) {
+	if o == nil || IsNil(o.NRTACend) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *NRTACRange) GetNRTACend() string {
 // GetNRTACendOk returns a tuple with the NRTACend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRTACRange) GetNRTACendOk() (*string, bool) {
-	if o == nil || isNil(o.NRTACend) {
+	if o == nil || IsNil(o.NRTACend) {
 		return nil, false
 	}
 	return o.NRTACend, true
@@ -93,7 +93,7 @@ func (o *NRTACRange) GetNRTACendOk() (*string, bool) {
 
 // HasNRTACend returns a boolean if a field has been set.
 func (o *NRTACRange) HasNRTACend() bool {
-	if o != nil && !isNil(o.NRTACend) {
+	if o != nil && !IsNil(o.NRTACend) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NRTACRange) SetNRTACend(v string) {
 
 // GetNRTACpattern returns the NRTACpattern field value if set, zero value otherwise.
 func (o *NRTACRange) GetNRTACpattern() string {
-	if o == nil || isNil(o.NRTACpattern) {
+	if o == nil || IsNil(o.NRTACpattern) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NRTACRange) GetNRTACpattern() string {
 // GetNRTACpatternOk returns a tuple with the NRTACpattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRTACRange) GetNRTACpatternOk() (*string, bool) {
-	if o == nil || isNil(o.NRTACpattern) {
+	if o == nil || IsNil(o.NRTACpattern) {
 		return nil, false
 	}
 	return o.NRTACpattern, true
@@ -125,7 +125,7 @@ func (o *NRTACRange) GetNRTACpatternOk() (*string, bool) {
 
 // HasNRTACpattern returns a boolean if a field has been set.
 func (o *NRTACRange) HasNRTACpattern() bool {
-	if o != nil && !isNil(o.NRTACpattern) {
+	if o != nil && !IsNil(o.NRTACpattern) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *NRTACRange) SetNRTACpattern(v string) {
 }
 
 func (o NRTACRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o NRTACRange) MarshalJSON() ([]byte, error) {
 
 func (o NRTACRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NRTACstart) {
+	if !IsNil(o.NRTACstart) {
 		toSerialize["nRTACstart"] = o.NRTACstart
 	}
-	if !isNil(o.NRTACend) {
+	if !IsNil(o.NRTACend) {
 		toSerialize["nRTACend"] = o.NRTACend
 	}
-	if !isNil(o.NRTACpattern) {
+	if !IsNil(o.NRTACpattern) {
 		toSerialize["nRTACpattern"] = o.NRTACpattern
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableNRTACRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,9 +19,9 @@ var _ MappedNullable = &AssuranceTargetStatus{}
 
 // AssuranceTargetStatus struct for AssuranceTargetStatus
 type AssuranceTargetStatus struct {
-	AssuranceTargetStatusId *string `json:"assuranceTargetStatusId,omitempty"`
-	AssuranceTargetName *string `json:"assuranceTargetName,omitempty"`
-	AssuranceTargetStatusObserved *AssuranceTargetStatusObserved `json:"assuranceTargetStatusObserved,omitempty"`
+	AssuranceTargetStatusId        *string                         `json:"assuranceTargetStatusId,omitempty"`
+	AssuranceTargetName            *string                         `json:"assuranceTargetName,omitempty"`
+	AssuranceTargetStatusObserved  *AssuranceTargetStatusObserved  `json:"assuranceTargetStatusObserved,omitempty"`
 	AssuranceTargetStatusPredicted *AssuranceTargetStatusPredicted `json:"assuranceTargetStatusPredicted,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewAssuranceTargetStatusWithDefaults() *AssuranceTargetStatus {
 
 // GetAssuranceTargetStatusId returns the AssuranceTargetStatusId field value if set, zero value otherwise.
 func (o *AssuranceTargetStatus) GetAssuranceTargetStatusId() string {
-	if o == nil || isNil(o.AssuranceTargetStatusId) {
+	if o == nil || IsNil(o.AssuranceTargetStatusId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetStatusId() string {
 // GetAssuranceTargetStatusIdOk returns a tuple with the AssuranceTargetStatusId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceTargetStatus) GetAssuranceTargetStatusIdOk() (*string, bool) {
-	if o == nil || isNil(o.AssuranceTargetStatusId) {
+	if o == nil || IsNil(o.AssuranceTargetStatusId) {
 		return nil, false
 	}
 	return o.AssuranceTargetStatusId, true
@@ -62,7 +62,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetStatusIdOk() (*string, bool) {
 
 // HasAssuranceTargetStatusId returns a boolean if a field has been set.
 func (o *AssuranceTargetStatus) HasAssuranceTargetStatusId() bool {
-	if o != nil && !isNil(o.AssuranceTargetStatusId) {
+	if o != nil && !IsNil(o.AssuranceTargetStatusId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AssuranceTargetStatus) SetAssuranceTargetStatusId(v string) {
 
 // GetAssuranceTargetName returns the AssuranceTargetName field value if set, zero value otherwise.
 func (o *AssuranceTargetStatus) GetAssuranceTargetName() string {
-	if o == nil || isNil(o.AssuranceTargetName) {
+	if o == nil || IsNil(o.AssuranceTargetName) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetName() string {
 // GetAssuranceTargetNameOk returns a tuple with the AssuranceTargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceTargetStatus) GetAssuranceTargetNameOk() (*string, bool) {
-	if o == nil || isNil(o.AssuranceTargetName) {
+	if o == nil || IsNil(o.AssuranceTargetName) {
 		return nil, false
 	}
 	return o.AssuranceTargetName, true
@@ -94,7 +94,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetNameOk() (*string, bool) {
 
 // HasAssuranceTargetName returns a boolean if a field has been set.
 func (o *AssuranceTargetStatus) HasAssuranceTargetName() bool {
-	if o != nil && !isNil(o.AssuranceTargetName) {
+	if o != nil && !IsNil(o.AssuranceTargetName) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AssuranceTargetStatus) SetAssuranceTargetName(v string) {
 
 // GetAssuranceTargetStatusObserved returns the AssuranceTargetStatusObserved field value if set, zero value otherwise.
 func (o *AssuranceTargetStatus) GetAssuranceTargetStatusObserved() AssuranceTargetStatusObserved {
-	if o == nil || isNil(o.AssuranceTargetStatusObserved) {
+	if o == nil || IsNil(o.AssuranceTargetStatusObserved) {
 		var ret AssuranceTargetStatusObserved
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetStatusObserved() AssuranceTarg
 // GetAssuranceTargetStatusObservedOk returns a tuple with the AssuranceTargetStatusObserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceTargetStatus) GetAssuranceTargetStatusObservedOk() (*AssuranceTargetStatusObserved, bool) {
-	if o == nil || isNil(o.AssuranceTargetStatusObserved) {
+	if o == nil || IsNil(o.AssuranceTargetStatusObserved) {
 		return nil, false
 	}
 	return o.AssuranceTargetStatusObserved, true
@@ -126,7 +126,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetStatusObservedOk() (*Assurance
 
 // HasAssuranceTargetStatusObserved returns a boolean if a field has been set.
 func (o *AssuranceTargetStatus) HasAssuranceTargetStatusObserved() bool {
-	if o != nil && !isNil(o.AssuranceTargetStatusObserved) {
+	if o != nil && !IsNil(o.AssuranceTargetStatusObserved) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AssuranceTargetStatus) SetAssuranceTargetStatusObserved(v AssuranceTarg
 
 // GetAssuranceTargetStatusPredicted returns the AssuranceTargetStatusPredicted field value if set, zero value otherwise.
 func (o *AssuranceTargetStatus) GetAssuranceTargetStatusPredicted() AssuranceTargetStatusPredicted {
-	if o == nil || isNil(o.AssuranceTargetStatusPredicted) {
+	if o == nil || IsNil(o.AssuranceTargetStatusPredicted) {
 		var ret AssuranceTargetStatusPredicted
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetStatusPredicted() AssuranceTar
 // GetAssuranceTargetStatusPredictedOk returns a tuple with the AssuranceTargetStatusPredicted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceTargetStatus) GetAssuranceTargetStatusPredictedOk() (*AssuranceTargetStatusPredicted, bool) {
-	if o == nil || isNil(o.AssuranceTargetStatusPredicted) {
+	if o == nil || IsNil(o.AssuranceTargetStatusPredicted) {
 		return nil, false
 	}
 	return o.AssuranceTargetStatusPredicted, true
@@ -158,7 +158,7 @@ func (o *AssuranceTargetStatus) GetAssuranceTargetStatusPredictedOk() (*Assuranc
 
 // HasAssuranceTargetStatusPredicted returns a boolean if a field has been set.
 func (o *AssuranceTargetStatus) HasAssuranceTargetStatusPredicted() bool {
-	if o != nil && !isNil(o.AssuranceTargetStatusPredicted) {
+	if o != nil && !IsNil(o.AssuranceTargetStatusPredicted) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *AssuranceTargetStatus) SetAssuranceTargetStatusPredicted(v AssuranceTar
 }
 
 func (o AssuranceTargetStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o AssuranceTargetStatus) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceTargetStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AssuranceTargetStatusId) {
+	if !IsNil(o.AssuranceTargetStatusId) {
 		toSerialize["assuranceTargetStatusId"] = o.AssuranceTargetStatusId
 	}
-	if !isNil(o.AssuranceTargetName) {
+	if !IsNil(o.AssuranceTargetName) {
 		toSerialize["assuranceTargetName"] = o.AssuranceTargetName
 	}
-	if !isNil(o.AssuranceTargetStatusObserved) {
+	if !IsNil(o.AssuranceTargetStatusObserved) {
 		toSerialize["assuranceTargetStatusObserved"] = o.AssuranceTargetStatusObserved
 	}
-	if !isNil(o.AssuranceTargetStatusPredicted) {
+	if !IsNil(o.AssuranceTargetStatusPredicted) {
 		toSerialize["assuranceTargetStatusPredicted"] = o.AssuranceTargetStatusPredicted
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableAssuranceTargetStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

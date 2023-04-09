@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &FailedModificationInfo{}
 // FailedModificationInfo Information on N32-f modifications block that failed to process
 type FailedModificationInfo struct {
 	// Fully Qualified Domain Name
-	IpxId string `json:"ipxId"`
+	IpxId         string        `json:"ipxId"`
 	N32fErrorType N32fErrorType `json:"n32fErrorType"`
 }
 
@@ -92,7 +92,7 @@ func (o *FailedModificationInfo) SetN32fErrorType(v N32fErrorType) {
 }
 
 func (o FailedModificationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableFailedModificationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

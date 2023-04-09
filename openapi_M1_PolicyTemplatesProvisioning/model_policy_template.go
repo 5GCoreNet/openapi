@@ -1,7 +1,7 @@
 /*
 M1_PolicyTemplatesProvisioning
 
-5GMS AF M1 Policy Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Policy Templates Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,14 +20,14 @@ var _ MappedNullable = &PolicyTemplate{}
 // PolicyTemplate A representation of a Policy Template resource.
 type PolicyTemplate struct {
 	// String chosen by the 5GMS AF to serve as an identifier in a resource URI.
-	PolicyTemplateId string `json:"policyTemplateId"`
-	State PolicyTemplateState `json:"state"`
-	ApiEndPoint string `json:"apiEndPoint"`
-	ApiType PolicyTemplateApiType `json:"apiType"`
-	ExternalReference string `json:"externalReference"`
-	QoSSpecification *M1QoSSpecification `json:"qoSSpecification,omitempty"`
+	PolicyTemplateId          string                                  `json:"policyTemplateId"`
+	State                     PolicyTemplateState                     `json:"state"`
+	ApiEndPoint               string                                  `json:"apiEndPoint"`
+	ApiType                   PolicyTemplateApiType                   `json:"apiType"`
+	ExternalReference         string                                  `json:"externalReference"`
+	QoSSpecification          *M1QoSSpecification                     `json:"qoSSpecification,omitempty"`
 	ApplicationSessionContext PolicyTemplateApplicationSessionContext `json:"applicationSessionContext"`
-	ChargingSpecification *ChargingSpecification `json:"chargingSpecification,omitempty"`
+	ChargingSpecification     *ChargingSpecification                  `json:"chargingSpecification,omitempty"`
 }
 
 // NewPolicyTemplate instantiates a new PolicyTemplate object
@@ -175,7 +175,7 @@ func (o *PolicyTemplate) SetExternalReference(v string) {
 
 // GetQoSSpecification returns the QoSSpecification field value if set, zero value otherwise.
 func (o *PolicyTemplate) GetQoSSpecification() M1QoSSpecification {
-	if o == nil || isNil(o.QoSSpecification) {
+	if o == nil || IsNil(o.QoSSpecification) {
 		var ret M1QoSSpecification
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *PolicyTemplate) GetQoSSpecification() M1QoSSpecification {
 // GetQoSSpecificationOk returns a tuple with the QoSSpecification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyTemplate) GetQoSSpecificationOk() (*M1QoSSpecification, bool) {
-	if o == nil || isNil(o.QoSSpecification) {
+	if o == nil || IsNil(o.QoSSpecification) {
 		return nil, false
 	}
 	return o.QoSSpecification, true
@@ -193,7 +193,7 @@ func (o *PolicyTemplate) GetQoSSpecificationOk() (*M1QoSSpecification, bool) {
 
 // HasQoSSpecification returns a boolean if a field has been set.
 func (o *PolicyTemplate) HasQoSSpecification() bool {
-	if o != nil && !isNil(o.QoSSpecification) {
+	if o != nil && !IsNil(o.QoSSpecification) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *PolicyTemplate) SetApplicationSessionContext(v PolicyTemplateApplicatio
 
 // GetChargingSpecification returns the ChargingSpecification field value if set, zero value otherwise.
 func (o *PolicyTemplate) GetChargingSpecification() ChargingSpecification {
-	if o == nil || isNil(o.ChargingSpecification) {
+	if o == nil || IsNil(o.ChargingSpecification) {
 		var ret ChargingSpecification
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *PolicyTemplate) GetChargingSpecification() ChargingSpecification {
 // GetChargingSpecificationOk returns a tuple with the ChargingSpecification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyTemplate) GetChargingSpecificationOk() (*ChargingSpecification, bool) {
-	if o == nil || isNil(o.ChargingSpecification) {
+	if o == nil || IsNil(o.ChargingSpecification) {
 		return nil, false
 	}
 	return o.ChargingSpecification, true
@@ -249,7 +249,7 @@ func (o *PolicyTemplate) GetChargingSpecificationOk() (*ChargingSpecification, b
 
 // HasChargingSpecification returns a boolean if a field has been set.
 func (o *PolicyTemplate) HasChargingSpecification() bool {
-	if o != nil && !isNil(o.ChargingSpecification) {
+	if o != nil && !IsNil(o.ChargingSpecification) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *PolicyTemplate) SetChargingSpecification(v ChargingSpecification) {
 }
 
 func (o PolicyTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -276,11 +276,11 @@ func (o PolicyTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize["apiEndPoint"] = o.ApiEndPoint
 	toSerialize["apiType"] = o.ApiType
 	toSerialize["externalReference"] = o.ExternalReference
-	if !isNil(o.QoSSpecification) {
+	if !IsNil(o.QoSSpecification) {
 		toSerialize["qoSSpecification"] = o.QoSSpecification
 	}
 	toSerialize["applicationSessionContext"] = o.ApplicationSessionContext
-	if !isNil(o.ChargingSpecification) {
+	if !IsNil(o.ChargingSpecification) {
 		toSerialize["chargingSpecification"] = o.ChargingSpecification
 	}
 	return toSerialize, nil
@@ -321,5 +321,3 @@ func (v *NullablePolicyTemplate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

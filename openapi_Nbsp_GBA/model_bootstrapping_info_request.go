@@ -1,7 +1,7 @@
 /*
 GBA BSF Nbsp_GBA Service
 
-GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GBA BSF Nbsp_GBA Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &BootstrappingInfoRequest{}
 // BootstrappingInfoRequest Request body of the HTTP POST operation for resource /bootstrapping-info-request
 type BootstrappingInfoRequest struct {
 	// Bootstrapping Transaction Identifier
-	BtId string `json:"btId"`
-	NafId NafId `json:"nafId"`
-	GbaUAware *bool `json:"gbaUAware,omitempty"`
-	GsIds []int32 `json:"gsIds,omitempty"`
+	BtId      string  `json:"btId"`
+	NafId     NafId   `json:"nafId"`
+	GbaUAware *bool   `json:"gbaUAware,omitempty"`
+	GsIds     []int32 `json:"gsIds,omitempty"`
 }
 
 // NewBootstrappingInfoRequest instantiates a new BootstrappingInfoRequest object
@@ -99,7 +99,7 @@ func (o *BootstrappingInfoRequest) SetNafId(v NafId) {
 
 // GetGbaUAware returns the GbaUAware field value if set, zero value otherwise.
 func (o *BootstrappingInfoRequest) GetGbaUAware() bool {
-	if o == nil || isNil(o.GbaUAware) {
+	if o == nil || IsNil(o.GbaUAware) {
 		var ret bool
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *BootstrappingInfoRequest) GetGbaUAware() bool {
 // GetGbaUAwareOk returns a tuple with the GbaUAware field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoRequest) GetGbaUAwareOk() (*bool, bool) {
-	if o == nil || isNil(o.GbaUAware) {
+	if o == nil || IsNil(o.GbaUAware) {
 		return nil, false
 	}
 	return o.GbaUAware, true
@@ -117,7 +117,7 @@ func (o *BootstrappingInfoRequest) GetGbaUAwareOk() (*bool, bool) {
 
 // HasGbaUAware returns a boolean if a field has been set.
 func (o *BootstrappingInfoRequest) HasGbaUAware() bool {
-	if o != nil && !isNil(o.GbaUAware) {
+	if o != nil && !IsNil(o.GbaUAware) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *BootstrappingInfoRequest) SetGbaUAware(v bool) {
 
 // GetGsIds returns the GsIds field value if set, zero value otherwise.
 func (o *BootstrappingInfoRequest) GetGsIds() []int32 {
-	if o == nil || isNil(o.GsIds) {
+	if o == nil || IsNil(o.GsIds) {
 		var ret []int32
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *BootstrappingInfoRequest) GetGsIds() []int32 {
 // GetGsIdsOk returns a tuple with the GsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoRequest) GetGsIdsOk() ([]int32, bool) {
-	if o == nil || isNil(o.GsIds) {
+	if o == nil || IsNil(o.GsIds) {
 		return nil, false
 	}
 	return o.GsIds, true
@@ -149,7 +149,7 @@ func (o *BootstrappingInfoRequest) GetGsIdsOk() ([]int32, bool) {
 
 // HasGsIds returns a boolean if a field has been set.
 func (o *BootstrappingInfoRequest) HasGsIds() bool {
-	if o != nil && !isNil(o.GsIds) {
+	if o != nil && !IsNil(o.GsIds) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *BootstrappingInfoRequest) SetGsIds(v []int32) {
 }
 
 func (o BootstrappingInfoRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -173,10 +173,10 @@ func (o BootstrappingInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["btId"] = o.BtId
 	toSerialize["nafId"] = o.NafId
-	if !isNil(o.GbaUAware) {
+	if !IsNil(o.GbaUAware) {
 		toSerialize["gbaUAware"] = o.GbaUAware
 	}
-	if !isNil(o.GsIds) {
+	if !IsNil(o.GsIds) {
 		toSerialize["gsIds"] = o.GsIds
 	}
 	return toSerialize, nil
@@ -217,5 +217,3 @@ func (v *NullableBootstrappingInfoRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

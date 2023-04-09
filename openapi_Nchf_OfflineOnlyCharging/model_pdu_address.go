@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &PDUAddress{}
 
 // PDUAddress struct for PDUAddress
 type PDUAddress struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	PduIPv4Address *string `json:"pduIPv4Address,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	PduIPv4Address           *string   `json:"pduIPv4Address,omitempty"`
 	PduIPv6AddresswithPrefix *Ipv6Addr `json:"pduIPv6AddresswithPrefix,omitempty"`
-	PduAddressprefixlength *int32 `json:"pduAddressprefixlength,omitempty"`
-	IPv4dynamicAddressFlag *bool `json:"iPv4dynamicAddressFlag,omitempty"`
-	IPv6dynamicPrefixFlag *bool `json:"iPv6dynamicPrefixFlag,omitempty"`
+	PduAddressprefixlength   *int32    `json:"pduAddressprefixlength,omitempty"`
+	IPv4dynamicAddressFlag   *bool     `json:"iPv4dynamicAddressFlag,omitempty"`
+	IPv6dynamicPrefixFlag    *bool     `json:"iPv6dynamicPrefixFlag,omitempty"`
 }
 
 // NewPDUAddress instantiates a new PDUAddress object
@@ -46,7 +46,7 @@ func NewPDUAddressWithDefaults() *PDUAddress {
 
 // GetPduIPv4Address returns the PduIPv4Address field value if set, zero value otherwise.
 func (o *PDUAddress) GetPduIPv4Address() string {
-	if o == nil || isNil(o.PduIPv4Address) {
+	if o == nil || IsNil(o.PduIPv4Address) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *PDUAddress) GetPduIPv4Address() string {
 // GetPduIPv4AddressOk returns a tuple with the PduIPv4Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUAddress) GetPduIPv4AddressOk() (*string, bool) {
-	if o == nil || isNil(o.PduIPv4Address) {
+	if o == nil || IsNil(o.PduIPv4Address) {
 		return nil, false
 	}
 	return o.PduIPv4Address, true
@@ -64,7 +64,7 @@ func (o *PDUAddress) GetPduIPv4AddressOk() (*string, bool) {
 
 // HasPduIPv4Address returns a boolean if a field has been set.
 func (o *PDUAddress) HasPduIPv4Address() bool {
-	if o != nil && !isNil(o.PduIPv4Address) {
+	if o != nil && !IsNil(o.PduIPv4Address) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *PDUAddress) SetPduIPv4Address(v string) {
 
 // GetPduIPv6AddresswithPrefix returns the PduIPv6AddresswithPrefix field value if set, zero value otherwise.
 func (o *PDUAddress) GetPduIPv6AddresswithPrefix() Ipv6Addr {
-	if o == nil || isNil(o.PduIPv6AddresswithPrefix) {
+	if o == nil || IsNil(o.PduIPv6AddresswithPrefix) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *PDUAddress) GetPduIPv6AddresswithPrefix() Ipv6Addr {
 // GetPduIPv6AddresswithPrefixOk returns a tuple with the PduIPv6AddresswithPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUAddress) GetPduIPv6AddresswithPrefixOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.PduIPv6AddresswithPrefix) {
+	if o == nil || IsNil(o.PduIPv6AddresswithPrefix) {
 		return nil, false
 	}
 	return o.PduIPv6AddresswithPrefix, true
@@ -96,7 +96,7 @@ func (o *PDUAddress) GetPduIPv6AddresswithPrefixOk() (*Ipv6Addr, bool) {
 
 // HasPduIPv6AddresswithPrefix returns a boolean if a field has been set.
 func (o *PDUAddress) HasPduIPv6AddresswithPrefix() bool {
-	if o != nil && !isNil(o.PduIPv6AddresswithPrefix) {
+	if o != nil && !IsNil(o.PduIPv6AddresswithPrefix) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *PDUAddress) SetPduIPv6AddresswithPrefix(v Ipv6Addr) {
 
 // GetPduAddressprefixlength returns the PduAddressprefixlength field value if set, zero value otherwise.
 func (o *PDUAddress) GetPduAddressprefixlength() int32 {
-	if o == nil || isNil(o.PduAddressprefixlength) {
+	if o == nil || IsNil(o.PduAddressprefixlength) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *PDUAddress) GetPduAddressprefixlength() int32 {
 // GetPduAddressprefixlengthOk returns a tuple with the PduAddressprefixlength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUAddress) GetPduAddressprefixlengthOk() (*int32, bool) {
-	if o == nil || isNil(o.PduAddressprefixlength) {
+	if o == nil || IsNil(o.PduAddressprefixlength) {
 		return nil, false
 	}
 	return o.PduAddressprefixlength, true
@@ -128,7 +128,7 @@ func (o *PDUAddress) GetPduAddressprefixlengthOk() (*int32, bool) {
 
 // HasPduAddressprefixlength returns a boolean if a field has been set.
 func (o *PDUAddress) HasPduAddressprefixlength() bool {
-	if o != nil && !isNil(o.PduAddressprefixlength) {
+	if o != nil && !IsNil(o.PduAddressprefixlength) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *PDUAddress) SetPduAddressprefixlength(v int32) {
 
 // GetIPv4dynamicAddressFlag returns the IPv4dynamicAddressFlag field value if set, zero value otherwise.
 func (o *PDUAddress) GetIPv4dynamicAddressFlag() bool {
-	if o == nil || isNil(o.IPv4dynamicAddressFlag) {
+	if o == nil || IsNil(o.IPv4dynamicAddressFlag) {
 		var ret bool
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PDUAddress) GetIPv4dynamicAddressFlag() bool {
 // GetIPv4dynamicAddressFlagOk returns a tuple with the IPv4dynamicAddressFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUAddress) GetIPv4dynamicAddressFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.IPv4dynamicAddressFlag) {
+	if o == nil || IsNil(o.IPv4dynamicAddressFlag) {
 		return nil, false
 	}
 	return o.IPv4dynamicAddressFlag, true
@@ -160,7 +160,7 @@ func (o *PDUAddress) GetIPv4dynamicAddressFlagOk() (*bool, bool) {
 
 // HasIPv4dynamicAddressFlag returns a boolean if a field has been set.
 func (o *PDUAddress) HasIPv4dynamicAddressFlag() bool {
-	if o != nil && !isNil(o.IPv4dynamicAddressFlag) {
+	if o != nil && !IsNil(o.IPv4dynamicAddressFlag) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *PDUAddress) SetIPv4dynamicAddressFlag(v bool) {
 
 // GetIPv6dynamicPrefixFlag returns the IPv6dynamicPrefixFlag field value if set, zero value otherwise.
 func (o *PDUAddress) GetIPv6dynamicPrefixFlag() bool {
-	if o == nil || isNil(o.IPv6dynamicPrefixFlag) {
+	if o == nil || IsNil(o.IPv6dynamicPrefixFlag) {
 		var ret bool
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *PDUAddress) GetIPv6dynamicPrefixFlag() bool {
 // GetIPv6dynamicPrefixFlagOk returns a tuple with the IPv6dynamicPrefixFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUAddress) GetIPv6dynamicPrefixFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.IPv6dynamicPrefixFlag) {
+	if o == nil || IsNil(o.IPv6dynamicPrefixFlag) {
 		return nil, false
 	}
 	return o.IPv6dynamicPrefixFlag, true
@@ -192,7 +192,7 @@ func (o *PDUAddress) GetIPv6dynamicPrefixFlagOk() (*bool, bool) {
 
 // HasIPv6dynamicPrefixFlag returns a boolean if a field has been set.
 func (o *PDUAddress) HasIPv6dynamicPrefixFlag() bool {
-	if o != nil && !isNil(o.IPv6dynamicPrefixFlag) {
+	if o != nil && !IsNil(o.IPv6dynamicPrefixFlag) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *PDUAddress) SetIPv6dynamicPrefixFlag(v bool) {
 }
 
 func (o PDUAddress) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -214,19 +214,19 @@ func (o PDUAddress) MarshalJSON() ([]byte, error) {
 
 func (o PDUAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PduIPv4Address) {
+	if !IsNil(o.PduIPv4Address) {
 		toSerialize["pduIPv4Address"] = o.PduIPv4Address
 	}
-	if !isNil(o.PduIPv6AddresswithPrefix) {
+	if !IsNil(o.PduIPv6AddresswithPrefix) {
 		toSerialize["pduIPv6AddresswithPrefix"] = o.PduIPv6AddresswithPrefix
 	}
-	if !isNil(o.PduAddressprefixlength) {
+	if !IsNil(o.PduAddressprefixlength) {
 		toSerialize["pduAddressprefixlength"] = o.PduAddressprefixlength
 	}
-	if !isNil(o.IPv4dynamicAddressFlag) {
+	if !IsNil(o.IPv4dynamicAddressFlag) {
 		toSerialize["iPv4dynamicAddressFlag"] = o.IPv4dynamicAddressFlag
 	}
-	if !isNil(o.IPv6dynamicPrefixFlag) {
+	if !IsNil(o.IPv6dynamicPrefixFlag) {
 		toSerialize["iPv6dynamicPrefixFlag"] = o.IPv6dynamicPrefixFlag
 	}
 	return toSerialize, nil
@@ -267,5 +267,3 @@ func (v *NullablePDUAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

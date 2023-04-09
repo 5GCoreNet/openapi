@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &NgKsi{}
 // NgKsi Represents the ngKSI
 type NgKsi struct {
 	Tsc ScType `json:"tsc"`
-	Ksi int32 `json:"ksi"`
+	Ksi int32  `json:"ksi"`
 }
 
 // NewNgKsi instantiates a new NgKsi object
@@ -91,7 +91,7 @@ func (o *NgKsi) SetKsi(v int32) {
 }
 
 func (o NgKsi) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableNgKsi) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

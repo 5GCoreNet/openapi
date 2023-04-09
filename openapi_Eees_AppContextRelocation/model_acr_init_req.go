@@ -1,7 +1,7 @@
 /*
 Eees Application Context Relocation Service
 
-Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,17 +20,17 @@ var _ MappedNullable = &AcrInitReq{}
 // AcrInitReq Represents the parameters to request ACR with action initiation.
 type AcrInitReq struct {
 	RequestorId string `json:"requestorId"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	UeId *string `json:"ueId,omitempty"`
-	AcId *string `json:"acId,omitempty"`
-	EasId *string `json:"easId,omitempty"`
-	TEasEndpoint EndPoint `json:"tEasEndpoint"`
-	SEasEndpoint *EndPoint `json:"sEasEndpoint,omitempty"`
-	PrevTEasEndpoint *EndPoint `json:"prevTEasEndpoint,omitempty"`
-	RouteReq NullableRouteToLocation `json:"routeReq,omitempty"`
-	EasNotifInd bool `json:"easNotifInd"`
-	PrevEasNotifInd *bool `json:"prevEasNotifInd,omitempty"`
-	EecCtxtReloc *EecCtxtReloc `json:"eecCtxtReloc,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	UeId             *string                 `json:"ueId,omitempty"`
+	AcId             *string                 `json:"acId,omitempty"`
+	EasId            *string                 `json:"easId,omitempty"`
+	TEasEndpoint     EndPoint                `json:"tEasEndpoint"`
+	SEasEndpoint     *EndPoint               `json:"sEasEndpoint,omitempty"`
+	PrevTEasEndpoint *EndPoint               `json:"prevTEasEndpoint,omitempty"`
+	RouteReq         NullableRouteToLocation `json:"routeReq,omitempty"`
+	EasNotifInd      bool                    `json:"easNotifInd"`
+	PrevEasNotifInd  *bool                   `json:"prevEasNotifInd,omitempty"`
+	EecCtxtReloc     *EecCtxtReloc           `json:"eecCtxtReloc,omitempty"`
 }
 
 // NewAcrInitReq instantiates a new AcrInitReq object
@@ -85,7 +85,7 @@ func (o *AcrInitReq) SetRequestorId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *AcrInitReq) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *AcrInitReq) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -103,7 +103,7 @@ func (o *AcrInitReq) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *AcrInitReq) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *AcrInitReq) SetUeId(v string) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *AcrInitReq) GetAcId() string {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *AcrInitReq) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetAcIdOk() (*string, bool) {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -135,7 +135,7 @@ func (o *AcrInitReq) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *AcrInitReq) HasAcId() bool {
-	if o != nil && !isNil(o.AcId) {
+	if o != nil && !IsNil(o.AcId) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *AcrInitReq) SetAcId(v string) {
 
 // GetEasId returns the EasId field value if set, zero value otherwise.
 func (o *AcrInitReq) GetEasId() string {
-	if o == nil || isNil(o.EasId) {
+	if o == nil || IsNil(o.EasId) {
 		var ret string
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *AcrInitReq) GetEasId() string {
 // GetEasIdOk returns a tuple with the EasId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetEasIdOk() (*string, bool) {
-	if o == nil || isNil(o.EasId) {
+	if o == nil || IsNil(o.EasId) {
 		return nil, false
 	}
 	return o.EasId, true
@@ -167,7 +167,7 @@ func (o *AcrInitReq) GetEasIdOk() (*string, bool) {
 
 // HasEasId returns a boolean if a field has been set.
 func (o *AcrInitReq) HasEasId() bool {
-	if o != nil && !isNil(o.EasId) {
+	if o != nil && !IsNil(o.EasId) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *AcrInitReq) SetTEasEndpoint(v EndPoint) {
 
 // GetSEasEndpoint returns the SEasEndpoint field value if set, zero value otherwise.
 func (o *AcrInitReq) GetSEasEndpoint() EndPoint {
-	if o == nil || isNil(o.SEasEndpoint) {
+	if o == nil || IsNil(o.SEasEndpoint) {
 		var ret EndPoint
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *AcrInitReq) GetSEasEndpoint() EndPoint {
 // GetSEasEndpointOk returns a tuple with the SEasEndpoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetSEasEndpointOk() (*EndPoint, bool) {
-	if o == nil || isNil(o.SEasEndpoint) {
+	if o == nil || IsNil(o.SEasEndpoint) {
 		return nil, false
 	}
 	return o.SEasEndpoint, true
@@ -223,7 +223,7 @@ func (o *AcrInitReq) GetSEasEndpointOk() (*EndPoint, bool) {
 
 // HasSEasEndpoint returns a boolean if a field has been set.
 func (o *AcrInitReq) HasSEasEndpoint() bool {
-	if o != nil && !isNil(o.SEasEndpoint) {
+	if o != nil && !IsNil(o.SEasEndpoint) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *AcrInitReq) SetSEasEndpoint(v EndPoint) {
 
 // GetPrevTEasEndpoint returns the PrevTEasEndpoint field value if set, zero value otherwise.
 func (o *AcrInitReq) GetPrevTEasEndpoint() EndPoint {
-	if o == nil || isNil(o.PrevTEasEndpoint) {
+	if o == nil || IsNil(o.PrevTEasEndpoint) {
 		var ret EndPoint
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *AcrInitReq) GetPrevTEasEndpoint() EndPoint {
 // GetPrevTEasEndpointOk returns a tuple with the PrevTEasEndpoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetPrevTEasEndpointOk() (*EndPoint, bool) {
-	if o == nil || isNil(o.PrevTEasEndpoint) {
+	if o == nil || IsNil(o.PrevTEasEndpoint) {
 		return nil, false
 	}
 	return o.PrevTEasEndpoint, true
@@ -255,7 +255,7 @@ func (o *AcrInitReq) GetPrevTEasEndpointOk() (*EndPoint, bool) {
 
 // HasPrevTEasEndpoint returns a boolean if a field has been set.
 func (o *AcrInitReq) HasPrevTEasEndpoint() bool {
-	if o != nil && !isNil(o.PrevTEasEndpoint) {
+	if o != nil && !IsNil(o.PrevTEasEndpoint) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *AcrInitReq) SetPrevTEasEndpoint(v EndPoint) {
 
 // GetRouteReq returns the RouteReq field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AcrInitReq) GetRouteReq() RouteToLocation {
-	if o == nil || isNil(o.RouteReq.Get()) {
+	if o == nil || IsNil(o.RouteReq.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -299,6 +299,7 @@ func (o *AcrInitReq) HasRouteReq() bool {
 func (o *AcrInitReq) SetRouteReq(v RouteToLocation) {
 	o.RouteReq.Set(&v)
 }
+
 // SetRouteReqNil sets the value for RouteReq to be an explicit nil
 func (o *AcrInitReq) SetRouteReqNil() {
 	o.RouteReq.Set(nil)
@@ -335,7 +336,7 @@ func (o *AcrInitReq) SetEasNotifInd(v bool) {
 
 // GetPrevEasNotifInd returns the PrevEasNotifInd field value if set, zero value otherwise.
 func (o *AcrInitReq) GetPrevEasNotifInd() bool {
-	if o == nil || isNil(o.PrevEasNotifInd) {
+	if o == nil || IsNil(o.PrevEasNotifInd) {
 		var ret bool
 		return ret
 	}
@@ -345,7 +346,7 @@ func (o *AcrInitReq) GetPrevEasNotifInd() bool {
 // GetPrevEasNotifIndOk returns a tuple with the PrevEasNotifInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetPrevEasNotifIndOk() (*bool, bool) {
-	if o == nil || isNil(o.PrevEasNotifInd) {
+	if o == nil || IsNil(o.PrevEasNotifInd) {
 		return nil, false
 	}
 	return o.PrevEasNotifInd, true
@@ -353,7 +354,7 @@ func (o *AcrInitReq) GetPrevEasNotifIndOk() (*bool, bool) {
 
 // HasPrevEasNotifInd returns a boolean if a field has been set.
 func (o *AcrInitReq) HasPrevEasNotifInd() bool {
-	if o != nil && !isNil(o.PrevEasNotifInd) {
+	if o != nil && !IsNil(o.PrevEasNotifInd) {
 		return true
 	}
 
@@ -367,7 +368,7 @@ func (o *AcrInitReq) SetPrevEasNotifInd(v bool) {
 
 // GetEecCtxtReloc returns the EecCtxtReloc field value if set, zero value otherwise.
 func (o *AcrInitReq) GetEecCtxtReloc() EecCtxtReloc {
-	if o == nil || isNil(o.EecCtxtReloc) {
+	if o == nil || IsNil(o.EecCtxtReloc) {
 		var ret EecCtxtReloc
 		return ret
 	}
@@ -377,7 +378,7 @@ func (o *AcrInitReq) GetEecCtxtReloc() EecCtxtReloc {
 // GetEecCtxtRelocOk returns a tuple with the EecCtxtReloc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrInitReq) GetEecCtxtRelocOk() (*EecCtxtReloc, bool) {
-	if o == nil || isNil(o.EecCtxtReloc) {
+	if o == nil || IsNil(o.EecCtxtReloc) {
 		return nil, false
 	}
 	return o.EecCtxtReloc, true
@@ -385,7 +386,7 @@ func (o *AcrInitReq) GetEecCtxtRelocOk() (*EecCtxtReloc, bool) {
 
 // HasEecCtxtReloc returns a boolean if a field has been set.
 func (o *AcrInitReq) HasEecCtxtReloc() bool {
-	if o != nil && !isNil(o.EecCtxtReloc) {
+	if o != nil && !IsNil(o.EecCtxtReloc) {
 		return true
 	}
 
@@ -398,7 +399,7 @@ func (o *AcrInitReq) SetEecCtxtReloc(v EecCtxtReloc) {
 }
 
 func (o AcrInitReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -408,30 +409,30 @@ func (o AcrInitReq) MarshalJSON() ([]byte, error) {
 func (o AcrInitReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["requestorId"] = o.RequestorId
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.AcId) {
+	if !IsNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
-	if !isNil(o.EasId) {
+	if !IsNil(o.EasId) {
 		toSerialize["easId"] = o.EasId
 	}
 	toSerialize["tEasEndpoint"] = o.TEasEndpoint
-	if !isNil(o.SEasEndpoint) {
+	if !IsNil(o.SEasEndpoint) {
 		toSerialize["sEasEndpoint"] = o.SEasEndpoint
 	}
-	if !isNil(o.PrevTEasEndpoint) {
+	if !IsNil(o.PrevTEasEndpoint) {
 		toSerialize["prevTEasEndpoint"] = o.PrevTEasEndpoint
 	}
 	if o.RouteReq.IsSet() {
 		toSerialize["routeReq"] = o.RouteReq.Get()
 	}
 	toSerialize["easNotifInd"] = o.EasNotifInd
-	if !isNil(o.PrevEasNotifInd) {
+	if !IsNil(o.PrevEasNotifInd) {
 		toSerialize["prevEasNotifInd"] = o.PrevEasNotifInd
 	}
-	if !isNil(o.EecCtxtReloc) {
+	if !IsNil(o.EecCtxtReloc) {
 		toSerialize["eecCtxtReloc"] = o.EecCtxtReloc
 	}
 	return toSerialize, nil
@@ -472,5 +473,3 @@ func (v *NullableAcrInitReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

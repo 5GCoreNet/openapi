@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &SubscribedDefaultQos{}
 
 // SubscribedDefaultQos Provides the subsribed 5QI and the ARP, it may contain the priority level.
 type SubscribedDefaultQos struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi int32 `json:"5qi"`
-	Arp Arp `json:"arp"`
-	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.  
+	Arp    Arp   `json:"arp"`
+	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.
 	PriorityLevel *int32 `json:"priorityLevel,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *SubscribedDefaultQos) SetArp(v Arp) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise.
 func (o *SubscribedDefaultQos) GetPriorityLevel() int32 {
-	if o == nil || isNil(o.PriorityLevel) {
+	if o == nil || IsNil(o.PriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SubscribedDefaultQos) GetPriorityLevel() int32 {
 // GetPriorityLevelOk returns a tuple with the PriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedDefaultQos) GetPriorityLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.PriorityLevel) {
+	if o == nil || IsNil(o.PriorityLevel) {
 		return nil, false
 	}
 	return o.PriorityLevel, true
@@ -113,7 +113,7 @@ func (o *SubscribedDefaultQos) GetPriorityLevelOk() (*int32, bool) {
 
 // HasPriorityLevel returns a boolean if a field has been set.
 func (o *SubscribedDefaultQos) HasPriorityLevel() bool {
-	if o != nil && !isNil(o.PriorityLevel) {
+	if o != nil && !IsNil(o.PriorityLevel) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *SubscribedDefaultQos) SetPriorityLevel(v int32) {
 }
 
 func (o SubscribedDefaultQos) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o SubscribedDefaultQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
 	toSerialize["arp"] = o.Arp
-	if !isNil(o.PriorityLevel) {
+	if !IsNil(o.PriorityLevel) {
 		toSerialize["priorityLevel"] = o.PriorityLevel
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableSubscribedDefaultQos) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

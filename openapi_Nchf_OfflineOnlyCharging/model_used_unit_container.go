@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,23 +20,23 @@ var _ MappedNullable = &UsedUnitContainer{}
 
 // UsedUnitContainer struct for UsedUnitContainer
 type UsedUnitContainer struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	ServiceId *int32 `json:"serviceId,omitempty"`
-	Triggers []Trigger `json:"triggers,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	ServiceId *int32    `json:"serviceId,omitempty"`
+	Triggers  []Trigger `json:"triggers,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TriggerTimestamp *time.Time `json:"triggerTimestamp,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	Time *int32 `json:"time,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	TotalVolume *int32 `json:"totalVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	UplinkVolume *int32 `json:"uplinkVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	DownlinkVolume *int32 `json:"downlinkVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
-	ServiceSpecificUnits *int32 `json:"serviceSpecificUnits,omitempty"`
-	EventTimeStamps []time.Time `json:"eventTimeStamps,omitempty"`
-	LocalSequenceNumber int32 `json:"localSequenceNumber"`
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
+	ServiceSpecificUnits    *int32                   `json:"serviceSpecificUnits,omitempty"`
+	EventTimeStamps         []time.Time              `json:"eventTimeStamps,omitempty"`
+	LocalSequenceNumber     int32                    `json:"localSequenceNumber"`
 	PDUContainerInformation *PDUContainerInformation `json:"pDUContainerInformation,omitempty"`
 }
 
@@ -60,7 +60,7 @@ func NewUsedUnitContainerWithDefaults() *UsedUnitContainer {
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetServiceId() int32 {
-	if o == nil || isNil(o.ServiceId) {
+	if o == nil || IsNil(o.ServiceId) {
 		var ret int32
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *UsedUnitContainer) GetServiceId() int32 {
 // GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetServiceIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ServiceId) {
+	if o == nil || IsNil(o.ServiceId) {
 		return nil, false
 	}
 	return o.ServiceId, true
@@ -78,7 +78,7 @@ func (o *UsedUnitContainer) GetServiceIdOk() (*int32, bool) {
 
 // HasServiceId returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasServiceId() bool {
-	if o != nil && !isNil(o.ServiceId) {
+	if o != nil && !IsNil(o.ServiceId) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *UsedUnitContainer) SetServiceId(v int32) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetTriggers() []Trigger {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *UsedUnitContainer) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -110,7 +110,7 @@ func (o *UsedUnitContainer) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasTriggers() bool {
-	if o != nil && !isNil(o.Triggers) {
+	if o != nil && !IsNil(o.Triggers) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *UsedUnitContainer) SetTriggers(v []Trigger) {
 
 // GetTriggerTimestamp returns the TriggerTimestamp field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetTriggerTimestamp() time.Time {
-	if o == nil || isNil(o.TriggerTimestamp) {
+	if o == nil || IsNil(o.TriggerTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *UsedUnitContainer) GetTriggerTimestamp() time.Time {
 // GetTriggerTimestampOk returns a tuple with the TriggerTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetTriggerTimestampOk() (*time.Time, bool) {
-	if o == nil || isNil(o.TriggerTimestamp) {
+	if o == nil || IsNil(o.TriggerTimestamp) {
 		return nil, false
 	}
 	return o.TriggerTimestamp, true
@@ -142,7 +142,7 @@ func (o *UsedUnitContainer) GetTriggerTimestampOk() (*time.Time, bool) {
 
 // HasTriggerTimestamp returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasTriggerTimestamp() bool {
-	if o != nil && !isNil(o.TriggerTimestamp) {
+	if o != nil && !IsNil(o.TriggerTimestamp) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *UsedUnitContainer) SetTriggerTimestamp(v time.Time) {
 
 // GetTime returns the Time field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetTime() int32 {
-	if o == nil || isNil(o.Time) {
+	if o == nil || IsNil(o.Time) {
 		var ret int32
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *UsedUnitContainer) GetTime() int32 {
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.Time) {
+	if o == nil || IsNil(o.Time) {
 		return nil, false
 	}
 	return o.Time, true
@@ -174,7 +174,7 @@ func (o *UsedUnitContainer) GetTimeOk() (*int32, bool) {
 
 // HasTime returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasTime() bool {
-	if o != nil && !isNil(o.Time) {
+	if o != nil && !IsNil(o.Time) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *UsedUnitContainer) SetTime(v int32) {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetTotalVolume() int32 {
-	if o == nil || isNil(o.TotalVolume) {
+	if o == nil || IsNil(o.TotalVolume) {
 		var ret int32
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *UsedUnitContainer) GetTotalVolume() int32 {
 // GetTotalVolumeOk returns a tuple with the TotalVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetTotalVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalVolume) {
+	if o == nil || IsNil(o.TotalVolume) {
 		return nil, false
 	}
 	return o.TotalVolume, true
@@ -206,7 +206,7 @@ func (o *UsedUnitContainer) GetTotalVolumeOk() (*int32, bool) {
 
 // HasTotalVolume returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasTotalVolume() bool {
-	if o != nil && !isNil(o.TotalVolume) {
+	if o != nil && !IsNil(o.TotalVolume) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *UsedUnitContainer) SetTotalVolume(v int32) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetUplinkVolume() int32 {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *UsedUnitContainer) GetUplinkVolume() int32 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetUplinkVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -238,7 +238,7 @@ func (o *UsedUnitContainer) GetUplinkVolumeOk() (*int32, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasUplinkVolume() bool {
-	if o != nil && !isNil(o.UplinkVolume) {
+	if o != nil && !IsNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *UsedUnitContainer) SetUplinkVolume(v int32) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetDownlinkVolume() int32 {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *UsedUnitContainer) GetDownlinkVolume() int32 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetDownlinkVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -270,7 +270,7 @@ func (o *UsedUnitContainer) GetDownlinkVolumeOk() (*int32, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasDownlinkVolume() bool {
-	if o != nil && !isNil(o.DownlinkVolume) {
+	if o != nil && !IsNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *UsedUnitContainer) SetDownlinkVolume(v int32) {
 
 // GetServiceSpecificUnits returns the ServiceSpecificUnits field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetServiceSpecificUnits() int32 {
-	if o == nil || isNil(o.ServiceSpecificUnits) {
+	if o == nil || IsNil(o.ServiceSpecificUnits) {
 		var ret int32
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *UsedUnitContainer) GetServiceSpecificUnits() int32 {
 // GetServiceSpecificUnitsOk returns a tuple with the ServiceSpecificUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetServiceSpecificUnitsOk() (*int32, bool) {
-	if o == nil || isNil(o.ServiceSpecificUnits) {
+	if o == nil || IsNil(o.ServiceSpecificUnits) {
 		return nil, false
 	}
 	return o.ServiceSpecificUnits, true
@@ -302,7 +302,7 @@ func (o *UsedUnitContainer) GetServiceSpecificUnitsOk() (*int32, bool) {
 
 // HasServiceSpecificUnits returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasServiceSpecificUnits() bool {
-	if o != nil && !isNil(o.ServiceSpecificUnits) {
+	if o != nil && !IsNil(o.ServiceSpecificUnits) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *UsedUnitContainer) SetServiceSpecificUnits(v int32) {
 
 // GetEventTimeStamps returns the EventTimeStamps field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetEventTimeStamps() []time.Time {
-	if o == nil || isNil(o.EventTimeStamps) {
+	if o == nil || IsNil(o.EventTimeStamps) {
 		var ret []time.Time
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *UsedUnitContainer) GetEventTimeStamps() []time.Time {
 // GetEventTimeStampsOk returns a tuple with the EventTimeStamps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetEventTimeStampsOk() ([]time.Time, bool) {
-	if o == nil || isNil(o.EventTimeStamps) {
+	if o == nil || IsNil(o.EventTimeStamps) {
 		return nil, false
 	}
 	return o.EventTimeStamps, true
@@ -334,7 +334,7 @@ func (o *UsedUnitContainer) GetEventTimeStampsOk() ([]time.Time, bool) {
 
 // HasEventTimeStamps returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasEventTimeStamps() bool {
-	if o != nil && !isNil(o.EventTimeStamps) {
+	if o != nil && !IsNil(o.EventTimeStamps) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *UsedUnitContainer) SetLocalSequenceNumber(v int32) {
 
 // GetPDUContainerInformation returns the PDUContainerInformation field value if set, zero value otherwise.
 func (o *UsedUnitContainer) GetPDUContainerInformation() PDUContainerInformation {
-	if o == nil || isNil(o.PDUContainerInformation) {
+	if o == nil || IsNil(o.PDUContainerInformation) {
 		var ret PDUContainerInformation
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *UsedUnitContainer) GetPDUContainerInformation() PDUContainerInformation
 // GetPDUContainerInformationOk returns a tuple with the PDUContainerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsedUnitContainer) GetPDUContainerInformationOk() (*PDUContainerInformation, bool) {
-	if o == nil || isNil(o.PDUContainerInformation) {
+	if o == nil || IsNil(o.PDUContainerInformation) {
 		return nil, false
 	}
 	return o.PDUContainerInformation, true
@@ -390,7 +390,7 @@ func (o *UsedUnitContainer) GetPDUContainerInformationOk() (*PDUContainerInforma
 
 // HasPDUContainerInformation returns a boolean if a field has been set.
 func (o *UsedUnitContainer) HasPDUContainerInformation() bool {
-	if o != nil && !isNil(o.PDUContainerInformation) {
+	if o != nil && !IsNil(o.PDUContainerInformation) {
 		return true
 	}
 
@@ -403,7 +403,7 @@ func (o *UsedUnitContainer) SetPDUContainerInformation(v PDUContainerInformation
 }
 
 func (o UsedUnitContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -412,35 +412,35 @@ func (o UsedUnitContainer) MarshalJSON() ([]byte, error) {
 
 func (o UsedUnitContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceId) {
+	if !IsNil(o.ServiceId) {
 		toSerialize["serviceId"] = o.ServiceId
 	}
-	if !isNil(o.Triggers) {
+	if !IsNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !isNil(o.TriggerTimestamp) {
+	if !IsNil(o.TriggerTimestamp) {
 		toSerialize["triggerTimestamp"] = o.TriggerTimestamp
 	}
-	if !isNil(o.Time) {
+	if !IsNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
-	if !isNil(o.TotalVolume) {
+	if !IsNil(o.TotalVolume) {
 		toSerialize["totalVolume"] = o.TotalVolume
 	}
-	if !isNil(o.UplinkVolume) {
+	if !IsNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !isNil(o.DownlinkVolume) {
+	if !IsNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
-	if !isNil(o.ServiceSpecificUnits) {
+	if !IsNil(o.ServiceSpecificUnits) {
 		toSerialize["serviceSpecificUnits"] = o.ServiceSpecificUnits
 	}
-	if !isNil(o.EventTimeStamps) {
+	if !IsNil(o.EventTimeStamps) {
 		toSerialize["eventTimeStamps"] = o.EventTimeStamps
 	}
 	toSerialize["localSequenceNumber"] = o.LocalSequenceNumber
-	if !isNil(o.PDUContainerInformation) {
+	if !IsNil(o.PDUContainerInformation) {
 		toSerialize["pDUContainerInformation"] = o.PDUContainerInformation
 	}
 	return toSerialize, nil
@@ -481,5 +481,3 @@ func (v *NullableUsedUnitContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

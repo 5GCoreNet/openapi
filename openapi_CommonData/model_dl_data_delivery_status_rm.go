@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -15,17 +15,17 @@ import (
 	"fmt"
 )
 
-// DlDataDeliveryStatusRm This data type is defined in the same way as the ' DlDataDeliveryStatus ' data type, but with the OpenAPI 'nullable: true' property.  
+// DlDataDeliveryStatusRm This data type is defined in the same way as the ' DlDataDeliveryStatus ' data type, but with the OpenAPI 'nullable: true' property.
 type DlDataDeliveryStatusRm struct {
 	DlDataDeliveryStatus *DlDataDeliveryStatus
-	NullValue *NullValue
+	NullValue            *NullValue
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DlDataDeliveryStatusRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into DlDataDeliveryStatus
-	err = json.Unmarshal(data, &dst.DlDataDeliveryStatus);
+	err = json.Unmarshal(data, &dst.DlDataDeliveryStatus)
 	if err == nil {
 		jsonDlDataDeliveryStatus, _ := json.Marshal(dst.DlDataDeliveryStatus)
 		if string(jsonDlDataDeliveryStatus) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *DlDataDeliveryStatusRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableDlDataDeliveryStatusRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

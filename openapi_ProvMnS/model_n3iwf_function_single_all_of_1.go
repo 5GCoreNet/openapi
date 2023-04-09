@@ -42,7 +42,7 @@ func NewN3iwfFunctionSingleAllOf1WithDefaults() *N3iwfFunctionSingleAllOf1 {
 
 // GetEPN3 returns the EPN3 field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingleAllOf1) GetEPN3() []EPN3Single {
-	if o == nil || isNil(o.EPN3) {
+	if o == nil || IsNil(o.EPN3) {
 		var ret []EPN3Single
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *N3iwfFunctionSingleAllOf1) GetEPN3() []EPN3Single {
 // GetEPN3Ok returns a tuple with the EPN3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingleAllOf1) GetEPN3Ok() ([]EPN3Single, bool) {
-	if o == nil || isNil(o.EPN3) {
+	if o == nil || IsNil(o.EPN3) {
 		return nil, false
 	}
 	return o.EPN3, true
@@ -60,7 +60,7 @@ func (o *N3iwfFunctionSingleAllOf1) GetEPN3Ok() ([]EPN3Single, bool) {
 
 // HasEPN3 returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingleAllOf1) HasEPN3() bool {
-	if o != nil && !isNil(o.EPN3) {
+	if o != nil && !IsNil(o.EPN3) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *N3iwfFunctionSingleAllOf1) SetEPN3(v []EPN3Single) {
 
 // GetEPN4 returns the EPN4 field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingleAllOf1) GetEPN4() []EPN4Single {
-	if o == nil || isNil(o.EPN4) {
+	if o == nil || IsNil(o.EPN4) {
 		var ret []EPN4Single
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *N3iwfFunctionSingleAllOf1) GetEPN4() []EPN4Single {
 // GetEPN4Ok returns a tuple with the EPN4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingleAllOf1) GetEPN4Ok() ([]EPN4Single, bool) {
-	if o == nil || isNil(o.EPN4) {
+	if o == nil || IsNil(o.EPN4) {
 		return nil, false
 	}
 	return o.EPN4, true
@@ -92,7 +92,7 @@ func (o *N3iwfFunctionSingleAllOf1) GetEPN4Ok() ([]EPN4Single, bool) {
 
 // HasEPN4 returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingleAllOf1) HasEPN4() bool {
-	if o != nil && !isNil(o.EPN4) {
+	if o != nil && !IsNil(o.EPN4) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *N3iwfFunctionSingleAllOf1) SetEPN4(v []EPN4Single) {
 }
 
 func (o N3iwfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o N3iwfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o N3iwfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EPN3) {
+	if !IsNil(o.EPN3) {
 		toSerialize["EP_N3"] = o.EPN3
 	}
-	if !isNil(o.EPN4) {
+	if !IsNil(o.EPN4) {
 		toSerialize["EP_N4"] = o.EPN4
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableN3iwfFunctionSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

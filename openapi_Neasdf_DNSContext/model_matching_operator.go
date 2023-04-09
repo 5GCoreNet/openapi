@@ -1,7 +1,7 @@
 /*
 Neasdf_DNSContext
 
-EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+EASDF DNS Context Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // MatchingOperator the matching operation.
 type MatchingOperator struct {
-	MatchingOperatorAnyOf *MatchingOperatorAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MatchingOperator) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MatchingOperatorAnyOf
-	err = json.Unmarshal(data, &dst.MatchingOperatorAnyOf);
-	if err == nil {
-		jsonMatchingOperatorAnyOf, _ := json.Marshal(dst.MatchingOperatorAnyOf)
-		if string(jsonMatchingOperatorAnyOf) == "{}" { // empty struct
-			dst.MatchingOperatorAnyOf = nil
-		} else {
-			return nil // data stored in dst.MatchingOperatorAnyOf, return on the first match
-		}
-	} else {
-		dst.MatchingOperatorAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MatchingOperator) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MatchingOperator) MarshalJSON() ([]byte, error) {
-	if src.MatchingOperatorAnyOf != nil {
-		return json.Marshal(&src.MatchingOperatorAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMatchingOperator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

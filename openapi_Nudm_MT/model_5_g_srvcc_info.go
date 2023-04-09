@@ -1,7 +1,7 @@
 /*
 Nudm_MT
 
-UDM MT Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UDM MT Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -70,7 +70,7 @@ func (o *Model5GSrvccInfo) SetUe5GSrvccCapability(v bool) {
 
 // GetStnSr returns the StnSr field value if set, zero value otherwise.
 func (o *Model5GSrvccInfo) GetStnSr() string {
-	if o == nil || isNil(o.StnSr) {
+	if o == nil || IsNil(o.StnSr) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *Model5GSrvccInfo) GetStnSr() string {
 // GetStnSrOk returns a tuple with the StnSr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GSrvccInfo) GetStnSrOk() (*string, bool) {
-	if o == nil || isNil(o.StnSr) {
+	if o == nil || IsNil(o.StnSr) {
 		return nil, false
 	}
 	return o.StnSr, true
@@ -88,7 +88,7 @@ func (o *Model5GSrvccInfo) GetStnSrOk() (*string, bool) {
 
 // HasStnSr returns a boolean if a field has been set.
 func (o *Model5GSrvccInfo) HasStnSr() bool {
-	if o != nil && !isNil(o.StnSr) {
+	if o != nil && !IsNil(o.StnSr) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *Model5GSrvccInfo) SetStnSr(v string) {
 
 // GetCMsisdn returns the CMsisdn field value if set, zero value otherwise.
 func (o *Model5GSrvccInfo) GetCMsisdn() string {
-	if o == nil || isNil(o.CMsisdn) {
+	if o == nil || IsNil(o.CMsisdn) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *Model5GSrvccInfo) GetCMsisdn() string {
 // GetCMsisdnOk returns a tuple with the CMsisdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GSrvccInfo) GetCMsisdnOk() (*string, bool) {
-	if o == nil || isNil(o.CMsisdn) {
+	if o == nil || IsNil(o.CMsisdn) {
 		return nil, false
 	}
 	return o.CMsisdn, true
@@ -120,7 +120,7 @@ func (o *Model5GSrvccInfo) GetCMsisdnOk() (*string, bool) {
 
 // HasCMsisdn returns a boolean if a field has been set.
 func (o *Model5GSrvccInfo) HasCMsisdn() bool {
-	if o != nil && !isNil(o.CMsisdn) {
+	if o != nil && !IsNil(o.CMsisdn) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *Model5GSrvccInfo) SetCMsisdn(v string) {
 }
 
 func (o Model5GSrvccInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o Model5GSrvccInfo) MarshalJSON() ([]byte, error) {
 func (o Model5GSrvccInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ue5GSrvccCapability"] = o.Ue5GSrvccCapability
-	if !isNil(o.StnSr) {
+	if !IsNil(o.StnSr) {
 		toSerialize["stnSr"] = o.StnSr
 	}
-	if !isNil(o.CMsisdn) {
+	if !IsNil(o.CMsisdn) {
 		toSerialize["cMsisdn"] = o.CMsisdn
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableModel5GSrvccInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &MbsSubscriptionData1{}
 
 // MbsSubscriptionData1 Contains the 5MBS Subscription Data.
 type MbsSubscriptionData1 struct {
-	MbsAllowed *bool `json:"mbsAllowed,omitempty"`
+	MbsAllowed       *bool           `json:"mbsAllowed,omitempty"`
 	MbsSessionIdList []MbsSessionId1 `json:"mbsSessionIdList,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewMbsSubscriptionData1WithDefaults() *MbsSubscriptionData1 {
 
 // GetMbsAllowed returns the MbsAllowed field value if set, zero value otherwise.
 func (o *MbsSubscriptionData1) GetMbsAllowed() bool {
-	if o == nil || isNil(o.MbsAllowed) {
+	if o == nil || IsNil(o.MbsAllowed) {
 		var ret bool
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MbsSubscriptionData1) GetMbsAllowed() bool {
 // GetMbsAllowedOk returns a tuple with the MbsAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSubscriptionData1) GetMbsAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.MbsAllowed) {
+	if o == nil || IsNil(o.MbsAllowed) {
 		return nil, false
 	}
 	return o.MbsAllowed, true
@@ -64,7 +64,7 @@ func (o *MbsSubscriptionData1) GetMbsAllowedOk() (*bool, bool) {
 
 // HasMbsAllowed returns a boolean if a field has been set.
 func (o *MbsSubscriptionData1) HasMbsAllowed() bool {
-	if o != nil && !isNil(o.MbsAllowed) {
+	if o != nil && !IsNil(o.MbsAllowed) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MbsSubscriptionData1) SetMbsAllowed(v bool) {
 
 // GetMbsSessionIdList returns the MbsSessionIdList field value if set, zero value otherwise.
 func (o *MbsSubscriptionData1) GetMbsSessionIdList() []MbsSessionId1 {
-	if o == nil || isNil(o.MbsSessionIdList) {
+	if o == nil || IsNil(o.MbsSessionIdList) {
 		var ret []MbsSessionId1
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MbsSubscriptionData1) GetMbsSessionIdList() []MbsSessionId1 {
 // GetMbsSessionIdListOk returns a tuple with the MbsSessionIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSubscriptionData1) GetMbsSessionIdListOk() ([]MbsSessionId1, bool) {
-	if o == nil || isNil(o.MbsSessionIdList) {
+	if o == nil || IsNil(o.MbsSessionIdList) {
 		return nil, false
 	}
 	return o.MbsSessionIdList, true
@@ -96,7 +96,7 @@ func (o *MbsSubscriptionData1) GetMbsSessionIdListOk() ([]MbsSessionId1, bool) {
 
 // HasMbsSessionIdList returns a boolean if a field has been set.
 func (o *MbsSubscriptionData1) HasMbsSessionIdList() bool {
-	if o != nil && !isNil(o.MbsSessionIdList) {
+	if o != nil && !IsNil(o.MbsSessionIdList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MbsSubscriptionData1) SetMbsSessionIdList(v []MbsSessionId1) {
 }
 
 func (o MbsSubscriptionData1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -118,10 +118,10 @@ func (o MbsSubscriptionData1) MarshalJSON() ([]byte, error) {
 
 func (o MbsSubscriptionData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbsAllowed) {
+	if !IsNil(o.MbsAllowed) {
 		toSerialize["mbsAllowed"] = o.MbsAllowed
 	}
-	if !isNil(o.MbsSessionIdList) {
+	if !IsNil(o.MbsSessionIdList) {
 		toSerialize["mbsSessionIdList"] = o.MbsSessionIdList
 	}
 	return toSerialize, nil
@@ -162,5 +162,3 @@ func (v *NullableMbsSubscriptionData1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

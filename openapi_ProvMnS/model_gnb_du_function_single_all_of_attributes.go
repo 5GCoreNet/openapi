@@ -19,16 +19,11 @@ var _ MappedNullable = &GnbDuFunctionSingleAllOfAttributes{}
 
 // GnbDuFunctionSingleAllOfAttributes struct for GnbDuFunctionSingleAllOfAttributes
 type GnbDuFunctionSingleAllOfAttributes struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	VnfParametersList []VnfParameter `json:"vnfParametersList,omitempty"`
-	PeeParametersList []PeeParameter `json:"peeParametersList,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
-	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	SupportedTraceMetrics []string `json:"supportedTraceMetrics,omitempty"`
-	GnbDuId *float32 `json:"gnbDuId,omitempty"`
-	GnbDuName *string `json:"gnbDuName,omitempty"`
-	GnbId *string `json:"gnbId,omitempty"`
-	GnbIdLength *int32 `json:"gnbIdLength,omitempty"`
+	ManagedFunctionAttr
+	GnbDuId         *float32         `json:"gnbDuId,omitempty"`
+	GnbDuName       *string          `json:"gnbDuName,omitempty"`
+	GnbId           *string          `json:"gnbId,omitempty"`
+	GnbIdLength     *int32           `json:"gnbIdLength,omitempty"`
 	RimRSReportConf *RimRSReportConf `json:"rimRSReportConf,omitempty"`
 }
 
@@ -47,198 +42,6 @@ func NewGnbDuFunctionSingleAllOfAttributes() *GnbDuFunctionSingleAllOfAttributes
 func NewGnbDuFunctionSingleAllOfAttributesWithDefaults() *GnbDuFunctionSingleAllOfAttributes {
 	this := GnbDuFunctionSingleAllOfAttributes{}
 	return &this
-}
-
-// GetUserLabel returns the UserLabel field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
-		var ret string
-		return ret
-	}
-	return *o.UserLabel
-}
-
-// GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
-		return nil, false
-	}
-	return o.UserLabel, true
-}
-
-// HasUserLabel returns a boolean if a field has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserLabel gets a reference to the given string and assigns it to the UserLabel field.
-func (o *GnbDuFunctionSingleAllOfAttributes) SetUserLabel(v string) {
-	o.UserLabel = &v
-}
-
-// GetVnfParametersList returns the VnfParametersList field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetVnfParametersList() []VnfParameter {
-	if o == nil || IsNil(o.VnfParametersList) {
-		var ret []VnfParameter
-		return ret
-	}
-	return o.VnfParametersList
-}
-
-// GetVnfParametersListOk returns a tuple with the VnfParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetVnfParametersListOk() ([]VnfParameter, bool) {
-	if o == nil || IsNil(o.VnfParametersList) {
-		return nil, false
-	}
-	return o.VnfParametersList, true
-}
-
-// HasVnfParametersList returns a boolean if a field has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) HasVnfParametersList() bool {
-	if o != nil && !IsNil(o.VnfParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetVnfParametersList gets a reference to the given []VnfParameter and assigns it to the VnfParametersList field.
-func (o *GnbDuFunctionSingleAllOfAttributes) SetVnfParametersList(v []VnfParameter) {
-	o.VnfParametersList = v
-}
-
-// GetPeeParametersList returns the PeeParametersList field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetPeeParametersList() []PeeParameter {
-	if o == nil || IsNil(o.PeeParametersList) {
-		var ret []PeeParameter
-		return ret
-	}
-	return o.PeeParametersList
-}
-
-// GetPeeParametersListOk returns a tuple with the PeeParametersList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetPeeParametersListOk() ([]PeeParameter, bool) {
-	if o == nil || IsNil(o.PeeParametersList) {
-		return nil, false
-	}
-	return o.PeeParametersList, true
-}
-
-// HasPeeParametersList returns a boolean if a field has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) HasPeeParametersList() bool {
-	if o != nil && !IsNil(o.PeeParametersList) {
-		return true
-	}
-
-	return false
-}
-
-// SetPeeParametersList gets a reference to the given []PeeParameter and assigns it to the PeeParametersList field.
-func (o *GnbDuFunctionSingleAllOfAttributes) SetPeeParametersList(v []PeeParameter) {
-	o.PeeParametersList = v
-}
-
-// GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetPriorityLabel() int32 {
-	if o == nil || IsNil(o.PriorityLabel) {
-		var ret int32
-		return ret
-	}
-	return *o.PriorityLabel
-}
-
-// GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLabel) {
-		return nil, false
-	}
-	return o.PriorityLabel, true
-}
-
-// HasPriorityLabel returns a boolean if a field has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) HasPriorityLabel() bool {
-	if o != nil && !IsNil(o.PriorityLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetPriorityLabel gets a reference to the given int32 and assigns it to the PriorityLabel field.
-func (o *GnbDuFunctionSingleAllOfAttributes) SetPriorityLabel(v int32) {
-	o.PriorityLabel = &v
-}
-
-// GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		var ret []SupportedPerfMetricGroup
-		return ret
-	}
-	return o.SupportedPerfMetricGroups
-}
-
-// GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		return nil, false
-	}
-	return o.SupportedPerfMetricGroups, true
-}
-
-// HasSupportedPerfMetricGroups returns a boolean if a field has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedPerfMetricGroups gets a reference to the given []SupportedPerfMetricGroup and assigns it to the SupportedPerfMetricGroups field.
-func (o *GnbDuFunctionSingleAllOfAttributes) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGroup) {
-	o.SupportedPerfMetricGroups = v
-}
-
-// GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetSupportedTraceMetrics() []string {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		var ret []string
-		return ret
-	}
-	return o.SupportedTraceMetrics
-}
-
-// GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
-		return nil, false
-	}
-	return o.SupportedTraceMetrics, true
-}
-
-// HasSupportedTraceMetrics returns a boolean if a field has been set.
-func (o *GnbDuFunctionSingleAllOfAttributes) HasSupportedTraceMetrics() bool {
-	if o != nil && !IsNil(o.SupportedTraceMetrics) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedTraceMetrics gets a reference to the given []string and assigns it to the SupportedTraceMetrics field.
-func (o *GnbDuFunctionSingleAllOfAttributes) SetSupportedTraceMetrics(v []string) {
-	o.SupportedTraceMetrics = v
 }
 
 // GetGnbDuId returns the GnbDuId field value if set, zero value otherwise.
@@ -402,7 +205,7 @@ func (o *GnbDuFunctionSingleAllOfAttributes) SetRimRSReportConf(v RimRSReportCon
 }
 
 func (o GnbDuFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -411,23 +214,13 @@ func (o GnbDuFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o GnbDuFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
-		toSerialize["userLabel"] = o.UserLabel
+	serializedManagedFunctionAttr, errManagedFunctionAttr := json.Marshal(o.ManagedFunctionAttr)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
-	if !IsNil(o.VnfParametersList) {
-		toSerialize["vnfParametersList"] = o.VnfParametersList
-	}
-	if !IsNil(o.PeeParametersList) {
-		toSerialize["peeParametersList"] = o.PeeParametersList
-	}
-	if !IsNil(o.PriorityLabel) {
-		toSerialize["priorityLabel"] = o.PriorityLabel
-	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
-		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
-	}
-	if !IsNil(o.SupportedTraceMetrics) {
-		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
+	errManagedFunctionAttr = json.Unmarshal([]byte(serializedManagedFunctionAttr), &toSerialize)
+	if errManagedFunctionAttr != nil {
+		return map[string]interface{}{}, errManagedFunctionAttr
 	}
 	if !IsNil(o.GnbDuId) {
 		toSerialize["gnbDuId"] = o.GnbDuId
@@ -482,5 +275,3 @@ func (v *NullableGnbDuFunctionSingleAllOfAttributes) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

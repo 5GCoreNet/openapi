@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMFEventGroupSubscriptionInfoDocumentApiService SMFEventGroupSubscriptionInfoDocumentApi service
 type SMFEventGroupSubscriptionInfoDocumentApiService service
 
 type ApiCreateSmfGroupSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *SMFEventGroupSubscriptionInfoDocumentApiService
-	ueGroupId string
-	subsId string
+	ctx                 context.Context
+	ApiService          *SMFEventGroupSubscriptionInfoDocumentApiService
+	ueGroupId           string
+	subsId              string
 	smfSubscriptionInfo *SmfSubscriptionInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiCreateSmfGroupSubscriptionsRequest) Execute() (*SmfSubscriptionInfo, 
 /*
 CreateSmfGroupSubscriptions Create SMF Subscription Info for a group of UEs or any YE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueGroupId
- @param subsId
- @return ApiCreateSmfGroupSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueGroupId
+	@param subsId
+	@return ApiCreateSmfGroupSubscriptionsRequest
 */
 func (a *SMFEventGroupSubscriptionInfoDocumentApiService) CreateSmfGroupSubscriptions(ctx context.Context, ueGroupId string, subsId string) ApiCreateSmfGroupSubscriptionsRequest {
 	return ApiCreateSmfGroupSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueGroupId: ueGroupId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueGroupId:  ueGroupId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfSubscriptionInfo
+//
+//	@return SmfSubscriptionInfo
 func (a *SMFEventGroupSubscriptionInfoDocumentApiService) CreateSmfGroupSubscriptionsExecute(r ApiCreateSmfGroupSubscriptionsRequest) (*SmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFEventGroupSubscriptionInfoDocumentApiService.CreateSmfGroupSubscriptions")
@@ -112,9 +112,9 @@ func (a *SMFEventGroupSubscriptionInfoDocumentApiService) CreateSmfGroupSubscrip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -17,11 +17,11 @@ import (
 
 // ResourcesMdaNrm - struct for ResourcesMdaNrm
 type ResourcesMdaNrm struct {
-	MDAFunctionSingle *MDAFunctionSingle
-	MDAReportSingle *MDAReportSingle
-	MDARequestSingle *MDARequestSingle
+	MDAFunctionSingle    *MDAFunctionSingle
+	MDAReportSingle      *MDAReportSingle
+	MDARequestSingle     *MDARequestSingle
 	ManagedElementSingle *ManagedElementSingle
-	SubNetworkSingle *SubNetworkSingle
+	SubNetworkSingle     *SubNetworkSingle
 }
 
 // MDAFunctionSingleAsResourcesMdaNrm is a convenience function that returns MDAFunctionSingle wrapped in ResourcesMdaNrm
@@ -58,7 +58,6 @@ func SubNetworkSingleAsResourcesMdaNrm(v *SubNetworkSingle) ResourcesMdaNrm {
 		SubNetworkSingle: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcesMdaNrm) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src ResourcesMdaNrm) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcesMdaNrm) GetActualInstance() (interface{}) {
+func (obj *ResourcesMdaNrm) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableResourcesMdaNrm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

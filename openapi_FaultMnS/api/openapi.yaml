@@ -68,7 +68,7 @@ paths:
         content:
           application/merge-patch+json:
             schema:
-              $ref: '#/components/schemas/_alarms_get_request'
+              $ref: '#/components/schemas/_alarms_patch_request'
         description: "Patch documents for acknowledging and unacknowledging, or clearing\
           \ multiple alarms. The keys in the map are the alarmIds to be patched."
       responses:
@@ -200,7 +200,9 @@ paths:
                 content:
                   application/json:
                     schema:
-                      $ref: '#/components/schemas/_subscriptions_post_request'
+                      oneOf:
+                      - $ref: '#/components/schemas/NotifyNewAlarm'
+                      - $ref: '#/components/schemas/NotifyNewSecAlarm'
                 required: true
               responses:
                 "204":
@@ -263,7 +265,9 @@ paths:
                 content:
                   application/json:
                     schema:
-                      $ref: '#/components/schemas/_subscriptions_post_request_1'
+                      oneOf:
+                      - $ref: '#/components/schemas/NotifyChangedAlarmGeneral'
+                      - $ref: '#/components/schemas/NotifyChangedSecAlarmGeneral'
                 required: true
               responses:
                 "204":
@@ -463,15 +467,7 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - anyOf:
-        - enum:
-          - PROBABLE_CAUSE_001
-          - PROBABLE_CAUSE_002
-          - PROBABLE_CAUSE_003
-          - PROBABLE_CAUSE_004
-          - PROBABLE_CAUSE_005
-          type: string
-        - type: string
+      - $ref: '#/components/schemas/ProbableCause_oneOf'
       - type: integer
     SpecificProblem:
       oneOf:
@@ -628,6 +624,7 @@ components:
         securityAlarmDetector:
           type: string
       type: object
+      x-parent: true
     AlarmNotificationTypes:
       enum:
       - notifyNewAlarm
@@ -829,6 +826,7 @@ components:
       - notificationType
       - systemDN
       type: object
+      x-parent: true
     Uri:
       type: string
     NotificationId:
@@ -911,7 +909,7 @@ components:
       - $ref: '#/components/schemas/AlarmRecord'
       - $ref: '#/components/schemas/_alarms_get_200_response_value_allOf_1'
       type: object
-    _alarms_get_request:
+    _alarms_patch_request:
       oneOf:
       - additionalProperties:
           $ref: '#/components/schemas/MergePatchAcknowledgeAlarm'
@@ -923,14 +921,16 @@ components:
       oneOf:
       - $ref: '#/components/schemas/MergePatchAcknowledgeAlarm'
       - $ref: '#/components/schemas/MergePatchClearAlarm'
-    _subscriptions_post_request:
-      oneOf:
-      - $ref: '#/components/schemas/NotifyNewAlarm'
-      - $ref: '#/components/schemas/NotifyNewSecAlarm'
-    _subscriptions_post_request_1:
-      oneOf:
-      - $ref: '#/components/schemas/NotifyChangedAlarmGeneral'
-      - $ref: '#/components/schemas/NotifyChangedSecAlarmGeneral'
+    ProbableCause_oneOf:
+      anyOf:
+      - enum:
+        - PROBABLE_CAUSE_001
+        - PROBABLE_CAUSE_002
+        - PROBABLE_CAUSE_003
+        - PROBABLE_CAUSE_004
+        - PROBABLE_CAUSE_005
+        type: string
+      - type: string
     ThresholdHysteresis_high:
       oneOf:
       - type: integer
@@ -940,13 +940,11 @@ components:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null
     NotifyNewAlarm_allOf:
       properties:
         alarmId:

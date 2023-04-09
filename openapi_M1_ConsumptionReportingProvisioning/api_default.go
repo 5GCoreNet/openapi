@@ -1,7 +1,7 @@
 /*
 M1_ConsumptionReportingProvisioning
 
-5GMS AF M1 Consumption Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Consumption Reporting Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,20 +13,19 @@ package openapi_M1_ConsumptionReportingProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiActivateConsumptionReportingRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                               context.Context
+	ApiService                        *DefaultApiService
+	provisioningSessionId             string
 	consumptionReportingConfiguration *ConsumptionReportingConfiguration
 }
 
@@ -43,14 +42,14 @@ func (r ApiActivateConsumptionReportingRequest) Execute() (*http.Response, error
 /*
 ActivateConsumptionReporting Activate the consumption reporting procedure for the specified Provisioning Session by providing the Consumption Reporting Configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiActivateConsumptionReportingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiActivateConsumptionReportingRequest
 */
 func (a *DefaultApiService) ActivateConsumptionReporting(ctx context.Context, provisioningSessionId string) ApiActivateConsumptionReportingRequest {
 	return ApiActivateConsumptionReportingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) ActivateConsumptionReporting(ctx context.Context, pr
 // Execute executes the request
 func (a *DefaultApiService) ActivateConsumptionReportingExecute(r ApiActivateConsumptionReportingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ActivateConsumptionReporting")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) ActivateConsumptionReportingExecute(r ApiActivateCon
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,8 +125,8 @@ func (a *DefaultApiService) ActivateConsumptionReportingExecute(r ApiActivateCon
 }
 
 type ApiDestroyConsumptionReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -138,14 +137,14 @@ func (r ApiDestroyConsumptionReportingConfigurationRequest) Execute() (*http.Res
 /*
 DestroyConsumptionReportingConfiguration Destroy the current Consumption Reporting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiDestroyConsumptionReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiDestroyConsumptionReportingConfigurationRequest
 */
 func (a *DefaultApiService) DestroyConsumptionReportingConfiguration(ctx context.Context, provisioningSessionId string) ApiDestroyConsumptionReportingConfigurationRequest {
 	return ApiDestroyConsumptionReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -153,9 +152,9 @@ func (a *DefaultApiService) DestroyConsumptionReportingConfiguration(ctx context
 // Execute executes the request
 func (a *DefaultApiService) DestroyConsumptionReportingConfigurationExecute(r ApiDestroyConsumptionReportingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyConsumptionReportingConfiguration")
@@ -197,9 +196,9 @@ func (a *DefaultApiService) DestroyConsumptionReportingConfigurationExecute(r Ap
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -216,9 +215,9 @@ func (a *DefaultApiService) DestroyConsumptionReportingConfigurationExecute(r Ap
 }
 
 type ApiPatchConsumptionReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                               context.Context
+	ApiService                        *DefaultApiService
+	provisioningSessionId             string
 	consumptionReportingConfiguration *ConsumptionReportingConfiguration
 }
 
@@ -235,26 +234,27 @@ func (r ApiPatchConsumptionReportingConfigurationRequest) Execute() (*Consumptio
 /*
 PatchConsumptionReportingConfiguration Patch the Consumption Reporting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiPatchConsumptionReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiPatchConsumptionReportingConfigurationRequest
 */
 func (a *DefaultApiService) PatchConsumptionReportingConfiguration(ctx context.Context, provisioningSessionId string) ApiPatchConsumptionReportingConfigurationRequest {
 	return ApiPatchConsumptionReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ConsumptionReportingConfiguration
+//
+//	@return ConsumptionReportingConfiguration
 func (a *DefaultApiService) PatchConsumptionReportingConfigurationExecute(r ApiPatchConsumptionReportingConfigurationRequest) (*ConsumptionReportingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsumptionReportingConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsumptionReportingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchConsumptionReportingConfiguration")
@@ -301,9 +301,9 @@ func (a *DefaultApiService) PatchConsumptionReportingConfigurationExecute(r ApiP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -329,8 +329,8 @@ func (a *DefaultApiService) PatchConsumptionReportingConfigurationExecute(r ApiP
 }
 
 type ApiRetrieveConsumptionReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -341,26 +341,27 @@ func (r ApiRetrieveConsumptionReportingConfigurationRequest) Execute() (*Consump
 /*
 RetrieveConsumptionReportingConfiguration Retrieve the Consumption Reporting Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiRetrieveConsumptionReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiRetrieveConsumptionReportingConfigurationRequest
 */
 func (a *DefaultApiService) RetrieveConsumptionReportingConfiguration(ctx context.Context, provisioningSessionId string) ApiRetrieveConsumptionReportingConfigurationRequest {
 	return ApiRetrieveConsumptionReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ConsumptionReportingConfiguration
+//
+//	@return ConsumptionReportingConfiguration
 func (a *DefaultApiService) RetrieveConsumptionReportingConfigurationExecute(r ApiRetrieveConsumptionReportingConfigurationRequest) (*ConsumptionReportingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsumptionReportingConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsumptionReportingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveConsumptionReportingConfiguration")
@@ -402,9 +403,9 @@ func (a *DefaultApiService) RetrieveConsumptionReportingConfigurationExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -430,9 +431,9 @@ func (a *DefaultApiService) RetrieveConsumptionReportingConfigurationExecute(r A
 }
 
 type ApiUpdateConsumptionReportingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                               context.Context
+	ApiService                        *DefaultApiService
+	provisioningSessionId             string
 	consumptionReportingConfiguration *ConsumptionReportingConfiguration
 }
 
@@ -449,14 +450,14 @@ func (r ApiUpdateConsumptionReportingConfigurationRequest) Execute() (*http.Resp
 /*
 UpdateConsumptionReportingConfiguration Update the Consumption Reporting Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiUpdateConsumptionReportingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiUpdateConsumptionReportingConfigurationRequest
 */
 func (a *DefaultApiService) UpdateConsumptionReportingConfiguration(ctx context.Context, provisioningSessionId string) ApiUpdateConsumptionReportingConfigurationRequest {
 	return ApiUpdateConsumptionReportingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -464,9 +465,9 @@ func (a *DefaultApiService) UpdateConsumptionReportingConfiguration(ctx context.
 // Execute executes the request
 func (a *DefaultApiService) UpdateConsumptionReportingConfigurationExecute(r ApiUpdateConsumptionReportingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateConsumptionReportingConfiguration")
@@ -513,9 +514,9 @@ func (a *DefaultApiService) UpdateConsumptionReportingConfigurationExecute(r Api
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

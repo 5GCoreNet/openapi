@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting
 
-API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -17,28 +17,14 @@ import (
 
 // PositioningMethod Indicates supported positioning methods.
 type PositioningMethod struct {
-	PositioningMethodAnyOf *PositioningMethodAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PositioningMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PositioningMethodAnyOf
-	err = json.Unmarshal(data, &dst.PositioningMethodAnyOf);
-	if err == nil {
-		jsonPositioningMethodAnyOf, _ := json.Marshal(dst.PositioningMethodAnyOf)
-		if string(jsonPositioningMethodAnyOf) == "{}" { // empty struct
-			dst.PositioningMethodAnyOf = nil
-		} else {
-			return nil // data stored in dst.PositioningMethodAnyOf, return on the first match
-		}
-	} else {
-		dst.PositioningMethodAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PositioningMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PositioningMethod) MarshalJSON() ([]byte, error) {
-	if src.PositioningMethodAnyOf != nil {
-		return json.Marshal(&src.PositioningMethodAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePositioningMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

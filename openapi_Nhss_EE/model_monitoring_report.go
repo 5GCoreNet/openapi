@@ -1,7 +1,7 @@
 /*
 Nhss_EE
 
-HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -21,11 +21,11 @@ var _ MappedNullable = &MonitoringReport{}
 // MonitoringReport Contains data for each Monitoring Event Report sent by the HSS
 type MonitoringReport struct {
 	// The ID to refer to a given Monitoring Event (and its corresponding Monitoring Configuration and Monitoring Event Report)
-	ReferenceId int32 `json:"referenceId"`
-	EventType EventType `json:"eventType"`
+	ReferenceId int32     `json:"referenceId"`
+	EventType   EventType `json:"eventType"`
 	// string with format 'date-time' as defined in OpenAPI.
 	TimeStamp time.Time `json:"timeStamp"`
-	Report *Report `json:"report,omitempty"`
+	Report    *Report   `json:"report,omitempty"`
 }
 
 // NewMonitoringReport instantiates a new MonitoringReport object
@@ -122,7 +122,7 @@ func (o *MonitoringReport) SetTimeStamp(v time.Time) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReport() Report {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		var ret Report
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *MonitoringReport) GetReport() Report {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReportOk() (*Report, bool) {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -140,7 +140,7 @@ func (o *MonitoringReport) GetReportOk() (*Report, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReport() bool {
-	if o != nil && !isNil(o.Report) {
+	if o != nil && !IsNil(o.Report) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *MonitoringReport) SetReport(v Report) {
 }
 
 func (o MonitoringReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -165,7 +165,7 @@ func (o MonitoringReport) ToMap() (map[string]interface{}, error) {
 	toSerialize["referenceId"] = o.ReferenceId
 	toSerialize["eventType"] = o.EventType
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !isNil(o.Report) {
+	if !IsNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
 	return toSerialize, nil
@@ -206,5 +206,3 @@ func (v *NullableMonitoringReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

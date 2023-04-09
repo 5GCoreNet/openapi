@@ -18,7 +18,7 @@ import (
 // TceMappingInfoTceIPAddress - struct for TceMappingInfoTceIPAddress
 type TceMappingInfoTceIPAddress struct {
 	Ipv6Addr *Ipv6Addr
-	String *string
+	String   *string
 }
 
 // Ipv6AddrAsTceMappingInfoTceIPAddress is a convenience function that returns Ipv6Addr wrapped in TceMappingInfoTceIPAddress
@@ -34,7 +34,6 @@ func StringAsTceMappingInfoTceIPAddress(v *string) TceMappingInfoTceIPAddress {
 		String: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TceMappingInfoTceIPAddress) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src TceMappingInfoTceIPAddress) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TceMappingInfoTceIPAddress) GetActualInstance() (interface{}) {
+func (obj *TceMappingInfoTceIPAddress) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableTceMappingInfoTceIPAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

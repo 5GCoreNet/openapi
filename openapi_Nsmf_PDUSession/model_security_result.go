@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SecurityResult{}
 
 // SecurityResult Security Result
 type SecurityResult struct {
-	IntegrityProtectionResult *ProtectionResult `json:"integrityProtectionResult,omitempty"`
+	IntegrityProtectionResult       *ProtectionResult `json:"integrityProtectionResult,omitempty"`
 	ConfidentialityProtectionResult *ProtectionResult `json:"confidentialityProtectionResult,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewSecurityResultWithDefaults() *SecurityResult {
 
 // GetIntegrityProtectionResult returns the IntegrityProtectionResult field value if set, zero value otherwise.
 func (o *SecurityResult) GetIntegrityProtectionResult() ProtectionResult {
-	if o == nil || isNil(o.IntegrityProtectionResult) {
+	if o == nil || IsNil(o.IntegrityProtectionResult) {
 		var ret ProtectionResult
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SecurityResult) GetIntegrityProtectionResult() ProtectionResult {
 // GetIntegrityProtectionResultOk returns a tuple with the IntegrityProtectionResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecurityResult) GetIntegrityProtectionResultOk() (*ProtectionResult, bool) {
-	if o == nil || isNil(o.IntegrityProtectionResult) {
+	if o == nil || IsNil(o.IntegrityProtectionResult) {
 		return nil, false
 	}
 	return o.IntegrityProtectionResult, true
@@ -60,7 +60,7 @@ func (o *SecurityResult) GetIntegrityProtectionResultOk() (*ProtectionResult, bo
 
 // HasIntegrityProtectionResult returns a boolean if a field has been set.
 func (o *SecurityResult) HasIntegrityProtectionResult() bool {
-	if o != nil && !isNil(o.IntegrityProtectionResult) {
+	if o != nil && !IsNil(o.IntegrityProtectionResult) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SecurityResult) SetIntegrityProtectionResult(v ProtectionResult) {
 
 // GetConfidentialityProtectionResult returns the ConfidentialityProtectionResult field value if set, zero value otherwise.
 func (o *SecurityResult) GetConfidentialityProtectionResult() ProtectionResult {
-	if o == nil || isNil(o.ConfidentialityProtectionResult) {
+	if o == nil || IsNil(o.ConfidentialityProtectionResult) {
 		var ret ProtectionResult
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SecurityResult) GetConfidentialityProtectionResult() ProtectionResult {
 // GetConfidentialityProtectionResultOk returns a tuple with the ConfidentialityProtectionResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecurityResult) GetConfidentialityProtectionResultOk() (*ProtectionResult, bool) {
-	if o == nil || isNil(o.ConfidentialityProtectionResult) {
+	if o == nil || IsNil(o.ConfidentialityProtectionResult) {
 		return nil, false
 	}
 	return o.ConfidentialityProtectionResult, true
@@ -92,7 +92,7 @@ func (o *SecurityResult) GetConfidentialityProtectionResultOk() (*ProtectionResu
 
 // HasConfidentialityProtectionResult returns a boolean if a field has been set.
 func (o *SecurityResult) HasConfidentialityProtectionResult() bool {
-	if o != nil && !isNil(o.ConfidentialityProtectionResult) {
+	if o != nil && !IsNil(o.ConfidentialityProtectionResult) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SecurityResult) SetConfidentialityProtectionResult(v ProtectionResult) 
 }
 
 func (o SecurityResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SecurityResult) MarshalJSON() ([]byte, error) {
 
 func (o SecurityResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IntegrityProtectionResult) {
+	if !IsNil(o.IntegrityProtectionResult) {
 		toSerialize["integrityProtectionResult"] = o.IntegrityProtectionResult
 	}
-	if !isNil(o.ConfidentialityProtectionResult) {
+	if !IsNil(o.ConfidentialityProtectionResult) {
 		toSerialize["confidentialityProtectionResult"] = o.ConfidentialityProtectionResult
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSecurityResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

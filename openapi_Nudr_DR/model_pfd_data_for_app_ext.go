@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -21,12 +21,12 @@ var _ MappedNullable = &PfdDataForAppExt{}
 // PfdDataForAppExt Represents the PFDs and related data for the application.
 type PfdDataForAppExt struct {
 	// String providing an application identifier.
-	ApplicationId string `json:"applicationId"`
-	Pfds []PfdContent `json:"pfds"`
+	ApplicationId string       `json:"applicationId"`
+	Pfds          []PfdContent `json:"pfds"`
 	// string with format 'date-time' as defined in OpenAPI.
 	CachingTime *time.Time `json:"cachingTime,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SuppFeat *string `json:"suppFeat,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SuppFeat *string  `json:"suppFeat,omitempty"`
 	ResetIds []string `json:"resetIds,omitempty"`
 	// indicating a time in seconds.
 	AllowedDelay *int32 `json:"allowedDelay,omitempty"`
@@ -101,7 +101,7 @@ func (o *PfdDataForAppExt) SetPfds(v []PfdContent) {
 
 // GetCachingTime returns the CachingTime field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetCachingTime() time.Time {
-	if o == nil || isNil(o.CachingTime) {
+	if o == nil || IsNil(o.CachingTime) {
 		var ret time.Time
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *PfdDataForAppExt) GetCachingTime() time.Time {
 // GetCachingTimeOk returns a tuple with the CachingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetCachingTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.CachingTime) {
+	if o == nil || IsNil(o.CachingTime) {
 		return nil, false
 	}
 	return o.CachingTime, true
@@ -119,7 +119,7 @@ func (o *PfdDataForAppExt) GetCachingTimeOk() (*time.Time, bool) {
 
 // HasCachingTime returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasCachingTime() bool {
-	if o != nil && !isNil(o.CachingTime) {
+	if o != nil && !IsNil(o.CachingTime) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *PfdDataForAppExt) SetCachingTime(v time.Time) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *PfdDataForAppExt) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -151,7 +151,7 @@ func (o *PfdDataForAppExt) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *PfdDataForAppExt) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *PfdDataForAppExt) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -183,7 +183,7 @@ func (o *PfdDataForAppExt) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *PfdDataForAppExt) SetResetIds(v []string) {
 
 // GetAllowedDelay returns the AllowedDelay field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetAllowedDelay() int32 {
-	if o == nil || isNil(o.AllowedDelay) {
+	if o == nil || IsNil(o.AllowedDelay) {
 		var ret int32
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *PfdDataForAppExt) GetAllowedDelay() int32 {
 // GetAllowedDelayOk returns a tuple with the AllowedDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetAllowedDelayOk() (*int32, bool) {
-	if o == nil || isNil(o.AllowedDelay) {
+	if o == nil || IsNil(o.AllowedDelay) {
 		return nil, false
 	}
 	return o.AllowedDelay, true
@@ -215,7 +215,7 @@ func (o *PfdDataForAppExt) GetAllowedDelayOk() (*int32, bool) {
 
 // HasAllowedDelay returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasAllowedDelay() bool {
-	if o != nil && !isNil(o.AllowedDelay) {
+	if o != nil && !IsNil(o.AllowedDelay) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *PfdDataForAppExt) SetAllowedDelay(v int32) {
 }
 
 func (o PfdDataForAppExt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,16 +239,16 @@ func (o PfdDataForAppExt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applicationId"] = o.ApplicationId
 	toSerialize["pfds"] = o.Pfds
-	if !isNil(o.CachingTime) {
+	if !IsNil(o.CachingTime) {
 		toSerialize["cachingTime"] = o.CachingTime
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !isNil(o.AllowedDelay) {
+	if !IsNil(o.AllowedDelay) {
 		toSerialize["allowedDelay"] = o.AllowedDelay
 	}
 	return toSerialize, nil
@@ -289,5 +289,3 @@ func (v *NullablePfdDataForAppExt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

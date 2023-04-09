@@ -1,7 +1,7 @@
 /*
 EES Session with QoS API
 
-API for EES Session with Qos service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES Session with Qos service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -27,38 +27,38 @@ type SessionWithQoS struct {
 	UeIpv4Addr *string `json:"ueIpv4Addr,omitempty"`
 	// string identifying a Ipv6 address formatted according to clause 4 in IETF RFC 5952. The mixed Ipv4 Ipv6 notation according to clause 5 of IETF RFC 5952 shall not be used.
 	UeIpv6Addr *string `json:"ueIpv6Addr,omitempty"`
-	IpDomain *string `json:"ipDomain,omitempty"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
+	IpDomain   *string `json:"ipDomain,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
 	UeId *string `json:"ueId,omitempty"`
-	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.  
+	// String identifying a group of devices network internal globally unique ID which identifies a set of IMSIs, as specified in clause 19.9 of 3GPP TS 23.003.
 	IntGrpId *string `json:"intGrpId,omitempty"`
-	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.  
+	// String identifying External Group Identifier that identifies a group made up of one or more  subscriptions associated to a group of IMSIs, as specified in clause 19.7.3 of 3GPP TS 23.003.
 	ExtGrpId *string `json:"extGrpId,omitempty"`
 	// Contains the flow description for the Uplink and/or Downlink IP flows.
 	IpFlows []string `json:"ipFlows"`
 	// Identifies a pre-defined QoS information.
 	QosReference *string `json:"qosReference,omitempty"`
-	// Identifies an ordered list of pre-defined QoS information. The lower the index of the array for a given entry, the higher the priority. 
+	// Identifies an ordered list of pre-defined QoS information. The lower the index of the array for a given entry, the higher the priority.
 	AltQosReference []string `json:"altQosReference,omitempty"`
 	// Indicates the events subscribed by the EAS.
-	Events []UserPlaneEvent `json:"events,omitempty"`
-	SponsorInformation *SponsorInformation `json:"sponsorInformation,omitempty"`
-	QosMonInfo *QosMonitoringInformation `json:"qosMonInfo,omitempty"`
+	Events             []UserPlaneEvent          `json:"events,omitempty"`
+	SponsorInformation *SponsorInformation       `json:"sponsorInformation,omitempty"`
+	QosMonInfo         *QosMonitoringInformation `json:"qosMonInfo,omitempty"`
 	// string providing an URI formatted according to IETF RFC 3986.
 	NotificationDestination *string `json:"notificationDestination,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    *string `json:"dnn,omitempty"`
 	Snssai *Snssai `json:"snssai,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxbrUl *string `json:"maxbrUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxbrDl *string `json:"maxbrDl,omitempty"`
-	// Indicates to disable QoS flow parameters signalling to the UE when the SMF is notified by the NG-RAN of changes in the fulfilled QoS situation when it is included and set to \"true\". The fulfilled situation is either the QoS profile or an Alternative QoS Profile. The default value \"false\" shall apply, if the attribute is not present and has not been supplied previously. 
+	// Indicates to disable QoS flow parameters signalling to the UE when the SMF is notified by the NG-RAN of changes in the fulfilled QoS situation when it is included and set to \"true\". The fulfilled situation is either the QoS profile or an Alternative QoS Profile. The default value \"false\" shall apply, if the attribute is not present and has not been supplied previously.
 	DisUeNotif *bool `json:"disUeNotif,omitempty"`
-	// Set to true by Subscriber to request the EES to send a test notification as defined in 3GPP TS 29.122. Set to false or omitted otherwise. 
-	RequestTestNotification *bool `json:"requestTestNotification,omitempty"`
-	WebsockNotifConfig *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// Set to true by Subscriber to request the EES to send a test notification as defined in 3GPP TS 29.122. Set to false or omitted otherwise.
+	RequestTestNotification *bool               `json:"requestTestNotification,omitempty"`
+	WebsockNotifConfig      *WebsockNotifConfig `json:"websockNotifConfig,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -83,7 +83,7 @@ func NewSessionWithQoSWithDefaults() *SessionWithQoS {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetSelf() string {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *SessionWithQoS) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetSelfOk() (*string, bool) {
-	if o == nil || isNil(o.Self) {
+	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -101,7 +101,7 @@ func (o *SessionWithQoS) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasSelf() bool {
-	if o != nil && !isNil(o.Self) {
+	if o != nil && !IsNil(o.Self) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *SessionWithQoS) SetEasId(v string) {
 
 // GetUeIpv4Addr returns the UeIpv4Addr field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetUeIpv4Addr() string {
-	if o == nil || isNil(o.UeIpv4Addr) {
+	if o == nil || IsNil(o.UeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *SessionWithQoS) GetUeIpv4Addr() string {
 // GetUeIpv4AddrOk returns a tuple with the UeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetUeIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.UeIpv4Addr) {
+	if o == nil || IsNil(o.UeIpv4Addr) {
 		return nil, false
 	}
 	return o.UeIpv4Addr, true
@@ -157,7 +157,7 @@ func (o *SessionWithQoS) GetUeIpv4AddrOk() (*string, bool) {
 
 // HasUeIpv4Addr returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasUeIpv4Addr() bool {
-	if o != nil && !isNil(o.UeIpv4Addr) {
+	if o != nil && !IsNil(o.UeIpv4Addr) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *SessionWithQoS) SetUeIpv4Addr(v string) {
 
 // GetUeIpv6Addr returns the UeIpv6Addr field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetUeIpv6Addr() string {
-	if o == nil || isNil(o.UeIpv6Addr) {
+	if o == nil || IsNil(o.UeIpv6Addr) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *SessionWithQoS) GetUeIpv6Addr() string {
 // GetUeIpv6AddrOk returns a tuple with the UeIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetUeIpv6AddrOk() (*string, bool) {
-	if o == nil || isNil(o.UeIpv6Addr) {
+	if o == nil || IsNil(o.UeIpv6Addr) {
 		return nil, false
 	}
 	return o.UeIpv6Addr, true
@@ -189,7 +189,7 @@ func (o *SessionWithQoS) GetUeIpv6AddrOk() (*string, bool) {
 
 // HasUeIpv6Addr returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasUeIpv6Addr() bool {
-	if o != nil && !isNil(o.UeIpv6Addr) {
+	if o != nil && !IsNil(o.UeIpv6Addr) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *SessionWithQoS) SetUeIpv6Addr(v string) {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetIpDomain() string {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *SessionWithQoS) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetIpDomainOk() (*string, bool) {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -221,7 +221,7 @@ func (o *SessionWithQoS) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasIpDomain() bool {
-	if o != nil && !isNil(o.IpDomain) {
+	if o != nil && !IsNil(o.IpDomain) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *SessionWithQoS) SetIpDomain(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *SessionWithQoS) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -253,7 +253,7 @@ func (o *SessionWithQoS) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *SessionWithQoS) SetUeId(v string) {
 
 // GetIntGrpId returns the IntGrpId field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetIntGrpId() string {
-	if o == nil || isNil(o.IntGrpId) {
+	if o == nil || IsNil(o.IntGrpId) {
 		var ret string
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *SessionWithQoS) GetIntGrpId() string {
 // GetIntGrpIdOk returns a tuple with the IntGrpId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetIntGrpIdOk() (*string, bool) {
-	if o == nil || isNil(o.IntGrpId) {
+	if o == nil || IsNil(o.IntGrpId) {
 		return nil, false
 	}
 	return o.IntGrpId, true
@@ -285,7 +285,7 @@ func (o *SessionWithQoS) GetIntGrpIdOk() (*string, bool) {
 
 // HasIntGrpId returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasIntGrpId() bool {
-	if o != nil && !isNil(o.IntGrpId) {
+	if o != nil && !IsNil(o.IntGrpId) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *SessionWithQoS) SetIntGrpId(v string) {
 
 // GetExtGrpId returns the ExtGrpId field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetExtGrpId() string {
-	if o == nil || isNil(o.ExtGrpId) {
+	if o == nil || IsNil(o.ExtGrpId) {
 		var ret string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *SessionWithQoS) GetExtGrpId() string {
 // GetExtGrpIdOk returns a tuple with the ExtGrpId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetExtGrpIdOk() (*string, bool) {
-	if o == nil || isNil(o.ExtGrpId) {
+	if o == nil || IsNil(o.ExtGrpId) {
 		return nil, false
 	}
 	return o.ExtGrpId, true
@@ -317,7 +317,7 @@ func (o *SessionWithQoS) GetExtGrpIdOk() (*string, bool) {
 
 // HasExtGrpId returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasExtGrpId() bool {
-	if o != nil && !isNil(o.ExtGrpId) {
+	if o != nil && !IsNil(o.ExtGrpId) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *SessionWithQoS) SetIpFlows(v []string) {
 
 // GetQosReference returns the QosReference field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetQosReference() string {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		var ret string
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *SessionWithQoS) GetQosReference() string {
 // GetQosReferenceOk returns a tuple with the QosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetQosReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		return nil, false
 	}
 	return o.QosReference, true
@@ -373,7 +373,7 @@ func (o *SessionWithQoS) GetQosReferenceOk() (*string, bool) {
 
 // HasQosReference returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasQosReference() bool {
-	if o != nil && !isNil(o.QosReference) {
+	if o != nil && !IsNil(o.QosReference) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *SessionWithQoS) SetQosReference(v string) {
 
 // GetAltQosReference returns the AltQosReference field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetAltQosReference() []string {
-	if o == nil || isNil(o.AltQosReference) {
+	if o == nil || IsNil(o.AltQosReference) {
 		var ret []string
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *SessionWithQoS) GetAltQosReference() []string {
 // GetAltQosReferenceOk returns a tuple with the AltQosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetAltQosReferenceOk() ([]string, bool) {
-	if o == nil || isNil(o.AltQosReference) {
+	if o == nil || IsNil(o.AltQosReference) {
 		return nil, false
 	}
 	return o.AltQosReference, true
@@ -405,7 +405,7 @@ func (o *SessionWithQoS) GetAltQosReferenceOk() ([]string, bool) {
 
 // HasAltQosReference returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasAltQosReference() bool {
-	if o != nil && !isNil(o.AltQosReference) {
+	if o != nil && !IsNil(o.AltQosReference) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *SessionWithQoS) SetAltQosReference(v []string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetEvents() []UserPlaneEvent {
-	if o == nil || isNil(o.Events) {
+	if o == nil || IsNil(o.Events) {
 		var ret []UserPlaneEvent
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *SessionWithQoS) GetEvents() []UserPlaneEvent {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetEventsOk() ([]UserPlaneEvent, bool) {
-	if o == nil || isNil(o.Events) {
+	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -437,7 +437,7 @@ func (o *SessionWithQoS) GetEventsOk() ([]UserPlaneEvent, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasEvents() bool {
-	if o != nil && !isNil(o.Events) {
+	if o != nil && !IsNil(o.Events) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *SessionWithQoS) SetEvents(v []UserPlaneEvent) {
 
 // GetSponsorInformation returns the SponsorInformation field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetSponsorInformation() SponsorInformation {
-	if o == nil || isNil(o.SponsorInformation) {
+	if o == nil || IsNil(o.SponsorInformation) {
 		var ret SponsorInformation
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *SessionWithQoS) GetSponsorInformation() SponsorInformation {
 // GetSponsorInformationOk returns a tuple with the SponsorInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetSponsorInformationOk() (*SponsorInformation, bool) {
-	if o == nil || isNil(o.SponsorInformation) {
+	if o == nil || IsNil(o.SponsorInformation) {
 		return nil, false
 	}
 	return o.SponsorInformation, true
@@ -469,7 +469,7 @@ func (o *SessionWithQoS) GetSponsorInformationOk() (*SponsorInformation, bool) {
 
 // HasSponsorInformation returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasSponsorInformation() bool {
-	if o != nil && !isNil(o.SponsorInformation) {
+	if o != nil && !IsNil(o.SponsorInformation) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *SessionWithQoS) SetSponsorInformation(v SponsorInformation) {
 
 // GetQosMonInfo returns the QosMonInfo field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetQosMonInfo() QosMonitoringInformation {
-	if o == nil || isNil(o.QosMonInfo) {
+	if o == nil || IsNil(o.QosMonInfo) {
 		var ret QosMonitoringInformation
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *SessionWithQoS) GetQosMonInfo() QosMonitoringInformation {
 // GetQosMonInfoOk returns a tuple with the QosMonInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetQosMonInfoOk() (*QosMonitoringInformation, bool) {
-	if o == nil || isNil(o.QosMonInfo) {
+	if o == nil || IsNil(o.QosMonInfo) {
 		return nil, false
 	}
 	return o.QosMonInfo, true
@@ -501,7 +501,7 @@ func (o *SessionWithQoS) GetQosMonInfoOk() (*QosMonitoringInformation, bool) {
 
 // HasQosMonInfo returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasQosMonInfo() bool {
-	if o != nil && !isNil(o.QosMonInfo) {
+	if o != nil && !IsNil(o.QosMonInfo) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *SessionWithQoS) SetQosMonInfo(v QosMonitoringInformation) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetNotificationDestination() string {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *SessionWithQoS) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationDestination) {
+	if o == nil || IsNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -533,7 +533,7 @@ func (o *SessionWithQoS) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasNotificationDestination() bool {
-	if o != nil && !isNil(o.NotificationDestination) {
+	if o != nil && !IsNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *SessionWithQoS) SetNotificationDestination(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *SessionWithQoS) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -565,7 +565,7 @@ func (o *SessionWithQoS) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -579,7 +579,7 @@ func (o *SessionWithQoS) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetSnssai() Snssai {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *SessionWithQoS) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.Snssai) {
+	if o == nil || IsNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -597,7 +597,7 @@ func (o *SessionWithQoS) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasSnssai() bool {
-	if o != nil && !isNil(o.Snssai) {
+	if o != nil && !IsNil(o.Snssai) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o *SessionWithQoS) SetSnssai(v Snssai) {
 
 // GetMaxbrUl returns the MaxbrUl field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetMaxbrUl() string {
-	if o == nil || isNil(o.MaxbrUl) {
+	if o == nil || IsNil(o.MaxbrUl) {
 		var ret string
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *SessionWithQoS) GetMaxbrUl() string {
 // GetMaxbrUlOk returns a tuple with the MaxbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetMaxbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxbrUl) {
+	if o == nil || IsNil(o.MaxbrUl) {
 		return nil, false
 	}
 	return o.MaxbrUl, true
@@ -629,7 +629,7 @@ func (o *SessionWithQoS) GetMaxbrUlOk() (*string, bool) {
 
 // HasMaxbrUl returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasMaxbrUl() bool {
-	if o != nil && !isNil(o.MaxbrUl) {
+	if o != nil && !IsNil(o.MaxbrUl) {
 		return true
 	}
 
@@ -643,7 +643,7 @@ func (o *SessionWithQoS) SetMaxbrUl(v string) {
 
 // GetMaxbrDl returns the MaxbrDl field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetMaxbrDl() string {
-	if o == nil || isNil(o.MaxbrDl) {
+	if o == nil || IsNil(o.MaxbrDl) {
 		var ret string
 		return ret
 	}
@@ -653,7 +653,7 @@ func (o *SessionWithQoS) GetMaxbrDl() string {
 // GetMaxbrDlOk returns a tuple with the MaxbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetMaxbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxbrDl) {
+	if o == nil || IsNil(o.MaxbrDl) {
 		return nil, false
 	}
 	return o.MaxbrDl, true
@@ -661,7 +661,7 @@ func (o *SessionWithQoS) GetMaxbrDlOk() (*string, bool) {
 
 // HasMaxbrDl returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasMaxbrDl() bool {
-	if o != nil && !isNil(o.MaxbrDl) {
+	if o != nil && !IsNil(o.MaxbrDl) {
 		return true
 	}
 
@@ -675,7 +675,7 @@ func (o *SessionWithQoS) SetMaxbrDl(v string) {
 
 // GetDisUeNotif returns the DisUeNotif field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetDisUeNotif() bool {
-	if o == nil || isNil(o.DisUeNotif) {
+	if o == nil || IsNil(o.DisUeNotif) {
 		var ret bool
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *SessionWithQoS) GetDisUeNotif() bool {
 // GetDisUeNotifOk returns a tuple with the DisUeNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetDisUeNotifOk() (*bool, bool) {
-	if o == nil || isNil(o.DisUeNotif) {
+	if o == nil || IsNil(o.DisUeNotif) {
 		return nil, false
 	}
 	return o.DisUeNotif, true
@@ -693,7 +693,7 @@ func (o *SessionWithQoS) GetDisUeNotifOk() (*bool, bool) {
 
 // HasDisUeNotif returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasDisUeNotif() bool {
-	if o != nil && !isNil(o.DisUeNotif) {
+	if o != nil && !IsNil(o.DisUeNotif) {
 		return true
 	}
 
@@ -707,7 +707,7 @@ func (o *SessionWithQoS) SetDisUeNotif(v bool) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetRequestTestNotification() bool {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -717,7 +717,7 @@ func (o *SessionWithQoS) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestTestNotification) {
+	if o == nil || IsNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -725,7 +725,7 @@ func (o *SessionWithQoS) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasRequestTestNotification() bool {
-	if o != nil && !isNil(o.RequestTestNotification) {
+	if o != nil && !IsNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -739,7 +739,7 @@ func (o *SessionWithQoS) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -749,7 +749,7 @@ func (o *SessionWithQoS) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || isNil(o.WebsockNotifConfig) {
+	if o == nil || IsNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -757,7 +757,7 @@ func (o *SessionWithQoS) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasWebsockNotifConfig() bool {
-	if o != nil && !isNil(o.WebsockNotifConfig) {
+	if o != nil && !IsNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -771,7 +771,7 @@ func (o *SessionWithQoS) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SessionWithQoS) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -781,7 +781,7 @@ func (o *SessionWithQoS) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoS) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -789,7 +789,7 @@ func (o *SessionWithQoS) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SessionWithQoS) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -802,7 +802,7 @@ func (o *SessionWithQoS) SetSuppFeat(v string) {
 }
 
 func (o SessionWithQoS) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -811,69 +811,69 @@ func (o SessionWithQoS) MarshalJSON() ([]byte, error) {
 
 func (o SessionWithQoS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Self) {
+	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["easId"] = o.EasId
-	if !isNil(o.UeIpv4Addr) {
+	if !IsNil(o.UeIpv4Addr) {
 		toSerialize["ueIpv4Addr"] = o.UeIpv4Addr
 	}
-	if !isNil(o.UeIpv6Addr) {
+	if !IsNil(o.UeIpv6Addr) {
 		toSerialize["ueIpv6Addr"] = o.UeIpv6Addr
 	}
-	if !isNil(o.IpDomain) {
+	if !IsNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.IntGrpId) {
+	if !IsNil(o.IntGrpId) {
 		toSerialize["intGrpId"] = o.IntGrpId
 	}
-	if !isNil(o.ExtGrpId) {
+	if !IsNil(o.ExtGrpId) {
 		toSerialize["extGrpId"] = o.ExtGrpId
 	}
 	toSerialize["ipFlows"] = o.IpFlows
-	if !isNil(o.QosReference) {
+	if !IsNil(o.QosReference) {
 		toSerialize["qosReference"] = o.QosReference
 	}
-	if !isNil(o.AltQosReference) {
+	if !IsNil(o.AltQosReference) {
 		toSerialize["altQosReference"] = o.AltQosReference
 	}
-	if !isNil(o.Events) {
+	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
-	if !isNil(o.SponsorInformation) {
+	if !IsNil(o.SponsorInformation) {
 		toSerialize["sponsorInformation"] = o.SponsorInformation
 	}
-	if !isNil(o.QosMonInfo) {
+	if !IsNil(o.QosMonInfo) {
 		toSerialize["qosMonInfo"] = o.QosMonInfo
 	}
-	if !isNil(o.NotificationDestination) {
+	if !IsNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.Snssai) {
+	if !IsNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !isNil(o.MaxbrUl) {
+	if !IsNil(o.MaxbrUl) {
 		toSerialize["maxbrUl"] = o.MaxbrUl
 	}
-	if !isNil(o.MaxbrDl) {
+	if !IsNil(o.MaxbrDl) {
 		toSerialize["maxbrDl"] = o.MaxbrDl
 	}
-	if !isNil(o.DisUeNotif) {
+	if !IsNil(o.DisUeNotif) {
 		toSerialize["disUeNotif"] = o.DisUeNotif
 	}
-	if !isNil(o.RequestTestNotification) {
+	if !IsNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !isNil(o.WebsockNotifConfig) {
+	if !IsNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -914,5 +914,3 @@ func (v *NullableSessionWithQoS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &AssignEbiFailed{}
 
 // AssignEbiFailed Represents failed assignment of EBI(s)
 type AssignEbiFailed struct {
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionId int32 `json:"pduSessionId"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionId  int32 `json:"pduSessionId"`
 	FailedArpList []Arp `json:"failedArpList,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *AssignEbiFailed) SetPduSessionId(v int32) {
 
 // GetFailedArpList returns the FailedArpList field value if set, zero value otherwise.
 func (o *AssignEbiFailed) GetFailedArpList() []Arp {
-	if o == nil || isNil(o.FailedArpList) {
+	if o == nil || IsNil(o.FailedArpList) {
 		var ret []Arp
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AssignEbiFailed) GetFailedArpList() []Arp {
 // GetFailedArpListOk returns a tuple with the FailedArpList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignEbiFailed) GetFailedArpListOk() ([]Arp, bool) {
-	if o == nil || isNil(o.FailedArpList) {
+	if o == nil || IsNil(o.FailedArpList) {
 		return nil, false
 	}
 	return o.FailedArpList, true
@@ -86,7 +86,7 @@ func (o *AssignEbiFailed) GetFailedArpListOk() ([]Arp, bool) {
 
 // HasFailedArpList returns a boolean if a field has been set.
 func (o *AssignEbiFailed) HasFailedArpList() bool {
-	if o != nil && !isNil(o.FailedArpList) {
+	if o != nil && !IsNil(o.FailedArpList) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *AssignEbiFailed) SetFailedArpList(v []Arp) {
 }
 
 func (o AssignEbiFailed) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o AssignEbiFailed) MarshalJSON() ([]byte, error) {
 func (o AssignEbiFailed) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduSessionId"] = o.PduSessionId
-	if !isNil(o.FailedArpList) {
+	if !IsNil(o.FailedArpList) {
 		toSerialize["failedArpList"] = o.FailedArpList
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableAssignEbiFailed) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

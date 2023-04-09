@@ -1,7 +1,7 @@
 /*
 VAE_MessageDelivery
 
-API for VAE Message Delivery Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Message Delivery Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -99,7 +99,7 @@ func (o *UplinkMessageDeliveryData) SetUeId(v string) {
 
 // GetGeoId returns the GeoId field value if set, zero value otherwise.
 func (o *UplinkMessageDeliveryData) GetGeoId() string {
-	if o == nil || isNil(o.GeoId) {
+	if o == nil || IsNil(o.GeoId) {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *UplinkMessageDeliveryData) GetGeoId() string {
 // GetGeoIdOk returns a tuple with the GeoId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UplinkMessageDeliveryData) GetGeoIdOk() (*string, bool) {
-	if o == nil || isNil(o.GeoId) {
+	if o == nil || IsNil(o.GeoId) {
 		return nil, false
 	}
 	return o.GeoId, true
@@ -117,7 +117,7 @@ func (o *UplinkMessageDeliveryData) GetGeoIdOk() (*string, bool) {
 
 // HasGeoId returns a boolean if a field has been set.
 func (o *UplinkMessageDeliveryData) HasGeoId() bool {
-	if o != nil && !isNil(o.GeoId) {
+	if o != nil && !IsNil(o.GeoId) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *UplinkMessageDeliveryData) SetPayload(v string) {
 }
 
 func (o UplinkMessageDeliveryData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -165,7 +165,7 @@ func (o UplinkMessageDeliveryData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourceUri"] = o.ResourceUri
 	toSerialize["ueId"] = o.UeId
-	if !isNil(o.GeoId) {
+	if !IsNil(o.GeoId) {
 		toSerialize["geoId"] = o.GeoId
 	}
 	toSerialize["payload"] = o.Payload
@@ -207,5 +207,3 @@ func (v *NullableUplinkMessageDeliveryData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

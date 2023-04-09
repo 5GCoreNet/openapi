@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &MmTransactionLocationReportItem{}
 
 // MmTransactionLocationReportItem UE MM Transaction Report Item per Location
 type MmTransactionLocationReportItem struct {
-	Tai *Tai `json:"tai,omitempty"`
-	Ncgi *Ncgi `json:"ncgi,omitempty"`
-	Ecgi *Ecgi `json:"ecgi,omitempty"`
+	Tai          *Tai          `json:"tai,omitempty"`
+	Ncgi         *Ncgi         `json:"ncgi,omitempty"`
+	Ecgi         *Ecgi         `json:"ecgi,omitempty"`
 	N3gaLocation *N3gaLocation `json:"n3gaLocation,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	Timestamp time.Time `json:"timestamp"`
-	Transactions int32 `json:"transactions"`
+	Timestamp    time.Time `json:"timestamp"`
+	Transactions int32     `json:"transactions"`
 }
 
 // NewMmTransactionLocationReportItem instantiates a new MmTransactionLocationReportItem object
@@ -50,7 +50,7 @@ func NewMmTransactionLocationReportItemWithDefaults() *MmTransactionLocationRepo
 
 // GetTai returns the Tai field value if set, zero value otherwise.
 func (o *MmTransactionLocationReportItem) GetTai() Tai {
-	if o == nil || isNil(o.Tai) {
+	if o == nil || IsNil(o.Tai) {
 		var ret Tai
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *MmTransactionLocationReportItem) GetTai() Tai {
 // GetTaiOk returns a tuple with the Tai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmTransactionLocationReportItem) GetTaiOk() (*Tai, bool) {
-	if o == nil || isNil(o.Tai) {
+	if o == nil || IsNil(o.Tai) {
 		return nil, false
 	}
 	return o.Tai, true
@@ -68,7 +68,7 @@ func (o *MmTransactionLocationReportItem) GetTaiOk() (*Tai, bool) {
 
 // HasTai returns a boolean if a field has been set.
 func (o *MmTransactionLocationReportItem) HasTai() bool {
-	if o != nil && !isNil(o.Tai) {
+	if o != nil && !IsNil(o.Tai) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *MmTransactionLocationReportItem) SetTai(v Tai) {
 
 // GetNcgi returns the Ncgi field value if set, zero value otherwise.
 func (o *MmTransactionLocationReportItem) GetNcgi() Ncgi {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *MmTransactionLocationReportItem) GetNcgi() Ncgi {
 // GetNcgiOk returns a tuple with the Ncgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmTransactionLocationReportItem) GetNcgiOk() (*Ncgi, bool) {
-	if o == nil || isNil(o.Ncgi) {
+	if o == nil || IsNil(o.Ncgi) {
 		return nil, false
 	}
 	return o.Ncgi, true
@@ -100,7 +100,7 @@ func (o *MmTransactionLocationReportItem) GetNcgiOk() (*Ncgi, bool) {
 
 // HasNcgi returns a boolean if a field has been set.
 func (o *MmTransactionLocationReportItem) HasNcgi() bool {
-	if o != nil && !isNil(o.Ncgi) {
+	if o != nil && !IsNil(o.Ncgi) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *MmTransactionLocationReportItem) SetNcgi(v Ncgi) {
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *MmTransactionLocationReportItem) GetEcgi() Ecgi {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *MmTransactionLocationReportItem) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmTransactionLocationReportItem) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || isNil(o.Ecgi) {
+	if o == nil || IsNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -132,7 +132,7 @@ func (o *MmTransactionLocationReportItem) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *MmTransactionLocationReportItem) HasEcgi() bool {
-	if o != nil && !isNil(o.Ecgi) {
+	if o != nil && !IsNil(o.Ecgi) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *MmTransactionLocationReportItem) SetEcgi(v Ecgi) {
 
 // GetN3gaLocation returns the N3gaLocation field value if set, zero value otherwise.
 func (o *MmTransactionLocationReportItem) GetN3gaLocation() N3gaLocation {
-	if o == nil || isNil(o.N3gaLocation) {
+	if o == nil || IsNil(o.N3gaLocation) {
 		var ret N3gaLocation
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *MmTransactionLocationReportItem) GetN3gaLocation() N3gaLocation {
 // GetN3gaLocationOk returns a tuple with the N3gaLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmTransactionLocationReportItem) GetN3gaLocationOk() (*N3gaLocation, bool) {
-	if o == nil || isNil(o.N3gaLocation) {
+	if o == nil || IsNil(o.N3gaLocation) {
 		return nil, false
 	}
 	return o.N3gaLocation, true
@@ -164,7 +164,7 @@ func (o *MmTransactionLocationReportItem) GetN3gaLocationOk() (*N3gaLocation, bo
 
 // HasN3gaLocation returns a boolean if a field has been set.
 func (o *MmTransactionLocationReportItem) HasN3gaLocation() bool {
-	if o != nil && !isNil(o.N3gaLocation) {
+	if o != nil && !IsNil(o.N3gaLocation) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *MmTransactionLocationReportItem) SetTransactions(v int32) {
 }
 
 func (o MmTransactionLocationReportItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -234,16 +234,16 @@ func (o MmTransactionLocationReportItem) MarshalJSON() ([]byte, error) {
 
 func (o MmTransactionLocationReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Tai) {
+	if !IsNil(o.Tai) {
 		toSerialize["tai"] = o.Tai
 	}
-	if !isNil(o.Ncgi) {
+	if !IsNil(o.Ncgi) {
 		toSerialize["ncgi"] = o.Ncgi
 	}
-	if !isNil(o.Ecgi) {
+	if !IsNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
-	if !isNil(o.N3gaLocation) {
+	if !IsNil(o.N3gaLocation) {
 		toSerialize["n3gaLocation"] = o.N3gaLocation
 	}
 	toSerialize["timestamp"] = o.Timestamp
@@ -286,5 +286,3 @@ func (v *NullableMmTransactionLocationReportItem) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

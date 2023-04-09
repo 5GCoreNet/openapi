@@ -1,7 +1,7 @@
 /*
 Npcf_MBSPolicyControl API
 
-MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MBS Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,16 +17,16 @@ import (
 // checks if the MbsQosChar type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MbsQosChar{}
 
-// MbsQosChar Represents the parameters constituting a set of explicitly signalled QoS characteristics. 
+// MbsQosChar Represents the parameters constituting a set of explicitly signalled QoS characteristics.
 type MbsQosChar struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi int32 `json:"5qi"`
-	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.  
-	PriorityLevel int32 `json:"priorityLevel"`
-	ResourceType QosResourceType `json:"resourceType"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating the 5QI Priority Level (see clauses 5.7.3.3 and 5.7.4 of 3GPP TS 23.501, within the range 1 to 127.Values are ordered in decreasing order of priority,  i.e. with 1 as the highest priority and 127 as the lowest priority.
+	PriorityLevel int32           `json:"priorityLevel"`
+	ResourceType  QosResourceType `json:"resourceType"`
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	PacketDelayBudget int32 `json:"packetDelayBudget"`
-	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit. 
+	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit.
 	PacketErrorRate string `json:"packetErrorRate"`
 	// Unsigned integer indicating Averaging Window (see clause 5.7.3.6 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AverWindow *int32 `json:"averWindow,omitempty"`
@@ -183,7 +183,7 @@ func (o *MbsQosChar) SetPacketErrorRate(v string) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *MbsQosChar) GetAverWindow() int32 {
-	if o == nil || isNil(o.AverWindow) {
+	if o == nil || IsNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *MbsQosChar) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosChar) GetAverWindowOk() (*int32, bool) {
-	if o == nil || isNil(o.AverWindow) {
+	if o == nil || IsNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -201,7 +201,7 @@ func (o *MbsQosChar) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *MbsQosChar) HasAverWindow() bool {
-	if o != nil && !isNil(o.AverWindow) {
+	if o != nil && !IsNil(o.AverWindow) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *MbsQosChar) SetMbsMaxDataBurstVol(v int32) {
 }
 
 func (o MbsQosChar) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -252,7 +252,7 @@ func (o MbsQosChar) ToMap() (map[string]interface{}, error) {
 	toSerialize["resourceType"] = o.ResourceType
 	toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	toSerialize["packetErrorRate"] = o.PacketErrorRate
-	if !isNil(o.AverWindow) {
+	if !IsNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
 	toSerialize["mbsMaxDataBurstVol"] = o.MbsMaxDataBurstVol
@@ -294,5 +294,3 @@ func (v *NullableMbsQosChar) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

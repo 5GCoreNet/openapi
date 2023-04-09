@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nmbsf_MBSUserDataIngestSession
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualMBSUserDataIngestSessionDocumentApiService IndividualMBSUserDataIngestSessionDocumentApi service
 type IndividualMBSUserDataIngestSessionDocumentApiService service
 
 type ApiDeleteIndMBSUserDataIngSessionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualMBSUserDataIngestSessionDocumentApiService
-	sessionId string
+	sessionId  string
 }
 
 func (r ApiDeleteIndMBSUserDataIngSessionRequest) Execute() (*http.Response, error) {
@@ -36,24 +35,24 @@ func (r ApiDeleteIndMBSUserDataIngSessionRequest) Execute() (*http.Response, err
 /*
 DeleteIndMBSUserDataIngSession Request the deletion of an existing Individual MBS User Data Ingest Session resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
- @return ApiDeleteIndMBSUserDataIngSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
+	@return ApiDeleteIndMBSUserDataIngSessionRequest
 */
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserDataIngSession(ctx context.Context, sessionId string) ApiDeleteIndMBSUserDataIngSessionRequest {
 	return ApiDeleteIndMBSUserDataIngSessionRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserDataIngSessionExecute(r ApiDeleteIndMBSUserDataIngSessionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSUserDataIngestSessionDocumentApiService.DeleteIndMBSUserDataIngSession")
@@ -95,9 +94,9 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -180,8 +179,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -191,8 +190,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -202,8 +201,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -213,8 +212,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -224,13 +223,13 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) DeleteIndMBSUserD
 }
 
 type ApiModifyIndMBSUserDataIngSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMBSUserDataIngestSessionDocumentApiService
-	sessionId string
+	ctx                        context.Context
+	ApiService                 *IndividualMBSUserDataIngestSessionDocumentApiService
+	sessionId                  string
 	mBSUserDataIngSessionPatch *MBSUserDataIngSessionPatch
 }
 
-// Contains the parameters to request the modification of the Individual MBS User Data Ingest  Session resource. 
+// Contains the parameters to request the modification of the Individual MBS User Data Ingest  Session resource.
 func (r ApiModifyIndMBSUserDataIngSessionRequest) MBSUserDataIngSessionPatch(mBSUserDataIngSessionPatch MBSUserDataIngSessionPatch) ApiModifyIndMBSUserDataIngSessionRequest {
 	r.mBSUserDataIngSessionPatch = &mBSUserDataIngSessionPatch
 	return r
@@ -243,26 +242,27 @@ func (r ApiModifyIndMBSUserDataIngSessionRequest) Execute() (*MBSUserDataIngSess
 /*
 ModifyIndMBSUserDataIngSession Request the modification of an existing Individual MBS User Data Ingest Session resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
- @return ApiModifyIndMBSUserDataIngSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
+	@return ApiModifyIndMBSUserDataIngSessionRequest
 */
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserDataIngSession(ctx context.Context, sessionId string) ApiModifyIndMBSUserDataIngSessionRequest {
 	return ApiModifyIndMBSUserDataIngSessionRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return MBSUserDataIngSession
+//
+//	@return MBSUserDataIngSession
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserDataIngSessionExecute(r ApiModifyIndMBSUserDataIngSessionRequest) (*MBSUserDataIngSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MBSUserDataIngSession
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MBSUserDataIngSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSUserDataIngestSessionDocumentApiService.ModifyIndMBSUserDataIngSession")
@@ -309,9 +309,9 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -328,8 +328,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -339,8 +339,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -350,8 +350,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -361,8 +361,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -372,8 +372,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -383,8 +383,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -394,8 +394,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -405,8 +405,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -416,8 +416,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -427,8 +427,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -438,8 +438,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -449,8 +449,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -460,8 +460,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -480,9 +480,9 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) ModifyIndMBSUserD
 }
 
 type ApiRetrieveIndMBSUserDataIngSessionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualMBSUserDataIngestSessionDocumentApiService
-	sessionId string
+	sessionId  string
 }
 
 func (r ApiRetrieveIndMBSUserDataIngSessionRequest) Execute() (*MBSUserDataIngSession, *http.Response, error) {
@@ -492,26 +492,27 @@ func (r ApiRetrieveIndMBSUserDataIngSessionRequest) Execute() (*MBSUserDataIngSe
 /*
 RetrieveIndMBSUserDataIngSession Retrieve an existing Individual MBS User Data Ingest Session resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
- @return ApiRetrieveIndMBSUserDataIngSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
+	@return ApiRetrieveIndMBSUserDataIngSessionRequest
 */
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUserDataIngSession(ctx context.Context, sessionId string) ApiRetrieveIndMBSUserDataIngSessionRequest {
 	return ApiRetrieveIndMBSUserDataIngSessionRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return MBSUserDataIngSession
+//
+//	@return MBSUserDataIngSession
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUserDataIngSessionExecute(r ApiRetrieveIndMBSUserDataIngSessionRequest) (*MBSUserDataIngSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MBSUserDataIngSession
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MBSUserDataIngSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSUserDataIngestSessionDocumentApiService.RetrieveIndMBSUserDataIngSession")
@@ -553,9 +554,9 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -572,8 +573,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -583,8 +584,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -594,8 +595,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -605,8 +606,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -616,8 +617,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -627,8 +628,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -638,8 +639,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -649,8 +650,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -660,8 +661,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -671,8 +672,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -691,13 +692,13 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) RetrieveIndMBSUse
 }
 
 type ApiUpdateIndMBSUserDataIngSessionRequest struct {
-	ctx context.Context
-	ApiService *IndividualMBSUserDataIngestSessionDocumentApiService
-	sessionId string
+	ctx                   context.Context
+	ApiService            *IndividualMBSUserDataIngestSessionDocumentApiService
+	sessionId             string
 	mBSUserDataIngSession *MBSUserDataIngSession
 }
 
-// Contains the updated representation of the Individual MBS User Data Ingest Session  resource. 
+// Contains the updated representation of the Individual MBS User Data Ingest Session  resource.
 func (r ApiUpdateIndMBSUserDataIngSessionRequest) MBSUserDataIngSession(mBSUserDataIngSession MBSUserDataIngSession) ApiUpdateIndMBSUserDataIngSessionRequest {
 	r.mBSUserDataIngSession = &mBSUserDataIngSession
 	return r
@@ -710,26 +711,27 @@ func (r ApiUpdateIndMBSUserDataIngSessionRequest) Execute() (*MBSUserDataIngSess
 /*
 UpdateIndMBSUserDataIngSession Request the update of an existing Individual MBS User Data Ingest Session resource.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
- @return ApiUpdateIndMBSUserDataIngSessionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param sessionId Identifier of the Individual MBS User Data Ingest Session resource.
+	@return ApiUpdateIndMBSUserDataIngSessionRequest
 */
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserDataIngSession(ctx context.Context, sessionId string) ApiUpdateIndMBSUserDataIngSessionRequest {
 	return ApiUpdateIndMBSUserDataIngSessionRequest{
 		ApiService: a,
-		ctx: ctx,
-		sessionId: sessionId,
+		ctx:        ctx,
+		sessionId:  sessionId,
 	}
 }
 
 // Execute executes the request
-//  @return MBSUserDataIngSession
+//
+//	@return MBSUserDataIngSession
 func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserDataIngSessionExecute(r ApiUpdateIndMBSUserDataIngSessionRequest) (*MBSUserDataIngSession, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MBSUserDataIngSession
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MBSUserDataIngSession
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualMBSUserDataIngestSessionDocumentApiService.UpdateIndMBSUserDataIngSession")
@@ -776,9 +778,9 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -795,8 +797,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -806,8 +808,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -817,8 +819,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -828,8 +830,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -839,8 +841,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -850,8 +852,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -861,8 +863,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -872,8 +874,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -883,8 +885,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -894,8 +896,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -905,8 +907,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -916,8 +918,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -927,8 +929,8 @@ func (a *IndividualMBSUserDataIngestSessionDocumentApiService) UpdateIndMBSUserD
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

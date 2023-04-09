@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &UpdatedItem{}
 // UpdatedItem Identifies a fragment of a resource.
 type UpdatedItem struct {
 	// Identifies a fragment (subset of resource data) of a given resource.
-	Item string `json:"item"`
+	Item  string      `json:"item"`
 	Value interface{} `json:"value"`
 }
 
@@ -82,7 +82,7 @@ func (o *UpdatedItem) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdatedItem) GetValueOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true
@@ -94,7 +94,7 @@ func (o *UpdatedItem) SetValue(v interface{}) {
 }
 
 func (o UpdatedItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -145,5 +145,3 @@ func (v *NullableUpdatedItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

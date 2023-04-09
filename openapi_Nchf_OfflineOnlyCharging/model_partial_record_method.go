@@ -1,7 +1,7 @@
 /*
 Nchf_OfflineOnlyCharging
 
-OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+OfflineOnlyCharging Service © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // PartialRecordMethod struct for PartialRecordMethod
 type PartialRecordMethod struct {
-	PartialRecordMethodAnyOf *PartialRecordMethodAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PartialRecordMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PartialRecordMethodAnyOf
-	err = json.Unmarshal(data, &dst.PartialRecordMethodAnyOf);
-	if err == nil {
-		jsonPartialRecordMethodAnyOf, _ := json.Marshal(dst.PartialRecordMethodAnyOf)
-		if string(jsonPartialRecordMethodAnyOf) == "{}" { // empty struct
-			dst.PartialRecordMethodAnyOf = nil
-		} else {
-			return nil // data stored in dst.PartialRecordMethodAnyOf, return on the first match
-		}
-	} else {
-		dst.PartialRecordMethodAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PartialRecordMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PartialRecordMethod) MarshalJSON() ([]byte, error) {
-	if src.PartialRecordMethodAnyOf != nil {
-		return json.Marshal(&src.PartialRecordMethodAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePartialRecordMethod) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

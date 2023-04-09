@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &AssignEbiData{}
 
 // AssignEbiData Data within an EBI assignment request
 type AssignEbiData struct {
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionId int32 `json:"pduSessionId"`
-	ArpList []Arp `json:"arpList,omitempty"`
-	ReleasedEbiList []int32 `json:"releasedEbiList,omitempty"`
-	OldGuami *Guami `json:"oldGuami,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionId    int32           `json:"pduSessionId"`
+	ArpList         []Arp           `json:"arpList,omitempty"`
+	ReleasedEbiList []int32         `json:"releasedEbiList,omitempty"`
+	OldGuami        *Guami          `json:"oldGuami,omitempty"`
 	ModifiedEbiList []EbiArpMapping `json:"modifiedEbiList,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *AssignEbiData) SetPduSessionId(v int32) {
 
 // GetArpList returns the ArpList field value if set, zero value otherwise.
 func (o *AssignEbiData) GetArpList() []Arp {
-	if o == nil || isNil(o.ArpList) {
+	if o == nil || IsNil(o.ArpList) {
 		var ret []Arp
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AssignEbiData) GetArpList() []Arp {
 // GetArpListOk returns a tuple with the ArpList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignEbiData) GetArpListOk() ([]Arp, bool) {
-	if o == nil || isNil(o.ArpList) {
+	if o == nil || IsNil(o.ArpList) {
 		return nil, false
 	}
 	return o.ArpList, true
@@ -89,7 +89,7 @@ func (o *AssignEbiData) GetArpListOk() ([]Arp, bool) {
 
 // HasArpList returns a boolean if a field has been set.
 func (o *AssignEbiData) HasArpList() bool {
-	if o != nil && !isNil(o.ArpList) {
+	if o != nil && !IsNil(o.ArpList) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *AssignEbiData) SetArpList(v []Arp) {
 
 // GetReleasedEbiList returns the ReleasedEbiList field value if set, zero value otherwise.
 func (o *AssignEbiData) GetReleasedEbiList() []int32 {
-	if o == nil || isNil(o.ReleasedEbiList) {
+	if o == nil || IsNil(o.ReleasedEbiList) {
 		var ret []int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AssignEbiData) GetReleasedEbiList() []int32 {
 // GetReleasedEbiListOk returns a tuple with the ReleasedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignEbiData) GetReleasedEbiListOk() ([]int32, bool) {
-	if o == nil || isNil(o.ReleasedEbiList) {
+	if o == nil || IsNil(o.ReleasedEbiList) {
 		return nil, false
 	}
 	return o.ReleasedEbiList, true
@@ -121,7 +121,7 @@ func (o *AssignEbiData) GetReleasedEbiListOk() ([]int32, bool) {
 
 // HasReleasedEbiList returns a boolean if a field has been set.
 func (o *AssignEbiData) HasReleasedEbiList() bool {
-	if o != nil && !isNil(o.ReleasedEbiList) {
+	if o != nil && !IsNil(o.ReleasedEbiList) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *AssignEbiData) SetReleasedEbiList(v []int32) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *AssignEbiData) GetOldGuami() Guami {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *AssignEbiData) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignEbiData) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.OldGuami) {
+	if o == nil || IsNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -153,7 +153,7 @@ func (o *AssignEbiData) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *AssignEbiData) HasOldGuami() bool {
-	if o != nil && !isNil(o.OldGuami) {
+	if o != nil && !IsNil(o.OldGuami) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *AssignEbiData) SetOldGuami(v Guami) {
 
 // GetModifiedEbiList returns the ModifiedEbiList field value if set, zero value otherwise.
 func (o *AssignEbiData) GetModifiedEbiList() []EbiArpMapping {
-	if o == nil || isNil(o.ModifiedEbiList) {
+	if o == nil || IsNil(o.ModifiedEbiList) {
 		var ret []EbiArpMapping
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *AssignEbiData) GetModifiedEbiList() []EbiArpMapping {
 // GetModifiedEbiListOk returns a tuple with the ModifiedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignEbiData) GetModifiedEbiListOk() ([]EbiArpMapping, bool) {
-	if o == nil || isNil(o.ModifiedEbiList) {
+	if o == nil || IsNil(o.ModifiedEbiList) {
 		return nil, false
 	}
 	return o.ModifiedEbiList, true
@@ -185,7 +185,7 @@ func (o *AssignEbiData) GetModifiedEbiListOk() ([]EbiArpMapping, bool) {
 
 // HasModifiedEbiList returns a boolean if a field has been set.
 func (o *AssignEbiData) HasModifiedEbiList() bool {
-	if o != nil && !isNil(o.ModifiedEbiList) {
+	if o != nil && !IsNil(o.ModifiedEbiList) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *AssignEbiData) SetModifiedEbiList(v []EbiArpMapping) {
 }
 
 func (o AssignEbiData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,16 +208,16 @@ func (o AssignEbiData) MarshalJSON() ([]byte, error) {
 func (o AssignEbiData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduSessionId"] = o.PduSessionId
-	if !isNil(o.ArpList) {
+	if !IsNil(o.ArpList) {
 		toSerialize["arpList"] = o.ArpList
 	}
-	if !isNil(o.ReleasedEbiList) {
+	if !IsNil(o.ReleasedEbiList) {
 		toSerialize["releasedEbiList"] = o.ReleasedEbiList
 	}
-	if !isNil(o.OldGuami) {
+	if !IsNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
-	if !isNil(o.ModifiedEbiList) {
+	if !IsNil(o.ModifiedEbiList) {
 		toSerialize["modifiedEbiList"] = o.ModifiedEbiList
 	}
 	return toSerialize, nil
@@ -258,5 +258,3 @@ func (v *NullableAssignEbiData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

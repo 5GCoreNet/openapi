@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AccessType Represents the type of access (3GPP or non-3GPP)
 type AccessType struct {
-	AccessTypeAnyOf *AccessTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AccessTypeAnyOf
-	err = json.Unmarshal(data, &dst.AccessTypeAnyOf);
-	if err == nil {
-		jsonAccessTypeAnyOf, _ := json.Marshal(dst.AccessTypeAnyOf)
-		if string(jsonAccessTypeAnyOf) == "{}" { // empty struct
-			dst.AccessTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.AccessTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.AccessTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AccessType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessType) MarshalJSON() ([]byte, error) {
-	if src.AccessTypeAnyOf != nil {
-		return json.Marshal(&src.AccessTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAccessType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

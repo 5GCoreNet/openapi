@@ -1,7 +1,7 @@
 /*
 NRF OAuth2
 
-NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF OAuth2 Authorization.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -17,7 +17,7 @@ import (
 
 // AccessTokenClaimsAud struct for AccessTokenClaimsAud
 type AccessTokenClaimsAud struct {
-	NFType *NFType
+	NFType        *NFType
 	ArrayOfString *[]string
 }
 
@@ -25,7 +25,7 @@ type AccessTokenClaimsAud struct {
 func (dst *AccessTokenClaimsAud) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into NFType
-	err = json.Unmarshal(data, &dst.NFType);
+	err = json.Unmarshal(data, &dst.NFType)
 	if err == nil {
 		jsonNFType, _ := json.Marshal(dst.NFType)
 		if string(jsonNFType) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *AccessTokenClaimsAud) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into []string
-	err = json.Unmarshal(data, &dst.ArrayOfString);
+	err = json.Unmarshal(data, &dst.ArrayOfString)
 	if err == nil {
 		jsonArrayOfString, _ := json.Marshal(dst.ArrayOfString)
 		if string(jsonArrayOfString) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableAccessTokenClaimsAud) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

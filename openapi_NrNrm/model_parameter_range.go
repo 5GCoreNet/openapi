@@ -42,7 +42,7 @@ func NewParameterRangeWithDefaults() *ParameterRange {
 
 // GetMaxValue returns the MaxValue field value if set, zero value otherwise.
 func (o *ParameterRange) GetMaxValue() int32 {
-	if o == nil || isNil(o.MaxValue) {
+	if o == nil || IsNil(o.MaxValue) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ParameterRange) GetMaxValue() int32 {
 // GetMaxValueOk returns a tuple with the MaxValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterRange) GetMaxValueOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxValue) {
+	if o == nil || IsNil(o.MaxValue) {
 		return nil, false
 	}
 	return o.MaxValue, true
@@ -60,7 +60,7 @@ func (o *ParameterRange) GetMaxValueOk() (*int32, bool) {
 
 // HasMaxValue returns a boolean if a field has been set.
 func (o *ParameterRange) HasMaxValue() bool {
-	if o != nil && !isNil(o.MaxValue) {
+	if o != nil && !IsNil(o.MaxValue) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ParameterRange) SetMaxValue(v int32) {
 
 // GetMinValue returns the MinValue field value if set, zero value otherwise.
 func (o *ParameterRange) GetMinValue() int32 {
-	if o == nil || isNil(o.MinValue) {
+	if o == nil || IsNil(o.MinValue) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ParameterRange) GetMinValue() int32 {
 // GetMinValueOk returns a tuple with the MinValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterRange) GetMinValueOk() (*int32, bool) {
-	if o == nil || isNil(o.MinValue) {
+	if o == nil || IsNil(o.MinValue) {
 		return nil, false
 	}
 	return o.MinValue, true
@@ -92,7 +92,7 @@ func (o *ParameterRange) GetMinValueOk() (*int32, bool) {
 
 // HasMinValue returns a boolean if a field has been set.
 func (o *ParameterRange) HasMinValue() bool {
-	if o != nil && !isNil(o.MinValue) {
+	if o != nil && !IsNil(o.MinValue) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ParameterRange) SetMinValue(v int32) {
 }
 
 func (o ParameterRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ParameterRange) MarshalJSON() ([]byte, error) {
 
 func (o ParameterRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MaxValue) {
+	if !IsNil(o.MaxValue) {
 		toSerialize["maxValue"] = o.MaxValue
 	}
-	if !isNil(o.MinValue) {
+	if !IsNil(o.MinValue) {
 		toSerialize["minValue"] = o.MinValue
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableParameterRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

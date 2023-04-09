@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &IeInfo{}
 
 // IeInfo Protection and modification policy for the IE
 type IeInfo struct {
-	IeLoc IeLocation `json:"ieLoc"`
-	IeType IeType `json:"ieType"`
-	ReqIe *string `json:"reqIe,omitempty"`
-	RspIe *string `json:"rspIe,omitempty"`
-	IsModifiable *bool `json:"isModifiable,omitempty"`
+	IeLoc             IeLocation       `json:"ieLoc"`
+	IeType            IeType           `json:"ieType"`
+	ReqIe             *string          `json:"reqIe,omitempty"`
+	RspIe             *string          `json:"rspIe,omitempty"`
+	IsModifiable      *bool            `json:"isModifiable,omitempty"`
 	IsModifiableByIpx *map[string]bool `json:"isModifiableByIpx,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *IeInfo) SetIeType(v IeType) {
 
 // GetReqIe returns the ReqIe field value if set, zero value otherwise.
 func (o *IeInfo) GetReqIe() string {
-	if o == nil || isNil(o.ReqIe) {
+	if o == nil || IsNil(o.ReqIe) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *IeInfo) GetReqIe() string {
 // GetReqIeOk returns a tuple with the ReqIe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetReqIeOk() (*string, bool) {
-	if o == nil || isNil(o.ReqIe) {
+	if o == nil || IsNil(o.ReqIe) {
 		return nil, false
 	}
 	return o.ReqIe, true
@@ -114,7 +114,7 @@ func (o *IeInfo) GetReqIeOk() (*string, bool) {
 
 // HasReqIe returns a boolean if a field has been set.
 func (o *IeInfo) HasReqIe() bool {
-	if o != nil && !isNil(o.ReqIe) {
+	if o != nil && !IsNil(o.ReqIe) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *IeInfo) SetReqIe(v string) {
 
 // GetRspIe returns the RspIe field value if set, zero value otherwise.
 func (o *IeInfo) GetRspIe() string {
-	if o == nil || isNil(o.RspIe) {
+	if o == nil || IsNil(o.RspIe) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *IeInfo) GetRspIe() string {
 // GetRspIeOk returns a tuple with the RspIe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetRspIeOk() (*string, bool) {
-	if o == nil || isNil(o.RspIe) {
+	if o == nil || IsNil(o.RspIe) {
 		return nil, false
 	}
 	return o.RspIe, true
@@ -146,7 +146,7 @@ func (o *IeInfo) GetRspIeOk() (*string, bool) {
 
 // HasRspIe returns a boolean if a field has been set.
 func (o *IeInfo) HasRspIe() bool {
-	if o != nil && !isNil(o.RspIe) {
+	if o != nil && !IsNil(o.RspIe) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *IeInfo) SetRspIe(v string) {
 
 // GetIsModifiable returns the IsModifiable field value if set, zero value otherwise.
 func (o *IeInfo) GetIsModifiable() bool {
-	if o == nil || isNil(o.IsModifiable) {
+	if o == nil || IsNil(o.IsModifiable) {
 		var ret bool
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *IeInfo) GetIsModifiable() bool {
 // GetIsModifiableOk returns a tuple with the IsModifiable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetIsModifiableOk() (*bool, bool) {
-	if o == nil || isNil(o.IsModifiable) {
+	if o == nil || IsNil(o.IsModifiable) {
 		return nil, false
 	}
 	return o.IsModifiable, true
@@ -178,7 +178,7 @@ func (o *IeInfo) GetIsModifiableOk() (*bool, bool) {
 
 // HasIsModifiable returns a boolean if a field has been set.
 func (o *IeInfo) HasIsModifiable() bool {
-	if o != nil && !isNil(o.IsModifiable) {
+	if o != nil && !IsNil(o.IsModifiable) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *IeInfo) SetIsModifiable(v bool) {
 
 // GetIsModifiableByIpx returns the IsModifiableByIpx field value if set, zero value otherwise.
 func (o *IeInfo) GetIsModifiableByIpx() map[string]bool {
-	if o == nil || isNil(o.IsModifiableByIpx) {
+	if o == nil || IsNil(o.IsModifiableByIpx) {
 		var ret map[string]bool
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *IeInfo) GetIsModifiableByIpx() map[string]bool {
 // GetIsModifiableByIpxOk returns a tuple with the IsModifiableByIpx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetIsModifiableByIpxOk() (*map[string]bool, bool) {
-	if o == nil || isNil(o.IsModifiableByIpx) {
+	if o == nil || IsNil(o.IsModifiableByIpx) {
 		return nil, false
 	}
 	return o.IsModifiableByIpx, true
@@ -210,7 +210,7 @@ func (o *IeInfo) GetIsModifiableByIpxOk() (*map[string]bool, bool) {
 
 // HasIsModifiableByIpx returns a boolean if a field has been set.
 func (o *IeInfo) HasIsModifiableByIpx() bool {
-	if o != nil && !isNil(o.IsModifiableByIpx) {
+	if o != nil && !IsNil(o.IsModifiableByIpx) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *IeInfo) SetIsModifiableByIpx(v map[string]bool) {
 }
 
 func (o IeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -234,16 +234,16 @@ func (o IeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ieLoc"] = o.IeLoc
 	toSerialize["ieType"] = o.IeType
-	if !isNil(o.ReqIe) {
+	if !IsNil(o.ReqIe) {
 		toSerialize["reqIe"] = o.ReqIe
 	}
-	if !isNil(o.RspIe) {
+	if !IsNil(o.RspIe) {
 		toSerialize["rspIe"] = o.RspIe
 	}
-	if !isNil(o.IsModifiable) {
+	if !IsNil(o.IsModifiable) {
 		toSerialize["isModifiable"] = o.IsModifiable
 	}
-	if !isNil(o.IsModifiableByIpx) {
+	if !IsNil(o.IsModifiableByIpx) {
 		toSerialize["isModifiableByIpx"] = o.IsModifiableByIpx
 	}
 	return toSerialize, nil
@@ -284,5 +284,3 @@ func (v *NullableIeInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

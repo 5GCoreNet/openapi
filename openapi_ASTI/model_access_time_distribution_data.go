@@ -1,7 +1,7 @@
 /*
 3gpp-asti
 
-API for ASTI.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for ASTI.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// AccessTimeDistributionData - Contains the parameters for the creation of 5G access stratum time distribution configuration. 
+// AccessTimeDistributionData - Contains the parameters for the creation of 5G access stratum time distribution configuration.
 type AccessTimeDistributionData struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsAccessTimeDistributionData(v *interface{}) AccessTimeDistributio
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AccessTimeDistributionData) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src AccessTimeDistributionData) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AccessTimeDistributionData) GetActualInstance() (interface{}) {
+func (obj *AccessTimeDistributionData) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableAccessTimeDistributionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

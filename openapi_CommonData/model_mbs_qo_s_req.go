@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &MbsQoSReq{}
 
 // MbsQoSReq Represent MBS QoS requirements.
 type MbsQoSReq struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
 	Var5qi int32 `json:"5qi"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuarBitRate *string `json:"guarBitRate,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxBitRate *string `json:"maxBitRate,omitempty"`
 	// Unsigned integer indicating Averaging Window (see clause 5.7.3.6 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AverWindow *int32 `json:"averWindow,omitempty"`
-	ReqMbsArp *Arp `json:"reqMbsArp,omitempty"`
+	ReqMbsArp  *Arp   `json:"reqMbsArp,omitempty"`
 }
 
 // NewMbsQoSReq instantiates a new MbsQoSReq object
@@ -78,7 +78,7 @@ func (o *MbsQoSReq) SetVar5qi(v int32) {
 
 // GetGuarBitRate returns the GuarBitRate field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetGuarBitRate() string {
-	if o == nil || isNil(o.GuarBitRate) {
+	if o == nil || IsNil(o.GuarBitRate) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MbsQoSReq) GetGuarBitRate() string {
 // GetGuarBitRateOk returns a tuple with the GuarBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetGuarBitRateOk() (*string, bool) {
-	if o == nil || isNil(o.GuarBitRate) {
+	if o == nil || IsNil(o.GuarBitRate) {
 		return nil, false
 	}
 	return o.GuarBitRate, true
@@ -96,7 +96,7 @@ func (o *MbsQoSReq) GetGuarBitRateOk() (*string, bool) {
 
 // HasGuarBitRate returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasGuarBitRate() bool {
-	if o != nil && !isNil(o.GuarBitRate) {
+	if o != nil && !IsNil(o.GuarBitRate) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MbsQoSReq) SetGuarBitRate(v string) {
 
 // GetMaxBitRate returns the MaxBitRate field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetMaxBitRate() string {
-	if o == nil || isNil(o.MaxBitRate) {
+	if o == nil || IsNil(o.MaxBitRate) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MbsQoSReq) GetMaxBitRate() string {
 // GetMaxBitRateOk returns a tuple with the MaxBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetMaxBitRateOk() (*string, bool) {
-	if o == nil || isNil(o.MaxBitRate) {
+	if o == nil || IsNil(o.MaxBitRate) {
 		return nil, false
 	}
 	return o.MaxBitRate, true
@@ -128,7 +128,7 @@ func (o *MbsQoSReq) GetMaxBitRateOk() (*string, bool) {
 
 // HasMaxBitRate returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasMaxBitRate() bool {
-	if o != nil && !isNil(o.MaxBitRate) {
+	if o != nil && !IsNil(o.MaxBitRate) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MbsQoSReq) SetMaxBitRate(v string) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetAverWindow() int32 {
-	if o == nil || isNil(o.AverWindow) {
+	if o == nil || IsNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MbsQoSReq) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetAverWindowOk() (*int32, bool) {
-	if o == nil || isNil(o.AverWindow) {
+	if o == nil || IsNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -160,7 +160,7 @@ func (o *MbsQoSReq) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasAverWindow() bool {
-	if o != nil && !isNil(o.AverWindow) {
+	if o != nil && !IsNil(o.AverWindow) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *MbsQoSReq) SetAverWindow(v int32) {
 
 // GetReqMbsArp returns the ReqMbsArp field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetReqMbsArp() Arp {
-	if o == nil || isNil(o.ReqMbsArp) {
+	if o == nil || IsNil(o.ReqMbsArp) {
 		var ret Arp
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MbsQoSReq) GetReqMbsArp() Arp {
 // GetReqMbsArpOk returns a tuple with the ReqMbsArp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetReqMbsArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.ReqMbsArp) {
+	if o == nil || IsNil(o.ReqMbsArp) {
 		return nil, false
 	}
 	return o.ReqMbsArp, true
@@ -192,7 +192,7 @@ func (o *MbsQoSReq) GetReqMbsArpOk() (*Arp, bool) {
 
 // HasReqMbsArp returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasReqMbsArp() bool {
-	if o != nil && !isNil(o.ReqMbsArp) {
+	if o != nil && !IsNil(o.ReqMbsArp) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *MbsQoSReq) SetReqMbsArp(v Arp) {
 }
 
 func (o MbsQoSReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -215,16 +215,16 @@ func (o MbsQoSReq) MarshalJSON() ([]byte, error) {
 func (o MbsQoSReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
-	if !isNil(o.GuarBitRate) {
+	if !IsNil(o.GuarBitRate) {
 		toSerialize["guarBitRate"] = o.GuarBitRate
 	}
-	if !isNil(o.MaxBitRate) {
+	if !IsNil(o.MaxBitRate) {
 		toSerialize["maxBitRate"] = o.MaxBitRate
 	}
-	if !isNil(o.AverWindow) {
+	if !IsNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
-	if !isNil(o.ReqMbsArp) {
+	if !IsNil(o.ReqMbsArp) {
 		toSerialize["reqMbsArp"] = o.ReqMbsArp
 	}
 	return toSerialize, nil
@@ -265,5 +265,3 @@ func (v *NullableMbsQoSReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

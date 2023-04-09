@@ -1,7 +1,7 @@
 /*
 EES EAS Registration_API
 
-API for EAS Registration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EAS Registration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &EASRegistrationPatch{}
 // EASRegistrationPatch Represents partial update request of individual EAS registration information.
 type EASRegistrationPatch struct {
 	EasProf *EASProfile `json:"easProf,omitempty"`
-	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.  
+	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.
 	ExpTime NullableTime `json:"expTime,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewEASRegistrationPatchWithDefaults() *EASRegistrationPatch {
 
 // GetEasProf returns the EasProf field value if set, zero value otherwise.
 func (o *EASRegistrationPatch) GetEasProf() EASProfile {
-	if o == nil || isNil(o.EasProf) {
+	if o == nil || IsNil(o.EasProf) {
 		var ret EASProfile
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EASRegistrationPatch) GetEasProf() EASProfile {
 // GetEasProfOk returns a tuple with the EasProf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRegistrationPatch) GetEasProfOk() (*EASProfile, bool) {
-	if o == nil || isNil(o.EasProf) {
+	if o == nil || IsNil(o.EasProf) {
 		return nil, false
 	}
 	return o.EasProf, true
@@ -62,7 +62,7 @@ func (o *EASRegistrationPatch) GetEasProfOk() (*EASProfile, bool) {
 
 // HasEasProf returns a boolean if a field has been set.
 func (o *EASRegistrationPatch) HasEasProf() bool {
-	if o != nil && !isNil(o.EasProf) {
+	if o != nil && !IsNil(o.EasProf) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EASRegistrationPatch) SetEasProf(v EASProfile) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EASRegistrationPatch) GetExpTime() time.Time {
-	if o == nil || isNil(o.ExpTime.Get()) {
+	if o == nil || IsNil(o.ExpTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -106,6 +106,7 @@ func (o *EASRegistrationPatch) HasExpTime() bool {
 func (o *EASRegistrationPatch) SetExpTime(v time.Time) {
 	o.ExpTime.Set(&v)
 }
+
 // SetExpTimeNil sets the value for ExpTime to be an explicit nil
 func (o *EASRegistrationPatch) SetExpTimeNil() {
 	o.ExpTime.Set(nil)
@@ -117,7 +118,7 @@ func (o *EASRegistrationPatch) UnsetExpTime() {
 }
 
 func (o EASRegistrationPatch) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -126,7 +127,7 @@ func (o EASRegistrationPatch) MarshalJSON() ([]byte, error) {
 
 func (o EASRegistrationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EasProf) {
+	if !IsNil(o.EasProf) {
 		toSerialize["easProf"] = o.EasProf
 	}
 	if o.ExpTime.IsSet() {
@@ -170,5 +171,3 @@ func (v *NullableEASRegistrationPatch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

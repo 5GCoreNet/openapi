@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,28 +20,28 @@ var _ MappedNullable = &AmfEvent{}
 
 // AmfEvent Describes an event to be subscribed
 type AmfEvent struct {
-	Type AmfEventType `json:"type"`
-	ImmediateFlag *bool `json:"immediateFlag,omitempty"`
-	AreaList []AmfEventArea `json:"areaList,omitempty"`
-	LocationFilterList []LocationFilter `json:"locationFilterList,omitempty"`
-	RefId *int32 `json:"refId,omitempty"`
+	Type                  AmfEventType        `json:"type"`
+	ImmediateFlag         *bool               `json:"immediateFlag,omitempty"`
+	AreaList              []AmfEventArea      `json:"areaList,omitempty"`
+	LocationFilterList    []LocationFilter    `json:"locationFilterList,omitempty"`
+	RefId                 *int32              `json:"refId,omitempty"`
 	TrafficDescriptorList []TrafficDescriptor `json:"trafficDescriptorList,omitempty"`
-	ReportUeReachable *bool `json:"reportUeReachable,omitempty"`
-	ReachabilityFilter *ReachabilityFilter `json:"reachabilityFilter,omitempty"`
-	UdmDetectInd *bool `json:"udmDetectInd,omitempty"`
-	MaxReports *int32 `json:"maxReports,omitempty"`
+	ReportUeReachable     *bool               `json:"reportUeReachable,omitempty"`
+	ReachabilityFilter    *ReachabilityFilter `json:"reachabilityFilter,omitempty"`
+	UdmDetectInd          *bool               `json:"udmDetectInd,omitempty"`
+	MaxReports            *int32              `json:"maxReports,omitempty"`
 	// A map(list of key-value pairs) where praId serves as key.
 	PresenceInfoList *map[string]PresenceInfo `json:"presenceInfoList,omitempty"`
 	// indicating a time in seconds.
-	MaxResponseTime *int32 `json:"maxResponseTime,omitempty"`
-	TargetArea *TargetArea `json:"targetArea,omitempty"`
-	SnssaiFilter []ExtSnssai `json:"snssaiFilter,omitempty"`
-	UeInAreaFilter *UeInAreaFilter `json:"ueInAreaFilter,omitempty"`
+	MaxResponseTime *int32          `json:"maxResponseTime,omitempty"`
+	TargetArea      *TargetArea     `json:"targetArea,omitempty"`
+	SnssaiFilter    []ExtSnssai     `json:"snssaiFilter,omitempty"`
+	UeInAreaFilter  *UeInAreaFilter `json:"ueInAreaFilter,omitempty"`
 	// indicating a time in seconds.
 	MinInterval *int32 `json:"minInterval,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	NextReport *time.Time `json:"nextReport,omitempty"`
-	IdleStatusInd *bool `json:"idleStatusInd,omitempty"`
+	NextReport     *time.Time      `json:"nextReport,omitempty"`
+	IdleStatusInd  *bool           `json:"idleStatusInd,omitempty"`
 	DispersionArea *DispersionArea `json:"dispersionArea,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *AmfEvent) SetType(v AmfEventType) {
 
 // GetImmediateFlag returns the ImmediateFlag field value if set, zero value otherwise.
 func (o *AmfEvent) GetImmediateFlag() bool {
-	if o == nil || isNil(o.ImmediateFlag) {
+	if o == nil || IsNil(o.ImmediateFlag) {
 		var ret bool
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *AmfEvent) GetImmediateFlag() bool {
 // GetImmediateFlagOk returns a tuple with the ImmediateFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetImmediateFlagOk() (*bool, bool) {
-	if o == nil || isNil(o.ImmediateFlag) {
+	if o == nil || IsNil(o.ImmediateFlag) {
 		return nil, false
 	}
 	return o.ImmediateFlag, true
@@ -123,7 +123,7 @@ func (o *AmfEvent) GetImmediateFlagOk() (*bool, bool) {
 
 // HasImmediateFlag returns a boolean if a field has been set.
 func (o *AmfEvent) HasImmediateFlag() bool {
-	if o != nil && !isNil(o.ImmediateFlag) {
+	if o != nil && !IsNil(o.ImmediateFlag) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *AmfEvent) SetImmediateFlag(v bool) {
 
 // GetAreaList returns the AreaList field value if set, zero value otherwise.
 func (o *AmfEvent) GetAreaList() []AmfEventArea {
-	if o == nil || isNil(o.AreaList) {
+	if o == nil || IsNil(o.AreaList) {
 		var ret []AmfEventArea
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *AmfEvent) GetAreaList() []AmfEventArea {
 // GetAreaListOk returns a tuple with the AreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetAreaListOk() ([]AmfEventArea, bool) {
-	if o == nil || isNil(o.AreaList) {
+	if o == nil || IsNil(o.AreaList) {
 		return nil, false
 	}
 	return o.AreaList, true
@@ -155,7 +155,7 @@ func (o *AmfEvent) GetAreaListOk() ([]AmfEventArea, bool) {
 
 // HasAreaList returns a boolean if a field has been set.
 func (o *AmfEvent) HasAreaList() bool {
-	if o != nil && !isNil(o.AreaList) {
+	if o != nil && !IsNil(o.AreaList) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *AmfEvent) SetAreaList(v []AmfEventArea) {
 
 // GetLocationFilterList returns the LocationFilterList field value if set, zero value otherwise.
 func (o *AmfEvent) GetLocationFilterList() []LocationFilter {
-	if o == nil || isNil(o.LocationFilterList) {
+	if o == nil || IsNil(o.LocationFilterList) {
 		var ret []LocationFilter
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *AmfEvent) GetLocationFilterList() []LocationFilter {
 // GetLocationFilterListOk returns a tuple with the LocationFilterList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetLocationFilterListOk() ([]LocationFilter, bool) {
-	if o == nil || isNil(o.LocationFilterList) {
+	if o == nil || IsNil(o.LocationFilterList) {
 		return nil, false
 	}
 	return o.LocationFilterList, true
@@ -187,7 +187,7 @@ func (o *AmfEvent) GetLocationFilterListOk() ([]LocationFilter, bool) {
 
 // HasLocationFilterList returns a boolean if a field has been set.
 func (o *AmfEvent) HasLocationFilterList() bool {
-	if o != nil && !isNil(o.LocationFilterList) {
+	if o != nil && !IsNil(o.LocationFilterList) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *AmfEvent) SetLocationFilterList(v []LocationFilter) {
 
 // GetRefId returns the RefId field value if set, zero value otherwise.
 func (o *AmfEvent) GetRefId() int32 {
-	if o == nil || isNil(o.RefId) {
+	if o == nil || IsNil(o.RefId) {
 		var ret int32
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *AmfEvent) GetRefId() int32 {
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetRefIdOk() (*int32, bool) {
-	if o == nil || isNil(o.RefId) {
+	if o == nil || IsNil(o.RefId) {
 		return nil, false
 	}
 	return o.RefId, true
@@ -219,7 +219,7 @@ func (o *AmfEvent) GetRefIdOk() (*int32, bool) {
 
 // HasRefId returns a boolean if a field has been set.
 func (o *AmfEvent) HasRefId() bool {
-	if o != nil && !isNil(o.RefId) {
+	if o != nil && !IsNil(o.RefId) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *AmfEvent) SetRefId(v int32) {
 
 // GetTrafficDescriptorList returns the TrafficDescriptorList field value if set, zero value otherwise.
 func (o *AmfEvent) GetTrafficDescriptorList() []TrafficDescriptor {
-	if o == nil || isNil(o.TrafficDescriptorList) {
+	if o == nil || IsNil(o.TrafficDescriptorList) {
 		var ret []TrafficDescriptor
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *AmfEvent) GetTrafficDescriptorList() []TrafficDescriptor {
 // GetTrafficDescriptorListOk returns a tuple with the TrafficDescriptorList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetTrafficDescriptorListOk() ([]TrafficDescriptor, bool) {
-	if o == nil || isNil(o.TrafficDescriptorList) {
+	if o == nil || IsNil(o.TrafficDescriptorList) {
 		return nil, false
 	}
 	return o.TrafficDescriptorList, true
@@ -251,7 +251,7 @@ func (o *AmfEvent) GetTrafficDescriptorListOk() ([]TrafficDescriptor, bool) {
 
 // HasTrafficDescriptorList returns a boolean if a field has been set.
 func (o *AmfEvent) HasTrafficDescriptorList() bool {
-	if o != nil && !isNil(o.TrafficDescriptorList) {
+	if o != nil && !IsNil(o.TrafficDescriptorList) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *AmfEvent) SetTrafficDescriptorList(v []TrafficDescriptor) {
 
 // GetReportUeReachable returns the ReportUeReachable field value if set, zero value otherwise.
 func (o *AmfEvent) GetReportUeReachable() bool {
-	if o == nil || isNil(o.ReportUeReachable) {
+	if o == nil || IsNil(o.ReportUeReachable) {
 		var ret bool
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *AmfEvent) GetReportUeReachable() bool {
 // GetReportUeReachableOk returns a tuple with the ReportUeReachable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetReportUeReachableOk() (*bool, bool) {
-	if o == nil || isNil(o.ReportUeReachable) {
+	if o == nil || IsNil(o.ReportUeReachable) {
 		return nil, false
 	}
 	return o.ReportUeReachable, true
@@ -283,7 +283,7 @@ func (o *AmfEvent) GetReportUeReachableOk() (*bool, bool) {
 
 // HasReportUeReachable returns a boolean if a field has been set.
 func (o *AmfEvent) HasReportUeReachable() bool {
-	if o != nil && !isNil(o.ReportUeReachable) {
+	if o != nil && !IsNil(o.ReportUeReachable) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *AmfEvent) SetReportUeReachable(v bool) {
 
 // GetReachabilityFilter returns the ReachabilityFilter field value if set, zero value otherwise.
 func (o *AmfEvent) GetReachabilityFilter() ReachabilityFilter {
-	if o == nil || isNil(o.ReachabilityFilter) {
+	if o == nil || IsNil(o.ReachabilityFilter) {
 		var ret ReachabilityFilter
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *AmfEvent) GetReachabilityFilter() ReachabilityFilter {
 // GetReachabilityFilterOk returns a tuple with the ReachabilityFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetReachabilityFilterOk() (*ReachabilityFilter, bool) {
-	if o == nil || isNil(o.ReachabilityFilter) {
+	if o == nil || IsNil(o.ReachabilityFilter) {
 		return nil, false
 	}
 	return o.ReachabilityFilter, true
@@ -315,7 +315,7 @@ func (o *AmfEvent) GetReachabilityFilterOk() (*ReachabilityFilter, bool) {
 
 // HasReachabilityFilter returns a boolean if a field has been set.
 func (o *AmfEvent) HasReachabilityFilter() bool {
-	if o != nil && !isNil(o.ReachabilityFilter) {
+	if o != nil && !IsNil(o.ReachabilityFilter) {
 		return true
 	}
 
@@ -329,7 +329,7 @@ func (o *AmfEvent) SetReachabilityFilter(v ReachabilityFilter) {
 
 // GetUdmDetectInd returns the UdmDetectInd field value if set, zero value otherwise.
 func (o *AmfEvent) GetUdmDetectInd() bool {
-	if o == nil || isNil(o.UdmDetectInd) {
+	if o == nil || IsNil(o.UdmDetectInd) {
 		var ret bool
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *AmfEvent) GetUdmDetectInd() bool {
 // GetUdmDetectIndOk returns a tuple with the UdmDetectInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetUdmDetectIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UdmDetectInd) {
+	if o == nil || IsNil(o.UdmDetectInd) {
 		return nil, false
 	}
 	return o.UdmDetectInd, true
@@ -347,7 +347,7 @@ func (o *AmfEvent) GetUdmDetectIndOk() (*bool, bool) {
 
 // HasUdmDetectInd returns a boolean if a field has been set.
 func (o *AmfEvent) HasUdmDetectInd() bool {
-	if o != nil && !isNil(o.UdmDetectInd) {
+	if o != nil && !IsNil(o.UdmDetectInd) {
 		return true
 	}
 
@@ -361,7 +361,7 @@ func (o *AmfEvent) SetUdmDetectInd(v bool) {
 
 // GetMaxReports returns the MaxReports field value if set, zero value otherwise.
 func (o *AmfEvent) GetMaxReports() int32 {
-	if o == nil || isNil(o.MaxReports) {
+	if o == nil || IsNil(o.MaxReports) {
 		var ret int32
 		return ret
 	}
@@ -371,7 +371,7 @@ func (o *AmfEvent) GetMaxReports() int32 {
 // GetMaxReportsOk returns a tuple with the MaxReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetMaxReportsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxReports) {
+	if o == nil || IsNil(o.MaxReports) {
 		return nil, false
 	}
 	return o.MaxReports, true
@@ -379,7 +379,7 @@ func (o *AmfEvent) GetMaxReportsOk() (*int32, bool) {
 
 // HasMaxReports returns a boolean if a field has been set.
 func (o *AmfEvent) HasMaxReports() bool {
-	if o != nil && !isNil(o.MaxReports) {
+	if o != nil && !IsNil(o.MaxReports) {
 		return true
 	}
 
@@ -393,7 +393,7 @@ func (o *AmfEvent) SetMaxReports(v int32) {
 
 // GetPresenceInfoList returns the PresenceInfoList field value if set, zero value otherwise.
 func (o *AmfEvent) GetPresenceInfoList() map[string]PresenceInfo {
-	if o == nil || isNil(o.PresenceInfoList) {
+	if o == nil || IsNil(o.PresenceInfoList) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -403,7 +403,7 @@ func (o *AmfEvent) GetPresenceInfoList() map[string]PresenceInfo {
 // GetPresenceInfoListOk returns a tuple with the PresenceInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetPresenceInfoListOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || isNil(o.PresenceInfoList) {
+	if o == nil || IsNil(o.PresenceInfoList) {
 		return nil, false
 	}
 	return o.PresenceInfoList, true
@@ -411,7 +411,7 @@ func (o *AmfEvent) GetPresenceInfoListOk() (*map[string]PresenceInfo, bool) {
 
 // HasPresenceInfoList returns a boolean if a field has been set.
 func (o *AmfEvent) HasPresenceInfoList() bool {
-	if o != nil && !isNil(o.PresenceInfoList) {
+	if o != nil && !IsNil(o.PresenceInfoList) {
 		return true
 	}
 
@@ -425,7 +425,7 @@ func (o *AmfEvent) SetPresenceInfoList(v map[string]PresenceInfo) {
 
 // GetMaxResponseTime returns the MaxResponseTime field value if set, zero value otherwise.
 func (o *AmfEvent) GetMaxResponseTime() int32 {
-	if o == nil || isNil(o.MaxResponseTime) {
+	if o == nil || IsNil(o.MaxResponseTime) {
 		var ret int32
 		return ret
 	}
@@ -435,7 +435,7 @@ func (o *AmfEvent) GetMaxResponseTime() int32 {
 // GetMaxResponseTimeOk returns a tuple with the MaxResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetMaxResponseTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxResponseTime) {
+	if o == nil || IsNil(o.MaxResponseTime) {
 		return nil, false
 	}
 	return o.MaxResponseTime, true
@@ -443,7 +443,7 @@ func (o *AmfEvent) GetMaxResponseTimeOk() (*int32, bool) {
 
 // HasMaxResponseTime returns a boolean if a field has been set.
 func (o *AmfEvent) HasMaxResponseTime() bool {
-	if o != nil && !isNil(o.MaxResponseTime) {
+	if o != nil && !IsNil(o.MaxResponseTime) {
 		return true
 	}
 
@@ -457,7 +457,7 @@ func (o *AmfEvent) SetMaxResponseTime(v int32) {
 
 // GetTargetArea returns the TargetArea field value if set, zero value otherwise.
 func (o *AmfEvent) GetTargetArea() TargetArea {
-	if o == nil || isNil(o.TargetArea) {
+	if o == nil || IsNil(o.TargetArea) {
 		var ret TargetArea
 		return ret
 	}
@@ -467,7 +467,7 @@ func (o *AmfEvent) GetTargetArea() TargetArea {
 // GetTargetAreaOk returns a tuple with the TargetArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetTargetAreaOk() (*TargetArea, bool) {
-	if o == nil || isNil(o.TargetArea) {
+	if o == nil || IsNil(o.TargetArea) {
 		return nil, false
 	}
 	return o.TargetArea, true
@@ -475,7 +475,7 @@ func (o *AmfEvent) GetTargetAreaOk() (*TargetArea, bool) {
 
 // HasTargetArea returns a boolean if a field has been set.
 func (o *AmfEvent) HasTargetArea() bool {
-	if o != nil && !isNil(o.TargetArea) {
+	if o != nil && !IsNil(o.TargetArea) {
 		return true
 	}
 
@@ -489,7 +489,7 @@ func (o *AmfEvent) SetTargetArea(v TargetArea) {
 
 // GetSnssaiFilter returns the SnssaiFilter field value if set, zero value otherwise.
 func (o *AmfEvent) GetSnssaiFilter() []ExtSnssai {
-	if o == nil || isNil(o.SnssaiFilter) {
+	if o == nil || IsNil(o.SnssaiFilter) {
 		var ret []ExtSnssai
 		return ret
 	}
@@ -499,7 +499,7 @@ func (o *AmfEvent) GetSnssaiFilter() []ExtSnssai {
 // GetSnssaiFilterOk returns a tuple with the SnssaiFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetSnssaiFilterOk() ([]ExtSnssai, bool) {
-	if o == nil || isNil(o.SnssaiFilter) {
+	if o == nil || IsNil(o.SnssaiFilter) {
 		return nil, false
 	}
 	return o.SnssaiFilter, true
@@ -507,7 +507,7 @@ func (o *AmfEvent) GetSnssaiFilterOk() ([]ExtSnssai, bool) {
 
 // HasSnssaiFilter returns a boolean if a field has been set.
 func (o *AmfEvent) HasSnssaiFilter() bool {
-	if o != nil && !isNil(o.SnssaiFilter) {
+	if o != nil && !IsNil(o.SnssaiFilter) {
 		return true
 	}
 
@@ -521,7 +521,7 @@ func (o *AmfEvent) SetSnssaiFilter(v []ExtSnssai) {
 
 // GetUeInAreaFilter returns the UeInAreaFilter field value if set, zero value otherwise.
 func (o *AmfEvent) GetUeInAreaFilter() UeInAreaFilter {
-	if o == nil || isNil(o.UeInAreaFilter) {
+	if o == nil || IsNil(o.UeInAreaFilter) {
 		var ret UeInAreaFilter
 		return ret
 	}
@@ -531,7 +531,7 @@ func (o *AmfEvent) GetUeInAreaFilter() UeInAreaFilter {
 // GetUeInAreaFilterOk returns a tuple with the UeInAreaFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetUeInAreaFilterOk() (*UeInAreaFilter, bool) {
-	if o == nil || isNil(o.UeInAreaFilter) {
+	if o == nil || IsNil(o.UeInAreaFilter) {
 		return nil, false
 	}
 	return o.UeInAreaFilter, true
@@ -539,7 +539,7 @@ func (o *AmfEvent) GetUeInAreaFilterOk() (*UeInAreaFilter, bool) {
 
 // HasUeInAreaFilter returns a boolean if a field has been set.
 func (o *AmfEvent) HasUeInAreaFilter() bool {
-	if o != nil && !isNil(o.UeInAreaFilter) {
+	if o != nil && !IsNil(o.UeInAreaFilter) {
 		return true
 	}
 
@@ -553,7 +553,7 @@ func (o *AmfEvent) SetUeInAreaFilter(v UeInAreaFilter) {
 
 // GetMinInterval returns the MinInterval field value if set, zero value otherwise.
 func (o *AmfEvent) GetMinInterval() int32 {
-	if o == nil || isNil(o.MinInterval) {
+	if o == nil || IsNil(o.MinInterval) {
 		var ret int32
 		return ret
 	}
@@ -563,7 +563,7 @@ func (o *AmfEvent) GetMinInterval() int32 {
 // GetMinIntervalOk returns a tuple with the MinInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetMinIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.MinInterval) {
+	if o == nil || IsNil(o.MinInterval) {
 		return nil, false
 	}
 	return o.MinInterval, true
@@ -571,7 +571,7 @@ func (o *AmfEvent) GetMinIntervalOk() (*int32, bool) {
 
 // HasMinInterval returns a boolean if a field has been set.
 func (o *AmfEvent) HasMinInterval() bool {
-	if o != nil && !isNil(o.MinInterval) {
+	if o != nil && !IsNil(o.MinInterval) {
 		return true
 	}
 
@@ -585,7 +585,7 @@ func (o *AmfEvent) SetMinInterval(v int32) {
 
 // GetNextReport returns the NextReport field value if set, zero value otherwise.
 func (o *AmfEvent) GetNextReport() time.Time {
-	if o == nil || isNil(o.NextReport) {
+	if o == nil || IsNil(o.NextReport) {
 		var ret time.Time
 		return ret
 	}
@@ -595,7 +595,7 @@ func (o *AmfEvent) GetNextReport() time.Time {
 // GetNextReportOk returns a tuple with the NextReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetNextReportOk() (*time.Time, bool) {
-	if o == nil || isNil(o.NextReport) {
+	if o == nil || IsNil(o.NextReport) {
 		return nil, false
 	}
 	return o.NextReport, true
@@ -603,7 +603,7 @@ func (o *AmfEvent) GetNextReportOk() (*time.Time, bool) {
 
 // HasNextReport returns a boolean if a field has been set.
 func (o *AmfEvent) HasNextReport() bool {
-	if o != nil && !isNil(o.NextReport) {
+	if o != nil && !IsNil(o.NextReport) {
 		return true
 	}
 
@@ -617,7 +617,7 @@ func (o *AmfEvent) SetNextReport(v time.Time) {
 
 // GetIdleStatusInd returns the IdleStatusInd field value if set, zero value otherwise.
 func (o *AmfEvent) GetIdleStatusInd() bool {
-	if o == nil || isNil(o.IdleStatusInd) {
+	if o == nil || IsNil(o.IdleStatusInd) {
 		var ret bool
 		return ret
 	}
@@ -627,7 +627,7 @@ func (o *AmfEvent) GetIdleStatusInd() bool {
 // GetIdleStatusIndOk returns a tuple with the IdleStatusInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetIdleStatusIndOk() (*bool, bool) {
-	if o == nil || isNil(o.IdleStatusInd) {
+	if o == nil || IsNil(o.IdleStatusInd) {
 		return nil, false
 	}
 	return o.IdleStatusInd, true
@@ -635,7 +635,7 @@ func (o *AmfEvent) GetIdleStatusIndOk() (*bool, bool) {
 
 // HasIdleStatusInd returns a boolean if a field has been set.
 func (o *AmfEvent) HasIdleStatusInd() bool {
-	if o != nil && !isNil(o.IdleStatusInd) {
+	if o != nil && !IsNil(o.IdleStatusInd) {
 		return true
 	}
 
@@ -649,7 +649,7 @@ func (o *AmfEvent) SetIdleStatusInd(v bool) {
 
 // GetDispersionArea returns the DispersionArea field value if set, zero value otherwise.
 func (o *AmfEvent) GetDispersionArea() DispersionArea {
-	if o == nil || isNil(o.DispersionArea) {
+	if o == nil || IsNil(o.DispersionArea) {
 		var ret DispersionArea
 		return ret
 	}
@@ -659,7 +659,7 @@ func (o *AmfEvent) GetDispersionArea() DispersionArea {
 // GetDispersionAreaOk returns a tuple with the DispersionArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEvent) GetDispersionAreaOk() (*DispersionArea, bool) {
-	if o == nil || isNil(o.DispersionArea) {
+	if o == nil || IsNil(o.DispersionArea) {
 		return nil, false
 	}
 	return o.DispersionArea, true
@@ -667,7 +667,7 @@ func (o *AmfEvent) GetDispersionAreaOk() (*DispersionArea, bool) {
 
 // HasDispersionArea returns a boolean if a field has been set.
 func (o *AmfEvent) HasDispersionArea() bool {
-	if o != nil && !isNil(o.DispersionArea) {
+	if o != nil && !IsNil(o.DispersionArea) {
 		return true
 	}
 
@@ -680,7 +680,7 @@ func (o *AmfEvent) SetDispersionArea(v DispersionArea) {
 }
 
 func (o AmfEvent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -690,58 +690,58 @@ func (o AmfEvent) MarshalJSON() ([]byte, error) {
 func (o AmfEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["type"] = o.Type
-	if !isNil(o.ImmediateFlag) {
+	if !IsNil(o.ImmediateFlag) {
 		toSerialize["immediateFlag"] = o.ImmediateFlag
 	}
-	if !isNil(o.AreaList) {
+	if !IsNil(o.AreaList) {
 		toSerialize["areaList"] = o.AreaList
 	}
-	if !isNil(o.LocationFilterList) {
+	if !IsNil(o.LocationFilterList) {
 		toSerialize["locationFilterList"] = o.LocationFilterList
 	}
-	if !isNil(o.RefId) {
+	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
-	if !isNil(o.TrafficDescriptorList) {
+	if !IsNil(o.TrafficDescriptorList) {
 		toSerialize["trafficDescriptorList"] = o.TrafficDescriptorList
 	}
-	if !isNil(o.ReportUeReachable) {
+	if !IsNil(o.ReportUeReachable) {
 		toSerialize["reportUeReachable"] = o.ReportUeReachable
 	}
-	if !isNil(o.ReachabilityFilter) {
+	if !IsNil(o.ReachabilityFilter) {
 		toSerialize["reachabilityFilter"] = o.ReachabilityFilter
 	}
-	if !isNil(o.UdmDetectInd) {
+	if !IsNil(o.UdmDetectInd) {
 		toSerialize["udmDetectInd"] = o.UdmDetectInd
 	}
-	if !isNil(o.MaxReports) {
+	if !IsNil(o.MaxReports) {
 		toSerialize["maxReports"] = o.MaxReports
 	}
-	if !isNil(o.PresenceInfoList) {
+	if !IsNil(o.PresenceInfoList) {
 		toSerialize["presenceInfoList"] = o.PresenceInfoList
 	}
-	if !isNil(o.MaxResponseTime) {
+	if !IsNil(o.MaxResponseTime) {
 		toSerialize["maxResponseTime"] = o.MaxResponseTime
 	}
-	if !isNil(o.TargetArea) {
+	if !IsNil(o.TargetArea) {
 		toSerialize["targetArea"] = o.TargetArea
 	}
-	if !isNil(o.SnssaiFilter) {
+	if !IsNil(o.SnssaiFilter) {
 		toSerialize["snssaiFilter"] = o.SnssaiFilter
 	}
-	if !isNil(o.UeInAreaFilter) {
+	if !IsNil(o.UeInAreaFilter) {
 		toSerialize["ueInAreaFilter"] = o.UeInAreaFilter
 	}
-	if !isNil(o.MinInterval) {
+	if !IsNil(o.MinInterval) {
 		toSerialize["minInterval"] = o.MinInterval
 	}
-	if !isNil(o.NextReport) {
+	if !IsNil(o.NextReport) {
 		toSerialize["nextReport"] = o.NextReport
 	}
-	if !isNil(o.IdleStatusInd) {
+	if !IsNil(o.IdleStatusInd) {
 		toSerialize["idleStatusInd"] = o.IdleStatusInd
 	}
-	if !isNil(o.DispersionArea) {
+	if !IsNil(o.DispersionArea) {
 		toSerialize["dispersionArea"] = o.DispersionArea
 	}
 	return toSerialize, nil
@@ -782,5 +782,3 @@ func (v *NullableAmfEvent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

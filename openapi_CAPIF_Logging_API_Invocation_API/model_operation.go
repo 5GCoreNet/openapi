@@ -1,7 +1,7 @@
 /*
 CAPIF_Logging_API_Invocation_API
 
-API for invocation logs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for invocation logs.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// Operation Possible values are: - GET: HTTP GET method - POST: HTTP POST method - PUT: HTTP PUT method - PATCH: HTTP PATCH method - DELETE: HTTP DELETE method 
+// Operation Possible values are: - GET: HTTP GET method - POST: HTTP POST method - PUT: HTTP PUT method - PATCH: HTTP PATCH method - DELETE: HTTP DELETE method
 type Operation struct {
-	OperationAnyOf *OperationAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Operation) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into OperationAnyOf
-	err = json.Unmarshal(data, &dst.OperationAnyOf);
-	if err == nil {
-		jsonOperationAnyOf, _ := json.Marshal(dst.OperationAnyOf)
-		if string(jsonOperationAnyOf) == "{}" { // empty struct
-			dst.OperationAnyOf = nil
-		} else {
-			return nil // data stored in dst.OperationAnyOf, return on the first match
-		}
-	} else {
-		dst.OperationAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Operation) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Operation) MarshalJSON() ([]byte, error) {
-	if src.OperationAnyOf != nil {
-		return json.Marshal(&src.OperationAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

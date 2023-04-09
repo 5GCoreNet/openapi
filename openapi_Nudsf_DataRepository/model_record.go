@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -68,7 +68,7 @@ func (o *Record) SetMeta(v RecordMeta) {
 
 // GetBlocks returns the Blocks field value if set, zero value otherwise.
 func (o *Record) GetBlocks() []interface{} {
-	if o == nil || isNil(o.Blocks) {
+	if o == nil || IsNil(o.Blocks) {
 		var ret []interface{}
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *Record) GetBlocks() []interface{} {
 // GetBlocksOk returns a tuple with the Blocks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Record) GetBlocksOk() ([]interface{}, bool) {
-	if o == nil || isNil(o.Blocks) {
+	if o == nil || IsNil(o.Blocks) {
 		return nil, false
 	}
 	return o.Blocks, true
@@ -86,7 +86,7 @@ func (o *Record) GetBlocksOk() ([]interface{}, bool) {
 
 // HasBlocks returns a boolean if a field has been set.
 func (o *Record) HasBlocks() bool {
-	if o != nil && !isNil(o.Blocks) {
+	if o != nil && !IsNil(o.Blocks) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *Record) SetBlocks(v []interface{}) {
 }
 
 func (o Record) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o Record) MarshalJSON() ([]byte, error) {
 func (o Record) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["meta"] = o.Meta
-	if !isNil(o.Blocks) {
+	if !IsNil(o.Blocks) {
 		toSerialize["blocks"] = o.Blocks
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

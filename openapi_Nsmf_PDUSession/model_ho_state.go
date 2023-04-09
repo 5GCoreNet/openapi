@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// HoState Handover state. Possible values are - NONE - PREPARING - PREPARED - COMPLETED - CANCELLED 
+// HoState Handover state. Possible values are - NONE - PREPARING - PREPARED - COMPLETED - CANCELLED
 type HoState struct {
-	HoStateAnyOf *HoStateAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *HoState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into HoStateAnyOf
-	err = json.Unmarshal(data, &dst.HoStateAnyOf);
-	if err == nil {
-		jsonHoStateAnyOf, _ := json.Marshal(dst.HoStateAnyOf)
-		if string(jsonHoStateAnyOf) == "{}" { // empty struct
-			dst.HoStateAnyOf = nil
-		} else {
-			return nil // data stored in dst.HoStateAnyOf, return on the first match
-		}
-	} else {
-		dst.HoStateAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *HoState) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *HoState) MarshalJSON() ([]byte, error) {
-	if src.HoStateAnyOf != nil {
-		return json.Marshal(&src.HoStateAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableHoState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

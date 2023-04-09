@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,20 +13,19 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // MessageWaitingDataDocumentApiService MessageWaitingDataDocumentApi service
 type MessageWaitingDataDocumentApiService service
 
 type ApiCreateMessageWaitingDataRequest struct {
-	ctx context.Context
-	ApiService *MessageWaitingDataDocumentApiService
-	ueId string
+	ctx                context.Context
+	ApiService         *MessageWaitingDataDocumentApiService
+	ueId               string
 	messageWaitingData *MessageWaitingData
 }
 
@@ -42,26 +41,27 @@ func (r ApiCreateMessageWaitingDataRequest) Execute() (*MessageWaitingData, *htt
 /*
 CreateMessageWaitingData Create the Message Waiting Data of the UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateMessageWaitingDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateMessageWaitingDataRequest
 */
 func (a *MessageWaitingDataDocumentApiService) CreateMessageWaitingData(ctx context.Context, ueId string) ApiCreateMessageWaitingDataRequest {
 	return ApiCreateMessageWaitingDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return MessageWaitingData
+//
+//	@return MessageWaitingData
 func (a *MessageWaitingDataDocumentApiService) CreateMessageWaitingDataExecute(r ApiCreateMessageWaitingDataRequest) (*MessageWaitingData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MessageWaitingData
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MessageWaitingData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageWaitingDataDocumentApiService.CreateMessageWaitingData")
@@ -108,9 +108,9 @@ func (a *MessageWaitingDataDocumentApiService) CreateMessageWaitingDataExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,9 +136,9 @@ func (a *MessageWaitingDataDocumentApiService) CreateMessageWaitingDataExecute(r
 }
 
 type ApiDeleteMessageWaitingDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MessageWaitingDataDocumentApiService
-	ueId string
+	ueId       string
 }
 
 func (r ApiDeleteMessageWaitingDataRequest) Execute() (*http.Response, error) {
@@ -148,24 +148,24 @@ func (r ApiDeleteMessageWaitingDataRequest) Execute() (*http.Response, error) {
 /*
 DeleteMessageWaitingData To remove the Message Waiting Data of the UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiDeleteMessageWaitingDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiDeleteMessageWaitingDataRequest
 */
 func (a *MessageWaitingDataDocumentApiService) DeleteMessageWaitingData(ctx context.Context, ueId string) ApiDeleteMessageWaitingDataRequest {
 	return ApiDeleteMessageWaitingDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *MessageWaitingDataDocumentApiService) DeleteMessageWaitingDataExecute(r ApiDeleteMessageWaitingDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageWaitingDataDocumentApiService.DeleteMessageWaitingData")
@@ -207,9 +207,9 @@ func (a *MessageWaitingDataDocumentApiService) DeleteMessageWaitingDataExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -226,10 +226,10 @@ func (a *MessageWaitingDataDocumentApiService) DeleteMessageWaitingDataExecute(r
 }
 
 type ApiModifyMessageWaitingDataRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MessageWaitingDataDocumentApiService
-	ueId string
-	patchItem *[]PatchItem
+	ueId       string
+	patchItem  *[]PatchItem
 }
 
 func (r ApiModifyMessageWaitingDataRequest) PatchItem(patchItem []PatchItem) ApiModifyMessageWaitingDataRequest {
@@ -244,24 +244,24 @@ func (r ApiModifyMessageWaitingDataRequest) Execute() (*http.Response, error) {
 /*
 ModifyMessageWaitingData Modify the Message Waiting Data of the UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiModifyMessageWaitingDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiModifyMessageWaitingDataRequest
 */
 func (a *MessageWaitingDataDocumentApiService) ModifyMessageWaitingData(ctx context.Context, ueId string) ApiModifyMessageWaitingDataRequest {
 	return ApiModifyMessageWaitingDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *MessageWaitingDataDocumentApiService) ModifyMessageWaitingDataExecute(r ApiModifyMessageWaitingDataRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageWaitingDataDocumentApiService.ModifyMessageWaitingData")
@@ -311,9 +311,9 @@ func (a *MessageWaitingDataDocumentApiService) ModifyMessageWaitingDataExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -330,8 +330,8 @@ func (a *MessageWaitingDataDocumentApiService) ModifyMessageWaitingDataExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -341,8 +341,8 @@ func (a *MessageWaitingDataDocumentApiService) ModifyMessageWaitingDataExecute(r
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -352,10 +352,10 @@ func (a *MessageWaitingDataDocumentApiService) ModifyMessageWaitingDataExecute(r
 }
 
 type ApiQueryMessageWaitingDataRequest struct {
-	ctx context.Context
-	ApiService *MessageWaitingDataDocumentApiService
-	ueId string
-	fields *[]string
+	ctx               context.Context
+	ApiService        *MessageWaitingDataDocumentApiService
+	ueId              string
+	fields            *[]string
 	supportedFeatures *string
 }
 
@@ -378,26 +378,27 @@ func (r ApiQueryMessageWaitingDataRequest) Execute() (*MessageWaitingData, *http
 /*
 QueryMessageWaitingData Retrieves the Message Waiting Data of the UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryMessageWaitingDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryMessageWaitingDataRequest
 */
 func (a *MessageWaitingDataDocumentApiService) QueryMessageWaitingData(ctx context.Context, ueId string) ApiQueryMessageWaitingDataRequest {
 	return ApiQueryMessageWaitingDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return MessageWaitingData
+//
+//	@return MessageWaitingData
 func (a *MessageWaitingDataDocumentApiService) QueryMessageWaitingDataExecute(r ApiQueryMessageWaitingDataRequest) (*MessageWaitingData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MessageWaitingData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *MessageWaitingData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MessageWaitingDataDocumentApiService.QueryMessageWaitingData")
@@ -413,10 +414,10 @@ func (a *MessageWaitingDataDocumentApiService) QueryMessageWaitingDataExecute(r 
 	localVarFormParams := url.Values{}
 
 	if r.fields != nil {
-		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -445,9 +446,9 @@ func (a *MessageWaitingDataDocumentApiService) QueryMessageWaitingDataExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

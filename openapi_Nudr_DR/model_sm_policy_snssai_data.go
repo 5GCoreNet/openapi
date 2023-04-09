@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &SmPolicySnssaiData{}
 // SmPolicySnssaiData Contains the SM policy data for a given subscriber and S-NSSAI.
 type SmPolicySnssaiData struct {
 	Snssai Snssai `json:"snssai"`
-	// Session Management Policy data per DNN for all the DNNs of the indicated S-NSSAI. The key of the map is the DNN. 
+	// Session Management Policy data per DNN for all the DNNs of the indicated S-NSSAI. The key of the map is the DNN.
 	SmPolicyDnnData *map[string]SmPolicyDnnData `json:"smPolicyDnnData,omitempty"`
-	UeSliceMbr *SliceMbr1 `json:"ueSliceMbr,omitempty"`
+	UeSliceMbr      *SliceMbr1                  `json:"ueSliceMbr,omitempty"`
 }
 
 // NewSmPolicySnssaiData instantiates a new SmPolicySnssaiData object
@@ -69,7 +69,7 @@ func (o *SmPolicySnssaiData) SetSnssai(v Snssai) {
 
 // GetSmPolicyDnnData returns the SmPolicyDnnData field value if set, zero value otherwise.
 func (o *SmPolicySnssaiData) GetSmPolicyDnnData() map[string]SmPolicyDnnData {
-	if o == nil || isNil(o.SmPolicyDnnData) {
+	if o == nil || IsNil(o.SmPolicyDnnData) {
 		var ret map[string]SmPolicyDnnData
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *SmPolicySnssaiData) GetSmPolicyDnnData() map[string]SmPolicyDnnData {
 // GetSmPolicyDnnDataOk returns a tuple with the SmPolicyDnnData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicySnssaiData) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDnnData, bool) {
-	if o == nil || isNil(o.SmPolicyDnnData) {
+	if o == nil || IsNil(o.SmPolicyDnnData) {
 		return nil, false
 	}
 	return o.SmPolicyDnnData, true
@@ -87,7 +87,7 @@ func (o *SmPolicySnssaiData) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDnnData
 
 // HasSmPolicyDnnData returns a boolean if a field has been set.
 func (o *SmPolicySnssaiData) HasSmPolicyDnnData() bool {
-	if o != nil && !isNil(o.SmPolicyDnnData) {
+	if o != nil && !IsNil(o.SmPolicyDnnData) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *SmPolicySnssaiData) SetSmPolicyDnnData(v map[string]SmPolicyDnnData) {
 
 // GetUeSliceMbr returns the UeSliceMbr field value if set, zero value otherwise.
 func (o *SmPolicySnssaiData) GetUeSliceMbr() SliceMbr1 {
-	if o == nil || isNil(o.UeSliceMbr) {
+	if o == nil || IsNil(o.UeSliceMbr) {
 		var ret SliceMbr1
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SmPolicySnssaiData) GetUeSliceMbr() SliceMbr1 {
 // GetUeSliceMbrOk returns a tuple with the UeSliceMbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicySnssaiData) GetUeSliceMbrOk() (*SliceMbr1, bool) {
-	if o == nil || isNil(o.UeSliceMbr) {
+	if o == nil || IsNil(o.UeSliceMbr) {
 		return nil, false
 	}
 	return o.UeSliceMbr, true
@@ -119,7 +119,7 @@ func (o *SmPolicySnssaiData) GetUeSliceMbrOk() (*SliceMbr1, bool) {
 
 // HasUeSliceMbr returns a boolean if a field has been set.
 func (o *SmPolicySnssaiData) HasUeSliceMbr() bool {
-	if o != nil && !isNil(o.UeSliceMbr) {
+	if o != nil && !IsNil(o.UeSliceMbr) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *SmPolicySnssaiData) SetUeSliceMbr(v SliceMbr1) {
 }
 
 func (o SmPolicySnssaiData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o SmPolicySnssaiData) MarshalJSON() ([]byte, error) {
 func (o SmPolicySnssaiData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.SmPolicyDnnData) {
+	if !IsNil(o.SmPolicyDnnData) {
 		toSerialize["smPolicyDnnData"] = o.SmPolicyDnnData
 	}
-	if !isNil(o.UeSliceMbr) {
+	if !IsNil(o.UeSliceMbr) {
 		toSerialize["ueSliceMbr"] = o.UeSliceMbr
 	}
 	return toSerialize, nil
@@ -186,5 +186,3 @@ func (v *NullableSmPolicySnssaiData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

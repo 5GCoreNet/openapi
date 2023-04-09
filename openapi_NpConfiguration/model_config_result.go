@@ -1,7 +1,7 @@
 /*
 3gpp-network-parameter-configuration
 
-API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for network parameter configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0
 */
@@ -26,7 +26,6 @@ func InterfaceAsConfigResult(v *interface{}) ConfigResult {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ConfigResult) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src ConfigResult) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ConfigResult) GetActualInstance() (interface{}) {
+func (obj *ConfigResult) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableConfigResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -6,16 +7,6 @@ api_asti_configurations.go
 api_individual_asti_configuration.go
 client.go
 configuration.go
-docs/ASTIConfigurationsApi.md
-docs/AccessTimeDistributionData.md
-docs/ActiveUe.md
-docs/AsTimeDistributionParam.md
-docs/IndividualASTIConfigurationApi.md
-docs/InvalidParam.md
-docs/ProblemDetails.md
-docs/StatusRequestData.md
-docs/StatusResponseData.md
-docs/TemporalValidity.md
 git_push.sh
 go.mod
 go.sum
@@ -28,6 +19,4 @@ model_status_request_data.go
 model_status_response_data.go
 model_temporal_validity.go
 response.go
-test/api_asti_configurations_test.go
-test/api_individual_asti_configuration_test.go
 utils.go

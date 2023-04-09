@@ -21,7 +21,7 @@ var _ MappedNullable = &NetworkSliceInfo{}
 type NetworkSliceInfo struct {
 	SNSSAI *Snssai `json:"sNSSAI,omitempty"`
 	// CNSI Id is defined in TS 29.531, only for Core Network
-	CNSIId *string `json:"cNSIId,omitempty"`
+	CNSIId          *string  `json:"cNSIId,omitempty"`
 	NetworkSliceRef []string `json:"networkSliceRef,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewNetworkSliceInfoWithDefaults() *NetworkSliceInfo {
 
 // GetSNSSAI returns the SNSSAI field value if set, zero value otherwise.
 func (o *NetworkSliceInfo) GetSNSSAI() Snssai {
-	if o == nil || isNil(o.SNSSAI) {
+	if o == nil || IsNil(o.SNSSAI) {
 		var ret Snssai
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *NetworkSliceInfo) GetSNSSAI() Snssai {
 // GetSNSSAIOk returns a tuple with the SNSSAI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceInfo) GetSNSSAIOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SNSSAI) {
+	if o == nil || IsNil(o.SNSSAI) {
 		return nil, false
 	}
 	return o.SNSSAI, true
@@ -62,7 +62,7 @@ func (o *NetworkSliceInfo) GetSNSSAIOk() (*Snssai, bool) {
 
 // HasSNSSAI returns a boolean if a field has been set.
 func (o *NetworkSliceInfo) HasSNSSAI() bool {
-	if o != nil && !isNil(o.SNSSAI) {
+	if o != nil && !IsNil(o.SNSSAI) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *NetworkSliceInfo) SetSNSSAI(v Snssai) {
 
 // GetCNSIId returns the CNSIId field value if set, zero value otherwise.
 func (o *NetworkSliceInfo) GetCNSIId() string {
-	if o == nil || isNil(o.CNSIId) {
+	if o == nil || IsNil(o.CNSIId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NetworkSliceInfo) GetCNSIId() string {
 // GetCNSIIdOk returns a tuple with the CNSIId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceInfo) GetCNSIIdOk() (*string, bool) {
-	if o == nil || isNil(o.CNSIId) {
+	if o == nil || IsNil(o.CNSIId) {
 		return nil, false
 	}
 	return o.CNSIId, true
@@ -94,7 +94,7 @@ func (o *NetworkSliceInfo) GetCNSIIdOk() (*string, bool) {
 
 // HasCNSIId returns a boolean if a field has been set.
 func (o *NetworkSliceInfo) HasCNSIId() bool {
-	if o != nil && !isNil(o.CNSIId) {
+	if o != nil && !IsNil(o.CNSIId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *NetworkSliceInfo) SetCNSIId(v string) {
 
 // GetNetworkSliceRef returns the NetworkSliceRef field value if set, zero value otherwise.
 func (o *NetworkSliceInfo) GetNetworkSliceRef() []string {
-	if o == nil || isNil(o.NetworkSliceRef) {
+	if o == nil || IsNil(o.NetworkSliceRef) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *NetworkSliceInfo) GetNetworkSliceRef() []string {
 // GetNetworkSliceRefOk returns a tuple with the NetworkSliceRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceInfo) GetNetworkSliceRefOk() ([]string, bool) {
-	if o == nil || isNil(o.NetworkSliceRef) {
+	if o == nil || IsNil(o.NetworkSliceRef) {
 		return nil, false
 	}
 	return o.NetworkSliceRef, true
@@ -126,7 +126,7 @@ func (o *NetworkSliceInfo) GetNetworkSliceRefOk() ([]string, bool) {
 
 // HasNetworkSliceRef returns a boolean if a field has been set.
 func (o *NetworkSliceInfo) HasNetworkSliceRef() bool {
-	if o != nil && !isNil(o.NetworkSliceRef) {
+	if o != nil && !IsNil(o.NetworkSliceRef) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *NetworkSliceInfo) SetNetworkSliceRef(v []string) {
 }
 
 func (o NetworkSliceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o NetworkSliceInfo) MarshalJSON() ([]byte, error) {
 
 func (o NetworkSliceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SNSSAI) {
+	if !IsNil(o.SNSSAI) {
 		toSerialize["sNSSAI"] = o.SNSSAI
 	}
-	if !isNil(o.CNSIId) {
+	if !IsNil(o.CNSIId) {
 		toSerialize["cNSIId"] = o.CNSIId
 	}
-	if !isNil(o.NetworkSliceRef) {
+	if !IsNil(o.NetworkSliceRef) {
 		toSerialize["networkSliceRef"] = o.NetworkSliceRef
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableNetworkSliceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

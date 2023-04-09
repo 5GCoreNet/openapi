@@ -1,7 +1,7 @@
 /*
 VAE_FileDistribution
 
-API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -29,14 +29,14 @@ type FileList struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	FileLatFetchTime time.Time `json:"fileLatFetchTime"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	FileSize *int32 `json:"fileSize,omitempty"`
+	FileSize   *int32     `json:"fileSize,omitempty"`
 	FileStatus FileStatus `json:"fileStatus"`
 	// string with format 'date-time' as defined in OpenAPI.
 	CompletionTime time.Time `json:"completionTime"`
 	// indicating a time in seconds.
-	KeepUpdateInterval int32 `json:"keepUpdateInterval"`
-	UniAvailability *bool `json:"uniAvailability,omitempty"`
-	FileRepetition *int32 `json:"fileRepetition,omitempty"`
+	KeepUpdateInterval int32  `json:"keepUpdateInterval"`
+	UniAvailability    *bool  `json:"uniAvailability,omitempty"`
+	FileRepetition     *int32 `json:"fileRepetition,omitempty"`
 }
 
 // NewFileList instantiates a new FileList object
@@ -161,7 +161,7 @@ func (o *FileList) SetFileLatFetchTime(v time.Time) {
 
 // GetFileSize returns the FileSize field value if set, zero value otherwise.
 func (o *FileList) GetFileSize() int32 {
-	if o == nil || isNil(o.FileSize) {
+	if o == nil || IsNil(o.FileSize) {
 		var ret int32
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *FileList) GetFileSize() int32 {
 // GetFileSizeOk returns a tuple with the FileSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileList) GetFileSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.FileSize) {
+	if o == nil || IsNil(o.FileSize) {
 		return nil, false
 	}
 	return o.FileSize, true
@@ -179,7 +179,7 @@ func (o *FileList) GetFileSizeOk() (*int32, bool) {
 
 // HasFileSize returns a boolean if a field has been set.
 func (o *FileList) HasFileSize() bool {
-	if o != nil && !isNil(o.FileSize) {
+	if o != nil && !IsNil(o.FileSize) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *FileList) SetKeepUpdateInterval(v int32) {
 
 // GetUniAvailability returns the UniAvailability field value if set, zero value otherwise.
 func (o *FileList) GetUniAvailability() bool {
-	if o == nil || isNil(o.UniAvailability) {
+	if o == nil || IsNil(o.UniAvailability) {
 		var ret bool
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *FileList) GetUniAvailability() bool {
 // GetUniAvailabilityOk returns a tuple with the UniAvailability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileList) GetUniAvailabilityOk() (*bool, bool) {
-	if o == nil || isNil(o.UniAvailability) {
+	if o == nil || IsNil(o.UniAvailability) {
 		return nil, false
 	}
 	return o.UniAvailability, true
@@ -283,7 +283,7 @@ func (o *FileList) GetUniAvailabilityOk() (*bool, bool) {
 
 // HasUniAvailability returns a boolean if a field has been set.
 func (o *FileList) HasUniAvailability() bool {
-	if o != nil && !isNil(o.UniAvailability) {
+	if o != nil && !IsNil(o.UniAvailability) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *FileList) SetUniAvailability(v bool) {
 
 // GetFileRepetition returns the FileRepetition field value if set, zero value otherwise.
 func (o *FileList) GetFileRepetition() int32 {
-	if o == nil || isNil(o.FileRepetition) {
+	if o == nil || IsNil(o.FileRepetition) {
 		var ret int32
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *FileList) GetFileRepetition() int32 {
 // GetFileRepetitionOk returns a tuple with the FileRepetition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileList) GetFileRepetitionOk() (*int32, bool) {
-	if o == nil || isNil(o.FileRepetition) {
+	if o == nil || IsNil(o.FileRepetition) {
 		return nil, false
 	}
 	return o.FileRepetition, true
@@ -315,7 +315,7 @@ func (o *FileList) GetFileRepetitionOk() (*int32, bool) {
 
 // HasFileRepetition returns a boolean if a field has been set.
 func (o *FileList) HasFileRepetition() bool {
-	if o != nil && !isNil(o.FileRepetition) {
+	if o != nil && !IsNil(o.FileRepetition) {
 		return true
 	}
 
@@ -328,7 +328,7 @@ func (o *FileList) SetFileRepetition(v int32) {
 }
 
 func (o FileList) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,16 +341,16 @@ func (o FileList) ToMap() (map[string]interface{}, error) {
 	toSerialize["fileDisplayUri"] = o.FileDisplayUri
 	toSerialize["fileEarFetchTime"] = o.FileEarFetchTime
 	toSerialize["fileLatFetchTime"] = o.FileLatFetchTime
-	if !isNil(o.FileSize) {
+	if !IsNil(o.FileSize) {
 		toSerialize["fileSize"] = o.FileSize
 	}
 	toSerialize["fileStatus"] = o.FileStatus
 	toSerialize["completionTime"] = o.CompletionTime
 	toSerialize["keepUpdateInterval"] = o.KeepUpdateInterval
-	if !isNil(o.UniAvailability) {
+	if !IsNil(o.UniAvailability) {
 		toSerialize["uniAvailability"] = o.UniAvailability
 	}
-	if !isNil(o.FileRepetition) {
+	if !IsNil(o.FileRepetition) {
 		toSerialize["fileRepetition"] = o.FileRepetition
 	}
 	return toSerialize, nil
@@ -391,5 +391,3 @@ func (v *NullableFileList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

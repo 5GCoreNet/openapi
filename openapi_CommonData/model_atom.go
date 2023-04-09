@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &Atom{}
 // Atom contains a search parameter and its positive or negative content.
 type Atom struct {
 	// contains the name of a defined query parameter.
-	Attr string `json:"attr"`
+	Attr  string      `json:"attr"`
 	Value interface{} `json:"value"`
 	// indicates whether the negative condition applies for the query condition.
 	Negative *bool `json:"negative,omitempty"`
@@ -84,7 +84,7 @@ func (o *Atom) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Atom) GetValueOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true
@@ -97,7 +97,7 @@ func (o *Atom) SetValue(v interface{}) {
 
 // GetNegative returns the Negative field value if set, zero value otherwise.
 func (o *Atom) GetNegative() bool {
-	if o == nil || isNil(o.Negative) {
+	if o == nil || IsNil(o.Negative) {
 		var ret bool
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *Atom) GetNegative() bool {
 // GetNegativeOk returns a tuple with the Negative field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Atom) GetNegativeOk() (*bool, bool) {
-	if o == nil || isNil(o.Negative) {
+	if o == nil || IsNil(o.Negative) {
 		return nil, false
 	}
 	return o.Negative, true
@@ -115,7 +115,7 @@ func (o *Atom) GetNegativeOk() (*bool, bool) {
 
 // HasNegative returns a boolean if a field has been set.
 func (o *Atom) HasNegative() bool {
-	if o != nil && !isNil(o.Negative) {
+	if o != nil && !IsNil(o.Negative) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *Atom) SetNegative(v bool) {
 }
 
 func (o Atom) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,7 +141,7 @@ func (o Atom) ToMap() (map[string]interface{}, error) {
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
 	}
-	if !isNil(o.Negative) {
+	if !IsNil(o.Negative) {
 		toSerialize["negative"] = o.Negative
 	}
 	return toSerialize, nil
@@ -182,5 +182,3 @@ func (v *NullableAtom) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

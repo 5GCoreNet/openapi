@@ -27,7 +27,6 @@ func Int32AsEventThresholdTypeEventThresholdRSRP(v *int32) EventThresholdTypeEve
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EventThresholdTypeEventThresholdRSRP) UnmarshalJSON(data []byte) error {
 	var err error
@@ -67,7 +66,7 @@ func (src EventThresholdTypeEventThresholdRSRP) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EventThresholdTypeEventThresholdRSRP) GetActualInstance() (interface{}) {
+func (obj *EventThresholdTypeEventThresholdRSRP) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableEventThresholdTypeEventThresholdRSRP) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

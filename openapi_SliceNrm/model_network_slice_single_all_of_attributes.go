@@ -19,10 +19,10 @@ var _ MappedNullable = &NetworkSliceSingleAllOfAttributes{}
 
 // NetworkSliceSingleAllOfAttributes struct for NetworkSliceSingleAllOfAttributes
 type NetworkSliceSingleAllOfAttributes struct {
-	NetworkSliceSubnetRef *string `json:"networkSliceSubnetRef,omitempty"`
-	OperationalState *OperationalState `json:"operationalState,omitempty"`
-	AdministrativeState *AdministrativeState `json:"administrativeState,omitempty"`
-	ServiceProfileList []ServiceProfile `json:"serviceProfileList,omitempty"`
+	NetworkSliceSubnetRef *string              `json:"networkSliceSubnetRef,omitempty"`
+	OperationalState      *OperationalState    `json:"operationalState,omitempty"`
+	AdministrativeState   *AdministrativeState `json:"administrativeState,omitempty"`
+	ServiceProfileList    []ServiceProfile     `json:"serviceProfileList,omitempty"`
 }
 
 // NewNetworkSliceSingleAllOfAttributes instantiates a new NetworkSliceSingleAllOfAttributes object
@@ -171,7 +171,7 @@ func (o *NetworkSliceSingleAllOfAttributes) SetServiceProfileList(v []ServicePro
 }
 
 func (o NetworkSliceSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableNetworkSliceSingleAllOfAttributes) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

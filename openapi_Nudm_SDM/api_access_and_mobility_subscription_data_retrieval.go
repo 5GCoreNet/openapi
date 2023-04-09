@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,26 +13,25 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AccessAndMobilitySubscriptionDataRetrievalApiService AccessAndMobilitySubscriptionDataRetrievalApi service
 type AccessAndMobilitySubscriptionDataRetrievalApiService service
 
 type ApiGetAmDataRequest struct {
-	ctx context.Context
-	ApiService *AccessAndMobilitySubscriptionDataRetrievalApiService
-	supi string
-	supportedFeatures *string
-	plmnId *PlmnIdNid
-	adjacentPlmns *[]PlmnId
+	ctx                context.Context
+	ApiService         *AccessAndMobilitySubscriptionDataRetrievalApiService
+	supi               string
+	supportedFeatures  *string
+	plmnId             *PlmnIdNid
+	adjacentPlmns      *[]PlmnId
 	disasterRoamingInd *bool
-	ifNoneMatch *string
-	ifModifiedSince *string
+	ifNoneMatch        *string
+	ifModifiedSince    *string
 }
 
 // Supported Features
@@ -78,26 +77,27 @@ func (r ApiGetAmDataRequest) Execute() (*AccessAndMobilitySubscriptionData, *htt
 /*
 GetAmData retrieve a UE's Access and Mobility Subscription Data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Identifier of the UE
- @return ApiGetAmDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Identifier of the UE
+	@return ApiGetAmDataRequest
 */
 func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmData(ctx context.Context, supi string) ApiGetAmDataRequest {
 	return ApiGetAmDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
-//  @return AccessAndMobilitySubscriptionData
+//
+//	@return AccessAndMobilitySubscriptionData
 func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(r ApiGetAmDataRequest) (*AccessAndMobilitySubscriptionData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AccessAndMobilitySubscriptionData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AccessAndMobilitySubscriptionData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessAndMobilitySubscriptionDataRetrievalApiService.GetAmData")
@@ -113,16 +113,16 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.plmnId != nil {
-		parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	}
 	if r.adjacentPlmns != nil {
-		parameterAddToQuery(localVarQueryParams, "adjacent-plmns", r.adjacentPlmns, "csv")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "adjacent-plmns", r.adjacentPlmns, "csv")
 	}
 	if r.disasterRoamingInd != nil {
-		parameterAddToQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -142,10 +142,10 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -157,9 +157,9 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -176,8 +176,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -187,8 +187,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -198,8 +198,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -209,8 +209,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -220,8 +220,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -231,8 +231,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -242,8 +242,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -253,8 +253,8 @@ func (a *AccessAndMobilitySubscriptionDataRetrievalApiService) GetAmDataExecute(
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SharedData{}
 
 // SharedData Represents a part of the IMS Profile data shared by several UEs
 type SharedData struct {
-	// Identifies globally and uniquely a piece of subscription data shared by multiple UEs; the value shall start with the HPLMN id (MCC/MNC) followed by a hyphen followed by a local Id as allocated by the home network operator 
-	SharedDataId string `json:"sharedDataId"`
-	SharedImsIfcData *Ifcs `json:"sharedImsIfcData,omitempty"`
+	// Identifies globally and uniquely a piece of subscription data shared by multiple UEs; the value shall start with the HPLMN id (MCC/MNC) followed by a hyphen followed by a local Id as allocated by the home network operator
+	SharedDataId     string `json:"sharedDataId"`
+	SharedImsIfcData *Ifcs  `json:"sharedImsIfcData,omitempty"`
 }
 
 // NewSharedData instantiates a new SharedData object
@@ -68,7 +68,7 @@ func (o *SharedData) SetSharedDataId(v string) {
 
 // GetSharedImsIfcData returns the SharedImsIfcData field value if set, zero value otherwise.
 func (o *SharedData) GetSharedImsIfcData() Ifcs {
-	if o == nil || isNil(o.SharedImsIfcData) {
+	if o == nil || IsNil(o.SharedImsIfcData) {
 		var ret Ifcs
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SharedData) GetSharedImsIfcData() Ifcs {
 // GetSharedImsIfcDataOk returns a tuple with the SharedImsIfcData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedImsIfcDataOk() (*Ifcs, bool) {
-	if o == nil || isNil(o.SharedImsIfcData) {
+	if o == nil || IsNil(o.SharedImsIfcData) {
 		return nil, false
 	}
 	return o.SharedImsIfcData, true
@@ -86,7 +86,7 @@ func (o *SharedData) GetSharedImsIfcDataOk() (*Ifcs, bool) {
 
 // HasSharedImsIfcData returns a boolean if a field has been set.
 func (o *SharedData) HasSharedImsIfcData() bool {
-	if o != nil && !isNil(o.SharedImsIfcData) {
+	if o != nil && !IsNil(o.SharedImsIfcData) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *SharedData) SetSharedImsIfcData(v Ifcs) {
 }
 
 func (o SharedData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -109,7 +109,7 @@ func (o SharedData) MarshalJSON() ([]byte, error) {
 func (o SharedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sharedDataId"] = o.SharedDataId
-	if !isNil(o.SharedImsIfcData) {
+	if !IsNil(o.SharedImsIfcData) {
 		toSerialize["sharedImsIfcData"] = o.SharedImsIfcData
 	}
 	return toSerialize, nil
@@ -150,5 +150,3 @@ func (v *NullableSharedData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

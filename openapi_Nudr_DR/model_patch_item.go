@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &PatchItem{}
 // PatchItem it contains information on data to be changed.
 type PatchItem struct {
 	Op PatchOperation `json:"op"`
-	// contains a JSON pointer value (as defined in IETF RFC 6901) that references a location of a resource on which the patch operation shall be performed. 
+	// contains a JSON pointer value (as defined in IETF RFC 6901) that references a location of a resource on which the patch operation shall be performed.
 	Path string `json:"path"`
-	// indicates the path of the source JSON element (according to JSON Pointer syntax) being moved or copied to the location indicated by the \"path\" attribute. 
-	From *string `json:"from,omitempty"`
+	// indicates the path of the source JSON element (according to JSON Pointer syntax) being moved or copied to the location indicated by the \"path\" attribute.
+	From  *string     `json:"from,omitempty"`
 	Value interface{} `json:"value,omitempty"`
 }
 
@@ -96,7 +96,7 @@ func (o *PatchItem) SetPath(v string) {
 
 // GetFrom returns the From field value if set, zero value otherwise.
 func (o *PatchItem) GetFrom() string {
-	if o == nil || isNil(o.From) {
+	if o == nil || IsNil(o.From) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PatchItem) GetFrom() string {
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchItem) GetFromOk() (*string, bool) {
-	if o == nil || isNil(o.From) {
+	if o == nil || IsNil(o.From) {
 		return nil, false
 	}
 	return o.From, true
@@ -114,7 +114,7 @@ func (o *PatchItem) GetFromOk() (*string, bool) {
 
 // HasFrom returns a boolean if a field has been set.
 func (o *PatchItem) HasFrom() bool {
-	if o != nil && !isNil(o.From) {
+	if o != nil && !IsNil(o.From) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *PatchItem) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PatchItem) GetValueOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true
@@ -147,7 +147,7 @@ func (o *PatchItem) GetValueOk() (*interface{}, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *PatchItem) HasValue() bool {
-	if o != nil && isNil(o.Value) {
+	if o != nil && IsNil(o.Value) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *PatchItem) SetValue(v interface{}) {
 }
 
 func (o PatchItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -171,7 +171,7 @@ func (o PatchItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
-	if !isNil(o.From) {
+	if !IsNil(o.From) {
 		toSerialize["from"] = o.From
 	}
 	if o.Value != nil {
@@ -215,5 +215,3 @@ func (v *NullablePatchItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

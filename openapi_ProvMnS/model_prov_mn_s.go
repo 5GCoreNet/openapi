@@ -17,7 +17,7 @@ import (
 
 // ProvMnS - struct for ProvMnS
 type ProvMnS struct {
-	MnSOneOf *MnSOneOf
+	MnSOneOf  *MnSOneOf
 	MnSOneOf1 *MnSOneOf1
 }
 
@@ -34,7 +34,6 @@ func MnSOneOf1AsProvMnS(v *MnSOneOf1) ProvMnS {
 		MnSOneOf1: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ProvMnS) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src ProvMnS) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ProvMnS) GetActualInstance() (interface{}) {
+func (obj *ProvMnS) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableProvMnS) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

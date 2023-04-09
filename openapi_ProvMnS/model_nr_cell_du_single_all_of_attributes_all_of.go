@@ -19,39 +19,39 @@ var _ MappedNullable = &NrCellDuSingleAllOfAttributesAllOf{}
 
 // NrCellDuSingleAllOfAttributesAllOf struct for NrCellDuSingleAllOfAttributesAllOf
 type NrCellDuSingleAllOfAttributesAllOf struct {
-	AdministrativeState *AdministrativeState `json:"administrativeState,omitempty"`
-	OperationalState *OperationalState `json:"operationalState,omitempty"`
-	CellLocalId *int32 `json:"cellLocalId,omitempty"`
-	CellState *CellState `json:"cellState,omitempty"`
-	PlmnInfoList []PlmnInfo `json:"plmnInfoList,omitempty"`
-	NpnIdentityList []NpnIdentity `json:"npnIdentityList,omitempty"`
-	NrPci *int32 `json:"nrPci,omitempty"`
-	NrTac *int32 `json:"nrTac,omitempty"`
-	ArfcnDL *int32 `json:"arfcnDL,omitempty"`
-	ArfcnUL *int32 `json:"arfcnUL,omitempty"`
-	ArfcnSUL *int32 `json:"arfcnSUL,omitempty"`
-	BSChannelBwDL *int32 `json:"bSChannelBwDL,omitempty"`
-	BSChannelBwUL *int32 `json:"bSChannelBwUL,omitempty"`
-	BSChannelBwSUL *int32 `json:"bSChannelBwSUL,omitempty"`
-	SsbFrequency *int32 `json:"ssbFrequency,omitempty"`
-	SsbPeriodicity *SsbPeriodicity `json:"ssbPeriodicity,omitempty"`
+	AdministrativeState  *AdministrativeState  `json:"administrativeState,omitempty"`
+	OperationalState     *OperationalState     `json:"operationalState,omitempty"`
+	CellLocalId          *int32                `json:"cellLocalId,omitempty"`
+	CellState            *CellState            `json:"cellState,omitempty"`
+	PlmnInfoList         []PlmnInfo            `json:"plmnInfoList,omitempty"`
+	NpnIdentityList      []NpnIdentity         `json:"npnIdentityList,omitempty"`
+	NrPci                *int32                `json:"nrPci,omitempty"`
+	NrTac                *int32                `json:"nrTac,omitempty"`
+	ArfcnDL              *int32                `json:"arfcnDL,omitempty"`
+	ArfcnUL              *int32                `json:"arfcnUL,omitempty"`
+	ArfcnSUL             *int32                `json:"arfcnSUL,omitempty"`
+	BSChannelBwDL        *int32                `json:"bSChannelBwDL,omitempty"`
+	BSChannelBwUL        *int32                `json:"bSChannelBwUL,omitempty"`
+	BSChannelBwSUL       *int32                `json:"bSChannelBwSUL,omitempty"`
+	SsbFrequency         *int32                `json:"ssbFrequency,omitempty"`
+	SsbPeriodicity       *SsbPeriodicity       `json:"ssbPeriodicity,omitempty"`
 	SsbSubCarrierSpacing *SsbSubCarrierSpacing `json:"ssbSubCarrierSpacing,omitempty"`
-	SsbOffset *int32 `json:"ssbOffset,omitempty"`
-	SsbDuration *SsbDuration `json:"ssbDuration,omitempty"`
-	NrSectorCarrierRef []string `json:"nrSectorCarrierRef,omitempty"`
+	SsbOffset            *int32                `json:"ssbOffset,omitempty"`
+	SsbDuration          *SsbDuration          `json:"ssbDuration,omitempty"`
+	NrSectorCarrierRef   []string              `json:"nrSectorCarrierRef,omitempty"`
 	// Condition is BWP sets are not supported
-	BwpRef []string `json:"bwpRef,omitempty"`
-	BwpSetRef []string `json:"bwpSetRef,omitempty"`
-	RimRSMonitoringStartTime *string `json:"rimRSMonitoringStartTime,omitempty"`
-	RimRSMonitoringStopTime *string `json:"rimRSMonitoringStopTime,omitempty"`
-	RimRSMonitoringWindowDuration *int32 `json:"rimRSMonitoringWindowDuration,omitempty"`
-	RimRSMonitoringWindowStartingOffset *int32 `json:"rimRSMonitoringWindowStartingOffset,omitempty"`
-	RimRSMonitoringWindowPeriodicity *int32 `json:"rimRSMonitoringWindowPeriodicity,omitempty"`
-	RimRSMonitoringOccasionInterval *int32 `json:"rimRSMonitoringOccasionInterval,omitempty"`
-	RimRSMonitoringOccasionStartingOffset *int32 `json:"rimRSMonitoringOccasionStartingOffset,omitempty"`
-	NRFrequencyRef *string `json:"nRFrequencyRef,omitempty"`
-	VictimSetRef *string `json:"victimSetRef,omitempty"`
-	AggressorSetRef *string `json:"aggressorSetRef,omitempty"`
+	BwpRef                                []string `json:"bwpRef,omitempty"`
+	BwpSetRef                             []string `json:"bwpSetRef,omitempty"`
+	RimRSMonitoringStartTime              *string  `json:"rimRSMonitoringStartTime,omitempty"`
+	RimRSMonitoringStopTime               *string  `json:"rimRSMonitoringStopTime,omitempty"`
+	RimRSMonitoringWindowDuration         *int32   `json:"rimRSMonitoringWindowDuration,omitempty"`
+	RimRSMonitoringWindowStartingOffset   *int32   `json:"rimRSMonitoringWindowStartingOffset,omitempty"`
+	RimRSMonitoringWindowPeriodicity      *int32   `json:"rimRSMonitoringWindowPeriodicity,omitempty"`
+	RimRSMonitoringOccasionInterval       *int32   `json:"rimRSMonitoringOccasionInterval,omitempty"`
+	RimRSMonitoringOccasionStartingOffset *int32   `json:"rimRSMonitoringOccasionStartingOffset,omitempty"`
+	NRFrequencyRef                        *string  `json:"nRFrequencyRef,omitempty"`
+	VictimSetRef                          *string  `json:"victimSetRef,omitempty"`
+	AggressorSetRef                       *string  `json:"aggressorSetRef,omitempty"`
 }
 
 // NewNrCellDuSingleAllOfAttributesAllOf instantiates a new NrCellDuSingleAllOfAttributesAllOf object
@@ -1096,7 +1096,7 @@ func (o *NrCellDuSingleAllOfAttributesAllOf) SetAggressorSetRef(v string) {
 }
 
 func (o NrCellDuSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1239,5 +1239,3 @@ func (v *NullableNrCellDuSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

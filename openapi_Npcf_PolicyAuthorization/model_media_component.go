@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,59 +20,59 @@ var _ MappedNullable = &MediaComponent{}
 // MediaComponent Identifies a media component.
 type MediaComponent struct {
 	// Contains an AF application identifier.
-	AfAppId *string `json:"afAppId,omitempty"`
-	AfRoutReq *AfRoutingRequirement `json:"afRoutReq,omitempty"`
-	QosReference *string `json:"qosReference,omitempty"`
-	DisUeNotif *bool `json:"disUeNotif,omitempty"`
-	AltSerReqs []string `json:"altSerReqs,omitempty"`
-	// Contains alternative service requirements that include individual QoS parameter sets. 
+	AfAppId      *string               `json:"afAppId,omitempty"`
+	AfRoutReq    *AfRoutingRequirement `json:"afRoutReq,omitempty"`
+	QosReference *string               `json:"qosReference,omitempty"`
+	DisUeNotif   *bool                 `json:"disUeNotif,omitempty"`
+	AltSerReqs   []string              `json:"altSerReqs,omitempty"`
+	// Contains alternative service requirements that include individual QoS parameter sets.
 	AltSerReqsData []AlternativeServiceRequirementsData `json:"altSerReqsData,omitempty"`
 	// Represents the content version of some content.
-	ContVer *int32 `json:"contVer,omitempty"`
-	Codecs []string `json:"codecs,omitempty"`
+	ContVer *int32   `json:"contVer,omitempty"`
+	Codecs  []string `json:"codecs,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
 	DesMaxLatency *float32 `json:"desMaxLatency,omitempty"`
 	// string with format 'float' as defined in OpenAPI.
-	DesMaxLoss *float32 `json:"desMaxLoss,omitempty"`
-	FlusId *string `json:"flusId,omitempty"`
-	FStatus *FlowStatus `json:"fStatus,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	DesMaxLoss *float32    `json:"desMaxLoss,omitempty"`
+	FlusId     *string     `json:"flusId,omitempty"`
+	FStatus    *FlowStatus `json:"fStatus,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MarBwDl *string `json:"marBwDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MarBwUl *string `json:"marBwUl,omitempty"`
-	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxPacketLossRateDl NullableInt32 `json:"maxPacketLossRateDl,omitempty"`
-	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketLossRate' data type, but with the OpenAPI 'nullable: true' property.
 	MaxPacketLossRateUl NullableInt32 `json:"maxPacketLossRateUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxSuppBwDl *string `json:"maxSuppBwDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MaxSuppBwUl *string `json:"maxSuppBwUl,omitempty"`
-	MedCompN int32 `json:"medCompN"`
-	// Contains the requested bitrate and filters for the set of service data flows identified by their common flow identifier. The key of the map is the fNum attribute. 
+	MedCompN    int32   `json:"medCompN"`
+	// Contains the requested bitrate and filters for the set of service data flows identified by their common flow identifier. The key of the map is the fNum attribute.
 	MedSubComps *map[string]MediaSubComponent `json:"medSubComps,omitempty"`
-	MedType *MediaType `json:"medType,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	MedType     *MediaType                    `json:"medType,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MinDesBwDl *string `json:"minDesBwDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MinDesBwUl *string `json:"minDesBwUl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	MirBwDl *string `json:"mirBwDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	MirBwUl *string `json:"mirBwUl,omitempty"`
-	PreemptCap *PreemptionCapability `json:"preemptCap,omitempty"`
-	PreemptVuln *PreemptionVulnerability `json:"preemptVuln,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	MirBwUl        *string                   `json:"mirBwUl,omitempty"`
+	PreemptCap     *PreemptionCapability     `json:"preemptCap,omitempty"`
+	PreemptVuln    *PreemptionVulnerability  `json:"preemptVuln,omitempty"`
 	PrioSharingInd *PrioritySharingIndicator `json:"prioSharingInd,omitempty"`
-	ResPrio *ReservPriority `json:"resPrio,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	ResPrio        *ReservPriority           `json:"resPrio,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	RrBw *string `json:"rrBw,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	RsBw *string `json:"rsBw,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	SharingKeyDl *int32 `json:"sharingKeyDl,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	SharingKeyUl *int32 `json:"sharingKeyUl,omitempty"`
-	TsnQos *TsnQosContainer `json:"tsnQos,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	SharingKeyUl *int32                      `json:"sharingKeyUl,omitempty"`
+	TsnQos       *TsnQosContainer            `json:"tsnQos,omitempty"`
 	TscaiInputDl NullableTscaiInputContainer `json:"tscaiInputDl,omitempty"`
 	TscaiInputUl NullableTscaiInputContainer `json:"tscaiInputUl,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
@@ -99,7 +99,7 @@ func NewMediaComponentWithDefaults() *MediaComponent {
 
 // GetAfAppId returns the AfAppId field value if set, zero value otherwise.
 func (o *MediaComponent) GetAfAppId() string {
-	if o == nil || isNil(o.AfAppId) {
+	if o == nil || IsNil(o.AfAppId) {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *MediaComponent) GetAfAppId() string {
 // GetAfAppIdOk returns a tuple with the AfAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetAfAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AfAppId) {
+	if o == nil || IsNil(o.AfAppId) {
 		return nil, false
 	}
 	return o.AfAppId, true
@@ -117,7 +117,7 @@ func (o *MediaComponent) GetAfAppIdOk() (*string, bool) {
 
 // HasAfAppId returns a boolean if a field has been set.
 func (o *MediaComponent) HasAfAppId() bool {
-	if o != nil && !isNil(o.AfAppId) {
+	if o != nil && !IsNil(o.AfAppId) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *MediaComponent) SetAfAppId(v string) {
 
 // GetAfRoutReq returns the AfRoutReq field value if set, zero value otherwise.
 func (o *MediaComponent) GetAfRoutReq() AfRoutingRequirement {
-	if o == nil || isNil(o.AfRoutReq) {
+	if o == nil || IsNil(o.AfRoutReq) {
 		var ret AfRoutingRequirement
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *MediaComponent) GetAfRoutReq() AfRoutingRequirement {
 // GetAfRoutReqOk returns a tuple with the AfRoutReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetAfRoutReqOk() (*AfRoutingRequirement, bool) {
-	if o == nil || isNil(o.AfRoutReq) {
+	if o == nil || IsNil(o.AfRoutReq) {
 		return nil, false
 	}
 	return o.AfRoutReq, true
@@ -149,7 +149,7 @@ func (o *MediaComponent) GetAfRoutReqOk() (*AfRoutingRequirement, bool) {
 
 // HasAfRoutReq returns a boolean if a field has been set.
 func (o *MediaComponent) HasAfRoutReq() bool {
-	if o != nil && !isNil(o.AfRoutReq) {
+	if o != nil && !IsNil(o.AfRoutReq) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *MediaComponent) SetAfRoutReq(v AfRoutingRequirement) {
 
 // GetQosReference returns the QosReference field value if set, zero value otherwise.
 func (o *MediaComponent) GetQosReference() string {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *MediaComponent) GetQosReference() string {
 // GetQosReferenceOk returns a tuple with the QosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetQosReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.QosReference) {
+	if o == nil || IsNil(o.QosReference) {
 		return nil, false
 	}
 	return o.QosReference, true
@@ -181,7 +181,7 @@ func (o *MediaComponent) GetQosReferenceOk() (*string, bool) {
 
 // HasQosReference returns a boolean if a field has been set.
 func (o *MediaComponent) HasQosReference() bool {
-	if o != nil && !isNil(o.QosReference) {
+	if o != nil && !IsNil(o.QosReference) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *MediaComponent) SetQosReference(v string) {
 
 // GetDisUeNotif returns the DisUeNotif field value if set, zero value otherwise.
 func (o *MediaComponent) GetDisUeNotif() bool {
-	if o == nil || isNil(o.DisUeNotif) {
+	if o == nil || IsNil(o.DisUeNotif) {
 		var ret bool
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *MediaComponent) GetDisUeNotif() bool {
 // GetDisUeNotifOk returns a tuple with the DisUeNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetDisUeNotifOk() (*bool, bool) {
-	if o == nil || isNil(o.DisUeNotif) {
+	if o == nil || IsNil(o.DisUeNotif) {
 		return nil, false
 	}
 	return o.DisUeNotif, true
@@ -213,7 +213,7 @@ func (o *MediaComponent) GetDisUeNotifOk() (*bool, bool) {
 
 // HasDisUeNotif returns a boolean if a field has been set.
 func (o *MediaComponent) HasDisUeNotif() bool {
-	if o != nil && !isNil(o.DisUeNotif) {
+	if o != nil && !IsNil(o.DisUeNotif) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *MediaComponent) SetDisUeNotif(v bool) {
 
 // GetAltSerReqs returns the AltSerReqs field value if set, zero value otherwise.
 func (o *MediaComponent) GetAltSerReqs() []string {
-	if o == nil || isNil(o.AltSerReqs) {
+	if o == nil || IsNil(o.AltSerReqs) {
 		var ret []string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *MediaComponent) GetAltSerReqs() []string {
 // GetAltSerReqsOk returns a tuple with the AltSerReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetAltSerReqsOk() ([]string, bool) {
-	if o == nil || isNil(o.AltSerReqs) {
+	if o == nil || IsNil(o.AltSerReqs) {
 		return nil, false
 	}
 	return o.AltSerReqs, true
@@ -245,7 +245,7 @@ func (o *MediaComponent) GetAltSerReqsOk() ([]string, bool) {
 
 // HasAltSerReqs returns a boolean if a field has been set.
 func (o *MediaComponent) HasAltSerReqs() bool {
-	if o != nil && !isNil(o.AltSerReqs) {
+	if o != nil && !IsNil(o.AltSerReqs) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *MediaComponent) SetAltSerReqs(v []string) {
 
 // GetAltSerReqsData returns the AltSerReqsData field value if set, zero value otherwise.
 func (o *MediaComponent) GetAltSerReqsData() []AlternativeServiceRequirementsData {
-	if o == nil || isNil(o.AltSerReqsData) {
+	if o == nil || IsNil(o.AltSerReqsData) {
 		var ret []AlternativeServiceRequirementsData
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *MediaComponent) GetAltSerReqsData() []AlternativeServiceRequirementsDat
 // GetAltSerReqsDataOk returns a tuple with the AltSerReqsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetAltSerReqsDataOk() ([]AlternativeServiceRequirementsData, bool) {
-	if o == nil || isNil(o.AltSerReqsData) {
+	if o == nil || IsNil(o.AltSerReqsData) {
 		return nil, false
 	}
 	return o.AltSerReqsData, true
@@ -277,7 +277,7 @@ func (o *MediaComponent) GetAltSerReqsDataOk() ([]AlternativeServiceRequirements
 
 // HasAltSerReqsData returns a boolean if a field has been set.
 func (o *MediaComponent) HasAltSerReqsData() bool {
-	if o != nil && !isNil(o.AltSerReqsData) {
+	if o != nil && !IsNil(o.AltSerReqsData) {
 		return true
 	}
 
@@ -291,7 +291,7 @@ func (o *MediaComponent) SetAltSerReqsData(v []AlternativeServiceRequirementsDat
 
 // GetContVer returns the ContVer field value if set, zero value otherwise.
 func (o *MediaComponent) GetContVer() int32 {
-	if o == nil || isNil(o.ContVer) {
+	if o == nil || IsNil(o.ContVer) {
 		var ret int32
 		return ret
 	}
@@ -301,7 +301,7 @@ func (o *MediaComponent) GetContVer() int32 {
 // GetContVerOk returns a tuple with the ContVer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetContVerOk() (*int32, bool) {
-	if o == nil || isNil(o.ContVer) {
+	if o == nil || IsNil(o.ContVer) {
 		return nil, false
 	}
 	return o.ContVer, true
@@ -309,7 +309,7 @@ func (o *MediaComponent) GetContVerOk() (*int32, bool) {
 
 // HasContVer returns a boolean if a field has been set.
 func (o *MediaComponent) HasContVer() bool {
-	if o != nil && !isNil(o.ContVer) {
+	if o != nil && !IsNil(o.ContVer) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *MediaComponent) SetContVer(v int32) {
 
 // GetCodecs returns the Codecs field value if set, zero value otherwise.
 func (o *MediaComponent) GetCodecs() []string {
-	if o == nil || isNil(o.Codecs) {
+	if o == nil || IsNil(o.Codecs) {
 		var ret []string
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *MediaComponent) GetCodecs() []string {
 // GetCodecsOk returns a tuple with the Codecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetCodecsOk() ([]string, bool) {
-	if o == nil || isNil(o.Codecs) {
+	if o == nil || IsNil(o.Codecs) {
 		return nil, false
 	}
 	return o.Codecs, true
@@ -341,7 +341,7 @@ func (o *MediaComponent) GetCodecsOk() ([]string, bool) {
 
 // HasCodecs returns a boolean if a field has been set.
 func (o *MediaComponent) HasCodecs() bool {
-	if o != nil && !isNil(o.Codecs) {
+	if o != nil && !IsNil(o.Codecs) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *MediaComponent) SetCodecs(v []string) {
 
 // GetDesMaxLatency returns the DesMaxLatency field value if set, zero value otherwise.
 func (o *MediaComponent) GetDesMaxLatency() float32 {
-	if o == nil || isNil(o.DesMaxLatency) {
+	if o == nil || IsNil(o.DesMaxLatency) {
 		var ret float32
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *MediaComponent) GetDesMaxLatency() float32 {
 // GetDesMaxLatencyOk returns a tuple with the DesMaxLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetDesMaxLatencyOk() (*float32, bool) {
-	if o == nil || isNil(o.DesMaxLatency) {
+	if o == nil || IsNil(o.DesMaxLatency) {
 		return nil, false
 	}
 	return o.DesMaxLatency, true
@@ -373,7 +373,7 @@ func (o *MediaComponent) GetDesMaxLatencyOk() (*float32, bool) {
 
 // HasDesMaxLatency returns a boolean if a field has been set.
 func (o *MediaComponent) HasDesMaxLatency() bool {
-	if o != nil && !isNil(o.DesMaxLatency) {
+	if o != nil && !IsNil(o.DesMaxLatency) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *MediaComponent) SetDesMaxLatency(v float32) {
 
 // GetDesMaxLoss returns the DesMaxLoss field value if set, zero value otherwise.
 func (o *MediaComponent) GetDesMaxLoss() float32 {
-	if o == nil || isNil(o.DesMaxLoss) {
+	if o == nil || IsNil(o.DesMaxLoss) {
 		var ret float32
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *MediaComponent) GetDesMaxLoss() float32 {
 // GetDesMaxLossOk returns a tuple with the DesMaxLoss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetDesMaxLossOk() (*float32, bool) {
-	if o == nil || isNil(o.DesMaxLoss) {
+	if o == nil || IsNil(o.DesMaxLoss) {
 		return nil, false
 	}
 	return o.DesMaxLoss, true
@@ -405,7 +405,7 @@ func (o *MediaComponent) GetDesMaxLossOk() (*float32, bool) {
 
 // HasDesMaxLoss returns a boolean if a field has been set.
 func (o *MediaComponent) HasDesMaxLoss() bool {
-	if o != nil && !isNil(o.DesMaxLoss) {
+	if o != nil && !IsNil(o.DesMaxLoss) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *MediaComponent) SetDesMaxLoss(v float32) {
 
 // GetFlusId returns the FlusId field value if set, zero value otherwise.
 func (o *MediaComponent) GetFlusId() string {
-	if o == nil || isNil(o.FlusId) {
+	if o == nil || IsNil(o.FlusId) {
 		var ret string
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *MediaComponent) GetFlusId() string {
 // GetFlusIdOk returns a tuple with the FlusId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetFlusIdOk() (*string, bool) {
-	if o == nil || isNil(o.FlusId) {
+	if o == nil || IsNil(o.FlusId) {
 		return nil, false
 	}
 	return o.FlusId, true
@@ -437,7 +437,7 @@ func (o *MediaComponent) GetFlusIdOk() (*string, bool) {
 
 // HasFlusId returns a boolean if a field has been set.
 func (o *MediaComponent) HasFlusId() bool {
-	if o != nil && !isNil(o.FlusId) {
+	if o != nil && !IsNil(o.FlusId) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *MediaComponent) SetFlusId(v string) {
 
 // GetFStatus returns the FStatus field value if set, zero value otherwise.
 func (o *MediaComponent) GetFStatus() FlowStatus {
-	if o == nil || isNil(o.FStatus) {
+	if o == nil || IsNil(o.FStatus) {
 		var ret FlowStatus
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *MediaComponent) GetFStatus() FlowStatus {
 // GetFStatusOk returns a tuple with the FStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetFStatusOk() (*FlowStatus, bool) {
-	if o == nil || isNil(o.FStatus) {
+	if o == nil || IsNil(o.FStatus) {
 		return nil, false
 	}
 	return o.FStatus, true
@@ -469,7 +469,7 @@ func (o *MediaComponent) GetFStatusOk() (*FlowStatus, bool) {
 
 // HasFStatus returns a boolean if a field has been set.
 func (o *MediaComponent) HasFStatus() bool {
-	if o != nil && !isNil(o.FStatus) {
+	if o != nil && !IsNil(o.FStatus) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *MediaComponent) SetFStatus(v FlowStatus) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMarBwDl() string {
-	if o == nil || isNil(o.MarBwDl) {
+	if o == nil || IsNil(o.MarBwDl) {
 		var ret string
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *MediaComponent) GetMarBwDl() string {
 // GetMarBwDlOk returns a tuple with the MarBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMarBwDlOk() (*string, bool) {
-	if o == nil || isNil(o.MarBwDl) {
+	if o == nil || IsNil(o.MarBwDl) {
 		return nil, false
 	}
 	return o.MarBwDl, true
@@ -501,7 +501,7 @@ func (o *MediaComponent) GetMarBwDlOk() (*string, bool) {
 
 // HasMarBwDl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMarBwDl() bool {
-	if o != nil && !isNil(o.MarBwDl) {
+	if o != nil && !IsNil(o.MarBwDl) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *MediaComponent) SetMarBwDl(v string) {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMarBwUl() string {
-	if o == nil || isNil(o.MarBwUl) {
+	if o == nil || IsNil(o.MarBwUl) {
 		var ret string
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *MediaComponent) GetMarBwUl() string {
 // GetMarBwUlOk returns a tuple with the MarBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMarBwUlOk() (*string, bool) {
-	if o == nil || isNil(o.MarBwUl) {
+	if o == nil || IsNil(o.MarBwUl) {
 		return nil, false
 	}
 	return o.MarBwUl, true
@@ -533,7 +533,7 @@ func (o *MediaComponent) GetMarBwUlOk() (*string, bool) {
 
 // HasMarBwUl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMarBwUl() bool {
-	if o != nil && !isNil(o.MarBwUl) {
+	if o != nil && !IsNil(o.MarBwUl) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *MediaComponent) SetMarBwUl(v string) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaComponent) GetMaxPacketLossRateDl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateDl.Get()) {
+	if o == nil || IsNil(o.MaxPacketLossRateDl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -577,6 +577,7 @@ func (o *MediaComponent) HasMaxPacketLossRateDl() bool {
 func (o *MediaComponent) SetMaxPacketLossRateDl(v int32) {
 	o.MaxPacketLossRateDl.Set(&v)
 }
+
 // SetMaxPacketLossRateDlNil sets the value for MaxPacketLossRateDl to be an explicit nil
 func (o *MediaComponent) SetMaxPacketLossRateDlNil() {
 	o.MaxPacketLossRateDl.Set(nil)
@@ -589,7 +590,7 @@ func (o *MediaComponent) UnsetMaxPacketLossRateDl() {
 
 // GetMaxPacketLossRateUl returns the MaxPacketLossRateUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaComponent) GetMaxPacketLossRateUl() int32 {
-	if o == nil || isNil(o.MaxPacketLossRateUl.Get()) {
+	if o == nil || IsNil(o.MaxPacketLossRateUl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -619,6 +620,7 @@ func (o *MediaComponent) HasMaxPacketLossRateUl() bool {
 func (o *MediaComponent) SetMaxPacketLossRateUl(v int32) {
 	o.MaxPacketLossRateUl.Set(&v)
 }
+
 // SetMaxPacketLossRateUlNil sets the value for MaxPacketLossRateUl to be an explicit nil
 func (o *MediaComponent) SetMaxPacketLossRateUlNil() {
 	o.MaxPacketLossRateUl.Set(nil)
@@ -631,7 +633,7 @@ func (o *MediaComponent) UnsetMaxPacketLossRateUl() {
 
 // GetMaxSuppBwDl returns the MaxSuppBwDl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMaxSuppBwDl() string {
-	if o == nil || isNil(o.MaxSuppBwDl) {
+	if o == nil || IsNil(o.MaxSuppBwDl) {
 		var ret string
 		return ret
 	}
@@ -641,7 +643,7 @@ func (o *MediaComponent) GetMaxSuppBwDl() string {
 // GetMaxSuppBwDlOk returns a tuple with the MaxSuppBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMaxSuppBwDlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxSuppBwDl) {
+	if o == nil || IsNil(o.MaxSuppBwDl) {
 		return nil, false
 	}
 	return o.MaxSuppBwDl, true
@@ -649,7 +651,7 @@ func (o *MediaComponent) GetMaxSuppBwDlOk() (*string, bool) {
 
 // HasMaxSuppBwDl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMaxSuppBwDl() bool {
-	if o != nil && !isNil(o.MaxSuppBwDl) {
+	if o != nil && !IsNil(o.MaxSuppBwDl) {
 		return true
 	}
 
@@ -663,7 +665,7 @@ func (o *MediaComponent) SetMaxSuppBwDl(v string) {
 
 // GetMaxSuppBwUl returns the MaxSuppBwUl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMaxSuppBwUl() string {
-	if o == nil || isNil(o.MaxSuppBwUl) {
+	if o == nil || IsNil(o.MaxSuppBwUl) {
 		var ret string
 		return ret
 	}
@@ -673,7 +675,7 @@ func (o *MediaComponent) GetMaxSuppBwUl() string {
 // GetMaxSuppBwUlOk returns a tuple with the MaxSuppBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMaxSuppBwUlOk() (*string, bool) {
-	if o == nil || isNil(o.MaxSuppBwUl) {
+	if o == nil || IsNil(o.MaxSuppBwUl) {
 		return nil, false
 	}
 	return o.MaxSuppBwUl, true
@@ -681,7 +683,7 @@ func (o *MediaComponent) GetMaxSuppBwUlOk() (*string, bool) {
 
 // HasMaxSuppBwUl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMaxSuppBwUl() bool {
-	if o != nil && !isNil(o.MaxSuppBwUl) {
+	if o != nil && !IsNil(o.MaxSuppBwUl) {
 		return true
 	}
 
@@ -719,7 +721,7 @@ func (o *MediaComponent) SetMedCompN(v int32) {
 
 // GetMedSubComps returns the MedSubComps field value if set, zero value otherwise.
 func (o *MediaComponent) GetMedSubComps() map[string]MediaSubComponent {
-	if o == nil || isNil(o.MedSubComps) {
+	if o == nil || IsNil(o.MedSubComps) {
 		var ret map[string]MediaSubComponent
 		return ret
 	}
@@ -729,7 +731,7 @@ func (o *MediaComponent) GetMedSubComps() map[string]MediaSubComponent {
 // GetMedSubCompsOk returns a tuple with the MedSubComps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMedSubCompsOk() (*map[string]MediaSubComponent, bool) {
-	if o == nil || isNil(o.MedSubComps) {
+	if o == nil || IsNil(o.MedSubComps) {
 		return nil, false
 	}
 	return o.MedSubComps, true
@@ -737,7 +739,7 @@ func (o *MediaComponent) GetMedSubCompsOk() (*map[string]MediaSubComponent, bool
 
 // HasMedSubComps returns a boolean if a field has been set.
 func (o *MediaComponent) HasMedSubComps() bool {
-	if o != nil && !isNil(o.MedSubComps) {
+	if o != nil && !IsNil(o.MedSubComps) {
 		return true
 	}
 
@@ -751,7 +753,7 @@ func (o *MediaComponent) SetMedSubComps(v map[string]MediaSubComponent) {
 
 // GetMedType returns the MedType field value if set, zero value otherwise.
 func (o *MediaComponent) GetMedType() MediaType {
-	if o == nil || isNil(o.MedType) {
+	if o == nil || IsNil(o.MedType) {
 		var ret MediaType
 		return ret
 	}
@@ -761,7 +763,7 @@ func (o *MediaComponent) GetMedType() MediaType {
 // GetMedTypeOk returns a tuple with the MedType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMedTypeOk() (*MediaType, bool) {
-	if o == nil || isNil(o.MedType) {
+	if o == nil || IsNil(o.MedType) {
 		return nil, false
 	}
 	return o.MedType, true
@@ -769,7 +771,7 @@ func (o *MediaComponent) GetMedTypeOk() (*MediaType, bool) {
 
 // HasMedType returns a boolean if a field has been set.
 func (o *MediaComponent) HasMedType() bool {
-	if o != nil && !isNil(o.MedType) {
+	if o != nil && !IsNil(o.MedType) {
 		return true
 	}
 
@@ -783,7 +785,7 @@ func (o *MediaComponent) SetMedType(v MediaType) {
 
 // GetMinDesBwDl returns the MinDesBwDl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMinDesBwDl() string {
-	if o == nil || isNil(o.MinDesBwDl) {
+	if o == nil || IsNil(o.MinDesBwDl) {
 		var ret string
 		return ret
 	}
@@ -793,7 +795,7 @@ func (o *MediaComponent) GetMinDesBwDl() string {
 // GetMinDesBwDlOk returns a tuple with the MinDesBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMinDesBwDlOk() (*string, bool) {
-	if o == nil || isNil(o.MinDesBwDl) {
+	if o == nil || IsNil(o.MinDesBwDl) {
 		return nil, false
 	}
 	return o.MinDesBwDl, true
@@ -801,7 +803,7 @@ func (o *MediaComponent) GetMinDesBwDlOk() (*string, bool) {
 
 // HasMinDesBwDl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMinDesBwDl() bool {
-	if o != nil && !isNil(o.MinDesBwDl) {
+	if o != nil && !IsNil(o.MinDesBwDl) {
 		return true
 	}
 
@@ -815,7 +817,7 @@ func (o *MediaComponent) SetMinDesBwDl(v string) {
 
 // GetMinDesBwUl returns the MinDesBwUl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMinDesBwUl() string {
-	if o == nil || isNil(o.MinDesBwUl) {
+	if o == nil || IsNil(o.MinDesBwUl) {
 		var ret string
 		return ret
 	}
@@ -825,7 +827,7 @@ func (o *MediaComponent) GetMinDesBwUl() string {
 // GetMinDesBwUlOk returns a tuple with the MinDesBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMinDesBwUlOk() (*string, bool) {
-	if o == nil || isNil(o.MinDesBwUl) {
+	if o == nil || IsNil(o.MinDesBwUl) {
 		return nil, false
 	}
 	return o.MinDesBwUl, true
@@ -833,7 +835,7 @@ func (o *MediaComponent) GetMinDesBwUlOk() (*string, bool) {
 
 // HasMinDesBwUl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMinDesBwUl() bool {
-	if o != nil && !isNil(o.MinDesBwUl) {
+	if o != nil && !IsNil(o.MinDesBwUl) {
 		return true
 	}
 
@@ -847,7 +849,7 @@ func (o *MediaComponent) SetMinDesBwUl(v string) {
 
 // GetMirBwDl returns the MirBwDl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMirBwDl() string {
-	if o == nil || isNil(o.MirBwDl) {
+	if o == nil || IsNil(o.MirBwDl) {
 		var ret string
 		return ret
 	}
@@ -857,7 +859,7 @@ func (o *MediaComponent) GetMirBwDl() string {
 // GetMirBwDlOk returns a tuple with the MirBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMirBwDlOk() (*string, bool) {
-	if o == nil || isNil(o.MirBwDl) {
+	if o == nil || IsNil(o.MirBwDl) {
 		return nil, false
 	}
 	return o.MirBwDl, true
@@ -865,7 +867,7 @@ func (o *MediaComponent) GetMirBwDlOk() (*string, bool) {
 
 // HasMirBwDl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMirBwDl() bool {
-	if o != nil && !isNil(o.MirBwDl) {
+	if o != nil && !IsNil(o.MirBwDl) {
 		return true
 	}
 
@@ -879,7 +881,7 @@ func (o *MediaComponent) SetMirBwDl(v string) {
 
 // GetMirBwUl returns the MirBwUl field value if set, zero value otherwise.
 func (o *MediaComponent) GetMirBwUl() string {
-	if o == nil || isNil(o.MirBwUl) {
+	if o == nil || IsNil(o.MirBwUl) {
 		var ret string
 		return ret
 	}
@@ -889,7 +891,7 @@ func (o *MediaComponent) GetMirBwUl() string {
 // GetMirBwUlOk returns a tuple with the MirBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetMirBwUlOk() (*string, bool) {
-	if o == nil || isNil(o.MirBwUl) {
+	if o == nil || IsNil(o.MirBwUl) {
 		return nil, false
 	}
 	return o.MirBwUl, true
@@ -897,7 +899,7 @@ func (o *MediaComponent) GetMirBwUlOk() (*string, bool) {
 
 // HasMirBwUl returns a boolean if a field has been set.
 func (o *MediaComponent) HasMirBwUl() bool {
-	if o != nil && !isNil(o.MirBwUl) {
+	if o != nil && !IsNil(o.MirBwUl) {
 		return true
 	}
 
@@ -911,7 +913,7 @@ func (o *MediaComponent) SetMirBwUl(v string) {
 
 // GetPreemptCap returns the PreemptCap field value if set, zero value otherwise.
 func (o *MediaComponent) GetPreemptCap() PreemptionCapability {
-	if o == nil || isNil(o.PreemptCap) {
+	if o == nil || IsNil(o.PreemptCap) {
 		var ret PreemptionCapability
 		return ret
 	}
@@ -921,7 +923,7 @@ func (o *MediaComponent) GetPreemptCap() PreemptionCapability {
 // GetPreemptCapOk returns a tuple with the PreemptCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetPreemptCapOk() (*PreemptionCapability, bool) {
-	if o == nil || isNil(o.PreemptCap) {
+	if o == nil || IsNil(o.PreemptCap) {
 		return nil, false
 	}
 	return o.PreemptCap, true
@@ -929,7 +931,7 @@ func (o *MediaComponent) GetPreemptCapOk() (*PreemptionCapability, bool) {
 
 // HasPreemptCap returns a boolean if a field has been set.
 func (o *MediaComponent) HasPreemptCap() bool {
-	if o != nil && !isNil(o.PreemptCap) {
+	if o != nil && !IsNil(o.PreemptCap) {
 		return true
 	}
 
@@ -943,7 +945,7 @@ func (o *MediaComponent) SetPreemptCap(v PreemptionCapability) {
 
 // GetPreemptVuln returns the PreemptVuln field value if set, zero value otherwise.
 func (o *MediaComponent) GetPreemptVuln() PreemptionVulnerability {
-	if o == nil || isNil(o.PreemptVuln) {
+	if o == nil || IsNil(o.PreemptVuln) {
 		var ret PreemptionVulnerability
 		return ret
 	}
@@ -953,7 +955,7 @@ func (o *MediaComponent) GetPreemptVuln() PreemptionVulnerability {
 // GetPreemptVulnOk returns a tuple with the PreemptVuln field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetPreemptVulnOk() (*PreemptionVulnerability, bool) {
-	if o == nil || isNil(o.PreemptVuln) {
+	if o == nil || IsNil(o.PreemptVuln) {
 		return nil, false
 	}
 	return o.PreemptVuln, true
@@ -961,7 +963,7 @@ func (o *MediaComponent) GetPreemptVulnOk() (*PreemptionVulnerability, bool) {
 
 // HasPreemptVuln returns a boolean if a field has been set.
 func (o *MediaComponent) HasPreemptVuln() bool {
-	if o != nil && !isNil(o.PreemptVuln) {
+	if o != nil && !IsNil(o.PreemptVuln) {
 		return true
 	}
 
@@ -975,7 +977,7 @@ func (o *MediaComponent) SetPreemptVuln(v PreemptionVulnerability) {
 
 // GetPrioSharingInd returns the PrioSharingInd field value if set, zero value otherwise.
 func (o *MediaComponent) GetPrioSharingInd() PrioritySharingIndicator {
-	if o == nil || isNil(o.PrioSharingInd) {
+	if o == nil || IsNil(o.PrioSharingInd) {
 		var ret PrioritySharingIndicator
 		return ret
 	}
@@ -985,7 +987,7 @@ func (o *MediaComponent) GetPrioSharingInd() PrioritySharingIndicator {
 // GetPrioSharingIndOk returns a tuple with the PrioSharingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetPrioSharingIndOk() (*PrioritySharingIndicator, bool) {
-	if o == nil || isNil(o.PrioSharingInd) {
+	if o == nil || IsNil(o.PrioSharingInd) {
 		return nil, false
 	}
 	return o.PrioSharingInd, true
@@ -993,7 +995,7 @@ func (o *MediaComponent) GetPrioSharingIndOk() (*PrioritySharingIndicator, bool)
 
 // HasPrioSharingInd returns a boolean if a field has been set.
 func (o *MediaComponent) HasPrioSharingInd() bool {
-	if o != nil && !isNil(o.PrioSharingInd) {
+	if o != nil && !IsNil(o.PrioSharingInd) {
 		return true
 	}
 
@@ -1007,7 +1009,7 @@ func (o *MediaComponent) SetPrioSharingInd(v PrioritySharingIndicator) {
 
 // GetResPrio returns the ResPrio field value if set, zero value otherwise.
 func (o *MediaComponent) GetResPrio() ReservPriority {
-	if o == nil || isNil(o.ResPrio) {
+	if o == nil || IsNil(o.ResPrio) {
 		var ret ReservPriority
 		return ret
 	}
@@ -1017,7 +1019,7 @@ func (o *MediaComponent) GetResPrio() ReservPriority {
 // GetResPrioOk returns a tuple with the ResPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetResPrioOk() (*ReservPriority, bool) {
-	if o == nil || isNil(o.ResPrio) {
+	if o == nil || IsNil(o.ResPrio) {
 		return nil, false
 	}
 	return o.ResPrio, true
@@ -1025,7 +1027,7 @@ func (o *MediaComponent) GetResPrioOk() (*ReservPriority, bool) {
 
 // HasResPrio returns a boolean if a field has been set.
 func (o *MediaComponent) HasResPrio() bool {
-	if o != nil && !isNil(o.ResPrio) {
+	if o != nil && !IsNil(o.ResPrio) {
 		return true
 	}
 
@@ -1039,7 +1041,7 @@ func (o *MediaComponent) SetResPrio(v ReservPriority) {
 
 // GetRrBw returns the RrBw field value if set, zero value otherwise.
 func (o *MediaComponent) GetRrBw() string {
-	if o == nil || isNil(o.RrBw) {
+	if o == nil || IsNil(o.RrBw) {
 		var ret string
 		return ret
 	}
@@ -1049,7 +1051,7 @@ func (o *MediaComponent) GetRrBw() string {
 // GetRrBwOk returns a tuple with the RrBw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetRrBwOk() (*string, bool) {
-	if o == nil || isNil(o.RrBw) {
+	if o == nil || IsNil(o.RrBw) {
 		return nil, false
 	}
 	return o.RrBw, true
@@ -1057,7 +1059,7 @@ func (o *MediaComponent) GetRrBwOk() (*string, bool) {
 
 // HasRrBw returns a boolean if a field has been set.
 func (o *MediaComponent) HasRrBw() bool {
-	if o != nil && !isNil(o.RrBw) {
+	if o != nil && !IsNil(o.RrBw) {
 		return true
 	}
 
@@ -1071,7 +1073,7 @@ func (o *MediaComponent) SetRrBw(v string) {
 
 // GetRsBw returns the RsBw field value if set, zero value otherwise.
 func (o *MediaComponent) GetRsBw() string {
-	if o == nil || isNil(o.RsBw) {
+	if o == nil || IsNil(o.RsBw) {
 		var ret string
 		return ret
 	}
@@ -1081,7 +1083,7 @@ func (o *MediaComponent) GetRsBw() string {
 // GetRsBwOk returns a tuple with the RsBw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetRsBwOk() (*string, bool) {
-	if o == nil || isNil(o.RsBw) {
+	if o == nil || IsNil(o.RsBw) {
 		return nil, false
 	}
 	return o.RsBw, true
@@ -1089,7 +1091,7 @@ func (o *MediaComponent) GetRsBwOk() (*string, bool) {
 
 // HasRsBw returns a boolean if a field has been set.
 func (o *MediaComponent) HasRsBw() bool {
-	if o != nil && !isNil(o.RsBw) {
+	if o != nil && !IsNil(o.RsBw) {
 		return true
 	}
 
@@ -1103,7 +1105,7 @@ func (o *MediaComponent) SetRsBw(v string) {
 
 // GetSharingKeyDl returns the SharingKeyDl field value if set, zero value otherwise.
 func (o *MediaComponent) GetSharingKeyDl() int32 {
-	if o == nil || isNil(o.SharingKeyDl) {
+	if o == nil || IsNil(o.SharingKeyDl) {
 		var ret int32
 		return ret
 	}
@@ -1113,7 +1115,7 @@ func (o *MediaComponent) GetSharingKeyDl() int32 {
 // GetSharingKeyDlOk returns a tuple with the SharingKeyDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetSharingKeyDlOk() (*int32, bool) {
-	if o == nil || isNil(o.SharingKeyDl) {
+	if o == nil || IsNil(o.SharingKeyDl) {
 		return nil, false
 	}
 	return o.SharingKeyDl, true
@@ -1121,7 +1123,7 @@ func (o *MediaComponent) GetSharingKeyDlOk() (*int32, bool) {
 
 // HasSharingKeyDl returns a boolean if a field has been set.
 func (o *MediaComponent) HasSharingKeyDl() bool {
-	if o != nil && !isNil(o.SharingKeyDl) {
+	if o != nil && !IsNil(o.SharingKeyDl) {
 		return true
 	}
 
@@ -1135,7 +1137,7 @@ func (o *MediaComponent) SetSharingKeyDl(v int32) {
 
 // GetSharingKeyUl returns the SharingKeyUl field value if set, zero value otherwise.
 func (o *MediaComponent) GetSharingKeyUl() int32 {
-	if o == nil || isNil(o.SharingKeyUl) {
+	if o == nil || IsNil(o.SharingKeyUl) {
 		var ret int32
 		return ret
 	}
@@ -1145,7 +1147,7 @@ func (o *MediaComponent) GetSharingKeyUl() int32 {
 // GetSharingKeyUlOk returns a tuple with the SharingKeyUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetSharingKeyUlOk() (*int32, bool) {
-	if o == nil || isNil(o.SharingKeyUl) {
+	if o == nil || IsNil(o.SharingKeyUl) {
 		return nil, false
 	}
 	return o.SharingKeyUl, true
@@ -1153,7 +1155,7 @@ func (o *MediaComponent) GetSharingKeyUlOk() (*int32, bool) {
 
 // HasSharingKeyUl returns a boolean if a field has been set.
 func (o *MediaComponent) HasSharingKeyUl() bool {
-	if o != nil && !isNil(o.SharingKeyUl) {
+	if o != nil && !IsNil(o.SharingKeyUl) {
 		return true
 	}
 
@@ -1167,7 +1169,7 @@ func (o *MediaComponent) SetSharingKeyUl(v int32) {
 
 // GetTsnQos returns the TsnQos field value if set, zero value otherwise.
 func (o *MediaComponent) GetTsnQos() TsnQosContainer {
-	if o == nil || isNil(o.TsnQos) {
+	if o == nil || IsNil(o.TsnQos) {
 		var ret TsnQosContainer
 		return ret
 	}
@@ -1177,7 +1179,7 @@ func (o *MediaComponent) GetTsnQos() TsnQosContainer {
 // GetTsnQosOk returns a tuple with the TsnQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetTsnQosOk() (*TsnQosContainer, bool) {
-	if o == nil || isNil(o.TsnQos) {
+	if o == nil || IsNil(o.TsnQos) {
 		return nil, false
 	}
 	return o.TsnQos, true
@@ -1185,7 +1187,7 @@ func (o *MediaComponent) GetTsnQosOk() (*TsnQosContainer, bool) {
 
 // HasTsnQos returns a boolean if a field has been set.
 func (o *MediaComponent) HasTsnQos() bool {
-	if o != nil && !isNil(o.TsnQos) {
+	if o != nil && !IsNil(o.TsnQos) {
 		return true
 	}
 
@@ -1199,7 +1201,7 @@ func (o *MediaComponent) SetTsnQos(v TsnQosContainer) {
 
 // GetTscaiInputDl returns the TscaiInputDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaComponent) GetTscaiInputDl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputDl.Get()) {
+	if o == nil || IsNil(o.TscaiInputDl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -1229,6 +1231,7 @@ func (o *MediaComponent) HasTscaiInputDl() bool {
 func (o *MediaComponent) SetTscaiInputDl(v TscaiInputContainer) {
 	o.TscaiInputDl.Set(&v)
 }
+
 // SetTscaiInputDlNil sets the value for TscaiInputDl to be an explicit nil
 func (o *MediaComponent) SetTscaiInputDlNil() {
 	o.TscaiInputDl.Set(nil)
@@ -1241,7 +1244,7 @@ func (o *MediaComponent) UnsetTscaiInputDl() {
 
 // GetTscaiInputUl returns the TscaiInputUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaComponent) GetTscaiInputUl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputUl.Get()) {
+	if o == nil || IsNil(o.TscaiInputUl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -1271,6 +1274,7 @@ func (o *MediaComponent) HasTscaiInputUl() bool {
 func (o *MediaComponent) SetTscaiInputUl(v TscaiInputContainer) {
 	o.TscaiInputUl.Set(&v)
 }
+
 // SetTscaiInputUlNil sets the value for TscaiInputUl to be an explicit nil
 func (o *MediaComponent) SetTscaiInputUlNil() {
 	o.TscaiInputUl.Set(nil)
@@ -1283,7 +1287,7 @@ func (o *MediaComponent) UnsetTscaiInputUl() {
 
 // GetTscaiTimeDom returns the TscaiTimeDom field value if set, zero value otherwise.
 func (o *MediaComponent) GetTscaiTimeDom() int32 {
-	if o == nil || isNil(o.TscaiTimeDom) {
+	if o == nil || IsNil(o.TscaiTimeDom) {
 		var ret int32
 		return ret
 	}
@@ -1293,7 +1297,7 @@ func (o *MediaComponent) GetTscaiTimeDom() int32 {
 // GetTscaiTimeDomOk returns a tuple with the TscaiTimeDom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaComponent) GetTscaiTimeDomOk() (*int32, bool) {
-	if o == nil || isNil(o.TscaiTimeDom) {
+	if o == nil || IsNil(o.TscaiTimeDom) {
 		return nil, false
 	}
 	return o.TscaiTimeDom, true
@@ -1301,7 +1305,7 @@ func (o *MediaComponent) GetTscaiTimeDomOk() (*int32, bool) {
 
 // HasTscaiTimeDom returns a boolean if a field has been set.
 func (o *MediaComponent) HasTscaiTimeDom() bool {
-	if o != nil && !isNil(o.TscaiTimeDom) {
+	if o != nil && !IsNil(o.TscaiTimeDom) {
 		return true
 	}
 
@@ -1314,7 +1318,7 @@ func (o *MediaComponent) SetTscaiTimeDom(v int32) {
 }
 
 func (o MediaComponent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1323,46 +1327,46 @@ func (o MediaComponent) MarshalJSON() ([]byte, error) {
 
 func (o MediaComponent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AfAppId) {
+	if !IsNil(o.AfAppId) {
 		toSerialize["afAppId"] = o.AfAppId
 	}
-	if !isNil(o.AfRoutReq) {
+	if !IsNil(o.AfRoutReq) {
 		toSerialize["afRoutReq"] = o.AfRoutReq
 	}
-	if !isNil(o.QosReference) {
+	if !IsNil(o.QosReference) {
 		toSerialize["qosReference"] = o.QosReference
 	}
-	if !isNil(o.DisUeNotif) {
+	if !IsNil(o.DisUeNotif) {
 		toSerialize["disUeNotif"] = o.DisUeNotif
 	}
-	if !isNil(o.AltSerReqs) {
+	if !IsNil(o.AltSerReqs) {
 		toSerialize["altSerReqs"] = o.AltSerReqs
 	}
-	if !isNil(o.AltSerReqsData) {
+	if !IsNil(o.AltSerReqsData) {
 		toSerialize["altSerReqsData"] = o.AltSerReqsData
 	}
-	if !isNil(o.ContVer) {
+	if !IsNil(o.ContVer) {
 		toSerialize["contVer"] = o.ContVer
 	}
-	if !isNil(o.Codecs) {
+	if !IsNil(o.Codecs) {
 		toSerialize["codecs"] = o.Codecs
 	}
-	if !isNil(o.DesMaxLatency) {
+	if !IsNil(o.DesMaxLatency) {
 		toSerialize["desMaxLatency"] = o.DesMaxLatency
 	}
-	if !isNil(o.DesMaxLoss) {
+	if !IsNil(o.DesMaxLoss) {
 		toSerialize["desMaxLoss"] = o.DesMaxLoss
 	}
-	if !isNil(o.FlusId) {
+	if !IsNil(o.FlusId) {
 		toSerialize["flusId"] = o.FlusId
 	}
-	if !isNil(o.FStatus) {
+	if !IsNil(o.FStatus) {
 		toSerialize["fStatus"] = o.FStatus
 	}
-	if !isNil(o.MarBwDl) {
+	if !IsNil(o.MarBwDl) {
 		toSerialize["marBwDl"] = o.MarBwDl
 	}
-	if !isNil(o.MarBwUl) {
+	if !IsNil(o.MarBwUl) {
 		toSerialize["marBwUl"] = o.MarBwUl
 	}
 	if o.MaxPacketLossRateDl.IsSet() {
@@ -1371,56 +1375,56 @@ func (o MediaComponent) ToMap() (map[string]interface{}, error) {
 	if o.MaxPacketLossRateUl.IsSet() {
 		toSerialize["maxPacketLossRateUl"] = o.MaxPacketLossRateUl.Get()
 	}
-	if !isNil(o.MaxSuppBwDl) {
+	if !IsNil(o.MaxSuppBwDl) {
 		toSerialize["maxSuppBwDl"] = o.MaxSuppBwDl
 	}
-	if !isNil(o.MaxSuppBwUl) {
+	if !IsNil(o.MaxSuppBwUl) {
 		toSerialize["maxSuppBwUl"] = o.MaxSuppBwUl
 	}
 	toSerialize["medCompN"] = o.MedCompN
-	if !isNil(o.MedSubComps) {
+	if !IsNil(o.MedSubComps) {
 		toSerialize["medSubComps"] = o.MedSubComps
 	}
-	if !isNil(o.MedType) {
+	if !IsNil(o.MedType) {
 		toSerialize["medType"] = o.MedType
 	}
-	if !isNil(o.MinDesBwDl) {
+	if !IsNil(o.MinDesBwDl) {
 		toSerialize["minDesBwDl"] = o.MinDesBwDl
 	}
-	if !isNil(o.MinDesBwUl) {
+	if !IsNil(o.MinDesBwUl) {
 		toSerialize["minDesBwUl"] = o.MinDesBwUl
 	}
-	if !isNil(o.MirBwDl) {
+	if !IsNil(o.MirBwDl) {
 		toSerialize["mirBwDl"] = o.MirBwDl
 	}
-	if !isNil(o.MirBwUl) {
+	if !IsNil(o.MirBwUl) {
 		toSerialize["mirBwUl"] = o.MirBwUl
 	}
-	if !isNil(o.PreemptCap) {
+	if !IsNil(o.PreemptCap) {
 		toSerialize["preemptCap"] = o.PreemptCap
 	}
-	if !isNil(o.PreemptVuln) {
+	if !IsNil(o.PreemptVuln) {
 		toSerialize["preemptVuln"] = o.PreemptVuln
 	}
-	if !isNil(o.PrioSharingInd) {
+	if !IsNil(o.PrioSharingInd) {
 		toSerialize["prioSharingInd"] = o.PrioSharingInd
 	}
-	if !isNil(o.ResPrio) {
+	if !IsNil(o.ResPrio) {
 		toSerialize["resPrio"] = o.ResPrio
 	}
-	if !isNil(o.RrBw) {
+	if !IsNil(o.RrBw) {
 		toSerialize["rrBw"] = o.RrBw
 	}
-	if !isNil(o.RsBw) {
+	if !IsNil(o.RsBw) {
 		toSerialize["rsBw"] = o.RsBw
 	}
-	if !isNil(o.SharingKeyDl) {
+	if !IsNil(o.SharingKeyDl) {
 		toSerialize["sharingKeyDl"] = o.SharingKeyDl
 	}
-	if !isNil(o.SharingKeyUl) {
+	if !IsNil(o.SharingKeyUl) {
 		toSerialize["sharingKeyUl"] = o.SharingKeyUl
 	}
-	if !isNil(o.TsnQos) {
+	if !IsNil(o.TsnQos) {
 		toSerialize["tsnQos"] = o.TsnQos
 	}
 	if o.TscaiInputDl.IsSet() {
@@ -1429,7 +1433,7 @@ func (o MediaComponent) ToMap() (map[string]interface{}, error) {
 	if o.TscaiInputUl.IsSet() {
 		toSerialize["tscaiInputUl"] = o.TscaiInputUl.Get()
 	}
-	if !isNil(o.TscaiTimeDom) {
+	if !IsNil(o.TscaiTimeDom) {
 		toSerialize["tscaiTimeDom"] = o.TscaiTimeDom
 	}
 	return toSerialize, nil
@@ -1470,5 +1474,3 @@ func (v *NullableMediaComponent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

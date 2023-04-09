@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -73,7 +73,7 @@ func (o *UePerLocationReport) SetUeCount(v int32) {
 
 // GetExternalIds returns the ExternalIds field value if set, zero value otherwise.
 func (o *UePerLocationReport) GetExternalIds() []string {
-	if o == nil || isNil(o.ExternalIds) {
+	if o == nil || IsNil(o.ExternalIds) {
 		var ret []string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *UePerLocationReport) GetExternalIds() []string {
 // GetExternalIdsOk returns a tuple with the ExternalIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePerLocationReport) GetExternalIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ExternalIds) {
+	if o == nil || IsNil(o.ExternalIds) {
 		return nil, false
 	}
 	return o.ExternalIds, true
@@ -91,7 +91,7 @@ func (o *UePerLocationReport) GetExternalIdsOk() ([]string, bool) {
 
 // HasExternalIds returns a boolean if a field has been set.
 func (o *UePerLocationReport) HasExternalIds() bool {
-	if o != nil && !isNil(o.ExternalIds) {
+	if o != nil && !IsNil(o.ExternalIds) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UePerLocationReport) SetExternalIds(v []string) {
 
 // GetMsisdns returns the Msisdns field value if set, zero value otherwise.
 func (o *UePerLocationReport) GetMsisdns() []string {
-	if o == nil || isNil(o.Msisdns) {
+	if o == nil || IsNil(o.Msisdns) {
 		var ret []string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *UePerLocationReport) GetMsisdns() []string {
 // GetMsisdnsOk returns a tuple with the Msisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePerLocationReport) GetMsisdnsOk() ([]string, bool) {
-	if o == nil || isNil(o.Msisdns) {
+	if o == nil || IsNil(o.Msisdns) {
 		return nil, false
 	}
 	return o.Msisdns, true
@@ -123,7 +123,7 @@ func (o *UePerLocationReport) GetMsisdnsOk() ([]string, bool) {
 
 // HasMsisdns returns a boolean if a field has been set.
 func (o *UePerLocationReport) HasMsisdns() bool {
-	if o != nil && !isNil(o.Msisdns) {
+	if o != nil && !IsNil(o.Msisdns) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *UePerLocationReport) SetMsisdns(v []string) {
 
 // GetServLevelDevIds returns the ServLevelDevIds field value if set, zero value otherwise.
 func (o *UePerLocationReport) GetServLevelDevIds() []string {
-	if o == nil || isNil(o.ServLevelDevIds) {
+	if o == nil || IsNil(o.ServLevelDevIds) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *UePerLocationReport) GetServLevelDevIds() []string {
 // GetServLevelDevIdsOk returns a tuple with the ServLevelDevIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePerLocationReport) GetServLevelDevIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ServLevelDevIds) {
+	if o == nil || IsNil(o.ServLevelDevIds) {
 		return nil, false
 	}
 	return o.ServLevelDevIds, true
@@ -155,7 +155,7 @@ func (o *UePerLocationReport) GetServLevelDevIdsOk() ([]string, bool) {
 
 // HasServLevelDevIds returns a boolean if a field has been set.
 func (o *UePerLocationReport) HasServLevelDevIds() bool {
-	if o != nil && !isNil(o.ServLevelDevIds) {
+	if o != nil && !IsNil(o.ServLevelDevIds) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *UePerLocationReport) SetServLevelDevIds(v []string) {
 }
 
 func (o UePerLocationReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -178,13 +178,13 @@ func (o UePerLocationReport) MarshalJSON() ([]byte, error) {
 func (o UePerLocationReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueCount"] = o.UeCount
-	if !isNil(o.ExternalIds) {
+	if !IsNil(o.ExternalIds) {
 		toSerialize["externalIds"] = o.ExternalIds
 	}
-	if !isNil(o.Msisdns) {
+	if !IsNil(o.Msisdns) {
 		toSerialize["msisdns"] = o.Msisdns
 	}
-	if !isNil(o.ServLevelDevIds) {
+	if !IsNil(o.ServLevelDevIds) {
 		toSerialize["servLevelDevIds"] = o.ServLevelDevIds
 	}
 	return toSerialize, nil
@@ -225,5 +225,3 @@ func (v *NullableUePerLocationReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

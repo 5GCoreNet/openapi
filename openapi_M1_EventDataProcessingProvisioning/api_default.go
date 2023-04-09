@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,20 +13,19 @@ package openapi_M1_EventDataProcessingProvisioning
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiCreateEventDataProcessingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                              context.Context
+	ApiService                       *DefaultApiService
+	provisioningSessionId            string
 	eventDataProcessingConfiguration *EventDataProcessingConfiguration
 }
 
@@ -43,14 +42,14 @@ func (r ApiCreateEventDataProcessingConfigurationRequest) Execute() (*http.Respo
 /*
 CreateEventDataProcessingConfiguration Supply an Event Data Processing Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiCreateEventDataProcessingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiCreateEventDataProcessingConfigurationRequest
 */
 func (a *DefaultApiService) CreateEventDataProcessingConfiguration(ctx context.Context, provisioningSessionId string) ApiCreateEventDataProcessingConfigurationRequest {
 	return ApiCreateEventDataProcessingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
@@ -58,9 +57,9 @@ func (a *DefaultApiService) CreateEventDataProcessingConfiguration(ctx context.C
 // Execute executes the request
 func (a *DefaultApiService) CreateEventDataProcessingConfigurationExecute(r ApiCreateEventDataProcessingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.CreateEventDataProcessingConfiguration")
@@ -107,9 +106,9 @@ func (a *DefaultApiService) CreateEventDataProcessingConfigurationExecute(r ApiC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -126,9 +125,9 @@ func (a *DefaultApiService) CreateEventDataProcessingConfigurationExecute(r ApiC
 }
 
 type ApiDestroyEventDataProcessingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                                context.Context
+	ApiService                         *DefaultApiService
+	provisioningSessionId              string
 	eventDataProcessingConfigurationId string
 }
 
@@ -139,16 +138,16 @@ func (r ApiDestroyEventDataProcessingConfigurationRequest) Execute() (*http.Resp
 /*
 DestroyEventDataProcessingConfiguration Destroy the specified Event Data Processing Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
- @return ApiDestroyEventDataProcessingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
+	@return ApiDestroyEventDataProcessingConfigurationRequest
 */
 func (a *DefaultApiService) DestroyEventDataProcessingConfiguration(ctx context.Context, provisioningSessionId string, eventDataProcessingConfigurationId string) ApiDestroyEventDataProcessingConfigurationRequest {
 	return ApiDestroyEventDataProcessingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                         a,
+		ctx:                                ctx,
+		provisioningSessionId:              provisioningSessionId,
 		eventDataProcessingConfigurationId: eventDataProcessingConfigurationId,
 	}
 }
@@ -156,9 +155,9 @@ func (a *DefaultApiService) DestroyEventDataProcessingConfiguration(ctx context.
 // Execute executes the request
 func (a *DefaultApiService) DestroyEventDataProcessingConfigurationExecute(r ApiDestroyEventDataProcessingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.DestroyEventDataProcessingConfiguration")
@@ -201,9 +200,9 @@ func (a *DefaultApiService) DestroyEventDataProcessingConfigurationExecute(r Api
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -220,11 +219,11 @@ func (a *DefaultApiService) DestroyEventDataProcessingConfigurationExecute(r Api
 }
 
 type ApiPatchEventDataProcessingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                                context.Context
+	ApiService                         *DefaultApiService
+	provisioningSessionId              string
 	eventDataProcessingConfigurationId string
-	eventDataProcessingConfiguration *EventDataProcessingConfiguration
+	eventDataProcessingConfiguration   *EventDataProcessingConfiguration
 }
 
 // A JSON representation of a Event Data Processing Configuration
@@ -240,28 +239,29 @@ func (r ApiPatchEventDataProcessingConfigurationRequest) Execute() (*EventDataPr
 /*
 PatchEventDataProcessingConfiguration Patch the specified Event Data Processing Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
- @return ApiPatchEventDataProcessingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
+	@return ApiPatchEventDataProcessingConfigurationRequest
 */
 func (a *DefaultApiService) PatchEventDataProcessingConfiguration(ctx context.Context, provisioningSessionId string, eventDataProcessingConfigurationId string) ApiPatchEventDataProcessingConfigurationRequest {
 	return ApiPatchEventDataProcessingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                         a,
+		ctx:                                ctx,
+		provisioningSessionId:              provisioningSessionId,
 		eventDataProcessingConfigurationId: eventDataProcessingConfigurationId,
 	}
 }
 
 // Execute executes the request
-//  @return EventDataProcessingConfiguration
+//
+//	@return EventDataProcessingConfiguration
 func (a *DefaultApiService) PatchEventDataProcessingConfigurationExecute(r ApiPatchEventDataProcessingConfigurationRequest) (*EventDataProcessingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EventDataProcessingConfiguration
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventDataProcessingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.PatchEventDataProcessingConfiguration")
@@ -309,9 +309,9 @@ func (a *DefaultApiService) PatchEventDataProcessingConfigurationExecute(r ApiPa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -337,9 +337,9 @@ func (a *DefaultApiService) PatchEventDataProcessingConfigurationExecute(r ApiPa
 }
 
 type ApiRetrieveEventDataProcessingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                                context.Context
+	ApiService                         *DefaultApiService
+	provisioningSessionId              string
 	eventDataProcessingConfigurationId string
 }
 
@@ -350,28 +350,29 @@ func (r ApiRetrieveEventDataProcessingConfigurationRequest) Execute() (*EventDat
 /*
 RetrieveEventDataProcessingConfiguration Retrieve the specified Event Data Processing Configuration of the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
- @return ApiRetrieveEventDataProcessingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
+	@return ApiRetrieveEventDataProcessingConfigurationRequest
 */
 func (a *DefaultApiService) RetrieveEventDataProcessingConfiguration(ctx context.Context, provisioningSessionId string, eventDataProcessingConfigurationId string) ApiRetrieveEventDataProcessingConfigurationRequest {
 	return ApiRetrieveEventDataProcessingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                         a,
+		ctx:                                ctx,
+		provisioningSessionId:              provisioningSessionId,
 		eventDataProcessingConfigurationId: eventDataProcessingConfigurationId,
 	}
 }
 
 // Execute executes the request
-//  @return EventDataProcessingConfiguration
+//
+//	@return EventDataProcessingConfiguration
 func (a *DefaultApiService) RetrieveEventDataProcessingConfigurationExecute(r ApiRetrieveEventDataProcessingConfigurationRequest) (*EventDataProcessingConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *EventDataProcessingConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventDataProcessingConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveEventDataProcessingConfiguration")
@@ -414,9 +415,9 @@ func (a *DefaultApiService) RetrieveEventDataProcessingConfigurationExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -442,11 +443,11 @@ func (a *DefaultApiService) RetrieveEventDataProcessingConfigurationExecute(r Ap
 }
 
 type ApiUpdateEventDataProcessingConfigurationRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	provisioningSessionId string
+	ctx                                context.Context
+	ApiService                         *DefaultApiService
+	provisioningSessionId              string
 	eventDataProcessingConfigurationId string
-	eventDataProcessingConfiguration *EventDataProcessingConfiguration
+	eventDataProcessingConfiguration   *EventDataProcessingConfiguration
 }
 
 // A JSON representation of a Event Data Processing Configuration
@@ -462,16 +463,16 @@ func (r ApiUpdateEventDataProcessingConfigurationRequest) Execute() (*http.Respo
 /*
 UpdateEventDataProcessingConfiguration Update the specified Event Data Processing Configuration for the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
- @return ApiUpdateEventDataProcessingConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@param eventDataProcessingConfigurationId The resource identifier of an Event Data Processing Configuration.
+	@return ApiUpdateEventDataProcessingConfigurationRequest
 */
 func (a *DefaultApiService) UpdateEventDataProcessingConfiguration(ctx context.Context, provisioningSessionId string, eventDataProcessingConfigurationId string) ApiUpdateEventDataProcessingConfigurationRequest {
 	return ApiUpdateEventDataProcessingConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
-		provisioningSessionId: provisioningSessionId,
+		ApiService:                         a,
+		ctx:                                ctx,
+		provisioningSessionId:              provisioningSessionId,
 		eventDataProcessingConfigurationId: eventDataProcessingConfigurationId,
 	}
 }
@@ -479,9 +480,9 @@ func (a *DefaultApiService) UpdateEventDataProcessingConfiguration(ctx context.C
 // Execute executes the request
 func (a *DefaultApiService) UpdateEventDataProcessingConfigurationExecute(r ApiUpdateEventDataProcessingConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.UpdateEventDataProcessingConfiguration")
@@ -529,9 +530,9 @@ func (a *DefaultApiService) UpdateEventDataProcessingConfigurationExecute(r ApiU
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

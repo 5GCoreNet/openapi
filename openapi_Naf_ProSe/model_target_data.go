@@ -1,7 +1,7 @@
 /*
 Naf_ProSe API
 
-Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Naf_ProSe Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,7 +22,7 @@ type TargetData struct {
 	// Contains the RPAUID.
 	TargetRpauid string `json:"targetRpauid"`
 	// Contains the PDUID.
-	Pduid string `json:"pduid"`
+	Pduid         string         `json:"pduid"`
 	MetadataIndic *MetadataIndic `json:"metadataIndic,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *TargetData) SetPduid(v string) {
 
 // GetMetadataIndic returns the MetadataIndic field value if set, zero value otherwise.
 func (o *TargetData) GetMetadataIndic() MetadataIndic {
-	if o == nil || isNil(o.MetadataIndic) {
+	if o == nil || IsNil(o.MetadataIndic) {
 		var ret MetadataIndic
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *TargetData) GetMetadataIndic() MetadataIndic {
 // GetMetadataIndicOk returns a tuple with the MetadataIndic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetData) GetMetadataIndicOk() (*MetadataIndic, bool) {
-	if o == nil || isNil(o.MetadataIndic) {
+	if o == nil || IsNil(o.MetadataIndic) {
 		return nil, false
 	}
 	return o.MetadataIndic, true
@@ -113,7 +113,7 @@ func (o *TargetData) GetMetadataIndicOk() (*MetadataIndic, bool) {
 
 // HasMetadataIndic returns a boolean if a field has been set.
 func (o *TargetData) HasMetadataIndic() bool {
-	if o != nil && !isNil(o.MetadataIndic) {
+	if o != nil && !IsNil(o.MetadataIndic) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *TargetData) SetMetadataIndic(v MetadataIndic) {
 }
 
 func (o TargetData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o TargetData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["targetRpauid"] = o.TargetRpauid
 	toSerialize["pduid"] = o.Pduid
-	if !isNil(o.MetadataIndic) {
+	if !IsNil(o.MetadataIndic) {
 		toSerialize["metadataIndic"] = o.MetadataIndic
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableTargetData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

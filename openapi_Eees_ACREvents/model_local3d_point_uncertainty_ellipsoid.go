@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &Local3dPointUncertaintyEllipsoid{}
 // Local3dPointUncertaintyEllipsoid Local 3D point with uncertainty ellipsoid
 type Local3dPointUncertaintyEllipsoid struct {
 	GADShape
-	LocalOrigin LocalOrigin `json:"localOrigin"`
-	Point RelativeCartesianLocation `json:"point"`
-	UncertaintyEllipsoid UncertaintyEllipsoid `json:"uncertaintyEllipsoid"`
+	LocalOrigin          LocalOrigin               `json:"localOrigin"`
+	Point                RelativeCartesianLocation `json:"point"`
+	UncertaintyEllipsoid UncertaintyEllipsoid      `json:"uncertaintyEllipsoid"`
 	// Indicates value of confidence.
 	Confidence int32 `json:"confidence"`
 }
@@ -146,7 +146,7 @@ func (o *Local3dPointUncertaintyEllipsoid) SetConfidence(v int32) {
 }
 
 func (o Local3dPointUncertaintyEllipsoid) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -205,5 +205,3 @@ func (v *NullableLocal3dPointUncertaintyEllipsoid) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

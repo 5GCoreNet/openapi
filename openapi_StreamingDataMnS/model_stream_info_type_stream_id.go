@@ -27,7 +27,6 @@ func StringAsStreamInfoTypeStreamId(v *string) StreamInfoTypeStreamId {
 	}
 }
 
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StreamInfoTypeStreamId) UnmarshalJSON(data []byte) error {
 	var err error
@@ -67,7 +66,7 @@ func (src StreamInfoTypeStreamId) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StreamInfoTypeStreamId) GetActualInstance() (interface{}) {
+func (obj *StreamInfoTypeStreamId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableStreamInfoTypeStreamId) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,7 +18,7 @@ import (
 // PerfMetricValue - struct for PerfMetricValue
 type PerfMetricValue struct {
 	Float32 *float32
-	Int32 *int32
+	Int32   *int32
 }
 
 // float32AsPerfMetricValue is a convenience function that returns float32 wrapped in PerfMetricValue
@@ -34,7 +34,6 @@ func Int32AsPerfMetricValue(v *int32) PerfMetricValue {
 		Int32: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PerfMetricValue) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src PerfMetricValue) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PerfMetricValue) GetActualInstance() (interface{}) {
+func (obj *PerfMetricValue) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullablePerfMetricValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

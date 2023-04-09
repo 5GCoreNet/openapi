@@ -19,11 +19,7 @@ var _ MappedNullable = &CCOPilotPollutionParametersSingle{}
 
 // CCOPilotPollutionParametersSingle struct for CCOPilotPollutionParametersSingle
 type CCOPilotPollutionParametersSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *CCOParametersAttrAllOfAttributes `json:"attributes,omitempty"`
+	CCOParametersAttr
 }
 
 // NewCCOPilotPollutionParametersSingle instantiates a new CCOPilotPollutionParametersSingle object
@@ -44,162 +40,8 @@ func NewCCOPilotPollutionParametersSingleWithDefaults() *CCOPilotPollutionParame
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *CCOPilotPollutionParametersSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CCOPilotPollutionParametersSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *CCOPilotPollutionParametersSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *CCOPilotPollutionParametersSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CCOPilotPollutionParametersSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *CCOPilotPollutionParametersSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *CCOPilotPollutionParametersSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *CCOPilotPollutionParametersSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CCOPilotPollutionParametersSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *CCOPilotPollutionParametersSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *CCOPilotPollutionParametersSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *CCOPilotPollutionParametersSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CCOPilotPollutionParametersSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *CCOPilotPollutionParametersSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *CCOPilotPollutionParametersSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
-// GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *CCOPilotPollutionParametersSingle) GetAttributes() CCOParametersAttrAllOfAttributes {
-	if o == nil || isNil(o.Attributes) {
-		var ret CCOParametersAttrAllOfAttributes
-		return ret
-	}
-	return *o.Attributes
-}
-
-// GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CCOPilotPollutionParametersSingle) GetAttributesOk() (*CCOParametersAttrAllOfAttributes, bool) {
-	if o == nil || isNil(o.Attributes) {
-		return nil, false
-	}
-	return o.Attributes, true
-}
-
-// HasAttributes returns a boolean if a field has been set.
-func (o *CCOPilotPollutionParametersSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
-		return true
-	}
-
-	return false
-}
-
-// SetAttributes gets a reference to the given CCOParametersAttrAllOfAttributes and assigns it to the Attributes field.
-func (o *CCOPilotPollutionParametersSingle) SetAttributes(v CCOParametersAttrAllOfAttributes) {
-	o.Attributes = &v
-}
-
 func (o CCOPilotPollutionParametersSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,18 +50,13 @@ func (o CCOPilotPollutionParametersSingle) MarshalJSON() ([]byte, error) {
 
 func (o CCOPilotPollutionParametersSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedCCOParametersAttr, errCCOParametersAttr := json.Marshal(o.CCOParametersAttr)
+	if errCCOParametersAttr != nil {
+		return map[string]interface{}{}, errCCOParametersAttr
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
-	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
-		toSerialize["attributes"] = o.Attributes
+	errCCOParametersAttr = json.Unmarshal([]byte(serializedCCOParametersAttr), &toSerialize)
+	if errCCOParametersAttr != nil {
+		return map[string]interface{}{}, errCCOParametersAttr
 	}
 	return toSerialize, nil
 }
@@ -259,5 +96,3 @@ func (v *NullableCCOPilotPollutionParametersSingle) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

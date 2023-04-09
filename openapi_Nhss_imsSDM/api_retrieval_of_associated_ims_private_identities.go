@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // RetrievalOfAssociatedIMSPrivateIdentitiesApiService RetrievalOfAssociatedIMSPrivateIdentitiesApi service
 type RetrievalOfAssociatedIMSPrivateIdentitiesApiService service
 
 type ApiGetImsPrivateIdsRequest struct {
-	ctx context.Context
-	ApiService *RetrievalOfAssociatedIMSPrivateIdentitiesApiService
-	imsUeId string
+	ctx               context.Context
+	ApiService        *RetrievalOfAssociatedIMSPrivateIdentitiesApiService
+	imsUeId           string
 	supportedFeatures *string
-	impi *string
+	impi              *string
 }
 
 // Supported Features
@@ -48,28 +47,29 @@ func (r ApiGetImsPrivateIdsRequest) Execute() (*PrivateIdentities, *http.Respons
 }
 
 /*
-GetImsPrivateIds Retrieve the associated private identities to the IMS public identity included in the service request 
+GetImsPrivateIds Retrieve the associated private identities to the IMS public identity included in the service request
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imsUeId IMS Public Identity
- @return ApiGetImsPrivateIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imsUeId IMS Public Identity
+	@return ApiGetImsPrivateIdsRequest
 */
 func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIds(ctx context.Context, imsUeId string) ApiGetImsPrivateIdsRequest {
 	return ApiGetImsPrivateIdsRequest{
 		ApiService: a,
-		ctx: ctx,
-		imsUeId: imsUeId,
+		ctx:        ctx,
+		imsUeId:    imsUeId,
 	}
 }
 
 // Execute executes the request
-//  @return PrivateIdentities
+//
+//	@return PrivateIdentities
 func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsExecute(r ApiGetImsPrivateIdsRequest) (*PrivateIdentities, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PrivateIdentities
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PrivateIdentities
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetrievalOfAssociatedIMSPrivateIdentitiesApiService.GetImsPrivateIds")
@@ -85,10 +85,10 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.impi != nil {
-		parameterAddToQuery(localVarQueryParams, "impi", r.impi, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "impi", r.impi, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -117,9 +117,9 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -136,8 +136,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -147,8 +147,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -158,8 +158,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -169,8 +169,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -180,8 +180,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -191,8 +191,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -202,8 +202,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -213,8 +213,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -224,8 +224,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -235,8 +235,8 @@ func (a *RetrievalOfAssociatedIMSPrivateIdentitiesApiService) GetImsPrivateIdsEx
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &SscModes{}
 
 // SscModes struct for SscModes
 type SscModes struct {
-	DefaultSscMode SscMode `json:"defaultSscMode"`
+	DefaultSscMode  SscMode   `json:"defaultSscMode"`
 	AllowedSscModes []SscMode `json:"allowedSscModes,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *SscModes) SetDefaultSscMode(v SscMode) {
 
 // GetAllowedSscModes returns the AllowedSscModes field value if set, zero value otherwise.
 func (o *SscModes) GetAllowedSscModes() []SscMode {
-	if o == nil || isNil(o.AllowedSscModes) {
+	if o == nil || IsNil(o.AllowedSscModes) {
 		var ret []SscMode
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SscModes) GetAllowedSscModes() []SscMode {
 // GetAllowedSscModesOk returns a tuple with the AllowedSscModes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SscModes) GetAllowedSscModesOk() ([]SscMode, bool) {
-	if o == nil || isNil(o.AllowedSscModes) {
+	if o == nil || IsNil(o.AllowedSscModes) {
 		return nil, false
 	}
 	return o.AllowedSscModes, true
@@ -85,7 +85,7 @@ func (o *SscModes) GetAllowedSscModesOk() ([]SscMode, bool) {
 
 // HasAllowedSscModes returns a boolean if a field has been set.
 func (o *SscModes) HasAllowedSscModes() bool {
-	if o != nil && !isNil(o.AllowedSscModes) {
+	if o != nil && !IsNil(o.AllowedSscModes) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SscModes) SetAllowedSscModes(v []SscMode) {
 }
 
 func (o SscModes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SscModes) MarshalJSON() ([]byte, error) {
 func (o SscModes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["defaultSscMode"] = o.DefaultSscMode
-	if !isNil(o.AllowedSscModes) {
+	if !IsNil(o.AllowedSscModes) {
 		toSerialize["allowedSscModes"] = o.AllowedSscModes
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSscModes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

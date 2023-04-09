@@ -20,7 +20,7 @@ type AlarmListAlignmentRequirement string
 
 // List of AlarmListAlignmentRequirement
 const (
-	REQUIRED AlarmListAlignmentRequirement = "ALIGNMENT_REQUIRED"
+	REQUIRED     AlarmListAlignmentRequirement = "ALIGNMENT_REQUIRED"
 	NOT_REQUIRED AlarmListAlignmentRequirement = "ALIGNMENT_NOT_REQUIRED"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableAlarmListAlignmentRequirement) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

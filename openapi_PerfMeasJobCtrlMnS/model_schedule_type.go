@@ -20,7 +20,7 @@ var _ MappedNullable = &ScheduleType{}
 // ScheduleType struct for ScheduleType
 type ScheduleType struct {
 	ScheduleOption *ScheduleOptionType `json:"scheduleOption,omitempty"`
-	DailySchedule []TimeIntervalType `json:"dailySchedule,omitempty"`
+	DailySchedule  []TimeIntervalType  `json:"dailySchedule,omitempty"`
 	WeeklySchedule []ScheduleOfDayType `json:"weeklySchedule,omitempty"`
 }
 
@@ -43,7 +43,7 @@ func NewScheduleTypeWithDefaults() *ScheduleType {
 
 // GetScheduleOption returns the ScheduleOption field value if set, zero value otherwise.
 func (o *ScheduleType) GetScheduleOption() ScheduleOptionType {
-	if o == nil || isNil(o.ScheduleOption) {
+	if o == nil || IsNil(o.ScheduleOption) {
 		var ret ScheduleOptionType
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ScheduleType) GetScheduleOption() ScheduleOptionType {
 // GetScheduleOptionOk returns a tuple with the ScheduleOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduleType) GetScheduleOptionOk() (*ScheduleOptionType, bool) {
-	if o == nil || isNil(o.ScheduleOption) {
+	if o == nil || IsNil(o.ScheduleOption) {
 		return nil, false
 	}
 	return o.ScheduleOption, true
@@ -61,7 +61,7 @@ func (o *ScheduleType) GetScheduleOptionOk() (*ScheduleOptionType, bool) {
 
 // HasScheduleOption returns a boolean if a field has been set.
 func (o *ScheduleType) HasScheduleOption() bool {
-	if o != nil && !isNil(o.ScheduleOption) {
+	if o != nil && !IsNil(o.ScheduleOption) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ScheduleType) SetScheduleOption(v ScheduleOptionType) {
 
 // GetDailySchedule returns the DailySchedule field value if set, zero value otherwise.
 func (o *ScheduleType) GetDailySchedule() []TimeIntervalType {
-	if o == nil || isNil(o.DailySchedule) {
+	if o == nil || IsNil(o.DailySchedule) {
 		var ret []TimeIntervalType
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ScheduleType) GetDailySchedule() []TimeIntervalType {
 // GetDailyScheduleOk returns a tuple with the DailySchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduleType) GetDailyScheduleOk() ([]TimeIntervalType, bool) {
-	if o == nil || isNil(o.DailySchedule) {
+	if o == nil || IsNil(o.DailySchedule) {
 		return nil, false
 	}
 	return o.DailySchedule, true
@@ -93,7 +93,7 @@ func (o *ScheduleType) GetDailyScheduleOk() ([]TimeIntervalType, bool) {
 
 // HasDailySchedule returns a boolean if a field has been set.
 func (o *ScheduleType) HasDailySchedule() bool {
-	if o != nil && !isNil(o.DailySchedule) {
+	if o != nil && !IsNil(o.DailySchedule) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ScheduleType) SetDailySchedule(v []TimeIntervalType) {
 
 // GetWeeklySchedule returns the WeeklySchedule field value if set, zero value otherwise.
 func (o *ScheduleType) GetWeeklySchedule() []ScheduleOfDayType {
-	if o == nil || isNil(o.WeeklySchedule) {
+	if o == nil || IsNil(o.WeeklySchedule) {
 		var ret []ScheduleOfDayType
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ScheduleType) GetWeeklySchedule() []ScheduleOfDayType {
 // GetWeeklyScheduleOk returns a tuple with the WeeklySchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduleType) GetWeeklyScheduleOk() ([]ScheduleOfDayType, bool) {
-	if o == nil || isNil(o.WeeklySchedule) {
+	if o == nil || IsNil(o.WeeklySchedule) {
 		return nil, false
 	}
 	return o.WeeklySchedule, true
@@ -125,7 +125,7 @@ func (o *ScheduleType) GetWeeklyScheduleOk() ([]ScheduleOfDayType, bool) {
 
 // HasWeeklySchedule returns a boolean if a field has been set.
 func (o *ScheduleType) HasWeeklySchedule() bool {
-	if o != nil && !isNil(o.WeeklySchedule) {
+	if o != nil && !IsNil(o.WeeklySchedule) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ScheduleType) SetWeeklySchedule(v []ScheduleOfDayType) {
 }
 
 func (o ScheduleType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ScheduleType) MarshalJSON() ([]byte, error) {
 
 func (o ScheduleType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ScheduleOption) {
+	if !IsNil(o.ScheduleOption) {
 		toSerialize["scheduleOption"] = o.ScheduleOption
 	}
-	if !isNil(o.DailySchedule) {
+	if !IsNil(o.DailySchedule) {
 		toSerialize["dailySchedule"] = o.DailySchedule
 	}
-	if !isNil(o.WeeklySchedule) {
+	if !IsNil(o.WeeklySchedule) {
 		toSerialize["weeklySchedule"] = o.WeeklySchedule
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableScheduleType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

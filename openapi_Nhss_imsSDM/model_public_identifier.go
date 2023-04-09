@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,14 +17,14 @@ import (
 // checks if the PublicIdentifier type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PublicIdentifier{}
 
-// PublicIdentifier Distinct or wildcarded public identity and its associated priority, trace and barring information 
+// PublicIdentifier Distinct or wildcarded public identity and its associated priority, trace and barring information
 type PublicIdentifier struct {
-	PublicIdentity PublicIdentity `json:"publicIdentity"`
-	DisplayName *string `json:"displayName,omitempty"`
-	ImsServicePriority *PriorityLevels `json:"imsServicePriority,omitempty"`
+	PublicIdentity        PublicIdentity                `json:"publicIdentity"`
+	DisplayName           *string                       `json:"displayName,omitempty"`
+	ImsServicePriority    *PriorityLevels               `json:"imsServicePriority,omitempty"`
 	ServiceLevelTraceInfo *ServiceLevelTraceInformation `json:"serviceLevelTraceInfo,omitempty"`
-	BarringIndicator *bool `json:"barringIndicator,omitempty"`
-	WildcardedImpu *string `json:"wildcardedImpu,omitempty"`
+	BarringIndicator      *bool                         `json:"barringIndicator,omitempty"`
+	WildcardedImpu        *string                       `json:"wildcardedImpu,omitempty"`
 }
 
 // NewPublicIdentifier instantiates a new PublicIdentifier object
@@ -71,7 +71,7 @@ func (o *PublicIdentifier) SetPublicIdentity(v PublicIdentity) {
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *PublicIdentifier) GetDisplayName() string {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *PublicIdentifier) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentifier) GetDisplayNameOk() (*string, bool) {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
 	return o.DisplayName, true
@@ -89,7 +89,7 @@ func (o *PublicIdentifier) GetDisplayNameOk() (*string, bool) {
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *PublicIdentifier) HasDisplayName() bool {
-	if o != nil && !isNil(o.DisplayName) {
+	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *PublicIdentifier) SetDisplayName(v string) {
 
 // GetImsServicePriority returns the ImsServicePriority field value if set, zero value otherwise.
 func (o *PublicIdentifier) GetImsServicePriority() PriorityLevels {
-	if o == nil || isNil(o.ImsServicePriority) {
+	if o == nil || IsNil(o.ImsServicePriority) {
 		var ret PriorityLevels
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *PublicIdentifier) GetImsServicePriority() PriorityLevels {
 // GetImsServicePriorityOk returns a tuple with the ImsServicePriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentifier) GetImsServicePriorityOk() (*PriorityLevels, bool) {
-	if o == nil || isNil(o.ImsServicePriority) {
+	if o == nil || IsNil(o.ImsServicePriority) {
 		return nil, false
 	}
 	return o.ImsServicePriority, true
@@ -121,7 +121,7 @@ func (o *PublicIdentifier) GetImsServicePriorityOk() (*PriorityLevels, bool) {
 
 // HasImsServicePriority returns a boolean if a field has been set.
 func (o *PublicIdentifier) HasImsServicePriority() bool {
-	if o != nil && !isNil(o.ImsServicePriority) {
+	if o != nil && !IsNil(o.ImsServicePriority) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *PublicIdentifier) SetImsServicePriority(v PriorityLevels) {
 
 // GetServiceLevelTraceInfo returns the ServiceLevelTraceInfo field value if set, zero value otherwise.
 func (o *PublicIdentifier) GetServiceLevelTraceInfo() ServiceLevelTraceInformation {
-	if o == nil || isNil(o.ServiceLevelTraceInfo) {
+	if o == nil || IsNil(o.ServiceLevelTraceInfo) {
 		var ret ServiceLevelTraceInformation
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *PublicIdentifier) GetServiceLevelTraceInfo() ServiceLevelTraceInformati
 // GetServiceLevelTraceInfoOk returns a tuple with the ServiceLevelTraceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentifier) GetServiceLevelTraceInfoOk() (*ServiceLevelTraceInformation, bool) {
-	if o == nil || isNil(o.ServiceLevelTraceInfo) {
+	if o == nil || IsNil(o.ServiceLevelTraceInfo) {
 		return nil, false
 	}
 	return o.ServiceLevelTraceInfo, true
@@ -153,7 +153,7 @@ func (o *PublicIdentifier) GetServiceLevelTraceInfoOk() (*ServiceLevelTraceInfor
 
 // HasServiceLevelTraceInfo returns a boolean if a field has been set.
 func (o *PublicIdentifier) HasServiceLevelTraceInfo() bool {
-	if o != nil && !isNil(o.ServiceLevelTraceInfo) {
+	if o != nil && !IsNil(o.ServiceLevelTraceInfo) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *PublicIdentifier) SetServiceLevelTraceInfo(v ServiceLevelTraceInformati
 
 // GetBarringIndicator returns the BarringIndicator field value if set, zero value otherwise.
 func (o *PublicIdentifier) GetBarringIndicator() bool {
-	if o == nil || isNil(o.BarringIndicator) {
+	if o == nil || IsNil(o.BarringIndicator) {
 		var ret bool
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *PublicIdentifier) GetBarringIndicator() bool {
 // GetBarringIndicatorOk returns a tuple with the BarringIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentifier) GetBarringIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.BarringIndicator) {
+	if o == nil || IsNil(o.BarringIndicator) {
 		return nil, false
 	}
 	return o.BarringIndicator, true
@@ -185,7 +185,7 @@ func (o *PublicIdentifier) GetBarringIndicatorOk() (*bool, bool) {
 
 // HasBarringIndicator returns a boolean if a field has been set.
 func (o *PublicIdentifier) HasBarringIndicator() bool {
-	if o != nil && !isNil(o.BarringIndicator) {
+	if o != nil && !IsNil(o.BarringIndicator) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *PublicIdentifier) SetBarringIndicator(v bool) {
 
 // GetWildcardedImpu returns the WildcardedImpu field value if set, zero value otherwise.
 func (o *PublicIdentifier) GetWildcardedImpu() string {
-	if o == nil || isNil(o.WildcardedImpu) {
+	if o == nil || IsNil(o.WildcardedImpu) {
 		var ret string
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *PublicIdentifier) GetWildcardedImpu() string {
 // GetWildcardedImpuOk returns a tuple with the WildcardedImpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentifier) GetWildcardedImpuOk() (*string, bool) {
-	if o == nil || isNil(o.WildcardedImpu) {
+	if o == nil || IsNil(o.WildcardedImpu) {
 		return nil, false
 	}
 	return o.WildcardedImpu, true
@@ -217,7 +217,7 @@ func (o *PublicIdentifier) GetWildcardedImpuOk() (*string, bool) {
 
 // HasWildcardedImpu returns a boolean if a field has been set.
 func (o *PublicIdentifier) HasWildcardedImpu() bool {
-	if o != nil && !isNil(o.WildcardedImpu) {
+	if o != nil && !IsNil(o.WildcardedImpu) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *PublicIdentifier) SetWildcardedImpu(v string) {
 }
 
 func (o PublicIdentifier) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,19 +240,19 @@ func (o PublicIdentifier) MarshalJSON() ([]byte, error) {
 func (o PublicIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["publicIdentity"] = o.PublicIdentity
-	if !isNil(o.DisplayName) {
+	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !isNil(o.ImsServicePriority) {
+	if !IsNil(o.ImsServicePriority) {
 		toSerialize["imsServicePriority"] = o.ImsServicePriority
 	}
-	if !isNil(o.ServiceLevelTraceInfo) {
+	if !IsNil(o.ServiceLevelTraceInfo) {
 		toSerialize["serviceLevelTraceInfo"] = o.ServiceLevelTraceInfo
 	}
-	if !isNil(o.BarringIndicator) {
+	if !IsNil(o.BarringIndicator) {
 		toSerialize["barringIndicator"] = o.BarringIndicator
 	}
-	if !isNil(o.WildcardedImpu) {
+	if !IsNil(o.WildcardedImpu) {
 		toSerialize["wildcardedImpu"] = o.WildcardedImpu
 	}
 	return toSerialize, nil
@@ -293,5 +293,3 @@ func (v *NullablePublicIdentifier) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

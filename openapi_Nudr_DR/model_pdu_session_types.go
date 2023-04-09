@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &PduSessionTypes{}
 
 // PduSessionTypes struct for PduSessionTypes
 type PduSessionTypes struct {
-	DefaultSessionType *PduSessionType `json:"defaultSessionType,omitempty"`
+	DefaultSessionType  *PduSessionType  `json:"defaultSessionType,omitempty"`
 	AllowedSessionTypes []PduSessionType `json:"allowedSessionTypes,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewPduSessionTypesWithDefaults() *PduSessionTypes {
 
 // GetDefaultSessionType returns the DefaultSessionType field value if set, zero value otherwise.
 func (o *PduSessionTypes) GetDefaultSessionType() PduSessionType {
-	if o == nil || isNil(o.DefaultSessionType) {
+	if o == nil || IsNil(o.DefaultSessionType) {
 		var ret PduSessionType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduSessionTypes) GetDefaultSessionType() PduSessionType {
 // GetDefaultSessionTypeOk returns a tuple with the DefaultSessionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTypes) GetDefaultSessionTypeOk() (*PduSessionType, bool) {
-	if o == nil || isNil(o.DefaultSessionType) {
+	if o == nil || IsNil(o.DefaultSessionType) {
 		return nil, false
 	}
 	return o.DefaultSessionType, true
@@ -60,7 +60,7 @@ func (o *PduSessionTypes) GetDefaultSessionTypeOk() (*PduSessionType, bool) {
 
 // HasDefaultSessionType returns a boolean if a field has been set.
 func (o *PduSessionTypes) HasDefaultSessionType() bool {
-	if o != nil && !isNil(o.DefaultSessionType) {
+	if o != nil && !IsNil(o.DefaultSessionType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PduSessionTypes) SetDefaultSessionType(v PduSessionType) {
 
 // GetAllowedSessionTypes returns the AllowedSessionTypes field value if set, zero value otherwise.
 func (o *PduSessionTypes) GetAllowedSessionTypes() []PduSessionType {
-	if o == nil || isNil(o.AllowedSessionTypes) {
+	if o == nil || IsNil(o.AllowedSessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PduSessionTypes) GetAllowedSessionTypes() []PduSessionType {
 // GetAllowedSessionTypesOk returns a tuple with the AllowedSessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTypes) GetAllowedSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || isNil(o.AllowedSessionTypes) {
+	if o == nil || IsNil(o.AllowedSessionTypes) {
 		return nil, false
 	}
 	return o.AllowedSessionTypes, true
@@ -92,7 +92,7 @@ func (o *PduSessionTypes) GetAllowedSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasAllowedSessionTypes returns a boolean if a field has been set.
 func (o *PduSessionTypes) HasAllowedSessionTypes() bool {
-	if o != nil && !isNil(o.AllowedSessionTypes) {
+	if o != nil && !IsNil(o.AllowedSessionTypes) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *PduSessionTypes) SetAllowedSessionTypes(v []PduSessionType) {
 }
 
 func (o PduSessionTypes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o PduSessionTypes) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionTypes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DefaultSessionType) {
+	if !IsNil(o.DefaultSessionType) {
 		toSerialize["defaultSessionType"] = o.DefaultSessionType
 	}
-	if !isNil(o.AllowedSessionTypes) {
+	if !IsNil(o.AllowedSessionTypes) {
 		toSerialize["allowedSessionTypes"] = o.AllowedSessionTypes
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullablePduSessionTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

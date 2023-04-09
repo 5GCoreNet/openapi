@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &ProseContext{}
 // ProseContext Represents the ProSe services related parameters.
 type ProseContext struct {
 	DirectDiscovery *UeAuth `json:"directDiscovery,omitempty"`
-	DirectComm *UeAuth `json:"directComm,omitempty"`
-	L2Relay *UeAuth `json:"l2Relay,omitempty"`
-	L3Relay *UeAuth `json:"l3Relay,omitempty"`
-	L2Remote *UeAuth `json:"l2Remote,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
-	NrUePc5Ambr *string `json:"nrUePc5Ambr,omitempty"`
-	Pc5QoSPara *Pc5QoSPara `json:"pc5QoSPara,omitempty"`
+	DirectComm      *UeAuth `json:"directComm,omitempty"`
+	L2Relay         *UeAuth `json:"l2Relay,omitempty"`
+	L3Relay         *UeAuth `json:"l3Relay,omitempty"`
+	L2Remote        *UeAuth `json:"l2Remote,omitempty"`
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
+	NrUePc5Ambr *string     `json:"nrUePc5Ambr,omitempty"`
+	Pc5QoSPara  *Pc5QoSPara `json:"pc5QoSPara,omitempty"`
 }
 
 // NewProseContext instantiates a new ProseContext object
@@ -48,7 +48,7 @@ func NewProseContextWithDefaults() *ProseContext {
 
 // GetDirectDiscovery returns the DirectDiscovery field value if set, zero value otherwise.
 func (o *ProseContext) GetDirectDiscovery() UeAuth {
-	if o == nil || isNil(o.DirectDiscovery) {
+	if o == nil || IsNil(o.DirectDiscovery) {
 		var ret UeAuth
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ProseContext) GetDirectDiscovery() UeAuth {
 // GetDirectDiscoveryOk returns a tuple with the DirectDiscovery field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetDirectDiscoveryOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.DirectDiscovery) {
+	if o == nil || IsNil(o.DirectDiscovery) {
 		return nil, false
 	}
 	return o.DirectDiscovery, true
@@ -66,7 +66,7 @@ func (o *ProseContext) GetDirectDiscoveryOk() (*UeAuth, bool) {
 
 // HasDirectDiscovery returns a boolean if a field has been set.
 func (o *ProseContext) HasDirectDiscovery() bool {
-	if o != nil && !isNil(o.DirectDiscovery) {
+	if o != nil && !IsNil(o.DirectDiscovery) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ProseContext) SetDirectDiscovery(v UeAuth) {
 
 // GetDirectComm returns the DirectComm field value if set, zero value otherwise.
 func (o *ProseContext) GetDirectComm() UeAuth {
-	if o == nil || isNil(o.DirectComm) {
+	if o == nil || IsNil(o.DirectComm) {
 		var ret UeAuth
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ProseContext) GetDirectComm() UeAuth {
 // GetDirectCommOk returns a tuple with the DirectComm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetDirectCommOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.DirectComm) {
+	if o == nil || IsNil(o.DirectComm) {
 		return nil, false
 	}
 	return o.DirectComm, true
@@ -98,7 +98,7 @@ func (o *ProseContext) GetDirectCommOk() (*UeAuth, bool) {
 
 // HasDirectComm returns a boolean if a field has been set.
 func (o *ProseContext) HasDirectComm() bool {
-	if o != nil && !isNil(o.DirectComm) {
+	if o != nil && !IsNil(o.DirectComm) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ProseContext) SetDirectComm(v UeAuth) {
 
 // GetL2Relay returns the L2Relay field value if set, zero value otherwise.
 func (o *ProseContext) GetL2Relay() UeAuth {
-	if o == nil || isNil(o.L2Relay) {
+	if o == nil || IsNil(o.L2Relay) {
 		var ret UeAuth
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ProseContext) GetL2Relay() UeAuth {
 // GetL2RelayOk returns a tuple with the L2Relay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetL2RelayOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.L2Relay) {
+	if o == nil || IsNil(o.L2Relay) {
 		return nil, false
 	}
 	return o.L2Relay, true
@@ -130,7 +130,7 @@ func (o *ProseContext) GetL2RelayOk() (*UeAuth, bool) {
 
 // HasL2Relay returns a boolean if a field has been set.
 func (o *ProseContext) HasL2Relay() bool {
-	if o != nil && !isNil(o.L2Relay) {
+	if o != nil && !IsNil(o.L2Relay) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ProseContext) SetL2Relay(v UeAuth) {
 
 // GetL3Relay returns the L3Relay field value if set, zero value otherwise.
 func (o *ProseContext) GetL3Relay() UeAuth {
-	if o == nil || isNil(o.L3Relay) {
+	if o == nil || IsNil(o.L3Relay) {
 		var ret UeAuth
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ProseContext) GetL3Relay() UeAuth {
 // GetL3RelayOk returns a tuple with the L3Relay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetL3RelayOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.L3Relay) {
+	if o == nil || IsNil(o.L3Relay) {
 		return nil, false
 	}
 	return o.L3Relay, true
@@ -162,7 +162,7 @@ func (o *ProseContext) GetL3RelayOk() (*UeAuth, bool) {
 
 // HasL3Relay returns a boolean if a field has been set.
 func (o *ProseContext) HasL3Relay() bool {
-	if o != nil && !isNil(o.L3Relay) {
+	if o != nil && !IsNil(o.L3Relay) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ProseContext) SetL3Relay(v UeAuth) {
 
 // GetL2Remote returns the L2Remote field value if set, zero value otherwise.
 func (o *ProseContext) GetL2Remote() UeAuth {
-	if o == nil || isNil(o.L2Remote) {
+	if o == nil || IsNil(o.L2Remote) {
 		var ret UeAuth
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ProseContext) GetL2Remote() UeAuth {
 // GetL2RemoteOk returns a tuple with the L2Remote field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetL2RemoteOk() (*UeAuth, bool) {
-	if o == nil || isNil(o.L2Remote) {
+	if o == nil || IsNil(o.L2Remote) {
 		return nil, false
 	}
 	return o.L2Remote, true
@@ -194,7 +194,7 @@ func (o *ProseContext) GetL2RemoteOk() (*UeAuth, bool) {
 
 // HasL2Remote returns a boolean if a field has been set.
 func (o *ProseContext) HasL2Remote() bool {
-	if o != nil && !isNil(o.L2Remote) {
+	if o != nil && !IsNil(o.L2Remote) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ProseContext) SetL2Remote(v UeAuth) {
 
 // GetNrUePc5Ambr returns the NrUePc5Ambr field value if set, zero value otherwise.
 func (o *ProseContext) GetNrUePc5Ambr() string {
-	if o == nil || isNil(o.NrUePc5Ambr) {
+	if o == nil || IsNil(o.NrUePc5Ambr) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *ProseContext) GetNrUePc5Ambr() string {
 // GetNrUePc5AmbrOk returns a tuple with the NrUePc5Ambr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetNrUePc5AmbrOk() (*string, bool) {
-	if o == nil || isNil(o.NrUePc5Ambr) {
+	if o == nil || IsNil(o.NrUePc5Ambr) {
 		return nil, false
 	}
 	return o.NrUePc5Ambr, true
@@ -226,7 +226,7 @@ func (o *ProseContext) GetNrUePc5AmbrOk() (*string, bool) {
 
 // HasNrUePc5Ambr returns a boolean if a field has been set.
 func (o *ProseContext) HasNrUePc5Ambr() bool {
-	if o != nil && !isNil(o.NrUePc5Ambr) {
+	if o != nil && !IsNil(o.NrUePc5Ambr) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ProseContext) SetNrUePc5Ambr(v string) {
 
 // GetPc5QoSPara returns the Pc5QoSPara field value if set, zero value otherwise.
 func (o *ProseContext) GetPc5QoSPara() Pc5QoSPara {
-	if o == nil || isNil(o.Pc5QoSPara) {
+	if o == nil || IsNil(o.Pc5QoSPara) {
 		var ret Pc5QoSPara
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *ProseContext) GetPc5QoSPara() Pc5QoSPara {
 // GetPc5QoSParaOk returns a tuple with the Pc5QoSPara field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseContext) GetPc5QoSParaOk() (*Pc5QoSPara, bool) {
-	if o == nil || isNil(o.Pc5QoSPara) {
+	if o == nil || IsNil(o.Pc5QoSPara) {
 		return nil, false
 	}
 	return o.Pc5QoSPara, true
@@ -258,7 +258,7 @@ func (o *ProseContext) GetPc5QoSParaOk() (*Pc5QoSPara, bool) {
 
 // HasPc5QoSPara returns a boolean if a field has been set.
 func (o *ProseContext) HasPc5QoSPara() bool {
-	if o != nil && !isNil(o.Pc5QoSPara) {
+	if o != nil && !IsNil(o.Pc5QoSPara) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *ProseContext) SetPc5QoSPara(v Pc5QoSPara) {
 }
 
 func (o ProseContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,25 +280,25 @@ func (o ProseContext) MarshalJSON() ([]byte, error) {
 
 func (o ProseContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DirectDiscovery) {
+	if !IsNil(o.DirectDiscovery) {
 		toSerialize["directDiscovery"] = o.DirectDiscovery
 	}
-	if !isNil(o.DirectComm) {
+	if !IsNil(o.DirectComm) {
 		toSerialize["directComm"] = o.DirectComm
 	}
-	if !isNil(o.L2Relay) {
+	if !IsNil(o.L2Relay) {
 		toSerialize["l2Relay"] = o.L2Relay
 	}
-	if !isNil(o.L3Relay) {
+	if !IsNil(o.L3Relay) {
 		toSerialize["l3Relay"] = o.L3Relay
 	}
-	if !isNil(o.L2Remote) {
+	if !IsNil(o.L2Remote) {
 		toSerialize["l2Remote"] = o.L2Remote
 	}
-	if !isNil(o.NrUePc5Ambr) {
+	if !IsNil(o.NrUePc5Ambr) {
 		toSerialize["nrUePc5Ambr"] = o.NrUePc5Ambr
 	}
-	if !isNil(o.Pc5QoSPara) {
+	if !IsNil(o.Pc5QoSPara) {
 		toSerialize["pc5QoSPara"] = o.Pc5QoSPara
 	}
 	return toSerialize, nil
@@ -339,5 +339,3 @@ func (v *NullableProseContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

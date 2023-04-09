@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,9 +17,9 @@ import (
 
 // SearchExpression - A logical expression element
 type SearchExpression struct {
-	RecordIdList *RecordIdList
+	RecordIdList     *RecordIdList
 	SearchComparison *SearchComparison
-	SearchCondition *SearchCondition
+	SearchCondition  *SearchCondition
 }
 
 // RecordIdListAsSearchExpression is a convenience function that returns RecordIdList wrapped in SearchExpression
@@ -42,7 +42,6 @@ func SearchConditionAsSearchExpression(v *SearchCondition) SearchExpression {
 		SearchCondition: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SearchExpression) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src SearchExpression) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SearchExpression) GetActualInstance() (interface{}) {
+func (obj *SearchExpression) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableSearchExpression) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

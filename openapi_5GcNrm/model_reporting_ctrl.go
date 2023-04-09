@@ -17,7 +17,7 @@ import (
 
 // ReportingCtrl - struct for ReportingCtrl
 type ReportingCtrl struct {
-	ReportingCtrlOneOf *ReportingCtrlOneOf
+	ReportingCtrlOneOf  *ReportingCtrlOneOf
 	ReportingCtrlOneOf1 *ReportingCtrlOneOf1
 	ReportingCtrlOneOf2 *ReportingCtrlOneOf2
 }
@@ -42,7 +42,6 @@ func ReportingCtrlOneOf2AsReportingCtrl(v *ReportingCtrlOneOf2) ReportingCtrl {
 		ReportingCtrlOneOf2: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ReportingCtrl) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src ReportingCtrl) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ReportingCtrl) GetActualInstance() (interface{}) {
+func (obj *ReportingCtrl) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableReportingCtrl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

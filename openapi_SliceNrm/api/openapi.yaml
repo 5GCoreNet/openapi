@@ -789,6 +789,7 @@ components:
       required:
       - id
       type: object
+      x-parent: true
     VsDataContainer-Multiple:
       items:
         $ref: '#/components/schemas/VsDataContainer-Single'
@@ -827,6 +828,7 @@ components:
             type: string
           type: array
       type: object
+      x-parent: true
     SupportedPerfMetricGroup:
       properties:
         performanceMetrics:
@@ -899,6 +901,7 @@ components:
         MnsRegistry:
           $ref: '#/components/schemas/MnsRegistry-Single'
       type: object
+      x-parent: true
     ManagementNode-Multiple:
       items:
         $ref: '#/components/schemas/ManagementNode-Single'
@@ -2654,15 +2657,7 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - anyOf:
-        - enum:
-          - PROBABLE_CAUSE_001
-          - PROBABLE_CAUSE_002
-          - PROBABLE_CAUSE_003
-          - PROBABLE_CAUSE_004
-          - PROBABLE_CAUSE_005
-          type: string
-        - type: string
+      - $ref: '#/components/schemas/ProbableCause_oneOf'
       - type: integer
     SpecificProblem:
       oneOf:
@@ -2795,12 +2790,13 @@ components:
             $ref: '#/components/schemas/SubNetwork-Single'
           type: array
       type: object
-      example: null
+    SubNetwork_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/SubNetwork-Attr'
     SubNetwork_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - $ref: '#/components/schemas/SubNetwork-Attr'
+          $ref: '#/components/schemas/SubNetwork_Single_allOf_attributes'
       type: object
       example: null
     SubNetwork_Single_allOf_1:
@@ -2831,50 +2827,68 @@ components:
           type: array
       type: object
       example: null
+    NetworkSlice_Single_allOf_attributes_allOf:
+      properties:
+        networkSliceSubnetRef:
+          type: string
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        serviceProfileList:
+          items:
+            $ref: '#/components/schemas/ServiceProfile'
+          type: array
+      type: object
+    NetworkSlice_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/NetworkSlice_Single_allOf_attributes_allOf'
     NetworkSlice_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              networkSliceSubnetRef:
-                $ref: '#/components/schemas/Dn'
-              operationalState:
-                $ref: '#/components/schemas/OperationalState'
-              administrativeState:
-                $ref: '#/components/schemas/AdministrativeState'
-              serviceProfileList:
-                $ref: '#/components/schemas/ServiceProfileList'
-            type: object
+          $ref: '#/components/schemas/NetworkSlice_Single_allOf_attributes'
       type: object
       example: null
+    NetworkSliceSubnet_Single_allOf_attributes_allOf:
+      properties:
+        managedFunctionRefList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        networkSliceSubnetRefList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        nsInfo:
+          $ref: '#/components/schemas/NsInfo'
+        sliceProfileList:
+          items:
+            $ref: '#/components/schemas/SliceProfile'
+          type: array
+        epTransportRefList:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        priorityLabel:
+          type: integer
+        networkSliceSubnetType:
+          enum:
+          - TOP_SLICESUBNET
+          - RAN_SLICESUBNET
+          - CN_SLICESUBNET
+          type: string
+      type: object
+    NetworkSliceSubnet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/NetworkSliceSubnet_Single_allOf_attributes_allOf'
     NetworkSliceSubnet_Single_allOf:
       properties:
         attributes:
-          allOf:
-          - properties:
-              managedFunctionRefList:
-                $ref: '#/components/schemas/DnList'
-              networkSliceSubnetRefList:
-                $ref: '#/components/schemas/DnList'
-              operationalState:
-                $ref: '#/components/schemas/OperationalState'
-              administrativeState:
-                $ref: '#/components/schemas/AdministrativeState'
-              nsInfo:
-                $ref: '#/components/schemas/NsInfo'
-              sliceProfileList:
-                $ref: '#/components/schemas/SliceProfileList'
-              epTransportRefList:
-                $ref: '#/components/schemas/DnList'
-              priorityLabel:
-                type: integer
-              networkSliceSubnetType:
-                enum:
-                - TOP_SLICESUBNET
-                - RAN_SLICESUBNET
-                - CN_SLICESUBNET
-                type: string
-            type: object
+          $ref: '#/components/schemas/NetworkSliceSubnet_Single_allOf_attributes'
       type: object
       example: null
     EP_Transport_Single_allOf_attributes:
@@ -3074,7 +3088,6 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
-      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -3082,13 +3095,11 @@ components:
         fileLocation:
           type: string
       type: object
-      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
-      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -3364,15 +3375,23 @@ components:
         - OTHER
         type: string
       - type: string
+    ProbableCause_oneOf:
+      anyOf:
+      - enum:
+        - PROBABLE_CAUSE_001
+        - PROBABLE_CAUSE_002
+        - PROBABLE_CAUSE_003
+        - PROBABLE_CAUSE_004
+        - PROBABLE_CAUSE_005
+        type: string
+      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
-      example: null

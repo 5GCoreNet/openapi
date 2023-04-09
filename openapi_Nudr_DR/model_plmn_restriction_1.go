@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &PlmnRestriction1{}
 
 // PlmnRestriction1 struct for PlmnRestriction1
 type PlmnRestriction1 struct {
-	RatRestrictions []RatType `json:"ratRestrictions,omitempty"`
-	ForbiddenAreas []Area1 `json:"forbiddenAreas,omitempty"`
-	ServiceAreaRestriction *ServiceAreaRestriction1 `json:"serviceAreaRestriction,omitempty"`
-	CoreNetworkTypeRestrictions []CoreNetworkType `json:"coreNetworkTypeRestrictions,omitempty"`
-	AccessTypeRestrictions []AccessType `json:"accessTypeRestrictions,omitempty"`
-	PrimaryRatRestrictions []RatType `json:"primaryRatRestrictions,omitempty"`
-	SecondaryRatRestrictions []RatType `json:"secondaryRatRestrictions,omitempty"`
+	RatRestrictions             []RatType                `json:"ratRestrictions,omitempty"`
+	ForbiddenAreas              []Area1                  `json:"forbiddenAreas,omitempty"`
+	ServiceAreaRestriction      *ServiceAreaRestriction1 `json:"serviceAreaRestriction,omitempty"`
+	CoreNetworkTypeRestrictions []CoreNetworkType        `json:"coreNetworkTypeRestrictions,omitempty"`
+	AccessTypeRestrictions      []AccessType             `json:"accessTypeRestrictions,omitempty"`
+	PrimaryRatRestrictions      []RatType                `json:"primaryRatRestrictions,omitempty"`
+	SecondaryRatRestrictions    []RatType                `json:"secondaryRatRestrictions,omitempty"`
 }
 
 // NewPlmnRestriction1 instantiates a new PlmnRestriction1 object
@@ -47,7 +47,7 @@ func NewPlmnRestriction1WithDefaults() *PlmnRestriction1 {
 
 // GetRatRestrictions returns the RatRestrictions field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetRatRestrictions() []RatType {
-	if o == nil || isNil(o.RatRestrictions) {
+	if o == nil || IsNil(o.RatRestrictions) {
 		var ret []RatType
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PlmnRestriction1) GetRatRestrictions() []RatType {
 // GetRatRestrictionsOk returns a tuple with the RatRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetRatRestrictionsOk() ([]RatType, bool) {
-	if o == nil || isNil(o.RatRestrictions) {
+	if o == nil || IsNil(o.RatRestrictions) {
 		return nil, false
 	}
 	return o.RatRestrictions, true
@@ -65,7 +65,7 @@ func (o *PlmnRestriction1) GetRatRestrictionsOk() ([]RatType, bool) {
 
 // HasRatRestrictions returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasRatRestrictions() bool {
-	if o != nil && !isNil(o.RatRestrictions) {
+	if o != nil && !IsNil(o.RatRestrictions) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *PlmnRestriction1) SetRatRestrictions(v []RatType) {
 
 // GetForbiddenAreas returns the ForbiddenAreas field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetForbiddenAreas() []Area1 {
-	if o == nil || isNil(o.ForbiddenAreas) {
+	if o == nil || IsNil(o.ForbiddenAreas) {
 		var ret []Area1
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PlmnRestriction1) GetForbiddenAreas() []Area1 {
 // GetForbiddenAreasOk returns a tuple with the ForbiddenAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetForbiddenAreasOk() ([]Area1, bool) {
-	if o == nil || isNil(o.ForbiddenAreas) {
+	if o == nil || IsNil(o.ForbiddenAreas) {
 		return nil, false
 	}
 	return o.ForbiddenAreas, true
@@ -97,7 +97,7 @@ func (o *PlmnRestriction1) GetForbiddenAreasOk() ([]Area1, bool) {
 
 // HasForbiddenAreas returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasForbiddenAreas() bool {
-	if o != nil && !isNil(o.ForbiddenAreas) {
+	if o != nil && !IsNil(o.ForbiddenAreas) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *PlmnRestriction1) SetForbiddenAreas(v []Area1) {
 
 // GetServiceAreaRestriction returns the ServiceAreaRestriction field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetServiceAreaRestriction() ServiceAreaRestriction1 {
-	if o == nil || isNil(o.ServiceAreaRestriction) {
+	if o == nil || IsNil(o.ServiceAreaRestriction) {
 		var ret ServiceAreaRestriction1
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PlmnRestriction1) GetServiceAreaRestriction() ServiceAreaRestriction1 {
 // GetServiceAreaRestrictionOk returns a tuple with the ServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetServiceAreaRestrictionOk() (*ServiceAreaRestriction1, bool) {
-	if o == nil || isNil(o.ServiceAreaRestriction) {
+	if o == nil || IsNil(o.ServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.ServiceAreaRestriction, true
@@ -129,7 +129,7 @@ func (o *PlmnRestriction1) GetServiceAreaRestrictionOk() (*ServiceAreaRestrictio
 
 // HasServiceAreaRestriction returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasServiceAreaRestriction() bool {
-	if o != nil && !isNil(o.ServiceAreaRestriction) {
+	if o != nil && !IsNil(o.ServiceAreaRestriction) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PlmnRestriction1) SetServiceAreaRestriction(v ServiceAreaRestriction1) 
 
 // GetCoreNetworkTypeRestrictions returns the CoreNetworkTypeRestrictions field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetCoreNetworkTypeRestrictions() []CoreNetworkType {
-	if o == nil || isNil(o.CoreNetworkTypeRestrictions) {
+	if o == nil || IsNil(o.CoreNetworkTypeRestrictions) {
 		var ret []CoreNetworkType
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PlmnRestriction1) GetCoreNetworkTypeRestrictions() []CoreNetworkType {
 // GetCoreNetworkTypeRestrictionsOk returns a tuple with the CoreNetworkTypeRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetCoreNetworkTypeRestrictionsOk() ([]CoreNetworkType, bool) {
-	if o == nil || isNil(o.CoreNetworkTypeRestrictions) {
+	if o == nil || IsNil(o.CoreNetworkTypeRestrictions) {
 		return nil, false
 	}
 	return o.CoreNetworkTypeRestrictions, true
@@ -161,7 +161,7 @@ func (o *PlmnRestriction1) GetCoreNetworkTypeRestrictionsOk() ([]CoreNetworkType
 
 // HasCoreNetworkTypeRestrictions returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasCoreNetworkTypeRestrictions() bool {
-	if o != nil && !isNil(o.CoreNetworkTypeRestrictions) {
+	if o != nil && !IsNil(o.CoreNetworkTypeRestrictions) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *PlmnRestriction1) SetCoreNetworkTypeRestrictions(v []CoreNetworkType) {
 
 // GetAccessTypeRestrictions returns the AccessTypeRestrictions field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetAccessTypeRestrictions() []AccessType {
-	if o == nil || isNil(o.AccessTypeRestrictions) {
+	if o == nil || IsNil(o.AccessTypeRestrictions) {
 		var ret []AccessType
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *PlmnRestriction1) GetAccessTypeRestrictions() []AccessType {
 // GetAccessTypeRestrictionsOk returns a tuple with the AccessTypeRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetAccessTypeRestrictionsOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessTypeRestrictions) {
+	if o == nil || IsNil(o.AccessTypeRestrictions) {
 		return nil, false
 	}
 	return o.AccessTypeRestrictions, true
@@ -193,7 +193,7 @@ func (o *PlmnRestriction1) GetAccessTypeRestrictionsOk() ([]AccessType, bool) {
 
 // HasAccessTypeRestrictions returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasAccessTypeRestrictions() bool {
-	if o != nil && !isNil(o.AccessTypeRestrictions) {
+	if o != nil && !IsNil(o.AccessTypeRestrictions) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *PlmnRestriction1) SetAccessTypeRestrictions(v []AccessType) {
 
 // GetPrimaryRatRestrictions returns the PrimaryRatRestrictions field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetPrimaryRatRestrictions() []RatType {
-	if o == nil || isNil(o.PrimaryRatRestrictions) {
+	if o == nil || IsNil(o.PrimaryRatRestrictions) {
 		var ret []RatType
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *PlmnRestriction1) GetPrimaryRatRestrictions() []RatType {
 // GetPrimaryRatRestrictionsOk returns a tuple with the PrimaryRatRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetPrimaryRatRestrictionsOk() ([]RatType, bool) {
-	if o == nil || isNil(o.PrimaryRatRestrictions) {
+	if o == nil || IsNil(o.PrimaryRatRestrictions) {
 		return nil, false
 	}
 	return o.PrimaryRatRestrictions, true
@@ -225,7 +225,7 @@ func (o *PlmnRestriction1) GetPrimaryRatRestrictionsOk() ([]RatType, bool) {
 
 // HasPrimaryRatRestrictions returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasPrimaryRatRestrictions() bool {
-	if o != nil && !isNil(o.PrimaryRatRestrictions) {
+	if o != nil && !IsNil(o.PrimaryRatRestrictions) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *PlmnRestriction1) SetPrimaryRatRestrictions(v []RatType) {
 
 // GetSecondaryRatRestrictions returns the SecondaryRatRestrictions field value if set, zero value otherwise.
 func (o *PlmnRestriction1) GetSecondaryRatRestrictions() []RatType {
-	if o == nil || isNil(o.SecondaryRatRestrictions) {
+	if o == nil || IsNil(o.SecondaryRatRestrictions) {
 		var ret []RatType
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *PlmnRestriction1) GetSecondaryRatRestrictions() []RatType {
 // GetSecondaryRatRestrictionsOk returns a tuple with the SecondaryRatRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRestriction1) GetSecondaryRatRestrictionsOk() ([]RatType, bool) {
-	if o == nil || isNil(o.SecondaryRatRestrictions) {
+	if o == nil || IsNil(o.SecondaryRatRestrictions) {
 		return nil, false
 	}
 	return o.SecondaryRatRestrictions, true
@@ -257,7 +257,7 @@ func (o *PlmnRestriction1) GetSecondaryRatRestrictionsOk() ([]RatType, bool) {
 
 // HasSecondaryRatRestrictions returns a boolean if a field has been set.
 func (o *PlmnRestriction1) HasSecondaryRatRestrictions() bool {
-	if o != nil && !isNil(o.SecondaryRatRestrictions) {
+	if o != nil && !IsNil(o.SecondaryRatRestrictions) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *PlmnRestriction1) SetSecondaryRatRestrictions(v []RatType) {
 }
 
 func (o PlmnRestriction1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,25 +279,25 @@ func (o PlmnRestriction1) MarshalJSON() ([]byte, error) {
 
 func (o PlmnRestriction1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RatRestrictions) {
+	if !IsNil(o.RatRestrictions) {
 		toSerialize["ratRestrictions"] = o.RatRestrictions
 	}
-	if !isNil(o.ForbiddenAreas) {
+	if !IsNil(o.ForbiddenAreas) {
 		toSerialize["forbiddenAreas"] = o.ForbiddenAreas
 	}
-	if !isNil(o.ServiceAreaRestriction) {
+	if !IsNil(o.ServiceAreaRestriction) {
 		toSerialize["serviceAreaRestriction"] = o.ServiceAreaRestriction
 	}
-	if !isNil(o.CoreNetworkTypeRestrictions) {
+	if !IsNil(o.CoreNetworkTypeRestrictions) {
 		toSerialize["coreNetworkTypeRestrictions"] = o.CoreNetworkTypeRestrictions
 	}
-	if !isNil(o.AccessTypeRestrictions) {
+	if !IsNil(o.AccessTypeRestrictions) {
 		toSerialize["accessTypeRestrictions"] = o.AccessTypeRestrictions
 	}
-	if !isNil(o.PrimaryRatRestrictions) {
+	if !IsNil(o.PrimaryRatRestrictions) {
 		toSerialize["primaryRatRestrictions"] = o.PrimaryRatRestrictions
 	}
-	if !isNil(o.SecondaryRatRestrictions) {
+	if !IsNil(o.SecondaryRatRestrictions) {
 		toSerialize["secondaryRatRestrictions"] = o.SecondaryRatRestrictions
 	}
 	return toSerialize, nil
@@ -338,5 +338,3 @@ func (v *NullablePlmnRestriction1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

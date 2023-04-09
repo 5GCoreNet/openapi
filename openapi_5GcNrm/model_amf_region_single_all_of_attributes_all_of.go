@@ -20,10 +20,10 @@ var _ MappedNullable = &AmfRegionSingleAllOfAttributesAllOf{}
 // AmfRegionSingleAllOfAttributesAllOf struct for AmfRegionSingleAllOfAttributesAllOf
 type AmfRegionSingleAllOfAttributesAllOf struct {
 	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
-	NRTACList []int32 `json:"nRTACList,omitempty"`
+	NRTACList  []int32  `json:"nRTACList,omitempty"`
 	// AmfRegionId is defined in TS 23.003
-	AmfRegionId *int32 `json:"amfRegionId,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
+	AmfRegionId   *int32   `json:"amfRegionId,omitempty"`
+	SnssaiList    []Snssai `json:"snssaiList,omitempty"`
 	AMFSetListRef []string `json:"aMFSetListRef,omitempty"`
 }
 
@@ -205,7 +205,7 @@ func (o *AmfRegionSingleAllOfAttributesAllOf) SetAMFSetListRef(v []string) {
 }
 
 func (o AmfRegionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableAmfRegionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

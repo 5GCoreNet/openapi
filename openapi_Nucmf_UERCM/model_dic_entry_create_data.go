@@ -1,7 +1,7 @@
 /*
 Nucmf_UECapabilityManagement
 
-Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nucmf_UECapabilityManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &DicEntryCreateData{}
 
 // DicEntryCreateData Data for a creating a dictionary entry request
 type DicEntryCreateData struct {
-	// Type Allocation Code (TAC) of the UE, comprising the initial eight-digit portion of the 15-digit IMEI and 16-digit IMEISV codes. See clause 6.2 of 3GPP TS 23.003. 
-	TypeAllocationCode string `json:"typeAllocationCode"`
+	// Type Allocation Code (TAC) of the UE, comprising the initial eight-digit portion of the 15-digit IMEI and 16-digit IMEISV codes. See clause 6.2 of 3GPP TS 23.003.
+	TypeAllocationCode   string           `json:"typeAllocationCode"`
 	UeRadioCapability5GS *RefToBinaryData `json:"ueRadioCapability5GS,omitempty"`
 	UeRadioCapabilityEPS *RefToBinaryData `json:"ueRadioCapabilityEPS,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures      *string          `json:"supportedFeatures,omitempty"`
 	UeRadioCap5GSForPaging *RefToBinaryData `json:"ueRadioCap5GSForPaging,omitempty"`
 	UeRadioCapEPSForPaging *RefToBinaryData `json:"ueRadioCapEPSForPaging,omitempty"`
 }
@@ -73,7 +73,7 @@ func (o *DicEntryCreateData) SetTypeAllocationCode(v string) {
 
 // GetUeRadioCapability5GS returns the UeRadioCapability5GS field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCapability5GS() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCapability5GS) {
+	if o == nil || IsNil(o.UeRadioCapability5GS) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *DicEntryCreateData) GetUeRadioCapability5GS() RefToBinaryData {
 // GetUeRadioCapability5GSOk returns a tuple with the UeRadioCapability5GS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCapability5GSOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCapability5GS) {
+	if o == nil || IsNil(o.UeRadioCapability5GS) {
 		return nil, false
 	}
 	return o.UeRadioCapability5GS, true
@@ -91,7 +91,7 @@ func (o *DicEntryCreateData) GetUeRadioCapability5GSOk() (*RefToBinaryData, bool
 
 // HasUeRadioCapability5GS returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCapability5GS() bool {
-	if o != nil && !isNil(o.UeRadioCapability5GS) {
+	if o != nil && !IsNil(o.UeRadioCapability5GS) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *DicEntryCreateData) SetUeRadioCapability5GS(v RefToBinaryData) {
 
 // GetUeRadioCapabilityEPS returns the UeRadioCapabilityEPS field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCapabilityEPS() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCapabilityEPS) {
+	if o == nil || IsNil(o.UeRadioCapabilityEPS) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *DicEntryCreateData) GetUeRadioCapabilityEPS() RefToBinaryData {
 // GetUeRadioCapabilityEPSOk returns a tuple with the UeRadioCapabilityEPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCapabilityEPSOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCapabilityEPS) {
+	if o == nil || IsNil(o.UeRadioCapabilityEPS) {
 		return nil, false
 	}
 	return o.UeRadioCapabilityEPS, true
@@ -123,7 +123,7 @@ func (o *DicEntryCreateData) GetUeRadioCapabilityEPSOk() (*RefToBinaryData, bool
 
 // HasUeRadioCapabilityEPS returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCapabilityEPS() bool {
-	if o != nil && !isNil(o.UeRadioCapabilityEPS) {
+	if o != nil && !IsNil(o.UeRadioCapabilityEPS) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *DicEntryCreateData) SetUeRadioCapabilityEPS(v RefToBinaryData) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *DicEntryCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -155,7 +155,7 @@ func (o *DicEntryCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *DicEntryCreateData) SetSupportedFeatures(v string) {
 
 // GetUeRadioCap5GSForPaging returns the UeRadioCap5GSForPaging field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCap5GSForPaging() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCap5GSForPaging) {
+	if o == nil || IsNil(o.UeRadioCap5GSForPaging) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *DicEntryCreateData) GetUeRadioCap5GSForPaging() RefToBinaryData {
 // GetUeRadioCap5GSForPagingOk returns a tuple with the UeRadioCap5GSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCap5GSForPagingOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCap5GSForPaging) {
+	if o == nil || IsNil(o.UeRadioCap5GSForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCap5GSForPaging, true
@@ -187,7 +187,7 @@ func (o *DicEntryCreateData) GetUeRadioCap5GSForPagingOk() (*RefToBinaryData, bo
 
 // HasUeRadioCap5GSForPaging returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCap5GSForPaging() bool {
-	if o != nil && !isNil(o.UeRadioCap5GSForPaging) {
+	if o != nil && !IsNil(o.UeRadioCap5GSForPaging) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *DicEntryCreateData) SetUeRadioCap5GSForPaging(v RefToBinaryData) {
 
 // GetUeRadioCapEPSForPaging returns the UeRadioCapEPSForPaging field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCapEPSForPaging() RefToBinaryData {
-	if o == nil || isNil(o.UeRadioCapEPSForPaging) {
+	if o == nil || IsNil(o.UeRadioCapEPSForPaging) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *DicEntryCreateData) GetUeRadioCapEPSForPaging() RefToBinaryData {
 // GetUeRadioCapEPSForPagingOk returns a tuple with the UeRadioCapEPSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCapEPSForPagingOk() (*RefToBinaryData, bool) {
-	if o == nil || isNil(o.UeRadioCapEPSForPaging) {
+	if o == nil || IsNil(o.UeRadioCapEPSForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCapEPSForPaging, true
@@ -219,7 +219,7 @@ func (o *DicEntryCreateData) GetUeRadioCapEPSForPagingOk() (*RefToBinaryData, bo
 
 // HasUeRadioCapEPSForPaging returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCapEPSForPaging() bool {
-	if o != nil && !isNil(o.UeRadioCapEPSForPaging) {
+	if o != nil && !IsNil(o.UeRadioCapEPSForPaging) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *DicEntryCreateData) SetUeRadioCapEPSForPaging(v RefToBinaryData) {
 }
 
 func (o DicEntryCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -242,19 +242,19 @@ func (o DicEntryCreateData) MarshalJSON() ([]byte, error) {
 func (o DicEntryCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["typeAllocationCode"] = o.TypeAllocationCode
-	if !isNil(o.UeRadioCapability5GS) {
+	if !IsNil(o.UeRadioCapability5GS) {
 		toSerialize["ueRadioCapability5GS"] = o.UeRadioCapability5GS
 	}
-	if !isNil(o.UeRadioCapabilityEPS) {
+	if !IsNil(o.UeRadioCapabilityEPS) {
 		toSerialize["ueRadioCapabilityEPS"] = o.UeRadioCapabilityEPS
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.UeRadioCap5GSForPaging) {
+	if !IsNil(o.UeRadioCap5GSForPaging) {
 		toSerialize["ueRadioCap5GSForPaging"] = o.UeRadioCap5GSForPaging
 	}
-	if !isNil(o.UeRadioCapEPSForPaging) {
+	if !IsNil(o.UeRadioCapEPSForPaging) {
 		toSerialize["ueRadioCapEPSForPaging"] = o.UeRadioCapEPSForPaging
 	}
 	return toSerialize, nil
@@ -295,5 +295,3 @@ func (v *NullableDicEntryCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

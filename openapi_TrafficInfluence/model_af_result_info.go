@@ -1,7 +1,7 @@
 /*
 3gpp-traffic-influence
 
-API for AF traffic influence   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for AF traffic influence   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &AfResultInfo{}
 
 // AfResultInfo Identifies the result of application layer handling.
 type AfResultInfo struct {
-	AfStatus AfResultStatus `json:"afStatus"`
+	AfStatus     AfResultStatus          `json:"afStatus"`
 	TrafficRoute NullableRouteToLocation `json:"trafficRoute,omitempty"`
-	// If present and set to \"true\" it indicates that buffering of uplink traffic to the target DNAI is needed. 
+	// If present and set to \"true\" it indicates that buffering of uplink traffic to the target DNAI is needed.
 	UpBuffInd *bool `json:"upBuffInd,omitempty"`
 	// Contains EAS IP replacement information.
 	EasIpReplaceInfos []EasIpReplacementInfo `json:"easIpReplaceInfos,omitempty"`
@@ -71,7 +71,7 @@ func (o *AfResultInfo) SetAfStatus(v AfResultStatus) {
 
 // GetTrafficRoute returns the TrafficRoute field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfResultInfo) GetTrafficRoute() RouteToLocation {
-	if o == nil || isNil(o.TrafficRoute.Get()) {
+	if o == nil || IsNil(o.TrafficRoute.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -101,6 +101,7 @@ func (o *AfResultInfo) HasTrafficRoute() bool {
 func (o *AfResultInfo) SetTrafficRoute(v RouteToLocation) {
 	o.TrafficRoute.Set(&v)
 }
+
 // SetTrafficRouteNil sets the value for TrafficRoute to be an explicit nil
 func (o *AfResultInfo) SetTrafficRouteNil() {
 	o.TrafficRoute.Set(nil)
@@ -113,7 +114,7 @@ func (o *AfResultInfo) UnsetTrafficRoute() {
 
 // GetUpBuffInd returns the UpBuffInd field value if set, zero value otherwise.
 func (o *AfResultInfo) GetUpBuffInd() bool {
-	if o == nil || isNil(o.UpBuffInd) {
+	if o == nil || IsNil(o.UpBuffInd) {
 		var ret bool
 		return ret
 	}
@@ -123,7 +124,7 @@ func (o *AfResultInfo) GetUpBuffInd() bool {
 // GetUpBuffIndOk returns a tuple with the UpBuffInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfResultInfo) GetUpBuffIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UpBuffInd) {
+	if o == nil || IsNil(o.UpBuffInd) {
 		return nil, false
 	}
 	return o.UpBuffInd, true
@@ -131,7 +132,7 @@ func (o *AfResultInfo) GetUpBuffIndOk() (*bool, bool) {
 
 // HasUpBuffInd returns a boolean if a field has been set.
 func (o *AfResultInfo) HasUpBuffInd() bool {
-	if o != nil && !isNil(o.UpBuffInd) {
+	if o != nil && !IsNil(o.UpBuffInd) {
 		return true
 	}
 
@@ -145,7 +146,7 @@ func (o *AfResultInfo) SetUpBuffInd(v bool) {
 
 // GetEasIpReplaceInfos returns the EasIpReplaceInfos field value if set, zero value otherwise.
 func (o *AfResultInfo) GetEasIpReplaceInfos() []EasIpReplacementInfo {
-	if o == nil || isNil(o.EasIpReplaceInfos) {
+	if o == nil || IsNil(o.EasIpReplaceInfos) {
 		var ret []EasIpReplacementInfo
 		return ret
 	}
@@ -155,7 +156,7 @@ func (o *AfResultInfo) GetEasIpReplaceInfos() []EasIpReplacementInfo {
 // GetEasIpReplaceInfosOk returns a tuple with the EasIpReplaceInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfResultInfo) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo, bool) {
-	if o == nil || isNil(o.EasIpReplaceInfos) {
+	if o == nil || IsNil(o.EasIpReplaceInfos) {
 		return nil, false
 	}
 	return o.EasIpReplaceInfos, true
@@ -163,7 +164,7 @@ func (o *AfResultInfo) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo, bool) {
 
 // HasEasIpReplaceInfos returns a boolean if a field has been set.
 func (o *AfResultInfo) HasEasIpReplaceInfos() bool {
-	if o != nil && !isNil(o.EasIpReplaceInfos) {
+	if o != nil && !IsNil(o.EasIpReplaceInfos) {
 		return true
 	}
 
@@ -176,7 +177,7 @@ func (o *AfResultInfo) SetEasIpReplaceInfos(v []EasIpReplacementInfo) {
 }
 
 func (o AfResultInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -189,10 +190,10 @@ func (o AfResultInfo) ToMap() (map[string]interface{}, error) {
 	if o.TrafficRoute.IsSet() {
 		toSerialize["trafficRoute"] = o.TrafficRoute.Get()
 	}
-	if !isNil(o.UpBuffInd) {
+	if !IsNil(o.UpBuffInd) {
 		toSerialize["upBuffInd"] = o.UpBuffInd
 	}
-	if !isNil(o.EasIpReplaceInfos) {
+	if !IsNil(o.EasIpReplaceInfos) {
 		toSerialize["easIpReplaceInfos"] = o.EasIpReplaceInfos
 	}
 	return toSerialize, nil
@@ -233,5 +234,3 @@ func (v *NullableAfResultInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

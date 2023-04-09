@@ -934,7 +934,9 @@ components:
       type: object
     EasEvent:
       anyOf:
-      - $ref: '#/components/schemas/EasEvent_anyOf'
+      - enum:
+        - EAS_INFO_CHG
+        type: string
       - type: string
       description: |
         Possible values are - EAS_INFO_CHG: Indicates that the EAS Deployment Information is changed.
@@ -1170,7 +1172,16 @@ components:
       type: object
     MatchingOperator:
       anyOf:
-      - $ref: '#/components/schemas/MatchingOperator_anyOf'
+      - enum:
+        - FULL_MATCH
+        - MATCH_ALL
+        - STARTS_WITH
+        - NOT_START_WITH
+        - ENDS_WITH
+        - NOT_END_WITH
+        - CONTAINS
+        - NOT_CONTAIN
+        type: string
       - type: string
       description: the matching operation.
     Snssai:
@@ -1389,7 +1400,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -1479,83 +1547,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    EasEvent_anyOf:
-      enum:
-      - EAS_INFO_CHG
-      type: string
-      example: null
-    MatchingOperator_anyOf:
-      enum:
-      - FULL_MATCH
-      - MATCH_ALL
-      - STARTS_WITH
-      - NOT_START_WITH
-      - ENDS_WITH
-      - NOT_END_WITH
-      - CONTAINS
-      - NOT_CONTAIN
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

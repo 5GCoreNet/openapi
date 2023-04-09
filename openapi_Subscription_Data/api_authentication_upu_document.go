@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // AuthenticationUPUDocumentApiService AuthenticationUPUDocumentApi service
 type AuthenticationUPUDocumentApiService service
 
 type ApiCreateAuthenticationUPURequest struct {
-	ctx context.Context
-	ApiService *AuthenticationUPUDocumentApiService
-	ueId string
-	upuData *UpuData
+	ctx               context.Context
+	ApiService        *AuthenticationUPUDocumentApiService
+	ueId              string
+	upuData           *UpuData
 	supportedFeatures *string
 }
 
@@ -49,24 +48,24 @@ func (r ApiCreateAuthenticationUPURequest) Execute() (*http.Response, error) {
 /*
 CreateAuthenticationUPU To store the UPU acknowledgement information of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiCreateAuthenticationUPURequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiCreateAuthenticationUPURequest
 */
 func (a *AuthenticationUPUDocumentApiService) CreateAuthenticationUPU(ctx context.Context, ueId string) ApiCreateAuthenticationUPURequest {
 	return ApiCreateAuthenticationUPURequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthenticationUPUDocumentApiService) CreateAuthenticationUPUExecute(r ApiCreateAuthenticationUPURequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationUPUDocumentApiService.CreateAuthenticationUPU")
@@ -85,7 +84,7 @@ func (a *AuthenticationUPUDocumentApiService) CreateAuthenticationUPUExecute(r A
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -116,9 +115,9 @@ func (a *AuthenticationUPUDocumentApiService) CreateAuthenticationUPUExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -135,9 +134,9 @@ func (a *AuthenticationUPUDocumentApiService) CreateAuthenticationUPUExecute(r A
 }
 
 type ApiQueryAuthUPURequest struct {
-	ctx context.Context
-	ApiService *AuthenticationUPUDocumentApiService
-	ueId string
+	ctx               context.Context
+	ApiService        *AuthenticationUPUDocumentApiService
+	ueId              string
 	supportedFeatures *string
 }
 
@@ -154,26 +153,27 @@ func (r ApiQueryAuthUPURequest) Execute() (*UpuData, *http.Response, error) {
 /*
 QueryAuthUPU Retrieves the UPU acknowledgement information of a UE
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE id
- @return ApiQueryAuthUPURequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE id
+	@return ApiQueryAuthUPURequest
 */
 func (a *AuthenticationUPUDocumentApiService) QueryAuthUPU(ctx context.Context, ueId string) ApiQueryAuthUPURequest {
 	return ApiQueryAuthUPURequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return UpuData
+//
+//	@return UpuData
 func (a *AuthenticationUPUDocumentApiService) QueryAuthUPUExecute(r ApiQueryAuthUPURequest) (*UpuData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpuData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpuData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationUPUDocumentApiService.QueryAuthUPU")
@@ -189,7 +189,7 @@ func (a *AuthenticationUPUDocumentApiService) QueryAuthUPUExecute(r ApiQueryAuth
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -218,9 +218,9 @@ func (a *AuthenticationUPUDocumentApiService) QueryAuthUPUExecute(r ApiQueryAuth
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

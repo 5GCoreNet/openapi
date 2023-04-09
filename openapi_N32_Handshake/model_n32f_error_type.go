@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,28 +17,14 @@ import (
 
 // N32fErrorType Type of error while processing N32-f message
 type N32fErrorType struct {
-	N32fErrorTypeAnyOf *N32fErrorTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N32fErrorType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into N32fErrorTypeAnyOf
-	err = json.Unmarshal(data, &dst.N32fErrorTypeAnyOf);
-	if err == nil {
-		jsonN32fErrorTypeAnyOf, _ := json.Marshal(dst.N32fErrorTypeAnyOf)
-		if string(jsonN32fErrorTypeAnyOf) == "{}" { // empty struct
-			dst.N32fErrorTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.N32fErrorTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.N32fErrorTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *N32fErrorType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N32fErrorType) MarshalJSON() ([]byte, error) {
-	if src.N32fErrorTypeAnyOf != nil {
-		return json.Marshal(&src.N32fErrorTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableN32fErrorType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

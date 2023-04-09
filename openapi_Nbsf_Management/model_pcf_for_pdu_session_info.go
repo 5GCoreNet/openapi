@@ -1,7 +1,7 @@
 /*
 Nbsf_Management
 
-Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Binding Support Management Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.4.0-alpha.1
 */
@@ -19,24 +19,24 @@ var _ MappedNullable = &PcfForPduSessionInfo{}
 
 // PcfForPduSessionInfo Contains the informaiton of the PCF for a PDU session.
 type PcfForPduSessionInfo struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn string `json:"dnn"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn    string `json:"dnn"`
 	Snssai Snssai `json:"snssai"`
 	// Fully Qualified Domain Name
 	PcfFqdn *string `json:"pcfFqdn,omitempty"`
 	// IP end points of the PCF hosting the Npcf_AmPolicyAuthorization service.
 	PcfIpEndPoints []IpEndPoint `json:"pcfIpEndPoints,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166 with the OpenAPI defined 'nullable: true' property. 
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166 with the OpenAPI defined 'nullable: true' property.
 	Ipv4Addr NullableString `json:"ipv4Addr,omitempty"`
-	IpDomain *string `json:"ipDomain,omitempty"`
+	IpDomain *string        `json:"ipDomain,omitempty"`
 	// The IPv6 Address Prefixes of the served UE.
 	Ipv6Prefixes []Ipv6Prefix `json:"ipv6Prefixes,omitempty"`
 	// The MAC Addresses of the served UE.
 	MacAddrs []string `json:"macAddrs,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	PcfSetId *string `json:"pcfSetId,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	PcfSetId  *string       `json:"pcfSetId,omitempty"`
 	BindLevel *BindingLevel `json:"bindLevel,omitempty"`
 }
 
@@ -109,7 +109,7 @@ func (o *PcfForPduSessionInfo) SetSnssai(v Snssai) {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfFqdn() string {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PcfForPduSessionInfo) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PcfFqdn) {
+	if o == nil || IsNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -127,7 +127,7 @@ func (o *PcfForPduSessionInfo) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfFqdn() bool {
-	if o != nil && !isNil(o.PcfFqdn) {
+	if o != nil && !IsNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PcfForPduSessionInfo) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PcfForPduSessionInfo) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || isNil(o.PcfIpEndPoints) {
+	if o == nil || IsNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -159,7 +159,7 @@ func (o *PcfForPduSessionInfo) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfIpEndPoints() bool {
-	if o != nil && !isNil(o.PcfIpEndPoints) {
+	if o != nil && !IsNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *PcfForPduSessionInfo) SetPcfIpEndPoints(v []IpEndPoint) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PcfForPduSessionInfo) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr.Get()) {
+	if o == nil || IsNil(o.Ipv4Addr.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,6 +203,7 @@ func (o *PcfForPduSessionInfo) HasIpv4Addr() bool {
 func (o *PcfForPduSessionInfo) SetIpv4Addr(v string) {
 	o.Ipv4Addr.Set(&v)
 }
+
 // SetIpv4AddrNil sets the value for Ipv4Addr to be an explicit nil
 func (o *PcfForPduSessionInfo) SetIpv4AddrNil() {
 	o.Ipv4Addr.Set(nil)
@@ -215,7 +216,7 @@ func (o *PcfForPduSessionInfo) UnsetIpv4Addr() {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetIpDomain() string {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -225,7 +226,7 @@ func (o *PcfForPduSessionInfo) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetIpDomainOk() (*string, bool) {
-	if o == nil || isNil(o.IpDomain) {
+	if o == nil || IsNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -233,7 +234,7 @@ func (o *PcfForPduSessionInfo) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasIpDomain() bool {
-	if o != nil && !isNil(o.IpDomain) {
+	if o != nil && !IsNil(o.IpDomain) {
 		return true
 	}
 
@@ -247,7 +248,7 @@ func (o *PcfForPduSessionInfo) SetIpDomain(v string) {
 
 // GetIpv6Prefixes returns the Ipv6Prefixes field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetIpv6Prefixes() []Ipv6Prefix {
-	if o == nil || isNil(o.Ipv6Prefixes) {
+	if o == nil || IsNil(o.Ipv6Prefixes) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -257,7 +258,7 @@ func (o *PcfForPduSessionInfo) GetIpv6Prefixes() []Ipv6Prefix {
 // GetIpv6PrefixesOk returns a tuple with the Ipv6Prefixes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
-	if o == nil || isNil(o.Ipv6Prefixes) {
+	if o == nil || IsNil(o.Ipv6Prefixes) {
 		return nil, false
 	}
 	return o.Ipv6Prefixes, true
@@ -265,7 +266,7 @@ func (o *PcfForPduSessionInfo) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
 
 // HasIpv6Prefixes returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasIpv6Prefixes() bool {
-	if o != nil && !isNil(o.Ipv6Prefixes) {
+	if o != nil && !IsNil(o.Ipv6Prefixes) {
 		return true
 	}
 
@@ -279,7 +280,7 @@ func (o *PcfForPduSessionInfo) SetIpv6Prefixes(v []Ipv6Prefix) {
 
 // GetMacAddrs returns the MacAddrs field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetMacAddrs() []string {
-	if o == nil || isNil(o.MacAddrs) {
+	if o == nil || IsNil(o.MacAddrs) {
 		var ret []string
 		return ret
 	}
@@ -289,7 +290,7 @@ func (o *PcfForPduSessionInfo) GetMacAddrs() []string {
 // GetMacAddrsOk returns a tuple with the MacAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetMacAddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.MacAddrs) {
+	if o == nil || IsNil(o.MacAddrs) {
 		return nil, false
 	}
 	return o.MacAddrs, true
@@ -297,7 +298,7 @@ func (o *PcfForPduSessionInfo) GetMacAddrsOk() ([]string, bool) {
 
 // HasMacAddrs returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasMacAddrs() bool {
-	if o != nil && !isNil(o.MacAddrs) {
+	if o != nil && !IsNil(o.MacAddrs) {
 		return true
 	}
 
@@ -311,7 +312,7 @@ func (o *PcfForPduSessionInfo) SetMacAddrs(v []string) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -321,7 +322,7 @@ func (o *PcfForPduSessionInfo) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -329,7 +330,7 @@ func (o *PcfForPduSessionInfo) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -343,7 +344,7 @@ func (o *PcfForPduSessionInfo) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfSetId() string {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -353,7 +354,7 @@ func (o *PcfForPduSessionInfo) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfSetId) {
+	if o == nil || IsNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -361,7 +362,7 @@ func (o *PcfForPduSessionInfo) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfSetId() bool {
-	if o != nil && !isNil(o.PcfSetId) {
+	if o != nil && !IsNil(o.PcfSetId) {
 		return true
 	}
 
@@ -375,7 +376,7 @@ func (o *PcfForPduSessionInfo) SetPcfSetId(v string) {
 
 // GetBindLevel returns the BindLevel field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetBindLevel() BindingLevel {
-	if o == nil || isNil(o.BindLevel) {
+	if o == nil || IsNil(o.BindLevel) {
 		var ret BindingLevel
 		return ret
 	}
@@ -385,7 +386,7 @@ func (o *PcfForPduSessionInfo) GetBindLevel() BindingLevel {
 // GetBindLevelOk returns a tuple with the BindLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetBindLevelOk() (*BindingLevel, bool) {
-	if o == nil || isNil(o.BindLevel) {
+	if o == nil || IsNil(o.BindLevel) {
 		return nil, false
 	}
 	return o.BindLevel, true
@@ -393,7 +394,7 @@ func (o *PcfForPduSessionInfo) GetBindLevelOk() (*BindingLevel, bool) {
 
 // HasBindLevel returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasBindLevel() bool {
-	if o != nil && !isNil(o.BindLevel) {
+	if o != nil && !IsNil(o.BindLevel) {
 		return true
 	}
 
@@ -406,7 +407,7 @@ func (o *PcfForPduSessionInfo) SetBindLevel(v BindingLevel) {
 }
 
 func (o PcfForPduSessionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -417,31 +418,31 @@ func (o PcfForPduSessionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.PcfFqdn) {
+	if !IsNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !isNil(o.PcfIpEndPoints) {
+	if !IsNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
 	if o.Ipv4Addr.IsSet() {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr.Get()
 	}
-	if !isNil(o.IpDomain) {
+	if !IsNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !isNil(o.Ipv6Prefixes) {
+	if !IsNil(o.Ipv6Prefixes) {
 		toSerialize["ipv6Prefixes"] = o.Ipv6Prefixes
 	}
-	if !isNil(o.MacAddrs) {
+	if !IsNil(o.MacAddrs) {
 		toSerialize["macAddrs"] = o.MacAddrs
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.PcfSetId) {
+	if !IsNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !isNil(o.BindLevel) {
+	if !IsNil(o.BindLevel) {
 		toSerialize["bindLevel"] = o.BindLevel
 	}
 	return toSerialize, nil
@@ -482,5 +483,3 @@ func (v *NullablePcfForPduSessionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

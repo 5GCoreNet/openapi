@@ -20,8 +20,8 @@ var _ MappedNullable = &RegistrationInfo{}
 // RegistrationInfo struct for RegistrationInfo
 type RegistrationInfo struct {
 	RegistrationExpiry *string `json:"registrationExpiry,omitempty"`
-	RegistrationID *string `json:"registrationID,omitempty"`
-	SecCredential *string `json:"secCredential,omitempty"`
+	RegistrationID     *string `json:"registrationID,omitempty"`
+	SecCredential      *string `json:"secCredential,omitempty"`
 }
 
 // NewRegistrationInfo instantiates a new RegistrationInfo object
@@ -43,7 +43,7 @@ func NewRegistrationInfoWithDefaults() *RegistrationInfo {
 
 // GetRegistrationExpiry returns the RegistrationExpiry field value if set, zero value otherwise.
 func (o *RegistrationInfo) GetRegistrationExpiry() string {
-	if o == nil || isNil(o.RegistrationExpiry) {
+	if o == nil || IsNil(o.RegistrationExpiry) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RegistrationInfo) GetRegistrationExpiry() string {
 // GetRegistrationExpiryOk returns a tuple with the RegistrationExpiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInfo) GetRegistrationExpiryOk() (*string, bool) {
-	if o == nil || isNil(o.RegistrationExpiry) {
+	if o == nil || IsNil(o.RegistrationExpiry) {
 		return nil, false
 	}
 	return o.RegistrationExpiry, true
@@ -61,7 +61,7 @@ func (o *RegistrationInfo) GetRegistrationExpiryOk() (*string, bool) {
 
 // HasRegistrationExpiry returns a boolean if a field has been set.
 func (o *RegistrationInfo) HasRegistrationExpiry() bool {
-	if o != nil && !isNil(o.RegistrationExpiry) {
+	if o != nil && !IsNil(o.RegistrationExpiry) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RegistrationInfo) SetRegistrationExpiry(v string) {
 
 // GetRegistrationID returns the RegistrationID field value if set, zero value otherwise.
 func (o *RegistrationInfo) GetRegistrationID() string {
-	if o == nil || isNil(o.RegistrationID) {
+	if o == nil || IsNil(o.RegistrationID) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RegistrationInfo) GetRegistrationID() string {
 // GetRegistrationIDOk returns a tuple with the RegistrationID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInfo) GetRegistrationIDOk() (*string, bool) {
-	if o == nil || isNil(o.RegistrationID) {
+	if o == nil || IsNil(o.RegistrationID) {
 		return nil, false
 	}
 	return o.RegistrationID, true
@@ -93,7 +93,7 @@ func (o *RegistrationInfo) GetRegistrationIDOk() (*string, bool) {
 
 // HasRegistrationID returns a boolean if a field has been set.
 func (o *RegistrationInfo) HasRegistrationID() bool {
-	if o != nil && !isNil(o.RegistrationID) {
+	if o != nil && !IsNil(o.RegistrationID) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RegistrationInfo) SetRegistrationID(v string) {
 
 // GetSecCredential returns the SecCredential field value if set, zero value otherwise.
 func (o *RegistrationInfo) GetSecCredential() string {
-	if o == nil || isNil(o.SecCredential) {
+	if o == nil || IsNil(o.SecCredential) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RegistrationInfo) GetSecCredential() string {
 // GetSecCredentialOk returns a tuple with the SecCredential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInfo) GetSecCredentialOk() (*string, bool) {
-	if o == nil || isNil(o.SecCredential) {
+	if o == nil || IsNil(o.SecCredential) {
 		return nil, false
 	}
 	return o.SecCredential, true
@@ -125,7 +125,7 @@ func (o *RegistrationInfo) GetSecCredentialOk() (*string, bool) {
 
 // HasSecCredential returns a boolean if a field has been set.
 func (o *RegistrationInfo) HasSecCredential() bool {
-	if o != nil && !isNil(o.SecCredential) {
+	if o != nil && !IsNil(o.SecCredential) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *RegistrationInfo) SetSecCredential(v string) {
 }
 
 func (o RegistrationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o RegistrationInfo) MarshalJSON() ([]byte, error) {
 
 func (o RegistrationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RegistrationExpiry) {
+	if !IsNil(o.RegistrationExpiry) {
 		toSerialize["registrationExpiry"] = o.RegistrationExpiry
 	}
-	if !isNil(o.RegistrationID) {
+	if !IsNil(o.RegistrationID) {
 		toSerialize["registrationID"] = o.RegistrationID
 	}
-	if !isNil(o.SecCredential) {
+	if !IsNil(o.SecCredential) {
 		toSerialize["secCredential"] = o.SecCredential
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableRegistrationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

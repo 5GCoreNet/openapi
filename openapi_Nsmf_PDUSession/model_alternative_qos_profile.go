@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &AlternativeQosProfile{}
 // AlternativeQosProfile Alternative QoS Profile
 type AlternativeQosProfile struct {
 	Index int32 `json:"index"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbrDl *string `json:"guaFbrDl,omitempty"`
-	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\". 
+	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	GuaFbrUl *string `json:"guaFbrUl,omitempty"`
-	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds. 
+	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	PacketDelayBudget *int32 `json:"packetDelayBudget,omitempty"`
-	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit. 
+	// String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a \"scalar x 10-k\" where the scalar and the exponent k are each encoded as one decimal digit.
 	PacketErrRate *string `json:"packetErrRate,omitempty"`
 }
 
@@ -74,7 +74,7 @@ func (o *AlternativeQosProfile) SetIndex(v int32) {
 
 // GetGuaFbrDl returns the GuaFbrDl field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetGuaFbrDl() string {
-	if o == nil || isNil(o.GuaFbrDl) {
+	if o == nil || IsNil(o.GuaFbrDl) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AlternativeQosProfile) GetGuaFbrDl() string {
 // GetGuaFbrDlOk returns a tuple with the GuaFbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetGuaFbrDlOk() (*string, bool) {
-	if o == nil || isNil(o.GuaFbrDl) {
+	if o == nil || IsNil(o.GuaFbrDl) {
 		return nil, false
 	}
 	return o.GuaFbrDl, true
@@ -92,7 +92,7 @@ func (o *AlternativeQosProfile) GetGuaFbrDlOk() (*string, bool) {
 
 // HasGuaFbrDl returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasGuaFbrDl() bool {
-	if o != nil && !isNil(o.GuaFbrDl) {
+	if o != nil && !IsNil(o.GuaFbrDl) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AlternativeQosProfile) SetGuaFbrDl(v string) {
 
 // GetGuaFbrUl returns the GuaFbrUl field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetGuaFbrUl() string {
-	if o == nil || isNil(o.GuaFbrUl) {
+	if o == nil || IsNil(o.GuaFbrUl) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *AlternativeQosProfile) GetGuaFbrUl() string {
 // GetGuaFbrUlOk returns a tuple with the GuaFbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetGuaFbrUlOk() (*string, bool) {
-	if o == nil || isNil(o.GuaFbrUl) {
+	if o == nil || IsNil(o.GuaFbrUl) {
 		return nil, false
 	}
 	return o.GuaFbrUl, true
@@ -124,7 +124,7 @@ func (o *AlternativeQosProfile) GetGuaFbrUlOk() (*string, bool) {
 
 // HasGuaFbrUl returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasGuaFbrUl() bool {
-	if o != nil && !isNil(o.GuaFbrUl) {
+	if o != nil && !IsNil(o.GuaFbrUl) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AlternativeQosProfile) SetGuaFbrUl(v string) {
 
 // GetPacketDelayBudget returns the PacketDelayBudget field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetPacketDelayBudget() int32 {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		var ret int32
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *AlternativeQosProfile) GetPacketDelayBudget() int32 {
 // GetPacketDelayBudgetOk returns a tuple with the PacketDelayBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetPacketDelayBudgetOk() (*int32, bool) {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		return nil, false
 	}
 	return o.PacketDelayBudget, true
@@ -156,7 +156,7 @@ func (o *AlternativeQosProfile) GetPacketDelayBudgetOk() (*int32, bool) {
 
 // HasPacketDelayBudget returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasPacketDelayBudget() bool {
-	if o != nil && !isNil(o.PacketDelayBudget) {
+	if o != nil && !IsNil(o.PacketDelayBudget) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *AlternativeQosProfile) SetPacketDelayBudget(v int32) {
 
 // GetPacketErrRate returns the PacketErrRate field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetPacketErrRate() string {
-	if o == nil || isNil(o.PacketErrRate) {
+	if o == nil || IsNil(o.PacketErrRate) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *AlternativeQosProfile) GetPacketErrRate() string {
 // GetPacketErrRateOk returns a tuple with the PacketErrRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetPacketErrRateOk() (*string, bool) {
-	if o == nil || isNil(o.PacketErrRate) {
+	if o == nil || IsNil(o.PacketErrRate) {
 		return nil, false
 	}
 	return o.PacketErrRate, true
@@ -188,7 +188,7 @@ func (o *AlternativeQosProfile) GetPacketErrRateOk() (*string, bool) {
 
 // HasPacketErrRate returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasPacketErrRate() bool {
-	if o != nil && !isNil(o.PacketErrRate) {
+	if o != nil && !IsNil(o.PacketErrRate) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *AlternativeQosProfile) SetPacketErrRate(v string) {
 }
 
 func (o AlternativeQosProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -211,16 +211,16 @@ func (o AlternativeQosProfile) MarshalJSON() ([]byte, error) {
 func (o AlternativeQosProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["index"] = o.Index
-	if !isNil(o.GuaFbrDl) {
+	if !IsNil(o.GuaFbrDl) {
 		toSerialize["guaFbrDl"] = o.GuaFbrDl
 	}
-	if !isNil(o.GuaFbrUl) {
+	if !IsNil(o.GuaFbrUl) {
 		toSerialize["guaFbrUl"] = o.GuaFbrUl
 	}
-	if !isNil(o.PacketDelayBudget) {
+	if !IsNil(o.PacketDelayBudget) {
 		toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	}
-	if !isNil(o.PacketErrRate) {
+	if !IsNil(o.PacketErrRate) {
 		toSerialize["packetErrRate"] = o.PacketErrRate
 	}
 	return toSerialize, nil
@@ -261,5 +261,3 @@ func (v *NullableAlternativeQosProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

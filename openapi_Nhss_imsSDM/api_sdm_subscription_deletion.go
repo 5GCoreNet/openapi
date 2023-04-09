@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,20 +13,19 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SDMSubscriptionDeletionApiService SDMSubscriptionDeletionApi service
 type SDMSubscriptionDeletionApiService service
 
 type ApiImsSdmUnsubscribeRequest struct {
-	ctx context.Context
-	ApiService *SDMSubscriptionDeletionApiService
-	imsUeId string
+	ctx            context.Context
+	ApiService     *SDMSubscriptionDeletionApiService
+	imsUeId        string
 	subscriptionId string
 }
 
@@ -37,16 +36,16 @@ func (r ApiImsSdmUnsubscribeRequest) Execute() (*http.Response, error) {
 /*
 ImsSdmUnsubscribe unsubscribe from notifications
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param imsUeId IMS Public Identity
- @param subscriptionId Id of the Subscription
- @return ApiImsSdmUnsubscribeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param imsUeId IMS Public Identity
+	@param subscriptionId Id of the Subscription
+	@return ApiImsSdmUnsubscribeRequest
 */
 func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribe(ctx context.Context, imsUeId string, subscriptionId string) ApiImsSdmUnsubscribeRequest {
 	return ApiImsSdmUnsubscribeRequest{
-		ApiService: a,
-		ctx: ctx,
-		imsUeId: imsUeId,
+		ApiService:     a,
+		ctx:            ctx,
+		imsUeId:        imsUeId,
 		subscriptionId: subscriptionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribe(ctx context.Contex
 // Execute executes the request
 func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdmUnsubscribeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDMSubscriptionDeletionApiService.ImsSdmUnsubscribe")
@@ -99,9 +98,9 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,8 +117,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -129,8 +128,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -140,8 +139,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -151,8 +150,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -162,8 +161,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -173,8 +172,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -184,8 +183,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -195,8 +194,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -206,8 +205,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -217,8 +216,8 @@ func (a *SDMSubscriptionDeletionApiService) ImsSdmUnsubscribeExecute(r ApiImsSdm
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

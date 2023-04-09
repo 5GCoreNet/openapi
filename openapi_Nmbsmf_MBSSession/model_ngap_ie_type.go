@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -17,28 +17,14 @@ import (
 
 // NgapIeType NGAP Information Element Type
 type NgapIeType struct {
-	NgapIeTypeAnyOf *NgapIeTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NgapIeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NgapIeTypeAnyOf
-	err = json.Unmarshal(data, &dst.NgapIeTypeAnyOf);
-	if err == nil {
-		jsonNgapIeTypeAnyOf, _ := json.Marshal(dst.NgapIeTypeAnyOf)
-		if string(jsonNgapIeTypeAnyOf) == "{}" { // empty struct
-			dst.NgapIeTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.NgapIeTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.NgapIeTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NgapIeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NgapIeType) MarshalJSON() ([]byte, error) {
-	if src.NgapIeTypeAnyOf != nil {
-		return json.Marshal(&src.NgapIeTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNgapIeType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

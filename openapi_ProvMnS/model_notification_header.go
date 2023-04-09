@@ -20,11 +20,11 @@ var _ MappedNullable = &NotificationHeader{}
 
 // NotificationHeader struct for NotificationHeader
 type NotificationHeader struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
+	Href             string           `json:"href"`
+	NotificationId   int32            `json:"notificationId"`
 	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
+	EventTime        time.Time        `json:"eventTime"`
+	SystemDN         string           `json:"systemDN"`
 }
 
 // NewNotificationHeader instantiates a new NotificationHeader object
@@ -170,7 +170,7 @@ func (o *NotificationHeader) SetSystemDN(v string) {
 }
 
 func (o NotificationHeader) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -222,5 +222,3 @@ func (v *NullableNotificationHeader) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

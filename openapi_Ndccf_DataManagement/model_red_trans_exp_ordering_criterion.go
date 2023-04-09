@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// RedTransExpOrderingCriterion Possible values are: - TIME_SLOT_START: Indicates the order of time slot start. - RED_TRANS_EXP: Indicates the order of Redundant Transmission Experience. 
+// RedTransExpOrderingCriterion Possible values are: - TIME_SLOT_START: Indicates the order of time slot start. - RED_TRANS_EXP: Indicates the order of Redundant Transmission Experience.
 type RedTransExpOrderingCriterion struct {
-	RedTransExpOrderingCriterionAnyOf *RedTransExpOrderingCriterionAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RedTransExpOrderingCriterion) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RedTransExpOrderingCriterionAnyOf
-	err = json.Unmarshal(data, &dst.RedTransExpOrderingCriterionAnyOf);
-	if err == nil {
-		jsonRedTransExpOrderingCriterionAnyOf, _ := json.Marshal(dst.RedTransExpOrderingCriterionAnyOf)
-		if string(jsonRedTransExpOrderingCriterionAnyOf) == "{}" { // empty struct
-			dst.RedTransExpOrderingCriterionAnyOf = nil
-		} else {
-			return nil // data stored in dst.RedTransExpOrderingCriterionAnyOf, return on the first match
-		}
-	} else {
-		dst.RedTransExpOrderingCriterionAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *RedTransExpOrderingCriterion) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RedTransExpOrderingCriterion) MarshalJSON() ([]byte, error) {
-	if src.RedTransExpOrderingCriterionAnyOf != nil {
-		return json.Marshal(&src.RedTransExpOrderingCriterionAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableRedTransExpOrderingCriterion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

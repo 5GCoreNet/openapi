@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &UpfInformation{}
 
 // UpfInformation Represents the ID/address/FQDN of the UPF.
 type UpfInformation struct {
-	UpfId *string `json:"upfId,omitempty"`
+	UpfId   *string   `json:"upfId,omitempty"`
 	UpfAddr *AddrFqdn `json:"upfAddr,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewUpfInformationWithDefaults() *UpfInformation {
 
 // GetUpfId returns the UpfId field value if set, zero value otherwise.
 func (o *UpfInformation) GetUpfId() string {
-	if o == nil || isNil(o.UpfId) {
+	if o == nil || IsNil(o.UpfId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UpfInformation) GetUpfId() string {
 // GetUpfIdOk returns a tuple with the UpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInformation) GetUpfIdOk() (*string, bool) {
-	if o == nil || isNil(o.UpfId) {
+	if o == nil || IsNil(o.UpfId) {
 		return nil, false
 	}
 	return o.UpfId, true
@@ -60,7 +60,7 @@ func (o *UpfInformation) GetUpfIdOk() (*string, bool) {
 
 // HasUpfId returns a boolean if a field has been set.
 func (o *UpfInformation) HasUpfId() bool {
-	if o != nil && !isNil(o.UpfId) {
+	if o != nil && !IsNil(o.UpfId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UpfInformation) SetUpfId(v string) {
 
 // GetUpfAddr returns the UpfAddr field value if set, zero value otherwise.
 func (o *UpfInformation) GetUpfAddr() AddrFqdn {
-	if o == nil || isNil(o.UpfAddr) {
+	if o == nil || IsNil(o.UpfAddr) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UpfInformation) GetUpfAddr() AddrFqdn {
 // GetUpfAddrOk returns a tuple with the UpfAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInformation) GetUpfAddrOk() (*AddrFqdn, bool) {
-	if o == nil || isNil(o.UpfAddr) {
+	if o == nil || IsNil(o.UpfAddr) {
 		return nil, false
 	}
 	return o.UpfAddr, true
@@ -92,7 +92,7 @@ func (o *UpfInformation) GetUpfAddrOk() (*AddrFqdn, bool) {
 
 // HasUpfAddr returns a boolean if a field has been set.
 func (o *UpfInformation) HasUpfAddr() bool {
-	if o != nil && !isNil(o.UpfAddr) {
+	if o != nil && !IsNil(o.UpfAddr) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UpfInformation) SetUpfAddr(v AddrFqdn) {
 }
 
 func (o UpfInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o UpfInformation) MarshalJSON() ([]byte, error) {
 
 func (o UpfInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.UpfId) {
+	if !IsNil(o.UpfId) {
 		toSerialize["upfId"] = o.UpfId
 	}
-	if !isNil(o.UpfAddr) {
+	if !IsNil(o.UpfAddr) {
 		toSerialize["upfAddr"] = o.UpfAddr
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableUpfInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

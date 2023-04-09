@@ -19,18 +19,18 @@ var _ MappedNullable = &UdmFunctionSingleAllOfAttributesAllOf{}
 
 // UdmFunctionSingleAllOfAttributesAllOf struct for UdmFunctionSingleAllOfAttributesAllOf
 type UdmFunctionSingleAllOfAttributesAllOf struct {
-	PLMNInfoList []PlmnInfo `json:"pLMNInfoList,omitempty"`
-	SBIFqdn *string `json:"sBIFqdn,omitempty"`
-	ManagedNFProfile *ManagedNFProfile `json:"managedNFProfile,omitempty"`
-	CommModelList []CommModel `json:"commModelList,omitempty"`
-	ECSAddrConfigInfo []string `json:"eCSAddrConfigInfo,omitempty"`
-	GroupId *string `json:"groupId,omitempty"`
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
-	GpsiRanges []IdentityRange `json:"gpsiRanges,omitempty"`
-	ExternalGroupIdentifiersRanges []IdentityRange `json:"externalGroupIdentifiersRanges,omitempty"`
-	RoutingIndicators []string `json:"routingIndicators,omitempty"`
+	PLMNInfoList                   []PlmnInfo             `json:"pLMNInfoList,omitempty"`
+	SBIFqdn                        *string                `json:"sBIFqdn,omitempty"`
+	ManagedNFProfile               *ManagedNFProfile      `json:"managedNFProfile,omitempty"`
+	CommModelList                  []CommModel            `json:"commModelList,omitempty"`
+	ECSAddrConfigInfo              []string               `json:"eCSAddrConfigInfo,omitempty"`
+	GroupId                        *string                `json:"groupId,omitempty"`
+	SupiRanges                     []SupiRange            `json:"supiRanges,omitempty"`
+	GpsiRanges                     []IdentityRange        `json:"gpsiRanges,omitempty"`
+	ExternalGroupIdentifiersRanges []IdentityRange        `json:"externalGroupIdentifiersRanges,omitempty"`
+	RoutingIndicators              []string               `json:"routingIndicators,omitempty"`
 	InternalGroupIdentifiersRanges []InternalGroupIdRange `json:"internalGroupIdentifiersRanges,omitempty"`
-	SuciInfos []SuciInfo `json:"suciInfos,omitempty"`
+	SuciInfos                      []SuciInfo             `json:"suciInfos,omitempty"`
 }
 
 // NewUdmFunctionSingleAllOfAttributesAllOf instantiates a new UdmFunctionSingleAllOfAttributesAllOf object
@@ -435,7 +435,7 @@ func (o *UdmFunctionSingleAllOfAttributesAllOf) SetSuciInfos(v []SuciInfo) {
 }
 
 func (o UdmFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -518,5 +518,3 @@ func (v *NullableUdmFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type Insert string
 // List of Insert
 const (
 	BEFORE Insert = "before"
-	AFTER Insert = "after"
+	AFTER  Insert = "after"
 )
 
 // All allowed values of Insert enum
@@ -108,4 +108,3 @@ func (v *NullableInsert) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

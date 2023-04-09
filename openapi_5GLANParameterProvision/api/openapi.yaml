@@ -899,7 +899,10 @@ components:
       type: object
     AaaUsage:
       anyOf:
-      - $ref: '#/components/schemas/AaaUsage_anyOf'
+      - enum:
+        - AUTH
+        - IP_ALLOC
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1032,7 +1035,13 @@ components:
       type: object
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -1057,21 +1066,6 @@ components:
         String providing an application identifier with the OpenAPI 'nullable: true' property.
       nullable: true
       type: string
-    AaaUsage_anyOf:
-      enum:
-      - AUTH
-      - IP_ALLOC
-      type: string
-      example: null
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

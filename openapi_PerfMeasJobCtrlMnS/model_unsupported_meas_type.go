@@ -19,9 +19,9 @@ var _ MappedNullable = &UnsupportedMeasType{}
 
 // UnsupportedMeasType struct for UnsupportedMeasType
 type UnsupportedMeasType struct {
-	IOCInstance *string `json:"iOCInstance,omitempty"`
+	IOCInstance         *string `json:"iOCInstance,omitempty"`
 	MeasurementTypeName *string `json:"measurementTypeName,omitempty"`
-	Reason *string `json:"reason,omitempty"`
+	Reason              *string `json:"reason,omitempty"`
 }
 
 // NewUnsupportedMeasType instantiates a new UnsupportedMeasType object
@@ -43,7 +43,7 @@ func NewUnsupportedMeasTypeWithDefaults() *UnsupportedMeasType {
 
 // GetIOCInstance returns the IOCInstance field value if set, zero value otherwise.
 func (o *UnsupportedMeasType) GetIOCInstance() string {
-	if o == nil || isNil(o.IOCInstance) {
+	if o == nil || IsNil(o.IOCInstance) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UnsupportedMeasType) GetIOCInstance() string {
 // GetIOCInstanceOk returns a tuple with the IOCInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnsupportedMeasType) GetIOCInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.IOCInstance) {
+	if o == nil || IsNil(o.IOCInstance) {
 		return nil, false
 	}
 	return o.IOCInstance, true
@@ -61,7 +61,7 @@ func (o *UnsupportedMeasType) GetIOCInstanceOk() (*string, bool) {
 
 // HasIOCInstance returns a boolean if a field has been set.
 func (o *UnsupportedMeasType) HasIOCInstance() bool {
-	if o != nil && !isNil(o.IOCInstance) {
+	if o != nil && !IsNil(o.IOCInstance) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UnsupportedMeasType) SetIOCInstance(v string) {
 
 // GetMeasurementTypeName returns the MeasurementTypeName field value if set, zero value otherwise.
 func (o *UnsupportedMeasType) GetMeasurementTypeName() string {
-	if o == nil || isNil(o.MeasurementTypeName) {
+	if o == nil || IsNil(o.MeasurementTypeName) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UnsupportedMeasType) GetMeasurementTypeName() string {
 // GetMeasurementTypeNameOk returns a tuple with the MeasurementTypeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnsupportedMeasType) GetMeasurementTypeNameOk() (*string, bool) {
-	if o == nil || isNil(o.MeasurementTypeName) {
+	if o == nil || IsNil(o.MeasurementTypeName) {
 		return nil, false
 	}
 	return o.MeasurementTypeName, true
@@ -93,7 +93,7 @@ func (o *UnsupportedMeasType) GetMeasurementTypeNameOk() (*string, bool) {
 
 // HasMeasurementTypeName returns a boolean if a field has been set.
 func (o *UnsupportedMeasType) HasMeasurementTypeName() bool {
-	if o != nil && !isNil(o.MeasurementTypeName) {
+	if o != nil && !IsNil(o.MeasurementTypeName) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *UnsupportedMeasType) SetMeasurementTypeName(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *UnsupportedMeasType) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *UnsupportedMeasType) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnsupportedMeasType) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -125,7 +125,7 @@ func (o *UnsupportedMeasType) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *UnsupportedMeasType) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *UnsupportedMeasType) SetReason(v string) {
 }
 
 func (o UnsupportedMeasType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o UnsupportedMeasType) MarshalJSON() ([]byte, error) {
 
 func (o UnsupportedMeasType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.IOCInstance) {
+	if !IsNil(o.IOCInstance) {
 		toSerialize["iOCInstance"] = o.IOCInstance
 	}
-	if !isNil(o.MeasurementTypeName) {
+	if !IsNil(o.MeasurementTypeName) {
 		toSerialize["measurementTypeName"] = o.MeasurementTypeName
 	}
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableUnsupportedMeasType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &FECConfig{}
 // FECConfig Represents FEC configuration information.
 type FECConfig struct {
 	// String providing an URI formatted according to RFC 3986.
-	FecScheme string `json:"fecScheme"`
-	FecOverHead int32 `json:"fecOverHead"`
+	FecScheme        string         `json:"fecScheme"`
+	FecOverHead      int32          `json:"fecOverHead"`
 	AdditionalParams []AddFecParams `json:"additionalParams,omitempty"`
 }
 
@@ -94,7 +94,7 @@ func (o *FECConfig) SetFecOverHead(v int32) {
 
 // GetAdditionalParams returns the AdditionalParams field value if set, zero value otherwise.
 func (o *FECConfig) GetAdditionalParams() []AddFecParams {
-	if o == nil || isNil(o.AdditionalParams) {
+	if o == nil || IsNil(o.AdditionalParams) {
 		var ret []AddFecParams
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *FECConfig) GetAdditionalParams() []AddFecParams {
 // GetAdditionalParamsOk returns a tuple with the AdditionalParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FECConfig) GetAdditionalParamsOk() ([]AddFecParams, bool) {
-	if o == nil || isNil(o.AdditionalParams) {
+	if o == nil || IsNil(o.AdditionalParams) {
 		return nil, false
 	}
 	return o.AdditionalParams, true
@@ -112,7 +112,7 @@ func (o *FECConfig) GetAdditionalParamsOk() ([]AddFecParams, bool) {
 
 // HasAdditionalParams returns a boolean if a field has been set.
 func (o *FECConfig) HasAdditionalParams() bool {
-	if o != nil && !isNil(o.AdditionalParams) {
+	if o != nil && !IsNil(o.AdditionalParams) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *FECConfig) SetAdditionalParams(v []AddFecParams) {
 }
 
 func (o FECConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o FECConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["fecScheme"] = o.FecScheme
 	toSerialize["fecOverHead"] = o.FecOverHead
-	if !isNil(o.AdditionalParams) {
+	if !IsNil(o.AdditionalParams) {
 		toSerialize["additionalParams"] = o.AdditionalParams
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableFECConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

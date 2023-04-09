@@ -1,7 +1,7 @@
 /*
 Eees_EASDiscovery
 
-API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &EasDiscoveryNotification{}
 // EasDiscoveryNotification Notification of EAS discovery information.
 type EasDiscoveryNotification struct {
 	// Identifier of the individual service provisioning subscription for which the service provisioning notification is delivered.
-	SubId string `json:"subId"`
+	SubId     string          `json:"subId"`
 	EventType EASDiscEventIDs `json:"eventType"`
 	// List of EAS discovery information.
 	DiscoveredEas []DiscoveredEas `json:"discoveredEas"`
@@ -119,7 +119,7 @@ func (o *EasDiscoveryNotification) SetDiscoveredEas(v []DiscoveredEas) {
 }
 
 func (o EasDiscoveryNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,5 +169,3 @@ func (v *NullableEasDiscoveryNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

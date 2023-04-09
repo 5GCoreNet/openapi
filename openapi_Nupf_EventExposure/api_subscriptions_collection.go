@@ -1,7 +1,7 @@
 /*
 UPF Event Exposure Service
 
-UPF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UPF Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.1
 */
@@ -13,19 +13,18 @@ package openapi_Nupf_EventExposure
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // SubscriptionsCollectionApiService SubscriptionsCollectionApi service
 type SubscriptionsCollectionApiService service
 
 type ApiCreateIndividualSubcriptionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SubscriptionsCollectionApiService
-	body *interface{}
+	body       *interface{}
 }
 
 func (r ApiCreateIndividualSubcriptionRequest) Body(body interface{}) ApiCreateIndividualSubcriptionRequest {
@@ -40,22 +39,22 @@ func (r ApiCreateIndividualSubcriptionRequest) Execute() (*http.Response, error)
 /*
 CreateIndividualSubcription subscribe to notifications
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateIndividualSubcriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateIndividualSubcriptionRequest
 */
 func (a *SubscriptionsCollectionApiService) CreateIndividualSubcription(ctx context.Context) ApiCreateIndividualSubcriptionRequest {
 	return ApiCreateIndividualSubcriptionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SubscriptionsCollectionApiService) CreateIndividualSubcriptionExecute(r ApiCreateIndividualSubcriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionsCollectionApiService.CreateIndividualSubcription")
@@ -101,9 +100,9 @@ func (a *SubscriptionsCollectionApiService) CreateIndividualSubcriptionExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

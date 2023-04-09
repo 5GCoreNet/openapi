@@ -19,11 +19,11 @@ var _ MappedNullable = &EASFunctionSingleAllOfAttributesAllOf{}
 
 // EASFunctionSingleAllOfAttributesAllOf struct for EASFunctionSingleAllOfAttributesAllOf
 type EASFunctionSingleAllOfAttributesAllOf struct {
-	EASIdentifier *string `json:"eASIdentifier,omitempty"`
-	EESAddress []string `json:"eESAddress,omitempty"`
-	EASRequirementsRef *string `json:"eASRequirementsRef,omitempty"`
-	EASAddress []string `json:"eASAddress,omitempty"`
-	RegistrationInfo *RegistrationInfo `json:"registrationInfo,omitempty"`
+	EASIdentifier      *string           `json:"eASIdentifier,omitempty"`
+	EESAddress         []string          `json:"eESAddress,omitempty"`
+	EASRequirementsRef *string           `json:"eASRequirementsRef,omitempty"`
+	EASAddress         []string          `json:"eASAddress,omitempty"`
+	RegistrationInfo   *RegistrationInfo `json:"registrationInfo,omitempty"`
 }
 
 // NewEASFunctionSingleAllOfAttributesAllOf instantiates a new EASFunctionSingleAllOfAttributesAllOf object
@@ -204,7 +204,7 @@ func (o *EASFunctionSingleAllOfAttributesAllOf) SetRegistrationInfo(v Registrati
 }
 
 func (o EASFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -266,5 +266,3 @@ func (v *NullableEASFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

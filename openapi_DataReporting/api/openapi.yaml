@@ -623,7 +623,15 @@ components:
       type: object
     DataDomain:
       anyOf:
-      - $ref: '#/components/schemas/DataDomain_anyOf'
+      - enum:
+        - SERVICE_EXPERIENCE
+        - LOCATION
+        - COMMUNICATION
+        - PERFORMANCE
+        - APPLICATION_SPECIFIC
+        - MS_ACCESS_ACTIVITY
+        - PLANNED_TRIPS
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -650,7 +658,11 @@ components:
       type: object
     ReportingConditionType:
       anyOf:
-      - $ref: '#/components/schemas/ReportingConditionType_anyOf'
+      - enum:
+        - INTERVAL
+        - THRESHOLD
+        - EVENT
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -658,7 +670,10 @@ components:
         client to the Data Collection AF.
     ReportingEventTrigger:
       anyOf:
-      - $ref: '#/components/schemas/ReportingEventTrigger_anyOf'
+      - enum:
+        - LOCATION
+        - DESTINATION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -800,6 +815,7 @@ components:
       required:
       - timestamp
       type: object
+      x-parent: true
     PerFlowServiceExperienceInfo:
       properties:
         serviceExperience:
@@ -1042,9 +1058,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1224,7 +1251,10 @@ components:
       type: object
     AccuracyFulfilmentIndicator:
       anyOf:
-      - $ref: '#/components/schemas/AccuracyFulfilmentIndicator_anyOf'
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
       - type: string
       description: Indicates fulfilment of requested accuracy.
     AgeOfLocationEstimate:
@@ -1473,17 +1503,43 @@ components:
       type: object
     PositioningMethod:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMethod_anyOf'
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
       - type: string
       description: Indicates supported positioning methods.
     PositioningMode:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMode_anyOf'
+      - enum:
+        - UE_BASED
+        - UE_ASSISTED
+        - CONVENTIONAL
+        type: string
       - type: string
       description: Indicates supported modes used for positioning method.
     Usage:
       anyOf:
-      - $ref: '#/components/schemas/Usage_anyOf'
+      - enum:
+        - UNSUCCESS
+        - SUCCESS_RESULTS_NOT_USED
+        - SUCCESS_RESULTS_USED_TO_VERIFY_LOCATION
+        - SUCCESS_RESULTS_USED_TO_GENERATE_LOCATION
+        - SUCCESS_METHOD_NOT_DETERMINED
+        type: string
       - type: string
       description: Indicates usage made of the location measurement.
     GnssPositioningMethodAndUsage:
@@ -1503,7 +1559,16 @@ components:
       type: object
     GnssId:
       anyOf:
-      - $ref: '#/components/schemas/GnssId_anyOf'
+      - enum:
+        - GPS
+        - GALILEO
+        - SBAS
+        - MODERNIZED_GPS
+        - QZSS
+        - GLONASS
+        - BDS
+        - NAVIC
+        type: string
       - type: string
       description: Global Navigation Satellite System (GNSS) ID.
     BarometricPressure:
@@ -1627,7 +1692,11 @@ components:
       type: string
     CacheStatus:
       anyOf:
-      - $ref: '#/components/schemas/CacheStatus_anyOf'
+      - enum:
+        - HIT
+        - MISS
+        - EXPIRED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2005,17 +2074,6 @@ components:
       required:
       - default
       type: object
-    DataDomain_anyOf:
-      enum:
-      - SERVICE_EXPERIENCE
-      - LOCATION
-      - COMMUNICATION
-      - PERFORMANCE
-      - APPLICATION_SPECIFIC
-      - MS_ACCESS_ACTIVITY
-      - PLANNED_TRIPS
-      type: string
-      example: null
     ReportingCondition_threshold:
       anyOf:
       - $ref: '#/components/schemas/Double'
@@ -2026,19 +2084,6 @@ components:
       - $ref: '#/components/schemas/Uint32'
       - $ref: '#/components/schemas/Uint64'
       - $ref: '#/components/schemas/Uinteger'
-    ReportingConditionType_anyOf:
-      enum:
-      - INTERVAL
-      - THRESHOLD
-      - EVENT
-      type: string
-      example: null
-    ReportingEventTrigger_anyOf:
-      enum:
-      - LOCATION
-      - DESTINATION
-      type: string
-      example: null
     ServiceExperienceRecord_allOf:
       properties:
         serviceExperienceInfos:
@@ -2267,19 +2312,6 @@ components:
       - point
       type: object
       example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
-      example: null
     PointUncertaintyCircle_allOf:
       properties:
         point:
@@ -2447,66 +2479,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    AccuracyFulfilmentIndicator_anyOf:
-      enum:
-      - REQUESTED_ACCURACY_FULFILLED
-      - REQUESTED_ACCURACY_NOT_FULFILLED
-      type: string
-      example: null
-    PositioningMethod_anyOf:
-      enum:
-      - CELLID
-      - ECID
-      - OTDOA
-      - BAROMETRIC_PRESSURE
-      - WLAN
-      - BLUETOOTH
-      - MBS
-      - MOTION_SENSOR
-      - DL_TDOA
-      - DL_AOD
-      - MULTI-RTT
-      - NR_ECID
-      - UL_TDOA
-      - UL_AOA
-      - NETWORK_SPECIFIC
-      type: string
-      example: null
-    PositioningMode_anyOf:
-      enum:
-      - UE_BASED
-      - UE_ASSISTED
-      - CONVENTIONAL
-      type: string
-      example: null
-    Usage_anyOf:
-      enum:
-      - UNSUCCESS
-      - SUCCESS_RESULTS_NOT_USED
-      - SUCCESS_RESULTS_USED_TO_VERIFY_LOCATION
-      - SUCCESS_RESULTS_USED_TO_GENERATE_LOCATION
-      - SUCCESS_METHOD_NOT_DETERMINED
-      type: string
-      example: null
-    GnssId_anyOf:
-      enum:
-      - GPS
-      - GALILEO
-      - SBAS
-      - MODERNIZED_GPS
-      - QZSS
-      - GLONASS
-      - BDS
-      - NAVIC
-      type: string
-      example: null
-    CacheStatus_anyOf:
-      enum:
-      - HIT
-      - MISS
-      - EXPIRED
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

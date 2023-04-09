@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // AnnouncementPrivacyIndicator struct for AnnouncementPrivacyIndicator
 type AnnouncementPrivacyIndicator struct {
-	AnnouncementPrivacyIndicatorAnyOf *AnnouncementPrivacyIndicatorAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AnnouncementPrivacyIndicator) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AnnouncementPrivacyIndicatorAnyOf
-	err = json.Unmarshal(data, &dst.AnnouncementPrivacyIndicatorAnyOf);
-	if err == nil {
-		jsonAnnouncementPrivacyIndicatorAnyOf, _ := json.Marshal(dst.AnnouncementPrivacyIndicatorAnyOf)
-		if string(jsonAnnouncementPrivacyIndicatorAnyOf) == "{}" { // empty struct
-			dst.AnnouncementPrivacyIndicatorAnyOf = nil
-		} else {
-			return nil // data stored in dst.AnnouncementPrivacyIndicatorAnyOf, return on the first match
-		}
-	} else {
-		dst.AnnouncementPrivacyIndicatorAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AnnouncementPrivacyIndicator) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AnnouncementPrivacyIndicator) MarshalJSON() ([]byte, error) {
-	if src.AnnouncementPrivacyIndicatorAnyOf != nil {
-		return json.Marshal(&src.AnnouncementPrivacyIndicatorAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAnnouncementPrivacyIndicator) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

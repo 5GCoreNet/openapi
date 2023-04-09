@@ -1,7 +1,7 @@
 /*
 MSGG_L3GDelivery
 
-API for MSGG L3G Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MSGG L3G Message Delivery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ReportDeliveryStatus Possible values are: - REPT_DELY_SUCCESS: Indicates that the report delivery is successful. - REPT_DELY_FAILED: Indicates that the report delivery is failed. 
+// ReportDeliveryStatus Possible values are: - REPT_DELY_SUCCESS: Indicates that the report delivery is successful. - REPT_DELY_FAILED: Indicates that the report delivery is failed.
 type ReportDeliveryStatus struct {
-	ReportDeliveryStatusAnyOf *ReportDeliveryStatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportDeliveryStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReportDeliveryStatusAnyOf
-	err = json.Unmarshal(data, &dst.ReportDeliveryStatusAnyOf);
-	if err == nil {
-		jsonReportDeliveryStatusAnyOf, _ := json.Marshal(dst.ReportDeliveryStatusAnyOf)
-		if string(jsonReportDeliveryStatusAnyOf) == "{}" { // empty struct
-			dst.ReportDeliveryStatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.ReportDeliveryStatusAnyOf, return on the first match
-		}
-	} else {
-		dst.ReportDeliveryStatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ReportDeliveryStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportDeliveryStatus) MarshalJSON() ([]byte, error) {
-	if src.ReportDeliveryStatusAnyOf != nil {
-		return json.Marshal(&src.ReportDeliveryStatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableReportDeliveryStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

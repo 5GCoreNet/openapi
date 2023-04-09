@@ -1,7 +1,7 @@
 /*
 Nudm_SSAU
 
-Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Service Specific Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudm_SSAU
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // ServiceSpecificAuthorizationRequestApiService ServiceSpecificAuthorizationRequestApi service
 type ServiceSpecificAuthorizationRequestApiService service
 
 type ApiServiceSpecificAuthorizationRequest struct {
-	ctx context.Context
-	ApiService *ServiceSpecificAuthorizationRequestApiService
-	ueIdentity string
-	serviceType ServiceType
+	ctx                              context.Context
+	ApiService                       *ServiceSpecificAuthorizationRequestApiService
+	ueIdentity                       string
+	serviceType                      ServiceType
 	serviceSpecificAuthorizationInfo *ServiceSpecificAuthorizationInfo
 }
 
@@ -43,28 +42,29 @@ func (r ApiServiceSpecificAuthorizationRequest) Execute() (*ServiceSpecificAutho
 /*
 ServiceSpecificAuthorization Authorization for the Service specific parameters in the request.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueIdentity Represents the scope of the UE for which the Service Specific Parameters are authorized. Contains the GPSI of the user or the external group ID.
- @param serviceType Represents the specific service for which the Service Specific Parameters are authorized.
- @return ApiServiceSpecificAuthorizationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueIdentity Represents the scope of the UE for which the Service Specific Parameters are authorized. Contains the GPSI of the user or the external group ID.
+	@param serviceType Represents the specific service for which the Service Specific Parameters are authorized.
+	@return ApiServiceSpecificAuthorizationRequest
 */
 func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthorization(ctx context.Context, ueIdentity string, serviceType ServiceType) ApiServiceSpecificAuthorizationRequest {
 	return ApiServiceSpecificAuthorizationRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueIdentity: ueIdentity,
+		ApiService:  a,
+		ctx:         ctx,
+		ueIdentity:  ueIdentity,
 		serviceType: serviceType,
 	}
 }
 
 // Execute executes the request
-//  @return ServiceSpecificAuthorizationData
+//
+//	@return ServiceSpecificAuthorizationData
 func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthorizationExecute(r ApiServiceSpecificAuthorizationRequest) (*ServiceSpecificAuthorizationData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServiceSpecificAuthorizationData
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServiceSpecificAuthorizationData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSpecificAuthorizationRequestApiService.ServiceSpecificAuthorization")
@@ -112,9 +112,9 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -131,8 +131,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -142,8 +142,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -153,8 +153,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -164,8 +164,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -175,8 +175,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -186,8 +186,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -197,8 +197,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -208,8 +208,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -219,8 +219,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -230,8 +230,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -241,8 +241,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -252,8 +252,8 @@ func (a *ServiceSpecificAuthorizationRequestApiService) ServiceSpecificAuthoriza
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

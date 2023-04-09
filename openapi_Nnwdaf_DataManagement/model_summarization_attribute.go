@@ -1,7 +1,7 @@
 /*
 Nnwdaf_DataManagement
 
-Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_DataManagement API Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SummarizationAttribute Possible values are: - SPACING: Average and variance of the time interval separating two consecutive occurrences of the same event and parameter value, or periodicity for periodic reporting. - DURATION: Average and variance of the time for which the parameter value applies. - OCCURRENCES: Number of countable occurrences for the parameter. - AVG_VAR: Average and variance of the parameter. - FREQ_VAL: Most and least frequent values. - MIN_MAX: Maximum and minimum parameter values. 
+// SummarizationAttribute Possible values are: - SPACING: Average and variance of the time interval separating two consecutive occurrences of the same event and parameter value, or periodicity for periodic reporting. - DURATION: Average and variance of the time for which the parameter value applies. - OCCURRENCES: Number of countable occurrences for the parameter. - AVG_VAR: Average and variance of the parameter. - FREQ_VAL: Most and least frequent values. - MIN_MAX: Maximum and minimum parameter values.
 type SummarizationAttribute struct {
-	SummarizationAttributeAnyOf *SummarizationAttributeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SummarizationAttribute) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SummarizationAttributeAnyOf
-	err = json.Unmarshal(data, &dst.SummarizationAttributeAnyOf);
-	if err == nil {
-		jsonSummarizationAttributeAnyOf, _ := json.Marshal(dst.SummarizationAttributeAnyOf)
-		if string(jsonSummarizationAttributeAnyOf) == "{}" { // empty struct
-			dst.SummarizationAttributeAnyOf = nil
-		} else {
-			return nil // data stored in dst.SummarizationAttributeAnyOf, return on the first match
-		}
-	} else {
-		dst.SummarizationAttributeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SummarizationAttribute) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SummarizationAttribute) MarshalJSON() ([]byte, error) {
-	if src.SummarizationAttributeAnyOf != nil {
-		return json.Marshal(&src.SummarizationAttributeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSummarizationAttribute) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

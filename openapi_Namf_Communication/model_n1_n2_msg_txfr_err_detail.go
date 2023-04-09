@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &N1N2MsgTxfrErrDetail{}
 // N1N2MsgTxfrErrDetail N1/N2 Message Transfer Error Details
 type N1N2MsgTxfrErrDetail struct {
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	RetryAfter *int32 `json:"retryAfter,omitempty"`
-	HighestPrioArp *Arp `json:"highestPrioArp,omitempty"`
+	RetryAfter     *int32 `json:"retryAfter,omitempty"`
+	HighestPrioArp *Arp   `json:"highestPrioArp,omitempty"`
 	// indicating a time in seconds.
 	MaxWaitingTime *int32 `json:"maxWaitingTime,omitempty"`
 }
@@ -45,7 +45,7 @@ func NewN1N2MsgTxfrErrDetailWithDefaults() *N1N2MsgTxfrErrDetail {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrErrDetail) GetRetryAfter() int32 {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *N1N2MsgTxfrErrDetail) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrErrDetail) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || isNil(o.RetryAfter) {
+	if o == nil || IsNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -63,7 +63,7 @@ func (o *N1N2MsgTxfrErrDetail) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrErrDetail) HasRetryAfter() bool {
-	if o != nil && !isNil(o.RetryAfter) {
+	if o != nil && !IsNil(o.RetryAfter) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *N1N2MsgTxfrErrDetail) SetRetryAfter(v int32) {
 
 // GetHighestPrioArp returns the HighestPrioArp field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArp() Arp {
-	if o == nil || isNil(o.HighestPrioArp) {
+	if o == nil || IsNil(o.HighestPrioArp) {
 		var ret Arp
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArp() Arp {
 // GetHighestPrioArpOk returns a tuple with the HighestPrioArp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.HighestPrioArp) {
+	if o == nil || IsNil(o.HighestPrioArp) {
 		return nil, false
 	}
 	return o.HighestPrioArp, true
@@ -95,7 +95,7 @@ func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArpOk() (*Arp, bool) {
 
 // HasHighestPrioArp returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrErrDetail) HasHighestPrioArp() bool {
-	if o != nil && !isNil(o.HighestPrioArp) {
+	if o != nil && !IsNil(o.HighestPrioArp) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *N1N2MsgTxfrErrDetail) SetHighestPrioArp(v Arp) {
 
 // GetMaxWaitingTime returns the MaxWaitingTime field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTime() int32 {
-	if o == nil || isNil(o.MaxWaitingTime) {
+	if o == nil || IsNil(o.MaxWaitingTime) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTime() int32 {
 // GetMaxWaitingTimeOk returns a tuple with the MaxWaitingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxWaitingTime) {
+	if o == nil || IsNil(o.MaxWaitingTime) {
 		return nil, false
 	}
 	return o.MaxWaitingTime, true
@@ -127,7 +127,7 @@ func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTimeOk() (*int32, bool) {
 
 // HasMaxWaitingTime returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrErrDetail) HasMaxWaitingTime() bool {
-	if o != nil && !isNil(o.MaxWaitingTime) {
+	if o != nil && !IsNil(o.MaxWaitingTime) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *N1N2MsgTxfrErrDetail) SetMaxWaitingTime(v int32) {
 }
 
 func (o N1N2MsgTxfrErrDetail) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o N1N2MsgTxfrErrDetail) MarshalJSON() ([]byte, error) {
 
 func (o N1N2MsgTxfrErrDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RetryAfter) {
+	if !IsNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
-	if !isNil(o.HighestPrioArp) {
+	if !IsNil(o.HighestPrioArp) {
 		toSerialize["highestPrioArp"] = o.HighestPrioArp
 	}
-	if !isNil(o.MaxWaitingTime) {
+	if !IsNil(o.MaxWaitingTime) {
 		toSerialize["maxWaitingTime"] = o.MaxWaitingTime
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableN1N2MsgTxfrErrDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

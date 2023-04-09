@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Invoker_Management_API
 
-API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,9 +21,9 @@ var _ MappedNullable = &OnboardingInformation{}
 type OnboardingInformation struct {
 	// The API Invoker's public key
 	ApiInvokerPublicKey string `json:"apiInvokerPublicKey"`
-	// The API Invoker's generic client certificate, provided by the CAPIF core function. 
+	// The API Invoker's generic client certificate, provided by the CAPIF core function.
 	ApiInvokerCertificate *string `json:"apiInvokerCertificate,omitempty"`
-	// The API Invoker's onboarding secret, provided by the CAPIF core function. 
+	// The API Invoker's onboarding secret, provided by the CAPIF core function.
 	OnboardingSecret *string `json:"onboardingSecret,omitempty"`
 }
 
@@ -71,7 +71,7 @@ func (o *OnboardingInformation) SetApiInvokerPublicKey(v string) {
 
 // GetApiInvokerCertificate returns the ApiInvokerCertificate field value if set, zero value otherwise.
 func (o *OnboardingInformation) GetApiInvokerCertificate() string {
-	if o == nil || isNil(o.ApiInvokerCertificate) {
+	if o == nil || IsNil(o.ApiInvokerCertificate) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *OnboardingInformation) GetApiInvokerCertificate() string {
 // GetApiInvokerCertificateOk returns a tuple with the ApiInvokerCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OnboardingInformation) GetApiInvokerCertificateOk() (*string, bool) {
-	if o == nil || isNil(o.ApiInvokerCertificate) {
+	if o == nil || IsNil(o.ApiInvokerCertificate) {
 		return nil, false
 	}
 	return o.ApiInvokerCertificate, true
@@ -89,7 +89,7 @@ func (o *OnboardingInformation) GetApiInvokerCertificateOk() (*string, bool) {
 
 // HasApiInvokerCertificate returns a boolean if a field has been set.
 func (o *OnboardingInformation) HasApiInvokerCertificate() bool {
-	if o != nil && !isNil(o.ApiInvokerCertificate) {
+	if o != nil && !IsNil(o.ApiInvokerCertificate) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *OnboardingInformation) SetApiInvokerCertificate(v string) {
 
 // GetOnboardingSecret returns the OnboardingSecret field value if set, zero value otherwise.
 func (o *OnboardingInformation) GetOnboardingSecret() string {
-	if o == nil || isNil(o.OnboardingSecret) {
+	if o == nil || IsNil(o.OnboardingSecret) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *OnboardingInformation) GetOnboardingSecret() string {
 // GetOnboardingSecretOk returns a tuple with the OnboardingSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OnboardingInformation) GetOnboardingSecretOk() (*string, bool) {
-	if o == nil || isNil(o.OnboardingSecret) {
+	if o == nil || IsNil(o.OnboardingSecret) {
 		return nil, false
 	}
 	return o.OnboardingSecret, true
@@ -121,7 +121,7 @@ func (o *OnboardingInformation) GetOnboardingSecretOk() (*string, bool) {
 
 // HasOnboardingSecret returns a boolean if a field has been set.
 func (o *OnboardingInformation) HasOnboardingSecret() bool {
-	if o != nil && !isNil(o.OnboardingSecret) {
+	if o != nil && !IsNil(o.OnboardingSecret) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *OnboardingInformation) SetOnboardingSecret(v string) {
 }
 
 func (o OnboardingInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o OnboardingInformation) MarshalJSON() ([]byte, error) {
 func (o OnboardingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiInvokerPublicKey"] = o.ApiInvokerPublicKey
-	if !isNil(o.ApiInvokerCertificate) {
+	if !IsNil(o.ApiInvokerCertificate) {
 		toSerialize["apiInvokerCertificate"] = o.ApiInvokerCertificate
 	}
-	if !isNil(o.OnboardingSecret) {
+	if !IsNil(o.OnboardingSecret) {
 		toSerialize["onboardingSecret"] = o.OnboardingSecret
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableOnboardingInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

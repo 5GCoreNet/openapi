@@ -1,7 +1,7 @@
 /*
 Eees_EASDiscovery
 
-API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for EAS Discovery. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.1
 */
@@ -44,7 +44,7 @@ func NewEasDiscoveryFilterWithDefaults() *EasDiscoveryFilter {
 
 // GetAcChars returns the AcChars field value if set, zero value otherwise.
 func (o *EasDiscoveryFilter) GetAcChars() []ACCharacteristics {
-	if o == nil || isNil(o.AcChars) {
+	if o == nil || IsNil(o.AcChars) {
 		var ret []ACCharacteristics
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EasDiscoveryFilter) GetAcChars() []ACCharacteristics {
 // GetAcCharsOk returns a tuple with the AcChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryFilter) GetAcCharsOk() ([]ACCharacteristics, bool) {
-	if o == nil || isNil(o.AcChars) {
+	if o == nil || IsNil(o.AcChars) {
 		return nil, false
 	}
 	return o.AcChars, true
@@ -62,7 +62,7 @@ func (o *EasDiscoveryFilter) GetAcCharsOk() ([]ACCharacteristics, bool) {
 
 // HasAcChars returns a boolean if a field has been set.
 func (o *EasDiscoveryFilter) HasAcChars() bool {
-	if o != nil && !isNil(o.AcChars) {
+	if o != nil && !IsNil(o.AcChars) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EasDiscoveryFilter) SetAcChars(v []ACCharacteristics) {
 
 // GetEasChars returns the EasChars field value if set, zero value otherwise.
 func (o *EasDiscoveryFilter) GetEasChars() []EasCharacteristics {
-	if o == nil || isNil(o.EasChars) {
+	if o == nil || IsNil(o.EasChars) {
 		var ret []EasCharacteristics
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EasDiscoveryFilter) GetEasChars() []EasCharacteristics {
 // GetEasCharsOk returns a tuple with the EasChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryFilter) GetEasCharsOk() ([]EasCharacteristics, bool) {
-	if o == nil || isNil(o.EasChars) {
+	if o == nil || IsNil(o.EasChars) {
 		return nil, false
 	}
 	return o.EasChars, true
@@ -94,7 +94,7 @@ func (o *EasDiscoveryFilter) GetEasCharsOk() ([]EasCharacteristics, bool) {
 
 // HasEasChars returns a boolean if a field has been set.
 func (o *EasDiscoveryFilter) HasEasChars() bool {
-	if o != nil && !isNil(o.EasChars) {
+	if o != nil && !IsNil(o.EasChars) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EasDiscoveryFilter) SetEasChars(v []EasCharacteristics) {
 }
 
 func (o EasDiscoveryFilter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o EasDiscoveryFilter) MarshalJSON() ([]byte, error) {
 
 func (o EasDiscoveryFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AcChars) {
+	if !IsNil(o.AcChars) {
 		toSerialize["acChars"] = o.AcChars
 	}
-	if !isNil(o.EasChars) {
+	if !IsNil(o.EasChars) {
 		toSerialize["easChars"] = o.EasChars
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableEasDiscoveryFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

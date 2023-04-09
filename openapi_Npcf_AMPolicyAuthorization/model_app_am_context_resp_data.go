@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyAuthorization Service API
 
-PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Access and Mobility Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -18,14 +18,14 @@ import (
 // AppAmContextRespData It represents a response to a modification or creation request of an Individual Application AM resource. It may contain the notification of the already met events.
 type AppAmContextRespData struct {
 	AmEventsNotification *AmEventsNotification
-	AppAmContextData *AppAmContextData
+	AppAmContextData     *AppAmContextData
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AppAmContextRespData) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AmEventsNotification
-	err = json.Unmarshal(data, &dst.AmEventsNotification);
+	err = json.Unmarshal(data, &dst.AmEventsNotification)
 	if err == nil {
 		jsonAmEventsNotification, _ := json.Marshal(dst.AmEventsNotification)
 		if string(jsonAmEventsNotification) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *AppAmContextRespData) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into AppAmContextData
-	err = json.Unmarshal(data, &dst.AppAmContextData);
+	err = json.Unmarshal(data, &dst.AppAmContextData)
 	if err == nil {
 		jsonAppAmContextData, _ := json.Marshal(dst.AppAmContextData)
 		if string(jsonAppAmContextData) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableAppAmContextRespData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

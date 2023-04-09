@@ -3200,7 +3200,9 @@ components:
       type: object
     FailureCode:
       anyOf:
-      - $ref: '#/components/schemas/FailureCode_anyOf'
+      - enum:
+        - UNAVAILABLE_ML_MODEL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -3348,7 +3350,23 @@ components:
       type: object
     NwdafEvent:
       anyOf:
-      - $ref: '#/components/schemas/NwdafEvent_anyOf'
+      - enum:
+        - SLICE_LOAD_LEVEL
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - DN_PERFORMANCE
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - SM_CONGESTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4476,7 +4494,11 @@ components:
       type: object
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -4500,7 +4522,13 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4513,7 +4541,11 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -4585,7 +4617,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     NsiIdInfo:
@@ -4655,7 +4744,15 @@ components:
       type: object
     NetworkPerfType:
       anyOf:
-      - $ref: '#/components/schemas/NetworkPerfType_anyOf'
+      - enum:
+        - GNB_ACTIVE_RATIO
+        - GNB_COMPUTING_USAGE
+        - GNB_MEMORY_USAGE
+        - GNB_DISK_USAGE
+        - NUM_OF_UE
+        - SESS_SUCC_RATIO
+        - HO_SUCC_RATIO
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4705,7 +4802,17 @@ components:
       type: object
     ExceptionId:
       anyOf:
-      - $ref: '#/components/schemas/ExceptionId_anyOf'
+      - enum:
+        - UNEXPECTED_UE_LOCATION
+        - UNEXPECTED_LONG_LIVE_FLOW
+        - UNEXPECTED_LARGE_RATE_FLOW
+        - UNEXPECTED_WAKEUP
+        - SUSPICION_OF_DDOS_ATTACK
+        - WRONG_DESTINATION_ADDRESS
+        - TOO_FREQUENT_SERVICE_ACCESS
+        - UNEXPECTED_RADIO_LINK_FAILURES
+        - PING_PONG_ACROSS_CELLS
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4722,7 +4829,11 @@ components:
         - PING_PONG_ACROSS_CELLS: Ping-ponging across neighbouring cells
     ExpectedAnalyticsType:
       anyOf:
-      - $ref: '#/components/schemas/ExpectedAnalyticsType_anyOf'
+      - enum:
+        - MOBILITY
+        - COMMUN
+        - MOBILITY_AND_COMMUN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5150,7 +5261,11 @@ components:
       type: object
     MatchingDirection:
       anyOf:
-      - $ref: '#/components/schemas/MatchingDirection_anyOf'
+      - enum:
+        - ASCENDING
+        - DESCENDING
+        - CROSSED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5204,7 +5319,11 @@ components:
           - TDA: Transactions Dispersion Analytics.
           - DVDA_AND_TDA: Data Volume Dispersion Analytics and Transactions Dispersion Analytics.
       oneOf:
-      - $ref: '#/components/schemas/DispersionType_oneOf'
+      - enum:
+        - DVDA
+        - TDA
+        - DVDA_AND_TDA
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5239,7 +5358,12 @@ components:
         - TRAVELLER: Dispersion class as traveller UE, its data or transaction usage at a location or a slice, is lower than the camper class threshold set for its all data or transaction usage.
         - TOP_HEAVY: Dispersion class as Top_Heavy UE, who's dispersion percentile rating at a location or a slice, is higher than its class threshold.
       oneOf:
-      - $ref: '#/components/schemas/DispersionClass_oneOf'
+      - enum:
+        - FIXED
+        - CAMPER
+        - TRAVELLER
+        - TOP_HEAVY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5268,7 +5392,13 @@ components:
       type: object
     DispersionOrderingCriterion:
       anyOf:
-      - $ref: '#/components/schemas/DispersionOrderingCriterion_anyOf'
+      - enum:
+        - TIME_SLOT_START
+        - DISPERSION
+        - CLASSIFICATION
+        - RANKING
+        - PERCENTILE_RANKING
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5292,7 +5422,10 @@ components:
       type: object
     RedTransExpOrderingCriterion:
       anyOf:
-      - $ref: '#/components/schemas/RedTransExpOrderingCriterion_anyOf'
+      - enum:
+        - TIME_SLOT_START
+        - RED_TRANS_EXP
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5329,7 +5462,13 @@ components:
       type: object
     WlanOrderingCriterion:
       anyOf:
-      - $ref: '#/components/schemas/WlanOrderingCriterion_anyOf'
+      - enum:
+        - TIME_SLOT_START
+        - NUMBER_OF_UES
+        - RSSI
+        - RTT
+        - TRAFFIC_INFO
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5342,7 +5481,48 @@ components:
         - TRAFFIC_INFO: Indicates the order of Traffic information.
     AnalyticsSubset:
       anyOf:
-      - $ref: '#/components/schemas/AnalyticsSubset_anyOf'
+      - enum:
+        - NUM_OF_UE_REG
+        - NUM_OF_PDU_SESS_ESTBL
+        - RES_USAGE
+        - NUM_OF_EXCEED_RES_USAGE_LOAD_LEVEL_THR
+        - PERIOD_OF_EXCEED_RES_USAGE_LOAD_LEVEL_THR
+        - EXCEED_LOAD_LEVEL_THR_IND
+        - LIST_OF_TOP_APP_UL
+        - LIST_OF_TOP_APP_DL
+        - NF_STATUS
+        - NF_RESOURCE_USAGE
+        - NF_LOAD
+        - NF_PEAK_LOAD
+        - NF_LOAD_AVG_IN_AOI
+        - DISPER_AMOUNT
+        - DISPER_CLASS
+        - RANKING
+        - PERCENTILE_RANKING
+        - RSSI
+        - RTT
+        - TRAFFIC_INFO
+        - NUMBER_OF_UES
+        - APP_LIST_FOR_UE_COMM
+        - N4_SESS_INACT_TIMER_FOR_UE_COMM
+        - AVG_TRAFFIC_RATE
+        - MAX_TRAFFIC_RATE
+        - AVG_PACKET_DELAY
+        - MAX_PACKET_DELAY
+        - AVG_PACKET_LOSS_RATE
+        - UE_LOCATION
+        - LIST_OF_HIGH_EXP_UE
+        - LIST_OF_MEDIUM_EXP_UE
+        - LIST_OF_LOW_EXP_UE
+        - AVG_UL_PKT_DROP_RATE
+        - VAR_UL_PKT_DROP_RATE
+        - AVG_DL_PKT_DROP_RATE
+        - VAR_DL_PKT_DROP_RATE
+        - AVG_UL_PKT_DELAY
+        - VAR_UL_PKT_DELAY
+        - AVG_DL_PKT_DELAY
+        - VAR_DL_PKT_DELAY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5460,7 +5640,13 @@ components:
       type: object
     DnPerfOrderingCriterion:
       anyOf:
-      - $ref: '#/components/schemas/DnPerfOrderingCriterion_anyOf'
+      - enum:
+        - AVERAGE_TRAFFIC_RATE
+        - MAXIMUM_TRAFFIC_RATE
+        - AVERAGE_PACKET_DELAY
+        - MAXIMUM_PACKET_DELAY
+        - AVERAGE_PACKET_LOSS_RATE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5879,7 +6065,11 @@ components:
       type: string
     QosResourceType:
       anyOf:
-      - $ref: '#/components/schemas/QosResourceType_anyOf'
+      - enum:
+        - NON_GBR
+        - NON_CRITICAL_GBR
+        - CRITICAL_GBR
+        type: string
       - type: string
       description: "The enumeration QosResourceType indicates whether a QoS Flow is\
         \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
@@ -5897,7 +6087,10 @@ components:
       type: string
     StationaryIndication:
       anyOf:
-      - $ref: '#/components/schemas/StationaryIndication_anyOf'
+      - enum:
+        - STATIONARY
+        - MOBILE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5950,7 +6143,11 @@ components:
       type: string
     ScheduledCommunicationType:
       anyOf:
-      - $ref: '#/components/schemas/ScheduledCommunicationType_anyOf'
+      - enum:
+        - DOWNLINK_ONLY
+        - UPLINK_ONLY
+        - BIDIRECTIONAL
+        type: string
       - type: string
       description: |
         Possible values are:
@@ -6223,7 +6420,13 @@ components:
       type: object
     TrafficProfile:
       anyOf:
-      - $ref: '#/components/schemas/TrafficProfile_anyOf'
+      - enum:
+        - SINGLE_TRANS_UL
+        - SINGLE_TRANS_DL
+        - DUAL_TRANS_UL_FIRST
+        - DUAL_TRANS_DL_FIRST
+        - MULTI_TRANS
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -6263,7 +6466,28 @@ components:
       type: integer
     RatType:
       anyOf:
-      - $ref: '#/components/schemas/RatType_anyOf'
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
       - type: string
       description: Indicates the radio access used.
     PacketLossRate:
@@ -6360,9 +6584,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -6647,296 +6882,6 @@ components:
         providedBy:
           type: string
       type: object
-    FailureCode_anyOf:
-      enum:
-      - UNAVAILABLE_ML_MODEL
-      type: string
-      example: null
-    NwdafEvent_anyOf:
-      enum:
-      - SLICE_LOAD_LEVEL
-      - NETWORK_PERFORMANCE
-      - NF_LOAD
-      - SERVICE_EXPERIENCE
-      - UE_MOBILITY
-      - UE_COMMUNICATION
-      - QOS_SUSTAINABILITY
-      - ABNORMAL_BEHAVIOUR
-      - USER_DATA_CONGESTION
-      - NSI_LOAD_LEVEL
-      - DN_PERFORMANCE
-      - DISPERSION
-      - RED_TRANS_EXP
-      - WLAN_PERFORMANCE
-      - SM_CONGESTION
-      type: string
-      example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    PartitioningCriteria_anyOf:
-      enum:
-      - TAC
-      - SUBPLMN
-      - GEOAREA
-      - SNSSAI
-      - DNN
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
-    NetworkPerfType_anyOf:
-      enum:
-      - GNB_ACTIVE_RATIO
-      - GNB_COMPUTING_USAGE
-      - GNB_MEMORY_USAGE
-      - GNB_DISK_USAGE
-      - NUM_OF_UE
-      - SESS_SUCC_RATIO
-      - HO_SUCC_RATIO
-      type: string
-      example: null
-    ExceptionId_anyOf:
-      enum:
-      - UNEXPECTED_UE_LOCATION
-      - UNEXPECTED_LONG_LIVE_FLOW
-      - UNEXPECTED_LARGE_RATE_FLOW
-      - UNEXPECTED_WAKEUP
-      - SUSPICION_OF_DDOS_ATTACK
-      - WRONG_DESTINATION_ADDRESS
-      - TOO_FREQUENT_SERVICE_ACCESS
-      - UNEXPECTED_RADIO_LINK_FAILURES
-      - PING_PONG_ACROSS_CELLS
-      type: string
-      example: null
-    ExpectedAnalyticsType_anyOf:
-      enum:
-      - MOBILITY
-      - COMMUN
-      - MOBILITY_AND_COMMUN
-      type: string
-      example: null
-    MatchingDirection_anyOf:
-      enum:
-      - ASCENDING
-      - DESCENDING
-      - CROSSED
-      type: string
-      example: null
-    DispersionType_oneOf:
-      enum:
-      - DVDA
-      - TDA
-      - DVDA_AND_TDA
-      type: string
-      example: null
-    DispersionClass_oneOf:
-      enum:
-      - FIXED
-      - CAMPER
-      - TRAVELLER
-      - TOP_HEAVY
-      type: string
-      example: null
-    DispersionOrderingCriterion_anyOf:
-      enum:
-      - TIME_SLOT_START
-      - DISPERSION
-      - CLASSIFICATION
-      - RANKING
-      - PERCENTILE_RANKING
-      type: string
-      example: null
-    RedTransExpOrderingCriterion_anyOf:
-      enum:
-      - TIME_SLOT_START
-      - RED_TRANS_EXP
-      type: string
-      example: null
-    WlanOrderingCriterion_anyOf:
-      enum:
-      - TIME_SLOT_START
-      - NUMBER_OF_UES
-      - RSSI
-      - RTT
-      - TRAFFIC_INFO
-      type: string
-      example: null
-    AnalyticsSubset_anyOf:
-      enum:
-      - NUM_OF_UE_REG
-      - NUM_OF_PDU_SESS_ESTBL
-      - RES_USAGE
-      - NUM_OF_EXCEED_RES_USAGE_LOAD_LEVEL_THR
-      - PERIOD_OF_EXCEED_RES_USAGE_LOAD_LEVEL_THR
-      - EXCEED_LOAD_LEVEL_THR_IND
-      - LIST_OF_TOP_APP_UL
-      - LIST_OF_TOP_APP_DL
-      - NF_STATUS
-      - NF_RESOURCE_USAGE
-      - NF_LOAD
-      - NF_PEAK_LOAD
-      - NF_LOAD_AVG_IN_AOI
-      - DISPER_AMOUNT
-      - DISPER_CLASS
-      - RANKING
-      - PERCENTILE_RANKING
-      - RSSI
-      - RTT
-      - TRAFFIC_INFO
-      - NUMBER_OF_UES
-      - APP_LIST_FOR_UE_COMM
-      - N4_SESS_INACT_TIMER_FOR_UE_COMM
-      - AVG_TRAFFIC_RATE
-      - MAX_TRAFFIC_RATE
-      - AVG_PACKET_DELAY
-      - MAX_PACKET_DELAY
-      - AVG_PACKET_LOSS_RATE
-      - UE_LOCATION
-      - LIST_OF_HIGH_EXP_UE
-      - LIST_OF_MEDIUM_EXP_UE
-      - LIST_OF_LOW_EXP_UE
-      - AVG_UL_PKT_DROP_RATE
-      - VAR_UL_PKT_DROP_RATE
-      - AVG_DL_PKT_DROP_RATE
-      - VAR_DL_PKT_DROP_RATE
-      - AVG_UL_PKT_DELAY
-      - VAR_UL_PKT_DELAY
-      - AVG_DL_PKT_DELAY
-      - VAR_DL_PKT_DELAY
-      type: string
-      example: null
-    DnPerfOrderingCriterion_anyOf:
-      enum:
-      - AVERAGE_TRAFFIC_RATE
-      - MAXIMUM_TRAFFIC_RATE
-      - AVERAGE_PACKET_DELAY
-      - MAXIMUM_PACKET_DELAY
-      - AVERAGE_PACKET_LOSS_RATE
-      type: string
-      example: null
-    QosResourceType_anyOf:
-      enum:
-      - NON_GBR
-      - NON_CRITICAL_GBR
-      - CRITICAL_GBR
-      type: string
-      example: null
-    StationaryIndication_anyOf:
-      enum:
-      - STATIONARY
-      - MOBILE
-      type: string
-      example: null
-    ScheduledCommunicationType_anyOf:
-      enum:
-      - DOWNLINK_ONLY
-      - UPLINK_ONLY
-      - BIDIRECTIONAL
-      type: string
-      example: null
-    TrafficProfile_anyOf:
-      enum:
-      - SINGLE_TRANS_UL
-      - SINGLE_TRANS_DL
-      - DUAL_TRANS_UL_FIRST
-      - DUAL_TRANS_DL_FIRST
-      - MULTI_TRANS
-      type: string
-      example: null
-    RatType_anyOf:
-      enum:
-      - NR
-      - EUTRA
-      - WLAN
-      - VIRTUAL
-      - NBIOT
-      - WIRELINE
-      - WIRELINE_CABLE
-      - WIRELINE_BBF
-      - LTE-M
-      - NR_U
-      - EUTRA_U
-      - TRUSTED_N3GA
-      - TRUSTED_WLAN
-      - UTRA
-      - GERA
-      - NR_LEO
-      - NR_MEO
-      - NR_GEO
-      - NR_OTHER_SAT
-      - NR_REDCAP
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -6944,19 +6889,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

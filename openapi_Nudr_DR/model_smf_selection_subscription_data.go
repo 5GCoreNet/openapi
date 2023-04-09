@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &SmfSelectionSubscriptionData{}
 
 // SmfSelectionSubscriptionData struct for SmfSelectionSubscriptionData
 type SmfSelectionSubscriptionData struct {
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 	// A map(list of key-value pairs) where singleNssai serves as key of SnssaiInfo
 	SubscribedSnssaiInfos *map[string]SnssaiInfo `json:"subscribedSnssaiInfos,omitempty"`
-	SharedSnssaiInfosId *string `json:"sharedSnssaiInfosId,omitempty"`
+	SharedSnssaiInfosId   *string                `json:"sharedSnssaiInfosId,omitempty"`
 	// Identifier of a group of NFs.
 	HssGroupId *string `json:"hssGroupId,omitempty"`
 }
@@ -47,7 +47,7 @@ func NewSmfSelectionSubscriptionDataWithDefaults() *SmfSelectionSubscriptionData
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SmfSelectionSubscriptionData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -65,7 +65,7 @@ func (o *SmfSelectionSubscriptionData) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *SmfSelectionSubscriptionData) SetSupportedFeatures(v string) {
 
 // GetSubscribedSnssaiInfos returns the SubscribedSnssaiInfos field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfos() map[string]SnssaiInfo {
-	if o == nil || isNil(o.SubscribedSnssaiInfos) {
+	if o == nil || IsNil(o.SubscribedSnssaiInfos) {
 		var ret map[string]SnssaiInfo
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfos() map[string]Sns
 // GetSubscribedSnssaiInfosOk returns a tuple with the SubscribedSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfosOk() (*map[string]SnssaiInfo, bool) {
-	if o == nil || isNil(o.SubscribedSnssaiInfos) {
+	if o == nil || IsNil(o.SubscribedSnssaiInfos) {
 		return nil, false
 	}
 	return o.SubscribedSnssaiInfos, true
@@ -97,7 +97,7 @@ func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfosOk() (*map[string
 
 // HasSubscribedSnssaiInfos returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasSubscribedSnssaiInfos() bool {
-	if o != nil && !isNil(o.SubscribedSnssaiInfos) {
+	if o != nil && !IsNil(o.SubscribedSnssaiInfos) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *SmfSelectionSubscriptionData) SetSubscribedSnssaiInfos(v map[string]Sns
 
 // GetSharedSnssaiInfosId returns the SharedSnssaiInfosId field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosId() string {
-	if o == nil || isNil(o.SharedSnssaiInfosId) {
+	if o == nil || IsNil(o.SharedSnssaiInfosId) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosId() string {
 // GetSharedSnssaiInfosIdOk returns a tuple with the SharedSnssaiInfosId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosIdOk() (*string, bool) {
-	if o == nil || isNil(o.SharedSnssaiInfosId) {
+	if o == nil || IsNil(o.SharedSnssaiInfosId) {
 		return nil, false
 	}
 	return o.SharedSnssaiInfosId, true
@@ -129,7 +129,7 @@ func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosIdOk() (*string, bool
 
 // HasSharedSnssaiInfosId returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasSharedSnssaiInfosId() bool {
-	if o != nil && !isNil(o.SharedSnssaiInfosId) {
+	if o != nil && !IsNil(o.SharedSnssaiInfosId) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *SmfSelectionSubscriptionData) SetSharedSnssaiInfosId(v string) {
 
 // GetHssGroupId returns the HssGroupId field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetHssGroupId() string {
-	if o == nil || isNil(o.HssGroupId) {
+	if o == nil || IsNil(o.HssGroupId) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *SmfSelectionSubscriptionData) GetHssGroupId() string {
 // GetHssGroupIdOk returns a tuple with the HssGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetHssGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.HssGroupId) {
+	if o == nil || IsNil(o.HssGroupId) {
 		return nil, false
 	}
 	return o.HssGroupId, true
@@ -161,7 +161,7 @@ func (o *SmfSelectionSubscriptionData) GetHssGroupIdOk() (*string, bool) {
 
 // HasHssGroupId returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasHssGroupId() bool {
-	if o != nil && !isNil(o.HssGroupId) {
+	if o != nil && !IsNil(o.HssGroupId) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *SmfSelectionSubscriptionData) SetHssGroupId(v string) {
 }
 
 func (o SmfSelectionSubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,16 +183,16 @@ func (o SmfSelectionSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o SmfSelectionSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.SubscribedSnssaiInfos) {
+	if !IsNil(o.SubscribedSnssaiInfos) {
 		toSerialize["subscribedSnssaiInfos"] = o.SubscribedSnssaiInfos
 	}
-	if !isNil(o.SharedSnssaiInfosId) {
+	if !IsNil(o.SharedSnssaiInfosId) {
 		toSerialize["sharedSnssaiInfosId"] = o.SharedSnssaiInfosId
 	}
-	if !isNil(o.HssGroupId) {
+	if !IsNil(o.HssGroupId) {
 		toSerialize["hssGroupId"] = o.HssGroupId
 	}
 	return toSerialize, nil
@@ -233,5 +233,3 @@ func (v *NullableSmfSelectionSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

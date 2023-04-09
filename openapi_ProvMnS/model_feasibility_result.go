@@ -20,7 +20,7 @@ type FeasibilityResult string
 
 // List of FeasibilityResult
 const (
-	FEASIBLE FeasibilityResult = "FEASIBLE"
+	FEASIBLE   FeasibilityResult = "FEASIBLE"
 	INFEASIBLE FeasibilityResult = "INFEASIBLE"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableFeasibilityResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

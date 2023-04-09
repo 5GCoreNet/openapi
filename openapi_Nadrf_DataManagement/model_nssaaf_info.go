@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NssaafInfo{}
 
 // NssaafInfo Information of a NSSAAF Instance
 type NssaafInfo struct {
-	SupiRanges []SupiRange `json:"supiRanges,omitempty"`
+	SupiRanges                     []SupiRange            `json:"supiRanges,omitempty"`
 	InternalGroupIdentifiersRanges []InternalGroupIdRange `json:"internalGroupIdentifiersRanges,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewNssaafInfoWithDefaults() *NssaafInfo {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *NssaafInfo) GetSupiRanges() []SupiRange {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NssaafInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssaafInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRanges) {
+	if o == nil || IsNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -60,7 +60,7 @@ func (o *NssaafInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *NssaafInfo) HasSupiRanges() bool {
-	if o != nil && !isNil(o.SupiRanges) {
+	if o != nil && !IsNil(o.SupiRanges) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NssaafInfo) SetSupiRanges(v []SupiRange) {
 
 // GetInternalGroupIdentifiersRanges returns the InternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *NssaafInfo) GetInternalGroupIdentifiersRanges() []InternalGroupIdRange {
-	if o == nil || isNil(o.InternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.InternalGroupIdentifiersRanges) {
 		var ret []InternalGroupIdRange
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NssaafInfo) GetInternalGroupIdentifiersRanges() []InternalGroupIdRange 
 // GetInternalGroupIdentifiersRangesOk returns a tuple with the InternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssaafInfo) GetInternalGroupIdentifiersRangesOk() ([]InternalGroupIdRange, bool) {
-	if o == nil || isNil(o.InternalGroupIdentifiersRanges) {
+	if o == nil || IsNil(o.InternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.InternalGroupIdentifiersRanges, true
@@ -92,7 +92,7 @@ func (o *NssaafInfo) GetInternalGroupIdentifiersRangesOk() ([]InternalGroupIdRan
 
 // HasInternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *NssaafInfo) HasInternalGroupIdentifiersRanges() bool {
-	if o != nil && !isNil(o.InternalGroupIdentifiersRanges) {
+	if o != nil && !IsNil(o.InternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *NssaafInfo) SetInternalGroupIdentifiersRanges(v []InternalGroupIdRange)
 }
 
 func (o NssaafInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o NssaafInfo) MarshalJSON() ([]byte, error) {
 
 func (o NssaafInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupiRanges) {
+	if !IsNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !isNil(o.InternalGroupIdentifiersRanges) {
+	if !IsNil(o.InternalGroupIdentifiersRanges) {
 		toSerialize["internalGroupIdentifiersRanges"] = o.InternalGroupIdentifiersRanges
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableNssaafInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

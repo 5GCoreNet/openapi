@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &NsiIdInfo{}
 
 // NsiIdInfo Represents the S-NSSAI and the optionally associated Network Slice Instance(s).
 type NsiIdInfo struct {
-	Snssai Snssai `json:"snssai"`
+	Snssai Snssai   `json:"snssai"`
 	NsiIds []string `json:"nsiIds,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *NsiIdInfo) SetSnssai(v Snssai) {
 
 // GetNsiIds returns the NsiIds field value if set, zero value otherwise.
 func (o *NsiIdInfo) GetNsiIds() []string {
-	if o == nil || isNil(o.NsiIds) {
+	if o == nil || IsNil(o.NsiIds) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NsiIdInfo) GetNsiIds() []string {
 // GetNsiIdsOk returns a tuple with the NsiIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiIdInfo) GetNsiIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.NsiIds) {
+	if o == nil || IsNil(o.NsiIds) {
 		return nil, false
 	}
 	return o.NsiIds, true
@@ -85,7 +85,7 @@ func (o *NsiIdInfo) GetNsiIdsOk() ([]string, bool) {
 
 // HasNsiIds returns a boolean if a field has been set.
 func (o *NsiIdInfo) HasNsiIds() bool {
-	if o != nil && !isNil(o.NsiIds) {
+	if o != nil && !IsNil(o.NsiIds) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *NsiIdInfo) SetNsiIds(v []string) {
 }
 
 func (o NsiIdInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o NsiIdInfo) MarshalJSON() ([]byte, error) {
 func (o NsiIdInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.NsiIds) {
+	if !IsNil(o.NsiIds) {
 		toSerialize["nsiIds"] = o.NsiIds
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableNsiIdInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

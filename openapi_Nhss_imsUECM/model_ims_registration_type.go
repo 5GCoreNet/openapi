@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // ImsRegistrationType Represents the type of registration associated to the REGISTER request
 type ImsRegistrationType struct {
-	ImsRegistrationTypeAnyOf *ImsRegistrationTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ImsRegistrationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ImsRegistrationTypeAnyOf
-	err = json.Unmarshal(data, &dst.ImsRegistrationTypeAnyOf);
-	if err == nil {
-		jsonImsRegistrationTypeAnyOf, _ := json.Marshal(dst.ImsRegistrationTypeAnyOf)
-		if string(jsonImsRegistrationTypeAnyOf) == "{}" { // empty struct
-			dst.ImsRegistrationTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.ImsRegistrationTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.ImsRegistrationTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ImsRegistrationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ImsRegistrationType) MarshalJSON() ([]byte, error) {
-	if src.ImsRegistrationTypeAnyOf != nil {
-		return json.Marshal(&src.ImsRegistrationTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableImsRegistrationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

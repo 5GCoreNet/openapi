@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -17,10 +17,10 @@ import (
 // checks if the LimitIdToMonitoringKey type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LimitIdToMonitoringKey{}
 
-// LimitIdToMonitoringKey Contains the limit identifier and the corresponding monitoring key for a given S-NSSAI and DNN. 
+// LimitIdToMonitoringKey Contains the limit identifier and the corresponding monitoring key for a given S-NSSAI and DNN.
 type LimitIdToMonitoringKey struct {
-	LimitId string `json:"limitId"`
-	Monkey []string `json:"monkey,omitempty"`
+	LimitId string   `json:"limitId"`
+	Monkey  []string `json:"monkey,omitempty"`
 }
 
 // NewLimitIdToMonitoringKey instantiates a new LimitIdToMonitoringKey object
@@ -67,7 +67,7 @@ func (o *LimitIdToMonitoringKey) SetLimitId(v string) {
 
 // GetMonkey returns the Monkey field value if set, zero value otherwise.
 func (o *LimitIdToMonitoringKey) GetMonkey() []string {
-	if o == nil || isNil(o.Monkey) {
+	if o == nil || IsNil(o.Monkey) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LimitIdToMonitoringKey) GetMonkey() []string {
 // GetMonkeyOk returns a tuple with the Monkey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LimitIdToMonitoringKey) GetMonkeyOk() ([]string, bool) {
-	if o == nil || isNil(o.Monkey) {
+	if o == nil || IsNil(o.Monkey) {
 		return nil, false
 	}
 	return o.Monkey, true
@@ -85,7 +85,7 @@ func (o *LimitIdToMonitoringKey) GetMonkeyOk() ([]string, bool) {
 
 // HasMonkey returns a boolean if a field has been set.
 func (o *LimitIdToMonitoringKey) HasMonkey() bool {
-	if o != nil && !isNil(o.Monkey) {
+	if o != nil && !IsNil(o.Monkey) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *LimitIdToMonitoringKey) SetMonkey(v []string) {
 }
 
 func (o LimitIdToMonitoringKey) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o LimitIdToMonitoringKey) MarshalJSON() ([]byte, error) {
 func (o LimitIdToMonitoringKey) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["limitId"] = o.LimitId
-	if !isNil(o.Monkey) {
+	if !IsNil(o.Monkey) {
 		toSerialize["monkey"] = o.Monkey
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableLimitIdToMonitoringKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

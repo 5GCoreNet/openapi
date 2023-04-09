@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,7 +21,7 @@ var _ MappedNullable = &AppDetectionInfo{}
 type AppDetectionInfo struct {
 	// A reference to the application detection filter configured at the UPF
 	AppId string `json:"appId"`
-	// Identifier sent by the SMF in order to allow correlation of application Start and Stop events to the specific service data flow description, if service data flow descriptions are deducible. 
+	// Identifier sent by the SMF in order to allow correlation of application Start and Stop events to the specific service data flow description, if service data flow descriptions are deducible.
 	InstanceId *string `json:"instanceId,omitempty"`
 	// Contains the detected service data flow descriptions if they are deducible.
 	SdfDescriptions []FlowInformation `json:"sdfDescriptions,omitempty"`
@@ -71,7 +71,7 @@ func (o *AppDetectionInfo) SetAppId(v string) {
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
 func (o *AppDetectionInfo) GetInstanceId() string {
-	if o == nil || isNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AppDetectionInfo) GetInstanceId() string {
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDetectionInfo) GetInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.InstanceId) {
+	if o == nil || IsNil(o.InstanceId) {
 		return nil, false
 	}
 	return o.InstanceId, true
@@ -89,7 +89,7 @@ func (o *AppDetectionInfo) GetInstanceIdOk() (*string, bool) {
 
 // HasInstanceId returns a boolean if a field has been set.
 func (o *AppDetectionInfo) HasInstanceId() bool {
-	if o != nil && !isNil(o.InstanceId) {
+	if o != nil && !IsNil(o.InstanceId) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *AppDetectionInfo) SetInstanceId(v string) {
 
 // GetSdfDescriptions returns the SdfDescriptions field value if set, zero value otherwise.
 func (o *AppDetectionInfo) GetSdfDescriptions() []FlowInformation {
-	if o == nil || isNil(o.SdfDescriptions) {
+	if o == nil || IsNil(o.SdfDescriptions) {
 		var ret []FlowInformation
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AppDetectionInfo) GetSdfDescriptions() []FlowInformation {
 // GetSdfDescriptionsOk returns a tuple with the SdfDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDetectionInfo) GetSdfDescriptionsOk() ([]FlowInformation, bool) {
-	if o == nil || isNil(o.SdfDescriptions) {
+	if o == nil || IsNil(o.SdfDescriptions) {
 		return nil, false
 	}
 	return o.SdfDescriptions, true
@@ -121,7 +121,7 @@ func (o *AppDetectionInfo) GetSdfDescriptionsOk() ([]FlowInformation, bool) {
 
 // HasSdfDescriptions returns a boolean if a field has been set.
 func (o *AppDetectionInfo) HasSdfDescriptions() bool {
-	if o != nil && !isNil(o.SdfDescriptions) {
+	if o != nil && !IsNil(o.SdfDescriptions) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *AppDetectionInfo) SetSdfDescriptions(v []FlowInformation) {
 }
 
 func (o AppDetectionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -144,10 +144,10 @@ func (o AppDetectionInfo) MarshalJSON() ([]byte, error) {
 func (o AppDetectionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appId"] = o.AppId
-	if !isNil(o.InstanceId) {
+	if !IsNil(o.InstanceId) {
 		toSerialize["instanceId"] = o.InstanceId
 	}
-	if !isNil(o.SdfDescriptions) {
+	if !IsNil(o.SdfDescriptions) {
 		toSerialize["sdfDescriptions"] = o.SdfDescriptions
 	}
 	return toSerialize, nil
@@ -188,5 +188,3 @@ func (v *NullableAppDetectionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

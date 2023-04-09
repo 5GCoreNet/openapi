@@ -1,7 +1,7 @@
 /*
 N32 Handshake API
 
-N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-c Handshake Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &SecParamExchRspData{}
 
 // SecParamExchRspData Response data structure for parameter exchange
 type SecParamExchRspData struct {
-	N32fContextId string `json:"n32fContextId"`
-	SelectedJweCipherSuite *string `json:"selectedJweCipherSuite,omitempty"`
-	SelectedJwsCipherSuite *string `json:"selectedJwsCipherSuite,omitempty"`
-	SelProtectionPolicyInfo *ProtectionPolicy `json:"selProtectionPolicyInfo,omitempty"`
-	IpxProviderSecInfoList []IpxProviderSecInfo `json:"ipxProviderSecInfoList,omitempty"`
+	N32fContextId           string               `json:"n32fContextId"`
+	SelectedJweCipherSuite  *string              `json:"selectedJweCipherSuite,omitempty"`
+	SelectedJwsCipherSuite  *string              `json:"selectedJwsCipherSuite,omitempty"`
+	SelProtectionPolicyInfo *ProtectionPolicy    `json:"selProtectionPolicyInfo,omitempty"`
+	IpxProviderSecInfoList  []IpxProviderSecInfo `json:"ipxProviderSecInfoList,omitempty"`
 	// Fully Qualified Domain Name
 	Sender *string `json:"sender,omitempty"`
 }
@@ -72,7 +72,7 @@ func (o *SecParamExchRspData) SetN32fContextId(v string) {
 
 // GetSelectedJweCipherSuite returns the SelectedJweCipherSuite field value if set, zero value otherwise.
 func (o *SecParamExchRspData) GetSelectedJweCipherSuite() string {
-	if o == nil || isNil(o.SelectedJweCipherSuite) {
+	if o == nil || IsNil(o.SelectedJweCipherSuite) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *SecParamExchRspData) GetSelectedJweCipherSuite() string {
 // GetSelectedJweCipherSuiteOk returns a tuple with the SelectedJweCipherSuite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecParamExchRspData) GetSelectedJweCipherSuiteOk() (*string, bool) {
-	if o == nil || isNil(o.SelectedJweCipherSuite) {
+	if o == nil || IsNil(o.SelectedJweCipherSuite) {
 		return nil, false
 	}
 	return o.SelectedJweCipherSuite, true
@@ -90,7 +90,7 @@ func (o *SecParamExchRspData) GetSelectedJweCipherSuiteOk() (*string, bool) {
 
 // HasSelectedJweCipherSuite returns a boolean if a field has been set.
 func (o *SecParamExchRspData) HasSelectedJweCipherSuite() bool {
-	if o != nil && !isNil(o.SelectedJweCipherSuite) {
+	if o != nil && !IsNil(o.SelectedJweCipherSuite) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *SecParamExchRspData) SetSelectedJweCipherSuite(v string) {
 
 // GetSelectedJwsCipherSuite returns the SelectedJwsCipherSuite field value if set, zero value otherwise.
 func (o *SecParamExchRspData) GetSelectedJwsCipherSuite() string {
-	if o == nil || isNil(o.SelectedJwsCipherSuite) {
+	if o == nil || IsNil(o.SelectedJwsCipherSuite) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *SecParamExchRspData) GetSelectedJwsCipherSuite() string {
 // GetSelectedJwsCipherSuiteOk returns a tuple with the SelectedJwsCipherSuite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecParamExchRspData) GetSelectedJwsCipherSuiteOk() (*string, bool) {
-	if o == nil || isNil(o.SelectedJwsCipherSuite) {
+	if o == nil || IsNil(o.SelectedJwsCipherSuite) {
 		return nil, false
 	}
 	return o.SelectedJwsCipherSuite, true
@@ -122,7 +122,7 @@ func (o *SecParamExchRspData) GetSelectedJwsCipherSuiteOk() (*string, bool) {
 
 // HasSelectedJwsCipherSuite returns a boolean if a field has been set.
 func (o *SecParamExchRspData) HasSelectedJwsCipherSuite() bool {
-	if o != nil && !isNil(o.SelectedJwsCipherSuite) {
+	if o != nil && !IsNil(o.SelectedJwsCipherSuite) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *SecParamExchRspData) SetSelectedJwsCipherSuite(v string) {
 
 // GetSelProtectionPolicyInfo returns the SelProtectionPolicyInfo field value if set, zero value otherwise.
 func (o *SecParamExchRspData) GetSelProtectionPolicyInfo() ProtectionPolicy {
-	if o == nil || isNil(o.SelProtectionPolicyInfo) {
+	if o == nil || IsNil(o.SelProtectionPolicyInfo) {
 		var ret ProtectionPolicy
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *SecParamExchRspData) GetSelProtectionPolicyInfo() ProtectionPolicy {
 // GetSelProtectionPolicyInfoOk returns a tuple with the SelProtectionPolicyInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecParamExchRspData) GetSelProtectionPolicyInfoOk() (*ProtectionPolicy, bool) {
-	if o == nil || isNil(o.SelProtectionPolicyInfo) {
+	if o == nil || IsNil(o.SelProtectionPolicyInfo) {
 		return nil, false
 	}
 	return o.SelProtectionPolicyInfo, true
@@ -154,7 +154,7 @@ func (o *SecParamExchRspData) GetSelProtectionPolicyInfoOk() (*ProtectionPolicy,
 
 // HasSelProtectionPolicyInfo returns a boolean if a field has been set.
 func (o *SecParamExchRspData) HasSelProtectionPolicyInfo() bool {
-	if o != nil && !isNil(o.SelProtectionPolicyInfo) {
+	if o != nil && !IsNil(o.SelProtectionPolicyInfo) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *SecParamExchRspData) SetSelProtectionPolicyInfo(v ProtectionPolicy) {
 
 // GetIpxProviderSecInfoList returns the IpxProviderSecInfoList field value if set, zero value otherwise.
 func (o *SecParamExchRspData) GetIpxProviderSecInfoList() []IpxProviderSecInfo {
-	if o == nil || isNil(o.IpxProviderSecInfoList) {
+	if o == nil || IsNil(o.IpxProviderSecInfoList) {
 		var ret []IpxProviderSecInfo
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *SecParamExchRspData) GetIpxProviderSecInfoList() []IpxProviderSecInfo {
 // GetIpxProviderSecInfoListOk returns a tuple with the IpxProviderSecInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecParamExchRspData) GetIpxProviderSecInfoListOk() ([]IpxProviderSecInfo, bool) {
-	if o == nil || isNil(o.IpxProviderSecInfoList) {
+	if o == nil || IsNil(o.IpxProviderSecInfoList) {
 		return nil, false
 	}
 	return o.IpxProviderSecInfoList, true
@@ -186,7 +186,7 @@ func (o *SecParamExchRspData) GetIpxProviderSecInfoListOk() ([]IpxProviderSecInf
 
 // HasIpxProviderSecInfoList returns a boolean if a field has been set.
 func (o *SecParamExchRspData) HasIpxProviderSecInfoList() bool {
-	if o != nil && !isNil(o.IpxProviderSecInfoList) {
+	if o != nil && !IsNil(o.IpxProviderSecInfoList) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *SecParamExchRspData) SetIpxProviderSecInfoList(v []IpxProviderSecInfo) 
 
 // GetSender returns the Sender field value if set, zero value otherwise.
 func (o *SecParamExchRspData) GetSender() string {
-	if o == nil || isNil(o.Sender) {
+	if o == nil || IsNil(o.Sender) {
 		var ret string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *SecParamExchRspData) GetSender() string {
 // GetSenderOk returns a tuple with the Sender field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecParamExchRspData) GetSenderOk() (*string, bool) {
-	if o == nil || isNil(o.Sender) {
+	if o == nil || IsNil(o.Sender) {
 		return nil, false
 	}
 	return o.Sender, true
@@ -218,7 +218,7 @@ func (o *SecParamExchRspData) GetSenderOk() (*string, bool) {
 
 // HasSender returns a boolean if a field has been set.
 func (o *SecParamExchRspData) HasSender() bool {
-	if o != nil && !isNil(o.Sender) {
+	if o != nil && !IsNil(o.Sender) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *SecParamExchRspData) SetSender(v string) {
 }
 
 func (o SecParamExchRspData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,19 +241,19 @@ func (o SecParamExchRspData) MarshalJSON() ([]byte, error) {
 func (o SecParamExchRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n32fContextId"] = o.N32fContextId
-	if !isNil(o.SelectedJweCipherSuite) {
+	if !IsNil(o.SelectedJweCipherSuite) {
 		toSerialize["selectedJweCipherSuite"] = o.SelectedJweCipherSuite
 	}
-	if !isNil(o.SelectedJwsCipherSuite) {
+	if !IsNil(o.SelectedJwsCipherSuite) {
 		toSerialize["selectedJwsCipherSuite"] = o.SelectedJwsCipherSuite
 	}
-	if !isNil(o.SelProtectionPolicyInfo) {
+	if !IsNil(o.SelProtectionPolicyInfo) {
 		toSerialize["selProtectionPolicyInfo"] = o.SelProtectionPolicyInfo
 	}
-	if !isNil(o.IpxProviderSecInfoList) {
+	if !IsNil(o.IpxProviderSecInfoList) {
 		toSerialize["ipxProviderSecInfoList"] = o.IpxProviderSecInfoList
 	}
-	if !isNil(o.Sender) {
+	if !IsNil(o.Sender) {
 		toSerialize["sender"] = o.Sender
 	}
 	return toSerialize, nil
@@ -294,5 +294,3 @@ func (v *NullableSecParamExchRspData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,10 +17,10 @@ import (
 
 // ServiceSupportExpectationObjectObjectContextsInner - struct for ServiceSupportExpectationObjectObjectContextsInner
 type ServiceSupportExpectationObjectObjectContextsInner struct {
-	CoverageAreaTAContext *CoverageAreaTAContext
-	EdgeIdenfiticationIdContext *EdgeIdenfiticationIdContext
+	CoverageAreaTAContext        *CoverageAreaTAContext
+	EdgeIdenfiticationIdContext  *EdgeIdenfiticationIdContext
 	EdgeIdenfiticationLocContext *EdgeIdenfiticationLocContext
-	ObjectContext *ObjectContext
+	ObjectContext                *ObjectContext
 }
 
 // CoverageAreaTAContextAsServiceSupportExpectationObjectObjectContextsInner is a convenience function that returns CoverageAreaTAContext wrapped in ServiceSupportExpectationObjectObjectContextsInner
@@ -50,7 +50,6 @@ func ObjectContextAsServiceSupportExpectationObjectObjectContextsInner(v *Object
 		ObjectContext: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServiceSupportExpectationObjectObjectContextsInner) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src ServiceSupportExpectationObjectObjectContextsInner) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *ServiceSupportExpectationObjectObjectContextsInner) GetActualInstance() (interface{}) {
+func (obj *ServiceSupportExpectationObjectObjectContextsInner) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableServiceSupportExpectationObjectObjectContextsInner) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &GeoServiceArea{}
 // GeoServiceArea List of geographic area or list of civic address info
 type GeoServiceArea struct {
 	GeographicAreaList []GeographicArea `json:"geographicAreaList,omitempty"`
-	CivicAddressList []CivicAddress `json:"civicAddressList,omitempty"`
+	CivicAddressList   []CivicAddress   `json:"civicAddressList,omitempty"`
 }
 
 // NewGeoServiceArea instantiates a new GeoServiceArea object
@@ -42,7 +42,7 @@ func NewGeoServiceAreaWithDefaults() *GeoServiceArea {
 
 // GetGeographicAreaList returns the GeographicAreaList field value if set, zero value otherwise.
 func (o *GeoServiceArea) GetGeographicAreaList() []GeographicArea {
-	if o == nil || isNil(o.GeographicAreaList) {
+	if o == nil || IsNil(o.GeographicAreaList) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeoServiceArea) GetGeographicAreaList() []GeographicArea {
 // GetGeographicAreaListOk returns a tuple with the GeographicAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoServiceArea) GetGeographicAreaListOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.GeographicAreaList) {
+	if o == nil || IsNil(o.GeographicAreaList) {
 		return nil, false
 	}
 	return o.GeographicAreaList, true
@@ -60,7 +60,7 @@ func (o *GeoServiceArea) GetGeographicAreaListOk() ([]GeographicArea, bool) {
 
 // HasGeographicAreaList returns a boolean if a field has been set.
 func (o *GeoServiceArea) HasGeographicAreaList() bool {
-	if o != nil && !isNil(o.GeographicAreaList) {
+	if o != nil && !IsNil(o.GeographicAreaList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeoServiceArea) SetGeographicAreaList(v []GeographicArea) {
 
 // GetCivicAddressList returns the CivicAddressList field value if set, zero value otherwise.
 func (o *GeoServiceArea) GetCivicAddressList() []CivicAddress {
-	if o == nil || isNil(o.CivicAddressList) {
+	if o == nil || IsNil(o.CivicAddressList) {
 		var ret []CivicAddress
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeoServiceArea) GetCivicAddressList() []CivicAddress {
 // GetCivicAddressListOk returns a tuple with the CivicAddressList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoServiceArea) GetCivicAddressListOk() ([]CivicAddress, bool) {
-	if o == nil || isNil(o.CivicAddressList) {
+	if o == nil || IsNil(o.CivicAddressList) {
 		return nil, false
 	}
 	return o.CivicAddressList, true
@@ -92,7 +92,7 @@ func (o *GeoServiceArea) GetCivicAddressListOk() ([]CivicAddress, bool) {
 
 // HasCivicAddressList returns a boolean if a field has been set.
 func (o *GeoServiceArea) HasCivicAddressList() bool {
-	if o != nil && !isNil(o.CivicAddressList) {
+	if o != nil && !IsNil(o.CivicAddressList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *GeoServiceArea) SetCivicAddressList(v []CivicAddress) {
 }
 
 func (o GeoServiceArea) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o GeoServiceArea) MarshalJSON() ([]byte, error) {
 
 func (o GeoServiceArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.GeographicAreaList) {
+	if !IsNil(o.GeographicAreaList) {
 		toSerialize["geographicAreaList"] = o.GeographicAreaList
 	}
-	if !isNil(o.CivicAddressList) {
+	if !IsNil(o.CivicAddressList) {
 		toSerialize["civicAddressList"] = o.CivicAddressList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableGeoServiceArea) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

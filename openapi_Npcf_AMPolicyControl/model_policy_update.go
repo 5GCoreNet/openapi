@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,28 +17,28 @@ import (
 // checks if the PolicyUpdate type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PolicyUpdate{}
 
-// PolicyUpdate Represents updated policies that the PCF provides in a notification or in a reply to an Update Request. 
+// PolicyUpdate Represents updated policies that the PCF provides in a notification or in a reply to an Update Request.
 type PolicyUpdate struct {
 	// String providing an URI formatted according to RFC 3986.
 	ResourceUri string `json:"resourceUri"`
 	// Request Triggers that the PCF subscribes.
-	Triggers []RequestTrigger `json:"triggers,omitempty"`
-	ServAreaRes *ServiceAreaRestriction `json:"servAreaRes,omitempty"`
+	Triggers      []RequestTrigger                `json:"triggers,omitempty"`
+	ServAreaRes   *ServiceAreaRestriction         `json:"servAreaRes,omitempty"`
 	WlServAreaRes *WirelineServiceAreaRestriction `json:"wlServAreaRes,omitempty"`
-	// Unsigned integer representing the \"Subscriber Profile ID for RAT/Frequency Priority\"  as specified in 3GPP TS 36.413. 
+	// Unsigned integer representing the \"Subscriber Profile ID for RAT/Frequency Priority\"  as specified in 3GPP TS 36.413.
 	Rfsp *int32 `json:"rfsp,omitempty"`
-	// Unsigned integer representing the \"Subscriber Profile ID for RAT/Frequency Priority\"  as specified in 3GPP TS 36.413. 
-	TargetRfsp *int32 `json:"targetRfsp,omitempty"`
+	// Unsigned integer representing the \"Subscriber Profile ID for RAT/Frequency Priority\"  as specified in 3GPP TS 36.413.
+	TargetRfsp *int32                   `json:"targetRfsp,omitempty"`
 	SmfSelInfo NullableSmfSelectionData `json:"smfSelInfo,omitempty"`
-	UeAmbr *Ambr `json:"ueAmbr,omitempty"`
-	// One or more UE-Slice-MBR(s) for S-NSSAI(s) of serving PLMN the allowed NSSAI as part of the AMF Access and Mobility Policy as determined by the PCF. 
+	UeAmbr     *Ambr                    `json:"ueAmbr,omitempty"`
+	// One or more UE-Slice-MBR(s) for S-NSSAI(s) of serving PLMN the allowed NSSAI as part of the AMF Access and Mobility Policy as determined by the PCF.
 	UeSliceMbrs []UeSliceMbr `json:"ueSliceMbrs,omitempty"`
-	// Contains the presence reporting area(s) for which reporting was requested. The praId attribute within the PresenceInfo data type is the key of the map. 
-	Pras map[string]PresenceInfoRm `json:"pras,omitempty"`
-	PcfUeInfo NullablePcfUeCallbackInfo `json:"pcfUeInfo,omitempty"`
-	MatchPdus []PduSessionInfo `json:"matchPdus,omitempty"`
+	// Contains the presence reporting area(s) for which reporting was requested. The praId attribute within the PresenceInfo data type is the key of the map.
+	Pras           map[string]PresenceInfoRm       `json:"pras,omitempty"`
+	PcfUeInfo      NullablePcfUeCallbackInfo       `json:"pcfUeInfo,omitempty"`
+	MatchPdus      []PduSessionInfo                `json:"matchPdus,omitempty"`
 	AsTimeDisParam NullableAsTimeDistributionParam `json:"asTimeDisParam,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -97,7 +97,7 @@ func (o *PolicyUpdate) GetTriggers() []RequestTrigger {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetTriggersOk() ([]RequestTrigger, bool) {
-	if o == nil || isNil(o.Triggers) {
+	if o == nil || IsNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -105,7 +105,7 @@ func (o *PolicyUpdate) GetTriggersOk() ([]RequestTrigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasTriggers() bool {
-	if o != nil && isNil(o.Triggers) {
+	if o != nil && IsNil(o.Triggers) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *PolicyUpdate) SetTriggers(v []RequestTrigger) {
 
 // GetServAreaRes returns the ServAreaRes field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetServAreaRes() ServiceAreaRestriction {
-	if o == nil || isNil(o.ServAreaRes) {
+	if o == nil || IsNil(o.ServAreaRes) {
 		var ret ServiceAreaRestriction
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PolicyUpdate) GetServAreaRes() ServiceAreaRestriction {
 // GetServAreaResOk returns a tuple with the ServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetServAreaResOk() (*ServiceAreaRestriction, bool) {
-	if o == nil || isNil(o.ServAreaRes) {
+	if o == nil || IsNil(o.ServAreaRes) {
 		return nil, false
 	}
 	return o.ServAreaRes, true
@@ -137,7 +137,7 @@ func (o *PolicyUpdate) GetServAreaResOk() (*ServiceAreaRestriction, bool) {
 
 // HasServAreaRes returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasServAreaRes() bool {
-	if o != nil && !isNil(o.ServAreaRes) {
+	if o != nil && !IsNil(o.ServAreaRes) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *PolicyUpdate) SetServAreaRes(v ServiceAreaRestriction) {
 
 // GetWlServAreaRes returns the WlServAreaRes field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetWlServAreaRes() WirelineServiceAreaRestriction {
-	if o == nil || isNil(o.WlServAreaRes) {
+	if o == nil || IsNil(o.WlServAreaRes) {
 		var ret WirelineServiceAreaRestriction
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *PolicyUpdate) GetWlServAreaRes() WirelineServiceAreaRestriction {
 // GetWlServAreaResOk returns a tuple with the WlServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetWlServAreaResOk() (*WirelineServiceAreaRestriction, bool) {
-	if o == nil || isNil(o.WlServAreaRes) {
+	if o == nil || IsNil(o.WlServAreaRes) {
 		return nil, false
 	}
 	return o.WlServAreaRes, true
@@ -169,7 +169,7 @@ func (o *PolicyUpdate) GetWlServAreaResOk() (*WirelineServiceAreaRestriction, bo
 
 // HasWlServAreaRes returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasWlServAreaRes() bool {
-	if o != nil && !isNil(o.WlServAreaRes) {
+	if o != nil && !IsNil(o.WlServAreaRes) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *PolicyUpdate) SetWlServAreaRes(v WirelineServiceAreaRestriction) {
 
 // GetRfsp returns the Rfsp field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetRfsp() int32 {
-	if o == nil || isNil(o.Rfsp) {
+	if o == nil || IsNil(o.Rfsp) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *PolicyUpdate) GetRfsp() int32 {
 // GetRfspOk returns a tuple with the Rfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetRfspOk() (*int32, bool) {
-	if o == nil || isNil(o.Rfsp) {
+	if o == nil || IsNil(o.Rfsp) {
 		return nil, false
 	}
 	return o.Rfsp, true
@@ -201,7 +201,7 @@ func (o *PolicyUpdate) GetRfspOk() (*int32, bool) {
 
 // HasRfsp returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasRfsp() bool {
-	if o != nil && !isNil(o.Rfsp) {
+	if o != nil && !IsNil(o.Rfsp) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *PolicyUpdate) SetRfsp(v int32) {
 
 // GetTargetRfsp returns the TargetRfsp field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetTargetRfsp() int32 {
-	if o == nil || isNil(o.TargetRfsp) {
+	if o == nil || IsNil(o.TargetRfsp) {
 		var ret int32
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *PolicyUpdate) GetTargetRfsp() int32 {
 // GetTargetRfspOk returns a tuple with the TargetRfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetTargetRfspOk() (*int32, bool) {
-	if o == nil || isNil(o.TargetRfsp) {
+	if o == nil || IsNil(o.TargetRfsp) {
 		return nil, false
 	}
 	return o.TargetRfsp, true
@@ -233,7 +233,7 @@ func (o *PolicyUpdate) GetTargetRfspOk() (*int32, bool) {
 
 // HasTargetRfsp returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasTargetRfsp() bool {
-	if o != nil && !isNil(o.TargetRfsp) {
+	if o != nil && !IsNil(o.TargetRfsp) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *PolicyUpdate) SetTargetRfsp(v int32) {
 
 // GetSmfSelInfo returns the SmfSelInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyUpdate) GetSmfSelInfo() SmfSelectionData {
-	if o == nil || isNil(o.SmfSelInfo.Get()) {
+	if o == nil || IsNil(o.SmfSelInfo.Get()) {
 		var ret SmfSelectionData
 		return ret
 	}
@@ -277,6 +277,7 @@ func (o *PolicyUpdate) HasSmfSelInfo() bool {
 func (o *PolicyUpdate) SetSmfSelInfo(v SmfSelectionData) {
 	o.SmfSelInfo.Set(&v)
 }
+
 // SetSmfSelInfoNil sets the value for SmfSelInfo to be an explicit nil
 func (o *PolicyUpdate) SetSmfSelInfoNil() {
 	o.SmfSelInfo.Set(nil)
@@ -289,7 +290,7 @@ func (o *PolicyUpdate) UnsetSmfSelInfo() {
 
 // GetUeAmbr returns the UeAmbr field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetUeAmbr() Ambr {
-	if o == nil || isNil(o.UeAmbr) {
+	if o == nil || IsNil(o.UeAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -299,7 +300,7 @@ func (o *PolicyUpdate) GetUeAmbr() Ambr {
 // GetUeAmbrOk returns a tuple with the UeAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetUeAmbrOk() (*Ambr, bool) {
-	if o == nil || isNil(o.UeAmbr) {
+	if o == nil || IsNil(o.UeAmbr) {
 		return nil, false
 	}
 	return o.UeAmbr, true
@@ -307,7 +308,7 @@ func (o *PolicyUpdate) GetUeAmbrOk() (*Ambr, bool) {
 
 // HasUeAmbr returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasUeAmbr() bool {
-	if o != nil && !isNil(o.UeAmbr) {
+	if o != nil && !IsNil(o.UeAmbr) {
 		return true
 	}
 
@@ -321,7 +322,7 @@ func (o *PolicyUpdate) SetUeAmbr(v Ambr) {
 
 // GetUeSliceMbrs returns the UeSliceMbrs field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetUeSliceMbrs() []UeSliceMbr {
-	if o == nil || isNil(o.UeSliceMbrs) {
+	if o == nil || IsNil(o.UeSliceMbrs) {
 		var ret []UeSliceMbr
 		return ret
 	}
@@ -331,7 +332,7 @@ func (o *PolicyUpdate) GetUeSliceMbrs() []UeSliceMbr {
 // GetUeSliceMbrsOk returns a tuple with the UeSliceMbrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
-	if o == nil || isNil(o.UeSliceMbrs) {
+	if o == nil || IsNil(o.UeSliceMbrs) {
 		return nil, false
 	}
 	return o.UeSliceMbrs, true
@@ -339,7 +340,7 @@ func (o *PolicyUpdate) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
 
 // HasUeSliceMbrs returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasUeSliceMbrs() bool {
-	if o != nil && !isNil(o.UeSliceMbrs) {
+	if o != nil && !IsNil(o.UeSliceMbrs) {
 		return true
 	}
 
@@ -364,7 +365,7 @@ func (o *PolicyUpdate) GetPras() map[string]PresenceInfoRm {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetPrasOk() (*map[string]PresenceInfoRm, bool) {
-	if o == nil || isNil(o.Pras) {
+	if o == nil || IsNil(o.Pras) {
 		return nil, false
 	}
 	return &o.Pras, true
@@ -372,7 +373,7 @@ func (o *PolicyUpdate) GetPrasOk() (*map[string]PresenceInfoRm, bool) {
 
 // HasPras returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasPras() bool {
-	if o != nil && isNil(o.Pras) {
+	if o != nil && IsNil(o.Pras) {
 		return true
 	}
 
@@ -386,7 +387,7 @@ func (o *PolicyUpdate) SetPras(v map[string]PresenceInfoRm) {
 
 // GetPcfUeInfo returns the PcfUeInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyUpdate) GetPcfUeInfo() PcfUeCallbackInfo {
-	if o == nil || isNil(o.PcfUeInfo.Get()) {
+	if o == nil || IsNil(o.PcfUeInfo.Get()) {
 		var ret PcfUeCallbackInfo
 		return ret
 	}
@@ -416,6 +417,7 @@ func (o *PolicyUpdate) HasPcfUeInfo() bool {
 func (o *PolicyUpdate) SetPcfUeInfo(v PcfUeCallbackInfo) {
 	o.PcfUeInfo.Set(&v)
 }
+
 // SetPcfUeInfoNil sets the value for PcfUeInfo to be an explicit nil
 func (o *PolicyUpdate) SetPcfUeInfoNil() {
 	o.PcfUeInfo.Set(nil)
@@ -439,7 +441,7 @@ func (o *PolicyUpdate) GetMatchPdus() []PduSessionInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetMatchPdusOk() ([]PduSessionInfo, bool) {
-	if o == nil || isNil(o.MatchPdus) {
+	if o == nil || IsNil(o.MatchPdus) {
 		return nil, false
 	}
 	return o.MatchPdus, true
@@ -447,7 +449,7 @@ func (o *PolicyUpdate) GetMatchPdusOk() ([]PduSessionInfo, bool) {
 
 // HasMatchPdus returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasMatchPdus() bool {
-	if o != nil && isNil(o.MatchPdus) {
+	if o != nil && IsNil(o.MatchPdus) {
 		return true
 	}
 
@@ -461,7 +463,7 @@ func (o *PolicyUpdate) SetMatchPdus(v []PduSessionInfo) {
 
 // GetAsTimeDisParam returns the AsTimeDisParam field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyUpdate) GetAsTimeDisParam() AsTimeDistributionParam {
-	if o == nil || isNil(o.AsTimeDisParam.Get()) {
+	if o == nil || IsNil(o.AsTimeDisParam.Get()) {
 		var ret AsTimeDistributionParam
 		return ret
 	}
@@ -491,6 +493,7 @@ func (o *PolicyUpdate) HasAsTimeDisParam() bool {
 func (o *PolicyUpdate) SetAsTimeDisParam(v AsTimeDistributionParam) {
 	o.AsTimeDisParam.Set(&v)
 }
+
 // SetAsTimeDisParamNil sets the value for AsTimeDisParam to be an explicit nil
 func (o *PolicyUpdate) SetAsTimeDisParamNil() {
 	o.AsTimeDisParam.Set(nil)
@@ -503,7 +506,7 @@ func (o *PolicyUpdate) UnsetAsTimeDisParam() {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -513,7 +516,7 @@ func (o *PolicyUpdate) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -521,7 +524,7 @@ func (o *PolicyUpdate) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -534,7 +537,7 @@ func (o *PolicyUpdate) SetSuppFeat(v string) {
 }
 
 func (o PolicyUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -547,25 +550,25 @@ func (o PolicyUpdate) ToMap() (map[string]interface{}, error) {
 	if o.Triggers != nil {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !isNil(o.ServAreaRes) {
+	if !IsNil(o.ServAreaRes) {
 		toSerialize["servAreaRes"] = o.ServAreaRes
 	}
-	if !isNil(o.WlServAreaRes) {
+	if !IsNil(o.WlServAreaRes) {
 		toSerialize["wlServAreaRes"] = o.WlServAreaRes
 	}
-	if !isNil(o.Rfsp) {
+	if !IsNil(o.Rfsp) {
 		toSerialize["rfsp"] = o.Rfsp
 	}
-	if !isNil(o.TargetRfsp) {
+	if !IsNil(o.TargetRfsp) {
 		toSerialize["targetRfsp"] = o.TargetRfsp
 	}
 	if o.SmfSelInfo.IsSet() {
 		toSerialize["smfSelInfo"] = o.SmfSelInfo.Get()
 	}
-	if !isNil(o.UeAmbr) {
+	if !IsNil(o.UeAmbr) {
 		toSerialize["ueAmbr"] = o.UeAmbr
 	}
-	if !isNil(o.UeSliceMbrs) {
+	if !IsNil(o.UeSliceMbrs) {
 		toSerialize["ueSliceMbrs"] = o.UeSliceMbrs
 	}
 	if o.Pras != nil {
@@ -580,7 +583,7 @@ func (o PolicyUpdate) ToMap() (map[string]interface{}, error) {
 	if o.AsTimeDisParam.IsSet() {
 		toSerialize["asTimeDisParam"] = o.AsTimeDisParam.Get()
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -621,5 +624,3 @@ func (v *NullablePolicyUpdate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

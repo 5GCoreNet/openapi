@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -21,10 +21,10 @@ var _ MappedNullable = &EventNotification{}
 type EventNotification struct {
 	Event TscEvent `json:"event"`
 	// Identifies the IP flows that were sent during event subscription.
-	FlowIds []int32 `json:"flowIds,omitempty"`
+	FlowIds       []int32               `json:"flowIds,omitempty"`
 	QosMonReports []QosMonitoringReport `json:"qosMonReports,omitempty"`
-	UsgRep *AccumulatedUsage `json:"usgRep,omitempty"`
-	// The currently applied alternative QoS requirement referring to an alternative QoS reference or a requested alternative QoS parameter set. Applicable for event QOS_NOT_GUARANTEED or SUCCESSFUL_RESOURCES_ALLOCATION. 
+	UsgRep        *AccumulatedUsage     `json:"usgRep,omitempty"`
+	// The currently applied alternative QoS requirement referring to an alternative QoS reference or a requested alternative QoS parameter set. Applicable for event QOS_NOT_GUARANTEED or SUCCESSFUL_RESOURCES_ALLOCATION.
 	AppliedQosRef *string `json:"appliedQosRef,omitempty"`
 }
 
@@ -72,7 +72,7 @@ func (o *EventNotification) SetEvent(v TscEvent) {
 
 // GetFlowIds returns the FlowIds field value if set, zero value otherwise.
 func (o *EventNotification) GetFlowIds() []int32 {
-	if o == nil || isNil(o.FlowIds) {
+	if o == nil || IsNil(o.FlowIds) {
 		var ret []int32
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *EventNotification) GetFlowIds() []int32 {
 // GetFlowIdsOk returns a tuple with the FlowIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetFlowIdsOk() ([]int32, bool) {
-	if o == nil || isNil(o.FlowIds) {
+	if o == nil || IsNil(o.FlowIds) {
 		return nil, false
 	}
 	return o.FlowIds, true
@@ -90,7 +90,7 @@ func (o *EventNotification) GetFlowIdsOk() ([]int32, bool) {
 
 // HasFlowIds returns a boolean if a field has been set.
 func (o *EventNotification) HasFlowIds() bool {
-	if o != nil && !isNil(o.FlowIds) {
+	if o != nil && !IsNil(o.FlowIds) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *EventNotification) SetFlowIds(v []int32) {
 
 // GetQosMonReports returns the QosMonReports field value if set, zero value otherwise.
 func (o *EventNotification) GetQosMonReports() []QosMonitoringReport {
-	if o == nil || isNil(o.QosMonReports) {
+	if o == nil || IsNil(o.QosMonReports) {
 		var ret []QosMonitoringReport
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *EventNotification) GetQosMonReports() []QosMonitoringReport {
 // GetQosMonReportsOk returns a tuple with the QosMonReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetQosMonReportsOk() ([]QosMonitoringReport, bool) {
-	if o == nil || isNil(o.QosMonReports) {
+	if o == nil || IsNil(o.QosMonReports) {
 		return nil, false
 	}
 	return o.QosMonReports, true
@@ -122,7 +122,7 @@ func (o *EventNotification) GetQosMonReportsOk() ([]QosMonitoringReport, bool) {
 
 // HasQosMonReports returns a boolean if a field has been set.
 func (o *EventNotification) HasQosMonReports() bool {
-	if o != nil && !isNil(o.QosMonReports) {
+	if o != nil && !IsNil(o.QosMonReports) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *EventNotification) SetQosMonReports(v []QosMonitoringReport) {
 
 // GetUsgRep returns the UsgRep field value if set, zero value otherwise.
 func (o *EventNotification) GetUsgRep() AccumulatedUsage {
-	if o == nil || isNil(o.UsgRep) {
+	if o == nil || IsNil(o.UsgRep) {
 		var ret AccumulatedUsage
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *EventNotification) GetUsgRep() AccumulatedUsage {
 // GetUsgRepOk returns a tuple with the UsgRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetUsgRepOk() (*AccumulatedUsage, bool) {
-	if o == nil || isNil(o.UsgRep) {
+	if o == nil || IsNil(o.UsgRep) {
 		return nil, false
 	}
 	return o.UsgRep, true
@@ -154,7 +154,7 @@ func (o *EventNotification) GetUsgRepOk() (*AccumulatedUsage, bool) {
 
 // HasUsgRep returns a boolean if a field has been set.
 func (o *EventNotification) HasUsgRep() bool {
-	if o != nil && !isNil(o.UsgRep) {
+	if o != nil && !IsNil(o.UsgRep) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *EventNotification) SetUsgRep(v AccumulatedUsage) {
 
 // GetAppliedQosRef returns the AppliedQosRef field value if set, zero value otherwise.
 func (o *EventNotification) GetAppliedQosRef() string {
-	if o == nil || isNil(o.AppliedQosRef) {
+	if o == nil || IsNil(o.AppliedQosRef) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *EventNotification) GetAppliedQosRef() string {
 // GetAppliedQosRefOk returns a tuple with the AppliedQosRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetAppliedQosRefOk() (*string, bool) {
-	if o == nil || isNil(o.AppliedQosRef) {
+	if o == nil || IsNil(o.AppliedQosRef) {
 		return nil, false
 	}
 	return o.AppliedQosRef, true
@@ -186,7 +186,7 @@ func (o *EventNotification) GetAppliedQosRefOk() (*string, bool) {
 
 // HasAppliedQosRef returns a boolean if a field has been set.
 func (o *EventNotification) HasAppliedQosRef() bool {
-	if o != nil && !isNil(o.AppliedQosRef) {
+	if o != nil && !IsNil(o.AppliedQosRef) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *EventNotification) SetAppliedQosRef(v string) {
 }
 
 func (o EventNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -209,16 +209,16 @@ func (o EventNotification) MarshalJSON() ([]byte, error) {
 func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !isNil(o.FlowIds) {
+	if !IsNil(o.FlowIds) {
 		toSerialize["flowIds"] = o.FlowIds
 	}
-	if !isNil(o.QosMonReports) {
+	if !IsNil(o.QosMonReports) {
 		toSerialize["qosMonReports"] = o.QosMonReports
 	}
-	if !isNil(o.UsgRep) {
+	if !IsNil(o.UsgRep) {
 		toSerialize["usgRep"] = o.UsgRep
 	}
-	if !isNil(o.AppliedQosRef) {
+	if !IsNil(o.AppliedQosRef) {
 		toSerialize["appliedQosRef"] = o.AppliedQosRef
 	}
 	return toSerialize, nil
@@ -259,5 +259,3 @@ func (v *NullableEventNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

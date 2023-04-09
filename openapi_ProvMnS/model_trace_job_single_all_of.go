@@ -20,7 +20,7 @@ var _ MappedNullable = &TraceJobSingleAllOf{}
 // TraceJobSingleAllOf struct for TraceJobSingleAllOf
 type TraceJobSingleAllOf struct {
 	Attributes *TraceJobAttr `json:"attributes,omitempty"`
-	Files []FilesSingle `json:"Files,omitempty"`
+	Files      []FilesSingle `json:"Files,omitempty"`
 }
 
 // NewTraceJobSingleAllOf instantiates a new TraceJobSingleAllOf object
@@ -42,7 +42,7 @@ func NewTraceJobSingleAllOfWithDefaults() *TraceJobSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *TraceJobSingleAllOf) GetAttributes() TraceJobAttr {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		var ret TraceJobAttr
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TraceJobSingleAllOf) GetAttributes() TraceJobAttr {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingleAllOf) GetAttributesOk() (*TraceJobAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *TraceJobSingleAllOf) GetAttributesOk() (*TraceJobAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *TraceJobSingleAllOf) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TraceJobSingleAllOf) SetAttributes(v TraceJobAttr) {
 
 // GetFiles returns the Files field value if set, zero value otherwise.
 func (o *TraceJobSingleAllOf) GetFiles() []FilesSingle {
-	if o == nil || isNil(o.Files) {
+	if o == nil || IsNil(o.Files) {
 		var ret []FilesSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TraceJobSingleAllOf) GetFiles() []FilesSingle {
 // GetFilesOk returns a tuple with the Files field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingleAllOf) GetFilesOk() ([]FilesSingle, bool) {
-	if o == nil || isNil(o.Files) {
+	if o == nil || IsNil(o.Files) {
 		return nil, false
 	}
 	return o.Files, true
@@ -92,7 +92,7 @@ func (o *TraceJobSingleAllOf) GetFilesOk() ([]FilesSingle, bool) {
 
 // HasFiles returns a boolean if a field has been set.
 func (o *TraceJobSingleAllOf) HasFiles() bool {
-	if o != nil && !isNil(o.Files) {
+	if o != nil && !IsNil(o.Files) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *TraceJobSingleAllOf) SetFiles(v []FilesSingle) {
 }
 
 func (o TraceJobSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o TraceJobSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o TraceJobSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.Files) {
+	if !IsNil(o.Files) {
 		toSerialize["Files"] = o.Files
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableTraceJobSingleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NRF NFManagement Service
 
-NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFManagement Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -13,19 +13,18 @@ package openapi_Nnrf_NFManagement
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // NFInstanceIDDocumentApiService NFInstanceIDDocumentApi service
 type NFInstanceIDDocumentApiService service
 
 type ApiDeregisterNFInstanceRequest struct {
-	ctx context.Context
-	ApiService *NFInstanceIDDocumentApiService
+	ctx          context.Context
+	ApiService   *NFInstanceIDDocumentApiService
 	nfInstanceID string
 }
 
@@ -36,14 +35,14 @@ func (r ApiDeregisterNFInstanceRequest) Execute() (*http.Response, error) {
 /*
 DeregisterNFInstance Deregisters a given NF Instance
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfInstanceID Unique ID of the NF Instance to deregister
- @return ApiDeregisterNFInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfInstanceID Unique ID of the NF Instance to deregister
+	@return ApiDeregisterNFInstanceRequest
 */
 func (a *NFInstanceIDDocumentApiService) DeregisterNFInstance(ctx context.Context, nfInstanceID string) ApiDeregisterNFInstanceRequest {
 	return ApiDeregisterNFInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		nfInstanceID: nfInstanceID,
 	}
 }
@@ -51,9 +50,9 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstance(ctx context.Contex
 // Execute executes the request
 func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregisterNFInstanceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.DeregisterNFInstance")
@@ -95,9 +94,9 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -114,8 +113,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -125,8 +124,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -136,8 +135,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -147,8 +146,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -158,8 +157,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -169,8 +168,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -180,8 +179,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -191,8 +190,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -202,8 +201,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -213,8 +212,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -224,8 +223,8 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr
@@ -235,9 +234,9 @@ func (a *NFInstanceIDDocumentApiService) DeregisterNFInstanceExecute(r ApiDeregi
 }
 
 type ApiGetNFInstanceRequest struct {
-	ctx context.Context
-	ApiService *NFInstanceIDDocumentApiService
-	nfInstanceID string
+	ctx               context.Context
+	ApiService        *NFInstanceIDDocumentApiService
+	nfInstanceID      string
 	requesterFeatures *string
 }
 
@@ -254,26 +253,27 @@ func (r ApiGetNFInstanceRequest) Execute() (*NFProfile, *http.Response, error) {
 /*
 GetNFInstance Read the profile of a given NF Instance
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfInstanceID Unique ID of the NF Instance
- @return ApiGetNFInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfInstanceID Unique ID of the NF Instance
+	@return ApiGetNFInstanceRequest
 */
 func (a *NFInstanceIDDocumentApiService) GetNFInstance(ctx context.Context, nfInstanceID string) ApiGetNFInstanceRequest {
 	return ApiGetNFInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		nfInstanceID: nfInstanceID,
 	}
 }
 
 // Execute executes the request
-//  @return NFProfile
+//
+//	@return NFProfile
 func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstanceRequest) (*NFProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NFProfile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NFProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.GetNFInstance")
@@ -289,7 +289,7 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 	localVarFormParams := url.Values{}
 
 	if r.requesterFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "requester-features", r.requesterFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-features", r.requesterFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -318,9 +318,9 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -337,8 +337,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -348,8 +348,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -359,8 +359,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -370,8 +370,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -381,8 +381,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -392,8 +392,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -403,8 +403,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -414,8 +414,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -425,8 +425,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -436,8 +436,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -447,8 +447,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -458,8 +458,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -469,8 +469,8 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -489,12 +489,12 @@ func (a *NFInstanceIDDocumentApiService) GetNFInstanceExecute(r ApiGetNFInstance
 }
 
 type ApiRegisterNFInstanceRequest struct {
-	ctx context.Context
-	ApiService *NFInstanceIDDocumentApiService
-	nfInstanceID string
-	nFProfile *NFProfile
+	ctx             context.Context
+	ApiService      *NFInstanceIDDocumentApiService
+	nfInstanceID    string
+	nFProfile       *NFProfile
 	contentEncoding *string
-	acceptEncoding *string
+	acceptEncoding  *string
 }
 
 func (r ApiRegisterNFInstanceRequest) NFProfile(nFProfile NFProfile) ApiRegisterNFInstanceRequest {
@@ -521,26 +521,27 @@ func (r ApiRegisterNFInstanceRequest) Execute() (*NFProfile, *http.Response, err
 /*
 RegisterNFInstance Register a new NF Instance
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfInstanceID Unique ID of the NF Instance to register
- @return ApiRegisterNFInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfInstanceID Unique ID of the NF Instance to register
+	@return ApiRegisterNFInstanceRequest
 */
 func (a *NFInstanceIDDocumentApiService) RegisterNFInstance(ctx context.Context, nfInstanceID string) ApiRegisterNFInstanceRequest {
 	return ApiRegisterNFInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		nfInstanceID: nfInstanceID,
 	}
 }
 
 // Execute executes the request
-//  @return NFProfile
+//
+//	@return NFProfile
 func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegisterNFInstanceRequest) (*NFProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NFProfile
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NFProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.RegisterNFInstance")
@@ -576,10 +577,10 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.nFProfile
@@ -593,9 +594,9 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -612,8 +613,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -623,8 +624,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -634,8 +635,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -645,8 +646,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -656,8 +657,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -667,8 +668,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -678,8 +679,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -689,8 +690,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -700,8 +701,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -711,8 +712,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -722,8 +723,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -733,8 +734,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -744,8 +745,8 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -764,13 +765,13 @@ func (a *NFInstanceIDDocumentApiService) RegisterNFInstanceExecute(r ApiRegister
 }
 
 type ApiUpdateNFInstanceRequest struct {
-	ctx context.Context
-	ApiService *NFInstanceIDDocumentApiService
-	nfInstanceID string
-	patchItem *[]PatchItem
+	ctx             context.Context
+	ApiService      *NFInstanceIDDocumentApiService
+	nfInstanceID    string
+	patchItem       *[]PatchItem
 	contentEncoding *string
-	acceptEncoding *string
-	ifMatch *string
+	acceptEncoding  *string
+	ifMatch         *string
 }
 
 func (r ApiUpdateNFInstanceRequest) PatchItem(patchItem []PatchItem) ApiUpdateNFInstanceRequest {
@@ -803,26 +804,27 @@ func (r ApiUpdateNFInstanceRequest) Execute() (*NFProfile, *http.Response, error
 /*
 UpdateNFInstance Update NF Instance profile
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nfInstanceID Unique ID of the NF Instance to update
- @return ApiUpdateNFInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param nfInstanceID Unique ID of the NF Instance to update
+	@return ApiUpdateNFInstanceRequest
 */
 func (a *NFInstanceIDDocumentApiService) UpdateNFInstance(ctx context.Context, nfInstanceID string) ApiUpdateNFInstanceRequest {
 	return ApiUpdateNFInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		nfInstanceID: nfInstanceID,
 	}
 }
 
 // Execute executes the request
-//  @return NFProfile
+//
+//	@return NFProfile
 func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFInstanceRequest) (*NFProfile, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *NFProfile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *NFProfile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NFInstanceIDDocumentApiService.UpdateNFInstance")
@@ -861,13 +863,13 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -881,9 +883,9 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -900,8 +902,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 308 {
@@ -911,8 +913,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
@@ -922,8 +924,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -933,8 +935,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -944,8 +946,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
@@ -955,8 +957,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 411 {
@@ -966,8 +968,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 412 {
@@ -977,8 +979,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
@@ -988,8 +990,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 415 {
@@ -999,8 +1001,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -1010,8 +1012,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -1021,8 +1023,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 501 {
@@ -1032,8 +1034,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -1043,8 +1045,8 @@ func (a *NFInstanceIDDocumentApiService) UpdateNFInstanceExecute(r ApiUpdateNFIn
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

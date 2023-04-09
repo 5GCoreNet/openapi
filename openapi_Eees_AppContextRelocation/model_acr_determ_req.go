@@ -1,7 +1,7 @@
 /*
 Eees Application Context Relocation Service
 
-Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+Eees Application Context Relocation Service.   © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.0
 */
@@ -20,10 +20,10 @@ var _ MappedNullable = &AcrDetermReq{}
 // AcrDetermReq Represents the parameters to request ACR with action determination.
 type AcrDetermReq struct {
 	RequestorId string `json:"requestorId"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	UeId *string `json:"ueId,omitempty"`
-	AcId *string `json:"acId,omitempty"`
-	EasId *string `json:"easId,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	UeId         *string  `json:"ueId,omitempty"`
+	AcId         *string  `json:"acId,omitempty"`
+	EasId        *string  `json:"easId,omitempty"`
 	SEasEndpoint EndPoint `json:"sEasEndpoint"`
 }
 
@@ -72,7 +72,7 @@ func (o *AcrDetermReq) SetRequestorId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *AcrDetermReq) GetUeId() string {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AcrDetermReq) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDetermReq) GetUeIdOk() (*string, bool) {
-	if o == nil || isNil(o.UeId) {
+	if o == nil || IsNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -90,7 +90,7 @@ func (o *AcrDetermReq) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *AcrDetermReq) HasUeId() bool {
-	if o != nil && !isNil(o.UeId) {
+	if o != nil && !IsNil(o.UeId) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AcrDetermReq) SetUeId(v string) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *AcrDetermReq) GetAcId() string {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AcrDetermReq) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDetermReq) GetAcIdOk() (*string, bool) {
-	if o == nil || isNil(o.AcId) {
+	if o == nil || IsNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -122,7 +122,7 @@ func (o *AcrDetermReq) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *AcrDetermReq) HasAcId() bool {
-	if o != nil && !isNil(o.AcId) {
+	if o != nil && !IsNil(o.AcId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AcrDetermReq) SetAcId(v string) {
 
 // GetEasId returns the EasId field value if set, zero value otherwise.
 func (o *AcrDetermReq) GetEasId() string {
-	if o == nil || isNil(o.EasId) {
+	if o == nil || IsNil(o.EasId) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AcrDetermReq) GetEasId() string {
 // GetEasIdOk returns a tuple with the EasId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDetermReq) GetEasIdOk() (*string, bool) {
-	if o == nil || isNil(o.EasId) {
+	if o == nil || IsNil(o.EasId) {
 		return nil, false
 	}
 	return o.EasId, true
@@ -154,7 +154,7 @@ func (o *AcrDetermReq) GetEasIdOk() (*string, bool) {
 
 // HasEasId returns a boolean if a field has been set.
 func (o *AcrDetermReq) HasEasId() bool {
-	if o != nil && !isNil(o.EasId) {
+	if o != nil && !IsNil(o.EasId) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *AcrDetermReq) SetSEasEndpoint(v EndPoint) {
 }
 
 func (o AcrDetermReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -201,13 +201,13 @@ func (o AcrDetermReq) MarshalJSON() ([]byte, error) {
 func (o AcrDetermReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["requestorId"] = o.RequestorId
-	if !isNil(o.UeId) {
+	if !IsNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !isNil(o.AcId) {
+	if !IsNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
-	if !isNil(o.EasId) {
+	if !IsNil(o.EasId) {
 		toSerialize["easId"] = o.EasId
 	}
 	toSerialize["sEasEndpoint"] = o.SEasEndpoint
@@ -249,5 +249,3 @@ func (v *NullableAcrDetermReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

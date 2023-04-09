@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,40 +20,40 @@ var _ MappedNullable = &SmfRegistration{}
 
 // SmfRegistration struct for SmfRegistration
 type SmfRegistration struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SmfInstanceId string `json:"smfInstanceId"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	SmfSetId *string `json:"smfSetId,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.  
-	PduSessionId int32 `json:"pduSessionId"`
-	SingleNssai Snssai `json:"singleNssai"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
-	EmergencyServices *bool `json:"emergencyServices,omitempty"`
+	// Unsigned integer identifying a PDU session, within the range 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007. If the PDU Session ID is allocated by the  Core Network for UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved range is only visible in the Core Network.
+	PduSessionId int32  `json:"pduSessionId"`
+	SingleNssai  Snssai `json:"singleNssai"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn               *string `json:"dnn,omitempty"`
+	EmergencyServices *bool   `json:"emergencyServices,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	PcscfRestorationCallbackUri *string `json:"pcscfRestorationCallbackUri,omitempty"`
-	PlmnId PlmnId `json:"plmnId"`
+	PlmnId                      PlmnId  `json:"plmnId"`
 	// Fully Qualified Domain Name
-	PgwFqdn *string `json:"pgwFqdn,omitempty"`
+	PgwFqdn   *string    `json:"pgwFqdn,omitempty"`
 	PgwIpAddr *IpAddress `json:"pgwIpAddr,omitempty"`
-	EpdgInd *bool `json:"epdgInd,omitempty"`
+	EpdgInd   *bool      `json:"epdgInd,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	DeregCallbackUri *string `json:"deregCallbackUri,omitempty"`
+	DeregCallbackUri   *string             `json:"deregCallbackUri,omitempty"`
 	RegistrationReason *RegistrationReason `json:"registrationReason,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	RegistrationTime *time.Time `json:"registrationTime,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	RegistrationTime *time.Time   `json:"registrationTime,omitempty"`
+	ContextInfo      *ContextInfo `json:"contextInfo,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PcfId *string `json:"pcfId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	DataRestorationCallbackUri *string `json:"dataRestorationCallbackUri,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
-	UdrRestartInd *bool `json:"udrRestartInd,omitempty"`
+	DataRestorationCallbackUri *string  `json:"dataRestorationCallbackUri,omitempty"`
+	ResetIds                   []string `json:"resetIds,omitempty"`
+	UdrRestartInd              *bool    `json:"udrRestartInd,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	LastSynchronizationTime *time.Time `json:"lastSynchronizationTime,omitempty"`
-	PduSessionReActivationRequired *bool `json:"pduSessionReActivationRequired,omitempty"`
+	LastSynchronizationTime        *time.Time `json:"lastSynchronizationTime,omitempty"`
+	PduSessionReActivationRequired *bool      `json:"pduSessionReActivationRequired,omitempty"`
 }
 
 // NewSmfRegistration instantiates a new SmfRegistration object
@@ -115,7 +115,7 @@ func (o *SmfRegistration) SetSmfInstanceId(v string) {
 
 // GetSmfSetId returns the SmfSetId field value if set, zero value otherwise.
 func (o *SmfRegistration) GetSmfSetId() string {
-	if o == nil || isNil(o.SmfSetId) {
+	if o == nil || IsNil(o.SmfSetId) {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *SmfRegistration) GetSmfSetId() string {
 // GetSmfSetIdOk returns a tuple with the SmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetSmfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.SmfSetId) {
+	if o == nil || IsNil(o.SmfSetId) {
 		return nil, false
 	}
 	return o.SmfSetId, true
@@ -133,7 +133,7 @@ func (o *SmfRegistration) GetSmfSetIdOk() (*string, bool) {
 
 // HasSmfSetId returns a boolean if a field has been set.
 func (o *SmfRegistration) HasSmfSetId() bool {
-	if o != nil && !isNil(o.SmfSetId) {
+	if o != nil && !IsNil(o.SmfSetId) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *SmfRegistration) SetSmfSetId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmfRegistration) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *SmfRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -165,7 +165,7 @@ func (o *SmfRegistration) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmfRegistration) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *SmfRegistration) SetSingleNssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *SmfRegistration) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *SmfRegistration) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -245,7 +245,7 @@ func (o *SmfRegistration) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *SmfRegistration) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *SmfRegistration) SetDnn(v string) {
 
 // GetEmergencyServices returns the EmergencyServices field value if set, zero value otherwise.
 func (o *SmfRegistration) GetEmergencyServices() bool {
-	if o == nil || isNil(o.EmergencyServices) {
+	if o == nil || IsNil(o.EmergencyServices) {
 		var ret bool
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *SmfRegistration) GetEmergencyServices() bool {
 // GetEmergencyServicesOk returns a tuple with the EmergencyServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetEmergencyServicesOk() (*bool, bool) {
-	if o == nil || isNil(o.EmergencyServices) {
+	if o == nil || IsNil(o.EmergencyServices) {
 		return nil, false
 	}
 	return o.EmergencyServices, true
@@ -277,7 +277,7 @@ func (o *SmfRegistration) GetEmergencyServicesOk() (*bool, bool) {
 
 // HasEmergencyServices returns a boolean if a field has been set.
 func (o *SmfRegistration) HasEmergencyServices() bool {
-	if o != nil && !isNil(o.EmergencyServices) {
+	if o != nil && !IsNil(o.EmergencyServices) {
 		return true
 	}
 
@@ -291,7 +291,7 @@ func (o *SmfRegistration) SetEmergencyServices(v bool) {
 
 // GetPcscfRestorationCallbackUri returns the PcscfRestorationCallbackUri field value if set, zero value otherwise.
 func (o *SmfRegistration) GetPcscfRestorationCallbackUri() string {
-	if o == nil || isNil(o.PcscfRestorationCallbackUri) {
+	if o == nil || IsNil(o.PcscfRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -301,7 +301,7 @@ func (o *SmfRegistration) GetPcscfRestorationCallbackUri() string {
 // GetPcscfRestorationCallbackUriOk returns a tuple with the PcscfRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetPcscfRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.PcscfRestorationCallbackUri) {
+	if o == nil || IsNil(o.PcscfRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.PcscfRestorationCallbackUri, true
@@ -309,7 +309,7 @@ func (o *SmfRegistration) GetPcscfRestorationCallbackUriOk() (*string, bool) {
 
 // HasPcscfRestorationCallbackUri returns a boolean if a field has been set.
 func (o *SmfRegistration) HasPcscfRestorationCallbackUri() bool {
-	if o != nil && !isNil(o.PcscfRestorationCallbackUri) {
+	if o != nil && !IsNil(o.PcscfRestorationCallbackUri) {
 		return true
 	}
 
@@ -347,7 +347,7 @@ func (o *SmfRegistration) SetPlmnId(v PlmnId) {
 
 // GetPgwFqdn returns the PgwFqdn field value if set, zero value otherwise.
 func (o *SmfRegistration) GetPgwFqdn() string {
-	if o == nil || isNil(o.PgwFqdn) {
+	if o == nil || IsNil(o.PgwFqdn) {
 		var ret string
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *SmfRegistration) GetPgwFqdn() string {
 // GetPgwFqdnOk returns a tuple with the PgwFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetPgwFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.PgwFqdn) {
+	if o == nil || IsNil(o.PgwFqdn) {
 		return nil, false
 	}
 	return o.PgwFqdn, true
@@ -365,7 +365,7 @@ func (o *SmfRegistration) GetPgwFqdnOk() (*string, bool) {
 
 // HasPgwFqdn returns a boolean if a field has been set.
 func (o *SmfRegistration) HasPgwFqdn() bool {
-	if o != nil && !isNil(o.PgwFqdn) {
+	if o != nil && !IsNil(o.PgwFqdn) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *SmfRegistration) SetPgwFqdn(v string) {
 
 // GetPgwIpAddr returns the PgwIpAddr field value if set, zero value otherwise.
 func (o *SmfRegistration) GetPgwIpAddr() IpAddress {
-	if o == nil || isNil(o.PgwIpAddr) {
+	if o == nil || IsNil(o.PgwIpAddr) {
 		var ret IpAddress
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *SmfRegistration) GetPgwIpAddr() IpAddress {
 // GetPgwIpAddrOk returns a tuple with the PgwIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetPgwIpAddrOk() (*IpAddress, bool) {
-	if o == nil || isNil(o.PgwIpAddr) {
+	if o == nil || IsNil(o.PgwIpAddr) {
 		return nil, false
 	}
 	return o.PgwIpAddr, true
@@ -397,7 +397,7 @@ func (o *SmfRegistration) GetPgwIpAddrOk() (*IpAddress, bool) {
 
 // HasPgwIpAddr returns a boolean if a field has been set.
 func (o *SmfRegistration) HasPgwIpAddr() bool {
-	if o != nil && !isNil(o.PgwIpAddr) {
+	if o != nil && !IsNil(o.PgwIpAddr) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *SmfRegistration) SetPgwIpAddr(v IpAddress) {
 
 // GetEpdgInd returns the EpdgInd field value if set, zero value otherwise.
 func (o *SmfRegistration) GetEpdgInd() bool {
-	if o == nil || isNil(o.EpdgInd) {
+	if o == nil || IsNil(o.EpdgInd) {
 		var ret bool
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *SmfRegistration) GetEpdgInd() bool {
 // GetEpdgIndOk returns a tuple with the EpdgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetEpdgIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EpdgInd) {
+	if o == nil || IsNil(o.EpdgInd) {
 		return nil, false
 	}
 	return o.EpdgInd, true
@@ -429,7 +429,7 @@ func (o *SmfRegistration) GetEpdgIndOk() (*bool, bool) {
 
 // HasEpdgInd returns a boolean if a field has been set.
 func (o *SmfRegistration) HasEpdgInd() bool {
-	if o != nil && !isNil(o.EpdgInd) {
+	if o != nil && !IsNil(o.EpdgInd) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *SmfRegistration) SetEpdgInd(v bool) {
 
 // GetDeregCallbackUri returns the DeregCallbackUri field value if set, zero value otherwise.
 func (o *SmfRegistration) GetDeregCallbackUri() string {
-	if o == nil || isNil(o.DeregCallbackUri) {
+	if o == nil || IsNil(o.DeregCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -453,7 +453,7 @@ func (o *SmfRegistration) GetDeregCallbackUri() string {
 // GetDeregCallbackUriOk returns a tuple with the DeregCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetDeregCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.DeregCallbackUri) {
+	if o == nil || IsNil(o.DeregCallbackUri) {
 		return nil, false
 	}
 	return o.DeregCallbackUri, true
@@ -461,7 +461,7 @@ func (o *SmfRegistration) GetDeregCallbackUriOk() (*string, bool) {
 
 // HasDeregCallbackUri returns a boolean if a field has been set.
 func (o *SmfRegistration) HasDeregCallbackUri() bool {
-	if o != nil && !isNil(o.DeregCallbackUri) {
+	if o != nil && !IsNil(o.DeregCallbackUri) {
 		return true
 	}
 
@@ -475,7 +475,7 @@ func (o *SmfRegistration) SetDeregCallbackUri(v string) {
 
 // GetRegistrationReason returns the RegistrationReason field value if set, zero value otherwise.
 func (o *SmfRegistration) GetRegistrationReason() RegistrationReason {
-	if o == nil || isNil(o.RegistrationReason) {
+	if o == nil || IsNil(o.RegistrationReason) {
 		var ret RegistrationReason
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *SmfRegistration) GetRegistrationReason() RegistrationReason {
 // GetRegistrationReasonOk returns a tuple with the RegistrationReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetRegistrationReasonOk() (*RegistrationReason, bool) {
-	if o == nil || isNil(o.RegistrationReason) {
+	if o == nil || IsNil(o.RegistrationReason) {
 		return nil, false
 	}
 	return o.RegistrationReason, true
@@ -493,7 +493,7 @@ func (o *SmfRegistration) GetRegistrationReasonOk() (*RegistrationReason, bool) 
 
 // HasRegistrationReason returns a boolean if a field has been set.
 func (o *SmfRegistration) HasRegistrationReason() bool {
-	if o != nil && !isNil(o.RegistrationReason) {
+	if o != nil && !IsNil(o.RegistrationReason) {
 		return true
 	}
 
@@ -507,7 +507,7 @@ func (o *SmfRegistration) SetRegistrationReason(v RegistrationReason) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *SmfRegistration) GetRegistrationTime() time.Time {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -517,7 +517,7 @@ func (o *SmfRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.RegistrationTime) {
+	if o == nil || IsNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -525,7 +525,7 @@ func (o *SmfRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *SmfRegistration) HasRegistrationTime() bool {
-	if o != nil && !isNil(o.RegistrationTime) {
+	if o != nil && !IsNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -539,7 +539,7 @@ func (o *SmfRegistration) SetRegistrationTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *SmfRegistration) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -549,7 +549,7 @@ func (o *SmfRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -557,7 +557,7 @@ func (o *SmfRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *SmfRegistration) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -571,7 +571,7 @@ func (o *SmfRegistration) SetContextInfo(v ContextInfo) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *SmfRegistration) GetPcfId() string {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -581,7 +581,7 @@ func (o *SmfRegistration) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.PcfId) {
+	if o == nil || IsNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -589,7 +589,7 @@ func (o *SmfRegistration) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *SmfRegistration) HasPcfId() bool {
-	if o != nil && !isNil(o.PcfId) {
+	if o != nil && !IsNil(o.PcfId) {
 		return true
 	}
 
@@ -603,7 +603,7 @@ func (o *SmfRegistration) SetPcfId(v string) {
 
 // GetDataRestorationCallbackUri returns the DataRestorationCallbackUri field value if set, zero value otherwise.
 func (o *SmfRegistration) GetDataRestorationCallbackUri() string {
-	if o == nil || isNil(o.DataRestorationCallbackUri) {
+	if o == nil || IsNil(o.DataRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -613,7 +613,7 @@ func (o *SmfRegistration) GetDataRestorationCallbackUri() string {
 // GetDataRestorationCallbackUriOk returns a tuple with the DataRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || isNil(o.DataRestorationCallbackUri) {
+	if o == nil || IsNil(o.DataRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.DataRestorationCallbackUri, true
@@ -621,7 +621,7 @@ func (o *SmfRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
 
 // HasDataRestorationCallbackUri returns a boolean if a field has been set.
 func (o *SmfRegistration) HasDataRestorationCallbackUri() bool {
-	if o != nil && !isNil(o.DataRestorationCallbackUri) {
+	if o != nil && !IsNil(o.DataRestorationCallbackUri) {
 		return true
 	}
 
@@ -635,7 +635,7 @@ func (o *SmfRegistration) SetDataRestorationCallbackUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SmfRegistration) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -645,7 +645,7 @@ func (o *SmfRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -653,7 +653,7 @@ func (o *SmfRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SmfRegistration) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -667,7 +667,7 @@ func (o *SmfRegistration) SetResetIds(v []string) {
 
 // GetUdrRestartInd returns the UdrRestartInd field value if set, zero value otherwise.
 func (o *SmfRegistration) GetUdrRestartInd() bool {
-	if o == nil || isNil(o.UdrRestartInd) {
+	if o == nil || IsNil(o.UdrRestartInd) {
 		var ret bool
 		return ret
 	}
@@ -677,7 +677,7 @@ func (o *SmfRegistration) GetUdrRestartInd() bool {
 // GetUdrRestartIndOk returns a tuple with the UdrRestartInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetUdrRestartIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UdrRestartInd) {
+	if o == nil || IsNil(o.UdrRestartInd) {
 		return nil, false
 	}
 	return o.UdrRestartInd, true
@@ -685,7 +685,7 @@ func (o *SmfRegistration) GetUdrRestartIndOk() (*bool, bool) {
 
 // HasUdrRestartInd returns a boolean if a field has been set.
 func (o *SmfRegistration) HasUdrRestartInd() bool {
-	if o != nil && !isNil(o.UdrRestartInd) {
+	if o != nil && !IsNil(o.UdrRestartInd) {
 		return true
 	}
 
@@ -699,7 +699,7 @@ func (o *SmfRegistration) SetUdrRestartInd(v bool) {
 
 // GetLastSynchronizationTime returns the LastSynchronizationTime field value if set, zero value otherwise.
 func (o *SmfRegistration) GetLastSynchronizationTime() time.Time {
-	if o == nil || isNil(o.LastSynchronizationTime) {
+	if o == nil || IsNil(o.LastSynchronizationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -709,7 +709,7 @@ func (o *SmfRegistration) GetLastSynchronizationTime() time.Time {
 // GetLastSynchronizationTimeOk returns a tuple with the LastSynchronizationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastSynchronizationTime) {
+	if o == nil || IsNil(o.LastSynchronizationTime) {
 		return nil, false
 	}
 	return o.LastSynchronizationTime, true
@@ -717,7 +717,7 @@ func (o *SmfRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
 
 // HasLastSynchronizationTime returns a boolean if a field has been set.
 func (o *SmfRegistration) HasLastSynchronizationTime() bool {
-	if o != nil && !isNil(o.LastSynchronizationTime) {
+	if o != nil && !IsNil(o.LastSynchronizationTime) {
 		return true
 	}
 
@@ -731,7 +731,7 @@ func (o *SmfRegistration) SetLastSynchronizationTime(v time.Time) {
 
 // GetPduSessionReActivationRequired returns the PduSessionReActivationRequired field value if set, zero value otherwise.
 func (o *SmfRegistration) GetPduSessionReActivationRequired() bool {
-	if o == nil || isNil(o.PduSessionReActivationRequired) {
+	if o == nil || IsNil(o.PduSessionReActivationRequired) {
 		var ret bool
 		return ret
 	}
@@ -741,7 +741,7 @@ func (o *SmfRegistration) GetPduSessionReActivationRequired() bool {
 // GetPduSessionReActivationRequiredOk returns a tuple with the PduSessionReActivationRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistration) GetPduSessionReActivationRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.PduSessionReActivationRequired) {
+	if o == nil || IsNil(o.PduSessionReActivationRequired) {
 		return nil, false
 	}
 	return o.PduSessionReActivationRequired, true
@@ -749,7 +749,7 @@ func (o *SmfRegistration) GetPduSessionReActivationRequiredOk() (*bool, bool) {
 
 // HasPduSessionReActivationRequired returns a boolean if a field has been set.
 func (o *SmfRegistration) HasPduSessionReActivationRequired() bool {
-	if o != nil && !isNil(o.PduSessionReActivationRequired) {
+	if o != nil && !IsNil(o.PduSessionReActivationRequired) {
 		return true
 	}
 
@@ -762,7 +762,7 @@ func (o *SmfRegistration) SetPduSessionReActivationRequired(v bool) {
 }
 
 func (o SmfRegistration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -772,61 +772,61 @@ func (o SmfRegistration) MarshalJSON() ([]byte, error) {
 func (o SmfRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smfInstanceId"] = o.SmfInstanceId
-	if !isNil(o.SmfSetId) {
+	if !IsNil(o.SmfSetId) {
 		toSerialize["smfSetId"] = o.SmfSetId
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["pduSessionId"] = o.PduSessionId
 	toSerialize["singleNssai"] = o.SingleNssai
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.EmergencyServices) {
+	if !IsNil(o.EmergencyServices) {
 		toSerialize["emergencyServices"] = o.EmergencyServices
 	}
-	if !isNil(o.PcscfRestorationCallbackUri) {
+	if !IsNil(o.PcscfRestorationCallbackUri) {
 		toSerialize["pcscfRestorationCallbackUri"] = o.PcscfRestorationCallbackUri
 	}
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.PgwFqdn) {
+	if !IsNil(o.PgwFqdn) {
 		toSerialize["pgwFqdn"] = o.PgwFqdn
 	}
-	if !isNil(o.PgwIpAddr) {
+	if !IsNil(o.PgwIpAddr) {
 		toSerialize["pgwIpAddr"] = o.PgwIpAddr
 	}
-	if !isNil(o.EpdgInd) {
+	if !IsNil(o.EpdgInd) {
 		toSerialize["epdgInd"] = o.EpdgInd
 	}
-	if !isNil(o.DeregCallbackUri) {
+	if !IsNil(o.DeregCallbackUri) {
 		toSerialize["deregCallbackUri"] = o.DeregCallbackUri
 	}
-	if !isNil(o.RegistrationReason) {
+	if !IsNil(o.RegistrationReason) {
 		toSerialize["registrationReason"] = o.RegistrationReason
 	}
-	if !isNil(o.RegistrationTime) {
+	if !IsNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !isNil(o.PcfId) {
+	if !IsNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !isNil(o.DataRestorationCallbackUri) {
+	if !IsNil(o.DataRestorationCallbackUri) {
 		toSerialize["dataRestorationCallbackUri"] = o.DataRestorationCallbackUri
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !isNil(o.UdrRestartInd) {
+	if !IsNil(o.UdrRestartInd) {
 		toSerialize["udrRestartInd"] = o.UdrRestartInd
 	}
-	if !isNil(o.LastSynchronizationTime) {
+	if !IsNil(o.LastSynchronizationTime) {
 		toSerialize["lastSynchronizationTime"] = o.LastSynchronizationTime
 	}
-	if !isNil(o.PduSessionReActivationRequired) {
+	if !IsNil(o.PduSessionReActivationRequired) {
 		toSerialize["pduSessionReActivationRequired"] = o.PduSessionReActivationRequired
 	}
 	return toSerialize, nil
@@ -867,5 +867,3 @@ func (v *NullableSmfRegistration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

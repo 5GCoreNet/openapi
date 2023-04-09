@@ -19,14 +19,10 @@ var _ MappedNullable = &NotifyFilePreparationError{}
 
 // NotifyFilePreparationError struct for NotifyFilePreparationError
 type NotifyFilePreparationError struct {
-	Href string `json:"href"`
-	NotificationId int32 `json:"notificationId"`
-	NotificationType NotificationType `json:"notificationType"`
-	EventTime time.Time `json:"eventTime"`
-	SystemDN string `json:"systemDN"`
-	FileInfoList []FileInfo `json:"fileInfoList,omitempty"`
-	Reason *string `json:"reason,omitempty"`
-	AdditionalText *string `json:"additionalText,omitempty"`
+	NotificationHeader
+	FileInfoList   []FileInfo `json:"fileInfoList,omitempty"`
+	Reason         *string    `json:"reason,omitempty"`
+	AdditionalText *string    `json:"additionalText,omitempty"`
 }
 
 // NewNotifyFilePreparationError instantiates a new NotifyFilePreparationError object
@@ -51,129 +47,9 @@ func NewNotifyFilePreparationErrorWithDefaults() *NotifyFilePreparationError {
 	return &this
 }
 
-// GetHref returns the Href field value
-func (o *NotifyFilePreparationError) GetHref() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Href
-}
-
-// GetHrefOk returns a tuple with the Href field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFilePreparationError) GetHrefOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Href, true
-}
-
-// SetHref sets field value
-func (o *NotifyFilePreparationError) SetHref(v string) {
-	o.Href = v
-}
-
-// GetNotificationId returns the NotificationId field value
-func (o *NotifyFilePreparationError) GetNotificationId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.NotificationId
-}
-
-// GetNotificationIdOk returns a tuple with the NotificationId field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFilePreparationError) GetNotificationIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationId, true
-}
-
-// SetNotificationId sets field value
-func (o *NotifyFilePreparationError) SetNotificationId(v int32) {
-	o.NotificationId = v
-}
-
-// GetNotificationType returns the NotificationType field value
-func (o *NotifyFilePreparationError) GetNotificationType() NotificationType {
-	if o == nil {
-		var ret NotificationType
-		return ret
-	}
-
-	return o.NotificationType
-}
-
-// GetNotificationTypeOk returns a tuple with the NotificationType field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFilePreparationError) GetNotificationTypeOk() (*NotificationType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.NotificationType, true
-}
-
-// SetNotificationType sets field value
-func (o *NotifyFilePreparationError) SetNotificationType(v NotificationType) {
-	o.NotificationType = v
-}
-
-// GetEventTime returns the EventTime field value
-func (o *NotifyFilePreparationError) GetEventTime() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.EventTime
-}
-
-// GetEventTimeOk returns a tuple with the EventTime field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFilePreparationError) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EventTime, true
-}
-
-// SetEventTime sets field value
-func (o *NotifyFilePreparationError) SetEventTime(v time.Time) {
-	o.EventTime = v
-}
-
-// GetSystemDN returns the SystemDN field value
-func (o *NotifyFilePreparationError) GetSystemDN() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SystemDN
-}
-
-// GetSystemDNOk returns a tuple with the SystemDN field value
-// and a boolean to check if the value has been set.
-func (o *NotifyFilePreparationError) GetSystemDNOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SystemDN, true
-}
-
-// SetSystemDN sets field value
-func (o *NotifyFilePreparationError) SetSystemDN(v string) {
-	o.SystemDN = v
-}
-
 // GetFileInfoList returns the FileInfoList field value if set, zero value otherwise.
 func (o *NotifyFilePreparationError) GetFileInfoList() []FileInfo {
-	if o == nil || isNil(o.FileInfoList) {
+	if o == nil || IsNil(o.FileInfoList) {
 		var ret []FileInfo
 		return ret
 	}
@@ -183,7 +59,7 @@ func (o *NotifyFilePreparationError) GetFileInfoList() []FileInfo {
 // GetFileInfoListOk returns a tuple with the FileInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationError) GetFileInfoListOk() ([]FileInfo, bool) {
-	if o == nil || isNil(o.FileInfoList) {
+	if o == nil || IsNil(o.FileInfoList) {
 		return nil, false
 	}
 	return o.FileInfoList, true
@@ -191,7 +67,7 @@ func (o *NotifyFilePreparationError) GetFileInfoListOk() ([]FileInfo, bool) {
 
 // HasFileInfoList returns a boolean if a field has been set.
 func (o *NotifyFilePreparationError) HasFileInfoList() bool {
-	if o != nil && !isNil(o.FileInfoList) {
+	if o != nil && !IsNil(o.FileInfoList) {
 		return true
 	}
 
@@ -205,7 +81,7 @@ func (o *NotifyFilePreparationError) SetFileInfoList(v []FileInfo) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *NotifyFilePreparationError) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -215,7 +91,7 @@ func (o *NotifyFilePreparationError) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationError) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -223,7 +99,7 @@ func (o *NotifyFilePreparationError) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *NotifyFilePreparationError) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -237,7 +113,7 @@ func (o *NotifyFilePreparationError) SetReason(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyFilePreparationError) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -247,7 +123,7 @@ func (o *NotifyFilePreparationError) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationError) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -255,7 +131,7 @@ func (o *NotifyFilePreparationError) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyFilePreparationError) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -268,7 +144,7 @@ func (o *NotifyFilePreparationError) SetAdditionalText(v string) {
 }
 
 func (o NotifyFilePreparationError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -277,18 +153,21 @@ func (o NotifyFilePreparationError) MarshalJSON() ([]byte, error) {
 
 func (o NotifyFilePreparationError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["href"] = o.Href
-	toSerialize["notificationId"] = o.NotificationId
-	toSerialize["notificationType"] = o.NotificationType
-	toSerialize["eventTime"] = o.EventTime
-	toSerialize["systemDN"] = o.SystemDN
-	if !isNil(o.FileInfoList) {
+	serializedNotificationHeader, errNotificationHeader := json.Marshal(o.NotificationHeader)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	errNotificationHeader = json.Unmarshal([]byte(serializedNotificationHeader), &toSerialize)
+	if errNotificationHeader != nil {
+		return map[string]interface{}{}, errNotificationHeader
+	}
+	if !IsNil(o.FileInfoList) {
 		toSerialize["fileInfoList"] = o.FileInfoList
 	}
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !isNil(o.AdditionalText) {
+	if !IsNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil
@@ -329,5 +208,3 @@ func (v *NullableNotifyFilePreparationError) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

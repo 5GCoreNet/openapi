@@ -1439,35 +1439,79 @@ components:
       type: integer
     AuthType:
       anyOf:
-      - $ref: '#/components/schemas/AuthType_anyOf'
+      - enum:
+        - 5G_AKA
+        - EAP_AKA_PRIME
+        - EAP_TLS
+        - NONE
+        - EAP_TTLS
+        type: string
       - type: string
     AvType:
       anyOf:
-      - $ref: '#/components/schemas/AvType_anyOf'
+      - enum:
+        - 5G_HE_AKA
+        - EAP_AKA_PRIME
+        type: string
       - type: string
     HssAuthType:
       anyOf:
-      - $ref: '#/components/schemas/HssAuthType_anyOf'
+      - enum:
+        - EPS_AKA
+        - EAP_AKA
+        - EAP_AKA_PRIME
+        - IMS_AKA
+        - GBA_AKA
+        - UMTS_AKA
+        type: string
       - type: string
     HssAvType:
       anyOf:
-      - $ref: '#/components/schemas/HssAvType_anyOf'
+      - enum:
+        - EPS_AKA
+        - EAP_AKA
+        - IMS_AKA
+        - GBA_AKA
+        - UMTS_AKA
+        type: string
       - type: string
     HssAuthTypeInUri:
       anyOf:
-      - $ref: '#/components/schemas/HssAuthTypeInUri_anyOf'
+      - enum:
+        - eps-aka
+        - eap-aka
+        - eap-aka-prime
+        - ims-aka
+        - gba-aka
+        type: string
       - type: string
     AccessNetworkId:
       anyOf:
-      - $ref: '#/components/schemas/AccessNetworkId_anyOf'
+      - enum:
+        - HRPD
+        - WIMAX
+        - WLAN
+        - ETHERNET
+        type: string
       - type: string
     NodeType:
       anyOf:
-      - $ref: '#/components/schemas/NodeType_anyOf'
+      - enum:
+        - AUSF
+        - VLR
+        - SGSN
+        - S_CSCF
+        - BSF
+        - GAN_AAA_SERVER
+        - WLAN_AAA_SERVER
+        - MME
+        type: string
       - type: string
     GbaAuthType:
       anyOf:
-      - $ref: '#/components/schemas/GbaAuthType_anyOf'
+      - enum:
+        - DIGEST_AKAV1_MD5
+        type: string
       - type: string
     SupiOrSuci:
       description: String identifying a SUPI or a SUCI.
@@ -1857,7 +1901,64 @@ components:
       type: object
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -1927,134 +2028,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    AuthType_anyOf:
-      enum:
-      - 5G_AKA
-      - EAP_AKA_PRIME
-      - EAP_TLS
-      - NONE
-      - EAP_TTLS
-      type: string
-      example: null
-    AvType_anyOf:
-      enum:
-      - 5G_HE_AKA
-      - EAP_AKA_PRIME
-      type: string
-      example: null
-    HssAuthType_anyOf:
-      enum:
-      - EPS_AKA
-      - EAP_AKA
-      - EAP_AKA_PRIME
-      - IMS_AKA
-      - GBA_AKA
-      - UMTS_AKA
-      type: string
-      example: null
-    HssAvType_anyOf:
-      enum:
-      - EPS_AKA
-      - EAP_AKA
-      - IMS_AKA
-      - GBA_AKA
-      - UMTS_AKA
-      type: string
-      example: null
-    HssAuthTypeInUri_anyOf:
-      enum:
-      - eps-aka
-      - eap-aka
-      - eap-aka-prime
-      - ims-aka
-      - gba-aka
-      type: string
-      example: null
-    AccessNetworkId_anyOf:
-      enum:
-      - HRPD
-      - WIMAX
-      - WLAN
-      - ETHERNET
-      type: string
-      example: null
-    NodeType_anyOf:
-      enum:
-      - AUSF
-      - VLR
-      - SGSN
-      - S_CSCF
-      - BSF
-      - GAN_AAA_SERVER
-      - WLAN_AAA_SERVER
-      - MME
-      type: string
-      example: null
-    GbaAuthType_anyOf:
-      enum:
-      - DIGEST_AKAV1_MD5
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

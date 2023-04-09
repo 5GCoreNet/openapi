@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &AnalyticsRequest{}
 
 // AnalyticsRequest Represents the parameters to request to retrieve analytics information.
 type AnalyticsRequest struct {
-	AnalyEvent AnalyticsEvent `json:"analyEvent"`
-	AnalyEventFilter *AnalyticsEventFilter `json:"analyEventFilter,omitempty"`
-	AnalyRep *EventReportingRequirement `json:"analyRep,omitempty"`
-	TgtUe *TargetUeId `json:"tgtUe,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	AnalyEvent       AnalyticsEvent             `json:"analyEvent"`
+	AnalyEventFilter *AnalyticsEventFilter      `json:"analyEventFilter,omitempty"`
+	AnalyRep         *EventReportingRequirement `json:"analyRep,omitempty"`
+	TgtUe            *TargetUeId                `json:"tgtUe,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat string `json:"suppFeat"`
 }
 
@@ -72,7 +72,7 @@ func (o *AnalyticsRequest) SetAnalyEvent(v AnalyticsEvent) {
 
 // GetAnalyEventFilter returns the AnalyEventFilter field value if set, zero value otherwise.
 func (o *AnalyticsRequest) GetAnalyEventFilter() AnalyticsEventFilter {
-	if o == nil || isNil(o.AnalyEventFilter) {
+	if o == nil || IsNil(o.AnalyEventFilter) {
 		var ret AnalyticsEventFilter
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AnalyticsRequest) GetAnalyEventFilter() AnalyticsEventFilter {
 // GetAnalyEventFilterOk returns a tuple with the AnalyEventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsRequest) GetAnalyEventFilterOk() (*AnalyticsEventFilter, bool) {
-	if o == nil || isNil(o.AnalyEventFilter) {
+	if o == nil || IsNil(o.AnalyEventFilter) {
 		return nil, false
 	}
 	return o.AnalyEventFilter, true
@@ -90,7 +90,7 @@ func (o *AnalyticsRequest) GetAnalyEventFilterOk() (*AnalyticsEventFilter, bool)
 
 // HasAnalyEventFilter returns a boolean if a field has been set.
 func (o *AnalyticsRequest) HasAnalyEventFilter() bool {
-	if o != nil && !isNil(o.AnalyEventFilter) {
+	if o != nil && !IsNil(o.AnalyEventFilter) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AnalyticsRequest) SetAnalyEventFilter(v AnalyticsEventFilter) {
 
 // GetAnalyRep returns the AnalyRep field value if set, zero value otherwise.
 func (o *AnalyticsRequest) GetAnalyRep() EventReportingRequirement {
-	if o == nil || isNil(o.AnalyRep) {
+	if o == nil || IsNil(o.AnalyRep) {
 		var ret EventReportingRequirement
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AnalyticsRequest) GetAnalyRep() EventReportingRequirement {
 // GetAnalyRepOk returns a tuple with the AnalyRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsRequest) GetAnalyRepOk() (*EventReportingRequirement, bool) {
-	if o == nil || isNil(o.AnalyRep) {
+	if o == nil || IsNil(o.AnalyRep) {
 		return nil, false
 	}
 	return o.AnalyRep, true
@@ -122,7 +122,7 @@ func (o *AnalyticsRequest) GetAnalyRepOk() (*EventReportingRequirement, bool) {
 
 // HasAnalyRep returns a boolean if a field has been set.
 func (o *AnalyticsRequest) HasAnalyRep() bool {
-	if o != nil && !isNil(o.AnalyRep) {
+	if o != nil && !IsNil(o.AnalyRep) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AnalyticsRequest) SetAnalyRep(v EventReportingRequirement) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *AnalyticsRequest) GetTgtUe() TargetUeId {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		var ret TargetUeId
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AnalyticsRequest) GetTgtUe() TargetUeId {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsRequest) GetTgtUeOk() (*TargetUeId, bool) {
-	if o == nil || isNil(o.TgtUe) {
+	if o == nil || IsNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -154,7 +154,7 @@ func (o *AnalyticsRequest) GetTgtUeOk() (*TargetUeId, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *AnalyticsRequest) HasTgtUe() bool {
-	if o != nil && !isNil(o.TgtUe) {
+	if o != nil && !IsNil(o.TgtUe) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *AnalyticsRequest) SetSuppFeat(v string) {
 }
 
 func (o AnalyticsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -201,13 +201,13 @@ func (o AnalyticsRequest) MarshalJSON() ([]byte, error) {
 func (o AnalyticsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEvent"] = o.AnalyEvent
-	if !isNil(o.AnalyEventFilter) {
+	if !IsNil(o.AnalyEventFilter) {
 		toSerialize["analyEventFilter"] = o.AnalyEventFilter
 	}
-	if !isNil(o.AnalyRep) {
+	if !IsNil(o.AnalyRep) {
 		toSerialize["analyRep"] = o.AnalyRep
 	}
-	if !isNil(o.TgtUe) {
+	if !IsNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
 	toSerialize["suppFeat"] = o.SuppFeat
@@ -249,5 +249,3 @@ func (v *NullableAnalyticsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

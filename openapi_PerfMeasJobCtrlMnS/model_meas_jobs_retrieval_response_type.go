@@ -41,7 +41,7 @@ func NewMeasJobsRetrievalResponseTypeWithDefaults() *MeasJobsRetrievalResponseTy
 
 // GetJobInfoList returns the JobInfoList field value if set, zero value otherwise.
 func (o *MeasJobsRetrievalResponseType) GetJobInfoList() []MeasJobInfoResourceType {
-	if o == nil || isNil(o.JobInfoList) {
+	if o == nil || IsNil(o.JobInfoList) {
 		var ret []MeasJobInfoResourceType
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MeasJobsRetrievalResponseType) GetJobInfoList() []MeasJobInfoResourceTy
 // GetJobInfoListOk returns a tuple with the JobInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobsRetrievalResponseType) GetJobInfoListOk() ([]MeasJobInfoResourceType, bool) {
-	if o == nil || isNil(o.JobInfoList) {
+	if o == nil || IsNil(o.JobInfoList) {
 		return nil, false
 	}
 	return o.JobInfoList, true
@@ -59,7 +59,7 @@ func (o *MeasJobsRetrievalResponseType) GetJobInfoListOk() ([]MeasJobInfoResourc
 
 // HasJobInfoList returns a boolean if a field has been set.
 func (o *MeasJobsRetrievalResponseType) HasJobInfoList() bool {
-	if o != nil && !isNil(o.JobInfoList) {
+	if o != nil && !IsNil(o.JobInfoList) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *MeasJobsRetrievalResponseType) SetJobInfoList(v []MeasJobInfoResourceTy
 }
 
 func (o MeasJobsRetrievalResponseType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o MeasJobsRetrievalResponseType) MarshalJSON() ([]byte, error) {
 
 func (o MeasJobsRetrievalResponseType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JobInfoList) {
+	if !IsNil(o.JobInfoList) {
 		toSerialize["jobInfoList"] = o.JobInfoList
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableMeasJobsRetrievalResponseType) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

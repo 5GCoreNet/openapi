@@ -1,7 +1,7 @@
 /*
 Niwmsc_SMService
 
-SMS-IWMSC Short Message Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMS-IWMSC Short Message Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the SmsData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SmsData{}
 
-// SmsData Information within resquest message invoking MoForwardSm service operation, for delivering MO SMS. 
+// SmsData Information within resquest message invoking MoForwardSm service operation, for delivering MO SMS.
 type SmsData struct {
 	SmsPayload RefToBinaryData `json:"smsPayload"`
 }
@@ -65,7 +65,7 @@ func (o *SmsData) SetSmsPayload(v RefToBinaryData) {
 }
 
 func (o SmsData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -113,5 +113,3 @@ func (v *NullableSmsData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

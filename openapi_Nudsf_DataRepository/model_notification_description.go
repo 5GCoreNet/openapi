@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &NotificationDescription{}
 // NotificationDescription Description of a record notification
 type NotificationDescription struct {
 	// String providing an URI formatted according to RFC 3986.
-	RecordRef string `json:"recordRef"`
-	OperationType RecordOperation `json:"operationType"`
-	SubscriptionId *string `json:"subscriptionId,omitempty"`
+	RecordRef      string          `json:"recordRef"`
+	OperationType  RecordOperation `json:"operationType"`
+	SubscriptionId *string         `json:"subscriptionId,omitempty"`
 }
 
 // NewNotificationDescription instantiates a new NotificationDescription object
@@ -94,7 +94,7 @@ func (o *NotificationDescription) SetOperationType(v RecordOperation) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *NotificationDescription) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *NotificationDescription) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationDescription) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -112,7 +112,7 @@ func (o *NotificationDescription) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *NotificationDescription) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *NotificationDescription) SetSubscriptionId(v string) {
 }
 
 func (o NotificationDescription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -136,7 +136,7 @@ func (o NotificationDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["recordRef"] = o.RecordRef
 	toSerialize["operationType"] = o.OperationType
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
 	return toSerialize, nil
@@ -177,5 +177,3 @@ func (v *NullableNotificationDescription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

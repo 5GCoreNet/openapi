@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// GlobalRanNodeId1 - One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present. 
+// GlobalRanNodeId1 - One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present.
 type GlobalRanNodeId1 struct {
 	Interface *interface{}
 }
@@ -26,7 +26,6 @@ func InterfaceAsGlobalRanNodeId1(v *interface{}) GlobalRanNodeId1 {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GlobalRanNodeId1) UnmarshalJSON(data []byte) error {
@@ -67,7 +66,7 @@ func (src GlobalRanNodeId1) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GlobalRanNodeId1) GetActualInstance() (interface{}) {
+func (obj *GlobalRanNodeId1) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -114,5 +113,3 @@ func (v *NullableGlobalRanNodeId1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -12,7 +12,6 @@ package openapi_Npcf_PolicyAuthorization
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
@@ -27,7 +26,6 @@ func InterfaceAsGeraLocation(v *interface{}) GeraLocation {
 		Interface: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GeraLocation) UnmarshalJSON(data []byte) error {
@@ -68,7 +66,7 @@ func (src GeraLocation) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GeraLocation) GetActualInstance() (interface{}) {
+func (obj *GeraLocation) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -115,5 +113,3 @@ func (v *NullableGeraLocation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

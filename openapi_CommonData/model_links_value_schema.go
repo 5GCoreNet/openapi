@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 
 // LinksValueSchema - A list of mutually exclusive alternatives of 1 or more links.
 type LinksValueSchema struct {
-	Link *Link
+	Link        *Link
 	ArrayOfLink *[]Link
 }
 
@@ -34,7 +34,6 @@ func ArrayOfLinkAsLinksValueSchema(v *[]Link) LinksValueSchema {
 		ArrayOfLink: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LinksValueSchema) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src LinksValueSchema) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LinksValueSchema) GetActualInstance() (interface{}) {
+func (obj *LinksValueSchema) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableLinksValueSchema) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

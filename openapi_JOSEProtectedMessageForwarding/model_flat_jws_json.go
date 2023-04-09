@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &FlatJwsJson{}
 
 // FlatJwsJson Contains the modification from IPXes on path
 type FlatJwsJson struct {
-	Payload string `json:"payload"`
-	Protected *string `json:"protected,omitempty"`
-	Header map[string]interface{} `json:"header,omitempty"`
-	Signature string `json:"signature"`
+	Payload   string                 `json:"payload"`
+	Protected *string                `json:"protected,omitempty"`
+	Header    map[string]interface{} `json:"header,omitempty"`
+	Signature string                 `json:"signature"`
 }
 
 // NewFlatJwsJson instantiates a new FlatJwsJson object
@@ -70,7 +70,7 @@ func (o *FlatJwsJson) SetPayload(v string) {
 
 // GetProtected returns the Protected field value if set, zero value otherwise.
 func (o *FlatJwsJson) GetProtected() string {
-	if o == nil || isNil(o.Protected) {
+	if o == nil || IsNil(o.Protected) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *FlatJwsJson) GetProtected() string {
 // GetProtectedOk returns a tuple with the Protected field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJwsJson) GetProtectedOk() (*string, bool) {
-	if o == nil || isNil(o.Protected) {
+	if o == nil || IsNil(o.Protected) {
 		return nil, false
 	}
 	return o.Protected, true
@@ -88,7 +88,7 @@ func (o *FlatJwsJson) GetProtectedOk() (*string, bool) {
 
 // HasProtected returns a boolean if a field has been set.
 func (o *FlatJwsJson) HasProtected() bool {
-	if o != nil && !isNil(o.Protected) {
+	if o != nil && !IsNil(o.Protected) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *FlatJwsJson) SetProtected(v string) {
 
 // GetHeader returns the Header field value if set, zero value otherwise.
 func (o *FlatJwsJson) GetHeader() map[string]interface{} {
-	if o == nil || isNil(o.Header) {
+	if o == nil || IsNil(o.Header) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *FlatJwsJson) GetHeader() map[string]interface{} {
 // GetHeaderOk returns a tuple with the Header field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJwsJson) GetHeaderOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.Header) {
+	if o == nil || IsNil(o.Header) {
 		return map[string]interface{}{}, false
 	}
 	return o.Header, true
@@ -120,7 +120,7 @@ func (o *FlatJwsJson) GetHeaderOk() (map[string]interface{}, bool) {
 
 // HasHeader returns a boolean if a field has been set.
 func (o *FlatJwsJson) HasHeader() bool {
-	if o != nil && !isNil(o.Header) {
+	if o != nil && !IsNil(o.Header) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *FlatJwsJson) SetSignature(v string) {
 }
 
 func (o FlatJwsJson) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,10 +167,10 @@ func (o FlatJwsJson) MarshalJSON() ([]byte, error) {
 func (o FlatJwsJson) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["payload"] = o.Payload
-	if !isNil(o.Protected) {
+	if !IsNil(o.Protected) {
 		toSerialize["protected"] = o.Protected
 	}
-	if !isNil(o.Header) {
+	if !IsNil(o.Header) {
 		toSerialize["header"] = o.Header
 	}
 	toSerialize["signature"] = o.Signature
@@ -212,5 +212,3 @@ func (v *NullableFlatJwsJson) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,13 +19,13 @@ var _ MappedNullable = &FiveQICharacteristicsSingleAllOf{}
 
 // FiveQICharacteristicsSingleAllOf struct for FiveQICharacteristicsSingleAllOf
 type FiveQICharacteristicsSingleAllOf struct {
-	FiveQIValue *int32 `json:"fiveQIValue,omitempty"`
-	ResourceType *string `json:"resourceType,omitempty"`
-	PriorityLevel *int32 `json:"priorityLevel,omitempty"`
-	PacketDelayBudget *int32 `json:"packetDelayBudget,omitempty"`
-	PacketErrorRate *PacketErrorRate `json:"packetErrorRate,omitempty"`
-	AveragingWindow *int32 `json:"averagingWindow,omitempty"`
-	MaximumDataBurstVolume *int32 `json:"maximumDataBurstVolume,omitempty"`
+	FiveQIValue            *int32           `json:"fiveQIValue,omitempty"`
+	ResourceType           *string          `json:"resourceType,omitempty"`
+	PriorityLevel          *int32           `json:"priorityLevel,omitempty"`
+	PacketDelayBudget      *int32           `json:"packetDelayBudget,omitempty"`
+	PacketErrorRate        *PacketErrorRate `json:"packetErrorRate,omitempty"`
+	AveragingWindow        *int32           `json:"averagingWindow,omitempty"`
+	MaximumDataBurstVolume *int32           `json:"maximumDataBurstVolume,omitempty"`
 }
 
 // NewFiveQICharacteristicsSingleAllOf instantiates a new FiveQICharacteristicsSingleAllOf object
@@ -47,7 +47,7 @@ func NewFiveQICharacteristicsSingleAllOfWithDefaults() *FiveQICharacteristicsSin
 
 // GetFiveQIValue returns the FiveQIValue field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetFiveQIValue() int32 {
-	if o == nil || isNil(o.FiveQIValue) {
+	if o == nil || IsNil(o.FiveQIValue) {
 		var ret int32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetFiveQIValue() int32 {
 // GetFiveQIValueOk returns a tuple with the FiveQIValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetFiveQIValueOk() (*int32, bool) {
-	if o == nil || isNil(o.FiveQIValue) {
+	if o == nil || IsNil(o.FiveQIValue) {
 		return nil, false
 	}
 	return o.FiveQIValue, true
@@ -65,7 +65,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetFiveQIValueOk() (*int32, bool) {
 
 // HasFiveQIValue returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasFiveQIValue() bool {
-	if o != nil && !isNil(o.FiveQIValue) {
+	if o != nil && !IsNil(o.FiveQIValue) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetFiveQIValue(v int32) {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetResourceType() string {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -97,7 +97,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetResourceTypeOk() (*string, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetResourceType(v string) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetPriorityLevel() int32 {
-	if o == nil || isNil(o.PriorityLevel) {
+	if o == nil || IsNil(o.PriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetPriorityLevel() int32 {
 // GetPriorityLevelOk returns a tuple with the PriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetPriorityLevelOk() (*int32, bool) {
-	if o == nil || isNil(o.PriorityLevel) {
+	if o == nil || IsNil(o.PriorityLevel) {
 		return nil, false
 	}
 	return o.PriorityLevel, true
@@ -129,7 +129,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetPriorityLevelOk() (*int32, bool) {
 
 // HasPriorityLevel returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasPriorityLevel() bool {
-	if o != nil && !isNil(o.PriorityLevel) {
+	if o != nil && !IsNil(o.PriorityLevel) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetPriorityLevel(v int32) {
 
 // GetPacketDelayBudget returns the PacketDelayBudget field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetPacketDelayBudget() int32 {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		var ret int32
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetPacketDelayBudget() int32 {
 // GetPacketDelayBudgetOk returns a tuple with the PacketDelayBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetPacketDelayBudgetOk() (*int32, bool) {
-	if o == nil || isNil(o.PacketDelayBudget) {
+	if o == nil || IsNil(o.PacketDelayBudget) {
 		return nil, false
 	}
 	return o.PacketDelayBudget, true
@@ -161,7 +161,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetPacketDelayBudgetOk() (*int32, boo
 
 // HasPacketDelayBudget returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasPacketDelayBudget() bool {
-	if o != nil && !isNil(o.PacketDelayBudget) {
+	if o != nil && !IsNil(o.PacketDelayBudget) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetPacketDelayBudget(v int32) {
 
 // GetPacketErrorRate returns the PacketErrorRate field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetPacketErrorRate() PacketErrorRate {
-	if o == nil || isNil(o.PacketErrorRate) {
+	if o == nil || IsNil(o.PacketErrorRate) {
 		var ret PacketErrorRate
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetPacketErrorRate() PacketErrorRate 
 // GetPacketErrorRateOk returns a tuple with the PacketErrorRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetPacketErrorRateOk() (*PacketErrorRate, bool) {
-	if o == nil || isNil(o.PacketErrorRate) {
+	if o == nil || IsNil(o.PacketErrorRate) {
 		return nil, false
 	}
 	return o.PacketErrorRate, true
@@ -193,7 +193,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetPacketErrorRateOk() (*PacketErrorR
 
 // HasPacketErrorRate returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasPacketErrorRate() bool {
-	if o != nil && !isNil(o.PacketErrorRate) {
+	if o != nil && !IsNil(o.PacketErrorRate) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetPacketErrorRate(v PacketErrorRate)
 
 // GetAveragingWindow returns the AveragingWindow field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetAveragingWindow() int32 {
-	if o == nil || isNil(o.AveragingWindow) {
+	if o == nil || IsNil(o.AveragingWindow) {
 		var ret int32
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetAveragingWindow() int32 {
 // GetAveragingWindowOk returns a tuple with the AveragingWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetAveragingWindowOk() (*int32, bool) {
-	if o == nil || isNil(o.AveragingWindow) {
+	if o == nil || IsNil(o.AveragingWindow) {
 		return nil, false
 	}
 	return o.AveragingWindow, true
@@ -225,7 +225,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetAveragingWindowOk() (*int32, bool)
 
 // HasAveragingWindow returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasAveragingWindow() bool {
-	if o != nil && !isNil(o.AveragingWindow) {
+	if o != nil && !IsNil(o.AveragingWindow) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetAveragingWindow(v int32) {
 
 // GetMaximumDataBurstVolume returns the MaximumDataBurstVolume field value if set, zero value otherwise.
 func (o *FiveQICharacteristicsSingleAllOf) GetMaximumDataBurstVolume() int32 {
-	if o == nil || isNil(o.MaximumDataBurstVolume) {
+	if o == nil || IsNil(o.MaximumDataBurstVolume) {
 		var ret int32
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetMaximumDataBurstVolume() int32 {
 // GetMaximumDataBurstVolumeOk returns a tuple with the MaximumDataBurstVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQICharacteristicsSingleAllOf) GetMaximumDataBurstVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumDataBurstVolume) {
+	if o == nil || IsNil(o.MaximumDataBurstVolume) {
 		return nil, false
 	}
 	return o.MaximumDataBurstVolume, true
@@ -257,7 +257,7 @@ func (o *FiveQICharacteristicsSingleAllOf) GetMaximumDataBurstVolumeOk() (*int32
 
 // HasMaximumDataBurstVolume returns a boolean if a field has been set.
 func (o *FiveQICharacteristicsSingleAllOf) HasMaximumDataBurstVolume() bool {
-	if o != nil && !isNil(o.MaximumDataBurstVolume) {
+	if o != nil && !IsNil(o.MaximumDataBurstVolume) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *FiveQICharacteristicsSingleAllOf) SetMaximumDataBurstVolume(v int32) {
 }
 
 func (o FiveQICharacteristicsSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,25 +279,25 @@ func (o FiveQICharacteristicsSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o FiveQICharacteristicsSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.FiveQIValue) {
+	if !IsNil(o.FiveQIValue) {
 		toSerialize["fiveQIValue"] = o.FiveQIValue
 	}
-	if !isNil(o.ResourceType) {
+	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !isNil(o.PriorityLevel) {
+	if !IsNil(o.PriorityLevel) {
 		toSerialize["priorityLevel"] = o.PriorityLevel
 	}
-	if !isNil(o.PacketDelayBudget) {
+	if !IsNil(o.PacketDelayBudget) {
 		toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	}
-	if !isNil(o.PacketErrorRate) {
+	if !IsNil(o.PacketErrorRate) {
 		toSerialize["packetErrorRate"] = o.PacketErrorRate
 	}
-	if !isNil(o.AveragingWindow) {
+	if !IsNil(o.AveragingWindow) {
 		toSerialize["averagingWindow"] = o.AveragingWindow
 	}
-	if !isNil(o.MaximumDataBurstVolume) {
+	if !IsNil(o.MaximumDataBurstVolume) {
 		toSerialize["maximumDataBurstVolume"] = o.MaximumDataBurstVolume
 	}
 	return toSerialize, nil
@@ -338,5 +338,3 @@ func (v *NullableFiveQICharacteristicsSingleAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

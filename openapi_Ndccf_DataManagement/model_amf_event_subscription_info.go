@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &AmfEventSubscriptionInfo{}
 // AmfEventSubscriptionInfo Individual AMF Event Subscription Information
 type AmfEventSubscriptionInfo struct {
 	// String providing an URI formatted according to RFC 3986.
-	SubId string `json:"subId"`
+	SubId               string  `json:"subId"`
 	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
-	RefIdList []int32 `json:"refIdList"`
+	RefIdList           []int32 `json:"refIdList"`
 	// String providing an URI formatted according to RFC 3986.
 	OldSubId *string `json:"oldSubId,omitempty"`
 }
@@ -72,7 +72,7 @@ func (o *AmfEventSubscriptionInfo) SetSubId(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationId() string {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || isNil(o.NotifyCorrelationId) {
+	if o == nil || IsNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -90,7 +90,7 @@ func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionInfo) HasNotifyCorrelationId() bool {
-	if o != nil && !isNil(o.NotifyCorrelationId) {
+	if o != nil && !IsNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmfEventSubscriptionInfo) SetRefIdList(v []int32) {
 
 // GetOldSubId returns the OldSubId field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionInfo) GetOldSubId() string {
-	if o == nil || isNil(o.OldSubId) {
+	if o == nil || IsNil(o.OldSubId) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AmfEventSubscriptionInfo) GetOldSubId() string {
 // GetOldSubIdOk returns a tuple with the OldSubId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionInfo) GetOldSubIdOk() (*string, bool) {
-	if o == nil || isNil(o.OldSubId) {
+	if o == nil || IsNil(o.OldSubId) {
 		return nil, false
 	}
 	return o.OldSubId, true
@@ -146,7 +146,7 @@ func (o *AmfEventSubscriptionInfo) GetOldSubIdOk() (*string, bool) {
 
 // HasOldSubId returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionInfo) HasOldSubId() bool {
-	if o != nil && !isNil(o.OldSubId) {
+	if o != nil && !IsNil(o.OldSubId) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *AmfEventSubscriptionInfo) SetOldSubId(v string) {
 }
 
 func (o AmfEventSubscriptionInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -169,11 +169,11 @@ func (o AmfEventSubscriptionInfo) MarshalJSON() ([]byte, error) {
 func (o AmfEventSubscriptionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subId"] = o.SubId
-	if !isNil(o.NotifyCorrelationId) {
+	if !IsNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	toSerialize["refIdList"] = o.RefIdList
-	if !isNil(o.OldSubId) {
+	if !IsNil(o.OldSubId) {
 		toSerialize["oldSubId"] = o.OldSubId
 	}
 	return toSerialize, nil
@@ -214,5 +214,3 @@ func (v *NullableAmfEventSubscriptionInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

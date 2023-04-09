@@ -1,7 +1,7 @@
 /*
 Nudm_NIDDAU
 
-Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm NIDD Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // NiddCause struct for NiddCause
 type NiddCause struct {
-	NiddCauseAnyOf *NiddCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NiddCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NiddCauseAnyOf
-	err = json.Unmarshal(data, &dst.NiddCauseAnyOf);
-	if err == nil {
-		jsonNiddCauseAnyOf, _ := json.Marshal(dst.NiddCauseAnyOf)
-		if string(jsonNiddCauseAnyOf) == "{}" { // empty struct
-			dst.NiddCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.NiddCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.NiddCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NiddCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NiddCause) MarshalJSON() ([]byte, error) {
-	if src.NiddCauseAnyOf != nil {
-		return json.Marshal(&src.NiddCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNiddCause) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

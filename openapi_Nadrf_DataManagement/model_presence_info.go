@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,22 +17,22 @@ import (
 // checks if the PresenceInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PresenceInfo{}
 
-// PresenceInfo If the additionalPraId IE is present, this IE shall state the presence information of the UE for the individual PRA identified by the additionalPraId IE;  If the additionalPraId IE is not present, this IE shall state the presence information of the UE for the PRA identified by the praId IE. 
+// PresenceInfo If the additionalPraId IE is present, this IE shall state the presence information of the UE for the individual PRA identified by the additionalPraId IE;  If the additionalPraId IE is not present, this IE shall state the presence information of the UE for the PRA identified by the praId IE.
 type PresenceInfo struct {
-	// Represents an identifier of the Presence Reporting Area (see clause 28.10 of 3GPP  TS 23.003.  This IE shall be present  if the Area of Interest subscribed or reported is a Presence Reporting Area or a Set of Core Network predefined Presence Reporting Areas. When present, it shall be encoded as a string representing an integer in the following ranges: 0 to 8 388 607 for UE-dedicated PRA 8 388 608 to 16 777 215 for Core Network predefined PRA Examples: PRA ID 123 is encoded as \"123\" PRA ID 11 238 660 is encoded as \"11238660\" 
+	// Represents an identifier of the Presence Reporting Area (see clause 28.10 of 3GPP  TS 23.003.  This IE shall be present  if the Area of Interest subscribed or reported is a Presence Reporting Area or a Set of Core Network predefined Presence Reporting Areas. When present, it shall be encoded as a string representing an integer in the following ranges: 0 to 8 388 607 for UE-dedicated PRA 8 388 608 to 16 777 215 for Core Network predefined PRA Examples: PRA ID 123 is encoded as \"123\" PRA ID 11 238 660 is encoded as \"11238660\"
 	PraId *string `json:"praId,omitempty"`
-	// This IE may be present if the praId IE is present and if it contains a PRA identifier referring to a set of Core Network predefined Presence Reporting Areas. When present, this IE shall contain a PRA Identifier of an individual PRA within the Set of Core Network predefined Presence Reporting Areas indicated by the praId IE.  
-	AdditionalPraId *string `json:"additionalPraId,omitempty"`
-	PresenceState *PresenceState `json:"presenceState,omitempty"`
-	// Represents the list of tracking areas that constitutes the area. This IE shall be present if the subscription or  the event report is for tracking UE presence in the tracking areas. For non 3GPP access the TAI shall be the N3GPP TAI.  
+	// This IE may be present if the praId IE is present and if it contains a PRA identifier referring to a set of Core Network predefined Presence Reporting Areas. When present, this IE shall contain a PRA Identifier of an individual PRA within the Set of Core Network predefined Presence Reporting Areas indicated by the praId IE.
+	AdditionalPraId *string        `json:"additionalPraId,omitempty"`
+	PresenceState   *PresenceState `json:"presenceState,omitempty"`
+	// Represents the list of tracking areas that constitutes the area. This IE shall be present if the subscription or  the event report is for tracking UE presence in the tracking areas. For non 3GPP access the TAI shall be the N3GPP TAI.
 	TrackingAreaList []Tai `json:"trackingAreaList,omitempty"`
-	// Represents the list of EUTRAN cell Ids that constitutes the area. This IE shall be present if the Area of Interest subscribed is a list of EUTRAN cell Ids.  
+	// Represents the list of EUTRAN cell Ids that constitutes the area. This IE shall be present if the Area of Interest subscribed is a list of EUTRAN cell Ids.
 	EcgiList []Ecgi `json:"ecgiList,omitempty"`
-	// Represents the list of NR cell Ids that constitutes the area. This IE shall be present if the Area of Interest subscribed is a list of NR cell Ids.  
+	// Represents the list of NR cell Ids that constitutes the area. This IE shall be present if the Area of Interest subscribed is a list of NR cell Ids.
 	NcgiList []Ncgi `json:"ncgiList,omitempty"`
-	// Represents the list of NG RAN node identifiers that constitutes the area. This IE shall be present if the Area of Interest subscribed is a list of NG RAN node identifiers.  
+	// Represents the list of NG RAN node identifiers that constitutes the area. This IE shall be present if the Area of Interest subscribed is a list of NG RAN node identifiers.
 	GlobalRanNodeIdList []GlobalRanNodeId `json:"globalRanNodeIdList,omitempty"`
-	// Represents the list of eNodeB identifiers that constitutes the area. This IE shall be  present if the Area of Interest subscribed is a list of eNodeB identifiers. 
+	// Represents the list of eNodeB identifiers that constitutes the area. This IE shall be  present if the Area of Interest subscribed is a list of eNodeB identifiers.
 	GlobaleNbIdList []GlobalRanNodeId `json:"globaleNbIdList,omitempty"`
 }
 
@@ -55,7 +55,7 @@ func NewPresenceInfoWithDefaults() *PresenceInfo {
 
 // GetPraId returns the PraId field value if set, zero value otherwise.
 func (o *PresenceInfo) GetPraId() string {
-	if o == nil || isNil(o.PraId) {
+	if o == nil || IsNil(o.PraId) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *PresenceInfo) GetPraId() string {
 // GetPraIdOk returns a tuple with the PraId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetPraIdOk() (*string, bool) {
-	if o == nil || isNil(o.PraId) {
+	if o == nil || IsNil(o.PraId) {
 		return nil, false
 	}
 	return o.PraId, true
@@ -73,7 +73,7 @@ func (o *PresenceInfo) GetPraIdOk() (*string, bool) {
 
 // HasPraId returns a boolean if a field has been set.
 func (o *PresenceInfo) HasPraId() bool {
-	if o != nil && !isNil(o.PraId) {
+	if o != nil && !IsNil(o.PraId) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *PresenceInfo) SetPraId(v string) {
 
 // GetAdditionalPraId returns the AdditionalPraId field value if set, zero value otherwise.
 func (o *PresenceInfo) GetAdditionalPraId() string {
-	if o == nil || isNil(o.AdditionalPraId) {
+	if o == nil || IsNil(o.AdditionalPraId) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *PresenceInfo) GetAdditionalPraId() string {
 // GetAdditionalPraIdOk returns a tuple with the AdditionalPraId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetAdditionalPraIdOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalPraId) {
+	if o == nil || IsNil(o.AdditionalPraId) {
 		return nil, false
 	}
 	return o.AdditionalPraId, true
@@ -105,7 +105,7 @@ func (o *PresenceInfo) GetAdditionalPraIdOk() (*string, bool) {
 
 // HasAdditionalPraId returns a boolean if a field has been set.
 func (o *PresenceInfo) HasAdditionalPraId() bool {
-	if o != nil && !isNil(o.AdditionalPraId) {
+	if o != nil && !IsNil(o.AdditionalPraId) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *PresenceInfo) SetAdditionalPraId(v string) {
 
 // GetPresenceState returns the PresenceState field value if set, zero value otherwise.
 func (o *PresenceInfo) GetPresenceState() PresenceState {
-	if o == nil || isNil(o.PresenceState) {
+	if o == nil || IsNil(o.PresenceState) {
 		var ret PresenceState
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PresenceInfo) GetPresenceState() PresenceState {
 // GetPresenceStateOk returns a tuple with the PresenceState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetPresenceStateOk() (*PresenceState, bool) {
-	if o == nil || isNil(o.PresenceState) {
+	if o == nil || IsNil(o.PresenceState) {
 		return nil, false
 	}
 	return o.PresenceState, true
@@ -137,7 +137,7 @@ func (o *PresenceInfo) GetPresenceStateOk() (*PresenceState, bool) {
 
 // HasPresenceState returns a boolean if a field has been set.
 func (o *PresenceInfo) HasPresenceState() bool {
-	if o != nil && !isNil(o.PresenceState) {
+	if o != nil && !IsNil(o.PresenceState) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *PresenceInfo) SetPresenceState(v PresenceState) {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetTrackingAreaList() []Tai {
-	if o == nil || isNil(o.TrackingAreaList) {
+	if o == nil || IsNil(o.TrackingAreaList) {
 		var ret []Tai
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *PresenceInfo) GetTrackingAreaList() []Tai {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetTrackingAreaListOk() ([]Tai, bool) {
-	if o == nil || isNil(o.TrackingAreaList) {
+	if o == nil || IsNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -169,7 +169,7 @@ func (o *PresenceInfo) GetTrackingAreaListOk() ([]Tai, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasTrackingAreaList() bool {
-	if o != nil && !isNil(o.TrackingAreaList) {
+	if o != nil && !IsNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *PresenceInfo) SetTrackingAreaList(v []Tai) {
 
 // GetEcgiList returns the EcgiList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetEcgiList() []Ecgi {
-	if o == nil || isNil(o.EcgiList) {
+	if o == nil || IsNil(o.EcgiList) {
 		var ret []Ecgi
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *PresenceInfo) GetEcgiList() []Ecgi {
 // GetEcgiListOk returns a tuple with the EcgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetEcgiListOk() ([]Ecgi, bool) {
-	if o == nil || isNil(o.EcgiList) {
+	if o == nil || IsNil(o.EcgiList) {
 		return nil, false
 	}
 	return o.EcgiList, true
@@ -201,7 +201,7 @@ func (o *PresenceInfo) GetEcgiListOk() ([]Ecgi, bool) {
 
 // HasEcgiList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasEcgiList() bool {
-	if o != nil && !isNil(o.EcgiList) {
+	if o != nil && !IsNil(o.EcgiList) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *PresenceInfo) SetEcgiList(v []Ecgi) {
 
 // GetNcgiList returns the NcgiList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetNcgiList() []Ncgi {
-	if o == nil || isNil(o.NcgiList) {
+	if o == nil || IsNil(o.NcgiList) {
 		var ret []Ncgi
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *PresenceInfo) GetNcgiList() []Ncgi {
 // GetNcgiListOk returns a tuple with the NcgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetNcgiListOk() ([]Ncgi, bool) {
-	if o == nil || isNil(o.NcgiList) {
+	if o == nil || IsNil(o.NcgiList) {
 		return nil, false
 	}
 	return o.NcgiList, true
@@ -233,7 +233,7 @@ func (o *PresenceInfo) GetNcgiListOk() ([]Ncgi, bool) {
 
 // HasNcgiList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasNcgiList() bool {
-	if o != nil && !isNil(o.NcgiList) {
+	if o != nil && !IsNil(o.NcgiList) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *PresenceInfo) SetNcgiList(v []Ncgi) {
 
 // GetGlobalRanNodeIdList returns the GlobalRanNodeIdList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetGlobalRanNodeIdList() []GlobalRanNodeId {
-	if o == nil || isNil(o.GlobalRanNodeIdList) {
+	if o == nil || IsNil(o.GlobalRanNodeIdList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *PresenceInfo) GetGlobalRanNodeIdList() []GlobalRanNodeId {
 // GetGlobalRanNodeIdListOk returns a tuple with the GlobalRanNodeIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetGlobalRanNodeIdListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.GlobalRanNodeIdList) {
+	if o == nil || IsNil(o.GlobalRanNodeIdList) {
 		return nil, false
 	}
 	return o.GlobalRanNodeIdList, true
@@ -265,7 +265,7 @@ func (o *PresenceInfo) GetGlobalRanNodeIdListOk() ([]GlobalRanNodeId, bool) {
 
 // HasGlobalRanNodeIdList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasGlobalRanNodeIdList() bool {
-	if o != nil && !isNil(o.GlobalRanNodeIdList) {
+	if o != nil && !IsNil(o.GlobalRanNodeIdList) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *PresenceInfo) SetGlobalRanNodeIdList(v []GlobalRanNodeId) {
 
 // GetGlobaleNbIdList returns the GlobaleNbIdList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetGlobaleNbIdList() []GlobalRanNodeId {
-	if o == nil || isNil(o.GlobaleNbIdList) {
+	if o == nil || IsNil(o.GlobaleNbIdList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *PresenceInfo) GetGlobaleNbIdList() []GlobalRanNodeId {
 // GetGlobaleNbIdListOk returns a tuple with the GlobaleNbIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetGlobaleNbIdListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || isNil(o.GlobaleNbIdList) {
+	if o == nil || IsNil(o.GlobaleNbIdList) {
 		return nil, false
 	}
 	return o.GlobaleNbIdList, true
@@ -297,7 +297,7 @@ func (o *PresenceInfo) GetGlobaleNbIdListOk() ([]GlobalRanNodeId, bool) {
 
 // HasGlobaleNbIdList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasGlobaleNbIdList() bool {
-	if o != nil && !isNil(o.GlobaleNbIdList) {
+	if o != nil && !IsNil(o.GlobaleNbIdList) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *PresenceInfo) SetGlobaleNbIdList(v []GlobalRanNodeId) {
 }
 
 func (o PresenceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -319,28 +319,28 @@ func (o PresenceInfo) MarshalJSON() ([]byte, error) {
 
 func (o PresenceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.PraId) {
+	if !IsNil(o.PraId) {
 		toSerialize["praId"] = o.PraId
 	}
-	if !isNil(o.AdditionalPraId) {
+	if !IsNil(o.AdditionalPraId) {
 		toSerialize["additionalPraId"] = o.AdditionalPraId
 	}
-	if !isNil(o.PresenceState) {
+	if !IsNil(o.PresenceState) {
 		toSerialize["presenceState"] = o.PresenceState
 	}
-	if !isNil(o.TrackingAreaList) {
+	if !IsNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
-	if !isNil(o.EcgiList) {
+	if !IsNil(o.EcgiList) {
 		toSerialize["ecgiList"] = o.EcgiList
 	}
-	if !isNil(o.NcgiList) {
+	if !IsNil(o.NcgiList) {
 		toSerialize["ncgiList"] = o.NcgiList
 	}
-	if !isNil(o.GlobalRanNodeIdList) {
+	if !IsNil(o.GlobalRanNodeIdList) {
 		toSerialize["globalRanNodeIdList"] = o.GlobalRanNodeIdList
 	}
-	if !isNil(o.GlobaleNbIdList) {
+	if !IsNil(o.GlobaleNbIdList) {
 		toSerialize["globaleNbIdList"] = o.GlobaleNbIdList
 	}
 	return toSerialize, nil
@@ -381,5 +381,3 @@ func (v *NullablePresenceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

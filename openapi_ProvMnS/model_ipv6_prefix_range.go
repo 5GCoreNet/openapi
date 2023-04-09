@@ -20,7 +20,7 @@ var _ MappedNullable = &Ipv6PrefixRange{}
 // Ipv6PrefixRange Range of IPv6 prefixes
 type Ipv6PrefixRange struct {
 	Start *Ipv6Prefix1 `json:"start,omitempty"`
-	End *Ipv6Prefix1 `json:"end,omitempty"`
+	End   *Ipv6Prefix1 `json:"end,omitempty"`
 }
 
 // NewIpv6PrefixRange instantiates a new Ipv6PrefixRange object
@@ -42,7 +42,7 @@ func NewIpv6PrefixRangeWithDefaults() *Ipv6PrefixRange {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *Ipv6PrefixRange) GetStart() Ipv6Prefix1 {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		var ret Ipv6Prefix1
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Ipv6PrefixRange) GetStart() Ipv6Prefix1 {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ipv6PrefixRange) GetStartOk() (*Ipv6Prefix1, bool) {
-	if o == nil || isNil(o.Start) {
+	if o == nil || IsNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -60,7 +60,7 @@ func (o *Ipv6PrefixRange) GetStartOk() (*Ipv6Prefix1, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *Ipv6PrefixRange) HasStart() bool {
-	if o != nil && !isNil(o.Start) {
+	if o != nil && !IsNil(o.Start) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Ipv6PrefixRange) SetStart(v Ipv6Prefix1) {
 
 // GetEnd returns the End field value if set, zero value otherwise.
 func (o *Ipv6PrefixRange) GetEnd() Ipv6Prefix1 {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		var ret Ipv6Prefix1
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Ipv6PrefixRange) GetEnd() Ipv6Prefix1 {
 // GetEndOk returns a tuple with the End field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ipv6PrefixRange) GetEndOk() (*Ipv6Prefix1, bool) {
-	if o == nil || isNil(o.End) {
+	if o == nil || IsNil(o.End) {
 		return nil, false
 	}
 	return o.End, true
@@ -92,7 +92,7 @@ func (o *Ipv6PrefixRange) GetEndOk() (*Ipv6Prefix1, bool) {
 
 // HasEnd returns a boolean if a field has been set.
 func (o *Ipv6PrefixRange) HasEnd() bool {
-	if o != nil && !isNil(o.End) {
+	if o != nil && !IsNil(o.End) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Ipv6PrefixRange) SetEnd(v Ipv6Prefix1) {
 }
 
 func (o Ipv6PrefixRange) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o Ipv6PrefixRange) MarshalJSON() ([]byte, error) {
 
 func (o Ipv6PrefixRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Start) {
+	if !IsNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !isNil(o.End) {
+	if !IsNil(o.End) {
 		toSerialize["end"] = o.End
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableIpv6PrefixRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

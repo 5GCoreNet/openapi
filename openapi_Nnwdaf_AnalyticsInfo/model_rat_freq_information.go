@@ -1,7 +1,7 @@
 /*
 Nnwdaf_AnalyticsInfo
 
-Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnwdaf_AnalyticsInfo Service API.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &RatFreqInformation{}
 
 // RatFreqInformation Represents the RAT type and/or Frequency information.
 type RatFreqInformation struct {
-	// Set to \"true\" to indicate to handle all the frequencies the NWDAF received, otherwise  set to \"false\" or omit. The \"allFreq\" attribute and the \"freq\" attribute are mutually  exclusive. 
+	// Set to \"true\" to indicate to handle all the frequencies the NWDAF received, otherwise  set to \"false\" or omit. The \"allFreq\" attribute and the \"freq\" attribute are mutually  exclusive.
 	AllFreq *bool `json:"allFreq,omitempty"`
-	// Set to \"true\" to indicate to handle all the RAT Types the NWDAF received, otherwise  set to \"false\" or omit. The \"allRat\" attribute and the \"ratType\" attribute are mutually  exclusive. 
+	// Set to \"true\" to indicate to handle all the RAT Types the NWDAF received, otherwise  set to \"false\" or omit. The \"allRat\" attribute and the \"ratType\" attribute are mutually  exclusive.
 	AllRat *bool `json:"allRat,omitempty"`
-	// Integer value indicating the ARFCN applicable for a downlink, uplink or bi-directional (TDD) NR global frequency raster, as definition of \"ARFCN-ValueNR\" IE in clause 6.3.2 of 3GPP TS 38.331. 
-	Freq *int32 `json:"freq,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	SvcExpThreshold *ThresholdLevel `json:"svcExpThreshold,omitempty"`
-	MatchingDir *MatchingDirection `json:"matchingDir,omitempty"`
+	// Integer value indicating the ARFCN applicable for a downlink, uplink or bi-directional (TDD) NR global frequency raster, as definition of \"ARFCN-ValueNR\" IE in clause 6.3.2 of 3GPP TS 38.331.
+	Freq            *int32             `json:"freq,omitempty"`
+	RatType         *RatType           `json:"ratType,omitempty"`
+	SvcExpThreshold *ThresholdLevel    `json:"svcExpThreshold,omitempty"`
+	MatchingDir     *MatchingDirection `json:"matchingDir,omitempty"`
 }
 
 // NewRatFreqInformation instantiates a new RatFreqInformation object
@@ -49,7 +49,7 @@ func NewRatFreqInformationWithDefaults() *RatFreqInformation {
 
 // GetAllFreq returns the AllFreq field value if set, zero value otherwise.
 func (o *RatFreqInformation) GetAllFreq() bool {
-	if o == nil || isNil(o.AllFreq) {
+	if o == nil || IsNil(o.AllFreq) {
 		var ret bool
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *RatFreqInformation) GetAllFreq() bool {
 // GetAllFreqOk returns a tuple with the AllFreq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatFreqInformation) GetAllFreqOk() (*bool, bool) {
-	if o == nil || isNil(o.AllFreq) {
+	if o == nil || IsNil(o.AllFreq) {
 		return nil, false
 	}
 	return o.AllFreq, true
@@ -67,7 +67,7 @@ func (o *RatFreqInformation) GetAllFreqOk() (*bool, bool) {
 
 // HasAllFreq returns a boolean if a field has been set.
 func (o *RatFreqInformation) HasAllFreq() bool {
-	if o != nil && !isNil(o.AllFreq) {
+	if o != nil && !IsNil(o.AllFreq) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *RatFreqInformation) SetAllFreq(v bool) {
 
 // GetAllRat returns the AllRat field value if set, zero value otherwise.
 func (o *RatFreqInformation) GetAllRat() bool {
-	if o == nil || isNil(o.AllRat) {
+	if o == nil || IsNil(o.AllRat) {
 		var ret bool
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *RatFreqInformation) GetAllRat() bool {
 // GetAllRatOk returns a tuple with the AllRat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatFreqInformation) GetAllRatOk() (*bool, bool) {
-	if o == nil || isNil(o.AllRat) {
+	if o == nil || IsNil(o.AllRat) {
 		return nil, false
 	}
 	return o.AllRat, true
@@ -99,7 +99,7 @@ func (o *RatFreqInformation) GetAllRatOk() (*bool, bool) {
 
 // HasAllRat returns a boolean if a field has been set.
 func (o *RatFreqInformation) HasAllRat() bool {
-	if o != nil && !isNil(o.AllRat) {
+	if o != nil && !IsNil(o.AllRat) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *RatFreqInformation) SetAllRat(v bool) {
 
 // GetFreq returns the Freq field value if set, zero value otherwise.
 func (o *RatFreqInformation) GetFreq() int32 {
-	if o == nil || isNil(o.Freq) {
+	if o == nil || IsNil(o.Freq) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *RatFreqInformation) GetFreq() int32 {
 // GetFreqOk returns a tuple with the Freq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatFreqInformation) GetFreqOk() (*int32, bool) {
-	if o == nil || isNil(o.Freq) {
+	if o == nil || IsNil(o.Freq) {
 		return nil, false
 	}
 	return o.Freq, true
@@ -131,7 +131,7 @@ func (o *RatFreqInformation) GetFreqOk() (*int32, bool) {
 
 // HasFreq returns a boolean if a field has been set.
 func (o *RatFreqInformation) HasFreq() bool {
-	if o != nil && !isNil(o.Freq) {
+	if o != nil && !IsNil(o.Freq) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *RatFreqInformation) SetFreq(v int32) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *RatFreqInformation) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *RatFreqInformation) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatFreqInformation) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -163,7 +163,7 @@ func (o *RatFreqInformation) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *RatFreqInformation) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *RatFreqInformation) SetRatType(v RatType) {
 
 // GetSvcExpThreshold returns the SvcExpThreshold field value if set, zero value otherwise.
 func (o *RatFreqInformation) GetSvcExpThreshold() ThresholdLevel {
-	if o == nil || isNil(o.SvcExpThreshold) {
+	if o == nil || IsNil(o.SvcExpThreshold) {
 		var ret ThresholdLevel
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *RatFreqInformation) GetSvcExpThreshold() ThresholdLevel {
 // GetSvcExpThresholdOk returns a tuple with the SvcExpThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatFreqInformation) GetSvcExpThresholdOk() (*ThresholdLevel, bool) {
-	if o == nil || isNil(o.SvcExpThreshold) {
+	if o == nil || IsNil(o.SvcExpThreshold) {
 		return nil, false
 	}
 	return o.SvcExpThreshold, true
@@ -195,7 +195,7 @@ func (o *RatFreqInformation) GetSvcExpThresholdOk() (*ThresholdLevel, bool) {
 
 // HasSvcExpThreshold returns a boolean if a field has been set.
 func (o *RatFreqInformation) HasSvcExpThreshold() bool {
-	if o != nil && !isNil(o.SvcExpThreshold) {
+	if o != nil && !IsNil(o.SvcExpThreshold) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *RatFreqInformation) SetSvcExpThreshold(v ThresholdLevel) {
 
 // GetMatchingDir returns the MatchingDir field value if set, zero value otherwise.
 func (o *RatFreqInformation) GetMatchingDir() MatchingDirection {
-	if o == nil || isNil(o.MatchingDir) {
+	if o == nil || IsNil(o.MatchingDir) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *RatFreqInformation) GetMatchingDir() MatchingDirection {
 // GetMatchingDirOk returns a tuple with the MatchingDir field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatFreqInformation) GetMatchingDirOk() (*MatchingDirection, bool) {
-	if o == nil || isNil(o.MatchingDir) {
+	if o == nil || IsNil(o.MatchingDir) {
 		return nil, false
 	}
 	return o.MatchingDir, true
@@ -227,7 +227,7 @@ func (o *RatFreqInformation) GetMatchingDirOk() (*MatchingDirection, bool) {
 
 // HasMatchingDir returns a boolean if a field has been set.
 func (o *RatFreqInformation) HasMatchingDir() bool {
-	if o != nil && !isNil(o.MatchingDir) {
+	if o != nil && !IsNil(o.MatchingDir) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *RatFreqInformation) SetMatchingDir(v MatchingDirection) {
 }
 
 func (o RatFreqInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,22 +249,22 @@ func (o RatFreqInformation) MarshalJSON() ([]byte, error) {
 
 func (o RatFreqInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AllFreq) {
+	if !IsNil(o.AllFreq) {
 		toSerialize["allFreq"] = o.AllFreq
 	}
-	if !isNil(o.AllRat) {
+	if !IsNil(o.AllRat) {
 		toSerialize["allRat"] = o.AllRat
 	}
-	if !isNil(o.Freq) {
+	if !IsNil(o.Freq) {
 		toSerialize["freq"] = o.Freq
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.SvcExpThreshold) {
+	if !IsNil(o.SvcExpThreshold) {
 		toSerialize["svcExpThreshold"] = o.SvcExpThreshold
 	}
-	if !isNil(o.MatchingDir) {
+	if !IsNil(o.MatchingDir) {
 		toSerialize["matchingDir"] = o.MatchingDir
 	}
 	return toSerialize, nil
@@ -305,5 +305,3 @@ func (v *NullableRatFreqInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

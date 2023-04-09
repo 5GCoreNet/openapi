@@ -19,15 +19,15 @@ var _ MappedNullable = &NetworkSliceSubnetSingleAllOfAttributesAllOf{}
 
 // NetworkSliceSubnetSingleAllOfAttributesAllOf struct for NetworkSliceSubnetSingleAllOfAttributesAllOf
 type NetworkSliceSubnetSingleAllOfAttributesAllOf struct {
-	ManagedFunctionRefList []string `json:"managedFunctionRefList,omitempty"`
-	NetworkSliceSubnetRefList []string `json:"networkSliceSubnetRefList,omitempty"`
-	OperationalState *OperationalState `json:"operationalState,omitempty"`
-	AdministrativeState *AdministrativeState `json:"administrativeState,omitempty"`
-	NsInfo *NsInfo `json:"nsInfo,omitempty"`
-	SliceProfileList []SliceProfile `json:"sliceProfileList,omitempty"`
-	EpTransportRefList []string `json:"epTransportRefList,omitempty"`
-	PriorityLabel *int32 `json:"priorityLabel,omitempty"`
-	NetworkSliceSubnetType *string `json:"networkSliceSubnetType,omitempty"`
+	ManagedFunctionRefList    []string             `json:"managedFunctionRefList,omitempty"`
+	NetworkSliceSubnetRefList []string             `json:"networkSliceSubnetRefList,omitempty"`
+	OperationalState          *OperationalState    `json:"operationalState,omitempty"`
+	AdministrativeState       *AdministrativeState `json:"administrativeState,omitempty"`
+	NsInfo                    *NsInfo              `json:"nsInfo,omitempty"`
+	SliceProfileList          []SliceProfile       `json:"sliceProfileList,omitempty"`
+	EpTransportRefList        []string             `json:"epTransportRefList,omitempty"`
+	PriorityLabel             *int32               `json:"priorityLabel,omitempty"`
+	NetworkSliceSubnetType    *string              `json:"networkSliceSubnetType,omitempty"`
 }
 
 // NewNetworkSliceSubnetSingleAllOfAttributesAllOf instantiates a new NetworkSliceSubnetSingleAllOfAttributesAllOf object
@@ -336,7 +336,7 @@ func (o *NetworkSliceSubnetSingleAllOfAttributesAllOf) SetNetworkSliceSubnetType
 }
 
 func (o NetworkSliceSubnetSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -410,5 +410,3 @@ func (v *NullableNetworkSliceSubnetSingleAllOfAttributesAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

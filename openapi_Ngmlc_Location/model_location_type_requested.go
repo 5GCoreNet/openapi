@@ -1,7 +1,7 @@
 /*
 Ngmlc_Location
 
-GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+GMLC Location Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // LocationTypeRequested Contains the location type requested by the LCS client
 type LocationTypeRequested struct {
-	LocationTypeRequestedAnyOf *LocationTypeRequestedAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocationTypeRequested) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into LocationTypeRequestedAnyOf
-	err = json.Unmarshal(data, &dst.LocationTypeRequestedAnyOf);
-	if err == nil {
-		jsonLocationTypeRequestedAnyOf, _ := json.Marshal(dst.LocationTypeRequestedAnyOf)
-		if string(jsonLocationTypeRequestedAnyOf) == "{}" { // empty struct
-			dst.LocationTypeRequestedAnyOf = nil
-		} else {
-			return nil // data stored in dst.LocationTypeRequestedAnyOf, return on the first match
-		}
-	} else {
-		dst.LocationTypeRequestedAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *LocationTypeRequested) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocationTypeRequested) MarshalJSON() ([]byte, error) {
-	if src.LocationTypeRequestedAnyOf != nil {
-		return json.Marshal(&src.LocationTypeRequestedAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableLocationTypeRequested) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

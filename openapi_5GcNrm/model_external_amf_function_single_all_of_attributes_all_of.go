@@ -19,7 +19,7 @@ var _ MappedNullable = &ExternalAmfFunctionSingleAllOfAttributesAllOf{}
 
 // ExternalAmfFunctionSingleAllOfAttributesAllOf struct for ExternalAmfFunctionSingleAllOfAttributesAllOf
 type ExternalAmfFunctionSingleAllOfAttributesAllOf struct {
-	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
+	PlmnIdList    []PlmnId       `json:"plmnIdList,omitempty"`
 	AmfIdentifier *AmfIdentifier `json:"amfIdentifier,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *ExternalAmfFunctionSingleAllOfAttributesAllOf) SetAmfIdentifier(v AmfId
 }
 
 func (o ExternalAmfFunctionSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,5 +158,3 @@ func (v *NullableExternalAmfFunctionSingleAllOfAttributesAllOf) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

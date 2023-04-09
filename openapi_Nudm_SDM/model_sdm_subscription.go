@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,31 +20,31 @@ var _ MappedNullable = &SdmSubscription{}
 
 // SdmSubscription struct for SdmSubscription
 type SdmSubscription struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfInstanceId string `json:"nfInstanceId"`
-	ImplicitUnsubscribe *bool `json:"implicitUnsubscribe,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfInstanceId        string `json:"nfInstanceId"`
+	ImplicitUnsubscribe *bool  `json:"implicitUnsubscribe,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	Expires *time.Time `json:"expires,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
-	CallbackReference string `json:"callbackReference"`
-	AmfServiceName *ServiceName `json:"amfServiceName,omitempty"`
-	MonitoredResourceUris []string `json:"monitoredResourceUris"`
-	SingleNssai *Snssai `json:"singleNssai,omitempty"`
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn *string `json:"dnn,omitempty"`
-	SubscriptionId *string `json:"subscriptionId,omitempty"`
-	PlmnId *PlmnId `json:"plmnId,omitempty"`
-	ImmediateReport *bool `json:"immediateReport,omitempty"`
-	Report *ImmediateReport `json:"report,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	ContextInfo *ContextInfo `json:"contextInfo,omitempty"`
-	NfChangeFilter *bool `json:"nfChangeFilter,omitempty"`
-	UniqueSubscription *bool `json:"uniqueSubscription,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
+	CallbackReference     string       `json:"callbackReference"`
+	AmfServiceName        *ServiceName `json:"amfServiceName,omitempty"`
+	MonitoredResourceUris []string     `json:"monitoredResourceUris"`
+	SingleNssai           *Snssai      `json:"singleNssai,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn             *string          `json:"dnn,omitempty"`
+	SubscriptionId  *string          `json:"subscriptionId,omitempty"`
+	PlmnId          *PlmnId          `json:"plmnId,omitempty"`
+	ImmediateReport *bool            `json:"immediateReport,omitempty"`
+	Report          *ImmediateReport `json:"report,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures     *string                      `json:"supportedFeatures,omitempty"`
+	ContextInfo           *ContextInfo                 `json:"contextInfo,omitempty"`
+	NfChangeFilter        *bool                        `json:"nfChangeFilter,omitempty"`
+	UniqueSubscription    *bool                        `json:"uniqueSubscription,omitempty"`
+	ResetIds              []string                     `json:"resetIds,omitempty"`
 	UeConSmfDataSubFilter *UeContextInSmfDataSubFilter `json:"ueConSmfDataSubFilter,omitempty"`
-	AdjacentPlmns []PlmnId `json:"adjacentPlmns,omitempty"`
-	DisasterRoamingInd *bool `json:"disasterRoamingInd,omitempty"`
+	AdjacentPlmns         []PlmnId                     `json:"adjacentPlmns,omitempty"`
+	DisasterRoamingInd    *bool                        `json:"disasterRoamingInd,omitempty"`
 }
 
 // NewSdmSubscription instantiates a new SdmSubscription object
@@ -105,7 +105,7 @@ func (o *SdmSubscription) SetNfInstanceId(v string) {
 
 // GetImplicitUnsubscribe returns the ImplicitUnsubscribe field value if set, zero value otherwise.
 func (o *SdmSubscription) GetImplicitUnsubscribe() bool {
-	if o == nil || isNil(o.ImplicitUnsubscribe) {
+	if o == nil || IsNil(o.ImplicitUnsubscribe) {
 		var ret bool
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *SdmSubscription) GetImplicitUnsubscribe() bool {
 // GetImplicitUnsubscribeOk returns a tuple with the ImplicitUnsubscribe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetImplicitUnsubscribeOk() (*bool, bool) {
-	if o == nil || isNil(o.ImplicitUnsubscribe) {
+	if o == nil || IsNil(o.ImplicitUnsubscribe) {
 		return nil, false
 	}
 	return o.ImplicitUnsubscribe, true
@@ -123,7 +123,7 @@ func (o *SdmSubscription) GetImplicitUnsubscribeOk() (*bool, bool) {
 
 // HasImplicitUnsubscribe returns a boolean if a field has been set.
 func (o *SdmSubscription) HasImplicitUnsubscribe() bool {
-	if o != nil && !isNil(o.ImplicitUnsubscribe) {
+	if o != nil && !IsNil(o.ImplicitUnsubscribe) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *SdmSubscription) SetImplicitUnsubscribe(v bool) {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *SdmSubscription) GetExpires() time.Time {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *SdmSubscription) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expires) {
+	if o == nil || IsNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -155,7 +155,7 @@ func (o *SdmSubscription) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *SdmSubscription) HasExpires() bool {
-	if o != nil && !isNil(o.Expires) {
+	if o != nil && !IsNil(o.Expires) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *SdmSubscription) SetCallbackReference(v string) {
 
 // GetAmfServiceName returns the AmfServiceName field value if set, zero value otherwise.
 func (o *SdmSubscription) GetAmfServiceName() ServiceName {
-	if o == nil || isNil(o.AmfServiceName) {
+	if o == nil || IsNil(o.AmfServiceName) {
 		var ret ServiceName
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *SdmSubscription) GetAmfServiceName() ServiceName {
 // GetAmfServiceNameOk returns a tuple with the AmfServiceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetAmfServiceNameOk() (*ServiceName, bool) {
-	if o == nil || isNil(o.AmfServiceName) {
+	if o == nil || IsNil(o.AmfServiceName) {
 		return nil, false
 	}
 	return o.AmfServiceName, true
@@ -211,7 +211,7 @@ func (o *SdmSubscription) GetAmfServiceNameOk() (*ServiceName, bool) {
 
 // HasAmfServiceName returns a boolean if a field has been set.
 func (o *SdmSubscription) HasAmfServiceName() bool {
-	if o != nil && !isNil(o.AmfServiceName) {
+	if o != nil && !IsNil(o.AmfServiceName) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *SdmSubscription) SetMonitoredResourceUris(v []string) {
 
 // GetSingleNssai returns the SingleNssai field value if set, zero value otherwise.
 func (o *SdmSubscription) GetSingleNssai() Snssai {
-	if o == nil || isNil(o.SingleNssai) {
+	if o == nil || IsNil(o.SingleNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *SdmSubscription) GetSingleNssai() Snssai {
 // GetSingleNssaiOk returns a tuple with the SingleNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetSingleNssaiOk() (*Snssai, bool) {
-	if o == nil || isNil(o.SingleNssai) {
+	if o == nil || IsNil(o.SingleNssai) {
 		return nil, false
 	}
 	return o.SingleNssai, true
@@ -267,7 +267,7 @@ func (o *SdmSubscription) GetSingleNssaiOk() (*Snssai, bool) {
 
 // HasSingleNssai returns a boolean if a field has been set.
 func (o *SdmSubscription) HasSingleNssai() bool {
-	if o != nil && !isNil(o.SingleNssai) {
+	if o != nil && !IsNil(o.SingleNssai) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *SdmSubscription) SetSingleNssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *SdmSubscription) GetDnn() string {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *SdmSubscription) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetDnnOk() (*string, bool) {
-	if o == nil || isNil(o.Dnn) {
+	if o == nil || IsNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -299,7 +299,7 @@ func (o *SdmSubscription) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *SdmSubscription) HasDnn() bool {
-	if o != nil && !isNil(o.Dnn) {
+	if o != nil && !IsNil(o.Dnn) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *SdmSubscription) SetDnn(v string) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *SdmSubscription) GetSubscriptionId() string {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *SdmSubscription) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || isNil(o.SubscriptionId) {
+	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -331,7 +331,7 @@ func (o *SdmSubscription) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *SdmSubscription) HasSubscriptionId() bool {
-	if o != nil && !isNil(o.SubscriptionId) {
+	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *SdmSubscription) SetSubscriptionId(v string) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *SdmSubscription) GetPlmnId() PlmnId {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *SdmSubscription) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.PlmnId) {
+	if o == nil || IsNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -363,7 +363,7 @@ func (o *SdmSubscription) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *SdmSubscription) HasPlmnId() bool {
-	if o != nil && !isNil(o.PlmnId) {
+	if o != nil && !IsNil(o.PlmnId) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *SdmSubscription) SetPlmnId(v PlmnId) {
 
 // GetImmediateReport returns the ImmediateReport field value if set, zero value otherwise.
 func (o *SdmSubscription) GetImmediateReport() bool {
-	if o == nil || isNil(o.ImmediateReport) {
+	if o == nil || IsNil(o.ImmediateReport) {
 		var ret bool
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *SdmSubscription) GetImmediateReport() bool {
 // GetImmediateReportOk returns a tuple with the ImmediateReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetImmediateReportOk() (*bool, bool) {
-	if o == nil || isNil(o.ImmediateReport) {
+	if o == nil || IsNil(o.ImmediateReport) {
 		return nil, false
 	}
 	return o.ImmediateReport, true
@@ -395,7 +395,7 @@ func (o *SdmSubscription) GetImmediateReportOk() (*bool, bool) {
 
 // HasImmediateReport returns a boolean if a field has been set.
 func (o *SdmSubscription) HasImmediateReport() bool {
-	if o != nil && !isNil(o.ImmediateReport) {
+	if o != nil && !IsNil(o.ImmediateReport) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *SdmSubscription) SetImmediateReport(v bool) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *SdmSubscription) GetReport() ImmediateReport {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		var ret ImmediateReport
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *SdmSubscription) GetReport() ImmediateReport {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetReportOk() (*ImmediateReport, bool) {
-	if o == nil || isNil(o.Report) {
+	if o == nil || IsNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -427,7 +427,7 @@ func (o *SdmSubscription) GetReportOk() (*ImmediateReport, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *SdmSubscription) HasReport() bool {
-	if o != nil && !isNil(o.Report) {
+	if o != nil && !IsNil(o.Report) {
 		return true
 	}
 
@@ -441,7 +441,7 @@ func (o *SdmSubscription) SetReport(v ImmediateReport) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SdmSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -451,7 +451,7 @@ func (o *SdmSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -459,7 +459,7 @@ func (o *SdmSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SdmSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -473,7 +473,7 @@ func (o *SdmSubscription) SetSupportedFeatures(v string) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *SdmSubscription) GetContextInfo() ContextInfo {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *SdmSubscription) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || isNil(o.ContextInfo) {
+	if o == nil || IsNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -491,7 +491,7 @@ func (o *SdmSubscription) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *SdmSubscription) HasContextInfo() bool {
-	if o != nil && !isNil(o.ContextInfo) {
+	if o != nil && !IsNil(o.ContextInfo) {
 		return true
 	}
 
@@ -505,7 +505,7 @@ func (o *SdmSubscription) SetContextInfo(v ContextInfo) {
 
 // GetNfChangeFilter returns the NfChangeFilter field value if set, zero value otherwise.
 func (o *SdmSubscription) GetNfChangeFilter() bool {
-	if o == nil || isNil(o.NfChangeFilter) {
+	if o == nil || IsNil(o.NfChangeFilter) {
 		var ret bool
 		return ret
 	}
@@ -515,7 +515,7 @@ func (o *SdmSubscription) GetNfChangeFilter() bool {
 // GetNfChangeFilterOk returns a tuple with the NfChangeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetNfChangeFilterOk() (*bool, bool) {
-	if o == nil || isNil(o.NfChangeFilter) {
+	if o == nil || IsNil(o.NfChangeFilter) {
 		return nil, false
 	}
 	return o.NfChangeFilter, true
@@ -523,7 +523,7 @@ func (o *SdmSubscription) GetNfChangeFilterOk() (*bool, bool) {
 
 // HasNfChangeFilter returns a boolean if a field has been set.
 func (o *SdmSubscription) HasNfChangeFilter() bool {
-	if o != nil && !isNil(o.NfChangeFilter) {
+	if o != nil && !IsNil(o.NfChangeFilter) {
 		return true
 	}
 
@@ -537,7 +537,7 @@ func (o *SdmSubscription) SetNfChangeFilter(v bool) {
 
 // GetUniqueSubscription returns the UniqueSubscription field value if set, zero value otherwise.
 func (o *SdmSubscription) GetUniqueSubscription() bool {
-	if o == nil || isNil(o.UniqueSubscription) {
+	if o == nil || IsNil(o.UniqueSubscription) {
 		var ret bool
 		return ret
 	}
@@ -547,7 +547,7 @@ func (o *SdmSubscription) GetUniqueSubscription() bool {
 // GetUniqueSubscriptionOk returns a tuple with the UniqueSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetUniqueSubscriptionOk() (*bool, bool) {
-	if o == nil || isNil(o.UniqueSubscription) {
+	if o == nil || IsNil(o.UniqueSubscription) {
 		return nil, false
 	}
 	return o.UniqueSubscription, true
@@ -555,7 +555,7 @@ func (o *SdmSubscription) GetUniqueSubscriptionOk() (*bool, bool) {
 
 // HasUniqueSubscription returns a boolean if a field has been set.
 func (o *SdmSubscription) HasUniqueSubscription() bool {
-	if o != nil && !isNil(o.UniqueSubscription) {
+	if o != nil && !IsNil(o.UniqueSubscription) {
 		return true
 	}
 
@@ -569,7 +569,7 @@ func (o *SdmSubscription) SetUniqueSubscription(v bool) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SdmSubscription) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -579,7 +579,7 @@ func (o *SdmSubscription) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -587,7 +587,7 @@ func (o *SdmSubscription) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SdmSubscription) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -601,7 +601,7 @@ func (o *SdmSubscription) SetResetIds(v []string) {
 
 // GetUeConSmfDataSubFilter returns the UeConSmfDataSubFilter field value if set, zero value otherwise.
 func (o *SdmSubscription) GetUeConSmfDataSubFilter() UeContextInSmfDataSubFilter {
-	if o == nil || isNil(o.UeConSmfDataSubFilter) {
+	if o == nil || IsNil(o.UeConSmfDataSubFilter) {
 		var ret UeContextInSmfDataSubFilter
 		return ret
 	}
@@ -611,7 +611,7 @@ func (o *SdmSubscription) GetUeConSmfDataSubFilter() UeContextInSmfDataSubFilter
 // GetUeConSmfDataSubFilterOk returns a tuple with the UeConSmfDataSubFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetUeConSmfDataSubFilterOk() (*UeContextInSmfDataSubFilter, bool) {
-	if o == nil || isNil(o.UeConSmfDataSubFilter) {
+	if o == nil || IsNil(o.UeConSmfDataSubFilter) {
 		return nil, false
 	}
 	return o.UeConSmfDataSubFilter, true
@@ -619,7 +619,7 @@ func (o *SdmSubscription) GetUeConSmfDataSubFilterOk() (*UeContextInSmfDataSubFi
 
 // HasUeConSmfDataSubFilter returns a boolean if a field has been set.
 func (o *SdmSubscription) HasUeConSmfDataSubFilter() bool {
-	if o != nil && !isNil(o.UeConSmfDataSubFilter) {
+	if o != nil && !IsNil(o.UeConSmfDataSubFilter) {
 		return true
 	}
 
@@ -633,7 +633,7 @@ func (o *SdmSubscription) SetUeConSmfDataSubFilter(v UeContextInSmfDataSubFilter
 
 // GetAdjacentPlmns returns the AdjacentPlmns field value if set, zero value otherwise.
 func (o *SdmSubscription) GetAdjacentPlmns() []PlmnId {
-	if o == nil || isNil(o.AdjacentPlmns) {
+	if o == nil || IsNil(o.AdjacentPlmns) {
 		var ret []PlmnId
 		return ret
 	}
@@ -643,7 +643,7 @@ func (o *SdmSubscription) GetAdjacentPlmns() []PlmnId {
 // GetAdjacentPlmnsOk returns a tuple with the AdjacentPlmns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetAdjacentPlmnsOk() ([]PlmnId, bool) {
-	if o == nil || isNil(o.AdjacentPlmns) {
+	if o == nil || IsNil(o.AdjacentPlmns) {
 		return nil, false
 	}
 	return o.AdjacentPlmns, true
@@ -651,7 +651,7 @@ func (o *SdmSubscription) GetAdjacentPlmnsOk() ([]PlmnId, bool) {
 
 // HasAdjacentPlmns returns a boolean if a field has been set.
 func (o *SdmSubscription) HasAdjacentPlmns() bool {
-	if o != nil && !isNil(o.AdjacentPlmns) {
+	if o != nil && !IsNil(o.AdjacentPlmns) {
 		return true
 	}
 
@@ -665,7 +665,7 @@ func (o *SdmSubscription) SetAdjacentPlmns(v []PlmnId) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *SdmSubscription) GetDisasterRoamingInd() bool {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -675,7 +675,7 @@ func (o *SdmSubscription) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubscription) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || isNil(o.DisasterRoamingInd) {
+	if o == nil || IsNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -683,7 +683,7 @@ func (o *SdmSubscription) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *SdmSubscription) HasDisasterRoamingInd() bool {
-	if o != nil && !isNil(o.DisasterRoamingInd) {
+	if o != nil && !IsNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -696,7 +696,7 @@ func (o *SdmSubscription) SetDisasterRoamingInd(v bool) {
 }
 
 func (o SdmSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -706,57 +706,57 @@ func (o SdmSubscription) MarshalJSON() ([]byte, error) {
 func (o SdmSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfInstanceId"] = o.NfInstanceId
-	if !isNil(o.ImplicitUnsubscribe) {
+	if !IsNil(o.ImplicitUnsubscribe) {
 		toSerialize["implicitUnsubscribe"] = o.ImplicitUnsubscribe
 	}
-	if !isNil(o.Expires) {
+	if !IsNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
 	toSerialize["callbackReference"] = o.CallbackReference
-	if !isNil(o.AmfServiceName) {
+	if !IsNil(o.AmfServiceName) {
 		toSerialize["amfServiceName"] = o.AmfServiceName
 	}
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !isNil(o.SingleNssai) {
+	if !IsNil(o.SingleNssai) {
 		toSerialize["singleNssai"] = o.SingleNssai
 	}
-	if !isNil(o.Dnn) {
+	if !IsNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !isNil(o.SubscriptionId) {
+	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !isNil(o.PlmnId) {
+	if !IsNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !isNil(o.ImmediateReport) {
+	if !IsNil(o.ImmediateReport) {
 		toSerialize["immediateReport"] = o.ImmediateReport
 	}
-	if !isNil(o.Report) {
+	if !IsNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.ContextInfo) {
+	if !IsNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !isNil(o.NfChangeFilter) {
+	if !IsNil(o.NfChangeFilter) {
 		toSerialize["nfChangeFilter"] = o.NfChangeFilter
 	}
-	if !isNil(o.UniqueSubscription) {
+	if !IsNil(o.UniqueSubscription) {
 		toSerialize["uniqueSubscription"] = o.UniqueSubscription
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !isNil(o.UeConSmfDataSubFilter) {
+	if !IsNil(o.UeConSmfDataSubFilter) {
 		toSerialize["ueConSmfDataSubFilter"] = o.UeConSmfDataSubFilter
 	}
-	if !isNil(o.AdjacentPlmns) {
+	if !IsNil(o.AdjacentPlmns) {
 		toSerialize["adjacentPlmns"] = o.AdjacentPlmns
 	}
-	if !isNil(o.DisasterRoamingInd) {
+	if !IsNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
 	return toSerialize, nil
@@ -797,5 +797,3 @@ func (v *NullableSdmSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

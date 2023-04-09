@@ -19,7 +19,7 @@ var _ MappedNullable = &FailedAlarm{}
 
 // FailedAlarm struct for FailedAlarm
 type FailedAlarm struct {
-	AlarmId string `json:"alarmId"`
+	AlarmId       string `json:"alarmId"`
 	FailureReason string `json:"failureReason"`
 }
 
@@ -91,7 +91,7 @@ func (o *FailedAlarm) SetFailureReason(v string) {
 }
 
 func (o FailedAlarm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableFailedAlarm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

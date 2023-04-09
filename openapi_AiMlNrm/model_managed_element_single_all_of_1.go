@@ -41,7 +41,7 @@ func NewManagedElementSingleAllOf1WithDefaults() *ManagedElementSingleAllOf1 {
 
 // GetMLTrainingFunction returns the MLTrainingFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetMLTrainingFunction() []MLTrainingFunctionSingle {
-	if o == nil || isNil(o.MLTrainingFunction) {
+	if o == nil || IsNil(o.MLTrainingFunction) {
 		var ret []MLTrainingFunctionSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ManagedElementSingleAllOf1) GetMLTrainingFunction() []MLTrainingFunctio
 // GetMLTrainingFunctionOk returns a tuple with the MLTrainingFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetMLTrainingFunctionOk() ([]MLTrainingFunctionSingle, bool) {
-	if o == nil || isNil(o.MLTrainingFunction) {
+	if o == nil || IsNil(o.MLTrainingFunction) {
 		return nil, false
 	}
 	return o.MLTrainingFunction, true
@@ -59,7 +59,7 @@ func (o *ManagedElementSingleAllOf1) GetMLTrainingFunctionOk() ([]MLTrainingFunc
 
 // HasMLTrainingFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasMLTrainingFunction() bool {
-	if o != nil && !isNil(o.MLTrainingFunction) {
+	if o != nil && !IsNil(o.MLTrainingFunction) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *ManagedElementSingleAllOf1) SetMLTrainingFunction(v []MLTrainingFunctio
 }
 
 func (o ManagedElementSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o ManagedElementSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MLTrainingFunction) {
+	if !IsNil(o.MLTrainingFunction) {
 		toSerialize["MLTrainingFunction"] = o.MLTrainingFunction
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableManagedElementSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,11 +17,11 @@ import (
 // checks if the NsacfCapability type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NsacfCapability{}
 
-// NsacfCapability NSACF service capabilities (e.g. to monitor and control the number of registered UEs or established PDU sessions per network slice) 
+// NsacfCapability NSACF service capabilities (e.g. to monitor and control the number of registered UEs or established PDU sessions per network slice)
 type NsacfCapability struct {
-	// Indicates the service capability of the NSACF to monitor and control the number of registered UEs per network slice for the network slice that is subject to NSAC true: Supported false (default): Not Supported 
+	// Indicates the service capability of the NSACF to monitor and control the number of registered UEs per network slice for the network slice that is subject to NSAC true: Supported false (default): Not Supported
 	SupportUeSAC *bool `json:"supportUeSAC,omitempty"`
-	// Indicates the service capability of the NSACF to monitor and control the number of established PDU sessions per network slice for the network slice that is subject to NSAC true: Supported false (default): Not Supported 
+	// Indicates the service capability of the NSACF to monitor and control the number of established PDU sessions per network slice for the network slice that is subject to NSAC true: Supported false (default): Not Supported
 	SupportPduSAC *bool `json:"supportPduSAC,omitempty"`
 }
 
@@ -52,7 +52,7 @@ func NewNsacfCapabilityWithDefaults() *NsacfCapability {
 
 // GetSupportUeSAC returns the SupportUeSAC field value if set, zero value otherwise.
 func (o *NsacfCapability) GetSupportUeSAC() bool {
-	if o == nil || isNil(o.SupportUeSAC) {
+	if o == nil || IsNil(o.SupportUeSAC) {
 		var ret bool
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *NsacfCapability) GetSupportUeSAC() bool {
 // GetSupportUeSACOk returns a tuple with the SupportUeSAC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfCapability) GetSupportUeSACOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportUeSAC) {
+	if o == nil || IsNil(o.SupportUeSAC) {
 		return nil, false
 	}
 	return o.SupportUeSAC, true
@@ -70,7 +70,7 @@ func (o *NsacfCapability) GetSupportUeSACOk() (*bool, bool) {
 
 // HasSupportUeSAC returns a boolean if a field has been set.
 func (o *NsacfCapability) HasSupportUeSAC() bool {
-	if o != nil && !isNil(o.SupportUeSAC) {
+	if o != nil && !IsNil(o.SupportUeSAC) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *NsacfCapability) SetSupportUeSAC(v bool) {
 
 // GetSupportPduSAC returns the SupportPduSAC field value if set, zero value otherwise.
 func (o *NsacfCapability) GetSupportPduSAC() bool {
-	if o == nil || isNil(o.SupportPduSAC) {
+	if o == nil || IsNil(o.SupportPduSAC) {
 		var ret bool
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *NsacfCapability) GetSupportPduSAC() bool {
 // GetSupportPduSACOk returns a tuple with the SupportPduSAC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfCapability) GetSupportPduSACOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportPduSAC) {
+	if o == nil || IsNil(o.SupportPduSAC) {
 		return nil, false
 	}
 	return o.SupportPduSAC, true
@@ -102,7 +102,7 @@ func (o *NsacfCapability) GetSupportPduSACOk() (*bool, bool) {
 
 // HasSupportPduSAC returns a boolean if a field has been set.
 func (o *NsacfCapability) HasSupportPduSAC() bool {
-	if o != nil && !isNil(o.SupportPduSAC) {
+	if o != nil && !IsNil(o.SupportPduSAC) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *NsacfCapability) SetSupportPduSAC(v bool) {
 }
 
 func (o NsacfCapability) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -124,10 +124,10 @@ func (o NsacfCapability) MarshalJSON() ([]byte, error) {
 
 func (o NsacfCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportUeSAC) {
+	if !IsNil(o.SupportUeSAC) {
 		toSerialize["supportUeSAC"] = o.SupportUeSAC
 	}
-	if !isNil(o.SupportPduSAC) {
+	if !IsNil(o.SupportPduSAC) {
 		toSerialize["supportPduSAC"] = o.SupportPduSAC
 	}
 	return toSerialize, nil
@@ -168,5 +168,3 @@ func (v *NullableNsacfCapability) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

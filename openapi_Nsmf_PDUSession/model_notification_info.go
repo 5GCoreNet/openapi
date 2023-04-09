@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -17,12 +17,12 @@ import (
 // checks if the NotificationInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NotificationInfo{}
 
-// NotificationInfo Notification Correlation ID and Notification URI provided by the NF service consumer 
+// NotificationInfo Notification Correlation ID and Notification URI provided by the NF service consumer
 type NotificationInfo struct {
 	NotifId string `json:"notifId"`
 	// String providing an URI formatted according to RFC 3986.
-	NotifUri string `json:"notifUri"`
-	UpBufferInd *bool `json:"upBufferInd,omitempty"`
+	NotifUri    string `json:"notifUri"`
+	UpBufferInd *bool  `json:"upBufferInd,omitempty"`
 }
 
 // NewNotificationInfo instantiates a new NotificationInfo object
@@ -98,7 +98,7 @@ func (o *NotificationInfo) SetNotifUri(v string) {
 
 // GetUpBufferInd returns the UpBufferInd field value if set, zero value otherwise.
 func (o *NotificationInfo) GetUpBufferInd() bool {
-	if o == nil || isNil(o.UpBufferInd) {
+	if o == nil || IsNil(o.UpBufferInd) {
 		var ret bool
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *NotificationInfo) GetUpBufferInd() bool {
 // GetUpBufferIndOk returns a tuple with the UpBufferInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationInfo) GetUpBufferIndOk() (*bool, bool) {
-	if o == nil || isNil(o.UpBufferInd) {
+	if o == nil || IsNil(o.UpBufferInd) {
 		return nil, false
 	}
 	return o.UpBufferInd, true
@@ -116,7 +116,7 @@ func (o *NotificationInfo) GetUpBufferIndOk() (*bool, bool) {
 
 // HasUpBufferInd returns a boolean if a field has been set.
 func (o *NotificationInfo) HasUpBufferInd() bool {
-	if o != nil && !isNil(o.UpBufferInd) {
+	if o != nil && !IsNil(o.UpBufferInd) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *NotificationInfo) SetUpBufferInd(v bool) {
 }
 
 func (o NotificationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,7 +140,7 @@ func (o NotificationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["notifUri"] = o.NotifUri
-	if !isNil(o.UpBufferInd) {
+	if !IsNil(o.UpBufferInd) {
 		toSerialize["upBufferInd"] = o.UpBufferInd
 	}
 	return toSerialize, nil
@@ -181,5 +181,3 @@ func (v *NullableNotificationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &ReauthorizationDetails{}
 
 // ReauthorizationDetails struct for ReauthorizationDetails
 type ReauthorizationDetails struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	ServiceId *int32 `json:"serviceId,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
-	RatingGroup *int32 `json:"ratingGroup,omitempty"`
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
+	RatingGroup              *int32                    `json:"ratingGroup,omitempty"`
 	QuotaManagementIndicator *QuotaManagementIndicator `json:"quotaManagementIndicator,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewReauthorizationDetailsWithDefaults() *ReauthorizationDetails {
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *ReauthorizationDetails) GetServiceId() int32 {
-	if o == nil || isNil(o.ServiceId) {
+	if o == nil || IsNil(o.ServiceId) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ReauthorizationDetails) GetServiceId() int32 {
 // GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthorizationDetails) GetServiceIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ServiceId) {
+	if o == nil || IsNil(o.ServiceId) {
 		return nil, false
 	}
 	return o.ServiceId, true
@@ -63,7 +63,7 @@ func (o *ReauthorizationDetails) GetServiceIdOk() (*int32, bool) {
 
 // HasServiceId returns a boolean if a field has been set.
 func (o *ReauthorizationDetails) HasServiceId() bool {
-	if o != nil && !isNil(o.ServiceId) {
+	if o != nil && !IsNil(o.ServiceId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ReauthorizationDetails) SetServiceId(v int32) {
 
 // GetRatingGroup returns the RatingGroup field value if set, zero value otherwise.
 func (o *ReauthorizationDetails) GetRatingGroup() int32 {
-	if o == nil || isNil(o.RatingGroup) {
+	if o == nil || IsNil(o.RatingGroup) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ReauthorizationDetails) GetRatingGroup() int32 {
 // GetRatingGroupOk returns a tuple with the RatingGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthorizationDetails) GetRatingGroupOk() (*int32, bool) {
-	if o == nil || isNil(o.RatingGroup) {
+	if o == nil || IsNil(o.RatingGroup) {
 		return nil, false
 	}
 	return o.RatingGroup, true
@@ -95,7 +95,7 @@ func (o *ReauthorizationDetails) GetRatingGroupOk() (*int32, bool) {
 
 // HasRatingGroup returns a boolean if a field has been set.
 func (o *ReauthorizationDetails) HasRatingGroup() bool {
-	if o != nil && !isNil(o.RatingGroup) {
+	if o != nil && !IsNil(o.RatingGroup) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ReauthorizationDetails) SetRatingGroup(v int32) {
 
 // GetQuotaManagementIndicator returns the QuotaManagementIndicator field value if set, zero value otherwise.
 func (o *ReauthorizationDetails) GetQuotaManagementIndicator() QuotaManagementIndicator {
-	if o == nil || isNil(o.QuotaManagementIndicator) {
+	if o == nil || IsNil(o.QuotaManagementIndicator) {
 		var ret QuotaManagementIndicator
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ReauthorizationDetails) GetQuotaManagementIndicator() QuotaManagementIn
 // GetQuotaManagementIndicatorOk returns a tuple with the QuotaManagementIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthorizationDetails) GetQuotaManagementIndicatorOk() (*QuotaManagementIndicator, bool) {
-	if o == nil || isNil(o.QuotaManagementIndicator) {
+	if o == nil || IsNil(o.QuotaManagementIndicator) {
 		return nil, false
 	}
 	return o.QuotaManagementIndicator, true
@@ -127,7 +127,7 @@ func (o *ReauthorizationDetails) GetQuotaManagementIndicatorOk() (*QuotaManageme
 
 // HasQuotaManagementIndicator returns a boolean if a field has been set.
 func (o *ReauthorizationDetails) HasQuotaManagementIndicator() bool {
-	if o != nil && !isNil(o.QuotaManagementIndicator) {
+	if o != nil && !IsNil(o.QuotaManagementIndicator) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ReauthorizationDetails) SetQuotaManagementIndicator(v QuotaManagementIn
 }
 
 func (o ReauthorizationDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o ReauthorizationDetails) MarshalJSON() ([]byte, error) {
 
 func (o ReauthorizationDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServiceId) {
+	if !IsNil(o.ServiceId) {
 		toSerialize["serviceId"] = o.ServiceId
 	}
-	if !isNil(o.RatingGroup) {
+	if !IsNil(o.RatingGroup) {
 		toSerialize["ratingGroup"] = o.RatingGroup
 	}
-	if !isNil(o.QuotaManagementIndicator) {
+	if !IsNil(o.QuotaManagementIndicator) {
 		toSerialize["quotaManagementIndicator"] = o.QuotaManagementIndicator
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableReauthorizationDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

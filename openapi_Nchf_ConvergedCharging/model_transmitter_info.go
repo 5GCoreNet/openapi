@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &TransmitterInfo{}
 // TransmitterInfo struct for TransmitterInfo
 type TransmitterInfo struct {
 	ProseSourceIPAddress *IpAddr `json:"proseSourceIPAddress,omitempty"`
-	ProseSourceL2Id *string `json:"proseSourceL2Id,omitempty"`
+	ProseSourceL2Id      *string `json:"proseSourceL2Id,omitempty"`
 }
 
 // NewTransmitterInfo instantiates a new TransmitterInfo object
@@ -42,7 +42,7 @@ func NewTransmitterInfoWithDefaults() *TransmitterInfo {
 
 // GetProseSourceIPAddress returns the ProseSourceIPAddress field value if set, zero value otherwise.
 func (o *TransmitterInfo) GetProseSourceIPAddress() IpAddr {
-	if o == nil || isNil(o.ProseSourceIPAddress) {
+	if o == nil || IsNil(o.ProseSourceIPAddress) {
 		var ret IpAddr
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TransmitterInfo) GetProseSourceIPAddress() IpAddr {
 // GetProseSourceIPAddressOk returns a tuple with the ProseSourceIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransmitterInfo) GetProseSourceIPAddressOk() (*IpAddr, bool) {
-	if o == nil || isNil(o.ProseSourceIPAddress) {
+	if o == nil || IsNil(o.ProseSourceIPAddress) {
 		return nil, false
 	}
 	return o.ProseSourceIPAddress, true
@@ -60,7 +60,7 @@ func (o *TransmitterInfo) GetProseSourceIPAddressOk() (*IpAddr, bool) {
 
 // HasProseSourceIPAddress returns a boolean if a field has been set.
 func (o *TransmitterInfo) HasProseSourceIPAddress() bool {
-	if o != nil && !isNil(o.ProseSourceIPAddress) {
+	if o != nil && !IsNil(o.ProseSourceIPAddress) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TransmitterInfo) SetProseSourceIPAddress(v IpAddr) {
 
 // GetProseSourceL2Id returns the ProseSourceL2Id field value if set, zero value otherwise.
 func (o *TransmitterInfo) GetProseSourceL2Id() string {
-	if o == nil || isNil(o.ProseSourceL2Id) {
+	if o == nil || IsNil(o.ProseSourceL2Id) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TransmitterInfo) GetProseSourceL2Id() string {
 // GetProseSourceL2IdOk returns a tuple with the ProseSourceL2Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransmitterInfo) GetProseSourceL2IdOk() (*string, bool) {
-	if o == nil || isNil(o.ProseSourceL2Id) {
+	if o == nil || IsNil(o.ProseSourceL2Id) {
 		return nil, false
 	}
 	return o.ProseSourceL2Id, true
@@ -92,7 +92,7 @@ func (o *TransmitterInfo) GetProseSourceL2IdOk() (*string, bool) {
 
 // HasProseSourceL2Id returns a boolean if a field has been set.
 func (o *TransmitterInfo) HasProseSourceL2Id() bool {
-	if o != nil && !isNil(o.ProseSourceL2Id) {
+	if o != nil && !IsNil(o.ProseSourceL2Id) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *TransmitterInfo) SetProseSourceL2Id(v string) {
 }
 
 func (o TransmitterInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o TransmitterInfo) MarshalJSON() ([]byte, error) {
 
 func (o TransmitterInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ProseSourceIPAddress) {
+	if !IsNil(o.ProseSourceIPAddress) {
 		toSerialize["proseSourceIPAddress"] = o.ProseSourceIPAddress
 	}
-	if !isNil(o.ProseSourceL2Id) {
+	if !IsNil(o.ProseSourceL2Id) {
 		toSerialize["proseSourceL2Id"] = o.ProseSourceL2Id
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableTransmitterInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

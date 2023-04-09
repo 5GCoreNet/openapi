@@ -19,7 +19,7 @@ var _ MappedNullable = &ExternalGnbCuUpFunctionSingleAllOf{}
 
 // ExternalGnbCuUpFunctionSingleAllOf struct for ExternalGnbCuUpFunctionSingleAllOf
 type ExternalGnbCuUpFunctionSingleAllOf struct {
-	EPE1 []EPE1Single `json:"EP_E1,omitempty"`
+	EPE1  []EPE1Single  `json:"EP_E1,omitempty"`
 	EPF1U []EPF1USingle `json:"EP_F1U,omitempty"`
 	EPXnU []EPXnUSingle `json:"EP_XnU,omitempty"`
 }
@@ -43,7 +43,7 @@ func NewExternalGnbCuUpFunctionSingleAllOfWithDefaults() *ExternalGnbCuUpFunctio
 
 // GetEPE1 returns the EPE1 field value if set, zero value otherwise.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPE1() []EPE1Single {
-	if o == nil || isNil(o.EPE1) {
+	if o == nil || IsNil(o.EPE1) {
 		var ret []EPE1Single
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPE1() []EPE1Single {
 // GetEPE1Ok returns a tuple with the EPE1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPE1Ok() ([]EPE1Single, bool) {
-	if o == nil || isNil(o.EPE1) {
+	if o == nil || IsNil(o.EPE1) {
 		return nil, false
 	}
 	return o.EPE1, true
@@ -61,7 +61,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPE1Ok() ([]EPE1Single, bool) {
 
 // HasEPE1 returns a boolean if a field has been set.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) HasEPE1() bool {
-	if o != nil && !isNil(o.EPE1) {
+	if o != nil && !IsNil(o.EPE1) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) SetEPE1(v []EPE1Single) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPF1U() []EPF1USingle {
-	if o == nil || isNil(o.EPF1U) {
+	if o == nil || IsNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || isNil(o.EPF1U) {
+	if o == nil || IsNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -93,7 +93,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPF1UOk() ([]EPF1USingle, bool) 
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) HasEPF1U() bool {
-	if o != nil && !isNil(o.EPF1U) {
+	if o != nil && !IsNil(o.EPF1U) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) SetEPF1U(v []EPF1USingle) {
 
 // GetEPXnU returns the EPXnU field value if set, zero value otherwise.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPXnU() []EPXnUSingle {
-	if o == nil || isNil(o.EPXnU) {
+	if o == nil || IsNil(o.EPXnU) {
 		var ret []EPXnUSingle
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPXnU() []EPXnUSingle {
 // GetEPXnUOk returns a tuple with the EPXnU field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPXnUOk() ([]EPXnUSingle, bool) {
-	if o == nil || isNil(o.EPXnU) {
+	if o == nil || IsNil(o.EPXnU) {
 		return nil, false
 	}
 	return o.EPXnU, true
@@ -125,7 +125,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) GetEPXnUOk() ([]EPXnUSingle, bool) 
 
 // HasEPXnU returns a boolean if a field has been set.
 func (o *ExternalGnbCuUpFunctionSingleAllOf) HasEPXnU() bool {
-	if o != nil && !isNil(o.EPXnU) {
+	if o != nil && !IsNil(o.EPXnU) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *ExternalGnbCuUpFunctionSingleAllOf) SetEPXnU(v []EPXnUSingle) {
 }
 
 func (o ExternalGnbCuUpFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,13 +147,13 @@ func (o ExternalGnbCuUpFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ExternalGnbCuUpFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EPE1) {
+	if !IsNil(o.EPE1) {
 		toSerialize["EP_E1"] = o.EPE1
 	}
-	if !isNil(o.EPF1U) {
+	if !IsNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
-	if !isNil(o.EPXnU) {
+	if !IsNil(o.EPXnU) {
 		toSerialize["EP_XnU"] = o.EPXnU
 	}
 	return toSerialize, nil
@@ -194,5 +194,3 @@ func (v *NullableExternalGnbCuUpFunctionSingleAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

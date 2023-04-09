@@ -1,7 +1,7 @@
 /*
 Ntsctsf_QoSandTSCAssistance Service API
 
-TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF QoS and TSC Assistance Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,22 +19,22 @@ var _ MappedNullable = &TscQosRequirementRm{}
 
 // TscQosRequirementRm Represents the same as the TscQosRequirement data type but with the nullable:true property.
 type TscQosRequirementRm struct {
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	ReqGbrDl NullableString `json:"reqGbrDl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	ReqGbrUl NullableString `json:"reqGbrUl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	ReqMbrDl NullableString `json:"reqMbrDl,omitempty"`
-	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'BitRate' data type, but with the OpenAPI 'nullable: true' property.
 	ReqMbrUl NullableString `json:"reqMbrUl,omitempty"`
-	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'ExtMaxDataBurstVol' data type, but with the OpenAPI 'nullable: true' property.
 	MaxTscBurstSize NullableInt32 `json:"maxTscBurstSize,omitempty"`
-	// This data type is defined in the same way as the 'PacketDelBudget' data type, but with the OpenAPI 'nullable: true' property. 
+	// This data type is defined in the same way as the 'PacketDelBudget' data type, but with the OpenAPI 'nullable: true' property.
 	Req5Gsdelay NullableInt32 `json:"req5Gsdelay,omitempty"`
-	// This data type is defined in the same way as the TscPriorityLevel data type, but with the OpenAPI nullable property set to true. 
+	// This data type is defined in the same way as the TscPriorityLevel data type, but with the OpenAPI nullable property set to true.
 	Priority NullableInt32 `json:"priority,omitempty"`
-	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property. 
-	TscaiTimeDom NullableInt32 `json:"tscaiTimeDom,omitempty"`
+	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible with the OpenAPI 'nullable: true' property.
+	TscaiTimeDom NullableInt32               `json:"tscaiTimeDom,omitempty"`
 	TscaiInputDl NullableTscaiInputContainer `json:"tscaiInputDl,omitempty"`
 	TscaiInputUl NullableTscaiInputContainer `json:"tscaiInputUl,omitempty"`
 }
@@ -58,7 +58,7 @@ func NewTscQosRequirementRmWithDefaults() *TscQosRequirementRm {
 
 // GetReqGbrDl returns the ReqGbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqGbrDl() string {
-	if o == nil || isNil(o.ReqGbrDl.Get()) {
+	if o == nil || IsNil(o.ReqGbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -88,6 +88,7 @@ func (o *TscQosRequirementRm) HasReqGbrDl() bool {
 func (o *TscQosRequirementRm) SetReqGbrDl(v string) {
 	o.ReqGbrDl.Set(&v)
 }
+
 // SetReqGbrDlNil sets the value for ReqGbrDl to be an explicit nil
 func (o *TscQosRequirementRm) SetReqGbrDlNil() {
 	o.ReqGbrDl.Set(nil)
@@ -100,7 +101,7 @@ func (o *TscQosRequirementRm) UnsetReqGbrDl() {
 
 // GetReqGbrUl returns the ReqGbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqGbrUl() string {
-	if o == nil || isNil(o.ReqGbrUl.Get()) {
+	if o == nil || IsNil(o.ReqGbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -130,6 +131,7 @@ func (o *TscQosRequirementRm) HasReqGbrUl() bool {
 func (o *TscQosRequirementRm) SetReqGbrUl(v string) {
 	o.ReqGbrUl.Set(&v)
 }
+
 // SetReqGbrUlNil sets the value for ReqGbrUl to be an explicit nil
 func (o *TscQosRequirementRm) SetReqGbrUlNil() {
 	o.ReqGbrUl.Set(nil)
@@ -142,7 +144,7 @@ func (o *TscQosRequirementRm) UnsetReqGbrUl() {
 
 // GetReqMbrDl returns the ReqMbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqMbrDl() string {
-	if o == nil || isNil(o.ReqMbrDl.Get()) {
+	if o == nil || IsNil(o.ReqMbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -172,6 +174,7 @@ func (o *TscQosRequirementRm) HasReqMbrDl() bool {
 func (o *TscQosRequirementRm) SetReqMbrDl(v string) {
 	o.ReqMbrDl.Set(&v)
 }
+
 // SetReqMbrDlNil sets the value for ReqMbrDl to be an explicit nil
 func (o *TscQosRequirementRm) SetReqMbrDlNil() {
 	o.ReqMbrDl.Set(nil)
@@ -184,7 +187,7 @@ func (o *TscQosRequirementRm) UnsetReqMbrDl() {
 
 // GetReqMbrUl returns the ReqMbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqMbrUl() string {
-	if o == nil || isNil(o.ReqMbrUl.Get()) {
+	if o == nil || IsNil(o.ReqMbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -214,6 +217,7 @@ func (o *TscQosRequirementRm) HasReqMbrUl() bool {
 func (o *TscQosRequirementRm) SetReqMbrUl(v string) {
 	o.ReqMbrUl.Set(&v)
 }
+
 // SetReqMbrUlNil sets the value for ReqMbrUl to be an explicit nil
 func (o *TscQosRequirementRm) SetReqMbrUlNil() {
 	o.ReqMbrUl.Set(nil)
@@ -226,7 +230,7 @@ func (o *TscQosRequirementRm) UnsetReqMbrUl() {
 
 // GetMaxTscBurstSize returns the MaxTscBurstSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetMaxTscBurstSize() int32 {
-	if o == nil || isNil(o.MaxTscBurstSize.Get()) {
+	if o == nil || IsNil(o.MaxTscBurstSize.Get()) {
 		var ret int32
 		return ret
 	}
@@ -256,6 +260,7 @@ func (o *TscQosRequirementRm) HasMaxTscBurstSize() bool {
 func (o *TscQosRequirementRm) SetMaxTscBurstSize(v int32) {
 	o.MaxTscBurstSize.Set(&v)
 }
+
 // SetMaxTscBurstSizeNil sets the value for MaxTscBurstSize to be an explicit nil
 func (o *TscQosRequirementRm) SetMaxTscBurstSizeNil() {
 	o.MaxTscBurstSize.Set(nil)
@@ -268,7 +273,7 @@ func (o *TscQosRequirementRm) UnsetMaxTscBurstSize() {
 
 // GetReq5Gsdelay returns the Req5Gsdelay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReq5Gsdelay() int32 {
-	if o == nil || isNil(o.Req5Gsdelay.Get()) {
+	if o == nil || IsNil(o.Req5Gsdelay.Get()) {
 		var ret int32
 		return ret
 	}
@@ -298,6 +303,7 @@ func (o *TscQosRequirementRm) HasReq5Gsdelay() bool {
 func (o *TscQosRequirementRm) SetReq5Gsdelay(v int32) {
 	o.Req5Gsdelay.Set(&v)
 }
+
 // SetReq5GsdelayNil sets the value for Req5Gsdelay to be an explicit nil
 func (o *TscQosRequirementRm) SetReq5GsdelayNil() {
 	o.Req5Gsdelay.Set(nil)
@@ -310,7 +316,7 @@ func (o *TscQosRequirementRm) UnsetReq5Gsdelay() {
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetPriority() int32 {
-	if o == nil || isNil(o.Priority.Get()) {
+	if o == nil || IsNil(o.Priority.Get()) {
 		var ret int32
 		return ret
 	}
@@ -340,6 +346,7 @@ func (o *TscQosRequirementRm) HasPriority() bool {
 func (o *TscQosRequirementRm) SetPriority(v int32) {
 	o.Priority.Set(&v)
 }
+
 // SetPriorityNil sets the value for Priority to be an explicit nil
 func (o *TscQosRequirementRm) SetPriorityNil() {
 	o.Priority.Set(nil)
@@ -352,7 +359,7 @@ func (o *TscQosRequirementRm) UnsetPriority() {
 
 // GetTscaiTimeDom returns the TscaiTimeDom field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetTscaiTimeDom() int32 {
-	if o == nil || isNil(o.TscaiTimeDom.Get()) {
+	if o == nil || IsNil(o.TscaiTimeDom.Get()) {
 		var ret int32
 		return ret
 	}
@@ -382,6 +389,7 @@ func (o *TscQosRequirementRm) HasTscaiTimeDom() bool {
 func (o *TscQosRequirementRm) SetTscaiTimeDom(v int32) {
 	o.TscaiTimeDom.Set(&v)
 }
+
 // SetTscaiTimeDomNil sets the value for TscaiTimeDom to be an explicit nil
 func (o *TscQosRequirementRm) SetTscaiTimeDomNil() {
 	o.TscaiTimeDom.Set(nil)
@@ -394,7 +402,7 @@ func (o *TscQosRequirementRm) UnsetTscaiTimeDom() {
 
 // GetTscaiInputDl returns the TscaiInputDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetTscaiInputDl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputDl.Get()) {
+	if o == nil || IsNil(o.TscaiInputDl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -424,6 +432,7 @@ func (o *TscQosRequirementRm) HasTscaiInputDl() bool {
 func (o *TscQosRequirementRm) SetTscaiInputDl(v TscaiInputContainer) {
 	o.TscaiInputDl.Set(&v)
 }
+
 // SetTscaiInputDlNil sets the value for TscaiInputDl to be an explicit nil
 func (o *TscQosRequirementRm) SetTscaiInputDlNil() {
 	o.TscaiInputDl.Set(nil)
@@ -436,7 +445,7 @@ func (o *TscQosRequirementRm) UnsetTscaiInputDl() {
 
 // GetTscaiInputUl returns the TscaiInputUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetTscaiInputUl() TscaiInputContainer {
-	if o == nil || isNil(o.TscaiInputUl.Get()) {
+	if o == nil || IsNil(o.TscaiInputUl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -466,6 +475,7 @@ func (o *TscQosRequirementRm) HasTscaiInputUl() bool {
 func (o *TscQosRequirementRm) SetTscaiInputUl(v TscaiInputContainer) {
 	o.TscaiInputUl.Set(&v)
 }
+
 // SetTscaiInputUlNil sets the value for TscaiInputUl to be an explicit nil
 func (o *TscQosRequirementRm) SetTscaiInputUlNil() {
 	o.TscaiInputUl.Set(nil)
@@ -477,7 +487,7 @@ func (o *TscQosRequirementRm) UnsetTscaiInputUl() {
 }
 
 func (o TscQosRequirementRm) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -554,5 +564,3 @@ func (v *NullableTscQosRequirementRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

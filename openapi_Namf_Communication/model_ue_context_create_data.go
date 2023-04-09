@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,18 +19,18 @@ var _ MappedNullable = &UeContextCreateData{}
 
 // UeContextCreateData Data within a request to create an individual ueContext resource
 type UeContextCreateData struct {
-	UeContext UeContext `json:"ueContext"`
-	TargetId NgRanTargetId `json:"targetId"`
-	SourceToTargetData N2InfoContent `json:"sourceToTargetData"`
-	PduSessionList []N2SmInformation `json:"pduSessionList"`
+	UeContext          UeContext         `json:"ueContext"`
+	TargetId           NgRanTargetId     `json:"targetId"`
+	SourceToTargetData N2InfoContent     `json:"sourceToTargetData"`
+	PduSessionList     []N2SmInformation `json:"pduSessionList"`
 	// String providing an URI formatted according to RFC 3986.
-	N2NotifyUri *string `json:"n2NotifyUri,omitempty"`
-	UeRadioCapability *N2InfoContent `json:"ueRadioCapability,omitempty"`
+	N2NotifyUri                *string        `json:"n2NotifyUri,omitempty"`
+	UeRadioCapability          *N2InfoContent `json:"ueRadioCapability,omitempty"`
 	UeRadioCapabilityForPaging *N2InfoContent `json:"ueRadioCapabilityForPaging,omitempty"`
-	NgapCause *NgApCause `json:"ngapCause,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	ServingNetwork *PlmnIdNid `json:"servingNetwork,omitempty"`
+	NgapCause                  *NgApCause     `json:"ngapCause,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string    `json:"supportedFeatures,omitempty"`
+	ServingNetwork    *PlmnIdNid `json:"servingNetwork,omitempty"`
 }
 
 // NewUeContextCreateData instantiates a new UeContextCreateData object
@@ -152,7 +152,7 @@ func (o *UeContextCreateData) SetPduSessionList(v []N2SmInformation) {
 
 // GetN2NotifyUri returns the N2NotifyUri field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetN2NotifyUri() string {
-	if o == nil || isNil(o.N2NotifyUri) {
+	if o == nil || IsNil(o.N2NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *UeContextCreateData) GetN2NotifyUri() string {
 // GetN2NotifyUriOk returns a tuple with the N2NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetN2NotifyUriOk() (*string, bool) {
-	if o == nil || isNil(o.N2NotifyUri) {
+	if o == nil || IsNil(o.N2NotifyUri) {
 		return nil, false
 	}
 	return o.N2NotifyUri, true
@@ -170,7 +170,7 @@ func (o *UeContextCreateData) GetN2NotifyUriOk() (*string, bool) {
 
 // HasN2NotifyUri returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasN2NotifyUri() bool {
-	if o != nil && !isNil(o.N2NotifyUri) {
+	if o != nil && !IsNil(o.N2NotifyUri) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *UeContextCreateData) SetN2NotifyUri(v string) {
 
 // GetUeRadioCapability returns the UeRadioCapability field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetUeRadioCapability() N2InfoContent {
-	if o == nil || isNil(o.UeRadioCapability) {
+	if o == nil || IsNil(o.UeRadioCapability) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *UeContextCreateData) GetUeRadioCapability() N2InfoContent {
 // GetUeRadioCapabilityOk returns a tuple with the UeRadioCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.UeRadioCapability) {
+	if o == nil || IsNil(o.UeRadioCapability) {
 		return nil, false
 	}
 	return o.UeRadioCapability, true
@@ -202,7 +202,7 @@ func (o *UeContextCreateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
 
 // HasUeRadioCapability returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasUeRadioCapability() bool {
-	if o != nil && !isNil(o.UeRadioCapability) {
+	if o != nil && !IsNil(o.UeRadioCapability) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *UeContextCreateData) SetUeRadioCapability(v N2InfoContent) {
 
 // GetUeRadioCapabilityForPaging returns the UeRadioCapabilityForPaging field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetUeRadioCapabilityForPaging() N2InfoContent {
-	if o == nil || isNil(o.UeRadioCapabilityForPaging) {
+	if o == nil || IsNil(o.UeRadioCapabilityForPaging) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *UeContextCreateData) GetUeRadioCapabilityForPaging() N2InfoContent {
 // GetUeRadioCapabilityForPagingOk returns a tuple with the UeRadioCapabilityForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetUeRadioCapabilityForPagingOk() (*N2InfoContent, bool) {
-	if o == nil || isNil(o.UeRadioCapabilityForPaging) {
+	if o == nil || IsNil(o.UeRadioCapabilityForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCapabilityForPaging, true
@@ -234,7 +234,7 @@ func (o *UeContextCreateData) GetUeRadioCapabilityForPagingOk() (*N2InfoContent,
 
 // HasUeRadioCapabilityForPaging returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasUeRadioCapabilityForPaging() bool {
-	if o != nil && !isNil(o.UeRadioCapabilityForPaging) {
+	if o != nil && !IsNil(o.UeRadioCapabilityForPaging) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *UeContextCreateData) SetUeRadioCapabilityForPaging(v N2InfoContent) {
 
 // GetNgapCause returns the NgapCause field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetNgapCause() NgApCause {
-	if o == nil || isNil(o.NgapCause) {
+	if o == nil || IsNil(o.NgapCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *UeContextCreateData) GetNgapCause() NgApCause {
 // GetNgapCauseOk returns a tuple with the NgapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetNgapCauseOk() (*NgApCause, bool) {
-	if o == nil || isNil(o.NgapCause) {
+	if o == nil || IsNil(o.NgapCause) {
 		return nil, false
 	}
 	return o.NgapCause, true
@@ -266,7 +266,7 @@ func (o *UeContextCreateData) GetNgapCauseOk() (*NgApCause, bool) {
 
 // HasNgapCause returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasNgapCause() bool {
-	if o != nil && !isNil(o.NgapCause) {
+	if o != nil && !IsNil(o.NgapCause) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *UeContextCreateData) SetNgapCause(v NgApCause) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *UeContextCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -298,7 +298,7 @@ func (o *UeContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *UeContextCreateData) SetSupportedFeatures(v string) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetServingNetwork() PlmnIdNid {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *UeContextCreateData) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ServingNetwork) {
+	if o == nil || IsNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -330,7 +330,7 @@ func (o *UeContextCreateData) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasServingNetwork() bool {
-	if o != nil && !isNil(o.ServingNetwork) {
+	if o != nil && !IsNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *UeContextCreateData) SetServingNetwork(v PlmnIdNid) {
 }
 
 func (o UeContextCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -356,22 +356,22 @@ func (o UeContextCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["targetId"] = o.TargetId
 	toSerialize["sourceToTargetData"] = o.SourceToTargetData
 	toSerialize["pduSessionList"] = o.PduSessionList
-	if !isNil(o.N2NotifyUri) {
+	if !IsNil(o.N2NotifyUri) {
 		toSerialize["n2NotifyUri"] = o.N2NotifyUri
 	}
-	if !isNil(o.UeRadioCapability) {
+	if !IsNil(o.UeRadioCapability) {
 		toSerialize["ueRadioCapability"] = o.UeRadioCapability
 	}
-	if !isNil(o.UeRadioCapabilityForPaging) {
+	if !IsNil(o.UeRadioCapabilityForPaging) {
 		toSerialize["ueRadioCapabilityForPaging"] = o.UeRadioCapabilityForPaging
 	}
-	if !isNil(o.NgapCause) {
+	if !IsNil(o.NgapCause) {
 		toSerialize["ngapCause"] = o.NgapCause
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.ServingNetwork) {
+	if !IsNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
 	return toSerialize, nil
@@ -412,5 +412,3 @@ func (v *NullableUeContextCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

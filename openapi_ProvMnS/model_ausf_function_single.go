@@ -19,17 +19,14 @@ var _ MappedNullable = &AusfFunctionSingle{}
 
 // AusfFunctionSingle struct for AusfFunctionSingle
 type AusfFunctionSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
-	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
-	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
-	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
-	TraceJob []TraceJobSingle `json:"TraceJob,omitempty"`
-	EPN12 []EPN12Single `json:"EP_N12,omitempty"`
-	EPN13 []EPN13Single `json:"EP_N13,omitempty"`
+	Top
+	Attributes       *AusfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	PerfMetricJob    []PerfMetricJobSingle              `json:"PerfMetricJob,omitempty"`
+	ThresholdMonitor []ThresholdMonitorSingle           `json:"ThresholdMonitor,omitempty"`
+	ManagedNFService []ManagedNFServiceSingle           `json:"ManagedNFService,omitempty"`
+	TraceJob         []TraceJobSingle                   `json:"TraceJob,omitempty"`
+	EPN12            []EPN12Single                      `json:"EP_N12,omitempty"`
+	EPN13            []EPN13Single                      `json:"EP_N13,omitempty"`
 }
 
 // NewAusfFunctionSingle instantiates a new AusfFunctionSingle object
@@ -50,132 +47,10 @@ func NewAusfFunctionSingleWithDefaults() *AusfFunctionSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *AusfFunctionSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AusfFunctionSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *AusfFunctionSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *AusfFunctionSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AusfFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *AusfFunctionSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *AusfFunctionSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *AusfFunctionSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AusfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *AusfFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *AusfFunctionSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *AusfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AusfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *AusfFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *AusfFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *AusfFunctionSingle) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *AusfFunctionSingle) GetAttributes() AusfFunctionSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret AusfFunctionSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -183,8 +58,8 @@ func (o *AusfFunctionSingle) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AusfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *AusfFunctionSingle) GetAttributesOk() (*AusfFunctionSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -192,21 +67,21 @@ func (o *AusfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *AusfFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given AusfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *AusfFunctionSingle) SetAttributes(v AusfFunctionSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *AusfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -216,7 +91,7 @@ func (o *AusfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -224,7 +99,7 @@ func (o *AusfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) 
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !isNil(o.PerfMetricJob) {
+	if o != nil && !IsNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -238,7 +113,7 @@ func (o *AusfFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *AusfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -248,7 +123,7 @@ func (o *AusfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -256,7 +131,7 @@ func (o *AusfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, 
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !isNil(o.ThresholdMonitor) {
+	if o != nil && !IsNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -270,7 +145,7 @@ func (o *AusfFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *AusfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -280,7 +155,7 @@ func (o *AusfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -288,7 +163,7 @@ func (o *AusfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, 
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !isNil(o.ManagedNFService) {
+	if o != nil && !IsNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -302,7 +177,7 @@ func (o *AusfFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *AusfFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -312,7 +187,7 @@ func (o *AusfFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -320,7 +195,7 @@ func (o *AusfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasTraceJob() bool {
-	if o != nil && !isNil(o.TraceJob) {
+	if o != nil && !IsNil(o.TraceJob) {
 		return true
 	}
 
@@ -334,7 +209,7 @@ func (o *AusfFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN12 returns the EPN12 field value if set, zero value otherwise.
 func (o *AusfFunctionSingle) GetEPN12() []EPN12Single {
-	if o == nil || isNil(o.EPN12) {
+	if o == nil || IsNil(o.EPN12) {
 		var ret []EPN12Single
 		return ret
 	}
@@ -344,7 +219,7 @@ func (o *AusfFunctionSingle) GetEPN12() []EPN12Single {
 // GetEPN12Ok returns a tuple with the EPN12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingle) GetEPN12Ok() ([]EPN12Single, bool) {
-	if o == nil || isNil(o.EPN12) {
+	if o == nil || IsNil(o.EPN12) {
 		return nil, false
 	}
 	return o.EPN12, true
@@ -352,7 +227,7 @@ func (o *AusfFunctionSingle) GetEPN12Ok() ([]EPN12Single, bool) {
 
 // HasEPN12 returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasEPN12() bool {
-	if o != nil && !isNil(o.EPN12) {
+	if o != nil && !IsNil(o.EPN12) {
 		return true
 	}
 
@@ -366,7 +241,7 @@ func (o *AusfFunctionSingle) SetEPN12(v []EPN12Single) {
 
 // GetEPN13 returns the EPN13 field value if set, zero value otherwise.
 func (o *AusfFunctionSingle) GetEPN13() []EPN13Single {
-	if o == nil || isNil(o.EPN13) {
+	if o == nil || IsNil(o.EPN13) {
 		var ret []EPN13Single
 		return ret
 	}
@@ -376,7 +251,7 @@ func (o *AusfFunctionSingle) GetEPN13() []EPN13Single {
 // GetEPN13Ok returns a tuple with the EPN13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingle) GetEPN13Ok() ([]EPN13Single, bool) {
-	if o == nil || isNil(o.EPN13) {
+	if o == nil || IsNil(o.EPN13) {
 		return nil, false
 	}
 	return o.EPN13, true
@@ -384,7 +259,7 @@ func (o *AusfFunctionSingle) GetEPN13Ok() ([]EPN13Single, bool) {
 
 // HasEPN13 returns a boolean if a field has been set.
 func (o *AusfFunctionSingle) HasEPN13() bool {
-	if o != nil && !isNil(o.EPN13) {
+	if o != nil && !IsNil(o.EPN13) {
 		return true
 	}
 
@@ -397,7 +272,7 @@ func (o *AusfFunctionSingle) SetEPN13(v []EPN13Single) {
 }
 
 func (o AusfFunctionSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -406,35 +281,33 @@ func (o AusfFunctionSingle) MarshalJSON() ([]byte, error) {
 
 func (o AusfFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.PerfMetricJob) {
+	if !IsNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !isNil(o.ThresholdMonitor) {
+	if !IsNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !isNil(o.ManagedNFService) {
+	if !IsNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !isNil(o.TraceJob) {
+	if !IsNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !isNil(o.EPN12) {
+	if !IsNil(o.EPN12) {
 		toSerialize["EP_N12"] = o.EPN12
 	}
-	if !isNil(o.EPN13) {
+	if !IsNil(o.EPN13) {
 		toSerialize["EP_N13"] = o.EPN13
 	}
 	return toSerialize, nil
@@ -475,5 +348,3 @@ func (v *NullableAusfFunctionSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

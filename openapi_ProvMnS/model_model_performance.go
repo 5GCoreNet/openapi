@@ -19,9 +19,9 @@ var _ MappedNullable = &ModelPerformance{}
 
 // ModelPerformance struct for ModelPerformance
 type ModelPerformance struct {
-	InferenceOutputName *string `json:"inferenceOutputName,omitempty"`
-	PerformanceMetric *string `json:"performanceMetric,omitempty"`
-	PerformanceScore *float32 `json:"performanceScore,omitempty"`
+	InferenceOutputName     *string  `json:"inferenceOutputName,omitempty"`
+	PerformanceMetric       *string  `json:"performanceMetric,omitempty"`
+	PerformanceScore        *float32 `json:"performanceScore,omitempty"`
 	DecisionConfidenceScore *float32 `json:"decisionConfidenceScore,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewModelPerformanceWithDefaults() *ModelPerformance {
 
 // GetInferenceOutputName returns the InferenceOutputName field value if set, zero value otherwise.
 func (o *ModelPerformance) GetInferenceOutputName() string {
-	if o == nil || isNil(o.InferenceOutputName) {
+	if o == nil || IsNil(o.InferenceOutputName) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ModelPerformance) GetInferenceOutputName() string {
 // GetInferenceOutputNameOk returns a tuple with the InferenceOutputName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelPerformance) GetInferenceOutputNameOk() (*string, bool) {
-	if o == nil || isNil(o.InferenceOutputName) {
+	if o == nil || IsNil(o.InferenceOutputName) {
 		return nil, false
 	}
 	return o.InferenceOutputName, true
@@ -62,7 +62,7 @@ func (o *ModelPerformance) GetInferenceOutputNameOk() (*string, bool) {
 
 // HasInferenceOutputName returns a boolean if a field has been set.
 func (o *ModelPerformance) HasInferenceOutputName() bool {
-	if o != nil && !isNil(o.InferenceOutputName) {
+	if o != nil && !IsNil(o.InferenceOutputName) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ModelPerformance) SetInferenceOutputName(v string) {
 
 // GetPerformanceMetric returns the PerformanceMetric field value if set, zero value otherwise.
 func (o *ModelPerformance) GetPerformanceMetric() string {
-	if o == nil || isNil(o.PerformanceMetric) {
+	if o == nil || IsNil(o.PerformanceMetric) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ModelPerformance) GetPerformanceMetric() string {
 // GetPerformanceMetricOk returns a tuple with the PerformanceMetric field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelPerformance) GetPerformanceMetricOk() (*string, bool) {
-	if o == nil || isNil(o.PerformanceMetric) {
+	if o == nil || IsNil(o.PerformanceMetric) {
 		return nil, false
 	}
 	return o.PerformanceMetric, true
@@ -94,7 +94,7 @@ func (o *ModelPerformance) GetPerformanceMetricOk() (*string, bool) {
 
 // HasPerformanceMetric returns a boolean if a field has been set.
 func (o *ModelPerformance) HasPerformanceMetric() bool {
-	if o != nil && !isNil(o.PerformanceMetric) {
+	if o != nil && !IsNil(o.PerformanceMetric) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ModelPerformance) SetPerformanceMetric(v string) {
 
 // GetPerformanceScore returns the PerformanceScore field value if set, zero value otherwise.
 func (o *ModelPerformance) GetPerformanceScore() float32 {
-	if o == nil || isNil(o.PerformanceScore) {
+	if o == nil || IsNil(o.PerformanceScore) {
 		var ret float32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ModelPerformance) GetPerformanceScore() float32 {
 // GetPerformanceScoreOk returns a tuple with the PerformanceScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelPerformance) GetPerformanceScoreOk() (*float32, bool) {
-	if o == nil || isNil(o.PerformanceScore) {
+	if o == nil || IsNil(o.PerformanceScore) {
 		return nil, false
 	}
 	return o.PerformanceScore, true
@@ -126,7 +126,7 @@ func (o *ModelPerformance) GetPerformanceScoreOk() (*float32, bool) {
 
 // HasPerformanceScore returns a boolean if a field has been set.
 func (o *ModelPerformance) HasPerformanceScore() bool {
-	if o != nil && !isNil(o.PerformanceScore) {
+	if o != nil && !IsNil(o.PerformanceScore) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ModelPerformance) SetPerformanceScore(v float32) {
 
 // GetDecisionConfidenceScore returns the DecisionConfidenceScore field value if set, zero value otherwise.
 func (o *ModelPerformance) GetDecisionConfidenceScore() float32 {
-	if o == nil || isNil(o.DecisionConfidenceScore) {
+	if o == nil || IsNil(o.DecisionConfidenceScore) {
 		var ret float32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ModelPerformance) GetDecisionConfidenceScore() float32 {
 // GetDecisionConfidenceScoreOk returns a tuple with the DecisionConfidenceScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelPerformance) GetDecisionConfidenceScoreOk() (*float32, bool) {
-	if o == nil || isNil(o.DecisionConfidenceScore) {
+	if o == nil || IsNil(o.DecisionConfidenceScore) {
 		return nil, false
 	}
 	return o.DecisionConfidenceScore, true
@@ -158,7 +158,7 @@ func (o *ModelPerformance) GetDecisionConfidenceScoreOk() (*float32, bool) {
 
 // HasDecisionConfidenceScore returns a boolean if a field has been set.
 func (o *ModelPerformance) HasDecisionConfidenceScore() bool {
-	if o != nil && !isNil(o.DecisionConfidenceScore) {
+	if o != nil && !IsNil(o.DecisionConfidenceScore) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *ModelPerformance) SetDecisionConfidenceScore(v float32) {
 }
 
 func (o ModelPerformance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o ModelPerformance) MarshalJSON() ([]byte, error) {
 
 func (o ModelPerformance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.InferenceOutputName) {
+	if !IsNil(o.InferenceOutputName) {
 		toSerialize["inferenceOutputName"] = o.InferenceOutputName
 	}
-	if !isNil(o.PerformanceMetric) {
+	if !IsNil(o.PerformanceMetric) {
 		toSerialize["performanceMetric"] = o.PerformanceMetric
 	}
-	if !isNil(o.PerformanceScore) {
+	if !IsNil(o.PerformanceScore) {
 		toSerialize["performanceScore"] = o.PerformanceScore
 	}
-	if !isNil(o.DecisionConfidenceScore) {
+	if !IsNil(o.DecisionConfidenceScore) {
 		toSerialize["decisionConfidenceScore"] = o.DecisionConfidenceScore
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableModelPerformance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

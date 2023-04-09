@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &ChfInfo{}
 
 // ChfInfo Information of a CHF NF Instance
 type ChfInfo struct {
-	SupiRangeList []SupiRange `json:"supiRangeList,omitempty"`
+	SupiRangeList []SupiRange     `json:"supiRangeList,omitempty"`
 	GpsiRangeList []IdentityRange `json:"gpsiRangeList,omitempty"`
-	PlmnRangeList []PlmnRange `json:"plmnRangeList,omitempty"`
+	PlmnRangeList []PlmnRange     `json:"plmnRangeList,omitempty"`
 	// Identifier of a group of NFs.
 	GroupId *string `json:"groupId,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	PrimaryChfInstance *string `json:"primaryChfInstance,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SecondaryChfInstance *string `json:"secondaryChfInstance,omitempty"`
 }
 
@@ -49,7 +49,7 @@ func NewChfInfoWithDefaults() *ChfInfo {
 
 // GetSupiRangeList returns the SupiRangeList field value if set, zero value otherwise.
 func (o *ChfInfo) GetSupiRangeList() []SupiRange {
-	if o == nil || isNil(o.SupiRangeList) {
+	if o == nil || IsNil(o.SupiRangeList) {
 		var ret []SupiRange
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *ChfInfo) GetSupiRangeList() []SupiRange {
 // GetSupiRangeListOk returns a tuple with the SupiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChfInfo) GetSupiRangeListOk() ([]SupiRange, bool) {
-	if o == nil || isNil(o.SupiRangeList) {
+	if o == nil || IsNil(o.SupiRangeList) {
 		return nil, false
 	}
 	return o.SupiRangeList, true
@@ -67,7 +67,7 @@ func (o *ChfInfo) GetSupiRangeListOk() ([]SupiRange, bool) {
 
 // HasSupiRangeList returns a boolean if a field has been set.
 func (o *ChfInfo) HasSupiRangeList() bool {
-	if o != nil && !isNil(o.SupiRangeList) {
+	if o != nil && !IsNil(o.SupiRangeList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *ChfInfo) SetSupiRangeList(v []SupiRange) {
 
 // GetGpsiRangeList returns the GpsiRangeList field value if set, zero value otherwise.
 func (o *ChfInfo) GetGpsiRangeList() []IdentityRange {
-	if o == nil || isNil(o.GpsiRangeList) {
+	if o == nil || IsNil(o.GpsiRangeList) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ChfInfo) GetGpsiRangeList() []IdentityRange {
 // GetGpsiRangeListOk returns a tuple with the GpsiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChfInfo) GetGpsiRangeListOk() ([]IdentityRange, bool) {
-	if o == nil || isNil(o.GpsiRangeList) {
+	if o == nil || IsNil(o.GpsiRangeList) {
 		return nil, false
 	}
 	return o.GpsiRangeList, true
@@ -99,7 +99,7 @@ func (o *ChfInfo) GetGpsiRangeListOk() ([]IdentityRange, bool) {
 
 // HasGpsiRangeList returns a boolean if a field has been set.
 func (o *ChfInfo) HasGpsiRangeList() bool {
-	if o != nil && !isNil(o.GpsiRangeList) {
+	if o != nil && !IsNil(o.GpsiRangeList) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *ChfInfo) SetGpsiRangeList(v []IdentityRange) {
 
 // GetPlmnRangeList returns the PlmnRangeList field value if set, zero value otherwise.
 func (o *ChfInfo) GetPlmnRangeList() []PlmnRange {
-	if o == nil || isNil(o.PlmnRangeList) {
+	if o == nil || IsNil(o.PlmnRangeList) {
 		var ret []PlmnRange
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *ChfInfo) GetPlmnRangeList() []PlmnRange {
 // GetPlmnRangeListOk returns a tuple with the PlmnRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChfInfo) GetPlmnRangeListOk() ([]PlmnRange, bool) {
-	if o == nil || isNil(o.PlmnRangeList) {
+	if o == nil || IsNil(o.PlmnRangeList) {
 		return nil, false
 	}
 	return o.PlmnRangeList, true
@@ -131,7 +131,7 @@ func (o *ChfInfo) GetPlmnRangeListOk() ([]PlmnRange, bool) {
 
 // HasPlmnRangeList returns a boolean if a field has been set.
 func (o *ChfInfo) HasPlmnRangeList() bool {
-	if o != nil && !isNil(o.PlmnRangeList) {
+	if o != nil && !IsNil(o.PlmnRangeList) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *ChfInfo) SetPlmnRangeList(v []PlmnRange) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *ChfInfo) GetGroupId() string {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *ChfInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChfInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.GroupId) {
+	if o == nil || IsNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -163,7 +163,7 @@ func (o *ChfInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *ChfInfo) HasGroupId() bool {
-	if o != nil && !isNil(o.GroupId) {
+	if o != nil && !IsNil(o.GroupId) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *ChfInfo) SetGroupId(v string) {
 
 // GetPrimaryChfInstance returns the PrimaryChfInstance field value if set, zero value otherwise.
 func (o *ChfInfo) GetPrimaryChfInstance() string {
-	if o == nil || isNil(o.PrimaryChfInstance) {
+	if o == nil || IsNil(o.PrimaryChfInstance) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *ChfInfo) GetPrimaryChfInstance() string {
 // GetPrimaryChfInstanceOk returns a tuple with the PrimaryChfInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChfInfo) GetPrimaryChfInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.PrimaryChfInstance) {
+	if o == nil || IsNil(o.PrimaryChfInstance) {
 		return nil, false
 	}
 	return o.PrimaryChfInstance, true
@@ -195,7 +195,7 @@ func (o *ChfInfo) GetPrimaryChfInstanceOk() (*string, bool) {
 
 // HasPrimaryChfInstance returns a boolean if a field has been set.
 func (o *ChfInfo) HasPrimaryChfInstance() bool {
-	if o != nil && !isNil(o.PrimaryChfInstance) {
+	if o != nil && !IsNil(o.PrimaryChfInstance) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *ChfInfo) SetPrimaryChfInstance(v string) {
 
 // GetSecondaryChfInstance returns the SecondaryChfInstance field value if set, zero value otherwise.
 func (o *ChfInfo) GetSecondaryChfInstance() string {
-	if o == nil || isNil(o.SecondaryChfInstance) {
+	if o == nil || IsNil(o.SecondaryChfInstance) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *ChfInfo) GetSecondaryChfInstance() string {
 // GetSecondaryChfInstanceOk returns a tuple with the SecondaryChfInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChfInfo) GetSecondaryChfInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.SecondaryChfInstance) {
+	if o == nil || IsNil(o.SecondaryChfInstance) {
 		return nil, false
 	}
 	return o.SecondaryChfInstance, true
@@ -227,7 +227,7 @@ func (o *ChfInfo) GetSecondaryChfInstanceOk() (*string, bool) {
 
 // HasSecondaryChfInstance returns a boolean if a field has been set.
 func (o *ChfInfo) HasSecondaryChfInstance() bool {
-	if o != nil && !isNil(o.SecondaryChfInstance) {
+	if o != nil && !IsNil(o.SecondaryChfInstance) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ChfInfo) SetSecondaryChfInstance(v string) {
 }
 
 func (o ChfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,22 +249,22 @@ func (o ChfInfo) MarshalJSON() ([]byte, error) {
 
 func (o ChfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupiRangeList) {
+	if !IsNil(o.SupiRangeList) {
 		toSerialize["supiRangeList"] = o.SupiRangeList
 	}
-	if !isNil(o.GpsiRangeList) {
+	if !IsNil(o.GpsiRangeList) {
 		toSerialize["gpsiRangeList"] = o.GpsiRangeList
 	}
-	if !isNil(o.PlmnRangeList) {
+	if !IsNil(o.PlmnRangeList) {
 		toSerialize["plmnRangeList"] = o.PlmnRangeList
 	}
-	if !isNil(o.GroupId) {
+	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !isNil(o.PrimaryChfInstance) {
+	if !IsNil(o.PrimaryChfInstance) {
 		toSerialize["primaryChfInstance"] = o.PrimaryChfInstance
 	}
-	if !isNil(o.SecondaryChfInstance) {
+	if !IsNil(o.SecondaryChfInstance) {
 		toSerialize["secondaryChfInstance"] = o.SecondaryChfInstance
 	}
 	return toSerialize, nil
@@ -305,5 +305,3 @@ func (v *NullableChfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

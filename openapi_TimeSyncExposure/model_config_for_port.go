@@ -1,7 +1,7 @@
 /*
 3gpp-time-sync-exposure
 
-API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for time synchronization exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &ConfigForPort{}
 
 // ConfigForPort Contains configuration for each port.
 type ConfigForPort struct {
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi *string `json:"gpsi,omitempty"`
-	N6Ind *bool `json:"n6Ind,omitempty"`
-	PtpEnable *bool `json:"ptpEnable,omitempty"`
-	LogSyncInter *int32 `json:"logSyncInter,omitempty"`
-	LogSyncInterInd *bool `json:"logSyncInterInd,omitempty"`
-	LogAnnouInter *int32 `json:"logAnnouInter,omitempty"`
-	LogAnnouInterInd *bool `json:"logAnnouInterInd,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi             *string `json:"gpsi,omitempty"`
+	N6Ind            *bool   `json:"n6Ind,omitempty"`
+	PtpEnable        *bool   `json:"ptpEnable,omitempty"`
+	LogSyncInter     *int32  `json:"logSyncInter,omitempty"`
+	LogSyncInterInd  *bool   `json:"logSyncInterInd,omitempty"`
+	LogAnnouInter    *int32  `json:"logAnnouInter,omitempty"`
+	LogAnnouInterInd *bool   `json:"logAnnouInterInd,omitempty"`
 }
 
 // NewConfigForPort instantiates a new ConfigForPort object
@@ -48,7 +48,7 @@ func NewConfigForPortWithDefaults() *ConfigForPort {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ConfigForPort) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ConfigForPort) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -66,7 +66,7 @@ func (o *ConfigForPort) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ConfigForPort) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ConfigForPort) SetGpsi(v string) {
 
 // GetN6Ind returns the N6Ind field value if set, zero value otherwise.
 func (o *ConfigForPort) GetN6Ind() bool {
-	if o == nil || isNil(o.N6Ind) {
+	if o == nil || IsNil(o.N6Ind) {
 		var ret bool
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ConfigForPort) GetN6Ind() bool {
 // GetN6IndOk returns a tuple with the N6Ind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetN6IndOk() (*bool, bool) {
-	if o == nil || isNil(o.N6Ind) {
+	if o == nil || IsNil(o.N6Ind) {
 		return nil, false
 	}
 	return o.N6Ind, true
@@ -98,7 +98,7 @@ func (o *ConfigForPort) GetN6IndOk() (*bool, bool) {
 
 // HasN6Ind returns a boolean if a field has been set.
 func (o *ConfigForPort) HasN6Ind() bool {
-	if o != nil && !isNil(o.N6Ind) {
+	if o != nil && !IsNil(o.N6Ind) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ConfigForPort) SetN6Ind(v bool) {
 
 // GetPtpEnable returns the PtpEnable field value if set, zero value otherwise.
 func (o *ConfigForPort) GetPtpEnable() bool {
-	if o == nil || isNil(o.PtpEnable) {
+	if o == nil || IsNil(o.PtpEnable) {
 		var ret bool
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ConfigForPort) GetPtpEnable() bool {
 // GetPtpEnableOk returns a tuple with the PtpEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetPtpEnableOk() (*bool, bool) {
-	if o == nil || isNil(o.PtpEnable) {
+	if o == nil || IsNil(o.PtpEnable) {
 		return nil, false
 	}
 	return o.PtpEnable, true
@@ -130,7 +130,7 @@ func (o *ConfigForPort) GetPtpEnableOk() (*bool, bool) {
 
 // HasPtpEnable returns a boolean if a field has been set.
 func (o *ConfigForPort) HasPtpEnable() bool {
-	if o != nil && !isNil(o.PtpEnable) {
+	if o != nil && !IsNil(o.PtpEnable) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ConfigForPort) SetPtpEnable(v bool) {
 
 // GetLogSyncInter returns the LogSyncInter field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogSyncInter() int32 {
-	if o == nil || isNil(o.LogSyncInter) {
+	if o == nil || IsNil(o.LogSyncInter) {
 		var ret int32
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ConfigForPort) GetLogSyncInter() int32 {
 // GetLogSyncInterOk returns a tuple with the LogSyncInter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogSyncInterOk() (*int32, bool) {
-	if o == nil || isNil(o.LogSyncInter) {
+	if o == nil || IsNil(o.LogSyncInter) {
 		return nil, false
 	}
 	return o.LogSyncInter, true
@@ -162,7 +162,7 @@ func (o *ConfigForPort) GetLogSyncInterOk() (*int32, bool) {
 
 // HasLogSyncInter returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogSyncInter() bool {
-	if o != nil && !isNil(o.LogSyncInter) {
+	if o != nil && !IsNil(o.LogSyncInter) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ConfigForPort) SetLogSyncInter(v int32) {
 
 // GetLogSyncInterInd returns the LogSyncInterInd field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogSyncInterInd() bool {
-	if o == nil || isNil(o.LogSyncInterInd) {
+	if o == nil || IsNil(o.LogSyncInterInd) {
 		var ret bool
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ConfigForPort) GetLogSyncInterInd() bool {
 // GetLogSyncInterIndOk returns a tuple with the LogSyncInterInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogSyncInterIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSyncInterInd) {
+	if o == nil || IsNil(o.LogSyncInterInd) {
 		return nil, false
 	}
 	return o.LogSyncInterInd, true
@@ -194,7 +194,7 @@ func (o *ConfigForPort) GetLogSyncInterIndOk() (*bool, bool) {
 
 // HasLogSyncInterInd returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogSyncInterInd() bool {
-	if o != nil && !isNil(o.LogSyncInterInd) {
+	if o != nil && !IsNil(o.LogSyncInterInd) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ConfigForPort) SetLogSyncInterInd(v bool) {
 
 // GetLogAnnouInter returns the LogAnnouInter field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogAnnouInter() int32 {
-	if o == nil || isNil(o.LogAnnouInter) {
+	if o == nil || IsNil(o.LogAnnouInter) {
 		var ret int32
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *ConfigForPort) GetLogAnnouInter() int32 {
 // GetLogAnnouInterOk returns a tuple with the LogAnnouInter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogAnnouInterOk() (*int32, bool) {
-	if o == nil || isNil(o.LogAnnouInter) {
+	if o == nil || IsNil(o.LogAnnouInter) {
 		return nil, false
 	}
 	return o.LogAnnouInter, true
@@ -226,7 +226,7 @@ func (o *ConfigForPort) GetLogAnnouInterOk() (*int32, bool) {
 
 // HasLogAnnouInter returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogAnnouInter() bool {
-	if o != nil && !isNil(o.LogAnnouInter) {
+	if o != nil && !IsNil(o.LogAnnouInter) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ConfigForPort) SetLogAnnouInter(v int32) {
 
 // GetLogAnnouInterInd returns the LogAnnouInterInd field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogAnnouInterInd() bool {
-	if o == nil || isNil(o.LogAnnouInterInd) {
+	if o == nil || IsNil(o.LogAnnouInterInd) {
 		var ret bool
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *ConfigForPort) GetLogAnnouInterInd() bool {
 // GetLogAnnouInterIndOk returns a tuple with the LogAnnouInterInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogAnnouInterIndOk() (*bool, bool) {
-	if o == nil || isNil(o.LogAnnouInterInd) {
+	if o == nil || IsNil(o.LogAnnouInterInd) {
 		return nil, false
 	}
 	return o.LogAnnouInterInd, true
@@ -258,7 +258,7 @@ func (o *ConfigForPort) GetLogAnnouInterIndOk() (*bool, bool) {
 
 // HasLogAnnouInterInd returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogAnnouInterInd() bool {
-	if o != nil && !isNil(o.LogAnnouInterInd) {
+	if o != nil && !IsNil(o.LogAnnouInterInd) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *ConfigForPort) SetLogAnnouInterInd(v bool) {
 }
 
 func (o ConfigForPort) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,25 +280,25 @@ func (o ConfigForPort) MarshalJSON() ([]byte, error) {
 
 func (o ConfigForPort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.N6Ind) {
+	if !IsNil(o.N6Ind) {
 		toSerialize["n6Ind"] = o.N6Ind
 	}
-	if !isNil(o.PtpEnable) {
+	if !IsNil(o.PtpEnable) {
 		toSerialize["ptpEnable"] = o.PtpEnable
 	}
-	if !isNil(o.LogSyncInter) {
+	if !IsNil(o.LogSyncInter) {
 		toSerialize["logSyncInter"] = o.LogSyncInter
 	}
-	if !isNil(o.LogSyncInterInd) {
+	if !IsNil(o.LogSyncInterInd) {
 		toSerialize["logSyncInterInd"] = o.LogSyncInterInd
 	}
-	if !isNil(o.LogAnnouInter) {
+	if !IsNil(o.LogAnnouInter) {
 		toSerialize["logAnnouInter"] = o.LogAnnouInter
 	}
-	if !isNil(o.LogAnnouInterInd) {
+	if !IsNil(o.LogAnnouInterInd) {
 		toSerialize["logAnnouInterInd"] = o.LogAnnouInterInd
 	}
 	return toSerialize, nil
@@ -339,5 +339,3 @@ func (v *NullableConfigForPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

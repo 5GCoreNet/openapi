@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -15,9 +15,9 @@ import (
 	"fmt"
 )
 
-// AmbrRm This data type is defined in the same way as the 'Ambr' data type, but with the OpenAPI 'nullable: true' property.\" 
+// AmbrRm This data type is defined in the same way as the 'Ambr' data type, but with the OpenAPI 'nullable: true' property.\"
 type AmbrRm struct {
-	Ambr *Ambr
+	Ambr      *Ambr
 	NullValue *NullValue
 }
 
@@ -25,7 +25,7 @@ type AmbrRm struct {
 func (dst *AmbrRm) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into Ambr
-	err = json.Unmarshal(data, &dst.Ambr);
+	err = json.Unmarshal(data, &dst.Ambr)
 	if err == nil {
 		jsonAmbr, _ := json.Marshal(dst.Ambr)
 		if string(jsonAmbr) == "{}" { // empty struct
@@ -38,7 +38,7 @@ func (dst *AmbrRm) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NullValue
-	err = json.Unmarshal(data, &dst.NullValue);
+	err = json.Unmarshal(data, &dst.NullValue)
 	if err == nil {
 		jsonNullValue, _ := json.Marshal(dst.NullValue)
 		if string(jsonNullValue) == "{}" { // empty struct
@@ -101,5 +101,3 @@ func (v *NullableAmbrRm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

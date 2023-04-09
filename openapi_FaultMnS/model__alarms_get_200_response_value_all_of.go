@@ -41,7 +41,7 @@ func NewAlarmsGet200ResponseValueAllOfWithDefaults() *AlarmsGet200ResponseValueA
 
 // GetLastNotificationHeader returns the LastNotificationHeader field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValueAllOf) GetLastNotificationHeader() NotificationHeader {
-	if o == nil || isNil(o.LastNotificationHeader) {
+	if o == nil || IsNil(o.LastNotificationHeader) {
 		var ret NotificationHeader
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AlarmsGet200ResponseValueAllOf) GetLastNotificationHeader() Notificatio
 // GetLastNotificationHeaderOk returns a tuple with the LastNotificationHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValueAllOf) GetLastNotificationHeaderOk() (*NotificationHeader, bool) {
-	if o == nil || isNil(o.LastNotificationHeader) {
+	if o == nil || IsNil(o.LastNotificationHeader) {
 		return nil, false
 	}
 	return o.LastNotificationHeader, true
@@ -59,7 +59,7 @@ func (o *AlarmsGet200ResponseValueAllOf) GetLastNotificationHeaderOk() (*Notific
 
 // HasLastNotificationHeader returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValueAllOf) HasLastNotificationHeader() bool {
-	if o != nil && !isNil(o.LastNotificationHeader) {
+	if o != nil && !IsNil(o.LastNotificationHeader) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AlarmsGet200ResponseValueAllOf) SetLastNotificationHeader(v Notificatio
 }
 
 func (o AlarmsGet200ResponseValueAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AlarmsGet200ResponseValueAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AlarmsGet200ResponseValueAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LastNotificationHeader) {
+	if !IsNil(o.LastNotificationHeader) {
 		toSerialize["lastNotificationHeader"] = o.LastNotificationHeader
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAlarmsGet200ResponseValueAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

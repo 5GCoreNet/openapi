@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-us
 
-API for MBS User Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for MBS User Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,28 +17,14 @@ import (
 
 // MbsServiceType Indicates the MBS service type of an MBS session
 type MbsServiceType struct {
-	MbsServiceTypeAnyOf *MbsServiceTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsServiceType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MbsServiceTypeAnyOf
-	err = json.Unmarshal(data, &dst.MbsServiceTypeAnyOf);
-	if err == nil {
-		jsonMbsServiceTypeAnyOf, _ := json.Marshal(dst.MbsServiceTypeAnyOf)
-		if string(jsonMbsServiceTypeAnyOf) == "{}" { // empty struct
-			dst.MbsServiceTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.MbsServiceTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.MbsServiceTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *MbsServiceType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsServiceType) MarshalJSON() ([]byte, error) {
-	if src.MbsServiceTypeAnyOf != nil {
-		return json.Marshal(&src.MbsServiceTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableMbsServiceType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

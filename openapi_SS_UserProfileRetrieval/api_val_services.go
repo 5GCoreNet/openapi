@@ -1,7 +1,7 @@
 /*
 SS_UserProfileRetrieval
 
-API for SEAL User Profile Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL User Profile Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,19 +13,18 @@ package openapi_SS_UserProfileRetrieval
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // VALServicesApiService VALServicesApi service
 type VALServicesApiService service
 
 type ApiRetrieveValUserProfileRequest struct {
-	ctx context.Context
-	ApiService *VALServicesApiService
-	valTgtUe *ValTargetUe
+	ctx          context.Context
+	ApiService   *VALServicesApiService
+	valTgtUe     *ValTargetUe
 	valServiceId *string
 }
 
@@ -50,24 +49,25 @@ RetrieveValUserProfile Method for RetrieveValUserProfile
 
 Retrieve VAL User or VAL UE profile information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrieveValUserProfileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRetrieveValUserProfileRequest
 */
 func (a *VALServicesApiService) RetrieveValUserProfile(ctx context.Context) ApiRetrieveValUserProfileRequest {
 	return ApiRetrieveValUserProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ProfileDoc
+//
+//	@return []ProfileDoc
 func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUserProfileRequest) ([]ProfileDoc, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ProfileDoc
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ProfileDoc
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VALServicesApiService.RetrieveValUserProfile")
@@ -85,9 +85,9 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 	}
 
 	if r.valServiceId != nil {
-		parameterAddToQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
 	}
-	parameterAddToQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -115,9 +115,9 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -134,8 +134,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -145,8 +145,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -156,8 +156,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -167,8 +167,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -178,8 +178,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -189,8 +189,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -200,8 +200,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -211,8 +211,8 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 EES ACR Management Event_API
 
-API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for EES ACR Management Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &AcrMgntEventsNotification{}
 
 // AcrMgntEventsNotification Represents the ACR management events notification.
 type AcrMgntEventsNotification struct {
-	// String identifying the Individual ACR Management Events Subscription for which the notification is delivered. 
+	// String identifying the Individual ACR Management Events Subscription for which the notification is delivered.
 	SubpId string `json:"subpId"`
 	// A list of ACR management event reports.
 	EventReports []AcrMgntEventReport `json:"eventReports"`
@@ -93,7 +93,7 @@ func (o *AcrMgntEventsNotification) SetEventReports(v []AcrMgntEventReport) {
 }
 
 func (o AcrMgntEventsNotification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,5 +142,3 @@ func (v *NullableAcrMgntEventsNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

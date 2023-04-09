@@ -1,7 +1,7 @@
 /*
 Eees_ACREvents
 
-API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+API for ACR events subscription and notification. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.0.2
 */
@@ -42,7 +42,7 @@ func NewTargetInfoWithDefaults() *TargetInfo {
 
 // GetTrgetEASInfo returns the TrgetEASInfo field value if set, zero value otherwise.
 func (o *TargetInfo) GetTrgetEASInfo() DiscoveredEas {
-	if o == nil || isNil(o.TrgetEASInfo) {
+	if o == nil || IsNil(o.TrgetEASInfo) {
 		var ret DiscoveredEas
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TargetInfo) GetTrgetEASInfo() DiscoveredEas {
 // GetTrgetEASInfoOk returns a tuple with the TrgetEASInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetInfo) GetTrgetEASInfoOk() (*DiscoveredEas, bool) {
-	if o == nil || isNil(o.TrgetEASInfo) {
+	if o == nil || IsNil(o.TrgetEASInfo) {
 		return nil, false
 	}
 	return o.TrgetEASInfo, true
@@ -60,7 +60,7 @@ func (o *TargetInfo) GetTrgetEASInfoOk() (*DiscoveredEas, bool) {
 
 // HasTrgetEASInfo returns a boolean if a field has been set.
 func (o *TargetInfo) HasTrgetEASInfo() bool {
-	if o != nil && !isNil(o.TrgetEASInfo) {
+	if o != nil && !IsNil(o.TrgetEASInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TargetInfo) SetTrgetEASInfo(v DiscoveredEas) {
 
 // GetTrgetEESInfo returns the TrgetEESInfo field value if set, zero value otherwise.
 func (o *TargetInfo) GetTrgetEESInfo() EDNConfigInfo {
-	if o == nil || isNil(o.TrgetEESInfo) {
+	if o == nil || IsNil(o.TrgetEESInfo) {
 		var ret EDNConfigInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TargetInfo) GetTrgetEESInfo() EDNConfigInfo {
 // GetTrgetEESInfoOk returns a tuple with the TrgetEESInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetInfo) GetTrgetEESInfoOk() (*EDNConfigInfo, bool) {
-	if o == nil || isNil(o.TrgetEESInfo) {
+	if o == nil || IsNil(o.TrgetEESInfo) {
 		return nil, false
 	}
 	return o.TrgetEESInfo, true
@@ -92,7 +92,7 @@ func (o *TargetInfo) GetTrgetEESInfoOk() (*EDNConfigInfo, bool) {
 
 // HasTrgetEESInfo returns a boolean if a field has been set.
 func (o *TargetInfo) HasTrgetEESInfo() bool {
-	if o != nil && !isNil(o.TrgetEESInfo) {
+	if o != nil && !IsNil(o.TrgetEESInfo) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *TargetInfo) SetTrgetEESInfo(v EDNConfigInfo) {
 }
 
 func (o TargetInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o TargetInfo) MarshalJSON() ([]byte, error) {
 
 func (o TargetInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TrgetEASInfo) {
+	if !IsNil(o.TrgetEASInfo) {
 		toSerialize["trgetEASInfo"] = o.TrgetEASInfo
 	}
-	if !isNil(o.TrgetEESInfo) {
+	if !IsNil(o.TrgetEESInfo) {
 		toSerialize["trgetEESInfo"] = o.TrgetEESInfo
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableTargetInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &NwdafRegistrationModification{}
 
 // NwdafRegistrationModification Contains attributes of NwdafRegistration that can be modified using PATCH
 type NwdafRegistrationModification struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NwdafInstanceId string `json:"nwdafInstanceId"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	NwdafSetId *string `json:"nwdafSetId,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	NwdafSetId   *string   `json:"nwdafSetId,omitempty"`
 	AnalyticsIds []EventId `json:"analyticsIds,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -72,7 +72,7 @@ func (o *NwdafRegistrationModification) SetNwdafInstanceId(v string) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *NwdafRegistrationModification) GetNwdafSetId() string {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *NwdafRegistrationModification) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistrationModification) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -90,7 +90,7 @@ func (o *NwdafRegistrationModification) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *NwdafRegistrationModification) HasNwdafSetId() bool {
-	if o != nil && !isNil(o.NwdafSetId) {
+	if o != nil && !IsNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *NwdafRegistrationModification) SetNwdafSetId(v string) {
 
 // GetAnalyticsIds returns the AnalyticsIds field value if set, zero value otherwise.
 func (o *NwdafRegistrationModification) GetAnalyticsIds() []EventId {
-	if o == nil || isNil(o.AnalyticsIds) {
+	if o == nil || IsNil(o.AnalyticsIds) {
 		var ret []EventId
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *NwdafRegistrationModification) GetAnalyticsIds() []EventId {
 // GetAnalyticsIdsOk returns a tuple with the AnalyticsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistrationModification) GetAnalyticsIdsOk() ([]EventId, bool) {
-	if o == nil || isNil(o.AnalyticsIds) {
+	if o == nil || IsNil(o.AnalyticsIds) {
 		return nil, false
 	}
 	return o.AnalyticsIds, true
@@ -122,7 +122,7 @@ func (o *NwdafRegistrationModification) GetAnalyticsIdsOk() ([]EventId, bool) {
 
 // HasAnalyticsIds returns a boolean if a field has been set.
 func (o *NwdafRegistrationModification) HasAnalyticsIds() bool {
-	if o != nil && !isNil(o.AnalyticsIds) {
+	if o != nil && !IsNil(o.AnalyticsIds) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *NwdafRegistrationModification) SetAnalyticsIds(v []EventId) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NwdafRegistrationModification) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *NwdafRegistrationModification) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistrationModification) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -154,7 +154,7 @@ func (o *NwdafRegistrationModification) GetSupportedFeaturesOk() (*string, bool)
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NwdafRegistrationModification) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *NwdafRegistrationModification) SetSupportedFeatures(v string) {
 }
 
 func (o NwdafRegistrationModification) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -177,13 +177,13 @@ func (o NwdafRegistrationModification) MarshalJSON() ([]byte, error) {
 func (o NwdafRegistrationModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwdafInstanceId"] = o.NwdafInstanceId
-	if !isNil(o.NwdafSetId) {
+	if !IsNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
-	if !isNil(o.AnalyticsIds) {
+	if !IsNil(o.AnalyticsIds) {
 		toSerialize["analyticsIds"] = o.AnalyticsIds
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -224,5 +224,3 @@ func (v *NullableNwdafRegistrationModification) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

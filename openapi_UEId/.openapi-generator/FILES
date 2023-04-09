@@ -1,19 +1,11 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
 api_default.go
 client.go
 configuration.go
-docs/DefaultApi.md
-docs/InvalidParam.md
-docs/IpAddr.md
-docs/Ipv6Addr.md
-docs/Ipv6Prefix.md
-docs/ProblemDetails.md
-docs/Snssai.md
-docs/UeIdInfo.md
-docs/UeIdReq.md
 git_push.sh
 go.mod
 go.sum
@@ -26,5 +18,4 @@ model_snssai.go
 model_ue_id_info.go
 model_ue_id_req.go
 response.go
-test/api_default_test.go
 utils.go

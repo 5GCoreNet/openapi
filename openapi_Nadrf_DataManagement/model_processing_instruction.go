@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -22,7 +22,7 @@ type ProcessingInstruction struct {
 	EventId DccfEvent `json:"eventId"`
 	// indicating a time in seconds.
 	ProcInterval int32 `json:"procInterval"`
-	// List of event parameter names, and for each event parameter name, respective event parameter values and sets of the attributes to be used in the summarized reports. 
+	// List of event parameter names, and for each event parameter name, respective event parameter values and sets of the attributes to be used in the summarized reports.
 	ParamProcInstructs []ParameterProcessingInstruction `json:"paramProcInstructs,omitempty"`
 }
 
@@ -95,7 +95,7 @@ func (o *ProcessingInstruction) SetProcInterval(v int32) {
 
 // GetParamProcInstructs returns the ParamProcInstructs field value if set, zero value otherwise.
 func (o *ProcessingInstruction) GetParamProcInstructs() []ParameterProcessingInstruction {
-	if o == nil || isNil(o.ParamProcInstructs) {
+	if o == nil || IsNil(o.ParamProcInstructs) {
 		var ret []ParameterProcessingInstruction
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ProcessingInstruction) GetParamProcInstructs() []ParameterProcessingIns
 // GetParamProcInstructsOk returns a tuple with the ParamProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingInstruction) GetParamProcInstructsOk() ([]ParameterProcessingInstruction, bool) {
-	if o == nil || isNil(o.ParamProcInstructs) {
+	if o == nil || IsNil(o.ParamProcInstructs) {
 		return nil, false
 	}
 	return o.ParamProcInstructs, true
@@ -113,7 +113,7 @@ func (o *ProcessingInstruction) GetParamProcInstructsOk() ([]ParameterProcessing
 
 // HasParamProcInstructs returns a boolean if a field has been set.
 func (o *ProcessingInstruction) HasParamProcInstructs() bool {
-	if o != nil && !isNil(o.ParamProcInstructs) {
+	if o != nil && !IsNil(o.ParamProcInstructs) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *ProcessingInstruction) SetParamProcInstructs(v []ParameterProcessingIns
 }
 
 func (o ProcessingInstruction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o ProcessingInstruction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventId"] = o.EventId
 	toSerialize["procInterval"] = o.ProcInterval
-	if !isNil(o.ParamProcInstructs) {
+	if !IsNil(o.ParamProcInstructs) {
 		toSerialize["paramProcInstructs"] = o.ParamProcInstructs
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableProcessingInstruction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

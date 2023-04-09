@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// ExceptionTrend Possible values are: - UP: Up trend of the exception level. - DOWN: Down trend of the exception level. - UNKNOW: Unknown trend of the exception level. - STABLE: Stable trend of the exception level. 
+// ExceptionTrend Possible values are: - UP: Up trend of the exception level. - DOWN: Down trend of the exception level. - UNKNOW: Unknown trend of the exception level. - STABLE: Stable trend of the exception level.
 type ExceptionTrend struct {
-	ExceptionTrendAnyOf *ExceptionTrendAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ExceptionTrend) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ExceptionTrendAnyOf
-	err = json.Unmarshal(data, &dst.ExceptionTrendAnyOf);
-	if err == nil {
-		jsonExceptionTrendAnyOf, _ := json.Marshal(dst.ExceptionTrendAnyOf)
-		if string(jsonExceptionTrendAnyOf) == "{}" { // empty struct
-			dst.ExceptionTrendAnyOf = nil
-		} else {
-			return nil // data stored in dst.ExceptionTrendAnyOf, return on the first match
-		}
-	} else {
-		dst.ExceptionTrendAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *ExceptionTrend) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ExceptionTrend) MarshalJSON() ([]byte, error) {
-	if src.ExceptionTrendAnyOf != nil {
-		return json.Marshal(&src.ExceptionTrendAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableExceptionTrend) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

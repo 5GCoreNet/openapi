@@ -1,7 +1,7 @@
 /*
 Npcf_UEPolicyControl
 
-UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+UE Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the PolicyAssociationRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PolicyAssociationRequest{}
 
-// PolicyAssociationRequest Represents information that the NF service consumer provides when requesting the creation of a policy association. 
+// PolicyAssociationRequest Represents information that the NF service consumer provides when requesting the creation of a policy association.
 type PolicyAssociationRequest struct {
 	// String providing an URI formatted according to RFC 3986.
 	NotificationUri string `json:"notificationUri"`
@@ -27,30 +27,30 @@ type PolicyAssociationRequest struct {
 	AltNotifIpv6Addrs []Ipv6Addr `json:"altNotifIpv6Addrs,omitempty"`
 	// Alternate or backup FQDN(s) where to send Notifications.
 	AltNotifFqdns []string `json:"altNotifFqdns,omitempty"`
-	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501. 
+	// String identifying a Supi that shall contain either an IMSI, a network specific identifier, a Global Cable Identifier (GCI) or a Global Line Identifier (GLI) as specified in clause  2.2A of 3GPP TS 23.003. It shall be formatted as follows  - for an IMSI \"imsi-<imsi>\", where <imsi> shall be formatted according to clause 2.2    of 3GPP TS 23.003 that describes an IMSI.  - for a network specific identifier \"nai-<nai>, where <nai> shall be formatted    according to clause 28.7.2 of 3GPP TS 23.003 that describes an NAI.  - for a GCI \"gci-<gci>\", where <gci> shall be formatted according to clause 28.15.2    of 3GPP TS 23.003.  - for a GLI \"gli-<gli>\", where <gli> shall be formatted according to clause 28.16.2 of    3GPP TS 23.003.To enable that the value is used as part of an URI, the string shall    only contain characters allowed according to the \"lower-with-hyphen\" naming convention    defined in 3GPP TS 29.501.
 	Supi string `json:"supi"`
-	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.  
-	Gpsi *string `json:"gpsi,omitempty"`
+	// String identifying a Gpsi shall contain either an External Id or an MSISDN.  It shall be formatted as follows -External Identifier= \"extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier.
+	Gpsi       *string     `json:"gpsi,omitempty"`
 	AccessType *AccessType `json:"accessType,omitempty"`
-	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.  
-	Pei *string `json:"pei,omitempty"`
+	// String representing a Permanent Equipment Identifier that may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication that this address cannot be trusted for regulatory purpose if this  address cannot be used as an Equipment Identifier of the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.
+	Pei     *string       `json:"pei,omitempty"`
 	UserLoc *UserLocation `json:"userLoc,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	TimeZone *string `json:"timeZone,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	TimeZone    *string    `json:"timeZone,omitempty"`
 	ServingPlmn *PlmnIdNid `json:"servingPlmn,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
-	GroupIds []string `json:"groupIds,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	RatType     *RatType   `json:"ratType,omitempty"`
+	GroupIds    []string   `json:"groupIds,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	HPcfId *string `json:"hPcfId,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
-	UePolReq *string `json:"uePolReq,omitempty"`
-	Guami *Guami `json:"guami,omitempty"`
+	UePolReq    *string      `json:"uePolReq,omitempty"`
+	Guami       *Guami       `json:"guami,omitempty"`
 	ServiceName *ServiceName `json:"serviceName,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	ServingNfId *string `json:"servingNfId,omitempty"`
-	Pc5Capab *Pc5Capability `json:"pc5Capab,omitempty"`
-	ProSeCapab []ProSeCapability `json:"proSeCapab,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	ServingNfId *string           `json:"servingNfId,omitempty"`
+	Pc5Capab    *Pc5Capability    `json:"pc5Capab,omitempty"`
+	ProSeCapab  []ProSeCapability `json:"proSeCapab,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat string `json:"suppFeat"`
 }
 
@@ -100,7 +100,7 @@ func (o *PolicyAssociationRequest) SetNotificationUri(v string) {
 
 // GetAltNotifIpv4Addrs returns the AltNotifIpv4Addrs field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAltNotifIpv4Addrs() []string {
-	if o == nil || isNil(o.AltNotifIpv4Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
 		var ret []string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv4Addrs() []string {
 // GetAltNotifIpv4AddrsOk returns a tuple with the AltNotifIpv4Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAltNotifIpv4AddrsOk() ([]string, bool) {
-	if o == nil || isNil(o.AltNotifIpv4Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv4Addrs, true
@@ -118,7 +118,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv4AddrsOk() ([]string, bool) {
 
 // HasAltNotifIpv4Addrs returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAltNotifIpv4Addrs() bool {
-	if o != nil && !isNil(o.AltNotifIpv4Addrs) {
+	if o != nil && !IsNil(o.AltNotifIpv4Addrs) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *PolicyAssociationRequest) SetAltNotifIpv4Addrs(v []string) {
 
 // GetAltNotifIpv6Addrs returns the AltNotifIpv6Addrs field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAltNotifIpv6Addrs() []Ipv6Addr {
-	if o == nil || isNil(o.AltNotifIpv6Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv6Addrs() []Ipv6Addr {
 // GetAltNotifIpv6AddrsOk returns a tuple with the AltNotifIpv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || isNil(o.AltNotifIpv6Addrs) {
+	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv6Addrs, true
@@ -150,7 +150,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
 
 // HasAltNotifIpv6Addrs returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAltNotifIpv6Addrs() bool {
-	if o != nil && !isNil(o.AltNotifIpv6Addrs) {
+	if o != nil && !IsNil(o.AltNotifIpv6Addrs) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *PolicyAssociationRequest) SetAltNotifIpv6Addrs(v []Ipv6Addr) {
 
 // GetAltNotifFqdns returns the AltNotifFqdns field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAltNotifFqdns() []string {
-	if o == nil || isNil(o.AltNotifFqdns) {
+	if o == nil || IsNil(o.AltNotifFqdns) {
 		var ret []string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *PolicyAssociationRequest) GetAltNotifFqdns() []string {
 // GetAltNotifFqdnsOk returns a tuple with the AltNotifFqdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAltNotifFqdnsOk() ([]string, bool) {
-	if o == nil || isNil(o.AltNotifFqdns) {
+	if o == nil || IsNil(o.AltNotifFqdns) {
 		return nil, false
 	}
 	return o.AltNotifFqdns, true
@@ -182,7 +182,7 @@ func (o *PolicyAssociationRequest) GetAltNotifFqdnsOk() ([]string, bool) {
 
 // HasAltNotifFqdns returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAltNotifFqdns() bool {
-	if o != nil && !isNil(o.AltNotifFqdns) {
+	if o != nil && !IsNil(o.AltNotifFqdns) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *PolicyAssociationRequest) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetGpsi() string {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *PolicyAssociationRequest) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetGpsiOk() (*string, bool) {
-	if o == nil || isNil(o.Gpsi) {
+	if o == nil || IsNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -238,7 +238,7 @@ func (o *PolicyAssociationRequest) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasGpsi() bool {
-	if o != nil && !isNil(o.Gpsi) {
+	if o != nil && !IsNil(o.Gpsi) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *PolicyAssociationRequest) SetGpsi(v string) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *PolicyAssociationRequest) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -270,7 +270,7 @@ func (o *PolicyAssociationRequest) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *PolicyAssociationRequest) SetAccessType(v AccessType) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetPei() string {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *PolicyAssociationRequest) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetPeiOk() (*string, bool) {
-	if o == nil || isNil(o.Pei) {
+	if o == nil || IsNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -302,7 +302,7 @@ func (o *PolicyAssociationRequest) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasPei() bool {
-	if o != nil && !isNil(o.Pei) {
+	if o != nil && !IsNil(o.Pei) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *PolicyAssociationRequest) SetPei(v string) {
 
 // GetUserLoc returns the UserLoc field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetUserLoc() UserLocation {
-	if o == nil || isNil(o.UserLoc) {
+	if o == nil || IsNil(o.UserLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *PolicyAssociationRequest) GetUserLoc() UserLocation {
 // GetUserLocOk returns a tuple with the UserLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetUserLocOk() (*UserLocation, bool) {
-	if o == nil || isNil(o.UserLoc) {
+	if o == nil || IsNil(o.UserLoc) {
 		return nil, false
 	}
 	return o.UserLoc, true
@@ -334,7 +334,7 @@ func (o *PolicyAssociationRequest) GetUserLocOk() (*UserLocation, bool) {
 
 // HasUserLoc returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasUserLoc() bool {
-	if o != nil && !isNil(o.UserLoc) {
+	if o != nil && !IsNil(o.UserLoc) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *PolicyAssociationRequest) SetUserLoc(v UserLocation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *PolicyAssociationRequest) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -366,7 +366,7 @@ func (o *PolicyAssociationRequest) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *PolicyAssociationRequest) SetTimeZone(v string) {
 
 // GetServingPlmn returns the ServingPlmn field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetServingPlmn() PlmnIdNid {
-	if o == nil || isNil(o.ServingPlmn) {
+	if o == nil || IsNil(o.ServingPlmn) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *PolicyAssociationRequest) GetServingPlmn() PlmnIdNid {
 // GetServingPlmnOk returns a tuple with the ServingPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetServingPlmnOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.ServingPlmn) {
+	if o == nil || IsNil(o.ServingPlmn) {
 		return nil, false
 	}
 	return o.ServingPlmn, true
@@ -398,7 +398,7 @@ func (o *PolicyAssociationRequest) GetServingPlmnOk() (*PlmnIdNid, bool) {
 
 // HasServingPlmn returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasServingPlmn() bool {
-	if o != nil && !isNil(o.ServingPlmn) {
+	if o != nil && !IsNil(o.ServingPlmn) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *PolicyAssociationRequest) SetServingPlmn(v PlmnIdNid) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *PolicyAssociationRequest) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -430,7 +430,7 @@ func (o *PolicyAssociationRequest) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -444,7 +444,7 @@ func (o *PolicyAssociationRequest) SetRatType(v RatType) {
 
 // GetGroupIds returns the GroupIds field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetGroupIds() []string {
-	if o == nil || isNil(o.GroupIds) {
+	if o == nil || IsNil(o.GroupIds) {
 		var ret []string
 		return ret
 	}
@@ -454,7 +454,7 @@ func (o *PolicyAssociationRequest) GetGroupIds() []string {
 // GetGroupIdsOk returns a tuple with the GroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetGroupIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.GroupIds) {
+	if o == nil || IsNil(o.GroupIds) {
 		return nil, false
 	}
 	return o.GroupIds, true
@@ -462,7 +462,7 @@ func (o *PolicyAssociationRequest) GetGroupIdsOk() ([]string, bool) {
 
 // HasGroupIds returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasGroupIds() bool {
-	if o != nil && !isNil(o.GroupIds) {
+	if o != nil && !IsNil(o.GroupIds) {
 		return true
 	}
 
@@ -476,7 +476,7 @@ func (o *PolicyAssociationRequest) SetGroupIds(v []string) {
 
 // GetHPcfId returns the HPcfId field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetHPcfId() string {
-	if o == nil || isNil(o.HPcfId) {
+	if o == nil || IsNil(o.HPcfId) {
 		var ret string
 		return ret
 	}
@@ -486,7 +486,7 @@ func (o *PolicyAssociationRequest) GetHPcfId() string {
 // GetHPcfIdOk returns a tuple with the HPcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetHPcfIdOk() (*string, bool) {
-	if o == nil || isNil(o.HPcfId) {
+	if o == nil || IsNil(o.HPcfId) {
 		return nil, false
 	}
 	return o.HPcfId, true
@@ -494,7 +494,7 @@ func (o *PolicyAssociationRequest) GetHPcfIdOk() (*string, bool) {
 
 // HasHPcfId returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasHPcfId() bool {
-	if o != nil && !isNil(o.HPcfId) {
+	if o != nil && !IsNil(o.HPcfId) {
 		return true
 	}
 
@@ -508,7 +508,7 @@ func (o *PolicyAssociationRequest) SetHPcfId(v string) {
 
 // GetUePolReq returns the UePolReq field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetUePolReq() string {
-	if o == nil || isNil(o.UePolReq) {
+	if o == nil || IsNil(o.UePolReq) {
 		var ret string
 		return ret
 	}
@@ -518,7 +518,7 @@ func (o *PolicyAssociationRequest) GetUePolReq() string {
 // GetUePolReqOk returns a tuple with the UePolReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetUePolReqOk() (*string, bool) {
-	if o == nil || isNil(o.UePolReq) {
+	if o == nil || IsNil(o.UePolReq) {
 		return nil, false
 	}
 	return o.UePolReq, true
@@ -526,7 +526,7 @@ func (o *PolicyAssociationRequest) GetUePolReqOk() (*string, bool) {
 
 // HasUePolReq returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasUePolReq() bool {
-	if o != nil && !isNil(o.UePolReq) {
+	if o != nil && !IsNil(o.UePolReq) {
 		return true
 	}
 
@@ -540,7 +540,7 @@ func (o *PolicyAssociationRequest) SetUePolReq(v string) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetGuami() Guami {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -550,7 +550,7 @@ func (o *PolicyAssociationRequest) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetGuamiOk() (*Guami, bool) {
-	if o == nil || isNil(o.Guami) {
+	if o == nil || IsNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -558,7 +558,7 @@ func (o *PolicyAssociationRequest) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasGuami() bool {
-	if o != nil && !isNil(o.Guami) {
+	if o != nil && !IsNil(o.Guami) {
 		return true
 	}
 
@@ -572,7 +572,7 @@ func (o *PolicyAssociationRequest) SetGuami(v Guami) {
 
 // GetServiceName returns the ServiceName field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetServiceName() ServiceName {
-	if o == nil || isNil(o.ServiceName) {
+	if o == nil || IsNil(o.ServiceName) {
 		var ret ServiceName
 		return ret
 	}
@@ -582,7 +582,7 @@ func (o *PolicyAssociationRequest) GetServiceName() ServiceName {
 // GetServiceNameOk returns a tuple with the ServiceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetServiceNameOk() (*ServiceName, bool) {
-	if o == nil || isNil(o.ServiceName) {
+	if o == nil || IsNil(o.ServiceName) {
 		return nil, false
 	}
 	return o.ServiceName, true
@@ -590,7 +590,7 @@ func (o *PolicyAssociationRequest) GetServiceNameOk() (*ServiceName, bool) {
 
 // HasServiceName returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasServiceName() bool {
-	if o != nil && !isNil(o.ServiceName) {
+	if o != nil && !IsNil(o.ServiceName) {
 		return true
 	}
 
@@ -604,7 +604,7 @@ func (o *PolicyAssociationRequest) SetServiceName(v ServiceName) {
 
 // GetServingNfId returns the ServingNfId field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetServingNfId() string {
-	if o == nil || isNil(o.ServingNfId) {
+	if o == nil || IsNil(o.ServingNfId) {
 		var ret string
 		return ret
 	}
@@ -614,7 +614,7 @@ func (o *PolicyAssociationRequest) GetServingNfId() string {
 // GetServingNfIdOk returns a tuple with the ServingNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetServingNfIdOk() (*string, bool) {
-	if o == nil || isNil(o.ServingNfId) {
+	if o == nil || IsNil(o.ServingNfId) {
 		return nil, false
 	}
 	return o.ServingNfId, true
@@ -622,7 +622,7 @@ func (o *PolicyAssociationRequest) GetServingNfIdOk() (*string, bool) {
 
 // HasServingNfId returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasServingNfId() bool {
-	if o != nil && !isNil(o.ServingNfId) {
+	if o != nil && !IsNil(o.ServingNfId) {
 		return true
 	}
 
@@ -636,7 +636,7 @@ func (o *PolicyAssociationRequest) SetServingNfId(v string) {
 
 // GetPc5Capab returns the Pc5Capab field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetPc5Capab() Pc5Capability {
-	if o == nil || isNil(o.Pc5Capab) {
+	if o == nil || IsNil(o.Pc5Capab) {
 		var ret Pc5Capability
 		return ret
 	}
@@ -646,7 +646,7 @@ func (o *PolicyAssociationRequest) GetPc5Capab() Pc5Capability {
 // GetPc5CapabOk returns a tuple with the Pc5Capab field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetPc5CapabOk() (*Pc5Capability, bool) {
-	if o == nil || isNil(o.Pc5Capab) {
+	if o == nil || IsNil(o.Pc5Capab) {
 		return nil, false
 	}
 	return o.Pc5Capab, true
@@ -654,7 +654,7 @@ func (o *PolicyAssociationRequest) GetPc5CapabOk() (*Pc5Capability, bool) {
 
 // HasPc5Capab returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasPc5Capab() bool {
-	if o != nil && !isNil(o.Pc5Capab) {
+	if o != nil && !IsNil(o.Pc5Capab) {
 		return true
 	}
 
@@ -668,7 +668,7 @@ func (o *PolicyAssociationRequest) SetPc5Capab(v Pc5Capability) {
 
 // GetProSeCapab returns the ProSeCapab field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetProSeCapab() []ProSeCapability {
-	if o == nil || isNil(o.ProSeCapab) {
+	if o == nil || IsNil(o.ProSeCapab) {
 		var ret []ProSeCapability
 		return ret
 	}
@@ -678,7 +678,7 @@ func (o *PolicyAssociationRequest) GetProSeCapab() []ProSeCapability {
 // GetProSeCapabOk returns a tuple with the ProSeCapab field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetProSeCapabOk() ([]ProSeCapability, bool) {
-	if o == nil || isNil(o.ProSeCapab) {
+	if o == nil || IsNil(o.ProSeCapab) {
 		return nil, false
 	}
 	return o.ProSeCapab, true
@@ -686,7 +686,7 @@ func (o *PolicyAssociationRequest) GetProSeCapabOk() ([]ProSeCapability, bool) {
 
 // HasProSeCapab returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasProSeCapab() bool {
-	if o != nil && !isNil(o.ProSeCapab) {
+	if o != nil && !IsNil(o.ProSeCapab) {
 		return true
 	}
 
@@ -723,7 +723,7 @@ func (o *PolicyAssociationRequest) SetSuppFeat(v string) {
 }
 
 func (o PolicyAssociationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -733,59 +733,59 @@ func (o PolicyAssociationRequest) MarshalJSON() ([]byte, error) {
 func (o PolicyAssociationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationUri"] = o.NotificationUri
-	if !isNil(o.AltNotifIpv4Addrs) {
+	if !IsNil(o.AltNotifIpv4Addrs) {
 		toSerialize["altNotifIpv4Addrs"] = o.AltNotifIpv4Addrs
 	}
-	if !isNil(o.AltNotifIpv6Addrs) {
+	if !IsNil(o.AltNotifIpv6Addrs) {
 		toSerialize["altNotifIpv6Addrs"] = o.AltNotifIpv6Addrs
 	}
-	if !isNil(o.AltNotifFqdns) {
+	if !IsNil(o.AltNotifFqdns) {
 		toSerialize["altNotifFqdns"] = o.AltNotifFqdns
 	}
 	toSerialize["supi"] = o.Supi
-	if !isNil(o.Gpsi) {
+	if !IsNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.Pei) {
+	if !IsNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !isNil(o.UserLoc) {
+	if !IsNil(o.UserLoc) {
 		toSerialize["userLoc"] = o.UserLoc
 	}
-	if !isNil(o.TimeZone) {
+	if !IsNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !isNil(o.ServingPlmn) {
+	if !IsNil(o.ServingPlmn) {
 		toSerialize["servingPlmn"] = o.ServingPlmn
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !isNil(o.GroupIds) {
+	if !IsNil(o.GroupIds) {
 		toSerialize["groupIds"] = o.GroupIds
 	}
-	if !isNil(o.HPcfId) {
+	if !IsNil(o.HPcfId) {
 		toSerialize["hPcfId"] = o.HPcfId
 	}
-	if !isNil(o.UePolReq) {
+	if !IsNil(o.UePolReq) {
 		toSerialize["uePolReq"] = o.UePolReq
 	}
-	if !isNil(o.Guami) {
+	if !IsNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !isNil(o.ServiceName) {
+	if !IsNil(o.ServiceName) {
 		toSerialize["serviceName"] = o.ServiceName
 	}
-	if !isNil(o.ServingNfId) {
+	if !IsNil(o.ServingNfId) {
 		toSerialize["servingNfId"] = o.ServingNfId
 	}
-	if !isNil(o.Pc5Capab) {
+	if !IsNil(o.Pc5Capab) {
 		toSerialize["pc5Capab"] = o.Pc5Capab
 	}
-	if !isNil(o.ProSeCapab) {
+	if !IsNil(o.ProSeCapab) {
 		toSerialize["proSeCapab"] = o.ProSeCapab
 	}
 	toSerialize["suppFeat"] = o.SuppFeat
@@ -827,5 +827,3 @@ func (v *NullablePolicyAssociationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

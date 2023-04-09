@@ -1,7 +1,7 @@
 /*
 Ndccf_DataManagement
 
-DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+DCCF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// AggregationLevel Possible values are: - UE: Indicates that the summarized reports shall be provided per UE. - AOI: Indicates that the summarized reports shall be provided per Area of Interest. 
+// AggregationLevel Possible values are: - UE: Indicates that the summarized reports shall be provided per UE. - AOI: Indicates that the summarized reports shall be provided per Area of Interest.
 type AggregationLevel struct {
-	AggregationLevelAnyOf *AggregationLevelAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AggregationLevel) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AggregationLevelAnyOf
-	err = json.Unmarshal(data, &dst.AggregationLevelAnyOf);
-	if err == nil {
-		jsonAggregationLevelAnyOf, _ := json.Marshal(dst.AggregationLevelAnyOf)
-		if string(jsonAggregationLevelAnyOf) == "{}" { // empty struct
-			dst.AggregationLevelAnyOf = nil
-		} else {
-			return nil // data stored in dst.AggregationLevelAnyOf, return on the first match
-		}
-	} else {
-		dst.AggregationLevelAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *AggregationLevel) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AggregationLevel) MarshalJSON() ([]byte, error) {
-	if src.AggregationLevelAnyOf != nil {
-		return json.Marshal(&src.AggregationLevelAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableAggregationLevel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

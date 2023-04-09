@@ -1,7 +1,7 @@
 /*
 Ntsctsf_TimeSynchronization Service API
 
-TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+TSCTSF Time Synchronization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &TimeSyncExposureConfig{}
 
 // TimeSyncExposureConfig Contains the Time Synchronization Configuration parameters.
 type TimeSyncExposureConfig struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
-	UpNodeId int32 `json:"upNodeId"`
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
+	UpNodeId  int32       `json:"upNodeId"`
 	ReqPtpIns PtpInstance `json:"reqPtpIns"`
-	// Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is  included and set to true. 
+	// Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is  included and set to true.
 	GmEnable *bool `json:"gmEnable,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	GmPrio *int32 `json:"gmPrio,omitempty"`
@@ -33,8 +33,8 @@ type TimeSyncExposureConfig struct {
 	// Notification Correlation ID assigned by the NF service consumer.
 	ConfigNotifId string `json:"configNotifId"`
 	// String providing an URI formatted according to RFC 3986.
-	ConfigNotifUri string `json:"configNotifUri"`
-	TempValidity *TemporalValidity `json:"tempValidity,omitempty"`
+	ConfigNotifUri string            `json:"configNotifUri"`
+	TempValidity   *TemporalValidity `json:"tempValidity,omitempty"`
 }
 
 // NewTimeSyncExposureConfig instantiates a new TimeSyncExposureConfig object
@@ -109,7 +109,7 @@ func (o *TimeSyncExposureConfig) SetReqPtpIns(v PtpInstance) {
 
 // GetGmEnable returns the GmEnable field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetGmEnable() bool {
-	if o == nil || isNil(o.GmEnable) {
+	if o == nil || IsNil(o.GmEnable) {
 		var ret bool
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *TimeSyncExposureConfig) GetGmEnable() bool {
 // GetGmEnableOk returns a tuple with the GmEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetGmEnableOk() (*bool, bool) {
-	if o == nil || isNil(o.GmEnable) {
+	if o == nil || IsNil(o.GmEnable) {
 		return nil, false
 	}
 	return o.GmEnable, true
@@ -127,7 +127,7 @@ func (o *TimeSyncExposureConfig) GetGmEnableOk() (*bool, bool) {
 
 // HasGmEnable returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasGmEnable() bool {
-	if o != nil && !isNil(o.GmEnable) {
+	if o != nil && !IsNil(o.GmEnable) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *TimeSyncExposureConfig) SetGmEnable(v bool) {
 
 // GetGmPrio returns the GmPrio field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetGmPrio() int32 {
-	if o == nil || isNil(o.GmPrio) {
+	if o == nil || IsNil(o.GmPrio) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *TimeSyncExposureConfig) GetGmPrio() int32 {
 // GetGmPrioOk returns a tuple with the GmPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetGmPrioOk() (*int32, bool) {
-	if o == nil || isNil(o.GmPrio) {
+	if o == nil || IsNil(o.GmPrio) {
 		return nil, false
 	}
 	return o.GmPrio, true
@@ -159,7 +159,7 @@ func (o *TimeSyncExposureConfig) GetGmPrioOk() (*int32, bool) {
 
 // HasGmPrio returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasGmPrio() bool {
-	if o != nil && !isNil(o.GmPrio) {
+	if o != nil && !IsNil(o.GmPrio) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *TimeSyncExposureConfig) SetTimeDom(v int32) {
 
 // GetTimeSyncErrBdgt returns the TimeSyncErrBdgt field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgt() int32 {
-	if o == nil || isNil(o.TimeSyncErrBdgt) {
+	if o == nil || IsNil(o.TimeSyncErrBdgt) {
 		var ret int32
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgt() int32 {
 // GetTimeSyncErrBdgtOk returns a tuple with the TimeSyncErrBdgt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgtOk() (*int32, bool) {
-	if o == nil || isNil(o.TimeSyncErrBdgt) {
+	if o == nil || IsNil(o.TimeSyncErrBdgt) {
 		return nil, false
 	}
 	return o.TimeSyncErrBdgt, true
@@ -215,7 +215,7 @@ func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgtOk() (*int32, bool) {
 
 // HasTimeSyncErrBdgt returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasTimeSyncErrBdgt() bool {
-	if o != nil && !isNil(o.TimeSyncErrBdgt) {
+	if o != nil && !IsNil(o.TimeSyncErrBdgt) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *TimeSyncExposureConfig) SetConfigNotifUri(v string) {
 
 // GetTempValidity returns the TempValidity field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetTempValidity() TemporalValidity {
-	if o == nil || isNil(o.TempValidity) {
+	if o == nil || IsNil(o.TempValidity) {
 		var ret TemporalValidity
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *TimeSyncExposureConfig) GetTempValidity() TemporalValidity {
 // GetTempValidityOk returns a tuple with the TempValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetTempValidityOk() (*TemporalValidity, bool) {
-	if o == nil || isNil(o.TempValidity) {
+	if o == nil || IsNil(o.TempValidity) {
 		return nil, false
 	}
 	return o.TempValidity, true
@@ -295,7 +295,7 @@ func (o *TimeSyncExposureConfig) GetTempValidityOk() (*TemporalValidity, bool) {
 
 // HasTempValidity returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasTempValidity() bool {
-	if o != nil && !isNil(o.TempValidity) {
+	if o != nil && !IsNil(o.TempValidity) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *TimeSyncExposureConfig) SetTempValidity(v TemporalValidity) {
 }
 
 func (o TimeSyncExposureConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -319,19 +319,19 @@ func (o TimeSyncExposureConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upNodeId"] = o.UpNodeId
 	toSerialize["reqPtpIns"] = o.ReqPtpIns
-	if !isNil(o.GmEnable) {
+	if !IsNil(o.GmEnable) {
 		toSerialize["gmEnable"] = o.GmEnable
 	}
-	if !isNil(o.GmPrio) {
+	if !IsNil(o.GmPrio) {
 		toSerialize["gmPrio"] = o.GmPrio
 	}
 	toSerialize["timeDom"] = o.TimeDom
-	if !isNil(o.TimeSyncErrBdgt) {
+	if !IsNil(o.TimeSyncErrBdgt) {
 		toSerialize["timeSyncErrBdgt"] = o.TimeSyncErrBdgt
 	}
 	toSerialize["configNotifId"] = o.ConfigNotifId
 	toSerialize["configNotifUri"] = o.ConfigNotifUri
-	if !isNil(o.TempValidity) {
+	if !IsNil(o.TempValidity) {
 		toSerialize["tempValidity"] = o.TempValidity
 	}
 	return toSerialize, nil
@@ -372,5 +372,3 @@ func (v *NullableTimeSyncExposureConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

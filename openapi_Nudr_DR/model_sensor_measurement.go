@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// SensorMeasurement The enumeration SensorMeasurement defines sensor measurement type for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.7-1. 
+// SensorMeasurement The enumeration SensorMeasurement defines sensor measurement type for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.7-1.
 type SensorMeasurement struct {
-	SensorMeasurementAnyOf *SensorMeasurementAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SensorMeasurement) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into SensorMeasurementAnyOf
-	err = json.Unmarshal(data, &dst.SensorMeasurementAnyOf);
-	if err == nil {
-		jsonSensorMeasurementAnyOf, _ := json.Marshal(dst.SensorMeasurementAnyOf)
-		if string(jsonSensorMeasurementAnyOf) == "{}" { // empty struct
-			dst.SensorMeasurementAnyOf = nil
-		} else {
-			return nil // data stored in dst.SensorMeasurementAnyOf, return on the first match
-		}
-	} else {
-		dst.SensorMeasurementAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *SensorMeasurement) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SensorMeasurement) MarshalJSON() ([]byte, error) {
-	if src.SensorMeasurementAnyOf != nil {
-		return json.Marshal(&src.SensorMeasurementAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableSensorMeasurement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -22,12 +22,12 @@ var _ MappedNullable = &ConditionData{}
 type ConditionData struct {
 	// Uniquely identifies the condition data within a PDU session.
 	CondId string `json:"condId"`
-	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.  
+	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.
 	ActivationTime NullableTime `json:"activationTime,omitempty"`
-	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.  
+	// string with format 'date-time' as defined in OpenAPI with 'nullable:true' property.
 	DeactivationTime NullableTime `json:"deactivationTime,omitempty"`
-	AccessType *AccessType `json:"accessType,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
+	AccessType       *AccessType  `json:"accessType,omitempty"`
+	RatType          *RatType     `json:"ratType,omitempty"`
 }
 
 // NewConditionData instantiates a new ConditionData object
@@ -74,7 +74,7 @@ func (o *ConditionData) SetCondId(v string) {
 
 // GetActivationTime returns the ActivationTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConditionData) GetActivationTime() time.Time {
-	if o == nil || isNil(o.ActivationTime.Get()) {
+	if o == nil || IsNil(o.ActivationTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -104,6 +104,7 @@ func (o *ConditionData) HasActivationTime() bool {
 func (o *ConditionData) SetActivationTime(v time.Time) {
 	o.ActivationTime.Set(&v)
 }
+
 // SetActivationTimeNil sets the value for ActivationTime to be an explicit nil
 func (o *ConditionData) SetActivationTimeNil() {
 	o.ActivationTime.Set(nil)
@@ -116,7 +117,7 @@ func (o *ConditionData) UnsetActivationTime() {
 
 // GetDeactivationTime returns the DeactivationTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConditionData) GetDeactivationTime() time.Time {
-	if o == nil || isNil(o.DeactivationTime.Get()) {
+	if o == nil || IsNil(o.DeactivationTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -146,6 +147,7 @@ func (o *ConditionData) HasDeactivationTime() bool {
 func (o *ConditionData) SetDeactivationTime(v time.Time) {
 	o.DeactivationTime.Set(&v)
 }
+
 // SetDeactivationTimeNil sets the value for DeactivationTime to be an explicit nil
 func (o *ConditionData) SetDeactivationTimeNil() {
 	o.DeactivationTime.Set(nil)
@@ -158,7 +160,7 @@ func (o *ConditionData) UnsetDeactivationTime() {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *ConditionData) GetAccessType() AccessType {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -168,7 +170,7 @@ func (o *ConditionData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConditionData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || isNil(o.AccessType) {
+	if o == nil || IsNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -176,7 +178,7 @@ func (o *ConditionData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *ConditionData) HasAccessType() bool {
-	if o != nil && !isNil(o.AccessType) {
+	if o != nil && !IsNil(o.AccessType) {
 		return true
 	}
 
@@ -190,7 +192,7 @@ func (o *ConditionData) SetAccessType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *ConditionData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -200,7 +202,7 @@ func (o *ConditionData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConditionData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -208,7 +210,7 @@ func (o *ConditionData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *ConditionData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -221,7 +223,7 @@ func (o *ConditionData) SetRatType(v RatType) {
 }
 
 func (o ConditionData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -237,10 +239,10 @@ func (o ConditionData) ToMap() (map[string]interface{}, error) {
 	if o.DeactivationTime.IsSet() {
 		toSerialize["deactivationTime"] = o.DeactivationTime.Get()
 	}
-	if !isNil(o.AccessType) {
+	if !IsNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil
@@ -281,5 +283,3 @@ func (v *NullableConditionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

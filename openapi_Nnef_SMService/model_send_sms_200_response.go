@@ -1,7 +1,7 @@
 /*
 Nnef_SMService
 
-Nnef SMService Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nnef SMService Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &SendSMS200Response{}
 
 // SendSMS200Response struct for SendSMS200Response
 type SendSMS200Response struct {
-	JsonData *SmsDeliveryData `json:"jsonData,omitempty"`
-	BinaryPayload *os.File `json:"binaryPayload,omitempty"`
+	JsonData      *SmsDeliveryData `json:"jsonData,omitempty"`
+	BinaryPayload **os.File        `json:"binaryPayload,omitempty"`
 }
 
 // NewSendSMS200Response instantiates a new SendSMS200Response object
@@ -43,7 +43,7 @@ func NewSendSMS200ResponseWithDefaults() *SendSMS200Response {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *SendSMS200Response) GetJsonData() SmsDeliveryData {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		var ret SmsDeliveryData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SendSMS200Response) GetJsonData() SmsDeliveryData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SendSMS200Response) GetJsonDataOk() (*SmsDeliveryData, bool) {
-	if o == nil || isNil(o.JsonData) {
+	if o == nil || IsNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *SendSMS200Response) GetJsonDataOk() (*SmsDeliveryData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *SendSMS200Response) HasJsonData() bool {
-	if o != nil && !isNil(o.JsonData) {
+	if o != nil && !IsNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *SendSMS200Response) SetJsonData(v SmsDeliveryData) {
 }
 
 // GetBinaryPayload returns the BinaryPayload field value if set, zero value otherwise.
-func (o *SendSMS200Response) GetBinaryPayload() os.File {
-	if o == nil || isNil(o.BinaryPayload) {
-		var ret os.File
+func (o *SendSMS200Response) GetBinaryPayload() *os.File {
+	if o == nil || IsNil(o.BinaryPayload) {
+		var ret *os.File
 		return ret
 	}
 	return *o.BinaryPayload
@@ -84,8 +84,8 @@ func (o *SendSMS200Response) GetBinaryPayload() os.File {
 
 // GetBinaryPayloadOk returns a tuple with the BinaryPayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SendSMS200Response) GetBinaryPayloadOk() (*os.File, bool) {
-	if o == nil || isNil(o.BinaryPayload) {
+func (o *SendSMS200Response) GetBinaryPayloadOk() (**os.File, bool) {
+	if o == nil || IsNil(o.BinaryPayload) {
 		return nil, false
 	}
 	return o.BinaryPayload, true
@@ -93,20 +93,20 @@ func (o *SendSMS200Response) GetBinaryPayloadOk() (*os.File, bool) {
 
 // HasBinaryPayload returns a boolean if a field has been set.
 func (o *SendSMS200Response) HasBinaryPayload() bool {
-	if o != nil && !isNil(o.BinaryPayload) {
+	if o != nil && !IsNil(o.BinaryPayload) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryPayload gets a reference to the given os.File and assigns it to the BinaryPayload field.
-func (o *SendSMS200Response) SetBinaryPayload(v os.File) {
+// SetBinaryPayload gets a reference to the given *os.File and assigns it to the BinaryPayload field.
+func (o *SendSMS200Response) SetBinaryPayload(v *os.File) {
 	o.BinaryPayload = &v
 }
 
 func (o SendSMS200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,10 +115,10 @@ func (o SendSMS200Response) MarshalJSON() ([]byte, error) {
 
 func (o SendSMS200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.JsonData) {
+	if !IsNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !isNil(o.BinaryPayload) {
+	if !IsNil(o.BinaryPayload) {
 		toSerialize["binaryPayload"] = o.BinaryPayload
 	}
 	return toSerialize, nil
@@ -159,5 +159,3 @@ func (v *NullableSendSMS200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 NSSF NSSAI Availability
 
-NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NSSF NSSAI Availability Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,30 +20,30 @@ var _ MappedNullable = &AccessTokenReq{}
 // AccessTokenReq Contains information related to the access token request
 type AccessTokenReq struct {
 	GrantType string `json:"grant_type"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	NfInstanceId string `json:"nfInstanceId"`
-	NfType *NFType `json:"nfType,omitempty"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	NfInstanceId string  `json:"nfInstanceId"`
+	NfType       *NFType `json:"nfType,omitempty"`
 	TargetNfType *NFType `json:"targetNfType,omitempty"`
-	Scope string `json:"scope"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
-	TargetNfInstanceId *string `json:"targetNfInstanceId,omitempty"`
-	RequesterPlmn *PlmnId `json:"requesterPlmn,omitempty"`
-	RequesterPlmnList []PlmnId `json:"requesterPlmnList,omitempty"`
+	Scope        string  `json:"scope"`
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
+	TargetNfInstanceId  *string  `json:"targetNfInstanceId,omitempty"`
+	RequesterPlmn       *PlmnId  `json:"requesterPlmn,omitempty"`
+	RequesterPlmnList   []PlmnId `json:"requesterPlmnList,omitempty"`
 	RequesterSnssaiList []Snssai `json:"requesterSnssaiList,omitempty"`
 	// Fully Qualified Domain Name
-	RequesterFqdn *string `json:"requesterFqdn,omitempty"`
+	RequesterFqdn     *string     `json:"requesterFqdn,omitempty"`
 	RequesterSnpnList []PlmnIdNid `json:"requesterSnpnList,omitempty"`
-	TargetPlmn *PlmnId `json:"targetPlmn,omitempty"`
-	TargetSnpn *PlmnIdNid `json:"targetSnpn,omitempty"`
-	TargetSnssaiList []Snssai `json:"targetSnssaiList,omitempty"`
-	TargetNsiList []string `json:"targetNsiList,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
+	TargetPlmn        *PlmnId     `json:"targetPlmn,omitempty"`
+	TargetSnpn        *PlmnIdNid  `json:"targetSnpn,omitempty"`
+	TargetSnssaiList  []Snssai    `json:"targetSnssaiList,omitempty"`
+	TargetNsiList     []string    `json:"targetNsiList,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
 	TargetNfSetId *string `json:"targetNfSetId,omitempty"`
-	// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NID> encoded as defined in clause 5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit. 
+	// NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003) formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NID> encoded as defined in clause 5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded as a string of characters consisting of alphabetic    characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that shall end    with either an alphabetic character or a digit.
 	TargetNfServiceSetId *string `json:"targetNfServiceSetId,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	HnrfAccessTokenUri *string `json:"hnrfAccessTokenUri,omitempty"`
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	SourceNfInstanceId *string `json:"sourceNfInstanceId,omitempty"`
 }
 
@@ -117,7 +117,7 @@ func (o *AccessTokenReq) SetNfInstanceId(v string) {
 
 // GetNfType returns the NfType field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetNfType() NFType {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		var ret NFType
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *AccessTokenReq) GetNfType() NFType {
 // GetNfTypeOk returns a tuple with the NfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.NfType) {
+	if o == nil || IsNil(o.NfType) {
 		return nil, false
 	}
 	return o.NfType, true
@@ -135,7 +135,7 @@ func (o *AccessTokenReq) GetNfTypeOk() (*NFType, bool) {
 
 // HasNfType returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasNfType() bool {
-	if o != nil && !isNil(o.NfType) {
+	if o != nil && !IsNil(o.NfType) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *AccessTokenReq) SetNfType(v NFType) {
 
 // GetTargetNfType returns the TargetNfType field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetNfType() NFType {
-	if o == nil || isNil(o.TargetNfType) {
+	if o == nil || IsNil(o.TargetNfType) {
 		var ret NFType
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *AccessTokenReq) GetTargetNfType() NFType {
 // GetTargetNfTypeOk returns a tuple with the TargetNfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetNfTypeOk() (*NFType, bool) {
-	if o == nil || isNil(o.TargetNfType) {
+	if o == nil || IsNil(o.TargetNfType) {
 		return nil, false
 	}
 	return o.TargetNfType, true
@@ -167,7 +167,7 @@ func (o *AccessTokenReq) GetTargetNfTypeOk() (*NFType, bool) {
 
 // HasTargetNfType returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetNfType() bool {
-	if o != nil && !isNil(o.TargetNfType) {
+	if o != nil && !IsNil(o.TargetNfType) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *AccessTokenReq) SetScope(v string) {
 
 // GetTargetNfInstanceId returns the TargetNfInstanceId field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetNfInstanceId() string {
-	if o == nil || isNil(o.TargetNfInstanceId) {
+	if o == nil || IsNil(o.TargetNfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *AccessTokenReq) GetTargetNfInstanceId() string {
 // GetTargetNfInstanceIdOk returns a tuple with the TargetNfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetNfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfInstanceId) {
+	if o == nil || IsNil(o.TargetNfInstanceId) {
 		return nil, false
 	}
 	return o.TargetNfInstanceId, true
@@ -223,7 +223,7 @@ func (o *AccessTokenReq) GetTargetNfInstanceIdOk() (*string, bool) {
 
 // HasTargetNfInstanceId returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetNfInstanceId() bool {
-	if o != nil && !isNil(o.TargetNfInstanceId) {
+	if o != nil && !IsNil(o.TargetNfInstanceId) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *AccessTokenReq) SetTargetNfInstanceId(v string) {
 
 // GetRequesterPlmn returns the RequesterPlmn field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetRequesterPlmn() PlmnId {
-	if o == nil || isNil(o.RequesterPlmn) {
+	if o == nil || IsNil(o.RequesterPlmn) {
 		var ret PlmnId
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *AccessTokenReq) GetRequesterPlmn() PlmnId {
 // GetRequesterPlmnOk returns a tuple with the RequesterPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetRequesterPlmnOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.RequesterPlmn) {
+	if o == nil || IsNil(o.RequesterPlmn) {
 		return nil, false
 	}
 	return o.RequesterPlmn, true
@@ -255,7 +255,7 @@ func (o *AccessTokenReq) GetRequesterPlmnOk() (*PlmnId, bool) {
 
 // HasRequesterPlmn returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasRequesterPlmn() bool {
-	if o != nil && !isNil(o.RequesterPlmn) {
+	if o != nil && !IsNil(o.RequesterPlmn) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *AccessTokenReq) SetRequesterPlmn(v PlmnId) {
 
 // GetRequesterPlmnList returns the RequesterPlmnList field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetRequesterPlmnList() []PlmnId {
-	if o == nil || isNil(o.RequesterPlmnList) {
+	if o == nil || IsNil(o.RequesterPlmnList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *AccessTokenReq) GetRequesterPlmnList() []PlmnId {
 // GetRequesterPlmnListOk returns a tuple with the RequesterPlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetRequesterPlmnListOk() ([]PlmnId, bool) {
-	if o == nil || isNil(o.RequesterPlmnList) {
+	if o == nil || IsNil(o.RequesterPlmnList) {
 		return nil, false
 	}
 	return o.RequesterPlmnList, true
@@ -287,7 +287,7 @@ func (o *AccessTokenReq) GetRequesterPlmnListOk() ([]PlmnId, bool) {
 
 // HasRequesterPlmnList returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasRequesterPlmnList() bool {
-	if o != nil && !isNil(o.RequesterPlmnList) {
+	if o != nil && !IsNil(o.RequesterPlmnList) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *AccessTokenReq) SetRequesterPlmnList(v []PlmnId) {
 
 // GetRequesterSnssaiList returns the RequesterSnssaiList field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetRequesterSnssaiList() []Snssai {
-	if o == nil || isNil(o.RequesterSnssaiList) {
+	if o == nil || IsNil(o.RequesterSnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *AccessTokenReq) GetRequesterSnssaiList() []Snssai {
 // GetRequesterSnssaiListOk returns a tuple with the RequesterSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetRequesterSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.RequesterSnssaiList) {
+	if o == nil || IsNil(o.RequesterSnssaiList) {
 		return nil, false
 	}
 	return o.RequesterSnssaiList, true
@@ -319,7 +319,7 @@ func (o *AccessTokenReq) GetRequesterSnssaiListOk() ([]Snssai, bool) {
 
 // HasRequesterSnssaiList returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasRequesterSnssaiList() bool {
-	if o != nil && !isNil(o.RequesterSnssaiList) {
+	if o != nil && !IsNil(o.RequesterSnssaiList) {
 		return true
 	}
 
@@ -333,7 +333,7 @@ func (o *AccessTokenReq) SetRequesterSnssaiList(v []Snssai) {
 
 // GetRequesterFqdn returns the RequesterFqdn field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetRequesterFqdn() string {
-	if o == nil || isNil(o.RequesterFqdn) {
+	if o == nil || IsNil(o.RequesterFqdn) {
 		var ret string
 		return ret
 	}
@@ -343,7 +343,7 @@ func (o *AccessTokenReq) GetRequesterFqdn() string {
 // GetRequesterFqdnOk returns a tuple with the RequesterFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetRequesterFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.RequesterFqdn) {
+	if o == nil || IsNil(o.RequesterFqdn) {
 		return nil, false
 	}
 	return o.RequesterFqdn, true
@@ -351,7 +351,7 @@ func (o *AccessTokenReq) GetRequesterFqdnOk() (*string, bool) {
 
 // HasRequesterFqdn returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasRequesterFqdn() bool {
-	if o != nil && !isNil(o.RequesterFqdn) {
+	if o != nil && !IsNil(o.RequesterFqdn) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *AccessTokenReq) SetRequesterFqdn(v string) {
 
 // GetRequesterSnpnList returns the RequesterSnpnList field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetRequesterSnpnList() []PlmnIdNid {
-	if o == nil || isNil(o.RequesterSnpnList) {
+	if o == nil || IsNil(o.RequesterSnpnList) {
 		var ret []PlmnIdNid
 		return ret
 	}
@@ -375,7 +375,7 @@ func (o *AccessTokenReq) GetRequesterSnpnList() []PlmnIdNid {
 // GetRequesterSnpnListOk returns a tuple with the RequesterSnpnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetRequesterSnpnListOk() ([]PlmnIdNid, bool) {
-	if o == nil || isNil(o.RequesterSnpnList) {
+	if o == nil || IsNil(o.RequesterSnpnList) {
 		return nil, false
 	}
 	return o.RequesterSnpnList, true
@@ -383,7 +383,7 @@ func (o *AccessTokenReq) GetRequesterSnpnListOk() ([]PlmnIdNid, bool) {
 
 // HasRequesterSnpnList returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasRequesterSnpnList() bool {
-	if o != nil && !isNil(o.RequesterSnpnList) {
+	if o != nil && !IsNil(o.RequesterSnpnList) {
 		return true
 	}
 
@@ -397,7 +397,7 @@ func (o *AccessTokenReq) SetRequesterSnpnList(v []PlmnIdNid) {
 
 // GetTargetPlmn returns the TargetPlmn field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetPlmn() PlmnId {
-	if o == nil || isNil(o.TargetPlmn) {
+	if o == nil || IsNil(o.TargetPlmn) {
 		var ret PlmnId
 		return ret
 	}
@@ -407,7 +407,7 @@ func (o *AccessTokenReq) GetTargetPlmn() PlmnId {
 // GetTargetPlmnOk returns a tuple with the TargetPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetPlmnOk() (*PlmnId, bool) {
-	if o == nil || isNil(o.TargetPlmn) {
+	if o == nil || IsNil(o.TargetPlmn) {
 		return nil, false
 	}
 	return o.TargetPlmn, true
@@ -415,7 +415,7 @@ func (o *AccessTokenReq) GetTargetPlmnOk() (*PlmnId, bool) {
 
 // HasTargetPlmn returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetPlmn() bool {
-	if o != nil && !isNil(o.TargetPlmn) {
+	if o != nil && !IsNil(o.TargetPlmn) {
 		return true
 	}
 
@@ -429,7 +429,7 @@ func (o *AccessTokenReq) SetTargetPlmn(v PlmnId) {
 
 // GetTargetSnpn returns the TargetSnpn field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetSnpn() PlmnIdNid {
-	if o == nil || isNil(o.TargetSnpn) {
+	if o == nil || IsNil(o.TargetSnpn) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -439,7 +439,7 @@ func (o *AccessTokenReq) GetTargetSnpn() PlmnIdNid {
 // GetTargetSnpnOk returns a tuple with the TargetSnpn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetSnpnOk() (*PlmnIdNid, bool) {
-	if o == nil || isNil(o.TargetSnpn) {
+	if o == nil || IsNil(o.TargetSnpn) {
 		return nil, false
 	}
 	return o.TargetSnpn, true
@@ -447,7 +447,7 @@ func (o *AccessTokenReq) GetTargetSnpnOk() (*PlmnIdNid, bool) {
 
 // HasTargetSnpn returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetSnpn() bool {
-	if o != nil && !isNil(o.TargetSnpn) {
+	if o != nil && !IsNil(o.TargetSnpn) {
 		return true
 	}
 
@@ -461,7 +461,7 @@ func (o *AccessTokenReq) SetTargetSnpn(v PlmnIdNid) {
 
 // GetTargetSnssaiList returns the TargetSnssaiList field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetSnssaiList() []Snssai {
-	if o == nil || isNil(o.TargetSnssaiList) {
+	if o == nil || IsNil(o.TargetSnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -471,7 +471,7 @@ func (o *AccessTokenReq) GetTargetSnssaiList() []Snssai {
 // GetTargetSnssaiListOk returns a tuple with the TargetSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || isNil(o.TargetSnssaiList) {
+	if o == nil || IsNil(o.TargetSnssaiList) {
 		return nil, false
 	}
 	return o.TargetSnssaiList, true
@@ -479,7 +479,7 @@ func (o *AccessTokenReq) GetTargetSnssaiListOk() ([]Snssai, bool) {
 
 // HasTargetSnssaiList returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetSnssaiList() bool {
-	if o != nil && !isNil(o.TargetSnssaiList) {
+	if o != nil && !IsNil(o.TargetSnssaiList) {
 		return true
 	}
 
@@ -493,7 +493,7 @@ func (o *AccessTokenReq) SetTargetSnssaiList(v []Snssai) {
 
 // GetTargetNsiList returns the TargetNsiList field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetNsiList() []string {
-	if o == nil || isNil(o.TargetNsiList) {
+	if o == nil || IsNil(o.TargetNsiList) {
 		var ret []string
 		return ret
 	}
@@ -503,7 +503,7 @@ func (o *AccessTokenReq) GetTargetNsiList() []string {
 // GetTargetNsiListOk returns a tuple with the TargetNsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetNsiListOk() ([]string, bool) {
-	if o == nil || isNil(o.TargetNsiList) {
+	if o == nil || IsNil(o.TargetNsiList) {
 		return nil, false
 	}
 	return o.TargetNsiList, true
@@ -511,7 +511,7 @@ func (o *AccessTokenReq) GetTargetNsiListOk() ([]string, bool) {
 
 // HasTargetNsiList returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetNsiList() bool {
-	if o != nil && !isNil(o.TargetNsiList) {
+	if o != nil && !IsNil(o.TargetNsiList) {
 		return true
 	}
 
@@ -525,7 +525,7 @@ func (o *AccessTokenReq) SetTargetNsiList(v []string) {
 
 // GetTargetNfSetId returns the TargetNfSetId field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetNfSetId() string {
-	if o == nil || isNil(o.TargetNfSetId) {
+	if o == nil || IsNil(o.TargetNfSetId) {
 		var ret string
 		return ret
 	}
@@ -535,7 +535,7 @@ func (o *AccessTokenReq) GetTargetNfSetId() string {
 // GetTargetNfSetIdOk returns a tuple with the TargetNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetNfSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfSetId) {
+	if o == nil || IsNil(o.TargetNfSetId) {
 		return nil, false
 	}
 	return o.TargetNfSetId, true
@@ -543,7 +543,7 @@ func (o *AccessTokenReq) GetTargetNfSetIdOk() (*string, bool) {
 
 // HasTargetNfSetId returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetNfSetId() bool {
-	if o != nil && !isNil(o.TargetNfSetId) {
+	if o != nil && !IsNil(o.TargetNfSetId) {
 		return true
 	}
 
@@ -557,7 +557,7 @@ func (o *AccessTokenReq) SetTargetNfSetId(v string) {
 
 // GetTargetNfServiceSetId returns the TargetNfServiceSetId field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetTargetNfServiceSetId() string {
-	if o == nil || isNil(o.TargetNfServiceSetId) {
+	if o == nil || IsNil(o.TargetNfServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -567,7 +567,7 @@ func (o *AccessTokenReq) GetTargetNfServiceSetId() string {
 // GetTargetNfServiceSetIdOk returns a tuple with the TargetNfServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetTargetNfServiceSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.TargetNfServiceSetId) {
+	if o == nil || IsNil(o.TargetNfServiceSetId) {
 		return nil, false
 	}
 	return o.TargetNfServiceSetId, true
@@ -575,7 +575,7 @@ func (o *AccessTokenReq) GetTargetNfServiceSetIdOk() (*string, bool) {
 
 // HasTargetNfServiceSetId returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasTargetNfServiceSetId() bool {
-	if o != nil && !isNil(o.TargetNfServiceSetId) {
+	if o != nil && !IsNil(o.TargetNfServiceSetId) {
 		return true
 	}
 
@@ -589,7 +589,7 @@ func (o *AccessTokenReq) SetTargetNfServiceSetId(v string) {
 
 // GetHnrfAccessTokenUri returns the HnrfAccessTokenUri field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetHnrfAccessTokenUri() string {
-	if o == nil || isNil(o.HnrfAccessTokenUri) {
+	if o == nil || IsNil(o.HnrfAccessTokenUri) {
 		var ret string
 		return ret
 	}
@@ -599,7 +599,7 @@ func (o *AccessTokenReq) GetHnrfAccessTokenUri() string {
 // GetHnrfAccessTokenUriOk returns a tuple with the HnrfAccessTokenUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetHnrfAccessTokenUriOk() (*string, bool) {
-	if o == nil || isNil(o.HnrfAccessTokenUri) {
+	if o == nil || IsNil(o.HnrfAccessTokenUri) {
 		return nil, false
 	}
 	return o.HnrfAccessTokenUri, true
@@ -607,7 +607,7 @@ func (o *AccessTokenReq) GetHnrfAccessTokenUriOk() (*string, bool) {
 
 // HasHnrfAccessTokenUri returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasHnrfAccessTokenUri() bool {
-	if o != nil && !isNil(o.HnrfAccessTokenUri) {
+	if o != nil && !IsNil(o.HnrfAccessTokenUri) {
 		return true
 	}
 
@@ -621,7 +621,7 @@ func (o *AccessTokenReq) SetHnrfAccessTokenUri(v string) {
 
 // GetSourceNfInstanceId returns the SourceNfInstanceId field value if set, zero value otherwise.
 func (o *AccessTokenReq) GetSourceNfInstanceId() string {
-	if o == nil || isNil(o.SourceNfInstanceId) {
+	if o == nil || IsNil(o.SourceNfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -631,7 +631,7 @@ func (o *AccessTokenReq) GetSourceNfInstanceId() string {
 // GetSourceNfInstanceIdOk returns a tuple with the SourceNfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenReq) GetSourceNfInstanceIdOk() (*string, bool) {
-	if o == nil || isNil(o.SourceNfInstanceId) {
+	if o == nil || IsNil(o.SourceNfInstanceId) {
 		return nil, false
 	}
 	return o.SourceNfInstanceId, true
@@ -639,7 +639,7 @@ func (o *AccessTokenReq) GetSourceNfInstanceIdOk() (*string, bool) {
 
 // HasSourceNfInstanceId returns a boolean if a field has been set.
 func (o *AccessTokenReq) HasSourceNfInstanceId() bool {
-	if o != nil && !isNil(o.SourceNfInstanceId) {
+	if o != nil && !IsNil(o.SourceNfInstanceId) {
 		return true
 	}
 
@@ -652,7 +652,7 @@ func (o *AccessTokenReq) SetSourceNfInstanceId(v string) {
 }
 
 func (o AccessTokenReq) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -663,53 +663,53 @@ func (o AccessTokenReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["grant_type"] = o.GrantType
 	toSerialize["nfInstanceId"] = o.NfInstanceId
-	if !isNil(o.NfType) {
+	if !IsNil(o.NfType) {
 		toSerialize["nfType"] = o.NfType
 	}
-	if !isNil(o.TargetNfType) {
+	if !IsNil(o.TargetNfType) {
 		toSerialize["targetNfType"] = o.TargetNfType
 	}
 	toSerialize["scope"] = o.Scope
-	if !isNil(o.TargetNfInstanceId) {
+	if !IsNil(o.TargetNfInstanceId) {
 		toSerialize["targetNfInstanceId"] = o.TargetNfInstanceId
 	}
-	if !isNil(o.RequesterPlmn) {
+	if !IsNil(o.RequesterPlmn) {
 		toSerialize["requesterPlmn"] = o.RequesterPlmn
 	}
-	if !isNil(o.RequesterPlmnList) {
+	if !IsNil(o.RequesterPlmnList) {
 		toSerialize["requesterPlmnList"] = o.RequesterPlmnList
 	}
-	if !isNil(o.RequesterSnssaiList) {
+	if !IsNil(o.RequesterSnssaiList) {
 		toSerialize["requesterSnssaiList"] = o.RequesterSnssaiList
 	}
-	if !isNil(o.RequesterFqdn) {
+	if !IsNil(o.RequesterFqdn) {
 		toSerialize["requesterFqdn"] = o.RequesterFqdn
 	}
-	if !isNil(o.RequesterSnpnList) {
+	if !IsNil(o.RequesterSnpnList) {
 		toSerialize["requesterSnpnList"] = o.RequesterSnpnList
 	}
-	if !isNil(o.TargetPlmn) {
+	if !IsNil(o.TargetPlmn) {
 		toSerialize["targetPlmn"] = o.TargetPlmn
 	}
-	if !isNil(o.TargetSnpn) {
+	if !IsNil(o.TargetSnpn) {
 		toSerialize["targetSnpn"] = o.TargetSnpn
 	}
-	if !isNil(o.TargetSnssaiList) {
+	if !IsNil(o.TargetSnssaiList) {
 		toSerialize["targetSnssaiList"] = o.TargetSnssaiList
 	}
-	if !isNil(o.TargetNsiList) {
+	if !IsNil(o.TargetNsiList) {
 		toSerialize["targetNsiList"] = o.TargetNsiList
 	}
-	if !isNil(o.TargetNfSetId) {
+	if !IsNil(o.TargetNfSetId) {
 		toSerialize["targetNfSetId"] = o.TargetNfSetId
 	}
-	if !isNil(o.TargetNfServiceSetId) {
+	if !IsNil(o.TargetNfServiceSetId) {
 		toSerialize["targetNfServiceSetId"] = o.TargetNfServiceSetId
 	}
-	if !isNil(o.HnrfAccessTokenUri) {
+	if !IsNil(o.HnrfAccessTokenUri) {
 		toSerialize["hnrfAccessTokenUri"] = o.HnrfAccessTokenUri
 	}
-	if !isNil(o.SourceNfInstanceId) {
+	if !IsNil(o.SourceNfInstanceId) {
 		toSerialize["sourceNfInstanceId"] = o.SourceNfInstanceId
 	}
 	return toSerialize, nil
@@ -750,5 +750,3 @@ func (v *NullableAccessTokenReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

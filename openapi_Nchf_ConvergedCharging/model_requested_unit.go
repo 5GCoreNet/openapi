@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &RequestedUnit{}
 
 // RequestedUnit struct for RequestedUnit
 type RequestedUnit struct {
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	Time *int32 `json:"time,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	TotalVolume *int32 `json:"totalVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	UplinkVolume *int32 `json:"uplinkVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	DownlinkVolume *int32 `json:"downlinkVolume,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
 	ServiceSpecificUnits *int32 `json:"serviceSpecificUnits,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func NewRequestedUnitWithDefaults() *RequestedUnit {
 
 // GetTime returns the Time field value if set, zero value otherwise.
 func (o *RequestedUnit) GetTime() int32 {
-	if o == nil || isNil(o.Time) {
+	if o == nil || IsNil(o.Time) {
 		var ret int32
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *RequestedUnit) GetTime() int32 {
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUnit) GetTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.Time) {
+	if o == nil || IsNil(o.Time) {
 		return nil, false
 	}
 	return o.Time, true
@@ -68,7 +68,7 @@ func (o *RequestedUnit) GetTimeOk() (*int32, bool) {
 
 // HasTime returns a boolean if a field has been set.
 func (o *RequestedUnit) HasTime() bool {
-	if o != nil && !isNil(o.Time) {
+	if o != nil && !IsNil(o.Time) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *RequestedUnit) SetTime(v int32) {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise.
 func (o *RequestedUnit) GetTotalVolume() int32 {
-	if o == nil || isNil(o.TotalVolume) {
+	if o == nil || IsNil(o.TotalVolume) {
 		var ret int32
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *RequestedUnit) GetTotalVolume() int32 {
 // GetTotalVolumeOk returns a tuple with the TotalVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUnit) GetTotalVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalVolume) {
+	if o == nil || IsNil(o.TotalVolume) {
 		return nil, false
 	}
 	return o.TotalVolume, true
@@ -100,7 +100,7 @@ func (o *RequestedUnit) GetTotalVolumeOk() (*int32, bool) {
 
 // HasTotalVolume returns a boolean if a field has been set.
 func (o *RequestedUnit) HasTotalVolume() bool {
-	if o != nil && !isNil(o.TotalVolume) {
+	if o != nil && !IsNil(o.TotalVolume) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *RequestedUnit) SetTotalVolume(v int32) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *RequestedUnit) GetUplinkVolume() int32 {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *RequestedUnit) GetUplinkVolume() int32 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUnit) GetUplinkVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -132,7 +132,7 @@ func (o *RequestedUnit) GetUplinkVolumeOk() (*int32, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *RequestedUnit) HasUplinkVolume() bool {
-	if o != nil && !isNil(o.UplinkVolume) {
+	if o != nil && !IsNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *RequestedUnit) SetUplinkVolume(v int32) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *RequestedUnit) GetDownlinkVolume() int32 {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *RequestedUnit) GetDownlinkVolume() int32 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUnit) GetDownlinkVolumeOk() (*int32, bool) {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -164,7 +164,7 @@ func (o *RequestedUnit) GetDownlinkVolumeOk() (*int32, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *RequestedUnit) HasDownlinkVolume() bool {
-	if o != nil && !isNil(o.DownlinkVolume) {
+	if o != nil && !IsNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *RequestedUnit) SetDownlinkVolume(v int32) {
 
 // GetServiceSpecificUnits returns the ServiceSpecificUnits field value if set, zero value otherwise.
 func (o *RequestedUnit) GetServiceSpecificUnits() int32 {
-	if o == nil || isNil(o.ServiceSpecificUnits) {
+	if o == nil || IsNil(o.ServiceSpecificUnits) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *RequestedUnit) GetServiceSpecificUnits() int32 {
 // GetServiceSpecificUnitsOk returns a tuple with the ServiceSpecificUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUnit) GetServiceSpecificUnitsOk() (*int32, bool) {
-	if o == nil || isNil(o.ServiceSpecificUnits) {
+	if o == nil || IsNil(o.ServiceSpecificUnits) {
 		return nil, false
 	}
 	return o.ServiceSpecificUnits, true
@@ -196,7 +196,7 @@ func (o *RequestedUnit) GetServiceSpecificUnitsOk() (*int32, bool) {
 
 // HasServiceSpecificUnits returns a boolean if a field has been set.
 func (o *RequestedUnit) HasServiceSpecificUnits() bool {
-	if o != nil && !isNil(o.ServiceSpecificUnits) {
+	if o != nil && !IsNil(o.ServiceSpecificUnits) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *RequestedUnit) SetServiceSpecificUnits(v int32) {
 }
 
 func (o RequestedUnit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -218,19 +218,19 @@ func (o RequestedUnit) MarshalJSON() ([]byte, error) {
 
 func (o RequestedUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Time) {
+	if !IsNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
-	if !isNil(o.TotalVolume) {
+	if !IsNil(o.TotalVolume) {
 		toSerialize["totalVolume"] = o.TotalVolume
 	}
-	if !isNil(o.UplinkVolume) {
+	if !IsNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !isNil(o.DownlinkVolume) {
+	if !IsNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
-	if !isNil(o.ServiceSpecificUnits) {
+	if !IsNil(o.ServiceSpecificUnits) {
 		toSerialize["serviceSpecificUnits"] = o.ServiceSpecificUnits
 	}
 	return toSerialize, nil
@@ -271,5 +271,3 @@ func (v *NullableRequestedUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

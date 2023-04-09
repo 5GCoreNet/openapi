@@ -1,7 +1,7 @@
 /*
 NRF NFDiscovery Service
 
-NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF NFDiscovery Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -20,9 +20,9 @@ var _ MappedNullable = &NfInstanceInfo{}
 // NfInstanceInfo Contains information on an NF profile matching a discovery request
 type NfInstanceInfo struct {
 	// String providing an URI formatted according to RFC 3986.
-	NrfDiscApiUri *string `json:"nrfDiscApiUri,omitempty"`
+	NrfDiscApiUri   *string          `json:"nrfDiscApiUri,omitempty"`
 	PreferredSearch *PreferredSearch `json:"preferredSearch,omitempty"`
-	// The key of the map is the JSON Pointer of the priority IE in the NFProfile data type that is altered by the NRF 
+	// The key of the map is the JSON Pointer of the priority IE in the NFProfile data type that is altered by the NRF
 	NrfAlteredPriorities *map[string]int32 `json:"nrfAlteredPriorities,omitempty"`
 }
 
@@ -45,7 +45,7 @@ func NewNfInstanceInfoWithDefaults() *NfInstanceInfo {
 
 // GetNrfDiscApiUri returns the NrfDiscApiUri field value if set, zero value otherwise.
 func (o *NfInstanceInfo) GetNrfDiscApiUri() string {
-	if o == nil || isNil(o.NrfDiscApiUri) {
+	if o == nil || IsNil(o.NrfDiscApiUri) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *NfInstanceInfo) GetNrfDiscApiUri() string {
 // GetNrfDiscApiUriOk returns a tuple with the NrfDiscApiUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfInstanceInfo) GetNrfDiscApiUriOk() (*string, bool) {
-	if o == nil || isNil(o.NrfDiscApiUri) {
+	if o == nil || IsNil(o.NrfDiscApiUri) {
 		return nil, false
 	}
 	return o.NrfDiscApiUri, true
@@ -63,7 +63,7 @@ func (o *NfInstanceInfo) GetNrfDiscApiUriOk() (*string, bool) {
 
 // HasNrfDiscApiUri returns a boolean if a field has been set.
 func (o *NfInstanceInfo) HasNrfDiscApiUri() bool {
-	if o != nil && !isNil(o.NrfDiscApiUri) {
+	if o != nil && !IsNil(o.NrfDiscApiUri) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *NfInstanceInfo) SetNrfDiscApiUri(v string) {
 
 // GetPreferredSearch returns the PreferredSearch field value if set, zero value otherwise.
 func (o *NfInstanceInfo) GetPreferredSearch() PreferredSearch {
-	if o == nil || isNil(o.PreferredSearch) {
+	if o == nil || IsNil(o.PreferredSearch) {
 		var ret PreferredSearch
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *NfInstanceInfo) GetPreferredSearch() PreferredSearch {
 // GetPreferredSearchOk returns a tuple with the PreferredSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfInstanceInfo) GetPreferredSearchOk() (*PreferredSearch, bool) {
-	if o == nil || isNil(o.PreferredSearch) {
+	if o == nil || IsNil(o.PreferredSearch) {
 		return nil, false
 	}
 	return o.PreferredSearch, true
@@ -95,7 +95,7 @@ func (o *NfInstanceInfo) GetPreferredSearchOk() (*PreferredSearch, bool) {
 
 // HasPreferredSearch returns a boolean if a field has been set.
 func (o *NfInstanceInfo) HasPreferredSearch() bool {
-	if o != nil && !isNil(o.PreferredSearch) {
+	if o != nil && !IsNil(o.PreferredSearch) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *NfInstanceInfo) SetPreferredSearch(v PreferredSearch) {
 
 // GetNrfAlteredPriorities returns the NrfAlteredPriorities field value if set, zero value otherwise.
 func (o *NfInstanceInfo) GetNrfAlteredPriorities() map[string]int32 {
-	if o == nil || isNil(o.NrfAlteredPriorities) {
+	if o == nil || IsNil(o.NrfAlteredPriorities) {
 		var ret map[string]int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *NfInstanceInfo) GetNrfAlteredPriorities() map[string]int32 {
 // GetNrfAlteredPrioritiesOk returns a tuple with the NrfAlteredPriorities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfInstanceInfo) GetNrfAlteredPrioritiesOk() (*map[string]int32, bool) {
-	if o == nil || isNil(o.NrfAlteredPriorities) {
+	if o == nil || IsNil(o.NrfAlteredPriorities) {
 		return nil, false
 	}
 	return o.NrfAlteredPriorities, true
@@ -127,7 +127,7 @@ func (o *NfInstanceInfo) GetNrfAlteredPrioritiesOk() (*map[string]int32, bool) {
 
 // HasNrfAlteredPriorities returns a boolean if a field has been set.
 func (o *NfInstanceInfo) HasNrfAlteredPriorities() bool {
-	if o != nil && !isNil(o.NrfAlteredPriorities) {
+	if o != nil && !IsNil(o.NrfAlteredPriorities) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *NfInstanceInfo) SetNrfAlteredPriorities(v map[string]int32) {
 }
 
 func (o NfInstanceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o NfInstanceInfo) MarshalJSON() ([]byte, error) {
 
 func (o NfInstanceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NrfDiscApiUri) {
+	if !IsNil(o.NrfDiscApiUri) {
 		toSerialize["nrfDiscApiUri"] = o.NrfDiscApiUri
 	}
-	if !isNil(o.PreferredSearch) {
+	if !IsNil(o.PreferredSearch) {
 		toSerialize["preferredSearch"] = o.PreferredSearch
 	}
-	if !isNil(o.NrfAlteredPriorities) {
+	if !IsNil(o.NrfAlteredPriorities) {
 		toSerialize["nrfAlteredPriorities"] = o.NrfAlteredPriorities
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableNfInstanceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,16 +19,13 @@ var _ MappedNullable = &NrSectorCarrierSingle{}
 
 // NrSectorCarrierSingle struct for NrSectorCarrierSingle
 type NrSectorCarrierSingle struct {
-	Id NullableString `json:"id"`
-	ObjectClass *string `json:"objectClass,omitempty"`
-	ObjectInstance *string `json:"objectInstance,omitempty"`
-	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
-	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
-	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
-	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
-	TraceJob []TraceJobSingle `json:"TraceJob,omitempty"`
-	CommonBeamformingFunction *CommonBeamformingFunctionSingle `json:"CommonBeamformingFunction,omitempty"`
+	Top
+	Attributes                *NrSectorCarrierSingleAllOfAttributes `json:"attributes,omitempty"`
+	PerfMetricJob             []PerfMetricJobSingle                 `json:"PerfMetricJob,omitempty"`
+	ThresholdMonitor          []ThresholdMonitorSingle              `json:"ThresholdMonitor,omitempty"`
+	ManagedNFService          []ManagedNFServiceSingle              `json:"ManagedNFService,omitempty"`
+	TraceJob                  []TraceJobSingle                      `json:"TraceJob,omitempty"`
+	CommonBeamformingFunction *CommonBeamformingFunctionSingle      `json:"CommonBeamformingFunction,omitempty"`
 }
 
 // NewNrSectorCarrierSingle instantiates a new NrSectorCarrierSingle object
@@ -49,132 +46,10 @@ func NewNrSectorCarrierSingleWithDefaults() *NrSectorCarrierSingle {
 	return &this
 }
 
-// GetId returns the Id field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *NrSectorCarrierSingle) GetId() string {
-	if o == nil || o.Id.Get() == nil {
-		var ret string
-		return ret
-	}
-
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NrSectorCarrierSingle) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// SetId sets field value
-func (o *NrSectorCarrierSingle) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
-func (o *NrSectorCarrierSingle) GetObjectClass() string {
-	if o == nil || isNil(o.ObjectClass) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectClass
-}
-
-// GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrSectorCarrierSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectClass) {
-		return nil, false
-	}
-	return o.ObjectClass, true
-}
-
-// HasObjectClass returns a boolean if a field has been set.
-func (o *NrSectorCarrierSingle) HasObjectClass() bool {
-	if o != nil && !isNil(o.ObjectClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectClass gets a reference to the given string and assigns it to the ObjectClass field.
-func (o *NrSectorCarrierSingle) SetObjectClass(v string) {
-	o.ObjectClass = &v
-}
-
-// GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
-func (o *NrSectorCarrierSingle) GetObjectInstance() string {
-	if o == nil || isNil(o.ObjectInstance) {
-		var ret string
-		return ret
-	}
-	return *o.ObjectInstance
-}
-
-// GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrSectorCarrierSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.ObjectInstance) {
-		return nil, false
-	}
-	return o.ObjectInstance, true
-}
-
-// HasObjectInstance returns a boolean if a field has been set.
-func (o *NrSectorCarrierSingle) HasObjectInstance() bool {
-	if o != nil && !isNil(o.ObjectInstance) {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectInstance gets a reference to the given string and assigns it to the ObjectInstance field.
-func (o *NrSectorCarrierSingle) SetObjectInstance(v string) {
-	o.ObjectInstance = &v
-}
-
-// GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
-func (o *NrSectorCarrierSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || isNil(o.VsDataContainer) {
-		var ret []VsDataContainerSingle
-		return ret
-	}
-	return o.VsDataContainer
-}
-
-// GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NrSectorCarrierSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || isNil(o.VsDataContainer) {
-		return nil, false
-	}
-	return o.VsDataContainer, true
-}
-
-// HasVsDataContainer returns a boolean if a field has been set.
-func (o *NrSectorCarrierSingle) HasVsDataContainer() bool {
-	if o != nil && !isNil(o.VsDataContainer) {
-		return true
-	}
-
-	return false
-}
-
-// SetVsDataContainer gets a reference to the given []VsDataContainerSingle and assigns it to the VsDataContainer field.
-func (o *NrSectorCarrierSingle) SetVsDataContainer(v []VsDataContainerSingle) {
-	o.VsDataContainer = v
-}
-
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NrSectorCarrierSingle) GetAttributes() ManagedFunctionAttr {
-	if o == nil || isNil(o.Attributes) {
-		var ret ManagedFunctionAttr
+func (o *NrSectorCarrierSingle) GetAttributes() NrSectorCarrierSingleAllOfAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret NrSectorCarrierSingleAllOfAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -182,8 +57,8 @@ func (o *NrSectorCarrierSingle) GetAttributes() ManagedFunctionAttr {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NrSectorCarrierSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
-	if o == nil || isNil(o.Attributes) {
+func (o *NrSectorCarrierSingle) GetAttributesOk() (*NrSectorCarrierSingleAllOfAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -191,21 +66,21 @@ func (o *NrSectorCarrierSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingle) HasAttributes() bool {
-	if o != nil && !isNil(o.Attributes) {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
-func (o *NrSectorCarrierSingle) SetAttributes(v ManagedFunctionAttr) {
+// SetAttributes gets a reference to the given NrSectorCarrierSingleAllOfAttributes and assigns it to the Attributes field.
+func (o *NrSectorCarrierSingle) SetAttributes(v NrSectorCarrierSingleAllOfAttributes) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -215,7 +90,7 @@ func (o *NrSectorCarrierSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || isNil(o.PerfMetricJob) {
+	if o == nil || IsNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -223,7 +98,7 @@ func (o *NrSectorCarrierSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, boo
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingle) HasPerfMetricJob() bool {
-	if o != nil && !isNil(o.PerfMetricJob) {
+	if o != nil && !IsNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -237,7 +112,7 @@ func (o *NrSectorCarrierSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -247,7 +122,7 @@ func (o *NrSectorCarrierSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || isNil(o.ThresholdMonitor) {
+	if o == nil || IsNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -255,7 +130,7 @@ func (o *NrSectorCarrierSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingl
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingle) HasThresholdMonitor() bool {
-	if o != nil && !isNil(o.ThresholdMonitor) {
+	if o != nil && !IsNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -269,7 +144,7 @@ func (o *NrSectorCarrierSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) 
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -279,7 +154,7 @@ func (o *NrSectorCarrierSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || isNil(o.ManagedNFService) {
+	if o == nil || IsNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -287,7 +162,7 @@ func (o *NrSectorCarrierSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingl
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingle) HasManagedNFService() bool {
-	if o != nil && !isNil(o.ManagedNFService) {
+	if o != nil && !IsNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -301,7 +176,7 @@ func (o *NrSectorCarrierSingle) SetManagedNFService(v []ManagedNFServiceSingle) 
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -311,7 +186,7 @@ func (o *NrSectorCarrierSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || isNil(o.TraceJob) {
+	if o == nil || IsNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -319,7 +194,7 @@ func (o *NrSectorCarrierSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingle) HasTraceJob() bool {
-	if o != nil && !isNil(o.TraceJob) {
+	if o != nil && !IsNil(o.TraceJob) {
 		return true
 	}
 
@@ -333,7 +208,7 @@ func (o *NrSectorCarrierSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetCommonBeamformingFunction returns the CommonBeamformingFunction field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingle) GetCommonBeamformingFunction() CommonBeamformingFunctionSingle {
-	if o == nil || isNil(o.CommonBeamformingFunction) {
+	if o == nil || IsNil(o.CommonBeamformingFunction) {
 		var ret CommonBeamformingFunctionSingle
 		return ret
 	}
@@ -343,7 +218,7 @@ func (o *NrSectorCarrierSingle) GetCommonBeamformingFunction() CommonBeamforming
 // GetCommonBeamformingFunctionOk returns a tuple with the CommonBeamformingFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingle) GetCommonBeamformingFunctionOk() (*CommonBeamformingFunctionSingle, bool) {
-	if o == nil || isNil(o.CommonBeamformingFunction) {
+	if o == nil || IsNil(o.CommonBeamformingFunction) {
 		return nil, false
 	}
 	return o.CommonBeamformingFunction, true
@@ -351,7 +226,7 @@ func (o *NrSectorCarrierSingle) GetCommonBeamformingFunctionOk() (*CommonBeamfor
 
 // HasCommonBeamformingFunction returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingle) HasCommonBeamformingFunction() bool {
-	if o != nil && !isNil(o.CommonBeamformingFunction) {
+	if o != nil && !IsNil(o.CommonBeamformingFunction) {
 		return true
 	}
 
@@ -364,7 +239,7 @@ func (o *NrSectorCarrierSingle) SetCommonBeamformingFunction(v CommonBeamforming
 }
 
 func (o NrSectorCarrierSingle) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -373,32 +248,30 @@ func (o NrSectorCarrierSingle) MarshalJSON() ([]byte, error) {
 
 func (o NrSectorCarrierSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id.Get()
-	if !isNil(o.ObjectClass) {
-		toSerialize["objectClass"] = o.ObjectClass
+	serializedTop, errTop := json.Marshal(o.Top)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.ObjectInstance) {
-		toSerialize["objectInstance"] = o.ObjectInstance
+	errTop = json.Unmarshal([]byte(serializedTop), &toSerialize)
+	if errTop != nil {
+		return map[string]interface{}{}, errTop
 	}
-	if !isNil(o.VsDataContainer) {
-		toSerialize["VsDataContainer"] = o.VsDataContainer
-	}
-	if !isNil(o.Attributes) {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !isNil(o.PerfMetricJob) {
+	if !IsNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !isNil(o.ThresholdMonitor) {
+	if !IsNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !isNil(o.ManagedNFService) {
+	if !IsNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !isNil(o.TraceJob) {
+	if !IsNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !isNil(o.CommonBeamformingFunction) {
+	if !IsNil(o.CommonBeamformingFunction) {
 		toSerialize["CommonBeamformingFunction"] = o.CommonBeamformingFunction
 	}
 	return toSerialize, nil
@@ -439,5 +312,3 @@ func (v *NullableNrSectorCarrierSingle) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

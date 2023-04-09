@@ -1,7 +1,7 @@
 /*
 NRF Bootstrapping
 
-NRF Bootstrapping.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NRF Bootstrapping.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0
 */
@@ -17,28 +17,14 @@ import (
 
 // Status Overal status of the NRF
 type Status struct {
-	StatusAnyOf *StatusAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Status) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into StatusAnyOf
-	err = json.Unmarshal(data, &dst.StatusAnyOf);
-	if err == nil {
-		jsonStatusAnyOf, _ := json.Marshal(dst.StatusAnyOf)
-		if string(jsonStatusAnyOf) == "{}" { // empty struct
-			dst.StatusAnyOf = nil
-		} else {
-			return nil // data stored in dst.StatusAnyOf, return on the first match
-		}
-	} else {
-		dst.StatusAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *Status) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Status) MarshalJSON() ([]byte, error) {
-	if src.StatusAnyOf != nil {
-		return json.Marshal(&src.StatusAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

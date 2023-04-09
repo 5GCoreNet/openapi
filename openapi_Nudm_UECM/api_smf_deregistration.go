@@ -1,7 +1,7 @@
 /*
 Nudm_UECM
 
-Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Context Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_Nudm_UECM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SMFDeregistrationApiService SMFDeregistrationApi service
 type SMFDeregistrationApiService service
 
 type ApiSmfDeregistrationRequest struct {
-	ctx context.Context
-	ApiService *SMFDeregistrationApiService
-	ueId string
-	pduSessionId int32
-	smfSetId *string
+	ctx           context.Context
+	ApiService    *SMFDeregistrationApiService
+	ueId          string
+	pduSessionId  int32
+	smfSetId      *string
 	smfInstanceId *string
 }
 
@@ -49,16 +48,16 @@ func (r ApiSmfDeregistrationRequest) Execute() (*http.Response, error) {
 /*
 SmfDeregistration delete an SMF registration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId Identifier of the UE
- @param pduSessionId Identifier of the PDU session
- @return ApiSmfDeregistrationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId Identifier of the UE
+	@param pduSessionId Identifier of the PDU session
+	@return ApiSmfDeregistrationRequest
 */
 func (a *SMFDeregistrationApiService) SmfDeregistration(ctx context.Context, ueId string, pduSessionId int32) ApiSmfDeregistrationRequest {
 	return ApiSmfDeregistrationRequest{
-		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ApiService:   a,
+		ctx:          ctx,
+		ueId:         ueId,
 		pduSessionId: pduSessionId,
 	}
 }
@@ -66,9 +65,9 @@ func (a *SMFDeregistrationApiService) SmfDeregistration(ctx context.Context, ueI
 // Execute executes the request
 func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistrationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SMFDeregistrationApiService.SmfDeregistration")
@@ -91,10 +90,10 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 	}
 
 	if r.smfSetId != nil {
-		parameterAddToQuery(localVarQueryParams, "smf-set-id", r.smfSetId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "smf-set-id", r.smfSetId, "")
 	}
 	if r.smfInstanceId != nil {
-		parameterAddToQuery(localVarQueryParams, "smf-instance-id", r.smfInstanceId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "smf-instance-id", r.smfInstanceId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +122,9 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -142,8 +141,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -153,8 +152,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -164,8 +163,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -175,8 +174,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
@@ -186,8 +185,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -197,8 +196,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -208,8 +207,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -219,8 +218,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -230,8 +229,8 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		return localVarHTTPResponse, newErr

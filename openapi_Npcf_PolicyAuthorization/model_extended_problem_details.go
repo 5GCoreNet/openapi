@@ -1,7 +1,7 @@
 /*
 Npcf_PolicyAuthorization Service API
 
-PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+PCF Policy Authorization Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,24 +19,7 @@ var _ MappedNullable = &ExtendedProblemDetails{}
 
 // ExtendedProblemDetails Extends ProblemDetails to also include the acceptable service info.
 type ExtendedProblemDetails struct {
-	// String providing an URI formatted according to RFC 3986.
-	Type *string `json:"type,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Status *int32 `json:"status,omitempty"`
-	// A human-readable explanation specific to this occurrence of the problem.
-	Detail *string `json:"detail,omitempty"`
-	// String providing an URI formatted according to RFC 3986.
-	Instance *string `json:"instance,omitempty"`
-	// A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available. 
-	Cause *string `json:"cause,omitempty"`
-	InvalidParams []InvalidParam `json:"invalidParams,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	AccessTokenError *AccessTokenErr `json:"accessTokenError,omitempty"`
-	AccessTokenRequest *AccessTokenReq `json:"accessTokenRequest,omitempty"`
-	// Fully Qualified Domain Name
-	NrfId *string `json:"nrfId,omitempty"`
-	SupportedApiVersions []string `json:"supportedApiVersions,omitempty"`
+	ProblemDetails
 	AcceptableServInfo *AcceptableServiceInfo `json:"acceptableServInfo,omitempty"`
 }
 
@@ -57,393 +40,9 @@ func NewExtendedProblemDetailsWithDefaults() *ExtendedProblemDetails {
 	return &this
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetType() string {
-	if o == nil || isNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetTypeOk() (*string, bool) {
-	if o == nil || isNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasType() bool {
-	if o != nil && !isNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ExtendedProblemDetails) SetType(v string) {
-	o.Type = &v
-}
-
-// GetTitle returns the Title field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetTitle() string {
-	if o == nil || isNil(o.Title) {
-		var ret string
-		return ret
-	}
-	return *o.Title
-}
-
-// GetTitleOk returns a tuple with the Title field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetTitleOk() (*string, bool) {
-	if o == nil || isNil(o.Title) {
-		return nil, false
-	}
-	return o.Title, true
-}
-
-// HasTitle returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasTitle() bool {
-	if o != nil && !isNil(o.Title) {
-		return true
-	}
-
-	return false
-}
-
-// SetTitle gets a reference to the given string and assigns it to the Title field.
-func (o *ExtendedProblemDetails) SetTitle(v string) {
-	o.Title = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetStatus() int32 {
-	if o == nil || isNil(o.Status) {
-		var ret int32
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetStatusOk() (*int32, bool) {
-	if o == nil || isNil(o.Status) {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// HasStatus returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ExtendedProblemDetails) SetStatus(v int32) {
-	o.Status = &v
-}
-
-// GetDetail returns the Detail field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetDetail() string {
-	if o == nil || isNil(o.Detail) {
-		var ret string
-		return ret
-	}
-	return *o.Detail
-}
-
-// GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetDetailOk() (*string, bool) {
-	if o == nil || isNil(o.Detail) {
-		return nil, false
-	}
-	return o.Detail, true
-}
-
-// HasDetail returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasDetail() bool {
-	if o != nil && !isNil(o.Detail) {
-		return true
-	}
-
-	return false
-}
-
-// SetDetail gets a reference to the given string and assigns it to the Detail field.
-func (o *ExtendedProblemDetails) SetDetail(v string) {
-	o.Detail = &v
-}
-
-// GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetInstance() string {
-	if o == nil || isNil(o.Instance) {
-		var ret string
-		return ret
-	}
-	return *o.Instance
-}
-
-// GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.Instance) {
-		return nil, false
-	}
-	return o.Instance, true
-}
-
-// HasInstance returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasInstance() bool {
-	if o != nil && !isNil(o.Instance) {
-		return true
-	}
-
-	return false
-}
-
-// SetInstance gets a reference to the given string and assigns it to the Instance field.
-func (o *ExtendedProblemDetails) SetInstance(v string) {
-	o.Instance = &v
-}
-
-// GetCause returns the Cause field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetCause() string {
-	if o == nil || isNil(o.Cause) {
-		var ret string
-		return ret
-	}
-	return *o.Cause
-}
-
-// GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetCauseOk() (*string, bool) {
-	if o == nil || isNil(o.Cause) {
-		return nil, false
-	}
-	return o.Cause, true
-}
-
-// HasCause returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
-		return true
-	}
-
-	return false
-}
-
-// SetCause gets a reference to the given string and assigns it to the Cause field.
-func (o *ExtendedProblemDetails) SetCause(v string) {
-	o.Cause = &v
-}
-
-// GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetInvalidParams() []InvalidParam {
-	if o == nil || isNil(o.InvalidParams) {
-		var ret []InvalidParam
-		return ret
-	}
-	return o.InvalidParams
-}
-
-// GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetInvalidParamsOk() ([]InvalidParam, bool) {
-	if o == nil || isNil(o.InvalidParams) {
-		return nil, false
-	}
-	return o.InvalidParams, true
-}
-
-// HasInvalidParams returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasInvalidParams() bool {
-	if o != nil && !isNil(o.InvalidParams) {
-		return true
-	}
-
-	return false
-}
-
-// SetInvalidParams gets a reference to the given []InvalidParam and assigns it to the InvalidParams field.
-func (o *ExtendedProblemDetails) SetInvalidParams(v []InvalidParam) {
-	o.InvalidParams = v
-}
-
-// GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
-		var ret string
-		return ret
-	}
-	return *o.SupportedFeatures
-}
-
-// GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
-		return nil, false
-	}
-	return o.SupportedFeatures, true
-}
-
-// HasSupportedFeatures returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedFeatures gets a reference to the given string and assigns it to the SupportedFeatures field.
-func (o *ExtendedProblemDetails) SetSupportedFeatures(v string) {
-	o.SupportedFeatures = &v
-}
-
-// GetAccessTokenError returns the AccessTokenError field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetAccessTokenError() AccessTokenErr {
-	if o == nil || isNil(o.AccessTokenError) {
-		var ret AccessTokenErr
-		return ret
-	}
-	return *o.AccessTokenError
-}
-
-// GetAccessTokenErrorOk returns a tuple with the AccessTokenError field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetAccessTokenErrorOk() (*AccessTokenErr, bool) {
-	if o == nil || isNil(o.AccessTokenError) {
-		return nil, false
-	}
-	return o.AccessTokenError, true
-}
-
-// HasAccessTokenError returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasAccessTokenError() bool {
-	if o != nil && !isNil(o.AccessTokenError) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccessTokenError gets a reference to the given AccessTokenErr and assigns it to the AccessTokenError field.
-func (o *ExtendedProblemDetails) SetAccessTokenError(v AccessTokenErr) {
-	o.AccessTokenError = &v
-}
-
-// GetAccessTokenRequest returns the AccessTokenRequest field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetAccessTokenRequest() AccessTokenReq {
-	if o == nil || isNil(o.AccessTokenRequest) {
-		var ret AccessTokenReq
-		return ret
-	}
-	return *o.AccessTokenRequest
-}
-
-// GetAccessTokenRequestOk returns a tuple with the AccessTokenRequest field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetAccessTokenRequestOk() (*AccessTokenReq, bool) {
-	if o == nil || isNil(o.AccessTokenRequest) {
-		return nil, false
-	}
-	return o.AccessTokenRequest, true
-}
-
-// HasAccessTokenRequest returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasAccessTokenRequest() bool {
-	if o != nil && !isNil(o.AccessTokenRequest) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccessTokenRequest gets a reference to the given AccessTokenReq and assigns it to the AccessTokenRequest field.
-func (o *ExtendedProblemDetails) SetAccessTokenRequest(v AccessTokenReq) {
-	o.AccessTokenRequest = &v
-}
-
-// GetNrfId returns the NrfId field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetNrfId() string {
-	if o == nil || isNil(o.NrfId) {
-		var ret string
-		return ret
-	}
-	return *o.NrfId
-}
-
-// GetNrfIdOk returns a tuple with the NrfId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetNrfIdOk() (*string, bool) {
-	if o == nil || isNil(o.NrfId) {
-		return nil, false
-	}
-	return o.NrfId, true
-}
-
-// HasNrfId returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasNrfId() bool {
-	if o != nil && !isNil(o.NrfId) {
-		return true
-	}
-
-	return false
-}
-
-// SetNrfId gets a reference to the given string and assigns it to the NrfId field.
-func (o *ExtendedProblemDetails) SetNrfId(v string) {
-	o.NrfId = &v
-}
-
-// GetSupportedApiVersions returns the SupportedApiVersions field value if set, zero value otherwise.
-func (o *ExtendedProblemDetails) GetSupportedApiVersions() []string {
-	if o == nil || isNil(o.SupportedApiVersions) {
-		var ret []string
-		return ret
-	}
-	return o.SupportedApiVersions
-}
-
-// GetSupportedApiVersionsOk returns a tuple with the SupportedApiVersions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtendedProblemDetails) GetSupportedApiVersionsOk() ([]string, bool) {
-	if o == nil || isNil(o.SupportedApiVersions) {
-		return nil, false
-	}
-	return o.SupportedApiVersions, true
-}
-
-// HasSupportedApiVersions returns a boolean if a field has been set.
-func (o *ExtendedProblemDetails) HasSupportedApiVersions() bool {
-	if o != nil && !isNil(o.SupportedApiVersions) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedApiVersions gets a reference to the given []string and assigns it to the SupportedApiVersions field.
-func (o *ExtendedProblemDetails) SetSupportedApiVersions(v []string) {
-	o.SupportedApiVersions = v
-}
-
 // GetAcceptableServInfo returns the AcceptableServInfo field value if set, zero value otherwise.
 func (o *ExtendedProblemDetails) GetAcceptableServInfo() AcceptableServiceInfo {
-	if o == nil || isNil(o.AcceptableServInfo) {
+	if o == nil || IsNil(o.AcceptableServInfo) {
 		var ret AcceptableServiceInfo
 		return ret
 	}
@@ -453,7 +52,7 @@ func (o *ExtendedProblemDetails) GetAcceptableServInfo() AcceptableServiceInfo {
 // GetAcceptableServInfoOk returns a tuple with the AcceptableServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedProblemDetails) GetAcceptableServInfoOk() (*AcceptableServiceInfo, bool) {
-	if o == nil || isNil(o.AcceptableServInfo) {
+	if o == nil || IsNil(o.AcceptableServInfo) {
 		return nil, false
 	}
 	return o.AcceptableServInfo, true
@@ -461,7 +60,7 @@ func (o *ExtendedProblemDetails) GetAcceptableServInfoOk() (*AcceptableServiceIn
 
 // HasAcceptableServInfo returns a boolean if a field has been set.
 func (o *ExtendedProblemDetails) HasAcceptableServInfo() bool {
-	if o != nil && !isNil(o.AcceptableServInfo) {
+	if o != nil && !IsNil(o.AcceptableServInfo) {
 		return true
 	}
 
@@ -474,7 +73,7 @@ func (o *ExtendedProblemDetails) SetAcceptableServInfo(v AcceptableServiceInfo) 
 }
 
 func (o ExtendedProblemDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -483,43 +82,15 @@ func (o ExtendedProblemDetails) MarshalJSON() ([]byte, error) {
 
 func (o ExtendedProblemDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Type) {
-		toSerialize["type"] = o.Type
+	serializedProblemDetails, errProblemDetails := json.Marshal(o.ProblemDetails)
+	if errProblemDetails != nil {
+		return map[string]interface{}{}, errProblemDetails
 	}
-	if !isNil(o.Title) {
-		toSerialize["title"] = o.Title
+	errProblemDetails = json.Unmarshal([]byte(serializedProblemDetails), &toSerialize)
+	if errProblemDetails != nil {
+		return map[string]interface{}{}, errProblemDetails
 	}
-	if !isNil(o.Status) {
-		toSerialize["status"] = o.Status
-	}
-	if !isNil(o.Detail) {
-		toSerialize["detail"] = o.Detail
-	}
-	if !isNil(o.Instance) {
-		toSerialize["instance"] = o.Instance
-	}
-	if !isNil(o.Cause) {
-		toSerialize["cause"] = o.Cause
-	}
-	if !isNil(o.InvalidParams) {
-		toSerialize["invalidParams"] = o.InvalidParams
-	}
-	if !isNil(o.SupportedFeatures) {
-		toSerialize["supportedFeatures"] = o.SupportedFeatures
-	}
-	if !isNil(o.AccessTokenError) {
-		toSerialize["accessTokenError"] = o.AccessTokenError
-	}
-	if !isNil(o.AccessTokenRequest) {
-		toSerialize["accessTokenRequest"] = o.AccessTokenRequest
-	}
-	if !isNil(o.NrfId) {
-		toSerialize["nrfId"] = o.NrfId
-	}
-	if !isNil(o.SupportedApiVersions) {
-		toSerialize["supportedApiVersions"] = o.SupportedApiVersions
-	}
-	if !isNil(o.AcceptableServInfo) {
+	if !IsNil(o.AcceptableServInfo) {
 		toSerialize["acceptableServInfo"] = o.AcceptableServInfo
 	}
 	return toSerialize, nil
@@ -560,5 +131,3 @@ func (v *NullableExtendedProblemDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Namf_MT
 
-AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Mobile Terminated Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &ReachabilityNotificationData{}
 
 // ReachabilityNotificationData Data within the UE Reachability Info Notify
 type ReachabilityNotificationData struct {
-	ReachableUeList []ReachableUeInfo `json:"reachableUeList,omitempty"`
-	UnreachableUeList []string `json:"unreachableUeList,omitempty"`
+	ReachableUeList   []ReachableUeInfo `json:"reachableUeList,omitempty"`
+	UnreachableUeList []string          `json:"unreachableUeList,omitempty"`
 }
 
 // NewReachabilityNotificationData instantiates a new ReachabilityNotificationData object
@@ -42,7 +42,7 @@ func NewReachabilityNotificationDataWithDefaults() *ReachabilityNotificationData
 
 // GetReachableUeList returns the ReachableUeList field value if set, zero value otherwise.
 func (o *ReachabilityNotificationData) GetReachableUeList() []ReachableUeInfo {
-	if o == nil || isNil(o.ReachableUeList) {
+	if o == nil || IsNil(o.ReachableUeList) {
 		var ret []ReachableUeInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ReachabilityNotificationData) GetReachableUeList() []ReachableUeInfo {
 // GetReachableUeListOk returns a tuple with the ReachableUeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityNotificationData) GetReachableUeListOk() ([]ReachableUeInfo, bool) {
-	if o == nil || isNil(o.ReachableUeList) {
+	if o == nil || IsNil(o.ReachableUeList) {
 		return nil, false
 	}
 	return o.ReachableUeList, true
@@ -60,7 +60,7 @@ func (o *ReachabilityNotificationData) GetReachableUeListOk() ([]ReachableUeInfo
 
 // HasReachableUeList returns a boolean if a field has been set.
 func (o *ReachabilityNotificationData) HasReachableUeList() bool {
-	if o != nil && !isNil(o.ReachableUeList) {
+	if o != nil && !IsNil(o.ReachableUeList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ReachabilityNotificationData) SetReachableUeList(v []ReachableUeInfo) {
 
 // GetUnreachableUeList returns the UnreachableUeList field value if set, zero value otherwise.
 func (o *ReachabilityNotificationData) GetUnreachableUeList() []string {
-	if o == nil || isNil(o.UnreachableUeList) {
+	if o == nil || IsNil(o.UnreachableUeList) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ReachabilityNotificationData) GetUnreachableUeList() []string {
 // GetUnreachableUeListOk returns a tuple with the UnreachableUeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityNotificationData) GetUnreachableUeListOk() ([]string, bool) {
-	if o == nil || isNil(o.UnreachableUeList) {
+	if o == nil || IsNil(o.UnreachableUeList) {
 		return nil, false
 	}
 	return o.UnreachableUeList, true
@@ -92,7 +92,7 @@ func (o *ReachabilityNotificationData) GetUnreachableUeListOk() ([]string, bool)
 
 // HasUnreachableUeList returns a boolean if a field has been set.
 func (o *ReachabilityNotificationData) HasUnreachableUeList() bool {
-	if o != nil && !isNil(o.UnreachableUeList) {
+	if o != nil && !IsNil(o.UnreachableUeList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ReachabilityNotificationData) SetUnreachableUeList(v []string) {
 }
 
 func (o ReachabilityNotificationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o ReachabilityNotificationData) MarshalJSON() ([]byte, error) {
 
 func (o ReachabilityNotificationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ReachableUeList) {
+	if !IsNil(o.ReachableUeList) {
 		toSerialize["reachableUeList"] = o.ReachableUeList
 	}
-	if !isNil(o.UnreachableUeList) {
+	if !IsNil(o.UnreachableUeList) {
 		toSerialize["unreachableUeList"] = o.UnreachableUeList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableReachabilityNotificationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,10 +19,9 @@ var _ MappedNullable = &RRMPolicyRatioSingleAllOfAttributes{}
 
 // RRMPolicyRatioSingleAllOfAttributes struct for RRMPolicyRatioSingleAllOfAttributes
 type RRMPolicyRatioSingleAllOfAttributes struct {
-	ResourceType *ResourceType `json:"resourceType,omitempty"`
-	RRMPolicyMemberList []RrmPolicyMember `json:"rRMPolicyMemberList,omitempty"`
-	RRMPolicyMaxRatio *int32 `json:"rRMPolicyMaxRatio,omitempty"`
-	RRMPolicyMinRatio *int32 `json:"rRMPolicyMinRatio,omitempty"`
+	RrmPolicyAttr
+	RRMPolicyMaxRatio       *int32 `json:"rRMPolicyMaxRatio,omitempty"`
+	RRMPolicyMinRatio       *int32 `json:"rRMPolicyMinRatio,omitempty"`
 	RRMPolicyDedicatedRatio *int32 `json:"rRMPolicyDedicatedRatio,omitempty"`
 }
 
@@ -41,70 +40,6 @@ func NewRRMPolicyRatioSingleAllOfAttributes() *RRMPolicyRatioSingleAllOfAttribut
 func NewRRMPolicyRatioSingleAllOfAttributesWithDefaults() *RRMPolicyRatioSingleAllOfAttributes {
 	this := RRMPolicyRatioSingleAllOfAttributes{}
 	return &this
-}
-
-// GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *RRMPolicyRatioSingleAllOfAttributes) GetResourceType() ResourceType {
-	if o == nil || IsNil(o.ResourceType) {
-		var ret ResourceType
-		return ret
-	}
-	return *o.ResourceType
-}
-
-// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RRMPolicyRatioSingleAllOfAttributes) GetResourceTypeOk() (*ResourceType, bool) {
-	if o == nil || IsNil(o.ResourceType) {
-		return nil, false
-	}
-	return o.ResourceType, true
-}
-
-// HasResourceType returns a boolean if a field has been set.
-func (o *RRMPolicyRatioSingleAllOfAttributes) HasResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourceType gets a reference to the given ResourceType and assigns it to the ResourceType field.
-func (o *RRMPolicyRatioSingleAllOfAttributes) SetResourceType(v ResourceType) {
-	o.ResourceType = &v
-}
-
-// GetRRMPolicyMemberList returns the RRMPolicyMemberList field value if set, zero value otherwise.
-func (o *RRMPolicyRatioSingleAllOfAttributes) GetRRMPolicyMemberList() []RrmPolicyMember {
-	if o == nil || IsNil(o.RRMPolicyMemberList) {
-		var ret []RrmPolicyMember
-		return ret
-	}
-	return o.RRMPolicyMemberList
-}
-
-// GetRRMPolicyMemberListOk returns a tuple with the RRMPolicyMemberList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RRMPolicyRatioSingleAllOfAttributes) GetRRMPolicyMemberListOk() ([]RrmPolicyMember, bool) {
-	if o == nil || IsNil(o.RRMPolicyMemberList) {
-		return nil, false
-	}
-	return o.RRMPolicyMemberList, true
-}
-
-// HasRRMPolicyMemberList returns a boolean if a field has been set.
-func (o *RRMPolicyRatioSingleAllOfAttributes) HasRRMPolicyMemberList() bool {
-	if o != nil && !IsNil(o.RRMPolicyMemberList) {
-		return true
-	}
-
-	return false
-}
-
-// SetRRMPolicyMemberList gets a reference to the given []RrmPolicyMember and assigns it to the RRMPolicyMemberList field.
-func (o *RRMPolicyRatioSingleAllOfAttributes) SetRRMPolicyMemberList(v []RrmPolicyMember) {
-	o.RRMPolicyMemberList = v
 }
 
 // GetRRMPolicyMaxRatio returns the RRMPolicyMaxRatio field value if set, zero value otherwise.
@@ -204,7 +139,7 @@ func (o *RRMPolicyRatioSingleAllOfAttributes) SetRRMPolicyDedicatedRatio(v int32
 }
 
 func (o RRMPolicyRatioSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -213,11 +148,13 @@ func (o RRMPolicyRatioSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o RRMPolicyRatioSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ResourceType) {
-		toSerialize["resourceType"] = o.ResourceType
+	serializedRrmPolicyAttr, errRrmPolicyAttr := json.Marshal(o.RrmPolicyAttr)
+	if errRrmPolicyAttr != nil {
+		return map[string]interface{}{}, errRrmPolicyAttr
 	}
-	if !IsNil(o.RRMPolicyMemberList) {
-		toSerialize["rRMPolicyMemberList"] = o.RRMPolicyMemberList
+	errRrmPolicyAttr = json.Unmarshal([]byte(serializedRrmPolicyAttr), &toSerialize)
+	if errRrmPolicyAttr != nil {
+		return map[string]interface{}{}, errRrmPolicyAttr
 	}
 	if !IsNil(o.RRMPolicyMaxRatio) {
 		toSerialize["rRMPolicyMaxRatio"] = o.RRMPolicyMaxRatio
@@ -266,5 +203,3 @@ func (v *NullableRRMPolicyRatioSingleAllOfAttributes) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

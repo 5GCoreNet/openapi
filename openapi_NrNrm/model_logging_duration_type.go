@@ -20,7 +20,7 @@ type LoggingDurationType string
 
 // List of loggingDuration-Type
 const (
-	_600S LoggingDurationType = "600s"
+	_600S  LoggingDurationType = "600s"
 	_1200S LoggingDurationType = "1200s"
 	_2400S LoggingDurationType = "2400s"
 	_3600S LoggingDurationType = "3600s"
@@ -116,4 +116,3 @@ func (v *NullableLoggingDurationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

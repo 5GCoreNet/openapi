@@ -1,7 +1,7 @@
 /*
 Nmfaf_3caDataManagement
 
-MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP Consumer Adaptor (3CA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -41,7 +41,7 @@ func NewAanfInfoWithDefaults() *AanfInfo {
 
 // GetRoutingIndicators returns the RoutingIndicators field value if set, zero value otherwise.
 func (o *AanfInfo) GetRoutingIndicators() []string {
-	if o == nil || isNil(o.RoutingIndicators) {
+	if o == nil || IsNil(o.RoutingIndicators) {
 		var ret []string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AanfInfo) GetRoutingIndicators() []string {
 // GetRoutingIndicatorsOk returns a tuple with the RoutingIndicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AanfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
-	if o == nil || isNil(o.RoutingIndicators) {
+	if o == nil || IsNil(o.RoutingIndicators) {
 		return nil, false
 	}
 	return o.RoutingIndicators, true
@@ -59,7 +59,7 @@ func (o *AanfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
 
 // HasRoutingIndicators returns a boolean if a field has been set.
 func (o *AanfInfo) HasRoutingIndicators() bool {
-	if o != nil && !isNil(o.RoutingIndicators) {
+	if o != nil && !IsNil(o.RoutingIndicators) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *AanfInfo) SetRoutingIndicators(v []string) {
 }
 
 func (o AanfInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o AanfInfo) MarshalJSON() ([]byte, error) {
 
 func (o AanfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.RoutingIndicators) {
+	if !IsNil(o.RoutingIndicators) {
 		toSerialize["routingIndicators"] = o.RoutingIndicators
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableAanfInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

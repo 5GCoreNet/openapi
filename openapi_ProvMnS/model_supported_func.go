@@ -20,7 +20,7 @@ var _ MappedNullable = &SupportedFunc{}
 // SupportedFunc struct for SupportedFunc
 type SupportedFunc struct {
 	Function *string `json:"function,omitempty"`
-	Policy *string `json:"policy,omitempty"`
+	Policy   *string `json:"policy,omitempty"`
 }
 
 // NewSupportedFunc instantiates a new SupportedFunc object
@@ -42,7 +42,7 @@ func NewSupportedFuncWithDefaults() *SupportedFunc {
 
 // GetFunction returns the Function field value if set, zero value otherwise.
 func (o *SupportedFunc) GetFunction() string {
-	if o == nil || isNil(o.Function) {
+	if o == nil || IsNil(o.Function) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SupportedFunc) GetFunction() string {
 // GetFunctionOk returns a tuple with the Function field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedFunc) GetFunctionOk() (*string, bool) {
-	if o == nil || isNil(o.Function) {
+	if o == nil || IsNil(o.Function) {
 		return nil, false
 	}
 	return o.Function, true
@@ -60,7 +60,7 @@ func (o *SupportedFunc) GetFunctionOk() (*string, bool) {
 
 // HasFunction returns a boolean if a field has been set.
 func (o *SupportedFunc) HasFunction() bool {
-	if o != nil && !isNil(o.Function) {
+	if o != nil && !IsNil(o.Function) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SupportedFunc) SetFunction(v string) {
 
 // GetPolicy returns the Policy field value if set, zero value otherwise.
 func (o *SupportedFunc) GetPolicy() string {
-	if o == nil || isNil(o.Policy) {
+	if o == nil || IsNil(o.Policy) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SupportedFunc) GetPolicy() string {
 // GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedFunc) GetPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.Policy) {
+	if o == nil || IsNil(o.Policy) {
 		return nil, false
 	}
 	return o.Policy, true
@@ -92,7 +92,7 @@ func (o *SupportedFunc) GetPolicyOk() (*string, bool) {
 
 // HasPolicy returns a boolean if a field has been set.
 func (o *SupportedFunc) HasPolicy() bool {
-	if o != nil && !isNil(o.Policy) {
+	if o != nil && !IsNil(o.Policy) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SupportedFunc) SetPolicy(v string) {
 }
 
 func (o SupportedFunc) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o SupportedFunc) MarshalJSON() ([]byte, error) {
 
 func (o SupportedFunc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Function) {
+	if !IsNil(o.Function) {
 		toSerialize["function"] = o.Function
 	}
-	if !isNil(o.Policy) {
+	if !IsNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableSupportedFunc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

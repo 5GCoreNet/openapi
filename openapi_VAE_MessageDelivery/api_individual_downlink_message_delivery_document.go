@@ -1,7 +1,7 @@
 /*
 VAE_MessageDelivery
 
-API for VAE Message Delivery Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Message Delivery Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_VAE_MessageDelivery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualDownlinkMessageDeliveryDocumentApiService IndividualDownlinkMessageDeliveryDocumentApi service
 type IndividualDownlinkMessageDeliveryDocumentApiService service
 
 type ApiReadIndividualDownlinkMessageDeliveryRequest struct {
-	ctx context.Context
-	ApiService *IndividualDownlinkMessageDeliveryDocumentApiService
+	ctx            context.Context
+	ApiService     *IndividualDownlinkMessageDeliveryDocumentApiService
 	subscriptionId string
-	dlDeliveryId string
+	dlDeliveryId   string
 }
 
 func (r ApiReadIndividualDownlinkMessageDeliveryRequest) Execute() (*DownlinkMessageDeliveryData, *http.Response, error) {
@@ -37,28 +36,29 @@ func (r ApiReadIndividualDownlinkMessageDeliveryRequest) Execute() (*DownlinkMes
 /*
 ReadIndividualDownlinkMessageDelivery VAE Message delivery resource Read service Operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId String identifying a subscription to the Individual Message Delivery Subscription 
- @param dlDeliveryId Identifier of a downlink messge delivery resource
- @return ApiReadIndividualDownlinkMessageDeliveryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId String identifying a subscription to the Individual Message Delivery Subscription
+	@param dlDeliveryId Identifier of a downlink messge delivery resource
+	@return ApiReadIndividualDownlinkMessageDeliveryRequest
 */
 func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDownlinkMessageDelivery(ctx context.Context, subscriptionId string, dlDeliveryId string) ApiReadIndividualDownlinkMessageDeliveryRequest {
 	return ApiReadIndividualDownlinkMessageDeliveryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		subscriptionId: subscriptionId,
-		dlDeliveryId: dlDeliveryId,
+		dlDeliveryId:   dlDeliveryId,
 	}
 }
 
 // Execute executes the request
-//  @return DownlinkMessageDeliveryData
+//
+//	@return DownlinkMessageDeliveryData
 func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDownlinkMessageDeliveryExecute(r ApiReadIndividualDownlinkMessageDeliveryRequest) (*DownlinkMessageDeliveryData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DownlinkMessageDeliveryData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DownlinkMessageDeliveryData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualDownlinkMessageDeliveryDocumentApiService.ReadIndividualDownlinkMessageDelivery")
@@ -101,9 +101,9 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -120,8 +120,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -131,8 +131,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -142,8 +142,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -153,8 +153,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -164,8 +164,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -175,8 +175,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -186,8 +186,8 @@ func (a *IndividualDownlinkMessageDeliveryDocumentApiService) ReadIndividualDown
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -20,12 +20,12 @@ var _ MappedNullable = &ServiceTypeUnrelatedClass{}
 // ServiceTypeUnrelatedClass struct for ServiceTypeUnrelatedClass
 type ServiceTypeUnrelatedClass struct {
 	// LCS service type.
-	ServiceType int32 `json:"serviceType"`
-	AllowedGeographicArea []GeographicArea `json:"allowedGeographicArea,omitempty"`
+	ServiceType               int32                      `json:"serviceType"`
+	AllowedGeographicArea     []GeographicArea           `json:"allowedGeographicArea,omitempty"`
 	PrivacyCheckRelatedAction *PrivacyCheckRelatedAction `json:"privacyCheckRelatedAction,omitempty"`
-	CodeWordInd *CodeWordInd `json:"codeWordInd,omitempty"`
-	ValidTimePeriod *ValidTimePeriod `json:"validTimePeriod,omitempty"`
-	CodeWordList []string `json:"codeWordList,omitempty"`
+	CodeWordInd               *CodeWordInd               `json:"codeWordInd,omitempty"`
+	ValidTimePeriod           *ValidTimePeriod           `json:"validTimePeriod,omitempty"`
+	CodeWordList              []string                   `json:"codeWordList,omitempty"`
 }
 
 // NewServiceTypeUnrelatedClass instantiates a new ServiceTypeUnrelatedClass object
@@ -72,7 +72,7 @@ func (o *ServiceTypeUnrelatedClass) SetServiceType(v int32) {
 
 // GetAllowedGeographicArea returns the AllowedGeographicArea field value if set, zero value otherwise.
 func (o *ServiceTypeUnrelatedClass) GetAllowedGeographicArea() []GeographicArea {
-	if o == nil || isNil(o.AllowedGeographicArea) {
+	if o == nil || IsNil(o.AllowedGeographicArea) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ServiceTypeUnrelatedClass) GetAllowedGeographicArea() []GeographicArea 
 // GetAllowedGeographicAreaOk returns a tuple with the AllowedGeographicArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceTypeUnrelatedClass) GetAllowedGeographicAreaOk() ([]GeographicArea, bool) {
-	if o == nil || isNil(o.AllowedGeographicArea) {
+	if o == nil || IsNil(o.AllowedGeographicArea) {
 		return nil, false
 	}
 	return o.AllowedGeographicArea, true
@@ -90,7 +90,7 @@ func (o *ServiceTypeUnrelatedClass) GetAllowedGeographicAreaOk() ([]GeographicAr
 
 // HasAllowedGeographicArea returns a boolean if a field has been set.
 func (o *ServiceTypeUnrelatedClass) HasAllowedGeographicArea() bool {
-	if o != nil && !isNil(o.AllowedGeographicArea) {
+	if o != nil && !IsNil(o.AllowedGeographicArea) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *ServiceTypeUnrelatedClass) SetAllowedGeographicArea(v []GeographicArea)
 
 // GetPrivacyCheckRelatedAction returns the PrivacyCheckRelatedAction field value if set, zero value otherwise.
 func (o *ServiceTypeUnrelatedClass) GetPrivacyCheckRelatedAction() PrivacyCheckRelatedAction {
-	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
 		var ret PrivacyCheckRelatedAction
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ServiceTypeUnrelatedClass) GetPrivacyCheckRelatedAction() PrivacyCheckR
 // GetPrivacyCheckRelatedActionOk returns a tuple with the PrivacyCheckRelatedAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceTypeUnrelatedClass) GetPrivacyCheckRelatedActionOk() (*PrivacyCheckRelatedAction, bool) {
-	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
 		return nil, false
 	}
 	return o.PrivacyCheckRelatedAction, true
@@ -122,7 +122,7 @@ func (o *ServiceTypeUnrelatedClass) GetPrivacyCheckRelatedActionOk() (*PrivacyCh
 
 // HasPrivacyCheckRelatedAction returns a boolean if a field has been set.
 func (o *ServiceTypeUnrelatedClass) HasPrivacyCheckRelatedAction() bool {
-	if o != nil && !isNil(o.PrivacyCheckRelatedAction) {
+	if o != nil && !IsNil(o.PrivacyCheckRelatedAction) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *ServiceTypeUnrelatedClass) SetPrivacyCheckRelatedAction(v PrivacyCheckR
 
 // GetCodeWordInd returns the CodeWordInd field value if set, zero value otherwise.
 func (o *ServiceTypeUnrelatedClass) GetCodeWordInd() CodeWordInd {
-	if o == nil || isNil(o.CodeWordInd) {
+	if o == nil || IsNil(o.CodeWordInd) {
 		var ret CodeWordInd
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *ServiceTypeUnrelatedClass) GetCodeWordInd() CodeWordInd {
 // GetCodeWordIndOk returns a tuple with the CodeWordInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceTypeUnrelatedClass) GetCodeWordIndOk() (*CodeWordInd, bool) {
-	if o == nil || isNil(o.CodeWordInd) {
+	if o == nil || IsNil(o.CodeWordInd) {
 		return nil, false
 	}
 	return o.CodeWordInd, true
@@ -154,7 +154,7 @@ func (o *ServiceTypeUnrelatedClass) GetCodeWordIndOk() (*CodeWordInd, bool) {
 
 // HasCodeWordInd returns a boolean if a field has been set.
 func (o *ServiceTypeUnrelatedClass) HasCodeWordInd() bool {
-	if o != nil && !isNil(o.CodeWordInd) {
+	if o != nil && !IsNil(o.CodeWordInd) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *ServiceTypeUnrelatedClass) SetCodeWordInd(v CodeWordInd) {
 
 // GetValidTimePeriod returns the ValidTimePeriod field value if set, zero value otherwise.
 func (o *ServiceTypeUnrelatedClass) GetValidTimePeriod() ValidTimePeriod {
-	if o == nil || isNil(o.ValidTimePeriod) {
+	if o == nil || IsNil(o.ValidTimePeriod) {
 		var ret ValidTimePeriod
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *ServiceTypeUnrelatedClass) GetValidTimePeriod() ValidTimePeriod {
 // GetValidTimePeriodOk returns a tuple with the ValidTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceTypeUnrelatedClass) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
-	if o == nil || isNil(o.ValidTimePeriod) {
+	if o == nil || IsNil(o.ValidTimePeriod) {
 		return nil, false
 	}
 	return o.ValidTimePeriod, true
@@ -186,7 +186,7 @@ func (o *ServiceTypeUnrelatedClass) GetValidTimePeriodOk() (*ValidTimePeriod, bo
 
 // HasValidTimePeriod returns a boolean if a field has been set.
 func (o *ServiceTypeUnrelatedClass) HasValidTimePeriod() bool {
-	if o != nil && !isNil(o.ValidTimePeriod) {
+	if o != nil && !IsNil(o.ValidTimePeriod) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *ServiceTypeUnrelatedClass) SetValidTimePeriod(v ValidTimePeriod) {
 
 // GetCodeWordList returns the CodeWordList field value if set, zero value otherwise.
 func (o *ServiceTypeUnrelatedClass) GetCodeWordList() []string {
-	if o == nil || isNil(o.CodeWordList) {
+	if o == nil || IsNil(o.CodeWordList) {
 		var ret []string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *ServiceTypeUnrelatedClass) GetCodeWordList() []string {
 // GetCodeWordListOk returns a tuple with the CodeWordList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceTypeUnrelatedClass) GetCodeWordListOk() ([]string, bool) {
-	if o == nil || isNil(o.CodeWordList) {
+	if o == nil || IsNil(o.CodeWordList) {
 		return nil, false
 	}
 	return o.CodeWordList, true
@@ -218,7 +218,7 @@ func (o *ServiceTypeUnrelatedClass) GetCodeWordListOk() ([]string, bool) {
 
 // HasCodeWordList returns a boolean if a field has been set.
 func (o *ServiceTypeUnrelatedClass) HasCodeWordList() bool {
-	if o != nil && !isNil(o.CodeWordList) {
+	if o != nil && !IsNil(o.CodeWordList) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *ServiceTypeUnrelatedClass) SetCodeWordList(v []string) {
 }
 
 func (o ServiceTypeUnrelatedClass) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -241,19 +241,19 @@ func (o ServiceTypeUnrelatedClass) MarshalJSON() ([]byte, error) {
 func (o ServiceTypeUnrelatedClass) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["serviceType"] = o.ServiceType
-	if !isNil(o.AllowedGeographicArea) {
+	if !IsNil(o.AllowedGeographicArea) {
 		toSerialize["allowedGeographicArea"] = o.AllowedGeographicArea
 	}
-	if !isNil(o.PrivacyCheckRelatedAction) {
+	if !IsNil(o.PrivacyCheckRelatedAction) {
 		toSerialize["privacyCheckRelatedAction"] = o.PrivacyCheckRelatedAction
 	}
-	if !isNil(o.CodeWordInd) {
+	if !IsNil(o.CodeWordInd) {
 		toSerialize["codeWordInd"] = o.CodeWordInd
 	}
-	if !isNil(o.ValidTimePeriod) {
+	if !IsNil(o.ValidTimePeriod) {
 		toSerialize["validTimePeriod"] = o.ValidTimePeriod
 	}
-	if !isNil(o.CodeWordList) {
+	if !IsNil(o.CodeWordList) {
 		toSerialize["codeWordList"] = o.CodeWordList
 	}
 	return toSerialize, nil
@@ -294,5 +294,3 @@ func (v *NullableServiceTypeUnrelatedClass) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

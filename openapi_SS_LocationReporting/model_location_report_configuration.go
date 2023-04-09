@@ -1,7 +1,7 @@
 /*
 SS_LocationReporting
 
-API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,15 +20,15 @@ var _ MappedNullable = &LocationReportConfiguration{}
 
 // LocationReportConfiguration Represents the location reporting configuration information.
 type LocationReportConfiguration struct {
-	ValServerId string `json:"valServerId"`
-	ValTgtUe ValTargetUe `json:"valTgtUe"`
-	ImmRep *bool `json:"immRep,omitempty"`
+	ValServerId string      `json:"valServerId"`
+	ValTgtUe    ValTargetUe `json:"valTgtUe"`
+	ImmRep      *bool       `json:"immRep,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	MonDur *time.Time `json:"monDur,omitempty"`
 	// indicating a time in seconds.
-	RepPeriod *int32 `json:"repPeriod,omitempty"`
-	Accuracy *Accuracy `json:"accuracy,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	RepPeriod *int32    `json:"repPeriod,omitempty"`
+	Accuracy  *Accuracy `json:"accuracy,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SuppFeat *string `json:"suppFeat,omitempty"`
 }
 
@@ -101,7 +101,7 @@ func (o *LocationReportConfiguration) SetValTgtUe(v ValTargetUe) {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *LocationReportConfiguration) GetImmRep() bool {
-	if o == nil || isNil(o.ImmRep) {
+	if o == nil || IsNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *LocationReportConfiguration) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfiguration) GetImmRepOk() (*bool, bool) {
-	if o == nil || isNil(o.ImmRep) {
+	if o == nil || IsNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -119,7 +119,7 @@ func (o *LocationReportConfiguration) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *LocationReportConfiguration) HasImmRep() bool {
-	if o != nil && !isNil(o.ImmRep) {
+	if o != nil && !IsNil(o.ImmRep) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *LocationReportConfiguration) SetImmRep(v bool) {
 
 // GetMonDur returns the MonDur field value if set, zero value otherwise.
 func (o *LocationReportConfiguration) GetMonDur() time.Time {
-	if o == nil || isNil(o.MonDur) {
+	if o == nil || IsNil(o.MonDur) {
 		var ret time.Time
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *LocationReportConfiguration) GetMonDur() time.Time {
 // GetMonDurOk returns a tuple with the MonDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfiguration) GetMonDurOk() (*time.Time, bool) {
-	if o == nil || isNil(o.MonDur) {
+	if o == nil || IsNil(o.MonDur) {
 		return nil, false
 	}
 	return o.MonDur, true
@@ -151,7 +151,7 @@ func (o *LocationReportConfiguration) GetMonDurOk() (*time.Time, bool) {
 
 // HasMonDur returns a boolean if a field has been set.
 func (o *LocationReportConfiguration) HasMonDur() bool {
-	if o != nil && !isNil(o.MonDur) {
+	if o != nil && !IsNil(o.MonDur) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *LocationReportConfiguration) SetMonDur(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *LocationReportConfiguration) GetRepPeriod() int32 {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *LocationReportConfiguration) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfiguration) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.RepPeriod) {
+	if o == nil || IsNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -183,7 +183,7 @@ func (o *LocationReportConfiguration) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *LocationReportConfiguration) HasRepPeriod() bool {
-	if o != nil && !isNil(o.RepPeriod) {
+	if o != nil && !IsNil(o.RepPeriod) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *LocationReportConfiguration) SetRepPeriod(v int32) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *LocationReportConfiguration) GetAccuracy() Accuracy {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		var ret Accuracy
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *LocationReportConfiguration) GetAccuracy() Accuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfiguration) GetAccuracyOk() (*Accuracy, bool) {
-	if o == nil || isNil(o.Accuracy) {
+	if o == nil || IsNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -215,7 +215,7 @@ func (o *LocationReportConfiguration) GetAccuracyOk() (*Accuracy, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *LocationReportConfiguration) HasAccuracy() bool {
-	if o != nil && !isNil(o.Accuracy) {
+	if o != nil && !IsNil(o.Accuracy) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *LocationReportConfiguration) SetAccuracy(v Accuracy) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *LocationReportConfiguration) GetSuppFeat() string {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *LocationReportConfiguration) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfiguration) GetSuppFeatOk() (*string, bool) {
-	if o == nil || isNil(o.SuppFeat) {
+	if o == nil || IsNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -247,7 +247,7 @@ func (o *LocationReportConfiguration) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *LocationReportConfiguration) HasSuppFeat() bool {
-	if o != nil && !isNil(o.SuppFeat) {
+	if o != nil && !IsNil(o.SuppFeat) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *LocationReportConfiguration) SetSuppFeat(v string) {
 }
 
 func (o LocationReportConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,19 +271,19 @@ func (o LocationReportConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valServerId"] = o.ValServerId
 	toSerialize["valTgtUe"] = o.ValTgtUe
-	if !isNil(o.ImmRep) {
+	if !IsNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !isNil(o.MonDur) {
+	if !IsNil(o.MonDur) {
 		toSerialize["monDur"] = o.MonDur
 	}
-	if !isNil(o.RepPeriod) {
+	if !IsNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !isNil(o.Accuracy) {
+	if !IsNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
-	if !isNil(o.SuppFeat) {
+	if !IsNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil
@@ -324,5 +324,3 @@ func (v *NullableLocationReportConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

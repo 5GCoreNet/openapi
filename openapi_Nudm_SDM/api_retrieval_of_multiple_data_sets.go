@@ -1,7 +1,7 @@
 /*
 Nudm_SDM
 
-Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Subscriber Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,26 +13,25 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // RetrievalOfMultipleDataSetsApiService RetrievalOfMultipleDataSetsApi service
 type RetrievalOfMultipleDataSetsApiService service
 
 type ApiGetDataSetsRequest struct {
-	ctx context.Context
-	ApiService *RetrievalOfMultipleDataSetsApiService
-	supi string
-	datasetNames *[]DataSetName
-	plmnId *PlmnIdNid
+	ctx                context.Context
+	ApiService         *RetrievalOfMultipleDataSetsApiService
+	supi               string
+	datasetNames       *[]DataSetName
+	plmnId             *PlmnIdNid
 	disasterRoamingInd *bool
-	supportedFeatures *string
-	ifNoneMatch *string
-	ifModifiedSince *string
+	supportedFeatures  *string
+	ifNoneMatch        *string
+	ifModifiedSince    *string
 }
 
 // List of dataset names
@@ -78,26 +77,27 @@ func (r ApiGetDataSetsRequest) Execute() (*SubscriptionDataSets, *http.Response,
 /*
 GetDataSets retrieve multiple data sets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param supi Identifier of the UE
- @return ApiGetDataSetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param supi Identifier of the UE
+	@return ApiGetDataSetsRequest
 */
 func (a *RetrievalOfMultipleDataSetsApiService) GetDataSets(ctx context.Context, supi string) ApiGetDataSetsRequest {
 	return ApiGetDataSetsRequest{
 		ApiService: a,
-		ctx: ctx,
-		supi: supi,
+		ctx:        ctx,
+		supi:       supi,
 	}
 }
 
 // Execute executes the request
-//  @return SubscriptionDataSets
+//
+//	@return SubscriptionDataSets
 func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataSetsRequest) (*SubscriptionDataSets, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SubscriptionDataSets
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SubscriptionDataSets
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetrievalOfMultipleDataSetsApiService.GetDataSets")
@@ -118,15 +118,15 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 		return localVarReturnValue, nil, reportError("datasetNames must have at least 2 elements")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
 	if r.plmnId != nil {
-		parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	}
 	if r.disasterRoamingInd != nil {
-		parameterAddToQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -146,10 +146,10 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -161,9 +161,9 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -180,8 +180,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -191,8 +191,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -202,8 +202,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -213,8 +213,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -224,8 +224,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -235,8 +235,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 502 {
@@ -246,8 +246,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -257,8 +257,8 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

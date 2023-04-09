@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,21 +13,20 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // HSSSDMSubscriptionInfoDocumentApiService HSSSDMSubscriptionInfoDocumentApi service
 type HSSSDMSubscriptionInfoDocumentApiService service
 
 type ApiCreateHSSSDMSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *HSSSDMSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ctx                 context.Context
+	ApiService          *HSSSDMSubscriptionInfoDocumentApiService
+	ueId                string
+	subsId              string
 	hssSubscriptionInfo *HssSubscriptionInfo
 }
 
@@ -43,26 +42,26 @@ func (r ApiCreateHSSSDMSubscriptionsRequest) Execute() (*http.Response, error) {
 /*
 CreateHSSSDMSubscriptions Create HSS SDM Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiCreateHSSSDMSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiCreateHSSSDMSubscriptionsRequest
 */
 func (a *HSSSDMSubscriptionInfoDocumentApiService) CreateHSSSDMSubscriptions(ctx context.Context, ueId string, subsId string) ApiCreateHSSSDMSubscriptionsRequest {
 	return ApiCreateHSSSDMSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *HSSSDMSubscriptionInfoDocumentApiService) CreateHSSSDMSubscriptionsExecute(r ApiCreateHSSSDMSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSSDMSubscriptionInfoDocumentApiService.CreateHSSSDMSubscriptions")
@@ -110,9 +109,9 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) CreateHSSSDMSubscriptionsExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -129,10 +128,10 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) CreateHSSSDMSubscriptionsExec
 }
 
 type ApiGetHssSDMSubscriptionInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HSSSDMSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiGetHssSDMSubscriptionInfoRequest) Execute() (*SmfSubscriptionInfo, *http.Response, error) {
@@ -142,28 +141,29 @@ func (r ApiGetHssSDMSubscriptionInfoRequest) Execute() (*SmfSubscriptionInfo, *h
 /*
 GetHssSDMSubscriptionInfo Retrieve HSS SDM Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiGetHssSDMSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiGetHssSDMSubscriptionInfoRequest
 */
 func (a *HSSSDMSubscriptionInfoDocumentApiService) GetHssSDMSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiGetHssSDMSubscriptionInfoRequest {
 	return ApiGetHssSDMSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return SmfSubscriptionInfo
+//
+//	@return SmfSubscriptionInfo
 func (a *HSSSDMSubscriptionInfoDocumentApiService) GetHssSDMSubscriptionInfoExecute(r ApiGetHssSDMSubscriptionInfoRequest) (*SmfSubscriptionInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SmfSubscriptionInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SmfSubscriptionInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSSDMSubscriptionInfoDocumentApiService.GetHssSDMSubscriptionInfo")
@@ -206,9 +206,9 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) GetHssSDMSubscriptionInfoExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -234,11 +234,11 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) GetHssSDMSubscriptionInfoExec
 }
 
 type ApiModifyHssSDMSubscriptionInfoRequest struct {
-	ctx context.Context
-	ApiService *HSSSDMSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *HSSSDMSubscriptionInfoDocumentApiService
+	ueId              string
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -260,28 +260,29 @@ func (r ApiModifyHssSDMSubscriptionInfoRequest) Execute() (*PatchResult, *http.R
 /*
 ModifyHssSDMSubscriptionInfo Modify HSS SDM Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiModifyHssSDMSubscriptionInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiModifyHssSDMSubscriptionInfoRequest
 */
 func (a *HSSSDMSubscriptionInfoDocumentApiService) ModifyHssSDMSubscriptionInfo(ctx context.Context, ueId string, subsId string) ApiModifyHssSDMSubscriptionInfoRequest {
 	return ApiModifyHssSDMSubscriptionInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return PatchResult
+//
+//	@return PatchResult
 func (a *HSSSDMSubscriptionInfoDocumentApiService) ModifyHssSDMSubscriptionInfoExecute(r ApiModifyHssSDMSubscriptionInfoRequest) (*PatchResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PatchResult
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PatchResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSSDMSubscriptionInfoDocumentApiService.ModifyHssSDMSubscriptionInfo")
@@ -301,7 +302,7 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) ModifyHssSDMSubscriptionInfoE
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -332,9 +333,9 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) ModifyHssSDMSubscriptionInfoE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,8 +352,8 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) ModifyHssSDMSubscriptionInfoE
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -371,10 +372,10 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) ModifyHssSDMSubscriptionInfoE
 }
 
 type ApiRemoveHssSDMSubscriptionsInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HSSSDMSubscriptionInfoDocumentApiService
-	ueId string
-	subsId string
+	ueId       string
+	subsId     string
 }
 
 func (r ApiRemoveHssSDMSubscriptionsInfoRequest) Execute() (*http.Response, error) {
@@ -384,26 +385,26 @@ func (r ApiRemoveHssSDMSubscriptionsInfoRequest) Execute() (*http.Response, erro
 /*
 RemoveHssSDMSubscriptionsInfo Delete HSS SDM Subscription Info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId
- @param subsId
- @return ApiRemoveHssSDMSubscriptionsInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId
+	@param subsId
+	@return ApiRemoveHssSDMSubscriptionsInfoRequest
 */
 func (a *HSSSDMSubscriptionInfoDocumentApiService) RemoveHssSDMSubscriptionsInfo(ctx context.Context, ueId string, subsId string) ApiRemoveHssSDMSubscriptionsInfoRequest {
 	return ApiRemoveHssSDMSubscriptionsInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
-		subsId: subsId,
+		ctx:        ctx,
+		ueId:       ueId,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *HSSSDMSubscriptionInfoDocumentApiService) RemoveHssSDMSubscriptionsInfoExecute(r ApiRemoveHssSDMSubscriptionsInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HSSSDMSubscriptionInfoDocumentApiService.RemoveHssSDMSubscriptionsInfo")
@@ -446,9 +447,9 @@ func (a *HSSSDMSubscriptionInfoDocumentApiService) RemoveHssSDMSubscriptionsInfo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

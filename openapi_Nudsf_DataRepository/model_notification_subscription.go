@@ -1,7 +1,7 @@
 /*
 Nudsf_DataRepository
 
-Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -28,9 +28,9 @@ type NotificationSubscription struct {
 	// string with format 'date-time' as defined in OpenAPI.
 	Expiry *time.Time `json:"expiry,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	ExpiryNotification *int32 `json:"expiryNotification,omitempty"`
-	SubFilter *SubscriptionFilter `json:"subFilter,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	ExpiryNotification *int32              `json:"expiryNotification,omitempty"`
+	SubFilter          *SubscriptionFilter `json:"subFilter,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -103,7 +103,7 @@ func (o *NotificationSubscription) SetCallbackReference(v string) {
 
 // GetExpiryCallbackReference returns the ExpiryCallbackReference field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetExpiryCallbackReference() string {
-	if o == nil || isNil(o.ExpiryCallbackReference) {
+	if o == nil || IsNil(o.ExpiryCallbackReference) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *NotificationSubscription) GetExpiryCallbackReference() string {
 // GetExpiryCallbackReferenceOk returns a tuple with the ExpiryCallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetExpiryCallbackReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.ExpiryCallbackReference) {
+	if o == nil || IsNil(o.ExpiryCallbackReference) {
 		return nil, false
 	}
 	return o.ExpiryCallbackReference, true
@@ -121,7 +121,7 @@ func (o *NotificationSubscription) GetExpiryCallbackReferenceOk() (*string, bool
 
 // HasExpiryCallbackReference returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasExpiryCallbackReference() bool {
-	if o != nil && !isNil(o.ExpiryCallbackReference) {
+	if o != nil && !IsNil(o.ExpiryCallbackReference) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *NotificationSubscription) SetExpiryCallbackReference(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetExpiry() time.Time {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *NotificationSubscription) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Expiry) {
+	if o == nil || IsNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -153,7 +153,7 @@ func (o *NotificationSubscription) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasExpiry() bool {
-	if o != nil && !isNil(o.Expiry) {
+	if o != nil && !IsNil(o.Expiry) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *NotificationSubscription) SetExpiry(v time.Time) {
 
 // GetExpiryNotification returns the ExpiryNotification field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetExpiryNotification() int32 {
-	if o == nil || isNil(o.ExpiryNotification) {
+	if o == nil || IsNil(o.ExpiryNotification) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *NotificationSubscription) GetExpiryNotification() int32 {
 // GetExpiryNotificationOk returns a tuple with the ExpiryNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetExpiryNotificationOk() (*int32, bool) {
-	if o == nil || isNil(o.ExpiryNotification) {
+	if o == nil || IsNil(o.ExpiryNotification) {
 		return nil, false
 	}
 	return o.ExpiryNotification, true
@@ -185,7 +185,7 @@ func (o *NotificationSubscription) GetExpiryNotificationOk() (*int32, bool) {
 
 // HasExpiryNotification returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasExpiryNotification() bool {
-	if o != nil && !isNil(o.ExpiryNotification) {
+	if o != nil && !IsNil(o.ExpiryNotification) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *NotificationSubscription) SetExpiryNotification(v int32) {
 
 // GetSubFilter returns the SubFilter field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetSubFilter() SubscriptionFilter {
-	if o == nil || isNil(o.SubFilter) {
+	if o == nil || IsNil(o.SubFilter) {
 		var ret SubscriptionFilter
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *NotificationSubscription) GetSubFilter() SubscriptionFilter {
 // GetSubFilterOk returns a tuple with the SubFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetSubFilterOk() (*SubscriptionFilter, bool) {
-	if o == nil || isNil(o.SubFilter) {
+	if o == nil || IsNil(o.SubFilter) {
 		return nil, false
 	}
 	return o.SubFilter, true
@@ -217,7 +217,7 @@ func (o *NotificationSubscription) GetSubFilterOk() (*SubscriptionFilter, bool) 
 
 // HasSubFilter returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasSubFilter() bool {
-	if o != nil && !isNil(o.SubFilter) {
+	if o != nil && !IsNil(o.SubFilter) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *NotificationSubscription) SetSubFilter(v SubscriptionFilter) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *NotificationSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -249,7 +249,7 @@ func (o *NotificationSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *NotificationSubscription) SetSupportedFeatures(v string) {
 }
 
 func (o NotificationSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -273,19 +273,19 @@ func (o NotificationSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["clientId"] = o.ClientId
 	toSerialize["callbackReference"] = o.CallbackReference
-	if !isNil(o.ExpiryCallbackReference) {
+	if !IsNil(o.ExpiryCallbackReference) {
 		toSerialize["expiryCallbackReference"] = o.ExpiryCallbackReference
 	}
-	if !isNil(o.Expiry) {
+	if !IsNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !isNil(o.ExpiryNotification) {
+	if !IsNil(o.ExpiryNotification) {
 		toSerialize["expiryNotification"] = o.ExpiryNotification
 	}
-	if !isNil(o.SubFilter) {
+	if !IsNil(o.SubFilter) {
 		toSerialize["subFilter"] = o.SubFilter
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -326,5 +326,3 @@ func (v *NullableNotificationSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

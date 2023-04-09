@@ -1,7 +1,7 @@
 /*
 Nhss_imsUECM
 
-Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss UE Context Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -20,11 +20,11 @@ var _ MappedNullable = &AuthorizationRequest{}
 // AuthorizationRequest Ims authorization request data
 type AuthorizationRequest struct {
 	// IMS Private Identity of the UE
-	Impi *string `json:"impi,omitempty"`
-	AuthorizationType AuthorizationType `json:"authorizationType"`
-	VisitedNetworkIdentifier *string `json:"visitedNetworkIdentifier,omitempty"`
-	EmergencyIndicator *bool `json:"emergencyIndicator,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	Impi                     *string           `json:"impi,omitempty"`
+	AuthorizationType        AuthorizationType `json:"authorizationType"`
+	VisitedNetworkIdentifier *string           `json:"visitedNetworkIdentifier,omitempty"`
+	EmergencyIndicator       *bool             `json:"emergencyIndicator,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -48,7 +48,7 @@ func NewAuthorizationRequestWithDefaults() *AuthorizationRequest {
 
 // GetImpi returns the Impi field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetImpi() string {
-	if o == nil || isNil(o.Impi) {
+	if o == nil || IsNil(o.Impi) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *AuthorizationRequest) GetImpi() string {
 // GetImpiOk returns a tuple with the Impi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetImpiOk() (*string, bool) {
-	if o == nil || isNil(o.Impi) {
+	if o == nil || IsNil(o.Impi) {
 		return nil, false
 	}
 	return o.Impi, true
@@ -66,7 +66,7 @@ func (o *AuthorizationRequest) GetImpiOk() (*string, bool) {
 
 // HasImpi returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasImpi() bool {
-	if o != nil && !isNil(o.Impi) {
+	if o != nil && !IsNil(o.Impi) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AuthorizationRequest) SetAuthorizationType(v AuthorizationType) {
 
 // GetVisitedNetworkIdentifier returns the VisitedNetworkIdentifier field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetVisitedNetworkIdentifier() string {
-	if o == nil || isNil(o.VisitedNetworkIdentifier) {
+	if o == nil || IsNil(o.VisitedNetworkIdentifier) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AuthorizationRequest) GetVisitedNetworkIdentifier() string {
 // GetVisitedNetworkIdentifierOk returns a tuple with the VisitedNetworkIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetVisitedNetworkIdentifierOk() (*string, bool) {
-	if o == nil || isNil(o.VisitedNetworkIdentifier) {
+	if o == nil || IsNil(o.VisitedNetworkIdentifier) {
 		return nil, false
 	}
 	return o.VisitedNetworkIdentifier, true
@@ -122,7 +122,7 @@ func (o *AuthorizationRequest) GetVisitedNetworkIdentifierOk() (*string, bool) {
 
 // HasVisitedNetworkIdentifier returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasVisitedNetworkIdentifier() bool {
-	if o != nil && !isNil(o.VisitedNetworkIdentifier) {
+	if o != nil && !IsNil(o.VisitedNetworkIdentifier) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AuthorizationRequest) SetVisitedNetworkIdentifier(v string) {
 
 // GetEmergencyIndicator returns the EmergencyIndicator field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetEmergencyIndicator() bool {
-	if o == nil || isNil(o.EmergencyIndicator) {
+	if o == nil || IsNil(o.EmergencyIndicator) {
 		var ret bool
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AuthorizationRequest) GetEmergencyIndicator() bool {
 // GetEmergencyIndicatorOk returns a tuple with the EmergencyIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetEmergencyIndicatorOk() (*bool, bool) {
-	if o == nil || isNil(o.EmergencyIndicator) {
+	if o == nil || IsNil(o.EmergencyIndicator) {
 		return nil, false
 	}
 	return o.EmergencyIndicator, true
@@ -154,7 +154,7 @@ func (o *AuthorizationRequest) GetEmergencyIndicatorOk() (*bool, bool) {
 
 // HasEmergencyIndicator returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasEmergencyIndicator() bool {
-	if o != nil && !isNil(o.EmergencyIndicator) {
+	if o != nil && !IsNil(o.EmergencyIndicator) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *AuthorizationRequest) SetEmergencyIndicator(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *AuthorizationRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -186,7 +186,7 @@ func (o *AuthorizationRequest) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *AuthorizationRequest) SetSupportedFeatures(v string) {
 }
 
 func (o AuthorizationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,17 +208,17 @@ func (o AuthorizationRequest) MarshalJSON() ([]byte, error) {
 
 func (o AuthorizationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Impi) {
+	if !IsNil(o.Impi) {
 		toSerialize["impi"] = o.Impi
 	}
 	toSerialize["authorizationType"] = o.AuthorizationType
-	if !isNil(o.VisitedNetworkIdentifier) {
+	if !IsNil(o.VisitedNetworkIdentifier) {
 		toSerialize["visitedNetworkIdentifier"] = o.VisitedNetworkIdentifier
 	}
-	if !isNil(o.EmergencyIndicator) {
+	if !IsNil(o.EmergencyIndicator) {
 		toSerialize["emergencyIndicator"] = o.EmergencyIndicator
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -259,5 +259,3 @@ func (v *NullableAuthorizationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

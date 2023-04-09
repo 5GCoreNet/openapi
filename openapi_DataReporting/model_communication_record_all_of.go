@@ -1,7 +1,7 @@
 /*
 3gpp-data-reporting
 
-API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for 3GPP Data Reporting.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.0
 */
@@ -70,7 +70,7 @@ func (o *CommunicationRecordAllOf) SetTimeInterval(v TimeWindow) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *CommunicationRecordAllOf) GetUplinkVolume() int64 {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *CommunicationRecordAllOf) GetUplinkVolume() int64 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationRecordAllOf) GetUplinkVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.UplinkVolume) {
+	if o == nil || IsNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -88,7 +88,7 @@ func (o *CommunicationRecordAllOf) GetUplinkVolumeOk() (*int64, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *CommunicationRecordAllOf) HasUplinkVolume() bool {
-	if o != nil && !isNil(o.UplinkVolume) {
+	if o != nil && !IsNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *CommunicationRecordAllOf) SetUplinkVolume(v int64) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *CommunicationRecordAllOf) GetDownlinkVolume() int64 {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *CommunicationRecordAllOf) GetDownlinkVolume() int64 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationRecordAllOf) GetDownlinkVolumeOk() (*int64, bool) {
-	if o == nil || isNil(o.DownlinkVolume) {
+	if o == nil || IsNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -120,7 +120,7 @@ func (o *CommunicationRecordAllOf) GetDownlinkVolumeOk() (*int64, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *CommunicationRecordAllOf) HasDownlinkVolume() bool {
-	if o != nil && !isNil(o.DownlinkVolume) {
+	if o != nil && !IsNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *CommunicationRecordAllOf) SetDownlinkVolume(v int64) {
 }
 
 func (o CommunicationRecordAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -143,10 +143,10 @@ func (o CommunicationRecordAllOf) MarshalJSON() ([]byte, error) {
 func (o CommunicationRecordAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["timeInterval"] = o.TimeInterval
-	if !isNil(o.UplinkVolume) {
+	if !IsNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !isNil(o.DownlinkVolume) {
+	if !IsNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
 	return toSerialize, nil
@@ -187,5 +187,3 @@ func (v *NullableCommunicationRecordAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

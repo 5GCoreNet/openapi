@@ -7945,7 +7945,16 @@ components:
       type: object
     SEALEvent:
       anyOf:
-      - $ref: '#/components/schemas/SEALEvent_anyOf'
+      - enum:
+        - LM_LOCATION_INFO_CHANGE
+        - GM_GROUP_INFO_CHANGE
+        - CM_USER_PROFILE_CHANGE
+        - GM_GROUP_CREATE
+        - NRM_MONITOR_UE_USER_EVENTS
+        - LM_LOCATION_DEVIATION_MONITOR
+        - GM_TEMP_GROUP_FORMATION
+        - LM_LOCATION_AREA_MONITOR
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -7961,7 +7970,11 @@ components:
         - LM_LOCATION_AREA_MONITOR: Events from Location Management server, related to the list of UEs moving in or moving out of the specific location.
     LocDevNotification:
       anyOf:
-      - $ref: '#/components/schemas/LocDevNotification_anyOf'
+      - enum:
+        - NOTIFY_MISMATCH_LOCATION
+        - NOTIFY_ABSENCE
+        - NOTIFY_PRESENCE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -7972,7 +7985,9 @@ components:
         - NOTIFY_PRESENCE: This value indicates that the current location information of the VAL UE(s) is within the VAL server's area of interest.
     MonLocTriggerEvent:
       anyOf:
-      - $ref: '#/components/schemas/MonLocTriggerEvent_anyOf'
+      - enum:
+        - DISTANCE_TRAVELLED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -8533,7 +8548,22 @@ components:
       type: object
     MonitoringType:
       anyOf:
-      - $ref: '#/components/schemas/MonitoringType_anyOf'
+      - enum:
+        - LOSS_OF_CONNECTIVITY
+        - UE_REACHABILITY
+        - LOCATION_REPORTING
+        - CHANGE_OF_IMSI_IMEI_ASSOCIATION
+        - ROAMING_STATUS
+        - COMMUNICATION_FAILURE
+        - AVAILABILITY_AFTER_DDN_FAILURE
+        - NUMBER_OF_UES_IN_AN_AREA
+        - PDN_CONNECTIVITY_STATUS
+        - DOWNLINK_DATA_DELIVERY_STATUS
+        - API_SUPPORT_CAPABILITY
+        - NUM_OF_REGD_UES
+        - NUM_OF_ESTD_PDU_SESSIONS
+        - AREA_OF_INTEREST
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -8541,7 +8571,17 @@ components:
         Possible values are - LOSS_OF_CONNECTIVITY: The SCS/AS requests to be notified when the 3GPP network detects that the UE is no longer reachable for signalling or user plane communication - UE_REACHABILITY: The SCS/AS requests to be notified when the UE becomes reachable for sending either SMS or downlink data to the UE - LOCATION_REPORTING: The SCS/AS requests to be notified of the current location or the last known location of the UE - CHANGE_OF_IMSI_IMEI_ASSOCIATION: The SCS/AS requests to be notified when the association of an ME (IMEI(SV)) that uses a specific subscription (IMSI) is changed - ROAMING_STATUS: The SCS/AS queries the UE's current roaming status and requests to get notified when the status changes - COMMUNICATION_FAILURE: The SCS/AS requests to be notified of communication failure events - AVAILABILITY_AFTER_DDN_FAILURE: The SCS/AS requests to be notified when the UE has become available after a DDN failure - NUMBER_OF_UES_IN_AN_AREA: The SCS/AS requests to be notified the number of UEs in a given geographic area - PDN_CONNECTIVITY_STATUS: The SCS/AS requests to be notified when the 3GPP network detects that the UE’s PDN connection is set up or torn down - DOWNLINK_DATA_DELIVERY_STATUS: The AF requests to be notified when the 3GPP network detects that the downlink data delivery status is changed. - API_SUPPORT_CAPABILITY: The SCS/AS requests to be notified of the availability of support of service APIs. - NUM_OF_REGD_UES: The AF requests to be notified of the current number of registered UEs for a network slice. - NUM_OF_ESTD_PDU_SESSIONS: The AF requests to be notified of the current number of established PDU Sessions for a network slice. - AREA_OF_INTEREST: The SCS/AS requests to be notified when the UAV moves in or out of the geographic area.
     AnalyticsEvent:
       anyOf:
-      - $ref: '#/components/schemas/AnalyticsEvent_anyOf'
+      - enum:
+        - UE_MOBILITY
+        - UE_COMM
+        - ABNORMAL_BEHAVIOR
+        - CONGESTION
+        - NETWORK_PERFORMANCE
+        - QOS_SUSTAINABILITY
+        - DISPERSION
+        - DN_PERFORMANCE
+        - SERVICE_EXPERIENCE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -8771,9 +8811,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -8957,7 +9008,11 @@ components:
       type: number
     NotificationMethod:
       anyOf:
-      - $ref: '#/components/schemas/NotificationMethod_anyOf'
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -8974,7 +9029,13 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -8987,7 +9048,11 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - $ref: '#/components/schemas/NotificationFlag_anyOf'
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -9005,7 +9070,13 @@ components:
       type: string
     PduSessionType:
       anyOf:
-      - $ref: '#/components/schemas/PduSessionType_anyOf'
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -9123,12 +9194,31 @@ components:
       type: object
     PositioningMethod:
       anyOf:
-      - $ref: '#/components/schemas/PositioningMethod_anyOf'
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
       - type: string
       description: Indicates supported positioning methods.
     AccuracyFulfilmentIndicator:
       anyOf:
-      - $ref: '#/components/schemas/AccuracyFulfilmentIndicator_anyOf'
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
       - type: string
       description: Indicates fulfilment of requested accuracy.
     VelocityEstimate:
@@ -9277,7 +9367,14 @@ components:
       type: object
     LdrType:
       anyOf:
-      - $ref: '#/components/schemas/LdrType_anyOf'
+      - enum:
+        - UE_AVAILABLE
+        - PERIODIC
+        - ENTERING_INTO_AREA
+        - LEAVING_FROM_AREA
+        - BEING_INSIDE_AREA
+        - MOTION
+        type: string
       - type: string
       description: Indicates LDR types.
     MinorLocationQoS:
@@ -9728,61 +9825,6 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
-    SEALEvent_anyOf:
-      enum:
-      - LM_LOCATION_INFO_CHANGE
-      - GM_GROUP_INFO_CHANGE
-      - CM_USER_PROFILE_CHANGE
-      - GM_GROUP_CREATE
-      - NRM_MONITOR_UE_USER_EVENTS
-      - LM_LOCATION_DEVIATION_MONITOR
-      - GM_TEMP_GROUP_FORMATION
-      - LM_LOCATION_AREA_MONITOR
-      type: string
-      example: null
-    LocDevNotification_anyOf:
-      enum:
-      - NOTIFY_MISMATCH_LOCATION
-      - NOTIFY_ABSENCE
-      - NOTIFY_PRESENCE
-      type: string
-      example: null
-    MonLocTriggerEvent_anyOf:
-      enum:
-      - DISTANCE_TRAVELLED
-      type: string
-      example: null
-    MonitoringType_anyOf:
-      enum:
-      - LOSS_OF_CONNECTIVITY
-      - UE_REACHABILITY
-      - LOCATION_REPORTING
-      - CHANGE_OF_IMSI_IMEI_ASSOCIATION
-      - ROAMING_STATUS
-      - COMMUNICATION_FAILURE
-      - AVAILABILITY_AFTER_DDN_FAILURE
-      - NUMBER_OF_UES_IN_AN_AREA
-      - PDN_CONNECTIVITY_STATUS
-      - DOWNLINK_DATA_DELIVERY_STATUS
-      - API_SUPPORT_CAPABILITY
-      - NUM_OF_REGD_UES
-      - NUM_OF_ESTD_PDU_SESSIONS
-      - AREA_OF_INTEREST
-      type: string
-      example: null
-    AnalyticsEvent_anyOf:
-      enum:
-      - UE_MOBILITY
-      - UE_COMM
-      - ABNORMAL_BEHAVIOR
-      - CONGESTION
-      - NETWORK_PERFORMANCE
-      - QOS_SUSTAINABILITY
-      - DISPERSION
-      - DN_PERFORMANCE
-      - SERVICE_EXPERIENCE
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -9790,19 +9832,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -9971,73 +10000,6 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
-      example: null
-    NotificationMethod_anyOf:
-      enum:
-      - PERIODIC
-      - ONE_TIME
-      - ON_EVENT_DETECTION
-      type: string
-      example: null
-    PartitioningCriteria_anyOf:
-      enum:
-      - TAC
-      - SUBPLMN
-      - GEOAREA
-      - SNSSAI
-      - DNN
-      type: string
-      example: null
-    NotificationFlag_anyOf:
-      enum:
-      - ACTIVATE
-      - DEACTIVATE
-      - RETRIEVAL
-      type: string
-      example: null
-    PduSessionType_anyOf:
-      enum:
-      - IPV4
-      - IPV6
-      - IPV4V6
-      - UNSTRUCTURED
-      - ETHERNET
-      type: string
-      example: null
-    PositioningMethod_anyOf:
-      enum:
-      - CELLID
-      - ECID
-      - OTDOA
-      - BAROMETRIC_PRESSURE
-      - WLAN
-      - BLUETOOTH
-      - MBS
-      - MOTION_SENSOR
-      - DL_TDOA
-      - DL_AOD
-      - MULTI-RTT
-      - NR_ECID
-      - UL_TDOA
-      - UL_AOA
-      - NETWORK_SPECIFIC
-      type: string
-      example: null
-    AccuracyFulfilmentIndicator_anyOf:
-      enum:
-      - REQUESTED_ACCURACY_FULFILLED
-      - REQUESTED_ACCURACY_NOT_FULFILLED
-      type: string
-      example: null
-    LdrType_anyOf:
-      enum:
-      - UE_AVAILABLE
-      - PERIODIC
-      - ENTERING_INTO_AREA
-      - LEAVING_FROM_AREA
-      - BEING_INSIDE_AREA
-      - MOTION
-      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

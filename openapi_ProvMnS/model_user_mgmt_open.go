@@ -20,7 +20,7 @@ var _ MappedNullable = &UserMgmtOpen{}
 // UserMgmtOpen struct for UserMgmtOpen
 type UserMgmtOpen struct {
 	ServAttrCom *ServAttrCom `json:"servAttrCom,omitempty"`
-	Support *Support `json:"support,omitempty"`
+	Support     *Support     `json:"support,omitempty"`
 }
 
 // NewUserMgmtOpen instantiates a new UserMgmtOpen object
@@ -42,7 +42,7 @@ func NewUserMgmtOpenWithDefaults() *UserMgmtOpen {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *UserMgmtOpen) GetServAttrCom() ServAttrCom {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UserMgmtOpen) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserMgmtOpen) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || isNil(o.ServAttrCom) {
+	if o == nil || IsNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *UserMgmtOpen) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *UserMgmtOpen) HasServAttrCom() bool {
-	if o != nil && !isNil(o.ServAttrCom) {
+	if o != nil && !IsNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UserMgmtOpen) SetServAttrCom(v ServAttrCom) {
 
 // GetSupport returns the Support field value if set, zero value otherwise.
 func (o *UserMgmtOpen) GetSupport() Support {
-	if o == nil || isNil(o.Support) {
+	if o == nil || IsNil(o.Support) {
 		var ret Support
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UserMgmtOpen) GetSupport() Support {
 // GetSupportOk returns a tuple with the Support field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserMgmtOpen) GetSupportOk() (*Support, bool) {
-	if o == nil || isNil(o.Support) {
+	if o == nil || IsNil(o.Support) {
 		return nil, false
 	}
 	return o.Support, true
@@ -92,7 +92,7 @@ func (o *UserMgmtOpen) GetSupportOk() (*Support, bool) {
 
 // HasSupport returns a boolean if a field has been set.
 func (o *UserMgmtOpen) HasSupport() bool {
-	if o != nil && !isNil(o.Support) {
+	if o != nil && !IsNil(o.Support) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UserMgmtOpen) SetSupport(v Support) {
 }
 
 func (o UserMgmtOpen) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o UserMgmtOpen) MarshalJSON() ([]byte, error) {
 
 func (o UserMgmtOpen) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ServAttrCom) {
+	if !IsNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !isNil(o.Support) {
+	if !IsNil(o.Support) {
 		toSerialize["support"] = o.Support
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableUserMgmtOpen) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

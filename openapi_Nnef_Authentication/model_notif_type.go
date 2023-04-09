@@ -1,7 +1,7 @@
 /*
 Nnef_Authentication
 
-NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Auth Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.0.2
 */
@@ -17,28 +17,14 @@ import (
 
 // NotifType Enumeration representing the type of notification.
 type NotifType struct {
-	NotifTypeAnyOf *NotifTypeAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotifType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into NotifTypeAnyOf
-	err = json.Unmarshal(data, &dst.NotifTypeAnyOf);
-	if err == nil {
-		jsonNotifTypeAnyOf, _ := json.Marshal(dst.NotifTypeAnyOf)
-		if string(jsonNotifTypeAnyOf) == "{}" { // empty struct
-			dst.NotifTypeAnyOf = nil
-		} else {
-			return nil // data stored in dst.NotifTypeAnyOf, return on the first match
-		}
-	} else {
-		dst.NotifTypeAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *NotifType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotifType) MarshalJSON() ([]byte, error) {
-	if src.NotifTypeAnyOf != nil {
-		return json.Marshal(&src.NotifTypeAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableNotifType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

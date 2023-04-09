@@ -21,8 +21,8 @@ type FileDataType string
 // List of FileDataType
 const (
 	PERFORMANCE FileDataType = "Performance"
-	TRACE FileDataType = "Trace"
-	ANATYTICS FileDataType = "Anatytics"
+	TRACE       FileDataType = "Trace"
+	ANATYTICS   FileDataType = "Anatytics"
 	PROPRIETARY FileDataType = "Proprietary"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableFileDataType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -1,7 +1,7 @@
 /*
 Nmbsmf-MBSSession
 
-MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+MB-SMF MBSSession Service. © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 1.1.1
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &MulticastTransportAddressChangeInfo{}
 // MulticastTransportAddressChangeInfo Multicast Transport Address Change Information
 type MulticastTransportAddressChangeInfo struct {
 	LlSsm Ssm `json:"llSsm"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	CTeid int32 `json:"cTeid"`
 	// Integer where the allowed values correspond to the value range of an unsigned 16-bit integer.
 	AreaSessionId *int32 `json:"areaSessionId,omitempty"`
@@ -95,7 +95,7 @@ func (o *MulticastTransportAddressChangeInfo) SetCTeid(v int32) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *MulticastTransportAddressChangeInfo) GetAreaSessionId() int32 {
-	if o == nil || isNil(o.AreaSessionId) {
+	if o == nil || IsNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *MulticastTransportAddressChangeInfo) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastTransportAddressChangeInfo) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AreaSessionId) {
+	if o == nil || IsNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -113,7 +113,7 @@ func (o *MulticastTransportAddressChangeInfo) GetAreaSessionIdOk() (*int32, bool
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *MulticastTransportAddressChangeInfo) HasAreaSessionId() bool {
-	if o != nil && !isNil(o.AreaSessionId) {
+	if o != nil && !IsNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *MulticastTransportAddressChangeInfo) SetAreaSessionId(v int32) {
 }
 
 func (o MulticastTransportAddressChangeInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,7 +137,7 @@ func (o MulticastTransportAddressChangeInfo) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	toSerialize["llSsm"] = o.LlSsm
 	toSerialize["cTeid"] = o.CTeid
-	if !isNil(o.AreaSessionId) {
+	if !IsNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
 	return toSerialize, nil
@@ -178,5 +178,3 @@ func (v *NullableMulticastTransportAddressChangeInfo) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

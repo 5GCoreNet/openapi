@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -21,15 +21,15 @@ var _ MappedNullable = &UsageMonDataLimit{}
 // UsageMonDataLimit Contains usage monitoring control data for a subscriber.
 type UsageMonDataLimit struct {
 	LimitId string `json:"limitId"`
-	// Identifies the SNSSAI and DNN combinations to which the usage monitoring data limit applies. The S-NSSAI is the key of the map. 
-	Scopes *map[string]UsageMonDataScope `json:"scopes,omitempty"`
-	UmLevel *UsageMonLevel `json:"umLevel,omitempty"`
+	// Identifies the SNSSAI and DNN combinations to which the usage monitoring data limit applies. The S-NSSAI is the key of the map.
+	Scopes  *map[string]UsageMonDataScope `json:"scopes,omitempty"`
+	UmLevel *UsageMonLevel                `json:"umLevel,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	StartDate *time.Time `json:"startDate,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
-	EndDate *time.Time `json:"endDate,omitempty"`
-	UsageLimit *UsageThreshold `json:"usageLimit,omitempty"`
-	ResetPeriod *TimePeriod `json:"resetPeriod,omitempty"`
+	EndDate     *time.Time      `json:"endDate,omitempty"`
+	UsageLimit  *UsageThreshold `json:"usageLimit,omitempty"`
+	ResetPeriod *TimePeriod     `json:"resetPeriod,omitempty"`
 }
 
 // NewUsageMonDataLimit instantiates a new UsageMonDataLimit object
@@ -76,7 +76,7 @@ func (o *UsageMonDataLimit) SetLimitId(v string) {
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
 func (o *UsageMonDataLimit) GetScopes() map[string]UsageMonDataScope {
-	if o == nil || isNil(o.Scopes) {
+	if o == nil || IsNil(o.Scopes) {
 		var ret map[string]UsageMonDataScope
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UsageMonDataLimit) GetScopes() map[string]UsageMonDataScope {
 // GetScopesOk returns a tuple with the Scopes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataLimit) GetScopesOk() (*map[string]UsageMonDataScope, bool) {
-	if o == nil || isNil(o.Scopes) {
+	if o == nil || IsNil(o.Scopes) {
 		return nil, false
 	}
 	return o.Scopes, true
@@ -94,7 +94,7 @@ func (o *UsageMonDataLimit) GetScopesOk() (*map[string]UsageMonDataScope, bool) 
 
 // HasScopes returns a boolean if a field has been set.
 func (o *UsageMonDataLimit) HasScopes() bool {
-	if o != nil && !isNil(o.Scopes) {
+	if o != nil && !IsNil(o.Scopes) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *UsageMonDataLimit) SetScopes(v map[string]UsageMonDataScope) {
 
 // GetUmLevel returns the UmLevel field value if set, zero value otherwise.
 func (o *UsageMonDataLimit) GetUmLevel() UsageMonLevel {
-	if o == nil || isNil(o.UmLevel) {
+	if o == nil || IsNil(o.UmLevel) {
 		var ret UsageMonLevel
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UsageMonDataLimit) GetUmLevel() UsageMonLevel {
 // GetUmLevelOk returns a tuple with the UmLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataLimit) GetUmLevelOk() (*UsageMonLevel, bool) {
-	if o == nil || isNil(o.UmLevel) {
+	if o == nil || IsNil(o.UmLevel) {
 		return nil, false
 	}
 	return o.UmLevel, true
@@ -126,7 +126,7 @@ func (o *UsageMonDataLimit) GetUmLevelOk() (*UsageMonLevel, bool) {
 
 // HasUmLevel returns a boolean if a field has been set.
 func (o *UsageMonDataLimit) HasUmLevel() bool {
-	if o != nil && !isNil(o.UmLevel) {
+	if o != nil && !IsNil(o.UmLevel) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UsageMonDataLimit) SetUmLevel(v UsageMonLevel) {
 
 // GetStartDate returns the StartDate field value if set, zero value otherwise.
 func (o *UsageMonDataLimit) GetStartDate() time.Time {
-	if o == nil || isNil(o.StartDate) {
+	if o == nil || IsNil(o.StartDate) {
 		var ret time.Time
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *UsageMonDataLimit) GetStartDate() time.Time {
 // GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataLimit) GetStartDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartDate) {
+	if o == nil || IsNil(o.StartDate) {
 		return nil, false
 	}
 	return o.StartDate, true
@@ -158,7 +158,7 @@ func (o *UsageMonDataLimit) GetStartDateOk() (*time.Time, bool) {
 
 // HasStartDate returns a boolean if a field has been set.
 func (o *UsageMonDataLimit) HasStartDate() bool {
-	if o != nil && !isNil(o.StartDate) {
+	if o != nil && !IsNil(o.StartDate) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *UsageMonDataLimit) SetStartDate(v time.Time) {
 
 // GetEndDate returns the EndDate field value if set, zero value otherwise.
 func (o *UsageMonDataLimit) GetEndDate() time.Time {
-	if o == nil || isNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate) {
 		var ret time.Time
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *UsageMonDataLimit) GetEndDate() time.Time {
 // GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataLimit) GetEndDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.EndDate) {
+	if o == nil || IsNil(o.EndDate) {
 		return nil, false
 	}
 	return o.EndDate, true
@@ -190,7 +190,7 @@ func (o *UsageMonDataLimit) GetEndDateOk() (*time.Time, bool) {
 
 // HasEndDate returns a boolean if a field has been set.
 func (o *UsageMonDataLimit) HasEndDate() bool {
-	if o != nil && !isNil(o.EndDate) {
+	if o != nil && !IsNil(o.EndDate) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *UsageMonDataLimit) SetEndDate(v time.Time) {
 
 // GetUsageLimit returns the UsageLimit field value if set, zero value otherwise.
 func (o *UsageMonDataLimit) GetUsageLimit() UsageThreshold {
-	if o == nil || isNil(o.UsageLimit) {
+	if o == nil || IsNil(o.UsageLimit) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *UsageMonDataLimit) GetUsageLimit() UsageThreshold {
 // GetUsageLimitOk returns a tuple with the UsageLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataLimit) GetUsageLimitOk() (*UsageThreshold, bool) {
-	if o == nil || isNil(o.UsageLimit) {
+	if o == nil || IsNil(o.UsageLimit) {
 		return nil, false
 	}
 	return o.UsageLimit, true
@@ -222,7 +222,7 @@ func (o *UsageMonDataLimit) GetUsageLimitOk() (*UsageThreshold, bool) {
 
 // HasUsageLimit returns a boolean if a field has been set.
 func (o *UsageMonDataLimit) HasUsageLimit() bool {
-	if o != nil && !isNil(o.UsageLimit) {
+	if o != nil && !IsNil(o.UsageLimit) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *UsageMonDataLimit) SetUsageLimit(v UsageThreshold) {
 
 // GetResetPeriod returns the ResetPeriod field value if set, zero value otherwise.
 func (o *UsageMonDataLimit) GetResetPeriod() TimePeriod {
-	if o == nil || isNil(o.ResetPeriod) {
+	if o == nil || IsNil(o.ResetPeriod) {
 		var ret TimePeriod
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *UsageMonDataLimit) GetResetPeriod() TimePeriod {
 // GetResetPeriodOk returns a tuple with the ResetPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonDataLimit) GetResetPeriodOk() (*TimePeriod, bool) {
-	if o == nil || isNil(o.ResetPeriod) {
+	if o == nil || IsNil(o.ResetPeriod) {
 		return nil, false
 	}
 	return o.ResetPeriod, true
@@ -254,7 +254,7 @@ func (o *UsageMonDataLimit) GetResetPeriodOk() (*TimePeriod, bool) {
 
 // HasResetPeriod returns a boolean if a field has been set.
 func (o *UsageMonDataLimit) HasResetPeriod() bool {
-	if o != nil && !isNil(o.ResetPeriod) {
+	if o != nil && !IsNil(o.ResetPeriod) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *UsageMonDataLimit) SetResetPeriod(v TimePeriod) {
 }
 
 func (o UsageMonDataLimit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -277,22 +277,22 @@ func (o UsageMonDataLimit) MarshalJSON() ([]byte, error) {
 func (o UsageMonDataLimit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["limitId"] = o.LimitId
-	if !isNil(o.Scopes) {
+	if !IsNil(o.Scopes) {
 		toSerialize["scopes"] = o.Scopes
 	}
-	if !isNil(o.UmLevel) {
+	if !IsNil(o.UmLevel) {
 		toSerialize["umLevel"] = o.UmLevel
 	}
-	if !isNil(o.StartDate) {
+	if !IsNil(o.StartDate) {
 		toSerialize["startDate"] = o.StartDate
 	}
-	if !isNil(o.EndDate) {
+	if !IsNil(o.EndDate) {
 		toSerialize["endDate"] = o.EndDate
 	}
-	if !isNil(o.UsageLimit) {
+	if !IsNil(o.UsageLimit) {
 		toSerialize["usageLimit"] = o.UsageLimit
 	}
-	if !isNil(o.ResetPeriod) {
+	if !IsNil(o.ResetPeriod) {
 		toSerialize["resetPeriod"] = o.ResetPeriod
 	}
 	return toSerialize, nil
@@ -333,5 +333,3 @@ func (v *NullableUsageMonDataLimit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

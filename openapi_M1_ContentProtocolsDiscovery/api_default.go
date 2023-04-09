@@ -1,7 +1,7 @@
 /*
 M1_ContentProtocolsDiscovery
 
-5GMS AF M1 Content Protocols Discovery API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Content Protocols Discovery API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -13,19 +13,18 @@ package openapi_M1_ContentProtocolsDiscovery
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiRetrieveContentProtocolsRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
+	ctx                   context.Context
+	ApiService            *DefaultApiService
 	provisioningSessionId string
 }
 
@@ -36,26 +35,27 @@ func (r ApiRetrieveContentProtocolsRequest) Execute() (*ContentProtocols, *http.
 /*
 RetrieveContentProtocols Retrieve the set of Content Protocols supported by the specified Provisioning Session
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param provisioningSessionId The resource identifier of an existing Provisioning Session.
- @return ApiRetrieveContentProtocolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param provisioningSessionId The resource identifier of an existing Provisioning Session.
+	@return ApiRetrieveContentProtocolsRequest
 */
 func (a *DefaultApiService) RetrieveContentProtocols(ctx context.Context, provisioningSessionId string) ApiRetrieveContentProtocolsRequest {
 	return ApiRetrieveContentProtocolsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		provisioningSessionId: provisioningSessionId,
 	}
 }
 
 // Execute executes the request
-//  @return ContentProtocols
+//
+//	@return ContentProtocols
 func (a *DefaultApiService) RetrieveContentProtocolsExecute(r ApiRetrieveContentProtocolsRequest) (*ContentProtocols, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContentProtocols
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContentProtocols
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.RetrieveContentProtocols")
@@ -97,9 +97,9 @@ func (a *DefaultApiService) RetrieveContentProtocolsExecute(r ApiRetrieveContent
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -1,7 +1,7 @@
 /*
 Nmfaf_3daDataManagement
 
-MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the MfafNotiInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MfafNotiInfo{}
 
-// MfafNotiInfo The MFAF notification information. It shall be provided in a response message if it had not been provided in the respective request message. 
+// MfafNotiInfo The MFAF notification information. It shall be provided in a response message if it had not been provided in the respective request message.
 type MfafNotiInfo struct {
 	// String providing an URI formatted according to RFC 3986.
 	MfafNotifUri string `json:"mfafNotifUri"`
-	MfafCorreId string `json:"mfafCorreId"`
+	MfafCorreId  string `json:"mfafCorreId"`
 }
 
 // NewMfafNotiInfo instantiates a new MfafNotiInfo object
@@ -92,7 +92,7 @@ func (o *MfafNotiInfo) SetMfafCorreId(v string) {
 }
 
 func (o MfafNotiInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableMfafNotiInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

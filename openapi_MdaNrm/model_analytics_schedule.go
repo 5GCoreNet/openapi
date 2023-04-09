@@ -17,7 +17,7 @@ import (
 
 // AnalyticsSchedule - struct for AnalyticsSchedule
 type AnalyticsSchedule struct {
-	AnalyticsScheduleOneOf *AnalyticsScheduleOneOf
+	AnalyticsScheduleOneOf  *AnalyticsScheduleOneOf
 	AnalyticsScheduleOneOf1 *AnalyticsScheduleOneOf1
 }
 
@@ -34,7 +34,6 @@ func AnalyticsScheduleOneOf1AsAnalyticsSchedule(v *AnalyticsScheduleOneOf1) Anal
 		AnalyticsScheduleOneOf1: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AnalyticsSchedule) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AnalyticsSchedule) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AnalyticsSchedule) GetActualInstance() (interface{}) {
+func (obj *AnalyticsSchedule) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAnalyticsSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

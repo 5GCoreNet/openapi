@@ -20,11 +20,11 @@ type TraceDepthType string
 
 // List of traceDepth-Type
 const (
-	MINIMUM TraceDepthType = "MINIMUM"
-	MEDIUM TraceDepthType = "MEDIUM"
-	MAXIMUM TraceDepthType = "MAXIMUM"
+	MINIMUM       TraceDepthType = "MINIMUM"
+	MEDIUM        TraceDepthType = "MEDIUM"
+	MAXIMUM       TraceDepthType = "MAXIMUM"
 	VENDORMINIMUM TraceDepthType = "VENDORMINIMUM"
-	VENDORMEDIUM TraceDepthType = "VENDORMEDIUM"
+	VENDORMEDIUM  TraceDepthType = "VENDORMEDIUM"
 	VENDORMAXIMUM TraceDepthType = "VENDORMAXIMUM"
 )
 
@@ -116,4 +116,3 @@ func (v *NullableTraceDepthType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

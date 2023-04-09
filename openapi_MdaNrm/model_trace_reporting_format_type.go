@@ -21,7 +21,7 @@ type TraceReportingFormatType string
 // List of traceReportingFormat-Type
 const (
 	FILE_BASED TraceReportingFormatType = "FILE-BASED"
-	STREAMING TraceReportingFormatType = "STREAMING"
+	STREAMING  TraceReportingFormatType = "STREAMING"
 )
 
 // All allowed values of TraceReportingFormatType enum
@@ -108,4 +108,3 @@ func (v *NullableTraceReportingFormatType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

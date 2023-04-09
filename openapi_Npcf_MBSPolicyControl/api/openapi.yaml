@@ -1033,7 +1033,9 @@ components:
       type: integer
     MbsPcrt:
       anyOf:
-      - $ref: '#/components/schemas/MbsPcrt_anyOf'
+      - enum:
+        - MBS_SESSION_UPDATE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1042,7 +1044,10 @@ components:
         - MBS_SESSION_UPDATE: Indicates the MBS Session Update policy control request trigger.
     MbsPccRuleStatus:
       anyOf:
-      - $ref: '#/components/schemas/MbsPccRuleStatus_anyOf'
+      - enum:
+        - ACTIVE
+        - INACTIVE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1052,7 +1057,15 @@ components:
         - INACTIVE: Indicates that the MBS PCC rule(s) are removed.
     MbsFailureCode:
       anyOf:
-      - $ref: '#/components/schemas/MbsFailureCode_anyOf'
+      - enum:
+        - NF_MALFUNCTION
+        - NF_RESOURCES_UNAVAILABLE
+        - RESOURCE_ALLOCATION_FAILURE
+        - MBS_QOS_VALIDATION_FAILURE
+        - NO_MBS_QOS_FLOW
+        - MBS_QOS_DECISION_ERROR
+        - MBS_POLICY_PARAM_ERROR
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1129,6 +1142,7 @@ components:
           minItems: 1
           type: array
       type: object
+      x-parent: true
     InvalidParam:
       description: It contains an invalid parameter and a related description.
       properties:
@@ -1181,6 +1195,7 @@ components:
           pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
           type: string
       type: object
+      x-parent: true
     MbsSessionId:
       anyOf:
       - required:
@@ -1531,13 +1546,19 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
+      - enum:
+        - NOT_PREEMPT
+        - MAY_PREEMPT
+        type: string
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
+      - enum:
+        - NOT_PREEMPTABLE
+        - PREEMPTABLE
+        type: string
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -1563,7 +1584,11 @@ components:
       type: integer
     QosResourceType:
       anyOf:
-      - $ref: '#/components/schemas/QosResourceType_anyOf'
+      - enum:
+        - NON_GBR
+        - NON_CRITICAL_GBR
+        - CRITICAL_GBR
+        type: string
       - type: string
       description: "The enumeration QosResourceType indicates whether a QoS Flow is\
         \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
@@ -1707,7 +1732,24 @@ components:
       type: object
     ReservPriority:
       anyOf:
-      - $ref: '#/components/schemas/ReservPriority_anyOf'
+      - enum:
+        - PRIO_1
+        - PRIO_2
+        - PRIO_3
+        - PRIO_4
+        - PRIO_5
+        - PRIO_6
+        - PRIO_7
+        - PRIO_8
+        - PRIO_9
+        - PRIO_10
+        - PRIO_11
+        - PRIO_12
+        - PRIO_13
+        - PRIO_14
+        - PRIO_15
+        - PRIO_16
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1720,7 +1762,16 @@ components:
       type: string
     MediaType:
       anyOf:
-      - $ref: '#/components/schemas/MediaType_anyOf'
+      - enum:
+        - AUDIO
+        - VIDEO
+        - DATA
+        - APPLICATION
+        - CONTROL
+        - TEXT
+        - MESSAGE
+        - OTHER
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1736,7 +1787,64 @@ components:
       type: string
     NFType:
       anyOf:
-      - $ref: '#/components/schemas/NFType_anyOf'
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
       - type: string
       description: NF types known to NRF
     PlmnIdNid:
@@ -1792,139 +1900,6 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
-    MbsPcrt_anyOf:
-      enum:
-      - MBS_SESSION_UPDATE
-      type: string
-      example: null
-    MbsPccRuleStatus_anyOf:
-      enum:
-      - ACTIVE
-      - INACTIVE
-      type: string
-      example: null
-    MbsFailureCode_anyOf:
-      enum:
-      - NF_MALFUNCTION
-      - NF_RESOURCES_UNAVAILABLE
-      - RESOURCE_ALLOCATION_FAILURE
-      - MBS_QOS_VALIDATION_FAILURE
-      - NO_MBS_QOS_FLOW
-      - MBS_QOS_DECISION_ERROR
-      - MBS_POLICY_PARAM_ERROR
-      type: string
-      example: null
-    PreemptionCapability_anyOf:
-      enum:
-      - NOT_PREEMPT
-      - MAY_PREEMPT
-      type: string
-      example: null
-    PreemptionVulnerability_anyOf:
-      enum:
-      - NOT_PREEMPTABLE
-      - PREEMPTABLE
-      type: string
-      example: null
-    QosResourceType_anyOf:
-      enum:
-      - NON_GBR
-      - NON_CRITICAL_GBR
-      - CRITICAL_GBR
-      type: string
-      example: null
-    ReservPriority_anyOf:
-      enum:
-      - PRIO_1
-      - PRIO_2
-      - PRIO_3
-      - PRIO_4
-      - PRIO_5
-      - PRIO_6
-      - PRIO_7
-      - PRIO_8
-      - PRIO_9
-      - PRIO_10
-      - PRIO_11
-      - PRIO_12
-      - PRIO_13
-      - PRIO_14
-      - PRIO_15
-      - PRIO_16
-      type: string
-      example: null
-    MediaType_anyOf:
-      enum:
-      - AUDIO
-      - VIDEO
-      - DATA
-      - APPLICATION
-      - CONTROL
-      - TEXT
-      - MESSAGE
-      - OTHER
-      type: string
-      example: null
-    NFType_anyOf:
-      enum:
-      - NRF
-      - UDM
-      - AMF
-      - SMF
-      - AUSF
-      - NEF
-      - PCF
-      - SMSF
-      - NSSF
-      - UDR
-      - LMF
-      - GMLC
-      - 5G_EIR
-      - SEPP
-      - UPF
-      - N3IWF
-      - AF
-      - UDSF
-      - BSF
-      - CHF
-      - NWDAF
-      - PCSCF
-      - CBCF
-      - HSS
-      - UCMF
-      - SOR_AF
-      - SPAF
-      - MME
-      - SCSAS
-      - SCEF
-      - SCP
-      - NSSAAF
-      - ICSCF
-      - SCSCF
-      - DRA
-      - IMS_AS
-      - AANF
-      - 5G_DDNMF
-      - NSACF
-      - MFAF
-      - EASDF
-      - DCCF
-      - MB_SMF
-      - TSCTSF
-      - ADRF
-      - GBA_BSF
-      - CEF
-      - MB_UPF
-      - NSWOF
-      - PKMF
-      - MNPF
-      - SMS_GMSC
-      - SMS_IWMSC
-      - MBSF
-      - MBSTF
-      - PANF
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

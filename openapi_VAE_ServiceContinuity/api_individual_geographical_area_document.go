@@ -1,7 +1,7 @@
 /*
 VAE_Service Continuity
 
-API for VAE Service Continuity Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE Service Continuity Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -13,22 +13,21 @@ package openapi_VAE_ServiceContinuity
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // IndividualGeographicalAreaDocumentApiService IndividualGeographicalAreaDocumentApi service
 type IndividualGeographicalAreaDocumentApiService service
 
 type ApiQueryServiceContinuityRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IndividualGeographicalAreaDocumentApiService
-	geoId string
-	serviceId *string
-	suppFeat *string
+	geoId      string
+	serviceId  *string
+	suppFeat   *string
 }
 
 // Identifier of a V2X service
@@ -50,26 +49,27 @@ func (r ApiQueryServiceContinuityRequest) Execute() (*V2xServiceInfo, *http.Resp
 /*
 QueryServiceContinuity VAE service continuity query service operation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param geoId Identifier of a geographical area
- @return ApiQueryServiceContinuityRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param geoId Identifier of a geographical area
+	@return ApiQueryServiceContinuityRequest
 */
 func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuity(ctx context.Context, geoId string) ApiQueryServiceContinuityRequest {
 	return ApiQueryServiceContinuityRequest{
 		ApiService: a,
-		ctx: ctx,
-		geoId: geoId,
+		ctx:        ctx,
+		geoId:      geoId,
 	}
 }
 
 // Execute executes the request
-//  @return V2xServiceInfo
+//
+//	@return V2xServiceInfo
 func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExecute(r ApiQueryServiceContinuityRequest) (*V2xServiceInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *V2xServiceInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *V2xServiceInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndividualGeographicalAreaDocumentApiService.QueryServiceContinuity")
@@ -87,9 +87,9 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 		return localVarReturnValue, nil, reportError("serviceId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "service-id", r.serviceId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "service-id", r.serviceId, "")
 	if r.suppFeat != nil {
-		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -118,9 +118,9 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -137,8 +137,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -148,8 +148,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -159,8 +159,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -170,8 +170,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -181,8 +181,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -192,8 +192,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -203,8 +203,8 @@ func (a *IndividualGeographicalAreaDocumentApiService) QueryServiceContinuityExe
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

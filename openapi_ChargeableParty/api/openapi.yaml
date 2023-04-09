@@ -1089,7 +1089,15 @@ components:
       type: object
     Event:
       anyOf:
-      - $ref: '#/components/schemas/Event_anyOf'
+      - enum:
+        - SESSION_TERMINATION
+        - LOSS_OF_BEARER
+        - RECOVERY_OF_BEARER
+        - RELEASE_OF_BEARER
+        - USAGE_REPORT
+        - FAILED_RESOURCES_ALLOCATION
+        - SUCCESSFUL_RESOURCES_ALLOCATION
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1293,7 +1301,12 @@ components:
       type: string
     ServAuthInfo:
       anyOf:
-      - $ref: '#/components/schemas/ServAuthInfo_anyOf'
+      - enum:
+        - TP_NOT_KNOWN
+        - TP_EXPIRED
+        - TP_NOT_YET_OCURRED
+        - ROUT_REQ_NOT_AUTHORIZED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1375,7 +1388,12 @@ components:
       type: integer
     FlowDirection:
       anyOf:
-      - $ref: '#/components/schemas/FlowDirection_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1389,33 +1407,6 @@ components:
         \ in filters created by the network in NW-initiated procedures. The PCF shall\
         \ only \ninclude the value UNSPECIFIED in filters in UE-initiated procedures\
         \ if the same value is \nreceived from the SMF.\n"
-    Event_anyOf:
-      enum:
-      - SESSION_TERMINATION
-      - LOSS_OF_BEARER
-      - RECOVERY_OF_BEARER
-      - RELEASE_OF_BEARER
-      - USAGE_REPORT
-      - FAILED_RESOURCES_ALLOCATION
-      - SUCCESSFUL_RESOURCES_ALLOCATION
-      type: string
-      example: null
-    ServAuthInfo_anyOf:
-      enum:
-      - TP_NOT_KNOWN
-      - TP_EXPIRED
-      - TP_NOT_YET_OCURRED
-      - ROUT_REQ_NOT_AUTHORIZED
-      type: string
-      example: null
-    FlowDirection_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      - UNSPECIFIED
-      type: string
-      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

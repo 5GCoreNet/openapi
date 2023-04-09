@@ -1,7 +1,7 @@
 /*
 VAE_FileDistribution
 
-API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for VAE File Distribution Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &LocalMbmsInfo{}
 
 // LocalMbmsInfo Contains the local MBMS information.
 type LocalMbmsInfo struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	MbmsEnbIpv4MulAddr *string `json:"mbmsEnbIpv4MulAddr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	MbmsEnbIpv4MulAddr *string     `json:"mbmsEnbIpv4MulAddr,omitempty"`
 	MbmsEnbIpv6MulAddr *Ipv6Prefix `json:"mbmsEnbIpv6MulAddr,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	MbmsGwIpv4SsmAddr *string `json:"mbmsGwIpv4SsmAddr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	MbmsGwIpv4SsmAddr *string   `json:"mbmsGwIpv4SsmAddr,omitempty"`
 	MbmsGwIpv6SsmAddr *Ipv6Addr `json:"mbmsGwIpv6SsmAddr,omitempty"`
-	Cteid *string `json:"cteid,omitempty"`
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	BmscIpv4Addr *string `json:"bmscIpv4Addr,omitempty"`
+	Cteid             *string   `json:"cteid,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	BmscIpv4Addr *string   `json:"bmscIpv4Addr,omitempty"`
 	BmscIpv6Addr *Ipv6Addr `json:"bmscIpv6Addr,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	BmscPort *int32 `json:"bmscPort,omitempty"`
@@ -52,7 +52,7 @@ func NewLocalMbmsInfoWithDefaults() *LocalMbmsInfo {
 
 // GetMbmsEnbIpv4MulAddr returns the MbmsEnbIpv4MulAddr field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetMbmsEnbIpv4MulAddr() string {
-	if o == nil || isNil(o.MbmsEnbIpv4MulAddr) {
+	if o == nil || IsNil(o.MbmsEnbIpv4MulAddr) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *LocalMbmsInfo) GetMbmsEnbIpv4MulAddr() string {
 // GetMbmsEnbIpv4MulAddrOk returns a tuple with the MbmsEnbIpv4MulAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetMbmsEnbIpv4MulAddrOk() (*string, bool) {
-	if o == nil || isNil(o.MbmsEnbIpv4MulAddr) {
+	if o == nil || IsNil(o.MbmsEnbIpv4MulAddr) {
 		return nil, false
 	}
 	return o.MbmsEnbIpv4MulAddr, true
@@ -70,7 +70,7 @@ func (o *LocalMbmsInfo) GetMbmsEnbIpv4MulAddrOk() (*string, bool) {
 
 // HasMbmsEnbIpv4MulAddr returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasMbmsEnbIpv4MulAddr() bool {
-	if o != nil && !isNil(o.MbmsEnbIpv4MulAddr) {
+	if o != nil && !IsNil(o.MbmsEnbIpv4MulAddr) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *LocalMbmsInfo) SetMbmsEnbIpv4MulAddr(v string) {
 
 // GetMbmsEnbIpv6MulAddr returns the MbmsEnbIpv6MulAddr field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetMbmsEnbIpv6MulAddr() Ipv6Prefix {
-	if o == nil || isNil(o.MbmsEnbIpv6MulAddr) {
+	if o == nil || IsNil(o.MbmsEnbIpv6MulAddr) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *LocalMbmsInfo) GetMbmsEnbIpv6MulAddr() Ipv6Prefix {
 // GetMbmsEnbIpv6MulAddrOk returns a tuple with the MbmsEnbIpv6MulAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetMbmsEnbIpv6MulAddrOk() (*Ipv6Prefix, bool) {
-	if o == nil || isNil(o.MbmsEnbIpv6MulAddr) {
+	if o == nil || IsNil(o.MbmsEnbIpv6MulAddr) {
 		return nil, false
 	}
 	return o.MbmsEnbIpv6MulAddr, true
@@ -102,7 +102,7 @@ func (o *LocalMbmsInfo) GetMbmsEnbIpv6MulAddrOk() (*Ipv6Prefix, bool) {
 
 // HasMbmsEnbIpv6MulAddr returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasMbmsEnbIpv6MulAddr() bool {
-	if o != nil && !isNil(o.MbmsEnbIpv6MulAddr) {
+	if o != nil && !IsNil(o.MbmsEnbIpv6MulAddr) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *LocalMbmsInfo) SetMbmsEnbIpv6MulAddr(v Ipv6Prefix) {
 
 // GetMbmsGwIpv4SsmAddr returns the MbmsGwIpv4SsmAddr field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetMbmsGwIpv4SsmAddr() string {
-	if o == nil || isNil(o.MbmsGwIpv4SsmAddr) {
+	if o == nil || IsNil(o.MbmsGwIpv4SsmAddr) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *LocalMbmsInfo) GetMbmsGwIpv4SsmAddr() string {
 // GetMbmsGwIpv4SsmAddrOk returns a tuple with the MbmsGwIpv4SsmAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetMbmsGwIpv4SsmAddrOk() (*string, bool) {
-	if o == nil || isNil(o.MbmsGwIpv4SsmAddr) {
+	if o == nil || IsNil(o.MbmsGwIpv4SsmAddr) {
 		return nil, false
 	}
 	return o.MbmsGwIpv4SsmAddr, true
@@ -134,7 +134,7 @@ func (o *LocalMbmsInfo) GetMbmsGwIpv4SsmAddrOk() (*string, bool) {
 
 // HasMbmsGwIpv4SsmAddr returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasMbmsGwIpv4SsmAddr() bool {
-	if o != nil && !isNil(o.MbmsGwIpv4SsmAddr) {
+	if o != nil && !IsNil(o.MbmsGwIpv4SsmAddr) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *LocalMbmsInfo) SetMbmsGwIpv4SsmAddr(v string) {
 
 // GetMbmsGwIpv6SsmAddr returns the MbmsGwIpv6SsmAddr field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetMbmsGwIpv6SsmAddr() Ipv6Addr {
-	if o == nil || isNil(o.MbmsGwIpv6SsmAddr) {
+	if o == nil || IsNil(o.MbmsGwIpv6SsmAddr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *LocalMbmsInfo) GetMbmsGwIpv6SsmAddr() Ipv6Addr {
 // GetMbmsGwIpv6SsmAddrOk returns a tuple with the MbmsGwIpv6SsmAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetMbmsGwIpv6SsmAddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.MbmsGwIpv6SsmAddr) {
+	if o == nil || IsNil(o.MbmsGwIpv6SsmAddr) {
 		return nil, false
 	}
 	return o.MbmsGwIpv6SsmAddr, true
@@ -166,7 +166,7 @@ func (o *LocalMbmsInfo) GetMbmsGwIpv6SsmAddrOk() (*Ipv6Addr, bool) {
 
 // HasMbmsGwIpv6SsmAddr returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasMbmsGwIpv6SsmAddr() bool {
-	if o != nil && !isNil(o.MbmsGwIpv6SsmAddr) {
+	if o != nil && !IsNil(o.MbmsGwIpv6SsmAddr) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *LocalMbmsInfo) SetMbmsGwIpv6SsmAddr(v Ipv6Addr) {
 
 // GetCteid returns the Cteid field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetCteid() string {
-	if o == nil || isNil(o.Cteid) {
+	if o == nil || IsNil(o.Cteid) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *LocalMbmsInfo) GetCteid() string {
 // GetCteidOk returns a tuple with the Cteid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetCteidOk() (*string, bool) {
-	if o == nil || isNil(o.Cteid) {
+	if o == nil || IsNil(o.Cteid) {
 		return nil, false
 	}
 	return o.Cteid, true
@@ -198,7 +198,7 @@ func (o *LocalMbmsInfo) GetCteidOk() (*string, bool) {
 
 // HasCteid returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasCteid() bool {
-	if o != nil && !isNil(o.Cteid) {
+	if o != nil && !IsNil(o.Cteid) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *LocalMbmsInfo) SetCteid(v string) {
 
 // GetBmscIpv4Addr returns the BmscIpv4Addr field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetBmscIpv4Addr() string {
-	if o == nil || isNil(o.BmscIpv4Addr) {
+	if o == nil || IsNil(o.BmscIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *LocalMbmsInfo) GetBmscIpv4Addr() string {
 // GetBmscIpv4AddrOk returns a tuple with the BmscIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetBmscIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.BmscIpv4Addr) {
+	if o == nil || IsNil(o.BmscIpv4Addr) {
 		return nil, false
 	}
 	return o.BmscIpv4Addr, true
@@ -230,7 +230,7 @@ func (o *LocalMbmsInfo) GetBmscIpv4AddrOk() (*string, bool) {
 
 // HasBmscIpv4Addr returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasBmscIpv4Addr() bool {
-	if o != nil && !isNil(o.BmscIpv4Addr) {
+	if o != nil && !IsNil(o.BmscIpv4Addr) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *LocalMbmsInfo) SetBmscIpv4Addr(v string) {
 
 // GetBmscIpv6Addr returns the BmscIpv6Addr field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetBmscIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.BmscIpv6Addr) {
+	if o == nil || IsNil(o.BmscIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *LocalMbmsInfo) GetBmscIpv6Addr() Ipv6Addr {
 // GetBmscIpv6AddrOk returns a tuple with the BmscIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetBmscIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.BmscIpv6Addr) {
+	if o == nil || IsNil(o.BmscIpv6Addr) {
 		return nil, false
 	}
 	return o.BmscIpv6Addr, true
@@ -262,7 +262,7 @@ func (o *LocalMbmsInfo) GetBmscIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasBmscIpv6Addr returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasBmscIpv6Addr() bool {
-	if o != nil && !isNil(o.BmscIpv6Addr) {
+	if o != nil && !IsNil(o.BmscIpv6Addr) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *LocalMbmsInfo) SetBmscIpv6Addr(v Ipv6Addr) {
 
 // GetBmscPort returns the BmscPort field value if set, zero value otherwise.
 func (o *LocalMbmsInfo) GetBmscPort() int32 {
-	if o == nil || isNil(o.BmscPort) {
+	if o == nil || IsNil(o.BmscPort) {
 		var ret int32
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *LocalMbmsInfo) GetBmscPort() int32 {
 // GetBmscPortOk returns a tuple with the BmscPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalMbmsInfo) GetBmscPortOk() (*int32, bool) {
-	if o == nil || isNil(o.BmscPort) {
+	if o == nil || IsNil(o.BmscPort) {
 		return nil, false
 	}
 	return o.BmscPort, true
@@ -294,7 +294,7 @@ func (o *LocalMbmsInfo) GetBmscPortOk() (*int32, bool) {
 
 // HasBmscPort returns a boolean if a field has been set.
 func (o *LocalMbmsInfo) HasBmscPort() bool {
-	if o != nil && !isNil(o.BmscPort) {
+	if o != nil && !IsNil(o.BmscPort) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *LocalMbmsInfo) SetBmscPort(v int32) {
 }
 
 func (o LocalMbmsInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -316,28 +316,28 @@ func (o LocalMbmsInfo) MarshalJSON() ([]byte, error) {
 
 func (o LocalMbmsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MbmsEnbIpv4MulAddr) {
+	if !IsNil(o.MbmsEnbIpv4MulAddr) {
 		toSerialize["mbmsEnbIpv4MulAddr"] = o.MbmsEnbIpv4MulAddr
 	}
-	if !isNil(o.MbmsEnbIpv6MulAddr) {
+	if !IsNil(o.MbmsEnbIpv6MulAddr) {
 		toSerialize["mbmsEnbIpv6MulAddr"] = o.MbmsEnbIpv6MulAddr
 	}
-	if !isNil(o.MbmsGwIpv4SsmAddr) {
+	if !IsNil(o.MbmsGwIpv4SsmAddr) {
 		toSerialize["mbmsGwIpv4SsmAddr"] = o.MbmsGwIpv4SsmAddr
 	}
-	if !isNil(o.MbmsGwIpv6SsmAddr) {
+	if !IsNil(o.MbmsGwIpv6SsmAddr) {
 		toSerialize["mbmsGwIpv6SsmAddr"] = o.MbmsGwIpv6SsmAddr
 	}
-	if !isNil(o.Cteid) {
+	if !IsNil(o.Cteid) {
 		toSerialize["cteid"] = o.Cteid
 	}
-	if !isNil(o.BmscIpv4Addr) {
+	if !IsNil(o.BmscIpv4Addr) {
 		toSerialize["bmscIpv4Addr"] = o.BmscIpv4Addr
 	}
-	if !isNil(o.BmscIpv6Addr) {
+	if !IsNil(o.BmscIpv6Addr) {
 		toSerialize["bmscIpv6Addr"] = o.BmscIpv6Addr
 	}
-	if !isNil(o.BmscPort) {
+	if !IsNil(o.BmscPort) {
 		toSerialize["bmscPort"] = o.BmscPort
 	}
 	return toSerialize, nil
@@ -378,5 +378,3 @@ func (v *NullableLocalMbmsInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -41,7 +41,7 @@ func NewNrSectorCarrierSingleAllOf1WithDefaults() *NrSectorCarrierSingleAllOf1 {
 
 // GetCommonBeamformingFunction returns the CommonBeamformingFunction field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunction() CommonBeamformingFunctionSingle {
-	if o == nil || isNil(o.CommonBeamformingFunction) {
+	if o == nil || IsNil(o.CommonBeamformingFunction) {
 		var ret CommonBeamformingFunctionSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunction() CommonBeamf
 // GetCommonBeamformingFunctionOk returns a tuple with the CommonBeamformingFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunctionOk() (*CommonBeamformingFunctionSingle, bool) {
-	if o == nil || isNil(o.CommonBeamformingFunction) {
+	if o == nil || IsNil(o.CommonBeamformingFunction) {
 		return nil, false
 	}
 	return o.CommonBeamformingFunction, true
@@ -59,7 +59,7 @@ func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunctionOk() (*CommonB
 
 // HasCommonBeamformingFunction returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingleAllOf1) HasCommonBeamformingFunction() bool {
-	if o != nil && !isNil(o.CommonBeamformingFunction) {
+	if o != nil && !IsNil(o.CommonBeamformingFunction) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *NrSectorCarrierSingleAllOf1) SetCommonBeamformingFunction(v CommonBeamf
 }
 
 func (o NrSectorCarrierSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -81,7 +81,7 @@ func (o NrSectorCarrierSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NrSectorCarrierSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CommonBeamformingFunction) {
+	if !IsNil(o.CommonBeamformingFunction) {
 		toSerialize["CommonBeamformingFunction"] = o.CommonBeamformingFunction
 	}
 	return toSerialize, nil
@@ -122,5 +122,3 @@ func (v *NullableNrSectorCarrierSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

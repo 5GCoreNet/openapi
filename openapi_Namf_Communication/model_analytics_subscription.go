@@ -1,7 +1,7 @@
 /*
 Namf_Communication
 
-AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+AMF Communication Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,10 +19,10 @@ var _ MappedNullable = &AnalyticsSubscription{}
 
 // AnalyticsSubscription Analytics subscriptions created in the NWDAF.
 type AnalyticsSubscription struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
+	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.
 	NwdafId *string `json:"nwdafId,omitempty"`
-	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.  
-	NwdafSetId *string `json:"nwdafSetId,omitempty"`
+	// NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3 digits.    If there are only 2 significant digits in the MNC, one \"0\" digit shall be inserted    at the left side to fill the 3 digits coding of MNC.  Pattern: '^[0-9]{3}$' <NFType> encoded as a value defined in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but    with lower case characters <Set ID> encoded as a string of characters consisting of    alphabetic characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that    shall end with either an alphabetic character or a digit.
+	NwdafSetId            *string             `json:"nwdafSetId,omitempty"`
 	NwdafSubscriptionList []NwdafSubscription `json:"nwdafSubscriptionList"`
 }
 
@@ -46,7 +46,7 @@ func NewAnalyticsSubscriptionWithDefaults() *AnalyticsSubscription {
 
 // GetNwdafId returns the NwdafId field value if set, zero value otherwise.
 func (o *AnalyticsSubscription) GetNwdafId() string {
-	if o == nil || isNil(o.NwdafId) {
+	if o == nil || IsNil(o.NwdafId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AnalyticsSubscription) GetNwdafId() string {
 // GetNwdafIdOk returns a tuple with the NwdafId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsSubscription) GetNwdafIdOk() (*string, bool) {
-	if o == nil || isNil(o.NwdafId) {
+	if o == nil || IsNil(o.NwdafId) {
 		return nil, false
 	}
 	return o.NwdafId, true
@@ -64,7 +64,7 @@ func (o *AnalyticsSubscription) GetNwdafIdOk() (*string, bool) {
 
 // HasNwdafId returns a boolean if a field has been set.
 func (o *AnalyticsSubscription) HasNwdafId() bool {
-	if o != nil && !isNil(o.NwdafId) {
+	if o != nil && !IsNil(o.NwdafId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AnalyticsSubscription) SetNwdafId(v string) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *AnalyticsSubscription) GetNwdafSetId() string {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AnalyticsSubscription) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsSubscription) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || isNil(o.NwdafSetId) {
+	if o == nil || IsNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -96,7 +96,7 @@ func (o *AnalyticsSubscription) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *AnalyticsSubscription) HasNwdafSetId() bool {
-	if o != nil && !isNil(o.NwdafSetId) {
+	if o != nil && !IsNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *AnalyticsSubscription) SetNwdafSubscriptionList(v []NwdafSubscription) 
 }
 
 func (o AnalyticsSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -142,10 +142,10 @@ func (o AnalyticsSubscription) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NwdafId) {
+	if !IsNil(o.NwdafId) {
 		toSerialize["nwdafId"] = o.NwdafId
 	}
-	if !isNil(o.NwdafSetId) {
+	if !IsNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
 	toSerialize["nwdafSubscriptionList"] = o.NwdafSubscriptionList
@@ -187,5 +187,3 @@ func (v *NullableAnalyticsSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

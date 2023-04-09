@@ -1,7 +1,7 @@
 /*
 JOSE Protected Message Forwarding API
 
-N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+N32-f Message Forwarding Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,8 +19,8 @@ var _ MappedNullable = &HttpHeader{}
 
 // HttpHeader Contains the encoding of HTTP headers in the API request / response
 type HttpHeader struct {
-	Header string `json:"header"`
-	Value EncodedHttpHeaderValue `json:"value"`
+	Header string                 `json:"header"`
+	Value  EncodedHttpHeaderValue `json:"value"`
 }
 
 // NewHttpHeader instantiates a new HttpHeader object
@@ -91,7 +91,7 @@ func (o *HttpHeader) SetValue(v EncodedHttpHeaderValue) {
 }
 
 func (o HttpHeader) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -140,5 +140,3 @@ func (v *NullableHttpHeader) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

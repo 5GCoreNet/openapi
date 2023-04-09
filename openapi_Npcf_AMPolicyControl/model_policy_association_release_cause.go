@@ -1,7 +1,7 @@
 /*
 Npcf_AMPolicyControl
 
-Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Access and Mobility Policy Control Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// PolicyAssociationReleaseCause Possible values are: - UNSPECIFIED: This value is used for unspecified reasons. - UE_SUBSCRIPTION: This value is used to indicate that the session needs to be   terminated because the subscription of UE has changed (e.g. was removed). - INSUFFICIENT_RES: This value is used to indicate that the server is overloaded and   needs to abort the session. 
+// PolicyAssociationReleaseCause Possible values are: - UNSPECIFIED: This value is used for unspecified reasons. - UE_SUBSCRIPTION: This value is used to indicate that the session needs to be   terminated because the subscription of UE has changed (e.g. was removed). - INSUFFICIENT_RES: This value is used to indicate that the server is overloaded and   needs to abort the session.
 type PolicyAssociationReleaseCause struct {
-	PolicyAssociationReleaseCauseAnyOf *PolicyAssociationReleaseCauseAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PolicyAssociationReleaseCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PolicyAssociationReleaseCauseAnyOf
-	err = json.Unmarshal(data, &dst.PolicyAssociationReleaseCauseAnyOf);
-	if err == nil {
-		jsonPolicyAssociationReleaseCauseAnyOf, _ := json.Marshal(dst.PolicyAssociationReleaseCauseAnyOf)
-		if string(jsonPolicyAssociationReleaseCauseAnyOf) == "{}" { // empty struct
-			dst.PolicyAssociationReleaseCauseAnyOf = nil
-		} else {
-			return nil // data stored in dst.PolicyAssociationReleaseCauseAnyOf, return on the first match
-		}
-	} else {
-		dst.PolicyAssociationReleaseCauseAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *PolicyAssociationReleaseCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PolicyAssociationReleaseCause) MarshalJSON() ([]byte, error) {
-	if src.PolicyAssociationReleaseCauseAnyOf != nil {
-		return json.Marshal(&src.PolicyAssociationReleaseCauseAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullablePolicyAssociationReleaseCause) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

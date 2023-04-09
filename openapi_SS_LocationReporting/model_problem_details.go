@@ -1,7 +1,7 @@
 /*
 SS_LocationReporting
 
-API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Location Reporting Configuration.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -33,7 +33,7 @@ type ProblemDetails struct {
 	Cause *string `json:"cause,omitempty"`
 	// Description of invalid parameters, for a request rejected due to invalid parameters.
 	InvalidParams []InvalidParam `json:"invalidParams,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
 	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
 }
 
@@ -56,7 +56,7 @@ func NewProblemDetailsWithDefaults() *ProblemDetails {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ProblemDetails) GetType() string {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ProblemDetails) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetTypeOk() (*string, bool) {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -74,7 +74,7 @@ func (o *ProblemDetails) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *ProblemDetails) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ProblemDetails) SetType(v string) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *ProblemDetails) GetTitle() string {
-	if o == nil || isNil(o.Title) {
+	if o == nil || IsNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ProblemDetails) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetTitleOk() (*string, bool) {
-	if o == nil || isNil(o.Title) {
+	if o == nil || IsNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -106,7 +106,7 @@ func (o *ProblemDetails) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *ProblemDetails) HasTitle() bool {
-	if o != nil && !isNil(o.Title) {
+	if o != nil && !IsNil(o.Title) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ProblemDetails) SetTitle(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ProblemDetails) GetStatus() int32 {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ProblemDetails) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetStatusOk() (*int32, bool) {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -138,7 +138,7 @@ func (o *ProblemDetails) GetStatusOk() (*int32, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ProblemDetails) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ProblemDetails) SetStatus(v int32) {
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
 func (o *ProblemDetails) GetDetail() string {
-	if o == nil || isNil(o.Detail) {
+	if o == nil || IsNil(o.Detail) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ProblemDetails) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetDetailOk() (*string, bool) {
-	if o == nil || isNil(o.Detail) {
+	if o == nil || IsNil(o.Detail) {
 		return nil, false
 	}
 	return o.Detail, true
@@ -170,7 +170,7 @@ func (o *ProblemDetails) GetDetailOk() (*string, bool) {
 
 // HasDetail returns a boolean if a field has been set.
 func (o *ProblemDetails) HasDetail() bool {
-	if o != nil && !isNil(o.Detail) {
+	if o != nil && !IsNil(o.Detail) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ProblemDetails) SetDetail(v string) {
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
 func (o *ProblemDetails) GetInstance() string {
-	if o == nil || isNil(o.Instance) {
+	if o == nil || IsNil(o.Instance) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ProblemDetails) GetInstance() string {
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetInstanceOk() (*string, bool) {
-	if o == nil || isNil(o.Instance) {
+	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
 	return o.Instance, true
@@ -202,7 +202,7 @@ func (o *ProblemDetails) GetInstanceOk() (*string, bool) {
 
 // HasInstance returns a boolean if a field has been set.
 func (o *ProblemDetails) HasInstance() bool {
-	if o != nil && !isNil(o.Instance) {
+	if o != nil && !IsNil(o.Instance) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ProblemDetails) SetInstance(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *ProblemDetails) GetCause() string {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ProblemDetails) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetCauseOk() (*string, bool) {
-	if o == nil || isNil(o.Cause) {
+	if o == nil || IsNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -234,7 +234,7 @@ func (o *ProblemDetails) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *ProblemDetails) HasCause() bool {
-	if o != nil && !isNil(o.Cause) {
+	if o != nil && !IsNil(o.Cause) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ProblemDetails) SetCause(v string) {
 
 // GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
 func (o *ProblemDetails) GetInvalidParams() []InvalidParam {
-	if o == nil || isNil(o.InvalidParams) {
+	if o == nil || IsNil(o.InvalidParams) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ProblemDetails) GetInvalidParams() []InvalidParam {
 // GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetInvalidParamsOk() ([]InvalidParam, bool) {
-	if o == nil || isNil(o.InvalidParams) {
+	if o == nil || IsNil(o.InvalidParams) {
 		return nil, false
 	}
 	return o.InvalidParams, true
@@ -266,7 +266,7 @@ func (o *ProblemDetails) GetInvalidParamsOk() ([]InvalidParam, bool) {
 
 // HasInvalidParams returns a boolean if a field has been set.
 func (o *ProblemDetails) HasInvalidParams() bool {
-	if o != nil && !isNil(o.InvalidParams) {
+	if o != nil && !IsNil(o.InvalidParams) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ProblemDetails) SetInvalidParams(v []InvalidParam) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProblemDetails) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ProblemDetails) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -298,7 +298,7 @@ func (o *ProblemDetails) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProblemDetails) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *ProblemDetails) SetSupportedFeatures(v string) {
 }
 
 func (o ProblemDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -320,28 +320,28 @@ func (o ProblemDetails) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !isNil(o.Title) {
+	if !IsNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !isNil(o.Detail) {
+	if !IsNil(o.Detail) {
 		toSerialize["detail"] = o.Detail
 	}
-	if !isNil(o.Instance) {
+	if !IsNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !isNil(o.Cause) {
+	if !IsNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !isNil(o.InvalidParams) {
+	if !IsNil(o.InvalidParams) {
 		toSerialize["invalidParams"] = o.InvalidParams
 	}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil
@@ -382,5 +382,3 @@ func (v *NullableProblemDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

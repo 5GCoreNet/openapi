@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,22 +13,21 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // QueryIdentityDataBySUPIOrGPSIDocumentApiService QueryIdentityDataBySUPIOrGPSIDocumentApi service
 type QueryIdentityDataBySUPIOrGPSIDocumentApiService service
 
 type ApiGetIdentityDataRequest struct {
-	ctx context.Context
-	ApiService *QueryIdentityDataBySUPIOrGPSIDocumentApiService
-	ueId string
-	appPortId *AppPortId
-	ifNoneMatch *string
+	ctx             context.Context
+	ApiService      *QueryIdentityDataBySUPIOrGPSIDocumentApiService
+	ueId            string
+	appPortId       *AppPortId
+	ifNoneMatch     *string
 	ifModifiedSince *string
 }
 
@@ -57,26 +56,27 @@ func (r ApiGetIdentityDataRequest) Execute() (*IdentityData, *http.Response, err
 /*
 GetIdentityData Retrieve identity data by SUPI or GPSI
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ueId UE ID
- @return ApiGetIdentityDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ueId UE ID
+	@return ApiGetIdentityDataRequest
 */
 func (a *QueryIdentityDataBySUPIOrGPSIDocumentApiService) GetIdentityData(ctx context.Context, ueId string) ApiGetIdentityDataRequest {
 	return ApiGetIdentityDataRequest{
 		ApiService: a,
-		ctx: ctx,
-		ueId: ueId,
+		ctx:        ctx,
+		ueId:       ueId,
 	}
 }
 
 // Execute executes the request
-//  @return IdentityData
+//
+//	@return IdentityData
 func (a *QueryIdentityDataBySUPIOrGPSIDocumentApiService) GetIdentityDataExecute(r ApiGetIdentityDataRequest) (*IdentityData, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *IdentityData
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *IdentityData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueryIdentityDataBySUPIOrGPSIDocumentApiService.GetIdentityData")
@@ -92,7 +92,7 @@ func (a *QueryIdentityDataBySUPIOrGPSIDocumentApiService) GetIdentityDataExecute
 	localVarFormParams := url.Values{}
 
 	if r.appPortId != nil {
-		parameterAddToQuery(localVarQueryParams, "app-port-id", r.appPortId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "app-port-id", r.appPortId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -112,10 +112,10 @@ func (a *QueryIdentityDataBySUPIOrGPSIDocumentApiService) GetIdentityDataExecute
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -127,9 +127,9 @@ func (a *QueryIdentityDataBySUPIOrGPSIDocumentApiService) GetIdentityDataExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -146,8 +146,8 @@ func (a *QueryIdentityDataBySUPIOrGPSIDocumentApiService) GetIdentityDataExecute
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

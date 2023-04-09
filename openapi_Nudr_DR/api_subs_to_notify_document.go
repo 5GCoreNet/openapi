@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -13,21 +13,20 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // SubsToNotifyDocumentApiService SubsToNotifyDocumentApi service
 type SubsToNotifyDocumentApiService service
 
 type ApiModifysubscriptionDataSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *SubsToNotifyDocumentApiService
-	subsId string
-	patchItem *[]PatchItem
+	ctx               context.Context
+	ApiService        *SubsToNotifyDocumentApiService
+	subsId            string
+	patchItem         *[]PatchItem
 	supportedFeatures *string
 }
 
@@ -49,26 +48,27 @@ func (r ApiModifysubscriptionDataSubscriptionRequest) Execute() (*Modifysubscrip
 /*
 ModifysubscriptionDataSubscription Modify an individual subscriptionDataSubscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsId
- @return ApiModifysubscriptionDataSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subsId
+	@return ApiModifysubscriptionDataSubscriptionRequest
 */
 func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscription(ctx context.Context, subsId string) ApiModifysubscriptionDataSubscriptionRequest {
 	return ApiModifysubscriptionDataSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsId: subsId,
+		ctx:        ctx,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return ModifysubscriptionDataSubscription200Response
+//
+//	@return ModifysubscriptionDataSubscription200Response
 func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscriptionExecute(r ApiModifysubscriptionDataSubscriptionRequest) (*ModifysubscriptionDataSubscription200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModifysubscriptionDataSubscription200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModifysubscriptionDataSubscription200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubsToNotifyDocumentApiService.ModifysubscriptionDataSubscription")
@@ -90,7 +90,7 @@ func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscriptionExecu
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -121,9 +121,9 @@ func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscriptionExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -140,8 +140,8 @@ func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -151,8 +151,8 @@ func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscriptionExecu
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -171,9 +171,9 @@ func (a *SubsToNotifyDocumentApiService) ModifysubscriptionDataSubscriptionExecu
 }
 
 type ApiQuerySubscriptionDataSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SubsToNotifyDocumentApiService
-	subsId string
+	subsId     string
 }
 
 func (r ApiQuerySubscriptionDataSubscriptionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -183,26 +183,27 @@ func (r ApiQuerySubscriptionDataSubscriptionsRequest) Execute() (map[string]inte
 /*
 QuerySubscriptionDataSubscriptions Retrieves a individual subscriptionDataSubscription identified by subsId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsId Unique ID of the subscription to retrieve
- @return ApiQuerySubscriptionDataSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subsId Unique ID of the subscription to retrieve
+	@return ApiQuerySubscriptionDataSubscriptionsRequest
 */
 func (a *SubsToNotifyDocumentApiService) QuerySubscriptionDataSubscriptions(ctx context.Context, subsId string) ApiQuerySubscriptionDataSubscriptionsRequest {
 	return ApiQuerySubscriptionDataSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsId: subsId,
+		ctx:        ctx,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *SubsToNotifyDocumentApiService) QuerySubscriptionDataSubscriptionsExecute(r ApiQuerySubscriptionDataSubscriptionsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubsToNotifyDocumentApiService.QuerySubscriptionDataSubscriptions")
@@ -244,9 +245,9 @@ func (a *SubsToNotifyDocumentApiService) QuerySubscriptionDataSubscriptionsExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -272,9 +273,9 @@ func (a *SubsToNotifyDocumentApiService) QuerySubscriptionDataSubscriptionsExecu
 }
 
 type ApiRemovesubscriptionDataSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SubsToNotifyDocumentApiService
-	subsId string
+	subsId     string
 }
 
 func (r ApiRemovesubscriptionDataSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -284,24 +285,24 @@ func (r ApiRemovesubscriptionDataSubscriptionsRequest) Execute() (*http.Response
 /*
 RemovesubscriptionDataSubscriptions Deletes a subscriptionDataSubscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsId Unique ID of the subscription to remove
- @return ApiRemovesubscriptionDataSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subsId Unique ID of the subscription to remove
+	@return ApiRemovesubscriptionDataSubscriptionsRequest
 */
 func (a *SubsToNotifyDocumentApiService) RemovesubscriptionDataSubscriptions(ctx context.Context, subsId string) ApiRemovesubscriptionDataSubscriptionsRequest {
 	return ApiRemovesubscriptionDataSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsId: subsId,
+		ctx:        ctx,
+		subsId:     subsId,
 	}
 }
 
 // Execute executes the request
 func (a *SubsToNotifyDocumentApiService) RemovesubscriptionDataSubscriptionsExecute(r ApiRemovesubscriptionDataSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubsToNotifyDocumentApiService.RemovesubscriptionDataSubscriptions")
@@ -343,9 +344,9 @@ func (a *SubsToNotifyDocumentApiService) RemovesubscriptionDataSubscriptionsExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

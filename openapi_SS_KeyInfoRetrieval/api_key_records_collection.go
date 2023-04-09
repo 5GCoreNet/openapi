@@ -1,7 +1,7 @@
 /*
 SS_KeyInfoRetrieval
 
-API for SEAL Key Information Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for SEAL Key Information Retrieval.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.1
 */
@@ -13,20 +13,19 @@ package openapi_SS_KeyInfoRetrieval
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
-
 
 // KeyRecordsCollectionApiService KeyRecordsCollectionApi service
 type KeyRecordsCollectionApiService service
 
 type ApiRetrieveKeyMgmtInfoRequest struct {
-	ctx context.Context
-	ApiService *KeyRecordsCollectionApiService
+	ctx          context.Context
+	ApiService   *KeyRecordsCollectionApiService
 	valServiceId *string
-	valTgtUe *ValTargetUe
+	valTgtUe     *ValTargetUe
 }
 
 // String identifying an individual VAL service
@@ -50,24 +49,25 @@ RetrieveKeyMgmtInfo Method for RetrieveKeyMgmtInfo
 
 Retrieve key management information specific to VAL service.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrieveKeyMgmtInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRetrieveKeyMgmtInfoRequest
 */
 func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfo(ctx context.Context) ApiRetrieveKeyMgmtInfoRequest {
 	return ApiRetrieveKeyMgmtInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ValKeyInfo
+//
+//	@return ValKeyInfo
 func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetrieveKeyMgmtInfoRequest) (*ValKeyInfo, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ValKeyInfo
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ValKeyInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyRecordsCollectionApiService.RetrieveKeyMgmtInfo")
@@ -84,9 +84,9 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 		return localVarReturnValue, nil, reportError("valServiceId is required and must be specified")
 	}
 
-	parameterAddToQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
 	if r.valTgtUe != nil {
-		parameterAddToQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -115,9 +115,9 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -134,8 +134,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
@@ -145,8 +145,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
@@ -156,8 +156,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
@@ -167,8 +167,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 406 {
@@ -178,8 +178,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 429 {
@@ -189,8 +189,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
@@ -200,8 +200,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 503 {
@@ -211,8 +211,8 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

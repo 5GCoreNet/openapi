@@ -1,7 +1,7 @@
 /*
 Nchf_ConvergedCharging
 
-ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+ConvergedCharging Service    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 3.2.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SIPEventType{}
 
 // SIPEventType struct for SIPEventType
 type SIPEventType struct {
-	SIPMethod *string `json:"sIPMethod,omitempty"`
+	SIPMethod   *string `json:"sIPMethod,omitempty"`
 	EventHeader *string `json:"eventHeader,omitempty"`
-	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer. 
+	// Integer where the allowed values correspond to the value range of an unsigned 32-bit integer.
 	ExpiresHeader *int32 `json:"expiresHeader,omitempty"`
 }
 
@@ -44,7 +44,7 @@ func NewSIPEventTypeWithDefaults() *SIPEventType {
 
 // GetSIPMethod returns the SIPMethod field value if set, zero value otherwise.
 func (o *SIPEventType) GetSIPMethod() string {
-	if o == nil || isNil(o.SIPMethod) {
+	if o == nil || IsNil(o.SIPMethod) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SIPEventType) GetSIPMethod() string {
 // GetSIPMethodOk returns a tuple with the SIPMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SIPEventType) GetSIPMethodOk() (*string, bool) {
-	if o == nil || isNil(o.SIPMethod) {
+	if o == nil || IsNil(o.SIPMethod) {
 		return nil, false
 	}
 	return o.SIPMethod, true
@@ -62,7 +62,7 @@ func (o *SIPEventType) GetSIPMethodOk() (*string, bool) {
 
 // HasSIPMethod returns a boolean if a field has been set.
 func (o *SIPEventType) HasSIPMethod() bool {
-	if o != nil && !isNil(o.SIPMethod) {
+	if o != nil && !IsNil(o.SIPMethod) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SIPEventType) SetSIPMethod(v string) {
 
 // GetEventHeader returns the EventHeader field value if set, zero value otherwise.
 func (o *SIPEventType) GetEventHeader() string {
-	if o == nil || isNil(o.EventHeader) {
+	if o == nil || IsNil(o.EventHeader) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SIPEventType) GetEventHeader() string {
 // GetEventHeaderOk returns a tuple with the EventHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SIPEventType) GetEventHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.EventHeader) {
+	if o == nil || IsNil(o.EventHeader) {
 		return nil, false
 	}
 	return o.EventHeader, true
@@ -94,7 +94,7 @@ func (o *SIPEventType) GetEventHeaderOk() (*string, bool) {
 
 // HasEventHeader returns a boolean if a field has been set.
 func (o *SIPEventType) HasEventHeader() bool {
-	if o != nil && !isNil(o.EventHeader) {
+	if o != nil && !IsNil(o.EventHeader) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SIPEventType) SetEventHeader(v string) {
 
 // GetExpiresHeader returns the ExpiresHeader field value if set, zero value otherwise.
 func (o *SIPEventType) GetExpiresHeader() int32 {
-	if o == nil || isNil(o.ExpiresHeader) {
+	if o == nil || IsNil(o.ExpiresHeader) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SIPEventType) GetExpiresHeader() int32 {
 // GetExpiresHeaderOk returns a tuple with the ExpiresHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SIPEventType) GetExpiresHeaderOk() (*int32, bool) {
-	if o == nil || isNil(o.ExpiresHeader) {
+	if o == nil || IsNil(o.ExpiresHeader) {
 		return nil, false
 	}
 	return o.ExpiresHeader, true
@@ -126,7 +126,7 @@ func (o *SIPEventType) GetExpiresHeaderOk() (*int32, bool) {
 
 // HasExpiresHeader returns a boolean if a field has been set.
 func (o *SIPEventType) HasExpiresHeader() bool {
-	if o != nil && !isNil(o.ExpiresHeader) {
+	if o != nil && !IsNil(o.ExpiresHeader) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *SIPEventType) SetExpiresHeader(v int32) {
 }
 
 func (o SIPEventType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,13 +148,13 @@ func (o SIPEventType) MarshalJSON() ([]byte, error) {
 
 func (o SIPEventType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SIPMethod) {
+	if !IsNil(o.SIPMethod) {
 		toSerialize["sIPMethod"] = o.SIPMethod
 	}
-	if !isNil(o.EventHeader) {
+	if !IsNil(o.EventHeader) {
 		toSerialize["eventHeader"] = o.EventHeader
 	}
-	if !isNil(o.ExpiresHeader) {
+	if !IsNil(o.ExpiresHeader) {
 		toSerialize["expiresHeader"] = o.ExpiresHeader
 	}
 	return toSerialize, nil
@@ -195,5 +195,3 @@ func (v *NullableSIPEventType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

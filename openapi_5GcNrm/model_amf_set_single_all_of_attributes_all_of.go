@@ -20,11 +20,11 @@ var _ MappedNullable = &AmfSetSingleAllOfAttributesAllOf{}
 // AmfSetSingleAllOfAttributesAllOf struct for AmfSetSingleAllOfAttributesAllOf
 type AmfSetSingleAllOfAttributesAllOf struct {
 	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
-	NRTACList []int32 `json:"nRTACList,omitempty"`
+	NRTACList  []int32  `json:"nRTACList,omitempty"`
 	// AmfSetId is defined in TS 23.003
-	AmfSetId *string `json:"amfSetId,omitempty"`
-	SnssaiList []Snssai `json:"snssaiList,omitempty"`
-	AMFRegionRef *string `json:"aMFRegionRef,omitempty"`
+	AmfSetId         *string  `json:"amfSetId,omitempty"`
+	SnssaiList       []Snssai `json:"snssaiList,omitempty"`
+	AMFRegionRef     *string  `json:"aMFRegionRef,omitempty"`
 	AMFSetMemberList []string `json:"aMFSetMemberList,omitempty"`
 }
 
@@ -238,7 +238,7 @@ func (o *AmfSetSingleAllOfAttributesAllOf) SetAMFSetMemberList(v []string) {
 }
 
 func (o AmfSetSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -303,5 +303,3 @@ func (v *NullableAmfSetSingleAllOfAttributesAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

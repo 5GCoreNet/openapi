@@ -93,7 +93,6 @@ Class | Method | HTTP request | Description
  - [InvalidParam](docs/InvalidParam.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [QosResourceType](docs/QosResourceType.md)
- - [QosResourceTypeAnyOf](docs/QosResourceTypeAnyOf.md)
  - [V2vConfigurationData](docs/V2vConfigurationData.md)
 
 

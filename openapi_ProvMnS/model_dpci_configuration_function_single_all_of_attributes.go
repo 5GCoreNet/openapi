@@ -19,8 +19,8 @@ var _ MappedNullable = &DPCIConfigurationFunctionSingleAllOfAttributes{}
 
 // DPCIConfigurationFunctionSingleAllOfAttributes struct for DPCIConfigurationFunctionSingleAllOfAttributes
 type DPCIConfigurationFunctionSingleAllOfAttributes struct {
-	DPciConfigurationControl *bool `json:"dPciConfigurationControl,omitempty"`
-	NRPciList *NRPciList `json:"nRPciList,omitempty"`
+	DPciConfigurationControl *bool      `json:"dPciConfigurationControl,omitempty"`
+	NRPciList                *NRPciList `json:"nRPciList,omitempty"`
 }
 
 // NewDPCIConfigurationFunctionSingleAllOfAttributes instantiates a new DPCIConfigurationFunctionSingleAllOfAttributes object
@@ -42,7 +42,7 @@ func NewDPCIConfigurationFunctionSingleAllOfAttributesWithDefaults() *DPCIConfig
 
 // GetDPciConfigurationControl returns the DPciConfigurationControl field value if set, zero value otherwise.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationControl() bool {
-	if o == nil || isNil(o.DPciConfigurationControl) {
+	if o == nil || IsNil(o.DPciConfigurationControl) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationCon
 // GetDPciConfigurationControlOk returns a tuple with the DPciConfigurationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationControlOk() (*bool, bool) {
-	if o == nil || isNil(o.DPciConfigurationControl) {
+	if o == nil || IsNil(o.DPciConfigurationControl) {
 		return nil, false
 	}
 	return o.DPciConfigurationControl, true
@@ -60,7 +60,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationCon
 
 // HasDPciConfigurationControl returns a boolean if a field has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) HasDPciConfigurationControl() bool {
-	if o != nil && !isNil(o.DPciConfigurationControl) {
+	if o != nil && !IsNil(o.DPciConfigurationControl) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) SetDPciConfigurationCon
 
 // GetNRPciList returns the NRPciList field value if set, zero value otherwise.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciList() NRPciList {
-	if o == nil || isNil(o.NRPciList) {
+	if o == nil || IsNil(o.NRPciList) {
 		var ret NRPciList
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciList() NRPciLis
 // GetNRPciListOk returns a tuple with the NRPciList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciListOk() (*NRPciList, bool) {
-	if o == nil || isNil(o.NRPciList) {
+	if o == nil || IsNil(o.NRPciList) {
 		return nil, false
 	}
 	return o.NRPciList, true
@@ -92,7 +92,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciListOk() (*NRPc
 
 // HasNRPciList returns a boolean if a field has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) HasNRPciList() bool {
-	if o != nil && !isNil(o.NRPciList) {
+	if o != nil && !IsNil(o.NRPciList) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) SetNRPciList(v NRPciLis
 }
 
 func (o DPCIConfigurationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -114,10 +114,10 @@ func (o DPCIConfigurationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, e
 
 func (o DPCIConfigurationFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DPciConfigurationControl) {
+	if !IsNil(o.DPciConfigurationControl) {
 		toSerialize["dPciConfigurationControl"] = o.DPciConfigurationControl
 	}
-	if !isNil(o.NRPciList) {
+	if !IsNil(o.NRPciList) {
 		toSerialize["nRPciList"] = o.NRPciList
 	}
 	return toSerialize, nil
@@ -158,5 +158,3 @@ func (v *NullableDPCIConfigurationFunctionSingleAllOfAttributes) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

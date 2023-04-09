@@ -1,7 +1,7 @@
 /*
 CAPIF_API_Invoker_Management_API
 
-API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for API invoker management.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -17,11 +17,11 @@ import (
 // checks if the ShareableInformation type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ShareableInformation{}
 
-// ShareableInformation Indicates whether the service API and/or the service API category can be shared to the list of CAPIF provider domains. 
+// ShareableInformation Indicates whether the service API and/or the service API category can be shared to the list of CAPIF provider domains.
 type ShareableInformation struct {
-	// Set to \"true\" indicates that the service API and/or the service API category can be shared to the list of CAPIF provider domain information. Otherwise set to \"false\". 
+	// Set to \"true\" indicates that the service API and/or the service API category can be shared to the list of CAPIF provider domain information. Otherwise set to \"false\".
 	IsShareable bool `json:"isShareable"`
-	// List of CAPIF provider domains to which the service API information to be shared. 
+	// List of CAPIF provider domains to which the service API information to be shared.
 	CapifProvDoms []string `json:"capifProvDoms,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *ShareableInformation) SetIsShareable(v bool) {
 
 // GetCapifProvDoms returns the CapifProvDoms field value if set, zero value otherwise.
 func (o *ShareableInformation) GetCapifProvDoms() []string {
-	if o == nil || isNil(o.CapifProvDoms) {
+	if o == nil || IsNil(o.CapifProvDoms) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ShareableInformation) GetCapifProvDoms() []string {
 // GetCapifProvDomsOk returns a tuple with the CapifProvDoms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShareableInformation) GetCapifProvDomsOk() ([]string, bool) {
-	if o == nil || isNil(o.CapifProvDoms) {
+	if o == nil || IsNil(o.CapifProvDoms) {
 		return nil, false
 	}
 	return o.CapifProvDoms, true
@@ -87,7 +87,7 @@ func (o *ShareableInformation) GetCapifProvDomsOk() ([]string, bool) {
 
 // HasCapifProvDoms returns a boolean if a field has been set.
 func (o *ShareableInformation) HasCapifProvDoms() bool {
-	if o != nil && !isNil(o.CapifProvDoms) {
+	if o != nil && !IsNil(o.CapifProvDoms) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ShareableInformation) SetCapifProvDoms(v []string) {
 }
 
 func (o ShareableInformation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -110,7 +110,7 @@ func (o ShareableInformation) MarshalJSON() ([]byte, error) {
 func (o ShareableInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["isShareable"] = o.IsShareable
-	if !isNil(o.CapifProvDoms) {
+	if !IsNil(o.CapifProvDoms) {
 		toSerialize["capifProvDoms"] = o.CapifProvDoms
 	}
 	return toSerialize, nil
@@ -151,5 +151,3 @@ func (v *NullableShareableInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

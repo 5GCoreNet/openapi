@@ -1,7 +1,7 @@
 /*
 Npcf_SMPolicyControl API
 
-Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Session Management Policy Control Service   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -19,14 +19,14 @@ var _ MappedNullable = &QosNotificationControlInfo{}
 
 // QosNotificationControlInfo Contains the QoS Notification Control Information.
 type QosNotificationControlInfo struct {
-	// An array of PCC rule id references to the PCC rules associated with the QoS notification  control info. 
-	RefPccRuleIds []string `json:"refPccRuleIds"`
-	NotifType QosNotifType `json:"notifType"`
+	// An array of PCC rule id references to the PCC rules associated with the QoS notification  control info.
+	RefPccRuleIds []string     `json:"refPccRuleIds"`
+	NotifType     QosNotifType `json:"notifType"`
 	// Represents the content version of some content.
 	ContVer *int32 `json:"contVer,omitempty"`
-	// Indicates the alternative QoS parameter set the NG-RAN can guarantee. When it is omitted and the notifType attribute is set to NOT_GUAARANTEED it indicates that the lowest priority alternative QoS profile could not be fulfilled. 
+	// Indicates the alternative QoS parameter set the NG-RAN can guarantee. When it is omitted and the notifType attribute is set to NOT_GUAARANTEED it indicates that the lowest priority alternative QoS profile could not be fulfilled.
 	AltQosParamId *string `json:"altQosParamId,omitempty"`
-	// When present and set to true it indicates that the Alternative QoS profiles are not  supported by NG-RAN. 
+	// When present and set to true it indicates that the Alternative QoS profiles are not  supported by NG-RAN.
 	AltQosNotSuppInd *bool `json:"altQosNotSuppInd,omitempty"`
 }
 
@@ -99,7 +99,7 @@ func (o *QosNotificationControlInfo) SetNotifType(v QosNotifType) {
 
 // GetContVer returns the ContVer field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetContVer() int32 {
-	if o == nil || isNil(o.ContVer) {
+	if o == nil || IsNil(o.ContVer) {
 		var ret int32
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *QosNotificationControlInfo) GetContVer() int32 {
 // GetContVerOk returns a tuple with the ContVer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetContVerOk() (*int32, bool) {
-	if o == nil || isNil(o.ContVer) {
+	if o == nil || IsNil(o.ContVer) {
 		return nil, false
 	}
 	return o.ContVer, true
@@ -117,7 +117,7 @@ func (o *QosNotificationControlInfo) GetContVerOk() (*int32, bool) {
 
 // HasContVer returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasContVer() bool {
-	if o != nil && !isNil(o.ContVer) {
+	if o != nil && !IsNil(o.ContVer) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *QosNotificationControlInfo) SetContVer(v int32) {
 
 // GetAltQosParamId returns the AltQosParamId field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetAltQosParamId() string {
-	if o == nil || isNil(o.AltQosParamId) {
+	if o == nil || IsNil(o.AltQosParamId) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *QosNotificationControlInfo) GetAltQosParamId() string {
 // GetAltQosParamIdOk returns a tuple with the AltQosParamId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetAltQosParamIdOk() (*string, bool) {
-	if o == nil || isNil(o.AltQosParamId) {
+	if o == nil || IsNil(o.AltQosParamId) {
 		return nil, false
 	}
 	return o.AltQosParamId, true
@@ -149,7 +149,7 @@ func (o *QosNotificationControlInfo) GetAltQosParamIdOk() (*string, bool) {
 
 // HasAltQosParamId returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasAltQosParamId() bool {
-	if o != nil && !isNil(o.AltQosParamId) {
+	if o != nil && !IsNil(o.AltQosParamId) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *QosNotificationControlInfo) SetAltQosParamId(v string) {
 
 // GetAltQosNotSuppInd returns the AltQosNotSuppInd field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetAltQosNotSuppInd() bool {
-	if o == nil || isNil(o.AltQosNotSuppInd) {
+	if o == nil || IsNil(o.AltQosNotSuppInd) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *QosNotificationControlInfo) GetAltQosNotSuppInd() bool {
 // GetAltQosNotSuppIndOk returns a tuple with the AltQosNotSuppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetAltQosNotSuppIndOk() (*bool, bool) {
-	if o == nil || isNil(o.AltQosNotSuppInd) {
+	if o == nil || IsNil(o.AltQosNotSuppInd) {
 		return nil, false
 	}
 	return o.AltQosNotSuppInd, true
@@ -181,7 +181,7 @@ func (o *QosNotificationControlInfo) GetAltQosNotSuppIndOk() (*bool, bool) {
 
 // HasAltQosNotSuppInd returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasAltQosNotSuppInd() bool {
-	if o != nil && !isNil(o.AltQosNotSuppInd) {
+	if o != nil && !IsNil(o.AltQosNotSuppInd) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *QosNotificationControlInfo) SetAltQosNotSuppInd(v bool) {
 }
 
 func (o QosNotificationControlInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -205,13 +205,13 @@ func (o QosNotificationControlInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["refPccRuleIds"] = o.RefPccRuleIds
 	toSerialize["notifType"] = o.NotifType
-	if !isNil(o.ContVer) {
+	if !IsNil(o.ContVer) {
 		toSerialize["contVer"] = o.ContVer
 	}
-	if !isNil(o.AltQosParamId) {
+	if !IsNil(o.AltQosParamId) {
 		toSerialize["altQosParamId"] = o.AltQosParamId
 	}
-	if !isNil(o.AltQosNotSuppInd) {
+	if !IsNil(o.AltQosNotSuppInd) {
 		toSerialize["altQosNotSuppInd"] = o.AltQosNotSuppInd
 	}
 	return toSerialize, nil
@@ -252,5 +252,3 @@ func (v *NullableQosNotificationControlInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nhss_imsSDM
 
-Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nhss Subscriber Data Management Service for IMS.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,13 +19,13 @@ var _ MappedNullable = &SgsnLocationData{}
 
 // SgsnLocationData Location information as retrieved from the SGSN serving node
 type SgsnLocationData struct {
-	SgsnNumber string `json:"sgsnNumber"`
-	PlmnId PlmnId `json:"plmnId"`
-	SgsnLocation *UtraLocation `json:"sgsnLocation,omitempty"`
+	SgsnNumber     string          `json:"sgsnNumber"`
+	PlmnId         PlmnId          `json:"plmnId"`
+	SgsnLocation   *UtraLocation   `json:"sgsnLocation,omitempty"`
 	CsgInformation *CsgInformation `json:"csgInformation,omitempty"`
-	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time. 
-	TimeZone *string `json:"timeZone,omitempty"`
-	RatType *RatType `json:"ratType,omitempty"`
+	// String with format \"time-numoffset\" optionally appended by \"daylightSavingTime\", where  - \"time-numoffset\" shall represent the time zone adjusted for daylight saving time and be    encoded as time-numoffset as defined in clause 5.6 of IETF RFC 3339;  - \"daylightSavingTime\" shall represent the adjustment that has been made and shall be    encoded as \"+1\" or \"+2\" for a +1 or +2 hours adjustment.   The example is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.
+	TimeZone *string  `json:"timeZone,omitempty"`
+	RatType  *RatType `json:"ratType,omitempty"`
 }
 
 // NewSgsnLocationData instantiates a new SgsnLocationData object
@@ -97,7 +97,7 @@ func (o *SgsnLocationData) SetPlmnId(v PlmnId) {
 
 // GetSgsnLocation returns the SgsnLocation field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetSgsnLocation() UtraLocation {
-	if o == nil || isNil(o.SgsnLocation) {
+	if o == nil || IsNil(o.SgsnLocation) {
 		var ret UtraLocation
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *SgsnLocationData) GetSgsnLocation() UtraLocation {
 // GetSgsnLocationOk returns a tuple with the SgsnLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetSgsnLocationOk() (*UtraLocation, bool) {
-	if o == nil || isNil(o.SgsnLocation) {
+	if o == nil || IsNil(o.SgsnLocation) {
 		return nil, false
 	}
 	return o.SgsnLocation, true
@@ -115,7 +115,7 @@ func (o *SgsnLocationData) GetSgsnLocationOk() (*UtraLocation, bool) {
 
 // HasSgsnLocation returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasSgsnLocation() bool {
-	if o != nil && !isNil(o.SgsnLocation) {
+	if o != nil && !IsNil(o.SgsnLocation) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *SgsnLocationData) SetSgsnLocation(v UtraLocation) {
 
 // GetCsgInformation returns the CsgInformation field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetCsgInformation() CsgInformation {
-	if o == nil || isNil(o.CsgInformation) {
+	if o == nil || IsNil(o.CsgInformation) {
 		var ret CsgInformation
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *SgsnLocationData) GetCsgInformation() CsgInformation {
 // GetCsgInformationOk returns a tuple with the CsgInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
-	if o == nil || isNil(o.CsgInformation) {
+	if o == nil || IsNil(o.CsgInformation) {
 		return nil, false
 	}
 	return o.CsgInformation, true
@@ -147,7 +147,7 @@ func (o *SgsnLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
 
 // HasCsgInformation returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasCsgInformation() bool {
-	if o != nil && !isNil(o.CsgInformation) {
+	if o != nil && !IsNil(o.CsgInformation) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *SgsnLocationData) SetCsgInformation(v CsgInformation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *SgsnLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -179,7 +179,7 @@ func (o *SgsnLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *SgsnLocationData) SetTimeZone(v string) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetRatType() RatType {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *SgsnLocationData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || isNil(o.RatType) {
+	if o == nil || IsNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -211,7 +211,7 @@ func (o *SgsnLocationData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasRatType() bool {
-	if o != nil && !isNil(o.RatType) {
+	if o != nil && !IsNil(o.RatType) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *SgsnLocationData) SetRatType(v RatType) {
 }
 
 func (o SgsnLocationData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -235,16 +235,16 @@ func (o SgsnLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sgsnNumber"] = o.SgsnNumber
 	toSerialize["plmnId"] = o.PlmnId
-	if !isNil(o.SgsnLocation) {
+	if !IsNil(o.SgsnLocation) {
 		toSerialize["sgsnLocation"] = o.SgsnLocation
 	}
-	if !isNil(o.CsgInformation) {
+	if !IsNil(o.CsgInformation) {
 		toSerialize["csgInformation"] = o.CsgInformation
 	}
-	if !isNil(o.TimeZone) {
+	if !IsNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !isNil(o.RatType) {
+	if !IsNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil
@@ -285,5 +285,3 @@ func (v *NullableSgsnLocationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &MmeCapabilities{}
 
 // MmeCapabilities MME capabilities
 type MmeCapabilities struct {
-	NonIpSupported *bool `json:"nonIpSupported,omitempty"`
+	NonIpSupported    *bool `json:"nonIpSupported,omitempty"`
 	EthernetSupported *bool `json:"ethernetSupported,omitempty"`
-	UpipSupported *bool `json:"upipSupported,omitempty"`
+	UpipSupported     *bool `json:"upipSupported,omitempty"`
 }
 
 // NewMmeCapabilities instantiates a new MmeCapabilities object
@@ -55,7 +55,7 @@ func NewMmeCapabilitiesWithDefaults() *MmeCapabilities {
 
 // GetNonIpSupported returns the NonIpSupported field value if set, zero value otherwise.
 func (o *MmeCapabilities) GetNonIpSupported() bool {
-	if o == nil || isNil(o.NonIpSupported) {
+	if o == nil || IsNil(o.NonIpSupported) {
 		var ret bool
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *MmeCapabilities) GetNonIpSupported() bool {
 // GetNonIpSupportedOk returns a tuple with the NonIpSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeCapabilities) GetNonIpSupportedOk() (*bool, bool) {
-	if o == nil || isNil(o.NonIpSupported) {
+	if o == nil || IsNil(o.NonIpSupported) {
 		return nil, false
 	}
 	return o.NonIpSupported, true
@@ -73,7 +73,7 @@ func (o *MmeCapabilities) GetNonIpSupportedOk() (*bool, bool) {
 
 // HasNonIpSupported returns a boolean if a field has been set.
 func (o *MmeCapabilities) HasNonIpSupported() bool {
-	if o != nil && !isNil(o.NonIpSupported) {
+	if o != nil && !IsNil(o.NonIpSupported) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *MmeCapabilities) SetNonIpSupported(v bool) {
 
 // GetEthernetSupported returns the EthernetSupported field value if set, zero value otherwise.
 func (o *MmeCapabilities) GetEthernetSupported() bool {
-	if o == nil || isNil(o.EthernetSupported) {
+	if o == nil || IsNil(o.EthernetSupported) {
 		var ret bool
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *MmeCapabilities) GetEthernetSupported() bool {
 // GetEthernetSupportedOk returns a tuple with the EthernetSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeCapabilities) GetEthernetSupportedOk() (*bool, bool) {
-	if o == nil || isNil(o.EthernetSupported) {
+	if o == nil || IsNil(o.EthernetSupported) {
 		return nil, false
 	}
 	return o.EthernetSupported, true
@@ -105,7 +105,7 @@ func (o *MmeCapabilities) GetEthernetSupportedOk() (*bool, bool) {
 
 // HasEthernetSupported returns a boolean if a field has been set.
 func (o *MmeCapabilities) HasEthernetSupported() bool {
-	if o != nil && !isNil(o.EthernetSupported) {
+	if o != nil && !IsNil(o.EthernetSupported) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *MmeCapabilities) SetEthernetSupported(v bool) {
 
 // GetUpipSupported returns the UpipSupported field value if set, zero value otherwise.
 func (o *MmeCapabilities) GetUpipSupported() bool {
-	if o == nil || isNil(o.UpipSupported) {
+	if o == nil || IsNil(o.UpipSupported) {
 		var ret bool
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *MmeCapabilities) GetUpipSupported() bool {
 // GetUpipSupportedOk returns a tuple with the UpipSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeCapabilities) GetUpipSupportedOk() (*bool, bool) {
-	if o == nil || isNil(o.UpipSupported) {
+	if o == nil || IsNil(o.UpipSupported) {
 		return nil, false
 	}
 	return o.UpipSupported, true
@@ -137,7 +137,7 @@ func (o *MmeCapabilities) GetUpipSupportedOk() (*bool, bool) {
 
 // HasUpipSupported returns a boolean if a field has been set.
 func (o *MmeCapabilities) HasUpipSupported() bool {
-	if o != nil && !isNil(o.UpipSupported) {
+	if o != nil && !IsNil(o.UpipSupported) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *MmeCapabilities) SetUpipSupported(v bool) {
 }
 
 func (o MmeCapabilities) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,13 +159,13 @@ func (o MmeCapabilities) MarshalJSON() ([]byte, error) {
 
 func (o MmeCapabilities) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.NonIpSupported) {
+	if !IsNil(o.NonIpSupported) {
 		toSerialize["nonIpSupported"] = o.NonIpSupported
 	}
-	if !isNil(o.EthernetSupported) {
+	if !IsNil(o.EthernetSupported) {
 		toSerialize["ethernetSupported"] = o.EthernetSupported
 	}
-	if !isNil(o.UpipSupported) {
+	if !IsNil(o.UpipSupported) {
 		toSerialize["upipSupported"] = o.UpipSupported
 	}
 	return toSerialize, nil
@@ -206,5 +206,3 @@ func (v *NullableMmeCapabilities) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

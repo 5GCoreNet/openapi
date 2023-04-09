@@ -1,7 +1,7 @@
 /*
 Nnef_EventExposure
 
-NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+NEF Event Exposure Service.   © 2022 , 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -20,8 +20,8 @@ var _ MappedNullable = &ServiceExperienceInfo{}
 // ServiceExperienceInfo Contains service experience information associated with an application.
 type ServiceExperienceInfo struct {
 	// String providing an application identifier.
-	AppId *string `json:"appId,omitempty"`
-	Supis []string `json:"supis,omitempty"`
+	AppId          *string                        `json:"appId,omitempty"`
+	Supis          []string                       `json:"supis,omitempty"`
 	SvcExpPerFlows []ServiceExperienceInfoPerFlow `json:"svcExpPerFlows"`
 }
 
@@ -45,7 +45,7 @@ func NewServiceExperienceInfoWithDefaults() *ServiceExperienceInfo {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetAppId() string {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ServiceExperienceInfo) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetAppIdOk() (*string, bool) {
-	if o == nil || isNil(o.AppId) {
+	if o == nil || IsNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -63,7 +63,7 @@ func (o *ServiceExperienceInfo) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasAppId() bool {
-	if o != nil && !isNil(o.AppId) {
+	if o != nil && !IsNil(o.AppId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ServiceExperienceInfo) SetAppId(v string) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo) GetSupis() []string {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ServiceExperienceInfo) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo) GetSupisOk() ([]string, bool) {
-	if o == nil || isNil(o.Supis) {
+	if o == nil || IsNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -95,7 +95,7 @@ func (o *ServiceExperienceInfo) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo) HasSupis() bool {
-	if o != nil && !isNil(o.Supis) {
+	if o != nil && !IsNil(o.Supis) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *ServiceExperienceInfo) SetSvcExpPerFlows(v []ServiceExperienceInfoPerFl
 }
 
 func (o ServiceExperienceInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,10 +141,10 @@ func (o ServiceExperienceInfo) MarshalJSON() ([]byte, error) {
 
 func (o ServiceExperienceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.AppId) {
+	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !isNil(o.Supis) {
+	if !IsNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
 	toSerialize["svcExpPerFlows"] = o.SvcExpPerFlows
@@ -186,5 +186,3 @@ func (v *NullableServiceExperienceInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

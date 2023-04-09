@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -13,19 +13,18 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
 )
 
-
 // Query5GVnGroupConfigurationDocumentApiService Query5GVnGroupConfigurationDocumentApi service
 type Query5GVnGroupConfigurationDocumentApiService service
 
 type ApiGet5GVnGroupConfigurationRequest struct {
-	ctx context.Context
-	ApiService *Query5GVnGroupConfigurationDocumentApiService
+	ctx             context.Context
+	ApiService      *Query5GVnGroupConfigurationDocumentApiService
 	externalGroupId string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGet5GVnGroupConfigurationRequest) Execute() (*Model5GVnGroupConfigura
 /*
 Get5GVnGroupConfiguration Retrieve a 5GVnGroup configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGroupId
- @return ApiGet5GVnGroupConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGroupId
+	@return ApiGet5GVnGroupConfigurationRequest
 */
 func (a *Query5GVnGroupConfigurationDocumentApiService) Get5GVnGroupConfiguration(ctx context.Context, externalGroupId string) ApiGet5GVnGroupConfigurationRequest {
 	return ApiGet5GVnGroupConfigurationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		externalGroupId: externalGroupId,
 	}
 }
 
 // Execute executes the request
-//  @return Model5GVnGroupConfiguration
+//
+//	@return Model5GVnGroupConfiguration
 func (a *Query5GVnGroupConfigurationDocumentApiService) Get5GVnGroupConfigurationExecute(r ApiGet5GVnGroupConfigurationRequest) (*Model5GVnGroupConfiguration, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Model5GVnGroupConfiguration
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Model5GVnGroupConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Query5GVnGroupConfigurationDocumentApiService.Get5GVnGroupConfiguration")
@@ -97,9 +97,9 @@ func (a *Query5GVnGroupConfigurationDocumentApiService) Get5GVnGroupConfiguratio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

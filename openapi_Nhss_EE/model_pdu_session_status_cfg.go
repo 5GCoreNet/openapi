@@ -1,7 +1,7 @@
 /*
 Nhss_EE
 
-HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+HSS Event Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,7 +19,7 @@ var _ MappedNullable = &PduSessionStatusCfg{}
 
 // PduSessionStatusCfg Contains data needed for a Monitoring Configuration, specific to the 'PDN Connectivity Status' event type
 type PduSessionStatusCfg struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
 	Apn *string `json:"apn,omitempty"`
 }
 
@@ -42,7 +42,7 @@ func NewPduSessionStatusCfgWithDefaults() *PduSessionStatusCfg {
 
 // GetApn returns the Apn field value if set, zero value otherwise.
 func (o *PduSessionStatusCfg) GetApn() string {
-	if o == nil || isNil(o.Apn) {
+	if o == nil || IsNil(o.Apn) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduSessionStatusCfg) GetApn() string {
 // GetApnOk returns a tuple with the Apn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionStatusCfg) GetApnOk() (*string, bool) {
-	if o == nil || isNil(o.Apn) {
+	if o == nil || IsNil(o.Apn) {
 		return nil, false
 	}
 	return o.Apn, true
@@ -60,7 +60,7 @@ func (o *PduSessionStatusCfg) GetApnOk() (*string, bool) {
 
 // HasApn returns a boolean if a field has been set.
 func (o *PduSessionStatusCfg) HasApn() bool {
-	if o != nil && !isNil(o.Apn) {
+	if o != nil && !IsNil(o.Apn) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *PduSessionStatusCfg) SetApn(v string) {
 }
 
 func (o PduSessionStatusCfg) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -82,7 +82,7 @@ func (o PduSessionStatusCfg) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionStatusCfg) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Apn) {
+	if !IsNil(o.Apn) {
 		toSerialize["apn"] = o.Apn
 	}
 	return toSerialize, nil
@@ -123,5 +123,3 @@ func (v *NullablePduSessionStatusCfg) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

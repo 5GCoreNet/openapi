@@ -1225,7 +1225,10 @@ components:
       description: Represents the user location area describing the UE moving trajectory.
     CommunicationIndicator:
       anyOf:
-      - $ref: '#/components/schemas/CommunicationIndicator_anyOf'
+      - enum:
+        - PERIODICALLY
+        - ON_DEMAND
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1233,7 +1236,10 @@ components:
         Possible values are - PERIODICALLY: Identifies the UE communicates periodically - ON_DEMAND: Identifies the UE communicates on demand
     StationaryIndication:
       anyOf:
-      - $ref: '#/components/schemas/StationaryIndication_anyOf'
+      - enum:
+        - STATIONARY
+        - MOBILE
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1241,7 +1247,11 @@ components:
         Possible values are - STATIONARY: Identifies the UE is stationary - MOBILE: Identifies the UE is mobile
     CpFailureCode:
       anyOf:
-      - $ref: '#/components/schemas/CpFailureCode_anyOf'
+      - enum:
+        - MALFUNCTION
+        - SET_ID_DUPLICATED
+        - OTHER_REASON
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1249,7 +1259,13 @@ components:
         Possible values are - MALFUNCTION: This value indicates that something functions wrongly in CP parameter provisioning or the CP parameter provisioning does not function at all. - SET_ID_DUPLICATED: The received CP set identifier(s) are already provisioned. - OTHER_REASON: Other reason unspecified.
     BatteryIndication:
       anyOf:
-      - $ref: '#/components/schemas/BatteryIndication_anyOf'
+      - enum:
+        - BATTERY_RECHARGE
+        - BATTERY_REPLACE
+        - BATTERY_NO_RECHARGE
+        - BATTERY_NO_REPLACE
+        - NO_BATTERY
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1257,7 +1273,13 @@ components:
         Possible values are - BATTERY_RECHARGE: UE powered with rechargeable battery. - BATTERY_REPLACE: UE powered with replaceable battery. - BATTERY_NO_RECHARGE: UE powered with no rechargeable battery. - BATTERY_NO_REPLACE: UE powered with no replaceable battery. - NO_BATTERY: UE not battery powered.
     TrafficProfile:
       anyOf:
-      - $ref: '#/components/schemas/TrafficProfile_anyOf'
+      - enum:
+        - SINGLE_TRANS_UL
+        - SINGLE_TRANS_DL
+        - DUAL_TRANS_UL_FIRST
+        - DUAL_TRANS_DL_FIRST
+        - MULTI_TRANS
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1265,7 +1287,11 @@ components:
         Possible values are - SINGLE_TRANS_UL: Uplink single packet transmission. - SINGLE_TRANS_DL: Downlink single packet transmission. - DUAL_TRANS_UL_FIRST: Dual packet transmission, firstly uplink packet transmission with subsequent downlink packet transmission. - DUAL_TRANS_DL_FIRST: Dual packet transmission, firstly downlink packet transmission with subsequent uplink packet transmission. - MULTI_TRANS: Multiple packet transmission.
     ScheduledCommunicationType:
       anyOf:
-      - $ref: '#/components/schemas/ScheduledCommunicationType_anyOf'
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        type: string
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1474,6 +1500,7 @@ components:
         nwAreaInfo:
           $ref: '#/components/schemas/NetworkAreaInfo'
       type: object
+      x-parent: true
     GeographicArea:
       anyOf:
       - $ref: '#/components/schemas/Point'
@@ -1509,9 +1536,20 @@ components:
       required:
       - shape
       type: object
+      x-parent: true
     SupportedGADShapes:
       anyOf:
-      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2096,50 +2134,6 @@ components:
           type: integer
       type: object
       example: null
-    CommunicationIndicator_anyOf:
-      enum:
-      - PERIODICALLY
-      - ON_DEMAND
-      type: string
-      example: null
-    StationaryIndication_anyOf:
-      enum:
-      - STATIONARY
-      - MOBILE
-      type: string
-      example: null
-    CpFailureCode_anyOf:
-      enum:
-      - MALFUNCTION
-      - SET_ID_DUPLICATED
-      - OTHER_REASON
-      type: string
-      example: null
-    BatteryIndication_anyOf:
-      enum:
-      - BATTERY_RECHARGE
-      - BATTERY_REPLACE
-      - BATTERY_NO_RECHARGE
-      - BATTERY_NO_REPLACE
-      - NO_BATTERY
-      type: string
-      example: null
-    TrafficProfile_anyOf:
-      enum:
-      - SINGLE_TRANS_UL
-      - SINGLE_TRANS_DL
-      - DUAL_TRANS_UL_FIRST
-      - DUAL_TRANS_DL_FIRST
-      - MULTI_TRANS
-      type: string
-      example: null
-    ScheduledCommunicationType_anyOf:
-      enum:
-      - DOWNLINK
-      - UPLINK
-      - BIDIRECTIONAL
-      type: string
-      example: null
     Point_allOf:
       properties:
         point:
@@ -2147,19 +2141,6 @@ components:
       required:
       - point
       type: object
-      example: null
-    SupportedGADShapes_anyOf:
-      enum:
-      - POINT
-      - POINT_UNCERTAINTY_CIRCLE
-      - POINT_UNCERTAINTY_ELLIPSE
-      - POLYGON
-      - POINT_ALTITUDE
-      - POINT_ALTITUDE_UNCERTAINTY
-      - ELLIPSOID_ARC
-      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

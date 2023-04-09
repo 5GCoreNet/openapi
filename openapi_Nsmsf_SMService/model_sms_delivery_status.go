@@ -1,7 +1,7 @@
 /*
 Nsmsf_SMService Service API
 
-SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMSF SMService.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -20,9 +20,9 @@ type SmsDeliveryStatus string
 
 // List of SmsDeliveryStatus
 const (
-	PENDING SmsDeliveryStatus = "SMS_DELIVERY_PENDING"
-	COMPLETED SmsDeliveryStatus = "SMS_DELIVERY_COMPLETED"
-	FAILED SmsDeliveryStatus = "SMS_DELIVERY_FAILED"
+	PENDING       SmsDeliveryStatus = "SMS_DELIVERY_PENDING"
+	COMPLETED     SmsDeliveryStatus = "SMS_DELIVERY_COMPLETED"
+	FAILED        SmsDeliveryStatus = "SMS_DELIVERY_FAILED"
 	SMSF_ACCEPTED SmsDeliveryStatus = "SMS_DELIVERY_SMSF_ACCEPTED"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableSmsDeliveryStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

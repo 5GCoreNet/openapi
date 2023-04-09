@@ -1,7 +1,7 @@
 /*
 Nudr_DataRepository API OpenAPI file
 
-Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 2.3.0-alpha.1
 */
@@ -19,70 +19,70 @@ var _ MappedNullable = &AccessAndMobilitySubscriptionData1{}
 
 // AccessAndMobilitySubscriptionData1 struct for AccessAndMobilitySubscriptionData1
 type AccessAndMobilitySubscriptionData1 struct {
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
-	SupportedFeatures *string `json:"supportedFeatures,omitempty"`
-	Gpsis []string `json:"gpsis,omitempty"`
+	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+	SupportedFeatures *string  `json:"supportedFeatures,omitempty"`
+	Gpsis             []string `json:"gpsis,omitempty"`
 	// Identifier of a group of NFs.
-	HssGroupId *string `json:"hssGroupId,omitempty"`
+	HssGroupId       *string  `json:"hssGroupId,omitempty"`
 	InternalGroupIds []string `json:"internalGroupIds,omitempty"`
 	// A map(list of key-value pairs) where GroupId serves as key of SharedDataId
-	SharedVnGroupDataIds *map[string]string `json:"sharedVnGroupDataIds,omitempty"`
-	SubscribedUeAmbr *AmbrRm `json:"subscribedUeAmbr,omitempty"`
-	Nssai NullableNssai1 `json:"nssai,omitempty"`
-	RatRestrictions []RatType `json:"ratRestrictions,omitempty"`
-	ForbiddenAreas []Area1 `json:"forbiddenAreas,omitempty"`
-	ServiceAreaRestriction *ServiceAreaRestriction1 `json:"serviceAreaRestriction,omitempty"`
-	CoreNetworkTypeRestrictions []CoreNetworkType `json:"coreNetworkTypeRestrictions,omitempty"`
-	AccessTypeRestrictions []AccessType `json:"accessTypeRestrictions,omitempty"`
-	// Unsigned integer representing the 'Subscriber Profile ID for RAT/Frequency Priority'  as specified in 3GPP TS 36.413 with the OpenAPI 'nullable: true' property.  
+	SharedVnGroupDataIds        *map[string]string       `json:"sharedVnGroupDataIds,omitempty"`
+	SubscribedUeAmbr            *AmbrRm                  `json:"subscribedUeAmbr,omitempty"`
+	Nssai                       NullableNssai1           `json:"nssai,omitempty"`
+	RatRestrictions             []RatType                `json:"ratRestrictions,omitempty"`
+	ForbiddenAreas              []Area1                  `json:"forbiddenAreas,omitempty"`
+	ServiceAreaRestriction      *ServiceAreaRestriction1 `json:"serviceAreaRestriction,omitempty"`
+	CoreNetworkTypeRestrictions []CoreNetworkType        `json:"coreNetworkTypeRestrictions,omitempty"`
+	AccessTypeRestrictions      []AccessType             `json:"accessTypeRestrictions,omitempty"`
+	// Unsigned integer representing the 'Subscriber Profile ID for RAT/Frequency Priority'  as specified in 3GPP TS 36.413 with the OpenAPI 'nullable: true' property.
 	RfspIndex NullableInt32 `json:"rfspIndex,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
 	SubsRegTimer NullableInt32 `json:"subsRegTimer,omitempty"`
-	UeUsageType *int32 `json:"ueUsageType,omitempty"`
-	MpsPriority *bool `json:"mpsPriority,omitempty"`
-	McsPriority *bool `json:"mcsPriority,omitempty"`
+	UeUsageType  *int32        `json:"ueUsageType,omitempty"`
+	MpsPriority  *bool         `json:"mpsPriority,omitempty"`
+	McsPriority  *bool         `json:"mcsPriority,omitempty"`
 	// indicating a time in seconds with OpenAPI defined 'nullable: true' property.
-	ActiveTime NullableInt32 `json:"activeTime,omitempty"`
-	SorInfo *SorInfo1 `json:"sorInfo,omitempty"`
-	SorInfoExpectInd *bool `json:"sorInfoExpectInd,omitempty"`
-	SorafRetrieval *bool `json:"sorafRetrieval,omitempty"`
-	SorUpdateIndicatorList []SorUpdateIndicator `json:"sorUpdateIndicatorList,omitempty"`
-	UpuInfo *UpuInfo1 `json:"upuInfo,omitempty"`
-	RoutingIndicator *string `json:"routingIndicator,omitempty"`
-	MicoAllowed *bool `json:"micoAllowed,omitempty"`
-	SharedAmDataIds []string `json:"sharedAmDataIds,omitempty"`
-	OdbPacketServices *OdbPacketServices `json:"odbPacketServices,omitempty"`
-	SubscribedDnnList []AccessAndMobilitySubscriptionDataSubscribedDnnListInner `json:"subscribedDnnList,omitempty"`
+	ActiveTime             NullableInt32                                             `json:"activeTime,omitempty"`
+	SorInfo                *SorInfo1                                                 `json:"sorInfo,omitempty"`
+	SorInfoExpectInd       *bool                                                     `json:"sorInfoExpectInd,omitempty"`
+	SorafRetrieval         *bool                                                     `json:"sorafRetrieval,omitempty"`
+	SorUpdateIndicatorList []SorUpdateIndicator                                      `json:"sorUpdateIndicatorList,omitempty"`
+	UpuInfo                *UpuInfo1                                                 `json:"upuInfo,omitempty"`
+	RoutingIndicator       *string                                                   `json:"routingIndicator,omitempty"`
+	MicoAllowed            *bool                                                     `json:"micoAllowed,omitempty"`
+	SharedAmDataIds        []string                                                  `json:"sharedAmDataIds,omitempty"`
+	OdbPacketServices      *OdbPacketServices                                        `json:"odbPacketServices,omitempty"`
+	SubscribedDnnList      []AccessAndMobilitySubscriptionDataSubscribedDnnListInner `json:"subscribedDnnList,omitempty"`
 	// indicating a time in seconds.
-	ServiceGapTime *int32 `json:"serviceGapTime,omitempty"`
-	MdtUserConsent *MdtUserConsent `json:"mdtUserConsent,omitempty"`
+	ServiceGapTime   *int32             `json:"serviceGapTime,omitempty"`
+	MdtUserConsent   *MdtUserConsent    `json:"mdtUserConsent,omitempty"`
 	MdtConfiguration *MdtConfiguration1 `json:"mdtConfiguration,omitempty"`
-	TraceData NullableTraceData `json:"traceData,omitempty"`
-	CagData *CagData1 `json:"cagData,omitempty"`
+	TraceData        NullableTraceData  `json:"traceData,omitempty"`
+	CagData          *CagData1          `json:"cagData,omitempty"`
 	// String representing the STN-SR as defined in clause 18.6 of 3GPP TS 23.003.
 	StnSr *string `json:"stnSr,omitempty"`
 	// String representing the C-MSISDN as defined in clause 18.7 of 3GPP TS 23.003.
-	CMsisdn *string `json:"cMsisdn,omitempty"`
-	NbIoTUePriority *int32 `json:"nbIoTUePriority,omitempty"`
-	NssaiInclusionAllowed *bool `json:"nssaiInclusionAllowed,omitempty"`
+	CMsisdn               *string `json:"cMsisdn,omitempty"`
+	NbIoTUePriority       *int32  `json:"nbIoTUePriority,omitempty"`
+	NssaiInclusionAllowed *bool   `json:"nssaiInclusionAllowed,omitempty"`
 	// string with format 'bytes' as defined in OpenAPI
-	RgWirelineCharacteristics *string `json:"rgWirelineCharacteristics,omitempty"`
-	EcRestrictionDataWb *EcRestrictionDataWb `json:"ecRestrictionDataWb,omitempty"`
-	EcRestrictionDataNb *bool `json:"ecRestrictionDataNb,omitempty"`
-	ExpectedUeBehaviourList *ExpectedUeBehaviourData1 `json:"expectedUeBehaviourList,omitempty"`
-	PrimaryRatRestrictions []RatType `json:"primaryRatRestrictions,omitempty"`
-	SecondaryRatRestrictions []RatType `json:"secondaryRatRestrictions,omitempty"`
-	EdrxParametersList []EdrxParameters1 `json:"edrxParametersList,omitempty"`
-	PtwParametersList []PtwParameters1 `json:"ptwParametersList,omitempty"`
-	IabOperationAllowed *bool `json:"iabOperationAllowed,omitempty"`
+	RgWirelineCharacteristics *string                   `json:"rgWirelineCharacteristics,omitempty"`
+	EcRestrictionDataWb       *EcRestrictionDataWb      `json:"ecRestrictionDataWb,omitempty"`
+	EcRestrictionDataNb       *bool                     `json:"ecRestrictionDataNb,omitempty"`
+	ExpectedUeBehaviourList   *ExpectedUeBehaviourData1 `json:"expectedUeBehaviourList,omitempty"`
+	PrimaryRatRestrictions    []RatType                 `json:"primaryRatRestrictions,omitempty"`
+	SecondaryRatRestrictions  []RatType                 `json:"secondaryRatRestrictions,omitempty"`
+	EdrxParametersList        []EdrxParameters1         `json:"edrxParametersList,omitempty"`
+	PtwParametersList         []PtwParameters1          `json:"ptwParametersList,omitempty"`
+	IabOperationAllowed       *bool                     `json:"iabOperationAllowed,omitempty"`
 	// A map (list of key-value pairs where PlmnId serves as key) of PlmnRestriction
-	AdjacentPlmnRestrictions *map[string]PlmnRestriction1 `json:"adjacentPlmnRestrictions,omitempty"`
-	WirelineForbiddenAreas []WirelineArea1 `json:"wirelineForbiddenAreas,omitempty"`
+	AdjacentPlmnRestrictions       *map[string]PlmnRestriction1     `json:"adjacentPlmnRestrictions,omitempty"`
+	WirelineForbiddenAreas         []WirelineArea1                  `json:"wirelineForbiddenAreas,omitempty"`
 	WirelineServiceAreaRestriction *WirelineServiceAreaRestriction1 `json:"wirelineServiceAreaRestriction,omitempty"`
-	PcfSelectionAssistanceInfos []PcfSelectionAssistanceInfo1 `json:"pcfSelectionAssistanceInfos,omitempty"`
-	AerialUeSubInfo *AerialUeSubscriptionInfo1 `json:"aerialUeSubInfo,omitempty"`
-	RoamingRestrictions *RoamingRestrictions `json:"roamingRestrictions,omitempty"`
-	RemoteProvInd *bool `json:"remoteProvInd,omitempty"`
+	PcfSelectionAssistanceInfos    []PcfSelectionAssistanceInfo1    `json:"pcfSelectionAssistanceInfos,omitempty"`
+	AerialUeSubInfo                *AerialUeSubscriptionInfo1       `json:"aerialUeSubInfo,omitempty"`
+	RoamingRestrictions            *RoamingRestrictions             `json:"roamingRestrictions,omitempty"`
+	RemoteProvInd                  *bool                            `json:"remoteProvInd,omitempty"`
 }
 
 // NewAccessAndMobilitySubscriptionData1 instantiates a new AccessAndMobilitySubscriptionData1 object
@@ -124,7 +124,7 @@ func NewAccessAndMobilitySubscriptionData1WithDefaults() *AccessAndMobilitySubsc
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSupportedFeatures() string {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || isNil(o.SupportedFeatures) {
+	if o == nil || IsNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -142,7 +142,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSupportedFeaturesOk() (*string, 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSupportedFeatures() bool {
-	if o != nil && !isNil(o.SupportedFeatures) {
+	if o != nil && !IsNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSupportedFeatures(v string) {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetGpsis() []string {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetGpsisOk() ([]string, bool) {
-	if o == nil || isNil(o.Gpsis) {
+	if o == nil || IsNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -174,7 +174,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasGpsis() bool {
-	if o != nil && !isNil(o.Gpsis) {
+	if o != nil && !IsNil(o.Gpsis) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetGpsis(v []string) {
 
 // GetHssGroupId returns the HssGroupId field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetHssGroupId() string {
-	if o == nil || isNil(o.HssGroupId) {
+	if o == nil || IsNil(o.HssGroupId) {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetHssGroupId() string {
 // GetHssGroupIdOk returns a tuple with the HssGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetHssGroupIdOk() (*string, bool) {
-	if o == nil || isNil(o.HssGroupId) {
+	if o == nil || IsNil(o.HssGroupId) {
 		return nil, false
 	}
 	return o.HssGroupId, true
@@ -206,7 +206,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetHssGroupIdOk() (*string, bool) {
 
 // HasHssGroupId returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasHssGroupId() bool {
-	if o != nil && !isNil(o.HssGroupId) {
+	if o != nil && !IsNil(o.HssGroupId) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetHssGroupId(v string) {
 
 // GetInternalGroupIds returns the InternalGroupIds field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetInternalGroupIds() []string {
-	if o == nil || isNil(o.InternalGroupIds) {
+	if o == nil || IsNil(o.InternalGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetInternalGroupIds() []string {
 // GetInternalGroupIdsOk returns a tuple with the InternalGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetInternalGroupIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.InternalGroupIds) {
+	if o == nil || IsNil(o.InternalGroupIds) {
 		return nil, false
 	}
 	return o.InternalGroupIds, true
@@ -238,7 +238,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetInternalGroupIdsOk() ([]string, 
 
 // HasInternalGroupIds returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasInternalGroupIds() bool {
-	if o != nil && !isNil(o.InternalGroupIds) {
+	if o != nil && !IsNil(o.InternalGroupIds) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetInternalGroupIds(v []string) {
 
 // GetSharedVnGroupDataIds returns the SharedVnGroupDataIds field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSharedVnGroupDataIds() map[string]string {
-	if o == nil || isNil(o.SharedVnGroupDataIds) {
+	if o == nil || IsNil(o.SharedVnGroupDataIds) {
 		var ret map[string]string
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSharedVnGroupDataIds() map[strin
 // GetSharedVnGroupDataIdsOk returns a tuple with the SharedVnGroupDataIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSharedVnGroupDataIdsOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.SharedVnGroupDataIds) {
+	if o == nil || IsNil(o.SharedVnGroupDataIds) {
 		return nil, false
 	}
 	return o.SharedVnGroupDataIds, true
@@ -270,7 +270,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSharedVnGroupDataIdsOk() (*map[s
 
 // HasSharedVnGroupDataIds returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSharedVnGroupDataIds() bool {
-	if o != nil && !isNil(o.SharedVnGroupDataIds) {
+	if o != nil && !IsNil(o.SharedVnGroupDataIds) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSharedVnGroupDataIds(v map[strin
 
 // GetSubscribedUeAmbr returns the SubscribedUeAmbr field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSubscribedUeAmbr() AmbrRm {
-	if o == nil || isNil(o.SubscribedUeAmbr) {
+	if o == nil || IsNil(o.SubscribedUeAmbr) {
 		var ret AmbrRm
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSubscribedUeAmbr() AmbrRm {
 // GetSubscribedUeAmbrOk returns a tuple with the SubscribedUeAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSubscribedUeAmbrOk() (*AmbrRm, bool) {
-	if o == nil || isNil(o.SubscribedUeAmbr) {
+	if o == nil || IsNil(o.SubscribedUeAmbr) {
 		return nil, false
 	}
 	return o.SubscribedUeAmbr, true
@@ -302,7 +302,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSubscribedUeAmbrOk() (*AmbrRm, b
 
 // HasSubscribedUeAmbr returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSubscribedUeAmbr() bool {
-	if o != nil && !isNil(o.SubscribedUeAmbr) {
+	if o != nil && !IsNil(o.SubscribedUeAmbr) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSubscribedUeAmbr(v AmbrRm) {
 
 // GetNssai returns the Nssai field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccessAndMobilitySubscriptionData1) GetNssai() Nssai1 {
-	if o == nil || isNil(o.Nssai.Get()) {
+	if o == nil || IsNil(o.Nssai.Get()) {
 		var ret Nssai1
 		return ret
 	}
@@ -346,6 +346,7 @@ func (o *AccessAndMobilitySubscriptionData1) HasNssai() bool {
 func (o *AccessAndMobilitySubscriptionData1) SetNssai(v Nssai1) {
 	o.Nssai.Set(&v)
 }
+
 // SetNssaiNil sets the value for Nssai to be an explicit nil
 func (o *AccessAndMobilitySubscriptionData1) SetNssaiNil() {
 	o.Nssai.Set(nil)
@@ -358,7 +359,7 @@ func (o *AccessAndMobilitySubscriptionData1) UnsetNssai() {
 
 // GetRatRestrictions returns the RatRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetRatRestrictions() []RatType {
-	if o == nil || isNil(o.RatRestrictions) {
+	if o == nil || IsNil(o.RatRestrictions) {
 		var ret []RatType
 		return ret
 	}
@@ -368,7 +369,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRatRestrictions() []RatType {
 // GetRatRestrictionsOk returns a tuple with the RatRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetRatRestrictionsOk() ([]RatType, bool) {
-	if o == nil || isNil(o.RatRestrictions) {
+	if o == nil || IsNil(o.RatRestrictions) {
 		return nil, false
 	}
 	return o.RatRestrictions, true
@@ -376,7 +377,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRatRestrictionsOk() ([]RatType, 
 
 // HasRatRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasRatRestrictions() bool {
-	if o != nil && !isNil(o.RatRestrictions) {
+	if o != nil && !IsNil(o.RatRestrictions) {
 		return true
 	}
 
@@ -390,7 +391,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetRatRestrictions(v []RatType) {
 
 // GetForbiddenAreas returns the ForbiddenAreas field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetForbiddenAreas() []Area1 {
-	if o == nil || isNil(o.ForbiddenAreas) {
+	if o == nil || IsNil(o.ForbiddenAreas) {
 		var ret []Area1
 		return ret
 	}
@@ -400,7 +401,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetForbiddenAreas() []Area1 {
 // GetForbiddenAreasOk returns a tuple with the ForbiddenAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetForbiddenAreasOk() ([]Area1, bool) {
-	if o == nil || isNil(o.ForbiddenAreas) {
+	if o == nil || IsNil(o.ForbiddenAreas) {
 		return nil, false
 	}
 	return o.ForbiddenAreas, true
@@ -408,7 +409,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetForbiddenAreasOk() ([]Area1, boo
 
 // HasForbiddenAreas returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasForbiddenAreas() bool {
-	if o != nil && !isNil(o.ForbiddenAreas) {
+	if o != nil && !IsNil(o.ForbiddenAreas) {
 		return true
 	}
 
@@ -422,7 +423,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetForbiddenAreas(v []Area1) {
 
 // GetServiceAreaRestriction returns the ServiceAreaRestriction field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetServiceAreaRestriction() ServiceAreaRestriction1 {
-	if o == nil || isNil(o.ServiceAreaRestriction) {
+	if o == nil || IsNil(o.ServiceAreaRestriction) {
 		var ret ServiceAreaRestriction1
 		return ret
 	}
@@ -432,7 +433,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetServiceAreaRestriction() Service
 // GetServiceAreaRestrictionOk returns a tuple with the ServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetServiceAreaRestrictionOk() (*ServiceAreaRestriction1, bool) {
-	if o == nil || isNil(o.ServiceAreaRestriction) {
+	if o == nil || IsNil(o.ServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.ServiceAreaRestriction, true
@@ -440,7 +441,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetServiceAreaRestrictionOk() (*Ser
 
 // HasServiceAreaRestriction returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasServiceAreaRestriction() bool {
-	if o != nil && !isNil(o.ServiceAreaRestriction) {
+	if o != nil && !IsNil(o.ServiceAreaRestriction) {
 		return true
 	}
 
@@ -454,7 +455,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetServiceAreaRestriction(v Service
 
 // GetCoreNetworkTypeRestrictions returns the CoreNetworkTypeRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetCoreNetworkTypeRestrictions() []CoreNetworkType {
-	if o == nil || isNil(o.CoreNetworkTypeRestrictions) {
+	if o == nil || IsNil(o.CoreNetworkTypeRestrictions) {
 		var ret []CoreNetworkType
 		return ret
 	}
@@ -464,7 +465,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetCoreNetworkTypeRestrictions() []
 // GetCoreNetworkTypeRestrictionsOk returns a tuple with the CoreNetworkTypeRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetCoreNetworkTypeRestrictionsOk() ([]CoreNetworkType, bool) {
-	if o == nil || isNil(o.CoreNetworkTypeRestrictions) {
+	if o == nil || IsNil(o.CoreNetworkTypeRestrictions) {
 		return nil, false
 	}
 	return o.CoreNetworkTypeRestrictions, true
@@ -472,7 +473,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetCoreNetworkTypeRestrictionsOk() 
 
 // HasCoreNetworkTypeRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasCoreNetworkTypeRestrictions() bool {
-	if o != nil && !isNil(o.CoreNetworkTypeRestrictions) {
+	if o != nil && !IsNil(o.CoreNetworkTypeRestrictions) {
 		return true
 	}
 
@@ -486,7 +487,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetCoreNetworkTypeRestrictions(v []
 
 // GetAccessTypeRestrictions returns the AccessTypeRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetAccessTypeRestrictions() []AccessType {
-	if o == nil || isNil(o.AccessTypeRestrictions) {
+	if o == nil || IsNil(o.AccessTypeRestrictions) {
 		var ret []AccessType
 		return ret
 	}
@@ -496,7 +497,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetAccessTypeRestrictions() []Acces
 // GetAccessTypeRestrictionsOk returns a tuple with the AccessTypeRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetAccessTypeRestrictionsOk() ([]AccessType, bool) {
-	if o == nil || isNil(o.AccessTypeRestrictions) {
+	if o == nil || IsNil(o.AccessTypeRestrictions) {
 		return nil, false
 	}
 	return o.AccessTypeRestrictions, true
@@ -504,7 +505,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetAccessTypeRestrictionsOk() ([]Ac
 
 // HasAccessTypeRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasAccessTypeRestrictions() bool {
-	if o != nil && !isNil(o.AccessTypeRestrictions) {
+	if o != nil && !IsNil(o.AccessTypeRestrictions) {
 		return true
 	}
 
@@ -518,7 +519,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetAccessTypeRestrictions(v []Acces
 
 // GetRfspIndex returns the RfspIndex field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccessAndMobilitySubscriptionData1) GetRfspIndex() int32 {
-	if o == nil || isNil(o.RfspIndex.Get()) {
+	if o == nil || IsNil(o.RfspIndex.Get()) {
 		var ret int32
 		return ret
 	}
@@ -548,6 +549,7 @@ func (o *AccessAndMobilitySubscriptionData1) HasRfspIndex() bool {
 func (o *AccessAndMobilitySubscriptionData1) SetRfspIndex(v int32) {
 	o.RfspIndex.Set(&v)
 }
+
 // SetRfspIndexNil sets the value for RfspIndex to be an explicit nil
 func (o *AccessAndMobilitySubscriptionData1) SetRfspIndexNil() {
 	o.RfspIndex.Set(nil)
@@ -560,7 +562,7 @@ func (o *AccessAndMobilitySubscriptionData1) UnsetRfspIndex() {
 
 // GetSubsRegTimer returns the SubsRegTimer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccessAndMobilitySubscriptionData1) GetSubsRegTimer() int32 {
-	if o == nil || isNil(o.SubsRegTimer.Get()) {
+	if o == nil || IsNil(o.SubsRegTimer.Get()) {
 		var ret int32
 		return ret
 	}
@@ -590,6 +592,7 @@ func (o *AccessAndMobilitySubscriptionData1) HasSubsRegTimer() bool {
 func (o *AccessAndMobilitySubscriptionData1) SetSubsRegTimer(v int32) {
 	o.SubsRegTimer.Set(&v)
 }
+
 // SetSubsRegTimerNil sets the value for SubsRegTimer to be an explicit nil
 func (o *AccessAndMobilitySubscriptionData1) SetSubsRegTimerNil() {
 	o.SubsRegTimer.Set(nil)
@@ -602,7 +605,7 @@ func (o *AccessAndMobilitySubscriptionData1) UnsetSubsRegTimer() {
 
 // GetUeUsageType returns the UeUsageType field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetUeUsageType() int32 {
-	if o == nil || isNil(o.UeUsageType) {
+	if o == nil || IsNil(o.UeUsageType) {
 		var ret int32
 		return ret
 	}
@@ -612,7 +615,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetUeUsageType() int32 {
 // GetUeUsageTypeOk returns a tuple with the UeUsageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetUeUsageTypeOk() (*int32, bool) {
-	if o == nil || isNil(o.UeUsageType) {
+	if o == nil || IsNil(o.UeUsageType) {
 		return nil, false
 	}
 	return o.UeUsageType, true
@@ -620,7 +623,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetUeUsageTypeOk() (*int32, bool) {
 
 // HasUeUsageType returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasUeUsageType() bool {
-	if o != nil && !isNil(o.UeUsageType) {
+	if o != nil && !IsNil(o.UeUsageType) {
 		return true
 	}
 
@@ -634,7 +637,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetUeUsageType(v int32) {
 
 // GetMpsPriority returns the MpsPriority field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetMpsPriority() bool {
-	if o == nil || isNil(o.MpsPriority) {
+	if o == nil || IsNil(o.MpsPriority) {
 		var ret bool
 		return ret
 	}
@@ -644,7 +647,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMpsPriority() bool {
 // GetMpsPriorityOk returns a tuple with the MpsPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetMpsPriorityOk() (*bool, bool) {
-	if o == nil || isNil(o.MpsPriority) {
+	if o == nil || IsNil(o.MpsPriority) {
 		return nil, false
 	}
 	return o.MpsPriority, true
@@ -652,7 +655,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMpsPriorityOk() (*bool, bool) {
 
 // HasMpsPriority returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasMpsPriority() bool {
-	if o != nil && !isNil(o.MpsPriority) {
+	if o != nil && !IsNil(o.MpsPriority) {
 		return true
 	}
 
@@ -666,7 +669,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetMpsPriority(v bool) {
 
 // GetMcsPriority returns the McsPriority field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetMcsPriority() bool {
-	if o == nil || isNil(o.McsPriority) {
+	if o == nil || IsNil(o.McsPriority) {
 		var ret bool
 		return ret
 	}
@@ -676,7 +679,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMcsPriority() bool {
 // GetMcsPriorityOk returns a tuple with the McsPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetMcsPriorityOk() (*bool, bool) {
-	if o == nil || isNil(o.McsPriority) {
+	if o == nil || IsNil(o.McsPriority) {
 		return nil, false
 	}
 	return o.McsPriority, true
@@ -684,7 +687,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMcsPriorityOk() (*bool, bool) {
 
 // HasMcsPriority returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasMcsPriority() bool {
-	if o != nil && !isNil(o.McsPriority) {
+	if o != nil && !IsNil(o.McsPriority) {
 		return true
 	}
 
@@ -698,7 +701,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetMcsPriority(v bool) {
 
 // GetActiveTime returns the ActiveTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccessAndMobilitySubscriptionData1) GetActiveTime() int32 {
-	if o == nil || isNil(o.ActiveTime.Get()) {
+	if o == nil || IsNil(o.ActiveTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -728,6 +731,7 @@ func (o *AccessAndMobilitySubscriptionData1) HasActiveTime() bool {
 func (o *AccessAndMobilitySubscriptionData1) SetActiveTime(v int32) {
 	o.ActiveTime.Set(&v)
 }
+
 // SetActiveTimeNil sets the value for ActiveTime to be an explicit nil
 func (o *AccessAndMobilitySubscriptionData1) SetActiveTimeNil() {
 	o.ActiveTime.Set(nil)
@@ -740,7 +744,7 @@ func (o *AccessAndMobilitySubscriptionData1) UnsetActiveTime() {
 
 // GetSorInfo returns the SorInfo field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSorInfo() SorInfo1 {
-	if o == nil || isNil(o.SorInfo) {
+	if o == nil || IsNil(o.SorInfo) {
 		var ret SorInfo1
 		return ret
 	}
@@ -750,7 +754,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorInfo() SorInfo1 {
 // GetSorInfoOk returns a tuple with the SorInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSorInfoOk() (*SorInfo1, bool) {
-	if o == nil || isNil(o.SorInfo) {
+	if o == nil || IsNil(o.SorInfo) {
 		return nil, false
 	}
 	return o.SorInfo, true
@@ -758,7 +762,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorInfoOk() (*SorInfo1, bool) {
 
 // HasSorInfo returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSorInfo() bool {
-	if o != nil && !isNil(o.SorInfo) {
+	if o != nil && !IsNil(o.SorInfo) {
 		return true
 	}
 
@@ -772,7 +776,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSorInfo(v SorInfo1) {
 
 // GetSorInfoExpectInd returns the SorInfoExpectInd field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSorInfoExpectInd() bool {
-	if o == nil || isNil(o.SorInfoExpectInd) {
+	if o == nil || IsNil(o.SorInfoExpectInd) {
 		var ret bool
 		return ret
 	}
@@ -782,7 +786,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorInfoExpectInd() bool {
 // GetSorInfoExpectIndOk returns a tuple with the SorInfoExpectInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSorInfoExpectIndOk() (*bool, bool) {
-	if o == nil || isNil(o.SorInfoExpectInd) {
+	if o == nil || IsNil(o.SorInfoExpectInd) {
 		return nil, false
 	}
 	return o.SorInfoExpectInd, true
@@ -790,7 +794,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorInfoExpectIndOk() (*bool, boo
 
 // HasSorInfoExpectInd returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSorInfoExpectInd() bool {
-	if o != nil && !isNil(o.SorInfoExpectInd) {
+	if o != nil && !IsNil(o.SorInfoExpectInd) {
 		return true
 	}
 
@@ -804,7 +808,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSorInfoExpectInd(v bool) {
 
 // GetSorafRetrieval returns the SorafRetrieval field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSorafRetrieval() bool {
-	if o == nil || isNil(o.SorafRetrieval) {
+	if o == nil || IsNil(o.SorafRetrieval) {
 		var ret bool
 		return ret
 	}
@@ -814,7 +818,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorafRetrieval() bool {
 // GetSorafRetrievalOk returns a tuple with the SorafRetrieval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSorafRetrievalOk() (*bool, bool) {
-	if o == nil || isNil(o.SorafRetrieval) {
+	if o == nil || IsNil(o.SorafRetrieval) {
 		return nil, false
 	}
 	return o.SorafRetrieval, true
@@ -822,7 +826,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorafRetrievalOk() (*bool, bool)
 
 // HasSorafRetrieval returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSorafRetrieval() bool {
-	if o != nil && !isNil(o.SorafRetrieval) {
+	if o != nil && !IsNil(o.SorafRetrieval) {
 		return true
 	}
 
@@ -836,7 +840,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSorafRetrieval(v bool) {
 
 // GetSorUpdateIndicatorList returns the SorUpdateIndicatorList field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSorUpdateIndicatorList() []SorUpdateIndicator {
-	if o == nil || isNil(o.SorUpdateIndicatorList) {
+	if o == nil || IsNil(o.SorUpdateIndicatorList) {
 		var ret []SorUpdateIndicator
 		return ret
 	}
@@ -846,7 +850,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorUpdateIndicatorList() []SorUp
 // GetSorUpdateIndicatorListOk returns a tuple with the SorUpdateIndicatorList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSorUpdateIndicatorListOk() ([]SorUpdateIndicator, bool) {
-	if o == nil || isNil(o.SorUpdateIndicatorList) {
+	if o == nil || IsNil(o.SorUpdateIndicatorList) {
 		return nil, false
 	}
 	return o.SorUpdateIndicatorList, true
@@ -854,7 +858,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSorUpdateIndicatorListOk() ([]So
 
 // HasSorUpdateIndicatorList returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSorUpdateIndicatorList() bool {
-	if o != nil && !isNil(o.SorUpdateIndicatorList) {
+	if o != nil && !IsNil(o.SorUpdateIndicatorList) {
 		return true
 	}
 
@@ -868,7 +872,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSorUpdateIndicatorList(v []SorUp
 
 // GetUpuInfo returns the UpuInfo field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetUpuInfo() UpuInfo1 {
-	if o == nil || isNil(o.UpuInfo) {
+	if o == nil || IsNil(o.UpuInfo) {
 		var ret UpuInfo1
 		return ret
 	}
@@ -878,7 +882,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetUpuInfo() UpuInfo1 {
 // GetUpuInfoOk returns a tuple with the UpuInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetUpuInfoOk() (*UpuInfo1, bool) {
-	if o == nil || isNil(o.UpuInfo) {
+	if o == nil || IsNil(o.UpuInfo) {
 		return nil, false
 	}
 	return o.UpuInfo, true
@@ -886,7 +890,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetUpuInfoOk() (*UpuInfo1, bool) {
 
 // HasUpuInfo returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasUpuInfo() bool {
-	if o != nil && !isNil(o.UpuInfo) {
+	if o != nil && !IsNil(o.UpuInfo) {
 		return true
 	}
 
@@ -900,7 +904,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetUpuInfo(v UpuInfo1) {
 
 // GetRoutingIndicator returns the RoutingIndicator field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetRoutingIndicator() string {
-	if o == nil || isNil(o.RoutingIndicator) {
+	if o == nil || IsNil(o.RoutingIndicator) {
 		var ret string
 		return ret
 	}
@@ -910,7 +914,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRoutingIndicator() string {
 // GetRoutingIndicatorOk returns a tuple with the RoutingIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetRoutingIndicatorOk() (*string, bool) {
-	if o == nil || isNil(o.RoutingIndicator) {
+	if o == nil || IsNil(o.RoutingIndicator) {
 		return nil, false
 	}
 	return o.RoutingIndicator, true
@@ -918,7 +922,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRoutingIndicatorOk() (*string, b
 
 // HasRoutingIndicator returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasRoutingIndicator() bool {
-	if o != nil && !isNil(o.RoutingIndicator) {
+	if o != nil && !IsNil(o.RoutingIndicator) {
 		return true
 	}
 
@@ -932,7 +936,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetRoutingIndicator(v string) {
 
 // GetMicoAllowed returns the MicoAllowed field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetMicoAllowed() bool {
-	if o == nil || isNil(o.MicoAllowed) {
+	if o == nil || IsNil(o.MicoAllowed) {
 		var ret bool
 		return ret
 	}
@@ -942,7 +946,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMicoAllowed() bool {
 // GetMicoAllowedOk returns a tuple with the MicoAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetMicoAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.MicoAllowed) {
+	if o == nil || IsNil(o.MicoAllowed) {
 		return nil, false
 	}
 	return o.MicoAllowed, true
@@ -950,7 +954,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMicoAllowedOk() (*bool, bool) {
 
 // HasMicoAllowed returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasMicoAllowed() bool {
-	if o != nil && !isNil(o.MicoAllowed) {
+	if o != nil && !IsNil(o.MicoAllowed) {
 		return true
 	}
 
@@ -964,7 +968,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetMicoAllowed(v bool) {
 
 // GetSharedAmDataIds returns the SharedAmDataIds field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSharedAmDataIds() []string {
-	if o == nil || isNil(o.SharedAmDataIds) {
+	if o == nil || IsNil(o.SharedAmDataIds) {
 		var ret []string
 		return ret
 	}
@@ -974,7 +978,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSharedAmDataIds() []string {
 // GetSharedAmDataIdsOk returns a tuple with the SharedAmDataIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSharedAmDataIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.SharedAmDataIds) {
+	if o == nil || IsNil(o.SharedAmDataIds) {
 		return nil, false
 	}
 	return o.SharedAmDataIds, true
@@ -982,7 +986,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSharedAmDataIdsOk() ([]string, b
 
 // HasSharedAmDataIds returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSharedAmDataIds() bool {
-	if o != nil && !isNil(o.SharedAmDataIds) {
+	if o != nil && !IsNil(o.SharedAmDataIds) {
 		return true
 	}
 
@@ -996,7 +1000,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSharedAmDataIds(v []string) {
 
 // GetOdbPacketServices returns the OdbPacketServices field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetOdbPacketServices() OdbPacketServices {
-	if o == nil || isNil(o.OdbPacketServices) {
+	if o == nil || IsNil(o.OdbPacketServices) {
 		var ret OdbPacketServices
 		return ret
 	}
@@ -1006,7 +1010,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetOdbPacketServices() OdbPacketSer
 // GetOdbPacketServicesOk returns a tuple with the OdbPacketServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetOdbPacketServicesOk() (*OdbPacketServices, bool) {
-	if o == nil || isNil(o.OdbPacketServices) {
+	if o == nil || IsNil(o.OdbPacketServices) {
 		return nil, false
 	}
 	return o.OdbPacketServices, true
@@ -1014,7 +1018,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetOdbPacketServicesOk() (*OdbPacke
 
 // HasOdbPacketServices returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasOdbPacketServices() bool {
-	if o != nil && !isNil(o.OdbPacketServices) {
+	if o != nil && !IsNil(o.OdbPacketServices) {
 		return true
 	}
 
@@ -1028,7 +1032,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetOdbPacketServices(v OdbPacketSer
 
 // GetSubscribedDnnList returns the SubscribedDnnList field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSubscribedDnnList() []AccessAndMobilitySubscriptionDataSubscribedDnnListInner {
-	if o == nil || isNil(o.SubscribedDnnList) {
+	if o == nil || IsNil(o.SubscribedDnnList) {
 		var ret []AccessAndMobilitySubscriptionDataSubscribedDnnListInner
 		return ret
 	}
@@ -1038,7 +1042,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSubscribedDnnList() []AccessAndM
 // GetSubscribedDnnListOk returns a tuple with the SubscribedDnnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSubscribedDnnListOk() ([]AccessAndMobilitySubscriptionDataSubscribedDnnListInner, bool) {
-	if o == nil || isNil(o.SubscribedDnnList) {
+	if o == nil || IsNil(o.SubscribedDnnList) {
 		return nil, false
 	}
 	return o.SubscribedDnnList, true
@@ -1046,7 +1050,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSubscribedDnnListOk() ([]AccessA
 
 // HasSubscribedDnnList returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSubscribedDnnList() bool {
-	if o != nil && !isNil(o.SubscribedDnnList) {
+	if o != nil && !IsNil(o.SubscribedDnnList) {
 		return true
 	}
 
@@ -1060,7 +1064,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSubscribedDnnList(v []AccessAndM
 
 // GetServiceGapTime returns the ServiceGapTime field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetServiceGapTime() int32 {
-	if o == nil || isNil(o.ServiceGapTime) {
+	if o == nil || IsNil(o.ServiceGapTime) {
 		var ret int32
 		return ret
 	}
@@ -1070,7 +1074,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetServiceGapTime() int32 {
 // GetServiceGapTimeOk returns a tuple with the ServiceGapTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetServiceGapTimeOk() (*int32, bool) {
-	if o == nil || isNil(o.ServiceGapTime) {
+	if o == nil || IsNil(o.ServiceGapTime) {
 		return nil, false
 	}
 	return o.ServiceGapTime, true
@@ -1078,7 +1082,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetServiceGapTimeOk() (*int32, bool
 
 // HasServiceGapTime returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasServiceGapTime() bool {
-	if o != nil && !isNil(o.ServiceGapTime) {
+	if o != nil && !IsNil(o.ServiceGapTime) {
 		return true
 	}
 
@@ -1092,7 +1096,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetServiceGapTime(v int32) {
 
 // GetMdtUserConsent returns the MdtUserConsent field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetMdtUserConsent() MdtUserConsent {
-	if o == nil || isNil(o.MdtUserConsent) {
+	if o == nil || IsNil(o.MdtUserConsent) {
 		var ret MdtUserConsent
 		return ret
 	}
@@ -1102,7 +1106,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMdtUserConsent() MdtUserConsent 
 // GetMdtUserConsentOk returns a tuple with the MdtUserConsent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetMdtUserConsentOk() (*MdtUserConsent, bool) {
-	if o == nil || isNil(o.MdtUserConsent) {
+	if o == nil || IsNil(o.MdtUserConsent) {
 		return nil, false
 	}
 	return o.MdtUserConsent, true
@@ -1110,7 +1114,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMdtUserConsentOk() (*MdtUserCons
 
 // HasMdtUserConsent returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasMdtUserConsent() bool {
-	if o != nil && !isNil(o.MdtUserConsent) {
+	if o != nil && !IsNil(o.MdtUserConsent) {
 		return true
 	}
 
@@ -1124,7 +1128,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetMdtUserConsent(v MdtUserConsent)
 
 // GetMdtConfiguration returns the MdtConfiguration field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetMdtConfiguration() MdtConfiguration1 {
-	if o == nil || isNil(o.MdtConfiguration) {
+	if o == nil || IsNil(o.MdtConfiguration) {
 		var ret MdtConfiguration1
 		return ret
 	}
@@ -1134,7 +1138,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMdtConfiguration() MdtConfigurat
 // GetMdtConfigurationOk returns a tuple with the MdtConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetMdtConfigurationOk() (*MdtConfiguration1, bool) {
-	if o == nil || isNil(o.MdtConfiguration) {
+	if o == nil || IsNil(o.MdtConfiguration) {
 		return nil, false
 	}
 	return o.MdtConfiguration, true
@@ -1142,7 +1146,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetMdtConfigurationOk() (*MdtConfig
 
 // HasMdtConfiguration returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasMdtConfiguration() bool {
-	if o != nil && !isNil(o.MdtConfiguration) {
+	if o != nil && !IsNil(o.MdtConfiguration) {
 		return true
 	}
 
@@ -1156,7 +1160,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetMdtConfiguration(v MdtConfigurat
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccessAndMobilitySubscriptionData1) GetTraceData() TraceData {
-	if o == nil || isNil(o.TraceData.Get()) {
+	if o == nil || IsNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -1186,6 +1190,7 @@ func (o *AccessAndMobilitySubscriptionData1) HasTraceData() bool {
 func (o *AccessAndMobilitySubscriptionData1) SetTraceData(v TraceData) {
 	o.TraceData.Set(&v)
 }
+
 // SetTraceDataNil sets the value for TraceData to be an explicit nil
 func (o *AccessAndMobilitySubscriptionData1) SetTraceDataNil() {
 	o.TraceData.Set(nil)
@@ -1198,7 +1203,7 @@ func (o *AccessAndMobilitySubscriptionData1) UnsetTraceData() {
 
 // GetCagData returns the CagData field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetCagData() CagData1 {
-	if o == nil || isNil(o.CagData) {
+	if o == nil || IsNil(o.CagData) {
 		var ret CagData1
 		return ret
 	}
@@ -1208,7 +1213,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetCagData() CagData1 {
 // GetCagDataOk returns a tuple with the CagData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetCagDataOk() (*CagData1, bool) {
-	if o == nil || isNil(o.CagData) {
+	if o == nil || IsNil(o.CagData) {
 		return nil, false
 	}
 	return o.CagData, true
@@ -1216,7 +1221,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetCagDataOk() (*CagData1, bool) {
 
 // HasCagData returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasCagData() bool {
-	if o != nil && !isNil(o.CagData) {
+	if o != nil && !IsNil(o.CagData) {
 		return true
 	}
 
@@ -1230,7 +1235,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetCagData(v CagData1) {
 
 // GetStnSr returns the StnSr field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetStnSr() string {
-	if o == nil || isNil(o.StnSr) {
+	if o == nil || IsNil(o.StnSr) {
 		var ret string
 		return ret
 	}
@@ -1240,7 +1245,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetStnSr() string {
 // GetStnSrOk returns a tuple with the StnSr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetStnSrOk() (*string, bool) {
-	if o == nil || isNil(o.StnSr) {
+	if o == nil || IsNil(o.StnSr) {
 		return nil, false
 	}
 	return o.StnSr, true
@@ -1248,7 +1253,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetStnSrOk() (*string, bool) {
 
 // HasStnSr returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasStnSr() bool {
-	if o != nil && !isNil(o.StnSr) {
+	if o != nil && !IsNil(o.StnSr) {
 		return true
 	}
 
@@ -1262,7 +1267,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetStnSr(v string) {
 
 // GetCMsisdn returns the CMsisdn field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetCMsisdn() string {
-	if o == nil || isNil(o.CMsisdn) {
+	if o == nil || IsNil(o.CMsisdn) {
 		var ret string
 		return ret
 	}
@@ -1272,7 +1277,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetCMsisdn() string {
 // GetCMsisdnOk returns a tuple with the CMsisdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetCMsisdnOk() (*string, bool) {
-	if o == nil || isNil(o.CMsisdn) {
+	if o == nil || IsNil(o.CMsisdn) {
 		return nil, false
 	}
 	return o.CMsisdn, true
@@ -1280,7 +1285,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetCMsisdnOk() (*string, bool) {
 
 // HasCMsisdn returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasCMsisdn() bool {
-	if o != nil && !isNil(o.CMsisdn) {
+	if o != nil && !IsNil(o.CMsisdn) {
 		return true
 	}
 
@@ -1294,7 +1299,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetCMsisdn(v string) {
 
 // GetNbIoTUePriority returns the NbIoTUePriority field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetNbIoTUePriority() int32 {
-	if o == nil || isNil(o.NbIoTUePriority) {
+	if o == nil || IsNil(o.NbIoTUePriority) {
 		var ret int32
 		return ret
 	}
@@ -1304,7 +1309,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetNbIoTUePriority() int32 {
 // GetNbIoTUePriorityOk returns a tuple with the NbIoTUePriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetNbIoTUePriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.NbIoTUePriority) {
+	if o == nil || IsNil(o.NbIoTUePriority) {
 		return nil, false
 	}
 	return o.NbIoTUePriority, true
@@ -1312,7 +1317,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetNbIoTUePriorityOk() (*int32, boo
 
 // HasNbIoTUePriority returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasNbIoTUePriority() bool {
-	if o != nil && !isNil(o.NbIoTUePriority) {
+	if o != nil && !IsNil(o.NbIoTUePriority) {
 		return true
 	}
 
@@ -1326,7 +1331,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetNbIoTUePriority(v int32) {
 
 // GetNssaiInclusionAllowed returns the NssaiInclusionAllowed field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetNssaiInclusionAllowed() bool {
-	if o == nil || isNil(o.NssaiInclusionAllowed) {
+	if o == nil || IsNil(o.NssaiInclusionAllowed) {
 		var ret bool
 		return ret
 	}
@@ -1336,7 +1341,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetNssaiInclusionAllowed() bool {
 // GetNssaiInclusionAllowedOk returns a tuple with the NssaiInclusionAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetNssaiInclusionAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.NssaiInclusionAllowed) {
+	if o == nil || IsNil(o.NssaiInclusionAllowed) {
 		return nil, false
 	}
 	return o.NssaiInclusionAllowed, true
@@ -1344,7 +1349,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetNssaiInclusionAllowedOk() (*bool
 
 // HasNssaiInclusionAllowed returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasNssaiInclusionAllowed() bool {
-	if o != nil && !isNil(o.NssaiInclusionAllowed) {
+	if o != nil && !IsNil(o.NssaiInclusionAllowed) {
 		return true
 	}
 
@@ -1358,7 +1363,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetNssaiInclusionAllowed(v bool) {
 
 // GetRgWirelineCharacteristics returns the RgWirelineCharacteristics field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetRgWirelineCharacteristics() string {
-	if o == nil || isNil(o.RgWirelineCharacteristics) {
+	if o == nil || IsNil(o.RgWirelineCharacteristics) {
 		var ret string
 		return ret
 	}
@@ -1368,7 +1373,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRgWirelineCharacteristics() stri
 // GetRgWirelineCharacteristicsOk returns a tuple with the RgWirelineCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetRgWirelineCharacteristicsOk() (*string, bool) {
-	if o == nil || isNil(o.RgWirelineCharacteristics) {
+	if o == nil || IsNil(o.RgWirelineCharacteristics) {
 		return nil, false
 	}
 	return o.RgWirelineCharacteristics, true
@@ -1376,7 +1381,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRgWirelineCharacteristicsOk() (*
 
 // HasRgWirelineCharacteristics returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasRgWirelineCharacteristics() bool {
-	if o != nil && !isNil(o.RgWirelineCharacteristics) {
+	if o != nil && !IsNil(o.RgWirelineCharacteristics) {
 		return true
 	}
 
@@ -1390,7 +1395,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetRgWirelineCharacteristics(v stri
 
 // GetEcRestrictionDataWb returns the EcRestrictionDataWb field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataWb() EcRestrictionDataWb {
-	if o == nil || isNil(o.EcRestrictionDataWb) {
+	if o == nil || IsNil(o.EcRestrictionDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -1400,7 +1405,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataWb() EcRestrict
 // GetEcRestrictionDataWbOk returns a tuple with the EcRestrictionDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || isNil(o.EcRestrictionDataWb) {
+	if o == nil || IsNil(o.EcRestrictionDataWb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataWb, true
@@ -1408,7 +1413,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataWbOk() (*EcRest
 
 // HasEcRestrictionDataWb returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasEcRestrictionDataWb() bool {
-	if o != nil && !isNil(o.EcRestrictionDataWb) {
+	if o != nil && !IsNil(o.EcRestrictionDataWb) {
 		return true
 	}
 
@@ -1422,7 +1427,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetEcRestrictionDataWb(v EcRestrict
 
 // GetEcRestrictionDataNb returns the EcRestrictionDataNb field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataNb() bool {
-	if o == nil || isNil(o.EcRestrictionDataNb) {
+	if o == nil || IsNil(o.EcRestrictionDataNb) {
 		var ret bool
 		return ret
 	}
@@ -1432,7 +1437,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataNb() bool {
 // GetEcRestrictionDataNbOk returns a tuple with the EcRestrictionDataNb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataNbOk() (*bool, bool) {
-	if o == nil || isNil(o.EcRestrictionDataNb) {
+	if o == nil || IsNil(o.EcRestrictionDataNb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataNb, true
@@ -1440,7 +1445,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetEcRestrictionDataNbOk() (*bool, 
 
 // HasEcRestrictionDataNb returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasEcRestrictionDataNb() bool {
-	if o != nil && !isNil(o.EcRestrictionDataNb) {
+	if o != nil && !IsNil(o.EcRestrictionDataNb) {
 		return true
 	}
 
@@ -1454,7 +1459,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetEcRestrictionDataNb(v bool) {
 
 // GetExpectedUeBehaviourList returns the ExpectedUeBehaviourList field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetExpectedUeBehaviourList() ExpectedUeBehaviourData1 {
-	if o == nil || isNil(o.ExpectedUeBehaviourList) {
+	if o == nil || IsNil(o.ExpectedUeBehaviourList) {
 		var ret ExpectedUeBehaviourData1
 		return ret
 	}
@@ -1464,7 +1469,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetExpectedUeBehaviourList() Expect
 // GetExpectedUeBehaviourListOk returns a tuple with the ExpectedUeBehaviourList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetExpectedUeBehaviourListOk() (*ExpectedUeBehaviourData1, bool) {
-	if o == nil || isNil(o.ExpectedUeBehaviourList) {
+	if o == nil || IsNil(o.ExpectedUeBehaviourList) {
 		return nil, false
 	}
 	return o.ExpectedUeBehaviourList, true
@@ -1472,7 +1477,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetExpectedUeBehaviourListOk() (*Ex
 
 // HasExpectedUeBehaviourList returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasExpectedUeBehaviourList() bool {
-	if o != nil && !isNil(o.ExpectedUeBehaviourList) {
+	if o != nil && !IsNil(o.ExpectedUeBehaviourList) {
 		return true
 	}
 
@@ -1486,7 +1491,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetExpectedUeBehaviourList(v Expect
 
 // GetPrimaryRatRestrictions returns the PrimaryRatRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetPrimaryRatRestrictions() []RatType {
-	if o == nil || isNil(o.PrimaryRatRestrictions) {
+	if o == nil || IsNil(o.PrimaryRatRestrictions) {
 		var ret []RatType
 		return ret
 	}
@@ -1496,7 +1501,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetPrimaryRatRestrictions() []RatTy
 // GetPrimaryRatRestrictionsOk returns a tuple with the PrimaryRatRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetPrimaryRatRestrictionsOk() ([]RatType, bool) {
-	if o == nil || isNil(o.PrimaryRatRestrictions) {
+	if o == nil || IsNil(o.PrimaryRatRestrictions) {
 		return nil, false
 	}
 	return o.PrimaryRatRestrictions, true
@@ -1504,7 +1509,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetPrimaryRatRestrictionsOk() ([]Ra
 
 // HasPrimaryRatRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasPrimaryRatRestrictions() bool {
-	if o != nil && !isNil(o.PrimaryRatRestrictions) {
+	if o != nil && !IsNil(o.PrimaryRatRestrictions) {
 		return true
 	}
 
@@ -1518,7 +1523,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetPrimaryRatRestrictions(v []RatTy
 
 // GetSecondaryRatRestrictions returns the SecondaryRatRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetSecondaryRatRestrictions() []RatType {
-	if o == nil || isNil(o.SecondaryRatRestrictions) {
+	if o == nil || IsNil(o.SecondaryRatRestrictions) {
 		var ret []RatType
 		return ret
 	}
@@ -1528,7 +1533,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSecondaryRatRestrictions() []Rat
 // GetSecondaryRatRestrictionsOk returns a tuple with the SecondaryRatRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetSecondaryRatRestrictionsOk() ([]RatType, bool) {
-	if o == nil || isNil(o.SecondaryRatRestrictions) {
+	if o == nil || IsNil(o.SecondaryRatRestrictions) {
 		return nil, false
 	}
 	return o.SecondaryRatRestrictions, true
@@ -1536,7 +1541,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetSecondaryRatRestrictionsOk() ([]
 
 // HasSecondaryRatRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasSecondaryRatRestrictions() bool {
-	if o != nil && !isNil(o.SecondaryRatRestrictions) {
+	if o != nil && !IsNil(o.SecondaryRatRestrictions) {
 		return true
 	}
 
@@ -1550,7 +1555,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetSecondaryRatRestrictions(v []Rat
 
 // GetEdrxParametersList returns the EdrxParametersList field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetEdrxParametersList() []EdrxParameters1 {
-	if o == nil || isNil(o.EdrxParametersList) {
+	if o == nil || IsNil(o.EdrxParametersList) {
 		var ret []EdrxParameters1
 		return ret
 	}
@@ -1560,7 +1565,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetEdrxParametersList() []EdrxParam
 // GetEdrxParametersListOk returns a tuple with the EdrxParametersList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetEdrxParametersListOk() ([]EdrxParameters1, bool) {
-	if o == nil || isNil(o.EdrxParametersList) {
+	if o == nil || IsNil(o.EdrxParametersList) {
 		return nil, false
 	}
 	return o.EdrxParametersList, true
@@ -1568,7 +1573,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetEdrxParametersListOk() ([]EdrxPa
 
 // HasEdrxParametersList returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasEdrxParametersList() bool {
-	if o != nil && !isNil(o.EdrxParametersList) {
+	if o != nil && !IsNil(o.EdrxParametersList) {
 		return true
 	}
 
@@ -1582,7 +1587,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetEdrxParametersList(v []EdrxParam
 
 // GetPtwParametersList returns the PtwParametersList field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetPtwParametersList() []PtwParameters1 {
-	if o == nil || isNil(o.PtwParametersList) {
+	if o == nil || IsNil(o.PtwParametersList) {
 		var ret []PtwParameters1
 		return ret
 	}
@@ -1592,7 +1597,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetPtwParametersList() []PtwParamet
 // GetPtwParametersListOk returns a tuple with the PtwParametersList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetPtwParametersListOk() ([]PtwParameters1, bool) {
-	if o == nil || isNil(o.PtwParametersList) {
+	if o == nil || IsNil(o.PtwParametersList) {
 		return nil, false
 	}
 	return o.PtwParametersList, true
@@ -1600,7 +1605,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetPtwParametersListOk() ([]PtwPara
 
 // HasPtwParametersList returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasPtwParametersList() bool {
-	if o != nil && !isNil(o.PtwParametersList) {
+	if o != nil && !IsNil(o.PtwParametersList) {
 		return true
 	}
 
@@ -1614,7 +1619,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetPtwParametersList(v []PtwParamet
 
 // GetIabOperationAllowed returns the IabOperationAllowed field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetIabOperationAllowed() bool {
-	if o == nil || isNil(o.IabOperationAllowed) {
+	if o == nil || IsNil(o.IabOperationAllowed) {
 		var ret bool
 		return ret
 	}
@@ -1624,7 +1629,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetIabOperationAllowed() bool {
 // GetIabOperationAllowedOk returns a tuple with the IabOperationAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetIabOperationAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.IabOperationAllowed) {
+	if o == nil || IsNil(o.IabOperationAllowed) {
 		return nil, false
 	}
 	return o.IabOperationAllowed, true
@@ -1632,7 +1637,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetIabOperationAllowedOk() (*bool, 
 
 // HasIabOperationAllowed returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasIabOperationAllowed() bool {
-	if o != nil && !isNil(o.IabOperationAllowed) {
+	if o != nil && !IsNil(o.IabOperationAllowed) {
 		return true
 	}
 
@@ -1646,7 +1651,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetIabOperationAllowed(v bool) {
 
 // GetAdjacentPlmnRestrictions returns the AdjacentPlmnRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetAdjacentPlmnRestrictions() map[string]PlmnRestriction1 {
-	if o == nil || isNil(o.AdjacentPlmnRestrictions) {
+	if o == nil || IsNil(o.AdjacentPlmnRestrictions) {
 		var ret map[string]PlmnRestriction1
 		return ret
 	}
@@ -1656,7 +1661,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetAdjacentPlmnRestrictions() map[s
 // GetAdjacentPlmnRestrictionsOk returns a tuple with the AdjacentPlmnRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetAdjacentPlmnRestrictionsOk() (*map[string]PlmnRestriction1, bool) {
-	if o == nil || isNil(o.AdjacentPlmnRestrictions) {
+	if o == nil || IsNil(o.AdjacentPlmnRestrictions) {
 		return nil, false
 	}
 	return o.AdjacentPlmnRestrictions, true
@@ -1664,7 +1669,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetAdjacentPlmnRestrictionsOk() (*m
 
 // HasAdjacentPlmnRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasAdjacentPlmnRestrictions() bool {
-	if o != nil && !isNil(o.AdjacentPlmnRestrictions) {
+	if o != nil && !IsNil(o.AdjacentPlmnRestrictions) {
 		return true
 	}
 
@@ -1678,7 +1683,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetAdjacentPlmnRestrictions(v map[s
 
 // GetWirelineForbiddenAreas returns the WirelineForbiddenAreas field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetWirelineForbiddenAreas() []WirelineArea1 {
-	if o == nil || isNil(o.WirelineForbiddenAreas) {
+	if o == nil || IsNil(o.WirelineForbiddenAreas) {
 		var ret []WirelineArea1
 		return ret
 	}
@@ -1688,7 +1693,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetWirelineForbiddenAreas() []Wirel
 // GetWirelineForbiddenAreasOk returns a tuple with the WirelineForbiddenAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetWirelineForbiddenAreasOk() ([]WirelineArea1, bool) {
-	if o == nil || isNil(o.WirelineForbiddenAreas) {
+	if o == nil || IsNil(o.WirelineForbiddenAreas) {
 		return nil, false
 	}
 	return o.WirelineForbiddenAreas, true
@@ -1696,7 +1701,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetWirelineForbiddenAreasOk() ([]Wi
 
 // HasWirelineForbiddenAreas returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasWirelineForbiddenAreas() bool {
-	if o != nil && !isNil(o.WirelineForbiddenAreas) {
+	if o != nil && !IsNil(o.WirelineForbiddenAreas) {
 		return true
 	}
 
@@ -1710,7 +1715,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetWirelineForbiddenAreas(v []Wirel
 
 // GetWirelineServiceAreaRestriction returns the WirelineServiceAreaRestriction field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetWirelineServiceAreaRestriction() WirelineServiceAreaRestriction1 {
-	if o == nil || isNil(o.WirelineServiceAreaRestriction) {
+	if o == nil || IsNil(o.WirelineServiceAreaRestriction) {
 		var ret WirelineServiceAreaRestriction1
 		return ret
 	}
@@ -1720,7 +1725,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetWirelineServiceAreaRestriction()
 // GetWirelineServiceAreaRestrictionOk returns a tuple with the WirelineServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetWirelineServiceAreaRestrictionOk() (*WirelineServiceAreaRestriction1, bool) {
-	if o == nil || isNil(o.WirelineServiceAreaRestriction) {
+	if o == nil || IsNil(o.WirelineServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.WirelineServiceAreaRestriction, true
@@ -1728,7 +1733,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetWirelineServiceAreaRestrictionOk
 
 // HasWirelineServiceAreaRestriction returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasWirelineServiceAreaRestriction() bool {
-	if o != nil && !isNil(o.WirelineServiceAreaRestriction) {
+	if o != nil && !IsNil(o.WirelineServiceAreaRestriction) {
 		return true
 	}
 
@@ -1742,7 +1747,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetWirelineServiceAreaRestriction(v
 
 // GetPcfSelectionAssistanceInfos returns the PcfSelectionAssistanceInfos field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetPcfSelectionAssistanceInfos() []PcfSelectionAssistanceInfo1 {
-	if o == nil || isNil(o.PcfSelectionAssistanceInfos) {
+	if o == nil || IsNil(o.PcfSelectionAssistanceInfos) {
 		var ret []PcfSelectionAssistanceInfo1
 		return ret
 	}
@@ -1752,7 +1757,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetPcfSelectionAssistanceInfos() []
 // GetPcfSelectionAssistanceInfosOk returns a tuple with the PcfSelectionAssistanceInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetPcfSelectionAssistanceInfosOk() ([]PcfSelectionAssistanceInfo1, bool) {
-	if o == nil || isNil(o.PcfSelectionAssistanceInfos) {
+	if o == nil || IsNil(o.PcfSelectionAssistanceInfos) {
 		return nil, false
 	}
 	return o.PcfSelectionAssistanceInfos, true
@@ -1760,7 +1765,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetPcfSelectionAssistanceInfosOk() 
 
 // HasPcfSelectionAssistanceInfos returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasPcfSelectionAssistanceInfos() bool {
-	if o != nil && !isNil(o.PcfSelectionAssistanceInfos) {
+	if o != nil && !IsNil(o.PcfSelectionAssistanceInfos) {
 		return true
 	}
 
@@ -1774,7 +1779,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetPcfSelectionAssistanceInfos(v []
 
 // GetAerialUeSubInfo returns the AerialUeSubInfo field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetAerialUeSubInfo() AerialUeSubscriptionInfo1 {
-	if o == nil || isNil(o.AerialUeSubInfo) {
+	if o == nil || IsNil(o.AerialUeSubInfo) {
 		var ret AerialUeSubscriptionInfo1
 		return ret
 	}
@@ -1784,7 +1789,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetAerialUeSubInfo() AerialUeSubscr
 // GetAerialUeSubInfoOk returns a tuple with the AerialUeSubInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetAerialUeSubInfoOk() (*AerialUeSubscriptionInfo1, bool) {
-	if o == nil || isNil(o.AerialUeSubInfo) {
+	if o == nil || IsNil(o.AerialUeSubInfo) {
 		return nil, false
 	}
 	return o.AerialUeSubInfo, true
@@ -1792,7 +1797,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetAerialUeSubInfoOk() (*AerialUeSu
 
 // HasAerialUeSubInfo returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasAerialUeSubInfo() bool {
-	if o != nil && !isNil(o.AerialUeSubInfo) {
+	if o != nil && !IsNil(o.AerialUeSubInfo) {
 		return true
 	}
 
@@ -1806,7 +1811,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetAerialUeSubInfo(v AerialUeSubscr
 
 // GetRoamingRestrictions returns the RoamingRestrictions field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetRoamingRestrictions() RoamingRestrictions {
-	if o == nil || isNil(o.RoamingRestrictions) {
+	if o == nil || IsNil(o.RoamingRestrictions) {
 		var ret RoamingRestrictions
 		return ret
 	}
@@ -1816,7 +1821,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRoamingRestrictions() RoamingRes
 // GetRoamingRestrictionsOk returns a tuple with the RoamingRestrictions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetRoamingRestrictionsOk() (*RoamingRestrictions, bool) {
-	if o == nil || isNil(o.RoamingRestrictions) {
+	if o == nil || IsNil(o.RoamingRestrictions) {
 		return nil, false
 	}
 	return o.RoamingRestrictions, true
@@ -1824,7 +1829,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRoamingRestrictionsOk() (*Roamin
 
 // HasRoamingRestrictions returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasRoamingRestrictions() bool {
-	if o != nil && !isNil(o.RoamingRestrictions) {
+	if o != nil && !IsNil(o.RoamingRestrictions) {
 		return true
 	}
 
@@ -1838,7 +1843,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetRoamingRestrictions(v RoamingRes
 
 // GetRemoteProvInd returns the RemoteProvInd field value if set, zero value otherwise.
 func (o *AccessAndMobilitySubscriptionData1) GetRemoteProvInd() bool {
-	if o == nil || isNil(o.RemoteProvInd) {
+	if o == nil || IsNil(o.RemoteProvInd) {
 		var ret bool
 		return ret
 	}
@@ -1848,7 +1853,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRemoteProvInd() bool {
 // GetRemoteProvIndOk returns a tuple with the RemoteProvInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilitySubscriptionData1) GetRemoteProvIndOk() (*bool, bool) {
-	if o == nil || isNil(o.RemoteProvInd) {
+	if o == nil || IsNil(o.RemoteProvInd) {
 		return nil, false
 	}
 	return o.RemoteProvInd, true
@@ -1856,7 +1861,7 @@ func (o *AccessAndMobilitySubscriptionData1) GetRemoteProvIndOk() (*bool, bool) 
 
 // HasRemoteProvInd returns a boolean if a field has been set.
 func (o *AccessAndMobilitySubscriptionData1) HasRemoteProvInd() bool {
-	if o != nil && !isNil(o.RemoteProvInd) {
+	if o != nil && !IsNil(o.RemoteProvInd) {
 		return true
 	}
 
@@ -1869,7 +1874,7 @@ func (o *AccessAndMobilitySubscriptionData1) SetRemoteProvInd(v bool) {
 }
 
 func (o AccessAndMobilitySubscriptionData1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1878,40 +1883,40 @@ func (o AccessAndMobilitySubscriptionData1) MarshalJSON() ([]byte, error) {
 
 func (o AccessAndMobilitySubscriptionData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SupportedFeatures) {
+	if !IsNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !isNil(o.Gpsis) {
+	if !IsNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !isNil(o.HssGroupId) {
+	if !IsNil(o.HssGroupId) {
 		toSerialize["hssGroupId"] = o.HssGroupId
 	}
-	if !isNil(o.InternalGroupIds) {
+	if !IsNil(o.InternalGroupIds) {
 		toSerialize["internalGroupIds"] = o.InternalGroupIds
 	}
-	if !isNil(o.SharedVnGroupDataIds) {
+	if !IsNil(o.SharedVnGroupDataIds) {
 		toSerialize["sharedVnGroupDataIds"] = o.SharedVnGroupDataIds
 	}
-	if !isNil(o.SubscribedUeAmbr) {
+	if !IsNil(o.SubscribedUeAmbr) {
 		toSerialize["subscribedUeAmbr"] = o.SubscribedUeAmbr
 	}
 	if o.Nssai.IsSet() {
 		toSerialize["nssai"] = o.Nssai.Get()
 	}
-	if !isNil(o.RatRestrictions) {
+	if !IsNil(o.RatRestrictions) {
 		toSerialize["ratRestrictions"] = o.RatRestrictions
 	}
-	if !isNil(o.ForbiddenAreas) {
+	if !IsNil(o.ForbiddenAreas) {
 		toSerialize["forbiddenAreas"] = o.ForbiddenAreas
 	}
-	if !isNil(o.ServiceAreaRestriction) {
+	if !IsNil(o.ServiceAreaRestriction) {
 		toSerialize["serviceAreaRestriction"] = o.ServiceAreaRestriction
 	}
-	if !isNil(o.CoreNetworkTypeRestrictions) {
+	if !IsNil(o.CoreNetworkTypeRestrictions) {
 		toSerialize["coreNetworkTypeRestrictions"] = o.CoreNetworkTypeRestrictions
 	}
-	if !isNil(o.AccessTypeRestrictions) {
+	if !IsNil(o.AccessTypeRestrictions) {
 		toSerialize["accessTypeRestrictions"] = o.AccessTypeRestrictions
 	}
 	if o.RfspIndex.IsSet() {
@@ -1920,121 +1925,121 @@ func (o AccessAndMobilitySubscriptionData1) ToMap() (map[string]interface{}, err
 	if o.SubsRegTimer.IsSet() {
 		toSerialize["subsRegTimer"] = o.SubsRegTimer.Get()
 	}
-	if !isNil(o.UeUsageType) {
+	if !IsNil(o.UeUsageType) {
 		toSerialize["ueUsageType"] = o.UeUsageType
 	}
-	if !isNil(o.MpsPriority) {
+	if !IsNil(o.MpsPriority) {
 		toSerialize["mpsPriority"] = o.MpsPriority
 	}
-	if !isNil(o.McsPriority) {
+	if !IsNil(o.McsPriority) {
 		toSerialize["mcsPriority"] = o.McsPriority
 	}
 	if o.ActiveTime.IsSet() {
 		toSerialize["activeTime"] = o.ActiveTime.Get()
 	}
-	if !isNil(o.SorInfo) {
+	if !IsNil(o.SorInfo) {
 		toSerialize["sorInfo"] = o.SorInfo
 	}
-	if !isNil(o.SorInfoExpectInd) {
+	if !IsNil(o.SorInfoExpectInd) {
 		toSerialize["sorInfoExpectInd"] = o.SorInfoExpectInd
 	}
-	if !isNil(o.SorafRetrieval) {
+	if !IsNil(o.SorafRetrieval) {
 		toSerialize["sorafRetrieval"] = o.SorafRetrieval
 	}
-	if !isNil(o.SorUpdateIndicatorList) {
+	if !IsNil(o.SorUpdateIndicatorList) {
 		toSerialize["sorUpdateIndicatorList"] = o.SorUpdateIndicatorList
 	}
-	if !isNil(o.UpuInfo) {
+	if !IsNil(o.UpuInfo) {
 		toSerialize["upuInfo"] = o.UpuInfo
 	}
-	if !isNil(o.RoutingIndicator) {
+	if !IsNil(o.RoutingIndicator) {
 		toSerialize["routingIndicator"] = o.RoutingIndicator
 	}
-	if !isNil(o.MicoAllowed) {
+	if !IsNil(o.MicoAllowed) {
 		toSerialize["micoAllowed"] = o.MicoAllowed
 	}
-	if !isNil(o.SharedAmDataIds) {
+	if !IsNil(o.SharedAmDataIds) {
 		toSerialize["sharedAmDataIds"] = o.SharedAmDataIds
 	}
-	if !isNil(o.OdbPacketServices) {
+	if !IsNil(o.OdbPacketServices) {
 		toSerialize["odbPacketServices"] = o.OdbPacketServices
 	}
-	if !isNil(o.SubscribedDnnList) {
+	if !IsNil(o.SubscribedDnnList) {
 		toSerialize["subscribedDnnList"] = o.SubscribedDnnList
 	}
-	if !isNil(o.ServiceGapTime) {
+	if !IsNil(o.ServiceGapTime) {
 		toSerialize["serviceGapTime"] = o.ServiceGapTime
 	}
-	if !isNil(o.MdtUserConsent) {
+	if !IsNil(o.MdtUserConsent) {
 		toSerialize["mdtUserConsent"] = o.MdtUserConsent
 	}
-	if !isNil(o.MdtConfiguration) {
+	if !IsNil(o.MdtConfiguration) {
 		toSerialize["mdtConfiguration"] = o.MdtConfiguration
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !isNil(o.CagData) {
+	if !IsNil(o.CagData) {
 		toSerialize["cagData"] = o.CagData
 	}
-	if !isNil(o.StnSr) {
+	if !IsNil(o.StnSr) {
 		toSerialize["stnSr"] = o.StnSr
 	}
-	if !isNil(o.CMsisdn) {
+	if !IsNil(o.CMsisdn) {
 		toSerialize["cMsisdn"] = o.CMsisdn
 	}
-	if !isNil(o.NbIoTUePriority) {
+	if !IsNil(o.NbIoTUePriority) {
 		toSerialize["nbIoTUePriority"] = o.NbIoTUePriority
 	}
-	if !isNil(o.NssaiInclusionAllowed) {
+	if !IsNil(o.NssaiInclusionAllowed) {
 		toSerialize["nssaiInclusionAllowed"] = o.NssaiInclusionAllowed
 	}
-	if !isNil(o.RgWirelineCharacteristics) {
+	if !IsNil(o.RgWirelineCharacteristics) {
 		toSerialize["rgWirelineCharacteristics"] = o.RgWirelineCharacteristics
 	}
-	if !isNil(o.EcRestrictionDataWb) {
+	if !IsNil(o.EcRestrictionDataWb) {
 		toSerialize["ecRestrictionDataWb"] = o.EcRestrictionDataWb
 	}
-	if !isNil(o.EcRestrictionDataNb) {
+	if !IsNil(o.EcRestrictionDataNb) {
 		toSerialize["ecRestrictionDataNb"] = o.EcRestrictionDataNb
 	}
-	if !isNil(o.ExpectedUeBehaviourList) {
+	if !IsNil(o.ExpectedUeBehaviourList) {
 		toSerialize["expectedUeBehaviourList"] = o.ExpectedUeBehaviourList
 	}
-	if !isNil(o.PrimaryRatRestrictions) {
+	if !IsNil(o.PrimaryRatRestrictions) {
 		toSerialize["primaryRatRestrictions"] = o.PrimaryRatRestrictions
 	}
-	if !isNil(o.SecondaryRatRestrictions) {
+	if !IsNil(o.SecondaryRatRestrictions) {
 		toSerialize["secondaryRatRestrictions"] = o.SecondaryRatRestrictions
 	}
-	if !isNil(o.EdrxParametersList) {
+	if !IsNil(o.EdrxParametersList) {
 		toSerialize["edrxParametersList"] = o.EdrxParametersList
 	}
-	if !isNil(o.PtwParametersList) {
+	if !IsNil(o.PtwParametersList) {
 		toSerialize["ptwParametersList"] = o.PtwParametersList
 	}
-	if !isNil(o.IabOperationAllowed) {
+	if !IsNil(o.IabOperationAllowed) {
 		toSerialize["iabOperationAllowed"] = o.IabOperationAllowed
 	}
-	if !isNil(o.AdjacentPlmnRestrictions) {
+	if !IsNil(o.AdjacentPlmnRestrictions) {
 		toSerialize["adjacentPlmnRestrictions"] = o.AdjacentPlmnRestrictions
 	}
-	if !isNil(o.WirelineForbiddenAreas) {
+	if !IsNil(o.WirelineForbiddenAreas) {
 		toSerialize["wirelineForbiddenAreas"] = o.WirelineForbiddenAreas
 	}
-	if !isNil(o.WirelineServiceAreaRestriction) {
+	if !IsNil(o.WirelineServiceAreaRestriction) {
 		toSerialize["wirelineServiceAreaRestriction"] = o.WirelineServiceAreaRestriction
 	}
-	if !isNil(o.PcfSelectionAssistanceInfos) {
+	if !IsNil(o.PcfSelectionAssistanceInfos) {
 		toSerialize["pcfSelectionAssistanceInfos"] = o.PcfSelectionAssistanceInfos
 	}
-	if !isNil(o.AerialUeSubInfo) {
+	if !IsNil(o.AerialUeSubInfo) {
 		toSerialize["aerialUeSubInfo"] = o.AerialUeSubInfo
 	}
-	if !isNil(o.RoamingRestrictions) {
+	if !IsNil(o.RoamingRestrictions) {
 		toSerialize["roamingRestrictions"] = o.RoamingRestrictions
 	}
-	if !isNil(o.RemoteProvInd) {
+	if !IsNil(o.RemoteProvInd) {
 		toSerialize["remoteProvInd"] = o.RemoteProvInd
 	}
 	return toSerialize, nil
@@ -2075,5 +2080,3 @@ func (v *NullableAccessAndMobilitySubscriptionData1) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

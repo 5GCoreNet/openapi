@@ -1,7 +1,7 @@
 /*
 CAPIF_Routing_Info_API
 
-API for Routing information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Routing information.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -15,30 +15,16 @@ import (
 	"fmt"
 )
 
-// DataFormat Possible values are: - JSON: JavaScript Object Notation 
+// DataFormat Possible values are: - JSON: JavaScript Object Notation
 type DataFormat struct {
-	DataFormatAnyOf *DataFormatAnyOf
 	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DataFormat) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into DataFormatAnyOf
-	err = json.Unmarshal(data, &dst.DataFormatAnyOf);
-	if err == nil {
-		jsonDataFormatAnyOf, _ := json.Marshal(dst.DataFormatAnyOf)
-		if string(jsonDataFormatAnyOf) == "{}" { // empty struct
-			dst.DataFormatAnyOf = nil
-		} else {
-			return nil // data stored in dst.DataFormatAnyOf, return on the first match
-		}
-	} else {
-		dst.DataFormatAnyOf = nil
-	}
-
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.String);
+	err = json.Unmarshal(data, &dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
@@ -55,10 +41,6 @@ func (dst *DataFormat) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DataFormat) MarshalJSON() ([]byte, error) {
-	if src.DataFormatAnyOf != nil {
-		return json.Marshal(&src.DataFormatAnyOf)
-	}
-
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -101,5 +83,3 @@ func (v *NullableDataFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

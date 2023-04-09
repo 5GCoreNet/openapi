@@ -1,7 +1,7 @@
 /*
 Nudm_EE
 
-Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudm Event Exposure Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.1
 */
@@ -21,14 +21,14 @@ var _ MappedNullable = &CreatedEeSubscription{}
 type CreatedEeSubscription struct {
 	EeSubscription EeSubscription `json:"eeSubscription"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
-	NumberOfUes *int32 `json:"numberOfUes,omitempty"`
+	NumberOfUes  *int32             `json:"numberOfUes,omitempty"`
 	EventReports []MonitoringReport `json:"eventReports,omitempty"`
-	EpcStatusInd *bool `json:"epcStatusInd,omitempty"`
+	EpcStatusInd *bool              `json:"epcStatusInd,omitempty"`
 	// A map (list of key-value pairs where referenceId converted from integer to string serves as key; see clause 6.4.6.3.2) of FailedMonitoringConfiguration
 	FailedMonitoringConfigs *map[string]FailedMonitoringConfiguration `json:"failedMonitoringConfigs,omitempty"`
 	// A map (list of key-value pairs where referenceId converted from integer to string serves as key; see clause 6.4.6.3.2) of FailedMonitoringConfiguration, the key value \"ALL\" may be used to identify a map entry which contains the failed cause of the EE subscription was not successful in EPC domain.
 	FailedMoniConfigsEPC *map[string]FailedMonitoringConfiguration `json:"failedMoniConfigsEPC,omitempty"`
-	ResetIds []string `json:"resetIds,omitempty"`
+	ResetIds             []string                                  `json:"resetIds,omitempty"`
 }
 
 // NewCreatedEeSubscription instantiates a new CreatedEeSubscription object
@@ -75,7 +75,7 @@ func (o *CreatedEeSubscription) SetEeSubscription(v EeSubscription) {
 
 // GetNumberOfUes returns the NumberOfUes field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetNumberOfUes() int32 {
-	if o == nil || isNil(o.NumberOfUes) {
+	if o == nil || IsNil(o.NumberOfUes) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *CreatedEeSubscription) GetNumberOfUes() int32 {
 // GetNumberOfUesOk returns a tuple with the NumberOfUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetNumberOfUesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumberOfUes) {
+	if o == nil || IsNil(o.NumberOfUes) {
 		return nil, false
 	}
 	return o.NumberOfUes, true
@@ -93,7 +93,7 @@ func (o *CreatedEeSubscription) GetNumberOfUesOk() (*int32, bool) {
 
 // HasNumberOfUes returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasNumberOfUes() bool {
-	if o != nil && !isNil(o.NumberOfUes) {
+	if o != nil && !IsNil(o.NumberOfUes) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *CreatedEeSubscription) SetNumberOfUes(v int32) {
 
 // GetEventReports returns the EventReports field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetEventReports() []MonitoringReport {
-	if o == nil || isNil(o.EventReports) {
+	if o == nil || IsNil(o.EventReports) {
 		var ret []MonitoringReport
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *CreatedEeSubscription) GetEventReports() []MonitoringReport {
 // GetEventReportsOk returns a tuple with the EventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetEventReportsOk() ([]MonitoringReport, bool) {
-	if o == nil || isNil(o.EventReports) {
+	if o == nil || IsNil(o.EventReports) {
 		return nil, false
 	}
 	return o.EventReports, true
@@ -125,7 +125,7 @@ func (o *CreatedEeSubscription) GetEventReportsOk() ([]MonitoringReport, bool) {
 
 // HasEventReports returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasEventReports() bool {
-	if o != nil && !isNil(o.EventReports) {
+	if o != nil && !IsNil(o.EventReports) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *CreatedEeSubscription) SetEventReports(v []MonitoringReport) {
 
 // GetEpcStatusInd returns the EpcStatusInd field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetEpcStatusInd() bool {
-	if o == nil || isNil(o.EpcStatusInd) {
+	if o == nil || IsNil(o.EpcStatusInd) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *CreatedEeSubscription) GetEpcStatusInd() bool {
 // GetEpcStatusIndOk returns a tuple with the EpcStatusInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetEpcStatusIndOk() (*bool, bool) {
-	if o == nil || isNil(o.EpcStatusInd) {
+	if o == nil || IsNil(o.EpcStatusInd) {
 		return nil, false
 	}
 	return o.EpcStatusInd, true
@@ -157,7 +157,7 @@ func (o *CreatedEeSubscription) GetEpcStatusIndOk() (*bool, bool) {
 
 // HasEpcStatusInd returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasEpcStatusInd() bool {
-	if o != nil && !isNil(o.EpcStatusInd) {
+	if o != nil && !IsNil(o.EpcStatusInd) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *CreatedEeSubscription) SetEpcStatusInd(v bool) {
 
 // GetFailedMonitoringConfigs returns the FailedMonitoringConfigs field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetFailedMonitoringConfigs() map[string]FailedMonitoringConfiguration {
-	if o == nil || isNil(o.FailedMonitoringConfigs) {
+	if o == nil || IsNil(o.FailedMonitoringConfigs) {
 		var ret map[string]FailedMonitoringConfiguration
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *CreatedEeSubscription) GetFailedMonitoringConfigs() map[string]FailedMo
 // GetFailedMonitoringConfigsOk returns a tuple with the FailedMonitoringConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetFailedMonitoringConfigsOk() (*map[string]FailedMonitoringConfiguration, bool) {
-	if o == nil || isNil(o.FailedMonitoringConfigs) {
+	if o == nil || IsNil(o.FailedMonitoringConfigs) {
 		return nil, false
 	}
 	return o.FailedMonitoringConfigs, true
@@ -189,7 +189,7 @@ func (o *CreatedEeSubscription) GetFailedMonitoringConfigsOk() (*map[string]Fail
 
 // HasFailedMonitoringConfigs returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasFailedMonitoringConfigs() bool {
-	if o != nil && !isNil(o.FailedMonitoringConfigs) {
+	if o != nil && !IsNil(o.FailedMonitoringConfigs) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *CreatedEeSubscription) SetFailedMonitoringConfigs(v map[string]FailedMo
 
 // GetFailedMoniConfigsEPC returns the FailedMoniConfigsEPC field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetFailedMoniConfigsEPC() map[string]FailedMonitoringConfiguration {
-	if o == nil || isNil(o.FailedMoniConfigsEPC) {
+	if o == nil || IsNil(o.FailedMoniConfigsEPC) {
 		var ret map[string]FailedMonitoringConfiguration
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *CreatedEeSubscription) GetFailedMoniConfigsEPC() map[string]FailedMonit
 // GetFailedMoniConfigsEPCOk returns a tuple with the FailedMoniConfigsEPC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetFailedMoniConfigsEPCOk() (*map[string]FailedMonitoringConfiguration, bool) {
-	if o == nil || isNil(o.FailedMoniConfigsEPC) {
+	if o == nil || IsNil(o.FailedMoniConfigsEPC) {
 		return nil, false
 	}
 	return o.FailedMoniConfigsEPC, true
@@ -221,7 +221,7 @@ func (o *CreatedEeSubscription) GetFailedMoniConfigsEPCOk() (*map[string]FailedM
 
 // HasFailedMoniConfigsEPC returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasFailedMoniConfigsEPC() bool {
-	if o != nil && !isNil(o.FailedMoniConfigsEPC) {
+	if o != nil && !IsNil(o.FailedMoniConfigsEPC) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *CreatedEeSubscription) SetFailedMoniConfigsEPC(v map[string]FailedMonit
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetResetIds() []string {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *CreatedEeSubscription) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetResetIdsOk() ([]string, bool) {
-	if o == nil || isNil(o.ResetIds) {
+	if o == nil || IsNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -253,7 +253,7 @@ func (o *CreatedEeSubscription) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasResetIds() bool {
-	if o != nil && !isNil(o.ResetIds) {
+	if o != nil && !IsNil(o.ResetIds) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *CreatedEeSubscription) SetResetIds(v []string) {
 }
 
 func (o CreatedEeSubscription) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -276,22 +276,22 @@ func (o CreatedEeSubscription) MarshalJSON() ([]byte, error) {
 func (o CreatedEeSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eeSubscription"] = o.EeSubscription
-	if !isNil(o.NumberOfUes) {
+	if !IsNil(o.NumberOfUes) {
 		toSerialize["numberOfUes"] = o.NumberOfUes
 	}
-	if !isNil(o.EventReports) {
+	if !IsNil(o.EventReports) {
 		toSerialize["eventReports"] = o.EventReports
 	}
-	if !isNil(o.EpcStatusInd) {
+	if !IsNil(o.EpcStatusInd) {
 		toSerialize["epcStatusInd"] = o.EpcStatusInd
 	}
-	if !isNil(o.FailedMonitoringConfigs) {
+	if !IsNil(o.FailedMonitoringConfigs) {
 		toSerialize["failedMonitoringConfigs"] = o.FailedMonitoringConfigs
 	}
-	if !isNil(o.FailedMoniConfigsEPC) {
+	if !IsNil(o.FailedMoniConfigsEPC) {
 		toSerialize["failedMoniConfigsEPC"] = o.FailedMoniConfigsEPC
 	}
-	if !isNil(o.ResetIds) {
+	if !IsNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil
@@ -332,5 +332,3 @@ func (v *NullableCreatedEeSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

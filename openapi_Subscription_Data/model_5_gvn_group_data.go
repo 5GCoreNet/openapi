@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for subscription data
 
-Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Unified Data Repository Service (subscription data).   The API version is defined in 3GPP TS 29.504.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &Model5GVnGroupData{}
 
 // Model5GVnGroupData struct for Model5GVnGroupData
 type Model5GVnGroupData struct {
-	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\"). 
-	Dnn string `json:"dnn"`
-	SNssai Snssai `json:"sNssai"`
-	PduSessionTypes []PduSessionType `json:"pduSessionTypes,omitempty"`
-	AppDescriptors []AppDescriptor `json:"appDescriptors,omitempty"`
-	SecondaryAuth *bool `json:"secondaryAuth,omitempty"`
-	DnAaaIpAddressAllocation *bool `json:"dnAaaIpAddressAllocation,omitempty"`
-	DnAaaAddress *IpAddress `json:"dnAaaAddress,omitempty"`
-	AdditionalDnAaaAddresses []IpAddress `json:"additionalDnAaaAddresses,omitempty"`
+	// String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. \"Label1.Label2.Label3\").
+	Dnn                      string           `json:"dnn"`
+	SNssai                   Snssai           `json:"sNssai"`
+	PduSessionTypes          []PduSessionType `json:"pduSessionTypes,omitempty"`
+	AppDescriptors           []AppDescriptor  `json:"appDescriptors,omitempty"`
+	SecondaryAuth            *bool            `json:"secondaryAuth,omitempty"`
+	DnAaaIpAddressAllocation *bool            `json:"dnAaaIpAddressAllocation,omitempty"`
+	DnAaaAddress             *IpAddress       `json:"dnAaaAddress,omitempty"`
+	AdditionalDnAaaAddresses []IpAddress      `json:"additionalDnAaaAddresses,omitempty"`
 	// Fully Qualified Domain Name
 	DnAaaFqdn *string `json:"dnAaaFqdn,omitempty"`
 }
@@ -101,7 +101,7 @@ func (o *Model5GVnGroupData) SetSNssai(v Snssai) {
 
 // GetPduSessionTypes returns the PduSessionTypes field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetPduSessionTypes() []PduSessionType {
-	if o == nil || isNil(o.PduSessionTypes) {
+	if o == nil || IsNil(o.PduSessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *Model5GVnGroupData) GetPduSessionTypes() []PduSessionType {
 // GetPduSessionTypesOk returns a tuple with the PduSessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetPduSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || isNil(o.PduSessionTypes) {
+	if o == nil || IsNil(o.PduSessionTypes) {
 		return nil, false
 	}
 	return o.PduSessionTypes, true
@@ -119,7 +119,7 @@ func (o *Model5GVnGroupData) GetPduSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasPduSessionTypes returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasPduSessionTypes() bool {
-	if o != nil && !isNil(o.PduSessionTypes) {
+	if o != nil && !IsNil(o.PduSessionTypes) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *Model5GVnGroupData) SetPduSessionTypes(v []PduSessionType) {
 
 // GetAppDescriptors returns the AppDescriptors field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetAppDescriptors() []AppDescriptor {
-	if o == nil || isNil(o.AppDescriptors) {
+	if o == nil || IsNil(o.AppDescriptors) {
 		var ret []AppDescriptor
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *Model5GVnGroupData) GetAppDescriptors() []AppDescriptor {
 // GetAppDescriptorsOk returns a tuple with the AppDescriptors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetAppDescriptorsOk() ([]AppDescriptor, bool) {
-	if o == nil || isNil(o.AppDescriptors) {
+	if o == nil || IsNil(o.AppDescriptors) {
 		return nil, false
 	}
 	return o.AppDescriptors, true
@@ -151,7 +151,7 @@ func (o *Model5GVnGroupData) GetAppDescriptorsOk() ([]AppDescriptor, bool) {
 
 // HasAppDescriptors returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasAppDescriptors() bool {
-	if o != nil && !isNil(o.AppDescriptors) {
+	if o != nil && !IsNil(o.AppDescriptors) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *Model5GVnGroupData) SetAppDescriptors(v []AppDescriptor) {
 
 // GetSecondaryAuth returns the SecondaryAuth field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetSecondaryAuth() bool {
-	if o == nil || isNil(o.SecondaryAuth) {
+	if o == nil || IsNil(o.SecondaryAuth) {
 		var ret bool
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *Model5GVnGroupData) GetSecondaryAuth() bool {
 // GetSecondaryAuthOk returns a tuple with the SecondaryAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetSecondaryAuthOk() (*bool, bool) {
-	if o == nil || isNil(o.SecondaryAuth) {
+	if o == nil || IsNil(o.SecondaryAuth) {
 		return nil, false
 	}
 	return o.SecondaryAuth, true
@@ -183,7 +183,7 @@ func (o *Model5GVnGroupData) GetSecondaryAuthOk() (*bool, bool) {
 
 // HasSecondaryAuth returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasSecondaryAuth() bool {
-	if o != nil && !isNil(o.SecondaryAuth) {
+	if o != nil && !IsNil(o.SecondaryAuth) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *Model5GVnGroupData) SetSecondaryAuth(v bool) {
 
 // GetDnAaaIpAddressAllocation returns the DnAaaIpAddressAllocation field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetDnAaaIpAddressAllocation() bool {
-	if o == nil || isNil(o.DnAaaIpAddressAllocation) {
+	if o == nil || IsNil(o.DnAaaIpAddressAllocation) {
 		var ret bool
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *Model5GVnGroupData) GetDnAaaIpAddressAllocation() bool {
 // GetDnAaaIpAddressAllocationOk returns a tuple with the DnAaaIpAddressAllocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetDnAaaIpAddressAllocationOk() (*bool, bool) {
-	if o == nil || isNil(o.DnAaaIpAddressAllocation) {
+	if o == nil || IsNil(o.DnAaaIpAddressAllocation) {
 		return nil, false
 	}
 	return o.DnAaaIpAddressAllocation, true
@@ -215,7 +215,7 @@ func (o *Model5GVnGroupData) GetDnAaaIpAddressAllocationOk() (*bool, bool) {
 
 // HasDnAaaIpAddressAllocation returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasDnAaaIpAddressAllocation() bool {
-	if o != nil && !isNil(o.DnAaaIpAddressAllocation) {
+	if o != nil && !IsNil(o.DnAaaIpAddressAllocation) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *Model5GVnGroupData) SetDnAaaIpAddressAllocation(v bool) {
 
 // GetDnAaaAddress returns the DnAaaAddress field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetDnAaaAddress() IpAddress {
-	if o == nil || isNil(o.DnAaaAddress) {
+	if o == nil || IsNil(o.DnAaaAddress) {
 		var ret IpAddress
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *Model5GVnGroupData) GetDnAaaAddress() IpAddress {
 // GetDnAaaAddressOk returns a tuple with the DnAaaAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetDnAaaAddressOk() (*IpAddress, bool) {
-	if o == nil || isNil(o.DnAaaAddress) {
+	if o == nil || IsNil(o.DnAaaAddress) {
 		return nil, false
 	}
 	return o.DnAaaAddress, true
@@ -247,7 +247,7 @@ func (o *Model5GVnGroupData) GetDnAaaAddressOk() (*IpAddress, bool) {
 
 // HasDnAaaAddress returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasDnAaaAddress() bool {
-	if o != nil && !isNil(o.DnAaaAddress) {
+	if o != nil && !IsNil(o.DnAaaAddress) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *Model5GVnGroupData) SetDnAaaAddress(v IpAddress) {
 
 // GetAdditionalDnAaaAddresses returns the AdditionalDnAaaAddresses field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetAdditionalDnAaaAddresses() []IpAddress {
-	if o == nil || isNil(o.AdditionalDnAaaAddresses) {
+	if o == nil || IsNil(o.AdditionalDnAaaAddresses) {
 		var ret []IpAddress
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *Model5GVnGroupData) GetAdditionalDnAaaAddresses() []IpAddress {
 // GetAdditionalDnAaaAddressesOk returns a tuple with the AdditionalDnAaaAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetAdditionalDnAaaAddressesOk() ([]IpAddress, bool) {
-	if o == nil || isNil(o.AdditionalDnAaaAddresses) {
+	if o == nil || IsNil(o.AdditionalDnAaaAddresses) {
 		return nil, false
 	}
 	return o.AdditionalDnAaaAddresses, true
@@ -279,7 +279,7 @@ func (o *Model5GVnGroupData) GetAdditionalDnAaaAddressesOk() ([]IpAddress, bool)
 
 // HasAdditionalDnAaaAddresses returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasAdditionalDnAaaAddresses() bool {
-	if o != nil && !isNil(o.AdditionalDnAaaAddresses) {
+	if o != nil && !IsNil(o.AdditionalDnAaaAddresses) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *Model5GVnGroupData) SetAdditionalDnAaaAddresses(v []IpAddress) {
 
 // GetDnAaaFqdn returns the DnAaaFqdn field value if set, zero value otherwise.
 func (o *Model5GVnGroupData) GetDnAaaFqdn() string {
-	if o == nil || isNil(o.DnAaaFqdn) {
+	if o == nil || IsNil(o.DnAaaFqdn) {
 		var ret string
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *Model5GVnGroupData) GetDnAaaFqdn() string {
 // GetDnAaaFqdnOk returns a tuple with the DnAaaFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GVnGroupData) GetDnAaaFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.DnAaaFqdn) {
+	if o == nil || IsNil(o.DnAaaFqdn) {
 		return nil, false
 	}
 	return o.DnAaaFqdn, true
@@ -311,7 +311,7 @@ func (o *Model5GVnGroupData) GetDnAaaFqdnOk() (*string, bool) {
 
 // HasDnAaaFqdn returns a boolean if a field has been set.
 func (o *Model5GVnGroupData) HasDnAaaFqdn() bool {
-	if o != nil && !isNil(o.DnAaaFqdn) {
+	if o != nil && !IsNil(o.DnAaaFqdn) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *Model5GVnGroupData) SetDnAaaFqdn(v string) {
 }
 
 func (o Model5GVnGroupData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -335,25 +335,25 @@ func (o Model5GVnGroupData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["sNssai"] = o.SNssai
-	if !isNil(o.PduSessionTypes) {
+	if !IsNil(o.PduSessionTypes) {
 		toSerialize["pduSessionTypes"] = o.PduSessionTypes
 	}
-	if !isNil(o.AppDescriptors) {
+	if !IsNil(o.AppDescriptors) {
 		toSerialize["appDescriptors"] = o.AppDescriptors
 	}
-	if !isNil(o.SecondaryAuth) {
+	if !IsNil(o.SecondaryAuth) {
 		toSerialize["secondaryAuth"] = o.SecondaryAuth
 	}
-	if !isNil(o.DnAaaIpAddressAllocation) {
+	if !IsNil(o.DnAaaIpAddressAllocation) {
 		toSerialize["dnAaaIpAddressAllocation"] = o.DnAaaIpAddressAllocation
 	}
-	if !isNil(o.DnAaaAddress) {
+	if !IsNil(o.DnAaaAddress) {
 		toSerialize["dnAaaAddress"] = o.DnAaaAddress
 	}
-	if !isNil(o.AdditionalDnAaaAddresses) {
+	if !IsNil(o.AdditionalDnAaaAddresses) {
 		toSerialize["additionalDnAaaAddresses"] = o.AdditionalDnAaaAddresses
 	}
-	if !isNil(o.DnAaaFqdn) {
+	if !IsNil(o.DnAaaFqdn) {
 		toSerialize["dnAaaFqdn"] = o.DnAaaFqdn
 	}
 	return toSerialize, nil
@@ -394,5 +394,3 @@ func (v *NullableModel5GVnGroupData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

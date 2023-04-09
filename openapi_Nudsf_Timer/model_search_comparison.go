@@ -1,7 +1,7 @@
 /*
 Nudsf_Timer
 
-Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+Nudsf Timer Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SearchComparison{}
 
 // SearchComparison A comparison to apply on tag/values pairs.
 type SearchComparison struct {
-	Op ComparisonOperator `json:"op"`
-	Tag string `json:"tag"`
-	Value string `json:"value"`
+	Op    ComparisonOperator `json:"op"`
+	Tag   string             `json:"tag"`
+	Value string             `json:"value"`
 }
 
 // NewSearchComparison instantiates a new SearchComparison object
@@ -117,7 +117,7 @@ func (o *SearchComparison) SetValue(v string) {
 }
 
 func (o SearchComparison) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,5 +167,3 @@ func (v *NullableSearchComparison) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

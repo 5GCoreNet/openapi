@@ -1,7 +1,7 @@
 /*
 Nsmf_PDUSession
 
-SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+SMF PDU Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.3.0-alpha.2
 */
@@ -19,15 +19,15 @@ var _ MappedNullable = &QosFlowProfile{}
 
 // QosFlowProfile QoS flow profile
 type QosFlowProfile struct {
-	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255. 
-	Var5qi int32 `json:"5qi"`
-	NonDynamic5Qi *NonDynamic5Qi `json:"nonDynamic5Qi,omitempty"`
-	Dynamic5Qi *Dynamic5Qi `json:"dynamic5Qi,omitempty"`
-	Arp *Arp `json:"arp,omitempty"`
-	GbrQosFlowInfo *GbrQosFlowInformation `json:"gbrQosFlowInfo,omitempty"`
-	Rqa *ReflectiveQoSAttribute `json:"rqa,omitempty"`
-	AdditionalQosFlowInfo *AdditionalQosFlowInfo `json:"additionalQosFlowInfo,omitempty"`
-	QosMonitoringReq *QosMonitoringReq `json:"qosMonitoringReq,omitempty"`
+	// Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
+	Var5qi                int32                   `json:"5qi"`
+	NonDynamic5Qi         *NonDynamic5Qi          `json:"nonDynamic5Qi,omitempty"`
+	Dynamic5Qi            *Dynamic5Qi             `json:"dynamic5Qi,omitempty"`
+	Arp                   *Arp                    `json:"arp,omitempty"`
+	GbrQosFlowInfo        *GbrQosFlowInformation  `json:"gbrQosFlowInfo,omitempty"`
+	Rqa                   *ReflectiveQoSAttribute `json:"rqa,omitempty"`
+	AdditionalQosFlowInfo *AdditionalQosFlowInfo  `json:"additionalQosFlowInfo,omitempty"`
+	QosMonitoringReq      *QosMonitoringReq       `json:"qosMonitoringReq,omitempty"`
 	// indicating a time in seconds.
 	QosRepPeriod *int32 `json:"qosRepPeriod,omitempty"`
 }
@@ -76,7 +76,7 @@ func (o *QosFlowProfile) SetVar5qi(v int32) {
 
 // GetNonDynamic5Qi returns the NonDynamic5Qi field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetNonDynamic5Qi() NonDynamic5Qi {
-	if o == nil || isNil(o.NonDynamic5Qi) {
+	if o == nil || IsNil(o.NonDynamic5Qi) {
 		var ret NonDynamic5Qi
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *QosFlowProfile) GetNonDynamic5Qi() NonDynamic5Qi {
 // GetNonDynamic5QiOk returns a tuple with the NonDynamic5Qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetNonDynamic5QiOk() (*NonDynamic5Qi, bool) {
-	if o == nil || isNil(o.NonDynamic5Qi) {
+	if o == nil || IsNil(o.NonDynamic5Qi) {
 		return nil, false
 	}
 	return o.NonDynamic5Qi, true
@@ -94,7 +94,7 @@ func (o *QosFlowProfile) GetNonDynamic5QiOk() (*NonDynamic5Qi, bool) {
 
 // HasNonDynamic5Qi returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasNonDynamic5Qi() bool {
-	if o != nil && !isNil(o.NonDynamic5Qi) {
+	if o != nil && !IsNil(o.NonDynamic5Qi) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *QosFlowProfile) SetNonDynamic5Qi(v NonDynamic5Qi) {
 
 // GetDynamic5Qi returns the Dynamic5Qi field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetDynamic5Qi() Dynamic5Qi {
-	if o == nil || isNil(o.Dynamic5Qi) {
+	if o == nil || IsNil(o.Dynamic5Qi) {
 		var ret Dynamic5Qi
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *QosFlowProfile) GetDynamic5Qi() Dynamic5Qi {
 // GetDynamic5QiOk returns a tuple with the Dynamic5Qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetDynamic5QiOk() (*Dynamic5Qi, bool) {
-	if o == nil || isNil(o.Dynamic5Qi) {
+	if o == nil || IsNil(o.Dynamic5Qi) {
 		return nil, false
 	}
 	return o.Dynamic5Qi, true
@@ -126,7 +126,7 @@ func (o *QosFlowProfile) GetDynamic5QiOk() (*Dynamic5Qi, bool) {
 
 // HasDynamic5Qi returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasDynamic5Qi() bool {
-	if o != nil && !isNil(o.Dynamic5Qi) {
+	if o != nil && !IsNil(o.Dynamic5Qi) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *QosFlowProfile) SetDynamic5Qi(v Dynamic5Qi) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetArp() Arp {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *QosFlowProfile) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetArpOk() (*Arp, bool) {
-	if o == nil || isNil(o.Arp) {
+	if o == nil || IsNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -158,7 +158,7 @@ func (o *QosFlowProfile) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasArp() bool {
-	if o != nil && !isNil(o.Arp) {
+	if o != nil && !IsNil(o.Arp) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *QosFlowProfile) SetArp(v Arp) {
 
 // GetGbrQosFlowInfo returns the GbrQosFlowInfo field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetGbrQosFlowInfo() GbrQosFlowInformation {
-	if o == nil || isNil(o.GbrQosFlowInfo) {
+	if o == nil || IsNil(o.GbrQosFlowInfo) {
 		var ret GbrQosFlowInformation
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *QosFlowProfile) GetGbrQosFlowInfo() GbrQosFlowInformation {
 // GetGbrQosFlowInfoOk returns a tuple with the GbrQosFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetGbrQosFlowInfoOk() (*GbrQosFlowInformation, bool) {
-	if o == nil || isNil(o.GbrQosFlowInfo) {
+	if o == nil || IsNil(o.GbrQosFlowInfo) {
 		return nil, false
 	}
 	return o.GbrQosFlowInfo, true
@@ -190,7 +190,7 @@ func (o *QosFlowProfile) GetGbrQosFlowInfoOk() (*GbrQosFlowInformation, bool) {
 
 // HasGbrQosFlowInfo returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasGbrQosFlowInfo() bool {
-	if o != nil && !isNil(o.GbrQosFlowInfo) {
+	if o != nil && !IsNil(o.GbrQosFlowInfo) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *QosFlowProfile) SetGbrQosFlowInfo(v GbrQosFlowInformation) {
 
 // GetRqa returns the Rqa field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetRqa() ReflectiveQoSAttribute {
-	if o == nil || isNil(o.Rqa) {
+	if o == nil || IsNil(o.Rqa) {
 		var ret ReflectiveQoSAttribute
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *QosFlowProfile) GetRqa() ReflectiveQoSAttribute {
 // GetRqaOk returns a tuple with the Rqa field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetRqaOk() (*ReflectiveQoSAttribute, bool) {
-	if o == nil || isNil(o.Rqa) {
+	if o == nil || IsNil(o.Rqa) {
 		return nil, false
 	}
 	return o.Rqa, true
@@ -222,7 +222,7 @@ func (o *QosFlowProfile) GetRqaOk() (*ReflectiveQoSAttribute, bool) {
 
 // HasRqa returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasRqa() bool {
-	if o != nil && !isNil(o.Rqa) {
+	if o != nil && !IsNil(o.Rqa) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *QosFlowProfile) SetRqa(v ReflectiveQoSAttribute) {
 
 // GetAdditionalQosFlowInfo returns the AdditionalQosFlowInfo field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetAdditionalQosFlowInfo() AdditionalQosFlowInfo {
-	if o == nil || isNil(o.AdditionalQosFlowInfo) {
+	if o == nil || IsNil(o.AdditionalQosFlowInfo) {
 		var ret AdditionalQosFlowInfo
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *QosFlowProfile) GetAdditionalQosFlowInfo() AdditionalQosFlowInfo {
 // GetAdditionalQosFlowInfoOk returns a tuple with the AdditionalQosFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetAdditionalQosFlowInfoOk() (*AdditionalQosFlowInfo, bool) {
-	if o == nil || isNil(o.AdditionalQosFlowInfo) {
+	if o == nil || IsNil(o.AdditionalQosFlowInfo) {
 		return nil, false
 	}
 	return o.AdditionalQosFlowInfo, true
@@ -254,7 +254,7 @@ func (o *QosFlowProfile) GetAdditionalQosFlowInfoOk() (*AdditionalQosFlowInfo, b
 
 // HasAdditionalQosFlowInfo returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasAdditionalQosFlowInfo() bool {
-	if o != nil && !isNil(o.AdditionalQosFlowInfo) {
+	if o != nil && !IsNil(o.AdditionalQosFlowInfo) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *QosFlowProfile) SetAdditionalQosFlowInfo(v AdditionalQosFlowInfo) {
 
 // GetQosMonitoringReq returns the QosMonitoringReq field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetQosMonitoringReq() QosMonitoringReq {
-	if o == nil || isNil(o.QosMonitoringReq) {
+	if o == nil || IsNil(o.QosMonitoringReq) {
 		var ret QosMonitoringReq
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *QosFlowProfile) GetQosMonitoringReq() QosMonitoringReq {
 // GetQosMonitoringReqOk returns a tuple with the QosMonitoringReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetQosMonitoringReqOk() (*QosMonitoringReq, bool) {
-	if o == nil || isNil(o.QosMonitoringReq) {
+	if o == nil || IsNil(o.QosMonitoringReq) {
 		return nil, false
 	}
 	return o.QosMonitoringReq, true
@@ -286,7 +286,7 @@ func (o *QosFlowProfile) GetQosMonitoringReqOk() (*QosMonitoringReq, bool) {
 
 // HasQosMonitoringReq returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasQosMonitoringReq() bool {
-	if o != nil && !isNil(o.QosMonitoringReq) {
+	if o != nil && !IsNil(o.QosMonitoringReq) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *QosFlowProfile) SetQosMonitoringReq(v QosMonitoringReq) {
 
 // GetQosRepPeriod returns the QosRepPeriod field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetQosRepPeriod() int32 {
-	if o == nil || isNil(o.QosRepPeriod) {
+	if o == nil || IsNil(o.QosRepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *QosFlowProfile) GetQosRepPeriod() int32 {
 // GetQosRepPeriodOk returns a tuple with the QosRepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetQosRepPeriodOk() (*int32, bool) {
-	if o == nil || isNil(o.QosRepPeriod) {
+	if o == nil || IsNil(o.QosRepPeriod) {
 		return nil, false
 	}
 	return o.QosRepPeriod, true
@@ -318,7 +318,7 @@ func (o *QosFlowProfile) GetQosRepPeriodOk() (*int32, bool) {
 
 // HasQosRepPeriod returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasQosRepPeriod() bool {
-	if o != nil && !isNil(o.QosRepPeriod) {
+	if o != nil && !IsNil(o.QosRepPeriod) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *QosFlowProfile) SetQosRepPeriod(v int32) {
 }
 
 func (o QosFlowProfile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,28 +341,28 @@ func (o QosFlowProfile) MarshalJSON() ([]byte, error) {
 func (o QosFlowProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
-	if !isNil(o.NonDynamic5Qi) {
+	if !IsNil(o.NonDynamic5Qi) {
 		toSerialize["nonDynamic5Qi"] = o.NonDynamic5Qi
 	}
-	if !isNil(o.Dynamic5Qi) {
+	if !IsNil(o.Dynamic5Qi) {
 		toSerialize["dynamic5Qi"] = o.Dynamic5Qi
 	}
-	if !isNil(o.Arp) {
+	if !IsNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !isNil(o.GbrQosFlowInfo) {
+	if !IsNil(o.GbrQosFlowInfo) {
 		toSerialize["gbrQosFlowInfo"] = o.GbrQosFlowInfo
 	}
-	if !isNil(o.Rqa) {
+	if !IsNil(o.Rqa) {
 		toSerialize["rqa"] = o.Rqa
 	}
-	if !isNil(o.AdditionalQosFlowInfo) {
+	if !IsNil(o.AdditionalQosFlowInfo) {
 		toSerialize["additionalQosFlowInfo"] = o.AdditionalQosFlowInfo
 	}
-	if !isNil(o.QosMonitoringReq) {
+	if !IsNil(o.QosMonitoringReq) {
 		toSerialize["qosMonitoringReq"] = o.QosMonitoringReq
 	}
-	if !isNil(o.QosRepPeriod) {
+	if !IsNil(o.QosRepPeriod) {
 		toSerialize["qosRepPeriod"] = o.QosRepPeriod
 	}
 	return toSerialize, nil
@@ -403,5 +403,3 @@ func (v *NullableQosFlowProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

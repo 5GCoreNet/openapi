@@ -1,7 +1,7 @@
 /*
 Nadrf_DataManagement
 
-ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+ADRF Data Management Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -19,9 +19,9 @@ var _ MappedNullable = &SnssaiUpfInfoItem{}
 
 // SnssaiUpfInfoItem Set of parameters supported by UPF for a given S-NSSAI
 type SnssaiUpfInfoItem struct {
-	SNssai ExtSnssai `json:"sNssai"`
-	DnnUpfInfoList []DnnUpfInfoItem `json:"dnnUpfInfoList"`
-	RedundantTransport *bool `json:"redundantTransport,omitempty"`
+	SNssai             ExtSnssai        `json:"sNssai"`
+	DnnUpfInfoList     []DnnUpfInfoItem `json:"dnnUpfInfoList"`
+	RedundantTransport *bool            `json:"redundantTransport,omitempty"`
 }
 
 // NewSnssaiUpfInfoItem instantiates a new SnssaiUpfInfoItem object
@@ -97,7 +97,7 @@ func (o *SnssaiUpfInfoItem) SetDnnUpfInfoList(v []DnnUpfInfoItem) {
 
 // GetRedundantTransport returns the RedundantTransport field value if set, zero value otherwise.
 func (o *SnssaiUpfInfoItem) GetRedundantTransport() bool {
-	if o == nil || isNil(o.RedundantTransport) {
+	if o == nil || IsNil(o.RedundantTransport) {
 		var ret bool
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *SnssaiUpfInfoItem) GetRedundantTransport() bool {
 // GetRedundantTransportOk returns a tuple with the RedundantTransport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiUpfInfoItem) GetRedundantTransportOk() (*bool, bool) {
-	if o == nil || isNil(o.RedundantTransport) {
+	if o == nil || IsNil(o.RedundantTransport) {
 		return nil, false
 	}
 	return o.RedundantTransport, true
@@ -115,7 +115,7 @@ func (o *SnssaiUpfInfoItem) GetRedundantTransportOk() (*bool, bool) {
 
 // HasRedundantTransport returns a boolean if a field has been set.
 func (o *SnssaiUpfInfoItem) HasRedundantTransport() bool {
-	if o != nil && !isNil(o.RedundantTransport) {
+	if o != nil && !IsNil(o.RedundantTransport) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *SnssaiUpfInfoItem) SetRedundantTransport(v bool) {
 }
 
 func (o SnssaiUpfInfoItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -139,7 +139,7 @@ func (o SnssaiUpfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssai"] = o.SNssai
 	toSerialize["dnnUpfInfoList"] = o.DnnUpfInfoList
-	if !isNil(o.RedundantTransport) {
+	if !IsNil(o.RedundantTransport) {
 		toSerialize["redundantTransport"] = o.RedundantTransport
 	}
 	return toSerialize, nil
@@ -180,5 +180,3 @@ func (v *NullableSnssaiUpfInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

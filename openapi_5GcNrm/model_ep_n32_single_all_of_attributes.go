@@ -19,15 +19,13 @@ var _ MappedNullable = &EPN32SingleAllOfAttributes{}
 
 // EPN32SingleAllOfAttributes struct for EPN32SingleAllOfAttributes
 type EPN32SingleAllOfAttributes struct {
-	UserLabel *string `json:"userLabel,omitempty"`
-	FarEndEntity *string `json:"farEndEntity,omitempty"`
-	SupportedPerfMetricGroups []SupportedPerfMetricGroup `json:"supportedPerfMetricGroups,omitempty"`
-	RemotePlmnId *PlmnId `json:"remotePlmnId,omitempty"`
+	EPRPAttr
+	RemotePlmnId      *PlmnId   `json:"remotePlmnId,omitempty"`
 	RemoteSeppAddress *HostAddr `json:"remoteSeppAddress,omitempty"`
-	RemoteSeppId *int32 `json:"remoteSeppId,omitempty"`
-	N32cParas *string `json:"n32cParas,omitempty"`
-	N32fPolicy *string `json:"n32fPolicy,omitempty"`
-	WithIPX *bool `json:"withIPX,omitempty"`
+	RemoteSeppId      *int32    `json:"remoteSeppId,omitempty"`
+	N32cParas         *string   `json:"n32cParas,omitempty"`
+	N32fPolicy        *string   `json:"n32fPolicy,omitempty"`
+	WithIPX           *bool     `json:"withIPX,omitempty"`
 }
 
 // NewEPN32SingleAllOfAttributes instantiates a new EPN32SingleAllOfAttributes object
@@ -45,102 +43,6 @@ func NewEPN32SingleAllOfAttributes() *EPN32SingleAllOfAttributes {
 func NewEPN32SingleAllOfAttributesWithDefaults() *EPN32SingleAllOfAttributes {
 	this := EPN32SingleAllOfAttributes{}
 	return &this
-}
-
-// GetUserLabel returns the UserLabel field value if set, zero value otherwise.
-func (o *EPN32SingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
-		var ret string
-		return ret
-	}
-	return *o.UserLabel
-}
-
-// GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPN32SingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
-		return nil, false
-	}
-	return o.UserLabel, true
-}
-
-// HasUserLabel returns a boolean if a field has been set.
-func (o *EPN32SingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserLabel gets a reference to the given string and assigns it to the UserLabel field.
-func (o *EPN32SingleAllOfAttributes) SetUserLabel(v string) {
-	o.UserLabel = &v
-}
-
-// GetFarEndEntity returns the FarEndEntity field value if set, zero value otherwise.
-func (o *EPN32SingleAllOfAttributes) GetFarEndEntity() string {
-	if o == nil || IsNil(o.FarEndEntity) {
-		var ret string
-		return ret
-	}
-	return *o.FarEndEntity
-}
-
-// GetFarEndEntityOk returns a tuple with the FarEndEntity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPN32SingleAllOfAttributes) GetFarEndEntityOk() (*string, bool) {
-	if o == nil || IsNil(o.FarEndEntity) {
-		return nil, false
-	}
-	return o.FarEndEntity, true
-}
-
-// HasFarEndEntity returns a boolean if a field has been set.
-func (o *EPN32SingleAllOfAttributes) HasFarEndEntity() bool {
-	if o != nil && !IsNil(o.FarEndEntity) {
-		return true
-	}
-
-	return false
-}
-
-// SetFarEndEntity gets a reference to the given string and assigns it to the FarEndEntity field.
-func (o *EPN32SingleAllOfAttributes) SetFarEndEntity(v string) {
-	o.FarEndEntity = &v
-}
-
-// GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
-func (o *EPN32SingleAllOfAttributes) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		var ret []SupportedPerfMetricGroup
-		return ret
-	}
-	return o.SupportedPerfMetricGroups
-}
-
-// GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EPN32SingleAllOfAttributes) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
-		return nil, false
-	}
-	return o.SupportedPerfMetricGroups, true
-}
-
-// HasSupportedPerfMetricGroups returns a boolean if a field has been set.
-func (o *EPN32SingleAllOfAttributes) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportedPerfMetricGroups gets a reference to the given []SupportedPerfMetricGroup and assigns it to the SupportedPerfMetricGroups field.
-func (o *EPN32SingleAllOfAttributes) SetSupportedPerfMetricGroups(v []SupportedPerfMetricGroup) {
-	o.SupportedPerfMetricGroups = v
 }
 
 // GetRemotePlmnId returns the RemotePlmnId field value if set, zero value otherwise.
@@ -336,7 +238,7 @@ func (o *EPN32SingleAllOfAttributes) SetWithIPX(v bool) {
 }
 
 func (o EPN32SingleAllOfAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -345,14 +247,13 @@ func (o EPN32SingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o EPN32SingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
-		toSerialize["userLabel"] = o.UserLabel
+	serializedEPRPAttr, errEPRPAttr := json.Marshal(o.EPRPAttr)
+	if errEPRPAttr != nil {
+		return map[string]interface{}{}, errEPRPAttr
 	}
-	if !IsNil(o.FarEndEntity) {
-		toSerialize["farEndEntity"] = o.FarEndEntity
-	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
-		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
+	errEPRPAttr = json.Unmarshal([]byte(serializedEPRPAttr), &toSerialize)
+	if errEPRPAttr != nil {
+		return map[string]interface{}{}, errEPRPAttr
 	}
 	if !IsNil(o.RemotePlmnId) {
 		toSerialize["remotePlmnId"] = o.RemotePlmnId
@@ -410,5 +311,3 @@ func (v *NullableEPN32SingleAllOfAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

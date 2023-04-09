@@ -19,10 +19,10 @@ var _ MappedNullable = &ExternalNrCellCuSingleAllOfAttributesAllOf{}
 
 // ExternalNrCellCuSingleAllOfAttributesAllOf struct for ExternalNrCellCuSingleAllOfAttributesAllOf
 type ExternalNrCellCuSingleAllOfAttributesAllOf struct {
-	CellLocalId *int32 `json:"cellLocalId,omitempty"`
-	NrPci *int32 `json:"nrPci,omitempty"`
-	PlmnIdList []PlmnId `json:"plmnIdList,omitempty"`
-	NRFrequencyRef *string `json:"nRFrequencyRef,omitempty"`
+	CellLocalId    *int32   `json:"cellLocalId,omitempty"`
+	NrPci          *int32   `json:"nrPci,omitempty"`
+	PlmnIdList     []PlmnId `json:"plmnIdList,omitempty"`
+	NRFrequencyRef *string  `json:"nRFrequencyRef,omitempty"`
 }
 
 // NewExternalNrCellCuSingleAllOfAttributesAllOf instantiates a new ExternalNrCellCuSingleAllOfAttributesAllOf object
@@ -171,7 +171,7 @@ func (o *ExternalNrCellCuSingleAllOfAttributesAllOf) SetNRFrequencyRef(v string)
 }
 
 func (o ExternalNrCellCuSingleAllOfAttributesAllOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableExternalNrCellCuSingleAllOfAttributesAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

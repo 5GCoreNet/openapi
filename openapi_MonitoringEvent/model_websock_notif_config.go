@@ -1,7 +1,7 @@
 /*
 3gpp-monitoring-event
 
-API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Monitoring Event.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.1
 */
@@ -44,7 +44,7 @@ func NewWebsockNotifConfigWithDefaults() *WebsockNotifConfig {
 
 // GetWebsocketUri returns the WebsocketUri field value if set, zero value otherwise.
 func (o *WebsockNotifConfig) GetWebsocketUri() string {
-	if o == nil || isNil(o.WebsocketUri) {
+	if o == nil || IsNil(o.WebsocketUri) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *WebsockNotifConfig) GetWebsocketUri() string {
 // GetWebsocketUriOk returns a tuple with the WebsocketUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WebsockNotifConfig) GetWebsocketUriOk() (*string, bool) {
-	if o == nil || isNil(o.WebsocketUri) {
+	if o == nil || IsNil(o.WebsocketUri) {
 		return nil, false
 	}
 	return o.WebsocketUri, true
@@ -62,7 +62,7 @@ func (o *WebsockNotifConfig) GetWebsocketUriOk() (*string, bool) {
 
 // HasWebsocketUri returns a boolean if a field has been set.
 func (o *WebsockNotifConfig) HasWebsocketUri() bool {
-	if o != nil && !isNil(o.WebsocketUri) {
+	if o != nil && !IsNil(o.WebsocketUri) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *WebsockNotifConfig) SetWebsocketUri(v string) {
 
 // GetRequestWebsocketUri returns the RequestWebsocketUri field value if set, zero value otherwise.
 func (o *WebsockNotifConfig) GetRequestWebsocketUri() bool {
-	if o == nil || isNil(o.RequestWebsocketUri) {
+	if o == nil || IsNil(o.RequestWebsocketUri) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *WebsockNotifConfig) GetRequestWebsocketUri() bool {
 // GetRequestWebsocketUriOk returns a tuple with the RequestWebsocketUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WebsockNotifConfig) GetRequestWebsocketUriOk() (*bool, bool) {
-	if o == nil || isNil(o.RequestWebsocketUri) {
+	if o == nil || IsNil(o.RequestWebsocketUri) {
 		return nil, false
 	}
 	return o.RequestWebsocketUri, true
@@ -94,7 +94,7 @@ func (o *WebsockNotifConfig) GetRequestWebsocketUriOk() (*bool, bool) {
 
 // HasRequestWebsocketUri returns a boolean if a field has been set.
 func (o *WebsockNotifConfig) HasRequestWebsocketUri() bool {
-	if o != nil && !isNil(o.RequestWebsocketUri) {
+	if o != nil && !IsNil(o.RequestWebsocketUri) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *WebsockNotifConfig) SetRequestWebsocketUri(v bool) {
 }
 
 func (o WebsockNotifConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,10 +116,10 @@ func (o WebsockNotifConfig) MarshalJSON() ([]byte, error) {
 
 func (o WebsockNotifConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.WebsocketUri) {
+	if !IsNil(o.WebsocketUri) {
 		toSerialize["websocketUri"] = o.WebsocketUri
 	}
-	if !isNil(o.RequestWebsocketUri) {
+	if !IsNil(o.RequestWebsocketUri) {
 		toSerialize["requestWebsocketUri"] = o.RequestWebsocketUri
 	}
 	return toSerialize, nil
@@ -160,5 +160,3 @@ func (v *NullableWebsockNotifConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

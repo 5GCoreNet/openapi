@@ -44,7 +44,7 @@ func NewDDNMFFunctionSingleAllOf1WithDefaults() *DDNMFFunctionSingleAllOf1 {
 
 // GetEPNpc4 returns the EPNpc4 field value if set, zero value otherwise.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc4() []EPNpc4Single {
-	if o == nil || isNil(o.EPNpc4) {
+	if o == nil || IsNil(o.EPNpc4) {
 		var ret []EPNpc4Single
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc4() []EPNpc4Single {
 // GetEPNpc4Ok returns a tuple with the EPNpc4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc4Ok() ([]EPNpc4Single, bool) {
-	if o == nil || isNil(o.EPNpc4) {
+	if o == nil || IsNil(o.EPNpc4) {
 		return nil, false
 	}
 	return o.EPNpc4, true
@@ -62,7 +62,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc4Ok() ([]EPNpc4Single, bool) {
 
 // HasEPNpc4 returns a boolean if a field has been set.
 func (o *DDNMFFunctionSingleAllOf1) HasEPNpc4() bool {
-	if o != nil && !isNil(o.EPNpc4) {
+	if o != nil && !IsNil(o.EPNpc4) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *DDNMFFunctionSingleAllOf1) SetEPNpc4(v []EPNpc4Single) {
 
 // GetEPNpc6 returns the EPNpc6 field value if set, zero value otherwise.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc6() []EPNpc6Single {
-	if o == nil || isNil(o.EPNpc6) {
+	if o == nil || IsNil(o.EPNpc6) {
 		var ret []EPNpc6Single
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc6() []EPNpc6Single {
 // GetEPNpc6Ok returns a tuple with the EPNpc6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc6Ok() ([]EPNpc6Single, bool) {
-	if o == nil || isNil(o.EPNpc6) {
+	if o == nil || IsNil(o.EPNpc6) {
 		return nil, false
 	}
 	return o.EPNpc6, true
@@ -94,7 +94,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc6Ok() ([]EPNpc6Single, bool) {
 
 // HasEPNpc6 returns a boolean if a field has been set.
 func (o *DDNMFFunctionSingleAllOf1) HasEPNpc6() bool {
-	if o != nil && !isNil(o.EPNpc6) {
+	if o != nil && !IsNil(o.EPNpc6) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *DDNMFFunctionSingleAllOf1) SetEPNpc6(v []EPNpc6Single) {
 
 // GetEPNpc7 returns the EPNpc7 field value if set, zero value otherwise.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc7() []EPNpc7Single {
-	if o == nil || isNil(o.EPNpc7) {
+	if o == nil || IsNil(o.EPNpc7) {
 		var ret []EPNpc7Single
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc7() []EPNpc7Single {
 // GetEPNpc7Ok returns a tuple with the EPNpc7 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc7Ok() ([]EPNpc7Single, bool) {
-	if o == nil || isNil(o.EPNpc7) {
+	if o == nil || IsNil(o.EPNpc7) {
 		return nil, false
 	}
 	return o.EPNpc7, true
@@ -126,7 +126,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc7Ok() ([]EPNpc7Single, bool) {
 
 // HasEPNpc7 returns a boolean if a field has been set.
 func (o *DDNMFFunctionSingleAllOf1) HasEPNpc7() bool {
-	if o != nil && !isNil(o.EPNpc7) {
+	if o != nil && !IsNil(o.EPNpc7) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *DDNMFFunctionSingleAllOf1) SetEPNpc7(v []EPNpc7Single) {
 
 // GetEPNpc8 returns the EPNpc8 field value if set, zero value otherwise.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc8() []EPNpc8Single {
-	if o == nil || isNil(o.EPNpc8) {
+	if o == nil || IsNil(o.EPNpc8) {
 		var ret []EPNpc8Single
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc8() []EPNpc8Single {
 // GetEPNpc8Ok returns a tuple with the EPNpc8 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DDNMFFunctionSingleAllOf1) GetEPNpc8Ok() ([]EPNpc8Single, bool) {
-	if o == nil || isNil(o.EPNpc8) {
+	if o == nil || IsNil(o.EPNpc8) {
 		return nil, false
 	}
 	return o.EPNpc8, true
@@ -158,7 +158,7 @@ func (o *DDNMFFunctionSingleAllOf1) GetEPNpc8Ok() ([]EPNpc8Single, bool) {
 
 // HasEPNpc8 returns a boolean if a field has been set.
 func (o *DDNMFFunctionSingleAllOf1) HasEPNpc8() bool {
-	if o != nil && !isNil(o.EPNpc8) {
+	if o != nil && !IsNil(o.EPNpc8) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *DDNMFFunctionSingleAllOf1) SetEPNpc8(v []EPNpc8Single) {
 }
 
 func (o DDNMFFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,16 +180,16 @@ func (o DDNMFFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o DDNMFFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.EPNpc4) {
+	if !IsNil(o.EPNpc4) {
 		toSerialize["EP_Npc4"] = o.EPNpc4
 	}
-	if !isNil(o.EPNpc6) {
+	if !IsNil(o.EPNpc6) {
 		toSerialize["EP_Npc6"] = o.EPNpc6
 	}
-	if !isNil(o.EPNpc7) {
+	if !IsNil(o.EPNpc7) {
 		toSerialize["EP_Npc7"] = o.EPNpc7
 	}
-	if !isNil(o.EPNpc8) {
+	if !IsNil(o.EPNpc8) {
 		toSerialize["EP_Npc8"] = o.EPNpc8
 	}
 	return toSerialize, nil
@@ -230,5 +230,3 @@ func (v *NullableDDNMFFunctionSingleAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

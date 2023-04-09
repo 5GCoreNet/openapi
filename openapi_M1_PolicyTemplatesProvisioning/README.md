@@ -97,7 +97,6 @@ Class | Method | HTTP request | Description
  - [PolicyTemplateState](docs/PolicyTemplateState.md)
  - [Snssai](docs/Snssai.md)
  - [SponsoringStatus](docs/SponsoringStatus.md)
- - [SponsoringStatusAnyOf](docs/SponsoringStatusAnyOf.md)
 
 
 ## Documentation For Authorization

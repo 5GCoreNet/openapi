@@ -1,7 +1,7 @@
 /*
 Unified Data Repository Service API file for policy data
 
-The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+The API version is defined in 3GPP TS 29.504   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: -
 */
@@ -17,9 +17,9 @@ import (
 // checks if the SnssaiRouteSelectionDescriptor type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SnssaiRouteSelectionDescriptor{}
 
-// SnssaiRouteSelectionDescriptor Contains the route selector parameters (DNNs, PDU session types, SSC modes and ATSSS information) per SNSSAI 
+// SnssaiRouteSelectionDescriptor Contains the route selector parameters (DNNs, PDU session types, SSC modes and ATSSS information) per SNSSAI
 type SnssaiRouteSelectionDescriptor struct {
-	Snssai Snssai `json:"snssai"`
+	Snssai           Snssai                        `json:"snssai"`
 	DnnRouteSelDescs []DnnRouteSelectionDescriptor `json:"dnnRouteSelDescs,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *SnssaiRouteSelectionDescriptor) SetSnssai(v Snssai) {
 
 // GetDnnRouteSelDescs returns the DnnRouteSelDescs field value if set, zero value otherwise.
 func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescs() []DnnRouteSelectionDescriptor {
-	if o == nil || isNil(o.DnnRouteSelDescs) {
+	if o == nil || IsNil(o.DnnRouteSelDescs) {
 		var ret []DnnRouteSelectionDescriptor
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescs() []DnnRouteSelecti
 // GetDnnRouteSelDescsOk returns a tuple with the DnnRouteSelDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescsOk() ([]DnnRouteSelectionDescriptor, bool) {
-	if o == nil || isNil(o.DnnRouteSelDescs) {
+	if o == nil || IsNil(o.DnnRouteSelDescs) {
 		return nil, false
 	}
 	return o.DnnRouteSelDescs, true
@@ -85,7 +85,7 @@ func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescsOk() ([]DnnRouteSele
 
 // HasDnnRouteSelDescs returns a boolean if a field has been set.
 func (o *SnssaiRouteSelectionDescriptor) HasDnnRouteSelDescs() bool {
-	if o != nil && !isNil(o.DnnRouteSelDescs) {
+	if o != nil && !IsNil(o.DnnRouteSelDescs) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *SnssaiRouteSelectionDescriptor) SetDnnRouteSelDescs(v []DnnRouteSelecti
 }
 
 func (o SnssaiRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -108,7 +108,7 @@ func (o SnssaiRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
 func (o SnssaiRouteSelectionDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !isNil(o.DnnRouteSelDescs) {
+	if !IsNil(o.DnnRouteSelDescs) {
 		toSerialize["dnnRouteSelDescs"] = o.DnnRouteSelDescs
 	}
 	return toSerialize, nil
@@ -149,5 +149,3 @@ func (v *NullableSnssaiRouteSelectionDescriptor) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

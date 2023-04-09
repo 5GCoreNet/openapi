@@ -1,7 +1,7 @@
 /*
 3gpp-analyticsexposure
 
-API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for Analytics Exposure.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.2.0-alpha.1
 */
@@ -19,11 +19,11 @@ var _ MappedNullable = &ScheduledCommunicationTime1{}
 
 // ScheduledCommunicationTime1 Identifies time and day of the week when the UE is available for communication.
 type ScheduledCommunicationTime1 struct {
-	// Identifies the day(s) of the week. If absent, it indicates every day of the week. 
+	// Identifies the day(s) of the week. If absent, it indicates every day of the week.
 	DaysOfWeek []int32 `json:"daysOfWeek,omitempty"`
-	// String with format partial-time or full-time as defined in clause 5.6 of IETF RFC 3339. Examples, 20:15:00, 20:15:00-08:00 (for 8 hours behind UTC).  
+	// String with format partial-time or full-time as defined in clause 5.6 of IETF RFC 3339. Examples, 20:15:00, 20:15:00-08:00 (for 8 hours behind UTC).
 	TimeOfDayStart *string `json:"timeOfDayStart,omitempty"`
-	// String with format partial-time or full-time as defined in clause 5.6 of IETF RFC 3339. Examples, 20:15:00, 20:15:00-08:00 (for 8 hours behind UTC).  
+	// String with format partial-time or full-time as defined in clause 5.6 of IETF RFC 3339. Examples, 20:15:00, 20:15:00-08:00 (for 8 hours behind UTC).
 	TimeOfDayEnd *string `json:"timeOfDayEnd,omitempty"`
 }
 
@@ -46,7 +46,7 @@ func NewScheduledCommunicationTime1WithDefaults() *ScheduledCommunicationTime1 {
 
 // GetDaysOfWeek returns the DaysOfWeek field value if set, zero value otherwise.
 func (o *ScheduledCommunicationTime1) GetDaysOfWeek() []int32 {
-	if o == nil || isNil(o.DaysOfWeek) {
+	if o == nil || IsNil(o.DaysOfWeek) {
 		var ret []int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ScheduledCommunicationTime1) GetDaysOfWeek() []int32 {
 // GetDaysOfWeekOk returns a tuple with the DaysOfWeek field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduledCommunicationTime1) GetDaysOfWeekOk() ([]int32, bool) {
-	if o == nil || isNil(o.DaysOfWeek) {
+	if o == nil || IsNil(o.DaysOfWeek) {
 		return nil, false
 	}
 	return o.DaysOfWeek, true
@@ -64,7 +64,7 @@ func (o *ScheduledCommunicationTime1) GetDaysOfWeekOk() ([]int32, bool) {
 
 // HasDaysOfWeek returns a boolean if a field has been set.
 func (o *ScheduledCommunicationTime1) HasDaysOfWeek() bool {
-	if o != nil && !isNil(o.DaysOfWeek) {
+	if o != nil && !IsNil(o.DaysOfWeek) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ScheduledCommunicationTime1) SetDaysOfWeek(v []int32) {
 
 // GetTimeOfDayStart returns the TimeOfDayStart field value if set, zero value otherwise.
 func (o *ScheduledCommunicationTime1) GetTimeOfDayStart() string {
-	if o == nil || isNil(o.TimeOfDayStart) {
+	if o == nil || IsNil(o.TimeOfDayStart) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ScheduledCommunicationTime1) GetTimeOfDayStart() string {
 // GetTimeOfDayStartOk returns a tuple with the TimeOfDayStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduledCommunicationTime1) GetTimeOfDayStartOk() (*string, bool) {
-	if o == nil || isNil(o.TimeOfDayStart) {
+	if o == nil || IsNil(o.TimeOfDayStart) {
 		return nil, false
 	}
 	return o.TimeOfDayStart, true
@@ -96,7 +96,7 @@ func (o *ScheduledCommunicationTime1) GetTimeOfDayStartOk() (*string, bool) {
 
 // HasTimeOfDayStart returns a boolean if a field has been set.
 func (o *ScheduledCommunicationTime1) HasTimeOfDayStart() bool {
-	if o != nil && !isNil(o.TimeOfDayStart) {
+	if o != nil && !IsNil(o.TimeOfDayStart) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ScheduledCommunicationTime1) SetTimeOfDayStart(v string) {
 
 // GetTimeOfDayEnd returns the TimeOfDayEnd field value if set, zero value otherwise.
 func (o *ScheduledCommunicationTime1) GetTimeOfDayEnd() string {
-	if o == nil || isNil(o.TimeOfDayEnd) {
+	if o == nil || IsNil(o.TimeOfDayEnd) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ScheduledCommunicationTime1) GetTimeOfDayEnd() string {
 // GetTimeOfDayEndOk returns a tuple with the TimeOfDayEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduledCommunicationTime1) GetTimeOfDayEndOk() (*string, bool) {
-	if o == nil || isNil(o.TimeOfDayEnd) {
+	if o == nil || IsNil(o.TimeOfDayEnd) {
 		return nil, false
 	}
 	return o.TimeOfDayEnd, true
@@ -128,7 +128,7 @@ func (o *ScheduledCommunicationTime1) GetTimeOfDayEndOk() (*string, bool) {
 
 // HasTimeOfDayEnd returns a boolean if a field has been set.
 func (o *ScheduledCommunicationTime1) HasTimeOfDayEnd() bool {
-	if o != nil && !isNil(o.TimeOfDayEnd) {
+	if o != nil && !IsNil(o.TimeOfDayEnd) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ScheduledCommunicationTime1) SetTimeOfDayEnd(v string) {
 }
 
 func (o ScheduledCommunicationTime1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -150,13 +150,13 @@ func (o ScheduledCommunicationTime1) MarshalJSON() ([]byte, error) {
 
 func (o ScheduledCommunicationTime1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.DaysOfWeek) {
+	if !IsNil(o.DaysOfWeek) {
 		toSerialize["daysOfWeek"] = o.DaysOfWeek
 	}
-	if !isNil(o.TimeOfDayStart) {
+	if !IsNil(o.TimeOfDayStart) {
 		toSerialize["timeOfDayStart"] = o.TimeOfDayStart
 	}
-	if !isNil(o.TimeOfDayEnd) {
+	if !IsNil(o.TimeOfDayEnd) {
 		toSerialize["timeOfDayEnd"] = o.TimeOfDayEnd
 	}
 	return toSerialize, nil
@@ -197,5 +197,3 @@ func (v *NullableScheduledCommunicationTime1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

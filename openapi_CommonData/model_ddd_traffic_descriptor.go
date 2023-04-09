@@ -1,7 +1,7 @@
 /*
 Common Data Types
 
-Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.   
+Common Data Types for Service Based Interfaces.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.5.0-alpha.1
 */
@@ -19,12 +19,12 @@ var _ MappedNullable = &DddTrafficDescriptor{}
 
 // DddTrafficDescriptor Contains a Traffic Descriptor.
 type DddTrafficDescriptor struct {
-	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166. 
-	Ipv4Addr *string `json:"ipv4Addr,omitempty"`
+	// String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+	Ipv4Addr *string   `json:"ipv4Addr,omitempty"`
 	Ipv6Addr *Ipv6Addr `json:"ipv6Addr,omitempty"`
 	// Unsigned Integer, i.e. only value 0 and integers above 0 are permissible.
 	PortNumber *int32 `json:"portNumber,omitempty"`
-	// String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042. 
+	// String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
 	MacAddr *string `json:"macAddr,omitempty"`
 }
 
@@ -47,7 +47,7 @@ func NewDddTrafficDescriptorWithDefaults() *DddTrafficDescriptor {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *DddTrafficDescriptor) GetIpv4Addr() string {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *DddTrafficDescriptor) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DddTrafficDescriptor) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || isNil(o.Ipv4Addr) {
+	if o == nil || IsNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -65,7 +65,7 @@ func (o *DddTrafficDescriptor) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *DddTrafficDescriptor) HasIpv4Addr() bool {
-	if o != nil && !isNil(o.Ipv4Addr) {
+	if o != nil && !IsNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *DddTrafficDescriptor) SetIpv4Addr(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *DddTrafficDescriptor) GetIpv6Addr() Ipv6Addr {
-	if o == nil || isNil(o.Ipv6Addr) {
+	if o == nil || IsNil(o.Ipv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *DddTrafficDescriptor) GetIpv6Addr() Ipv6Addr {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DddTrafficDescriptor) GetIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || isNil(o.Ipv6Addr) {
+	if o == nil || IsNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -97,7 +97,7 @@ func (o *DddTrafficDescriptor) GetIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *DddTrafficDescriptor) HasIpv6Addr() bool {
-	if o != nil && !isNil(o.Ipv6Addr) {
+	if o != nil && !IsNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *DddTrafficDescriptor) SetIpv6Addr(v Ipv6Addr) {
 
 // GetPortNumber returns the PortNumber field value if set, zero value otherwise.
 func (o *DddTrafficDescriptor) GetPortNumber() int32 {
-	if o == nil || isNil(o.PortNumber) {
+	if o == nil || IsNil(o.PortNumber) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *DddTrafficDescriptor) GetPortNumber() int32 {
 // GetPortNumberOk returns a tuple with the PortNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DddTrafficDescriptor) GetPortNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.PortNumber) {
+	if o == nil || IsNil(o.PortNumber) {
 		return nil, false
 	}
 	return o.PortNumber, true
@@ -129,7 +129,7 @@ func (o *DddTrafficDescriptor) GetPortNumberOk() (*int32, bool) {
 
 // HasPortNumber returns a boolean if a field has been set.
 func (o *DddTrafficDescriptor) HasPortNumber() bool {
-	if o != nil && !isNil(o.PortNumber) {
+	if o != nil && !IsNil(o.PortNumber) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *DddTrafficDescriptor) SetPortNumber(v int32) {
 
 // GetMacAddr returns the MacAddr field value if set, zero value otherwise.
 func (o *DddTrafficDescriptor) GetMacAddr() string {
-	if o == nil || isNil(o.MacAddr) {
+	if o == nil || IsNil(o.MacAddr) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *DddTrafficDescriptor) GetMacAddr() string {
 // GetMacAddrOk returns a tuple with the MacAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DddTrafficDescriptor) GetMacAddrOk() (*string, bool) {
-	if o == nil || isNil(o.MacAddr) {
+	if o == nil || IsNil(o.MacAddr) {
 		return nil, false
 	}
 	return o.MacAddr, true
@@ -161,7 +161,7 @@ func (o *DddTrafficDescriptor) GetMacAddrOk() (*string, bool) {
 
 // HasMacAddr returns a boolean if a field has been set.
 func (o *DddTrafficDescriptor) HasMacAddr() bool {
-	if o != nil && !isNil(o.MacAddr) {
+	if o != nil && !IsNil(o.MacAddr) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *DddTrafficDescriptor) SetMacAddr(v string) {
 }
 
 func (o DddTrafficDescriptor) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -183,16 +183,16 @@ func (o DddTrafficDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o DddTrafficDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Ipv4Addr) {
+	if !IsNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !isNil(o.Ipv6Addr) {
+	if !IsNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
-	if !isNil(o.PortNumber) {
+	if !IsNil(o.PortNumber) {
 		toSerialize["portNumber"] = o.PortNumber
 	}
-	if !isNil(o.MacAddr) {
+	if !IsNil(o.MacAddr) {
 		toSerialize["macAddr"] = o.MacAddr
 	}
 	return toSerialize, nil
@@ -233,5 +233,3 @@ func (v *NullableDddTrafficDescriptor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

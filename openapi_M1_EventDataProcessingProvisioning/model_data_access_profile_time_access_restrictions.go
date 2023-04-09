@@ -1,7 +1,7 @@
 /*
 M1_EventDataProcessingProvisioning
 
-5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved. 
+5GMS AF M1 Event Data Processing Provisioning API © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 
 API version: 2.0.0
 */
@@ -20,7 +20,7 @@ var _ MappedNullable = &DataAccessProfileTimeAccessRestrictions{}
 // DataAccessProfileTimeAccessRestrictions struct for DataAccessProfileTimeAccessRestrictions
 type DataAccessProfileTimeAccessRestrictions struct {
 	// indicating a time in seconds.
-	Duration int32 `json:"duration"`
+	Duration             int32                         `json:"duration"`
 	AggregationFunctions []DataAggregationFunctionType `json:"aggregationFunctions"`
 }
 
@@ -92,7 +92,7 @@ func (o *DataAccessProfileTimeAccessRestrictions) SetAggregationFunctions(v []Da
 }
 
 func (o DataAccessProfileTimeAccessRestrictions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,5 +141,3 @@ func (v *NullableDataAccessProfileTimeAccessRestrictions) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

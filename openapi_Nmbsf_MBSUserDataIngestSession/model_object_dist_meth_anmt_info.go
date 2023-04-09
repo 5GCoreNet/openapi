@@ -1,7 +1,7 @@
 /*
 nmbsf-mbs-ud-ingest
 
-API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved. 
+API for MBS User Data Ingest Session Service.   © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).   All rights reserved.
 
 API version: 1.1.0-alpha.1
 */
@@ -17,7 +17,7 @@ import (
 // checks if the ObjectDistMethAnmtInfo type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ObjectDistMethAnmtInfo{}
 
-// ObjectDistMethAnmtInfo Represents MBS Distribution Session Announcement parameters for Object Distribution Method. 
+// ObjectDistMethAnmtInfo Represents MBS Distribution Session Announcement parameters for Object Distribution Method.
 type ObjectDistMethAnmtInfo struct {
 	ObjDistrSched *TimeWindow `json:"objDistrSched,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
@@ -45,7 +45,7 @@ func NewObjectDistMethAnmtInfoWithDefaults() *ObjectDistMethAnmtInfo {
 
 // GetObjDistrSched returns the ObjDistrSched field value if set, zero value otherwise.
 func (o *ObjectDistMethAnmtInfo) GetObjDistrSched() TimeWindow {
-	if o == nil || isNil(o.ObjDistrSched) {
+	if o == nil || IsNil(o.ObjDistrSched) {
 		var ret TimeWindow
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ObjectDistMethAnmtInfo) GetObjDistrSched() TimeWindow {
 // GetObjDistrSchedOk returns a tuple with the ObjDistrSched field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectDistMethAnmtInfo) GetObjDistrSchedOk() (*TimeWindow, bool) {
-	if o == nil || isNil(o.ObjDistrSched) {
+	if o == nil || IsNil(o.ObjDistrSched) {
 		return nil, false
 	}
 	return o.ObjDistrSched, true
@@ -63,7 +63,7 @@ func (o *ObjectDistMethAnmtInfo) GetObjDistrSchedOk() (*TimeWindow, bool) {
 
 // HasObjDistrSched returns a boolean if a field has been set.
 func (o *ObjectDistMethAnmtInfo) HasObjDistrSched() bool {
-	if o != nil && !isNil(o.ObjDistrSched) {
+	if o != nil && !IsNil(o.ObjDistrSched) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ObjectDistMethAnmtInfo) SetObjDistrSched(v TimeWindow) {
 
 // GetObjDistrBaseUri returns the ObjDistrBaseUri field value if set, zero value otherwise.
 func (o *ObjectDistMethAnmtInfo) GetObjDistrBaseUri() string {
-	if o == nil || isNil(o.ObjDistrBaseUri) {
+	if o == nil || IsNil(o.ObjDistrBaseUri) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ObjectDistMethAnmtInfo) GetObjDistrBaseUri() string {
 // GetObjDistrBaseUriOk returns a tuple with the ObjDistrBaseUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectDistMethAnmtInfo) GetObjDistrBaseUriOk() (*string, bool) {
-	if o == nil || isNil(o.ObjDistrBaseUri) {
+	if o == nil || IsNil(o.ObjDistrBaseUri) {
 		return nil, false
 	}
 	return o.ObjDistrBaseUri, true
@@ -95,7 +95,7 @@ func (o *ObjectDistMethAnmtInfo) GetObjDistrBaseUriOk() (*string, bool) {
 
 // HasObjDistrBaseUri returns a boolean if a field has been set.
 func (o *ObjectDistMethAnmtInfo) HasObjDistrBaseUri() bool {
-	if o != nil && !isNil(o.ObjDistrBaseUri) {
+	if o != nil && !IsNil(o.ObjDistrBaseUri) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ObjectDistMethAnmtInfo) SetObjDistrBaseUri(v string) {
 
 // GetObjRepBaseUri returns the ObjRepBaseUri field value if set, zero value otherwise.
 func (o *ObjectDistMethAnmtInfo) GetObjRepBaseUri() string {
-	if o == nil || isNil(o.ObjRepBaseUri) {
+	if o == nil || IsNil(o.ObjRepBaseUri) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ObjectDistMethAnmtInfo) GetObjRepBaseUri() string {
 // GetObjRepBaseUriOk returns a tuple with the ObjRepBaseUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectDistMethAnmtInfo) GetObjRepBaseUriOk() (*string, bool) {
-	if o == nil || isNil(o.ObjRepBaseUri) {
+	if o == nil || IsNil(o.ObjRepBaseUri) {
 		return nil, false
 	}
 	return o.ObjRepBaseUri, true
@@ -127,7 +127,7 @@ func (o *ObjectDistMethAnmtInfo) GetObjRepBaseUriOk() (*string, bool) {
 
 // HasObjRepBaseUri returns a boolean if a field has been set.
 func (o *ObjectDistMethAnmtInfo) HasObjRepBaseUri() bool {
-	if o != nil && !isNil(o.ObjRepBaseUri) {
+	if o != nil && !IsNil(o.ObjRepBaseUri) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ObjectDistMethAnmtInfo) SetObjRepBaseUri(v string) {
 }
 
 func (o ObjectDistMethAnmtInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -149,13 +149,13 @@ func (o ObjectDistMethAnmtInfo) MarshalJSON() ([]byte, error) {
 
 func (o ObjectDistMethAnmtInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ObjDistrSched) {
+	if !IsNil(o.ObjDistrSched) {
 		toSerialize["objDistrSched"] = o.ObjDistrSched
 	}
-	if !isNil(o.ObjDistrBaseUri) {
+	if !IsNil(o.ObjDistrBaseUri) {
 		toSerialize["objDistrBaseUri"] = o.ObjDistrBaseUri
 	}
-	if !isNil(o.ObjRepBaseUri) {
+	if !IsNil(o.ObjRepBaseUri) {
 		toSerialize["objRepBaseUri"] = o.ObjRepBaseUri
 	}
 	return toSerialize, nil
@@ -196,5 +196,3 @@ func (v *NullableObjectDistMethAnmtInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
